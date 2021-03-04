@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 02/16/2021
 ms.author: memildin
-ms.openlocfilehash: f024457ed9f20e6bab0852a53ab6a60ac85ed25a
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 6d0e660ecce1d45dab4d6003cdba391ba2eb4ee9
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546258"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095592"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Kubernetes-workloads beveiligen
 
@@ -51,7 +51,7 @@ Azure Security Center bevat een bundel van aanbevelingen die beschikbaar zijn wa
 
 Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoeg toepassing voor Kubernetes**. 
 
-- U kunt deze invoeg toepassing automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van uitbrei dingen inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
+- U kunt deze invoeg toepassing automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van de log Analytics agent en uitbrei dingen inschakelen](security-center-enable-data-collection.md#auto-provision-mma). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
 
     :::image type="content" source="media/defender-for-kubernetes-usage/policy-add-on-auto-provision.png" alt-text="Het hulp programma voor automatische inrichting van Security Center gebruiken om de beleids-invoeg toepassing voor Kubernetes te installeren":::
 
@@ -80,12 +80,12 @@ Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoe
 
     | Naam aanbeveling                                                         | Beveiligingsmaatregelen                         | Configuratie vereist |
     |-----------------------------------------------------------------------------|------------------------------------------|------------------------|
-    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | No                     |
-    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | No                     |
-    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | No                     |
-    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | No                     |
-    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | No                     |
-    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | No                     |
+    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | Nee                     |
+    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | Nee                     |
+    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | Nee                     |
+    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | Nee                     |
+    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | Nee                     |
+    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | Nee                     |
     | Er moeten mini maal bevoegde Linux-mogelijkheden worden afgedwongen voor containers       | Toegang en machtigingen beheren            | **Ja**                |
     | Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst    | Toegang en machtigingen beheren            | **Ja**                |
     | Containers mogen alleen op toegestane poorten luisteren                              | Onbevoegde netwerk toegang beperken     | **Ja**                |

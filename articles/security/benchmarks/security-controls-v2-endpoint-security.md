@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 7672f4eb4530dbfb5d039b066fe7cf6eaf79e5a7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 48b22ba913370b27cd01319a14a2a627d7589ce4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101718638"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051511"
 ---
 # <a name="security-control-v2-endpoint-security"></a>Beveiligings controle v2: Endpoint Security
 
 Endpoint Security heeft betrekking op besturings elementen in eindpunt detectie en-antwoord. Dit omvat het gebruik van de eindpunt detectie en respons (EDR) en anti-malware-service voor eind punten in azure-omgevingen.
 
-Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving: Endpoint Security](../../governance/policy/samples/azure-security-benchmark#endpoint-security)
+Voor een overzicht van de toepasselijke ingebouwde Azure Policy raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving: Endpoint Security](../../governance/policy/samples/azure-security-benchmark.md#endpoint-security)
 
 ## <a name="es-1-use-endpoint-detection-and-response-edr"></a>ES-1: eindpunt detectie en-antwoord gebruiken (EDR)
 

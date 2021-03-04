@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: yolasors
-ms.openlocfilehash: f8f2e352ae458e3e2825c9701437ea652ba07375
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78d2f3b399e26ca0c6036fd74fa1fba49d1f21f4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825657"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042773"
 ---
 # <a name="review-pull-requests-in-pre-production-environments-in-azure-static-web-apps-preview"></a>Pull-aanvragen in de pre-productieomgevingen controleren in de preview-versie van Azure Static Web Apps
 
@@ -33,7 +33,7 @@ Er zijn veel voor delen van het gebruik van pre-productie omgevingen. U kunt bij
 - Voer Sanity controles uit voordat u implementeert voor productie.
 
 > [!NOTE]
-> Tijdens de preview-periode is [Maxi maal één faserings omgeving](quotas.md) tegelijk toegestaan.
+> Tijdens de preview-periode zijn [Maxi maal drie faserings omgevingen](quotas.md) toegestaan.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -51,11 +51,11 @@ Begin door een wijziging aan te brengen in uw opslag plaats. U kunt dit rechtstr
 
 1. Ga naar de map van uw _app_ en wijzig de tekst inhoud. U kunt bijvoorbeeld een titel of alinea wijzigen. Wanneer u het bestand dat u wilt bewerken hebt gevonden, klikt u op **bewerken** om de wijziging door te voeren.
 
-    :::image type="content" source="./media/review-publish-pull-requests/edit-file.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+    :::image type="content" source="./media/review-publish-pull-requests/edit-file.png" alt-text="De knop bestand bewerken in de GitHub-interface":::
 
 1. Nadat u de wijzigingen hebt aangebracht, klikt u op **wijzigingen door voeren** om uw wijzigingen door te voeren in de vertakking.
 
-    :::image type="content" source="./media/review-publish-pull-requests/commit-changes.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+    :::image type="content" source="./media/review-publish-pull-requests/commit-changes.png" alt-text="Knop wijzigingen door voeren in de GitHub-interface":::
 
 ## <a name="create-a-pull-request"></a>Een pull-aanvraag maken
 
@@ -63,13 +63,13 @@ Maak vervolgens een pull-aanvraag van deze wijziging.
 
 1. Open het tabblad **pull-aanvraag** van het project op github:
 
-    :::image type="content" source="./media/review-publish-pull-requests/tab.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+    :::image type="content" source="./media/review-publish-pull-requests/tab.png" alt-text="Tabblad pull-aanvraag in een GitHub-opslag plaats":::
 
 1. Klik op de knop **& pull-aanvraag vergelijken** van uw vertakking.
 
-1. U kunt eventueel enkele details over uw wijzigingen invullen en vervolgens op **pull-aanvraag maken**klikken.
+1. U kunt eventueel enkele details over uw wijzigingen invullen en vervolgens op **pull-aanvraag maken** klikken.
 
-    :::image type="content" source="./media/review-publish-pull-requests/open.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+    :::image type="content" source="./media/review-publish-pull-requests/open.png" alt-text="Pull-aanvraag maken in GitHub":::
 
 U kunt revisoren toewijzen en opmerkingen toevoegen om uw wijzigingen zo nodig te bespreken.
 
@@ -82,7 +82,7 @@ Nadat de pull-aanvraag is gemaakt, wordt de implementatie werk stroom [github ac
 
 Zodra de werk stroom klaar is met het maken en implementeren van uw app, voegt de GitHub-bot een opmerking toe aan uw pull-aanvraag, die de URL van de pre-productie omgeving bevat. U kunt op deze link klikken om uw gefaseerde wijzigingen te zien.
 
-:::image type="content" source="./media/review-publish-pull-requests/bot-comment.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+:::image type="content" source="./media/review-publish-pull-requests/bot-comment.png" alt-text="Pull-aanvraag opmerking met de pre-productie-URL":::
 
 Klik op de gegenereerde URL om de wijzigingen weer te geven.
 
@@ -96,7 +96,7 @@ Zodra de wijzigingen zijn goedgekeurd, kunt u uw wijzigingen in de productie pub
 
 Klik op **pull-aanvraag samen voegen**:
 
-:::image type="content" source="./media/review-publish-pull-requests/merge.png" alt-text="Nieuwe vertakking maken met behulp van de GitHub-interface":::
+:::image type="content" source="./media/review-publish-pull-requests/merge.png" alt-text="De knop pull-aanvraag samen voegen in de GitHub-interface":::
 
 Bij het samen voegen worden uw wijzigingen in de getraceerde vertakking (de ' productie ' vertakking) gekopieerd. Vervolgens wordt de implementatie werk stroom gestart op de getraceerde vertakking en de wijzigingen zijn actief nadat uw toepassing opnieuw is gemaakt.
 

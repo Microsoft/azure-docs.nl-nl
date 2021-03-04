@@ -4,17 +4,17 @@ description: Meer informatie over het migreren van data bases van SQL Server naa
 services: sql-database
 ms.service: sql-managed-instance
 ms.custom: seo-lt-2019, sqldbrb=1
-ms.devlang: ''
 ms.topic: how-to
 author: danimir
+ms.author: danil
 ms.reviewer: sstein
 ms.date: 03/01/2021
-ms.openlocfilehash: bc0dc72c7547c8f74aec53b7153fc5384c6b634b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 74403b7ec1469ce7cdaadc9931eb5ac95f55f6f5
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690784"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096833"
 ---
 # <a name="migrate-databases-from-sql-server-to-sql-managed-instance-using-log-replay-service-preview"></a>Data bases migreren van SQL Server naar een door SQL beheerd exemplaar met behulp van de replay-service voor logboeken (preview)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -56,7 +56,7 @@ LRS kan worden gestart in de modus automatisch aanvullen of doorlopend. Wanneer 
 
 Zodra LRS is gestopt, automatisch door AutoAanvullen of hand matig op cutover, kan het herstel proces niet worden hervat voor een Data Base die online is gebracht op SQL Managed instance. Als u aanvullende back-upbestanden wilt herstellen nadat de migratie is voltooid via automatisch aanvullen, of hand matig op cutover, moet de Data Base worden verwijderd en moet de volledige back-upketen helemaal opnieuw worden hersteld door de LRS opnieuw te starten.
 
-![Orchestrator-service voor het opnieuw afspelen van logboeken die wordt uitgelegd voor een SQL-beheerd exemplaar](./media/log-replay-service-migrate/log-replay-service-conceptual.png)
+   :::image type="content" source="./media/log-replay-service-migrate/log-replay-service-conceptual.png" alt-text="Orchestrator-service voor het opnieuw afspelen van logboeken die wordt uitgelegd voor een SQL-beheerd exemplaar" border="false":::
     
 | Bewerking | Details |
 | :----------------------------- | :------------------------- |
@@ -193,18 +193,30 @@ WITH COMPRESSION, CHECKSUM
 Azure Blob Storage wordt gebruikt als een intermediaire opslag voor back-upbestanden tussen SQL Server en SQL Managed instance. Het SAS-verificatie token met de machtigingen lijst en alleen-lezen moet worden gegenereerd voor gebruik door de LRS-service. Hiermee schakelt u de LRS-service in om toegang te krijgen tot de Azure Blob Storage en de back-upbestanden te gebruiken om ze te herstellen op een SQL-beheerd exemplaar. Volg deze stappen voor het genereren van SAS-verificatie voor LRS gebruik:
 
 1. Toegang tot de Storage Explorer vanuit Azure Portal
+
 2. BLOB-containers uitvouwen
-3. Klik met de rechter muisknop op de BLOB-container en selecteer ophalen Shared Access Signature  ![ replay-service voor logboek registratie SAS-verificatie token genereren](./media/log-replay-service-migrate/lrs-sas-token-01.png)
+
+3. Klik met de rechter muisknop op de BLOB-container en selecteer ophalen Shared Access Signature
+
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-01.png" alt-text="Replay-service voor logboek registratie-Shared Access Signature ophalen":::
+
 4. Selecteer de periode voor het verloop van het token. Zorg ervoor dat het token geldig is voor de duur van de migratie.
+
 5. Selecteer de tijd zone voor het token-UTC of uw lokale tijd
-    - De tijd zone van het token en uw door SQL beheerde exemplaar komen mogelijk niet overeen. Zorg ervoor dat de SAS-token de juiste tijds duur heeft om rekening te houden met tijd zones. Stel, indien mogelijk, de tijd zone in op een eerdere en latere tijd van uw geplande migratie venster.
+
+   - De tijd zone van het token en uw door SQL beheerde exemplaar komen mogelijk niet overeen. Zorg ervoor dat de SAS-token de juiste tijds duur heeft om rekening te houden met tijd zones. Stel, indien mogelijk, de tijd zone in op een eerdere en latere tijd van uw geplande migratie venster.
+
 6. Selecteer alleen de machtigingen lezen en alleen lijst
-    - U moet geen andere machtigingen selecteren, anders kan LRS niet worden gestart. Deze beveiligings vereiste is standaard.
-7. Klik op de knop voor het maken van de  ![ replay-service voor logboek registratie een SAS-verificatie token](./media/log-replay-service-migrate/lrs-sas-token-02.png)
 
-Er wordt een SAS-verificatie gegenereerd met de geldigheid van de tijd die u eerder hebt opgegeven. U hebt de URI-versie van het gegenereerde token nodig. dit wordt weer gegeven in de onderstaande scherm afbeelding.
+   - U moet geen andere machtigingen selecteren, anders kan LRS niet worden gestart. Deze beveiligings vereiste is standaard.
 
-![Voor beeld van gegenereerde SAS-verificatie-URI voor replay service registreren](./media/log-replay-service-migrate/lrs-generated-uri-token.png)
+7. Klik op de knop maken
+
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-sas-token-02.png" alt-text="Replay-service voor logboek registratie: SAS-verificatie token genereren":::
+
+   Er wordt een SAS-verificatie gegenereerd met de geldigheid van de tijd die u eerder hebt opgegeven. U hebt de URI-versie van het gegenereerde token nodig. dit wordt weer gegeven in de onderstaande scherm afbeelding.
+
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-generated-uri-token.png" alt-text="Replay-service voor logboek registratie: Kopieer de Shared Access-hand tekening voor URI":::
 
 ### <a name="copy-parameters-from-sas-token-generated"></a>Para meters kopiëren van gegenereerd SAS-token
 
@@ -212,7 +224,7 @@ We moeten de structuur van het SAS-token op de juiste manier kunnen gebruiken om
 - StorageContainerUri en 
 - StorageContainerSasToken, gescheiden door een vraag teken (?), zoals wordt weer gegeven in de onderstaande afbeelding.
 
-    ![Voor beeld van gegenereerde SAS-verificatie-URI voor replay service registreren](./media/log-replay-service-migrate/lrs-token-structure.png)
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-structure.png" alt-text="Voor beeld van gegenereerde SAS-verificatie-URI voor replay service registreren" border="false":::
 
 - Het eerste deel begint met ' https://' totdat het vraag teken (?) wordt gebruikt voor de para meter StorageContainerURI die wordt ingevoerd als in input to LRS. Dit geeft LRS informatie over de map waarin database back-upbestanden worden opgeslagen.
 - Het tweede deel, beginnend na het vraag teken (?), in het voor beeld "SP =" en zo helemaal tot het einde van de teken reeks is StorageContainerSasToken para meter. Dit is het werkelijke ondertekende verificatie token dat geldig is voor de duur van de opgegeven tijd. Dit onderdeel hoeft niet noodzakelijkerwijs te beginnen met ' SP = ', zoals wordt weer gegeven, en dat uw aanvraag kan verschillen.
@@ -221,11 +233,11 @@ Kopieer para meters als volgt:
 
 1. Kopieer het eerste gedeelte van het token vanaf https://tot het vraag teken (?) en gebruik dit als StorageContainerUri-para meter in Power shell of CLI voor het starten van LRS, zoals wordt weer gegeven in de onderstaande scherm afbeelding.
 
-    ![StorageContainerUri-para meter voor het opnieuw afspelen van de service registreren](./media/log-replay-service-migrate/lrs-token-uri-copy-part-01.png)
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-01.png" alt-text="StorageContainerUri-para meter voor het opnieuw afspelen van de service registreren":::
 
 2. Kopieer het tweede deel van het token dat begint met een vraag teken (?), de manier tot het einde van de teken reeks en gebruik deze als StorageContainerSasToken-para meter in Power shell of CLI voor het starten van LRS, zoals wordt weer gegeven in de onderstaande scherm afbeelding.
 
-    ![StorageContainerSasToken-para meter voor het opnieuw afspelen van de service registreren](./media/log-replay-service-migrate/lrs-token-uri-copy-part-02.png)
+   :::image type="content" source="./media/log-replay-service-migrate/lrs-token-uri-copy-part-02.png" alt-text="StorageContainerSasToken-para meter voor het opnieuw afspelen van de service registreren":::
 
 > [!IMPORTANT]
 > - Machtigingen voor het SAS-token voor Azure Blob Storage moeten worden gelezen en alleen worden weer geven. Als er andere machtigingen worden toegekend voor het SAS-verificatie token, mislukt het starten van de LRS-service. Deze beveiligings vereisten zijn per ontwerp.

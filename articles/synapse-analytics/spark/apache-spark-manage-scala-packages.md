@@ -5,16 +5,16 @@ services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 03/01/2020
+ms.date: 02/26/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 8d5c18eaaa4065eac515f38557664ceb44262adf
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c70ecc4fc5469d728bc12d47024585ccf00ff98e
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695934"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098703"
 ---
 # <a name="manage-scala-and-java-packages-for-apache-spark-in-azure-synapse-analytics"></a>Scala-en Java-pakketten beheren voor Apache Spark in azure Synapse Analytics
 
@@ -37,13 +37,10 @@ Werkruimte pakketten kunnen aangepaste of privé jar-bestanden zijn. U kunt deze
 
 Werkruimte pakketten toevoegen:
 1. Ga naar het   >  tabblad **werk ruimte-pakketten** beheren.
-2. Upload uw wiel bestanden met behulp van de bestands kiezer.
-3. Zodra de bestanden zijn geüpload naar de Azure Synapse-werk ruimte, kunt u deze wiel bestanden toevoegen aan een bepaalde Apache Spark groep.
+2. Upload uw JAR-bestanden met behulp van de bestands kiezer.
+3. Zodra de bestanden zijn geüpload naar de Azure Synapse-werk ruimte, kunt u deze jar-bestanden toevoegen aan een bepaalde Apache Spark groep.
 
 ![Scherm afbeelding die de werkruimte pakketten markeert.](./media/apache-spark-azure-portal-add-libraries/studio-add-workspace-package.png "Werkruimte pakketten weer geven")
-
-> [!IMPORTANT]
-> Het installeren van werk ruimte pakketten wordt momenteel nog niet ondersteund in werk ruimten die zijn beveiligd met data exfiltration (DEP).
 
 ## <a name="pool-libraries"></a>Groeps bibliotheken
 Zodra u de scala-en Java-pakketten hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u deze installeren in een Spark-groep. Bibliotheken op groeps niveau zijn beschikbaar voor alle notebooks en taken die worden uitgevoerd in de groep.

@@ -958,6 +958,14 @@ groups:
     title: Azure Arc
   - id: azure-portal
     title: Portalpagina's van Security Center
+- id: manage-asc-initiatives
+  title: Security Center initiatieven beheren
+  prompt: Hoe kunt u uw Security Center-initiatieven beheren?
+  pivots:
+  - id: azure-portal
+    title: In Azure Portal
+  - id: rest-api
+    title: Met de REST-Api's
 - id: client-operating-system-macos-and-linux-windows-powershell
   title: Besturingssysteem / console
   prompt: Kies een besturingssysteem en een console
@@ -1045,9 +1053,9 @@ groups:
   - id: programming-language-kotlin
     title: Kotlin (Android)
 metadata:
-  ms.openlocfilehash: cd30fa892e20dc82c0e314c76d72c2c8d3583bd1
-  ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+  ms.openlocfilehash: 3e17c3c00f5df915394ee81646d8bc3883a8e1ee
+  ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
   ms.translationtype: MT
   ms.contentlocale: nl-NL
   ms.lasthandoff: 03/04/2021
-  ms.locfileid: "102032446"
+  ms.locfileid: "102097509"

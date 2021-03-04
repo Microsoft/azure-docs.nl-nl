@@ -1,6 +1,6 @@
 - name: Azure Synapse Analytics
   href: index.yml
-- name: Overschakelen naar toegewezen SQL-pool (voorheen SQL DW)
+- name: Overschakelen naar een toegewezen SQL-groep (voorheen SQL DW) >
   href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
 - name: Overzicht
   items:
@@ -48,17 +48,19 @@
   items:
     - name: Snelstartgidsen
       items:
-        - name: Een werkruimte maken met Azure Portal
-          href: quickstart-create-workspace.md
-          displayName: quickstart
-        - name: Een werkruimte maken met Azure CLI
-          href: quickstart-create-workspace-cli.md
-          displayName: quickstart
-        - name: Een werkruimte maken met Azure PowerShell
-          href: quickstart-create-workspace-powershell.md
-          displayName: quickstart
-        - name: Implementeren met een sjabloon
-          href: quickstart-deployment-template-workspaces.md
+        - name: Een werkruimte maken
+          items:
+            - name: Azure Portal
+              href: quickstart-create-workspace.md
+              displayName: quickstart
+            - name: Azure CLI
+              href: quickstart-create-workspace-cli.md
+              displayName: quickstart
+            - name: Azure PowerShell
+              href: quickstart-create-workspace-powershell.md
+              displayName: quickstart
+            - name: ARM-sjabloon
+              href: quickstart-deployment-template-workspaces.md
           displayName: quickstart
         - name: Een Power BI-werkruimte koppelen
           href: quickstart-power-bi.md
@@ -586,6 +588,8 @@
               href: ./spark/apache-spark-manage-scala-packages.md
             - name: Problemen met installatie fouten van Python-pakketten oplossen
               href: ./spark/apache-spark-troubleshoot-library-errors.md
+            - name: Een persoonlijk Conda-kanaal maken
+              href: ./spark/apache-spark-custom-conda-channel.md
         - name: Notebooks en IDE-hulpprogramma's gebruiken
           items:
             - name: Notebooks beheren

@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: overview
 ms.date: 02/18/2021
 ms.custom: template-overview
-ms.openlocfilehash: 0581e659eca0a59719db0dd0e48cf3628b64dd2a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 85b7f3a62324bc93cd78649cd39e0f4dc7d0baed
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665415"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098193"
 ---
 # <a name="introduction-to-azure-percept"></a>Inleiding tot Azure percept
 
@@ -22,21 +22,21 @@ De integratie van een gezichten bij het implementeren van Edge AI-oplossingen op
 
 - Identificeer en selecteer het juiste silicium om de oplossingen te stroom te sturen.
 - De collectieve beveiliging van de hardware, software, modellen en gegevens te waarborgen.
-- De mogelijkheid om oplossingen te bouwen en te beheren die probleemloos werken.
+- De mogelijkheid om oplossingen te bouwen en te beheren die naadloos werken, op schaal.
 
 ## <a name="components-of-azure-percept"></a>Onderdelen van Azure percept
 
 De belangrijkste onderdelen van Azure percept zijn:
 
-- AI-hardware-referentie ontwerp en-certificerings Programma's.
+1. AI-hardware-referentie ontwerp en-certificerings Programma's.
 
     - Biedt het ecosysteem van hardware-ontwikkel aars met patronen en aanbevolen procedures voor het ontwikkelen van Edge AI-hardware die eenvoudig kan worden geïntegreerd met Azure AI-en IoT-Services.
 
-- Azure percept DK (Devkit).
+2. Azure percept DK (Devkit).
 
-    - Een Development Kit die flexibel genoeg is om een groot aantal verschillende scenario's te ondersteunen.
+    - Een Development Kit die flexibeler is voor het ondersteunen van een groot aantal verschillende scenario's voor het maken van prototypen voor apparaten, opbouwers en klanten.
 
-- Services en werk stromen om de ontwikkeling van het Edge AI-model en oplossingen te versnellen.
+3. Services en werk stromen om de ontwikkeling van het Edge AI-model en oplossingen te versnellen.
 
     - Ontwikkel werk stromen en vooraf gebouwde modellen die toegankelijk zijn vanuit Azure percept Studio.
     - Model ontwikkelings Services.

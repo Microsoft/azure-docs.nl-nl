@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/03/2018
 ms.author: memildin
-ms.openlocfilehash: 89d04588d07407be5dbd7ddbafd6543ed461462e
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
-ms.translationtype: HT
+ms.openlocfilehash: cc88561f8882b1712648a261d1f0208a18bab26d
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945716"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095473"
 ---
 # <a name="tutorial-protect-your-resources-with-azure-security-center"></a>Zelfstudie: Uw resources beveiligen met Azure Security Center
 Security Center beperkt de blootstelling aan bedreigingen met behulp van toegangs- en toepassingsbesturingselementen om schadelijke activiteiten te blokkeren. Just-In-Time-toegang (JIT) tot virtuele machines (VM's) vermindert de blootstelling aan aanvallen doordat u permanente toegang tot VM's kunt weigeren. U biedt in plaats daarvan beheerde en gecontroleerde toegang tot VM's, alleen wanneer dat nodig is. Besturingselementen voor adaptieve toepassingen helpen u om VM's beter te beschermen tegen malware door te beheren welke toepassingen op uw VM's kunnen worden uitgevoerd. Security Center maakt gebruik van machine learning om de processen te analyseren die op de virtuele machine worden uitgevoerd. Ook helpt het u op basis van deze informatie regels voor opname in de acceptatielijst toe te passen.
@@ -31,7 +31,7 @@ In deze zelfstudie leert u het volgende:
 > * Een toepassingsbeheerbeleid configureren
 
 ## <a name="prerequisites"></a>Vereisten
-Om de functies in deze zelfstudie te doorlopen, moet Azure Defender zijn ingeschakeld. U kunt Azure Defender gratis uitproberen. Zie [Azure Defender uitproberen](security-center-pricing.md) voor meer informatie.
+Om de functies in deze zelfstudie te doorlopen, moet Azure Defender zijn ingeschakeld. Er is een gratis proefversie beschikbaar. Zie [Azure Defender inschakelen](enable-azure-defender.md)als u een upgrade wilt uitvoeren.
 
 ## <a name="manage-vm-access"></a>VM-toegang beheren
 JIT-VM-toegang kan worden gebruikt om binnenkomend verkeer naar uw Azure-VM's te blokkeren, zodat u minder kwetsbaar bent voor aanvallen maar tegelijkertijd eenvoudig toegang wordt geboden om verbinding met VM's te kunnen maken wanneer dat nodig is.

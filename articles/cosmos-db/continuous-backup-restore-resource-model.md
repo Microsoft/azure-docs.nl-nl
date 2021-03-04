@@ -1,18 +1,18 @@
 ---
 title: Resource model voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip.
-description: In dit artikel wordt het resource model uitgelegd voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaalde tijd. Hierin worden de para meters uitgelegd die ondersteuning bieden voor de continue back-up en bronnen die kunnen worden hersteld in Azure Cosmos DB-API voor SQL-en MongoDB-accounts.
+description: In dit artikel wordt uitleg gegeven over het resourcemodel voor de functie voor herstel naar een bepaald tijdstip van Azure Cosmos DB. Hierin worden de parameters uitgelegd die ondersteuning bieden voor de continue back-up en de resources die kunnen worden hersteld in de Azure Cosmos DB-API voor SQL- en MongoDB-accounts.
 author: kanshiG
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 02/01/2021
+ms.date: 02/22/2021
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: d838425583638aef5199b52df4869923c826553d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: edf60a5c454d34a2424ef7981b02952ffbfd3bde
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369965"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102097224"
 ---
 # <a name="resource-model-for-the-azure-cosmos-db-point-in-time-restore-feature-preview"></a>Resource model voor de functie voor het terugzetten van Azure Cosmos DB naar een bepaald tijdstip (preview-versie)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "100369965"
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-In dit artikel wordt het resource model uitgelegd voor de functie voor het herstellen van Azure Cosmos DB naar een bepaald tijdstip (preview-versie). Hierin worden de para meters uitgelegd die ondersteuning bieden voor de continue back-up en bronnen die kunnen worden hersteld in Azure Cosmos DB-API voor SQL-en MongoDB-accounts.
+In dit artikel wordt het resource model uitgelegd voor de functie voor het herstellen van Azure Cosmos DB naar een bepaald tijdstip (preview-versie). Hierin worden de parameters uitgelegd die ondersteuning bieden voor de continue back-up en de resources die kunnen worden hersteld in de Azure Cosmos DB-API voor SQL- en MongoDB-accounts.
 
 ## <a name="database-accounts-resource-model"></a>Resource model van het database account
 
@@ -43,7 +43,7 @@ Deze eigenschap geeft aan hoe het account is gemaakt. De mogelijke waarden zijn 
 
 De `RestoreParameters` resource bevat de details van de herstel bewerking, met inbegrip van de account-id, de tijd die moet worden teruggezet en de resources die moeten worden hersteld.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 |restoreMode  | De herstel modus moet *PointInTime* zijn |
 |restoreSource   |  De instanceId van het bron account waarvan de herstel bewerking wordt gestart.       |
@@ -52,7 +52,7 @@ De `RestoreParameters` resource bevat de details van de herstel bewerking, met i
 
 **DatabaseRestoreResource** : elke resource vertegenwoordigt één data base en alle verzamelingen onder die data base.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 |databaseName | De naam van de database |
 | collectionNames| De lijst met containers onder deze data base |
@@ -128,13 +128,13 @@ Deze resource bevat een exemplaar van een database account dat kan worden herste
 | restorableLocations: creationTime | De tijd in UTC waarop het regionale account is gemaakt.|
 | restorableLocations: deletionTime | De tijd in UTC waarop het regionale account is verwijderd. Deze waarde is leeg als het regionale account actief is.|
 
-Voor een lijst met alle herstorable accounts raadpleegt u [restorable data base accounts-list](restorable-database-accounts-list.md) of [restorable data base accounts-list by locatie](restorable-database-accounts-list-by-location.md) articles.
+Voor een lijst met alle herstorable accounts raadpleegt u [restorable data base accounts-list](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorabledatabaseaccounts/list) of [restorable data base accounts-list by locatie](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorabledatabaseaccounts/listbylocation) articles.
 
 ### <a name="restorable-sql-database"></a>Restorable SQL database
 
 Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en verwijderen van de SQL Database. Deze informatie kan u helpen bij scenario's waarin de data base per ongeluk is verwijderd en als u wilt weten wanneer deze gebeurtenis heeft plaatsgevonden.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 | eventTimestamp | De tijd in UTC waarop de data base wordt gemaakt of verwijderd. |
 | ownerId | De naam van de SQL database. |
@@ -142,13 +142,13 @@ Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en 
 | operationType | Het bewerkings type van deze database gebeurtenis. Dit zijn de mogelijke waarden:<br/><ul><li>Maken: gebeurtenis data base maken</li><li>Verwijderen: gebeurtenis data base verwijderen</li><li>Vervangen: wijzigings gebeurtenis van data base</li><li>SystemOperation: de gebeurtenis voor het wijzigen van de data base is geactiveerd door het systeem. Deze gebeurtenis wordt niet geïnitieerd door de gebruiker</li></ul> |
 | database |De eigenschappen van de SQL database op het moment van de gebeurtenis|
 
-Zie [restorable SQL data bases-List](restorable-sql-databases-list.md) article (Engelstalig) voor een lijst met alle database mutaties.
+Zie [restorable SQL data bases-List](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablesqldatabases/list) article (Engelstalig) voor een lijst met alle database mutaties.
 
 ### <a name="restorable-sql-container"></a>Restorable SQL-container
 
 Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en verwijderen van gegevens die zijn opgetreden in de SQL-container. Deze informatie kan u helpen bij scenario's waarin de container is gewijzigd of verwijderd, en als u wilt weten wanneer deze gebeurtenis zich voordeed.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 | eventTimestamp    | De tijd in UTC waarop deze container gebeurtenis zich voordeed.|
 | ownerId| De naam van de SQL-container.|
@@ -156,55 +156,55 @@ Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en 
 | operationType | Het bewerkings type van deze container gebeurtenis. Dit zijn de mogelijke waarden: <br/><ul><li>Maken: gebeurtenis container maken</li><li>Verwijderen: container verwijderings gebeurtenis</li><li>Vervangen: container wijzigings gebeurtenis</li><li>SystemOperation: de gebeurtenis voor het wijzigen van de container is geactiveerd door het systeem. Deze gebeurtenis wordt niet geïnitieerd door de gebruiker</li></ul> |
 | container | De eigenschappen van de SQL-container op het moment van de gebeurtenis.|
 
-Zie voor een lijst met alle container mutaties onder dezelfde Data Base [restorable SQL-containers-lijst](restorable-sql-containers-list.md) artikel.
+Zie voor een lijst met alle container mutaties onder dezelfde Data Base [restorable SQL-containers-lijst](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablesqlcontainers/list) artikel.
 
 ### <a name="restorable-sql-resources"></a>Onstorbare SQL-resources
 
 Elke resource vertegenwoordigt één data base en alle containers onder die data base.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 | databaseName  | De naam van de SQL database.
 | collectionNames   | De lijst met SQL-containers onder deze data base.|
 
-Zie [restorable SQL resources-list](restorable-sql-resources-list.md) article (Engelstalig) voor een lijst met SQL database en container combinatie die voor het account bestaan op de opgegeven tijds tempel en locatie.
+Zie [restorable SQL resources-list](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablesqlresources/list) article (Engelstalig) voor een lijst met SQL database en container combinatie die voor het account bestaan op de opgegeven tijds tempel en locatie.
 
 ### <a name="restorable-mongodb-database"></a>Restorable MongoDB-data base
 
 Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en verwijderen van gegevens die zijn opgetreden in de MongoDB-data base. Deze informatie kan u helpen bij het scenario waarin de data base per ongeluk is verwijderd en de gebruiker moet nagaan wanneer die gebeurtenis heeft plaatsgevonden.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 |eventTimestamp| De tijd in UTC waarop deze database gebeurtenis plaatsvond.|
 | ownerId| De naam van de MongoDB-data base. |
 | ownerResourceId   | De resource-ID van de MongoDB-data base. |
 | operationType |   Het bewerkings type van deze database gebeurtenis. Dit zijn de mogelijke waarden:<br/><ul><li> Maken: gebeurtenis data base maken</li><li> Verwijderen: gebeurtenis data base verwijderen</li><li> Vervangen: wijzigings gebeurtenis van data base</li><li> SystemOperation: de gebeurtenis voor het wijzigen van de data base is geactiveerd door het systeem. Deze gebeurtenis wordt niet geïnitieerd door de gebruiker </li></ul> |
 
-Zie [restorable MongoDb data bases-List](restorable-mongodb-databases-list.md) article (Engelstalig) voor een lijst met alle database mutaties.
+Zie [restorable MongoDb data bases-List](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablemongodbdatabases/list) article (Engelstalig) voor een lijst met alle database mutaties.
 
 ### <a name="restorable-mongodb-collection"></a>Restorable MongoDB-verzameling
 
 Elke resource bevat informatie over een mutatie gebeurtenis, zoals het maken en verwijderen van gegevens die zijn opgetreden in de MongoDB-verzameling. Deze informatie kan u helpen bij scenario's waarin de verzameling is gewijzigd of verwijderd en de gebruiker moet nagaan wanneer die gebeurtenis heeft plaatsgevonden.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 | eventTimestamp |De tijd in UTC waarop deze verzamelings gebeurtenis plaatsvond. |
 | ownerId| De naam van de MongoDB-verzameling. |
 | ownerResourceId   | De resource-ID van de MongoDB-verzameling. |
 | operationType |Het bewerkings type van deze verzamelings gebeurtenis. Dit zijn de mogelijke waarden:<br/><ul><li>Maken: gebeurtenis verzameling maken</li><li>Verwijderen: gebeurtenis verzameling verwijderen</li><li>Vervangen: gebeurtenis verzameling wijzigen</li><li>SystemOperation: de gebeurtenis voor het wijzigen van de verzameling die door het systeem is geactiveerd. Deze gebeurtenis wordt niet geïnitieerd door de gebruiker</li></ul> |
 
-Zie [restorable MongoDb Collections-List](restorable-mongodb-collections-list.md) article (Engelstalig) voor een lijst met alle container mutaties onder dezelfde data base.
+Zie [restorable MongoDb Collections-List](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablemongodbcollections/list) article (Engelstalig) voor een lijst met alle container mutaties onder dezelfde data base.
 
 ### <a name="restorable-mongodb-resources"></a>Restorable MongoDB-resources
 
 Elke resource vertegenwoordigt één data base en alle verzamelingen onder die data base.
 
-|Eigenschapsnaam |Description  |
+|Eigenschapsnaam |Beschrijving  |
 |---------|---------|
 | databaseName  |De naam van de MongoDB-data base. |
 | collectionNames | De lijst met MongoDB-verzamelingen onder deze data base. |
 
-Voor een lijst met alle combi Naties van MongoDB-data base en-verzameling die voor het account bestaan op de opgegeven tijds tempel en locatie, raadpleegt u [restorable MongoDb resources-lijst](restorable-mongodb-resources-list.md) artikel.
+Voor een lijst met alle combi Naties van MongoDB-data base en-verzameling die voor het account bestaan op de opgegeven tijds tempel en locatie, raadpleegt u [restorable MongoDb resources-lijst](/rest/api/cosmos-db-resource-provider/2020-06-01-preview/restorablemongodbresources/list) artikel.
 
 ## <a name="next-steps"></a>Volgende stappen
 

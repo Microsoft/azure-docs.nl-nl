@@ -244,6 +244,8 @@
           href: how-to-use-android-map-control-library.md
         - name: Stijl van de kaart wijzigen
           href: set-android-map-styles.md
+        - name: Besturingselementen toevoegen aan de kaart
+          href: map-add-controls-android.md
         - name: Een gegevensbron maken
           href: create-data-source-android-sdk.md
         - name: Een symboollaag toevoegen
@@ -256,8 +258,12 @@
           href: android-map-add-line-layer.md
         - name: Een polygoonlaag toevoegen
           href: how-to-add-shapes-to-android-map.md
+        - name: Een laag met een polygooneffect toevoegen
+          href: map-extruded-polygon-android.md
         - name: Heatmap-laag toevoegen
           href: map-add-heat-map-layer-android.md
+        - name: Een afbeeldingslaag toevoegen
+          href: map-add-image-layer-android.md
         - name: Een titellaag toevoegen
           href: how-to-add-tile-layer-android-map.md
         - name: Verkeergegevens weergeven

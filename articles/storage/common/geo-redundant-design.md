@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 05/05/2020
+ms.date: 02/18/2021
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c16f8233a2800025a8c6f601e236b86d2fd044fd
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 1a07acedadfaf3d5158ba8e494d4527301655425
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480680"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035098"
 ---
 # <a name="use-geo-redundancy-to-design-highly-available-applications"></a>Geo-redundantie gebruiken om Maxi maal beschik bare toepassingen te ontwerpen
 
@@ -122,7 +122,7 @@ Er zijn in feite twee scenario's waarmee u rekening moet houden wanneer u beslis
 
     In dit scenario is er sprake van een prestatie vermindering, omdat al uw Lees aanvragen eerst het primaire eind punt proberen. wacht totdat de time-out is verlopen en schakel vervolgens over naar het secundaire eind punt.
 
-Voor deze scenario's moet u nagaan of er een doorlopend probleem met het primaire eind punt is en alle Lees aanvragen rechtstreeks naar het secundaire eind punt verzenden door de eigenschap **LocationMode** in te stellen op **SecondaryOnly** . Op dit moment moet u ook de toepassing wijzigen zodat deze wordt uitgevoerd in de modus alleen-lezen. Deze benadering wordt het [patroon circuit onderbreker](/azure/architecture/patterns/circuit-breaker)genoemd.
+Voor deze scenario's moet u nagaan of er een doorlopend probleem met het primaire eind punt is en alle Lees aanvragen rechtstreeks naar het secundaire eind punt verzenden door de eigenschap **LocationMode** in te stellen op **SecondaryOnly**. Op dit moment moet u ook de toepassing wijzigen zodat deze wordt uitgevoerd in de modus alleen-lezen. Deze benadering wordt het [patroon circuit onderbreker](/azure/architecture/patterns/circuit-breaker)genoemd.
 
 ### <a name="update-requests"></a>Update aanvragen
 
@@ -148,6 +148,12 @@ Er zijn drie belang rijke opties voor het bewaken van de frequentie van nieuwe p
 
 * Een handler toevoegen [**voor het**](/dotnet/api/microsoft.azure.cosmos.table.operationcontext.retrying) [**OperationContext**](/java/api/com.microsoft.applicationinsights.extensibility.context.operationcontext) -object dat u aan uw opslag aanvragen door gegeven. Dit is de methode die wordt weer gegeven in dit artikel en wordt gebruikt in het bijbehorende voor beeld. Deze gebeurtenissen worden geactiveerd wanneer de client een aanvraag opnieuw probeert, zodat u kunt bijhouden hoe vaak de client herstel bare fouten op een primair eind punt tegen komt.
 
+    # <a name="net-v12"></a>[.NET v12](#tab/current)
+
+    We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+    # <a name="net-v11"></a>[.NET v11](#tab/legacy)
+
     ```csharp
     operationContext.Retrying += (sender, arguments) =>
     {
@@ -156,8 +162,15 @@ Er zijn drie belang rijke opties voor het bewaken van de frequentie van nieuwe p
             ...
     };
     ```
+    ---
 
 * In de methode [**Evaluate**](/dotnet/api/microsoft.azure.cosmos.table.iextendedretrypolicy.evaluate) in een aangepast beleid voor opnieuw proberen kunt u aangepaste code uitvoeren wanneer een nieuwe poging plaatsvindt. Naast het vastleggen wanneer een nieuwe poging gebeurt, biedt dit ook de mogelijkheid om het gedrag voor opnieuw proberen aan te passen.
+
+    # <a name="net-v12"></a>[.NET v12](#tab/current)
+
+    We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+    # <a name="net-v11"></a>[.NET v11](#tab/legacy)
 
     ```csharp
     public RetryInfo Evaluate(RetryContext retryContext,
@@ -184,6 +197,7 @@ Er zijn drie belang rijke opties voor het bewaken van de frequentie van nieuwe p
         return info;
     }
     ```
+    ---
 
 * De derde benadering is het implementeren van een aangepast bewakings onderdeel in uw toepassing dat uw primaire opslag eindpunt continu pingt met Dummy Lees aanvragen (zoals het lezen van een kleine blob) om de status te bepalen. Dit kan enkele resources duren, maar dit is geen aanzienlijke hoeveelheid. Wanneer er een probleem wordt gedetecteerd dat de drempel waarde bereikt, voert u de switch uit naar **SecondaryOnly** en de modus alleen-lezen.
 
@@ -209,7 +223,7 @@ In de volgende tabel ziet u een voor beeld van wat er kan gebeuren wanneer u de 
 
 In dit voor beeld wordt ervan uitgegaan dat de client overschakelt van de secundaire regio op t 5. De entiteit **rol van beheerder** kan op dit moment worden gelezen, maar de entiteit bevat een waarde voor het aantal beheerders dat niet consistent is met het aantal **werknemers** entiteiten dat op dit moment als Administrators is gemarkeerd. Uw client zou deze waarde gewoon kunnen weer geven, met het risico dat het inconsistente informatie is. De client kan ook proberen te bepalen dat de beheerdersrol een mogelijk inconsistente **status heeft omdat** de updates in de juiste volg orde zijn verlopen en vervolgens de gebruiker op de hoogte stellen van dit feit.
 
-Om te herkennen dat het mogelijk inconsistente gegevens bevat, kan de client de waarde van de *laatste synchronisatie tijd* gebruiken die u op elk gewenst moment kunt bereiken door een opslag service te doorzoeken. Dit geeft u het tijdstip waarop de gegevens in de secundaire regio voor het laatst consistent zijn en toen de service alle trans acties vóór dat moment heeft toegepast. In het bovenstaande voor beeld, nadat de **werknemers** entiteit in de secundaire regio is ingevoegd, wordt de laatste synchronisatie tijd ingesteld op *T1* . Deze blijft op *T1* totdat de service de werknemers entiteit in de secundaire regio **bijwerkt** wanneer deze is ingesteld op *T6* . Als de client de laatste synchronisatie tijd ophaalt bij het lezen van de entiteit op *T5* , kan deze worden vergeleken met de tijds tempel van de entiteit. Als de tijds tempel van de entiteit later is dan de laatste synchronisatie tijd, heeft de entiteit een mogelijk inconsistente status en kunt u de juiste actie ondernemen voor uw toepassing. Als u dit veld wilt gebruiken, moet u weten wanneer de laatste update voor de primaire is voltooid.
+Om te herkennen dat het mogelijk inconsistente gegevens bevat, kan de client de waarde van de *laatste synchronisatie tijd* gebruiken die u op elk gewenst moment kunt bereiken door een opslag service te doorzoeken. Dit geeft u het tijdstip waarop de gegevens in de secundaire regio voor het laatst consistent zijn en toen de service alle trans acties vóór dat moment heeft toegepast. In het bovenstaande voor beeld, nadat de **werknemers** entiteit in de secundaire regio is ingevoegd, wordt de laatste synchronisatie tijd ingesteld op *T1*. Deze blijft op *T1* totdat de service de werknemers entiteit in de secundaire regio **bijwerkt** wanneer deze is ingesteld op *T6*. Als de client de laatste synchronisatie tijd ophaalt bij het lezen van de entiteit op *T5*, kan deze worden vergeleken met de tijds tempel van de entiteit. Als de tijds tempel van de entiteit later is dan de laatste synchronisatie tijd, heeft de entiteit een mogelijk inconsistente status en kunt u de juiste actie ondernemen voor uw toepassing. Als u dit veld wilt gebruiken, moet u weten wanneer de laatste update voor de primaire is voltooid.
 
 Zie voor meer informatie over het controleren van de laatste synchronisatie tijd [de eigenschap laatste synchronisatie tijd voor een opslag account](last-sync-time-get.md).
 
@@ -218,6 +232,13 @@ Zie voor meer informatie over het controleren van de laatste synchronisatie tijd
 Het is belang rijk om te testen of uw toepassing werkt zoals verwacht wanneer er herstel bare fouten optreden. U moet bijvoorbeeld testen of de toepassing overschakelt naar de secundaire modus en alleen-lezen als er een probleem wordt gedetecteerd en overschakelen wanneer de primaire regio weer beschikbaar is. Hiervoor moet u een manier hebben om herstel bare fouten te simuleren en te bepalen hoe vaak deze optreden.
 
 U kunt [Fiddler](https://www.telerik.com/fiddler) gebruiken om HTTP-antwoorden in een script te onderscheppen en te wijzigen. Met dit script kunnen reacties worden geïdentificeerd die afkomstig zijn van uw primaire eind punt en de HTTP-status code wijzigen in een die door de Storage-client bibliotheek wordt herkend als een herstel bare fout. Dit code fragment toont een eenvoudig voor beeld van een Fiddler-script waarmee antwoorden op Lees aanvragen worden onderschept in de **employeedata** -tabel om een status van 502 te retour neren:
+
+
+# <a name="java-v12"></a>[Java-V12](#tab/current)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="java-v11"></a>[Java-V11](#tab/legacy)
 
 ```java
 static function OnBeforeResponse(oSession: Session) {

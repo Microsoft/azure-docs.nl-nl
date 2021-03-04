@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 keywords: cognitieve services, cognitieve intelligentie, cognitieve oplossingen, AI-services
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
-ms.openlocfilehash: c52d935738916ebc546315d9913d7a48c77cbf9a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 95d74601ca912647eadd1bd4e1045108be6b2adb
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944999"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050066"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Command-Line interface (CLI)
 

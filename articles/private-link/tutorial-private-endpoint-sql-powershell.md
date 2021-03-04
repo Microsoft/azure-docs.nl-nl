@@ -7,12 +7,13 @@ ms.service: private-link
 ms.topic: tutorial
 ms.date: 10/31/2020
 ms.author: allensu
-ms.openlocfilehash: 7448e003771bea1e235d4e0776ebce3cb1beae17
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 4999d8b5d5ebe5d44aae782589b5c63324a4027b
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544085"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102096510"
 ---
 # <a name="tutorial---connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-powershell"></a>Zelfstudie: Verbinding maken met een Azure SQL-server met behulp van een privé-eindpunt in Azure - Azure PowerShell
 
@@ -336,6 +337,8 @@ In deze zelfstudie hebt u het volgende gemaakt:
 * Een Azure SQL-server met een privé-eindpunt.
 
 U hebt de virtuele machine gebruikt om de connectiviteit met de SQL-server via het privé-eindpunt veilig te testen.
+
+Als volgende stap hebt u mogelijk ook geïnteresseerd in de web- [app met een particuliere verbinding met het Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
 
 Een Private Link-service maken:
 > [!div class="nextstepaction"]

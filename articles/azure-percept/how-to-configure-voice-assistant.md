@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/15/2021
 ms.custom: template-how-to
-ms.openlocfilehash: ec3e06b2d161785b5e6978cdf4cc6415fc0eb592
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b22ef4ee0a8b5978bb2ec1c02fadf368815f3014
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662424"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102095779"
 ---
 # <a name="configure-voice-assistant-application-using-azure-iot-hub"></a>De toepassing Voice Assistant configureren met behulp van Azure IoT Hub
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u uw Voice Assistant-toepassing configureert
 
 ## <a name="update-your-voice-assistant-configuration"></a>De configuratie van uw Voice Assistant bijwerken
 
-1. Open de [Azure Portal](https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_Iothub=aduprod&microsoft_azure_marketplace_ItemHideKey=Microsoft_Azure_ADUHidden#home) en typ **IOT hub** in de zoek balk. Klik op het pictogram om de pagina IoT Hub te openen.
+1. Open de [Azure Portal](https://portal.azure.com) en typ **IOT hub** in de zoek balk. Klik op het pictogram om de pagina IoT Hub te openen.
 
 1. Selecteer op de pagina IoT Hub het IoT Hub waarop het apparaat is ingericht.
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u uw Voice Assistant-toepassing configureert
 
 1. Klik op **set-modules**.
 
-    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/set-modules.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/set-modules.png" alt-text="Scherm afbeelding van de pagina apparaat met set-modules gemarkeerd.":::
 
 1. Controleer of de volgende vermelding aanwezig is in het gedeelte **container Registry referenties** . Voeg indien nodig referenties toe.
 
@@ -40,30 +40,17 @@ In dit artikel wordt beschreven hoe u uw Voice Assistant-toepassing configureert
 
 1. Selecteer in de sectie **IOT Edge modules** de optie **azureearspeechclientmodule**.
 
-    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/modules.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/modules.png" alt-text="Scherm afbeelding met een lijst met alle IoT Edge modules op het apparaat.":::
 
 1. Klik op het tabblad **module-instellingen** . Controleer de volgende configuratie:
 
-    |URI installatiekopie|Beleid opnieuw opstarten|Gewenste status|
-    |---------|--------------|--------------|
-    |azureedgedevices.azurecr.io/azureearspeechclientmodule:preload-devkit |altijd|Voer|
+    URI installatiekopie|Beleid opnieuw opstarten|Gewenste status
+    ---------|--------------|--------------
+    mcr.microsoft.com/azureedgedevices/azureearspeechclientmodule:preload-devkit|altijd|Voer
 
     Als uw instellingen niet overeenkomen, bewerkt u deze en klikt u op **bijwerken**.
 
 1. Klik op het tabblad **omgevings variabelen** . Controleer of er geen omgevings variabelen zijn gedefinieerd.
-
-1. Klik op het tabblad Opties voor het maken van de **container** . Controleer of uw **HostConfig** -instellingen overeenkomen met die hieronder worden weer gegeven. Als dat niet het geval is, werkt u de instellingen bij.
-
-    ```
-    {
-        "HostConfig": {
-            "Privileged": true,
-            "Binds": [
-                "/dev:/dev"
-            ]
-        }
-    }
-    ```
 
 1. Klik op het tabblad **dubbele instellingen** voor de module. Werk de sectie **speechConfigs** als volgt bij:
 
@@ -72,7 +59,7 @@ In dit artikel wordt beschreven hoe u uw Voice Assistant-toepassing configureert
         "appId": "<Application id for custom command project>",
         "key": "<Speech Resource key for custom command project>",
         "region": "<Region for the speech service>",
-        "keywordModelUrl": "https://aedspeechscenarios.blob.core.windows.net/keyword-tables/computer.table",
+        "keywordModelUrl": "https://aedsamples.blob.core.windows.net/speech/keyword-tables/computer.table",
         "keyword": "computer"
     }
     ```
@@ -88,16 +75,16 @@ Als u uw **appID**, **sleutel** en **regio** wilt vinden, gaat u naar [Speech St
 1. Klik op de start pagina van **Speech Studio** op **aangepaste opdrachten** onder **spraak assistenten**.
 1. Selecteer uw doel project.
 
-    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/project.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/project.png" alt-text="Scherm afbeelding van de project pagina in speech Studio.":::
 
 1. Klik op **instellingen** in het deel venster aan de linkerkant.
 1. De **appID** en de **sleutel** vindt u op het tabblad **algemene** instellingen.
 
-    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/general-settings.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/general-settings.png" alt-text="Scherm afbeelding van de algemene instellingen van het spraak project.":::
 
 1. Als u uw **regio** wilt vinden, opent u het tabblad **Luis resources** binnen de instellingen. De selectie van de **ontwerp bron** bevat regio-informatie.
 
-    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/luis-resources.png" alt-text="Bitmapafbeelding.":::
+    :::image type="content" source="./media/manage-voice-assistant-using-iot-hub/luis-resources.png" alt-text="Scherm opname van LUIS-resources van speech project.":::
 
 1. Nadat u uw **speechConfigs** -gegevens hebt ingevoerd, klikt u op **bijwerken**.
 
@@ -113,6 +100,8 @@ Als u uw **appID**, **sleutel** en **regio** wilt vinden, gaat u naar [Speech St
 
 1. Klik op **Create**.
 
+
 ## <a name="next-steps"></a>Volgende stappen
 
 Nadat u de configuratie van de Voice Assistant hebt bijgewerkt, gaat u terug naar de demo in azure percept Studio om te communiceren met de toepassing.
+

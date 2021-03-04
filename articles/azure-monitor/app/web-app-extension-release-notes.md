@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: MS-jgol
 ms.author: jgol
 ms.date: 06/26/2020
-ms.openlocfilehash: b9da3b0647d5abe60dd8f6cb21163ff21f07205b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07ba61f630b849a377f1c7ba881f95518eb73606
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86539717"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042603"
 ---
 # <a name="release-notes-for-azure-web-app-extension-for-application-insights"></a>Release opmerkingen voor de Azure web app-extensie voor Application Insights
 
@@ -27,6 +27,24 @@ Meer [informatie](azure-web-apps.md) over de extensie van Azure web-apps voor Ap
     - Verwijder de uitbrei dingen van de persoonlijke site, omdat deze niet meer worden ondersteund.
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="2838"></a>2.8.38
+
+- JAVA-extensie: bijgewerkt naar [Java Agent 3.0.2 (ga)](https://github.com/microsoft/ApplicationInsights-Java/releases/tag/3.0.2) van 2.5.1.
+- Node.js extensie: de AI SDK is bijgewerkt naar [1.8.8](https://github.com/microsoft/ApplicationInsights-node.js/releases/tag/1.8.8) vanuit 1.8.7.
+- .NET core: er zijn niet-ondersteunde versies (2,0, 2,2, 3,0) verwijderd. Ondersteunde versies zijn 2,1 en 3,1.
+
+### <a name="2837"></a>2.8.37
+
+- AppSvc Windows-extensie: er is al een versie van System.Diagnostics.DiagnosticSource.dll .net Core gebruikt.
+
+### <a name="2836"></a>2.8.36
+
+- AppSvc Windows-uitbrei ding: Inter-op inschakelen met AI SDK in .NET core.
+
+### <a name="2835"></a>2.8.35
+
+- AppSvc Windows-extensie: er is ondersteuning voor .NET Core 3,1 toegevoegd.
 
 ### <a name="2833"></a>2.8.33
 

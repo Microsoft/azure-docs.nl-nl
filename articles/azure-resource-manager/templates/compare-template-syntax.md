@@ -1,14 +1,14 @@
 ---
-title: Azure Resource Manager sjablonen converteren tussen JSON en Bicep
-description: Vergelijkt Azure Resource Manager sjablonen die zijn ontwikkeld met JSON en Bicep.
+title: Syntaxis van Azure Resource Manager sjablonen in JSON en Bicep vergelijken
+description: Vergelijkt Azure Resource Manager sjablonen die zijn ontwikkeld met JSON en Bicep en laat zien hoe u kunt converteren tussen de talen.
 ms.topic: conceptual
-ms.date: 02/19/2021
-ms.openlocfilehash: 9388ed50f13d6885d0a0668b61a9141dae375244
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: 29c2b9948957ebc10a26f22f0fe3daf383dfe5ba
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101744586"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036211"
 ---
 # <a name="comparing-json-and-bicep-for-templates"></a>JSON en Bicep vergelijken voor sjablonen
 
@@ -18,40 +18,21 @@ In dit artikel wordt Bicep-syntaxis vergeleken met de JSON-syntaxis voor Azure R
 
 Als u bekend bent met het gebruik van JSON voor het ontwikkelen van ARM-sjablonen, gebruikt u de volgende tabel voor meer informatie over de equivalente syntaxis voor Bicep.
 
-| Scenario | ARM-sjabloon | Bicep |
+| Scenario | Bicep | JSON |
 | -------- | ------------ | ----- |
-| Een expressie maken | `"[func()]"` | `func()` |
-| Parameter waarde ophalen | `[parameters('exampleParameter'))]` | `exampleParameter` |
-| Waarde van variabele ophalen | `[variables('exampleVar'))]` | `exampleVar` |
-| Tekenreeksen samenvoegen | `[concat(parameters('namePrefix'), '-vm')]` | `'${namePrefix}-vm'` |
-| Eigenschap van de resource instellen | `"sku": "2016-Datacenter",` | `sku: '2016-Datacenter'` |
-| Retourneert de logische en | `[and(parameter('isMonday'), parameter('isNovember'))]` | `isMonday && isNovember` |
-| Resource-ID van resource ophalen in de sjabloon | `[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]` | `nic1.id` |
-| Eigenschap ophalen uit resource in de sjabloon | `[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))).primaryEndpoints.blob]` | `diagsAccount.properties.primaryEndpoints.blob` |
-| Voorwaardelijk een waarde instellen | `[if(parameters('isMonday'), 'valueIfTrue', 'valueIfFalse')]` | `isMonday ? 'valueIfTrue' : 'valueIfFalse'` |
-| Een oplossing scheiden in meerdere bestanden | Gekoppelde sjablonen gebruiken | Modules gebruiken |
-| Het doel bereik van de implementatie instellen | `"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#"` | `targetScope = 'subscription'` |
-| Afhankelijkheid instellen | `"dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts', 'parameters('storageAccountName'))]"]` | Vertrouw op automatische detectie van afhankelijkheden of stel de afhankelijkheid hand matig in met `dependsOn: [ stg ]` |
-
-Als u het type en de versie voor een resource wilt declareren, gebruikt u het volgende in Bicep:
-
-```bicep
-resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = {
-  ...
-}
-```
-
-In plaats van de equivalente syntaxis in JSON:
-
-```json
-"resources": [
-  {
-    "type": "Microsoft.Compute/virtualMachines",
-    "apiVersion": "2020-06-01",
-    ...
-  }
-]
-```
+| Een expressie maken | `func()` | `"[func()]"` |
+| Parameter waarde ophalen | `exampleParameter` | `[parameters('exampleParameter'))]` |
+| Waarde van variabele ophalen | `exampleVar` | `[variables('exampleVar'))]` |
+| Tekenreeksen samenvoegen | `'${namePrefix}-vm'` | `[concat(parameters('namePrefix'), '-vm')]` |
+| Eigenschap van de resource instellen | `sku: '2016-Datacenter'` | `"sku": "2016-Datacenter",` |
+| Retourneert de logische en | `isMonday && isNovember` | `[and(parameter('isMonday'), parameter('isNovember'))]` |
+| Resource-ID van resource ophalen in de sjabloon | `nic1.id` | `[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]` |
+| Eigenschap ophalen uit resource in de sjabloon | `diagsAccount.properties.primaryEndpoints.blob` | `[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))).primaryEndpoints.blob]` |
+| Voorwaardelijk een waarde instellen | `isMonday ? 'valueIfTrue' : 'valueIfFalse'` | `[if(parameters('isMonday'), 'valueIfTrue', 'valueIfFalse')]` |
+| Een oplossing scheiden in meerdere bestanden | Modules gebruiken | Gekoppelde sjablonen gebruiken |
+| Het doel bereik van de implementatie instellen | `targetScope = 'subscription'` | `"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#"` |
+| Afhankelijkheid instellen | Vertrouw op automatische detectie van afhankelijkheden of stel de afhankelijkheid hand matig in met `dependsOn: [ stg ]` | `"dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts', 'parameters('storageAccountName'))]"]` |
+| Resource declaratie | `resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = {...}` | `"resources": [ { "type": "Microsoft.Compute/virtualMachines", "apiVersion": "2020-06-01", ... } ]` |
 
 ## <a name="recommendations"></a>Aanbevelingen
 
@@ -63,10 +44,7 @@ In plaats van de equivalente syntaxis in JSON:
 
 De Bicep CLI biedt een opdracht voor het decompileren van een bestaande ARM-sjabloon in een Bicep-bestand. Gebruik voor het decompileren van een JSON-bestand: `bicep decompile "path/to/file.json"`
 
-Met deze opdracht wordt een start punt geboden voor Bicep-ontwerp, maar de opdracht werkt niet voor alle sjablonen. De opdracht kan mislukken of u moet mogelijk problemen oplossen na de decompilatie. Op dit moment heeft de opdracht de volgende beperkingen:
-
-* Sjablonen die gebruikmaken van Kopieer lussen kunnen niet worden ontcompilatied.
-* Geneste sjablonen kunnen alleen worden ontcompileerd als ze het evaluatie bereik ' binnenste ' gebruiken.
+Met deze opdracht wordt een start punt geboden voor Bicep-ontwerp, maar de opdracht werkt niet voor alle sjablonen. De opdracht kan mislukken of u moet mogelijk problemen oplossen na de decompilatie. Op dit moment kunnen geneste sjablonen alleen worden ontcompileerd als ze het evaluatie bereik ' binnenste ' gebruiken.
 
 U kunt de sjabloon voor een resource groep exporteren en deze vervolgens rechtstreeks door geven aan de opdracht Bicep decompile. In het volgende voor beeld ziet u hoe u een geëxporteerde sjabloon decompileert.
 
@@ -100,4 +78,4 @@ Met de [Bicep Playground](https://aka.ms/bicepdemo) kunt u GELIJKWAARDIGe JSON-e
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [project Bicep](https://github.com/Azure/bicep)voor meer informatie over het Bicep-project.
+Zie [Bicep-zelf studie](./bicep-tutorial-create-first-bicep.md)voor meer informatie over de Bicep.

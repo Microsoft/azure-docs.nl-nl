@@ -1,17 +1,16 @@
 ---
 title: Gegevens bronnen in Azure Monitor | Microsoft Docs
 description: Beschrijft de gegevens die beschikbaar zijn voor het bewaken van de status en prestaties van uw Azure-resources en de toepassingen die erop worden uitgevoerd.
-ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/06/2020
-ms.openlocfilehash: e03e31c342f90a0ea9f24e6be098a801410d4b72
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 537163b4a78954443eeb7799dc624837ba03e2bd
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101732085"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102036619"
 ---
 # <a name="sources-of-monitoring-data-for-azure-monitor"></a>Bronnen van bewakings gegevens voor Azure Monitor
 Azure Monitor is gebaseerd op een [Algemeen bewakings gegevensplatform](../data-platform.md) dat [Logboeken](../logs/data-platform-logs.md) en [metrische](../essentials/data-platform-metrics.md)gegevens bevat. Door gegevens te verzamelen in dit platform kunnen gegevens uit meerdere bronnen worden geanalyseerd met behulp van een gemeen schappelijke set hulpprogram ma's in Azure Monitor. Bewakings gegevens kunnen ook worden verzonden naar andere locaties ter ondersteuning van bepaalde scenario's en sommige resources kunnen naar andere locaties schrijven voordat ze kunnen worden verzameld in Logboeken of metrische gegevens.

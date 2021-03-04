@@ -15,19 +15,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: d388478fb3bc9b4e355d8c3cd3f16c0a785b8b27
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: da7d540a4b7982c7f743a7ae968515485b45aa5a
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100578923"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035420"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Logstash gebruiken om gegevens bronnen te verbinden met Azure Sentinel
 
 > [!IMPORTANT]
 > Gegevens opname met behulp van de Logstash-uitvoer-invoeg toepassing is momenteel beschikbaar als open bare preview. Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Met de nieuwe uitvoer-invoeg toepassing van Azure Sentinel voor de **Logstash-engine voor gegevens verzameling** kunt u nu elk type logboek dat u wilt door Logstash rechtstreeks naar uw log Analytics-werk ruimte verzenden in azure Sentinel. Uw logboeken worden verzonden naar een aangepaste tabel die u gaat definiëren met behulp van de uitvoer-invoeg toepassing.
+Met de uitvoer-invoeg toepassing van Azure Sentinel voor de **Logstash-engine voor gegevens verzameling** kunt u elk type logboek dat u wilt door Logstash rechtstreeks naar uw log Analytics-werk ruimte verzenden in azure Sentinel. Uw logboeken worden verzonden naar een aangepaste tabel die u gaat definiëren met behulp van de uitvoer-invoeg toepassing.
 
 Zie aan de slag [met Logstash](https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html)voor meer informatie over het werken met de Logstash-engine voor het verzamelen van gegevens.
 
@@ -65,7 +65,7 @@ De Azure Sentinel output-invoeg toepassing is beschikbaar in de Logstash-verzame
 
 Gebruik de informatie in de Logstash- [structuur van een config file](https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html) -document en voeg de invoeg toepassing Azure Sentinel output toe aan de configuratie met de volgende sleutels en waarden. (De juiste syntaxis van het configuratie bestand wordt weer gegeven na de tabel.)
 
-| Veldnaam | Gegevenstype | Description |
+| Veldnaam | Gegevenstype | Beschrijving |
 |----------------|---------------|-----------------|
 | `workspace_id` | tekenreeks | Voer uw werk ruimte-ID-GUID in. * |
 | `workspace_key` | tekenreeks | Voer de GUID van de primaire sleutel van uw werk ruimte in. * |
@@ -76,8 +76,10 @@ Gebruik de informatie in de Logstash- [structuur van een config file](https://ww
 | `plugin_flush_interval` | getal | Optioneel veld. Stel in om het maximum interval (in seconden) te definiëren tussen het verzenden van berichten naar Log Analytics. De standaard waarde is 5. |
     | `amount_resizing` | booleaans | Waar of onwaar. Het mechanisme voor automatisch schalen in-of uitschakelen, waarbij de grootte van de bericht buffer wordt aangepast op basis van het volume van de ontvangen logboek gegevens. |
 | `max_items` | getal | Optioneel veld. Geldt alleen indien `amount_resizing` ingesteld op ' false '. Gebruiken om een limiet in te stellen voor de buffer grootte van het bericht (in records). De standaardwaarde is 2000.  |
+| `azure_resource_id` | tekenreeks | Optioneel veld. Hiermee definieert u de ID van de Azure-resource waarin de gegevens zich bevinden. <br>De resource-ID-waarde is vooral nuttig als u [resource-context RBAC](resource-context-rbac.md) gebruikt om alleen toegang te bieden tot specifieke gegevens. |
+| | | |
 
-\* U kunt de werk ruimte-ID en primaire sleutel vinden in de werkruimte resource, onder **agents beheren**.
+* U kunt de werk ruimte-ID en primaire sleutel vinden in de werkruimte resource, onder **agents beheren**.
 
 #### <a name="sample-configurations"></a>Voorbeeld configuraties
 

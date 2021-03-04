@@ -12,12 +12,12 @@ ms.date: 01/12/2021
 ms.author: yulili
 ms.custom: references_regions
 zone_pivot_groups: programming-languages-speech-services-nomore-variant
-ms.openlocfilehash: 8602d43113f4ce21cdb430e1fa3e83f006c64753
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: dc1ab8bd1a851f7fafd5c001ac73e66973e1b64c
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185560"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102051885"
 ---
 # <a name="pronunciation-assessment"></a>Beoordeling van uitspraak
 
@@ -28,7 +28,7 @@ Docenten kunnen de mogelijkheid gebruiken om de uitspraak van meerdere sprekers 
 In dit artikel vindt u informatie over het instellen `PronunciationAssessmentConfig` en ophalen van het `PronunciationAssessmentResult` gebruik van de spraak-SDK.
 
 > [!NOTE]
-> De functie voor het beoordelen van uitspraak is momenteel alleen beschikbaar in regio's `westus` `eastasia` en `centralindia` ondersteunt alleen talen `en-US` .
+> De functie voor het beoordelen van uitspraak ondersteunt momenteel alleen de taal `en-US` .
 
 ## <a name="pronunciation-assessment-with-the-speech-sdk"></a>Uitspraak beoordeling met de Speech SDK
 
@@ -140,8 +140,8 @@ pronunciationAssessmentConfig.applyTo(speechRecognizer);
 
 speechRecognizer.recognizeOnceAsync((result: SpeechSDK.SpeechRecognitionResult) => {
         var pronunciationAssessmentResult = SpeechSDK.PronunciationAssessmentResult.fromResult(result);
-        var pronunciationScore = pronResult.pronunciationScore;
-        var wordLevelResult = pronResult.detailResult.Words;
+        var pronunciationScore = pronunciationAssessmentResult.pronunciationScore;
+        var wordLevelResult = pronunciationAssessmentResult.detailResult.Words;
 },
 {});
 ```

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
 ms.author: yegu
-ms.openlocfilehash: d52998e477e44f89a35a70f7e2b5d49cbc68e386
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: edf7a7cdbd24249205fedb4654aa092755700910
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662250"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102035650"
 ---
 # <a name="configure-active-geo-replication-for-enterprise-azure-cache-for-redis-instances-preview"></a>Actieve geo-replicatie voor redis-exemplaren van Azure in Enter prise configureren (preview)
 
@@ -36,7 +36,7 @@ Actieve geo-replicatie groepen twee of meer Enter prise Azure-cache voor redis-i
 
 1. Klik op **configureren** om te volt ooien.
 
-    ![Caches koppelen](./media/cache-how-to-active-geo-replication/cache-active-geo-replication-configured.png)
+    ![Actieve geo-replicatie geconfigureerd](./media/cache-how-to-active-geo-replication/cache-active-geo-replication-configured.png)
 
 1. Herhaal de bovenstaande stappen voor elk extra cache-exemplaar in de groep geo-replicatie.
 

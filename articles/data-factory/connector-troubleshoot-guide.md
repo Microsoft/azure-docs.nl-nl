@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 02/08/2021
 ms.author: jingwang
 ms.custom: has-adal-ref
-ms.openlocfilehash: 574c4967c1e45ce1ae2be92d8648d654322e2244
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9d8f940e3900c00b1c6f6623dfeff2d92ca85aa3
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727818"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042430"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -831,7 +831,7 @@ In dit artikel worden algemene manieren besproken om problemen met Azure Data Fa
 
     Als de inhoud van de persoonlijke sleutel van uw sleutel kluis is, kan het bestand van de oorspronkelijke sleutel werken als u het rechtstreeks naar de gekoppelde service van SFTP uploadt.
 
-    Zie [gegevens kopiëren van en naar de sftp-server met behulp van Azure Data Factory](./connector-sftp.md#using-ssh-public-key-authentication)voor meer informatie. De inhoud van de persoonlijke sleutel is base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
+    Zie [gegevens kopiëren van en naar de sftp-server met behulp van Azure Data Factory](./connector-sftp.md#use-ssh-public-key-authentication)voor meer informatie. De inhoud van de persoonlijke sleutel is base64-gecodeerde SSH-inhoud met een persoonlijke sleutel.
 
     Versleutel het *hele* oorspronkelijke persoonlijke sleutel bestand met base64-code ring en sla de versleutelde teken reeks op in uw sleutel kluis. Het oorspronkelijke persoonlijke-sleutel bestand is de naam die kan worden gebruikt voor de gekoppelde service van SFTP als u **uploaden** selecteert in het bestand.
 

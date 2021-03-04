@@ -1,5 +1,5 @@
 ---
-title: Onboarden naar Defender voor IoT-oplossing op basis van een agent
+title: Onboarding Defender voor IoT naar een oplossing op basis van een agent
 description: Ontdek hoe u de Defender for IoT-beveiligingsservice in uw Azure IoT-hub inschakelt.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/20/2021
 ms.author: shhazam
-ms.openlocfilehash: 127e439a7740cb97cbe126071aaaa5245cd85782
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: 62ea7b95609f9e1f896852da5c10244d1bd16ce1
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809125"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049922"
 ---
-# <a name="onboard-to-defender-for-iot-agent-based-solution"></a>Onboarden naar Defender voor IoT-oplossing op basis van een agent
+# <a name="onboard-defender-for-iot-to-an-agent-based-solution"></a>Onboarding Defender voor IoT naar een oplossing op basis van een agent
 
 In dit artikel wordt uitgelegd hoe u de Defender voor IoT-service op uw bestaande IoT Hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](../iot-hub/iot-hub-create-through-portal.md) om aan de slag te gaan.
 
@@ -35,7 +35,7 @@ U kunt uw IoT-beveiliging beheren via de IoT Hub in Defender voor IoT. Met de be
 > [!NOTE]
 > Defender for IoT biedt momenteel alleen ondersteuning voor IoT-hubs van de Standard-laag.
 
-## <a name="onboard-to-defender-for-iot-in-iot-hub"></a>Onboarden naar Defender voor IoT in IoT Hub
+## <a name="onboard-defender-for-iot-to-an-iot-hub"></a>Onboarding Defender voor IoT naar een IoT Hub
 
 Voor alle nieuwe IoT-hubs is Defender voor IoT **ingesteld op standaard** . U kunt controleren of Defender voor IoT wordt in-of uitgeschakeld tijdens het proces voor het maken **van** de IOT hub.
 
@@ -55,14 +55,23 @@ Als u wilt controleren of de wissel knop is ingesteld **op op**:
 
 ## <a name="onboard-defender-for-iot-to-an-existing-iot-hub"></a>Onboarding Defender voor IoT naar een bestaande IoT Hub
 
-U kunt uw apparaat-id-beheer, apparaat-naar-Cloud-en Cloud-naar-apparaat communicatie patronen controleren. Ga als volgt te werk om de service te starten: 
+U kunt Defender voor IoT uitvoeren op een bestaande IoT Hub, waar u vervolgens het apparaat Identity Management, het apparaat naar de Cloud en de communicatie patronen van de apparaten kunt controleren.
 
-1. Navigeer naar IoT Hub. 
+Voor een onboarding van Defender voor IoT naar een bestaande IoT Hub:
 
-1. Selecteer het menu **beveiligings overzicht**   . 
+1. Navigeer naar het IoT Hub. 
 
-1. Klik op uw IoT-oplossing beveiligen en het voorbereidings formulier volt ooien. 
+1. Selecteer de IoT Hub voor de onboarding.
 
+1. Selecteer een optie onder het gedeelte **beveiliging** .
+
+1. Klik op **uw IOT-oplossing beveiligen**   en het voorbereidings formulier volt ooien. 
+
+    :::image type="content" source="media/quickstart-onboard-iot-hub/secure-your-iot-solution.png" alt-text="Selecteer de knop uw IoT-oplossing beveiligen om uw oplossing te beveiligen.":::
+
+De knop **beveiligd uw IOT-oplossing** wordt alleen weer gegeven als de IOT hub nog niet is uitgevoerd, of als u de Defender voor IOT in-/uitschakelen hebt **uitgeschakeld**.
+
+:::image type="content" source="media/quickstart-onboard-iot-hub/toggle-is-off.png" alt-text="Als uw wissel knop is ingesteld op uitgeschakeld tijdens het voorbereiden.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

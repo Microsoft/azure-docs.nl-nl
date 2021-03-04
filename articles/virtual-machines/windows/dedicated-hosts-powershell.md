@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 11/12/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 4517c939e14f3157db606f087ef042c1ba7eba3e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ed6319d5374db56cfe85e7ef9413480e523d9a34
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101672269"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050882"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Vm's implementeren op toegewezen hosts met behulp van de Azure PowerShell
 
@@ -24,7 +24,6 @@ Zorg ervoor dat u Azure PowerShell versie 2.8.0 of hoger hebt geïnstalleerd en 
 
 ## <a name="limitations"></a>Beperkingen
 
-- Virtuele-machine schaal sets worden momenteel niet ondersteund op toegewezen hosts.
 - De grootten en typen hardware die beschikbaar zijn voor toegewezen hosts variëren per regio. Raadpleeg de pagina met [prijzen](https://aka.ms/ADHPricing) voor de host voor meer informatie.
 
 ## <a name="create-a-host-group"></a>Een hostgroep maken

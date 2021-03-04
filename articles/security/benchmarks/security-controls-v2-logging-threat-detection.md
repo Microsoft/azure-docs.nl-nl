@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 43119a51be2359ed2ddfb4e5d5fa629badedb054
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a274ec1aab3f530700f89ef810fa667fdf4d08e6
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720678"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102042977"
 ---
 # <a name="security-control-v2-logging-and-threat-detection"></a>Beveiligings controle v2: logboek registratie en detectie van bedreigingen
 
 Logboek registratie en detectie van bedreigingen omvatten besturings elementen voor het detecteren van bedreigingen op Azure en het inschakelen, verzamelen en opslaan van audit logboeken voor Azure-Services. Dit omvat het inschakelen van detectie-, onderzoek-en herstel processen met besturings elementen voor het genereren van waarschuwingen met een hoge kwaliteit met systeem eigen bedreigingen detectie in Azure-Services. Het omvat ook het verzamelen van logboeken met Azure Monitor, het centraliseren van beveiligings analyse met Azure Sentinel, tijd synchronisatie en logboek registratie.
 
-Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving: logboek registratie en detectie van bedreigingen](../../governance/policy/samples/azure-security-benchmark#logging-and-threat-detection)
+Als u wilt zien welke ingebouwde Azure Policy van toepassing is, raadpleegt u [de details van het ingebouwde initiatief Azure Security Bench Mark-naleving: logboek registratie en detectie van bedreigingen](../../governance/policy/samples/azure-security-benchmark.md#logging-and-threat-detection)
 
 ## <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 

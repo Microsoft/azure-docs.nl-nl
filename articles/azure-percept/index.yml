@@ -10,12 +10,12 @@ metadata:
   author: elqu20
   ms.author: v-elqu
   ms.date: 02/11/2021
-  ms.openlocfilehash: 6c7479b33a78432d5b6aea2c02656e8b250b70c7
-  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+  ms.openlocfilehash: b979f147c67e8e877b5bb0e9d3dc557317c7aa50
+  ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/02/2021
-  ms.locfileid: "101665752"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102097492"
 landingContent:
 - title: Wat is Azure percept?
   linkLists:
@@ -45,8 +45,22 @@ landingContent:
       url: azure-percept-dk-datasheet.md
     - text: Azure percept Vision-gegevens blad
       url: azure-percept-vision-datasheet.md
+    - text: Problemen oplossen
+      url: troubleshoot-dev-kit.md
+- title: Aan de slag met Azure percept-audio
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure percept-Audio instellen
+      url: quickstart-percept-audio-setup.md
+  - linkListType: reference
+    links:
     - text: Azure percept-audio gegevens blad
       url: azure-percept-audio-datasheet.md
+    - text: Problemen met Azure percept-audio oplossen
+      url: troubleshoot-audio-accessory-speech-module.md
+    - text: LED en knop voor Azure percept-audio
+      url: audio-button-led-behavior.md
 - title: Een visueel prototype zonder code maken
   linkLists:
   - linkListType: tutorial
@@ -63,20 +77,10 @@ landingContent:
       url: how-to-capture-images.md
     - text: De telemetrie van uw Devkit weer geven
       url: how-to-view-telemetry.md
-- title: Aan de slag met Azure percept-audio
-  linkLists:
-  - linkListType: quickstart
+  - linkListType: concept
     links:
-    - text: Azure percept-Audio instellen
-      url: quickstart-percept-audio-setup.md
-  - linkListType: reference
-    links:
-    - text: Azure percept-audio gegevens blad
-      url: azure-percept-audio-datasheet.md
-    - text: Problemen met Azure percept-audio oplossen
-      url: troubleshoot-audio-accessory-speech-module.md
-    - text: LED en knop voor Azure percept-audio
-      url: audio-button-led-behavior.md
+    - text: Werken met AI-oplossingen
+      url: overview-ai-models.md
 - title: Een oplossing voor een no-code Voice Assistant bouwen
   linkLists:
   - linkListType: tutorial
@@ -85,22 +89,20 @@ landingContent:
       url: tutorial-no-code-speech.md
   - linkListType: how-to-guide
     links:
-    - text: Uw Voice Assistant configureren
-      url: how-to-configure-voice-assistant.md
     - text: Uw Voice Assistant beheren
       url: how-to-manage-voice-assistant.md
+    - text: Uw Voice Assistant configureren met behulp van IoT Hub
+      url: how-to-configure-voice-assistant.md
 - title: Geavanceerde ontwikkeling met Azure percept
   linkLists:
   - linkListType: overview
     links:
     - text: Overzicht van geavanceerde ontwikkeling
       url: overview-advanced-code.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
-    - text: Geavanceerde ontwikkeling met Cloud Services
-      url: advanced-development-cloud.md
-    - text: Geavanceerde ontwikkeling met behulp van lokale hulpprogram ma's
-      url: advanced-development-local.md
+    - text: Installatie programma voor dev tools pack
+      url: dev-tools-installer.md
 - title: Uw Azure percept DK up-to-date houden
   linkLists:
   - linkListType: overview
@@ -109,7 +111,7 @@ landingContent:
       url: overview-update-experience.md
   - linkListType: how-to-guide
     links:
-    - text: Updates instellen
+    - text: Over-the-Air-updates instellen
       url: how-to-set-up-over-the-air-updates.md
     - text: Over-the-Air-updates
       url: how-to-update-over-the-air.md

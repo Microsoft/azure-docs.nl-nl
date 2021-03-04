@@ -9,18 +9,22 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: 766136731cb92b1bd4f0965d4929b1ac5eda14dc
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
-ms.translationtype: HT
+ms.openlocfilehash: 996c974473c53833dd26abae2fb61585999f33b4
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88690490"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102050440"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-invoice"></a>Terminologie in uw factuur voor een Microsoft-klantovereenkomst
 
 Dit artikel is van toepassing op een Azure-factureringsaccount voor een Microsoft-klantovereenkomst. [Controleer of u toegang hebt tot een Microsoft-klantovereenkomst](#check-access-to-a-microsoft-customer-agreement).
 
 Uw factuur bevat een overzicht van uw kosten en instructies voor betaling. De factuur kan als PDF worden gedownload uit de [Azure-portal](https://portal.azure.com/) of kan per e-mail worden verzonden. Zie [Uw Microsoft Azure-factuur weergeven en downloaden](download-azure-invoice.md) voor meer informatie.
+
+Bekijk de video over het [begrijpen van uw micro soft-klant overeenkomst](https://www.youtube.com/watch?v=e2LGZZ7GubA) voor meer informatie over uw factuur en hoe u de kosten erop kunt analyseren.
+
+>[!VIDEO https://www.youtube.com/embed/e2LGZZ7GubA]
 
 ## <a name="billing-period"></a>Factureringsperiode
 
@@ -97,13 +101,13 @@ Als er services van derden op uw factuur worden vermeld, worden de naam en het a
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Toegang tot een Microsoft-klantovereenkomst controleren
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]
 
-## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Inzicht in de kosten op de factuur van uw Microsoft-klantovereenkomst](review-customer-agreement-bill.md)
+- [Inzicht in de kosten voor de factuur van uw factureringsprofiel](review-customer-agreement-bill.md)
 - [Uw Azure-factuur en de dagelijkse gebruiksgegevens ophalen](../manage/download-azure-invoice-daily-usage-date.md)
 - [Azure-prijzen voor uw organisatie bekijken en downloaden](../manage/ea-pricing.md)
 - [Belastingdocumenten voor uw Microsoft-klantovereenkomst weergeven](mca-download-tax-document.md)

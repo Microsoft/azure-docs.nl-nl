@@ -5,16 +5,16 @@ services: synapse-analytics
 author: midesa
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 03/01/2020
+ms.date: 02/26/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 296bd3a4a75cdd7f5dab3b6eb5fdcb00a889703d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4bb323e0e8f72456b6a522ede9a98d193e1c3c7e
+ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695939"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102098771"
 ---
 # <a name="manage-python-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Python-bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 
@@ -42,7 +42,7 @@ Er zijn twee manieren om een bibliotheek te installeren op een cluster:
 > [!IMPORTANT]
 > - Als het pakket dat u installeert groot is of veel tijd nodig heeft om te worden geïnstalleerd, is dit van invloed op de start tijd van de Spark-instantie.
 > - Het wijzigen van de PySpark-, Python-, scala/Java-, .NET-of Spark-versie wordt niet ondersteund.
-> - Het installeren van pakketten van PyPI wordt niet ondersteund in werk ruimten waarvoor DEP is ingeschakeld.
+> - Het installeren van pakketten van externe opslag plaatsen, zoals PyPI, Conda-vervalsing of de standaard Conda-kanalen, wordt niet ondersteund in werk ruimten waarvoor DEP is ingeschakeld.
 
 ### <a name="install-python-packages"></a>Python-pakketten installeren
 Python-pakketten kunnen worden geïnstalleerd vanuit opslag plaatsen zoals PyPI en Conda-Forge door een omgevings specificatie bestand op te geven. 
@@ -140,9 +140,6 @@ Werkruimte pakketten toevoegen:
 
 ![Scherm afbeelding die de werkruimte pakketten markeert.](./media/apache-spark-azure-portal-add-libraries/studio-add-workspace-package.png "Werkruimte pakketten weer geven")
 
-> [!IMPORTANT]
-> Het installeren van werk ruimte pakketten wordt momenteel nog niet ondersteund in werk ruimten die zijn beveiligd met data exfiltration (DEP).
-
 ### <a name="storage-account"></a>Storage-account
 Aangepaste, ingebouwde wiel pakketten kunnen worden geïnstalleerd op de Apache Spark groep door alle wiel bestanden te uploaden naar het Azure Data Lake Storage-account (Gen2) dat is gekoppeld aan de werk ruimte Synapse. 
 
@@ -160,8 +157,8 @@ Mogelijk moet u de ```python``` map in de map toevoegen ```libraries``` als deze
 >[!WARNING]
 > Bij het leveren van aangepaste wiel bestanden kunnen gebruikers geen wiel bestanden opgeven in zowel het opslag account als in de interface van de werkruimte bibliotheek. Als beide zijn opgegeven, worden alleen de wiel bestanden geïnstalleerd die zijn opgegeven in de lijst met werkruimte pakketten. 
 
-## <a name="session-scoped-libraries-preview"></a>Bibliotheken met sessie bereik (preview-versie)
-Naast groeps niveau bibliotheken kunt u ook bibliotheken met sessie bereik aan het begin van een notitieblok sessie opgeven.  Met bibliotheken met sessie bereik kunt u aangepaste python-omgevingen opgeven en gebruiken in een notitieblok sessie. 
+## <a name="session-scoped-packages-preview"></a>Pakketten met sessie bereik (preview-versie)
+Naast pool level pakketten kunt u ook bibliotheken met sessie bereik aan het begin van een notitieblok sessie opgeven.  Met bibliotheken met sessie bereik kunt u aangepaste python-omgevingen opgeven en gebruiken in een notitieblok sessie. 
 
 Wanneer u bibliotheken met sessie bereik gebruikt, is het belang rijk dat u rekening houdt met de volgende punten:
    - Wanneer u bibliotheken met sessie bereik installeert, heeft alleen het huidige notitie blok toegang tot de opgegeven bibliotheken. 
@@ -187,3 +184,4 @@ In sommige gevallen moet u de pakket versie mogelijk afzonderlijk controleren om
 ## <a name="next-steps"></a>Volgende stappen
 - De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)
 - Problemen met bibliotheek installatie fouten oplossen: [problemen met bibliotheek fouten oplossen](apache-spark-troubleshoot-library-errors.md)
+- Een persoonlijk Conda-kanaal maken met uw Azure Data Lake Storage account: [Conda private channels](./spark/../apache-spark-custom-conda-channel.md)

@@ -6,13 +6,13 @@ ms.author: csugunan
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/22/2020
-ms.openlocfilehash: 010cfc307d2b2c10c31168fce73673fb1fb611b8
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.date: 03/03/2021
+ms.openlocfilehash: 6a71999f0896a5d056b7d0b38be4d494c347e9f9
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807645"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102049369"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
 
@@ -73,7 +73,7 @@ Volg de onderstaande stappen om een bestaand Data Factory accounts te koppelen a
 
 Wanneer een controle sfeer liggen-gebruiker een Data Factory registreert waartoe hij of zij toegang heeft, gebeurt het volgende in de back-end:
 
-1. De **Data Factory MSI** wordt toegevoegd aan de controle sfeer liggen RBAC-rol: **controle sfeer liggen data curator**.
+1. De **beheerde identiteit Data Factory** wordt toegevoegd aan de controle sfeer liggen RBAC-rol: **controle sfeer liggen data curator**.
 
     :::image type="content" source="./media/how-to-link-azure-data-factory/adf-msi.png" alt-text="Scherm opname met Azure Data Factory MSI." lightbox="./media/how-to-link-azure-data-factory/adf-msi.png":::
      
@@ -88,76 +88,91 @@ Ga als volgt te werk om een data factory verbinding te verwijderen:
 
     :::image type="content" source="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png" alt-text="Scherm afbeelding die laat zien hoe u gegevens fabrieken selecteert om verbinding te verwijderen." lightbox="./media/how-to-link-azure-data-factory/remove-data-factory-connection.png":::
 
-## <a name="configure-a-self-hosted-ir-to-collect-lineage-from-on-prem-sql"></a>Een zelf-hostende IR configureren voor het verzamelen van afkomst uit on-premises SQL
+## <a name="configure-a-self-hosted-integration-runtime-to-collect-lineage"></a>Een zelf-hostende Integration Runtime configureren voor het verzamelen van afkomst
 
-Afkomst voor de Data Factory Kopieer activiteit is beschikbaar voor on-premises SQL-data bases. Als u een zelf-hostende Integration runtime uitvoert voor het verplaatsen van gegevens met Azure Data Factory en u afkomst wilt vastleggen in azure controle sfeer liggen, moet u ervoor zorgen dat de versie 4.8.7418.1 of hoger is. Zie [een zelf-hostende Integration runtime maken en configureren](../data-factory/create-self-hosted-integration-runtime.md)voor meer informatie over zelf-hostende Integration runtime.
+Afkomst voor de Data Factory Kopieer activiteit is beschikbaar voor on-premises gegevens archieven zoals SQL-data bases. Als u een zelf-hostende Integration runtime uitvoert voor het verplaatsen van gegevens met Azure Data Factory en u afkomst wilt vastleggen in azure controle sfeer liggen, moet u ervoor zorgen dat de versie 5,0 of hoger is. Zie [een zelf-hostende Integration runtime maken en configureren](../data-factory/create-self-hosted-integration-runtime.md)voor meer informatie over zelf-hostende Integration runtime.
 
 ## <a name="supported-azure-data-factory-activities"></a>Ondersteunde Azure Data Factory activiteiten
 
 Azure controle sfeer liggen legt runtime-afkomst vast van de volgende Azure Data Factory activiteiten:
 
-- Gegevens kopiëren
-- Gegevensstroom
-- SSIS-pakket uitvoeren
+- [Gegevens kopiëren](../data-factory/copy-activity-overview.md)
+- [Gegevensstroom](../data-factory/concepts-data-flow-overview.md)
+- [SSIS-pakket uitvoeren](../data-factory/how-to-invoke-ssis-package-ssis-activity.md)
 
 > [!IMPORTANT]
 > Azure controle sfeer liggen daalt afkomst als de bron of het doel een niet-ondersteund gegevens opslag systeem gebruikt.
 
 De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen een subset van de gegevens systemen die door Data Factory worden ondersteund, zoals beschreven in de volgende secties.
 
-### <a name="data-factory-copy-data-support"></a>Ondersteuning voor Data Factory Gegevens kopiëren
+### <a name="data-factory-copy-activity-support"></a>Ondersteuning voor het kopiëren van activiteiten Data Factory
 
-| Systeem voor gegevens opslag | Ondersteund als bron | 
+| Gegevensarchief | Ondersteund | 
 | ------------------- | ------------------- | 
-| ADLS Gen1 | Yes | 
-| ADLS Gen2 | Yes | 
-| Azure Blob | Yes |
-| Azure Cosmos DB (SQL-API) | Yes | 
-| Azure Cosmos DB (Mongo-API) | Yes |
-| Azure Cognitive Search | Yes | 
-| Azure Data Explorer | Yes | 
-| Azure data base for Maria DB \* | Yes | 
-| Azure data base for MYSQL \* | Yes | 
-| Azure Database for PostgreSQL \* | Yes |
+| Azure Blob Storage | Ja |
+| Azure Cognitive Search | Ja | 
+| Azure Cosmos DB (SQL-API) \* | Ja | 
+| API van Azure Cosmos DB voor MongoDB \* | Ja |
+| Azure Data Explorer \* | Ja | 
+| Azure Data Lake Storage Gen1 | Ja | 
+| Azure Data Lake Storage Gen2 | Ja | 
+| Azure data base for Maria DB \* | Ja | 
+| Azure Database for MySQL \* | Ja | 
+| Azure Database for PostgreSQL \* | Ja |
 | Azure File Storage | Ja | 
-| Azure Table Storage | Ja |
-| Azure SQL Database \* | Yes | 
-| Azure SQL MI \* | Yes | 
-| Azure Synapse Analytics (voorheen SQL DW) \* | Yes | 
-| On-premises SQL Server  \* | Yes | 
+| Azure SQL Database \* | Ja | 
+| Met Azure SQL beheerd exemplaar \* | Ja | 
+| Azure Synapse Analytics \* | Ja | 
+| Azure Table Storage \* | Ja |
+| SQL Server \* | Ja | 
 | Amazon S3 | Ja | 
-| Teradata | Ja | 
-| SAP-tabel connector | Yes |
-| SAP ECC | Yes | 
-| Hive | Yes | 
+| Onderdelen \* | Ja | 
+| SAP ECC \* | Ja |
+| SAP-tabel \* | Ja |
+| Teradata \* | Ja |
+
+*\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 
 > [!Note]
 > De functie afkomst heeft bepaalde prestatie overhead in Data Factory Kopieer activiteit. Voor degenen die data factory verbindingen in controle sfeer liggen in te stellen, kunt u controleren of bepaalde Kopieer taken langer duren. Meestal is de impact geen te verwaarlozen. Neem contact op met ondersteuning met een tijd vergelijking als de Kopieer taken aanzienlijk langer duren dan normaal.
 
+#### <a name="known-limitations-on-copy-activity-lineage"></a>Bekende beperkingen voor kopieer activiteit afkomst
+
+Als u de volgende functies van de Kopieer activiteit gebruikt, wordt de afkomst nog niet ondersteund:
+
+- Gegevens naar Azure Data Lake Storage Gen1 kopiëren met een binaire indeling.
+- Kopieer gegevens naar Azure Synapse Analytics met de poly base-of kopieer instructie.
+- Compressie-instelling voor binaire, gescheiden tekst-, Excel-, JSON-en XML-bestanden.
+- Opties voor de bron partitie voor Azure SQL Database, Azure SQL Managed instance, Azure Synapse Analytics, SQL Server en SAP Table.
+- Kopieer gegevens naar Sink op basis van een bestand met de instelling maximum aantal rijen per bestand.
+- Voeg extra kolommen toe tijdens het kopiëren.
+
 ### <a name="data-factory-data-flow-support"></a>Ondersteuning voor Data Factory gegevens stroom
 
-| Systeem voor gegevens opslag | Ondersteund |
+| Gegevensarchief | Ondersteund |
 | ------------------- | ------------------- | 
-| ADLS Gen1 | Yes |
-| ADLS Gen2 | Yes |
-| Azure Blob | Yes |
-| Azure SQL Database \* | Yes |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
+| Azure Blob Storage | Ja |
+| Azure Data Lake Storage Gen1 | Ja |
+| Azure Data Lake Storage Gen2 | Ja |
+| Azure SQL Database \* | Ja |
+| Azure Synapse Analytics \* | Ja |
+
+*\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 
 ### <a name="data-factory-execute-ssis-package-support"></a>Ondersteuning voor het uitvoeren van SSIS-pakketten Data Factory
 
-| Systeem voor gegevens opslag | Ondersteund |
+| Gegevensarchief | Ondersteund |
 | ------------------- | ------------------- |
-| Azure Blob | Yes |
-| ADLS Gen1 | Yes |
-| ADLS Gen2 | Yes |
-| Azure SQL Database \* | Yes |
-| Azure SQL MI \*| Yes |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
-| On-premises SQL Server \* | Yes |
-| Azure File Storage | Yes |
+| Azure Blob Storage | Ja |
+| Azure Data Lake Storage Gen1 | Ja |
+| Azure Data Lake Storage Gen2 | Ja |
+| Azure File Storage | Ja |
+| Azure SQL Database \* | Ja |
+| Met Azure SQL beheerd exemplaar \*| Ja |
+| Azure Synapse Analytics \* | Ja |
+| SQL Server \* | Ja |
 
-*\* Voor SQL-scenario's (Azure en on-premises) biedt Azure controle sfeer liggen geen ondersteuning voor opgeslagen procedures of scripts voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
+*\* Azure controle sfeer liggen biedt momenteel geen ondersteuning voor een query of opgeslagen procedure voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 
 > [!Note]
 > Azure Data Lake Storage Gen2 is nu overal algemeen beschikbaar. We raden aan vandaag nog hierop over te stappen. Zie de [productpagina](https://azure.microsoft.com/en-us/services/storage/data-lake-storage/) voor meer informatie.
@@ -172,7 +187,7 @@ Enkele extra manieren om informatie te vinden in de weer gave afkomst zijn onder
 
 - Op het tabblad **afkomst** houdt u de muis aanwijzer op shapes om aanvullende informatie over het element in de tooltip te bekijken.
 - Selecteer het knoop punt of de rand om het activa type te zien waarvan het deel uitmaakt of om te scha kelen tussen activa.
-- Kolommen van een gegevensset worden weer gegeven aan de linkerkant van het tabblad **afkomst** . Zie [afkomst op kolom niveau](catalog-lineage-user-guide.md#column-level-lineage)voor meer informatie over afkomst op kolom niveau.
+- Kolommen van een gegevensset worden weer gegeven aan de linkerkant van het tabblad **afkomst** . Zie [DataSet column afkomst](catalog-lineage-user-guide.md#dataset-column-lineage)voor meer informatie over afkomst op kolom niveau.
 
 ### <a name="data-lineage-for-11-operations"></a>Data afkomst voor 1:1-bewerkingen
 

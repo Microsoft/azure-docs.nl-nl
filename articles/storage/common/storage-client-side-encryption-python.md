@@ -7,16 +7,16 @@ author: tamram
 ms.service: storage
 ms.devlang: python
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 02/18/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 511166e156591562b2120b58cc420f3fccd1d8c4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ffdfd4dc8a81587d757e3f9853f1bb34e0b93c0d
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008924"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102043742"
 ---
 # <a name="client-side-encryption-with-python"></a>Versleuteling aan client zijde met python
 
@@ -54,7 +54,7 @@ Ontsleuteling via de envelop techniek werkt op de volgende manier:
 De Storage-client bibliotheek gebruikt [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) om gebruikers gegevens te versleutelen. Met name de [CBC-modus (Cipher Block Chaining)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) met AES. Elke service werkt enigszins anders, dus we bespreken deze hier.
 
 ### <a name="blobs"></a>Blobs
-De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Create** _ gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund en parallel Lise ring van uploaden en downloaden beschikbaar.
+De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Create*** gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund en parallel Lise ring van uploaden en downloaden beschikbaar.
 
 Tijdens het versleutelen genereert de client bibliotheek een wille keurige initialisatie vector (IV) van 16 bytes, samen met een wille keurige inhouds versleutelings sleutel (CEK) van 32 bytes en voert u een envelop versleuteling van de BLOB-gegevens uit met deze gegevens. De verpakte CEK en andere versleutelings-meta gegevens worden vervolgens opgeslagen als blob-meta gegevens, samen met de versleutelde Blob in de service.
 
@@ -63,9 +63,9 @@ Tijdens het versleutelen genereert de client bibliotheek een wille keurige initi
 > 
 > 
 
-Voor het downloaden van een versleutelde BLOB moet u de inhoud van de hele BLOB ophalen met behulp van de methoden voor het _*ophalen* *_ van de methode. De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
+Het downloaden van een versleutelde BLOB bestaat uit het ophalen van de inhoud van de volledige blob met behulp van de methoden **Get***. De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
 
-Bij het downloaden van een wille keurig bereik (_*Get* *_ -methoden met bereik parameters in) in de versleutelde BLOB moet u het bereik dat door de gebruikers wordt verstrekt, aanpassen om een klein aantal extra gegevens te krijgen dat kan worden gebruikt om het aangevraagde bereik te ontsleutelen.
+Bij het downloaden van een wille keurig bereik (**Get***-methoden met de para meters van het bereik dat is door gegeven in) in de versleutelde blob, moet u het bereik dat door de gebruikers wordt verstrekt aanpassen om een klein aantal extra gegevens te krijgen dat kan worden gebruikt om het gevraagde bereik te ontsleutelen
 
 Blok-blobs en pagina-blobs kunnen alleen worden versleuteld/ontsleuteld met dit schema. Er is momenteel geen ondersteuning voor het versleutelen van toevoeg-blobs.
 
@@ -114,7 +114,7 @@ Houd er rekening mee dat entiteiten worden versleuteld wanneer ze worden ingevoe
 > [!IMPORTANT]
 > Houd rekening met de volgende belang rijke punten wanneer versleuteling aan de client zijde wordt gebruikt:
 > 
-> _ Bij het lezen van of schrijven naar een versleutelde BLOB gebruikt u hele BLOB-upload opdrachten en bereik/hele BLOB-Download opdrachten. Vermijd het schrijven naar een versleutelde blob met behulp van protocol bewerkingen zoals put blok keren, blokkerings lijst plaatsen, schrijf pagina's of pagina's wissen; anders is het mogelijk dat u de versleutelde BLOB beschadigd en onleesbaar maakt.
+> * Bij het lezen van of schrijven naar een versleutelde BLOB gebruikt u hele BLOB-upload opdrachten en bereik/hele BLOB-Download opdrachten. Vermijd het schrijven naar een versleutelde blob met behulp van protocol bewerkingen zoals put blok keren, blokkerings lijst plaatsen, schrijf pagina's of pagina's wissen; anders is het mogelijk dat u de versleutelde BLOB beschadigd en onleesbaar maakt.
 > * Voor tabellen bestaat een soort gelijke beperking. Zorg ervoor dat u geen versleutelde eigenschappen bijwerkt zonder de versleutelings meta gegevens bij te werken.
 > * Als u meta gegevens op de versleutelde BLOB instelt, kunt u de meta gegevens voor versleuteling overschrijven die vereist zijn voor ontsleuteling, omdat het instellen van meta gegevens geen additief is. Dit geldt ook voor moment opnamen. Vermijd het opgeven van meta gegevens tijdens het maken van een moment opname van een versleutelde blob. Als meta gegevens moeten worden ingesteld, moet u eerst de **get_blob_metadata** methode aanroepen om de huidige versleutelings-meta gegevens op te halen en voor komen dat er gelijktijdige schrijf bewerkingen worden uitgevoerd terwijl de meta gegevens worden ingesteld.
 > * Schakel de vlag **require_encryption** in op het Service object voor gebruikers die alleen moeten werken met versleutelde gegevens. Zie hieronder voor meer informatie.
@@ -150,6 +150,12 @@ Gebruikers kunnen eventueel een bewerkings modus inschakelen, waarbij alle uploa
 ### <a name="blob-service-encryption"></a>Versleuteling Blob service
 Stel de velden voor het versleutelings beleid in op het object blockblobservice. Alle overige worden intern door de client bibliotheek verwerkt.
 
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="python-v21"></a>[Python v 2.1](#tab/python2)
+
 ```python
 # Create the KEK used for encryption.
 # KeyWrapper is the provided sample implementation, but the user may use their own object as long as it implements the interface above.
@@ -171,9 +177,16 @@ my_block_blob_service.create_blob_from_stream(
 # Download and decrypt the encrypted contents from the blob.
 blob = my_block_blob_service.get_blob_to_bytes(container_name, blob_name)
 ```
+---
 
 ### <a name="queue-service-encryption"></a>Versleuteling Queue-service
 Stel de velden voor het versleutelings beleid in op het object queueservice. Alle overige worden intern door de client bibliotheek verwerkt.
+
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="python-v21"></a>[Python v 2.1](#tab/python2)
 
 ```python
 # Create the KEK used for encryption.
@@ -195,11 +208,18 @@ my_queue_service.put_message(queue_name, content)
 # Retrieve message
 retrieved_message_list = my_queue_service.get_messages(queue_name)
 ```
+---
 
 ### <a name="table-service-encryption"></a>Versleuteling Table service
 Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **encryption_resolver_function** op de **tableservice** opgeven of het kenmerk Encryption op de EntityProperty instellen.
 
 ### <a name="using-the-resolver"></a>De resolver gebruiken
+
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="python-v21"></a>[Python v 2.1](#tab/python2)
 
 ```python
 # Create the KEK used for encryption.
@@ -233,13 +253,21 @@ my_table_service.insert_entity(table_name, entity)
 my_table_service.get_entity(
     table_name, entity['PartitionKey'], entity['RowKey'])
 ```
+---
 
 ### <a name="using-attributes"></a>Kenmerken gebruiken
 Zoals hierboven vermeld, kan een eigenschap worden gemarkeerd voor versleuteling door deze op te slaan in een EntityProperty-object en het versleutelings veld in te stellen.
 
+# <a name="python-v12"></a>[Python-V12](#tab/python)
+
+We werken momenteel om code fragmenten te maken die overeenkomen met versie 12. x van de Azure Storage-client bibliotheken. Zie [de Azure Storage V12-client bibliotheken aankondigen](https://techcommunity.microsoft.com/t5/azure-storage/announcing-the-azure-storage-v12-client-libraries/ba-p/1482394)voor meer informatie.
+
+# <a name="python-v21"></a>[Python v 2.1](#tab/python2)
+
 ```python
 encrypted_property_1 = EntityProperty(EdmType.STRING, value, encrypt=True)
 ```
+---
 
 ## <a name="encryption-and-performance"></a>Versleuteling en prestaties
 Houd er rekening mee dat het versleutelen van uw opslag gegevens resulteert in extra prestatie overhead. De inhouds sleutel en IV moeten worden gegenereerd, de inhoud zelf moet worden versleuteld en aanvullende meta gegevens moeten worden opgemaakt en geüpload. Deze overhead is afhankelijk van de hoeveelheid gegevens die wordt versleuteld. Klanten wordt aangeraden hun toepassingen altijd te testen tijdens de ontwikkeling van de prestaties.

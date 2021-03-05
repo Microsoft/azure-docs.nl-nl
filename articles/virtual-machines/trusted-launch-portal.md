@@ -9,12 +9,12 @@ ms.subservice: security
 ms.topic: how-to
 ms.date: 03/02/2021
 ms.custom: template-how-to
-ms.openlocfilehash: 4c4ad2a1350632d381cc258049ee85c87766f9b5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f8a6758cdf0a6da709a564c1e17c56a2fe5625b0
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694118"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124649"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -140,7 +140,7 @@ Zie [een aangepast initiatief toevoegen aan uw abonnement](https://docs.microsof
 
 In sommige gevallen moet u mogelijk dingen ondertekenen voor UEFI Secure boot.  U moet bijvoorbeeld de [procedure volgen voor het afwijzen van beveiligd opstarten](https://ubuntu.com/blog/how-to-sign-things-for-secure-boot) voor Ubuntu. In dergelijke gevallen moet u de sleutels voor het registreren van het MOK-hulp programma voor uw virtuele machine invoeren. Hiervoor moet u de Azure Serial console gebruiken om toegang te krijgen tot het MOK-hulp programma.
 
-1. Schakel Azure Serial console in voor Linux. Zie voor meer informatie [seriële console voor Linux](serial-console-linux.md).
+1. Schakel Azure Serial console in voor Linux.
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **virtuele machines** en selecteer uw virtuele machine in de lijst.
 1. Selecteer **seriële console** in het linkermenu onder **ondersteuning en probleem oplossing**. Er wordt een pagina aan de rechter kant geopend, met de seriële console.

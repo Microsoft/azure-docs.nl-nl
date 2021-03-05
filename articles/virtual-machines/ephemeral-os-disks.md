@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/23/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 62f89106538ab7f57047e211fc8715878f889af1
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 9c13a914a002f63f3c0d5bd988b0d76b951586dd
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684556"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124683"
 ---
 # <a name="ephemeral-os-disks-for-azure-vms"></a>Tijdelijke besturingssysteem schijven voor virtuele Azure-machines
 
@@ -244,6 +244,11 @@ A: tijdelijke schijven bieden geen ondersteuning voor:
 - Azure Backup
 - Azure Site Recovery  
 - Wisseling van besturingssysteem schijf 
+
+> [!NOTE]
+> 
+> De tijdelijke schijf is niet toegankelijk via de portal. U ontvangt mogelijk de fout melding ' bron niet gevonden ' of ' 404 ' bij het openen van de tijdelijke schijf.
+> 
  
 ## <a name="next-steps"></a>Volgende stappen
 U kunt een virtuele machine maken met een tijdelijke besturingssysteem schijf met behulp van de [Azure cli](/cli/azure/vm#az-vm-create).

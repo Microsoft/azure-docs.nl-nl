@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/12/2020
 ms.author: labattul
-ms.openlocfilehash: ba7c2a37d58f20ac4ff1f49a46a406d1b1f70106
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 3b4d66525ec52ef2382dfbe97bc09278e35b31fb
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704415"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102124666"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>DPDK instellen op een virtuele Linux-machine
 
@@ -58,7 +58,7 @@ Alle Azure-regio's bieden ondersteuning voor DPDK.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Versnelde netwerken moeten zijn ingeschakeld op een virtuele Linux-machine. De virtuele machine moet ten minste twee netwerk interfaces hebben, met één interface voor beheer. Meer informatie over het [maken van een virtuele Linux-machine met versneld netwerken ingeschakeld](create-vm-accelerated-networking-cli.md).
+Versnelde netwerken moeten zijn ingeschakeld op een virtuele Linux-machine. De virtuele machine moet ten minste twee netwerk interfaces hebben, met één interface voor beheer. Het inschakelen van versnelde netwerken op de beheer interface wordt niet aanbevolen. Meer informatie over het [maken van een virtuele Linux-machine met versneld netwerken ingeschakeld](create-vm-accelerated-networking-cli.md).
 
 ## <a name="install-dpdk-dependencies"></a>DPDK-afhankelijkheden installeren
 
@@ -251,7 +251,7 @@ Met de volgende opdrachten worden periodiek de statistieken van pakketten per se
 
 Wanneer u de vorige opdrachten op een virtuele machine uitvoert, wijzigt u *IP_SRC_ADDR* en *IP_DST_ADDR* in, `app/test-pmd/txonly.c` zodat deze overeenkomen met het werkelijke IP-adres van de virtuele machines voordat u compileert. Anders worden de pakketten verwijderd voordat de doorstuur server wordt bereikt. Het is niet mogelijk om een derde computer doorgestuurd verkeer te ontvangen, omdat de *testpmd* -doorstuur server de Layer 3-adressen niet wijzigt, tenzij u een aantal code wijzigingen aanbrengt.
 
-## <a name="references"></a>Naslaginformatie
+## <a name="references"></a>Referenties
 
 * [Opties voor EAL](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#eal-command-line-options)
 * [Testpmd-opdrachten](https://dpdk.org/doc/guides/testpmd_app_ug/run_app.html#testpmd-command-line-options)

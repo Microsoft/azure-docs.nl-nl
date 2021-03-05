@@ -3,12 +3,12 @@ title: Aangepaste Azure Resource Manager rol maken en toewijzen aan Service-Prin
 description: Dit artikel bevat richt lijnen voor het maken van aangepaste Azure Resource Manager-rollen en het toewijzen van de service-principal voor live video Analytics op IoT Edge met behulp van Azure CLI.
 ms.topic: how-to
 ms.date: 05/27/2020
-ms.openlocfilehash: 40bf0f60a718d512e02481d977b8208112ed1a55
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 80974c111dd451314635d06334766322bc68e437
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425732"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210441"
 ---
 # <a name="create-custom-azure-resource-manager-role-and-assign-to-service-principal"></a>Aangepaste Azure Resource Manager rol maken en toewijzen aan Service-Principal
 
@@ -49,7 +49,7 @@ Als u geen media service-account hebt, gebruikt u de volgende stappen om er een 
     ```
     az account set --subscription " <yourSubscriptionName or yourSubscriptionId>"
     ```
-1. Maak een [resource groep](/cli/azure/group?view=azure-cli-latest#az-group-create) en een [opslag account](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
+1. Maak een [resource groep](/cli/azure/group#az-group-create) en een [opslag account](/cli/azure/storage/account#az-storage-account-create).
 1. Maak nu een Azure media service-account met behulp van de volgende opdracht sjabloon in Cloud Shell:
 
     ```
@@ -85,8 +85,8 @@ Met deze opdracht wordt een antwoord gegenereerd dat er als volgt uitziet:
 ```
 1. De uitvoer van een service-principal met wachtwoord verificatie bevat de wachtwoord sleutel die in dit geval de para meter ' AadSecret ' is. 
 
-    Zorg ervoor dat u deze waarde kopieert. deze kan niet worden opgehaald. Als u het wacht woord vergeet, moet u [de referenties van de Service-Principal opnieuw instellen](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#reset-credentials).
-1. De appId en Tenant sleutel worden respectievelijk weer gegeven in de uitvoer als ' AadClientId ' en ' AadTenantId '. Ze worden gebruikt in Service-Principal-verificatie. Noteer hun waarden, maar ze kunnen op elk moment worden opgehaald met [AZ AD SP List](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-list).
+    Zorg ervoor dat u deze waarde kopieert. deze kan niet worden opgehaald. Als u het wacht woord vergeet, moet u [de referenties van de Service-Principal opnieuw instellen](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
+1. De appId en Tenant sleutel worden respectievelijk weer gegeven in de uitvoer als ' AadClientId ' en ' AadTenantId '. Ze worden gebruikt in Service-Principal-verificatie. Noteer hun waarden, maar ze kunnen op elk moment worden opgehaald met [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list).
 
 ### <a name="create-a-custom-role-definition"></a>Een aangepaste roldefinitie maken  
 
@@ -171,7 +171,7 @@ Met de bovenstaande opdracht wordt de objectId van de Service-Principal afgedruk
 “objectId” : “<yourObjectId>”,
 ```
 
-Gebruik [AZ Role Assignment opdracht sjabloon maken](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) om de aangepaste rol te koppelen aan de Service-Principal:
+Gebruik [AZ Role Assignment opdracht sjabloon maken](/cli/azure/role/assignment#az-role-assignment-create) om de aangepaste rol te koppelen aan de Service-Principal:
 
 ```
 az role assignment create --role “LVAEdge User” --assignee-object-id < objectId>    
@@ -179,7 +179,7 @@ az role assignment create --role “LVAEdge User” --assignee-object-id < objec
 
 Parameters:
 
-|Parameters|Beschrijving| 
+|Parameters|Description| 
 |---|---|
 |--rol |De naam of ID van de aangepaste rol. In ons geval: "LVAEdge gebruiker".|
 |--object-id van de gebruiker|De object-ID van de service-principal die u wilt gebruiken.|

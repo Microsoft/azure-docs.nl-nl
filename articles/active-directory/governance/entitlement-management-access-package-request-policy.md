@@ -16,12 +16,12 @@ ms.date: 09/16/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7b70e8a408c22be0331bfd0dcbe01830b072ab8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c4a1aa737b1f671c08d51d780fa98db50f2869a1
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449969"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211648"
 ---
 # <a name="change-request-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Instellingen voor wijzigings aanvragen voor een toegangs pakket in azure AD-rechts beheer
 
@@ -93,7 +93,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
 
     Gast gebruikers verwijzen naar externe gebruikers die zijn uitgenodigd voor uw directory met [Azure AD B2B](../external-identities/what-is-b2b.md). Zie [Wat zijn de standaard gebruikers machtigingen in azure Active Directory?](../fundamentals/users-default-permissions.md)voor meer informatie over de verschillen tussen gebruikers van het lid en gast gebruikers.
 
-1. Als u **specifieke gebruikers en groepen**hebt geselecteerd, klikt u op **gebruikers en groepen toevoegen**.
+1. Als u **specifieke gebruikers en groepen** hebt geselecteerd, klikt u op **gebruikers en groepen toevoegen**.
 
 1. Selecteer in het deel venster gebruikers en groepen selecteren de gebruikers en groepen die u wilt toevoegen.
 
@@ -107,14 +107,14 @@ Volg deze stappen als u wilt toestaan dat gebruikers in uw directory dit toegang
  
 ## <a name="for-users-not-in-your-directory"></a>Voor gebruikers die niet in uw Directory voor komt
 
- **Gebruikers die zich niet in uw directory** bevinden, verwijzen naar gebruikers in een andere Azure AD-Directory of een ander domein. Deze gebruikers zijn mogelijk nog niet in uw directory uitgenodigd. Azure AD-mappen moeten zodanig worden geconfigureerd dat uitnodigingen in **samenwerkings beperkingen**worden toegestaan. Zie [externe B2B-samen werking inschakelen en beheren wie gasten kan uitnodigen](../external-identities/delegate-invitations.md)voor meer informatie.
+ **Gebruikers die zich niet in uw directory** bevinden, verwijzen naar gebruikers in een andere Azure AD-Directory of een ander domein. Deze gebruikers zijn mogelijk nog niet in uw directory uitgenodigd. Azure AD-mappen moeten zodanig worden geconfigureerd dat uitnodigingen in **samenwerkings beperkingen** worden toegestaan. Zie [externe B2B-samen werking inschakelen en beheren wie gasten kan uitnodigen](../external-identities/delegate-invitations.md)voor meer informatie.
 
 > [!NOTE]
 > Er wordt een gast gebruikers account voor een gebruiker gemaakt dat nog niet in uw directory is waarvan de aanvraag is goedgekeurd of automatisch goedgekeurd. De gast wordt uitgenodigd, maar ontvangt geen uitnodigings-e-mail. In plaats daarvan ontvangen ze een e-mail bericht wanneer hun toegangs pakket toewijzing wordt bezorgd. Later, wanneer deze gast gebruiker geen toegangs pakket toewijzingen meer heeft, omdat de laatste toewijzing is verlopen of is geannuleerd, wordt het gast gebruikers account geblokkeerd om zich aan te melden en vervolgens te verwijderen. Als u wilt dat gast gebruikers voor onbepaalde tijd in uw Directory blijven, zelfs als ze geen toegangs pakket toewijzingen hebben, kunt u de instellingen voor uw rechten beheer configuratie wijzigen. Zie [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](../external-identities/user-properties.md)voor meer informatie over het gast gebruikers object.
 
 Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot uw directory dit toegangs pakket aanvragen:
 
-1. Klik in de sectie **gebruikers die toegang kunnen aanvragen** , op **voor gebruikers die zich niet in uw directory**bevindt.
+1. Klik in de sectie **gebruikers die toegang kunnen aanvragen** , op **voor gebruikers die zich niet in uw directory** bevindt.
 
     Wanneer u deze optie selecteert, worden er nieuwe opties weer gegeven.
 
@@ -130,7 +130,7 @@ Volg deze stappen als u wilt toestaan dat gebruikers die geen toegang hebben tot
 
     Een verbonden organisatie is een extern Azure AD-adres lijst of-domein waarmee u een relatie hebt.
 
-1. Als u **specifieke verbonden organisaties**hebt geselecteerd, klikt u op **mappen toevoegen** om te selecteren in een lijst met verbonden organisaties die de beheerder eerder heeft toegevoegd.
+1. Als u **specifieke verbonden organisaties** hebt geselecteerd, klikt u op **mappen toevoegen** om te selecteren in een lijst met verbonden organisaties die de beheerder eerder heeft toegevoegd.
 
 1. Typ de naam of de domein naam om te zoeken naar een eerder verbonden organisatie.
 
@@ -192,13 +192,11 @@ Als u de aanvraag-en goedkeurings instellingen voor een toegangs pakket wilt wij
 
     U kunt deze altijd in de toekomst inschakelen nadat u klaar bent met het maken van het toegangs pakket.
 
-    Als u geen hebt geselecteerd **(alleen voor beheerders directe toewijzingen)** en u instellen op **Nee**instelt, kunnen beheerders dit toegangs pakket niet rechtstreeks toewijzen.
+    Als u geen hebt geselecteerd **(alleen voor beheerders directe toewijzingen)** en u instellen op **Nee** instelt, kunnen beheerders dit toegangs pakket niet rechtstreeks toewijzen.
 
     ![Toegangs pakket-beleids instelling beleid inschakelen](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
 1. Klik op **Volgende**.
-
-1. Als u wilt dat aanvragers aanvullende informatie verstrekken bij het aanvragen van toegang tot een toegangs pakket, gebruikt u de stappen in om de gegevens van de []() aanvrager (preview-versie) te configureren.
 
 1. Levenscyclus instellingen configureren.
 

@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 12/22/2020
 ms.author: tyao
-ms.openlocfilehash: 60a4ef47bc30955c918983d54f613cbdb5cbed73
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 65e378c0380804c13e4b42d855aede7781b93592
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746759"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211665"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door"></a>Een IP-beperkings regel configureren met een Web Application Firewall voor Azure front deur
 
@@ -68,7 +68,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
 6. Selecteer **volgende: koppeling**.
 7. Selecteer **frontend-host toevoegen**.
 8. Selecteer voor **frontend-host** de frontend-host en selecteer **toevoegen**.
-9. Selecteer **Controleren en maken**.
+9. Selecteer **Controleren + maken**.
 10. Nadat de beleids validatie is geslaagd, selecteert u **maken**.
 
 ### <a name="test-your-waf-policy"></a>Uw WAF-beleid testen
@@ -95,7 +95,7 @@ Maak een Azure front deur-profiel door de instructies te volgen die worden besch
 
 ### <a name="create-a-waf-policy"></a>Een WAF-beleid maken
 
-Maak een WAF-beleid met behulp van de opdracht [AZ Network front-deur WAF-Policy Create](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-create) . Vervang in het volgende voor beeld de beleids naam *IPAllowPolicyExampleCLI* door een unieke beleids naam.
+Maak een WAF-beleid met behulp van de opdracht [AZ Network front-deur WAF-Policy Create](/cli/azure/ext/front-door/network/front-door/waf-policy#ext-front-door-az-network-front-door-waf-policy-create) . Vervang in het volgende voor beeld de beleids naam *IPAllowPolicyExampleCLI* door een unieke beleids naam.
 
 ```azurecli-interactive 
 az network front-door waf-policy create \
@@ -105,7 +105,7 @@ az network front-door waf-policy create \
   ```
 ### <a name="add-a-custom-ip-access-control-rule"></a>Een aangepaste regel voor IP-toegangs beheer toevoegen
 
-Gebruik de opdracht [AZ Network front-deur WAF-Policy Custom-Rule Create](/cli/azure/ext/front-door/network/front-door/waf-policy/rule?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-rule-create) om een aangepaste IP-toegangs beheer regel toe te voegen voor het WAF-beleid dat u zojuist hebt gemaakt.
+Gebruik de opdracht [AZ Network front-deur WAF-Policy Custom-Rule Create](/cli/azure/ext/front-door/network/front-door/waf-policy/rule#ext-front-door-az-network-front-door-waf-policy-rule-create) om een aangepaste IP-toegangs beheer regel toe te voegen voor het WAF-beleid dat u zojuist hebt gemaakt.
 
 In de volgende voor beelden:
 -  Vervang *IPAllowPolicyExampleCLI* door uw unieke beleid dat u eerder hebt gemaakt.
@@ -138,7 +138,7 @@ az network front-door waf-policy rule match-condition add \
   ```
                                                    
 ### <a name="find-the-id-of-a-waf-policy"></a>De ID van een WAF-beleid zoeken 
-Zoek naar de ID van een WAF-beleid met behulp van de opdracht [AZ Network front-deur WAF-Policy show](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-show) . Vervang *IPAllowPolicyExampleCLI* in het volgende voor beeld met uw unieke beleid dat u eerder hebt gemaakt.
+Zoek naar de ID van een WAF-beleid met behulp van de opdracht [AZ Network front-deur WAF-Policy show](/cli/azure/ext/front-door/network/front-door/waf-policy#ext-front-door-az-network-front-door-waf-policy-show) . Vervang *IPAllowPolicyExampleCLI* in het volgende voor beeld met uw unieke beleid dat u eerder hebt gemaakt.
 
    ```azurecli
    az network front-door  waf-policy show \
@@ -148,7 +148,7 @@ Zoek naar de ID van een WAF-beleid met behulp van de opdracht [AZ Network front-
 
 ### <a name="link-a-waf-policy-to-an-azure-front-door-front-end-host"></a>Een WAF-beleid koppelen aan een front-end voor de Azure-host
 
-Stel de Azure front-deur *WebApplicationFirewallPolicyLink* -id in op de beleids-id met behulp van de opdracht [AZ Network front-deur update](/cli/azure/ext/front-door/network/front-door?view=azure-cli-latest#ext-front-door-az-network-front-door-update) . Vervang *IPAllowPolicyExampleCLI* door uw unieke beleid dat u eerder hebt gemaakt.
+Stel de Azure front-deur *WebApplicationFirewallPolicyLink* -id in op de beleids-id met behulp van de opdracht [AZ Network front-deur update](/cli/azure/ext/front-door/network/front-door#ext-front-door-az-network-front-door-update) . Vervang *IPAllowPolicyExampleCLI* door uw unieke beleid dat u eerder hebt gemaakt.
 
    ```azurecli
    az network front-door update \

@@ -6,18 +6,19 @@ author: cweining
 ms.author: cweining
 ms.date: 03/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 291f06bea0744c991c71640272ee341b7273472b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5a637a6f355be32f82878a52a30c77d020190651
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101728991"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211614"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Snapshot Debugger voor .NET-apps in Azure App Service inschakelen
 
 Snapshot Debugger ondersteunt momenteel ASP.NET-en ASP.NET Core-apps die worden uitgevoerd op Azure App Service op Windows-service plannen.
 
-Het is raadzaam om uw toepassing uit te voeren op de laag basis service of hoger wanneer u het fout opsporingsprogramma voor moment opnamen gebruikt.
+U wordt aangeraden om uw toepassing uit te voeren op de Basic-servicelaag of hoger, wanneer u het fout opsporingsprogramma voor moment opnamen gebruikt.
+
 Voor de meeste toepassingen beschikken de gratis en gedeelde service lagen niet over voldoende geheugen of schijf ruimte om moment opnamen op te slaan.
 
 ## <a name="enable-snapshot-debugger"></a><a id="installation"></a> Snapshot Debugger inschakelen
@@ -52,6 +53,16 @@ Nadat u een app hebt geïmplementeerd, volgt u de onderstaande stappen om het fo
 4. Snapshot Debugger is nu ingeschakeld met behulp van een App Services app-instelling.
 
     ![App-instelling voor Snapshot Debugger][snapshot-debugger-app-setting]
+
+## <a name="enable-snapshot-debugger-for-other-clouds"></a>Snapshot Debugger inschakelen voor andere Clouds
+
+Momenteel zijn de enige regio's waarvoor eindpunt wijzigingen vereist zijn [Azure Government](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#application-insights) en [Azure China](https://docs.microsoft.com/azure/china/resources-developer-guide) via de Application Insights verbindings reeks.
+
+|Eigenschap van de verbindings reeks    | Cloud van de Amerikaanse overheid | Cloud in China |   
+|---------------|---------------------|-------------|
+|SnapshotEndpoint         | `https://snapshot.monitor.azure.us`    | `https://snapshot.monitor.azure.cn` |
+
+Zie [Application Insights-documentatie](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net#connection-string-with-explicit-endpoint-overrides)voor meer informatie over andere verbindings onderdrukkingen.
 
 ## <a name="disable-snapshot-debugger"></a>Snapshot Debugger uitschakelen
 

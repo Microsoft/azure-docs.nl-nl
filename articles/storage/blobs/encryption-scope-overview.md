@@ -4,17 +4,17 @@ description: Versleutelings bereiken bieden de mogelijkheid om versleuteling te 
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 09/22/2020
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 881a7fc915ab986577599b85f8412fa8107f7902
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 35395a30f7d58b9edb3aa7622a35e8c4a62dc76f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017386"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211359"
 ---
 # <a name="encryption-scopes-for-blob-storage-preview"></a>Versleutelings bereik voor Blob-opslag (preview-versie)
 
@@ -26,15 +26,14 @@ U kunt ervoor kiezen om door micro soft beheerde sleutels of door de klant behee
 
 Nadat u een versleutelings bereik hebt gemaakt, kunt u het versleutelings bereik opgeven voor een aanvraag voor het maken van een container of BLOB. Zie [encrypties maken en beheren (preview)](encryption-scope-manage.md)voor meer informatie over het maken van een versleutelings bereik.
 
-> [!NOTE]
+> [!IMPORTANT]
+> Versleutelings scopes zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+>
+> Om onverwachte kosten te voor komen, moet u alle versleutelings scopes uitschakelen die u momenteel niet nodig hebt.
+>
 > Versleutelings scopes worden niet ondersteund met geografisch redundante opslag met lees toegang (RA-GRS) of met geozone-redundante opslag (RA-GZRS) met lees toegang tijdens de preview-versie.
 
 [!INCLUDE [storage-data-lake-gen2-support](../../../includes/storage-data-lake-gen2-support.md)]
-
-> [!IMPORTANT]
-> De preview-versie van het versleutelings bereik is alleen bedoeld voor niet-productie gebruik. Service Level Agreements (Sla's) op het niveau van de productie zijn momenteel niet beschikbaar.
->
-> Om onverwachte kosten te voor komen, moet u alle versleutelings scopes uitschakelen die u momenteel niet nodig hebt.
 
 ## <a name="create-a-container-or-blob-with-an-encryption-scope"></a>Een container of Blob maken met een versleutelings bereik
 

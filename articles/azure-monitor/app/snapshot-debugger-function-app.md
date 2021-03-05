@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 12/18/2020
-ms.openlocfilehash: d86455eae0834f29099c7d5c96f8326408daf519
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: ac25962cac36a149807b67a44b3b88a4f40c954a
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675526"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211937"
 ---
 # <a name="enable-snapshot-debugger-for-net-and-net-core-apps-in-azure-functions"></a>Snapshot Debugger voor .NET-en .NET core-apps in Azure Functions inschakelen
 
@@ -123,6 +123,35 @@ Hostbestand
   }
 }
 ```
+
+## <a name="enable-snapshot-debugger-for-other-clouds"></a>Snapshot Debugger inschakelen voor andere Clouds
+
+Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#application-insights) en [Azure China](https://docs.microsoft.com/azure/china/resources-developer-guide).
+
+Hieronder volgt een voor beeld van de `host.json` update met het eind punt van de Amerikaanse Government Cloud agent:
+```json
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingExcludedTypes": "Request",
+      "samplingSettings": {
+        "isEnabled": true
+      },
+      "snapshotConfiguration": {
+        "isEnabled": true,
+        "agentEndpoint": "https://snapshot.monitor.azure.us"
+      }
+    }
+  }
+}
+```
+
+Hieronder vindt u de ondersteunde onderdrukkingen van het Snapshot Debugger agent-eind punt:
+
+|Eigenschap    | Cloud van de Amerikaanse overheid | Cloud in China |   
+|---------------|---------------------|-------------|
+|AgentEndpoint         | `https://snapshot.monitor.azure.us`    | `https://snapshot.monitor.azure.cn` |
 
 ## <a name="disable-snapshot-debugger"></a>Snapshot Debugger uitschakelen
 

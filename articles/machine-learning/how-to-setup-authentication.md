@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: 27c8a0b80068124613af15565f387f15ac6b8e57
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 30e4fede72df8eaf922745e7781c9e0d11f7ddb4
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027251"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210815"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Verificatie instellen voor Azure Machine Learning-resources en -werkstromen
 
@@ -54,7 +54,7 @@ Als u een service-principal (SP) wilt gebruiken, moet u eerst de SP maken en toe
 >
 > De reden voor het verlenen van de minimale toegang is dat een Service-Principal gebruikmaakt van een wacht woord voor verificatie en dat het wacht woord kan worden opgeslagen als onderdeel van een Automation-script. Als het wacht woord wordt gelekt, en de mini maal vereiste toegang voor een bepaalde taken, minimaliseert het schadelijke gebruik van de SP.
 
-De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk ruimte is met behulp van de [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest). Als u een Service-Principal wilt maken en toegang tot uw werk ruimte wilt verlenen, gebruikt u de volgende stappen:
+De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk ruimte is met behulp van de [Azure cli](/cli/azure/install-azure-cli). Als u een Service-Principal wilt maken en toegang tot uw werk ruimte wilt verlenen, gebruikt u de volgende stappen:
 
 > [!NOTE]
 > U moet een beheerder zijn van het abonnement om al deze stappen uit te voeren.
@@ -67,9 +67,9 @@ De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk rui
 
     Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een aanmeldingspagina gedownload. Anders moet u een browser openen en de aanwijzingen op de opdrachtregel volgen. Dit omvat het bladeren naar [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en het invoeren van een autorisatiecode.
 
-    Als u meerdere Azure-abonnementen hebt, kunt u de `az account set -s <subscription name or ID>` opdracht gebruiken om het abonnement in te stellen. Zie [meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)voor meer informatie.
+    Als u meerdere Azure-abonnementen hebt, kunt u de `az account set -s <subscription name or ID>` opdracht gebruiken om het abonnement in te stellen. Zie [meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli)voor meer informatie.
 
-    Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest)voor andere verificatie methoden.
+    Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli)voor andere verificatie methoden.
 
 1. Installeer de Azure Machine Learning extensie:
 
@@ -236,7 +236,7 @@ ws.get_details()
 
 ### <a name="use-a-service-principal-from-the-azure-cli"></a>Een service-principal van de Azure CLI gebruiken
 
-U kunt een Service-Principal gebruiken voor Azure CLI-opdrachten. Zie [Aanmelden met een Service-Principal](/cli/azure/create-an-azure-service-principal-azure-cli?preserve-view=true&view=azure-cli-latest#sign-in-using-a-service-principal)voor meer informatie.
+U kunt een Service-Principal gebruiken voor Azure CLI-opdrachten. Zie [Aanmelden met een Service-Principal](/cli/azure/create-an-azure-service-principal-azure-cli#sign-in-using-a-service-principal)voor meer informatie.
 
 ### <a name="use-a-service-principal-with-the-rest-api-preview"></a>Een Service-Principal gebruiken met de REST API (preview-versie)
 

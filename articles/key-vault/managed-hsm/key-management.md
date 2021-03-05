@@ -8,17 +8,17 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 3f054638e09061c652946c9c2db1a32db73c23d9
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 8d0cbd35b53bc8460ac8a19e5197d1f560657263
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92521030"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212039"
 ---
 # <a name="manage-a-managed-hsm-using-the-azure-cli"></a>Een beheerde HSM beheren met de Azure CLI
 
 > [!NOTE]
-> Key Vault ondersteunt twee typen resources: kluizen en beheerde HSM's. Dit artikel gaat over **beheerde HSM** . Als u wilt weten hoe u een kluis beheert, raadpleegt u [Key Vault beheren met de Azure CLI](../general/manage-with-cli2.md).
+> Key Vault ondersteunt twee typen resources: kluizen en beheerde HSM's. Dit artikel gaat over **beheerde HSM**. Als u wilt weten hoe u een kluis beheert, raadpleegt u [Key Vault beheren met de Azure CLI](../general/manage-with-cli2.md).
 
 Zie [Wat is beheerde HSM?](overview.md) voor een overzicht van beheerde HSM.
 
@@ -42,10 +42,10 @@ Als u zich wilt aanmelden bij Azure met behulp van de CLI, typt u:
 az login
 ```
 
-Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true) voor meer informatie over opties voor aanmelding via de CLI
+Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over opties voor aanmelding via de CLI
 
 > [!NOTE]
-> Bij alle onderstaande opdrachten worden twee gebruiksmethoden weergegeven. Een met de parameters **--hsm-name** en **--name** (voor de sleutelnaam) en een andere met de parameter **--id** , waarin u de volledige URL kunt opgeven, inclusief de naam van de sleutel, indien van toepassing. De laatste methode is handig wanneer de oproepende functie (een gebruiker of een toepassing) geen leestoegang heeft tot het besturingsvlak en alleen beperkte toegang tot het gegevensvlak.
+> Bij alle onderstaande opdrachten worden twee gebruiksmethoden weergegeven. Een met de parameters **--hsm-name** en **--name** (voor de sleutelnaam) en een andere met de parameter **--id**, waarin u de volledige URL kunt opgeven, inclusief de naam van de sleutel, indien van toepassing. De laatste methode is handig wanneer de oproepende functie (een gebruiker of een toepassing) geen leestoegang heeft tot het besturingsvlak en alleen beperkte toegang tot het gegevensvlak.
 
 ## <a name="create-an-hsm-key"></a>HSM-sleutel maken
 
@@ -53,7 +53,7 @@ Gebruik de opdracht `az keyvault key create` om een sleutel te maken.
 
 ### <a name="create-an-rsa-key"></a>Een RSA-sleutel maken
 
-In het volgende voorbeeld ziet u hoe u een 3072-bits **RSA** -sleutel maakt die alleen wordt gebruikt voor **wrapKey, unwrapKey** -bewerkingen (--ops). 
+In het volgende voorbeeld ziet u hoe u een 3072-bits **RSA**-sleutel maakt die alleen wordt gebruikt voor **wrapKey, unwrapKey**-bewerkingen (--ops). 
 
 
 ```azurecli-interactive
@@ -69,7 +69,7 @@ Let op: de `get`-bewerking retourneert alleen de openbare sleutel en sleutelkenm
 
 ### <a name="create-an-ec-key"></a>EC-sleutel maken
 
-In het onderstaande voorbeeld ziet u hoe u met de P-256-curve een **EC** -sleutel maakt die alleen wordt gebruikt voor de bewerkingen **ondertekenen en verifiëren** (--ops) en die twee labels heeft: **usage** en **appname** . Met tags kunt u aanvullende metagegevens aan de sleutel toevoegen voor bijhouden en beheren.
+In het onderstaande voorbeeld ziet u hoe u met de P-256-curve een **EC**-sleutel maakt die alleen wordt gebruikt voor de bewerkingen **ondertekenen en verifiëren** (--ops) en die twee labels heeft: **usage** en **appname**. Met tags kunt u aanvullende metagegevens aan de sleutel toevoegen voor bijhouden en beheren.
 
 ```azurecli-interactive
 az keyvault key create --hsm-name ContosoMHSM --name myec256key --ops sign verify  --tags ‘usage=signing] appname=myapp’ --kty EC-HSM --curve P-256

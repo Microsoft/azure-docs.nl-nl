@@ -7,12 +7,12 @@ ms.author: tilee
 ms.date: 01/17/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.reviewer: mbullwin
-ms.openlocfilehash: 26b551b5e3c21dcd77a5656a6f8a18c5de4feaf1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ee187c2713ea0150a6bcf99906fde76e60dd06c1
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723466"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209948"
 ---
 # <a name="connection-strings"></a>Verbindingsreeksen
 
@@ -67,8 +67,8 @@ De verbindings reeks bestaat uit een lijst met instellingen die worden weer gege
   Elke service kan expliciet worden overschreven in de connection string.
    - `IngestionEndpoint` (bijvoorbeeld: `https://dc.applicationinsights.azure.com` )
    - `LiveEndpoint` (bijvoorbeeld: `https://live.applicationinsights.azure.com` )
-   - `ProfilerEndpoint` (bijvoorbeeld: `https://profiler.applicationinsights.azure.com` )
-   - `SnapshotEndpoint` (bijvoorbeeld: `https://snapshot.applicationinsights.azure.com` )
+   - `ProfilerEndpoint` (bijvoorbeeld: `https://profiler.monitor.azure.com` )
+   - `SnapshotEndpoint` (bijvoorbeeld: `https://snapshot.monitor.azure.com` )
 
 #### <a name="endpoint-schema"></a>Eindpunt schema
 

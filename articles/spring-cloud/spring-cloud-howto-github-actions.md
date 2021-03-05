@@ -8,19 +8,19 @@ ms.topic: how-to
 ms.date: 09/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 95a97d3f5104891ef5e23a03ffe1477f9b6ad036
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 8400fcacbfa4c76aceb079b788255e3d3b83ce33
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561610"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210407"
 ---
 # <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure lente Cloud CI/CD met GitHub-acties
 
 GitHub-acties ondersteunen een geautomatiseerde werk stroom voor de levens cyclus van software ontwikkeling. Met GitHub-acties voor Azure lente-Cloud kunt u werk stromen maken in uw opslag plaats voor het bouwen, testen, inpakken, vrijgeven en implementeren van implementatie naar Azure. 
 
 ## <a name="prerequisites"></a>Vereisten
-In dit voor beeld is de [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest)vereist.
+In dit voor beeld is de [Azure cli](/cli/azure/install-azure-cli)vereist.
 
 ::: zone pivot="programming-language-csharp"
 ## <a name="set-up-github-repository-and-authenticate"></a>GitHub-opslag plaats en verificatie instellen
@@ -340,5 +340,5 @@ Als uw actie in een fout wordt uitgevoerd, bijvoorbeeld als u de Azure-referenti
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Key Vault voor GitHub acties voor lente-Cloud](./spring-cloud-github-actions-key-vault.md)
-* [Service-principals Azure Active Directory](/cli/azure/ad/sp?preserve-view=true&view=azure-cli-latest#az-ad-sp-create-for-rbac)
+* [Service-principals Azure Active Directory](/cli/azure/ad/sp#az-ad-sp-create-for-rbac)
 * [GitHub-acties voor Azure](https://github.com/Azure/actions/)

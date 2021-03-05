@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: 173e6e125387ba7d2755d9fff9387af0be21fffc
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 13598925702aeca4a06135a910e3be540083a2b6
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095236"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211750"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Azure IoT Hub SDK's leren kennen en gebruiken
 
@@ -78,14 +78,14 @@ Azure IoT Hub apparaat-SDK voor Java:
 * Toevoegen aan [maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-device-sdk) -project
 * [Broncode](https://github.com/Azure/azure-iot-sdk-java)
 * [API-naslaginformatie](/java/api/com.microsoft.azure.sdk.iot.device)
-* [Module verwijzing](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable&preserve-view=true)
+* [Module verwijzing](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient)
 
 Azure IoT Hub apparaat-SDK voor Node.js:
 
 * Installeren vanaf [NPM](https://www.npmjs.com/package/azure-iot-device)
 * [Broncode](https://github.com/Azure/azure-iot-sdk-node)
 * [API-naslaginformatie](/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest&preserve-view=true)
-* [Module verwijzing](/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest&preserve-view=true)
+* [Module verwijzing](/javascript/api/azure-iot-device/moduleclient)
 
 Azure IoT Hub apparaat-SDK voor python:
 
@@ -165,12 +165,12 @@ Apparaat-en service-Sdk's voor Azure inrichten voor Java:
 
 * Toevoegen aan [maven](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-service-sdk) -project
 * [Broncode](https://github.com/Azure/azure-iot-sdk-java/blob/master/provisioning)
-* [API-naslaginformatie](/java/api/com.microsoft.azure.sdk.iot.provisioning.device?view=azure-java-stable&preserve-view=true)
+* [API-naslaginformatie](/java/api/com.microsoft.azure.sdk.iot.provisioning.device)
 
 Apparaat-en service-Sdk's voor Azure inrichten voor Node.js:
 
 * [Broncode](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning)
-* [API-naslaginformatie](/javascript/api/overview/azure/iothubdeviceprovisioning?view=azure-node-latest&preserve-view=true)
+* [API-naslaginformatie](/javascript/api/overview/azure/iothubdeviceprovisioning)
 * SDK en service- [SDK](https://badge.fury.io/js/azure-iot-provisioning-service) van het [apparaat](https://badge.fury.io/js/azure-iot-provisioning-device) downloaden van NPM
 
 Apparaat-en service-Sdk's voor Azure inrichten voor python:

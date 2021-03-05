@@ -9,12 +9,12 @@ ms.subservice: availability
 ms.date: 12/18/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 4df340fa80ac4b9c4ff2a5e560580e09e01237e1
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5a71a6bce6d0e1a41201e0d7395110a6ac64db8c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745926"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209744"
 ---
 # <a name="choosing-the-right-number-of-fault-domains-for-virtual-machine-scale-set"></a>Het juiste aantal foutdomeinen kiezen voor een virtuele-machineschaalset
 Virtuele-machine schaal sets worden standaard gemaakt met vijf fout domeinen in azure-regio's zonder zones. Voor de regio's die ondersteuning bieden voor zonegebonden-implementatie van schaal sets voor virtuele machines en deze optie is geselecteerd, is de standaard waarde van het aantal fout domeinen 1 voor elk van de zones. FD = 1 in dit geval impliceert dat de VM-exemplaren die deel uitmaken van de schaalset, worden verdeeld over veel racks op basis van de beste inspanningen.
@@ -25,7 +25,7 @@ U kunt ook overwegen het aantal fout domeinen met schaal sets af te stemmen met 
 U kunt de eigenschap instellen `properties.platformFaultDomainCount` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/rest/api/compute/virtualmachinescalesets/createorupdate)de documentatie voor rest API.
 
 ## <a name="azure-cli"></a>Azure CLI
-U kunt de para meter instellen `--platform-fault-domain-count` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create)de documentatie voor Azure cli.
+U kunt de para meter instellen `--platform-fault-domain-count` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/cli/azure/vmss#az-vmss-create)de documentatie voor Azure cli.
 
 ```azurecli-interactive
 az vmss create \

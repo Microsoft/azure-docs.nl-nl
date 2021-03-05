@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/20/2020
 ms.author: duau
-ms.openlocfilehash: ba859a0ad8edacfa2e51486b150f94b3dea37a16
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 6fdcedd19c02251035a838d34ba51e786595134b
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102182890"
+ms.locfileid: "102212445"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Veelgestelde vragen over de voor deur van Azure
 
@@ -87,7 +87,8 @@ Routes voor de voor deur worden niet besteld en een specifieke route wordt gesel
 
 ### <a name="how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door"></a>Hoe kan ik Vergrendel de toegang tot mijn back-end naar een Azure front-deur?
 
-> [! KENNISGEVING] nieuwe SKU voor deur Premium biedt een meer aanbevolen manier om uw toepassing te vergren delen via een privé-eind punt. [Meer informatie over privé-eind punt](./standard-premium/concept-private-link.md)
+> [!NOTE]
+> Nieuwe SKU voor deur Premium biedt een meer aanbevolen manier om uw toepassing te vergren delen via een privé-eind punt. [Meer informatie over privé-eind punt](./standard-premium/concept-private-link.md)
 
 Als u uw toepassing wilt vergren delen om alleen verkeer van uw specifieke voor deur te accepteren, moet u IP-Acl's instellen voor uw back-end en vervolgens het verkeer op uw back-end beperken tot de specifieke waarde van de header X-Azure-FDID die wordt verzonden door de voor deur. Deze stappen worden hieronder beschreven:
 

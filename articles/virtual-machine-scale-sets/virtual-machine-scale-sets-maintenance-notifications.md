@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 11/12/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 85e4b6a4d0ff1c3bd7e634311a36396a74408419
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b4c705e65b5b8c4f9e34dc5ff1474e87da5bee02
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100594443"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209781"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Meldingen voor gepland onderhoud voor virtuele-machineschaalsets
 
@@ -143,7 +143,7 @@ Set-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -Pe
 
 ## <a name="check-maintenance-status-by-using-the-cli"></a>Onderhouds status controleren met behulp van de CLI
 
-U kunt geplande onderhouds informatie weer geven met [AZ vmss list-instances](/cli/azure/vmss?view=azure-cli-latest#az-vmss-list-instances).
+U kunt geplande onderhouds informatie weer geven met [AZ vmss list-instances](/cli/azure/vmss#az-vmss-list-instances).
  
 Onderhouds informatie wordt alleen geretourneerd als het onderhoud is gepland. Als er geen onderhoud wordt uitgevoerd die van invloed is op het VM-exemplaar, wordt er geen onderhouds informatie weer gegeven. 
 

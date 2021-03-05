@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/18/2019
-ms.openlocfilehash: 7cfa7257e64421c30c359bb34044988bbb5af1dd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc7c70fa2e7131f09f621e992d537e0b120061ef
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87093082"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210730"
 ---
 # <a name="failover-and-patching-for-azure-cache-for-redis"></a>Failover en Patching voor Azure cache voor redis
 
@@ -72,6 +72,10 @@ De meeste client bibliotheken proberen opnieuw verbinding te maken met de cache 
 Omdat u failovers niet volledig kunt voor komen, schrijft u uw client toepassingen voor tolerantie voor verbindings onderbrekingen en mislukte aanvragen. Hoewel de meeste client bibliotheken automatisch opnieuw verbinding maken met het cache-eind punt, proberen enkele daarvan mislukte aanvragen opnieuw uit te voeren. Afhankelijk van het toepassings scenario kan het zinvol zijn om opnieuw proberen logica te gebruiken met uitstel.
 
 Als u de tolerantie van een client toepassing wilt testen, gebruikt u [opnieuw opstarten](cache-administration.md#reboot) als hand matige trigger voor verbindings onderbrekingen. Daarnaast wordt u aangeraden updates op een cache te [plannen](cache-administration.md#schedule-updates) . Vertel de beheer service om redis runtime patches toe te passen tijdens opgegeven wekelijkse Windows. Deze vensters zijn doorgaans Peri Oden waarin het verkeer van de client toepassing laag is, om potentiële incidenten te voor komen.
+
+### <a name="can-i-be-notified-in-advance-of-a-planned-maintenance"></a>Kan ik van tevoren een melding ontvangen over een gepland onderhoud?
+
+Azure cache voor redis publiceert nu meldingen op een openbaar/geabonneerd-kanaal met de naam [AzureRedisEvents](https://github.com/Azure/AzureCacheForRedis/blob/main/AzureRedisEvents.md) ongeveer 30 seconden vóór geplande updates. Dit zijn runtime meldingen en ze zijn speciaal gebouwd voor toepassingen die circuit onderbrekers kunnen gebruiken om de cache-of buffer opdrachten te omzeilen, bijvoorbeeld tijdens geplande updates. Het is geen mechanisme waarmee u dagen of uren van tevoren kan worden gewaarschuwd.
 
 ### <a name="client-network-configuration-changes"></a>Client netwerk-configuratie wijzigingen
 

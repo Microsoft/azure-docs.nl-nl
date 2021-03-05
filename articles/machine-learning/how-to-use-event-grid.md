@@ -11,12 +11,12 @@ ms.author: shipatel
 author: shivp950
 ms.reviewer: larryfr
 ms.date: 05/11/2020
-ms.openlocfilehash: 06b871d29c26241c38be27c4ace8ab7461834fd1
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9dc7c0a476f57048c7caefb6001918d314c991ee
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101655714"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209693"
 ---
 # <a name="trigger-applications-processes-or-cicd-workflows-based-on-azure-machine-learning-events-preview"></a>Toepassingen, processen of CI/CD-werk stromen activeren op basis van Azure Machine Learning gebeurtenissen (preview)
 
@@ -59,7 +59,7 @@ Deze gebeurtenissen worden gepubliceerd via Azure Event Grid. Met Azure Portal, 
 
 Bij het instellen van uw gebeurtenissen kunt u filters toep assen op alleen triggers voor specifieke gebeurtenis gegevens. In het onderstaande voor beeld, voor gewijzigde gebeurtenissen, kunt u filteren op uitvoer typen. De gebeurtenis wordt alleen geactiveerd wanneer aan de criteria wordt voldaan. Raadpleeg het [Azure machine learning Event grid-schema](../event-grid/event-schema-machine-learning.md) voor meer informatie over gebeurtenis gegevens waarop u kunt filteren. 
 
-Abonnementen voor Azure Machine Learning gebeurtenissen worden beveiligd door Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Alleen [Inzender of eigenaar](how-to-assign-roles.md#default-roles) van een werk ruimte kan gebeurtenis abonnementen maken, bijwerken en verwijderen.  Filters kunnen worden toegepast op gebeurtenis abonnementen tijdens het [maken](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest&preserve-view=true) van het gebeurtenis abonnement of op een later tijdstip. 
+Abonnementen voor Azure Machine Learning gebeurtenissen worden beveiligd door Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Alleen [Inzender of eigenaar](how-to-assign-roles.md#default-roles) van een werk ruimte kan gebeurtenis abonnementen maken, bijwerken en verwijderen.  Filters kunnen worden toegepast op gebeurtenis abonnementen tijdens het [maken](/cli/azure/eventgrid/event-subscription) van het gebeurtenis abonnement of op een later tijdstip. 
 
 
 1. Ga naar de Azure Portal, selecteer een nieuw abonnement of een bestaande. 
@@ -130,7 +130,7 @@ Nadat u de selectie hebt bevestigd, klikt u op __maken__. Na de configuratie wor
 
 ### <a name="set-up-with-the-cli"></a>Ingesteld met de CLI
 
-U kunt de nieuwste versie van [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest)installeren of de Azure Cloud shell gebruiken die wordt meegeleverd als onderdeel van uw Azure-abonnement.
+U kunt de nieuwste versie van [Azure cli](/cli/azure/install-azure-cli)installeren of de Azure Cloud shell gebruiken die wordt meegeleverd als onderdeel van uw Azure-abonnement.
 
 Als u de uitbrei ding Event Grid wilt installeren, gebruikt u de volgende opdracht vanuit de CLI:
 

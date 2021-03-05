@@ -8,12 +8,12 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: azure-redhat-openshift
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9654711a1399c2708ce8c9150b79eefa73387c03
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: c253c6bf81305b9b336525c20980cf9599463648
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635023"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209863"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Een Azure Red Hat OpenShift-ontwikkelaarsomgeving instellen
 
@@ -43,7 +43,7 @@ az --version
 
 De eerste regel van de uitvoer heeft bijvoorbeeld de CLI-versie `azure-cli (2.0.65)` .
 
-Hier vindt u instructies voor [het installeren van de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) als u een nieuwe installatie of een upgrade nodig hebt.
+Hier vindt u instructies voor [het installeren van de Azure cli](/cli/azure/install-azure-cli) als u een nieuwe installatie of een upgrade nodig hebt.
 
 U kunt ook de [Azure Cloud shell](../cloud-shell/overview.md)gebruiken. Wanneer u de Azure Cloud Shell gebruikt, moet u ervoor zorgen dat u de **bash** -omgeving selecteert als u de reeks zelf studies voor het [maken en beheren van Azure Red Hat open Shift-cluster](tutorial-create-cluster.md) wilt volgen.
 

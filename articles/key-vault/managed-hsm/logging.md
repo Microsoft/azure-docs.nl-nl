@@ -9,12 +9,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 22abd38ead1257b49eeae98acfcd74349f563811
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7420ffbe5b365c635c1eac2620cfd54ceb649ebf
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90992166"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211767"
 ---
 # <a name="managed-hsm-logging"></a>Managed HSM-logboekregistratie 
 
@@ -22,7 +22,7 @@ Nadat u één of meer Managed HSM's hebt gemaakt, wilt u wellicht bewaken hoe, w
 
 U kunt uw logboekgegevens (maximaal) tien minuten, nadat de Managed HSM-bewerking is uitgevoerd, bekijken. In de meeste gevallen gaat het echter veel sneller.  Het is aan u om uw logboeken in uw opslagaccount te beheren:
 
-* Gebruik standaardmethoden van Azure voor toegangsbeheer om uw logboeken te beveiligen door het aantal gebruikers te beperken dat toegang heeft tot de logboeken.
+* Gebruik standaardmethoden voor Azure-toegangsbeheer om de logboeken te beveiligen door te beperken wie er toegang heeft.
 * Verwijder de logboeken die u niet meer in uw opslagaccount wilt bewaren.
 
 Deze zelfstudie helpt u op weg met de Managed HSM-logboekregistratie. U zult een opslagaccount maken, logboekregistratie inschakelen en de verzamelde logboekgegevens interpreteren.  
@@ -36,7 +36,7 @@ U moet over de volgende items beschikken om de stappen in dit artikel uit te kun
 
 * Een abonnement op Microsoft Azure Als u nog geen abonnement hebt, kunt u zich aanmelden voor een [gratis proefabonnement](https://azure.microsoft.com/pricing/free-trial).
 * Azure CLI versie 2.12.0 of hoger. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren]( /cli/azure/install-azure-cli).
-* Een Managed HSM in uw abonnement. Zie [Quickstart: Een Managed HSM inrichten en activeren met behulp van de Azure CLI](quick-create-cli.md) om een Managed HSM in te richten en te activeren.
+* Een beheerde HSM in uw abonnement. Zie [Quickstart: Een Managed HSM inrichten en activeren met behulp van de Azure CLI](quick-create-cli.md) om een Managed HSM in te richten en te activeren.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -48,7 +48,7 @@ De eerste stap in het instellen van sleutelregistratie is Azure CLI te laten wij
 az login
 ```
 
-Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true) voor meer informatie over opties voor aanmelding via de CLI
+Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over opties voor aanmelding via de CLI
 
 U moet mogelijk het abonnement opgeven dat u hebt gebruikt om uw Managed HSM te maken. Voer de volgende opdracht in als u de abonnementen voor uw account wilt zien:
 

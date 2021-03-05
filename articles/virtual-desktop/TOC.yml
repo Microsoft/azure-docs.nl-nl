@@ -215,7 +215,7 @@
     - name: Richtlijnen voor de grootte van virtuele machines
       href: /windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context
     - name: Azure-opdrachtregelinterface (CLI)
-      href: /cli/azure/ext/desktopvirtualization/?view=azure-cli-latest
+      href: /cli/azure/ext/desktopvirtualization/
     - name: Azure-voorbeeldscenario's
       href: /azure/architecture/example-scenario/wvd/windows-virtual-desktop
     - name: E-maildetectie

@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to, deploy
-ms.openlocfilehash: 71f393897dff266f1b0922a19eefd70cffea133d
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 8f22f1af04d59b4c1fb7f19a3d6815b61cac5fbd
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600350"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211224"
 ---
 # <a name="deploy-models-trained-with-azure-machine-learning-on-your-local-machines"></a>Modellen implementeren die zijn getraind met Azure Machine Learning op uw lokale computers 
 
@@ -185,8 +185,8 @@ Het gebruik van docker om uw model te implementeren als een webservice is de mee
 U kunt het model downloaden:  
 
 - Selecteer in de portal, door het tabblad **modellen** te selecteren, het gewenste model te selecteren en selecteer op de pagina **Details** de optie **downloaden**.
-- Vanaf de opdracht regel met behulp van `az ml model download` . (Zie [model downloaden.](/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext_azure_cli_ml_az_ml_model_download&preserve-view=false))
-- Met behulp van de python-SDK- `Model.download()` methode. (Zie [model klasse.](/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#download-target-dir------exist-ok-false--exists-ok-none-&preserve-view=false))
+- Vanaf de opdracht regel met behulp van `az ml model download` . (Zie [model downloaden.](/cli/azure/ext/azure-cli-ml/ml/model#ext_azure_cli_ml_az_ml_model_download))
+- Met behulp van de python-SDK- `Model.download()` methode. (Zie [model klasse.](/python/api/azureml-core/azureml.core.model.model#download-target-dir------exist-ok-false--exists-ok-none-))
 
 Een Azure-model is een of meer geserialiseerde python-objecten, verpakt als een python-selectie bestand (extensie. PKL). De inhoud van het selectie bestand is afhankelijk van de machine learning-bibliotheek of-techniek die wordt gebruikt om het model te trainen. Als u bijvoorbeeld het model uit de zelf studie gebruikt, kunt u het model laden met:
 

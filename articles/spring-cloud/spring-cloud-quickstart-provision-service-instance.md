@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 09/08/2020
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 22abdb64a2349045923e148db57f683b4be87636
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 6f25c4172b384abd487d2084f31981d16e73ee93
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742697"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102209880"
 ---
 # <a name="quickstart-provision-azure-spring-cloud-service"></a>Quickstart: Azure Spring Cloud-service inrichten
 
@@ -24,7 +24,7 @@ In deze quickstart gebruikt u de Azure CLI om een exemplaar van de Azure Spring 
 
 * Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1). De Azure Spring Cloud-service ondersteunt .NET Core 3.1 en latere versies.
-* [Azure CLI versie 2.0.67 of nieuwer](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* [Azure CLI versie 2.0.67 of nieuwer](/cli/azure/install-azure-cli).
 * [Git](https://git-scm.com/).
 
 ## <a name="install-azure-cli-extension"></a>Azure CLI-extensie installeren
@@ -35,7 +35,7 @@ Controleer of de Azure CLI-versie 2.0.67 of hoger is:
 az --version
 ```
 
-Voer de volgende opdracht uit om de Azure Spring Cloud-extensie voor de Azure CLI te installeren:
+Voer de volgende opdracht uit om de Azure Spring Cloud-extensie voor Azure CLI te installeren:
 
 ```azurecli
 az extension add --name spring-cloud
@@ -90,9 +90,9 @@ az extension add --name spring-cloud
 U kunt Azure Spring Cloud instantiëren met behulp van de Azure-portal of de Azure CLI.  Beide methoden worden beschreven in de volgende procedures.
 ## <a name="prerequisites"></a>Vereisten
 
-* [JDK 8 installeren](/java/azure/jdk/?preserve-view=true&view=azure-java-stable)
+* [JDK 8 installeren](/java/azure/jdk/)
 * [Aanmelden voor een Azure-abonnement](https://azure.microsoft.com/free/)
-* (Optioneel) [De Azure CLI versie 2.0.67 of hoger installeren](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) en de Azure Spring Cloud-extensie installeren met de opdracht: `az extension add --name spring-cloud`
+* (Optioneel) [De Azure CLI versie 2.0.67 of hoger installeren](/cli/azure/install-azure-cli) en de Azure Spring Cloud-extensie installeren met de opdracht: `az extension add --name spring-cloud`
 * (Optioneel) [De Azure-toolkit voor IntelliJ installeren](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) en [aanmelden](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in)
 
 ## <a name="provision-an-instance-of-azure-spring-cloud"></a>Een exemplaar van Azure Spring Cloud inrichten
@@ -103,7 +103,7 @@ Met de volgende procedure maakt u een exemplaar van Azure Spring Cloud met behul
 
 1. Open [Azure Portal](https://ms.portal.azure.com/) op een nieuw tabblad. 
 
-2. Zoek in het bovenste zoekvak naar **Azure Spring Cloud** .
+2. Zoek in het bovenste zoekvak naar **Azure Spring Cloud**.
 
 3. Selecteer **Azure Spring Cloud** in de resultaten.
 
@@ -113,15 +113,15 @@ Met de volgende procedure maakt u een exemplaar van Azure Spring Cloud met behul
 
     ![ASC-pictogram: toevoegen](media/spring-cloud-quickstart-launch-app-portal/spring-cloud-add.png)
 
-5. Vul het formulier in op de Azure Spring Cloud-pagina **Maken** .  Houd rekening met de volgende richtlijnen:
-    - **Abonnement** : Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
-    - **Resourcegroep** : Het is een best practice om nieuwe resourcegroepen te maken voor nieuwe resources. Dit wordt in latere stappen gebruikt als **\<resource group name\>** .
-    - **Servicedetails/naam** : Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
-    - **Locatie** : Selecteer de locatie voor uw service-exemplaar.
+5. Vul het formulier in op de Azure Spring Cloud-pagina **Maken**.  Houd rekening met de volgende richtlijnen:
+    - **Abonnement**: Selecteer het abonnement waarvoor u voor deze resource gefactureerd wilt worden.
+    - **Resourcegroep**: Het is een best practice om nieuwe resourcegroepen te maken voor nieuwe resources. Dit wordt in latere stappen gebruikt als **\<resource group name\>** .
+    - **Servicedetails/naam**: Geef de **\<service instance name\>** op.  De naam moet tussen de 4 en 32 tekens lang zijn en mag alleen kleine letters, cijfers en afbreekstreepjes bevatten.  Het eerste teken van de servicenaam moet een letter zijn en het laatste teken moet een letter of een cijfer zijn.
+    - **Locatie**: Selecteer de locatie voor uw service-exemplaar.
 
     ![ASC-portal starten](media/spring-cloud-quickstart-launch-app-portal/portal-start.png)
 
-6. Klik op **Controleren en maken** .
+6. Klik op **Controleren en maken**.
 
 > [!div class="nextstepaction"]
 > [Er is een fout opgetreden](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=public-endpoint)

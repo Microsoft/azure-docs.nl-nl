@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f29e6f0de3286b04321207b4c469f34aeaee8ef5
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ae6b4f38772cd6c6755ece78fb5c47834a616204
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737406"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211631"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
@@ -81,9 +81,9 @@ Configureer de Azure-WAF om uit te voeren in preventie modus nadat het netwerk v
 
 Regels en regel groepen Toep assen op Azure Web Application firewall-beleid (WAF) op basis van de toegepaste meta gegevens van het label.
 
-- [WAF-beleid voor Application Gateway](/cli/azure/network/application-gateway/waf-policy?view=azure-cli-latest) 
+- [WAF-beleid voor Application Gateway](/cli/azure/network/application-gateway/waf-policy) 
 
-- [WAF-beleid op de voor deur](/cli/azure/ext/front-door/network/front-door/waf-policy?view=azure-cli-latest)
+- [WAF-beleid op de voor deur](/cli/azure/ext/front-door/network/front-door/waf-policy)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

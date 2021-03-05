@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 12/04/2020
 ms.author: gistefan
 ms.reviewer: mikben
-ms.openlocfilehash: ee691d4809a68a0ba60f60a2240b76a1e53104bc
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 9571d13537b504b4d48685e879a379b08df3110d
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102171570"
+ms.locfileid: "102211478"
 ---
 # <a name="use-managed-identities-net"></a>Beheerde identiteiten (.NET) gebruiken
 
@@ -26,6 +26,7 @@ Deze Quick Start laat zien hoe u toegang tot de beheer-en SMS-client bibliotheke
 
  - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free)
  - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](./create-communication-resource.md?pivots=platform-azp&tabs=windows).
+ -  Een beheerde identiteit. [Een beheerde identiteit maken](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
 
 ## <a name="setting-up"></a>Instellen
 
@@ -59,10 +60,9 @@ Als u rollen en machtigingen wilt toewijzen met behulp van Power shell, raadplee
 ### <a name="install-the-client-library-packages"></a>De client bibliotheek pakketten installeren
 
 ```console
-dotnet add package Azure.Communication.Identity
-dotnet add package Azure.Communication.Configuration
-dotnet add package Azure.Communication.Sms
 dotnet add package Azure.Identity
+dotnet add package Azure.Communication.Identity
+dotnet add package Azure.Communication.Sms
 ```
 
 ### <a name="use-the-client-library-packages"></a>De client bibliotheek pakketten gebruiken
@@ -70,9 +70,11 @@ dotnet add package Azure.Identity
 Voeg de volgende `using` instructies toe aan uw code voor het gebruik van de identiteits-en Azure Storage-client bibliotheken van Azure.
 
 ```csharp
+using Azure;
+using Azure.Core;
 using Azure.Identity;
+using Azure.Communication;
 using Azure.Communication.Identity;
-using Azure.Communication.Configuration;
 using Azure.Communication.Sms;
 ```
 
@@ -89,6 +91,7 @@ In het volgende code voorbeeld ziet u hoe u een service-client object met Azure 
      
           var client = new CommunicationIdentityClient(resourceEndpoint, credential);
           var identityResponse = await client.CreateUserAsync();
+          var identity = identityResponse.Value;
      
           var tokenResponse = await client.IssueTokenAsync(identity, scopes: new [] { CommunicationTokenScope.VoIP });
 
@@ -101,7 +104,6 @@ In het volgende code voorbeeld ziet u hoe u een service-client object met Azure 
 In het volgende code voorbeeld ziet u hoe u een service-client object met Azure Active Directory-tokens maakt en vervolgens de-client gebruikt om een SMS-bericht te verzenden:
 
 ```csharp
-
      public async Task SendSmsAsync(Uri resourceEndpoint, PhoneNumber from, PhoneNumber to, string message)
      {
           TokenCredential credential = new DefaultAzureCredential();

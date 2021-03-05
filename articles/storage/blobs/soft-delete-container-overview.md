@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/08/2021
+ms.date: 03/05/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 674a336e79f118d543590fb7514b6bebef72cf47
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f157b44e92289d0e9c5b88108550c144344c5206
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390178"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102211138"
 ---
 # <a name="soft-delete-for-containers-preview"></a>Voorlopig verwijderen voor containers (preview-versie)
 
@@ -27,8 +27,8 @@ Micro soft raadt u aan de volgende functies voor gegevens beveiliging in te scha
 - BLOB-versie beheer om eerdere versies van een blob automatisch te onderhouden. Wanneer BLOB-versie beheer is ingeschakeld, kunt u een eerdere versie van een BLOB herstellen om uw gegevens te herstellen als deze ten onrechte zijn gewijzigd of verwijderd. Zie [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)voor meer informatie over het inschakelen van BLOB-versies.
 - Zacht verwijderen van BLOB, voor het herstellen van een BLOB of versie die is verwijderd. Zie voor het inschakelen van het voorlopig verwijderen van blobs de optie [voorlopig verwijderen inschakelen en beheren voor blobs](soft-delete-blob-enable.md).
 
-> [!WARNING]
-> Het verwijderen van een opslag account kan niet ongedaan worden gemaakt. Het dynamisch verwijderen van een container biedt geen bescherming tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van containers in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
+> [!IMPORTANT]
+> Er is momenteel **een preview-versie** van de container-Soft-verwijdering. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
 
 ## <a name="how-container-soft-delete-works"></a>De werking van de functie voor voorlopig verwijderen van containers
 
@@ -46,14 +46,14 @@ Nadat de Bewaar periode is verlopen, wordt de container permanent verwijderd uit
 
 Het uitschakelen van de container soft delete heeft geen permanente verwijdering van containers die eerder zijn verwijderd. Alle voorlopig verwijderde containers worden permanent verwijderd bij het verlopen van de Bewaar periode die van kracht was op het moment dat de container werd verwijderd.
 
+> [!IMPORTANT]
+> Het dynamisch verwijderen van een container biedt geen bescherming tegen het verwijderen van een opslag account, maar alleen voor het verwijderen van containers in dat account. Als u een opslag account wilt beveiligen tegen verwijderen, configureert u een vergren deling voor de bron van het opslag account. Zie [resources vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md)voor meer informatie over het vergren delen van Azure Resource Manager resources.
+
 ## <a name="about-the-preview"></a>Over de preview-versie
 
 De container soft delete is beschikbaar als preview-versie in alle Azure-regio's.
 
-> [!IMPORTANT]
-> De container Soft-voor beeld van verwijderen is alleen bedoeld voor niet-productie gebruik. Service Level Agreements (Sla's) op het niveau van de productie zijn momenteel niet beschikbaar.
-
-Versie 2019-12-12 en hoger van de Azure Storage REST API ondersteunt het voorlopig verwijderen van containers.
+Versie 2019-12-12 of hoger van de Azure Storage REST API ondersteunt het voorlopig verwijderen van containers.
 
 ### <a name="storage-account-support"></a>Ondersteuning voor opslag accounts
 

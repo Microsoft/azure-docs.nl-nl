@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 59cedb25295770ba4ae4a33aac3287c5fed1297d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8c2ea69d38f354455b7957ddc7b6ff41da30100b
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381491"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210764"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Azure-wachtrij opslag trigger voor Azure Functions
 
@@ -407,7 +407,7 @@ Zie [de GitHub-opslag plaats voor de uitbrei ding](https://github.com/Azure/azur
 
 # <a name="java"></a>[Java](#tab/java)
 
-Met de [Queue trigger](/java/api/com.microsoft.azure.functions.annotation.queuetrigger?view=azure-java-stable&preserve-view=true) -aantekening krijgt u toegang tot het wachtrij bericht waarmee de functie is geactiveerd.
+Met de [Queue trigger](/java/api/com.microsoft.azure.functions.annotation.queuetrigger) -aantekening krijgt u toegang tot het wachtrij bericht waarmee de functie is geactiveerd.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

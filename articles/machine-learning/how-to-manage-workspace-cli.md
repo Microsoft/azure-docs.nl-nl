@@ -10,12 +10,12 @@ author: Blackmist
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-azurecli
-ms.openlocfilehash: 4c457ef2c4957308735c222488ad04dac80235df
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 8ea3f36d4e63b3439691772c25e7b3af77dcdb02
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740382"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102210033"
 ---
 # <a name="create-a-workspace-for-azure-machine-learning-with-azure-cli"></a>Een werk ruimte maken voor Azure Machine Learning met Azure CLI
 
@@ -26,7 +26,7 @@ In dit artikel leert u hoe u een Azure Machine Learning-werk ruimte maakt met be
 
 * Een **Azure-abonnement**. Als u er nog geen hebt, probeer [dan de gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 
-* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli).
 
     Als u [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
 
@@ -49,7 +49,7 @@ Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een aanme
 
 [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
 
-Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest)voor andere verificatie methoden.
+Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli)voor andere verificatie methoden.
 
 ## <a name="install-the-machine-learning-extension"></a>De machine learning-extensie installeren
 
@@ -84,7 +84,7 @@ Azure Container Registry (ACR) biedt momenteel geen ondersteuning voor Unicode-t
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-De Azure Machine Learning-werk ruimte moet binnen een resource groep worden gemaakt. U kunt een bestaande resource groep gebruiken of een nieuwe maken. Met de volgende opdracht kunt u __een nieuwe resourcegroep maken__. Vervang `<resource-group-name>` door de naam die u voor deze resourcegroep wilt gebruiken. Vervang `<location>` door de Azure-regio die u voor deze resourcegroep wilt gebruiken:
+De Azure Machine Learning-werk ruimte moet binnen een resource groep worden gemaakt. U kunt een bestaande resourcegroep gebruiken of een nieuwe maken. Met de volgende opdracht kunt u __een nieuwe resourcegroep maken__. Vervang `<resource-group-name>` door de naam die u voor deze resourcegroep wilt gebruiken. Vervang `<location>` door de Azure-regio die u voor deze resourcegroep wilt gebruiken:
 
 > [!TIP]
 > U moet een regio selecteren waar Azure Machine Learning beschikbaar is. Zie [Producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-service) voor informatie.
@@ -109,7 +109,7 @@ De respons van deze opdracht is vergelijkbaar met de volgende JSON:
 }
 ```
 
-Zie [az group](/cli/azure/group?preserve-view=true&view=azure-cli-latest) voor meer informatie over het werken met resourcegroepen.
+Zie [az group](/cli/azure/group) voor meer informatie over het werken met resourcegroepen.
 
 ### <a name="automatically-create-required-resources"></a>Automatisch vereiste resources maken
 
@@ -291,7 +291,7 @@ De uitvoer van deze opdracht is vergelijkbaar met de volgende JSON:
 ]
 ```
 
-Zie de documentatie voor de [lijst AZ ml-werk ruimte](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-list) voor meer informatie.
+Zie de documentatie voor de [lijst AZ ml-werk ruimte](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-list) voor meer informatie.
 
 ## <a name="get-workspace-information"></a>Werkruimte gegevens ophalen
 
@@ -324,7 +324,7 @@ De uitvoer van deze opdracht is vergelijkbaar met de volgende JSON:
 }
 ```
 
-Zie de documentatie van [AZ ml Workspace show](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-show) voor meer informatie.
+Zie de documentatie van [AZ ml Workspace show](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-show) voor meer informatie.
 
 ## <a name="update-a-workspace"></a>Een werk ruimte bijwerken
 
@@ -357,7 +357,7 @@ De uitvoer van deze opdracht is vergelijkbaar met de volgende JSON:
 }
 ```
 
-Zie voor meer informatie de documentatie van [AZ ml Workspace update](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-update) .
+Zie voor meer informatie de documentatie van [AZ ml Workspace update](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-update) .
 
 ## <a name="share-a-workspace-with-another-user"></a>Een werk ruimte delen met een andere gebruiker
 
@@ -369,7 +369,7 @@ az ml workspace share -w <workspace-name> -g <resource-group-name> --user <user>
 
 Zie [gebruikers en rollen beheren](how-to-assign-roles.md)voor meer informatie over toegangs beheer op basis van rollen (Azure RBAC) met Azure machine learning.
 
-Zie voor meer informatie de documentatie bij [AZ ml-werkruimte share](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-share) .
+Zie voor meer informatie de documentatie bij [AZ ml-werkruimte share](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-share) .
 
 ## <a name="sync-keys-for-dependent-resources"></a>Sleutels voor afhankelijke Resources synchroniseren
 
@@ -381,7 +381,7 @@ az ml workspace sync-keys -w <workspace-name> -g <resource-group-name>
 
 Zie [toegangs sleutels voor opslag opnieuw genereren](how-to-change-storage-access-key.md)voor meer informatie over het wijzigen van sleutels.
 
-Zie voor meer informatie de documentatie van de [werk ruimte synchronisatie van AZ ml-sleutels](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-sync-keys) .
+Zie voor meer informatie de documentatie van de [werk ruimte synchronisatie van AZ ml-sleutels](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-sync-keys) .
 
 ## <a name="delete-a-workspace"></a>Een werkruimte verwijderen
 
@@ -400,7 +400,7 @@ U kunt ook de resource groep verwijderen, waarmee de werk ruimte en alle andere 
 az group delete -g <resource-group-name>
 ```
 
-Zie voor meer informatie de documentatie voor het verwijderen van de [werk ruimte AZ ml](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-delete) .
+Zie voor meer informatie de documentatie voor het verwijderen van de [werk ruimte AZ ml](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-delete) .
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
@@ -421,4 +421,4 @@ In de Azure Machine Learning-werk ruimte wordt Azure Container Registry (ACR) ge
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de documentatie van [AZ ml](/cli/azure/ext/azure-cli-ml/ml?preserve-view=true&view=azure-cli-latest) voor meer informatie over de Azure cli-extensie voor machine learning.
+Zie de documentatie van [AZ ml](/cli/azure/ext/azure-cli-ml/ml) voor meer informatie over de Azure cli-extensie voor machine learning.

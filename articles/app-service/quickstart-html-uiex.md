@@ -8,12 +8,12 @@ ms.date: 08/23/2019
 ms.author: msangapu
 ms.custom: mvc, cli-validate, seodec18, devx-track-azurecli
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: e7beae6c1398525faa267e2cec6d9fb7134b6297
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 538d414ce606b944fcea7adbb1c817386e13090e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703572"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178572"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Een statische HTML-web-app maken in Azure
 
@@ -67,7 +67,7 @@ Het volledig uitvoeren van de opdracht kan even duren.
 <ul>
 <li>Er wordt een standaardresourcegroep gemaakt.</li>
 <li>Maak een standaard App Service plan.</li>
-<li><a href="/cli/azure/webapp?view=azure-cli-latest#az-webapp-create">Maak een app service-app</a> met de opgegeven naam.</li>
+<li><a href="/cli/azure/webapp#az-webapp-create">Maak een app service-app</a> met de opgegeven naam.</li>
 <li>Er worden via zip bestanden van de huidige werkmap naar de app <a href="/azure/app-service/deploy-zip">geïmplementeerd</a>.</li>
 <li>Tijdens de uitvoering worden berichten over het maken van resources, logboek registratie en ZIP-implementatie geboden.</li>
 </ul>

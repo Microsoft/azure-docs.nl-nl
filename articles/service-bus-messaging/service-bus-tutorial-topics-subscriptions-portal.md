@@ -6,12 +6,12 @@ ms.author: spelluru
 ms.date: 10/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f2c8d107c6de4965472c3fb04ff626841fb1f6ea
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
-ms.translationtype: HT
+ms.openlocfilehash: d0a94f346f9d3cf7a05a1ca6e1b37d4d008f3e75
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95810727"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179660"
 ---
 # <a name="tutorial-update-inventory-using-azure-portal-and-topicssubscriptions"></a>Zelfstudie: Voorraad bijwerken met Azure Portal en onderwerpen/abonnementen
 
@@ -97,7 +97,7 @@ Ga als volgt te werk om de code uit te voeren:
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer u de naamruimte en de wachtrij niet meer nodig hebt, kunt u deze verwijderen. Selecteer deze resources hiervoor in de portal en klik op **Verwijderen**.
+Als u deze niet meer nodig hebt, verwijdert u de naam ruimte en het onderwerp. Selecteer deze resources hiervoor in de portal en klik op **Verwijderen**.
 
 ## <a name="understand-the-sample-code"></a>De voorbeeldcode begrijpen
 

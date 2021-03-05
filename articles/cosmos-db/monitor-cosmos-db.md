@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: e23318684294a833c59fd5666db8c0a14efde890
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f18d1850cb6ccf28ff70f826e3d4bfe74ae05c40
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101658500"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178725"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Azure Cosmos DB controleren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -125,7 +125,7 @@ U kunt metrische gegevens groeperen met behulp van de optie **splitsing Toep ass
 
 ## <a name="analyzing-logs"></a><a id="analyze-log-data"></a> Logboeken analyseren
 
-Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarvan elke tabel een eigen set unieke eigenschappen heeft.
+Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarin elke tabel een eigen set unieke eigenschappen heeft.
 
 Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema). Zie [Azure Cosmos DB gegevens referentie bewaken](monitor-cosmos-db-reference.md#resource-logs)voor een lijst met de typen bron logboeken die zijn verzameld voor Azure Cosmos db.
 

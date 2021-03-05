@@ -7,16 +7,16 @@ ms.service: attestation
 ms.topic: quickstart
 ms.date: 11/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 4fc799c1c6dcaaa3ed4bc41c93bd6b786f51591c
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: ae283785b4d4dc80c6b9b6c3997aaf82c9ff0f2f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429242"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178708"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-cli"></a>Quickstart: Azure Attestation instellen met Azure CLI
 
-Ga aan de slag met het instellen van [Azure Attestation met Azure CLI](/cli/azure/ext/attestation/attestation?view=azure-cli-latest).
+Ga aan de slag met het instellen van [Azure Attestation met Azure CLI](/cli/azure/ext/attestation/attestation).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -69,13 +69,13 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 Hier vindt u de opdrachten die u kunt gebruiken om de attestation-provider te maken en beheren:
 
-1. Voer de opdracht [az attestation create](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_create) uit om een attestation-provider zonder beleidsondertekeningsvereiste te maken:
+1. Voer de opdracht [az attestation create](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_create) uit om een attestation-provider zonder beleidsondertekeningsvereiste te maken:
 
    ```azurecli
    az attestation create --name "myattestationprovider" --resource-group "MyResourceGroup" --location westus
    ```
    
-1. Voer de opdracht [az attestation show](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_show) uit om eigenschappen van de attestation-provider op te halen, zoals status en AttestURI:
+1. Voer de opdracht [az attestation show](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_show) uit om eigenschappen van de attestation-provider op te halen, zoals status en AttestURI:
 
    ```azurecli
    az attestation show --name "myattestationprovider" --resource-group "MyResourceGroup"
@@ -95,7 +95,7 @@ Hier vindt u de opdrachten die u kunt gebruiken om de attestation-provider te ma
    TagsTable:
    ```
 
-U kunt een attestation-provider verwijderen met behulp van de opdracht [az attestation delete](/cli/azure/ext/attestation/attestation?view=azure-cli-latest#ext_attestation_az_attestation_delete):
+U kunt een attestation-provider verwijderen met behulp van de opdracht [az attestation delete](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_delete):
 
 ```azurecli
 az attestation delete --name "myattestationprovider" --resource-group "sample-resource-group"
@@ -105,7 +105,7 @@ az attestation delete --name "myattestationprovider" --resource-group "sample-re
 
 Gebruik de opdrachten die hieronder worden beschreven, om beleidsbeheer voor een attestation-provider te kunnen bieden, één attestation-type per keer.
 
-De opdracht [az attestation policy show](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_show) retourneert het huidige beleid voor de opgegeven TEE:
+De opdracht [az attestation policy show](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_show) retourneert het huidige beleid voor de opgegeven TEE:
 
 ```azurecli
 az attestation policy show --name "myattestationprovider" --resource-group "MyResourceGroup" --attestation-type SGX-IntelSDK
@@ -120,7 +120,7 @@ De volgende typen TEE worden ondersteund:
 - `SGX-OpenEnclaveSDK`
 - `TPM`
 
-Gebruik de opdracht [az attestation policy set](/cli/azure/ext/attestation/attestation/policy?view=azure-cli-latest#ext_attestation_az_attestation_policy_set) om nieuw beleid voor het opgegeven attestation-type in te stellen.
+Gebruik de opdracht [az attestation policy set](/cli/azure/ext/attestation/attestation/policy#ext_attestation_az_attestation_policy_set) om nieuw beleid voor het opgegeven attestation-type in te stellen.
 
 Beleid in de tekstindeling instellen voor een opgegeven attestation-type met behulp van het bestandspad:
 

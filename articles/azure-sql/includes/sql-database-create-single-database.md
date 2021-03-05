@@ -6,12 +6,12 @@ ms.topic: include
 ms.date: 03/10/2020
 ms.author: sstein
 ms.reviewer: vanto
-ms.openlocfilehash: 57f504b15c0a9c72a2cb0f17b486846f44171a25
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c7bd942b427bdbd2d8184f712f97dd2a0a57fa90
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101682438"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178066"
 ---
 In deze stap maakt u een [logische SQL-server](../database/logical-servers.md) en een [individuele database](../database/single-database-overview.md) waarin AdventureWorksLT-voorbeeldgegevens worden gebruikt. U kunt de database maken met behulp van menu's en schermen in de Azure-portal, of met behulp van een Azure CLI- of PowerShell-script in Azure Cloud Shell.
 
@@ -151,11 +151,11 @@ De voorgaande code maakt gebruik van de volgende Azure CLI-opdrachten:
 
 | Opdracht | Beschrijving |
 |---|---|
-| [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set&preserve-view=true) | Hiermee stelt u een abonnement in als het huidige actieve abonnement. |
+| [az account set](/cli/azure/account#az-account-set) | Hiermee stelt u een abonnement in als het huidige actieve abonnement. |
 | [az group create](/cli/azure/group#az-group-create) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
 | [az sql server create](/cli/azure/sql/server#az-sql-server-create) | Hiermee maakt u een server die als host fungeert voor databases en elastische pools. |
 | [az sql server firewall-rule create](/cli/azure/sql/server/firewall-rule##az-sql-server-firewall-rule-create) | Hiermee maakt u een firewallregel op serverniveau. |
-| [az sql db create](/cli/azure/sql/db#az-sql-db-create?view=azure-cli-latest&preserve-view=true) | Hiermee maakt u een database. |
+| [az sql db create](/cli/azure/sql/db#az-sql-db-create) | Hiermee maakt u een database. |
 
 Zie [Azure CLI-voorbeelden](../database/az-cli-script-samples-content-guide.md) voor meer Azure CLI-voorbeelden in Azure SQL Database.
 

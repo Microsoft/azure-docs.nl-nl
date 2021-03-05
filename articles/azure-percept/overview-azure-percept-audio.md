@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: 8884663b3f0e861e62f48c3aab680f0f31e74428
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 8f84fb6bf37a3d3b61f4cad2c89745447aa88a36
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098380"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179388"
 ---
 # <a name="introduction-to-azure-percept-audio"></a>Inleiding tot Azure percept-audio
 
@@ -65,7 +65,7 @@ Azure Percept Audio passes the audio input to the Azure Percept DK carrier board
 
 ## <a name="build-a-no-code-prototype"></a>Een prototype zonder code maken
 
-Bouw een [oplossing zonder code](./tutorial-no-code-speech.md) met behulp van Azure percept Voice Assistant-sjablonen voor horeca-, gezondheids zorg-, inventaris-en automobiel scenario's.
+Bouw een [oplossing zonder code voor spraak](./tutorial-no-code-speech.md) in [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) met behulp van Azure percept-sjablonen voor de horeca, de gezondheids zorg, de inventaris en de automobiel scenario's.
 
 ### <a name="manage-your-no-code-speech-solution"></a>Uw oplossing voor spraak op geen code beheren
 

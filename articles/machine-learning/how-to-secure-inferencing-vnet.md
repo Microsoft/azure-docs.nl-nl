@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 80abe036ef4a08f7ed6f0f19cffc2abde70a6ea9
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 190f44e95c96a2aee60e1b28f8817a74d3e06e3f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981303"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178657"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Een Azure Machine Learning omgeving voor het afwijzen van interferentie beveiligen met virtuele netwerken
 
@@ -34,7 +34,6 @@ In dit artikel leert u hoe u de volgende bronnen voor het afwijzen van een virtu
 > - Persoonlijk AKS-cluster
 > - AKS-cluster met persoonlijke koppeling
 > - Azure Container Instances (ACI)
-
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -58,7 +57,6 @@ Als u een AKS-cluster in een virtueel netwerk wilt gebruiken, moet aan de volgen
 > [!div class="checklist"]
 > * Volg de vereisten in [geavanceerde netwerken configureren in azure Kubernetes service (AKS)](../aks/configure-azure-cni.md#prerequisites).
 > * Het AKS-exemplaar en het virtuele netwerk moeten zich in dezelfde regio bevinden. Als u de Azure Storage account (s) die door de werk ruimte in een virtueel netwerk worden gebruikt, beveiligt, moeten ze zich ook in hetzelfde virtuele netwerk bevinden als het AKS-exemplaar.
-
 
 Voer de volgende stappen uit om AKS toe te voegen aan uw werk ruimte in een virtueel netwerk:
 
@@ -274,7 +272,7 @@ Als u de standaard regels voor uitgaande verbindingen niet wilt gebruiken en u d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel is deel drie in een virtuele netwerk reeks van vier delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
+Dit artikel is deel vier van een virtuele netwerk reeks van vijf delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
 
 * [Deel 1: overzicht van virtueel netwerk](how-to-network-security-overview.md)
 * [Deel 2: de resources van de werk ruimte beveiligen](how-to-secure-workspace-vnet.md)

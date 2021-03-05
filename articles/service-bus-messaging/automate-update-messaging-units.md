@@ -2,13 +2,13 @@
 title: Azure Service Bus-bericht eenheden automatisch bijwerken
 description: In dit artikel wordt beschreven hoe u de bericht eenheden van een Service Bus naam ruimte automatisch bijwerken kunt gebruiken.
 ms.topic: how-to
-ms.date: 09/15/2020
-ms.openlocfilehash: 594f9987bfa5a7a439fb862a0345d0004785b189
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: 7fc3aca82b8f01d70dec4fc2dac7842895417ec9
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720593"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177952"
 ---
 # <a name="automatically-update-messaging-units-of-an-azure-service-bus-namespace"></a>Bericht eenheden van een Azure Service Bus naam ruimte automatisch bijwerken 
 Met automatisch schalen kunt u de juiste hoeveelheid resources uitvoeren om de belasting van uw toepassing te verwerken. U kunt hiermee resources toevoegen voor het afhandelen van toename van de belasting en bespaart u geld door resources te verwijderen die niet actief zijn. Zie [overzicht van automatisch schalen in Microsoft Azure](../azure-monitor/autoscale/autoscale-overview.md) voor meer informatie over de functie voor automatisch schalen van Azure monitor. 
@@ -136,8 +136,14 @@ In de vorige sectie ziet u hoe u een standaard voorwaarde kunt toevoegen voor de
     
     :::image type="content" source="./media/automate-update-messaging-units/repeat-specific-days-2.png" alt-text="schalen naar specifieke bericht eenheden-specifieke dagen herhalen":::
 
-> [!IMPORTANT]
-> Zie [instellingen voor automatisch schalen](../azure-monitor/autoscale/autoscale-understanding-settings.md)voor meer informatie over de werking van instellingen voor automatisch schalen, met name hoe een profiel of voor waarde wordt gekozen en meerdere regels worden geëvalueerd.          
+    
+    Zie [instellingen voor automatisch schalen](../azure-monitor/autoscale/autoscale-understanding-settings.md)voor meer informatie over de werking van instellingen voor automatisch schalen, met name hoe een profiel of voor waarde wordt gekozen en meerdere regels worden geëvalueerd.          
+
+    > [!NOTE]
+    > - De metrische gegevens die u bekijkt om beslissingen over automatisch schalen te maken, kunnen 5-10 minuten oud zijn. Wanneer u werkt met piekige-werk belastingen, raden we u aan de duur te verg Roten om omhoog en langer de duur te schalen (> 10 minuten) om ervoor te zorgen dat er voldoende Messa ging-eenheden zijn om piekige-workloads te verwerken. 
+    > 
+    > - Als u fouten ziet als gevolg van onvoldoende capaciteit (er zijn geen Messa ging-eenheden beschikbaar), moet u een ondersteunings ticket met ons indienen.  
+
 
 ## <a name="next-steps"></a>Volgende stappen
 Voor meer informatie over Messa ging-eenheden raadpleegt u de [Premium Messa ging](service-bus-premium-messaging.md)

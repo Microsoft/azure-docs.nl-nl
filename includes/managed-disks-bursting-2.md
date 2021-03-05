@@ -5,15 +5,15 @@ services: virtual-machines
 author: albecker1
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 02/12/2021
+ms.date: 03/04/2021
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 54c29d76757916a8eea54af16babdae21b809a19
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a2f6a3fd8d36bb54773db21e3d36dab0060bae57
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101750127"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178372"
 ---
 ## <a name="disk-level-bursting"></a>Bursting op schijf niveau
 
@@ -63,15 +63,14 @@ Raadpleeg de [pagina met prijzen voor Managed disks](https://azure.microsoft.com
 
 Op Credit gebaseerde bursting is beschikbaar voor P20 en kleinere schijven in alle regio's in azure Public-, Government-en China-Clouds. Schijf bursting is standaard ingeschakeld voor alle nieuwe en bestaande implementaties van ondersteunde schijf grootten. Met burstisatie op VM-niveau wordt alleen op Credit gebaseerde burstisatie gebruikt.
 
-### <a name="virtual-machine-level-bursting"></a>Burstisatie op virtuele machine niveau
-Ondersteuning voor burstisatie op VM-niveau is ingeschakeld in alle regio's in de open bare Cloud op de volgende ondersteunde grootten: 
-- [Lsv2-serie](../articles/virtual-machines/lsv2-series.md)
+## <a name="virtual-machine-level-bursting"></a>Burstisatie op virtuele machine niveau
 
-Burstisatie op VM-niveau is ook beschikbaar in West-Centraal VS voor de volgende ondersteunde grootten:
+Voor burstisatie op VM-niveau wordt alleen het op Credit gebaseerd model gebruikt voor burstisatie, het is standaard ingeschakeld voor alle virtuele machines die dit ondersteunen.
+
+Burstisatie op VM-niveau is in alle regio's in de open bare Azure-Cloud ingeschakeld op de volgende ondersteunde grootten: 
+- [Lsv2-serie](../articles/virtual-machines/lsv2-series.md)
 - [Dv3- en DSv3-serie](../articles/virtual-machines/dv3-dsv3-series.md)
 - [Ev3- en Esv3-serie](../articles/virtual-machines/ev3-esv3-series.md)
-
-Bursting is standaard ingeschakeld voor virtuele machines die dit ondersteunen.
 
 ## <a name="bursting-flow"></a>Bursting-stroom
 

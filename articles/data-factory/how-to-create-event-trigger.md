@@ -7,12 +7,12 @@ ms.author: chez
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 10/18/2018
-ms.openlocfilehash: 7dde05e02421ef8d2ea46fd0d50687ede6e5d884
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ff8c549f74b59706de5203f2d2e46867d6cb1d0a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727776"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177778"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-a-storage-event"></a>Een trigger maken waarmee een pijp lijn wordt uitgevoerd als reactie op een opslag gebeurtenis
 
@@ -26,7 +26,6 @@ Bekijk de volgende video voor een inleiding en demonstratie van tien minuten voo
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Event-based-data-integration-with-Azure-Data-Factory/player]
 
-
 > [!NOTE]
 > De integratie die in dit artikel wordt beschreven, is afhankelijk van [Azure Event grid](https://azure.microsoft.com/services/event-grid/). Zorg ervoor dat uw abonnement is geregistreerd bij de resource provider Event Grid. Zie [resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md#azure-portal)voor meer informatie. U moet de actie *micro soft. EventGrid/eventSubscriptions/** kunnen uitvoeren. Deze actie maakt deel uit van de ingebouwde rol EventSubscription Inzender voor EventGrid.
 
@@ -34,11 +33,11 @@ Bekijk de volgende video voor een inleiding en demonstratie van tien minuten voo
 
 In deze sectie wordt beschreven hoe u een opslag gebeurtenis trigger maakt in de gebruikers interface van Azure Data Factory.
 
-1. Ga naar het **ontwerp canvas**
+1. Schakel over naar het tabblad **bewerken** , weer gegeven met een potlood symbool. 
 
-1. Klik in de linkerbenedenhoek op de knop **Triggers**
+1. Selecteer **activeren** in het menu en selecteer vervolgens **Nieuw/bewerken**. 
 
-1. Klik op **+ Nieuw** , waardoor de linkernavigatie trigger maken wordt geopend
+1. Selecteer op de pagina **triggers toevoegen** de optie **trigger kiezen...** en selecteer **+ Nieuw**. 
 
 1. Gebeurtenis voor type trigger **opslag** selecteren
 
@@ -107,4 +106,5 @@ Deze sectie bevat voor beelden van instellingen voor opslag gebeurtenis trigger.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md#trigger-execution)voor meer informatie over triggers.
+* Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md#trigger-execution)voor meer informatie over triggers.
+* Meer informatie over het verwijzen naar trigger-meta gegevens in de pijp lijn. Zie [Naslag informatie voor triggers in pijplijn uitvoeringen](how-to-use-trigger-parameterization.md)

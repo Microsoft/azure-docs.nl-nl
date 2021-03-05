@@ -5,12 +5,12 @@ description: Meer informatie over het gebruik van Azure Active Directory groepsl
 services: container-service
 ms.topic: article
 ms.date: 07/21/2020
-ms.openlocfilehash: 89bf785a082ff479dcd824a773123fcd061dc22d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 585e51f5131bf20d39cf43ab2e843774d61a708f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576108"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178232"
 ---
 # <a name="control-access-to-cluster-resources-using-kubernetes-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Toegang tot cluster bronnen beheren met op rollen gebaseerd toegangs beheer en Azure Active Directory-identiteiten in de Azure Kubernetes-service
 
@@ -28,7 +28,7 @@ U moet de Azure CLI-versie 2.0.61 of hoger hebben geïnstalleerd en geconfiguree
 
 In dit artikel gaan we twee gebruikers rollen maken die kunnen worden gebruikt om te laten zien hoe Kubernetes RBAC en Azure AD Control toegang hebben tot cluster bronnen. De volgende twee voorbeeld rollen worden gebruikt:
 
-* **Toepassingsontwikkelaar**
+* **Toepassings ontwikkelaar**
     * Een gebruiker met de naam *aksdev* die deel uitmaakt van de groep *appdev* .
 * **Site betrouwbaarheids technicus**
     * Een gebruiker met de naam *akssre* die deel uitmaakt van de groep *opssre* .
@@ -401,7 +401,7 @@ Zie [Aanbevolen procedures voor verificatie en autorisatie in AKS][operator-best
 [kubectl-run]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run
 
 <!-- LINKS - internal -->
-[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [install-azure-cli]: /cli/azure/install-azure-cli
 [azure-ad-aks-cli]: azure-ad-integration-cli.md
 [az-aks-show]: /cli/azure/aks#az-aks-show

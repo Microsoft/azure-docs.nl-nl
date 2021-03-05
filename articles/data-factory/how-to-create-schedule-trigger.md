@@ -8,14 +8,15 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 3673dd9eba717d2bdb569b4248936bbb59a8eae7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f10dac4e70a1edb05f2f2c02c48b9ae16c4f6823
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387577"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177807"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-on-a-schedule"></a>Een trigger maken voor het uitvoeren van een pijplijn volgens een planning
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Dit artikel bevat informatie over de plannings trigger en de stappen voor het maken, starten en bewaken van een plannings trigger. Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md)voor andere soorten triggers.
@@ -25,6 +26,7 @@ Wanneer u een plannings trigger maakt, geeft u een planning op (Start datum, ter
 De volgende secties bevatten stappen voor het maken van een plannings trigger op verschillende manieren. 
 
 ## <a name="data-factory-ui"></a>Gebruikersinterface van Data Factory
+
 U kunt een **schema trigger** maken om een pijp lijn te plannen die regel matig wordt uitgevoerd (elk uur, dagelijks, enzovoort). 
 
 > [!NOTE]
@@ -89,7 +91,7 @@ In deze sectie wordt beschreven hoe u Azure PowerShell kunt gebruiken om een pla
     > [!IMPORTANT]
     > Voordat u het JSON-bestand opslaat, stelt u de waarde van het element **StartTime** in op de huidige UTC-tijd. Stel de waarde van het element **EndTime** in op één uur na de huidige UTC-tijd.
 
-    ```json   
+    ```json
     {
         "properties": {
             "name": "MyTrigger",
@@ -167,9 +169,8 @@ In deze sectie wordt beschreven hoe u Azure PowerShell kunt gebruiken om een pla
 
     Zie [pijplijn uitvoeringen controleren](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline)als u de uitvoering van triggers en pijplijn uitvoeringen wilt bewaken in de Azure Portal.
 
-
-
 ## <a name="net-sdk"></a>.NET SDK
+
 In deze sectie wordt beschreven hoe u de .NET SDK gebruikt om een trigger te maken, te starten en te bewaken. Als u dit voor beeld wilt weer geven, gaat u eerst naar de [Snelstartgids: een Data Factory maken met behulp van de .NET SDK](quickstart-create-data-factory-dot-net.md). Voeg vervolgens de volgende code toe aan de methode Main, waarmee een plannings trigger wordt gemaakt en gestart die elke 15 minuten wordt uitgevoerd. De trigger is gekoppeld aan een pijp lijn met de naam **Adfv2QuickStartPipeline** die u maakt als onderdeel van de Quick Start.
 
 Als u een plannings trigger wilt maken en starten die elke 15 minuten wordt uitgevoerd, voegt u de volgende code toe aan de methode Main:
@@ -258,8 +259,8 @@ Als u de uitvoering van een trigger wilt bewaken, voegt u de volgende code toe v
 
 Zie [pijplijn uitvoeringen controleren](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline)als u de uitvoering van triggers en pijplijn uitvoeringen wilt bewaken in de Azure Portal.
 
-
 ## <a name="python-sdk"></a>Python-SDK
+
 In deze sectie wordt beschreven hoe u de python-SDK gebruikt om een trigger te maken, te starten en te bewaken. Als u dit voor beeld wilt weer geven, gaat u eerst naar de [Snelstartgids: een Data Factory maken met behulp van de python-SDK](quickstart-create-data-factory-python.md). Voeg vervolgens het volgende code blok toe na het code blok van de pijplijn uitvoering bewaken in het python-script. Met deze code wordt een schema trigger gemaakt die elke 15 minuten tussen de opgegeven begin-en eind tijd wordt uitgevoerd. Werk de variabele **start_time** bij naar de huidige UTC-tijd en de **end_time** variabele tot één uur na de huidige UTC-tijd.
 
 ```python
@@ -280,9 +281,11 @@ In deze sectie wordt beschreven hoe u de python-SDK gebruikt om een trigger te m
 Zie [pijplijn uitvoeringen controleren](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline)als u de uitvoering van triggers en pijplijn uitvoeringen wilt bewaken in de Azure Portal.
 
 ## <a name="azure-resource-manager-template"></a>Azure Resource Manager-sjabloon
+
 U kunt een Azure Resource Manager-sjabloon gebruiken om een trigger te maken. Zie [een Azure-Data Factory maken met behulp van een resource manager-sjabloon](quickstart-create-data-factory-resource-manager-template.md)voor stapsgewijze instructies.  
 
 ## <a name="pass-the-trigger-start-time-to-a-pipeline"></a>Start tijd van trigger door geven aan een pijp lijn
+
 Azure Data Factory versie 1 ondersteunt het lezen of schrijven van gepartitioneerde gegevens met behulp van de systeem variabelen: **slice start**, **SliceEnd**, **WindowStart** en **WindowEnd**. In de huidige versie van Azure Data Factory kunt u dit gedrag doen met behulp van een pijplijn parameter. De begin tijd en de geplande tijd voor de trigger worden ingesteld als de waarde voor de pijplijn parameter. In het volgende voor beeld wordt de geplande tijd voor de trigger door gegeven als een waarde voor de pijplijn **scheduledRunTime** para meter:
 
 ```json
@@ -292,6 +295,7 @@ Azure Data Factory versie 1 ondersteunt het lezen of schrijven van gepartitionee
 ```
 
 ## <a name="json-schema"></a>JSON-schema
+
 De volgende JSON-definitie laat zien hoe u een plannings trigger maakt met planning en terugkeer patroon:
 
 ```json
@@ -343,9 +347,10 @@ De volgende JSON-definitie laat zien hoe u een plannings trigger maakt met plann
 
 
 ### <a name="schema-overview"></a>Schema-overzicht
+
 De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die betrekking hebben op het terugkeerpatroon en het schema van een trigger:
 
-| JSON-eigenschap | Description |
+| JSON-eigenschap | Beschrijving |
 |:--- |:--- |
 | **startTime** | Een datum/tijdwaarde. Voor eenvoudige schema's is de waarde **startTime** van toepassing op de eerste gebeurtenis. In complexe schema's begint de trigger niet eerder dan de opgegeven waarde voor **startTime**. <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
 | **Tijd** | De einddatum en -tijd voor de trigger. De trigger wordt na de opgegeven einddatum en -tijd niet uitgevoerd. De waarde voor de eigenschap kan niet in het verleden liggen. Deze eigenschap is optioneel.  <br> De notatie voor UTC-tijd zone is `'yyyy-MM-ddTHH:mm:ssZ'` voor een andere tijd zone `'yyyy-MM-ddTHH:mm:ss'` . |
@@ -367,9 +372,9 @@ De volgende tabel bevat een overzicht van de belangrijkste schema-elementen die 
 | **startTime** | Tekenreeks | Ja | Geen | Datums en tijden volgens ISO 8601 | voor UTC-tijd zone `"startTime" : "2013-01-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"2013-01-09T09:30:00-08:00"` |
 | **Tijd zone** | Tekenreeks | Ja | Geen | [Waarden van tijd zone](#time-zone-option)  | `"UTC"` |
 | **optreden** | Object | Ja | Geen | Recurrence-object | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **bereik** | Aantal | No | 1 | 1 tot 1000 | `"interval":10` |
+| **bereik** | Aantal | Nee | 1 | 1 tot 1000 | `"interval":10` |
 | **Tijd** | Tekenreeks | Ja | Geen | Een datum/tijdwaarde die een toekomstig tijdstip voorstelt. | voor UTC-tijd zone `"endTime" : "2013-02-09T09:30:00-08:00Z"` <br> voor een andere tijd zone `"endTime" : "2013-02-09T09:30:00-08:00"`|
-| **planning** | Object | No | Geen | Schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **planning** | Object | Nee | Geen | Schedule-object | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="time-zone-option"></a>Optie tijd zone
 
@@ -377,14 +382,14 @@ Hier volgen enkele tijd zones die worden ondersteund voor scheduler-triggers:
 
 | Tijdzone | UTC-afwijking (niet-zomer-en winter tijd) | Waarde van tijd zone | Observeren met zomer-en winter tijd | Notatie van tijds tempel |
 | :--- | :--- | :--- | :--- | :--- |
-| UTC (Coordinated Universal Time) | 0 | `UTC` | No | `'yyyy-MM-ddTHH:mm:ssZ'`|
-| Pacific Time (PT) | -8 | `Pacific Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
-| Central Time (CT) | -6 | `Central Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
-| Eastern Time (ET) | 5 | `Eastern Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
-| Greenwich Mean Time (GMT) | 0 | `GMT Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
-| Centraal-Europa (standaard tijd) | +1 | `W. Europe Standard Time` | Yes | `'yyyy-MM-ddTHH:mm:ss'` |
-| India (standaard tijd) (IST) | + 5:30 | `India Standard Time` | No | `'yyyy-MM-ddTHH:mm:ss'` |
-| China (standaard tijd) | + 8 | `China Standard Time` | No | `'yyyy-MM-ddTHH:mm:ss'` |
+| UTC (Coordinated Universal Time) | 0 | `UTC` | Nee | `'yyyy-MM-ddTHH:mm:ssZ'`|
+| Pacific Time (PT) | -8 | `Pacific Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
+| Central Time (CT) | -6 | `Central Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
+| Eastern Time (ET) | 5 | `Eastern Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
+| Greenwich Mean Time (GMT) | 0 | `GMT Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
+| Centraal-Europa (standaard tijd) | +1 | `W. Europe Standard Time` | Ja | `'yyyy-MM-ddTHH:mm:ss'` |
+| India (standaard tijd) (IST) | + 5:30 | `India Standard Time` | Nee | `'yyyy-MM-ddTHH:mm:ss'` |
+| China (standaard tijd) | + 8 | `China Standard Time` | Nee | `'yyyy-MM-ddTHH:mm:ss'` |
 
 Deze lijst is niet volledig. Voor een volledige lijst met opties voor de tijd zone bekijkt u in Data Factory Portal [activeren pagina maken](#data-factory-ui)
 
@@ -405,6 +410,7 @@ De eerste uitvoeringstijd is dezelfde, ook als **startTime**`2017-04-05 14:00` o
 Als de uren of minuten niet in het schema voor een trigger zijn ingesteld, worden deze waarden van de eerste uitvoering als standaardwaarden gebruikt.
 
 ### <a name="schedule-property"></a>Eigenschap schedule
+
 Enerzijds kan met een schema (schedule) het aantal uitvoeringen door een trigger worden beperkt. Als een trigger met de frequency 'maand' bijvoorbeeld een schedule-waarde heeft die alleen wordt uitgevoerd op dag 31, wordt de trigger alleen uitgevoerd in maanden die een 31e dag hebben.
 
 Anderzijds kan een schedule het aantal uitvoeringen door een trigger ook uitbreiden. Bijvoorbeeld: een trigger met een geplande maandfrequentie voor uitvoering op de maanddagen 1 en 2, wordt uitgevoerd op de eerste en tweede dag van de maand, in plaats van eenmaal per maand.
@@ -413,8 +419,7 @@ Als meerdere **schedule**-elementen worden opgegeven, is de volgorde voor de eva
 
 In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 
-
-| JSON-element | Description | Geldige waarden |
+| JSON-element | Beschrijving | Geldige waarden |
 |:--- |:--- |:--- |
 | **wachten** | Minuten van het uur waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul>
 | **loopt** | Uren van de dag waarop de trigger wordt uitgevoerd. | <ul><li>Geheel getal</li><li>Matrix van gehele getallen</li></ul> |
@@ -422,8 +427,8 @@ In de volgende tabel worden de **schedule**-elementen in detail beschreven:
 | **monthlyOccurrences** | Dagen van de maand waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een maandfrequentie. | <ul><li>Matrix van **monthlyOccurrence** -objecten: `{ "day": day,  "occurrence": occurrence }` .</li><li>Het attribuut **day** is de dag van de week waarop de trigger wordt uitgevoerd. Zo betekent de eigenschap **monthlyOccurrences** met een waarde **day** van `{Sunday}` dat er elke zondag van de maand een uitvoering is. Het attribuut **day** is verplicht.</li><li>Het attribuut **occurrence** slaat op het uitvoeren van de trigger op de opgegeven dag, **day**, tijdens de maand. Zo betekent de eigenschap **monthlyOccurrences** met de waarden **day** en **occurrence** van `{Sunday, -1}` dat er elke laatste zondag van de maand een uitvoering is. Het attribuut **occurrence** is optioneel.</li></ul> |
 | **monthDays** | Dagen van de maand waarop de trigger wordt uitgevoerd. De waarde kan alleen worden opgegeven met een maandfrequentie. | <ul><li>Alle waarden < = -1 en > =-31</li><li>Alle waarden > = -1 en < =-31</li><li>Array met waarden</li></ul> |
 
-
 ## <a name="examples-of-trigger-recurrence-schedules"></a>Voorbeelden van schema's voor uitvoeringen van triggers
+
 Deze sectie bevat voorbeelden van terugkeerschema's en is gericht op het object **schedule** en de bijbehorende elementen.
 
 In het voorbeeld wordt ervan uitgegaan dat de waarde **interval** 1 is en de waarde **frequency** correct is volgens de definitie van het schema. U kunt bijvoorbeeld niet **de waarde '** Day ' hebben en ook een ' monthDays-wijziging hebben in het object **Schedule** . Dergelijke beperkingen staan vermeld in de tabel in de vorige sectie.
@@ -457,6 +462,7 @@ In het voorbeeld wordt ervan uitgegaan dat de waarde **interval** 1 is en de waa
 | `{"minutes":[0,15,30,45], "monthlyOccurrences":[{"day":"friday", "occurrence":-1}]}` | Wordt op de laatste vrijdag van de maand elke 15 minuten uitgevoerd. |
 | `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` | Wordt elke maand op de derde woensdag om 5:15, 5:45, 17:15 en 17:45 uur uitgevoerd. |
 
-
 ## <a name="next-steps"></a>Volgende stappen
-Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md#trigger-execution)voor meer informatie over triggers.
+
+- Zie [pijp lijnen uitvoeren en triggers](concepts-pipeline-execution-triggers.md#trigger-execution)voor meer informatie over triggers.
+- Meer informatie over het verwijzen naar trigger-meta gegevens in de pijp lijn. Zie [Naslag informatie voor triggers in pijplijn uitvoeringen](how-to-use-trigger-parameterization.md)

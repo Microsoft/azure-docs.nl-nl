@@ -7,16 +7,16 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: d850b47078f504b8ccb23d8c0a43811e99dc71d8
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 7650e80273567a693c3566fede068678b3cc5b17
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098346"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179405"
 ---
 # <a name="azure-percept-studio-overview"></a>Overzicht van Azure percept Studio
 
-Azure percept Studio is het enige start punt voor het maken van Edge AI-modellen en-oplossingen. Met Azure percept Studio kunt u begeleide werk stromen ontdekken en volt ooien waarmee u gemakkelijk te integreren Edge AI-compatibele hardware en krachtige Azure AI-en IoT-Cloud Services.
+[Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) is het enige start punt voor het maken van Edge AI-modellen en-oplossingen. Met Azure percept Studio kunt u begeleide werk stromen ontdekken en volt ooien waarmee u gemakkelijk te integreren Edge AI-compatibele hardware en krachtige Azure AI-en IoT-Cloud Services.
 
 In Studio kunt u de apparaten die geschikt zijn voor Edge AI als eind punten weer geven voor het verzamelen van de eerste en doorlopende trainings gegevens en de implementatie doelen voor model iteraties. Als u toegang hebt tot apparaten en trainings gegevens, is het mogelijk om snel een prototype te ontwikkelen en een iteratieve Edge-model ontwikkeling voor zowel de [visuele](./tutorial-nocode-vision.md) als de [spraak](./tutorial-no-code-speech.md) scenario's.
 
@@ -32,8 +32,7 @@ Ongeacht of u een beginner of een meer geavanceerde AI-model en oplossings ontwi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-<!-- [here](https://go.microsoft.com/fwlink/?linkid=2135819). -->
-
+- Bekijk [hier](https://go.microsoft.com/fwlink/?linkid=2135819) Azure percept Studio
 - Down load de Azure percept DK-en Azure percept audio-accessoire in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
 - De [Snelstartgids](./quickstart-percept-dk-set-up.md) voor de installatie van Azure percept DK volt ooien
 - Probeer zelf zelf studies voor het ontwikkelen van [visuele](./tutorial-nocode-vision.md) en [spraak](./tutorial-no-code-speech.md) oplossingen zonder code

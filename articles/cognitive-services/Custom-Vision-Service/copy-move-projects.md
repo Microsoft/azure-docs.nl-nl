@@ -9,12 +9,12 @@ ms.subservice: custom-vision
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.author: pafarley
-ms.openlocfilehash: 548d936538a909da10796d0377f119826582c420
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: 363f0062d316b22019b864972d5a830e4a838b93
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616056"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178096"
 ---
 # <a name="copy-and-move-your-custom-vision-projects"></a>Uw Custom Vision projecten kopiëren en verplaatsen
 
@@ -31,6 +31,7 @@ Als uw app of bedrijf afhankelijk is van het gebruik van een Custom Vision proje
 - Twee Azure Custom Vision-resources. Als u deze niet hebt, gaat u naar de Azure Portal en [maakt u een nieuwe Custom Vision resource](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision?azure-portal=true).
 - De trainings sleutels en eind punt-Url's van uw Custom Vision-resources. U kunt deze waarden vinden op het tabblad **overzicht** van de resource op het Azure Portal.
 - Een gemaakt Custom Vision project. Zie [een classificatie bouwen](./getting-started-build-a-classifier.md) voor instructies over hoe u dit doet.
+* [Power shell versie 6.0 +](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1), of een soortgelijk opdracht regel programma.
 
 ## <a name="process-overview"></a>Overzicht van het proces
 

@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/25/2021
 ms.author: jingwang
-ms.openlocfilehash: 151f4352ce7c845050c899792fd7285c97f844bc
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: bd8fc3383d6d9a0afb7733cb94643623e6879d23
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049981"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178538"
 ---
 # <a name="get-metadata-activity-in-azure-data-factory"></a>Activiteit van meta gegevens in Azure Data Factory ophalen
 
@@ -83,8 +83,14 @@ U kunt de volgende typen meta gegevens opgeven in de velden lijst activiteit met
 | Aantal | Het aantal kolommen in het bestand of de tabel relationeel. |
 | reeds| Hiermee wordt aangegeven of een bestand, map of tabel bestaat. Als `exists` is opgegeven in de lijst met velden ophalen van meta gegevens, mislukt de activiteit zelfs als het bestand, de map of de tabel niet bestaat. In plaats daarvan `exists: false` wordt geretourneerd in de uitvoer. |
 
->[!TIP]
->Als u wilt controleren of een bestand, map of tabel bestaat, geeft u `exists` in de velden lijst activiteit van meta gegevens ophalen op. U kunt vervolgens het `exists: true/false` resultaat controleren in de uitvoer van de activiteit. Als `exists` niet wordt opgegeven in de lijst met velden, mislukt de activiteit meta gegevens ophalen als het object niet is gevonden.
+> [!TIP]
+> Als u wilt controleren of een bestand, map of tabel bestaat, geeft u `exists` in de velden lijst activiteit van meta gegevens ophalen op. U kunt vervolgens het `exists: true/false` resultaat controleren in de uitvoer van de activiteit. Als `exists` niet wordt opgegeven in de lijst met velden, mislukt de activiteit meta gegevens ophalen als het object niet is gevonden.
+
+> [!NOTE]
+> Wanneer u meta gegevens ophaalt uit bestanden opslaat en configureert `modifiedDatetimeStart` of `modifiedDatetimeEnd` , `childItems` bevat de uitvoer alleen bestanden in het opgegeven pad met een tijd die het laatst is gewijzigd binnen het opgegeven bereik. Items in submappen worden niet opgenomen.
+
+> [!NOTE]
+> Als u de lijst met **structuur** velden wilt gebruiken om de werkelijke gegevens structuur op te geven voor gescheiden tekst-en Excel-indelings gegevens sets, moet u de `First Row as Header` eigenschap inschakelen, die alleen wordt ondersteund voor deze gegevens bronnen.
 
 ## <a name="syntax"></a>Syntax
 

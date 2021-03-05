@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe u drone installatie kopieën va
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: 04f0c3c63d00ea49bf43f00f256266599a73d6c0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: v-ummehabiba
+ms.openlocfilehash: 18932d2ddb60242b4d7874dddf0349a62cd5c738
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88508801"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177603"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>Drone-installatie kopie van drone-partners ophalen
 
@@ -85,7 +85,7 @@ Wanneer u de sectie drone installatie kopie selecteert, wordt er een pop-up geop
 
 ## <a name="view-all-drone-maps"></a>Alle drone-kaarten weer geven
 
-Bestanden en afbeeldingen die zijn geüpload door de drone-provider, worden weer gegeven in de sectie **kaarten** . Selecteer de sectie **Maps** , filter op **Farm**en selecteer de juiste bestanden om weer te geven en te downloaden.
+Bestanden en afbeeldingen die zijn geüpload door de drone-provider, worden weer gegeven in de sectie **kaarten** . Selecteer de sectie **Maps** , filter op **Farm** en selecteer de juiste bestanden om weer te geven en te downloaden.
 
   ![Sectie kaarten](./media/get-drone-imagery-from-drone-partner/view-drone-maps-1.png)
 

@@ -1,17 +1,17 @@
 ---
 title: Inleiding tot Azure Stream Analytics georuimtelijke functies
 description: In dit artikel worden georuimtelijke functies beschreven die worden gebruikt in Azure Stream Analytics taken.
-author: krishna0815
-ms.author: krishmam
 ms.service: stream-analytics
+author: jasonwhowell
+ms.author: jasonh
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: dc590593b9bff8f646ee6155d32a2ce3f9790f6e
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 2835918cf381cb0fbd917ce9bf4650730878d711
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625245"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102178495"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Inleiding tot Stream Analytics georuimtelijke functies
 

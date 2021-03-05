@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6f7b79b6e3e72b34a27e5b4f0e1fb5426c539699
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
-ms.translationtype: HT
+ms.openlocfilehash: 721fbaf1a3b2418677d07e8ac39fa733164c1459
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98035237"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179558"
 ---
 # <a name="quickstart-create-your-first-function-with-kotlin-and-maven"></a>Quickstart: Uw eerste functie maken met behulp van Kotlin en Maven
 
@@ -158,7 +158,7 @@ Gebruik `Ctrl-C` in de terminal om de functiecode te stoppen.
 
 ## <a name="deploy-the-function-to-azure"></a>De functie implementeren in Azure
 
-Bij het implementeren naar Azure Functions worden accountreferenties uit de Azure CLI gebruikt. [Meld u aan met Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest) voordat u doorgaat.
+Bij het implementeren naar Azure Functions worden accountreferenties uit de Azure CLI gebruikt. [Meld u aan met Azure CLI](/cli/azure/authenticate-azure-cli) voordat u doorgaat.
 
 ```azurecli
 az login

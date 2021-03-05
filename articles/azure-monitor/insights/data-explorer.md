@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/05/2021
 author: lgayhardt
 ms.author: lagayhar
-ms.openlocfilehash: 6276527230cf889b471887fdb3da70e06a2fc8d6
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: dcfe12b30e336863c8e112d9ad675a2f57fe48f4
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582353"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179133"
 ---
 # <a name="azure-monitor-for-azure-data-explorer-preview"></a>Azure Monitor voor Azure Data Explorer (preview-versie)
 
@@ -103,10 +103,10 @@ Op het tabblad **belangrijkste metrische** gegevens ziet u een overzicht van een
 
 Op het tabblad **gebruik** kunnen gebruikers de prestaties van de opdrachten en query's van het cluster dieper opduiken. Op deze pagina kunt u het volgende doen:
  
- - Bekijk welke gebruikers en toepassingen de meeste query's verzenden of de meeste CPU en geheugen gebruiken (zodat u kunt begrijpen welke gebruikers de zwaarste query's voor het cluster verzenden).
- - Bepaal de belangrijkste gebruikers en toepassingen op basis van mislukte query's.
- - Identificeer recente wijzigingen in het aantal query's, vergeleken met het historische dagelijks gemiddelde (in de afgelopen 16 dagen), per gebruiker en toepassing.
- - Bepaal trends en pieken in het aantal query's, het geheugen en het CPU-verbruik door gebruiker, toepassing en opdracht type.
+ - Bekijk welke werkbelasting groepen, gebruikers en toepassingen de meeste query's verzenden of de meeste CPU en het geheugen verbruiken (zodat u weet welke workloads de zwaarste query's voor het cluster moeten worden uitgevoerd).
+ - Bepaal de belangrijkste werkbelasting groepen, gebruikers en toepassingen op mislukte query's.
+ - Identificeer recente wijzigingen in het aantal query's, vergeleken met het historische dagelijks gemiddelde (in de afgelopen 16 dagen), per werkbelasting groep, gebruiker en toepassing.
+ - Spoor trends en pieken in het aantal query's, het geheugen en het CPU-gebruik op werkbelasting groep, gebruiker, toepassing en opdracht type.
 
 [![Scherm afbeelding van een bewerkings weergave met ring grafieken van de bovenste toepassing op basis van de opdracht en het aantal query's, Top-principals op opdrachten en query's en de belangrijkste opdrachten op opdracht typen](./media/data-explorer/usage.png)](./media/data-explorer/usage.png#lightbox)
 

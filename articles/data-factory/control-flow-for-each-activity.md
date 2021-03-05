@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/23/2019
-ms.openlocfilehash: c59108752677fc33e28578c3c679be24108806d5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: aeabd74117f99c7cac9bde0eda02b9627caf0804
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100385605"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177777"
 ---
 # <a name="foreach-activity-in-azure-data-factory"></a>ForEach-activiteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -72,8 +72,8 @@ naam | De naam van de for-each-activiteit. | Tekenreeks | Ja
 type | Moet worden ingesteld op **foreach** | Tekenreeks | Ja
 isSequential | Hiermee wordt aangegeven of de lus opeenvolgend of parallel moet worden uitgevoerd.  Maxi maal 20 herhalings herhalingen kunnen gelijktijdig worden uitgevoerd. Als u bijvoorbeeld een ForEach-activiteit doorloopt over een Kopieer activiteit met tien verschillende bron-en Sink-gegevens sets waarvoor **isSequential** is ingesteld op False, worden alle kopieën tegelijk uitgevoerd. De standaard waarde is False. <br/><br/> Als "isSequential" is ingesteld op False, moet u ervoor zorgen dat er een juiste configuratie is om meerdere uitvoer bare bestanden uit te voeren. Anders moet deze eigenschap worden gebruikt om te voor komen dat er schrijf conflicten ontstaan. Zie de sectie [parallel uitvoeren](#parallel-execution) voor meer informatie. | Booleaans | Nee. De standaard waarde is False.
 batchCount | Batch aantal dat moet worden gebruikt voor het beheren van het aantal parallelle uitvoeringen (wanneer isSequential is ingesteld op false). Dit is de bovengrens limiet, maar de for-each-activiteit wordt niet altijd uitgevoerd op dit nummer | Geheel getal (maximum 50) | Nee. De standaard waarde is 20.
-Items | Een expressie die een JSON-matrix retourneert die moet worden herhaald. | Expressie (waarmee een JSON-matrix wordt geretourneerd) | Yes
-Activiteiten | De activiteiten die moeten worden uitgevoerd. | Lijst met activiteiten | Yes
+Items | Een expressie die een JSON-matrix retourneert die moet worden herhaald. | Expressie (waarmee een JSON-matrix wordt geretourneerd) | Ja
+Activiteiten | De activiteiten die moeten worden uitgevoerd. | Lijst met activiteiten | Ja
 
 ## <a name="parallel-execution"></a>Parallelle uitvoering
 Als **isSequential** is ingesteld op False, wordt de activiteit parallel herhaald met een maximum van 20 gelijktijdige herhalingen. Deze instelling moet voorzichtig worden gebruikt. Als de gelijktijdige herhalingen naar dezelfde map, maar naar verschillende bestanden schrijven, is deze benadering nauw keurig. Als de gelijktijdige herhalingen gelijktijdig naar het exacte bestand worden geschreven, veroorzaakt deze methode waarschijnlijk een fout. 
@@ -483,12 +483,13 @@ Hier volgen enkele beperkingen van de ForEach-activiteit en voorgestelde tijdeli
 |---|---|
 | U kunt een ForEach-lus niet nesten binnen een andere ForEach-lus (of een lus until). | Ontwerp een pijp lijn op twee niveaus waarbij de buitenste pijp lijn met de buitenste ForEach-lus met de geneste lus wordt herhaald. |
 | De ForEach-activiteit heeft een maximum `batchCount` van 50 voor parallelle verwerking en Maxi maal 100.000 items. | Ontwerp een pijp lijn op twee niveaus waarbij de buitenste pijp lijn met de ForEach-activiteit wordt herhaald via een inner pijp lijn. |
+| SetVariable kan niet worden gebruikt binnen een ForEach-activiteit die parallel wordt uitgevoerd omdat de variabelen globaal zijn voor de hele pijp lijn, ze niet zijn afgestemd op een ForEach-of andere activiteit. | Overweeg het gebruik van sequentiële ForEach of het uitvoeren van de pijp lijn in ForEach (variabele/para meter verwerkt in onderliggende pijp lijn).|
 | | |
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie andere controle stroom activiteiten die door Data Factory worden ondersteund: 
 
-- [Activiteit uitvoeren van pijplijn](control-flow-execute-pipeline-activity.md)
+- [Pijplijn activiteit uitvoeren](control-flow-execute-pipeline-activity.md)
 - [Activiteit ophalen van metagegevens](control-flow-get-metadata-activity.md)
 - [Opzoekactiviteit](control-flow-lookup-activity.md)
 - [Webactiviteit](control-flow-web-activity.md)

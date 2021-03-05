@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 11/19/2020
 ms.author: cshoe
 zone_pivot_groups: programming-languages-set-functions-lang-workers
-ms.openlocfilehash: e969cc4bee9f09f4279d137abb33b75ca0672ffc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 77d370b895c777278d3136c7d2c511e7f9e23b36
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364712"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179252"
 ---
 # <a name="getting-started-with-azure-functions"></a>Aan de slag met Azure Functions
 
@@ -46,7 +46,7 @@ Gebruik de volgende bronnen om aan de slag te gaan.
 ::: zone pivot="programming-language-javascript"
 | Actie | Resources |
 | --- | --- |
-| **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio Code](./create-first-function-vs-code-node.md)<li>[Node.js-terminal/-opdrachtprompt](./create-first-function-cli-java.md) |
+| **Uw eerste functie maken** | Gebruik een van de volgende tools:<br><br><li>[Visual Studio Code](./create-first-function-vs-code-node.md)<li>[Node.js-terminal/-opdrachtprompt](./create-first-function-cli-node.md) |
 | **Zie een functie die wordt uitgevoerd** | <li>[Azure-voorbeeldenbrowser](/samples/browse/?expanded=azure&languages=javascript%2ctypescript&products=azure-functions)<li>[Bibliotheek van de Azure-community](https://www.serverlesslibrary.net/?technology=Functions%202.x&language=JavaScript%2CTypeScript) |
 | **Een zelfstudie verkennen** | <li>[De beste serverloze technologie van Azure kiezen voor uw bedrijfsscenario](/learn/modules/serverless-fundamentals/)<li>[Goed ontworpen Framework - Prestatie-efficiëntie](/learn/modules/azure-well-architected-performance-efficiency/)<li>[Serverloze API's maken met Azure Functions](/learn/modules/build-api-azure-functions/)<li>[Serverloze logica maken met Azure Functions](/learn/modules/create-serverless-logic-with-azure-functions/)<li>[Node.js- en Express-API's herstructureren naar serverloze API's met Azure Functions](/learn/modules/shift-nodejs-express-apis-serverless/) <br><br>Zie Microsoft Learn voor een [volledige lijst met interactieve zelfstudies](/learn/browse/?expanded=azure&products=azure-functions).|
 | **Best practices beoordelen** |<li>[Prestaties en betrouw baarheid](./functions-best-practices.md)<li>[Verbindingen beheren](./manage-connections.md)<li>[Fout afhandeling en functionele nieuwe pogingen](./functions-bindings-error-pages.md?tabs=javascript)<li>[Beveiliging](./security-concepts.md)|

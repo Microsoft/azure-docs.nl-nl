@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe gegevens herstel bescherming bi
 author: uhabiba04
 ms.topic: article
 ms.date: 04/13/2020
-ms.author: v-umha
-ms.openlocfilehash: bdd59d078da1df021b7e23ec858ba7305f72cfa1
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.author: v-ummehabiba
+ms.openlocfilehash: 9ece624546cab1b8b6fab8c19f4401bd050f6267
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164207"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102179881"
 ---
 # <a name="disaster-recovery-for-farmbeats"></a>Herstel na nood geval voor FarmBeats
 
@@ -26,7 +26,7 @@ De volgende secties bevatten informatie over het configureren van gegevens herst
 
 ## <a name="enable-data-redundancy"></a>Gegevens redundantie inschakelen
 
-FarmBeats slaat gegevens op in drie Azure-Services voor de eerste partij, die **Azure Storage**zijn, **Cosmos DB** en **Time Series Insights**. Gebruik de volgende stappen om gegevens redundantie voor deze services in te scha kelen voor een gekoppelde Azure-regio:
+FarmBeats slaat gegevens op in drie Azure-Services voor de eerste partij, die **Azure Storage** zijn, **Cosmos DB** en **Time Series Insights**. Gebruik de volgende stappen om gegevens redundantie voor deze services in te scha kelen voor een gekoppelde Azure-regio:
 
 1.  **Azure Storage** : Volg deze richt lijnen om gegevens redundantie in te scha kelen voor elk opslag account in uw FarmBeats-implementatie.
 2.  **Azure Cosmos DB** : Volg deze richt lijnen om gegevens redundantie in te scha kelen voor Cosmos DB account van uw FarmBeats-implementatie.

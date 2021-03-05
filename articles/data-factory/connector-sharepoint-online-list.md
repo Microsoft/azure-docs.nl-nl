@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: jingwang
-ms.openlocfilehash: 3f05c90ba3c7e6b47009cbb597c56dac8a01427a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: f8074b69b97a6ef96837e73a1082d2deb67084d9
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393425"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177858"
 ---
 # <a name="copy-data-from-sharepoint-online-list-by-using-azure-data-factory"></a>Gegevens uit de share point online-lijst kopiëren met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -76,12 +76,12 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde service van een
 
 | **Eigenschap**        | **Beschrijving**                                              | **Vereist** |
 | ------------------- | ------------------------------------------------------------ | ------------ |
-| type                | De eigenschap type moet worden ingesteld op: **SharePointOnlineList**.  | Yes          |
-| siteUrl             | De URL van de share point online-site, bijvoorbeeld `https://contoso.sharepoint.com/sites/siteName` . | Yes          |
-| servicePrincipalId  | De client-ID van de toepassing die is geregistreerd in Azure Active Directory. | Yes          |
-| servicePrincipalKey | De sleutel van de toepassing. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes          |
-| tenantId            | De Tenant-ID waaronder uw toepassing zich bevindt.          | Yes          |
-| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie over de [vereisten](#prerequisites)vindt u eerder in dit artikel. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | No           |
+| type                | De eigenschap type moet worden ingesteld op: **SharePointOnlineList**.  | Ja          |
+| siteUrl             | De URL van de share point online-site, bijvoorbeeld `https://contoso.sharepoint.com/sites/siteName` . | Ja          |
+| servicePrincipalId  | De client-ID van de toepassing die is geregistreerd in Azure Active Directory. | Ja          |
+| servicePrincipalKey | De sleutel van de toepassing. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja          |
+| tenantId            | De Tenant-ID waaronder uw toepassing zich bevindt.          | Ja          |
+| connectVia          | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie over de [vereisten](#prerequisites)vindt u eerder in dit artikel. Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. | Nee           |
 
 **Voorbeeld:**
 
@@ -109,8 +109,8 @@ Zie [gegevens sets en gekoppelde services](concepts-datasets-linked-services.md)
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de DataSet moet worden ingesteld op **SharePointOnlineLResource**. | Yes |
-| listName | De naam van de share point online-lijst. | Yes |
+| type | De eigenschap **type** van de DataSet moet worden ingesteld op **SharePointOnlineLResource**. | Ja |
+| listName | De naam van de share point online-lijst. | Ja |
 
 **Voorbeeld**
 
@@ -142,9 +142,9 @@ Als u gegevens wilt kopiëren uit de share point online-lijst, worden de volgend
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SharePointOnlineListSource**. | Yes |
-| query | Aangepaste OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$top=10&$select=Title,Number"`. | No |
-| httpRequestTimeout | De time-out (in seconden) voor de HTTP-aanvraag om een antwoord te krijgen. De standaard waarde is 300 (5 minuten). | No |
+| type | De eigenschap **type** van de bron van de Kopieer activiteit moet zijn ingesteld op **SharePointOnlineListSource**. | Ja |
+| query | Aangepaste OData-query opties voor het filteren van gegevens. Bijvoorbeeld: `"$top=10&$select=Title,Number"`. | Nee |
+| httpRequestTimeout | De time-out (in seconden) voor de HTTP-aanvraag om een antwoord te krijgen. De standaard waarde is 300 (5 minuten). | Nee |
 
 **Voorbeeld**
 
@@ -232,6 +232,9 @@ U kunt een bestand vanuit share point online kopiëren met behulp van de **webac
         - **Aanvraag methode**: ophalen
         - **Extra header**: gebruik de volgende expressie `@{concat('Authorization: Bearer ', activity('<Web-activity-name>').output.access_token)}` , die het Bearer-token gebruikt dat is gegenereerd door de Web-activiteit upstream als autorisatie-header. Vervang de naam van de webactiviteit.
     - Configureer de Sink voor kopieer activiteiten zoals gebruikelijk.
+
+> [!NOTE]
+> Zelfs als een Azure AD-toepassing `FullControl` machtigingen heeft voor share point online, kunt u geen bestanden kopiëren van document bibliotheken waarvoor IRM is ingeschakeld.
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit
 

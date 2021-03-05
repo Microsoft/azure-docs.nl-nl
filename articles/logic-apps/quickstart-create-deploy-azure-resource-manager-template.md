@@ -7,12 +7,12 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: quickstart
 ms.custom: mvc, subject-armqs, devx-track-azurecli
 ms.date: 06/30/2020
-ms.openlocfilehash: 689582d73e29cb60cc2ee5294b568b5db2f73244
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 8cee79efd9be53ddb9d450f643c04f21ae5e7fca
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92739331"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213994"
 ---
 # <a name="quickstart-create-and-deploy-a-logic-app-workflow-by-using-an-arm-template"></a>Quickstart: Een werkstroom voor een logische app maken en implementeren met behulp van een ARM-sjabloon
 
@@ -20,7 +20,7 @@ ms.locfileid: "92739331"
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-logic-app-create%2fazuredeploy.json)
 
@@ -49,7 +49,7 @@ Volg de optie die u wilt gebruiken voor het implementeren van de quickstart-sjab
 | Optie | Beschrijving |
 |--------|-------------|
 | [Azure-portal](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-portal#deploy-template) | Als uw Azure-omgeving voldoet aan de vereisten en u vertrouwd bent met het gebruik van ARM-sjablonen, kunt u zich met deze stappen rechtstreeks aanmelden bij Azure en de quickstart-sjabloon openen in de Azure-portal. Zie [Resources implementeren met ARM-sjablonen en de Azure-portal](../azure-resource-manager/templates/deploy-portal.md) voor meer informatie. |
-| [Azure-CLI](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-cli#deploy-template) | De Azure-opdrachtregelinterface (Azure CLI) bestaat uit een reeks opdrachten voor het maken en beheren van Azure-resources. U hebt Azure CLI versie 2.6 of hoger nodig als u deze opdrachten wilt uitvoeren. Typ `az --version` om uw CLI-versie te controleren. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Wat is Azure CLI?](/cli/azure/what-is-azure-cli?view=azure-cli-latest) <br>- [Aan de slag met Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) |
+| [Azure-CLI](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-cli#deploy-template) | De Azure-opdrachtregelinterface (Azure CLI) bestaat uit een reeks opdrachten voor het maken en beheren van Azure-resources. U hebt Azure CLI versie 2.6 of hoger nodig als u deze opdrachten wilt uitvoeren. Typ `az --version` om uw CLI-versie te controleren. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Wat is Azure CLI?](/cli/azure/what-is-azure-cli) <br>- [Aan de slag met Azure CLI](/cli/azure/get-started-with-azure-cli) |
 | [Azure PowerShell](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=azure-powershell#deploy-template) | Azure PowerShell voorziet in een set van cmdlets die gebruikmaken van het Azure Resource Manager-model om uw Azure-resources te beheren. Raadpleeg de volgende onderwerpen voor meer informatie: <p><p>- [Overzicht van Azure PowerShell](/powershell/azure/azurerm/overview) <br>- [De nieuwe Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az) <br>- [Aan de slag met Azure PowerShell](/powershell/azure/get-started-azureps) |
 | [REST API voor Azure Resource Management](../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?tabs=rest-api#deploy-template) | Azure biedt zogenaamde Representational State Transfer (REST) API's. Dit zijn service-eindpunten die ondersteuning bieden voor HTTP-bewerkingen (methoden) waarmee u toegang tot serviceresources kunt maken, ophalen, bijwerken of verwijderen. Zie [Aan de slag met Azure REST API](/rest/api/azure/) voor meer informatie. |
 |||
@@ -62,7 +62,7 @@ Volg de optie die u wilt gebruiken voor het implementeren van de quickstart-sjab
 
    [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-logic-app-create%2fazuredeploy.json)
 
-1. Voer in de portal, op de pagina **Een logische app maken met behulp van een sjabloon** , de volgende waarden in of selecteer deze waarden:
+1. Voer in de portal, op de pagina **Een logische app maken met behulp van een sjabloon**, de volgende waarden in of selecteer deze waarden:
 
    | Eigenschap | Waarde | Beschrijving |
    |----------|-------|-------------|
@@ -78,7 +78,7 @@ Volg de optie die u wilt gebruiken voor het implementeren van de quickstart-sjab
 
    ![Informatie opgeven voor quickstart-sjabloon](./media/quickstart-create-deploy-azure-resource-manager-template/create-logic-app-template-portal.png)
 
-1. Selecteer als u klaar bent de optie **Beoordelen en maken** .
+1. Selecteer als u klaar bent de optie **Beoordelen en maken**.
 
 1. Ga door met de stappen in [Geïmplementeerde resources beoordelen](#review-deployed-resources).
 
@@ -245,7 +245,7 @@ az logic workflow show --name $logicAppName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-Zie [Azure CLI: az logic workflow show](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-show) voor meer informatie.
+Zie [Azure CLI: az logic workflow show](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-show) voor meer informatie.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -288,7 +288,7 @@ Als u van plan bent om verder te gaan met volgende snelstarts en zelfstudies, ku
 
 1. Zoek en selecteer in de Azure-portal de resourcegroep die u wilt verwijderen, in dit voorbeeld `Check-Azure-Status-RG`.
 
-1. Selecteer in het resourcegroepmenu de optie **Overzicht** , indien deze optie nog niet is geselecteerd. Selecteer op de overzichtspagina **Resourcegroep verwijderen** .
+1. Selecteer in het resourcegroepmenu de optie **Overzicht**, indien deze optie nog niet is geselecteerd. Selecteer op de overzichtspagina **Resourcegroep verwijderen**.
 
 1. Voer ter bevestiging de naam van de resourcegroep in.
 
@@ -303,7 +303,7 @@ az group delete --name $resourceGroupName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-Zie [Azure CLI: az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete) voor meer informatie.
+Zie [Azure CLI: az group delete](/cli/azure/group#az-group-delete) voor meer informatie.
 
 ### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

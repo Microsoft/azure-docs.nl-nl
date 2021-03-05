@@ -8,12 +8,12 @@ ms.date: 01/03/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: d75b60c715a758684e6f3a4b331c0b12d17eaf21
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6d8402f5e8a1a9af1f84ff6beff7324d1675e441
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101705106"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214402"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Active Directory Domain Services authenticatie inschakelen op Azure Files
 
@@ -123,9 +123,9 @@ Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u Azure AD-verificatie via SMB wilt inschakelen met Azure CLI, installeert u de nieuwste CLI-versie (versie 2.0.70 of nieuwer). Zie [de Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest)voor meer informatie over het installeren van Azure cli.
+Als u Azure AD-verificatie via SMB wilt inschakelen met Azure CLI, installeert u de nieuwste CLI-versie (versie 2.0.70 of nieuwer). Zie [de Azure cli installeren](/cli/azure/install-azure-cli)voor meer informatie over het installeren van Azure cli.
 
-Als u een nieuw opslag account wilt maken, roept u [AZ Storage account create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)aan en stelt `--enable-files-aadds` u de eigenschap in op **True**. In het volgende voor beeld moet u de waarden voor de tijdelijke aanduiding vervangen door uw eigen waarden. (Als u de vorige preview-module gebruikt, is de para meter voor functie activering **bestand-Aad**.)
+Als u een nieuw opslag account wilt maken, roept u [AZ Storage account create](/cli/azure/storage/account#az-storage-account-create)aan en stelt `--enable-files-aadds` u de eigenschap in op **True**. In het volgende voor beeld moet u de waarden voor de tijdelijke aanduiding vervangen door uw eigen waarden. (Als u de vorige preview-module gebruikt, is de para meter voor functie activering **bestand-Aad**.)
 
 ```azurecli-interactive
 # Create a new storage account

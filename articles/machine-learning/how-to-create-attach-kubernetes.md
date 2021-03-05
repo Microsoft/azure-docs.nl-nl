@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 10/02/2020
-ms.openlocfilehash: 97042479419cbc9d634a06e2dcbcccf9c8fde62b
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: a4536f0dd40e1d0ee3a5ca75db9b111dcfa0ad6f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99560470"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214895"
 ---
 # <a name="create-and-attach-an-azure-kubernetes-service-cluster"></a>Een Azure Kubernetes service-cluster maken en koppelen
 
@@ -93,7 +93,7 @@ Wanneer u een bestaand AKS-cluster **koppelt** , worden alle momenteel ondersteu
 
 ### <a name="available-and-default-versions"></a>Beschik bare en standaard versies
 
-Gebruik de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) [-opdracht AZ AKS Get-verse](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az_aks_get_versions)om de beschik bare en standaard AKS-versies te vinden. De volgende opdracht retourneert bijvoorbeeld de beschik bare versies in de regio vs-West:
+Gebruik de [Azure cli](/cli/azure/install-azure-cli) [-opdracht AZ AKS Get-verse](/cli/azure/aks#az_aks_get_versions)om de beschik bare en standaard AKS-versies te vinden. De volgende opdracht retourneert bijvoorbeeld de beschik bare versies in de regio vs-West:
 
 ```azurecli-interactive
 az aks get-versions -l westus -o table
@@ -198,7 +198,7 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 az ml computetarget create aks -n myaks
 ```
 
-Zie voor meer informatie de referentie [AZ ml computetarget Create AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
+Zie voor meer informatie de referentie [AZ ml computetarget Create AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-aks) .
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -223,8 +223,8 @@ Als u al een AKS-cluster in uw Azure-abonnement hebt, kunt u het gebruiken met u
 
 Raadpleeg de volgende artikelen voor meer informatie over het maken van een AKS-cluster met behulp van de Azure CLI of portal:
 
-* [Een AKS-cluster maken (CLI)](/cli/azure/aks?bc=%2fazure%2fbread%2ftoc.json&preserve-view=true&toc=%2fazure%2faks%2fTOC.json&view=azure-cli-latest#az-aks-create)
-* [Een AKS-cluster maken (Portal)](../aks/kubernetes-walkthrough-portal.md?preserve-view=true&view=azure-cli-latest)
+* [Een AKS-cluster maken (CLI)](/cli/azure/aks?bc=%2fazure%2fbread%2ftoc.json&toc=%2fazure%2faks%2fTOC.json#az-aks-create)
+* [Een AKS-cluster maken (Portal)](../aks/kubernetes-walkthrough-portal.md)
 * [Een AKS-cluster maken (ARM-sjabloon in azure Quick Start-sjablonen)](https://github.com/Azure/azure-quickstart-templates/tree/master/101-aks-azml-targetcompute)
 
 In het volgende voor beeld ziet u hoe u een bestaand AKS-cluster koppelt aan uw werk ruimte:
@@ -275,7 +275,7 @@ Gebruik de volgende opdracht om het bestaande cluster aan uw werk ruimte te kopp
 az ml computetarget attach aks -n myaks -i aksresourceid -g myresourcegroup -w myworkspace
 ```
 
-Zie voor meer informatie de referentie [AZ ml computetarget attach AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks) .
+Zie voor meer informatie de referentie [AZ ml computetarget attach AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach#ext-azure-cli-ml-az-ml-computetarget-attach-aks) .
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

@@ -13,12 +13,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 02/09/2019
   ms.author: aahi
-  ms.openlocfilehash: 962b1278f85ce8d73f43561e7df7b27f7b6b46ad
-  ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+  ms.openlocfilehash: 0a9e106142858d776f9e7ffa5048b46055f69d8f
+  ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
   ms.lasthandoff: 03/05/2021
-  ms.locfileid: "102201954"
+  ms.locfileid: "102214640"
 landingContent:
 - title: Over de Text Analytics-API
   linkLists:
@@ -144,7 +144,7 @@ landingContent:
       url: ../containers/azure-container-instance-recipe.md
     - text: Een container implementeren in Azure Kubernetes Service (AKS)
       url: how-tos/text-analytics-how-to-use-kubernetes-service.md
-- title: Referentie
+- title: Naslaginformatie
   linkLists:
   - linkListType: reference
     links:
@@ -157,9 +157,9 @@ landingContent:
     - text: Python-clientbibliotheek
       url: /python/api/overview/azure/ai-textanalytics-readme?view=azure-python
     - text: JavaScript-clientbibliotheek
-      url: /javascript/api/overview/azure/ai-text-analytics-readme?view=azure-node-latest
+      url: /javascript/api/overview/azure/ai-text-analytics-readme
     - text: Java-clientbibliotheek
-      url: /java/api/overview/azure/ai-textanalytics-readme?view=azure-java-stable
+      url: /java/api/overview/azure/ai-textanalytics-readme
     - text: Azure PowerShell
       url: /powershell/module/az.cognitiveservices
     - text: Azure CLI

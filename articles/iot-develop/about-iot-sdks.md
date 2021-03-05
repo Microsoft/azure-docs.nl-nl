@@ -6,12 +6,12 @@ ms.author: elhorton
 ms.service: iot-develop
 ms.topic: overview
 ms.date: 02/11/2021
-ms.openlocfilehash: e85cc9cdbb14c419e4bddb5ee659aa657b49a8c1
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: fc30515f4b5ca0a763bf9f40de6a03356b88e500
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102183536"
+ms.locfileid: "102214606"
 ---
 # <a name="overview-of-azure-iot-device-sdks"></a>Overzicht van de Sdk's van het Azure IoT-apparaat
 
@@ -100,7 +100,7 @@ Deze Sdk's kunnen worden uitgevoerd op elk apparaat dat een meertalige taal vers
 * [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples)
 * [Pakket](https://github.com/Azure/azure-iot-sdk-java/blob/master/doc/java-devbox-setup.md#for-the-device-sdk)
 * [Referentie documentatie](/java/api/com.microsoft.azure.sdk.iot.device)
-* [Naslag documentatie voor Edge-modules](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable&preserve-view=true)
+* [Naslag documentatie voor Edge-modules](/java/api/com.microsoft.azure.sdk.iot.device.moduleclient)
 
 #### <a name="nodejs-device-sdk"></a>SDK van Node.js apparaat
 
@@ -108,7 +108,7 @@ Deze Sdk's kunnen worden uitgevoerd op elk apparaat dat een meertalige taal vers
 * [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples)
 * [Pakket](https://www.npmjs.com/package/azure-iot-device)
 * [Referentie documentatie](/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest&preserve-view=true)
-* [Naslag documentatie voor Edge-modules](/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest&preserve-view=true)
+* [Naslag documentatie voor Edge-modules](/javascript/api/azure-iot-device/moduleclient)
 
 #### <a name="python-device-sdk"></a>Python-apparaat-SDK
 
@@ -143,9 +143,9 @@ Azure Digital Twins is een PaaS-aanbieding (Platform as a Service) dat het maken
 
 Naslag documentatie voor voor beelden van **C# ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)  |  [pakket](https://www.nuget.org/packages/Azure.DigitalTwins.Core)  |  [](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core/samples)  |  [](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)
 
-Naslag documentatie voor voor beelden van de **Java ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core)  |  [pakket](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar)  |  [](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core/src/samples)  |  [](/java/api/overview/azure/digitaltwins/client?preserve-view=true&view=azure-java-stable)
+Naslag documentatie voor voor beelden van de **Java ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core)  |  [pakket](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.0/jar)  |  [](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/azure-digitaltwins-core/src/samples)  |  [](/java/api/overview/azure/digitaltwins/client)
 
-Naslag documentatie voor **Node.js ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core)  |  [pakket](https://www.npmjs.com/package/@azure/digital-twins-core)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core/samples)  |  [](/javascript/api/@azure/digital-twins-core/?branch=master&view=azure-node-latest&preserve-view=true)
+Naslag documentatie voor **Node.js ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core)  |  [pakket](https://www.npmjs.com/package/@azure/digital-twins-core)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core/samples)  |  [](/javascript/api/@azure/digital-twins-core/)
 
 **ADT van python-Service-SDK**: github-naslag documentatie voor [opslag plaats](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)  |  [pakket](https://pypi.org/project/azure-digitaltwins-core/)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core/samples)  |  [](/python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python&preserve-view=true)
 
@@ -157,7 +157,7 @@ IoT Hub Device Provisioning Service (DPS) is een helper-service die zero-touch m
 
 **SDK voor C# Device Provisioning Service**: [github opslag plaats](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service)  |  [pakket](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/)voor  |  [beelden](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service/samples)  |  [referentie documentatie](/dotnet/api/microsoft.azure.devices.provisioning.service?view=azure-dotnet&preserve-view=true)
 
-Naslag documentatie voor de **Java Device Provisioning Service SDK**: [github opslagplaats](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-service-client/src)  |  [pakket](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client)voor  |  [beelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-samples#provisioning-service-client)  |  [](/java/api/com.microsoft.azure.sdk.iot.provisioning.service?view=azure-java-stable&preserve-view=true)
+Naslag documentatie voor de **Java Device Provisioning Service SDK**: [github opslagplaats](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-service-client/src)  |  [pakket](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot.provisioning/provisioning-service-client)voor  |  [beelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/provisioning/provisioning-samples#provisioning-service-client)  |  [](/java/api/com.microsoft.azure.sdk.iot.provisioning.service)
 
 **Node.js Device Provisioning Service SDK**: [](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning/service)  |  [](https://www.npmjs.com/package/azure-iot-provisioning-service)  |  [](https://github.com/Azure/azure-iot-sdk-node/tree/master/provisioning/service/samples)  |  [naslag documentatie](/javascript/api/azure-iot-provisioning-service) voor voor beelden van github-opslagplaats pakket
 

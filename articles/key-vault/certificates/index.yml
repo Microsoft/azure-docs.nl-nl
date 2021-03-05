@@ -11,12 +11,12 @@ metadata:
   author: msmbaldwin
   ms.author: mbaldwin
   ms.date: 04/07/2020
-  ms.openlocfilehash: d988fca2c5eb56484e21b20e088b4331c51bd23b
-  ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
-  ms.translationtype: HT
+  ms.openlocfilehash: 980ed1961c346bed6dd35088b6f3202f4d5eda1d
+  ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/08/2021
-  ms.locfileid: "98028944"
+  ms.lasthandoff: 03/05/2021
+  ms.locfileid: "102213451"
 landingContent:
 - title: Certificaten
   linkLists:
@@ -63,7 +63,7 @@ landingContent:
     - text: Java-clientbibliotheek
       url: https://apidocs.chargebee.com/docs/api?lang=java#client_library
     - text: Node.js-clientbibliotheek
-      url: /javascript/api/@azure/keyvault-certificates/?view=azure-node-latest
+      url: /javascript/api/@azure/keyvault-certificates/
 - title: Meer informatie over Key Vault
   linkLists:
   - linkListType: overview

@@ -10,18 +10,18 @@ ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fafeae02bce001d473b0ed916624046a559a795
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 8e33c87d53580d96363ba15bccbc889370f2479d
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101648795"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212906"
 ---
 # <a name="authentication-methods-in-azure-active-directory---microsoft-authenticator-app"></a>Verificatie methoden in de Azure Active Directory-Microsoft Authenticator-app
 
 De Microsoft Authenticator-app biedt een extra beveiligings niveau voor uw Azure AD-werk-of school account of uw Microsoft-account en is beschikbaar voor [Android](https://go.microsoft.com/fwlink/?linkid=866594) en [IOS](https://go.microsoft.com/fwlink/?linkid=866594). Met de Microsoft Authenticator-app kunnen gebruikers tijdens de aanmelding of als extra verificatie optie worden geverifieerd tijdens de selfservice voor het opnieuw instellen van een wacht woord (SSPR) of Azure AD-Multi-Factor Authentication gebeurtenissen.
 
-Gebruikers kunnen een melding ontvangen via de mobiele app om ze goed te keuren of te weigeren, of de verificator-app gebruiken voor het genereren van een OATH-verificatie code die kan worden ingevoerd in een aanmeldings interface. Als u zowel een melding als een verificatie code inschakelt, kunnen gebruikers die de verificator-app registreren, een van beide methoden gebruiken om hun identiteit te verifiëren.
+Gebruikers kunnen een melding ontvangen via de mobiele app om ze goed te keuren of te weigeren, of de verificator-app gebruiken om een OAUTH-verificatie code te genereren die kan worden ingevoerd in een aanmeldings interface. Als u zowel een melding als een verificatie code inschakelt, kunnen gebruikers die de verificator-app registreren, een van beide methoden gebruiken om hun identiteit te verifiëren.
 
 Als u de verificator-app bij een aanmeldings prompt wilt gebruiken in plaats van een combi natie van gebruikers naam en wacht woord, raadpleegt u [aanmelden zonder wacht woord inschakelen met de app Microsoft Authenticator](howto-authentication-passwordless-phone.md).
 

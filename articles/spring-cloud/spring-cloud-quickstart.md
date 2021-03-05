@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 123be57566a31d9831bfd0172373d571be2bf294
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: c2121f429b928d58a2df7b4e4663341cf600da3e
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102035166"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214470"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -37,7 +37,7 @@ De toepassingscode die in deze quickstart wordt gebruikt, is een eenvoudige app 
 
 * Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 * [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1). De Azure Spring Cloud-service ondersteunt .NET Core 3.1 en hogere versies.
-* [Azure CLI versie 2.0.67 of hoger](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* [Azure CLI versie 2.0.67 of hoger](/cli/azure/install-azure-cli).
 * [Git](https://git-scm.com/).
 
 ## <a name="install-azure-cli-extension"></a>Azure CLI-extensie installeren
@@ -338,9 +338,9 @@ In deze quickstart wordt het volgende uitgelegd:
 
 Dit zijn de vereisten voor het voltooien van deze snelstart:
 
-* [JDK 8 installeren](/java/azure/jdk/?preserve-view=true&view=azure-java-stable)
+* [JDK 8 installeren](/java/azure/jdk/)
 * [Aanmelden voor een Azure-abonnement](https://azure.microsoft.com/free/)
-* (Optioneel) [De Azure CLI-versie 2.0.67 of hoger](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) en de Azure Spring Cloud-extensie installeren met de opdracht: `az extension add --name spring-cloud`
+* (Optioneel) [De Azure CLI-versie 2.0.67 of hoger](/cli/azure/install-azure-cli) en de Azure Spring Cloud-extensie installeren met de opdracht: `az extension add --name spring-cloud`
 * (Optioneel) [De Azure-toolkit voor IntelliJ installeren](https://plugins.jetbrains.com/plugin/8053-azure-toolkit-for-intellij/) en [aanmelden](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app#installation-and-sign-in)
 
 ## <a name="generate-a-spring-cloud-project"></a>Een Spring Cloud-project genereren

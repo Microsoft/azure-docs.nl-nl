@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: 06dfa65236bf1aa5cfde626c5574ffdf487eb045
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: d928a86f958e54552f5cc8d030b0fb74fa3bd3c2
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698356"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214504"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-azure-cli"></a>Taak verdeling op meerdere IP-configuraties met behulp van Azure CLI
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u Azure Load Balancer gebruikt met meerdere 
 
 Voer de volgende stappen uit om het scenario te vervolledigen dat in dit artikel wordt beschreven:
 
-1. [Installeer en configureer de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
+1. [Installeer en configureer de Azure cli](/cli/azure/install-azure-cli) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
 2. [Maak als volgt een resource groep met de](../virtual-machines/linux/create-cli-complete.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-resource-group) naam *contosofabrikam* :
 
     ```azurecli

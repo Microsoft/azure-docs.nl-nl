@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 09/01/2020
-ms.openlocfilehash: 7ba01139e365b2f0023ef0784b6ed83e7bde609a
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 342ae2f590f4bf4ce88f64d6d545defff358ad72
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831721"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215218"
 ---
 # <a name="deploy-a-model-to-an-azure-kubernetes-service-cluster"></a>Een model implementeren in een Azure Kubernetes service-cluster
 
@@ -92,7 +92,7 @@ Azureml-Fe schaalt beide omhoog (verticaal) om meer kernen te gebruiken en uit (
 
 Wanneer u omlaag of omlaag schaalt, wordt het CPU-gebruik gebruikt. Als aan de drempel waarde voor het CPU-gebruik wordt voldaan, wordt de front-end eerst omlaag geschaald. Als het CPU-gebruik de drempel waarde voor inschalen inneemt, vindt er een inschaal bewerking plaats. U kunt alleen omhoog en omlaag schalen als er voldoende cluster bronnen beschikbaar zijn.
 
-## <a name="understand-connectivity-requirements-for-aks-inferencing-cluster"></a>Connectiviteits vereisten voor het AKS-cluster
+## <a name="understand-connectivity-requirements-for-aks-inferencing-cluster"></a>Informatie over de connectiviteitsvereisten voor het AKS-deductiecluster
 
 Wanneer Azure Machine Learning een AKS-cluster maakt of koppelt, wordt het AKS-cluster geïmplementeerd met een van de volgende twee netwerk modellen:
 * Kubenet-netwerken: de netwerk bronnen worden doorgaans gemaakt en geconfigureerd als het AKS-cluster wordt geïmplementeerd.
@@ -174,7 +174,7 @@ Voor meer informatie over de klassen, methoden en para meters die in dit voor be
 * [Model. implementeren](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)
 * [Webservice.wait_for_deployment](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truewait-for-deployment-show-output-false-)
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u wilt implementeren met behulp van de CLI, gebruikt u de volgende opdracht. Vervang door `myaks` de naam van het AKS Compute-doel. Vervang door `mymodel:1` de naam en versie van het geregistreerde model. Vervang door `myservice` de naam om deze service te verlenen:
 
@@ -184,7 +184,7 @@ az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json 
 
 [!INCLUDE [deploymentconfig](../../includes/machine-learning-service-aks-deploy-config.md)]
 
-Zie voor meer informatie de referentie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
+Zie voor meer informatie de referentie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy) .
 
 # <a name="visual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
@@ -372,7 +372,7 @@ print(token)
 >
 > Micro soft raadt u ten zeerste aan om uw Azure Machine Learning-werk ruimte te maken in dezelfde regio als uw Azure Kubernetes service-cluster. Als u wilt verifiëren met een token, wordt er door de webservice een aanroep naar de regio waarin uw Azure Machine Learning-werk ruimte is gemaakt. Als de regio van uw werk ruimte niet beschikbaar is, kunt u geen token voor uw webservice ophalen, zelfs als uw cluster zich in een andere regio bevindt dan uw werk ruimte. Dit leidt ertoe dat op tokens gebaseerde verificatie niet beschikbaar is totdat de regio van de werk ruimte weer beschikbaar is. Daarnaast is de afstand tussen de regio van uw cluster en de regio van uw werk ruimte groter, hoe langer het duurt om een token op te halen.
 >
-> Als u een token wilt ophalen, moet u de Azure Machine Learning SDK of de opdracht [AZ ml service Get-access-token](/cli/azure/ext/azure-cli-ml/ml/service?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-service-get-access-token) gebruiken.
+> Als u een token wilt ophalen, moet u de Azure Machine Learning SDK of de opdracht [AZ ml service Get-access-token](/cli/azure/ext/azure-cli-ml/ml/service#ext-azure-cli-ml-az-ml-service-get-access-token) gebruiken.
 
 
 ### <a name="vulnerability-scanning"></a>Scannen op beveiligingsproblemen

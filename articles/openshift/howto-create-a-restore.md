@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc
-ms.openlocfilehash: 6a4c226527f94a9fca4c8106df3827c9222657a1
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 8a9bb191390056caf7d5ba3b42c278205177d5a2
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633220"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213009"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-restore"></a>Een Azure Red Hat open Shift 4-cluster toepassing herstellen
 
@@ -23,7 +23,7 @@ In dit artikel maakt u een voor bereiding van uw omgeving voor het maken van een
 > * De vereisten instellen en de benodigde hulpprogram ma's installeren
 > * Een Azure Red Hat open Shift 4-toepassing herstellen
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 

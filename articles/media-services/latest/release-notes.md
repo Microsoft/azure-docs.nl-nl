@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 14bc7b6f45b04f230252e85cd10b7246529cb751
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: f14328567fdc9840b0a3d07aa23fe2496fd537ca
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095160"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213093"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -294,21 +294,21 @@ Updates van de GA-versie van de V3 API zijn onder andere:
 
 ## <a name="november-2018"></a>November 2018
 
-De CLI 2,0-module is nu beschikbaar voor [Azure Media Services v3 ga](/cli/azure/ams?view=azure-cli-latest&preserve-view=true) – v-2.0.50.
+De CLI 2,0-module is nu beschikbaar voor [Azure Media Services v3 ga](/cli/azure/ams) – v-2.0.50.
 
 ### <a name="new-commands"></a>Nieuwe opdrachten
 
-- [AZ AMS account](/cli/azure/ams/account?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS account-filter](/cli/azure/ams/account-filter?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS Asset](/cli/azure/ams/asset?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS Asset-filter](/cli/azure/ams/asset-filter?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS content-Key-policy](/cli/azure/ams/content-key-policy?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS job](/cli/azure/ams/job?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS Live-Event](/cli/azure/ams/live-event?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS live-output](/cli/azure/ams/live-output?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS streaming-Endpoint](/cli/azure/ams/streaming-endpoint?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS streaming-Locator](/cli/azure/ams/streaming-locator?view=azure-cli-latest&preserve-view=true)
-- [AZ AMS account MRU](/cli/azure/ams/account/mru?view=azure-cli-latest&preserve-view=true) -Hiermee kunt u gereserveerde media-eenheden beheren. Zie [gereserveerde media-eenheden schalen](media-reserved-units-cli-how-to.md)voor meer informatie.
+- [AZ AMS account](/cli/azure/ams/account)
+- [AZ AMS account-filter](/cli/azure/ams/account-filter)
+- [AZ AMS Asset](/cli/azure/ams/asset)
+- [AZ AMS Asset-filter](/cli/azure/ams/asset-filter)
+- [AZ AMS content-Key-policy](/cli/azure/ams/content-key-policy)
+- [AZ AMS job](/cli/azure/ams/job)
+- [AZ AMS Live-Event](/cli/azure/ams/live-event)
+- [AZ AMS live-output](/cli/azure/ams/live-output)
+- [AZ AMS streaming-Endpoint](/cli/azure/ams/streaming-endpoint)
+- [AZ AMS streaming-Locator](/cli/azure/ams/streaming-locator)
+- [AZ AMS account MRU](/cli/azure/ams/account/mru) -Hiermee kunt u gereserveerde media-eenheden beheren. Zie [gereserveerde media-eenheden schalen](media-reserved-units-cli-how-to.md)voor meer informatie.
 
 ### <a name="new-features-and-breaking-changes"></a>Nieuwe functies en belang rijke wijzigingen
 

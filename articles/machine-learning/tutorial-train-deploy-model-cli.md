@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 03/26/2020
-ms.openlocfilehash: 55221fa529688fbae1698a094ea31f6a3f765100
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
-ms.translationtype: HT
+ms.openlocfilehash: 77df97eaecc59bc9160bcf63ae5d3904cd79ec79
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796241"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215184"
 ---
 # <a name="tutorial-train-and-deploy-a-model-from-the-cli"></a>Zelfstudie: Een model trainen en implementeren vanuit de CLI
 
@@ -39,7 +39,7 @@ U leert hoe u de volgende acties uitvoert:
 
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
-* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli).
 
     Als u [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
 
@@ -128,7 +128,7 @@ De respons van deze opdracht is vergelijkbaar met de volgende JSON:
 }
 ```
 
-Zie [az group](/cli/azure/group?preserve-view=true&view=azure-cli-latest) voor meer informatie over het werken met resourcegroepen.
+Zie [az group](/cli/azure/group) voor meer informatie over het werken met resourcegroepen.
 
 ## <a name="create-a-workspace"></a>Een werkruimte maken
 

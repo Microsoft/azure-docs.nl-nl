@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 489592fcbc779685728b120f18e5e923ee34d655
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: fcfc70f7bfb9e2bb1b1a0edbffdc1282056e5fa7
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96346372"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214045"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>De betrouwbaarheids Score van een antwoord
 Wanneer een gebruikers query wordt vergeleken met een Knowledge Base, retourneert QnA Maker relevante antwoorden, samen met een betrouwbaarheids Score. Met deze score wordt het vertrouwen aangegeven dat het antwoord het juiste resultaat voor de opgegeven gebruikers query is.
@@ -53,7 +53,7 @@ Houd bij het kiezen van de drempel waarde rekening met het evenwicht tussen nauw
 - Als **dekking** (of intrekken) belang rijker is en u zo veel mogelijk vragen wilt beantwoorden, zelfs als er slechts een gedeeltelijke relatie is met de vraag van de gebruiker, moet u de drempel waarde verlagen. Dit betekent dat er meer gevallen zijn waarin het antwoord niet de daad werkelijke query van de gebruiker beantwoordt, maar een ander, iets verwant antwoord geeft. *Bijvoorbeeld:* als u de drempel waarde **30** maakt, kunt u antwoorden geven op query's zoals ' waar kan ik mijn KB bewerken? '
 
 > [!NOTE]
-> Nieuwere versies van QnA Maker bevatten verbeteringen in de Score logica en kunnen van invloed zijn op de drempel waarde. Telkens wanneer u de service bijwerkt, moet u ervoor zorgen dat de drempel waarde wordt getest en zo nodig wordt verfijnd. U kunt [hier](https://www.qnamaker.ai/UserSettings)de QnA-Service versie controleren en bekijken hoe u de meest recente updates [hier](../How-To/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates)ophaalt.
+> Nieuwere versies van QnA Maker bevatten verbeteringen in de Score logica en kunnen van invloed zijn op de drempel waarde. Telkens wanneer u de service bijwerkt, moet u ervoor zorgen dat de drempel waarde wordt getest en zo nodig wordt verfijnd. U kunt [hier](https://www.qnamaker.ai/UserSettings)de QnA-Service versie controleren en bekijken hoe u de meest recente updates [hier](../How-To/configure-QnA-Maker-resources.md#get-the-latest-runtime-updates)ophaalt.
 
 ## <a name="set-threshold"></a>Drempel instellen
 

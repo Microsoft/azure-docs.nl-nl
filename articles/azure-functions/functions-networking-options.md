@@ -5,12 +5,12 @@ author: cachai2
 ms.topic: conceptual
 ms.date: 1/21/2021
 ms.author: cachai
-ms.openlocfilehash: ceef827f7406f8915d205349372a43626c917e4b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f826c947b1e47c1c996a8e9102492e85adafa326
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101729229"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215150"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -87,7 +87,7 @@ Zie [service-eind punten voor virtueel netwerk](../virtual-network/virtual-netwo
 
 ## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslag account beperken tot een virtueel netwerk 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag.  U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt.  Deze functie werkt momenteel alleen voor alle door Vnet ondersteunde sku's, waaronder Standard en Premium, met uitzonde ring van op Flex-tempels waarvoor Vnet alleen beschikbaar is voor Premium SKU. Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. Deze functie werkt momenteel voor alle ondersteunde sku's van Virtual Network, waaronder Standard en Premium, met uitzonde ring van op Flex-tempels waarbij virtuele netwerken alleen beschikbaar zijn voor Premium SKU. Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
 
 1. Maak een functie met een opslag account waarvoor geen service-eind punten zijn ingeschakeld.
 1. Configureer de functie om verbinding te maken met uw virtuele netwerk.
@@ -96,7 +96,7 @@ Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen 
 1. Schakel de service-eind punten of het persoonlijke eind punt in voor het opslag account.  
     * Als u verbindingen met een privé-eind punt gebruikt, heeft het opslag account een persoonlijk eind punt voor de `file` `blob` subresources nodig.  Als u bepaalde functies als Durable Functions gebruikt, hebt u ook `queue` `table` toegang nodig via een verbinding met een privé-eind punt.
     * Als u service-eind punten gebruikt, schakelt u het subnet in dat is toegewezen aan uw functie-apps voor opslag accounts.
-1. Beschrijving Kopieer het bestand en de blob-inhoud van het functie-app-opslag account naar het beveiligde opslag account en de bestands share.
+1. Kopieer het bestand en de blob-inhoud van het functie-app-opslag account naar het beveiligde opslag account en de bestands share.
 1. Kopieer de connection string voor dit opslag account.
 1. Werk de **Toepassings instellingen** onder **configuratie** voor de functie-app als volgt bij:
     - `AzureWebJobsStorage` de connection string voor het account voor beveiligde opslag.

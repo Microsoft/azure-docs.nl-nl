@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python, devx-track-azurecli
-ms.openlocfilehash: 901e4d458cc2d77d4e7f13c1782b86c8532ca499
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 88408c4d1c1936d364029f73d9e7b2be0bcf9d84
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327165"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213110"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Een machine learning model implementeren op Azure Functions (preview-versie)
 
@@ -31,7 +31,7 @@ Met Azure Machine Learning kunt u docker-installatie kopieën maken op basis van
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure Machine Learning-werkruimte. Zie het artikel [een werk ruimte maken](how-to-manage-workspace.md) voor meer informatie.
-* De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* De [Azure CLI](/cli/azure/install-azure-cli).
 * Een getraind machine learning model dat is geregistreerd in uw werk ruimte. Als u geen model hebt, gebruikt u de [zelf studie voor installatie kopie classificatie: Train model](tutorial-train-models-with-aml.md) om er een te trainen en te registreren.
 
     > [!IMPORTANT]

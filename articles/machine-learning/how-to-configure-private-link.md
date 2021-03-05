@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 02/09/2021
-ms.openlocfilehash: 7a6213528f204ac31fbcf8a29625787fc73d5153
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 34b37fde83ca957e7c90302561589e2568beb59b
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656802"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215048"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -66,7 +66,7 @@ ws = Workspace.create(name='myworkspace',
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_create) . De volgende para meters voor deze opdracht kunnen worden gebruikt om een werk ruimte met een particulier netwerk te maken, maar hiervoor is een bestaand virtueel netwerk vereist:
+De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace#ext_azure_cli_ml_az_ml_workspace_create) . De volgende para meters voor deze opdracht kunnen worden gebruikt om een werk ruimte met een particulier netwerk te maken, maar hiervoor is een bestaand virtueel netwerk vereist:
 
 * `--pe-name`: De naam van het persoonlijke eind punt dat is gemaakt.
 * `--pe-auto-approval`: Of privé-eindpunt verbindingen met de werk ruimte automatisch moeten worden goedgekeurd.
@@ -116,7 +116,7 @@ Zie [PrivateEndpointConfig](/python/api/azureml-core/azureml.core.privateendpoin
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace private-endpoint add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
+De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace private-endpoint add](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint#ext_azure_cli_ml_az_ml_workspace_private_endpoint_add) .
 
 ```azurecli
 az ml workspace private-endpoint add -w myworkspace  --pe-name myprivateendpoint --pe-auto-approval true --pe-vnet-name myvnet
@@ -153,7 +153,7 @@ ws.delete_private_endpoint_connection(private_endpoint_connection_name=connectio
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace private-endpoint delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
+De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace private-endpoint delete](/cli/azure/ext/azure-cli-ml/ml/workspace/private-endpoint#ext_azure_cli_ml_az_ml_workspace_private_endpoint_delete) .
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -192,7 +192,7 @@ ws.update(allow_public_access_when_behind_vnet=True)
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace update](/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext_azure_cli_ml_az_ml_workspace_update) . Als u open bare toegang tot de werk ruimte wilt inschakelen, voegt u de para meter toe `--allow-public-access true` .
+De [Azure cli-extensie voor machine learning](reference-azure-machine-learning-cli.md) biedt de opdracht [AZ ml Workspace update](/cli/azure/ext/azure-cli-ml/ml/workspace#ext_azure_cli_ml_az_ml_workspace_update) . Als u open bare toegang tot de werk ruimte wilt inschakelen, voegt u de para meter toe `--allow-public-access true` .
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

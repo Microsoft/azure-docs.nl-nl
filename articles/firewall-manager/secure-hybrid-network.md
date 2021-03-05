@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: tutorial
-ms.date: 06/30/2020
+ms.date: 03/03/2021
 ms.author: victorh
-ms.openlocfilehash: 5d662efc927235711c4dd5e8a424d8775279c30b
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: f631100003a4ea6e191a5bdc13a11eb9aa327268
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048042"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212536"
 ---
 # <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager"></a>Zelfstudie: Uw virtuele hubnetwerk beveiligen met Azure Firewall Manager
 
@@ -79,22 +79,24 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 1. Selecteer uw abonnement, selecteer voor Resourcegroep de optie **Nieuwe maken** en maak een resourcegroep met de naam **FW-Hybrid-Test**.
 2. Voor de beleidsnaam typt u **Pol-Net01**.
 3. Selecteer bij Regio **VS - oost**.
-4. Selecteer **Volgende: Regels**.
-5. Selecteer **Een regelverzameling toevoegen**.
-6. Bij **Naam** typt u **RCNet01**.
-7. Bij **Type regelverzameling** selecteert u **Netwerk**.
-8. Bij **Prioriteit** typt u **100**.
-9. Bij **Actie** selecteert u **Toestaan**.
-10. Onder **Regels** typt u bij **Naam** de naam **AllowWeb**.
-11. Bij **Bronadressen** typt u **192.168.1.0/24**.
-12. Bij **Protocol** selecteert u **TCP**.
-13. Typ bij **Doelpoorten** **80**.
-14. Bij **Doeltype** selecteert u **IP-adres**.
-15. Bij **Doel** typt u **10.6.0.0/16**.
-16. Voer op de volgende rij van de regel de volgende informatie in:
+1. Selecteer **volgende: DNS-instellingen**.
+1. Selecteer **volgende: TLS-inspectie (preview-versie)**
+1. Selecteer **Volgende: Regels**.
+1. Selecteer **Een regelverzameling toevoegen**.
+1. Bij **Naam** typt u **RCNet01**.
+1. Bij **Type regelverzameling** selecteert u **Netwerk**.
+1. Bij **Prioriteit** typt u **100**.
+1. Bij **Actie** selecteert u **Toestaan**.
+1. Onder **Regels** typt u bij **Naam** de naam **AllowWeb**.
+1. Typ bij **Bron** **192.168.1.0/24**.
+1. Bij **Protocol** selecteert u **TCP**.
+1. Typ bij **Doelpoorten** **80**.
+1. Bij **Doeltype** selecteert u **IP-adres**.
+1. Bij **Doel** typt u **10.6.0.0/16**.
+1. Voer op de volgende rij van de regel de volgende informatie in:
  
     Naam: typ **AllowRDP**<br>
-    IP-adres van bron: typ **192.168.1.0/24**.<br>
+    Bron: Typ **192.168.1.0/24**.<br>
     Protocol: selecteer **TCP**<br>
     Doelpoorten: typ **3389**<br>
     Doeltype: selecteer **IP-adres**<br>
@@ -110,75 +112,81 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 > De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](../firewall/firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size) voor meer informatie over de grootte van het subnet.
 
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
-2. Selecteer **Virtueel netwerk** onder **Netwerken**.
-4. Geef bij **Naam** **VNet-hub** op.
-5. Bij **Adresruimte** typt u **10.5.0.0/16**.
-6. Bij **Abonnement** selecteert u uw abonnement.
-7. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
-8. Selecteer bij **Locatie** **VS - oost**.
-9. Onder **Subnet** typt u bij **Naam** de naam **AzureFirewallSubnet**. De firewall zal zich in dit subnet bevinden, en de subnetnaam **moet** AzureFirewallSubnet zijn.
-10. Bij **Adresbereik** typt u **10.5.0.0/26**. 
-11. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Maken**.
+2. Zoek naar **virtueel netwerk** en selecteer **virtueel netwerk**.
+1. Selecteer **Maken**.
+1. Bij **Abonnement** selecteert u uw abonnement.
+1. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
+1. Geef bij **Naam** **VNet-hub** op.
+1. Selecteer bij **Regio** **VS - oost**.
+1. Selecteer **volgende: IP-adressen**.
+
+1. Typ **10.5.0.0/16** voor **IPv4-adres ruimte**.
+1. Onder **Subnetnaam** selecteert u **standaard**.
+1.  Wijzig de **naam** van het subnet in **AzureFirewallSubnet**. De firewall bevindt zich in dit subnet en de naam van het subnet **moet** AzureFirewallSubnet zijn.
+1. Typ **10.5.0.0/26** bij **Subnetadresbereik**. 
+1. Accepteer de andere standaard instellingen en selecteer vervolgens **Opslaan**.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
 
 ## <a name="create-the-spoke-virtual-network"></a>Het virtuele spoke-netwerk maken
 
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
-2. Selecteer **Virtueel netwerk** onder **Netwerken**.
-4. Bij **Naam** typt u **VNet-Spoke**.
-5. Bij **Adresruimte** typt u **10.6.0.0/16**.
-6. Bij **Abonnement** selecteert u uw abonnement.
-7. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
-8. Bij **Locatie** selecteert u dezelfde locatie die u eerder hebt gebruikt.
-9. Onder **Subnet** typt u **SN-Workload** bij **Naam**.
-10. Bij **Adresbereik** typt u **10.6.0.0/24**.
-11. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Maken**.
+2. Zoek naar **virtueel netwerk** en selecteer **virtueel netwerk**.
+1. Selecteer **Maken**.
+1. Bij **Abonnement** selecteert u uw abonnement.
+1. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
+1. Bij **Naam** typt u **VNet-Spoke**.
+1. Selecteer bij **Regio** **VS - oost**.
+1. Selecteer **volgende: IP-adressen**.
+
+1. Bij **IPv4-adresruimte** typt u **10.6.0.0/16**.
+1. Onder **Subnetnaam** selecteert u **standaard**.
+1. Wijzig de **naam** van het subnet in **sn-workload**.
+1. Typ **10.6.0.0/24** bij **Subnetadresbereik**. 
+1. Accepteer de andere standaard instellingen en selecteer vervolgens **Opslaan**.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
+
 
 ## <a name="create-the-on-premises-virtual-network"></a>Het on-premises virtuele netwerk maken
 
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
-2. Selecteer **Virtueel netwerk** onder **Netwerken**.
-4. Bij **Naam** typt u **VNet-OnPrem**.
-5. Bij **Adresruimte** typt u **192.168.0.0/16**.
-6. Bij **Abonnement** selecteert u uw abonnement.
-7. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
-8. Bij **Locatie** selecteert u dezelfde locatie die u eerder hebt gebruikt.
-9. Onder **Subnet** typt u **SN-Corp** bij **Naam**.
-10. Bij **Adresbereik** typt u **192.168.1.0/24**.
-11. Accepteer de standaardwaarden voor de overige instellingen en selecteer **Maken**.
+2. Zoek naar **virtueel netwerk** en selecteer **virtueel netwerk**.
+1. Selecteer **Maken**.
+1. Bij **Abonnement** selecteert u uw abonnement.
+1. Geef voor **Resourcegroep** de naam **FW-Hybrid-Test** op.
+1. Bij **Naam** typt u **VNet-OnPrem**.
+1. Selecteer bij **Regio** **VS - oost**.
+1. Selecteer **volgende: IP-adressen**.
 
-Nadat het virtuele netwerk is geïmplementeerd, maakt u een tweede subnet voor de gateway.
+1. Bij **IPv4-adresruimte** typt u **192.168.0.0/16**.
+1. Onder **Subnetnaam** selecteert u **standaard**.
+1. Wijzig de **naam** van het subnet in **sn-Corp**.
+1. Typ **192.168.1.0/24** bij **Subnetadresbereik**. 
+1. Accepteer de andere standaard instellingen en selecteer vervolgens **Opslaan**.
+2. Selecteer **subnet toevoegen**.
+3. Typ **GatewaySubnet** in het **subnet naam**.
+4. Bij **Subnetadresbereik** typt u **192.168.2.0/24**.
+5. Selecteer **Toevoegen**.
+1. Selecteer **Controleren en maken**.
+1. Selecteer **Maken**.
 
-1. Selecteer op de pagina **VNet-Onprem** **Subnetten**.
-2. Selecteer **+Subnet**.
-3. Typ **GatewaySubnet** bij **Naam**.
-4. Typ **192.168.2.0/24** bij **Adresbereik (CIDR-blok)** .
-5. Selecteer **OK**.
 
-### <a name="create-a-public-ip-address"></a>Een openbaar IP-adres maken
 
-Dit is het openbare IP-adres dat wordt gebruikt voor de on-premises gateway.
-
-1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
-2. Typ in het zoekvak **openbaar IP-adres** en druk op **Enter**.
-3. Selecteer **Openbaar IP-adres** en selecteer vervolgens **Maken**.
-4. Bij de naam typt u **VNet-Onprem-GW-pip**.
-5. Bij de resourcegroep typt u **FW-Hybrid-Test**.
-6. Selecteer bij **Locatie** de optie **VS - oost**.
-7. Accepteer de overige standaardwaarden en klik op **Maken**.
 
 ## <a name="configure-and-deploy-the-firewall"></a>De firewall configureren en implementeren
 
-Wanneer beveiligingsbeleidsregels aan een dergelijke hub worden gekoppeld, wordt dit een *virtueel hubnetwerk* genoemd.
+Wanneer beveiligings beleid is gekoppeld aan een hub, wordt dit een *hub virtueel netwerk* genoemd.
 
 Converteer het virtuele netwerk **VNet-Hub** naar een virtueel *hubnetwerk* en beveilig het met Azure Firewall.
 
 1. Typ **Firewall Manager** in de zoekbalk van Azure Portal en druk op **Enter**.
 3. Selecteer op de pagina van Azure Firewall Manager onder **Beveiliging toevoegen aan virtuele netwerken** de optie **Virtuele netwerken van de hub weergeven**.
-4. Selecteer **Virtuele netwerken** converteren.
-5. Selecteer **VNet-hub** en selecteer vervolgens **Volgende: Azure Firewall**.
-6. Selecteer bij **Firewallbeleid** de optie **Pol-Net01**.
-7. Selecteer **Volgende > Controleren en bevestigen**
-8. Controleer de gegevens en selecteer vervolgens **Bevestigen**.
+1. Schakel onder **virtuele netwerken** het selectie vakje voor **VNet-hub** in.
+1. Selecteer **beveiliging beheren** en selecteer vervolgens **een firewall implementeren met firewall-beleid**.
+1. Schakel op de pagina **virtuele netwerken converteren** onder **firewall beleid** het selectie vakje voor **Pol-Net01** in.
+1. Selecteer **volgende: controleren + bevestigen**
+1. Controleer de gegevens en selecteer vervolgens **Bevestigen**.
 
 
    Het implementeren duurt een paar minuten.
@@ -219,7 +227,7 @@ Maak nu de VPN-gateway voor het on-premises virtuele netwerk. Voor netwerk-naar-
 7. Bij **VPN-type** selecteert u **Op route gebaseerd**.
 8. Bij **SKU** selecteert u **Basis**.
 9. Bij **Virtueel netwerk** selecteert u **VNet-Onprem**.
-10. Bij **Openbaar IP-adres** selecteert u **Bestaande gebruiken* en typt u **VNet-Onprem-GW-pip** als de naam.
+10. Bij **Openbaar IP-adres** selecteert u **Nieuwe maken** en typt u **VNet-Onprem-GW-pip** als de naam.
 11. Accepteer voor de overige instellingen de standaardwaarden en selecteer **Beoordelen en maken**.
 12. Controleer de configuratie en selecteer vervolgens **Maken**.
 
@@ -227,12 +235,12 @@ Maak nu de VPN-gateway voor het on-premises virtuele netwerk. Voor netwerk-naar-
 
 U kunt nu de VPN-verbindingen maken tussen de hub-gateway en de on-premises gateway.
 
-In deze stap maakt u de verbinding van het virtuele hub-netwerk naar het on-premises virtuele netwerk. Hier ziet u een gedeelde sleutel waarnaar wordt verwezen in de voorbeelden. U kunt uw eigen waarden voor de gedeelde sleutel gebruiken. Het belangrijkste is dat de gedeelde sleutel voor beide verbindingen moet overeenkomen. Het kan even duren voordat de verbinding is gemaakt.
+In deze stap maakt u de verbinding van het virtuele hub-netwerk naar het on-premises virtuele netwerk. Hier ziet u een gedeelde sleutel waarnaar wordt verwezen in de voorbeelden. U kunt uw eigen waarden voor de gedeelde sleutel gebruiken. Het belangrijkste is dat de gedeelde sleutel voor beide verbindingen moet overeenkomen. Het duurt enige tijd om de verbinding te maken.
 
 1. Open de resourcegroep **FW-Hybrid-Test** en selecteer de gateway **GW-hub**.
 2. Selecteer **Verbindingen** in de linkerkolom.
 3. Selecteer **Toevoegen**.
-4. Typ **Hub-to-Onprem** als de naam van de verbinding.
+4. Voor de verbindings naam typt **u hub-naar-premises**.
 5. Bij **Verbindingstype** selecteert u **VNet-naar-VNet**.
 6. Bij **Tweede virtuele netwerkgateway** selecteert u **GW-Onprem**.
 7. Bij **Gedeeld sleutel (PSK)** typt u **AzureA1b2C3**.
@@ -263,21 +271,31 @@ Koppel nu de virtuele hub- en spoke-netwerken.
 1. Open de resourcegroep **FW-Hybrid-Test** en selecteer het virtuele netwerk **VNet-hub**.
 2. Selecteer in de linkerkolom **Peerings**.
 3. Selecteer **Toevoegen**.
-4. Bij **Naam** typt u **HubtoSpoke**.
-5. Bij **Virtueel netwerk** selecteert u **VNet-spoke**.
-6. Voor de naam van de peering van VNetSpoke naar VNet-hub typt u **SpoketoHub**.
-7. Selecteer **Gatewayoverdracht toestaan**.
-8. Selecteer **OK**.
+4. Onder **Dit virtueel netwerk**:
+ 
+   
+   |Naam van de instelling  |Waarde  |
+   |---------|---------|
+   |Naam van peeringkoppeling| HubtoSpoke|
+   |Verkeer naar een extern virtueel netwerk|   Toestaan (standaard)      |
+   |Verkeer dat wordt doorgestuurd vanuit een extern virtueel netwerk    |   Toestaan (standaard)      |
+   |Virtuele netwerk gateway of route server    |  De gateway van dit virtuele netwerk gebruiken       |
+    
+5. Onder **Extern virtueel netwerk**:
 
-### <a name="configure-additional-settings-for-the-spoketohub-peering"></a>Aanvullende instellingen configureren voor de SpoketoHub-peering
+   |Naam van de instelling  |Waarde  |
+   |---------|---------|
+   |Naam van peeringkoppeling | SpoketoHub|
+   |Implementatiemodel voor het virtuele netwerk| Resource Manager|
+   |Abonnement|\<your subscription\>|
+   |Virtueel netwerk| VNet-Spoke
+   |Verkeer naar een extern virtueel netwerk     |   Toestaan (standaard)      |
+   |Verkeer dat wordt doorgestuurd vanuit een extern virtueel netwerk    |   Toestaan (standaard)      |
+   |Gateway van een virtueel netwerk     |  De gateway van het externe virtuele netwerk gebruiken       |
 
-U moet **Doorgestuurd verkeer toestaan** inschakelen voor de SpoketoHub-peering.
+5. Selecteer **Toevoegen**.
 
-1. Open de resourcegroep **FW-Hybrid-Test** en selecteer het virtuele netwerk **VNet-Spoke**.
-2. Selecteer in de linkerkolom **Peerings**.
-3. Selecteer de peering **SpoketoHub**.
-4. Selecteer **Ingeschakeld** onder **Doorgestuurd verkeer van VNet-hub naar VNet-spoke toestaan**.
-5. Selecteer **Opslaan**.
+   :::image type="content" source="media/secure-hybrid-network/firewall-peering.png" alt-text="VNet-peering":::
 
 ## <a name="create-the-routes"></a>De routes maken
 
@@ -290,18 +308,19 @@ Maak nu een paar routes:
 2. Typ in het zoekvak **routeringstabel** en druk op **Enter**.
 3. Selecteer **Routeringstabel**.
 4. Selecteer **Maken**.
-5. Voor de naam typt u **UDR-Hub-Spoke**.
-6. Selecteer **FW-Hybrid-Test** als de resourcegroep.
-8. Selecteer bij **Locatie** **(VS) VS - oost**.
-9. Selecteer **Maken**.
-10. Nadat de routeringstabel is gemaakt, selecteert u deze om de pagina Routeringstabel te openen.
-11. Selecteer **Routes** in de linkerkolom.
-12. Selecteer **Toevoegen**.
-13. Voor de routenaam typt u **ToSpoke**.
-14. Voor het adresvoorvoegsel typt u **10.6.0.0/16**.
-15. Voor het volgende hoptype selecteert u **Virtueel apparaat**.
-16. Voor het adres van de volgende hop typt u het privé-IP-adres voor de firewall dat u eerder hebt genoteerd.
-17. Selecteer **OK**.
+1. Selecteer **FW-Hybrid-Test** als de resourcegroep.
+1. Selecteer bij **Regio** **VS - oost**.
+1. Voor de naam typt u **UDR-Hub-Spoke**.
+1. Selecteer **Controleren + maken**.
+1. Selecteer **Maken**.
+1. Nadat de routeringstabel is gemaakt, selecteert u deze om de pagina Routeringstabel te openen.
+1. Selecteer **Routes** in de linkerkolom.
+1. Selecteer **Toevoegen**.
+1. Voor de routenaam typt u **ToSpoke**.
+1. Voor het adresvoorvoegsel typt u **10.6.0.0/16**.
+1. Voor het volgende hoptype selecteert u **Virtueel apparaat**.
+1. Voor het adres van de volgende hop typt u het privé-IP-adres voor de firewall dat u eerder hebt genoteerd.
+1. Selecteer **OK**.
 
 Koppel nu de route aan het subnet.
 
@@ -317,19 +336,20 @@ Maak nu de standaardroute vanaf het spoke-subnet.
 2. Typ in het zoekvak **routeringstabel** en druk op **Enter**.
 3. Selecteer **Routeringstabel**.
 5. Selecteer **Maken**.
-6. Voor de naam typt u **UDR-DG**.
 7. Selecteer **FW-Hybrid-Test** als de resourcegroep.
-8. Selecteer bij **Locatie** **(VS) VS - oost**.
-4. Selecteer **Uitgeschakeld** voor **Doorgifte van route van virtuele netwerkgateway**.
+8. Selecteer bij **Regio** **VS - oost**.
+1. Voor de naam typt u **UDR-DG**.
+4. Selecteer **Nee** als u **Gateway routes wilt door sturen**.
+1. Selecteer **Controleren + maken**.
 1. Selecteer **Maken**.
-2. Nadat de routeringstabel is gemaakt, selecteert u deze om de pagina Routeringstabel te openen.
-3. Selecteer **Routes** in de linkerkolom.
-4. Selecteer **Toevoegen**.
-5. Voor de routenaam typt u **ToHub**.
-6. Voor het adresvoorvoegsel typt u **0.0.0.0/0**.
-7. Voor het volgende hoptype selecteert u **Virtueel apparaat**.
-8. Voor het adres van de volgende hop typt u het privé-IP-adres voor de firewall dat u eerder hebt genoteerd.
-9. Selecteer **OK**.
+1. Nadat de routeringstabel is gemaakt, selecteert u deze om de pagina Routeringstabel te openen.
+1. Selecteer **Routes** in de linkerkolom.
+1. Selecteer **Toevoegen**.
+1. Voor de routenaam typt u **ToHub**.
+1. Voor het adresvoorvoegsel typt u **0.0.0.0/0**.
+1. Voor het volgende hoptype selecteert u **Virtueel apparaat**.
+1. Voor het adres van de volgende hop typt u het privé-IP-adres voor de firewall dat u eerder hebt genoteerd.
+1. Selecteer **OK**.
 
 Koppel nu de route aan het subnet.
 
@@ -350,20 +370,19 @@ Maak in het virtuele spoke-netwerk een virtuele machine waarop IIS wordt uitgevo
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
 2. Selecteer **Windows Server 2016 Datacenter** onder **Populair**.
 3. Voer deze waarden in voor de virtuele machine:
-    - **Resourcegroep**: selecteer **FW-Hybrid-Test**.
-    - **Naam van virtuele machine**: *VM-Spoke-01*.
-    - **Regio** -  *(VS) VS - oost*.
-    - **Gebruikersnaam**: *azureuser*.
-    - **Wachtwoord**: typ uw wachtwoord
+    - **Resource groep** : Selecteer **FW-Hybrid-test**
+    - **Naam van de virtuele machine**: *VM-spoke-01*
+    - **Regio**  -  VS *-Oost*
+    - **Gebruikers naam**: Typ een gebruikers naam
+    - **Wacht woord**: Typ een wacht woord
 
 4. Selecteer **Volgende: schijven**.
 5. Accepteer de standaardwaarden en selecteer **Volgende: Netwerken**.
 6. Selecteer **VNet-Spoke** voor het virtuele netwerk en het subnet is **SN-Workload**.
-7. Selecteer **Geen** voor **Openbaar IP**.
 8. Selecteer voor **Openbare binnenkomende poorten** **Geselecteerde poorten toestaan** en selecteer vervolgens **HTTP (80)** en **RDP (3389)** .
-9. Selecteer **Volgende: Beheer**.
-10. Selecteer **Uit** voor **Diagnostische gegevens over opstarten**.
-11. Selecteer **Beoordelen en maken**, controleer de instellingen op de overzichtspagina en selecteer ten slotte **Maken**.
+1. Selecteer **Volgende: Beheer**.
+1. Selecteer **Uitschakelen** voor **Diagnostische gegevens over opstarten**.
+1. Selecteer **controleren + maken**, Controleer de instellingen op de pagina samen vatting en selecteer vervolgens **maken**.
 
 ### <a name="install-iis"></a>IIS installeren
 
@@ -389,19 +408,19 @@ Dit is een virtuele machine waarmee u verbinding kunt maken met het openbare IP-
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
 2. Selecteer **Windows Server 2016 Datacenter** onder **Populair**.
 3. Voer deze waarden in voor de virtuele machine:
-    - **Resourcegroep**: selecteer Bestaande gebruiken en selecteer vervolgens **FW-Hybrid-Test**.
-    - **Naam virtuele machine** - *VM-Onprem*.
-    - **Regio** -  *(VS) VS - oost*.
-    - **Gebruikersnaam**: *azureuser*.
-    - **Wachtwoord**: typ uw wachtwoord.
+    - **Resource groep** : Selecteer bestaande en selecteer vervolgens **FW-Hybrid-test**
+    - Naam van de **virtuele machine**  -  *VM-premises*
+    - **Regio**  -  VS *-Oost*
+    - **Gebruikers naam**: Typ een gebruikers naam
+    - **Wachtwoord**: typ uw wachtwoord
 
 4. Selecteer **Volgende: schijven**.
 5. Accepteer de standaardwaarden en selecteer **Volgende: Netwerken**.
 6. Selecteer **VNet-Onprem** voor het virtuele netwerk en controleer of het subnet **SN-Corp** is.
 7. Selecteer voor **Openbare binnenkomende poorten** **Geselecteerde poorten toestaan** en selecteer vervolgens **RDP (3389)** .
 8. Selecteer **Volgende: Beheer**.
-9. Selecteer **Uit** voor **Diagnostische gegevens over opstarten**.
-10. Selecteer **Beoordelen en maken**, controleer de instellingen op de overzichtspagina en selecteer ten slotte **Maken**.
+9. Selecteer **uitschakelen** voor **Diagnostische gegevens over opstarten**.
+10. Selecteer **controleren + maken**, Controleer de instellingen op de pagina samen vatting en selecteer vervolgens **maken**.
 
 ## <a name="test-the-firewall"></a>De firewall testen
 
@@ -427,17 +446,17 @@ Nu u hebt geverifieerd dat de firewallregels werken:
 
 Wijzig vervolgens de verzameling netwerkregels van de firewall in **Weigeren** om te controleren of de regels werken zoals verwacht.
 
-1. Open de resourcegroep **FW-Hybrid-Test** en selecteer het firewallbeleid **Pol-Net01**.
-2. Selecteer **Regels** onder **Instellingen**.
-3. Selecteer onder **Netwerkregels** de regelverzameling **RCNet01**, selecteer de weglatingstekens (...) en selecteer **Bewerken**.
-4. Selecteer bij **Actie regelverzameling** de optie **Weigeren**.
-5. Selecteer **Opslaan**.
+1. Open de resource groep **FW-Hybrid-test** en selecteer het **Net01-** firewall beleid.
+2. Selecteer onder **instellingen** **regel verzamelingen**.
+1. Selecteer de **RCNet01** -regel verzameling.
+1. Selecteer bij **Actie regelverzameling** de optie **Weigeren**.
+1. Selecteer **Opslaan**.
 
-Sluit eventuele externe bureaubladen en browsers in **VM-Onprem** voordat u de gewijzigde regels test. Nadat de update van de regelverzameling is voltooid, voert u de tests opnieuw uit. Ze moeten deze keer allemaal mislukken.
+Sluit eventuele externe bureaubladen en browsers in **VM-Onprem** voordat u de gewijzigde regels test. Nadat de update van de regelverzameling is voltooid, voert u de tests opnieuw uit. Ze moeten allemaal deze tijd niet verbinden.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de firewall-resources voor de volgende zelfstudie bewaren. Als u ze niet meer nodig hebt, verwijdert u de resourcegroep **FW-Hybrid-Test** om alle firewall-gerelateerde resources te verwijderen.
+U kunt uw firewall bronnen voor nader onderzoek houden, of als u deze niet meer nodig hebt, verwijdert u de resource groep **FW-Hybrid-test** om alle firewall-gerelateerde resources te verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

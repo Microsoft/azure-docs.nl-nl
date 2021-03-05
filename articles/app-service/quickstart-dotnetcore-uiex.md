@@ -7,12 +7,12 @@ ms.date: 11/23/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperf-fy21q1
 zone_pivot_groups: app-service-platform-windows-linux
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 4e2e34d73bc3048c587d7c0505f4978dd638370a
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 2a789b4ca1261c79e8e6eb93a4ed44e7e8e9272e
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102180272"
+ms.locfileid: "102214232"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Quickstart: Een ASP.NET Core-web-app maken in Azure
 
@@ -31,10 +31,12 @@ Wanneer u klaar bent, hebt u een Azure <abbr title="Een logische container voor 
 
 <details>
 <summary>Hebt u Visual Studio 2019 al?</summary>
-  Als u Visual Studio 2019 al hebt geïnstalleerd:
+Als u Visual Studio 2019 al hebt geïnstalleerd:
 
-  - **Installeer de meest recente updates** in Visual Studio door **Help**  >  **controleren op updates** te selecteren. De meest recente updates bevatten de .NET 5,0 SDK.
-  - **Voeg de werk belasting toe** door **extra** hulp middelen  >  **en functies** te selecteren.
+<ul>
+<li><strong>Installeer de meest recente updates</strong> in Visual Studio door <strong>Help</strong> &gt; <strong>controleren op updates</strong>te selecteren. De meest recente updates bevatten de .NET 5,0 SDK.</li>
+<li><strong>Voeg de werk belasting toe</strong> door <strong>extra</strong> hulp middelen &gt; <strong>en functies</strong>te selecteren.</li>
+</ul>
 </details>
 
 <hr/> 
@@ -314,19 +316,19 @@ http://<app_name>.azurewebsites.net
 
 1. **Uitvoeren** `az webapp up` opnieuw implementeren:
 
-```azurecli
-az webapp up --os-type linux
-```
-
-<details>
-<summary>Wat <code>az webapp up</code> gebeurt er nu?</summary>
-De eerste keer dat u de opdracht uitvoert, worden de app-naam, de resource groep en het App Service plan opgeslagen in het <i>. Azure/config-</i> bestand van de hoofdmap van het project. Wanneer u het opnieuw uitvoert vanuit de hoofdmap van het project, worden de waarden gebruikt die zijn opgeslagen in <i>. Azure/config</i>, detecteert dat de app service resources al bestaan en voert de zip-implementatie opnieuw uit.
-</details>
-
+    ```azurecli
+    az webapp up --os-type linux
+    ```
+    
+    <details>
+    <summary>Wat <code>az webapp up</code> gebeurt er nu?</summary>
+    De eerste keer dat u de opdracht uitvoert, worden de app-naam, de resource groep en het App Service plan opgeslagen in het <i>. Azure/config-</i> bestand van de hoofdmap van het project. Wanneer u het opnieuw uitvoert vanuit de hoofdmap van het project, worden de waarden gebruikt die zijn opgeslagen in <i>. Azure/config</i>, detecteert dat de app service resources al bestaan en voert de zip-implementatie opnieuw uit.
+    </details>
+    
 1. Zodra de implementatie is voltooid, klikt u op **vernieuwen** in het browser venster dat eerder is geopend.
 
-![Bijgewerkte voorbeeld-app die wordt uitgevoerd in Azure](media/quickstart-dotnetcore/dotnet-browse-azure-updated.png)
-
+    ![Bijgewerkte voorbeeld-app die wordt uitgevoerd in Azure](media/quickstart-dotnetcore/dotnet-browse-azure-updated.png)
+    
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
 <hr/> 
@@ -341,8 +343,8 @@ De eerste keer dat u de opdracht uitvoert, worden de app-naam, de resource groep
 
 1. Op de overzichts pagina kunt u basis beheer taken uitvoeren, zoals bladeren, stoppen, starten, opnieuw starten en verwijderen. Het linkermenu bevat een aantal pagina's voor het configureren van uw app. 
 
-![App Service-pagina in Azure Portal](media/quickstart-dotnetcore/portal-app-overview-up.png)
-
+    ![App Service-pagina in Azure Portal](media/quickstart-dotnetcore/portal-app-overview-up.png)
+    
 <hr/> 
 
 ## <a name="9-clean-up-resources"></a>9. opschonen van resources

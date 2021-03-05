@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: f5a248b8701c71b2dcf0415c6656b9b565535232
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 2427fbdaa497ccb6d9a46330dcc6eb872e1d28ac
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101096529"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214164"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Azure-resources voor QnA Maker
 
@@ -126,7 +126,7 @@ QnA Maker Managed is een gratis service en de door Voer is momenteel beperkt tot
 |[Upgrade uitvoeren](../How-to/set-up-qnamaker-service-azure.md#upgrade-app-service) App Service SKU en controleer Cognitive Search laag en [maak Cognitive Search replica's](../../../search/search-capacity-planning.md)|Uw Knowledge Base moet meer aanvragen van uw client-app leveren, zoals een chat-bot.|
 |[Upgrade uitvoeren](../How-to/set-up-qnamaker-service-azure.md#upgrade-the-azure-cognitive-search-service) Azure Cognitive Search-service|U bent van plan om veel kennis bases te hebben.|
 
-Down load de nieuwste runtime-updates door [uw app service in de Azure portal bij te werken](../how-to/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates).
+Down load de nieuwste runtime-updates door [uw app service in de Azure portal bij te werken](../how-to/configure-QnA-Maker-resources.md#get-the-latest-runtime-updates).
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
@@ -307,7 +307,7 @@ De eerste Knowledge Base die in de QnA Maker resource wordt gemaakt, wordt gebru
 
 Als u een QnA-service en de bijbehorende afhankelijkheden (zoals zoeken) maakt via de portal, wordt er een zoek service voor u gemaakt en gekoppeld aan de QnA Maker-service. Nadat deze resources zijn gemaakt, kunt u de App Service-instelling bijwerken om een eerder bestaande zoek service te gebruiken en de toepassing verwijderen die u zojuist hebt gemaakt.
 
-Meer informatie [over het configureren](../How-To/set-up-qnamaker-service-azure.md#configure-qna-maker-to-use-different-cognitive-search-resource) van QnA Maker voor het gebruik van een andere cognitieve service resource dan die welke is gemaakt als onderdeel van het QnA maker van het maken van resources.
+Meer informatie [over het configureren](../How-To/configure-QnA-Maker-resources.md#configure-qna-maker-to-use-different-cognitive-search-resource) van QnA Maker voor het gebruik van een andere cognitieve service resource dan die welke is gemaakt als onderdeel van het QnA maker van het maken van resources.
 
 ### <a name="app-service-and-app-service-plan"></a>App service-en app service-plan
 

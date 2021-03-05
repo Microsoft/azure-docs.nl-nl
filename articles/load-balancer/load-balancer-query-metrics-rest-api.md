@@ -10,12 +10,12 @@ ms.custom: REST, seodec18
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: fbf21ba359ae7914acd2d812ec9e12f9f3ee557a
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 391be596d890e05e6a8fdaf35d2cade371e468d6
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511940"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213180"
 ---
 # <a name="get-load-balancer-usage-metrics-using-the-rest-api"></a>Load Balancer metrische gegevens over het gebruik van de REST API ophalen
 
@@ -44,7 +44,7 @@ De volgende headers zijn vereist:
 
 | Naam | Beschrijving |
 | :--- | :---------- |
-| subscriptionId | De abonnements-ID waarmee een Azure-abonnement wordt geïdentificeerd. Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| subscriptionId | De abonnements-ID waarmee een Azure-abonnement wordt geïdentificeerd. Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](/cli/azure/manage-azure-subscriptions-azure-cli). |
 | resourceGroupName | De naam van de resource groep die de resource bevat. U kunt deze waarde verkrijgen via de Azure Resource Manager-API, CLI of de portal. |
 | loadBalancerName | De naam van de Azure Load Balancer. |
 | metrische namen | Een door komma's gescheiden lijst met geldige  [Load Balancer metrische gegevens](./load-balancer-standard-diagnostics.md). |

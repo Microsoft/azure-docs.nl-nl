@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0fcea6a44f5379ff3da5b348ae45486be6c2516a
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 295228e9eaa3529b05055869bd46f9aefc938a6f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831311"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212770"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>De werk ruimte achter een firewall gebruiken voor Azure Machine Learning
 
@@ -41,7 +41,7 @@ Gebruik een van de volgende methoden om een lijst met IP-adressen van de batch-s
 
 * Down load de [Azure IP-bereiken en-service Tags](https://www.microsoft.com/download/details.aspx?id=56519) en zoek het bestand voor `BatchNodeManagement.<region>` en `AzureMachineLearning.<region>` , waar `<region>` is uw Azure-regio.
 
-* Gebruik de [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) om de informatie te downloaden. In het volgende voor beeld worden de IP-adres gegevens gedownload en worden de gegevens voor de regio VS-Oost 2 (primair) en het centrale Amerikaanse land (secundair) gefilterd:
+* Gebruik de [Azure cli](/cli/azure/install-azure-cli) om de informatie te downloaden. In het volgende voor beeld worden de IP-adres gegevens gedownload en worden de gegevens voor de regio VS-Oost 2 (primair) en het centrale Amerikaanse land (secundair) gefilterd:
 
     ```azurecli-interactive
     az network list-service-tags -l "East US 2" --query "values[?starts_with(id, 'Batch')] | [?properties.region=='eastus2']"

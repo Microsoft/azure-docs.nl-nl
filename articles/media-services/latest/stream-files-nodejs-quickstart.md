@@ -11,12 +11,12 @@ ms.workload: media
 ms.topic: tutorial
 ms.date: 02/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: 566a7a978a08bf7e37b6c4ab8b0609222b34e549
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b7efa37747e6d116b4cf26b4cf54377037f22cdd
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101724520"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212753"
 ---
 # <a name="how-to-encode-and-stream-video-files-with-nodejs"></a>Video bestanden coderen en streamen met Node.JS
 
@@ -128,15 +128,15 @@ az group delete --name amsResourceGroup
 
 ## <a name="more-developer-documentation-for-nodejs-on-azure"></a>Meer documentatie voor ontwikkel aars voor Node.js op Azure
 
-- [Azure voor Java script-& Node.js-ontwikkel aars](https://docs.microsoft.com/azure/developer/javascript/?view=azure-node-latest)
+- [Azure voor Java script-& Node.js-ontwikkel aars](/azure/developer/javascript/)
 - [Media Services bron code in de @azure/azure-sdk-for-js Git-hub opslag plaats](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/mediaservices/arm-mediaservices)
-- [Documentatie voor het Azure-pakket voor Node.js-ontwikkel aars](https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest)
+- [Documentatie voor het Azure-pakket voor Node.js-ontwikkel aars](/javascript/api/overview/azure/)
 
 ## <a name="see-also"></a>Zie ook
 
 - [Taakfoutcodes](/rest/api/media/jobs/get#joberrorcode).
 - [NPM-installatie @azure/arm-mediaservices](https://www.npmjs.com/package/@azure/arm-mediaservices)
-- [Azure voor Java script-& Node.js-ontwikkel aars](https://docs.microsoft.com/azure/developer/javascript/?view=azure-node-latest)
+- [Azure voor Java script-& Node.js-ontwikkel aars](/azure/developer/javascript/)
 - [Media Services bron code in de @azure/azure-sdk-for-js opslag plaats](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/mediaservices/arm-mediaservices)
 
 ## <a name="next-steps"></a>Volgende stappen

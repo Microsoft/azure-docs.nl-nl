@@ -10,7 +10,7 @@ MS. service: Media-Services MS. workload: MS. topic: zelf studie MS. Custom: MVC
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 > [!NOTE]
-> Hoewel in deze zelfstudie [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor [REST API-](/rest/api/media/liveevents), de [CLI-](/cli/azure/ams/live-event?view=azure-cli-latest) of andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
+> Hoewel in deze zelfstudie [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor [REST API-](/rest/api/media/liveevents), de [CLI-](/cli/azure/ams/live-event) of andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
 
 Met Azure Media Services kunt u mediabestanden coderen in indelingen die kunnen worden afgespeeld met een groot aantal verschillende browsers en apparaten. Zo kunt u bijvoorbeeld inhoud streamen in de indelingen Apple HLS of MPEG DASH. Voordat u gaat streamen, moet u uw digitale mediabestand van hoge kwaliteit coderen. Zie [Het concept codering](encoding-concept.md) voor hulp bij het coderen. In deze zelfstudie wordt een lokaal videobestand geüpload en wordt het geüploade bestand gecodeerd. U kunt ook inhoud coderen die u toegankelijk maakt via een HTTPS-URL. Zie [Taakinvoer maken via een HTTP(s)-URL](job-input-from-http-how-to.md) voor meer informatie.
 

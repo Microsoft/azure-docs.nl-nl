@@ -9,17 +9,17 @@ ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: ee10866791d1e5015ef5c91d98bff286ed6ce67a
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: a4adb5bff80f1ab216a39fa773e027670b9e6509
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99591902"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212685"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Installeer & gebruik de CLI-extensie voor Azure Machine Learning
 
 
-De Azure Machine Learning CLI is een uitbrei ding van [Azure cli](/cli/azure/?preserve-view=true&view=azure-cli-latest), een platformoverschrijdende opdracht regel interface voor het Azure-platform. Deze uitbrei ding bevat opdrachten voor het werken met Azure Machine Learning. Zo kunt u uw machine learning activiteiten automatiseren. De volgende lijst bevat enkele voor beelden van acties die u kunt uitvoeren met de CLI-extensie:
+De Azure Machine Learning CLI is een uitbrei ding van [Azure cli](/cli/azure/), een platformoverschrijdende opdracht regel interface voor het Azure-platform. Deze uitbrei ding bevat opdrachten voor het werken met Azure Machine Learning. Zo kunt u uw machine learning activiteiten automatiseren. De volgende lijst bevat enkele voor beelden van acties die u kunt uitvoeren met de CLI-extensie:
 
 + Experimenten uitvoeren om machine learning modellen te maken
 
@@ -33,13 +33,13 @@ De CLI is geen vervanging voor de Azure Machine Learning SDK. Het is een aanvull
 
 * Als u de CLI wilt gebruiken, moet u een Azure-abonnement hebben. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
-* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli).
 
-    Als u [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
+    Als u [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
 
 ## <a name="full-reference-docs"></a>Volledige referentie documenten
 
-Zoek de [volledige referentie documenten voor de extensie Azure-cli-ml van Azure cli](/cli/azure/ext/azure-cli-ml/?preserve-view=true&view=azure-cli-latest).
+Zoek de [volledige referentie documenten voor de extensie Azure-cli-ml van Azure cli](/cli/azure/ext/azure-cli-ml/).
 
 ## <a name="connect-the-cli-to-your-azure-subscription"></a>De CLI koppelen aan uw Azure-abonnement
 
@@ -56,7 +56,7 @@ Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een aanme
 
 [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
 
-Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest)voor andere verificatie methoden.
+Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli)voor andere verificatie methoden.
 
 ## <a name="install-the-extension"></a>De extensie installeren
 
@@ -110,7 +110,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
     az ml workspace create -w myworkspace -g myresourcegroup
     ```
 
-    Zie [AZ ml Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-create)(Engelstalig) voor meer informatie.
+    Zie [AZ ml Workspace Create](/cli/azure/ext/azure-cli-ml/ml/workspace#ext-azure-cli-ml-az-ml-workspace-create)(Engelstalig) voor meer informatie.
 
 + Voeg een werkruimte configuratie toe aan een map om CLI-contextuele bewustzijn in te scha kelen.
 
@@ -120,7 +120,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
 
     Met deze opdracht maakt u een `.azureml` submap die voor beelden van runconfig-en Conda-omgevings bestanden bevat. Het bevat ook een `config.json` bestand dat wordt gebruikt om te communiceren met uw Azure machine learning-werk ruimte.
 
-    Zie voor meer informatie [AZ ml map attach](/cli/azure/ext/azure-cli-ml/ml/folder?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
+    Zie voor meer informatie [AZ ml map attach](/cli/azure/ext/azure-cli-ml/ml/folder#ext-azure-cli-ml-az-ml-folder-attach).
 
 + Een Azure Blob-container als gegevens opslag koppelen.
 
@@ -128,7 +128,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
     az ml datastore attach-blob  -n datastorename -a accountname -c containername
     ```
 
-    Zie voor meer informatie [AZ ml Data Store attach-BLOB](/cli/azure/ext/azure-cli-ml/ml/datastore?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-datastore-attach-blob).
+    Zie voor meer informatie [AZ ml Data Store attach-BLOB](/cli/azure/ext/azure-cli-ml/ml/datastore#ext-azure-cli-ml-az-ml-datastore-attach-blob).
 
 + Bestanden uploaden naar een gegevens opslag.
 
@@ -136,7 +136,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
     az ml datastore upload  -n datastorename -p sourcepath
     ```
 
-    Zie voor meer informatie [AZ ml Data Store upload](/cli/azure/ext/azure-cli-ml/ml/datastore?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-datastore-upload).
+    Zie voor meer informatie [AZ ml Data Store upload](/cli/azure/ext/azure-cli-ml/ml/datastore#ext-azure-cli-ml-az-ml-datastore-upload).
 
 + Koppel een AKS-cluster als een compute-doel.
 
@@ -144,7 +144,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
     az ml computetarget attach aks -n myaks -i myaksresourceid -g myresourcegroup -w myworkspace
     ```
 
-    Zie [AZ ml computetarget attach AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-attach-aks) voor meer informatie.
+    Zie [AZ ml computetarget attach AKS](/cli/azure/ext/azure-cli-ml/ml/computetarget/attach#ext-azure-cli-ml-az-ml-computetarget-attach-aks) voor meer informatie.
 
 ### <a name="compute-clusters"></a>Reken clusters
 
@@ -181,7 +181,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
         az ml computetarget amlcompute identity assign --name cpu-cluster '[system]'
         ```
 
-Zie [AZ ml computetarget Create amlcompute](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)voor meer informatie.
+Zie [AZ ml computetarget Create amlcompute](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute)voor meer informatie.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-managed-identity-note.md)]
 
@@ -196,7 +196,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml computetarget create computeinstance -n cpu -s "STANDARD_D3_V2" -v
     ```
 
-    Zie [AZ ml computetarget Create computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/create?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-computeinstance)voor meer informatie.
+    Zie [AZ ml computetarget Create computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-computeinstance)voor meer informatie.
 
 + Een computeinstance stoppen.
 
@@ -204,7 +204,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml computetarget computeinstance stop -n cpu -v
     ```
 
-    Zie [AZ ml computetarget computeinstance stop](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance stop](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-stop)voor meer informatie.
 
 + Een computeinstance starten.
 
@@ -212,7 +212,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml computetarget computeinstance start -n cpu -v
     ```
 
-    Zie [AZ ml computetarget computeinstance start](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance start](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-start)voor meer informatie.
 
 + Start een computeinstance opnieuw.
 
@@ -220,7 +220,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml computetarget computeinstance restart -n cpu -v
     ```
 
-    Zie [AZ ml computetarget computeinstance restart](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)voor meer informatie.
+    Zie [AZ ml computetarget computeinstance restart](/cli/azure/ext/azure-cli-ml/ml/computetarget/computeinstance#ext-azure-cli-ml-az-ml-computetarget-computeinstance-restart)voor meer informatie.
 
 + Een computeinstance verwijderen.
 
@@ -228,7 +228,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml computetarget delete -n cpu -v
     ```
 
-    Zie [AZ ml computetarget delete computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-delete)voor meer informatie.
+    Zie [AZ ml computetarget delete computeinstance](/cli/azure/ext/azure-cli-ml/ml/computetarget#ext-azure-cli-ml-az-ml-computetarget-delete)voor meer informatie.
 
 
 ## <a name="run-experiments"></a><a id="experiments"></a>Experimenten uitvoeren
@@ -246,7 +246,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     >
     > Het volledige runconfig-schema vindt u in dit [JSON-bestand](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). Het schema wordt zelf gedocumenteerd via de `description` sleutel van elk object. Daarnaast zijn er opsommingen voor mogelijke waarden en een sjabloon fragment aan het einde.
 
-    Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
+    Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
 
 * Een lijst met experimenten weer geven:
 
@@ -254,7 +254,7 @@ Reken instanties beheren.  In alle onderstaande voor beelden is de naam van de r
     az ml experiment list
     ```
 
-    Zie voor meer informatie [AZ ml experimenten List](/cli/azure/ext/azure-cli-ml/ml/experiment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
+    Zie voor meer informatie [AZ ml experimenten List](/cli/azure/ext/azure-cli-ml/ml/experiment#ext-azure-cli-ml-az-ml-experiment-list).
 
 ### <a name="hyperdrive-run"></a>HyperDrive uitvoeren
 
@@ -298,7 +298,7 @@ De volgende opdrachten laten zien hoe u met gegevens sets in Azure Machine Learn
 
     Voor informatie over de indeling van het JSON-bestand dat wordt gebruikt voor het definiëren van de gegevensset, gebruikt u `az ml dataset register --show-template` .
 
-    Zie voor meer informatie [AZ ml dataset REGI ster](/cli/azure/ext/azure-cli-ml/ml/dataset?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-register).
+    Zie voor meer informatie [AZ ml dataset REGI ster](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-register).
 
 + Alle gegevens sets in een werk ruimte weer geven:
 
@@ -306,7 +306,7 @@ De volgende opdrachten laten zien hoe u met gegevens sets in Azure Machine Learn
     az ml dataset list
     ```
 
-    Zie de [lijst AZ ml dataset](/cli/azure/ext/azure-cli-ml/ml/dataset?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-list)voor meer informatie.
+    Zie de [lijst AZ ml dataset](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-list)voor meer informatie.
 
 + Details van een gegevensset ophalen:
 
@@ -314,7 +314,7 @@ De volgende opdrachten laten zien hoe u met gegevens sets in Azure Machine Learn
     az ml dataset show -n dataset-name
     ```
 
-    Zie [AZ ml dataset show](/cli/azure/ext/azure-cli-ml/ml/dataset?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-show)(Engelstalig) voor meer informatie.
+    Zie [AZ ml dataset show](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-show)(Engelstalig) voor meer informatie.
 
 + Registratie van een gegevensset opheffen:
 
@@ -322,7 +322,7 @@ De volgende opdrachten laten zien hoe u met gegevens sets in Azure Machine Learn
     az ml dataset unregister -n dataset-name
     ```
 
-    Zie [AZ ml dataset unregisterd](/cli/azure/ext/azure-cli-ml/ml/dataset?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-dataset-archive)(Engelstalig) voor meer informatie.
+    Zie [AZ ml dataset unregisterd](/cli/azure/ext/azure-cli-ml/ml/dataset#ext-azure-cli-ml-az-ml-dataset-archive)(Engelstalig) voor meer informatie.
 
 ## <a name="environment-management"></a>Omgevingsbeheer
 
@@ -334,7 +334,7 @@ De volgende opdrachten laten zien hoe u Azure Machine Learning [omgevingen](how-
     az ml environment scaffold -n myenv -d myenvdirectory
     ```
 
-    Zie [AZ ml Environment steigers](/cli/azure/ext/azure-cli-ml/ml/environment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-scaffold)voor meer informatie.
+    Zie [AZ ml Environment steigers](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-scaffold)voor meer informatie.
 
 + Een omgeving registreren:
 
@@ -342,7 +342,7 @@ De volgende opdrachten laten zien hoe u Azure Machine Learning [omgevingen](how-
     az ml environment register -d myenvdirectory
     ```
 
-    Zie [AZ ml Environment REGI ster](/cli/azure/ext/azure-cli-ml/ml/environment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-register)(Engelstalig) voor meer informatie.
+    Zie [AZ ml Environment REGI ster](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-register)(Engelstalig) voor meer informatie.
 
 + Geregistreerde omgevingen weer geven:
 
@@ -350,7 +350,7 @@ De volgende opdrachten laten zien hoe u Azure Machine Learning [omgevingen](how-
     az ml environment list
     ```
 
-    Zie de [lijst AZ ml Environment](/cli/azure/ext/azure-cli-ml/ml/environment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-list)(Engelstalig) voor meer informatie.
+    Zie de [lijst AZ ml Environment](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-list)(Engelstalig) voor meer informatie.
 
 + Een geregistreerde omgeving downloaden:
 
@@ -358,7 +358,7 @@ De volgende opdrachten laten zien hoe u Azure Machine Learning [omgevingen](how-
     az ml environment download -n myenv -d downloaddirectory
     ```
 
-    Zie [AZ ml Environment down load](/cli/azure/ext/azure-cli-ml/ml/environment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-environment-download)(Engelstalig) voor meer informatie.
+    Zie [AZ ml Environment down load](/cli/azure/ext/azure-cli-ml/ml/environment#ext-azure-cli-ml-az-ml-environment-download)(Engelstalig) voor meer informatie.
 
 ### <a name="environment-configuration-schema"></a>Configuratie schema omgeving
 
@@ -429,7 +429,7 @@ De volgende opdrachten laten zien hoe u met machine learning pijp lijnen kunt we
     az ml pipeline create -n mypipeline -y mypipeline.yml
     ```
 
-    Zie voor meer informatie [AZ ml pijp lijn Create](/cli/azure/ext/azure-cli-ml/ml/pipeline?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-pipeline-create).
+    Zie voor meer informatie [AZ ml pijp lijn Create](/cli/azure/ext/azure-cli-ml/ml/pipeline#ext-azure-cli-ml-az-ml-pipeline-create).
 
     Zie [machine learning-pijp lijnen definiëren in YAML](reference-pipeline-yaml.md)voor meer informatie over het yaml-bestand van de pijp lijn.
 
@@ -439,7 +439,7 @@ De volgende opdrachten laten zien hoe u met machine learning pijp lijnen kunt we
     az ml run submit-pipeline -n myexperiment -y mypipeline.yml
     ```
 
-    Zie voor meer informatie [AZ ml run-pipeline](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-pipeline).
+    Zie voor meer informatie [AZ ml run-pipeline](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-submit-pipeline).
 
     Zie [machine learning-pijp lijnen definiëren in YAML](reference-pipeline-yaml.md)voor meer informatie over het yaml-bestand van de pijp lijn.
 
@@ -449,7 +449,7 @@ De volgende opdrachten laten zien hoe u met machine learning pijp lijnen kunt we
     az ml pipeline create-schedule -n myschedule -e myexpereiment -i mypipelineid -y myschedule.yml
     ```
 
-    Zie voor meer informatie [AZ ml pijp lijn Create-Schedule](/cli/azure/ext/azure-cli-ml/ml/pipeline?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-pipeline-create-schedule).
+    Zie voor meer informatie [AZ ml pijp lijn Create-Schedule](/cli/azure/ext/azure-cli-ml/ml/pipeline#ext-azure-cli-ml-az-ml-pipeline-create-schedule).
 
     Zie [machine learning-pijp lijnen definiëren in YAML](reference-pipeline-yaml.md#schedules)voor meer informatie over het yaml-bestand van de pipeline-planning.
 
@@ -463,14 +463,14 @@ De volgende opdrachten laten zien hoe u een getraind model kunt registreren en v
     az ml model register -n mymodel -p sklearn_regression_model.pkl
     ```
 
-    Zie voor meer informatie [AZ ml model REGI ster](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register).
+    Zie voor meer informatie [AZ ml model REGI ster](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-register).
 
 + **Optioneel** Profiel uw model om optimale CPU-en geheugen waarden voor implementatie te verkrijgen.
     ```azurecli-interactive
     az ml model profile -n myprofile -m mymodel:1 --ic inferenceconfig.json -d "{\"data\": [[1,2,3,4,5,6,7,8,9,10],[10,9,8,7,6,5,4,3,2,1]]}" -t myprofileresult.json
     ```
 
-    Zie [AZ ml model profile](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile)(Engelstalig) voor meer informatie.
+    Zie [AZ ml model profile](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-profile)(Engelstalig) voor meer informatie.
 
 + Implementeer uw model op AKS
     ```azurecli-interactive
@@ -481,7 +481,7 @@ De volgende opdrachten laten zien hoe u een getraind model kunt registreren en v
     
     Zie [implementatie configuratie schema](#deploymentconfig)voor meer informatie over het schema van het configuratie bestand voor implementatie.
 
-    Zie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy)(Engelstalig) voor meer informatie.
+    Zie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy)(Engelstalig) voor meer informatie.
 
 <a id="inferenceconfig"></a>
 
@@ -507,6 +507,6 @@ De volgende opdrachten laten zien hoe u een getraind model kunt registreren en v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Opdracht verwijzing voor de machine learning cli-extensie](/cli/azure/ext/azure-cli-ml/ml?preserve-view=true&view=azure-cli-latest).
+* [Opdracht verwijzing voor de machine learning cli-extensie](/cli/azure/ext/azure-cli-ml/ml).
 
 * [machine learning modellen trainen en implementeren met behulp van Azure-pijp lijnen](/azure/devops/pipelines/targets/azure-machine-learning)

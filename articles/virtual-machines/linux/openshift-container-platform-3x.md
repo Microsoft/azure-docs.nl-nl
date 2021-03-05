@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 04/05/2020
 ms.author: haroldw
-ms.openlocfilehash: 054fb2ffc65b44d5436282eab5327f0facf39c06
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ce3f56530a7bad6eecd4c2edd3b21debe8c75a24
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671182"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214147"
 ---
 # <a name="deploy-openshift-container-platform-311-in-azure"></a>Open Shift container platform 3,11 implementeren in azure
 
@@ -308,7 +308,7 @@ Verschillende releases kunnen verschillende para meters hebben, dus controleer d
 ### <a name="deploy-using-azure-cli"></a>Implementeren met behulp van Azure CLI
 
 > [!NOTE] 
-> Voor de volgende opdracht is Azure CLI 2.0.8 of hoger vereist. U kunt de CLI-versie controleren met de `az --version` opdracht. Zie [Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latesti)voor informatie over het bijwerken van de CLI-versie.
+> Voor de volgende opdracht is Azure CLI 2.0.8 of hoger vereist. U kunt de CLI-versie controleren met de `az --version` opdracht. Zie [Azure cli installeren](/cli/azure/install-azure-cli)voor informatie over het bijwerken van de CLI-versie.
 
 In het volgende voor beeld worden het openshift-cluster en alle gerelateerde resources geïmplementeerd in een resource groep met de naam openshiftrg, met een implementatie naam van myOpenShiftCluster. Er wordt rechtstreeks naar de sjabloon verwezen vanuit de GitHub opslag plaats en er wordt een lokaal bestand met para meters met de naam azuredeploy.parameters.jsin het bestand gebruikt.
 

@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: 46b8f153e65f436fa1062a0606e0fb0136d972a5
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 0a536781f3218807c36f6eefe738b9a375de8d4b
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97824616"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213127"
 ---
 # <a name="deploy-your-existing-model-with-azure-machine-learning"></a>Uw bestaande model implementeren met Azure Machine Learning
 
@@ -27,14 +27,14 @@ Zie [machine learning modellen beheren, implementeren en bewaken](concept-model-
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Een Azure Machine Learning-werkruimte](how-to-manage-workspace.md)
+* [Een Azure Machine Learning-werk ruimte](how-to-manage-workspace.md)
   + Bij python-voor beelden wordt ervan uitgegaan dat de `ws` variabele is ingesteld op uw Azure machine learning-werk ruimte. Raadpleeg de [documentatie van Azure machine learning SDK voor python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=trueworkspace)voor meer informatie over het maken van een verbinding met de werk ruimte.
   
   + CLI-voor beelden gebruiken tijdelijke aanduidingen van `myworkspace` en `myresourcegroup` , die u moet vervangen door de naam van uw werk ruimte en de resource groep waarin deze is opgenomen.
 
 * De [Azure machine learning python-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).  
 
-* De [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) -en [machine learning cli-extensie](reference-azure-machine-learning-cli.md).
+* De [Azure cli](/cli/azure/install-azure-cli) -en [machine learning cli-extensie](reference-azure-machine-learning-cli.md).
 
 * Een getraind model. Het model moet persistent zijn gemaakt voor een of meer bestanden in uw ontwikkel omgeving. <br><br>Ter illustratie van het registreren van een getraind model maakt de voorbeeld code in dit artikel gebruik van de modellen van het [Paolo Ripamonti Twitter sentiment Analysis-project](https://www.kaggle.com/paoloripamonti/twitter-sentiment-analysis).
 
@@ -61,7 +61,7 @@ az ml model register -p ./models -n sentiment -w myworkspace -g myresourcegroup
 > [!TIP]
 > U kunt ook `tags` `properties` de objecten add en Dictionary instellen op het geregistreerde model. Deze waarden kunnen later worden gebruikt om een specifiek model te identificeren. Bijvoorbeeld het gebruikte Framework, de trainings parameters, enzovoort.
 
-Zie voor meer informatie de verwijzing [AZ ml model REGI ster](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-register) .
+Zie voor meer informatie de verwijzing [AZ ml model REGI ster](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-register) .
 
 
 Zie [machine learning modellen beheren, implementeren en bewaken](concept-model-management-and-deployment.md)voor meer informatie over model registratie in het algemeen.
@@ -268,7 +268,7 @@ Gebruik de volgende opdracht om het model te implementeren vanuit de CLI. Met de
 az ml model deploy -n myservice -m sentiment:1 --ic inferenceConfig.json --dc deploymentConfig.json
 ```
 
-Zie voor meer informatie de referentie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-deploy) .
+Zie voor meer informatie de referentie [AZ ml model Deploy](/cli/azure/ext/azure-cli-ml/ml/model#ext-azure-cli-ml-az-ml-model-deploy) .
 
 Zie [hoe en wanneer u modellen implementeert](how-to-deploy-and-where.md)voor meer informatie over de implementatie.
 

@@ -9,14 +9,14 @@ ms.topic: reference
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
-ms.date: 1/12/2021
+ms.date: 3/5/2021
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: a182ca3ba70b9faa1ba67fdb6c91a4eaf8e766ef
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 014140b9b9832bab3de4f71c0b5f164b564b3fe5
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101691192"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212719"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -252,7 +252,7 @@ Sommige bestands eigenschappen kunnen niet worden ingesteld of gewijzigd:
 De volgende opties zijn standaard ingesteld en kunnen niet worden gewijzigd:
 
 - `MULTI_USER`
-- `ENABLE_BROKER ON`
+- `ENABLE_BROKER`
 - `AUTO_CLOSE OFF`
 
 De volgende opties kunnen niet worden gewijzigd:
@@ -471,6 +471,10 @@ Service Broker met meerdere exemplaren wordt niet ondersteund:
 - `sys.routes`: Als u een vereiste hebt, moet u het adres selecteren in sys. routes. Het adres moet lokaal op elke route zijn. Zie [sys. routes](/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
 - `CREATE ROUTE`: U kunt niet gebruiken `CREATE ROUTE` met `ADDRESS` andere dan `LOCAL` . Zie [route maken](/sql/t-sql/statements/create-route-transact-sql).
 - `ALTER ROUTE`: U kunt niet gebruiken `ALTER ROUTE` met `ADDRESS` andere dan `LOCAL` . Zie [ALTER route](/sql/t-sql/statements/alter-route-transact-sql). 
+
+Service Broker is standaard ingeschakeld en kan niet worden uitgeschakeld. De volgende opties voor ALTER database worden niet ondersteund:
+- `ENABLE_BROKER`
+- `DISABLE_BROKER`
 
 ### <a name="stored-procedures-functions-and-triggers"></a>Opgeslagen procedures, functies en triggers
 

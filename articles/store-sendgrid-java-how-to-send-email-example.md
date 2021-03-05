@@ -16,12 +16,12 @@ ms.date: 10/30/2014
 ms.author: erikre
 ms.reviewer: vibhork;dominic.may@sendgrid.com;elmer.thomas@sendgrid.com
 ms.custom: devx-track-java
-ms.openlocfilehash: 57daf9170a7f97c6c141532dafe759cde9d1c77b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7a857b887b53ccb2288507742ca52d72d90ff548
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519061"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214351"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-java-in-an-azure-deployment"></a>E-mail verzenden met SendGrid vanuit java in een Azure-implementatie
 In het volgende voor beeld ziet u hoe u SendGrid kunt gebruiken om e-mail berichten te verzenden van een webpagina die wordt gehost in Azure. De resulterende toepassing vraagt de gebruiker om e-mail waarden, zoals in de volgende scherm afbeelding wordt weer gegeven.
@@ -40,7 +40,7 @@ U moet de volgende stappen uitvoeren om de code in dit onderwerp te gebruiken:
 
 U moet ook uw eigen SendGrid-gebruikers naam en-wacht woord hebben om het e-mail bericht te kunnen verzenden. Zie [e-mail verzenden met SendGrid vanuit Java](store-sendgrid-java-how-to-send-email.md)om aan de slag te gaan met SendGrid.
 
-Daarnaast is het raadzaam om de informatie over het [maken van een Hallo wereld-toepassing voor Azure in een eclips](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app?view=azure-java-stable)of met andere technieken voor het hosten van Java-toepassingen in azure te gebruiken als u geen gebruik maakt van eclips.
+Daarnaast is het raadzaam om de informatie over het [maken van een Hallo wereld-toepassing voor Azure in een eclips](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app)of met andere technieken voor het hosten van Java-toepassingen in azure te gebruiken als u geen gebruik maakt van eclips.
 
 ## <a name="create-a-web-form-for-sending-email"></a>Een webformulier voor het verzenden van e-mail maken
 De volgende code laat zien hoe u een webformulier maakt om gebruikers gegevens op te halen voor het verzenden van e-mail. Voor doel einden van deze inhoud heeft het JSP-bestand de naam **emailform.jsp**.

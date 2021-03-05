@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: 98e87cf9d1f46ddb8ee1d433bd0b0ba8806fac89
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: a07c4a20b854e09daf3b320b8c99757ca99b2578
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091928"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213807"
 ---
 # <a name="how-to-scale-media-reserved-units"></a>Gereserveerde media-eenheden schalen
 
@@ -36,7 +36,7 @@ Meer informatie over [gereserveerde media-eenheden](concept-media-reserved-units
 
 Voer de opdracht `mru` uit.
 
-Met de volgende opdracht [AZ AMS account MRU](/cli/azure/ams/account/mru?view=azure-cli-latest) worden de gereserveerde media-eenheden voor het account ' amsaccount ' ingesteld met behulp van de para meters **Count** en **type** .
+Met de volgende opdracht [AZ AMS account MRU](/cli/azure/ams/account/mru) worden de gereserveerde media-eenheden voor het account ' amsaccount ' ingesteld met behulp van de para meters **Count** en **type** .
 
 ```azurecli
 az ams account mru set -n amsaccount -g amsResourceGroup --count 10 --type S3

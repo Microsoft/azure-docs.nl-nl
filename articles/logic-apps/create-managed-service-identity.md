@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
 ms.date: 02/12/2021
-ms.openlocfilehash: 9a3a511a287f093b4fc317213afedd5fdc3c21be
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 055df9d2290ee445e2a7201acd374508a86e839f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100520660"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213315"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Toegang tot Azure-bronnen verifiëren door beheerde identiteiten te gebruiken in Azure Logic Apps
 
@@ -307,7 +307,7 @@ Voordat u de beheerde identiteit van de logische app voor verificatie kunt gebru
 * [Azure-portal](#azure-portal-assign-access)
 * [Azure Resource Manager-sjabloon](../role-based-access-control/role-assignments-template.md)
 * Azure PowerShell ([New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)): Zie [roltoewijzing toevoegen met behulp van Azure RBAC en Azure PowerShell](../role-based-access-control/role-assignments-powershell.md)voor meer informatie.
-* Azure CLI ([AZ Role Assignment maken](/cli/azure/role/assignment?view=azure-cli-latest&preserve-view=true#az-role-assignment-create)): Zie [roltoewijzing toevoegen met behulp van Azure RBAC en Azure cli](../role-based-access-control/role-assignments-cli.md)voor meer informatie.
+* Azure CLI ([AZ Role Assignment maken](/cli/azure/role/assignment#az-role-assignment-create)): Zie [roltoewijzing toevoegen met behulp van Azure RBAC en Azure cli](../role-based-access-control/role-assignments-cli.md)voor meer informatie.
 * [Azure REST-API](../role-based-access-control/role-assignments-rest.md)
 
 <a name="azure-portal-assign-access"></a>

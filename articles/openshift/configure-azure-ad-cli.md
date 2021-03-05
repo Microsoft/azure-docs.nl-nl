@@ -8,16 +8,16 @@ author: sabbour
 ms.author: asabbour
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 0e9e7c5fccf56077e138ffe24226344257bb3a13
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 06f7bfea9a88627733eb9ce9166e05d05790e23a
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100636285"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213059"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-cli"></a>Azure Active Directory authenticatie configureren voor een Azure Red Hat open Shift 4-cluster (CLI)
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel de Azure CLI-versie 2.6.0 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel de Azure CLI-versie 2.6.0 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 Haal de cluster-specifieke Url's op die u wilt gebruiken om de Azure Active Directory-toepassing te configureren.
 

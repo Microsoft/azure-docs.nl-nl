@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: c72a305a7000052be4f11c9c24a76db94de47ace
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ecbb7ec503011d78c2f83a76cea921e1cf438ac1
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650104"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215099"
 ---
 # <a name="support-and-help-options-for-developers"></a>Ondersteunings- en Help-opties voor ontwikkelaars
 
@@ -30,13 +30,17 @@ Als u net begint met de integratie met Azure Active Directory (Azure AD), micro 
 > * Als u een probleem met een van onze verificatie bibliotheken tegen komt, kunt u een *github* -probleem veroorzaken
 > * Ten slotte, als u met iemand moet praten, wilt u mogelijk een ondersteunings aanvraag openen
 
-## <a name="search"></a>Search
+## <a name="search"></a>Zoeken
 
 Als u een vraag hebt over de ontwikkeling, kunt u het antwoord mogelijk vinden in de documentatie, github-voor [beelden](https://github.com/azure-samples)of antwoorden op [micro soft Q&een](/answers/products/) vragen.
 
 ### <a name="scoped-search"></a>Zoek opdracht in bereik
 
+
+Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](https://docs.microsoft.com/answers/products/) de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
+
 Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](/answers/products/)de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
+
 
 ```
 {Your Search Terms} (site:http://www.docs.microsoft.com/answers/products/ OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)

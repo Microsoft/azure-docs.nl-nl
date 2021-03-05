@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: 552aad3e3b41bcfd55d1b57a53d8dff2080a6210
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: 94034edfa1a5c6ffccd022b4cbf7bae42cc0bae3
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100534699"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102212464"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Veilige toegang tot een sleutelkluis
 
@@ -36,7 +36,7 @@ Een beveiligingsprincipal is een object dat een gebruiker, groep, service of toe
 
 * Een beveiligingsprincipal voor een **groep** identificeert een set gebruikers die zijn gemaakt in Azure Active Directory. Elke rol of machtiging die wordt toegewezen aan de groep, geldt voor alle gebruikers in de groep.
 
-* Een **service-principal** is een type beveiligingsprincipal waarmee een toepassing of service wordt geïdentificeerd, dat wil zeggen: een stukje code in plaats van een gebruiker of groep. De object-id van een service-principal wordt aangeduid als de **client-id** en fungeert als de bijbehorende gebruikersnaam. Het **client geheim** of het **certificaat** van de Service-Principal fungeert als het bijbehorende wacht woord. Veel Azure-Services bieden ondersteuning voor het toewijzen van [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) met geautomatiseerd beheer van de **client-id** en het **certificaat**. Beheerde identiteit is de veiligste en aanbevolen optie voor verificatie binnen Azure.
+* Een **Service-Principal** is een type beveiligings-principal dat een toepassing of service aanduidt. Dit is een stukje code in plaats van een gebruiker of groep. De object-id van een service-principal wordt aangeduid als de **client-id** en fungeert als de bijbehorende gebruikersnaam. Het **client geheim** of het **certificaat** van de Service-Principal fungeert als het bijbehorende wacht woord. Veel Azure-Services bieden ondersteuning voor het toewijzen van [beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) met geautomatiseerd beheer van de **client-id** en het **certificaat**. Beheerde identiteit is de veiligste en aanbevolen optie voor verificatie binnen Azure.
 
 Zie [verifiëren voor Azure Key Vault](authentication.md) voor meer informatie over verificatie voor Key Vault.
 

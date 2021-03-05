@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 2121ad4f908d28ab30f15be261b3f155ab6dd983
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 5521b1785bb38e6985e4619e1eec22cb19da151d
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039696"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214776"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Instanties in Durable Functions in azure beheren
 
@@ -283,7 +283,7 @@ func durable get-history --id 0ab8c55a66644d68a3a8b220b12d209c
 
 In plaats van één exemplaar tegelijk in uw indeling te gebruiken, is het wellicht efficiënter om in één keer op alle query's te zoeken.
 
-U kunt de methode [ListInstancesAsync](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationclient.listinstancesasync?view=azure-dotnet#Microsoft_Azure_WebJobs_Extensions_DurableTask_IDurableOrchestrationClient_ListInstancesAsync_Microsoft_Azure_WebJobs_Extensions_DurableTask_OrchestrationStatusQueryCondition_System_Threading_CancellationToken_) (.net), [getStatusAll](/javascript/api/durable-functions/durableorchestrationclient?view=azure-node-latest#getstatusall--) (Java script) of `get_status_all` (python) gebruiken om de statussen van alle indelings instanties op te vragen. In .NET kunt u een object door geven `CancellationToken` Als u dit wilt annuleren. De-methode retourneert een lijst met objecten die de Orchestration-instanties vertegenwoordigen die overeenkomen met de query parameters.
+U kunt de methode [ListInstancesAsync](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationclient.listinstancesasync?view=azure-dotnet#Microsoft_Azure_WebJobs_Extensions_DurableTask_IDurableOrchestrationClient_ListInstancesAsync_Microsoft_Azure_WebJobs_Extensions_DurableTask_OrchestrationStatusQueryCondition_System_Threading_CancellationToken_) (.net), [getStatusAll](/javascript/api/durable-functions/durableorchestrationclient#getstatusall--) (Java script) of `get_status_all` (python) gebruiken om de statussen van alle indelings instanties op te vragen. In .NET kunt u een object door geven `CancellationToken` Als u dit wilt annuleren. De-methode retourneert een lijst met objecten die de Orchestration-instanties vertegenwoordigen die overeenkomen met de query parameters.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -366,7 +366,7 @@ func durable get-instances
 
 Wat gebeurt er als u niet alle informatie nodig hebt die een Standard-exemplaar query kan bieden? Wat als u bijvoorbeeld alleen zoekt naar de Orchestration-aanmaak tijd of de Orchestration runtime-status? U kunt uw query beperken door filters toe te passen.
 
-Gebruik de methode [ListInstancesAsync](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationclient.listinstancesasync?view=azure-dotnet#Microsoft_Azure_WebJobs_Extensions_DurableTask_IDurableOrchestrationClient_ListInstancesAsync_Microsoft_Azure_WebJobs_Extensions_DurableTask_OrchestrationStatusQueryCondition_System_Threading_CancellationToken_) (.net) of [getStatusBy](/javascript/api/durable-functions/durableorchestrationclient?view=azure-node-latest#getstatusby-date---undefined--date---undefined--orchestrationruntimestatus---) (Java script) om een lijst met indelings instanties op te halen die overeenkomen met een set vooraf gedefinieerde filters.
+Gebruik de methode [ListInstancesAsync](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.idurableorchestrationclient.listinstancesasync?view=azure-dotnet#Microsoft_Azure_WebJobs_Extensions_DurableTask_IDurableOrchestrationClient_ListInstancesAsync_Microsoft_Azure_WebJobs_Extensions_DurableTask_OrchestrationStatusQueryCondition_System_Threading_CancellationToken_) (.net) of [getStatusBy](/javascript/api/durable-functions/durableorchestrationclient#getstatusby-date---undefined--date---undefined--orchestrationruntimestatus---) (Java script) om een lijst met indelings instanties op te halen die overeenkomen met een set vooraf gedefinieerde filters.
 
 # <a name="c"></a>[C#](#tab/csharp)
 

@@ -11,14 +11,14 @@ ms.reviewer: larryfr
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-csharp
-ms.openlocfilehash: dddecb3dba6d707e16241731a25df3b3749be103
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: d23d6cb5a43de4ccf0d10287b8cf8f597797b893
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825420"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102214980"
 ---
-# <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Een Azure Machine Learning model gebruiken dat is geïmplementeerd als een webservice
+# <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Een Azure Machine Learning-model gebruiken dat als een webservice is geïmplementeerd
 
 
 Als u een Azure Machine Learning-model implementeert als webservice, wordt een REST API-eindpunt gemaakt. U kunt gegevens naar dit eindpunt verzenden en de voorspelling ontvangen die door het model wordt geretourneerd. In dit document leest u hoe u clients voor de webservice maakt met behulp van C#, go, Java en python.
@@ -75,9 +75,9 @@ Er zijn verschillende manieren om deze informatie op te halen voor geïmplemente
     print(service.swagger_uri)
     ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de naam van de geïmplementeerde service weet, gebruikt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) :
+Als u de naam van de geïmplementeerde service weet, gebruikt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service#ext_azure_cli_ml_az_ml_service_show) :
 
 ```azurecli
 az ml service show -n <service-name>
@@ -677,7 +677,7 @@ Power BI ondersteunt het gebruik van Azure Machine Learning webservices om de ge
 
 Als u een webservice wilt genereren die wordt ondersteund voor gebruik in Power BI, moet het schema ondersteuning bieden voor de indeling die wordt vereist door Power BI. [Meer informatie over het maken van een door Power bi ondersteund schema](./how-to-deploy-advanced-entry-script.md#power-bi-compatible-endpoint).
 
-Zodra de webservice is geïmplementeerd, kan deze worden gebruikt vanuit Power BI-gegevensstromen. [Meer informatie over het gebruik van een Azure machine learning-webservice van Power bi](/power-bi/service-machine-learning-integration).
+Zodra de webservice is geïmplementeerd, kan deze worden gebruikt vanuit Power BI-gegevensstromen. [Een Azure Machine Learning-webservice gebruiken vanuit Power BI](/power-bi/service-machine-learning-integration).
 
 ## <a name="next-steps"></a>Volgende stappen
 

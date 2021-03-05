@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 09/15/2020
 ms.author: mbaldwin
-ms.openlocfilehash: d47935f76347b2d5272b386942a85643a732e643
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: d9fb9e0221ad6a5749899c89bbd9dc5631e7a91c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831749"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102213263"
 ---
 # <a name="quickstart-create-an-key-vault-managed-hsm-using-an-azure-resource-manager-template"></a>Quickstart: Een beheerde Key Vault HSM maken met behulp van een Azure Resource Manager-sjabloon
 
@@ -43,7 +43,7 @@ Als u zich wilt aanmelden bij Azure met behulp van de CLI, typt u:
 az login
 ```
 
-Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true) voor meer informatie over opties voor aanmelding via de CLI
+Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over opties voor aanmelding via de CLI
 
 ## <a name="create-a-manage-hsm"></a>Een beheerde HSM maken
 
@@ -55,13 +55,13 @@ De Azure-resource die in de sjabloon is gedefinieerd:
 
 [Hier](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Keyvault) vindt u meer voorbeelden van Azure Key Vault-sjablonen.
 
-Voor de sjabloon is de object-id vereist die aan uw account is gekoppeld. U vindt deze met de opdracht [az ad user show](/cli/azure/ad/user?view=azure-cli-latest&preserve-view=true#az_ad_user_show) in de Azure CLI, waarbij u uw e-mail aan de parameter `--id` doorgeeft. U kunt de uitvoer alleen tot de object-id beperken met de parameter `--query`.
+Voor de sjabloon is de object-id vereist die aan uw account is gekoppeld. U vindt deze met de opdracht [az ad user show](/cli/azure/ad/user#az_ad_user_show) in de Azure CLI, waarbij u uw e-mail aan de parameter `--id` doorgeeft. U kunt de uitvoer alleen tot de object-id beperken met de parameter `--query`.
 
 ```azurecli-interactive
 az ad user show --id <your-email-address> --query "objectId"
 ```
 
-Mogelijk hebt u ook uw tenant-id nodig. U vindt deze met de opdracht [az ad user show](/cli/azure/account?view=azure-cli-latest&preserve-view=true#az_account_show) in de Azure CLI. U kunt de uitvoer alleen tot de tenant-id beperken met de parameter `--query`.
+Mogelijk hebt u ook uw tenant-id nodig. U vindt deze met de opdracht [az ad user show](/cli/azure/account#az_account_show) in de Azure CLI. U kunt de uitvoer alleen tot de tenant-id beperken met de parameter `--query`.
 
  ```azurecli-interactive
  az account show --query "tenantId"

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 4e9b45c72e5fb4cbd9e548727faf8946e3e5ba8f
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 8fe8c07866b23e5d990b71bfc9cd556c338634d3
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102125056"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203365"
 ---
 # <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
 
@@ -57,6 +57,8 @@ U kunt Ip's toevoegen aan app service allowlist om de toegang te beperken of App
    1. Down load [de IP-bereiken voor alle service Tags](https://www.microsoft.com/download/details.aspx?id=56519).
    2. Selecteer de IP-adressen van ' CognitiveServicesManagement '.
    3. Navigeer naar het gedeelte netwerken van uw App Service-bron en klik op de optie toegangs beperking configureren om de IP-adressen toe te voegen aan een allowlist.
+
+    ![binnenkomende poort uitzonderingen](../media/inbound-ports.png)
 
 We hebben ook een geautomatiseerd script om hetzelfde te doen voor uw App Service. U kunt het [Power shell-script vinden voor het configureren van een allowlist](https://github.com/pchoudhari/QnAMakerBackupRestore/blob/master/AddRestrictedIPAzureAppService.ps1) op github. U moet abonnements-id, resource groep en werkelijke App Service naam invoeren als script parameters. Wanneer het script wordt uitgevoerd, worden de IP-adressen automatisch toegevoegd aan App Service allowlist.
 

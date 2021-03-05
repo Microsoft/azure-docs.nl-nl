@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/29/2020
-ms.openlocfilehash: cd4bba1bacbdb21a6bff4fcc5d3c1f3b2166ec35
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 47c5ad18f50bd25dd3bf351090ffc9ef5d54f0b2
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039973"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202906"
 ---
 # <a name="azure-purview-data-catalog-lineage-user-guide"></a>Gebruikers handleiding voor Azure controle sfeer liggen Data Catalog afkomst
 
@@ -49,6 +49,8 @@ Gegevens systemen als Azure ML en Power BI rapport afkomst in azure controle sfe
 | Power BI | [Gegevens sets, gegevens stromen, rapporten & Dash boards](register-scan-power-bi-tenant.md)
 
 ## <a name="get-started-with-lineage"></a>Aan de slag met afkomst
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE1XVQS]
 
 Afkomst in controle sfeer liggen omvat gegevens sets en processen. Gegevens sets worden ook wel knoop punten genoemd, terwijl processen ook randen kunnen worden genoemd:
 

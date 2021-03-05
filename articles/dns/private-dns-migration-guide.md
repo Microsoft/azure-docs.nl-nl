@@ -8,12 +8,12 @@ ms.service: dns
 ms.topic: how-to
 ms.date: 06/18/2019
 ms.author: rohink
-ms.openlocfilehash: 63bd1d01adf66f33a8ee5349f35063473429b007
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bfc7a851442d6dd70d55c9f00e6d2f18d37e56bf
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964776"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203399"
 ---
 # <a name="migrating-legacy-azure-dns-private-zones-to-new-resource-model"></a>Verouderde Azure DNS particuliere zones migreren naar een nieuw resource model
 
@@ -108,7 +108,7 @@ Met deze stap worden de verouderde DNS-zones verwijderd en moeten deze pas worde
 
 Als u Automation gebruikt, inclusief sjablonen, Power shell-scripts of aangepaste code die is ontwikkeld met behulp van SDK, moet u uw automatisering bijwerken om het nieuwe resource model voor de privé-DNS-zones te gebruiken. Hieronder vindt u de koppelingen naar nieuwe persoonlijke DNS CLI/PS/SDK-documentatie.
 * [Azure DNS particuliere zones REST API](/rest/api/dns/privatedns/privatezones)
-* [Azure DNS CLI voor persoonlijke zones](/cli/azure/ext/privatedns/network/private-dns?view=azure-cli-latest)
+* [Azure DNS CLI voor persoonlijke zones](/cli/azure/ext/privatedns/network/private-dns)
 * [Azure DNS persoonlijke zones Power shell](/powershell/module/az.privatedns/?view=azps-2.3.2)
 * [Azure DNS-SDK voor particuliere zones](/dotnet/api/overview/azure/privatedns/management?view=azure-dotnet-preview)
 

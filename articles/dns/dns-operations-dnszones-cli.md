@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2017
 ms.author: rohink
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 469fdbced4601c6ffb4b6aa35e8f943bcb5dde1b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5d902e0172a048527ce8f2fa9e22c5fc9bf22e0b
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965779"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203620"
 ---
 # <a name="how-to-manage-dns-zones-in-azure-dns-using-the-azure-cli"></a>DNS-zones beheren in Azure DNS met behulp van de Azure CLI
 
@@ -31,7 +31,7 @@ In deze hand leiding wordt uitgelegd hoe u uw DNS-zones beheert met behulp van d
 
 Deze hand leiding behandelt specifiek voor open bare DNS-zones. Zie [aan de slag met Azure DNS private zones met Azure cli](private-dns-getstarted-cli.md)voor meer informatie over het gebruik van Azure CLI voor het beheren van persoonlijke Zones in azure DNS.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 [!INCLUDE [dns-create-zone-about](../../includes/dns-create-zone-about-include.md)]
 
@@ -47,7 +47,7 @@ Controleer voordat u met de configuratie begint of u de volgende items hebt.
 
 ### <a name="sign-in-to-your-azure-account"></a>Aanmelden bij uw Azure-account
 
-Open een consolevenster en doorloop de verificatie met uw referenties. Raadpleeg [Log in to Azure from the Azure CLI (Aanmelden bij Azure vanaf de Azure CLI)](/cli/azure/authenticate-azure-cli?view=azure-cli-latest) voor meer informatie.
+Open een consolevenster en doorloop de verificatie met uw referenties. Raadpleeg [Log in to Azure from the Azure CLI (Aanmelden bij Azure vanaf de Azure CLI)](/cli/azure/authenticate-azure-cli) voor meer informatie.
 
 ```
 az login

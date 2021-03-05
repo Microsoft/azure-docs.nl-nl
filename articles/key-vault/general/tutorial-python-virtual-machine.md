@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/20/2020
 ms.author: mbaldwin
 ms.custom: mvc, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: ae62bf353f8a92c4408d4a38a91771ad60a13107
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
-ms.translationtype: HT
+ms.openlocfilehash: 2fc77d0cdfb6bd8a62555951c0b6dc7e9b732f93
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285306"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203535"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-virtual-machine-in-python"></a>Zelfstudie: Azure Key Vault gebruiken met een virtuele machine in Python
 
@@ -66,7 +66,7 @@ Gebruik een van de volgende methoden om een VM met de naam **myVM** te maken:
 | [PowerShell](../../virtual-machines/linux/quick-create-powershell.md) | [PowerShell](../../virtual-machines/windows/quick-create-powershell.md) |
 | [Azure-portal](../../virtual-machines/linux/quick-create-portal.md) | [Azure Portal](../../virtual-machines/windows/quick-create-portal.md) |
 
-Als u een Linux-VM wilt maken met behulp van de Azure CLI, gebruikt u de opdracht [az vm create](/cli/azure/vm).  In het volgende voorbeeld wordt een gebruikersaccount met de naam *azureuser* toegevoegd. De parameter `--generate-ssh-keys` wordt gebruikt om automatisch een SSH-sleutel te genereren en deze te plaatsen in de standaardsleutellocatie ( *~/.ssh* ). 
+Als u een Linux-VM wilt maken met behulp van de Azure CLI, gebruikt u de opdracht [az vm create](/cli/azure/vm).  In het volgende voorbeeld wordt een gebruikersaccount met de naam *azureuser* toegevoegd. De parameter `--generate-ssh-keys` wordt gebruikt om automatisch een SSH-sleutel te genereren en deze te plaatsen in de standaardsleutellocatie ( *~/.ssh*). 
 
 ```azurecli-interactive
 az vm create \
@@ -81,7 +81,7 @@ Noteer de waarde van `publicIpAddress` in de uitvoer.
 
 ## <a name="assign-an-identity-to-the-vm"></a>Een identiteit toewijzen aan de virtuele machine
 
-Maak een door het systeem toegewezen identiteit voor de virtuele machine met de opdracht [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign) van de Azure CLI:
+Maak een door het systeem toegewezen identiteit voor de virtuele machine met de opdracht [az vm identity assign](/cli/azure/vm/identity#az-vm-identity-assign) van de Azure CLI:
 
 ```azurecli
 az vm identity assign --name "myVM" --resource-group "myResourceGroup"

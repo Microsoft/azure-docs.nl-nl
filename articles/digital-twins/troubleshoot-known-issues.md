@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 49c790ae92537ab72fb9848ed4e57e222ef11d79
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: d7d97ca1eb590fb96789d439243dd04d6143a960
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100545680"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203144"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Bekende problemen in azure Digital Apparaatdubbels
 
@@ -24,7 +24,7 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |
-| In &nbsp; Azure &nbsp; Digital &nbsp; apparaatdubbels heeft dit invloed op de volgende opdracht groepen:<br><br>`az dt route`<br><br>`az dt model`<br><br>`az dt twin` | Dit is het resultaat van een bekend probleem in Cloud Shell: het [*verkrijgen van tokens van Cloud shell af en toe mislukt met 400-client fout: ongeldige aanvraag*](https://github.com/Azure/azure-cli/issues/11749).<br><br>Dit geeft een probleem met het Azure Digital Apparaatdubbels instance-verificatie tokens en de standaard verificatie op basis van [beheerde id's](../active-directory/managed-identities-azure-resources/overview.md) van de Cloud shell. <br><br>Dit heeft geen invloed op de Azure Digital Apparaatdubbels-opdrachten van de `az dt` `az dt endpoint` -of-opdracht groepen, omdat ze een ander type verificatie token gebruiken (op basis van Azure Resource Manager). Dit heeft geen probleem met de beheerde identiteits verificatie van de Cloud shell. | Een manier om dit probleem op te lossen, is door de `az login` opdracht opnieuw uit te voeren in Cloud shell en volgende aanmeldings stappen te volt ooien. Hiermee schakelt u de sessie uit van beheerde identiteits verificatie, waardoor het hoofd probleem wordt voor komen. Daarna kunt u de opdracht opnieuw uitvoeren.<br><br>U kunt ook het deel venster Cloud Shell in de Azure Portal openen en uw Cloud Shell werk van daaruit volt ooien.<br>:::image type="content" source="media/troubleshoot-known-issues/portal-launch-icon.png" alt-text="Afbeelding van het pictogram Cloud Shell op de Azure Portal pictogram balk" lightbox="media/troubleshoot-known-issues/portal-launch-icon.png":::<br><br>Ten slotte is het mogelijk om [de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) op uw computer te installeren, zodat u Azure cli-opdrachten lokaal kunt uitvoeren. Dit probleem treedt niet op bij de lokale CLI. |
+| In &nbsp; Azure &nbsp; Digital &nbsp; apparaatdubbels heeft dit invloed op de volgende opdracht groepen:<br><br>`az dt route`<br><br>`az dt model`<br><br>`az dt twin` | Dit is het resultaat van een bekend probleem in Cloud Shell: het [*verkrijgen van tokens van Cloud shell af en toe mislukt met 400-client fout: ongeldige aanvraag*](https://github.com/Azure/azure-cli/issues/11749).<br><br>Dit geeft een probleem met het Azure Digital Apparaatdubbels instance-verificatie tokens en de standaard verificatie op basis van [beheerde id's](../active-directory/managed-identities-azure-resources/overview.md) van de Cloud shell. <br><br>Dit heeft geen invloed op de Azure Digital Apparaatdubbels-opdrachten van de `az dt` `az dt endpoint` -of-opdracht groepen, omdat ze een ander type verificatie token gebruiken (op basis van Azure Resource Manager). Dit heeft geen probleem met de beheerde identiteits verificatie van de Cloud shell. | Een manier om dit probleem op te lossen, is door de `az login` opdracht opnieuw uit te voeren in Cloud shell en volgende aanmeldings stappen te volt ooien. Hiermee schakelt u de sessie uit van beheerde identiteits verificatie, waardoor het hoofd probleem wordt voor komen. Daarna kunt u de opdracht opnieuw uitvoeren.<br><br>U kunt ook het deel venster Cloud Shell in de Azure Portal openen en uw Cloud Shell werk van daaruit volt ooien.<br>:::image type="content" source="media/troubleshoot-known-issues/portal-launch-icon.png" alt-text="Afbeelding van het pictogram Cloud Shell op de Azure Portal pictogram balk" lightbox="media/troubleshoot-known-issues/portal-launch-icon.png":::<br><br>Ten slotte is het mogelijk om [de Azure cli](/cli/azure/install-azure-cli) op uw computer te installeren, zodat u Azure cli-opdrachten lokaal kunt uitvoeren. Dit probleem treedt niet op bij de lokale CLI. |
 
 
 ## <a name="missing-role-assignment-after-scripted-setup"></a>Roltoewijzing ontbreekt na installatie van script

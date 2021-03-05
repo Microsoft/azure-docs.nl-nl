@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.custom: mvc, devx-track-azurecli
 ms.date: 04/16/2020
 ms.author: sebansal
-ms.openlocfilehash: 626d7f161d23e6105eea0ca160cd2c9be0ed0ea0
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: b7b15c1c4952f6e0a606b1ed46f1588c536b4ae2
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935934"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102204079"
 ---
 # <a name="tutorial-import-a-certificate-in-azure-key-vault"></a>Zelfstudie: Een certificaat importeren met behulp van Azure Key Vault
 
@@ -104,9 +104,9 @@ az keyvault certificate import --file
                                [--tags]
 ```
 
-Meer informatie over de [parameters](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-import).
+Meer informatie over de [parameters](/cli/azure/keyvault/certificate#az-keyvault-certificate-import).
 
-Nadat u het certificaat hebt geïmporteerd, kunt u het certificaat weergeven met behulp van [Certificaat weergeven](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-show)
+Nadat u het certificaat hebt geïmporteerd, kunt u het certificaat weergeven met behulp van [Certificaat weergeven](/cli/azure/keyvault/certificate#az-keyvault-certificate-show)
 
 
 ```azurecli

@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: allensu
-ms.openlocfilehash: edb6748009ef9660c020c77e411ce55f60b45791
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 3cb5dd88572fda7a939aa529a5372d72575ffdbb
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124598"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203280"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>DNS-configuratie van Azure-privé-eindpunt
 
@@ -43,8 +43,8 @@ Voor Azure-Services gebruikt u de aanbevolen zone namen zoals beschreven in de v
 | Resource type voor persoonlijke koppelingen/subresource |Privé-DNS zone naam | Doorstuur servers voor open bare DNS-zone |
 |---|---|---|
 | Azure Automation/(micro soft. Automation/automationAccounts)/webhook, DSCAndHybridWorker | privatelink.azure-automation.net | azure-automation.net |
-| Azure SQL Database (micro soft. SQL/servers)/SQL Server | privatelink.database.windows.net | database.windows.net |
-| Azure Synapse Analytics (micro soft. SQL/servers)/SQL Server  | privatelink.database.windows.net | database.windows.net |
+| Azure SQL Database (micro soft. SQL/servers)/sqlServer | privatelink.database.windows.net | database.windows.net |
+| Azure Synapse Analytics (micro soft. SQL/servers)/sqlServer  | privatelink.database.windows.net | database.windows.net |
 | Opslag account (micro soft. Storage/Storage accounts)/BLOB (BLOB, blob_secondary) | privatelink.blob.core.windows.net | blob.core.windows.net |
 | Opslag account (micro soft. Storage/Storage accounts)/tabel (tabel, table_secondary) | privatelink.table.core.windows.net | table.core.windows.net |
 | Opslag account (micro soft. Storage/Storage accounts)/wachtrij (wachtrij, queue_secondary) | privatelink.queue.core.windows.net | queue.core.windows.net |

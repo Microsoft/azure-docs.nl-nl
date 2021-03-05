@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/05/2021
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d275f2f4cad83c8f378c471e5a3fa1313d6c0e7d
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: a66eff14490add8269082e4e54f077d1d9db7e02
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624863"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102206005"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Is Azure Virtual WAN algemeen beschikbaar?
 
@@ -302,3 +302,8 @@ Nee. Virtual WAN slaat geen klantgegevens op.
 ### <a name="are-there-any-managed-service-providers-that-can-manage-virtual-wan-for-users-as-a-service"></a>Zijn er Managed Service Providers die Virtual WAN voor gebruikers kunnen beheren als een service?
 
 Ja. Raadpleeg [Azure Marketplace-aanbiedingen van Azure-netwerken MSP-partners](../articles/networking/networking-partners-msp.md#msp) voor een lijst met MSP-oplossingen (Managed Service Provider) die beschikbaar zijn via Azure Marketplace.
+
+### <a name="how-does-virtual-wan-hub-routing-differ-from-azure-route-server-in-a-vnet"></a>Hoe verschilt route ring van virtuele WAN-hub van Azure route server in een VNet?
+
+Azure route server biedt een Border Gateway Protocol (BGP) peering-service die door NVA (virtueel netwerk apparaat) kan worden gebruikt voor het leren van routes van de route server in een zelf-hub-VNet. Virtuele WAN-route ring biedt meerdere mogelijkheden, waaronder VNET naar VNET-Transit routering, aangepaste route ring, aangepaste route koppeling en doorgifte, en een volledig gevormde hub-service met Zero-Touch, samen met connectiviteits services van ExpressRoute, site VPN, externe gebruiker/grootschalige P2S VPN-en Secure hub (Azure Firewall)-mogelijkheden. Wanneer u een Border Gateway Protocol (BGP)-peering tussen uw NVA en de Azure-router server instelt, kunt u IP-adressen van uw NVA naar uw virtuele netwerk adverteren. Voor alle geavanceerde routerings mogelijkheden, zoals Transit routering, aangepaste route ring enz., kunt u virtuele WAN-route ring gebruiken.
+

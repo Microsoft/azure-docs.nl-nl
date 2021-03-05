@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 02/12/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a39b91304c4123b216a0b508dcea0547cae5ab43
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 89bd77c30ec52a72087598b86f22e85659fa1b0e
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102041498"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203892"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Azure Digital Apparaatdubbels integreren met de Azure signalerings service
 
@@ -88,7 +88,7 @@ Configureer vervolgens de functies om te communiceren met uw Azure signalerings 
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Scherm afbeelding van de Azure Portal die de pagina sleutels voor de seingevings instantie weergeeft. Het pictogram kopiëren naar klem bord naast de primaire VERBINDINGS reeks is gemarkeerd." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
-1. Voeg ten slotte uw Azure-seingevings **Connection String** toe aan de app-instellingen van de functie, met behulp van de volgende Azure cli-opdracht. Vervang ook de tijdelijke aanduidingen door de naam van uw resource groep en app service/functie-app uit de [vereiste zelf studie](how-to-integrate-azure-signalr.md#prerequisites). De opdracht kan worden uitgevoerd in [Azure Cloud shell](https://shell.azure.com)of lokaal als u de Azure cli [op uw computer hebt geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true):
+1. Voeg ten slotte uw Azure-seingevings **Connection String** toe aan de app-instellingen van de functie, met behulp van de volgende Azure cli-opdracht. Vervang ook de tijdelijke aanduidingen door de naam van uw resource groep en app service/functie-app uit de [vereiste zelf studie](how-to-integrate-azure-signalr.md#prerequisites). De opdracht kan worden uitgevoerd in [Azure Cloud shell](https://shell.azure.com)of lokaal als u de Azure cli [op uw computer hebt geïnstalleerd](/cli/azure/install-azure-cli):
  
     ```azurecli-interactive
     az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "AzureSignalRConnectionString=<your-Azure-SignalR-ConnectionString>"
@@ -189,7 +189,7 @@ Hiermee opent u een browser venster waarin de voor beeld-app wordt uitgevoerd. H
 
 Als u de resources die in dit artikel zijn gemaakt niet meer nodig hebt, volgt u deze stappen om ze te verwijderen. 
 
-Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een resource groep verwijderen met de opdracht [AZ Group delete](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az-group-delete) . Als u de resource groep verwijdert, wordt ook verwijderd...
+Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een resource groep verwijderen met de opdracht [AZ Group delete](/cli/azure/group#az-group-delete) . Als u de resource groep verwijdert, wordt ook verwijderd...
 * het Azure Digital Apparaatdubbels-exemplaar (van de end-to-end-zelf studie)
 * de IoT hub en de registratie van het hub-apparaat (van de end-to-end-zelf studie)
 * het event grid-onderwerp en de bijbehorende abonnementen

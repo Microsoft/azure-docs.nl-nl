@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 0ef4faf14ec01a25419fd22ba8c73a8a033b4172
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: f95585237bbee743083b855dd78cc850c4daffe8
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879979"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202685"
 ---
 # <a name="migrate-from-linux-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Migreren van Linux naar een hybride Cloud implementatie met Azure File Sync
 
@@ -39,7 +39,7 @@ Als u niet werkt met Samba op uw Linux-server en liever mappen wilt migreren naa
 * Maak een exemplaar van Windows Server 2019 als een virtuele machine of fysieke server. Windows Server 2012 R2 is de minimale vereiste. Een failover-cluster van Windows Server wordt ook ondersteund.
 * Direct Attached Storage (DAS) inrichten of toevoegen. Network Attached Storage (NAS) wordt niet ondersteund.
 
-  De hoeveelheid opslag ruimte die u inricht kan kleiner zijn dan wat u momenteel gebruikt op uw Linux Samba-server, als u de Azure File Sync [Cloud-laag](storage-sync-cloud-tiering.md) functie gebruikt. Wanneer u echter uw bestanden vanuit de grotere Linux Samba-server ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
+  De hoeveelheid opslag ruimte die u inricht kan kleiner zijn dan wat u momenteel gebruikt op uw Linux Samba-server, als u de Azure File Sync [Cloud-laag](storage-sync-cloud-tiering-overview.md) functie gebruikt. Wanneer u echter uw bestanden vanuit de grotere Linux Samba-server ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
 
   1. Verplaats een reeks bestanden die op de schijf passen.
   2. Bestands synchronisatie en Cloud lagen laten deel nemen.
@@ -98,7 +98,7 @@ Voer de eerste lokale kopie uit naar de doelmap van Windows Server:
 
 Met de volgende Robocopy-opdracht worden bestanden van de opslag ruimte van uw Linux Samba-server gekopieerd naar de doelmap van uw Windows-Server. Windows Server synchroniseert deze met de Azure-bestands shares. 
 
-Als u minder opslag ruimte op uw Windows Server-exemplaar hebt ingericht dan uw bestanden op de Linux Samba-server innemen, hebt u Cloud lagen geconfigureerd. Wanneer het lokale Windows Server-volume vol raakt, worden [Cloud lagen](storage-sync-cloud-tiering.md) gestart en lagen die al zijn gesynchroniseerd. Cloud-lagen genereren voldoende ruimte om de kopie van de Linux Samba-server voort te zetten. Controles voor Cloud lagen worden één keer per uur uitgevoerd om te zien wat er is gesynchroniseerd en om schijf ruimte vrij te maken om het beleid van 99 procent beschik bare ruimte voor een volume te bereiken.
+Als u minder opslag ruimte op uw Windows Server-exemplaar hebt ingericht dan uw bestanden op de Linux Samba-server innemen, hebt u Cloud lagen geconfigureerd. Wanneer het lokale Windows Server-volume vol raakt, worden [Cloud lagen](storage-sync-cloud-tiering-overview.md) gestart en lagen die al zijn gesynchroniseerd. Cloud-lagen genereren voldoende ruimte om de kopie van de Linux Samba-server voort te zetten. Controles voor Cloud lagen worden één keer per uur uitgevoerd om te zien wat er is gesynchroniseerd en om schijf ruimte vrij te maken om het beleid van 99 procent beschik bare ruimte voor een volume te bereiken.
 
 Het is mogelijk dat Robocopy sneller bestanden verplaatst dan u naar de Cloud en laag kunt synchroniseren, waardoor er geen lokale schijf ruimte meer beschikbaar is. Robocopy mislukt. U wordt aangeraden de shares te door lopen in een reeks die het probleem voor komt. Denk bijvoorbeeld aan dat u geen Robocopy-taken voor alle shares tegelijk kunt starten. Of overweeg het verplaatsen van shares die passen bij de huidige hoeveelheid beschik bare ruimte op het Windows Server-exemplaar. Als uw Robocopy-taak mislukt, kunt u de opdracht altijd opnieuw uitvoeren, mits u de volgende optie voor spie gelen/opschonen gebruikt:
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 02/09/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 035d782321feb5d467638159fc191f65573b1042
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c9ce87584373bd87a8f89ecb4ea692b44d3fab4d
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101716122"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202957"
 ---
 # <a name="enable-a-managed-identity-for-routing-azure-digital-twins-events-preview-azure-cli"></a>Een beheerde identiteit inschakelen voor het routeren van Azure Digital Apparaatdubbels-gebeurtenissen (preview): Azure CLI
 
@@ -40,7 +40,7 @@ Een van deze aanmaak methoden biedt dezelfde configuratie opties en hetzelfde ei
 
 In deze sectie leert u hoe u een door een systeem beheerde identiteit inschakelt op een Azure Digital Apparaatdubbels-exemplaar dat momenteel wordt gemaakt. 
 
-Dit doet u door een `--assign-identity` para meter toe te voegen aan de `az dt create` opdracht die wordt gebruikt om het exemplaar te maken. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_create) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-instantie](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance)voor meer informatie over deze opdracht.
+Dit doet u door een `--assign-identity` para meter toe te voegen aan de `az dt create` opdracht die wordt gebruikt om het exemplaar te maken. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt#ext_azure_iot_az_dt_create) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-instantie](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance)voor meer informatie over deze opdracht.
 
 Als u een exemplaar met een door het systeem beheerde identiteit wilt maken, voegt u de  `--assign-identity` para meter als volgt toe:
 
@@ -97,9 +97,9 @@ Hier volgt een voor beeld van het maken van een exemplaar met een door het syste
 az dt create -n {instance_name} -g {resource_group} --assign-identity --scopes "/subscriptions/<subscription ID>/resourceGroups/<resource_group>/providers/Microsoft.EventHub/namespaces/<Event_Hubs_namespace>/eventhubs/<event_hub_name>" --role MyCustomRole
 ```
 
-Zie de [naslag documentatie **AZ DT maken**](/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_create)voor meer voor beelden van roltoewijzingen met deze opdracht.
+Zie de [naslag documentatie **AZ DT maken**](/cli/azure/ext/azure-iot/dt#ext_azure_iot_az_dt_create)voor meer voor beelden van roltoewijzingen met deze opdracht.
 
-U kunt ook de opdracht [**AZ Role Assignment**](/cli/azure/role/assignment?view=azure-cli-latest&preserve-view=true) gebruiken om rollen te maken en te beheren. Dit kan worden gebruikt ter ondersteuning van aanvullende scenario's waarin u de roltoewijzing niet wilt groeperen met de opdracht Create.
+U kunt ook de opdracht [**AZ Role Assignment**](/cli/azure/role/assignment) gebruiken om rollen te maken en te beheren. Dit kan worden gebruikt ter ondersteuning van aanvullende scenario's waarin u de roltoewijzing niet wilt groeperen met de opdracht Create.
 
 ## <a name="create-an-endpoint-with-identity-based-authentication"></a>Een eind punt maken met verificatie op basis van een identiteit
 
@@ -108,7 +108,7 @@ Nadat u een door een systeem beheerde identiteit hebt ingesteld voor uw Azure Di
 >[!NOTE]
 > U kunt een eind punt dat al is gemaakt met een op de sleutel gebaseerde identiteit niet bewerken om te wijzigen in verificatie op basis van identiteit. U moet het verificatie type kiezen wanneer het eind punt voor het eerst wordt gemaakt.
 
-Dit doet u door een `--auth-type` para meter toe te voegen aan de `az dt endpoint create` opdracht die wordt gebruikt om het eind punt te maken. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt/endpoint/create?view=azure-cli-latest&preserve-view=true) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-eind punt](how-to-manage-routes-apis-cli.md#create-the-endpoint)voor meer informatie over deze opdracht.
+Dit doet u door een `--auth-type` para meter toe te voegen aan de `az dt endpoint create` opdracht die wordt gebruikt om het eind punt te maken. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt/endpoint/create) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-eind punt](how-to-manage-routes-apis-cli.md#create-the-endpoint)voor meer informatie over deze opdracht.
 
 Als u een eind punt wilt maken dat gebruikmaakt van verificatie op basis van een identiteit, geeft u het `IdentityBased` verificatie type op met de  `--auth-type` para meter. In het onderstaande voor beeld ziet u dit voor een Event Hubs eind punt.
 

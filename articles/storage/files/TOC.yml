@@ -63,8 +63,16 @@
           href: storage-sync-files-planning.md
         - name: Aandachtspunten voor netwerken voor hybride toegang
           href: storage-sync-files-networking-overview.md
-        - name: Over opslag in cloudlagen
-          href: storage-sync-cloud-tiering.md
+        - name: Cloudopslaglagen
+          items:
+            - name: Overzicht van Cloud lagen
+              href: storage-sync-cloud-tiering-overview.md
+            - name: Overzicht van beleids regels voor Cloud lagen
+              href: storage-sync-cloud-tiering-policy.md
+            - name: Uw beleid voor Cloud lagen kiezen
+              href: storage-sync-choose-cloud-tiering-policies.md
+            - name: Cloud lagen bewaken
+              href: storage-sync-monitor-cloud-tiering.md
     - name: Prestaties en schaal
       items:
         - name: Prestaties van SMB Multichannel
@@ -155,6 +163,8 @@
           href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: Een failover van account initiëren
           href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Gelaagde bestanden beheren
+          href: storage-sync-how-to-manage-tiered-files.md
     - name: Gegevensbeveiliging
       items:
         - name: Voorlopig verwijderen inschakelen

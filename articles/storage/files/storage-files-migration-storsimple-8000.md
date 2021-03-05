@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 502776e85eaafa46fb2b5ce45ca3bd937e303566
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a512151dce336de42da78232ca30845dae754db3
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100366231"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202719"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -637,6 +637,6 @@ De migratie is voltooid.
 ## <a name="next-steps"></a>Volgende stappen
 
 * Krijg meer vertrouwd met [Azure File Sync: aka.MS/AFS](./storage-sync-files-planning.md).
-* Meer informatie over de flexibiliteit van beleids regels voor [Cloud lagen](storage-sync-cloud-tiering.md) .
+* Meer informatie over de flexibiliteit van beleids regels voor [Cloud lagen](storage-sync-cloud-tiering-overview.md) .
 * [Schakel Azure backup](../../backup/backup-afs.md#configure-backup-from-the-file-share-pane) in voor uw Azure-bestands shares om moment opnamen te plannen en schema's voor het bewaren van back-ups te definiëren.
 * Als u in de Azure Portal ziet dat sommige bestanden permanent niet worden gesynchroniseerd, raadpleegt u de [hand leiding](storage-sync-files-troubleshoot.md) voor het oplossen van problemen om deze problemen op te lossen.

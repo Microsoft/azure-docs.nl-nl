@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 7b7bc87f83925baed15bc6a411f5b4e4f78df6cc
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f97ff1c20b7edbf24e5a2c58e22097f88883ae4f
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654504"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102204028"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
@@ -161,7 +161,7 @@ Gebruik de vervolg keuzelijst om een nieuw gebruiks model te kiezen. Klik op **O
 
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
-Gebruik de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target?view=azure-cli-latest#ext-hpc-cache-az-hpc-cache-nfs-storage-target-update) .
+Gebruik de opdracht [AZ HPC-cache NFS-Storage-doel update](/cli/azure/ext/hpc-cache/hpc-cache/nfs-storage-target#ext-hpc-cache-az-hpc-cache-nfs-storage-target-update) .
 
 De opdracht update is bijna identiek aan de opdracht die u gebruikt om een NFS-opslag doel toe te voegen. Raadpleeg [een NFS-opslag doel maken](hpc-cache-add-storage.md#create-an-nfs-storage-target) voor meer informatie en voor beelden.
 

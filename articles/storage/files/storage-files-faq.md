@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 739e1dea23f87403a4aded50d5c9f254a55c64cc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2d4286cc8bc08eaf7d0b376a8b7789c8c8db183d
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737610"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202634"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Lees de veelgestelde vragen (FAQ) over Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard [SMB-protocol (Server Message Block)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) en het [NFS-protocol (Network File System](https://en.wikipedia.org/wiki/Network_File_System) ) (preview). U kunt Azure-bestands shares gelijktijdig koppelen aan Cloud-of on-premises implementaties van Windows, Linux en macOS. U kunt ook Azure-bestands shares op Windows Server-computers in de cache opslaan met behulp van Azure File Sync voor snelle toegang, waarbij de gegevens worden gebruikt.
@@ -119,26 +119,38 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Files-functi
 
 * <a id="sizeondisk-versus-size"></a>
   **Waarom wordt de eigenschap *grootte op schijf* voor een bestand niet overeenkomen met de eigenschap *grootte* na gebruik van Azure file sync?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#sizeondisk-versus-size)?
+  Zie [Azure file sync Cloud-lagen begrijpen](storage-sync-cloud-tiering-overview.md#tiered-vs-locally-cached-file-behavior).
 
 * <a id="is-my-file-tiered"></a>
   **Hoe kan ik zien of een bestand is getierd?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#is-my-file-tiered)?
+  Zie [Azure file sync gelaagde bestanden beheren](storage-sync-how-to-manage-tiered-files.md#how-to-check-if-your-files-are-being-tiered).
 
 * <a id="afs-recall-file"></a>**Een bestand dat ik wil gebruiken, is gelaagd. Hoe kan ik het bestand intrekken op schijf om het lokaal te gebruiken?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#afs-recall-file)?
+  Zie [Azure file sync gelaagde bestanden beheren](storage-sync-how-to-manage-tiered-files.md#how-to-recall-a-tiered-file-to-disk).
 
 * <a id="afs-force-tiering"></a>
   **Hoe kan ik moet een bestand of map geforceerd worden getierd?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#afs-force-tiering)?
+  Zie [Azure file sync gelaagde bestanden beheren](storage-sync-how-to-manage-tiered-files.md#how-to-force-a-file-or-directory-to-be-tiered).
 
 * <a id="afs-effective-vfs"></a>
   **Hoe wordt de *beschik bare volume ruimte* geïnterpreteerd wanneer ik meerdere server eindpunten op een volume heb?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#afs-effective-vfs)?
+  Zie [Azure file sync beleid voor Cloud lagen kiezen](storage-sync-cloud-tiering-policy.md#multiple-server-endpoints-on-a-local-volume).
   
 * <a id="afs-tiered-files-tiering-disabled"></a>
   **Ik heb Cloud lagen uitgeschakeld, waarom zijn er gelaagde bestanden op de locatie van het server eindpunt?**  
-  Zie [Wat is Cloud lagen](storage-sync-cloud-tiering.md#afs-tiering-disabled)?
+    Er zijn twee redenen waarom gelaagde bestanden zich op de locatie van het server eindpunt bevinden:
+
+    - Als u een nieuw server eindpunt toevoegt aan een bestaande synchronisatie groep en u kiest de optie eerste naam ruimte intrekken of naam ruimte intrekken alleen voor de eerste download modus, worden de bestanden weer gegeven als gelaagd totdat ze lokaal worden gedownload. Als u dit wilt voor komen, selecteert u de optie gelaagd gelaagde bestanden voor de eerste download modus. Als u bestanden hand matig wilt terughalen, gebruikt u de cmdlet [invoke-StorageSyncFileRecall](storage-sync-how-to-manage-tiered-files.md#how-to-recall-a-tiered-file-to-disk) .
+
+    - Als Cloud lagen zijn ingeschakeld op het server eindpunt en vervolgens is uitgeschakeld, blijven de bestanden gelaagd totdat ze worden geopend.
+
+* <a id="afs-tiered-files-not-showing-thumbnails"></a>
+  **Waarom worden mijn gelaagde bestanden niet weer gegeven als miniaturen of voor beelden in Windows Verkenner?**  
+    Voor gelaagde bestanden zijn miniaturen en voor beelden niet zichtbaar op het server eindpunt. Dit gedrag wordt verwacht omdat de functie van de miniatuur cache in Windows het lezen van bestanden met het kenmerk offline overs Laan. Als Cloud lagen zijn ingeschakeld, kan de Lees bewerking door gelaagde bestanden worden gedownload (ingetrokken).
+
+    Dit gedrag is niet specifiek voor Azure File Sync. in Windows Verkenner wordt een ' grijze X ' weer gegeven voor bestanden waarvoor het kenmerk offline is ingesteld. Het pictogram X wordt weer geven bij het openen van bestanden via SMB. Raadpleeg voor een gedetailleerde uitleg van dit gedrag [https://blogs.msdn.microsoft.com/oldnewthing/20170503-00/?p=96105](https://blogs.msdn.microsoft.com/oldnewthing/20170503-00/?p=96105)
+
+    Zie [gelaagde bestanden beheren](storage-sync-how-to-manage-tiered-files.md)voor vragen over het beheren van gelaagde bestanden.
 
 * <a id="afs-files-excluded"></a>
   **Welke bestanden of mappen worden automatisch uitgesloten door Azure File Sync?**  
@@ -274,7 +286,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Files-functi
     2.  De console ' Active Directory domeinen en vertrouwens relaties ' openen
     3.  Klik met de rechter muisknop op het domein dat u wilt gebruiken voor toegang tot de bestands share, klik op het tabblad vertrouwens relaties en selecteer forest B domein in uitgaande vertrouwens relaties. Als u geen vertrouwens relatie tussen de twee forests hebt geconfigureerd, moet u eerst de vertrouwens relatie instellen
     4.  Klik op Eigenschappen... then "naam achtervoegsel routeren"
-    5.  Controleer of de file.core.windows.net-surffix wordt weer gegeven. Als dat niet het geval is, klikt u op vernieuwen
+    5.  Controleer of het achtervoegsel ' *. file.core.windows.net ' wordt weer gegeven. Als dat niet het geval is, klikt u op vernieuwen
     6.  Selecteer ' *. file.core.windows.net ' en klik vervolgens op ' inschakelen ' en ' toep assen '
 
 * <a id=""></a>

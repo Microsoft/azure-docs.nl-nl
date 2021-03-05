@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 6c628d93c112a770c85a10d0eff958614a7cf4cb
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 59c5ca9ce9e95319b36e002da0b5d1438ef3fdd1
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814156"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203773"
 ---
 # <a name="quickstart-create-and-configure-azure-ddos-protection-standard-using-azure-cli"></a>Snelstartgids: Azure DDoS Protection Standard maken en configureren met behulp van Azure CLI
 
 Ga aan de slag met Azure DDoS Protection Standard met behulp van Azure CLI. 
 
-In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt één DDoS-beveiligings plan configureren voor uw organisatie en virtuele netwerken vanuit meerdere abonnementen koppelen aan hetzelfde abonnement. 
+In een DDoS-beschermings plan wordt een set virtuele netwerken gedefinieerd waarvoor DDoS-beschermings standaard is ingeschakeld, via abonnementen. U kunt voor uw organisatie één DDoS-beschermingsplan configureren en virtuele netwerken vanuit meerdere abonnementen aan hetzelfde plan koppelen. 
 
 In deze Quick Start maakt u een DDoS-beschermings plan en koppelt u het aan een virtueel netwerk. 
 
@@ -39,7 +39,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor 
 
 In Azure kunt u verwante resources toewijzen aan een resourcegroep. U kunt een bestaande resourcegroep gebruiken of een nieuwe maken.
 
-Gebruik [AZ Group Create](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-create)om een resource groep te maken. In dit voor beeld noemen we de _MyResourceGroup_ van de resource groep en gebruiken we de locatie _VS-Oost_ :
+Gebruik [AZ Group Create](/cli/azure/group#az-group-create)om een resource groep te maken. In dit voor beeld noemen we de _MyResourceGroup_ van de resource groep en gebruiken we de locatie _VS-Oost_ :
 
 ```azurecli-interactive
 az group create \
@@ -67,6 +67,7 @@ az network vnet create \
     --name MyVnet \
     --location eastus \
     --ddos-protection true
+    --ddos-protection-plan MyDdosProtectionPlan
 ```
 
 U kunt een virtueel netwerk niet verplaatsen naar een andere resource groep of een ander abonnement wanneer DDoS standaard is ingeschakeld voor het virtuele netwerk. Als u een virtueel netwerk wilt verplaatsen waarbij DDoS Standard is ingeschakeld, moet u eerst DDoS-standaard uitschakelen, het virtuele netwerk verplaatsen en vervolgens DDoS Standard inschakelen. Na de verplaatsing worden de automatisch afgestemde beleids drempels voor alle beveiligde open bare IP-adressen in het virtuele netwerk opnieuw ingesteld.
@@ -83,7 +84,7 @@ az group create \
 az network ddos-protection create \
     --resource-group MyResourceGroup \
     --name MyDdosProtectionPlan
-    --vnet MyVnet
+    --vnets MyVnet
 ```
 
 U kunt ook DDoS-beveiliging inschakelen voor een bepaald virtueel netwerk:
@@ -91,8 +92,9 @@ U kunt ook DDoS-beveiliging inschakelen voor een bepaald virtueel netwerk:
 ```azurecli-interactive
 az network vnet update \
     --resource-group MyResourceGroup \
-    --vnet MyVnet \
+    --name MyVnet \
     --ddos-protection true
+    --ddos-protection-plan MyDdosProtectionPlan
 ```
 
 ## <a name="validate-and-test"></a>Valideren en testen
@@ -111,7 +113,7 @@ Controleer of de opdracht de juiste gegevens van uw DDoS-beveiligings plan retou
 
 U kunt uw resources voor de volgende zelf studie blijven gebruiken. Als u deze niet meer nodig hebt, verwijdert u de resource groep _MyResourceGroup_ . Wanneer u de resource groep verwijdert, verwijdert u ook het DDoS-beschermings plan en alle gerelateerde resources. 
 
-Gebruik [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az_group_delete) om de resourcegroep te verwijderen:
+Gebruik [az group delete](/cli/azure/group#az_group_delete) om de resourcegroep te verwijderen:
 
 ```azurecli-interactive
 az group delete \
@@ -123,15 +125,16 @@ Een gegeven virtueel netwerk bijwerken om DDoS-beveiliging uit te scha kelen:
 ```azurecli-interactive
 az network vnet update \
     --resource-group MyResourceGroup \
-    --vnet MyVnet \
+    --name MyVnet \
     --ddos-protection false
+    --ddos-protection-plan ""
 ```
 
 Als u een DDoS-beschermings plan wilt verwijderen, moet u eerst alle virtuele netwerken loskoppelen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga door naar de zelf studies voor meer informatie over het weer geven en configureren van telemetrie voor uw DDoS-beveiligings plan.
+Ga door naar de zelfstudies voor meer informatie over het weergeven en configureren van telemetrie voor uw DDoS-beschermingsplan.
 
 > [!div class="nextstepaction"]
 > [DDoS-beschermingstelemetrie bekijken en configureren](telemetry.md)

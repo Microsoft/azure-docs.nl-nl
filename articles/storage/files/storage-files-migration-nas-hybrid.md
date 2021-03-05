@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 2d531edeeae9e0dd7e392cae66d9e4d41c68dfa2
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 73dc2520fbe970123a52133cb00909fea190610a
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98882260"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202668"
 ---
 # <a name="migrate-from-network-attached-storage-nas-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Migreren van NAS (Network Attached Storage) naar een hybride Cloud implementatie met Azure File Sync
 
@@ -45,7 +45,7 @@ Zoals vermeld in het [overzichts artikel](storage-files-migration-overview.md)ov
 * Maak een Windows Server 2019-met een minimale 2012R2-als een virtuele machine of fysieke server. Een failover-cluster van Windows Server wordt ook ondersteund.
 * Het inrichten of toevoegen van direct gekoppelde opslag (DAS in vergelijking met NAS), wat niet wordt ondersteund.
 
-    De hoeveelheid opslag ruimte die u hebt ingericht, kan kleiner zijn dan wat u momenteel op uw NAS-apparaat gebruikt, als u Azure-bestands synchronisatie gebruikt voor het maken van [Cloud lagen](storage-sync-cloud-tiering.md) .
+    De hoeveelheid opslag ruimte die u hebt ingericht, kan kleiner zijn dan wat u momenteel op uw NAS-apparaat gebruikt, als u Azure-bestands synchronisatie gebruikt voor het maken van [Cloud lagen](storage-sync-cloud-tiering-overview.md) .
     Wanneer u echter uw bestanden vanuit de grotere NAS-ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
 
     1. Een set bestanden verplaatsen die op de schijf passen
@@ -105,7 +105,7 @@ Voer de eerste lokale kopie uit naar de doelmap van Windows Server:
 
 Met de volgende RoboCopy-opdracht worden bestanden van uw NAS-opslag naar de doelmap van Windows server gekopieerd. De Windows-Server synchroniseert deze met de Azure-bestands share (s). 
 
-Als u minder opslag ruimte op uw Windows-Server hebt ingericht dan uw bestanden op het NAS-apparaat innemen, hebt u Cloud lagen geconfigureerd. Omdat het lokale Windows Server-volume vol is, worden er [Cloud lagen](storage-sync-cloud-tiering.md) in gemaakt en lagen die al zijn gesynchroniseerd. Cloud-lagen genereren voldoende ruimte om het kopiëren van het NAS-apparaat voort te zetten. Controles voor Cloud lagen worden één keer per uur uitgevoerd om te zien wat er is gesynchroniseerd en om schijf ruimte vrij te maken voor het bereiken van de beschik bare ruimte van 99% volume.
+Als u minder opslag ruimte op uw Windows-Server hebt ingericht dan uw bestanden op het NAS-apparaat innemen, hebt u Cloud lagen geconfigureerd. Omdat het lokale Windows Server-volume vol is, worden er [Cloud lagen](storage-sync-cloud-tiering-overview.md) in gemaakt en lagen die al zijn gesynchroniseerd. Cloud-lagen genereren voldoende ruimte om het kopiëren van het NAS-apparaat voort te zetten. Controles voor Cloud lagen worden één keer per uur uitgevoerd om te zien wat er is gesynchroniseerd en om schijf ruimte vrij te maken voor het bereiken van de beschik bare ruimte van 99% volume.
 Het is mogelijk dat RoboCopy bestanden sneller verplaatst dan u naar de Cloud en laag lokaal kunt synchroniseren, waardoor er geen lokale schijf ruimte meer beschikbaar is. RoboCopy mislukt. Het wordt aanbevolen dat u de shares in een volg orde doorloopt, waardoor dat niet mogelijk is. U kunt bijvoorbeeld geen RoboCopy-taken voor alle shares tegelijk starten of alleen shares verplaatsen die passen bij de huidige hoeveelheid beschik bare ruimte op de Windows-Server, om een paar te vermelden.
 
 ```console
@@ -208,13 +208,13 @@ U bent klaar met het migreren van een share/groep shares naar een gemeen schappe
 U kunt proberen enkele van deze kopieën parallel uit te voeren. Het is raadzaam om het bereik van een Azure-bestands share tegelijk te verwerken.
 
 > [!WARNING]
-> Wanneer u alle gegevens van de NAS naar de Windows-Server hebt verplaatst en uw migratie is voltooid: Ga terug naar ***alle** _ synchronisatie groepen in de Azure Portal en pas de waarde voor het percentage beschik bare ruimte in de Cloud laag aan om iets beter geschikt te maken voor het gebruik van de cache, bijvoorbeeld 20%. 
+> Wanneer u alle gegevens van de NAS naar de Windows-Server hebt verplaatst en uw migratie is voltooid, gaat u terug naar ***alle***  synchronisatie groepen in het Azure Portal en past u de waarde voor het percentage beschik bare ruimte op het volume voor de Cloud laag aan wat beter geschikt is voor het gebruik van de cache, bijvoorbeeld 20%. 
 
 Het beleid voor beschik bare ruimte op het niveau van de Cloud-laag is een volume dat mogelijk meerdere server eindpunten synchroniseert. Als u vergeet de beschik bare ruimte op zelfs één server eindpunt aan te passen, blijft synchronisatie de meest beperkende regel Toep assen en wordt geprobeerd om 99% vrije schijf ruimte te houden, waardoor de lokale cache niet wordt uitgevoerd zoals u zou verwachten. Tenzij het uw doel is om alleen de naam ruimte te hebben voor een volume dat slechts zelden wordt gebruikt, worden de archiverings gegevens opgeslagen en moet u de rest van de opslag ruimte voor een ander scenario reserveren.
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-Het meest waarschijnlijke probleem dat u kunt uitvoeren in, is dat de RoboCopy-opdracht mislukt met _ "volume vol" * aan de kant van de Windows-Server. Cloud lagen reageert eenmaal elk uur om inhoud te verlaten van de lokale Windows Server-schijf, die is gesynchroniseerd. Het doel is om uw 99% beschik bare ruimte op het volume te bereiken.
+Het meest waarschijnlijke probleem dat u kunt uitvoeren in, is dat de RoboCopy-opdracht mislukt met *' volume vol '* aan de Windows Server-zijde. Cloud lagen reageert eenmaal elk uur om inhoud te verlaten van de lokale Windows Server-schijf, die is gesynchroniseerd. Het doel is om uw 99% beschik bare ruimte op het volume te bereiken.
 
 Laat de voortgang van de synchronisatie en Cloud lagen vrij schijf ruimte vrijmaken. U ziet dat in Verkenner op uw Windows-Server.
 

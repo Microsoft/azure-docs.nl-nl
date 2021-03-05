@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 02/09/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: cbaa83b38482203655f7de98cd5bbfec3ef7a870
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5bd7ffda508980a9a56d86037887fc53a0fed640
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100417857"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202940"
 ---
 # <a name="enable-private-access-with-private-link-preview-azure-cli"></a>Persoonlijke toegang inschakelen met persoonlijke koppeling (preview): Azure CLI
 
@@ -41,7 +41,7 @@ Wanneer u de [Azure cli](/cli/azure/what-is-azure-cli)gebruikt, kunt u persoonli
 
 ### <a name="add-a-private-endpoint-to-an-existing-instance"></a>Een persoonlijk eind punt toevoegen aan een bestaand exemplaar
 
-Als u een persoonlijk eind punt wilt maken en deze wilt koppelen aan een Azure Digital Apparaatdubbels-exemplaar, gebruikt u de opdracht [**AZ Network private-endpoint Create**](/cli/azure/network/private-endpoint?view=azure-cli-latest&preserve-view=true#az_network_private_endpoint_create) . Bepaal het Azure Digital Apparaatdubbels-exemplaar met behulp van de volledig gekwalificeerde ID in de `--private-connection-resource-id` para meter.
+Als u een persoonlijk eind punt wilt maken en deze wilt koppelen aan een Azure Digital Apparaatdubbels-exemplaar, gebruikt u de opdracht [**AZ Network private-endpoint Create**](/cli/azure/network/private-endpoint#az_network_private_endpoint_create) . Bepaal het Azure Digital Apparaatdubbels-exemplaar met behulp van de volledig gekwalificeerde ID in de `--private-connection-resource-id` para meter.
 
 Hier volgt een voor beeld waarin de opdracht wordt gebruikt voor het maken van een persoonlijk eind punt met alleen de vereiste para meters.
 
@@ -49,25 +49,25 @@ Hier volgt een voor beeld waarin de opdracht wordt gebruikt voor het maken van e
 az network private-endpoint create --connection-name {private_link_service_connection} -n {name_for_private_endpoint} -g {resource_group} --subnet {subnet_ID} --private-connection-resource-id "/subscriptions/{subscription_ID}/resourceGroups/{resource_group}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{Azure_Digital_Twins_instance_name}" 
 ```
 
-Voor een volledige lijst met vereiste en optionele para meters, evenals meer voor beelden van het maken van een persoonlijk eind punt, raadpleegt u het aanmeld [ **netwerk persoonlijk-eind punt** referentie documentatie maken](/cli/azure/network/private-endpoint?view=azure-cli-latest&preserve-view=true#az_network_private_endpoint_create).
+Voor een volledige lijst met vereiste en optionele para meters, evenals meer voor beelden van het maken van een persoonlijk eind punt, raadpleegt u het aanmeld [ **netwerk persoonlijk-eind punt** referentie documentatie maken](/cli/azure/network/private-endpoint#az_network_private_endpoint_create).
 
 ### <a name="manage-private-endpoint-connections-on-the-instance"></a>Particuliere endpoint-verbindingen op het exemplaar beheren
 
-Zodra een persoonlijk eind punt is gemaakt voor uw Azure Digital Apparaatdubbels-exemplaar, kunt u de opdracht [**AZ DT Network private-endpoint Connection**](/cli/azure/ext/azure-iot/dt/network/private-endpoint/connection?view=azure-cli-latest&preserve-view=true) gebruiken om de **beheer van privé-eind punten met** betrekking tot het exemplaar voort te zetten. Bewerkingen zijn onder andere:
+Zodra een persoonlijk eind punt is gemaakt voor uw Azure Digital Apparaatdubbels-exemplaar, kunt u de opdracht [**AZ DT Network private-endpoint Connection**](/cli/azure/ext/azure-iot/dt/network/private-endpoint/connection) gebruiken om de **beheer van privé-eind punten met** betrekking tot het exemplaar voort te zetten. Bewerkingen zijn onder andere:
 * Een verbinding met een privé-eind punt weer geven
 * De status van de particuliere-endpoint-verbinding instellen
 * De particuliere-endpoint-verbinding verwijderen
 * Alle privé-eindpunt verbindingen voor een exemplaar weer geven
 
-Voor meer informatie en voor beelden raadpleegt u de [documentatie **AZ DT Network private-endpoint** Reference](/cli/azure/ext/azure-iot/dt/network/private-endpoint?view=azure-cli-latest&preserve-view=true).
+Voor meer informatie en voor beelden raadpleegt u de [documentatie **AZ DT Network private-endpoint** Reference](/cli/azure/ext/azure-iot/dt/network/private-endpoint).
 
 ### <a name="manage-other-private-link-information-on-an-azure-digital-twins-instance"></a>Andere informatie over persoonlijke koppelingen beheren op een Azure Digital Apparaatdubbels-exemplaar
 
-U kunt aanvullende informatie over de status van de persoonlijke koppeling van uw exemplaar ontvangen met de opdrachten [**AZ DT Network private-link**](/cli/azure/ext/azure-iot/dt/network/private-link?view=azure-cli-latest&preserve-view=true) . Bewerkingen zijn onder andere:
+U kunt aanvullende informatie over de status van de persoonlijke koppeling van uw exemplaar ontvangen met de opdrachten [**AZ DT Network private-link**](/cli/azure/ext/azure-iot/dt/network/private-link) . Bewerkingen zijn onder andere:
 * Persoonlijke koppelingen weer geven die zijn gekoppeld aan een Azure Digital Apparaatdubbels-exemplaar
 * Een persoonlijke koppeling weer geven die is gekoppeld aan het exemplaar
 
-Voor meer informatie en voor beelden raadpleegt u de [naslag documentatie **AZ DT Network private-link**](/cli/azure/ext/azure-iot/dt/network/private-link?view=azure-cli-latest&preserve-view=true).
+Voor meer informatie en voor beelden raadpleegt u de [naslag documentatie **AZ DT Network private-link**](/cli/azure/ext/azure-iot/dt/network/private-link).
 
 ## <a name="disable--enable-public-network-access-flags"></a>Toegangs vlaggen voor open bare netwerken uitschakelen/inschakelen
 
@@ -79,7 +79,7 @@ In dit artikel wordt beschreven hoe u de waarde van de netwerk vlag bijwerkt met
 
 ### <a name="use-the-azure-cli"></a>Azure CLI gebruiken
 
-In de Azure CLI kunt u open bare netwerk toegang uitschakelen of inschakelen door een `--public-network-access` para meter aan de opdracht toe te voegen `az dt create` . Hoewel deze opdracht ook kan worden gebruikt om een nieuw exemplaar te maken, kunt u het gebruiken om de eigenschappen van een bestaand exemplaar te bewerken door de naam van een exemplaar op te geven dat al bestaat. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_create) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-instantie](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance)voor meer informatie over deze opdracht.
+In de Azure CLI kunt u open bare netwerk toegang uitschakelen of inschakelen door een `--public-network-access` para meter aan de opdracht toe te voegen `az dt create` . Hoewel deze opdracht ook kan worden gebruikt om een nieuw exemplaar te maken, kunt u het gebruiken om de eigenschappen van een bestaand exemplaar te bewerken door de naam van een exemplaar op te geven dat al bestaat. (Zie de [documentatie](/cli/azure/ext/azure-iot/dt#ext_azure_iot_az_dt_create) of [algemene instructies voor het instellen van een Azure Digital apparaatdubbels-instantie](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance)voor meer informatie over deze opdracht.
 
 Als u open bare netwerk toegang wilt **uitschakelen** voor een Azure Digital apparaatdubbels-exemplaar, gebruikt u de `--public-network-access` para meter als volgt:
 

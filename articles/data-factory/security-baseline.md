@@ -7,24 +7,23 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ef138210f951fceac21301d37a2805405ed0ecef
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d1cbd314861a4d5079a5c8e5213f45c7164344f0
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736590"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102204164"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
 In deze beveiligings basislijn worden richt lijnen van de [Azure Security Bench Mark-versie 1,0](../security/benchmarks/overview-v1.md) ingesteld op Azure Data Factory. De Azure Security-benchmark biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen.
 De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefinieerd door de Azure Security-benchmark en de bijbehorende richt lijnen die van toepassing zijn op Azure Data Factory. **Besturings elementen** die niet van toepassing zijn op Azure Data Factory, zijn uitgesloten.
 
- 
-Als u wilt zien hoe Azure Data Factory volledig is toegewezen aan de beveiligings benchmark van Azure, raadpleegt u het [volledige Azure Data Factory beveiligings basislijn toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines).
+Zie [volledige Azure Data Factory beveiliging Baseline-toewijzings bestand](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines)voor meer informatie over hoe Azure Data Factory volledig wordt toegewezen aan de beveiligings benchmark van Azure.
 
 ## <a name="network-security"></a>Netwerkbeveiliging
 
-*Zie [Azure Security Benchmark: netwerkbeveiliging](../security/benchmarks/security-control-network-security.md) voor meer informatie.*
+*Zie [Azure Security Bench Mark: Network Security](../security/benchmarks/security-control-network-security.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: Azure-resources in virtuele netwerken beveiligen
 
@@ -42,7 +41,7 @@ Als privé-koppeling beschikbaar is, gebruikt u privé-eind punten om alle resou
 
 - [Een NSG maken met een beveiligings configuratie](../virtual-network/tutorial-filter-network-traffic.md)
 
-- [Een Azure-SSIS IR toevoegen aan een virtueel netwerk](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network#virtual-network-configuration)
+- [Een Azure-SSIS IR toevoegen aan een virtueel netwerk](join-azure-ssis-integration-runtime-virtual-network.md#virtual-network-configuration)
 
 - [Persoonlijke Azure-koppeling](../private-link/private-link-overview.md)
 
@@ -491,7 +490,7 @@ Als u uw Integration Runtime uitvoert in een virtuele Azure-machine (VM), wordt 
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
-*Zie [Azure Security Benchmark: gegevensbescherming](../security/benchmarks/security-control-data-protection.md) voor meer informatie.*
+*Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: een inventaris van gevoelige informatie onderhouden
 
@@ -633,7 +632,7 @@ U kunt referenties of geheime waarden opslaan in een Azure Key Vault en deze geb
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
-*Zie voor meer informatie de [Azure Security Bench Mark: beveiligingslek beheer](../security/benchmarks/security-control-vulnerability-management.md).*
+*Zie [Azure Security Bench Mark: beveiligingslek beheer](../security/benchmarks/security-control-vulnerability-management.md)voor meer informatie.*
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5,1: automatische hulpprogram ma's voor het scannen van beveiligings problemen uitvoeren
 
@@ -703,7 +702,7 @@ Wanneer Security Center beveiligings problemen identificeert, worden de bevindin
 
 ## <a name="inventory-and-asset-management"></a>Inventarisatie en Asset Management
 
-*Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)voor meer informatie.*
+*Zie [Azure Security Bench Mark: Inventory and Asset Management](../security/benchmarks/security-control-inventory-asset-management.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="61-use-automated-asset-discovery-solution"></a>6,1: automatische Asset-detectie oplossing gebruiken
 
@@ -1056,7 +1055,7 @@ U kunt ook referenties of geheime waarden opslaan in een Azure Key Vault en deze
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
-*Zie voor meer informatie de [Azure Security Bench Mark: beveiliging tegen schadelijke software](../security/benchmarks/security-control-malware-defense.md).*
+*Zie [Azure Security Bench Mark: verdediging tegen schadelijke software](../security/benchmarks/security-control-malware-defense.md)voor meer informatie.*
 
 ### <a name="81-use-centrally-managed-anti-malware-software"></a>8,1: centraal beheerde anti-malware-software gebruiken
 
@@ -1156,7 +1155,7 @@ Raadpleeg de beveiligings basislijn van de service voor informatie over het vali
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Benchmark: respons op incidenten](../security/benchmarks/security-control-incident-response.md) voor meer informatie.*
+*Zie [Azure Security Bench Mark: Incident Response](../security/benchmarks/security-control-incident-response.md)(Engelstalig) voor meer informatie.*
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
@@ -1244,5 +1243,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
+- Zie [overzicht van Azure Security Bench Mark v2](/azure/security/benchmarks/overview)
 - Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)

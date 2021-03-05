@@ -7,12 +7,12 @@ ms.date: 1/20/2021
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 4612e1236af5fbe47db9a3569e2f4da2378017e2
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: c89427f83600d3b8091d5293b1757fa6f1a15ef1
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784894"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202481"
 ---
 # <a name="build-and-deploy-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug bouwen en implementeren
 
@@ -227,7 +227,7 @@ Bij de stappen in deze sectie wordt ervan uitgegaan dat u de volgende ontwikkel 
   sudo apt-get install -y git cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev
   ```
 
-- De [Azure cli](/cli/azure/install-azure-cli-apt?view=azure-cli-latest&preserve-view=true) die is geïnstalleerd in uw WSL 2-omgeving om uw Azure-resources te beheren.
+- De [Azure cli](/cli/azure/install-azure-cli-apt) die is geïnstalleerd in uw WSL 2-omgeving om uw Azure-resources te beheren.
 
   > [!TIP]
   > Als u wilt, kunt u de `az` opdrachten uitvoeren in de [Azure Cloud shell](https://shell.azure.com/) waarop de CLI vooraf is geïnstalleerd.

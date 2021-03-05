@@ -212,6 +212,10 @@
           href: diagnostic-logs.md
         - name: Metrische gegevens
           href: metrics.md
+    - name: Gebruiksvoorbeelden
+      items:
+        - name: Use cases voor domeinen
+          href: event-domains-use-cases.md
 - name: Instructiegidsen
   items:
     - name: 'Systeemonderwerpen maken, bekijken en beheren'

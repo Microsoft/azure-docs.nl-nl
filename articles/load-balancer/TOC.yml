@@ -39,6 +39,8 @@
           href: tutorial-cross-region-portal.md
         - name: Load balancer voor meerdere regio's maken-Power shell
           href: tutorial-cross-region-powershell.md
+        - name: Load balancer voor meerdere regio's maken-Azure CLI
+          href: tutorial-cross-region-cli.md
 - name: Voorbeelden
   items:
     - name: Azure CLI

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurecli
 ms.topic: tutorial
 ms.date: 04/11/2020
-ms.openlocfilehash: 87b3ecd9b77fcf07e6c41bce0a38ef4f99da1006
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bb4dd08b4f30982ec4572fd4e130a89112578175
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101740933"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203552"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Zelfstudie: PostgreSQL online migreren naar Azure DB for PostgreSQL met behulp van DMS en Azure CLI
 
@@ -71,7 +71,7 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
   * Installeer de CLI lokaal en voer deze uit. CLI 2.0 is het opdrachtregelprogramma voor het beheer van Azure-resources.
 
-       Volg de instructies in het artikel [Azure CLI 2.0 installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt downloaden. In het artikel worden ook de platforms genoemd die ondersteuning bieden voor CLI 2.0.
+       Volg de instructies in het artikel [Azure CLI 2.0 installeren](/cli/azure/install-azure-cli) als u de CLI wilt downloaden. In het artikel worden ook de platforms genoemd die ondersteuning bieden voor CLI 2.0.
 
        Volg als u Windows-subsysteem voor Linux (WSL) wilt instellen de instructies in de [installatiehandleiding voor Windows 10](/windows/wsl/install-win10)
 

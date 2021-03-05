@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d1e51552acdd869a3f304a6d48e18e9d2aa6c782
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 272a642f70849b85be00d2507109eb97935c0dde
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576762"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202498"
 ---
 # <a name="monitor-azure-file-sync"></a>Azure File Sync bewaken
 
@@ -42,7 +42,7 @@ De metrische gegevens voor Azure File Sync zijn standaard ingeschakeld en worden
 
 De volgende metrische gegevens voor Azure File Sync zijn beschikbaar in Azure Monitor:
 
-| Naam van metrische gegevens | Description |
+| Naam van metrische gegevens | Beschrijving |
 |-|-|
 | Gesynchroniseerde bytes | Grootte van de overgedragen gegevens (uploaden en downloaden).<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensies: naam server eindpunt, synchronisatie richting, naam synchronisatie groep |
 | Cloud lagen intrekken | De grootte van de gegevens die worden ingetrokken.<br><br>**Opmerking**: deze metrische gegevens worden in de toekomst verwijderd. Gebruik de grootte van de Cloud-laag voor het intrekken van de grootte van gegevens die zijn ingetrokken.<br><br>Eenheid: bytes<br>Aggregatie type: Sum<br>Toepasselijke dimensie: Server naam |
@@ -111,14 +111,14 @@ Als u de status van een **Server eindpunt** wilt weer geven in de portal, gaat u
 
 - De **status van het server eindpunt** en de **synchronisatie** in de portal is gebaseerd op de synchronisatie gebeurtenissen die worden vastgelegd in het logboek voor telemetrie op de server (id 9102 en 9302). Als een synchronisatie sessie mislukt als gevolg van een tijdelijke fout, zoals het annuleren van de fout, wordt het server-eind punt nog steeds in **orde** weer gegeven in de portal zolang de huidige synchronisatie sessie de voortgang (bestanden wordt toegepast). Gebeurtenis-ID 9302 is de gebeurtenis synchronisatie voortgang en gebeurtenis-ID 9102 wordt vastgelegd zodra een synchronisatie sessie is voltooid.  Zie [synchronisatie status](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#broken-sync) en [voortgang van synchronisatie](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-monitor-the-progress-of-a-current-sync-session)voor meer informatie. Als de status van het server eindpunt een **fout** of **geen activiteit** bevat, raadpleegt u de documentatie voor het [oplossen van problemen](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#common-sync-errors) voor hulp.
 - De **bestanden die niet** in de portal worden gesynchroniseerd, zijn gebaseerd op gebeurtenis-id 9121 die wordt vastgelegd in het logboek voor telemetrie op de server. Deze gebeurtenis wordt geregistreerd voor elke item fout wanneer de synchronisatie sessie is voltooid. Als u fouten per item wilt oplossen, raadpleegt u [Hoe kan ik controleren of er specifieke bestanden of mappen zijn die niet worden gesynchroniseerd?](./storage-sync-files-troubleshoot.md?tabs=server%252cazure-portal#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing).
-- Als u de **efficiëntie van de Cloud lagen** in de portal wilt bekijken, gaat u naar de eigenschappen van het **Server eindpunt** en navigeert u naar de sectie **Cloud-laag** . De gegevens voor de efficiëntie van de Cloud lagen zijn gebaseerd op gebeurtenis-ID 9071 die is vastgelegd in het logboek voor telemetrie-gebeurtenissen op de server. Zie [overzicht van Cloud lagen](./storage-sync-cloud-tiering.md)voor meer informatie.
+- Als u de **efficiëntie van de Cloud lagen** in de portal wilt bekijken, gaat u naar de eigenschappen van het **Server eindpunt** en navigeert u naar de sectie **Cloud-laag** . De gegevens voor de efficiëntie van de Cloud lagen zijn gebaseerd op gebeurtenis-ID 9071 die is vastgelegd in het logboek voor telemetrie-gebeurtenissen op de server. Zie [Cloud lagen controleren](./storage-sync-monitor-cloud-tiering.md)voor meer informatie.
 - Ga naar de eigenschappen van het **Server eindpunt** en navigeer naar het gedeelte **Cloud-Tiering** om bestanden weer te geven die **niet zijn gelaagd** en fouten in de portal **intrekken** . **Bestanden die niet worden gelaagd** , zijn gebaseerd op gebeurtenis-id 9003 die is geregistreerd in het logboek voor telemetrie op de server en fouten in het **intrekken** van gebeurtenissen zijn gebaseerd op gebeurtenis-id 9006. Zie problemen oplossen met bestanden die niet kunnen worden [getierd](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#how-to-troubleshoot-files-that-fail-to-tier) en [het oplossen van problemen met bestanden die niet kunnen worden ingetrokken](./storage-sync-files-troubleshoot.md?tabs=portal1%252cazure-portal#how-to-troubleshoot-files-that-fail-to-be-recalled)voor informatie over het onderzoeken van bestanden die niet kunnen worden gelaagd of ingetrokken.
 
 ### <a name="metric-charts"></a>Metrische grafieken
 
 - De volgende metrische grafieken kunnen worden weer gegeven in de portal van de opslag synchronisatie service:
 
-  | Naam van metrische gegevens | Description | Naam Blade |
+  | Naam van metrische gegevens | Beschrijving | Naam Blade |
   |-|-|-|
   | Gesynchroniseerde bytes | Grootte van overgedragen gegevens (uploaden en downloaden) | Synchronisatie groep, Server eindpunt |
   | Cloud lagen intrekken | Grootte van gegevens die zijn ingetrokken | Geregistreerde servers |
@@ -178,7 +178,7 @@ Als u de prestatie meter items van Azure File Sync op de server wilt weer geven,
 
 De volgende prestatie meter items voor Azure File Sync zijn beschikbaar in prestatie meter:
 
-| Object\Counter naam van prestaties | Description |
+| Object\Counter naam van prestaties | Beschrijving |
 |-|-|
 | AFS bytes Transferred\Downloaded bytes per seconde | Aantal gedownloade bytes per seconde. |
 | AFS bytes Transferred\Uploaded bytes per seconde | Aantal geüploade bytes per seconde. |

@@ -9,17 +9,17 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 03/02/2021
 ms.topic: how-to
-ms.openlocfilehash: 16546432c8c0a23d5c9dc471fe8c62ced5eca993
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7ef1cd43d2efbc5ab92cc2b4cba4d237805d8921
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101687529"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202651"
 ---
 # <a name="upload-billing-data-to-azure-and-view-it-in-the-azure-portal"></a>Upload facturerings gegevens naar Azure en Bekijk deze in de Azure Portal
 
 > [!IMPORTANT] 
->  Er zijn geen kosten voor het gebruik van Azure Arc ingeschakelde gegevens Services tijdens de preview-periode. Hoewel het facturerings systeem end-to-end is, wordt de facturerings meter ingesteld op $0.  Als u dit scenario volgt, worden er vermeldingen in uw factuur weer gegeven voor een service met de naam **Hybrid Data Services** en voor resources van een type genaamd **micro soft. Azureworden/ `<resource type>`**. U kunt een record bekijken voor elke gegevens service-Azure-Arc die u maakt, maar elke record wordt in rekening gebracht voor $0.
+>  Er zijn geen kosten voor het gebruik van Azure Arc ingeschakelde gegevens Services tijdens de preview-periode. Hoewel het facturerings systeem end-to-end is, wordt de facturerings meter ingesteld op $0.  Als u dit scenario volgt, worden er vermeldingen in uw factuur weer gegeven voor een service met de naam **Hybrid Data Services** en voor resources van een type genaamd **micro soft `<resource type>` . AzureArcData/**. U kunt een record bekijken voor elke gegevens service-Azure-Arc die u maakt, maar elke record wordt in rekening gebracht voor $0.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -119,7 +119,7 @@ Volg deze stappen om facturerings gegevens weer te geven in de Azure Portal:
 1. Zorg ervoor dat uw bereik is ingesteld op het abonnement waarin uw gegevens service resources zijn gemaakt.
 1. Selecteer **kosten per resource** in de vervolg keuzelijst weer geven naast de scope selector aan de bovenkant van de weer gave.
 1. Zorg ervoor dat het datum filter is ingesteld op **deze maand** of een ander tijds bereik dat duidelijk wordt gezien de timing van het moment waarop u uw gegevens service bronnen hebt gemaakt.
-1. Klik op **filter toevoegen** om een filter toe te voegen op **resource type**  =  `microsoft.azuredata/<data service type>` Als u wilt filteren op slechts één type gegevens service van Azure Arc ingeschakeld.
+1. Klik op **filter toevoegen** om een filter toe te voegen op **resource type**  =  `Microsoft.AzureArcData/<data service type>` Als u wilt filteren op slechts één type gegevens service van Azure Arc ingeschakeld.
 1. Er wordt nu een lijst weer geven met alle resources die zijn gemaakt en geüpload naar Azure. Omdat de facturerings meter $0 is, zult u zien dat de kosten altijd $0 zijn.
 
 ## <a name="download-billing-data"></a>Facturerings gegevens downloaden
@@ -159,5 +159,5 @@ U kunt de facturerings gegevens bestanden in de Azure Portal valideren.
 7. Zoom in op de gegenereerde mappen en bestanden en klik op een van de gegenereerde CSV-bestanden.
 8. Klik op de knop **downloaden** , waarmee het bestand wordt opgeslagen in de lokale map met Down loads.
 9. Open het bestand met behulp van een CSV-bestands viewer zoals Excel.
-10. De resultaten filteren om alleen de rijen met het **resource type** weer te geven  =  `Microsoft.AzureData/<data service resource type` .
+10. De resultaten filteren om alleen de rijen met het **resource type** weer te geven  =  `Microsoft.AzureArcData/<data service resource type` .
 11. U ziet het aantal uren dat het exemplaar is gebruikt in de huidige periode van 24 uur in de kolom UsageQuantity.

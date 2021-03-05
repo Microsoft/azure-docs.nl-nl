@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 68d890386d53b4115c773b128f8678bac9579e53
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: bc761d0bf4001fb1e3fb757b9be9e1e19689913d
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844332"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202991"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Programmatisch Azure-abonnementen maken met preview-API's
 
@@ -198,7 +198,7 @@ Zie [New-AzSubscription](/powershell/module/az.subscription/New-AzSubscription) 
 
 Installeer eerst de preview-extensie door `az extension add --name subscription` uit te voeren.
 
-Voer de opdracht [az account create](/cli/azure/ext/subscription/account?view=azure-cli-latest#-ext-subscription-az-account-create&preserve-view=true) hieronder uit en vervang `<enrollmentAccountObjectId>` door de `name` die u in de eerste stap hebt gekopieerd (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Zie [object-id's van gebruikers ophalen](grant-access-to-create-subscription.md#userObjectId) voor het opgeven van eigenaren.
+Voer de opdracht [az account create](/cli/azure/ext/subscription/account#-ext-subscription-az-account-create) hieronder uit en vervang `<enrollmentAccountObjectId>` door de `name` die u in de eerste stap hebt gekopieerd (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Zie [object-id's van gebruikers ophalen](grant-access-to-create-subscription.md#userObjectId) voor het opgeven van eigenaren.
 
 ```azurecli-interactive
 az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscription" --enrollment-account-object-id "<enrollmentAccountObjectId>" --owner-object-id "<userObjectId>","<servicePrincipalObjectId>"
@@ -213,7 +213,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 | `owner-upn`    | Nee       | Tekenreeks | De object-id van een gebruiker die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer dit wordt gemaakt. U kunt de parameter gebruiken in plaats van `owner-object-id`.|
 | `owner-spn` | Nee       | Tekenreeks | De toepassing-id van een service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt. U kunt de parameter gebruiken in plaats van `owner-object-id`. Wanneer u de parameter gebruikt, moet de service-principal [leestoegang voor de map hebben](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole&preserve-view=true).|
 
-Zie [az account create](/cli/azure/ext/subscription/account?view=azure-cli-latest#-ext-subscription-az-account-create&preserve-view=true) voor een volledige lijst met parameters.
+Zie [az account create](/cli/azure/ext/subscription/account#-ext-subscription-az-account-create) voor een volledige lijst met parameters.
 
 ---
 

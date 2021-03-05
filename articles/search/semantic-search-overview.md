@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/02/2021
 ms.custom: references_regions
-ms.openlocfilehash: eedb3dfeafbd378cfff7afb04fcc2b9aa6e791d6
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e9cbb7daf61397064bd79f30d851d96fdf63f5a0
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679827"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102203229"
 ---
 # <a name="semantic-search-in-azure-cognitive-search"></a>Semantisch zoeken in azure Cognitive Search
 
@@ -27,7 +27,7 @@ De onderliggende technologie maakt gebruik van de investeringen van Bing en micr
 
 Open bare preview-functies zijn:
 
-+ Algoritme voor semantische classificatie waarmee relevante documenten worden opgehaald op basis van de context of semantische betekenis van zoek query termen
++ Semantisch classificatie model dat de resultaten uitscoort op basis van de context of semantische betekenis van zoek query termen
 + Semantische bijschriften die relevante door gangen markeren
 + Semantische antwoorden op de query, ook geformuleerd op basis van resultaten
 + Spelling controle waarmee type fouten worden gecorrigeerd voordat de query termen de zoek machine bereiken
@@ -44,7 +44,9 @@ Om bijschriften en antwoorden te maken, worden de taal weergave modellen gebruik
 
 ## <a name="availability-and-pricing"></a>Beschik baarheid en prijzen
 
-Semantische classificatie is beschikbaar via registratie van de aanmelding, op zoek services die zijn gemaakt in een Standard [-](https://aka.ms/SemanticSearchPreviewSignup)laag (S1, S2, S3), die zich in een van deze regio's bevindt: Noord-Centraal VS, VS-West, VS-West 2, VS-Oost 2, Europa-noord, Europa-West. De spelling correctie is beschikbaar in dezelfde regio's, maar heeft geen laag beperkingen. Als u een bestaande service hebt die voldoet aan de criteria voor lagen en regio's, is aanmelden alleen vereist.
+Semantische classificatie is beschikbaar via registratie van de aanmelding, op zoek services die zijn gemaakt in een Standard [-](https://aka.ms/SemanticSearchPreviewSignup)laag (S1, S2, S3), die zich in een van deze regio's bevindt: Noord-Centraal VS, VS-West, VS-West 2, VS-Oost 2, Europa-noord, Europa-West. Een bestaande zoek service op S1 of hoger in de vermelde regio's komt in aanmerking voor de preview (u hoeft geen nieuwe service te maken).
+
+De spelling correctie is beschikbaar in dezelfde regio's, maar heeft geen laag beperkingen en er is geen registratie vereiste. 
 
 Tussen de preview-versie van 2 maart tot en met 1 april worden de spelling correctie en de semantische classificatie gratis aangeboden. Na 1 april worden de reken kosten voor het uitvoeren van deze functionaliteit een factureer bare gebeurtenis. De verwachte kosten zijn ongeveer USD $500/maand voor 250.000 query's. U vindt gedetailleerde informatie over de kosten die wordt beschreven op de [pagina Cognitive Search prijzen](https://azure.microsoft.com/pricing/details/search/) en in [schatting en beheer kosten](search-sku-manage-costs.md).
 

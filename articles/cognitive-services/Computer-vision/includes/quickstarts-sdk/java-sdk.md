@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: c8435d250f95f861f2a84e91d673eb59c3a6d44b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 59f7d40d64e10266937aab8dacb39bd6c647ce07
+ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101750108"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102193832"
 ---
 <a name="HOLTop"></a>
 
@@ -90,7 +90,13 @@ Ga naar de nieuwe map en maak een bestand met de naam *ComputerVisionQuickstarts
 > [!TIP]
 > Wilt u het codebestand voor de quickstart in één keer weergeven? Die is te vinden op [GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java), waar de codevoorbeelden uit deze quickstart zich bevinden.
 
-Maak in de klasse **ComputerVisionQuickstarts** van de toepassing variabelen voor de sleutel en het eindpunt van uw resource.
+Definieer de klasse **ComputerVisionQuickstarts**.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_classdef_1)]
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_classdef_2)]
+
+Maak in de **ComputerVisionQuickstarts** -klasse variabelen voor de sleutel en het eind punt van uw resource.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_creds)]
 
@@ -154,7 +160,7 @@ Geef vervolgens op welke visuele kenmerken u wilt extraheren in uw analyse. Zie 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_features)]
 
 ### <a name="analyze"></a>Analyseren
-Met deze methode worden gedetailleerde resultaten van afbeeldingsanalyses van elk bereik op de console afgedrukt. U wordt aangeraden rond de aanroep van deze methode een try/catch-blok te zetten. Met de **analyzeImageInStream**-methode wordt een **ImageAnalysis**-object geretourneerd dat alle geëxtraheerde informatie bevat.
+Met dit blok worden gedetailleerde resultaten voor elke omvang van de afbeeldings analyse in de console afgedrukt. Met de **analyzeImageInStream**-methode wordt een **ImageAnalysis**-object geretourneerd dat alle geëxtraheerde informatie bevat.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_analyze)]
 
@@ -183,6 +189,21 @@ Met de volgende code wordt de set met gedetecteerde tags in de afbeelding opgeha
 Met de volgende code worden de gedetecteerde gezichten in de afbeelding met hun rechthoekcoördinaten als resultaat gegeven en worden gezichtskenmerken geselecteerd. Raadpleeg [Gezichtsdetectie](../../concept-detecting-faces.md) voor meer informatie.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_faces)]
+
+### <a name="detect-objects"></a>Objecten detecteren
+
+Met de volgende code worden de gedetecteerde objecten in de afbeelding met hun coördinaten geretourneerd. Raadpleeg [Objectdetectie](../../concept-object-detection.md) voor meer informatie.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_objects)]
+
+
+### <a name="detect-brands"></a>Merken detecteren
+
+Met de volgende code worden de gedetecteerde merk logo's in de afbeelding met hun coördinaten geretourneerd. Zie voor meer informatie [merk detectie](../../concept-brand-detection.md).
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyzelocal_brands)]
+
+
 
 ### <a name="detect-adult-racy-or-gory-content"></a>Inhoud voor volwassenen, of ongepaste of bloederige inhoud detecteren
 
@@ -216,6 +237,13 @@ Met de volgende code wordt informatie over het type afbeelding afgedrukt&mdash;,
 
 > [!div class="nextstepaction"]
 > [Ik heb een afbeelding geanalyseerd](?success=analyze-image#read-printed-and-handwritten-text) [Er is een probleem opgetreden](https://microsoft.qualtrics.com/jfe/form/SV_0Cl5zkG3CnDjq6O?PLanguage=Java&Section=analyze-image)
+
+### <a name="close-out-the-method"></a>De methode sluiten
+
+Voltooi het blok try/catch en sluit de methode.
+
+[!code-java[](~/cognitive-services-quickstart-code/java/ComputerVision/src/main/java/ComputerVisionQuickstart.java?name=snippet_analyze_catch)]
+
 
 ## <a name="read-printed-and-handwritten-text"></a>Afgedrukte en handgeschreven tekst lezen
 

@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 robots: noindex
-ms.openlocfilehash: ea320938f3e4f3b2d257947f605bb3b3f6f0886a
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: ef32b8ff9282e92511047840576ddfe6751b24e0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786205"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102184505"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken in Azure App Service op Linux
 
@@ -243,7 +243,7 @@ Zodra de implementatie is voltooid, schakelt u terug naar het browservenster om 
 
 U hebt toegang tot de consolelogboeken die zijn gegenereerd vanuit de app en de container waarin deze wordt uitgevoerd. Logboeken bevatten uitvoer die wordt gegenereerd met behulp van `print`-instructies.
 
-Als u logboeken wilt streamen, voert u de opdracht [az webapp log tail](/cli/azure/webapp/log?view=azure-cli-latest&preserve-view=true#az_webapp_log_tail) uit:
+Als u logboeken wilt streamen, voert u de opdracht [az webapp log tail](/cli/azure/webapp/log#az_webapp_log_tail) uit:
 
 ```azurecli
 az webapp log tail

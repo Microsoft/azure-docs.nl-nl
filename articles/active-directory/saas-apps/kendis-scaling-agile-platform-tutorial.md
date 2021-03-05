@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/12/2021
+ms.date: 03/04/2021
 ms.author: jeedes
-ms.openlocfilehash: 9a7e02955d7784feb57d7e9ccc7e337b6a939380
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 8409a4d897ea9b20528a5b30273819e6962774cb
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101651549"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102184488"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kendis---azure-ad-integration"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met Kendis-Azure AD-integratie
 
@@ -123,13 +123,21 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-kendis-azure-ad-integration-sso"></a>Kendis-Azure AD Integration SSO configureren
 
-1. Meld u in een ander webbrowser venster aan bij uw Kendis-Azure AD-integratie bedrijfs site als beheerder.
+1. Als u de configuratie in Kendis-Azure AD-integratie wilt automatiseren, moet u de **uitbrei ding mijn apps Secure Sign-in browser** installeren door te klikken op **de uitbrei ding installeren**.
 
-1. Ga naar de **instellingen > SAML-configuraties**.
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Nadat u een uitbrei ding aan de browser hebt toegevoegd, klikt u op **Kendis instellen-Azure AD-integratie** leidt u naar de Kendis-Azure AD-integratie toepassing. Geef de beheerders referenties op om u aan te melden bij Kendis-Azure AD-integratie. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 5 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Kendis-Azure AD-integratie hand matig wilt instellen, meldt u zich in een ander webbrowser venster aan bij uw Kendis-Azure AD-integratie bedrijfs site als beheerder.
+
+4. Ga naar de **instellingen > SAML-configuraties**.
 
     ![instellingen voor SAML-configuraties](./media/kendis-scaling-agile-platform-tutorial/settings.png)
 
-1. Klik onder aan de pagina op de knop **bewerken** en voer de volgende stappen uit.
+5. Klik onder aan de pagina op de knop **bewerken** en voer de volgende stappen uit.
 
     ![SAML-configuraties](./media/kendis-scaling-agile-platform-tutorial/saml-configuration-settings.png)
 

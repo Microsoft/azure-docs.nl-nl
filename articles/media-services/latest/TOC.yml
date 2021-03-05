@@ -23,12 +23,10 @@
           href: access-api-howto.md
         - name: Azure Cloud Shell instellen
           href: ../../cloud-shell/overview.md
-        - name: Ontwikkelen met REST
+        - name: Verbinding met Media Services maken
           items:
-            - name: Verbinding maken met Postman
+            - name: Verbinding maken met REST en postman
               href: media-rest-apis-with-postman.md
-        - name: Ontwikkelen met SDK's
-          items:
             - name: Verbinding maken met Java
               href: configure-connect-java-howto.md
             - name: Verbinding maken met .NET
@@ -51,6 +49,8 @@
       items:
         - name: Een account maken met ARM
           href: quickstart-arm-template-account.md
+    - name: Python Basic Encoding Quick Start
+      href: quickstart-basic-encoding-python.md
 - name: Zelfstudies
   items:
     - name: .NET

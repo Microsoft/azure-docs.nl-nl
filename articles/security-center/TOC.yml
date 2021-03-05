@@ -112,7 +112,7 @@
           href: exempt-resource.md
         - name: Aangepaste beveiligings initiatieven en-beleid maken
           href: custom-security-policies.md
-    - name: Bescherm uw computers met Azure Defender voor servers
+    - name: Bescherm uw computers met Defender voor servers
       displayName: 'hybrid, arc, Azure Defender for machines'
       items:
         - name: Overzicht van Azure Defender voor servers
@@ -143,10 +143,10 @@
         - name: Geïntegreerde Microsoft Defender voor eindpuntlicentie gebruiken
           displayName: 'ATP, mdatp, wdatp'
           href: security-center-wdatp.md
-        - name: Lijsten met veilige toepassingen voor uw machines definiëren
+        - name: Lijsten met veilige toepassingen voor machines definiëren
           displayName: 'aac, whitelist, allowlist, reviewgroup, adaptive application controls'
           href: security-center-adaptive-application.md
-        - name: Wijzigingen in bestanden en registers bijhouden met bestands integriteits controle
+        - name: Wijzigingen in bestanden en registers bijhouden
           items:
             - name: Overzicht van bewaking van bestandsintegriteit
               displayName: 'fim, change'
@@ -154,8 +154,8 @@
             - name: Basis lijnen vergelijken met behulp van bestands integriteits controle
               displayName: 'fim, change'
               href: security-center-file-integrity-monitoring-baselines.md
-        - name: Verbeter uw netwerk beveiligings postuur met adaptieve netwerk beveiliging
-          displayName: anh
+        - name: Verbeter uw netwerk beveiligings postuur
+          displayName: 'anh, adaptive network hardening'
           href: security-center-adaptive-network-hardening.md
         - name: Docker-hosts verharden
           displayName: containers
@@ -209,7 +209,7 @@
         - name: Overzicht van Azure Defender voor Key Vault
           displayName: 'KV, akv'
           href: defender-for-key-vault-introduction.md
-        - name: Reageren op Azure Defender voor Key Vault-waarschuwingen
+        - name: Defender for Key Vault-waarschuwingen afhandelen
           displayName: 'akv, kv'
           href: defender-for-key-vault-usage.md
     - name: Uw resource beheer bewerkingen controleren
@@ -217,7 +217,7 @@
         - name: Overzicht van Azure Defender voor Resource Manager
           displayName: ARM
           href: defender-for-resource-manager-introduction.md
-        - name: Reageren op Azure Defender voor Resource Manager-waarschuwingen
+        - name: Waarschuwingen van Defender voor Resource Manager verwerken
           displayName: arm
           href: defender-for-resource-manager-usage.md
     - name: DNS-query's van uw Azure-resources controleren

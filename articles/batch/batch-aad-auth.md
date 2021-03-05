@@ -4,12 +4,12 @@ description: Batch ondersteunt Azure AD voor verificatie vanuit de batch-service
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: 784e92eaa2cd672d511177066befcfd7effc7ca4
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 2ceefa538c44208750da8986fcf3d161f0c0865f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95252637"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180017"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Batch-service oplossingen verifiëren met Active Directory
 
@@ -41,7 +41,7 @@ Voor verificatie met Azure AD gebruikt u dit eind punt samen met de Tenant-ID (D
 >
 > Het Tenant-specifieke eind punt is optioneel wanneer u verifieert met behulp van geïntegreerde verificatie, maar wordt aanbevolen. U kunt echter ook het gemeen schappelijke eind punt van Azure AD gebruiken. Het algemene eind punt biedt een algemene interface voor het verzamelen van referenties wanneer er geen specifieke Tenant is opgegeven. Het algemene eind punt is `https://login.microsoftonline.com/common` .
 
-Zie [Verificatie versus autorisatie]()voor meer informatie over Azure AD-eind punten. /active-directory/develop/authentication-vs-authorization.md).
+Zie [Verificatie versus autorisatie](../active-directory/develop/authentication-vs-authorization.md)voor meer informatie over Azure AD-eind punten.
 
 ### <a name="batch-resource-endpoint"></a>Batch-resource-eind punt
 
@@ -104,7 +104,7 @@ Volg deze stappen in Azure Portal:
 
 1. Kies in het Azure Portal **alle services**. Selecteer **app-registraties**.
 1. Selecteer uw toepassing in de lijst met app-registraties.
-1. Selecteer de toepassing en selecteer vervolgens **certificaten & geheimen**. Selecteer in de sectie **client geheimen** de optie **Nieuw client geheim**.
+1. Selecteer de toepassing en selecteer vervolgens **certificaten & geheimen**. Selecteer in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**.
 1. Als u een geheim wilt maken, voert u een beschrijving in voor het geheim. Selecteer vervolgens een verloop tijd voor het geheim van één jaar, twee jaar of geen verval datum.
 1. Selecteer **toevoegen** om het geheim te maken en weer te geven. Kopieer de geheime waarde naar een veilige locatie, omdat u deze niet meer kunt openen nadat u de pagina verlaat.
 

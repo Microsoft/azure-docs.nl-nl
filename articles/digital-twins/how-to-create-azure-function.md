@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: b37277c660562721273ff9ae86dd677ee7ac7d55
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 8ed4e550ea441d5d99a3debb6bf37eb7db2a4a20
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049998"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180124"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -56,29 +56,14 @@ Als uw functie-app is gemaakt, wordt in Visual Studio een code voorbeeld gegener
 
 U kunt een functie schrijven door de SDK toe te voegen aan uw functie-app. De functie-app communiceert met Azure Digital Apparaatdubbels met behulp van de [Azure Digital APPARAATDUBBELS SDK voor .net (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
 
-Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoegen. U kunt de pakketten installeren met behulp van de NuGet package manager van Visual Studio of de pakketten toevoegen met behulp `dotnet` van een opdracht regel programma. Volg de onderstaande stappen voor uw voorkeurs methode.
+Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoegen. U kunt de pakketten installeren met behulp van de NuGet package manager van Visual Studio of de pakketten toevoegen met behulp `dotnet` van een opdracht regel programma.
 
-**Optie 1. Pakketten toevoegen met behulp van Visual Studio Package Manager:**
-    
-Klik met de rechter muisknop op uw project en selecteer _NuGet-pakketten beheren_ in de lijst. In het venster dat wordt geopend, selecteert u het tabblad _Bladeren_ en zoekt u naar de volgende pakketten. Selecteer _installeren_ en _Accepteer_ de gebruiksrecht overeenkomst om de pakketten te installeren.
+* [Azure. DigitalTwins. core](https://www.nuget.org/packages/Azure.DigitalTwins.Core/)
+* [Azure. Identity](https://www.nuget.org/packages/Azure.Identity/)
+* [System .net. http](https://www.nuget.org/packages/System.Net.Http/)
+* [Azure. core](https://www.nuget.org/packages/Azure.Core/)
 
-* `Azure.DigitalTwins.Core`
-* `Azure.Identity`
-* `System.Net.Http`
-* `Azure.Core.Pipeline`
-
-**Optie 2. Pakketten toevoegen met behulp van `dotnet` het opdracht regel programma:**
-
-U kunt ook de volgende `dotnet add` opdrachten gebruiken in een opdracht regel programma:
-
-```cmd/sh
-dotnet add package Azure.DigitalTwins.Core
-dotnet add package Azure.Identity
-dotnet add package System.Net.Http
-dotnet add package Azure.Core.Pipeline
-```
-
-Open vervolgens in uw Visual Studio Solution Explorer het _Function1.cs_ -bestand met voorbeeld code en voeg de volgende `using` instructies toe aan uw functie. 
+Open vervolgens in uw Visual Studio-Solution Explorer het _Function1.cs_ -bestand met voorbeeld code en voeg de volgende `using` instructies voor deze pakketten toe aan uw functie. 
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="Function_dependencies":::
 
@@ -86,7 +71,7 @@ Open vervolgens in uw Visual Studio Solution Explorer het _Function1.cs_ -bestan
 
 U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U voegt het volgende toe aan de functie in het _Function1.cs_ -bestand.
 
-* Code voor het lezen van de URL van de Azure Digital Apparaatdubbels-service als een omgevings variabele. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie.
+* Code voor het lezen van de URL van de Azure Digital Apparaatdubbels-service als een **omgevings variabele**. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie. [Verderop in dit artikel](#set-up-security-access-for-the-function-app)moet u de waarde van deze omgevings variabele instellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen.
 
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="ADT_service_URL":::
 
@@ -116,108 +101,118 @@ Nu uw toepassing is geschreven, kunt u deze publiceren naar Azure met behulp van
 
 U kunt de beveiligings toegang voor de functie-app instellen met behulp van de Azure CLI of de Azure Portal. Volg de onderstaande stappen voor uw voorkeurs optie.
 
-### <a name="option-1-set-up-security-access-for-the-function-app-using-cli"></a>Optie 1: beveiligings toegang instellen voor de functie-app met behulp van CLI
+# <a name="cli"></a>[CLI](#tab/cli)
 
-De functie skelet van eerdere voor beelden vereist dat er een Bearer-token wordt door gegeven, zodat het kan worden geverifieerd met Azure Digital Apparaatdubbels. Als u er zeker van wilt zijn dat dit Bearer-token is door gegeven, moet u [Managed Service Identity (MSI)](../active-directory/managed-identities-azure-resources/overview.md) instellen voor de functie-app. U hoeft dit slechts één keer te doen voor elke functie-app.
+U kunt deze opdrachten uitvoeren in [Azure Cloud shell](https://shell.azure.com) of een [lokale Azure cli-installatie](/cli/azure/install-azure-cli).
 
-U kunt door het systeem beheerde identiteit maken en de identiteit van de functie-app toewijzen aan de rol _**Azure Digital Apparaatdubbels data owner**_ voor uw Azure Digital apparaatdubbels-instantie. Hiermee geeft u de functie-app toestemming in het exemplaar voor het uitvoeren van activiteiten voor gegevens vlak. Vervolgens stelt u de URL van het Azure Digital Apparaatdubbels-exemplaar toegankelijk te maken voor uw functie door een omgevings variabele in te stellen.
+### <a name="assign-access-role"></a>Access-rol toewijzen
 
-Gebruik [Azure Cloud shell](https://shell.azure.com) om de opdrachten uit te voeren.
+De functie skelet van eerdere voor beelden vereist dat er een Bearer-token wordt door gegeven, zodat het kan worden geverifieerd met Azure Digital Apparaatdubbels. Om ervoor te zorgen dat dit Bearer-token wordt door gegeven, moet u [Managed Service Identity (MSI)-](../active-directory/managed-identities-azure-resources/overview.md) machtigingen instellen voor de functie-app voor toegang tot Azure Digital apparaatdubbels. U hoeft dit slechts één keer te doen voor elke functie-app.
 
-Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken. Noteer het veld _principalId_ in de uitvoer.
+U kunt de door het systeem beheerde identiteit van de functie-app gebruiken om aan te geven dat de rol _**Azure Digital Apparaatdubbels data owner**_ is voor uw Azure Digital apparaatdubbels-exemplaar. Hiermee geeft u de functie-app toestemming in het exemplaar voor het uitvoeren van activiteiten voor gegevens vlak. Vervolgens stelt u de URL van het Azure Digital Apparaatdubbels-exemplaar toegankelijk te maken voor uw functie door een omgevings variabele in te stellen.
 
-```azurecli-interactive 
-az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>   
-```
-Gebruik de waarde _principalId_ in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol _Gegevenseigenaar van Azure Digital Twins_ voor uw Azure Digital Twins-exemplaar.
+1. Gebruik de volgende opdracht om de details van de door het systeem beheerde identiteit voor de functie weer te geven. Noteer het veld _principalId_ in de uitvoer.
 
-```azurecli-interactive 
-az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
-```
-Ten slotte kunt u de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk maken voor uw functie door een omgevings variabele in te stellen. Zie [*omgevings variabelen*](/sandbox/functions-recipes/environment-variables)voor meer informatie over het instellen van omgevings variabelen. 
+    ```azurecli-interactive 
+    az functionapp identity show -g <your-resource-group> -n <your-App-Service-(function-app)-name> 
+    ```
+
+    >[!NOTE]
+    > Als het resultaat leeg is in plaats van de details van een identiteit weer te geven, maakt u met behulp van deze opdracht een nieuwe door het systeem beheerde identiteit voor de functie:
+    > 
+    >```azurecli-interactive    
+    >az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>  
+    >```
+    >
+    > In de uitvoer worden vervolgens de details van de identiteit weer gegeven, met inbegrip van de _principalId_ -waarde die is vereist voor de volgende stap. 
+
+1. Gebruik de waarde _principalId_ in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol _Gegevenseigenaar van Azure Digital Twins_ voor uw Azure Digital Twins-exemplaar.
+
+    ```azurecli-interactive 
+    az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
+    ```
+
+### <a name="configure-application-settings"></a>Toepassingsinstellingen configureren
+
+Maak ten slotte de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk voor uw functie door een **omgevings variabele** voor de instantie in te stellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen. 
 
 > [!TIP]
-> De URL van het Azure Digital Apparaatdubbels-exemplaar wordt gemaakt door *https://* toe te voegen aan het begin van de *hostnaam* van uw Azure Digital apparaatdubbels-exemplaar. Als u de hostnaam, samen met alle eigenschappen van uw exemplaar, wilt zien, kunt u uitvoeren `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
+> De URL van het Azure Digital Apparaatdubbels-exemplaar wordt gemaakt door *https://* toe te voegen aan het begin van de *hostnaam* van uw Azure Digital apparaatdubbels-exemplaar. Als u de hostnaam, samen met alle eigenschappen van uw exemplaar, wilt weer geven, kunt u uitvoeren `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
 
 ```azurecli-interactive 
-az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-hostname>"
+az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-host-name>"
 ```
-### <a name="option-2-set-up-security-access-for-the-function-app-using-azure-portal"></a>Optie 2: beveiligings toegang instellen voor de functie-app met behulp van Azure Portal
 
-Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen worden geverifieerd bij Cloud Services (bijvoorbeeld Azure Key Vault) zonder dat referenties in code worden opgeslagen. Wanneer deze functie is ingeschakeld, kunnen alle benodigde machtigingen worden verleend via Azure Role-based-Access-Control. De levens cyclus van dit type beheerde identiteit is gekoppeld aan de levens cyclus van deze resource. Daarnaast kan elke resource (bijvoorbeeld virtuele machine) slechts één door het systeem toegewezen beheerde identiteit hebben.
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
-Zoek in de [Azure Portal](https://portal.azure.com/)op de zoek balk naar _functie-app_ met de naam van de functie-app die u eerder hebt gemaakt. Selecteer de *functie-app* in de lijst. 
+Voer de volgende stappen uit in de [Azure Portal](https://portal.azure.com/).
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
+### <a name="assign-access-role"></a>Access-rol toewijzen
 
-Selecteer in het venster functie-app _identiteit_ in de navigatie balk aan de linkerkant om beheerde identiteit in te scha kelen.
-Schakel onder _systeem toegewezen_ tabblad de _status_ in op aan en _Sla_ deze op. Er wordt een pop-up weer gegeven om door het _systeem toegewezen beheerde identiteit in te scha kelen_.
-Selecteer de knop _Ja_ . 
+Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen worden geverifieerd bij Cloud Services (bijvoorbeeld Azure Key Vault) zonder dat referenties in code worden opgeslagen. Wanneer deze functie is ingeschakeld, kunnen alle benodigde machtigingen worden verleend via toegangs beheer op basis van rollen. De levens cyclus van dit type beheerde identiteit is gekoppeld aan de levens cyclus van deze resource. Daarnaast kan elke resource slechts één door het systeem toegewezen beheerde identiteit hebben.
 
-:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina identiteit voor de functie-app wordt de optie voor het inschakelen van door het systeem toegewezen beheerde identiteit ingesteld op Ja. De optie status is ingesteld op aan.":::
+1. Zoek in het [Azure Portal](https://portal.azure.com/)naar uw functie-app door de naam ervan in de zoek balk te typen. Selecteer uw app in de resultaten. 
 
-U kunt in de meldingen controleren dat de functie is geregistreerd bij Azure Active Directory.
+    :::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Scherm afbeelding van de Azure Portal: in de lijst met meldingen ziet u het pictogram voor de klok vorm in de bovenste balk van de portal. Er is een melding dat de gebruiker door het systeem toegewezen beheerde identiteit heeft ingeschakeld.":::
+1. Selecteer op de pagina functie-app de optie _identiteit_ in de navigatie balk aan de linkerkant om te werken met een beheerde identiteit voor de functie. Controleer op de pagina _systeem toegewezen_ of de _status_ is ingesteld op aan op aan (als dit niet het geval is, stelt u deze nu in en *Sla* de wijziging **op** ).
 
-Noteer ook de **object-id** die wordt weer gegeven op de pagina _identiteit_ , zoals deze wordt gebruikt in de volgende sectie.
+    :::image type="content" source="media/how-to-create-azure-function/verify-system-managed-identity.png" alt-text="Scherm opname van de Azure Portal: op de pagina identiteit voor de functie-app, is de optie status ingesteld op aan." lightbox="media/how-to-create-azure-function/verify-system-managed-identity.png":::
 
-:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Scherm afbeelding van de Azure Portal: een markering rond het veld object-ID van de Azure function-pagina id.":::
+1. Selecteer de knop _Azure Role Assignments_ , waarmee de pagina met *Azure-roltoewijzingen* wordt geopend.
 
-### <a name="assign-access-roles-using-azure-portal"></a>Toegangs rollen toewijzen met behulp van Azure Portal
+    :::image type="content" source="media/how-to-create-azure-function/add-role-assignment-1.png" alt-text="Scherm afbeelding van de Azure Portal: een markering voor de knop Azure-functie toewijzingen onder machtigingen op de pagina identiteit van Azure function." lightbox="media/how-to-create-azure-function/add-role-assignment-1.png":::
 
-Selecteer de knop _Azure Role Assignments_ , waarmee de pagina met *Azure-roltoewijzingen* wordt geopend. Selecteer vervolgens _+ roltoewijzing toevoegen (preview)_.
+    Selecteer _+ roltoewijzing toevoegen (preview)_.
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Scherm afbeelding van de Azure Portal: een markering voor de knop Azure-functie toewijzingen onder machtigingen op de pagina identiteit van Azure function.":::
+    :::image type="content" source="media/how-to-create-azure-function/add-role-assignment-2.png" alt-text="Scherm afbeelding van de Azure Portal: een hooglicht rond + roltoewijzing toevoegen (preview) op de pagina met Azure-functies." lightbox="media/how-to-create-azure-function/add-role-assignment-2.png":::
 
-Selecteer op de pagina _roltoewijzing toevoegen (preview)_ die wordt geopend:
+1. Selecteer op de pagina _roltoewijzing toevoegen (preview)_ die wordt geopend de volgende waarden:
 
-* _Bereik_: resourcegroep
-* _Abonnement_: Selecteer uw Azure-abonnement
-* _Resource groep_: Selecteer de resource groep in de vervolg keuzelijst
-* _Rol_: Selecteer de _Azure Digital Apparaatdubbels-gegevens eigenaar_ uit de vervolg keuzelijst
+    * **Bereik**: resourcegroep
+    * **Abonnement**: Selecteer uw Azure-abonnement
+    * **Resource groep**: Selecteer de resource groep in de vervolg keuzelijst
+    * **Rol**: Selecteer de _Azure Digital Apparaatdubbels-gegevens eigenaar_ uit de vervolg keuzelijst
 
-Sla uw gegevens vervolgens op door te klikken op de knop _Opslaan_ .
+    Sla uw gegevens vervolgens op door te klikken op de knop _Opslaan_ .
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Scherm afbeelding van het dialoog venster Azure Portal: om een nieuwe roltoewijzing toe te voegen (preview). Er zijn velden voor het bereik, het abonnement, de resource groep en de rol.":::
+    :::image type="content" source="media/how-to-create-azure-function/add-role-assignment-3.png" alt-text="Scherm afbeelding van het dialoog venster Azure Portal: om een nieuwe roltoewijzing toe te voegen (preview). Er zijn velden voor het bereik, het abonnement, de resource groep en de rol.":::
 
-### <a name="configure-application-settings-using-azure-portal"></a>Toepassings instellingen configureren met behulp van Azure Portal
+### <a name="configure-application-settings"></a>Toepassingsinstellingen configureren
 
-U kunt de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk maken voor uw functie door een omgevings variabele in te stellen. Zie [*omgevings variabelen*](/sandbox/functions-recipes/environment-variables)voor meer informatie. Toepassings instellingen worden weer gegeven als omgevings variabelen voor toegang tot het digitale apparaatdubbels-exemplaar. 
+Als u de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk wilt maken voor uw functie, kunt u een **omgevings variabele** voor de instantie instellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen. Toepassings instellingen worden weer gegeven als omgevings variabelen voor toegang tot het Azure Digital Apparaatdubbels-exemplaar. 
 
 Als u een omgevings variabele met de URL van uw exemplaar wilt instellen, moet u eerst de URL ophalen door de hostnaam van het Azure Digital Apparaatdubbels-exemplaar te vinden. Zoek in de zoek balk van [Azure Portal](https://portal.azure.com) naar uw instantie. Selecteer vervolgens _overzicht_ op de linkernavigatiebalk om de _hostnaam_ weer te geven. Kopieer deze waarde.
 
-:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina overzicht voor het Azure Digital Apparaatdubbels-exemplaar wordt de waarde voor de hostnaam gemarkeerd.":::
+:::image type="content" source="media/how-to-create-azure-function/instance-host-name.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina overzicht voor het Azure Digital Apparaatdubbels-exemplaar wordt de waarde voor de hostnaam gemarkeerd.":::
 
-U kunt nu een toepassings instelling maken aan de hand van de volgende stappen:
+U kunt nu een toepassings instelling maken met behulp van de volgende stappen:
 
-1. Zoek naar uw functie-app in de zoek balk van de portal en selecteer deze in de resultaten
-1. Selecteer _configuratie_ op de navigatie balk aan de linkerkant om een nieuwe toepassings instelling te maken
-1. Selecteer op het tabblad _Toepassings instellingen_ _+ nieuwe toepassings instelling_
+1. Zoek naar uw functie-app in de zoek balk van de portal en selecteer deze in de resultaten.
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
+    :::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina configuratie voor de functie-app wordt de knop voor het maken van een nieuwe toepassings instelling gemarkeerd.":::
+1. Selecteer _configuratie_ op de navigatie balk aan de linkerkant. Klik op het tabblad _Toepassings instellingen_ en selecteer _+ nieuwe toepassings instelling_.
 
-In het venster dat wordt geopend, gebruikt u de waarde voor de hostnaam gekopieerd hierboven om een toepassings instelling te maken.
-* **Naam**: ADT_SERVICE_URL
-* **Waarde**: https://{Your-Azure-Digital-apparaatdubbels-host-name}
+    :::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina configuratie voor de functie-app wordt de knop voor het maken van een nieuwe toepassings instelling gemarkeerd.":::
 
-Selecteer _OK_ om een toepassings instelling te maken.
+1. In het venster dat wordt geopend, gebruikt u de waarde voor de hostnaam gekopieerd hierboven om een toepassings instelling te maken.
+    * **Naam**: ADT_SERVICE_URL
+    * **Waarde**: https://{Your-Azure-Digital-apparaatdubbels-host-name}
+    
+    Selecteer _OK_ om een toepassings instelling te maken.
+    
+    :::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: de knop OK wordt gemarkeerd na het invullen van de velden naam en waarde op de pagina Toepassings instelling toevoegen/bewerken.":::
 
-:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: de knop OK wordt gemarkeerd na het invullen van de velden naam en waarde op de pagina Toepassings instelling toevoegen/bewerken.":::
+1. Nadat u de instelling hebt gemaakt, wordt deze weer gegeven op het tabblad _Toepassings instellingen_ . Controleer of *ADT_SERVICE_URL* wordt weer gegeven in de lijst en sla de nieuwe toepassings instelling op door de knop _Opslaan_ te selecteren.
 
-U kunt de toepassings instellingen weer geven onder het veld _naam_ in de naam van de toepassing. Sla de toepassings instellingen vervolgens op door de knop _Opslaan_ te selecteren.
+    :::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Scherm afbeelding van de Azure Portal: de pagina Toepassings instellingen, met de instelling nieuwe ADT_SERVICE_URL gemarkeerd. De knop Opslaan is ook gemarkeerd.":::
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Scherm afbeelding van de Azure Portal: de pagina Toepassings instellingen, met de instelling nieuwe ADT_SERVICE_URL gemarkeerd. De knop Opslaan is ook gemarkeerd.":::
+1. Voor wijzigingen in de toepassings instellingen moet de toepassing opnieuw worden opgestart, dus Selecteer _door gaan_ om de toepassing opnieuw op te starten wanneer u hierom wordt gevraagd.
 
-Voor wijzigingen in de toepassings instellingen moet de toepassing opnieuw worden gestart. Selecteer _door gaan_ om de toepassing opnieuw op te starten.
+    :::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: er is een melding dat er wijzigingen in de toepassings instellingen zijn aangebracht met het opnieuw opstarten van de toepassing. De knop door gaan is gemarkeerd.":::
 
-:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: er is een melding dat er wijzigingen in de toepassings instellingen zijn aangebracht met het opnieuw opstarten van de toepassing. De knop door gaan is gemarkeerd.":::
-
-U kunt zien dat de toepassings instellingen worden bijgewerkt door het pictogram _meldingen_ te selecteren. Als uw toepassings instelling niet is gemaakt, kunt u opnieuw proberen een toepassings instelling toe te voegen door het bovenstaande proces te volgen.
-
-:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Scherm afbeelding van de Azure Portal: in de lijst met meldingen ziet u het pictogram voor de klok vorm in de bovenste balk van de portal. Er is een melding dat de web-app-instellingen zijn bijgewerkt.":::
+---
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ author: troy0820
 ms.author: b-trconn
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc
-ms.openlocfilehash: a05003bfeceb46059ad0301f99befcdceb456e89
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 42ad24e4421b75a3942879bcac8f99b3c8b8138a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633288"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180952"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-backup"></a>Een Azure Red Hat open Shift 4-cluster toepassing back-up maken
 
@@ -22,9 +22,6 @@ In dit artikel maakt u een voor bereiding van uw omgeving voor het maken van een
 > [!div class="checklist"]
 > * De vereisten instellen en de benodigde hulpprogram ma's installeren
 > * Een Azure Red Hat open Shift 4-toepassing maken
-
-> [!NOTE] 
-> Velero maakt geen back-up van Azure Red Hat open Shift etcd sleutel-value Store-gegevens. Als u een back-up wilt maken van etcd, raadpleegt u [een back-up maken van etcd](https://docs.openshift.com/container-platform/4.5/backup_and_restore/backing-up-etcd.html).
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 

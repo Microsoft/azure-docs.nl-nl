@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 7d49499b39c562aeff20d163fc86401d8c1f4a06
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 4c67d3608d2128385c273425ea495a02fa5a8c45
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579161"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180901"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten in de Azure Portal
 
@@ -29,7 +29,7 @@ Als u geen ACI eerder hebt gebruikt, registreert u de service provider bij uw ab
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
 ```
 
-De provider van *micro soft. ContainerInstance* meldt zich aan als *geregistreerd* , zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
+De provider van *micro soft. ContainerInstance* meldt zich aan als *geregistreerd*, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
 
 ```output
 Namespace                    RegistrationState    RegistrationPolicy
@@ -37,7 +37,7 @@ Namespace                    RegistrationState    RegistrationPolicy
 Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```
 
-Als de provider wordt weer gegeven als *NotRegistered* , registreert u de provider met behulp van de [AZ provider REGI ster][az-provider-register] , zoals wordt weer gegeven in het volgende voor beeld:
+Als de provider wordt weer gegeven als *NotRegistered*, registreert u de provider met behulp van de [AZ provider REGI ster][az-provider-register] , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -53,9 +53,9 @@ Selecteer in de linkerbovenhoek van de Azure Portal **een resource**  >  **Kuber
 
 Configureer op de pagina **Basisprincipes** de volgende opties:
 
-- *Project Details* : Selecteer een Azure-abonnement en selecteer of maak een Azure-resource groep, zoals *myResourceGroup*. Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*.
-- *CLUSTERDETAILS* : selecteer een regio, Kubernetes-versie en DNS-naamvoorvoegsel voor het AKS-cluster.
-- *Primaire knooppunt groep* : Selecteer een VM-grootte voor de AKS-knoop punten. De VM-grootte kan **niet** meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
+- *Project Details*: Selecteer een Azure-abonnement en selecteer of maak een Azure-resource groep, zoals *myResourceGroup*. Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*.
+- *CLUSTERDETAILS*: selecteer een regio, Kubernetes-versie en DNS-naamvoorvoegsel voor het AKS-cluster.
+- *Primaire knooppunt groep*: Selecteer een VM-grootte voor de AKS-knoop punten. De VM-grootte kan **niet** meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
      - Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Voor dit artikel stelt u het **aantal knoop punten** in op *1*. Het aantal knooppunten kan nog **wel** worden gewijzigd als het cluster is geïmplementeerd.
 
 Klik op **volgende: schalen**.
@@ -78,7 +78,7 @@ Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit a
 
 Als u Cloud Shell wilt openen, selecteert u **Proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud Shell ook openen in een afzonderlijk browsertabblad door naar [https://shell.azure.com/bash](https://shell.azure.com/bash) te gaan. Klik op **Kopiëren** om de codeblokken te kopiëren, plak deze in Cloud Shell en druk vervolgens op Enter om de code uit te voeren.
 
-Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` te configureren om verbinding te maken met het Kubernetes-cluster. In het volgende voorbeeld worden de referenties opgehaald voor de clusternaam *myAKSCluster* in de resourcegroep met de naam *myResourceGroup* :
+Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` te configureren om verbinding te maken met het Kubernetes-cluster. In het volgende voorbeeld worden de referenties opgehaald voor de clusternaam *myAKSCluster* in de resourcegroep met de naam *myResourceGroup*:
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -90,7 +90,7 @@ Als u de verbinding met uw cluster wilt controleren, gebruikt u de opdracht [kub
 kubectl get nodes
 ```
 
-In de volgende voorbeeld uitvoer ziet u het knoop punt met één VM dat is gemaakt en vervolgens het virtuele knoop punt voor Linux, *Virtual-node-ACI-Linux* :
+In de volgende voorbeeld uitvoer ziet u het knoop punt met één VM dat is gemaakt en vervolgens het virtuele knoop punt voor Linux, *Virtual-node-ACI-Linux*:
 
 ```output
 NAME                           STATUS    ROLES     AGE       VERSION
@@ -210,9 +210,9 @@ Virtuele knoop punten zijn één onderdeel van een schaal oplossing in AKS. Raad
 
 <!-- LINKS - internal -->
 [aks-network]: ./configure-azure-cni.md
-[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [aks-hpa]: tutorial-kubernetes-scale.md
 [aks-cluster-autoscaler]: cluster-autoscaler.md
 [aks-basic-ingress]: ingress-basic.md
-[az-provider-list]: /cli/azure/provider?view=azure-cli-latest#az-provider-list
-[az-provider-register]: /cli/azure/provider?view=azure-cli-latest&preserve-view=true#az-provider-register
+[az-provider-list]: /cli/azure/provider#az-provider-list
+[az-provider-register]: /cli/azure/provider#az-provider-register

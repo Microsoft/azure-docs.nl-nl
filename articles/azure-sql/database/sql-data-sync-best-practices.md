@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/20/2018
-ms.openlocfilehash: 59e28e4a3d630aac0954802e8777058c00261006
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ee15bfaa1d69e2e5047e7d24986f8e4e7d5b8b31
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791440"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180238"
 ---
 # <a name="best-practices-for-azure-sql-data-sync"></a>Aanbevolen procedures voor Azure SQL Data Sync 
 
@@ -41,9 +41,9 @@ Zie [Gegevens synchroniseren tussen meerdere cloud- en on-premises databases met
 
 ### <a name="database-accounts-with-least-required-privileges"></a>Database accounts met mini maal vereiste bevoegdheden
 
--   **Voor de synchronisatie-instellingen** . Create/ALTER TABLE; Alter data base; Procedure maken; Schema selecteren/wijzigen; User-Defined type maken.
+-   **Voor de synchronisatie-instellingen**. Create/ALTER TABLE; Alter data base; Procedure maken; Schema selecteren/wijzigen; User-Defined type maken.
 
--   **Voor een voortdurende synchronisatie** . Selecteren/invoegen/bijwerken/verwijderen voor tabellen die zijn geselecteerd voor synchronisatie, en op meta gegevens synchroniseren en tracerings tabellen. Machtiging voor uitvoeren voor opgeslagen procedures die zijn gemaakt door de service; Machtiging voor uitvoeren voor door de gebruiker gedefinieerde tabel typen.
+-   **Voor een voortdurende synchronisatie**. Selecteren/invoegen/bijwerken/verwijderen voor tabellen die zijn geselecteerd voor synchronisatie, en op meta gegevens synchroniseren en tracerings tabellen. Machtiging voor uitvoeren voor opgeslagen procedures die zijn gemaakt door de service; Machtiging voor uitvoeren voor door de gebruiker gedefinieerde tabel typen.
 
 -   **Voor** het ongedaan maken van de inrichting. Wijzigen van het gedeelte van de synchronisatie van tabellen. Selecteren/verwijderen bij het synchroniseren van meta gegevens tabellen; Beheer van tabellen voor synchronisatie bijhouden, opgeslagen procedures en door de gebruiker gedefinieerde typen.
 
@@ -51,6 +51,10 @@ Azure SQL Database ondersteunt slechts één set met referenties. Als u deze tak
 
 -   Wijzig de referenties voor de verschillende fasen (bijvoorbeeld *credentials1* voor Setup en *credentials2* voor doorlopend).  
 -   Wijzig de machtiging van de referenties (dat wil zeggen, de machtiging wijzigen nadat de synchronisatie is ingesteld).
+
+### <a name="auditing"></a>Controleren
+
+Het is raadzaam om controle in te scha kelen op het niveau van de data bases in de synchronisatie groepen. 
 
 ## <a name="setup"></a>Instellen
 

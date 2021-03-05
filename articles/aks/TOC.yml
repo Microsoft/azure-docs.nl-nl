@@ -262,8 +262,8 @@
           href: control-kubeconfig-access.md
         - name: Pod-verkeer beveiligen met netwerkbeleid
           href: use-network-policies.md
-        - name: Pods beveiligen met Azure Policy
-          href: use-pod-security-on-azure-policy.md
+        - name: Azure Policy gebruiken
+          href: use-azure-policy.md
         - name: Pod-beveiligingsbeleid (preview) gebruiken
           href: use-pod-security-policies.md
         - name: Gemachtigde IP-bereiken voor de API-server definiëren

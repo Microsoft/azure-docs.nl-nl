@@ -4,12 +4,12 @@ description: Meer informatie over het aanpassen van de functie voor verificatie 
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 4f2f43b142b290d29a4a90e504422b6c9ba2739c
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 50587feff29e1c02a639d63d0c99156dcec4f68e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630324"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180867"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Geavanceerd gebruik van verificatie en autorisatie in Azure App Service
 
@@ -648,7 +648,7 @@ U kunt de huidige versie van de platform verificatie-middleware weer geven met b
 
 ##### <a name="from-the-azure-cli"></a>Uit de Azure CLI
 
-Gebruik de Azure CLI om de huidige middleware-versie te bekijken met de opdracht [AZ webapp auth show](/cli/azure/webapp/auth?view=azure-cli-latest&preserve-view=true#az-webapp-auth-show) .
+Gebruik de Azure CLI om de huidige middleware-versie te bekijken met de opdracht [AZ webapp auth show](/cli/azure/webapp/auth#az-webapp-auth-show) .
 
 ```azurecli-interactive
 az webapp auth show --name <my_app_name> \
@@ -679,7 +679,7 @@ U kunt ook op/.auth/version-eind punt in een app drukken om de huidige middlewar
 
 #### <a name="update-the-current-runtime-version"></a>De huidige runtime versie bijwerken
 
-Met de Azure CLI kunt u de `runtimeVersion` instelling in de app bijwerken met de opdracht [AZ webapp auth update](/cli/azure/webapp/auth?view=azure-cli-latest&preserve-view=true#az-webapp-auth-update) .
+Met de Azure CLI kunt u de `runtimeVersion` instelling in de app bijwerken met de opdracht [AZ webapp auth update](/cli/azure/webapp/auth#az-webapp-auth-update) .
 
 ```azurecli-interactive
 az webapp auth update --name <my_app_name> \

@@ -6,23 +6,24 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: a655c8c145b4f3812dae9f1a4ec1e5eebbe44809
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: af8403f80f7282207ee1bc6b2f81da0d83d264e0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348471"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180935"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten met behulp van de Azure CLI
 
 In dit artikel wordt beschreven hoe u de Azure CLI gebruikt om de virtuele netwerk resources en het AKS-cluster te maken en te configureren en vervolgens virtuele knoop punten in te scha kelen.
 
-> [!NOTE]
-> In [dit artikel](virtual-nodes.md) vindt u een overzicht van de beschik baarheid van regio's en beperkingen met behulp van virtuele knoop punten.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 Virtuele knoop punten scha kelen netwerk communicatie in tussen de peulen die worden uitgevoerd in Azure Container Instances (ACI) en het AKS-cluster. Om deze communicatie te bieden, wordt een subnet van een virtueel netwerk gemaakt en worden gedelegeerde machtigingen toegewezen. Virtuele knoop punten werken alleen met AKS-clusters die zijn gemaakt met *Advanced* Network (Azure cni). Standaard worden AKS-clusters gemaakt met *Basic* -netwerken (kubenet). In dit artikel wordt beschreven hoe u een virtueel netwerk en subnetten maakt en hoe u een AKS-cluster implementeert dat gebruikmaakt van geavanceerde netwerken.
+
+> [!IMPORTANT]
+> Voordat u virtuele knoop punten met AKS gebruikt, raadpleegt u de [beperkingen van AKS virtuele knoop punten][virtual-nodes-aks] en de [beperkingen voor virtuele netwerken van ACI][virtual-nodes-networking-aci]. Deze beperkingen zijn van invloed op de locatie, de netwerk configuratie en andere configuratie details van uw AKS-cluster en de virtuele knoop punten.
 
 Als u geen ACI eerder hebt gebruikt, registreert u de service provider bij uw abonnement. U kunt de status van de ACI-provider registratie controleren met de opdracht [AZ provider List][az-provider-list] , zoals wordt weer gegeven in het volgende voor beeld:
 
@@ -30,7 +31,7 @@ Als u geen ACI eerder hebt gebruikt, registreert u de service provider bij uw ab
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
 ```
 
-De provider van *micro soft. ContainerInstance* meldt zich aan als *geregistreerd* , zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
+De provider van *micro soft. ContainerInstance* meldt zich aan als *geregistreerd*, zoals wordt weer gegeven in de volgende voorbeeld uitvoer:
 
 ```output
 Namespace                    RegistrationState    RegistrationPolicy
@@ -38,7 +39,7 @@ Namespace                    RegistrationState    RegistrationPolicy
 Microsoft.ContainerInstance  Registered           RegistrationRequired
 ```
 
-Als de provider wordt weer gegeven als *NotRegistered* , registreert u de provider met behulp van de [AZ provider REGI ster][az-provider-register] , zoals wordt weer gegeven in het volgende voor beeld:
+Als de provider wordt weer gegeven als *NotRegistered*, registreert u de provider met behulp van de [AZ provider REGI ster][az-provider-register] , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -62,7 +63,7 @@ az group create --name myResourceGroup --location westus
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Maak een virtueel netwerk met behulp van de opdracht [AZ Network vnet Create][az-network-vnet-create] . In het volgende voor beeld wordt een virtuele netwerk naam *myVnet* met het adres voorvoegsel *10.0.0.0/8* en een subnet met de naam *myAKSSubnet*. Het adres voorvoegsel van dit subnet is standaard ingesteld op *10.240.0.0/16* :
+Maak een virtueel netwerk met behulp van de opdracht [AZ Network vnet Create][az-network-vnet-create] . In het volgende voor beeld wordt een virtuele netwerk naam *myVnet* met het adres voorvoegsel *10.0.0.0/8* en een subnet met de naam *myAKSSubnet*. Het adres voorvoegsel van dit subnet is standaard ingesteld op *10.240.0.0/16*:
 
 ```azurecli-interactive
 az network vnet create \
@@ -175,7 +176,7 @@ Als u de verbinding met uw cluster wilt controleren, gebruikt u de opdracht [kub
 kubectl get nodes
 ```
 
-In de volgende voorbeeld uitvoer ziet u het knoop punt met één VM dat is gemaakt en vervolgens het virtuele knoop punt voor Linux, *Virtual-node-ACI-Linux* :
+In de volgende voorbeeld uitvoer ziet u het knoop punt met één VM dat is gemaakt en vervolgens het virtuele knoop punt voor Linux, *Virtual-node-ACI-Linux*:
 
 ```output
 NAME                          STATUS    ROLES     AGE       VERSION
@@ -352,3 +353,5 @@ Virtuele knoop punten zijn vaak één onderdeel van een schaal oplossing in AKS.
 [aks-basic-ingress]: ingress-basic.md
 [az-provider-list]: /cli/azure/provider#az-provider-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
+[virtual-nodes-aks]: virtual-nodes.md
+[virtual-nodes-networking-aci]: ../container-instances/container-instances-virtual-network-concepts.md

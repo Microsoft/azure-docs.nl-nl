@@ -4,21 +4,26 @@ description: Meer informatie over het beheren van pod-toelatingen met behulp van
 services: container-service
 ms.topic: article
 ms.date: 02/12/2021
-ms.openlocfilehash: 23c436cb3ddf970939ab9d7b936a4e03e1fbb7ff
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: cb317e5e0d1f558121e675f569bad37811768ca6
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371223"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180306"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Voor beeld: uw cluster beveiligen met behulp van pod-beveiligings beleid in azure Kubernetes service (AKS)
 
 > [!WARNING]
-> **De functie die wordt beschreven in dit document, Pod-beveiligings beleid (preview), is ingesteld voor afschaffing en is niet meer beschikbaar na 30 juni 2021** voor het voor deel van [Azure Policy voor AKS](use-pod-security-on-azure-policy.md). De datum van afschaffing is verlengd vanaf de vorige datum van 15 oktober 2020.
+> **De functie die wordt beschreven in dit document, Pod-beveiligings beleid (preview), is ingesteld voor afschaffing en is niet meer beschikbaar na 30 juni 2021** voor het voor deel van [Azure Policy voor AKS](use-azure-policy.md). De datum van afschaffing is verlengd vanaf de vorige datum van 15 oktober 2020.
 >
 > Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
 >
-> Het wordt sterk aanbevolen om te beginnen met het testen van scenario's met Azure Policy voor AKS, die ingebouwde beleids regels biedt voor het beveiligen van de peulen en ingebouwde initiatieven die zijn toegewezen aan pod-beveiligings beleid. Klik hier voor meer informatie over [het migreren naar Azure Policy van pod-beveiligings beleid (preview-versie)](use-pod-security-on-azure-policy.md#migrate-from-kubernetes-pod-security-policy-to-azure-policy).
+> Het wordt sterk aanbevolen om te beginnen met het testen van scenario's met Azure Policy voor AKS, die ingebouwde beleids regels biedt voor het beveiligen van de peulen en ingebouwde initiatieven die zijn toegewezen aan pod-beveiligings beleid. Als u wilt migreren vanuit pod-beveiligings beleid, moet u de volgende acties uitvoeren op een cluster.
+> 
+> 1. Het [pod-beveiligings beleid](#clean-up-resources) op het cluster uitschakelen
+> 1. De [invoeg toepassing Azure Policy][kubernetes-policy-reference] inschakelen
+> 1. Schakel het gewenste Azure-beleid in op basis van het [beschik bare ingebouwde beleid][policy-samples]
+> 1. Wijzigingen in het [gedrag controleren tussen pod-beveiligings beleid en Azure Policy](#behavior-changes-between-pod-security-policy-and-azure-policy)
 
 Als u de beveiliging van uw AKS-cluster wilt verbeteren, kunt u het aantal peulen dat kan worden gepland, beperken. De meeste resources die u niet toestaat, kunnen niet worden uitgevoerd in het AKS-cluster. U definieert deze toegang met behulp van pod-beveiligings beleid. Dit artikel laat u zien hoe u pod-beveiligings beleid kunt gebruiken om de implementatie van een van de peulen in AKS te beperken.
 
@@ -77,6 +82,26 @@ Wanneer u pod-beveiligings beleid inschakelt in een AKS-cluster, worden er een a
 * De functie pod-beveiligings beleid inschakelen
 
 Als u wilt weer geven hoe de standaard beleids regels pod-implementaties beperken, wordt in dit artikel eerst de functie pod-beveiligings beleid ingeschakeld. vervolgens maakt u een aangepast beleid.
+
+### <a name="behavior-changes-between-pod-security-policy-and-azure-policy"></a>Gedrag verandert tussen pod-beveiligings beleid en Azure Policy
+
+Hieronder vindt u een overzicht van de gedrags wijzigingen tussen pod-beveiligings beleid en Azure Policy.
+
+|Scenario| Pod-beveiligings beleid | Azure Policy |
+|---|---|---|
+|Installatie|Functie pod-beveiligings beleid inschakelen |Invoeg toepassing inschakelen Azure Policy
+|Beleid implementeren| Resource voor pod-beveiligings beleid implementeren| Wijs Azure-beleid toe aan het bereik van het abonnement of de resource groep. De Azure Policy-invoeg toepassing is vereist voor Kubernetes-resource toepassingen.
+| Standaard beleid | Wanneer pod-beveiligings beleid is ingeschakeld in AKS, worden er standaard privileged en beleid voor onbeperkte toegang toegepast. | Er wordt geen standaard beleid toegepast door de invoeg toepassing Azure Policy in te scha kelen. U moet expliciet beleid inschakelen in Azure Policy.
+| Wie beleid kan maken en toewijzen | Er wordt een pod-beveiligings beleids resource gemaakt door Cluster beheerder | Gebruikers moeten beschikken over de machtiging ' eigenaar ' of ' Inzender ' van het resource beleid voor de cluster resource groep AKS. -Via-API kunnen gebruikers beleid toewijzen op het AKS-cluster bron bereik. De gebruiker moet mini maal de machtigingen ' eigenaar ' of ' Inzender voor resource beleid ' hebben voor de AKS-cluster bron. -In de Azure Portal kunnen beleids regels worden toegewezen op het niveau van de beheer groep/het abonnement/de resource groep.
+| Beleid voor autorisatie| Gebruikers en service accounts vereisen expliciete machtigingen voor het gebruik van pod-beveiligings beleid. | Er is geen aanvullende toewijzing vereist om beleid te autoriseren. Zodra het beleid is toegewezen in azure, kunnen alle cluster gebruikers deze beleids regels gebruiken.
+| Toepas baarheid van beleid | De gebruiker met beheerders rechten negeert de afdwinging van pod-beveiligings beleid. | Alle gebruikers (beheerder & niet-beheerder) zien hetzelfde beleid. Er is geen speciale behuizing op basis van gebruikers. De beleids toepassing kan worden uitgesloten op het niveau van de naam ruimte.
+| Beleids bereik | Het Pod-beveiligings beleid is niet in een naam ruimte | Beperkings sjablonen die door Azure Policy worden gebruikt, zijn niet in een naam ruimte.
+| Actie voor weigeren/controleren/mutatie | Het Pod-beveiligings beleid ondersteunt alleen acties voor weigeren. Mutatie kan worden uitgevoerd met standaard waarden bij het maken van aanvragen. Validatie kan worden uitgevoerd tijdens update aanvragen.| Azure Policy ondersteunt zowel controle & acties weigeren. Mutatie wordt nog niet ondersteund, maar gepland.
+| Naleving van pod-beveiligings beleid | Er is geen zicht baarheid van de naleving van de voor Schriften die bestonden voordat het Pod-beveiligings beleid is ingeschakeld. Niet-compatibele peulen die zijn gemaakt nadat pod-beveiligings beleid is ingeschakeld, worden geweigerd. | Het niet-compatibele peul dat bestond voordat een Azure-beleid werd toegepast, zou in beleids schendingen worden weer gegeven. Niet-compatibele peulen die zijn gemaakt na het inschakelen van Azure-beleid, worden geweigerd als beleids regels zijn ingesteld met een weigerings effect.
+| Beleids regels op het cluster weer geven | `kubectl get psp` | `kubectl get constrainttemplate` -Alle beleids regels worden geretourneerd.
+| Pod beveiligings beleid standaard-privileged | Wanneer u de functie inschakelt, wordt er standaard een privileged pod Security Policy resource gemaakt. | De geprivilegieerde modus impliceert geen beperking. als gevolg hiervan is het gelijk aan geen enkele Azure Policy toewijzing.
+| [Pod-beveiligings beleid-standaard-basis lijn/standaard](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline-default) | Gebruiker installeert een basis lijn voor het Pod-beveiligings beleid. | Azure Policy biedt een [ingebouwd Baseline-initiatief](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2Fa8640138-9b0a-4a28-b8cb-1666c838647d) dat is gekoppeld aan het Pod-beveiligings beleid van de basis lijn.
+| [Pod-beveiligings beleid Standard-beperkt](https://kubernetes.io/docs/concepts/security/pod-security-standards/#restricted) | Gebruiker installeert een door Pod beveiligings beleid beperkte resource. | Azure Policy biedt een [ingebouwd beperkt initiatief](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicySetDefinitions%2F42b8ef37-b724-4e24-bbc8-7a7708edfe00) dat is gekoppeld aan het beperkte pod-beveiligings beleid.
 
 ## <a name="enable-pod-security-policy-on-an-aks-cluster"></a>Pod-beveiligings beleid inschakelen op een AKS-cluster
 
@@ -453,3 +478,4 @@ Zie voor meer informatie over het beperken van pod-netwerk verkeer [beveiligde v
 [aks-faq]: faq.md
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
+[policy-samples]: ./policy-reference.md#microsoftcontainerservice

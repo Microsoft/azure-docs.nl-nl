@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: da1acc6316d7af87ffe35b9560919c324373591a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b2471ccd2a412c7cbae9d4e59412ac055697e3d7
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484597"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102180357"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Azure Storage-versleuteling voor inactieve gegevens
 
-Azure Storage versleutelt uw gegevens automatisch wanneer deze in de cloud worden bewaard. Azure Storage versleuteling beveiligt uw gegevens en helpt u om te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie.
+Azure Storage gebruikt SSE (server side Encryption) om uw gegevens automatisch te versleutelen wanneer deze in de cloud worden bewaard. Azure Storage versleuteling beveiligt uw gegevens en helpt u om te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie.
 
 ## <a name="about-azure-storage-encryption"></a>Over Azure Storage versleuteling
 
@@ -32,7 +32,7 @@ Elke blok-blob, een toevoeg-BLOB of een pagina-blob die na 20 oktober 2017 is ge
 
 Zie [crypto GRAFIE API: Next Generation](/windows/desktop/seccng/cng-portal)(Engelstalig) voor meer informatie over de onderliggende cryptografische modules Azure Storage versleuteling.
 
-Voor informatie over versleuteling en sleutel beheer voor Azure Managed disks, Zie [Server versleuteling van Azure Managed disks](../../virtual-machines/disk-encryption.md) voor Windows-vm's of [versleuteling aan de server zijde van Azure Managed disks](../../virtual-machines/disk-encryption.md) voor Linux-vm's.
+Zie [server-side Encryption of Azure Managed disks](../../virtual-machines/disk-encryption.md)(Engelstalig) voor meer informatie over versleuteling en sleutel beheer voor Azure Managed disks.
 
 ## <a name="about-encryption-key-management"></a>Over het beheer van versleutelings sleutels
 

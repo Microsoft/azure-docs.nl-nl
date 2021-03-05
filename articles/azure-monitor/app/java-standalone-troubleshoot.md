@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 286354ecf508dec7b9ba7633bf3b5c7ddc6bfd91
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 45f45e71546909b71c71c66303c1459edd74548f
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737054"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199608"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -45,7 +45,7 @@ Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfi
 
 De beste manier om te bepalen of een bepaalde logboek registratie-instructie voldoet aan de geconfigureerde drempel waarde voor registratie raamwerken is om te bevestigen dat deze wordt weer gegeven in uw normale toepassings logboek (bijvoorbeeld bestand of console).
 
-Houd er ook rekening mee dat als een uitzonde ring wordt door gegeven aan de logboek registratie, het logboek bericht (en uitzonde ring) wordt weer gegeven in de Azure Portal in `exceptions` plaats van de `traces` tabel.
+Houd er ook rekening mee dat als een uitzonderings object wordt door gegeven aan de logboek registratie, het logboek bericht (en Details van uitzonderings object) wordt weer gegeven in de Azure Portal onder de `exceptions` tabel in plaats van de `traces` tabel.
 
 Zie de [configuratie voor automatisch verzamelde logboek registratie](./java-standalone-config.md#auto-collected-logging) voor meer informatie.
 

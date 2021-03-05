@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 43a019c8bd3544b769a6b4346d8986bc8e01a4a1
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: b839df7abe6552506456ed6d0485405f43ea4639
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560131"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198350"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -61,6 +61,7 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 | ![In deze afbeelding ziet u het ASP.NET Core-logo](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Zelfstudie voor gebruikersaanmelding met ASP.NET Core-web-app](https://aka.ms/aspnetcore-webapp-sign-in) | Hetzelfde voorbeeld in de fase [ASP.NET Core web-app roept Microsoft Graph aan](https://aka.ms/aspnetcore-webapp-call-msgraph)</p>Geavanceerd voorbeeld [Toegang tot de tokencache van de aangemelde gebruiker voor achtergrond-apps, API's en services](https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache) |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Migratiedraaiboek voor AD FS naar Azure AD voor ontwikkelaars](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad) om te leren hoe u veilig uw toepassingen die geïntegreerd zijn in Active Directory Federation Services (AD FS) migreert naar Azure Active Directory (Azure AD) | |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [ASP.NET-quickstart](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie voor hoofd stuk java servlet web app-hoofd stuk 1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication)| [Zelf studie voor hoofd stuk java servlet web app-hoofd stuk 2](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication) |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |                   | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | [ms-identity-b2c-java-servlet-webapp-authentication](https://github.com/Azure-Samples/ms-identity-b2c-java-servlet-webapp-authentication)|  |
 | ![In deze afbeelding ziet u het Node.js-logo](media/sample-v2-code/logo_nodejs.png)</p>Node.js (MSAL-knoop punt) | [Zelf studie voor de gebruikers handleiding voor Express web-apps](https://github.com/Azure-Samples/ms-identity-node) | |

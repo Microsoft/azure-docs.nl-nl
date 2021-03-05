@@ -9,12 +9,12 @@ ms.service: iot-central
 ms.custom: devx-track-azurecli, device-developer
 services: iot-central
 manager: corywink
-ms.openlocfilehash: b266def0dbe81542714fc6d47986f3cde8235dd0
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 62981686c7aadc713c4abc78075be8613fe0af45
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122957"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199303"
 ---
 # <a name="monitor-device-connectivity-using-azure-cli"></a>Apparaatconnectiviteit bewaken met Azure CLI
 
@@ -22,7 +22,7 @@ ms.locfileid: "92122957"
 
 Gebruik de Azure CLI IoT-extensie om berichten te bekijken die uw apparaten naar IoT Central verzenden en wijzigingen in het apparaat te observeren. U kunt dit hulp programma gebruiken om de connectiviteit van apparaten op te sporen en te controleren op problemen met de toegang tot de Cloud of apparaten die niet reageren op twee wijzigingen.
 
-[Bezoek de naslag informatie voor Azure CLI-extensies voor meer informatie](/cli/azure/ext/azure-iot/iot/central?view=azure-cli-latest)
+[Bezoek de naslag informatie voor Azure CLI-extensies voor meer informatie](/cli/azure/ext/azure-iot/iot/central)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -62,7 +62,7 @@ az login
 ```
 
 ### <a name="get-the-application-id-of-your-iot-central-app"></a>De toepassings-ID van uw IoT Central-app ophalen
-Kopieer de **toepassings-id**in **beheer/toepassings instellingen**. U gebruikt deze waarde in latere stappen.
+Kopieer de **toepassings-id** in **beheer/toepassings instellingen**. U gebruikt deze waarde in latere stappen.
 
 ### <a name="monitor-messages"></a>Berichten bewaken
 Controleer de berichten die naar uw IoT Central-app worden verzonden vanaf uw apparaten. De uitvoer bevat alle kopteksten en aantekeningen.
@@ -71,7 +71,7 @@ Controleer de berichten die naar uw IoT Central-app worden verzonden vanaf uw ap
 az iot central diagnostics monitor-events --app-id <app-id> --properties all
 ```
 
-### <a name="view-device-properties"></a>Apparaateigenschappen weer geven
+### <a name="view-device-properties"></a>Apparaateigenschappen weergeven
 De huidige eigenschappen voor lezen en lezen/schrijven weer geven voor een bepaald apparaat.
 
 ```azurecli

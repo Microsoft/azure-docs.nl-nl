@@ -3,12 +3,12 @@ title: Beheerde identiteit inschakelen in container groep
 description: Meer informatie over het inschakelen van een beheerde identiteit in Azure Container Instances die kan worden geverifieerd met andere Azure-Services
 ms.topic: article
 ms.date: 07/02/2020
-ms.openlocfilehash: 67ef17b77a9db92e539dd860a3083760fe1160db
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: a0d029e39122ca7bb858103f4d7f88e2536850d5
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558943"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198316"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Beheerde identiteiten gebruiken met Azure Container Instances
 
@@ -53,13 +53,13 @@ Als u een beheerde identiteit wilt gebruiken, moet aan de identiteit toegang wor
 
 In de voor beelden in dit artikel wordt een beheerde identiteit in Azure Container Instances gebruikt om toegang te krijgen tot een geheim van Azure sleutel kluis. 
 
-Maak eerst een resourcegroep met de naam *myResourceGroup* in de locatie *eastus* met behulp van de opdracht [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create):
+Maak eerst een resourcegroep met de naam *myResourceGroup* in de locatie *eastus* met behulp van de opdracht [az group create](/cli/azure/group#az-group-create):
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Gebruik de opdracht [AZ Key kluis Create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) om een sleutel kluis te maken. Zorg ervoor dat u een unieke naam voor de sleutel kluis opgeeft. 
+Gebruik de opdracht [AZ Key kluis Create](/cli/azure/keyvault#az-keyvault-create) om een sleutel kluis te maken. Zorg ervoor dat u een unieke naam voor de sleutel kluis opgeeft. 
 
 ```azurecli-interactive
 az keyvault create \
@@ -68,7 +68,7 @@ az keyvault create \
   --location eastus
 ```
 
-Sla een voor beeld geheim op in de sleutel kluis met behulp van de opdracht [AZ Key kluis Secret set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set) :
+Sla een voor beeld geheim op in de sleutel kluis met behulp van de opdracht [AZ Key kluis Secret set](/cli/azure/keyvault/secret#az-keyvault-secret-set) :
 
 ```azurecli-interactive
 az keyvault secret set \
@@ -83,7 +83,7 @@ Ga door met de volgende voor beelden om toegang te krijgen tot de sleutel kluis 
 
 ### <a name="create-an-identity"></a>Een identiteit maken
 
-Maak eerst een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identity?view=azure-cli-latest#az-identity-create) . U kunt dezelfde resource groep gebruiken als voor het maken van de sleutel kluis of een andere gebruiken.
+Maak eerst een identiteit in uw abonnement met behulp van de opdracht [AZ Identity Create](/cli/azure/identity#az-identity-create) . U kunt dezelfde resource groep gebruiken als voor het maken van de sleutel kluis of een andere gebruiken.
 
 ```azurecli-interactive
 az identity create \
@@ -91,7 +91,7 @@ az identity create \
   --name myACIId
 ```
 
-Als u de identiteit in de volgende stappen wilt gebruiken, gebruikt u de opdracht [AZ Identity show](/cli/azure/identity?view=azure-cli-latest#az-identity-show) om de Service-Principal-id en resource-id van de identiteit op te slaan in variabelen.
+Als u de identiteit in de volgende stappen wilt gebruiken, gebruikt u de opdracht [AZ Identity show](/cli/azure/identity#az-identity-show) om de Service-Principal-id en resource-id van de identiteit op te slaan in variabelen.
 
 ```azurecli-interactive
 # Get service principal ID of the user-assigned identity
@@ -109,7 +109,7 @@ resourceID=$(az identity show \
 
 ### <a name="grant-user-assigned-identity-access-to-the-key-vault"></a>Aan de gebruiker toegewezen identiteits toegang verlenen tot de sleutel kluis
 
-Voer de volgende [AZ-set-Policy](/cli/azure/keyvault?view=azure-cli-latest) opdracht uit om een toegangs beleid in te stellen op de sleutel kluis. In het volgende voor beeld is het mogelijk dat de door de gebruiker toegewezen identiteit geheimen van de sleutel kluis krijgt:
+Voer de volgende [AZ-set-Policy](/cli/azure/keyvault) opdracht uit om een toegangs beleid in te stellen op de sleutel kluis. In het volgende voor beeld is het mogelijk dat de door de gebruiker toegewezen identiteit geheimen van de sleutel kluis krijgt:
 
 ```azurecli-interactive
  az keyvault set-policy \
@@ -121,7 +121,7 @@ Voer de volgende [AZ-set-Policy](/cli/azure/keyvault?view=azure-cli-latest) opdr
 
 ### <a name="enable-user-assigned-identity-on-a-container-group"></a>Door de gebruiker toegewezen identiteit inschakelen voor een container groep
 
-Voer de volgende opdracht [AZ container Create](/cli/azure/container?view=azure-cli-latest#az-container-create) uit om een container exemplaar te maken op basis van de installatie kopie van micro soft `azure-cli` . Dit voor beeld bevat een groep met één container die u interactief kunt gebruiken om de Azure CLI uit te voeren voor toegang tot andere Azure-Services. In deze sectie wordt alleen het basis besturingssysteem gebruikt. Zie voor een voor beeld van het gebruik van de Azure CLI in de container de door [het systeem toegewezen identiteit inschakelen voor een container groep](#enable-system-assigned-identity-on-a-container-group). 
+Voer de volgende opdracht [AZ container Create](/cli/azure/container#az-container-create) uit om een container exemplaar te maken op basis van de installatie kopie van micro soft `azure-cli` . Dit voor beeld bevat een groep met één container die u interactief kunt gebruiken om de Azure CLI uit te voeren voor toegang tot andere Azure-Services. In deze sectie wordt alleen het basis besturingssysteem gebruikt. Zie voor een voor beeld van het gebruik van de Azure CLI in de container de door [het systeem toegewezen identiteit inschakelen voor een container groep](#enable-system-assigned-identity-on-a-container-group). 
 
 De `--assign-identity` para meter geeft uw door de gebruiker toegewezen beheerde identiteit door aan de groep. De langlopende opdracht zorgt ervoor dat de container wordt uitgevoerd. In dit voor beeld wordt dezelfde resource groep gebruikt als voor het maken van de sleutel kluis, maar u kunt een andere naam opgeven.
 
@@ -134,7 +134,7 @@ az container create \
   --command-line "tail -f /dev/null"
 ```
 
-Binnen enkele seconden krijgt u een reactie van de Azure-CLI die aangeeft dat de implementatie is voltooid. Controleer de status met de opdracht [AZ container show](/cli/azure/container?view=azure-cli-latest#az-container-show) .
+Binnen enkele seconden krijgt u een reactie van de Azure-CLI die aangeeft dat de implementatie is voltooid. Controleer de status met de opdracht [AZ container show](/cli/azure/container#az-container-show) .
 
 ```azurecli-interactive
 az container show \
@@ -206,7 +206,7 @@ Het antwoord ziet er ongeveer als volgt uit, waarin het geheim wordt weer gegeve
 
 ### <a name="enable-system-assigned-identity-on-a-container-group"></a>Door het systeem toegewezen identiteit inschakelen voor een container groep
 
-Voer de volgende opdracht [AZ container Create](/cli/azure/container?view=azure-cli-latest#az-container-create) uit om een container exemplaar te maken op basis van de installatie kopie van micro soft `azure-cli` . Dit voor beeld bevat een groep met één container die u interactief kunt gebruiken om de Azure CLI uit te voeren voor toegang tot andere Azure-Services. 
+Voer de volgende opdracht [AZ container Create](/cli/azure/container#az-container-create) uit om een container exemplaar te maken op basis van de installatie kopie van micro soft `azure-cli` . Dit voor beeld bevat een groep met één container die u interactief kunt gebruiken om de Azure CLI uit te voeren voor toegang tot andere Azure-Services. 
 
 `--assign-identity`Met de para meter zonder extra waarde kan een door het systeem toegewezen beheerde identiteit voor de groep worden ingeschakeld. De identiteit ligt binnen het bereik van de resource groep van de container groep. De langlopende opdracht zorgt ervoor dat de container wordt uitgevoerd. In dit voor beeld wordt dezelfde resource groep gebruikt voor het maken van de sleutel kluis die zich binnen het bereik van de identiteit bevindt.
 
@@ -255,7 +255,7 @@ spID=$(az container show \
 
 ### <a name="grant-container-group-access-to-the-key-vault"></a>Container groep toegang verlenen tot de sleutel kluis
 
-Voer de volgende [AZ-set-Policy](/cli/azure/keyvault?view=azure-cli-latest) opdracht uit om een toegangs beleid in te stellen op de sleutel kluis. In het volgende voor beeld is het mogelijk dat de door het systeem beheerde identiteit geheimen van de sleutel kluis krijgt:
+Voer de volgende [AZ-set-Policy](/cli/azure/keyvault) opdracht uit om een toegangs beleid in te stellen op de sleutel kluis. In het volgende voor beeld is het mogelijk dat de door het systeem beheerde identiteit geheimen van de sleutel kluis krijgt:
 
 ```azurecli-interactive
  az keyvault set-policy \

@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: d99ec80308152ce9e4870da809acaa25c663d98d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c6b9cfab4256c72118a65f7fb0c8e672e2082ffe
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101715697"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199659"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Postman gebruiken om aanvragen te verzenden naar de Azure Digital Apparaatdubbels-Api's
 
@@ -21,7 +21,7 @@ ms.locfileid: "101715697"
 
 In dit artikel wordt beschreven hoe u de [postman rest-client](https://www.getpostman.com/) kunt configureren om te communiceren met de Azure Digital apparaatdubbels api's door de volgende stappen uit te voeren:
 
-1. Gebruik de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) om een Bearer-token op te halen die u gaat gebruiken om API-aanvragen in te voeren in de Postman.
+1. Gebruik de [Azure cli](/cli/azure/install-azure-cli) om een Bearer-token op te halen die u gaat gebruiken om API-aanvragen in te voeren in de Postman.
 1. Stel een postman-verzameling in en configureer de Postman REST-client om uw Bearer-token te gebruiken voor verificatie.
 1. Gebruik de geconfigureerde postman voor het maken en verzenden van een aanvraag naar de Azure Digital Apparaatdubbels-Api's.
 
@@ -41,9 +41,9 @@ Down load vervolgens de desktop versie van de Postman-client. Navigeer naar [*ww
 
 Nu u postman en uw Azure Digital Apparaatdubbels-exemplaar hebt ingesteld, moet u een Bearer-token ontvangen dat is ingesteld op het gebruik van de digitale Apparaatdubbels-Api's van Azure.
 
-Er zijn verschillende manieren om dit token op te halen. In dit artikel wordt de [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) gebruikt om u aan te melden bij uw Azure-account en een token op te halen.
+Er zijn verschillende manieren om dit token op te halen. In dit artikel wordt de [Azure cli](/cli/azure/install-azure-cli) gebruikt om u aan te melden bij uw Azure-account en een token op te halen.
 
-Als u een Azure CLI [lokaal hebt geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true), kunt u een opdracht prompt op uw computer starten om de volgende opdrachten uit te voeren.
+Als u een Azure CLI [lokaal hebt geïnstalleerd](/cli/azure/install-azure-cli), kunt u een opdracht prompt op uw computer starten om de volgende opdrachten uit te voeren.
 Als dat niet het geval is, kunt u een [Azure Cloud shell](https://shell.azure.com) -venster openen in uw browser en de opdrachten daar uitvoeren.
 
 1. Zorg er eerst voor dat u bent aangemeld bij Azure met de juiste referenties door deze opdracht uit te voeren:
@@ -52,7 +52,7 @@ Als dat niet het geval is, kunt u een [Azure Cloud shell](https://shell.azure.co
     az login
     ```
 
-1. Gebruik vervolgens de opdracht [AZ account Get-access-token](/cli/azure/account?preserve-view=true&view=azure-cli-latest#az_account_get_access_token) om een Bearer-token te verkrijgen met toegang tot de Azure Digital apparaatdubbels-service.
+1. Gebruik vervolgens de opdracht [AZ account Get-access-token](/cli/azure/account#az_account_get_access_token) om een Bearer-token te verkrijgen met toegang tot de Azure Digital apparaatdubbels-service.
 
     ```azurecli-interactive
     az account get-access-token --resource 0b07f429-9f4b-4714-9392-cc5e8e80c8b0

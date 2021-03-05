@@ -7,12 +7,12 @@ ms.service: iot-develop
 ms.devlang: node
 ms.topic: quickstart
 ms.date: 01/11/2021
-ms.openlocfilehash: 6e0264bc0d1bea91a6094f90c4cb41f071e17dfc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 97fcff4706d6da968c93426f85569fed9af95aac
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712573"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102197806"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-nodejs"></a>Quick Start: verzend telemetrie van een apparaat naar een IoT-hub (Node.js)
 
@@ -73,7 +73,7 @@ In deze sectie gebruikt u de SDK van Node.js om berichten te verzenden van uw ge
     export DEVICE_CONNECTION_STRING="<your connection string here>"
     ```
 
-1. Voer in uw open CLI-shell de opdracht [AZ IOT hub monitor-Events](/cli/azure/ext/azure-iot/iot/hub?preserve-view=true&view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IOT-apparaat.  Gebeurtenis berichten worden afgedrukt in de Terminal wanneer ze binnenkomen.
+1. Voer in uw open CLI-shell de opdracht [AZ IOT hub monitor-Events](/cli/azure/ext/azure-iot/iot/hub#ext-azure-iot-az-iot-hub-monitor-events) uit om te beginnen met het controleren op gebeurtenissen op uw gesimuleerde IOT-apparaat.  Gebeurtenis berichten worden afgedrukt in de Terminal wanneer ze binnenkomen.
 
     ```azurecli
     az iot hub monitor-events --output table --hub-name {YourIoTHubName}
@@ -191,12 +191,12 @@ Als u de Azure-resources die u in deze quickstart hebt gemaakt, niet meer nodig 
 > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. 
 
 Een resourcegroep verwijderen op naam:
-1. Voer de opdracht [az group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-delete) uit. Met deze opdracht verwijdert u de resource groep, het IoT Hub en de apparaatregistratie die u hebt gemaakt.
+1. Voer de opdracht [az group delete](/cli/azure/group#az-group-delete) uit. Met deze opdracht verwijdert u de resource groep, het IoT Hub en de apparaatregistratie die u hebt gemaakt.
 
     ```azurecli
     az group delete --name MyResourceGroup
     ```
-1. Voer de opdracht [az group list](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-list) uit om te controleren of de resourcegroep is verwijderd.  
+1. Voer de opdracht [az group list](/cli/azure/group#az-group-list) uit om te controleren of de resourcegroep is verwijderd.  
 
     ```azurecli
     az group list

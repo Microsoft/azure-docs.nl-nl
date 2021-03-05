@@ -5,13 +5,13 @@ ms.service: data-factory
 ms.topic: conceptual
 author: dcstwh
 ms.author: weetok
-ms.date: 08/31/2020
-ms.openlocfilehash: fb9439bc37fcecf1cb5299a09916ebe21c5bc1cb
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/04/2021
+ms.openlocfilehash: 06d04eb8679b4484f330b69a8cffb263d353bdcd
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393816"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102197877"
 ---
 # <a name="global-parameters-in-azure-data-factory"></a>Globale para meters in Azure Data Factory
 
@@ -21,7 +21,7 @@ Globale para meters zijn constanten over een data factory die kunnen worden gebr
 
 ## <a name="creating-global-parameters"></a>Globale para meters maken
 
-Als u een globale para meter wilt maken, gaat u naar het tabblad *globale para meters* in de sectie *beheren* . Selecteer **Nieuw** om het maken van de kant-NAV te openen.
+Als u een globale para meter wilt maken, gaat u naar het tabblad *globale para meters* in de sectie **beheren** . Selecteer **Nieuw** om het maken van de kant-NAV te openen.
 
 ![Scherm opname van de knop Nieuw die u selecteert voor het maken van algemene para meters.](media/author-global-parameters/create-global-parameter-1.png)
 
@@ -46,7 +46,10 @@ Er zijn twee manieren om globale para meters te integreren in uw continue integr
 * Algemene para meters in de ARM-sjabloon toevoegen
 * Globale para meters implementeren via een Power shell-script
 
-Voor de meeste gebruiks voorbeelden wordt aanbevolen globale para meters in de ARM-sjabloon in te sluiten. Dit wordt systeem eigen geïntegreerd met de oplossing die wordt beschreven in [het CI/cd-document](continuous-integration-deployment.md). Globale para meters worden standaard toegevoegd als een ARM-sjabloon parameter, aangezien ze vaak van omgeving veranderen in omgeving. U kunt het opnemen van globale para meters in de ARM-sjabloon inschakelen vanuit de Management hub.
+Voor de meeste gebruiks voorbeelden wordt aanbevolen globale para meters in de ARM-sjabloon in te sluiten. Dit wordt systeem eigen geïntegreerd met de oplossing die wordt beschreven in [het CI/cd-document](continuous-integration-deployment.md). Globale para meters worden standaard toegevoegd als een ARM-sjabloon parameter, aangezien ze vaak van omgeving veranderen in omgeving. U kunt het opnemen van globale para meters in de ARM-sjabloon inschakelen via de hub **beheren** .
+
+> [!NOTE]
+> De configuratie **voor het insluiten van arm-sjablonen** is alleen beschikbaar in de modus git. Het is momenteel uitgeschakeld in de modus ' Live-modus ' of ' Data Factory '.
 
 ![In ARM-sjabloon toevoegen](media/author-global-parameters/include-arm-template.png)
 

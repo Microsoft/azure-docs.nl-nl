@@ -11,12 +11,12 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/06/2019
-ms.openlocfilehash: 20e7998b4d0ec5a36f8fb8f1ddb04d591c54542b
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 4671880490a9ce9e29f49ede0e7687bdcf639a7e
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624266"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199795"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-monitor-it-with-the-azure-cli"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en deze bewaken met de Azure CLI
 
@@ -55,7 +55,7 @@ In deze sectie bereidt u twee Azure CLI-sessies voor. Als u de Cloud Shell gebru
 
 Voor Azure CLI moet u zijn aangemeld bij uw Azure-account. Alle communicatie tussen uw Azure CLI-shell-sessie en uw IoT-hub wordt geverifieerd en versleuteld. Als gevolg hiervan heeft deze snelstartgids geen aanvullende verificatie, zoals een verbindingsreeks, nodig die u wel zou gebruiken met een echt apparaat.
 
-*  Voer de opdracht [az extension add](/cli/azure/extension?view=azure-cli-latest#az-extension-add&preserve-view=true) toe om de Microsoft Azure IoT-extensie voor Azure CLI toe te voegen aan uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
+*  Voer de opdracht [az extension add](/cli/azure/extension#az-extension-add) toe om de Microsoft Azure IoT-extensie voor Azure CLI toe te voegen aan uw CLI-shell. Met de IoT-extensie worden IoT Hub-, IoT Edge- en IoT DPS-specifieke (Device Provisioning Service) opdrachten toegevoegd aan Azure CLI.
 
    ```azurecli
    az extension add --name azure-iot
@@ -76,13 +76,13 @@ In deze sectie gebruikt u de Azure CLI voor het maken van een resourcegroep en e
 > [!TIP]
 > U kunt desgewenst een Azure-resourcegroep, een IoT Hub en andere resources maken met behulp van de [Azure-portal](iot-hub-create-through-portal.md), [Visual Studio-code](iot-hub-create-use-iot-toolkit.md) of andere programmatische methoden.  
 
-1. Voer de opdracht [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create&preserve-view=true) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
+1. Voer de opdracht [az group create](/cli/azure/group#az-group-create) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
 
     ```azurecli
     az group create --name MyResourceGroup --location eastus
     ```
 
-1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub?view=azure-cli-latest#az-iot-hub-create&preserve-view=true) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
+1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. De naam van de IoT-hub moet wereldwijd uniek zijn in Azure. Deze tijdelijke aanduiding wordt gebruikt in de rest van deze quickstart om de naam van uw IoT-hub aan te geven.
 
@@ -94,7 +94,7 @@ In deze sectie gebruikt u de Azure CLI voor het maken van een resourcegroep en e
 In deze sectie maakt u een gesimuleerd apparaat in de eerste CLI-sessie. Het gesimuleerde apparaat verzendt telemetrie van het apparaat naar uw IoT-hub. In de tweede CLI-sessie bewaakt u gebeurtenissen en telemetrie en verzendt u een bericht van de cloud naar het gesimuleerde apparaat.
 
 Zo maakt en start u een gesimuleerd apparaat:
-1. Voer de opdracht [az iot hub device-identity create](/cli/azure/ext/azure-iot/iot/hub/device-identity?view=azure-cli-latest#ext-azure-iot-az-iot-hub-device-identity-create&preserve-view=true) uit in de eerste CLI-sessie. Hiermee maakt u de id van het gesimuleerde apparaat. 
+1. Voer de opdracht [az iot hub device-identity create](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) uit in de eerste CLI-sessie. Hiermee maakt u de id van het gesimuleerde apparaat. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -104,7 +104,7 @@ Zo maakt en start u een gesimuleerd apparaat:
     az iot hub device-identity create --device-id simDevice --hub-name {YourIoTHubName} 
     ```
 
-1. Voer de opdracht [az iot device simulate](/cli/azure/ext/azure-iot/iot/device?view=azure-cli-latest#ext-azure-iot-az-iot-device-simulate&preserve-view=true) uit in de eerste CLI-sessie.  Hiermee start u het gesimuleerde apparaat. Het apparaat verzendt telemetrie naar uw IoT-hub en ontvangt berichten van de hub.  
+1. Voer de opdracht [az iot device simulate](/cli/azure/ext/azure-iot/iot/device#ext-azure-iot-az-iot-device-simulate) uit in de eerste CLI-sessie.  Hiermee start u het gesimuleerde apparaat. Het apparaat verzendt telemetrie naar uw IoT-hub en ontvangt berichten van de hub.  
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -113,7 +113,7 @@ Zo maakt en start u een gesimuleerd apparaat:
     ```
 
 Zo bewaakt u een apparaat:
-1. Voer in de tweede CLI-sessie de opdracht [az iot hub monitor-events](/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events&preserve-view=true) uit. Hiermee start u het bewaken van het gesimuleerde apparaat. De uitvoer toont telemetrie die het gesimuleerde apparaat naar de IoT-hub verzendt.
+1. Voer in de tweede CLI-sessie de opdracht [az iot hub monitor-events](/cli/azure/ext/azure-iot/iot/hub#ext-azure-iot-az-iot-hub-monitor-events) uit. Hiermee start u het bewaken van het gesimuleerde apparaat. De uitvoer toont telemetrie die het gesimuleerde apparaat naar de IoT-hub verzendt.
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -136,7 +136,7 @@ In deze sectie gebruikt u de tweede CLI-sessie om een bericht te verzenden naar 
     az iot device simulate -d simDevice -n {YourIoTHubName}
     ```
 
-1. Voer in de tweede CLI-sessie de opdracht [az iot device c2d-message send](/cli/azure/ext/azure-iot/iot/device/c2d-message?view=azure-cli-latest#ext-azure-iot-az-iot-device-c2d-message-send&preserve-view=true) uit. Hiermee verzendt u vanuit uw IoT-hub een cloud-naar-apparaat-bericht naar het gesimuleerde apparaat. Het bericht bevat een tekenreeks en twee sleutel-waardeparen.  
+1. Voer in de tweede CLI-sessie de opdracht [az iot device c2d-message send](/cli/azure/ext/azure-iot/iot/device/c2d-message#ext-azure-iot-az-iot-device-c2d-message-send) uit. Hiermee verzendt u vanuit uw IoT-hub een cloud-naar-apparaat-bericht naar het gesimuleerde apparaat. Het bericht bevat een tekenreeks en twee sleutel-waardeparen.  
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -184,12 +184,12 @@ Als u verder wilt gaan met het volgende aanbevolen artikel, kunt u de resources 
 > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert. 
 
 Een resourcegroep verwijderen op naam:
-1. Voer de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true) uit. Hiermee verwijdert u de resourcegroep, de IoT Hub en de apparaatregistratie die u hebt gemaakt.
+1. Voer de opdracht [az group delete](/cli/azure/group#az-group-delete) uit. Hiermee verwijdert u de resourcegroep, de IoT Hub en de apparaatregistratie die u hebt gemaakt.
 
     ```azurecli
     az group delete --name MyResourceGroup
     ```
-1. Voer de opdracht [az group list](/cli/azure/group?view=azure-cli-latest#az-group-list&preserve-view=true) uit om te controleren of de resourcegroep is verwijderd.  
+1. Voer de opdracht [az group list](/cli/azure/group#az-group-list) uit om te controleren of de resourcegroep is verwijderd.  
 
     ```azurecli
     az group list

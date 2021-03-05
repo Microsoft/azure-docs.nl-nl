@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.custom: mqtt, devx-track-azurecli
-ms.openlocfilehash: ba58f7897827cf7ce7f6156df1434733d89d7f42
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5515d1084b28091cf7d20958cfca8af3f2664563
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844451"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199489"
 ---
 # <a name="send-cloud-to-device-messages-from-an-iot-hub"></a>Cloud-naar-apparaat-berichten verzenden vanuit een IoT-hub
 
@@ -97,7 +97,7 @@ De hoofd tekst is een JSON-serialisatie matrix met records, elk met de volgende 
 | ------------------ | ----------- |
 | EnqueuedTimeUtc    | Een tijds tempel die aangeeft wanneer de uitkomst van het bericht is opgetreden (bijvoorbeeld omdat de hub het feedback bericht heeft ontvangen of het oorspronkelijke bericht is verlopen) |
 | OriginalMessageId  | De *MessageId* van het Cloud-naar-apparaat-bericht waarop deze feedback informatie betrekking heeft |
-| Status code         | Een vereiste teken reeks die wordt gebruikt in feedback berichten die door de IoT hub worden gegenereerd: <br/> *Geleverd* <br/> *Verlopen* <br/> *DeliveryCountExceeded* <br/> *Afgewezen* <br/> *Opgeschoond* |
+| Status code         | Een vereiste teken reeks die wordt gebruikt in feedback berichten die door de IoT hub worden gegenereerd: <br/> *Geslaagd* <br/> *Verlopen* <br/> *DeliveryCountExceeded* <br/> *Afgewezen* <br/> *Opgeschoond* |
 | Beschrijving        | Teken reeks waarden voor *status* code |
 | DeviceId           | De *DeviceID* van het doel apparaat van het Cloud-naar-apparaat-bericht waarop dit feedback-item betrekking heeft |
 | DeviceGenerationId | De *DeviceGenerationId* van het doel apparaat van het Cloud-naar-apparaat-bericht waarop dit feedback-item betrekking heeft |
@@ -147,7 +147,7 @@ U kunt de configuratie opties op een van de volgende manieren instellen:
 
     ![Configuratie opties voor Cloud-naar-apparaat-berichten in de Portal instellen](./media/iot-hub-devguide-messages-c2d/c2d-configuration-portal.png)
 
-* **Azure cli**: gebruik de opdracht [AZ IOT hub update](/cli/azure/iot/hub?view=azure-cli-latest#az-iot-hub-update) :
+* **Azure cli**: gebruik de opdracht [AZ IOT hub update](/cli/azure/iot/hub#az-iot-hub-update) :
 
     ```azurecli
     az iot hub update --name {your IoT hub name} \

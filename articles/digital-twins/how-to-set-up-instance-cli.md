@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 8e82f8974b53224b3e471d1628a1ca5819ce2955
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 7108ee956c18fbcc150b56cbcb8ae1c69841dda4
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044472"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198571"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Een Azure Digital Apparaatdubbels-exemplaar en-authenticatie (CLI) instellen
 
@@ -93,7 +93,7 @@ U hebt nu een Azure Digital Apparaatdubbels-exemplaar klaar om te gaan, en u heb
 ## <a name="next-steps"></a>Volgende stappen
 
 Test afzonderlijke REST API-aanroepen voor uw exemplaar met behulp van de Azure Digital Apparaatdubbels CLI-opdrachten: 
-* [AZ DT-referentie](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)
+* [AZ DT-referentie](/cli/azure/ext/azure-iot/dt)
 * [*Instructies: De Azure Digital Twins-CLI gebruiken*](how-to-use-cli.md)
 
 U kunt ook zien hoe u een client toepassing verbindt met uw exemplaar met verificatie code:

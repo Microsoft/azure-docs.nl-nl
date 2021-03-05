@@ -5,18 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 03/02/2021
+ms.date: 03/04/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
-ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95c7ca826eaf7d72cb35985b154458f149ef4a0e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: df867059a7d4020952f71ca8d663a644ee2428fd
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101649309"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199625"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Uitnodigingsinwisseling voor Azure Active Directory B2B-samenwerking
 
@@ -35,6 +34,7 @@ Gast gebruikers kunnen zich nu aanmelden bij uw apps voor meerdere tenants of mi
 ![Aanmelding voor een gemeen schappelijk eind punt](media/redemption-experience/common-endpoint-flow-small.png)
 
 De gebruiker wordt vervolgens omgeleid naar uw getenantd eind punt, waar ze zich kunnen aanmelden met hun e-mail adres of een door u geconfigureerde ID-provider selecteren.
+
 ## <a name="redemption-through-a-direct-link"></a>Inkopen via een directe koppeling
 
 Als alternatief voor de uitnodigings-e-mail of de gemeen schappelijke URL van een toepassing kunt u een gast een rechtstreekse koppeling geven naar uw app of portal. U moet eerst de gast gebruiker toevoegen aan uw directory via de [Azure Portal](./b2b-quickstart-add-guest-users-portal.md) of [Power shell](./b2b-quickstart-invite-powershell.md). Vervolgens kunt u een van de [aanpas bare manieren gebruiken om toepassingen te implementeren voor gebruikers](../manage-apps/end-user-experiences.md), waaronder directe aanmeldings koppelingen. Wanneer een gast gebruikmaakt van een directe koppeling in plaats van het e-mail bericht met de uitnodiging, worden ze nog steeds door gegeven via de eerste toestemmings ervaring.
@@ -73,7 +73,7 @@ Wanneer een gebruiker op de koppeling **uitnodiging accepteren** in een [e-mail 
 
 3. Als een beheerder [Google Federation](./google-federation.md)heeft ingeschakeld, controleert Azure AD of het domein achtervoegsel van de gebruiker gmail.com of googlemail.com is en wordt de gebruiker omgeleid naar Google.
 
-4. Bij het inwissel proces wordt gecontroleerd of de gebruiker beschikt over een bestaand persoonlijk [Microsoft-account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create).
+4. Bij het inwissel proces wordt gecontroleerd of de gebruiker beschikt over een bestaande persoonlijke [Microsoft-account (MSA)](https://support.microsoft.com/help/4026324/microsoft-account-how-to-create) voor Just-in-time (JIT)-inwisselingen, maar niet voor het inwisselen van een uitnodigings-e-mail. Als de gebruiker al een bestaande MSA heeft, meldt hij zich aan met hun bestaande MSA.
 
 5. Zodra de **basismap** van de gebruiker is geïdentificeerd, wordt de gebruiker naar de bijbehorende id-provider verzonden om zich aan te melden.  
 

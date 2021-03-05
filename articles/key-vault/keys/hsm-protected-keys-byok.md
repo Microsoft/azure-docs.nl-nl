@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 02/04/2021
 ms.author: ambapat
-ms.openlocfilehash: 1e7ea0dc929fdbb4ca306405e6ed8993ed2e4afe
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4a3eaddd160acb8d4d2ae9f0da43ce6cb0236055
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "100386098"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198146"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault-byok"></a>Met HSM beveiligde sleutels importeren in Key Vault (BYOK)
 
@@ -52,7 +52,7 @@ De volgende tabel bevat de vereisten voor het gebruik van BYOK in Azure Key Vaul
 | Een Azure-abonnement |Als u een sleutelkluis in Azure Key Vault wilt maken, hebt u een Azure-abonnement nodig. [Registreer u voor een gratis proefversie](https://azure.microsoft.com/pricing/free-trial/). |
 | Een Key Vault Premium-SKU voor het importeren van met HSM beveiligde sleutels |Zie [Prijzen van Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/) voor meer informatie over de servicelagen en mogelijkheden van Azure Key Vault. |
 | Een HSM uit de lijst met ondersteunde HSM's en een BYOK-hulpprogramma en instructies van uw HSM-leverancier | U moet over machtigingen beschikken voor een HSM en basiskennis van het gebruik van uw HSM hebben. Zie [Ondersteunde HSM's](#supported-hsms). |
-| Azure CLI versie 2.1.0 of hoger | Raadpleeg [De Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).|
+| Azure CLI versie 2.1.0 of hoger | Raadpleeg [De Azure CLI installeren](/cli/azure/install-azure-cli).|
 
 ## <a name="supported-hsms"></a>Ondersteunde HSM's
 
@@ -101,7 +101,7 @@ De KEK moet aan het volgende voldoen:
 > [!NOTE]
 > De KEK moet 'import' bevatten als de enige toegestane sleutelbewerking. 'import' en alle andere sleutelbewerkingen sluiten elkaar wederzijds uit.
 
-Gebruik de opdracht [az keyvault key create](/cli/azure/keyvault/key?view=azure-cli-latest&preserve-view=true#az-keyvault-key-create) om een KEK te maken waarbij de sleutelbewerkingen zijn ingesteld op `import`. Noteer de sleutel-id (`kid`) die wordt geretourneerd met de volgende opdracht. (U gebruikt de waarde `kid` in [stap 3](#step-3-generate-and-prepare-your-key-for-transfer).)
+Gebruik de opdracht [az keyvault key create](/cli/azure/keyvault/key#az-keyvault-key-create) om een KEK te maken waarbij de sleutelbewerkingen zijn ingesteld op `import`. Noteer de sleutel-id (`kid`) die wordt geretourneerd met de volgende opdracht. (U gebruikt de waarde `kid` in [stap 3](#step-3-generate-and-prepare-your-key-for-transfer).)
 
 ```azurecli
 az keyvault key create --kty RSA-HSM --size 4096 --name KEKforBYOK --ops import --vault-name ContosoKeyVaultHSM
@@ -109,7 +109,7 @@ az keyvault key create --kty RSA-HSM --size 4096 --name KEKforBYOK --ops import 
 
 ### <a name="step-2-download-the-kek-public-key"></a>Stap 2: De openbare KEK-sleutel downloaden
 
-Gebruik [az keyvault key download](/cli/azure/keyvault/key?view=azure-cli-latest&preserve-view=true#az-keyvault-key-download) om de openbare KEK-sleutel te downloaden naar een .pem-bestand. De doelsleutel die u importeert, wordt versleuteld met behulp van de openbare KEK-sleutel.
+Gebruik [az keyvault key download](/cli/azure/keyvault/key#az-keyvault-key-download) om de openbare KEK-sleutel te downloaden naar een .pem-bestand. De doelsleutel die u importeert, wordt versleuteld met behulp van de openbare KEK-sleutel.
 
 ```azurecli
 az keyvault key download --name KEKforBYOK --vault-name ContosoKeyVaultHSM --file KEKforBYOK.publickey.pem
@@ -130,7 +130,7 @@ Draag het BYOK-bestand over naar de verbonden computer.
 
 ### <a name="step-4-transfer-your-key-to-azure-key-vault"></a>Stap 4: De sleutel overdragen naar Azure Key Vault
 
-Om de sleutelimport te voltooien, draagt u het sleuteloverdrachtspakket (een BYOK-bestand) over van de niet-verbonden computer naar de computer met internetverbinding. Gebruik de opdracht [az keyvault key import](/cli/azure/keyvault/key?view=azure-cli-latest&preserve-view=true#az-keyvault-key-import) om het BYOK-bestand te uploaden naar de Key Vault-HSM.
+Om de sleutelimport te voltooien, draagt u het sleuteloverdrachtspakket (een BYOK-bestand) over van de niet-verbonden computer naar de computer met internetverbinding. Gebruik de opdracht [az keyvault key import](/cli/azure/keyvault/key#az-keyvault-key-import) om het BYOK-bestand te uploaden naar de Key Vault-HSM.
 
 Als u een RSA-sleutel wilt importeren, gebruikt u de volgende opdracht. Para meter--KTY is optioneel en wordt standaard ingesteld op RSA-HSM.
 ```azurecli

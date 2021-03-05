@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b9a491b639cd1b960ffe3b7164a0940770792148
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: adfe5318949ffa624ebe3548944b558bd0dda9e1
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102107390"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198469"
 ---
 # <a name="options-for-registering-a-saml-application-in-azure-ad-b2c"></a>Opties voor het registreren van een SAML-toepassing in Azure AD B2C
 
@@ -36,7 +36,7 @@ In dit artikel worden de configuratie opties beschreven die beschikbaar zijn bij
 
 ## <a name="encrypted-saml-assertions"></a>Versleutelde SAML-bevestigingen
 
-Wanneer uw toepassing verwacht dat SAML-bevestigingen in een versleutelde indeling zijn, moet u ervoor zorgen dat versleuteling is ingeschakeld in het Azure AD B2C beleid.
+Als uw toepassing verwacht dat de SAML-bevestigingen in een versleutelde indeling zijn, moet u ervoor zorgen dat versleuteling is ingeschakeld in het Azure AD B2C beleid.
 
 Azure AD B2C gebruikt het open bare-sleutel certificaat van de service provider om de SAML-bewering te versleutelen. De open bare sleutel moet bestaan in het eind punt voor meta gegevens van de SAML-toepassing met de sleutel descriptor use ingesteld op encryption, zoals wordt weer gegeven in het volgende voor beeld:
 
@@ -60,6 +60,54 @@ Als u wilt dat Azure AD B2C versleutelde beweringen verzendt, stelt u het **Want
     <Protocol Name="SAML2"/>
     <Metadata>
       <Item Key="WantsEncryptedAssertions">true</Item>
+    </Metadata>
+   ..
+  </TechnicalProfile>
+</RelyingParty>
+```
+
+### <a name="encryption-method"></a>Versleutelingsmethode
+
+Als u de versleutelings methode wilt configureren die wordt gebruikt om de gegevens van de SAML-verklaring te versleutelen, stelt u de `DataEncryptionMethod` meta gegevens sleutel in de Relying Party Mogelijke waarden zijn `Aes256` (standaard), `Aes192` , `Sha512` of `Aes128` . De meta gegevens bepalen de waarde van het `<EncryptedData>` element in het SAML-antwoord.
+
+Als u de versleutelings methode wilt configureren die wordt gebruikt voor het versleutelen van de kopie van de sleutel, die is gebruikt om de gegevens van de SAML-verklaring te versleutelen, stelt u de `KeyEncryptionMethod` meta gegevens sleutel in de Relying Party Mogelijke waarden zijn `Rsa15` (standaard): RSA-algoritme voor de open bare sleutel crypto grafie Standard (PKCS) versie 1,5 en `RsaOaep` -RSA OAEP-versleutelings algoritme (optimale asymmetrische-coderings opvulling).  De meta gegevens bepalen de waarde van het  `<EncryptedKey>` element in het SAML-antwoord.
+
+In het volgende voor beeld wordt de `EncryptedAssertion` sectie van een SAML-verklaring weer gegeven. De versleutelde gegevens methode is `Aes128` en de versleutelde sleutel methode is `Rsa15` .
+
+```xml
+<saml:EncryptedAssertion>
+  <xenc:EncryptedData xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+    xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" Type="http://www.w3.org/2001/04/xmlenc#Element">
+    <xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" />
+    <dsig:KeyInfo>
+      <xenc:EncryptedKey>
+        <xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5" />
+        <xenc:CipherData>
+          <xenc:CipherValue>...</xenc:CipherValue>
+        </xenc:CipherData>
+      </xenc:EncryptedKey>
+    </dsig:KeyInfo>
+    <xenc:CipherData>
+      <xenc:CipherValue>...</xenc:CipherValue>
+    </xenc:CipherData>
+  </xenc:EncryptedData>
+</saml:EncryptedAssertion>
+```
+
+U kunt de indeling van de versleutelde beweringen wijzigen. Als u de versleutelings indeling wilt configureren, stelt u de `UseDetachedKeys` meta gegevens sleutel in de Relying Party. Mogelijke waarden: `true` , of `false` (standaard). Wanneer de waarde is ingesteld op `true` , worden de versleutelde bevestigingen door de ontkoppelde sleutels als een onderliggend element van de `EncrytedAssertion` in plaats van de `EncryptedData` .
+
+Configureer de versleutelings methode en-indeling, gebruik de meta gegevens sleutels binnen het [Relying Party technische profiel](relyingparty.md#technicalprofile):
+
+```xml
+<RelyingParty>
+  <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+  <TechnicalProfile Id="PolicyProfile">
+    <DisplayName>PolicyProfile</DisplayName>
+    <Protocol Name="SAML2"/>
+    <Metadata>
+      <Item Key="DataEncryptionMethod">Aes128</Item>
+      <Item Key="KeyEncryptionMethod">Rsa15</Item>
+      <Item Key="UseDetachedKeys">false</Item>
     </Metadata>
    ..
   </TechnicalProfile>
@@ -114,7 +162,7 @@ We bieden een volledig voor beeld van een beleid dat u kunt gebruiken voor het t
 
 U kunt de handtekening algoritme configureren die wordt gebruikt om de SAML-bewering te ondertekenen. Mogelijke waarden zijn `Sha256` , `Sha384` , `Sha512` , of `Sha1` . Zorg ervoor dat het technische profiel en de toepassing gebruikmaken van hetzelfde handtekening algoritme. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund.
 
-Configureer het handtekening algoritme met behulp van de `XmlSignatureAlgorithm` meta gegevens sleutel binnen het knoop punt RelyingParty meta gegevens.
+Configureer het handtekening algoritme met behulp van de `XmlSignatureAlgorithm` meta gegevens sleutel binnen het meta gegevenselement Relying Party.
 
 ```xml
 <RelyingParty>
@@ -132,7 +180,7 @@ Configureer het handtekening algoritme met behulp van de `XmlSignatureAlgorithm`
 
 ## <a name="saml-response-lifetime"></a>Levens duur van SAML-antwoorden
 
-U kunt configureren hoe lang het SAML-antwoord geldig blijft. Stel de levens duur in met behulp van het `TokenLifeTimeInSeconds` meta gegevens item in het SAML-token voor de uitgever van het technische profiel. Deze waarde is het aantal seconden dat kan verstrijken vanaf de `NotBefore` tijds tempel die wordt berekend op basis van de token uitgifte tijd. De tijd die is gekozen voor dit is automatisch, de huidige tijd. De standaard levensduur is 300 seconden (5 minuten).
+U kunt configureren hoe lang het SAML-antwoord geldig blijft. Stel de levens duur in met behulp van het `TokenLifeTimeInSeconds` meta gegevens item in het SAML-token voor de uitgever van het technische profiel. Deze waarde is het aantal seconden dat kan verstrijken vanaf de `NotBefore` tijds tempel die wordt berekend op basis van de token uitgifte tijd. De standaard levensduur is 300 seconden (5 minuten).
 
 ```xml
 <ClaimsProvider>
@@ -170,6 +218,26 @@ Als bijvoorbeeld `TokenNotBeforeSkewInSeconds` is ingesteld op `120` seconden:
       <OutputTokenFormat>SAML2</OutputTokenFormat>
       <Metadata>
         <Item Key="TokenNotBeforeSkewInSeconds">120</Item>
+      </Metadata>
+      ...
+    </TechnicalProfile>
+```
+
+## <a name="remove-milliseconds-from-date-and-time"></a>Milliseconden van datum en tijd verwijderen
+
+U kunt opgeven of de milliseconden worden verwijderd uit datum/tijd-waarden binnen het SAML-antwoord (dit zijn IssueInstant, NotBefore, NotOnOrAfter en AuthnInstant). Als u de milliseconden wilt verwijderen, stelt u de `RemoveMillisecondsFromDateTime
+` meta gegevens sleutel in de Relying Party. Mogelijke waarden: `false` (standaard) of `true` .
+
+```xml
+<ClaimsProvider>
+  <DisplayName>Token Issuer</DisplayName>
+  <TechnicalProfiles>
+    <TechnicalProfile Id="Saml2AssertionIssuer">
+      <DisplayName>Token Issuer</DisplayName>
+      <Protocol Name="SAML2"/>
+      <OutputTokenFormat>SAML2</OutputTokenFormat>
+      <Metadata>
+        <Item Key="RemoveMillisecondsFromDateTime">true</Item>
       </Metadata>
       ...
     </TechnicalProfile>

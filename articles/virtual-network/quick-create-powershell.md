@@ -2,38 +2,32 @@
 title: 'Een virtueel netwerk maken: quickstart - Azure PowerShell'
 titlesuffix: Azure Virtual Network
 description: In deze quickstart maakt u een virtueel netwerk met Azure Portal. Met een virtueel netwerk kunnen Azure-resources communiceren met elkaar en met internet.
-services: virtual-network
-documentationcenter: virtual-network
 author: KumudD
-tags: azure-resource-manager
 Customer intent: I want to create a virtual network so that virtual machines can communicate with privately with each other and with the internet.
 ms.service: virtual-network
-ms.devlang: ''
 ms.topic: quickstart
-ms.tgt_pltfrm: virtual-network
-ms.workload: infrastructure
-ms.date: 12/04/2018
+ms.date: 03/06/2021
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 93e459df96d444e71f4b6a15668f80e9d77db5fd
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: b27f050d3d37daab05e8c5125d6b75a6bb4dea50
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89077871"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199030"
 ---
 # <a name="quickstart-create-a-virtual-network-using-powershell"></a>Quickstart: Een virtueel netwerk maken met PowerShell
 
-Met een virtueel netwerk kunnen Azure-resources, zoals virtuele machines (VM's), privé met elkaar en met internet communiceren. In deze snelstart leert u hoe u een virtueel netwerk maakt. Nadat u een virtueel netwerk hebt gemaakt, implementeert u twee virtuele machines in het virtuele netwerk. Vervolgens maakt u verbinding met de virtuele machines via internet en is er privécommunicatie via het virtuele netwerk mogelijk.
+Met een virtueel netwerk kunnen Azure-resources, zoals virtuele machines (VM's), privé met elkaar en met internet communiceren. 
+
+In deze snelstart leert u hoe u een virtueel netwerk maakt. Nadat u een virtueel netwerk hebt gemaakt, implementeert u twee virtuele machines in het virtuele netwerk. Vervolgens maakt u verbinding met de virtuele machines via internet en is er privécommunicatie via het virtuele netwerk mogelijk.
 
 ## <a name="prerequisites"></a>Vereisten
-Als u nog geen abonnement op Azure hebt, maak dan nu een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
+- Azure PowerShell lokaal geïnstalleerd of Azure Cloud Shell
 
-Als u PowerShell lokaal wilt installeren en gebruiken, is voor deze quickstart Azure PowerShell-module versie 1.0.0 of hoger vereist. Voer `Get-Module -ListAvailable Az` uit om na te gaan welke versie er is geïnstalleerd. Zie [Azure PowerShell-module installeren](/powershell/azure/install-az-ps) voor installatie- en upgrade-informatie.
-
-Tenslotte moet u, als u PowerShell lokaal uitvoert, ook `Connect-AzAccount` uitvoeren. Met deze opdracht wordt een verbinding met Azure gemaakt.
+Als u PowerShell lokaal wilt installeren en gebruiken, is voor dit artikel versie 5.4.1 of hoger van de Azure PowerShell-module vereist. Voer `Get-Module -ListAvailable Az` uit om te kijken welke versie is geïnstalleerd. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-Az-ps). Als u PowerShell lokaal uitvoert, moet u ook `Connect-AzAccount` uitvoeren om verbinding te kunnen maken met Azure.
 
 ## <a name="create-a-resource-group-and-a-virtual-network"></a>Een resourcegroep en een virtueel netwerk maken
 
@@ -41,33 +35,41 @@ U kunt de resourcegroep en het virtuele netwerk configureren door een aantal sta
 
 ### <a name="create-the-resource-group"></a>De resourcegroep maken
 
-Voordat u een virtueel netwerk kunt maken, moet u een resourcegroep maken die het virtuele netwerk host. Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup). In dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *US - oost*:
+Voordat u een virtueel netwerk kunt maken, moet u een resourcegroep maken die het virtuele netwerk host. Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup). In dit voor beeld wordt een resource groep met de naam **CreateVNetQS-RG** gemaakt op de locatie **eastus** :
 
 ```azurepowershell-interactive
-New-AzResourceGroup -Name myResourceGroup -Location EastUS
+$rg = @{
+    Name = 'CreateVNetQS-rg'
+    Location = 'EastUS'
+}
+New-AzResourceGroup @rg
 ```
 
 ### <a name="create-the-virtual-network"></a>Het virtuele netwerk maken
 
-Maak een virtueel netwerk met [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). In dit voorbeeld wordt een standaard virtueel netwerk gemaakt met de naam *myVirtualNetwork* op de locatie *US - oost*:
+Maak een virtueel netwerk met [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). In dit voor beeld wordt een standaard virtueel netwerk met de naam **myVNet** gemaakt op de locatie **eastus** :
 
 ```azurepowershell-interactive
-$virtualNetwork = New-AzVirtualNetwork `
-  -ResourceGroupName myResourceGroup `
-  -Location EastUS `
-  -Name myVirtualNetwork `
-  -AddressPrefix 10.0.0.0/16
+$vnet = @{
+    Name = 'myVNet'
+    ResourceGroupName = 'CreateVNetQS-rg'
+    Location = 'EastUS'
+    AddressPrefix = '10.0.0.0/16'    
+}
+$virtualNetwork = New-AzVirtualNetwork @vnet
 ```
 
 ### <a name="add-a-subnet"></a>Een subnet toevoegen
 
-Azure implementeert resources in een subnet binnen een virtueel netwerk. U moet daarom een subnet maken. Maak een subnetconfiguratie genaamd *default* met [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig):
+Azure implementeert resources in een subnet binnen een virtueel netwerk. U moet daarom een subnet maken. Maak een subnetconfiguratie genaamd **default** met [Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig):
 
 ```azurepowershell-interactive
-$subnetConfig = Add-AzVirtualNetworkSubnetConfig `
-  -Name default `
-  -AddressPrefix 10.0.0.0/24 `
-  -VirtualNetwork $virtualNetwork
+$subnet = @{
+    Name = 'default'
+    VirtualNetwork = $virtualNetwork
+    AddressPrefix = '10.0.0.0/24'
+}
+$subnetConfig = Add-AzVirtualNetworkSubnetConfig @subnet
 ```
 
 ### <a name="associate-the-subnet-to-the-virtual-network"></a>Het subnet aan het virtuele netwerk koppelen
@@ -87,13 +89,14 @@ Maak twee VM’s in het virtuele netwerk.
 Maak de eerste VM met [New-AzVM](/powershell/module/az.compute/new-azvm). Wanneer u de volgende opdracht uitvoert, wordt u gevraagd referenties op te geven. Voer een gebruikersnaam en wachtwoord voor de virtuele machine in:
 
 ```azurepowershell-interactive
-New-AzVm `
-    -ResourceGroupName "myResourceGroup" `
-    -Location "East US" `
-    -VirtualNetworkName "myVirtualNetwork" `
-    -SubnetName "default" `
-    -Name "myVm1" `
-    -AsJob
+$vm1 = @{
+    ResourceGroupName = 'CreateVNetQS-rg'
+    Location = 'EastUS'
+    Name = 'myVM1'
+    VirtualNetworkName = 'myVNet'
+    SubnetName = 'default'
+}
+New-AzVM @vm1 -AsJob
 ```
 
 Met de optie `-AsJob` wordt de virtuele machine op de achtergrond gemaakt. U kunt doorgaan met de volgende stap.
@@ -111,11 +114,14 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 Maak de tweede virtuele machine met de volgende opdracht:
 
 ```azurepowershell-interactive
-New-AzVm `
-  -ResourceGroupName "myResourceGroup" `
-  -VirtualNetworkName "myVirtualNetwork" `
-  -SubnetName "default" `
-  -Name "myVm2"
+$vm2 = @{
+    ResourceGroupName = 'CreateVNetQS-rg'
+    Location = 'EastUS'
+    Name = 'myVM2'
+    VirtualNetworkName = 'myVNet'
+    SubnetName = 'default'
+}
+New-AzVM @vm2
 ```
 
 U moet een andere gebruiker en wachtwoord maken. Het duurt een paar minuten om de virtuele machine te maken.
@@ -125,13 +131,16 @@ U moet een andere gebruiker en wachtwoord maken. Het duurt een paar minuten om d
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Verbinding maken met een virtuele machine via internet
 
-Gebruik [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres van een virtuele machine op te halen. In dit voorbeeld wordt het openbare IP-adres van de VM *myVm1* opgehaald:
+Gebruik [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress) om het openbare IP-adres van de virtuele machine op te halen.
+
+In dit voorbeeld wordt het openbare IP-adres van de VM **myVm1** opgehaald:
 
 ```azurepowershell-interactive
-Get-AzPublicIpAddress `
-  -Name myVm1 `
-  -ResourceGroupName myResourceGroup `
-  | Select IpAddress
+$ip = @{
+    Name = 'myVM1'
+    ResourceGroupName = 'CreateVNetQS-rg'
+}
+Get-AzPublicIpAddress @ip | select IpAddress
 ```
 
 Open een opdrachtprompt op de lokale computer. Voer de opdracht `mstsc` uit. Vervang `<publicIpAddress>` door het openbare IP-adres dat in de laatste stap is geretourneerd:
@@ -155,7 +164,7 @@ mstsc /v:<publicIpAddress>
 
 ## <a name="communicate-between-vms"></a>Communiceren tussen VM's
 
-1. Open PowerShell in het externe bureaublad van *myVm1*.
+1. Open PowerShell in het externe bureaublad van **myVm1**.
 
 1. Voer `ping myVm2` in.
 
@@ -176,7 +185,7 @@ mstsc /v:<publicIpAddress>
 
     De ping mislukt, omdat deze gebruikmaakt van het Internet Control Message Protocol (ICMP). ICMP wordt standaard niet toegestaan via de Windows-firewall.
 
-1. Voer de volgende opdracht in om *myVm2* toe te staan *myVm1* in een latere stap te pingen:
+1. Voer de volgende opdracht in om **myVm2** toe te staan **myVm1** in een latere stap te pingen:
 
     ```powershell
     New-NetFirewallRule –DisplayName "Allow ICMPv4-In" –Protocol ICMPv4
@@ -184,11 +193,11 @@ mstsc /v:<publicIpAddress>
 
     Met die opdracht is binnenkomend verkeer van ICMP via de Windows-firewall toegestaan.
 
-1. Sluit de externe bureaubladverbinding met *myVm1*.
+1. Sluit de externe bureaubladverbinding met **myVm1**.
 
-1. Herhaal de stappen in [Verbinding maken met een virtuele machine via internet](#connect-to-a-vm-from-the-internet). Deze keer maakt u verbinding met *myVm2*.
+1. Herhaal de stappen in [Verbinding maken met een virtuele machine via internet](#connect-to-a-vm-from-the-internet). Deze keer maakt u verbinding met **myVm2**.
 
-1. Voer vanaf een opdrachtprompt op de virtuele machine *myVm2*`ping myvm1` in.
+1. Voer vanaf een opdrachtprompt op de virtuele machine **myVm2**`ping myvm1` in.
 
     Er wordt vervolgens iets dergelijks weergegeven:
 
@@ -207,21 +216,27 @@ mstsc /v:<publicIpAddress>
         Minimum = 0ms, Maximum = 2ms, Average = 0ms
     ```
 
-    U ontvangt antwoorden van *myVm1* omdat u ICMP hebt toegestaan via de Windows-firewall op de VM *myVm1* in de vorige stap.
+    U ontvangt antwoorden van **myVm1** omdat u ICMP hebt toegestaan via de Windows-firewall op de VM **myVm1** in de vorige stap.
 
-1. Sluit de externe bureaubladverbinding met *myVm2*.
+1. Sluit de externe bureaubladverbinding met **myVm2**.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Wanneer u klaar bent met het virtuele netwerk en de VM's, gebruikt u [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) om de resourcegroep en alle resources die deze bevat te verwijderen:
 
 ```azurepowershell-interactive
-Remove-AzResourceGroup -Name myResourceGroup -Force
+Remove-AzResourceGroup -Name 'CreateVNetQS-rg' -Force
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstart hebt u een standaard virtueel netwerk en twee virtuele machines gemaakt. U hebt met één virtuele machine verbinding gemaakt via internet en er is er privécommunicatie tussen de twee virtuele machines geweest.
-Azure staat onbeperkte privécommunicatie tussen virtuele machines toe. Daarentegen zijn standaard alleen inkomende verbindingen met extern bureaublad met Windows-VM's via internet toegestaan. Ga verder naar het volgende artikel voor meer informatie over het configureren van verschillende typen VM-netwerkcommunicatie:
+Voor deze snelstart geldt het volgende: 
+
+* U hebt een standaard virtueel netwerk en twee virtuele machines gemaakt. 
+* U hebt met één virtuele machine verbinding gemaakt via internet en er is er privécommunicatie tussen de twee virtuele machines geweest.
+
+Privé communicatie tussen Vm's is onbeperkt in een virtueel netwerk. 
+
+Ga verder naar het volgende artikel voor meer informatie over het configureren van verschillende typen VM-netwerkcommunicatie:
 > [!div class="nextstepaction"]
 > [Netwerkverkeer filteren](tutorial-filter-network-traffic.md)

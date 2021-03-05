@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: ddc212e99c0e55156f56df6bf77e122408a727f9
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 7ae85fa2559b8313bd35a761945bff946563e935
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624052"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199778"
 ---
 # <a name="tutorial-use-azure-iot-hub-message-enrichments"></a>Zelf studie: verrijkingen van Azure IoT Hub-berichten gebruiken
 
@@ -386,7 +386,7 @@ Als u alle resources wilt verwijderen die u in deze zelf studie hebt gemaakt, ve
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Resources opschonen met de Azure-CLI
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true). Terughalen dat `$resourceGroup` is ingesteld op **ContosoResourcesMsgEn** aan het begin van deze zelf studie.
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az-group-delete). Terughalen dat `$resourceGroup` is ingesteld op **ContosoResourcesMsgEn** aan het begin van deze zelf studie.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

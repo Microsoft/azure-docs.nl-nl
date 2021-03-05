@@ -38,6 +38,8 @@
       items:
         - name: Audiobellen toevoegen aan uw app
           href: quickstarts/voice-video-calling/getting-started-with-calling.md
+        - name: Video toevoegen aan uw app (Java script)
+          href: quickstarts/voice-video-calling/get-started-with-video-calling.md
         - name: De aanroepende clientbibliotheek gebruiken
           href: quickstarts/voice-video-calling/calling-client-samples.md
         - name: Voeg u aanroepende app toe aan een Teams-meeting

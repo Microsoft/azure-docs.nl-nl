@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 9566560aaebaaa7ba3fc6d963a30637e33118077
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 8f2bd316c733f4680a266d609e1cc95a4879016d
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101651056"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198520"
 ---
 # <a name="configure-azure-ad-multi-factor-authentication-settings"></a>Azure AD Multi-Factor Authentication-instellingen configureren
 
@@ -57,7 +57,7 @@ Als u account vergrendelings instellingen wilt configureren, voert u de volgende
 
 ## <a name="block-and-unblock-users"></a>Gebruikers blok keren en de blok kering opheffen
 
-Als het apparaat van een gebruiker is verloren of is gestolen, kunt u Azure AD-Multi-Factor Authentication pogingen voor het gekoppelde account blok keren. Alle Azure AD Multi-Factor Authentication-pogingen voor geblokkeerde gebruikers worden automatisch geweigerd. Gebruikers blijven 90 dagen geblokkeerd vanaf het moment dat ze zijn geblokkeerd.
+Als het apparaat van een gebruiker is verloren of is gestolen, kunt u Azure AD-Multi-Factor Authentication pogingen voor het gekoppelde account blok keren. Alle Azure AD Multi-Factor Authentication-pogingen voor geblokkeerde gebruikers worden automatisch geweigerd. Gebruikers blijven 90 dagen geblokkeerd vanaf het moment dat ze zijn geblokkeerd. We hebben een video gepubliceerd over [het blok keren of deblokkeren van gebruikers in uw Tenant](https://www.youtube.com/watch?v=WdeE1On4S1o) om u te laten zien hoe u dit moet doen.
 
 ### <a name="block-a-user"></a>Een gebruiker blok keren
 

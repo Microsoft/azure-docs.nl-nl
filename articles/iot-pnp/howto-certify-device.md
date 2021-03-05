@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b3ba007f03b3aa4883d9455dc43b2bc19676da59
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 43a568149ccf85579b4f8190974fff872d6e09ea
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803966"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199642"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>IoT Plug en Play-apparaten certificeren
 
@@ -51,13 +51,13 @@ Om aan de certificerings vereisten te voldoen, moet uw apparaat:
 
 ## <a name="test-with-the-azure-iot-extension-cli"></a>Testen met de Azure IoT-extensie-CLI
 
-Met de [Azure IOT cli-extensie](/cli/azure/ext/azure-iot/iot/product?preserve-view=true&view=azure-cli-latest) kunt u controleren of de implementatie van het apparaat overeenkomt met het model voordat u het apparaat verzendt voor certificering via de Azure Certified Device-Portal.
+Met de [Azure IOT cli-extensie](/cli/azure/ext/azure-iot/iot/product) kunt u controleren of de implementatie van het apparaat overeenkomt met het model voordat u het apparaat verzendt voor certificering via de Azure Certified Device-Portal.
 
 De volgende stappen laten zien hoe u de certificerings tests voorbereidt en uitvoert met behulp van de CLI:
 
 ### <a name="install-the-azure-iot-extension-for-the-azure-cli"></a>De Azure IoT-extensie voor de Azure CLI installeren
 
-Zie de installatie-instructies voor het instellen van de [Azure cli](/cli/azure/?preserve-view=true&view=azure-cli-latest) in uw omgeving.
+Zie de installatie-instructies voor het instellen van de [Azure cli](/cli/azure) in uw omgeving.
 
 Als u de Azure IoT-extensie wilt installeren, voert u de volgende opdracht uit:
 
@@ -65,7 +65,7 @@ Als u de Azure IoT-extensie wilt installeren, voert u de volgende opdracht uit:
 az extension add --name azure-iot
 ```
 
-Zie [Azure CLI voor Azure IOT voor](/cli/azure/azure-cli-reference-for-iot?preserve-view=true&view=azure-cli-latest)meer informatie.
+Zie [Azure CLI voor Azure IOT voor](/cli/azure/azure-cli-reference-for-iot)meer informatie.
 
 ### <a name="create-a-new-product-test"></a>Een nieuwe product test maken
 
@@ -79,7 +79,7 @@ az iot product test create --badge-type Pnp --at SymmetricKey --device-type Fini
 ```
 
 > [!NOTE]
-> Wanneer u de CLI gebruikt, moet u [zich aanmelden](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest) bij uw abonnement.
+> Wanneer u de CLI gebruikt, moet u [zich aanmelden](/cli/azure/authenticate-azure-cli) bij uw abonnement.
 
 De JSON-uitvoer van de opdracht bevat de `primaryKey` , `registrationId` en `scopeID` om te gebruiken wanneer u verbinding maakt met uw apparaat.
 

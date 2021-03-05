@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d25a429873ccf8b546c0919456c97e64445f184c
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 40cf83b0ca9e4c794979f2b20ddb73360758abc5
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071695"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198537"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -48,7 +48,7 @@ In deze sectie wordt uitgelegd hoe u deze eind punten maakt met behulp van de Az
 
 ### <a name="create-the-endpoint"></a>Het eind punt maken
 
-Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp van de opdracht [AZ DT endpoint Create](/cli/azure/ext/azure-iot/dt/endpoint/create?view=azure-cli-latest&preserve-view=true) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
+Zodra u de eindpunt resources hebt gemaakt, kunt u deze gebruiken voor een Azure Digital Apparaatdubbels-eind punt. In de volgende voor beelden ziet u hoe u eind punten maakt met behulp van de opdracht [AZ DT endpoint Create](/cli/azure/ext/azure-iot/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md). Vervang de tijdelijke aanduidingen in de opdrachten door de gegevens van uw eigen resources.
 
 Een Event Grid-eind punt maken:
 
@@ -119,7 +119,7 @@ Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te 
     
 #### <a name="create-the-dead-letter-endpoint"></a>Het eind punt voor onbestelbare berichten maken
 
-Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, voegt u de volgende para meter voor onbestelbare berichten toe aan de opdracht [AZ DT-eind punt maken](/cli/azure/ext/azure-iot/dt/endpoint/create?view=azure-cli-latest&preserve-view=true) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
+Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, voegt u de volgende para meter voor onbestelbare berichten toe aan de opdracht [AZ DT-eind punt maken](/cli/azure/ext/azure-iot/dt/endpoint/create) voor de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
 
 De waarde voor de para meter is de **SAS-URI met onbestelbare tekens** die bestaat uit de naam van het opslag account, de container naam en het SAS-token dat u in de [vorige sectie](#set-up-storage-resources)hebt verzameld. Met deze para meter wordt het eind punt gemaakt met verificatie op basis van een sleutel.
 
@@ -204,7 +204,7 @@ Als er geen route naam is, worden er geen berichten meer doorgestuurd buiten Azu
 
 Voor één route moeten meerdere meldingen en gebeurtenis typen worden geselecteerd. 
 
-Gebeurtenis routes kunnen worden gemaakt met de Azure Digital Apparaatdubbels [ **EventRoutes** -gegevens vlak-api's](/rest/api/digital-twins/dataplane/eventroutes) of [ **AZ DT-route** -cli-opdrachten](/cli/azure/ext/azure-iot/dt/route?view=azure-cli-latest&preserve-view=true). In de rest van deze sectie wordt het aanmaak proces door lopen.
+Gebeurtenis routes kunnen worden gemaakt met de Azure Digital Apparaatdubbels [ **EventRoutes** -gegevens vlak-api's](/rest/api/digital-twins/dataplane/eventroutes) of [ **AZ DT-route** -cli-opdrachten](/cli/azure/ext/azure-iot/dt/route). In de rest van deze sectie wordt het aanmaak proces door lopen.
 
 ### <a name="create-routes-with-the-apis-and-c-sdk"></a>Routes maken met de Api's en C# SDK
 
@@ -225,7 +225,7 @@ De volgende voorbeeld methode laat zien hoe u een gebeurtenis route kunt maken, 
 
 ### <a name="create-routes-with-the-cli"></a>Routes maken met de CLI
 
-Routes kunnen ook worden beheerd met behulp van de [route opdrachten AZ DT](/cli/azure/ext/azure-iot/dt/route?view=azure-cli-latest&preserve-view=true) voor de Azure Digital apparaatdubbels cli. 
+Routes kunnen ook worden beheerd met behulp van de [route opdrachten AZ DT](/cli/azure/ext/azure-iot/dt/route) voor de Azure Digital apparaatdubbels cli. 
 
 Zie [*How-to: use the Azure Digital APPARAATDUBBELS cli*](how-to-use-cli.md)(Engelstalig) voor meer informatie over het gebruik van de CLI en de opdrachten die beschikbaar zijn.
 

@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 4970cacb0995678bdad87f14ba971b8fb88ffa09
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 44554434eee51c11e7f89007c532f1a142fc998c
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593647"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199336"
 ---
 # <a name="react-plugin-for-application-insights-javascript-sdk"></a>Invoeg toepassing reageren voor Application Insights java script-SDK
 
@@ -161,7 +161,11 @@ Het werkt als het hogere onderdeel, maar reageert op de levens cyclus van hooks 
 
 ### `useTrackEvent`
 
-De `useTrackEvent` Hook wordt gebruikt om alle aangepaste gebeurtenissen bij te houden die een toepassing mogelijk moet volgen, zoals het klikken op een knop of een andere API-aanroep. Er worden twee argumenten gebruikt: de eerste is het Application Insights exemplaar (dat kan worden verkregen van de `useAppInsightsContext` Hook) en een naam voor de gebeurtenis.
+De `useTrackEvent` Hook wordt gebruikt om alle aangepaste gebeurtenissen bij te houden die een toepassing mogelijk moet volgen, zoals het klikken op een knop of een andere API-aanroep. Er worden vier argumenten gebruikt:
+-   Application Insights exemplaar (dat kan worden verkregen van de `useAppInsightsContext` Hook).
+-   De naam voor de gebeurtenis.
+-   Gebeurtenis gegevens object dat de wijzigingen inkapselt die moeten worden bijgehouden.
+-   de vlag skipFirstRun (optional) om het aanroepen `trackEvent` van de aanroep bij initialisatie over te slaan. De standaardwaarde is ingesteld op `true`.
 
 ```javascript
 import React, { useState, useEffect } from "react";

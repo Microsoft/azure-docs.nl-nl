@@ -6,12 +6,12 @@ ms.topic: overview
 description: Informatie over hoe Azure Dev Spaces een snelle, iteratieve Kubernetes-ontwikkelervaring voor teams biedt in Azure Kubernetes Service-clusters
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 9bdd6f48a8f48266b8a9aad003fe6ea43715036c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.openlocfilehash: fd6f52c71c81f253f3f40f05408e45b6a6c0dbce
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978438"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199472"
 ---
 # <a name="what-is-azure-dev-spaces"></a>Wat is Azure Dev Spaces?
 
@@ -40,7 +40,7 @@ Zie [Hoe Azure Dev Spaces werkt en is geconfigureerd][how-dev-spaces-works] voor
 
 ## <a name="supported-regions-and-configurations"></a>Ondersteunde regio's en configuraties
 
-Azure Dev Spaces wordt alleen ondersteund door AKS-clusters in [sommige regio's][supported-regions]. Azure Dev Spaces ondersteunt het gebruik van [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) of [Visual Studio Code](https://code.visualstudio.com/download) met een [Azure Dev Spaces-extensie](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) die is geïnstalleerd in Linux, macOS of Windows 8 of hoger, om uw toepassingen te ontwikkelen en in AKS uit te voeren. Het biedt ook ondersteuning voor het gebruik van [Visual Studio 2019](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) geïnstalleerd in Windows met de Azure Development-workload.
+Azure Dev Spaces wordt alleen ondersteund door AKS-clusters in [sommige regio's][supported-regions]. Azure Dev Spaces ondersteunt het gebruik van [Azure CLI](/cli/azure/install-azure-cli) of [Visual Studio Code](https://code.visualstudio.com/download) met een [Azure Dev Spaces-extensie](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) die is geïnstalleerd in Linux, macOS of Windows 8 of hoger, om uw toepassingen te ontwikkelen en in AKS uit te voeren. Het biedt ook ondersteuning voor het gebruik van [Visual Studio 2019](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) geïnstalleerd in Windows met de Azure Development-workload.
 
 ## <a name="next-steps"></a>Volgende stappen
 

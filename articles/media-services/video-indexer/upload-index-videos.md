@@ -8,15 +8,15 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 11/12/2020
+ms.date: 03/04/2021
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a0b7330485d3152a588d43added7d9feaa5c2a14
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 3a3c2812a4ecfa1a80539804122042bc2dc2f3a2
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "95994486"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199183"
 ---
 # <a name="upload-and-index-your-videos"></a>Uw video's uploaden en indexeren  
 
@@ -83,18 +83,22 @@ Met deze parameter kunt u een ID die is gekoppeld aan de video opgeven. De ID ka
 
 #### <a name="indexingpreset"></a>indexingPreset
 
-Gebruik deze parameter als onbewerkte of externe opnamen achtergrondgeluiden bevatten. Deze parameter wordt gebruikt voor het configureren van het indexeringsproces. U kunt de volgende waarden opgeven:
+Gebruik deze para meter om de AI-bundel te definiëren die u wilt Toep assen op uw audio-of video bestand. Deze parameter wordt gebruikt voor het configureren van het indexeringsproces. U kunt de volgende waarden opgeven:
 
-- `AudioOnly`: indexeren en inzichten extraheren met behulp van alleen audio (video wordt genegeerd)
-- `VideoOnly` -Alleen inzichten indexeren en uitpakken met alleen video (audio wordt genegeerd)
-- `Default`: indexeren en inzichten extraheren met behulp van zowel audio als video
-- `DefaultWithNoiseReduction`: indexeren en inzichten extraheren met behulp van zowel audio als video, waarbij algoritmen voor ruisvermindering worden toegepast op de audiostroom
+- `AudioOnly` – Indexeer en extraheer inzichten alleen met behulp van audio (video wordt genegeerd).
+- `VideoOnly` -Alleen inzichten indexeren en uitpakken met alleen video (audio wordt genegeerd).
+- `Default` – Indexeer en extraheer inzichten met behulp van audio en video.
+- `DefaultWithNoiseReduction` – Indexeer en extraheer inzichten van audio en video, terwijl er ruis reductie algoritmen worden toegepast op een audio stroom.
+
+    De `DefaultWithNoiseReduction` waarde is nu toegewezen aan de standaard voorinstelling (afgeschaft).
+- `BasicAudio` -U kunt inzichten alleen indexeren en uitpakken met alleen audio (video wordt genegeerd), met inbegrip van alleen basis audio functies (transcriptie, vertaling, opmaak van uitvoer bijschriften en ondertiteling).
+ - `AdvancedAudio` -U kunt inzichten alleen indexeren en uitpakken met alleen audio (video wordt genegeerd), inclusief geavanceerde audio functies (detectie van audio gebeurtenissen) naast de standaard audio analyse.
 
 > [!NOTE]
 > Video Indexer omvat Maxi maal twee sporen van audio. Als het bestand meer audio sporen bevat, worden deze behandeld als één spoor.<br/>
 Als u de nummers afzonderlijk wilt indexeren, moet u het relevante audio bestand extra heren en indexeren als `AudioOnly` .
 
-De prijs is afhankelijk van de geselecteerde optie voor indexering.  
+De prijs is afhankelijk van de geselecteerde optie voor indexering. Raadpleeg voor meer informatie [Media Services prijzen](https://azure.microsoft.com/pricing/details/media-services/).
 
 #### <a name="priority"></a>priority
 
@@ -135,7 +139,7 @@ Nadat u deze code naar uw ontwikkel platform hebt gekopieerd, moet u twee para m
 
     * Ga naar https://api-portal.videoindexer.ai/
     * Aanmelden
-    * Naar het **Products**  ->  abonnement voor **verificatie**  ->  **autorisatie** van producten
+    * Naar het   ->  abonnement voor **verificatie**  ->  **autorisatie** van producten
     * De **primaire sleutel** kopiëren
 * Video-URL: een URL van het video-of audio bestand dat moet worden geïndexeerd. De URL moet verwijzen naar een mediabestand (HTML-pagina's worden niet ondersteund). Het bestand kan worden beveiligd door een toegangstoken dat is geleverd als onderdeel van de URI en het eindpunt voor het bestand moet worden beveiligd met TLS 1.2 of hoger. De URL moet worden gecodeerd.
 
@@ -317,7 +321,7 @@ public class AccountContractSlim
 
 De statuscodes in de volgende tabel kunnen worden geretourneerd door de uploadbewerking.
 
-|Statuscode|ErrorType (in hoofdtekst van antwoord)|Description|
+|Statuscode|ErrorType (in hoofdtekst van antwoord)|Beschrijving|
 |---|---|---|
 |409|VIDEO_INDEXING_IN_PROGRESS|Dezelfde video wordt al verwerkt in het opgegeven account.|
 |400|VIDEO_ALREADY_FAILED|Dezelfde video kon minder dan twee uur geleden niet worden verwerkt in het opgegeven account. API-clients moeten ten minste twee uur wachten voordat ze een video opnieuw uploaden.|

@@ -2,13 +2,13 @@
 title: Gebeurtenis filtering voor Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen filtert bij het maken van een Azure Event Grid-abonnement.
 ms.topic: conceptual
-ms.date: 02/26/2021
-ms.openlocfilehash: 7253c4a38660b0041f27918309efae21675fdc8f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/04/2021
+ms.openlocfilehash: 94445341891149d5d02c7f33caef20bf45123e9b
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101721953"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102197772"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Gebeurtenis filters begrijpen voor Event Grid-abonnementen
 
@@ -58,13 +58,27 @@ Als u wilt filteren op waarden in de gegevens velden en de vergelijkings operato
 * waarden: de waarde of waarden die moeten worden vergeleken met de sleutel.
 
 ## <a name="key"></a>Sleutel
-Sleutel is het veld in de gebeurtenis gegevens die u gebruikt voor het filteren van. Dit kan een getal, een Booleaanse waarde, een teken reeks of een matrix zijn. Voor gebeurtenissen in het **Event grid schema** gebruikt u de volgende waarden voor de sleutel:,,,,, `ID` `Topic` `Subject` `EventType` `DataVersion` of gebeurtenis gegevens (zoals `data.key1` ).
+Sleutel is het veld in de gebeurtenis gegevens die u gebruikt voor het filteren van. Dit kan een van de volgende typen zijn:
+
+- Aantal
+- Boolean
+- Tekenreeks
+- Array. U moet de eigenschap instellen `enableAdvancedFilteringOnArrays` op True om deze functie te gebruiken. Op dit moment biedt de Azure Portal geen ondersteuning voor het inschakelen van deze functie. 
+
+    ```json
+    "filter":
+    {
+        "subjectBeginsWith": "/blobServices/default/containers/mycontainer/log",
+        "subjectEndsWith": ".jpg",
+        "enableAdvancedFilteringOnArrays": true
+    }
+    ```
+
+Voor gebeurtenissen in het **Event grid schema** gebruikt u de volgende waarden voor de sleutel:,,,,, `ID` `Topic` `Subject` `EventType` `DataVersion` of gebeurtenis gegevens (zoals `data.key1` ).
 
 Voor gebeurtenissen in het **schema voor Cloud gebeurtenissen** gebruikt u de volgende waarden voor de sleutel:,,, `eventid` `source` `eventtype` `eventtypeversion` of gebeurtenis gegevens (zoals `data.key1` ).
 
-Voor het **aangepaste invoer schema** gebruikt u de velden voor gebeurtenis gegevens (zoals `data.key1` ).
-
-Als u toegang wilt krijgen tot velden in de sectie gegevens, gebruikt u de `.` notatie (punt). Bijvoorbeeld, `data.sitename` `data.appEventTypeDetail.action` om toegang te krijgen tot `sitename` of `action` voor de volgende voorbeeld gebeurtenis.
+Voor het **aangepaste invoer schema** gebruikt u de velden voor gebeurtenis gegevens (zoals `data.key1` ). Als u toegang wilt krijgen tot velden in de sectie gegevens, gebruikt u de `.` notatie (punt). Bijvoorbeeld, `data.sitename` `data.appEventTypeDetail.action` om toegang te krijgen tot `sitename` of `action` voor de volgende voorbeeld gebeurtenis.
 
 ```json
     "data": {
@@ -80,10 +94,8 @@ Als u toegang wilt krijgen tot velden in de sectie gegevens, gebruikt u de `.` n
     },
 ```
 
-
 ## <a name="values"></a>Waarden
 De waarden kunnen zijn: Number, String, Boolean of array
-
 
 ## <a name="operators"></a>Operators
 

@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 581c25b384bf6e2865a21f083ba12eef2e5e8bcd
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: cc9793bfc0ca6cc0afbede241534453209685d94
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733784"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198928"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -35,7 +35,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. AutonomousSystems | [Autonome systemen](https://www.microsoft.com/ai/autonomous-systems) |
 | Micro soft. AVS | [Azure VMware Solution](../../azure-vmware/index.yml) |
 | Microsoft.AzureActiveDirectory | [Azure Active Directory B2C](../../active-directory-b2c/index.yml) |
-| Micro soft. AzureArcData | Azure Arc ingeschakelde Data Services-REGI ster |
+| Micro soft. AzureArcData | Azure Arc-gegevensservices |
 | Micro soft. Azureworden | SQL Server REGI ster |
 | Micro soft. AzureStack | baan |
 | Micro soft. AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
@@ -129,7 +129,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. migrate | [Azure Migrate](../../migrate/migrate-services-overview.md) |
 | Micro soft. MixedReality | [Azure Spatial Anchors](../../spatial-anchors/index.yml) |
 | Micro soft. NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
-| Microsoft.Network | [Application Gateway](../../application-gateway/index.yml)<br />[Azure Bastion](../../bastion/index.yml)<br />[Azure DDoS Protection](../../ddos-protection/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure Private Link](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Virtual Network](../../virtual-network/index.yml)<br />[Virtual WAN](../../virtual-wan/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br /> |
+| Microsoft.Network | [Application Gateway](../../application-gateway/index.yml)<br />[Azure Bastion](../../bastion/index.yml)<br />[Azure DDoS Protection](../../ddos-protection/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure Private Link](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Virtual Network](../../virtual-network/index.yml)<br />[Virtuele WAN](../../virtual-wan/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br /> |
 | Micro soft. notebooks | [Azure Notebooks](https://notebooks.azure.com/help/introduction) |
 | Microsoft.NotificationHubs | [Notification Hubs](../../notification-hubs/index.yml) |
 | Micro soft. ObjectStore | Object opslag |
@@ -138,7 +138,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal- [geregistreerd](#registration) | [Azure Portal](../../azure-portal/index.yml) |
+| Micro soft. Portal- [geregistreerd](#registration) | [Azure-portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |

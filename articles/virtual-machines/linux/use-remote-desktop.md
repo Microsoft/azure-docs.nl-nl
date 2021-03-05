@@ -7,21 +7,23 @@ ms.service: virtual-machines-linux
 ms.collection: linux
 ms.workload: infrastructure-services
 ms.topic: how-to
-ms.date: 03/01/2021
+ms.date: 03/03/2021
 ms.author: cynthn
-ms.openlocfilehash: 448e9f6487b5afc51be9b3dee8e07007c8534a0b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0fecf9f16cd1069b140e61a019a43510b59e76e8
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695172"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199142"
 ---
-# <a name="install-and-configure-xrdp-to-use-remote-desktop-with-a-linux-vm"></a>Xrdp installeren en configureren voor het gebruik van Extern bureaublad met een virtuele Linux-machine
+# <a name="install-and-configure-xrdp-to-use-remote-desktop-with-ubuntu"></a>Xrdp installeren en configureren voor het gebruik van Extern bureaublad met Ubuntu
 
-Virtuele Linux-machines (Vm's) in Azure worden meestal beheerd vanaf de opdracht regel met behulp van een SSH-verbinding (Secure Shell). Wanneer u geen ervaring hebt met Linux of voor snelle probleemoplossings scenario's, is het gebruik van extern bureau blad mogelijk eenvoudiger. In dit artikel wordt beschreven hoe u een desktop-omgeving ([xfce](https://www.xfce.org)) en extern bureau blad ([xrdp](http://xrdp.org)) installeert en configureert voor uw virtuele Linux-machine met behulp van het Resource Manager-implementatie model.
+Virtuele Linux-machines (Vm's) in Azure worden meestal beheerd vanaf de opdracht regel met behulp van een SSH-verbinding (Secure Shell). Wanneer u geen ervaring hebt met Linux of voor snelle probleemoplossings scenario's, is het gebruik van extern bureau blad mogelijk eenvoudiger. In dit artikel wordt beschreven hoe u een desktop-omgeving ([xfce](https://www.xfce.org)) en extern bureau blad ([xrdp](http://xrdp.org)) kunt installeren en configureren voor uw virtuele Linux-machine met Ubuntu.
 
+Het artikel is geschreven en getest met behulp van een Ubuntu 18,04 VM. 
 
 ## <a name="prerequisites"></a>Vereisten
+
 Voor dit artikel is een bestaande Ubuntu 18,04 LTS-VM vereist in Azure. Als u een virtuele machine wilt maken, gebruikt u een van de volgende methoden:
 
 - De [Azure cli](quick-create-cli.md)

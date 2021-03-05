@@ -2,49 +2,48 @@
 title: 'Een virtueel netwerk maken: quickstart - Azure CLI'
 titlesuffix: Azure Virtual Network
 description: In deze quickstart leert u hoe u een virtueel netwerk maakt met Azure CLI. Met een virtueel netwerk kunnen Azure-resources met elkaar en met internet communiceren.
-services: virtual-network
-documentationcenter: virtual-network
 author: KumudD
 Customer intent: I want to create a virtual network so that virtual machines can communicate with privately with each other and with the internet.
 ms.service: virtual-network
-ms.devlang: azurecli
 ms.topic: quickstart
-ms.tgt_pltfrm: virtual-network
-ms.workload: infrastructure
-ms.date: 01/22/2019
+ms.date: 03/06/2021
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1feae201738a560c4cdb56f703c4af9a38af86d1
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 3f4cd0a09c64c8c89116bf3a7dec40bae9f05f71
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88056785"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199064"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-cli"></a>Quickstart: Een virtueel netwerk maken met Azure CLI
 
-Met een virtueel netwerk kunnen Azure-resources, zoals virtuele machines, privé met elkaar en met internet communiceren. In deze snelstart leert u hoe u een virtueel netwerk maakt. Nadat u een virtueel netwerk hebt gemaakt, implementeert u twee virtuele machines in het virtuele netwerk. Vervolgens maakt u verbinding met de virtuele machines via internet en is er privécommunicatie via het nieuwe virtuele netwerk mogelijk.
-## <a name="prerequisites"></a>Vereisten
-Als u nog geen abonnement op Azure hebt, maak dan nu een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+Met een virtueel netwerk kunnen Azure-resources, zoals virtuele machines, privé met elkaar en met internet communiceren. 
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+In deze snelstart leert u hoe u een virtueel netwerk maakt. Nadat u een virtueel netwerk hebt gemaakt, implementeert u twee virtuele machines in het virtuele netwerk. Vervolgens maakt u verbinding met de virtuele machines via internet en is er privécommunicatie via het nieuwe virtuele netwerk mogelijk.
 
-Als u ervoor kiest om Azure CLI lokaal te installeren en te gebruiken, moet u voor deze snelstart versie 2.0.28 of hoger van Azure CLI uitvoeren. Voer `az --version` uit om na te gaan welke versie er is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) voor installatie- of upgrade-informatie.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+
+- Voor deze quickstart is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group-and-a-virtual-network"></a>Een resourcegroep en een virtueel netwerk maken
 
-Voordat u een virtueel netwerk kunt maken, moet u een resourcegroep maken die het virtuele netwerk host. Maak een resourcegroep maken met [az group create](/cli/azure/group). In dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *US - oost*:
+Voordat u een virtueel netwerk kunt maken, moet u een resourcegroep maken die het virtuele netwerk host. Maak een resourcegroep maken met [az group create](/cli/azure/group#az_group_create). In dit voor beeld wordt een resource groep met de naam **CreateVNetQS-RG** gemaakt op de locatie **eastus** :
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location eastus
+az group create \
+    --name CreateVNetQS-rg \
+    --location eastus
 ```
 
-Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet). In dit voorbeeld wordt een standaard virtueel netwerk gemaakt met de naam *myVirtualNetwork* met één subnet genaamd *default*:
+Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). In dit voor beeld wordt een standaard virtueel netwerk gemaakt met de naam **myVNet** met één subnet met de naam **default**:
 
 ```azurecli-interactive
 az network vnet create \
-  --name myVirtualNetwork \
-  --resource-group myResourceGroup \
+  --name myVNet \
+  --resource-group CreateVNetQS-rg \
   --subnet-name default
 ```
 
@@ -54,26 +53,34 @@ Maak twee VM’s in het virtuele netwerk.
 
 ### <a name="create-the-first-vm"></a>De eerste VM maken
 
-Maak een VM met [az vm create](/cli/azure/vm). Als SSH-sleutels niet al bestaan op de standaardsleutellocatie, worden ze met deze opdracht gemaakt. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`. Met de optie `--no-wait` wordt de virtuele machine op de achtergrond gemaakt, zodat u kunt doorgaan met de volgende stap. In dit voorbeeld wordt een VM met de naam *myVM1* gemaakt:
+Maak een VM met [az vm create](/cli/azure/vm#az_vm_create). 
+
+Als SSH-sleutels niet al bestaan op de standaardsleutellocatie, worden ze met deze opdracht gemaakt. Als u een specifieke set sleutels wilt gebruiken, gebruikt u de optie `--ssh-key-value`. 
+
+Met de optie `--no-wait` wordt de virtuele machine op de achtergrond gemaakt. U kunt doorgaan met de volgende stap. 
+
+In dit voor beeld wordt een VM gemaakt met de naam **myVM1**:
 
 ```azurecli-interactive
 az vm create \
-  --resource-group myResourceGroup \
-  --name myVm1 \
+  --resource-group CreateVNetQS-rg \
+  --name myVM1 \
   --image UbuntuLTS \
   --generate-ssh-keys \
+  --public-ip-address myPublicIP-myVM1 \
   --no-wait
 ```
 
 ### <a name="create-the-second-vm"></a>De tweede VM maken
 
-Aangezien u de optie `--no-wait` in de vorige stap hebt gebruikt, kunt u verder gaan en de tweede virtuele machine met de naam *myVm2* maken.
+U hebt de `--no-wait` optie in de vorige stap gebruikt. U kunt de tweede VM maken met de naam **myVM2**.
 
 ```azurecli-interactive
 az vm create \
-  --resource-group myResourceGroup \
-  --name myVm2 \
+  --resource-group CreateVNetQS-rg \
+  --name myVM2 \
   --image UbuntuLTS \
+  --public-ip-address myPublicIP-myVM2 \
   --generate-ssh-keys
 ```
 
@@ -84,22 +91,32 @@ Het maken van de VM's duurt enkele minuten. Nadat Azure de virtuele machines hee
 ```output
 {
   "fqdns": "",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVm2",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/CreateVNetQS-rg/providers/Microsoft.Compute/virtualMachines/myVM2",
   "location": "eastus",
   "macAddress": "00-0D-3A-23-9A-49",
   "powerState": "VM running",
   "privateIpAddress": "10.0.0.5",
   "publicIpAddress": "40.68.254.142",
-  "resourceGroup": "myResourceGroup"
+  "resourceGroup": "CreateVNetQS-rg"
   "zones": ""
 }
 ```
 
-Let op het **openbare IP-adres**. U gebruikt dit adres om in de volgende stap verbinding te maken met de virtuele machine via internet.
+## <a name="vm-public-ip"></a>Openbaar IP-adres van VM
+
+Als u het open bare IP-adres **myVM2** wilt ophalen, gebruikt u [AZ Network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show):
+
+```azurecli-interactive
+az network public-ip show \
+  --resource-group CreateVNetQS-rg  \
+  --name myPublicIP-myVM2 \
+  --query ipAddress \
+  --output tsv
+```
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Verbinding maken met een virtuele machine via internet
 
-Vervang in deze opdracht `<publicIpAddress>` door het openbare IP-adres van de VM *myVm2*:
+Vervang in deze opdracht door `<publicIpAddress>` het open bare IP-adres van uw **myVM2** -VM:
 
 ```bash
 ssh <publicIpAddress>
@@ -107,27 +124,35 @@ ssh <publicIpAddress>
 
 ## <a name="communicate-between-vms"></a>Communiceren tussen VM's
 
-Voer de volgende opdracht in om privécommunicatie tussen de virtuele machines *myVm2* en *myVm1* te bevestigen:
+Voer de volgende opdracht in om particuliere communicatie tussen de **myVM2** -en **myVM1** -vm's te bevestigen:
 
 ```bash
-ping myVm1 -c 4
+ping myVM1 -c 4
 ```
 
 U ontvangt vier reacties van *10.0.0.4*.
 
-Sluit de SSH-sessie met de virtuele machine *myVm2* af.
+Sluit de SSH-sessie af met de **myVM2** -VM.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt [az group delete](/cli/azure/group) gebruiken om de resourcegroep en alle resources die deze bevat te verwijderen, als deze niet meer nodig zijn:
+U kunt [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep en alle resources die deze bevat te verwijderen, als deze niet meer nodig zijn:
 
 ```azurecli-interactive
-az group delete --name myResourceGroup --yes
+az group delete \
+    --name CreateVNetQS-rg \
+    --yes
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstart hebt u een standaard virtueel netwerk en twee virtuele machines gemaakt. U hebt met één virtuele machine verbinding gemaakt via internet en er is er privécommunicatie tussen de twee virtuele machines geweest.
-Azure staat onbeperkte privécommunicatie tussen virtuele machines toe. Daarentegen zijn standaard alleen inkomende verbindingen met extern bureaublad met Windows-VM's via internet toegestaan. Ga verder naar het volgende artikel voor meer informatie over het configureren van verschillende typen VM-netwerkcommunicatie:
+Voor deze snelstart geldt het volgende: 
+
+* U hebt een standaard virtueel netwerk en twee virtuele machines gemaakt. 
+* U hebt met één virtuele machine verbinding gemaakt via internet en er is er privécommunicatie tussen de twee virtuele machines geweest.
+
+Privé communicatie tussen Vm's is onbeperkt in een virtueel netwerk. 
+
+Ga verder naar het volgende artikel voor meer informatie over het configureren van verschillende typen VM-netwerkcommunicatie:
 > [!div class="nextstepaction"]
 > [Netwerkverkeer filteren](tutorial-filter-network-traffic.md)

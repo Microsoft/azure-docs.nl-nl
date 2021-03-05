@@ -3,12 +3,12 @@ title: Gebeurtenis domeinen in Azure Event Grid
 description: In dit artikel wordt beschreven hoe u gebeurtenis domeinen gebruikt voor het beheren van de stroom van aangepaste gebeurtenissen naar uw verschillende zakelijke organisaties, klanten of toepassingen.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 9b313784cd006087f3c2f1354053540cc9224782
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 46a50a8ecc50bd1b80efcba41228564df1c36c9f
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92328824"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198650"
 ---
 # <a name="understand-event-domains-for-managing-event-grid-topics"></a>Informatie over gebeurtenis domeinen voor het beheren van Event Grid onderwerpen
 
@@ -25,15 +25,8 @@ Een gebeurtenis domein is een beheer programma voor een groot aantal Event Grid-
 
 Gebeurtenis domeinen maken beschikbaar voor u dezelfde architectuur die wordt gebruikt door Azure-Services (zoals Storage en IoT Hub) om hun gebeurtenissen te publiceren. Hiermee kunt u gebeurtenissen naar duizenden onderwerpen publiceren. Domeinen bieden u ook autorisatie en verificatie controle over elk onderwerp, zodat u uw tenants kunt partitioneren.
 
-### <a name="example-use-case"></a>Voorbeeld van een toepassing
-
-Gebeurtenis domeinen worden het eenvoudigst uitgelegd met een voor beeld. Stel dat u contoso-bouw machines uitvoert, waarbij u tractoren, Blijf spitten-apparatuur en andere zware machines produceert. Als onderdeel van het uitvoeren van het bedrijf pusht u real-time informatie naar klanten over het onderhoud van apparaten, systeem status en contract updates. Al deze informatie gaat naar verschillende eind punten, met inbegrip van uw app, klant eindpunten en andere infra structuur die klanten hebben ingesteld.
-
-Met gebeurtenis domeinen kunt u contoso-bouw machines als één gebeurtenis entiteit model leren. Elk van uw klanten wordt weer gegeven als een onderwerp binnen het domein. Verificatie en autorisatie worden afgehandeld met behulp van Azure Active Directory. Elk van uw klanten kan zich abonneren op hun onderwerp en hun gebeurtenissen ontvangen. Beheerde toegang via het gebeurtenis domein zorgt ervoor dat ze alleen toegang hebben tot hun onderwerp.
-
-Het biedt u ook een enkel eind punt, waarmee u alle evenementen van uw klant kunt publiceren naar. Event Grid zorgt ervoor dat elk onderwerp alleen op de hoogte is van de gebeurtenissen die zijn afgestemd op de Tenant.
-
-![Voor beeld van Contoso-constructie](./media/event-domains/contoso-construction-example.png)
+## <a name="example-use-case"></a>Voorbeeld van een toepassing
+[!INCLUDE [event-grid-domain-example-use-case.md](../../includes/event-grid-domain-example-use-case.md)]
 
 ## <a name="access-management"></a>Toegangsbeheer
 
@@ -107,6 +100,8 @@ Als deze limieten niet aansluiten bij u, kunt u het product team bereiken door e
 Gebeurtenis domeinen gebruiken dezelfde [prijzen voor bewerkingen](https://azure.microsoft.com/pricing/details/event-grid/) die alle andere functies in Event grid gebruiken.
 
 Bewerkingen werken hetzelfde in gebeurtenis domeinen als in aangepaste onderwerpen. Elke ingang van een gebeurtenis in een gebeurtenis domein is een bewerking en elke bezorgings poging voor een gebeurtenis is een bewerking.
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

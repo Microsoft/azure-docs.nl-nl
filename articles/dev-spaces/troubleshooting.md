@@ -5,12 +5,12 @@ ms.date: 09/25/2019
 ms.topic: troubleshooting
 description: Meer informatie over het oplossen van veelvoorkomende problemen bij het inschakelen en gebruiken van Azure dev Spaces
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, servicemesh, servicemeshroutering, kubectl, k8s '
-ms.openlocfilehash: bf8c4d2040445fa3417fce02fb4b66216b21f3b5
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 14ced0c66b42b6f18c946d0c75091be1af5598f5
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548865"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102197789"
 ---
 # <a name="azure-dev-spaces-troubleshooting"></a>Problemen met Azure dev Spaces oplossen
 
@@ -26,7 +26,7 @@ Om problemen effectiever op te lossen, kan het helpen om meer gedetailleerde log
 
 Voor Visual Studio stelt u de `MS_VS_AZUREDEVSPACES_TOOLS_LOGGING_ENABLED` omgevings variabele in op 1. Zorg ervoor dat u Visual Studio opnieuw start om de omgevings variabele van kracht te laten worden. Wanneer deze functie is ingeschakeld, worden gedetailleerde logboeken naar uw `%TEMP%\Microsoft.VisualStudio.Azure.DevSpaces.Tools` Directory geschreven.
 
-In de CLI kunt u meer informatie tijdens het uitvoeren van de opdracht uitvoeren met behulp van de `--verbose` Switch. U kunt ook meer gedetailleerde logboeken bekijken in `%TEMP%\Azure Dev Spaces` . Op een Mac kan de map *temp* worden gevonden door `echo $TMPDIR` vanuit een Terminal venster te worden uitgevoerd. Op een Linux-computer is de map *temp* doorgaans `/tmp` . Controleer bovendien of logboek registratie is ingeschakeld in uw [Azure cli-configuratie bestand](/cli/azure/azure-cli-configuration?view=azure-cli-latest#cli-configuration-values-and-environment-variables).
+In de CLI kunt u meer informatie tijdens het uitvoeren van de opdracht uitvoeren met behulp van de `--verbose` Switch. U kunt ook meer gedetailleerde logboeken bekijken in `%TEMP%\Azure Dev Spaces` . Op een Mac kan de map *temp* worden gevonden door `echo $TMPDIR` vanuit een Terminal venster te worden uitgevoerd. Op een Linux-computer is de map *temp* doorgaans `/tmp` . Controleer bovendien of logboek registratie is ingeschakeld in uw [Azure cli-configuratie bestand](/cli/azure/azure-cli-configuration#cli-configuration-values-and-environment-variables).
 
 Azure dev Spaces werkt ook het beste bij het opsporen van fouten in één exemplaar of pod. Het `azds.yaml` bestand bevat een instelling, *replicaCount*, die het aantal peulen aangeeft dat Kubernetes voor uw service wordt uitgevoerd. Als u de *replicaCount* wijzigt om uw toepassing te configureren voor het uitvoeren van meerdere peulen voor een bepaalde service, wordt het fout opsporingsprogramma gekoppeld aan de eerste Pod, wanneer deze alfabetisch wordt weer gegeven. Het fout opsporingsprogramma koppelt aan een andere pod wanneer de oorspronkelijke pod wordt gerecycled, mogelijk als gevolg van onverwacht gedrag.
 
@@ -91,7 +91,7 @@ azure-cli                         2.0.60 *
 
 Ondanks het fout bericht bij het uitvoeren `az aks use-dev-spaces` van een versie van de Azure cli vóór 2.0.63, wordt de installatie voltooid. U kunt `azds` zonder problemen blijven gebruiken.
 
-U kunt dit probleem oplossen door uw installatie van [Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) bij te werken naar 2.0.63 of hoger. Met deze update wordt het fout bericht opgelost dat wordt weer gegeven wanneer het wordt uitgevoerd `az aks use-dev-spaces` . U kunt ook uw huidige versie van de Azure CLI en de Azure dev Spaces CLI blijven gebruiken.
+U kunt dit probleem oplossen door uw installatie van [Azure cli](/cli/azure/install-azure-cli) bij te werken naar 2.0.63 of hoger. Met deze update wordt het fout bericht opgelost dat wordt weer gegeven wanneer het wordt uitgevoerd `az aks use-dev-spaces` . U kunt ook uw huidige versie van de Azure CLI en de Azure dev Spaces CLI blijven gebruiken.
 
 ### <a name="error-unable-to-reach-kube-apiserver"></a>Fout ' kan uitvoeren-apiserver niet bereiken '
 

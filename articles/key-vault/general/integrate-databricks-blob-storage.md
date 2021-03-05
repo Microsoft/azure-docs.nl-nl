@@ -6,12 +6,12 @@ ms.author: mbaldwin
 ms.service: key-vault
 ms.topic: tutorial
 ms.date: 06/16/2020
-ms.openlocfilehash: ba80d78cbc7d34b1496daffbd489a1d0dbfed8b4
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
-ms.translationtype: HT
+ms.openlocfilehash: fc33b24aac8964d0a8390b4b38c5e1862ed639a8
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285663"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198911"
 ---
 # <a name="tutorial-access-azure-blob-storage-using-azure-databricks-and-azure-key-vault"></a>Zelfstudie: Toegang tot Azure Blob Storage met Azure Databricks en Azure Key Vault
 
@@ -29,11 +29,11 @@ In deze zelfstudie leert u het volgende:
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-Voordat u met deze zelfstudie begint, moet u [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) installeren.
+Voordat u met deze zelfstudie begint, moet u [Azure CLI](/cli/azure/install-azure-cli-windows) installeren.
 
 ## <a name="create-a-storage-account-and-blob-container-with-azure-cli"></a>Een opslagaccount en blobcontainer maken met Azure CLI
 
-U moet eerst een opslagaccount voor algemeen gebruik maken om blobs te kunnen gebruiken. Als u geen [resourcegroep](/cli/azure/group?view=azure-cli-latest#az-group-create) hebt, maakt u er een voordat u de opdracht uitvoert. Met de volgende opdracht worden de metagegevens van de opslagcontainer gemaakt en weergegeven. Kopieer de **id**.
+U moet eerst een opslagaccount voor algemeen gebruik maken om blobs te kunnen gebruiken. Als u geen [resourcegroep](/cli/azure/group#az-group-create) hebt, maakt u er een voordat u de opdracht uitvoert. Met de volgende opdracht worden de metagegevens van de opslagcontainer gemaakt en weergegeven. Kopieer de **id**.
 
 ```azurecli
 az storage account create --name contosoblobstorage5 --resource-group contosoResourceGroup --location eastus --sku Standard_ZRS --encryption-services blob
@@ -86,7 +86,7 @@ az keyvault create --name contosoKeyVault10 --resource-group contosoResourceGrou
 ![Afbeelding](../media/databricks-command-output-4.png)
 ![Console-uitvoer van de bovenstaande opdracht. De id en de vaultUri zijn beide groen gemarkeerd ten behoeve van de gebruiker.](../media/databricks-command-output-5.png)
 
-Gebruik de volgende opdracht om het geheim te maken. Stel de waarde van het geheim in op de **key1** -waarde uit uw opslagaccount.
+Gebruik de volgende opdracht om het geheim te maken. Stel de waarde van het geheim in op de **key1**-waarde uit uw opslagaccount.
 
 ```azurecli
 az keyvault secret set --vault-name contosoKeyVault10 --name storageKey --value "value of your key1"

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc, subject-armqs, devx-track-azurecli
-ms.openlocfilehash: cc55d1569c85dd0873d0132833acc99bd5d06136
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 505859075ce58c5db6873544123710a11135651a
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928931"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102198605"
 ---
 # <a name="quickstart-set-up-the-iot-hub-device-provisioning-service-dps-with-an-arm-template"></a>Quickstart: IoT Hub Device Provisioning Service (DPS) instellen met een ARM-sjabloon
 
@@ -34,7 +34,7 @@ Als uw omgeving voldoet aan de vereisten en u al bekend bent met het gebruik van
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 
-De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsjablonen](https://azure.microsoft.com/resources/templates/101-iothub-device-provisioning/).
+De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstart-sjablonen](https://azure.microsoft.com/resources/templates/101-iothub-device-provisioning/).
 
 > [!NOTE]
 > Er is momenteel geen ARM-sjabloon ondersteuning voor het maken van inschrijvingen met nieuwe DPS-resources. Dit is een veelvoorkomende en begrepen aanvraag die wordt overwogen voor implementatie.
@@ -136,13 +136,13 @@ Meld u aan bij uw Azure-account en selecteer uw abonnement.
 
 ## <a name="review-deployed-resources"></a>Geïmplementeerde resources bekijken
 
-1. Voer de volgende [opdracht voor het weergeven van resources](/cli/azure/resource?view=azure-cli-latest#az-resource-list&preserve-view=true) uit en zoek de nieuwe inrichtingsservice en IoT-hub in de uitvoer om de implementatie te controleren:
+1. Voer de volgende [opdracht voor het weergeven van resources](/cli/azure/resource#az-resource-list) uit en zoek de nieuwe inrichtingsservice en IoT-hub in de uitvoer om de implementatie te controleren:
 
     ```azurecli
      az resource list -g "${projectName}rg"
     ```
 
-2. Als u wilt controleren of de hub al is gekoppeld aan de DPS-resource, voert u de volgende opdracht uit [DPS-extensie weergeven](/cli/azure/iot/dps?view=azure-cli-latest#az_iot_dps_show&preserve-view=true).
+2. Als u wilt controleren of de hub al is gekoppeld aan de DPS-resource, voert u de volgende opdracht uit [DPS-extensie weergeven](/cli/azure/iot/dps#az_iot_dps_show).
 
     ```azurecli
      az iot dps show --name <Your provisioningServiceName>

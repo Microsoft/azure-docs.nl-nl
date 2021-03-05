@@ -2,7 +2,7 @@
 title: Een toegangs beoordeling maken voor groepen & toepassingen-Azure AD
 description: Meer informatie over het maken van een toegangs beoordeling van groeps leden of toegang tot toepassingen in Azure Active Directory toegangs Beoordelingen.
 services: active-directory
-author: barclayn
+author: ajburnle
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 12/07/2020
-ms.author: barclayn
+ms.date: 3/3/2021
+ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b12eb95a7840bdbb902701fc644eee30ffe9900f
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 7143c3f9786d41c32ae954ab219197a9cfaa1050
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778534"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176872"
 ---
 # <a name="create-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Een toegangs beoordeling maken voor groepen en toepassingen in azure AD-toegangs beoordelingen
 
@@ -80,7 +80,7 @@ Zie [Licentievereisten](access-reviews-overview.md#license-requirements) voor me
     - **Groeps eigenaar (s)** (alleen beschikbaar als u een beoordeling uitvoert op een team of groep)
     - **Geselecteerde gebruiker (s) of groepen (en)**
     - **Gebruikers controleren eigen toegang**
-    - **Evaluatie Managers van gebruikers.**
+    - **Managers van gebruikers.**
     Als u een **van beide managers van gebruikers** of **groeps eigenaren**  kiest, hebt u ook de optie om een terugval revisor op te geven. Terugval controleurs wordt gevraagd een beoordeling uit te voeren als de gebruiker geen beheer heeft opgegeven in de map of als de groep geen eigenaar heeft.
 
     ![nieuwe toegangs beoordeling](./media/create-access-review/new-access-review.png)
@@ -149,7 +149,7 @@ Als gasten als revisoren zijn toegewezen en ze de uitnodiging niet hebben geacce
 |NotStarted | De controle is gemaakt, de gebruikers detectie wacht op starten. |
 |Initialiseren   | Gebruikers detectie wordt uitgevoerd om alle gebruikers te identificeren die deel uitmaken van de beoordeling. |
 |Starten | De beoordeling wordt gestart. Als e-mail meldingen zijn ingeschakeld, worden e-mails naar revisoren verzonden. |
-|Wordt uitgevoerd | De beoordeling is gestart. Als e-mail meldingen zijn ingeschakeld, worden e-mails naar revisoren verzonden. Revisoren kunnen beslissingen verzenden tot de verval datum. |
+|InProgress | De beoordeling is gestart. Als e-mail meldingen zijn ingeschakeld, worden e-mails naar revisoren verzonden. Revisoren kunnen beslissingen verzenden tot de verval datum. |
 |Invullen | De beoordeling wordt voltooid en e-mail berichten worden verzonden naar de eigenaar van de beoordeling. |
 |Automatisch controleren | Beoordeling bevindt zich in een systeem revisie fase. Het systeem is bezig met het vastleggen van beslissingen voor gebruikers die niet zijn gecontroleerd op basis van aanbevelingen of vooraf geconfigureerde beslissingen. |
 |Automatisch gecontroleerd | Er zijn beslissingen vastgelegd door het systeem voor alle gebruikers die niet zijn gecontroleerd. Beoordeling is gereed om verder te gaan met het **Toep assen van de toepassing** als automatisch Toep assen is ingeschakeld. |

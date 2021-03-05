@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a70b10f7d22c9cc04427bdfbb44243fad457ba0
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 04699890af2cfe835ecca6ee983808d7d8d002c8
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913480"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174186"
 ---
 # <a name="specify-a-face-detection-model"></a>Een model voor gezichtsdetectie opgeven
 
@@ -43,6 +43,7 @@ Wanneer u de [Face-detect-] API gebruikt, kunt u de model versie toewijzen met d
 
 * `detection_01`
 * `detection_02`
+* `detection_03`
 
 Een aanvraag-URL voor het [gezichts detectie] rest API ziet er als volgt uit:
 
@@ -52,7 +53,7 @@ Als u de-client bibliotheek gebruikt, kunt u de waarde voor toewijzen `detection
 
 ```csharp
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, recognitionModel: "recognition_03", detectionModel: "detection_02");
+var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, recognitionModel: "recognition_04", detectionModel: "detection_03");
 ```
 
 ## <a name="add-face-to-person-with-specified-model"></a>Een gezicht toevoegen aan een persoon met een opgegeven model
@@ -62,17 +63,17 @@ De face-service kan gezichts gegevens uit een afbeelding extra heren en deze kop
 Zie het volgende code voorbeeld voor de .NET-client bibliotheek.
 
 ```csharp
-// Create a PersonGroup and add a person with face detected by "detection_02" model
+// Create a PersonGroup and add a person with face detected by "detection_03" model
 string personGroupId = "mypersongroupid";
-await faceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_03");
+await faceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_04");
 
 string personId = (await faceClient.PersonGroupPerson.CreateAsync(personGroupId, "My Person Name")).PersonId;
 
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, personId, imageUrl, detectionModel: "detection_02");
+await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, personId, imageUrl, detectionModel: "detection_03");
 ```
 
-Met deze code wordt een **PersonGroup** met id gemaakt `mypersongroupid` en wordt hieraan een **persoon** toegevoegd. Vervolgens wordt er een gezicht aan deze **persoon** toegevoegd met behulp van het `detection_02` model. Als u de para meter *detectionModel* niet opgeeft, wordt het standaard model gebruikt door de API `detection_01` .
+Met deze code wordt een **PersonGroup** met id gemaakt `mypersongroupid` en wordt hieraan een **persoon** toegevoegd. Vervolgens wordt er een gezicht aan deze **persoon** toegevoegd met behulp van het `detection_03` model. Als u de para meter *detectionModel* niet opgeeft, wordt het standaard model gebruikt door de API `detection_01` .
 
 > [!NOTE]
 > U hoeft niet hetzelfde detectie model te gebruiken voor alle gezichten in een **persoons** object en u hoeft niet hetzelfde detectie model te gebruiken bij het detecteren van nieuwe gezichten om te vergelijken met een **persoons** object (bijvoorbeeld in de API voor het identificeren van het [gezichts] punt).
@@ -82,13 +83,13 @@ Met deze code wordt een **PersonGroup** met id gemaakt `mypersongroupid` en word
 U kunt ook een detectie model opgeven wanneer u een gezicht toevoegt aan een bestaand **FaceList** -object. Zie het volgende code voorbeeld voor de .NET-client bibliotheek.
 
 ```csharp
-await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_03");
+await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_04");
 
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: "detection_02");
+await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: "detection_03");
 ```
 
-Deze code maakt een **FaceList** `My face collection` met de naam en voegt een gezicht toe aan het `detection_02` model. Als u de para meter *detectionModel* niet opgeeft, wordt het standaard model gebruikt door de API `detection_01` .
+Deze code maakt een **FaceList** `My face collection` met de naam en voegt een gezicht toe aan het `detection_03` model. Als u de para meter *detectionModel* niet opgeeft, wordt het standaard model gebruikt door de API `detection_01` .
 
 > [!NOTE]
 > U hoeft niet hetzelfde detectie model te gebruiken voor alle gezichten in een **FaceList** -object en u hoeft niet hetzelfde detectie model te gebruiken bij het detecteren van nieuwe gezichten om te vergelijken met een **FaceList** -object.
@@ -97,14 +98,14 @@ Deze code maakt een **FaceList** `My face collection` met de naam en voegt een g
 
 De verschillende gezichts detectie modellen zijn geoptimaliseerd voor verschillende taken. Raadpleeg de volgende tabel voor een overzicht van de verschillen.
 
-|**detection_01**  |**detection_02**  |
-|---------|---------|
-|Standaard keuze voor alle gezichts detectie bewerkingen. | Uitgebracht in mei 2019 en optioneel beschikbaar in alle gezichts detectie bewerkingen.
-|Niet geoptimaliseerd voor kleine, weer gave-of wazige gezichten.  | Verbeterde nauw keurigheid van kleine, weer gave-en wazige gezichten. |
-|Retourneert face-kenmerken (Head pose, Age, Emotion, enzovoort) als deze zijn opgegeven in de aanroep detectie. |  Retourneert geen face-kenmerken.     |
-|Retourneert gezichts bezienswaardigheden als deze zijn opgegeven in de detectie aanroep.   | Retourneert geen gezichts bezienswaardigheden.  |
+|**detection_01**  |**detection_02**  |**detection_03** 
+|---------|---------|---|
+|Standaard keuze voor alle gezichts detectie bewerkingen. | Uitgebracht in mei 2019 en optioneel beschikbaar in alle gezichts detectie bewerkingen. |  Uitgebracht in februari 2021 en optioneel beschikbaar in alle gezichts detectie bewerkingen.
+|Niet geoptimaliseerd voor kleine, weer gave-of wazige gezichten.  | Verbeterde nauw keurigheid van kleine, weer gave-en wazige gezichten. | Grotere nauw keurigheid, inclusief op kleinere gezichten (64x64 pixels) en geroteerde gezichts standen.
+|Hiermee worden de belangrijkste kenmerken van het gezicht (Head pose, Age, Emotion, enzovoort) geretourneerd als deze zijn opgegeven in de aanroep detectie. |  Retourneert geen face-kenmerken.     | Retourneert de kenmerken ' faceMask ' en ' noseAndMouthCovered ' als deze zijn opgegeven in de aanroep van de detectie.
+|Retourneert gezichts bezienswaardigheden als deze zijn opgegeven in de detectie aanroep.   | Retourneert geen gezichts bezienswaardigheden.  | Retourneert geen gezichts bezienswaardigheden.
 
-De beste manier om de prestaties van de- `detection_01` en-modellen te vergelijken `detection_02` , is door deze te gebruiken in een voorbeeld gegevensset. We raden u aan de API voor het detectie van het [gezichts] aanbod op diverse installatie kopieën aan te roepen, met name afbeeldingen van veel gezichten of gezichten die moeilijk te zien zijn, met behulp van elk detectie model. Let op het aantal gezichten dat elke model retourneert.
+De beste manier om de prestaties van de detectie modellen te vergelijken, is door deze te gebruiken in een voorbeeld gegevensset. We raden u aan de API voor het detectie van het [gezichts] aanbod op diverse installatie kopieën aan te roepen, met name afbeeldingen van veel gezichten of gezichten die moeilijk te zien zijn, met behulp van elk detectie model. Let op het aantal gezichten dat elke model retourneert.
 
 ## <a name="next-steps"></a>Volgende stappen
 

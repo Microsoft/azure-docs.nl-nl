@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b356d5dff453b598eeb773af1a56fc50193e9e16
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: c7c78dcbc34deca769739f82964df41ebfc596ea
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746657"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176787"
 ---
 # <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>De toegang voor externe gebruikers bepalen in Rechtenbeheer van Azure AD
 
@@ -84,7 +84,7 @@ Om ervoor te zorgen dat personen buiten uw organisatie toegangs pakketten kunnen
 - Als gasten toestaan andere gasten uit te nodigen voor uw directory, betekent dit dat bezoekers uitnodigen buiten het rechten beheer kunnen plaatsvinden. Het wordt aangeraden **gasten** in te stellen op **Nee** om alleen goed onderhevige uitnodigingen toe te staan.
 - Als u de lijst B2B allow gebruikt, moet u ervoor zorgen dat elk domein dat u wilt partner met behulp van rechten beheer, aan de lijst wordt toegevoegd. Als u de lijst voor het weigeren van B2B gebruikt, moet u er ook voor zorgen dat elk domein waarmee u een partner wilt maken, niet aan de lijst wordt toegevoegd.
 - Als u een recht beleid maakt voor **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) en een gebruiker behoort niet tot een verbonden organisatie in uw directory, wordt er automatisch een verbonden organisatie voor gemaakt wanneer hij of zij het pakket aanvraagt. Alle instellingen voor het toestaan of weigeren van een B2B-lijst hebben prioriteit. Zorg er daarom voor dat u de domeinen die u wilt opnemen in dit beleid, opneemt in de lijst met toegestane gebruikers als u er een gebruikt en deze uitsluit van de lijst weigeren als u een lijst voor weigeren gebruikt.
-- Als u een rechten beheer beleid wilt maken dat **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) bevat, moet u eerst de verificatie van eenmalige e-mail wachtwoord code voor uw Directory inschakelen. Zie voor meer informatie [verificatie via e-mail eenmalige wachtwoord code (preview-versie)](../external-identities/one-time-passcode.md).
+- Als u een rechten beheer beleid wilt maken dat **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) bevat, moet u eerst de verificatie van eenmalige e-mail wachtwoord code voor uw Directory inschakelen. Zie voor meer informatie [verificatie via e-mail eenmalige wachtwoord code](../external-identities/one-time-passcode.md).
 - Zie voor meer informatie over externe samenwerkings instellingen van Azure AD B2B externe [samen werking inschakelen en beheren wie gasten kan uitnodigen](../external-identities/delegate-invitations.md).
 
     ![Externe samenwerkings instellingen voor Azure AD](./media/entitlement-management-external-users/collaboration-settings.png)

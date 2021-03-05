@@ -8,12 +8,12 @@ ms.author: nmurav
 ms.date: 12/11/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d2df7255980ca00d405cf80a9fff69ff0511bd17
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5ffc655cebb19b755b990171ab662576ac541793
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659304"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174288"
 ---
 # <a name="call-flow-topologies"></a>Topologieën voor oproep stromen
 In dit artikel worden de topologieën van Azure Communication Services-aanroep flow beschreven. Dit is een geweldig artikel om te controleren of u een zakelijke klant bent die communicatie Services integreert in een netwerk dat u beheert. Ga naar de [conceptuele documentatie van oproep stromen](./call-flows.md)voor een inleiding tot communicatie services aanroepen.
@@ -152,7 +152,7 @@ Signa lering tussen de VPN-verbinding met het klant netwerk maakt gebruik van st
 
 ### <a name="vpn-user-to-internal-user-direct-media"></a>VPN-gebruiker naar interne gebruiker (directe media)
 
-:::image type="content" source="./media/call-flows/vpn-to-internal-direct-media.png" alt-text="Een-op-een-aanroep stroom met een VPN met directe media":::
+:::image type="content" source="./media/call-flows/vpn-to-internal-direct-media.png" alt-text="Een-op-een-aanroep stroom (interne gebruiker) met een VPN met directe media":::
 
 *Afbeelding 6: VPN-gebruiker naar interne gebruiker (directe media)*
 
@@ -162,7 +162,7 @@ Deze media overdracht is bidirectionele. De richting van Flow 2 naar de externe 
 
 ### <a name="vpn-user-to-external-user-direct-media"></a>VPN-gebruiker naar externe gebruiker (directe media)
 
-:::image type="content" source="./media/call-flows/vpn-user-to-external-user.png" alt-text="Een-op-een-aanroep stroom met een VPN met directe media":::
+:::image type="content" source="./media/call-flows/vpn-user-to-external-user.png" alt-text="Een-op-een-aanroep stroom (externe gebruiker) met een VPN met directe media":::
 
 *Afbeelding 7: VPN-gebruiker naar externe gebruiker (directe media)*
 

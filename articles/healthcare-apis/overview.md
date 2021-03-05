@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 11/13/2020
 ms.author: matjazl
-ms.openlocfilehash: 386003d7dae80e086f523b2cebe61aa0eee7b89e
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: 3b51a07281c7d6d9307cc802dfc9f149442e88b7
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95527816"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177484"
 ---
 # <a name="what-is-azure-api-for-fhirreg"></a>Wat is Azure API for FHIR&reg;?
 
@@ -22,7 +22,7 @@ Met Azure API for FHIR kunnen gegevens snel worden uitgewisseld via snelle API's
 - Beheerde FHIR-service, in enkele minuten in de cloud ingericht 
 - Op FHIR® gebaseerd eindpunt van enterprise-kwaliteit in Azure voor gegevenstoegang en -opslag in FHIR®-indeling
 - Hoge prestaties, lage latentie
-- Veilig beheer van PHI (Protected Health Data) in een compatibele cloudomgeving
+- Veilig beheer van beveiligde gezondheids informatie (PHI) in een compatibele cloud omgeving
 - INFO op FHIR voor mobiele en webimplementaties
 - Uw eigen gegevens op schaal beheren met op rollen gebaseerd toegangsbeheer (RBAC)
 - Bijhouden van audittrails voor openen, maken, wijzigen en lezen in elk gegevensarchief

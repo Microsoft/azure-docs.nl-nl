@@ -3,12 +3,12 @@ title: Durable Functions publiceren naar Azure Event Grid (preview-versie)
 description: Meer informatie over het configureren van automatische Azure Event Grid publicatie voor Durable Functions.
 ms.topic: conceptual
 ms.date: 04/25/2020
-ms.openlocfilehash: e4651dd7548ba76380bfc2d1b314e67d7abe63d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 44df100a5c794abf918a09dea0f94d30ddf916d3
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081743"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175954"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Durable Functions publiceren naar Azure Event Grid (preview-versie)
 
@@ -18,7 +18,7 @@ Hier volgen enkele scenario's waarin deze functie nuttig is:
 
 * **DevOps-scenario's zoals Blue/groen-implementaties**: u wilt mogelijk weten of er taken worden uitgevoerd voordat u de [implementatie strategie naast](durable-functions-versioning.md#side-by-side-deployments)elkaar implementeert.
 
-* **Ondersteuning voor geavanceerde bewakings-en diagnostische**gegevens: u kunt de informatie over de Orchestration-status bijhouden in een extern archief dat is geoptimaliseerd voor query's, zoals Azure SQL Database of Azure Cosmos db.
+* **Ondersteuning voor geavanceerde bewakings-en diagnostische** gegevens: u kunt de informatie over de Orchestration-status bijhouden in een extern archief dat is geoptimaliseerd voor query's, zoals Azure SQL Database of Azure Cosmos db.
 
 * **Langlopende achtergrond activiteit**: als u Durable functions gebruikt voor een langlopende achtergrond activiteit, kunt u met deze functie de huidige status weten.
 
@@ -26,7 +26,7 @@ Hier volgen enkele scenario's waarin deze functie nuttig is:
 
 * Installeer [micro soft. Azure. webjobs. Extensions. DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) in uw Durable functions-project.
 * Installeer [Azure Storage-emulator](../../storage/common/storage-use-emulator.md) (alleen Windows) of gebruik een bestaand Azure Storage-account.
-* [Azure cli](/cli/azure/?view=azure-cli-latest) installeren of [Azure Cloud shell](../../cloud-shell/overview.md) gebruiken
+* [Azure cli](/cli/azure/) installeren of [Azure Cloud shell](../../cloud-shell/overview.md) gebruiken
 
 ## <a name="create-a-custom-event-grid-topic"></a>Een aangepast Event Grid onderwerp maken
 
@@ -126,17 +126,17 @@ Maak met behulp van de Azure Portal een andere functie-app om te Luis teren naar
 
 ### <a name="create-an-event-grid-trigger-function"></a>Een Event Grid-trigger functie maken
 
-1. Selecteer in de functie-app **functies**en selecteer vervolgens **+ toevoegen** 
+1. Selecteer in de functie-app **functies** en selecteer vervolgens **+ toevoegen** 
 
    :::image type="content" source="./media/durable-functions-event-publishing/function-add-function.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
 
-1. Zoek naar **Event grid**en selecteer vervolgens de **trigger sjabloon Azure Event grid** . 
+1. Zoek naar **Event grid** en selecteer vervolgens de **trigger sjabloon Azure Event grid** . 
 
-    :::image type="content" source="./media/durable-functions-event-publishing/function-select-event-grid-trigger.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/function-select-event-grid-trigger.png" alt-text="Selecteer de trigger sjabloon voor gebeurtenis raster in het Azure Portal." border="true":::
 
 1. Geef de nieuwe trigger een naam en selecteer vervolgens **functie maken**.
 
-    :::image type="content" source="./media/durable-functions-event-publishing/function-name-event-grid-trigger.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/function-name-event-grid-trigger.png" alt-text="Geef de trigger Event grid een naam in de Azure Portal." border="true":::
 
 
     Er wordt een functie gemaakt met de volgende code:
@@ -172,11 +172,11 @@ U kunt nu een Event Grid-abonnement toevoegen voor het Event Grid onderwerp dat 
 
 1. Selecteer in de nieuwe functie **integratie** en selecteer vervolgens **Event grid trigger (eventGridEvent)**. 
 
-    :::image type="content" source="./media/durable-functions-event-publishing/eventgrid-trigger-link.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/eventgrid-trigger-link.png" alt-text="Selecteer de koppeling Trigger Event Grid." border="true":::
 
 1. Selecteer **Beschrijving van Event Grid maken**.
 
-    :::image type="content" source="./media/durable-functions-event-publishing/create-event-grid-subscription.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/create-event-grid-subscription.png" alt-text="Maak het Event Grid-abonnement." border="true":::
 
 1. Geef uw gebeurtenis abonnement een naam en selecteer het onderwerp type **Event grid topics** . 
 
@@ -184,7 +184,7 @@ U kunt nu een Event Grid-abonnement toevoegen voor het Event Grid onderwerp dat 
 
 1. Selecteer **Maken**.
 
-    :::image type="content" source="./media/durable-functions-event-publishing/event-grid-subscription-details.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
+    :::image type="content" source="./media/durable-functions-event-publishing/event-grid-subscription-details.png" alt-text="Een Event Grid-abonnement maken." border="true":::
 
 Nu bent u klaar om levenscyclus gebeurtenissen te ontvangen.
 

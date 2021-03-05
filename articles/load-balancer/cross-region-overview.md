@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 272fb0a27cf57483af6c07373e35a30f7f6e1c4b
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: b0e51d11797bc5767f19b25a92a2d29a66ea1bb2
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102101372"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176719"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -28,7 +28,7 @@ Azure Standard Load Balancer ondersteunt taak verdeling tussen regio's, waarbij 
 
 * Binnenkomend verkeer dat afkomstig is uit meerdere regio's.
 * [Directe globale failover](#regional-redundancy) naar de volgende optimale regionale implementatie.
-* Laad distributie over regio's naar de dichtstbijzijnde Azure-regio met een [hoge latentie](#ultra-low-latency).
+* Laad distributie over regio's naar de dichtstbijzijnde Azure-regio met een [extreem lage latentie](#ultra-low-latency).
 * Mogelijkheid om [omhoog/omlaag te schalen](#ability-to-scale-updown-behind-a-single-endpoint) achter een enkel eind punt.
 * [Statisch IP-adres](#static-ip)
 * [Client-IP-behoud](#client-ip-preservation)

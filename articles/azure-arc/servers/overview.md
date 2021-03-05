@@ -4,12 +4,12 @@ description: Lees meer informatie over het gebruik van Azure Arc voor servers om
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
 ms.date: 02/18/2021
 ms.topic: overview
-ms.openlocfilehash: 5692dfaceb15086b04ee951b8ecdf88f73c7d122
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 92de3b1a9cf07c25b13e2d038534e93318882bb1
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101686220"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175971"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
@@ -23,7 +23,7 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - [Azure Policy-gastconfiguraties](../../governance/policy/concepts/guest-configuration.md) toewijzen met dezelfde ervaring als beleidstoewijzing voor virtuele Azure-machines. Tegenwoordig worden door het gastconfiguratiebeleid geen configuraties toegepast, maar worden alleen instellingen binnen in de machine gecontroleerd. Zie [Prijzen voor Azure Policy](https://azure.microsoft.com/pricing/details/azure-policy/) voor informatie over de kosten van het gebruik van de richtlijnen voor de Azure Policy-gastconfiguratie met servers met Azure Arc.
 
-- Rapporteren over configuratiewijzigingen van geïnstalleerde software, Microsoft-services, Windows-register en -bestanden, en Linux-daemons op bewaakte servers met behulp van Azure Automation [Change Tracking and Inventory](../../automation/change-tracking/overview.md).
+- Rapport over configuratie wijzigingen van geïnstalleerde software, micro soft-Services, Windows-REGI ster en-bestanden en Linux-daemons op bewaakte servers met behulp van Azure Automation [Wijzigingen bijhouden en inventaris](../../automation/change-tracking/overview.md) en [Azure Security Center bestands integriteit controleren](https://docs.microsoft.com/azure/security-center/security-center-file-integrity-monitoring)voor servers die zijn ingeschakeld met [Azure Defender voor servers](https://docs.microsoft.com/azure/security-center/defender-for-servers-introduction).
 
 - Controleer de prestaties van het gastbesturingssysteem van uw verbonden computer en ontdek toepassingscomponenten om hun processen en afhankelijkheden te controleren met andere resources die de door de toepassing worden gecommuniceerd met behulp van [Azure Monitor voor VM's](../../azure-monitor/vm/vminsights-overview.md).
 

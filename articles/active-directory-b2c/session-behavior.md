@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 2d64e85576b35caa2262ad1d635fc72fc7e2d2b8
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: c19f6f8c59ac38bf46999372497205e0c33ebac4
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120620"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175104"
 ---
 # <a name="configure-session-behavior-in-azure-active-directory-b2c"></a>Sessiegedrag in Azure Active Directory B2C configureren
 
@@ -194,7 +194,7 @@ Als u het selectie vakje KMSI wilt toevoegen aan de registratie-en aanmeldings p
 
 ### <a name="configure-a-relying-party-file"></a>Een Relying Party-bestand configureren
 
-Werk het Relying Party (RP)-bestand bij waarmee de door u gemaakte gebruikers traject wordt gestart.
+Werk het Relying Party (RP)-bestand bij waarmee de door u gemaakte gebruikers traject wordt gestart. Met de para meter keepAliveInDays kunt u configureren hoe lang de cookie voor het bewaren van aangemeld (KMSI) in de sessie moet blijven staan. Als u de waarde bijvoorbeeld instelt op 30, blijft de KMSI-sessie cookie 30 dagen lang. Het bereik voor de waarde ligt tussen 1 en 90 dagen.
 
 1. Open uw aangepaste beleids bestand. Bijvoorbeeld *SignUpOrSignin.xml*.
 1. Als deze nog niet bestaat, voegt `<UserJourneyBehaviors>` u een onderliggend knoop punt toe aan het `<RelyingParty>` knoop punt. Het moet direct na worden geplaatst `<DefaultUserJourney ReferenceId="User journey Id" />` , bijvoorbeeld: `<DefaultUserJourney ReferenceId="SignUpOrSignIn" />` .

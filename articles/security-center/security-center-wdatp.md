@@ -1,23 +1,18 @@
 ---
 title: De licentie voor micro soft Defender voor eind punten gebruiken die is opgenomen in Azure Security Center
 description: Meer informatie over micro soft Defender voor eind punt en de implementatie van Azure Security Center.
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.devlang: na
 ms.topic: how-to
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/15/2021
 ms.author: memildin
-ms.openlocfilehash: a659ea897f013e504668789a7d5671420ff70a9f
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 475c7671636d3aac036e3da1392fc2da9b0a001f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099077"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176464"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -43,10 +38,10 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](defender-for-servers-introduction.md) is vereist                                                                                                                                                                                                                                             |
 | Ondersteunde platformen:            |  • Azure-machines met Windows<br> • Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  |   • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)<br>Server eindpunt bewaking met behulp van deze integraties is uitgeschakeld voor Office 365 GCC-klanten|
+| Ondersteunde versies van Windows:  |  • **Algemene Beschik baarheid (ga)-** detectie op Windows Server 2016, 2012 r2 en 2008 R2 SP1<br> • **Preview-** detectie op windows server 2019, [Windows Virtual Desktop (WVD)](../virtual-desktop/overview.md)en [Windows 10 Enter prise multi-session](../virtual-desktop/windows-10-multisession-faq.md) (voorheen Enter PRISE voor Virtual Bureau bladen (EVD)<br>Server eindpunt bewaking met behulp van deze integraties is uitgeschakeld voor Office 365 GCC-klanten|
 | Niet-ondersteunde besturings systemen:  |  • Windows 10 (met uitzonde ring van EVD of WVD)<br> • Linux|
 | Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
-| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov<br>![Nee](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds                                                        |
+| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
 
 ## <a name="microsoft-defender-for-endpoint-features-in-security-center"></a>Functies van micro soft Defender voor endpoint in Security Center

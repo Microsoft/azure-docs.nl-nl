@@ -1,5 +1,5 @@
 ---
-title: Azure CLI-scripts met de zoek module AZ
+title: Azure CLI-scripts met de AZ-zoek module
 titleSuffix: Azure Cognitive Search
 description: Een Azure Cognitive Search-service maken en configureren met de Azure CLI. U kunt een service omhoog of omlaag schalen, beheer-en query-API-sleutels beheren en query's uitvoeren op systeem gegevens.
 manager: luisca
@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: 6287215233ae9baa220df37c6b820c1d1bec7720
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: ee6b0e1b745e86c72843af88c0f6d17f91512e15
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032514"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176753"
 ---
 # <a name="manage-your-azure-cognitive-search-service-with-the-azure-cli"></a>Uw Azure Cognitive Search-service beheren met de Azure CLI
 > [!div class="op_single_selector"]
@@ -41,48 +41,7 @@ Af en toe worden vragen gesteld over taken die *niet* voor komen in de bovenstaa
 
 Binnen een service zijn het maken en beheren van inhoud via [Search Service rest API](/rest/api/searchservice/) of [.NET SDK](/dotnet/api/overview/azure/search.documents-readme). Hoewel er geen speciale Power shell-opdrachten zijn voor inhoud, kunt u scripts schrijven die REST-of .NET-Api's aanroepen om indexen te maken en te laden.
 
-<a name="check-versions-and-load"></a>
-
-## <a name="check-versions-and-upgrade"></a>Versies en upgrades controleren
-
-De voor beelden in dit artikel zijn interactief en vereisen verhoogde machtigingen. De Azure CLI moet zijn geïnstalleerd. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie.
-
-U kunt nu de Azure CLI uitvoeren met de `az` opdracht vanaf een Windows-opdracht prompt, Power shell of [Azure Cloud shell](../cloud-shell/overview.md). PowerShell biedt enkele functies voor tabvoltooiing die niet beschikbaar zijn in de opdrachtprompt van Windows. 
-
-### <a name="check-the-azure-cli-version"></a>De versie van Azure CLI controleren
-
-Als u niet zeker weet of de Azure CLI is geïnstalleerd, voert u de volgende opdracht uit als een verificatie stap. 
-
-```azurecli-interactive
-az --version
-```
-Als deze opdracht niet werkt, raadpleegt u [de Azure cli installeren](/cli/azure/install-azure-cli) om de Azure CLI op te halen.
-
-Als u versie 2.11.0 of nieuwer hebt, kunt u de `az upgrade` opdracht uitvoeren om de CLI bij te werken naar de meest recente versie.
-
-```azurecli-interactive
-az upgrade
-```
-
-### <a name="connect-to-azure-with-a-browser-sign-in-token"></a>Verbinding maken met Azure met een browser aanmeldings token
-
-U kunt uw aanmeldings referenties voor uw portal gebruiken om verbinding te maken met een abonnement in de Azure CLI. U kunt ook [niet-interactief verifiëren met een Service-Principal](/cli/azure/authenticate-azure-cli#sign-in-with-a-service-principal).
-
-```azurecli-interactive
-az login
-```
-
-Als u meerdere Azure-abonnementen hebt, stelt u uw Azure-abonnement in. Voer deze opdracht uit om een lijst met uw huidige abonnementen weer te geven.
-
-```azurecli-interactive
-az account list --output table
-```
-
-Voer de volgende opdracht uit om het abonnement op te geven. In het volgende voor beeld is de naam van het abonnement `ContosoSubscription` .
-
-```azurecli-interactive
-az account set --subscription "ContosoSubscription"
-```
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
 <a name="list-search-services"></a>
 
@@ -262,7 +221,7 @@ az network vnet subnet update \
 id=$(az search service show \
     --resource-group <resource-group-name> \
     --name <service-name> \
-    --query [id]' \
+    --query [id] \
     --output tsv)
 
 # Create the private endpoint

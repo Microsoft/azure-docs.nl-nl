@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 1ff20ab19390dcdadb9a4aa79822f7ace3d31989
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: bd83ccc4f834d6b52e1c2db15000eb695be85f30
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791169"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177195"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Wat zijn compute-doelen in Azure Machine Learning?
 
@@ -101,15 +101,21 @@ Raadpleeg de volgende tabel voor meer informatie over ondersteunde reeksen en be
 | **Ondersteunde VM-serie**  | **Beperkingen** |
 |------------|------------|
 | D | Geen. |
+| DDSv4 | Geen. |
 | Dv2 | Geen. |  
 | Dv3 | Geen.|
 | DSv2 | Geen. | 
 | DSv3 | Geen.|
+| EAv4 | Geen. |
+| Ev3 | Geen. |
 | FSv2 | Geen. | 
+| H | Geen. |
+| HB | Goed keuring vereist. |
 | HBv2 | Goed keuring vereist. |  
 | HCS | Goed keuring vereist. |  
 | M | Goed keuring vereist. |
-| NC | Geen. |    
+| NC | Geen. |  
+| NC-aanbieding | Geen. |
 | NCsv2 | Goed keuring vereist. |
 | NCsv3 | Goed keuring vereist. |  
 | NDs | Goed keuring vereist. |

@@ -7,12 +7,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.topic: how-to
 ms.date: 01/17/2021
-ms.openlocfilehash: 0da38475c0e3c766cabbf765ea89dc5714a5b830
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: b95afe513dba2f1da9556b27ec17bcccc9fe88e1
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747566"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173548"
 ---
 # <a name="synchronize-virtual-network-dns-servers-setting-on-sql-managed-instance-virtual-cluster"></a>De DNS-server instelling voor het virtuele netwerk synchroniseren op het virtuele cluster van het SQL-beheerde exemplaar
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -21,7 +21,7 @@ In dit artikel wordt uitgelegd wanneer en hoe u de instelling van een DNS-server
 
 ## <a name="when-to-synchronize-the-dns-setting"></a>Wanneer u de DNS-instelling synchroniseert
 
-Er zijn enkele scenario's (bijvoorbeeld Database Mail, servers die zijn gekoppeld aan andere SQL Server-exemplaren in uw cloud of hybride omgeving) waarvoor de namen van particuliere hosts moeten worden omgezet vanuit een SQL Managed Instance. In dit geval moet u een aangepast DNS configureren in Azure. Zie [Configure a Custom DNS for Azure SQL Managed instance](custom-dns-configure.md) voor meer informatie.
+Er zijn enkele scenario's (bijvoorbeeld Database Mail, servers die zijn gekoppeld aan andere SQL Server-exemplaren in uw cloud of hybride omgeving) waarvoor de namen van particuliere hosts moeten worden omgezet vanuit een SQL Managed Instance. In dit geval moet u een aangepast DNS configureren in Azure. Raadpleeg [Een aangepaste DNS configureren voor Azure SQL Managed Instance](custom-dns-configure.md) voor de details.
 
 Als deze wijziging wordt geïmplementeerd nadat het beheerde exemplaar voor het hosten van een [virtueel cluster](connectivity-architecture-overview.md#virtual-cluster-connectivity-architecture) is gemaakt, moet u de instelling voor DNS-servers op het virtuele cluster synchroniseren met de configuratie van het virtuele netwerk.
 
@@ -66,7 +66,7 @@ virtualNetworkName="vnet-fog-eastus"
 virtualNetwork=$(az network vnet show -g $resourceGroup -n $virtualNetworkName --query "id" -otsv)
 ```
 
-Gebruik de Azure CLI [-opdracht AZ resource invoke: Action](/cli/azure/resource?view=azure-cli-latest#az_resource_invoke_action) DNS servers-configuratie synchroniseren voor alle virtuele clusters in het subnet.
+Gebruik de Azure CLI [-opdracht AZ resource invoke: Action](/cli/azure/resource#az_resource_invoke_action) DNS servers-configuratie synchroniseren voor alle virtuele clusters in het subnet.
 
 ```Azure CLI
 az sql virtual-cluster list --query "[? contains(subnetId,'$virtualNetwork')].id" -o tsv \

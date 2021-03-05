@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 02/18/2021
-ms.openlocfilehash: 642fa044b3272e311769ddbcc5462cb396563652
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 02/22/2021
+ms.openlocfilehash: 21edde3eba76b565332acb9c67225f3bbb0fe803
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702552"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177280"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Beveiligde toegang en gegevens in Azure Logic Apps
 
@@ -210,13 +210,17 @@ Voeg in de [Azure Portal](https://portal.azure.com)een of meer autorisatie belei
 
    * Als u een ander claim type wilt toevoegen, selecteert u **standaard claim toevoegen**, selecteert u het claim type en geeft u de claim waarde op.
 
-   * Als u uw eigen claim wilt toevoegen, selecteert u **aangepaste claim toevoegen** en geeft u de aangepaste claim waarde op.
+   * Selecteer **aangepaste claim toevoegen** om uw eigen claim toe te voegen. Zie [optionele claims voor uw app bieden](../active-directory/develop/active-directory-optional-claims.md)voor meer informatie. Uw aangepaste claim wordt vervolgens opgeslagen als onderdeel van uw JWT-ID; bijvoorbeeld `"tid": "72f988bf-86f1-41af-91ab-2d7cd011db47"` . 
 
 1. Selecteer **beleid toevoegen** om een ander autorisatie beleid toe te voegen. Herhaal de vorige stappen om het beleid in te stellen.
 
 1. Selecteer **Opslaan** als u klaar bent.
 
 1. Als u de `Authorization` header wilt toevoegen uit het toegangs token in de trigger uitvoer op basis van een aanvraag, raadpleegt u de [header Authorization in de trigger uitvoer van aanvragen](#include-auth-header).
+
+
+Werk stroom eigenschappen, zoals beleids regels, worden niet weer gegeven in de code weergave van de logische app in de Azure Portal. Voor toegang tot uw beleid via een programma kunt u de volgende API aanroepen via Azure Resource Manager (ARM): `https://management.azure.com/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group-name}/providers/Microsoft.Logic/workflows/{your-workflow-name}?api-version=2016-10-01&_=1612212851820` . Zorg ervoor dat u de waarden van de tijdelijke aanduidingen vervangt door de ID van uw Azure-abonnement, de naam van de resource groep en de werk stroom.
+
 
 <a name="define-authorization-policy-template"></a>
 

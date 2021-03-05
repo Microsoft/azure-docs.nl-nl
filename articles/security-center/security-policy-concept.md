@@ -6,13 +6,13 @@ ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 02/28/2021
-ms.openlocfilehash: a5aae4013067ba37334e3e85a9e7ef882efd1dd2
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.date: 03/04/2021
+ms.openlocfilehash: 4dc29c8b52a3d0953445666672a716af013ee408
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102107675"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176430"
 ---
 # <a name="what-are-security-policies-initiatives-and-recommendations"></a>Wat zijn beveiligings beleid, initiatieven en aanbevelingen?
 
@@ -25,6 +25,7 @@ Een Azure-beleids definitie, gemaakt in Azure Policy, is een regel voor specifie
 
 Als u deze beleids definities wilt implementeren (ongeacht of deze zijn ingebouwd of aangepast), moet u deze toewijzen. U kunt elk van deze typen beleid toewijzen via Azure Portal, PowerShell of Azure CLI.
 
+Er zijn verschillende typen beleids regels in Azure Policy. Security Center hoofd zakelijk een controle beleid gebruikt dat specifieke voor waarden en configuraties controleert en vervolgens rapporteert op naleving. Er zijn ook beleid afdwingen dat kan worden gebruikt om beveiligde instellingen toe te passen.
 
 ## <a name="what-is-a-security-initiative"></a>Wat is een beveiligings initiatief?
 
@@ -38,7 +39,7 @@ Het standaard initiatief dat automatisch wordt toegewezen aan elk abonnement in 
 
 Security Center biedt de volgende opties voor het werken met beveiligings initiatieven en-beleid:
 
-- **Het ingebouwde standaard initiatief weer geven en bewerken** : wanneer u Security Center inschakelt, wordt de initiatief naam ' Azure Security Bench Mark ' automatisch toegewezen aan alle Security Center geregistreerde abonnementen. Als u dit initiatief wilt aanpassen, kunt u afzonderlijk beleids regels in-of uitschakelen. Bekijk de lijst met [ingebouwde beveiligings beleidsregels](./policy-reference.md) om inzicht te krijgen in de beschik bare opties.
+- **Het ingebouwde standaard initiatief weer geven en bewerken** : wanneer u Security Center inschakelt, wordt de initiatief naam ' Azure Security Bench Mark ' automatisch toegewezen aan alle Security Center geregistreerde abonnementen. Als u dit initiatief wilt aanpassen, kunt u afzonderlijke beleids regels in-of uitschakelen door de para meters van een beleid te bewerken. Bekijk de lijst met [ingebouwde beveiligings beleidsregels](./policy-reference.md) om inzicht te krijgen in de beschik bare opties.
 
 - **Uw eigen aangepaste initiatieven toevoegen** : als u de beveiligings initiatieven wilt aanpassen die op uw abonnement zijn toegepast, kunt u dit doen in Security Center. U ontvangt dan aanbevelingen als uw computers niet voldoen aan het beleid dat u maakt. Zie [aangepaste beveiligings initiatieven en-beleid gebruiken](custom-security-policies.md)voor instructies voor het maken en toewijzen van aangepaste beleids regels.
 
@@ -46,9 +47,9 @@ Security Center biedt de volgende opties voor het werken met beveiligings initia
 
 ## <a name="what-is-a-security-recommendation"></a>Wat is een beveiligings aanbeveling?
 
-Azure Security Center regel matig de beveiligings status van uw Azure-resources analyseren om mogelijke beveiligings problemen te identificeren. Vervolgens krijgt u aanbevelingen voor het oplossen van deze beveiligingsproblemen. Een aanbeveling is het resultaat van het evalueren van uw resources ten opzichte van het relevante beleid en het identificeren van resources die niet voldoen aan uw gedefinieerde vereisten.
+Met behulp van de beleids regels Security Center regel matig de nalevings status van uw resources analyseren om mogelijke beveiligings problemen en zwakke plekken te identificeren. Vervolgens krijgt u aanbevelingen voor het oplossen van deze problemen. Aanbevelingen zijn het resultaat van het evalueren van uw resources ten opzichte van het relevante beleid en het identificeren van resources die niet voldoen aan uw gedefinieerde vereisten.
 
-Azure Security Center zijn aanbevelingen voor beveiliging op basis van uw gekozen initiatieven. 
+Security Center zijn aanbevelingen voor beveiliging op basis van uw gekozen initiatieven. Wanneer een beleid van uw initiatief wordt vergeleken met uw resources en er een of meer wordt gevonden dat niet compatibel is, wordt dit weer gegeven als een aanbeveling in Security Center.
 
 Aanbevelingen zijn acties die u kunt uitvoeren om uw resources te beveiligen en te beschermen. Elke aanbeveling biedt u de volgende informatie:
 

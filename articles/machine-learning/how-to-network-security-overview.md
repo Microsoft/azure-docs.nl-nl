@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: e3705be10cb540538464e6b1299d848bc9057c7c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1309ad1b3e3f6bd6f9b543959220bf71c569f083
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039917"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175002"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -175,7 +175,7 @@ Zie [een werk ruimte gebruiken met een aangepaste DNS-server](how-to-custom-dns.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel maakt deel uit van een virtuele netwerk reeks van vier delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
+Dit artikel maakt deel uit van een virtuele netwerk reeks van vijf delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
 
 * [Deel 2: overzicht van virtuele netwerken](how-to-secure-workspace-vnet.md)
 * [Deel 3: de trainings omgeving beveiligen](how-to-secure-training-vnet.md)

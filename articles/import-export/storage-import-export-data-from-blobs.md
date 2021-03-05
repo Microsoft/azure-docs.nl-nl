@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 03/03/2021
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 8ccc7b641e2bfcb4ea8733b9d4f793229c430bc0
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.custom: devx-track-azurepowershell, devx-track-azurecli, contperf-fy21q3
+ms.openlocfilehash: e878be5351362923e163c0a6f617b96ab72a36d8
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652866"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177555"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>De Azure Import/Export-service gebruiken voor het exporteren van gegevens uit Azure Blob-opslag
 
@@ -53,38 +53,56 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
 
 4. In **Basisbeginselen**:
 
-    - Selecteer **exporteren vanuit Azure**.
-    - Voer een beschrijvende naam in voor de export taak. Gebruik de naam die u kiest om de voortgang van uw taken bij te houden.
-        - De naam mag alleen kleine letters, cijfers, afbreek streepjes en onderstrepings tekens bevatten.
-        - De naam moet beginnen met een letter en mag geen spaties bevatten.
-    - Selecteer een abonnement.
-    - Voer een resource groep in of Selecteer deze.
+   1. Selecteer een abonnement.
+   1. Selecteer een resource groep of selecteer **nieuwe maken** en maak een nieuwe.
+   1. Voer een beschrijvende naam in voor de import taak. Gebruik de naam om de voortgang van uw taken bij te houden.
+       * De naam mag alleen kleine letters, cijfers en afbreek streepjes bevatten.
+       * De naam moet beginnen met een letter en mag geen spaties bevatten.
 
-        ![Basisbeginselen](./media/storage-import-export-data-from-blobs/export-from-blob-3.png)
+   1. Selecteer **exporteren vanuit Azure**.
+
+    ![Basis opties voor een export volgorde](./media/storage-import-export-data-from-blobs/export-from-blob-3.png)
+
+    Selecteer **volgende: taak details >** om door te gaan.
 
 5. In **taak Details**:
 
-    - Selecteer het opslag account waarin de gegevens moeten worden geëxporteerd. Gebruik een opslag account waar u zich bevindt.
-    - De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
-    - Geef de BLOB-gegevens op die u wilt exporteren uit uw opslag account naar uw lege station of stations.
-    - Kies ervoor om alle BLOB-gegevens in het opslag account te **exporteren** .
+   1. Selecteer de Azure-regio waarin uw gegevens zich momenteel bevinden.
+   1. Selecteer het opslag account waaruit u gegevens wilt exporteren. Gebruik een opslag account dat dicht bij uw locatie ligt.
 
-         ![Alles exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-4.png)
+      De afgifte locatie wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
 
-    - U kunt opgeven welke containers en blobs u wilt exporteren.
-        - U kunt als volgt **een BLOB opgeven die moet worden geëxporteerd**: gebruik de **gelijkteken** -selector. Geef het relatieve pad naar de BLOB op, beginnend met de container naam. Gebruik *$root* om de basis container op te geven.
-        - **Om alle blobs op te geven die beginnen met een voor voegsel**: gebruik de kiezer **begint met** selector. Geef het voor voegsel op, beginnend met een slash/. Het voor voegsel kan het voor voegsel van de container naam, de volledige container naam of de volledige container naam, gevolgd door het voor voegsel van de BLOB-naam. U moet de BLOB-paden in een geldige indeling opgeven om te voor komen dat er fouten optreden tijdens de verwerking, zoals wordt weer gegeven in deze scherm opname. Zie voor [beelden van geldige BLOB-paden](#examples-of-valid-blob-paths)voor meer informatie.
+   1. Geef de BLOB-gegevens op die u van uw opslag account wilt exporteren naar uw lege station of schijven. Kies een van de drie volgende methoden.
 
-           ![Geselecteerde containers en blobs exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-5.png)
+      - Kies ervoor om alle BLOB-gegevens in het opslag account te **exporteren** .
 
-    - U kunt exporteren vanuit het BLOB-lijst bestand.
+        ![Alles exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-4.png)
 
-        ![Exporteren uit BLOB-lijst bestand](./media/storage-import-export-data-from-blobs/export-from-blob-6.png)
+      - Kies **geselecteerde containers en blobs** en geef de containers en blobs op die u wilt exporteren. U kunt meer dan een van de selectie methoden gebruiken. Als u een optie **toevoegen** selecteert, wordt er aan de rechter kant een paneel geopend waarin u uw selectie reeksen kunt toevoegen.
+
+        |Optie|Beschrijving|
+        |------|-----------|      
+        |**Containers toevoegen**|Exporteer alle blobs in een container.<br>Selecteer **containers toevoegen** en voer elke container naam in.|
+        |**Blobs toevoegen**|Geef de afzonderlijke blobs op die moeten worden geëxporteerd.<br>Selecteer **blobs toevoegen**. Geef vervolgens het relatieve pad naar de BLOB op, beginnend met de naam van de container. Gebruik *$root* om de basis container op te geven.<br>U moet de BLOB-paden in een geldige indeling opgeven om te voor komen dat er fouten optreden tijdens de verwerking, zoals wordt weer gegeven in deze scherm opname. Zie voor [beelden van geldige BLOB-paden](#examples-of-valid-blob-paths)voor meer informatie.|
+        |**Voor voegsels toevoegen**|Gebruik een voor voegsel om een set met dezelfde naam containers of blobs in een container te selecteren. Het voor voegsel kan het voor voegsel van de container naam, de volledige container naam of een volledige container naam zijn, gevolgd door het voor voegsel van de naam van de blob. |
+
+        ![Geselecteerde containers en blobs exporteren](./media/storage-import-export-data-from-blobs/export-from-blob-5.png)
+
+    - Kies **exporteren uit BLOB-lijst bestand (XML-indeling)** en selecteer een XML-bestand dat een lijst met paden en voor voegsels bevat voor de blobs die uit het opslag account moeten worden geëxporteerd. U moet het XML-bestand maken en opslaan in een container voor het opslag account. Het bestand mag niet leeg zijn.
+
+      > [!IMPORTANT]
+      > Als u een XML-bestand gebruikt om de blobs te selecteren die u wilt exporteren, moet u ervoor zorgen dat de XML geldige paden en/of voor voegsels bevat. Als het bestand ongeldig is of als er geen gegevens overeenkomen met de opgegeven paden, wordt de volg orde beëindigd met gedeeltelijke gegevens of worden er geen gegevens geëxporteerd.
+
+       Zie [order exporteren met XML-bestand](../databox/data-box-deploy-export-ordered.md#export-order-using-xml-file)voor meer informatie over het toevoegen van een XML-bestand aan een container.
+
+      ![Exporteren uit BLOB-lijst bestand](./media/storage-import-export-data-from-blobs/export-from-blob-6.png)
 
    > [!NOTE]
-   > Als de blob die moet worden geëxporteerd, wordt gebruikt tijdens het kopiëren van de gegevens, neemt Azure import/export-service een moment opname van de BLOB en kopieert de moment opname.
+   > Als een blob die moet worden geëxporteerd, wordt gebruikt tijdens het kopiëren van gegevens, gebruikt de Azure import/export-service een moment opname van de BLOB en kopieert de moment opname.
 
-6. In **retour verzendings gegevens**:
+   Selecteer **volgende: verzend >** om door te gaan.
+
+6. Bij **verzen ding**:
 
     - Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
     - Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra de export taak is voltooid.
@@ -93,15 +111,76 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
         > [!TIP]
         > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-7. In **samen vatting**:
+    Selecteer **controleren + maken** om door te gaan.
 
-    - Bekijk de details van de taak.
-    - Noteer de naam van de taak en geleverd Azure Data Center-verzend adres voor het verzenden van schijven naar Azure.
+7. In **controleren en maken**:
+
+   1. Bekijk de details van de taak.
+   1. Noteer de naam van de taak en geleverd Azure Data Center-verzend adres voor het verzenden van schijven naar Azure.
+
+      > [!NOTE]
+      > De schijven altijd verzenden naar het Data Center dat wordt vermeld in de Azure Portal. Als de schijven naar het verkeerde Data Center worden verzonden, wordt de taak niet verwerkt.
+
+   1. Bekijk de voor **waarden** voor uw bestelling voor het verwijderen van privacy-en bron gegevens. Als u akkoord gaat met de voor waarden, schakelt u het selectie vakje onder de voor waarden in. De validatie van de order wordt gestart.
+
+   ![De export volgorde controleren en maken](./media/storage-import-export-data-from-blobs/export-from-blob-6-a.png)
+
+ 1. Nadat de validatie is geslaagd, selecteert u **maken**.
+
+<!--Replaced text: Steps 4 - end of "Create an export job." Wizard design changes required both screen and text updates.
+
+4. In **Basics**:
+
+    - Select **Export from Azure**.
+    - Enter a descriptive name for the export job. Use the name you choose to track the progress of your jobs.
+        - The name may contain only lowercase letters, numbers, hyphens, and underscores.
+        - The name must start with a letter, and may not contain spaces.
+    - Select a subscription.
+    - Enter or select a resource group.
+
+        ![Basics](./media/storage-import-export-data-from-blobs/export-from-blob-3.png)
+
+5. In **Job details**:
+
+    - Select the storage account where the data to be exported resides. Use a storage account close to where you are located.
+    - The dropoff location is automatically populated based on the region of the storage account selected.
+    - Specify the blob data you wish to export from your storage account to your blank drive or drives.
+    - Choose to **Export all** blob data in the storage account.
+
+         ![Export all](./media/storage-import-export-data-from-blobs/export-from-blob-4.png)
+
+    - You can specify which containers and blobs to export.
+        - **To specify a blob to export**: Use the **Equal To** selector. Specify the relative path to the blob, beginning with the container name. Use *$root* to specify the root container.
+        - **To specify all blobs starting with a prefix**: Use the **Starts With** selector. Specify the prefix, beginning with a forward slash '/'. The prefix may be the prefix of the container name, the complete container name, or the complete container name followed by the prefix of the blob name. You must provide the blob paths in valid format to avoid errors during processing, as shown in this screenshot. For more information, see [Examples of valid blob paths](#examples-of-valid-blob-paths).
+
+           ![Export selected containers and blobs](./media/storage-import-export-data-from-blobs/export-from-blob-5.png)
+
+    - You can export from  the blob list file.
+
+        ![Export from blob list file](./media/storage-import-export-data-from-blobs/export-from-blob-6.png)
+
+   > [!NOTE]
+   > If the blob to be exported is in use during data copy, Azure Import/Export service takes a snapshot of the blob and copies the snapshot.
+
+6. In **Return shipping info**:
+
+    - Select the carrier from the dropdown list. If you want to use a carrier other than FedEx/DHL, choose an existing option from the dropdown. Contact Azure Data Box Operations team at `adbops@microsoft.com`  with the information regarding the carrier you plan to use.
+    - Enter a valid carrier account number that you have created with that carrier. Microsoft uses this account to ship the drives back to you once your export job is complete.
+    - Provide a complete and valid contact name, phone, email, street address, city, zip, state/province, and country/region.
+
+        > [!TIP]
+        > Instead of specifying an email address for a single user, provide a group email. This ensures that you receive notifications even if an admin leaves.
+
+7. In **Summary**:
+
+    - Review the details of the job.
+    - Make a note of the job name and provided Azure datacenter shipping address for shipping disks to Azure.
 
         > [!NOTE]
-        > De schijven altijd verzenden naar het Data Center dat wordt vermeld in de Azure Portal. Als de schijven naar het verkeerde Data Center worden verzonden, wordt de taak niet verwerkt.
+        > Always send the disks to the datacenter noted in the Azure portal. If the disks are shipped to the wrong datacenter, the job will not be processed.
 
-    - Klik op **OK** om het maken van de export taak te volt ooien.
+    - Click **OK** to complete export job creation.
+-->
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -320,7 +399,7 @@ Deze *optionele* stap helpt u bij het bepalen van het aantal stations dat vereis
 
     De para meters worden in de volgende tabel beschreven:
 
-    |Opdracht regel parameter|Description|
+    |Opdracht regel parameter|Beschrijving|
     |--------------------------|-----------------|
     |**/logdir:**|Optioneel. De logboekmap. Uitgebreide logboek bestanden worden naar deze map geschreven. Als dat niet is opgegeven, wordt de huidige map gebruikt als Logboekmap.|
     |**SN**|Vereist. De naam van het opslag account voor de export taak.|
@@ -374,7 +453,7 @@ Number of drives needed:        3
 
 De volgende tabel bevat voor beelden van geldige BLOB-paden:
 
-   | Kiezer | BLOB-pad | Description |
+   | Kiezer | BLOB-pad | Beschrijving |
    | --- | --- | --- |
    | Begint met |/ |Exporteert alle blobs in het opslag account |
    | Begint met |/$root/ |Exporteert alle blobs in de basis container |

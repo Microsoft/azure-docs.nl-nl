@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
 ms.date: 12/17/2018
-ms.openlocfilehash: d5a067272caf9b072117ba57b7b16f8d78a8b456
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: b16a2fc9f107a8420fb7d05667807a869fa3e00a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791644"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172754"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database--sql-managed-instance"></a>Mogelijkheden van meerdere modellen van Azure SQL Database & SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -87,7 +87,7 @@ Zie [werken met JSON-gegevens](database/json-features.md)voor meer informatie.
 
 Document modellen kunnen worden gebruikt in plaats van de relationele modellen in een aantal specifieke scenario's:
 
-- Hoge normalisatie van het schema brengt geen aanzienlijke voor delen met zich mee, omdat u alle velden van objecten tegelijk opent, of als u de genormaliseerde delen van de objecten nooit bijwerkt. Het genormaliseerde model verhoogt echter de complexiteit van uw query's vanwege het grote aantal tabellen dat u moet koppelen om de gegevens op te halen.
+- High-normalisatie van het schema brengt geen aanzienlijke voor delen omdat u alle velden van de objecten tegelijk opent, of u kunt de genormaliseerde delen van de objecten nooit bijwerken. Het genormaliseerde model verhoogt echter de complexiteit van uw query's vanwege het grote aantal tabellen dat u moet koppelen om de gegevens op te halen.
 - U werkt met de toepassingen die systeem eigen gebruik maken van JSON-documenten zijn communicatie-of gegevens modellen en u wilt geen extra lagen introduceren waarmee relationele gegevens naar JSON worden getransformeerd en omgekeerd.
 - U moet uw gegevens model vereenvoudigen door onderliggende tabellen of entiteit-object-waarde-patronen te ontsleutelen.
 - U moet gegevens die zijn opgeslagen in JSON-indeling laden of exporteren zonder een extra hulp programma waarmee de gegevens worden geparseerd.
@@ -124,7 +124,7 @@ De SQL Server data base-engine biedt een krachtig platform voor het ontwikkelen 
 
 Document modellen kunnen worden gebruikt in plaats van de relationele modellen in een aantal specifieke scenario's:
 
-- Hoge normalisatie van het schema brengt geen aanzienlijke voor delen met zich mee, omdat u alle velden van objecten tegelijk opent, of als u de genormaliseerde delen van de objecten nooit bijwerkt. Het genormaliseerde model verhoogt echter de complexiteit van uw query's vanwege het grote aantal tabellen dat u moet koppelen om de gegevens op te halen.
+- High-normalisatie van het schema brengt geen aanzienlijke voor delen omdat u alle velden van de objecten tegelijk opent, of u kunt de genormaliseerde delen van de objecten nooit bijwerken. Het genormaliseerde model verhoogt echter de complexiteit van uw query's vanwege het grote aantal tabellen dat u moet koppelen om de gegevens op te halen.
 - U werkt met de toepassingen die systeem eigen XML-documenten gebruiken, zijn communicatie-of gegevens modellen en u wilt geen extra lagen maken waarmee relationele gegevens worden omgezet naar XML en omgekeerd.
 - U moet uw gegevens model vereenvoudigen door onderliggende tabellen of entiteit-object-waarde-patronen te ontsleutelen.
 - U moet gegevens die zijn opgeslagen in XML-indeling laden of exporteren zonder een extra hulp programma waarmee de gegevens worden geparseerd.

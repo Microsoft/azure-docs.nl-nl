@@ -6,12 +6,12 @@ ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: reference
 ms.date: 02/16/2021
-ms.openlocfilehash: 54dae3341910bf863de7e2a2cef832ae670ca09a
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 7bbb3a88bbc3011ec5dd917cdb0c1e49f7556aab
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102097564"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177161"
 ---
 # <a name="azure-percept-vision-datasheet"></a>Azure percept Vision-gegevens blad
 
@@ -26,7 +26,7 @@ De hieronder vermelde specificaties gelden voor het Azure percept Vision-apparaa
 |Ondersteunde software en services |[Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/) <br> [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) <br> [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) <br> [ONNX Runtime](https://www.onnxruntime.ai/) <br> [Openmijn wijn](https://docs.openvinotoolkit.org/latest/index.html) <br> Update van Azure-apparaat |
 |AI-versnelling                 |Intel Movidiusis X (MA2085) Vision processing unit (VPU) met Intel camera ISP Integrated, 0,7 DOPPEN |
 |Sens oren en visuele indica toren   |Sony IMX219-camera sensor met 6P lens<br>Oplossing: 8MP op 30FPS, distance: 50cm-oneindig<br>FoV: 120 graden diagonaal, kleur: breed dynamisch bereik, gesplitste focus sluiter|
-|Camera ondersteuning                  |RGB (momenteel) en IR (in de toekomst) <br> 2 camera's kunnen tegelijkertijd worden uitgevoerd |
+|Camera ondersteuning                  |RGB <br> 2 camera's kunnen tegelijkertijd worden uitgevoerd |
 |Beveiligings Crypto-Controller      |ST-Micro STM32L462CE      |
 |Onderdeel voor versie beheer/ID       |64 KB EEPROM |
 |Geheugen                          |LPDDR4 2 GB     |

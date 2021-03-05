@@ -8,12 +8,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 08/26/2020
 ms.author: victorh
-ms.openlocfilehash: 52bc2a20be0d7113583b7f23cc569dbb9503d364
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.openlocfilehash: 4344cd38d9a58eec27c6202e81b8ef678a510681
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397243"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176005"
 ---
 # <a name="what-is-azure-application-gateway"></a>Wat is Azure Application Gateway?
 
@@ -26,9 +26,14 @@ Application Gateway kan routeringsbeslissingen nemen op basis van extra kenmerke
 Dit type routering staat bekend al taakverdeling op de toepassingslaag (OSI-laag 7). Azure Application Gateway kan URL-gebaseerde routering en meer uitvoeren.
 
 >[!NOTE]
-> Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's. Zie [Wat is Azure Load Balancer?](../load-balancer/load-balancer-overview.md) als u hoogwaardige laag-4 taakverdeling met een lage latentie nodig hebt. Zie [Wat is Traffic Manager?](../traffic-manager/traffic-manager-overview.md) als u op zoek bent naar wereldwijde DNS-taakverdeling. Uw end-to-end scenario 's kunnen eventueel profiteren van een combinatie van deze oplossingen.
->
+> Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's. 
+> * Als u op zoek bent naar een internationale routering op basis van DNS en u voldoet **niet** aan de vereisten voor beëindiging van het TLS-protocol (Transport Layer Security), ('SSL-offload') of aanvragen per HTTP/HTTPS-aanvraag, verwerking via de toepassingslaag, raadpleegt u [Traffic Manager](../traffic-manager/traffic-manager-overview.md). 
+> * Als u de wereld wijde route ring van uw webverkeer wilt optimaliseren en de prestaties en betrouw baarheid van de eind gebruikers van de bovenste laag wilt optimaliseren via snelle globale failover, raadpleegt u de [voor deur](../frontdoor/front-door-overview.md).
+> * Raadpleeg [Load Balancer](../load-balancer/load-balancer-overview.md) voor taakverdeling in de netwerklaag. 
+> 
+> Uw end-to-end scenario 's kunnen eventueel profiteren van een combinatie van deze oplossingen.
 > Zie [Opties voor taakverdeling in Azure](/azure/architecture/guide/technology-choices/load-balancing-overview) voor een vergelijking van de opties voor taakverdeling van Azure.
+
 
 ## <a name="features"></a>Functies
 

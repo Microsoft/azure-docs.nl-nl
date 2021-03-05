@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/24/2021
+ms.date: 03/03/2021
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 2acc3d104786be330e3e799ad7bd96d703587581
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.custom: devx-track-azurepowershell, devx-track-azurecli, contperf-fy21q3
+ms.openlocfilehash: 77a1c02c1ec59778521104e57f3bf3de8e52fa44
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101738987"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102177368"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>De Azure import/export-service gebruiken om gegevens te importeren in Azure Blob Storage
 
@@ -104,46 +104,57 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 1. Meld u aan bij https://portal.azure.com/ .
 2. Zoeken naar **import/export-taken**.
 
-    ![Zoeken in import/export-taken](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
+   ![Zoeken in import/export-taken](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
 
 3. Selecteer **+ Nieuw**.
 
-    ![Selecteer Nieuw om een nieuwe te maken ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
+   ![Selecteer Nieuw om een nieuwe te maken ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
 
 4. In **Basisbeginselen**:
 
-   * Selecteer **importeren in azure**.
-   * Voer een beschrijvende naam in voor de import taak. Gebruik de naam om de voortgang van uw taken bij te houden.
-       * De naam mag alleen kleine letters, cijfers en afbreek streepjes bevatten.
-       * De naam moet beginnen met een letter en mag geen spaties bevatten.
-   * Selecteer een abonnement.
-   * Voer een resource groep in of Selecteer deze.
+   1. Selecteer een abonnement.
+   1. Selecteer een resource groep of selecteer **nieuwe maken** en maak een nieuwe.
+   1. Voer een beschrijvende naam in voor de import taak. Gebruik de naam om de voortgang van uw taken bij te houden.
+      * De naam mag alleen kleine letters, cijfers en afbreek streepjes bevatten.
+      * De naam moet beginnen met een letter en mag geen spaties bevatten.
 
-     ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
+   1. Selecteer **importeren in azure**.
+
+    ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
+
+    Selecteer **volgende: taak details >** om door te gaan.
 
 5. In **taak Details**:
 
-   * Upload de schijf logboek bestanden die u hebt verkregen tijdens de stap voor bereiding van het station. Als `waimportexport.exe version1` deze is gebruikt, uploadt u één bestand voor elk station dat u hebt voor bereid. Als de grootte van het logboek bestand groter is dan 2 MB, kunt u `<Journal file name>_DriveInfo_<Drive serial ID>.xml` ook de met het logboek bestand gemaakt maken.
-   * Selecteer het doel-opslag account waarin de gegevens worden opgeslagen.
-   * De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
+   1. Upload de logboek bestanden die u hebt gemaakt tijdens de vorige [stap 1: bereid de stations](#step-1-prepare-the-drives)voor. Als `waimportexport.exe version1` deze is gebruikt, uploadt u één bestand voor elk station dat u hebt voor bereid. Als de grootte van het logboek bestand groter is dan 2 MB, kunt u `<Journal file name>_DriveInfo_<Drive serial ID>.xml` ook de met het logboek bestand gemaakt maken.
+   1. Selecteer de Azure-doel regio voor de order.
+   1. Selecteer het opslag account voor het importeren.
+      
+      De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
+   1. Als u geen uitgebreid logboek wilt opslaan, schakelt u het selectie vakje **uitgebreid logboek opslaan in de BLOB-container van ' waimportexport '** uit.
 
-   ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
+   ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png).
 
-6. In **retour verzendings gegevens**:
+   Selecteer **volgende: verzend >** om door te gaan.
 
-   * Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
-   * Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid. Als u geen account nummer hebt, maakt u een [FedEx](https://www.fedex.com/us/oadr/) -of [DHL](https://www.dhl.com/) -draaggolf account.
-   * Geef een volledige en geldige naam voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio op.
+6. Bij **verzen ding**:
+
+   1. Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
+   1. Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid. Als u geen account nummer hebt, maakt u een [FedEx](https://www.fedex.com/us/oadr/) -of [DHL](https://www.dhl.com/) -draaggolf account.
+   1.  Geef een volledige en geldige naam op voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio.
 
        > [!TIP]
        > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-     ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
+   ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
 
-7. In de **samen vatting**:
+   Selecteer **controleren + maken** om door te gaan.
 
-   * Bekijk de taak gegevens die in de samen vatting worden weer gegeven. Noteer de naam van de taak en het verzend adres van Azure Data Center om schijven terug te sturen naar Azure. Deze informatie wordt later op het verzend label gebruikt.
-   * Klik op **OK** om de import taak te maken.
+7. In het overzicht van de bestelling:
+
+   1. Bekijk de **voor waarden** en selecteer ik erken dat alle verstrekte informatie juist is en ga akkoord met de voor waarden. De validatie wordt vervolgens uitgevoerd.
+   1. Bekijk de taak gegevens die in de samen vatting worden weer gegeven. Noteer de naam van de taak en het verzend adres van Azure Data Center om schijven terug te sturen naar Azure. Deze informatie wordt later op het verzend label gebruikt.
+   1. Selecteer **Maken**.
 
      ![Import taak maken-stap 4](./media/storage-import-export-data-to-blobs/import-to-blob-6.png)
 

@@ -8,12 +8,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 10/16/2020
-ms.openlocfilehash: 3f1e3fd360197310a89a67d43053649d904aeb18
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: d125bca5ed67476897eec7cd32a586776d8b1ea8
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677622"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176617"
 ---
 # <a name="tutorial-create-apache-spark-job-definition-in-synapse-studio"></a>Zelfstudie: Apache Spark-taakdefinitie maken in Synapse Studio
 
@@ -34,7 +34,7 @@ Zorg ervoor dat u aan de volgende vereisten voldoet voordat u met deze zelfstudi
 
 * Een Azure Synapse Analytics-werkruimte. Zie [Een Azure Synapse Analytics-werkruimte maken](../../machine-learning/how-to-manage-workspace.md) voor instructies.
 * Een serverloze Apache Spark-pool.
-* Een ADLS Gen2-opslagaccount. U moet de **gegevenseigenaar van de opslag-blob** zijn van het ADLS Gen2-bestandssysteem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
+* Een ADLS Gen2-opslagaccount. U moet de Inzender voor **gegevens** van de opslag-blob van het ADLS Gen2 bestands systeem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
 * Als u de standaardopslag van de werkruimte niet wilt gebruiken, koppelt u het vereiste ADLS Gen2-opslagaccount in Synapse Studio. 
 
 ## <a name="create-an-apache-spark-job-definition-for-pyspark-python"></a>Een Apache Spark-taakdefinitie maken voor PySpark (Python)
@@ -162,7 +162,7 @@ In deze sectie maakt u een Apache Spark-taakdefinitie voor .NET Spark(C#/F#).
 
 ## <a name="submit-an-apache-spark-job-definition-as-a-batch-job"></a>Een Apache Spark-taakdefinitie verzenden als batchtaak
 
-Nadat u een Apache Spark-taakdefinitie hebt gemaakt, kunt u deze verzenden naar een Apache Spark-pool. Zorg ervoor dat u de **gegevenseigenaar van de opslag-blob** bent van het ADLS Gen2-bestandssysteem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
+Nadat u een Apache Spark-taakdefinitie hebt gemaakt, kunt u deze verzenden naar een Apache Spark-pool. Zorg ervoor dat u de **Inzender** voor de opslag-blob van het ADLS Gen2 bestands systeem waarmee u wilt werken. Als dat niet het geval is, moet u de machtiging handmatig toevoegen.
 
 ### <a name="scenario-1-submit-apache-spark-job-definition"></a>Scenario 1: Apache Spark-taakdefinitie indienen
  1. Open een Apache Spark-taakdefinitievenster door deze te selecteren.

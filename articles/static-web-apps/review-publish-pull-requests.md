@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: yolasors
-ms.openlocfilehash: 78d2f3b399e26ca0c6036fd74fa1fba49d1f21f4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1cb5f2f9ac941001efb18301f4a54bd0092920ba
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042773"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172737"
 ---
 # <a name="review-pull-requests-in-pre-production-environments-in-azure-static-web-apps-preview"></a>Pull-aanvragen in de pre-productieomgevingen controleren in de preview-versie van Azure Static Web Apps
 
@@ -109,7 +109,7 @@ Gefaseerde versies van uw toepassing zijn momenteel openbaar op basis van hun UR
 > [!WARNING]
 > Wees voorzichtig bij het publiceren van gevoelige inhoud naar gefaseerde versies, omdat de toegang tot de pre-productie omgevingen niet is beperkt.
 
-Het aantal pre-productie omgevingen dat beschikbaar is voor elke app die met statische Web Apps wordt geïmplementeerd, is afhankelijk van de SKU-laag die u gebruikt. Met de gratis laag kunt u bijvoorbeeld één pre-productie omgeving hebben naast de productie omgeving.
+Het aantal pre-productie omgevingen dat beschikbaar is voor elke app die met statische Web Apps wordt geïmplementeerd, is afhankelijk van de SKU-laag die u gebruikt. Met de gratis laag kunt u naast de productie omgeving bijvoorbeeld drie pre-productie omgevingen hebben.
 
 ## <a name="next-steps"></a>Volgende stappen
 

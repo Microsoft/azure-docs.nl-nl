@@ -7,12 +7,12 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 12/03/2020
-ms.openlocfilehash: 5c33ef9559d9ce67eea62ee7f78425d18010c1cb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d96c467807af868c07be12f52d913f881b82f732
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727954"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175869"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
@@ -190,7 +190,7 @@ U hebt OAuth voor ADF niet geconfigureerd. De URL is onjuist geconfigureerd.
 
 ##### <a name="resolution"></a>Oplossing
 
-U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de klant organisatie (s), omdat de ADF-service eerst probeert https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .... en mislukt. Vervolgens wordt het geprobeerd https://hostname/api/v3/orgs/ <vaorg> / <repo> . 
+U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de organisatie (s) van de klant. Bijvoorbeeld: ADF probeert eerst... *https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .* en mislukt. Vervolgens wordt het geprobeerd *https://hostname/api/v3/orgs/ <org> / <repo> ...* en slaagt. 
  
 ### <a name="recover-from-a-deleted-data-factory"></a>Herstellen van een verwijderde data factory
 
@@ -203,7 +203,8 @@ Het is mogelijk om de Data Factory alleen te herstellen als de klant broncode be
 
 Als er geen broncode beheer is, is het herstellen van een verwijderde Data Factory van de back-end niet mogelijk omdat de service de verwijderde opdracht heeft ontvangen, het exemplaar is verwijderd en er geen back-up is opgeslagen.
 
-#### <a name="resoloution"></a>Resoloution
+#### <a name="resolution"></a>Oplossing
+
 Ga als volgt te werk om de verwijderde Data Factory met broncode beheer te herstellen:
 
  * Maak een nieuwe Azure Data Factory.

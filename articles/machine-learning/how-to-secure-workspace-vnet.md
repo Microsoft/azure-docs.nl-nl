@@ -11,17 +11,16 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 07b8c130a2a22554e4cd5b33996d5a5ee967d47f
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 083d750db0db050265c93cc658d4f3b6556b850d
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029529"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176209"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Een Azure Machine Learning-werk ruimte beveiligen met virtuele netwerken
 
 In dit artikel leert u hoe u een Azure Machine Learning werkruimte en de bijbehorende resources in een virtueel netwerk kunt beveiligen.
-
 
 Dit artikel is deel twee van een serie van vijf delen die u begeleidt bij het beveiligen van een Azure Machine Learning werk stroom. We raden u ten zeerste aan om in [deel één het overzicht van VNet](how-to-network-security-overview.md) te lezen om eerst inzicht te krijgen in de algehele architectuur. 
 
@@ -153,7 +152,7 @@ De syntaxis voor het overs laan van de validatie van de gegevensset is vergelijk
 - JSON 
 - Parquet
 - SQL
-- Bestand
+- File
 
 Met de volgende code wordt een nieuwe JSON-gegevensset en-sets gemaakt `validate=False` .
 
@@ -296,7 +295,7 @@ Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Co
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel maakt deel uit van een virtuele netwerk reeks van vier delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
+Dit artikel is deel twee van een virtuele netwerk reeks van vijf delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
 
 * [Deel 1: overzicht van virtueel netwerk](how-to-network-security-overview.md)
 * [Deel 3: de trainings omgeving beveiligen](how-to-secure-training-vnet.md)

@@ -5,25 +5,36 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 03/04/2021
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 8333745b802f41b5a1b3dc07663870299800e3f6
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 8ef18ea663f3a77589d61ed89c50df38f5cf0d0e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706297"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176140"
 ---
 # <a name="view-the-status-of-azure-importexport-jobs"></a>De status van de Import/Export-taken in Azure bekijken
 
 Dit artikel bevat informatie over het weer geven van de status van het station en de taak voor Azure import/export-taken. Azure import/export-service wordt gebruikt voor het veilig overdragen van grote hoeveel heden gegevens naar Azure-blobs en Azure Files. De service wordt ook gebruikt voor het exporteren van gegevens uit Azure Blob-opslag.  
 
 ## <a name="view-job-and-drive-status"></a>Taak en de status van het station weer geven
-U kunt de status van uw import-of export taken volgen vanuit de Azure Portal door het tabblad **importeren/exporteren** te selecteren. Er wordt een lijst met taken op de pagina weer gegeven.
+U kunt de status van uw import-of export taken volgen op het tabblad **importeren/exporteren** in de Azure Portal.
+1. Meld u aan bij https://portal.azure.com/ .
+2. Zoeken naar **import/export-taken**.
 
-![Taak status weer geven](./media/storage-import-export-service/jobstate.png)
+    ![Zoeken in import/export-taken](./media/storage-import-export-view-drive-status/open-import-export-tab.png)
 
+ 3. Op de pagina wordt een lijst weer gegeven met de import/export-taken.
+
+    ![Taak status weer geven](./media/storage-import-export-view-drive-status/job-state.png)
+
+4. Selecteer en klik op een taak om de taak details weer te geven.
+
+   ![Gedetailleerde taak status weer geven](./media/storage-import-export-view-drive-status/job-detail.png)
+  
 ## <a name="view-job-status"></a>Taakstatus weergeven
 
 U ziet een van de volgende taak statussen, afhankelijk van waar uw station zich in het proces bevindt.
@@ -56,13 +67,13 @@ In de volgende tabel wordt elke status beschreven waarin elke schijf van een taa
 
 In deze installatie kopie van de Azure Portal wordt de status van het station van een voorbeeld taak weer gegeven:
 
-![Status van station weer geven](./media/storage-import-export-service/drivestate.png)
+![Status van station weer geven](./media/storage-import-export-view-drive-status/drive-state.png)
 
 In de volgende tabel worden de fout statussen van het station en de acties voor elke status beschreven.
 
 | Status van station | Gebeurtenis | Oplossing/volgende stap |
 |:--- |:--- |:--- |
-| NeverReceived | Een station dat is gemarkeerd als **NeverReceived** (omdat het niet is ontvangen als onderdeel van de verzen ding van de taak) arriveert bij een andere verzen ding. | Het operations-team verplaatst het station naar **ontvangen**. |
+| Nooit ontvangen | Een station dat is gemarkeerd als **NeverReceived** (omdat het niet is ontvangen als onderdeel van de verzen ding van de taak) arriveert bij een andere verzen ding. | Het operations-team verplaatst het station naar **ontvangen**. |
 | N.v.t. | Een station dat geen deel uitmaakt van een taak, arriveert bij het Data Center als onderdeel van een andere taak. | Het station is gemarkeerd als een extra station. Het wordt aan u geretourneerd wanneer de taak die is gekoppeld aan het oorspronkelijke pakket is voltooid. |
 
 ## <a name="time-to-process-job"></a>Taak voor het verwerken van tijd

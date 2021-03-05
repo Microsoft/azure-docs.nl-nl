@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 3f358bebc1cc4eb17b8c50b1e3a13366717ae98c
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: ab2ad15da9b1676924197d28e734f6baf59a02ef
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102100709"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176634"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
@@ -68,9 +68,9 @@ Hieronder vindt u een diagram op hoog niveau van de onderdelen en voordelen van 
 ## <a name="faq-for-azure-container-registry-image-scanning"></a>Veelgestelde vragen over het scannen van Azure Container Registry-installatiekopieën
 
 ### <a name="how-does-security-center-scan-an-image"></a>Hoe scant Security Center een installatiekopie?
-De installatiekopie wordt opgehaald uit het register. Vervolgens wordt hij uitgevoerd in een geïsoleerde sandbox met de Qualys-scanner, die een lijst met bekende beveiligingsproblemen extraheert.
+Security Center haalt de installatie kopie op uit het REGI ster en voert deze uit in een geïsoleerde sandbox met de Qualys-scanner. De scanner extraheert een lijst met bekende beveiligings problemen.
 
-Security Center filtert en classificeert de resultaten van de scanner. Wanneer een installatiekopie in orde is, wordt deze als zodanig gemarkeerd door Security Center. Security Center genereert alleen aanbevelingen voor de beveiliging ten aanzien van installatiekopieën waarvoor problemen moeten worden opgelost. Door alleen een melding te geven als er problemen zijn, vermindert Security Center het potentieel voor ongewenste informatieve waarschuwingen.
+Security Center filtert en classificeert de resultaten van de scanner. Wanneer een installatiekopie in orde is, wordt deze als zodanig gemarkeerd door Security Center. Security Center genereert alleen aanbevelingen voor de beveiliging ten aanzien van installatiekopieën waarvoor problemen moeten worden opgelost. Door u alleen op de hoogte te stellen wanneer er problemen zijn, wordt Security Center het potentieel voor ongewenste informatieve waarschuwingen verminderd.
 
 ### <a name="can-i-get-the-scan-results-via-rest-api"></a>Kan ik de scanresultaten verkrijgen via REST API?
 Ja. De resultaten staan onder [Subevaluaties REST API](/rest/api/securitycenter/subassessments/list/). U kunt ook gebruikmaken van Azure Resource Graph (ARG), de Kusto-achtige API voor al uw resources: een query kan een specifieke scan ophalen.
@@ -78,7 +78,7 @@ Ja. De resultaten staan onder [Subevaluaties REST API](/rest/api/securitycenter/
 ### <a name="what-registry-types-are-scanned-what-types-are-billed"></a>Welke registertypen worden gescand? Welke typen worden gefactureerd?
 Zie [Beschikbaarheid](#availability)voor een lijst met de typen containerregisters die worden ondersteund door Azure Defender voor containerregisters.
 
-Als u niet-ondersteunde registers verbindt met uw Azure-abonnement, worden deze niet gescand en worden er geen kosten in rekening gebracht.
+Als u niet-ondersteunde registers verbindt met uw Azure-abonnement, worden ze niet door Azure Defender gescand en worden er geen kosten in rekening gebracht.
 
 ### <a name="can-i-customize-the-findings-from-the-vulnerability-scanner"></a>Kan ik de bevindingen van de kwetsbaarheidsscanner aanpassen?
 Ja. Als u een organisatorische behoefte hebt om een resultaat te negeren in plaats van dit te herstellen, kunt u het eventueel uitschakelen. Uitgeschakelde resultaten hebben geen invloed op uw beveiligingsscore en genereren geen ongewenste ruis.

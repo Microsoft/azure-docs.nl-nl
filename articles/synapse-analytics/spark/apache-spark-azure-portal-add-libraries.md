@@ -9,12 +9,12 @@ ms.date: 03/01/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 38826451bbb8ec9303f61db53544cfe8ca2fcd41
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: c6d720c3feec29eb32b1cfa9c31ea45839c98ec7
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102123085"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176413"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. 
@@ -61,10 +61,14 @@ Bij het uitvoeren van interactieve gegevens analyse of machine learning, kunt u 
 
 Met pakketten met sessie bereik kunnen gebruikers aan het begin van hun sessie pakket afhankelijkheden definiëren. Wanneer u een pakket met sessie bereik installeert, heeft alleen de huidige sessie toegang tot de opgegeven pakketten. Als gevolg hiervan zijn deze pakketten met sessie bereik niet van invloed op andere sessies of taken die gebruikmaken van dezelfde Apache Spark pool. Daarnaast worden deze bibliotheken boven op de basis-runtime-en pool level-pakketten geïnstalleerd. 
 
+Deze pakketten worden automatisch toegevoegd aan uw python-omgeving. De pakketten mogen niet worden vermeld in uw *requirements.txt* -bestand.
+
+Houd er rekening mee dat deze methode momenteel alleen `*.whl` bestanden suports. Voeg geen bestanden toe `*.tar.gz` aan de container.
+
 Voor meer informatie over het beheren van pakketten met sessie bereik raadpleegt u de volgende hand leidingen:
 
 - [Python-sessie pakketten (preview-versie):](./apache-spark-manage-python-packages.md) Aan het begin van een sessie geeft u een Conda- *omgeving. yml* extra Python-pakketten installeren vanuit populaire opslag plaatsen. 
-- [Scala/Java-sessie pakketten: ](./apache-spark-manage-scala-packages.md) Aan het begin van uw sessie geeft u een lijst van jar-bestanden op die moeten worden geïnstalleerd met ```%%configure``` .
+- [Scala/Java-sessie pakketten: ](./apache-spark-manage-scala-packages.md) Aan het begin van uw sessie geeft u een lijst van jar-bestanden op die moeten worden geïnstalleerd met `%%configure` .
 
 ## <a name="next-steps"></a>Volgende stappen
 - De standaard bibliotheken weer geven: [ondersteuning van Apache Spark-versie](apache-spark-version-support.md)

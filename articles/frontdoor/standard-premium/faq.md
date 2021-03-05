@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: duau
-ms.openlocfilehash: a42601b696f292e9d2a9da90070fea3662acae87
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 6f6d71dec9726f009ab9a56e0a49ba21f5d218fd
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101099111"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181020"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-standardpremium-preview"></a>Veelgestelde vragen over Azure front deur Standard/Premium (preview)
 
@@ -85,7 +85,11 @@ Ja. In feite ondersteunt Azure front-deur host, pad, omleiding van query reeksen
 
 ### <a name="how-do-i-lock-down-the-access-to-my-backend-to-only-azure-front-door"></a>Hoe kan ik Vergrendel de toegang tot mijn back-end naar een Azure front-deur?
 
-Als u uw toepassing wilt vergren delen om alleen verkeer van uw specifieke front-deur te accepteren, moet u IP-Acl's instellen voor uw back-end. Beperk vervolgens het verkeer van uw back-end tot de specifieke waarde van de header X-Azure-FDID die wordt verzonden door de voor deur. Deze stappen worden hieronder beschreven:
+De beste manier om uw toepassing te vergren delen om alleen verkeer van uw specifieke exemplaar van de voor deur te accepteren, is door uw toepassing te publiceren via een persoonlijk eind punt. Netwerk verkeer tussen de voor deur en de toepassing gaat over op het VNet en een privé koppeling in het micro soft backbone-netwerk, waardoor de bloot stelling van het open bare Internet wordt voor komen.
+
+Meer informatie over de [beveiliging van de oorsprong voor de voor deur met persoonlijke koppeling](concept-private-link.md).  
+
+Een andere manier om uw toepassing te vergren delen zodat alleen verkeer vanaf uw specifieke voor deur wordt geaccepteerd, moet u IP-Acl's instellen voor uw back-end. Beperk vervolgens het verkeer van uw back-end tot de specifieke waarde van de header X-Azure-FDID die wordt verzonden door de voor deur. Deze stappen worden hieronder beschreven:
 
 * Configureer IP-Acl's voor voor uw back-ends om verkeer te accepteren van de back-end-IP-adres ruimte van de Azure front deur en alleen de infrastructuur services van Azure. Raadpleeg de onderstaande IP-gegevens voor Acl's voor van uw back-end:
  

@@ -57,8 +57,12 @@
       href: how-to-cache-purge.md
     - name: Compressie
       href: how-to-compression.md
-    - name: Persoonlijke koppeling naar web-app inschakelen
-      href: how-to-enable-private-link-web-app.md
+    - name: Persoonlijke koppeling inschakelen
+      items:
+        - name: Verbinding maken met een opslagaccount
+          href: how-to-enable-private-link-storage-account.md
+        - name: Verbinding maken met een web-app
+          href: how-to-enable-private-link-web-app.md
     - name: Logboekregistratie
       href: how-to-logs.md
     - name: Bewaking en waarschuwingen

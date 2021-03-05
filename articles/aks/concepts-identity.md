@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: dc1e54106e2f31c7390d784cba6f92cf775e963c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 98044f6ff6311241717cb66a6e26a72702d749e6
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572699"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181445"
 ---
 # <a name="access-and-identity-options-for-azure-kubernetes-service-aks"></a>Toegangs- en identiteitsopties voor Azure Kubernetes Service (AKS)
 
@@ -42,6 +42,7 @@ De volgende machtigingen worden gebruikt door de AKS-cluster identiteit, die wor
 
 | Machtiging | Reden |
 |---|---|
+| Micro soft. container service/managedClusters/*  <br/> | Vereist voor het maken van gebruikers en het werken met het cluster
 | Micro soft. Network/loadBalancers/verwijderen <br/> Micro soft. Network/loadBalancers/lezen <br/> Micro soft. Network/loadBalancers/schrijven | Vereist voor het configureren van de load balancer voor een Load Balancer-service. |
 | Micro soft. Network/publicIPAddresses/verwijderen <br/> Microsoft.Network/publicIPAddresses/read <br/> Microsoft.Network/publicIPAddresses/write | Vereist om open bare Ip's voor een Load Balancer-service te zoeken en te configureren. |
 | Microsoft.Network/publicIPAddresses/join/action | Vereist voor het configureren van open bare Ip's voor een Load Balancer-service. |
@@ -198,7 +199,7 @@ Deze tabel bevat een overzicht van de manieren waarop gebruikers zich kunnen ver
 
 De functie toekenning waarnaar wordt verwezen in de tweede kolom is de Azure RBAC-rol toekenning die wordt weer gegeven op het tabblad **Access Control** in het Azure Portal. De Azure AD-groep Cluster beheer wordt weer gegeven op het tabblad **configuratie** in de portal (of met `--aad-admin-group-object-ids` de parameter naam in de Azure CLI).
 
-| Description        | Rol toekenning vereist| Azure AD-groep (en) cluster beheer | Wanneer gebruikt u dit? |
+| Beschrijving        | Rol toekenning vereist| Azure AD-groep (en) cluster beheer | Wanneer gebruikt u dit? |
 | -------------------|------------|----------------------------|-------------|
 | Verouderde beheerder aanmelden met behulp van client certificaat| **Rol van Azure Kubernetes-beheerder**. Deze rol kan `az aks get-credentials` worden gebruikt met de `--admin` vlag, waarmee een [verouderd (niet-Azure AD) cluster beheer certificaat](control-kubeconfig-access.md) wordt gedownload naar de gebruiker `.kube/config` . Dit is het enige doel van de Azure Kubernetes-beheerdersrol.|n.v.t.|Als u permanent bent geblokkeerd door geen toegang tot een geldige Azure AD-groep met toegang tot uw cluster.| 
 | Azure AD met hands-RoleBindings (cluster)| Gebruikersrol **Azure Kubernetes**. De rol ' gebruiker ' mag `az aks get-credentials` worden gebruikt zonder de `--admin` vlag. (Dit is het enige doel van ' Azure Kubernetes-gebruikersrol '.) Het resultaat van een Azure AD-cluster is het downloaden van [een lege vermelding](control-kubeconfig-access.md) in `.kube/config` , waardoor de browser verificatie wordt geactiveerd wanneer deze voor het eerst wordt gebruikt door `kubectl` .| De gebruiker bevindt zich niet in een van deze groepen. Omdat de gebruiker zich niet in een cluster beheer groepen bevindt, worden hun rechten volledig beheerd door alle RoleBindings of ClusterRoleBindings die zijn ingesteld door cluster beheerders. De (cluster) RoleBindings [benoemt Azure AD-gebruikers of Azure ad-groepen](azure-ad-rbac.md) als hun `subjects` . Als er geen dergelijke bindingen zijn ingesteld, kan de gebruiker geen `kubectl` opdrachten excute.|Als u een nauw keurig toegangs beheer wilt en u geen gebruik maakt van Azure RBAC voor Kubernetes-autorisatie. Houd er rekening mee dat de gebruiker die de bindingen instelt, zich moet aanmelden met een van de andere methoden die in deze tabel worden vermeld.|

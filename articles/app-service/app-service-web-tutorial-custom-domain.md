@@ -11,12 +11,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–386541–A/B–Enhanced-Readability-Quickstarts–2.19.2021
 adobe-target-experience: Experience B
 adobe-target-content: ./app-service-web-tutorial-custom-domain-uiex
-ms.openlocfilehash: b3ff1b344852d57f0effbd978c06aa617682ea4f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 79599ce04b93409c67342be73cf88d5e20621c1d
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720309"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182567"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -77,7 +77,7 @@ U ziet de beheerpagina van de App Service-app.
 
 1. De huidige laag van de app wordt gemarkeerd door een blauwe rand. Controleer of de app zich niet in de **F1**-categorie bevindt. Aangepaste DNS wordt niet ondersteund in de **F1**-categorie.
 
-   ![Schermopname met de aanbevolen prijscategorieën.](./media/app-service-web-tutorial-custom-domain/check-pricing-tier.png)
+   ![Scherm opname waarin de aanbevolen prijs categorieën worden weer gegeven.](./media/app-service-web-tutorial-custom-domain/check-pricing-tier.png)
 
 1. Als het App Service-plan zich niet in de **F1**-categorie bevindt, sluit u de pagina **Omhoog schalen** en gaat u door met [Een CNAME-record toewijzen](#map-a-cname-record).
 
@@ -144,7 +144,7 @@ Nadat u de CNAME en TXT-records hebt toegevoegd, lijkt de pagina met DNS-records
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-    ![Schermopname met het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+    ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Voeg op de pagina **Aangepaste domeinen** van de app de volledig gekwalificeerde aangepaste DNS-naam (`www.contoso.com`) toe aan de lijst.
 
@@ -185,7 +185,7 @@ Als u een A-record wilt toewijzen, heeft u het externe IP-adres van de app nodig
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-   ![Schermopname met het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+   ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Op de pagina **Aangepaste domeinen** kopieert u het IP-adres van de app.
 
@@ -277,7 +277,7 @@ U kunt nu elk subdomein dat overeenkomt met de jokerteken-naam aan de app toevoe
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
 
-    ![Schermopname met het menu Aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
+    ![Scherm opname van het menu voor aangepaste domeinen.](./media/app-service-web-tutorial-custom-domain/custom-domain-menu.png)
 
 1. Selecteer **Aangepast domein toevoegen**.
 
@@ -308,10 +308,7 @@ Blader naar de DNS-namen die u eerder hebt geconfigureerd (bijvoorbeeld `contoso
 
 ## <a name="resolve-404-not-found"></a>404-fout 'Niet gevonden' oplossen
 
-Als u een HTTP 404-fout (niet gevonden) ontvangt bij het bladeren naar de URL van uw aangepaste domein, moet u controleren of uw domein wordt omgezet naar uw app IP-adres met <a href="https://www.whatsmydns.net/" target="_blank">WhatsmyDNS.net</a>. Als dat niet het geval is, kan dit een van de volgende oorzaken hebben:
-
-- Bij het geconfigureerde aangepaste domein ontbreekt een A-record of een CNAME-record.
-- De browserclient heeft het oude IP-adres van uw domein in de cache. Maak de cache leeg en test DNS-omzetting opnieuw. Op een Windows-computer, leegt u de cache met `ipconfig /flushdns`.
+Als u een fout bericht over HTTP 404 (niet gevonden) ontvangt wanneer u naar de URL van uw aangepaste domein bladert, controleert u of uw domein wordt omgezet in het IP-adres van uw app met behulp van <a href="https://www.nslookup.io/" target="_blank">nslookup.io</a>. Als dat niet het geval is, controleert u of de A-en CNAME-records correct zijn geconfigureerd met dezelfde-site. Als het IP-adres op de juiste wijze wordt opgelost, maar u nog steeds een 404 krijgt, kan uw browser het oude IP-adressen van uw domein in de cache opslaan. Maak de cache leeg en test DNS-omzetting opnieuw. Op een Windows-computer, leegt u de cache met `ipconfig /flushdns`.
 
 ## <a name="migrate-an-active-domain"></a>Een actief domein migreren
 

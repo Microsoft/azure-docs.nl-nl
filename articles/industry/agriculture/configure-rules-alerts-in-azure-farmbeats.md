@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u regels configureert en waarschuwingen
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: 5e6a5d414c341f482c3fddf95a2f8bb8e55a3ca2
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.author: v-ummehabiba
+ms.openlocfilehash: a04f973cbfa3a68016065f50e9e2ff4f7566da94
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168542"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182924"
 ---
 # <a name="configure-rules-and-manage-alerts"></a>Regels configureren en waarschuwingen beheren
 
@@ -28,16 +28,16 @@ Met Azure FarmBeats kunt u regels maken op basis van de bedrijfs logica, naast d
 
     ![Scherm afbeelding die de sectie voor waarden markeert.](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-condition-1.png)
 
-5. Voer in **voor waarden**de waarden voor **meet**waarde, **operator** en **waarde**in.
+5. Voer in **voor waarden** de waarden voor **meet** waarde, **operator** en **waarde** in.
 6. Typ de naam van de meting in de vervolg keuzelijst **meting** .
 7. Selecteer **+ voor waarde toevoegen** om meer voor waarden toe te voegen aan de regel.
 8. Selecteer het **Ernst niveau**.
-9. In **actie**gaat u naar de wissel knop voor **e-mail ingeschakeld** om e-mail waarschuwingen in te scha kelen.
+9. In **actie** gaat u naar de wissel knop voor **e-mail ingeschakeld** om e-mail waarschuwingen in te scha kelen.
 
     ![Scherm afbeelding met de optie E-mail ingeschakeld.](./media/configure-rules-and-alerts-in-azure-farmbeats/new-rule-email-1.png)
 
 10. Voer de **e-mail adressen** in waarnaar u de e-mail melding wilt verzenden, samen met het onderwerp van de **E-mail** en **aanvullende notities**.  
-11. Ga in de **regel status**naar de **ingeschakelde** wissel knop om de regel in of uit te scha kelen.
+11. Ga in de **regel status** naar de **ingeschakelde** wissel knop om de regel in of uit te scha kelen.
     U kunt het aantal apparaten weer geven waarop de regel van toepassing is.
 12. Selecteer **Toep assen** om de regel te maken.
 
@@ -69,18 +69,18 @@ Voer de volgende stappen uit om een regel te bewerken:
 
     ![Scherm afbeelding van het venster regel bewerken.](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-one-1.png)
 
-4. Wijzig de **naam**van de regel en **regel beschrijving** en selecteer vervolgens een farm in de vervolg keuzelijst **Farm selecteren** .
+4. Wijzig de **naam** van de regel en **regel beschrijving** en selecteer vervolgens een farm in de vervolg keuzelijst **Farm selecteren** .
 5. Typ de naam van uw farm om de farm en de **voor waarden** in hetzelfde venster te selecteren.  
-6. Bewerk **meting**, **operator** en **waarde**in **voor waarden**.
+6. Bewerk **meting**, **operator** en **waarde** in **voor waarden**.
 7. Typ de naam van de meting in de vervolg keuzelijst **meting** .
 8. Selecteer **+ voor waarde toevoegen** om voor waarden toe te voegen/te bewerken aan de regels.
 
     ![Scherm afbeelding met de knop voor waarde toevoegen.](./media/configure-rules-and-alerts-in-azure-farmbeats/edit-rule-two-1.png)
 
 9.  Selecteer het **Ernst niveau**.  
-10. In **actie**gaat u naar de wissel knop voor **e-mail ingeschakeld** om e-mail waarschuwingen in te scha kelen.
+10. In **actie** gaat u naar de wissel knop voor **e-mail ingeschakeld** om e-mail waarschuwingen in te scha kelen.
 11. Bewerk de **e-mail adressen** waarnaar u de e-mail melding wilt verzenden, samen met het onderwerp van de **E-mail** en **aanvullende notities**.  
-12. Ga in de **regel status**naar de **ingeschakelde** wissel knop om de regel in of uit te scha kelen.
+12. Ga in de **regel status** naar de **ingeschakelde** wissel knop om de regel in of uit te scha kelen.
 U kunt het aantal apparaten weer geven waarop deze regel van toepassing is.
 13. Selecteer **Toep assen** om de regel te bewerken.
 

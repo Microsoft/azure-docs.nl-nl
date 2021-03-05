@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe u sensor gegevens van partners 
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: 57baa00f7f9b64212d0aee8b0a2efeca814abeb3
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.author: v-ummehabiba
+ms.openlocfilehash: 474b6f8356724546105d902a15427f483f656317
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92168525"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182771"
 ---
 # <a name="get-sensor-data-from-sensor-partners"></a>Sensor gegevens ophalen van sensor partners
 
@@ -46,7 +46,7 @@ Volg de onderstaande stappen om de bovenstaande gegevens te genereren:
 
 2. **Als u FarmBeats-versie 1.2.7 of hoger hebt, slaat u stap a, b en c over en gaat u naar stap 3.** U kunt de FarmBeats-versie controleren door het pictogram **instellingen** te selecteren in de rechter bovenhoek van de FarmBeats-gebruikers interface.
 
-      a.  Ga naar **Azure Active Directory**  >  **app-registraties** voor Azure Active Directory
+      a.  Ga naar   >  **app-registraties** voor Azure Active Directory
 
       b. Selecteer de **app-registratie** die is gemaakt als onderdeel van uw FarmBeats-implementatie. Deze heeft dezelfde naam als uw FarmBeats-datahub.
 
@@ -92,7 +92,7 @@ Volg de onderstaande stappen om de bovenstaande gegevens te genereren:
 > 1. De naam van het Datahub-API-eind punt moet in kleine letters worden beschouwd.
 > 2. Als u de naam-URL van de farmbeats-website voor Datahub API-eind punt kopieert, moet u ervoor zorgen dat er geen afsluitende slash (/) is.
 
-9. Volg de instructies op het scherm voor het vastleggen van de waarden voor het **API-eind punt**, **Tenant-ID**, **client-id**, **client geheim**en **EventHub-verbindings reeks**.
+9. Volg de instructies op het scherm voor het vastleggen van de waarden voor het **API-eind punt**, **Tenant-ID**, **client-id**, **client geheim** en **EventHub-verbindings reeks**.
 
 ### <a name="integrate-device-data-by-using-the-generated-credentials"></a>Apparaatgegevens integreren met behulp van de gegenereerde referenties
 
@@ -152,7 +152,7 @@ Nadat de sensor gegevens in zijn stromen, kunt u deze toewijzen aan de farm waar
 
     ![Venster apparaten toevoegen](./media/get-sensor-data-from-sensor-partner/add-devices-1.png)
 
-4. Selecteer **apparaten toevoegen**. U kunt ook naar het menu **apparaten** gaan, de apparaten selecteren die u wilt toewijzen aan een farm en **apparaten koppelen**selecteren.
+4. Selecteer **apparaten toevoegen**. U kunt ook naar het menu **apparaten** gaan, de apparaten selecteren die u wilt toewijzen aan een farm en **apparaten koppelen** selecteren.
 5. Selecteer in het venster **apparaten koppelen** de farm in de vervolg keuzelijst en selecteer **Toep assen op alles** om de farm aan alle geselecteerde apparaten te koppelen.
 
     ![Venster Apparaten koppelen](./media/get-sensor-data-from-sensor-partner/associate-devices-1.png)

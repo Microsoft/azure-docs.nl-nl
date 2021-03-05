@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/20/2020
-ms.openlocfilehash: ac93d835b8dbdd5a12d031825dcb879160df5e95
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: b9a207ffa14a18a5f4421fd21cebed28290b5ea6
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575343"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183077"
 ---
 # <a name="asset-insights-on-your-data-in-azure-purview"></a>Asset Insights op uw gegevens in azure controle sfeer liggen
 
@@ -40,7 +40,7 @@ Zie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-d
 In azure controle sfeer liggen kunt u bron typen registreren en scannen. Zodra de scan is voltooid, kunt u de Asset-distributie bekijken in Asset Insights, waarmee u de status van uw gegevens per classificatie en resource sets vertelt. Er wordt ook aangegeven of er wijzigingen zijn in de gegevens grootte.
 
 > [!NOTE]
-> Nadat u uw bron typen hebt gescand, geeft u met de nieuwe activa inzicht in de Asset-uren weer.
+> Nadat u uw bron typen hebt gescand, geeft u Asset Insights 3-8 uur om de nieuwe activa weer te geven. De vertraging kan worden veroorzaakt door groot verkeer in de implementatie regio of de grootte van uw werk belasting. Neem contact op met het ondersteunings team voor meer informatie.
 
 1. Navigeer naar uw Azure controle sfeer liggen-resource in de Azure Portal.
 
@@ -94,7 +94,7 @@ In de volgende paar grafieken in Asset Insights ziet u een distributie van bron 
 
 1. Selecteer het pad om de lijst met activa weer te geven.
 
-De tweede grafiek in bron typen op basis van bestanden is **_bestanden die niet zijn gekoppeld aan een resourceset_**. Als u verwacht dat alle bestanden moeten worden getotaliseerd in een resourceset, kunt u met deze grafiek begrijpen welke assets niet zijn geïmplementeerd. Ontbrekende activa kunnen een indicatie zijn van het onjuiste bestands patroon in de map. Volg dezelfde stappen als in andere grafieken om meer informatie over de bestanden weer te geven.
+De tweede grafiek in bron typen op basis van bestanden is ***bestanden die niet zijn gekoppeld aan een resourceset***. Als u verwacht dat alle bestanden moeten worden getotaliseerd in een resourceset, kunt u met deze grafiek begrijpen welke assets niet zijn geïmplementeerd. Ontbrekende activa kunnen een indicatie zijn van het onjuiste bestands patroon in de map. Volg dezelfde stappen als in andere grafieken om meer informatie over de bestanden weer te geven.
 
    :::image type="content" source="./media/asset-insights/file-based-assets.png" alt-text="Op bestanden gebaseerde assets weer geven":::  
 

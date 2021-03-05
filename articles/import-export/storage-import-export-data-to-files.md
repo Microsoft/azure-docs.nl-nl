@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 03/03/2021
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 44473efbfb1c07c628c939fd05805ed92e691736
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.custom: devx-track-azurepowershell, devx-track-azurecli, contperf-fy21q3
+ms.openlocfilehash: b62c3c4be4fdffd9f509b86d248cd028518ae89a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100651817"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181938"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Azure Import/Export-service gebruiken om gegevens te importeren naar Azure Files
 
@@ -40,7 +40,6 @@ Voordat u een import taak maakt om gegevens over te dragen naar Azure Files, moe
         - [Maak een DHL-account](http://www.dhl-usa.com/en/express/shipping/open_account.html).
 
 
-
 ## <a name="step-1-prepare-the-drives"></a>Stap 1: de stations voorbereiden
 
 Met deze stap wordt een logboek bestand gegenereerd. In het logboek bestand worden basis gegevens opgeslagen, zoals serie nummer van het station, de versleutelings sleutel en Details van het opslag account.
@@ -49,9 +48,9 @@ Voer de volgende stappen uit om de stations voor te bereiden.
 
 1. Verbind onze schijf stations met het Windows-systeem via SATA-connectors.
 2. Maak één NTFS-volume op elk station. Wijs een stationsletter aan het volume toe. Gebruik mountpoints niet.
-3. Wijzig het *dataset.csv* -bestand in de hoofdmap waar het hulp programma zich bevindt. Afhankelijk van of u een bestand of map of beide wilt importeren, voegt u in het *dataset.csv* -bestand vermeldingen toe die vergelijkbaar zijn met de volgende voor beelden.
+3. Wijzig het *dataset.csv* -bestand in de hoofdmap waarin het hulp programma zich bevindt. Afhankelijk van of u een bestand of map of beide wilt importeren, voegt u in het *dataset.csv* -bestand vermeldingen toe die vergelijkbaar zijn met de volgende voor beelden.
 
-   - **Een bestand importeren**: in het volgende voor beeld bevindt de te kopiëren gegevens zich in het station F:. Uw bestands *MyFile1.txt*  wordt gekopieerd naar de hoofdmap van de *MyAzureFileshare1*. Als de *MyAzureFileshare1* niet bestaat, wordt deze in het Azure Storage-account gemaakt. De mapstructuur wordt behouden.
+   - **Een bestand importeren**: in het volgende voor beeld bevindt de te kopiëren gegevens zich op het station F:. Uw bestands *MyFile1.txt*  wordt gekopieerd naar de hoofdmap van de *MyAzureFileshare1*. Als de *MyAzureFileshare1* niet bestaat, wordt deze in het Azure Storage-account gemaakt. De mapstructuur wordt behouden.
 
        ```
            BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
@@ -74,7 +73,7 @@ Voer de volgende stappen uit om de stations voor te bereiden.
      Meer informatie over [het voorbereiden van het CSV-bestand van de gegevensset](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import).
 
 
-4. Wijzig het *driveset.csv* -bestand in de hoofdmap waar het hulp programma zich bevindt. Voeg in het *driveset.csv* -bestand vermeldingen toe die vergelijkbaar zijn met de volgende voor beelden. Het stationset-bestand bevat de lijst met schijven en bijbehorende stationsletters, zodat het hulp programma de lijst met schijven die moeten worden voor bereid, correct kan selecteren.
+4. Wijzig het *driveset.csv* -bestand in de hoofdmap waarin het hulp programma zich bevindt. Voeg in het *driveset.csv* -bestand vermeldingen toe die vergelijkbaar zijn met de volgende voor beelden. Het stationset-bestand bevat de lijst met schijven en bijbehorende stationsletters, zodat het hulp programma de lijst met schijven die moeten worden voor bereid, correct kan selecteren.
 
     In dit voor beeld wordt ervan uitgegaan dat er twee schijven zijn gekoppeld en basis-NTFS-volumes G:\ en H:\ worden gemaakt. H:\is is niet versleuteld terwijl G: al is versleuteld. Het hulp programma formatteert en versleutelt de schijf die als host fungeert voor H:\ alleen (en niet G: \) .
 
@@ -129,39 +128,50 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
 4. In **Basisbeginselen**:
 
-    - Selecteer **importeren in azure**.
-    - Voer een beschrijvende naam in voor de import taak. Gebruik deze naam om uw taken bij te houden terwijl ze worden uitgevoerd en zodra ze zijn voltooid.
-        -  Deze naam mag alleen kleine letters, cijfers, afbreek streepjes en onderstrepings tekens bevatten.
-        -  De naam moet beginnen met een letter en mag geen spaties bevatten.
-    - Selecteer een abonnement.
-    - Selecteer een resourcegroep.
+   1. Selecteer een abonnement.
+   1. Selecteer een resource groep of selecteer **nieuwe maken** en maak een nieuwe.
+   1. Voer een beschrijvende naam in voor de import taak. Gebruik de naam om de voortgang van uw taken bij te houden.
+       * De naam mag alleen kleine letters, cijfers en afbreek streepjes bevatten.
+       * De naam moet beginnen met een letter en mag geen spaties bevatten.
+   1. Selecteer **importeren in azure**.
 
-        ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
+    ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
 
-3. In **taak Details**:
+   Selecteer **volgende: taak details >** om door te gaan.
 
-    - Upload de logboek bestanden die u hebt gemaakt tijdens de vorige [stap 1: bereid de stations](#step-1-prepare-the-drives)voor.
-    - Selecteer het opslag account waarin de gegevens worden geïmporteerd.
-    - De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
+5. In **taak Details**:
 
-       ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
+   1. Upload de logboek bestanden die u hebt gemaakt tijdens de vorige [stap 1: bereid de stations](#step-1-prepare-the-drives)voor.
+   1. Selecteer de Azure-doel regio voor de order.
+   1. Selecteer het opslag account voor het importeren.
 
-4. In **retour verzendings gegevens**:
+      De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
 
-    - Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
-    - Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid.
-    - Geef een volledige en geldige naam op voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio.
+   1. Als u geen uitgebreid logboek wilt opslaan, schakelt u het selectie vakje **uitgebreid logboek opslaan in de BLOB-container van ' waimportexport '** uit.
+
+
+   ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
+
+   Selecteer **volgende: verzend >** om door te gaan.
+
+4. Bij **verzen ding**:
+
+    1. Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
+    1. Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid.
+    1. Geef een volledige en geldige naam op voor de contact persoon, telefoon, e-mail, adres, plaats, post code, provincie en land/regio.
 
         > [!TIP]
         > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-       ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
+    ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
 
+   Selecteer **controleren + maken** om door te gaan.
 
-5. In de **samen vatting**:
+5. In het overzicht van de bestelling:
 
-    - Geef het Azure Data Center-verzend adres voor de verzend schijven terug naar Azure. Zorg ervoor dat de naam en het volledige adres van de taak worden vermeld op het verzend label.
-    - Klik op **OK** om het maken van de import taak te volt ooien.
+   1. Bekijk de **voor waarden** en selecteer ik erken dat alle verstrekte informatie juist is en ga akkoord met de voor waarden. De validatie wordt vervolgens uitgevoerd.
+   1. Bekijk de taak gegevens die in de samen vatting worden weer gegeven. Noteer de naam van de taak en het verzend adres van Azure Data Center om schijven terug te sturen naar Azure. Deze informatie wordt later op het verzend label gebruikt.
+   1. Selecteer **Maken**.
 
         ![Import taak maken-stap 4](./media/storage-import-export-data-to-blobs/import-to-blob-6.png)
 
@@ -357,7 +367,7 @@ De taak bijhouden tot voltooiing. Nadat de taak is voltooid, controleert u of uw
 
 Als u **meer stations wilt toevoegen**, maakt u een nieuw stationset-bestand en voert u de volgende opdracht uit.
 
-Voor volgende Kopieer sessies naar de verschillende schijf stations dan opgegeven in *InitialDriveset. CSV* -bestand, geeft u een nieuw *CSV* -bestand van stationset op en geeft u het op als waarde voor de para meter `AdditionalDriveSet` . Gebruik dezelfde naam voor het **logboek bestand** en geef een **nieuwe sessie-id** op. De indeling van het CSV-bestand van AdditionalDriveset is gelijk aan de InitialDriveSet-indeling.
+Voor volgende Kopieer sessies naar andere schijf stations dan die welke zijn opgegeven in het bestand *InitialDriveset. CSV* , geeft u een nieuw *CSV* -bestand van stationset op en geeft u dit op als waarde voor de para meter `AdditionalDriveSet` . Gebruik dezelfde naam voor het **logboek bestand** en geef een **nieuwe sessie-id** op. De indeling van het CSV-bestand van AdditionalDriveset is gelijk aan de InitialDriveSet-indeling.
 
 ```cmd
 WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AdditionalDriveSet:<driveset.csv>

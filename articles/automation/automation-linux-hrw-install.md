@@ -3,14 +3,14 @@ title: Een Linux-Hybrid Runbook Worker implementeren in Azure Automation
 description: In dit artikel wordt uitgelegd hoe u een Azure Automation Hybrid Runbook Worker installeert voor het uitvoeren van runbooks op Linux-computers in uw lokale Data Center of cloud omgeving.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/18/2021
+ms.date: 02/26/2021
 ms.topic: conceptual
-ms.openlocfilehash: 543ae640871699c7e1fffda46463752483ff6a4e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d4d9bcd16e36e76808f19f7fbd43dd0d3e7550c3
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101708914"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182329"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker implementeren
 
@@ -48,7 +48,7 @@ De functie Hybrid Runbook Worker ondersteunt de volgende distributies. Er wordt 
 * Red Hat Enterprise Linux Server 5, 6, 7 en 8
 * Debian GNU/Linux 6, 7 en 8
 * Ubuntu 12,04 LTS, 14,04 LTS, 16,04 LTS en 18,04 LTS
-* SUSE Linux Enterprise Server 12 en 15
+* SUSE Linux Enterprise Server 12 en 15 (SUSE heeft geen versies uitgebracht die 13 of 14 zijn genummerd)
 
 > [!IMPORTANT]
 > Voordat u de functie Updatebeheer inschakelt, die afhankelijk is van de systeem Hybrid Runbook Worker rol, bevestigt u de distributies die [hier](update-management/overview.md#supported-operating-systems)worden ondersteund.
@@ -66,7 +66,7 @@ De minimale vereisten voor een Linux-systeem en gebruikers Hybrid Runbook Worker
 |Glibc |GNU C-bibliotheek| 2.5-12 |
 |Openssl| OpenSSL-bibliotheken | 1,0 (TLS 1,1 en TLS 1,2 worden ondersteund)|
 |Curl | Krul webclient | 7.15.5|
-|Python-ctypes | Python 2. x is vereist |
+|Python-ctypes | Python 2. x of python 3. x zijn vereist |
 |PAM | Pluggable Authentication Modules|
 | **Optioneel pakket** | **Beschrijving** | **Minimale versie**|
 | PowerShell Core | Als u Power shell-runbooks wilt uitvoeren, moet Power shell Core zijn geïnstalleerd. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan. | 6.0.0 |
@@ -90,13 +90,16 @@ Hybrid Runbook Workers van Linux ondersteunen een beperkt aantal typen Runbook i
 
 |Type Runbook | Ondersteund |
 |-------------|-----------|
-|Python 2 |Ja |
-|PowerShell |Ja<sup>1</sup> |
+|Python 3 (preview-versie)|Ja, alleen vereist voor deze distributies: SUSE LES 15, RHEL 8 en CentOS 8|
+|Python 2 |Ja, voor distributie waarvoor python niet nodig is 3<sup>1</sup> |
+|PowerShell |Ja<sup>2</sup> |
 |PowerShell-werkstroom |Nee |
 |Grafisch |Nee |
 |Grafische power shell-werk stroom |Nee |
 
-<sup>1</sup> Power shell-runbooks vereisen dat Power shell core wordt geïnstalleerd op de Linux-machine. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan.
+<sup>1</sup> Zie [ondersteunde Linux-besturings systemen](#supported-linux-operating-systems).
+
+<sup>2</sup> Power shell-runbooks vereisen dat Power shell core wordt geïnstalleerd op de Linux-machine. Zie [Power shell core in Linux installeren](/powershell/scripting/install/installing-powershell-core-on-linux) voor meer informatie over het installeren ervan.
 
 ### <a name="network-configuration"></a>Netwerkconfiguratie
 

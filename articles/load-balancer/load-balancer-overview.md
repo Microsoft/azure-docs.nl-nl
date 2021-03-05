@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/25/2021
 ms.author: allensu
-ms.openlocfilehash: 14e6990579f61b28c091f18b45a06d1ddcc00e89
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 51ceb72d53f78264edcadd2255e20c8fbdac2cae
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102097530"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181207"
 ---
 # <a name="what-is-azure-load-balancer"></a>Wat is Azure Load Balancer?
 
@@ -42,8 +42,8 @@ Zie [Azure Load Balancer-componenten](./components.md) voor meer informatie over
 >[!NOTE]
 > Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's. 
 > * Als u op zoek bent naar een internationale routering op basis van DNS en u voldoet **niet** aan de vereisten voor beëindiging van het TLS-protocol (Transport Layer Security), ('SSL-offload') of aanvragen per HTTP/HTTPS-aanvraag, verwerking via de toepassingslaag, raadpleegt u [Traffic Manager](../traffic-manager/traffic-manager-overview.md). 
-> * Als u de taken wilt verdelen tussen uw servers in een regio op de toepassingslaag, raadpleegt u [Application Gateway](../application-gateway/overview.md)
-> * Als u de wereld wijde route ring van uw webverkeer wilt optimaliseren en de prestaties en betrouw baarheid van de eind gebruikers van de bovenste laag wilt optimaliseren via snelle globale failover, raadpleegt u de [voor deur](../frontdoor/front-door-overview.md)
+> * Als u de taken wilt verdelen tussen uw servers in een regio in de toepassingslaag, controleert u [Application Gateway](../application-gateway/overview.md).
+> * Als u de wereld wijde route ring van uw webverkeer wilt optimaliseren en de prestaties en betrouw baarheid van de eind gebruikers van de bovenste laag wilt optimaliseren via snelle globale failover, raadpleegt u de [voor deur](../frontdoor/front-door-overview.md).
 > 
 > Uw end-to-end scenario 's kunnen eventueel profiteren van een combinatie van deze oplossingen.
 > Zie [Opties voor taakverdeling in Azure](/azure/architecture/guide/technology-choices/load-balancing-overview) voor een vergelijking van de opties voor taakverdeling van Azure.

@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 1a3f2ae4829c7f4ae41d31e2a2fc35d79adf3d4c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 772602a11878276da3b81b84e7f4016997375077
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596708"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183060"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
@@ -22,14 +22,14 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van 
 - Bekijk de ondersteunings-en implementatie vereisten voor analyse van afhankelijkheden op basis van een agent voor:
     - [VMware-VM's](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agent-based)
     - [Fysieke servers](migrate-support-matrix-physical.md#agent-based-dependency-analysis-requirements)
-    - [Virtuele Hyper-V-machines](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements).
+    - [Virtuele Hyper-V-machines](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements)
 - Zorg ervoor dat:
     - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](./create-manage-projects.md) u er nu een.
     - Controleer of u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) aan het project.
     - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises machines te detecteren. Het apparaat detecteert on-premises machines en verstuurt meta gegevens en prestatie gegevens naar Azure Migrate: Server evaluatie. Stel een apparaat in voor:
-        - [VMware](how-to-set-up-appliance-vmware.md) Virtuele.
-        - [Hyper-V](how-to-set-up-appliance-hyper-v.md) Virtuele.
-        - [Fysieke servers](how-to-set-up-appliance-physical.md).
+        - [VMware](how-to-set-up-appliance-vmware.md) Virtuele
+        - [Hyper-V](how-to-set-up-appliance-hyper-v.md) Virtuele
+        - [Fysieke servers](how-to-set-up-appliance-physical.md)
 - Als u afhankelijkheids visualisatie wilt gebruiken, koppelt u een [log Analytics-werk ruimte](../azure-monitor/logs/manage-access.md) aan een Azure migrate project:
     - U kunt een werk ruimte pas toevoegen nadat u het Azure Migrate apparaat hebt ingesteld en de computers in het Azure Migrate-project detecteert.
     - Zorg ervoor dat u een werk ruimte hebt in het abonnement met het Azure Migrate-project.

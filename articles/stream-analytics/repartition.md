@@ -4,15 +4,15 @@ description: In dit artikel wordt beschreven hoe u opnieuw partitioneren gebruik
 ms.service: stream-analytics
 author: sidramadoss
 ms.author: sidram
-ms.date: 09/19/2019
+ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 72f81a0eac81acdca71c8ed81695789c417898ca
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 95749f2acea6b605cfdba5a4f3d4f5526e751c5a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014192"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182533"
 ---
 # <a name="use-repartitioning-to-optimize-processing-with-azure-stream-analytics"></a>Opnieuw partitioneren gebruiken om de verwerking met Azure Stream Analytics te optimaliseren
 
@@ -23,25 +23,47 @@ U kunt [parallel Lise ring](stream-analytics-parallelization.md) mogelijk niet g
 * U hebt geen controle over de partitie sleutel voor de invoer stroom.
 * De bron ' besproeit ' op meerdere partities die later moeten worden samengevoegd.
 
-Wanneer u gegevens verwerkt op een stroom die niet Shard is volgens een natuurlijk invoer schema, zoals **PartitionId** voor Event hubs, moet u opnieuw partitioneren of de volg orde opnieuw opgeven. Wanneer u de partitie opnieuw partitioneert, kan elke Shard onafhankelijk worden verwerkt, zodat u de streaming-pijp lijn lineair kunt schalen.
+Wanneer u gegevens verwerkt op een stroom die niet Shard is volgens een natuurlijk invoer schema, zoals **PartitionId** voor Event hubs, moet u opnieuw partitioneren of de volg orde opnieuw opgeven. Wanneer u de partitie opnieuw partitioneert, kan elke Shard onafhankelijk worden verwerkt, zodat u de streaming-pijp lijn lineair kunt schalen. 
 
 ## <a name="how-to-repartition"></a>Opnieuw partitioneren
+U kunt de invoer op twee manieren opnieuw partitioneren:
+1. Een afzonderlijke Stream Analytics-taak gebruiken die de partities opnieuw partitioneert
+2. Gebruik één taak maar pas de partities opnieuw aan voordat u de aangepaste analyse logica uitvoert
 
-Als u opnieuw wilt partitioneren, gebruikt u het tref woord **in** na een **partitie op** instructie in uw query. In het volgende voor beeld worden de gegevens door **DeviceID** gepartitioneerd tot een aantal van 10. Hashing van **DeviceID** wordt gebruikt om te bepalen welke partitie moet worden geaccepteerd door welke substream. De gegevens worden onafhankelijk van elke gepartitioneerde stroom leeg gemaakt, ervan uitgaande dat de uitvoer gepartitioneerde schrijf bewerkingen ondersteunt en 10 partities heeft.
-
+### <a name="creating-a-separate-stream-analytics-job-to-repartition-input"></a>Een afzonderlijke Stream Analytics taak maken om de invoer opnieuw te partitioneren
+U kunt een taak maken die invoer leest en schrijft naar een event hub-uitvoer met behulp van een partitie sleutel. Deze event hub kan vervolgens worden gebruikt als invoer voor een andere Stream Analytics-taak waar u uw analyse logica implementeert. Wanneer u deze event hub-uitvoer in uw taak configureert, moet u de partitie sleutel opgeven waarop Stream Analytics uw gegevens opnieuw partitioneert. 
 ```sql
+-- For compat level 1.2 or higher
 SELECT * 
 INTO output
 FROM input
-PARTITION BY DeviceID 
-INTO 10
+
+--For compat level 1.1 or lower
+SELECT *
+INTO output
+FROM input PARTITION BY PartitionId
+```
+
+### <a name="repartition-input-within-a-single-stream-analytics-job"></a>De invoer opnieuw partitioneren binnen een enkele Stream Analytics taak
+U kunt ook een stap in uw query introduceren die de invoer eerst opnieuw partitioneert. deze kan vervolgens worden gebruikt door andere stappen in uw query. Als u bijvoorbeeld de invoer opnieuw wilt partitioneren op basis van **DeviceID**, zou de query er als volgt uitziet:
+```sql
+WITH RepartitionedInput AS 
+( 
+SELECT * 
+FROM input PARTITION BY DeviceID
+)
+
+SELECT DeviceID, AVG(Reading) as AvgNormalReading  
+INTO output
+FROM RepartitionedInput  
+GROUP BY DeviceId, TumblingWindow(minute, 1)  
 ```
 
 Met de volgende voorbeeld query worden twee gegevens stromen van gepartitioneerde gegevens samengevoegd. Wanneer u twee streams van gepartitioneerde gegevens samenvoegt, moeten de streams dezelfde partitie sleutel en hetzelfde aantal hebben. Het resultaat is een stroom met hetzelfde partitie schema.
 
 ```sql
-WITH step1 AS (SELECT * FROM input1 PARTITION BY DeviceID INTO 10),
-step2 AS (SELECT * FROM input2 PARTITION BY DeviceID INTO 10)
+WITH step1 AS (SELECT * FROM input1 PARTITION BY DeviceID),
+step2 AS (SELECT * FROM input2 PARTITION BY DeviceID)
 
 SELECT * INTO output FROM step1 PARTITION BY DeviceID UNION step2 PARTITION BY DeviceID
 ```

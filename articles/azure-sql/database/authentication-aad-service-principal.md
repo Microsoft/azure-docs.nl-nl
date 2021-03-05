@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 02/11/2021
-ms.openlocfilehash: 4012cd83cf2e6fe438792a503731729b57a1425c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 15cc935457f76fb1d2fe4e8d699db831ebacc357
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380590"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181751"
 ---
 # <a name="azure-active-directory-service-principal-with-azure-sql"></a>Azure Active Directory-service-principal met Azure SQL
 
@@ -72,7 +72,7 @@ Als u het maken van een Azure AD-object in SQL Database en Azure Synapse namens 
     - Als u wilt controleren of de server identiteit is toegewezen aan de server, voert u de Get-AzSqlServer opdracht uit.
 
     > [!NOTE]
-    > U kunt ook de server identiteit toewijzen met behulp van CLI-opdrachten. Zie [AZ SQL Server Create](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create&preserve-view=true) en [AZ SQL Server Update](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-update&preserve-view=true)(Engelstalig) voor meer informatie.
+    > U kunt ook de server identiteit toewijzen met behulp van CLI-opdrachten. Zie [AZ SQL Server Create](/cli/azure/sql/server#az-sql-server-create) en [AZ SQL Server Update](/cli/azure/sql/server#az-sql-server-update)(Engelstalig) voor meer informatie.
 
 2. Verleen de Azure AD- [**adreslijst lezers**](../../active-directory/roles/permissions-reference.md#directory-readers) toestemming voor de server identiteit die is gemaakt of toegewezen aan de server.
     - Als u deze machtiging wilt verlenen, volgt u de beschrijving die wordt gebruikt voor SQL Managed instance die beschikbaar is in het volgende artikel: [Azure AD-beheerder (SQL Managed instance) inrichten](authentication-aad-configure.md?tabs=azure-powershell#provision-azure-ad-admin-sql-managed-instance)
@@ -94,7 +94,7 @@ Als u het maken van een Azure AD-object in SQL Database en Azure Synapse namens 
       - Voor de bovenstaande fout volgt u de stappen voor het [toewijzen van een identiteit aan de logische Azure SQL-Server](authentication-aad-service-principal-tutorial.md#assign-an-identity-to-the-azure-sql-logical-server) en het toewijzen van [Directory lezers machtigingen voor de id van de logische SQL-Server](authentication-aad-service-principal-tutorial.md#assign-directory-readers-permission-to-the-sql-logical-server-identity).
     > [!NOTE]
     > De hierboven vermelde fout berichten worden gewijzigd voordat het onderdeel GA de ontbrekende installatie vereisten voor de ondersteuning van Azure AD-toepassingen duidelijk te identificeren.
-- Het instellen van de Azure AD-toepassing als een Azure AD-beheerder voor SQL Managed instance wordt alleen ondersteund met de CLI-opdracht en de Power shell-opdracht met [AZ. SQL 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) of hoger. Zie de opdrachten [AZ SQL mi AD-admin Create](/cli/azure/sql/mi/ad-admin?view=azure-cli-latest&preserve-view=true#az-sql-mi-ad-admin-create) and [set-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) voor meer informatie. 
+- Het instellen van de Azure AD-toepassing als een Azure AD-beheerder voor SQL Managed instance wordt alleen ondersteund met de CLI-opdracht en de Power shell-opdracht met [AZ. SQL 2.9.0](https://www.powershellgallery.com/packages/Az.Sql/2.9.0) of hoger. Zie de opdrachten [AZ SQL mi AD-admin Create](/cli/azure/sql/mi/ad-admin#az-sql-mi-ad-admin-create) and [set-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) voor meer informatie. 
     - Als u de Azure Portal voor SQL Managed instance wilt gebruiken om de Azure AD-beheerder in te stellen, is een mogelijke oplossing een Azure AD-groep te maken. Voeg vervolgens de Service-Principal (Azure AD-toepassing) toe aan deze groep en stel deze groep in als een Azure AD-beheerder voor het SQL Managed instance.
     - Het instellen van de Service-Principal (Azure AD-toepassing) als een Azure AD-beheerder voor SQL Database en Azure Synapse wordt ondersteund met behulp van de Azure Portal-, [Power shell](authentication-aad-configure.md?tabs=azure-powershell#powershell-for-sql-database-and-azure-synapse)-en [cli](authentication-aad-configure.md?tabs=azure-cli#powershell-for-sql-database-and-azure-synapse) -opdrachten.
 - Het gebruik van een Azure AD-toepassing met Service-Principal van een andere Azure AD-Tenant mislukt wanneer toegang wordt verkregen tot SQL Database of een SQL-beheerd exemplaar dat in een andere Tenant is gemaakt. Een service-principal die is toegewezen aan deze toepassing moet afkomstig zijn van dezelfde Tenant als de logische SQL-Server of het beheerde exemplaar.

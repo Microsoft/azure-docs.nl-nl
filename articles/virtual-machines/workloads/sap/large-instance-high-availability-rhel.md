@@ -7,12 +7,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.topic: how-to
 ms.date: 02/08/2021
-ms.openlocfilehash: 5a02901b2dfc589033c7249cddf463a581eea720
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 99e9994d01e4579bf6ef2e369e0fe85c48af52ef
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695954"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102182431"
 ---
 # <a name="azure-large-instances-high-availability-for-sap-on-rhel"></a>Hoge Beschik baarheid van grote instanties in azure voor SAP op RHEL
 
@@ -648,19 +648,20 @@ In deze sectie initialiseert u het cluster. In deze sectie wordt gebruikgemaakt 
 
 18. Test de SBD-omheining door de kernel te laten aflopen.
 
-   * Activeer de kernel-crash.
+    * Activeer de kernel-crash.
 
-    ```
-    echo c > /proc/sysrq-trigger
+      ```
+      echo c > /proc/sysrq-trigger
 
-    System must reboot after 5 Minutes (BMC timeout) or the value which is
-    set as panic_wdt_timeout in the /etc/sysconfig/ipmi config file.
-    ```
+      System must reboot after 5 Minutes (BMC timeout) or the value which is
+      set as panic_wdt_timeout in the /etc/sysconfig/ipmi config file.
+      ```
   
-   * De tweede test die moet worden uitgevoerd, is het omheiningen van een knoop punt met de opdrachten PC'S.
-    ```
-    pcs stonith fence sollabdsm36
-    ```
+    * De tweede test die moet worden uitgevoerd, is het omheiningen van een knoop punt met de opdrachten PC'S.
+
+      ```
+      pcs stonith fence sollabdsm36
+      ```
   
 
 19. Voor de rest van de SAP HANA clustering kunt u STONITH uitschakelen door het volgende in te stellen:

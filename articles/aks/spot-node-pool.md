@@ -5,12 +5,12 @@ services: container-service
 ms.service: container-service
 ms.topic: article
 ms.date: 10/19/2020
-ms.openlocfilehash: 5fd97560c3a6e41b49beb957c7b8d79369799c21
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 7f838b2a78f1c6993aa247f2944d4f2a9b1e9556
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078948"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181122"
 ---
 # <a name="add-a-spot-node-pool-to-an-azure-kubernetes-service-aks-cluster"></a>Een spot-knooppuntgroep toevoegen aan een AKS-cluster (Azure Kubernetes Service)
 
@@ -42,7 +42,7 @@ De volgende beperkingen zijn van toepassing wanneer u AKS-clusters maakt en behe
 * Een steun knooppunt groep moet Virtual Machine Scale Sets gebruiken.
 * U kunt ScaleSetPriority of SpotMaxPrice niet wijzigen nadat het is gemaakt.
 * Bij het instellen van SpotMaxPrice moet de waarde-1 of een positieve waarde met Maxi maal vijf decimalen zijn.
-* Een steun knooppunt groep heeft het label *kubernetes.Azure.com/scalesetpriority:spot* , de taint- *kubernetes.Azure.com/scalesetpriority=spot:NoSchedule* en het systeem-Peul heeft een anti-affiniteit.
+* Een steun knooppunt groep heeft het label *kubernetes.Azure.com/scalesetpriority:spot*, de taint- *kubernetes.Azure.com/scalesetpriority=spot:NoSchedule* en het systeem-Peul heeft een anti-affiniteit.
 * U moet een [overeenkomstige tolerantie][spot-toleration] toevoegen voor het plannen van workloads op een steun knooppunt groep.
 
 ## <a name="add-a-spot-node-pool-to-an-aks-cluster"></a>Een spot-knooppuntgroep toevoegen aan een AKS-cluster
@@ -64,7 +64,7 @@ az aks nodepool add \
     --no-wait
 ```
 
-Standaard maakt u een knooppunt groep met een *prioriteit* van *regel matig* in uw AKS-cluster wanneer u een cluster met meerdere knooppunt groepen maakt. Met de bovenstaande opdracht wordt een hulp knooppunt groep toegevoegd aan een bestaand AKS-cluster met de *prioriteit* van *Spot* . De *prioriteit* van *Spot* maakt de knooppunt groep een steun knooppunt groep. De para meter voor *verwijderings beleid* is ingesteld op *verwijderen* in het bovenstaande voor beeld. Dit is de standaard waarde. Wanneer u het *verwijderings* [beleid][eviction-policy] instelt op verwijderen, worden knoop punten in de onderliggende schaalset van de knooppunt groep verwijderd wanneer ze worden gewist. U kunt ook het verwijderings beleid zo instellen dat de *toewijzing* wordt ongedaan gemaakt. Wanneer u het verwijderings beleid instelt op *opheffen* , worden knoop punten in de onderliggende schaalset tijdens het verwijderen ingesteld op de status stopped-disallocated. Knoop punten in het aantal statussen waarbij de toewijzing is gestopt, worden vergeleken met uw reken quotum en kunnen problemen veroorzaken bij het schalen of upgraden van clusters. De waarden voor *prioriteit* en *verwijderings beleid* kunnen alleen worden ingesteld tijdens het maken van een knooppunt groep. Deze waarden kunnen later niet worden bijgewerkt.
+Standaard maakt u een knooppunt groep met een *prioriteit* van *regel matig* in uw AKS-cluster wanneer u een cluster met meerdere knooppunt groepen maakt. Met de bovenstaande opdracht wordt een hulp knooppunt groep toegevoegd aan een bestaand AKS-cluster met de *prioriteit* van *Spot*. De *prioriteit* van *Spot* maakt de knooppunt groep een steun knooppunt groep. De para meter voor *verwijderings beleid* is ingesteld op *verwijderen* in het bovenstaande voor beeld. Dit is de standaard waarde. Wanneer u het *verwijderings* [beleid][eviction-policy] instelt op verwijderen, worden knoop punten in de onderliggende schaalset van de knooppunt groep verwijderd wanneer ze worden gewist. U kunt ook het verwijderings beleid zo instellen dat de *toewijzing* wordt ongedaan gemaakt. Wanneer u het verwijderings beleid instelt op *opheffen*, worden knoop punten in de onderliggende schaalset tijdens het verwijderen ingesteld op de status stopped-disallocated. Knoop punten in het aantal statussen waarbij de toewijzing is gestopt, worden vergeleken met uw reken quotum en kunnen problemen veroorzaken bij het schalen of upgraden van clusters. De waarden voor *prioriteit* en *verwijderings beleid* kunnen alleen worden ingesteld tijdens het maken van een knooppunt groep. Deze waarden kunnen later niet worden bijgewerkt.
 
 Met de opdracht wordt ook de automatische cluster functie voor [clusters][cluster-autoscaler]ingeschakeld. deze optie wordt aanbevolen voor gebruik met een punt groep met steun knooppunten. Op basis van de werk belastingen die worden uitgevoerd in uw cluster, wordt het aantal knoop punten in de knooppunt groep omhoog en omlaag geschaald. In het geval van een spot knooppunt groep wordt het aantal knoop punten na een verwijdering door de cluster-automatische schaal aanpassing uitgebreid als extra knoop punten nog nodig zijn. Als u het maximum aantal knoop punten wijzigt dat een knooppunt groep kan hebben, moet u ook de `maxCount` waarde die is gekoppeld aan de cluster-automatische schaal aanpassen. Als u geen automatische cluster-scaleer gebruikt, wordt de spot groep uiteindelijk afgetrokken van nul en moet er een hand matige bewerking worden uitgevoerd voor het ontvangen van extra steun knooppunten.
 
@@ -79,7 +79,7 @@ Controleren of de knooppunt groep is toegevoegd als een steun knooppunt groep:
 az aks nodepool show --resource-group myResourceGroup --cluster-name myAKSCluster --name spotnodepool
 ```
 
-Bevestigen dat *scaleSetPriority* is *Spot* .
+Bevestigen dat *scaleSetPriority* is *Spot*.
 
 Als u een pod wilt plannen om uit te voeren op een steun knooppunt, voegt u een overeenkomst toe die overeenkomt met de Taint die op uw steun knooppunt wordt toegepast. In het volgende voor beeld ziet u een deel van een yaml-bestand dat een overeenkomst definieert die overeenkomt met een *kubernetes.Azure.com/scalesetpriority=spot:NoSchedule* Taint die in de vorige stap wordt gebruikt.
 
@@ -100,7 +100,7 @@ Wanneer er een pod met deze tolerantie wordt geïmplementeerd, kan Kubernetes de
 ## <a name="max-price-for-a-spot-pool"></a>Maximale prijs voor een steun groep
 [Prijzen voor spot instanties zijn variabel][pricing-spot], op basis van de regio en de SKU. Zie prijzen voor [Linux][pricing-linux] en [Windows][pricing-windows]voor meer informatie.
 
-Met variabele prijzen kunt u een maximum prijs instellen, in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde *0,98765* zou bijvoorbeeld een maximum prijs van $0,98765 USD per uur zijn. Als u de maximum prijs instelt op *-1* , wordt het exemplaar niet verwijderd op basis van de prijs. De prijs voor de instantie is de huidige prijs voor steun of de prijs voor een standaard exemplaar, afhankelijk van wat minder is, zolang er capaciteit en quota beschikbaar zijn.
+Met variabele prijzen kunt u een maximum prijs instellen, in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde *0,98765* zou bijvoorbeeld een maximum prijs van $0,98765 USD per uur zijn. Als u de maximum prijs instelt op *-1*, wordt het exemplaar niet verwijderd op basis van de prijs. De prijs voor de instantie is de huidige prijs voor steun of de prijs voor een standaard exemplaar, afhankelijk van wat minder is, zolang er capaciteit en quota beschikbaar zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -113,7 +113,7 @@ In dit artikel hebt u geleerd hoe u een steun knooppunt groep kunt toevoegen aan
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
 [azure-cli-install]: /cli/azure/install-azure-cli
-[az-aks-nodepool-add]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-add
+[az-aks-nodepool-add]: /cli/azure/aks/nodepool#az-aks-nodepool-add
 [cluster-autoscaler]: cluster-autoscaler.md
 [eviction-policy]: ../virtual-machine-scale-sets/use-spot.md#eviction-policy
 [kubernetes-concepts]: concepts-clusters-workloads.md

@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/18/2021
 ms.author: amsriva
-ms.openlocfilehash: 0f5ecef1716a503b7d27d0f5cdde15a4560c0e61
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 1753f2bb649e73d7a5fe6c1cc32361a418ea7f63
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101099278"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102181802"
 ---
 # <a name="overview-of-azure-front-door-standardpremium-sku-preview"></a>Overzicht van de Azure front deur Standard/Premium SKU (preview-versie)
 
@@ -59,10 +59,10 @@ Azure front deur wordt aangeboden voor drie verschillende Sku's, [Azure front de
 | URL opnieuw genereren | Ja | Ja |
 | Regelengine | Ja | Ja |
 | Privé oorsprong (privé-koppeling) | Nee | Ja |
-| WAF | Nee | Ja |
+| WAF | Alleen aangepaste regels | Ja |
 | Bot-beveiliging | Nee | Ja |
 | Uitgebreide metrische gegevens en diagnostische gegevens | Ja | Ja |
-| Verkeers rapporten | Ja | Ja |
+| Verkeers rapport | Ja | Ja |
 | Beveiligings rapport | Nee | Ja | 
 
 ## <a name="next-steps"></a>Volgende stappen

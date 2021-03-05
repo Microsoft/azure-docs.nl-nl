@@ -6,12 +6,12 @@ ms.author: elhorton
 ms.service: iot-develop
 ms.topic: overview
 ms.date: 02/11/2021
-ms.openlocfilehash: 4d9546c8a912176117e42f2a6bbef3058331383b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e85cc9cdbb14c419e4bddb5ee659aa657b49a8c1
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702671"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183536"
 ---
 # <a name="overview-of-azure-iot-device-sdks"></a>Overzicht van de Sdk's van het Azure IoT-apparaat
 
@@ -60,7 +60,7 @@ De opties om aan de slag te gaan, zijn afhankelijk van het type apparaat dat u h
 Deze Sdk's zijn gespecialiseerd om te worden uitgevoerd op apparaten met beperkte reken-of geheugen bronnen. Zie [overzicht van de typen Azure IOT-apparaten](concepts-iot-device-types.md)voor meer informatie over algemene apparaattypen.
 
 #### <a name="embedded-c-sdk"></a>Embedded C SDK
-* [GitHub-opslag plaats](https://github.com/Azure/azure-sdk-for-c/tree/1.0.0/sdk/docs/iot)
+* [GitHub-opslag plaats](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot)
 * [Voorbeelden](https://github.com/Azure/azure-sdk-for-c/blob/master/sdk/samples/iot/README.md)
 * [Referentie documentatie](https://azure.github.io/azure-sdk-for-c/)
 * [De embedded C SDK bouwen](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot#build)
@@ -68,7 +68,7 @@ Deze Sdk's zijn gespecialiseerd om te worden uitgevoerd op apparaten met beperkt
 
 #### <a name="azure-rtos-middleware"></a>Azure RTO'S-middleware
 
-* [GitHub-opslag plaats](https://github.com/azure-rtos/threadx)
+* [GitHub-opslag plaats](https://github.com/azure-rtos/netxduo/tree/master/addons/azure_iot)
 * [Aan de slag-hand leidingen](https://github.com/azure-rtos/getting-started) en [meer voor beelden](https://github.com/azure-rtos/samples)
 * [Referentie documentatie](/azure/rtos/threadx/)
 

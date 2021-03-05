@@ -4,12 +4,12 @@ description: In deze quickstart leert u hoe u de Azure-portal gebruikt voor het 
 ms.topic: quickstart
 ms.date: 08/17/2020
 ms.custom: mvc
-ms.openlocfilehash: d8584ecea8ddd5934771dbe5945a6172a28c801c
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: 1234a932a732cdb6fda1c412a423ae0b1ea089e9
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106471"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102184012"
 ---
 # <a name="quickstart-run-your-first-batch-job-in-the-azure-portal"></a>Snelstartgids: Uw eerste Batch-taak uitvoeren in Azure Portal
 
@@ -69,7 +69,7 @@ Na enkele minuten verandert de toewijzingsstatus in **Onveranderlijk** en worden
 
 ## <a name="create-a-job"></a>Een taak maken
 
-Nu u beschikt over een pool, kunt u een Batch-taak maken om uit te voeren op deze pool. Een Batch-taak is een logische groep met een of meer taken. Een Batch-taak omvat instellingen die gemeenschappelijk zijn voor de taken, zoals prioriteit en de pool waarop taken moeten worden uitgevoerd. De Batch-taak heeft in eerste instantie geen taken.
+Nu u beschikt over een pool, kunt u een Batch-taak maken om uit te voeren op deze pool. Een batch-taak is een logische groep van een of meer taken. Een Batch-taak omvat instellingen die gemeenschappelijk zijn voor de taken, zoals prioriteit en de pool waarop taken moeten worden uitgevoerd. De Batch-taak heeft in eerste instantie geen taken.
 
 1. Selecteer in de weergave Batch-account **Taken** > **Toevoegen**.
 

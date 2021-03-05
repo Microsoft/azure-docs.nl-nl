@@ -10,16 +10,23 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: pafarley
-ms.openlocfilehash: 49d8eeaa8d1160659a456f147a6a5e27f923af33
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a66f65d48a14853ec1da08f5d83b777f4fdac846
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733462"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183314"
 ---
 # <a name="whats-new-in-face-service"></a>Wat is er nieuw in de Face-service?
 
 De Azure face-service wordt doorlopend bijgewerkt. Gebruik dit artikel om op de hoogte te blijven van de functie verbeteringen, oplossingen en documentatie-updates.
+
+## <a name="february-2021"></a>Februari 2021
+
+* Nieuw detectie model voor Face-API: de nieuwe detectie 03-model is het meest nauw keurige detectie model dat momenteel beschikbaar is. Als u een nieuwe klant bent, raden we u aan dit model te gebruiken. Detectie 03 verbetert zowel inkomend als nauw keurigheid van kleinere gezichten gevonden binnen afbeeldingen (64x64 pixels). Aanvullende verbeteringen zijn onder andere een algehele verlaging van de fout-positieven en verbeterde detectie van geroteerde gezichts standen. Het combi neren van detectie 03 met de nieuwe opname 04 biedt ook een verbeterde nauw keurigheid van de herkenning. Zie [een gezichts detectie model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model) voor meer informatie.
+* Kenmerk Face masker: het kenmerk Face masker is beschikbaar in het meest recente model van de detectie 03, samen met het extra kenmerk `"noseAndMouthCovered"` dat detecteert of het gezichts masker is verzorgd als bedoeld, waarbij zowel de neus als de mond worden belicht. Gebruikers moeten het detectie model opgeven in de API-aanvraag om de meest recente mogelijkheid voor masker detectie te gebruiken: wijs de model versie met de para meter _detectionModel_ toe aan `detection_03` . Zie [een gezichts detectie model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-detection-model) voor meer informatie.
+* Nieuw Face-API herkennings model: het nieuwe model voor de herkenning 04 is het meest nauw keurige herkennings model dat momenteel beschikbaar is. Als u een nieuwe klant bent, kunt u dit model het beste gebruiken voor verificatie en identificatie. Het verbetert de nauw keurigheid van de erkenning 03, met inbegrip van verbeterde herkenning van geregistreerde gebruikers (chirurgische maskers, N95 Maskers, doek maskers). Klanten kunnen nu een veilige en naadloze gebruikers ervaring bouwen die detecteert of een geregistreerde gebruiker een gezicht bedekt met het meest recente model van de detectie 03 en herkennen wie ze zijn met het laatste model van de opname 04. Zie [een gezichts herkennings model opgeven](https://docs.microsoft.com/azure/cognitive-services/face/face-api-how-to-topics/specify-recognition-model) voor meer informatie.
+
 
 ## <a name="january-2021"></a>Januari 2021
 * Latentie beperken bij het gebruik van de Face-API: het gezichts team heeft een nieuw artikel gepubliceerd met een gedetailleerde beschrijving van potentiële oorzaken van latentie bij het gebruik van de service en mogelijke beperkende strategieën. Zie [latentie beperken bij het gebruik van de face-service](./face-api-how-to-topics/how-to-mitigate-latency.md).

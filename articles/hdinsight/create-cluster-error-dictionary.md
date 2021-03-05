@@ -1,18 +1,16 @@
 ---
 title: Azure HDInsight-woorden lijst voor cluster fouten maken
 description: Meer informatie over het oplossen van fouten die optreden bij het maken van Azure HDInsight-clusters
-author: karkrish
-ms.author: v-todmc
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 08/24/2020
-ms.openlocfilehash: 6b8c0069d619d3ebd87e3c54b4f653812199f590
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 469adf1c0e5108f7a8c89a7c3a4bebba5d42b431
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943335"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183961"
 ---
 # <a name="azure-hdinsight-cluster-creation-errors"></a>Azure HDInsight: fouten bij het maken van een cluster
 

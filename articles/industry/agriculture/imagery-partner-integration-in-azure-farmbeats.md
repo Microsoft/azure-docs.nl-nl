@@ -4,14 +4,14 @@ description: In dit artikel wordt de installatie kopie van de partner beschreven
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
+ms.author: v-ummehabiba
 ms.custom: has-adal-ref
-ms.openlocfilehash: 40e17a9f73d98f24c6c7fbb55ef38cc2bc088861
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 1bc723892e29ccc24a7612cfbe50d4b274cdacdf
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675930"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183791"
 ---
 # <a name="imagery-partner-integration"></a>Partnerintegratie voor afbeeldingen
 
@@ -89,7 +89,7 @@ access_token = token_response.get('access_token')
 
 Hier volgen de meest voorkomende aanvraag headers die moeten worden opgegeven wanneer u een API-aanroep maakt naar FarmBeats Datahub.
 
-**Journaalkop** | **Beschrijving en voor beeld**
+**Header** | **Beschrijving en voor beeld**
 --- | ---
 Content-Type  | De aanvraag indeling (content-type: Application/ <format> ). Voor FarmBeats Datahub-Api's is de indeling JSON. Content-type: Application/JSON
 Autorisatie | Hiermee geeft u het toegangs token op dat vereist is om een API-aanroep te maken. Autorisatie: Bearer <Access-Token>
@@ -138,10 +138,10 @@ Nadat de partner referenties heeft om verbinding te maken met FarmBeats Datahub,
 
 1.  Maak een nieuw uitgebreid type voor de volgende velden, in overeenstemming met het type afbeelding dat moet worden geüpload:
 
-    - **Scène bron** : bijvoorbeeld drone_partner_name
-    - **Type scène** : bijvoorbeeld Drone
-    - **Type scène bestand** : bijvoorbeeld Chlorophyll index
-    - **Type inhoud van scène bestand** : bijvoorbeeld afbeelding/TIFF
+    - **Scène bron**: bijvoorbeeld drone_partner_name
+    - **Type scène**: bijvoorbeeld Drone
+    - **Type scène bestand**: bijvoorbeeld Chlorophyll index
+    - **Type inhoud van scène bestand**: bijvoorbeeld afbeelding/TIFF
 
 2.  Roep de/Farms-API aan om de lijst met Farms op te halen in het Azure FarmBeats-systeem.
 3.  Geef de klant de mogelijkheid om één farm te kiezen uit de lijst met farms.

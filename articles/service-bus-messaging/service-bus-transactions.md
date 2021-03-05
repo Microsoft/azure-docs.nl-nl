@@ -2,14 +2,14 @@
 title: Overzicht van transactie verwerking in Azure Service Bus
 description: In dit artikel vindt u een overzicht van transactie verwerking en de functie verzenden via in Azure Service Bus.
 ms.topic: article
-ms.date: 10/28/2020
+ms.date: 03/03/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9a95a200b57d348109884a319b5433f0ffd5dde1
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e2848f41d5557584b0f1a197b548a00a4aef1564
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684788"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183740"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Overzicht van de verwerking van Service Bus transacties
 
@@ -42,6 +42,8 @@ De toestand van het bericht (volledig, afwijzen, onbestelbare letter, defer) wor
 Om transactionele overdracht van gegevens van een wachtrij of onderwerp naar een processor in te scha kelen en vervolgens naar een andere wachtrij of een ander onderwerp, ondersteunt Service Bus *overdrachten*. Bij een overdrachts bewerking verzendt een afzender eerst een bericht naar een *overdrachts wachtrij of onderwerp*. de overdrachts wachtrij of het onderwerp verplaatst het bericht onmiddellijk naar de beoogde doel wachtrij of het onderwerp met behulp van dezelfde robuuste overdrachts implementatie waarbij de functie voor door sturen gebruikmaakt van. Het bericht wordt nooit doorgevoerd in het logboek van de overdrachts wachtrij of het onderwerp op een manier dat het zichtbaar wordt voor de overdrachts wachtrij of de consumenten van het onderwerp.
 
 De kracht van deze transactionele mogelijkheden wordt duidelijk wanneer de overdrachts wachtrij of het onderwerp zelf de bron is van de invoer berichten van de afzender. Met andere woorden, Service Bus kunt het bericht overzetten naar de doel wachtrij of het onderwerp ' via ' de overdrachts wachtrij of het onderwerp, terwijl u een volledige (of defered ' of onbestelbare) bewerking uitvoert op het invoer bericht, allemaal in één atomische bewerking. 
+
+Als u van een onderwerp wilt ontvangen en vervolgens naar een wachtrij of onderwerp in dezelfde trans actie wilt verzenden, moet de entiteit overdracht een onderwerp zijn. In dit scenario start u het transactie bereik in het onderwerp, ontvangt u van het abonnement met in het transactie bereik en verzendt u dit via het onderwerp overzetten naar een wachtrij of onderwerp-bestemming. 
 
 ### <a name="see-it-in-code"></a>In code weer geven
 

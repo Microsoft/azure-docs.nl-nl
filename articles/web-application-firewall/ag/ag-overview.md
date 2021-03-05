@@ -8,12 +8,12 @@ ms.service: web-application-firewall
 ms.date: 12/04/2020
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 48d4fe254f51dde932f04ef791e1109a0ced07ff
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fb7d49459b4eae8c3c7b3b1e6ad5bc5d44a089d3
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101701617"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183349"
 ---
 # <a name="what-is-azure-web-application-firewall-on-azure-application-gateway"></a>Wat is Azure Web Application Firewall voor Azure Application Gateway?
 
@@ -173,7 +173,7 @@ Met de ingebouwde werkmap voor firewallgebeurtenissen van Azure WAF kunt u een o
 
 #### <a name="azure-monitor-workbook-for-waf"></a>Azure Monitor-werkmap voor WAF
 
-Met deze werkmap kunt u aangepaste visualisaties van WAF-gebeurtenissen met betrekking tot beveiliging voor verschillende filterbare deelvensters inschakelen. De werkmap werkt met alle WAF-typen, waaronder Application Gateway, Front Door en CDN, en kan worden gefilterd op basis van het WAF-type of een specifiek WAF-exemplaar. Importeren via ARM-sjabloon of galeriesjabloon. Zie [WAF-werkmap](https://github.com/Azure/Azure-Network-Security/tree/master/Azure%20Firewall/Workbook%20-%20Azure%20Firewall%20Monitor%20Workbook) als u deze werkmap wilt implementeren.
+Met deze werkmap kunt u aangepaste visualisaties van WAF-gebeurtenissen met betrekking tot beveiliging voor verschillende filterbare deelvensters inschakelen. De werkmap werkt met alle WAF-typen, waaronder Application Gateway, Front Door en CDN, en kan worden gefilterd op basis van het WAF-type of een specifiek WAF-exemplaar. Importeren via ARM-sjabloon of galeriesjabloon. Zie [WAF-werkmap](https://aka.ms/AzWAFworkbook) als u deze werkmap wilt implementeren.
 
 #### <a name="logging"></a>Logboekregistratie
 

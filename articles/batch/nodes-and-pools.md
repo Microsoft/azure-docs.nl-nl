@@ -3,12 +3,12 @@ title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
 ms.date: 11/20/2020
-ms.openlocfilehash: e55be57968eae2a371a21b214dbd15921641e31f
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: be38d4f91afcaa1ac31e9b9bbc6d2547da2ee99e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98741771"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183655"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
@@ -74,6 +74,9 @@ De **virtuele-machine configuratie** geeft aan dat de groep bestaat uit virtuele
 De [batch-knooppunt agent](https://github.com/Azure/Batch/blob/master/changelogs/nodeagent/CHANGELOG.md) is een programma dat wordt uitgevoerd op elk knoop punt in de pool en biedt de opdracht-en besturings interface tussen het knoop punt en de batch-service. Er zijn verschillende implementaties van de knooppunt agent, ook wel Sku's genoemd, voor verschillende besturings systemen. Wanneer u een pool maakt op basis van de virtuele-machineconfiguratie, moet u niet alleen de grootte van de knooppunten opgeven en de bron van de installatiekopieën waarmee u ze hebt gemaakt, maar ook de **verwijzing naar de installatiekopie van de virtuele machine** en de Batch-**knooppuntagent-SKU** die op de knooppunten moet worden geïnstalleerd. Zie [Linux-rekenknooppunten in Azure Batch-pools inrichten](batch-linux-nodes.md) voor meer informatie over het opgeven van deze pooleigenschappen. U kunt desgewenst een of meer lege gegevensschijven koppelen aan pool-VM's die zijn gemaakt op basis van Marketplace-installatiekopieën of gegevensschijven opnemen in aangepaste installatiekopieën die worden gebruikt voor het maken van de virtuele machines. Wanneer u gegevens schijven inneemt, moet u de schijven koppelen en Format teren vanuit een VM om ze te gebruiken.
 
 ### <a name="cloud-services-configuration"></a>Cloud Services configuratie
+
+> [!WARNING]
+> De configuratie groepen van de Cloud service zijn afgeschaft. Gebruik in plaats daarvan configuratie groepen voor virtuele machines.
 
 De **configuratie** van de Cloud Services geeft aan dat de groep bestaat uit Azure Cloud Services knoop punten. Cloud Services biedt alleen Windows-reken knooppunten.
 

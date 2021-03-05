@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 07/08/2020
-ms.openlocfilehash: cc3323a3ae2d604557d7e09b38252d63f17c5470
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: d51de526205e8ef663dcfd682ec5858e4bc2f645
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319913"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183978"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Status van migratie scenario's die door Azure Database Migration Service worden ondersteund
 
@@ -69,11 +69,11 @@ De volgende tabel toont Azure Database Migration Service ondersteuning voor onli
 
 | Doel  | Bron | Ondersteuning | Status |
 | ------------- | ------------- |:-------------:|:-------------:|
-| **Azure SQL Database** | SQL Server | ✔ | Algemene beschikbaarheid |
-|   | RDS SQL | ✔ | Algemene beschikbaarheid |
+| **Azure SQL Database** | SQL Server | X | Algemene beschikbaarheid |
+|   | RDS SQL | X | Algemene beschikbaarheid |
 |   | Oracle | X |  |
 | **Azure SQL DB MI** | SQL Server | ✔ | Algemene beschikbaarheid |
-|   | RDS SQL | ✔ | Algemene beschikbaarheid |
+|   | RDS SQL | X | Algemene beschikbaarheid |
 |   | Oracle | X |  |
 | **Azure SQL-VM** | SQL Server | X |   |
 |   | Oracle  | X |  |

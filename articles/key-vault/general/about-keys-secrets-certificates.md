@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: overview
 ms.date: 04/17/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e0a45bde32fed651c4b38d203b3c75a6d928e7c5
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
-ms.translationtype: HT
+ms.openlocfilehash: f2a33b4011b0bb89ca17010fc787aebe8c17fc92
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327080"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183927"
 ---
 # <a name="azure-key-vault-keys-secrets-and-certificates-overview"></a>Overzicht van sleutels, geheimen en certificaten in Azure Key Vault
 
@@ -44,7 +44,7 @@ Met software beveiligde sleutels|/keys|Ondersteund|Niet ondersteund
 **Andere objecttypen**||
 Geheimen|/secrets|Ondersteund|Niet ondersteund
 Certificaten|/certificates|Ondersteund|Niet ondersteund
-Opslagaccountsleutels|/storageaccount|Ondersteund|Niet ondersteund
+Opslagaccountsleutels|/storage|Ondersteund|Niet ondersteund
 |||
 - **Cryptografische sleutels**: Ondersteunt meerdere sleuteltypen en algoritmen en maakt het gebruik mogelijk van met software beveiligde en met HSM beveiligde sleutels. Zie [Over sleutels](../keys/about-keys.md) voor meer informatie.
 - **Geheimen**: Biedt beveiligde opslag van geheimen, zoals wachtwoorden en databaseverbindingsreeksen. Zie [Over geheimen](../secrets/about-secrets.md) voor meer informatie.

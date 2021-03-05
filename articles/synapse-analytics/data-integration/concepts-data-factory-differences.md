@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/10/2020
 ms.author: makromer
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8818d4db489cef8203ae515c18c61e215d577033
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 9cd3fc9353c684ec6617761616b958477ca83ee3
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387612"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183638"
 ---
 # <a name="data-integration-in-azure-synapse-analytics-versus-azure-data-factory"></a>Gegevens integratie in azure Synapse Analytics versus Azure Data Factory
 
@@ -36,6 +36,7 @@ Raadpleeg de onderstaande tabel voor Beschik baarheid van functies:
 | **Integratie van GIT-opslag plaats** | GIT-integratie | ✓ | ✓ |
 | **Controle**           | Bewaking van Spark-taken voor de gegevens stroom | ✗ | ✓<br><small>*Gebruik de Synapse Spark-Pools* |
 |                          | Integratie met Azure Monitor | ✓ | ✗ |
+| **Herkomst** | Biedt ondersteuning voor het publiceren van pijplijn afkomst gegevens naar controle sfeer liggen  | ✓ | ✗ |  
 
 > [!Note]
 > **Time to Live** is een Azure Integration runtime instelling die ervoor zorgt dat het Spark-cluster gedurende een bepaalde tijd gedurende een periode na een uitvoering van de gegevens stroom *warme blijft* .

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/16/2021
 ms.author: b-juche
-ms.openlocfilehash: 756bf1cd7a7e9435130a3ad2d3b530b7f2e5b1b4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 44959b2f60f9aafd7d9430c9c19baea72344293f
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100608960"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183876"
 ---
 # <a name="create-and-manage-active-directory-connections-for-azure-netapp-files"></a>Active Directory verbindingen voor Azure NetApp Files maken en beheren
 
@@ -183,7 +183,7 @@ Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** ond
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFAesEncryption
         ```
         
-        U kunt ook [Azure cli-opdrachten](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
+        U kunt ook [Azure cli-opdrachten](/cli/azure/feature) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
 
     * **LDAP-ondertekening**   
         Schakel dit selectie vakje in om LDAP-ondertekening in te scha kelen. Deze functionaliteit maakt beveiligde LDAP-zoek acties mogelijk tussen de Azure NetApp Files-service en de door de gebruiker opgegeven [Active Directory Domain Services domein controllers](/windows/win32/ad/active-directory-domain-services). Zie ADV190023 voor meer informatie. [| Micro soft-richt lijnen voor het inschakelen van LDAP-kanaal binding en LDAP-ondertekening](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).  
@@ -205,7 +205,7 @@ Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** ond
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFLdapSigning
         ```
         
-        U kunt ook [Azure cli-opdrachten](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
+        U kunt ook [Azure cli-opdrachten](/cli/azure/feature) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
 
      * **Back-upbeleid gebruikers**  
         U kunt aanvullende accounts toevoegen waarvoor verhoogde bevoegdheden zijn vereist voor het computer account dat is gemaakt voor gebruik met Azure NetApp Files. Met de opgegeven accounts kunnen de NTFS-machtigingen op bestands- of mapniveau worden gewijzigd. U kunt bijvoorbeeld een niet-gemachtigd serviceaccount opgeven dat wordt gebruikt voor het migreren van gegevens naar een SMB-bestandsshare in Azure NetApp Files.  
@@ -227,7 +227,7 @@ Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** ond
         Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFBackupOperator
         ```
         
-        U kunt ook [Azure cli-opdrachten](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
+        U kunt ook [Azure cli-opdrachten](/cli/azure/feature) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
 
     * Referenties, inclusief uw **gebruikers naam** en **wacht woord**
 

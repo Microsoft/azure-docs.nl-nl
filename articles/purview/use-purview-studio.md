@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: d8e6c4b2addf9745b2ddabe8f6fdad9d82dce59f
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: ca25bbb72ff853f819f3e8ce4e0092ddb762b156
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503947"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102183808"
 ---
 # <a name="use-purview-studio"></a>Purview Studio gebruiken
 
@@ -26,7 +26,7 @@ Dit artikel geeft een overzicht van enkele van de belangrijkste functies van Azu
 
 * Als u uw controle sfeer liggen-account wilt starten, gaat u naar controle sfeer liggen accounts in Azure Portal, selecteert u het account dat u wilt starten en start u het account.
 
-   :::image type="content" source="./media/use-purview-studio/launch-from-portal.png" alt-text="Scherm afbeelding van de selectie om de Azure controle sfeer liggen-account catalogus te starten.":::
+   :::image type="content" source="./media/use-purview-studio/launch-from-portal.png" alt-text="Schermopname van de selectie om het Azure Purview-account te starten.":::
 
 * U kunt ook een controle sfeer liggen-account starten door naar te gaan `https://web.purview.azure.com` , **Azure Active Directory** en een account naam te selecteren om het account te starten.
 
@@ -38,7 +38,7 @@ Dit artikel geeft een overzicht van enkele van de belangrijkste functies van Azu
 
 De volgende lijst bevat een overzicht van de belangrijkste functies van de **Start pagina**. Elk getal in de lijst komt overeen met een gemarkeerd getal in de vorige scherm afbeelding.
 
-1. Beschrijvende naam van de catalogus. U kunt catalogus naam instellen in **Management Center** > *-*account gegevens*.
+1. Beschrijvende naam van de catalogus. U kunt catalogus naam instellen in de  >  **account gegevens** van het Management Center.
 
 2. Catalogus analyse toont het aantal:
     - Gebruikers, groepen en toepassingen

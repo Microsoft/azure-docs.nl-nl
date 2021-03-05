@@ -8,16 +8,16 @@ ms.subservice: operations
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: shkale-msft
-ms.author: shkale-msft
+author: shkale
+ms.author: shkale
 ms.reviewer: mathoma, sstein
 ms.date: 02/25/2021
-ms.openlocfilehash: cd1ba0516d8cb7fdaf3b8d4786cfe68240231303
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: b1ba3f98f39511bcebf94502ed749d7cba1fc71b
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050967"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102184046"
 ---
 # <a name="long-term-retention---azure-sql-database-and-azure-sql-managed-instance"></a>Lange termijn retentie-Azure SQL Database en Azure SQL Managed instance
 

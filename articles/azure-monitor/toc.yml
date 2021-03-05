@@ -1078,7 +1078,7 @@
           href: insights/container-insights-reports.md
         - name: Livegegevens weergeven
           items:
-            - name: Overzicht van livegegevens (preview)
+            - name: Overzicht van Live-gegevens
               href: containers/container-insights-livedata-overview.md
             - name: Instellen
               href: containers/container-insights-livedata-setup.md

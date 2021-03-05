@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 7753c6c118d763163e6bc8f69f5b4eee13fe2393
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 53b5add7526b0c20487e8fe3adb0b8ebe207a2ce
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588791"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102200041"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Real-time sensor gegevens visualiseren vanuit uw Azure IoT hub in een webtoepassing
 
@@ -153,7 +153,7 @@ U ziet ook de uitvoer in de-console waarin de berichten worden weer gegeven die 
 
 De [functie Web apps van Azure app service](../app-service/overview.md) biedt een platform as a Service (PaaS) voor het hosten van webtoepassingen. Webtoepassingen die worden gehost in Azure App Service, kunnen profiteren van krachtige functies van Azure, zoals extra beveiliging, taak verdeling en schaal baarheid, evenals Azure-en partner DevOps oplossingen zoals continue implementatie, pakket beheer, enzovoort. Azure App Service ondersteunt webtoepassingen die in veel populaire talen zijn ontwikkeld en die zijn geïmplementeerd in de Windows-of Linux-infra structuur.
 
-In deze sectie maakt u een web-app in App Service en implementeert u uw code hiervoor met behulp van Azure CLI-opdrachten. U vindt informatie over de opdrachten die worden gebruikt in de [AZ webapp](/cli/azure/webapp?view=azure-cli-latest) -documentatie. Voordat u begint, moet u ervoor zorgen dat u de stappen hebt voltooid om [een resource groep toe te voegen aan uw IOT-hub](#add-a-consumer-group-to-your-iot-hub), [een service connection string te krijgen voor uw IOT-hub](#get-a-service-connection-string-for-your-iot-hub)en [de web-app te downloaden van github](#download-the-web-app-from-github).
+In deze sectie maakt u een web-app in App Service en implementeert u uw code hiervoor met behulp van Azure CLI-opdrachten. U vindt informatie over de opdrachten die worden gebruikt in de [AZ webapp](/cli/azure/webapp) -documentatie. Voordat u begint, moet u ervoor zorgen dat u de stappen hebt voltooid om [een resource groep toe te voegen aan uw IOT-hub](#add-a-consumer-group-to-your-iot-hub), [een service connection string te krijgen voor uw IOT-hub](#get-a-service-connection-string-for-your-iot-hub)en [de web-app te downloaden van github](#download-the-web-app-from-github).
 
 1. Een [app service plan](../app-service/overview-hosting-plans.md) definieert een set reken resources voor een app die wordt gehost in app service om uit te voeren. In deze zelf studie gebruiken we de laag voor ontwikkel aars/gratis om de web-app te hosten. Met de gratis laag wordt uw web-app uitgevoerd op gedeelde Windows-resources met andere App Service-apps, waaronder apps van andere klanten. Azure biedt ook App Service plannen voor het implementeren van web-apps op Linux-reken resources. U kunt deze stap overs Laan als u al een App Service plan hebt dat u wilt gebruiken.
 

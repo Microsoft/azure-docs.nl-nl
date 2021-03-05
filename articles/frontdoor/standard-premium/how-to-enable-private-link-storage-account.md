@@ -8,12 +8,12 @@ ms.service: frontdoor
 ms.topic: how-to
 ms.date: 03/04/2021
 ms.author: tyao
-ms.openlocfilehash: 885582481e3783bdd4fbad40a24499f42a40ce24
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 885b4d132208ab6f8b470d147438e26a5fd4bab7
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193414"
+ms.locfileid: "102201665"
 ---
 # <a name="connect-azure-front-door-premium-to-a-storage-account-origin-with-private-link"></a>Azure front-deur Premium verbinden met een opslag account oorsprong met een persoonlijke koppeling
 
@@ -23,7 +23,7 @@ In dit artikel vindt u instructies voor het configureren van Azure front-deur Pr
 
 Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-## <a name="enable-private-link-to-a-storage-account-in-azure-front-door-premium"></a>Een persoonlijke koppeling naar een opslag account inschakelen in azure front-deur Premium
+## <a name="enable-private-link-to-a-storage-account"></a>Een persoonlijke koppeling naar een opslag account inschakelen
  
 In deze sectie wijst u de persoonlijke koppelings service toe aan een persoonlijk eind punt dat is gemaakt in het particuliere netwerk van de front-deur van Azure. 
 
@@ -47,7 +47,7 @@ In deze sectie wijst u de persoonlijke koppelings service toe aan een persoonlij
 
 1. Selecteer vervolgens **toevoegen** om uw configuratie op te slaan.
 
-## <a name="approve-azure-front-door-premium-private-endpoint-connection-from-the-storage-account"></a>Azure front deur Premium-verbinding met privé-eind punt goed keuren vanuit het opslag account
+## <a name="approve-private-endpoint-connection-from-the-storage-account"></a>Particuliere eindpunt verbinding van het opslag account goed keuren
 
 1. Ga naar het opslag account waarvoor u een persoonlijke koppeling in de laatste sectie hebt geconfigureerd. Selecteer **netwerken** onder **instellingen**.
 

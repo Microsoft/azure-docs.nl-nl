@@ -7,14 +7,14 @@ ms.reviewer: cynthn
 ms.service: virtual-machines
 ms.subservice: security
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/03/2021
 ms.custom: template-how-to
-ms.openlocfilehash: f8a6758cdf0a6da709a564c1e17c56a2fe5625b0
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: fca11ce1cfa09fb680c2b288e40fa5f51337bdb8
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124649"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102200781"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -37,7 +37,7 @@ Een virtuele machine maken waarvoor vertrouwde start is ingeschakeld.
 1. Selecteer op de pagina **virtuele machines** de optie **toevoegen** en selecteer vervolgens **virtuele machine**.
 1. Controleer onder **Project Details** of het juiste abonnement is geselecteerd.
 1. Selecteer onder **resource groep** de optie **nieuwe maken** en typ een naam voor de resource groep of selecteer een bestaande resource groep in de vervolg keuzelijst.
-1. Typ onder **Details van exemplaar** een naam voor de naam van de virtuele machine en kies een regio die ondersteuning biedt voor vertrouwde start.
+1. Typ onder **Details van exemplaar** een naam voor de naam van de virtuele machine en kies een regio die ondersteuning biedt voor [vertrouwde start](trusted-launch.md#public-preview-limitations).
 1. Selecteer onder **afbeelding** een [installatie kopie die ondersteuning biedt voor vertrouwde start](trusted-launch.md#public-preview-limitations). Mogelijk ziet u alleen de versie 1 van de installatie kopie, die u in orde hebt, gaat u verder met de volgende stap.
 1. Schakel over naar het tabblad **Geavanceerd** door het boven aan de pagina te selecteren.
 1. Schuif omlaag naar de sectie voor het genereren van de **virtuele machine** en selecteer vervolgens **gen 2**.
@@ -140,7 +140,7 @@ Zie [een aangepast initiatief toevoegen aan uw abonnement](https://docs.microsof
 
 In sommige gevallen moet u mogelijk dingen ondertekenen voor UEFI Secure boot.  U moet bijvoorbeeld de [procedure volgen voor het afwijzen van beveiligd opstarten](https://ubuntu.com/blog/how-to-sign-things-for-secure-boot) voor Ubuntu. In dergelijke gevallen moet u de sleutels voor het registreren van het MOK-hulp programma voor uw virtuele machine invoeren. Hiervoor moet u de Azure Serial console gebruiken om toegang te krijgen tot het MOK-hulp programma.
 
-1. Schakel Azure Serial console in voor Linux.
+1. Schakel Azure Serial console in voor Linux. Zie voor meer informatie [seriële console voor Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/serial-console-linux).
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **virtuele machines** en selecteer uw virtuele machine in de lijst.
 1. Selecteer **seriële console** in het linkermenu onder **ondersteuning en probleem oplossing**. Er wordt een pagina aan de rechter kant geopend, met de seriële console.

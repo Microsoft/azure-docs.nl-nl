@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 05/25/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5e4c49e7aea05b6f430860eb6975713f59ad8080
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: a24b8b18dd109f1d8ed5acaa7de55ce5a3cc1eb9
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635980"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201104"
 ---
 # <a name="use-the-azure-digital-twins-cli"></a>De Azure Digital Twins-CLI gebruiken
 
@@ -25,7 +25,7 @@ Naast het beheren van uw Azure Digital Apparaatdubbels-exemplaar in de Azure Por
 * [Routes](concepts-route-events.md) beheren
 * [Beveiliging](concepts-security.md) configureren via Azure op rollen gebaseerd toegangs beheer (Azure RBAC)
 
-De opdrachtset heet **AZ DT** en maakt deel uit van de [Azure IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension). U kunt de volledige lijst met opdrachten en hun gebruik weer geven als onderdeel van de referentie documentatie voor de `az iot` opdrachtset: [ *AZ DT* opdracht verwijzing](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest).
+De opdrachtset heet **AZ DT** en maakt deel uit van de [Azure IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension). U kunt de volledige lijst met opdrachten en hun gebruik weer geven als onderdeel van de referentie documentatie voor de `az iot` opdrachtset: [ *AZ DT* opdracht verwijzing](/cli/azure/ext/azure-iot/dt).
 
 ## <a name="uses-deploy-and-validate"></a>Gebruikt (implementeren en valideren)
 
@@ -50,11 +50,11 @@ Zie [*de Azure cli installeren*](/cli/azure/install-azure-cli)voor instructies o
 
 ### <a name="get-the-extension"></a>De uitbrei ding ophalen
 
-Met deze stappen kunt u ervoor zorgen dat u de meest recente versie van de `azure-iot` uitbrei ding hebt. U kunt deze opdrachten uitvoeren in de [Azure Cloud shell](../cloud-shell/overview.md) of een [lokale Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+Met deze stappen kunt u ervoor zorgen dat u de meest recente versie van de `azure-iot` uitbrei ding hebt. U kunt deze opdrachten uitvoeren in de [Azure Cloud shell](../cloud-shell/overview.md) of een [lokale Azure cli](/cli/azure/install-azure-cli).
 
 [!INCLUDE [digital-twins-cloud-shell-extensions.md](../../includes/digital-twins-cloud-shell-extensions.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Verken de CLI en de volledige set opdrachten via de referentie documenten:
-* [*AZ DT* -opdracht verwijzing](/cli/azure/ext/azure-iot/dt?preserve-view=true&view=azure-cli-latest)
+* [*AZ DT* -opdracht verwijzing](/cli/azure/ext/azure-iot/dt)

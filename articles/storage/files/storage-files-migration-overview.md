@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 3/18/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 995ae176a8eec58f8dc9522e6fac6fd78170014d
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 4a874e6f1e026a1888b9039799be71c95f040ac6
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628914"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202345"
 ---
 # <a name="migrate-to-azure-file-shares"></a>Migreren naar Azure-bestandsshares
 
@@ -34,8 +34,8 @@ De sleutel in een migratie is het vastleggen van alle toepasselijke bestands kwa
 
 Dit zijn de twee basis onderdelen van een bestand:
 
-- **Gegevens stroom** : de gegevens stroom van een bestand slaat de bestands inhoud op.
-- **Meta gegevens van bestand** : de meta gegevens van het bestand hebben de volgende subonderdelen:
+- **Gegevens stroom**: de gegevens stroom van een bestand slaat de bestands inhoud op.
+- **Meta gegevens van bestand**: de meta gegevens van het bestand hebben de volgende subonderdelen:
    * Bestands kenmerken zoals alleen-lezen
    * Bestands machtigingen, waarnaar kan worden verwezen als *NTFS-machtigingen* of *acl's voor bestanden en mappen*
    * Tijds tempels, met name het maken en de laatste gewijzigde tijds tempels
@@ -111,7 +111,7 @@ Er zijn verschillende hulpprogram ma's voor het kopiëren van bestanden beschikb
 
     De eerste keer dat u het hulp programma uitvoert, wordt het meren deel van de gegevens gekopieerd. Deze eerste uitvoering kan enige tijd duren. Het duurt vaak langer dan u wilt voor het offline halen van de gegevens bron voor uw bedrijfs processen.
 
-    Door een bron te spie gelen naar een doel (net als bij **Robocopy/Mir** ), kunt u het hulp programma opnieuw uitvoeren op dezelfde bron en hetzelfde doel. De uitvoering is veel sneller omdat er alleen bron wijzigingen moeten worden getransporteerd die optreden na de vorige uitvoering. Het opnieuw uitvoeren van een kopieer programma op deze manier kan uitval tijd aanzienlijk verminderen.
+    Door een bron te spie gelen naar een doel (net als bij **Robocopy/Mir**), kunt u het hulp programma opnieuw uitvoeren op dezelfde bron en hetzelfde doel. De uitvoering is veel sneller omdat er alleen bron wijzigingen moeten worden getransporteerd die optreden na de vorige uitvoering. Het opnieuw uitvoeren van een kopieer programma op deze manier kan uitval tijd aanzienlijk verminderen.
 
 De volgende tabel classificeert micro soft-hulpprogram ma's en hun huidige geschiktheid voor Azure-bestands shares:
 
@@ -153,4 +153,4 @@ Hier vindt u meer informatie over de Azure Files technologieën die in dit artik
 
 * [Overzicht van de Azure-bestands share](storage-files-introduction.md)
 * [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-* [Azure File Sync: Cloud lagen](storage-sync-cloud-tiering.md)
+* [Azure File Sync: Cloud lagen](storage-sync-cloud-tiering-overview.md)

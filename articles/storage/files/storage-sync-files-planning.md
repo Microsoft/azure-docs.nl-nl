@@ -1,6 +1,6 @@
 ---
 title: Een Azure File Sync-implementatie plannen | Microsoft Docs
-description: Plan voor een implementatie met Azure File Sync, een service waarmee u een aantal Azure-bestands shares in de cache kunt opslaan op een on-premises Windows Server-of Cloud-VM.
+description: Plan voor een implementatie met Azure File Sync, een service waarmee u verschillende Azure-bestands shares in een on-premises Windows Server-of Cloud-VM kunt opslaan in de cache.
 author: roygara
 ms.service: storage
 ms.topic: conceptual
@@ -8,12 +8,12 @@ ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 65293df5fae523bff36240273afb93c4dd8485df
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 197bd1ab63093a18bd7838349acb3aed11a98e16
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99219473"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202379"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -22,7 +22,7 @@ ms.locfileid: "99219473"
         [![Functionerings gesprekken en demonstratie Azure File Sync-Klik om af te spelen.](./media/storage-sync-files-planning/azure-file-sync-interview-video-snapshot.png)](https://www.youtube.com/watch?v=nfWLO7F52-s)
     :::column-end:::
     :::column:::
-        Azure File Sync is een service waarmee u een aantal Azure-bestands shares in een on-premises Windows Server-of Cloud-VM kunt opslaan in de cache. 
+        Azure File Sync is een service waarmee u verschillende Azure-bestands shares in een on-premises Windows Server-of Cloud-VM kunt opslaan in de cache. 
         
         In dit artikel wordt uitgelegd hoe u Azure File Sync concepten en functies. Wanneer u bekend bent met Azure File Sync, kunt u de [Azure file sync implementatie handleiding](storage-sync-files-deployment-guide.md) volgen om deze service uit te proberen.        
     :::column-end:::
@@ -52,16 +52,19 @@ Voordat u een synchronisatie groep in een opslag synchronisatie service kunt mak
 Een synchronisatie groep bevat één Cloud eindpunt, een Azure-bestands share en ten minste één server eindpunt. Het eindpunt object van de server bevat de instellingen die de functionaliteit voor **Cloud lagen** configureren, waarmee de cache functie van Azure File Sync wordt geboden. Om te synchroniseren met een Azure-bestands share moet het opslag account met de Azure-bestands share zich in dezelfde Azure-regio bevinden als de opslag synchronisatie service.
 
 > [!Important]  
-> U kunt wijzigingen aanbrengen in een eind punt van een Cloud of server-eind punt in de synchronisatie groep en uw bestanden synchroniseren met de andere eind punten in de synchronisatie groep. Als u een wijziging aanbrengt in het Cloud eindpunt (Azure-bestands share), moeten de wijzigingen eerst worden gedetecteerd door een Azure File Sync wijzigings detectie taak. Een wijzigings detectie taak wordt slechts eenmaal per 24 uur geïnitieerd voor een Cloud eindpunt. Zie [Azure files Veelgestelde vragen](storage-files-faq.md#afs-change-detection)voor meer informatie.
+> U kunt wijzigingen aanbrengen in de naam ruimte van elk Cloud eindpunt of server eindpunt in de synchronisatie groep en uw bestanden synchroniseren met de andere eind punten in de synchronisatie groep. Als u een wijziging aanbrengt in het Cloud eindpunt (Azure-bestands share), moeten de wijzigingen eerst worden gedetecteerd door een Azure File Sync wijzigings detectie taak. Een wijzigings detectie taak wordt slechts eenmaal per 24 uur geïnitieerd voor een Cloud eindpunt. Zie [Azure files Veelgestelde vragen](storage-files-faq.md#afs-change-detection)voor meer informatie.
 
-### <a name="management-guidance"></a>Beheer richtlijnen
-Wanneer u Azure File Sync implementeert, kunt u het volgende doen:
+### <a name="consider-the-count-of-storage-sync-services-needed"></a>Houd rekening met het aantal opslag synchronisatie Services dat nodig is
+In een voor gaande sectie wordt de belangrijkste resource beschreven voor het configureren van Azure File Sync: een *opslag synchronisatie service*. Een Windows-Server kan alleen worden geregistreerd bij één opslag synchronisatie service. Het is dus vaak het beste om slechts één opslag synchronisatie service te implementeren en alle servers te registreren. 
 
-- Deploying Azure file shares 1:1 met Windows-bestands shares. Met het object Server eindpunt hebt u een grote mate van flexibiliteit bij het instellen van de synchronisatie topologie aan de server zijde van de synchronisatie relatie. Zorg ervoor dat het pad van het server eindpunt overeenkomt met het pad van de Windows-bestands share om het beheer te vereenvoudigen. 
+Maak meerdere opslag synchronisatie Services alleen als u het volgende hebt:
+* afzonderlijke sets van servers die nooit gegevens met elkaar moeten uitwisselen. In dit geval wilt u het systeem zo ontwerpen dat bepaalde sets van servers worden uitgesloten voor synchronisatie met een Azure-bestands share die al in gebruik is als een Cloud-eind punt in een synchronisatie groep in een andere opslag synchronisatie service. Een andere manier om dit te bekijken is dat Windows-servers die zijn geregistreerd bij een andere opslag synchronisatie service, niet kunnen worden gesynchroniseerd met dezelfde Azure-bestands share.
+* een nood zaak om meer geregistreerde servers of synchronisatie groepen te hebben dan één opslag synchronisatie service kan ondersteunen. Bekijk de [Azure file sync schaal doelen](storage-files-scale-targets.md#azure-file-sync-scale-targets) voor meer informatie.
 
-- Gebruik zoveel mogelijk opslag synchronisatie Services. Dit vereenvoudigt het beheer wanneer u synchronisatie groepen met meerdere server eindpunten hebt, omdat een Windows-Server per keer slechts voor één opslag synchronisatie service kan worden geregistreerd. 
+## <a name="plan-for-balanced-sync-topologies"></a>Balanced Sync-topologieën plannen
+Voordat u resources implementeert, is het belang rijk om te plannen wat u gaat synchroniseren op een lokale server, waarmee Azure-bestands share. Door een plan te maken, kunt u bepalen hoeveel opslag accounts, Azure-bestands shares en synchronisatie bronnen u nodig hebt. Deze overwegingen zijn nog steeds relevant, zelfs als uw gegevens zich momenteel niet op een Windows-Server of de server bevinden die u op lange termijn wilt gebruiken. De [sectie migratie](#migration) kan helpen bij het bepalen van de juiste migratie paden voor uw situatie.
 
-- Let op de limieten voor de IOPS van een opslag account bij het implementeren van Azure-bestands shares. In het ideale geval wijst u bestands shares 1:1 met opslag accounts toe, maar dit is mogelijk niet altijd mogelijk als gevolg van verschillende limieten en beperkingen, zowel vanuit uw organisatie als vanuit Azure. Wanneer het niet mogelijk is om slechts één bestands share in één opslag account te implementeren, moet u overwegen welke shares Maxi maal actief zullen zijn en welke shares minder actief zijn om ervoor te zorgen dat de meest uitgebreide bestands shares niet samen in hetzelfde opslag account worden geplaatst.
+[!INCLUDE [storage-files-migration-namespace-mapping](../../../includes/storage-files-migration-namespace-mapping.md)]
 
 ## <a name="windows-file-server-considerations"></a>Aandachtspunten voor Windows-Bestands server
 Als u de synchronisatie mogelijkheid wilt inschakelen op Windows Server, moet u de Azure File Sync Download bare agent installeren. De Azure File Sync-agent biedt twee hoofd onderdelen: `FileSyncSvc.exe` , de achtergrond Windows-service die verantwoordelijk is voor het bewaken van wijzigingen op de server-eind punten en het initiëren van synchronisatie sessies, en `StorageSync.sys` , een bestandssysteem filter waarmee Cloud lagen en snelle herstel na nood gevallen kunnen worden gestart.  
@@ -203,7 +206,7 @@ Azure File Sync biedt geen ondersteuning voor Gegevensontdubbeling en Cloud lage
 - Als Gegevensontdubbeling is ingeschakeld op een volume nadat Cloud lagen zijn ingeschakeld, optimaliseert de eerste optimalisatie taak voor ontdubbeling bestanden op het volume dat nog niet al is gelaagd en heeft de volgende invloed op Cloud lagen:
     - Het beleid voor beschik bare ruimte gaat door met het heatmap met behulp van de beschik bare ruimte op het volume.
     - Met datum beleid wordt het trapsgewijs scha kelen van bestanden die mogelijk anderszins in aanmerking komen voor het maken van lagen, overgeslagen door de optimalisatie taak voor ontdubbeling om toegang te krijgen tot de bestanden.
-- Voor voortdurende optimalisatie taken met ontdubbeling wordt de Cloud Tiering met het datum beleid vertraagd door de [MinimumFileAgeDays](/powershell/module/deduplication/set-dedupvolume?view=win10-ps) -instelling voor gegevensontdubbeling als het bestand nog niet is gelaagd. 
+- Voor voortdurende optimalisatie taken met ontdubbeling wordt de Cloud Tiering met het datum beleid vertraagd door de [MinimumFileAgeDays](/powershell/module/deduplication/set-dedupvolume?view=win10-ps&preserve-view=true) -instelling voor gegevensontdubbeling als het bestand nog niet is gelaagd. 
     - Voor beeld: als de instelling MinimumFileAgeDays zeven dagen is en het beleid voor Cloud lagen 30 dagen is, worden de bestanden na 37 dagen in het datum beleid gelaagd.
     - Opmerking: wanneer een bestand wordt gelaagd door Azure File Sync, wordt het bestand door de optimalisatie taak voor ontdubbeling overgeslagen.
 - Als een server met Windows Server 2012 R2 waarop de Azure File Sync-agent is geïnstalleerd, is bijgewerkt naar Windows Server 2016 of Windows Server 2019, moeten de volgende stappen worden uitgevoerd voor de ondersteuning van Gegevensontdubbeling en Cloud lagen op hetzelfde volume:  
@@ -320,15 +323,9 @@ Als u toegang wilt aanvragen voor deze regio's, volgt u het proces in [dit docum
 > Met geografisch redundante en geo-zone redundante opslag kunt u hand matig failover-opslag naar de secundaire regio. U wordt aangeraden dit niet buiten een nood geval te doen wanneer u Azure File Sync gebruikt vanwege de verhoogde kans op gegevens verlies. In het geval van een nood geval dat u een hand matige failover van de opslag wilt initiëren, moet u een ondersteunings aanvraag openen bij micro soft om Azure File Sync te krijgen om de synchronisatie met het secundaire eind punt te hervatten.
 
 ## <a name="migration"></a>Migratie
-Als u een bestaande Windows-Bestands server hebt, kan Azure File Sync rechtstreeks worden geïnstalleerd, zonder dat u gegevens naar een nieuwe server hoeft te verplaatsen. Als u van plan bent om te migreren naar een nieuwe Windows-Bestands server als onderdeel van het aannemen van Azure File Sync, zijn er verschillende mogelijke benaderingen om gegevens te verplaatsen:
+Als u een bestaande Windows-Bestands server 2012R2 of nieuwer hebt, kan Azure File Sync rechtstreeks worden geïnstalleerd, zonder dat u gegevens naar een nieuwe server hoeft te verplaatsen. Als u van plan bent om te migreren naar een nieuwe Windows-Bestands server als onderdeel van het aannemen van Azure File Sync, of als uw gegevens zich op dit moment in een NAS (Network Attached Storage) bevinden, zijn er verschillende mogelijke migratie benaderingen voor het gebruik van Azure File Sync met deze gegevens. Welke migratie methode u moet kiezen, is afhankelijk van waar uw gegevens zich momenteel bevinden. 
 
-- Maak server eindpunten voor uw oude bestands share en uw nieuwe bestands share en laat Azure File Sync de gegevens van de server-eind punten synchroniseren. Het voor deel van deze benadering is dat het heel eenvoudig is om de opslag op uw nieuwe bestands server te overschreven, omdat Azure File Sync Cloud Tiering heeft. Wanneer u klaar bent, kunt u de eind gebruikers naar de bestands share op de nieuwe server knippen en het server eindpunt van de oude bestands share verwijderen.
-
-- Maak een server eindpunt alleen op de nieuwe bestands server en kopieer gegevens naar van de oude bestands share met `robocopy` . Afhankelijk van de topologie van de bestands shares op de nieuwe server (hoeveel shares u op elk volume hebt, hoe gratis elk volume is, enzovoort), moet u mogelijk tijdelijk extra opslag ruimte inrichten, omdat ervan wordt uitgegaan dat `robocopy` van uw oude server naar uw nieuwe server in uw on-premises Data Center sneller is dan Azure file sync gegevens naar Azure verplaatst.
-
-Het is ook mogelijk om Data Box te gebruiken om gegevens te migreren naar een Azure File Sync-implementatie. De meeste tijd, wanneer klanten Data Box willen gebruiken om gegevens op te nemen, doen ze dit omdat ze denken dat ze de snelheid van de implementatie verg Roten of dat ze hulp kunnen bieden bij beperkte bandbreedte scenario's. Hoewel het gebruik van een Data Box voor het opnemen van gegevens in uw Azure File Sync-implementatie het bandbreedte gebruik verlaagt, is het waarschijnlijk sneller voor de meeste scenario's om een online gegevens upload uit te voeren via een van de hierboven beschreven methoden. Zie voor meer informatie over het gebruik van Data Box om gegevens op te nemen in uw Azure File Sync-implementatie de [gegevens migreren naar Azure file sync met Azure data Box](storage-sync-offline-data-transfer.md).
-
-Een veelvoorkomende fout bij het migreren van gegevens naar de nieuwe Azure File Sync-implementatie is het kopiëren van gegevens rechtstreeks naar de Azure-bestands share in plaats van op hun Windows-bestands servers. Hoewel Azure File Sync alle nieuwe bestanden in de Azure-bestands share herkent en deze weer synchroniseert met uw Windows-bestands shares, is dit doorgaans aanzienlijk langzamer dan het laden van gegevens via de Windows-Bestands server. Bij het gebruik van Azure Copy-hulpprogram ma's, zoals AzCopy, is het belang rijk dat u de meest recente versie gebruikt. Raadpleeg de [tabel hulp middelen](storage-files-migration-overview.md#file-copy-tools) voor het kopiëren van bestanden om een overzicht te krijgen van de Azure Copy-hulpprogram ma's om ervoor te zorgen dat u alle belang rijke meta gegevens van een bestand, zoals tijds tempels en acl's, kunt kopiëren.
+Bekijk het [overzichts artikel Azure file sync en Azure file share Migration,](storage-files-migration-overview.md) waarin u gedetailleerde richt lijnen voor uw scenario kunt vinden.
 
 ## <a name="antivirus"></a>Antivirus
 Omdat anti virus werkt door bestanden te scannen op bekende schadelijke code, kan een antivirus product ertoe leiden dat gelaagde bestanden worden teruggehaald, wat resulteert in hoge uitstaande kosten. In versies 4,0 en hoger van de Azure File Sync-agent hebben gelaagde bestanden het beveiligde Windows-kenmerk FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS ingesteld. We raden u aan om te leren werken met uw software leverancier voor meer informatie over het configureren van de oplossing voor het overs laan van het lezen van bestanden met deze kenmerkset (veel doen dat automatisch). 
@@ -343,6 +340,9 @@ Als Cloud lagen zijn ingeschakeld, mogen oplossingen die rechtstreeks een back-u
 
 Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden uitgevoerd op een server in de synchronisatie groep waarvoor Cloud lagen zijn uitgeschakeld. Wanneer u een herstel bewerking uitvoert, gebruikt u de opties op volume-of bestands niveau herstellen. Bestanden die zijn hersteld met de optie herstel op bestands niveau worden gesynchroniseerd naar alle eind punten in de synchronisatie groep en bestaande bestanden worden vervangen door de versie die wordt hersteld vanuit een back-up.  Herstel bewerkingen op volume niveau worden niet vervangen door nieuwere bestands versies in de Azure-bestands share of andere server eindpunten.
 
+> [!WARNING]
+> Robocopy/switch wordt niet ondersteund met Azure File Sync. Met behulp van de Robocopy/B-switch met een Azure File Sync server-eind punt, omdat de bron kan leiden tot beschadiging van het bestand.
+
 > [!Note]  
 > Herstellen met Bare-Metal (BMR) kan leiden tot onverwachte resultaten en wordt op dit moment niet ondersteund.
 
@@ -356,5 +356,5 @@ Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden u
 * [Firewall-en proxy-instellingen overwegen](storage-sync-files-firewall-and-proxy.md)
 * [Een Azure Files-implementatie plannen](storage-files-planning.md)
 * [Azure Files implementeren](./storage-how-to-create-file-share.md)
-* [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
+* [Azure Files SYNC implementeren](storage-sync-files-deployment-guide.md)
 * [Azure File Sync bewaken](storage-sync-files-monitoring.md)

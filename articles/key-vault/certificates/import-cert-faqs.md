@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: e75786c42b54882c249b5ed7100ebd12f3f78e78
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 78ec0af0acbb74436af16abba75d64de061d5268
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254356"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202162"
 ---
 # <a name="importing-azure-key-vault-certificates-faq"></a>Veelgestelde vragen over het importeren van Azure Key Vault certificaten
 
@@ -43,7 +43,7 @@ Nee, het is niet mogelijk om certificaat bewerkingen uit te voeren met behulp va
 
 ### <a name="when-i-import-a-certificate-via-the-azure-portal-i-get-a-something-went-wrong-error-how-can-i-investigate-further"></a>Wanneer ik een certificaat Importeer via de Azure Portal, krijg ik de fout ' er is iets fout gegaan '. Hoe kan ik verder onderzoeken?
     
-Als u een meer beschrijvende fout wilt weer geven, importeert u het certificaat bestand met behulp van [de Azure cli](/cli/azure/keyvault/certificate?view=azure-cli-latest#az-keyvault-certificate-import) of [Power shell](/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate?view=azurermps-6.13.0).
+Als u een meer beschrijvende fout wilt weer geven, importeert u het certificaat bestand met behulp van [de Azure cli](/cli/azure/keyvault/certificate#az-keyvault-certificate-import) of [Power shell](/powershell/module/azurerm.keyvault/import-azurekeyvaultcertificate?view=azurermps-6.13.0).
 
 ### <a name="how-can-i-resolve-error-type-access-denied-or-user-is-unauthorized-to-import-certificate"></a>Hoe kan ik ' fout type: toegang geweigerd of gebruiker is niet gemachtigd om certificaat te importeren ' oplossen '?
     

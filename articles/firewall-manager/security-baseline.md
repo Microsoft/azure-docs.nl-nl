@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ec746a5c347db8cb92c95b1d76f3622498f0039f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bec5cafaf7d506d9ab25228c680d00af91dbf3d0
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101742378"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102200135"
 ---
 # <a name="azure-security-baseline-for-azure-firewall-manager"></a>Azure-beveiligings basislijn voor Azure Firewall Manager
 
@@ -338,7 +338,7 @@ Pas Tags toe op uw Azure-resources, resource groepen en abonnementen om ze logis
 
 **Hulp**: Azure firewall Manager-resources verwijderen wanneer ze niet meer nodig zijn om kwets baarheid te minimaliseren. Gebruikers kunnen hun Azure Firewall Manager-resources beheren via de Azure Portal-, CLI-of REST-Api's.
 
-- [Azure Firewall-beleids-CLI](/cli/azure/ext/azure-firewall/network/firewall/policy?preserve-view=true&view=azure-cli-latest)
+- [Azure Firewall-beleids-CLI](/cli/azure/ext/azure-firewall/network/firewall/policy)
 
 - [Azure Network CLI](/powershell/module/az.network/?preserve-view=true&view=azps-5.1.0#networking)
 
@@ -557,7 +557,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 - [Naslag informatie over Azure Firewall-beleids sjabloon](/azure/templates/microsoft.network/firewallpolicies)
 
-- [Azure Firewall-beleids-CLI](/cli/azure/ext/azure-firewall/network/firewall/policy?preserve-view=true&view=azure-cli-latest)
+- [Azure Firewall-beleids-CLI](/cli/azure/ext/azure-firewall/network/firewall/policy)
 
 - [Afbeelding van Guardrails-implementatie in de schaal zone op ondernemings niveau](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture#landing-zone-expanded-definition)
 

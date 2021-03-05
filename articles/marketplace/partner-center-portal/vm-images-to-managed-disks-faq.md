@@ -5,14 +5,14 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-author: iqshahmicrosoft
-ms.author: iqshah
-ms.openlocfilehash: 814a4012ace95e84e75bcb4071c549822b2b0633
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: kriti-ms
+ms.author: krsh
+ms.openlocfilehash: e3d20b5e9206cf05d749f75982a07937a8caf078
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89182425"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201087"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Er worden installatie kopieën van virtuele machines (VM) op Azure Marketplace verplaatst naar Managed Disk Storage
 
@@ -29,8 +29,6 @@ Als u vragen hebt, kunt u [contact met ons](https://support.microsoft.com/suppor
 ### <a name="would-the-users-of-my-vm-images-experience-an-outage"></a>Werken de gebruikers van mijn VM-installatie kopieën een storing?
 
 Gebruikers van de VM-installatie kopieën hebben geen onderbrekingen. 
-
-In de eerste fase worden alleen VM-installatie kopieën verplaatst die geen actieve Vm's hebben. Omdat er geen gebruikers zijn voor deze installatie kopieën, heeft dit geen invloed. Voor de volgende fasen is er geen invloed op de gebruikers.
 
 ### <a name="how-long-does-it-take-for-the-process-to-complete"></a>Hoe lang duurt het om het proces te volt ooien?
 

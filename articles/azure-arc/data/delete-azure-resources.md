@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 4c76b2c0109637ce34681d2fa5c8b29e1ff800a1
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 60c5ddcc67db6e4a0649458cfbd5c2949aa9a32a
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364368"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102202039"
 ---
 # <a name="delete-resources-from-azure"></a>Resources verwijderen uit Azure
 
@@ -44,7 +44,7 @@ U kunt als volgt een resource groep verwijderen uit de Azure Portal:
 
 - Blader naar de resource groep in de Azure Portal waar de Data Services-resources van Azure Arc zijn gemaakt.
 - Klik op de knop **resource groep verwijderen** .
-- Bevestig de verwijdering door de naam van de resource groep in te voeren en op **verwijderen**te klikken.
+- Bevestig de verwijdering door de naam van de resource groep in te voeren en op **verwijderen** te klikken.
 
 ## <a name="delete-specific-resources-in-the-resource-group"></a>Specifieke resources in de resource groep verwijderen
 
@@ -53,7 +53,7 @@ U kunt specifieke Azure-Arc-gegevens services-resources in een resource groep in
 - Blader naar de resource groep in de Azure Portal waar de Data Services-resources van Azure Arc zijn gemaakt.
 - Selecteer alle resources die moeten worden verwijderd.
 - Klik op de knop verwijderen.
-- Bevestig het verwijderen door Ja te typen en op **verwijderen**te klikken.
+- Bevestig het verwijderen door Ja te typen en op **verwijderen** te klikken.
 
 ## <a name="delete-resources-using-the-azure-cli"></a>Resources verwijderen met de Azure CLI
 
@@ -64,10 +64,10 @@ U kunt specifieke Azure-Arc-gegevens services-resources verwijderen met behulp v
 Als u SQL Managed instance-resources wilt verwijderen uit Azure met behulp van Azure CLI, vervangt u de tijdelijke aanduidingen in de onderstaande opdracht en voert u deze uit.
 
 ```azurecli
-az resource delete --name <sql instance name> --resource-type Microsoft.AzureData/sqlManagedInstances --resource-group <resource group name>
+az resource delete --name <sql instance name> --resource-type Microsoft.AzureArcData/sqlManagedInstances --resource-group <resource group name>
 
 #Example
-#az resource delete --name sql1 --resource-type Microsoft.AzureData/sqlManagedInstances --resource-group rg1
+#az resource delete --name sql1 --resource-type Microsoft.AzureArcData/sqlManagedInstances --resource-group rg1
 ```
 
 ### <a name="delete-postgresql-hyperscale-server-group-resources-using-the-azure-cli"></a>PostgreSQL grootschalige-server groeps resources verwijderen met behulp van de Azure CLI
@@ -75,10 +75,10 @@ az resource delete --name <sql instance name> --resource-type Microsoft.AzureDat
 Als u een PostgreSQL grootschalige-Server groep wilt verwijderen uit Azure met behulp van Azure CLI, vervangt u de tijdelijke aanduidingen in de onderstaande opdracht en voert u deze uit.
 
 ```azurecli
-az resource delete --name <postgresql instance name> --resource-type Microsoft.AzureData/postgresInstances --resource-group <resource group name>
+az resource delete --name <postgresql instance name> --resource-type Microsoft.AzureArcData/postgresInstances --resource-group <resource group name>
 
 #Example
-#az resource delete --name pg1 --resource-type Microsoft.AzureData/postgresInstances --resource-group rg1
+#az resource delete --name pg1 --resource-type Microsoft.AzureArcData/postgresInstances --resource-group rg1
 ```
 
 ### <a name="delete-azure-arc-data-controller-resources-using-the-azure-cli"></a>Resources van Azure Arc data controller verwijderen met de Azure CLI
@@ -89,10 +89,10 @@ az resource delete --name <postgresql instance name> --resource-type Microsoft.A
 Als u een Azure-Arc-gegevens controller uit Azure wilt verwijderen met behulp van Azure CLI, vervangt u de tijdelijke aanduidingen in de onderstaande opdracht en voert u deze uit.
 
 ```azurecli
-az resource delete --name <data controller name> --resource-type Microsoft.AzureData/dataControllers --resource-group <resource group name>
+az resource delete --name <data controller name> --resource-type Microsoft.AzureArcData/dataControllers --resource-group <resource group name>
 
 #Example
-#az resource delete --name dc1 --resource-type Microsoft.AzureData/dataControllers --resource-group rg1
+#az resource delete --name dc1 --resource-type Microsoft.AzureArcData/dataControllers --resource-group rg1
 ```
 
 ### <a name="delete-a-resource-group-using-the-azure-cli"></a>Een resource groep verwijderen met de Azure CLI

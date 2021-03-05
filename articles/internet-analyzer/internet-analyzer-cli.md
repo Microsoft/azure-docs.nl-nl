@@ -7,12 +7,12 @@ ms.service: internet-analyzer
 ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: 23a76e4007965c263671554bbcd937dbf3b4b0a6
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.openlocfilehash: a9a9fe93ebe302a76d69249dc56933e1bcc924d1
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676203"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102200084"
 ---
 # <a name="create-an-internet-analyzer-test-using-cli-preview"></a>Een Internet Analyzer-test maken met behulp van CLI (Preview)
 
@@ -25,19 +25,19 @@ Er zijn twee manieren om een Internet Analyzer-resource te maken: met behulp van
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-De openbare preview is beschikbaar voor gebruik wereldwijd; gegevensopslag is tijdens de preview echter beperkt tot *VS - west 2* .
+De openbare preview is beschikbaar voor gebruik wereldwijd; gegevensopslag is tijdens de preview echter beperkt tot *VS - west 2*.
 
 ## <a name="object-model"></a>Objectmodel
 De Internet Analyzer CLI maakt de volgende typen resources beschikbaar:
-* **Tests** : een test vergelijkt de prestaties van de eindgebruiker van twee interneteindpunten (A en B) in de loop van de tijd.
-* **Profielen** : tests worden gemaakt onder een Internet Analyzer-profiel. Met profielen kunnen gerelateerde testen worden gegroepeerd; één profiel kan een of meer tests bevatten.
-* **Vooraf geconfigureerde eindpunten** : we hebben eindpunten ingesteld met verschillende configuraties (regio's, versnellingstechnologieën, enzovoort). U kunt alle vooraf geconfigureerde eindpunten in uw tests gebruiken.
-* **Scorecards** : een scorecard biedt snelle en zinvolle samenvattingen van meetresultaten. Raadpleeg [Uw scorecard interpreteren](internet-analyzer-scorecard.md).
-* **Tijdreeks** : een tijdreeks laat zien hoe metrische gegevens in de loop van de tijd veranderen.
+* **Tests**: een test vergelijkt de prestaties van de eindgebruiker van twee interneteindpunten (A en B) in de loop van de tijd.
+* **Profielen**: tests worden gemaakt onder een Internet Analyzer-profiel. Met profielen kunnen gerelateerde testen worden gegroepeerd; één profiel kan een of meer tests bevatten.
+* **Vooraf geconfigureerde eindpunten**: we hebben eindpunten ingesteld met verschillende configuraties (regio's, versnellingstechnologieën, enzovoort). U kunt alle vooraf geconfigureerde eindpunten in uw tests gebruiken.
+* **Scorecards**: een scorecard biedt snelle en zinvolle samenvattingen van meetresultaten. Raadpleeg [Uw scorecard interpreteren](internet-analyzer-scorecard.md).
+* **Tijdreeks**: een tijdreeks laat zien hoe metrische gegevens in de loop van de tijd veranderen.
 
 ## <a name="profile-and-test-creation"></a>Maken van profiel en test
 1. Krijg toegang tot Internet Analyzer-preview door de instructies in **Hoe kan ik deelnemen aan de preview?** van de [Veelgestelde vragen over Azure Internet Analyzer](internet-analyzer-faq.md) te volgen.
-2. [Installeer de Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+2. [Installeer de Azure CLI](/cli/azure/install-azure-cli).
 3. Voer de opdracht `login` uit om een CLI-sessie te starten:
     ```azurecli-interactive
     az login
@@ -50,9 +50,9 @@ De Internet Analyzer CLI maakt de volgende typen resources beschikbaar:
 
 5. Selecteer uw abonnements-id waaraan toegang tot de openbare preview van Internet Analyzer is verleend.
 
-    Nadat u zich hebt aangemeld, ziet u een lijst met abonnementen die zijn gekoppeld aan uw Azure-account. De abonnementsgegevens met `isDefault: true` zijn het abonnement dat momenteel is geactiveerd na aanmelden. Als u een ander abonnement wilt selecteren, gebruikt u de opdracht [az account set](/cli/azure/account#az-account-set) met de abonnements-id waarnaar moet worden overgeschakeld. Zie [Meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest) voor meer informatie over het selecteren van abonnementen.
+    Nadat u zich hebt aangemeld, ziet u een lijst met abonnementen die zijn gekoppeld aan uw Azure-account. De abonnementsgegevens met `isDefault: true` zijn het abonnement dat momenteel is geactiveerd na aanmelden. Als u een ander abonnement wilt selecteren, gebruikt u de opdracht [az account set](/cli/azure/account#az-account-set) met de abonnements-id waarnaar moet worden overgeschakeld. Zie [Meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli) voor meer informatie over het selecteren van abonnementen.
 
-    Er zijn ook manieren om u niet-interactief aan te melden. Deze manieren worden uitvoerig behandeld in [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+    Er zijn ook manieren om u niet-interactief aan te melden. Deze manieren worden uitvoerig behandeld in [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli).
 
 6. **[Optioneel]** Een nieuwe Azure-resourcegroep maken:
     ```azurecli-interactive
@@ -132,6 +132,6 @@ De Internet Analyzer CLI maakt de volgende typen resources beschikbaar:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Blader door de [Internet Analyzer CLI-referentie](/cli/azure/ext/internet-analyzer/internet-analyzer?view=azure-cli-latest) voor een volledige lijst met ondersteunde opdrachten en gebruiksvoorbeelden.
+* Blader door de [Internet Analyzer CLI-referentie](/cli/azure/ext/internet-analyzer/internet-analyzer) voor een volledige lijst met ondersteunde opdrachten en gebruiksvoorbeelden.
 * Lees de [Veelgestelde vragen over Internet Analyzer](internet-analyzer-faq.md).
 * Meer informatie over het insluiten van de [Internet Analyzer-client](internet-analyzer-embed-client.md) en het maken van een [aangepast eindpunt](internet-analyzer-custom-endpoint.md).

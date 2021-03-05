@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: f731236b235883f019c74ef0b32f5066ca5b7514
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: b2e1ffb3cbd513766945864e33589c46284bf942
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179364"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102200934"
 ---
 # <a name="configure-development-environment-for-deployment-scripts-in-arm-templates"></a>Ontwikkel omgeving configureren voor implementatie scripts in ARM-sjablonen
 
@@ -357,7 +357,7 @@ De standaard waarde voor het koppelingspad is `/mnt/azscripts/azscriptinput` . D
 De standaard container installatie kopie die in de sjabloon is opgegeven, is **MCR.Microsoft.com/azure-cli:2.9.1**. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
 
 > [!IMPORTANT]
-> Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor een implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true)om de release datums voor de installatie kopieën te vinden. Als u een niet-ondersteunde versie gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
+> Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor een implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli)om de release datums voor de installatie kopieën te vinden. Als u een niet-ondersteunde versie gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
 
 De sjabloon onderbreekt het container exemplaar na 1.800 seconden. U hebt 30 minuten voordat het container exemplaar in een Terminal status komt en de sessie wordt beëindigd.
 

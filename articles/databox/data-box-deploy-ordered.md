@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: 26e8f08d4b901a9ea57da826d9441d23508c4a4c
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: f2bad214045710fe861040514beb3c536664d684
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797620"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201886"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -437,7 +437,7 @@ Voer de volgende stappen uit met behulp van Azure CLI om een apparaat te bestell
    |query| De JMESPath-querytekenreeks. Zie [JMESPath](http://jmespath.org/) voor meer informatie. | --query <string>|
    |verbose| Uitgebreide logboekregistratie opnemen. | --verbose |
 
-2. Voer in de opdrachtprompt van uw keuze of terminal de opdracht [az data box job create](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-create&preserve-view=true) uit om uw Azure Data Box-order te maken.
+2. Voer in de opdrachtprompt van uw keuze of terminal de opdracht [az data box job create](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-create) uit om uw Azure Data Box-order te maken.
 
    ```azurecli
    az databox job create --resource-group <resource-group> --name <order-name> --location <azure-location> --sku <databox-device-type> --contact-name <contact-name> --phone <phone-number> --email-list <email-list> --street-address1 <street-address-1> --street-address2 <street-address-2> --city "contact-city" --state-or-province <state-province> --country <country> --postal-code <postal-code> --company-name <company-name> --storage-account "storage-account"
@@ -605,7 +605,7 @@ Microsoft bereidt de verzending vervolgens voor en verzendt het apparaat met een
 
 ### <a name="track-a-single-order"></a>Eén bestelling volgen
 
-Voor het bijhouden van informatie over één bestaande Azure Data Box order, voert u uit [`az databox job show`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true) . De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
+Voor het bijhouden van informatie over één bestaande Azure Data Box order, voert u uit [`az databox job show`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-show) . De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
 
    ```azurecli
    az databox job show --resource-group <resource-group> --name <order-name>
@@ -646,7 +646,7 @@ Voor het bijhouden van informatie over één bestaande Azure Data Box order, voe
 
 ### <a name="list-all-orders"></a>Alle bestellingen weergeven
 
-Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`az databox job list`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
+Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`az databox job list`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-list) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
 De opdracht geeft ook tijdstempels van elke bestelling weer.
 
 ```azurecli
@@ -765,7 +765,7 @@ Als u een geannuleerde bestelling wilt verwijderen, gaat u naar **Overzicht** en
 
 ### <a name="cancel-an-order"></a>Een order annuleren
 
-Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job cancel`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true) . U moet een reden opgeven voor het annuleren van de bestelling.
+Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job cancel`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-cancel) . U moet een reden opgeven voor het annuleren van de bestelling.
 
    ```azurecli
    az databox job cancel --resource-group <resource-group> --name <order-name> --reason <cancel-description>
@@ -802,7 +802,7 @@ Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job canc
 
 ### <a name="delete-an-order"></a>Een bestelling verwijderen
 
-Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`az databox job delete`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true) om de volg orde te verwijderen.
+Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`az databox job delete`](/cli/azure/ext/databox/databox/job#ext-databox-az-databox-job-delete) om de volg orde te verwijderen.
 
    ```azurecli
    az databox job delete --name [-n] <order-name> --resource-group <resource-group> [--yes] [--verbose]

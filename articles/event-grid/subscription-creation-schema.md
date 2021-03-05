@@ -3,12 +3,12 @@ title: Schema voor Azure Event Grid abonnement
 description: In dit artikel worden de eigenschappen beschreven voor het abonneren op een gebeurtenis met Azure Event Grid. Schema van Event Grid abonnement.
 ms.topic: reference
 ms.date: 07/07/2020
-ms.openlocfilehash: 21016627e545cc4935b4ac213df675e894c12d95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6e33171cbba65cfeaca49ab6a8954be8bb89acb
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86119069"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102199948"
 ---
 # <a name="event-grid-subscription-schema"></a>Schema voor Event Grid abonnement
 
@@ -25,7 +25,7 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 ``` 
 
 De naam van het gebeurtenis abonnement moet 3-64 tekens lang zijn en mag alleen a-z, A-Z, 0-9 en '-' bevatten. In het artikel worden de eigenschappen en het schema voor de hoofd tekst van de aanvraag beschreven.
- 
+ 
 ## <a name="event-subscription-properties"></a>Eigenschappen van gebeurtenis abonnement
 
 | Eigenschap | Type | Beschrijving |
@@ -48,6 +48,7 @@ De naam van het gebeurtenis abonnement moet 3-64 tekens lang zijn en mag alleen 
 | subjectBeginsWith | tekenreeks | Een voorvoegsel filter voor het veld onderwerp in het gebeurtenis bericht. De standaard waarde of de lege teken reeks komt overeen met alle. | 
 | subjectEndsWith | tekenreeks | Een achtervoegsel-match filter voor het veld onderwerp in het gebeurtenis bericht. De standaard waarde of de lege teken reeks komt overeen met alle. |
 | isSubjectCaseSensitive | tekenreeks | Hiermee wordt een hoofdletter gevoelige overeenkomst voor filters beheerd. |
+| enableAdvancedFilteringOnArrays | booleaans | Maakt het gebruik van matrices voor sleutels in geavanceerde filters mogelijk. Zie [Advanced filtering](event-filtering.md#advanced-filtering)voor meer informatie. |
 
 
 ## <a name="example-subscription-schema"></a>Voorbeeld schema voor abonnementen

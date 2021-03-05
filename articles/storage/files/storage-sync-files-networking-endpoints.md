@@ -8,12 +8,12 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 64d66e1b9eab225b38ee21306fea6f9534a708f3
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: f307380114acd4f98d68b580333c4dccc2a7340b
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98673842"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201597"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Azure Files Sync-netwerkeindpunten configureren
 Azure Files en Azure File Sync bieden twee hoofdtypen eindpunten voor toegang tot Azure-bestandsshares: 
@@ -125,7 +125,7 @@ Address: 192.168.0.5
 
 ---
 
-### <a name="create-the-storage-sync-private-endpoint"></a>De privé-eindpunt voor opslagsynchronisatie maken
+### <a name="create-the-storage-sync-service-private-endpoint"></a>Het persoonlijke eind punt van de opslag synchronisatie service maken
 > [!Important]  
 > Om privé-eindpunten te kunnen gebruiken op de opslagsynchronisatieservice-resource, moet u Azure File Sync-agent versie 10.1 of hoger hebben. Agentversies vóór 10.1 bieden geen ondersteuning voor privé-eindpunten op de opslagsynchronisatieservice. Alle eerdere agentversies ondersteunen wel privé-eindpunten op de opslagaccount-resource.
 
@@ -597,13 +597,10 @@ Om toegang tot het openbare eindpunt van de opslagsynchronisatieservice uit te s
 $storageSyncServiceResourceGroupName = "<storage-sync-service-resource-group>"
 $storageSyncServiceName = "<storage-sync-service>"
 
-$storageSyncService = Get-AzResource `
-        -ResourceGroupName $storageSyncServiceResourceGroupName `
-        -ResourceName $storageSyncServiceName `
-        -ResourceType "Microsoft.StorageSync/storageSyncServices"
-
-$storageSyncService.Properties.incomingTrafficPolicy = "AllowVirtualNetworksOnly"
-$storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Force -UsePatchSemantics
+Set-AzStorageSyncService `
+    -ResourceGroupName $storageSyncServiceResourceGroupName `
+    -Name $storageSyncServiceName `
+    -IncomingTrafficPolicy AllowVirtualNetworksOnly
 ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
@@ -611,6 +608,34 @@ Azure CLI biedt geen ondersteuning voor het instellen `incomingTrafficPolicy` va
 
 ---
 
+## <a name="azure-policy"></a>Azure Policy
+Azure Policy helpt organisatie standaarden af te dwingen en de naleving te beoordelen op basis van deze standaarden op schaal. Azure Files en Azure File Sync bieden een aantal nuttige controle-en herstel opties voor het netwerk waarmee u uw implementatie kunt bewaken en automatiseren.
+
+Met beleid wordt uw omgeving gecontroleerd en wordt u gewaarschuwd als uw opslag accounts of opslag synchronisatie Services afwijkt van het gedefinieerde gedrag. Als er bijvoorbeeld een openbaar eind punt is ingeschakeld wanneer het beleid is ingesteld op het inschakelen van de open bare eind punten. Voor het wijzigen/implementeren van beleids regels neemt u een stap verder en wijzigt u proactief een resource (zoals de opslag synchronisatie service) of implementeert u resources (zoals persoonlijke eind punten) om uit te lijnen met het beleid.
+
+De volgende vooraf gedefinieerde beleids regels zijn beschikbaar voor Azure Files en Azure File Sync:
+
+| Bewerking | Service | Voorwaarde | Beleidsnaam |
+|-|-|-|-|
+| Controleren | Azure Files | Het open bare eind punt van het opslag account is ingeschakeld. Zie [toegang tot het open bare eind punt van het opslag account uitschakelen](#disable-access-to-the-storage-account-public-endpoint) voor meer informatie. | Netwerktoegang tot opslagaccounts moet zijn beperkt |
+| Controleren | Azure File Sync | Het open bare eind punt van de opslag synchronisatie service is ingeschakeld. Zie [toegang tot het open bare eind punt van de opslag synchronisatie service uitschakelen](#disable-access-to-the-storage-sync-service-public-endpoint) voor meer informatie. | Open bare netwerk toegang moet zijn uitgeschakeld voor Azure File Sync |
+| Controleren | Azure Files | Het opslag account moet ten minste één persoonlijk eind punt hebben. Zie [het persoonlijke eind punt voor het opslag account maken](#create-the-storage-account-private-endpoint) voor meer informatie. | Voor een opslagaccount moet een verbinding via een privékoppeling worden gebruikt |
+| Controleren | Azure File Sync | De opslag synchronisatie service moet ten minste één persoonlijk eind punt hebben. Zie [het persoonlijke eind punt voor de opslag synchronisatie service maken](#create-the-storage-sync-service-private-endpoint) voor meer informatie. | Azure File Sync moet een persoonlijke koppeling gebruiken |
+| Wijzigen | Azure File Sync | Het open bare eind punt van de opslag synchronisatie service uitschakelen. | Wijzigen-Azure File Sync configureren om open bare netwerk toegang uit te scha kelen |
+| Implementeren | Azure File Sync | Implementeer een persoonlijk eind punt voor de opslag synchronisatie service. | Azure File Sync met persoonlijke eind punten configureren |
+| Implementeren | Azure File Sync | Implementeer een A-record voor de DNS-zone privatelink.afs.azure.net. | Azure File Sync configureren voor het gebruik van privé-DNS-zones |
+
+### <a name="set-up-a-private-endpoint-deployment-policy"></a>Een beleid voor een privé-eindpunt implementatie instellen
+Als u een beleid voor privé-eind punten wilt instellen, gaat u naar de [Azure Portal](https://portal.azure.com/)en zoekt u naar **beleid**. Het Azure Policy Center moet het beste resultaat zijn. Navigeer naar **ontwerp**  >  **definities** in de inhouds opgave van het beleids centrum. Het deel venster resulterende **definities** bevat de vooraf gedefinieerde beleids regels voor alle Azure-Services. Als u het specifieke beleid wilt zoeken, selecteert u de categorie **opslag** in het categorie filter of zoekt **u Azure file sync met persoonlijke eind punten**. Selecteer **...** en **wijs** deze toe om een nieuw beleid te maken op basis van de definitie.
+
+Op de Blade **basis beginselen** van de wizard **beleid toewijzen** kunt u een uitsluitings lijst voor een bereik, resource of resource groep instellen en uw beleid een beschrijvende naam geven waarmee u het kunt onderscheiden. U hoeft deze niet te wijzigen om het beleid te laten werken, maar u kunt ook als u wijzigingen wilt aanbrengen. Selecteer **volgende** om door te gaan naar de pagina **para meters** . 
+
+Selecteer op de Blade **para meters** de optie **..** . naast de vervolg keuzelijst **privateEndpointSubnetId** om het virtuele netwerk en het subnet te selecteren waar de privé-eind punten voor uw opslag synchronisatie service bronnen moeten worden geïmplementeerd. De resulterende wizard kan enkele seconden duren om de beschik bare virtuele netwerken in uw abonnement te laden. Selecteer het juiste virtuele netwerk/subnet voor uw omgeving en klik op **selecteren**. Selecteer **volgende** om door te gaan naar de Blade **herstellen** .
+
+Als het persoonlijke eind punt moet worden geïmplementeerd wanneer een opslag synchronisatie service zonder persoonlijk eind punt wordt geïdentificeerd, moet u de **taak een herstel bewerking maken** op de pagina **herstel** selecteren. Selecteer ten slotte **controleren en maken** om de beleids toewijzing te controleren **en te maken om** deze te maken.
+
+De resulterende beleids toewijzing wordt periodiek uitgevoerd en wordt mogelijk niet onmiddellijk uitgevoerd nadat deze is gemaakt.
+
 ## <a name="see-also"></a>Zie ook
 - [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-- [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)
+- [Azure Files SYNC implementeren](storage-sync-files-deployment-guide.md)

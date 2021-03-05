@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 5a2540aeb36cfcb2048ec994bbb486badc8a68d1
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 4ab4e40e1dd4bbaf9ae73ab545285f5ae6261e27
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358806"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201767"
 ---
 # <a name="cluster-configuration-best-practices-sql-server-on-azure-vms"></a>Aanbevolen procedures voor clusterconfiguratie (SQL Server op virtuele machines van Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -47,9 +47,9 @@ Als u een quorum bron configureert, kan het cluster online met slechts één kno
 De volgende tabel bevat de beschik bare quorum opties in de volg orde die wordt aanbevolen voor gebruik met een virtuele Azure-machine, waarbij de schijfwitness de voorkeurs keuze is: 
 
 
-||[Schijfwitness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |[Cloudwitness](/windows-server/failover-clustering/deploy-cloud-witness)  |[Bestandsshare-witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |
+||[Schijfwitness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |[Cloudwitness](/windows-server/failover-clustering/deploy-cloud-witness)  |[Bestands share-Witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)  |
 |---------|---------|---------|---------|
-|**Ondersteund besturings systeem**| Alles |Windows Server 2016 +| Alles|
+|**Ondersteund besturingssysteem**| Alles |Windows Server 2016 +| Alles|
 
 
 ### <a name="disk-witness"></a>Schijfwitness
@@ -76,9 +76,7 @@ Zie [een Cloudwitness configureren](/windows-server/failover-clustering/deploy-c
 
 ### <a name="file-share-witness"></a>Bestandsshare-witness
 
-Een bestandssharewitness is een SMB-bestands share die doorgaans is geconfigureerd op een bestands server met Windows Server. Het onderhoudt cluster informatie in een Witness. log-bestand, maar slaat geen kopie van de cluster database op. In azure kunt u een [Azure-bestands share](../../../storage/files/storage-how-to-create-file-share.md) configureren om te gebruiken als de bestandssharewitness of u kunt een bestands share gebruiken op een afzonderlijke virtuele machine.
-
-Als u een Azure-bestands share wilt gebruiken, kunt u deze koppelen aan hetzelfde proces dat wordt gebruikt om [de Premium-bestands share te koppelen](failover-cluster-instance-premium-file-share-manually-configure.md#mount-premium-file-share). 
+Een bestandssharewitness is een SMB-bestands share die doorgaans is geconfigureerd op een bestands server met Windows Server. Het onderhoudt cluster informatie in een Witness. log-bestand, maar slaat geen kopie van de cluster database op. In azure kunt u een bestands share configureren op een afzonderlijke virtuele machine.
 
 Zie [Configure a file share Witness](/windows-server/failover-clustering/manage-cluster-quorum#configure-the-cluster-quorum)om aan de slag te gaan.
 

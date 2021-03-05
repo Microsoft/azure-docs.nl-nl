@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/01/2020
 ms.author: duau
-ms.openlocfilehash: a5d51a77b1da0ae44c76d0187113105c4e53c9b4
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.openlocfilehash: f894fd5ca7bb98c48b106c13b8fe6130b2c76c6e
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279212"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201053"
 ---
 # <a name="tutorial-quickly-scale-and-protect-a-web-application-by-using-azure-front-door-and-azure-web-application-firewall-waf"></a>Zelfstudie: een webtoepassing snel schalen en beveiligen met Azure Front Door en Azure Web Application Firewall (WAF)
 
@@ -36,7 +36,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-- In de instructies in deze zelfstudie wordt de Azure CLI gebruikt. [Raadpleeg deze handleiding](/cli/azure/get-started-with-azure-cli?preserve-view=true&view=azure-cli-latest) om aan de slag te gaan met de Azure CLI.
+- In de instructies in deze zelfstudie wordt de Azure CLI gebruikt. [Raadpleeg deze handleiding](/cli/azure/get-started-with-azure-cli) om aan de slag te gaan met de Azure CLI.
 
   > [!TIP] 
   > Een eenvoudige en snelle manier om aan de slag te gaan met de Azure CLI is met [Bash in Azure Cloud Shell](../cloud-shell/quickstart.md).
@@ -48,7 +48,7 @@ In deze zelfstudie leert u het volgende:
    ```
 
 > [!NOTE] 
-> Raadpleeg de [Azure CLI-naslag voor front-door](/cli/azure/ext/front-door/?preserve-view=true&view=azure-cli-latest) voor meer informatie over de opdrachten die in deze zelfstudie worden gebruikt.
+> Raadpleeg de [Azure CLI-naslag voor front-door](/cli/azure/ext/front-door) voor meer informatie over de opdrachten die in deze zelfstudie worden gebruikt.
 
 ## <a name="create-an-azure-front-door-resource"></a>Een Azure Front Door-resource maken
 
@@ -144,7 +144,7 @@ We adviseren u ervoor te zorgen dat alleen apparaten in de periferie van Azure F
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer u de resources in deze zelfstudie niet langer nodig hebt, gebruikt u de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true) om de resourcegroep, Front Door en het WAF-beleid te verwijderen:
+Wanneer u de resources in deze zelfstudie niet langer nodig hebt, gebruikt u de opdracht [az group delete](/cli/azure/group#az-group-delete) om de resourcegroep, Front Door en het WAF-beleid te verwijderen:
 
 ```azurecli-interactive
   az group delete \

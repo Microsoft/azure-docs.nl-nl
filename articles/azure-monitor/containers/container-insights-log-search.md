@@ -2,13 +2,13 @@
 title: Logboeken zoeken vanuit container Insights | Microsoft Docs
 description: In container Insights worden metrische gegevens en logboek registraties verzameld en in dit artikel worden de records beschreven en worden voorbeeld query's opgenomen.
 ms.topic: conceptual
-ms.date: 06/01/2020
-ms.openlocfilehash: 79efa714548adbde67774cab741bf953a4ff1e83
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/03/2021
+ms.openlocfilehash: c2b7331255e1109f27f89a84d66e25eb07a20569
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101711107"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201376"
 ---
 # <a name="how-to-query-logs-from-container-insights"></a>Logboeken vanuit container Insights doorzoeken
 
@@ -25,10 +25,11 @@ In de volgende tabel worden de details van de records die door container Insight
 | Container-knooppunt inventaris | Uitvoeren-API | `ContainerNodeInventory`| TimeGenerated, computer, ClassName_s, DockerVersion_s, OperatingSystem_s, Volume_s, Network_s, NodeRole_s, OrchestratorType_s, InstanceID_g, hebben|
 | Inventaris van Peul in een Kubernetes-cluster | Uitvoeren-API | `KubePodInventory` | TimeGenerated, computer, ClusterId, ContainerCreationTimeStamp, PodUid, PodCreationTimeStamp, ContainerRestartCount, PodRestartCount, PodStartTime, ContainerStartTime, ServiceName, ControllerKind, controller naam, container status, ContainerStatusReason, ContainerID, containerName, naam, PodLabel, namespace, PodStatus, clustername, PodIp, hebben |
 | Inventaris van knoop punten die deel uitmaken van een Kubernetes-cluster | Uitvoeren-API | `KubeNodeInventory` | TimeGenerated, computer, clustername, ClusterId, LastTransitionTimeReady, labels, status, KubeletVersion, KubeProxyVersion, CreationTimeStamp, hebben | 
+|Inventarisatie van permanente volumes in een Kubernetes-cluster |Uitvoeren-API |`KubePVInventory` | TimeGenerated, PVName, PVCapacityBytes, PVCName, PVCNamespace, PVStatus, PVAccessModes, PVType, PVTypeInfo, PVStorageClassName, PVCreationTimestamp, ClusterId, clustername, _ResourceId, hebben |
 | Kubernetes-gebeurtenissen | Uitvoeren-API | `KubeEvents` | TimeGenerated, computer, ClusterId_s, FirstSeen_t, LastSeen_t, Count_d, ObjectKind_s, Namespace_s, Name_s, Reason_s, Type_s, TimeGenerated_s, SourceComponent_s, ClusterName_s, bericht, hebben | 
 | Services in het Kubernetes-cluster | Uitvoeren-API | `KubeServices` | TimeGenerated, ServiceName_s, Namespace_s, SelectorLabels_s, ClusterId_s, ClusterName_s, ClusterIP_s, ServiceType_s, hebben | 
-| Prestatie gegevens voor knoop punten die deel uitmaken van het Kubernetes-cluster | Metrische gegevens over gebruik worden opgehaald uit cAdvisor en limieten van de uitvoeren-API | Perf &#124; waarbij ObjectName = = "K8SNode" | Computer, ObjectName, CounterName &#40;cpuAllocatableNanoCores, memoryAllocatableBytes, cpuCapacityNanoCores, memoryCapacityBytes, memoryRssBytes, cpuUsageNanoCores, memoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, TimeGenerated, CounterPath, hebben | 
-| Prestatie gegevens voor containers onderdeel van het Kubernetes-cluster | Metrische gegevens over gebruik worden opgehaald uit cAdvisor en limieten van de uitvoeren-API | Perf &#124; waarbij ObjectName = = "K8SContainer" | Tellernaam &#40; cpuRequestNanoCores, memoryRequestBytes, cpuLimitNanoCores, memoryWorkingSetBytes, restartTimeEpoch, cpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, TimeGenerated, CounterPath, hebben | 
+| Prestatie gegevens voor knoop punten die deel uitmaken van het Kubernetes-cluster | Metrische gegevens over gebruik worden opgehaald uit cAdvisor en limieten van de uitvoeren-API | `Perf \| where ObjectName == "K8SNode"` | Computer, ObjectName, CounterName &#40;cpuAllocatableNanoCores, memoryAllocatableBytes, cpuCapacityNanoCores, memoryCapacityBytes, memoryRssBytes, cpuUsageNanoCores, memoryWorkingsetBytes, restartTimeEpoch&#41;, CounterValue, TimeGenerated, CounterPath, hebben | 
+| Prestatie gegevens voor containers onderdeel van het Kubernetes-cluster | Metrische gegevens over gebruik worden opgehaald uit cAdvisor en limieten van de uitvoeren-API | `Perf \| where ObjectName == "K8SContainer"` | Tellernaam &#40;cpuRequestNanoCores, memoryRequestBytes, cpuLimitNanoCores, memoryWorkingSetBytes, restartTimeEpoch, cpuUsageNanoCores, memoryRssBytes&#41;, CounterValue, TimeGenerated, CounterPath, hebben | 
 | Aangepaste metrische gegevens ||`InsightsMetrics` | Computer, naam, naam ruimte, oorsprong, hebben, tags<sup>1</sup>, TimeGenerated, type, Va, _ResourceId | 
 
 <sup>1</sup> de eigenschap *Tags* vertegenwoordigt [meerdere dimensies](../essentials/data-platform-metrics.md#multi-dimensional-metrics) voor de bijbehorende metriek. Zie overzicht van InsightsMetrics voor meer informatie over de metrische gegevens die in de tabel worden verzameld en opgeslagen `InsightsMetrics` en een beschrijving [](https://github.com/microsoft/OMS-docker/blob/vishwa/june19agentrel/docs/InsightsMetrics.md)van de record eigenschappen.
@@ -37,7 +38,7 @@ In de volgende tabel worden de details van de records die door container Insight
 
 Met Azure Monitor Logboeken kunt u zoeken naar trends, knel punten diagnosticeren, prognoses maken of correleren van gegevens waarmee u kunt bepalen of de huidige cluster configuratie optimaal presteert. Vooraf gedefinieerde zoek opdrachten in Logboeken worden weer gegeven zodat u direct aan de slag kunt gaan met of kunt aanpassen om de informatie op de gewenste manier te retour neren.
 
-U kunt een interactieve analyse van de gegevens in de werk ruimte uitvoeren door de **gebeurtenis logboeken Kubernetes weer geven** of **container logboeken weer geven** te selecteren in het deel venster voor beeld in de vervolg keuzelijst **analyse weer geven** . De pagina **Zoeken in Logboeken** wordt weer gegeven aan de rechter kant van de Azure portal pagina waarop u zich bevond.
+U kunt gegevens in de werk ruimte interactief analyseren door de **gebeurtenis logboeken Kubernetes weer geven** of **container logboeken weer geven** te selecteren in het deel venster voor beeld in de vervolg keuzelijst **analyse weer** geven. De pagina **Zoeken in Logboeken** wordt weer gegeven aan de rechter kant van de Azure portal pagina waarop u zich bevond.
 
 ![Gegevens analyseren in Log Analytics](./media/container-insights-analyze/container-health-log-search-example.png)
 
@@ -47,14 +48,58 @@ De container logboeken uitvoer die wordt doorgestuurd naar uw werk ruimte zijn S
 
 Het is vaak handig om query's te bouwen die beginnen met een voor beeld of twee en deze vervolgens te wijzigen zodat ze aan uw vereisten voldoen. Om geavanceerdere query's te kunnen bouwen, kunt u experimenteren met de volgende voorbeeld query's:
 
-| Query’s uitvoeren | Beschrijving | 
-|-------|-------------|
-| ContainerInventory<br> &#124; project computer, name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; weergave tabel | Alle levenscyclus gegevens van een container weer geven| 
-| KubeEvents_CL<br> &#124; waar niet (IsEmpty (Namespace_s))<br> &#124; sorteren op TimeGenerated desc<br> &#124; weergave tabel | Kubernetes-gebeurtenissen|
-| ContainerImageInventory<br> &#124; samenvatte AggregatedValue = Count () per afbeelding, ImageTag, uitgevoerd | Inventaris van installatie kopieën | 
-| **Selecteer de weergave optie lijn diagram**:<br> Prestaties<br> &#124; waarbij ObjectName = = "K8SContainer" en CounterName = = "cpuUsageNanoCores" &#124; samenvatten AvgCPUUsageNanoCores = AVG (CounterValue) by bin (TimeGenerated, 30m), INSTANCENAME | Container-CPU | 
-| **Selecteer de weergave optie lijn diagram**:<br> Prestaties<br> &#124; waarbij ObjectName = = "K8SContainer" en CounterName = = "memoryRssBytes" &#124; samenvatten AvgUsedRssMemoryBytes = AVG (CounterValue) by bin (TimeGenerated, 30m), INSTANCENAME | Container geheugen |
-| InsightsMetrics<br> &#124; waarbij name = = "requests_count"<br> &#124;s overzicht van Val = any (val) by TimeGenerated = bin (TimeGenerated, 1M)<br> &#124; sorteren op TimeGenerated ASC<br> &#124; project RequestsPerMinute = val-vorig (val), TimeGenerated <br> Barchart weer geven &#124;  | Aanvragen per minuut met aangepaste metrische gegevens |
+### <a name="list-all-of-a-containers-lifecycle-information"></a>Alle levenscyclus gegevens van een container weer geven
+
+```kusto
+ContainerInventory
+| project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime
+| render table
+```
+
+### <a name="kubernetes-events"></a>Kubernetes-gebeurtenissen
+
+``` kusto
+KubeEvents_CL
+| where not(isempty(Namespace_s))
+| sort by TimeGenerated desc
+| render table
+```
+### <a name="image-inventory"></a>Inventaris van installatie kopieën
+
+``` kusto
+ContainerImageInventory
+| summarize AggregatedValue = count() by Image, ImageTag, Running
+```
+
+### <a name="container-cpu"></a>Container-CPU
+
+**Selecteer de weergave optie lijn diagram**
+
+``` kusto
+Perf
+| where ObjectName == "K8SContainer" and CounterName == "cpuUsageNanoCores" 
+| summarize AvgCPUUsageNanoCores = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName 
+```
+
+### <a name="container-memory"></a>Container geheugen
+
+**Selecteer de weergave optie lijn diagram**
+
+```kusto
+Perf
+| where ObjectName == "K8SContainer" and CounterName == "memoryRssBytes"
+| summarize AvgUsedRssMemoryBytes = avg(CounterValue) by bin(TimeGenerated, 30m), InstanceName
+```
+
+### <a name="requests-per-minute-with-custom-metrics"></a>Aanvragen per minuut met aangepaste metrische gegevens
+
+```kusto
+InsightsMetrics
+| where Name == "requests_count"
+| summarize Val=any(Val) by TimeGenerated=bin(TimeGenerated, 1m)
+| sort by TimeGenerated asc<br> &#124; project RequestsPerMinute = Val - prev(Val), TimeGenerated
+| render barchart 
+```
 
 ## <a name="query-prometheus-metrics-data"></a>Prometheus metrische gegevens opvragen
 

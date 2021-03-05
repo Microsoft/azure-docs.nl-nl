@@ -3,12 +3,12 @@ title: Virtuele machines in DevTest Labs maken en beheren met Azure CLI
 description: Meer informatie over het gebruik van Azure DevTest Labs voor het maken en beheren van virtuele machines met Azure CLI
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 57510a722ab6a34b9d498e74a140d6f350c8fc02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22ee6bf607fe1b66cece0e7ddb25a2da2830258b
+ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85482833"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102201461"
 ---
 # <a name="create-and-manage-virtual-machines-with-devtest-labs-using-the-azure-cli"></a>Virtuele machines maken en beheren met DevTest Labs met behulp van Azure CLI
 Deze Snelstartgids helpt u bij het maken, starten, aansluiten, bijwerken en opschonen van een ontwikkel machine in uw Lab. 
@@ -147,10 +147,10 @@ Met de volgende voorbeeld opdracht wordt een virtuele machine gestopt.
 az lab vm stop --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup
 ```
 
-Een virtuele machine verwijderen.
+Een VM verwijderen.
 ```azurecli
 az lab vm delete --lab-name sampleLabName --name sampleVMName --resource-group sampleResourceGroup
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de volgende inhoud: [Azure cli-documentatie voor Azure DevTest Labs](/cli/azure/lab?view=azure-cli-latest). 
+Zie de volgende inhoud: [Azure cli-documentatie voor Azure DevTest Labs](/cli/azure/lab). 

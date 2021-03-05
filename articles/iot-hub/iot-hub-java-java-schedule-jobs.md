@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/16/2019
 ms.custom: mqtt, devx-track-java
-ms.openlocfilehash: 36092e0bb7d0249837d2eaa7898e9231ecb5f5a9
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 3e98cfc2d8c7fb8d40c8565a1c620f123ce171ff
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146992"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217836"
 ---
 # <a name="schedule-and-broadcast-jobs-java"></a>Taken plannen en uitzenden (Java)
 
@@ -39,7 +39,7 @@ Zie voor meer informatie over elk van deze mogelijkheden:
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Maak een apparaat-app die een directe methode met de naam **lockDoor**implementeert. De apparaat-app ontvangt ook gewenste wijzigingen in de eigenschappen van de back-end-app.
+* Maak een apparaat-app die een directe methode met de naam **lockDoor** implementeert. De apparaat-app ontvangt ook gewenste wijzigingen in de eigenschappen van de back-end-app.
 
 * Maak een back-end-app die een taak maakt om de **lockDoor** direct-methode aan te roepen op meerdere apparaten. Een andere taak verzendt gewenste eigenschaps updates naar meerdere apparaten.
 
@@ -54,7 +54,7 @@ Aan het einde van deze zelf studie hebt u een app voor het maken van een Java-Co
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Java SE Development Kit 8](/java/azure/jdk/?view=azure-java-stable). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
+* [Java SE Development Kit 8](/java/azure/jdk/). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
@@ -134,7 +134,7 @@ De app maken:
 
 7. Open het **Schedule-jobs\src\main\java\com\mycompany\app\App.java** -bestand met behulp van een tekst editor.
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.service.devicetwin.DeviceTwinDevice;
@@ -359,7 +359,7 @@ In deze sectie maakt u een Java-Console-app die de gewenste eigenschappen van Io
 
 7. Open het **simulated-device\src\main\java\com\mycompany\app\App.java** -bestand met behulp van een tekst editor.
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;

@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 author: cweining
 ms.author: cweining
 ms.reviewer: cweining
-ms.openlocfilehash: 5913f5fa8d45e6bf92d6132468e0e3bf7a121c65
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: bd196e60fed8a18064bfa59e343e51a878a11237
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673515"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217394"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Momentopnamen voor foutopsporing over uitzonderingen in .NET-apps
 Wanneer er een uitzonde ring optreedt, kunt u automatisch een moment opname van de fout opsporing verzamelen vanuit uw Live Web-app. De moment opname toont de status van de bron code en variabelen op het moment dat de uitzonde ring werd gegenereerd. Met de Snapshot Debugger in [Azure-toepassing Insights](./app-insights-overview.md) wordt de telemetrie van de uitzonde ring van uw web-app gecontroleerd. Er worden moment opnamen van uw belangrijkste uitzonde ringen verzameld, zodat u over de benodigde informatie beschikt voor het vaststellen van problemen in de productie. Neem het [snap shot Collector NuGet-pakket](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) in uw toepassing op en Configureer eventueel verzamelings parameters in [ApplicationInsights.config](./configuration-with-applicationinsights-config.md). Moment opnamen worden weer gegeven op [uitzonde ringen](./asp-net-exceptions.md) in de Application Insights Portal.
@@ -29,6 +29,7 @@ Momentopname verzameling is beschikbaar voor:
 De volgende omgevingen worden ondersteund:
 
 * [Azure App Service](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+* [Azure-functie](snapshot-debugger-function-app.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Cloud Services](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) met OS Family 4 of hoger
 * [Azure service Fabric Services](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) die worden uitgevoerd op Windows Server 2012 R2 of hoger
 * [Azure virtual machines-en virtuele-machine schaal sets](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) met Windows Server 2012 R2 of hoger
@@ -134,6 +135,7 @@ In Azure-app Services kan de Snapshot Collector echter de methoden die deel uitm
 Application Insights Snapshot Debugger voor uw toepassing inschakelen:
 
 * [Azure App Service](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
+* [Azure-functie](snapshot-debugger-function-app.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Cloud Services](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Service Fabric Services](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Azure Virtual Machines-en virtuele-machine schaal sets](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)

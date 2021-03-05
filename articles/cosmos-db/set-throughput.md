@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/25/2021
-ms.openlocfilehash: 74addd691e3a6c42f48100292542cfd3563b5c3a
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: d39ade2536b96bf5e665ecfc01e81232f2fec075
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797592"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217938"
 ---
 # <a name="introduction-to-provisioned-throughput-in-azure-cosmos-db"></a>Inleiding tot ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -43,7 +43,7 @@ In de volgende afbeelding ziet u hoe een fysieke partitie als host fungeert voor
 
 :::image type="content" source="./media/set-throughput/resource-partition.png" alt-text="Fysieke partitie die als host fungeert voor een of meer logische partities van een container" border="false":::
 
-## <a name="set-throughput-on-a-database"></a>Door Voer instellen voor een Data Base
+## <a name="set-throughput-on-a-database"></a>Doorvoer instellen voor een database
 
 Wanneer u de door Voer inricht in een Azure Cosmos-data base, wordt de door Voer gedeeld via alle containers (shared data base-containers genoemd) in de-data base. Een uitzondering hierop is als u ingerichte doorvoer hebt opgegeven voor specifieke containers in de database. Het delen van de ingerichte door Voer op database niveau tussen de containers is vergelijkbaar met het hosten van een Data Base op een cluster machines. Omdat alle containers in een Data Base de resources delen die beschikbaar zijn op een computer, kunt u natuurlijk geen voorspel bare prestaties op een specifieke container krijgen. Zie [ingerichte door Voer configureren voor een Azure Cosmos-data base](how-to-provision-database-throughput.md)voor meer informatie over het configureren van een ingerichte door Voer voor een Data Base. Zie automatisch [schalen door Voer inrichten](how-to-provision-autoscale-throughput.md)voor meer informatie over het configureren van de door Voer van automatisch schalen op een Data Base.
 
@@ -69,7 +69,7 @@ Containers in een gedeelde doorvoerdatabase delen de doorvoer (RU/s) die zijn to
 
 > [!NOTE]
 > In februari 2020 hebben we een wijziging geïntroduceerd waarmee u Maxi maal 25 containers in een gedeelde doorvoer database kunt hebben, waardoor het delen van de door Voer via de containers beter wordt. Na de eerste 25 containers kunt u meer containers toevoegen aan de Data Base als ze zijn [ingericht met een specifieke door Voer](#set-throughput-on-a-database-and-a-container), die los is van de gedeelde door Voer van de data base.<br>
-Als uw Azure Cosmos DB-account al een Data Base met gedeelde door Voer bevat met >= 25 containers, zijn het account en alle andere accounts in hetzelfde Azure-abonnement uitgesloten van deze wijziging. [Neem contact op met product ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) als u feedback of vragen hebt. 
+Als uw Azure Cosmos DB-account al een gedeelde doorvoerdatabase bevat met minimaal 25 containers, zijn het account en alle overige accounts in hetzelfde Azure-abonnement uitgesloten van deze wijziging. [Neem contact op met product ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) als u feedback of vragen hebt. 
 
 Als uw workloads het verwijderen en opnieuw maken van alle verzamelingen in een Data Base vereisen, is het raadzaam om de lege data base weg te halen en opnieuw een nieuwe Data Base te maken voordat u de verzameling maakt. In de volgende afbeelding ziet u hoe een fysieke partitie een of meer logische partities kan hosten die deel uitmaken van verschillende containers in een Data Base:
 
@@ -99,12 +99,12 @@ Nadat u een Azure Cosmos-container of een-Data Base hebt gemaakt, kunt u de inge
 U kunt de ingerichte door Voer van een container of een Data Base ophalen in de Azure Portal of door gebruik te maken van de Sdk's:
 
 * [Container. ReadThroughputAsync](/dotnet/api/microsoft.azure.cosmos.container.readthroughputasync?view=azure-dotnet&preserve-view=true) in de .NET SDK.
-* [CosmosContainer. readThroughput](/java/api/com.azure.cosmos.cosmosasynccontainer.readthroughput?view=azure-java-stable&preserve-view=true) op de Java-SDK.
+* [CosmosContainer. readThroughput](/java/api/com.azure.cosmos.cosmosasynccontainer.readthroughput) op de Java-SDK.
 
 Het antwoord van deze methoden bevat ook de [minimale ingerichte door Voer](concepts-limits.md#storage-and-database-operations) voor de container of Data Base:
 
 * [ThroughputResponse. MinThroughput](/dotnet/api/microsoft.azure.cosmos.throughputresponse.minthroughput?view=azure-dotnet&preserve-view=true) in de .NET SDK.
-* [ThroughputResponse. getMinThroughput ()](/java/api/com.azure.cosmos.models.throughputresponse.getminthroughput?view=azure-java-stable&preserve-view=true) in de Java-SDK.
+* [ThroughputResponse. getMinThroughput ()](/java/api/com.azure.cosmos.models.throughputresponse.getminthroughput) in de Java-SDK.
 
 De werkelijke minimale RU/s kan variëren, afhankelijk van de configuratie van uw account. Maar in het algemeen is het het maximum van:
 
@@ -117,7 +117,7 @@ De werkelijke minimale RU/s kan variëren, afhankelijk van de configuratie van u
 U kunt de ingerichte door Voer van een container of een Data Base schalen via de Azure Portal of door gebruik te maken van de Sdk's:
 
 * [Container. ReplaceThroughputAsync](/dotnet/api/microsoft.azure.cosmos.container.replacethroughputasync?view=azure-dotnet&preserve-view=true) in de .NET SDK.
-* [CosmosContainer. replaceThroughput](/java/api/com.azure.cosmos.cosmosasynccontainer.replacethroughput?view=azure-java-stable&preserve-view=true) op de Java-SDK.
+* [CosmosContainer. replaceThroughput](/java/api/com.azure.cosmos.cosmosasynccontainer.replacethroughput) op de Java-SDK.
 
 Als u **de ingerichte door Voer verkort**, kunt u dit doen tot het [minimum](#current-provisioned-throughput).
 
@@ -129,7 +129,7 @@ Als u **de ingerichte door Voer toeneemt**, wordt de bewerking meestal onmiddell
 U kunt de voortgang van het schalen programmatisch controleren door de [huidige ingerichte door Voer](#current-provisioned-throughput) te lezen en te gebruiken:
 
 * [ThroughputResponse. IsReplacePending](/dotnet/api/microsoft.azure.cosmos.throughputresponse.isreplacepending?view=azure-dotnet&preserve-view=true) in de .NET SDK.
-* [ThroughputResponse. isReplacePending ()](/java/api/com.azure.cosmos.models.throughputresponse.isreplacepending?view=azure-java-stable&preserve-view=true) in de Java-SDK.
+* [ThroughputResponse. isReplacePending ()](/java/api/com.azure.cosmos.models.throughputresponse.isreplacepending) in de Java-SDK.
 
 U kunt [Azure monitor metrische gegevens](monitor-cosmos-db.md#view-operation-level-metrics-for-azure-cosmos-db) gebruiken om de geschiedenis van ingerichte door Voer (ru/s) en opslag voor een bron weer te geven.
 

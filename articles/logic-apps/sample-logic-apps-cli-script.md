@@ -7,25 +7,25 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/30/2020
-ms.openlocfilehash: e66edb1325d1c603e89f877f1d34f60c136eb1db
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: a4553ceee482fb232e9ab56deca650be93f9dc6b
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740728"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218040"
 ---
 # <a name="azure-cli-script-sample---create-a-logic-app"></a>Voor beeld van Azure CLI-script-een logische app maken
 
-Met dit script maakt u een voor beeld van een logische app via de [Azure CLI Logic apps extension](/cli/azure/ext/logic/logic?view=azure-cli-latest), ( `az logic` ). Voor een gedetailleerde hand leiding voor het maken en beheren van logische apps via de Azure CLI raadpleegt u de [Logic apps Snelstartgids voor de Azure cli](quickstart-logic-apps-azure-cli.md).
+Met dit script maakt u een voor beeld van een logische app via de [Azure CLI Logic apps extension](/cli/azure/ext/logic/logic), ( `az logic` ). Voor een gedetailleerde hand leiding voor het maken en beheren van logische apps via de Azure CLI raadpleegt u de [Logic apps Snelstartgids voor de Azure cli](quickstart-logic-apps-azure-cli.md).
 
 > [!WARNING]
-> De Azure CLI Logic Apps-extensie is momenteel *experimenteel* en *niet gedekt door klantenondersteuning* . Wees voorzichtig wanneer u deze CLI-extensie gebruikt, vooral als u ervoor kiest de extensie in productieomgevingen te gebruiken.
+> De Azure CLI Logic Apps-extensie is momenteel *experimenteel* en *niet gedekt door klantenondersteuning*. Wees voorzichtig wanneer u deze CLI-extensie gebruikt, vooral als u ervoor kiest de extensie in productieomgevingen te gebruiken.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-account met een actief abonnement. Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), geïnstalleerd op uw lokale computer.
-* De [Azure CLI Logic Apps-extensie](/cli/azure/azure-cli-extensions-list?view=azure-cli-latest), geïnstalleerd op uw computer. Gebruik de volgende opdracht om deze extensie te installeren: `az extension add --name logic`
+* [Azure CLI](/cli/azure/install-azure-cli), geïnstalleerd op uw lokale computer.
+* De [Azure CLI Logic Apps-extensie](/cli/azure/azure-cli-extensions-list), geïnstalleerd op uw computer. Gebruik de volgende opdracht om deze extensie te installeren: `az extension add --name logic`
 * Een [werk stroom definitie](quickstart-logic-apps-azure-cli.md#workflow-definition) voor uw logische app. Dit JSON-bestand moet voldoen aan het [taal schema voor de werk stroom definitie](logic-apps-workflow-definition-language.md).
 * Een API-verbinding met een e-mail account via een ondersteunde [Logic Apps-Connector](../connectors/apis-list.md) in dezelfde resource groep als uw logische app. In dit voor beeld wordt de [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md) -connector gebruikt, maar u kunt ook andere connectors gebruiken, zoals [Outlook.com](../connectors/connectors-create-api-outlook.md).
 
@@ -35,9 +35,9 @@ Valideer uw omgeving voordat u begint:
 
 * Meld u aan bij de Azure-portal en controleer of uw abonnement actief is door `az login` uit te voeren.
 
-* Controleer uw Azure CLI-versie in een terminal- of opdrachtvenster door `az --version` uit te voeren. Bekijk de [meest recente releaseopmerkingen](/cli/azure/release-notes-azure-cli?tabs=azure-cli&view=azure-cli-latest) voor de nieuwste versie.
+* Controleer uw Azure CLI-versie in een terminal- of opdrachtvenster door `az --version` uit te voeren. Bekijk de [meest recente releaseopmerkingen](/cli/azure/release-notes-azure-cli) voor de nieuwste versie.
 
-  * Als u de nieuwste versie niet hebt, werkt u uw installatie bij door de [installatiehandleiding voor uw besturingssysteem of platform](/cli/azure/install-azure-cli?view=azure-cli-latest) te volgen.
+  * Als u de nieuwste versie niet hebt, werkt u uw installatie bij door de [installatiehandleiding voor uw besturingssysteem of platform](/cli/azure/install-azure-cli) te volgen.
 
 ### <a name="sample-workflow-explanation"></a>Uitleg van de voorbeeld werk stroom
 
@@ -197,12 +197,12 @@ In dit voorbeeld script worden de volgende opdrachten gebruikt om een nieuwe res
 
 | Opdracht | Opmerkingen |
 | ------- | ----- |
-| [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Hiermee maakt u een resource groep waarin de resources van de logische app zijn opgeslagen. |
-| [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow?view=azure-cli-latest#ext-logic-az-logic-workflow-create) | Hiermee maakt u een logische app op basis van de werk stroom die is gedefinieerd in de para meter `--definition` . |
-| [`az group delete`](/cli/azure/vm/extension?view=azure-cli-latest) | Hiermee verwijdert u een resource groep en alle geneste resources. |
+| [`az group create`](/cli/azure/group#az-group-create) | Hiermee maakt u een resource groep waarin de resources van de logische app zijn opgeslagen. |
+| [`az logic workflow create`](/cli/azure/ext/logic/logic/workflow#ext-logic-az-logic-workflow-create) | Hiermee maakt u een logische app op basis van de werk stroom die is gedefinieerd in de para meter `--definition` . |
+| [`az group delete`](/cli/azure/vm/extension) | Hiermee verwijdert u een resource groep en alle geneste resources. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [documentatie van Azure CLI](/cli/azure/?view=azure-cli-latest) voor meer informatie over de Azure CLI.
+Raadpleeg de [documentatie van Azure CLI](/cli/azure/) voor meer informatie over de Azure CLI.
 
 Aanvullende Logic Apps CLI-voorbeeldscripts vindt u in [Microsoft's voorbeeldcodebrowser](/samples/browse/?products=azure-logic-apps).

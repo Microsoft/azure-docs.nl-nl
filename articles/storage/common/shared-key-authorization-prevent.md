@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/21/2021
+ms.date: 03/05/2021
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: 944e233fafc4cf5c8c90041e18f94d0e53b7bb46
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 2ed6c0c20869e31c0ef664d15305c5aa85ca4c6c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591530"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215575"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Verificatie van gedeelde sleutels voor een Azure Storage account voor komen (preview-versie)
 
@@ -22,12 +22,8 @@ Elke beveiligde aanvraag voor een Azure Storage account moet worden geautoriseer
 
 Wanneer u de verificatie van een gedeelde sleutel voor een opslag account niet toestaat, wijst Azure Storage alle volgende aanvragen af bij dat account dat is geautoriseerd met de toegangs sleutels voor het account. Alleen beveiligde aanvragen die zijn gemachtigd met Azure AD, slagen. Zie [toegang tot blobs en wacht rijen toestaan met Azure Active Directory](storage-auth-aad.md)voor meer informatie over het gebruik van Azure AD.
 
-> [!WARNING]
-> Azure Storage ondersteunt Azure AD-autorisatie alleen voor aanvragen voor Blob-en wachtrij opslag. Als u autorisatie met gedeelde sleutel voor een opslag account niet toestaat, zullen aanvragen naar Azure Files-of tabel opslag die gebruikmaken van gedeelde sleutel autorisatie, mislukken. Omdat de Azure Portal altijd een verificatie met een gedeelde sleutel gebruikt om toegang te krijgen tot bestands-en tabel gegevens, is het niet mogelijk om toegang te krijgen tot de gegevens van het bestand of de tabel in de Azure Portal als u autorisatie met gedeelde sleutel voor het opslag account niet toestaat.
->
-> Micro soft raadt u aan om alle Azure Files-of tabel opslag gegevens te migreren naar een afzonderlijk opslag account voordat u toegang tot het account via een gedeelde sleutel niet toestaat, of als u deze instelling niet toepast op opslag accounts die ondersteuning bieden voor Azure Files of de werk belasting van de tabel opslag.
->
-> Het niet toestaan van toegang tot gedeelde sleutels voor een opslag account heeft geen invloed op SMB-verbindingen met Azure Files.
+> [!IMPORTANT]
+> Het niet toestaan van de autorisatie van de gedeelde sleutel is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
 
 In dit artikel wordt beschreven hoe u aanvragen detecteert die zijn verzonden met gedeelde sleutel autorisatie en hoe u de autorisatie van gedeelde sleutels voor uw opslag account herstelt. Zie [over de preview-versie](#about-the-preview)als u wilt weten hoe u zich kunt registreren voor de preview-versie.
 
@@ -133,11 +129,23 @@ Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een 
 
     :::image type="content" source="media/shared-key-authorization-prevent/shared-key-access-portal.png" alt-text="Scherm afbeelding die laat zien hoe toegang tot gedeelde sleutels voor accounts niet kan worden toegestaan":::
 
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+Als u de verificatie van de gedeelde sleutel voor een opslag account met Power shell niet wilt toestaan, installeert u de [AZ. Storage Power shell-module](https://www.powershellgallery.com/packages/Az.Storage), versie 3.4.0 of hoger. Configureer vervolgens de eigenschap **AllowSharedKeyAccess** voor een nieuw of bestaand opslag account.
+
+In het volgende voor beeld ziet u hoe u toegang met gedeelde sleutel voor een bestaand opslag account niet kunt toestaan met Power shell. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
+
+```powershell
+Set-AzStorageAccount -ResourceGroupName <resource-group> `
+    -AccountName <storage-account> `
+    -AllowSharedKeyAccess $false
+```
+
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de verificatie van gedeelde sleutels voor een opslag account met Azure CLI niet wilt toestaan, installeert u Azure CLI versie 2.9.1 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **allowSharedKeyAccess** voor een nieuw of bestaand opslag account.
 
-In het volgende voor beeld ziet u hoe u de eigenschap **allowSharedKeyAccess** instelt met behulp van Azure cli. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
+In het volgende voor beeld ziet u hoe u toegang met gedeelde sleutel voor een bestaand opslag account met Azure CLI niet toestaat. Vergeet niet om de waarden van de tijdelijke aanduidingen tussen vier Kante haken te vervangen door uw eigen waarden:
 
 ```azurecli-interactive
 $storage_account_id=$(az resource show \
@@ -236,12 +244,17 @@ Sommige hulpprogram ma's van Azure bieden de mogelijkheid om Azure AD-autorisati
 | Azure IoT Hub | Ondersteund. Zie [IOT hub-ondersteuning voor virtuele netwerken](../../iot-hub/virtual-network-support.md)voor meer informatie. |
 | Azure Cloud Shell | Azure Cloud Shell is een geïntegreerde shell in de Azure Portal. Azure Cloud Shell hosts bestanden voor persistentie in een Azure-bestands share in een opslag account. Deze bestanden worden niet meer toegankelijk als de autorisatie van de gedeelde sleutel niet is toegestaan voor dat opslag account. Zie [verbinding maken met de opslag van uw Microsoft Azure-bestanden](../../cloud-shell/overview.md#connect-your-microsoft-azure-files-storage)voor meer informatie. <br /><br /> Als u de opdrachten in Azure Cloud Shell wilt uitvoeren om opslag accounts te beheren waarvoor gedeelde-sleutel toegang niet is toegestaan, moet u eerst controleren of u de juiste machtigingen hebt gekregen voor deze accounts via Azure RBAC. Zie [Wat is Azure Role-based Access Control (Azure RBAC)?](../../role-based-access-control/overview.md)voor meer informatie. |
 
+## <a name="transition-azure-files-and-table-storage-workloads"></a>Werk belastingen voor overgangs-Azure Files en tabel opslag
+
+Azure Storage ondersteunt Azure AD-autorisatie alleen voor aanvragen voor Blob-en wachtrij opslag. Als u autorisatie met gedeelde sleutel voor een opslag account niet toestaat, zullen aanvragen naar Azure Files-of tabel opslag die gebruikmaken van gedeelde sleutel autorisatie, mislukken. Omdat de Azure Portal altijd een verificatie met een gedeelde sleutel gebruikt om toegang te krijgen tot bestands-en tabel gegevens, is het niet mogelijk om toegang te krijgen tot de gegevens van het bestand of de tabel in de Azure Portal als u autorisatie met gedeelde sleutel voor het opslag account niet toestaat.
+
+Micro soft raadt u aan om alle Azure Files-of tabel opslag gegevens te migreren naar een afzonderlijk opslag account voordat u toegang tot het account via een gedeelde sleutel niet toestaat, of als u deze instelling niet toepast op opslag accounts die ondersteuning bieden voor Azure Files of de werk belasting van de tabel opslag.
+
+Het niet toestaan van toegang tot gedeelde sleutels voor een opslag account heeft geen invloed op SMB-verbindingen met Azure Files.
+
 ## <a name="about-the-preview"></a>Over de preview-versie
 
 De preview voor het niet toestaan van gedeelde sleutel autorisatie is beschikbaar in de open bare Azure-Cloud. Het wordt ondersteund voor opslag accounts die alleen gebruikmaken van het Azure Resource Manager-implementatie model. Zie [typen opslag accounts](storage-account-overview.md#types-of-storage-accounts)voor meer informatie over welke opslag accounts gebruikmaken van het Azure Resource Manager-implementatie model.
-
-> [!IMPORTANT]
-> Dit voor beeld is alleen bedoeld voor niet-productie gebruik.
 
 De preview bevat de beperkingen die in de volgende secties worden beschreven.
 

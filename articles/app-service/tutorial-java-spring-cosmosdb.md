@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
 ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 2c4fbefc1bb801ab4a9387054ac91e5fca14ec18
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 5a481e7ef37e36578b7f71a7afe70dcad737de89
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185594"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217462"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Zelfstudie: Een Java Spring Boot-web-app bouwen met Azure App Service in Linux en Azure Cosmos DB
 
@@ -310,7 +310,7 @@ az group delete --name <your-azure-group-name>
 ## <a name="next-steps"></a>Volgende stappen
 
 [Azure voor Java-ontwikkelaars](/java/azure/)
-[Spring Boot](https://spring.io/projects/spring-boot), [Spring Data voor Cosmos DB](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?view=azure-java-stable), [Azure Cosmos DB](../cosmos-db/introduction.md) en [Azure App Service op Linux](overview.md).
+[Spring Boot](https://spring.io/projects/spring-boot), [Spring Data voor Cosmos DB](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db), [Azure Cosmos DB](../cosmos-db/introduction.md) en [Azure App Service op Linux](overview.md).
 
 Lees meer over het uitvoeren van Java-apps in Azure App Service in Linux in de handleiding voor ontwikkelaars.
 

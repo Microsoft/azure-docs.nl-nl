@@ -16,12 +16,12 @@ ms.custom:
 - devx-track-java
 - devx-track-azurecli
 ms.date: 06/21/2019
-ms.openlocfilehash: 04a685969097af5c6930fecafb1afad9666250de
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: d17bdc00d18e1822264a4fd4cfa244146a58055f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99070675"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217275"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-azure-iot-hub-with-java"></a>Quickstart: Een apparaat dat is verbonden met Azure IoT Hub beheren met Java
 
@@ -33,7 +33,7 @@ In deze quickstart gebruikt u een directe methode om een gesimuleerd apparaat da
 
 * Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* Java SE Development Kit 8. In [Java-langetermijnondersteuning voor Azure en Azure Stack](/java/azure/jdk/?view=azure-java-stable) onder **Langetermijnondersteuning** selecteert u **Java 8**.
+* Java SE Development Kit 8. In [Java-langetermijnondersteuning voor Azure en Azure Stack](/java/azure/jdk/) onder **Langetermijnondersteuning** selecteert u **Java 8**.
 
     Gebruik de volgende opdracht om de huidige versie van Java op uw ontwikkelcomputer te controleren:
 

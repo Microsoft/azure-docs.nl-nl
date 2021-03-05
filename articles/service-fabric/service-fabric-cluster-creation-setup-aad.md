@@ -3,12 +3,12 @@ title: Azure Active Directory instellen voor client verificatie
 description: Meer informatie over het instellen van Azure Active Directory (Azure AD) voor het verifiëren van clients voor Service Fabric clusters.
 ms.topic: conceptual
 ms.date: 6/28/2019
-ms.openlocfilehash: 537a81a090828d3fcc9dde6032f1d4eb2df9b4e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1f89e144f9cef12c5bff87befb00a88bad8d7d9
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258775"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215966"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Azure Active Directory instellen voor client verificatie
 
@@ -104,7 +104,7 @@ Wanneer u zich probeert aan te melden bij Azure AD in Service Fabric Explorer, r
 De cluster toepassing (web) die staat voor Service Fabric Explorer pogingen om te verifiëren bij Azure AD en als onderdeel van de aanvraag, levert de omleidings-URL. De URL wordt echter niet weer gegeven in de lijst met **antwoord-url's** voor de Azure AD-toepassing.
 
 #### <a name="solution"></a>Oplossing
-Selecteer op de pagina Azure AD-App-registratie voor uw cluster **verificatie**en voeg in het gedeelte **omleidings-URI'S** de service Fabric Explorer URL toe aan de lijst. Sla uw wijziging op.
+Selecteer op de pagina Azure AD-App-registratie voor uw cluster **verificatie** en voeg in het gedeelte **omleidings-URI'S** de service Fabric Explorer URL toe aan de lijst. Sla uw wijziging op.
 
 ![Antwoord-URL van webtoepassing][web-application-reply-url]
 
@@ -138,7 +138,7 @@ FabricClient en FabricGateway voeren een wederzijdse verificatie uit. Tijdens Az
 
 
 <!-- Links -->
-[azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+[azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli
 [azure-portal]: https://portal.azure.com/
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [active-directory-howto-tenant]:../active-directory/develop/quickstart-create-new-tenant.md

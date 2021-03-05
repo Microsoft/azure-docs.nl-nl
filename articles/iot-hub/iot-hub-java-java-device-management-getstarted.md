@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: mqtt, devx-track-java
-ms.openlocfilehash: 28b82c87442257124f286a5e7c949afe7f001019
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: f05e1a458bc83fe4042c4b6cf35d9aa2095868ef
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146925"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217955"
 ---
 # <a name="get-started-with-device-management-java"></a>Aan de slag met Apparaatbeheer (Java)
 
@@ -54,7 +54,7 @@ Aan het einde van deze zelf studie hebt u twee Java Console-apps:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Java SE Development Kit 8](/java/azure/jdk/?view=azure-java-stable). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
+* [Java SE Development Kit 8](/java/azure/jdk/). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
@@ -134,7 +134,7 @@ Met deze console-app maakt u verbinding met uw IoT Hub om de directe methode aan
 
 7. Open met een tekst editor het bron bestand **trigger-reboot\src\main\java\com\mycompany\app\App.java** .
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.service.devicetwin.DeviceMethod;
@@ -294,7 +294,7 @@ In deze sectie maakt u een Java-Console-app die een apparaat simuleert. De app l
 
 7. Open met een tekst editor het bron bestand **simulated-device\src\main\java\com\mycompany\app\App.java** .
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;
@@ -415,7 +415,7 @@ In deze sectie maakt u een Java-Console-app die een apparaat simuleert. De app l
     public static void main(String[] args) throws IOException, URISyntaxException
     ```
 
-16. Als u een **DeviceClient**wilt instantiëren, vervangt u de code in de methode **Main** door de volgende code:
+16. Als u een **DeviceClient** wilt instantiëren, vervangt u de code in de methode **Main** door de volgende code:
 
     ```java
     System.out.println("Starting device client sample...");

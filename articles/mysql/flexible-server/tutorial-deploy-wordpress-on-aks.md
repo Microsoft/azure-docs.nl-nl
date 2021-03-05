@@ -7,12 +7,12 @@ ms.author: sumuth
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: mvc
-ms.openlocfilehash: b82bb9b7684d1119b6b62216b52210845d8f4c67
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 6f2b3d9f38fc04428678a71c9942fc7aa2182dc8
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "98199628"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217190"
 ---
 # <a name="tutorial-deploy-wordpress-app-on-aks-with-azure-database-for-mysql---flexible-server"></a>Zelfstudie: WordPress-app implementeren op AKS met Azure Database for MySQL: flexibele server
 
@@ -60,7 +60,7 @@ In de volgende voorbeelduitvoer ziet u dat de resourcegroep is gemaakt:
 
 ## <a name="create-aks-cluster"></a>AKS-cluster maken
 
-Gebruik de opdracht [az aks create](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
+Gebruik de opdracht [az aks create](/cli/azure/aks#az-aks-create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
 
 ```azurecli-interactive
 az aks create --resource-group wordpress-project --name myAKSCluster --node-count 1 --generate-ssh-keys
@@ -73,13 +73,13 @@ Na enkele minuten is de opdracht voltooid en retourneert deze informatie over he
 
 ## <a name="connect-to-the-cluster"></a>Verbinding maken met het cluster
 
-Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-install-cli):
+Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/), de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli](/cli/azure/aks#az-aks-install-cli):
 
 ```azurecli-interactive
 az aks install-cli
 ```
 
-Gebruik de opdracht [az aks get-credentials](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-get-credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
+Gebruik de opdracht [az aks get-credentials](/cli/azure/aks#az-aks-get-credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group wordpress-project --name myAKSCluster
@@ -102,7 +102,7 @@ aks-nodepool1-31718369-0   Ready    agent   6m44s   v1.12.8
 ```
 
 ## <a name="create-an-azure-database-for-mysql---flexible-server"></a>Azure Database for MySQL - flexibele server maken
-Maak een flexibele server met de opdracht [az mysql flexible-server create](/cli/azure/mysql/flexible-server?view=azure-cli-latest&preserve-view=true). Met de volgende opdracht maakt u een server met de standaardinstellingen van de service en waarden van de lokale context van Azure CLI:
+Maak een flexibele server met de opdracht [az mysql flexible-server create](/cli/azure/mysql/flexible-server). Met de volgende opdracht maakt u een server met de standaardinstellingen van de service en waarden van de lokale context van Azure CLI:
 
 ```azurecli-interactive
 az mysql flexible-server create --public-access <YOUR-IP-ADDRESS>
@@ -312,7 +312,7 @@ Open een webbrowser naar het externe IP-adres van uw service als u de WordPress-
 
 ## <a name="clean-up-the-resources"></a>Resources opschonen
 
-Om Azure-kosten te vermijden, moet u overbodige resources opschonen.  Gebruik de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest&preserve-view=true#az_group_delete) om de resourcegroep, de containerservice en alle gerelateerde resources te verwijderen wanneer u het cluster niet meer nodig hebt.
+Om Azure-kosten te vermijden, moet u overbodige resources opschonen.  Gebruik de opdracht [az group delete](/cli/azure/group#az_group_delete) om de resourcegroep, de containerservice en alle gerelateerde resources te verwijderen wanneer u het cluster niet meer nodig hebt.
 
 ```azurecli-interactive
 az group delete --name wordpress-project --yes --no-wait

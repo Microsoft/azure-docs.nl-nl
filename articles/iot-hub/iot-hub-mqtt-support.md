@@ -15,12 +15,12 @@ ms.custom:
 - contperf-fy21q1
 - fasttrack-edit
 - iot
-ms.openlocfilehash: 728014c53ab019f25bdc9b097c8b493411833aaa
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 44dd456ed31c7c31a041f32327f0a0af18a254a2
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198843"
+ms.locfileid: "102217734"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Communiceren met uw IoT-hub met het MQTT-protocol
 
@@ -55,7 +55,7 @@ De volgende tabel bevat koppelingen naar code voorbeelden voor elke ondersteunde
 | Taal | Para meter MQTT-Protocol | MQTT over web sockets protocol-para meter
 | --- | --- | --- |
 | [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) | Azure-IOT-Device-mqtt. Mqtt | Azure-IOT-Device-mqtt. MqttWs |
-| [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[IotHubClientProtocol](/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol?view=azure-java-stable&preserve-view=true). MQTT | IotHubClientProtocol.MQTT_WS |
+| [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[IotHubClientProtocol](/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol). MQTT | IotHubClientProtocol.MQTT_WS |
 | [C](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt_dm) | [MQTT_Protocol](/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-h/mqtt-protocol) | [MQTT_WebSocket_Protocol](/azure/iot-hub/iot-c-sdk-ref/iothubtransportmqtt-websockets-h/mqtt-websocket-protocol) |
 | [C#](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/iothub/device/samples) | [Transport type](/dotnet/api/microsoft.azure.devices.client.transporttype?view=azure-dotnet&preserve-view=true). Mqtt | Transport type. Mqtt valt terug naar MQTT via web sockets als MQTT mislukt. Als u alleen MQTT via web-sockets wilt opgeven, gebruikt u TransportType.Mqtt_WebSocket_Only |
 | [Python](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples) | Biedt standaard ondersteuning voor MQTT | Toevoegen `websockets=True` in de aanroep voor het maken van de client |
@@ -81,11 +81,11 @@ Om ervoor te zorgen dat een client/IoT Hub verbinding actief blijft, worden zowe
 
 |Taal  |Standaard interval voor Keep-Alive  |Configureerbaar  |
 |---------|---------|---------|
-|Node.js     |   180 seconden      |     Nee    |
-|Java     |    230 seconden     |     Nee    |
+|Node.js     |   180 seconden      |     No    |
+|Java     |    230 seconden     |     No    |
 |C     | 240 seconden |  [Ja](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md#mqtt-transport)   |
 |C#     | 300 seconden |  [Ja](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/src/Transport/Mqtt/MqttTransportSettings.cs#L89)   |
-|Python   | 60 seconden |  Nee   |
+|Python   | 60 seconden |  No   |
 
 Na de [MQTT](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718081)-IOT hub specificatie is het Keep-Alive ping-interval van 1,5 keer de client Keep-Alive waarde. IoT Hub beperkt echter de maximale time-out aan de server zijde tot 29,45 minuten (1767 seconden), omdat alle Azure-Services zijn gebonden aan de Azure load balancer TCP-time-out voor inactiviteit, 29,45 minuten. 
 
@@ -317,7 +317,7 @@ IoT Hub levert berichten met de **onderwerpnaam** `devices/{device_id}/messages/
 
 In Cloud-naar-apparaat-berichten worden de waarden in de eigenschappen verzameling weer gegeven, zoals in de volgende tabel:
 
-| Eigenschaps waarde | Wijze | Beschrijving |
+| Eigenschaps waarde | Wijze | Description |
 |----|----|----|
 | `null` | `key` | Alleen de sleutel wordt weer gegeven in de eigenschappen verzameling |
 | lege teken reeks | `key=` | De sleutel gevolgd door een gelijkteken zonder waarde |

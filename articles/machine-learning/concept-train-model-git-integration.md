@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 11/16/2020
-ms.openlocfilehash: 7c10d3066dc7b9ee0994de8c327b286bf8c917e7
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 53459ad766ffcf156d2906a38666a14c4883b5e8
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099469"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215932"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Git-integratie voor Azure Machine Learning
 
@@ -192,7 +192,7 @@ De `az ml run` cli-opdracht kan worden gebruikt om de eigenschappen op te halen 
 az ml run list -e train-on-amlcompute --last 1 -w myworkspace -g myresourcegroup --query '[].properties'
 ```
 
-Zie voor meer informatie de documentatie van [AZ ml run](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest) Reference.
+Zie voor meer informatie de documentatie van [AZ ml run](/cli/azure/ext/azure-cli-ml/ml/run) Reference.
 
 ## <a name="next-steps"></a>Volgende stappen
 

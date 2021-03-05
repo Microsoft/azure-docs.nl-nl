@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 42d388aed618a5a92212152166573719c9e973c6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4f615ed44594379c79f179a467888652c597e286
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371019"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217173"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Service-eindpunten voor virtuele netwerken voor Azure Key Vault
 
@@ -43,7 +43,6 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 | --- | --- |
 |Azure Virtual Machines Deployment-service|[Implementeer certificaten op vm's vanuit door de klant beheerde Key Vault](/archive/blogs/kv/updated-deploy-certificates-to-vms-from-customer-managed-key-vault).|
 |Implementatie service voor Azure Resource Manager-sjabloon|[Beveiligde waarden door geven tijdens de implementatie](../../azure-resource-manager/templates/key-vault-parameter.md).|
-|Azure-toepassing gateway v2 SKU|[TLS-beëindiging met Key Vault-certificaten](../../application-gateway/key-vault-certs.md)|
 |Volume Encryption-service Azure Disk Encryption|Toegang tot de BitLocker-sleutel (Windows-VM) of DM-wachtwoordzin (Linux-VM) en sleutel versleutelings sleutel toestaan tijdens de implementatie van de virtuele machine. Hiermee maakt u [Azure Disk Encryption](../../security/fundamentals/encryption-overview.md)mogelijk.|
 |Azure Backup|Het maken van back-ups en het herstellen van relevante sleutels en geheimen tijdens Azure Virtual Machines backup toestaan met behulp van [Azure backup](../../backup/backup-overview.md).|
 |Exchange Online & share point online|Toegang tot de klant sleutel toestaan voor de code ring van Azure Storage-service met de code van de [klant](/microsoft-365/compliance/customer-key-overview).|

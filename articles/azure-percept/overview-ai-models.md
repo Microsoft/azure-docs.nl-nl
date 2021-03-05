@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.custom: template-concept
-ms.openlocfilehash: 8a9ed564012e8b530436152d931f5a5f6470ff98
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: d0cdabb3b22d642a7903810181106b09c549e1a2
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098363"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218159"
 ---
 # <a name="azure-percept-ai-models"></a>Azure percept AI-modellen
 
@@ -29,9 +29,9 @@ Azure percept Studio bevat voorbeeld modellen voor de volgende toepassingen:
 
 Met vooraf getrainde modellen is geen code ring of trainings gegevens verzameling vereist. Implementeer uw gewenste model in azure percept DK vanuit de portal en open de video stroom van de Devkit om het model dezicht in actie te zien. U kunt de telemetrie van het model niet gebruiken via het hulp programma [Azure IOT Explorer](https://github.com/Azure/azure-iot-explorer/releases) .
 
-## <a name="pre-built-solutions"></a>Vooraf gebouwde oplossingen
+## <a name="reference-solutions"></a>Referentieoplossingen
 
-Er is ook een [vooraf gemaakte ruimtelijke analyse oplossing voor personen detectie](https://github.com/george-moore/Santa-Cruz-AI-App) beschikbaar. De vooraf ontwikkelde oplossing is een open-source AI-toepassing die op Edge gebaseerde mensen oplevert met door de gebruiker gedefinieerde zone invoer/afsluit gebeurtenissen. De video-en AI-uitvoer van het on-premise edge-apparaat is egressed naar [Azure data Lake](https://azure.microsoft.com/solutions/data-lake/), met de gebruikers interface die als een Azure-website wordt uitgevoerd. AI-deinterferentie wordt aangeboden door een open-source AI-model voor het detecteren van personen.
+Er is ook een [referentie oplossing](https://github.com/microsoft/Azure-Percept-Reference-Solutions/tree/main/people-detection-app) voor het tellen van personen beschikbaar. Deze referentie oplossing is een open-source AI-toepassing die op Edge gebaseerde personen oplevert die worden geteld met door de gebruiker gedefinieerde zone invoer/afsluit gebeurtenissen. De video-en AI-uitvoer van het on-premise edge-apparaat is egressed naar [Azure data Lake](https://azure.microsoft.com/solutions/data-lake/), met de gebruikers interface die als een Azure-website wordt uitgevoerd. AI-deinterferentie wordt aangeboden door een open-source AI-model voor het detecteren van personen.
 
 :::image type="content" source="./media/overview-ai-models/people-detector.gif" alt-text="Vooraf ontwikkelde oplossings-gif van ruimtelijke analyse.":::
 

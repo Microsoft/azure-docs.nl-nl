@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 9f798751065d4889569f4b798ac864342f3e54ef
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: d898efb44bb92151a5d044a6699a4efb70fa9390
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98934394"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215728"
 ---
 # <a name="usage-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Gebruik in Commerciële marketplace-analyses
 
@@ -154,9 +154,9 @@ _**Tabel 1: woorden lijst met gegevens termen**_
 | NormalizedUsage | Genormaliseerd gebruik | Het totale aantal genormaliseerde verbruiks eenheden dat door de klant wordt gebruikt.<br>Genormaliseerde gebruiks uren worden gedefinieerd als het gebruik van uren die zijn genormaliseerd voor het aantal VM-kernen ([aantal VM-kernen] x [uur van onbewerkt gebruik]). Vm's die zijn aangewezen als "SHAREDCORE" gebruiken 1/6 (of 0,1666) als [aantal VM-kernen] vermenigvuldiger. |
 | MeteredUsage | Gebruik met data limiet | De totale verbruikte eenheden die worden gebruikt door de meters die zijn geconfigureerd met de aanbieding die door de klant wordt geïmplementeerd. |
 | RawUsage | Onbewerkt gebruik | Het totale aantal onbewerkte verbruiks eenheden dat door de klant wordt gebruikt.<br>Onbewerkte gebruiks uren worden gedefinieerd als de hoeveelheid tijd waarop Vm's zijn uitgevoerd in termen van gebruiks eenheden. |
-| Geschatte berekende toeslag (CC) | Geschatte berekende toeslag in de klant valuta | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de prijs (CC) en het gebruiks aantal. |
-| Geschatte uitgebreide lading (PC) | Geschatte berekende kosten in de valuta voor betaling | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de geschatte prijs (PC) en het gebruiks aantal. |
-||||
+| Geschatte berekende toeslag (CC) | Geschatte berekende toeslag in de klant valuta | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de prijs (CC) en het onbewerkte gebruik. |
+| Geschatte uitgebreide lading (PC) | Geschatte berekende kosten in de valuta voor betaling | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de geschatte prijs (PC) en het onbewerkte gebruik. |
+|
 
 ### <a name="usage-page-filters"></a>Filters voor gebruiks pagina's
 

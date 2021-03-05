@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-java
-ms.openlocfilehash: 763b9e05adc07c02265dbb511c073b42df44ea95
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5ae1850add94d83278b0fe1905dfa6e53c71fc8e
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146864"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217887"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-java"></a>Cloud-naar-apparaat-berichten verzenden met IoT Hub (Java)
 
@@ -51,7 +51,7 @@ Aan het einde van deze zelf studie voert u twee Java Console-apps uit:
 
 * Een volledige werkende versie van het [verzenden van telemetrie van een apparaat naar een IOT hub](quickstart-send-telemetry-java.md) -Snelstartgids of het [configureren van bericht routering met IOT hub](tutorial-routing.md) zelf studie.
 
-* [Java SE Development Kit 8](/java/azure/jdk/?view=azure-java-stable). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
+* [Java SE Development Kit 8](/java/azure/jdk/). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
@@ -143,7 +143,7 @@ In deze sectie maakt u een Java-Console-app die Cloud-naar-apparaat-berichten na
 
 5. Open het send-c2d-messages\src\main\java\com\mycompany\app\App.java-bestand met behulp van een tekst editor.
 
-6. Voeg de volgende **import**instructies toe aan het bestand:
+6. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.service.*;
@@ -211,7 +211,7 @@ U kunt nu de toepassingen gaan uitvoeren.
     mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
     ```
 
-    ![De app gesimuleerde apparaten uitvoeren](./media/iot-hub-java-java-c2d/receivec2d.png)
+    ![De app voor een gesimuleerd apparaat uitvoeren](./media/iot-hub-java-java-c2d/receivec2d.png)
 
 2. Voer bij een opdracht prompt in de map Send-C2D-berichten de volgende opdracht uit om een Cloud-naar-apparaat-bericht te verzenden en te wachten op een feedback bevestiging:
 

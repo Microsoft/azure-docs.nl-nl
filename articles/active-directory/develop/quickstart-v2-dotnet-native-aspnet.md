@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 9dc787c57ef3ab84d9a2b90cfe059594b0a31d08
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 0e8565615cdbac63b0526b5cd87dd9d92d5aa4f1
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102509"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102216680"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 
@@ -178,7 +178,7 @@ U kunt aanmeldingstoegang voor uw toepassing beperken tot gebruikersaccounts die
 
 ### <a name="option-2-use-a-custom-method-to-validate-issuers"></a>Optie 2: Een aangepaste methode gebruiken om uitgevers te valideren
 
-U kunt een aangepaste methode implementeren om uitgevers te valideren met behulp van de parameter `IssuerValidator`. Als u meer informatie wilt over deze parameter, bekijk dan de [TokenValidationParameters](/dotnet/api/microsoft.identitymodel.tokens.tokenvalidationparameters?view=azure-dotnet&preserve-view=true)-klasse.
+U kunt een aangepaste methode implementeren om uitgevers te valideren met behulp van de parameter `IssuerValidator`. Als u meer informatie wilt over deze parameter, bekijk dan de [TokenValidationParameters](/dotnet/api/microsoft.identitymodel.tokens.tokenvalidationparameters)-klasse.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 

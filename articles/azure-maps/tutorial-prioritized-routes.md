@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: dbf2331dc6bcd3187175554b61d347e8bb2c04a4
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 5e7f38e4bbc95e04bf54f8f7a2dd80e21891e8df
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624996"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215490"
 ---
 # <a name="tutorial-find-and-display-routes-for-different-modes-of-travel-using-azure-maps"></a>Zelfstudie: Routes vinden en weergeven voor verschillende manieren van reizen met Azure Maps
 
@@ -117,7 +117,7 @@ De volgende stappen laten zien hoe u het kaartbesturingselement maakt en weergee
     });
     ```
 
-    In de gebeurtenis-handler voor kaart `ready` is de instelling voor de verkeersstroom op de kaart ingesteld op `relative`, dit is de snelheid van de weg ten opzichte van een situatie met een vrije verkeersstroom. Zie [TrafficOptions-interface](/javascript/api/azure-maps-control/atlas.trafficoptions?preserve-view=false&view=azure-maps-typescript-latest) voor meer verkeersopties.
+    In de gebeurtenis-handler voor kaart `ready` is de instelling voor de verkeersstroom op de kaart ingesteld op `relative`, dit is de snelheid van de weg ten opzichte van een situatie met een vrije verkeersstroom. Zie [TrafficOptions-interface](/javascript/api/azure-maps-control/atlas.trafficoptions) voor meer verkeersopties.
 
 2. Sla het bestand **MapTruckRoute.html** op en vernieuw de pagina in uw browser. Als u inzoomt op een stad, zoals Los Angeles, ziet u dat de straten worden weergegeven met de huidige verkeersstroomgegevens.
 
@@ -193,7 +193,7 @@ In deze zelfstudie worden twee routes berekend en weergegeven op de kaart. De ee
 
     Deze code maakt twee [GeoJSON-puntobjecten](https://en.wikipedia.org/wiki/GeoJSON) die de begin- en eindpunten vertegenwoordigen, die vervolgens aan de gegevensbron worden toegevoegd.
 
-    In het laatste codeblok wordt de cameraweergave ingesteld met de breedtegraad en de lengtegraad van het begin- en eindpunt. De begin- en eindpunten worden toegevoegd aan de gegevensbron. Het begrenzingsvak voor de begin- en eindpunten wordt berekend met behulp van de functie `atlas.data.BoundingBox.fromData`. Dit begrenzingsvak wordt gebruikt om de cameraweergave van de kaart met behulp van de functie `map.setCamera` in te stellen op de hele route. Er wordt opvulling toegevoegd om de grootte van de pixels in de symboolpictogrammen te compenseren. Zie de eigenschap [setCamera(CameraOptions | CameraBoundsOptions & AnimationOptions)](/javascript/api/azure-maps-control/atlas.map?view=azure-maps-typescript-latest#setcamera-cameraoptions---cameraboundsoptions---animationoptions-&preserve-view=false) voor meer informatie over de eigenschap setCamera van het kaartbesturingselement.
+    In het laatste codeblok wordt de cameraweergave ingesteld met de breedtegraad en de lengtegraad van het begin- en eindpunt. De begin- en eindpunten worden toegevoegd aan de gegevensbron. Het begrenzingsvak voor de begin- en eindpunten wordt berekend met behulp van de functie `atlas.data.BoundingBox.fromData`. Dit begrenzingsvak wordt gebruikt om de cameraweergave van de kaart met behulp van de functie `map.setCamera` in te stellen op de hele route. Er wordt opvulling toegevoegd om de grootte van de pixels in de symboolpictogrammen te compenseren. Zie de eigenschap [setCamera(CameraOptions | CameraBoundsOptions & AnimationOptions)](/javascript/api/azure-maps-control/atlas.map#setcamera-cameraoptions---cameraboundsoptions---animationoptions-) voor meer informatie over de eigenschap setCamera van het kaartbesturingselement.
 
 3. Sla **TruckRoute.html** op en vernieuw de browser. De kaart is nu gecentreerd op Seattle. De blauwe druppelvormige speld duidt het beginpunt aan. De blauwe ronde speld duidt het eindpunt aan.
 

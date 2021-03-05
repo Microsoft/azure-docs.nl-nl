@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: mqtt, devx-track-java
-ms.openlocfilehash: 68908b7d62b8211c202262112831d5d2b523f594
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 53a82ba545fa1709d1b79f3ff6b18f1817736bb7
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92146960"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217853"
 ---
 # <a name="get-started-with-device-twins-java"></a>Aan de slag met Device apparaatdubbels (Java)
 
@@ -31,7 +31,7 @@ In deze zelf studie maakt u twee Java Console-apps:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Java SE Development Kit 8](/java/azure/jdk/?view=azure-java-stable). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
+* [Java SE Development Kit 8](/java/azure/jdk/). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
@@ -103,7 +103,7 @@ In deze sectie maakt u een Java-app waarmee de meta gegevens van een locatie wor
 
 7. Open het **Add-Tags-query\src\main\java\com\mycompany\app\App.java** -bestand met behulp van een tekst editor.
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.service.devicetwin.*;
@@ -273,7 +273,7 @@ In deze sectie maakt u een Java-Console-app waarmee een gerapporteerde eigenscha
 
 7. Open het **simulated-device\src\main\java\com\mycompany\app\App.java** -bestand met behulp van een tekst editor.
 
-8. Voeg de volgende **import**instructies toe aan het bestand:
+8. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.device.*;

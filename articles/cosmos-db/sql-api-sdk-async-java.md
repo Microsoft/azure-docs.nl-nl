@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: adca35567499452cf35b9541d3a7caac27b45a0a
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 1a9add42026dddeb5ce5ac5fcbcd5b93d109b594
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545482"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102216806"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB asynchrone Java-SDK voor SQL API: release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -47,12 +47,12 @@ De SQL API async Java SDK wijkt af van de SQL API Java SDK door asynchrone bewer
 | |  |
 |---|---|
 | **SDK downloaden** | [Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb) |
-|**API-documentatie** |[Naslag documentatie voor Java API](/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient?preserve-view=true&view=azure-java-stable) | 
+|**API-documentatie** |[Naslag documentatie voor Java API](/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient) | 
 |**Bijdragen aan SDK** | [GitHub](https://github.com/Azure/azure-cosmosdb-java) | 
 |**Aan de slag** | [Aan de slag met de asynchrone Java-SDK](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-async-java-getting-started) | 
 |**Codevoorbeeld** | [GitHub](https://github.com/Azure/azure-cosmosdb-java#usage-code-sample)| 
 | **Tips voor prestaties**| [GitHub Leesmij](https://github.com/Azure/azure-cosmosdb-java#guide-for-prod)| 
-| **Minimale ondersteunde runtime**|[JDK 8](/java/azure/jdk/?view=azure-java-stable&preserve-view=true) | 
+| **Minimale ondersteunde runtime**|[JDK 8](/java/azure/jdk/) | 
 
 [!INCLUDE [Release notes](~/azure-cosmosdb-java-v2/changelog/README.md)]
 ## <a name="faq"></a>Veelgestelde vragen

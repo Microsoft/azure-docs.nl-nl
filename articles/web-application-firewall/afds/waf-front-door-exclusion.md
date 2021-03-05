@@ -7,16 +7,16 @@ ms.service: web-application-firewall
 ms.date: 11/10/2020
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: c2c84b508ee86ebdd82dbcc7040106142187c506
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 1b94a3d8675461779fa9d543bf0153b165ab4fb4
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563457"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217581"
 ---
 # <a name="web-application-firewall-waf-with-front-door-service-exclusion-lists"></a>Web Application firewall (WAF) met uitsluitings lijsten voor de front-deur service 
 
-Soms kan Web Application firewall (WAF) een aanvraag blok keren die u wilt toestaan voor uw toepassing. Active Directory voegt bijvoorbeeld tokens in die worden gebruikt voor verificatie. Deze tokens kunnen speciale tekens bevatten die een onjuiste positieve waarde van de WAF-regels kunnen activeren. Met WAF-uitsluitings lijsten kunt u bepaalde kenmerken van aanvragen van een WAF-evaluatie weglaten.  Een uitsluitings lijst kan worden geconfigureerd met behulp van  [Power shell](/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-3.5.0), [Azure cli](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion?view=azure-cli-latest#ext-front-door-az-network-front-door-waf-policy-managed-rules-exclusion-add), [rest API](/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal. In het volgende voor beeld ziet u de Azure Portal configuratie. 
+Soms kan Web Application firewall (WAF) een aanvraag blok keren die u wilt toestaan voor uw toepassing. Active Directory voegt bijvoorbeeld tokens in die worden gebruikt voor verificatie. Deze tokens kunnen speciale tekens bevatten die een onjuiste positieve waarde van de WAF-regels kunnen activeren. Met WAF-uitsluitings lijsten kunt u bepaalde kenmerken van aanvragen van een WAF-evaluatie weglaten.  Een uitsluitings lijst kan worden geconfigureerd met behulp van  [Power shell](/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-3.5.0), [Azure cli](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion#ext-front-door-az-network-front-door-waf-policy-managed-rules-exclusion-add), [rest API](/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal. In het volgende voor beeld ziet u de Azure Portal configuratie. 
 ## <a name="configure-exclusion-lists-using-the-azure-portal"></a>Uitsluitings lijsten configureren met behulp van de Azure Portal
 **Uitsluitingen beheren** is toegankelijk vanuit de WAF-portal onder **beheerde regels**
 
@@ -36,11 +36,11 @@ De volgende kenmerken kunnen worden toegevoegd aan de uitsluitings lijsten op na
 
 U kunt een exacte overeenkomst voor de aanvraag header, hoofd tekst, cookie of query teken reeks kenmerken opgeven.  Of u kunt eventueel gedeeltelijke overeenkomsten opgeven. De volgende Opera tors worden ondersteund:
 
-- **Is gelijk aan** : deze operator wordt gebruikt voor een exacte overeenkomst. Als u bijvoorbeeld een header met de naam **bearerToken** wilt selecteren, gebruikt u de operator equals met de selector ingesteld als **bearerToken**.
-- **Begint met** : deze operator komt overeen met alle velden die beginnen met de opgegeven selector-waarde.
-- **Eindigt op** : deze operator komt overeen met alle aanvraag velden die eindigen op de opgegeven selector-waarde.
-- **Contains** : deze operator komt overeen met alle aanvraag velden die de opgegeven selector-waarde bevatten.
-- **Is gelijk aan** : deze operator komt overeen met alle aanvraag velden. * is de waarde selector.
+- **Is gelijk aan**: deze operator wordt gebruikt voor een exacte overeenkomst. Als u bijvoorbeeld een header met de naam **bearerToken** wilt selecteren, gebruikt u de operator equals met de selector ingesteld als **bearerToken**.
+- **Begint met**: deze operator komt overeen met alle velden die beginnen met de opgegeven selector-waarde.
+- **Eindigt op**: deze operator komt overeen met alle aanvraag velden die eindigen op de opgegeven selector-waarde.
+- **Contains**: deze operator komt overeen met alle aanvraag velden die de opgegeven selector-waarde bevatten.
+- **Is gelijk aan**: deze operator komt overeen met alle aanvraag velden. * is de waarde selector.
 
 Namen van kopteksten en cookies zijn niet hoofdletter gevoelig.
 

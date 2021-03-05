@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: damendo
-ms.openlocfilehash: d172ba7353b7ac4c490584cd7c84871c6244f214
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: ac1550e34c09429eb9778a5256972fcb60861950
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961818"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217700"
 ---
 # <a name="introduction-to-effective-security-rules-view-in-azure-network-watcher"></a>Inleiding tot de weer gave effectief beveiligings regels in azure Network Watcher
 
@@ -37,7 +37,7 @@ U kunt regels selecteren en er wordt een nieuwe blade geopend om de netwerk beve
 U kunt ook de functie *effectief beveiligings groepen* gebruiken via andere methoden die hieronder worden weer gegeven:
 * [REST API](/rest/api/virtualnetwork/NetworkInterfaces/ListEffectiveNetworkSecurityGroups)
 * [PowerShell](/powershell/module/az.network/get-azeffectivenetworksecuritygroup?view=azps-4.4.0)
-* [Azure-CLI](/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-list-effective-nsg)
+* [Azure-CLI](/cli/azure/network/nic#az-network-nic-list-effective-nsg)
 
 Meer informatie over het controleren van de instellingen van uw netwerk beveiligings groep vindt u in de instellingen voor de netwerk [beveiligings groep controleren met Power shell](network-watcher-nsg-auditing-powershell.md)
 

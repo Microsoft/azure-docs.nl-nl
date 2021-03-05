@@ -13,12 +13,12 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-java
-ms.openlocfilehash: 2a02dc94c0dc0939e6c1eef624fc6fe65fb98ac6
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 3529361cacf0890b7c4752bbd745a9240020b4f3
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147011"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102217819"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-java"></a>Bestanden van uw apparaat uploaden naar de Cloud met IoT Hub (Java)
 
@@ -52,7 +52,7 @@ Aan het einde van deze zelf studie voert u twee Java Console-apps uit:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Java SE Development Kit 8](/java/azure/jdk/?view=azure-java-stable). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
+* [Java SE Development Kit 8](/java/azure/jdk/). Zorg ervoor dat u **Java 8** selecteert onder **lange termijn ondersteuning** om down loads voor JDK 8 te downloaden.
 
 * [Maven 3](https://maven.apache.org/download.cgi)
 
@@ -163,7 +163,7 @@ In deze sectie maakt u een Java-Console-app die meldings berichten voor het uplo
 
 5. Open het bestand met behulp van een tekst editor `read-file-upload-notification\src\main\java\com\mycompany\app\App.java` .
 
-6. Voeg de volgende **import**instructies toe aan het bestand:
+6. Voeg de volgende **import** instructies toe aan het bestand:
 
     ```java
     import com.microsoft.azure.sdk.iot.service.*;

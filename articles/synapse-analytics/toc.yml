@@ -1151,7 +1151,7 @@
 - name: Naslaginformatie
   items:
     - name: Azure CLI
-      href: /cli/azure/ext/synapse/?view=azure-cli-latest
+      href: /cli/azure/ext/synapse/
     - name: Sorteringstypen van de database
       href: sql/reference-collation-types.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Aan de slag

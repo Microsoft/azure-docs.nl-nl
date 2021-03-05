@@ -2,17 +2,17 @@
 title: DNS-configuratie van Azure-privé-eindpunt
 description: Meer informatie over de DNS-configuratie voor het persoonlijke eind punt
 services: private-link
-author: allensu
+author: asudbring
 ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: allensu
-ms.openlocfilehash: 3cb5dd88572fda7a939aa529a5372d72575ffdbb
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 42c5b315c9c3560c400c685448a11dc61bf64eb6
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203280"
+ms.locfileid: "102215609"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>DNS-configuratie van Azure-privé-eindpunt
 
@@ -79,7 +79,7 @@ Voor Azure-Services gebruikt u de aanbevolen zone namen zoals beschreven in de v
 | Cognitive Services (micro soft. CognitiveServices/accounts)/account | privatelink.cognitiveservices.azure.com  | cognitiveservices.azure.com  |
 | Azure File Sync (micro soft. StorageSync/storageSyncServices)/AFS |  privatelink.afs.azure.net  |  afs.azure.net  |
 | Azure Data Factory (micro soft. DataFactory/fabrieken)/dataFactory |  privatelink.datafactory.azure.net  |  datafactory.azure.net  |
-| Azure Data Factory (micro soft. DataFactory/fabrieken)/Portal |  privatelink.azure.com  |  azure.com  |
+| Azure Data Factory (micro soft. DataFactory/fabrieken)/Portal |  privatelink.adf.azure.com  |  adf.azure.com  |
 | Azure-cache voor redis (micro soft. cache/redis)/redisCache | privatelink.redis.cache.windows.net | redis.cache.windows.net |
 
 <sup>1</sup> Voor gebruik met de ingebouwde Event hub-compatibel eind punt van IoT Hub. Zie [ondersteuning voor persoonlijke koppelingen voor het ingebouwde eind punt van IOT hub voor](../iot-hub/virtual-network-support.md#built-in-event-hub-compatible-endpoint) meer informatie
@@ -97,7 +97,6 @@ Voor Azure-Services gebruikt u de aanbevolen zone namen zoals beschreven in de v
 | Azure Database for PostgreSQL-één server (micro soft. DBforPostgreSQL/servers)/postgresqlServer | privatelink.postgres.database.chinacloudapi.cn | postgres.database.chinacloudapi.cn |
 | Azure Database for MySQL (micro soft. DBforMySQL/servers)/mysqlServer | privatelink.mysql.database.chinacloudapi.cn  | mysql.database.chinacloudapi.cn  |
 | Azure Database for MariaDB (micro soft. DBforMariaDB/servers)/mariadbServer | privatelink.mariadb.database.chinacloudapi.cn | mariadb.database.chinacloudapi.cn |
-
 
 ## <a name="dns-configuration-scenarios"></a>DNS-configuratie scenario's
 

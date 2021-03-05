@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 476a88e41382842d91859d319a571784bd6e9b49
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ca1308c969227336bfb4970f7c5c77b9f2e0cc22
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748089"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102216527"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Zelfstudie: Een bestaande aangepaste DNS-naam toewijzen aan Azure App Service
 
@@ -27,6 +27,8 @@ In deze zelfstudie leert u het volgende:
 > * Een wildcard-domein toewijzen met behulp van een CNAME-record.
 > * Een standaard-URL omleiden naar een aangepaste map.
 
+<hr/> 
+
 ## <a name="1-prepare-your-environment"></a>1. uw omgeving voorbereiden
 
 * [Maak een App Service-app](./index.yml), of gebruik een app die u hebt gemaakt voor een andere zelfstudie.
@@ -34,18 +36,20 @@ In deze zelfstudie leert u het volgende:
 
     <details>
         <summary>Wat heb ik nodig om DNS-records te bewerken?</summary>
-        Vereist toegang tot het DNS-REGI ster voor uw domein provider, zoals GoDaddy. Als u bijvoorbeeld DNS-vermeldingen wilt toevoegen voor contoso.com en www.contoso.com, moet u de DNS-instellingen voor het hoofd domein contoso.com kunnen configureren.
+        Vereist toegang tot het DNS-REGI ster voor uw domein provider, zoals GoDaddy. Als u bijvoorbeeld DNS-vermeldingen voor <code>contoso.com</code> en <code>www.contoso.com</code> wilt toevoegen, moet u de DNS-instellingen voor het hoofddomein van <code>contoso.com</code> kunnen configureren.
     </details>
+
+<hr/> 
 
 ## <a name="2-prepare-the-app"></a>2. de app voorbereiden
 
 Om een aangepaste DNS-naam toe te wijzen aan een app, wordt de app <abbr title="Hiermee geeft u de locatie, de grootte en de functies van de webserver farm die als host fungeert voor uw app.">App Service-plan</abbr> moet een betaalde laag zijn (niet <abbr title="Een Azure App Service-laag waarin uw app wordt uitgevoerd op dezelfde Vm's als andere apps, waaronder apps van andere klanten. Deze laag is bedoeld voor ontwikkelen en testen.">**Gratis (F1)**</abbr>). Zie [Azure app service plan Overview](overview-hosting-plans.md)(Engelstalig) voor meer informatie.
 
-### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
+#### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 Open [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account.
 
-### <a name="select-the-app-in-the-azure-portal"></a>Selecteer de app in de Azure-portal
+#### <a name="select-the-app-in-the-azure-portal"></a>Selecteer de app in de Azure-portal
 
 1. Zoek en selecteer **App Services**.
 
@@ -59,7 +63,7 @@ Open [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account
 
 <a name="checkpricing" aria-hidden="true"></a>
 
-### <a name="check-the-pricing-tier"></a>Controleer de prijscategorie
+#### <a name="check-the-pricing-tier"></a>Controleer de prijscategorie
 
 1. Schuif in het linkerdeelvenster op de app-pagina naar de sectie **Instellingen** en selecteer **Omhoog schalen (App Service-plan)** .
 
@@ -73,7 +77,7 @@ Open [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account
 
 <a name="scaleup" aria-hidden="true"></a>
 
-### <a name="scale-up-the-app-service-plan"></a>Het App Service-plan opschalen
+#### <a name="scale-up-the-app-service-plan"></a>Het App Service-plan opschalen
 
 1. Selecteer een van de lagen die niet gratis zijn (**D1**, **B1**, **B2**, **B3** of een laag in de categorie **Productie**). Selecteer **Aanvullende opties bekijken** voor aanvullende opties.
 
@@ -84,6 +88,8 @@ Open [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account
    Wanneer u de volgende melding ziet, is de schaalbewerking voltooid.
 
    ![Schermopname waarin de bevestiging van de schaalbewerking wordt weergegeven.](./media/app-service-web-tutorial-custom-domain/scale-notification.png)
+
+<hr/> 
 
 <a name="cname" aria-hidden="true"></a>
 
@@ -98,14 +104,16 @@ Als u een aangepast domein wilt toevoegen aan uw app, moet u verifiëren dat u d
 
     <details>
         <summary>Waarom heb ik dit nodig?</summary>
-        Het toevoegen van domeinverificatie-id's aan uw aangepaste domein kan zwevende DNS-vermeldingen voorkomen en overnames van subdomeinen helpen voorkomen. Voor aangepaste domeinen die u eerder hebt geconfigureerd zonder deze verificatie-id, moet u deze beveiligen tegen ditzelfde risico door de verificatie-id toe te voegen aan uw DNS-record. Zie [Subdomein overnemen](../security/fundamentals/subdomain-takeover.md) voor meer informatie over deze veelvoorkomende, zeer kritieke bedreiging.
+        Het toevoegen van domeinverificatie-id's aan uw aangepaste domein kan zwevende DNS-vermeldingen voorkomen en overnames van subdomeinen helpen voorkomen. Voor aangepaste domeinen die u eerder hebt geconfigureerd zonder deze verificatie-id, moet u deze beveiligen tegen ditzelfde risico door de verificatie-id toe te voegen aan uw DNS-record. Zie <a href="/azure/security/fundamentals/subdomain-takeover">Subdomein overnemen</a> voor meer informatie over deze veelvoorkomende, zeer kritieke bedreiging.
     </details>
     
 <a name="info"></a>
 
-3. * * (Alleen een record) * * voor het toewijzen van een <abbr title="Een adres record in DNS wijst een hostnaam toe aan een IP-adres.">A-record</abbr>, hebt u het externe IP-adres van de app nodig. Kopieer op de pagina **aangepaste domeinen** de waarde van **IP-adres**.
+3. **(Alleen een record)** Een toewijzing van een <abbr title="Een adres record in DNS wijst een hostnaam toe aan een IP-adres.">A-record</abbr>, hebt u het externe IP-adres van de app nodig. Kopieer op de pagina **aangepaste domeinen** de waarde van **IP-adres**.
 
    ![Schermopname van de portalnavigatie naar een Azure-app.](./media/app-service-web-tutorial-custom-domain/mapping-information.png)
+
+<hr/> 
 
 ## <a name="4-create-the-dns-records"></a>4. de DNS-records maken
 
@@ -148,52 +156,71 @@ Als u een aangepast domein wilt toevoegen aan uw app, moet u verifiëren dat u d
 
 Voor een subdomein zoals `www` in `www.contoso.com` , maakt u twee records volgens de volgende tabel:
 
-    | Recordtype | Host | Waarde | Opmerkingen |
-    | - | - | - |
-    | CNAME | `<subdomain>` (bijvoorbeeld `www` ) | `<app-name>.azurewebsites.net` | De domeintoewijzing zelf. |
-    | TXT | `asuid.<subdomain>` (bijvoorbeeld `asuid.www` ) | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid.<subdomain>` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. |
-    
-    ![Screenshot that shows the portal navigation to an Azure app.](./media/app-service-web-tutorial-custom-domain/cname-record.png)
+| Recordtype | Host | Waarde | Opmerkingen |
+| - | - | - |
+| CNAME | `<subdomain>` (bijvoorbeeld `www` ) | `<app-name>.azurewebsites.net` | De domeintoewijzing zelf. |
+| TXT | `asuid.<subdomain>` (bijvoorbeeld `asuid.www` ) | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid.<subdomain>` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. |
+
+![Schermopname van de portalnavigatie naar een Azure-app.](./media/app-service-web-tutorial-custom-domain/cname-record.png)
     
 # <a name="a"></a>[A](#tab/a)
 
 Voor een hoofd domein `contoso.com` , zoals, maakt u twee records op basis van de volgende tabel:
 
-    | Recordtype | Host | Waarde | Opmerkingen |
-    | - | - | - |
-    | A | `@` | IP-adres uit [Het IP-adres van de app kopiëren](#3-get-a-domain-verification-id) | De domeintoewijzing zelf (`@` vertegenwoordigt doorgaans het hoofddomein). |
-    | TXT | `asuid` | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid.<subdomain>` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. Gebruik `asuid` voor het hoofddomein. |
-    
-    ![Screenshot that shows a DNS records page.](./media/app-service-web-tutorial-custom-domain/a-record.png)
+| Recordtype | Host | Waarde | Opmerkingen |
+| - | - | - |
+| A | `@` | IP-adres uit [Het IP-adres van de app kopiëren](#3-get-a-domain-verification-id) | De domeintoewijzing zelf (`@` vertegenwoordigt doorgaans het hoofddomein). |
+| TXT | `asuid` | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid.<subdomain>` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. Gebruik `asuid` voor het hoofddomein. |
 
-    <details>
-    <summary>What if I want to map a subdomain with an A record?</summary>
-    To map a subdomain like `www.contoso.com` with an A record instead of a recommended CNAME record, your A record and TXT record should look like the following table instead:
+![Schermopname met de pagina DNS-records.](./media/app-service-web-tutorial-custom-domain/a-record.png)
 
-    | Recordtype | Host | Waarde |
-    | - | - | - |
-    | A | `<subdomain>` (bijvoorbeeld `www` ) | IP-adres uit [Het IP-adres van de app kopiëren](#info) |
-    | TXT | `asuid.<subdomain>` (bijvoorbeeld `asuid.www` ) | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) |
-    </details>
-    
+<details>
+<summary>Wat moet ik doen als ik een subdomein met een A-record wil toewijzen?</summary>
+Als u een subdomein wilt toewijzen `www.contoso.com` , zoals met een record in plaats van een aanbevolen CNAME-record, moet uw record-en TXT-record eruitzien als in de volgende tabel:
+
+<div class="table-scroll-wrapper"><table class="table"><caption class="visually-hidden">Tabel 3</caption>
+<thead>
+<tr>
+<th>Recordtype</th>
+<th>Host</th>
+<th>Waarde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><code>&lt;subdomain&gt;</code> (bijvoorbeeld <code>www</code> )</td>
+<td>IP-adres uit <a href="#info" data-linktype="self-bookmark">Het IP-adres van de app kopiëren</a></td>
+</tr>
+<tr>
+<td>TXT</td>
+<td><code>asuid.&lt;subdomain&gt;</code> (bijvoorbeeld <code>asuid.www</code> )</td>
+<td><a href="#3-get-a-domain-verification-id" data-linktype="self-bookmark">De verificatie-id die u eerder hebt ontvangen</a></td>
+</tr>
+</tbody>
+</table></div>
+</details>
+
 # <a name="wildcard-cname"></a>[Joker teken (CNAME)](#tab/wildcard)
 
 Voor de naam van een Joker teken zoals `*` in `*.contoso.com` , maakt u twee records volgens de volgende tabel:
 
-    | Recordtype | Host | Waarde | Opmerkingen |
-    | - | - | - |
-    | CNAME | `*` | `<app-name>.azurewebsites.net` | De domeintoewijzing zelf. |
-    | TXT | `asuid` | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. |
-    
-    ![Screenshot that shows the navigation to an Azure app.](./media/app-service-web-tutorial-custom-domain/cname-record-wildcard.png)
-    
----
+| Recordtype | Host | Waarde | Opmerkingen |
+| - | - | - |
+| CNAME | `*` | `<app-name>.azurewebsites.net` | De domeintoewijzing zelf. |
+| TXT | `asuid` | [De verificatie-id die u eerder hebt ontvangen](#3-get-a-domain-verification-id) | De TXT-record `asuid` wordt geopend met App Service om te verifiëren dat u de eigenaar bent van het aangepaste domein. |
 
-    <details>
-        <summary>My changes are erased after I leave the page.</summary>
-        For certain providers, such as GoDaddy, changes to DNS records don't become effective until you select a separate **Save Changes** link.
-    </details>
+![Schermopname van de navigatie naar een Azure-app.](./media/app-service-web-tutorial-custom-domain/cname-record-wildcard.png)
     
+-----
+
+<details>
+<summary>Mijn wijzigingen worden gewist nadat ik de pagina verlaat.</summary>
+<p>Bij bepaalde providers, zoals GoDaddy, worden wijzigingen in DNS-records pas van kracht wanneer u op een afzonderlijke link <strong>Save Changes</strong> klikt.</p>
+</details>
+
+<hr/>
+
 ## <a name="5-enable-the-mapping-in-your-app"></a>5. de toewijzing in uw app inschakelen
 
 1. Selecteer **Aangepaste domeinen** in het linkerdeelvenster van de app-pagina in Azure Portal.
@@ -273,8 +300,10 @@ Voor de naam van een Joker teken zoals `*` in `*.contoso.com` , maakt u twee rec
         Een waarschuwingslabel voor uw aangepaste domein betekent dat het nog niet is gebonden aan een TLS/SSL-certificaat. Een HTTPS-aanvraag van een browser naar uw aangepaste domein krijgt afhankelijk van de browser, een fout of waarschuwing. Zie <a href="https://docs.microsoft.com/azure/app-service/configure-ssl-bindings">Een aangepaste DNS-naam beveiligen met een TLS/SSL-binding in Azure App Service</a> om een TLS-binding toe te voegen.
     </details>
 
----
-    
+-----
+
+<hr/> 
+
 ## <a name="6-test-in-a-browser"></a>6. test in een browser
 
 Blader naar de DNS-namen die u eerder hebt geconfigureerd.
@@ -290,9 +319,13 @@ Blader naar de DNS-namen die u eerder hebt geconfigureerd.
 </ul>
 </details>
 
+<hr/> 
+
 ## <a name="migrate-an-active-domain"></a>Een actief domein migreren
 
 Zie voor het zonder downtime migreren van een live site en de DNS-domeinnaam naar App Service [Een actieve DNS-naam migreren naar Azure App Service](manage-custom-dns-migrate-domain.md).
+
+<hr/> 
 
 <a name="virtualdir" aria-hidden="true"></a>
 
@@ -313,11 +346,13 @@ Hoewel dit een veelvoorkomend scenario is, omvat het geen aangepaste domein toew
 
 1. Nadat de bewerking is voltooid, controleert u of u het pad naar de hoofdmap van de app in de browser (bijvoorbeeld of) hebt door genavigeerd `http://contoso.com` `http://<app-name>.azurewebsites.net` .
 
+<hr/> 
+
 ## <a name="automate-with-scripts"></a>Automatiseren met scripts
 
 U kunt het beheer van aangepaste domeinen met scripts automatiseren met behulp van de [Azure CLI](/cli/azure/install-azure-cli) of [Azure PowerShell](/powershell/azure/).
 
-### <a name="azure-cli"></a>Azure CLI
+#### <a name="azure-cli"></a>Azure CLI
 
 De volgende opdracht voegt een geconfigureerde aangepaste DNS-naam toe aan een App Service-app.
 
@@ -330,7 +365,7 @@ az webapp config hostname add \
 
 Zie voor meer informatie [Een aangepast domein toewijzen aan een web-app](scripts/cli-configure-custom-domain.md).
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -344,6 +379,8 @@ Set-AzWebApp `
 ```
 
 Zie voor meer informatie [Een aangepast domein toewijzen aan een web-app](scripts/powershell-configure-custom-domain.md).
+
+<hr/> 
 
 ## <a name="next-steps"></a>Volgende stappen
 

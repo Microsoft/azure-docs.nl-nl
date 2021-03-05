@@ -13,12 +13,12 @@ metadata:
   author: BlackMist
   ms.date: 09/21/2020
   ms.custom: contperf-fy21q1
-  ms.openlocfilehash: b52e7908d07dcd342be59f9870dece13701f1dc6
-  ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+  ms.openlocfilehash: b750ee7193b7613ff799d456544caad12dc0bf58
+  ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/10/2021
-  ms.locfileid: "100096324"
+  ms.lasthandoff: 03/05/2021
+  ms.locfileid: "102216204"
 landingContent:
 - title: 'Aan de slag: Code-first'
   linkLists:
@@ -75,7 +75,7 @@ landingContent:
     - text: REST-API
       url: /rest/api/azureml/
     - text: Machine learning-CLI
-      url: /cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest
+      url: /cli/azure/ext/azure-cli-ml/ml
 - title: Zoeken naar Studio (klassiek)
   linkLists:
   - linkListType: overview

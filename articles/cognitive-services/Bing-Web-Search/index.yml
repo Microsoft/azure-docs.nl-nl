@@ -14,12 +14,12 @@ metadata:
   author: aahill
   ms.author: aahi
   ms.date: 11/06/2019
-  ms.openlocfilehash: 5a158da6465c8f881febbf01019a1f10362b3ac4
-  ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+  ms.openlocfilehash: 4cb4a2d729746c56a9a5d825ae8976e9f00a2db5
+  ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
   ms.translationtype: MT
   ms.contentlocale: nl-NL
   ms.lasthandoff: 03/05/2021
-  ms.locfileid: "102183468"
+  ms.locfileid: "102217003"
 highlightedContent:
   items:
   - title: De Bing Zoeken-API's vergelijken
@@ -287,23 +287,23 @@ additionalContent:
     - title: Java-SDK
       links:
       - text: Bing Webzoekopdrachten
-        url: /java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingwebsearchapi
       - text: Bing Aangepaste zoekopdrachten
-        url: /java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingcustomsearch
       - text: Bing Entiteiten zoeken
-        url: /java/api/overview/azure/cognitiveservices/client/bingentitysearchapi?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingentitysearchapi
       - text: Bing Afbeeldingen zoeken
-        url: /java/api/overview/azure/cognitiveservices/client/bingimagesearch?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingimagesearch
       - text: Zoeken in Bing Nieuws
-        url: /java/api/overview/azure/cognitiveservices/client/bingnewssearch?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingnewssearch
       - text: Bing Video's zoeken
-        url: /java/api/overview/azure/cognitiveservices/client/bingvideosearch?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingvideosearch
       - text: Bing Visuele zoekopdrachten
-        url: /java/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingvisualsearch
       - text: Bing Spellingcontrole
-        url: /java/api/overview/azure/cognitiveservices/client/bingspellcheck?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingspellcheck
       - text: Bing Automatische suggesties
-        url: /java/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-java-stable
+        url: /java/api/overview/azure/cognitiveservices/client/bingautosuggest
     - title: Python-SDK
       links:
       - text: Bing Webzoekopdrachten
@@ -327,23 +327,23 @@ additionalContent:
     - title: Node.js SDK
       links:
       - text: Bing Webzoekopdrachten
-        url: /javascript/api/@azure/cognitiveservices-websearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-websearch/
       - text: Bing Aangepaste zoekopdrachten
-        url: /javascript/api/@azure/cognitiveservices-customsearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-customsearch/
       - text: Bing Entiteiten zoeken
-        url: /javascript/api/@azure/cognitiveservices-entitysearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-entitysearch/
       - text: Bing Afbeeldingen zoeken
-        url: /javascript/api/@azure/cognitiveservices-imagesearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-imagesearch/
       - text: Zoeken in Bing Nieuws
-        url: /javascript/api/@azure/cognitiveservices-newssearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-newssearch/
       - text: Bing Video's zoeken
-        url: /javascript/api/@azure/cognitiveservices-videosearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-videosearch/
       - text: Bing Visuele zoekopdrachten
-        url: /javascript/api/@azure/cognitiveservices-visualsearch/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-visualsearch/
       - text: Bing Spellingcontrole
-        url: /javascript/api/@azure/cognitiveservices-spellcheck/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-spellcheck/
       - text: Bing Automatische suggesties
-        url: /javascript/api/@azure/cognitiveservices-autosuggest/?view=azure-node-latest
+        url: /javascript/api/@azure/cognitiveservices-autosuggest/
     - title: Go-SDK
       links:
       - text: Bing Webzoekopdrachten

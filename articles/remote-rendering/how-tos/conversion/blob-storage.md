@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: cfc10658463888e43ea1a24dfefd3f8939ec8ef7
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 889c25fd1402c4438ff648afce64905de112c8db
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762785"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102215541"
 ---
 # <a name="use-azure-blob-storage-for-model-conversion"></a>Azure Blob Storage gebruiken voor modelconversie
 
@@ -28,7 +28,7 @@ De [model conversie](model-conversion.md) service vereist toegang tot Azure Blob
 Het maken van het opslag account en de BLOB-containers kunnen worden uitgevoerd met een van de volgende hulpprogram ma's:
 
 - [Azure-portal](https://portal.azure.com)
-- [AZ-opdracht regel](/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [AZ-opdracht regel](/cli/azure/install-azure-cli)
 - [Azure-opslagverkenner](https://azure.microsoft.com/features/storage-explorer/)
 - Sdk's (C#, python...)
 
@@ -52,7 +52,7 @@ Een SAS-URI kan worden gegenereerd met een van de volgende opties:
 
 - AZ Power shell-module
   - Zie het [voor beeld van Power shell-scripts](../../samples/powershell-example-scripts.md)
-- [AZ-opdracht regel](/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [AZ-opdracht regel](/cli/azure/install-azure-cli)
 - [Azure-opslagverkenner](https://azure.microsoft.com/features/storage-explorer/)
   - Klik met de rechter muisknop op de container ' Get Shared Access Signature ' (lezen, lijst toegang voor invoer container, schrijf toegang voor uitvoer container)
 - Sdk's (C#, python...)

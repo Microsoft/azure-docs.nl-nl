@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 402c22052325349231090eb4cf4826159231fefe
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f5865646200a783e7139bb5e22576ea404f58203
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679668"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102216646"
 ---
 # <a name="enable-on-demand-bursting"></a>Bursting op aanvraag inschakelen
 
@@ -61,7 +61,7 @@ New-AzDiskUpdateConfig -BurstingEnabled $true | Update-AzDisk -ResourceGroupName
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Op aanvraag burstive-cmdlets zijn beschikbaar in versie 2.19.0 en hoger van de [Azure cli-module](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). U kunt ook de [Azure Cloud shell](https://shell.azure.com/)gebruiken.
+Op aanvraag burstive-cmdlets zijn beschikbaar in versie 2.19.0 en hoger van de [Azure cli-module](https://docs.microsoft.com/cli/azure/install-azure-cli). U kunt ook de [Azure Cloud shell](https://shell.azure.com/)gebruiken.
 
 ### <a name="create-and-attach-a-on-demand-bursting-data-disk"></a>Een op-aanvraag bursting-gegevens schijf maken en koppelen
 

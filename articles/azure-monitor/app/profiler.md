@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: b743b5be195f44c03adbee75c3108f4908d8d4e8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2a5ba6cb0778e0c013f150d787d694b23f0497bd
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101717754"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218006"
 ---
 # <a name="profile-live-azure-app-service-apps-with-application-insights"></a>Live Azure App Service-apps met Application Insights profiel
 
@@ -56,11 +56,11 @@ Dit zijn de instellingen die nodig zijn om de Profiler in te scha kelen:
 
 U kunt deze waarden instellen met behulp van [Azure Resource Manager sjablonen](./azure-web-apps.md#app-service-application-settings-with-azure-resource-manager), [Azure POWERSHELL](/powershell/module/az.websites/set-azwebapp),  [Azure cli](/cli/azure/webapp/config/appsettings).
 
-### <a name="enabling-profiler-for-other-clouds-manually"></a>Profiler hand matig inschakelen voor andere Clouds
+## <a name="enable-profiler-for-other-clouds"></a>Profiler inschakelen voor andere Clouds
 
-Als u de Profiler voor andere Clouds wilt inschakelen, kunt u de onderstaande app-instellingen gebruiken.
+Momenteel zijn de enige regio's waarvoor wijziging van het eind punt is vereist, [Azure Government](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure#application-insights) en [Azure China](https://docs.microsoft.com/azure/china/resources-developer-guide).
 
-|App-instelling    | Amerikaanse overheids waarden| Cloud in China |   
+|App-instelling    | Cloud van de Amerikaanse overheid | Cloud in China |   
 |---------------|---------------------|-------------|
 |ApplicationInsightsProfilerEndpoint         | `https://profiler.monitor.azure.us`    | `https://profiler.monitor.azure.cn` |
 |ApplicationInsightsEndpoint | `https://dc.applicationinsights.us` | `https://dc.applicationinsights.azure.cn` |

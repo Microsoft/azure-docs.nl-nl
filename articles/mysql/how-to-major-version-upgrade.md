@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: how-to
 ms.date: 1/28/2021
-ms.openlocfilehash: 471ccd6176bd8821ce7e40fde6d961bd9bcf7f0c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 13cf315291cdf788951e352e430976851b30ce0c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702144"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102216714"
 ---
 # <a name="major-version-upgrade-in-azure-database-for-mysql-single-server"></a>Upgrade van primaire versie in Azure Database for MySQL één server
 
@@ -59,7 +59,7 @@ Volg deze stappen voor het uitvoeren van een primaire versie-upgrade voor uw Azu
  
    Voor deze upgrade is versie 2.16.0 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd. Voer az version uit om de geïnstalleerde versie en afhankelijke bibliotheken te vinden. Voer az upgrade uit om te upgraden naar de nieuwste versie.
 
-2. Nadat u zich hebt aangemeld, voert u de opdracht [AZ mysql server upgrade](/cli/azure/mysql/server?preserve-view=true&view=azure-cli-latest#az_mysql_server_upgrade) uit:
+2. Nadat u zich hebt aangemeld, voert u de opdracht [AZ mysql server upgrade](/cli/azure/mysql/server#az_mysql_server_upgrade) uit:
 
    ```azurecli
    az mysql server upgrade --name testsvr --resource-group testgroup --subscription MySubscription --target-server-version 5.7"

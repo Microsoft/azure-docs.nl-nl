@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: fd40ad41bda50d93943a514cd9cc3aeeab4ac948
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: b130fd3f85b676f0a394ad95730181ff499dac96
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198877"
+ms.locfileid: "102216493"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Zelfstudie: De Azure Key Vault-provider voor het stuurprogramma voor het Secrets Store CSI-stuurprogramma configureren en uitvoeren op Kubernetes
 
@@ -107,7 +107,7 @@ Als u uw eigen sleutel kluis wilt maken en uw geheimen wilt instellen, volgt u d
 
 ## <a name="create-your-own-secretproviderclass-object"></a>Uw eigen SecretProviderClass-object maken
 
-[Gebruik deze sjabloon](https://raw.githubusercontent.com/Azure/secrets-store-csi-driver-provider-azure/master/examples/pod-identity/v1alpha1_secretproviderclass_pod_identity.yaml) om uw eigen aangepast SecretProviderClass-object te maken met providerspecifieke parameters voor het stuurprogramma Secrets Store CSI. Dit object biedt identiteit- en toegangsbeheer voor uw sleutelkluis.
+[Gebruik deze sjabloon](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/service-principal/v1alpha1_secretproviderclass_service_principal.yaml) om uw eigen aangepast SecretProviderClass-object te maken met providerspecifieke parameters voor het stuurprogramma Secrets Store CSI. Dit object biedt identiteit- en toegangsbeheer voor uw sleutelkluis.
 
 Vul in het SecretProviderClass YAML-voorbeeldbestand de ontbrekende parameters in. De volgende parameters zijn vereist:
 

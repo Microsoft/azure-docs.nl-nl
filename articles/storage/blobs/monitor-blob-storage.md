@@ -9,12 +9,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: subject-monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 5337372b5e996798a5000e1c32ea8e372aa63ed4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3f96549c73c231db63360891dd0705b649097c80
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591780"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218095"
 ---
 # <a name="monitoring-azure-blob-storage"></a>Azure Blob Storage controleren
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 2419761c195258c60561e284abf0227b915ed4f6
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: b37277c660562721273ff9ae86dd677ee7ac7d55
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/04/2021
-ms.locfileid: "102123629"
+ms.locfileid: "102049998"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -86,7 +86,7 @@ Open vervolgens in uw Visual Studio Solution Explorer het _Function1.cs_ -bestan
 
 U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U voegt het volgende toe aan de functie in het _Function1.cs_ -bestand.
 
-* Code voor het lezen van de URL van de Azure Digital Apparaatdubbels-service als een **omgevings variabele**. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie. [Verderop in dit artikel](#set-up-security-access-for-the-function-app)moet u de waarde van deze omgevings variabele instellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen.
+* Code voor het lezen van de URL van de Azure Digital Apparaatdubbels-service als een omgevings variabele. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie.
 
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="ADT_service_URL":::
 
@@ -134,7 +134,7 @@ Gebruik de waarde _principalId_ in de volgende opdracht om de identiteit van de 
 ```azurecli-interactive 
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"
 ```
-Maak ten slotte de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk voor uw functie door een **omgevings variabele** voor de instantie in te stellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen. 
+Ten slotte kunt u de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk maken voor uw functie door een omgevings variabele in te stellen. Zie [*omgevings variabelen*](/sandbox/functions-recipes/environment-variables)voor meer informatie over het instellen van omgevings variabelen. 
 
 > [!TIP]
 > De URL van het Azure Digital Apparaatdubbels-exemplaar wordt gemaakt door *https://* toe te voegen aan het begin van de *hostnaam* van uw Azure Digital apparaatdubbels-exemplaar. Als u de hostnaam, samen met alle eigenschappen van uw exemplaar, wilt zien, kunt u uitvoeren `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
@@ -183,7 +183,7 @@ Sla uw gegevens vervolgens op door te klikken op de knop _Opslaan_ .
 
 ### <a name="configure-application-settings-using-azure-portal"></a>Toepassings instellingen configureren met behulp van Azure Portal
 
-Als u de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk wilt maken voor uw functie, kunt u een **omgevings variabele** voor de instantie instellen. Zie [*uw functie-app beheren*](../azure-functions/functions-how-to-use-azure-function-app-settings.md?tabs=portal)voor meer informatie over omgevings variabelen. Toepassings instellingen worden weer gegeven als omgevings variabelen voor toegang tot het Azure Digital Apparaatdubbels-exemplaar. 
+U kunt de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk maken voor uw functie door een omgevings variabele in te stellen. Zie [*omgevings variabelen*](/sandbox/functions-recipes/environment-variables)voor meer informatie. Toepassings instellingen worden weer gegeven als omgevings variabelen voor toegang tot het digitale apparaatdubbels-exemplaar. 
 
 Als u een omgevings variabele met de URL van uw exemplaar wilt instellen, moet u eerst de URL ophalen door de hostnaam van het Azure Digital Apparaatdubbels-exemplaar te vinden. Zoek in de zoek balk van [Azure Portal](https://portal.azure.com) naar uw instantie. Selecteer vervolgens _overzicht_ op de linkernavigatiebalk om de _hostnaam_ weer te geven. Kopieer deze waarde.
 

@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/28/2020
 ms.author: jgao
-ms.openlocfilehash: 574dcf50111c14f4924f009a74ed6f2ac2bb31e9
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 9d045fb75838ac016f3e9b04cd2519d8a8530a4b
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733837"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175648"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -141,7 +141,7 @@ Details van eigenschaps waarde:
 - `azPowerShellVersion`/`azCliVersion`: Geef de module versie op die moet worden gebruikt. Een lijst met [ondersteunde versies van Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list)weer geven. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
 
   >[!IMPORTANT]
-  > Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor het implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true)om de release datums voor de installatie kopieën te vinden. Als er een niet-ondersteunde versie wordt gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
+  > Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor het implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli)om de release datums voor de installatie kopieën te vinden. Als er een niet-ondersteunde versie wordt gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
 
 - `arguments`: Geef de parameterwaarden op. De waarden worden gescheiden door een spatie.
 
@@ -377,10 +377,10 @@ Timeout             : PT1H
 
 Met Azure CLI kunt u implementatie scripts beheren op basis van het abonnement of het bereik van de resource groep:
 
-- [AZ Deployment-scripts delete](/cli/azure/deployment-scripts?view=azure-cli-latest&preserve-view=true#az-deployment-scripts-delete): een implementatie script verwijderen.
-- [AZ Deployment-scripts lijst](/cli/azure/deployment-scripts?view=azure-cli-latest&preserve-view=true#az-deployment-scripts-list): alle implementatie scripts weer geven.
-- [AZ Deployment-scripts show](/cli/azure/deployment-scripts?view=azure-cli-latest&preserve-view=true#az-deployment-scripts-show): een implementatie script ophalen.
-- [AZ Deployment-scripts show-log](/cli/azure/deployment-scripts?view=azure-cli-lates&preserve-view=truet#az-deployment-scripts-show-log): script logboeken van de implementatie weer geven.
+- [AZ Deployment-scripts delete](/cli/azure/deployment-scripts#az-deployment-scripts-delete): een implementatie script verwijderen.
+- [AZ Deployment-scripts lijst](/cli/azure/deployment-scripts#az-deployment-scripts-list): alle implementatie scripts weer geven.
+- [AZ Deployment-scripts show](/cli/azure/deployment-scripts#az-deployment-scripts-show): een implementatie script ophalen.
+- [AZ Deployment-scripts show-log](/cli/azure/deployment-scripts#az-deployment-scripts-show-log): script logboeken van de implementatie weer geven.
 
 De uitvoer van de lijst opdracht ziet er ongeveer als volgt uit:
 

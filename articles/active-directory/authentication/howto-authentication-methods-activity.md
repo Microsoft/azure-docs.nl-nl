@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 02/25/2021
+ms.date: 03/04/2021
 ms.author: justinha
 author: sopand
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbe69967d84777091aec0bbbf1626b98f5018d0e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b0865fb2bda04f5a7e9ba2ef73a717946fa656a5
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693184"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175308"
 ---
 # <a name="authentication-methods-activity"></a>Activiteit in verificatiemethoden 
 
@@ -26,10 +26,17 @@ Met het nieuwe activiteiten dashboard voor verificatie methoden kunnen beheerder
 
 ## <a name="permissions-and-licenses"></a>Machtigingen en licenties
 
-De volgende rollen hebben toegang tot het gebruik en inzichten:
+Ingebouwde en aangepaste rollen met de volgende machtigingen hebben toegang tot de Blade verificatie methoden activiteit en Api's:
+
+- Micro soft. map/audit logs bevat/allProperties/lezen
+- Micro soft. map/signInReports/allProperties/lezen
+
+De vereiste machtigingen zijn voor de volgende rollen:
 
 - Rapportenlezer
 - Beveiligingslezer
+- Algemene lezer
+- Beveiligingsoperator
 - Beveiligingsbeheer
 - Hoofdbeheerder
 
@@ -122,11 +129,12 @@ In **gebeurtenissen voor registratie en opnieuw instellen** worden de registrati
 - Status (geslaagd, mislukt)
 - Reden voor fout (uitleg)
 
-  ![Scherm afbeelding van gebruiks pagina](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
+  ![Scherm opname van gebeurtenissen voor registratie en opnieuw instellen](media/how-to-authentication-methods-usage-insights/registration-and-reset-logs.png)
 
 ## <a name="limitations"></a>Beperkingen
 
-Registraties van tijdelijke toegang (tik) worden niet weer gegeven op het tabblad registratie van het rapport, omdat ze alleen geldig zijn voor korte tijd.
+- De gegevens in het rapport worden niet in realtime bijgewerkt en kunnen een latentie van Maxi maal een paar uur weer geven.
+- Registraties van tijdelijke toegangs doorgifte worden niet weer gegeven op het tabblad registratie van het rapport, omdat ze alleen geldig zijn voor korte tijd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

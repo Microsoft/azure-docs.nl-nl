@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/14/2020
+ms.date: 03/04/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 5552c93c1c65f08f70ed8929d81126035aa2a357
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: c9453f2fc5803fb6ce09d8749cbf7fa1c7c2ec46
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661201"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174815"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Aangepaste kenmerken definiëren in Azure Active Directory B2C
 
@@ -25,7 +25,7 @@ ms.locfileid: "98661201"
 
 In het artikel [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid](configure-user-input.md) leert u hoe u ingebouwde [kenmerken van gebruikers profielen](user-profile-attributes.md)gebruikt. In dit artikel schakelt u een aangepast kenmerk in de map Azure Active Directory B2C (Azure AD B2C) in. Later kunt u het nieuwe kenmerk gebruiken als aangepaste claim in [gebruikers stromen](user-flow-overview.md) of [aangepaste beleids regels](custom-policy-get-started.md) tegelijk.
 
-Uw Azure AD B2C Directory wordt geleverd met een [ingebouwde set kenmerken](user-profile-attributes.md). Het is echter vaak nodig om uw eigen kenmerken te maken voor het beheren van uw specifieke scenario, bijvoorbeeld wanneer:
+Uw Azure AD B2C-directory wordt geleverd met een [ingebouwde set kenmerken](user-profile-attributes.md). Het is echter vaak nodig om uw eigen kenmerken te maken voor het beheren van uw specifieke scenario, bijvoorbeeld wanneer:
 
 * Een klant gerichte toepassing moet een **LoyaltyId** -kenmerk persistent maken.
 * Een id-provider heeft een unieke gebruikers-id, **uniqueUserGUID**, die persistent moet zijn.
@@ -97,27 +97,32 @@ Als u aangepaste kenmerken in uw beleid wilt inschakelen, geeft u de **toepassin
 
 1. Open het bestand extensies van uw beleid. Bijvoorbeeld <em>`SocialAndLocalAccounts/`**`TrustFrameworkExtensions.xml`**</em> .
 1. Zoek het element ClaimsProviders. Voeg een nieuwe ClaimsProvider toe aan het ClaimsProviders-element.
-1. Vervang door `ApplicationObjectId` de object-id die u eerder hebt vastgelegd. Vervang vervolgens door `ClientId` de toepassings-id die u eerder in het onderstaande fragment hebt vastgelegd.
+1. Voeg de **toepassings-id** in die u eerder hebt opgenomen, tussen de openings- `<Item Key="ClientId">` en sluitings `</Item>` elementen.
+1. Plaats de **ObjectID** van de toepassing die u eerder hebt opgenomen tussen de openings- `<Item Key="ApplicationObjectId">` en sluitings `</Item>` elementen.
 
     ```xml
-    <ClaimsProvider>
-      <DisplayName>Azure Active Directory</DisplayName>
-      <TechnicalProfiles>
-        <TechnicalProfile Id="AAD-Common">
-          <Metadata>
-            <!--Insert b2c-extensions-app application ID here, for example: 11111111-1111-1111-1111-111111111111-->  
-            <Item Key="ClientId"></Item>
-            <!--Insert b2c-extensions-app application ObjectId here, for example: 22222222-2222-2222-2222-222222222222-->
-            <Item Key="ApplicationObjectId"></Item>
-          </Metadata>
-        </TechnicalProfile>
-      </TechnicalProfiles> 
-    </ClaimsProvider>
+    <!-- 
+    <ClaimsProviders> -->
+      <ClaimsProvider>
+        <DisplayName>Azure Active Directory</DisplayName>
+        <TechnicalProfiles>
+          <TechnicalProfile Id="AAD-Common">
+            <Metadata>
+              <!--Insert b2c-extensions-app application ID here, for example: 11111111-1111-1111-1111-111111111111-->  
+              <Item Key="ClientId"></Item>
+              <!--Insert b2c-extensions-app application ObjectId here, for example: 22222222-2222-2222-2222-222222222222-->
+              <Item Key="ApplicationObjectId"></Item>
+            </Metadata>
+          </TechnicalProfile>
+        </TechnicalProfiles> 
+      </ClaimsProvider>
+    <!-- 
+    </ClaimsProviders> -->
     ```
 
 ## <a name="upload-your-custom-policy"></a>Uw aangepaste beleid uploaden
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zorg ervoor dat u de map met uw Azure AD-Tenant gebruikt door het filter **Directory + abonnement** te selecteren in het bovenste menu en de map te kiezen die uw Azure AD B2C-Tenant bevat.
 3. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 4. Selecteer een **Framework voor identiteits ervaring**.

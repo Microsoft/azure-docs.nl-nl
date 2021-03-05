@@ -4,12 +4,12 @@ description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor
 ms.date: 02/09/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 749ceb1c6388607bb854548278522092c39881e5
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: d7e25069c373592168e5482f79567b29665251b0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100096011"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175257"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-kubernetes-service"></a>Ingebouwde Azure Policy-definities voor Azure Kubernetes Service
 
@@ -17,11 +17,17 @@ Deze pagina is een index van ingebouwde [Azure Policy](../governance/policy/over
 
 De naam van elke ingebouwde beleidsdefinitie linkt naar de beleidsdefinitie in de Azure-portal. Gebruik de koppeling in de kolom **Versie** om de bron te bekijken in de [Azure Policy GitHub-opslagplaats](https://github.com/Azure/azure-policy).
 
-## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
+## <a name="initiatives"></a>Initiatieven
+
+[!INCLUDE [azure-policy-reference-policysets-kubernetes](../../includes/policy/reference/bycat/policysets-kubernetes.md)]
+
+## <a name="policy-definitions"></a>Beleidsdefinities
+
+### <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
 
 [!INCLUDE [azure-policy-reference-rp-aks-containerservice](../../includes/policy/reference/byrp/microsoft.containerservice.md)]
 
-## <a name="aks-engine"></a>AKS-engine
+### <a name="aks-engine"></a>AKS-engine
 
 [!INCLUDE [azure-policy-reference-rp-aks-aksengine](../../includes/policy/reference/byrp/aks-engine.md)]
 

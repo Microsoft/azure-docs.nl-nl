@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: c83a1050035fc40912d0242a9c5fe2498b299ebd
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 56aa7c41934506c7de0c8d5cebe84eb5a6bc2164
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517953"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174611"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-my-ibisworld"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met My IBISWorld
 
@@ -51,16 +51,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van My IBISWorld met Microsoft Azure Active Directory moet u My IBISWorld vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **My IBISWorld** in het zoekvak in het onderdeel **Toevoegen uit de galerie** .
+1. Typ **My IBISWorld** in het zoekvak in het onderdeel **Toevoegen uit de galerie**.
 1. Selecteer **My IBISWorld** in de resultaten en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-my-ibisworld"></a>Eenmalige aanmelding van Azure AD voor My IBISWorld configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met My IBISWorld met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in My IBISWorld.
+Configureer en test eenmalige aanmelding van Azure AD met My IBISWorld met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in My IBISWorld.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met My IBISWorld te configureren en te testen:
 
@@ -75,34 +75,34 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met My IBISWorl
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **My IBISWorld** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **My IBISWorld** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **SAML-basisconfiguratie** hoeft de gebruiker geen enkele stap uit te voeren omdat de app al vooraf is geïntegreerd met Azure.
 
-1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
+   * Als u de toepassing in de modus door **SP** gestart wilt configureren, vraagt u de URL op bij IBISWorld en voert u de URL in het tekstvak **aanmeldings-URL** in.
+   
+   * Als u de toepassing in de gestarte modus **IDP** wilt configureren, voert u de URL in het tekstvak **Relay-status** in `RPID=http://fedlogin.ibisworld.com` . Laat het tekstvak **voor de aanmeldings-URL** leeg.
 
-    In het tekstvak **Aanmeldings-URL** typt u de URL: `https://my.ibisworld.com/account/login`
-
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 
 1. In de My IBISWorld-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
-    ![image](common/default-attributes.png)
+   ![image](common/default-attributes.png)
 
 1. Bovendien verwacht de toepassing My IBISWorld nog enkele kenmerken die als SAML-antwoord moeten worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
     
-    | Naam | Bronkenmerk|
-    | --------------- | --------- |
-    | department | user.department |
-    | language | user.preferredlanguage |
-    | telefoon | user.telephonenumber |
-    | titel | user.jobtitle |
-    | userid | user.employeeid |
-    | country | user.country |
+   | Naam | Bronkenmerk|
+   | --------------- | --------- |
+   | department | user.department |
+   | language | user.preferredlanguage |
+   | telefoon | user.telephonenumber |
+   | titel | user.jobtitle |
+   | userid | user.employeeid |
+   | country | user.country |
 
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u in de sectie **SAML-handtekeningcertificaat** op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 
@@ -111,35 +111,35 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot My IBISWorld.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **My IBISWorld** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-my-ibisworld-sso"></a>Eenmalige aanmelding voor My IBISWorld configureren
 
-Als u eenmalige aanmelding aan de **My IBISWorld** -zijde wilt configureren, dient u de **URL voor federatieve metagegevens van de app** naar het [My IBISWorld-ondersteuningsteam](mailto:support@ibisworld.freshdesk.com) te verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **My IBISWorld**-zijde wilt configureren, dient u de **URL voor federatieve metagegevens van de app** naar het [My IBISWorld-ondersteuningsteam](mailto:support@ibisworld.freshdesk.com) te verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-my-ibisworld-test-user"></a>Testgebruiker maken voor My IBISWorld
 

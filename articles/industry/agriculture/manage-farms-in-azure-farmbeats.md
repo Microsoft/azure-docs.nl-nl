@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u Farms beheert
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: dc06f7c75e27d831994b97b97f3d20bb34c3a6c5
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.author: v-ummehabiba
+ms.openlocfilehash: 050b3b4d67eda9b6c9b4621c014e3e6baad34053
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167930"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173797"
 ---
 # <a name="manage-farms"></a>Een boerderij beheren
 
@@ -28,8 +28,8 @@ Voer de volgende stappen uit:
     ![Scherm opname van de pagina farms.](./media/create-farms-in-azure-farmbeats/create-farm-main-page-1.png)
 
 
-2. Selecteer **farm maken** en geef **naam**, **bijsnijds** en **adres**op.
-3. Selecteer in de grens van de **Farm definiëren**(verplicht veld) de optie **voor het koppelen** of **geojson-code**markeren.
+2. Selecteer **farm maken** en geef **naam**, **bijsnijds** en **adres** op.
+3. Selecteer in de grens van de **Farm definiëren**(verplicht veld) de optie **voor het koppelen** of **geojson-code** markeren.
 
 Dit zijn de twee manieren om een farm grens te definiëren:
 
@@ -58,7 +58,7 @@ Op de lijst pagina met farms wordt een lijst met gemaakte Farms weer gegeven. Se
 Op de pagina **Farms** wordt een lijst met gemaakte Farms weer gegeven.
 
 1.  Selecteer een farm om de farm weer te geven en te bewerken.
-2.  Selecteer **Farm bewerken** om de farm gegevens te bewerken. In het venster **Farm Details** kunt u de grens velden voor de **naam**, het **gewas**, het **adres**en de **Farm** definitie bewerken.
+2.  Selecteer **Farm bewerken** om de farm gegevens te bewerken. In het venster **Farm Details** kunt u de grens velden voor de **naam**, het **gewas**, het **adres** en de **Farm** definitie bewerken.
 
     ![Een Farm Beats-project](./media/create-farms-in-azure-farmbeats/edit-farm-1.png)
 

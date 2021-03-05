@@ -1,23 +1,18 @@
 ---
 title: Releaseopmerkingen voor Azure Security Center
 description: Een beschrijving van wat er nieuw is en gewijzigd is in Azure Security Center
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/18/2021
+ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: 327103df21dd34347439a833d7ac4b8a21dc66b4
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 6c69e5923e2b65bab0feca04d10fa67f49df3616
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099842"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174455"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -29,6 +24,96 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 
 > [!TIP]
 > Als u op zoek bent naar items die ouder zijn dan zes maanden, vindt u deze in het [Archief voor nieuwe functies in Azure AD in Azure Security Center](release-notes-archive.md).
+
+
+
+## <a name="march-2021"></a>2021 maart
+
+De updates in maart zijn onder andere:
+
+- [Azure Firewall-beheer geïntegreerd in Security Center](#azure-firewall-management-integrated-into-security-center)
+- [Evaluatie van SQL-beveiligings problemen bevat nu de ervaring ' regel uitschakelen ' (preview-versie)](#sql-vulnerability-assessment-now-includes-the-disable-rule-experience-preview)
+- [Azure Monitor werkmappen die zijn geïntegreerd in Security Center en drie sjablonen](#azure-monitor-workbooks-integrated-into-security-center-and-three-templates-provided)
+- [Het dash board nalevings beleid bevat nu Azure audit rapporten (preview-versie)](#regulatory-compliance-dashboard-now-includes-azure-audit-reports-preview)
+- [Updates voor het beleid voor het implementeren van werk stroom automatisering](#updates-to-the-policies-for-deploying-workflow-automation)
+
+
+### <a name="azure-firewall-management-integrated-into-security-center"></a>Azure Firewall-beheer geïntegreerd in Security Center
+
+Wanneer u Azure Security Center opent, wordt als eerste de overzichtspagina weergegeven. 
+
+Dit interactieve dash board biedt een uniforme weer gave van de beveiligings postuur van uw hybride Cloud werkbelastingen. Bovendien worden er naast andere informatie beveiligingswaarschuwingen en informatie over de dekking weergegeven.
+
+Als onderdeel van het helpen u de beveiligings status van een centrale ervaring te bekijken, hebben we de Azure Firewall manager in dit dash board geïntegreerd. U kunt nu de status van de firewall dekking in alle netwerken controleren en Azure Firewall beleid centraal beheren vanaf Security Center.
+
+Meer informatie over dit dash board vindt u op [de overzichts pagina van Azure Security Center](overview-page.md).
+
+:::image type="content" source="media/release-notes/overview-dashboard-firewall-manager.png" alt-text="Overzichts Dashboard van Security Center met een tegel voor Azure Firewall":::
+
+
+### <a name="sql-vulnerability-assessment-now-includes-the-disable-rule-experience-preview"></a>Evaluatie van SQL-beveiligings problemen bevat nu de ervaring ' regel uitschakelen ' (preview-versie)
+
+Security Center bevat een ingebouwde beveiligings scanner waarmee u mogelijke beveiligings problemen met een Data Base kunt detecteren, volgen en oplossen. De resultaten van de evaluatie scans bieden een overzicht van de beveiligings status van uw SQL-machines en Details van eventuele beveiligings resultaten.
+
+Als u een organisatorische behoefte hebt om een resultaat te negeren in plaats van dit te herstellen, kunt u het eventueel uitschakelen. Uitgeschakelde resultaten hebben geen invloed op uw beveiligingsscore en genereren geen ongewenste ruis.
+
+Meer informatie vindt u in [specifieke bevindingen uitschakelen](defender-for-sql-on-machines-vulnerability-assessment.md#disable-specific-findings-preview).
+
+
+
+### <a name="azure-monitor-workbooks-integrated-into-security-center-and-three-templates-provided"></a>Azure Monitor werkmappen die zijn geïntegreerd in Security Center en drie sjablonen
+
+Als onderdeel van Ignite lente 2021 hebben we een geïntegreerde Azure Monitor werkmappen-ervaring aangekondigd in Security Center.
+
+U kunt gebruikmaken van de nieuwe integratie om te beginnen met het gebruik van de out-of-the-box-sjablonen uit de galerie van Security Center. U kunt met behulp van werkmap sjablonen dynamische en visuele rapporten maken en gebruiken om de beveiligings postuur van uw organisatie bij te houden. Daarnaast kunt u nieuwe werkmappen maken op basis van Security Center gegevens of andere ondersteunde gegevens typen en snel een community-werkmap implementeren vanuit de GitHub-community van Security Center.
+
+Er worden drie sjabloon rapporten gegeven:
+
+- **Beveiligde Score over een bepaalde periode** : Houd de scores en wijzigingen van uw abonnementen bij in aanbevelingen voor uw resources
+- **Systeem updates** : ontbrekende systeem updates weer geven op resources, besturings systeem, ernst en meer
+- **Resultaten van evaluatie van beveiligings problemen** -Bekijk de resultaten van de scan van beveiligings problemen van uw Azure-resources
+
+Meer informatie over het gebruik van deze rapporten of het [maken van uw eigen uitgebreide, interactieve rapporten van Security Center gegevens](custom-dashboards-azure-workbooks.md).
+
+:::image type="content" source="media/custom-dashboards-azure-workbooks/secure-score-over-time-snip.png" alt-text="Rapport over beveiligde Score over tijd":::
+
+
+### <a name="regulatory-compliance-dashboard-now-includes-azure-audit-reports-preview"></a>Het dash board nalevings beleid bevat nu Azure audit rapporten (preview-versie)
+
+Via de werk balk van het dash board van de regelgevings vereisten kunt u nu Azure-en Dynamics-certificerings rapporten downloaden. 
+
+:::image type="content" source="media/release-notes/audit-reports-regulatory-compliance-dashboard.png" alt-text="Werk balk van de naleving van het regelgevings dashboard":::
+
+U kunt het tabblad voor de relevante rapport typen (PCI, SOC, ISO en andere) selecteren en filters gebruiken om de specifieke rapporten te vinden die u nodig hebt.
+
+Meer informatie over [het beheren van de standaarden in het dash board voor naleving van regelgeving](update-regulatory-compliance-packages.md).
+
+:::image type="content" source="media/release-notes/audit-reports-list-regulatory-compliance-dashboard.png" alt-text="De lijst met beschik bare Azure-controle rapporten filteren":::
+
+
+
+### <a name="updates-to-the-policies-for-deploying-workflow-automation"></a>Updates voor het beleid voor het implementeren van werk stroom automatisering
+
+Het automatiseren van de processen voor bewaking en reageren op incidenten van uw organisatie kan de tijd die nodig is om beveiligingsincidenten te onderzoeken en te verhelpen aanzienlijk verbeteren.
+
+We bieden drie Azure Policy beleid ' DeployIfNotExist ' voor het maken en configureren van werk stroom automatiserings procedures, zodat u uw automatisering in uw organisatie kunt implementeren:
+
+|Doel  |Beleid  |Beleids-id  |
+|---------|---------|---------|
+|Werkstroomautomatisering voor beveiligingswaarschuwingen|[Werkstroomautomatisering implementeren voor Azure Security Center-waarschuwingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2ff1525828-9a90-4fcf-be48-268cdd02361e)|f1525828-9a90-4fcf-be48-268cdd02361e|
+|Werkstroomautomatisering voor beveiligingsaanbevelingen|[Werkstroomautomatisering implementeren voor Azure Security Center-aanbevelingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f73d6ab6c-2475-4850-afd6-43795f3492ef)|73d6ab6c-2475-4850-afd6-43795f3492ef|
+|Werk stroom automatisering voor wijzigingen in de naleving van de regelgeving|[Werk stroom automatisering implementeren voor Azure Security Center naleving van regelgeving](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f73d6ab6c-509122b9-ddd9-47ba-a5f1-d0dac20be63c)|509122b9-ddd9-47ba-a5f1-d0dac20be63c|
+||||
+
+Er zijn twee updates voor de functies van deze beleids regels:
+
+- Wanneer ze worden toegewezen, blijven ze ingeschakeld door afdwinging.
+- U kunt dit beleid nu aanpassen en de para meters bijwerken, zelfs nadat ze al zijn geïmplementeerd. Als een gebruiker bijvoorbeeld een andere beoordelings sleutel wil toevoegen, of een bestaande beoordelings sleutel wil bewerken, kan dat doen.
+
+Aan de slag met [sjablonen voor werkstroomautomatisering](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
+
+Meer informatie over het [automatiseren van reacties op Security Center triggers](workflow-automation.md).
+
 
 
 ## <a name="february-2021"></a>Februari 2021
@@ -777,221 +862,3 @@ extract("^(.+)/providers/Microsoft.Security/assessments/.+$",1,id)))))
 Meer informatie vindt u via de volgende koppelingen:
 - [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 - [Kusto-querytaal (KQL)](/azure/data-explorer/kusto/query/)
-
-
-## <a name="september-2020"></a>September 2020
-
-De updates in september zijn onder meer:
-- [Security Center krijgt een nieuwe look.](#security-center-gets-a-new-look)
-- [Azure Defender uitgebracht](#azure-defender-released)
-- [Azure Defender voor Key Vault is algemeen verkrijgbaar](#azure-defender-for-key-vault-is-generally-available)
-- [Azure Defender voor opslagbeveiliging voor bestanden en ADLS Gen2 is algemeen beschikbaar](#azure-defender-for-storage-protection-for-files-and-adls-gen2-is-generally-available)
-- [Hulpprogramma's voor assetinventarisatie zijn nu algemeen beschikbaar](#asset-inventory-tools-are-now-generally-available)
-- [Een specifiek gevonden beveiligingsprobleem voor scans van containerregisters en virtuele machines uitschakelen](#disable-a-specific-vulnerability-finding-for-scans-of-container-registries-and-virtual-machines)
-- [Een resource uitsluiten van een aanbeveling](#exempt-a-resource-from-a-recommendation)
-- [AWS- en GCP-connectors in Security Center bieden een multi-cloudervaring](#aws-and-gcp-connectors-in-security-center-bring-a-multi-cloud-experience)
-- [Bundel met aanbevelingen voor Kubernetes-workloadbeveiliging](#kubernetes-workload-protection-recommendation-bundle)
-- [Resultaten van evaluatie van beveiligingsproblemen zijn nu beschikbaar in continue export](#vulnerability-assessment-findings-are-now-available-in-continuous-export)
-- [Onjuiste beveiligingsconfiguraties voorkomen door aanbevelingen af te dwingen bij het maken van nieuwe resources](#prevent-security-misconfigurations-by-enforcing-recommendations-when-creating-new-resources)
-- [Aanbevelingen voor netwerkbeveiligingsgroep verbeterd](#network-security-group-recommendations-improved)
-- [Aanbeveling AKS-preview 'Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services' afgeschaft'](#deprecated-preview-aks-recommendation-pod-security-policies-should-be-defined-on-kubernetes-services)
-- [E-mailmeldingen van Azure Security Center verbeterd](#email-notifications-from-azure-security-center-improved)
-- [Beveiligingsscore bevat geen preview-aanbevelingen](#secure-score-doesnt-include-preview-recommendations)
-- [Aanbevelingen bevatten nu een ernst-indicator en vernieuwingsinterval](#recommendations-now-include-a-severity-indicator-and-the-freshness-interval)
-
-
-### <a name="security-center-gets-a-new-look"></a>Security Center krijgt een nieuwe look.
-
-We hebben een vernieuwde gebruikersinterface voor de portalpagina's van Security Center uitgebracht. De nieuwe pagina's bevatten een nieuwe overzichts pagina en dash boards voor een veilige Score, inventarisatie van de activa en Azure Defender.
-
-De opnieuw ontworpen overzichtspagina heeft nu een tegel voor toegang tot de dashboards voor de beveiligingsscore, assetinventarisatie en Azure Defender. Het bevat ook een tegel met een koppeling naar het dashboard voor naleving van regelgeving.
-
-Meer informatie over de [overzichtspagina](overview-page.md).
-
-
-### <a name="azure-defender-released"></a>Azure Defender uitgebracht
-
-**Azure Defender** is het Cloud Workload Protection Platform (CWPP) dat is geïntegreerd in Security Center voor geavanceerde, intelligente beveiliging van uw Azure- en hybride workloads. Het vervangt de standaardprijscategorie van Security Center. 
-
-Als u Azure Defender inschakelt in het gedeelte **Prijzen en instellingen** van Azure Security Center, worden de volgende Defender-abonnementen allemaal tegelijkertijd ingeschakeld en kunt u gebruikmaken van een totaaloplossing voor de bescherming van de berekenings-, gegevens- en servicelagen in uw omgeving:
-
-- [Azure Defender voor servers](defender-for-servers-introduction.md)
-- [Azure Defender voor App Service](defender-for-app-service-introduction.md)
-- [Azure Defender voor Storage](defender-for-storage-introduction.md)
-- [Azure Defender voor SQL](defender-for-sql-introduction.md)
-- [Azure Defender voor Key Vault](defender-for-key-vault-introduction.md)
-- [Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)
-- [Azure Defender voor containerregisters](defender-for-container-registries-introduction.md)
-
-Elk van deze abonnementen wordt afzonderlijk beschreven in de documentatie voor Security Center.
-
-Met zijn speciale dashboard biedt Azure Defender beveiligingswaarschuwingen en geavanceerde bescherming tegen dreigingen voor virtuele machines, SQL databases, containers, webtoepassingen, uw netwerk en meer.
-
-[Meer informatie over Azure Defender](azure-defender.md)
-
-### <a name="azure-defender-for-key-vault-is-generally-available"></a>Azure Defender voor Key Vault is algemeen verkrijgbaar
-
-Azure Key Vault is een cloudservice die versleutelingssleutels en geheimen, zoals certificaten, verbindingsreeksen en wachtwoorden, beveiligt. 
-
-**Azure Defender voor Key Vault** biedt voor Azure systeemeigen, geavanceerde beveiliging tegen bedreigingen voor Azure Key Vault, waarmee u een extra laag beveiligingsinformatie kunt leveren. Als uitbreiding biedt Azure Defender voor Key Vault consequent bescherming aan veel van de resources die afhankelijk zijn van uw Key Vault-accounts.
-
-Het optionele abonnement is nu algemeen beschikbaar. Deze functie was in preview als 'geavanceerde beveiliging tegen bedreigingen voor Azure Key Vault'.
-
-Daarnaast bevatten de Key Vault-pagina's in Azure Portal nu een speciale pagina **Beveiliging** voor aanbevelingen en waarschuwingen van **Security Center**.
-
-Meer informatie vindt u in [Azure Defender voor Key Vault](defender-for-key-vault-introduction.md).
-
-
-### <a name="azure-defender-for-storage-protection-for-files-and-adls-gen2-is-generally-available"></a>Azure Defender voor opslagbeveiliging voor bestanden en ADLS Gen2 is algemeen beschikbaar 
-
-**Azure Defender for Storage** detecteert potentieel schadelijke activiteiten in uw Azure Storage-accounts. Uw gegevens kunnen worden beschermd, ongeacht of deze zijn opgeslagen als blobcontainers, bestandsshares of data lakes.
-
-Ondersteuning voor [Azure Files](../storage/files/storage-files-introduction.md) en [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) is nu algemeen beschikbaar.
-
-Van 1 oktober 2020 beginnen we met de beveiliging van resources op deze services.
-
-Meer informatie vindt u in [Azure Defender voor Storage](defender-for-storage-introduction.md).
-
-
-### <a name="asset-inventory-tools-are-now-generally-available"></a>Hulpprogramma's voor assetinventarisatie zijn nu algemeen beschikbaar
-
-De pagina voor assetinventarisatie van Azure Security Center biedt één pagina voor het weergeven van het beveiligingspostuur van de resources die u hebt verbonden met Security Center.
-
-Security Center analyseert periodiek de beveiligingsstatus van uw Azure-resources om mogelijke beveiligingsproblemen op te sporen. Vervolgens krijgt u aanbevelingen voor het oplossen van deze beveiligingsproblemen.
-
-Wanneer een resource openstaande aanbevelingen heeft, worden deze weergegeven in de inventarisatie.
-
-Voor meer informatie raadpleegt u [Uw resources verkennen en beheren met assetvoorraad](asset-inventory.md).
-
-
-
-### <a name="disable-a-specific-vulnerability-finding-for-scans-of-container-registries-and-virtual-machines"></a>Een specifiek gevonden beveiligingsprobleem voor scans van containerregisters en virtuele machines uitschakelen
-
-Azure Defender bevat scanners voor beveiligingsproblemen om installatiekopieën in uw Azure Container Registry en uw virtuele machines te scannen.
-
-Als u een organisatorische behoefte hebt om een resultaat te negeren in plaats van dit te herstellen, kunt u het eventueel uitschakelen. Uitgeschakelde resultaten hebben geen invloed op uw beveiligingsscore en genereren geen ongewenste ruis.
-
-Wanneer een resultaat overeenkomt met de criteria die u hebt gedefinieerd in de regels voor uitschakelen, wordt dit niet weergegeven in de lijst met resultaten.
-
-Deze optie is beschikbaar op de pagina met aanbevelingsdetails voor:
-
-- **Beveiligingsproblemen met installatiekopieën in Azure Container Registry moeten worden hersteld**
-- **Beveiligingsproblemen op uw virtuele machines moeten worden hersteld**
-
-Meer informatie vindt u in [Specifieke resultaten voor uw containerinstallatiekopieën uitschakelen](defender-for-container-registries-usage.md#disable-specific-findings-preview) en [Specifieke resultaten voor uw virtuele machines uitschakelen](remediate-vulnerability-findings-vm.md#disable-specific-findings-preview).
-
-
-### <a name="exempt-a-resource-from-a-recommendation"></a>Een resource uitsluiten van een aanbeveling
-
-In sommige gevallen wordt een resource vermeld als niet in orde met betrekking tot een specifieke aanbeveling (en waardoor uw beveiligingsscore lager wordt), zelfs als u denkt dat dit niet zo zou moeten zijn. Dit kan zijn opgelost door een proces dat niet wordt bijgehouden door Security Center. Of misschien heeft uw organisatie besloten het risico voor die specifieke resource te accepteren. 
-
-In dergelijke gevallen kunt u een uitzonderingsregel maken en ervoor zorgen dat de resource in de toekomst niet wordt vermeld als een resource die niet in orde is. Deze regels kunnen gedocumenteerde redenen bevatten, zoals hieronder wordt beschreven.
-
-Meer informatie vindt u in [Een resource uitsluiten van aanbevelingen en de beveiligingsscore](exempt-resource.md).
-
-
-### <a name="aws-and-gcp-connectors-in-security-center-bring-a-multi-cloud-experience"></a>AWS- en GCP-connectors in Security Center bieden een multi-cloudervaring
-
-Veel workloads in de cloud beslaan meerdere cloudplatforms, dus moeten cloudbeveiligingsservices hetzelfde doen.
-
-Azure Security Center biedt nu bescherming voor workloads in Azure, Amazon Web Services (AWS) en Google Cloud Platform (GCP).
-
-Met de onboarding van uw AWS- en GCP-accounts in Security Center worden AWS Security Hub, GCP Security Command en Azure Security Center geïntegreerd. 
-
-Meer informatie vindt u in [Uw AWS-accounts verbinden met Azure Security Center](quickstart-onboard-aws.md) en [Uw GCP-accounts verbinden met Azure Security Center](quickstart-onboard-gcp.md).
-
-
-### <a name="kubernetes-workload-protection-recommendation-bundle"></a>Bundel met aanbevelingen voor Kubernetes-workloadbeveiliging
-
-Om ervoor te zorgen dat Kubernetes-workloads standaard veilig zijn, voegt Security Center aanbevelingen voor beveiliging op Kubernetes-niveau toe, met inbegrip van afdwingingsopties met Kubernetes Admission Control.
-
-Wanneer u de Azure Policy-invoegtoepassing voor Kubernetes op uw AKS-cluster hebt geïnstalleerd, wordt elke aanvraag voor de Kubernetes API-server gecontroleerd op basis van de vooraf gedefinieerde set aanbevolen procedures voordat deze naar het cluster gaat. Vervolgens kunt u instellingen configureren om de aanbevolen procedures af te dwingen en ze te verplichten voor toekomstige workloads.
-
-U kunt er bijvoorbeeld voor zorgen dat containers met machtigingen niet moeten worden gemaakt, en toekomstige aanvragen hiervoor worden dan geblokkeerd.
-
-Meer informatie vindt u in [Aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control).
-
-
-### <a name="vulnerability-assessment-findings-are-now-available-in-continuous-export"></a>Resultaten van evaluatie van beveiligingsproblemen zijn nu beschikbaar in continue export
-
-Maak gebruik van continue export om uw waarschuwingen en aanbevelingen in realtime te streamen naar Azure Event Hubs, Log Analytics-werkruimten of Azure Monitor. Daar kunt u deze gegevens integreren met SIEM's (zoals Azure Sentinel, Power BI, Azure Data Explorer en meer).
-
-De hulpprogramma's voor evaluatie van beveiligingsproblemen van Security Center retourneren informatie over uw resources als aanbevelingen voor het uitvoeren van acties in een 'hoofdaanbeveling', zoals 'beveiligingsproblemen op uw virtuele machines, moeten worden hersteld'. 
-
-De beveiligingsresultaten zijn nu beschikbaar voor export door middel van continue export wanneer u aanbevelingen selecteert en de optie **Beveiligingsresultaten insluiten** in te schakelen.
-
-:::image type="content" source="./media/continuous-export/include-security-findings-toggle.png" alt-text="De schakeloptie Beveiligingsresultaten insluiten in de configuratie voor continue export" :::
-
-Gerelateerde pagina's:
-
-- [De geïntegreerde oplossing van Security Center voor de evaluatie van beveiligingsproblemen met virtuele Azure-machines](deploy-vulnerability-assessment-vm.md)
-- [De geïntegreerde oplossing van Security Center voor de evaluatie van beveiligingsproblemen met Azure Container Registry](defender-for-container-registries-usage.md)
-- [Continue export](continuous-export.md)
-
-### <a name="prevent-security-misconfigurations-by-enforcing-recommendations-when-creating-new-resources"></a>Onjuiste beveiligingsconfiguraties voorkomen door aanbevelingen af te dwingen bij het maken van nieuwe resources
-
-Onjuiste beveiligingsconfiguraties zijn een belangrijke oorzaak van beveiligingsincidenten. Security Center biedt nu de mogelijkheid om onjuiste configuratie van nieuwe resources met betrekking tot specifieke aanbevelingen te helpen *voorkomen*. 
-
-Deze functie kan u helpen uw workloads veilig te houden en uw beveiligingsscore stabiel te houden.
-
-Het afdwingen van een veilige configuratie op basis van een specifieke aanbeveling wordt aangeboden in twee modi:
-
-- Met behulp van de optie **Weigeren** van Azure Policy, kunt u het maken van resources die niet in orde zijn, stoppen
-
-- Met de optie **Afdwingen** kunt u profiteren van het effect **DeployIfNotExist** van Azure Policy en niet-compatibele resources automatisch herstellen wanneer deze worden gemaakt
- 
-Dit is beschikbaar voor geselecteerde beveiligingsaanbevelingen en is bovenaan de pagina met resourcedetails te vinden.
-
-Meer informatie vindt u in [Onjuiste configuraties voorkomen met de aanbevelingen voor afdwingen/weigeren](prevent-misconfigurations.md).
-
-###  <a name="network-security-group-recommendations-improved"></a>Aanbevelingen voor netwerkbeveiligingsgroep verbeterd
-
-De volgende beveiligingsaanbevelingen met betrekking tot netwerkbeveiligingsgroepen zijn verbeterd om enkele gevallen van fout-positieven te verminderen.
-
-- Alle netwerkpoorten moeten worden beperkt voor de netwerkbeveiligingsgroep die is gekoppeld aan uw VM
-- Beheerpoorten moeten gesloten zijn op uw virtuele machines
-- Op internet gerichte virtuele machines moeten worden beveiligd met netwerkbeveiligingsgroepen
-- Subnetten moeten worden gekoppeld aan een netwerkbeveiligingsgroep
-
-
-### <a name="deprecated-preview-aks-recommendation-pod-security-policies-should-be-defined-on-kubernetes-services"></a>Aanbeveling AKS-preview 'Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services' afgeschaft
-
-De preview-aanbeveling 'Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services' wordt afgeschaft zoals beschreven in de documentatie van [Azure Kubernetes Service](../aks/use-pod-security-policies.md).
-
-De functie beveiligings beleid voor pod (preview) is ingesteld voor afschaffing en is na 15 oktober 2020 niet langer beschikbaar voor Azure Policy voor AKS.
-
-Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
-
-
-### <a name="email-notifications-from-azure-security-center-improved"></a>E-mailmeldingen van Azure Security Center verbeterd
-
-E-mailmeldingen met betrekking tot beveiligingswaarschuwingen zijn als volgt verbeterd: 
-
-- De mogelijkheid voor het verzenden van e-mailmeldingen over waarschuwingen voor alle ernstniveaus is toegevoegd
-- De mogelijkheid om gebruikers op de hoogte te stellen van verschillende Azure-rollen in het abonnement is toegevoegd
-- We informeren abonnementseigenaren standaard proactief over waarschuwingen met een hoge urgentie (die een hoge waarschijnlijkheid hebben een echte inbreuk te zijn)
-- Het telefoonnummerveld is verwijderd van de configuratiepagina voor e-mailmeldingen
-
-Meer informatie vindt u in [E-mailmeldingen instellen voor beveiligingswaarschuwingen](security-center-provide-security-contact-details.md).
-
-
-### <a name="secure-score-doesnt-include-preview-recommendations"></a>Beveiligingsscore bevat geen preview-aanbevelingen 
-
-Security Center controleert uw resources, abonnementen en organisatie doorlopend op beveiligingsproblemen. Vervolgens worden alle bevindingen tot één enkele score samengevoegd, zodat u in een oogopslag uw huidige beveiligingssituatie kunt zien: hoe hoger de score, hoe lager het geïdentificeerde risiconiveau is.
-
-Als er nieuwe bedreigingen worden gedetecteerd, wordt nieuw beveiligingsadvies beschikbaar gesteld in Security Center via nieuwe aanbevelingen. Om te voorkomen dat uw beveiligingsscore plotseling verandert, en om een respijtperiode te bieden waarin u nieuwe aanbevelingen kunt verkennen voordat ze van invloed zijn op uw scores, worden de aanbevelingen die zijn gemarkeerd als **Preview** niet meer opgenomen in de berekeningen van uw beveiligingsscore. Ze moeten, waar mogelijk, nog steeds worden hersteld. Wanneer de preview-periode is afgelopen, worden ze dus meegerekend in uw score.
-
-Daarnaast worden in **Preview**-aanbevelingen resources niet als 'Niet in orde' weergegeven.
-
-Een voorbeeld van een preview-aanbeveling:
-
-:::image type="content" source="./media/secure-score-security-controls/example-of-preview-recommendation.png" alt-text="Aanbeveling met de preview-markering":::
-
-[Meer informatie over de beveiligingsscore](secure-score-security-controls.md).
-
-
-### <a name="recommendations-now-include-a-severity-indicator-and-the-freshness-interval"></a>Aanbevelingen bevatten nu een ernst-indicator en vernieuwingsinterval
-
-De detailpagina voor aanbevelingen bevat nu een indicator voor het vernieuwingsinterval (indien relevant) en een duidelijke weergave van de ernst van de aanbeveling.
-
-:::image type="content" source="./media/release-notes/recommendations-severity-freshness-indicators.png" alt-text="Aanbevelingspagina met vernieuwingsinterval en ernst":::

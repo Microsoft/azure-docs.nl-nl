@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.date: 10/21/2020
 ms.custom: contperf-fy20q4, tracking-python
-ms.openlocfilehash: 3f128b7ee7fa8f690c2097a5d27e274ec1eb2a8a
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: ca3957563f7c7a7021ad994cc323823763c2936e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559536"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102171541"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk
 
@@ -38,7 +38,6 @@ Zie de andere artikelen in deze serie:
 
 > [!IMPORTANT]
 > Als uw werk ruimte zich in een __soevereine Cloud__ bevindt, zoals Azure Government of Azure China 21vianet, bieden geïntegreerde notebooks _geen_ ondersteuning voor het gebruik van opslag die zich in een virtueel netwerk bevindt. In plaats daarvan kunt u Jupyter-notebooks van een rekenproces gebruiken. Zie de sectie [toegang tot gegevens in een reken instantie-notitie blok](how-to-secure-training-vnet.md#access-data-in-a-compute-instance-notebook) voor meer informatie.
-
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -107,7 +106,6 @@ In de volgende tabel wordt beschreven waarom u beheerde identiteits verificatie 
 >
 > U kunt dit probleem oplossen door het File Store-account uit het virtuele netwerk te verwijderen en vervolgens weer toe te voegen aan het virtuele netwerk.
 
-
 ### <a name="grant-workspace-managed-identity-__reader__-access-to-storage-private-link"></a>Toegang tot de beheerde __identiteit van__ de werk ruimte verlenen aan de persoonlijke opslag koppeling
 
 Als uw Azure-opslag account gebruikmaakt van een persoonlijk eind punt, moet u de toegang tot de werkruimte beheerde identiteits **lezer** verlenen aan de privé-koppeling. Zie de ingebouwde rol van [lezer](../role-based-access-control/built-in-roles.md#reader) voor meer informatie. 
@@ -134,7 +132,7 @@ Voor __Azure Blob Storage__ wordt de door de werk ruimte beheerde identiteit ook
 
 U kunt zowel de toegangs beheer lijsten (Acl's) van Azure RBAC als POSIX-stijl gebruiken om de toegang tot gegevens binnen een virtueel netwerk te beheren.
 
-Als u Azure RBAC wilt gebruiken, voegt u de door de werk ruimte beheerde identiteit toe aan de rol [BLOB data Reader](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) . Zie [toegangs beheer op basis van rollen](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control)voor meer informatie.
+Als u Azure RBAC wilt gebruiken, voegt u de door de werk ruimte beheerde identiteit toe aan de rol [BLOB data Reader](../role-based-access-control/built-in-roles.md#storage-blob-data-reader) . Zie [Op rollen gebaseerd toegangsbeheer in Azure](../storage/blobs/data-lake-storage-access-control-model.md#role-based-access-control) voor meer informatie.
 
 Als u Acl's wilt gebruiken, kan de door de werk ruimte beheerde identiteit toegang krijgen net als elk ander beveiligings principe. Zie [toegangs beheer lijsten voor bestanden en mappen](../storage/blobs/data-lake-storage-access-control.md#access-control-lists-on-files-and-directories)voor meer informatie.
 
@@ -162,7 +160,7 @@ U moet ook [beheerde identiteits verificatie inschakelen](#configure-datastores-
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Dit artikel is een optioneel onderdeel van een serie virtuele netwerken met vier delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
+Dit artikel is deel vijf uit een virtuele netwerk reeks van vijf delen. Raadpleeg de rest van de artikelen voor meer informatie over het beveiligen van een virtueel netwerk:
 
 * [Deel 1: overzicht van virtueel netwerk](how-to-network-security-overview.md)
 * [Deel 2: de resources van de werk ruimte beveiligen](how-to-secure-workspace-vnet.md)

@@ -12,12 +12,12 @@ ms.date: 06/26/2020
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: aaddev, seoapril2019, identityplatformtop40
-ms.openlocfilehash: 5dd960dde72b879515bd948c4731ead135bef4b0
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 6adc3a8af90f6f05f640de97b8fa74c8d40e0329
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102035047"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175536"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Procedure: Gebruik de portal voor het maken van een Azure AD-toepassing en service-principal die toegang hebben tot resources
 
@@ -84,6 +84,9 @@ Laten we meteen beginnen met het maken van de identiteit. Als u een probleem ond
    ![Typ een naam voor uw toepassing](./media/howto-create-service-principal-portal/create-app.png)
 
 U hebt uw Azure AD-toepassing en service-principal gemaakt.
+
+> [!NOTE]
+> U kunt meerdere toepassingen met dezelfde naam registreren in azure AD, maar de toepassingen moeten verschillende toepassings-Id's (client) hebben.
 
 ## <a name="assign-a-role-to-the-application"></a>Een rol aan de toepassing toewijzen
 

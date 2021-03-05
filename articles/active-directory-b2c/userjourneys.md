@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: aac75e7876ce59b90e27f9e87c96240755d26235
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 05307fe2ad9e0a59fa11c30f2dc7154ba5076603
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120739"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174662"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -119,18 +119,23 @@ Het element **voor waarden** bevat het volgende element:
 
 #### <a name="precondition"></a>Precondition
 
+Orchestration-stappen kunnen voorwaardelijk worden uitgevoerd op basis van voor waarden die in de Orchestration-stap zijn gedefinieerd. Er zijn twee typen voor waarden:
+ 
+- **Claims bestaan** : Hiermee geeft u op dat de acties moeten worden uitgevoerd als de opgegeven claims bestaan in de huidige claim verzameling van de gebruiker.
+- **Claim is gelijk** aan-geeft aan dat de acties moeten worden uitgevoerd als de opgegeven claim bestaat en de waarde ervan gelijk is aan de opgegeven waarde. De controle voert een niet-hoofdletter gevoelige vergelijking uit. Bij het controleren van het type Booleaanse claim, gebruikt `True` of `False` .
+
 Het element **voor waarde** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
 | `Type` | Ja | Het type controle of query dat moet worden uitgevoerd voor deze voor waarde. De waarde kan **ClaimsExist** zijn, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claims bestaan in de huidige claimset van de gebruiker of **ClaimEquals**, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claim bestaat en de waarde ervan gelijk is aan de opgegeven waarde. |
-| `ExecuteActionsIf` | Ja | Gebruik een test waar of ONWAAR om te bepalen of de acties in de voor waarde moeten worden uitgevoerd. |
+| `ExecuteActionsIf` | Ja | Gebruik a `true` of `false` test om te bepalen of de acties in de voor waarde moeten worden uitgevoerd. |
 
 De elementen in de **voor waarde** bevatten de volgende elementen:
 
 | Element | Instanties | Beschrijving |
 | ------- | ----------- | ----------- |
-| Waarde | 1: n | Er wordt een ClaimTypeReferenceId waarvoor een query moet worden uitgevoerd. Een ander value-element bevat de waarde die moet worden gecontroleerd.</li></ul>|
+| Waarde | 1:2 | De id van een claim type. De claim is al gedefinieerd in de sectie claim schema in het beleids bestand of het bovenliggende beleids bestand. Wanneer de voor waarde van het type is `ClaimEquals` , bevat een tweede `Value` element de waarde die moet worden gecontroleerd. |
 | Bewerking | 1:1 | De actie die moet worden uitgevoerd als de voor waarde wordt gecontroleerd binnen een indelings stap waar. Als de waarde `Action` is ingesteld op `SkipThisOrchestrationStep` , moet de gekoppelde `OrchestrationStep` niet worden uitgevoerd. |
 
 #### <a name="preconditions-examples"></a>Voor beelden van voor waarden
@@ -189,7 +194,7 @@ Voor waarden kunnen meerdere voor waarden controleren. In het volgende voor beel
 </OrchestrationStep>
 ```
 
-## <a name="identity-provider-selection"></a>ID-provider selecteren
+## <a name="claims-provider-selection"></a>Claim provider selecteren
 
 Met de selectie van de identiteits provider kunnen gebruikers een actie selecteren in een lijst met opties. De selectie van de identiteits provider bestaat uit twee stappen: 
 
@@ -215,7 +220,7 @@ Het **ClaimsProviderSelection** -element bevat de volgende kenmerken:
 | TargetClaimsExchangeId | Nee | De id van de claim uitwisseling, die wordt uitgevoerd in de volgende Orchestration-stap van de claim provider selectie. Dit kenmerk of het kenmerk ValidationClaimsExchangeId moet worden opgegeven, maar niet beide. |
 | ValidationClaimsExchangeId | Nee | De id van de claim uitwisseling, die wordt uitgevoerd in de huidige Orchestration-stap om de claim provider selectie te valideren. Dit kenmerk of het kenmerk TargetClaimsExchangeId moet worden opgegeven, maar niet beide. |
 
-### <a name="claimsproviderselection-example"></a>ClaimsProviderSelection-voor beeld
+### <a name="claims-provider-selection-example"></a>Voor beeld van claim provider selectie
 
 In de volgende indelings stap kan de gebruiker kiezen om u aan te melden met Facebook, LinkedIn, Twitter, Google of een lokaal account. Als de gebruiker een van de sociale id-providers selecteert, wordt de tweede Orchestration-stap uitgevoerd met de geselecteerde claim uitwisseling die is opgegeven in het- `TargetClaimsExchangeId` kenmerk. Met de tweede Orchestration-stap wordt de gebruiker omgeleid naar de ID-provider voor sociale netwerken om het aanmeldings proces te volt ooien. Als de gebruiker ervoor kiest om zich aan te melden met het lokale account, blijft Azure AD B2C dezelfde indelings stap (dezelfde registratie pagina of aanmeldings pagina) en wordt de tweede Orchestration-stap overgeslagen.
 

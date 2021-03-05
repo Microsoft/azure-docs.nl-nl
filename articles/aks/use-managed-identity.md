@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van beheerde identiteiten in azure
 services: container-service
 ms.topic: article
 ms.date: 12/16/2020
-ms.openlocfilehash: e991f7313bae5aa67478043b4f9306dbc274e1e7
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 3ace7f1c93ab3918f460d245a863db43d98f1db5
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98659985"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102176090"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -37,16 +37,16 @@ AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde servic
 |----------------------------|-----------|----------|
 | Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Ondersteund
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
-| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | No
-| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Azure-Policy (gate keeper) | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Azure-beleid | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Calico | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | No
-| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | No
-| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | No
-| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | No
-| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | No
+| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Azure-Policy (gate keeper) | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Azure-beleid | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Calico | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | Nee
+| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | Nee
+| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | Nee
+| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | Nee
 | OSS-project | Aad-pod-identiteit | Hiermee kunnen toepassingen veilig toegang krijgen tot Cloud bronnen met Azure Active Directory (AAD) | NA | Stappen voor het verlenen van machtigingen op https://github.com/Azure/aad-pod-identity#role-assignment .
 
 ## <a name="create-an-aks-cluster-with-managed-identities"></a>Een AKS-cluster maken met beheerde identiteiten
@@ -205,5 +205,5 @@ Een succes volle cluster maken met uw eigen beheerde identiteiten bevat deze use
 
 <!-- LINKS - external -->
 [aks-arm-template]: /azure/templates/microsoft.containerservice/managedclusters
-[az-identity-create]: /cli/azure/identity?view=azure-cli-latest#az-identity-create&preserve-view=true
-[az-identity-list]: /cli/azure/identity?view=azure-cli-latest#az-identity-list&preserve-view=true
+[az-identity-create]: /cli/azure/identity#az-identity-create
+[az-identity-list]: /cli/azure/identity#az-identity-list

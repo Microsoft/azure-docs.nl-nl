@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 3c720e2b033d07397f3b13c37e1b4e15251b0a17
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 0bfdea6c0bbbe40e4c72ab9da70a1b16d4bc4d3a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519487"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175665"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Diep gaande lessen en AI-frameworks voor Azure Data Science VM
 Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
@@ -115,9 +115,9 @@ Uitgebreide lessen op het DSVM worden hieronder weer gegeven.
 
 | Categorie | Waarde |
 | ------------- | ------------- |
-| Ondersteunde versies | 1.2.0 (Ubuntu 16,04), 1.4.0 (Ubuntu 18,04, Windows 2019) |
+| Ondersteunde versies | 1.2.0 (Ubuntu 16,04), 1.7.1 (Ubuntu 18,04, Windows 2019) |
 | Ondersteunde DSVM-edities      | Windows Server 2019<br>Ubuntu 18.04<br> Ubuntu 16.04 |
-| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | Geïnstalleerd in [Python 3,5](dsvm-tools-languages.md#python-linux-edition). Voor beelden van Jupyter-notebooks zijn opgenomen. |
+| Hoe wordt het geconfigureerd/geïnstalleerd op de DSVM?  | Geïnstalleerd in [Python 3,7](dsvm-tools-languages.md#python-linux-edition) onder de Conda-omgeving van py37_pytorch. Voor beelden van Jupyter-notebooks zijn opgenomen. |
 | Het uitvoeren van het programma      | Terminal: Activeer de juiste omgeving en voer python uit.<br/>* [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine): Maak verbinding en open vervolgens de map PyTorch voor voor beelden.  |
 
 ## <a name="tensorflow"></a>[TensorFlow](https://www.tensorflow.org/)

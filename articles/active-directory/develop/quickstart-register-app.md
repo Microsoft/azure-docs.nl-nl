@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperf-fy21q1, contperf-fy21q2
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 027d1bf005ac052bf48e2c0aa3a4a71fc29f36f2
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: c72ae2a2e6dbd2278bdd78f26c145386be22764e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101647435"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175427"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform
 
@@ -40,7 +40,8 @@ Volg deze stappen om de app-registratie te maken:
 1. Als u toegang hebt tot meerdere tenants, gebruikt u in het bovenste menu het **Directory-en abonnements** filter :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: om de Tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
-1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen deze naam zien. U kunt deze later wijzigen.
+1. Voer een weergave **naam** in voor uw toepassing. Gebruikers van uw toepassing kunnen de weergave naam zien wanneer ze de app gebruiken, bijvoorbeeld tijdens het aanmelden.
+    U kunt de weergave naam op elk gewenst moment wijzigen en meerdere app-registraties kunnen dezelfde naam delen. De app-registratie heeft de automatisch gegenereerde Application-ID (client), niet de weergave naam, waarmee uw app binnen het identiteits platform uniek wordt geïdentificeerd.
 1. Geef op wie de toepassing kan gebruiken, soms ook wel het *publiek van de aanmelding*.
 
     | Ondersteunde accounttypen | Beschrijving |

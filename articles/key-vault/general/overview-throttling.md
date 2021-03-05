@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 5b60f290f6d3ca184e25edd2984ad5b2d1ff2bdf
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 7bdc3ac517df6b73fba7231cfe0fdc9855803782
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289673"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175750"
 ---
 # <a name="azure-key-vault-throttling-guidance"></a>Richtlijnen voor beperkingen in Azure Key Vault
 
@@ -24,7 +24,7 @@ Beperkings limieten variëren op basis van het scenario. Als u bijvoorbeeld een 
 
 ## <a name="how-does-key-vault-handle-its-limits"></a>Hoe worden de limieten Key Vault afhandelen?
 
-Service limieten in Key Vault misbruik van bronnen te voor komen en ervoor te zorgen dat de service voor alle clients van Key Vault. Wanneer een service drempel wordt overschreden, wordt door Key Vault alle aanvragen van die client gedurende een bepaalde periode beperkt, wordt de HTTP-status code 429 (te veel aanvragen) geretourneerd en mislukt de aanvraag. Mislukte aanvragen die een aantal van 429 retour neren naar de beperkings limieten die worden bijgehouden door Key Vault. 
+Service limieten in Key Vault misbruik van bronnen te voor komen en ervoor te zorgen dat de service voor alle clients van Key Vault. Wanneer een service drempel wordt overschreden, wordt door Key Vault alle aanvragen van die client gedurende een bepaalde periode beperkt, wordt de HTTP-status code 429 (te veel aanvragen) geretourneerd en mislukt de aanvraag. Mislukte aanvragen die een 429 retour neren, tellen niet mee voor de beperkings limieten die door Key Vault worden bijgehouden. 
 
 Key Vault was oorspronkelijk ontworpen om te worden gebruikt om uw geheimen op te slaan en op te halen tijdens de implementatie.  De wereld heeft zich ontwikkeld en Key Vault wordt tijdens runtime gebruikt om geheimen op te slaan en op te halen, en vaak willen apps en services Key Vault als een Data Base gebruiken.  Huidige limieten bieden geen ondersteuning voor hoge doorvoer snelheden.
 
@@ -47,8 +47,8 @@ Als u merkt dat het bovenstaande nog niet aan uw behoeften voldoet, vult u de on
 
 Als aanvullende capaciteit is goedgekeurd, let dan op het volgende als resultaat van de capaciteits toename:
 1. Wijzigingen in het gegevens consistentie model. Zodra een kluis in de lijst met extra doorvoer capaciteit is toegestaan, wordt de Key Vault service gegevens consistentie garantie gewijzigd (nood zakelijk om te voldoen aan de RPS van een hoger volume omdat de onderliggende Azure Storage service niet kan worden uitgevoerd).  In een kort gezegd:
-  1. **Zonder vermelding toestaan** : de Key Vault-service geeft de resultaten van een schrijf bewerking weer (bijvoorbeeld Geheimset, CreateKey) direct in volgende aanroepen (bijvoorbeeld SecretGet).
-  1. **Met vermelding toestaan** : de Key Vault-service geeft de resultaten van een schrijf bewerking weer (bijvoorbeeld Geheimset, CreateKey) binnen 60 seconden in volgende aanroepen (bijvoorbeeld SecretGet).
+  1. **Zonder vermelding toestaan**: de Key Vault-service geeft de resultaten van een schrijf bewerking weer (bijvoorbeeld Geheimset, CreateKey) direct in volgende aanroepen (bijvoorbeeld SecretGet).
+  1. **Met vermelding toestaan**: de Key Vault-service geeft de resultaten van een schrijf bewerking weer (bijvoorbeeld Geheimset, CreateKey) binnen 60 seconden in volgende aanroepen (bijvoorbeeld SecretGet).
 1. Client code moet voldoen aan het beleid voor uitstel van 429 nieuwe pogingen. De client code die de Key Vault-service aanroept, mag niet direct Key Vault aanvragen opnieuw proberen wanneer de 429-respons code wordt ontvangen.  De Azure Key Vault beperkings richtlijnen die hier worden gepubliceerd, wordt aanbevolen exponentiële uitstel toe te passen wanneer u een 429 HTTP-respons code ontvangt.
 
 Neem contact met ons op als u een geldige zakelijke case hebt voor hogere beperkings limieten.

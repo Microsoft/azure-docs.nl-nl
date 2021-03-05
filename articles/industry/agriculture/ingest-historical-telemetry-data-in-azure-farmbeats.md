@@ -4,14 +4,14 @@ description: In dit artikel wordt beschreven hoe u historische telemetriegegeven
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
+ms.author: v-ummehabiba
 ms.custom: has-adal-ref
-ms.openlocfilehash: 603f14d2076b5b74dde0b92a732f8fe816f6dd10
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: e4182f3718422be3a0aa99c980d33026df4ce9af
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656781"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173746"
 ---
 # <a name="ingest-historical-telemetry-data"></a>Historische telemetriegegevens opnemen
 
@@ -107,7 +107,7 @@ Volg deze stappen:
 | Fabrikant | De naam van de fabrikant |
 | Code | Product code of model naam of-nummer van het apparaat. Bijvoorbeeld EnviroMonitor # 6800. |
 | Poorten | Poort naam en-type, digitaal of analoog. |
-| Naam | Naam om de resource te identificeren. Bijvoorbeeld de naam van het model of de product naam. |
+| Name | Naam om de resource te identificeren. Bijvoorbeeld de naam van het model of de product naam. |
 | Beschrijving | Geef een zinvolle beschrijving van het model op. |
 | Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
 | **Apparaat** |  |
@@ -116,7 +116,7 @@ Volg deze stappen:
 | ReportingInterval | Rapportage-interval in seconden. |
 | Locatie | Apparaat Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters). |
 | ParentDeviceId | De ID van het bovenliggende apparaat waarmee dit apparaat is verbonden. Bijvoorbeeld een knoop punt dat is verbonden met een gateway. Een knoop punt heeft parentDeviceId als de gateway. |
-| Naam | Een naam om de resource te identificeren. Apparaat-partners moeten een naam verzenden die consistent is met de apparaatnaam aan de partner zijde. Als de naam van de partner apparaat door de gebruiker is gedefinieerd, moet dezelfde door de gebruiker gedefinieerde naam worden door gegeven aan FarmBeats. |
+| Name | Een naam om de resource te identificeren. Apparaat-partners moeten een naam verzenden die consistent is met de apparaatnaam aan de partner zijde. Als de naam van de partner apparaat door de gebruiker is gedefinieerd, moet dezelfde door de gebruiker gedefinieerde naam worden door gegeven aan FarmBeats. |
 | Beschrijving | Geef een zinvolle beschrijving op. |
 | Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
 | **SensorModel** |  |
@@ -128,7 +128,7 @@ Volg deze stappen:
 | SensorMeasures > type | Meet type van de telemetrie van de sensor. De door het systeem gedefinieerde typen zijn AmbientTemperature, CO2, depth, ElectricalConductivity, LeafWetness, length, LiquidLevel, nitraat, O2, PH, fosfaat, PointInTime, kalium, druk, RainGauge, RelativeHumidity, zout, SoilMoisture, SoilTemperature, SolarRadiation, State, TimeDuration, UVRadiation, UVIndex, volume, WindDirection, WindRun, WindSpeed, Evapotranspiration, PAR. Raadpleeg de/ExtendedType-API om meer toe te voegen. |
 | SensorMeasures >-eenheid | De gegevens eenheid van de sensor-telemetrie. De door het systeem gedefinieerde eenheden zijn geen eenheid, Celsius, Fahrenheit, Kelvin, Rankine, Pascal, kwik, PSI, MilliMeter, CentiMeter, meter, inch, meter, mijl, kilo meter, MilesPerHour, MilesPerSecond, KMPerHour, KMPerSecond, MetersPerHour, MetersPerSecond, degree, WattsPerSquareMeter, KiloWattsPerSquareMeter, MilliWattsPerSquareCentiMeter, MilliJoulesPerSquareCentiMeter, VolumetricWaterContent, het PartsPerMillion, MicroMol, MicroMolesPerLiter, SiemensPerSquareMeterPerMole, MilliSiemensPerCentiMeter, Centibar,,,, DeciSiemensPerMeter en KiloPascal. Als u meer wilt toevoegen, raadpleegt u de VolumetricIonContent-API. |
 | SensorMeasures > AggregationType | De waarden kunnen none, Average, maximum, minimum of StandardDeviation zijn. |
-| Naam | Naam voor het identificeren van een resource. Bijvoorbeeld de naam van het model of de product naam. |
+| Name | Naam voor het identificeren van een resource. Bijvoorbeeld de naam van het model of de product naam. |
 | Beschrijving | Geef een zinvolle beschrijving van het model op. |
 | Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
 | **Sensoren** |  |
@@ -137,7 +137,7 @@ Volg deze stappen:
 | Locatie | Sensor Latitude (-90 tot + 90), lengte graad (-180 tot 180) en uitbrei ding (in meters). |
 | Naam van poort > | Naam en type van de poort waarop de sensor is aangesloten op het apparaat. Dit moet overeenkomen met de naam die is gedefinieerd in het model apparaat. |
 | DeviceID | ID van het apparaat waarmee de sensor is verbonden. |
-| Naam | Naam voor het identificeren van de resource. Bijvoorbeeld de naam van de sensor of de product naam en het model nummer of de product code. |
+| Name | Naam voor het identificeren van de resource. Bijvoorbeeld de naam van de sensor of de product naam en het model nummer of de product code. |
 | Beschrijving | Geef een zinvolle beschrijving op. |
 | Eigenschappen | Aanvullende eigenschappen van de fabrikant. |
 

@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: 3a2636ec73d20f3011d8413c794e68ef41b1829c
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 94d069a283249f2880743ba911c32bf3821d28c8
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209182"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102171480"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -27,15 +27,21 @@ Om alle stappen van deze zelfstudie te kunnen voltooien, moet u toegang hebben t
 
 ## <a name="create-a-synapse-workspace-in-the-azure-portal"></a>Maak een Synapse-werkruimte in Azure Portal
 
-1. Open de [Azure-portal](https://portal.azure.com) en zoek bovenin naar **Synapse**.
+1. Open de [Azure Portal](https://portal.azure.com), typ **Synapse** in de zoek balk zonder ENTER.
 1. Selecteer in de zoekresultaten onder **Services** de optie **Azure Synapse Analytics**.
 1. Selecteer **Toevoegen** om een werkruimte te maken.
-1. Voer op het tabblad **basis beginselen** onder Project Details het gewenste **abonnement**, de **resource groep** en de **regio** in en kies vervolgens de naam van een werk ruimte. In deze zelfstudie gebruiken we **myworkspace**.
-1. Als **u data Lake Storage gen 2 selecteert**, klikt u op de knop voor **van abonnement**.
-1. Klik op **account naam** op **Nieuw** en geef de naam van het nieuwe opslag account **contosolake** of soortgelijk op als deze naam uniek moet zijn.
-1. Op **naam van bestands systeem**, klikt u op **nieuwe maken** en de naam **gebruikers** benoemen. Hiermee maakt u een opslag container met de naam **gebruikers**
-1. In de werkruimte wordt dit opslagaccount gebruikt als het primaire opslagaccount voor logboeken voor Spark-tabellen en Spark-toepassingen.
-1. Schakel het selectie vakje ' de rol van de BLOB voor het koppelen van gegevens in het Data Lake Storage Gen2-account toewijzen ' in. 
+1. Ga naar het tabblad **basis** informatie en vul onder **Project Details** de volgende velden in:
+      1. **Abonnement** : Kies een abonnement.
+      2. **Resource groep** : gebruik een resource groep.
+      3. **Resource groep** : laat dit veld leeg.
+1. Vul op het tabblad **basis beginselen** onder **werkruimte Details** de volgende velden in:
+      1. **Werkruimte naam** : Kies een wereld wijd unieke naam. In deze zelfstudie gebruiken we **myworkspace**.
+      1. **Regio** : Kies een wille keurige regio.
+      1. **Data Lake Storage gen 2 selecteren**
+        1. Klik op de knop voor **van abonnement**.
+        1. Klik op **account naam** op **Nieuw** en geef de naam van het nieuwe opslag account **contosolake** of soortgelijk op als deze naam uniek moet zijn.
+        1. Op **naam van bestands systeem**, klikt u op **nieuwe maken** en de naam **gebruikers** benoemen. Hiermee maakt u een opslag container die **gebruikers** wordt genoemd. In de werkruimte wordt dit opslagaccount gebruikt als het primaire opslagaccount voor logboeken voor Spark-tabellen en Spark-toepassingen.
+        1. Schakel het selectie vakje ' de rol van de BLOB voor het koppelen van gegevens in het Data Lake Storage Gen2-account toewijzen ' in. 
 1. Selecteer **Beoordelen en maken** > **Maken**. Uw werkruimte is binnen een paar minuten klaar.
 
 > [!NOTE]

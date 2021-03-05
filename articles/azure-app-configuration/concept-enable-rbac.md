@@ -6,12 +6,12 @@ ms.author: alkemper
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.service: azure-app-configuration
-ms.openlocfilehash: 4768dbe292b7c71770ded1e8ad27025bc9944608
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f29be1807dfcc314c89d30301107670a970263ce
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96930259"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172872"
 ---
 # <a name="authorize-access-to-azure-app-configuration-using-azure-active-directory"></a>Toegang tot Azure-app configuratie machtigen met behulp van Azure Active Directory
 Naast het gebruik van op hash gebaseerde Message Authentication Code (HMAC), ondersteunt Azure-app configuratie het gebruik van Azure Active Directory (Azure AD) voor het machtigen van aanvragen voor app-configuratie-exemplaren.  Met Azure AD kunt u Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om machtigingen te verlenen aan een beveiligings-principal.  Een beveiligingsprincipal kan een gebruiker, een [beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) of een [Application Service-Principal](../active-directory/develop/app-objects-and-service-principals.md)zijn.  Zie voor meer informatie over rollen en roltoewijzingen [wat verschillende rollen zijn](../role-based-access-control/overview.md).
@@ -37,9 +37,6 @@ Azure biedt de volgende ingebouwde rollen van Azure voor het verlenen van toegan
 - **Gegevens lezer app-configuratie**: gebruik deze rol om Lees toegang te geven tot app-configuratie gegevens. Hiermee wordt geen toegang verleend tot de bron van de configuratie van de app.
 - **Inzender**: gebruik deze rol om de configuratie bron van de app te beheren. Terwijl de app-configuratie gegevens kunnen worden geopend met behulp van toegangs sleutels, verleent deze rol geen directe toegang tot de gegevens met behulp van Azure AD.
 - **Lezer**: gebruik deze rol om Lees toegang te verlenen aan de configuratie bron van de app. Hiermee wordt geen toegang verleend tot de toegangs sleutels van de resource en evenmin op de gegevens die zijn opgeslagen in de app-configuratie.
-
-> [!NOTE]
-> Op dit moment ondersteunt de Azure Portal alleen HMAC-verificatie voor toegang tot app-configuratie gegevens. Azure AD-verificatie wordt niet ondersteund. Daarom moeten gebruikers van de Azure Portal de rol *Inzender* nodig hebben om de toegangs sleutels van de configuratie bron van de app op te halen. Het verlenen van de *gegevens lezer* van de app-configuratie of de eigenaar van de *app-configuratie gegevens* heeft geen invloed op de toegang via de portal.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over het gebruik van [beheerde identiteiten](howto-integrate-azure-managed-service-identity.md) voor het beheren van uw app-configuratie service.

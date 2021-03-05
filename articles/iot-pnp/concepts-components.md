@@ -7,12 +7,12 @@ ms.date: 07/07/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 7d33811dc056baa3d205d7d86c1bdd7bff74ae54
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: eef8179567d83e3727c3ab949eef2706ce2a9b16
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92329999"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175801"
 ---
 # <a name="iot-plug-and-play-components-in-models"></a>IoT Plug en Play-componenten in modellen
 
@@ -56,7 +56,7 @@ In het volgende voor beeld ziet u een deel van een eenvoudig model dat geen gebr
 ...
 ```
 
-Hoewel het model niet expliciet een onderdeel definieert, gedraagt het zich alsof er één _standaard onderdeel_is met alle telemetrie, eigenschap en opdracht definities.
+Hoewel het model niet expliciet een onderdeel definieert, gedraagt het zich alsof er één _standaard onderdeel_ is met alle telemetrie, eigenschap en opdracht definities.
 
 De volgende scherm afbeelding laat zien hoe het model wordt weer gegeven in het hulp programma Azure IoT Explorer:
 
@@ -64,7 +64,7 @@ De volgende scherm afbeelding laat zien hoe het model wordt weer gegeven in het 
 
 De model-ID wordt opgeslagen in een eigenschap van een apparaatonafhankelijk-apparaat, zoals in de volgende scherm afbeelding wordt weer gegeven:
 
-:::image type="content" source="media/concepts-components/twin-model-id.png" alt-text="Standaard onderdeel in azure IoT Explorer":::
+:::image type="content" source="media/concepts-components/twin-model-id.png" alt-text="Model-ID in digitale dubbele eigenschap":::
 
 Een DTDL-model zonder onderdelen is een nuttige vereenvoudiging voor een apparaat of IoT Edge module met één set telemetrie, eigenschappen en opdrachten. Een model dat geen gebruikmaakt van-onderdelen, maakt het eenvoudig om een bestaand apparaat of module te migreren naar een IoT Plug en Play apparaat of module: u maakt een DTDL-model waarin het apparaat of de module wordt beschreven zonder dat hiervoor onderdelen moeten worden gedefinieerd.
 
@@ -75,7 +75,7 @@ Een DTDL-model zonder onderdelen is een nuttige vereenvoudiging voor een apparaa
 
 Met onderdelen kunt u een model interface bouwen als een assembly van andere interfaces.
 
-De [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-interface wordt bijvoorbeeld gedefinieerd als een model. Wanneer u het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json)definieert, kunt u deze interface opnemen als een of meer onderdelen. In het volgende voor beeld worden deze onderdelen `thermostat1` en genoemd `thermostat2` .
+De [Thermo](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json) staat-interface wordt bijvoorbeeld gedefinieerd als een model. U kunt deze interface als een of meer onderdelen opnemen wanneer u het [temperatuur controller model](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json)definieert. In het volgende voor beeld worden deze onderdelen `thermostat1` en genoemd `thermostat2` .
 
 Er zijn twee of meer onderdeel secties voor een DTDL-model met meerdere onderdelen. Elke sectie heeft `@type` ingesteld op `Component` en verwijst expliciet naar een schema zoals wordt weer gegeven in het volgende code fragment:
 

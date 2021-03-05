@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 9e315812f7e281cf281cad9e052ab4546bde05f9
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: da12955606062e6cfc0e6bf17eeedcaed0aac1ff
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101645838"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102171681"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Aanmelden instellen voor een specifieke Azure Active Directory organisatie in Azure Active Directory B2C
 
@@ -90,7 +90,7 @@ Als u de `family_name` en `given_name` claims van Azure ad wilt ophalen, kunt u 
 
 1. Voor **Client-id** voert u de toepassings-id in die u eerder hebt genoteerd.
 1. Voor **Clientgeheim** voert u het clientgeheim in dat u eerder hebt genoteerd.
-1. Voer in voor het bereik `openid profile` .
+1. Voer in bij bereik `openid profile` .
 1. Behoud de standaardwaarden voor **Antwoordtype** en **Antwoordmodus**.
 1. Voer `contoso.com` in voor **Domeinhint** (optioneel). Raadpleeg [Direct aanmelden met behulp van Azure Active Directory B2C instellen](direct-signin.md#redirect-sign-in-to-a-social-provider).
 1. Selecteer onder **Claimstoewijzing voor id-provider** de volgende claims:

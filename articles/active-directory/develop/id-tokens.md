@@ -14,12 +14,12 @@ ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: 6a1f4a02ebf42c0f181b595aae0a5fa0bcc9b41d
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 21e0b800e06b7a5ad0351ff53d26a5e2cd2ba71c
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755911"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175385"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Tokens van micro soft Identity platform ID
 
@@ -55,7 +55,7 @@ Bekijk dit v 2.0-voorbeeld token in [JWT.MS](https://jwt.ms/#id_token=eyJ0eXAiOi
 |-----|--------|-------------|
 |`typ` | Teken reeks-altijd "JWT" | Geeft aan dat het token een JWT-token is.|
 |`alg` | Tekenreeks | Hiermee wordt het algoritme aangegeven dat is gebruikt om het token te ondertekenen. Voor beeld: "RS256" |
-|`kid` | Tekenreeks | Vinger afdruk voor de open bare sleutel die wordt gebruikt om dit token te ondertekenen. Verzonden in zowel v 1.0 als v 2.0 `id_tokens` . |
+|`kid` | Tekenreeks | Vinger afdruk voor de open bare sleutel die wordt gebruikt om dit token te controleren. Verzonden in zowel v 1.0 als v 2.0 `id_tokens` . |
 |`x5t` | Tekenreeks | Hetzelfde (in gebruik en waarde) als `kid` . Dit is echter een verouderde claim die alleen is verzonden in v 1.0 `id_tokens` voor compatibiliteits doeleinden. |
 
 ### <a name="payload-claims"></a>Nettolading claims

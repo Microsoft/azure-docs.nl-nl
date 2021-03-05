@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: ecf0f54913f980d879b562eb4aa8063acf6c4772
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 6f42f712ecca77c00020304b63f5a1b0dbd77ad0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92320257"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172317"
 ---
 # <a name="install-client-tools-for-deploying-and-managing-azure-arc-enabled-data-services"></a>Installeer de clienthulpprogramma's voor het implementeren en beheren van gegevensservices met Azure Arc
 
@@ -36,7 +36,7 @@ De volgende tabel bevat algemene hulpprogram ma's die nodig zijn voor het maken 
 | [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] extensie voor Azure Data Studio | Ja | Extensie voor Azure Data Studio die wordt geïnstalleerd [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] Als u deze nog niet hebt.| Installeren uit de galerie met extensies in Azure Data Studio.|
 | Azure Arc-extensie voor Azure Data Studio | Ja | Uitbrei ding voor Azure Data Studio die een beheer ervaring biedt voor Azure Arc ingeschakelde gegevens Services. Er is een afhankelijkheid van de [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)] extensie voor Azure Data Studio. | Installeren uit de galerie met extensies in Azure Data Studio.|
 | PostgreSQL-extensie in Azure Data Studio | Nee | PostgreSQL-extensie voor Azure Data Studio die beheer mogelijkheden biedt voor PostgreSQL. | <!--{need link} [Install](../azure-data-studio/data-virtualization-extension.md) --> Installeren uit de galerie met extensies in Azure Data Studio.|
-| Azure CLI (AZ)<sup>1</sup> | Ja | Moderne opdracht regel interface voor het beheren van Azure-Services. Wordt gebruikt in combi natie met AKS-implementaties en voor het uploaden van gegevens Services-inventarisatie en facturerings gegevens van Azure-Arc ingeschakeld naar Azure. ([Meer informatie](/cli/azure/?view=azure-cli-latest&preserve-view=true)). | [Installeren](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) |
+| Azure CLI (AZ)<sup>1</sup> | Ja | Moderne opdracht regel interface voor het beheren van Azure-Services. Wordt gebruikt in combi natie met AKS-implementaties en voor het uploaden van gegevens Services-inventarisatie en facturerings gegevens van Azure-Arc ingeschakeld naar Azure. ([Meer informatie](/cli/azure/)). | [Installeren](/cli/azure/install-azure-cli) |
 | Kubernetes CLI (kubectl)<sup>2</sup> | Ja | Opdracht regel programma voor het beheren van het Kubernetes-cluster ([meer informatie](https://kubernetes.io/docs/tasks/tools/install-kubectl/)). | [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-powershell-from-psgallery) \| [Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-using-native-package-management) |
 | krul <sup>3</sup> | Vereist voor een aantal voorbeeld scripts. | Opdracht regel programma voor het overdragen van gegevens met Url's. | [Windows](https://curl.haxx.se/windows/) \| Linux: een krul pakket installeren |
 | OC | Vereist voor Red Hat open Shift en Azure RedHat-openstaande implementaties. |`oc` is de open Shift-opdracht regel interface (CLI). | [De CLI installeren](https://docs.openshift.com/container-platform/4.4/cli_reference/openshift_cli/getting-started-cli.html#installing-the-cli)

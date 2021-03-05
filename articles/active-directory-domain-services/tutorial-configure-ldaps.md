@@ -7,14 +7,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/06/2020
+ms.date: 03/04/2021
 ms.author: justinha
-ms.openlocfilehash: 6da1d285440daa5d1d5a230905a77057728d4ae6
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: fd93635e7087d6f4a3590ec7bcb25482dc8382da
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256539"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174717"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Secure LDAP configureren voor een door Azure Active Directory Domain Services beheerd domein
 
@@ -110,7 +110,7 @@ Om Secure LDAP te gebruiken, wordt het netwerkverkeer versleuteld met behulp van
 * Er wordt een **persoonlijke** sleutel toegepast op het beheerde domein.
     * Deze persoonlijke sleutel wordt gebruikt om het Secure LDAP-verkeer te *ontsleutelen*. De persoonlijke sleutel moet alleen worden toegepast op het beheerde domein en niet wijdverbreid over clientcomputers worden gedistribueerd.
     * Een certificaat dat de persoonlijke sleutel bevat, heeft de bestandsindeling *.pfx*.
-    * Het versleutelingsalgoritme voor het certificaat moet *TripleDES-SHA1* zijn.
+    * Bij het exporteren van het certificaat moet u de *TripleDES-SHA1-* versleutelings algoritme opgeven. Dit is alleen van toepassing op het pfx-bestand en heeft geen invloed op het algoritme dat door het certificaat zelf wordt gebruikt. Houd er rekening mee dat de optie *TripleDES-SHA1* alleen beschikbaar is vanaf Windows Server 2016.
 * Een **openbare** sleutel wordt toegepast op de clientcomputers.
     * Deze openbare sleutel wordt gebruikt om het beveiligde LDAP-verkeer te *versleutelen*. De openbare sleutel kan worden gedistribueerd naar clientcomputers.
     * Certificaten zonder de persoonlijke sleutel hebben de bestandsindeling *.cer*.
@@ -151,6 +151,11 @@ Voordat u het digitale certificaat dat u hebt gemaakt in de vorige stap kunt geb
 1. Omdat dit certificaat wordt gebruikt om gegevens te ontsleutelen, moet u de toegang zorgvuldig regelen. U kunt een wachtwoord toepassen om het gebruik van het certificaat te beveiligen. Zonder het juiste wachtwoord kan het certificaat niet worden toegepast op een service.
 
     Kies op de pagina **Beveiliging** de optie voor **Wachtwoord** om het *PFX*-certificaatbestand te beveiligen. Het versleutelingsalgoritme moet *TripleDES-SHA1* zijn. Voer een wachtwoord in en bevestig dit. Selecteer vervolgens **Volgende**. Dit wachtwoord wordt in de volgende sectie gebruikt om Secure LDAP in te schakelen voor uw beheerde domein.
+
+    Als u exporteert met de [Power shell-cmdlet Export-pfx](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate?view=win10-ps), moet u de vlag *-CryptoAlgorithmOption* door geven met TripleDES_SHA1.
+
+    ![Scherm afbeelding van het versleutelen van het wacht woord](./media/tutorial-configure-ldaps/encrypt.png)
+
 1. Geef op de pagina **Bestand dat u wilt exporteren** de bestandsnaam en de locatie waar u het certificaat wilt exporteren op, bijvoorbeeld *C:\Users\accountname\azure-ad-ds.pfx*. Noteer het wachtwoord en de locatie van het *PFX*-bestand omdat u deze informatie in de volgende stappen nodig hebt.
 1. Selecteer **Voltooien** op de controlepagina om het certificaat naar een *PFX*-certificaatbestand te exporteren. Er wordt een dialoogvenster voor bevestiging weergegeven wanneer het certificaat is geëxporteerd.
 1. Laat MMC geopend voor gebruik in de volgende sectie.

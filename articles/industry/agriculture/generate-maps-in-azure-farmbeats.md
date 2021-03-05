@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe u kaarten kunt genereren in azu
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: 92228c691c323bc0b9621dfc7413d86c5c2669e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.author: v-ummehabiba
+ms.openlocfilehash: d0176fd337abd37f97a6dbe5cf7c68ccf94114d0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84709059"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173861"
 ---
 # <a name="generate-maps"></a>Kaarten genereren
 
@@ -54,11 +54,11 @@ In deze sectie vindt u informatie over de procedures voor het maken van kaarten 
 Volg deze stappen.
 
 1. Ga op de start pagina naar **kaarten** vanuit het navigatie menu links.
-2. Selecteer **kaarten maken**en selecteer **positie van sensor** in de vervolg keuzelijst.
+2. Selecteer **kaarten maken** en selecteer **positie van sensor** in de vervolg keuzelijst.
 
     ![Positie van sensor selecteren](./media/get-sensor-data-from-sensor-partner/create-maps-drop-down-1.png)
 
-3. Nadat u de **positie**van de sensor hebt geselecteerd, wordt het venster **sensor plaatsing** weer gegeven.
+3. Nadat u de **positie** van de sensor hebt geselecteerd, wordt het venster **sensor plaatsing** weer gegeven.
 
     ![Plaatsings venster sensor](./media/get-sensor-data-from-sensor-partner/sensor-placement-1.png)
 
@@ -69,7 +69,7 @@ Volg deze stappen.
 7. Selecteer **Maps genereren**.
  Er wordt een bevestigings bericht met taak details weer gegeven.
 
-  Zie de sectie **taken weer geven**voor meer informatie over de taak status. Als de status van de taak *niet*wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
+  Zie de sectie **taken weer geven** voor meer informatie over de taak status. Als de status van de taak *niet* wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
 
   Als het probleem zich blijft voordoen, raadpleegt u de sectie [problemen oplossen](troubleshoot-azure-farmbeats.md) of neemt u contact op met het [Azure FarmBeats-forum voor ondersteuning](https://aka.ms/FarmBeatsMSDN) bij relevante Logboeken.
 
@@ -86,11 +86,11 @@ Volg deze stappen.
 
     ![Filter venster](./media/get-sensor-data-from-sensor-partner/view-download-filter-1.png)
 
-3. Selecteer waarden voor **type**, **datum**en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven.
+3. Selecteer waarden voor **type**, **datum** en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven.
   De datum waarop de taak is gemaakt, wordt weer gegeven in de notatie type_farmname_YYYY-MM-DD.
 4. Blader door de lijst met kaarten die beschikbaar zijn via de Navigatie balken aan het einde van de pagina.
 5. Selecteer de kaart die u wilt weer geven. In een pop-upvenster wordt het voor beeld voor de geselecteerde kaart weer gegeven.
-6. Selecteer **downloaden**en down load het geojson-bestand met sensor coördinaten.
+6. Selecteer **downloaden** en down load het geojson-bestand met sensor coördinaten.
 
     ![Voor beeld van sensor plaatsings kaart](./media/get-sensor-data-from-sensor-partner/download-sensor-placement-map-1.png)
 
@@ -113,11 +113,11 @@ FarmBeats biedt u de mogelijkheid om NDVI, Enhanced vegetatie index (EVI) en gen
 Volg deze stappen.
 
 1. Ga op de start pagina naar **kaarten** vanuit het navigatie menu links.
-2. Selecteer **kaarten maken**en selecteer **satelliet-indexen** in de vervolg keuzelijst.
+2. Selecteer **kaarten maken** en selecteer **satelliet-indexen** in de vervolg keuzelijst.
 
     ![Satelliet-Indexen selecteren in de vervolg keuzelijst](./media/get-sensor-data-from-sensor-partner/create-maps-drop-down-satellite-indices-1.png)
 
-3. Nadat u **satelliet-indexen**hebt geselecteerd, wordt het venster **satelliet-indexen** weer gegeven.
+3. Nadat u **satelliet-indexen** hebt geselecteerd, wordt het venster **satelliet-indexen** weer gegeven.
 
     ![Venster met satelliet-indexen](./media/get-sensor-data-from-sensor-partner/satellitte-indices-1.png)
 
@@ -130,7 +130,7 @@ Volg deze stappen.
 
     ![Bevestigings bericht voor kaart met satelliet-indexen](./media/get-sensor-data-from-sensor-partner/successful-satellitte-indices-1.png)
 
-    Zie de sectie **taken weer geven**voor meer informatie over de taak status. Als de status van de taak *niet*wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
+    Zie de sectie **taken weer geven** voor meer informatie over de taak status. Als de status van de taak *niet* wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
 
     Als het probleem zich blijft voordoen, raadpleegt u de sectie [problemen oplossen](troubleshoot-azure-farmbeats.md) of neemt u contact op met het [Azure FarmBeats-forum voor ondersteuning](https://aka.ms/FarmBeatsMSDN) bij relevante Logboeken.
 
@@ -146,11 +146,11 @@ Volg deze stappen.
 
     ![Filter venster bevat zoek criteria](./media/get-sensor-data-from-sensor-partner/view-download-filter-1.png)
 
-3. Selecteer waarden voor **type**, **datum**en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven.
+3. Selecteer waarden voor **type**, **datum** en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven.
   De datum waarop de taak is gemaakt, wordt weer gegeven in de notatie type_farmname_YYYY-MM-DD.
 
 4. Blader door de lijst met kaarten die beschikbaar zijn via de Navigatie balken aan het einde van de pagina.
-5. Voor elke combi natie van naam en **datum**van het **bedrijf** zijn de volgende drie toewijzingen beschikbaar:
+5. Voor elke combi natie van naam en **datum** van het **bedrijf** zijn de volgende drie toewijzingen beschikbaar:
     - NDVI
     - EVI
     - NDWI
@@ -178,18 +178,18 @@ Voldoen aan de volgende vereisten voordat u probeert een bodem vocht te heatmap 
 Volg deze stappen.
 
 1. Ga op de start pagina naar **kaarten** vanuit het navigatie menu links om de pagina **kaarten** weer te geven.
-2. Selecteer **kaarten maken**en selecteer **bodem vocht** in de vervolg keuzelijst.
+2. Selecteer **kaarten maken** en selecteer **bodem vocht** in de vervolg keuzelijst.
 
     ![Selecteer bodem vocht in de vervolg keuzelijst](./media/get-sensor-data-from-sensor-partner/create-maps-drop-down-soil-moisture-1.png)
 
-3. Nadat u **bodem vocht**selecteert, wordt het **bodem vocht** venster weer gegeven.
+3. Nadat u **bodem vocht** selecteert, wordt het **bodem vocht** venster weer gegeven.
 
     ![Venster bodem vocht](./media/get-sensor-data-from-sensor-partner/soil-moisture-1.png)
 
 4. Selecteer een farm in de vervolg keuzelijst **Farm** .
    Als u uw farm wilt zoeken en selecteren, kunt u in de vervolg keuzelijst schuiven of de naam van de farm invoeren in de vervolg keuzelijst **Farm selecteren** .
 5. Selecteer in de vervolg keuzelijst meting van de **bodem vochtigheid selecteren** de meting van de bodem vocht sensor (diepte) waarvoor u de kaart wilt genereren.
-Als u de sensor meting wilt vinden, gaat u naar **Sens oren**en selecteert u een bodem vocht sensor. Gebruik vervolgens de waarde in **naam meten**onder het gedeelte **sensor eigenschappen** .
+Als u de sensor meting wilt vinden, gaat u naar **Sens oren** en selecteert u een bodem vocht sensor. Gebruik vervolgens de waarde in **naam meten** onder het gedeelte **sensor eigenschappen** .
 6. Selecteer een van de opties voor het genereren van een kaart voor **vandaag** of **deze week**.
 7. Als u een kaart voor een aangepast datum bereik wilt genereren, selecteert u de optie **datum bereik selecteren**. Voer de begin-en eind datum in waarvoor u de bodem vocht heatmap wilt genereren.
 8. Selecteer **Maps genereren**.
@@ -197,7 +197,7 @@ Als u de sensor meting wilt vinden, gaat u naar **Sens oren**en selecteert u een
 
    ![Bevestigings bericht voor kaart van bodem vochtigheid](./media/get-sensor-data-from-sensor-partner/successful-soil-moisture-1.png)
 
-    Zie de sectie **taken weer geven**voor meer informatie over de taak status. Als de status van de taak *niet*wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
+    Zie de sectie **taken weer geven** voor meer informatie over de taak status. Als de status van de taak *niet* wordt weer gegeven, wordt er een gedetailleerd fout bericht weer gegeven op de knop Info van de status *mislukt* . In dit geval herhaalt u de vorige stappen en probeert u het opnieuw.
 
     Als het probleem zich blijft voordoen, raadpleegt u de sectie [problemen oplossen](troubleshoot-azure-farmbeats.md) of neemt u contact op met het [Azure FarmBeats-forum voor ondersteuning](https://aka.ms/FarmBeatsMSDN) bij relevante Logboeken.
 
@@ -213,8 +213,8 @@ Volg deze stappen.
 
     ![Filter selecteren in het navigatie deel venster aan de linkerkant](./media/get-sensor-data-from-sensor-partner/view-download-filter-1.png)
 
-3.  Selecteer waarden voor **type**, **datum**en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven. De datum waarop de taak is gemaakt, wordt weer gegeven in de notatie type_farmname_YYYY-MM-DD.
-4. Selecteer het **Sorteer** pictogram naast de tabelkop teksten om te sorteren op basis van de **Farm**, **datum**, **gemaakt op**, **taak-id**en **taak type**.
+3.  Selecteer waarden voor **type**, **datum** en **naam** in de vervolg keuzelijst. Selecteer vervolgens **Toep assen** om te zoeken naar de kaart die u wilt weer geven. De datum waarop de taak is gemaakt, wordt weer gegeven in de notatie type_farmname_YYYY-MM-DD.
+4. Selecteer het **Sorteer** pictogram naast de tabelkop teksten om te sorteren op basis van de **Farm**, **datum**, **gemaakt op**, **taak-id** en **taak type**.
 5. Blader door de lijst met kaarten die beschikbaar zijn met behulp van de navigatie knoppen aan het einde van de pagina.
 6. Selecteer de kaart die u wilt weer geven. In een pop-upvenster wordt het voor beeld voor de geselecteerde kaart weer gegeven.
 7. Selecteer **down load** in de vervolg keuzelijst om de Download indeling te selecteren. De kaart wordt gedownload en opgeslagen in de opgegeven map.

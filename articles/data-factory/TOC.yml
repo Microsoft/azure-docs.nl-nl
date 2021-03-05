@@ -704,6 +704,8 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: Een afhankelijkheid voor een tumblingvenstertrigger maken
           href: tumbling-window-trigger-dependency.md
+        - name: Meta gegevens van verwijzings trigger in pijp lijn
+          href: how-to-use-trigger-parameterization.md
     - name: Data Catalog en governance
       items:
         - name: Een Data Factory verbinden met Azure Purview

@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/03/2020
+ms.date: 03/04/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4e74c33a18baff3e1cb39328ce265f16975ef1b5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9cd5a62cd85687767497b142a30d31aa6dd00b77
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994839"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175087"
 ---
 # <a name="string-claims-transformations"></a>Teken reeks claim transformaties
 
@@ -149,6 +149,42 @@ Gebruik deze claim transformatie om een teken reeks claim waarde in te stellen.
     - **waarde**: contoso Service voorwaarden...
 - Uitvoer claims:
     - **createdClaim**: het TOS claim type bevat de ' contoso-Service voorwaarden... ' Value.
+
+## <a name="copyclaimifpredicatematch"></a>CopyClaimIfPredicateMatch
+
+Kopieer de waarde van een claim naar een andere als de waarde van de invoer claim overeenkomt met het predicaat uitvoer claim. 
+
+| Item | TransformationClaimType | Gegevenstype | Notities |
+| ---- | ----------------------- | --------- | ----- |
+| Input claim | Input claim | tekenreeks | Het claim type dat moet worden gekopieerd. |
+| Output claim | Output claim | tekenreeks | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen. De waarde van de invoer claim wordt gecontroleerd aan de hand van dit claim predicaat. |
+
+In het volgende voor beeld wordt de claim waarde signInName naar phoneNumber claim gekopieerd, alleen als de signInName een telefoon nummer is. Zie voor het volledige voor beeld [telefoon nummer of e-mail bericht aanmelden](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/blob/master/scenarios/phone-number-passwordless/Phone_Email_Base.xml) Starter Pack-beleid.
+
+```xml
+<ClaimsTransformation Id="SetPhoneNumberIfPredicateMatch" TransformationMethod="CopyClaimIfPredicateMatch">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="signInName" TransformationClaimType="inputClaim" />
+  </InputClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="phoneNumber" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+### <a name="example-1"></a>Voorbeeld 1
+
+- Invoer claims:
+    - **input claim**: bob@contoso.com
+- Uitvoer claims:
+    - **output claim**: de uitvoer claim wordt niet gewijzigd ten opzichte van de oorspronkelijke waarde.
+
+### <a name="example-2"></a>Voorbeeld 2
+
+- Invoer claims:
+    - **input claim**: + 11234567890
+- Uitvoer claims:
+    - **output claim**: + 11234567890
 
 ## <a name="compareclaims"></a>CompareClaims
 

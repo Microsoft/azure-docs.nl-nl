@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.author: jukullam
 ms.date: 10/12/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 216658b5f5443409e7bd44cbd29bff40cd56c75f
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: 335879af93834665985fe2c14ce3cbd827387920
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606977"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172136"
 ---
 # <a name="use-github-actions-to-connect-to-azure-sql-database"></a>GitHub Actions gebruiken om verbinding te maken met Azure SQL Database
 
-Aan de slag met [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions) met behulp van een werkstroom voor het implementeren van database-updates voor [Azure SQL Database](../azure-sql-iaas-vs-paas-what-is-overview.md). 
+Aan de slag met [GitHub Actions](https://docs.github.com/en/actions) met behulp van een werkstroom voor het implementeren van database-updates voor [Azure SQL Database](../azure-sql-iaas-vs-paas-what-is-overview.md). 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,7 +41,7 @@ Het bestand heeft twee secties:
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
-U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
 Vervang de tijdelijke aanduidingen `server-name` door de naam van uw SQL-server die wordt gehost op Azure. Vervang de `subscription-id` en `resource-group` door de abonnements-ID en de resourcegroep die zijn verbonden met uw SQL-server.  
 

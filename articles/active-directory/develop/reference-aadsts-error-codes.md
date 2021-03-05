@@ -12,12 +12,12 @@ ms.date: 02/01/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 78f844295c16d15be65f345881ec92fa15a9734a
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b82d3963ed12e0d5dc6acd75555a3a7e8f20eeb0
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101649220"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175342"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -187,6 +187,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS53002 | ApplicationUsedIsNotAnApprovedApp: de app die wordt gebruikt, is geen goedgekeurde app voor voorwaardelijke toegang. De gebruiker moet een van de apps uit de lijst met goedgekeurde apps gebruiken om toegang te krijgen. |
 | AADSTS53003 | BlockedByConditionalAccess-toegang is geblokkeerd door beleid voor voorwaardelijke toegang. Het toegangs beleid staat geen token uitgifte toe. |
 | AADSTS53004 | ProofUpBlockedDueToRisk: de gebruiker moet het registratie proces voor multi-factor Authentication volt ooien voordat deze inhoud kan worden geopend. Gebruiker moet zich registreren voor multi-factor authentication. |
+| AADSTS53011 | De gebruiker is geblokkeerd vanwege een risico op een thuis Tenant. |
 | AADSTS54000 | MinorUserBlockedLegalAgeGroupRule |
 | AADSTS65001 | DelegationDoesNotExist-de gebruiker of beheerder heeft niet ingestemd met het gebruik van de toepassing met ID X. Verzend een interactieve autorisatie aanvraag voor deze gebruiker en resource. |
 | AADSTS65004 | UserDeclinedConsent: de gebruiker heeft geen toestemming gegeven om toegang te krijgen tot de app. Laat de gebruiker zich opnieuw aanmelden en toestemming geven voor de app|

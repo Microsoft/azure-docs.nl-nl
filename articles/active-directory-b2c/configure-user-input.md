@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/10/2020
+ms.date: 03/04/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: eb7cba1de280793a1ca98687c71355c1ea702d4c
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e76fe1c26f428403a79a3605b7a41f761fe2a4bb
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585221"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102171617"
 ---
 #  <a name="add-user-attributes-and-customize-user-input-in-azure-active-directory-b2c"></a>Gebruikers kenmerken toevoegen en gebruikers invoer aanpassen in Azure Active Directory B2C
 
@@ -198,7 +198,7 @@ Als u de stads claim tijdens het aanmelden wilt verzamelen, moet deze worden toe
 </ClaimsProvider>
 ```
 
-Als u de stads claim wilt verzamelen na de eerste aanmelding met een federatief account, moet u deze als een uitvoer claim aan het `SelfAsserted-Social` technische profiel toevoegen. Als gebruikers van lokale en federatieve accounts hun profiel gegevens later kunnen bewerken, voegt u de uitvoer claim toe aan het `SelfAsserted-ProfileUpdate` technische profiel. Vervang deze technische profielen in het extensie bestand. Geef de volledige lijst van de uitvoer claims op om de volg orde te bepalen waarin de claims op het scherm worden weer gegeven. Zoek het element **ClaimsProviders** . Voeg als volgt een nieuwe ClaimsProviders toe:
+Als u de stads claim wilt verzamelen na de eerste aanmelding met een federatief account, moet u deze als een uitvoer claim aan het `SelfAsserted-Social` technische profiel toevoegen. Als gebruikers van lokale en federatieve accounts hun profiel gegevens later kunnen bewerken, voegt u de invoer-en uitvoer claims toe aan het `SelfAsserted-ProfileUpdate` technische profiel. Vervang deze technische profielen in het extensie bestand. Geef de volledige lijst van de uitvoer claims op om de volg orde te bepalen waarin de claims op het scherm worden weer gegeven. Zoek het element **ClaimsProviders** . Voeg als volgt een nieuwe ClaimsProviders toe:
 
 ```xml
 <ClaimsProvider>
@@ -206,6 +206,9 @@ Als u de stads claim wilt verzamelen na de eerste aanmelding met een federatief 
   <TechnicalProfiles>
     <!--Federated account first-time sign-in page-->
     <TechnicalProfile Id="SelfAsserted-Social">
+      <InputClaims>
+        <InputClaim ClaimTypeReferenceId="city" />
+      </InputClaims>
       <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="displayName"/>
         <OutputClaim ClaimTypeReferenceId="givenName"/>
@@ -215,6 +218,9 @@ Als u de stads claim wilt verzamelen na de eerste aanmelding met een federatief 
     </TechnicalProfile>
     <!--Edit profile page-->
     <TechnicalProfile Id="SelfAsserted-ProfileUpdate">
+      <InputClaims>
+        <InputClaim ClaimTypeReferenceId="city" />
+      </InputClaims>
       <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="displayName"/>
         <OutputClaim ClaimTypeReferenceId="givenName" />

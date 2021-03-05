@@ -90,7 +90,9 @@
           href: vision-solution-troubleshooting.md
         - name: Problemen met Azure percept-audio oplossen
           href: troubleshoot-audio-accessory-speech-module.md
-- name: Referentie
+        - name: Bekende problemen
+          href: known-issues.md
+- name: Naslaginformatie
   items:
     - name: Gegevens bladen van het Azure percept-apparaat
       items:

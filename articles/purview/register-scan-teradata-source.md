@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 2/25/2021
-ms.openlocfilehash: 0885870497ef3488d78fe899c96ee2a82a5b84fc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2008e014e9f160b643ed5f591fff81c0b215e24a
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101696159"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175034"
 ---
 # <a name="register-and-scan-teradata-source-preview"></a>Een Teradata-bron registreren en scannen (preview)
 
@@ -94,13 +94,13 @@ Doe het volgende om een nieuwe scan te maken en uit te voeren:
 
 6.  **Schema**: een subset van schema's weer geven die moeten worden geïmporteerd, uitgedrukt in een door punt komma's gescheiden lijst. bijvoorbeeld, Schema1; schema2. Alle gebruikers schema's worden geïmporteerd als de lijst leeg is. Alle systeemschema's (bijvoorbeeld SysAdmin) en objecten worden standaard genegeerd. Wanneer de lijst leeg is, worden alle beschik bare schema's geïmporteerd.
 
-        Acceptable schema name patterns using SQL LIKE expressions syntax include using %, e.g. A%; %B; %C%; D
-        - start with A or    
-        - end with B or    
-        - contain C or    
-        - equal D
+    Acceptabele schemanaampatronen met de syntaxis van SQL LIKE-expressies zijn onder andere het gebruik van %, bijvoorbeeld A%; %B; %C%; D
+    - begin met A of    
+    - eindig met B of    
+    - bevat C of    
+    - gelijk aan D
 
-        Usage of NOT and special characters are not acceptable
+    Gebruik van NOT en speciale tekens is niet toegestaan
 
 7.  **Locatie van het stuur programma**: Geef het pad op naar de locatie van het JDBC-stuur programma in uw VM waar de Self-Host Integration runtime wordt uitgevoerd. Dit moet het pad naar een geldige JAR-maplocatie zijn.
 

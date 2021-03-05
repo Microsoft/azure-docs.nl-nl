@@ -4,13 +4,13 @@ description: In dit artikel wordt beschreven hoe u problemen met Azure FarmBeats
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: dd0ed78c56e4d656a2ecee6395d831ed093e85b5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.author: v-ummehabiba
+ms.openlocfilehash: c45b6196b82682b37e253a33eed3940b68b4d61e
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001606"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172981"
 ---
 # <a name="troubleshoot-azure-farmbeats"></a>Problemen met Azure FarmBeats oplossen
 
@@ -105,7 +105,7 @@ Als u wilt weten hoe u Logboeken kunt downloaden, gaat u naar de sectie [Logboek
 **Corrigerende actie**
 
 1. Ga in Datahub Swagger naar de partner-API.
-2. Selecteer **Get**  >  **Try it out**  >  **uitvoeren** uitproberen.
+2. Selecteer   >    >  **uitvoeren** uitproberen.
 
 > [!NOTE]
 > De partner-ID van de sensor partner die u wilt.
@@ -285,7 +285,7 @@ Dat **wil zeggen**: als een taak mislukt omdat het maximum aantal verbindingen i
 
 ### <a name="collect-azure-data-factory-job-logs-or-app-service-logs-in-datahub"></a>Azure Data Factory-taak Logboeken of App Service-logboeken verzamelen in Datahub
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zoek in **het zoekvak naar de resource** groep FarmBeats Datahub.
 3. Zoek in het dash board van de **resource groep** naar het *datahublogs \** -opslag account. Bijvoorbeeld *datahublogsmvxmq*.  
 4. Selecteer in de kolom **naam** het opslag account om het dash board van het **opslag account** weer te geven.
@@ -297,7 +297,7 @@ Dat **wil zeggen**: als een taak mislukt omdat het maximum aantal verbindingen i
 
 ### <a name="collect-azure-data-factory-job-logs-or-app-service-logs-for-accelerator"></a>Azure Data Factory-taak Logboeken of App Service logboeken voor de Accelerator verzamelen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Zoek in **het zoekvak naar de resource** groep FarmBeats Accelerator.
 3. Zoek het *\* opslag* account op in het dash board van de **resource groep** . Bijvoorbeeld *storagedop4k \**.
 4. Selecteer het opslag account in de kolom **naam** om het dash board van het **opslag account** weer te geven.

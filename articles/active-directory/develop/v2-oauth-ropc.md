@@ -13,12 +13,12 @@ ms.date: 05/18/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: d0282e4f52db8557364cdabe197fa0da63204e42
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: bf469b79fa532978e904a54f32c80280706ee7cb
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752645"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102174577"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-resource-owner-password-credentials"></a>Referenties voor het micro soft Identity platform en het OAuth 2,0 Resource owner-wacht woord
 
@@ -34,6 +34,7 @@ Het micro soft-identiteits platform ondersteunt de [OAuth 2,0 Resource owner-mac
 > * Accounts die geen wacht woorden hebben, kunnen zich niet aanmelden via ROPC. Voor dit scenario raden we u aan om in plaats daarvan een andere stroom te gebruiken voor uw app.
 > * Als gebruikers [multi-factor Authentication (MFA)](../authentication/concept-mfa-howitworks.md) moeten gebruiken om zich aan te melden bij de toepassing, zullen ze in plaats daarvan worden geblokkeerd.
 > * ROPC wordt niet ondersteund in [hybride identiteits Federatie](../hybrid/whatis-fed.md) scenario's (bijvoorbeeld Azure AD en ADFS gebruikt voor het verifiëren van on-premises accounts). Als gebruikers worden omgeleid naar een volledige pagina naar een on-premises ID-provider, kan Azure AD de gebruikers naam en het wacht woord niet testen voor die id-aanbieder. [Pass-Through-verificatie](../hybrid/how-to-connect-pta.md) wordt echter ondersteund met ROPC.
+> * Een uitzonde ring op een scenario met hybride identiteits Federatie zou het volgende kunnen zijn: beleid voor het detecteren van basis van realms met AllowCloudPasswordValidation ingesteld op TRUE zorgt ervoor dat ROPC flow werkt voor federatieve gebruikers wanneer het on-premises wacht woord wordt gesynchroniseerd met de Cloud. Zie [directe ROPC-verificatie van federatieve gebruikers inschakelen voor oudere toepassingen](../manage-apps/configure-authentication-for-federated-users-portal.md#enable-direct-ropc-authentication-of-federated-users-for-legacy-applications)voor meer informatie.
 
 ## <a name="protocol-diagram"></a>Protocol diagram
 
@@ -110,6 +111,6 @@ Als de gebruiker geen juiste gebruikers naam of wacht woord heeft opgegeven, of 
 | `invalid_grant` | De verificatie is mislukt | De referenties zijn onjuist of de client heeft geen toestemming voor de aangevraagde bereiken. Als de bereiken niet worden verleend, `consent_required` wordt een fout geretourneerd. Als dit het geval is, moet de client de gebruiker naar een interactieve prompt verzenden met een webweergave of browser. |
 | `invalid_request` | De aanvraag is onjuist samengesteld | Het toekennings type wordt niet ondersteund voor de `/common` or- `/consumers` verificatie contexten.  Gebruik `/organizations` in plaats daarvan een Tenant-id. |
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
 Voor een voor beeld van het gebruik van ROPC raadpleegt u het [.net Core-Console toepassings](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code voorbeeld op github.

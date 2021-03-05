@@ -9,12 +9,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–377467–A/B– Quickstarts/Python App–12.11
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-python-1
-ms.openlocfilehash: 11e47e83da09699d60ada11539dbb2f000f075db
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 1f37ee36710211e95bcc5d99a095de4303c85281
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788669"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172389"
 ---
 # <a name="quickstart-create-a-python-app-using-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken met behulp van Azure App Service in Linux
 
@@ -230,7 +230,7 @@ Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van pr
 
 U hebt toegang tot de consolelogboeken die zijn gegenereerd vanuit de app en de container waarin deze wordt uitgevoerd. Logboeken bevatten uitvoer die wordt gegenereerd met behulp van `print`-instructies.
 
-Als u logboeken wilt streamen, voert u de opdracht [az webapp log tail](/cli/azure/webapp/log?view=azure-cli-latest&preserve-view=true#az_webapp_log_tail) uit:
+Als u logboeken wilt streamen, voert u de opdracht [az webapp log tail](/cli/azure/webapp/log#az_webapp_log_tail) uit:
 
 ```azurecli
 az webapp log tail

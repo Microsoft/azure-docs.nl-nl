@@ -1,7 +1,7 @@
 ---
-title: Gegevens voorbereiding met Spark-Pools (preview-versie)
+title: Gegevens voorbereiding met Apache Spark Pools (preview-versie)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het koppelen van Spark-Pools voor gegevens voorbereiding met Azure Synapse en Azure Machine Learning
+description: Meer informatie over het koppelen van Apache Spark Pools voor gegevens voorbereiding met Azure Synapse Analytics en Azure Machine Learning
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,29 +11,29 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/02/2021
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 87e03b6aee122c5a26d4388ca8b570aa6cdf7b55
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 7eeb7b82d9c3bfe21019d5d68f82c2e6d7a2bf68
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662307"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102171510"
 ---
-# <a name="attach-synapse-spark-pools-for-data-preparation-with-azure-synapse-preview"></a>Synapse Spark-Pools koppelen voor gegevens voorbereiding met Azure Synapse (preview-versie)
+# <a name="attach-apache-spark-pools-powered-by-azure-synapse-analytics-for-data-preparation-preview"></a>Apache Spark Pools koppelen (aangedreven door Azure Synapse Analytics) voor gegevens voorbereiding (preview-versie)
 
-In dit artikel leert u hoe u een Apache Spark groep kunt koppelen en openen die door [Azure Synapse](/synapse-analytics/overview-what-is.md) wordt ondersteund voor het voorbereiden van gegevens. 
+In dit artikel leert u hoe u een Apache Spark pool kunt koppelen en starten die is gemaakt met [Azure Synapse Analytics](/synapse-analytics/overview-what-is.md) voor gegevens voorbereiding. 
 
 >[!IMPORTANT]
-> De Azure Machine Learning-en Azure Synapse-integratie is beschikbaar als preview-versie. De mogelijkheden die in dit artikel worden gepresenteerd, gebruiken het `azureml-synapse` pakket met [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
+> De integratie van Azure Machine Learning en Azure Synapse Analytics is beschikbaar als preview-versie. De mogelijkheden die in dit artikel worden gepresenteerd, gebruiken het `azureml-synapse` pakket met [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
 
-## <a name="azure-machine-learning-and-azure-synapse-integration-preview"></a>Azure Machine Learning-en Azure Synapse-integratie (preview-versie)
+## <a name="azure-machine-learning-and-azure-synapse-analytics-integration-preview"></a>Azure Machine Learning en integratie van Azure Synapse Analytics (preview-versie)
 
-Met de Azure Synapse-integratie met Azure Machine Learning (preview) kunt u een Apache Spark groep koppelen die door Azure Synapse wordt ondersteund voor het verkennen en voorbereiden van interactieve gegevens. Met deze integratie kunt u een specifieke Compute voor gegevens voorbereiding op schaal hebben, allemaal binnen dezelfde python-notebook die u gebruikt voor het trainen van uw machine learning modellen.
+Met de integratie van Azure Synapse Analytics met Azure Machine Learning (preview) kunt u een Apache Spark groep koppelen die door Azure Synapse wordt ondersteund voor het verkennen en voorbereiden van interactieve gegevens. Met deze integratie kunt u een specifieke Compute voor gegevens voorbereiding op schaal hebben, allemaal binnen dezelfde python-notebook die u gebruikt voor het trainen van uw machine learning modellen.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md?tabs=python)
 
-* [Maak een Synapse-werk ruimte in azure Portal](../synapse-analytics/quickstart-create-workspace.md).
+* [Maak een Azure Synapse Analytics-werk ruimte in azure Portal](../synapse-analytics/quickstart-create-workspace.md).
 
 * [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 
@@ -43,16 +43,16 @@ Met de Azure Synapse-integratie met Azure Machine Learning (preview) kunt u een 
         pip install azureml-synapse
         ```
 
-## <a name="link-machine-learning-workspace-and-synapse-assets"></a>Koppeling machine learning werk ruimte en Synapse-assets
+## <a name="link-machine-learning-workspace-and-synapse-analytics-assets"></a>Koppeling machine learning werk ruimte en Synapse Analytics-assets
 
-Voordat u een Synapse Spark-pool voor gegevens voorbereiding kunt koppelen, moet uw Azure Machine Learning-werk ruimte zijn gekoppeld aan uw Azure Synapse-werk ruimte. 
+Voordat u een Apache Synapse Spark-pool kunt koppelen voor gegevens voorbereiding, moet uw Azure Machine Learning-werk ruimte zijn gekoppeld aan uw Azure Synapse Analytics-werk ruimte. 
 
-U kunt uw Synapse-werk ruimte en de werk ruimte van uw ML koppelen via de [python-SDK](#link-sdk) of de [Azure machine learning Studio](#link-studio). 
+U kunt uw Machine Learning werk ruimte en Synapse Analytics-werk ruimte koppelen via de [python-SDK](#link-sdk) of de [Azure machine learning Studio](#link-studio). 
 
 > [!IMPORTANT]
-> Als u een koppeling wilt maken naar de Synapse-werk ruimte, moet u de rol **eigenaar** van de Synapse-werk ruimte krijgen. Controleer uw toegang in de [Azure Portal](https://ms.portal.azure.com/).
+> Als u een koppeling wilt maken naar de Azure Synapse Analytics-werk ruimte, moet u de rol **eigenaar** van de Azure Synapse Analytics-werk ruimte hebben gekregen. Controleer uw toegang in de [Azure Portal](https://ms.portal.azure.com/).
 >
-> Als u geen **eigenaar** bent van de Synapse-werk ruimte, maar een bestaande gekoppelde service wilt gebruiken, raadpleegt u [een bestaande gekoppelde service ophalen](#get-an-existing-linked-service).
+> Als u geen **eigenaar** bent van de Azure Synapse Analytics-werk ruimte, maar een bestaande gekoppelde service wilt gebruiken, raadpleegt u [een bestaande gekoppelde service ophalen](#get-an-existing-linked-service).
 
 
 <a name="link-sdk"></a>
@@ -60,8 +60,8 @@ U kunt uw Synapse-werk ruimte en de werk ruimte van uw ML koppelen via de [pytho
 
 De volgende code maakt gebruik van [`LinkedService`](/python/api/azureml-core/azureml.core.linked_service.linkedservice?preserve-view=true&view=azure-ml-py) de [`SynapseWorkspaceLinkedServiceConfiguration`](/python/api/azureml-core/azureml.core.linked_service.synapseworkspacelinkedserviceconfiguration?preserve-view=true&view=azure-ml-py) klassen en en 
 
-* Koppel uw machine learning-werk ruimte aan `ws` uw Azure Synapse-werk ruimte. 
-* Registreer uw Synapse-werk ruimte met Azure Machine Learning als een gekoppelde service.
+* Koppel uw Azure Machine Learning-werk ruimte aan `ws` uw Azure Synapse Analytics-werk ruimte. 
+* Registreer uw Azure Synapse Analytics-werk ruimte met Azure Machine Learning als een gekoppelde service.
 
 ``` python
 import datetime  
@@ -82,14 +82,14 @@ linked_service = LinkedService.register(workspace = ws,
                                             linked_service_config = synapse_link_config)
 ```
 > [!IMPORTANT] 
-> Er wordt een beheerde identiteit `system_assigned_identity_principal_id` voor elke gekoppelde service gemaakt. Aan deze beheerde identiteit moet de **Synapse Apache Spark** beheerdersrol van de Synapse-werk ruimte worden verleend voordat u uw Synapse-sessie start. [Wijs de Synapse Apache Spark beheerdersrol toe aan de beheerde identiteit in de Synapse Studio](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md).
+> Er wordt een beheerde identiteit `system_assigned_identity_principal_id` voor elke gekoppelde service gemaakt. Aan deze beheerde identiteit moet de **Synapse Apache Spark** beheerdersrol van de Azure Synapse Analytics-werk ruimte worden verleend voordat u de Apache Spark-sessie start. [Wijs de Synapse Apache Spark beheerdersrol toe aan de beheerde identiteit in de Synapse Studio](../synapse-analytics/security/how-to-manage-synapse-rbac-role-assignments.md).
 >
 > Als u wilt zoeken naar `system_assigned_identity_principal_id` een specifieke gekoppelde service, gebruikt u `LinkedService.get('<your-mlworkspace-name>', '<linked-service-name>')` .
 
 <a name="link-studio"></a>
 ### <a name="link-workspaces-via-studio"></a>Werk ruimten koppelen via Studio
 
-Koppel uw machine learning-werk ruimte en de Synapse-werk ruimte via de Azure Machine Learning Studio met de volgende stappen: 
+Koppel uw Azure Machine Learning-werk ruimte en Azure Synapse Analytics-werk ruimte via de Azure Machine Learning Studio met de volgende stappen: 
 
 1. Meld u aan bij de [Azure machine learning Studio](https://ml.azure.com/).
 1. Selecteer **gekoppelde services** in het gedeelte **beheren** van het linkerdeel venster.
@@ -102,14 +102,14 @@ Koppel uw machine learning-werk ruimte en de Synapse-werk ruimte via de Azure Ma
    |Abonnementsnaam | Selecteer de naam van uw abonnement dat is gekoppeld aan uw machine learning-werk ruimte. 
    |Synapse-werk ruimte | Selecteer de Synapse-werk ruimte waarmee u een koppeling wilt maken. 
    
-1. Selecteer **volgende** om het formulier **Spark-Pools selecteren (optioneel)** te openen. Op dit formulier selecteert u welke Synapse Spark-pool u aan uw werk ruimte wilt koppelen
+1. Selecteer **volgende** om het formulier **Spark-Pools selecteren (optioneel)** te openen. Op dit formulier selecteert u welke Synapse Apache Spark pool u aan uw werk ruimte wilt koppelen
 
 1. Selecteer **volgende** om het **controle** formulier te openen en uw selecties te controleren. 
 1. Selecteer **maken** om het gekoppelde proces voor het maken van de service te volt ooien.
 
 ## <a name="get-an-existing-linked-service"></a>Een bestaande gekoppelde service ophalen
 
-Als u een bestaande gekoppelde service wilt ophalen en gebruiken, moet u machtigingen voor de **gebruiker of Inzender** hebben voor de Synapse-werk ruimte.
+Als u een bestaande gekoppelde service wilt ophalen en gebruiken, hebt u **gebruikers-of Inzender** machtigingen nodig voor de Azure Synapse Analytics-werk ruimte.
 
 In dit voor beeld wordt een bestaande gekoppelde service opgehaald, `synapselink1` vanuit de werk ruimte, `ws` met de- [`get()`](/python/api/azureml-core/azureml.core.linkedservice?preserve-view=true&view=azure-ml-py#get-workspace--name-) methode.
 ```python
@@ -132,39 +132,39 @@ LinkedService.list(ws)
  
 ## <a name="attach-synapse-spark-pool-as-a-compute"></a>Synapse Spark-pool als reken kracht koppelen
 
-Als uw werk ruimten zijn gekoppeld, koppelt u een Synapse Spark-pool als een toegewezen reken resource voor uw gegevens voorbereidings taken. 
+Als uw werk ruimten zijn gekoppeld, koppelt u een Synapse Apache Spark groep als een toegewezen reken resource voor uw gegevens voorbereidings taken. 
 
-U kunt Synapse Spark-Pools koppelen via,
+U kunt Apache Spark groepen koppelen via,
 * Azure Machine Learning Studio
 * [ARM-sjablonen (Azure Resource Manager)](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json)
 * De Python-SDK 
 
-Volg deze stappen om een Synapse Spark-pool te koppelen met behulp van Studio. 
+Volg deze stappen om een Apache Spark groep te koppelen met behulp van Studio. 
 
 1. Meld u aan bij de [Azure machine learning Studio](https://ml.azure.com/).
 1. Selecteer **gekoppelde services** in het gedeelte **beheren** van het linkerdeel venster.
 1. Selecteer uw Synapse-werk ruimte.
 1. Selecteer in de linkerbovenhoek de **gekoppelde Spark-Pools** . 
 1. Selecteer **koppelen**. 
-1. Selecteer uw Synapse Spark-groep in de lijst en geef een naam op.  
+1. Selecteer uw Apache Spark groep in de lijst en geef een naam op.  
     1. Deze lijst bevat de beschik bare Synapse Spark-Pools die aan uw Compute kunnen worden gekoppeld. 
     1. Als u een nieuwe Synapse Spark-pool wilt maken, raadpleegt u [Apache Spark pool maken met de Synapse Studio](../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 1. Selecteer **geselecteerd koppelen**. 
 
 
-U kunt ook de **python-SDK** gebruiken om een Synapse Spark-pool te koppelen. 
+U kunt ook de **python-SDK** gebruiken om een Apache Spark groep te koppelen. 
 
 De volgende code, 
 1. Hiermee configureert u de SynapseCompute met,
 
    1. De LinkedService `linked_service` die u in de vorige stap hebt gemaakt of opgehaald. 
    1. Het type Compute-doel dat u wilt koppelen, `SynapseSpark`
-   1. De naam van de Synapse Spark-pool. Dit moet overeenkomen met een bestaande Apache Spark pool die zich in uw Synapse-werk ruimte bevindt.
+   1. De naam van de Apache Spark groep. Dit moet overeenkomen met een bestaande Apache Spark pool die zich in uw Azure Synapse Analytics-werk ruimte bevindt.
    
 1. Hiermee maakt u een machine learning ComputeTarget door door te geven, 
    1. De machine learning-werk ruimte die u wilt gebruiken, `ws`
-   1. De naam die u wilt verwijzen naar de compute in de machine learning-werk ruimte. 
-   1. Het attach_configuration dat u hebt opgegeven bij het configureren van uw SynapseCompute.
+   1. De naam die u wilt verwijzen naar de compute in de Azure Machine Learning-werk ruimte. 
+   1. Het attach_configuration dat u hebt opgegeven bij het configureren van uw Synapse compute.
        1. De aanroep van ComputeTarget. attach () is asynchroon, waardoor de voorbeeld blokken worden geblokkeerd totdat de aanroep is voltooid.
 
 ```python
@@ -182,7 +182,7 @@ synapse_compute = ComputeTarget.attach(workspace= ws,
 synapse_compute.wait_for_completion()
 ```
 
-Controleer of de Synapse Spark-pool is gekoppeld.
+Controleer of de Apache Spark groep is gekoppeld.
 
 ```python
 ws.compute_targets['Synapse Spark pool alias']
@@ -190,12 +190,12 @@ ws.compute_targets['Synapse Spark pool alias']
 
 ## <a name="launch-synapse-spark-pool-for-data-preparation-tasks"></a>Synapse Spark-pool starten voor gegevens voorbereidings taken
 
-U kunt een [Azure machine learning omgeving](concept-environments.md) opgeven die tijdens uw Synapse-sessie moet worden gebruikt. Alleen de Conda-afhankelijkheden die in de omgeving zijn opgegeven, worden van kracht. Docker-installatie kopie wordt niet ondersteund.
+U kunt een [Azure machine learning omgeving](concept-environments.md) opgeven die tijdens uw Apache Spark sessie moet worden gebruikt. Alleen de Conda-afhankelijkheden die in de omgeving zijn opgegeven, worden van kracht. Docker-installatie kopie wordt niet ondersteund.
 
 >[!WARNING]
->  Python-afhankelijkheden die zijn opgegeven in omgevings Conda-afhankelijkheden worden niet ondersteund in Synapse Spark-Pools. Op dit moment worden alleen vaste python-versies ondersteund. Controleer uw python-versie door  `sys.version_info` deze op te nemen in uw script.
+>  Python-afhankelijkheden die zijn opgegeven in omgevings Conda-afhankelijkheden worden niet ondersteund in Apache Spark groepen. Op dit moment worden alleen vaste python-versies ondersteund. Controleer uw python-versie door  `sys.version_info` deze op te nemen in uw script.
 
-Met de volgende code wordt de omgeving gemaakt, `myenv` waarmee `azureml-core` versie 1.20.0 en `numpy` versie 1.17.0 worden geïnstalleerd voordat de sessie wordt gestart. U kunt deze omgeving vervolgens toevoegen aan de Synapse-sessie- `start` instructie.
+Met de volgende code wordt de omgeving gemaakt, `myenv` waarmee `azureml-core` versie 1.20.0 en `numpy` versie 1.17.0 worden geïnstalleerd voordat de sessie wordt gestart. U kunt deze omgeving vervolgens toevoegen aan de Apache Spark-sessie- `start` instructie.
 
 ```python
 
@@ -209,10 +209,10 @@ env.python.conda_dependencies.add_conda_package("numpy==1.17.0")
 env.register(workspace=ws)
 ```
 
-Als u gegevens voorbereiding met de Synapse Spark-pool wilt starten, geeft u de naam van de Synapse Spark op en geeft u uw abonnements-ID, de machine learning werkruimte resource groep, de naam van de machine learning-werk ruimte en welke omgeving u tijdens de Synapse-sessie wilt gebruiken. 
+Als u gegevens voorbereiding met de Apache Spark Spark-pool wilt starten, geeft u de naam van de Apache Spark groep op en geeft u uw abonnements-ID, de machine learning werkruimte resource groep, de naam van de machine learning-werk ruimte en welke omgeving u tijdens de Apache Spark sessie wilt gebruiken. 
 
 > [!IMPORTANT]
-> Als u wilt door gaan met het gebruik van de Synapse Spark-pool, moet u aangeven welke reken resource moet worden gebruikt in uw gegevens voorbereidings taken met `%synapse` voor één regel met code en `%%synapse` voor meerdere regels. 
+> Als u wilt door gaan met het gebruik van de Apache Spark pool, geeft u aan welke reken resource moet worden gebruikt in uw gegevens voorbereidings taken met `%synapse` voor één regel met code en `%%synapse` voor meerdere regels. 
 
 ```python
 %synapse start -c SynapseSparkPoolAlias -s AzureMLworkspaceSubscriptionID -r AzureMLworkspaceResourceGroupName -w AzureMLworkspaceName -e myenv
@@ -226,7 +226,7 @@ Nadat de sessie is gestart, kunt u de meta gegevens van de sessie controleren.
 
 ## <a name="load-data-from-storage"></a>Gegevens uit de opslag laden
 
-Als uw Synapse Spark-sessie wordt gestart, leest u de gegevens die u wilt voorbereiden. Het laden van gegevens wordt ondersteund voor Azure Blob Storage en Azure Data Lake Storage generaties 1 en 2.
+Als uw Apache Spark-sessie wordt gestart, leest u de gegevens die u wilt voorbereiden. Het laden van gegevens wordt ondersteund voor Azure Blob Storage en Azure Data Lake Storage generaties 1 en 2.
 
 Er zijn twee manieren om gegevens uit deze opslag services te laden: 
 
@@ -330,7 +330,7 @@ In het volgende voor beeld worden de voor bereide gegevens teruggeschreven naar 
 df.write.format("csv").mode("overwrite").save("wasbs://demo@dprepdata.blob.core.windows.net/training_data/Titanic.csv")
 ```
 
-Wanneer u klaar bent met het voorbereiden van gegevens en het opslaan van uw voor bereide gegevens naar opslag, stopt u met het gebruik van uw Synapse Spark-pool met de volgende opdracht.
+Wanneer u klaar bent met het voorbereiden van gegevens en het opslaan van uw voor bereide gegevens naar opslag, stopt u met de volgende opdracht om uw Apache Spark pool te gebruiken.
 
 ```python
 %synapse stop
@@ -360,11 +360,10 @@ input1 = train_ds.as_mount()
 
 ## <a name="example-notebook"></a>Voorbeeld van notebook
 
-Zie dit [end-to-end-notebook](../synapse-analytics/overview-what-is.md) voor een gedetailleerde voorbeeld code voor het uitvoeren van gegevens voorbereiding en het model leren van een enkele notebook met Azure Synapse en Azure machine learning.
+Zie dit [end-to-end-notebook](../synapse-analytics/overview-what-is.md) voor een gedetailleerde voorbeeld code voor het uitvoeren van gegevens voorbereiding en het model leren van een enkele notebook met Azure Synapse Analytics en Azure machine learning.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Train een model](how-to-set-up-training-targets.md).
 * [Trainen met Azure Machine Learning-gegevensset](how-to-train-with-datasets.md)
 * [Een Azure machine learning-gegevensset maken](how-to-create-register-datasets.md).
-

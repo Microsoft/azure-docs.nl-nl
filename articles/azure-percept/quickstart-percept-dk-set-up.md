@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: quickstart
 ms.date: 02/15/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 78c5d2d03ebca45bcf1602b35453914d033db5c8
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 49bf89d38edef6a9186cbdb5bb89a763339385b4
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098244"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102175818"
 ---
 # <a name="set-up-your-azure-percept-dk-and-deploy-your-first-ai-model"></a>Stel uw Azure percept DK in en implementeer uw eerste AI-model
 
@@ -182,7 +182,7 @@ Als u een nieuw abonnement wilt maken, voert u [de volgende stappen uit](https:/
 
 ## <a name="view-your-device-in-the-azure-percept-studio-and-deploy-common-prebuilt-sample-apps"></a>Uw apparaat weer geven in azure percept Studio en veelgebruikte, vooraf gebouwde voor beeld-Apps implementeren
 
-1. Bekijk uw lijst met apparaten op de pagina overzicht van Azure percept. De overzichts pagina van Azure percept is uw start punt voor toegang tot veel verschillende werk stromen voor zowel het begin als het geavanceerde AI-rand model en de ontwikkeling van oplossingen
+1. Bekijk uw lijst met apparaten op de overzichts pagina van [Azure percept Studio](https://go.microsoft.com/fwlink/?linkid=2135819) . De overzichts pagina van Azure percept is uw start punt voor toegang tot veel verschillende werk stromen voor zowel het begin als het geavanceerde AI-rand model en de ontwikkeling van oplossingen
 
     :::image type="content" source="./media/quickstart-percept-dk-setup/portal-01-get-device-list.png" alt-text="De lijst met apparaten weer geven.":::
     

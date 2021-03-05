@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u Azure Resource Manager sjablonen (ARM
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 67d4ac51e3e1f84f6a9acd0fc94d5818355d3954
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 243316b32d5b0cf62f03ae77d8a9fb919743ace1
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762077"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102172827"
 ---
 # <a name="deploy-arm-templates-by-using-github-actions"></a>ARM-sjablonen implementeren met behulp van GitHub-acties
 
@@ -38,7 +38,7 @@ Het bestand heeft twee secties:
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
 
-U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
+U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
 Maak een resource groep als u deze nog niet hebt.
 

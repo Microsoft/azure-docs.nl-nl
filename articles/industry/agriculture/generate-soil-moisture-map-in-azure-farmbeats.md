@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u bodem vocht heatmap in azure FarmBeat
 author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
-ms.author: v-umha
-ms.openlocfilehash: 2887e7c5fd875942c3d19391267ddbb9b73ccfec
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.author: v-ummehabiba
+ms.openlocfilehash: dd8d688355e0f71ce77cdbc6012d788c7b16d825
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165550"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173780"
 ---
 # <a name="generate-soil-moisture-heatmap"></a>Bodem vocht heatmap genereren
 
@@ -68,7 +68,7 @@ Deze stap bestaat uit het maken van een taak of een langlopende bewerking waarme
 4.  Selecteer in de vervolg keuzelijst **bodem vocht**.
 5.  Selecteer in het venster **bodem vocht** **deze week**.
 6.  Voer in de **meting** **bodem vochtigheid selecteren** de meting in die u wilt gebruiken voor de kaart.
-    Als u de sensor meting wilt vinden, selecteert u in **Sens oren**een aarde vocht sensor. Gebruik bij **sensor eigenschappen**de waarde voor de **meting naam** .
+    Als u de sensor meting wilt vinden, selecteert u in **Sens oren** een aarde vocht sensor. Gebruik bij **sensor eigenschappen** de waarde voor de **meting naam** .
 
     ![Scherm opname van het vocht scherm van de bodem.](./media/get-sensor-data-from-sensor-partner/soil-moisture-1.png)
 
@@ -84,7 +84,7 @@ Deze stap bestaat uit het maken van een taak of een langlopende bewerking waarme
 Voer de volgende stappen uit:
 
 1. Controleer op de pagina **taken** de **taak status** voor de taak die u in de laatste procedure hebt gemaakt.
-2. Wanneer de taak status **geslaagd**wordt weer gegeven, selecteert u **kaarten** in het menu.
+2. Wanneer de taak status **geslaagd** wordt weer gegeven, selecteert u **kaarten** in het menu.
 3. Zoek de kaart op de dag waarop deze is gemaakt in de indeling <bodem-moisture_MyFarm_YYYY-MM-DD>.
 4. Selecteer een kaart in de kolom **naam** . er wordt een pop-upvenster weer gegeven met het voor beeld van de geselecteerde kaart.
 5. Selecteer **Downloaden**. De kaart wordt gedownload en opgeslagen in de lokale map van uw computer.
@@ -93,4 +93,4 @@ Voer de volgende stappen uit:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een bodem vocht heatmap hebt gegenereerd, leert u hoe u de [plaatsing van sensors](generate-maps-in-azure-farmbeats.md#sensor-placement-map) en [historische telemetriegegevens](ingest-historical-telemetry-data-in-azure-farmbeats.md)kunt genereren. 
+Nu u een bodem vocht heatmap hebt gegenereerd, leert u hoe u de [plaatsing van sensors](generate-maps-in-azure-farmbeats.md#sensor-placement-map) en [historische telemetriegegevens](ingest-historical-telemetry-data-in-azure-farmbeats.md)kunt genereren. 

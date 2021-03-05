@@ -9,105 +9,80 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/03/2018
+ms.date: 02/23/2021
 ms.author: jeedes
-ms.openlocfilehash: e1440feacd10935b15195110cd7ea3e20b4d523c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 450db7c01de4ea7db0133ceca962941ae1a927e5
+ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101687614"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102173132"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Zelfstudie: Azure Active Directory-integratie met SAML SSO for Jira by resolution GmbH
 
-Deze zelfstudie laat zien hoe u SAML SSO for Jira by resolution GmbH instelt met Azure Active Directory (Azure AD).
-Integratie van SAML SSO for Jira by resolution GmbH met Azure AD biedt de volgende voordelen:
+In deze zelf studie leert u hoe u SAML SSO kunt integreren voor Jira door Solution GmbH met Azure Active Directory (Azure AD). Wanneer u SAML SSO integreert voor Jira door de oplossing GmbH met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD beheren wie zich kan aanmelden bij Jira met de SAML SSO-invoegtoepassing met de resolutie GmbH.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure AD-accounts bij Jira worden aangemeld met gebruik van SAML SSO for Jira by resolution GmbH (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Beheer in azure AD die toegang heeft tot SAML SSO voor Jira by Solution GmbH.
+* Stel in dat uw gebruikers automatisch worden aangemeld bij SAML SSO voor Jira door de oplossing GmbH te gebruiken met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt het volgende nodig om Azure AD-integratie en SAML SSO for Jira by resolution GmbH te configureren:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) een proefversie van één maand krijgen
-* Een abonnement op SAML SSO for Jira by resolution GmbH waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* SAML SSO voor Jira door de oplossing voor eenmalige aanmelding in het abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* SAML SSO for Jira by resolution GmbH ondersteunt **SP** en **IDP** geïnitieerde eenmalige aanmelding
+* SAML SSO voor Jira by Solution GmbH ondersteunt door **SP** en **IDP** geïnitieerde SSO.
 
-## <a name="adding-an-enterprise-application-for-single-sign-on"></a>Een bedrijfstoepassing voor eenmalige aanmelding toevoegen
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
 
-Om eenmalige aanmelding in te stellen in Azure AD, moet u een nieuwe ondernemingstoepassing toevoegen. In de galerie is er een vooraf geconfigureerde toepassing vooraf ingesteld hiervoor, **SAML SSO for Jira by Solution GmbH**.
+## <a name="add-saml-sso-for-jira-by-resolution-gmbh-from-the-gallery"></a>SAML SSO voor Jira toevoegen door de oplossing van de galerie
 
-**Voer de volgende stappen uit om SAML SSO for Jira by resolution GmbH toe te voegen vanuit de galerie:**
+Voor het configureren van de integratie van SAML SSO for Jira by resolution GmbH in Azure AD moet u SAML SSO for Jira by resolution GmbH vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **toevoegen vanuit de galerie** **SAML SSO voor Jira by Solution GmbH** in het zoekvak.
+1. Selecteer **SAML SSO voor Jira by Solution GmbH** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-sso-for-saml-sso-for-jira-by-resolution-gmbh"></a>Azure AD SSO voor SAML SSO configureren en testen voor Jira door de oplossing GmbH
 
-2. Ga naar **Ondernemingstoepassingen** en klik vervolgens op **Alle toepassingen**.
+Azure AD SSO configureren en testen met SAML SSO voor Jira by Solution GmbH met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SAML SSO voor Jira door de oplossing GmbH.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met SAML SSO voor Jira door Solution GmbH:
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** bovenaan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[SAML SSO configureren voor Jira met de oplossing GmbH SSO](#configure-saml-sso-for-jira-by-resolution-gmbh-sso)** -voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak SAML SSO voor Jira door de Solution GmbH-test gebruiker](#create-saml-sso-for-jira-by-resolution-gmbh-test-user)** : als u een equivalent van B. Simon in SAML SSO wilt hebben voor Jira door de oplossing GmbH die is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Typ **SAML SSO for Jira by resolution GmbH** in het zoekvak, selecteer **SAML SSO for Jira by resolution GmbH** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen. U kunt ook de naam van de ondernemingstoepassing wijzigen.
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-     ![SAML SSO for Jira by resolution GmbH in de resultatenlijst](common/search-new-app.png)
+1. Ga in het Azure Portal naar de pagina voor het oplossen van problemen met de integratie **van de** Jira-app voor de SAML- **SSO voor de oplossing** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-## <a name="configure-and-test-single-sign-on-with-the-saml-sso-plugin-and-azure-ad"></a>Eenmalige aanmelding configureren en testen met de SAML SSO-invoegtoepassing en Azure AD
-
-In deze sectie gaat u eenmalige aanmelding testen en configureren voor Jira voor een Azure AD-gebruiker. Dit gebeurt voor een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in SAML SSO for Jira by resolution GmbH tot stand is gebracht.
-
-Als u eenmalige aanmelding wilt configureren en testen, moet u de volgende stappen uitvoeren:
-
-1. **[De Azure AD-bedrijfstoepassing configureren voor eenmalige aanmelding](#configure-the-azure-ad-enterprise-application-for-single-sign-on)** – De Azure AD-bedrijfstoepassing configureren voor de eenmalige aanmelding
-2. **[SAML SSO-invoegtoepassing configureren van uw Jira-instantie](#configure-the-saml-sso-plugin-of-your-jira-instance)** – De instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** – Een testgebruiker maken in Azure AD.
-1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** – De testgebruiker inschakelen de eenmalige aanmelding aan de Azure-kant te gebruiken.
-1. **[De testgebruiker maken in Jira](#create-the-test-user-also-in-jira)** – Maak een tegenhanger in Jira voor de Azure AD-testgebruiker.
-1. **[Eenmalige aanmelding testen](#test-single-sign-on)** – Controleer of de configuratie werkt.
-
-### <a name="configure-the-azure-ad-enterprise-application-for-single-sign-on"></a>Configureren van eenmalige aanmelding voor een Azure AD-ondernemingstoepassing
-
-In deze sectie gaat u eenmalige aanmelding in de Azure-portal instellen.
-
-Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by resolution GmbH te configureren:
-
-1. Selecteer in de [Azure Portal](https://portal.azure.com/)in de zojuist gemaakte ondernemingstoepassing **SAML SSO for Jira by resolution GmbH** **Eenmalige aanmelding** in het linkerpaneel.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. Selecteer de **SAML**-modus voor **Eenmalige aanmeldingsmethode selecteren** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Klik daarna op het pictogram **Bewerken** om het dialoogvenster **Standaardconfiguratie van SAML** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In het gedeelte **Standaard SAML-configuratie** voert u de volgende stappen uit als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren:
-
-    ![Schermopname van de sectie 'Standaard SAML-configuratie' met de tekstvakken 'Id' en 'Antwoord-URL' gemarkeerd en de knop 'Opslaan' geselecteerd.](common/idp-intiated.png)
 
     a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<server-base-url>/plugins/servlet/samlsso`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<server-base-url>/plugins/servlet/samlsso`
 
     c. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
-
-    ![Informatie over domein en URL's voor eenmalige aanmelding met SAML SSO for Jira by resolution GmbH](common/metadata-upload-additional-signon.png)
 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<server-base-url>/plugins/servlet/samlsso`
 
@@ -118,17 +93,41 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
-### <a name="configure-the-saml-sso-plugin-of-your-jira-instance"></a>De SAML SSO-invoegtoepassing van uw Jira-exemplaar configureren 
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
+
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
+
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in voor het gebruik van eenmalige aanmelding van Azure door toegang te verlenen aan SAML SSO voor Jira door de oplossing GmbH.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **SAML SSO voor Jira by resolution GmbH**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-saml-sso-for-jira-by-resolution-gmbh-sso"></a>SAML SSO configureren voor Jira met de oplossing GmbH SSO 
 
 1. Meld u in een ander browservenster als beheerder aan bij uw Jira-instantie.
 
 2. Beweeg de muis aanwijzer over het tandwiel aan de rechterkant en klik op **Apps beheren**.
     
-    ![Schermopname met een pijl die wijst naar het tandwielpictogram en met 'Apps beheren' geselecteerd in de vervolgkeuzelijst.](./media/samlssojira-tutorial/addon1.png)
+    ![Schermopname met een pijl die wijst naar het tandwielpictogram en met 'Apps beheren' geselecteerd in de vervolgkeuzelijst.](./media/samlssojira-tutorial/add-on-1.png)
 
 3. Als u wordt omgeleid naar de toegangspagina voor beheerders, voer het **Wachtwoord** in en klik op de knop **Bevestigen**.
 
-    ![Schermopname van de toegangspagina voor beheerders.](./media/samlssojira-tutorial/addon2.png)
+    ![Schermopname van de toegangspagina voor beheerders.](./media/samlssojira-tutorial/add-on-2.png)
 
 4. Jira leidt u normaal gesproken over naar de Atlassian marketplace. Als dat niet het geval is, klikt u op **Nieuwe apps zoeken** in het linkerpaneel. Zoek **SAML Single Sign On (SSO) for JIRA** en klik op de knop **Installeren** om de SAML-invoegtoepassing te installeren.
 
@@ -144,17 +143,17 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
 
     ![Schermopname waarin de app 'S A M L Single Sign On (S S O) Jira, S A M L/S S O' wordt weergegeven met de knop 'Beheren' geselecteerd.](./media/samlssojira-tutorial/store-4.png)
     
-8. Klik daarna op **Configureren** om de zojuist geïnstalleerde invoegtoepassing te configureren.
+7. Klik daarna op **Configureren** om de zojuist geïnstalleerde invoegtoepassing te configureren.
 
     ![Schermopname van de pagina 'Apps beheren', met de knop 'Configureren' geselecteerd voor de app 'S A M L SingleSignOn for Jira'.](./media/samlssojira-tutorial/store-5.png)
 
-9. In de wizard **SAML SSO-invoegtoepassing configureren** klik op **Nieuwe IdP toevoegen** om Azure AD als een nieuwe id-provider te configureren.
+8. In de wizard **SAML SSO-invoegtoepassing configureren** klik op **Nieuwe IdP toevoegen** om Azure AD als een nieuwe id-provider te configureren.
 
-    ![Schermopname van de pagina 'Welkom', met de knop 'Nieuwe IdP toevoegen' geselecteerd.](./media/samlssojira-tutorial/addon4.png) 
+    ![Schermopname van de pagina 'Welkom', met de knop 'Nieuwe IdP toevoegen' geselecteerd.](./media/samlssojira-tutorial/add-on-4.png) 
 
-10. Voer op de pagina **Uw SAML-id-provider kiezen** de volgende stappen uit:
+9. Voer op de pagina **Uw SAML-id-provider kiezen** de volgende stappen uit:
 
-    ![Schermopname van de pagina 'Uw SAML-id-provider kiezen' met de tekstvakken 'Type IdP' en 'Naam' gemarkeerd en de knop 'Volgende' geselecteerd.](./media/samlssojira-tutorial/addon5a.png)
+    ![Schermopname van de pagina 'Uw SAML-id-provider kiezen' met de tekstvakken 'Type IdP' en 'Naam' gemarkeerd en de knop 'Volgende' geselecteerd.](./media/samlssojira-tutorial/identity-provider.png)
  
     a. Stel **Azure AD** als het type id-provider.
     
@@ -164,13 +163,13 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
     
     d. Klik op **Volgende**.
     
-11. Op de pagina **Configuratie id-provider** klikt u op **Volgende**.
+10. Op de pagina **Configuratie id-provider** klikt u op **Volgende**.
  
-    ![Schermopname van de pagina 'Configuratie id-provider'.](./media/samlssojira-tutorial/addon5b.png)
+    ![Schermopname van de pagina 'Configuratie id-provider'.](./media/samlssojira-tutorial/configuration.png)
 
-12. Op de pagina **SAML-IDP-metagegevens importeren** voert u de volgende stappen uit:
+11. Op de pagina **SAML-IDP-metagegevens importeren** voert u de volgende stappen uit:
 
-    ![Schermopname van de pagina 'SAML-IDP-metagegevens importeren' met de actie 'XML-bestand met metagegevens selecteren' geselecteerd.](./media/samlssojira-tutorial/addon5c.png)
+    ![Schermopname van de pagina 'SAML-IDP-metagegevens importeren' met de actie 'XML-bestand met metagegevens selecteren' geselecteerd.](./media/samlssojira-tutorial/metadata.png)
 
     a. Klik op de knop **XML-bestand met metagegevens selecteren** en kies het bestand **Federatieve metagegevens XML** dat u eerder hebt gedownload.
 
@@ -180,73 +179,23 @@ Voer de volgende stappen uit om eenmalige aanmelding met SAML SSO for Jira by re
      
     d. Klik op de knop **Next**
     
-13. Op de pagina **Gebruikers-id-kenmerk en transformatie** klikt u op de knop **Volgende**.
+12. Op de pagina **Gebruikers-id-kenmerk en transformatie** klikt u op de knop **Volgende**.
 
-    ![Schermopname van de pagina 'Gebruikers-id-kenmerk en transformatie' met de knop 'Volgende' geselecteerd.](./media/samlssojira-tutorial/addon5d.png)
+    ![Schermopname van de pagina 'Gebruikers-id-kenmerk en transformatie' met de knop 'Volgende' geselecteerd.](./media/samlssojira-tutorial/transformation.png)
     
-14. Op de pagina **Gebruiker maken en bijwerken** klikt u op **Opslaan en volgende** om de instellingen op te slaan.
+13. Op de pagina **Gebruiker maken en bijwerken** klikt u op **Opslaan en volgende** om de instellingen op te slaan.
     
-    ![Schermopname van de pagina 'Gebruiker maken en bijwerken' met de knop 'Opslaan en volgende' geselecteerd.](./media/samlssojira-tutorial/addon6a.png)
+    ![Schermopname van de pagina 'Gebruiker maken en bijwerken' met de knop 'Opslaan en volgende' geselecteerd.](./media/samlssojira-tutorial/update.png)
     
-15. Op de pagina **Uw instellingen testen** klikt u op **Test overslaan en handmatig configureren** om de gebruikerstest nu over te slaan. Dit wordt uitgevoerd in de volgende sectie en daarvoor zijn bepaalde instellingen in de Azure-portal vereist.
+14. Op de pagina **Uw instellingen testen** klikt u op **Test overslaan en handmatig configureren** om de gebruikerstest nu over te slaan. Dit wordt uitgevoerd in de volgende sectie en daarvoor zijn bepaalde instellingen in de Azure-portal vereist.
     
-    ![Schermopname van de pagina 'Uw instellingen testen' met de knop 'Test overslaan en handmatig configureren' geselecteerd.](./media/samlssojira-tutorial/addon6b.png)
+    ![Schermopname van de pagina 'Uw instellingen testen' met de knop 'Test overslaan en handmatig configureren' geselecteerd.](./media/samlssojira-tutorial/test.png)
     
-16. Klik op **OK** om de waarschuwing over te slaan.
+15. Klik op **OK** om de waarschuwing over te slaan.
     
-    ![Schermopname van het waarschuwingsvenster waarin de knop 'OK' is geselecteerd.](./media/samlssojira-tutorial/addon6c.png)
+    ![Schermopname van het waarschuwingsvenster waarin de knop 'OK' is geselecteerd.](./media/samlssojira-tutorial/warning.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken. Met de gebruiker wordt eenmalige aanmelding getest.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Kies **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In **Gebruikerseigenschappen** voert u de volgende stappen uit:
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. Voer in het veld **Gebruikersnaam** <b>BrittaSimon@contoso.com</b> in.
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In deze sectie voegt u Britta Simon toe aan de ondernemingstoepassing, zodat ze eenmalige aanmelding kan gebruiken.
-
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**. 
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Zoek in de lijst toepassingen naar de ondernemingstoepassing die u aan het begin van deze zelfstudie hebt gemaakt. Als u de stappen van de zelfstudie volgt, wordt deze **SAML SSO for Jira by resolution GmbH** genoemd. Als u het een andere naam hebt gegeven, zoekt u die naam.
-
-    ![De koppeling SAML SSO for Jira by resolution GmbH in de lijst met toepassingen](common/all-applications.png)
-
-3. Klik in het linkerpaneel op **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst Gebruikers en klik op de knop **Selecteren** onderaan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
-### <a name="create-the-test-user-also-in-jira"></a>Maak de testgebruiker ook in Jira
+### <a name="create-saml-sso-for-jira-by-resolution-gmbh-test-user"></a>Testgebruiker voor SAML SSO for Jira by resolution GmbH maken
 
 Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij SAML SSO for Jira by resolution GmbH, moeten ze worden ingericht in SAML SSO for Jira by resolution GmbH. In het geval van deze zelfstudie moet u de inrichting handmatig uitvoeren. Er zijn echter ook andere inrichtingsmodellen beschikbaar voor de SAML SSO-invoegtoepassing per resolutie, bijvoorbeeld **Just In Time** inrichten. Raadpleeg de documentatie bij [SAML by resolution GmbH](https://wiki.resolution.de/doc/saml-sso/latest/all). Als u hierover een vraag hebt, neemt u contact op met in [Resolutie-ondersteuning](https://www.resolution.de/go/support).
 
@@ -256,19 +205,19 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij SAML SSO for Jira b
 
 2. Beweeg de muisaanwijzer over het tandwiel en selecteer **Gebruikersbeheer**.
 
-   ![Schermopname van een pijl die wijst naar het tandwielpictogram en met 'Gebruikersbeheer' geselecteerd in de vervolgkeuzelijst.](./media/samlssojira-tutorial/user1.png)
+   ![Schermopname van een pijl die wijst naar het tandwielpictogram en met 'Gebruikersbeheer' geselecteerd in de vervolgkeuzelijst.](./media/samlssojira-tutorial/user-1.png)
 
 3. Als u wordt omgeleid naar de pagina Toegang voor beheerders, voer het **Wachtwoord** in en klik op de knop **Bevestigen**.
 
-    ![Schermopname van de pagina 'Beheerderstoegang' met het tekstvak 'Wachtwoord' gemarkeerd.](./media/samlssojira-tutorial/user2.png) 
+    ![Schermopname van de pagina 'Beheerderstoegang' met het tekstvak 'Wachtwoord' gemarkeerd.](./media/samlssojira-tutorial/user-2.png) 
 
 4. Onder de tabbladsectie **Gebruikersbeheer** klikt u op **Gebruiker maken**.
 
-    ![Schermopname van het tabblad 'Gebruikersbeheer' met 'Gebruiker maken' geselecteerd.](./media/samlssojira-tutorial/user3-new.png) 
+    ![Schermopname van het tabblad 'Gebruikersbeheer' met 'Gebruiker maken' geselecteerd.](./media/samlssojira-tutorial/user-3-new.png) 
 
 5. In het dialoogvenster **Nieuwe gebruiker maken** voert u de volgende stappen uit. U moet de gebruiker op dezelfde manier maken als in Azure AD:
 
-    ![Werknemer toevoegen](./media/samlssojira-tutorial/user4-new.png) 
+    ![Werknemer toevoegen](./media/samlssojira-tutorial/user-4-new.png) 
 
     a. Typ in het tekstvak **Emailadres** het e-mailadres van de gebruiker: <b>BrittaSimon@contoso.com</b>.
 
@@ -280,16 +229,23 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij SAML SSO for Jira b
 
     e. Klik op **Gebruikers maken** om het maken van de gebruiker te voltooien.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Als u in het toegangsvenster op de tegel SAML SSO for Jira by resolution GmbH klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van SAML SSO for Jira by resolution GmbH waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-U kunt ook eenmalige aanmelding testen als u navigeert naar `https://<server-base-url>/plugins/servlet/samlsso`. Vervang **\<server-base-url>** door de basis-URL van uw Jira-exemplaar.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar SAML SSO voor Jira by Solution GmbH sign on URL, waar u de aanmeldings stroom kunt initiëren.  
 
+* Ga naar SAML SSO voor Jira by resolution GmbH sign-on URL direct en start de aanmeldings stroom vanaf daar.
 
-## <a name="enable-single-sign-on-redirection-for-jira"></a>Omleiding van eenmalige aanmelding voor Jira inschakelen
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de SAML SSO voor Jira door de oplossing GmbH waarvoor u de SSO hebt ingesteld. 
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel SAML SSO voor Jira by resolution GmbH in het gedeelte mijn apps klikt, wordt u als geconfigureerd in de SP-modus, omgeleid naar de aanmeldings pagina van de toepassing voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de SAML SSO voor Jira door de oplossing GmbH waarvoor u de SSO instelt. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="enable-sso-redirection-for-jira"></a>SSO-omleiding inschakelen voor Jira
 
 Zoals vermeld in de sectie voor, zijn er momenteel twee manieren om eenmalige aanmelding te activeren. U kunt met behulp van de **Azure-portal** of **een speciale koppeling naar uw Jira-exemplaar** gebruiken. Met de SAML SSO-invoegtoepassing van de oplossing GmbH kunt u eenmalige aanmelding activeren door eenvoudigweg **toegang te krijgen tot een URL die verwijst naar uw Jira-exemplaar**.
 
@@ -300,21 +256,16 @@ Als u SSO-omleiding wilt activeren, gaat u als volgt te werk in **uw Jira-exempl
 1. Open de configuratie pagina van de SAML SSO-invoegtoepassing in Jira.
 1. Klik op **Omleiding** in het linkerpaneel.
 
-   ![Gedeeltelijke schermafbeelding van de configuratiepagina van de Jira SAML SingleSignOn-invoegtoepassing met markering van de omleidingskoppeling in de linkernavigatiebalk.](./media/samlssojira-tutorial/ssore1.png)
+   ![Gedeeltelijke schermafbeelding van de configuratiepagina van de Jira SAML SingleSignOn-invoegtoepassing met markering van de omleidingskoppeling in de linkernavigatiebalk.](./media/samlssojira-tutorial/configure-1.png)
 
 1. Tik op **SSO-omleiding inschakelen**.
 
-   ![Gedeeltelijke schermopname van de configuratiepagina van de Jira SAML SingleSignOn-invoegtoepassing met markering van het geselecteerde selectievakje "SSO-omleiding inschakelen".](./media/samlssojira-tutorial/ssore2.png) 
+   ![Gedeeltelijke schermopname van de configuratiepagina van de Jira SAML SingleSignOn-invoegtoepassing met markering van het geselecteerde selectievakje "SSO-omleiding inschakelen".](./media/samlssojira-tutorial/configure-2.png) 
 
 1. Klik in de rechterbovenhoek op de knop **Instellingen opslaan**.
 
 Nadat u de optie hebt geactiveerd, kunt u nog steeds de prompt voor gebruikersnaam en wachtwoord bereiken als de optie **Nosso inschakelen** is aangevinkt door naar `https://<server-base-url>/login.jsp?nosso`te navigeren. Zoals gewoonlijk, vervang **\<server-base-url>** met de basis-URL.
 
+## <a name="next-steps"></a>Volgende stappen
 
-## <a name="additional-resources"></a>Aanvullende bronnen
-
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Nadat u de SAML SSO voor Jira hebt geconfigureerd door Solution GmbH, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

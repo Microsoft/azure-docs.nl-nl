@@ -9,12 +9,12 @@ ms.date: 01/13/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 69cc0998be6079b7d3f2ecf209e5a709771ae293
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 4de89892d27bb811be6670c1a14ca85859342ecc
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102200594"
+ms.locfileid: "102218907"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
 
@@ -101,11 +101,65 @@ we're still working on enabling PowerShell SDK for billing APIs. Check back soon
 -->
 
 
-<!--
-### [Azure CLI](#tab/azure-cli-getEnrollments)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli-getEnrollments)
 
-we're still working on enabling CLI SDK for billing APIs. Check back soon.
--->
+Vraag een opsomming aan van alle inschrijvingsaccounts waartoe u toegang hebt:
+
+```azurecli-interactive
+> az billing account list
+```
+
+Antwoord geeft een lijst van alle inschrijvings accounts waartoe u toegang hebt
+
+```json
+[
+  {
+    "accountStatus": "Unknown",
+    "accountType": "Enterprise",
+    "agreementType": "EnterpriseAgreement",
+    "billingProfiles": {
+      "hasMoreResults": false,
+      "value": null
+    },
+    "departments": null,
+    "displayName": "Contoso",
+    "enrollmentAccounts": [
+      {
+        "accountName": "Contoso",
+        "accountOwner": "",
+        "costCenter": "Test",
+        "department": null,
+        "endDate": null,
+        "id": "/providers/Microsoft.Billing/billingAccounts/1234567/enrollmentAccounts/7654321",
+        "name": "7654321",
+        "startDate": null,
+        "status": null,
+        "type": "Microsoft.Billing/enrollmentAccounts"
+      }
+    ],
+    "enrollmentDetails": null,
+    "hasReadAccess": false,
+    "id": "/providers/Microsoft.Billing/billingAccounts/1234567",
+    "name": "1234567",
+    "soldTo": {
+      "addressLine1": null,
+      "addressLine2": null,
+      "addressLine3": null,
+      "city": null,
+      "companyName": "Contoso",
+      "country": "US ",
+      "district": null,
+      "email": null,
+      "firstName": null,
+      "lastName": null,
+      "phoneNumber": null,
+      "postalCode": null,
+      "region": null
+    },
+    "type": "Microsoft.Billing/billingAccounts"
+  },
+```
+De waarde voor een factureringsbereik en `id` zijn hetzelfde. De `id` voor uw inschrijvingsaccount is het factureringsbereik waarbinnen de abonnementsaanvraag wordt gestart. Het is belangrijk dat u de id kent, omdat het een vereiste parameter is die u later in het artikel gaat gebruiken om een abonnement te maken.
 
 ---
 

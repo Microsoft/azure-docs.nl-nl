@@ -25,7 +25,7 @@
     - name: Problemen met Internet Analyzer oplossen
       href: troubleshoot.md
     - name: CLI-verwijzing voor Internet Analyzer
-      href: /cli/azure/ext/internet-analyzer/internet-analyzer?view=azure-cli-latest
+      href: /cli/azure/ext/internet-analyzer/internet-analyzer
     - name: Azure-roadmap
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Blog

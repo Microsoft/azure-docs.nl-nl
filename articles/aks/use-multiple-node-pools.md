@@ -4,12 +4,12 @@ description: Meer informatie over het maken en beheren van meerdere knooppunt gr
 services: container-service
 ms.topic: article
 ms.date: 04/08/2020
-ms.openlocfilehash: 07c4628a17d2c76e8e4608c9c6d059a81a9c378f
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3e029695e9dce79473ada0bae3e7f0bbfd30db89
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/05/2021
-ms.locfileid: "102182856"
+ms.locfileid: "102218482"
 ---
 # <a name="create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Meerdere knooppuntgroepen maken en beheren voor een cluster in Azure Kubernetes Service (AKS)
 
@@ -130,9 +130,11 @@ Een werk belasting vereist mogelijk het splitsen van de knoop punten van een clu
 #### <a name="limitations"></a>Beperkingen
 
 * Alle subnetten die aan nodepools zijn toegewezen, moeten deel uitmaken van hetzelfde virtuele netwerk.
-* Systeem-peul moet toegang hebben tot alle knoop punten in het cluster om essentiële functionaliteit te bieden, zoals DNS-omzetting via coreDNS.
-* Toewijzing van een uniek subnet per knooppunt groep is beperkt tot Azure CNI tijdens de preview-periode.
-* Het gebruik van netwerk beleid met een uniek subnet per knooppunt groep wordt niet ondersteund tijdens de preview-versie.
+* Systeem-peul moet toegang hebben tot alle knoop punten/peul in het cluster om essentiële functionaliteit te bieden, zoals DNS-omzetting en tunneling kubectl-logboeken/exec/port-forward proxy.
+* Als u uw VNET hebt uitgebreid nadat u het cluster hebt gemaakt, moet u uw cluster bijwerken (een beheerde clster-bewerking uitvoeren, maar de knooppunt groeps bewerkingen worden niet geteld) voordat u een subnet toevoegt buiten de oorspronkelijke cidr. AKS is een fout opgetreden bij het toevoegen van de agent pool, hoewel we deze oorspronkelijk hebben toegestaan. Als u niet weet hoe u uw cluster bestand moet afstemmen op een ondersteunings ticket. 
+* Calico-netwerk beleid wordt niet ondersteund. 
+* Het Azure-netwerk beleid wordt niet ondersteund.
+* Uitvoeren-proxy verwacht een enkele aaneengesloten CIDR en gebruikt deze voor drie optmizations. Deze [K.E.P.](https://github.com/kubernetes/enhancements/blob/master/keps/sig-network/20191104-iptables-no-cluster-cidr.md ) weer geven en--cluster-CIDR [hier](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/) voor meer informatie. In azure cni wordt het subnet van uw eerste groep knoop punten gegeven aan uitvoeren-proxy. 
 
 Als u een knooppunt groep met een toegewijd subnet wilt maken, geeft u de bron-ID van het subnet door als extra para meter bij het maken van een knooppunt groep.
 

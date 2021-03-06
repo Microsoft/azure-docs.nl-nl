@@ -8,12 +8,12 @@ ms.service: azure-app-configuration
 ms.custom: devx-track-csharp, fasttrack-edit
 ms.topic: conceptual
 ms.date: 2/25/2020
-ms.openlocfilehash: b1de1a24a506c049782443e4d32039c28fece436
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2f446df95c795eaac378340ed0d5de7b31dfcfee
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101718247"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102219031"
 ---
 # <a name="use-managed-identities-to-access-app-configuration"></a>Beheerde identiteiten gebruiken om App Configuration te openen
 
@@ -140,7 +140,7 @@ Als u een beheerde identiteit in de portal wilt instellen, maakt u eerst een toe
     ---
 
     > [!NOTE]
-    > In het geval dat u een door de **gebruiker toegewezen beheerde identiteit** wilt gebruiken, moet u de clientId opgeven bij het maken van de [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential?view=azure-dotnet&preserve-view=true).
+    > In het geval dat u een door de **gebruiker toegewezen beheerde identiteit** wilt gebruiken, moet u de clientId opgeven bij het maken van de [ManagedIdentityCredential](https://docs.microsoft.com/dotnet/api/azure.identity.managedidentitycredential).
     >```
     >config.AddAzureAppConfiguration(options =>
     >   options.Connect(new Uri(settings["AppConfig:Endpoint"]), new ManagedIdentityCredential(<your_clientId>)));

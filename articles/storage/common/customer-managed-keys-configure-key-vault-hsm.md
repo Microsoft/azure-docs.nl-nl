@@ -6,17 +6,17 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/21/2020
+ms.date: 03/05/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 2f57e801720c6b546a58b216422629d192e8d2e6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: f9be9272a898ad48f3553d4c5e48952e1fcdde81
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843312"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218635"
 ---
 # <a name="configure-encryption-with-customer-managed-keys-stored-in-azure-key-vault-managed-hsm-preview"></a>Versleuteling configureren met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault beheerde HSM (preview-versie)
 
@@ -24,7 +24,10 @@ Azure Storage versleutelt alle gegevens in een opslag account in rust. Standaard
 
 In dit artikel wordt beschreven hoe u versleuteling configureert met door de klant beheerde sleutels die zijn opgeslagen in een beheerde HSM met behulp van Azure CLI. Zie [Configure Encryption with door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault](customer-managed-keys-configure-key-vault.md)voor meer informatie over het configureren van versleuteling met door de klant beheerde sleutels die zijn opgeslagen in een sleutel kluis.
 
-> [!NOTE]
+> [!IMPORTANT]
+>
+> Versleuteling met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault beheerde HSM is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+>
 > Azure Key Vault en Azure Key Vault beheerde HSM ondersteunen dezelfde Api's en beheer interfaces voor configuratie.
 
 ## <a name="assign-an-identity-to-the-storage-account"></a>Een identiteit toewijzen aan het opslag account

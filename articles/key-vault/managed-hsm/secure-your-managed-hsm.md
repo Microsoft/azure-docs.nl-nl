@@ -9,12 +9,12 @@ ms.subservice: managed-hsm
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 99918d039052c9913400b85ac3caa4a1a5481155
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
-ms.translationtype: HT
+ms.openlocfilehash: 5a3fcc10f318f2a8065550a48eb2bfb4bbdd4915
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445316"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218397"
 ---
 # <a name="secure-access-to-your-managed-hsms"></a>Veilige toegang tot uw beheerde HSM's
 
@@ -40,7 +40,7 @@ Als u zich wilt aanmelden bij Azure met behulp van de CLI, typt u:
 az login
 ```
 
-Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest&preserve-view=true) voor meer informatie over opties voor aanmelding via de CLI
+Zie [Aanmelden met de Azure CLI](/cli/azure/authenticate-azure-cli) voor meer informatie over opties voor aanmelding via de CLI
 
 ## <a name="example"></a>Voorbeeld
 

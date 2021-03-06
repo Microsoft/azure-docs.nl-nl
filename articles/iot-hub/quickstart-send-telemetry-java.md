@@ -16,12 +16,12 @@ ms.custom:
 - devx-track-java
 - devx-track-azurecli
 ms.date: 01/27/2021
-ms.openlocfilehash: c0f1272bf195c6d5ef2dfe88cc6541f731fa51c8
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: df6673f6e8e448b0208ee53c17cf86f55d6d9f8f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98928572"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102219162"
 ---
 # <a name="quickstart-send-telemetry-to-an-azure-iot-hub-and-read-it-with-a-java-application"></a>Quickstart: Telemetrie verzenden naar een Azure IoT-hub en deze lezen met een Java-toepassing
 
@@ -33,7 +33,7 @@ In deze quickstart verzendt u telemetrie naar Azure IoT Hub en leest u deze met 
 
 * Een Azure-account met een actief abonnement. [Maak er gratis een](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-* Java SE Development Kit 8. In [Java-langetermijnondersteuning voor Azure en Azure Stack](/java/azure/jdk/?view=azure-java-stable&preserve-view=true) onder **Langetermijnondersteuning** selecteert u **Java 8**.
+* Java SE Development Kit 8. In [Java-langetermijnondersteuning voor Azure en Azure Stack](/java/azure/jdk/) onder **Langetermijnondersteuning** selecteert u **Java 8**.
 
     Gebruik de volgende opdracht om de huidige versie van Java op uw ontwikkelcomputer te controleren:
 

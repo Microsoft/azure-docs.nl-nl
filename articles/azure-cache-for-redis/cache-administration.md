@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/05/2017
 ms.author: yegu
-ms.openlocfilehash: 156dfd1d9553e369357eb68225e722222a59d847
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a79b0b5b5f21d1c75fec6b062f1ca91cfe9dd1f
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91838667"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102219196"
 ---
 # <a name="how-to-administer-azure-cache-for-redis"></a>Azure-cache beheren voor redis
 In dit onderwerp wordt beschreven hoe u beheer taken uitvoert, zoals het [opnieuw opstarten](#reboot) en het [plannen van updates](#schedule-updates) voor uw Azure-cache voor redis-exemplaren.
@@ -57,6 +57,8 @@ Ja, als u de cache opnieuw opstart, worden alle client verbindingen gewist. Het 
 > 
 > 
 
+
+
 ### <a name="will-i-lose-data-from-my-cache-if-i-do-a-reboot"></a>Gaan er gegevens verloren vanuit mijn cache als ik opnieuw opstart?
 Als u de **hoofd** -en **replica** knooppunten opnieuw opstart, kunnen alle gegevens in de cache (of in die Shard als u een Premium-cache gebruikt en clustering is ingeschakeld) verloren gaan, maar dit wordt niet gegarandeerd. Als u [gegevens persistentie](cache-how-to-premium-persistence.md)hebt geconfigureerd, wordt de meest recente back-up hersteld wanneer de cache weer online is, maar eventuele cache schrijf bewerkingen die zijn opgetreden nadat de back-up is gemaakt, gaan verloren.
 
@@ -69,8 +71,9 @@ Ja, voor Power shell-instructies Zie [een Azure-cache opnieuw opstarten voor red
 Op de Blade **updates plannen** kunt u een onderhouds venster voor uw cache-exemplaar aanwijzen. In een onderhouds venster kunt u de dag (en) en tijdstippen van een week bepalen gedurende welke de virtuele machine (s) die als host fungeert voor uw cache kan worden bijgewerkt. Azure cache voor redis is een beste poging om de redis-server software te starten en te volt ooien binnen het opgegeven tijd venster dat u definieert.
 
 > [!NOTE] 
-> Het onderhouds venster is alleen van toepassing op redis-server updates en niet op Azure-updates of updates voor het besturings systeem van de virtuele machines die de cache hosten.
+> Het onderhouds venster is van toepassing op redis-server updates en updates voor het besturings systeem van de Vm's die de cache hosten. Het onderhouds venster is niet van toepassing op updates van het hostsysteem voor de hosts die de cache-Vm's of andere onderdelen van het Azure-netwerk hosten. In zeldzame gevallen, waarbij caches worden gehost op oudere modellen (u kunt zien of uw cache zich in een ouder model bevindt als de DNS-naam van de cache wordt omgezet in het achtervoegsel ' cloudapp.net ', ' chinacloudapp.cn ', ' usgovcloudapi.net ' of ' cloudapi.de '), is het onderhouds venster niet van toepassing op updates voor het gast besturingssysteem.
 >
+
 
 ![Updates plannen](./media/cache-administration/redis-schedule-updates.png)
 

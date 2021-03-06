@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: robinsh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dbdc1c079f7ef2a06ece553e9fec542cbc05ea54
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: cae2bcb1a3302814a426fa0cb2dfb36ba1b013fa
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147665"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218363"
 ---
 # <a name="iot-hub-query-language-for-device-and-module-twins-jobs-and-message-routing"></a>IoT Hub-querytaal voor apparaat- en moduledubbels, taken en-berichtroutering
 
@@ -160,7 +160,7 @@ SELECT LastActivityTime FROM devices WHERE status = 'enabled'
 
 ### <a name="module-twin-queries"></a>Dubbele query's in module
 
-Het uitvoeren van query's op module apparaatdubbels is vergelijkbaar met het uitvoeren van query's op apparaatdubbels van apparaten, maar het gebruik van een andere verzameling/naam ruimte; in plaats van vanaf **apparaten**kunt u een query uitvoeren vanuit **apparaten. modules**:
+Het uitvoeren van query's op module apparaatdubbels is vergelijkbaar met het uitvoeren van query's op apparaatdubbels van apparaten, maar het gebruik van een andere verzameling/naam ruimte; in plaats van vanaf **apparaten** kunt u een query uitvoeren vanuit **apparaten. modules**:
 
 ```sql
 SELECT * FROM devices.modules
@@ -234,7 +234,7 @@ In het object query worden meerdere **volgende** waarden weer gegeven, afhankeli
 ### <a name="limitations"></a>Beperkingen
 
 > [!IMPORTANT]
-> De query resultaten kunnen een paar minuten vertraging hebben ten opzichte van de laatste waarden in het apparaatdubbels van het apparaat. Als u een query wilt uitvoeren op een afzonderlijk apparaat apparaatdubbels op ID, gebruikt u de [Get dubbele rest API](/java/api/com.microsoft.azure.sdk.iot.device.devicetwin?view=azure-java-stable). Deze API retourneert altijd de nieuwste waarden en heeft een hogere beperkings limiet. U kunt de REST API rechtstreeks uitgeven of de equivalente functionaliteit gebruiken in een van de [Azure IOT hub service-sdk's](iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks).
+> De query resultaten kunnen een paar minuten vertraging hebben ten opzichte van de laatste waarden in het apparaatdubbels van het apparaat. Als u een query wilt uitvoeren op een afzonderlijk apparaat apparaatdubbels op ID, gebruikt u de [Get dubbele rest API](/java/api/com.microsoft.azure.sdk.iot.device.devicetwin). Deze API retourneert altijd de nieuwste waarden en heeft een hogere beperkings limiet. U kunt de REST API rechtstreeks uitgeven of de equivalente functionaliteit gebruiken in een van de [Azure IOT hub service-sdk's](iot-hub-devguide-sdks.md#azure-iot-hub-service-sdks).
 
 Op dit moment worden vergelijkingen alleen ondersteund tussen primitieve typen (geen objecten), bijvoorbeeld `... WHERE properties.desired.config = properties.reported.config` wordt alleen ondersteund als deze eigenschappen primitieve waarden hebben.
 
@@ -316,7 +316,7 @@ Op dit moment bieden query's op **devices.Jobs** geen ondersteuning voor:
 
 ## <a name="basics-of-an-iot-hub-query"></a>Basis beginselen van een IoT Hub query
 
-Elke IoT Hub query bestaat uit componenten SELECT en FROM, met optionele WHERE-en GROUP BY-componenten. Elke query wordt uitgevoerd op een verzameling JSON-documenten, bijvoorbeeld apparaatdubbels. De component FROM geeft de document verzameling aan die moet worden herhaald (**apparaten**, **apparaten. modules**of **devices.Jobs**). Vervolgens wordt het filter in de component WHERE toegepast. Met aggregaties worden de resultaten van deze stap gegroepeerd zoals opgegeven in de component GROUP BY. Voor elke groep wordt een rij gegenereerd zoals is opgegeven in de component SELECT.
+Elke IoT Hub query bestaat uit componenten SELECT en FROM, met optionele WHERE-en GROUP BY-componenten. Elke query wordt uitgevoerd op een verzameling JSON-documenten, bijvoorbeeld apparaatdubbels. De component FROM geeft de document verzameling aan die moet worden herhaald (**apparaten**, **apparaten. modules** of **devices.Jobs**). Vervolgens wordt het filter in de component WHERE toegepast. Met aggregaties worden de resultaten van deze stap gegroepeerd zoals opgegeven in de component GROUP BY. Voor elke groep wordt een rij gegenereerd zoals is opgegeven in de component SELECT.
 
 ```sql
 SELECT <select_list>
@@ -398,12 +398,12 @@ De component GROUP BY wordt momenteel alleen ondersteund bij het opvragen van de
 
 ## <a name="expressions-and-conditions"></a>Expressies en voor waarden
 
-Een *expressie*op hoog niveau:
+Een *expressie* op hoog niveau:
 
 * Evalueert naar een exemplaar van een JSON-type (zoals Booleaans, getal, teken reeks, matrix of object).
 * Wordt gedefinieerd door gegevens te bewerken die afkomstig zijn van het JSON-document van het apparaat en constanten die gebruikmaken van ingebouwde Opera tors en functies.
 
-*Voor waarden* zijn expressies die resulteren in een Booleaanse waarde. Een constante die afwijkt van de Booleaanse **waarde True** , wordt als **Onwaar**beschouwd. Deze regel bevat **Null**, **ongedefinieerd**, een wille keurig object of matrix exemplaar, een wille keurige teken reeks en de Booleaanse waarde **False**.
+*Voor waarden* zijn expressies die resulteren in een Booleaanse waarde. Een constante die afwijkt van de Booleaanse **waarde True** , wordt als **Onwaar** beschouwd. Deze regel bevat **Null**, **ongedefinieerd**, een wille keurig object of matrix exemplaar, een wille keurige teken reeks en de Booleaanse waarde **False**.
 
 De syntaxis voor expressies is:
 
@@ -454,7 +454,7 @@ De volgende Opera tors worden ondersteund:
 | Logisch |EN, OF, NIET |
 | Vergelijking |=, !=, <, >, <=, >=, <> |
 
-### <a name="functions"></a>Functies
+### <a name="functions"></a>Functions
 
 Bij het uitvoeren van een query op apparaatdubbels en Jobs is de enige ondersteunde functie:
 

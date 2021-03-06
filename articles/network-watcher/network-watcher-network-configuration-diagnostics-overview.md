@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2020
 ms.author: damendo
-ms.openlocfilehash: ad60b0be8a9a5341c71d760f98c0db84a72763c2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d500420893fc92e75c4d6f32f42e9f1d92c87b68
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951516"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218703"
 ---
 # <a name="introduction-to-network-configuration-diagnostics-in-azure-network-watcher"></a>Inleiding tot diagnostische gegevens over netwerk configuratie in azure Network Watcher
 
@@ -41,4 +41,4 @@ Voor een bepaalde stroom voert het NCD-hulp programma een simulatie van de stroo
 Diagnostische netwerk configuratie gebruiken via andere interfaces
  - [REST API](/rest/api/network-watcher/networkwatchers/getnetworkconfigurationdiagnostic)
  - [PowerShell](/powershell/module/az.network/invoke-aznetworkwatchernetworkconfigurationdiagnostic?view=azps-4.6.1)
- - [Azure-CLI](/cli/azure/network/watcher?view=azure-cli-latest#az_network_watcher_run_configuration_diagnostic)
+ - [Azure-CLI](/cli/azure/network/watcher#az_network_watcher_run_configuration_diagnostic)

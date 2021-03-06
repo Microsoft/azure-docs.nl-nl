@@ -5,17 +5,17 @@ description: U kunt uw eigen versleutelings sleutel gebruiken om de gegevens in 
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 09/15/2020
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 9afce964652d2bedbe105a8a750a93d2f37eef85
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 92a83e03d486d0bf9344fbdcf705703ea788528c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179028"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218567"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Door de klant beheerde sleutels voor Azure Storage versleuteling
 
@@ -25,7 +25,10 @@ U moet Azure Key Vault of Azure Key Vault beheerde hardware security model (HSM)
 
 Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor meer informatie over Azure Key Vault.
 
-> [!NOTE]
+> [!IMPORTANT]
+>
+> Versleuteling met door de klant beheerde sleutels die zijn opgeslagen in Azure Key Vault beheerde HSM is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+>
 > Azure Key Vault en Azure Key Vault beheerde HSM ondersteunen dezelfde Api's en beheer interfaces voor configuratie.
 
 ## <a name="about-customer-managed-keys"></a>Over door de klant beheerde sleutels
@@ -93,14 +96,14 @@ U kunt de toegang tot het opslag account op elk gewenst moment intrekken voor de
 - [BLOB-meta gegevens ophalen](/rest/api/storageservices/get-blob-metadata)
 - [BLOB-meta gegevens instellen](/rest/api/storageservices/set-blob-metadata)
 - [Moment opname-BLOB](/rest/api/storageservices/snapshot-blob), wanneer aangeroepen met de `x-ms-meta-name` aanvraag header
-- [BLOB kopiëren](/rest/api/storageservices/copy-blob)
+- [Blob kopiëren](/rest/api/storageservices/copy-blob)
 - [BLOB kopiëren van URL](/rest/api/storageservices/copy-blob-from-url)
 - [Set Blob Tier](/rest/api/storageservices/set-blob-tier) (Blob-laag instellen)
 - [Blok keren](/rest/api/storageservices/put-block)
 - [Blok van URL plaatsen](/rest/api/storageservices/put-block-from-url)
 - [Blok toevoegen](/rest/api/storageservices/append-block)
 - [Blok van URL toevoegen](/rest/api/storageservices/append-block-from-url)
-- [BLOB plaatsen](/rest/api/storageservices/put-blob)
+- [Blob plaatsen](/rest/api/storageservices/put-blob)
 - [Pagina plaatsen](/rest/api/storageservices/put-page)
 - [Pagina van URL plaatsen](/rest/api/storageservices/put-page-from-url)
 - [BLOB voor incrementele kopie](/rest/api/storageservices/incremental-copy-blob)

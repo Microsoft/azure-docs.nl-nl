@@ -8,35 +8,35 @@ ms.topic: reference
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 3ff01455c56dd259ea64878f912eb3f2431547e7
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 2957bc759577f4eba02b598aad410f662a52cf1d
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95495249"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218346"
 ---
 # <a name="microsoft-sdks-for-iot-plug-and-play"></a>Micro soft Sdk's voor IoT Plug en Play
 
 Met de IoT Plug en Play-bibliotheken en Sdk's kunnen ontwikkel aars IoT-oplossingen bouwen met behulp van verschillende programmeer talen op meerdere platforms. De volgende tabel bevat koppelingen naar voor beelden en Quick starts waarmee u aan de slag kunt gaan:
 
-## <a name="device-sdks"></a>Apparaat-Sdk's
+## <a name="device-sdks"></a>Apparaat-SDK's
 
-| Taal | Pakket | Code opslagplaats | Voorbeelden | Snelstartgids | Referentie |
+| Taal | Pakket | Code opslagplaats | Voorbeelden | Snelstart | Naslaginformatie |
 |---|---|---|---|---|---|
 | C-apparaat | [vcpkg 1.3.9](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/setting_up_vcpkg.md) | [GitHub](https://github.com/Azure/azure-iot-sdk-c) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/azure/iot-hub/iot-c-sdk-ref/) |
 | .NET-apparaat | [NuGet 1.31.0](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/) | [Voorbeelden](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/device/PnpDeviceSamples) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/dotnet/api/microsoft.azure.devices.client?preserve-view=true&view=azure-dotnet) |
-| Java-apparaat | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-device-client) | [GitHub](https://github.com/Azure/azure-iot-sdk-java/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/pnp-device-sample) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.device?preserve-view=true&view=azure-java-stable) |
+| Java-apparaat | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-device-client) | [GitHub](https://github.com/Azure/azure-iot-sdk-java/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/pnp-device-sample) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.device) |
 | Python-apparaat | [PIP 2.3.0](https://pypi.org/project/azure-iot-device/) | [GitHub](https://github.com/Azure/azure-iot-sdk-python/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/python/api/azure-iot-device/azure.iot.device?preserve-view=true&view=azure-python) |
-| Knoop punt-apparaat | [NPM 1.17.2](https://www.npmjs.com/package/azure-iot-device)  | [GitHub](https://github.com/Azure/azure-iot-sdk-node/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/javascript/api/azure-iot-device/?preserve-view=true&view=azure-node-latest) |
+| Knoop punt-apparaat | [NPM 1.17.2](https://www.npmjs.com/package/azure-iot-device)  | [GitHub](https://github.com/Azure/azure-iot-sdk-node/tree/master/) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/device/samples/pnp) | [Verbinding maken met IoT Hub](quickstart-connect-device.md) | [Verwijzing](/javascript/api/azure-iot-device/) |
 | Inge sloten C-apparaat | N.v.t. | [GitHub](https://github.com/Azure/azure-sdk-for-c/)| [Voorbeelden](howto-use-embedded-c.md#samples) | [Embedded C gebruiken](howto-use-embedded-c.md) | N.v.t.
 
 ## <a name="service-sdks"></a>Service-SDK's
 
-| Platform  | Pakket | Code opslagplaats | Voorbeelden | Snelstartgids | Referentie |
+| Platform  | Pakket | Code opslagplaats | Voorbeelden | Snelstart | Naslaginformatie |
 |---|---|---|---|---|---|
 | .NET-IoT Hub-service | [NuGet 1.27.1](https://www.nuget.org/packages/Microsoft.Azure.Devices ) | [GitHub](https://github.com/Azure/azure-iot-sdk-csharp) | [Voorbeelden](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/iot-hub/Samples/service/PnpServiceSamples) | N.v.t. | [Verwijzing](/dotnet/api/microsoft.azure.devices?preserve-view=true&view=azure-dotnet) |
-| Java-IoT Hub-service | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-service-client/1.26.0) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/pnp-service-sample) | N.v.t. | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.service?preserve-view=true&view=azure-java-stable) |
-| Node-IoT Hub-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iothub) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples) | N.v.t. | [Verwijzing](/javascript/api/azure-iothub/?preserve-view=true&view=azure-node-latest) |
+| Java-IoT Hub-service | [Maven 1.26.0](https://mvnrepository.com/artifact/com.microsoft.azure.sdk.iot/iot-service-client/1.26.0) | [GitHub](https://github.com/Azure/azure-iot-sdk-java) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-java/tree/master/service/iot-service-samples/pnp-service-sample) | N.v.t. | [Verwijzing](/java/api/com.microsoft.azure.sdk.iot.service) |
+| Node-IoT Hub-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iothub) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples) | N.v.t. | [Verwijzing](/javascript/api/azure-iothub/) |
 | Python-Digital Apparaatdubbels-service | [PIP 2.2.3](https://pypi.org/project/azure-iot-hub) | [GitHub](https://github.com/Azure/azure-iot-sdk-python) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-hub/samples) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service.md) | N.v.t. |
 | Node-Digital Apparaatdubbels-service | [NPM 1.13.0](https://www.npmjs.com/package/azure-iot-digitaltwins-service) | [GitHub](https://github.com/Azure/azure-iot-sdk-node) | [Voorbeelden](https://github.com/Azure/azure-iot-sdk-node/tree/master/service/samples/javascript) | [Interactie met IoT Hub Digital Apparaatdubbelse API](quickstart-service.md) | N.v.t. |
 

@@ -6,17 +6,19 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 09/30/2020
+ms.date: 03/04/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: ed56d0cf69710173d41c5262e7a3121a0cad1304
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 54f3f075e9bf8bce9d8fb01a28f0f81dd3a930aa
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101660137"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218414"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
+
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 Er zijn twee afzonderlijke families van het aanroepen van clientbibliotheken, voor *clients* en *services.* Momenteel beschikbare clientbibliotheken zijn bedoeld voor ervaringen van eindgebruikers: websites en systeemeigen apps.
 
@@ -26,48 +28,71 @@ De service-clientbibliotheken zijn nog niet beschikbaar en bieden toegang tot de
 
 De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de Azure Communication Services die clientbibliotheken aanroepen.
 
-| Groep van functies | Mogelijkheid                                                                                                          | JS  | Java (Android) | Objective-C (iOS)
+| Groep van functies | Mogelijkheid                                                                                                          | JS  | Java (Android) | Objective-C (iOS) 
 | ----------------- | ------------------------------------------------------------------------------------------------------------------- | ---  | -------------- | -------------
-| Belangrijkste mogelijkheden | Een een-op-een-oproep tussen twee gebruikers plaatsen                                                                           | ✔️   | ✔️            | ✔️
-|                   | Een oproep met meer dan twee gebruikers (Maximaal 350 gebruikers) plaatsen                                                       | ✔️   | ✔️            | ✔️
-|                   | Een een-op-een-oproep promoten met twee gebruikers in een groepsaanroep met meer dan twee gebruikers                                 | ✔️   | ✔️            | ✔️
-|                   | Een groepsoproep toevoegen nadat deze is gestart                                                                              | ✔️   | ✔️            | ✔️
+| Belangrijkste mogelijkheden | Een een-op-een-oproep tussen twee gebruikers plaatsen                                                                           | ✔️   | ✔️            | ✔️  
+|                   | Een oproep met meer dan twee gebruikers (Maximaal 350 gebruikers) plaatsen                                                       | ✔️   | ✔️            | ✔️ 
+|                   | Een een-op-een-oproep promoten met twee gebruikers in een groepsaanroep met meer dan twee gebruikers                                 | ✔️   | ✔️            | ✔️ 
+|                   | Een groepsoproep toevoegen nadat deze is gestart                                                                              | ✔️   | ✔️            | ✔️ 
 |                   | Een andere VoIP-deelnemer uitnodigen om deel te nemen aan een actieve groepsoproep                                                       | ✔️   | ✔️            | ✔️
-|                   | Video in- of uitschakelen                                                         | ✔️   | ✔️            | ✔️
-|                   | Microfoon dempen/dempen opheffen                                                                                                     | ✔️   | ✔️            | ✔️
-|                   | Schakelen tussen camera's                                                                                              | ✔️   | ✔️            | ✔️
-|                   | Lokaal vasthouden/opheffen                                                                                                  | ✔️   | ✔️            | ✔️
-|                   | Actieve spreker                                                                                                      | ✔️   | ✔️            | ✔️
-|                   | Een spreker kiezen voor aanroepen                                                                                            | ✔️   | ✔️            | ✔️
-|                   | Microfoon kiezen voor aanroepen                                                                                         | ✔️   | ✔️            | ✔️
-|                   | Status van een deelnemer weergeven<br/>*Niet-actief, vroege media, verbinding maken, verbonden, in de wacht, in lobby, verbroken*         | ✔️   | ✔️            | ✔️
-|                   | Status van een aanroep weergeven<br/>*Vroege media, binnenkomend, verbinden, rinkelen, verbonden, in de wacht, verbinding verbreken, verbroken* | ✔️   | ✔️            | ✔️
-|                   | Weergeven als een deelnemer is gedempt                                                                                      | ✔️   | ✔️            | ✔️
-|                   | De reden weergeven waarom een deelnemer een gesprek heeft verlaten                                                                       | ✔️   | ✔️            | ✔️
-| Scherm delen    | Het volledige scherm delen vanuit de toepassing                                                                 | ✔️   | ❌            | ❌
-|                   | Een specifieke toepassing delen (in de lijst met actieve toepassingen)                                                | ✔️   | ❌            | ❌
-|                   | Een tabblad van webbrowser delen vanuit de lijst met geopende tabbladen                                                                  | ✔️   | ❌            | ❌
-|                   | Deelnemer kan externe schermdeling weergeven                                                                            | ✔️   | ✔️            | ✔️
-| Rooster            | Deelnemers weergeven                                                                                                   | ✔️   | ✔️            | ✔️
-|                   | Een deelnemer verwijderen                                                                                                | ✔️   | ✔️            | ✔️
-| PSTN              | Een een-op-een-aanroep met een PSTN-deelnemer plaatsen                                                                     | ✔️   | ✔️            | ✔️
+|  Mid Call Control | Video in- of uitschakelen                                                                                              | ✔️   | ✔️            | ✔️ 
+|                   | Microfoon dempen/dempen opheffen                                                                                                     | ✔️   | ✔️            | ✔️         
+|                   | Schakelen tussen camera's                                                                                              | ✔️   | ✔️            | ✔️           
+|                   | Lokaal vasthouden/opheffen                                                                                                  | ✔️   | ✔️            | ✔️           
+|                   | Actieve spreker                                                                                                      | ✔️   | ✔️            | ✔️           
+|                   | Een spreker kiezen voor aanroepen                                                                                            | ✔️   | ✔️            | ✔️           
+|                   | Microfoon kiezen voor aanroepen                                                                                         | ✔️   | ✔️            | ✔️           
+|                   | Status van een deelnemer weergeven<br/>*Niet-actief, vroege media, verbinding maken, verbonden, in de wacht, in lobby, verbroken*         | ✔️   | ✔️            | ✔️           
+|                   | Status van een aanroep weergeven<br/>*Vroege media, binnenkomend, verbinden, rinkelen, verbonden, in de wacht, verbinding verbreken, verbroken* | ✔️   | ✔️            | ✔️           
+|                   | Weergeven als een deelnemer is gedempt                                                                                      | ✔️   | ✔️            | ✔️           
+|                   | De reden weergeven waarom een deelnemer een gesprek heeft verlaten                                                                       | ✔️   | ✔️            | ✔️     
+| Scherm delen    | Het volledige scherm delen vanuit de toepassing                                                                 | ✔️   | ❌            | ❌           
+|                   | Een specifieke toepassing delen (in de lijst met actieve toepassingen)                                                | ✔️   | ❌            | ❌           
+|                   | Een tabblad van webbrowser delen vanuit de lijst met geopende tabbladen                                                                  | ✔️   | ❌            | ❌           
+|                   | Deelnemer kan externe schermdeling weergeven                                                                            | ✔️   | ✔️            | ✔️         
+| Rooster            | Deelnemers weergeven                                                                                                   | ✔️   | ✔️            | ✔️           
+|                   | Een deelnemer verwijderen                                                                                                | ✔️   | ✔️            | ✔️         
+| PSTN              | Een een-op-een-aanroep met een PSTN-deelnemer plaatsen                                                                     | ✔️   | ✔️            | ✔️   
 |                   | Een groepsaanroep met PSTN-deelnemers plaatsen                                                                           | ✔️   | ✔️            | ✔️
 |                   | Een een-op-een-aanroep promoten met een PSTN-deelnemer in een groepsaanroep                                                 | ✔️   | ✔️            | ✔️
-|                   | Inbellen vanuit een groepsaanroep als een PSTN-deelnemer                                                                    | ✔️   | ✔️            | ✔️
-| Algemeen           | Uw microfoon, spreker en camera testen met een service voor audio testen (beschikbaar door het aanroepen van 8:echo123)                   |  ✔️  | ✔️            | ✔️
+|                   | Inbellen vanuit een groepsaanroep als een PSTN-deelnemer                                                                    | ✔️   | ✔️            | ✔️   
+| Algemeen           | Uw microfoon, spreker en camera testen met een service voor audio testen (beschikbaar door het aanroepen van 8:echo123)                   | ✔️   | ✔️            | ✔️ 
+| Apparaatbeheer | Vragen om toestemming voor het gebruik van audio en/of video                                                                       | ✔️   | ✔️            | ✔️
+|                   | Camera lijst ophalen                                                                                                     | ✔️   | ✔️            | ✔️ 
+|                   | Camera instellen                                                                                                          | ✔️   | ✔️            | ✔️
+|                   | Geselecteerde camera ophalen                                                                                                 | ✔️   | ✔️            | ✔️
+|                   | Microfoon lijst ophalen                                                                                                 | ✔️   | ✔️            | ✔️
+|                   | Microfoon instellen                                                                                                      | ✔️   | ✔️            | ✔️
+|                   | Geselecteerde microfoon ophalen                                                                                             | ✔️   | ✔️            | ✔️
+|                   | Lijst met luid sprekers ophalen                                                                                                   | ✔️   | ✔️            | ✔️
+|                   | Spreker instellen                                                                                                         | ✔️   | ✔️            | ✔️
+|                   | Geselecteerde spreker ophalen                                                                                                | ✔️   | ✔️            | ✔️
+| Video weergave   | Eén video op veel plaatsen weer geven (lokale camera of externe stroom)                                                  | ✔️   | ✔️            | ✔️
+|                   | Schaal modus instellen/bijwerken                                                                                           | ✔️   | ✔️            | ✔️ 
+|                   | Externe video stroom weer geven                                                                                          | ✔️   | ✔️            | ✔️
+
+
 
 ## <a name="javascript-calling-client-library-support-by-os-and-browser"></a>Ondersteuning voor aanroepen van clientbibliotheek met JavaScript via besturingssysteem en browser
 
-De volgende tabel bevat de set van ondersteunde browsers en versies die momenteel beschikbaar zijn.
+De volgende tabel bevat de set ondersteunde browsers die momenteel beschikbaar zijn. De meest recente drie versies van de browser worden ondersteund, tenzij anders aangegeven.
 
-|                                  | Windows          | macOS          | Ubuntu | Linux  | Android | iOS    | iPad OS|
-| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ | -------|
-| **De aanroepende clientbibliotheek gebruiken** | Chrome *, nieuwe Edge | Chrome *, Safari** | Chrome*  | Chrome* | Chrome* | Safari** | Safari** |
+|                                  | Chrome | Safari  | Rand (chroom) | 
+| -------------------------------- | -------| ------  | --------------  |
+| Android                          |  ✔️    | ❌     | ❌             |
+| iOS                              |  ❌    | ✔️**** | ❌             |
+| macOS * * *                         |  ✔️    | ✔️**   | ❌             |
+| Windows * * *                       |  ✔️    | ❌     | ✔️             |
+| Ubuntu/Linux                     |  ✔️    | ❌     | ❌             |
 
+* Safari-versies 13.1 + worden ondersteund. 
 
-\* Let wel dat naast de vorige twee releases ook de meest recente versie van Chrome wordt ondersteund.<br/>
+* * Safari 14 +/macOS 11 + vereist voor ondersteuning van uitgaande video. 
 
-\* * Let wel dat Safari-versies 13.1 + worden ondersteund. Uitgaande video voor Safari macOS wordt nog niet ondersteund, maar wordt wel ondersteund op iOS. Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop iOS. Eén-op-één-gesprekken en groepsgesprekken zijn momenteel niet beschikbaar in Safari.
+Het delen van een uitgaand scherm wordt alleen ondersteund op Desktop platforms (Windows, macOS en Linux), ongeacht de browser versie, en wordt niet ondersteund op een mobiel platform (Android, iOS, iPad en tablets).
+
+Een iOS-app in Safari kan Mic-en luidspreker apparaten (bijvoorbeeld Bluetooth) niet inventariseren/selecteren. Dit is een beperking van het besturings systeem en er is altijd maar één apparaat.
+
 
 ## <a name="calling-client---browser-security-model"></a>Aanroepende client - beveiligingsmodel voor browsers
 
@@ -94,10 +119,9 @@ De aanroepende clientbibliotheek in Communication Services biedt ondersteuning v
 
 |           |Web | Android/iOS|
 |-----------|----|------------|
-|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 audio/video of 1 audio/scherm delen | 1 audio/video |
-|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 audio/video of 1 audio/scherm delen| 6 audio/video of 1 scherm delen |
+|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video + 1 scherm delen|
+|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
 
-Houd er rekening mee dat in groeps scenario's één gemengde audio stroom wordt gebruikt ter ondersteuning van alle audio deel nemers.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -107,4 +131,4 @@ Houd er rekening mee dat in groeps scenario's één gemengde audio stroom wordt 
 Raadpleeg voor meer informatie de volgende artikelen:
 - Stel u op de hoogte van algemene [aanroepstromen](../call-flows.md)
 - Meer informatie over [aanroeptypen](../voice-video-calling/about-call-types.md)
-- Meer informatie over [telefoon nummer typen](../telephony-sms/plan-solution.md)
+- [Uw PSTN-oplossing plannen](../telephony-sms/plan-solution.md)

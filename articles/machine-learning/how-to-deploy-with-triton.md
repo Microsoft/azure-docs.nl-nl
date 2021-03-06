@@ -11,12 +11,12 @@ ms.date: 02/16/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 3d2e01b645c1661d4b44520193b9c4557cbc1ea0
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 47d2c8865109e8ef43317b3c4a19c36e692aff91
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100652165"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218839"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
@@ -36,7 +36,7 @@ Triton is een raam werk dat is *geoptimaliseerd voor* demijnen. Het biedt een be
 
 * Een **Azure-abonnement**. Als u er nog geen hebt, probeer [dan de gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 * Vertrouwd met [het implementeren van een model](how-to-deploy-and-where.md) met Azure machine learning.
-* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/?view=azure-ml-py) **of** de [Azure cli](/cli/azure/?view=azure-cli-latest) -en [machine learning-extensie](reference-azure-machine-learning-cli.md).
+* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/?view=azure-ml-py) **of** de [Azure cli](/cli/azure/) -en [machine learning-extensie](reference-azure-machine-learning-cli.md).
 * Een werkende installatie van docker voor lokale tests. Zie [Orientation en Setup](https://docs.docker.com/get-started/) in de docker-documentatie voor meer informatie over het installeren en valideren van docker.
 
 ## <a name="architectural-overview"></a>Architectuuroverzicht
@@ -331,7 +331,7 @@ print(local_service.scoring_uri)
 
 ---
 
-Nadat de implementatie is voltooid, wordt de Score-URI weer gegeven. Voor deze lokale implementatie is het `http://localhost:6789/score` . Als u in de Cloud implementeert, kunt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) CLI gebruiken om de Score-URI op te halen.
+Nadat de implementatie is voltooid, wordt de Score-URI weer gegeven. Voor deze lokale implementatie is het `http://localhost:6789/score` . Als u in de Cloud implementeert, kunt u de opdracht [AZ ml service show](/cli/azure/ext/azure-cli-ml/ml/service#ext_azure_cli_ml_az_ml_service_show) CLI gebruiken om de Score-URI op te halen.
 
 Zie [een model gebruiken dat is geïmplementeerd als een webservice](how-to-consume-web-service.md)voor meer informatie over het maken van een client die inactiviteits aanvragen verzendt naar de Score-URI.
 

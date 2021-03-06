@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: 75226f92995794221635ced7ee0e285ac824b6e2
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 714fb92e8757fed6e11a09528b60cda3e945175e
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696860"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218890"
 ---
 # <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Een open bare load balancer met IPv6 maken met behulp van Azure CLI
 
@@ -58,7 +58,7 @@ Als u een load balancer wilt implementeren, moet u de volgende objecten maken en
 
 In dit voor beeld voert u de Azure CLI-hulpprogram ma's uit in een Power shell-opdracht venster. Als u de Lees baarheid en hergebruik wilt verbeteren, gebruikt u de script mogelijkheden van Power shell en niet de Azure PowerShell-cmdlets.
 
-1. [Installeer en configureer de Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
+1. [Installeer en configureer de Azure cli](/cli/azure/install-azure-cli) door de stappen in het gekoppelde artikel te volgen en u aan te melden bij uw Azure-account.
 
 2. Power shell-variabelen instellen voor gebruik met de Azure CLI-opdrachten:
 

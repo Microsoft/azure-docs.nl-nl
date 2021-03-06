@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/29/2020
 ms.author: irenehua
-ms.openlocfilehash: 952889777e4236d7fa03fad5b1bdbf98499f7066
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 52f2a2ed301bf734ad605a2ee68a0ab672a97014
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101721307"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102218720"
 ---
 # <a name="update-or-delete-a-load-balancer-used-by-virtual-machine-scale-sets"></a>Een load balancer die wordt gebruikt door virtuele-machine schaal sets bijwerken of verwijderen
 
@@ -30,7 +30,7 @@ Wanneer u werkt met schaal sets voor virtuele machines en een exemplaar van Azur
 
 ## <a name="set-up-a-load-balancer-for-scaling-out-virtual-machine-scale-sets"></a>Een load balancer instellen voor het uitschalen van virtuele-machine schaal sets
 
-Zorg ervoor dat het exemplaar van Azure Load Balancer een [binnenkomende NAT-groep](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest) heeft ingesteld en dat de schaalset van de virtuele machine in de back-endadresgroep van de Load Balancer wordt geplaatst. Load Balancer maakt automatisch nieuwe binnenkomende NAT-regels in de binnenkomende NAT-groep wanneer er nieuwe exemplaren van virtuele machines worden toegevoegd aan de schaalset voor virtuele machines.
+Zorg ervoor dat het exemplaar van Azure Load Balancer een [binnenkomende NAT-groep](/cli/azure/network/lb/inbound-nat-pool) heeft ingesteld en dat de schaalset van de virtuele machine in de back-endadresgroep van de Load Balancer wordt geplaatst. Load Balancer maakt automatisch nieuwe binnenkomende NAT-regels in de binnenkomende NAT-groep wanneer er nieuwe exemplaren van virtuele machines worden toegevoegd aan de schaalset voor virtuele machines.
 
 Controleren of de binnenkomende NAT-groep juist is ingesteld:
 
@@ -44,7 +44,7 @@ Er kunnen geen afzonderlijke binnenkomende NAT-regels worden toegevoegd. Maar u 
 
 Als u een volledige set binnenkomende NAT-regels voor de virtuele-machine schaal sets wilt toevoegen, maakt u eerst een binnenkomende NAT-groep in de load balancer. Ga vervolgens naar de binnenkomende NAT-pool van het netwerk profiel van de virtuele-machine schaalset. Een volledig voor beeld van het gebruik van CLI wordt weer gegeven.
 
-De nieuwe binnenkomende NAT-groep mag geen overlappende front-end-poort bereik met bestaande binnenkomende NAT-Pools hebben. Als u bestaande binnenkomende NAT-groepen wilt weer geven die zijn ingesteld, gebruikt u deze [cli-opdracht](/cli/azure/network/lb/inbound-nat-pool?view=azure-cli-latest#az_network_lb_inbound_nat_pool_list):
+De nieuwe binnenkomende NAT-groep mag geen overlappende front-end-poort bereik met bestaande binnenkomende NAT-Pools hebben. Als u bestaande binnenkomende NAT-groepen wilt weer geven die zijn ingesteld, gebruikt u deze [cli-opdracht](/cli/azure/network/lb/inbound-nat-pool#az_network_lb_inbound_nat_pool_list):
   
 ```azurecli-interactive
   az network lb inbound-nat-pool create 

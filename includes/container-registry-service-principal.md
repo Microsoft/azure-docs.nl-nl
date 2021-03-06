@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/14/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 9e4f2e355240ba8682cbe9f86f2be94e7dd0d92d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2d2b655e80f5b9694fb1948b136aac918312ca9
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "70032349"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102245088"
 ---
 ## <a name="create-a-service-principal"></a>Een service-principal maken
 
@@ -23,7 +23,7 @@ Voordat u het script uitvoert, moet `ACR_NAME` u de variabele bijwerken met de n
 
 U kunt desgewenst de waarde wijzigen `--role` in de opdracht [AZ AD SP create-for-RBAC][az-ad-sp-create-for-rbac] als u andere machtigingen wilt verlenen. Zie [ACR-rollen en-machtigingen](https://github.com/Azure/acr/blob/master/docs/roles-and-permissions.md)voor een volledige lijst met rollen.
 
-Nadat u het script hebt uitgevoerd, noteert u de id en het **wacht woord**van de service **-** principal. Wanneer u de referenties hebt, kunt u uw toepassingen en services zo configureren dat deze bij het container register worden geverifieerd als de Service-Principal.
+Nadat u het script hebt uitgevoerd, noteert u de id en het **wacht woord** van de service **-** principal. Wanneer u de referenties hebt, kunt u uw toepassingen en services zo configureren dat deze bij het container register worden geverifieerd als de Service-Principal.
 
 <!-- https://github.com/Azure-Samples/azure-cli-samples/blob/master/container-registry/service-principal-create/service-principal-create.sh -->
 [!code-azurecli-interactive[acr-sp-create](~/cli_scripts/container-registry/service-principal-create/service-principal-create.sh)]
@@ -39,5 +39,5 @@ Het volgende script maakt gebruik van de opdracht [AZ Role Assignment][az-role-a
 [!code-azurecli-interactive[acr-sp-role-assign](~/cli_scripts/container-registry/service-principal-assign-role/service-principal-assign-role.sh)]
 
 <!-- LINKS - Internal -->
-[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac
+[az-ad-sp-create-for-rbac]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
 [az-role-assignment-create]: /cli/azure/role/assignment#az-role-assignment-create

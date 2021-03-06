@@ -6,12 +6,12 @@ ms.author: timlt
 ms.service: iot-develop
 ms.topic: include
 ms.date: 01/14/2021
-ms.openlocfilehash: ab17b12913630774c4fe6d99a4830080de02e541
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 10bd2c4902157b9e01b1cb0ff10b3ebdf448568c
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712574"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102244526"
 ---
 In de volgende secties stelt u een terminal in en gebruikt u Azure CLI om een IoT-hub te maken. Als u een Terminal wilt configureren waarop Azure CLI-opdrachten worden uitgevoerd, kunt u de op de browser gebaseerde Azure Cloud Shell gebruiken of een lokale Terminal gebruiken.
 * Als u Cloud Shell wilt gebruiken, gaat u naar de volgende sectie: [de Cloud shell starten](#launch-the-cloud-shell). 
@@ -41,7 +41,7 @@ Zo start u de Cloud Shell:
 Als u ervoor kiest om een lokale terminal te gebruiken in plaats van Cloud Shell, voltooit u deze sectie.  
 
 1. Open een lokale terminal.
-1. Voer de opdracht [AZ login](/cli/azure/reference-index?preserve-view=true&view=azure-cli-latest#az_login) :
+1. Voer de opdracht [AZ login](/cli/azure/reference-index#az_login) :
 
    ```azurecli
    az login
@@ -65,7 +65,7 @@ In deze sectie installeert u de Microsoft Azure IoT-extensie voor Azure CLI naar
 > [!IMPORTANT]
 > De Terminal opdrachten in de rest van deze Snelstartgids werken hetzelfde in Cloud Shell of een lokale terminal. Als u een opdracht wilt uitvoeren, selecteert u **kopiëren** om een code blok in deze Quick Start te kopiëren. Plak deze in uw CLI-shell en voer deze uit.
 
-Voer de opdracht [AZ extension add](/cli/azure/extension?preserve-view=true&view=azure-cli-latest#az-extension-add) uit. 
+Voer de opdracht [AZ extension add](/cli/azure/extension#az-extension-add) uit. 
 
    ```azurecli
    az extension add --name azure-iot
@@ -77,7 +77,7 @@ In deze sectie gebruikt u Azure CLI om een IoT-hub en een resource groep te make
 
 Een IoT-hub en een resource groep maken:
 
-1. Voer de opdracht [az group create](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-create) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
+1. Voer de opdracht [az group create](/cli/azure/group#az-group-create) uit om een resourcegroep te maken. Met de volgende opdracht wordt een resourcegroep met de naam *MyResourceGroup* gemaakt op de locatie *VS - oost*. 
     >[!NOTE]
     > U kunt desgewenst een alternatieve locatie instellen. Als u beschik bare locaties wilt zien, voert u uit `az account list-locations` . In deze zelf studie wordt *Oost* -as gebruikt, zoals weer gegeven in de voor beeld-opdracht. 
 
@@ -85,7 +85,7 @@ Een IoT-hub en een resource groep maken:
     az group create --name MyResourceGroup --location eastus
     ```
 
-1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub?preserve-view=true&view=azure-cli-latest#az-iot-hub-create) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
+1. Voer de opdracht [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create) uit om een IoT-hub te maken. Het kan enkele minuten duren voordat een IoT-hub is gemaakt. 
 
     *YourIotHubName*. Vervang deze tijdelijke aanduiding en de omringende accolades in de volgende opdracht, met de naam die u hebt gekozen voor uw IoT-hub. De naam van de IoT-hub moet wereldwijd uniek zijn in Azure. Gebruik de naam van uw IoT-hub in de rest van deze Snelstartgids, waar u de tijdelijke aanduiding ziet.
 
@@ -97,7 +97,7 @@ Een IoT-hub en een resource groep maken:
 In deze sectie maakt u een gesimuleerd IoT-apparaat dat is verbonden met uw IoT-hub. 
 
 Een gesimuleerd apparaat maken:
-1. Voer de opdracht [AZ IOT hub Device-Identity Create](/cli/azure/ext/azure-iot/iot/hub/device-identity?preserve-view=true&view=azure-cli-latest#ext-azure-iot-az-iot-hub-device-identity-create) uit in uw cli-shell. Hiermee maakt u de id van het gesimuleerde apparaat. 
+1. Voer de opdracht [AZ IOT hub Device-Identity Create](/cli/azure/ext/azure-iot/iot/hub/device-identity#ext-azure-iot-az-iot-hub-device-identity-create) uit in uw cli-shell. Hiermee maakt u de id van het gesimuleerde apparaat. 
 
     *YourIotHubName*. vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub. 
 
@@ -107,7 +107,7 @@ Een gesimuleerd apparaat maken:
     az iot hub device-identity create --device-id myDevice --hub-name {YourIoTHubName} 
     ```
 
-1.  Voer de opdracht [AZ IOT hub apparaat-identiteits verbinding-reeks weer geven](/cli/azure/ext/azure-iot/iot/hub/device-identity/connection-string?preserve-view=true&view=azure-cli-latest#ext_azure_iot_az_iot_hub_device_identity_connection_string_show) uit. 
+1.  Voer de opdracht [AZ IOT hub apparaat-identiteits verbinding-reeks weer geven](/cli/azure/ext/azure-iot/iot/hub/device-identity/connection-string#ext_azure_iot_az_iot_hub_device_identity_connection_string_show) uit. 
 
     ```azurecli
     az iot hub device-identity connection-string show --device-id myDevice --hub-name {YourIoTHubName}

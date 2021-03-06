@@ -5,14 +5,14 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 2/4/2021
 ms.author: baanders
-ms.openlocfilehash: c3c1b814b357a2e4b724590261657e485852f99c
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 9a02c4f5c5699b4a6308bfaa519fa9eb776414d6
+ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575676"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102245034"
 ---
-* **Als u geen van de resources nodig hebt die u in deze zelf studie hebt gemaakt**, kunt u het Azure Digital apparaatdubbels-exemplaar en alle andere resources uit dit artikel verwijderen met de opdracht [AZ Group delete](/cli/azure/group?preserve-view=true&view=azure-cli-latest#az-group-delete) . Hiermee worden alle Azure-resources in een resource groep en de resource groep zelf verwijderd.
+* **Als u geen van de resources nodig hebt die u in deze zelf studie hebt gemaakt**, kunt u het Azure Digital apparaatdubbels-exemplaar en alle andere resources uit dit artikel verwijderen met de opdracht [AZ Group delete](/cli/azure/group#az-group-delete) . Hiermee worden alle Azure-resources in een resource groep en de resource groep zelf verwijderd.
     
     > [!IMPORTANT]
     > Het verwijderen van een resourcegroep kan niet ongedaan worden gemaakt. De resourcegroep en alle resources daarin worden permanent verwijderd. Zorg ervoor dat u niet per ongeluk de verkeerde resourcegroep of resources verwijdert.

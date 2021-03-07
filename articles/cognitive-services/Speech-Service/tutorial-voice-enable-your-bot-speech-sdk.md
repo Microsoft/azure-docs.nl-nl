@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/25/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9ee7116efe931d101a1505bc2d9d866d8ea5b92a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: d91bfee228b946ff564f6d080976f9ce5c12caa4
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943445"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426260"
 ---
 # <a name="tutorial-voice-enable-your-bot-using-the-speech-sdk"></a>Zelf studie: spraak-uw bot inschakelen met de Speech SDK
 
@@ -69,7 +69,7 @@ Dit is wat u moet doen om deze zelf studie te volt ooien:
 
 De client-app die u in deze zelf studie maakt, maakt gebruik van een aantal Azure-Services. Als u de retour tijd voor reacties van uw bot wilt beperken, moet u ervoor zorgen dat deze services zich in dezelfde Azure-regio bevinden. In deze sectie maakt u een resource groep in de regio **VS-West** . Deze resource groep wordt gebruikt bij het maken van afzonderlijke resources voor het bot Framework, het directe lijn spraak kanaal en de spraak service.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">Een resource groep maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.ResourceGroup" target="_blank">Een resource groep maken </a>
 1. U wordt gevraagd om de volgende informatie op te geven:
    * Stel **abonnement** in op **gratis proef versie** (u kunt ook een bestaand abonnement gebruiken).
    * Voer een naam in voor de **resource groep**. We raden **SpeechEchoBotTutorial-ResourceGroup** aan.
@@ -95,7 +95,7 @@ Nu u een resource groep in een ondersteunde regio hebt, is de volgende stap het 
 
 Volg deze instructies om een spraak bron te maken:
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Een speech service-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Een speech service-resource maken </a>
 4. U wordt gevraagd om de volgende informatie op te geven:
    * Geef uw resource een **naam**. U kunt **het beste SpeechEchoBotTutorial-speech**
    * Zorg ervoor dat een **gratis proef versie** is geselecteerd voor het **abonnement**.
@@ -115,7 +115,7 @@ Controleer op dit punt of de resource groep (**SpeechEchoBotTutorial-ResourceGro
 
 De volgende stap is het maken van een App Service-abonnement. Een App Service-plan definieert een set rekenresources waarmee een web-app kan worden uitgevoerd.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Een Azure App Service plan maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.AppServicePlanCreate" target="_blank">Een Azure App Service plan maken </a>
 4. U wordt gevraagd om de volgende informatie op te geven:
    * Stel **abonnement** in op **gratis proef versie** (u kunt ook een bestaand abonnement gebruiken).
    * Voor **resource groep** selecteert u **SpeechEchoBotTutorial-ResourceGroup**.
@@ -236,7 +236,7 @@ U moet een kleine configuratie wijziging aanbrengen zodat uw bot met behulp van 
 
 Nu u een Azure App Service hebt gemaakt om uw bot te hosten, is de volgende stap het maken van een **bot-kanaal registratie**. Het maken van een kanaal registratie is een vereiste voor het registreren van uw bot met bot Framework-kanalen, waaronder direct line speech Channel. Zie [een bot verbinden met kanalen](/azure/bot-service/bot-service-manage-channels)als u meer wilt weten over hoe bots kanalen gebruiken.
 
-1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Een Azure bot-kanaal registratie maken <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+1. <a href="https://ms.portal.azure.com/#create/Microsoft.BotServiceConnectivityGalleryPackage" target="_blank">Een Azure bot-kanaal registratie maken </a>
 2. U wordt gevraagd om de volgende informatie op te geven:
    * Voor **bot-ingang** voert u **SpeechEchoBotTutorial-BotRegistration-# # #** # in en vervangt u door een wille keurig **####** aantal van uw keuze. Houd er rekening mee dat de bot-ingang globaal uniek moet zijn. Als u een bot-ingang opgeeft, maar het fout bericht ophalen _de aangevraagde bot-id niet beschikbaar is_, kiest u een ander getal. In de onderstaande voor beelden hebben we 8726 gebruikt.
    * Selecteer voor **abonnement** een **gratis proef versie**.

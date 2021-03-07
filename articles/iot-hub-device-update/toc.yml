@@ -40,7 +40,9 @@
       href: connected-cache-disconnected-device-update.md
     - name: Micro soft Connected cache configureren voor updates van het apparaat voor IoT Hub
       href: connected-cache-configure.md
-    - name: Aan import gerelateerde schema's en andere informatie
+    - name: Apparaat bijwerken importeren
+      href: import-concepts.md
+    - name: Aan import gerelateerde schema
       href: import-schema.md
 - name: Instructiegidsen
   items:
@@ -66,7 +68,7 @@
       items:
         - name: Problemen met updates van apparaten oplossen
           href: troubleshoot-device-update.md
-- name: Referentie
+- name: Naslaginformatie
   items:
     - name: Fout codes voor het bijwerken van het apparaat
       href: device-update-error-codes.md

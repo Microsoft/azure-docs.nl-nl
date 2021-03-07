@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b839df7abe6552506456ed6d0485405f43ea4639
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: d61ddee1ac510b6d3528a2221a52fd266a2dd5ad
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198350"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436495"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -61,13 +61,24 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 | ![In deze afbeelding ziet u het ASP.NET Core-logo](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Zelfstudie voor gebruikersaanmelding met ASP.NET Core-web-app](https://aka.ms/aspnetcore-webapp-sign-in) | Hetzelfde voorbeeld in de fase [ASP.NET Core web-app roept Microsoft Graph aan](https://aka.ms/aspnetcore-webapp-call-msgraph)</p>Geavanceerd voorbeeld [Toegang tot de tokencache van de aangemelde gebruiker voor achtergrond-apps, API's en services](https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache) |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Migratiedraaiboek voor AD FS naar Azure AD voor ontwikkelaars](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad) om te leren hoe u veilig uw toepassingen die geïntegreerd zijn in Active Directory Federation Services (AD FS) migreert naar Azure Active Directory (Azure AD) | |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [ASP.NET-quickstart](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
-| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie voor hoofd stuk java servlet web app-hoofd stuk 1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication)| [Zelf studie voor hoofd stuk java servlet web app-hoofd stuk 2](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication) |
-| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |                   | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie over Java servlet-hoofd stuk 1,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met AAD| |
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie over Java servlet-hoofd stuk 1,2](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met B2C |
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | | [Zelf studie over Java servlet-hoofd stuk 2,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Aanmelden met AAD en oproep Graph|
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |[Zelf studie over Java servlet-hoofd stuk 3,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Meld u aan met AAD en toegangs beheer met een rollen claim| |
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | | [Zelf studie over Java servlet-hoofd stuk 3,2](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Meld u aan met AAD en beheer toegang met groeps claims|
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png) | |[Zelf studie over Java servlet-hoofd stuk 4,1](https://github.com/Azure-Samples/ms-identity-java-servlet-webapp-authentication/blob/main/README.md) Implementeren in Azure App Service|
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | [ms-identity-b2c-java-servlet-webapp-authentication](https://github.com/Azure-Samples/ms-identity-b2c-java-servlet-webapp-authentication)|  |
 | ![In deze afbeelding ziet u het Node.js-logo](media/sample-v2-code/logo_nodejs.png)</p>Node.js (MSAL-knoop punt) | [Zelf studie voor de gebruikers handleiding voor Express web-apps](https://github.com/Azure-Samples/ms-identity-node) | |
-| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [ms-identity-python-flask-webapp-authentication](https://github.com/Azure-Samples/ms-identity-python-flask-webapp-authentication) | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
-| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Zelfstudie: gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md)                   | Zelfstudie: gebruikers aanmelden en Graph aanroepen met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) |
-| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-b2c-python-flask-webapp-authentication/blob/main/README.md) met B2C                    |  |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [Zelf studie voor python-fles-hoofd stuk 1,1](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) Aanmelden met AAD  |  |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [Zelf studie voor python-fles-hoofd stuk 1,2](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) Aanmelden met B2C                    |  |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | | [Zelf studie voor python-fles-hoofd stuk 2,1](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) Aanmelden met AAD en oproep Graph |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | |[Zelf studie voor python-fles-hoofd stuk 3,1](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) Implementeren in Azure App Service  |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [Zelf studie voor python django-hoofd stuk 1,1](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/blob/main/README.md)   Aanmelden met AAD  | |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [Zelf studie voor python django-hoofd stuk 1,2](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/blob/main/README.md) Aanmelden met B2C                    |  |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | | [Zelf studie voor python django-hoofd stuk 2,1](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/blob/main/README.md)  Aanmelden met AAD en oproep Graph|
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | | [Zelf studie voor python django-hoofd stuk 3,1](https://github.com/Azure-Samples/ms-identity-python-django-tutorial/blob/main/README.md) Implementeren in Azure App Service                    |
+| ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | | [Python Flask web-app](https://github.com/Azure-Samples/ms-identity-python-webapp) |
 | ![In deze afbeelding ziet u het Ruby-logo](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
 | ![Deze afbeelding toont het Blazor-logo](media/sample-v2-code/logo-blazor.png)</p>Blazor Server | [Zelfstudie: gebruikers aanmelden met Blazor Server-app](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-OIDC) | [Aanroepen van Microsoft Graph door Blazor Server-app](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-graph-user/Call-MSGraph)</p>Zelfstudie voor Chapterwise: [Blazor Server-app gebruiken voor het aanmelden van gebruikers en het aanroepen van API's met Azure Active Directory](https://github.com/Azure-Samples/ms-identity-blazor-server) |
 

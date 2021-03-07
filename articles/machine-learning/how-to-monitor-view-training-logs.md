@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 8b2a61a92a25e1c0da9f85439438e75969fcfbf0
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e86ea0d90ea267b1c9ceecc8fed6c3d7e5102eaf
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661015"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443570"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>MILLILITERs logboeken en-metrische gegevens bewaken en weer geven
 
@@ -78,20 +78,23 @@ Wanneer u **ScriptRunConfig** gebruikt, kunt u gebruiken ```run.wait_for_complet
 
 <a id="queryrunmetrics"></a>
 
-### <a name="logging-run-metrics"></a>Metrische gegevens over logboek registratie uitvoeren 
+## <a name="view-run-metrics"></a>Metrische uitvoerings gegevens weer geven
 
-Gebruik de volgende methoden in de logboek registratie-Api's om de metrische visualisaties te beïnvloeden. Noteer de [service limieten](https://docs.microsoft.com/azure/machine-learning/resource-limits-quotas-capacity#metrics) voor deze vastgelegde metrische gegevens. 
+## <a name="via-the-sdk"></a>Via de SDK
+U kunt de metrische gegevens van een getraind model weer geven met behulp van ```run.get_metrics()``` . Zie het voorbeeld hieronder. 
 
-|Geregistreerde waarde|Voorbeeldcode| Indeling in Portal|
-|----|----|----|
-|Een matrix met numerieke waarden vastleggen in een logboek| `run.log_list(name='Fibonacci', value=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])`|lijn diagram met één variabele|
-|Een enkele numerieke waarde met dezelfde metrische naam in het logboek vastleggen, herhaaldelijk gebruikt (bijvoorbeeld van binnen een for-lus)| `for i in tqdm(range(-10, 10)):    run.log(name='Sigmoid', value=1 / (1 + np.exp(-i))) angle = i / 2.0`| Lijn diagram met één variabele|
-|Een rij met 2 numerieke kolommen herhaaldelijk vastleggen|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Lijn diagram met twee variabelen|
-|Logboek tabel met 2 numerieke kolommen|`run.log_table(name='Sine Wave', value=sines)`|Lijn diagram met twee variabelen|
+```python
+from azureml.core import Run
+run = Run.get_context()
+run.log('metric-name', metric_value)
 
-## <a name="query-run-metrics"></a>Metrische gegevens van query uitvoeren
+metrics = run.get_metrics()
+# metrics is of type Dict[str, List[float]] mapping mertic names
+# to a list of the values for that metric in the given run.
 
-U kunt de metrische gegevens van een getraind model weer geven met behulp van ```run.get_metrics()``` . U kunt dit bijvoorbeeld gebruiken met het bovenstaande voor beeld om het beste model te bepalen door te zoeken naar het model met de laagste waarde voor de kwadraat fout (MSE).
+metrics.get('metric-name')
+# list of metrics in the order they were recorded
+```
 
 <a name="view-the-experiment-in-the-web-portal"></a>
 

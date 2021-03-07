@@ -88,40 +88,40 @@
           href: concepts/voice-video-calling/calling-sdk-features.md
         - name: Audio- en videoconcepten
           href: concepts/voice-video-calling/about-call-types.md
+        - name: Aanroepstromen
+          href: concepts/call-flows.md
+        - name: Topologieën voor oproep stromen
+          href: concepts/detailed-call-flows.md
     - name: UI-Framework
       items:
         - name: Overzicht van UI Framework
           href: concepts/ui-framework/ui-sdk-overview.md
         - name: Mogelijkheden van UI-Framework
           href: concepts/ui-framework/ui-sdk-features.md
-    - name: Interoperabiliteit met Teams
-      href: concepts/teams-interop.md
+    - name: Gegevens en bewerkingen
+      items:
+        - name: Service gebeurtenissen (EventGrid)
+          href: concepts/event-handling.md
+        - name: Logboekregistratie en diagnostische gegevens
+          href: concepts/logging-and-diagnostics.md
+        - name: Metrische gegevens
+          href: concepts/metrics.md
+        - name: Problemen oplossen
+          href: concepts/troubleshooting-info.md
+    - name: Sdk's en REST-Api's
+      href: concepts/sdk-options.md
     - name: Architectuur van client en server
       href: concepts/client-and-server-architecture.md
-    - name: Aanroepstromen
-      href: concepts/call-flows.md
-    - name: Topologieën voor oproep stromen
-      href: concepts/detailed-call-flows.md
-    - name: Clientbibliotheken en REST API's
-      href: concepts/sdk-options.md
-    - name: Prijsmodel
-      href: concepts/pricing.md
-    - name: Privacy
-      href: concepts/privacy.md
     - name: Identiteitsmodel
       href: concepts/identity-model.md
     - name: Verificatie
       href: concepts/authentication.md
-    - name: Gebeurtenisverwerking
-      href: concepts/event-handling.md
-    - name: Meldingen
+    - name: Privacy
+      href: concepts/privacy.md
+    - name: Pushmeldingen
       href: concepts/notifications.md
-    - name: Logboekregistratie en diagnostische gegevens
-      href: concepts/logging-and-diagnostics.md
-    - name: Metrische gegevens
-      href: concepts/metrics.md
-    - name: Problemen oplossen
-      href: concepts/troubleshooting-info.md
+    - name: Interoperabiliteit met Teams
+      href: concepts/teams-interop.md
     - name: Bekende problemen
       href: concepts/known-issues.md
 - name: Voorbeelden

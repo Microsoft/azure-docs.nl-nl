@@ -8,12 +8,12 @@ ms.date: 01/29/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 197bd1ab63093a18bd7838349acb3aed11a98e16
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 171e858ef06228f2bf5ef5dea662de00143a0567
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202379"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441938"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -242,6 +242,16 @@ Als Cloud lagen zijn ingeschakeld op een server eindpunt, worden de gelaagde bes
 
 ### <a name="other-hierarchical-storage-management-hsm-solutions"></a>Andere HSM-oplossingen (hiërarchische opslag beheer)
 Er mogen geen andere HSM-oplossingen worden gebruikt met Azure File Sync.
+
+## <a name="performance-and-scalability"></a>Prestatie en schaalbaarheid
+
+Omdat de Azure File Sync-agent wordt uitgevoerd op een Windows Server-computer die verbinding maakt met de Azure-bestands shares, is de daad werkelijke synchronisatie prestaties afhankelijk van een aantal factoren in uw infra structuur: Windows Server en de onderliggende schijf configuratie, netwerk bandbreedte tussen de server en de Azure-opslag, de bestands grootte, de totale gegevensset en de activiteit op de gegevensset. Omdat Azure File Sync op bestands niveau werkt, worden de prestatie kenmerken van een oplossing op basis van een Azure File Sync beter gemeten in het aantal objecten (bestanden en mappen) dat per seconde wordt verwerkt.
+
+Wijzigingen die zijn aangebracht in de Azure-bestands share met behulp van de Azure Portal of SMB worden niet onmiddellijk gedetecteerd en gerepliceerd zoals wijzigingen in het server eindpunt. Azure Files hebt nog geen wijzigings meldingen of Logboeken, dus is er geen manier om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd. Op Windows Server maakt Azure File Sync gebruik van [Windows USN-logboeken](https://docs.microsoft.com/windows/win32/fileio/change-journals) om automatisch een synchronisatie sessie te initiëren wanneer bestanden worden gewijzigd
+
+Om wijzigingen in de Azure-bestands share te detecteren, heeft Azure File Sync een geplande taak die een wijzigings detectie taak wordt genoemd. Een wijzigings detectie taak inventariseert elk bestand in de bestands share en vergelijkt deze met de synchronisatie versie voor dat bestand. Wanneer de wijzigings detectie taak bepaalt dat bestanden zijn gewijzigd, Azure File Sync initieert een synchronisatie sessie. De wijzigings detectie taak wordt elke 24 uur geïnitieerd. Omdat de wijzigings detectie taak werkt door elk bestand in de Azure-bestands share te inventariseren, neemt de detectie van wijzigingen langer deel uit van grotere naam ruimten dan in kleinere naam ruimten. Voor grote naam ruimten kan het langer dan eenmaal per 24 uur duren om te bepalen welke bestanden zijn gewijzigd.
+
+Zie [Azure file sync metrische gegevens over prestaties](storage-files-scale-targets.md#azure-file-sync-performance-metrics) en [Azure file sync schaal doelen](storage-files-scale-targets.md#azure-file-sync-scale-targets) voor meer informatie.
 
 ## <a name="identity"></a>Identiteit
 Azure File Sync werkt met uw standaard-op AD gebaseerde identiteit zonder dat dit meer hoeft te worden ingesteld dan bij het instellen van de synchronisatie. Wanneer u Azure File Sync gebruikt, is de algemene verwachting dat de meeste toegang tot de Azure File Sync cache servers gaat, in plaats van via de Azure-bestands share. Omdat de server-eind punten zich bevinden op Windows Server en Windows Server gedurende lange tijd AD-en Windows-stijl-Acl's ondersteunt, is er niets vereist om te controleren of de Windows-bestands servers die zijn geregistreerd bij de opslag synchronisatie service lid zijn van een domein. Azure File Sync worden Acl's op de bestanden opgeslagen in de Azure-bestands share en worden deze gerepliceerd naar alle server eindpunten.

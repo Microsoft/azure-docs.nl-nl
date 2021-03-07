@@ -13,12 +13,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40, contperf-fy21q2
-ms.openlocfilehash: 662523b1544fe3ca9e8bda993efa7b578b9f69cc
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: a4ce8242bd3110fee038ac826973e6a134413344
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752583"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426838"
 ---
 # <a name="what-is-the-microsoft-identity-platform"></a>Wat is het Microsoft Identity Platform?
 
@@ -38,6 +38,8 @@ Het Microsoft-identiteitsplatform bestaat uit verschillende onderdelen:
 Voor ontwikkelaars biedt het Microsoft-identiteitsplatform integratie van moderne innovaties op het gebied van identiteits- en beveiligingsruimte, zoals verificatie zonder wachtwoord, aanvullende verificatie en voorwaardelijke toegang. U hoeft deze functionaliteit niet zelf te implementeren: het Microsoft-identiteitsplatform bevat standaard toepassingen die dergelijke innovaties gebruiken.
 
 Met het Microsoft-identiteitsplatform kunt u één keer code schrijven en elke gebruiker bereiken. U kunt een app één keer bouwen voor verschillende platforms, of een app bouwen die als client en als resourcetoepassing (API) werkt.
+
+Zie [Wat is het micro soft-identiteits platform voor ontwikkel aars?](https://youtu.be/uDU1QTSw7Ps)voor een video overzicht van het platform en een demonstratie van de verificatie-ervaring.
 
 ## <a name="getting-started"></a>Aan de slag
 

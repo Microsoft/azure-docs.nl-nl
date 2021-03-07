@@ -1,22 +1,22 @@
 ---
-title: Details van de naleving van de regelgeving voor Nieuw-Zeeland ISM
-description: Details van het nieuwe Zeelands ISM-nalevings beleid voor Schriften ingebouwd initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 02/09/2021
+title: Details van de naleving van de regelgeving voor Nieuw-Zeelandse ISM beperkt
+description: Meer informatie over het nieuwe Zeelands-Zeeland heeft het ingebouwde initiatief beperkt over de naleving van regelgeving. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
+ms.date: 03/05/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: b2f4cec4f2c9abf6fb896ba9d515db1780115716
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 5f346f7755cf252ed15513d8dc0a60a9bc5cce3f
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100101705"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102437243"
 ---
-# <a name="details-of-the-new-zealand-ism-regulatory-compliance-built-in-initiative"></a>Details van het nieuwe zeelandsysteem voor de naleving van de regelgeving, ingebouwd initiatief
+# <a name="details-of-the-new-zealand-ism-restricted-regulatory-compliance-built-in-initiative"></a>Details van het nieuwe Zeelands-Zeeland, geïntegreerde naleving van regelgeving, ingebouwd initiatief
 
-Het volgende artikel bevat informatie over de wijze waarop de Azure Policy reglementaire nalevings definitie voor naleving is gekoppeld aan **compatibiliteits domeinen** en **besturings elementen** in Nieuw-Zeeland ism.
-Zie [Nieuw-Zeeland (ISM](https://www.nzism.gcsb.govt.nz/)) voor meer informatie over deze nalevings standaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
+Het volgende artikel bevat informatie over de wijze waarop de Azure Policy regelgeving met betrekking tot naleving van voor Schriften is gebaseerd op **nalevings domeinen** en **besturings elementen** in Nieuw-Zeeland ISM beperkt.
+Zie voor meer informatie over deze nalevings standaard [Nieuw-Zeeland ISM beperkt](https://www.nzism.gcsb.govt.nz/). Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen zijn de besturings elementen voor **Nieuw-Zeeland (ISM** ). Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
+De volgende toewijzingen zijn de beperkte besturings elementen van **Nieuw-Zeeland ISM** . Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
 Zoek en selecteer vervolgens de definitie van het **nieuwe Subland gegevens beveiliging hand matige** naleving ingebouwde initiatief.
 
 > [!IMPORTANT]
@@ -91,7 +91,7 @@ Zoek en selecteer vervolgens de definitie van het **nieuwe Subland gegevens beve
 
 ## <a name="access-control-and-passwords"></a>Access Control en wacht woorden
 
-### <a name="16132-system-user-identitfication"></a>16.1.32 systeem gebruiker Identitfication
+### <a name="16132-system-user-identification"></a>16.1.32 systeem gebruikers-id
 
 **Id**: NZISM Security Bench Mark-2- **eigendom**: klant
 

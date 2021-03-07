@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 12/21/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: a52ed05e03176bcb9b2fde9f2da1c746cedd6d49
-ms.sourcegitcommit: 445ecb22233b75a829d0fcf1c9501ada2a4bdfa3
+ms.openlocfilehash: 88b2a87fe0f01d3b14a1119dadea6f782d2be5af
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99475033"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438929"
 ---
 # <a name="vm-sizes-and-types-for-azure-stack-edge-pro"></a>VM-grootten en-typen voor Azure Stack Edge Pro 
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt het ondersteunde formaat beschreven voor de virtuele machines die worden uitgevoerd op uw Azure Stack Edge Pro-apparaten. Gebruik dit artikel voordat u virtuele machines op uw Azure Stack Edge Pro-apparaten implementeert.
 

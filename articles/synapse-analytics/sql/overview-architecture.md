@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: bd911868028825164cdd9627bf6b5c6d56de7164
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 28940272d39a08d790fe2cd913df808b02e7f426
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98679615"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441887"
 ---
 # <a name="azure-synapse-sql-architecture"></a>Azure Synapse SQL-architectuur 
 
@@ -35,7 +35,7 @@ Synapse SQL maakt gebruik van een architectuur op basis van een knoop punt. Toep
 
 Het Azure Synapse SQL-beheer knooppunt maakt gebruik van een gedistribueerde query-engine voor het optimaliseren van query's voor parallelle verwerking en geeft vervolgens bewerkingen aan reken knooppunten door om hun werk parallel te doen. 
 
-Het beheer knooppunt van de serverloze SQL-groep maakt gebruik van de engine voor gedistribueerde query verwerking (DQP) om gedistribueerde uitvoering van gebruikers query te optimaliseren en te organiseren door deze te splitsen in kleinere query's die worden uitgevoerd op reken knooppunten. Elke kleine query heet taak en vertegenwoordigt een gedistribueerde uitvoerings eenheid. Het bestand (en) van de opslag wordt gelezen, wordt gekoppeld aan de resultaten van andere taken, groepen of order gegevens die zijn opgehaald uit andere taken. 
+Het beheer knooppunt van de serverloze SQL-groep maakt gebruik van de engine voor gedistribueerde query verwerking (DQP) om gedistribueerde uitvoering van gebruikers query te optimaliseren en te organiseren door deze te splitsen in kleinere query's die worden uitgevoerd op reken knooppunten. Elke kleine query heet taak en vertegenwoordigt een gedistribueerde uitvoerings eenheid. Het bestand (en) van de opslag wordt gelezen, de resultaten worden samengevoegd van andere taken, groepen of order gegevens die zijn opgehaald uit andere taken. 
 
 De rekenknooppunten slaan alle gebruikersgegevens op in Azure Storage en voeren de parallelle query's uit. De DMS (Data Movement Service) is een interne service op systeemniveau die de gegevens naar de knooppunten verplaatst om tegelijkertijd query's te kunnen uitvoeren en nauwkeurige resultaten te retourneren. 
 
@@ -49,7 +49,7 @@ Bij het gebruik van Synapse SQL One kan een onafhankelijke omvang van reken krac
 
 Synapse SQL maakt gebruik van Azure Storage om uw gebruikers gegevens veilig te maken. Omdat uw gegevens worden opgeslagen en beheerd door Azure Storage, worden er afzonderlijke kosten in rekening gebracht voor uw opslag verbruik. 
 
-Met serverloze SQL-pool kunt u bestanden in uw data Lake doorzoeken op een alleen-lezen manier, terwijl u met SQL-pool ook gegevens kunt opnemen. Wanneer gegevens worden opgenomen in de toegewezen SQL-pool, worden de gegevens Shard in **distributies** om de prestaties van het systeem te optimaliseren. Bij het definiëren van de tabel kunt u kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren. Deze sharding-patronen worden ondersteund:
+Met serverloze SQL-pool kunt u een query uitvoeren op uw data Lake-bestanden, terwijl u met exclusieve SQL-groep gegevens uit uw data Lake-bestanden kunt opvragen en opnemen. Wanneer gegevens worden opgenomen in de toegewezen SQL-pool, worden de gegevens Shard in **distributies** om de prestaties van het systeem te optimaliseren. Bij het definiëren van de tabel kunt u kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren. Deze sharding-patronen worden ondersteund:
 
 * Hash
 * Round Robin
@@ -107,7 +107,7 @@ Een met round robin gedistribueerde tabel distribueert de gegevens gelijkmatig i
 ## <a name="replicated-tables"></a>Gerepliceerde tabellen
 Een gerepliceerde tabel biedt de snelste prestaties van query's voor kleine tabellen.
 
-Een tabel die wordt gerepliceerd, plaatst een volledige kopie van de tabel op elk reken knooppunt. Hierdoor hoeven de gegevens niet te worden overgedragen tussen rekenknooppunten voor een samenvoeging of aggregatie. Gerepliceerde tabellen zijn het meest geschikt als het gaat om kleine tabellen. Extra opslag ruimte is vereist en er worden extra overhead kosten in rekening gebracht voor het schrijven van gegevens, waardoor grote tabellen onbruikbaar worden. 
+Een tabel die wordt gerepliceerd, plaatst een volledige kopie van de tabel op elk reken knooppunt. Het repliceren van een tabel verwijdert dus de nood zaak om gegevens over te dragen tussen reken knooppunten vóór een samen voeging of aggregatie. Gerepliceerde tabellen zijn het meest geschikt als het gaat om kleine tabellen. Extra opslag ruimte is vereist en er worden extra overhead kosten in rekening gebracht voor het schrijven van gegevens, waardoor grote tabellen onbruikbaar worden. 
 
 In het onderstaande diagram ziet u een gerepliceerde tabel die in de cache wordt opgeslagen op de eerste distributie op elk reken knooppunt. 
 
@@ -115,4 +115,4 @@ In het onderstaande diagram ziet u een gerepliceerde tabel die in de cache wordt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een beetje weet over Synapse SQL, leert u hoe u snel [een specifieke SQL-groep kunt maken](../quickstart-create-sql-pool-portal.md) en [voorbeeld gegevens](../sql-data-warehouse/sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md) (./SQL-Data-Warehouse-load-sample-databases.MD) kunt laden. Of u begint [met serverloze SQL-groep](../quickstart-sql-on-demand.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md) handig zijn bij het opzoeken van nieuwe terminologie. 
+Nu u een beetje weet over Synapse SQL, leert u hoe u snel [een specifieke SQL-groep kunt maken](../quickstart-create-sql-pool-portal.md) en [voorbeeld gegevens](../sql-data-warehouse/sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md) (./SQL-Data-Warehouse-load-sample-databases.MD) kunt laden. Of begin [met serverloze SQL-groep](../quickstart-sql-on-demand.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md) handig zijn bij het opzoeken van nieuwe terminologie. 

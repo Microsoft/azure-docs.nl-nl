@@ -3,13 +3,13 @@ title: Een persoonlijk Azure Kubernetes service-cluster maken
 description: Meer informatie over het maken van een AKS-cluster (private Azure Kubernetes service)
 services: container-service
 ms.topic: article
-ms.date: 7/17/2020
-ms.openlocfilehash: f0c74c1b3715fd3f5c83c3a9231009e622b87927
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 3/5/2021
+ms.openlocfilehash: d5f39460ad821265aed2c21d7426aa894f7cc933
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102181224"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425104"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -70,19 +70,26 @@ Waar `--enable-private-cluster` is een verplichte vlag voor een persoonlijk clus
 
 De volgende para meters kunnen worden gebruikt om Privé-DNS zone te configureren.
 
-1. ' Systeem ' is de standaard waarde. Als het argument--privé-DNS-zone wordt wegge laten, wordt in AKS een Privé-DNS zone gemaakt in de knooppunt resource groep.
-2. Als geen wordt aangegeven, maakt AKS geen Privé-DNS zone.  Hiervoor moet u uw eigen DNS-server meenemen en de DNS-omzetting configureren voor de persoonlijke FQDN.  Als u geen DNS-omzetting configureert, kan DNS alleen worden omgezet in de agent knooppunten en kunnen er cluster problemen optreden na de implementatie.
-3. ' Aangepaste naam van de persoonlijke DNS-zone ' moet de volgende indeling hebben voor Azure Global Cloud: `privatelink.<region>.azmk8s.io` . U hebt de resource-id van die Privé-DNS zone nodig.  Daarnaast hebt u een door de gebruiker toegewezen identiteit of Service-Principal met ten minste de `private dns zone contributor` rol aan de aangepaste privé-DNS-zone nodig.
+- ' Systeem ' is de standaard waarde. Als het argument--privé-DNS-zone wordt wegge laten, wordt in AKS een Privé-DNS zone gemaakt in de knooppunt resource groep.
+- Als geen wordt aangegeven, maakt AKS geen Privé-DNS zone.  Hiervoor moet u uw eigen DNS-server meenemen en de DNS-omzetting configureren voor de persoonlijke FQDN.  Als u geen DNS-omzetting configureert, kan DNS alleen worden omgezet in de agent knooppunten en kunnen er cluster problemen optreden na de implementatie. 
+- Voor ' CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID ' moet u een Privé-DNS zone maken in deze indeling voor Azure Global Cloud: `privatelink.<region>.azmk8s.io` . U hebt de resource-id van de Privé-DNS zone nodig.  Daarnaast hebt u een door de gebruiker toegewezen identiteit of Service-Principal nodig met ten minste de `private dns zone contributor` rol.
+- ' FQDN-subdomein ' kan worden gebruikt met ' CUSTOM_PRIVATE_DNS_ZONE_RESOURCE_ID ' alleen om subdomein mogelijkheden te bieden `privatelink.<region>.azmk8s.io`
 
 ### <a name="prerequisites"></a>Vereisten
 
-* De AKS preview-versie 0.4.71 of hoger
+* De AKS preview-versie 0.5.3 of hoger
 * De API-versie 2020-11-01 of hoger
 
 ### <a name="create-a-private-aks-cluster-with-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met Privé-DNS zone (preview-versie)
 
 ```azurecli-interactive
-az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone [none|system|custom private dns zone ResourceId]
+az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone [system|none]
+```
+
+### <a name="create-a-private-aks-cluster-with-a-custom-private-dns-zone-preview"></a>Een persoonlijk AKS-cluster maken met een aangepaste Privé-DNS zone (preview-versie)
+
+```azurecli-interactive
+az aks create -n <private-cluster-name> -g <private-cluster-resource-group> --load-balancer-sku standard --enable-private-cluster --enable-managed-identity --assign-identity <ResourceId> --private-dns-zone <custom private dns zone ResourceId> --fqdn-subdomain <subdomain-name>
 ```
 ## <a name="options-for-connecting-to-the-private-cluster"></a>Opties voor het maken van verbinding met het privé cluster
 

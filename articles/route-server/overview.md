@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: overview
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: 099f9b3769179076491c7c2098ec56faff9847dd
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d868c064b96f58ab3febc1fd3b7f20b74d507cb0
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039832"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102437158"
 ---
 # <a name="what-is-azure-route-server-preview"></a>Wat is Azure route server (preview)? 
 
@@ -37,7 +37,7 @@ Azure route Server vereenvoudigt de configuratie, het beheer en de implementatie
 
 * U hoeft door de [gebruiker gedefinieerde routes](../virtual-network/virtual-networks-udr-overview.md) niet meer hand matig bij te werken wanneer uw NVA nieuwe routes aankondigt of een oud onderdeel intrekt. 
 
-* U hoeft niet langer een load balancer voor uw NVA te configureren voor tolerantie-of prestatie doeleinden. Wanneer u meerdere exemplaren van uw NVA met Azure route server peereert, kunt u de BGP-kenmerken configureren in uw NVA. Met deze BGP-kenmerken kan Azure route server dat NVA-exemplaar actief of passief moet zijn. 
+* U kunt meerdere exemplaren van uw NVA peeren met Azure route server. U kunt de BGP-kenmerken in uw NVA configureren en, afhankelijk van uw ontwerp (bijvoorbeeld actief-actief voor prestaties of actief-passief voor tolerantie), ervoor zorgen dat Azure route server weet welk NVA-exemplaar actief is of welk passief is. 
 
 * De interface tussen NVA en Azure route server is gebaseerd op een gemeen schappelijk standaard protocol. Als uw NVA BGP ondersteunt, kunt u het peeren met behulp van Azure route server. Zie [routerings protocollen die worden ondersteund door route server](route-server-faq.md#protocol)voor meer informatie.
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 10/07/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect my corporate on-premises network(s) to my VNets using Virtual WAN and ExpressRoute.
-ms.openlocfilehash: 07053c096ce001b322e5f05556bd041519ca9d2e
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
-ms.translationtype: HT
+ms.openlocfilehash: 080136b8fc25b08a6b96464f0a61115a4bb2f3f8
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102473"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426605"
 ---
 # <a name="tutorial-create-an-expressroute-association-using-azure-virtual-wan"></a>Zelfstudie: Een ExpressRoute-koppeling maken met behulp van Azure Virtual WAN
 
@@ -48,9 +48,9 @@ Controleer voordat u met de configuratie begint of u aan de volgende criteria he
 
 Open een browser, ga naar [Azure Portal](https://portal.azure.com) en meld u aan met uw Azure-account.
 
-1. Ga naar de pagina Virtual WAN. Klik in de portal op **+Een resource maken** . Typ **Virtual WAN** in het zoekvak en selecteer Enter.
+1. Ga naar de pagina Virtual WAN. Klik in de portal op **+Een resource maken**. Typ **Virtual WAN** in het zoekvak en selecteer Enter.
 2. Selecteer **Virtual WAN** uit de resultaten. Klik op de pagina Virtual WAN op **Maken** om de pagina WAN maken te openen.
-3. Vul op de pagina **Wan maken** , op het tabblad **Basisprincipes** , de volgende velden in:
+3. Vul op de pagina **Wan maken**, op het tabblad **Basisprincipes**, de volgende velden in:
 
    ![WAN maken](./media/virtual-wan-expressroute-portal/createwan.png)
 
@@ -58,8 +58,8 @@ Open een browser, ga naar [Azure Portal](https://portal.azure.com) en meld u aan
    * **Resourcegroep** - maak een nieuwe resourcegroep of gebruik een bestaande.
    * **Locatie van de resourcegroep** - kies een resourcelocatie uit de vervolgkeuzelijst. Een WAN een globale resource en bevindt zich niet in een bepaalde regio. U moet echter een regio selecteren om de WAN-resource die u maakt eenvoudiger te kunnen beheren en vinden.
    * **Naam** - typ de naam die u voor uw WAN hebt gekozen.
-   * **Type** - selecteer **Standaard** . U kunt geen ExpressRoute-gateway maken met behulp van de Basic-SKU.
-4. Nadat u klaar bent met het invullen van de velden, selecteert u **+Maken** .
+   * **Type** - selecteer **Standaard**. U kunt geen ExpressRoute-gateway maken met behulp van de Basic-SKU.
+4. Nadat u klaar bent met het invullen van de velden, selecteert u **+Maken**.
 5. Wanneer de validatie is geslaagd, selecteert u **Maken** om het virtuele WAN te maken.
 
 ## <a name="create-a-virtual-hub-and-gateway"></a><a name="hub"></a>Een virtuele hub en gateway maken
@@ -94,9 +94,9 @@ Wanneer u een ExpressRoute-gateway hebt gemaakt, kunt u de detailgegevens van de
 
 In deze sectie brengt u de peering-verbinding tussen uw hub en een VNet tot stand. Herhaal deze stappen voor elk VNet dat u wilt verbinden.
 
-1. Klik op de pagina voor uw virtuele WAN op **Virtuele netwerkverbinding** .
-2. Klik op de pagina Virtuele netwerkverbinding op **+Verbinding toevoegen** .
-3. Vul de volgende velden in op de pagina **Verbinding toevoegen** :
+1. Klik op de pagina voor uw virtuele WAN op **Virtuele netwerkverbinding**.
+2. Klik op de pagina Virtuele netwerkverbinding op **+Verbinding toevoegen**.
+3. Vul de volgende velden in op de pagina **Verbinding toevoegen**:
 
     * **Verbindingsnaam** - voer een naam in voor uw verbinding.
     * **Hubs** - selecteer de hub die u wilt koppelen aan deze verbinding.
@@ -109,10 +109,10 @@ Zodra de gateway is gemaakt, kunt u deze verbinden met een [ExpressRoute-circuit
 
 ### <a name="to-connect-the-circuit-to-the-hub-gateway"></a>Het circuit verbinden met de hub-gateway
 
-Ga in de portal naar de pagina **Virtuele hub -> Connectiviteit -> ExpressRoute** . Als u in uw abonnement toegang hebt tot een ExpressRoute-circuit, ziet u het circuit dat u wilt gebruiken in de lijst met circuits. Als er geen circuits worden weergegeven, maar u wel een autorisatiesleutel en een peercircuit-URI hebt gekregen, kunt u een circuit inwisselen en verbinden. Zie [Verbinding maken door een autorisatiesleutel in te wisselen](#authkey) voor meer informatie.
+Ga in de portal naar de pagina **Virtuele hub -> Connectiviteit -> ExpressRoute**. Als u in uw abonnement toegang hebt tot een ExpressRoute-circuit, ziet u het circuit dat u wilt gebruiken in de lijst met circuits. Als er geen circuits worden weergegeven, maar u wel een autorisatiesleutel en een peercircuit-URI hebt gekregen, kunt u een circuit inwisselen en verbinden. Zie [Verbinding maken door een autorisatiesleutel in te wisselen](#authkey) voor meer informatie.
 
 1. Selecteer het circuit.
-2. Selecteer **Circuit(s) verbinden** .
+2. Selecteer **Circuit(s) verbinden**.
 
    ![circuits verbinden](./media/virtual-wan-expressroute-portal/cktconnect.png "circuits verbinden")
 
@@ -145,7 +145,7 @@ Als u de grootte van uw ExpressRoute-gateway wilt wijzigen, zoekt u de ExpressRo
 
 Als u wilt dat de virtuele Azure-hub de standaardroute 0.0.0.0/0 adverteert naar uw ExpressRoute-eindpunten, moet u 'Standaardroute doorgeven' inschakelen.
 
-1. Selecteer **Circuit -> ... -> Verbinding bewerken** .
+1. Selecteer **Circuit -> ... -> Verbinding bewerken**.
 
    ![Verbinding bewerken](./media/virtual-wan-expressroute-portal/defaultroute1.png "Verbinding bewerken")
 
@@ -155,11 +155,9 @@ Als u wilt dat de virtuele Azure-hub de standaardroute 0.0.0.0/0 adverteert naar
 
 ## <a name="clean-up-resources"></a><a name="cleanup"></a>Resources opschonen
 
-U kunt de opdracht [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) gebruiken om de resourcegroep en alle resources die deze bevat te verwijderen, wanneer u deze niet meer nodig hebt. Vervangen 'myResourceGroup' door de naam van uw resourcegroep en voer de volgende PowerShell-opdracht uit:
+Als u de resources die u hebt gemaakt, niet meer nodig hebt, verwijdert u deze. Sommige virtuele WAN-resources moeten in een bepaalde volg orde worden verwijderd vanwege afhankelijkheden. Het duurt ongeveer 30 minuten om het verwijderen te volt ooien.
 
-```azurepowershell-interactive
-Remove-AzResourceGroup -Name myResourceGroup -Force
-```
+[!INCLUDE [Delete resources](../../includes/virtual-wan-resource-cleanup.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

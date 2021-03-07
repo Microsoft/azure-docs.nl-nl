@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van C# voor het ontwikkelen en pub
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/24/2020
-ms.openlocfilehash: e29b250b25bdafb2b3af26f5669f2ae5ed485457
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 748b4a2a6af1c0183e28af8da732bc90531bee29
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102041192"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102428387"
 ---
 # <a name="develop-c-functions-using-azure-functions"></a>C#-functies ontwikkelen met behulp van Azure Functions
 
@@ -23,24 +23,40 @@ Dit artikel is een inleiding tot het ontwikkelen van Azure Functions door C# te 
 Als C#-ontwikkelaar bent u mogelijk ook geïnteresseerd in een van de volgende artikelen:
 
 | Aan de slag | Concepten| Begeleide training/voor beelden |
-| -- | -- | -- | 
+|--| -- |--| 
 | <ul><li>[Visual Studio gebruiken](functions-create-your-first-function-visual-studio.md)</li><li>[Visual Studio Code gebruiken](create-first-function-vs-code-csharp.md)</li><li>[Opdracht regel Programma's gebruiken](create-first-function-cli-csharp.md)</li></ul> | <ul><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li><li>[Ontwikkelen in Visual Studio](functions-develop-vs.md)</li><li>[Afhankelijkheidsinjectie](functions-dotnet-dependency-injection.md)</li></ul> | <ul><li>[Serverloze toepassingen maken](/learn/paths/create-serverless-applications/)</li><li>[C#-voorbeelden](/samples/browse/?products=azure-functions&languages=csharp)</li></ul> |
 
 Azure Functions ondersteunt programmeer talen voor C#-en C#-scripts. Zie [Naslag informatie over c#-script (. CSX) voor ontwikkel aars](functions-reference-csharp.md)voor meer informatie over [het gebruik van c# in de Azure Portal](functions-create-function-app-portal.md).
 
 ## <a name="supported-versions"></a>Ondersteunde versies
 
-Versies van de functions-runtime werken met specifieke versies van .NET. De volgende tabel toont het hoogste niveau van .NET core en .NET Framework en .NET core dat kan worden gebruikt met een specifieke versie van functies in uw project. 
+Versies van de functions-runtime werken met specifieke versies van .NET. Zie [Azure functions runtime versies Overview](functions-versions.md) (Engelstalig) voor meer informatie over functies.
+
+In de volgende tabel wordt het hoogste niveau van .NET core of .NET Framework weer gegeven dat kan worden gebruikt met een specifieke versie van functions. 
 
 | Runtime versie van functions | Maximum versie van .NET |
 | ---- | ---- |
-| Functies 3. x | .NET Core 3.1<br/>.NET 5,0<sup>*</sup> |
-| Functions 2.x | .NET Core 2.2 |
+| Functies 3. x | .NET Core 3.1<br/>.NET 5,0<sup>1</sup> |
+| Functions 2.x | .NET Core 2,2<sup>2</sup> |
 | Functions 1.x | .NET Framework 4,7 |
 
-<sup>*</sup>[Out-of-process](dotnet-isolated-process-guide.md)moet worden uitgevoerd.
+<sup>1</sup> moet [out-of-process](dotnet-isolated-process-guide.md)worden uitgevoerd.  
+<sup>2</sup> Zie [functies v2. x](#functions-v2x-considerations)voor meer informatie.   
 
-Zie [Azure functions overzicht van runtime versies](functions-versions.md) voor meer informatie
+Voor het laatste nieuws over Azure Functions releases, inclusief het verwijderen van specifieke oudere secundaire versies, controleert u [Azure app service aankondigingen](https://github.com/Azure/app-service-announcements/issues).
+
+### <a name="functions-v2x-considerations"></a>Functies v2. x-overwegingen
+
+Functie-apps die zijn gericht op de meest recente versie van 2. x ( `~2` ), worden automatisch geüpgraded om te worden uitgevoerd op .net Core 3,1. Als gevolg van het afbreken van wijzigingen tussen .NET Core-versies, kunnen niet alle apps die zijn ontwikkeld en gecompileerd op .NET Core 2,2, veilig worden bijgewerkt naar .NET Core 3,1. U kunt deze upgrade afmelden door uw functie-app vast te maken `~2.0` . Functions detecteert ook incompatibele Api's en kunnen uw app vastmaken om `~2.0` te voor komen dat er een onjuiste uitvoering wordt uitgevoerd op .net Core 3,1. 
+
+>[!NOTE]
+>Als uw functie-app is vastgemaakt aan `~2.0` en u dit versie doel wijzigt in `~2` , kan het zijn dat de functie-app wordt verbroken. Als u implementeert met ARM-sjablonen, controleert u de versie in uw sjablonen. Als dit het geval is, wijzigt u de versie weer in doel `~2.0` en lost u de compatibiliteits problemen op. 
+
+Functie-apps die gericht `~2.0` blijven op .net Core 2,2. Deze versie van .NET core ontvangt geen beveiliging en andere onderhouds updates meer. Zie [deze aankondigings pagina](https://github.com/Azure/app-service-announcements/issues/266)voor meer informatie. 
+
+U moet ervoor zorgen dat uw functies zo snel mogelijk met .NET Core 3,1 compatibel zijn. Nadat u deze problemen hebt opgelost, wijzigt u de versie weer in `~2` of werkt u bij naar een upgrade naar `~3` . Zie [runtime-versies van Azure functions instellen](set-runtime-version.md)voor meer informatie over doel versies van de functions-runtime.
+
+Wanneer u op Linux in een Premium-of dedicated (App Service)-abonnement wordt uitgevoerd, kunt u uw versie vastmaken door in plaats daarvan een specifieke installatie kopie te gebruiken door de `linuxFxVersion` configuratie-instelling van de site in te stellen op `DOCKER|mcr.microsoft.com/azure-functions/dotnet:2.0.14786-appservice` voor meer informatie over het instellen van `linuxFxVersion` [hand matige versie-updates op Linux](set-runtime-version.md#manual-version-updates-on-linux).
 
 ## <a name="functions-class-library-project"></a>Class-bibliotheek project voor functies
 
@@ -90,14 +106,14 @@ Het trigger kenmerk geeft het trigger type aan en bindt invoer gegevens aan een 
 
 ## <a name="method-signature-parameters"></a>Methode handtekening parameters
 
-De methode handtekening kan andere para meters bevatten dan de hand tekening die is gebruikt met het trigger kenmerk. Hier volgen enkele van de aanvullende para meters die u kunt gebruiken:
+De methode handtekening kan andere para meters bevatten dan de hand tekening die is gebruikt met het trigger kenmerk. Hier volgen enkele van de andere para meters die u kunt gebruiken:
 
 * [Invoer-en uitvoer bindingen](functions-triggers-bindings.md) die als zodanig zijn gemarkeerd door ze te verduidelijken met kenmerken.  
 * Een `ILogger` of `TraceWriter` ([versie 1. x](functions-versions.md#creating-1x-apps)) para meter voor [logboek registratie](#logging).
 * Een `CancellationToken` para meter voor een [correcte afsluit](#cancellation-tokens)actie.
 * [Bindings expressies](./functions-bindings-expressions-patterns.md) para meters voor het ophalen van meta gegevens van triggers.
 
-De volg orde van de para meters in de functie handtekening is hierbij niet van belang. U kunt bijvoorbeeld trigger parameters plaatsen voor of na andere bindingen en u kunt de para meter logger voor of na de trigger-of bindings parameters plaatsen.
+De volg orde van de para meters in de functie handtekening is niet van belang. U kunt bijvoorbeeld trigger parameters plaatsen voor of na andere bindingen en u kunt de para meter logger voor of na de trigger-of bindings parameters plaatsen.
 
 ### <a name="output-bindings"></a>Uitvoerbindingen
 
@@ -147,7 +163,7 @@ public static class BindingExpressionsExample
 
 Met het bouw proces maakt u een *function.jsvoor* een bestand in een functie map in de map build. Zoals eerder is vermeld, is dit bestand niet bedoeld om rechtstreeks te worden bewerkt. U kunt de bindings configuratie niet wijzigen of de functie uitschakelen door dit bestand te bewerken. 
 
-Het doel van dit bestand is om informatie aan de schaal controller te verstrekken die moet worden gebruikt voor [het schalen van beslissingen over het verbruiks abonnement](event-driven-scaling.md). Daarom heeft het bestand alleen trigger gegevens, geen invoer-of uitvoer bindingen.
+Het doel van dit bestand is om informatie aan de schaal controller te verstrekken die moet worden gebruikt voor [het schalen van beslissingen over het verbruiks abonnement](event-driven-scaling.md). Daarom heeft het bestand alleen trigger gegevens, geen invoer-en uitvoer bindingen.
 
 De gegenereerde *function.jsvoor* het bestand bevat een `configurationSource` eigenschap die aangeeft dat de runtime .net-kenmerken voor bindingen moet gebruiken in plaats van *function.jsop* configuratie. Hier volgt een voorbeeld:
 
@@ -172,7 +188,7 @@ De gegenereerde *function.jsvoor* het bestand bevat een `configurationSource` ei
 
 De *function.jsvoor* het genereren van bestanden wordt uitgevoerd door de [micro soft \. net \. SDK- \. functies](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions)van het NuGet-pakket. 
 
-Hetzelfde pakket wordt gebruikt voor versie 1. x en 2. x van de functions-runtime. Het doel raamwerk is een onderscheid tussen een 1. x-project en een 2. x-project. Hier vindt u de relevante delen van *. csproj* -bestanden, met verschillende doel raamwerken en hetzelfde `Sdk` pakket:
+Hetzelfde pakket wordt gebruikt voor versie 1. x en 2. x van de functions-runtime. Het doel raamwerk is een onderscheid tussen een 1. x-project en een 2. x-project. Hier vindt u de relevante delen van *. csproj* -bestanden, met verschillende doel raamwerken met hetzelfde `Sdk` pakket:
 
 # <a name="v2x"></a>[v2. x +](#tab/v2)
 
@@ -625,7 +641,7 @@ public static class IBinderExample
 
 [BlobAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobAttribute.cs) definieert de invoer-of uitvoer binding van de [opslag-BLOB](functions-bindings-storage-blob.md) en [TextWriter](/dotnet/api/system.io.textwriter) is een ondersteund type uitvoer binding.
 
-### <a name="multiple-attribute-example"></a>Voor beeld van meerdere kenmerken
+### <a name="multiple-attributes-example"></a>Voor beeld van meerdere kenmerken
 
 In het vorige voor beeld wordt de app-instelling voor het hoofd-opslag account van de functie-app opgehaald connection string (dat wil zeggen `AzureWebJobsStorage` ). U kunt een aangepaste app-instelling opgeven die moet worden gebruikt voor het opslag account door de [StorageAccountAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/StorageAccountAttribute.cs) toe te voegen en de kenmerk matrix door te geven aan `BindAsync<T>()` . Gebruik een `Binder` para meter, niet `IBinder` .  Bijvoorbeeld:
 

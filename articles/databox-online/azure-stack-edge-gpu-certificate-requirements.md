@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: bbe4be0b6cc1d3ea9e0391e82ce21e307e9de640
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 9184a3f429804ac383f137de49c5391e2e1db80f
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100549676"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439235"
 ---
 # <a name="certificate-requirements"></a>Certificaatvereisten
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel worden de certificaat vereisten beschreven waaraan moet worden voldaan voordat certificaten kunnen worden geïnstalleerd op uw Azure Stack Edge Pro-apparaat. De vereisten zijn gerelateerd aan de PFX-certificaten, de uitgevende instantie, de onderwerpnaam van het certificaat en de alternatieve naam voor het onderwerp en ondersteunde certificaat algoritmen.
 

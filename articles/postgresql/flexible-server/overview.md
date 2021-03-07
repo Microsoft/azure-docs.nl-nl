@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 03/03/2021
-ms.openlocfilehash: d36dcfccb6843947991b2548af6dd98b81adb40e
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: a080a3b536cb6e11a254f15d745334fbf17531e8
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049505"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439558"
 ---
 # <a name="azure-database-for-postgresql---flexible-server"></a>Azure Database for PostgreSQL - Flexible Server
 
@@ -90,7 +90,7 @@ De service voor flexibele servers is uitgerust met ingebouwde functies voor pres
 
 Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het wereldwijde bereik. De flexibele server is nu beschikbaar in de volgende Azure-regio's:
 
-| Region | Beschikbaarheid | Zone redundante HA | 
+| Region | Beschikbaarheid | Zone-redundante HA | 
 | --- | --- | --- |
 | Europa -west | :heavy_check_mark: | :heavy_check_mark: |
 | Europa - noord | :heavy_check_mark: | :heavy_check_mark: |
@@ -102,7 +102,7 @@ Een van de voor delen van het uitvoeren van uw werkbelasting in Azure, is het we
 | Azië - zuidoost | :heavy_check_mark: | :heavy_check_mark: |
 | Japan - oost | :heavy_check_mark: | :heavy_check_mark: | 
 
-We blijven nieuwe regio's toevoegen. 
+We blijven meer regio's toevoegen voor flexibele servers.
 
 ## <a name="migration"></a>Migratie
 
@@ -110,6 +110,16 @@ De service voert de communityversie van PostgreSQL uit. Dit biedt volledige toep
 
 - **Dumpen en herstellen**: voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kan dumpen en herstellen met behulp van communityhulpprogramma's, zoals pg_dump en pg_restore, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dumpen en herstellen](../howto-migrate-using-dump-and-restore.md) voor meer informatie.
 - **Azure Database Migration Service**: voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan Azure Database Migration Service worden gebruikt. Zie [DMS via portal](../../dms/tutorial-postgresql-azure-postgresql-online-portal.md) en [DMS via CLI](../../dms/tutorial-postgresql-azure-postgresql-online.md). U kunt migreren van uw Azure Database for PostgreSQL - Single Server naar Flexible Server. Zie dit [DMS-artikel](../../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) voor meer informatie.
+
+## <a name="contacts"></a>Contactpersonen
+Voor vragen of suggesties die u op Azure Database for PostgreSQL flexibele server hebt, kunt u een e-mail sturen naar het Azure Database for PostgreSQL team ([ @Ask Azure DB voor postgresql](mailto:AskAzureDBforPostgreSQL@service.microsoft.com)). Houd er rekening mee dat dit e-mail adres geen alias voor technische ondersteuning is.
+
+Overweeg ook de volgende aanspreekpunten, indien van toepassing:
+
+- Als u contact wilt opnemen met Azure-ondersteuning, kunt u een [ticket indienen vanuit Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+- Als u een probleem met uw account wilt oplossen, kunt u een [ondersteuningsaanvraag](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) indienen in Azure Portal.
+- Als u feedback wilt geven of een nieuwe functie wilt aanvragen, maakt u een vermelding via [UserVoice](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
+  
 
 ## <a name="next-steps"></a>Volgende stappen
 

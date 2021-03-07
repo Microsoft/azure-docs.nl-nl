@@ -6,17 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 9a9625dcf40ae7d11e1154fc89b7f04652c8ca16
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 1b38a9807e05385a378fa6103710fb6b393c7b1f
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635837"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443145"
 ---
 # <a name="kubernetes-role-based-access-control-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes op rollen gebaseerd toegangs beheer op uw Azure Stack Edge Pro GPU-apparaat
 
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 Wanneer u een compute-functie configureert op uw Azure Stack Edge Pro-apparaat, wordt er een Kubernetes-cluster gemaakt. U kunt Kubernetes met op rollen gebaseerd toegangs beheer (Kubernetes RBAC) gebruiken om de toegang tot de cluster bronnen op uw apparaat te beperken.
 
@@ -39,13 +40,13 @@ Uw Azure Stack Edge Pro-apparaat heeft de volgende naam ruimten:
 - **Systeem naam ruimte** : deze naam ruimte is de belangrijkste bronnen, zoals netwerk functies, zoals DNS en proxy, of het Kubernetes-dash board. Normaal gesp roken implementeert u uw eigen toepassingen niet in deze naam ruimte. Gebruik deze naam ruimte om problemen met een Kubernetes-cluster op te sporen. 
 
     Uw apparaat bevat meerdere naam ruimten voor het systeem en de namen die overeenkomen met deze systeem naam ruimten zijn gereserveerd. Hier volgt een lijst met de gereserveerde systeem naam ruimten: 
-    - uitvoeren-systeem
+    - kube-system
     - metallb-systeem
     - DBE-naam ruimte
     - standaardinstelling
     - kubernetes-dash board
     - uitvoeren-node-lease
-    - uitvoeren-openbaar
+    - kube-public
 
 
     Zorg ervoor dat u geen gereserveerde namen gebruikt voor gebruikers naam ruimten die u maakt. 
@@ -61,15 +62,15 @@ Uw Azure Stack Edge Pro-apparaat heeft de volgende naam ruimten:
 
 In de praktijk is het belang rijk dat u het cluster opsplitst in meerdere naam ruimten. 
 
-- **Meerdere gebruikers** : als u meerdere gebruikers hebt, kunnen deze gebruikers met meerdere naam ruimten hun toepassingen en services in hun specifieke naam ruimten van elkaar isoleren. 
-- **Eén gebruiker** : zelfs als er één gebruiker is, kan de gebruiker met meerdere naam ruimten meerdere versies van de toepassingen uitvoeren in hetzelfde Kubernetes-cluster.
+- **Meerdere gebruikers**: als u meerdere gebruikers hebt, kunnen deze gebruikers met meerdere naam ruimten hun toepassingen en services in hun specifieke naam ruimten van elkaar isoleren. 
+- **Eén gebruiker**: zelfs als er één gebruiker is, kan de gebruiker met meerdere naam ruimten meerdere versies van de toepassingen uitvoeren in hetzelfde Kubernetes-cluster.
 
 ### <a name="roles-and-rolebindings"></a>Rollen en RoleBindings
 
 Kubernetes heeft het concept van rol-en functie binding waarmee u machtigingen kunt verlenen aan gebruikers of resources op naam ruimte niveau en op cluster niveau. 
 
-- **Rollen** : u kunt machtigingen definiëren voor gebruikers als een **rol** en vervolgens **rollen** gebruiken om machtigingen te verlenen binnen een naam ruimte. 
-- **RoleBindings** : Zodra u de functies hebt gedefinieerd, kunt u **RoleBindings** gebruiken om rollen toe te wijzen voor een bepaalde naam ruimte. 
+- **Rollen**: u kunt machtigingen definiëren voor gebruikers als een **rol** en vervolgens **rollen** gebruiken om machtigingen te verlenen binnen een naam ruimte. 
+- **RoleBindings**: Zodra u de functies hebt gedefinieerd, kunt u **RoleBindings** gebruiken om rollen toe te wijzen voor een bepaalde naam ruimte. 
 
 Met deze benadering kunt u een enkel Kubernetes-cluster logisch scheiden, met gebruikers die alleen toegang hebben tot de toepassings resources in hun toegewezen naam ruimte. 
 

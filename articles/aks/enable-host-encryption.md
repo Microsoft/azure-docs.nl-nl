@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van een op een host gebaseerd
 services: container-service
 ms.topic: article
 ms.date: 03/03/2021
-ms.openlocfilehash: 66e71dfd6a76fb4e6b464eb5c44dcc809fb9be38
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: f4e599ae7aa81c15f86d0e8b1c934824010ea45b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039730"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430152"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Versleuteling op basis van een host op de Azure Kubernetes-service (AKS) (preview)
 
@@ -48,7 +48,7 @@ az extension update --name aks-preview
 
 ### <a name="limitations"></a>Beperkingen
 
-- Kan alleen worden ingeschakeld voor nieuwe knooppunt groepen of nieuwe clusters.
+- Kan alleen worden ingeschakeld voor nieuwe knooppunt groepen.
 - Kan alleen worden ingeschakeld in [Azure-regio's][supported-regions] die ondersteuning bieden voor versleuteling aan de server zijde van Azure Managed disks en alleen met specifieke [ondersteunde VM-grootten][supported-sizes].
 - Vereist een AKS-cluster en-knooppunt groep op basis van Virtual Machine Scale Sets (VMSS) als *type VM-set*.
 

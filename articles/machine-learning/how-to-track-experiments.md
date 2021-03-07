@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 9e5f64d9ef61a272da488ad70e690db4c07ddccc
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 0130af66152d4f70db47191ae2f271630a59e179
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99625074"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441071"
 ---
 # <a name="enable-logging-in-ml-training-runs"></a>Logboek registratie inschakelen in ML-trainings uitvoeringen
 
@@ -38,6 +38,37 @@ Logboeken kunnen u helpen bij het diagnosticeren van fouten en waarschuwingen, o
 ## <a name="data-types"></a>Gegevenstypen
 
 U kunt meerdere gegevenstypen vastleggen, waaronder scalaire waarden, lijsten, tabellen, afbeeldingen, directory's en meer. Zie de [referentiepagina voor Run-klassen](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) voor meer informatie en Python-codevoorbeelden voor verschillende gegevenstypen.
+
+### <a name="logging-run-metrics"></a>Metrische gegevens over logboek registratie uitvoeren 
+
+Gebruik de volgende methoden in de logboek registratie-Api's om de metrische visualisaties te beïnvloeden. Noteer de [service limieten](https://docs.microsoft.com/azure/machine-learning/resource-limits-quotas-capacity#metrics) voor deze vastgelegde metrische gegevens. 
+
+|Geregistreerde waarde|Voorbeeldcode| Indeling in Portal|
+|----|----|----|
+|Een matrix met numerieke waarden vastleggen in een logboek| `run.log_list(name='Fibonacci', value=[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89])`|lijn diagram met één variabele|
+|Een enkele numerieke waarde met dezelfde metrische naam in het logboek vastleggen, herhaaldelijk gebruikt (bijvoorbeeld van binnen een for-lus)| `for i in tqdm(range(-10, 10)):    run.log(name='Sigmoid', value=1 / (1 + np.exp(-i))) angle = i / 2.0`| Lijn diagram met één variabele|
+|Een rij met 2 numerieke kolommen herhaaldelijk vastleggen|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Lijn diagram met twee variabelen|
+|Logboek tabel met 2 numerieke kolommen|`run.log_table(name='Sine Wave', value=sines)`|Lijn diagram met twee variabelen|
+|Logboek afbeelding|`run.log_image(name='food', path='./breadpudding.jpg', plot=None, description='desert')`|Gebruik deze methode om een afbeeldings bestand of een matplotlib-grafiek te registreren bij de uitvoering. Deze installatie kopieën worden weer gegeven en vergeleken in het rapport uitvoeren|
+
+### <a name="logging-with-mlflow"></a>Loggen met MLflow
+Gebruik MLFlowLogger voor het vastleggen van metrische gegevens.
+
+```python
+from azureml.core import Run
+# connect to the workspace from within your running code
+run = Run.get_context()
+ws = run.experiment.workspace
+
+# workspace has associated ml-flow-tracking-uri
+mlflow_url = ws.get_mlflow_tracking_uri()
+
+#Example: PyTorch Lightning
+from pytorch_lightning.loggers import MLFlowLogger
+
+mlf_logger = MLFlowLogger(experiment_name=run.experiment.name, tracking_uri=mlflow_url)
+mlf_logger._run_id = run.id
+```
 
 ## <a name="interactive-logging-session"></a>Interactieve logboekregistratiesessie
 

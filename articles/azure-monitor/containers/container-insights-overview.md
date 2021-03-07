@@ -3,12 +3,12 @@ title: Overzicht van container Insights | Microsoft Docs
 description: In dit artikel wordt container Insights beschreven waarmee de AKS container Insights-oplossing en de waarde die wordt geleverd, worden bewaakt door de status van uw AKS-clusters en Container Instances in azure te controleren.
 ms.topic: conceptual
 ms.date: 09/08/2020
-ms.openlocfilehash: 1055e2228c6625ae24e6bf388cf297e3e3363666
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a29890f569c47c48aae7d5d61badee7edeef58a0
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723381"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441513"
 ---
 # <a name="container-insights-overview"></a>Overzicht van container Insights
 
@@ -58,7 +58,7 @@ De belangrijkste verschillen in het bewaken van een Windows Server-cluster in ve
 
 Bekijk de volgende video over een dieper niveau waarmee u meer informatie kunt over het controleren van uw AKS-cluster met behulp van container Insights.
 
-> [!VIDEO https://youtu.be/XEdwGvS2AwA]
+> [!VIDEO https://www.youtube.com/embed/XEdwGvS2AwA]
 
 ## <a name="how-do-i-access-this-feature"></a>Hebt u toegang tot deze functie Hoe kan ik?
 

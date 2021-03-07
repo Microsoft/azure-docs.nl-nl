@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/4/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9b092c3c7382c984e8555125820c7c34d91f5e87
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 63817c8a65678579ce535a3c2e667e4eb0971a63
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048926"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434063"
 ---
 # <a name="troubleshooting-azure-digital-twins-metrics"></a>Problemen met Azure Digital Apparaatdubbels: metrische gegevens oplossen
 
@@ -55,7 +55,7 @@ U kunt deze metrische gegevens zo configureren dat ze volgen wanneer u een [gepu
 
 Als u dit wilt instellen, gebruikt u de functie [waarschuwingen](troubleshoot-alerts.md) in azure monitor. U kunt drempels voor deze metrische gegevens definiëren, zodat u een waarschuwing ontvangt wanneer een metriek een bepaald percentage van de gepubliceerde limiet bereikt.
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Afmetingen |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | TwinCount | Dubbele telling (preview-versie) | Aantal | Totaal | Totaal aantal apparaatdubbels in de Azure Digital Apparaatdubbels-instantie. Gebruik deze metrische gegevens om te bepalen of u de [service limiet](reference-service-limits.md#functional-limits) nadert voor het maximum aantal apparaatdubbels dat per exemplaar is toegestaan. |  Geen |
 | ModelCount | Aantal modellen (preview-versie) | Aantal | Totaal | Totaal aantal modellen in het Azure Digital Apparaatdubbels-exemplaar. Gebruik deze metrische gegevens om te bepalen of u de [service limiet](reference-service-limits.md#functional-limits) nadert voor het maximum aantal modellen dat per exemplaar is toegestaan. | Geen |
@@ -64,21 +64,21 @@ Als u dit wilt instellen, gebruikt u de functie [waarschuwingen](troubleshoot-al
 
 Metrische gegevens met API-aanvragen:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Afmetingen |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | ApiRequests | API-aanvragen | Aantal | Totaal | Het aantal API-aanvragen voor digitale-Apparaatdubbels voor lezen, schrijven, verwijderen en query bewerkingen. |  Verificatie <br>Schijf <br>Protocolsubstatus <br>Status code, <br>Klasse status code, <br>Status tekst |
-| ApiRequestsFailureRate | Aantal mislukte API-aanvragen | Percentage | Average | Het percentage van de API-aanvragen dat door de service wordt ontvangen voor uw exemplaar en die een interne fout (500) reactie code geven voor digitale Apparaatdubbels-Lees-, schrijf-, verwijder-en query bewerkingen. | Verificatie <br>Schijf <br>Protocolsubstatus <br>Status code, <br>Klasse status code, <br>Status tekst
-| ApiRequestsLatency | Latentie van API-aanvragen | Milliseconden | Average | De reactie tijd voor API-aanvragen. Dit is de tijd tussen het moment waarop de aanvraag wordt ontvangen door Azure Digital Apparaatdubbels totdat de service een geslaagd/mislukt resultaat verzendt voor digitale Apparaatdubbels lezen, schrijven, verwijderen en query bewerkingen. | Verificatie <br>Schijf <br>Protocol |
+| ApiRequestsFailureRate | Aantal mislukte API-aanvragen | Percentage | Gemiddeld | Het percentage van de API-aanvragen dat door de service wordt ontvangen voor uw exemplaar en die een interne fout (500) reactie code geven voor digitale Apparaatdubbels-Lees-, schrijf-, verwijder-en query bewerkingen. | Verificatie <br>Schijf <br>Protocolsubstatus <br>Status code, <br>Klasse status code, <br>Status tekst
+| ApiRequestsLatency | Latentie van API-aanvragen | Milliseconden | Gemiddeld | De reactie tijd voor API-aanvragen. Dit is de tijd tussen het moment waarop de aanvraag wordt ontvangen door Azure Digital Apparaatdubbels totdat de service een geslaagd/mislukt resultaat verzendt voor digitale Apparaatdubbels lezen, schrijven, verwijderen en query bewerkingen. | Verificatie <br>Schijf <br>Protocol |
 
 #### <a name="billing-metrics"></a>Metrische facturerings gegevens
 
 Metrische gegevens met facturering:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Afmetingen |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | BillingApiOperations | Facturering-API-bewerkingen | Aantal | Totaal | Facturerings metriek voor het aantal API-aanvragen dat is gedaan voor de Azure Digital Apparaatdubbels-service. | Meter ID |
 | BillingMessagesProcessed | Verwerkte facturerings berichten | Aantal | Totaal | Facturerings metriek voor het aantal berichten dat vanuit Azure Digital Apparaatdubbels naar externe eind punten wordt verzonden.<br><br>Een nettolading mag niet groter zijn dan 1 KB om te worden beschouwd als één bericht voor facturerings doeleinden. Nettoladingen die groter zijn dan deze worden geteld als extra berichten in stappen van 1 KB (dus een bericht tussen 1 en 2 KB wordt geteld als 2 berichten, tussen 2 en 3 KB is 3 berichten, enzovoort).<br>Deze beperking geldt ook voor antwoorden, dus een aanroep die 1,5 KB retourneert in de hoofd tekst van de reactie, wordt bijvoorbeeld gefactureerd als twee bewerkingen. | Meter ID |
-| BillingQueryUnits | Facturerings query eenheden | Aantal | Totaal | Het aantal query-eenheden, een intern berekende meting van het gebruik van de service resource, die wordt gebruikt om query's uit te voeren. Er is ook een helper-API beschikbaar voor het meten van query-eenheden: [klasse QueryChargeHelper](/dotnet/api/azure.digitaltwins.core.querychargehelper?preserve-view=true&view=azure-dotnet) | Meter ID |
+| BillingQueryUnits | Facturerings query eenheden | Aantal | Totaal | Het aantal query-eenheden, een intern berekende meting van het gebruik van de service resource, die wordt gebruikt om query's uit te voeren. Er is ook een helper-API beschikbaar voor het meten van query-eenheden: [klasse QueryChargeHelper](/dotnet/api/azure.digitaltwins.core.querychargehelper) | Meter ID |
 
 Zie [*prijzen voor Azure Digital apparaatdubbels*](https://azure.microsoft.com/pricing/details/digital-twins/)voor meer informatie over de manier waarop Azure Digital apparaatdubbels wordt gefactureerd.
 
@@ -86,23 +86,23 @@ Zie [*prijzen voor Azure Digital apparaatdubbels*](https://azure.microsoft.com/p
 
 Metrische gegevens die moeten worden uitgevoerd met inkomend verkeer:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Afmetingen |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | IngressEvents | Ingangs gebeurtenissen | Aantal | Totaal | Het aantal inkomende telemetrie-gebeurtenissen in azure Digital Apparaatdubbels. | Resultaat |
-| IngressEventsFailureRate | Aantal mislukte ingangs gebeurtenissen | Percentage | Average | Het percentage inkomende telemetrie-gebeurtenissen waarvoor de service een interne fout (500) respons code retourneert. | Resultaat |
-| IngressEventsLatency | Latentie van ingangs gebeurtenissen | Milliseconden | Average | Het tijdstip waarop een gebeurtenis arriveert wanneer deze klaar is om te worden egressed door Azure Digital Apparaatdubbels, waarbij de service een geslaagd/mislukt resultaat verzendt. | Resultaat |
+| IngressEventsFailureRate | Aantal mislukte ingangs gebeurtenissen | Percentage | Gemiddeld | Het percentage inkomende telemetrie-gebeurtenissen waarvoor de service een interne fout (500) respons code retourneert. | Resultaat |
+| IngressEventsLatency | Latentie van ingangs gebeurtenissen | Milliseconden | Gemiddeld | Het tijdstip waarop een gebeurtenis arriveert wanneer deze klaar is om te worden egressed door Azure Digital Apparaatdubbels, waarbij de service een geslaagd/mislukt resultaat verzendt. | Resultaat |
 
 #### <a name="routing-metrics"></a>Routerings metrieken
 
 Metrische gegevens die moeten worden uitgevoerd met route ring:
 
-| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Beschrijving | Afmetingen |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Type aggregatie| Description | Dimensies |
 | --- | --- | --- | --- | --- | --- |
 | MessagesRouted | Berichten gerouteerd | Aantal | Totaal | Het aantal berichten dat wordt doorgestuurd naar een Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
-| RoutingFailureRate | Aantal mislukte routeringen | Percentage | Average | Het percentage gebeurtenissen dat resulteert in een fout wanneer ze worden doorgestuurd van Azure Digital Apparaatdubbels naar een Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
-| RoutingLatency | Routerings latentie | Milliseconden | Average | De tijd die is verstreken tussen een gebeurtenis die wordt gerouteerd van Azure Digital Apparaatdubbels naar het moment dat deze wordt geplaatst in de Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
+| RoutingFailureRate | Aantal mislukte routeringen | Percentage | Gemiddeld | Het percentage gebeurtenissen dat resulteert in een fout wanneer ze worden doorgestuurd van Azure Digital Apparaatdubbels naar een Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
+| RoutingLatency | Routerings latentie | Milliseconden | Gemiddeld | De tijd die is verstreken tussen een gebeurtenis die wordt gerouteerd van Azure Digital Apparaatdubbels naar het moment dat deze wordt geplaatst in de Azure-service voor eind punten, zoals Event hub, Service Bus of Event Grid. | Type eind punt, <br>Resultaat |
 
-## <a name="dimensions"></a>Afmetingen
+## <a name="dimensions"></a>Dimensies
 
 Met dimensies kunt u meer informatie over de metrische gegevens vaststellen. Sommige para meters voor route ring bieden informatie per eind punt. De volgende tabel bevat mogelijke waarden voor deze dimensies.
 

@@ -8,14 +8,16 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 02/23/2021
 ms.author: alkohli
-ms.openlocfilehash: 064af116112f0b530ac0cc9b5755dcec2cf0bd07
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bdd44bf81e34b60ee648b71c6dc3bde5a96d3deb
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101722060"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443009"
 ---
 # <a name="proactive-log-collection-on-your-azure-stack-edge-device"></a>Proactieve logboek verzameling op uw Azure Stack edge-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 Met proactieve logboek verzameling worden de systeem status indicatoren op uw Azure Stack edge-apparaat verzameld, zodat u problemen met apparaten efficiënt kunt oplossen. Proactieve logboek verzameling is standaard ingeschakeld. In dit artikel wordt beschreven wat er wordt geregistreerd, hoe micro soft de gegevens verwerkt en hoe u proactieve logboek verzameling kunt in-of uitschakelen. 
 
@@ -58,7 +60,7 @@ Proactieve logboek verzameling is standaard ingeschakeld. U kunt proactieve logb
 Nadat de proactieve logboek verzameling is ingeschakeld, worden logboeken automatisch geüpload wanneer een van de volgende gebeurtenissen op het apparaat wordt gedetecteerd:  
 
 
-|Waarschuwing/fout/voor waarde  |Beschrijving  |
+|Waarschuwing/fout/voor waarde  |Description  |
 |---------|---------|
 |AcsUnhealthyCondition     |Consistente Azure-Services zijn beschadigd.         |
 |IOTEdgeAgentNotRunningCondition      |IoT Edge agent is niet actief.         |

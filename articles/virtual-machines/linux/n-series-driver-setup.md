@@ -6,14 +6,14 @@ author: vikancha-MSFT
 ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.workload: infrastructure-services
-ms.date: 01/09/2019
+ms.date: 11/11/2019
 ms.author: vikancha
-ms.openlocfilehash: 553a0fb1f7eb578bcd5c89c1aec45c38a1d2305e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 766f6cb0515f45fa11ee26ba23e79ae51fff5ce3
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101672540"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436087"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>NVIDIA GPU-Stuur Programma's installeren op Vm's met N-serie waarop Linux wordt uitgevoerd
 
@@ -29,7 +29,6 @@ Zie [GPU Linux VM-grootten](../sizes-gpu.md?toc=/azure/virtual-machines/linux/to
 
 Hier volgen stappen voor het installeren van CUDA-Stuur Programma's van de NVIDIA CUDA Toolkit op Vm's uit de N-serie. 
 
-
 C-en C++-ontwikkel aars kunnen eventueel de volledige Toolkit installeren om GPU-versnelde toepassingen te bouwen. Zie de [installatie handleiding voor CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)voor meer informatie.
 
 Als u CUDA-Stuur Programma's wilt installeren, maakt u een SSH-verbinding met elke VM. Voer de volgende opdracht uit om te controleren of het systeem een GPU heeft die compatibel is met CUDA:
@@ -41,6 +40,7 @@ U ziet uitvoer die vergelijkbaar is met het volgende voor beeld (met een NVIDIA 
 
 ![uitvoer van lspci-opdracht](./media/n-series-driver-setup/lspci.png)
 
+lspci geeft een lijst van de PCIe-apparaten op de VM, met inbegrip van de InfiniBand NIC en Gpu's, indien aanwezig. Als lspci niet correct wordt geretourneerd, moet u mogelijk LIS installeren op CentOS/RHEL (instructies hieronder).
 Voer vervolgens de installatie opdrachten uit die specifiek zijn voor uw distributie.
 
 ### <a name="ubuntu"></a>Ubuntu 
@@ -48,19 +48,14 @@ Voer vervolgens de installatie opdrachten uit die specifiek zijn voor uw distrib
 1. Down load en installeer de CUDA-Stuur Programma's van de NVIDIA-website. Bijvoorbeeld voor Ubuntu 16,04 LTS:
    ```bash
    CUDA_REPO_PKG=cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
-
    wget -O /tmp/${CUDA_REPO_PKG} https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/${CUDA_REPO_PKG} 
 
    sudo dpkg -i /tmp/${CUDA_REPO_PKG}
-
    sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub 
-
    rm -f /tmp/${CUDA_REPO_PKG}
 
    sudo apt-get update
-
    sudo apt-get install cuda-drivers
-
    ```
 
    De installatie kan enkele minuten duren.
@@ -79,11 +74,8 @@ U wordt aangeraden CUDA-Stuur Programma's na de implementatie regel matig bij te
 
 ```bash
 sudo apt-get update
-
 sudo apt-get upgrade -y
-
 sudo apt-get dist-upgrade -y
-
 sudo apt-get install cuda-drivers
 
 sudo reboot
@@ -95,42 +87,33 @@ sudo reboot
 
    ```
    sudo yum install kernel kernel-tools kernel-headers kernel-devel
-  
-   sudo reboot
-
-2. Install the latest [Linux Integration Services for Hyper-V and Azure](https://www.microsoft.com/download/details.aspx?id=55106). Check if LIS is required by verifying the results of lspci. If all GPU devices are listed as expected, installing LIS is not required.
-
-Skip this step if you plan to use CentOS 7.8(or higher) as LIS is no longer required for these versions.
-
-Please note that LIS is applicable to Red Hat Enterprise Linux, CentOS, and the Oracle Linux Red Hat Compatible Kernel 5.2-5.11, 6.0-6.10, and 7.0-7.7. Please refer to the [Linux Integration Services documentation] (https://www.microsoft.com/en-us/download/details.aspx?id=55106) for more details. 
-
-Skip this step if you are not using the Kernel versions listed above.
-
-   ```bash
-   wget https://aka.ms/lis
- 
-   tar xvzf lis
- 
-   cd LISISO
- 
-   sudo ./install.sh
- 
    sudo reboot
    ```
- 
+
+2. Installeer de meest recente [Linux-integratie Services voor Hyper-V en Azure](https://www.microsoft.com/download/details.aspx?id=55106). Controleer of LIS is vereist door de resultaten van lspci te controleren. Als alle GPU-apparaten worden weer gegeven zoals verwacht (en eerder beschreven), is het installeren van LIS niet vereist.
+
+   De LIS is van toepassing op Red Hat Enterprise Linux, CentOS en de Oracle Linux Red Hat compatible kernel 5.2-5,11, 6.0-6.10 en 7.0-7,7. Raadpleeg de [Linux Integration Services-documentatie] ( https://www.microsoft.com/en-us/download/details.aspx?id=55106) voor meer informatie. 
+   Sla deze stap over als u van plan bent om CentOS/RHEL 7,8 (of een hogere versie) te gebruiken, omdat de LIS niet langer vereist is voor deze versies.
+
+      ```bash
+      wget https://aka.ms/lis
+      tar xvzf lis
+      cd LISISO
+
+      sudo ./install.sh
+      sudo reboot
+      ```
+
 3. Maak opnieuw verbinding met de virtuele machine en ga door met de installatie met de volgende opdrachten:
 
    ```bash
    sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-
    sudo yum install dkms
-
+   
    CUDA_REPO_PKG=cuda-repo-rhel7-10.0.130-1.x86_64.rpm
-
    wget https://developer.download.nvidia.com/compute/cuda/repos/rhel7/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 
    sudo rpm -ivh /tmp/${CUDA_REPO_PKG}
-
    rm -f /tmp/${CUDA_REPO_PKG}
 
    sudo yum install cuda-drivers
@@ -200,20 +183,15 @@ Als u NVIDIA-raster Stuur Programma's wilt installeren op de virtuele machines v
 
    ```bash
    sudo apt-get update
-
    sudo apt-get upgrade -y
-
    sudo apt-get dist-upgrade -y
-
    sudo apt-get install build-essential ubuntu-desktop -y
-   
    sudo apt-get install linux-azure -y
    ```
 3. Schakel het Nouveau-kernelstuurprogramma uit, dat niet compatibel is met het NVIDIA-stuur programma. (Gebruik alleen het NVIDIA-stuur programma op NV-of NVv2-Vm's.) Als u dit wilt doen, maakt u een bestand `/etc/modprobe.d` `nouveau.conf` met de naam met de volgende inhoud:
 
    ```
    blacklist nouveau
-
    blacklist lbm-nouveau
    ```
 
@@ -228,9 +206,7 @@ Als u NVIDIA-raster Stuur Programma's wilt installeren op de virtuele machines v
 
    ```bash
    wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
-
    chmod +x NVIDIA-Linux-x86_64-grid.run
-
    sudo ./NVIDIA-Linux-x86_64-grid.run
    ``` 
 
@@ -263,13 +239,9 @@ Als u NVIDIA-raster Stuur Programma's wilt installeren op de virtuele machines v
  
    ```bash  
    sudo yum update
- 
    sudo yum install kernel-devel
- 
    sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
- 
    sudo yum install dkms
-   
    sudo yum install hyperv-daemons
    ```
 
@@ -277,26 +249,22 @@ Als u NVIDIA-raster Stuur Programma's wilt installeren op de virtuele machines v
 
    ```
    blacklist nouveau
-
    blacklist lbm-nouveau
    ```
- 
-3. Start de VM opnieuw op, maak opnieuw verbinding en installeer de meest recente [Linux-integratie Services voor Hyper-V en Azure](https://www.microsoft.com/download/details.aspx?id=55106). Controleer of LIS is vereist door de resultaten van lspci te controleren. Als alle GPU-apparaten worden weer gegeven zoals verwacht, is het installeren van LIS niet vereist. 
 
-Deze stap overs laan is dat u CentOS/RHEL 7,8 en hoger gebruikt.
- 
-   ```bash
-   wget https://aka.ms/lis
+3. Start de VM opnieuw op, maak opnieuw verbinding en installeer de meest recente [Linux-integratie Services voor Hyper-V en Azure](https://www.microsoft.com/download/details.aspx?id=55106). Controleer of LIS is vereist door de resultaten van lspci te controleren. Als alle GPU-apparaten worden weer gegeven zoals verwacht (en eerder beschreven), is het installeren van LIS niet vereist. 
 
-   tar xvzf lis
+   Sla deze stap over als u van plan bent om CentOS/RHEL 7,8 (of een hogere versie) te gebruiken, omdat de LIS niet langer vereist is voor deze versies.
 
-   cd LISISO
+      ```bash
+      wget https://aka.ms/lis
+      tar xvzf lis
+      cd LISISO
 
-   sudo ./install.sh
+      sudo ./install.sh
+      sudo reboot
 
-   sudo reboot
-
-   ```
+      ```
  
 4. Maak opnieuw verbinding met de virtuele machine en voer de `lspci` opdracht uit. Controleer of de NVIDIA M60-kaart of-kaarten als PCI-apparaten worden weer gegeven.
  
@@ -304,7 +272,6 @@ Deze stap overs laan is dat u CentOS/RHEL 7,8 en hoger gebruikt.
 
    ```bash
    wget -O NVIDIA-Linux-x86_64-grid.run https://go.microsoft.com/fwlink/?linkid=874272  
-
    chmod +x NVIDIA-Linux-x86_64-grid.run
 
    sudo ./NVIDIA-Linux-x86_64-grid.run
@@ -384,7 +351,7 @@ Maak vervolgens een vermelding voor uw update script in `/etc/rc.d/rc3.d` zodat 
 
 * U kunt de modus voor persistentie instellen met behulp `nvidia-smi` van zodat de uitvoer van de opdracht sneller is als u behoefte hebt aan een query uit te voeren op kaarten. Voer uit om de modus voor persistentie in te stellen `nvidia-smi -pm 1` . Houd er rekening mee dat als de virtuele machine opnieuw wordt opgestart, de instelling van de modus verdwijnt. U kunt de modus instelling altijd scripteren om uit te voeren bij het opstarten.
 * Als u de NVIDIA CUDA-Stuur Programma's hebt bijgewerkt naar de nieuwste versie en RDMA-connectiviteit niet meer werkt, [installeert u de RDMA-Stuur Programma's opnieuw](#rdma-network-connectivity) om die verbinding opnieuw tot stand te brengen. 
-* Als een bepaalde versie van het besturings systeem CentOS/RHEL (of kernel) niet wordt ondersteund voor LIS, treedt er een fout op met de niet-ondersteunde kernel-versie. Meld deze fout samen met de versie van het besturings systeem en de kernel.
+* Als tijdens de installatie van LIS een bepaalde versie van het besturings systeem CentOS/RHEL (of kernel) niet wordt ondersteund voor LIS, treedt er een fout op met de niet-ondersteunde kernel-versie. Meld deze fout samen met de versie van het besturings systeem en de kernel.
 
 ## <a name="next-steps"></a>Volgende stappen
 

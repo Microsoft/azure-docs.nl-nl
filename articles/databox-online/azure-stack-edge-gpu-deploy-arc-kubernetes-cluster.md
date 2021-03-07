@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/12/2020
+ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 53ef73c70f5d20133e7b408ad7af91c3778e5568
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 4d75986880075f6eb07aa31b9322bdae15535802
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787448"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102437601"
 ---
 # <a name="enable-azure-arc-on-kubernetes-cluster-on-your-azure-stack-edge-pro-gpu-device"></a>Azure Arc op Kubernetes-cluster op uw Azure Stack Edge Pro GPU-apparaat inschakelen
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 Dit artikel laat u zien hoe u Azure Arc kunt inschakelen op een bestaand Kubernetes-cluster op uw Azure Stack Edge Pro-apparaat. 
 
@@ -86,7 +88,7 @@ U kunt resource providers ook registreren via de `az cli` . Zie voor meer inform
 
 1. Als u een Service-Principal wilt maken, gebruikt u de volgende opdracht via de `az cli` .
 
-    `az ad sp create-for-rbac --skip assignment --name "<Informative name for service principal>"`  
+    `az ad sp create-for-rbac --skip-assignment --name "<Informative name for service principal>"`  
 
     Voor informatie over hoe u zich aanmeldt bij `az cli` , [Start u Cloud Shell in azure Portal](../cloud-shell/quickstart-powershell.md#start-cloud-shell)
 
@@ -228,4 +230,4 @@ Voer de volgende stappen uit om Azure Arc management te verwijderen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [een STAATLOZE PHP-Gastenboek toepassing implementeren met redis via GitOps op een Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md) voor meer informatie over het uitvoeren van een implementatie van Azure Arc.
+Zie [een STAATLOZE PHP- `Guestbook` toepassing implementeren met redis via GitOps op een Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-deploy-stateless-application-git-ops-guestbook.md) voor meer informatie over het uitvoeren van een implementatie van Azure Arc.

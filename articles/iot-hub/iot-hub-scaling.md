@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: Operations'
-ms.openlocfilehash: e786a323cfb1ebacdf7e6693e3ca4299f10aadb3
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 7940ac3a67a0562aa0b7a21690deec30220a48a3
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102216034"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434709"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>De juiste IoT Hub-laag kiezen voor uw oplossing
 
@@ -85,7 +85,7 @@ Het verschil in ondersteunde mogelijkheden tussen de lagen basis en standaard va
 | [Statistieken van services ophalen](/javascript/api/azure-iot-digitaltwins-service/registrymanager#getservicestatistics-msrest-requestoptionsbase-) | Ja | Ja |
 | [Apparaat maken of bijwerken](/javascript/api/azure-iot-digitaltwins-service/registrymanager#createorupdatedevice-string--device--servicecallback-device--) | Ja | Ja |
 | [Module maken of bijwerken](/javascript/api/azure-iot-digitaltwins-service/registrymanager#createorupdatemodule-string--string--module--models-registrymanagercreateorupdatemoduleoptionalparams-) | Ja | Ja |
-| [Query IoT Hub](/dotnet/api/microsoft.azure.devices.registrymanager?view=azure-dotnet) | Ja | Ja |
+| [Query IoT Hub](/dotnet/api/microsoft.azure.devices.registrymanager) | Ja | Ja |
 | [De SAS-URI voor het uploaden van bestanden maken](/rest/api/iothub/device/createfileuploadsasuri) | Ja | Ja |
 | [Bevestiging van afhankelijk apparaat ontvangen](/rest/api/iothub/device/receivedeviceboundnotification) | Ja | Ja |
 | [Gebeurtenis van apparaat verzenden](/rest/api/iothub/device/senddeviceevent) | Ja | Ja |

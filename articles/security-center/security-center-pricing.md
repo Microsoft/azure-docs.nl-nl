@@ -7,15 +7,17 @@ manager: rkarlin
 ms.service: security-center
 ms.topic: overview
 ms.date: 02/14/2021
-ms.openlocfilehash: 7ca8a89cc93cc36d790eca7b19665e5bfed9695c
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: e72e312e932e71d4dac8532983c2c96ba105ba3b
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099100"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439473"
 ---
 # <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis VS Azure Defender ingeschakeld
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
+
+U kunt een upgrade uitvoeren op de pagina met **prijzen &-instellingen** , zoals beschreven in [Quick Start: Azure Defender inschakelen](enable-azure-defender.md). Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.
 
 ## <a name="what-are-the-benefits-of-enabling-azure-defender"></a>Wat zijn de voor delen van het inschakelen van Azure Defender?
 
@@ -70,14 +72,14 @@ Security Center heeft twee aanbiedingen:
 ### <a name="how-do-i-enable-azure-defender-for-my-subscription"></a>Hoe schakel ik Azure Defender in voor mijn abonnement? 
 U kunt Azure Defender voor uw abonnement op een van de volgende manieren inschakelen: 
 
-|Methode  |Instructies  |
-|---------|---------|
-|Azure Security Center-pagina's van Azure Portal|[Azure Defender inschakelen](enable-azure-defender.md)|
-|REST-API|[Pricings-API](/rest/api/securitycenter/pricings)|
-|Azure CLI|[az security pricing](/cli/azure/security/pricing)|
-|PowerShell|[Set-AzSecurityPricing](/powershell/module/az.security/set-azsecuritypricing)|
-|Azure Policy|[Bundle Pricings](https://github.com/Azure/Azure-Security-Center/blob/master/Pricing%20%26%20Settings/ARM%20Templates/Set-ASC-Bundle-Pricing.json)|
-|||
+| Methode                                          | Instructies                                                                                                                                       |
+|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Azure Security Center-pagina's van Azure Portal | [Azure Defender inschakelen](enable-azure-defender.md)                                                                                                  |
+| REST-API                                        | [Pricings-API](/rest/api/securitycenter/pricings)                                                                                                  |
+| Azure CLI                                       | [az security pricing](/cli/azure/security/pricing)                                                                                                 |
+| PowerShell                                      | [Set-AzSecurityPricing](/powershell/module/az.security/set-azsecuritypricing)                                                                      |
+| Azure Policy                                    | [Bundle Pricings](https://github.com/Azure/Azure-Security-Center/blob/master/Pricing%20%26%20Settings/ARM%20Templates/Set-ASC-Bundle-Pricing.json) |
+|                                                 |                                                                                                                                                    |
 
 ### <a name="can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription"></a>Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?
 Nee. Als u [Azure Defender voor servers](defender-for-servers-introduction.md) inschakelt in een abonnement, vallen alle servers in het abonnement vervolgens onder Azure Defender. 

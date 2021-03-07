@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: 9a20db58846ca48afb4fb256adae58e1fccdff3a
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 15df9b38abe35fe3eefad2fa160e1c1f16fe7aa7
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875733"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439456"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Gids voor probleemoplossing voor Azure Storage Explorer
 
@@ -58,14 +58,22 @@ Als u geen rol hebt die machtigingen voor een beheer laag verleent, kan Storage 
 
 ### <a name="what-if-i-cant-get-the-management-layer-permissions-i-need-from-my-administrator"></a>Wat moet ik doen als ik de beheer laag machtigingen niet kan ophalen die ik nodig heb van mijn beheerder?
 
-Als u toegang wilt krijgen tot BLOB-containers of-wacht rijen, kunt u deze resources koppelen met uw Azure-referenties.
+Als u toegang wilt krijgen tot BLOB-containers, ADLS Gen2 containers of mappen of wacht rijen, kunt u deze resources koppelen met uw Azure-referenties.
 
 1. Open het dialoog venster verbinding maken.
-2. Selecteer een resource toevoegen via Azure Active Directory (Azure AD). Selecteer Next.
-3. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Selecteer Next.
-4. Selecteer het resource type, voer de URL in voor de resource en voer een unieke weergave naam in voor de verbinding. Selecteer volgende en vervolgens verbinding maken.
+1. Selecteer het resource type waarmee u verbinding wilt maken.
+1. Selecteer **Aanmelden met Azure Active Directory (Azure AD)**. Selecteer **Next**.
+1. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Selecteer **Next**.
+1. Voer de URL naar de resource in en voer een unieke weergave naam voor de verbinding in. Selecteer **volgende** en vervolgens **verbinding maken**.
 
-Voor andere resource typen hebben we momenteel geen oplossing met betrekking tot Azure RBAC. Als tijdelijke oplossing kunt u een SAS-URI aanvragen om [aan uw resource te koppelen](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=linux#use-a-shared-access-signature-uri).
+Voor andere resource typen hebben we momenteel geen oplossing met betrekking tot Azure RBAC. Als tijdelijke oplossing kunt u een SAS-URL aanvragen en vervolgens aan uw resource koppelen door de volgende stappen uit te voeren:
+
+1. Open het dialoog venster verbinding maken.
+1. Selecteer het resource type waarmee u verbinding wilt maken.
+1. Selecteer **Shared Access Signature (SAS)**. Selecteer **Next**.
+1. Voer de SAS-URL in die u hebt ontvangen en voer een unieke weergave naam voor de verbinding in. Selecteer **volgende** en vervolgens **verbinding maken**.
+ 
+Zie [koppelen aan een afzonderlijke resource](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=linux#attach-to-an-individual-resource)voor meer informatie over het koppelen aan resources.
 
 ### <a name="recommended-azure-built-in-roles"></a>Aanbevolen ingebouwde rollen van Azure
 

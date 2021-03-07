@@ -1,5 +1,5 @@
 ---
-title: De AdventureWorks-voorbeeld database herstellen naar Azure Arc enabled PostgreSQL grootschalige
+title: De AdventureWorks-voorbeeld database importeren naar Azure Arc enabled PostgreSQL grootschalige
 description: De AdventureWorks-voorbeeld database herstellen naar Azure Arc enabled PostgreSQL grootschalige
 services: azure-arc
 ms.service: azure-arc
@@ -9,14 +9,14 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: b1ee779be118fcafd0efa2bd2718ece1c34c50d1
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: a9efa17fb782d5a913493907b66973272e4e0356
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954325"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441785"
 ---
-# <a name="restore-the-adventureworks-sample-database-to-azure-arc-enabled-postgresql-hyperscale"></a>De AdventureWorks-voorbeeld database herstellen naar Azure Arc enabled PostgreSQL grootschalige
+# <a name="import-the-adventureworks-sample-database-to-azure-arc-enabled-postgresql-hyperscale"></a>De AdventureWorks-voorbeeld database importeren naar Azure Arc enabled PostgreSQL grootschalige
 
 [AdventureWorks](/sql/samples/adventureworks-install-configure) is een voorbeeld database met een OLTP-data base die wordt gebruikt in zelf studies en voor beelden. Het wordt door micro soft aangehouden en onderhouden als onderdeel van de SQL Server-voor [beelden github-opslag plaats](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases).
 
@@ -24,7 +24,7 @@ Een open-source project heeft de AdventureWorks-data base geconverteerd om compa
 - [Oorspronkelijk project](https://github.com/lorint/AdventureWorks-for-Postgres)
 - [Volg de stappen in project waarmee de CSV-bestanden vooraf worden geconverteerd om compatibel te zijn met PostgreSQL](https://github.com/NorfolkDataSci/adventure-works-postgres)
 
-In dit document wordt een eenvoudig proces beschreven om de AdventureWorks-voorbeeld database te herstellen in uw PostgreSQL grootschalige-Server groep.
+In dit document wordt een eenvoudig proces voor het ophalen van de AdventureWorks-voorbeeld database geïmporteerd in uw PostgreSQL grootschalige-Server groep.
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
@@ -38,7 +38,7 @@ Voer een opdracht als deze uit om de bestanden te downloaden Vervang de waarde v
 >  Uw container moet een Internet verbinding hebben via 443 om het bestand te downloaden van GitHub.
 
 > [!NOTE]
->  Gebruik de pod-naam van het coördinator knooppunt van de post gres grootschalige-Server groep. De naam is <server group name> -0.  Als u niet zeker bent van de pod-naam, voert u de opdracht uit `kubectl get pod`
+>  Gebruik de pod-naam van het coördinator knooppunt van de post gres grootschalige-Server groep. De naam is <server group name> c-0 (bijvoorbeeld postgres01c-0, waarbij c staat voor het knoop punt coördinator).  Als u niet zeker bent van de pod-naam, voert u de opdracht uit `kubectl get pod`
 
 ```console
 kubectl exec <PostgreSQL pod name> -n <namespace name> -c postgres  -- /bin/bash -c "cd /tmp && curl -k -O https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/arm_template/postgres_hs/AdventureWorks.sql"
@@ -47,7 +47,7 @@ kubectl exec <PostgreSQL pod name> -n <namespace name> -c postgres  -- /bin/bash
 #kubectl exec postgres02-0 -n arc -c postgres -- /bin/bash -c "cd /tmp && curl -k -O https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_arc_data_jumpstart/aks/arm_template/postgres_hs/AdventureWorks.sql"
 ```
 
-## <a name="step-2-restore-the-adventureworks-database"></a>Stap 2: de AdventureWorks-data base herstellen
+## <a name="step-2-import-the-adventureworks-database"></a>Stap 2: de AdventureWorks-data base importeren
 
 Op dezelfde manier kunt u een kubectl exec-opdracht uitvoeren om het psql CLI-hulp programma te gebruiken dat is opgenomen in de containers voor de PostgreSQL grootschalige-Server groep om de data base te maken en te laden.
 
@@ -60,7 +60,7 @@ kubectl exec <PostgreSQL pod name> -n <namespace name> -c postgres -- psql --use
 #kubectl exec postgres02-0 -n arc -c postgres -- psql --username postgres -c 'CREATE DATABASE "adventureworks";'
 ```
 
-Vervolgens voert u een opdracht als volgt uit om de data base te vervangen door de waarde van de pod-naam en de naam van de naam ruimte voordat u deze uitvoert.
+Voer vervolgens een opdracht als deze uit om de data base te importeren en de waarde van de naam van de Pod en de naam ruimte te vervangen voordat u deze uitvoert.
 
 ```console
 kubectl exec <PostgreSQL pod name> -n <namespace name> -c postgres -- psql --username postgres -d adventureworks -f /tmp/AdventureWorks.sql

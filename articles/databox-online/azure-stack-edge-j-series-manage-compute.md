@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/04/2021
 ms.author: alkohli
-ms.openlocfilehash: bd49edcfaca781ac3d36fbf871ec146b32c64ae3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 99068a68c5d35bc6a501c5860d0bbc9ea3e3f368
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733411"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436964"
 ---
 # <a name="manage-compute-on-your-azure-stack-edge-pro-gpu"></a>Reken kracht beheren op uw Azure Stack Edge Pro GPU
 
-<!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u Compute beheert via IoT Edge-service op uw Azure Stack Edge Pro GPU-apparaat. U kunt de compute beheren via de Azure Portal of via de lokale web-UI. Gebruik de Azure Portal om modules, triggers en IoT Edge configuratie te beheren, en de lokale web-UI voor het beheren van de instellingen van het reken netwerk.
 
@@ -37,7 +37,7 @@ Voer de volgende stappen uit in de Azure Portal om een trigger te maken.
 
 1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **IOT Edge**. Ga naar **Triggers** en selecteer **+ trigger toevoegen** op de opdracht balk.
 
-    ![Trigger toevoegen selecteren](media/azure-stack-edge-j-series-manage-compute/add-trigger-1m.png)
+    ![Trigger toevoegen selecteren](media/azure-stack-edge-j-series-manage-compute/add-trigger-1-m.png)
 
 2. Geef in de Blade **trigger toevoegen** een unieke naam op voor de trigger.
     

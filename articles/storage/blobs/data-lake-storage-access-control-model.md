@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: normesta
-ms.openlocfilehash: e5f62456b85791bad5bb66f3abf67e523558d76e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 9fa7f586db5a32640c16db5802b56d6481e8889d
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650385"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439286"
 ---
 # <a name="access-control-model-in-azure-data-lake-storage-gen2"></a>Access Control model in Azure Data Lake Storage Gen2
 
@@ -106,7 +106,7 @@ In de volgende tabel ziet u hoe u Azure-rollen en ACL-vermeldingen kunt combi ne
 
 
 > [!NOTE] 
-> Als u de inhoud van een container in Azure Storage Explorer wilt weer geven, moeten beveiligings-principals [zich aanmelden bij Storage Explorer met behulp van Azure AD](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows#add-a-resource-via-azure-ad)en (mini maal) Lees toegang (R--) hebben voor de hoofdmap ( `\` ) van een container. Dit machtigings niveau biedt hen de mogelijkheid om de inhoud van de hoofdmap weer te geven. Als u niet wilt dat de inhoud van de hoofdmap wordt weer gegeven, kunt u de rol van de map [lezer](../../role-based-access-control/built-in-roles.md#reader) toewijzen. Met deze rol kunnen ze de containers in het account weer geven, maar niet de inhoud van de container. Vervolgens kunt u toegang verlenen tot specifieke mappen en bestanden met behulp van Acl's.   
+> Als u de inhoud van een container in Azure Storage Explorer wilt weer geven, moeten beveiligings-principals [zich aanmelden bij Storage Explorer met behulp van Azure AD](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows#attach-to-an-individual-resource)en (mini maal) Lees toegang (R--) hebben voor de hoofdmap ( `\` ) van een container. Dit machtigings niveau biedt hen de mogelijkheid om de inhoud van de hoofdmap weer te geven. Als u niet wilt dat de inhoud van de hoofdmap wordt weer gegeven, kunt u de rol van de map [lezer](../../role-based-access-control/built-in-roles.md#reader) toewijzen. Met deze rol kunnen ze de containers in het account weer geven, maar niet de inhoud van de container. Vervolgens kunt u toegang verlenen tot specifieke mappen en bestanden met behulp van Acl's.   
 
 ## <a name="security-groups"></a>Beveiligingsgroepen
 

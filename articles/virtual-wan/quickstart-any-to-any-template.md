@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/02/2021
 ms.author: cherylmc
 ms.custom: subject-armqs
-ms.openlocfilehash: bf892a45ee6df2ab29a1b326a663dc41057c7ea6
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: d31f490baec49e8e0b6fcf89caa8c19202fdf763
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509814"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431377"
 ---
 # <a name="quickstart-create-an-any-to-any-configuration-using-an-arm-template"></a>Quick Start: een wille keurige configuratie maken met een ARM-sjabloon
 
@@ -125,13 +125,7 @@ Met de sjabloon worden niet alle instellingen geconfigureerd die nodig zijn voor
 
 Als u de resources die u hebt gemaakt, niet meer nodig hebt, verwijdert u deze. Sommige virtuele WAN-resources moeten in een bepaalde volg orde worden verwijderd vanwege afhankelijkheden. Het duurt ongeveer 30 minuten om het verwijderen te volt ooien.
 
-1. Open het virtuele WAN dat u hebt gemaakt.
-1. Selecteer een virtuele hub die is gekoppeld aan het virtuele WAN om de hub-pagina te openen.
-1. Klik op **Verwijderen**. Verwijder alle entiteiten (verbindingen, gateways, enz.) in de hub. Dit kan 30 minuten duren.
-1. U kunt de hub op dit moment verwijderen of op een later tijdstip verwijderen wanneer u de resource groep verwijdert.
-1. Herhaal dit voor alle hubs die aan het virtuele WAN zijn gekoppeld.
-1. Ga naar de resource groep in het Azure Portal.
-1. Selecteer **Resourcegroep verwijderen**. Hiermee verwijdert u alles in de resource groep, met inbegrip van de hubs en het virtuele WAN.
+[!INCLUDE [Delete resources](../../includes/virtual-wan-resource-cleanup.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

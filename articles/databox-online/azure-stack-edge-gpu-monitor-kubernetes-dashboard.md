@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 137cff47d49be1405f60bc47cd16f7f027ab63a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 19b3595228c29814e42af88696972fd81b156190
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320826"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443043"
 ---
 # <a name="use-kubernetes-dashboard-to-monitor-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes-dash board gebruiken om uw Azure Stack Edge Pro GPU-apparaat te bewaken
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u het Kubernetes-dash board opent en gebruikt om uw Azure Stack Edge Pro GPU-apparaat te bewaken. Als u uw apparaat wilt bewaken, kunt u grafieken gebruiken in Azure Portal, het Kubernetes-dash board weer geven of `kubectl` opdrachten uitvoeren via de Power shell-interface van het apparaat. 
 
@@ -33,7 +35,7 @@ In dit artikel leert u het volgende:
 
 ## <a name="about-kubernetes-dashboard"></a>Over Kubernetes-dash board
 
-Kubernetes dash board is een webinterface die u kunt gebruiken voor het oplossen van problemen met in containers geplaatste toepassingen. Het Kubernetes-dash board is een alternatief voor de Kubernetes- `kubectl` opdracht regel. Zie [Kubernetes-dash board](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)voor meer informatie. 
+Kubernetes Dashboard is een gebruikersinterface op het web die u kunt gebruiken voor het oplossen van problemen met in containers geplaatste toepassingen. Het Kubernetes-dash board is een alternatief voor de Kubernetes- `kubectl` opdracht regel. Zie [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)voor meer informatie. 
 
 Op uw Azure Stack Edge Pro-apparaat kunt u het Kubernetes-dash board in de modus *alleen-lezen* gebruiken om een overzicht te krijgen van de toepassingen die worden uitgevoerd op uw Azure stack Edge Pro-apparaat, de status van Kubernetes-cluster bronnen weer geven en eventuele fouten te bekijken die op het apparaat zijn opgetreden.
 
@@ -41,7 +43,7 @@ Op uw Azure Stack Edge Pro-apparaat kunt u het Kubernetes-dash board in de modus
 
 Het Kubernetes-dash board is *alleen-lezen* en wordt uitgevoerd op het Kubernetes-hoofd knooppunt op poort 31000. Volg deze stappen om toegang te krijgen tot het dash board: 
 
-1. Ga in de lokale gebruikers interface van uw apparaat naar **apparaat** en ga vervolgens naar **eind punten**van het apparaat. 
+1. Ga in de lokale gebruikers interface van uw apparaat naar **apparaat** en ga vervolgens naar **eind punten** van het apparaat. 
 1. Selecteer **Download configuratie** om een te downloaden `kubeconfig` waarmee u toegang krijgt tot het dash board. Sla het `config.json` bestand op uw lokale systeem op.
 1. Selecteer de URL van het Kubernetes-dash board om het dash board in een browser te openen.
 
@@ -93,7 +95,7 @@ Als u de container logboeken wilt weer geven, voert u de volgende stappen uit op
 
 1. Ga in het linkerdeel venster van het dash board naar de **naam ruimte**. Filter op de naam ruimte waarin de IoT Edge-modules zijn geïmplementeerd, in dit geval **iotedge**.
 1. Ga in het linkerdeel venster naar **werk belastingen > peul**.
-1. In het rechterdeel venster ziet u alle op het apparaat uitgevoerde peulen. Zoek de pod die de module uitvoert waarvoor u de logboeken wilt weer geven. Selecteer de verticale beletsel tekens voor de pod die u hebt geïdentificeerd en selecteer **Logboeken**in het context menu.
+1. In het rechterdeel venster ziet u alle op het apparaat uitgevoerde peulen. Zoek de pod die de module uitvoert waarvoor u de logboeken wilt weer geven. Selecteer de verticale beletsel tekens voor de pod die u hebt geïdentificeerd en selecteer **Logboeken** in het context menu.
 
     ![Container logboeken weer geven 1](./media/azure-stack-edge-gpu-monitor-kubernetes-dashboard/kubernetes-view-container-logs-1.png)
 

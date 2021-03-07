@@ -3,12 +3,12 @@ title: Oorzaken van niet-naleving bepalen
 description: Wanneer een resource niet-compatibel is, zijn er veel mogelijke redenen. Meer informatie over de oorzaak van de niet-naleving.
 ms.date: 09/30/2020
 ms.topic: how-to
-ms.openlocfilehash: df1eefec782835838add0beb8939bf4ff1a8a194
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8168bf22aceaf5cbdec4b1346801aa62b7aa4ee
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541268"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439830"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Oorzaken van niet-naleving bepalen
 
@@ -32,15 +32,15 @@ Voer de volgende stappen uit om de compatibiliteits gegevens weer te geven:
 
 1. Start de Azure Policy-service in Azure Portal door **Alle services** te selecteren en dan **Beleid** te zoeken en te selecteren.
 
-1. Selecteer op de pagina **overzicht** of **naleving** een beleids regel in een **nalevings status** die _niet compatibel_is.
+1. Selecteer op de pagina **overzicht** of **naleving** een beleids regel in een **nalevings status** die _niet compatibel_ is.
 
-1. Klik op het tabblad **resource naleving** van de pagina **naleving van beleid** met de rechter muisknop of selecteer het weglatings teken van een resource in een **compatibiliteits status** die _niet compatibel_is. Selecteer vervolgens **nalevings details weer geven**.
+1. Klik op het tabblad **resource naleving** van de pagina **naleving van beleid** met de rechter muisknop of selecteer het weglatings teken van een resource in een **compatibiliteits status** die _niet compatibel_ is. Selecteer vervolgens **nalevings details weer geven**.
 
    :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
 
-1. In het deel venster **nalevings Details** worden de gegevens van de laatste evaluatie van de resource weer gegeven aan de huidige beleids toewijzing. In dit voor beeld wordt het veld **micro soft. SQL/servers/versie** _12,0_ aangetroffen terwijl de beleids definitie _14,0_werd verwacht. Als de resource meerdere redenen niet voldoet, wordt deze in dit deel venster weer gegeven.
+1. In het deel venster **nalevings Details** worden de gegevens van de laatste evaluatie van de resource weer gegeven aan de huidige beleids toewijzing. In dit voor beeld wordt het veld **micro soft. SQL/servers/versie** _12,0_ aangetroffen terwijl de beleids definitie _14,0_ werd verwacht. Als de resource meerdere redenen niet voldoet, wordt deze in dit deel venster weer gegeven.
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Scherm afbeelding van het deel venster nalevings Details en de redenen voor niet-naleving van de huidige waarde is twaalf en de doel waarde is 14." border="false":::
 
    Voor een **auditIfNotExists** -of **deployIfNotExists** -beleids definitie bevatten de details de eigenschap **Details. type** en eventuele optionele eigenschappen. Zie Eigenschappen van [auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) en [deployIfNotExists](../concepts/effects.md#deployifnotexists-properties)voor een lijst. De **laatste geëvalueerde resource** is een gerelateerde resource uit de sectie **Details** van de definitie.
 
@@ -69,7 +69,7 @@ Voer de volgende stappen uit om de compatibiliteits gegevens weer te geven:
    }
    ```
 
-   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Scherm opname van het deel venster met nalevings Details voor ifNotExists, inclusief het aantal geëvalueerde resources." border="false":::
 
 > [!NOTE]
 > Voor het beveiligen van gegevens, wanneer een eigenschaps waarde een _geheim_ is, wordt de huidige waarde sterretjes weer gegeven.
@@ -80,7 +80,7 @@ In deze details wordt uitgelegd waarom een resource momenteel niet compatibel is
 
 De volgende matrix wijst elke mogelijke _reden_ toe aan de verantwoordelijke [voor waarde](../concepts/definition-structure.md#conditions) in de beleids definitie:
 
-|Reden | Conditie |
+|Reden | Voorwaarde |
 |-|-|
 |De huidige waarde moet de doel waarde als sleutel bevatten. |containsKey of **niet** notContainsKey |
 |De huidige waarde moet de doel waarde bevatten. |bevat of **niet** notContains |
@@ -108,13 +108,13 @@ De volgende matrix wijst elke mogelijke _reden_ toe aan de verantwoordelijke [vo
 
 Voor toewijzingen met een [resource provider modus](../concepts/definition-structure.md#resource-manager-modes)selecteert u de _niet-compatibele_ resource om een diep gaande weer gave te openen. Op het **tabblad Compatibiliteit van onderdelen** is aanvullende informatie specifiek voor de resource provider modus in het toegewezen beleid met het _niet-compatibele_ **onderdeel** en de **onderdeel-id**.
 
-:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+:::image type="content" source="../media/getting-compliance-data/compliance-components.png" alt-text="Scherm afbeelding van het tabblad Compatibiliteit van onderdelen en Details van naleving voor een toewijzing van de resource provider modus." border="false":::
 
 ## <a name="compliance-details-for-guest-configuration"></a>Compliance-details voor gastconfiguratie
 
-Voor _auditIfNotExists_ -beleid in de categorie _gast configuratie_ kunnen er meerdere instellingen worden geëvalueerd in de virtuele machine en moet u Details per instelling bekijken. Als u bijvoorbeeld wilt controleren op een lijst met wachtwoord beleid en slechts een van de statussen _niet-compatibel_is, moet u weten welke specifieke wachtwoord beleidsregels niet voldoen aan de vereisten en waarom.
+Voor _auditIfNotExists_ -beleid in de categorie _gast configuratie_ kunnen er meerdere instellingen worden geëvalueerd in de virtuele machine en moet u Details per instelling bekijken. Als u bijvoorbeeld wilt controleren op een lijst met wachtwoord beleid en slechts een van de statussen _niet-compatibel_ is, moet u weten welke specifieke wachtwoord beleidsregels niet voldoen aan de vereisten en waarom.
 
-Het is ook mogelijk dat u niet rechtstreeks toegang hebt tot de virtuele machine, maar u moet rapporteren waarom de virtuele machine _niet compatibel_is.
+Het is ook mogelijk dat u niet rechtstreeks toegang hebt tot de virtuele machine, maar u moet rapporteren waarom de virtuele machine _niet compatibel_ is.
 
 ### <a name="azure-portal"></a>Azure Portal
 
@@ -122,80 +122,15 @@ Volg dezelfde stappen in de bovenstaande sectie voor het weer geven van naleving
 
 Selecteer in het deel venster compatibiliteits Details de koppeling **laatste geëvalueerde resource**.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Scherm opname van het weer geven van de compatibiliteits Details van de auditIfNotExists-definitie." border="false":::
 
-Op de pagina **gast toewijzing** worden alle beschik bare nalevings details weer gegeven. Elke rij in de weer gave vertegenwoordigt een evaluatie die in de machine is uitgevoerd. In de kolom **reden** wordt een woord groep weer gegeven waarin wordt beschreven waarom de gast toewijzing _niet compatibel_is. Als u bijvoorbeeld wachtwoord beleid controleert, wordt in de kolom **reden** tekst weer gegeven, inclusief de huidige waarde voor elke instelling.
+Op de pagina **gast toewijzing** worden alle beschik bare nalevings details weer gegeven. Elke rij in de weer gave vertegenwoordigt een evaluatie die in de machine is uitgevoerd. In de kolom **reden** wordt een woord groep weer gegeven waarin wordt beschreven waarom de gast toewijzing _niet compatibel_ is. Als u bijvoorbeeld wachtwoord beleid controleert, wordt in de kolom **reden** tekst weer gegeven, inclusief de huidige waarde voor elke instelling.
 
-:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
-
-### <a name="azure-powershell"></a>Azure PowerShell
-
-U kunt ook nalevings Details van Azure PowerShell weer geven. Controleer eerst of de module gast configuratie is geïnstalleerd.
-
-```azurepowershell-interactive
-Install-Module Az.GuestConfiguration
-```
-
-U kunt de huidige status van alle gast toewijzingen voor een virtuele machine weer geven met behulp van de volgende opdracht:
-
-```azurepowershell-interactive
-Get-AzVMGuestPolicyStatus -ResourceGroupName <resourcegroupname> -VMName <vmname>
-```
-
-```output
-PolicyDisplayName                                                         ComplianceReasons
------------------                                                         -----------------
-Audit that an application is installed inside Windows VMs                 {[InstalledApplication]bwhitelistedapp}
-Audit that an application is not installed inside Windows VMs.            {[InstalledApplication]NotInstalledApplica...
-```
-
-Als u alleen de _reden_ wilt bekijken waarin wordt beschreven waarom de virtuele machine _niet compatibel_is, retourneert u alleen de onderliggende eigenschap reden.
-
-```azurepowershell-interactive
-Get-AzVMGuestPolicyStatus -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
-```
-
-```output
-The following applications are not installed: '<name>'.
-```
-
-U kunt ook een nalevings geschiedenis voor gast toewijzingen in het bereik voor de machine uitvoeren. De uitvoer van deze opdracht bevat de details van elk rapport voor de virtuele machine.
-
-> [!NOTE]
-> De uitvoer kan een grote hoeveelheid gegevens retour neren. Het is raadzaam om de uitvoer op te slaan in een variabele.
-
-```azurepowershell-interactive
-$guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname>
-$guestHistory
-```
-
-```output
-PolicyDisplayName                                                         ComplianceStatus ComplianceReasons StartTime              EndTime                VMName LatestRepor
-                                                                                                                                                                  tId
------------------                                                         ---------------- ----------------- ---------              -------                ------ -----------
-[Preview]: Audit that an application is installed inside Windows VMs      NonCompliant                       02/10/2019 12:00:38 PM 02/10/2019 12:00:41 PM VM01  ../17fg0...
-<truncated>
-```
-
-Als u deze weer gave wilt vereenvoudigen, gebruikt u de para meter **ShowChanged** . De uitvoer van deze opdracht bevat alleen de rapporten die een wijziging in de nalevings status hebben gevolgd.
-
-```azurepowershell-interactive
-$guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname> -ShowChanged
-$guestHistory
-```
-
-```output
-PolicyDisplayName                                                         ComplianceStatus ComplianceReasons StartTime              EndTime                VMName LatestRepor
-                                                                                                                                                                  tId
------------------                                                         ---------------- ----------------- ---------              -------                ------ -----------
-Audit that an application is installed inside Windows VMs                 NonCompliant                       02/10/2019 10:00:38 PM 02/10/2019 10:00:41 PM VM01  ../12ab0...
-Audit that an application is installed inside Windows VMs.                Compliant                          02/09/2019 11:00:38 AM 02/09/2019 11:00:39 AM VM01  ../e3665...
-Audit that an application is installed inside Windows VMs                 NonCompliant                       02/09/2019 09:00:20 AM 02/09/2019 09:00:23 AM VM01  ../15ze1...
-```
+:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Scherm afbeelding van de nalevings Details van de gast toewijzing." border="false":::
 
 ## <a name="change-history-preview"></a><a name="change-history"></a>Wijzigings overzicht (preview-versie)
 
-Als onderdeel van een nieuwe **open bare preview**zijn de laatste 14 dagen aan wijzigings geschiedenis beschikbaar voor alle Azure-resources die de verwijdering van de [volledige modus](../../../azure-resource-manager/templates/complete-mode-deletion.md)ondersteunen. Wijzigings overzicht bevat details over wanneer een wijziging is gedetecteerd en een _visueel verschil_ voor elke wijziging. Een wijzigings detectie wordt geactiveerd wanneer de Azure Resource Manager eigenschappen worden toegevoegd, verwijderd of gewijzigd.
+Als onderdeel van een nieuwe **open bare preview** zijn de laatste 14 dagen aan wijzigings geschiedenis beschikbaar voor alle Azure-resources die de verwijdering van de [volledige modus](../../../azure-resource-manager/templates/complete-mode-deletion.md)ondersteunen. Wijzigings overzicht bevat details over wanneer een wijziging is gedetecteerd en een _visueel verschil_ voor elke wijziging. Een wijzigings detectie wordt geactiveerd wanneer de Azure Resource Manager eigenschappen worden toegevoegd, verwijderd of gewijzigd.
 
 1. Start de Azure Policy-service in Azure Portal door **Alle services** te selecteren en dan **Beleid** te zoeken en te selecteren.
 
@@ -205,11 +140,11 @@ Als onderdeel van een nieuwe **open bare preview**zijn de laatste 14 dagen aan w
 
 1. Selecteer het tabblad **wijzigings overzicht (preview)** op de pagina **resource naleving** . Er wordt een lijst weer gegeven met gedetecteerde wijzigingen, indien aanwezig.
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Scherm afbeelding van het tabblad wijzigings overzicht en gedetecteerde wijzigings tijden op de pagina Resource naleving." border="false":::
 
 1. Selecteer een van de gedetecteerde wijzigingen. Het _visuele verschil_ voor de resource wordt weer gegeven op de pagina **wijzigings overzicht** .
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Scherm afbeelding van de koppeling ' nalevings details weer geven ' op het tabblad Resource naleving." border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Scherm afbeelding van het visuele verschil tussen de status van de voor-en after-eigenschap van de wijzigings geschiedenis op de pagina wijzigings overzicht." border="false":::
 
 De _visuele diff_ -aideds bij het identificeren van wijzigingen aan een resource. De gedetecteerde wijzigingen zijn mogelijk niet gerelateerd aan de huidige nalevings status van de resource.
 

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.service: digital-twins
 ms.date: 07/14/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d7d97ca1eb590fb96789d439243dd04d6143a960
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 641b44a5e21e6646c07e6e1511e1c4ff01707f79
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203144"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434097"
 ---
 # <a name="known-issues-in-azure-digital-twins"></a>Bekende problemen in azure Digital Apparaatdubbels
 
@@ -37,7 +37,7 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 
 ## <a name="issue-with-interactive-browser-authentication-on-azureidentity-120"></a>Probleem met interactieve browser verificatie op Azure. identiteits 1.2.0
 
-**Beschrijving van probleem:** Wanneer u verificatie code in uw Azure Digital Apparaatdubbels-toepassingen schrijft met versie **1.2.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, kunnen er problemen optreden met de [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet&preserve-view=true) -methode. Dit geeft als fout bericht ' Azure. Identity. AuthenticationFailedException ' bij het verifiëren van de verificatie in een browser venster. Het browser venster kan niet volledig worden gestart, of lijkt om de gebruiker te verifiëren, terwijl de client toepassing nog steeds mislukt met de fout.
+**Beschrijving van probleem:** Wanneer u verificatie code in uw Azure Digital Apparaatdubbels-toepassingen schrijft met versie **1.2.0** van de **[Azure. Identity](/dotnet/api/azure.identity) -bibliotheek**, kunnen er problemen optreden met de [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential) -methode. Dit geeft als fout bericht ' Azure. Identity. AuthenticationFailedException ' bij het verifiëren van de verificatie in een browser venster. Het browser venster kan niet volledig worden gestart, of lijkt om de gebruiker te verifiëren, terwijl de client toepassing nog steeds mislukt met de fout.
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |
@@ -45,7 +45,7 @@ Dit artikel bevat informatie over bekende problemen met Azure Digital Apparaatdu
 
 ## <a name="issue-with-default-azure-credential-authentication-on-azureidentity-130"></a>Probleem met standaard verificatie van Azure-referenties op Azure. identiteits 1.3.0
 
-**Beschrijving van probleem:** Bij het schrijven van een verificatie code met behulp van versie **1.3.0** van de **[Azure. Identity](/dotnet/api/azure.identity?view=azure-dotnet&preserve-view=true) -bibliotheek**, hebben sommige gebruikers problemen ondervonden met de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet?view=azure-dotnet&preserve-view=true) -methode die in veel voor beelden in deze Azure Digital apparaatdubbels-documenten wordt gebruikt. Dit geeft aan dat er een fout bericht wordt weer gegeven dat ' Azure. Identity. AuthenticationFailedException: SharedTokenCacheCredential-verificatie is mislukt ' wordt weer gegeven wanneer de code probeert te verifiëren.
+**Beschrijving van probleem:** Bij het schrijven van een verificatie code met behulp van versie **1.3.0** van de **[Azure. Identity](/dotnet/api/azure.identity) -bibliotheek**, hebben sommige gebruikers problemen ondervonden met de [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) -methode die in veel voor beelden in deze Azure Digital apparaatdubbels-documenten wordt gebruikt. Dit geeft aan dat er een fout bericht wordt weer gegeven dat ' Azure. Identity. AuthenticationFailedException: SharedTokenCacheCredential-verificatie is mislukt ' wordt weer gegeven wanneer de code probeert te verifiëren.
 
 | Is dit van invloed op mij? | Oorzaak | Oplossing |
 | --- | --- | --- |

@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Service Bus-berichten
 description: Geeft beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Service Bus-berichten weer. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 02/09/2021
+ms.date: 03/05/2021
 ms.topic: sample
 author: spelluru
 ms.author: spelluru
 ms.service: service-bus-messaging
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 190fb50f4924836290e3351d1af239872cd38a65
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: c5afa711fbd3ea0a0d477d28889252114aa12208
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100095529"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438610"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-service-bus-messaging"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Service Bus-berichten
 

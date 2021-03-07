@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/03/2021
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 6e9e1319b90ab859c63c022e478bc26c4b8aedeb
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 660fbf7cc4dd28c800d8f49fd5d990c99f97c4c8
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550215"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442992"
 ---
 # <a name="run-existing-iot-edge-modules-from-azure-stack-edge-pro-fpga-devices-on-azure-stack-edge-pro-gpu-device"></a>Bestaande IoT Edge-modules uitvoeren vanaf Azure Stack Edge Pro FPGA-apparaten op Azure Stack Edge Pro GPU-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-sku.md)]
 
 In dit artikel worden de wijzigingen beschreven die nodig zijn voor een IoT Edge module op basis van docker die wordt uitgevoerd op Azure Stack Edge Pro FPGA, zodat deze kan worden uitgevoerd op een IoT Edge platform op basis van Azure Stack Edge Pro GPU-apparaat. 
 

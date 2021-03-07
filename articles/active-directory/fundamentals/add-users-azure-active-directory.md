@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/12/2019
+ms.date: 03/05/2021
 ms.author: ajburnle
-ms.reviewer: jeffsta
+ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de529a8ffb0c72854904717c71dbc322c919f1a8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 51f1b122cb005f47e9816db3b403a35f4f502248
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996692"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426821"
 ---
 # <a name="add-or-delete-users-using-azure-active-directory"></a>Gebruikers toevoegen of verwijderen met Azure Active Directory
 
@@ -74,6 +74,9 @@ Als u een omgeving met Azure Active Directory (Cloud) en Windows Server-Active D
 
 U kunt een bestaande gebruiker verwijderen via Azure Active Directory Portal.
 
+>[!Note]
+>U moet een globale beheerder of beheerderrol hebben om gebruikers in uw organisatie te kunnen verwijderen. Globale beheerders kunnen alle gebruikers, waaronder andere beheerders, verwijderen. Gebruikers beheerders kunnen alle niet-beheerders gebruikers, helpdesk beheerders en andere gebruikers beheerders verwijderen. Zie [Administrator role permissions in azure AD](https://docs.microsoft.com/azure/active-directory/roles/permissions-reference)(Engelstalig) voor meer informatie.
+
 Voer de volgende stappen uit om een gebruiker te verwijderen:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) met behulp van een gebruikers beheerders account voor de organisatie.
@@ -91,7 +94,7 @@ De gebruiker wordt verwijderd en wordt niet meer weer gegeven op de pagina **geb
 Wanneer een gebruiker wordt verwijderd, worden alle licenties die door de gebruiker worden gebruikt, beschikbaar gesteld voor andere gebruikers.
 
 >[!Note]
->U moet Windows Server Active Directory gebruiken om de identiteit, contact gegevens of taak gegevens bij te werken voor gebruikers waarvan de bron van de autoriteit Windows Server Active Directory is. Nadat u de update hebt voltooid, moet u wachten tot de volgende synchronisatie cyclus is voltooid voordat u de wijzigingen ziet.
+>Als u de identiteit, contact gegevens of taak gegevens wilt bijwerken voor gebruikers waarvan de bron van de autoriteit Windows Server Active Directory is, moet u Windows Server Active Directory gebruiken. Nadat u de update hebt voltooid, moet u wachten tot de volgende synchronisatie cyclus is voltooid voordat u de wijzigingen ziet.
 
 ## <a name="next-steps"></a>Volgende stappen
 

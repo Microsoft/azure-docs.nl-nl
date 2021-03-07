@@ -8,16 +8,18 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 8e08c531cd46d5112138a3feedf97b27307e3dca
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f6e4218290de6ef41ef6eedc78b3b0b55ee322e8
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656190"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438554"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
-Azure Communication Services is toegewijd aan het helpen van onze klanten bij het voldoen aan hun vereisten voor privacy en persoonlijke gegevens. Als ontwikkelaar die gebruikmaakt van Communication Services met een directe relatie met mensen die de toepassing gebruiken, bent u mogelijk een controller van hun gegevens. Omdat Azure Communication Services deze gegevens namens u opslaat, zijn wij waarschijnlijk een verwerker van deze gegevens. Deze pagina geeft een overzicht van de manier waarop de service gegevens bewaart en hoe u deze gegevens kunt identificeren, exporteren en verwijderen.
+[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
+
+Azure Communication Services is toegewijd aan het helpen van onze klanten bij het voldoen aan hun vereisten voor privacy en persoonlijke gegevens. Als ontwikkelaar die gebruikmaakt van Communication Services met een directe relatie met mensen die de toepassing gebruiken, bent u mogelijk een controller van hun gegevens. Omdat Azure Communication Services deze gegevens namens u opslaat en versleutelt, is er waarschijnlijk een processor van deze gegevens. Deze pagina geeft een overzicht van de manier waarop de service gegevens bewaart en hoe u deze gegevens kunt identificeren, exporteren en verwijderen.
 
 ## <a name="data-residency"></a>Gegevenslocatie
 
@@ -63,7 +65,7 @@ Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijder
 
 ### <a name="sms"></a>Sms
 
-Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard.
+Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard. 
 
 ### <a name="pstn-voice-calling"></a>PSTN-spraakoproepen
 

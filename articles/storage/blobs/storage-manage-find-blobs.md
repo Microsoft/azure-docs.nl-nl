@@ -3,18 +3,18 @@ title: Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 description: Meer informatie over het gebruik van BLOB-index Tags voor het categoriseren, beheren en opvragen van blob-objecten.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 10/19/2020
+ms.date: 03/05/2021
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: klaasl
 ms.custom: references_regions
-ms.openlocfilehash: 4f84c3c2f6fc671a8cb6ac70313361540e3dd815
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bfaee493c25f882b8beeed565a155db93efd0083
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95523277"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431751"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-tags-preview"></a>Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 
@@ -29,6 +29,9 @@ Met Blob index Tags kunt u het volgende doen:
 
 Houd rekening met een scenario waarin u miljoenen blobs in uw opslag account hebt, die toegankelijk zijn voor veel verschillende toepassingen. U wilt alle gerelateerde gegevens uit één project zoeken. U weet niet wat het bereik is omdat de gegevens kunnen worden verdeeld over meerdere containers met verschillende naam conventies. Uw toepassingen uploaden echter alle gegevens met tags op basis van het project. In plaats van miljoenen blobs te doorzoeken en namen en eigenschappen te vergelijken, kunt u gebruiken `Project = Contoso` als detectie criterium. Met Blob-index worden alle containers in het hele opslag account gefilterd, zodat u alleen de set van 50 blobs uit kunt vinden en retour neren `Project = Contoso` .
 
+> [!IMPORTANT]
+> BLOB index Tags zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+
 Zie [BLOB-index Tags gebruiken om gegevens te beheren en te zoeken](storage-blob-index-how-to.md)om aan de slag te gaan met voor beelden van het gebruik van BLOB-index.
 
 ## <a name="blob-index-tags-and-data-management"></a>Labels en gegevens beheer voor BLOB-indexen
@@ -42,7 +45,6 @@ Houd rekening met de volgende vijf blobs in uw opslag account:
 - *Foto's/bannerphoto.png*
 - *archieven/voltooide/2019review.pdf*
 - *Logboeken/2020/01/01/logfile.txt*
-
 
 Deze blobs worden gescheiden met behulp van een voor voegsel van de naam van de *container/virtuele map/BLOB*. U kunt een index label kenmerk van `Project = Contoso` op deze vijf blobs instellen om ze samen te categoriseren en daarbij hun huidige voorvoegsel organisatie te onderhouden. Door index tags toe te voegen, hoeft u geen gegevens te verplaatsen door de mogelijkheid om gegevens te filteren en te zoeken met behulp van de index.
 

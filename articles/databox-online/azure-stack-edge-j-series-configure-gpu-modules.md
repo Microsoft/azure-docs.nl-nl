@@ -6,18 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/04/2021
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: d172ce98ba93360c621a91fb0e2a55d022470943
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: dfae1a9b02db7e7b9577acdb47a1ba089f1609e8
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935551"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439048"
 ---
 # <a name="configure-and-run-a-module-on-gpu-on-azure-stack-edge-pro-device"></a>Een module op GPU op Azure Stack Edge Pro-apparaat configureren en uitvoeren
 
-Uw Azure Stack Edge Pro-apparaat bevat een of meer GPU (graphics processing unit). Gpu's zijn een populaire keuze voor AI-berekeningen wanneer ze parallelle verwerkings mogelijkheden bieden en sneller zijn bij het weer geven van afbeeldingen dan Cpu's (Central Processing Units). Voor meer informatie over de GPU die zich in uw Azure Stack Edge Pro-apparaat bevindt, gaat u naar de [technische specificaties van het Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-technical-specifications-compliance.md).
+[!INCLUDE [applies-to-GPU-and-pro-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-sku.md)]
+
+Uw Azure Stack Edge Pro-apparaat bevat een of meer GPU (graphics processing unit). GPU's zijn een populaire keuze voor AI-berekeningen omdat ze mogelijkheden voor parallelle verwerking bieden en sneller afbeeldingen weergeven dan CPU's (Central Processing Units). Voor meer informatie over de GPU die zich in uw Azure Stack Edge Pro-apparaat bevindt, gaat u naar de [technische specificaties van het Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-technical-specifications-compliance.md).
 
 In dit artikel wordt beschreven hoe u een module op de GPU op uw Azure Stack Edge Pro-apparaat configureert en uitvoert. In dit artikel gebruikt u een openbaar toegankelijke container module **cijfers** die zijn geschreven voor nvidia T4-gpu's. Deze procedure kan worden gebruikt voor het configureren van andere modules die door NVIDIA worden gepubliceerd voor deze Gpu's.
 
@@ -38,28 +40,28 @@ Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack
 
     ![Module configureren voor het gebruik van GPU 1](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-1.png)
 
-3. Selecteer in **IOT Edge-service inschakelen** de optie **toevoegen**.
+3. Selecteer in **IoT Edge-service inschakelen** de optie **Toevoegen**.
 
    ![Module configureren voor het gebruik van GPU 2](media/azure-stack-edge-j-series-configure-gpu-modules/configure-compute-2.png)
 
-4. Voer in **IOT Edge-service maken** de instellingen voor uw IOT hub resource in:
+4. Voer in **IoT Edge-service maken** de instellingen voor uw IoT Hub-resource in:
 
    |Veld   |Waarde    |
    |--------|---------|
    |Abonnement      | Het abonnement dat wordt gebruikt door de Azure Stack Edge-resource. |
-   |Resourcegroep    | De resource groep die wordt gebruikt door de Azure Stack Edge-resource. |
-   |IoT Hub           | Kies uit **nieuwe maken** of **bestaande gebruiken**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
-   |Naam              | Als u de standaard naam van een nieuwe IoT Hub resource niet wilt gebruiken, voert u een andere naam in. |
+   |Resourcegroep    | De resourcegroep dat wordt gebruikt door de Azure Stack Edge-resource. |
+   |IoT Hub           | Maak een keuze tussen **Nieuwe maken** en **Bestaande gebruiken**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
+   |Naam              | Als u de standaardnaam van een nieuwe IoT Hub-resource niet wilt gebruiken, voert u een andere naam in. |
 
-   Wanneer u de instellingen hebt voltooid, selecteert u **controleren + maken**. Controleer de instellingen voor uw IoT Hub resource en selecteer **maken**.
+   Wanneer u de instellingen hebt voltooid, selecteert u **Bekijken en maken**. Controleer de instellingen voor uw IoT Hub-resource en selecteer **Maken**.
 
    ![Aan de slag met rekenproces 2](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
 
-   Het maken van resources voor een IoT Hub resource duurt enkele minuten. Nadat de resource is gemaakt, wordt in het **overzicht** aangegeven dat de IOT Edge-service nu wordt uitgevoerd.
+   Het maken van de IoT Hub-resource duurt enkele minuten. Nadat de resource is gemaakt, wordt in het **Overzicht** aangegeven dat de IoT Edge-service nu wordt uitgevoerd.
 
    ![Aan de slag met rekenproces 3](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
 
-5. Om te bevestigen dat de rol van de Edge Compute is geconfigureerd, selecteert u **Eigenschappen**.
+5. Selecteer **Eigenschappen** om te controleren of de rol van het Edge-rekenproces is geconfigureerd.
 
    ![Aan de slag met rekenproces 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
 
@@ -102,7 +104,7 @@ Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack
        Voor meer informatie over omgevings variabelen die u met de NVIDIA GPU kunt gebruiken, gaat u naar [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime#environment-variables-oci-spec).
 
     > [!NOTE]
-    > Een GPU kan alleen worden toegewezen aan een module. Een module kan echter een van beide of geen Gpu's gebruiken.
+    > Een GPU kan slechts worden toegewezen aan één module. Een module kan echter een van beide of geen Gpu's gebruiken.
 
 12. Voer een naam in voor uw module. Op dit moment kunt u de optie voor het maken van een container opgeven en de dubbele instellingen voor de module wijzigen of als u klaar bent, selecteert u **toevoegen**. 
 

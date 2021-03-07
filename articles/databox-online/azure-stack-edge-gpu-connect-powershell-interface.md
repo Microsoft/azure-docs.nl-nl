@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 10/06/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 27af230f8fa157f76865bd38a48c17640491d7db
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 1404dfd25f4e80e0e05c0071da649cacfa45dac0
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896186"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102437754"
 ---
 # <a name="manage-an-azure-stack-edge-pro-gpu-device-via-windows-powershell"></a>Een Azure Stack Edge Pro GPU-apparaat beheren via Windows Power shell
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 Met Azure Stack Edge Pro-oplossing kunt u gegevens verwerken en via het netwerk verzenden naar Azure. In dit artikel worden enkele van de configuratie-en beheer taken voor uw Azure Stack Edge Pro-apparaat beschreven. U kunt de Azure Portal, de lokale webgebruikersinterface of de Windows Power shell-interface gebruiken om uw apparaat te beheren.
 
@@ -121,7 +123,7 @@ Als de compute-functie op uw apparaat is geconfigureerd, kunt u de reken logboek
     - `FullLogCollection`: Met deze para meter zorgt u ervoor dat in het logboek pakket alle reken logboeken worden opgenomen. Het logboek pakket bevat standaard slechts een subset van de logboeken.
 
 
-## <a name="change-kubernetes-pod-and-service-subnets"></a>Kubernetes pod en service-subnetten wijzigen
+## <a name="change-kubernetes-pod-and-service-subnets"></a>Subnetten voor Kubernetes-pods en -services wijzigen
 
 Kubernetes op uw Azure Stack edge-apparaat gebruikt standaard subnetten 172.27.0.0/16 en 172.28.0.0/16 voor respectievelijk pod en service. Als deze subnetten al worden gebruikt in uw netwerk, kunt u de `Set-HcsKubeClusterNetworkInfo` cmdlet uitvoeren om deze subnetten te wijzigen.
 
@@ -212,7 +214,7 @@ Commands:
 
 De volgende tabel bevat een korte beschrijving van de opdrachten die beschikbaar zijn voor `iotedge` :
 
-|command  |Beschrijving |
+|command  |Description |
 |---------|---------|
 |`list`     | Modules in lijst weergeven         |
 |`logs`     | De logboeken van een module ophalen        |

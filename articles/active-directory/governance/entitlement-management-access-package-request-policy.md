@@ -16,12 +16,12 @@ ms.date: 09/16/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4a1aa737b1f671c08d51d780fa98db50f2869a1
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 7b6bc00af8d54c8748dd82b934974282e0e8da0e
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102211648"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426957"
 ---
 # <a name="change-request-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Instellingen voor wijzigings aanvragen voor een toegangs pakket in azure AD-rechts beheer
 
@@ -197,6 +197,8 @@ Als u de aanvraag-en goedkeurings instellingen voor een toegangs pakket wilt wij
     ![Toegangs pakket-beleids instelling beleid inschakelen](./media/entitlement-management-access-package-approval-policy/enable-requests.png)
 
 1. Klik op **Volgende**.
+
+1. Als u wilt vereisen dat aanvragers aanvullende informatie verstrekken bij het aanvragen van toegang tot een toegangs pakket, gebruikt u de stappen in de [instellingen voor het goed keuren van wijzigingen en gegevens van de aanvrager (preview-versie) voor een toegangs pakket in azure AD-recht beheer voor het configureren van informatie van de](entitlement-management-access-package-approval-policy.md#collect-additional-requestor-information-for-approval-preview) aanvrager (preview).
 
 1. Levenscyclus instellingen configureren.
 

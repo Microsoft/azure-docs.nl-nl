@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: reference
 ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: 6c69e5923e2b65bab0feca04d10fa67f49df3616
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: da2201931c92939029724b1086589803845109a7
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102174455"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102439626"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -53,7 +53,7 @@ Meer informatie over dit dash board vindt u op [de overzichts pagina van Azure S
 
 ### <a name="sql-vulnerability-assessment-now-includes-the-disable-rule-experience-preview"></a>Evaluatie van SQL-beveiligings problemen bevat nu de ervaring ' regel uitschakelen ' (preview-versie)
 
-Security Center bevat een ingebouwde beveiligings scanner waarmee u mogelijke beveiligings problemen met een Data Base kunt detecteren, volgen en oplossen. De resultaten van de evaluatie scans bieden een overzicht van de beveiligings status van uw SQL-machines en Details van eventuele beveiligings resultaten.
+Security Center bevat een ingebouwde beveiligings scanner waarmee u mogelijke beveiligings problemen met een Data Base kunt detecteren, volgen en oplossen. De resultaten van uw evaluatie scans bieden een overzicht van de beveiligings status van uw SQL-machines en Details van eventuele beveiligings resultaten.
 
 Als u een organisatorische behoefte hebt om een resultaat te negeren in plaats van dit te herstellen, kunt u het eventueel uitschakelen. Uitgeschakelde resultaten hebben geen invloed op uw beveiligingsscore en genereren geen ongewenste ruis.
 

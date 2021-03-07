@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 02/10/2021
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: b06defbdac0f1bddfca13db095799f3158095585
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 3fa47935721ccfccdfe18d60a66d5cc480582e7d
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100514982"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102428234"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -29,16 +29,16 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-account en een spraak servi
 
 ## <a name="install-the-speech-sdk"></a>De Speech-SDK installeren
 
-Voordat u iets kunt doen, moet u de <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">Speech-SDK installeren voor JavaScript<span class="docon docon-navigate-external x-hidden-focus"></span></a>. Gebruik de volgende instructies, afhankelijk van uw platform:
+Voordat u iets kunt doen, moet u de <a href="https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk" target="_blank">Speech-SDK installeren voor JavaScript</a>. Gebruik de volgende instructies, afhankelijk van uw platform:
 - <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=nodejs#get-the-speech-sdk" target="_blank">Node.js <span 
 class="docon docon-navigate-external x-hidden-focus"></span></a>
-- <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=browser#get-the-speech-sdk" target="_blank">Webbrowser <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+- <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk?tabs=browser#get-the-speech-sdk" target="_blank">Webbrowser </a>
 
 Afhankelijk van de doelomgeving gebruikt u daarnaast een van de volgende opties:
 
 # <a name="script"></a>[script](#tab/script)
 
-Download en pak het <a href="https://aka.ms/csspeech/jsbrowserpackage" target="_blank">Speech-SDK voor JavaScript <span class="docon docon-navigate-external x-hidden-focus"></span></a>-bestand *microsoft.cognitiveservices.speech.sdk.bundle.js* uit en plaats het in een map die toegankelijk is voor uw HTML-bestand.
+Down load en pak de <a href="https://aka.ms/csspeech/jsbrowserpackage" target="_blank">Speech SDK voor Java script</a> - *microsoft.cognitiveservices.speech.sdk.bundle.js* bestand uit en plaats het in een map die toegankelijk is voor uw HTML-bestand.
 
 ```html
 <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>;
@@ -53,7 +53,7 @@ Download en pak het <a href="https://aka.ms/csspeech/jsbrowserpackage" target="_
 import * as sdk from "microsoft-cognitiveservices-speech-sdk";
 ```
 
-Zie <a href="https://javascript.info/import-export" target="_blank">export en import<span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie over `import`.
+Zie <a href="https://javascript.info/import-export" target="_blank">export en import</a> voor meer informatie over `import`.
 
 # <a name="require"></a>[require](#tab/require)
 
@@ -61,7 +61,7 @@ Zie <a href="https://javascript.info/import-export" target="_blank">export en im
 const sdk = require("microsoft-cognitiveservices-speech-sdk");
 ```
 
-Zie <a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/" target="_blank">Wat is require?<span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie over `require`.
+Zie <a href="https://nodejs.org/en/knowledge/getting-started/what-is-require/" target="_blank">Wat is require?</a> voor meer informatie over `require`.
 
 ---
 
@@ -285,7 +285,7 @@ function xmlToString(filePath) {
 }
 ```
 
-Zie <a href="https://nodejs.org/api/fs.html#fs_fs_readlinksync_path_options" target="_blank">Node.js-bestandssysteem<span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie over `readFileSync`. Hier is het resultaatobject precies hetzelfde als in de vorige voorbeelden.
+Zie <a href="https://nodejs.org/api/fs.html#fs_fs_readlinksync_path_options" target="_blank">Node.js-bestandssysteem</a> voor meer informatie over `readFileSync`. Hier is het resultaatobject precies hetzelfde als in de vorige voorbeelden.
 
 ```javascript
 function synthesizeSpeech() {

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: chez
 ms.reviewer: mariozi
-ms.openlocfilehash: 4e30ac2e6836b40ab0c0c2915eae48266cb4845c
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: c6c376e44c6135a800e6f7e281f8ea85b828329a
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102199204"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443867"
 ---
 # <a name="encrypt-azure-data-factory-with-customer-managed-keys"></a>Azure Data Factory versleutelen met door de klant beheerde sleutels
 
@@ -102,9 +102,9 @@ Zie [beheerde identiteits typen](../active-directory/managed-identities-azure-re
 1. Zorg ervoor dat de door de gebruiker toegewezen beheerde identiteit (UA-MI) _Get_, _dewrap sleutel_ en inpakken van _sleutel_ machtigingen voor Key Vault
 
 1. Schakel op het tabblad __Geavanceerd__ het selectie vakje in om versleuteling in te _scha kelen met behulp van een door de gebruiker beheerde sleutel_ 
-   :::image type="content" source="media/enable-customer-managed-key/06-uami-cmk.png" alt-text="scherm afbeelding van het tabblad Geavanceerd voor het maken van Data Factory in azure Portal.":::
+   :::image type="content" source="media/enable-customer-managed-key/06-user-assigned-managed-identity.png" alt-text="scherm afbeelding van het tabblad Geavanceerd voor het maken van Data Factory in azure Portal.":::
 
-1. Geef de URL voor Key Vault op
+1. Geef de URL op voor de door de klant beheerde sleutel die is opgeslagen in Key Vault
 
 1. Selecteer een geschikte door de gebruiker toegewezen beheerde identiteit voor verificatie met Key Vault
 

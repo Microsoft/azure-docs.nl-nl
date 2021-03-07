@@ -6,12 +6,12 @@ ms.author: v-elqu
 ms.service: azure-percept
 ms.topic: reference
 ms.date: 02/16/2021
-ms.openlocfilehash: 27b47cbd8eed60ccc2dc1c4a8dd397cca53a9d35
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 3e72aea657b82c2111bea1493b5654ec667c491b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098414"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425274"
 ---
 # <a name="azure-percept-audio-datasheet"></a>Azure percept-audio gegevens blad
 
@@ -24,8 +24,8 @@ ms.locfileid: "102098414"
 |Externe dimensies             |90mm x170mm x 25mm   |
 |Product gewicht                  |0,42 kg   |
 |Beheer beheergebied        |Update van Azure-apparaat (ADU)          |
-|Ondersteunde software en services |Aanpas bare tref woorden en opdrachten <br> SDK voor Azure speech-apparaten <br> [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/) <br> [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) |
-|Audio verwerking                 |XMOS XUF208-codec        |
+|Ondersteunde software en services |Aanpas bare tref woorden en opdrachten <br> Azure Speech SDK <br> [Azure IoT Hub](https://azure.microsoft.com/services/iot-hub/) <br> [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) |
+|Audiocodec                     |XMOS XUF208-codec        |
 |Sens oren, visuele indica toren en onderdelen   |4x-MEM-telefoon (MSM261D3526Z1CM) <br> 2x knoppen <br> USB-hub <br> DAC <br> 3x Led's <br> LED-stuur programma          |
 |Beveiligings Crypto-Controller      |ST-Microelectronics STM32L462CE       |
 |Poorten                           |1x USB 2,0 type micro B <br> 3.5 mm-uitgaand geluid     |

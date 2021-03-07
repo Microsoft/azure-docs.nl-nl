@@ -8,12 +8,12 @@ ms.author: maheff
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/01/2021
-ms.openlocfilehash: 558df115043d76acf865f19611e8c4cd322e00a7
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 22adccfc4adbb7f8b1c72d8b5705ec8fcdb9a375
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679715"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441088"
 ---
 # <a name="how-to-configure-sharepoint-online-indexing-in-cognitive-search-preview"></a>Indexering van share point online configureren in Cognitive Search (preview)
 
@@ -23,6 +23,9 @@ ms.locfileid: "101679715"
 > Deze previewfunctie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 > 
 > De [rest API versie 2020-06-30-preview](search-api-preview.md) biedt deze functie. Er is momenteel geen portal-of SDK-ondersteuning.
+
+> [!NOTE]
+> Share point online ondersteunt een gedetailleerd autorisatie model waarmee per gebruiker toegang wordt bepaald op document niveau. De share point online-indexer haalt deze machtigingen niet op in de zoek index Cognitive Search en biedt geen ondersteuning voor autorisatie op document niveau. Wanneer een document wordt geïndexeerd van share point online naar een zoek service, is de inhoud beschikbaar voor iedereen met lees toegang tot de index. Als u machtigingen op document niveau nodig hebt, moet u beveiligings filters onderzoeken om de resultaten van niet-geautoriseerde inhoud te kunnen beperken. Zie voor meer informatie [beveiligings beperking met Active Directory-identiteiten](search-security-trimming-for-azure-search-with-aad.md).
 
 In dit artikel wordt beschreven hoe u Azure Cognitive Search gebruikt voor het indexeren van documenten (zoals Pdf's, Microsoft Office documenten en enkele andere algemene indelingen) die zijn opgeslagen in share point online-document bibliotheken in een Azure Cognitive Search-index. Eerst worden de basis principes uitgelegd van het instellen en configureren van de Indexeer functie. Vervolgens biedt het een uitgebreidere onderzoek van gedrag en scenario's die u waarschijnlijk zult tegen komen.
 
@@ -251,7 +254,7 @@ Als u de Indexeer functie voor het indexeren van meta gegevens van documenten he
 > [!NOTE]
 > Aangepaste meta gegevens worden niet opgenomen in de huidige versie van de preview.
 
-| Id | Type | Beschrijving | 
+| Id | Type | Description | 
 | ------------- | -------------- | ----------- |
 | metadata_spo_site_library_item_id | Edm.String | De combinatie sleutel van de site-ID, bibliotheek-ID en item-ID waarmee een item in een document bibliotheek voor een site uniek wordt geïdentificeerd. |
 | metadata_spo_site_id | Edm.String | De ID van de share point online-site. |

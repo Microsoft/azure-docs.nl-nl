@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: 13598925702aeca4a06135a910e3be540083a2b6
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 8a65619d65e1a3655d3ef8a295749a705e6a79e1
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102211750"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431275"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Azure IoT Hub SDK's leren kennen en gebruiken
 
@@ -51,8 +51,8 @@ Azure IoT Hub apparaat-SDK voor .NET:
 
 * Downloaden van [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/).  De naam ruimte is micro soft. Azure. devices. clients, die IoT Hub Apparaatclients bevat (DeviceClient, ModuleClient).
 * [Broncode](https://github.com/Azure/azure-iot-sdk-csharp)
-* [API-naslaginformatie](/dotnet/api/microsoft.azure.devices?view=azure-dotnet&preserve-view=true)
-* [Module verwijzing](/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet&preserve-view=true)
+* [API-naslaginformatie](/dotnet/api/microsoft.azure.devices)
+* [Module verwijzing](/dotnet/api/microsoft.azure.devices.client.moduleclient)
 
 
 Azure IoT Hub apparaat-SDK voor Embedded C (ANSI C-C99):
@@ -153,7 +153,7 @@ Apparaat-en service-Sdk's voor Azure inrichten voor C#:
 
 * Downloaden van de SDK en [Service SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/) van het [apparaat](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Client/) vanuit NuGet.
 * [Broncode](https://github.com/Azure/azure-iot-sdk-csharp/)
-* [API-naslaginformatie](/dotnet/api/microsoft.azure.devices.provisioning.client?view=azure-dotnet&preserve-view=true)
+* [API-naslaginformatie](/dotnet/api/microsoft.azure.devices.provisioning.client)
 
 Apparaat-en service-Sdk's voor Azure inrichten voor C:
 

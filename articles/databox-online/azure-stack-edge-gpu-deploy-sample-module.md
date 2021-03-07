@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 1f16ef0ede25f17acb915a7812ae5b15b45f78a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4142542c9f17ae464a996df310c50d73d8711d8e
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90899730"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438196"
 ---
 # <a name="deploy-a-gpu-enabled-iot-module-on-azure-stack-edge-pro-gpu-device"></a>Een IoT-module met GPU-functionaliteit implementeren op Azure Stack Edge Pro GPU-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u een IoT Edge module met GPU-functionaliteit implementeert op uw Azure Stack Edge Pro GPU-apparaat. 
 
@@ -146,7 +148,7 @@ Voordat u begint, controleert u of u over het volgende beschikt:
 
 2. Kies het abonnement en de IoT-hub met het IoT Edge-apparaat dat u wilt configureren. In dit geval selecteert u het abonnement dat is gebruikt om het Azure Stack Edge Pro-apparaat te implementeren en selecteert u het IoT Edge apparaat dat u hebt gemaakt voor uw Azure Stack Edge Pro-apparaat. Dit gebeurt wanneer u Compute configureert via de Azure Portal in de eerdere stappen.
 
-3. Vouw in de VS code Explorer de sectie Azure IoT Hub uit. Onder **apparaten**wordt het IOT edge apparaat weer geven dat overeenkomt met uw Azure stack Edge Pro-apparaat. 
+3. Vouw in de VS code Explorer de sectie Azure IoT Hub uit. Onder **apparaten** wordt het IOT edge apparaat weer geven dat overeenkomt met uw Azure stack Edge Pro-apparaat. 
 
     1. Selecteer dat apparaat, klik met de rechter muisknop en selecteer **controle van ingebouwd gebeurtenis begin punt starten**.
   

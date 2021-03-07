@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: c49fee169b7bd01ee7cf8a6d539c2125cf6568b3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 5faff410fa18c5161d93f739f77eeb9c85d581a8
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545312"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430952"
 ---
 # <a name="pagination-in-azure-cosmos-db"></a>Paginering in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -59,7 +59,7 @@ Als de query een vervolg token retourneert, zijn er aanvullende query resultaten
 
 In Azure Cosmos DB REST API kunt u vervolg tokens met de `x-ms-continuation` header beheren. Net als bij het uitvoeren van query's met de .NET-of Java-SDK, `x-ms-continuation` betekent dit dat de query aanvullende resultaten oplevert.
 
-Zolang u dezelfde SDK-versie gebruikt, verlopen vervolg tokens nooit. U kunt eventueel [de grootte van een vervolg token beperken](/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Ongeacht de hoeveelheid gegevens of het aantal fysieke partities in uw container, retour neren query's één vervolg token.
+Zolang u dezelfde SDK-versie gebruikt, verlopen vervolg tokens nooit. U kunt eventueel [de grootte van een vervolg token beperken](/dotnet/api/microsoft.azure.documents.client.feedoptions.responsecontinuationtokenlimitinkb#Microsoft_Azure_Documents_Client_FeedOptions_ResponseContinuationTokenLimitInKb). Ongeacht de hoeveelheid gegevens of het aantal fysieke partities in uw container, retour neren query's één vervolg token.
 
 U kunt geen vervolg tokens gebruiken voor query's met [Group by](sql-query-group-by.md) of [DISTINCT](sql-query-keywords.md#distinct) , omdat voor deze query's een aanzienlijke hoeveelheid status zou moeten worden opgeslagen. Voor query's met `DISTINCT` kunt u vervolg tokens gebruiken als u `ORDER BY` aan de query toevoegt.
 

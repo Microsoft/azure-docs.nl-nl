@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 6f77efc877f210455be6716f8159ee000241c62f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 6fa8e2d9fb2270d53d8c0419ac7b4d88d79f30fd
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102040342"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425699"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -159,11 +159,11 @@ Hiermee wordt bepaald of bewerken in de Azure Portal is ingeschakeld. Geldige wa
 
 ## <a name="functions_extension_version"></a>\_extensie \_ versie van functies
 
-De versie van de functions-runtime die moet worden gebruikt in deze functie-app. Een tilde met een primaire versie houdt in dat u de nieuwste versie van die primaire versie gebruikt (bijvoorbeeld "~ 2"). Wanneer er nieuwe versies voor dezelfde primaire versie beschikbaar zijn, worden deze automatisch geïnstalleerd in de functie-app. Als u de app wilt vastmaken aan een specifieke versie, gebruikt u het volledige versie nummer (bijvoorbeeld ' 2.0.12345 '). De standaard waarde is "~ 2". Een waarde voor `~1` het vastpinnen van uw app naar versie 1. x van de runtime.
+De versie van de functions-runtime die als host fungeert voor uw functie-app. Een tilde ( `~` ) met een primaire versie houdt in dat u de nieuwste versie van die primaire versie gebruikt (bijvoorbeeld "~ 3"). Wanneer er nieuwe versies voor dezelfde primaire versie beschikbaar zijn, worden deze automatisch geïnstalleerd in de functie-app. Als u de app wilt vastmaken aan een specifieke versie, gebruikt u het volledige versie nummer (bijvoorbeeld ' 3.0.12345 '). De standaard waarde is "~ 3". Een waarde voor `~1` het vastpinnen van uw app naar versie 1. x van de runtime. Raadpleeg [Overzicht van Azure Functions-runtime](functions-versions.md) voor meer informatie.
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
-|\_extensie \_ versie van functies|~ 2|
+|\_extensie \_ versie van functies|~ 3|
 
 ## <a name="functions_v2_compatibility_mode"></a>Function \_ v2- \_ compatibiliteits \_ modus
 

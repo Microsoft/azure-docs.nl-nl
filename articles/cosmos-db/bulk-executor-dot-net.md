@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 ms.author: ramkris
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6f6994717ff4c730fb27bd26c40d199fb198e528
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 34aef5bd880e3ef080676fb9e90e62796d499e7b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96019953"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102429813"
 ---
 # <a name="use-the-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Gebruik de bulk-uitvoerder .NET-bibliotheek voor het uitvoeren van bulk bewerkingen in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -94,7 +94,7 @@ De toepassing ' BulkImportSample ' genereert wille keurige documenten en importe
    client.ConnectionPolicy.RetryOptions.MaxRetryAttemptsOnThrottledRequests = 0;
    ```
 
-5. De toepassing roept de BulkImportAsync-API aan. De .NET-bibliotheek biedt twee overbelasting van de API voor bulk import: een die een lijst met geserialiseerde JSON-documenten accepteert en de andere die een lijst met gedeserialiseerd POCO-documenten accepteert. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkimportasync?view=azure-dotnet&preserve-view=true)voor meer informatie over de definities van elk van deze overbelaste methoden.
+5. De toepassing roept de BulkImportAsync-API aan. De .NET-bibliotheek biedt twee overbelasting van de API voor bulk import: een die een lijst met geserialiseerde JSON-documenten accepteert en de andere die een lijst met gedeserialiseerd POCO-documenten accepteert. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkexecutor.bulkimportasync)voor meer informatie over de definities van elk van deze overbelaste methoden.
 
    ```csharp
    BulkImportResponse bulkImportResponse = await bulkExecutor.BulkImportAsync(
@@ -126,11 +126,11 @@ De toepassing ' BulkImportSample ' genereert wille keurige documenten en importe
 
 ## <a name="bulk-update-data-in-your-azure-cosmos-account"></a>Gegevens bulksgewijs bijwerken in uw Azure Cosmos-account
 
-U kunt bestaande documenten bijwerken met behulp van de BulkUpdateAsync-API. In dit voor beeld stelt u het `Name` veld in op een nieuwe waarde en verwijdert u het `Description` veld uit de bestaande documenten. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkupdate?view=azure-dotnet&preserve-view=true)voor de volledige set met ondersteunde update bewerkingen.
+U kunt bestaande documenten bijwerken met behulp van de BulkUpdateAsync-API. In dit voor beeld stelt u het `Name` veld in op een nieuwe waarde en verwijdert u het `Description` veld uit de bestaande documenten. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkupdate)voor de volledige set met ondersteunde update bewerkingen.
 
 1. Ga naar de map ' BulkUpdateSample ' en open het bestand ' BulkUpdateSample. SLN '.  
 
-2. Definieer de update-items samen met de bijbehorende veld Update bewerkingen. In dit voor beeld gaat u gebruiken `SetUpdateOperation` om het veld bij te werken `Name` en `UnsetUpdateOperation` het `Description` veld uit alle documenten te verwijderen. U kunt ook andere bewerkingen uitvoeren, zoals het ophogen van een document veld met een specifieke waarde, het pushen van specifieke waarden naar een matrix veld of het verwijderen van een specifieke waarde uit een matrix veld. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkupdate?view=azure-dotnet&preserve-view=true)voor meer informatie over de verschillende methoden van de API voor bulksgewijs bijwerken.
+2. Definieer de update-items samen met de bijbehorende veld Update bewerkingen. In dit voor beeld gaat u gebruiken `SetUpdateOperation` om het veld bij te werken `Name` en `UnsetUpdateOperation` het `Description` veld uit alle documenten te verwijderen. U kunt ook andere bewerkingen uitvoeren, zoals het ophogen van een document veld met een specifieke waarde, het pushen van specifieke waarden naar een matrix veld of het verwijderen van een specifieke waarde uit een matrix veld. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.bulkupdate)voor meer informatie over de verschillende methoden van de API voor bulksgewijs bijwerken.
 
    ```csharp
    SetUpdateOperation<string> nameUpdate = new SetUpdateOperation<string>("Name", "UpdatedDoc");
@@ -147,7 +147,7 @@ U kunt bestaande documenten bijwerken met behulp van de BulkUpdateAsync-API. In 
    }
    ```
 
-3. De toepassing roept de BulkUpdateAsync-API aan. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.ibulkexecutor.bulkupdateasync?view=azure-dotnet&preserve-view=true)voor meer informatie over de definitie van de BulkUpdateAsync-methode.  
+3. De toepassing roept de BulkUpdateAsync-API aan. Raadpleeg de [API-documentatie](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.ibulkexecutor.bulkupdateasync)voor meer informatie over de definitie van de BulkUpdateAsync-methode.  
 
    ```csharp
    BulkUpdateResponse bulkUpdateResponse = await bulkExecutor.BulkUpdateAsync(

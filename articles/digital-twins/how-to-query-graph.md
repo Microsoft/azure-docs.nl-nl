@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 3a5c98b3fad76d2206d1fcba79663063e22ecdbc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a38af4c942de280e7b1c094885a1ede6774ead56
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737967"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433213"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -220,11 +220,11 @@ Zodra u een query reeks hebt gekozen, voert u deze uit door een aanroep naar de 
 
 U kunt de API rechtstreeks aanroepen of een van de [sdk's](how-to-use-apis-sdks.md#overview-data-plane-apis) gebruiken die beschikbaar zijn voor Azure Digital apparaatdubbels.
 
-Het volgende code fragment illustreert de [.net (C#) SDK-](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) aanroep van een client-app:
+Het volgende code fragment illustreert de [.net (C#) SDK-](/dotnet/api/overview/azure/digitaltwins/client) aanroep van een client-app:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/queries.cs" id="RunQuery":::
 
-De query die wordt gebruikt in deze aanroep retourneert een lijst met digitale apparaatdubbels, die het bovenstaande voor beeld vertegenwoordigt met [BasicDigitalTwin](/dotnet/api/azure.digitaltwins.core.basicdigitaltwin?view=azure-dotnet&preserve-view=true) -objecten. Het retour type van uw gegevens voor elke query is afhankelijk van de voor waarden die u opgeeft met de `SELECT` instructie:
+De query die wordt gebruikt in deze aanroep retourneert een lijst met digitale apparaatdubbels, die het bovenstaande voor beeld vertegenwoordigt met [BasicDigitalTwin](/dotnet/api/azure.digitaltwins.core.basicdigitaltwin) -objecten. Het retour type van uw gegevens voor elke query is afhankelijk van de voor waarden die u opgeeft met de `SELECT` instructie:
 * Query's die beginnen met bevatten `SELECT * FROM ...` , retour neren een lijst met digitale apparaatdubbels (die kunnen worden geserialiseerd als `BasicDigitalTwin` objecten of andere aangepaste, digitale twee typen die u mogelijk hebt gemaakt).
 * Query's die in de notatie beginnen, `SELECT <A>, <B>, <C> FROM ...` retour neren een woorden lijst met sleutels `<A>` , `<B>` en `<C>` .
 * Andere indelingen van- `SELECT` instructies kunnen worden ontworpen om aangepaste gegevens te retour neren. U kunt overwegen uw eigen klassen te maken voor het verwerken van zeer aangepaste resultaten sets. 

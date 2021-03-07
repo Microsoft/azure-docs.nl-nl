@@ -4,17 +4,17 @@ description: Meer informatie over het vaststellen en oplossen van time-outuitzon
 author: j82w
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
-ms.date: 08/06/2020
+ms.date: 03/05/2021
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: c8d448cf335f328b5ae55579fd30127ef0e37e9d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: c8d35f7c666562022f503b2777f30f84193d0231
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340495"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102440000"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-net-sdk-request-timeout-exceptions"></a>Problemen met de time-out van Azure Cosmos DB .NET SDK-aanvragen vaststellen en oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,6 +41,22 @@ De volgende lijst bevat bekende oorzaken en oplossingen voor time-outuitzonderin
 
 ### <a name="high-cpu-utilization"></a>Hoog CPU-gebruik
 Hoog CPU-gebruik is het meest voorkomende geval. Voor een optimale latentie moet het CPU-gebruik ongeveer 40 procent zijn. 10 seconden gebruiken als het interval voor het controleren van het maximum (niet gemiddeld) CPU-gebruik. CPU-pieken komen vaker voor bij query's met kruis partities, waarbij meerdere verbindingen voor één query kunnen worden uitgevoerd.
+
+Als de fout `TransportException` informatie bevat, kan deze ook het `CPU History` volgende bevatten:
+
+```
+CPU history: 
+(2020-08-28T00:40:09.1769900Z 0.114), 
+(2020-08-28T00:40:19.1763818Z 1.732), 
+(2020-08-28T00:40:29.1759235Z 0.000), 
+(2020-08-28T00:40:39.1763208Z 0.063), 
+(2020-08-28T00:40:49.1767057Z 0.648), 
+(2020-08-28T00:40:59.1689401Z 0.137), 
+CPU count: 8)
+```
+
+* Als de CPU-metingen meer dan 70% zijn, wordt de time-out waarschijnlijk veroorzaakt door een CPU-uitputting. In dit geval kunt u de bron voor het hoge CPU-gebruik onderzoeken en deze verminderen, of de computer opschalen voor gebruik van grotere resources.
+* Als de CPU-metingen niet elke tien seconden plaatsvinden (bijvoorbeeld hiaten of meettijden duiden op langere perioden tussen metingen), is de oorzaak waarschijnlijk threadblokkade. In dit geval kunt u de oorzaak of oorzaken onderzoeken van de threadblokkade (mogelijk vergrendelde threads) of de computers opschalen voor gebruik van een grotere resourcegrootte.
 
 #### <a name="solution"></a>Oplossing:
 De client toepassing die gebruikmaakt van de SDK moet omhoog of omlaag worden geschaald.

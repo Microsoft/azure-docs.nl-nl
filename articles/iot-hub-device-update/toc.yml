@@ -32,7 +32,7 @@
       href: device-update-agent-overview.md
     - name: Configuratie bestand voor het bijwerken van het apparaat
       href: device-update-configuration-file.md
-    - name: Manifest voor het bijwerken van het apparaat
+    - name: Manifest bijwerken
       href: update-manifest.md
     - name: Hoe de update van het apparaat is beveiligd
       href: device-update-security.md

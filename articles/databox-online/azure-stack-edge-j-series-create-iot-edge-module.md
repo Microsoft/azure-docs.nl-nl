@@ -6,18 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/28/2020
+ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 2b29f6b400ba7b500e215caec4a2115a12b369fe
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 7836e791f8515c2df89228c81419738adf27e47f
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952196"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438912"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-on-azure-stack-edge-pro"></a>Een C# IoT Edge-module ontwikkelen om bestanden te verplaatsen op Azure Stack Edge Pro
 
-<!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt stapsgewijs beschreven hoe u een IoT Edge module maakt voor implementatie met uw Azure Stack Edge Pro-apparaat. Azure Stack Edge Pro is een opslag oplossing waarmee u gegevens kunt verwerken en verzenden via een netwerk naar Azure.
 
@@ -70,7 +70,7 @@ Een Azure-containerregister is een persoonlijk Docker-register in Azure waar u u
 
    1. Een unieke **register naam** in azure die 5 tot 50 alfanumerieke tekens bevat.
    2. Kies een **abonnement**.
-   3. Nieuwe maken of een bestaande **resource groep**kiezen.
+   3. Nieuwe maken of een bestaande **resource groep** kiezen.
    4. Selecteer een **locatie**. We raden u aan deze locatie hetzelfde te zijn als die van de Azure Stack Edge-resource.
    5. Stel de **Gebruiker met beheerdersrechten** in op **Inschakelen**.
    6. Stel de SKU in op **Basic**.
@@ -126,7 +126,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
 ### <a name="update-the-module-with-custom-code"></a>De module bijwerken met aangepaste code
 
 1. Open in de VS code Explorer **modules > FileCopyModule > Program.cs**.
-2. Voeg boven aan de **naam ruimte FileCopyModule**de volgende using-instructies toe voor typen die later worden gebruikt. **Micro soft. Azure. devices. client. Trans Port. Mqtt** is een protocol voor het verzenden van berichten naar IOT Edge hub.
+2. Voeg boven aan de **naam ruimte FileCopyModule** de volgende using-instructies toe voor typen die later worden gebruikt. **Micro soft. Azure. devices. client. Trans Port. Mqtt** is een protocol voor het verzenden van berichten naar IOT Edge hub.
 
     ```
     namespace FileCopyModule
@@ -160,7 +160,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     }
     ```
 
-5. In de **init-methode**maakt en configureert de code een **ModuleClient** -object. Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. Met de code wordt een FileCopy-call back geregistreerd voor het ontvangen van berichten van een IoT Edge hub via het **input1** -eind punt. Vervang de **init-methode** door de volgende code.
+5. In de **init-methode** maakt en configureert de code een **ModuleClient** -object. Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. Met de code wordt een FileCopy-call back geregistreerd voor het ontvangen van berichten van een IoT Edge hub via het **input1** -eind punt. Vervang de **init-methode** door de volgende code.
 
     ```
     /// <summary>

@@ -1,24 +1,18 @@
 ---
 title: Machtigingen in Azure Security Center | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe Azure Security Center toegangsbeheer op basis van rollen gebruikt om machtigingen aan gebruikers toe te wijzen en de toegestane acties voor elke rol aan te geven.
-services: security-center
-cloud: na
-documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: overview
-ms.date: 12/01/2020
+ms.date: 01/03/2021
 ms.author: memildin
-ms.openlocfilehash: 14ee9f23379a26c1756c622efb7d739f49dd0537
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: dcbb4977e1bfd17f0cbed61abf9ba335615b7799
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099179"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443757"
 ---
 # <a name="permissions-in-azure-security-center"></a>Machtigingen in Azure Security Center
 
@@ -39,15 +33,15 @@ Naast deze rollen zijn er twee specifieke Security Center-rollen:
 
 In de volgende tabel worden rollen en toegestane acties in Security Center vermeld.
 
-|Bewerking|Beveiligingslezer/ <br> Lezer |Beveiligingsbeheerder  |Resourcegroepinzender/ <br> Resourcegroepeigenaar  |Abonnementinzender  |Abonnementeigenaar  |
-|:--- |:---:|:---:|:---:|:---:|:---:|
-|Beveiligingsbeleid bewerken|-|✔|-|-|✔|
-|Initiatieven (waaronder) reglementaire nalevingsstandaarden toevoegen/toewijzen|-|-|-|-|✔|
-|Azure Defender inschakelen/uitschakelen|-|✔|-|-|✔|
-|Automatische inrichting inschakelen/uitschakelen|-|✔|-|✔|✔|
-|Aanbevelingen voor beveiliging toepassen op een resource</br> (en [Snelle oplossing](security-center-remediate-recommendations.md#quick-fix-remediation) gebruiken)|-|-|✔|✔|✔|
-|Waarschuwingen verwijderen|-|✔|-|✔|✔|
-|Meldingen en aanbevelingen weergeven|✔|✔|✔|✔|✔|
+| Bewerking                                                                                                                                        | Beveiligingslezer/ <br> Lezer | Beveiligingsbeheerder | Resourcegroepinzender/ <br> Resourcegroepeigenaar | Abonnementinzender | Abonnementeigenaar |
+|:----------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------:|:--------------:|:------------------------------------------------------:|:------------------------:|:------------------:|
+| Beveiligingsbeleid bewerken                                                                                                                          | -                             | ✔             | -                                                      | -                        | ✔                 |
+| Initiatieven (waaronder) reglementaire nalevingsstandaarden toevoegen/toewijzen                                                                           | -                             | -              | -                                                      | -                        | ✔                 |
+| Azure Defender inschakelen/uitschakelen                                                                                                               | -                             | ✔             | -                                                      | -                        | ✔                 |
+| Automatische inrichting inschakelen/uitschakelen                                                                                                            | -                             | ✔             | -                                                      | ✔                       | ✔                  |
+| Aanbevelingen voor beveiliging toepassen op een resource</br> (en [Snelle oplossing](security-center-remediate-recommendations.md#quick-fix-remediation) gebruiken) | -                             | -              | ✔                                                     | ✔                        | ✔                 |
+| Waarschuwingen verwijderen                                                                                                                                | -                             | ✔             | -                                                      | ✔                       | ✔                  |
+| Meldingen en aanbevelingen weergeven                                                                                                               | ✔                            | ✔              | ✔                                                     | ✔                        | ✔                 |
 
 > [!NOTE]
 > We raden u aan de rol toe te wijzen die gebruikers minimaal nodig hebben om hun taken uit te voeren. Wijs bijvoorbeeld gebruikers die alleen informatie hoeven te bekijken over de beveiligingsstatus van resources, maar geen maatregelen hoeven te nemen zoals het toepassen van aanbevelingen of het bewerken van beleid, de rol Lezer toe.

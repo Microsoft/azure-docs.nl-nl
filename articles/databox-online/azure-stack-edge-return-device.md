@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/26/2021
+ms.date: 03/03/2021
 ms.author: alkohli
-ms.openlocfilehash: 6c9e8938feb3c3444d01f9d37476589776707425
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cb11d7d3b2da9ab793cb18814e4021ea7afeb806
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703181"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443587"
 ---
 # <a name="return-your-azure-stack-edge-pro-device"></a>Uw Azure Stack Edge Pro-apparaat retour neren
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u de gegevens kunt wissen en vervolgens uw Azure Stack Edge Pro-apparaat kunt herstellen. Nadat u het apparaat hebt geretourneerd, kunt u ook de resource verwijderen die aan het apparaat is gekoppeld.
 
@@ -38,8 +40,7 @@ U kunt het retour neren van het apparaat starten, zelfs voordat het apparaat opn
 
 U kunt uw apparaat opnieuw instellen in de lokale webgebruikersinterface of in Power shell. Zie [uw apparaat opnieuw instellen](./azure-stack-edge-connect-powershell-interface.md#reset-your-device)voor instructies voor Power shell.
 
-
-[! INCLUDe] [gegevens van het apparaat opnieuw instellen](../../includes/azure-stack-edge-device-reset.md)
+[!INCLUDE [Reset data from the device](../../includes/azure-stack-edge-device-reset.md)]
 
 > [!NOTE]
 > - Als u uitwisselt of een upgrade naar een nieuw apparaat uitvoert, raden wij u aan uw apparaat opnieuw in te stellen nadat u het nieuwe apparaat hebt ontvangen.

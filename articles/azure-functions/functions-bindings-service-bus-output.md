@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 12e57361b9e275fc441df27a3a1381989d48751c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: ae2be8dbcb4839c7d16b864c484c3360fdcfe324
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788567"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425580"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Azure Service Bus uitvoer binding voor Azure Functions
 
@@ -429,7 +429,7 @@ Als u hebt `isSessionsEnabled` ingesteld op `true` , `sessionHandlerOptions` wor
 |---------|---------|---------|
 |prefetchCount|0|Hiermee wordt het aantal berichten opgehaald of ingesteld dat de ontvanger van het bericht tegelijk kan aanvragen.|
 |maxAutoRenewDuration|00:05:00|De maximale duur waarbinnen de bericht vergrendeling automatisch wordt vernieuwd.|
-|Automatisch aanvullen|true|Hiermee wordt aangegeven of de trigger automatisch moet worden voltooid na de verwerking, of dat de functie code hand matig wordt aangeroepen.<br><br>De instelling in `false` wordt alleen ondersteund in C#.<br><br>Als deze `true` optie is ingesteld op, wordt het bericht automatisch door de trigger voltooid als de uitvoering van de functie is voltooid en wordt het bericht anders afgebroken.<br><br>Wanneer dit is ingesteld op `false` , bent u verantwoordelijk voor het aanroepen van [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet&preserve-view=true) -methoden om het bericht te volt ooien, te annuleren of deadletter. Als er een uitzonde ring wordt gegenereerd (en geen van de `MessageReceiver` methoden worden genoemd), blijft de vergren deling. Zodra de vergren deling is verlopen, wordt het bericht opnieuw in de wachtrij geplaatst `DeliveryCount` en wordt de vergren deling automatisch verlengd.<br><br>In functies zonder C # worden uitzonde ringen in de functie uitgevoerd in de runtime-aanroepen `abandonAsync` op de achtergrond. Als er geen uitzonde ring optreedt, `completeAsync` wordt deze op de achtergrond aangeroepen. |
+|Automatisch aanvullen|true|Hiermee wordt aangegeven of de trigger automatisch moet worden voltooid na de verwerking, of dat de functie code hand matig wordt aangeroepen.<br><br>De instelling in `false` wordt alleen ondersteund in C#.<br><br>Als deze `true` optie is ingesteld op, wordt het bericht automatisch door de trigger voltooid als de uitvoering van de functie is voltooid en wordt het bericht anders afgebroken.<br><br>Wanneer dit is ingesteld op `false` , bent u verantwoordelijk voor het aanroepen van [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver) -methoden om het bericht te volt ooien, te annuleren of deadletter. Als er een uitzonde ring wordt gegenereerd (en geen van de `MessageReceiver` methoden worden genoemd), blijft de vergren deling. Zodra de vergren deling is verlopen, wordt het bericht opnieuw in de wachtrij geplaatst `DeliveryCount` en wordt de vergren deling automatisch verlengd.<br><br>In functies zonder C # worden uitzonde ringen in de functie uitgevoerd in de runtime-aanroepen `abandonAsync` op de achtergrond. Als er geen uitzonde ring optreedt, `completeAsync` wordt deze op de achtergrond aangeroepen. |
 |maxConcurrentCalls|16|Het maximum aantal gelijktijdige aanroepen naar de call back dat de bericht pomp moet initiëren per geschaald exemplaar. De functie runtime verwerkt standaard meerdere berichten tegelijk.|
 |maxConcurrentSessions|2000|Het maximum aantal sessies dat gelijktijdig kan worden verwerkt per geschaald exemplaar.|
 

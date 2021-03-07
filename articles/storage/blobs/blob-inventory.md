@@ -4,18 +4,18 @@ description: Azure Storage-inventaris is een hulp programma waarmee u een overzi
 services: storage
 author: mhopkins-msft
 ms.service: storage
-ms.date: 12/03/2020
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: a41966c2b3ba73d7b68399b1b99d14313e220833
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 7972385ba017059407b994029c37f347b919cad3
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99257808"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102435117"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Azure Storage BLOB-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)
 
@@ -24,6 +24,9 @@ De functie voor het Azure Storage BLOB-inventaris biedt een overzicht van de BLO
 ## <a name="availability"></a>Beschikbaarheid
 
 BLOB-inventarisatie wordt ondersteund voor zowel GPv2 (General version 2) als Premium Block Blob-opslag accounts. Deze functie wordt ondersteund met of zonder de functie voor [hiërarchische naam ruimte](data-lake-storage-namespace.md) ingeschakeld.
+
+> [!IMPORTANT]
+> Bob-inventarisatie is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
 
 ### <a name="preview-regions"></a>Preview-regio's
 
@@ -89,9 +92,9 @@ Bekijk de JSON voor een inventaris beleid door het tabblad **code weergave** te 
 
 | Parameternaam | Parametertype        | Notities | Vereist? |
 |----------------|-----------------------|-------|-----------|
-| doel    | Tekenreeks                | De doel container waar alle inventarisatie bestanden worden gegenereerd. De doel container moet al bestaan. | Ja |
-| enabled        | Booleaans               | Wordt gebruikt om het hele beleid uit te scha kelen. Als deze eigenschap is ingesteld op **True**, wordt deze para meter overschreven door het veld op regel niveau ingeschakeld. Wanneer dit is uitgeschakeld, wordt de inventarisatie voor alle regels uitgeschakeld. | Ja |
-| regels          | Matrix van regel objecten | Er is ten minste één regel vereist in een beleid. Maxi maal 10 regels worden ondersteund. | Ja |
+| doel    | Tekenreeks                | De doel container waar alle inventarisatie bestanden worden gegenereerd. De doel container moet al bestaan. | Yes |
+| enabled        | Booleaans               | Wordt gebruikt om het hele beleid uit te scha kelen. Als deze eigenschap is ingesteld op **True**, wordt deze para meter overschreven door het veld op regel niveau ingeschakeld. Wanneer dit is uitgeschakeld, wordt de inventarisatie voor alle regels uitgeschakeld. | Yes |
+| regels          | Matrix van regel objecten | Er is ten minste één regel vereist in een beleid. Maxi maal 10 regels worden ondersteund. | Yes |
 
 ## <a name="inventory-rules"></a>Inventarisatie regels
 
@@ -101,9 +104,9 @@ Elke regel in het beleid heeft verschillende para meters:
 
 | Parameternaam | Parametertype                 | Notities | Vereist? |
 |----------------|--------------------------------|-------|-----------|
-| naam           | Tekenreeks                         | Een regel naam kan Maxi maal 256 hoofdletter gevoelige alfanumerieke tekens bevatten. De naam moet uniek zijn binnen een beleid. | Ja |
-| enabled        | Booleaans                        | Een vlag waarmee een regel kan worden ingeschakeld of uitgeschakeld. De standaard waarde is **True**. | Ja |
-| definitie     | Definitie van JSON-inventarisatie regel | Elke definitie bestaat uit een ingestelde regel filter. | Ja |
+| naam           | Tekenreeks                         | Een regel naam kan Maxi maal 256 hoofdletter gevoelige alfanumerieke tekens bevatten. De naam moet uniek zijn binnen een beleid. | Yes |
+| enabled        | Booleaans                        | Een vlag waarmee een regel kan worden ingeschakeld of uitgeschakeld. De standaard waarde is **True**. | Yes |
+| definitie     | Definitie van JSON-inventarisatie regel | Elke definitie bestaat uit een ingestelde regel filter. | Yes |
 
 De vlag globale **BLOB-inventaris ingeschakeld** heeft voor rang op de *ingeschakelde* para meter in een regel.
 
@@ -113,10 +116,10 @@ Er zijn verschillende filters beschikbaar voor het aanpassen van een BLOB-invent
 
 | Bestandsnaam         | Filtertype                     | Notities | Vereist? |
 |---------------------|---------------------------------|-------|-----------|
-| blobTypes           | Matrix van vooraf gedefinieerde Enum-waarden | Geldige waarden zijn `blockBlob` en `appendBlob` voor hiërarchische,, en `blockBlob` , `appendBlob` , en `pageBlob` voor andere accounts geschikte accounts. | Ja |
-| prefixMatch         | Matrix van Maxi maal 10 teken reeksen voor voor voegsels die moeten worden vergeleken. Een voor voegsel moet beginnen met een container naam, bijvoorbeeld "container1/foo" | Als u geen *prefixMatch* definieert of een leeg voor voegsel opgeeft, is de regel van toepassing op alle blobs in het opslag account. | Nee |
-| includeSnapshots    | Booleaans                         | Hiermee geeft u op of de inventaris moment opnamen moet bevatten. De standaard waarde is **False**. | Nee |
-| includeBlobVersions | Booleaans                         | Hiermee geeft u op of de inventaris BLOB-versies moet bevatten. De standaard waarde is **False**. | Nee |
+| blobTypes           | Matrix van vooraf gedefinieerde Enum-waarden | Geldige waarden zijn `blockBlob` en `appendBlob` voor hiërarchische,, en `blockBlob` , `appendBlob` , en `pageBlob` voor andere accounts geschikte accounts. | Yes |
+| prefixMatch         | Matrix van Maxi maal 10 teken reeksen voor voor voegsels die moeten worden vergeleken. Een voor voegsel moet beginnen met een container naam, bijvoorbeeld "container1/foo" | Als u geen *prefixMatch* definieert of een leeg voor voegsel opgeeft, is de regel van toepassing op alle blobs in het opslag account. | No |
+| includeSnapshots    | Booleaans                         | Hiermee geeft u op of de inventaris moment opnamen moet bevatten. De standaard waarde is **False**. | No |
+| includeBlobVersions | Booleaans                         | Hiermee geeft u op of de inventaris BLOB-versies moet bevatten. De standaard waarde is **False**. | No |
 
 Bekijk de JSON voor inventarisatie regels door het tabblad **code weergave** te selecteren in het gedeelte **BLOB-inventaris** van het Azure Portal. Filters worden opgegeven in de definitie van een regel.
 

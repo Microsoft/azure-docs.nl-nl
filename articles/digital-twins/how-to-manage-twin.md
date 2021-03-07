@@ -7,16 +7,16 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: cbab73a2fb3aecaacdfc92950c0d0b86edf775af
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: e20cd09ce3d9eb1937819da79cea17bdd14a07dc
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653343"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433264"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
 
-Entiteiten in uw omgeving worden vertegenwoordigd door [Digital apparaatdubbels](concepts-twins-graph.md). Het beheren van uw digitale apparaatdubbels kan het maken, wijzigen en verwijderen omvatten. Als u deze bewerkingen wilt uitvoeren, kunt u de [**DigitalTwins-api's**](/rest/api/digital-twins/dataplane/twins), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md)gebruiken.
+Entiteiten in uw omgeving worden vertegenwoordigd door [Digital apparaatdubbels](concepts-twins-graph.md). Het beheren van uw digitale apparaatdubbels kan het maken, wijzigen en verwijderen omvatten. Als u deze bewerkingen wilt uitvoeren, kunt u de [**DigitalTwins-api's**](/rest/api/digital-twins/dataplane/twins), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md)gebruiken.
 
 Dit artikel richt zich op het beheren van digitale apparaatdubbels; Zie [*How-to: manage the dubbele Graph with relationships*](how-to-manage-graph.md)als u wilt werken met relaties en de [dubbele grafiek](concepts-twins-graph.md) als geheel.
 
@@ -160,7 +160,7 @@ Hier volgt een voor beeld van de JSON-patch code. Dit document vervangt de *mass
 
 :::code language="json" source="~/digital-twins-docs-samples/models/patch.json":::
 
-U kunt patches maken met behulp van de [JsonPatchDocument](/dotnet/api/azure.jsonpatchdocument?view=azure-dotnet&preserve-view=true)van de Azure .NET SDK. Hier volgt een voorbeeld.
+U kunt patches maken met behulp van de [JsonPatchDocument](/dotnet/api/azure.jsonpatchdocument)van de Azure .NET SDK. Hier volgt een voorbeeld.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="UpdateTwin":::
 
@@ -227,7 +227,7 @@ Het fragment maakt gebruik van de [Room.jsop](https://github.com/Azure-Samples/d
 Ga als volgt te werk voordat u het voor beeld uitvoert:
 1. Down load het model bestand, plaats het in uw project en vervang de `<path-to>` tijdelijke aanduiding in de onderstaande code om uw programma te laten weten waar het zich bevindt.
 2. Vervang de tijdelijke aanduiding door de `<your-instance-hostname>` hostnaam van uw Azure Digital apparaatdubbels-exemplaar.
-3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede biedt hulpmiddelen voor de verificatie met Azure.
+3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client), de tweede biedt hulpmiddelen voor de verificatie met Azure.
 
       ```cmd/sh
       dotnet add package Azure.DigitalTwins.Core

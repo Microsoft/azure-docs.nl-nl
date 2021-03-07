@@ -11,18 +11,18 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: f725a4095103a7dcfc3dcdbdcefdc84d16501632
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: f2c15221268635ca1892a9292d5b0c208c13dd34
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94366530"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426804"
 ---
 # <a name="tutorial-single-page-web-app"></a>Zelfstudie: Web-app van één pagina
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
-> Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Zie [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Met de Bing Entiteiten zoeken-API kunt u op internet zoeken naar informatie over *entiteiten* en *plaatsen*. U kunt in een query een van beide soorten resultaten opvragen of beide. Hieronder vindt u de definities van plaatsen en entiteiten.
@@ -68,8 +68,8 @@ Als u deze zelfstudie wilt volgen, hebt u een abonnementssleutel nodig voor de B
 
 * Een Azure-abonnement - [Een gratis abonnement maken](https://azure.microsoft.com/free/cognitive-services/)
 * Zodra u uw Azure-abonnement heeft geselecteerd:
-  * <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="Een Bing Zoeken-resource maken"  target="_blank">Een Bing Zoeken-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a> in de Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
-  * <a href="https://www.microsoft.com/maps/create-a-bing-maps-key.aspx"  title="Een Computer Vision-resource maken"  target="_blank">Een Bing Kaarten-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a> in de Azure-portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
+  * <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="Een Bing Zoeken-resource maken"  target="_blank">Een Bing Zoeken-resource maken </a> in de Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
+  * <a href="https://www.microsoft.com/maps/create-a-bing-maps-key.aspx"  title="Een Computer Vision-resource maken"  target="_blank">Een Bing Kaarten-resource maken </a> in de Azure-portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
 
 ## <a name="app-components"></a>App-onderdelen
 
@@ -447,7 +447,7 @@ function renderSearchResults(results) {
 
 ## <a name="rendering-result-items"></a>Resultaten weergeven
 
-Onze JavaScript-code bevat een object, `searchItemRenderers`, met daarin *renderers* : functies waarmee HTML wordt weergegeven voor elk type zoekresultaat.
+Onze JavaScript-code bevat een object, `searchItemRenderers`, met daarin *renderers*: functies waarmee HTML wordt weergegeven voor elk type zoekresultaat.
 
 ```javascript
 searchItemRenderers = { 

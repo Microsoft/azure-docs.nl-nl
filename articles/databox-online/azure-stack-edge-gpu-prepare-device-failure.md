@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/11/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: b437ce7b6894ebefe38b32f27d370d9f8c4bfe80
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 60469dc834c28bd8dbc73a1883ea01b06797c01f
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369018"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442975"
 ---
 # <a name="prepare-for-an-azure-stack-edge-pro-gpu-device-failure"></a>Voorbereiden op een Azure Stack Edge Pro GPU-apparaatfout
+
+[!INCLUDE [applies-to-GPU-and-pro-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u een apparaatfout kunt voorbereiden door te beschrijven hoe u de apparaatconfiguratie en gegevens op uw Azure Stack Edge Pro GPU-apparaat kunt opslaan en er een back-up van wilt maken. 
 
@@ -76,7 +78,7 @@ De volgende oplossingen voor gegevens beveiliging van derden kunnen een back-upo
 Azure Stack Edge werkt met Azure Backup en andere oplossingen voor gegevens beveiliging van derden om een back-upoplossing te bieden voor het beveiligen van gegevens die zijn opgenomen in de virtuele machines die op het apparaat zijn geïmplementeerd. De volgende tabel bevat verwijzingen naar beschik bare oplossingen waaruit u kunt kiezen.
 
 
-| Back-upoplossingen        | Ondersteund besturings systeem   | Naslaginformatie                                                                |
+| Back-upoplossingen        | Ondersteund besturingssysteem   | Naslaginformatie                                                                |
 |-------------------------|----------------|--------------------------------------------------------------------------|
 | Microsoft Azure Recovery Services-agent (MARS) voor Azure Backup | Windows        | [Informatie over de MARS-agent](../backup/backup-azure-about-mars.md)    |
 | Cohesity                | Windows, Linux | [Korte Microsoft Azure-integratie, oplossing voor back-up-& herstel](https://www.cohesity.com/solution/cloud/azure) <br>Neem contact op met Cohesity voor meer informatie.                          |

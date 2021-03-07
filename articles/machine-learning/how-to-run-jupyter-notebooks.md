@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: fe6fa5c9b05afd5479818fe9bb25e471665cb867
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: fe3f2328bb1ec9e7bb2ef79c09a821412ce7f7e1
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102171463"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102423982"
 ---
 # <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
@@ -195,7 +195,7 @@ Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraag
 
    :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
 
-| Shortcutdimensie                      | Beschrijving                          |
+| Shortcutdimensie                      | Description                          |
 | ----------------------------- | ------------------------------------|
 | Enter                         | De modus Bewerken openen             |        
 | Shift+Enter                 | Run-cel, hieronder selecteren         |     
@@ -239,7 +239,7 @@ De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraa
 
 Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
 
-| Shortcutdimensie                      | Beschrijving|                                     
+| Shortcutdimensie                      | Description|                                     
 | ----------------------------- | ----------------------------------------------- |
 | Escape                        | Voer de opdracht modus in|  
 | Control/Command + Space       | IntelliSense activeren |
@@ -273,7 +273,7 @@ Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning 
 
 * Als u geen verbinding kunt maken met een notitie blok, moet u ervoor zorgen dat de communicatie tussen websockets **niet** is uitgeschakeld. De functionaliteit van de reken instantie Jupyter werkt alleen als de WebSocket-communicatie is ingeschakeld. Zorg ervoor dat uw netwerk WebSocket-verbindingen toestaat naar *. instances.azureml.net en *. instances.azureml.ms. 
 
-* Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden [geopend vanuit een virtueel netwerk](https://docs.microsoft.com/azure/machine-learning/how-to-secure-training-vnet#compute-instance). Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor <exemplaar naam>. <region> . instances.azureml.ms met het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md?tabs=azure-cli) artikel voor meer informatie.
+* Wanneer reken instantie wordt geïmplementeerd in een persoonlijke koppelings werkruimte, kan deze alleen worden [geopend vanuit een virtueel netwerk](https://docs.microsoft.com/azure/machine-learning/how-to-secure-training-vnet#compute-instance). Als u een aangepast DNS-of hosts-bestand gebruikt, voegt u een vermelding toe voor < exemplaar naam >. < regio >. instances.azureml.ms met het privé-IP-adres van het persoonlijke eind punt van de werk ruimte. Zie het [aangepaste DNS-](./how-to-custom-dns.md?tabs=azure-cli) artikel voor meer informatie.
     
 ## <a name="next-steps"></a>Volgende stappen
 

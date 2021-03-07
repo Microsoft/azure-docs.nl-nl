@@ -6,15 +6,15 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: c83221743e0566d783c38c40aaf92111a0cd80f7
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 7f2353d9e87c35f01a9fd514df7cfb090a98bf27
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102030729"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442941"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
-Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub.
+Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -59,9 +59,9 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
     | --------- | ----------- |
     | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso
     | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld een pop-
-    | updateProvider | Provider onderdeel van update-identiteit, bijvoorbeeld fabrikam
-    | updatenaam | Noem een deel van de update-identiteit, bijvoorbeeld ImageUpdate
-    | updateVersion | Update versie, bijvoorbeeld 2,0
+    | updateProvider | Entiteit die de update maakt of rechtstreeks verantwoordelijk is. Het is vaak een bedrijfs naam.
+    | updatenaam | Id voor een klasse van updates. De klasse kan alles zijn wat u kiest. Het is vaak een apparaat-of model naam.
+    | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Kan al dan niet overeenkomen met een versie van een afzonderlijk software onderdeel op het apparaat.
     | updateType | <ul><li>Opgeven `microsoft/swupdate:1` voor bijwerken van installatie kopie</li><li>Opgeven `microsoft/apt:1` voor pakket update</li></ul>
     | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de aanbevolen waarde voor het `microsoft/apt:1` Update type op.
     | updateFilePath (s) | Pad naar de update bestand (en) op uw computer

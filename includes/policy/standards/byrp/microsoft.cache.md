@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/09/2021
+ms.date: 03/05/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 279dbd13eb41121e63fee96542474d0f6f820ec7
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 337089a317abfb7d5135f493c3491bdbcab4acee
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100094186"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441670"
 ---
 ## <a name="azure-security-benchmark"></a>Azure Security-benchmark
 
@@ -69,10 +69,10 @@ Zie [ISO 27001:2013](https://www.iso.org/isoiec-27001-information-security.html)
 |Cryptografie |10.1.1 |Beleid voor het gebruik van cryptografische besturings elementen |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 |Communicatie beveiliging |13.2.1 |Beleid en procedures voor het overdragen van informatie |[Alleen beveiligde verbindingen met uw Azure Cache voor Redis moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F22bee202-a82f-4305-9a2a-6d7f44d4dedb) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Cache/RedisCache_AuditSSLPort_Audit.json) |
 
-## <a name="new-zealand-ism"></a>Nieuw-Zeeland ISM
+## <a name="new-zealand-ism-restricted"></a>Nieuw-Zeeland ISM beperkt
 
-Zie [Azure Policy regelgevings naleving-Nieuw-Zeeland Information Security-hand leiding voor informatie](../../../../articles/governance/policy/samples/new-zealand-ism.md)over de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services die zijn gekoppeld aan deze nalevings standaard.
-Zie [New-Zeeland Information Security Manual](https://www.nzism.gcsb.govt.nz/)(Engelstalig) voor meer informatie over deze nalevings standaard.
+Als u wilt weten hoe de beschik bare Azure Policy ingebouwde invoeg toepassingen voor alle Azure-Services zijn gekoppeld aan deze nalevings standaard, raadpleegt u [Azure Policy regelgevings naleving-Nieuw-Zeeland ISM beperkt](../../../../articles/governance/policy/samples/new-zealand-ism.md).
+Zie voor meer informatie over deze nalevings standaard [Nieuw-Zeeland ISM beperkt](https://www.nzism.gcsb.govt.nz/).
 
 |Domain |Id van besturingselement |Titel van besturingselement |Beleid<br /><sub>(Azure-portal)</sub> |Beleidsversie<br /><sub>(GitHub)</sub>  |
 |---|---|---|---|---|

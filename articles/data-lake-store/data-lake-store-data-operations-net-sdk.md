@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: cb6d5fafa8d956c296124c5a20f8a087160961da
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: faa539119bbb8d73e66788b8ba472cf0db26a2e4
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109235"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431734"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Bestandssysteem bewerkingen op Data Lake Storage Gen1 met behulp van de .NET SDK
 
@@ -40,7 +40,7 @@ Zie voor instructies over het uitvoeren van account beheer bewerkingen op Data L
 
 Dit codevoorbeeld beschikbaar [in GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted) doorloopt het proces waarin bestanden in het archief worden gemaakt, bestanden worden samengevoegd, een bestand wordt gedownload en een aantal bestanden uit het archief wordt verwijderd. In dit gedeelte van het artikel komen de belangrijkste onderdelen van de code aan bod.
 
-1. Selecteer in Visual Studio het menu **bestand** , **Nieuw**en vervolgens **project**.
+1. Selecteer in Visual Studio het menu **bestand** , **Nieuw** en vervolgens **project**.
 1. Kies **console-app (.NET Framework)** en selecteer **volgende**.
 1. Voer in **project naam**, Enter `CreateADLApplication` en selecteer vervolgens **maken**.
 1. Voeg de NuGet-pakketten toe aan het project.
@@ -202,7 +202,7 @@ Hier volgen enkele voor beelden die laten zien hoe u de Data Lake Storage Gen1 b
 ## <a name="see-also"></a>Zie ook
 
 * [Account beheer bewerkingen op Data Lake Storage Gen1 met behulp van .NET SDK](data-lake-store-get-started-net-sdk.md)
-* [Naslag informatie over Data Lake Storage Gen1 .NET SDK](/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Naslag informatie over Data Lake Storage Gen1 .NET SDK](/dotnet/api/overview/azure/data-lake-store)
 
 ## <a name="next-steps"></a>Volgende stappen
 

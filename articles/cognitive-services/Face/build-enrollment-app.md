@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: pafarley
-ms.openlocfilehash: 085dd18214f795566669fb862bba63b67eb9115d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 218579176b807bbdae85646f27eaa7f301d4b9a6
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350361"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102428266"
 ---
 # <a name="build-an-enrollment-app-for-android-with-react"></a>Een inschrijvings-app voor Android bouwen met reageren
 
@@ -37,9 +37,9 @@ De voor beeld-app voor inschrijving is geschreven met behulp van Java script en 
 ## <a name="set-up-the-development-environment"></a>De ontwikkelomgeving instellen
 
 1. Kloon de Git-opslag plaats voor de voor [beeld-app voor inschrijving](https://github.com/azure-samples/cognitive-services-FaceAPIEnrollmentSample).
-1. Als u uw ontwikkel omgeving wilt instellen, volgt u de <a href="https://reactnative.dev/docs/environment-setup"  title=" reageren systeem eigen "  target="_blank"> documentatie <span class="docon docon-navigate-external x-hidden-focus"></span> </a> . Selecteer **systeem eigen cli-Quick** start als uw ontwikkel besturingssysteem en selecteer **Android** als het doel besturingssysteem. Voltooi de secties voor het **installeren van afhankelijkheden** en **Android-ontwikkel omgeving**.
+1. Als u uw ontwikkel omgeving wilt instellen, volgt u de <a href="https://reactnative.dev/docs/environment-setup"  title=" reageren systeem eigen "  target="_blank"> documentatie </a> . Selecteer **systeem eigen cli-Quick** start als uw ontwikkel besturingssysteem en selecteer **Android** als het doel besturingssysteem. Voltooi de secties voor het **installeren van afhankelijkheden** en **Android-ontwikkel omgeving**.
 1. Open de env.jsin het bestand in uw voorkeurs tekst editor, zoals [Visual Studio code](https://code.visualstudio.com/), en voeg uw eind punt en sleutel toe. U kunt het eind punt en de sleutel ophalen in het Azure Portal op het tabblad **overzicht** van uw resource. Deze stap is alleen van toepassing op lokale tests &mdash; . Controleer uw face-API sleutel niet in uw externe opslag plaats.
-1. Voer de app uit met behulp van de emulator van de virtuele Android-apparaten van Android Studio of uw eigen Android-apparaat. Als u uw app op een fysiek apparaat wilt testen, volgt u de relevante <a href="https://reactnative.dev/docs/running-on-device"  title=" reageren systeem eigen "  target="_blank"> documentatie <span class="docon docon-navigate-external x-hidden-focus"></span> </a> .  
+1. Voer de app uit met behulp van de emulator van de virtuele Android-apparaten van Android Studio of uw eigen Android-apparaat. Als u uw app op een fysiek apparaat wilt testen, volgt u de relevante <a href="https://reactnative.dev/docs/running-on-device"  title=" reageren systeem eigen "  target="_blank"> documentatie </a> .  
 
 
 ## <a name="create-an-enrollment-experience"></a>Een inschrijvings ervaring maken  
@@ -78,9 +78,9 @@ Zorg er eerst voor dat uw app gereed is voor productie-implementatie: Verwijder 
 
 Wanneer u klaar bent om uw app uit te geven voor productie, genereert u een APK-bestand dat klaar is voor vrijgave. Dit is de bestands indeling van het pakket voor Android-apps. Dit APK-bestand moet zijn ondertekend met een persoonlijke sleutel. Met deze release-build kunt u de app rechtstreeks naar uw apparaten distribueren. 
 
-Volg de <a href="https://developer.android.com/studio/publish/preparing#publishing-build"  title=" voor bereiding voor het vrijgeven van de release "  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> </a> -documentatie voor meer informatie over het genereren van een persoonlijke sleutel, het ondertekenen van uw toepassing en het genereren van een release-APK.  
+Volg de <a href="https://developer.android.com/studio/publish/preparing#publishing-build"  title=" voor bereiding voor het vrijgeven van de release "  target="_blank"> </a> -documentatie voor meer informatie over het genereren van een persoonlijke sleutel, het ondertekenen van uw toepassing en het genereren van een release-APK.  
 
-Wanneer u een ondertekende APK hebt gemaakt, raadpleegt u de documentatie uw app <a href="https://developer.android.com/studio/publish"  title=" publiceren publiceren "  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span> </a> om meer te weten te komen over het vrijgeven van uw app.
+Wanneer u een ondertekende APK hebt gemaakt, raadpleegt u de documentatie uw app <a href="https://developer.android.com/studio/publish"  title=" publiceren publiceren "  target="_blank"> </a> om meer te weten te komen over het vrijgeven van uw app.
 
 ## <a name="next-steps"></a>Volgende stappen  
 

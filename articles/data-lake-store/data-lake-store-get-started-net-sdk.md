@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c5b2364328fc4e0103b969f94a4c877a388edb7c
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 2c4ed092604e9511023a7025a69dc7a78652ea56
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92103608"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430476"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Account beheer bewerkingen op Azure Data Lake Storage Gen1 met behulp van .NET SDK
 > [!div class="op_single_selector"]
@@ -32,7 +32,7 @@ Zie [bestandssysteem bewerkingen op Data Lake Storage gen1 met behulp van .NET S
 * **Een Azure-abonnement**. Zie [Gratis proefversie van Azure ophalen](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="create-a-net-application"></a>Een .NET-toepassing maken
-1. Selecteer in Visual Studio het menu **bestand** , **Nieuw**en vervolgens **project**.
+1. Selecteer in Visual Studio het menu **bestand** , **Nieuw** en vervolgens **project**.
 2. Kies **console-app (.NET Framework)** en selecteer **volgende**.
 3. Voer in **project naam**, Enter `CreateADLApplication` en selecteer vervolgens **maken**.
 
@@ -144,7 +144,7 @@ _adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
 
 ## <a name="see-also"></a>Zie ook
 * [Bestandssysteem bewerkingen op Data Lake Storage Gen1 met behulp van .NET SDK](data-lake-store-data-operations-net-sdk.md)
-* [Naslag informatie over Data Lake Storage Gen1 .NET SDK](/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
+* [Naslag informatie over Data Lake Storage Gen1 .NET SDK](/dotnet/api/overview/azure/data-lake-store)
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Gegevens beveiligen in Data Lake Storage Gen1](data-lake-store-secure-data.md)

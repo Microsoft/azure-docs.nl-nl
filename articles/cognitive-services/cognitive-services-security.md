@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: erhopf
 ms.custom: devx-track-python, devx-track-js, devx-track-csharp
-ms.openlocfilehash: f14ac72443dedc8e33e607a82b2145c7ebf95ad2
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 66de81387fe27bd2a81ebcfeab7d86aac7031ff1
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368777"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425291"
 ---
 # <a name="azure-cognitive-services-security"></a>Azure Cognitive Services-beveiliging
 
@@ -29,13 +29,13 @@ Alle Cognitive Services-eind punten die worden weer gegeven via HTTP afdwingen T
 * De taal (en het platform) waarmee de HTTP-aanroep moet TLS 1,2 opgeven als onderdeel van de aanvraag
   * Afhankelijk van de taal en het platform wordt het opgeven van TLS impliciet of expliciet uitgevoerd
 
-Neem voor .NET-gebruikers rekening met de <a href="https://docs.microsoft.com/dotnet/framework/network-programming/tls" target="_blank">Aanbevolen <span class="docon docon-navigate-external x-hidden-focus"></span> procedures voor Transport Layer Security </a>.
+Neem voor .NET-gebruikers rekening met de <a href="https://docs.microsoft.com/dotnet/framework/network-programming/tls" target="_blank">Aanbevolen procedures voor Transport Layer Security </a>.
 
 ## <a name="authentication"></a>Verificatie
 
-Bij het bespreken van verificatie zijn er verschillende veelvoorkomende problemen. Verificatie en autorisatie worden vaak voor elkaar verward. De identiteit is ook een belang rijk onderdeel van de beveiliging. Een identiteit is een verzameling gegevens over een <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">Principal <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Id-providers (IdP) bieden identiteiten aan verificatie services. Verificatie is het verifiëren van de identiteit van een gebruiker. Autorisatie is de specificatie van toegangs rechten en bevoegdheden voor bronnen voor een bepaalde identiteit. Enkele van de Cognitive Services-aanbiedingen, waaronder Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Azure RBAC kan worden gebruikt om een aantal van de ceremonie die betrokken is bij het hand matig beheren van principals, te vereenvoudigen. Zie [toegangs beheer op basis van rollen voor Azure-resources](../role-based-access-control/overview.md)voor meer informatie.
+Bij het bespreken van verificatie zijn er verschillende veelvoorkomende problemen. Verificatie en autorisatie worden vaak voor elkaar verward. De identiteit is ook een belang rijk onderdeel van de beveiliging. Een identiteit is een verzameling gegevens over een <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">Principal </a>. Id-providers (IdP) bieden identiteiten aan verificatie services. Verificatie is het verifiëren van de identiteit van een gebruiker. Autorisatie is de specificatie van toegangs rechten en bevoegdheden voor bronnen voor een bepaalde identiteit. Enkele van de Cognitive Services-aanbiedingen, waaronder Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Azure RBAC kan worden gebruikt om een aantal van de ceremonie die betrokken is bij het hand matig beheren van principals, te vereenvoudigen. Zie [toegangs beheer op basis van rollen voor Azure-resources](../role-based-access-control/overview.md)voor meer informatie.
 
-Zie <a href="https://docs.microsoft.com/azure/cognitive-services/authentication" target="_blank">aanvragen verifiëren voor Azure Cognitive Services <span class="docon docon-navigate-external x-hidden-focus"></span> </a>voor meer informatie over verificatie met abonnements sleutels, toegangs tokens en Azure Active Directory (Aad).
+Zie <a href="https://docs.microsoft.com/azure/cognitive-services/authentication" target="_blank">aanvragen verifiëren voor Azure Cognitive Services</a>voor meer informatie over verificatie met abonnements sleutels, toegangs tokens en Azure Active Directory (Aad).
 
 ## <a name="environment-variables-and-application-configuration"></a>Omgevings variabelen en toepassings configuratie
 
@@ -51,7 +51,7 @@ Omgevings variabelen zijn naam/waarde-paren, die zijn opgeslagen in een specifie
 
 Als u omgevings variabelen wilt instellen, gebruikt u een van de volgende opdrachten: waarbij de de `ENVIRONMENT_VARIABLE_KEY` benoemde sleutel is en `value` de waarde is die is opgeslagen in de omgevings variabele.
 
-# <a name="command-line"></a>[Opdracht regel](#tab/command-line)
+# <a name="command-line"></a>[Opdrachtregel](#tab/command-line)
 
 Maak een permanente omgevings variabele en wijs deze toe, op basis van de waarde.
 
@@ -113,7 +113,7 @@ Als u een omgevings variabele wilt ophalen, moet deze in het geheugen worden gel
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Zie <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank">`Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` </a>voor meer informatie.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Zie <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank">`getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` </a>voor meer informatie.
 
 ```cpp
 #include <stdlib.h>
@@ -147,7 +147,7 @@ int main()
 
 # <a name="java"></a>[Java](#tab/java)
 
-Zie <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank">`System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank"> `System.getenv` </a>voor meer informatie.
 
 ```java
 import java.lang.*;
@@ -164,7 +164,7 @@ public class Program {
 
 # <a name="nodejs"></a>[Node.js](#tab/node-js)
 
-Zie <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank">`process.env` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank"> `process.env` </a>voor meer informatie.
 
 ```javascript
 // Get the named env var, and assign it to the value variable
@@ -174,7 +174,7 @@ const value =
 
 # <a name="python"></a>[Python](#tab/python)
 
-Zie <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank">`os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank"> `os.environ` </a>voor meer informatie.
 
 ```python
 import os
@@ -185,7 +185,7 @@ value = os.environ['ENVIRONMENT_VARIABLE_KEY']
 
 # <a name="objective-c"></a>[Objective-C](#tab/objective-c)
 
-Zie <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank">`environment` <span class="docon docon-navigate-external x-hidden-focus"></span></a> voor meer informatie.
+Zie <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank"> `environment` </a>voor meer informatie.
 
 ```objectivec
 // Get the named env var, and assign it to the value variable
@@ -201,7 +201,7 @@ NSString* value =
 
 Klanten-lockbox is beschikbaar voor deze cognitieve service:
 
-* Vertaler
+* Translator
 
 Voor de volgende services heeft micro soft-technici geen toegang tot klant gegevens in de E0-laag: 
 

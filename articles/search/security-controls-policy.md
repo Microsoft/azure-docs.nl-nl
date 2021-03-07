@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cognitive Search
 description: Geeft beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cognitive Search weer. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 02/09/2021
+ms.date: 03/05/2021
 ms.topic: sample
 author: HeidiSteen
 ms.author: heidist
 ms.service: search
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: ac1723b40544ef9420b7d9d780b598275cfa0167
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: ed940bcaa28945d33c3345ca684b81a7f5765cc7
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100095955"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442504"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-cognitive-search"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cognitive Search
 

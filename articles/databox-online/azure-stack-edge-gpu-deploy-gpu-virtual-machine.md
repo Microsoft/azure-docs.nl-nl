@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/21/2020
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: cb6b8e310f46cd98c4d3343d44fd83a3cc714a32
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ff805b758dce05a66764ab1ff08e53378c946362
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101730708"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438179"
 ---
 # <a name="gpu-vms-for-your-azure-stack-edge-pro-device"></a>GPU-Vm's voor uw Azure Stack Edge Pro-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-sku.md)]
 
 Dit artikel bevat een overzicht van GPU virtual machines (Vm's) op uw Azure Stack Edge Pro-apparaat. In dit artikel wordt beschreven hoe u een GPU-VM maakt en vervolgens de extensie GPU-stuur programma installeert om de juiste NVIDIA-Stuur Programma's te installeren. Gebruik de Azure Resource Manager sjablonen om de GPU-VM te maken en de uitbrei ding van het GPU-stuur programma te installeren. 
 

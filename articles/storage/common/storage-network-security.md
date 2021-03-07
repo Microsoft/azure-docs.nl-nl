@@ -5,16 +5,16 @@ services: storage
 author: santoshc
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/05/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 4aa4e0566093f01e5f14691158f37c630c753b00
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9e395ce996bf7e6889a27fcb04b0e643cf63c58b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101714745"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430884"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
@@ -136,7 +136,7 @@ Wanneer u na een regionale onderbreking een herstel na nood geval wilt plannen, 
 
 ### <a name="required-permissions"></a>Vereiste machtigingen
 
-Als u een regel voor een virtueel netwerk wilt Toep assen op een opslag account, moet de gebruiker de juiste machtigingen hebben voor de subnetten die worden toegevoegd. De benodigde machtiging is *lid van de service aan een subnet* en is opgenomen in de ingebouwde rol *Inzender voor opslag accounts* . Het kan ook worden toegevoegd aan aangepaste roldefinities.
+Als u een regel voor een virtueel netwerk wilt Toep assen op een opslag account, moet de gebruiker de juiste machtigingen hebben voor de subnetten die worden toegevoegd. Het Toep assen van een regel kan worden uitgevoerd door een [mede werker van het opslag account](../../role-based-access-control/built-in-roles.md#storage-account-contributor) of een gebruiker aan wie toestemming is gegeven voor de `Microsoft.Network/virtualNetworks/subnets/joinViaServiceEndpoint/action` [Azure resource provider-bewerking](../../role-based-access-control/resource-provider-operations.md#microsoftnetwork) via een aangepaste Azure-rol.
 
 Het opslag account en de virtuele netwerken waartoe toegang wordt verleend, kunnen zich in verschillende abonnementen bevinden, met inbegrip van abonnementen die deel uitmaken van een andere Azure AD-Tenant.
 

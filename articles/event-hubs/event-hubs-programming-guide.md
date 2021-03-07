@@ -4,12 +4,12 @@ description: Dit artikel bevat informatie over het schrijven van code voor Azure
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a299813620ee90591d8c9491991237f75f2e9382
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 32c3c05b61d2ee8fc79d7c863ddbe84de5fe7e2b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623045"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102432737"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>.NET-programmeer handleiding voor Azure Event Hubs (verouderd micro soft. Azure. Event hubs-pakket)
 In dit artikel worden enkele algemene scenario's beschreven voor het schrijven van code met behulp van Azure Event Hubs. Er wordt uitgegaan van een basisbegrip van Event Hubs. Zie het [Overzicht van Event Hubs](./event-hubs-about.md) voor een conceptueel overzicht van Event Hubs.
@@ -73,21 +73,7 @@ for (var i = 0; i < numMessagesToSend; i++)
 > [!NOTE]
 > Als u niet bekend bent met partities, raadpleegt u [dit artikel](event-hubs-features.md#partitions). 
 
-Bij het verzenden van gebeurtenis gegevens kunt u een waarde opgeven die wordt gehasht voor het produceren van een partitie toewijzing. U geeft de partitie op met behulp van de eigenschap [PartitionSender. PartitionID](/dotnet/api/microsoft.azure.eventhubs.partitionsender.partitionid) . De beslissing om partities te gebruiken, impliceert echter een keuze tussen Beschik baarheid en consistentie. 
-
-### <a name="availability-considerations"></a>Beschikbaarheidsoverwegingen
-
-Het gebruik van een partitie sleutel is optioneel en Overweeg zorgvuldig of u er een moet gebruiken. Als u geen partitie sleutel opgeeft bij het publiceren van een gebeurtenis, Event Hubs balanceert u de belasting tussen de partities. In veel gevallen is het gebruik van een partitie sleutel een goede keuze als de volg orde van de gebeurtenissen belang rijk is. Wanneer u een partitie sleutel gebruikt, zijn voor deze partities Beschik baarheid op één knoop punt vereist en kunnen er storingen optreden in de loop van de tijd. bijvoorbeeld wanneer reken knooppunten opnieuw worden opgestart en patch. Als u een partitie-ID instelt en deze partitie om een of andere reden niet meer beschikbaar is, mislukt de poging om toegang te krijgen tot de gegevens in die partitie. Als hoge Beschik baarheid het belangrijkst is, geeft u geen partitie sleutel op. In dat geval worden gebeurtenissen via een intern taakverdelings algoritme verzonden naar partities. In dit scenario maakt u een expliciete keuze tussen Beschik baarheid (geen partitie-ID) en consistentie (het vastmaken van gebeurtenissen aan een partitie-ID).
-
-Een andere overweging is het verwerken van vertragingen bij het verwerken van gebeurtenissen. In sommige gevallen kan het beter zijn om gegevens te verwijderen en opnieuw te proberen dan om de verwerking te blijven uitvoeren. Dit kan leiden tot verdere downstream verwerkings vertragingen. Met een aandelen tikker is het echter beter te wachten op de volledige actuele gegevens, maar in een live chat-of VOIP-scenario kunt u in plaats daarvan snel de gegevens gebruiken, zelfs als deze niet volledig zijn.
-
-Op basis van deze beschikbaarheids overwegingen kunt u in deze scenario's een van de volgende strategieën voor het afhandelen van fouten kiezen:
-
-- Stoppen (lezen van Event Hubs stoppen totdat er dingen zijn hersteld)
-- Drop (berichten zijn niet belang rijk, verwijder ze)
-- Probeer het opnieuw (probeer de berichten opnieuw uit te voeren zoals u ziet)
-
-Zie [Beschik baarheid en consistentie in Event hubs](event-hubs-availability-and-consistency.md)voor meer informatie en een bespreking over de wissel werking tussen Beschik baarheid en consistentie. 
+Bij het verzenden van gebeurtenis gegevens kunt u een waarde opgeven die wordt gehasht voor het produceren van een partitie toewijzing. U geeft de partitie op met behulp van de eigenschap [PartitionSender. PartitionID](/dotnet/api/microsoft.azure.eventhubs.partitionsender.partitionid) . De beslissing om partities te gebruiken, impliceert echter een keuze tussen Beschik baarheid en consistentie. Zie [Beschik baarheid en consistentie](event-hubs-availability-and-consistency.md)voor meer informatie.
 
 ## <a name="batch-event-send-operations"></a>Batchbewerkingen voor het verzenden van gebeurtenissen
 

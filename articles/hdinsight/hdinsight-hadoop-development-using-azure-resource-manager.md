@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.topic: how-to
 ms.date: 02/21/2018
-ms.openlocfilehash: 2ff62f4feba44a1c706ab85db1be3f7f654e6135
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a8f808cd43f96f26db0de28e8059d02d9488320a
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945766"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434658"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Migreren naar op Azure Resource Manager gebaseerde ontwikkel hulpprogramma's voor HDInsight-clusters
 
@@ -238,7 +238,7 @@ In deze sectie vindt u meer informatie over het uitvoeren van bepaalde taken met
 
 | Procedures... de op Resource Manager gebaseerde HDInsight SDK gebruiken | Koppelingen |
 | --- | --- |
-| Azure HDInsight-SDK voor .NET|Zie de [Azure HDInsight-SDK voor .net](/dotnet/api/overview/azure/hdinsight?view=azure-dotnet&preserve-view=true) |
+| Azure HDInsight-SDK voor .NET|Zie de [Azure HDInsight-SDK voor .net](/dotnet/api/overview/azure/hdinsight) |
 | Toepassingen interactief verifiëren met behulp van Azure Active Directory met .NET SDK |Zie [Apache Hive Query's uitvoeren met behulp van .NET SDK](hadoop/apache-hadoop-use-hive-dotnet-sdk.md). In het code fragment in dit artikel wordt gebruikgemaakt van de interactieve verificatie methode. |
 | Toepassingen niet-interactief verifiëren met behulp van Azure Active Directory met .NET SDK |Zie [niet-interactieve toepassingen voor HDInsight maken](hdinsight-create-non-interactive-authentication-dotnet-applications.md) |
 | Een Apache Hive-taak verzenden met behulp van .NET SDK |Zie [Apache Hive taken verzenden](hadoop/apache-hadoop-use-hive-dotnet-sdk.md) |

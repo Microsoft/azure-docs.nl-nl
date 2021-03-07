@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 0850830e6f8101feae80154a0e245196a690f276
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/05/2021
+ms.openlocfilehash: 941d866fbdea0efc5775bccd08e0235b1629fae0
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050236"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102440890"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -280,6 +280,7 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
    1. Vervang de `AzureWebJobsStorage` waarde van de eigenschap door de Connection String van het opslag account die u eerder hebt opgeslagen, bijvoorbeeld:
 
       Voor:
+
       ```json
       {
          "IsEncrypted": false,
@@ -291,6 +292,7 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
       ```
 
       Na:
+
       ```json
       {
          "IsEncrypted": false,
@@ -302,6 +304,22 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
       ```
 
    1. Wanneer u klaar bent, moet u ervoor zorgen dat u de wijzigingen opslaat.
+
+<a name="enable-built-in-connector-authoring"></a>
+
+## <a name="enable-built-in-connector-authoring"></a>Ingebouwde connector ontwerpen inschakelen
+
+U kunt uw eigen ingebouwde connectors maken voor elke service die u nodig hebt met behulp [van het uitbreidings raamwerk van de preview-versie](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272). Net als bij ingebouwde connectors, zoals Azure Service Bus en SQL Server, bieden deze connectors een hogere door Voer, lage latentie en lokale connectiviteit, en worden ze systeem eigen uitgevoerd in hetzelfde proces als de runtime voor de preview-versie.
+
+De ontwerp functie is momenteel alleen beschikbaar in Visual Studio code, maar is niet standaard ingeschakeld. Als u deze connectors wilt maken, moet u het project eerst converteren van een op een op een basis gebaseerd op een op een Node.js op NuGet (op de gebaseerd op basis van een extensie).
+
+1. Ga in het deel venster Verkenner naar de hoofdmap van het project, verplaats de muis aanwijzer over een leeg gebied onder alle andere bestanden en mappen, open het snelmenu en selecteer **converteren naar Nuget Logic app project**.
+
+   ![Scherm opname van het deel venster Verkenner waarin het snelmenu van het project wordt geopend vanuit een leeg gebied in het project venster.](./media/create-stateful-stateless-workflows-visual-studio-code/convert-logic-app-project.png)
+
+1. Wanneer de prompt wordt weer gegeven, bevestig de project conversie.
+
+1. Als u wilt door gaan, bekijkt u de stappen in het artikel Azure Logic Apps de uitbreidings module voor de [hele ingebouwde connector](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272)uit te voeren.
 
 <a name="open-workflow-definition-designer"></a>
 
@@ -629,7 +647,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    ![Scherm afbeelding van de overzichts pagina van de werk stroom met de status en geschiedenis van de uitvoering](./media/create-stateful-stateless-workflows-visual-studio-code/post-trigger-call.png)
 
-   | Uitvoerings status | Beschrijving |
+   | Uitvoerings status | Description |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -653,7 +671,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
-   | Actie status | Pictogram | Beschrijving |
+   | Actie status | Pictogram | Description |
    |---------------|------|-------------|
    | **Aborted** | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een aanvraag ontvangen om te annuleren. |
@@ -1348,6 +1366,7 @@ Wanneer u probeert een foutopsporingssessie te starten, wordt de fout **' fout b
 1. Verwijder in de volgende taak de regel, `"dependsOn: "generateDebugSymbols"` samen met de komma die de voor gaande regel eindigt, bijvoorbeeld:
 
    Voor:
+
    ```json
     {
       "type": "func",
@@ -1359,6 +1378,7 @@ Wanneer u probeert een foutopsporingssessie te starten, wordt de fout **' fout b
    ```
 
    Na:
+
    ```json
     {
       "type": "func",

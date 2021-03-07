@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/22/2021
+ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: b199fdbac4aca7637e07a18383cc7e254f702019
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: bc8d14f3d4621a41c2d2845802313033d0809b4b
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804838"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442125"
 ---
 # <a name="deploy-a-kubernetes-stateless-application-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Een Kubernetes stateless toepassing implementeren via kubectl op uw Azure Stack Edge Pro GPU-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u een staatloze toepassing implementeert met behulp van kubectl-opdrachten op een bestaand Kubernetes-cluster. Dit artikel begeleidt u stapsgewijs door het proces voor het maken en instellen van een Peul in uw stateless toepassing.
 

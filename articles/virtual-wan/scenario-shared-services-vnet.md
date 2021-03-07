@@ -6,15 +6,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 03/02/2021
 ms.author: cherylmc
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 03c71664769f1518ba80d36867c71ef35b2ca026
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8e0d05d2cb960e760809ab35a8f9e4ca04acf250
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92461461"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442958"
 ---
 # <a name="scenario-route-to-shared-services-vnets"></a>Scenario: route naar gedeelde services VNets
 
@@ -30,9 +30,9 @@ We kunnen een verbindings matrix gebruiken om de vereisten van dit scenario same
 
 | Van             | Aan:   |*Geïsoleerde VNets*|*Gedeeld VNet*|*Vertakkingen*|
 |---|---|---|---|---|
-|**Geïsoleerde VNets**|&#8594;|        | Direct | Direct |
-|**Gedeelde VNets**  |&#8594;| Direct | Direct | Direct |
-|**Vertakkingen**      |&#8594;| Direct | Direct | Direct |
+|**Geïsoleerde VNets**| ->|        | Direct | Direct |
+|**Gedeelde VNets**  |->| Direct | Direct | Direct |
+|**Vertakkingen**      |->| Direct | Direct | Direct |
 
 Elk van de cellen in de vorige tabel beschrijft of een virtuele WAN-verbinding (de ' aan ' kant van de stroom, de rijkoppen) communiceert met een bestemming (de ' aan '-zijde van de stroom, de kolom koppen cursief). In dit scenario zijn er geen firewalls of virtuele netwerk apparaten, waardoor communicatie rechtstreeks via Virtual WAN (dus het woord ' direct ' in de tabel) wordt uitgevoerd.
 
@@ -68,14 +68,14 @@ Houd rekening met de volgende stappen als u het scenario wilt configureren:
      * Voor **VNets, *met uitzonde ring* van de Shared Services VNet**, selecteert u de VNets die u wilt isoleren. Dit betekent dat al deze VNets (met uitzonde ring van de Shared Services VNet) de bestemming kunnen bereiken op basis van de routes van RT_SHARED route tabel.
 
    * **Doorgifte**
-      * Voor **vertakkingen**worden routes door gegeven aan deze route tabel, naast andere route tabellen die u mogelijk al hebt geselecteerd. Vanwege deze stap leert de RT_SHARED route tabel routes van alle vertakkings verbindingen (VPN/geen of gebruiker VPN).
-      * Selecteer voor **VNets**de **Shared Services VNet**. Vanwege deze stap leert RT_SHARED route tabel routes van de VNet-verbinding van de gedeelde services.
+      * Voor **vertakkingen** worden routes door gegeven aan deze route tabel, naast andere route tabellen die u mogelijk al hebt geselecteerd. Vanwege deze stap leert de RT_SHARED route tabel routes van alle vertakkings verbindingen (VPN/geen of gebruiker VPN).
+      * Selecteer voor **VNets** de **Shared Services VNet**. Vanwege deze stap leert RT_SHARED route tabel routes van de VNet-verbinding van de gedeelde services.
 
 Dit heeft tot gevolg dat de routerings configuratie wordt weer gegeven in de volgende afbeelding:
 
-   :::image type="content" source="./media/routing-scenarios/shared-service-vnet/shared-services.png" alt-text="VNet Shared Services" lightbox="./media/routing-scenarios/shared-service-vnet/shared-services.png":::
+   :::image type="content" source="./media/routing-scenarios/shared-service-vnet/shared-services.png" alt-text="Diagram voor gedeelde services VNet." lightbox="./media/routing-scenarios/shared-service-vnet/shared-services.png":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Raadpleeg de [Veelgestelde vragen](virtual-wan-faq.md)voor meer informatie over Virtual WAN.
+* Als u wilt configureren met een ARM-sjabloon, raadpleegt u [Quick Start: route naar gedeelde services VNets met een arm-sjabloon](quickstart-route-shared-services-vnet-template.md).
 * Zie [about Virtual hub Routing](about-virtual-hub-routing.md)(Engelstalig) voor meer informatie over virtuele-hub-route ring.

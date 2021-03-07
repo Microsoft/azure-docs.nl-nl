@@ -3,12 +3,12 @@ title: 'Hoe kunt u uw Application Insights-implementatie ontwerpen: een VS veel 
 description: Telemetrie omleiden naar verschillende bronnen voor ontwikkelings-, test-en productie tempels.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 3964cddcf27a4b2c7397b508ccb3cc8928bd04ad
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9a60981e692a45dd3630073300b206289cfd2a30
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100589538"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102424662"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Hoeveel Application Insights resources moeten worden geïmplementeerd
 
@@ -32,6 +32,9 @@ Elke Application Insights resource wordt geleverd met metrische gegevens die bes
 -   Als u facturering/quota's niet anders hoeft te beheren tussen de onderdelen.
 -   Als het een goed is om een API-sleutel te hebben, hebt u dezelfde toegang tot de gegevens van alle onderdelen. En 10 API-sleutels zijn voldoende voor de behoeften van alle gebruikers.
 -   Als het gaat om dezelfde Slimme detectie en instellingen voor de integratie van werk items in alle rollen.
+
+> [!NOTE]
+> Als u meerdere Application Insights resources wilt consolideren, kunt u uw bestaande toepassings onderdelen naar een nieuwe, geconsolideerde Application Insights resource laten wijzen. De telemetrie die is opgeslagen in uw oude resource wordt niet overgezet naar de nieuwe resource. Verwijder daarom alleen de oude resource als u voldoende telemetrie hebt in de nieuwe resource voor bedrijfs continuïteit.
 
 ### <a name="other-things-to-keep-in-mind"></a>Andere zaken die u moet onthouden
 

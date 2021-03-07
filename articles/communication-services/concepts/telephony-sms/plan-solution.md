@@ -10,21 +10,31 @@ ms.date: 10/05/2020
 ms.topic: overview
 ms.custom: references_regions
 ms.service: azure-communication-services
-ms.openlocfilehash: 4ba8a6b530f3f3650959eac90bba5b05e3ac0643
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 8a811a033a2d6e2229c83899e237f996ccddd7b3
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215405"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430408"
 ---
 # <a name="phone-number-types-in-azure-communication-services"></a>Typen telefoonnummers in Azure Communication Services
+
+
 
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
 > [!IMPORTANT]
-> De beschikbaarheid van telefoonnummers is momenteel beperkt tot Azure-abonnementen met een factureringsadres in de Verenigde Staten. Ga voor meer informatie naar de sectie [abonnements geschiktheid](#azure-subscriptions-eligibility) van dit document.
+> De beschik baarheid van telefoon nummers is momenteel beperkt tot betaalde Azure-abonnementen die een factuur adres hebben in de Verenigde Staten-en communicatie services-resources die een Amerikaanse gegevens locatie hebben. Telefoon nummers kunnen niet worden aangeschaft bij proef accounts of Azure-gratis tegoeden gebruiken. Ga voor meer informatie naar de sectie [abonnements geschiktheid](#azure-subscriptions-eligibility) van dit document.
+
 
 Met Azure Communication Services kunt u telefoonnummers gebruiken om gesprekken te voeren en sms-berichten te verzenden met het openbare telefoonnetwerk (PSTN). In dit document bekijken we de typen telefoonnummers, configuratieopties en beschikbaarheid in regio's voor het plannen van uw telefoon- en sms-oplossing met behulp van Communication Services.
+
+## <a name="azure-subscriptions-eligibility"></a>Geschiktheid Azure-abonnementen
+
+Als u een telefoonnummer wilt verkrijgen, moet u een betaald Azure-abonnement hebben. Telefoonnummers kunnen niet worden verkregen voor proefaccounts of via gratis Azure-tegoeden. 
+
+De beschik baarheid van telefoon nummers is momenteel beperkt tot Azure-abonnementen die een factuur adres hebben in de Verenigde Staten-en communicatie services-resources die een Amerikaanse gegevens locatie hebben.
+
 
 ## <a name="number-types-and-features"></a>Nummer typen en-functies
 Communication Services biedt twee soorten telefoonnummers: **lokaal** en **gratis**. 
@@ -72,11 +82,6 @@ In de volgende tabel ziet u waar u verschillende soorten telefoonnummers kunt ve
 
 *Raadpleeg de pagina met [prijzen](../pricing.md) voor meer informatie over oproepbestemmingen en prijzen.
 
-## <a name="azure-subscriptions-eligibility"></a>Geschiktheid Azure-abonnementen
-
-Als u een telefoonnummer wilt verkrijgen, moet u een betaald Azure-abonnement hebben. Telefoonnummers kunnen niet worden verkregen voor proefaccounts of via gratis Azure-tegoeden. 
-
-Op dit moment is de beschikbaarheid van telefoonnummers beperkt tot Azure-abonnementen met een factureringsadres in de Verenigde Staten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: ad16b63360364acd88ab12fb4715d1fd3115c0fb
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 71ba3d99ceee89464dafdf5bf4c16e70df146bef
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209369"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426073"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Gegevens analyseren in een opslagaccount
 
@@ -45,7 +45,7 @@ df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 U kunt de gegevens in uw werkruimte standaard ADLS Gen2 account analyseren of u kunt een ADLS Gen2-of Blob Storage-account koppelen aan uw werkruimte via '**Beheren**' >**Gekoppelde services**' > '**Nieuw**' (de onderstaande stappen verwijzen naar het primaire ADLS Gen2-account).
 
 1. Ga in Synapse Studio naar de hub **Gegevens** en selecteer vervolgens **Gekoppeld**.
-1. Navigeer naar **Opslagaccounts** > **myworkspace (Primary - contosolake)** .
+1. Ga naar **Azure data Lake Storage Gen2**  >  **myworkspace (Primary-contosolake)**.
 1. Selecteer **users (Primary)** . De map **NYCTaxi** moet worden weergegeven. Hierin ziet u twee mappen, **PassengerCountStats_csvformat** en **PassengerCountStats_parquetformat**.
 1. Open de map **PassengerCountStats_parquetformat**. U ziet nu een Parquet-bestand met een naam als `part-00000-2638e00c-0790-496b-a523-578da9a15019-c000.snappy.parquet`.
 1. Klik met de rechter muisknop op **. Parquet**, selecteer **Nieuw notitie blok** en selecteer vervolgens **laden naar data frame**. Er wordt een nieuw notitie blok gemaakt met een cel als volgt:

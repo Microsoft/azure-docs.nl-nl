@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/25/2021
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: e009369f6223e171984d1142419101fdd82879b0
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: ea316205e7dfb4069c41987e785881512735a4d6
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804918"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102438027"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-storageclass-on-your-azure-stack-edge-pro-gpu-device"></a>Gebruik kubectl om een Kubernetes stateful-toepassing uit te voeren met StorageClass op uw Azure Stack Edge Pro GPU-apparaat
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u een stateful toepassing met één exemplaar implementeert in Kubernetes met behulp van een StorageClass om opslag en een implementatie dynamisch in te richten. De implementatie maakt gebruik `kubectl` van opdrachten op een bestaand Kubernetes-cluster en implementeert de MySQL-toepassing. 
 

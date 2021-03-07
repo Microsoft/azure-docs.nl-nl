@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
-ms.openlocfilehash: 5ad3e1a5a4ff47fe3d5fee8b8bc79235838995b8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e48d669321ad8c58681e8a92e68f2089962bdc17
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593626"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102429847"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK
 
@@ -315,4 +315,4 @@ appInsights.loadAppInsights();
 - Bekijk de [github-opslag plaats](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-clickanalytics-js) en het [NPM-pakket](https://www.npmjs.com/package/@microsoft/applicationinsights-clickanalytics-js) voor de invoeg toepassing voor automatische verzamelingen van de analyse.
 - Gebruik [gebeurtenissen analyse in de gebruiks ervaring](usage-segmentation.md) om de meeste klikken en segment te analyseren op beschik bare dimensies.
 - Zoek op gegevens onder inhouds veld in het kenmerk customDimensions in de tabel CustomEvents in [log Analytics](../logs/log-analytics-tutorial.md#write-a-query). Zie voor [beeld-app](https://go.microsoft.com/fwlink/?linkid=2152871) voor aanvullende richt lijnen.
-- Een [werkmap](../visualize/workbooks-overview.md) bouwen om aangepaste visualisaties van klik gegevens te maken.
+- Een [werkmap](../visualize/workbooks-overview.md) bouwen of [exporteren naar Power bi](../logs/log-powerbi.md#integrating-queries) om aangepaste visualisaties van klik gegevens te maken.

@@ -1,7 +1,7 @@
 ---
 title: 'Snelstart: Aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app | Azure'
 titleSuffix: Microsoft identity platform
-description: In deze quickstart leert u hoe een app Microsoft-aanmelding implementeert in een ASP.NET Core-web-app met behulp van OpenID Connect
+description: In deze Quick Start leert u hoe een app micro soft-aanmelding implementeert op een ASP.NET Core web-app met behulp van OpenID Connect Connect
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,64 +12,66 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 38130ef666de5e77ddb277d67841aa5fcfef08df
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: d0d3154d123b5e073a4eadf976d5259d51972da8
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102594"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436478"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app
 
 In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers uit elke willekeurige Azure AD-organisatie (Azure Active Directory) kunnen worden aangemeld met een ASP.NET Core-web-app.  
 
-Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
-
 > [!div renderon="docs"]
+> In het volgende diagram ziet u hoe de voor beeld-app werkt:
+>
+> ![Diagram van de interactie tussen de webbrowser, de web-app en het micro soft Identity-platform in de voor beeld-app.](media/quickstart-v2-aspnet-core-webapp/aspnetcorewebapp-intro.svg)
+>
 > ## <a name="prerequisites"></a>Vereisten
 >
 > * [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) of [Visual Studio Code](https://code.visualstudio.com/)
 > * [.NET Core SDK 3.1+](https://dotnet.microsoft.com/download)
 >
-> ## <a name="register-and-download-your-quickstart-app"></a>De quickstart-app registreren en downloaden
-> U hebt twee opties voor het starten van de snelstarttoepassing:
-> * [Express] [Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
-> * [Handmatig] [Optie 2: registreer de toepassing en configureer handmatig de toepassing en het codevoorbeeld](#option-2-register-and-manually-configure-your-application-and-code-sample)
+> ## <a name="register-and-download-the-app"></a>De app registreren en downloaden
+> U hebt twee opties om uw toepassing te bouwen: automatische of hand matige configuratie.
 >
-> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
+> ### <a name="automatic-configuration"></a>Automatische configuratie
+> Als u uw app automatisch wilt configureren en vervolgens het code voorbeeld wilt downloaden, voert u de volgende stappen uit:
 >
-> 1. Ga naar de quickstart-ervaring <a href="https://aka.ms/aspnetcore2-1-aad-quickstart-v2/" target="_blank">Azure-portal - App-registraties</a>.
+> 1. Ga naar de <a href="https://aka.ms/aspnetcore2-1-aad-quickstart-v2/" target="_blank">pagina Azure portal voor app-registratie</a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
-> 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
+> 1. Volg de instructies voor het downloaden en automatisch configureren van uw nieuwe toepassing met één klik.
 >
-> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Optie 2: registreer de toepassing en configureer handmatig de toepassing en het codevoorbeeld
->
+> ### <a name="manual-configuration"></a>Handmatige configuratie
+> Als u uw toepassings-en code voorbeeld hand matig wilt configureren, gebruikt u de volgende procedures.
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
-> Volg deze stappen om de toepassing te registreren en de registratiegegevens van de app handmatig toe te voegen aan uw oplossing:
->
 > 1. Meld u aan bij de <a href="https://portal.azure.com/" target="_blank">Azure-portal</a>.
-> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter voor **adres lijst en abonnementen** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de Tenant te selecteren waarin u de toepassing wilt registreren.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
-> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
-> 1. Voer een **omleidings-URI** van in `https://localhost:44321/` .
+> 1. Voer bij **naam** een naam in voor uw toepassing. Voer bijvoorbeeld **AspNetCore-Quick** start in. Gebruikers van uw app krijgen deze naam te zien en u kunt deze later wijzigen.
+> 1. Voer voor **omleidings-URI** in **https://localhost:44321/signin-oidc** .
 > 1. Selecteer **Registreren**.
 > 1. Selecteer **Verificatie** onder **Beheren**.
-> 1. Selecteer onder **omleidings-uri's** de optie **URI toevoegen** en voer vervolgens in `https://localhost:44321/signin-oidc` .
-> 1. Voer een **URL in voor het afmelden** van het kanaal van `https://localhost:44321/signout-oidc` .
+> 1. Voer voor de **afmeldings-URL voor front Channel** in **https://localhost:44321/signout-oidc** .
 > 1. Onder **impliciete toekenning en hybride stromen** selecteert u **id-tokens**.
 > 1. Selecteer **Opslaan**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
-> Voor het voor beeld van de code in deze Quick start gaat u een **omleidings-URI** van `https://localhost:44321/` en `https://localhost:44321/signin-oidc` en een **front Channel-afmeldings-URL** van toevoegen `https://localhost:44321/signout-oidc` . Tokens voor aanvraag-id's worden uitgegeven door het autorisatie-eind punt.
+> Het code voorbeeld in deze Snelstartgids werkt als volgt:
+> - Voer voor **omleidings-URI** **https://localhost:44321/** en in **https://localhost:44321/signin-oidc** .
+> - Voer voor de **afmeldings-URL voor front Channel** in **https://localhost:44321/signout-oidc** . 
+>
+> Het autorisatie-eind punt geeft tokens van aanvraag-ID uit.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Deze wijziging voor mij maken]()
 >
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Al geconfigureerd](media/quickstart-v2-aspnet-webapp/green-check.png) Uw toepassing is al geconfigureerd met deze kenmerken.
 
-#### <a name="step-2-download-your-aspnet-core-project"></a>Stap 2: uw ASP.NET Core-project downloaden
+#### <a name="step-2-download-the-aspnet-core-project"></a>Stap 2: De ASP.NET Core-oplossing downloaden
 
 > [!div renderon="docs"]
 > [De ASP.NET Core-oplossing downloaden](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore3-1.zip)
@@ -82,51 +84,55 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Stap 3: Uw app is geconfigureerd en klaar om te worden uitgevoerd
-> Uw project is geconfigureerd met waarden van de eigenschappen van uw app en is klaar om te worden uitgevoerd.
+> Uw project is geconfigureerd met waarden van de eigenschappen van uw app en kan worden uitgevoerd.
 > [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
 > [!div renderon="docs"]
 > #### <a name="step-3-configure-your-aspnet-core-project"></a>Stap 3: uw ASP.NET Core-project configureren
-> 1. Pak het zip-archief uit in een lokale map in de buurt van de hoofdmap van uw station. Bijvoorbeeld in *C:\Azure-Samples*.
+> 1. Pak het zip-archief uit in een lokale map in de buurt van de hoofdmap van uw station. U kunt bijvoorbeeld extra heren in *C:\Azure-samples*.
+> 
+>    U kunt het archief het beste uitpakken in een directory in de buurt van de hoofdmap van uw station om fouten te voor komen die worden veroorzaakt door beperkingen van de padlengte in Windows.
 > 1. Open de oplossing in Visual Studio.
-> 1. Open het bestand *appSettings.json* en wijzig het volgende:
+> 1. Open de *appsettings.jsin* het bestand en wijzig de volgende code:
 >
 >    ```json
 >    "ClientId": "Enter_the_Application_Id_here",
 >    "TenantId": "common",
 >    ```
 >
->    - Vervang `Enter_the_Application_Id_here`met de **Toepassings(client)-ID** voor de toepassing die is geregistreerd in de Azure-portal. U vindt de **toepassings-id (client-id)** op de pagina **Overzicht** van de app.
+>    - Vervang door `Enter_the_Application_Id_here` de client-id van de toepassing die u hebt geregistreerd in het Azure Portal. U vindt de waarde voor de **toepassings-id (client)** op de pagina **overzicht** van de app.
 >    - Vervang `common` door een van de volgende opties:
->       - Als uw toepassing **Accounts alleen in deze organisatiemap** ondersteunt, vervangt u deze waarde door de **Map (tenant)-ID**  (een GUID) of  **tenantnaam** (bijvoorbeeld, `contoso.onmicrosoft.com`). U vindt de **Directory (Tenant)-ID** op de pagina **Overzicht** van de apps.
->       - Als uw toepassing **Accounts in elke organisatiemap** ondersteunt, vervang deze waarde dan door `organizations`
->       - Als uw toepassing **Alle Microsoft-accountgebruikers** ondersteunt, vervang deze waarde dan door `common`
+>       - Als uw toepassing **alleen accounts in deze organisatie Directory** ondersteunt, vervangt u deze waarde door de map (TENANT) ID (GUID) of de naam van de Tenant (bijvoorbeeld `contoso.onmicrosoft.com` ). U kunt de waarde **Directory-id (Tenant)** vinden op de **overzichts** pagina van de app.
+>       - Als uw toepassing **accounts in een organisatorische Directory** ondersteunt, vervangt u deze waarde door `organizations` .
+>       - Als uw toepassing **alle Microsoft-account gebruikers** ondersteunt, verlaat u deze waarde als `common` .
 >
 > Wijzig voor deze Snelstart geen andere waarden in het bestand  *appSettings.json*.
 >
 > #### <a name="step-4-build-and-run-the-application"></a>Stap 4: de toepassing bouwen en uitvoeren
 >
-> Bouw en voer de app in Visual Studio uit door het menu **Foutopsporing** te selecteren > **Foutopsporing starten** of door op de `F5`-toets te drukken.
+> Bouw en voer de app in Visual Studio uit door het menu **fout opsporing** te selecteren > **fout opsporing te starten** of door op de toets F5 te drukken.
 >
-> U wordt gevraagd om uw referenties op te geven, vervolgens wordt u gevraagd om toestemming te geven voor de machtigingen die uw app nodig heeft. Selecteer **Accepteren** op de toestemmingprompt.
+> U wordt gevraagd om uw referenties op te geven en u wordt vervolgens gevraagd toestemming te geven voor de machtigingen die uw app nodig heeft. Selecteer **Accepteren** op de toestemmingprompt.
 >
-> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-01-consent.png" alt-text="Dialoogvenster Toestemming met de machtigingen die de app aanvraagt bij de > gebruiker":::
+> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-01-consent.png" alt-text="Scherm afbeelding van het dialoog venster toestemming met de machtigingen die de app bij de gebruiker aanvraagt.":::
 >
-> Nadat u de gewenste machtigingen hebt opgegeven, wordt in de app weer gegeven dat u bent aangemeld met uw referenties voor Azure Active Directory.
+> Nadat u toestemming hebt gegeven voor de aangevraagde machtigingen, geeft de app aan dat u bent aangemeld met uw Azure Active Directory referenties.
 >
-> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-02-signed-in.png" alt-text="Webbrowser met de actieve web-app en de gebruiker die is aangemeld":::
+> :::image type="content" source="media/quickstart-v2-aspnet-core-webapp/webapp-02-signed-in.png" alt-text="Scherm afbeelding van een webbrowser waarin de actieve web-app en de aangemelde gebruiker worden weer gegeven.":::
 
 ## <a name="more-information"></a>Meer informatie
 
-Deze sectie bevat een overzicht van de code die vereist is voor het aanmelden van gebruikers. Dit overzicht kan handig zijn om te begrijpen hoe de code werkt, wat de belangrijkste argumenten zijn en ook als u aanmelding wilt toevoegen aan een bestaande ASP.NET Core-toepassing.
+Deze sectie bevat een overzicht van de code die vereist is voor het aanmelden van gebruikers. Dit overzicht kan handig zijn om te begrijpen hoe de code werkt, wat de belangrijkste argumenten zijn en hoe u aanmelden toevoegt aan een bestaande ASP.NET Core-toepassing.
 
-### <a name="how-the-sample-works"></a>Hoe het voorbeeld werkt
-![Toont hoe de voorbeeld-app werkt die is gegenereerd door deze quickstart](media/quickstart-v2-aspnet-core-webapp/aspnetcorewebapp-intro.svg)
+> [!div class="sxs-lookup" renderon="portal"]
+> ### <a name="how-the-sample-works"></a>Hoe het voorbeeld werkt
+>
+> ![Diagram van de interactie tussen de webbrowser, de web-app en het micro soft Identity-platform in de voor beeld-app.](media/quickstart-v2-aspnet-core-webapp/aspnetcorewebapp-intro.svg)
 
 ### <a name="startup-class"></a>Opstartklasse
 
-De *Microsoft.AspNetCore.Authentication*-middleware maakt gebruik van een `Startup` klasse die wordt uitgevoerd wanneer in het hostingproces het volgende wordt geïnitialiseerd:
+De middleware *micro soft. AspNetCore. Authentication* gebruikt een `Startup` klasse die wordt uitgevoerd wanneer het hosting proces wordt gestart:
 
 ```csharp
   public void ConfigureServices(IServiceCollection services)
@@ -146,17 +152,17 @@ De *Microsoft.AspNetCore.Authentication*-middleware maakt gebruik van een `Start
   }
 ```
 
-Met de methode `AddAuthentication()` wordt de service geconfigureerd voor het toevoegen van verificatie op basis van cookies. Deze verificatie wordt gebruikt in browserscenario's en om vragen te sturen naar OpenID Connect.
+De- `AddAuthentication()` methode configureert de service om verificatie op basis van cookies toe te voegen. Deze verificatie wordt gebruikt in browser scenario's en voor het instellen van de uitdaging om verbinding te maken met OpenID Connect.
 
-Met de regel die `.AddMicrosoftIdentityWebApp` bevat, wordt het Microsoft-identiteitsplatform toegevoegd aan uw toepassing. Deze wordt vervolgens geconfigureerd om u aan te melden met het micro soft-identiteits platform op basis van de informatie in de `AzureAD` sectie van de *appsettings.jsin* het configuratie bestand:
+Op de regel die bevat, `.AddMicrosoftIdentityWebApp` wordt micro soft Identity platform-verificatie toegevoegd aan uw toepassing. De toepassing wordt vervolgens geconfigureerd voor het aanmelden van gebruikers op basis van de volgende informatie in het `AzureAD` gedeelte van de *appsettings.js* in het configuratie bestand:
 
 | Sleutel *appSettings.json* | Description                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `ClientId`             | Toepassings(client)-ID van de toepassing die is geregistreerd in de Azure-portal.                                                                                       |
 | `Instance`             | STS-eindpunt (Security Token Service) voor de gebruiker te verifiëren. Deze waarde is doorgaans `https://login.microsoftonline.com/`, wat de openbare Azure-cloud aangeeft. |
-| `TenantId`             | De naam van uw tenant of de tenant-ID (een GUID) of *algemene* om gebruikers met werk- of schoolaccounts of persoonlijke Microsoft-accounts aan te melden.                             |
+| `TenantId`             | De naam van uw Tenant of de Tenant-ID (een GUID) of `common` voor het aanmelden van gebruikers met werk-of school accounts of micro soft-persoonlijke accounts.                             |
 
-De methode `Configure()` bevat twee belangrijke methoden, `app.UseAuthentication()` en `app.UseAuthorization()`, waarmee de benoemde functionaliteit kan worden ingeschakeld. In de `Configure()`-methode moet u ook de routes van Microsoft Identity Web registreren met ten minste één aanroep naar `endpoints.MapControllerRoute()` of `endpoints.MapControllers()`.
+De methode `Configure()` bevat twee belangrijke methoden, `app.UseAuthentication()` en `app.UseAuthorization()`, waarmee de benoemde functionaliteit kan worden ingeschakeld. In de `Configure()` -methode moet u ook micro soft Identity Web routes registreren met ten minste één aanroep naar `endpoints.MapControllerRoute()` of een aanroep naar `endpoints.MapControllers()` :
 
 ```csharp
 app.UseAuthentication();
@@ -174,9 +180,9 @@ app.UseEndpoints(endpoints =>
 // endpoints.MapControllers(); // REQUIRED if MapControllerRoute() isn't called.
 ```
 
-### <a name="protect-a-controller-or-a-controllers-method"></a>Een controller of de methode van een controller beveiligen
+### <a name="attribute-for-protecting-a-controller-or-methods"></a>Kenmerk voor het beveiligen van een controller of methoden
 
-U kunt een controller of controllermethoden beveiligen met behulp van het kenmerk `[Authorize]`. Met dit kenmerk wordt toegang tot de controller of methoden beperkt door alleen geverifieerde gebruikers toe te staan. Dit betekent dat de verificatiecontrole kan worden gestart om de controller te benaderen als de gebruiker niet is geverifieerd.
+U kunt een controller-of controller methode beveiligen met behulp van het- `[Authorize]` kenmerk. Dit kenmerk beperkt de toegang tot de controller of methoden door alleen geverifieerde gebruikers toe te staan. Een verificatie controle kan vervolgens worden gestart om toegang te krijgen tot de controller als de gebruiker niet is geverifieerd.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
@@ -184,10 +190,10 @@ U kunt een controller of controllermethoden beveiligen met behulp van het kenmer
 
 De GitHub-opslagplaats die deze ASP.NET Core-handleiding bevat, bevatten instructies en meer codevoorbeelden die laten zien hoe u het volgende kunt doen:
 
-- Verificatie toevoegen aan een nieuwe ASP.NET Core Web-toepassing
-- Microsoft Graph, andere Microsoft-API's of uw eigen web-API's aanroepen
-- Autorisatie toevoegen
-- Gebruikers aanmelden bij nationale clouds of met sociale identiteiten
+- Voeg verificatie toe aan een nieuwe ASP.NET Core-webtoepassing.
+- Microsoft Graph, andere micro soft-Api's of uw eigen web-Api's aanroepen.
+- Autorisatie toevoegen.
+- Meld gebruikers aan bij nationale Clouds of met sociale identiteiten.
 
 > [!div class="nextstepaction"]
 > [ASP.NET Core Web-app-handleidingen op GitHub](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/)

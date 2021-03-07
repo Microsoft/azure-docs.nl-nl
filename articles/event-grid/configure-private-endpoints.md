@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u privé-eind punten voor Azure
 ms.topic: how-to
 ms.date: 11/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f8e0cfc0a850ae15ea6d03ff6ca8b90003adbfc9
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: f8a9ac46596b1c2611ce9df387ac995e8149e7b9
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916935"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425342"
 ---
 # <a name="configure-private-endpoints-for-azure-event-grid-topics-or-domains"></a>Privé-eind punten voor Azure Event Grid onderwerpen of domeinen configureren
 U kunt [privé-eind punten](../private-link/private-endpoint-overview.md) gebruiken om direct vanuit uw virtuele netwerk toegang te geven tot uw onderwerpen en domeinen, zonder dat u het open bare Internet [hoeft te passeren](../private-link/private-link-overview.md) . Het persoonlijke eind punt gebruikt een IP-adres uit de VNet-adres ruimte voor uw onderwerp of domein. Zie [netwerk beveiliging](network-security.md)voor meer conceptuele informatie.
@@ -26,7 +26,7 @@ In deze sectie wordt beschreven hoe u de Azure Portal gebruikt om een persoonlij
 2. Ga naar het tabblad **netwerken** op de pagina onderwerp. Selecteer **+ persoonlijk eind punt** op de werk balk.
 
     ![Persoonlijk eind punt toevoegen](./media/configure-private-endpoints/add-button.png)
-2. Een van de volgende stappen op de pagina **basis beginselen** : 
+2. Voer de volgende stappen uit op de pagina **basis beginselen** : 
     1. Selecteer een **Azure-abonnement** waarin u het persoonlijke eind punt wilt maken. 
     2. Selecteer een **Azure-resource groep** voor het persoonlijke eind punt. 
     3. Voer een **naam** in voor het eind punt. 
@@ -78,7 +78,7 @@ Er zijn vier inrichtingsstatussen:
 ###  <a name="how-to-manage-a-private-endpoint-connection"></a>Een verbinding met een privé-eind punt beheren
 In de volgende secties ziet u hoe u een verbinding met een privé-eind punt kunt goed keuren of afwijzen. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Typ in de zoek balk **Event grid onderwerpen** of **Event grid domeinen**.
 1. Selecteer het **onderwerp** dat of het **domein** dat u wilt beheren.
 1. Selecteer het tabblad **Netwerken**.

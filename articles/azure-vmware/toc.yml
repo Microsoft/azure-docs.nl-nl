@@ -4,6 +4,8 @@
   items:
     - name: Over Azure VMware Solution
       href: introduction.md
+    - name: Platform updates
+      href: azure-vmware-solution-platform-updates.md
 - name: Snel starten
   items:
     - name: 0 - De implementatie plannen

@@ -3,12 +3,12 @@ title: host.jsbij verwijzing voor Azure Functions 2. x
 description: Referentie documentatie voor de Azure Functions host.jsin het bestand met v2 runtime.
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 7ab60fb364eb3268a03c04bb4950251ae030f015
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 545b02ee8496c9530b263227d4138441f27f0cf9
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374045"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102441700"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x-and-later"></a>Referentie naar host.json voor Azure Functions 2.x en hoger 
 
@@ -345,7 +345,7 @@ Hiermee bepaalt u het gedrag van logboek registratie van de functie-app, met inb
 |Eigenschap  |Standaard | Beschrijving |
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Hiermee wordt gedefinieerd welk niveau van bestands logboek registratie is ingeschakeld.  Opties zijn `never` , `always` , `debugOnly` . |
-|logLevel|n.v.t.|Object dat de logboek categorie filtering definieert voor functies in de app. Versie 2. x en hoger volgen de ASP.NET Core indeling voor het filteren van de logboek categorie. Met deze instelling kunt u logboek registratie voor specifieke functies filteren. Zie [logboek filtering](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1&preserve-view=true#log-filtering) in de ASP.net core-documentatie voor meer informatie. |
+|logLevel|n.v.t.|Object dat de logboek categorie filtering definieert voor functies in de app. Met deze instelling kunt u logboek registratie voor specifieke functies filteren. Zie [logboek niveaus configureren](configure-monitoring.md#configure-log-levels)voor meer informatie. |
 |console|n.v.t.| De instelling voor de logboek registratie van de [console](#console) . |
 |applicationInsights|n.v.t.| De instelling [applicationInsights](#applicationinsights) . |
 

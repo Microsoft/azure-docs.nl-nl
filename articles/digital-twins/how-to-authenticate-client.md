@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6a0676418e951b84c9b973bd93c2750e410392d1
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 22e07726ca71cc28e9536bb24cde580d4232f237
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102212809"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433417"
 ---
 # <a name="write-client-app-authentication-code"></a>Verificatie code voor client-app schrijven
 
@@ -20,7 +20,7 @@ Nadat u [een Azure Digital apparaatdubbels-exemplaar en-verificatie hebt ingeste
 
 Azure Digital Apparaatdubbels voert verificatie uit met behulp van [Azure AD-beveiligings tokens op basis van OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims). Als u uw SDK wilt verifiëren, moet u een Bearer-token met de juiste machtigingen voor Azure Digital Apparaatdubbels verkrijgen en dit samen met uw API-aanroepen door geven. 
 
-In dit artikel wordt beschreven hoe u referenties kunt verkrijgen met behulp van de `Azure.Identity` client bibliotheek. Hoewel in dit artikel code voorbeelden in C# worden weer gegeven, zoals wat u schrijft voor [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), kunt u een versie van gebruiken, `Azure.Identity` ongeacht de SDK die u gebruikt (voor meer informatie over de sdk's die beschikbaar zijn voor Azure Digital apparaatdubbels raadpleegt u [*Hoe: de Azure Digital Apparaatdubbels-api's en sdk's gebruiken*](how-to-use-apis-sdks.md)).
+In dit artikel wordt beschreven hoe u referenties kunt verkrijgen met behulp van de `Azure.Identity` client bibliotheek. Hoewel in dit artikel code voorbeelden in C# worden weer gegeven, zoals wat u schrijft voor [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client), kunt u een versie van gebruiken, `Azure.Identity` ongeacht de SDK die u gebruikt (voor meer informatie over de sdk's die beschikbaar zijn voor Azure Digital apparaatdubbels raadpleegt u [*Hoe: de Azure Digital Apparaatdubbels-api's en sdk's gebruiken*](how-to-use-apis-sdks.md)).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,16 +32,16 @@ Als u wilt door gaan, hebt u een client-app-project nodig waarin u uw code schri
 
 `Azure.Identity` is een client bibliotheek met verschillende methoden voor het verkrijgen van referenties die u kunt gebruiken om een Bearer-token op te halen en te verifiëren met uw SDK. Hoewel in dit artikel voor beelden in C# worden weer gegeven, kunt u deze bekijken `Azure.Identity` voor verschillende talen, waaronder...
 
-* [.NET (C#)](/dotnet/api/azure.identity?preserve-view=true&view=azure-dotnet)
+* [.NET (C#)](/dotnet/api/azure.identity)
 * [Java](/java/api/overview/azure/identity-readme)
 * [JavaScript](/javascript/api/overview/azure/identity-readme)
 * [Python](/python/api/overview/azure/identity-readme?preserve-view=true&view=azure-python)
 
 Drie veelvoorkomende methoden voor het verkrijgen van referenties in `Azure.Identity` zijn:
 
-* [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) biedt een standaard `TokenCredential` verificatie stroom voor toepassingen die worden geïmplementeerd in azure, en is **de aanbevolen keuze voor lokale ontwikkeling**. Het kan ook worden ingeschakeld om de andere twee methoden te proberen die in dit artikel worden aanbevolen. Er wordt gewikkeld `ManagedIdentityCredential` en kan toegang krijgen tot `InteractiveBrowserCredential` een configuratie variabele.
-* [ManagedIdentityCredential](/dotnet/api/azure.identity.managedidentitycredential?preserve-view=true&view=azure-dotnet) werkt prima in gevallen waarin u [beheerde identiteiten (MSI)](../active-directory/managed-identities-azure-resources/overview.md)nodig hebt, en is een goede kandidaat voor het werken met Azure functions en het implementeren van Azure-Services.
-* [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) is bedoeld voor interactieve toepassingen en kan worden gebruikt voor het maken van een geverifieerde SDK-client
+* [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) biedt een standaard `TokenCredential` verificatie stroom voor toepassingen die worden geïmplementeerd in azure, en is **de aanbevolen keuze voor lokale ontwikkeling**. Het kan ook worden ingeschakeld om de andere twee methoden te proberen die in dit artikel worden aanbevolen. Er wordt gewikkeld `ManagedIdentityCredential` en kan toegang krijgen tot `InteractiveBrowserCredential` een configuratie variabele.
+* [ManagedIdentityCredential](/dotnet/api/azure.identity.managedidentitycredential) werkt prima in gevallen waarin u [beheerde identiteiten (MSI)](../active-directory/managed-identities-azure-resources/overview.md)nodig hebt, en is een goede kandidaat voor het werken met Azure functions en het implementeren van Azure-Services.
+* [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential) is bedoeld voor interactieve toepassingen en kan worden gebruikt voor het maken van een geverifieerde SDK-client
 
 In het volgende voor beeld ziet u hoe u deze met behulp van de .NET (C#) SDK gebruikt.
 
@@ -59,7 +59,7 @@ Voeg vervolgens code toe om referenties te verkrijgen met een van de methoden in
 
 ### <a name="defaultazurecredential-method"></a>Methode DefaultAzureCredential
 
-[DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) biedt een standaard `TokenCredential` verificatie stroom voor toepassingen die worden geïmplementeerd in azure, en is **de aanbevolen keuze voor lokale ontwikkeling**.
+[DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) biedt een standaard `TokenCredential` verificatie stroom voor toepassingen die worden geïmplementeerd in azure, en is **de aanbevolen keuze voor lokale ontwikkeling**.
 
 Als u de standaard Azure-referenties wilt gebruiken, hebt u de URL van het Azure Digital Apparaatdubbels-exemplaar ([instructies om te vinden](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)) nodig.
 
@@ -73,7 +73,7 @@ Hier volgt een code voorbeeld om een `DefaultAzureCredential` aan het project to
 
 ### <a name="managedidentitycredential-method"></a>Methode ManagedIdentityCredential
 
-De methode [ManagedIdentityCredential](/dotnet/api/azure.identity.managedidentitycredential?preserve-view=true&view=azure-dotnet) werkt prima in gevallen waar u [beheerde identiteiten (MSI)](../active-directory/managed-identities-azure-resources/overview.md)nodig hebt, bijvoorbeeld bij het werken met Azure functions.
+De methode [ManagedIdentityCredential](/dotnet/api/azure.identity.managedidentitycredential) werkt prima in gevallen waar u [beheerde identiteiten (MSI)](../active-directory/managed-identities-azure-resources/overview.md)nodig hebt, bijvoorbeeld bij het werken met Azure functions.
 
 Dit betekent dat u `ManagedIdentityCredential` in hetzelfde project kunt gebruiken als `DefaultAzureCredential` of `InteractiveBrowserCredential` , om een ander deel van het project te verifiëren.
 
@@ -85,7 +85,7 @@ In een Azure-functie kunt u de referenties van de beheerde identiteit als volgt 
 
 ### <a name="interactivebrowsercredential-method"></a>Methode InteractiveBrowserCredential
 
-De methode [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) is bedoeld voor interactieve toepassingen en brengt een webbrowser voor verificatie. U kunt dit in plaats van gebruiken `DefaultAzureCredential` in gevallen waarin u interactieve verificatie nodig hebt.
+De methode [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential) is bedoeld voor interactieve toepassingen en brengt een webbrowser voor verificatie. U kunt dit in plaats van gebruiken `DefaultAzureCredential` in gevallen waarin u interactieve verificatie nodig hebt.
 
 Als u de interactieve browser referenties wilt gebruiken, hebt u een **app-registratie** nodig die machtigingen heeft voor de Azure Digital Apparaatdubbels-api's. Zie [*How to: Create a app Registration*](how-to-create-app-registration.md)(Engelstalig) voor de stappen voor het instellen van deze app-registratie. Zodra de app-registratie is ingesteld, hebt u nodig...
 * de *toepassings-id* van de app-registratie (client) ([te vinden instructies](how-to-create-app-registration.md#collect-client-id-and-tenant-id))

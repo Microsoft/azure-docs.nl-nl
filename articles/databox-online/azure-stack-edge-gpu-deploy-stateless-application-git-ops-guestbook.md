@@ -1,21 +1,23 @@
 ---
-title: '`PHP Guestbook`App implementeren op Arc enabled Kubernetes op Azure stack Edge Pro GPU-apparaat | Microsoft Docs'
+title: PHP- `Guestbook` app implementeren op Arc-Kubernetes op Azure stack Edge Pro GPU-apparaat | Microsoft Docs
 description: Hierin wordt beschreven hoe u een PHP- `Guestbook` staatloze toepassing implementeert met redis met behulp van GitOps op een Kubernetes-cluster met Arc-functionaliteit van uw Azure stack Edge Pro-apparaat.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 01/25/2021
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: ba72617444a2c7ec30e4d1d25afe1edcda16ff35
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: f47f795335204ecd0c74463b76583d7dd79f8532
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98804886"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436427"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Implementeer een PHP- `Guestbook` staatloze toepassing met redis op het Kubernetes-cluster op basis van Azure stack Edge Pro GPU
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u een eenvoudige webtoepassing met meerdere lagen bouwt en implementeert met behulp van Kubernetes en Azure Arc. Dit voor beeld bestaat uit de volgende onderdelen:
 

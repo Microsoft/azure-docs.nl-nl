@@ -1,17 +1,17 @@
 ---
 title: Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Raspberry Pi 3 B + Reference yocto image | Microsoft Docs
 description: Ga aan de slag met het bijwerken van het apparaat voor Azure IoT Hub met behulp van de Raspberry Pi 3 B + Reference yocto image.
-author: vimeht
-ms.author: vimeht
+author: valls
+ms.author: valls
 ms.date: 2/11/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: bb992e4f33cc833411e7cce560f71adf1dc72076
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ca689df97e7268a5c0f7c0479e6514b98ffda9f2
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664681"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443451"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-raspberry-pi-3-b-reference-image"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de Raspberry Pi 3 B +-referentie-afbeelding
 
@@ -143,13 +143,11 @@ Gebruik dat versie nummer in de stap voor het importeren van de update.
 
 ## <a name="import-update"></a>Update importeren
 
-1. Selecteer de optie apparaat bijwerken onder Automatische Apparaatbeheer in de navigatie balk aan de linkerkant.
-
-2. Selecteer het tabblad updates.
-
-3. Selecteer + nieuwe update importeren.
-
-4. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het import manifest dat u eerder hebt gedownload. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het apt-manifest update bestand dat u eerder hebt gedownload.
+1. Maak een import manifest volgens deze [instructies](import-update.md).
+2. Selecteer de optie apparaat bijwerken onder Automatische Apparaatbeheer in de navigatie balk aan de linkerkant.
+3. Selecteer het tabblad updates.
+4. Selecteer + nieuwe update importeren.
+5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het import manifest dat u hierboven hebt gemaakt.  Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het update bestand dat u wilt implementeren op uw IoT-apparaten.
    
    :::image type="content" source="media/import-update/select-update-files.png" alt-text="Scherm opname van de selectie van update bestanden." lightbox="media/import-update/select-update-files.png":::
 

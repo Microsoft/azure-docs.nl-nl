@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: travisw
-ms.openlocfilehash: 40736764cf9cec6f652e0147eb25d83f15c5bee2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e4ae8a09a554afe232091b68888af17dfa096771
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024939"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426466"
 ---
 # <a name="what-is-custom-commands"></a>Wat zijn aangepaste opdrachten?
 
@@ -36,7 +36,7 @@ Goede kandidaten voor aangepaste opdrachten hebben een vaste vocabulaire met goe
 
 ## <a name="getting-started-with-custom-commands"></a>Aan de slag met aangepaste opdrachten
 
-Het doel van het maken van aangepaste opdrachten is het verminderen van uw cognitieve werk belasting voor meer informatie over de verschillende technologieën en focussen bij het bouwen van uw stem opdracht. Eerste stap voor het gebruik van aangepaste opdrachten voor <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">het maken van <span class="docon docon-navigate-external x-hidden-focus"></span> een Azure-spraak resource </a>. U kunt uw aangepaste opdrachten-app in het speech Studio ontwerpen en publiceren, waarna een toepassing op het apparaat kan communiceren met de spraak-SDK.
+Het doel van het maken van aangepaste opdrachten is het verminderen van uw cognitieve werk belasting voor meer informatie over de verschillende technologieën en focussen bij het bouwen van uw stem opdracht. Eerste stap voor het gebruik van aangepaste opdrachten voor <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">het maken van een Azure-spraak resource </a>. U kunt uw aangepaste opdrachten-app in het speech Studio ontwerpen en publiceren, waarna een toepassing op het apparaat kan communiceren met de spraak-SDK.
 
 #### <a name="authoring-flow-for-custom-commands"></a>Ontwerp stroom voor aangepaste opdrachten
    ![Ontwerp stroom voor aangepaste opdrachten](media/voice-assistants/custom-commands-flow.png "De aangepaste opdrachten stroom voor ontwerpen")

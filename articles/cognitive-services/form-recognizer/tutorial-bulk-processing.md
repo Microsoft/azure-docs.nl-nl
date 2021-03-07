@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: tutorial
 ms.date: 01/04/2021
 ms.author: pafarley
-ms.openlocfilehash: d0c95312e1794e2f78bbbef217ef5530a993146d
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 5b220652009f54482c757f01232517569596c562
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102040903"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102423893"
 ---
 # <a name="tutorial-extract-form-data-in-bulk-by-using-azure-data-factory"></a>Zelf studie: formulier gegevens bulksgewijs extra heren met behulp van Azure Data Factory
 
@@ -43,10 +43,11 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. [Maak er gratis een](https://azure.microsoft.com/free/cognitive-services/).
-* Nadat u uw Azure-abonnement hebt <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title=" gemaakt, maakt u een formulier Recognizer resource "  target="_blank"> een formulier herkenner maken <span class="docon docon-navigate-external x-hidden-focus"></span> </a> in de Azure Portal om uw sleutel en eind punt op te halen. Nadat de resource is geïmplementeerd, selecteert u **Ga naar resource**.
+* Nadat u uw Azure-abonnement hebt <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title=" gemaakt, maakt u een formulier Recognizer resource "  target="_blank"> een formulier herkenner maken </a> in de Azure Portal om uw sleutel en eind punt op te halen. Nadat de resource is geïmplementeerd, selecteert u **Ga naar resource**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt om de toepassing te verbinden met de Form Recognizer-API. Verderop in deze Quick start gaat u uw sleutel en eind punt in uw code plakken.
     * U kunt de gratis prijs categorie (F0) gebruiken om de service te proberen. U kunt later een upgrade uitvoeren naar een betaalde laag voor productie.
 * Een set van minimaal vijf formulieren van hetzelfde type. Idealiter is deze werkstroom bedoeld voor grote verzamelingen documenten. Zie [een trainings gegevensset maken](./build-training-data-set.md) voor tips en opties voor het samen stellen van uw trainings gegevensset. Voor deze zelf studie kunt u de bestanden in de map Train van de voor [beeld-gegevensset](https://go.microsoft.com/fwlink/?linkid=2128080)gebruiken.
+
 
 ## <a name="project-architecture"></a>Projectarchitectuur 
 

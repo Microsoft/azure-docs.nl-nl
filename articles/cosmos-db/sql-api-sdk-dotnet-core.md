@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: c6afbcebeb23889f65e5c071c3edc22e59934bbd
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: 49df1a066ef19fff15830491071755d152ddd1d0
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "93098569"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102423880"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-v2-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB .NET Core SDK v2 voor SQL-API: release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -40,13 +40,13 @@ ms.locfileid: "93098569"
 | |  |
 |---|---|
 |**SDK downloaden**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/)|
-|**API-documentatie**|[Naslag documentatie voor .NET API](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet&preserve-view=true)|
+|**API-documentatie**|[Naslag documentatie voor .NET API](/dotnet/api/overview/azure/cosmosdb)|
 |**Voorbeelden**|[.NET-code voorbeelden](sql-api-dotnet-samples.md)|
 |**Aan de slag**|[Aan de slag met de Azure Cosmos DB .NET](sql-api-sdk-dotnet.md)|
 |**Zelf studie voor web-apps**|[Ontwikkeling van webtoepassingen met Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Huidig ondersteund framework**|[.NET Standard 1,6 en .NET Standard 1,5](https://www.nuget.org/packages/NETStandard.Library)|
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 > [!NOTE]
 > Als u .NET Core gebruikt, raadpleegt u de meest recente versie 3. x van de [.NET SDK](sql-api-sdk-dotnet-standard.md), die de .net-standaard richt.

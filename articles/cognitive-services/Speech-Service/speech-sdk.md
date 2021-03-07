@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: 597a7c3954912a3a86b5db9f92ba75e8aaee63f6
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4c8ee3a65c26d1eb3acb7b9f4c18f11e870e4b82
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601810"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434455"
 ---
 # <a name="about-the-speech-sdk"></a>Info over de Speech-SDK
 
@@ -58,13 +58,14 @@ De **spraak herkenning (SR), woordgroepen lijst, intentie, vertaling en on-premi
 
 ### <a name="voice-assistants"></a>Spraakassistenten
 
-[Met de spraak-](voice-assistants.md) SDK kunnen ontwikkel aars natuurlijke, menselijke-achtige gespreks interfaces maken voor hun toepassingen en ervaringen. De Voice Assistant-service biedt snelle, betrouw bare interactie tussen een apparaat en een assistent. De implementatie maakt gebruik van het direct lijn speech Channel van het bot-Framework of de geïntegreerde service voor het volt ooien van de taak. Daarnaast kunnen spraak assistenten aangepaste stemmen gebruiken die zijn gemaakt in de [aangepaste Voice Portal](https://aka.ms/customvoice) om een unieke spraak-uitvoer ervaring toe te voegen.
+Met spraak [assistenten](voice-assistants.md) die gebruikmaken van de Speech-SDK kunt u natuurlijke, menselijke-achtige gespreks interfaces maken voor uw toepassingen en ervaringen. De Speech SDK biedt snelle, betrouw bare interactie met spraak-naar-tekst-, tekst-naar-spraak-en gespreks gegevens over één verbinding. Uw implementatie kan het directe lijn spraak kanaal of de geïntegreerde service voor het volt ooien van de taak gebruiken. Daarnaast kunnen spraak assistenten aangepaste stemmen gebruiken die zijn gemaakt in de [aangepaste Voice Portal](https://aka.ms/customvoice) om een unieke spraak-uitvoer ervaring toe te voegen.
 
-Op de volgende platforms is **spraak assistenten** beschikbaar:
+Ondersteuning voor de **Voice-assistent** is beschikbaar op de volgende platforms:
 
   - C++/Windows & Linux & macOS
   - C#/Windows
   - Java/Windows & Linux & macOS & Android (Speech apparaten SDK)
+  - Go
 
 #### <a name="keyword-spotting"></a>Tref woord herkennen
 
@@ -92,7 +93,7 @@ De Speech SDK is perfect voor het overzetten van Vergader scenario's, hetzij van
   - C# (Framework & .NET core)/Windows & UWP & Linux
   - Java/Windows & Linux & Android (Speech-apparaten SDK)
 
-#### <a name="multi-device-conversation"></a>Conversatie met meerdere apparaten
+#### <a name="multi-device-conversation"></a>Gesprek via meerdere apparaten
 
 Met een [gesprek met meerdere](multi-device-conversation.md)apparaten kunt u meerdere apparaten of clients in een gesprek verbinden om berichten op basis van spraak of tekst te verzenden, met eenvoudige ondersteuning voor transcriptie en vertaling.
 
@@ -113,7 +114,7 @@ De Speech-SDK kan worden gebruikt voor het transcriberen van oproep centrum scen
 
 ### <a name="codec-compressed-audio-input"></a>Door codec gecomprimeerde audio-invoer
 
-Diverse spraak-SDK-programmeer talen ondersteunen codec gecomprimeerde audio-invoer stromen. Zie <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams" target="_blank">gecomprimeerde audio-invoer indelingen <span class="docon docon-navigate-external x-hidden-focus"></span> gebruiken </a>voor meer informatie.
+Diverse spraak-SDK-programmeer talen ondersteunen codec gecomprimeerde audio-invoer stromen. Zie <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-codec-compressed-audio-input-streams" target="_blank">gecomprimeerde audio-invoer indelingen gebruiken </a>voor meer informatie.
 
 De **gecomprimeerde audio-invoer** voor de codec is beschikbaar op de volgende platforms:
 

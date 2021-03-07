@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: 7410fcbc890780281763a91f33525562e9de1853
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 6b3c1ac2ea3625a768e16a3465230a5386c98ddc
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102182482"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102423710"
 ---
 # <a name="analyze-with-apache-spark"></a>Analyseren met behulp van Apache Spark
 
@@ -38,7 +38,7 @@ In deze zelfstudie leert u de basisstappen voor het laden en analyseren van gege
     display(df.limit(10))
     ```
 1. Kies in het notitie blok in het menu **koppelen aan** de **Spark1** -serverloze Spark-pool die u eerder hebt gemaakt.
-1. Selecteer **Uitvoeren** op de cel
+1. Selecteer **Uitvoeren** op de cel. Synapse start een nieuwe Spark-sessie om deze cel zo nodig uit te voeren. Als er een nieuwe Spark-sessie nodig is, duurt het ongeveer twee seconden voordat Intially wordt gemaakt. 
 1. Als u alleen wilt zien hoe een cel met de volgende code wordt uitgevoerd met het schema van het dataframe:
     ```
 

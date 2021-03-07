@@ -9,16 +9,16 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: db946dcc0fc8571f7b6aa191909155baccf7d1a2
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 8ed63a508447104f9073c986debfae73ba7de89f
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878575"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102428640"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Blob Storage koppelen met behulp van het NFS-protocol (Network File System) 3,0 (preview)
 
-U kunt een container in Blob Storage koppelen vanaf een op Windows of Linux gebaseerde Azure virtual machine (VM) of een Windows-of Linux-systeem dat on-premises wordt uitgevoerd met het NFS 3,0-protocol. In dit artikel vindt u stapsgewijze richt lijnen. Zie [Network File System (NFS) 3,0-protocol ondersteuning in Azure Blob-opslag (preview)](network-file-system-protocol-support.md)voor meer informatie over NFS 3,0-protocol ondersteuning in Blob Storage.
+U kunt een container koppelen in Blob Storage vanaf een virtuele Linux-machine (VM) of een Linux-systeem dat on-premises wordt uitgevoerd met behulp van het NFS 3,0-protocol. In dit artikel vindt u stapsgewijze richt lijnen. Zie [Network File System (NFS) 3,0-protocol ondersteuning in Azure Blob-opslag (preview)](network-file-system-protocol-support.md)voor meer informatie over NFS 3,0-protocol ondersteuning in Blob Storage.
 
 ## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Stap 1: de functie NFS 3,0-protocol registreren bij uw abonnement
 
@@ -107,9 +107,7 @@ Maak een container in uw opslag account met behulp van een van deze hulpprogram 
 
 ## <a name="step-7-mount-the-container"></a>Stap 7: de container koppelen
 
-Maak een map in uw Windows-of Linux-systeem en koppel vervolgens een container in het opslag account.
-
-### <a name="linux"></a>[Linux](#tab/linux)
+Maak een map in uw Linux-systeem en koppel vervolgens een container in het opslag account.
 
 1. Maak een directory op een Linux-systeem.
 
@@ -126,32 +124,6 @@ Maak een map in uw Windows-of Linux-systeem en koppel vervolgens een container i
    - Vervang de `<storage-account-name>` tijdelijke aanduiding die wordt weer gegeven in deze opdracht door de naam van uw opslag account.  
 
    - Vervang de `<container-name>` tijdelijke aanduiding door de naam van de container.
-
-
-### <a name="windows"></a>[Windows](#tab/windows)
-
-1. Open het dialoog venster **Windows-onderdelen** en schakel vervolgens de functie **client voor NFS** in. 
-
-   ![Functie client voor Network File System](media/network-file-system-protocol-how-to/client-for-network-files-system-feature.png)
-
-2. Open een **opdracht prompt** venster (cmd.exe). Koppel vervolgens een container met behulp van de [koppelings](/windows-server/administration/windows-commands/mount) opdracht.
-
-   ```
-   mount -o nolock <storage-account-name>.blob.core.windows.net:/<storage-account-name>/<container-name> *
-   ```
-
-   - Vervang de `<storage-account-name>` tijdelijke aanduiding die wordt weer gegeven in deze opdracht door de naam van uw opslag account.  
-
-   - Vervang de `<container-name>` tijdelijke aanduiding door de naam van de container.
-
-3. Als u schrijf machtigingen nodig hebt, moet u mogelijk de standaard-UID en GID wijzigen die Windows gebruikt om verbinding te maken met de share. Als u dit wilt doen, voert u de volgende Power shell-opdrachten uit als beheerder:
-
-   ```
-   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousUid -PropertyType DWord -Value 0
-   New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default -Name AnonymousGid -PropertyType DWord -Value 0
-   ```
-   
-   - Start de NFS-client service opnieuw of start de server opnieuw op nadat u deze wijziging hebt aangebracht.
 
 ---
 

@@ -3,21 +3,25 @@ title: Azure Image Builder-service machtigingen configureren met Power shell
 description: Vereisten voor de Azure VM Image Builder-service configureren met de machtigingen en bevoegdheden met behulp van Power shell
 author: danielsollondon
 ms.author: danis
-ms.date: 03/02/2021
+ms.date: 03/05/2021
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
-ms.openlocfilehash: 4b9cf3ffdb1fc6db9604098e8e5782317a8eb431
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9f8793b6ea0ba454b66c525c2d53c1de2197d539
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695393"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102440204"
 ---
 # <a name="configure-azure-image-builder-service-permissions-using-powershell"></a>Azure Image Builder-service machtigingen configureren met Power shell
 
-De Azure Image Builder-service vereist het configureren van machtigingen en bevoegdheden voordat een installatie kopie wordt gemaakt. De volgende secties bevatten informatie over het configureren van mogelijke scenario's met Power shell.
+Wanneer u zich registreert voor de (AIB), verleent dit de AIB-service toestemming voor het maken, beheren en verwijderen van een staging-resource groep (IT_ *), en hebt u rechten om resources toe te voegen, die vereist zijn voor het bouwen van de installatie kopie. Dit wordt gedaan door een AIB-SPN (Service Principal Name) die tijdens een geslaagde registratie beschikbaar wordt gesteld in uw abonnement.
+
+Als u wilt dat Azure VM Image Builder installatie kopieën naar de beheerde installatie kopieën of naar een galerie met gedeelde installatie kopieën kan distribueren, moet u een door de gebruiker toegewezen Azure-identiteit maken die machtigingen heeft voor het lezen en schrijven van installatie kopieën. Als u toegang hebt tot Azure Storage, hebt u machtigingen nodig om persoonlijke of open bare containers te lezen.
+
+U moet machtigingen en bevoegdheden instellen voordat u een installatie kopie bouwt. De volgende secties bevatten informatie over het configureren van mogelijke scenario's met Power shell.
 
 > [!IMPORTANT]
 > Azure Image Builder is momenteel beschikbaar als open bare preview.

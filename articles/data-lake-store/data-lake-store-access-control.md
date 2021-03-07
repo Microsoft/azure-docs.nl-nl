@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 48ff32655b107958a3e8e42dbd7de0f405a6fffa
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: aa0da5721c577957b101ac8a2d9346c0536f0a88
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094859"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102424135"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Toegangsbeheer in Azure Data Lake Storage Gen1
 
@@ -43,7 +43,7 @@ Toegangs-ACL's en Standaard-ACL's hebben dezelfde structuur.
 
 De machtigingen voor een bestandssysteemobject zijn **Lezen**, **Schrijven** en **Uitvoeren**. Deze kunnen worden gebruikt voor bestanden en mappen zoals weergegeven in de onderstaande tabel:
 
-|            |    Bestand     |   Map |
+|            |    File     |   Map |
 |------------|-------------|----------|
 | **Lezen (L)** | Kan de inhoud van een bestand lezen | Moet worden **gelezen** en **uitgevoerd** om de inhoud van de map weer te geven|
 | **Schrijven (S)** | Kan schrijven of toevoegen aan een bestand | **Schrijven** en **Uitvoeren** zijn vereist om onderliggende items in een map te maken |
@@ -286,7 +286,11 @@ Ga in azure Portal naar **Azure Active Directory-> bedrijfs toepassingen** en se
 
 ### <a name="does-data-lake-storage-gen1-support-inheritance-of-acls"></a>Ondersteunt Data Lake Storage Gen1 overname van Acl's?
 
-Nee, maar Standaard ACL's kunnen worden gebruikt voor het instellen van ACL's voor onderliggende bestanden en mappen die nieuw zijn gemaakt onder de bovenliggende map.  
+Nee, maar Standaard ACL's kunnen worden gebruikt voor het instellen van ACL's voor onderliggende bestanden en mappen die nieuw zijn gemaakt onder de bovenliggende map.
+
+### <a name="what-are-the-limits-for-acl-entries-on-files-and-folders"></a>Wat zijn de limieten voor ACL-vermeldingen voor bestanden en mappen?
+
+32 Acl's kunnen per bestand en per map worden ingesteld. De toegangs-en standaard-Acl's hebben elk een eigen 32 ACL-ingangs limiet. Gebruik beveiligings groepen voor ACL-toewijzingen, indien mogelijk. Door groepen te gebruiken, bent u minder waarschijnlijk het maximum aantal ACL'S-vermeldingen per bestand of map te overschrijden.
 
 ### <a name="where-can-i-learn-more-about-posix-access-control-model"></a>Waar kan ik meer informatie over het POSIX-model voor toegangsbeheer?
 

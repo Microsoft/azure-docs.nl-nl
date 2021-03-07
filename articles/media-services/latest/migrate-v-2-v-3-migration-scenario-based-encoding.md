@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: ab819239572fd99fdf5ff3bf23f81eb3cdff3b9a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: dc75ada87db6fdbb3861c2e4e495f93147513421
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98940095"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102440561"
 ---
 # <a name="encoding-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van een code ring
 
@@ -58,10 +58,12 @@ Klik op de onderstaande afbeelding om een grotere versie te zien.
 
 ### <a name="v3-encoding-workflow"></a>V3 encoding-werk stroom
 
-[![Werk stroom voor het coderen van v3 ](./media/migration-guide/V3-pretty.svg)](./media/migration-guide/V3-pretty.svg#lightbox)
+<Token>
+<object data="./media/migration-guide/v3-pretty2.svg" width="80%"></object>
+</Token>
 
 1. Instellen
-    1. Maak een activum of gebruik en bestaande activa. Als u een nieuwe Asset gebruikt, uploadt u inhoud naar die Asset. Als u een bestaand activum gebruikt, moet u bestanden coderen die al bestaan in de Asset. *Upload meer inhoud naar die Asset.*
+    1. Maak een activum of gebruik een bestaande Asset. Als u een nieuwe Asset gebruikt, uploadt u inhoud naar die Asset. Als u een bestaand activum gebruikt, moet u bestanden coderen die al bestaan in de Asset. *Upload meer inhoud naar die Asset.*
     1. Een uitvoeractivum maken.  Het uitvoer activum is de locatie waar de gecodeerde bestanden en de invoer-en uitvoer meta gegevens worden opgeslagen.
     1. Waarden ophalen voor de trans formatie:
         - Standaard encoder vooraf
@@ -84,17 +86,6 @@ Klik op de onderstaande afbeelding om een grotere versie te zien.
 Als uw v2-code de standaard Encoder met een aangepaste voor instelling heet, moet u eerst een nieuwe trans formatie maken met de aangepaste standaard encoder vooraf voordat u een taak verzendt.
 
 Aangepaste voor instellingen zijn nu JSON en zijn niet meer gebaseerd op XML. Maak de voor instelling in JSON opnieuw volgens het aangepaste vooraf ingestelde schema zoals gedefinieerd in de hand leiding voor het [transformeren van open API (Swagger)](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/examples/transforms-create.json) .
-
-
-<!-- removed because this is covered in the tutorials
-Common custom [encoding](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json) scenarios:
-        1. Create a custom Single Bitrate MP4 encode
-        1. Create a custom [Adaptive Bitrate Encoding Ladder](autogen-bitrate-ladder.md)
-        1. Creating Sprite Thumbnails
-        1. Creating Thumbnails (see below for your preferred method)
-        1. [Sub Clipping](subclip-video-rest-howto.md)
-        1. Cropping
--->
 
 ## <a name="input-and-output-metadata-files-from-an-encoding-job"></a>Meta gegevensbestanden voor invoer en uitvoer van een coderings taak
 

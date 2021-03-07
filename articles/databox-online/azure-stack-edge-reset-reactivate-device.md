@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 03/01/2020
+ms.date: 03/03/2020
 ms.author: alkohli
-ms.openlocfilehash: 4026bac9818b14c33c05d99caff4052adad196c3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 95fbe5dc4a934fee10c558f640bc24f261203a33
+ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745842"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102443504"
 ---
 # <a name="reset-and-reactivate-your-azure-stack-edge-pro-device"></a>Uw Azure Stack Edge Pro-apparaat opnieuw instellen en opnieuw activeren
 
@@ -32,7 +32,7 @@ In dit artikel leert u het volgende:
 
 ## <a name="reset-data-from-the-device"></a>Gegevens opnieuw instellen vanaf het apparaat
 
-Als u de gegevens van de gegevens schijven van uw apparaat wilt wissen, moet u uw apparaat opnieuw instellen. 
+Als u de gegevens van de gegevens schijven van uw apparaat wilt wissen, moet u uw apparaat opnieuw instellen.
 
 Voordat u opnieuw instelt, maakt u indien nodig een kopie van de lokale gegevens op het apparaat. U kunt de gegevens van het apparaat naar een Azure Storage-container kopiëren.
 
@@ -41,7 +41,7 @@ Voordat u opnieuw instelt, maakt u indien nodig een kopie van de lokale gegevens
 
 U kunt uw apparaat opnieuw instellen in de lokale webgebruikersinterface of in Power shell. Zie [uw apparaat opnieuw instellen](./azure-stack-edge-connect-powershell-interface.md#reset-your-device)voor instructies voor Power shell.
 
-[! INCLUDe] [gegevens van het apparaat opnieuw instellen](../../includes/azure-stack-edge-device-reset.md)
+[!INCLUDE [Reset data from the device](../../includes/azure-stack-edge-device-reset.md)]
 
 ## <a name="reactivate-device"></a>Apparaat opnieuw activeren
 
@@ -49,11 +49,11 @@ Nadat u het apparaat opnieuw hebt ingesteld, moet u het apparaat opnieuw activer
 
 Voer de volgende stappen uit om uw bestaande apparaat opnieuw te activeren:
 
-1. Maak een nieuwe volg orde voor het bestaande apparaat door de stappen in [een nieuwe resource maken](azure-stack-edge-gpu-deploy-prep?tabs=azure-portal#create-a-new-resource)te volgen. Selecteer op het tabblad **Verzend adres** de optie **Ik heb al een apparaat**.
+1. Maak een nieuwe volg orde voor het bestaande apparaat door de stappen in [een nieuwe resource maken](azure-stack-edge-gpu-deploy-prep.md?tabs=azure-portal#create-a-new-resource)te volgen. Selecteer op het tabblad **Verzend adres** de optie **Ik heb al een apparaat**.
 
    ![Geen nieuw apparaat opgeven in het verzend adres](./media/azure-stack-edge-reset-reactivate-device/create-resource-with-no-new-device.png)
 
-1. [De activerings sleutel ophalen](azure-stack-edge-gpu-deploy-prep?tabs=azure-portal#get-the-activation-key).
+1. [De activerings sleutel ophalen](azure-stack-edge-gpu-deploy-prep.md?tabs=azure-portal#get-the-activation-key).
 
 1. [Verbinding maken met het apparaat](azure-stack-edge-gpu-deploy-connect.md).
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om uw bestaande apparaat opnieuw te activeren:
 
 1. [Certificaten configureren](azure-stack-edge-gpu-deploy-configure-certificates.md).
 
-1. [Activeer het apparaat](databox-online/azure-stack-edge-gpu-deploy-activate.md).
+1. [Activeer het apparaat](azure-stack-edge-gpu-deploy-activate.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

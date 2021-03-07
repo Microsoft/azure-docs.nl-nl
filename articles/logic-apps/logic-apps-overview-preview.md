@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 9d8d3cb4bf68f7da2bddabd21272d1011ce92f66
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/05/2021
+ms.openlocfilehash: ad059931d87603c957e446e82b894731dca984dd
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101715204"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102442737"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -118,9 +118,13 @@ In deze tabel wordt het gedrag van de onderliggende werk stroom opgegeven op bas
 
 Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkheden, bijvoorbeeld:
 
-* Maak Logic apps en hun werk stromen van [390 + connectors](/connectors/connector-reference/connector-reference-logicapps-connectors) voor software-as-a-Service (SaaS) en platform-as-a-Service (PaaS)-apps en-services plus connectors voor on-premises systemen.
+* Maak Logic apps en hun werk stromen van [400 en connectors](/connectors/connector-reference/connector-reference-logicapps-connectors) voor software-as-a-Service (SaaS) en platform-as-a-Service (PaaS)-apps en-services plus connectors voor on-premises systemen.
 
-  * Sommige beheerde connectors, zoals Azure Service Bus, Azure Event Hubs en SQL Server, worden op dezelfde manier uitgevoerd als de ingebouwde triggers en acties die standaard zijn voor de Azure Logic Apps Preview-runtime, bijvoorbeeld de trigger voor aanvragen en de HTTP-actie. Zie Azure Logic Apps voor het [uitvoeren van Anywhere-ingebouwde connector Extensibility](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272)voor meer informatie.
+  * Sommige beheerde connectors, zoals Azure Service Bus, Azure Event Hubs, SQL Server en MQ, worden op dezelfde manier uitgevoerd als de ingebouwde triggers en acties die standaard zijn voor de voorbeeld runtime van Azure Logic Apps, bijvoorbeeld de trigger voor aanvragen en de HTTP-actie.
+
+  * Maak uw eigen ingebouwde Connect oren voor elke service die u nodig hebt met behulp [van het uitbreidings raamwerk van de preview-versie](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272). Net als bij ingebouwde connectors, zoals Azure Service Bus en SQL Server, maar in tegens telling tot [aangepaste connectors](../connectors/apis-list.md#custom-apis-and-connectors) die momenteel niet worden ondersteund voor preview, bieden deze connectors een hogere door Voer, lage latentie en lokale connectiviteit, en worden ze systeem eigen uitgevoerd in hetzelfde proces als de runtime van de preview-versie.
+
+    De ontwerp functie is momenteel alleen beschikbaar in Visual Studio code, maar is niet standaard ingeschakeld. Als u deze connectors wilt maken, moet u [uw project overschakelen van een op een NuGet (Node.js op basis van een op extensie gebaseerd) naar een op het pakket gebaseerde (.net)](create-stateful-stateless-workflows-visual-studio-code.md#enable-built-in-connector-authoring). Zie Azure Logic Apps voor het [uitvoeren van Anywhere-ingebouwde connector Extensibility](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272)voor meer informatie.
 
   * U kunt de B2B-acties voor liquide bewerkingen en XML-bewerkingen zonder een integratie account gebruiken. Als u deze acties wilt gebruiken, moet u beschikken over liquide kaarten, XML-kaarten of XML-schema's die u kunt uploaden via de respectieve acties in de Azure Portal, of toevoegen aan de map **artefacten** van Visual Studio code-project met behulp van de respectieve **kaarten** en **schema's** mappen.
 
@@ -148,7 +152,7 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 * Opnieuw genereren van toegangs sleutels voor beheerde verbindingen die door afzonderlijke werk stromen worden gebruikt in een **logische app (preview)-** resource. Volg voor deze taak [dezelfde stappen voor de **Logic apps** resource, maar op het individuele werk stroom niveau](logic-apps-securing-a-logic-app.md#regenerate-access-keys), niet op het resource niveau van de logische app.
 
 * Voeg parallelle vertakkingen in de nieuwe ontwerp functie toe door dezelfde stappen te volgen als de ontwerp functie voor niet-preview-versie.
- 
+
 Zie voor meer informatie [gewijzigde, beperkte, niet-beschik bare en niet-ondersteunde mogelijkheden](#limited-unavailable-unsupported) en de [pagina met bekende problemen met de Logic apps open bare preview in github](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md).
 
 <a name="pricing-model"></a>
@@ -193,8 +197,6 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
 
     * [On-premises gegevens gateway- *Triggers*](../connectors/apis-list.md#on-premises-connectors) zijn niet beschikbaar, maar gateway acties *zijn* beschikbaar.
 
-    * [Aangepaste connectors](../connectors/apis-list.md#custom-apis-and-connectors) zijn niet beschikbaar.
-
     * De ingebouwde actie, [Azure functions-een Azure-functie kiezen](logic-apps-azure-functions.md) is nu **Azure function Operations-een Azure-functie aanroepen**. Deze actie werkt momenteel alleen voor functies die zijn gemaakt op basis van de **http-trigger** sjabloon.
 
       In de Azure Portal kunt u een HTTP-trigger functie selecteren, waar u toegang hebt door een verbinding te maken via de gebruikers ervaring. Als u de JSON-definitie van de functie actie in de code weergave of de **workflow.jsin** het bestand inspecteert, verwijst de actie naar de functie met behulp van een `connectionName` verwijzing. Deze versie bevat een samen vatting van de gegevens van de functie als een verbinding, die u kunt vinden in deconnections.jsvan het project **in** het bestand, wat beschikbaar is nadat u een verbinding hebt gemaakt.
@@ -217,6 +219,8 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
     * Sommige [ingebouwde B2B-triggers en-acties voor integratie accounts](../connectors/apis-list.md#integration-account-connectors) zijn niet beschikbaar, bijvoorbeeld de acties voor **platte bestands** codering en decoderen.
 
     * De ingebouwde actie, [Azure Logic apps: Kies een logische app-werk](logic-apps-http-endpoint.md) stroom is nu **werk stroom bewerkingen: een werk stroom in deze werk stroom-app aanroepen**.
+
+* [Aangepaste connectors](../connectors/apis-list.md#custom-apis-and-connectors) worden momenteel niet ondersteund voor preview.
 
 * **Beschik baarheid hosting plan**: ongeacht of u een nieuwe **logische app (preview)** -resource type maakt in de Azure portal of implementeren vanuit Visual Studio code, kunt u alleen het Premium-of app service-hosting abonnement in azure gebruiken. Abonnementen voor het hosten van verbruik zijn niet beschikbaar en worden niet ondersteund voor de implementatie van dit bron type. U kunt implementeren vanuit Visual Studio code naar een docker-container, maar niet naar een [integratie service omgeving (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
 

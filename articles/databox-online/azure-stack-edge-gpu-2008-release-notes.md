@@ -6,26 +6,28 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 09/07/2020
+ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 25db4e7f3e4e1f7056979c4c40c6ffc61f340439
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: dd72865e35318c7ff43dc17b7c92b9cc2f3e9790
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345368"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102436852"
 ---
 # <a name="azure-stack-edge-pro-with-gpu-preview-release-notes"></a>Opmerkingen bij de release van Azure Stack Edge Pro met GPU preview
+
+[!INCLUDE [applies-to-Pro-GPU-sku](../../includes/azure-stack-edge-applies-to-gpu-sku.md)]
 
 De volgende opmerkingen bij de release identificeren de kritieke openstaande problemen en de opgeloste problemen voor de preview-versie van 2008 voor uw Azure Stack Edge Pro-apparaten met GPU.
 
 De release opmerkingen worden voortdurend bijgewerkt en als er kritieke problemen worden gedetecteerd die een tijdelijke oplossing vereisen, worden deze toegevoegd. Lees de informatie in de release opmerkingen aandachtig door voordat u uw Azure Stack Edge Pro-apparaat implementeert.
 
-Dit artikel is van toepassing op de volgende software release- **Azure stack Edge Pro 2008**. 
+Dit artikel is van toepassing op de volgende software release- **Azure stack Edge Pro 2008**.
 
 <!--- **2.1.1328.1904**-->
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 De volgende nieuwe functies zijn toegevoegd in Azure Stack Edge 2008-release. Afhankelijk van de specifieke Preview-software versie die u gebruikt, ziet u mogelijk een subset van deze functies. 
 
@@ -51,7 +53,7 @@ De volgende tabel bevat een overzicht van bekende problemen voor het Azure Stack
 |**6.**|Kubernetes |Poort 31000 is gereserveerd voor Kubernetes-dash board. Op dezelfde manier worden in de standaard configuratie de IP-adressen 172.28.0.1 en 172.28.0.10 gereserveerd voor respectievelijk de Kubernetes-service en de basis-DNS-service.|Gebruik geen gereserveerde Ip's.|
 |**9.**|Kubernetes |Kubernetes ondersteunt momenteel geen LoadBalancer-Services met meerdere protocollen. Bijvoorbeeld een DNS-service die luistert op TCP en UDP. |Om deze beperking van Kubernetes met MetalLB te omzeilen, kunnen twee services (een voor TCP, een voor UDP) worden gemaakt op dezelfde pod selector. Deze services gebruiken dezelfde uitwisselings sleutel en spec. loadBalancerIP om hetzelfde IP-adres te delen. Ip's kunnen ook worden gedeeld als u meer services hebt dan beschik bare IP-adressen. <br> Zie [IP-adres delen](https://metallb.universe.tf/usage/#ip-address-sharing)voor meer informatie.|
 |**12.**|Kubernetes-cluster|Bestaande Azure IoT Edge Marketplace-modules kunnen niet worden uitgevoerd op het Kubernetes-cluster als het hosting platform voor IoT Edge op Azure Stack edge-apparaat.|De modules moeten worden gewijzigd voordat deze op het Azure Stack edge-apparaat worden geïmplementeerd. Zie voor meer informatie Azure IoT Edge modules van Marketplace aanpassen zodat ze op Azure Stack edge-apparaat kunnen worden uitgevoerd.<!-- insert link-->|
-|**13.**|Kubernetes |Op bestanden gebaseerde BIND koppelingen worden niet ondersteund met Azure IoT Edge op Kubernetes op Azure Stack edge-apparaat.|IoT Edge maakt gebruik van een Vertaal laag om `ContainerCreate` Opties om te zetten in Kubernetes-constructies. Het maken `Binds` van toewijzingen naar de map hostpath of het maken en op bestanden gebaseerde BIND koppelingen kan niet worden gekoppeld aan paden in IOT Edge containers.|
+|**13.**|Kubernetes |Op bestanden gebaseerde BIND koppelingen worden niet ondersteund met Azure IoT Edge op Kubernetes op Azure Stack edge-apparaat.|IoT Edge maakt gebruik van een Vertaal laag om `ContainerCreate` Opties om te zetten in Kubernetes-constructies. Het maken `Binds` van toewijzingen naar een `hostpath` map of maken en daarom BIND koppelingen op basis van een bestand kan niet worden gekoppeld aan paden in IOT Edge containers.|
 |**15.**|Kubernetes |Als u uw eigen certificaten voor IoT Edge en deze toevoegt aan uw Azure Stack edge-apparaat, worden de nieuwe certificaten niet opgenomen als onderdeel van de update van de helm-grafieken.|U kunt dit probleem omzeilen door [verbinding te maken met de Power shell-interface van het apparaat](azure-stack-edge-gpu-connect-powershell-interface.md). Opnieuw opstarten `iotedged` en `edgehub` peulen.|
 |**15.**|Certificaten |In bepaalde gevallen kan de status van het certificaat in de lokale gebruikers interface enkele seconden duren voordat deze wordt bijgewerkt. |De volgende scenario's in de lokale gebruikers interface kunnen worden beïnvloed.<ul><li>De kolom **status** op de pagina **certificaten** .</li><li>De tegel **beveiliging** op de pagina **aan de slag** .</li><li>**Configuratie** tegel op de pagina **overzicht** .</li></ul>  |
 

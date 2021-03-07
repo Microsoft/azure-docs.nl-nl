@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2020
 ms.author: Zhchia
-ms.openlocfilehash: c3384effc961c6c588bc2d7f4f75bc386d63076b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0a9615e6bcb350732ccd7b2cf27dad3b46a7e4b3
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101651570"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102427008"
 ---
 # <a name="tutorial-configure-github-ae-for-automatic-user-provisioning"></a>Zelf studie: GitHub AE configureren voor het automatisch inrichten van gebruikers
 
@@ -32,6 +32,7 @@ In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel G
 > * Gebruikers maken in GitHub AE
 > * Gebruikers in GitHub AE verwijderen wanneer ze niet meer toegang nodig hebben
 > * Gebruikers kenmerken gesynchroniseerd blijven tussen Azure AD en GitHub AE
+> * Inrichtings groepen en groepslid maatschappen in GitHub AE
 > * Eenmalige aanmelding bij [GITHUB AE](./github-ae-tutorial.md) (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
@@ -59,7 +60,7 @@ Voeg GitHub AE toe vanuit de Azure AD-toepassings galerie om het beheer van de i
 
 Met de Azure AD-inrichtings service kunt u bereiken die worden ingericht op basis van de toewijzing aan de toepassing en of op basis van kenmerken van de gebruiker en/of groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van de toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en/of groepen toe te wijzen aan de toepassing. Als u ervoor kiest om te bepalen wie alleen wordt ingericht op basis van kenmerken van de gebruiker en/of groep, kunt u een bereik filter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)wordt beschreven. 
 
-* Wanneer u gebruikers toewijst aan GitHub AE, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan GitHub AE, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test met een kleine set gebruikers en/of groepen voordat u naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en/of groepen, kunt u dit beheren door een of twee gebruikers en/of groepen toe te wijzen aan de app. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 

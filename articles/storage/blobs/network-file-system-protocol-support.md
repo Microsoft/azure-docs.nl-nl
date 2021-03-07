@@ -1,6 +1,6 @@
 ---
 title: Ondersteuning voor netwerk bestandssysteem 3,0 in Azure Blob-opslag (preview) | Microsoft Docs
-description: Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Met deze ondersteuning kunnen Windows-en Linux-clients een container koppelen in Blob Storage vanaf een virtuele Azure-machine (VM) of een computer die on-premises wordt uitgevoerd.
+description: Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Met deze ondersteuning kunnen Linux-clients een container koppelen in Blob Storage vanaf een virtuele Azure-machine (VM) of een computer die on-premises wordt uitgevoerd.
 author: normesta
 ms.subservice: blobs
 ms.service: storage
@@ -9,16 +9,16 @@ ms.date: 02/19/2021
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: a49c51d2afd464e7bea910ae0abe3dd02e939dbc
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 22f4db04f37985e49065f80da6e4578ed71c5db1
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101718489"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102428436"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
-Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Deze ondersteuning biedt Linux-bestandssysteem compatibiliteit op het niveau van de opslag en prijzen van objecten en stelt Windows-of Linux-clients in staat om een container in Blob Storage te koppelen van een virtuele Azure-machine (VM) of een computer on-premises. 
+Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Deze ondersteuning biedt Linux-bestandssysteem compatibiliteit op het niveau van de opslag en prijzen van objecten en stelt Linux-clients in staat om een container in Blob Storage te koppelen vanaf een virtuele Azure-machine (VM) of een computer on-premises. 
 
 > [!NOTE]
 > Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
@@ -46,7 +46,7 @@ Wanneer uw toepassing een aanvraag indient via het NFS 3,0-protocol, wordt die a
 
 ## <a name="general-workflow-mounting-a-storage-account-container"></a>Algemene werk stroom: een opslag account container koppelen
 
-Uw Windows-of Linux-clients kunnen een container koppelen in Blob Storage van een virtuele Azure-machine (VM) of een computer on-premises. Als u een opslag account container wilt koppelen, moet u deze dingen doen.
+Uw Linux-clients kunnen een container koppelen in Blob Storage vanaf een virtuele Azure-machine (VM) of een computer on-premises. Als u een opslag account container wilt koppelen, moet u deze dingen doen.
 
 1. De NFS 3,0-protocol functie registreren bij uw abonnement.
 

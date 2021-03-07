@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: monitoring
 ms.topic: tutorial
 ms.date: 12/31/2020
-ms.openlocfilehash: 8c0cdcad9a7803e0d8063362ca62887990045c86
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 7e8525dbebb42e1f387ee8f0c192efd5e64c9453
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209811"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426037"
 ---
 # <a name="monitor-your-synapse-workspace"></a>Uw Synapse-werkruimte bewaken
 
@@ -30,7 +30,7 @@ Ga in Synapse Studio naar de **monitorhub**. Hier ziet u een geschiedenis van al
 
 ## <a name="integration"></a>Integratie
 
-1. Ga naar **Integratie > Pijplijn**. In deze weergave kunt u zien wanneer een pijplijn in uw werkruimte is uitgevoerd. 
+1. Navigeer naar **integratie > pijplijn uitvoeringen**. In deze weergave kunt u zien wanneer een pijplijn in uw werkruimte is uitgevoerd. 
 1. Zoek de pijplijn die u in de vorige stap hebt uitgevoerd en klik op de **naam van de pijplijn** om meer informatie weer te geven.
 1. Klik op **'breadcrumb'-balk** aan de bovenkant van Synapse Studio op **All pipeline runs** (Alle pijplijnuitvoeringen) om terug te keren naar de vorige weergave.
 
@@ -45,8 +45,7 @@ Ga in Synapse Studio naar de **monitorhub**. Hier ziet u een geschiedenis van al
 1. Ga naar **activiteiten > SQL-aanvragen**.
 1. In deze weergave ziet u SQL-aanvragen.
 1. Selecteer een **pool** die u wilt bewaken vanuit het **groeps** filter. Nu ziet u alle SQL-aanvragen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte in die pool.
-1. Zoek een specifieke SQL-aanvraag en wijs het desbetreffende item aan met de muis. Zodra u de muisaanwijzer op het item hebt geplaatst, wordt er een SQL-scriptpictogram weergegeven.
-1. Klik op het pictogram SQL-script om de volledige tekst van de SQL-aanvraag te bekijken.
+1. Zoek een specifieke SQL-aanvraag en klik op de koppeling **meer** om de volledige tekst van de SQL-aanvraag te bekijken.
 
     > [!NOTE] 
     > SQL-aanvragen die worden ingediend via Synapse Studio in een toegewezen SQL-pool (voorheen SQL DW) met ondersteuning voor werkruimten, kunnen worden weergegeven in de Monitor-hub. Voor alle andere controleactiviteiten kunt u de controlefunctie voor toegewezen SQL-pools (voorheen SQL DW) van de Azure-portal gebruiken.

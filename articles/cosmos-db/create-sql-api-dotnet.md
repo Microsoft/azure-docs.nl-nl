@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/21/2020
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: aceb26604d67f42cdbbe1395e3a4b08675d70ea1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.openlocfilehash: 4c552e6ac195555990cdbbab44f16be32b7930c8
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078523"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425308"
 ---
 # <a name="quickstart-build-a-net-console-app-to-manage-azure-cosmos-db-sql-api-resources"></a>Quickstart: Een .NET console-app bouwen om Azure Cosmos DB SQL-API-resources te beheren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -37,7 +37,7 @@ Azure Cosmos DB is de snelle NoSQL-database van Microsoft, met open API's voor e
 * Query’s uitvoeren voor de gegevens 
 * De database verwijderen
 
-[API-referentiedocumentatie](/dotnet/api/microsoft.azure.cosmos?view=azure-dotnet&preserve-view=true) | [Bibliotheek broncode](https://github.com/Azure/azure-cosmos-dotnet-v3) | [Package (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Cosmos)
+[API-referentiedocumentatie](/dotnet/api/microsoft.azure.cosmos) | [Bibliotheek broncode](https://github.com/Azure/azure-cosmos-dotnet-v3) | [Package (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Cosmos)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,7 +56,7 @@ Als u uw eigen Azure-abonnement hebt of een gratis abonnement hebt gemaakt, moet
 
 U kunt Azure Cloud Shell gebruiken om het Azure Cosmos-account te maken. Azure Cloud Shell is een interactieve, geverifieerde en vanuit de browser toegankelijke shell voor het beheer van Azure-resources. Het biedt de flexibiliteit om de shell-ervaring te kiezen die het beste past bij de manier waarop u werkt, dan wel Bash of PowerShell. Kies voor deze quickstart de modus **Bash**. Voor Azure Cloud Shell hebt u ook een opslagaccount nodig. U kunt er een maken wanneer u hierom wordt gevraagd.
 
-Selecteer de knop **Uitproberen** naast de volgende code, kies de modus **Bash** , selecteer **een opslagaccount maken** en meld u aan bij Cloud Shell. Kopieer vervolgens de volgende code en plak deze in Azure Cloud Shell en voer deze uit. De naam van het Azure Cosmos-account moet wereldwijd uniek zijn. Zorg ervoor dat u de `mysqlapicosmosdb`-waarde bijwerkt voordat u de opdracht uitvoert.
+Selecteer de knop **Uitproberen** naast de volgende code, kies de modus **Bash**, selecteer **een opslagaccount maken** en meld u aan bij Cloud Shell. Kopieer vervolgens de volgende code en plak deze in Azure Cloud Shell en voer deze uit. De naam van het Azure Cosmos-account moet wereldwijd uniek zijn. Zorg ervoor dat u de `mysqlapicosmosdb`-waarde bijwerkt voordat u de opdracht uitvoert.
 
 ```azurecli-interactive
 
@@ -168,18 +168,18 @@ Voordat u begint met het compileren van de toepassing, kijken we naar de hiërar
 
 Zie het artikel [werken met databases, containers en items in Azure Cosmos DB](account-databases-containers-items.md) voor meer informatie over de hiërarchie van verschillende entiteiten. U gebruikt de volgende .NET-klassen om te communiceren met deze resources:
 
-* [CosmosClient](/dotnet/api/microsoft.azure.cosmos.cosmosclient?preserve-view=true&view=azure-dotnet): deze klasse biedt een logische weergave aan de clientzijde voor de Azure Cosmos DB-service. Het clientobject wordt gebruikt om aanvragen aan de service te configureren en uitvoeren.
+* [CosmosClient](/dotnet/api/microsoft.azure.cosmos.cosmosclient): deze klasse biedt een logische weergave aan de clientzijde voor de Azure Cosmos DB-service. Het clientobject wordt gebruikt om aanvragen aan de service te configureren en uitvoeren.
 
-* [CreateDatabaseIfNotExistsAsync](/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync?view=azure-dotnet&preserve-view=true): deze methode maakt (indien niet aanwezig) of haalt (indien aanwezig) een database-resource op als een asynchrone bewerking. 
+* [CreateDatabaseIfNotExistsAsync](/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync): deze methode maakt (indien niet aanwezig) of haalt (indien aanwezig) een database-resource op als een asynchrone bewerking. 
 
-* [CreateContainerIfNotExistsAsync](/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync?view=azure-dotnet&preserve-view=true): deze methode maakt (indien niet aanwezig) of haalt (indien aanwezig) een container op als een asynchrone bewerking. U kunt de status code van het antwoord controleren om te bepalen of de container nieuw is gemaakt (201) of dat een bestaande container is geretourneerd (200). 
-* [CreateItemAsync](/dotnet/api/microsoft.azure.cosmos.container.createitemasync?view=azure-dotnet&preserve-view=true): met deze methode maakt u een item in de container. 
+* [CreateContainerIfNotExistsAsync](/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync): deze methode maakt (indien niet aanwezig) of haalt (indien aanwezig) een container op als een asynchrone bewerking. U kunt de status code van het antwoord controleren om te bepalen of de container nieuw is gemaakt (201) of dat een bestaande container is geretourneerd (200). 
+* [CreateItemAsync](/dotnet/api/microsoft.azure.cosmos.container.createitemasync): met deze methode maakt u een item in de container. 
 
-* [UpsertItemAsync](/dotnet/api/microsoft.azure.cosmos.container.upsertitemasync?view=azure-dotnet&preserve-view=true): met deze methode maakt u een item in de container als deze nog niet bestaat of vervangt u het item als het al bestaat. 
+* [UpsertItemAsync](/dotnet/api/microsoft.azure.cosmos.container.upsertitemasync): met deze methode maakt u een item in de container als deze nog niet bestaat of vervangt u het item als het al bestaat. 
 
-* [GetItemQueryIterator](/dotnet/api/microsoft.azure.cosmos.container.GetItemQueryIterator?view=azure-dotnet&preserve-view=true): met deze methode maakt u een query voor items onder een container in een Azure Cosmos-database met behulp van een SQL-instructie met geparameteriseerde waarden. 
+* [GetItemQueryIterator](/dotnet/api/microsoft.azure.cosmos.container.GetItemQueryIterator): met deze methode maakt u een query voor items onder een container in een Azure Cosmos-database met behulp van een SQL-instructie met geparameteriseerde waarden. 
 
-* [DeleteAsync](/dotnet/api/microsoft.azure.cosmos.database.deleteasync?view=azure-dotnet&preserve-view=true): hiermee verwijdert u de opgegeven database uit uw Azure Cosmos-account. Met de methode `DeleteAsync` verwijdert u alleen de database. Het verwijderen van het `Cosmosclient`-exemplaar moet afzonderlijk plaatsvinden (dit gebeurt in de methode DeleteDatabaseAndCleanupAsync. 
+* [DeleteAsync](/dotnet/api/microsoft.azure.cosmos.database.deleteasync): hiermee verwijdert u de opgegeven database uit uw Azure Cosmos-account. Met de methode `DeleteAsync` verwijdert u alleen de database. Het verwijderen van het `Cosmosclient`-exemplaar moet afzonderlijk plaatsvinden (dit gebeurt in de methode DeleteDatabaseAndCleanupAsync. 
 
  ## <a name="code-examples"></a><a id="code-examples"></a>Codevoorbeelden
 
@@ -249,7 +249,7 @@ using System.Net;
 using Microsoft.Azure.Cosmos;
 ```
 
-Voeg aan het **Program.cs** -bestand code toe om de omgevingsvariabelen te lezen die u in de vorige stap hebt ingesteld. Definieer de objecten `CosmosClient`, `Database` en `Container`. Voeg vervolgens code toe aan de hoofdmethode waarmee de methode `GetStartedDemoAsync` wordt aangeroepen waar u resources van het Azure Cosmos-account beheert. 
+Voeg aan het **Program.cs**-bestand code toe om de omgevingsvariabelen te lezen die u in de vorige stap hebt ingesteld. Definieer de objecten `CosmosClient`, `Database` en `Container`. Voeg vervolgens code toe aan de hoofdmethode waarmee de methode `GetStartedDemoAsync` wordt aangeroepen waar u resources van het Azure Cosmos-account beheert. 
 
 ```csharp
 namespace todo

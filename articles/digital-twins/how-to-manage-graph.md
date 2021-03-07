@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a2732c3979998ea3429833f96056b88bc2dccf75
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: fde473453aa79e0078765df394acdeb54b3c7fe9
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050933"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433315"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Een grafiek van digitale apparaatdubbels beheren met behulp van relaties
 
 De kern van Azure Digital Apparaatdubbels is de [dubbele grafiek](concepts-twins-graph.md) die uw hele omgeving weergeeft. Het dubbele diagram is gemaakt van individuele digitale apparaatdubbels die zijn verbonden via **relaties**. 
 
-Zodra u een werkend [Azure Digital apparaatdubbels-exemplaar](how-to-set-up-instance-portal.md) hebt en [verificatie](how-to-authenticate-client.md) code hebt ingesteld in uw client-app, kunt u de [**DigitalTwins-api's**](/rest/api/digital-twins/dataplane/twins) gebruiken voor het maken, wijzigen en verwijderen van digitale Apparaatdubbels en hun relaties in een Azure Digital apparaatdubbels-instantie. U kunt ook de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md)gebruiken.
+Zodra u een werkend [Azure Digital apparaatdubbels-exemplaar](how-to-set-up-instance-portal.md) hebt en [verificatie](how-to-authenticate-client.md) code hebt ingesteld in uw client-app, kunt u de [**DigitalTwins-api's**](/rest/api/digital-twins/dataplane/twins) gebruiken voor het maken, wijzigen en verwijderen van digitale Apparaatdubbels en hun relaties in een Azure Digital apparaatdubbels-instantie. U kunt ook de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)of de [Azure Digital apparaatdubbels cli](how-to-use-cli.md)gebruiken.
 
 Dit artikel richt zich op het beheren van relaties en de hele grafiek; Zie [*How-to: Manage Digital apparaatdubbels*](how-to-manage-twin.md)(Engelstalig) als u wilt werken met afzonderlijke digitale apparaatdubbels.
 
@@ -97,7 +97,7 @@ U kunt de opgehaalde relaties gebruiken om naar andere apparaatdubbels in uw gra
 Azure Digital Apparaatdubbels heeft ook een API voor het zoeken van alle **inkomende** relaties naar een opgegeven dubbele. Dit is vaak handig voor omgekeerde navigatie of bij het verwijderen van een dubbele.
 
 >[!NOTE]
-> `IncomingRelationship` oproepen retour neren niet de volledige hoofd tekst van de relatie. Zie de documentatie van het document voor meer informatie over de `IncomingRelationship` -klasse. [](/dotnet/api/azure.digitaltwins.core.incomingrelationship?view=azure-dotnet&preserve-view=true)
+> `IncomingRelationship` oproepen retour neren niet de volledige hoofd tekst van de relatie. Zie de documentatie van het document voor meer informatie over de `IncomingRelationship` -klasse. [](/dotnet/api/azure.digitaltwins.core.incomingrelationship)
 
 Het code voorbeeld in de vorige sectie is gericht op het vinden van uitgaande relaties van een dubbele. Het volgende voor beeld is op dezelfde manier gestructureerd, maar detecteert *inkomende* relaties met de dubbele plaats. In dit voor beeld wordt ook de SDK-aanroep (gemarkeerd) gebruikt in een aangepaste methode die kan worden weer gegeven in de context van een groter programma.
 
@@ -157,7 +157,7 @@ Het fragment maakt gebruik van de [*Room.jsop*](https://github.com/Azure-Samples
 Ga als volgt te werk voordat u het voor beeld uitvoert:
 1. Down load de model bestanden, plaats deze in uw project en vervang de `<path-to>` tijdelijke aanduidingen in de onderstaande code om uw programma te laten weten waar ze zich bevinden.
 2. Vervang de tijdelijke aanduiding door de `<your-instance-hostname>` hostnaam van uw Azure Digital apparaatdubbels-exemplaar.
-3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede biedt hulpmiddelen voor de verificatie met Azure.
+3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client), de tweede biedt hulpmiddelen voor de verificatie met Azure.
 
       ```cmd/sh
       dotnet add package Azure.DigitalTwins.Core

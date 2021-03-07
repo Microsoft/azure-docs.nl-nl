@@ -5,15 +5,15 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 12/11/2019
+ms.date: 03/06/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: b20bb4df7524c179766a2b2f7f090fccbddd7f37
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: df88bd9a1d4901b348fbec47ea9e2946542a08e3
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102122609"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102440085"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>ExpressRoute-en site-naar-site-verbindingen configureren met Power shell
 > [!div class="op_single_selector"]
@@ -36,17 +36,18 @@ In dit artikel worden de stappen beschreven voor het configureren van beide scen
 >
 
 ## <a name="limits-and-limitations"></a>Limieten en beperkingen
-* **Transitroutering wordt niet ondersteund.** U kunt niet (via Azure) routeren tussen uw lokale netwerk dat is verbonden via site-naar-site-VPN en uw lokale netwerk dat is verbonden via ExpressRoute.
-* **Basic SKU-gateway wordt niet ondersteund.** U moet een niet-basic SKU-gateway gebruiken voor zowel de [ExpressRoute gateway](expressroute-about-virtual-network-gateways.md) als de [VPN-gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 * **Alleen een op route gebaseerde VPN-gateway wordt ondersteund.** U moet een op route gebaseerde [VPN-gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md)gebruiken. U kunt ook een op route gebaseerde VPN-gateway gebruiken met een VPN-verbinding die is geconfigureerd voor ' op beleid gebaseerde verkeers selecters, zoals wordt beschreven in [verbinding maken met meerdere op beleid gebaseerde VPN-apparaten](../vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
-* **Statische route moet worden geconfigureerd voor de VPN-gateway.** Als uw lokale netwerk is verbonden met ExpressRoute en een site-naar-site-VPN, moet u in uw lokale netwerk een statische route hebben geconfigureerd voor het routeren van de site-naar-site-VPN-verbinding met het openbare internet.
-* **VPN Gateway standaard ingesteld op ASN 65515 als er geen waarde is opgegeven.** Azure VPN Gateway ondersteunt het BGP-routerings protocol. U kunt een ASN (als getal) opgeven voor een virtueel netwerk door de schakel optie-ASN toe te voegen. Als u deze para meter niet opgeeft, is de standaard waarde als nummer 65515. U kunt elk ASN gebruiken voor de configuratie, maar als u iets anders dan 65515 selecteert, moet u de gateway opnieuw instellen om de instelling van kracht te laten worden.
+* **De ASN van Azure VPN Gateway moet zijn ingesteld op 65515.** Azure VPN Gateway ondersteunt het BGP-routerings protocol. Voor een samen werking tussen ExpressRoute en Azure VPN moet u het autonome systeem nummer van uw Azure VPN-gateway op de standaard waarde 65515. Als u eerder een andere ASN dan 65515 hebt geselecteerd en u de instelling wijzigt in 65515, moet u de VPN-gateway opnieuw instellen om de instelling van kracht te laten worden.
 * **Het gateway-subnet moet/27 of een kortere voor voegsel zijn**(zoals/26,/25) of u ontvangt een fout bericht wanneer u de gateway van het ExpressRoute-netwerk toevoegt.
 * **Naast elkaar in een vnet met twee stacks wordt niet ondersteund.** Als u ExpressRoute IPv6-ondersteuning en een dual stack ExpressRoute-gateway gebruikt, is samen werken met VPN Gateway niet mogelijk.
 
 ## <a name="configuration-designs"></a>Configuratie-ontwerpen
 ### <a name="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute"></a>Een site-naar-site-VPN configureren als een failoverpad voor ExpressRoute
 U kunt een site-naar-site-VPN-verbinding configureren als een back-up voor ExpressRoute. Deze verbinding geldt alleen voor virtuele netwerken die zijn gekoppeld aan het pad voor Azure Privépeering. Er is geen op VPN gebaseerde failoveroplossing voor services die toegankelijk zijn via Azure Microsoft-peering. Het ExpressRoute-circuit is altijd de primaire koppeling. Gegevens worden alleen via het site-naar-site-VPN-pad geleid als het ExpressRoute-circuit niet beschikbaar is. Om asymmetrische routering te voorkomen, moet ook in uw lokale netwerkconfiguratie de voorkeur zijn gegeven aan het ExpressRoute-circuit via de site-naar-site-VPN. U kunt het ExpressRoute-pad de voorkeur geven door een hogere lokale voorkeur in te stellen voor de routes die de ExpressRoute heeft ontvangen. 
+
+>[!NOTE]
+> Als u ExpressRoute micro soft-peering hebt ingeschakeld, kunt u het open bare IP-adres van uw Azure VPN-gateway ontvangen op de ExpressRoute-verbinding. Als u uw site-naar-site-VPN-verbinding als back-up wilt instellen, moet u uw on-premises netwerk configureren zodat de VPN-verbinding wordt doorgestuurd naar het internet.
+>
 
 > [!NOTE]
 > Hoewel een ExpressRoute-circuit de voorkeur heeft boven site-naar-site-VPN wanneer beide routes hetzelfde zijn, gebruikt Azure de langste voorvoegselovereenkomst om de route naar de bestemming van het pakket te kiezen.
@@ -261,6 +262,9 @@ U kunt de onderstaande stappen volgen om punt-naar-site-configuratie toe te voeg
    $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) 
    Add-AzVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
    ```
+
+## <a name="to-enable-transit-routing-between-expressroute-and-azure-vpn"></a>Transit routering tussen ExpressRoute en Azure VPN inschakelen
+Als u de connectiviteit wilt inschakelen tussen een van uw lokale netwerk dat is verbonden met ExpressRoute en een ander van uw lokale netwerk dat is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
 
 Zie [Een punt-naar-site-verbinding configureren](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md) voor meer informatie over punt-naar-site-VPN.
 

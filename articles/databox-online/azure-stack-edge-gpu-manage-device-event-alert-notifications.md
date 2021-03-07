@@ -6,16 +6,18 @@ author: v-dalc
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/02/2021
+ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: c621584fa1dbed06873ac0867e20201e94c4a757
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 585343137a4a8fd8a1fb591c640e1183d71c0fd3
+ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101699678"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102443094"
 ---
 # <a name="manage-device-event-alert-notifications-on-azure-stack-edge-pro-resources"></a>Meldingen voor gebeurtenis waarschuwingen voor apparaten beheren op Azure Stack Edge Pro-resources
+
+[!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
 In dit artikel wordt beschreven hoe u actie regels maakt in de Azure Portal voor het activeren of onderdrukken van waarschuwings meldingen voor gebeurtenis gebeurtenissen die optreden in een resource groep, een Azure-abonnement of een individuele Azure Stack Edge-resource. Dit artikel is van toepassing op alle modellen van Azure Stack Edge.  
 

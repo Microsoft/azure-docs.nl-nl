@@ -5,18 +5,22 @@ author: davidmrdavid
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 9083821fa03c09949daaf3166367489248a4d7d2
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 62b3c9bb1c6fd53d9f11227a9d7e774d56859d04
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98029172"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434760"
 ---
 # <a name="monitor-scenario-in-durable-functions---github-issue-monitoring-sample"></a>Het scenario bewaken in het Durable Functions-GitHub-probleem bewakings voorbeeld
 
 Het monitor patroon verwijst naar een flexibel terugkerend proces in een werk stroom, bijvoorbeeld polling totdat aan bepaalde voor waarden wordt voldaan. In dit artikel vindt u een voor beeld waarin Durable Functions wordt gebruikt voor het implementeren van bewaking.
 
-[! Duurzame functies toevoegen-vereisten]
+## <a name="prerequisites"></a>Vereisten
+
+* [Het artikel Snelstartgids volt ooien](quickstart-python-vscode.md)
+* [Kloon of down load het project met voor beelden van GitHub](https://github.com/Azure/azure-functions-durable-python/tree/main/samples/)
+
 
 ## <a name="scenario-overview"></a>Overzicht van scenario's
 
@@ -29,7 +33,7 @@ In dit voor beeld wordt het aantal problemen in een GitHub-opslag plaats gecontr
 * Monitors zijn schaalbaar. Omdat elke monitor een indelings exemplaar is, kunnen er meerdere monitors worden gemaakt zonder nieuwe functies te maken of meer code te definiëren.
 * Monitors kunnen eenvoudig worden geïntegreerd in grotere werk stromen. Een monitor kan één sectie van een complexere Orchestration-functie of een subindeling [zijn.](durable-functions-sub-orchestrations.md)
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Configuratie
 
 ### <a name="configuring-twilio-integration"></a>Twilio-integratie configureren
 
@@ -45,7 +49,6 @@ In dit artikel worden de volgende functies in de voor beeld-app uitgelegd:
 
 ### <a name="e3_monitor-orchestrator-function"></a>E3_Monitor Orchestrator-functie
 
-# <a name="python"></a>[Python](#tab/python)
 
 De functie **E3_Monitor** maakt gebruik van de standaard *function.js* voor Orchestrator-functies.
 
@@ -55,7 +58,6 @@ Hier volgt de code voor het implementeren van de functie:
 
 [!code-python[Main](~/samples-durable-functions-python/samples/monitor/E3_Monitor/\_\_init\_\_.py)]
 
----
 
 Deze Orchestrator-functie voert de volgende acties uit:
 
@@ -73,7 +75,6 @@ Meerdere Orchestrator-exemplaren kunnen tegelijkertijd worden uitgevoerd door de
 
 Net als bij andere voor beelden zijn de functies van de Help-activiteit reguliere functies die gebruikmaken van de `activityTrigger` trigger binding. De functie **E3_TooManyOpenIssues** haalt een lijst met momenteel openstaande problemen op de opslag plaats op en bepaalt of er te veel items zijn: meer dan 3 van ons voor beeld.
 
-# <a name="python"></a>[Python](#tab/python)
 
 De *function.jsop* wordt als volgt gedefinieerd:
 
@@ -83,13 +84,11 @@ En dit is de implementatie.
 
 [!code-python[Main](~/samples-durable-functions-python/samples/monitor/E3_TooManyOpenIssues/\_\_init\_\_.py)]
 
----
 
 ### <a name="e3_sendalert-activity-function"></a>E3_SendAlert-activiteit functie
 
 De functie **E3_SendAlert** maakt gebruik van de Twilio-binding voor het verzenden van een SMS-bericht met de mede deling dat er ten minste drie openstaande problemen met een oplossing in de eind gebruiker zijn.
 
-# <a name="python"></a>[Python](#tab/python)
 
 De *function.js* is eenvoudig:
 
@@ -99,7 +98,6 @@ En dit is de code die het SMS-bericht verzendt:
 
 [!code-python[Main](~/samples-durable-functions-python/samples/monitor/E3_SendAlert/\_\_init\_\_.py)]
 
----
 
 ## <a name="run-the-sample"></a>De voorbeeldtoepassing uitvoeren
 

@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: mbullwin
-ms.openlocfilehash: a17301e0807877662ae1bf34ade48e90a1d30c0c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: b122765a3d77428008c91dda471706cad53a5616
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006197"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430595"
 ---
 # <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Zelfstudie: Afwijkingen visualiseren met batchgewijs detecteren en Power BI
 
@@ -32,7 +32,7 @@ In deze zelfstudie leert u het volgende:
 * Een [Azure-abonnement](https://azure.microsoft.com/free/cognitive-services)
 * [Microsoft Power BI Desktop](https://powerbi.microsoft.com/get-started/), gratis beschikbaar.
 * Een Excel-bestand (.xlsx) dat gegevenspunten van de tijdreeks bevat. De voorbeeldgegevens voor deze quickstart vindt u op [GitHub](https://go.microsoft.com/fwlink/?linkid=2090962)
-* Zodra u een Azure-abonnement hebt, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Anomaly Detector-resource maken"  target="_blank">, maakt u een Anomaly Detector-resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> in de Azure-portal om uw sleutel en eindpunt op te halen.
+* Zodra u een Azure-abonnement hebt, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Anomaly Detector-resource maken"  target="_blank">, maakt u een Anomaly Detector-resource </a> in de Azure-portal om uw sleutel en eindpunt op te halen.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Anomaly Detector-API. U doet dit later in de quickstart.
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]

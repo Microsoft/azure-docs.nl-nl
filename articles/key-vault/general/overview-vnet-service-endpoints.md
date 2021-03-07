@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 4f615ed44594379c79f179a467888652c597e286
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 36a94f780fa5c196e28730c051e161633ed3ee3d
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102217173"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431054"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Service-eindpunten voor virtuele netwerken voor Azure Key Vault
 
@@ -27,7 +27,7 @@ Er is een belang rijke uitzonde ring op deze beperking. Als een gebruiker is aan
 U kunt [Key Vault firewalls en virtuele netwerken](network-security.md) configureren om de toegang tot verkeer van alle netwerken (met inbegrip van Internet verkeer) standaard te weigeren. U kunt toegang verlenen aan verkeer van specifieke virtuele Azure-netwerken en open bare IP-adresbereiken voor het Internet, zodat u een beveiligde netwerk grens voor uw toepassingen maakt.
 
 > [!NOTE]
-> Key Vault firewalls en regels voor virtuele netwerken zijn alleen van toepassing op het [gegevens vlak](secure-your-key-vault.md#data-plane-access-control) van Key Vault. Key Vault besturings vlak bewerkingen (zoals het maken, verwijderen en wijzigen van bewerkingen, het instellen van toegangs beleid, firewalls en regels voor virtuele netwerken) worden niet beïnvloed door firewalls en regels voor virtuele netwerken.
+> Key Vault firewalls en regels voor virtuele netwerken zijn alleen van toepassing op het [gegevens vlak](secure-your-key-vault.md#data-plane-access-control) van Key Vault. Key Vault besturings vlak bewerkingen (zoals maken, verwijderen en wijzigen van bewerkingen, het instellen van toegangs beleid, het instellen van firewalls en regels voor virtuele netwerken en de implementatie van geheimen of sleutels via ARM-sjablonen) worden niet beïnvloed door firewalls en regels voor virtuele netwerken.
 
 Hier volgen enkele voor beelden van hoe u service-eind punten kunt gebruiken:
 

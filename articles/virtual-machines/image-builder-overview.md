@@ -3,23 +3,24 @@ title: Meer informatie over Azure Image Builder (preview-versie)
 description: Meer informatie over Azure Image Builder voor virtuele machines in Azure.
 author: danielsollondon
 ms.author: danis
-ms.date: 05/02/2019
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: image-builder
+ms.custom: references_regions
 ms.reviewer: cynthn
-ms.openlocfilehash: 1c70edfc3bad2be70d26c71736ca06fcc4a8dcdb
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0e72c35af1f1990527b0154d2ba47a45d3f8b8c9
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101672511"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425618"
 ---
 # <a name="preview-azure-image-builder-overview"></a>Voor beeld: overzicht van Azure Image Builder
 
-Met gestandaardiseerde installatie kopieën van virtuele machines kunnen organisaties migreren naar de Cloud en zorgen voor consistentie in de implementaties. Installatie kopieën bevatten doorgaans vooraf gedefinieerde beveiligings-en configuratie-instellingen en de benodigde software. Voor het instellen van uw eigen Imaging-pijp lijn zijn tijd, infra structuur en configuratie vereist, maar met Azure VM Image Builder kunt u een eenvoudige configuratie bieden waarmee uw installatie kopie wordt beschreven, verzonden naar de service en de installatie kopie wordt gebouwd en gedistribueerd.
+Met gestandaardiseerde installatie kopieën van virtuele machines kunnen organisaties migreren naar de Cloud en zorgen voor consistentie in de implementaties. Installatie kopieën bevatten doorgaans vooraf gedefinieerde beveiligings-en configuratie-instellingen en de benodigde software. Voor het instellen van uw eigen Imaging-pijp lijn zijn tijd, infra structuur en configuratie vereist, maar met de opbouw functie voor Azure VM-installatie kopieën kunt u een configuratie met een beschrijving van de installatie kopie opgeven, deze verzenden naar de service en de installatie kopie bouwen en distribueren.
  
-Met de opbouw functie voor installatie kopieën van Azure VM (Azure Image Builder) kunt u beginnen met een Azure Marketplace-installatie kopie op basis van Windows of Linux, bestaande aangepaste installatie kopieën of Red Hat Enterprise Linux (RHEL) ISO en begint met het toevoegen van uw eigen aanpassingen. Omdat de opbouw functie voor installatie kopieën is gebaseerd op [HashiCorp Packer](https://packer.io/), kunt u ook uw bestaande scripts voor de shell-inrichtings pakket importeren. U kunt ook opgeven waar u wilt dat uw installatie kopieën worden gehost, in de [Galerie met gedeelde installatie kopieën van Azure](shared-image-galleries.md)als een beheerde installatie kopie of een VHD.
+Met de opbouw functie voor installatie kopieën van Azure VM (Azure Image Builder) kunt u beginnen met een Azure Marketplace-installatie kopie op basis van Windows of Linux, bestaande aangepaste installatie kopieën en beginnen met het toevoegen van uw eigen aanpassingen. Omdat de opbouw functie voor installatie kopieën is gebaseerd op [HashiCorp Packer](https://packer.io/) , ziet u enkele overeenkomsten, maar hebt u het voor deel van een beheerde service. U kunt ook opgeven waar u wilt dat uw installatie kopieën worden gehost, in de [Galerie met gedeelde installatie kopieën van Azure](shared-image-galleries.md)als een beheerde installatie kopie of een VHD.
 
 > [!IMPORTANT]
 > Azure Image Builder is momenteel beschikbaar als open bare preview.
@@ -29,7 +30,8 @@ Met de opbouw functie voor installatie kopieën van Azure VM (Azure Image Builde
 
 Voor de preview worden de volgende functies ondersteund:
 
-- Het maken van gouden Baseline-installatie kopieën, die uw minimale beveiligings-en bedrijfs configuraties bevatten, en die afdelingen in staat stellen om deze verder aan hun behoeften aan te passen.
+- Het maken van basislijn installatie kopieën, die uw minimale beveiligings-en bedrijfs configuraties bevatten, en die afdelingen toestaan om deze te wijzigen.
+- De integratie van de kern toepassingen, zodat de VM na het maken van de werk belastingen kan uitvoeren of configuraties kan toevoegen ter ondersteuning van installatie kopieën van virtuele Windows-Bureau bladen.
 - Als u bestaande installatie kopieën wilt bijwerken, kunt u met Image Builder voortdurend bestaande aangepaste installatie kopieën bijwerken.
 - Verbind de opbouw functie voor installatie kopieën met uw bestaande virtuele netwerken, zodat u verbinding kunt maken met bestaande configuratie servers (DSC, chef, puppet enz.), bestands shares of andere Routeer bare servers/Services.
 - Dankzij de integratie met de galerie met gedeelde Azure-afbeeldingen kunt u installatie kopieën globaal distribueren, versies en schalen, en beschikt u over een systeem voor het beheer van installatie kopieën.
@@ -60,36 +62,29 @@ AIB biedt ondersteuning voor Azure Marketplace Base OS-basis installatie kopieë
 - Windows 2016
 - Windows 2019
 
-Ondersteuning voor RHEL Iso's wordt niet meer ondersteund.
-
 ## <a name="how-it-works"></a>Uitleg
 
-De opbouw functie voor installatie kopieën van Azure is een volledig beheerde Azure-service die toegankelijk is voor een Azure-resource provider. Het Azure Image Builder-proces bestaat uit drie hoofd onderdelen: bron, aanpassen en distribueren. deze worden weer gegeven in een sjabloon. In het onderstaande diagram ziet u de onderdelen, met een aantal eigenschappen. 
- 
+De opbouw functie voor installatie kopieën van Azure VM is een volledig beheerde Azure-service die toegankelijk is voor een Azure-resource provider. Geef een configuratie op voor de service waarmee de bron installatie kopie, de aanpassing van de uitvoering en de locatie van de nieuwe afbeelding worden gedistribueerd. in het onderstaande diagram ziet u een werk stroom op hoog niveau:
 
-**Image Builder-proces** 
+![Conceptuele tekening van het Azure Image Builder-proces met de bronnen (Windows/Linux), aanpassingen (shell, Power shell, Windows opnieuw starten & update, bestanden toevoegen) en wereld wijde distributie met de galerie met gedeelde Azure-afbeeldingen](./media/image-builder-overview/image-builder-flow.png)
 
-![Conceptuele tekening van het Azure Image Builder-proces](./media/image-builder-overview/image-builder-process.png)
+Sjabloon configuraties kunnen worden door gegeven met behulp van Power shell, AZ CLI, ARM-sjablonen en met behulp van de Azure VM Image Builder DevOps-taak, wanneer u deze indient bij de service, wordt er een bron voor de afbeeldings sjabloon gemaakt. Wanneer de bron van de afbeeldings sjabloon wordt gemaakt, ziet u een faserings resource groep die is gemaakt in uw abonnement, in de indeling: IT_ \<DestinationResourceGroup> _\<TemplateName>_ \( GUID). De resource groep staging bevat bestanden en scripts waarnaar wordt verwezen in het bestand, Shell, Power shell-aanpassing in de eigenschap ScriptURI.
 
-1. Maak de afbeeldings sjabloon als een. JSON-bestand. Dit JSON-bestand bevat informatie over de afbeeldings bron, aanpassingen en distributie. Er zijn meerdere voor beelden in de [Azure Image Builder github-opslag plaats](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts).
-1. Verzend het naar de service. Hiermee wordt een afbeeldings sjabloon artefact gemaakt in de resource groep die u opgeeft. Op de achtergrond downloadt de opbouw functie voor afbeeldingen de bron installatie kopie of ISO, en scripts als dat nodig is. Deze worden opgeslagen in een afzonderlijke resource groep die automatisch wordt gemaakt in uw abonnement, in de indeling: IT_ \<DestinationResourceGroup> _ \<TemplateName> . 
-1. Zodra de afbeeldings sjabloon is gemaakt, kunt u de installatie kopie maken. In de opbouw functie voor achtergrond gebruiken de sjabloon en bron bestanden voor het maken van een virtuele machine (standaard grootte: Standard_D1_v2), netwerk, openbaar IP-adres, NSG en opslag in de \<DestinationResourceGroup> \<TemplateName> resource groep IT_ _.
-1. Als onderdeel van het maken van de installatie kopie distribueert Image Builder de installatie kopie op basis van de sjabloon, waarna de extra resources worden verwijderd uit de \<DestinationResourceGroup> \<TemplateName> resource groep IT_ _ die voor het proces is gemaakt.
+Voor het uitvoeren van de build die u aanroept `Run` op de bron van de afbeeldings sjabloon, implementeert de service vervolgens aanvullende bronnen voor de build, zoals een VM, netwerk, schijf, netwerk adapter, enzovoort. Als u een installatie kopie bouwt zonder gebruik te maken van een bestaande VNET Image Builder, worden er ook een openbaar IP-en NSG geïmplementeerd, de service maakt verbinding met de build-VM met SSH of WinRM. Als u een bestaand VNET selecteert, wordt de service geïmplementeerd met behulp van een persoonlijke Azure-koppeling en is er geen openbaar IP-adres vereist. Raadpleeg de [Details](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-networking)voor meer informatie over het uitvoeren van een image builder-netwerk.
 
+Wanneer de build alle resources heeft verwijderd, met uitzonde ring van de faserings resource groep en het opslag account, verwijdert u deze om deze te verwijderen. u kunt ook de bron van de afbeeldings sjabloon verwijderen, of deze laten staan om de build opnieuw uit te voeren.
+
+Er zijn meerdere voor beelden en stapsgewijze hand leidingen in deze documentatie, die verwijzen naar configuratie sjablonen en oplossingen in de [Azure Image Builder github-opslag plaats](https://github.com/azure/azvmimagebuilder).
+
+### <a name="move-support"></a>Ondersteuning voor verplaatsen
+De bron van de afbeeldings sjabloon kan onveranderbaar zijn en bevat koppelingen naar resources en de resource groep staging. het bron type biedt daarom geen ondersteuning voor het verplaatsen van de bron. Als u de bron van de afbeeldings sjabloon wilt verplaatsen, moet u ervoor zorgen dat u beschikt over een kopie van de configuratie sjabloon (als u de bestaande configuratie van de resource hebt opgehaald als u deze niet hebt), een nieuwe bron voor een afbeeldings sjabloon maken in de nieuwe resource groep met een nieuwe naam en de vorige afbeeldings sjabloon resource verwijderen. 
 
 ## <a name="permissions"></a>Machtigingen
 Wanneer u zich registreert voor de (AIB), verleent dit de AIB-service toestemming voor het maken, beheren en verwijderen van een staging-resource groep (IT_ *), en hebt u rechten om resources toe te voegen, die vereist zijn voor het bouwen van de installatie kopie. Dit wordt gedaan door een AIB-SPN (Service Principal Name) die tijdens een geslaagde registratie beschikbaar wordt gesteld in uw abonnement.
 
-Als u wilt dat Azure VM Image Builder installatie kopieën naar de beheerde installatie kopieën of naar een galerie met gedeelde installatie kopieën kan distribueren, moet u een door de gebruiker toegewezen Azure-identiteit maken die machtigingen heeft voor het lezen en schrijven van installatie kopieën. Als u toegang hebt tot Azure Storage, hebt u machtigingen nodig om persoonlijke containers te lezen.
+Als u wilt dat Azure VM Image Builder installatie kopieën naar de beheerde installatie kopieën of naar een galerie met gedeelde installatie kopieën kan distribueren, moet u een door de gebruiker toegewezen Azure-identiteit maken die machtigingen heeft voor het lezen en schrijven van installatie kopieën. Als u toegang hebt tot Azure Storage, hebt u machtigingen nodig om persoonlijke en open bare containers te lezen.
 
-In eerste instantie moet u de [aan de gebruiker toegewezen beheerde identiteits documentatie voor Azure maken](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) volgen voor het maken van een identiteit.
-
-Als u de identiteit hebt die u nodig hebt om deze machtigingen te verlenen, kunt u dit doen door een aangepaste functie definitie van Azure te gebruiken en vervolgens de door de gebruiker toegewezen beheerde identiteit toe te wijzen om de aangepaste roldefinitie te gebruiken.
-
-De machtigingen worden [hier](https://github.com/danielsollondon/azvmimagebuilder/blob/master/aibPermissions.md#azure-vm-image-builder-permissions-explained-and-requirements)uitgebreid beschreven en de voor beelden laten zien hoe dit wordt geïmplementeerd.
-
-> [!Note]
-> Eerder met AIB zou u de SPN van AIB gebruiken en de SPN-machtigingen verlenen aan de installatie kopie resource groepen. We gaan weg van dit model om toekomstige mogelijkheden te bieden. Van 26 mei 2020, de opbouw functie voor installatie kopieën accepteert geen sjablonen die geen door de gebruiker toegewezen identiteit hebben, bestaande sjablonen moeten opnieuw worden ingediend bij de service met een [gebruikers identiteit](./linux/image-builder-json.md). In deze voor beelden ziet u al hoe u een door de gebruiker toegewezen identiteit kunt maken en toevoegen aan een sjabloon. Raadpleeg deze [documentatie](https://github.com/danielsollondon/azvmimagebuilder#service-updates-and-latest-release-information) voor meer informatie over deze wijziging en releases van updates.
+Machtigingen worden uitgebreid beschreven in [Power shell](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-permissions-powershell)en [AZ cli](https://docs.microsoft.com/azure/virtual-machines/linux/image-builder-permissions-cli).
 
 ## <a name="costs"></a>Kosten
 U maakt een aantal reken-, netwerk-en opslag kosten bij het maken, maken en opslaan van installatie kopieën met Azure Image Builder. Deze kosten zijn vergelijkbaar met de kosten die zijn gemaakt bij het hand matig maken van aangepaste installatie kopieën. Voor de resources worden er kosten in rekening gebracht voor uw Azure-tarieven. 
@@ -101,7 +96,7 @@ Met de opbouw functie voor installatie kopieën wordt een VM gemaakt met behulp 
 De installatie kopie wordt door Azure Image Builder gedistribueerd naar de gekozen regio's. Dit kan leiden tot uitstaande netwerk kosten.
 
 ## <a name="hyper-v-generation"></a>Hyper-V generatie
-De opbouw functie voor installatie kopieën ondersteunt momenteel alleen systeem eigen ondersteuning voor het maken van Hyper-V-generatie (gen1) 1 installatie kopieën in de Azure Shared Image Gallery (SIG) of een beheerde installatie kopie. Als u Gen2-installatie kopieën wilt maken, moet u een Gen2-bron installatie kopie gebruiken en distribueren naar VHD. Daarna moet u een beheerde installatie kopie maken van de VHD en deze in de SIG injecteren als een Gen2-installatie kopie.
+De opbouw functie voor installatie kopieën ondersteunt momenteel alleen systeem eigen ondersteuning voor het maken van Hyper-V-generatie (gen1) 1 installatie kopieën in de Azure Shared Image Gallery (SIG) of een beheerde installatie kopie. 
  
 ## <a name="next-steps"></a>Volgende stappen 
  

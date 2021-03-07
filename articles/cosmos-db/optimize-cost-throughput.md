@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 86de3e1199b00dff4e03f3b4292f86e6c19ea491
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 0c95fc9e416399b5c8fe032e0d3af0c3b7f9cf6e
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296536"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433570"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Kosten voor ingerichte doorvoer optimaliseren in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -65,7 +65,7 @@ Zoals in de volgende tabel wordt weer gegeven, is afhankelijk van de keuze van d
 
 Door de door Voer op verschillende niveaus in te richten, kunt u uw kosten optimaliseren op basis van de kenmerken van uw werk belasting. Zoals eerder vermeld, kunt u programmatisch en op elk gewenst moment uw ingerichte door Voer verg Roten of verkleinen voor afzonderlijke container (s) of gezamenlijk over een set containers. Door de door voer te verg Roten of verkleinen als uw werk belasting wordt gewijzigd, betaalt u alleen voor de door u geconfigureerde door voer. Als uw container of een set containers wordt gedistribueerd over meerdere regio's, wordt de door u geconfigureerde door Voer voor de container of een set containers gegarandeerd in alle regio's beschikbaar gesteld.
 
-## <a name="optimize-with-rate-limiting-your-requests"></a>Optimaliseren met frequentie-uw aanvragen beperken
+## <a name="optimize-with-rate-limiting-your-requests"></a>Optimaliseren door snelheidsbeperking toe te passen op aanvragen
 
 Voor workloads die niet gevoelig zijn voor latentie, kunt u minder door Voer inrichten en de toepassing de snelheids beperking laten afhandelen wanneer de werkelijke door Voer de ingerichte door Voer overschrijdt. De server preventief de aanvraag met `RequestRateTooLarge` (http-status code 429) en retourneert de `x-ms-retry-after-ms` header die de hoeveelheid tijd, in milliseconden, aangeeft dat de gebruiker moet wachten voordat de aanvraag opnieuw wordt uitgevoerd. 
 
@@ -81,7 +81,7 @@ Met de systeem eigen Sdk's (.NET/.NET core, Java, Node.js en python) wordt dit a
 
 Als u meer dan één client cumulatief op dezelfde manier hebt uitgevoerd, is het standaard aantal nieuwe pogingen, dat momenteel is ingesteld op 9, niet voldoende. In dergelijke gevallen genereert de client een `RequestRateTooLargeException` met de status code 429 naar de toepassing. Het standaard aantal nieuwe pogingen kan worden gewijzigd door de `RetryOptions` in te stellen op het Connection Policy-exemplaar. Standaard `RequestRateTooLargeException` wordt de met de status code 429 geretourneerd na een cumulatieve wacht tijd van 30 seconden als de aanvraag boven het aanvraag aantal blijft. Dit gebeurt zelfs wanneer het huidige aantal nieuwe pogingen kleiner is dan het maximum aantal nieuwe pogingen. Dit is de standaard waarde van 9 of een door de gebruiker gedefinieerd getal. 
 
-[MaxRetryAttemptsOnThrottledRequests](/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?preserve-view=true&view=azure-dotnet) is ingesteld op 3. in dit geval, als een aanvraag is beperkt door de gereserveerde door Voer voor de container te overschrijden, wordt de aanvraag bewerking drie keer opnieuw geprobeerd voordat de uitzonde ring voor de toepassing wordt gegenereerd. [MaxRetryWaitTimeInSeconds](/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) is ingesteld op 60. in dit geval geldt dat als de cumulatieve wacht tijd voor opnieuw proberen in seconden sinds de eerste aanvraag 60 seconden overschrijdt, de uitzonde ring wordt gegenereerd.
+[MaxRetryAttemptsOnThrottledRequests](/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests) is ingesteld op 3. in dit geval, als een aanvraag is beperkt door de gereserveerde door Voer voor de container te overschrijden, wordt de aanvraag bewerking drie keer opnieuw geprobeerd voordat de uitzonde ring voor de toepassing wordt gegenereerd. [MaxRetryWaitTimeInSeconds](/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) is ingesteld op 60. in dit geval geldt dat als de cumulatieve wacht tijd voor opnieuw proberen in seconden sinds de eerste aanvraag 60 seconden overschrijdt, de uitzonde ring wordt gegenereerd.
 
 ```csharp
 ConnectionPolicy connectionPolicy = new ConnectionPolicy(); 
@@ -99,7 +99,7 @@ Een goede partitionatie strategie is belang rijk voor het optimaliseren van de k
 
 * Kies een partitie sleutel met een breed scala aan waarden. 
 
-Het is een goed idee om de gegevens en de activiteit in uw container over de set logische partities te verdelen, zodat resources voor gegevens opslag en-door Voer kunnen worden gedistribueerd over de logische partities. Kandidaten voor partitie sleutels kunnen de eigenschappen bevatten die regel matig worden weer gegeven als een filter in uw query's. Query's kunnen efficiënt worden gerouteerd door de partitie sleutel op te nemen in het filter predicaat. Met een dergelijke partitie strategie is het optimaliseren van ingerichte door Voer veel eenvoudiger. 
+Het is een goed idee om de gegevens en de activiteit in uw container over de set logische partities te verdelen, zodat resources voor gegevens opslag en-door Voer kunnen worden gedistribueerd over de logische partities. Kandidaten voor partitie sleutels kunnen de eigenschappen bevatten die regel matig worden weer gegeven als een filter in uw query's. Query's kunnen efficiënt worden gerouteerd door de partitiesleutel op te nemen in het filterpredicaat. Met een dergelijke partitie strategie is het optimaliseren van ingerichte door Voer veel eenvoudiger. 
 
 ### <a name="design-smaller-items-for-higher-throughput"></a>Kleinere items ontwerpen voor een hogere door Voer 
 

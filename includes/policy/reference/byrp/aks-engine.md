@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 02/09/2021
+ms.date: 03/05/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: fd27383add6e73fed4cc2048a977c6277689aa8c
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 835bf559760910bb92c838721eb5f67543e35011
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100096010"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425218"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -38,5 +38,6 @@ ms.locfileid: "100096010"
 |[Kubernetes-clusters moeten alleen toegankelijk zijn via HTTPS](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d) |Het gebruik van HTTPS garandeert verificatie en beveiligt de door Voer van de verzen ding van gegevens in een netwerk laag. Deze mogelijkheid is momenteel algemeen beschikbaar voor de Kubernetes-service (AKS) en in de preview-versie van AKS engine en Azure Arc ingeschakelde Kubernetes. Ga voor meer informatie naar [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc) |controleren, weigeren, uitgeschakeld |[5.0.2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/IngressHttpsOnly.json) |
 |[Kubernetes-clusters moeten het automatisch koppelen van API-referenties uitschakelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F423dd1ba-798e-40e4-9c4d-b6902674b423) |Schakel het automatisch koppelen van API-referenties uit om te voorkomen dat een mogelijk gemanipuleerde Pod-resource API-opdrachten uitvoert met Kubernetes-clusters. Ga naar [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc) voor instructies over het gebruik van dit beleid. |controleren, weigeren, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/BlockAutomountToken.json) |
 |[Kubernetes clusters should not allow container privilege escalation](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1c6e92c9-99f0-4e55-9cf2-0c234dc48f99) (Kubernetes-clusters mogen geen escalatie van bevoegdheden voor containers toestaan) |Met dit beleid wordt voorkomen dat containers escalatie van bevoegdheden in een Kubernetes-cluster gebruiken. Dit beleid is algemeen beschikbaar voor Kubernetes Service (AKS), en als preview voor AKS Engine en Kubernetes met Azure Arc. Ga voor instructies voor de toepassing van dit beleid naar [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc). |controleren, weigeren, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ContainerNoPrivilegeEscalation.json) |
+|[Kubernetes-clusters mogen geen CAP_SYS_ADMIN beveiligings mogelijkheden verlenen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fd2e7ea85-6b44-4317-a0be-1b951587f626) |Als u de kwets baarheid van uw containers wilt beperken, beperkt u CAP_SYS_ADMIN Linux-mogelijkheden |controleren, weigeren, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ContainerDisallowedSysAdminCapability.json) |
 |[Kubernetes-clusters mogen geen specifieke beveiligingsopties gebruiken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa27c700f-8a22-44ec-961c-41625264370b) |Gebruik geen specifieke beveiligingsopties in Kubernetes-clusters om niet-toegestane bevoegdheden te voorkomen op de Pod-resource. Ga naar [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc) voor instructies over het gebruik van dit beleid. |controleren, weigeren, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/ContainerDisallowedCapabilities.json) |
 |[Kubernetes-clusters mogen de standaard naamruimte niet gebruiken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9f061a12-e40d-4183-a00e-171812443373) |Maak geen gebruik van de standaard naamruimte in Kubernetes-clusters om te beveiligen tegen onbevoegde toegang voor ConfigMap-, Pod-, Secret-, Service- en ServiceAccount-resourcetypen. Ga naar [https://aka.ms/kubepolicydoc](https://aka.ms/kubepolicydoc) voor instructies over het gebruik van dit beleid. |controleren, weigeren, uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Kubernetes/BlockDefaultNamespace.json) |

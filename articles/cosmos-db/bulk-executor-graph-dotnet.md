@@ -9,12 +9,12 @@ ms.date: 05/28/2019
 ms.author: chrande
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b31cb33e09158de5912132d0fb7bd31a62131181
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 15e94dac02770bf28aae4cbfc4e337cb68b8be40
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360510"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102425319"
 ---
 # <a name="using-the-graph-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db-gremlin-api"></a>De grafiek gebruiken om bulk bewerkingen uit te voeren in Azure Cosmos DB Gremlin API
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -25,12 +25,12 @@ In tegens telling tot het verzenden van Gremlin-query's naar een Data Base, waar
 
 ## <a name="bulk-operations-with-graph-data"></a>Bulkbewerkingen met graafgegevens
 
-De [bibliotheek bulk](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph?preserve-view=true&view=azure-dotnet) -uitvoerder bevat een `Microsoft.Azure.CosmosDB.BulkExecutor.Graph` naam ruimte om functionaliteit te bieden voor het maken en importeren van grafiek objecten. 
+De [bibliotheek bulk](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph) -uitvoerder bevat een `Microsoft.Azure.CosmosDB.BulkExecutor.Graph` naam ruimte om functionaliteit te bieden voor het maken en importeren van grafiek objecten. 
 
 In het volgende proces wordt uiteengezet hoe gegevensmigratie voor een Gremlin API-container kan worden gebruikt:
 1. Haal records op uit de gegevensbron.
 2. Construeer `GremlinVertex`- en `GremlinEdge`-objecten uit de verkregen objecten en voeg ze toe aan een `IEnumerable`-gegevensstructuur. In dit deel van de toepassing moet de logica voor het detecteren en toevoegen van relaties worden geïmplementeerd in geval de gegevensbron geen grafendatabase is.
-3. Gebruik de [Graph BulkImportAsync-methode](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph.graphbulkexecutor.bulkimportasync?preserve-view=true&view=azure-dotnet) voor het invoegen van de graafobjecten in de verzameling.
+3. Gebruik de [Graph BulkImportAsync-methode](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph.graphbulkexecutor.bulkimportasync) voor het invoegen van de graafobjecten in de verzameling.
 
 Met dit mechanisme wordt de efficiëntie van de gegevensmigratie verbeterd vergeleken met het gebruik van een Gremlin-client. Deze verbetering is merkbaar omdat voor het invoegen van gegevens met Gremlin de toepassing per keer een query moet verzenden die moet worden gevalideerd, geëvalueerd en vervolgens uitgevoerd om de gegevens te maken. De bulk-uitvoerder bibliotheek verwerkt de validatie in de toepassing en verzendt meerdere Graph-objecten per keer voor elke netwerk aanvraag.
 
@@ -79,7 +79,7 @@ Raadpleeg het [onderwerp BulkImportData to Azure Cosmos DB](bulk-executor-dot-ne
 
 De nettolading moet in `GremlinVertex`- en `GremlinEdge`-objecten worden gemaakt. Hier ziet u hoe deze objecten kunnen worden gemaakt:
 
-**Hoekpunten** :
+**Hoekpunten**:
 ```csharp
 // Creating a vertex
 GremlinVertex v = new GremlinVertex(
@@ -93,7 +93,7 @@ v.AddProperty("customProperty", "value");
 v.AddProperty("partitioningKey", "value");
 ```
 
-**Randen** :
+**Randen**:
 ```csharp
 // Creating an edge
 GremlinEdge e = new GremlinEdge(
@@ -116,7 +116,7 @@ e.AddProperty("customProperty", "value");
 ## <a name="sample-application"></a>Voorbeeldtoepassing
 
 ### <a name="prerequisites"></a>Vereisten
-* Visual Studio 2019 met de workload Azure Development. U kunt gratis aan de slag met de [Visual Studio 2019 Community Edition](https://visualstudio.microsoft.com/downloads/) .
+* Visual Studio 2019 met de werk belasting Azure Development. U kunt gratis aan de slag met de [Visual Studio 2019 Community Edition](https://visualstudio.microsoft.com/downloads/) .
 * Een Azure-abonnement. U kunt [hier een gratis Azure-account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cosmos-db). U kunt ook een Cosmos-database account maken met [gratis Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) zonder Azure-abonnement.
 * Een Azure Cosmos DB Gremlin API-database met een **onbeperkte verzameling**. In deze handleiding leest u hoe u aan de slag kunt met [Azure Cosmos DB Gremlin API in .NET](./create-graph-dotnet.md).
 * Git. Ga naar de [Git-pagina met downloads](https://git-scm.com/downloads) voor meer informatie.
@@ -160,4 +160,4 @@ Instelling|Beschrijving
 
 * Zie voor meer informatie over NuGet-pakket gegevens en release opmerkingen van de .NET-bibliotheek voor bulk-uitvoerder- [SDK](sql-api-sdk-bulk-executor-dot-net.md). 
 * Bekijk de [Tips voor prestaties](./bulk-executor-dot-net.md#performance-tips) om het gebruik van de bulk-uitvoerder verder te optimaliseren.
-* Lees het artikel [BulkExecutor.Graph](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph?preserve-view=true&view=azure-dotnet) voor meer informatie over de klassen en methoden die in deze naamruimte zijn gedefinieerd.
+* Lees het artikel [BulkExecutor.Graph](/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor.graph) voor meer informatie over de klassen en methoden die in deze naamruimte zijn gedefinieerd.

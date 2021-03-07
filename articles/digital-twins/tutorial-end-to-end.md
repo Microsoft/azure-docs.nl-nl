@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 3395dc3010f7ae3aabadda8105c1765a9c300988
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 30b30697750a0b9068cfcde19ea4bf9c474f9ad9
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201257"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102424560"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -48,7 +48,7 @@ Bij het doorwerken van het scenario interageert u met onderdelen van de vooraf g
 
 Hier volgen de onderdelen die worden geïmplementeerd door de voorbeeld-app *AdtSampleApp* van het gebouwscenario:
 * Apparaatverificatie 
-* [.NET (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)-gebruiksvoorbeelden (te vinden in *CommandLoop.cs*)
+* [.NET (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)-gebruiksvoorbeelden (te vinden in *CommandLoop.cs*)
 * Console-interface voor het aanroepen van de Azure Digital Twins-API
 * *SampleClientApp*: een voorbeeld van een Azure Digital Twins-oplossing
 * *SampleFunctionsApp*: een Azure Functions-app die uw Azure Digital Twins-grafiek bijgewerkt als resultaat van telemetrie van IoT Hub en Azure Digital Twins-gebeurtenissen

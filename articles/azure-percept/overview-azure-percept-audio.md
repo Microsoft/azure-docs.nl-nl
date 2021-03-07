@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: 8f84fb6bf37a3d3b61f4cad2c89745447aa88a36
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 85eb4ed0832c9384fcd05154833bc21f83f4adf2
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102179388"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102426345"
 ---
 # <a name="introduction-to-azure-percept-audio"></a>Inleiding tot Azure percept-audio
 
@@ -36,26 +36,13 @@ Met Azure percept audio wordt de audio-invoer door de spraak stack door gegeven 
 
 De verwerking wordt als volgt uitgevoerd: 
 
-- Azure percept-audio: Hiermee wordt de functie voor het annuleren van echo's en ECHO uitgevoerd en wordt de inkomende audio verwerkt om te optimaliseren voor spraak en verzonden naar de DK.  
+- Azure percept-audio: Hiermee wordt de audio vastgelegd en geconverteerd en verzonden naar de DK en audio-stekker.
 
-- Azure percept DK: de spraak stack voert het tref woord herkennen uit.  
+- Azure percept DK: de spraak stack voert formulier-en Echo annulering uit en verwerkt de inkomende audio om te optimaliseren voor spraak. Vervolgens wordt het tref woord herkennen uitgevoerd.
 
 - Cloud: verwerkt opdrachten en zinsdelen in natuurlijke taal, trefwoord verificatie en retraining. 
 
 - Offline: als het apparaat offline is, detecteert het het tref woord en de opname status van de Internet verbinding. Een verg root geaccepteerde acceptatie frequentie voor trefwoord herkennen kan worden waargenomen omdat de verificatie van het sleutel woord in de Cloud niet kan worden uitgevoerd. 
-
-<!---
-
-## How it works
-
-Azure Percept Audio passes the audio input to the Azure Percept DK carrier board in a hybrid edge-cloud manner. Specifically,
-
-- The Azure Percept Audio device: processes the incoming speech input to the clearest format by executing beam forming and echo cancellation befor sending the input to the Azure Percept DK. 
-- The Azure Percept DK uses edge processing to perform keyword spotting and then sends the relevant inputs to Azure speech services.
-- Cloud: Processing of natural language commands and phrases, in addition to keyword verification and retraining.
-- Offline: If the device is offline it will detect the keyword and capture telemetry that there is no internet connection at the time of the command. It will not be able to weed out false accepts since it cannot perform keyword verification.
-
--->
 
 ## <a name="getting-started"></a>Aan de slag
 

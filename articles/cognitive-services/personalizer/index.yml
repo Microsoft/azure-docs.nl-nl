@@ -12,12 +12,12 @@ metadata:
   title: Documentatie voor Personalizer
   titleSuffix: Azure Cognitive Services
   description: Azure Personalizer is een op de cloud gebaseerde API-service waarmee u de beste ervaring kunt kiezen om aan uw gebruikers te laten zien, waarbij u leert van hun real-time gedrag.
-  ms.openlocfilehash: f4d263e551360b326fbe849e4cb62347e8125849
-  ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-  ms.translationtype: HT
+  ms.openlocfilehash: 51d86faac37ad4131adad395d0fb52a23870e2ea
+  ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/08/2020
-  ms.locfileid: "94368131"
+  ms.lasthandoff: 03/07/2021
+  ms.locfileid: "102433706"
 landingContent:
 - title: Over Personalizer
   linkLists:
@@ -68,7 +68,7 @@ landingContent:
     - text: NuGet-pakket
       url: https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Personalizer/0.8.0-preview
     - text: NuGet-referentiedocumentatie
-      url: /dotnet/api/microsoft.azure.cognitiveservices.personalizer?view=azure-dotnet-preview&viewFallbackFrom=azure-dotnet
+      url: /dotnet/api/microsoft.azure.cognitiveservices.personalizer?view=azure-dotnet-preview&preserve-view=true
   - linkListType: get-started
     links:
     - text: Personalizer-lus ontwikkelen met Node.js

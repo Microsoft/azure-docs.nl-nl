@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: f2a514af99baa2d828df1aee35a0e6339d39e617
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 4b95c25400317b2baac694f4ba2b1b1dc1eae098
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98788550"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102435151"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Azure Service Bus trigger voor Azure Functions
 
@@ -346,8 +346,8 @@ De volgende parameter typen zijn beschikbaar voor het bericht in de wachtrij of 
 * `string` -Als het bericht tekst is.
 * `byte[]` -Nuttig voor binaire gegevens.
 * Een aangepast type: als het bericht JSON bevat, probeert Azure Functions de JSON-gegevens te deserialiseren.
-* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1&preserve-view=true) .
-* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet&preserve-view=true) -Wordt gebruikt voor het ontvangen en bevestigen van berichten van de bericht container (vereist wanneer [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) is ingesteld op `false` )
+* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver) -Wordt gebruikt voor het ontvangen en bevestigen van berichten van de bericht container (vereist wanneer [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) is ingesteld op `false` )
 
 Deze parameter typen zijn voor Azure Functions versie 1. x; voor 2. x en hoger gebruikt u [`Message`](/dotnet/api/microsoft.azure.servicebus.message) in plaats van `BrokeredMessage` .
 
@@ -358,7 +358,7 @@ De volgende parameter typen zijn beschikbaar voor het bericht in de wachtrij of 
 * `string` -Als het bericht tekst is.
 * `byte[]` -Nuttig voor binaire gegevens.
 * Een aangepast type: als het bericht JSON bevat, probeert Azure Functions de JSON-gegevens te deserialiseren.
-* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1&preserve-view=true) .
+* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
 
 Deze para meters zijn voor Azure Functions versie 1. x; voor 2. x en hoger gebruikt u [`Message`](/dotnet/api/microsoft.azure.servicebus.message) in plaats van `BrokeredMessage` .
 
@@ -390,13 +390,13 @@ De verwerking van verontreinigde berichten kan niet worden beheerd of geconfigur
 
 De functions-runtime ontvangt een bericht in de [modus PeekLock](../service-bus-messaging/service-bus-performance-improvements.md#receive-mode). Het bericht wordt aangeroepen `Complete` als de functie is voltooid, of aanroepen `Abandon` als de functie mislukt. Als de functie langer dan de `PeekLock` time-out wordt uitgevoerd, wordt de vergren deling automatisch vernieuwd zolang de functie wordt uitgevoerd.
 
-De `maxAutoRenewDuration` kan worden geconfigureerd in *host.jsop*, die wordt toegewezen aan [OnMessageOptions. MaxAutoRenewDuration](/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration?view=azure-dotnet&preserve-view=true). Het maximum aantal dat is toegestaan voor deze instelling is 5 minuten volgens de Service Bus-documentatie, terwijl u de tijds limiet van functies kunt verhogen van de standaard waarde van 5 minuten tot 10 minuten. Voor Service Bus functies wilt u dat niet doen, omdat u de Service Bus vernieuwings limiet overschrijdt.
+De `maxAutoRenewDuration` kan worden geconfigureerd in *host.jsop*, die wordt toegewezen aan [OnMessageOptions. MaxAutoRenewDuration](/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration). Het maximum aantal dat is toegestaan voor deze instelling is 5 minuten volgens de Service Bus-documentatie, terwijl u de tijds limiet van functies kunt verhogen van de standaard waarde van 5 minuten tot 10 minuten. Voor Service Bus functies wilt u dat niet doen, omdat u de Service Bus vernieuwings limiet overschrijdt.
 
 ## <a name="message-metadata"></a>Meta gegevens van bericht
 
-De trigger Service Bus biedt verschillende [Eigenschappen van meta gegevens](./functions-bindings-expressions-patterns.md#trigger-metadata). Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. Deze eigenschappen zijn leden van de [bericht](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet&preserve-view=true) klasse.
+De trigger Service Bus biedt verschillende [Eigenschappen van meta gegevens](./functions-bindings-expressions-patterns.md#trigger-metadata). Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. Deze eigenschappen zijn leden van de [bericht](/dotnet/api/microsoft.azure.servicebus.message) klasse.
 
-|Eigenschap|Type|Beschrijving|
+|Eigenschap|Type|Description|
 |--------|----|-----------|
 |`ContentType`|`string`|Een inhouds type-id die wordt gebruikt door de afzender en ontvanger voor toepassingsspecifieke logica.|
 |`CorrelationId`|`string`|De correlatie-ID.|

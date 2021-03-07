@@ -12,12 +12,12 @@ ms.date: 03/02/2021
 ms.author: aahi
 ms.custom: seodec18, cog-serv-seo-aug-2020
 keywords: on-premises, OCR, docker, container
-ms.openlocfilehash: 93d59e78241dcc94785ca139818d72908c7184a4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1c9e681e3c02cb65b2a54070cc778051a0e7ac53
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102043912"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102432550"
 ---
 # <a name="install-read-ocr-docker-containers-preview"></a>Lees de OCR docker-containers (preview) installeren 
 
@@ -418,7 +418,7 @@ Wanneer de afbeelding volledig is gelezen en vervolgens alleen de API retourneer
 
 Het JSON-antwoord object heeft dezelfde object grafiek als de asynchrone versie. Als u een Java script-gebruiker bent en type veiligheid wilt, kunt u type script gebruiken om de JSON-reactie te casten.
 
-Voor een voor beeld van een use-case raadpleegt u de <a href="https://aka.ms/ts-read-api-types" target="_blank" rel="noopener noreferrer">type script sandbox hier <span class="docon docon-navigate-external x-hidden-focus"></span></a> en selecteert u **uitvoeren** om het gebruiks gemak te visualiseren.
+Voor een voor beeld van een use-case raadpleegt u de <a href="https://aka.ms/ts-read-api-types" target="_blank" rel="noopener noreferrer">type script sandbox hier</a> en selecteert u **uitvoeren** om het gebruiks gemak te visualiseren.
 
 ## <a name="stop-the-container"></a>De container stoppen
 

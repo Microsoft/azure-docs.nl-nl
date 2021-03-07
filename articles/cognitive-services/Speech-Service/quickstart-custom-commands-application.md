@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
 ms.custom: references_regions
-ms.openlocfilehash: ea32358aa86a6093cd72adf959d5fe731cf1e125
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: e046f8cbf6fa0418244f20e9a0c6f75f6da34136
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786873"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434624"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Een spraakassistent maken met aangepaste opdrachten
 
@@ -38,7 +38,7 @@ Op dit moment ondersteunt aangepaste opdrachten spraak abonnementen die in deze 
 ## <a name="prerequisites"></a>Vereisten
 
 > [!div class="checklist"]
-> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Maak een Azure-spraak bron in een regio die aangepaste opdrachten ondersteunt.<span class="docon docon-navigate-external x-hidden-focus"></span></a> Raadpleeg de sectie **Beschik baarheid van regio's** hierboven voor een lijst met ondersteunde regio's.
+> * <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices" target="_blank">Maak een Azure-spraak bron in een regio die aangepaste opdrachten ondersteunt.</a> Raadpleeg de sectie **Beschik baarheid van regio's** hierboven voor een lijst met ondersteunde regio's.
 > * Down load het voor beeld van een [Smart room Lite](https://aka.ms/speech/cc-quickstart) JSON-bestand.
 > * Down load de nieuwste versie van de [Windows Voice Assistant-client](https://aka.ms/speech/va-samples-wvac).
 

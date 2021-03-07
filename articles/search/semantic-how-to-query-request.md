@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 7551ef88c2251b64cf6f6db1de4fed22db2c69e2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/05/2021
+ms.openlocfilehash: 8fdb6a53ed0fd64953b75238c3ba3df62c4b644e
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693642"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102432941"
 ---
 # <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
 
@@ -21,6 +21,8 @@ ms.locfileid: "101693642"
 > Semantisch query type bevindt zich in de open bare preview-versie, die beschikbaar is via de preview-REST API en Azure Portal. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden. Tijdens de eerste preview-versie worden er geen kosten in rekening gebracht voor semantisch zoeken. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
 In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt van semantische classificatie en dat er semantische bijschriften en antwoorden worden gegenereerd.
+
+Semantische query's werken meestal het beste bij zoek indexen die zijn opgebouwd uit tekst-zware inhoud, zoals Pdf's of documenten met grote stukken tekst.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -38,7 +40,7 @@ In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt 
 
 ## <a name="whats-a-semantic-query"></a>Wat is een semantische query?
 
-In Cognitive Search is een query een aanvraag met para meters die de verwerking van query's en de vorm van de reactie bepaalt. Een *semantische query* voegt para meters toe die het semantische herstelbeleid aanroepen, waarmee de context en de betekenis van overeenkomende resultaten kan worden geëvalueerd en waarmee meer relevante overeenkomsten naar boven worden bevorderd.
+In Cognitive Search is een query een aanvraag met para meters die de verwerking van query's en de vorm van de reactie bepaalt. Een *semantische query* voegt para meters toe die het semantische herstel model aanroepen dat de context en betekenis van overeenkomende resultaten kan beoordelen, meer relevante overeenkomsten voor het hoogste niveau moet verhogen en semantische antwoorden en bijschriften kan retour neren.
 
 De volgende aanvraag is representatief voor een algemene semantische query (zonder antwoorden).
 
@@ -48,7 +50,7 @@ POST https://[service name].search.windows.net/indexes/[index name]/docs/search?
     "search": " Where was Alan Turing born?",    
     "queryType": "semantic",  
     "searchFields": "title,url,body",  
-    "queryLanguage": "en-us",  
+    "queryLanguage": "en-us"  
 }
 ```
 
@@ -60,7 +62,7 @@ Alleen de Top 50 treffers van de oorspronkelijke resultaten kan semantisch worde
 
 De volledige specificatie van de REST API kan worden gevonden in [Zoek documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents).
 
-Semantische query's zijn bedoeld voor open vragen, zoals ' wat is de beste fabriek voor bestuivers ' of ' How to Fry a ei '. Als u wilt dat het antwoord antwoorden bevat, kunt u een optionele **`answer`** para meter toevoegen aan de aanvraag.
+Semantische query's bieden bijschriften en worden automatisch gemarkeerd. Als u wilt dat het antwoord antwoorden bevat, kunt u een optionele **`answer`** para meter toevoegen aan de aanvraag. Deze para meter, plus de constructie van de query teken reeks zelf, produceert een antwoord in de reactie.
 
 In het volgende voor beeld wordt gebruikgemaakt van de hotels-voor beeld-index voor het maken van een semantisch query verzoek met semantische antwoorden en bijschriften:
 
@@ -82,37 +84,66 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
 
 ### <a name="formulate-the-request"></a>De aanvraag formuleren
 
-1. Stel **`"queryType"`** in op ' semantisch ' en **`"queryLanguage"`** ' en-us '. Beide para meters zijn vereist.
+In deze sectie worden de query parameters beschreven die nodig zijn voor semantisch zoeken.
 
-   De queryLanguage moet consistent zijn met alle [taal analyse](index-add-language-analyzers.md) functies die zijn toegewezen aan veld definities in het index schema. Als queryLanguage "en-US" is, moeten alle taal analysen ook een Engelse variant ("en. micro soft" of "en. lucene") zijn. Alle taal neutraal-analyse functies, zoals sleutel woord of eenvoudig, hebben geen conflict met queryLanguage-waarden.
+#### <a name="step-1-set-querytype-and-querylanguage"></a>Stap 1: set query type en queryLanguage
 
-   Als u in een query aanvraag ook [spelling correctie](speller-how-to-add.md)gebruikt, gelden de queryLanguage die u hebt ingesteld gelijk aan de spelling, antwoorden en bijschriften. Er zijn geen onderdrukkingen voor afzonderlijke onderdelen. 
+Voeg de volgende para meters aan de rest toe. Beide para meters zijn vereist.
 
-   Terwijl inhoud in een zoek index in meerdere talen kan worden samengesteld, is de query-invoer waarschijnlijk in één taal. De zoek machine controleert niet op compatibiliteit van queryLanguage, language Analyzer en de taal waarin inhoud is samengesteld. Zorg er daarom voor dat u query's moet uitvoeren om te voor komen dat er onjuiste resultaten worden geproduceerd.
+```json
+"queryType": "semantic",
+"queryLanguage": "en-us",
+```
+
+De queryLanguage moet consistent zijn met alle [taal analyse](index-add-language-analyzers.md) functies die zijn toegewezen aan veld definities in het index schema. Als queryLanguage "en-US" is, moeten alle taal analysen ook een Engelse variant ("en. micro soft" of "en. lucene") zijn. Alle taal neutraal-analyse functies, zoals sleutel woord of eenvoudig, hebben geen conflict met queryLanguage-waarden.
+
+Als u in een query aanvraag ook [spelling correctie](speller-how-to-add.md)gebruikt, gelden de queryLanguage die u hebt ingesteld gelijk aan de spelling, antwoorden en bijschriften. Er zijn geen onderdrukkingen voor afzonderlijke onderdelen. 
+
+Terwijl inhoud in een zoek index in meerdere talen kan worden samengesteld, is de query-invoer waarschijnlijk in één taal. De zoek machine controleert niet op compatibiliteit van queryLanguage, language Analyzer en de taal waarin inhoud is samengesteld. Zorg er daarom voor dat u query's moet uitvoeren om te voor komen dat er onjuiste resultaten worden geproduceerd.
 
 <a name="searchfields"></a>
 
-1. Set **`"searchFields"`** (optioneel, maar wordt aanbevolen).
+#### <a name="step-2-set-searchfields"></a>Stap 2: searchFields instellen
 
-   In een semantische query weerspiegelt de volg orde van de velden in ' searchFields ' de prioriteit of het relatieve belang van het veld in semantische classificaties. Alleen teken reeks velden op het hoogste niveau (zelfstandig of in een verzameling) worden gebruikt. Omdat searchFields andere gedragingen heeft in eenvoudige en volledige lucene-query's (waarbij er geen geïmpliceerde prioriteits volgorde is), hebben niet-teken reeks velden en subvelden geen fout, maar worden ze ook niet gebruikt in semantische volg orde.
+Deze para meter is optioneel omdat er geen fout is als u deze verlaat, maar een geordende lijst met velden wordt ten zeerste aanbevolen voor bijschriften en antwoorden.
 
-   Volg de volgende richt lijnen bij het opgeven van searchFields:
+De para meter searchFields wordt gebruikt om de door gang te identificeren die moet worden geëvalueerd voor ' semantische gelijkenis ' met de query. Voor de preview-versie raden we u aan om searchFields leeg te laten, omdat het model een hint vereist om aan te geven welke velden het belangrijkst zijn voor het proces.
 
-   + Beknopte velden, zoals naam van hotels of een titel, moeten voorafgaan aan uitgebreide velden als beschrijving.
+De volg orde van de searchFields is kritiek. Als u searchFields al gebruikt in bestaande eenvoudige of volledige lucene-query's, moet u deze para meter opnieuw bezoeken wanneer u overschakelt naar een semantisch query type.
 
-   + Als uw index een URL-veld heeft dat tekst is (leesbaar voor mensen zoals `www.domain.com/name-of-the-document-and-other-details` en niet op computer gericht `www.domain.com/?id=23463&param=eis` , zoals), plaatst u het in de lijst. (plaats het eerst als er geen beknopt titel veld is).
+Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of meer searchFields zijn opgegeven:
 
-   + Als er slechts één veld is opgegeven, wordt dit beschouwd als een beschrijvende veld voor de semantische rang orde van documenten.  
++ Alleen teken reeks velden en teken reeks velden op het hoogste niveau in verzamelingen bevatten. Als u een niet-teken reeks velden of velden van het lagere niveau in een verzameling opneemt, is er geen fout, maar deze velden worden niet gebruikt in semantische volg orde.
 
-   + Als er geen velden zijn opgegeven, worden alle Doorzoek bare velden gezien als semantische rang schikking van documenten. Dit wordt echter niet aanbevolen, omdat het mogelijk niet de meest optimale resultaten van uw zoek index oplevert.
++ Het eerste veld moet altijd beknopt zijn (zoals een titel of naam), in het ideale geval met 25 woorden.
 
-1. Verwijder **`"orderBy"`** componenten als deze in een bestaande aanvraag aanwezig zijn. De semantische score wordt gebruikt voor het best Ellen van resultaten en als u expliciete Sorteer logica opneemt, wordt een HTTP 400-fout geretourneerd.
++ Als de index een URL-veld heeft dat tekst is (leesbaar voor mensen zoals `www.domain.com/name-of-the-document-and-other-details` en niet op computer gericht `www.domain.com/?id=23463&param=eis` , zoals), plaatst u het in de lijst (of eerst als er geen beknopt titel veld is).
 
-1. Voeg eventueel **`"answers"`** ingesteld op ' extra heren ' toe en geef het aantal antwoorden op als u meer dan 1 wilt.
++ Volg deze velden op beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document.
 
-1. Desgewenst kunt u de markerings stijl aanpassen die wordt toegepast op bijschriften. Met bijschriften past u de markerings opmaak toe op de sleutel door gang in het document waarin het antwoord wordt samenvatten. De standaardwaarde is `<em>`. Als u het type opmaak (bijvoorbeeld gele achtergrond) wilt opgeven, kunt u de highlightPreTag en highlightPostTag instellen.
+Als er slechts één veld is opgegeven, gebruikt u een beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat.
 
-1. Geef alle andere para meters op die u in de aanvraag wilt. Para meters zoals [speller](speller-how-to-add.md), [Select](search-query-odata-select.md)en Count verbeteren de kwaliteit van de aanvraag en lees baarheid van het antwoord.
+#### <a name="step-3-remove-orderby-clauses"></a>Stap 3: orderBy-componenten verwijderen
+
+Verwijder alle orderBy-componenten, als deze in een bestaande aanvraag aanwezig zijn. De semantische score wordt gebruikt voor het best Ellen van resultaten en als u expliciete Sorteer logica opneemt, wordt een HTTP 400-fout geretourneerd.
+
+#### <a name="step-4-add-answers"></a>Stap 4: antwoorden toevoegen
+
+Voeg eventueel ' antwoorden ' toe als u aanvullende verwerking wilt opnemen die een antwoord geeft. Antwoorden (en bijschriften) worden geformuleerd op basis van passeren die worden gevonden in de velden in searchFields. Zorg ervoor dat u velden met uitgebreide inhoud in searchFields opneemt om de beste antwoorden en bijschriften in een antwoord te krijgen.
+
+Er zijn expliciete en impliciete voor waarden die antwoorden genereren. 
+
++ Expliciete voor waarden zijn het toevoegen van ' antwoorden = extra heren '. Als u het aantal antwoorden wilt opgeven dat wordt geretourneerd in het antwoord, voegt u ook ' count ' toe, gevolgd door een getal: `"answers=extractive|count=3"` .  De standaard waarde is één. Maximum is vijf.
+
++ Impliciete voor waarden bevatten een query teken reeks constructie die zichzelf onderleent aan een antwoord. Een query die bestaat uit ' wat is de groene kamer heeft ', is waarschijnlijk meer ' beantwoord ' dan een query die bestaat uit een instructie met een decoratieve binnenkant. Zoals u zou kunnen verwachten, kan de query niet worden opgegeven of null.
+
+Het belang rijk punt om te worden verwijderd is dat als de query niet eruitziet als een vraag, de antwoord verwerking wordt overgeslagen, zelfs als de para meter "antwoorden" is ingesteld.
+
+#### <a name="step-5-add-other-parameters"></a>Stap 5: andere para meters toevoegen
+
+Stel alle andere para meters in die u in de aanvraag wilt. Para meters zoals [speller](speller-how-to-add.md), [Select](search-query-odata-select.md)en Count verbeteren de kwaliteit van de aanvraag en lees baarheid van het antwoord.
+
+Desgewenst kunt u de markerings stijl aanpassen die wordt toegepast op bijschriften. Met bijschriften past u de markerings opmaak toe op de sleutel door gang in het document waarin het antwoord wordt samenvatten. De standaardwaarde is `<em>`. Als u het type opmaak (bijvoorbeeld gele achtergrond) wilt opgeven, kunt u de highlightPreTag en highlightPostTag instellen.
 
 ### <a name="review-the-response"></a>Het antwoord controleren
 
@@ -141,7 +172,7 @@ Antwoord voor de bovenstaande query retourneert de volgende overeenkomst als de 
 
 De volgende tabel bevat een overzicht van de query parameters die in een semantische query worden gebruikt, zodat u ze op een holistische manier kunt zien. Zie [zoeken naar documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) voor een lijst met alle para meters.
 
-| Parameter | Type | Beschrijving |
+| Parameter | Type | Description |
 |-----------|-------|-------------|
 | Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
 | queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |

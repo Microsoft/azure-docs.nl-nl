@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 02/03/2021
-ms.openlocfilehash: d0cc7630a3bea67a99c3cb65d2015e934e8ac2da
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.date: 03/05/2021
+ms.openlocfilehash: 96594d573c308727217f537e5421dcb79f02c2ff
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539091"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433791"
 ---
 # <a name="creating-search-indexes-in-azure-cognitive-search"></a>Zoek indexen maken in azure Cognitive Search
 
@@ -61,7 +61,7 @@ Andere elementen worden samengevouwen voor het boog gebruik, maar de volgende ko
 
 ## <a name="choose-a-client"></a>Kies een client
 
-Er zijn verschillende methoden voor het maken van een zoek index. We raden u aan de Azure Portal-of REST-Api's voor vroegtijdige ontwikkeling en test-of-concept tests uit te voeren.
+Er zijn verschillende manieren om een zoek index te maken. U wordt aangeraden de Azure Portal of Sdk's voor vroegtijdige ontwikkeling en haalbaarheids tests te testen.
 
 Plan tijdens de ontwikkeling regel matig opnieuw samen stellen. Omdat fysieke structuren in de service zijn gemaakt, is het [verwijderen en opnieuw maken van indexen](search-howto-reindex.md) nood zakelijk voor de meeste wijzigingen in een bestaande veld definitie. U kunt ook met een subset van uw gegevens werken om het opnieuw opbouwen sneller te laten verlopen.
 
@@ -110,7 +110,7 @@ Voor Cognitive Search implementeren de Azure-Sdk's algemeen beschik bare functie
 
 Er wordt een zoek document gedefinieerd door de `fields` verzameling. U hebt velden nodig voor query's en sleutels. U hebt waarschijnlijk ook velden nodig om filters, facetten en sorteer bewerkingen te ondersteunen. Mogelijk hebt u ook velden nodig voor gegevens die een gebruiker nooit ziet, bijvoorbeeld velden voor winst marges of marketing promoties die u kunt gebruiken om de zoek positie te wijzigen.
 
-Eén veld van het type EDM. string moet worden opgegeven als de document sleutel. Het wordt gebruikt om elk zoek document uniek te identificeren. U kunt een document ophalen op basis van de sleutel om een detail pagina in te vullen.  
+Eén veld van het type EDM. string moet worden opgegeven als de document sleutel. Het wordt gebruikt om elk zoek document uniek te identificeren en is hoofdletter gevoelig. U kunt een document ophalen op basis van de sleutel om een detail pagina in te vullen.
 
 Als inkomende gegevens hiërarchisch zijn, wijst u het gegevens type [complex type](search-howto-complex-data-types.md) toe om de geneste structuren aan te duiden. De ingebouwde voor beeld-gegevensset, hotels, illustreert complexe typen met behulp van een adres (bevat meerdere subvelden) die een een-op-een-relatie hebben met elk Hotel, en een verzameling van ruimten die complexe verzamelingen bevatten, waarbij meerdere kamers aan elk hotel zijn gekoppeld. 
 

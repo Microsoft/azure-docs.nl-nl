@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 7d48474d88a60c73f6094d3b9e65017c23404d8a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 53364009f9b9c041c39728e438c3e24eacfd1665
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144263"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102435474"
 ---
 # <a name="412002-devicemessagelocklost"></a>412002 DeviceMessageLockLost
 
@@ -25,7 +25,7 @@ Wanneer u een Cloud-naar-apparaat-bericht probeert te verzenden, mislukt de aanv
 
 ## <a name="cause"></a>Oorzaak
 
-Wanneer een apparaat een Cloud-naar-apparaat-bericht ontvangt uit de wachtrij (bijvoorbeeld door gebruik te maken van [`ReceiveAsync()`](/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet) ), wordt het bericht vergrendeld door IOT hub voor een time-out voor een vergren deling van één minuut. Als het apparaat het bericht probeert te volt ooien nadat de time-out voor vergren deling is verlopen, wordt deze uitzonde ring door IoT Hub gegenereerd.
+Wanneer een apparaat een Cloud-naar-apparaat-bericht ontvangt uit de wachtrij (bijvoorbeeld door gebruik te maken van [`ReceiveAsync()`](/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync) ), wordt het bericht vergrendeld door IOT hub voor een time-out voor een vergren deling van één minuut. Als het apparaat het bericht probeert te volt ooien nadat de time-out voor vergren deling is verlopen, wordt deze uitzonde ring door IoT Hub gegenereerd.
 
 ## <a name="solution"></a>Oplossing
 

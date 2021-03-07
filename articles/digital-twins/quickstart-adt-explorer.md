@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: 8c6e584a4bdb1953d7ceac4e3d612b329738f646
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: f1b25b853977b3a1f4871e232a562d6a3cfd2fae
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203977"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102434199"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-azure-digital-twins-explorer"></a>Quick Start: een voor beeld van een Azure Digital Apparaatdubbels-scenario verkennen met behulp van Azure Digital Apparaatdubbels Explorer
 
@@ -55,7 +55,7 @@ In de rest van deze sectie krijgt u stapsgewijze instructies.
 
 ### <a name="set-up-local-azure-credentials"></a>Lokale Azure-referenties instellen
 
-De Azure Digital Apparaatdubbels Explorer-toepassing maakt gebruik van [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential?preserve-view=true&view=azure-dotnet) (onderdeel van de `Azure.Identity` bibliotheek) om gebruikers te verifiëren met de Azure Digital apparaatdubbels-instantie wanneer u deze op uw lokale computer uitvoert. Voor meer informatie over verschillende manieren waarop een client-app kan verifiëren met Azure Digital Twins, raadpleegt u [Verificatiecode voor app schrijven](how-to-authenticate-client.md).
+De Azure Digital Apparaatdubbels Explorer-toepassing maakt gebruik van [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) (onderdeel van de `Azure.Identity` bibliotheek) om gebruikers te verifiëren met de Azure Digital apparaatdubbels-instantie wanneer u deze op uw lokale computer uitvoert. Voor meer informatie over verschillende manieren waarop een client-app kan verifiëren met Azure Digital Twins, raadpleegt u [Verificatiecode voor app schrijven](how-to-authenticate-client.md).
 
 Met dit type verificatie zoekt Azure Digital Apparaatdubbels Explorer naar referenties in uw lokale omgeving, zoals een aanmelding bij Azure in een lokale [Azure cli](/cli/azure/install-azure-cli) of in Visual Studio of Visual Studio code. Daarom moet u *zich lokaal bij Azure aanmelden* via een van deze mechanismen om referenties in te stellen voor de Azure Digital apparaatdubbels Explorer-app.
 

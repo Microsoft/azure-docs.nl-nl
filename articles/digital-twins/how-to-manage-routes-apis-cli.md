@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 40cf83b0ca9e4c794979f2b20ddb73360758abc5
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: b0e440f9fe0b7ce1591318362ac0419b9aa01baf
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198537"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102433298"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -20,7 +20,7 @@ ms.locfileid: "102198537"
 
 In azure Digital Apparaatdubbels kunt u [gebeurtenis meldingen](how-to-interpret-event-data.md) naar downstream-Services of verbonden reken bronnen sturen. Dit doet u door eerst **eindpunten** in te stellen die de gebeurtenissen kunnen ontvangen. U kunt vervolgens  [**gebeurtenis routes**](concepts-route-events.md) maken om op te geven welke gebeurtenissen worden gegenereerd door Azure Digital apparaatdubbels naar welke eind punten worden verzonden.
 
-Dit artikel begeleidt u bij het proces van het maken van eind punten en routes met de [rest api's](/rest/api/azure-digitaltwins/), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)en de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
+Dit artikel begeleidt u bij het proces van het maken van eind punten en routes met de [rest api's](/rest/api/azure-digitaltwins/), de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)en de [Azure Digital apparaatdubbels cli](how-to-use-cli.md).
 
 U kunt ook eind punten en routes beheren met de [Azure Portal](https://portal.azure.com). Voor een versie van dit artikel die gebruikmaakt van de portal, Zie [*How-to: Manage endpoints and routes (Portal)*](how-to-manage-routes-portal.md).
 
@@ -208,7 +208,7 @@ Gebeurtenis routes kunnen worden gemaakt met de Azure Digital Apparaatdubbels [ 
 
 ### <a name="create-routes-with-the-apis-and-c-sdk"></a>Routes maken met de Api's en C# SDK
 
-Een manier om gebeurtenis routes te definiëren, is met behulp van de [Data vlak-api's](how-to-use-apis-sdks.md#overview-data-plane-apis). In de voor beelden in deze sectie wordt de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true)gebruikt.
+Een manier om gebeurtenis routes te definiëren, is met behulp van de [Data vlak-api's](how-to-use-apis-sdks.md#overview-data-plane-apis). In de voor beelden in deze sectie wordt de [.net (C#) SDK](/dotnet/api/overview/azure/digitaltwins/client)gebruikt.
 
 `CreateOrReplaceEventRouteAsync` is de SDK-aanroep die wordt gebruikt om een gebeurtenis route toe te voegen. Hier volgt een voor beeld van het gebruik:
 

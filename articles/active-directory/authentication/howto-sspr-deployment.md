@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 765bfe0f805ae4219110d689e8f7f8fd54a26cf3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ce8aa5108b6998424b35e3f4ecac6b51e78f276b
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173933"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102424118"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
@@ -78,6 +78,7 @@ Zie [Azure Active Directory prijzen](https://azure.microsoft.com/pricing/details
 | Video's| [Bied uw gebruikers betere IT-schaal baarheid](https://youtu.be/g9RpRnylxS8) 
 | |[Wat is self-service voor wachtwoordherstel?](https://youtu.be/hc97Yx5PJiM)|
 | |[Self-service voor wachtwoord herstel implementeren](https://www.youtube.com/watch?v=Pa0eyqjEjvQ&index=18&list=PLLasX02E8BPBm1xNMRdvP6GtA6otQUqp0)|
+| |[SSPR inschakelen en configureren in azure AD](https://www.youtube.com/watch?v=rA8TvhNcCvQ)|
 | |[Hoe kan ik de selfservice voor wachtwoord herstel voor gebruikers configureren in azure AD?](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/) |
 | |[[Gebruikers voorbereiden om] de beveiligings informatie voor Azure Active Directory te registreren](https://youtu.be/gXuh0XS18wA) |
 | Online cursussen|[Identiteiten beheren in Microsoft Azure Active Directory](https://www.pluralsight.com/courses/microsoft-azure-active-directory-managing-identities) Gebruik SSPR om uw gebruikers een moderne, beveiligde ervaring te geven. Zie met name de module '[beheer van Azure Active Directory-gebruikers en-groepen](https://app.pluralsight.com/library/courses/microsoft-azure-active-directory-managing-identities/table-of-contents)'. |
@@ -149,7 +150,7 @@ Zie [een groep maken en leden toevoegen in azure Active Directory](../fundamenta
 
 De volgende instellingen zijn vereist om SSPR samen met aanbevolen waarden in te scha kelen.
 
-| Onderwerp | Instelling | Waarde |
+| Gebied | Instelling | Waarde |
 | --- | --- | --- |
 | **SSPR-eigenschappen** | Self-service voor wacht woord opnieuw instellen is ingeschakeld | **Geselecteerde** groep voor pilot/ **all** voor productie |
 | **Verificatiemethoden** | Verificatie methoden die nodig zijn om te registreren | Altijd 1 meer dan vereist voor opnieuw instellen |

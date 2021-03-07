@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: troubleshooting
 ms.reviewer: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 04813b9d70557314e619fded5294644f5f6fadf5
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: dce309b955882f6236f285ee6bd20a79201e43fb
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831243"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102429932"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-net-sdk"></a>Problemen vaststellen en oplossen bij het gebruik van Azure Cosmos DB .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -91,7 +91,7 @@ Als uw app is geïmplementeerd op [Azure virtual machines zonder een openbaar IP
 * Wijs een [openbaar IP-adres toe aan uw Azure-VM](../load-balancer/troubleshoot-outbound-connection.md#assignilpip).
 
 ### <a name="high-network-latency"></a><a name="high-network-latency"></a>Hoge netwerk latentie
-Hoge netwerk latentie kan worden geïdentificeerd met behulp van de [Diagnostische teken reeks](/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring?preserve-view=true&view=azure-dotnet) in de v2 SDK of [diagnoses](/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics?preserve-view=true&view=azure-dotnet#Microsoft_Azure_Cosmos_ResponseMessage_Diagnostics) in de V3 SDK.
+Hoge netwerk latentie kan worden geïdentificeerd met behulp van de [Diagnostische teken reeks](/dotnet/api/microsoft.azure.documents.client.resourceresponsebase.requestdiagnosticsstring) in de v2 SDK of [diagnoses](/dotnet/api/microsoft.azure.cosmos.responsemessage.diagnostics#Microsoft_Azure_Cosmos_ResponseMessage_Diagnostics) in de V3 SDK.
 
 Als er geen [time-outs](troubleshoot-dot-net-sdk-request-timeout.md) aanwezig zijn en de diagnostische gegevens afzonderlijke aanvragen weer geven waarbij de hoge latentie duidelijk is voor het verschil tussen `ResponseTime` en `RequestStartTime` , bijvoorbeeld (>300 milliseconden in dit voor beeld):
 

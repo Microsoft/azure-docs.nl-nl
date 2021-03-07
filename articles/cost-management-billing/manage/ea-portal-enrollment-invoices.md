@@ -3,18 +3,18 @@ title: Facturen voor Azure Enterprise-inschrijvingen
 description: In dit artikel wordt uitgelegd hoe u uw Azure Enterprise-factuur kunt beheren en erop kunt reageren.
 author: bandersmsft
 ms.author: banders
-ms.date: 01/19/2021
+ms.date: 03/05/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
-ms.reviewer: boalcsva
+ms.reviewer: ruturajd
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 90ae9bdcee5f5f4c4281f2c3f931389b2ebf9486
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 71ba1d6e1e45c5c2e72e2be620158b1aa4b71582
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598073"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102430803"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Facturen voor Azure Enterprise-inschrijvingen
 
@@ -98,29 +98,41 @@ Inactieve inschrijvingen worden niet weergegeven in de Azure Enterprise-portal. 
 
 ## <a name="change-a-po-number-for-an-upcoming-overage-invoice"></a>Een inkoopordernummer wijzigen voor een aanstaande overschrijdingsfactuur
 
-In de Azure Enterprise-portal wordt automatisch een standaardnummer voor een inkooporder (PO) gegenereerd, tenzij de ondernemingsbeheerder er een instelt vóór de factuurdatum. Een ondernemingsbeheerder kan het inkoopordernummer bijwerken tot zeven dagen na ontvangst van een automatische factuurmelding per e-mail.
+In de Azure Enterprise-portal wordt automatisch een standaardnummer voor een inkooporder (PO) gegenereerd, tenzij de ondernemingsbeheerder er een instelt vóór de factuurdatum. Een ondernemingsbeheerder kan het inkoopordernummer bijwerken tot zeven dagen na ontvangst van een automatische factuurmelding per e-mail. 
 
-### <a name="to-update-the-azure-services-purchase-order-number"></a>Het inkoopordernummer van de Azure-services bijwerken:
+U kunt het io-nummer vergren delen om elke maand automatische generatie van io-nummers te voor komen. Zie [inkooporder nummer vergren delen](#lock-po-number-to-prevent-automatic-update-in-upcoming-billing-cycles).
+
+### <a name="update-the-azure-services-purchase-order-number"></a>Het bestel nummer van de Azure-Services bijwerken
 
 1. Selecteer in de Azure Enterprise-portal **Rapport** > **Gebruiksoverzicht**.
 1. Selecteer **Inkoopordernummers bewerken** in de rechterbovenhoek.
 1. Selecteer het keuzerondje **Azure-services**.
 1. Selecteer een **Factuurperiode** uit de datumbereiken in het drop-down menu.
-
    U kunt een inkoopordernummer nog gedurende 7 dagen nadat u een factuurmelding hebt ontvangen bewerken, mits dit is vóórdat u de factuur hebt betaald.
 1. Voer een nieuw inkoopordernummer in het veld **Inkoopordernummer** in.
 1. Selecteer **Opslaan** om de wijziging te verzenden.
 
-### <a name="to-update-the-azure-marketplace-purchase-order-number"></a>Het inkoopordernummer voor Azure Marketplace bijwerken:
+### <a name="update-the-azure-marketplace-purchase-order-number"></a>Het bestel nummer van de Azure Marketplace bijwerken
 
 1. Selecteer in de Azure Enterprise-portal **Rapport** > **Gebruiksoverzicht**.
 1. Selecteer **Inkoopordernummers bewerken** in de rechterbovenhoek.
 1. Selecteer het keuzerondje **Marketplace**.
-1. Selecteer een **Factuurperiode** uit de datumbereiken in het drop-down menu.
-
-   U kunt een inkoopordernummer nog gedurende 7 dagen nadat u een factuurmelding hebt ontvangen bewerken, mits dit is vóórdat u de factuur hebt betaald.
+1. Selecteer een **Factuurperiode** uit de datumbereiken in het drop-down menu.  
+    U kunt een inkoopordernummer nog gedurende 7 dagen nadat u een factuurmelding hebt ontvangen bewerken, mits dit is vóórdat u de factuur hebt betaald.
 1. Voer een nieuw inkoopordernummer in het veld **Inkoopordernummer** in.
 1. Selecteer **Opslaan** om de wijziging te verzenden.
+
+### <a name="lock-po-number-to-prevent-automatic-update-in-upcoming-billing-cycles"></a>KO-nummer vergren delen om te voor komen dat automatische updates in aanstaande facturerings cycli
+
+Nadat u het io-nummer hebt vergrendeld, blijft het vergrendeld voor alle nieuwe facturen en hoeft u het io-nummer niet bij te werken.
+
+1.  Selecteer in de Azure Enter prise Portal de optie  >  **samen vatting** van rapport gebruik.
+2.  Selecteer **Inkoopordernummers bewerken** in de rechterbovenhoek.
+3.  Typ een nieuw ko-nummer in het veld **IO-nummer** .
+4.  Selecteer het vak **ko-nummer vergren delen** .
+5.  Selecteer **Opslaan** om de wijziging te verzenden.  
+    :::image type="content" source="./media/ea-portal-enrollment-invoices/lock-po.png" alt-text="Scherm afbeelding met het vak IO-nummers weer geven/bewerken." lightbox="./media/ea-portal-enrollment-invoices/lock-po.png" :::
+
 
 ## <a name="azure-enterprise-billing-frequency"></a>Factureringsfrequentie van Azure Enterprise
 

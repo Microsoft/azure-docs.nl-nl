@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure SignalR
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure SignalR. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 02/09/2021
+ms.date: 03/05/2021
 author: sffamily
 ms.author: zhshang
 ms.service: signalr
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 1974971fb81ec5ef4b87722be3218fd237a2c4ea
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: 1ee06fe551019a9d0f4e43c8ae512d121796fc91
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100095394"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102424820"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-signalr"></a>Ingebouwde Azure Policy-definities voor Azure SignalR
 

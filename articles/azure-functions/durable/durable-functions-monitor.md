@@ -4,18 +4,30 @@ description: Meer informatie over het implementeren van een status monitor met d
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: e70c50098ece516312e1e92984185624c276301b
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 8ef32ecfb6f69b71d29578d3b8314f568fd9386a
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028417"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431071"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Het scenario bewaken in het Durable Functions-weers Watcher-voor beeld
 
 Het monitor patroon verwijst naar een flexibel *terugkerend* proces in een werk stroom, bijvoorbeeld polling totdat aan bepaalde voor waarden wordt voldaan. In dit artikel vindt u een voor beeld waarin [Durable functions](durable-functions-overview.md) wordt gebruikt voor het implementeren van bewaking.
 
-[!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
+## <a name="prerequisites"></a>Vereisten
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+* [Het artikel Snelstartgids volt ooien](durable-functions-create-first-csharp.md)
+* [Kloon of down load het project met voor beelden van GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/main/samples/precompiled)
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+* [Het artikel Snelstartgids volt ooien](quickstart-js-vscode.md)
+* [Kloon of down load het project met voor beelden van GitHub](https://github.com/Azure/azure-functions-durable-extension/tree/main/samples/javascript)
+
+---
 
 ## <a name="scenario-overview"></a>Overzicht van scenario's
 
@@ -28,7 +40,7 @@ In dit voor beeld worden de huidige weers omstandigheden van een locatie bewaakt
 * Monitors zijn schaalbaar. Omdat elke monitor een indelings exemplaar is, kunnen er meerdere monitors worden gemaakt zonder nieuwe functies te maken of meer code te definiëren.
 * Monitors kunnen eenvoudig worden geïntegreerd in grotere werk stromen. Een monitor kan één sectie van een complexere Orchestration-functie of een subindeling [zijn.](durable-functions-sub-orchestrations.md)
 
-## <a name="configuration"></a>Configuration
+## <a name="configuration"></a>Configuratie
 
 ### <a name="configuring-twilio-integration"></a>Twilio-integratie configureren
 
@@ -72,9 +84,6 @@ Hier volgt de code voor het implementeren van de functie:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_Monitor/index.js)]
 
-# <a name="python"></a>[Python](#tab/python)
-We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
-
 ---
 
 Deze Orchestrator-functie voert de volgende acties uit:
@@ -105,9 +114,6 @@ En dit is de implementatie.
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_GetIsClear/index.js)]
 
-# <a name="python"></a>[Python](#tab/python)
-We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
-
 ---
 
 ### <a name="e3_sendgoodweatheralert-activity-function"></a>E3_SendGoodWeatherAlert-activiteit functie
@@ -130,9 +136,6 @@ De *function.js* is eenvoudig:
 En dit is de code die het SMS-bericht verzendt:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_SendGoodWeatherAlert/index.js)]
-
-# <a name="python"></a>[Python](#tab/python)
-We hebben een andere zelf studie voor het bewakings patroon op python. [hier](durable-functions-monitor-python.md)kunt u het vinden.
 
 ---
 

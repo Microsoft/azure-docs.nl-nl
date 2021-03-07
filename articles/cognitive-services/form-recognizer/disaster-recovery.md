@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 747ceb0106f437f9e2442c2b8c68c0b73a9107a6
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 0343402d92498bff56250027086cbf2ceb258f0f
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808250"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102427161"
 ---
 # <a name="back-up-and-recover-your-form-recognizer-models"></a>Back-ups van uw formulieren Recognizer-modellen maken en herstellen
 
@@ -28,7 +28,7 @@ Als uw app of bedrijf afhankelijk is van het gebruik van een aangepast model voo
 
 ##  <a name="prerequisites"></a>Vereisten
 
-1. Twee formulier herkenner Azure-resources in verschillende Azure-regio's. Als u deze niet hebt, gaat u naar de Azure Portal en <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer" title=" maakt u een nieuwe formulier Recognizer-resource " target="_blank"> een nieuwe formulier Recognizer-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span> </a> .
+1. Twee formulier herkenner Azure-resources in verschillende Azure-regio's. Als u deze niet hebt, gaat u naar de Azure Portal en <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer" title=" maakt u een nieuwe formulier Recognizer-resource " target="_blank"> een nieuwe formulier Recognizer-resource maken </a> .
 1. De abonnements sleutel, eind punt-URL en abonnements-ID van de bron van de formulier herkenning. U kunt deze waarden vinden op het tabblad **overzicht** van de resource op het Azure Portal.
 
 

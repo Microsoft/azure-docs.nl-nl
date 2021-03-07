@@ -4,16 +4,16 @@ description: Azure Functions ondersteunt meerdere versies van de runtime. Meer i
 ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 12/09/2019
-ms.openlocfilehash: 935291c461e275902cb6905c4440fe4d289f0c16
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: b37cf33a96452f9f3e86f853d3d87fd3b4b3879c
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653347"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102431841"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Overzicht van Azure Functions runtime versies
 
-Azure Functions ondersteunt momenteel drie versies van de runtime host: 1. x, 2. x en 3. x. Alle drie de versies worden ondersteund voor productie scenario's.  
+Azure Functions ondersteunt momenteel drie versies van de runtime host: 3. x, 2. x en 1. x. Alle drie de versies worden ondersteund voor productie scenario's.  
 
 > [!IMPORTANT]
 > Versie 1. x bevindt zich in de onderhouds modus en ondersteunt alleen de ontwikkeling van de Azure Portal, Azure Stack hub portal of lokaal op Windows-computers. Uitbrei dingen worden alleen opgenomen in latere versies. 
@@ -30,7 +30,69 @@ De volgende tabel geeft aan welke programmeer talen momenteel worden ondersteund
 
 ## <a name="run-on-a-specific-version"></a><a name="creating-1x-apps"></a>Uitvoeren op een specifieke versie
 
-Standaard worden functie-apps die zijn gemaakt in de Azure Portal en door de Azure CLI ingesteld op versie 3. x. U kunt deze versie naar wens wijzigen. U kunt de runtime versie alleen wijzigen in 1. x nadat u de functie-app hebt gemaakt, maar voordat u functies toevoegt.  Verplaatsen tussen 2. x en 3. x is toegestaan, zelfs bij apps met functies, maar het wordt nog steeds aanbevolen om eerst te testen in een nieuwe app.
+Standaard worden functie-apps die zijn gemaakt in de Azure Portal en door de Azure CLI ingesteld op versie 3. x. U kunt deze versie naar wens wijzigen. U kunt de runtime versie alleen downgradeen naar 1. x nadat u de functie-app hebt gemaakt, maar voordat u functies toevoegt.  Verplaatsen tussen 2. x en 3. x is toegestaan, zelfs bij apps met bestaande functies. Voordat u een app verplaatst met bestaande functies van 2. x naar 3. x, moet u rekening houden met eventuele [breuk wijzigingen tussen 2. x en 3. x](#breaking-changes-between-2x-and-3x). 
+
+Voordat u een wijziging aanbrengt in de hoofd versie van de runtime, moet u eerst uw bestaande code testen door te implementeren naar een andere functie-app die wordt uitgevoerd op de meest recente primaire versie. Op deze manier kunt u ervoor zorgen dat deze correct wordt uitgevoerd na de upgrade. 
+
+Downgrades van v3. x naar v2. x worden niet ondersteund. Indien mogelijk moet u altijd uw apps uitvoeren op de meest recente ondersteunde versie van de functions-runtime. 
+
+### <a name="changing-version-of-apps-in-azure"></a>De versie van de apps in azure wijzigen
+
+De versie van de functions-runtime die wordt gebruikt door gepubliceerde apps in azure, wordt bepaald door de [`FUNCTIONS_EXTENSION_VERSION`](functions-app-settings.md#functions_extension_version) toepassings instelling. De volgende belang rijke runtime-versie waarden worden ondersteund:
+
+| Waarde | Runtime-doel |
+| ------ | -------- |
+| `~3` | 3.x |
+| `~2` | 2.x |
+| `~1` | 1.x |
+
+>[!IMPORTANT]
+> U kunt deze instelling niet wille keurig wijzigen, omdat wijzigingen in de instellingen van de app en wijzigingen in uw functie code mogelijk vereist zijn.
+
+Zie runtime-versies van [Azure functions instellen](set-runtime-version.md)voor meer informatie.  
+
+### <a name="pinning-to-a-specific-minor-version"></a>Vastmaken aan een specifieke secundaire versie
+
+Als u problemen met de functie-app die wordt uitgevoerd op de meest recente primaire versie wilt oplossen, moet u uw app vastmaken aan een specifieke secundaire versie. Dit geeft u tijd om uw app correct te laten werken met de meest recente primaire versie. De manier waarop u vastmaakt aan een secundaire versie verschilt tussen Windows en Linux. Zie runtime-versies van [Azure functions instellen](set-runtime-version.md)voor meer informatie.
+
+Oudere secundaire versies worden regel matig verwijderd uit functies. Voor het laatste nieuws over Azure Functions releases, inclusief het verwijderen van specifieke oudere secundaire versies, controleert u [Azure app service aankondigingen](https://github.com/Azure/app-service-announcements/issues). 
+
+### <a name="pinning-to-version-20"></a>Vastmaken aan versie ~ 2,0
+
+.NET-functie-apps die worden uitgevoerd op versie 2. x ( `~2` ) worden automatisch bijgewerkt om te worden uitgevoerd op .net core 3,1. Dit is een lange-termijn ondersteunings versie van .net Core 3. Door uw .NET-functies uit te voeren op .NET Core 3,1, kunt u profiteren van de nieuwste beveiligings updates en product verbeteringen. 
+
+Elke functie-app die is vastgemaakt om te worden `~2.0` uitgevoerd op .net Core 2,2, ontvangt geen beveiliging en andere updates meer. Zie voor meer informatie [functions versie 2. x overwegingen](functions-dotnet-class-library.md#functions-v2x-considerations).   
+
+## <a name="migrating-from-2x-to-3x"></a>Migreren van 2. x naar 3. x
+
+Azure Functions versie 3. x is uiterst achterwaarts compatibel met versie 2. x.  Veel apps moeten veilig kunnen worden bijgewerkt naar 3. x zonder code wijzigingen.  Bij het overstappen op 3. x wordt aanbevolen uitgebreide tests uit te voeren voordat u de primaire versie wijzigt in productie-apps.
+
+### <a name="breaking-changes-between-2x-and-3x"></a>De wijzigingen tussen 2. x en 3. x verbreken
+
+Hieronder vindt u de wijzigingen die u moet kennen voordat u een upgrade uitvoert van een 2. x-app naar 3. x.
+
+#### <a name="javascript"></a>Javascript
+
+* Uitvoer bindingen die via `context.done` of retour waarden zijn toegewezen, gedragen zich nu hetzelfde als de instelling in `context.bindings` .
+
+* Het trigger object voor de timer is camelCase in plaats van PascalCase
+
+* Door Event hub geactiveerde functies met `dataType` binary ontvangen een matrix van `binary` in plaats van `string` .
+
+* Er kan geen toegang meer worden verkregen tot de nettolading van de HTTP-aanvraag via `context.bindingData.req` .  Het kan nog steeds worden geopend als een invoer parameter, `context.req` en in `context.bindings` .
+
+* Node.js 8 wordt niet meer ondersteund en kan niet worden uitgevoerd met 3. x-functies.
+
+#### <a name="net-core"></a>.NET Core
+
+De belangrijkste verschillen tussen versies bij het uitvoeren van .NET-klassen bibliotheek functies is de .NET core-runtime. Functions versie 2. x is ontworpen om te worden uitgevoerd op .NET Core 2,2 en versie 3. x is ontworpen om te worden uitgevoerd op .NET Core 3,1.  
+
+* [Synchrone Server bewerkingen zijn standaard uitgeschakeld](/dotnet/core/compatibility/2.2-3.0#http-synchronous-io-disabled-in-all-servers).
+
+* Het verbreken van de wijzigingen die zijn geïntroduceerd in [versie 3,1](/dotnet/core/compatibility/3.1) en [versie 3,0](/dotnet/core/compatibility/3.0)van .net core, die niet specifiek zijn voor functies maar die wel van invloed kunnen zijn op uw app.
+
+>[!NOTE]
+>Als gevolg van ondersteunings problemen met .NET Core 2,2 worden functie-apps die zijn vastgemaakt aan versie 2 ( `~2` ) in feite uitgevoerd op .net Core 3,1. Zie voor meer informatie [functions v2. x-compatibiliteits modus](functions-dotnet-class-library.md#functions-v2x-considerations).
 
 ## <a name="migrating-from-1x-to-later-versions"></a>Migreren van 1. x naar latere versies
 
@@ -68,43 +130,6 @@ In versie 2. x zijn de volgende wijzigingen aangebracht:
 
 * De URL-indeling van de webhooks van Event Grid trigger is gewijzigd in `https://{app}/runtime/webhooks/{triggerName}` .
 
-## <a name="migrating-from-2x-to-3x"></a>Migreren van 2. x naar 3. x
-
-Azure Functions versie 3. x is uiterst achterwaarts compatibel met versie 2. x.  Veel apps moeten veilig kunnen worden bijgewerkt naar 3. x zonder code wijzigingen.  Bij het overstappen op 3. x wordt aanbevolen uitgebreide tests uit te voeren voordat u de primaire versie wijzigt in productie-apps.
-
-### <a name="breaking-changes-between-2x-and-3x"></a>De wijzigingen tussen 2. x en 3. x verbreken
-
-Hieronder vindt u de wijzigingen die u moet kennen voordat u een upgrade uitvoert van een 2. x-app naar 3. x.
-
-#### <a name="javascript"></a>Javascript
-
-* Uitvoer bindingen die via `context.done` of retour waarden zijn toegewezen, gedragen zich nu hetzelfde als de instelling in `context.bindings` .
-
-* Het trigger object voor de timer is camelCase in plaats van PascalCase
-
-* Door Event hub geactiveerde functies met `dataType` binary ontvangen een matrix van `binary` in plaats van `string` .
-
-* Er kan geen toegang meer worden verkregen tot de nettolading van de HTTP-aanvraag via `context.bindingData.req` .  Het kan nog steeds worden geopend als een invoer parameter, `context.req` en in `context.bindings` .
-
-* Node.js 8 wordt niet meer ondersteund en kan niet worden uitgevoerd met 3. x-functies.
-
-#### <a name="net"></a>.NET
-
-* [Synchrone Server bewerkingen zijn standaard uitgeschakeld](/dotnet/core/compatibility/2.2-3.0#http-synchronous-io-disabled-in-all-servers).
-
-### <a name="changing-version-of-apps-in-azure"></a>De versie van de apps in azure wijzigen
-
-De versie van de functions-runtime die wordt gebruikt door gepubliceerde apps in azure, wordt bepaald door de [`FUNCTIONS_EXTENSION_VERSION`](functions-app-settings.md#functions_extension_version) toepassings instelling. De volgende belang rijke runtime-versie waarden worden ondersteund:
-
-| Waarde | Runtime-doel |
-| ------ | -------- |
-| `~3` | 3.x |
-| `~2` | 2.x |
-| `~1` | 1.x |
-
->[!IMPORTANT]
-> U kunt deze instelling niet wille keurig wijzigen, omdat wijzigingen in de instellingen van de app en wijzigingen in uw functie code mogelijk vereist zijn.
-
 ### <a name="locally-developed-application-versions"></a>Lokaal ontwikkelde toepassings versies
 
 U kunt de volgende updates gebruiken om apps te laten werken om de doel versies lokaal te wijzigen.
@@ -112,20 +137,6 @@ U kunt de volgende updates gebruiken om apps te laten werken om de doel versies 
 #### <a name="visual-studio-runtime-versions"></a>Visual Studio runtime-versies
 
 In Visual Studio selecteert u de runtime versie wanneer u een project maakt. Azure Functions-hulpprogram ma's voor Visual Studio ondersteunt de drie belang rijke runtime versies. De juiste versie wordt gebruikt bij het opsporen van fouten en het publiceren op basis van project instellingen. De versie-instellingen worden gedefinieerd in het `.csproj` bestand in de volgende eigenschappen:
-
-##### <a name="version-1x"></a>Versie 1.x
-
-```xml
-<TargetFramework>net472</TargetFramework>
-<AzureFunctionsVersion>v1</AzureFunctionsVersion>
-```
-
-##### <a name="version-2x"></a>Versie 2. x
-
-```xml
-<TargetFramework>netcoreapp2.1</TargetFramework>
-<AzureFunctionsVersion>v2</AzureFunctionsVersion>
-```
 
 ##### <a name="version-3x"></a>Versie 3. x
 
@@ -137,9 +148,23 @@ In Visual Studio selecteert u de runtime versie wanneer u een project maakt. Azu
 > [!NOTE]
 > Azure Functions 3. x en .NET vereist dat de `Microsoft.NET.Sdk.Functions` extensie mini maal is `3.0.0` .
 
+##### <a name="version-2x"></a>Versie 2. x
+
+```xml
+<TargetFramework>netcoreapp2.1</TargetFramework>
+<AzureFunctionsVersion>v2</AzureFunctionsVersion>
+```
+
+##### <a name="version-1x"></a>Versie 1.x
+
+```xml
+<TargetFramework>net472</TargetFramework>
+<AzureFunctionsVersion>v1</AzureFunctionsVersion>
+```
+
 ###### <a name="updating-2x-apps-to-3x-in-visual-studio"></a>2. x-apps bijwerken naar 3. x in Visual Studio
 
-U kunt een bestaande functie die is gericht op 2. x, openen en naar 3. x verplaatsen door het bestand te bewerken `.csproj` en de bovenstaande waarden bij te werken.  Visual Studio beheert runtime versies automatisch voor u op basis van meta gegevens van het project.  Het is echter mogelijk dat u nog nooit een 3. x-app hebt gemaakt voordat dat Visual Studio de sjablonen en runtime voor 3. x op uw computer heeft.  Dit kan zichzelf opleveren met een fout zoals ' er is geen functions runtime beschikbaar die overeenkomt met de versie die is opgegeven in het project. '  Als u de meest recente sjablonen en runtime wilt ophalen, gaat u door de ervaring met het maken van een nieuw functie project.  Wanneer u het scherm versie en sjabloon selecteren selecteert, wacht u tot Visual Studio de meest recente sjablonen heeft opgehaald.  Zodra de laatste .NET Core 3-sjablonen beschikbaar zijn en worden weer gegeven, moet u alle projecten die zijn geconfigureerd voor versie 3. x, kunnen uitvoeren en fouten opsporen.
+U kunt een bestaande functie die is gericht op 2. x, openen en naar 3. x verplaatsen door het bestand te bewerken `.csproj` en de bovenstaande waarden bij te werken.  Visual Studio beheert runtime versies automatisch voor u op basis van meta gegevens van het project.  Het is echter mogelijk dat u nog nooit een 3. x-app hebt gemaakt voordat dat Visual Studio de sjablonen en runtime voor 3. x op uw computer heeft.  Dit kan zichzelf opleveren met een fout zoals ' er is geen functions runtime beschikbaar die overeenkomt met de versie die is opgegeven in het project. '  Als u de meest recente sjablonen en runtime wilt ophalen, gaat u door de ervaring met het maken van een nieuw functie project.  Wanneer u het scherm versie en sjabloon selecteren selecteert, wacht u tot Visual Studio de meest recente sjablonen heeft opgehaald. Nadat de nieuwste .NET Core 3-sjablonen beschikbaar en weer gegeven zijn, kunt u alle projecten uitvoeren en fouten opsporen die zijn geconfigureerd voor versie 3. x.
 
 > [!IMPORTANT]
 > De functies van versie 3. x kunnen alleen worden ontwikkeld in Visual Studio als u Visual Studio versie 16,4 of hoger gebruikt.

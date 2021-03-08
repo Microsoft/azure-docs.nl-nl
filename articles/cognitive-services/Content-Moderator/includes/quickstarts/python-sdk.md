@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 09/15/2020
 ms.custom: cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: 1cb1d25dbd1f956cb87411a82e8910c4138eb188
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 07828e7faff61086ea982b8017bc3c590e386be1
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102194012"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102445280"
 ---
 Ga aan de slag met de Azure Content Moderator-clientbibliotheek voor Python. Volg deze stappen om het PiPy-pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. 
 
@@ -37,7 +37,7 @@ Gebruik de Content Moderator-clientbibliotheek voor Python om het volgende te do
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services/)
 * [Python 3.x](https://www.python.org/)
   * De python-installatie moet [PIP](https://pip.pypa.io/en/stable/)bevatten. U kunt controleren of u PIP hebt geïnstalleerd door uit te voeren `pip --version` op de opdracht regel. Ontvang PIP door de meest recente versie van python te installeren.
-* Zodra u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator"  title="Een Content Moderator-resource maken"  target="_blank">een Content Moderator-resource maken <span class="docon docon-navigate-external x-hidden-focus"></span></a> in Azure Portal om uw sleutel en eindpunt op te halen. Wacht tot deze is geïmplementeerd en klik op de knop **Naar de resource gaan**.
+* Wanneer u uw Azure-abonnement hebt, <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator"  title=" maakt u een content moderator resource Maak "  target="_blank"> een content moderator resource </a> in de Azure Portal om uw sleutel en eind punt op te halen. Wacht tot deze is geïmplementeerd en klik op de knop **Naar de resource gaan**.
     * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met Content Moderator. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 

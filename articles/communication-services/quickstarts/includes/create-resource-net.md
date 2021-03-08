@@ -4,18 +4,18 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 9a9f8fdda1bc853057f3eb858e85b938357397cd
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: 778255dc7259bd66a7c7059ede855464c1e39569
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886111"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102445616"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/dotnet/)
 - De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
-- Download de nieuwste versie van de [clientbibliotheek voor de .NET-identiteit](/dotnet/api/azure.identity?view=azure-dotnet).
+- Download de nieuwste versie van de [clientbibliotheek voor de .NET-identiteit](/dotnet/api/azure.identity).
 - Download de nieuwste versie van de [clientbibliotheek voor het .NET-beheer](../../concepts/sdk-options.md).
 
 ## <a name="installing-the-client-library"></a>De clientbibliotheek installeren

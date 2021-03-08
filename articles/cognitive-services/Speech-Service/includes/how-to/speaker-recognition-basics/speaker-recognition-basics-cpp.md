@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: v-jawe
 ms.custom: references_regions
-ms.openlocfilehash: 489514068d83f7b2953732415ba066a2d4555df8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-ms.translationtype: HT
+ms.openlocfilehash: f8b29da09f5da4a30378cc0228fecad63d196162
+ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015493"
+ms.lasthandoff: 03/07/2021
+ms.locfileid: "102445038"
 ---
 In deze quickstart leert u basispatronen voor het ontwerp van Speaker Recognition met behulp van de Speech SDK, met inbegrip van:
 
@@ -35,9 +35,9 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-account en een abonnement o
 
 Voordat u iets kunt doen, moet u de Speech SDK installeren. Gebruik de volgende instructies, afhankelijk van uw platform:
 
-* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=linux&pivots=programming-language-cpp" target="_blank">Linux <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=macos&pivots=programming-language-cpp" target="_blank">macOS <span class="docon docon-navigate-external x-hidden-focus"></span></a>
-* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=windows&pivots=programming-language-cpp" target="_blank">Windows <span class="docon docon-navigate-external x-hidden-focus"></span></a>
+* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=linux&pivots=programming-language-cpp" target="_blank">Linux </a>
+* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=macos&pivots=programming-language-cpp" target="_blank">macOS </a>
+* <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=windows&pivots=programming-language-cpp" target="_blank">Windows </a>
 
 ## <a name="import-dependencies"></a>Afhankelijkheden importeren
 
@@ -93,8 +93,8 @@ Vervolgens vraagt [SpeechRecognizer:: RecognizeOnceAsync](/cpp/cognitive-service
 
 In tegenstelling tot **tekstafhankelijke** verificatie, geldt voor **tekstonafhankelijke** verificatie:
 
-* Vereist niet dat een bepaalde wachtwoordzin wordt uitgesproken; alles mag worden uitgesproken
-* Vereist geen drie audiosamples, maar vereist in totaal *wel* twintig seconden aan audio
+* Vereist niet dat een bepaalde wachtwoordzin wordt uitgesproken. Alles mag worden uitgesproken
+* Vereist niet drie audiovoorbeelden, maar vereist in totaal *wel* twintig seconden aan audio
 
 ### <a name="textindependentverification-function"></a>De functie TextIndependentVerification
 

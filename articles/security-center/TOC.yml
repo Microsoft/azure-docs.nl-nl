@@ -112,7 +112,7 @@
           href: exempt-resource.md
         - name: Aangepaste beveiligings initiatieven en-beleid maken
           href: custom-security-policies.md
-    - name: Bescherm uw computers met Defender voor servers
+    - name: Uw computers beveiligen
       displayName: 'hybrid, arc, Azure Defender for machines'
       items:
         - name: Overzicht van Azure Defender voor servers
@@ -278,7 +278,7 @@
         - name: Reacties op waarschuwingen automatiseren
           displayName: workflow
           href: workflow-automation.md
-- name: Referentie
+- name: Naslaginformatie
   items:
     - name: Gearchiveerde releaseopmerkingen (ouder dan zes maanden)
       displayName: 'changelog, news'

@@ -3,16 +3,16 @@ title: gRPC-extensieprotocol - Azure
 description: In dit artikel leert u het gRPC-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-extensie.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 7f21ff358b8dd5ac540de8c39c37c52e98977e59
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: f7b5be859702199b07dfa0d6a43a09ca8ff0c42f
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401624"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455853"
 ---
 # <a name="grpc-extension-protocol"></a>gRPC-extensieprotocol
 
-Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/media-graph-extension-concept?branch=release-lva-dec-update). Als u de gRPC-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via een gestructureerd gRPC-protocol met hoge prestaties.
+Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een [grafiekextensieknooppunt](/azure/media-services/live-video-analytics-edge/media-graph-extension-concept). Als u de gRPC-extensieprocessor gebruikt als het extensieknooppunt, verloopt de communicatie tussen de Live Video Analytics-module en uw AI- of CV-module via een gestructureerd gRPC-protocol met hoge prestaties.
 
 In dit artikel leert u het gRPC-extensieprotocol gebruiken om berichten te verzenden tussen de Live Video Analytics-module en uw aangepaste AI- of CV-extensie.
 
@@ -25,7 +25,7 @@ Een gRPC-sessie is een enkele verbinding van de gRPC-client naar de gRPC-server 
 
 In één sessie: De client verzendt een mediastream-descriptor gevolgd door videoframes naar de server als een [protobuf](https://github.com/Azure/live-video-analytics/tree/master/contracts/grpc)-bericht over de gRPC-stroomsessie. De server valideert de stream-descriptor, analyseert het videoframe en retourneert de deductieresultaten als een protobuf-bericht. 
 
-Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
+Het wordt aanbevolen om antwoorden te retourneren met behulp van geldige JSON-documenten, volgens het vooraf vastgelegde schema gedefinieerd in het [objectmodel voor het metagegevensschema voor deductie](/azure/media-services/live-video-analytics-edge/inference-metadata-schema). Dit zorgt voor betere interoperabiliteit met andere onderdelen en eventueel toekomstige mogelijkheden die aan de Live Video Analytics-module worden toegevoegd.
 
 ![gRPC-extensiecontract](./media/grpc-extension-protocol/grpc.png)
 

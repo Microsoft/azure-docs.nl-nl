@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 825a336b5ad07f50d96b19036d70c759b907bd07
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: f793f96f55a258b2d7cb11f214984416557618df
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102209676"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452999"
 ---
 # <a name="azure-table-storage-output-bindings-for-azure-functions"></a>Uitvoer bindingen voor Azure Table Storage voor Azure Functions
 
@@ -438,7 +438,7 @@ Er zijn twee opties voor het uitvoeren van een tabelrij bericht in tabel opslag 
 
 - **Retourwaarde**: stel de eigenschap `name` in *function. json* in op `$return`. Met deze configuratie wordt de retour waarde van de functie persistent gemaakt als tabelrij.
 
-- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
+- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
 
 ---
 

@@ -2,13 +2,13 @@
 title: Overzicht van sjablonen
 description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
-ms.date: 03/03/2021
-ms.openlocfilehash: 7f850d06066a6892db9f17ae86a6bba9496bad58
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/08/2021
+ms.openlocfilehash: 3a144b69f69c90b997b17d9526c9c3e0f259c554
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102046377"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455732"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -111,6 +111,15 @@ REQUEST BODY
 ```
 
 U ziet dat de **apiVersion** die u in de sjabloon voor de resource hebt ingesteld, wordt gebruikt als de API-versie voor de rest-bewerking. U kunt de sjabloon herhaaldelijk implementeren en de betrouw baarheid blijven gebruiken. Als u dezelfde API-versie gebruikt, hoeft u zich geen zorgen te maken over het afbreken van wijzigingen die in latere versies kunnen worden geïntroduceerd.
+
+Als u een sjabloon wilt implementeren, gebruikt u een van de volgende opties:
+
+* [Azure-portal](deploy-portal.md)
+* [Azure-CLI](deploy-cli.md)
+* [PowerShell](deploy-powershell.md)
+* [REST API](deploy-rest.md)
+* [Op de knop in de GitHub-opslag plaats](deploy-to-azure-button.md)
+* [Azure Cloud Shell](deploy-cloud-shell.md)
 
 ## <a name="template-design"></a>Sjabloon ontwerp
 

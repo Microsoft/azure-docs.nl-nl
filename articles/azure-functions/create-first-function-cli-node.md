@@ -4,12 +4,12 @@ description: Ontdek hoe u een JavaScript-functie maakt vanaf de opdrachtregel en
 ms.date: 11/03/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3b14b7d9f97be12a73ffcb2416a00cd4a51bca5f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: c9810b1eb9e5f6bc65843d65f2f2452eac1be703
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937243"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102447313"
 ---
 # <a name="quickstart-create-a-javascript-function-in-azure-from-the-command-line"></a>Quickstart: Een JavaScript-functie maken in Azure vanaf de opdrachtregel
 
@@ -96,7 +96,7 @@ Desgewenst kunt u doorgaan naar [De functie lokaal uitvoeren](#run-the-function-
 
 :::code language="javascript" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-JavaScript/index.js":::
 
-Voor een HTTP-trigger ontvangt de functie aanvraaggegevens in de variabele `req` zoals gedefinieerd in *function.json*. Het retourobject, gedefinieerd als `$return` in *function.json*, is de reactie. Zie [Azure Functions HTTP-triggers en -bindingen](./functions-bindings-http-webhook.md?tabs=javascript) voor meer informatie.
+Voor een HTTP-trigger ontvangt de functie aanvraaggegevens in de variabele `req` zoals gedefinieerd in *function.json*. Het antwoord wordt gedefinieerd als `res` in *function.jsop* en kan worden geopend met `context.res` . Zie [Azure Functions HTTP-triggers en -bindingen](./functions-bindings-http-webhook.md?tabs=javascript) voor meer informatie.
 
 #### <a name="functionjson"></a>function.json
 

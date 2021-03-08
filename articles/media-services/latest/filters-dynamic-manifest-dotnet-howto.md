@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d007c104dc53683d49547db582e8de6981ab921f
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 11c65498d5a31c2e2ee997bdaf18037b1f0f9060
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101093418"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455209"
 ---
 # <a name="create-filters-with-media-services-net-sdk"></a>Filters maken met Media Services .NET SDK
 
@@ -29,7 +29,7 @@ Bij het leveren van uw inhoud aan klanten (het streamen van Live-gebeurtenissen 
 
 Zie [dynamische manifesten](filters-dynamic-manifest-overview.md) en [filters](filters-concept.md)voor een gedetailleerde beschrijving van deze functie en scenario's waarin deze wordt gebruikt.
 
-In dit onderwerp wordt beschreven hoe u Media Services .NET SDK gebruikt om een filter te definiëren voor een video op aanvraag-Asset en om [account filters](/dotnet/api/microsoft.azure.management.media.models.accountfilter?view=azure-dotnet) en- [activa filters](/dotnet/api/microsoft.azure.management.media.models.assetfilter?view=azure-dotnet)te maken. 
+In dit onderwerp wordt beschreven hoe u Media Services .NET SDK gebruikt om een filter te definiëren voor een video op aanvraag-Asset en om [account filters](/dotnet/api/microsoft.azure.management.media.models.accountfilter) en- [activa filters](/dotnet/api/microsoft.azure.management.media.models.assetfilter)te maken. 
 
 > [!NOTE]
 > Zorg ervoor dat u de [presentationTimeRange](filters-concept.md#presentationtimerange)controleert.
@@ -43,7 +43,7 @@ In dit onderwerp wordt beschreven hoe u Media Services .NET SDK gebruikt om een 
 
 ## <a name="define-a-filter"></a>Een filter definiëren  
 
-In .NET configureert u het bijhouden van selecties met de klassen [FilterTrackSelection](/dotnet/api/microsoft.azure.management.media.models.filtertrackselection?view=azure-dotnet) en [FilterTrackPropertyCondition](/dotnet/api/microsoft.azure.management.media.models.filtertrackpropertycondition?view=azure-dotnet) . 
+In .NET configureert u het bijhouden van selecties met de klassen [FilterTrackSelection](/dotnet/api/microsoft.azure.management.media.models.filtertrackselection) en [FilterTrackPropertyCondition](/dotnet/api/microsoft.azure.management.media.models.filtertrackpropertycondition) . 
 
 Met de volgende code wordt een filter gedefinieerd dat audio nummers bevat die zijn opgenomen in EC-3 en video tracks met bitsnelheid in het 0-1000000-bereik.
 

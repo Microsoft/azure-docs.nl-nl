@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van functies met python
 ms.topic: article
 ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0829ef9a6b63866c2527e521ed7edf48a3249392
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 3eb3b3b015f401e872a879c46ec6f8c69df5f87f
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102044252"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455413"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Python
 
@@ -51,7 +51,7 @@ def main(req: azure.functions.HttpRequest) -> str:
     return f'Hello, {user}!'
 ```
 
-Gebruik de python-aantekeningen in het pakket [Azure. functions. *](/python/api/azure-functions/azure.functions?view=azure-python&preserve-view=true) om invoer en uitvoer aan uw methoden te koppelen.
+Gebruik de python-aantekeningen in het pakket [Azure. functions. *](/python/api/azure-functions/azure.functions) om invoer en uitvoer aan uw methoden te koppelen.
 
 ## <a name="alternate-entry-point"></a>Alternatief invoer punt
 
@@ -199,7 +199,7 @@ Output kan worden uitgedrukt in retour waarde en uitvoer parameters. Als er slec
 
 Als u de retour waarde van een functie als de waarde van een uitvoer binding wilt gebruiken, moet u de `name` eigenschap van de binding instellen op `$return` in `function.json` .
 
-Als u meerdere uitvoer wilt maken, gebruikt u de `set()` methode van de [`azure.functions.Out`](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true) interface om een waarde toe te wijzen aan de binding. Met de volgende functie kan bijvoorbeeld een bericht naar een wachtrij worden gepusht en wordt ook een HTTP-antwoord geretourneerd.
+Als u meerdere uitvoer wilt maken, gebruikt u de `set()` methode van de [`azure.functions.Out`](/python/api/azure-functions/azure.functions.out) interface om een waarde toe te wijzen aan de binding. Met de volgende functie kan bijvoorbeeld een bericht naar een wachtrij worden gepusht en wordt ook een HTTP-antwoord geretourneerd.
 
 ```json
 {
@@ -306,7 +306,7 @@ Voor schaal-en prestatie best practices voor python-functie-apps raadpleegt u he
 
 ## <a name="context"></a>Context
 
-Als u de aanroep context van een functie tijdens de uitvoering wilt ophalen, neemt u het [`context`](/python/api/azure-functions/azure.functions.context?view=azure-python&preserve-view=true) argument op in de hand tekening.
+Als u de aanroep context van een functie tijdens de uitvoering wilt ophalen, neemt u het [`context`](/python/api/azure-functions/azure.functions.context) argument op in de hand tekening.
 
 Bijvoorbeeld:
 
@@ -319,7 +319,7 @@ def main(req: azure.functions.HttpRequest,
     return f'{context.invocation_id}'
 ```
 
-De [**context**](/python/api/azure-functions/azure.functions.context?view=azure-python&preserve-view=true) klasse heeft de volgende teken reeks kenmerken:
+De [**context**](/python/api/azure-functions/azure.functions.context) klasse heeft de volgende teken reeks kenmerken:
 
 `function_directory` De map waarin de functie wordt uitgevoerd.
 
@@ -640,7 +640,7 @@ Alle bekende problemen en functie aanvragen worden bijgehouden met de lijst met 
 
 Zie de volgende resources voor meer informatie:
 
-* [Documentatie over de API voor Azure Functions-pakketten](/python/api/azure-functions/azure.functions?view=azure-python&preserve-view=true)
+* [Documentatie over de API voor Azure Functions-pakketten](/python/api/azure-functions/azure.functions)
 * [Aanbevolen procedures voor Azure Functions](functions-best-practices.md)
 * [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md)
 * [Blob Storage-bindingen](functions-bindings-storage-blob.md)
@@ -651,5 +651,5 @@ Zie de volgende resources voor meer informatie:
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/python-functions-ref-survey)
 
 
-[HttpRequest]: /python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true
-[HttpResponse]: /python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true
+[HttpRequest]: /python/api/azure-functions/azure.functions.httprequest
+[HttpResponse]: /python/api/azure-functions/azure.functions.httpresponse

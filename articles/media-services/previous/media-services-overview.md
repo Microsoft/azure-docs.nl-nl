@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
 ms.openlocfilehash: 08a419f021e0315468cb6fa5917b30bb2977d958
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
+ms.lasthandoff: 03/08/2021
 ms.locfileid: "98695506"
 ---
 # <a name="azure-media-services-overview"></a>Overzicht van Azure Media Services
@@ -69,7 +69,7 @@ Als u Media Services-oplossingen wilt maken, kunt u het volgende gebruiken:
     * [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)
     * [Azure Media Services voor Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (Dit is een niet-Microsoft-versie van een Node.js SDK. Deze wordt onderhouden door een community en biedt nog geen 100% dekking voor AMS API's).
 * Bestaande hulpprogramma's:
-    * [Azure Portal](https://portal.azure.com/)
+    * [Azure-portal](https://portal.azure.com/)
     * [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer) (Azure Media Services Explorer (AMSE) is een Winforms-/C#-toepassing voor Windows)
 
 > [!NOTE]

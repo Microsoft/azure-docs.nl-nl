@@ -14,12 +14,12 @@ ms.date: 02/05/2021
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0c1a0be0b7834632ba79af7dfe6c3a4fa25c0316
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ac3ea7ea6b3ed0bb8e1e9f7575b34f9dbf116a04
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101645508"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453251"
 ---
 # <a name="migrate-application-authentication-to-azure-active-directory"></a>Toepassings verificatie migreren naar Azure Active Directory
 
@@ -234,10 +234,10 @@ In de cloud omgeving hebt u uitgebreide zicht baarheid nodig, de controle over g
 
 - **Api's** : voor apps die zijn verbonden met de Cloud infrastructuur, kunt u de api's en hulpprogram ma's op deze systemen gebruiken om te beginnen met het maken van een inventaris van gehoste apps. In de Azure-omgeving:
 
-  - Gebruik de cmdlet [Get-website](/powershell/module/servicemanagement/azure/get-azurewebsite?view=azuresmps-4.0.0&redirectedfrom=MSDN&preserve-view=true)om informatie over Azure websites op te halen.
+  - Gebruik de cmdlet [Get-website](/powershell/module/servicemanagement/azure.service/get-azurewebsite) om informatie over Azure websites op te halen.
 
-  - Gebruik de cmdlet [Get-AzureRMWebApp](/powershell/module/azurerm.websites/get-azurermwebapp?view=azurermps-6.13.0&viewFallbackFrom=azurermps-6.2.0&preserve-view=true)om informatie over uw Azure-web apps op te halen.
-
+  - Gebruik de cmdlet [Get-AzureRMWebApp](/powershell/module/azurerm.websites/get-azurermwebapp) om informatie over uw Azure-web apps op te halen.
+D
   - U kunt alle apps die worden uitgevoerd op micro soft IIS vinden via de Windows-opdracht regel met behulp van [AppCmd.exe](/iis/get-started/getting-started-with-iis/getting-started-with-appcmdexe#working-with-sites-applications-virtual-directories-and-application-pools).
 
   - Gebruik [toepassingen](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity) en [service-principals](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity) om informatie te krijgen over een app en een app-exemplaar in een directory in azure AD.

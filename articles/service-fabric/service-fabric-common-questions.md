@@ -4,12 +4,12 @@ description: Veelgestelde vragen over Service Fabric, inclusief mogelijkheden, u
 ms.topic: troubleshooting
 ms.date: 08/18/2017
 ms.author: pepogors
-ms.openlocfilehash: 1655a8ed03b1f678cc5dba0a165e0bcca1d2517a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e03ccf432852a5fc9ee700ba0e39dfe2e64fcc9
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292861"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102456093"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Veelgestelde vragen over Service Fabric
 
@@ -22,7 +22,7 @@ Er zijn veel Veelgestelde vragen over wat Service Fabric kan doen en hoe het moe
 
 ### <a name="how-do-i-roll-back-my-service-fabric-cluster-certificate"></a>Hoe kan ik ik mijn Service Fabric cluster certificaat terug?
 
-Bij het terugdraaien van een upgrade naar uw toepassing is een status detectie voor de Health-fout vereist voordat uw Service Fabric cluster quorum de wijziging heeft doorgevoerd. doorgevoerde wijzigingen kunnen alleen naar voren worden gemigreerd. Escalatie-Engineer door de klant ondersteuning is mogelijk vereist om uw cluster te herstellen als er een niet-bewaakte wijziging van het certificaat is geïntroduceerd.  [De upgrade van de toepassing van service Fabric](./service-fabric-application-upgrade.md?branch=master) past [para meters](./service-fabric-application-upgrade-parameters.md?branch=master)voor de upgrade van de toepassing toe en levert een installatie van geen downtime.  Na de aanbevolen modus voor de upgrade van de toepassing, is automatische voortgang via update domeinen gebaseerd op status controles, waarbij automatisch wordt teruggedraaid als het bijwerken van een standaard service mislukt.
+Bij het terugdraaien van een upgrade naar uw toepassing is een status detectie voor de Health-fout vereist voordat uw Service Fabric cluster quorum de wijziging heeft doorgevoerd. doorgevoerde wijzigingen kunnen alleen naar voren worden gemigreerd. Escalatie-Engineer door de klant ondersteuning is mogelijk vereist om uw cluster te herstellen als er een niet-bewaakte wijziging van het certificaat is geïntroduceerd.  [De upgrade van de toepassing van service Fabric](./service-fabric-application-upgrade.md) past [para meters](./service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing toe en levert een installatie van geen downtime.  Na de aanbevolen modus voor de upgrade van de toepassing, is automatische voortgang via update domeinen gebaseerd op status controles, waarbij automatisch wordt teruggedraaid als het bijwerken van een standaard service mislukt.
  
 Als uw cluster nog steeds gebruikmaakt van de klassieke eigenschap vinger afdruk van het certificaat in uw Resource Manager-sjabloon, kunt u het beste het [cluster van de vinger afdruk van een certificaat wijzigen in een algemene naam](./service-fabric-cluster-change-cert-thumbprint-to-cn.md)om gebruik te maken van de beheer functies van moderne geheimen.
 
@@ -74,7 +74,7 @@ Met deze achtergrond gaan we een aantal mogelijke cluster configuraties bekijken
 
 **Twee knoop punten**: een quorum voor een service die is geïmplementeerd op twee knoop punten (N = 2) is 2 (2/2 + 1 = 2). Wanneer één replica verloren gaat, is het onmogelijk om een quorum te maken. Omdat het uitvoeren van een service-upgrade tijdelijk een replica vergt, is dit geen handige configuratie.
 
-**Drie knoop**punten: met drie knoop punten (N = 3) is de vereiste voor het maken van een quorum nog steeds twee knoop punten (3/2 + 1 = 2). Dit betekent dat u een afzonderlijk knoop punt kwijtraakt en nog steeds quorum kunt behouden, maar gelijktijdige storingen van twee knoop punten zullen de systeem services naar quorum verlies sturen en ertoe leiden dat het cluster niet meer beschikbaar is.
+**Drie knoop** punten: met drie knoop punten (N = 3) is de vereiste voor het maken van een quorum nog steeds twee knoop punten (3/2 + 1 = 2). Dit betekent dat u een afzonderlijk knoop punt kwijtraakt en nog steeds quorum kunt behouden, maar gelijktijdige storingen van twee knoop punten zullen de systeem services naar quorum verlies sturen en ertoe leiden dat het cluster niet meer beschikbaar is.
 
 **Vier knoop punten**: met vier knoop punten (N = 4) is de vereiste voor het maken van een quorum drie knoop punten (4/2 + 1 = 3). Dit betekent dat u een afzonderlijk knoop punt kwijtraakt en nog steeds quorum kunt behouden, maar gelijktijdige storingen van twee knoop punten zullen de systeem services naar quorum verlies sturen en ertoe leiden dat het cluster niet meer beschikbaar is.
 

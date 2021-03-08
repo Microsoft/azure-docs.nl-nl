@@ -3,12 +3,12 @@ title: Continue video-opname-Azure
 description: Continue video-opname (CVR) verwijst naar het proces van het continu vastleggen van de video van een video bron. In dit onderwerp wordt beschreven wat CVR is.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 04f09f1968e647c57ba0913a9e7f9e601d045771
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8b25d74db279f8cfff68f08efeab2975484a0c5
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89566688"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453747"
 ---
 # <a name="continuous-video-recording"></a>Continue video-opname  
 
@@ -19,7 +19,7 @@ ms.locfileid: "89566688"
 
 ## <a name="overview"></a>Overzicht
 
-Continue video-opname (CVR) verwijst naar het proces van het continu vastleggen van de video van een video bron. Live video Analytics op IoT Edge ondersteunt het opnemen van video continu, 24 uur per dag, vanaf een CCTV-camera via een [Media grafiek](media-graph-concept.md) die bestaat uit een RTSP-bron knooppunt en een Asset Sink-knoop punt. In het onderstaande diagram ziet u een grafische weer gave van een dergelijk media diagram. De JSON-weer gave van de [grafiek topologie](media-graph-concept.md?branch=release-preview-media-services-lva#media-graph-topologies-and-instances) van een dergelijke media grafiek vindt u [hier](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/cvr-asset).
+Continue video-opname (CVR) verwijst naar het proces van het continu vastleggen van de video van een video bron. Live video Analytics op IoT Edge ondersteunt het opnemen van video continu, 24 uur per dag, vanaf een CCTV-camera via een [Media grafiek](media-graph-concept.md) die bestaat uit een RTSP-bron knooppunt en een Asset Sink-knoop punt. In het onderstaande diagram ziet u een grafische weer gave van een dergelijk media diagram. De JSON-weer gave van de [grafiek topologie](media-graph-concept.md#media-graph-topologies-and-instances) van een dergelijke media grafiek vindt u [hier](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/cvr-asset).
 
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/continuous-video-recording/continuous-video-recording-overview.svg" alt-text="Continue video-opname":::

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
 ms.custom: devx-track-csharp
-ms.openlocfilehash: d6f1746eee101a1dcf030e980c8a6469147a0166
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a82c2cdf7084b31eb6ba861e48ecffb81e6d1363
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362196"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453696"
 ---
 # <a name="quickstart-azure-key-vault-secret-client-library-for-net-sdk-v4"></a>Quickstart: Azure Key Vault-clientbibliotheek voor geheimen voor .NET (SDK v4)
 
@@ -21,7 +21,7 @@ Ga aan de slag met de Azure Key Vault-clientbibliotheek voor geheimen voor .NET.
 
 Resources voor de Key Vault-clientbibliotheek:
 
-[API-referentiedocumentatie](/dotnet/api/azure.security.keyvault.secrets?view=azure-dotnet&preserve-view=true) | [Bibliotheek broncode](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault) | [Package (NuGet)](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/)
+[API-referentiedocumentatie](/dotnet/api/azure.security.keyvault.secrets) | [Bibliotheek broncode](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault) | [Package (NuGet)](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/)
 
 Zie deze artikelen voor meer informatie over Key Vault en geheimen:
 - [Overzicht van Key Vault](../general/overview.md)

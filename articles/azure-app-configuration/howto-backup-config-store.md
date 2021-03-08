@@ -10,12 +10,12 @@ ms.custom: devx-track-dotnet, devx-track-azurecli
 ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: avgupta
-ms.openlocfilehash: 39c50f539c04a6c49316f4541c759859be861f9d
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: b3e0bcad7beccc31e1772fbb24ffad7f502b8140
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095520"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454240"
 ---
 # <a name="back-up-app-configuration-stores-automatically"></a>Automatisch back-ups maken van app-configuratie archieven
 
@@ -137,7 +137,7 @@ We hebben [een functie getest en gepubliceerd](https://github.com/Azure/AppConfi
 
 Als de hierboven vermelde voorbeeld code niet aan uw vereisten voldoet, kunt u ook uw eigen functie maken. De functie moet in staat zijn om de volgende taken uit te voeren om de back-up te volt ooien:
 - Lees de inhoud van uw wachtrij regel matig om te zien of deze meldingen van Event Grid bevat. Raadpleeg de [opslag wachtrij-SDK](../storage/queues/storage-quickstart-queues-dotnet.md) voor meer informatie over de implementatie.
-- Als uw wachtrij [gebeurtenis meldingen bevat van Event grid](./concept-app-configuration-event.md?branch=pr-en-us-112982#event-schema), extraheert u alle unieke `<key, label>` gegevens uit gebeurtenis berichten. De combi natie van sleutel en label is de unieke id voor wijzigingen in de sleutel waarde in het primaire archief.
+- Als uw wachtrij [gebeurtenis meldingen bevat van Event grid](./concept-app-configuration-event.md#event-schema), extraheert u alle unieke `<key, label>` gegevens uit gebeurtenis berichten. De combi natie van sleutel en label is de unieke id voor wijzigingen in de sleutel waarde in het primaire archief.
 - Alle instellingen van het primaire archief lezen. Werk alleen de instellingen in het secundaire archief bij die een corresponderende gebeurtenis in de wachtrij hebben. Verwijder alle instellingen uit het secundaire archief die aanwezig waren in de wachtrij, maar niet in het primaire archief. U kunt de [app-configuratie-SDK](https://github.com/Azure/AppConfiguration#sdks) gebruiken om via een programma toegang te krijgen tot uw configuratie archieven.
 - Berichten uit de wachtrij verwijderen als er geen uitzonde ringen zijn tijdens de verwerking.
 - Implementeer fout afhandeling volgens uw behoeften. Raadpleeg het voor gaande code voorbeeld voor een aantal veelvoorkomende uitzonde ringen die u mogelijk wilt verwerken.

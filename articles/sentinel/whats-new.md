@@ -7,13 +7,13 @@ ms.author: bagol
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
-ms.date: 03/03/2021
-ms.openlocfilehash: c466d7717dd1dad0ea9ee3f44088d1400cee083f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/08/2021
+ms.openlocfilehash: c24512ad38f9397c9a40a85489c45fcb0de906b3
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102048179"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453798"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -32,9 +32,26 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 
 ## <a name="february-2021"></a>Februari 2021
 
+- [CMMC-werkmap (Cyber beveiliging vervaldag model Certification)](#cybersecurity-maturity-model-certification-cmmc-workbook)
 - [Gegevens connectors van derden](#third-party-data-connectors)
 - [UEBA Insights op de pagina entiteit](#ueba-insights-in-the-entity-page)
 - [Verbeterde incidenten zoeken](#improved-incident-search)
+
+### <a name="cybersecurity-maturity-model-certification-cmmc-workbook"></a>CMMC-werkmap (Cyber beveiliging vervaldag model Certification)
+
+De Azure Sentinel CMMC-werkmap biedt een mechanisme voor het weer geven van logboek query's die zijn afgestemd op CMMC-besturings elementen op de micro soft-Port Folio, waaronder micro soft-beveiligings aanbiedingen, Office 365, teams, intune, Windows virtueel bureau blad en nog veel meer.
+
+Met de CMMC-werkmap kunnen beveiligings architecten, technici, beveiligings analisten, managers en IT-professionals op het gebied van de beveiliging postuur van Cloud werkbelastingen. Er zijn ook aanbevelingen voor het selecteren, ontwerpen, implementeren en configureren van micro soft-aanbiedingen voor uitlijning met de respectieve CMMC-vereisten en-procedures.
+
+Zelfs als u niet verplicht bent om te voldoen aan CMMC, is de CMMC-werkmap handig bij het bouwen van beveiligings bewerkings centra, het ontwikkelen van waarschuwingen, het visualiseren van bedreigingen en het geven van belang bewuste werk belastingen.
+
+Open de CMMC-werkmap in het gebied voor de Azure-Sentinel- **werkmappen** . Selecteer **sjabloon** en zoek naar **CMMC**.
+
+Zie voor meer informatie:
+
+- [Azure Sentinel Cyber beveiliging vervaldag model Certification (CMMC)-werkmap](https://techcommunity.microsoft.com/t5/public-sector-blog/azure-sentinel-cybersecurity-maturity-model-certification-cmmc/ba-p/2110524)
+- [Zelfstudie: Uw gegevens visualiseren en bewaken](tutorial-monitor-your-data.md)
+
 
 ### <a name="third-party-data-connectors"></a>Gegevens connectors van derden
 

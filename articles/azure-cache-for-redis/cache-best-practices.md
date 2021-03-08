@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: joncole
-ms.openlocfilehash: 9754a043c90c01f889be9639d2d045fb1929de17
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 4e209bfe5e3856f3847b0c24852c487a92c8f182
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102178113"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454733"
 ---
 # <a name="best-practices-for-azure-cache-for-redis"></a>Aanbevolen procedures voor Azure Cache voor Redis 
 Door deze aanbevolen procedures te volgen, kunt u de prestaties en het rendabele gebruik van uw Azure-cache voor redis-instantie maximaliseren.
@@ -74,7 +74,7 @@ Als u wilt testen hoe uw code werkt onder fout voorwaarden, kunt u overwegen de 
  * **We raden u** aan om een DV2-VM-reeks te gebruiken voor uw client, omdat deze betere hardware heeft en de beste resultaten oplevert.
  * Zorg ervoor dat de client-VM die u gebruikt,*ten minste evenveel reken kracht en band breedte* heeft als de cache die wordt getest. 
  * **Test onder failover-voor waarden** in de cache. Het is belang rijk om ervoor te zorgen dat u niet de prestaties van uw cache test alleen onder stabiele status voorwaarden. Test ook onder failover-omstandigheden en meet de CPU/server-belasting in de cache tijdens die tijd. U kunt een failover initiëren door [het primaire knoop punt opnieuw](cache-administration.md#reboot)op te starten. Op deze manier kunt u zien hoe uw toepassing zich gedraagt met de voor waarden voor door Voer en latentie tijdens failover (tijdens updates en tijdens een niet-geplande gebeurtenis). In het ideale geval don't't u de piek voor CPU/server-belasting voor meer dan 80% weer geven, zelfs tijdens een failover, wat de prestaties kan beïnvloeden.
- * **Premium P2 en hoger** worden gehost op vm's met vier of meer kern geheugens. Dit is handig om de TLS-werk belasting voor versleuteling/ontsleuteling over meerdere kernen te distribueren om het totale CPU-gebruik te verlagen.  [Zie hier voor meer informatie over VM-grootten en-kernen](cache-planning-faq.md#azure-cache-for-redis-performance)
+ * **Sommige cache grootten** worden gehost op vm's met vier of meer kern geheugens. Dit is handig voor het distribueren van TLS-versleuteling en-ontsleuteling, en voor de werk belasting van TLS-verbinding/ontkoppeling over meerdere kernen om het totale CPU-gebruik op de cache-Vm's te verlagen.  [Zie hier voor meer informatie over VM-grootten en-kernen](cache-planning-faq.md#azure-cache-for-redis-performance)
  * **Schakel VRSS** in op de client computer als u zich in Windows bevindt.  [Zie hier voor meer informatie](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383582(v=ws.11)).  Voorbeeld PowerShell-script:
      >Power shell-ExecutionPolicy unrestricted Enable-NetAdapterRSS-name (Get-netadapter). Naam 
 

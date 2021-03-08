@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassings beheer
 description: Nieuwe en bijgewerkte documentatie voor het Azure Active Directory toepassings beheer.
-ms.date: 02/01/2021
+ms.date: 03/08/2021
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,32 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: 9de518f53a6054a47a72e40ebe546a32dd48aabe
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: ebd8839fd17f79bc53b5093af83d457bb23712d9
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101647269"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452047"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassings beheer. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [Wat is er nieuw in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de Application Management-service.
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Integreren met share point (SAML)](application-proxy-integrate-with-sharepoint-server-saml.md)
+- [Toepassings verificatie migreren naar Azure Active Directory](migrate-application-authentication-to-azure-active-directory.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Integreren met share point (SAML)](application-proxy-integrate-with-sharepoint-server-saml.md)
+- [Een toepassing beheerderstoestemming verlenen voor de hele tenant](grant-admin-consent.md)
+- [Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory](migrate-adfs-apps-to-azure.md)
+- [Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory](application-proxy-add-on-premises-application.md)
+- [Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML](application-sign-in-problem-federated-sso-gallery.md)
+- [Tenant beperkingen gebruiken om de toegang tot SaaS-Cloud toepassingen te beheren](tenant-restrictions.md)
 
 ## <a name="january-2021"></a>Januari 2021
 

@@ -2,14 +2,14 @@
 title: VM-grootten en-installatie kopieën kiezen voor Pools
 description: Kiezen uit de beschik bare VM-grootten en versies van besturings systemen voor reken knooppunten in Azure Batch Pools
 ms.topic: conceptual
-ms.date: 11/24/2020
+ms.date: 03/08/2021
 ms.custom: seodec18
-ms.openlocfilehash: de1f61bb2bdc83377887fda726a65c1900f36d55
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 42b8743fac6a6c64e98271490f0bfc4671fa7698
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576698"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455192"
 ---
 # <a name="choose-a-vm-size-and-image-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte en-afbeelding kiezen voor reken knooppunten in een Azure Batch pool
 
@@ -35,13 +35,11 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | DC | Niet ondersteund |
 | Dv2, DSv2 | Alle grootten |
 | Dv3, Dsv3 | Alle grootten |
-| Dav4 | Alle grootten |
-| Dasv4 | Alle grootten |
+| Dav4, Dasv4 | Alle grootten |
 | Ddv4, Ddsv4 |  Alle grootten |
 | Dv4, Dsv4 | Niet ondersteund |
 | Ev3, Esv3 | Alle grootten, met uitzonde ring van E64is_v3 |
-| Eav4 | Alle grootten |
-| Easv4 | Alle grootten |
+| Eav4, Easv4 | Alle grootten |
 | Edv4, Edsv4 |  Alle grootten |
 | Ev4, Esv4 | Niet ondersteund |
 | F, FS | Alle grootten |
@@ -58,7 +56,7 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | NC | Alle grootten |
 | NCv2 | Alle grootten |
 | NCv3 | Alle grootten |
-| NCasT4_v3 | Geen-nog niet beschikbaar |
+| NCasT4_v3 | Alle grootten |
 | ND | Alle grootten |
 | NDv2 | Geen-nog niet beschikbaar |
 | NV | Alle grootten |

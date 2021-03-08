@@ -17,12 +17,12 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b5139f75084eb0646db2fc8b05b04aaf3ddb2a12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 787cf922fcee0ee613fc0874a490830da9adf38a
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89010780"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455022"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Problemen met verwijderde meldingen in azure Notification Hubs vaststellen
 
@@ -147,7 +147,7 @@ In Visual Studio kunt u verbinding maken met Azure via Server Explorer om meerde
 
 U kunt alle registraties in uw hub weer geven en beheren. De registraties kunnen worden gecategoriseerd op basis van platform, systeem eigen of sjabloon registratie, tag, Push Notification Service-id, registratie-ID en verval datum. U kunt ook een registratie op deze pagina bewerken. Het is vooral handig voor het bewerken van tags.
 
-Klik met de rechter muisknop op de notification hub in **Server Explorer**en selecteer **diagnose**. 
+Klik met de rechter muisknop op de notification hub in **Server Explorer** en selecteer **diagnose**. 
 
 ![Visual Studio Server Explorer: diagnose menu](./media/notification-hubs-push-notification-fixer/diagnose-menu.png)
 
@@ -174,7 +174,7 @@ Veel klanten gebruiken [Service Bus Explorer](https://github.com/paolosalvatori/
 
 #### <a name="azure-portal"></a>Azure Portal
 
-Als u een test melding naar uw clients wilt verzenden zonder dat er een back-up van een service wordt uitgevoerd, selecteert u onder **ondersteuning en probleem oplossing**de optie **Test verzenden**.
+Als u een test melding naar uw clients wilt verzenden zonder dat er een back-up van een service wordt uitgevoerd, selecteert u onder **ondersteuning en probleem oplossing** de optie **Test verzenden**.
 
 ![De functionaliteit voor verzenden testen in azure][7]
 
@@ -261,7 +261,7 @@ In de portal kunt u een snel overzicht krijgen van alle activiteiten in uw notif
 
    ![Azure Portal activiteiten logboek][6]
 
-3. Begin met het controleren van **inkomende berichten**, **registratie bewerkingen**en **geslaagde meldingen**. Ga vervolgens naar het tabblad per platform om fouten te bekijken die specifiek zijn voor de Push Notification Service.
+3. Begin met het controleren van **inkomende berichten**, **registratie bewerkingen** en **geslaagde meldingen**. Ga vervolgens naar het tabblad per platform om fouten te bekijken die specifiek zijn voor de Push Notification Service.
 
 4. Als de verificatie-instellingen voor uw notification hub onjuist zijn, wordt de bericht **PNS-verificatie fout** weer gegeven. Het is een goede indicatie om de referenties van de Push Notification Service te controleren.
 
@@ -297,5 +297,5 @@ Zie [programmatische toegang](/previous-versions/azure/azure-services/dn458823(v
 [View device registrations for notification hubs]: /previous-versions/windows/apps/dn792122(v=win.10)
 [Grondige kennis: Visual Studio 2013 update 2 RC en Azure SDK 2,3]: https://azure.microsoft.com/blog/2014/04/09/deep-dive-visual-studio-2013-update-2-rc-and-azure-sdk-2-3/#NotificationHubs
 [Aankondiging van de release van Visual Studio 2013 update 3 en Azure SDK 2,4]: https://azure.microsoft.com/blog/2014/08/04/announcing-release-of-visual-studio-2013-update-3-and-azure-sdk-2-4/
-[EnableTestSend]: /dotnet/api/microsoft.azure.notificationhubs.notificationhubclient.enabletestsend?view=azure-dotnet
+[EnableTestSend]: /dotnet/api/microsoft.azure.notificationhubs.notificationhubclient.enabletestsend
 [Programmatic telemetry access]: /previous-versions/azure/azure-services/dn458823(v=azure.100)

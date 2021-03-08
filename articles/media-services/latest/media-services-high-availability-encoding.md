@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.custom: ''
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: be3fd9b3d910e64245a1b52056499bbfba2e6379
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 81feb5b95578cedea7bf368aa1e0d6c2e9117077
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955848"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102456008"
 ---
 # <a name="high-availability-with-media-services-and-video-on-demand-vod"></a>Hoge Beschik baarheid met Media Services en video on demand (VOD)
 
@@ -59,23 +59,23 @@ Dit diagram op hoog niveau toont de architectuur van het voor beeld om u op weg 
 
 ### <a name="regions"></a>Regio's
 
-* [Maak](https://review.docs.microsoft.com/azure/media-services/latest/create-account-cli-how-to) twee (of meer) Azure Media Services-accounts. De twee accounts moeten zich in verschillende regio's behoeven. Zie [regio's waarin de Azure Media Services-service is geïmplementeerd](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)voor meer informatie.
-* Upload uw media naar de regio van waaruit u de taak wilt indienen. Zie [een taak invoer maken op basis van een HTTPS-URL](https://review.docs.microsoft.com/azure/media-services/latest/job-input-from-http-how-to) of [een taak invoer maken op basis van een lokaal bestand](https://review.docs.microsoft.com/azure/media-services/latest/job-input-from-local-file-how-to)voor meer informatie over het starten van code ring.
-* Als u de [taak](https://review.docs.microsoft.com/azure/media-services/latest/transforms-jobs-concept) vervolgens opnieuw moet verzenden naar een andere regio, kunt u gebruiken `JobInputHttp` of gebruiken `Copy-Blob` om de gegevens van de bron-Asset-container te kopiëren naar een activa container in de alternatieve regio.
+* [Maak](/azure/media-services/latest/create-account-cli-how-to) twee (of meer) Azure Media Services-accounts. De twee accounts moeten zich in verschillende regio's behoeven. Zie [regio's waarin de Azure Media Services-service is geïmplementeerd](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)voor meer informatie.
+* Upload uw media naar de regio van waaruit u de taak wilt indienen. Zie [een taak invoer maken op basis van een HTTPS-URL](/azure/media-services/latest/job-input-from-http-how-to) of [een taak invoer maken op basis van een lokaal bestand](/azure/media-services/latest/job-input-from-local-file-how-to)voor meer informatie over het starten van code ring.
+* Als u de [taak](/azure/media-services/latest/transforms-jobs-concept) vervolgens opnieuw moet verzenden naar een andere regio, kunt u gebruiken `JobInputHttp` of gebruiken `Copy-Blob` om de gegevens van de bron-Asset-container te kopiëren naar een activa container in de alternatieve regio.
 
 ### <a name="monitoring"></a>Bewaking
 
 * Abonneer u op `JobStateChange` berichten in elk account via Azure Event grid.
-    * [Registreer u voor gebeurtenissen](https://review.docs.microsoft.com/azure/media-services/latest/reacting-to-media-services-events) via de Azure portal of cli (u kunt dit ook doen met de Event Grid Management SDK)
+    * [Registreer u voor gebeurtenissen](/azure/media-services/latest/reacting-to-media-services-events) via de Azure portal of cli (u kunt dit ook doen met de Event Grid Management SDK)
     * Gebruik de [SDK van micro soft. Azure. EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid/) (die systeem eigen ondersteuning biedt voor Media Services gebeurtenissen).
     * U kunt ook Event Grid gebeurtenissen gebruiken via Azure Functions.
 
     Voor meer informatie:
 
-    * Zie het [Audio Analytics](https://review.docs.microsoft.com/azure/media-services/latest/transforms-jobs-concept) -voor beeld waarin wordt getoond hoe u een job bewaakt met Azure Event grid, inclusief het toevoegen van een terugval als de Azure Event grid berichten om een of andere reden worden vertraagd.
-    * Bekijk de [Azure Event grid schema's voor Media Services-gebeurtenissen](https://review.docs.microsoft.com/azure/media-services/latest/media-services-event-schemas).
+    * Zie het [Audio Analytics](/azure/media-services/latest/transforms-jobs-concept) -voor beeld waarin wordt getoond hoe u een job bewaakt met Azure Event grid, inclusief het toevoegen van een terugval als de Azure Event grid berichten om een of andere reden worden vertraagd.
+    * Bekijk de [Azure Event grid schema's voor Media Services-gebeurtenissen](/azure/media-services/latest/media-services-event-schemas).
 
-* Wanneer u een [taak](https://review.docs.microsoft.com/azure/media-services/latest/transforms-jobs-concept)maakt:
+* Wanneer u een [taak](/azure/media-services/latest/transforms-jobs-concept)maakt:
     * Selecteer een wille keurig account in de lijst met momenteel gebruikte accounts (deze lijst bevat normaal gesp roken beide accounts, maar als er problemen zijn gedetecteerd, kan het slechts één account bevatten). Als de lijst leeg is, moet u een waarschuwing genereren zodat een operator kan onderzoeken.
     * Maak een record voor het bijhouden van elke invlucht-taak en de regio/het account dat wordt gebruikt.
 * Wanneer uw `JobStateChange` handler een melding krijgt dat een taak de geplande status heeft bereikt, noteert u de tijd die wordt ingevoerd in de geplande status en de regio/het account dat wordt gebruikt.

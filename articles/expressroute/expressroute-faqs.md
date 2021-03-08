@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 03/07/2021
 ms.author: duau
-ms.openlocfilehash: 1be7331b0c2309350316d1c88c54e6018400463c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 59194f8d7b1783867ab1422597b361aa3a4a2a60
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789344"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449863"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -40,9 +40,9 @@ Bekijk de [prijs](https://azure.microsoft.com/pricing/details/expressroute/) inf
 
 Ja, de band breedte van het ExpressRoute-circuit is duplex. Als u bijvoorbeeld een ExpressRoute-circuit van 200 Mbps aanschaft, kunt u 200 Mbps voor binnenkomend verkeer en 200 Mbps voor uitgaand verkeer aanschaffen.
 
-### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-does-the-vpn-connection-i-purchase-from-my-network-service-provider-have-to-be-the-same-speed"></a>Als ik betaal voor een ExpressRoute-circuit van een bepaalde band breedte, moet de VPN-verbinding die ik aanschaf van mijn netwerk serviceprovider dezelfde snelheid hebben?
+### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-does-the-private-connection-i-purchase-from-my-network-service-provider-have-to-be-the-same-speed"></a>Als ik betaal voor een ExpressRoute-circuit van een bepaalde band breedte, moet de particuliere verbinding die ik aanschaf van mijn netwerk serviceprovider dezelfde snelheid hebben?
 
-Nee. U kunt een VPN-verbinding kopen van elke snelheid van uw service provider. Uw verbinding met Azure is echter beperkt tot de band breedte van het ExpressRoute-circuit dat u aanschaft.
+Nee. U kunt een particuliere verbinding aanschaffen met elke snelheid van uw service provider. Uw verbinding met Azure is echter beperkt tot de band breedte van het ExpressRoute-circuit dat u aanschaft.
 
 ### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-do-i-have-the-ability-to-use-more-than-my-procured-bandwidth"></a>Als ik voor een ExpressRoute-circuit van een bepaalde band breedte betaal, heb ik dan de mogelijkheid om meer dan mijn beschik bare band breedte te gebruiken?
 
@@ -258,9 +258,13 @@ Als u standaard routes adverteert, forceren we het verkeer naar services die wor
 
 Ja. Virtuele machines die zijn geïmplementeerd in virtuele netwerken die zijn verbonden met hetzelfde ExpressRoute-circuit kunnen met elkaar communiceren. U kunt het beste de [peering van het virtuele netwerk](../virtual-network/virtual-network-peering-overview.md) instellen om deze communicatie te vergemakkelijken.
 
-### <a name="can-i-use-site-to-site-connectivity-for-virtual-networks-in-conjunction-with-expressroute"></a>Kan ik site-naar-site-connectiviteit voor virtuele netwerken gebruiken in combi natie met ExpressRoute?
+### <a name="can-i-set-up-a-site-to-site-vpn-connection-to-my-virtual-network-in-conjunction-with-expressroute"></a>Kan ik een site-naar-site-VPN-verbinding met mijn virtuele netwerk instellen in combi natie met ExpressRoute?
 
 Ja. ExpressRoute kan naast site-naar-site-Vpn's bestaan. Zie [ExpressRoute-en site-to-site-verbindingen configureren](expressroute-howto-coexist-resource-manager.md).
+
+### <a name="how-do-i-enable-routing-between-my-site-to-site-vpn-connection-and-my-expressroute"></a>Hoe kan ik route ring tussen mijn site-naar-site VPN-verbinding en mijn ExpressRoute inschakelen?
+
+Als u route ring wilt inschakelen tussen uw vertakking die is verbonden met Expressoute en uw vertakking is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
 
 ### <a name="why-is-there-a-public-ip-address-associated-with-the-expressroute-gateway-on-a-virtual-network"></a>Waarom is er een openbaar IP-adres gekoppeld aan de ExpressRoute-gateway in een virtueel netwerk?
 

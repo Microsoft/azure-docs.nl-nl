@@ -7,16 +7,16 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 3c908fffe93d657662310d4e91ed25ae28ca6908
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: ebc12982bcc05c2d07f91fbc4d85afc170adf075
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429089"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453390"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-powershell"></a>Quickstart: Azure Attestation instellen met behulp van Microsoft Azure PowerShell
 
-Volg de onderstaande stappen voor het maken en configureren van een Attestation-provider met behulp van Azure PowerShell. Zie [Overzicht van Azure PowerShell](/powershell/azure/?view=azps-2.8.0&viewFallbackFrom=azps-2.4.0) voor meer informatie over het installeren en uitvoeren van Azure PowerShell.
+Volg de onderstaande stappen voor het maken en configureren van een Attestation-provider met behulp van Azure PowerShell. Zie [Overzicht van Azure PowerShell](/powershell/azure/) voor meer informatie over het installeren en uitvoeren van Azure PowerShell.
 
 Houd er rekening mee dat door de PowerShell Gallery Transport Layer Security (TLS) versies 1,0 en 1,1 verouderd zijn. TLS 1,2 of een latere versie wordt aanbevolen. De volgende fouten kunnen optreden:
 

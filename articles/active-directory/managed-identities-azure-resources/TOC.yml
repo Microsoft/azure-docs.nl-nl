@@ -137,7 +137,7 @@
     - name: Javascript
       href: /javascript/api/overview/azure/identity-readme
     - name: Python
-      href: /python/api/overview/azure/identity-readme?view=azure-python
+      href: /python/api/overview/azure/identity-readme
     - name: Aan de slag
       href: 'https://golang.org/doc/'
 - name: Resources

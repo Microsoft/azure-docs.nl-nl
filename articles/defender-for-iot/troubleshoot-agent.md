@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 9367cf4324d577e4dd44cb9294a8b82b1bceaf74
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 7be6cf1df15d7afd7cb9447be68ff70ff7b14d03
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522950"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449217"
 ---
 # <a name="security-agent-troubleshoot-guide-linux"></a>Handleiding voor probleemoplossing voor beveiligingsagenten (Linux)
 
@@ -28,10 +28,9 @@ De Azure Defender voor IoT-agent wordt direct na de installatie gestart. Het ops
 
 In deze hand leiding voor probleem oplossing leert u het volgende:
 
-> [!div class="checklist"]
-> * Controleren of de beveiligings agent wordt uitgevoerd
-> * Fouten in de beveiligings agent ophalen
-> * Fouten in de beveiligings agent begrijpen en oplossen
+- Controleren of de beveiligings agent wordt uitgevoerd
+- Fouten in de beveiligings agent ophalen
+- Fouten in de beveiligings agent begrijpen en oplossen
 
 ## <a name="validate-if-the-security-agent-is-running"></a>Controleren of de beveiligings agent wordt uitgevoerd
 
@@ -108,4 +107,10 @@ Defender for IoT agent encountered an error! Error in: {Error Code}, reason: {Er
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees het [overzicht](overview.md) van de Defender voor IOT-service meer informatie over Defender voor IOT- [architectuur](architecture.md) de Defender voor IOT- [service](quickstart-onboard-iot-hub.md) de [Veelgestelde vragen](resources-frequently-asked-questions.md) over Defender voor IOT-service lezen informatie over het verkrijgen van toegang tot [onbewerkte beveiligings gegevens](how-to-security-data-access.md) begrijpen [aanbevelingen](concept-recommendations.md) inzicht in beveiligings [waarschuwingen](concept-security-alerts.md)
+- Lees het [overzicht](overview.md) van de Defender voor IOT-service
+- Meer informatie over de [architectuur](architecture.md) van Defender voor IOT
+- De Defender voor IoT- [service](quickstart-onboard-iot-hub.md) inschakelen
+- Lees de [Veelgestelde vragen over](resources-frequently-asked-questions.md) Defender voor IOT-service
+- Meer informatie over het openen van [onbewerkte beveiligings gegevens](how-to-security-data-access.md)
+- Meer informatie over [aanbevelingen](concept-recommendations.md)
+- Beveiligings [waarschuwingen](concept-security-alerts.md) begrijpen

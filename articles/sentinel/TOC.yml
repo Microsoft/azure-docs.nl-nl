@@ -25,6 +25,8 @@
       href: tutorial-respond-threats-playbook.md
 - name: Concepten
   items:
+    - name: Gegevens classificeren met behulp van entiteiten
+      href: entities-in-azure-sentinel.md
     - name: Toegang beheren
       items:
         - name: Machtigingen in Azure Sentinel
@@ -33,18 +35,20 @@
           href: resource-context-rbac.md
     - name: Geavanceerde detectie van aanvallen met meerdere stappen
       href: fusion.md
-    - name: Uw eigen machine learning-platform meenemen
-      href: bring-your-own-ml.md
-    - name: Azure-Sentinel uitbreiden in werkruimten en tenants
-      href: extend-sentinel-across-workspaces-tenants.md
     - name: Geavanceerde bedreigingen identificeren met UEBA
       href: identify-threats-with-entity-behavior-analytics.md
     - name: Bedreigingsinformatie importeren in Azure Sentinel
       href: import-threat-intelligence.md
+    - name: Uw eigen machine learning-platform meenemen
+      href: bring-your-own-ml.md
     - name: Microsoft 365 Defender integreren met Azure Sentinel
       href: microsoft-365-defender-sentinel-integration.md
     - name: Externe gegevens met volglijsten gebruiken
       href: watchlists.md
+    - name: Machtigingen toewijzen met behulp van rollen
+      href: roles.md
+    - name: Azure-Sentinel uitbreiden in werkruimten en tenants
+      href: extend-sentinel-across-workspaces-tenants.md
     - name: Uw gegevens normaliseren in verschillende tabellen
       href: normalization.md
     - name: Beveiliging
@@ -84,7 +88,7 @@
               href: connect-office-365-advanced-threat-protection.md
             - name: Azure Defender-waarschuwingen van ASC
               href: connect-azure-security-center.md
-            - name: Azure Defender (voorheen ASC) voor IoT
+            - name: Defender voor IoT (voorheen ASC voor IoT)
               href: connect-asc-iot.md
             - name: Azure DDoS Protection
               href: connect-azure-ddos-protection.md
@@ -242,12 +246,16 @@
           href: monitor-data-connector-health.md
     - name: Analyse van gebruikers-en entiteits gedrag inschakelen
       href: enable-entity-behavior-analytics.md
+    - name: Gegevens velden toewijzen aan entiteiten
+      href: map-data-fields-to-entities.md
     - name: Meerdere tenants beheren (MSSP)
       href: multiple-tenants-service-providers.md
     - name: Werken met incidenten in meerdere werkruimten
       href: multiple-workspace-view.md
     - name: Door de klant beheerde sleutels (CMK) instellen
       href: customer-managed-keys.md
+    - name: Aangepaste Details van het Opper vlak in waarschuwingen
+      href: surface-custom-details-in-alerts.md
     - name: Incidenten maken op basis van waarschuwingen
       href: create-incidents-from-alerts.md
     - name: Uw SOC beter beheren met metrische gegevens over incidenten
@@ -265,10 +273,10 @@
           href: livestream.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
-    - name: Geavanceerde RBAC implementeren
-      items: null
-- name: Referentie
+- name: Naslaginformatie
   items:
+    - name: Belangrijkste Azure-verklikker werkmappen
+      href: top-workbooks.md
     - name: Azure RBAC-rollen
       items:
         - name: Alle Azure-rollen
@@ -285,6 +293,8 @@
           href: watchlist-with-rest-api.md
     - name: De Logic Apps-connector van Azure Sentinel verkennen
       href: /connectors/azuresentinel/
+    - name: Verwijzing naar entiteiten
+      href: entities-reference.md
     - name: Netwerknormalisatieschema
       href: normalization-schema.md
     - name: Verwijzing naar gegevens bron schema

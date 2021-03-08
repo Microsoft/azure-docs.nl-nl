@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/25/2021
+ms.date: 02/10/2021
 ms.author: yelevin
-ms.openlocfilehash: 458c801e1434832bf65da669ca89cb5c5eebe2e8
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: bf7a17d96d31fd4214d5465a5739acc9ce9a9d53
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807560"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455498"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
@@ -68,41 +68,9 @@ Voor elke activiteit wordt gescoord met ' onderzoek prioriteits Score ', waarmee
 
 Bekijk hoe gedrags analyses in [Microsoft Cloud app Security](https://techcommunity.microsoft.com/t5/microsoft-security-and/prioritize-user-investigations-in-cloud-app-security/ba-p/700136) wordt gebruikt voor een voor beeld van hoe dit werkt.
 
-## <a name="entities-in-azure-sentinel"></a>Entiteiten in Azure Sentinel
+## <a name="entity-pages"></a>Entiteits pagina's
 
-### <a name="entity-identifiers"></a>Entiteit-id's
-
-Wanneer waarschuwingen naar Azure Sentinel worden verzonden, bevatten ze gegevens elementen die door Azure Sentinel worden geïdentificeerd en geclassificeerd als entiteiten, zoals gebruikers accounts, hosts, IP-adressen en andere. Als de waarschuwing niet voldoende informatie over de entiteit bevat, kan dit een uitdaging zijn.
-
-Gebruikers accounts kunnen bijvoorbeeld op meer dan één manier worden geïdentificeerd: met behulp van de numerieke id (GUID) van een Azure AD-account of de UPN-waarde (User Principal Name), of een combi natie van de gebruikers naam en het NT-domein. Verschillende gegevens bronnen kunnen dezelfde gebruiker op verschillende manieren identificeren. Als dat mogelijk is, voegt Azure Sentinel deze id's samen tot één entiteit, zodat deze naar behoren kan worden geïdentificeerd.
-
-Het kan gebeuren dat een van de resource providers een waarschuwing maakt waarin een entiteit niet voldoende is geïdentificeerd, bijvoorbeeld een gebruikers naam zonder de domein naam context. In dat geval kan de gebruikers entiteit niet worden samengevoegd met andere exemplaren van hetzelfde gebruikers account, die als een afzonderlijke entiteit zouden worden geïdentificeerd en die twee entiteiten in plaats van Unified blijven.
-
-Als u het risico van dit probleem zo klein mogelijk wilt maken, moet u controleren of al uw waarschuwings providers de entiteiten op de juiste wijze identificeren in de door hen geproduceerde waarschuwingen. Daarnaast kan het synchroniseren van gebruikers account entiteiten met Azure Active Directory een andere map maken, waarmee gebruikers account entiteiten kunnen worden samengevoegd.
-
-De volgende typen entiteiten worden momenteel geïdentificeerd in azure Sentinel:
-
-- Gebruikers account (account)
-- Host
-- IP-adres (IP)
-- Malware
-- File
-- Proces
-- Cloud toepassing (CloudApplication)
-- Domein naam (DNS)
-- Azure-resource
-- Bestand (FileHash)
-- Registersleutel
-- Registerwaarde
-- Beveiligings groep
-- URL
-- IoT-apparaat
-- Postvak
-- E-mail cluster
-- E-mail bericht
-- E-mail verzenden
-
-### <a name="entity-pages"></a>Entiteits pagina's
+Meer informatie over [entiteiten in azure Sentinel](entities-in-azure-sentinel.md) vindt u in de volledige lijst met [ondersteunde entiteiten en id's](entities-reference.md).
 
 Wanneer u een entiteit (momenteel beperkt tot gebruikers en hosts) tegen komt in een zoek opdracht, een waarschuwing of een onderzoek, kunt u de entiteit selecteren en naar een **entiteits pagina** gaan, een gegevens blad vol met nuttige informatie over die entiteit. De typen informatie die u op deze pagina vindt, bevatten elementaire feiten over de entiteit, een tijd lijn met belang rijke gebeurtenissen die betrekking hebben op deze entiteit en inzichten over het gedrag van de entiteit.
  
@@ -131,26 +99,29 @@ De volgende typen items zijn opgenomen in de tijd lijn:
  
 ### <a name="entity-insights"></a>Entiteits inzichten
  
-Entiteits inzichten zijn query's die door micro soft-beveiligings onderzoekers worden gedefinieerd om uw analisten efficiënter en effectief te onderzoeken. De inzichten worden weer gegeven als onderdeel van de entiteits pagina en bieden waardevolle beveiligings informatie over hosts en gebruikers, in de vorm van tabellaire gegevens en diagrammen. Als u hier informatie over hebt, hoeft u niet door te geven aan Log Analytics. De inzichten bevatten gegevens over aanmeldingen, groeps toevoegingen, afwijkende gebeurtenissen en meer, en bevatten geavanceerde ML-algoritmen voor het detecteren van afwijkend gedrag. De inzichten zijn gebaseerd op de volgende gegevens typen:
-- Syslog
-- SecurityEvent
-- Auditlogboeken
-- Aanmeld logboeken
-- Office-activiteit
-- BehaviorAnalytics (UEBA) 
- 
+Entiteits inzichten zijn query's die door micro soft-beveiligings onderzoekers worden gedefinieerd om uw analisten efficiënter en effectief te onderzoeken. De inzichten worden weer gegeven als onderdeel van de entiteits pagina en bieden waardevolle beveiligings informatie over hosts en gebruikers, in de vorm van tabellaire gegevens en diagrammen. Als u hier informatie over hebt, hoeft u niet door te geven aan Log Analytics. De inzichten bevatten gegevens over aanmeldingen, groeps toevoegingen, afwijkende gebeurtenissen en meer, en bevatten geavanceerde ML-algoritmen voor het detecteren van afwijkend gedrag. 
+
+De inzichten zijn gebaseerd op de volgende gegevens bronnen:
+- Syslog (Linux)
+- SecurityEvent (Windows)
+- Audit logs bevat (Azure AD)
+- SigninLogs (Azure AD)
+- OfficeActivity (Office 365)
+- BehaviorAnalytics (Azure Sentinel UEBA)
+- Heartbeat (Azure Monitor-agent)
+- CommonSecurityLog (Azure Sentinel)
+
 ### <a name="how-to-use-entity-pages"></a>Entiteits pagina's gebruiken
 
 Entiteits pagina's zijn ontworpen om deel uit te maken van meerdere gebruiks scenario's, en zijn toegankelijk via incident beheer, de onderzoek grafiek, blad wijzers of rechtstreeks vanaf de pagina entiteit zoeken onder gedrag van entiteits **analyses** in het hoofd menu van Azure Sentinel.
 
 :::image type="content" source="./media/identify-threats-with-entity-behavior-analytics/entity-pages-use-cases.png" alt-text="Use cases van entiteits pagina":::
 
-
 ## <a name="data-schema"></a>Gegevens schema
 
 ### <a name="behavior-analytics-table"></a>Tabel met gedrags analyse
 
-| Veld                     | Description                                                         |
+| Veld                     | Beschrijving                                                         |
 |---------------------------|---------------------------------------------------------------------|
 | TenantId                  | uniek ID-nummer van de Tenant                                      |
 | SourceRecordId            | het unieke ID-nummer van de EBA-gebeurtenis                                   |

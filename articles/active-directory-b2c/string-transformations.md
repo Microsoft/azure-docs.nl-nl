@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/04/2021
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9cd5a62cd85687767497b142a30d31aa6dd00b77
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 85574b7d33af6d9abfe25f5af4d811255f08ce4b
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175087"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452234"
 ---
 # <a name="string-claims-transformations"></a>Teken reeks claim transformaties
 
@@ -326,6 +326,77 @@ In het volgende voor beeld wordt een wille keurige waarde voor geheel getal gege
     - **output claim**: OTP_853
 
 
+## <a name="formatlocalizedstring"></a>FormatLocalizedString
+
+Meerdere claims opmaken op basis van de vertaalde gelokaliseerde indelings teken reeks. Deze trans formatie maakt gebruik van de C#- `String.Format` methode.
+
+
+| Item | TransformationClaimType | Gegevenstype | Notities |
+| ---- | ----------------------- | --------- | ----- |
+| InputClaims |  |tekenreeks | De verzameling invoer claims die fungeren als teken reeks indeling {0} , {1} , {2} para meters. |
+| Parameter | stringFormatId | tekenreeks |  De `StringId` van een [gelokaliseerde teken reeks](localization.md).   |
+| Output claim | Output claim | tekenreeks | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen. |
+
+> [!NOTE]
+> De Maxi maal toegestane grootte van de teken reeks is 4000.
+
+De FormatLocalizedString-claim transformatie gebruiken:
+
+1. Definieer een [lokalisatie teken reeks](localization.md)en koppel deze aan een [zelfbevestigend technisch profiel](self-asserted-technical-profile.md).
+1. De `ElementType` van het `LocalizedString` element moet worden ingesteld op `FormatLocalizedStringTransformationClaimType` .
+1. Het `StringId` is een unieke id die u definieert en deze later in uw claim transformatie kunt gebruiken `stringFormatId` .
+1. Geef in de claim transformatie de lijst met claims op die moeten worden ingesteld met de gelokaliseerde teken reeks. Stel vervolgens de `stringFormatId` in op de `StringId` van het gelokaliseerde teken reeks element. 
+1. In een niet [-bevestigd technisch profiel](self-asserted-technical-profile.md)of een invoer-of uitvoer claim transformatie voor [weer gave](display-controls.md) kunt u een verwijzing naar uw claim transformatie maken.
+
+
+In het volgende voor beeld wordt een fout bericht gegenereerd wanneer een account zich al in de map bevindt. In het voor beeld worden gelokaliseerde teken reeksen gedefinieerd voor Engels (standaard) en Spaans.
+
+```xml
+<Localization Enabled="true">
+  <SupportedLanguages DefaultLanguage="en" MergeBehavior="Append">
+    <SupportedLanguage>en</SupportedLanguage>
+    <SupportedLanguage>es</SupportedLanguage>
+   </SupportedLanguages>
+
+  <LocalizedResources Id="api.localaccountsignup.en">
+    <LocalizedStrings>
+      <LocalizedString ElementType="FormatLocalizedStringTransformationClaimType" StringId="ResponseMessge_EmailExists">The email '{0}' is already an account in this organization. Click Next to sign in with that account.</LocalizedString>
+      </LocalizedStrings>
+    </LocalizedResources>
+  <LocalizedResources Id="api.localaccountsignup.es">
+    <LocalizedStrings>
+      <LocalizedString ElementType="FormatLocalizedStringTransformationClaimType" StringId="ResponseMessge_EmailExists">Este correo electrónico "{0}" ya es una cuenta de esta organización. Haga clic en Siguiente para iniciar sesión con esa cuenta.</LocalizedString>
+    </LocalizedStrings>
+  </LocalizedResources>
+</Localization>
+```
+
+Met de claim transformatie wordt een antwoord bericht gemaakt op basis van de gelokaliseerde teken reeks. Het bericht bevat het e-mail adres van de gebruiker dat is inge sloten in de gelokaliseerde Sting- *ResponseMessge_EmailExists*.
+
+```xml
+<ClaimsTransformation Id="SetResponseMessageForEmailAlreadyExists" TransformationMethod="FormatLocalizedString">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="stringFormatId" DataType="string" Value="ResponseMessge_EmailExists" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="responseMsg" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+### <a name="example"></a>Voorbeeld
+
+- Invoer claims:
+    - **input claim**: sarah@contoso.com
+- Invoer parameters:
+    - **stringFormat**: ResponseMessge_EmailExists
+- Uitvoer claims:
+  - **output claim**: het e-mail adres sarah@contoso.com is al een account in deze organisatie. Klik op volgende om u aan te melden met dat account.
+
+
 ## <a name="formatstringclaim"></a>FormatStringClaim
 
 Een claim opmaken volgens de gegeven teken reeks voor opmaak. Deze trans formatie maakt gebruik van de C#- `String.Format` methode.
@@ -335,6 +406,9 @@ Een claim opmaken volgens de gegeven teken reeks voor opmaak. Deze trans formati
 | Input claim | Input claim |tekenreeks |Het claim type dat fungeert als para meter voor de teken reeks indeling {0} . |
 | Parameter | stringFormat | tekenreeks | De teken reeks notatie, inclusief de {0}  para meter. Deze invoer parameter ondersteunt [teken reeks claim transformatie expressies](string-transformations.md#string-claim-transformations-expressions).  |
 | Output claim | Output claim | tekenreeks | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen. |
+
+> [!NOTE]
+> De Maxi maal toegestane grootte van de teken reeks is 4000.
 
 Gebruik deze claim transformatie om een wille keurige teken reeks met één para meter op te maken {0} . In het volgende voor beeld wordt een **userPrincipalName** gemaakt. Alle technische profielen van de sociale ID-provider, zoals `Facebook-OAUTH` het aanroepen van de **CreateUserPrincipalName** om een **userPrincipalName** te genereren.
 
@@ -371,6 +445,9 @@ Indeling van twee claims volgens de gegeven teken reeks voor opmaak. Deze trans 
 | Input claim | Input claim | tekenreeks | Het claim type dat fungeert als para meter voor de teken reeks indeling {1} . |
 | Parameter | stringFormat | tekenreeks | De teken reeks notatie, met inbegrip van de {0} {1} para meters en. Deze invoer parameter ondersteunt [teken reeks claim transformatie expressies](string-transformations.md#string-claim-transformations-expressions).   |
 | Output claim | Output claim | tekenreeks | Het claim type dat is geproduceerd nadat deze claim transformatie is aangeroepen. |
+
+> [!NOTE]
+> De Maxi maal toegestane grootte van de teken reeks is 4000.
 
 Gebruik deze claim transformatie om een wille keurige teken reeks te Format teren met twee para meters {0} en {1} . In het volgende voor beeld wordt een **DisplayName** gemaakt met de opgegeven indeling:
 

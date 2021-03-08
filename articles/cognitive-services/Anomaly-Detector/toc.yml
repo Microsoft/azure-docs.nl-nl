@@ -16,8 +16,6 @@
   items:
     - name: Afwijkingen in batch visualiseren met behulp van Power BI
       href: tutorials/batch-anomaly-detection-powerbi.md
-    - name: Detectie van afwijkingen in streaming-gegevens met behulp van Azure Databricks
-      href: tutorials/anomaly-detection-streaming-databricks.md
 - name: Instructiegidsen
   items:
     - name: Afwijkingen in uw gegevens identificeren

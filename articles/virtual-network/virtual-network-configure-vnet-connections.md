@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 9975e40f7d4f3b69c9281efd0288389740bf92ec
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 9a0d06a8f8fa8f68f063404f2b483b817eb0563f
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943647"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452098"
 ---
 # <a name="configure-and-validate-virtual-network-or-vpn-connections"></a>Virtuele netwerk-of VPN-verbindingen configureren en valideren
 
@@ -248,7 +248,7 @@ BGP kan ook transit routering tussen meerdere netwerken inschakelen door routes 
 
 Zie [BGP op Azure VPN-gateways configureren met behulp van Power shell voor meer informatie over](../vpn-gateway/vpn-gateway-bgp-resource-manager-ps.md)het configureren van een VPN-verbinding die gebruikmaakt van BGP.
 
-Schakel BGP in op de virtuele netwerk gateway door een autonoom systeem (als)-nummer te maken. Basis gateways bieden geen ondersteuning voor BGP. Als u de SKU van de gateway wilt controleren, gaat u naar de sectie **overzicht** van de blade **VPN Gateway** in het Azure Portal. Als uw SKU **Basic** is, wijzigt u de SKU (zie formaat van [de gateway](/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway?viewFallbackFrom=azurermps-4.0.0)wijzigen) in **VpnGw1**. 
+Schakel BGP in op de virtuele netwerk gateway door een autonoom systeem (als)-nummer te maken. Basis gateways bieden geen ondersteuning voor BGP. Als u de SKU van de gateway wilt controleren, gaat u naar de sectie **overzicht** van de blade **VPN Gateway** in het Azure Portal. Als uw SKU **Basic** is, wijzigt u de SKU (zie formaat van [de gateway](/powershell/module/azurerm.network/resize-azurermvirtualnetworkgateway)wijzigen) in **VpnGw1**. 
 
 Het controleren van de SKU leidt tot 20 tot 30 minuten uitval tijd. Zodra de gateway de juiste SKU heeft, kunt u het AS-nummer toevoegen met behulp van de cmdlet [set-azurermvirtualnetworkgateway bijgewerkt](/powershell/module/azurerm.network/set-azurermvirtualnetworkgateway) Power shell. Nadat u het AS-nummer hebt geconfigureerd, wordt er automatisch een BGP-peer-IP voor de gateway gegeven.
 

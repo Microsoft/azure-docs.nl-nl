@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/29/2019
-ms.openlocfilehash: 2e2165b81c7cd634fe79ec4438a550ad365f5a30
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b8110323afda2ad445ffe279030ee7f3035e2b71
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019174"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455396"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Bedrijfs strategieën voor een LUIS-app
 Bekijk deze ontwerp strategieën voor uw bedrijfs-app.
@@ -48,10 +48,10 @@ Als uw app een breed scala aan gebruikers uitingen moet voors pellen, kunt u ove
 Plan een periodieke [beoordeling van het uitingen](luis-how-to-review-endpoint-utterances.md) voor het actieve leer proces, bijvoorbeeld elke twee weken, en voer vervolgens opnieuw een Train en opnieuw uit. 
 
 ## <a name="when-you-need-to-have-more-than-500-intents"></a>Wanneer u meer dan 500 intenties nodig hebt
-Stel dat u een Office-assistent ontwikkelt met meer dan 500 intenties. Als de 200-intenties betrekking hebben op het plannen van vergaderingen, zijn er voor 200 meer informatie over herinneringen, 200 het ophalen van gegevens over collega's, en 200 zijn voor het verzenden van e-mail, groeps intentie, zodat elke groep zich in één app bevindt. vervolgens maakt u een app op het hoogste niveau met elk doel. Gebruik het [Verzend model](#dispatch-tool-and-model) om de app op het hoogste niveau te bouwen. Wijzig vervolgens uw bot om de trapsgewijze oproep te gebruiken, zoals wordt weer gegeven in de [zelf studie over het verzend model](/azure/bot-service/bot-builder-tutorial-dispatch?branch=master&tabs=cs&view=azure-bot-service-4.0). 
+Stel dat u een Office-assistent ontwikkelt met meer dan 500 intenties. Als de 200-intenties betrekking hebben op het plannen van vergaderingen, zijn er voor 200 meer informatie over herinneringen, 200 het ophalen van gegevens over collega's, en 200 zijn voor het verzenden van e-mail, groeps intentie, zodat elke groep zich in één app bevindt. vervolgens maakt u een app op het hoogste niveau met elk doel. Gebruik het [Verzend model](#dispatch-tool-and-model) om de app op het hoogste niveau te bouwen. Wijzig vervolgens uw bot om de trapsgewijze oproep te gebruiken, zoals wordt weer gegeven in de [zelf studie over het verzend model](/azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0). 
 
 ## <a name="when-you-need-to-combine-several-luis-and-qna-maker-apps"></a>Wanneer u meerdere LUIS-en QnA Maker-apps moet combi neren
-Als u meerdere LUIS-en QnA Maker-apps hebt die moeten reageren op een bot, gebruikt u het [Verzend model](#dispatch-tool-and-model) om de app op het hoogste niveau te bouwen.  Wijzig vervolgens uw bot om de trapsgewijze oproep te gebruiken, zoals wordt weer gegeven in de [zelf studie over het verzend model](/azure/bot-service/bot-builder-tutorial-dispatch?branch=master&tabs=cs&view=azure-bot-service-4.0). 
+Als u meerdere LUIS-en QnA Maker-apps hebt die moeten reageren op een bot, gebruikt u het [Verzend model](#dispatch-tool-and-model) om de app op het hoogste niveau te bouwen.  Wijzig vervolgens uw bot om de trapsgewijze oproep te gebruiken, zoals wordt weer gegeven in de [zelf studie over het verzend model](/azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0). 
 
 ## <a name="dispatch-tool-and-model"></a>Hulp programma en model voor verzen ding
 Gebruik het opdracht regel programma voor [verzen ding][dispatch-tool] , gevonden in [BotBuilder-hulpprogram MA'S](https://github.com/Microsoft/botbuilder-tools) om meerdere LUIS en/of QnA Maker apps te combi NEREN in een bovenliggende Luis-app. Met deze aanpak kunt u een bovenliggend domein met alle onderwerpen en andere onderliggende domeinen in afzonderlijke apps hebben. 
@@ -62,7 +62,7 @@ Het bovenliggende domein wordt vermeld in LUIS met een versie die `Dispatch` in 
 
 De chat-bot ontvangt de utterance en verzendt deze vervolgens naar de bovenliggende LUIS-app voor voor spellingen. De eerste voorspelde intentie van de bovenliggende app bepaalt welke LUIS onderliggende app het volgende wordt genoemd. De chat-bot verzendt de utterance naar de onderliggende app voor een specifiekere voor spelling.
 
-Meer informatie over hoe deze hiërarchie van aanroepen wordt gedaan vanuit de Bot Builder v4 [-verzender-toepassing-zelf studie](/azure/bot-service/bot-builder-tutorial-dispatch?branch=master&tabs=cs&view=azure-bot-service-4.0).  
+Meer informatie over hoe deze hiërarchie van aanroepen wordt gedaan vanuit de Bot Builder v4 [-verzender-toepassing-zelf studie](/azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0).  
 
 ### <a name="intent-limits-in-dispatch-model"></a>Limieten voor intenties in het verzend model
 Een Dispatch-toepassing heeft 500 verzend bronnen, gelijk aan 500 intenties, als het maximum. 
@@ -70,7 +70,7 @@ Een Dispatch-toepassing heeft 500 verzend bronnen, gelijk aan 500 intenties, als
 ## <a name="more-information"></a>Meer informatie
 
 * [Bot Framework SDK](https://github.com/Microsoft/botframework)
-* [Zelf studie over verzend modellen](/azure/bot-service/bot-builder-tutorial-dispatch?branch=master&tabs=cs&view=azure-bot-service-4.0)
+* [Zelf studie over verzend modellen](/azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0)
 * [Verzending CLI](https://github.com/Microsoft/botbuilder-tools)
 * Voor beeld van verspreidings model-bot- [.net](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch), [Node.js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch)
 
@@ -78,5 +78,5 @@ Een Dispatch-toepassing heeft 500 verzend bronnen, gelijk aan 500 intenties, als
 
 * Meer informatie over het [testen van een batch](luis-how-to-batch-test.md)
 
-[dispatcher-application-tutorial]: /azure/bot-service/bot-builder-tutorial-dispatch?branch=master
+[dispatcher-application-tutorial]: /azure/bot-service/bot-builder-tutorial-dispatch
 [dispatch-tool]: https://aka.ms/dispatch-tool

@@ -10,7 +10,7 @@ MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 > [!NOTE]
-> Hoewel in de zelfstudie de [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor de SDK’s van [REST API](/rest/api/media/liveevents) of [CLI](/cli/azure/ams/live-event), of voor andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
+> Hoewel in de zelfstudie de [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.liveevent)-voorbeelden worden gebruikt, zijn de algemene stappen hetzelfde voor de SDK’s van [REST API](/rest/api/media/liveevents) of [CLI](/cli/azure/ams/live-event), of voor andere ondersteunde [SDK's](media-services-apis-overview.md#sdks).
 
 U kunt Media Services gebruiken om HLS (HTTP Live Streaming), MPEG-DASH, en Smooth Streaming te leveren, versleuteld met de AES met behulp van 128-bits versleutelingssleutels. Media Services biedt ook de sleutelleveringsservice die versleutelingssleutels levert aan gemachtigde gebruikers. Als u wilt dat Media Services uw video dynamisch versleutelt, koppelt u de versleutelingssleutel aan een streaminglocator, en configureert u ook het beleid voor de inhoudssleutel. Wanneer een stream wordt aangevraagd door een speler, maakt Media Services gebruik van de opgegeven sleutel om uw inhoud dynamisch te versleutelen met AES-128. Voor het ontsleutelen van de stream, wordt door de speler de sleutel van de sleutelleveringsservice aangevraagd. De service evalueert het door u opgegeven beleid voor de inhoudssleutel om te bepalen of de gebruiker is gemachtigd om de sleutel op te halen.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: ShaneBala-keyvault
 ms.author: sudbalas
 ms.date: 12/15/2020
-ms.openlocfilehash: 331a7b1bef3621a080fe2fa891cf83565a1e55ac
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7aeca89ed09182b7947b10f24c65b0cb58ed67ea
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702569"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452132"
 ---
 # <a name="azure-key-vault-soft-delete-overview"></a>Azure Key Vault: overzicht van voorlopig verwijderen
 
@@ -30,7 +30,7 @@ Met de functie voor het tijdelijk verwijderen van Key Vault kunt u de verwijderd
 
 ## <a name="supporting-interfaces"></a>Ondersteunende interfaces
 
-De functie voor voorlopig verwijderen is beschikbaar via de [rest API](/rest/api/keyvault/), de [Azure cli](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)en [.net/C#](/dotnet/api/microsoft.azure.keyvault?view=azure-dotnet&preserve-view=true) -interfaces, evenals arm- [sjablonen](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
+De functie voor voorlopig verwijderen is beschikbaar via de [rest API](/rest/api/keyvault/), de [Azure cli](./key-vault-recovery.md), [Azure PowerShell](./key-vault-recovery.md)en [.net/C#](/dotnet/api/microsoft.azure.keyvault) -interfaces, evenals arm- [sjablonen](/azure/templates/microsoft.keyvault/2019-09-01/vaults).
 
 ## <a name="scenarios"></a>Scenario's
 

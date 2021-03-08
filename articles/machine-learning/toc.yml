@@ -258,6 +258,8 @@
         - name: Resource Manager-sjabloon gebruiken
           displayName: arm
           href: how-to-create-workspace-template.md
+        - name: Koppeling naar Azure Synapse Analytics-werk ruimte
+          href: how-to-link-synapse-ml-workspaces.md
     - name: Compute-resources maken en beheren
       items:
         - name: Rekenproces

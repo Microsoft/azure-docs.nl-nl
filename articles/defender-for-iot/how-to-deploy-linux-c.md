@@ -13,24 +13,21 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 8c03f6b882c8b1a64c9f256493c5d586b5fa0f89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d3f96ed60ca784402b6d24eea7234f37c4fb959
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936469"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449778"
 ---
 # <a name="deploy-defender-for-iot-c-based-security-agent-for-linux"></a>Defender implementeren voor IoT C-gebaseerde beveiligings agent voor Linux
 
 In deze hand leiding wordt uitgelegd hoe u de Defender voor IoT C-beveiligings agent op Linux installeert en implementeert.
 
-In deze handleiding leert u het volgende:
-
-> [!div class="checklist"]
-> * Installeren
-> * Implementatie verifiëren
-> * Agent verwijderen
-> * Problemen oplossen
+- Installeren
+- Implementatie controleren
+- Agent verwijderen
+- Problemen oplossen
 
 ## <a name="prerequisites"></a>Vereisten
 

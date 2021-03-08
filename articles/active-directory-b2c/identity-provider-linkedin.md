@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/08/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 1ce9c00cb58253e2cca9a7d60c4cce9b77709688
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: ce5e8cfda4a9f51a90c8f26133a710f4d1c258b6
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98953849"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448265"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een LinkedIn-account met behulp van Azure Active Directory B2C
 
@@ -69,7 +69,10 @@ Als u aanmelden voor gebruikers met een LinkedIn-account in Azure Active Directo
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
 1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
+1. Selecteer de knop **gebruikers stroom uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden de optie **LinkedIn** om u aan te melden met het LinkedIn-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 
@@ -96,8 +99,8 @@ Als u gebruikers wilt toestaan zich aan te melden met een LinkedIn-account, moet
 
 Definieer een LinkedIn-account als een claim provider door het toe te voegen aan het **ClaimsProviders** -element in het extensie bestand van uw beleid.
 
-1. Open het bestand * SocialAndLocalAccounts/**TrustFrameworkExtensions.xml** _ in de editor. Dit bestand bevindt zich in het [aangepaste beleids Starter Pack][starter-pack] dat u hebt gedownload als onderdeel van een van de vereisten.
-1. Zoek het element _ *ClaimsProviders**. Als deze niet bestaat, voegt u deze toe onder het hoofd element.
+1. Open het bestand *SocialAndLocalAccounts/* * TrustFrameworkExtensions.xml** * in de editor. Dit bestand bevindt zich in het [aangepaste beleids Starter Pack][starter-pack] dat u hebt gedownload als onderdeel van een van de vereisten.
+1. Zoek het element **ClaimsProviders** . Als deze niet bestaat, voegt u deze toe onder het hoofd element.
 1. Voeg als volgt een nieuwe **ClaimsProvider** toe:
 
     ```xml
@@ -213,7 +216,14 @@ Voeg het element **BuildingBlocks** toe aan de bovenkant van het *TrustFramework
 
 [!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
+## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
+
+1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer de knop **nu uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden de optie **LinkedIn** om u aan te melden met het LinkedIn-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ## <a name="migration-from-v10-to-v20"></a>Migratie van v 1.0 naar v 2.0
 

@@ -6,18 +6,20 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/18/2021
-ms.openlocfilehash: 9ad2566188256dd23b0f479c2576636750e33b02
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 23fa3e93565066ce4b897bffe63164486efc179e
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101715102"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449880"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mysql-single-server"></a>Informatie over de wijzigingen in de basis-CA-wijziging voor Azure Database for MySQL één server
 
 Azure Database for MySQL Eén server heeft de wijziging van het basis certificaat op **15 februari 2021 (02/15/2021)** voltooid als onderdeel van de best practices voor standaard onderhoud en-beveiliging. In dit artikel vindt u meer informatie over de wijzigingen, de betrokken resources en de stappen die nodig zijn om ervoor te zorgen dat uw toepassing verbinding met uw database server onderhoudt.
 
 > [!NOTE]
+> Dit artikel is alleen van toepassing op [Azure database for MySQL-één server](single-server-overview.md) . Voor [Azure database for MySQL-flexibele server](flexible-server/overview.md)is het certificaat dat nodig is voor communicatie via SSL [DigiCert globale basis certificerings instantie](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem)
+> 
 > Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 >
 

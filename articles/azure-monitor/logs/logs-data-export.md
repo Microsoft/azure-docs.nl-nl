@@ -1,17 +1,18 @@
 ---
 title: Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 description: Met Log Analytics gegevens export kunt u voortdurend gegevens van geselecteerde tabellen uit uw Log Analytics-werk ruimte exporteren naar een Azure-opslag account of Azure Event Hubs wanneer het wordt verzameld.
+ms.subservice: logs
 ms.topic: conceptual
 ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 02/07/2021
-ms.openlocfilehash: f0bbe02576323342376ad155878d575c6403cf70
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 556570b02664a0afd01137f939bea67a1014b680
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102048808"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449489"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -75,7 +76,7 @@ Log Analytics gegevens export kan toevoeg-blobs schrijven naar onveranderlijke o
 Gegevens worden bijna in realtime naar uw Event Hub verzonden, omdat deze Azure Monitor bereikt. Er wordt een Event Hub gemaakt voor elk gegevens type dat u exporteert *,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een event hub met de naam *am-SecurityEvent*. Als u wilt dat de geëxporteerde gegevens een specifieke Event Hub bereiken, of als u een tabel hebt met een naam die groter is dan de limiet van 47 tekens, kunt u uw eigen Event Hub naam opgeven en alle gegevens voor gedefinieerde tabellen naar de groep exporteren.
 
 > [!IMPORTANT]
-> Het [aantal ondersteunde Event hubs per naam ruimte is 10](../../event-hubs/event-hubs-quotas.md#common-limits-for-all-tiers). Als u meer dan 10 tabellen exporteert, geeft u uw eigen Event Hub naam op om alle tabellen naar die Event Hub te exporteren. 
+> Het [aantal ondersteunde Event hubs per naam ruimte is 10](../../event-hubs/event-hubs-quotas.md#common-limits-for-all-tiers). Als u meer dan 10 tabellen exporteert, geeft u uw eigen Event Hub naam op om alle tabellen naar die Event Hub te exporteren.
 
 Overwegingen:
 1. ' Basic ' Event Hub SKU ondersteunt een lagere [limiet](../../event-hubs/event-hubs-quotas.md#basic-vs-standard-tiers) voor de grootte van de gebeurtenis en sommige Logboeken in uw werk ruimte kunnen deze overschrijden en worden verwijderd. U wordt aangeraden ' Standard ' of ' dedicated ' te gebruiken Event Hub als export bestemming.
@@ -113,10 +114,14 @@ Als u uw opslag account hebt geconfigureerd om toegang vanaf geselecteerde netwe
 
 [![Storage-account firewalls en virtuele netwerken](media/logs-data-export/storage-account-vnet.png)](media/logs-data-export/storage-account-vnet.png#lightbox)
 
-
 ### <a name="create-or-update-data-export-rule"></a>Regel voor het exporteren van gegevens maken of bijwerken
-Een regel voor gegevens export definieert gegevens die moeten worden geëxporteerd voor een set tabellen naar één bestemming. U kunt één regel voor elke bestemming maken.
+Een regel voor het exporteren van gegevens definieert de tabellen waarvoor gegevens worden geëxporteerd en de bestemming. U kunt op dit moment één regel maken voor elke bestemming.
 
+Als u een lijst met tabellen in uw workapce voor de configuratie van de export regels nodig hebt, voert u deze query uit in uw werk ruimte.
+
+```kusto
+find where TimeGenerated > ago(24h) | distinct Type
+```
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
@@ -127,12 +132,6 @@ N.v.t.
 N.v.t.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-Gebruik de volgende CLI-opdracht om tabellen in uw werk ruimte weer te geven. Het kan helpen de gewenste tabellen te kopiëren en op te geven in de regel voor het exporteren van gegevens.
-
-```azurecli
-az monitor log-analytics workspace table list --resource-group resourceGroupName --workspace-name workspaceName --query [].name --output table
-```
 
 Gebruik de volgende opdracht voor het maken van een regel voor het exporteren van gegevens naar een opslag account met behulp van CLI.
 

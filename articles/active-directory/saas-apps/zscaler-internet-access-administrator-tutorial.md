@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/18/2020
+ms.date: 02/25/2021
 ms.author: jeedes
-ms.openlocfilehash: 8af8d92ca66cfbd3d6223bc9a73125c457164d82
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 70afa0a02f4e303105aec1884b966796854c6f49
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735542"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449314"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Internet Access Administrator
 
@@ -28,10 +28,10 @@ In deze zelf studie leert u hoe u Zscaler Internet Access Administrator integree
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u integratie tussen Azure AD met Zscaler Internet Access Administrator wilt configureren, hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op Zscaler Internet Access Administrator
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Zscaler-abonnement met eenmalige aanmelding (SSO) voor Internet toegang beheerder.
 
 > [!NOTE]
 > Deze integratie is ook beschikbaar voor gebruik vanuit de Azure AD US Government Cloud-omgeving. U kunt deze toepassing vinden in de toepassingsgalerie van Azure AD US Government Cloud en deze op dezelfde manier configureren als vanuit een openbare cloud.
@@ -40,9 +40,9 @@ Als u integratie tussen Azure AD met Zscaler Internet Access Administrator wilt 
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Zscaler Internet Access Administrator ondersteunt met **IDP** geïnitieerde eenmalige aanmelding
+* Zscaler Internet Access-beheerder ondersteunt door **IDP** geïnitieerde SSO.
 
-## <a name="adding-zscaler-internet-access-administrator-from-the-gallery"></a>Zscaler Internet Access Administrator toevoegen vanuit de galerie
+## <a name="add-zscaler-internet-access-administrator-from-the-gallery"></a>Zscaler Internet Access Administrator toevoegen vanuit de galerie
 
 Als u de integratie van Zscaler Internet Access Administrator met Azure AD wilt configureren, dient u Zscaler Internet Access Administrator vanuit de galerie toe te voegen aan uw lijst met beheerde SaaS-apps.
 
@@ -64,7 +64,7 @@ Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Zs
     1. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 2. **[CONFIGUREER SSO van Zscaler Internet Access Administrator](#configure-zscaler-internet-access-administrator-sso)** -om de instellingen voor één Sign-On te configureren aan de kant van de toepassing.
     1. **[Testgebruiker van Zscaler Internet Access Administrator maken](#create-zscaler-internet-access-administrator-test-user)** : als u een equivalent van Britta Simon in Zscaler Internet Access Administrator wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
+3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
@@ -78,7 +78,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. Typ in het tekstvak **Id** een URL overeenkomstig wat u nodig hebt:
+    a. Typ in het tekstvak **id** een van de volgende url's volgens uw vereiste:
 
     | Id |
     |------------|
@@ -89,7 +89,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | `https://admin.zscloud.net` |
     | `https://admin.zscalerbeta.net` |
 
-    b. Typ in het tekstvak **Antwoord-URL** een URL overeenkomstig wat u nodig hebt:
+    b. Typ in het tekstvak **antwoord-URL** een van de volgende url's volgens uw vereiste:
 
     | Antwoord-URL |
     |-----------|
@@ -102,7 +102,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 5. De Zscaler Internet Access Administrator-toepassing verwacht dat de SAML-beweringen in een bepaalde indeling staan. Configureer de volgende claims voor deze toepassing. U kunt de waarden van deze kenmerken vanuit de sectie **Gebruikerskenmerken en claims** op de integratiepagina van de toepassing-beheren. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op de knop **Bewerken** om het dialoogvenster **Gebruikerskenmerken en claims** te openen.
 
-    ![Koppeling Kenmerk](./media/zscaler-internet-access-administrator-tutorial/tutorial_zscaler-internet_attribute.png)
+    ![Koppeling Kenmerk](./media/zscaler-internet-access-administrator-tutorial/attributes.png)
 
 6. In de sectie **Gebruikersclaims** in het dialoogvenster **Gebruikerskenmerken** configureert u het kenmerk van het SAML-token zoals wordt weergegeven in de bovenstaande afbeelding en voert u de volgende stappen uit:
 
@@ -153,14 +153,13 @@ In deze sectie schakelt u B. Simon in voor het gebruik van eenmalige aanmelding 
 1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-
 ## <a name="configure-zscaler-internet-access-administrator-sso"></a>Eenmalige aanmelding voor Zscaler Internet Access-beheerder configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de beheerinterface van Zscaler Internet Access Administrator.
 
 2. Ga naar **Administration > Administrator Management**, voer de volgende stappen uit en klik op Save:
 
-    ![Schermopname van Administrator Management met opties voor het inschakelen van SAML-verificatie, het uploaden van een SSL-certificaat en het opgeven van een certificaatverlener.](./media/zscaler-internet-access-administrator-tutorial/AdminSSO.png "Beheer")
+    ![Schermopname van Administrator Management met opties voor het inschakelen van SAML-verificatie, het uploaden van een SSL-certificaat en het opgeven van een certificaatverlener.](./media/zscaler-internet-access-administrator-tutorial/management.png "Beheer")
 
     a. Selecteer **Enable SAML Authentication** (vinkje).
 
@@ -170,7 +169,7 @@ In deze sectie schakelt u B. Simon in voor het gebruik van eenmalige aanmelding 
 
 3. Voer de volgende stappen uit in de beheerinterface:
 
-    ![Schermopname van de beheerdersinterface, waar u de stappen kunt uitvoeren.](./media/zscaler-internet-access-administrator-tutorial/ic800207.png)
+    ![Schermopname van de beheerdersinterface, waar u de stappen kunt uitvoeren.](./media/zscaler-internet-access-administrator-tutorial/activation.png)
 
     a. Beweeg de muisaanwijzer boven het menu **Activering** linksonder.
 
@@ -183,7 +182,7 @@ Instructies hiervoor vindt u in deze documentatie van Zscaler:
 
 https://help.zscaler.com/zia/adding-admins
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 

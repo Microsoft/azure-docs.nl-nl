@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 08/08/2019
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8b71a7b8ab29e8083a5f119a41ef6de312518301
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9434bd4042798dc05a33401e1884e11a73774936
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85388269"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448333"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-openid-connect-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met OpenID Connect Connect met behulp van Azure Active Directory B2C
 
@@ -28,6 +28,7 @@ ms.locfileid: "85388269"
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C Tenant bevat door te klikken op het filter **Directory + abonnement** in het bovenste menu en de map te kiezen die uw Tenant bevat.
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **Id-providers** en selecteer vervolgens **Nieuwe OpenID Connect-provider**.
+1. Voer een **naam** in. Typ bijvoorbeeld *Contoso*.
 
 ## <a name="configure-the-identity-provider"></a>De ID-provider configureren
 
@@ -35,7 +36,7 @@ Elke OpenID Connect Connect-ID-provider beschrijft een meta gegevens document me
 
 ## <a name="client-id-and-secret"></a>Client-ID en geheim
 
-Om gebruikers toe te staan zich aan te melden, vereist de ID-provider ontwikkel aars om een toepassing in hun service te registreren. Deze toepassing heeft een ID die de **client-id** en een **client geheim**wordt genoemd. Kopieer deze waarden van de ID-provider en geef ze op in de bijbehorende velden.
+Om gebruikers toe te staan zich aan te melden, vereist de ID-provider ontwikkel aars om een toepassing in hun service te registreren. Deze toepassing heeft een ID die de **client-id** en een **client geheim** wordt genoemd. Kopieer deze waarden van de ID-provider en geef ze op in de bijbehorende velden.
 
 > [!NOTE]
 > Het client geheim is optioneel. U moet echter een client geheim invoeren als u de [autorisatie code stroom](https://openid.net/specs/openid-connect-core-1_0.html#CodeFlowAuth)wilt gebruiken, die het geheim gebruikt voor het uitwisselen van de code voor het token.
@@ -71,3 +72,16 @@ Wanneer de aangepaste ID-provider een ID-token terugstuurt naar Azure AD B2C, mo
 * Voor **naam**: Voer de claim in die de *voor naam* van de gebruiker levert.
 * **Naam**: Voer de claim in die de *Achternaam* van de gebruiker levert.
 * **E-mail**: Voer de claim in die het *e-mail adres* van de gebruiker levert.
+
+## <a name="add-the-identity-provider-to-a-user-flow"></a>De ID-provider toevoegen aan een gebruikers stroom 
+
+1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de ID-provider. 
+1. Selecteer de ID-provider die u hebt toegevoegd onder de **id-providers voor sociale netwerken**. Bijvoorbeeld *Contoso*.
+1. Selecteer **Opslaan**.
+1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
+1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer de knop **gebruikers stroom uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden de ID-provider waarvoor u zich wilt aanmelden. Bijvoorbeeld *Contoso*.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.

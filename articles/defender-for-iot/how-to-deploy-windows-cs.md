@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 4d99cdbb2f50d04eff790cdfe675d0f8031c48a9
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: a4223dbc913b7b46cf73c0ed99f607fff67b7e67
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100517175"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448061"
 ---
 # <a name="deploy-a-defender-for-iot-c-based-security-agent-for-windows"></a>Een Defender implementeren voor IoT C#-gebaseerde beveiligings agent voor Windows
 
@@ -27,11 +27,10 @@ In deze hand leiding wordt uitgelegd hoe u de Defender voor IoT C#-beveiligings 
 
 In deze handleiding leert u het volgende:
 
-> [!div class="checklist"]
-> * Installeren
-> * Implementatie controleren
-> * Agent verwijderen
-> * Problemen oplossen
+- Installeren
+- Implementatie controleren
+- Agent verwijderen
+- Problemen oplossen
 
 ## <a name="prerequisites"></a>Vereisten
 

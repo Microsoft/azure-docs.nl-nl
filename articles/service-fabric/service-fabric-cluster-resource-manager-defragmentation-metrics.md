@@ -5,12 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: bba459be4408f4a4bc438bb33b0570a91e84f2cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dee9a845df305b06153d99c2bafe6d74524a139
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75563357"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449200"
 ---
 # <a name="defragmentation-of-metrics-and-load-in-service-fabric"></a>Gegevens defragmenteren en laden in Service Fabric
 De standaard strategie voor het Service Fabric cluster resource manager voor het beheren van metrische gegevens voor belasting in het cluster is om de belasting te verdelen. Ervoor zorgen dat knoop punten gelijkmatig worden gebruikt voor komen van warme en koude vlekken die leiden tot zowel de verwerkings capaciteit als de hoeveelheid verspilde resources. Het distribueren van werk belastingen in het cluster is ook de veiligste op het gebied van verouderde storingen omdat het ervoor zorgt dat een storing een groot percentage van een bepaalde werk belasting niet in beslag neemt. 
@@ -89,7 +89,7 @@ via ClusterConfig.jsop voor zelfstandige implementaties of Template.jsop voor do
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Cluster resource manager heeft man-opties voor het beschrijven van het cluster. Lees dit artikel over [het beschrijven van een service Fabric cluster](service-fabric-cluster-resource-manager-cluster-description.md) voor meer informatie.
+- Cluster resource manager heeft veel opties voor het beschrijven van het cluster. Lees dit artikel over [het beschrijven van een service Fabric cluster](service-fabric-cluster-resource-manager-cluster-description.md) voor meer informatie.
 - Metrische gegevens zijn de manier waarop de Service Fabric cluster resource manager het verbruik en de capaciteit in het cluster beheert. Raadpleeg [dit artikel](service-fabric-cluster-resource-manager-metrics.md) voor meer informatie over metrische gegevens en hoe u deze kunt configureren.
 
 [Image1]:./media/service-fabric-cluster-resource-manager-defragmentation-metrics/balancing-defrag-compared.png

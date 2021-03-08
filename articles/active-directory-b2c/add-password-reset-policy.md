@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b82d573b7d8a65447d75aa8f017c87795bbef6cd
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: fa34e8ea71c307b75a3f345861f8ed99d131b3fd
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102171651"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102447925"
 ---
 # <a name="set-up-a-password-reset-flow-in-azure-active-directory-b2c"></a>Een wachtwoord herstel stroom instellen in Azure Active Directory B2C
 
@@ -203,6 +203,24 @@ In uw gebruikers traject kunt u de verg eten wacht woord-subtraject vertegenwoor
     ```xml
     <ClaimsExchange Id="ForgotPasswordExchange" TechnicalProfileReferenceId="ForgotPassword" />
     ```
+    
+1. Voeg de volgende Orchestration-stap toe tussen de huidige stap en de volgende stap. De nieuwe Orchestration-stap die u toevoegt, controleert of de `isForgotPassword` claim bestaat. Als de claim bestaat, wordt de [subtraject voor het opnieuw instellen van het wacht woord](#add-the-password-reset-sub-journey)aangeroepen. 
+
+    ```xml
+    <OrchestrationStep Order="3" Type="InvokeSubJourney">
+      <Preconditions>
+        <Precondition Type="ClaimsExist" ExecuteActionsIf="false">
+          <Value>isForgotPassword</Value>
+          <Action>SkipThisOrchestrationStep</Action>
+        </Precondition>
+      </Preconditions>
+      <JourneyList>
+        <Candidate SubJourneyReferenceId="PasswordReset" />
+      </JourneyList>
+    </OrchestrationStep>
+    ```
+    
+1. Nadat u de nieuwe indelings stap hebt toegevoegd, moet u de stappen sequentieel opnieuw nummeren zonder een geheel getal tussen 1 en N over te slaan.
 
 ### <a name="set-the-user-journey-to-be-executed"></a>Instellen dat de reis van de gebruiker wordt uitgevoerd
 
@@ -262,7 +280,7 @@ In het volgende diagram:
 1. De gebruiker selecteert de koppeling **uw wacht woord verg eten?** Azure AD B2C retourneert de AADB2C90118-fout code naar de toepassing.
 1. De toepassing verwerkt de fout code en initieert een nieuwe autorisatie aanvraag. De autorisatie aanvraag specificeert de naam van het beleid voor wachtwoord herstel, zoals **B2C_1_pwd_reset**.
 
-![Wachtwoord herstel stroom](./media/add-password-reset-policy/password-reset-flow-legacy.png)
+![Gebruikers stroom voor verouderd wacht woord opnieuw instellen](./media/add-password-reset-policy/password-reset-flow-legacy.png)
 
 Als u een voor beeld wilt bekijken, gaat u naar een [eenvoudig ASP.net](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-DotNet-SUSI)-voor beeld waarin het koppelen van gebruikers stromen wordt gedemonstreerd.
 

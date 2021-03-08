@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 11/09/2020
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 81a1263d0eacbffa77e2e35e4594e23235394183
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e867fee753fb9db530db2b2015c3aea9280bc16f
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108668"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448641"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
 
@@ -357,7 +357,7 @@ Hier volgen de Id's voor een [besturings element](display-control-verification.m
 | Id | Standaardwaarde |
 | -- | ------------- |
 |intro_msg| Verificatie is nood zakelijk. Klik op de knop verzenden.|
-|success_send_code_msg | De verificatie code is verzonden naar het postvak in. Kopieer het naar het invoervak hieronder.|
+|success_send_code_msg | De verificatie code is verzonden. Kopieer het naar het invoervak hieronder.|
 |failure_send_code_msg | Er zijn problemen met het controleren van uw e-mail adres. Geef een geldig e-mail adres op en probeer het opnieuw.|
 |success_verify_code_msg | E-mail adres geverifieerd. U kunt nu door gaan.|
 |failure_verify_code_msg | Er zijn problemen met het controleren van uw e-mail adres. Probeer het opnieuw.|

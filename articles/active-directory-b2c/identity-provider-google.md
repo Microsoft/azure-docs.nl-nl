@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/08/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: c89e7e948b8a48c7e8d43950ffc2748efff6f51b
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: a3b0be062025681af2b03dfd2e57f1af2d99d701
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98953866"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448350"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C
 
@@ -72,7 +72,10 @@ Voer een **Naam** in voor de toepassing. Voer *b2clogin.com* in het gedeelte **g
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
 1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
+1. Selecteer de knop **gebruikers stroom uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden **Google** om u aan te melden met Google-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 
@@ -170,7 +173,14 @@ U kunt een Google-account definiëren als een claim provider door deze toe te vo
 
 [!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
+## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
+
+1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer de knop **nu uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden **Google** om u aan te melden met Google-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 

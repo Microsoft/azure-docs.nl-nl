@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: azure-redhat-openshift
 ms.date: 10/26/2020
-ms.openlocfilehash: da76dab360e0e17afc9e2024358d4a935c6b7336
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 55c1b6f6c6690f0c8f00a8a2469834781f35fb3c
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102209812"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449795"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-4-cluster"></a>Zelfstudie: Een Azure Red Hat OpenShift 4-cluster maken
 
@@ -59,6 +59,12 @@ U hebt ook de juiste Azure Active Directory-machtigingen nodig voor het hulpprog
 
     ```azurecli-interactive
     az provider register -n Microsoft.Storage --wait
+    ```
+    
+1. Registreer de resourceprovider `Microsoft.Authorization`:
+
+    ```azurecli-interactive
+    az provider register -n Microsoft.Authorization --wait
     ```
 
 ### <a name="get-a-red-hat-pull-secret-optional"></a>Een pull-geheim voor Red Hat ophalen (optioneel)

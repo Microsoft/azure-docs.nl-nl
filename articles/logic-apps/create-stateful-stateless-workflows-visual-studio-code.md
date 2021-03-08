@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
 ms.date: 03/05/2021
-ms.openlocfilehash: 941d866fbdea0efc5775bccd08e0235b1629fae0
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: ab2d7c23e69c73c78c852de722733e8f0d09fcec
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102440890"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449727"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -312,6 +312,9 @@ Voordat u uw logische app kunt maken, moet u een lokaal project maken, zodat u u
 U kunt uw eigen ingebouwde connectors maken voor elke service die u nodig hebt met behulp [van het uitbreidings raamwerk van de preview-versie](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272). Net als bij ingebouwde connectors, zoals Azure Service Bus en SQL Server, bieden deze connectors een hogere door Voer, lage latentie en lokale connectiviteit, en worden ze systeem eigen uitgevoerd in hetzelfde proces als de runtime voor de preview-versie.
 
 De ontwerp functie is momenteel alleen beschikbaar in Visual Studio code, maar is niet standaard ingeschakeld. Als u deze connectors wilt maken, moet u het project eerst converteren van een op een op een basis gebaseerd op een op een Node.js op NuGet (op de gebaseerd op basis van een extensie).
+
+> [!IMPORTANT]
+> Deze actie is een eenrichtings bewerking die u niet ongedaan kunt maken.
 
 1. Ga in het deel venster Verkenner naar de hoofdmap van het project, verplaats de muis aanwijzer over een leeg gebied onder alle andere bestanden en mappen, open het snelmenu en selecteer **converteren naar Nuget Logic app project**.
 

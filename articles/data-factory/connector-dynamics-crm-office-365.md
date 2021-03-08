@@ -1,20 +1,20 @@
 ---
 title: Gegevens kopiëren in Dynamics (Common Data Service)
-description: Informatie over het kopiëren van gegevens van micro soft Dynamics CRM of micro soft Dynamics 365 (Common Data Service) naar ondersteunde Sink-gegevens archieven of van ondersteunde brongegevens archieven naar Dynamics CRM of Dynamics 365 door gebruik te maken van een Kopieer activiteit in een data factory-pijp lijn.
+description: Informatie over het kopiëren van gegevens van micro soft Dynamics CRM of micro soft Dynamics 365 (Common Data Service/micro soft Dataverse) naar ondersteunde Sink-gegevens archieven of van ondersteunde brongegevens archieven naar Dynamics CRM of Dynamics 365 door gebruik te maken van een Kopieer activiteit in een data factory-pijp lijn.
 ms.service: data-factory
 ms.topic: conceptual
 ms.author: jingwang
 author: linda33wj
 ms.custom: seo-lt-2019
-ms.date: 02/02/2021
-ms.openlocfilehash: d238a232d719c75244e6f9b825272957d2a4a4bc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/08/2021
+ms.openlocfilehash: b1e7511f7666455592b6d5f463a316c3354ec76b
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380998"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102447432"
 ---
-# <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Dynamics 365 (Common Data Service) of Dynamics CRM door gebruik te maken van Azure Data Factory
+# <a name="copy-data-from-and-to-dynamics-365-common-data-servicemicrosoft-dataverse-or-dynamics-crm-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar Dynamics 365 (Common Data Service/micro soft Dataverse) of Dynamics CRM door gebruik te maken van Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
@@ -27,7 +27,7 @@ Deze connector wordt ondersteund voor de volgende activiteiten:
 - [Kopieer activiteit](copy-activity-overview.md) met [ondersteunde bron-en Sink-matrix](copy-activity-overview.md)
 - [Activiteit Lookup](control-flow-lookup-activity.md)
 
-U kunt gegevens uit Dynamics 365 (Common Data Service) of Dynamics CRM kopiëren naar een ondersteunde Sink-gegevens opslag. U kunt ook gegevens uit een ondersteund brongegevens archief kopiëren naar Dynamics 365 (Common Data Service) of Dynamics CRM. Zie de tabel [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevens archieven die door een Kopieer activiteit worden ondersteund als bronnen en Sinks.
+U kunt gegevens uit Dynamics 365 (Common Data Service/micro soft Dataverse) of Dynamics CRM kopiëren naar een ondersteunde Sink-gegevens opslag. U kunt ook gegevens uit een ondersteund brongegevens archief kopiëren naar Dynamics 365 (Common Data Service) of Dynamics CRM. Zie de tabel [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats) voor een lijst met gegevens archieven die door een Kopieer activiteit worden ondersteund als bronnen en Sinks.
 
 Deze Dynamics-connector ondersteunt Dynamics versie 7 tot en met 9 voor zowel online als on-premises. Met name:
 
@@ -363,6 +363,32 @@ De optimale combi natie van **writeBatchSize** en **parallelCopies** is afhankel
         }
     }
 ]
+```
+
+## <a name="retrieving-data-from-views"></a>Gegevens ophalen uit weer gaven
+
+Als u gegevens wilt ophalen uit Dynamics-weer gaven, moet u de opgeslagen query van de weer gave ophalen en de query gebruiken om de gegevens op te halen.
+
+Er zijn twee entiteiten die verschillende soorten weer gave opslaan: de systeem weergave ' opgeslagen query's ' en ' gebruikers query ' slaat gebruikers weergave op. Als u de gegevens van de weer gaven wilt ophalen, raadpleegt u de volgende FetchXML-query en vervangt u ' TARGETENTITY ' door `savedquery` of `userquery` . Elk entiteits type heeft meer beschik bare kenmerken die u aan de query kunt toevoegen op basis van uw behoeften. Meer informatie over de entiteit [savedquery](https://docs.microsoft.com/dynamics365/customer-engagement/web-api/savedquery) en [userquery](https://docs.microsoft.com/dynamics365/customer-engagement/web-api/userquery).
+
+```xml
+<fetch top="5000" >
+  <entity name="<TARGETENTITY>">
+    <attribute name="name" />
+    <attribute name="fetchxml" />
+    <attribute name="returnedtypecode" />
+    <attribute name="querytype" />
+  </entity>
+</fetch>
+```
+
+U kunt ook filters toevoegen om de weer gaven te filteren. Voeg bijvoorbeeld het volgende filter toe om een weer gave met de naam ' Mijn actieve accounts ' in account entiteit op te halen.
+
+```xml
+<filter type="and" >
+    <condition attribute="returnedtypecode" operator="eq" value="1" />
+    <condition attribute="name" operator="eq" value="My Active Accounts" />
+</filter>
 ```
 
 ## <a name="data-type-mapping-for-dynamics"></a>Toewijzing van gegevens type voor Dynamics

@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/27/2021
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: ea4def3cfaa19e27dc05e955bf97b41976ec2190
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: c9a20305f05b285b29d4a5eaf75116c862f3a6d4
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98953917"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448486"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-azure-ad-b2c-account-from-another-azure-ad-b2c-tenant"></a>Registratie instellen en aanmelden met een Azure AD B2C account van een andere Azure AD B2C Tenant
 
@@ -115,8 +115,10 @@ Om een toepassing te maken.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
 1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
-1. Selecteer *fabrikam* om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
+1. Selecteer de knop **gebruikers stroom uitvoeren** .
+1. Selecteer **fabrikam** om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 
@@ -221,7 +223,15 @@ U kunt Azure AD B2C als een claim provider definiëren door Azure AD B2C toe te 
 
 [!INCLUDE [active-directory-b2c-configure-relying-party-policy](../../includes/active-directory-b2c-configure-relying-party-policy-user-journey.md)]
 
-[!INCLUDE [active-directory-b2c-test-relying-party-policy](../../includes/active-directory-b2c-test-relying-party-policy-user-journey.md)]
+
+## <a name="test-your-custom-policy"></a>Uw aangepaste beleid testen
+
+1. Selecteer uw Relying Party beleid, bijvoorbeeld `B2C_1A_signup_signin` .
+1. Selecteer voor **toepassing** een webtoepassing die u [eerder hebt geregistreerd](troubleshoot-custom-policies.md#troubleshoot-the-runtime). De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Selecteer de knop **nu uitvoeren** .
+1. Selecteer **fabrikam** om u aan te melden met de andere Azure AD B2C Tenant van de registratie-of aanmeldings pagina.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 

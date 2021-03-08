@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: c72fa87201fb0d7fdd526f0e6f4eeb2c35192fc2
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 85a5edc1485cb5a1eeb4428b201380ad9ca89422
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100521642"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449166"
 ---
 # <a name="security-agent-authentication-methods"></a>Verificatie methoden voor beveiligings agenten
 
@@ -26,9 +26,8 @@ In dit artikel worden de verschillende verificatie methoden beschreven die u met
 
 Voor elk apparaat dat in de IoT Hub op Defender voor IoT is geïnstalleerd, is een beveiligings module vereist. Om het apparaat te verifiëren, kan Defender voor IoT een van de volgende twee methoden gebruiken. Kies de methode die het beste werkt voor uw bestaande IoT-oplossing.
 
-> [!div class="checklist"]
-> * SecurityModule optie
-> * Optie apparaat
+- SecurityModule optie
+- Optie apparaat
 
 ## <a name="authentication-methods"></a>Verificatiemethoden
 
@@ -101,7 +100,8 @@ Bewerk _LocalConfiguration.js_ met de volgende para meters:
     "HostName" : ""
 }
 ```
-## <a name="next-steps"></a>Volgende stappen
+
+## <a name="see-also"></a>Zie ook
 
 - [Overzicht van beveiligings agenten](security-agent-architecture.md)
 - [Beveiligings agent implementeren](how-to-deploy-agent.md)

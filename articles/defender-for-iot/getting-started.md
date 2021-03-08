@@ -1,6 +1,6 @@
 ---
-title: Aan de slag
-description: Aan de slag met uitleg over de basis werk stroom voor de implementatie van Defender voor IoT.
+title: 'Snelstartgids: aan de slag'
+description: In deze Quick Start leert u hoe u aan de slag kunt met het inzicht in de basis werk stroom voor de implementatie van Defender voor IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -8,25 +8,29 @@ author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/18/2021
 ms.author: shhazam
-ms.openlocfilehash: c224dc3f919471e769717f308aff9ae58630d421
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 487f9be432c908bf8ee1da858a9e45a18adffb8c
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712756"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102447704"
 ---
-# <a name="get-started-with-defender-for-iot"></a>Aan de slag met Defender voor IoT
+# <a name="quickstart-get-started-with-defender-for-iot"></a>Snelstartgids: aan de slag met Defender voor IoT
 
 Dit artikel bevat een overzicht van de stappen die u moet nemen om Azure Defender voor IoT in te stellen. Voor het proces moet u het volgende doen:
 
 - Registreer uw abonnement en Sens oren in de Azure Defender voor IoT-Portal.
 - Installeer de sensor-en on-premises beheer console-software.
 - Voer de eerste activering van de sensor en de beheer console uit.
+
+## <a name="prerequisites"></a>Vereisten
+
+Geen
 
 ## <a name="permission-requirements"></a>Machtigings vereisten
 
@@ -43,7 +47,7 @@ In de volgende tabel worden de machtigingen voor gebruikers toegang voor Azure D
 | Update prijzen  |  |  ✓ | ✓ | ✓ |
 | Wacht woord herstellen  | ✓  |  ✓ | ✓ | ✓ |
 
-## <a name="1-identify-the-solution-infrastructure"></a>1. de oplossings infrastructuur identificeren
+## <a name="identify-the-solution-infrastructure"></a>De oplossings infrastructuur identificeren
 
 **Verhelder uw netwerk installatie vereisten**
 
@@ -55,7 +59,7 @@ Azure Defender voor IoT ondersteunt zowel fysieke als virtuele implementaties. V
 
 U wordt aangeraden het geschatte aantal apparaten te berekenen dat wordt bewaakt. Later, wanneer u uw Azure-abonnement registreert bij de portal, wordt u gevraagd dit nummer in te voeren. Getallen kunnen worden toegevoegd met intervallen van 1.000 seconden. De aantallen bewaakte apparaten worden *toegewezen apparaten* genoemd.
 
-## <a name="2-register-with-azure-defender-for-iot"></a>2. Registreer u bij Azure Defender voor IoT
+## <a name="register-with-azure-defender-for-iot"></a>Registreren bij Azure Defender voor IoT
 
 Registratie omvat:
 
@@ -72,7 +76,7 @@ Aanmelden:
 
 Zie [niet meer vrijgeven a subscription](how-to-manage-sensors-on-the-cloud.md#offboard-a-subscription)(Engelstalig) voor meer informatie over het niet meer vrijgeven van een abonnement.
 
-## <a name="3-install-and-set-up-the-on-premises-management-console"></a>3. de on-premises beheer console installeren en instellen
+## <a name="install-and-set-up-the-on-premises-management-console"></a>De on-premises beheer console installeren en instellen
 
 Na het verkrijgen van uw on-premises beheer console-apparaat:
 
@@ -88,7 +92,7 @@ Installeren en instellen van:
 1. De on-premises beheer console-software installeren. Zie voor meer informatie [Defender voor IOT-installatie](how-to-install-software.md).
 1. De beheer console activeren en instellen. Zie [uw on-premises beheer console activeren en instellen](how-to-activate-and-set-up-your-on-premises-management-console.md)voor meer informatie.
 
-## <a name="4-onboard-a-sensor"></a>4. een sensor onboarden
+## <a name="onboard-a-sensor"></a>Een sensor onboarden
 
 Een sensor onboarden door deze te registreren bij Azure Defender voor IoT en een sensor activerings bestand te downloaden:
 
@@ -103,7 +107,7 @@ Een sensor onboarden door deze te registreren bij Azure Defender voor IoT en een
 
 Zie voor meer informatie [Sens oren voor onboarding en beheren in de Defender voor IOT-Portal](how-to-manage-sensors-on-the-cloud.md).
 
-## <a name="5-install-and-set-up-the-sensor"></a>5. de sensor installeren en instellen
+## <a name="install-and-set-up-the-sensor"></a>De sensor installeren en instellen
 
 Down load het ISO-pakket vanuit de Azure Defender voor IoT-Portal, installeer de software en stel de sensor in.
 
@@ -113,7 +117,7 @@ Down load het ISO-pakket vanuit de Azure Defender voor IoT-Portal, installeer de
 1. Installeer de sensor software. Zie voor meer informatie [Defender voor IOT-installatie](how-to-install-software.md).
 1. Uw sensor activeren en instellen. Zie [Aanmelden en een sensor activeren](how-to-activate-and-set-up-your-sensor.md)voor meer informatie.
 
-## <a name="6-connect-sensors-to-an-on-premises-management-console"></a>6. Sens oren verbinden met een on-premises beheer console
+## <a name="connect-sensors-to-an-on-premises-management-console"></a>Sens oren verbinden met een on-premises beheer console
 
 Verbind Sens oren met de beheer console om ervoor te zorgen dat:
 
@@ -125,12 +129,12 @@ Het is raadzaam om meerdere Sens oren te groeperen die dezelfde netwerken in é�
 
 Zie [Sens oren verbinden met de on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md#connect-sensors-to-the-on-premises-management-console)voor meer informatie.
 
-## <a name="7-populate-azure-sentinel-with-alert-information-optional"></a>7. Azure Sentinel vullen met waarschuwings gegevens (optioneel)
+## <a name="populate-azure-sentinel-with-alert-information-optional"></a>Azure-Sentinel vullen met waarschuwings gegevens (optioneel)
 
 Waarschuwings gegevens verzenden naar Azure Sentinel door Azure Sentinel te configureren. Zie [uw gegevens verbinden vanuit Defender voor IOT naar Azure Sentinel](how-to-configure-with-sentinel.md).
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
-- [Welkom bij Azure Defender voor IoT](overview.md)
-
-- [Azure Defender voor IoT-architectuur](architecture.md)
+> [!div class="nextstepaction"]
+> [Welkom bij Azure Defender voor IOT](overview.md) 
+>  [Azure Defender voor IOT-architectuur](architecture.md)

@@ -6,14 +6,14 @@ ms.suite: integration
 author: divyaswarnkar
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: article
-ms.date: 01/07/2021
+ms.date: 03/08/2021
 tags: connectors
-ms.openlocfilehash: 388d747da692160ab6d0a89c0c35de348d921486
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 983e0d34692d67302e11c35abac590fefd610b2e
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98016759"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449625"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>SFTP-bestanden bewaken, maken en beheren met behulp van SSH en Azure Logic Apps
 
@@ -51,9 +51,9 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
 
   Segment grootte is gekoppeld aan een verbinding, wat betekent dat u dezelfde verbinding kunt gebruiken voor acties die Chunking ondersteunen en vervolgens voor acties die geen ondersteuning bieden voor Chunking. In dit geval wordt de segment grootte voor acties die geen Chunking-bereik ondersteunen van 5 MB tot 50 MB. In deze tabel ziet u welke SFTP-SSH-acties Chunking ondersteunen:
 
-  | Actie | Ondersteuning voor segmentering | Ondersteuning voor segment grootte negeren |
+  | Bewerking | Ondersteuning voor segmentering | Ondersteuning voor segment grootte negeren |
   |--------|------------------|-----------------------------|
-  | **Bestand kopiëren** | Nee | Niet van toepassing |
+  | **Bestand kopiëren** | No | Niet van toepassing |
   | **Bestand maken** | Ja | Ja |
   | **Map maken** | Niet van toepassing | Niet van toepassing |
   | **Bestand verwijderen** | Niet van toepassing | Niet van toepassing |
@@ -64,7 +64,7 @@ Zie de sectie [SFTP-SSH versus SFTP vergelijken](#comparison) verderop in dit on
   | **Meta gegevens van bestand ophalen met behulp van pad** | Niet van toepassing | Niet van toepassing |
   | **Bestanden in de map weer geven** | Niet van toepassing | Niet van toepassing |
   | **Bestands naam wijzigen** | Niet van toepassing | Niet van toepassing |
-  | **Bestand bijwerken** | Nee | Niet van toepassing |
+  | **Bestand bijwerken** | No | Niet van toepassing |
   ||||
 
 * SFTP-SSH-Triggers bieden geen ondersteuning voor het segmenteren van berichten. Bij het aanvragen van bestands inhoud selecteren triggers alleen bestanden die 15 MB of kleiner zijn. Als u bestanden groter dan 15 MB wilt ophalen, volgt u dit patroon:
@@ -103,10 +103,10 @@ Hier volgen andere belang rijke verschillen tussen de SFTP-SSH-connector en de S
   >
   > * **Vinger afdruk**: MD5
   >
-  > Nadat u de SFTP-SSH-trigger of actie die u wilt toevoegen aan uw logische app hebt toegevoegd, moet u verbindings gegevens voor uw SFTP-server opgeven. Wanneer u uw persoonlijke SSH-sleutel voor deze verbinding opgeeft,*_hoeft u niet hand matig de sleutel_* _ in te voeren of te bewerken. Dit kan ertoe leiden dat de verbinding mislukt. Zorg er in plaats daarvan voor dat u _*_de sleutel kopieert_*_ uit uw persoonlijke SSH-sleutel bestand en _*_plak_*_ die sleutel in de verbindings gegevens. 
+  > Nadat u de SFTP-SSH-trigger of actie die u wilt toevoegen aan uw logische app hebt toegevoegd, moet u verbindings gegevens voor uw SFTP-server opgeven. Wanneer u uw persoonlijke SSH-sleutel voor deze verbinding opgeeft, ***hoeft u de sleutel niet hand matig in te voeren of te bewerken***. Dit kan ertoe leiden dat de verbinding mislukt. Zorg er in plaats daarvan voor dat u ***de sleutel kopieert*** uit uw persoonlijke SSH-sleutel bestand en ***plak*** die sleutel in de verbindings gegevens. 
   > Zie de sectie [verbinding maken met SFTP met SSH verderop in](#connect) dit artikel voor meer informatie.
 
-Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * De logische app waar u toegang wilt krijgen tot uw SFTP-account. [Maak een lege logische app](../logic-apps/quickstart-create-first-logic-app-workflow.md)om te beginnen met een SFTP-SSH-trigger. Als u een SFTP-SSH-actie wilt gebruiken, start u uw logische app met een andere trigger, bijvoorbeeld de trigger voor **terugkeer patroon** .
 
@@ -118,7 +118,7 @@ Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-
 
 SFTP-SSH-triggers pollen het SFTP-bestands systeem en zoeken naar alle bestanden die zijn gewijzigd sinds de laatste poll. Met sommige hulpprogram ma's kunt u de tijds tempel behouden wanneer de bestanden worden gewijzigd. In deze gevallen moet u deze functie uitschakelen zodat de trigger kan werken. Hier volgen enkele algemene instellingen:
 
-| SFTP-client | Actie |
+| SFTP-client | Bewerking |
 |-------------|--------|
 | WinSCP | Ga naar **Opties**  >  **voor keuren**  >  **overdracht**  >  **bewerken**  >  **behouden tijds tempel**  >  **uitschakelen** |
 | FileZilla | Ga naar de **overdrachts**  >  **tijds tempels van overgebrachte bestanden**  >  **uitschakelen** |
@@ -170,7 +170,15 @@ Als uw persoonlijke sleutel zich in de PuTTy-indeling bevindt, waarbij de bestan
 
 ## <a name="considerations"></a>Overwegingen
 
-In deze sectie worden overwegingen beschreven voor het controleren van de triggers en acties van deze connector.
+In deze sectie worden overwegingen beschreven om te controleren wanneer u de triggers en acties van deze connector gebruikt.
+
+<a name="different-folders-trigger-processing-file-storage"></a>
+
+### <a name="use-different-sftp-folders-for-file-upload-and-processing"></a>Andere SFTP-mappen gebruiken voor het uploaden en verwerken van bestanden
+
+Zorg ervoor dat u op uw SFTP-server afzonderlijke mappen gebruikt voor het opslaan van geüploade bestanden en waar de trigger deze bestanden controleert op verwerking. Dit betekent dat u een manier hebt om bestanden tussen deze mappen te verplaatsen. Als dat niet het geval is, kan de trigger onvoorspelbaar zijn, bijvoorbeeld door een wille keurig aantal bestanden over te slaan dat door de trigger wordt uitgevoerd.
+
+Als dit probleem optreedt, verwijdert u de bestanden uit de map die de trigger bewaakt en gebruikt u een andere map om de geüploade bestanden op te slaan.
 
 <a name="create-file"></a>
 
@@ -208,9 +216,9 @@ Als u een bestand op uw SFTP-server wilt maken, kunt u de actie SFTP-SSH- **best
 
    1. Selecteer   >  **kopie** bewerken.
 
-   1. Plak de *volledige* sleutel die u hebt gekopieerd in de eigenschap van de **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels in de SFTP-SSH-trigger of de actie die u hebt toegevoegd.  **_Zorg ervoor dat u_* de sleutel plakt. _*_Voer de sleutel niet hand matig in of bewerk deze_*_.
+   1. Plak de *volledige* sleutel die u hebt gekopieerd in de eigenschap van de **persoonlijke SSH-sleutel** , die ondersteuning biedt voor meerdere regels in de SFTP-SSH-trigger of de actie die u hebt toegevoegd.  **_Zorg ervoor dat u_*de sleutel plakt. _*_Voer de sleutel niet hand matig in of bewerk deze_**.
 
-1. Wanneer u klaar bent met het invoeren van de verbindings gegevens, selecteert u _ * maken * *.
+1. Wanneer u klaar bent met het invoeren van de verbindings gegevens, selecteert u **maken**.
 
 1. Geef nu de gegevens op die nodig zijn voor de geselecteerde trigger of actie en blijf de werk stroom van uw logische app bouwen.
 

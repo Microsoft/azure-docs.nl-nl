@@ -7,12 +7,12 @@ ms.reviewer: jasonwhowell
 ms.service: data-lake-analytics
 ms.topic: overview
 ms.date: 06/23/2017
-ms.openlocfilehash: 4a6ef2821080982e2b34108703bd80574443244a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: f2916b45c04aac3e36e8dfb82a6bb9b332f55286
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445522"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449149"
 ---
 # <a name="what-is-azure-data-lake-analytics"></a>Wat is Azure Data Lake Analytics?
 
@@ -48,6 +48,10 @@ Data Lake Analytics is een rendabele oplossing voor het uitvoeren van big data-w
 ## <a name="works-with-all-your-azure-data"></a>Werkt met alle Azure-gegevens
   
 Data Lake Analytics werkt met Azure Data Lake Storage en biedt daarmee de hoogste prestaties, doorvoer en parallellisering. Het werkt ook met Azure Storage-blobs, Azure SQL Database en Azure Synapse Analytics.
+
+## <a name="in-region-data-residency"></a>Gegevenslocatie in uw regio
+  
+Data Lake Analytics verplaatst of slaat klant gegevens niet uit de regio waarin deze is geïmplementeerd.
 
 
 ## <a name="next-steps"></a>Volgende stappen

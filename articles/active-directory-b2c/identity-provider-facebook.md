@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/19/2021
+ms.date: 03/08/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: e0e71bc0e3a81b5ab2f455224ed2ed4281532d55
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: a43551adf8dbe1a03ac7f7b22d58d63aa8c2c503
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98952671"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448418"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Facebook-account met Azure Active Directory B2C
 
@@ -79,7 +79,11 @@ Als u het aanmelden voor gebruikers met een Facebook-account in Azure Active Dir
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
 1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
+1. Selecteer de knop **gebruikers stroom uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden de optie **Facebook** om u aan te melden met Facebook-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
+
 
 ::: zone-end
 
@@ -118,7 +122,10 @@ Werk het Relying Party (RP)-bestand bij waarmee de door u gemaakte gebruikers tr
 1. Upload het *TrustFrameworkExtensions.xml* bestand naar uw Tenant.
 1. Selecteer **B2C_1A_signup_signin** onder **aangepast beleid**.
 1. Selecteer voor **Select-toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Selecteer **nu uitvoeren** en selecteer Facebook om u aan te melden met Facebook en het aangepaste beleid te testen.
+1. Selecteer de knop **nu uitvoeren** .
+1. Selecteer op de pagina aanmelden of aanmelden de optie **Facebook** om u aan te melden met Facebook-account.
+
+Als het aanmeldings proces is geslaagd, wordt uw browser omgeleid naar `https://jwt.ms` , waarin de inhoud wordt weer gegeven van het token dat is geretourneerd door Azure AD B2C.
 
 ::: zone-end
 

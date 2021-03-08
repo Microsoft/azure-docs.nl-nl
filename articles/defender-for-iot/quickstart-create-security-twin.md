@@ -1,5 +1,5 @@
 ---
-title: Maak een beveiligings module met dubbele
+title: 'Quickstart: Een beveiligingsmoduledubbel maken'
 description: In deze quickstart leert u hoe een Defender for IoT-moduledubbel maakt voor gebruik met Azure Defender for IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -13,16 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/21/2021
 ms.author: shhazam
-ms.openlocfilehash: 68d137caeed91e9dea2dbf3883929d85c25382aa
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 832c8e426b57e6b447ef805f2868a6d42abe3d9d
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523257"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449693"
 ---
-# <a name="create-an-azureiotsecurity-module-twin"></a>Een azureiotsecurity-module maken dubbele
+# <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Quickstart: Een azureiotsecurity-moduledubbel maken
 
 In deze quickstart wordt uitgelegd hoe u afzonderlijke _azureiotsecurity_-moduledubbels maakt voor nieuwe apparaten of massaal moduledubbels maakt voor alle apparaten in een IoT Hub.
+
+## <a name="prerequisites"></a>Vereisten
+
+Geen
 
 ## <a name="understanding-azureiotsecurity-module-twins"></a>Informatie over azureiotsecurity-moduledubbels
 

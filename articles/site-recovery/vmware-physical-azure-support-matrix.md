@@ -3,12 +3,12 @@ title: Ondersteunings matrix voor nood herstel voor VMware/fysiek in Azure Site 
 description: Hierin wordt een overzicht gegeven van de ondersteuning voor nood herstel van virtuele VMware-machines en fysieke servers naar Azure met behulp van Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 3b658a0dd2522b1ca1ad2d46b5f778351b271a27
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: e025b1681306a3bb837a338655dc561e897226c2
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102212418"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449251"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Ondersteunings matrix voor nood herstel van virtuele VMware-machines en fysieke servers naar Azure
 
@@ -295,10 +295,10 @@ On-premises Vm's die naar Azure worden gerepliceerd, moeten voldoen aan de verei
 --- | --- | ---
 Gastbesturingssysteem | Controleer de [ondersteunde besturings systemen](#replicated-machines) voor gerepliceerde machines. | De controle is mislukt als dit niet wordt ondersteund.
 Architectuur van gast besturingssysteem | 64-bits. | De controle is mislukt als dit niet wordt ondersteund.
-Grootte van de besturingssysteemschijf | Maxi maal 2.048 GB. | De controle is mislukt als dit niet wordt ondersteund.
+Grootte van de besturingssysteemschijf | Maxi maal 2.048 GB voor virtuele machines van de eerste generatie. <br> Maxi maal 4.095 GB voor virtuele machines van de 2e generatie. | De controle is mislukt als dit niet wordt ondersteund.
 Aantal besturingssysteemschijven | 1 </br> de opstart-en systeem partitie op verschillende schijven wordt niet ondersteund | De controle is mislukt als dit niet wordt ondersteund.
 Aantal gegevensschijven | 64 of minder. | De controle is mislukt als dit niet wordt ondersteund.
-Grootte van de gegevens schijf | Maxi maal 8.192 GB bij het repliceren naar Managed disk (9,26-versie)<br> Maxi maal 4.095 GB bij het repliceren naar het opslag account </br> Minimale schijf grootte vereist: Mini maal 1024 MB| De controle is mislukt als dit niet wordt ondersteund.
+Grootte van de gegevens schijf | Maxi maal 32.767 GB bij het repliceren naar Managed disk (9,41-versie)<br> Maxi maal 4.095 GB bij het repliceren naar het opslag account </br> Minimale schijf grootte vereist: Mini maal 1024 MB| De controle is mislukt als dit niet wordt ondersteund.
 Netwerkadapters | Meerdere adapters worden ondersteund. |
 Gedeelde VHD | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
 FC-schijf | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.

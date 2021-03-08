@@ -1,6 +1,6 @@
 ---
-title: Overzicht van beveiligings agenten
-description: Inzicht in de architectuur van de beveiligings agent voor de agents die worden gebruikt in de Azure Defender voor IoT-service.
+title: 'Snelstartgids: overzicht van beveiligings agenten'
+description: In deze Quick Start leert u hoe u de architectuur van de beveiligings agent begrijpt voor de agents die in de Azure Defender voor IoT-service worden gebruikt.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -8,19 +8,19 @@ author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: ff837fe88f878c522366b2b6bc19a1ef3954b667
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: aceeaec63eb637002352f5c503f57890033b0381
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820650"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449234"
 ---
-# <a name="security-agent-reference-architecture"></a>Referentie architectuur beveiligings agent
+# <a name="quickstart-security-agent-reference-architecture"></a>Snelstartgids: referentie architectuur voor beveiligings agent
 
 Azure Defender voor IoT biedt referentie architectuur voor beveiligings agenten waarmee beveiligings gegevens via IoT Hub worden geregistreerd, verwerkt, geaggregeerd en verzonden.
 
@@ -41,6 +41,10 @@ Defender voor IoT-beveiligings agenten is ontwikkeld als open-source projecten e
 - [Defender voor IoT C-gebaseerde agent](https://github.com/Azure/Azure-IoT-Security-Agent-C)
 - [Defender voor IoT C#-gebaseerde agent](https://github.com/Azure/Azure-IoT-Security-Agent-CS)
 
+## <a name="prerequisites"></a>Vereisten
+
+Geen
+
 ## <a name="agent-supported-platforms"></a>Door agents ondersteunde platforms
 
 Defender voor IoT biedt verschillende installatie agenten voor 32 bits-en 64-bits Windows en dezelfde voor 32 bits en 64-bits Linux. Zorg ervoor dat u het juiste installatie programma voor de agent hebt voor elk van uw apparaten volgens de volgende tabel:
@@ -57,8 +61,5 @@ In dit artikel hebt u een overzicht op hoog niveau over de architectuur van Defe
 
 Als u aan de slag wilt gaan met Defender voor IoT-implementatie, gebruikt u de volgende artikelen:
 
-- Meer informatie over [verificatie methoden voor beveiligings agenten](concept-security-agent-authentication-methods.md)
-- Een [beveiligings agent](how-to-deploy-agent.md) selecteren en implementeren
-- Raadpleeg de vereisten voor het Defender- [systeem](quickstart-system-prerequisites.md) voor IOT
-- Meer informatie over het [inschakelen van Defender voor IOT-service in uw IOT hub](quickstart-onboard-iot-hub.md)
-- Meer informatie over de service van de [Veelgestelde vragen over Defender voor IOT](resources-frequently-asked-questions.md)
+> [!div class="nextstepaction"]
+> [verificatie methoden voor beveiligings agenten](concept-security-agent-authentication-methods.md)

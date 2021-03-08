@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e40ad90910f7b2244401386fb01a4e4fefe03ca
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4a2a69b5013ab8e1bc4637f21ce484a132d37834
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101647401"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455709"
 ---
 # <a name="configure-the-expiration-policy-for-microsoft-365-groups"></a>Het verloop beleid voor Microsoft 365 groepen configureren
 
@@ -172,7 +172,7 @@ Hier volgen enkele voor beelden van hoe u Power shell-cmdlets kunt gebruiken om 
    Remove-AzureADMSGroupLifecyclePolicy -Id "26fcc232-d1c3-4375-b68d-15c296f1f077"
    ```
   
-De volgende cmdlets kunnen worden gebruikt om het beleid uitvoeriger te configureren. Zie [Power shell-documentatie](/powershell/module/azuread/?branch=master&view=azureadps-2.0-preview#groups)voor meer informatie.
+De volgende cmdlets kunnen worden gebruikt om het beleid uitvoeriger te configureren. Zie [Power shell-documentatie](/powershell/module/azuread/?view=azureadps-2.0-preview#groups)voor meer informatie.
 
 - Get-AzureADMSGroupLifecyclePolicy
 - New-AzureADMSGroupLifecyclePolicy

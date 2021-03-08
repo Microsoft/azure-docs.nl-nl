@@ -1,6 +1,6 @@
 ---
-title: Onboarding Defender voor IoT naar een oplossing op basis van een agent
-description: Ontdek hoe u de Defender for IoT-beveiligingsservice in uw Azure IoT-hub inschakelt.
+title: 'Snelstartgids: onboarding voor IoT naar een oplossing op basis van een agent'
+description: In deze Quick Start leert u hoe u de Defender voor IoT-beveiligings service in uw Azure-IoT Hub kunt voorbereiden en inschakelen.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/20/2021
 ms.author: shhazam
-ms.openlocfilehash: 62ea7b95609f9e1f896852da5c10244d1bd16ce1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d30a03aa7b7715a8792e7b70a0571270c6ad7b37
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049922"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449676"
 ---
-# <a name="onboard-defender-for-iot-to-an-agent-based-solution"></a>Onboarding Defender voor IoT naar een oplossing op basis van een agent
+# <a name="quickstart-onboard-defender-for-iot-to-an-agent-based-solution"></a>Snelstartgids: onboarding voor IoT naar een oplossing op basis van een agent
 
 In dit artikel wordt uitgelegd hoe u de Defender voor IoT-service op uw bestaande IoT Hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](../iot-hub/iot-hub-create-through-portal.md) om aan de slag te gaan.
 
@@ -34,6 +34,10 @@ U kunt uw IoT-beveiliging beheren via de IoT Hub in Defender voor IoT. Met de be
 
 > [!NOTE]
 > Defender for IoT biedt momenteel alleen ondersteuning voor IoT-hubs van de Standard-laag.
+
+## <a name="prerequisites"></a>Vereisten
+
+Geen
 
 ## <a name="onboard-defender-for-iot-to-an-iot-hub"></a>Onboarding Defender voor IoT naar een IoT Hub
 

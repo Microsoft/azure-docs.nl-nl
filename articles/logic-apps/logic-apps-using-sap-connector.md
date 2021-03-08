@@ -7,14 +7,14 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
-ms.date: 03/05/2021
+ms.date: 03/08/2021
 tags: connectors
-ms.openlocfilehash: 2820fe9d885187071924386ef71eb12fd42bbf01
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 3e98dc36b3d58ce5289fccde7b5f5a49973c9de6
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102426447"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454223"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -30,7 +30,7 @@ In dit artikel wordt uitgelegd hoe u vanaf Logic Apps toegang kunt krijgen tot u
 
     * Als u uw logische app uitvoert in een multi tenant Azure, raadpleegt u de [vereisten voor meerdere tenants](#multi-tenant-azure-prerequisites).
 
-    * Als u uw logische app uitvoert in een ISE (Premium-Level[ Integration service Environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), raadpleegt u de [ISE-vereisten](#ise-prerequisites).
+    * Als u uw logische app uitvoert in een ISE (Premium-Level [Integration service Environment)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), raadpleegt u de [ISE-vereisten](#ise-prerequisites).
 
 * Een [SAP-toepassings server](https://wiki.scn.sap.com/wiki/display/ABAP/ABAP+Application+Server) of [SAP-bericht server](https://help.sap.com/saphelp_nw70/helpdata/en/40/c235c15ab7468bb31599cc759179ef/frameset.htm) waartoe u toegang wilt krijgen via Logic apps. Zie [SAP-compatibiliteit](#sap-compatibility)voor meer informatie over welke SAP-servers en SAP-acties u met de connector kunt gebruiken.
 
@@ -633,6 +633,14 @@ Als u IDocs van SAP naar uw logische app wilt verzenden, moet u de volgende mini
     * Voer een naam in voor uw **RFC-doel**.
     
     * Selecteer op het tabblad **technische instellingen** bij **activerings type** de optie **geregistreerd server programma**. Voer een waarde in voor de **programma-id**. In SAP wordt de trigger van uw logische app geregistreerd met behulp van deze id.
+
+    > [!IMPORTANT]
+    > De SAP **-programma-id** is hoofdletter gevoelig. Zorg ervoor dat u voor de **programma-id** consistent dezelfde indeling voor het hoofdletter gebruik gebruikt wanneer u uw logische app en SAP-server configureert. Anders kan het zijn dat de volgende fouten worden weer gegeven in de tRFC-monitor (T-code SM58) wanneer u probeert een IDoc naar SAP te verzenden:
+    >
+    > * **Functie IDOC_INBOUND_ASYNCHRONOUS niet gevonden**
+    > * **Niet-ABAP RFC-client (partner type) wordt niet ondersteund**
+    >
+    > Zie de volgende opmerkingen (aanmelden is vereist) en voor meer informatie over <https://launchpad.support.sap.com/#/notes/2399329> SAP <https://launchpad.support.sap.com/#/notes/353597> .
     
     * Op het tabblad **Unicode** , voor **communicatie type met doel systeem**, selecteert u **Unicode**.
 
@@ -745,6 +753,14 @@ U kunt SAP instellen voor het [verzenden van IDocs in pakketten](https://help.sa
 Hier volgt een voor beeld waarin wordt uitgelegd hoe u afzonderlijke IDocs uit een pakket kunt ophalen met behulp van de [ `xpath()` functie](./workflow-definition-language-functions-reference.md#xpath):
 
 1. Voordat u begint, hebt u een logische app met een SAP-trigger nodig. Als u deze logische app nog niet hebt, volgt u de vorige stappen in dit onderwerp om [een logische app in te stellen met een SAP-trigger](#receive-message-from-sap).
+
+    > [!IMPORTANT]
+    > De SAP **-programma-id** is hoofdletter gevoelig. Zorg ervoor dat u voor de **programma-id** consistent dezelfde indeling voor het hoofdletter gebruik gebruikt wanneer u uw logische app en SAP-server configureert. Anders kan het zijn dat de volgende fouten worden weer gegeven in de tRFC-monitor (T-code SM58) wanneer u probeert een IDoc naar SAP te verzenden:
+    >
+    > * **Functie IDOC_INBOUND_ASYNCHRONOUS niet gevonden**
+    > * **Niet-ABAP RFC-client (partner type) wordt niet ondersteund**
+    >
+    > Zie de volgende opmerkingen (aanmelden is vereist) en voor meer informatie over <https://launchpad.support.sap.com/#/notes/2399329> SAP <https://launchpad.support.sap.com/#/notes/353597> .
 
    Bijvoorbeeld:
 
@@ -1313,11 +1329,18 @@ Als u een probleem ondervindt met dubbele IDocs die worden verzonden naar SAP va
 
 ## <a name="known-issues-and-limitations"></a>Bekende problemen en beperkingen
 
-Dit zijn de bekende problemen en beperkingen voor de beheerde SAP-connector (niet ISE):
+Dit zijn de bekende problemen en beperkingen voor de beheerde SAP-connector (niet ISE): 
 
-* De SAP-trigger biedt geen ondersteuning voor gegevens gateway clusters. In sommige failover-gevallen kan het knoop punt van de gegevens gateway dat met het SAP-systeem communiceert, afwijken van het actieve knoop punt, wat leidt tot onverwacht gedrag. Voor scenario's voor verzenden worden gegevens gateway clusters ondersteund.
+* Over het algemeen ondersteunt de SAP-trigger geen gegevens gateway clusters. In sommige failover-gevallen kan het knoop punt van de gegevens gateway dat met het SAP-systeem communiceert, afwijken van het actieve knoop punt, wat leidt tot onverwacht gedrag.
+
+  * Voor verzend scenario's worden gegevens gateway clusters in de failover-modus ondersteund. 
+
+  * Gegevens gateway clusters in de taakverdelings modus worden niet ondersteund door stateful SAP-acties. Deze acties omvatten **het maken van stateful sessies**, het toewijzen van een **BAPI-trans actie**, het **terugdraaien van de BAPI-trans actie**, het sluiten van een **stateful sessie** en alle acties die een **sessie-id-** waarde opgeven. Stateful communicatie moet op hetzelfde cluster knooppunt van de gegevens gateway blijven staan. 
+
+  * Voor stateful SAP-acties gebruikt u de gegevens gateway in de niet-cluster modus of in een cluster dat alleen voor failover is ingesteld.
 
 * SAP-router teken reeksen worden momenteel niet ondersteund door de SAP-connector. De on-premises gegevens gateway moet bestaan op hetzelfde LAN als het SAP-systeem dat u wilt verbinden.
+
 
 ## <a name="connector-reference"></a>Connector-verwijzing
 

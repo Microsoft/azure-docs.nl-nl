@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory Business-to-Customer (B2C)
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory Business-to-Customer (B2C).
-ms.date: 02/01/2021
+ms.date: 03/08/2021
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,28 @@ ms.workload: identity
 ms.author: mimart
 author: msmimart
 manager: CelesteDG
-ms.openlocfilehash: c4561780a20bb2dfdef39269a49ebf8cb2a29fff
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 00be0a18984f1ad3eacf86a2cf3477d8b0d9065f
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593007"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454614"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: wat is er nieuw
 
 Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../active-directory/fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de B2C-service.
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Multi-factor Authentication (MFA) op basis van de telefoon beveiligen](phone-based-mfa.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Azure Active Directory B2C: codevoorbeelden](code-samples.md)
+- [Gebruikers gedrag bijhouden in Azure AD B2C met behulp van Application Insights](analytics-with-application-insights.md)
+- [Sessiegedrag in Azure Active Directory B2C configureren](session-behavior.md)
 
 ## <a name="january-2021"></a>Januari 2021
 

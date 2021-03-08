@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 02/25/2021
+ms.date: 03/08/2021
 ms.author: victorh
-ms.openlocfilehash: ff5c6961e64deddc8e52dc92a7c34b5b369a44ed
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a3f72d235d6c52ce91ae351c2606ee6cf4285159
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101715561"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453424"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -39,9 +39,8 @@ Azure Firewall Premium Preview bevat de volgende functies:
 - **URL-filtering** : Hiermee wordt de FQDN-filter functie van Azure firewall uitgebreid om een volledige URL te bekijken. Bijvoorbeeld `www.contoso.com/a/c` in plaats van `www.contoso.com` .
 - **Webcategorieën** : beheerders kunnen gebruikers toegang tot website categorieën toestaan of weigeren, zoals gokken websites, websites voor sociale media en anderen.
 
-## <a name="features"></a>Functies
 
-### <a name="tls-inspection"></a>TLS-inspectie
+## <a name="tls-inspection"></a>TLS-inspectie
 
 Azure Firewall Premium beëindigt uitgaande en Oost-West TLS-verbindingen. Binnenkomende TLS-inspectie wordt ondersteund met [Azure-toepassing gateway](../web-application-firewall/ag/ag-overview.md) waarbij End-to-end-versleuteling is toegestaan. Azure Firewall voldoet aan de vereiste waarde toegevoegde beveiligings functies en versleutelt het verkeer dat wordt verzonden naar de oorspronkelijke bestemming opnieuw.
 
@@ -50,23 +49,30 @@ Azure Firewall Premium beëindigt uitgaande en Oost-West TLS-verbindingen. Binne
 
 Zie [Azure Firewall Premium preview-certificaten](premium-certificates.md)voor meer informatie over de vereisten voor een voor beeld van een tussenliggend CA-certificaat voor Azure Firewall Premium.
 
-### <a name="idps"></a>ID
+## <a name="idps"></a>ID
 
 Met een netwerk aanval en preventie systeem (id) kunt u uw netwerk controleren op schadelijke activiteiten, informatie over deze activiteit vastleggen, het rapport rapporteren en eventueel proberen om het te blok keren. 
 
 Azure Firewall Premium preview biedt op hand tekeningen gebaseerde id om snelle detectie van aanvallen mogelijk te maken door te zoeken naar specifieke patronen, zoals byte reeksen in netwerk verkeer, of bekende schadelijke instructie reeksen die worden gebruikt door malware. De id-hand tekeningen worden volledig beheerd en doorlopend bijgewerkt.
 
+De Azure Firewall hand tekeningen/rules zijn:
+- Een nadruk op het nagaan van de daad werkelijke malware, opdracht en controle, cracks en in de wilde schadelijke activiteit gemist door traditionele preventie methoden.
+- Meer dan 35.000 regels in meer dan 50 categorieën.
+    - De categorieën bevatten malware-opdracht en-beheer, DoS-aanvallen, botnets, informatieve gebeurtenissen, misbruik, beveiligings problemen, SCADA-netwerk protocollen, activiteit voor exploit Kit, en meer.
+- 20 tot 40 + nieuwe regels worden elke dag vrijgegeven.
+- Lage valse positieve classificatie door gebruik te maken van de geavanceerde malware sandbox en een wereld wijde sensor netwerk feedback-lus.
+
 Met id kunt u aanvallen in alle poorten en protocollen voor niet-versleuteld verkeer detecteren. Als HTTPS-verkeer echter moet worden geïnspecteerd, kan Azure Firewall de TLS-inspectie mogelijkheid gebruiken om het verkeer te ontsleutelen en om schadelijke activiteiten beter te detecteren.  
 
-Met de id bypass-lijst kunt u geen verkeer filteren op een van de IP-adressen, bereiken en subnetten die zijn opgegeven in de bypass-lijst.  
+Met de id bypass-lijst kunt u geen verkeer filteren op een van de IP-adressen, bereiken en subnetten die zijn opgegeven in de bypass-lijst. 
 
-### <a name="url-filtering"></a>URL-filtering
+## <a name="url-filtering"></a>URL-filtering
 
 URL-filtering breidt de FQDN-filter functie van Azure Firewall uit om een volledige URL te bekijken. Bijvoorbeeld `www.contoso.com/a/c` in plaats van `www.contoso.com` .  
 
 URL-filtering kan worden toegepast op HTTP-en HTTPS-verkeer. Wanneer HTTPS-verkeer wordt geïnspecteerd, kan Azure Firewall Premium Preview de TLS-inspectie mogelijkheid gebruiken om het verkeer te ontsleutelen en de doel-URL uit te pakken om te controleren of toegang is toegestaan. Voor TLS-inspectie is opt-in op toepassings regel niveau vereist. Wanneer deze functie is ingeschakeld, kunt u Url's gebruiken voor filteren met HTTPS. 
 
-### <a name="web-categories"></a>Webcategorieën
+## <a name="web-categories"></a>Webcategorieën
 
 Met webcategorieën kunnen beheerders gebruikers toegang tot website categorieën toestaan of weigeren, zoals gokken websites, sociale media websites en anderen. Webcategorieën worden ook opgenomen in Azure Firewall standaard, maar het is beter te verfijnen in Azure Firewall Premium preview. In tegens telling tot de mogelijkheden van webcategorieën in de standaard-SKU die overeenkomt met de categorie op basis van een FQDN, komt de Premium-SKU overeen met de categorie volgens de volledige URL voor HTTP-en HTTPS-verkeer. 
 
@@ -78,11 +84,11 @@ Als Azure Firewall bijvoorbeeld een HTTPS-aanvraag onderschept voor `www.google.
 
 De categorieën zijn ingedeeld op basis van Ernst onder **aansprakelijkheid**, **hoge band breedte**, **bedrijfs gebruik**, **productiviteits verlies**, **Algemeen surfen** en niet- **gecategoriseerd**.
 
-#### <a name="category-exceptions"></a>Categorie uitzonderingen
+### <a name="category-exceptions"></a>Categorie uitzonderingen
 
 U kunt uitzonde ringen maken voor de Web Category-regels. Maak een afzonderlijke regel verzameling voor toestaan of weigeren met een hogere prioriteit in de regel verzamelings groep. U kunt bijvoorbeeld een regel verzameling configureren die `www.linkedin.com` met prioriteit 100 is toegestaan, met een regel verzameling die **sociale netwerken** met prioriteit 200 weigert. Hiermee maakt u de uitzonde ring voor de website van de vooraf gedefinieerde categorie voor **sociale netwerken** .
 
-#### <a name="categorization-change"></a>Wijziging categorisatie
+### <a name="categorization-change"></a>Wijziging categorisatie
 
 U kunt de wijziging van een categorisatie aanvragen als u:
 

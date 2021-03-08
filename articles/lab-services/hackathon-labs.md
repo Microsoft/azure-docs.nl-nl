@@ -3,19 +3,19 @@ title: Azure Lab Services gebruiken voor hackathon
 description: In dit artikel wordt beschreven hoe u Azure Lab Services gebruikt voor het maken van Labs die u kunt gebruiken voor het uitvoeren van hackathons trappen.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: a0917ede4502dcbb59d1a30b7985b06c06975599
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: d4648def48557d70547ef7d41d6c3e516671849e
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602577"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452727"
 ---
 # <a name="use-azure-lab-services-for-your-next-hackathon"></a>Azure Lab Services gebruiken voor uw volgende hackathon
 Azure Lab Services is lichter ontworpen en eenvoudig te gebruiken, zodat u snel een nieuw Lab van virtuele machines (Vm's) kunt maken voor uw Hackathon.  Gebruik de volgende controle lijst om ervoor te zorgen dat uw hackathon zo soepel mogelijk verloopt. Deze controle lijst moet worden ingevuld door uw IT-afdeling of faculteit die verantwoordelijk is voor het maken en beheren van uw hackathon-Lab. 
 
 Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zowel een Lab-account als uw Lab ten minste enkele dagen vóór het begin van uw hackathon worden gemaakt. Volg ook de onderstaande instructies:
 
-## <a name="guidance"></a>Richtlijnen
+## <a name="guidance"></a>Hulp
 
 - **Maak het lab in een regio of locatie die het dichtst bij de deel nemers** ligt. 
 
@@ -83,7 +83,7 @@ In deze sectie vindt u een overzicht van de stappen voor het volt ooien van de d
     - Referenties die moeten worden gebruikt om verbinding te maken met de computer. Deze stap is alleen van toepassing als uw Lab gebruikmaakt van een installatie kopie op basis van Windows en u alle Vm's hebt geconfigureerd voor het gebruik van hetzelfde wacht woord.
     - Instructies over hoe deel nemers SSH en/of RDP aan hun machines.
 
-        Zie [instructies voor het verzenden van uitnodigingen voor gebruikers en het](how-to-configure-student-usage.md?branch=master#send-invitations-to-users) [verbinden met virtuele Linux-machines](how-to-use-remote-desktop-linux-student.md?branch=master)voor meer informatie. 
+        Zie [instructies voor het verzenden van uitnodigingen voor gebruikers en het](how-to-configure-student-usage.md#send-invitations-to-users) [verbinden met virtuele Linux-machines](how-to-use-remote-desktop-linux-student.md)voor meer informatie. 
 
 ## <a name="next-steps"></a>Volgende stappen
 Begin met het maken van een Lab-account in Labs door de volgende instructies te volgen in het artikel: [zelf studie: een Lab-account instellen met Azure Lab Services](tutorial-setup-lab-account.md).

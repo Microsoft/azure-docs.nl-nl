@@ -6,13 +6,13 @@ ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: overview
-ms.date: 02/14/2021
-ms.openlocfilehash: e72e312e932e71d4dac8532983c2c96ba105ba3b
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.date: 03/08/2021
+ms.openlocfilehash: d45dae8b0b3725555bd83a05032339671a9595be
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102439473"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454361"
 ---
 # <a name="azure-security-center-free-vs-azure-defender-enabled"></a>Azure Security Center gratis VS Azure Defender ingeschakeld
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
@@ -38,20 +38,16 @@ Security Center wordt op twee manieren aangeboden:
 
 ## <a name="faq---pricing-and-billing"></a>Veelgestelde vragen - Prijzen en facturering 
 
-- [Azure Security Center gratis VS Azure Defender ingeschakeld](#azure-security-center-free-vs-azure-defender-enabled)
-  - [Wat zijn de voor delen van het inschakelen van Azure Defender?](#what-are-the-benefits-of-enabling-azure-defender)
-  - [Veelgestelde vragen - Prijzen en facturering](#faq---pricing-and-billing)
-    - [Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?](#how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center)
-    - [Welke abonnementen worden aangeboden in Security Center?](#what-are-the-plans-offered-by-security-center)
-    - [Hoe schakel ik Azure Defender in voor mijn abonnement?](#how-do-i-enable-azure-defender-for-my-subscription)
-    - [Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
-    - [Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
-    - [Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
-    - [Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
-    - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
-    - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
-    - [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
-  - [Volgende stappen](#next-steps)
+- [Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?](#how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center)
+- [Welke abonnementen worden aangeboden in Security Center?](#what-are-the-plans-offered-by-security-center)
+- [Hoe schakel ik Azure Defender in voor mijn abonnement?](#how-do-i-enable-azure-defender-for-my-subscription)
+- [Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
+- [Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
+- [Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
+- [Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
+- [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
+- [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them)
+- [Wordt de gratis gegevensopname van 500 MB berekend voor een gehele werkruimte of uitsluitend per machine?](#is-the-500-mb-free-data-ingestion-calculated-for-an-entire-workspace-or-strictly-per-machine)
 
 ### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Security Center heeft ingeschakeld?
 Azure-abonnementen kunnen meerdere beheerders met machtigingen voor het wijzigen van prijsinstellingen hebben. Als u wilt weten welke gebruiker een wijziging heeft aangebracht, gebruikt u het Azure-activiteitenlogboek.

@@ -7,16 +7,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/15/2020
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: b2c-support
-ms.openlocfilehash: c12a171faaf069cc81aa5f467642dba6616a866f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 3a5afcd8c0ef0c31353cd2369ead332675c9877f
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102033721"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453118"
 ---
 # <a name="localization-element"></a>Lokalisatie-element
 
@@ -147,7 +147,7 @@ Het **LocalizedString** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Type | Ja | Mogelijke waarden: [ClaimsProvider](#claimsprovider), [claim](#claimtype)type, [errorMessage](#errormessage), [GetLocalizedStringsTransformationClaimType](#getlocalizedstringstransformationclaimtype), [predicaat](#predicate), [InputValidation](#inputvalidation)of [UxElement](#uxelement).   | 
+| Type | Ja | Mogelijke waarden: [ClaimsProvider](#claimsprovider), [claim](#claimtype)type, [errorMessage](#errormessage), [GetLocalizedStringsTransformationClaimType](#getlocalizedstringstransformationclaimtype), [FormatLocalizedStringTransformationClaimType](#formatlocalizedstringtransformationclaimtype), [predicaat](#predicate), [InputValidation](#inputvalidation)of [UxElement](#uxelement).   | 
 | ElementId | Ja | Als **element type** is ingesteld op `ClaimType` , `Predicate` , of `InputValidation` , bevat dit element een verwijzing naar een claim type dat al is gedefinieerd in de sectie ClaimsSchema. |
 | StringId | Ja | Als **element type** is ingesteld op `ClaimType` , bevat dit element een verwijzing naar een kenmerk van een claim type. Mogelijke waarden: `DisplayName` , `AdminHelpText` of `PatternHelpText` . De `DisplayName` waarde wordt gebruikt om de weergave naam van de claim in te stellen. De `AdminHelpText` waarde wordt gebruikt om de Help-tekst naam van de claim gebruiker in te stellen. De `PatternHelpText` waarde wordt gebruikt om de Help-tekst van het claim patroon in te stellen. Als element **type** is ingesteld op `UxElement` , bevat dit element een verwijzing naar een kenmerk van een element van een gebruikers interface. Als element **type** is ingesteld op `ErrorMessage` , wordt met dit element de id van een fout bericht opgegeven. Zie [lokalisatie teken reeks-id's](localization-string-ids.md) voor een volledige lijst met `UxElement` id's.|
 
@@ -232,6 +232,31 @@ In het volgende voor beeld ziet u hoe het fout bericht UserMessageIfClaimsPrinci
 
 ```xml
 <LocalizedString ElementType="ErrorMessage" StringId="UserMessageIfClaimsPrincipalAlreadyExists">The account you are trying to create already exists, please sign-in.</LocalizedString>
+```
+
+### <a name="formatlocalizedstringtransformationclaimtype"></a>FormatLocalizedStringTransformationClaimType
+
+De FormatLocalizedStringTransformationClaimType-waarde wordt gebruikt om claims in een gelokaliseerde teken reeks op te maken. Zie [FormatLocalizedString claims Transformation](string-transformations.md#formatlocalizedstring) (Engelstalig) voor meer informatie.
+
+
+```xml
+<ClaimsTransformation Id="SetResponseMessageForEmailAlreadyExists" TransformationMethod="FormatLocalizedString">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="stringFormatId" DataType="string" Value="ResponseMessge_EmailExists" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="responseMsg" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+In het volgende voor beeld ziet u hoe u de teken reeks indeling van de FormatLocalizedStringTransformationClaimType-claim transformatie kunt lokaliseren.
+
+```xml
+<LocalizedString ElementType="FormatLocalizedStringTransformationClaimType" StringId="ResponseMessge_EmailExists">The email '{0}' is already an account in this organization. Click Next to sign in with that account.</LocalizedString>
 ```
 
 ### <a name="getlocalizedstringstransformationclaimtype"></a>GetLocalizedStringsTransformationClaimType

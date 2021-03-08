@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 8c2ea69d38f354455b7957ddc7b6ff41da30100b
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: f4477a09f151695b826d0becf28e92ceaf3f9e85
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102210764"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453203"
 ---
 # <a name="azure-queue-storage-trigger-for-azure-functions"></a>Azure-wachtrij opslag trigger voor Azure Functions
 
@@ -419,7 +419,7 @@ Open de wachtrij bericht via teken reeks parameter die overeenkomt met de naam d
 
 # <a name="python"></a>[Python](#tab/python)
 
-Open het wachtrij bericht via de para meter getypeerd als [QueueMessage](/python/api/azure-functions/azure.functions.queuemessage?view=azure-python&preserve-view=true).
+Open het wachtrij bericht via de para meter getypeerd als [QueueMessage](/python/api/azure-functions/azure.functions.queuemessage).
 
 ---
 
@@ -427,7 +427,7 @@ Open het wachtrij bericht via de para meter getypeerd als [QueueMessage](/python
 
 De trigger van de wachtrij biedt verschillende [Eigenschappen van meta gegevens](./functions-bindings-expressions-patterns.md#trigger-metadata). Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. De eigenschappen zijn leden van de klasse [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage) .
 
-|Eigenschap|Type|Description|
+|Eigenschap|Type|Beschrijving|
 |--------|----|-----------|
 |`QueueTrigger`|`string`|Nettolading van de wachtrij (als een geldige teken reeks). Als de nettolading van het wachtrij bericht een teken reeks is, `QueueTrigger` heeft dezelfde waarde als de variabele met de naam van de `name` eigenschap in *function.jsop*.|
 |`DequeueCount`|`int`|Het aantal keren dat dit bericht in de wachtrij is geplaatst.|

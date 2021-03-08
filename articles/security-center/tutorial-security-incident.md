@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: aeabfb42d378f22ff660214517fea031d678b208
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 41f96202bffc0169be9705cd7e67c1eedbecbc05
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635571"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453441"
 ---
 # <a name="tutorial-triage-investigate-and-respond-to-security-alerts"></a>Zelfstudie: Beveiligingswaarschuwingen sorteren, onderzoeken en erop reageren
 Security Center analyseert voortdurend de werkbelasting van uw hybride cloud met behulp van geavanceerde analysen en bedreigingsinformatie, om u te waarschuwen voor mogelijk schadelijke activiteiten in uw cloudresources. U kunt ook waarschuwingen van andere beveiligingsproducten en -services integreren in Security Center. Wanneer een waarschuwing wordt gegeven, moet snel actie worden ondernomen om het mogelijke beveiligingsprobleem te onderzoeken en tegen te gaan. 
@@ -112,7 +112,7 @@ Als u niet van plan bent om door te gaan of als u een van deze functies wilt uit
 1. Selecteer het betreffende abonnement.
 1. Selecteer **Azure Defender uit** om te downgraden.
 1. Als u automatische inrichting wilt uitschakelen, opent u de pagina **Gegevensverzameling** en stelt u **Automatische inrichting** in op **Uit**.
-4. Selecteer **Opslaan**.
+1. Selecteer **Opslaan**.
 
 >[!NOTE]
 > Wanneer u automatische inrichting uitschakelt, wordt de Log Analytics-agent niet verwijderd van virtuele Azure-machines waarop de agent al staat. Door automatische inrichting uit te schakelen, wordt de beveiligingsbewaking voor uw resources beperkt.

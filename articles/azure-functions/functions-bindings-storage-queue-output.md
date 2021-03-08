@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, cc996988-fb4f-47, devx-track-python
-ms.openlocfilehash: 778424cbb81f8fe51a57dd41d94aa9015ffad94e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5d94625e3eb121e556b28038cf59626be1332966
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381508"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455802"
 ---
 # <a name="azure-queue-storage-output-bindings-for-azure-functions"></a>Azure Queue Storage-uitvoer bindingen voor Azure Functions
 
@@ -480,7 +480,7 @@ Er zijn twee opties voor het uitvoeren van een wachtrij bericht van een functie:
 
 - **Retourwaarde**: stel de eigenschap `name` in *function. json* in op `$return`. Met deze configuratie wordt de retour waarde van de functie persistent gemaakt als een wachtrij-opslag bericht.
 
-- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out?view=azure-python&preserve-view=true). De waarde die is door gegeven aan, `set` wordt persistent gemaakt als een wachtrij-opslag bericht.
+- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out). De waarde die is door gegeven aan, `set` wordt persistent gemaakt als een wachtrij-opslag bericht.
 
 ---
 

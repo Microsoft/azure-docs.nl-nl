@@ -6,12 +6,12 @@ ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: c2bde64c17520f4cf66ddecd9fc55a9bdd9edc37
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 02abdd752528ce28642b6228648062ed961d5ae3
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020584"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452387"
 ---
 # <a name="event-hubs-output-from-azure-stream-analytics"></a>Event Hubs uitvoer van Azure Stream Analytics
 
@@ -37,7 +37,7 @@ De volgende tabel bevat de para meters die nodig zijn voor het configureren van 
 
 ## <a name="partitioning"></a>Partitionering
 
-Partitioneren varieert, afhankelijk van de uitlijning van de partitie. Wanneer de partitie sleutel voor Event Hub uitvoer gelijk wordt uitgelijnd met de stap upstream (vorige), is het aantal schrijvers hetzelfde als het aantal partities in Event Hub uitvoer. Elke schrijver maakt gebruik van de [EventHubSender-klasse](/dotnet/api/microsoft.servicebus.messaging.eventhubsender?view=azure-dotnet&preserve-view=true) voor het verzenden van gebeurtenissen naar de specifieke partitie. Wanneer de partitie sleutel voor Event Hub uitvoer niet is afgestemd op de stap van de upstream (vorige), is het aantal schrijvers hetzelfde als het aantal partities in die vorige stap. Elke schrijver maakt gebruik van de [SendBatchAsync-klasse](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.sendasync?view=azure-dotnet&preserve-view=true) in **EventHubClient** om gebeurtenissen te verzenden naar alle uitvoer partities. 
+Partitioneren varieert, afhankelijk van de uitlijning van de partitie. Wanneer de partitie sleutel voor Event Hub uitvoer gelijk wordt uitgelijnd met de stap upstream (vorige), is het aantal schrijvers hetzelfde als het aantal partities in Event Hub uitvoer. Elke schrijver maakt gebruik van de [EventHubSender-klasse](/dotnet/api/microsoft.servicebus.messaging.eventhubsender) voor het verzenden van gebeurtenissen naar de specifieke partitie. Wanneer de partitie sleutel voor Event Hub uitvoer niet is afgestemd op de stap van de upstream (vorige), is het aantal schrijvers hetzelfde als het aantal partities in die vorige stap. Elke schrijver maakt gebruik van de [SendBatchAsync-klasse](/dotnet/api/microsoft.servicebus.messaging.eventhubclient.sendasync) in **EventHubClient** om gebeurtenissen te verzenden naar alle uitvoer partities. 
 
 ## <a name="output-batch-size"></a>Grootte van uitvoer batch
 

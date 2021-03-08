@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 7e72f628bf328a3b93e81c60aa65b8c2495f7f2b
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 86a373844b370cc9f9ce31dc65b2039a81279803
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101095251"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454767"
 ---
 # <a name="what-is-azure-iot-hub"></a>Wat is Azure IoT Hub?
 
@@ -30,7 +30,7 @@ De mogelijkheden van IoT Hub helpen u bij het bouwen van schaalbare, complete Io
 
 ## <a name="scale-your-solution"></a>Uw oplossing schalen
 
-IoT Hub kan worden opgeschaald naar miljoenen gelijktijdig verbonden apparaten en miljoenen gebeurtenissen per seconde om zo uw IoT-workloads te ondersteunen. Zie [IoT Hub schalen](iot-hub-scaling.md?branch=release-iotbasic) voor meer informatie over het schalen van uw IoT-hub. Bekijk de [pagina met prijzen](https://azure.microsoft.com/pricing/details/iot-hub/) voor meer informatie over de verschillende lagen service die door IoT Hub wordt geboden en hoe u het best kunt voldoen aan uw schaalbaarheidsbehoeften.
+IoT Hub kan worden opgeschaald naar miljoenen gelijktijdig verbonden apparaten en miljoenen gebeurtenissen per seconde om zo uw IoT-workloads te ondersteunen. Zie [IoT Hub schalen](iot-hub-scaling.md) voor meer informatie over het schalen van uw IoT-hub. Bekijk de [pagina met prijzen](https://azure.microsoft.com/pricing/details/iot-hub/) voor meer informatie over de verschillende lagen service die door IoT Hub wordt geboden en hoe u het best kunt voldoen aan uw schaalbaarheidsbehoeften.
 
 ## <a name="secure-your-communications"></a>Uw communicatie beveiligen
 

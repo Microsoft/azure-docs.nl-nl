@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Site Recovery
 description: Biedt een samen vatting van nieuwe functies en de meest recente updates in de Azure Site Recovery-service.
 ms.topic: conceptual
 ms.date: 01/26/2021
-ms.openlocfilehash: 51d54ca4d46af3b9e0746f36114fadc47edd5b1f
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 423fbc563878d0cc2a63a5366d2226281a204e87
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98805056"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454590"
 ---
 # <a name="whats-new-in-site-recovery"></a>Nieuw in Site Recovery
 
@@ -22,6 +22,7 @@ Voor Site Recovery-onderdelen ondersteunen we N-4 versies, waarbij N de meest re
 
 **Bijwerken** |  **Unified Setup** | **Eicellen van de configuratie server** | **Mobility Service-agent** | **Site Recovery provider** | **Recovery Services-agent**
 --- | --- | --- | --- | --- | ---
+[Pakket 54](https://support.microsoft.com/topic/update-rollup-54-for-azure-site-recovery-50873c7c-272c-4a7a-b9bb-8cd59c230533)  | 9.41.5888.1 | 5.1.6620.0 | 9.41.5888.1 | 5.1.6620.0  | 2.0.9202.0
 [Pakket 53](https://support.microsoft.com/topic/update-rollup-53-for-azure-site-recovery-060268ef-5835-bb49-7cbc-e8c1e6c6e12a)  | 9.40.5850.1 | 5.1.6537.0 | 9.40.5850.1 | 5.1.6537.0  | 2.0.9202.0
 [Pakket 52](https://support.microsoft.com/help/4597409/)  | 9.39.5796.1 | 5.1.6458.0 | 9.39.5796.1 | 5.1.6458.0  | 2.0.9196.0
 [Pakket 51](https://support.microsoft.com/help/4590304)  | 9.38.5761.1 | 5.1.6400.0 | 9.38.5761.1 | 5.1.6400.0  | 2.0.9193.0
@@ -30,6 +31,21 @@ Voor Site Recovery-onderdelen ondersteunen we N-4 versies, waarbij N de meest re
 
 
 Meer [informatie](service-updates-how-to.md) over installatie en ondersteuning van de update.
+
+## <a name="updates-february-2021"></a>Updates (februari 2021)
+
+### <a name="update-rollup-54"></a>Update pakket 54
+
+[Update pakket 54](https://support.microsoft.com/topic/update-rollup-54-for-azure-site-recovery-50873c7c-272c-4a7a-b9bb-8cd59c230533) bevat de volgende updates:
+
+**Bijwerken** | **Details**
+--- | ---
+**Providers en agents** | Updates van Site Recovery agents en providers zoals beschreven in het pakket.
+**Problemen/verbeteringen van het probleem** | Een aantal oplossingen en verbeteringen zoals beschreven in de samen telling. 
+**Herstel na nood gevallen voor Azure VM** | Zones voor herstel na nood gevallen met behulp van Azure Site Recovery is nu beschikbaar in 4 meer regio's: Europa-noord, VS-Oost, VS-Midden en VS-West 2.<br/>
+**VMware-VM/fysieke nood herstel naar Azure** | De update bevat Portal ondersteuning voor het selecteren van nabijheids locatie groepen voor VMware/fysieke machines na het inschakelen van replicatie.<br/><br/> Het beveiligen van VMware-machines met de grootte van de gegevens schijf tot 32 TB ISS wordt nu ondersteund.
+**Herstel na nood geval voor Hyper-V naar Azure** | De update bevat Portal ondersteuning voor het selecteren van nabijheids locatie groepen voor Hyper-V-machines na het inschakelen van replicatie.
+
 
 ## <a name="updates-january-2021"></a>Updates (januari 2021)
 

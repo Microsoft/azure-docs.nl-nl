@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassing inrichten
 description: Nieuwe en bijgewerkte documentatie voor het inrichten van de Azure Active Directory-toepassing.
-ms.date: 02/01/2021
+ms.date: 03/08/2021
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -9,16 +9,27 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: daveba
-ms.openlocfilehash: a127552c47b9e1ee86d2164926971c8628367dc0
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: abee58607a5492548e4d64f44c15fd365876f3f5
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99255998"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453678"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory toepassing inrichten: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie over het inrichten van toepassingen. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de inrichtings service.
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Hoe Azure Active Directory inrichting integreert met workday](workday-integration-reference.md)
+- [Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory](customize-application-attributes.md)
+- [Wat is geautomatiseerde gebruikersinrichting voor SaaS-toepassing in Azure AD?](user-provisioning.md)
+- [Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen](use-scim-to-build-users-and-groups-endpoints.md)
+- [Zelf studie: inrichten opstellen en plannen voor een SCIM-eind punt](use-scim-to-provision-users-and-groups.md)
+- [Hoe inrichting werkt](how-provisioning-works.md)
 
 ## <a name="january-2021"></a>Januari 2021
 

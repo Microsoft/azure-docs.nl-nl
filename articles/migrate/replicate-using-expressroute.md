@@ -6,12 +6,12 @@ ms.author: deseelam
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 02/22/2021
-ms.openlocfilehash: b52d61c2828ddf5c04ab943d73964d236c9017c1
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 5dd27e4502ac70ef10f2623ed6dfb2f62de37f06
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098839"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102448780"
 ---
 # <a name="replicate-data-over-expressroute-with-azure-migrate-server-migration"></a>Gegevens repliceren via ExpressRoute met Azure Migrate: Server migratie
 
@@ -72,6 +72,7 @@ Het opslag account maken en vinden:
 ![Weer gave resource groep](./media/replicate-using-expressroute/storage-account-name.png)
 
 > [!Tip]
+>  
 > Als u meer dan één opslag account met het voor voegsel **' LSA '** in uw resource groep hebt, kunt u het opslag account controleren door te navigeren naar het menu replicatie-instellingen en doel configuratie voor een van de replicerende vm's in het project. <br/> 
 > ![Overzicht van replicatie-instellingen](./media/replicate-using-expressroute/storage-account.png)
 
@@ -125,8 +126,9 @@ Als u niet de optie hebt geselecteerd om te integreren met een privé-DNS-zone o
 
     ![createprivatedns](./media/replicate-using-expressroute/create-private-dns.png)
 
-    a.  Selecteer op de pagina **privé-DNS zones** de knop **+ toevoegen** om te beginnen met het maken van een nieuwe zone.  
-    b.  Vul op de pagina **persoonlijke DNS-zone maken** de vereiste gegevens in. Voer de naam van de privé-DNS-zone in als _privatelink_. blob.core.Windows.net. c. Ga naar het tabblad **controleren en maken** om de DNS-zone te controleren en te maken.
+    a. Selecteer op de pagina **privé-DNS zones** de knop **+ toevoegen** om te beginnen met het maken van een nieuwe zone.  
+    b. Vul op de pagina **persoonlijke DNS-zone maken** de vereiste gegevens in. Voer de naam van de privé-DNS-zone in als _privatelink_. blob.core.Windows.net.  
+    c. Ga naar het tabblad **controleren en maken** om de DNS-zone te controleren en te maken.   
 
 2. Koppel de privé-DNS-zone aan uw virtuele netwerk.  
 

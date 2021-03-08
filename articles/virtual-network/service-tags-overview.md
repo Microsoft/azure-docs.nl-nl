@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2020
 ms.author: kumud
 ms.reviewer: kumud
-ms.openlocfilehash: 1186715003abef387343bb2b6cb71d56490c519d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 18b79b105bcc4b5b0b65fc6f7d6b602ffff55561
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101667836"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455819"
 ---
 # <a name="virtual-network-service-tags"></a>Service tags van virtueel netwerk
 <a name="network-service-tags"></a>
@@ -131,7 +131,7 @@ U kunt de huidige informatie over de servicetag en het bereik ophalen om op te n
 U kunt de huidige lijst met Service Tags op een programmatische manier ophalen in combi natie met details van IP-adres bereik:
 
 - [REST](/rest/api/virtualnetwork/servicetags/list)
-- [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2)
+- [Azure PowerShell](/powershell/module/az.network/Get-AzNetworkServiceTag)
 - [Azure-CLI](/cli/azure/network#az-network-list-service-tags)
 
 > [!NOTE]
@@ -153,7 +153,7 @@ De IP-adresbereiken in deze bestanden bevinden zich in CIDR-notatie.
 
 ### <a name="tips"></a>Tips 
 - U kunt updates van de ene publicatie naar de volgende detecteren door verhoogde *changeNumber* -waarden in het JSON-bestand op te nemen. Elke subsectie (bijvoorbeeld **opslag. westus**) heeft een eigen *changeNumber* die wordt verhoogd wanneer er wijzigingen optreden. Het hoogste niveau van de *changeNumber* van het bestand wordt verhoogd wanneer een van de subsecties wordt gewijzigd.
-- Voor voor beelden van het parseren van de servicetag gegevens (bijvoorbeeld het ophalen van alle adresbereiken voor opslag in Westus), raadpleegt u de Help-documentatie voor de [service label detectie-API](/powershell/module/az.network/Get-AzNetworkServiceTag?viewFallbackFrom=azps-2.3.2) .
+- Voor voor beelden van het parseren van de servicetag gegevens (bijvoorbeeld het ophalen van alle adresbereiken voor opslag in Westus), raadpleegt u de Help-documentatie voor de [service label detectie-API](/powershell/module/az.network/Get-AzNetworkServiceTag) .
 - Wanneer er nieuwe IP-adressen aan service tags worden toegevoegd, worden ze niet ten minste één week in azure gebruikt. Dit geeft u tijd om systemen bij te werken die mogelijk de IP-adressen moeten volgen die aan service tags zijn gekoppeld.
 
 ## <a name="next-steps"></a>Volgende stappen

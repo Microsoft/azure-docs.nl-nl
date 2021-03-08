@@ -9,14 +9,14 @@ ms.topic: include
 ms.date: 08/02/2019
 ms.author: cshoe
 ms.custom: include file
-ms.openlocfilehash: f4e6d5fb41769544b7be0f689447364988d0380d
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: c6b038297945ca900508a822460e1358a2524d23
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95998826"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455908"
 ---
-De blob-trigger biedt verschillende metagegevenseigenschappen. Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. Deze waarden hebben dezelfde semantiek als het [CloudBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblob?view=azure-dotnet)-type.
+De blob-trigger biedt verschillende metagegevenseigenschappen. Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. Deze waarden hebben dezelfde semantiek als het [CloudBlob](/dotnet/api/microsoft.azure.storage.blob.cloudblob)-type.
 
 |Eigenschap  |Type  |Beschrijving  |
 |---------|---------|---------|

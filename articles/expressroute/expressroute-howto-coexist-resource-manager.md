@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 03/06/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: df88bd9a1d4901b348fbec47ea9e2946542a08e3
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 15ec8417ba5e2858b45176f0a214f6126209f942
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102440085"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102449744"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>ExpressRoute-en site-naar-site-verbindingen configureren met Power shell
 > [!div class="op_single_selector"]
@@ -262,11 +262,11 @@ U kunt de onderstaande stappen volgen om punt-naar-site-configuratie toe te voeg
    $p2sCertData = [System.Convert]::ToBase64String($p2sCertToUpload.RawData) 
    Add-AzVpnClientRootCertificate -VpnClientRootCertificateName $p2sCertFullName -VirtualNetworkGatewayname $azureVpn.Name -ResourceGroupName $resgrp.ResourceGroupName -PublicCertData $p2sCertData
    ```
+Zie [Een punt-naar-site-verbinding configureren](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md) voor meer informatie over punt-naar-site-VPN.
 
 ## <a name="to-enable-transit-routing-between-expressroute-and-azure-vpn"></a>Transit routering tussen ExpressRoute en Azure VPN inschakelen
 Als u de connectiviteit wilt inschakelen tussen een van uw lokale netwerk dat is verbonden met ExpressRoute en een ander van uw lokale netwerk dat is verbonden met een site-naar-site-VPN-verbinding, moet u [Azure route server](../route-server/expressroute-vpn-support.md)instellen.
 
-Zie [Een punt-naar-site-verbinding configureren](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md) voor meer informatie over punt-naar-site-VPN.
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de [Veelgestelde vragen over ExpressRoute](expressroute-faqs.md)voor meer informatie over ExpressRoute.

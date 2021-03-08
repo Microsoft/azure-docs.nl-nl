@@ -18,12 +18,12 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 56eedda7f79fedce1e34ad837c92006e5cd8f191
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d27ad1f15e9f46f0bc67e62b79606828efb85e6
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88998268"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102453152"
 ---
 # <a name="how-to-send-scheduled-notifications"></a>Procedure: geplande meldingen verzenden
 
@@ -31,7 +31,7 @@ Als u een scenario hebt waarin u op een bepaald moment in de toekomst een meldin
 
 
 ## <a name="schedule-your-notifications"></a>Uw meldingen plannen
-Bij het verzenden van een melding gebruikt u de- [ `ScheduledNotification` klasse](/dotnet/api/microsoft.azure.notificationhubs.schedulednotification?view=azure-dotnet#microsoft_azure_notificationhubs_schedulednotification) in de notification hubs SDK, zoals wordt weer gegeven in het volgende voor beeld:
+Bij het verzenden van een melding gebruikt u de- [ `ScheduledNotification` klasse](/dotnet/api/microsoft.azure.notificationhubs.schedulednotification#microsoft_azure_notificationhubs_schedulednotification) in de notification hubs SDK, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```csharp
 Notification notification = new AppleNotification("{\"aps\":{\"alert\":\"Happy birthday!\"}}");

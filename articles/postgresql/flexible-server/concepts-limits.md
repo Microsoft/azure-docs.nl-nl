@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
-ms.openlocfilehash: 0221022c342735744d59f956d6047b4abf23b5cf
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 58f71ddc470c06e17ff73dd5681cd343bcf8ac7b
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516512"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102451894"
 ---
 # <a name="limits-in-azure-database-for-postgresql---flexible-server"></a>Limieten in Azure Database for PostgreSQL flexibele server
 
@@ -68,7 +68,7 @@ Een PostgreSQL-verbinding, zelfs inactief, kan ongeveer 10 MB aan geheugen in be
 
 ### <a name="storage"></a>Storage
 
-- Na de configuratie kan de opslag grootte niet worden verminderd.
+- Na de configuratie kan de opslag grootte niet worden verminderd. U moet een nieuwe server maken met de gewenste opslag grootte en hand matig dump-en herstel proces uitvoeren om uw data bases te migreren.
 - De functie voor het automatisch uitbreiden van opslag is momenteel niet beschikbaar. Bewaak het gebruik en verg root de opslag naar een hogere grootte. 
 - Wanneer het gebruik van de opslag 95% bereikt of als de beschik bare capaciteit minder dan 5 GiB is, wordt de server automatisch overgeschakeld naar de **alleen-lezen modus** om fouten te voor komen die zijn gekoppeld aan schijf-Full-situaties. 
 - We raden u aan waarschuwings regels in te stellen voor `storage used` of `storage percent` wanneer ze bepaalde drempel waarden overschrijden zodat u proactief acties kunt ondernemen, zoals het verg Roten van de opslag grootte. U kunt bijvoorbeeld een waarschuwing instellen als het opslag percentage 80% gebruik overschrijdt.

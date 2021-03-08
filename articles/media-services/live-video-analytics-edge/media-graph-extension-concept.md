@@ -3,12 +3,12 @@ title: Wat is een mediagrafiekextensie - Azure
 description: Met Live Video Analytics op IoT Edge kunt u de mogelijkheden voor mediagrafiekverwerking uitbreiden via een grafiekextensieknooppunt.
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 6735148bf453cfe0afb58d51451dea65f06705d6
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 66656690e4e53508253091134a67adeb899b3dbf
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401114"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455836"
 ---
 # <a name="media-graph-extension"></a>Media Graph-extensie
 
@@ -19,11 +19,11 @@ Live Video Analytics ondersteunt twee soorten extensieprocessors voor mediagrafi
 * [HTTP-extensieprocessor](media-graph-concept.md#http-extension-processor)
 * [gRPC-extensieprocessor](media-graph-concept.md#grpc-extension-processor)
 
-Het grafiekextensieknooppunt verwacht dat de invoegtoepassing voor de analytics-extensie de resultaten retourneert in de JSON-indeling. In het ideale geval volgen de resultaten het [objectmodel voor het metagegevensschema voor deductie](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/inference-metadata-schema?branch=release-lva-dec-update).
+Het grafiekextensieknooppunt verwacht dat de invoegtoepassing voor de analytics-extensie de resultaten retourneert in de JSON-indeling. In het ideale geval volgen de resultaten het [objectmodel voor het metagegevensschema voor deductie](/azure/media-services/live-video-analytics-edge/inference-metadata-schema).
 
 ## <a name="http-extension-processor"></a>HTTP-extensieprocessor
 
-De HTTP-extensieprocessor maakt uitbreidingsscenario’s met behulp van het [HTTP-protocol](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/http-extension-protocol?branch=release-lva-dec-update) mogelijk, waarbij prestaties en/of optimaal resourcegebruik niet het belangrijkste zijn. U kunt uw eigen AI beschikbaar maken voor een mediagrafiek via een HTTP REST-eindpunt. 
+De HTTP-extensieprocessor maakt uitbreidingsscenario’s met behulp van het [HTTP-protocol](/azure/media-services/live-video-analytics-edge/http-extension-protocol) mogelijk, waarbij prestaties en/of optimaal resourcegebruik niet het belangrijkste zijn. U kunt uw eigen AI beschikbaar maken voor een mediagrafiek via een HTTP REST-eindpunt. 
 
 Gebruik het knooppunt voor de HTTP-extensieprocessor wanneer:
 
@@ -33,7 +33,7 @@ Gebruik het knooppunt voor de HTTP-extensieprocessor wanneer:
 
 ## <a name="grpc-extension-processor"></a>gRPC-extensieprocessor
 
-De gRPC-extensieprocessor maakt uitbreidingsscenario’s mogelijk met behulp van het hoogwaardige, [gestructureerde gRPC-protocol](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/grpc-extension-protocol?branch=release-lva-dec-update). Het is ideaal voor scenario’s waarin prestaties en/of optimaal resourcegebruik een prioriteit zijn. Met de gRPC-extensieprocessor kunt u volledig profiteren van de gestructureerde gegevensdefinities. gRPC biedt inhoudsoverdracht met hoge prestaties met behulp van:
+De gRPC-extensieprocessor maakt uitbreidingsscenario’s mogelijk met behulp van het hoogwaardige, [gestructureerde gRPC-protocol](/azure/media-services/live-video-analytics-edge/grpc-extension-protocol). Het is ideaal voor scenario’s waarin prestaties en/of optimaal resourcegebruik een prioriteit zijn. Met de gRPC-extensieprocessor kunt u volledig profiteren van de gestructureerde gegevensdefinities. gRPC biedt inhoudsoverdracht met hoge prestaties met behulp van:
 
 * [een meegeleverd gedeeld geheugen](https://en.wikipedia.org/wiki/Shared_memory) of 
 * rechtstreekse insluiting van de inhoud in de hoofdtekst van gRPC-berichten. 
@@ -57,7 +57,7 @@ In het onderstaande diagram wordt de gegevensstroom op hoog niveau weergegeven:
 
 ## <a name="samples"></a>Voorbeelden
 
-U kunt aan de slag gaan met een van onze quickstarts met voorbeelden van Live Video Analytics, met een vooraf gebouwde extensieservice bij een lage framesnelheid met de [HTTP-extensieprocessor](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/use-your-model-quickstart?branch=release-lva-dec-update&pivots=programming-language-csharp) of bij een hoge framesnelheid met de [gRPC-extensieprocessor](https://review.docs.microsoft.com/en-us/azure/media-services/live-video-analytics-edge/analyze-live-video-use-your-grpc-model-quickstart?branch=release-lva-dec-update&pivots=programming-language-csharp)
+U kunt aan de slag gaan met een van onze quickstarts met voorbeelden van Live Video Analytics, met een vooraf gebouwde extensieservice bij een lage framesnelheid met de [HTTP-extensieprocessor](/azure/media-services/live-video-analytics-edge/use-your-model-quickstart?pivots=programming-language-csharp) of bij een hoge framesnelheid met de [gRPC-extensieprocessor](/azure/media-services/live-video-analytics-edge/analyze-live-video-use-your-grpc-model-quickstart?pivots=programming-language-csharp)
 
 Voor gevorderde gebruikers: bekijk een of meer van onze [Jupyter Notebook](https://github.com/Azure/live-video-analytics/blob/master/utilities/video-analysis/notebooks/readme.md)-voorbeelden voor Live Video Analytics. Deze notebooks bieden u stapsgewijze instructies voor **de mediagrafiekextensies** over:
 

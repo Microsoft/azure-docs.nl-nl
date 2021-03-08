@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to create a Network Virtual Appliance (NVA) in my Virtual WAN hub.
-ms.openlocfilehash: 1f80da4014d4b6b27155db17d32800e54b51f40d
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: f02edf8e192f4d32f8bd2583d46bbb17c86d2049
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258062"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454801"
 ---
 # <a name="how-to-create-a-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Een virtueel netwerk apparaat maken in een virtuele WAN-hub van Azure (preview)
 
@@ -22,6 +22,8 @@ Dit artikel laat u zien hoe u met Virtual WAN verbinding maakt met uw resources 
 Met de stappen in dit artikel kunt u een virtueel **Barracuda CLOUDGEN WAN** -netwerk maken in de virtuele WAN-hub. U kunt deze oefening alleen uitvoeren als u een Barracuda-Cloud apparaat (CPE) en een licentie voor het Barracuda CloudGen WAN-toestel hebt dat u in de hub implementeert voordat u begint.
 
 Zie [Cisco Cloud opstap for multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701)voor meer informatie over de implementatie van **Cisco SD-WAN** in azure Virtual WAN. 
+
+Voor de implementatie van **VMware SD-WAN** in azure Virtual WAN raadpleegt u de [implementatie handleiding voor VMware SD-WAN in Virtual WAN hub](https://kb.vmware.com/s/article/82746)
 
 ## <a name="prerequisites"></a>Vereisten
 

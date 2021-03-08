@@ -3,12 +3,12 @@ title: Azure DevTest Labs gebruik in meerdere Labs en abonnementen
 description: Meer informatie over het rapporteren van Azure DevTest Labs gebruik over meerdere Labs en abonnementen.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: d789b9849ec798a396e99420649792937422470f
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 1e4d1f0abb5596c7fd9d22740bf052827c2ca666
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789935"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452642"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Rapport Azure DevTest Labs gebruik in meerdere Labs en abonnementen
 
@@ -25,7 +25,7 @@ In deze sectie wordt beschreven hoe u resource gebruik voor één Lab exporteert
 Voordat u het resource gebruik van DevTest Labs kunt exporteren, moet u een Azure Storage-account instellen om de verschillende bestanden met de gebruiks gegevens te kunnen opslaan. Er zijn twee algemene manieren om het exporteren van gegevens uit te voeren:
 
 * [DevTest Labs REST API](/rest/api/dtl/labs/exportresourceusage) 
-* De Power shell AZ. resource module [invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction?view=azps-2.5.0&viewFallbackFrom=azps-2.3.2) met de actie `exportResourceUsage` , de test resource-id en de benodigde para meters. 
+* De Power shell AZ. resource module [invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) met de actie `exportResourceUsage` , de test resource-id en de benodigde para meters. 
 
     Het artikel [persoonlijke gegevens exporteren of verwijderen](personal-data-delete-export.md) bevat een Power shell-voorbeeld script met gedetailleerde informatie over de gegevens die worden geëxporteerd. 
 

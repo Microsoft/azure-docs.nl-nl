@@ -5,15 +5,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: tutorial
-ms.date: 11/13/2019
+ms.date: 03/08/2021
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 5731b65892877e5c363220d84a0bddeb5f958cee
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.openlocfilehash: 2a756313a4659dfc531289c2c86890371f700367
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93396869"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452285"
 ---
 # <a name="tutorial-create-an-application-gateway-that-improves-web-application-access"></a>Zelfstudie: een toepassingsgateway maken die de toegang tot de webtoepassing verbetert
 
@@ -36,7 +36,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Voor deze zelfstudie moet u Azure PowerShell lokaal uitvoeren. Versie 1.0.0 of hoger van de Azure PowerShell-module moet zijn geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
+Voor deze zelf studie moet u lokaal een beheer Azure PowerShell sessie uitvoeren. Versie 1.0.0 of hoger van de Azure PowerShell-module moet zijn geïnstalleerd. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Nadat u de versie van PowerShell hebt gecontroleerd, voert u `Connect-AzAccount` uit om een verbinding op te zetten met Azure.
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -76,16 +76,17 @@ Thumbprint                                Subject
 E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
 ```
 
-Gebruik de vingerafdruk om het PFX-bestand te maken:
+Gebruik de vinger afdruk om het pfx-bestand te maken. Vervang door *\<password>* een wacht woord van uw keuze:
 
 ```powershell
-$pwd = ConvertTo-SecureString -String "Azure123456!" -Force -AsPlainText
+$pwd = ConvertTo-SecureString -String "<password>" -Force -AsPlainText
 
 Export-PfxCertificate `
   -cert cert:\localMachine\my\E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630 `
   -FilePath c:\appgwcert.pfx `
   -Password $pwd
 ```
+
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
@@ -106,7 +107,7 @@ Stel de toewijzingsmethode van PublicIPAddress in op **Statisch**. De VIP van ee
 ```azurepowershell
 #Create static public IP
 $pip = New-AzPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP" `
-       -location $location -AllocationMethod Static -Sku Standard
+       -location $location -AllocationMethod Static -Sku Standard -Zone 1,2,3
 ```
 
 ## <a name="retrieve-details"></a>Gegevens ophalen
@@ -114,21 +115,33 @@ $pip = New-AzPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP" `
 Haal gegevens op van de resourcegroep, het subnet en een IP in een lokaal object om de IP-configuratiegegevens van de toepassingsgateway te maken.
 
 ```azurepowershell
-$resourceGroup = Get-AzResourceGroup -Name $rg
 $publicip = Get-AzPublicIpAddress -ResourceGroupName $rg -name "AppGwVIP"
 $vnet = Get-AzvirtualNetwork -Name "AutoscaleVNet" -ResourceGroupName $rg
 $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "AppGwSubnet" -VirtualNetwork $vnet
+```
+
+## <a name="create-web-apps"></a>Web-apps maken
+
+Configureer twee web-apps voor de back-end-groep. Vervang *\<site1-name>* en *\<site-2-name>* door unieke namen in het `azurewebsites.net` domein.
+
+```azurepowershell
+New-AzAppServicePlan -ResourceGroupName $rg -Name "ASP-01"  -Location $location -Tier Basic `
+   -NumberofWorkers 2 -WorkerSize Small
+New-AzWebApp -ResourceGroupName $rg -Name <site1-name> -Location $location -AppServicePlan ASP-01
+New-AzWebApp -ResourceGroupName $rg -Name <site2-name> -Location $location -AppServicePlan ASP-01
 ```
 
 ## <a name="configure-the-infrastructure"></a>Infrastructuur configureren
 
 Configureer de waarden voor IP-configuratie, front-end-IP-configuratie, back-endpool, HTTP-instellingen, certificaat, poort, listener en regel met exact dezelfde indeling als de bestaande standaardtoepassingsgateway. De nieuwe SKU volgt hetzelfde objectmodel als de standaard-SKU.
 
+Vervang uw twee web-app-FQDN-namen (bijvoorbeeld: `mywebapp.azurewebsites.net` ) in de definitie van de $pool variabele.
+
 ```azurepowershell
 $ipconfig = New-AzApplicationGatewayIPConfiguration -Name "IPConfig" -Subnet $gwSubnet
 $fip = New-AzApplicationGatewayFrontendIPConfig -Name "FrontendIPCOnfig" -PublicIPAddress $publicip
 $pool = New-AzApplicationGatewayBackendAddressPool -Name "Pool1" `
-       -BackendIPAddresses testbackend1.westus.cloudapp.azure.com, testbackend2.westus.cloudapp.azure.com
+       -BackendIPAddresses <your first web app FQDN>, <your second web app FQDN>
 $fp01 = New-AzApplicationGatewayFrontendPort -Name "SSLPort" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "HTTPPort" -Port 80
 
@@ -141,7 +154,7 @@ $listener02 = New-AzApplicationGatewayHttpListener -Name "HTTPListener" `
              -Protocol Http -FrontendIPConfiguration $fip -FrontendPort $fp02
 
 $setting = New-AzApplicationGatewayBackendHttpSettings -Name "BackendHttpSetting1" `
-          -Port 80 -Protocol Http -CookieBasedAffinity Disabled
+          -Port 80 -Protocol Http -CookieBasedAffinity Disabled -PickHostNameFromBackendAddress
 $rule01 = New-AzApplicationGatewayRequestRoutingRule -Name "Rule1" -RuleType basic `
          -BackendHttpSettings $setting -HttpListener $listener01 -BackendAddressPool $pool
 $rule02 = New-AzApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleType basic `
@@ -150,20 +163,13 @@ $rule02 = New-AzApplicationGatewayRequestRoutingRule -Name "Rule2" -RuleType bas
 
 ## <a name="specify-autoscale"></a>Automatisch schalen configureren
 
-U kunt nu de configuratie voor automatisch schalen opgeven voor de toepassingsgateway. Er worden twee configuratietypen voor automatisch schalen ondersteund:
-
-* **Modus voor vaste capaciteit**. In deze modus wordt er geen automatisch schalen uitgevoerd voor de toepassingsgateway en werkt deze met een vaste schaaleenheid-capaciteit.
-
-   ```azurepowershell
-   $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2 -Capacity 2
-   ```
-
-* **Modus voor automatisch schalen**. In deze modus wordt de schaal van de toepassingsgateway automatisch aangepast op basis van het patroon van het toepassingsverkeer.
+U kunt nu de configuratie voor automatisch schalen opgeven voor de toepassingsgateway. 
 
    ```azurepowershell
    $autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 2
    $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
    ```
+In deze modus wordt de schaal van de toepassingsgateway automatisch aangepast op basis van het patroon van het toepassingsverkeer.
 
 ## <a name="create-the-application-gateway"></a>De toepassingsgateway maken
 
@@ -182,7 +188,11 @@ $appgw = New-AzApplicationGateway -Name "AutoscalingAppGw" -Zone 1,2,3 `
 
 Gebruik Get-AzPublicIPAddress om het openbare IP-adres van de toepassingsgateway op te halen. Kopieer het openbare IP-adres of de DNS-naam en plak het adres of de naam in de adresbalk van de browser.
 
-`Get-AzPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP`
+```azurepowershell
+$pip = Get-AzPublicIPAddress -ResourceGroupName $rg -Name AppGwVIP
+$pip.IpAddress
+```
+
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

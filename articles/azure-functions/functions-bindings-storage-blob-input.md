@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 678b6f02245e463870fc5b2c4bfc8b5ffa50de60
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: cd69e89954fab2256ffc7c23e22d3b8d44ab2a11
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100381683"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455870"
 ---
 # <a name="azure-blob-storage-input-binding-for-azure-functions"></a>Invoer binding voor Azure Blob Storage voor Azure Functions
 
@@ -379,7 +379,7 @@ Open de BLOB-gegevens via een para meter die overeenkomt met de naam die is opge
 
 # <a name="python"></a>[Python](#tab/python)
 
-Toegang tot BLOB-gegevens via de para meter getypeerd als [InputStream](/python/api/azure-functions/azure.functions.inputstream?view=azure-python&preserve-view=true). Raadpleeg het [invoer voorbeeld](#example) voor meer informatie.
+Toegang tot BLOB-gegevens via de para meter getypeerd als [InputStream](/python/api/azure-functions/azure.functions.inputstream). Raadpleeg het [invoer voorbeeld](#example) voor meer informatie.
 
 ---
 

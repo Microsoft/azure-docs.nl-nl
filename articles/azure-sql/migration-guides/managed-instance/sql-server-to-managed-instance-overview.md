@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 1f619e1eac58f70642117dabafc266d1bc250609
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 59c000a816d55d248febb841b695d366cb9979cc
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690410"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455226"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -63,7 +63,7 @@ Enkele algemene richt lijnen om u te helpen bij het kiezen van de juiste service
 U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolgens wijzigen nadat u de [Azure Portal](../../database/scale-resources.md) hebt gebruikt zonder uitval tijd voor uw toepassing. 
 
 > [!IMPORTANT]
-> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   netwerken. 
+> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md)   netwerken. 
 
 ### <a name="sql-server-vm-alternative"></a>SQL Server VM-alternatief
 

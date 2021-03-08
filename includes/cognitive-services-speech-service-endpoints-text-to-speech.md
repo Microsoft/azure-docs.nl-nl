@@ -4,42 +4,56 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/06/2019
 ms.author: wolfma
-ms.openlocfilehash: 6b16dea3c4f9241133b91b092c90c9056da57de0
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 1eefb7097f672552956e90a19e0a7b411cae8a24
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100514994"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455680"
 ---
 ### <a name="standard-and-neural-voices"></a>Standaard en Neural stemmen
 
-Gebruik deze tabel om de beschik baarheid van de standaard-en Neural stemmen per regio/eind punt te bepalen:
+Gebruik deze tabel om de **Beschik baarheid van standaard stemmen** per regio/eind punt te bepalen:
 
-| Region | Eindpunt | Neural stemmen | Standaard stemmen |
-|--------|----------|-----------------|---------------|
-| Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| VS - centraal | `https://centralus.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Azië - oost | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| VS - oost 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Frankrijk - centraal | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Japan - oost | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Japan - west | `https://japanwest.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
-| VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/v1` | Nee | Ja |
-| VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/v1` | Ja | Ja |
+| Region | Eindpunt |
+|--------|----------|
+| Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - centraal | `https://centralus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Azië - oost | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - oost 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Frankrijk - centraal | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/v1` |
+| India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Japan - oost | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Japan - west | `https://japanwest.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/v1` |
 
 > [!TIP]
 > [Stemmen in Preview](../articles/cognitive-services/Speech-Service/language-support.md#neural-voices-in-preview) zijn alleen beschikbaar in de volgende drie REGIO'S: VS-oost, Europa-West en Zuidoost-Azië.
+
+Gebruik deze tabel om de **Beschik baarheid van Neural stemmen** per regio/eind punt te bepalen:
+
+| Region | Eindpunt |
+|--------|----------|
+| Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/v1` | 
+| Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/v1` |
+| Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1` |
+| VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/v1` |
 
 ### <a name="custom-voices"></a>Aangepaste stemmen
 

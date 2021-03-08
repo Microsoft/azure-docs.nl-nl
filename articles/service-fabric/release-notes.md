@@ -5,12 +5,12 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: aec26c0109b4aa8e0819e7f5e9b3c69db7f74648
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 28abe5dbd9064fb0a6bc1b3f167830672deacdcc
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101726900"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102452693"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric releases
 
@@ -71,7 +71,7 @@ We hebben ook updates gepubliceerd naar het einde van de ondersteunings datum vo
       -  De totale kosten verlagen (de schijven zijn gratis en er zijn geen extra opslag kosten in rekening gebracht)
 - Ondersteuning voor het declareren van [**service-eindpunt certificaten van service Fabric toepassingen op basis van de algemene naam**](./service-fabric-service-manifest-resources.md)van het onderwerp.
 - [**Ondersteuning voor status tests voor in containers**](./probes-codepackage.md)geplaatste Services: ondersteuning voor het mechanisme voor de duur van de bewaarde toepassingen. Met de duur van de online-test kunt u de levens duur van de container toepassing aankondigen. Wanneer deze niet tijdig reageren, wordt de computer opnieuw opgestart. 
-- [**Ondersteuning voor het initialiseren van code pakketten**](./initializer-codepackages.md) voor [containers](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview) en [uitvoer bare gast](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-guest-executables-introduction) toepassingen. Hierdoor kunnen code pakketten (bijvoorbeeld containers) in een opgegeven volg orde worden uitgevoerd om service pakket initialisatie uit te voeren.
+- [**Ondersteuning voor het initialiseren van code pakketten**](./initializer-codepackages.md) voor [containers](/azure/service-fabric/service-fabric-containers-overview) en [uitvoer bare gast](/azure/service-fabric/service-fabric-guest-executables-introduction) toepassingen. Hierdoor kunnen code pakketten (bijvoorbeeld containers) in een opgegeven volg orde worden uitgevoerd om service pakket initialisatie uit te voeren.
 - **FabricObserver en ClusterObserver** zijn stateless toepassingen die service Fabric telemetrie vastleggen die betrekking hebben op verschillende aspecten van een SF-cluster. Beide toepassingen zijn gereed voor implementatie naar Windows-productie clusters voor het vastleggen van rijke telemetrie met geïmplementeerde ondersteuning voor ApplicationInsights, Event source en LogAnalytics.
     - [**FabricObserver (fo) 2,0**](https://github.com/microsoft/service-fabric-observer): wordt uitgevoerd op alle knoop punten, genereert status gebeurtenissen, verzendt telemetrie wanneer door de gebruiker geconfigureerde drempel waarden voor resource gebruik zijn bereikt. Deze release bevat verschillende verbeteringen in bewaking, gegevens beheer, Details van de status gebeurtenis, gestructureerde telemetrie.
      - [**ClusterObserver (CO) 1,1**](https://github.com/microsoft/service-fabric-observer/tree/master/ClusterObserver) : op één knoop punt wordt uitgevoerd, wordt de status van de telemetrie op cluster niveau vastgelegd. In deze release bewaakt ClusterObserver ook de knooppunt status en verzendt telemetrie wanneer het knoop punt niet meer dan een door de gebruiker opgegeven tijds periode wordt uitgeschakeld.

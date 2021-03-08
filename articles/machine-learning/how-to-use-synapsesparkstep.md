@@ -9,13 +9,13 @@ ms.author: laobri
 author: lobrien
 ms.date: 03/04/2021
 ms.topic: conceptual
-ms.custom: how-to
-ms.openlocfilehash: ea7dc30d0aed1350a8c9275d786ea22fa52c77bf
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.custom: how-to, synapse-azureml
+ms.openlocfilehash: 1dc4e0b70b0d39d01bada26992eb2213c1e855c5
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203688"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455056"
 ---
 # <a name="how-to-use-apache-spark-powered-by-azure-synapse-analytics-in-your-machine-learning-pipeline-preview"></a>Apache Spark (mogelijk gemaakt door Azure Synapse Analytics) in uw machine learning-pijp lijn (preview) gebruiken
 
@@ -31,7 +31,7 @@ In dit artikel leert u hoe u Apache Spark Pools kunt gebruiken die door Azure Sy
 
 ## <a name="link-your-azure-machine-learning-workspace-and-azure-synapse-analytics-workspace"></a>Uw Azure Machine Learning-werk ruimte en Azure Synapse Analytics-werk ruimte koppelen 
 
-U kunt uw Apache Spark groepen maken en beheren in een Azure Synapse Analytics-werk ruimte. Als u een Apache Spark groep wilt integreren met een Azure Machine Learning-werk ruimte, moet u een koppeling maken naar de Azure Synapse Analytics-werk ruimte. 
+U kunt uw Apache Spark groepen maken en beheren in een Azure Synapse Analytics-werk ruimte. Als u een Apache Spark groep wilt integreren met een Azure Machine Learning-werk ruimte, moet u een [koppeling maken naar de Azure Synapse Analytics-werk ruimte](how-to-link-synapse-ml-workspaces.md). 
 
 U kunt een Apache Spark-groep koppelen via Azure Machine Learning Studio-gebruikers interface met behulp van de pagina **gekoppelde services** . U kunt dit ook doen via de **berekenings** pagina met de optie **Compute-koppeling** .
 

@@ -45,7 +45,7 @@ Met een **trans formatie** kunt u het recept eenmaal maken (stap 1) en taken ver
 
 ### <a name="viewing-schema"></a>Schema weer geven
 
-In Media Services v3 zijn de voor instellingen sterk getypeerde entiteiten in de API zelf. U kunt de definitie ' schema ' voor deze objecten vinden in de [open API-specificatie (of Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01). U kunt ook de vooraf gedefinieerde definities (zoals **StandardEncoderPreset**) bekijken in de [rest API](/rest/api/media/transforms/createorupdate#standardencoderpreset), [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.standardencoderpreset?view=azure-dotnet)of andere Media Services v3 SDK-referentie documentatie.
+In Media Services v3 zijn de voor instellingen sterk getypeerde entiteiten in de API zelf. U kunt de definitie ' schema ' voor deze objecten vinden in de [open API-specificatie (of Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01). U kunt ook de vooraf gedefinieerde definities (zoals **StandardEncoderPreset**) bekijken in de [rest API](/rest/api/media/transforms/createorupdate#standardencoderpreset), [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.standardencoderpreset)of andere Media Services v3 SDK-referentie documentatie.
 
 ### <a name="creating-transforms"></a>Trans formaties maken
 
@@ -103,7 +103,7 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 
 ## <a name="see-also"></a>Zie ook
 
-* [Foutcodes](/rest/api/media/jobs/get#joberrorcode)
+* [Fout codes](/rest/api/media/jobs/get#joberrorcode)
 * [Filteren, ordenen, paginering van Media Services entiteiten](entities-overview.md)
 
 ## <a name="next-steps"></a>Volgende stappen

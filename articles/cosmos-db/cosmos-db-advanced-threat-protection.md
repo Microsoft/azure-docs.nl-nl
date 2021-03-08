@@ -9,19 +9,19 @@ ms.custom: seodec18
 ms.author: memildin
 author: memildin
 manager: rkarlin
-ms.openlocfilehash: ea7524b32b7637aa7c36308f8b869aa5207c08a2
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b73e7f8c13f621bc359a2ae79a725829420a3ecc
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334409"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102455583"
 ---
 # <a name="advanced-threat-protection-for-azure-cosmos-db-preview"></a>Advanced Threat Protection voor Azure Cosmos DB (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Advanced Threat Protection voor Azure Cosmos DB biedt een extra beveiligingslaag die ongebruikelijke en mogelijk schadelijke pogingen detecteert om Azure Cosmos DB accounts te openen of misbruik te maken. Met deze beveiligingslaag kunt u bedreigingen aanpakken, zelfs zonder een beveiligings expert, en ze integreren met centrale beveiligings bewakings systemen.
 
-Beveiligings waarschuwingen worden geactiveerd wanneer afwijkingen in de activiteit optreden. Deze beveiligings waarschuwingen zijn geïntegreerd met  [Azure Security Center](https://azure.microsoft.com/services/security-center/)en worden ook via e-mail verzonden naar abonnements beheerders, met details van de verdachte activiteit en aanbevelingen voor het onderzoeken en oplossen van de bedreigingen.
+Beveiligingswaarschuwingen worden geactiveerd wanneer zich afwijkingen in de activiteit voordoen. Deze beveiligings waarschuwingen zijn geïntegreerd met  [Azure Security Center](https://azure.microsoft.com/services/security-center/)en worden ook via e-mail verzonden naar abonnements beheerders, met details van de verdachte activiteit en aanbevelingen voor het onderzoeken en oplossen van de bedreigingen.
 
 > [!NOTE]
 >
@@ -34,9 +34,9 @@ Voor een volledige onderzoek van de beveiligings waarschuwingen, is het aanbevol
 
 Advanced Threat Protection voor Azure Cosmos DB detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases. De volgende waarschuwingen kunnen momenteel worden geactiveerd:
 
-- **Toegang vanaf ongebruikelijke locaties** : deze waarschuwing wordt geactiveerd wanneer er een wijziging is in het toegangs patroon voor een Azure Cosmos-account, waarbij iemand verbinding heeft gemaakt met het Azure Cosmos DB-eind punt vanaf een ongebruikelijke geografische locatie. In sommige gevallen detecteert de waarschuwing een rechtmatige actie, wat een nieuwe toepassing of onderhouds bewerking van de ontwikkelaar is. In andere gevallen detecteert de waarschuwing een schadelijke actie van een voormalige werk nemer, externe aanvaller, enzovoort.
+- **Toegang vanaf ongebruikelijke locaties**: deze waarschuwing wordt geactiveerd wanneer er een wijziging is in het toegangs patroon voor een Azure Cosmos-account, waarbij iemand verbinding heeft gemaakt met het Azure Cosmos DB-eind punt vanaf een ongebruikelijke geografische locatie. In sommige gevallen detecteert de waarschuwing een rechtmatige actie, wat een nieuwe toepassing of onderhouds bewerking van de ontwikkelaar is. In andere gevallen detecteert de waarschuwing een schadelijke actie van een voormalige werk nemer, externe aanvaller, enzovoort.
 
-- **Ongebruikelijke gegevens extractie** : deze waarschuwing wordt geactiveerd wanneer een client een ongebruikelijke hoeveelheid gegevens uit een Azure Cosmos DB-account uitpakt. Dit kan het symptoom zijn van sommige gegevens exfiltration die worden uitgevoerd om alle gegevens die zijn opgeslagen in het account over te dragen naar een extern gegevens archief.
+- **Ongebruikelijke gegevens extractie**: deze waarschuwing wordt geactiveerd wanneer een client een ongebruikelijke hoeveelheid gegevens uit een Azure Cosmos DB-account uitpakt. Dit kan het symptoom zijn van sommige gegevens exfiltration die worden uitgevoerd om alle gegevens die zijn opgeslagen in het account over te dragen naar een extern gegevens archief.
 
 
 
@@ -68,9 +68,9 @@ Gebruik rest API-opdrachten om de instelling geavanceerde beveiliging tegen bedr
 
 Gebruik de volgende Power shell-cmdlets:
 
-* [Advanced Threat Protection inschakelen](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
-* [Geavanceerde beveiliging tegen bedreigingen verkrijgen](/powershell/module/az.security/get-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
-* [Geavanceerde bedreigings beveiliging uitschakelen](/powershell/module/az.security/disable-azsecurityadvancedthreatprotection?viewFallbackFrom=azps-2.4.0)
+* [Advanced Threat Protection inschakelen](/powershell/module/az.security/enable-azsecurityadvancedthreatprotection)
+* [Geavanceerde beveiliging tegen bedreigingen verkrijgen](/powershell/module/az.security/get-azsecurityadvancedthreatprotection)
+* [Geavanceerde bedreigings beveiliging uitschakelen](/powershell/module/az.security/disable-azsecurityadvancedthreatprotection)
 
 ### <a name="arm-template"></a>[ARM-sjabloon](#tab/arm-template)
 

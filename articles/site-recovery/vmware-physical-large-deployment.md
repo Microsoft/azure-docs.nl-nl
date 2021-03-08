@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
-ms.openlocfilehash: 101e42263e46c5a21f26b0fa9cdeed798525fee9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cc87429f269fba5083b87e2c328f0e21de9707ff
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89047074"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102454344"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>Herstel na nood geval op schaal instellen voor virtuele VMware-machines/fysieke servers
 
@@ -32,7 +32,7 @@ Enkele algemene aanbevolen procedures voor grootschalig herstel na nood gevallen
 
 - **Doel vereisten identificeren**: geschatte capaciteit en resource behoeften in azure voordat u herstel na nood gevallen instelt.
 - **Site Recovery onderdelen plannen**: bepaal welke site Recovery onderdelen (configuratie server, proces servers) u nodig hebt om te voldoen aan de geschatte capaciteit.
-- **Stel een of meer scale-out proces servers**in: gebruik niet de proces server die standaard op de configuratie server wordt uitgevoerd. 
+- **Stel een of meer scale-out proces servers** in: gebruik niet de proces server die standaard op de configuratie server wordt uitgevoerd. 
 - **Voer de nieuwste updates uit**: het site Recovery-team brengt regel matig nieuwe versies van site Recovery onderdelen uit en u moet ervoor zorgen dat u de nieuwste versies uitvoert. Houd bij het bijhouden van [wat er nieuw](site-recovery-whats-new.md) is voor updates en [Schakel updates in en installeer](service-updates-how-to.md) deze.
 - **Proactief controleren**: wanneer u herstel na nood gevallen uitvoert, moet u de status en status van gerepliceerde machines en infrastructuur resources proactief controleren.
 - **Inzoomen voor herstel na nood gevallen**: u moet regel matig herstel na nood geval uitvoeren. Dit is niet van invloed op uw productie omgeving, maar helpt ervoor te zorgen dat failover naar Azure naar behoren werkt als dat nodig is.
@@ -85,7 +85,7 @@ We willen er zeker van zijn dat beschik bare quota's in het doel abonnement vold
 
 **Taak** | **Details** | **Actie**
 --- | --- | ---
-**Kern geheugens controleren** | Als de kernen in het beschik bare quotum niet gelijk zijn aan of groter zijn dan het totale aantal doelen op het moment van failover, mislukken failovers. | Voor virtuele VMware-machines controleert u of er voldoende kern geheugens zijn in het doel abonnement om te voldoen aan de Deployment Planner core-aanbeveling.<br/><br/> Controleer voor fysieke servers of Azure-kernen voldoen aan uw hand matige schattingen.<br/><br/> Als u quota's wilt controleren, klikt u in het Azure Portal >- **abonnement**op **gebruik en quota's**.<br/><br/> Meer [informatie](../azure-portal/supportability/resource-manager-core-quotas-request.md) over het verhogen van quota's.
+**Kern geheugens controleren** | Als de kernen in het beschik bare quotum niet gelijk zijn aan of groter zijn dan het totale aantal doelen op het moment van failover, mislukken failovers. | Voor virtuele VMware-machines controleert u of er voldoende kern geheugens zijn in het doel abonnement om te voldoen aan de Deployment Planner core-aanbeveling.<br/><br/> Controleer voor fysieke servers of Azure-kernen voldoen aan uw hand matige schattingen.<br/><br/> Als u quota's wilt controleren, klikt u in het Azure Portal >- **abonnement** op **gebruik en quota's**.<br/><br/> Meer [informatie](../azure-portal/supportability/resource-manager-core-quotas-request.md) over het verhogen van quota's.
 **Failover-limieten controleren** | Het aantal failovers mag overschrijdt Site Recovery failover-limieten. |  Als failovers de limieten overschrijden, kunt u abonnementen toevoegen en failover uitvoeren naar meerdere abonnementen of het quotum verhogen voor een abonnement. 
 
 
@@ -214,7 +214,7 @@ Als u een grootschalige failover wilt uitvoeren, raden we het volgende aan:
     - [Meer informatie](recovery-plan-overview.md) over herstel plannen.
 2. Azure Automation runbook-scripts toevoegen aan herstel plannen om hand matige taken in azure te automatiseren. Veelvoorkomende taken zijn onder andere het configureren van load balancers, het bijwerken van DNS, enzovoort. [Meer informatie](site-recovery-runbook-automation.md)
 2. Voor failover moet u Windows-computers voorbereiden zodat deze voldoen aan de Azure-omgeving. [Failover-limieten](#plan-azure-subscriptions-and-quotas) zijn hoger voor computers die voldoen aan het oog. Meer [informatie](site-recovery-failover-to-azure-troubleshoot.md#failover-failed-with-error-id-170010) over runbooks.
-4.  Activeer failover met de Power shell [-cmdlet start-AzRecoveryServicesAsrPlannedFailoverJob](/powershell/module/az.recoveryservices/start-azrecoveryservicesasrplannedfailoverjob?view=azps-2.0.0&viewFallbackFrom=azps-1.1.0) , samen met een herstel plan.
+4.  Activeer failover met de Power shell [-cmdlet start-AzRecoveryServicesAsrPlannedFailoverJob](/powershell/module/az.recoveryservices/start-azrecoveryservicesasrplannedfailoverjob) , samen met een herstel plan.
 
 
 

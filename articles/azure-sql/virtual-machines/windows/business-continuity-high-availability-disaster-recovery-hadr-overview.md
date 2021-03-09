@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2020
 ms.author: mathoma
-ms.openlocfilehash: 4443ccfe8d570e50352cbb70c83d6094132038cc
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: f4d870f458607ceb0f05812b5c0c066ce810448e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736890"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508313"
 ---
 # <a name="business-continuity-and-hadr-for-sql-server-on-azure-virtual-machines"></a>Bedrijfs continuïteit en HADR voor SQL Server op Azure Virtual Machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -106,7 +106,7 @@ Azure-Vm's,-opslag en-netwerken hebben verschillende operationele kenmerken dan 
 ### <a name="high-availability-nodes-in-an-availability-set"></a>Knoop punten met hoge Beschik baarheid in een beschikbaarheidsset
 Met beschikbaarheids sets in azure kunt u de knoop punten met hoge Beschik baarheid plaatsen in afzonderlijke fout domeinen en update domeinen. Het Azure-platform wijst een update domein en een fout domein toe aan elke virtuele machine in uw beschikbaarheidsset. Deze configuratie binnen een Data Center zorgt ervoor dat tijdens een geplande of ongeplande onderhouds gebeurtenis ten minste één virtuele machine beschikbaar is en voldoet aan de Azure-SLA van 99,95 procent. 
 
-Als u een instelling voor maximale Beschik baarheid wilt configureren, plaatst u alle deelnemende SQL Server virtuele machines in dezelfde beschikbaarheidsset om te voor komen dat toepassingen of gegevens verloren gaan tijdens een onderhouds gebeurtenis. Alleen knoop punten in dezelfde Cloud service kunnen deel nemen aan dezelfde beschikbaarheidsset. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Als u een instelling voor maximale Beschik baarheid wilt configureren, plaatst u alle deelnemende SQL Server virtuele machines in dezelfde beschikbaarheidsset om te voor komen dat toepassingen of gegevens verloren gaan tijdens een onderhouds gebeurtenis. Alleen knoop punten in dezelfde Cloud service kunnen deel nemen aan dezelfde beschikbaarheidsset. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="high-availability-nodes-in-an-availability-zone"></a>Knoop punten met hoge Beschik baarheid in een beschikbaarheids zone
 Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer data centers die zijn uitgerust met onafhankelijke voeding, koeling en netwerken. De fysieke schei ding van beschikbaarheids zones binnen een regio helpt bij het beveiligen van toepassingen en gegevens van datacenter fouten door ervoor te zorgen dat er ten minste één virtuele machine beschikbaar is en voldoet aan de Azure-SLA van 99,99 procent. 

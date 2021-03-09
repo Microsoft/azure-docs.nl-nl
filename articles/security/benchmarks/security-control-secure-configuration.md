@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: f945699256b4de9bd87ee4ab7500268302e93089
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 44604f910b3ee6e6ce1b21c736c6ad1f0443e996
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880166"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500033"
 ---
 # <a name="security-control-secure-configuration"></a>Beveiligings beheer: beveiligde configuratie
 
@@ -30,7 +30,7 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 U kunt ook aanbevelingen van Azure Security Center gebruiken als een veilige configuratie basislijn voor uw Azure-resources.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -124,7 +124,7 @@ Als u aangepaste installatie kopieën gebruikt, kunt u Azure RBAC (op rollen geb
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 7,7 | 5.4 | Klant |
+| 7.7 | 5.4 | Klant |
 
 Definieer en implementeer standaard beveiligings configuraties voor Azure-resources met behulp van Azure Policy. Gebruik Azure Policy aliassen om aangepaste beleids regels te maken om de netwerk configuratie van uw Azure-resources te controleren of af te dwingen. U kunt ook gebruikmaken van ingebouwde beleids definities die betrekking hebben op uw specifieke resources.  Daarnaast kunt u Azure Automation gebruiken om configuratie wijzigingen te implementeren.
 

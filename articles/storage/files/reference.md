@@ -7,12 +7,12 @@ ms.date: 07/14/2020
 ms.service: storage
 ms.topic: conceptual
 ms.reviewer: ripohane
-ms.openlocfilehash: 4fe6befbfc3c6f12cf804841052795647cd1f76a
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 828bb909aeb5d34f087a3173f792b325dc7cfd55
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629832"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504811"
 ---
 # <a name="azure-files-reference"></a>Referentie voor Azure Files
 
@@ -22,7 +22,7 @@ Vind Azure Files API-referentie, bibliotheek pakketten, leesmij-bestanden en aan
 
 De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure Files .NET-Api's.
 
-|  Versie  | Referentie documentatie | Pakket | Snelstart |
+|  Versie  | Referentiedocumentatie | Pakket | Snelstart |
 | :-------: | ----------------------- | ------- | ---------- |
 | 12.x | [Azure Files-client bibliotheek V12 voor .NET](/dotnet/api/overview/azure/storage.files.shares-readme) | [Pakket (NuGet)](https://www.nuget.org/packages/Azure.Storage.Files/) | &nbsp; |
 | 11. x | [Micro soft. Azure. storage. File-naam ruimte](/dotnet/api/microsoft.azure.storage.file) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/) | [Ontwikkelen voor Azure Files met .NET](./storage-dotnet-how-to-use-files.md) |
@@ -31,7 +31,7 @@ De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure F
 
 De volgende tabel bevat referentie documentatie voor Azure Storage Management .NET-Api's.
 
-|  Versie  | Referentie documentatie | Pakket |
+|  Versie  | Referentiedocumentatie | Pakket |
 | :-------: | ----------------------- | ------- |
 | 16. x | [Microsoft.Azure.Management.Storage](/dotnet/api/microsoft.azure.management.storage) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/) |
 
@@ -39,7 +39,7 @@ De volgende tabel bevat referentie documentatie voor Azure Storage Management .N
 
 De volgende tabel bevat referentie documentatie voor het Azure Storage van .NET-Api's voor het verplaatsen van gegevens.
 
-|  Versie  | Referentie documentatie | Pakket |
+|  Versie  | Referentiedocumentatie | Pakket |
 | :-------: | ----------------------- | ------- |
 | 1.x | [Gegevensverplaatsing](/dotnet/api/microsoft.azure.storage.datamovement) | [Pakket (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/) |
 
@@ -47,7 +47,7 @@ De volgende tabel bevat referentie documentatie voor het Azure Storage van .NET-
 
 De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure Files Java-Api's.
 
-|  Versie  | Referentie documentatie | Pakket | Snelstart |
+|  Versie  | Referentiedocumentatie | Pakket | Snelstart |
 | :-------: | ----------------------- | ------- | ---------- |
 | 12.x | [Client bibliotheek voor Java Azure Files](/java/api/overview/azure/storage-file-share-readme) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-file-share) | &nbsp; |
 | 8.x | [com. micro soft. Azure. storage. File](/java/api/com.microsoft.azure.storage.file) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) | [Ontwikkelen voor Azure Files met Java](./storage-java-how-to-use-file-storage.md) |
@@ -56,7 +56,7 @@ De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure F
 
 De volgende tabel bevat referentie documentatie voor Java-Api's van Azure Storage beheer.
 
-|  Versie  | Referentie documentatie | Pakket |
+|  Versie  | Referentiedocumentatie | Pakket |
 | :-------: | ----------------------- | ------- |
 | 0,9. x | [com. micro soft. Azure. Management. Storage](/java/api/overview/azure/storage/management) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-svc-mgmt-storage) |
 
@@ -64,7 +64,7 @@ De volgende tabel bevat referentie documentatie voor Java-Api's van Azure Storag
 
 De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure Files python-Api's.
 
-|  Versie  | Referentie documentatie | Pakket | Snelstart |
+|  Versie  | Referentiedocumentatie | Pakket | Snelstart |
 | :-------: | ----------------------- | ------- | ---------- |
 | 12.x | [Azure Storage-client bibliotheken V12 voor python](/azure/developer/python/sdk/storage/overview) | [Pakket (PyPI)](https://pypi.org/project/azure-storage-file/12.0.0b4/) | [Voorbeelden](/python/api/overview/azure/storage-file-share-readme#examples) |
 | 2.x | [Azure Storage-client bibliotheken v2 voor python](/azure/developer/python/sdk/storage/overview?view=storage-py-v2&preserve-view=true) | [Pakket (PyPI)](https://pypi.org/project/azure-storage-file/2.1.0/) | [Ontwikkelen voor Azure Files met Python](./storage-python-how-to-use-file-storage.md) |
@@ -73,7 +73,7 @@ De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure F
 
 De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure Files java script-Api's.
 
-|  Versie  | Referentie documentatie | Pakket | Snelstart |
+|  Versie  | Referentiedocumentatie | Pakket | Snelstart |
 | :-------: | ----------------------- | ------- | ---------- |
 | 12.x | [Azure Files-client bibliotheek voor Java script](/javascript/api/overview/azure/storage-file-share-readme) | [Package (npm)](https://www.npmjs.com/package/@azure/storage-file-share) | [Voorbeelden](/javascript/api/overview/azure/storage-file-share-readme#examples) |
 | 10. x | [@azure/storage-file](/javascript/api/@azure/storage-file) | [Package (npm)](https://www.npmjs.com/package/@azure/storage-file) | &nbsp; |
@@ -82,7 +82,7 @@ De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure F
 
 De volgende tabel bevat Naslag informatie en voorbeeld documentatie voor Azure Files REST Api's.
 
-| Referentie documentatie | Overzicht |
+| Referentiedocumentatie | Overzicht |
 | ----------------------- | -------- |
 | [Bestands service REST API](/rest/api/storageservices/file-service-rest-api) | [Concepten van bestands Services](/rest/api/storageservices/file-service-concepts) |
 
@@ -106,7 +106,7 @@ De volgende tabel bevat koppelingen naar de meest recente versie van de referent
 
 | Versie | Platform |
 | ------- | -------- |
-|  4.x  | [PowerShell](/powershell/module/az.storage/?view=azps-4.6.1&preserve-view=true) |
+|  4.x  | [PowerShell](/powershell/module/az.storage/?view=azps-4.8.0&preserve-view=true) |
 |  3.x  | [PowerShell](/powershell/module/az.storage/?view=azps-3.8.0&preserve-view=true) |
 |  2.x  | [PowerShell](/powershell/module/az.storage/?view=azps-2.8.0&preserve-view=true) |
 

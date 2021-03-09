@@ -6,12 +6,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 01/13/2021
 ms.custom: mvc, seo-javascript-october2019, contperfq3
-ms.openlocfilehash: 63d23b01eddc70dedd849560248dd053c80e0037
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 5f758c0bc50b2d4f22b3dbf0efaa4ecbc3f334cb
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102181411"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507803"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met Azure Portal
 
@@ -47,13 +47,11 @@ Voltooi de volgende stappen om een AKS-cluster te maken:
 
 4. Behoud de standaardopties op de pagina **Knooppuntgroepen**. Klik boven aan het venster op **Volgende: Verificatie**.
     > [!CAUTION]
-    > Het kan enige minuten duren voordat nieuwe AAD-service-principals worden doorgegeven en beschikbaar worden nadat ze zijn gemaakt, en dit kan fouten wegens 'service-principal niet gevonden' en validatiefouten in de Azure-portal veroorzaken. Als u dit hebt bereikt, kunt u [veelvoorkomende problemen met de Azure Kubernetes-service oplossen](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) voor de oplossing.
+    > Het maken van een nieuwe cluster-id kan enkele minuten duren voordat deze wordt door gegeven en beschikbaar wordt veroorzaakt door Service-Principal niet gevonden en validatie fouten in Azure Portal. Als u dit hebt bereikt, kunt u [veelvoorkomende problemen met de Azure Kubernetes-service oplossen](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) voor de oplossing.
 
 5. Configureer de volgende opties op de pagina **Verificatie**:
-    - Maak een nieuwe service-principal door het veld **Service-principal** ingesteld te laten op **(nieuwe) standaardservice-principal**. U kunt ook *Service-principal configureren* kiezen om een bestaande te gebruiken. Als u een bestaande service-principal gebruikt, moet u de SPN-client-id en het geheim opgeven.
+    - Maak een nieuwe cluster identiteit door het veld **verificatie** met **beheerde identiteit door het systeem assinged** te verlaten. U kunt ook **Service-Principal** kiezen om een service-principal te gebruiken. Selecteer *(nieuw) standaard Service-Principal* om een standaard service-principal te maken of om de *Service-Principal te configureren* voor het gebruik van een bestaande. Als u een bestaande service-principal gebruikt, moet u de SPN-client-id en het geheim opgeven.
     - Schakel de optie voor Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes) in. Deze bieden een verfijnder beheer van de toegang tot de Kubernetes-resources die zijn geïmplementeerd in het AKS-cluster.
-
-    U kunt ook een beheerde identiteit gebruiken in plaats van een service-principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
 Standaard worden *basis* netwerkfuncties gebruikt en Azure Monitor voor containers is ingeschakeld. Klik op **Beoordelen en maken** en vervolgens op **Maken** wanneer de validatie is voltooid.
 

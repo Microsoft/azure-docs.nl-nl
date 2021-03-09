@@ -9,16 +9,16 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: 69313b48b505bd0b53df6f15f636e2903f41ebfd
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: ebd4aed284869eb74760de8612a76139d26d47f5
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124003"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502345"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
-In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
+In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro) .
 
 __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
 
@@ -49,7 +49,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
     + [Experimentele functie] Voeg ondersteuning toe voor het koppelen van een Synapse Spark-pool in AML als reken kracht
     + [Experimentele functie] Voeg ondersteuning toe voor toegang op basis van identiteits gegevens. Gebruikers kunnen gegevens opslag of gegevens sets registreren zonder referenties op te geven. In dat geval wordt het AAD-token van de gebruiker of de beheerde identiteit van het Compute-doel gebruikt voor verificatie. Klik [hier](https://aka.ms/data-access) voor meer informatie.
   + **azureml-pipeline-steps**
-    + [Experimentele functie] Ondersteuning voor [SynapseSparkStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.synapsesparkstep?preserve-view=true&view=azure-ml-py) toevoegen
+    + [Experimentele functie] Ondersteuning voor [SynapseSparkStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.synapsesparkstep) toevoegen
   + **azureml-synapse**
     + [Experimentele functie] Voeg ondersteuning toe van Spark Magic voor het uitvoeren van een interactieve sessie in een Synapse Spark-pool.
 + **Oplossingen en verbeteringen voor oplossingen**
@@ -80,10 +80,10 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
     + Er is een fout opgelost waarbij klassieke prognose modellen (bijvoorbeeld AutoArima) trainings gegevens kunnen ontvangen waarbij rijen met toegerekende doel waarden niet aanwezig zijn. Dit heeft het gegevens contract van deze modellen geschonden. * Verschillende bugs met een vertraagd gedrag van de time-series-operator. Voorheen heeft de bewerking lag per exemplaar niet alle toegerekende rijen correct gemarkeerd en daarom wordt niet altijd de juiste vertragings waarden voor het voorval gegenereerd. Er zijn ook compatibiliteits problemen opgelost tussen de vertragings operator en de operator voor het rollen venster met het gedrag voor herhalingen. Dit heeft eerder geresulteerd in de operator voor het neerzetten van een aantal rijen uit de trainings gegevens die op een andere manier moeten worden gebruikt.
   + **azureml-core**
     + Ondersteuning voor token verificatie toevoegen per doel groep.
-    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
+    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
   + **azureml-pipeline-steps**
-    + [CommandStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.commandstep?preserve-view=true&view=azure-ml-py) nu en zonder experimenteel.
-    + [ParallelRunConfig](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig?preserve-view=true&view=azure-ml-py): Voeg het argument allowed_failed_count en allowed_failed_percent toe om de fout drempelwaarde op het niveau van de batch te controleren. De drempel waarde voor fouten heeft nu drie versies:
+    + [CommandStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.commandstep) nu en zonder experimenteel.
+    + [ParallelRunConfig](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunconfig): Voeg het argument allowed_failed_count en allowed_failed_percent toe om de fout drempelwaarde op het niveau van de batch te controleren. De drempel waarde voor fouten heeft nu drie versies:
        + error_threshold: het aantal toegestane, mislukte mini-batch items; 
        + allowed_failed_count: het aantal mislukte mini batches dat is toegestaan. 
        + allowed_failed_percent-het percentage toegestane mislukte mini batches. 
@@ -93,7 +93,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
     + ScriptRunConfig wordt nu ondersteund door HyperDriveStep
   + **azureml-train-core**
     + HyperDrive-uitvoeringen die vanuit een ScriptRun worden aangeroepen, worden nu beschouwd als een onderliggende uitvoering.
-    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
+    + Voeg toe `process_count` aan [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration) om multi-process PyTorch-taken met meerdere knoop punten te ondersteunen.
   + **azureml-widgets**
     + Widget ParallelRunStepDetails toevoegen om de status van een ParallelRunStep te visualiseren.
     + Hiermee kunnen Hyperdrive-gebruikers een extra as weer geven in het parallel coördinaten diagram met de metrische waarde die overeenkomt met elke set van Hyper parameters voor elke onderliggende uitvoering.
@@ -454,7 +454,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
 
 ### <a name="azure-machine-learning-sdk-for-python-v1130"></a>Azure Machine Learning SDK voor python v-1.13.0
 + **Preview-functies**
-  + **azureml-core** Met de nieuwe functie voor uitvoer gegevens sets kunt u terugschrijven naar de Cloud opslag met inbegrip van BLOB, ADLS gen 1, ADLS gen 2 en file share. U kunt configureren waar gegevens worden uitgevoerd, hoe gegevens moeten worden uitgevoerd (via koppelen of uploaden), of de uitvoer gegevens moeten worden geregistreerd voor toekomstig hergebruik en delen en tussenliggende gegevens tussen pijplijn stappen naadloos kunnen worden gepasseerd. Dit maakt reproduceer baarheid, delen, voor komt het dupliceren van gegevens en resulteert in rendabele efficiëntie en productiviteits toename. [Meer informatie over hoe u deze kunt gebruiken](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py)
+  + **azureml-core** Met de nieuwe functie voor uitvoer gegevens sets kunt u terugschrijven naar de Cloud opslag met inbegrip van BLOB, ADLS gen 1, ADLS gen 2 en file share. U kunt configureren waar gegevens worden uitgevoerd, hoe gegevens moeten worden uitgevoerd (via koppelen of uploaden), of de uitvoer gegevens moeten worden geregistreerd voor toekomstig hergebruik en delen en tussenliggende gegevens tussen pijplijn stappen naadloos kunnen worden gepasseerd. Dit maakt reproduceer baarheid, delen, voor komt het dupliceren van gegevens en resulteert in rendabele efficiëntie en productiviteits toename. [Meer informatie over hoe u deze kunt gebruiken](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig)
     
 + **Oplossingen en verbeteringen voor oplossingen**
   + **azureml-automl-core**
@@ -528,7 +528,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
   + **azureml-core**
     + Een nieuwe methode `run.get_detailed_status()` toont nu de gedetailleerde uitleg van de huidige uitvoerings status. Er wordt momenteel alleen uitleg voor de `Queued` status weer gegeven.
     + Voeg image_name-en image_label-para meters toe aan model. pakket () om de naam van de gemaakte pakket installatie kopie te wijzigen.
-    + Nieuwe methode `set_pip_requirements()` om de volledige PIP-sectie in [`CondaDependencies`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?preserve-view=true&view=azure-ml-py) één keer in te stellen.
+    + Nieuwe methode `set_pip_requirements()` om de volledige PIP-sectie in [`CondaDependencies`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies) één keer in te stellen.
     + Registratie van referenties-minder ADLS Gen2 gegevens opslag inschakelen.
     + Er is een verbeterd fout bericht weer gegeven bij het downloaden of koppelen van een onjuist type gegevensset.
     + Voor beeld van gegevensset filter voor Time Series bijwerken met meer voor beelden van partition_timestamp die optimalisatie van filters bieden.
@@ -553,7 +553,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Problemen met vaste moment opnamen bij het verzenden van AutoML-uitvoeringen zonder door de gebruiker verstrekte scripts.
     + Fouten met vaste onderliggende uitvoeringen wanneer gegevens Nan en parametrisatie zijn uitgeschakeld.
   + **azureml-train-core**
-    + Er is ondersteuning toegevoegd voor het opgeven van PIP-opties (bijvoorbeeld--extra-index-URL) in het PIP-vereisten bestand dat is door gegeven aan een [`Estimator`](/python/api/azureml-train-core/azureml.train.estimator.estimator?preserve-view=true&view=azure-ml-py) through- `pip_requirements_file` para meter.
+    + Er is ondersteuning toegevoegd voor het opgeven van PIP-opties (bijvoorbeeld--extra-index-URL) in het PIP-vereisten bestand dat is door gegeven aan een [`Estimator`](/python/api/azureml-train-core/azureml.train.estimator.estimator) through- `pip_requirements_file` para meter.
 
 
 ## <a name="2020-08-03"></a>2020-08-03
@@ -1001,7 +1001,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
 ## <a name="2020-05-04"></a>2020-05-04
 **Nieuwe laptop ervaring**
 
-U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewerken en delen in de Studio Web Experience van Azure Machine Learning. U kunt alle klassen en methoden die beschikbaar zijn in [Azure machine learning python-SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) van deze notitie blokken gebruiken om [hier](./how-to-run-jupyter-notebooks.md) aan de slag te gaan
+U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewerken en delen in de Studio Web Experience van Azure Machine Learning. U kunt alle klassen en methoden die beschikbaar zijn in [Azure machine learning python-SDK](/python/api/overview/azure/ml/intro) van deze notitie blokken gebruiken om [hier](./how-to-run-jupyter-notebooks.md) aan de slag te gaan
 
 **Nieuwe functies die zijn geïntroduceerd:**
 
@@ -1372,7 +1372,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Er zijn afschaffing-berichten toegevoegd voor alle code paden van de afbeeldings klasse
     + Vaste Modelbeheer URL-constructie voor Azure China 21Vianet-regio.
     + Er is een probleem opgelost waarbij modellen die gebruikmaken van source_dir, niet kunnen worden verpakt voor Azure Functions.    
-    + Er is een optie toegevoegd voor [environment.build_local ()](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) om een afbeelding te pushen naar het container register voor de AzureML-werk ruimte
+    + Er is een optie toegevoegd voor [environment.build_local ()](/python/api/azureml-core/azureml.core.environment.environment) om een afbeelding te pushen naar het container register voor de AzureML-werk ruimte
     + De SDK is bijgewerkt met het gebruik van nieuwe token bibliotheek op Azure Synapse op een achtergrond die daarmee compatibel is.
   + **azureml-interpret**
     + Er is een probleem opgelost waarbij geen fout is geretourneerd toen geen verklaringen kunnen worden gedownload. Genereert nu een uitzonde ring, overeenkomend gedrag elders.
@@ -1751,7 +1751,7 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
       + De para meter daily_latest_only is afgeschaft.
     + Ondersteuning bij het ophalen van op gegevensset gebaseerde gegevens-drift-uitvoer.
   + **azureml-explain-model**
-    + Voeg ondersteuning toe voor [ScoringExplainer](/python/api/azureml-interpret/azureml.interpret.scoring.scoring_explainer.scoringexplainer?view=azure-ml-py&preserve-view=true) die rechtstreeks worden gemaakt met behulp van MimicWrapper
+    + Voeg ondersteuning toe voor [ScoringExplainer](/python/api/azureml-interpret/azureml.interpret.scoring.scoring_explainer.scoringexplainer) die rechtstreeks worden gemaakt met behulp van MimicWrapper
   + **[azureml-pipeline-core](/python/api/azureml-pipeline-core)**
     + Verbeterde prestaties voor het maken van grote pijp lijnen.
   + **[azureml-train-core](/python/api/azureml-train-core)**
@@ -2334,7 +2334,7 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
 
 Azure Machine Learning SDK voor python v 1.0.30 uitgebracht.
 
-De [`PipelineEndpoint`](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline_endpoint.pipelineendpoint?preserve-view=true&view=azure-ml-py) is geïntroduceerd om een nieuwe versie van een gepubliceerde pijp lijn toe te voegen terwijl hetzelfde eind punt wordt gehandhaafd.
+De [`PipelineEndpoint`](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline_endpoint.pipelineendpoint) is geïntroduceerd om een nieuwe versie van een gepubliceerde pijp lijn toe te voegen terwijl hetzelfde eind punt wordt gehandhaafd.
 
 ## <a name="2019-04-15"></a>2019-04-15
 
@@ -2351,7 +2351,7 @@ De [`PipelineEndpoint`](/python/api/azureml-pipeline-core/azureml.pipeline.core.
 + **Nieuwe functies**
   + De SDK van Azure Machine Learning ondersteunt nu python 3,7.
   + Azure Machine Learning DNN-schattingen bieden nu ingebouwde ondersteuning voor meerdere versies. Zo `TensorFlow` accepteert Estimator nu een `framework_version` para meter en kunnen gebruikers versie ' 1,10 ' of ' 1,12 ' opgeven. Voor een lijst met de versies die worden ondersteund door uw huidige SDK-versie, roept u `get_supported_versions()` de gewenste Framework-klasse op (bijvoorbeeld `TensorFlow.get_supported_versions()` ).
-  Zie de [DNN Estimator-documentatie](/python/api/azureml-train-core/azureml.train.dnn?preserve-view=true&view=azure-ml-py)voor een lijst met de versies die worden ondersteund door de nieuwste SDK-versie.
+  Zie de [DNN Estimator-documentatie](/python/api/azureml-train-core/azureml.train.dnn)voor een lijst met de versies die worden ondersteund door de nieuwste SDK-versie.
 
 ## <a name="2019-03-25"></a>2019-03-25
 
@@ -2388,13 +2388,13 @@ De [`PipelineEndpoint`](/python/api/azureml-pipeline-core/azureml.pipeline.core.
 ### <a name="azure-machine-learning-sdk-for-python-v1017"></a>Azure Machine Learning SDK voor python v-1.0.17
 
 + **Nieuwe functies**
-  + Azure Machine Learning biedt nu ondersteuning voor de eerste klasse voor populaire DNN Framework-ketens. Met behulp van [`Chainer`](/python/api/azureml-train-core/azureml.train.dnn.chainer?preserve-view=true&view=azure-ml-py) klasse-gebruikers kunnen ketting modellen eenvoudig worden getraind en geïmplementeerd.
+  + Azure Machine Learning biedt nu ondersteuning voor de eerste klasse voor populaire DNN Framework-ketens. Met behulp van [`Chainer`](/python/api/azureml-train-core/azureml.train.dnn.chainer) klasse-gebruikers kunnen ketting modellen eenvoudig worden getraind en geïmplementeerd.
     + Meer informatie over het [uitvoeren van gedistribueerde training met ChainerMN](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/chainer/distributed-chainer/distributed-chainer.ipynb)
     + Meer informatie over het [uitvoeren van afstemming tuning with Chainer met behulp van HyperDrive](https://github.com/Azure/MachineLearningNotebooks/blob/b881f78e4658b4e102a72b78dbd2129c24506980/how-to-use-azureml/ml-frameworks/chainer/deployment/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb)
   + Azure Machine Learning pijp lijnen hebben de mogelijkheid om een pijplijn uitvoering te activeren op basis van wijzigingen in de gegevens opslag. Het [notitie blok](https://aka.ms/pl-schedule) voor de pijp lijn planning is bijgewerkt om deze functie te presen teren.
 
 + **Oplossingen en verbeteringen voor oplossingen**
-  + We hebben ondersteuning toegevoegd in Azure Machine Learning-pijp lijnen voor het instellen van de eigenschap source_directory_data_store op een gewenste gegevens opslag (zoals een Blob-opslag) op [RunConfigurations](/python/api/azureml-core/azureml.core.runconfig.runconfiguration?preserve-view=true&view=azure-ml-py) die worden geleverd aan de [PythonScriptStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?preserve-view=true&view=azure-ml-py). In de volgende stappen wordt gebruikgemaakt van Azure File Store als back-upgegevens opslag, wat kan leiden tot beperking van problemen wanneer een groot aantal stappen gelijktijdig wordt uitgevoerd.
+  + We hebben ondersteuning toegevoegd in Azure Machine Learning-pijp lijnen voor het instellen van de eigenschap source_directory_data_store op een gewenste gegevens opslag (zoals een Blob-opslag) op [RunConfigurations](/python/api/azureml-core/azureml.core.runconfig.runconfiguration) die worden geleverd aan de [PythonScriptStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep). In de volgende stappen wordt gebruikgemaakt van Azure File Store als back-upgegevens opslag, wat kan leiden tot beperking van problemen wanneer een groot aantal stappen gelijktijdig wordt uitgevoerd.
 
 ### <a name="azure-portal"></a>Azure Portal
 

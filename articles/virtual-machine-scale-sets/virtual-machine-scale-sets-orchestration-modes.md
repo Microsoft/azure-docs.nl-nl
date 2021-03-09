@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 3350ff7aa05232173e5fd3b21451a76a0a40683d
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 71ddb1217be7fe3e1254e0d49e1f40c43a55a3f0
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102043708"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502413"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -322,7 +322,7 @@ InvalidParameter. The specified fault domain count 2 must fall in the range 1 to
 
 **Oorzaak:** De `platformFaultDomainCount` para meter is ongeldig voor de geselecteerde regio of zone. 
 
-**Oplossing:** U moet een geldige `platformFaultDomainCount` waarde selecteren. Voor zonegebonden-implementaties is de maximum `platformFaultDomainCount` waarde 1. Voor regionale implementaties waarvoor geen zone is opgegeven, is het maximum `platformFaultDomainCount` afhankelijk van de regio. Zie [de beschik baarheid van vm's voor scripts beheren](../virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) om het maximum aantal fout domeinen per regio te bepalen. 
+**Oplossing:** U moet een geldige `platformFaultDomainCount` waarde selecteren. Voor zonegebonden-implementaties is de maximum `platformFaultDomainCount` waarde 1. Voor regionale implementaties waarvoor geen zone is opgegeven, is het maximum `platformFaultDomainCount` afhankelijk van de regio. Zie [de beschik baarheid van vm's voor scripts beheren](../virtual-machines/availability.md) om het maximum aantal fout domeinen per regio te bepalen. 
 
 ```
 OperationNotAllowed. Deletion of Virtual Machine Scale Set is not allowed as it contains one or more VMs. Please delete or detach the VM(s) before deleting the Virtual Machine Scale Set.

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: 502533b69058eacd4ad18a3b29a33fbc4a3715a5
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 7dd7f43044a9643eb7e9d5296dfb209e425d5fb6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183759"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504777"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-powershell"></a>Traffic Manager subnet overschrijven met Azure Power shell
 
@@ -43,7 +43,7 @@ U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shel
 
 1. **Het Traffic Manager-eind punt ophalen:**
 
-    Als u het overschrijven van het subnet wilt inschakelen, haalt u het eind punt op waaraan u de onderdrukking wilt toevoegen en slaat u het op in een variabele met [Get-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
+    Als u het overschrijven van het subnet wilt inschakelen, haalt u het eind punt op waaraan u de onderdrukking wilt toevoegen en slaat u het op in een variabele met [Get-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint).
 
     Vervang de naam, PROFILENAME en ResourceGroupName door de waarden van het eind punt dat u wilt wijzigen.
 
@@ -54,7 +54,7 @@ U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shel
     ```
 2. **Voeg het IP-adres bereik toe aan het eind punt:**
     
-    Als u het IP-adres bereik wilt toevoegen aan het eind punt, gebruikt u [add-AzTrafficManagerIpAddressRange](/powershell/module/az.trafficmanager/add-aztrafficmanageripaddressrange?view=azps-2.5.0&viewFallbackFrom=azps-2.4.0) om het bereik toe te voegen.
+    Als u het IP-adres bereik wilt toevoegen aan het eind punt, gebruikt u [add-AzTrafficManagerIpAddressRange](/powershell/module/az.trafficmanager/add-aztrafficmanageripaddressrange) om het bereik toe te voegen.
 
     ```powershell
 
@@ -68,18 +68,18 @@ U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shel
     Add-AzTrafficManagerIPAddressRange -TrafficManagerEndpoint $TrafficManagerEndpoint -First "12.13.14.0" -Last "12.13.14.31" -Scope 27
  
     ```
-    Zodra de bereiken zijn toegevoegd, gebruikt u [set-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) om het eind punt bij te werken.
+    Zodra de bereiken zijn toegevoegd, gebruikt u [set-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint) om het eind punt bij te werken.
 
     ```powershell
 
     Set-AzTrafficManagerEndpoint -TrafficManagerEndpoint $TrafficManagerEndpoint
 
     ```
-Het verwijderen van het IP-adres bereik kan worden voltooid met behulp van [Remove-AzTrafficManagerIpAddressRange](/powershell/module/az.trafficmanager/remove-aztrafficmanageripaddressrange?view=azps-2.5.0).
+Het verwijderen van het IP-adres bereik kan worden voltooid met behulp van [Remove-AzTrafficManagerIpAddressRange](/powershell/module/az.trafficmanager/remove-aztrafficmanageripaddressrange).
 
 1.  **Het Traffic Manager-eind punt ophalen:**
 
-    Als u het overschrijven van het subnet wilt inschakelen, haalt u het eind punt op waaraan u de onderdrukking wilt toevoegen en slaat u het op in een variabele met [Get-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint?view=azps-2.5.0).
+    Als u het overschrijven van het subnet wilt inschakelen, haalt u het eind punt op waaraan u de onderdrukking wilt toevoegen en slaat u het op in een variabele met [Get-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/get-aztrafficmanagerendpoint).
 
     Vervang de naam, PROFILENAME en ResourceGroupName door de waarden van het eind punt dat u wilt wijzigen.
 
@@ -102,7 +102,7 @@ Het verwijderen van het IP-adres bereik kan worden voltooid met behulp van [Remo
     Remove-AzTrafficManagerIpAddressRange -TrafficManagerEndpoint $TrafficManagerEndpoint -First "12.13.14.0" -Last "12.13.14.31" -Scope 27
 
     ```
-     Zodra de bereiken zijn verwijderd, gebruikt u [set-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint?view=azps-2.5.0) om het eind punt bij te werken.
+     Zodra de bereiken zijn verwijderd, gebruikt u [set-AzTrafficManagerEndpoint](/powershell/module/az.trafficmanager/set-aztrafficmanagerendpoint) om het eind punt bij te werken.
 
     ```powershell
 

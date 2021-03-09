@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: ec74ca19978a4164289276d44b34eb14b694687f
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: bbac794263fec176e03c7148d860c479a2ed9d39
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99051578"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501225"
 ---
 # <a name="author-graphical-runbooks-in-azure-automation"></a>Grafische runbooks ontwerpen in Azure Automation
 
@@ -61,7 +61,7 @@ Selecteer een activiteit op het canvas om de eigenschappen en para meters te con
 
 Een parameterset definieert de verplichte en optionele para meters waarmee waarden voor een bepaalde cmdlet worden geaccepteerd. Alle cmdlets hebben ten minste één parameterset en sommige hebben verschillende sets. Als een cmdlet meerdere parameter sets heeft, moet u het abonnement selecteren dat u wilt gebruiken voordat u para meters kunt configureren. U kunt de parameterset die door een activiteit wordt gebruikt, wijzigen door **para meters** in te stellen en een andere set te kiezen. In dit geval gaan alle parameter waarden die u al hebt geconfigureerd verloren.
 
-In het volgende voor beeld heeft de cmdlet [Get-AzVM](/powershell/module/az.compute/get-azvm?view=azps-3.5.0&preserve-view=true) drie parameter sets. In het voor beeld wordt één set met de naam **ListVirtualMachineInResourceGroupParamSet**, met één optionele para meter, gebruikt voor het retour neren van alle virtuele machines in een resource groep. In het voor beeld wordt ook de para meter **GetVirtualMachineInResourceGroupParamSet** gebruikt voor het opgeven van de virtuele machine die moet worden geretourneerd. Deze set heeft twee verplichte para meters en een optionele para meter.
+In het volgende voor beeld heeft de cmdlet [Get-AzVM](/powershell/module/az.compute/get-azvm) drie parameter sets. In het voor beeld wordt één set met de naam **ListVirtualMachineInResourceGroupParamSet**, met één optionele para meter, gebruikt voor het retour neren van alle virtuele machines in een resource groep. In het voor beeld wordt ook de para meter **GetVirtualMachineInResourceGroupParamSet** gebruikt voor het opgeven van de virtuele machine die moet worden geretourneerd. Deze set heeft twee verplichte para meters en een optionele para meter.
 
 ![Parameterset](media/automation-graphical-authoring-intro/get-azvm-parameter-sets.png)
 
@@ -69,7 +69,7 @@ In het volgende voor beeld heeft de cmdlet [Get-AzVM](/powershell/module/az.comp
 
 Wanneer u een waarde voor een para meter opgeeft, selecteert u een gegevens bron om te bepalen hoe de waarde is opgegeven. De gegevens bronnen die beschikbaar zijn voor een bepaalde para meter, zijn afhankelijk van de geldige waarden voor die para meter. Zo is null bijvoorbeeld geen beschik bare optie voor een para meter die geen Null-waarden toestaat.
 
-| Gegevensbron | Description |
+| Gegevensbron | Beschrijving |
 |:--- |:--- |
 | Constante waarde |Typ een waarde voor de para meter. Deze gegevens bron is alleen beschikbaar voor de volgende gegevens typen: Int32, Int64, String, Boolean, DateTime, Switch. |
 | Uitvoer van activiteit |Gebruik uitvoer van een activiteit die voorafgaat aan de huidige activiteit in de werk stroom. Alle geldige activiteiten worden weer gegeven. Gebruik voor de parameter waarde alleen de activiteit die de uitvoer produceert. Als met de activiteit een object met meerdere eigenschappen wordt uitgevoerd, kunt u de naam van een specifieke eigenschap typen nadat u de activiteit hebt geselecteerd. |
@@ -151,7 +151,7 @@ U kunt een koppeling tussen twee activiteiten maken door de bron activiteit te s
 
 Selecteer de koppeling om de eigenschappen ervan te configureren in de Blade configuratie. Eigenschappen bevatten het koppelings type, dat wordt beschreven in de volgende tabel.
 
-| Koppelings type | Description |
+| Koppelings type | Beschrijving |
 |:--- |:--- |
 | Pijplijn |De doel activiteit wordt één keer uitgevoerd voor elke object uitvoer van de bron activiteit. De doel activiteit wordt niet uitgevoerd als de bron activiteit resulteert in geen uitvoer. Uitvoer van de bron activiteit is beschikbaar als een object. |
 | Reeks |De doel activiteit wordt slechts eenmaal uitgevoerd wanneer de uitvoer van de bron activiteit wordt ontvangen. Uitvoer van de bron activiteit is beschikbaar als een matrix met objecten. |
@@ -435,4 +435,4 @@ U hebt de mogelijkheid om terug te keren naar de gepubliceerde versie van een ru
 * Zie [zelf studie: een grafisch Runbook maken](learn/automation-tutorial-runbook-graphical.md)om aan de slag te gaan met grafische runbooks.
 * Zie [Azure Automation-runbooktypen](automation-runbook-types.md) voor meer informatie over runbooktypen en hun voordelen en beperkingen.
 * Zie [uitvoeren als-account](automation-security-overview.md#run-as-account)voor informatie over het verifiëren met behulp van het uitvoeren als-account voor Automation.
-* Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0&preserve-view=true#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+* Zie [Az.Automation](/powershell/module/az.automation/#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

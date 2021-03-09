@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ce8aa5108b6998424b35e3f4ecac6b51e78f276b
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 94187f2f94581b4ff48ddb0cd014dc26268fcf15
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102424118"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500509"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
@@ -25,7 +25,7 @@ ms.locfileid: "102424118"
 >
 > **Als u een eind gebruiker bent en wilt terugkeren naar uw account, gaat [https://aka.ms/sspr](https://aka.ms/sspr)** u naar.
 
-[Self-service voor wachtwoord herstel (SSPR)](https://www.youtube.com/watch?v=tnb2Qf4hTP8) is een functie van Azure Active Directory (AD) waarmee gebruikers hun wacht woord opnieuw kunnen instellen zonder contact op te nemen met IT-mede werkers. De gebruikers kunnen een snelle blok kering opheffen en blijven werken, ongeacht waar ze zijn of het tijdstip van de dag. Door de mede werkers in staat te stellen zichzelf te deblokkeren, kan uw organisatie de niet-productieve tijd en hoge ondersteunings kosten voor de meest voorkomende problemen met betrekking tot het wacht woord verlagen.
+[Self-service voor wachtwoord herstel (SSPR)](https://www.youtube.com/watch?v=pS3XwfxJrMo) is een functie van Azure Active Directory (AD) waarmee gebruikers hun wacht woord opnieuw kunnen instellen zonder contact op te nemen met IT-mede werkers. De gebruikers kunnen een snelle blok kering opheffen en blijven werken, ongeacht waar ze zijn of het tijdstip van de dag. Door de mede werkers in staat te stellen zichzelf te deblokkeren, kan uw organisatie de niet-productieve tijd en hoge ondersteunings kosten voor de meest voorkomende problemen met betrekking tot het wacht woord verlagen.
 
 SSPR heeft de volgende belang rijke mogelijkheden:
 
@@ -155,14 +155,14 @@ De volgende instellingen zijn vereist om SSPR samen met aanbevolen waarden in te
 | **SSPR-eigenschappen** | Self-service voor wacht woord opnieuw instellen is ingeschakeld | **Geselecteerde** groep voor pilot/ **all** voor productie |
 | **Verificatiemethoden** | Verificatie methoden die nodig zijn om te registreren | Altijd 1 meer dan vereist voor opnieuw instellen |
 |   | Verificatie methoden die nodig zijn om opnieuw in te stellen | Een of twee |
-| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Yes |
+| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Ja |
 |   | Het aantal dagen waarna gebruikers wordt gevraagd om de verificatiegegevens opnieuw te bevestigen | 90 – 180 dagen |
-| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Yes |
-|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Yes |
-| **Aanpassing** | Help Desk-koppeling aanpassen | Yes |
+| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Ja |
+|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Ja |
+| **Aanpassing** | Help Desk-koppeling aanpassen | Ja |
 |   | Aangepaste e-mail adres of URL voor de Help Desk | Ondersteunings site of e-mail adres |
-| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Yes |
-|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Yes |
+| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Ja |
+|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Ja |
 
 ### <a name="sspr-properties"></a>SSPR-eigenschappen
 
@@ -255,7 +255,7 @@ Hoewel SSPR doorgaans geen gebruikers problemen maakt, is het belang rijk om ond
 
 Om het succes van uw ondersteunings team in te scha kelen, kunt u een veelgestelde vragen maken op basis van vragen die u van uw gebruikers ontvangt. Enkele voorbeelden:
 
-| Scenario's| Description |
+| Scenario's| Beschrijving |
 | - | - |
 | De gebruiker heeft geen geregistreerde verificatie methoden beschikbaar| Een gebruiker probeert het wacht woord opnieuw in te stellen, maar heeft geen van de authenticatie methoden die ze beschikbaar hebben (voor beeld: ze hebben hun mobiele telefoon thuis verlaten en kunnen geen toegang krijgen tot e-mail) |
 | De gebruiker ontvangt geen tekst of gesprek op hun kantoor of mobiele telefoon| Een gebruiker probeert zijn identiteit te verifiëren via tekst of gesprek, maar ontvangt geen tekst/oproep. |

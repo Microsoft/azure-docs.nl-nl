@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 04492abc0f235c2dc6139adbe543bcce82f7f7b3
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 46f117b13909c2d9624b88e9f5d9a62c4c646e51
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101646858"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500289"
 ---
 # <a name="tutorial-configure-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie: arkose Labs configureren met Azure Active Directory B2C
 
-In deze zelf studie leert u hoe u Azure Active Directory (AD) B2C-verificatie kunt integreren met [arkose Labs](https://www.arkoselabs.com/). Met arkose Labs kunnen organisaties tegen bot-aanvallen, inbreuk op account overname en frauduleuze accounts worden geopend.  
+In deze voorbeeld zelfstudie vindt u informatie over het integreren van Azure Active Directory (AD) B2C-verificatie met [arkose Labs](https://www.arkoselabs.com/). Met arkose Labs kunnen organisaties tegen bot-aanvallen, inbreuk op account overname en frauduleuze accounts worden geopend.  
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -196,7 +196,7 @@ Raadpleeg [dit artikel](https://docs.microsoft.com/azure/azure-functions/functio
 
 [Maak een API-connector](https://docs.microsoft.com/azure/active-directory-b2c/add-api-connector) en schakel deze in voor uw gebruikers stroom. De configuratie van de API-connector moet er als volgt uitzien:
 
-![Afbeelding toont zoeken op app-id](media/partner-arkose-labs/configure-api-connector.png)
+![Afbeelding laat zien hoe u API-connector kunt configureren](media/partner-arkose-labs/configure-api-connector.png)
 
 - **Eind punt-URL** : is de functie-URL die u eerder hebt gekopieerd tijdens de implementatie van Azure function.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 21ae8986761483658f5ac4254e4bb378e0bc4ba9
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 09654ddafba6c60db0290a8c7ce08d4b1b168f6c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575053"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504879"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Azure-beveiligings basislijn voor Azure DDoS Protection Standard
 
@@ -294,7 +294,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -386,7 +386,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Richt lijnen**: standaard beveiligings configuraties voor Azure DDoS Protection definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken om de configuratie van uw Recovery Services kluizen te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 

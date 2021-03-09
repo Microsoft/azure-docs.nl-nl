@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: be8b11b6ddf715e5d6226372e8d03b42dec5fc7d
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 6f4a8e4b8cbc35dca9f48bbec84e9023e82f6a84
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215983"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501632"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Kosten plannen en beheren voor Azure Machine Learning
 
@@ -121,7 +121,7 @@ U kunt ook configureren hoe lang het knoop punt inactief moet zijn voordat omlaa
 + Als u minder iteratieve experimenten uitvoert, moet u deze tijd beperken om kosten te besparen.
 + Als u een sterk iteratief dev/test-experiment wilt uitvoeren, moet u mogelijk de tijd verhogen zodat u niet betaalt voor constante schaling omhoog en omlaag na elke wijziging in uw trainings script of-omgeving.
 
-AmlCompute-clusters kunnen worden geconfigureerd voor uw gewijzigde werkbelasting vereisten in Azure Portal, met behulp van de [AMLCOMPUTE SDK-klasse](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py) [AmlCompute cli](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute), met de [rest api's](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable).
+AmlCompute-clusters kunnen worden geconfigureerd voor uw gewijzigde werkbelasting vereisten in Azure Portal, met behulp van de [AMLCOMPUTE SDK-klasse](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute) [AmlCompute cli](/cli/azure/ext/azure-cli-ml/ml/computetarget/create#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute), met de [rest api's](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable).
 
 ```azurecli
 az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 --min-nodes 0 --max-nodes 5 --idle-seconds-before-scaledown 300

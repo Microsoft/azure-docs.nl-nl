@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d879039e6d3ad94e55ed7f7bd283f8b99a5b2161
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 8bbd56499c9b62248662fc5e8df0d5b3e1b672d4
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042450"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504164"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>AlwaysOn-beschikbaarheidsgroep op SQL Server op Azure-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -38,7 +38,7 @@ In het volgende diagram ziet u een beschikbaarheidsgroep voor SQL Server op Azur
 
 ## <a name="vm-redundancy"></a>VM-redundantie 
 
-Om redundantie en de maximale beschikbaarheid te vergroten, moeten SQL Server-VM's zich in dezelfde [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#availability-set-overview) bevinden of in verschillende [beschikbaarheidszones](../../../availability-zones/az-overview.md).
+Om redundantie en de maximale beschikbaarheid te vergroten, moeten SQL Server-VM's zich in dezelfde [beschikbaarheidsset](../../../virtual-machines/availability-set-overview.md) bevinden of in verschillende [beschikbaarheidszones](../../../availability-zones/az-overview.md).
 
 Het plaatsen van een set VM's in dezelfde beschikbaarheidsset, beschermt deze tegen storingen in een datacentrum door apparatuuruitval (VM's binnen een beschikbaarheidsset delen geen resources) of updates (VM's binnen een beschikbaarheidsset worden niet op hetzelfde moment bijgewerkt). Beschikbaarheidszones beschermen tegen storingen in een heel datacentrum, waar elke zone een set datacentra binnen een regio vertegenwoordigt.  Door ervoor te zorgen dat resources in verschillende beschikbaarheidszones worden geplaatst, kan geen storing al uw VM's offline halen.
 

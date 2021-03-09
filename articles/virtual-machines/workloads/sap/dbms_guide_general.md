@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 09/20/2020
 ms.author: juergent
 ms.reviewer: cynthn
-ms.openlocfilehash: 470b6b0c871d91a2a8a584a6efd04605e0afcf88
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e978baa556f1bc1cfea0ccd5abbbf92dc77b1622
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101666842"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504011"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Overwegingen voor de implementatie van Azure Virtual Machines DBMS voor SAP-workloads
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -265,7 +265,7 @@ Er zijn andere redundantie methoden. Zie [Azure Storage-replicatie](../../../sto
 
 
 ## <a name="vm-node-resiliency"></a>Tolerantie van VM-knoop punt
-Azure biedt een aantal verschillende Sla's voor Vm's. Zie de meest recente release van [Sla voor virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)voor meer informatie. Omdat de DBMS-laag essentieel is voor Beschik baarheid in een SAP-systeem, moet u inzicht hebben in beschikbaarheids sets, Beschikbaarheidszones en onderhouds gebeurtenissen. Zie [de beschik baarheid van virtuele Windows-machines beheren in azure](../../manage-availability.md) en [de beschik baarheid van virtuele Linux-machines beheren in azure](../../manage-availability.md)voor meer informatie over deze concepten.
+Azure biedt een aantal verschillende Sla's voor Vm's. Zie de meest recente release van [Sla voor virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)voor meer informatie. Omdat de DBMS-laag essentieel is voor Beschik baarheid in een SAP-systeem, moet u inzicht hebben in beschikbaarheids sets, Beschikbaarheidszones en onderhouds gebeurtenissen. Zie [de beschik baarheid van virtuele Windows-machines beheren in azure](../../availability.md) en [de beschik baarheid van virtuele Linux-machines beheren in azure](../../availability.md)voor meer informatie over deze concepten.
 
 De minimale aanbeveling voor productie DBMS-scenario's met een SAP-werk belasting is:
 

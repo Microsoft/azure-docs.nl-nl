@@ -5,12 +5,12 @@ services: container-service
 ms.topic: tutorial
 ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: a8e0ddcd77c26a00cf784fb8c2372734314dc0bb
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: c39169c0531a73bd00db7de5fe393ef8c51c8c96
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250635"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509418"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Zelfstudie: Een AKS-cluster (Azure Kubernetes Service) implementeren
 
@@ -35,7 +35,7 @@ AKS-clusters kunnen gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegan
 
 Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie [quota's, beperkingen voor de grootte van virtuele machines en beschik baarheid van regio's in azure Kubernetes service (AKS)][quotas-skus-regions] voor meer informatie over resource limieten en beschik baarheid van REGIO'S voor AKS.
 
-Aangezien u geen service-principal van Azure Active Directory hebt opgegeven, wordt er automatisch een gemaakt. Een AKS-cluster heeft een service-principal nodig om met andere Azure-resources te kunnen communiceren. Hier is aan deze service-principal [het recht verleend om installatiekopieën op te halen][container-registry-integration] uit de ACR-instantie (Azure Container Registry) die u in de vorige zelfstudie hebt gemaakt. Als u de opdracht wilt uitvoeren, moet u een rol voor **eigenaar** of een **Azure-account beheerder** hebben op het Azure-abonnement.
+Als u een AKS-cluster wilt toestaan om te communiceren met andere Azure-resources, wordt er automatisch een cluster identiteit gemaakt, omdat u er geen hebt opgegeven. Hier wordt aan deze cluster-id [het recht verleend om installatie kopieën te halen][container-registry-integration] uit het Azure container Registry-exemplaar (ACR) dat u in de vorige zelf studie hebt gemaakt. Als u de opdracht wilt uitvoeren, moet u een rol voor **eigenaar** of een **Azure-account beheerder** hebben op het Azure-abonnement.
 
 ```azurecli
 az aks create \

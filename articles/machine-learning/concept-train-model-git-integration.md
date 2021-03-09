@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.date: 11/16/2020
-ms.openlocfilehash: 53459ad766ffcf156d2906a38666a14c4883b5e8
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 461c50bca53286cedcbb9ac21fc44467885e3d18
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215932"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500441"
 ---
 # <a name="git-integration-for-azure-machine-learning"></a>Git-integratie voor Azure Machine Learning
 
@@ -123,7 +123,7 @@ SSH geeft deze vinger afdruk weer wanneer deze verbinding maakt met een onbekend
 
 Wanneer u een training verzendt die wordt uitgevoerd vanuit de python-SDK of Machine Learning CLI, worden de bestanden die nodig zijn om het model te trainen, geüpload naar uw werk ruimte. Als de `git` opdracht beschikbaar is in uw ontwikkelings omgeving, gebruikt het upload proces om te controleren of de bestanden zijn opgeslagen in een Git-opslag plaats. Als dat het geval is, worden de gegevens uit uw Git-opslag plaats ook geüpload als onderdeel van de trainings uitvoering. Deze informatie wordt opgeslagen in de volgende eigenschappen voor het uitvoeren van de training:
 
-| Eigenschap | Git-opdracht die wordt gebruikt om de waarde op te halen | Description |
+| Eigenschap | Git-opdracht die wordt gebruikt om de waarde op te halen | Beschrijving |
 | ----- | ----- | ----- |
 | `azureml.git.repository_uri` | `git ls-remote --get-url` | De URI waaruit uw opslag plaats is gekloond. |
 | `mlflow.source.git.repoURL` | `git ls-remote --get-url` | De URI waaruit uw opslag plaats is gekloond. |
@@ -178,7 +178,7 @@ De geregistreerde gegevens bevatten tekst die vergelijkbaar is met de volgende J
 
 ### <a name="python-sdk"></a>Python-SDK
 
-Na het verzenden van een trainings uitvoering wordt een [Run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) -object geretourneerd. Het `properties` kenmerk van dit object bevat de geregistreerde Git-informatie. Met de volgende code wordt bijvoorbeeld de commit-hash opgehaald:
+Na het verzenden van een trainings uitvoering wordt een [Run](/python/api/azureml-core/azureml.core.run%28class%29) -object geretourneerd. Het `properties` kenmerk van dit object bevat de geregistreerde Git-informatie. Met de volgende code wordt bijvoorbeeld de commit-hash opgehaald:
 
 ```python
 run.properties['azureml.git.commit']

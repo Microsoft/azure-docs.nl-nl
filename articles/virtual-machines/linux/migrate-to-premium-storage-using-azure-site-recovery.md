@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/15/2017
 ms.author: luywang
 ms.subservice: disks
-ms.openlocfilehash: e00496ad623d534e1fbdcb60f22a1e36f77c4212
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 5f8f72ec296be3127a2f8c1ddc87d883d7e2deed
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806169"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504572"
 ---
 # <a name="use-site-recovery-to-migrate-to-premium-storage"></a>Site Recovery gebruiken om naar Premium Storage te migreren
 
@@ -165,7 +165,7 @@ Als u wilt controleren of uw configuratie server is gekoppeld aan het replicatie
 
    ![Het deel venster replicatie inschakelen met de geselecteerde bron][13]
 
-Wanneer u uw Azure Storage-omgeving ontwerpt, raden we u aan om afzonderlijke opslag accounts voor elke virtuele machine in een beschikbaarheidsset te gebruiken. U wordt aangeraden de best practice in de opslaglaag te volgen om [meerdere opslag accounts voor elke beschikbaarheidsset te gebruiken](../manage-availability.md). Het distribueren van VM-schijven naar meerdere opslag accounts helpt u bij het verbeteren van de beschik baarheid van opslag en het distribueren van de I/O over de Azure-opslag infrastructuur.
+Wanneer u uw Azure Storage-omgeving ontwerpt, raden we u aan om afzonderlijke opslag accounts voor elke virtuele machine in een beschikbaarheidsset te gebruiken. U wordt aangeraden de best practice in de opslaglaag te volgen om [meerdere opslag accounts voor elke beschikbaarheidsset te gebruiken](../availability.md). Het distribueren van VM-schijven naar meerdere opslag accounts helpt u bij het verbeteren van de beschik baarheid van opslag en het distribueren van de I/O over de Azure-opslag infrastructuur.
 
 Als uw Vm's zich in een beschikbaarheidsset bevinden, kunt u het beste meerdere Vm's meerdere keren migreren in plaats van schijven van alle Vm's te repliceren naar één opslag account. Op die manier delen de virtuele machines in dezelfde beschikbaarheidsset niet één opslag account. Gebruik het deel venster **replicatie inschakelen** voor het instellen van een bestemmings opslag account voor elke virtuele machine, één per keer.
  

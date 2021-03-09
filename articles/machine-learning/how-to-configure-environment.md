@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 6fe43c39b17e574e1913cd9e7b4292a71f1e418d
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 7e493404e7a36b60e8f9e62cd4ac2f2b32845bb9
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031756"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501614"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
 
@@ -55,7 +55,7 @@ Het configuratie bestand van de werk ruimte is een JSON-bestand dat de SDK verte
 
 Dit JSON-bestand moet zich in de mapstructuur bevinden die uw python-scripts of Jupyter-notebooks bevat. Deze kan zich in dezelfde map bevindt, in een submap met de naam *. azureml* of in een bovenliggende map.
 
-Als u dit bestand uit uw code wilt gebruiken, gebruikt u de- [`Workspace.from_config`](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#from-config-path-none--auth-none---logger-none---file-name-none-&preserve-view=true) methode. Met deze code worden de gegevens uit het bestand geladen en wordt verbinding gemaakt met uw werk ruimte.
+Als u dit bestand uit uw code wilt gebruiken, gebruikt u de- [`Workspace.from_config`](/python/api/azureml-core/azureml.core.workspace.workspace#from-config-path-none--auth-none---logger-none---file-name-none-) methode. Met deze code worden de gegevens uit het bestand geladen en wordt verbinding gemaakt met uw werk ruimte.
 
 Maak een werkruimte configuratie bestand op een van de volgende manieren:
 
@@ -67,7 +67,7 @@ Maak een werkruimte configuratie bestand op een van de volgende manieren:
 
 * Azure Machine Learning python-SDK
 
-    Maak een script om verbinding te maken met uw Azure Machine Learning-werk ruimte en gebruik de [`write_config`](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#write-config-path-none--file-name-none-&preserve-view=true) methode om uw bestand te genereren en op te slaan als *. azureml/config.jsop*. Zorg ervoor dat u `subscription_id` , `resource_group` en `workspace_name` met uw eigen vervangen.
+    Maak een script om verbinding te maken met uw Azure Machine Learning-werk ruimte en gebruik de [`write_config`](/python/api/azureml-core/azureml.core.workspace.workspace#write-config-path-none--file-name-none-) methode om uw bestand te genereren en op te slaan als *. azureml/config.jsop*. Zorg ervoor dat u `subscription_id` , `resource_group` en `workspace_name` met uw eigen vervangen.
 
     ```python
     from azureml.core import Workspace
@@ -99,7 +99,7 @@ Een lokale ontwikkel omgeving of externe VM configureren:
     > Als u gebruikmaakt van Linux of macOS en een andere shell dan bash gebruikt (bijvoorbeeld zsh), kunnen er fouten optreden wanneer u sommige opdrachten uitvoert. U kunt dit probleem omzeilen door de `bash` opdracht te gebruiken om een nieuwe bash-shell te starten en de opdrachten daar uit te voeren.
 
 1. Activeer de zojuist gemaakte virtuele python-omgeving.
-1. Installeer de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+1. Installeer de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install).
 1. Als u uw lokale omgeving wilt configureren voor het gebruik van uw Azure Machine Learning-werk ruimte, [maakt u een configuratie bestand voor een werk ruimte](#workspace) of gebruikt u een bestaand.
 
 Nu u uw lokale omgeving hebt ingesteld, kunt u aan de slag gaan met Azure Machine Learning. Raadpleeg de Azure Machine Learning aan de slag- [hand leiding voor python](tutorial-1st-experiment-sdk-setup-local.md) om aan de slag te gaan.
@@ -217,4 +217,4 @@ Zie [Data Science virtual machines](https://azure.microsoft.com/services/virtual
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Train een model](tutorial-train-models-with-aml.md) op Azure machine learning met de MNIST-gegevensset.
-- Zie de [Naslag informatie voor de Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). 
+- Zie de [Naslag informatie voor de Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro). 

@@ -10,12 +10,12 @@ ms.author: sgilley
 author: sdgilley
 ms.date: 08/20/2020
 ms.custom: seoapril2019, seodec18
-ms.openlocfilehash: 987b56eb1b258e1c5f2fd7d5bcfdd0e95f6c0730
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: dc1954c97da0d7f40deaf0f4efa7ca99793107bb
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100091666"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503688"
 ---
 # <a name="how-azure-machine-learning-works-architecture-and-concepts"></a>Hoe Azure Machine Learning werkt: architectuur en concepten
 
@@ -102,7 +102,7 @@ U produceert een uitvoering wanneer u een script voor het trainen van een model 
 
 [Werk ruimte](#workspace)  >  [Experimenten](#experiments)  >  [Uitvoeren](#runs)  >  **Configuratie uitvoeren**
 
-Een uitvoerings configuratie definieert hoe een script moet worden uitgevoerd in een opgegeven Compute-doel. U gebruikt de configuratie om het script, het reken doel en de Azure ML-omgeving op te geven die moeten worden uitgevoerd, alle gedistribueerde taak configuraties en enkele aanvullende eigenschappen. Zie [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py)voor meer informatie over de volledige set Configureer bare opties voor uitvoeringen.
+Een uitvoerings configuratie definieert hoe een script moet worden uitgevoerd in een opgegeven Compute-doel. U gebruikt de configuratie om het script, het reken doel en de Azure ML-omgeving op te geven die moeten worden uitgevoerd, alle gedistribueerde taak configuraties en enkele aanvullende eigenschappen. Zie [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig)voor meer informatie over de volledige set Configureer bare opties voor uitvoeringen.
 
 Een uitvoerings configuratie kan worden opgeslagen in een bestand in de map die uw trainings script bevat.   Of kan worden geconstrueerd als een in-memory-object en worden gebruikt voor het verzenden van een run.
 
@@ -282,7 +282,7 @@ De studio heeft ook toegang tot de interactieve hulp middelen die deel uitmaken 
 > De hulpprogram ma's die zijn gemarkeerd (preview) zijn momenteel beschikbaar als open bare preview.
 > De preview-versie wordt aangeboden zonder Service Level Agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-+  Communiceer met de service in een python-omgeving met de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
++  Communiceer met de service in een python-omgeving met de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro).
 + Communiceer met de service in een wille keurige R-omgeving met de [Azure machine learning SDK voor R](https://azure.github.io/azureml-sdk-for-r/reference/index.html) (preview).
 + Gebruik [Azure machine learning Designer](concept-designer.md) om de werk stroom stappen uit te voeren zonder code te schrijven. 
 + Gebruik [Azure machine learning cli](./reference-azure-machine-learning-cli.md) voor Automation.

@@ -1,6 +1,6 @@
 ---
-title: Een Windows-VM in de zone maken met behulp van Azure PowerShell
-description: Een virtuele Windows-machine maken in een beschikbaarheidszone met Azure PowerShell
+title: Een virtuele machine in een zone maken met behulp van Azure PowerShell
+description: Een virtuele machine maken in een beschikbaarheids zone met Azure PowerShell
 author: cynthn
 ms.service: virtual-machines-windows
 ms.topic: conceptual
@@ -8,14 +8,14 @@ ms.workload: infrastructure
 ms.date: 03/27/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 95d97605f00a3a80c097eb16695c9d296e17c33d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 02897add4f3ca51fa7e172bc200af2c7b9065ed4
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87825239"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502634"
 ---
-# <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-powershell"></a>Een virtuele Windows-machine maken in een beschikbaarheidszone met PowerShell
+# <a name="create-a-virtual-machine-in-an-availability-zone-using-azure-powershell"></a>Een virtuele machine maken in een beschikbaarheids zone met behulp van Azure PowerShell
 
 In dit artikel wordt beschreven hoe u Azure PowerShell gebruikt om in een Azure-beschikbaarheidszone een virtuele Azure-machine te maken waarop Windows Server 2016 wordt uitgevoerd. Een [beschikbaarheidszone](../../availability-zones/az-overview.md) is een fysiek afgescheiden zone in een Azure-regio. Gebruik beschikbaarheidszones om uw apps en gegevens te beschermen tegen het onwaarschijnlijke risico van een storing of het verloren gaan van een heel datacenter.
 

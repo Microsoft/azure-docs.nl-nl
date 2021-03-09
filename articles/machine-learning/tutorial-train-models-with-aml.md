@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 09/28/2020
 ms.custom: seodec18, devx-track-python
-ms.openlocfilehash: 6aa39709a82b01367463f0128af4223446710a1c
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 3191987ea2d110487321beb0b11428f446f2b7a6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183639"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503875"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Zelfstudie: Modellen voor de classificatie van afbeeldingen trainen met MNIST-gegevens en scikit-learn 
 
@@ -37,7 +37,7 @@ In [deel twee van deze zelfstudie](tutorial-deploy-models-with-aml.md) leert u h
 Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
 >[!NOTE]
-> Code in dit artikel is getest met versie 1.13.0 van de [Azure Machine Learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
+> Code in dit artikel is getest met versie 1.13.0 van de [Azure Machine Learning SDK](/python/api/overview/azure/ml/intro).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -309,7 +309,7 @@ U ziet hoe met het script gegevens worden opgehaald en modellen worden opgeslage
 
 ### <a name="configure-the-training-job"></a>De trainingstaak configureren
 
-Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Configureer de ScriptRunConfig door het volgende op te geven:
+Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Configureer de ScriptRunConfig door het volgende op te geven:
 
 * De map met uw scripts. Alle bestanden in deze map worden naar de clusterknooppunten geüpload voor uitvoering.
 * Het rekendoel. In dit geval gebruikt u het Azure Machine Learning-rekencluster dat u hebt gemaakt.
@@ -382,7 +382,7 @@ U kunt de voortgang van een actieve taak op verschillende manieren controleren. 
 
 ### <a name="jupyter-widget"></a>Jupyter-widget
 
-U kunt de voortgang van de run volgen met een [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py). Net als het indienen van de run, is de widget asynchroon en biedt deze elke 10 tot 15 seconden live updates totdat de taak is voltooid:
+U kunt de voortgang van de run volgen met een [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets). Net als het indienen van de run, is de widget asynchroon en biedt deze elke 10 tot 15 seconden live updates totdat de taak is voltooid:
 
 ```python
 from azureml.widgets import RunDetails

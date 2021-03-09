@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 869c4ac5cde7d1e50be0f2f738d8a0ce6de5e625
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: f5739604537ccc67e2cf57310269369909038d67
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98951712"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508739"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -145,7 +145,7 @@ De volgende tabel geeft een overzicht van de netwerk configuratie-instellingen:
 
 ## <a name="create-availability-sets"></a>Beschikbaarheidssets maken
 
-Voordat u virtuele machines maakt, moet u beschikbaarheids sets maken. Beschikbaarheids sets verminderen de uitval tijd voor geplande of niet-geplande onderhouds gebeurtenissen. Een beschikbaarheidsset van Azure is een logische groep resources die Azure plaatst op fysieke fout domeinen en update domeinen. Een fout domein zorgt ervoor dat de leden van de beschikbaarheidsset afzonderlijke stroom-en netwerk bronnen hebben. Een update domein zorgt ervoor dat de leden van de beschikbaarheidsset niet tegelijkertijd voor onderhoud worden ingesteld. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Voordat u virtuele machines maakt, moet u beschikbaarheids sets maken. Beschikbaarheids sets verminderen de uitval tijd voor geplande of niet-geplande onderhouds gebeurtenissen. Een beschikbaarheidsset van Azure is een logische groep resources die Azure plaatst op fysieke fout domeinen en update domeinen. Een fout domein zorgt ervoor dat de leden van de beschikbaarheidsset afzonderlijke stroom-en netwerk bronnen hebben. Een update domein zorgt ervoor dat de leden van de beschikbaarheidsset niet tegelijkertijd voor onderhoud worden ingesteld. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 U hebt twee beschikbaarheids sets nodig. Een voor de domein controllers. De tweede is voor de SQL Server Vm's.
 
@@ -205,7 +205,7 @@ De volgende tabel bevat de instellingen voor deze twee computers:
 | **Opslagaccount voor diagnose** |*Automatisch gemaakt* |
 
    >[!IMPORTANT]
-   >U kunt een virtuele machine alleen in een beschikbaarheidsset plaatsen wanneer u deze maakt. U kunt de beschikbaarheidsset niet wijzigen nadat een virtuele machine is gemaakt. Zie [de beschik baarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md).
+   >U kunt een virtuele machine alleen in een beschikbaarheidsset plaatsen wanneer u deze maakt. U kunt de beschikbaarheidsset niet wijzigen nadat een virtuele machine is gemaakt. Zie [de beschik baarheid van virtuele machines beheren](../../../virtual-machines/availability.md).
 
 De virtuele machines worden gemaakt door Azure.
 
@@ -383,7 +383,7 @@ Voordat u verdergaat, moet u rekening houden met de volgende ontwerp beslissinge
 
 * **Opslag-Azure-Managed Disks**
 
-   Gebruik Azure Managed Disks voor de opslag van de virtuele machine. Micro soft adviseert Managed Disks voor SQL Server virtuele machines. Managed Disks verwerken de opslag achter de schermen. Bovendien distribueert Azure de opslagresources zodat voldoende redundantie wordt geboden wanneer virtuele machines met Managed Disks zich in dezelfde beschikbaarheidsset bevinden. Zie [Azure Managed Disks overview](../../../virtual-machines/managed-disks-overview.md) (Overzicht van Azure Managed Disks) voor meer informatie. Zie [Managed disks voor virtuele machines in een beschikbaarheidsset gebruiken](../../../virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set)voor meer informatie over beheerde schijven in een beschikbaarheidsset.
+   Gebruik Azure Managed Disks voor de opslag van de virtuele machine. Micro soft adviseert Managed Disks voor SQL Server virtuele machines. Managed Disks verwerken de opslag achter de schermen. Bovendien distribueert Azure de opslagresources zodat voldoende redundantie wordt geboden wanneer virtuele machines met Managed Disks zich in dezelfde beschikbaarheidsset bevinden. Zie [Azure Managed Disks overview](../../../virtual-machines/managed-disks-overview.md) (Overzicht van Azure Managed Disks) voor meer informatie. Zie [Managed disks voor virtuele machines in een beschikbaarheidsset gebruiken](../../../virtual-machines/availability.md)voor meer informatie over beheerde schijven in een beschikbaarheidsset.
 
 * **Netwerk-privé-IP-adressen in productie**
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b58d96adba690084580fe11b42253a1e77370379
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: fb0b976c8759eb77aa2240f95fadbd41e5d9596a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100595605"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504913"
 ---
 # <a name="azure-security-baseline-for-customer-lockbox-for-microsoft-azure"></a>Azure-beveiligings basislijn voor Klanten-lockbox voor Microsoft Azure
 
@@ -525,7 +525,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 * [Query's maken met Azure resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 * [Meer informatie over toegangs beheer op basis van rollen in azure (Azure RBAC)](../../role-based-access-control/overview.md)
 

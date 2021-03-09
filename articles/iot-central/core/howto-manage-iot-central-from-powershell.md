@@ -9,12 +9,12 @@ ms.date: 03/27/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
 manager: philmea
-ms.openlocfilehash: 832147fd06dbc7439500b911efbbde6d9b1d81fd
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: a870b72d1dda04ab29dbb5f056873d47f888b837
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92123059"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501359"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>IoT Central beheren vanuit Azure PowerShell
 
@@ -28,10 +28,12 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
+[!INCLUDE [Warning About Access Required](../../../includes/iot-central-warning-contribitorrequireaccess.md)]
+
 Als u liever Azure PowerShell op uw lokale computer wilt uitvoeren, raadpleegt u [de module Azure PowerShell installeren](/powershell/azure/install-az-ps). Wanneer u Azure PowerShell lokaal uitvoert, gebruikt u de cmdlet **Connect-AzAccount** om u aan te melden bij Azure voordat u de cmdlets in dit artikel probeert uit te voeren.
 
 > [!TIP]
-> Als u de Power shell-opdrachten in een ander Azure-abonnement wilt uitvoeren, raadpleegt u [het actieve abonnement wijzigen](/powershell/azure/manage-subscriptions-azureps?view=azps-3.4.0#change-the-active-subscription).
+> Als u de Power shell-opdrachten in een ander Azure-abonnement wilt uitvoeren, raadpleegt u [het actieve abonnement wijzigen](/powershell/azure/manage-subscriptions-azureps#change-the-active-subscription).
 
 ## <a name="install-the-iot-central-module"></a>De IoT Central-module installeren
 
@@ -41,7 +43,7 @@ Voer de volgende opdracht uit om te controleren of de [IOT Central module](/powe
 Get-InstalledModule -name Az.I*
 ```
 
-Als niet de lijst met geïnstalleerde modules **AZ. IotCentral**bevat, voert u de volgende opdracht uit:
+Als niet de lijst met geïnstalleerde modules **AZ. IotCentral** bevat, voert u de volgende opdracht uit:
 
 ```powershell
 Install-Module Az.IotCentral
@@ -70,11 +72,11 @@ Het script maakt eerst een resource groep in de regio VS-Oost voor de toepassing
 |Parameter         |Beschrijving |
 |------------------|------------|
 |ResourceGroupName |De resource groep die de toepassing bevat. Deze resource groep moet al bestaan in uw abonnement. |
-|Locatie |Deze cmdlet gebruikt standaard de locatie van de resource groep. Op dit moment kunt u een IoT Central-toepassing maken in de geografs **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk**en **Japan** . |
-|Naam              |De naam van de toepassing in de Azure Portal. |
+|Locatie |Deze cmdlet gebruikt standaard de locatie van de resource groep. Op dit moment kunt u een IoT Central-toepassing maken in de geografs **Australia**, **Azië en Stille Oceaan**, **Europa**, **Verenigde Staten**, het **Verenigd Konink rijk** en **Japan** . |
+|Name              |De naam van de toepassing in de Azure Portal. |
 |Subdomein         |Het subdomein in de URL van de toepassing. In het voor beeld is de URL van de toepassing `https://mysubdomain.azureiotcentral.com` . |
-|Sku               |Op dit moment kunt u **ST1** of **ST2**gebruiken. Zie [prijzen voor Azure IOT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
-|Template          | De toepassings sjabloon die moet worden gebruikt. Zie de volgende tabel voor meer informatie. |
+|Sku               |Op dit moment kunt u **ST1** of **ST2** gebruiken. Zie [prijzen voor Azure IOT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
+|Sjabloon          | De toepassings sjabloon die moet worden gebruikt. Zie de volgende tabel voor meer informatie. |
 |DisplayName       |De naam van de toepassing, zoals deze wordt weer gegeven in de gebruikers interface. |
 
 [!INCLUDE [iot-central-template-list](../../../includes/iot-central-template-list.md)]

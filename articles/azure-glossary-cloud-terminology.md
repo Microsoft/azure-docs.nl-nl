@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 33672e90406b94a1b5788803911c072cdc2577f7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 785c87e8136430557af819cd8c7ab1db8f54c060
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186385"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507718"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Microsoft Azure verklarende woorden lijst: een woorden lijst met Cloud terminologie op het Azure-platform
 
@@ -41,7 +41,7 @@ De reken resources die [Azure app service](app-service/overview.md) biedt voor h
 
 ## <a name="availability-set"></a>beschikbaarheidsset
 Een verzameling virtuele machines die samen worden beheerd om de redundantie en betrouw baarheid van toepassingen te bieden. Als u een beschikbaarheidsset gebruikt, zorgt u ervoor dat tijdens een geplande of niet-geplande onderhouds gebeurtenis ten minste één virtuele machine beschikbaar is.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>Klassieke Azure-implementatie model
 Een van de twee [implementatie modellen](./azure-resource-manager/management/deployment-models.md) die worden gebruikt voor het implementeren van resources in azure (het nieuwe model is Azure Resource Manager). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
@@ -58,7 +58,7 @@ Een van de twee [implementatie modellen](./azure-resource-manager/management/dep
 
 ## <a name="fault-domain"></a>fout domein
 Het verzamelen van virtuele machines in een beschikbaarheidsset die mogelijk tegelijk kunnen mislukken. Een voor beeld is een groep machines in een rek die een gemeen schappelijke voedings bron en netwerk switch delen. In Azure worden de virtuele machines in een beschikbaarheidsset automatisch gescheiden in meerdere fout domeinen.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)  
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)  
 
 ## <a name="geo"></a>geo
 Een gedefinieerde grens voor gegevens locatie die doorgaans twee of meer regio's bevatten. De grenzen kunnen zich binnen of buiten de nationale grenzen bevinden en worden beïnvloed door de belasting verordening. Elke geo heeft ten minste één regio. Voor beelden van geografische gebieden zijn Azië en Stille Oceaan en Japan. Ook wel *geografie* genoemd.  
@@ -135,7 +135,7 @@ Zie [Tags gebruiken om uw Azure-resources te organiseren](./azure-resource-manag
 
 ## <a name="update-domain"></a>domein bijwerken
 De verzameling virtuele machines in een beschikbaarheidsset die tegelijkertijd worden bijgewerkt. Virtuele machines in hetzelfde update domein worden samen opnieuw gestart tijdens gepland onderhoud. Azure start nooit meer dan één update domein per keer opnieuw op. Wordt ook wel een upgrade domein genoemd.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="virtual-machine"></a><a name="vm"></a>virtuele machine
 De software-implementatie van een fysieke computer waarop een besturings systeem wordt uitgevoerd. Meerdere virtuele machines kunnen tegelijkertijd op dezelfde hardware worden uitgevoerd. In azure zijn virtuele machines beschikbaar in verschillende grootten.  

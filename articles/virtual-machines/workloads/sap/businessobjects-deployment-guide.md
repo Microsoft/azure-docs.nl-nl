@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: e753d810bbc2ed1079b58d20a0659bf5e2219d11
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3b3c313df5704e49481c66ad682faccd48d180ea
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671904"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505899"
 ---
 # <a name="sap-businessobjects-bi-platform-planning-and-implementation-guide-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformplanning en implementatie in Azure
 
@@ -222,7 +222,7 @@ Het SAP BI-platform bevat veel verschillende onderdelen en tijdens het ontwerpen
 
 Ook het aantal update-en fout domeinen dat kan worden gebruikt door een Azure-Beschikbaarheidsset binnen een Azure-schaal eenheid is eindig. Dus als u virtuele machines toevoegt aan een enkele beschikbaarheidsset, zullen twee of meer Vm's uiteindelijk eindigen op hetzelfde fout-of update domein. Zie de sectie [Azure Availability sets](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/virtual-machines/workloads/sap/planning-guide.md#azure-availability-sets) van de Azure virtual machines planning and implementation for SAP document voor meer informatie.
 
-Lees [Beschik baarheid beheren](../../manage-availability.md) voor meer informatie over het concept van Azure-beschikbaarheids sets en de manier waarop beschikbaarheids sets zijn gekoppeld aan fout-en upgrade domeinen.
+Lees [Beschik baarheid beheren](../../availability.md) voor meer informatie over het concept van Azure-beschikbaarheids sets en de manier waarop beschikbaarheids sets zijn gekoppeld aan fout-en upgrade domeinen.
 
 > [!Important]
 > De concepten van Azure-beschikbaarheidszones-en Azure-beschikbaarheids sets sluiten elkaar wederzijds uit. Dit betekent dat u een paar of meerdere Vm's kunt implementeren in een specifieke beschikbaarheids zone of een Azure-beschikbaarheidsset. Maar niet beide.

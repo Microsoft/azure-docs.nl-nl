@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 05d312296b48f35ea87c5443cc587989e2d11fd5
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c73f6884a0bf9dc1e12e97439166c8aeabe6e35a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587972"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504555"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Het Windows-hulp programma voor virtueel bureau blad (klassiek) implementeren
 
@@ -38,8 +38,8 @@ U moet een Azure Active Directory app-registratie en een Log Analytics-werk ruim
 
 U moet deze twee Power shell-modules ook installeren voordat u aan de slag gaat:
 
-- [Azure PowerShell-module](/powershell/azure/install-az-ps?view=azps-2.4.0/&preserve-view=true)
-- [Azure AD-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0/&preserve-view=true)
+- [Azure PowerShell-module](/powershell/azure/install-az-ps)
+- [Azure AD-module](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0&preserve-view=true)
 
 Zorg ervoor dat uw abonnement-ID gereed is voor wanneer u zich aanmeldt.
 

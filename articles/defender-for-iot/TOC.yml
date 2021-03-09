@@ -27,12 +27,12 @@
         - name: Onboarden naar Defender voor IoT-oplossing op basis van een agent
           displayName: 'IoT Hub, existing, enable'
           href: quickstart-onboard-iot-hub.md
-        - name: Defender voor IoT micro agent installeren
+        - name: Defender installeren voor IoT micro agent (preview)
           displayName: 'package, authentication, methods, certificate, authenticate, version'
           href: quickstart-standalone-agent-binary-installation.md
-        - name: Een Defender IoT micro Agent-module maken dubbele
+        - name: Een Defender IoT micro Agent-module maken (preview)
           href: quickstart-create-micro-agent-module-twin.md
-        - name: De Defender voor IoT micro agent bouwen op basis van de bron code
+        - name: De Defender voor IoT micro agent bouwen op basis van de bron code (preview)
           displayName: 'baseline, configuration, customize, distribution'
           href: quickstart-building-the-defender-micro-agent-from-source.md
         - name: Beveiligings module voor Azure RTO'S configureren
@@ -56,18 +56,18 @@
           href: concept-key-concepts.md
     - name: Oplossing met agent voor apparaatbouwer
       items:
-        - name: Overzicht van agent portfolio en ondersteuning van besturings systemen
+        - name: Overzicht van agent portfolio en ondersteuning van besturings systemen (preview-versie)
           displayName: 'standalone agent, micro agent, RTOS'
           href: concept-agent-portfolio-overview-os-support.md
-        - name: Overzicht van zelfstandige micro agent
+        - name: Overzicht van zelfstandige micro agent (preview-versie)
           displayName: 'endpoint, posture, distribution, flexible, model'
           href: concept-standalone-micro-agent-overview.md
-        - name: Verificatie voor beveiligingsagents
+        - name: Verificatie van beveiligings agent (preview-versie)
           displayName: 'connection string, certificate, authentication'
           href: concept-security-agent-authentication.md
         - name: Security postuur-CIS-Bench Mark
           href: concept-security-posture.md
-        - name: Aggregatie van gebeurtenissen
+        - name: Gebeurtenis aggregatie (preview-versie)
           displayName: 'process events, network connection'
           href: concept-event-aggregation.md
         - name: Ingebouwde waarschuwingen voor IoT Hub
@@ -297,7 +297,7 @@
               href: how-to-investigate-device.md
 - name: Problemen oplossen
   items:
-    - name: Problemen oplossen met micro agent voor Defender IoT
+    - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
       displayName: 'service status, review logs'
       href: troubleshoot-defender-micro-agent.md
 - name: Functie ondersteuning en buiten gebruik stellen

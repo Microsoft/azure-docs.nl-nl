@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: 7a40acf7dea11781a0381e93ea180c5185b7818b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b94e1f82409da3329eb6d978fa2ae0222928cd97
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671921"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505933"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
@@ -603,7 +603,7 @@ Om de impact van uitval tijd te verminderen vanwege een of meer gebeurtenissen, 
 - Gebruik Managed Disks voor Vm's in een Beschikbaarheidsset.
 - Configureer elke toepassingslaag in afzonderlijke beschikbaarheids sets.
 
-Schakel [de beschik baarheid van virtuele Linux-machines beheren](../../manage-availability.md) in voor meer informatie.
+Schakel [de beschik baarheid van virtuele Linux-machines beheren](../../availability.md) in voor meer informatie.
 
 #### <a name="high-availability-for-cms-database"></a>Hoge Beschik baarheid voor CMS-data base
 

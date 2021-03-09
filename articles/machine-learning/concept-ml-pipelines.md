@@ -10,12 +10,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 02/26/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 8b5e74d12af92b5d300e638bee27020a5af5383c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 584e421b6beac0e4ecfab5b3e3cb735b8465e1b4
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690376"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503518"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Wat zijn Azure Machine Learning pijp lijnen?
 
@@ -79,7 +79,7 @@ Wanneer u een-object maakt en uitvoert `Pipeline` , worden de volgende stappen o
 
 ## <a name="building-pipelines-with-the-python-sdk"></a>Pijp lijnen bouwen met de python-SDK
 
-In de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)is een pijp lijn een python-object dat is gedefinieerd in de `azureml.pipeline.core` module. Een [pijplijn](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29?preserve-view=true&view=azure-ml-py) object bevat een geordende sequentie van een of meer [PipelineStep](/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?preserve-view=true&view=azure-ml-py) -objecten. De `PipelineStep` klasse is abstract en de daad werkelijke stappen zijn subklassen, zoals [EstimatorStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.estimatorstep?preserve-view=true&view=azure-ml-py), [PythonScriptStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.pythonscriptstep?preserve-view=true&view=azure-ml-py)of [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep?preserve-view=true&view=azure-ml-py). De [ModuleStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.modulestep?preserve-view=true&view=azure-ml-py) -klasse bevat een herbruikbare reeks stappen die kunnen worden gedeeld tussen pijp lijnen. Een `Pipeline` uitvoering als onderdeel van een `Experiment` .
+In de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/install)is een pijp lijn een python-object dat is gedefinieerd in de `azureml.pipeline.core` module. Een [pijplijn](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipeline%28class%29) object bevat een geordende sequentie van een of meer [PipelineStep](/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep) -objecten. De `PipelineStep` klasse is abstract en de daad werkelijke stappen zijn subklassen, zoals [EstimatorStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.estimatorstep), [PythonScriptStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.pythonscriptstep)of [DataTransferStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.datatransferstep). De [ModuleStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.modulestep) -klasse bevat een herbruikbare reeks stappen die kunnen worden gedeeld tussen pijp lijnen. Een `Pipeline` uitvoering als onderdeel van een `Experiment` .
 
 Een Azure machine learning-pijp lijn is gekoppeld aan een Azure Machine Learning-werk ruimte en een pijplijn stap is gekoppeld aan een berekenings doel dat in die werk ruimte beschikbaar is. Zie [Azure machine learning-werk ruimten maken en beheren in de Azure Portal](./how-to-manage-workspace.md) of [Wat zijn reken doelen in azure machine learning?](./concept-compute-target.md)voor meer informatie.
 
@@ -123,7 +123,7 @@ pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
 ```
 
-Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `prepped_data_path` . Het `input_data` is een exemplaar van [FileDataset](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py) en de `prepped_data_path` is een exemplaar van  [OutputFileDatasetConfig](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py). Voor `OutputFileDatasetConfig` het standaard gedrag is het kopiëren van de uitvoer naar de `workspaceblobstore` gegevens opslag onder het pad `/dataset/{run-id}/{output-name}` , waarbij `run-id` de id van de uitvoeringsrun is en `output-name` een automatisch gegenereerde waarde als niet is opgegeven door de ontwikkelaar.
+Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `prepped_data_path` . Het `input_data` is een exemplaar van [FileDataset](/python/api/azureml-core/azureml.data.filedataset) en de `prepped_data_path` is een exemplaar van  [OutputFileDatasetConfig](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig). Voor `OutputFileDatasetConfig` het standaard gedrag is het kopiëren van de uitvoer naar de `workspaceblobstore` gegevens opslag onder het pad `/dataset/{run-id}/{output-name}` , waarbij `run-id` de id van de uitvoeringsrun is en `output-name` een automatisch gegenereerde waarde als niet is opgegeven door de ontwikkelaar.
 
 De code voor gegevens voorbereiding (niet weer gegeven), schrijft bestanden met scheidings tekens naar `prepped_data_path` . Deze uitvoer van de stap voor het voorbereiden van de gegevens worden door gegeven `prepped_data` aan de trainings stap. 
 
@@ -162,6 +162,6 @@ Azure Machine Learning-pijp lijnen zijn een krachtige faciliteit die in de vroeg
 
 + Meer informatie over het [uitvoeren van batch voorspellingen voor grote gegevens](tutorial-pipeline-batch-scoring-classification.md ).
 
-+ Zie de SDK-documentatie voor [pijplijn kernen](/python/api/azureml-pipeline-core/?preserve-view=true&view=azure-ml-py) en [pijplijn stappen](/python/api/azureml-pipeline-steps/?preserve-view=true&view=azure-ml-py).
++ Zie de SDK-documentatie voor [pijplijn kernen](/python/api/azureml-pipeline-core/) en [pijplijn stappen](/python/api/azureml-pipeline-steps/).
 
 + Probeer een voor beeld van Jupyter-notitie blokken [Azure machine learning-pijp lijnen](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines). Meer informatie over het [uitvoeren van notitie blokken om deze service te verkennen](samples-notebooks.md).

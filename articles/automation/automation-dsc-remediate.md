@@ -9,12 +9,12 @@ ms.author: migreene
 ms.topic: conceptual
 ms.date: 07/17/2019
 manager: nirb
-ms.openlocfilehash: 4430b8cdfe9414ddbfd7aad3c3fe7827adbc8705
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 98164c20af2a5d6ae7ccac43331a2876c23ccfb7
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186364"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500169"
 ---
 # <a name="remediate-noncompliant-azure-automation-state-configuration-servers"></a>Niet-compatibele Azure Automation status configuratie servers herstellen
 
@@ -43,5 +43,5 @@ Voor hybride knoop punten kunt u met behulp van de python-scripts de drift corri
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation/#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [continue implementatie instellen met chocolade](automation-dsc-cd-chocolatey.md)voor een voor beeld van het gebruik van Azure Automation status configuratie in een pijp lijn voor continue implementatie.

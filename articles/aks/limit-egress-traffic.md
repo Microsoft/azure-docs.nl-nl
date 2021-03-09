@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: jpalma
 ms.date: 11/09/2020
 author: palma21
-ms.openlocfilehash: c6160d36240b59c60fafa955b916fb6167c2648e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 93c8d1392de8f502a829276287a4687476dd36de
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685751"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505055"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Uitgaand verkeer beheren voor cluster knooppunten in azure Kubernetes service (AKS)
 
@@ -28,13 +28,13 @@ De uitgaande afhankelijkheden voor AKS zijn bijna volledig gedefinieerd met FQDN
 Standaard hebben AKS-clusters onbeperkte uitgaande (uitgaand) Internet toegang. Met dit niveau van netwerk toegang kunnen knoop punten en services die u uitvoert om toegang te krijgen tot externe bronnen als dat nodig is. Als u uitgaand verkeer wilt beperken, moet een beperkt aantal poorten en adressen toegankelijk zijn voor het onderhouden van goede cluster onderhouds taken. De eenvoudigste oplossing voor het beveiligen van uitgaande adressen berust op het gebruik van een firewall apparaat waarmee het uitgaande verkeer op basis van domein namen kan worden beheerd. Azure Firewall kan bijvoorbeeld het uitgaande HTTP-en HTTPS-verkeer beperken op basis van de FQDN van de bestemming. U kunt ook uw voorkeurs firewall en beveiligings regels configureren om deze vereiste poorten en adressen toe te staan.
 
 > [!IMPORTANT]
-> In dit document wordt alleen beschreven hoe u het verkeer vergrendelt dat het AKS-subnet verlaat. AKS heeft standaard geen ingangs vereisten.  Het blok keren van het **verkeer van interne subnetten** met netwerk beveiligings groepen (nsg's) en firewalls wordt niet ondersteund. Als u het verkeer binnen het cluster wilt beheren en blok keren, gebruikt u [ * *_netwerk beleid_* _][network-policy].
+> In dit document wordt alleen beschreven hoe u het verkeer vergrendelt dat het AKS-subnet verlaat. AKS heeft standaard geen ingangs vereisten.  Het blok keren van het **verkeer van interne subnetten** met netwerk beveiligings groepen (nsg's) en firewalls wordt niet ondersteund. Gebruik [**_netwerk beleid_**][network-policy]om het verkeer binnen het cluster te beheren en te blok keren.
 
 ## <a name="required-outbound-network-rules-and-fqdns-for-aks-clusters"></a>Vereiste uitgaande netwerk regels en FQDN voor AKS-clusters
 
 Het volgende netwerk en de FQDN/toepassings regels zijn vereist voor een AKS-cluster. u kunt deze gebruiken als u een andere oplossing dan Azure Firewall wilt configureren.
 
-_ IP-adres afhankelijkheden zijn voor niet-HTTP/S-verkeer (TCP-en UDP-verkeer)
+* Afhankelijkheden van IP-adressen zijn voor niet-HTTP/S-verkeer (TCP-en UDP-verkeer)
 * FQDN HTTP/HTTPS-eind punten kunnen worden geplaatst op het apparaat van de firewall.
 * Joker tekens voor HTTP/HTTPS-eind punten zijn afhankelijkheden die kunnen variëren met uw AKS-cluster op basis van een aantal kwalificaties.
 * AKS maakt gebruik van een toegangs controller om de FQDN als een omgevings variabele in te voeren voor alle implementaties onder uitvoeren-System en gate keeper-System, waardoor alle systeem communicatie tussen knoop punten en API server de FQDN van de API-server en niet het API-server-IP-adres gebruikt. 
@@ -407,7 +407,7 @@ Nu kan een AKS-cluster worden geïmplementeerd in het bestaande virtuele netwerk
 
 ### <a name="create-a-service-principal-with-access-to-provision-inside-the-existing-virtual-network"></a>Een service-principal met toegang maken om in het bestaande virtuele netwerk in te richten
 
-Een service-principal wordt door AKS gebruikt om cluster bronnen te maken. De service-principal die tijdens het maken wordt door gegeven, wordt gebruikt voor het maken van onderliggende AKS-resources, zoals opslag resources, Ip's en load balancers die door AKS worden gebruikt (u kunt in plaats daarvan ook een [beheerde identiteit](use-managed-identity.md) gebruiken). Als u hieronder niet de juiste machtigingen hebt verleend, kunt u het AKS-cluster niet inrichten.
+Een cluster identiteit (beheerde identiteit of Service-Principal) wordt door AKS gebruikt om cluster bronnen te maken. Een service-principal die tijdens het maken wordt door gegeven, wordt gebruikt voor het maken van onderliggende AKS-resources, zoals opslag resources, Ip's en load balancers die door AKS worden gebruikt (u kunt in plaats daarvan ook een [beheerde identiteit](use-managed-identity.md) gebruiken). Als u hieronder niet de juiste machtigingen hebt verleend, kunt u het AKS-cluster niet inrichten.
 
 ```azurecli
 # Create SP and Assign Permission to Virtual Network

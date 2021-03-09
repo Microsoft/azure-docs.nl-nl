@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 7a6fc27321fa924b7ef8f9bd39b5824bb6fe3c72
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: be202a6016842ee82b3230c2841d416d3b53ea15
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732575"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505576"
 ---
 # <a name="troubleshooting-application-insights-agent-formerly-named-status-monitor-v2"></a>Problemen met Application Insights agent oplossen (voorheen Status Monitor v2 genoemd)
 
@@ -55,7 +55,7 @@ U kunt hulpprogram ma's voor probleem oplossing gebruiken om het gedrag van Symp
 ### <a name="powershell-versions"></a>Power shell-versies
 Dit product is geschreven en getest met Power shell v 5.1.
 Deze module is niet compatibel met Power shell-versie 6 of 7.
-We raden u aan Power shell v 5.1 naast nieuwere versies te gebruiken. Zie [using Power shell 7 side by side with Power shell 5,1](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.1#using-powershell-7-side-by-side-with-windows-powershell-51)(Engelstalig) voor meer informatie.
+We raden u aan Power shell v 5.1 naast nieuwere versies te gebruiken. Zie [using Power shell 7 side by side with Power shell 5,1](/powershell/scripting/install/migrating-from-windows-powershell-51-to-powershell-7#using-powershell-7-side-by-side-with-windows-powershell-51)(Engelstalig) voor meer informatie.
 
 ### <a name="conflict-with-iis-shared-configuration"></a>Conflict met gedeelde IIS-configuratie
 

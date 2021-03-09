@@ -10,17 +10,17 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 6e686c7b22eb834a096cdd7a67beb6d8d291ef20
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 14837391f7bf907acbbe1d573f3171acef4db658
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392320"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503501"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
 
-In dit artikel vindt u informatie over het configureren en trainen van een regressie model voor het maken van een time-reeks met behulp van geautomatiseerde machine learning, AutoML, in de [Azure machine learning python-SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
+In dit artikel vindt u informatie over het configureren en trainen van een regressie model voor het maken van een time-reeks met behulp van geautomatiseerde machine learning, AutoML, in de [Azure machine learning python-SDK](/python/api/overview/azure/ml/). 
 
 Dit doet u als volgt: 
 
@@ -120,7 +120,7 @@ Meer informatie over hoe AutoML van toepassing is op Kruis validatie om te [voor
 
 ## <a name="configure-experiment"></a>Experiment configureren
 
-Het [`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py) object definieert de instellingen en gegevens die nodig zijn voor een geautomatiseerde machine learning taak. De configuratie van een prognose model is vergelijkbaar met de instelling van een standaard regressie model, maar bepaalde modellen, configuratie opties en parametrisatie-stappen zijn specifiek voor tijdreeks gegevens. 
+Het [`AutoMLConfig`](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig) object definieert de instellingen en gegevens die nodig zijn voor een geautomatiseerde machine learning taak. De configuratie van een prognose model is vergelijkbaar met de instelling van een standaard regressie model, maar bepaalde modellen, configuratie opties en parametrisatie-stappen zijn specifiek voor tijdreeks gegevens. 
 
 ### <a name="supported-models"></a>Ondersteunde modellen
 Automatische machine learning probeert automatisch verschillende modellen en algoritmen als onderdeel van het maken en afstemmen van het model. Als gebruiker hoeft u het algoritme niet op te geven. Voor het voors pellen van experimenten zijn zowel systeem eigen time-series als diepe leer modellen onderdeel van het aanbevelings systeem. De volgende tabel geeft een overzicht van deze subset van modellen. 
@@ -128,7 +128,7 @@ Automatische machine learning probeert automatisch verschillende modellen en alg
 >[!Tip]
 > Traditionele regressie modellen worden ook getest als onderdeel van het aanbevelings systeem voor het voors pellen van experimenten. Zie de [tabel ondersteunde](how-to-configure-auto-train.md#supported-models) modellen voor de volledige lijst met modellen. 
 
-Modellen| Description | Voordelen
+Modellen| Beschrijving | Voordelen
 ----|----|---
 Prophet (preview-versie)|Prophet werkt het beste met een tijd reeks met krachtige seizoensgebonden effecten en verschillende seizoenen historische gegevens. Als u gebruik wilt maken van dit model, installeert u het lokaal met `pip install fbprophet` . | Nauw keurige & snelle, robuuste uitbijters, ontbrekende gegevens en dramatische wijzigingen in uw tijd reeks.
 Automatische ARIMA (preview-versie)|Automatisch herlopend, geïntegreerd zwevend gemiddelde (ARIMA) wordt het beste uitgevoerd wanneer de gegevens stationair zijn. Dit betekent dat de statistische eigenschappen, zoals het gemiddelde en de variantie, constant zijn in de hele set. Als u bijvoorbeeld een munten spiegelt, is de kans dat u koppen krijgt, 50%, ongeacht of u vandaag, morgen of volgend jaar spiegelt.| Ideaal voor univariate-Series, aangezien de vorige waarden worden gebruikt om de toekomstige waarden te voors pellen.
@@ -138,7 +138,7 @@ ForecastTCN (preview-versie)| ForecastTCN is een Neural-netwerk model dat is ont
 
 Net als bij een regressie probleem definieert u de standaard opleidings parameters, zoals het taak type, het aantal iteraties, de trainings gegevens en het aantal Kruis validaties. Voor prognose taken zijn er aanvullende para meters die moeten worden ingesteld die van invloed zijn op het experiment. 
 
-De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [documentatie](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) van de ForecastingParameter-klasse voor syntaxis ontwerp patronen.
+De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [documentatie](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters) van de ForecastingParameter-klasse voor syntaxis ontwerp patronen.
 
 | Parameter &nbsp; naam | Beschrijving | Vereist |
 |-------|-------|-------|
@@ -154,7 +154,7 @@ De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [
 
 
 De volgende code, 
-* Maakt gebruik van de- [`ForecastingParameters`](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
+* Maakt gebruik van de- [`ForecastingParameters`](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters) klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
 * Hiermee stelt `time_column_name` u de `day_datetime` waarde in op het veld in de gegevensset. 
 * Hiermee definieert `time_series_id_column_names` u de para meter voor `"store"` . Dit zorgt ervoor dat er **twee afzonderlijke time-series groepen** worden gemaakt voor de gegevens. een voor Store A en B.
 * Hiermee stelt `forecast_horizon` u de 50 in op om te voors pellen voor de hele testset. 
@@ -298,7 +298,7 @@ Bekijk een voor beeld van een python-code met behulp van de [samenvoeg functie v
 
 ### <a name="short-series-handling"></a>Verwerking van de korte serie
 
-Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_configuration](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration)voor de exacte berekening.
+Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_configuration](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters#short-series-handling-configuration)voor de exacte berekening.
 
 Automatische ML biedt de verwerking van korte reeksen standaard met de `short_series_handling_configuration` para meter in het `ForecastingParameters` object. 
 

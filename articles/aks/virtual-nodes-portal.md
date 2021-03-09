@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 4c67d3608d2128385c273425ea495a02fa5a8c45
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 06a3e7263b2e03cfc37f7ba3c733e07536b5d473
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102180901"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501801"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten in de Azure Portal
 
@@ -64,7 +64,7 @@ Selecteer op de pagina **schalen** de optie *ingeschakeld* onder **virtuele knoo
 
 ![AKS-cluster maken en de virtuele knoop punten inschakelen](media/virtual-nodes-portal/enable-virtual-nodes.png)
 
-Standaard wordt een Azure Active Directory Service-Principal gemaakt. Deze service-principal wordt gebruikt voor cluster communicatie en integratie met andere Azure-Services. U kunt ook een beheerde identiteit voor machtigingen gebruiken in plaats van een service-principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
+Standaard wordt er een cluster identiteit gemaakt. Deze cluster-id wordt gebruikt voor cluster communicatie en integratie met andere Azure-Services. Deze cluster identiteit is standaard een beheerde identiteit. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie. U kunt ook een Service-Principal als uw cluster-id gebruiken.
 
 Het cluster is ook geconfigureerd voor geavanceerde netwerken. De virtuele knoop punten zijn geconfigureerd voor het gebruik van hun eigen subnet van het virtuele netwerk van Azure. Dit subnet heeft gedelegeerde machtigingen voor het verbinden van Azure-resources tussen het AKS-cluster. Als u nog geen overgedragen subnet hebt, wordt het virtuele Azure-netwerk en-subnet door de Azure Portal gemaakt en geconfigureerd voor gebruik met de virtuele knoop punten.
 

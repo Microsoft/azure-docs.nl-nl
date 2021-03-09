@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python, automl
-ms.openlocfilehash: f4d26ba6bec8f3e63ba89ed9abae789704a0828b
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 04e50f5a990624aa01c845c82658639b8450f57d
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184098"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503858"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Zelfstudie: Geautomatiseerde machine learning gebruiken om taxitarieven te voorspellen
 
@@ -175,7 +175,7 @@ final_df.describe()
 
 ## <a name="configure-workspace"></a>Werkruimte configureren
 
-Maak een werkruimte-object van de bestaande werkruimte. Een [Werkruimte](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) is een klasse die uw Azure-abonnement en resourcegegevens accepteert. Hier wordt ook een cloudresource gemaakt om de uitvoeringen van uw model te controleren en bij te houden. `Workspace.from_config()` leest het bestand **config.json** en laadt de verificatiegegevens in een object met de naam `ws`. `ws` wordt gebruikt in de rest van de code in deze zelfstudie.
+Maak een werkruimte-object van de bestaande werkruimte. Een [Werkruimte](/python/api/azureml-core/azureml.core.workspace.workspace) is een klasse die uw Azure-abonnement en resourcegegevens accepteert. Hier wordt ook een cloudresource gemaakt om de uitvoeringen van uw model te controleren en bij te houden. `Workspace.from_config()` leest het bestand **config.json** en laadt de verificatiegegevens in een object met de naam `ws`. `ws` wordt gebruikt in de rest van de code in deze zelfstudie.
 
 ```python
 from azureml.core.workspace import Workspace
@@ -302,7 +302,7 @@ BEST: The best observed score thus far.
 
 ## <a name="explore-the-results"></a>De resultaten verkennen
 
-Bekijk de resultaten van de automatische training met een [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py). Met de widget kunt u een grafiek en tabel van alle afzonderlijke uitvoeringsiteraties bekijken, samen met metrische nauwkeurigheidsgegevens en metagegevens van de training. Daarnaast kunt u met behulp van de vervolgkeuzelijst filteren op andere metrische nauwkeurigheidsgegevens dan de eerste metrische gegevens.
+Bekijk de resultaten van de automatische training met een [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets). Met de widget kunt u een grafiek en tabel van alle afzonderlijke uitvoeringsiteraties bekijken, samen met metrische nauwkeurigheidsgegevens en metagegevens van de training. Daarnaast kunt u met behulp van de vervolgkeuzelijst filteren op andere metrische nauwkeurigheidsgegevens dan de eerste metrische gegevens.
 
 ```python
 from azureml.widgets import RunDetails

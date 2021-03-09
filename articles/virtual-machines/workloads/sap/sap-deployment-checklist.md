@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 40d22a410054f17676c4d9db639fd5e32da18531
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 51bfd632e854132be27a7b971cf03e9fe5b00138
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665991"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504300"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>SAP-workloads op Azure: controle lijst voor planning en implementatie
 
@@ -138,7 +138,7 @@ U wordt aangeraden een volledige HADR-oplossing en beveiligings ontwerp in te st
         - Als u Azure Load Balancer samen met Linux-gast besturingssystemen gebruikt, controleert u of de para meter van het Linux-netwerk **net.IPv4.tcp_timestamps** is ingesteld op **0**. Deze aanbeveling is in conflict met aanbevelingen in oudere versies van [SAP note #2382421](https://launchpad.support.sap.com/#/notes/2382421). De SAP-notitie wordt nu bijgewerkt met de status dat deze para meter moet worden ingesteld op **0** om te kunnen werken met Azure load balancers.
         - Overweeg het gebruik van [Azure proximity placement groups](../../co-location.md) om een optimale netwerk latentie te verkrijgen. Zie voor meer informatie [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
    4. Hoge Beschik baarheid en implementaties voor herstel na nood gevallen.
-        - Als u de SAP-toepassingslaag implementeert zonder een specifieke Azure-beschikbaarheids zone te definiëren, moet u ervoor zorgen dat alle virtuele machines waarop SAP-dialoog instanties of middleware-exemplaren van één SAP-systeem worden uitgevoerd, worden geïmplementeerd in een [beschikbaarheidsset](../../manage-availability.md).
+        - Als u de SAP-toepassingslaag implementeert zonder een specifieke Azure-beschikbaarheids zone te definiëren, moet u ervoor zorgen dat alle virtuele machines waarop SAP-dialoog instanties of middleware-exemplaren van één SAP-systeem worden uitgevoerd, worden geïmplementeerd in een [beschikbaarheidsset](../../availability-set-overview.md).
         - Als u geen hoge Beschik baarheid voor SAP Central-Services en het DBMS nodig hebt, kunt u deze Vm's implementeren in dezelfde beschikbaarheidsset als de SAP-toepassingslaag.
         - Als u SAP Central-Services en de DBMS-laag voor hoge Beschik baarheid beveiligt met behulp van passieve replicatie, plaatst u de twee knoop punten voor SAP Central-Services in één afzonderlijke beschikbaarheidsset en de twee DBMS-knoop punten in een andere beschikbaarheidsset.
         - Als u in Azure-beschikbaarheidszones implementeert, kunt u geen beschikbaarheids sets gebruiken. Maar u moet ervoor zorgen dat u de knoop punten actief en passieve centrale Services implementeert in twee verschillende Beschikbaarheidszones. Gebruik Beschikbaarheidszones die de laagste latentie ertussen hebben.

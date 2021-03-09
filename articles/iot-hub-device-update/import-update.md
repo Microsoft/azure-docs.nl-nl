@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 7f2353d9e87c35f01a9fd514df7cfb090a98bf27
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 6502728a14ea825fadfde107e61f235db5619ae0
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442941"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507276"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
@@ -57,8 +57,8 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 
     | Parameter | Beschrijving |
     | --------- | ----------- |
-    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso
-    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld een pop-
+    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso. Eigenschap van het [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties) van de _fabrikant_ moet overeenkomen
+    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld pop-up. Eigenschap voor _model_ [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties) moet overeenkomen
     | updateProvider | Entiteit die de update maakt of rechtstreeks verantwoordelijk is. Het is vaak een bedrijfs naam.
     | updatenaam | Id voor een klasse van updates. De klasse kan alles zijn wat u kiest. Het is vaak een apparaat-of model naam.
     | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Kan al dan niet overeenkomen met een versie van een afzonderlijk software onderdeel op het apparaat.

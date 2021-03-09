@@ -9,17 +9,17 @@ ms.subservice: availability
 ms.date: 12/18/2018
 ms.reviewer: jushiman
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: 5a71a6bce6d0e1a41201e0d7395110a6ac64db8c
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 8c114d6260cf81bcc4fb256fc8a09947ab9ce1d8
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102209744"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502481"
 ---
 # <a name="choosing-the-right-number-of-fault-domains-for-virtual-machine-scale-set"></a>Het juiste aantal foutdomeinen kiezen voor een virtuele-machineschaalset
 Virtuele-machine schaal sets worden standaard gemaakt met vijf fout domeinen in azure-regio's zonder zones. Voor de regio's die ondersteuning bieden voor zonegebonden-implementatie van schaal sets voor virtuele machines en deze optie is geselecteerd, is de standaard waarde van het aantal fout domeinen 1 voor elk van de zones. FD = 1 in dit geval impliceert dat de VM-exemplaren die deel uitmaken van de schaalset, worden verdeeld over veel racks op basis van de beste inspanningen.
 
-U kunt ook overwegen het aantal fout domeinen met schaal sets af te stemmen met het aantal Managed Disks fout domeinen. Deze uitlijning kan helpen voor komen dat quorum verloren gaat als een volledig Managed Disks fout domein wordt uitgeschakeld. Het aantal FD kan worden ingesteld op minder dan of gelijk aan het aantal Managed Disks fout domeinen dat in elk van de regio's beschikbaar is. Raadpleeg dit [document](../virtual-machines/manage-availability.md) voor meer informatie over het aantal Managed disks fout domeinen per regio.
+U kunt ook overwegen het aantal fout domeinen met schaal sets af te stemmen met het aantal Managed Disks fout domeinen. Deze uitlijning kan helpen voor komen dat quorum verloren gaat als een volledig Managed Disks fout domein wordt uitgeschakeld. Het aantal FD kan worden ingesteld op minder dan of gelijk aan het aantal Managed Disks fout domeinen dat in elk van de regio's beschikbaar is. Raadpleeg dit [document](../virtual-machines/availability.md) voor meer informatie over het aantal Managed disks fout domeinen per regio.
 
 ## <a name="rest-api"></a>REST-API
 U kunt de eigenschap instellen `properties.platformFaultDomainCount` op 1, 2 of 3 (de standaard waarde is 3 als deze niet is opgegeven). Raadpleeg [hier](/rest/api/compute/virtualmachinescalesets/createorupdate)de documentatie voor rest API.

@@ -5,18 +5,18 @@ author: mumian
 ms.date: 03/02/2021
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: ab1d7b88321ce5959b99423ae2ca1332369ef691
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: a5b5533cd87c417d03db960c477392c24fa59f8a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102178961"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504147"
 ---
 # <a name="quickstart-create-bicep-files-with-visual-studio-code"></a>Quick Start: Bicep-bestanden maken met Visual Studio code
 
 De Bicep-extensie voor Visual Studio code biedt taal ondersteuning en automatisch aanvullen van resources. Met deze hulpprogram ma's kunt u [Bicep](./bicep-overview.md) -bestanden maken en valideren. In deze Quick Start gebruikt u de extensie om een volledig Bicep-bestand te maken. Wanneer u dit doet, worden de uitbreidings mogelijkheden, zoals validatie en voltooiingen, uitgevoerd.
 
-Als u deze Snelstartgids wilt volt ooien, hebt u [Visual Studio code](https://code.visualstudio.com/)nodig, waarbij de [Bicep-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) is geïnstalleerd. U hebt ook de nieuwste [Azure cli](/cli/azure/) of de nieuwste [Azure PowerShell-module](/powershell/azure/new-azureps-module-az?view=azps-3.7.0&preserve-view=true) geïnstalleerd en geverifieerd.
+Als u deze Snelstartgids wilt volt ooien, hebt u [Visual Studio code](https://code.visualstudio.com/)nodig, waarbij de [Bicep-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) is geïnstalleerd. U hebt ook de nieuwste [Azure cli](/cli/azure/) of de nieuwste [Azure PowerShell-module](/powershell/azure/new-azureps-module-az) geïnstalleerd en geverifieerd.
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 

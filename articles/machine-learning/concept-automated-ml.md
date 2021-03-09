@@ -10,12 +10,12 @@ author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: 6ed9b316fceeb30a775e2e0d90e7bbb0a07278cd
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: e7038a4e06a96ac2df1a7f0918877db9c97cb71d
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102180494"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502532"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
@@ -204,7 +204,7 @@ Het bouwen van een model __voor elk exemplaar of individu__ in de volgende scena
 
 Azure Machine Learning biedt twee ervaring voor het werken met automatische ML:
 
-* Voor code ervaring klanten [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) 
+* Voor code ervaring klanten [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro) 
 
 * Voor klanten met een beperkte of geen code ervaring Azure Machine Learning Studio op [https://ml.azure.com](https://ml.azure.com/)  
 
@@ -289,7 +289,7 @@ Bekijk gedetailleerde code voorbeelden en gebruik cases in de [github-notebook o
 
 ### <a name="python-sdk-reference"></a>Naslaginformagtie over de Python-SDK
 
-Verdiep uw expertise over SDK-ontwerp patronen en klassen specificaties met de [referentie documentatie](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py)van de AutoML-klasse. 
+Verdiep uw expertise over SDK-ontwerp patronen en klassen specificaties met de [referentie documentatie](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig)van de AutoML-klasse. 
 
 > [!Note]
 > Geautomatiseerde machine learning mogelijkheden zijn ook beschikbaar in andere micro soft-oplossingen, zoals [ml.net](/dotnet/machine-learning/automl-overview), [HDInsight](../hdinsight/spark/apache-spark-run-machine-learning-automl.md), [Power bi](/power-bi/service-machine-learning-automated) en [SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)

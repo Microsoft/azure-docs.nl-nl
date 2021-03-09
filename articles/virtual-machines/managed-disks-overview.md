@@ -8,12 +8,12 @@ ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 4a3f272ab6e4a1788368442d7d060233391442fd
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 6c9b4a9ee1a778ba7a534377f8b2abe9d9a7e18a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627812"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504727"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Inleiding tot beheerde Azure-schijven
 
@@ -35,7 +35,7 @@ Met beheerde schijven kunt u maximaal 50.000 VM-**schijven** van een type in een
 
 ### <a name="integration-with-availability-sets"></a>Integratie met beschikbaarheidssets
 
-Beheerde schijven zijn geïntegreerd met beschikbaarheidssets om ervoor te zorgen dat de schijven van [VM's in een beschikbaarheidsset](./manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) voldoende van elkaar zijn verwijderd, waardoor een SPOF (Single Point Of Failure) wordt voorkomen. Schijven worden automatisch in verschillende schaaleenheden voor opslag (stempels) geplaatst. Wanneer een hardware- of softwarefout optreedt in een stempel, worden alleen de VM-exemplaren met schijven op deze stempels beïnvloed. Stel bijvoorbeeld dat u een toepassing hebt die op vijf VM's wordt uitgevoerd en dat de VM's zich in een beschikbaarheidsset bevinden. De schijven voor deze VM's worden niet allemaal opgeslagen in dezelfde stempel, dus als de ene stempel uitvalt, worden de andere exemplaren van de toepassing nog steeds uitgevoerd.
+Beheerde schijven zijn geïntegreerd met beschikbaarheidssets om ervoor te zorgen dat de schijven van [VM's in een beschikbaarheidsset](./availability-set-overview.md) voldoende van elkaar zijn verwijderd, waardoor een SPOF (Single Point Of Failure) wordt voorkomen. Schijven worden automatisch in verschillende schaaleenheden voor opslag (stempels) geplaatst. Wanneer een hardware- of softwarefout optreedt in een stempel, worden alleen de VM-exemplaren met schijven op deze stempels beïnvloed. Stel bijvoorbeeld dat u een toepassing hebt die op vijf VM's wordt uitgevoerd en dat de VM's zich in een beschikbaarheidsset bevinden. De schijven voor deze VM's worden niet allemaal opgeslagen in dezelfde stempel, dus als de ene stempel uitvalt, worden de andere exemplaren van de toepassing nog steeds uitgevoerd.
 
 ### <a name="integration-with-availability-zones"></a>Integratie met beschikbaarheidszones
 
@@ -100,7 +100,7 @@ Deze schijf heeft een maximale capaciteit van 4.095 GiB.
 
 ### <a name="temporary-disk"></a>Tijdelijke schijf
 
-De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./manage-availability.md#understand-vm-reboots---maintenance-vs-downtime) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
+De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./understand-vm-reboots.md) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
 
 Op virtuele machines van Azure Linux is de tijdelijke schijf doorgaans /dev/sdb en op virtuele Windows-machines is de tijdelijke schijf standaard D:. De tijdelijke schijf wordt niet versleuteld door versleuteling aan serverzijde tenzij u versleuteling inschakelt op de host.
 

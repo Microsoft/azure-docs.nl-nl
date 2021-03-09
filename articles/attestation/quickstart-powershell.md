@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: ebc12982bcc05c2d07f91fbc4d85afc170adf075
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: cbc415411e05d6fdecee1acf2fbc02b3c170b9d6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453390"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501121"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-powershell"></a>Quickstart: Azure Attestation instellen met behulp van Microsoft Azure PowerShell
 
@@ -226,7 +226,7 @@ Houd er rekening mee dat alle semantische manipulatie van het certificaat van be
 
 Zie [Voorbeelden certificaat van beleidsondertekening](policy-signer-examples.md) voor een voorbeeldertificaat van beleidsondertekening.
 
-Zie [Azure Attestation PowerShell-cmdlets voor meer informatie over de cmdlets en de bijbehorende parameters](/powershell/module/az.attestation/?view=azps-4.3.0#attestation) 
+Zie [Azure Attestation PowerShell-cmdlets voor meer informatie over de cmdlets en de bijbehorende parameters](/powershell/module/az.attestation/#attestation) 
 
 ## <a name="next-steps"></a>Volgende stappen
 

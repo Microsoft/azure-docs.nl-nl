@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/02/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 850b590ae8aeab822367714fb9a56661306c2387
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 318afced85f3cca0a450d77f8be7b2a1d6c388ed
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518688"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504930"
 ---
 # <a name="set-up-compute-targets-for-model-training-and-deployment"></a>Reken doelen instellen voor model training en implementatie
 
@@ -43,7 +43,7 @@ Als u Compute-doelen wilt gebruiken die worden beheerd door Azure Machine Learni
 
 * Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
 
-* De [Azure cli-extensie voor machine learning service](reference-azure-machine-learning-cli.md), [Azure machine learning python SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
+* De [Azure cli-extensie voor machine learning service](reference-azure-machine-learning-cli.md), [Azure machine learning python SDK](/python/api/overview/azure/ml/intro)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -60,7 +60,7 @@ Met Azure Machine Learning kunt u uw model trainen op diverse resources of omgev
 
 Wanneer u uw lokale computer gebruikt voor **trainingen**, hoeft u geen reken doel te maken.  U hoeft alleen maar [de training](how-to-set-up-training-targets.md) uit te voeren vanaf uw lokale computer.
 
-Wanneer u uw lokale computer **gebruikt voor** demijnen, moet docker zijn geïnstalleerd. Als u de implementatie wilt uitvoeren, gebruikt u [LocalWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.local.localwebservice?preserve-view=true&view=azure-ml-py#deploy-configuration-port-none-) om de poort te definiëren die wordt gebruikt door de webservice. Gebruik vervolgens het normale implementatie proces zoals beschreven in [modellen implementeren met Azure machine learning](how-to-deploy-and-where.md).
+Wanneer u uw lokale computer **gebruikt voor** demijnen, moet docker zijn geïnstalleerd. Als u de implementatie wilt uitvoeren, gebruikt u [LocalWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.local.localwebservice#deploy-configuration-port-none-) om de poort te definiëren die wordt gebruikt door de webservice. Gebruik vervolgens het normale implementatie proces zoals beschreven in [modellen implementeren met Azure machine learning](how-to-deploy-and-where.md).
 
 ## <a name="remote-virtual-machines"></a><a id="vm"></a>Externe virtuele machines
 
@@ -325,7 +325,7 @@ Bekijk een [voor beeld](https://aka.ms/pl-adla) van een notebook op github voor 
 > Maak niet meerdere gelijktijdige bijlagen met dezelfde ADLA in uw werk ruimte. Elke nieuwe bijlage verbreekt de vorige bestaande bijlage (n).
 
 > [!TIP]
-> Azure Machine Learning pijp lijnen kunnen alleen worden gebruikt voor gegevens die zijn opgeslagen in de standaard gegevens opslag van het Data Lake Analytics-account. Als de gegevens waarmee u wilt werken, zich in een niet-standaard archief bevindt, kunt u een gebruiken [`DataTransferStep`](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep?preserve-view=true&view=azure-ml-py) om de gegevens te kopiëren voor de training.
+> Azure Machine Learning pijp lijnen kunnen alleen worden gebruikt voor gegevens die zijn opgeslagen in de standaard gegevens opslag van het Data Lake Analytics-account. Als de gegevens waarmee u wilt werken, zich in een niet-standaard archief bevindt, kunt u een gebruiken [`DataTransferStep`](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.data_transfer_step.datatransferstep) om de gegevens te kopiëren voor de training.
 
 ## <a name="azure-container-instance"></a><a id="aci"></a>Azure-container exemplaar
 

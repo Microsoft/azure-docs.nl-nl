@@ -3,12 +3,12 @@ title: Gegevens model van Azure Monitor logboeken
 description: In dit artikel vindt u informatie over de Azure Monitor Log Analytics gegevens model gegevens voor Azure Backup gegevens.
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 2d2146612763bac39eb636bb7da522586a0daee2
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 004c5a6c0c2c4dcfcf13134bd5a5143ba647048f
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100586772"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500985"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Log Analytics gegevens model voor Azure Backup gegevens
 
@@ -18,7 +18,8 @@ Gebruik het Log Analytics gegevens model om aangepaste waarschuwingen van Log An
 
 > [!NOTE]
 >
-> Dit gegevens model is een verwijzing naar de Azure Diagnostics modus voor het verzenden van diagnostische gebeurtenissen naar Log Analytics (LA). Raadpleeg het volgende artikel voor meer informatie over het gegevens model voor de nieuwe resource-specifieke modus: [gegevens model voor het Azure backup van diagnostische gebeurtenissen](./backup-azure-reports-data-model.md)
+> * Dit gegevens model is een verwijzing naar de Azure Diagnostics modus voor het verzenden van diagnostische gebeurtenissen naar Log Analytics (LA). Raadpleeg het volgende artikel voor meer informatie over het gegevens model voor de nieuwe resource-specifieke modus: [gegevens model voor het Azure backup van diagnostische gebeurtenissen](./backup-azure-reports-data-model.md)
+> * Voor het maken van aangepaste rapportage weergaven is het raadzaam om [systeem functies te gebruiken in azure monitor logboeken](backup-reports-system-functions.md) in plaats van het werken met de onbewerkte tabellen die hieronder worden weer gegeven.
 
 ## <a name="using-azure-backup-data-model"></a>Azure Backup gegevens model gebruiken
 
@@ -172,7 +173,7 @@ Deze tabel bevat details over projectgerelateerde velden.
 
 Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
-| Veld | Gegevenstype | Versies van toepassing | Description |
+| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -220,7 +221,7 @@ Deze tabel bevat details over velden die betrekking hebben op het beleid.
 
 Deze tabel bevat details over beleids koppelingen met verschillende entiteiten.
 
-| Veld | Gegevenstype | Versies van toepassing | Description |
+| Veld | Gegevenstype | Versies van toepassing | Beschrijving |
 | --- | --- | --- | --- |
 | EventName_s |Tekst ||Dit veld vertegenwoordigt de naam van deze gebeurtenis. Het is altijd AzureBackupCentralReport |
 | SchemaVersion_s |Tekst ||Dit veld geeft de huidige versie van het schema aan. Het is **v2** |
@@ -349,7 +350,7 @@ In deze tabel worden de werk belasting (s) aangegeven waaraan een volume is geko
 
 Deze tabel bevat basis velden die betrekking hebben op een beveiligd exemplaar.
 
-| Veld | Gegevenstype |Versies van toepassing | Description |
+| Veld | Gegevenstype |Versies van toepassing | Beschrijving |
 | --- | --- | --- | --- |
 | BackupItemUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt voor het identificeren van het back-upitem voor Vm's waarvan een back-up is gemaakt met DPM, MABS|
 | ProtectedContainerUniqueId_s |Tekst |v2|Unieke ID die wordt gebruikt om de beveiligde container te identificeren voor alles behalve Vm's waarvoor een back-up is gemaakt met behulp van DPM, MABS|

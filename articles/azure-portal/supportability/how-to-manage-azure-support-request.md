@@ -5,12 +5,12 @@ tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: d6c68dd341e0794a690b41b73ecc4be954db7359
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 4d0c03e0035f6b71a23891ac1691f5421c1bdb76
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653846"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502515"
 ---
 # <a name="manage-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag beheren
 
@@ -88,34 +88,34 @@ Volg deze richt lijnen wanneer u de optie voor het uploaden van bestanden gebrui
 * Bestanden mogen niet groter zijn dan 4 MB.
 * Alle bestanden moeten een bestandsnaam extensie hebben, zoals *. docx* of *. xlsx*. In de volgende tabel ziet u de bestands extensies die mogen worden geüpload.
 
-| 0-9, A-C     | D-G   | H-M         | N-P   | R-T      | U-W        | X-Z     |
+| 0-9, A-C    | D-G   | H-N         | O-Q   | R-T      | U-W        | X-Z     |
 |-------------|-------|-------------|-------|----------|------------|---------|
-| .7z         | . dat  | . har        | . odx  | . rar     | .tdb       | .xlam   |
-| . een          | . db   | .hwl        | . oft  | . rdl     | .tdf       | .xlr    |
-| . ABC        | . DMP  | . ICS        | . old  | .rdlc    | . tekst      | .xls    |
-| . adm        | .do_  | . ini        | . One  | .re_     | .thmx      | .xlsb   |
-| . aspx       | .doc  | .java       | . OSD  | . reg     | .tif       | .xlsm   |
-| . ATF        | .docm | .jpg        | . AF  | . Verwijder  | . TRC       | .xlsx   |
-| . b          | .docx | . LDF        | . P1   | . ren     | . TTD       | .xlt    |
-| .ba_        | .dotm | . brief hoofd | .pcap | . rename  | .tx_       | .xltx   |
-| . bak        | .dotx | . lnk        | . pdb  | .rft     | .txt       | .xml    |
-| type        | .dtsx | .lo_        | .pdf  | . RPT     | .uccapilog | . XMLA   |
-| . blg        | . eds  | . log        | .piz  | .rte     | .uccplog   | .xps    |
-| .CA_        | . EMF  | . lpk        | .pmls | .rtf     | .udcx      | . XSD    |
-| . -        | . eml  | . manifest   | .png  | . Voer     | .vb_       | . XSN    |
-| . Cap        | .emz  | . Master     | .potx | .saz     | .vbs_      | . xxx    |
-| .catx       | . err  | .mdmp       | .ppt  | .sql     | . vcf       | .z_     |
-| . CFG        | . etl  | . MOF        | .pptm | .sqlplan | . vsd       | .z01    |
-| . gecomprimeerd | . evt  | .mp3        | .pptx | STP     | . wdb       | .z02    |
-| . Configuraties     | . evtx | .mpg        | . prn  | .svclog  | . WKS       | . Zi     |
-| .cpk        | . KADE   | .ms_        | .psf  | -        | .wma       | .zi_    |
-| . cpp        | .ex_  | . msg        | . PST  | -        | .wmv       | .zip    |
-| .cs         | .ex0  | .msi        | . pub  | -        | . WMZ       | .zip_   |
-| . BESTAND        | . FRD  | . mso        | -     | -        | . WPS       | .zipp   |
-| .cvr        | .gif  | MSU        | -     | -        | . WPT       | . gezipt |
-| -           | . GUID | . nfo        | -     | -        | . WSDL      | .zippy  |
-| -           | . gz   | -           | -     | -        | . WSP       | .zipx   |
-| -           | -     | -           | -     | -        | .wtl       | .zit    |
+| .7z         | . dat  | . har        | . odx  | . rar     | .uccapilog | .xlam   |
+| . een          | . db   | .hwl        | . oft  | . rdl     | .uccplog   | .xlr    |
+| . ABC        | . DMP  | . ICS        | . old  | .rdlc    | .udcx      | .xls    |
+| . adm        | .do_  | . ini        | . One  | .re_     | .vb_       | .xlsb   |
+| . aspx       | .doc  | .java       | . OSD  | . Verwijder  | .vbs_      | .xlsm   |
+| . ATF        | .docm | .jpg        | . AF  | . ren     | . vcf       | .xlsx   |
+| . b          | .docx | . LDF        | . P1   | . rename  | . vsd       | .xlt    |
+| .ba_        | .dotm | . brief hoofd | .pcap | .rft     | . wdb       | .xltx   |
+| . bak        | .dotx | .lo_        | . pdb  | . RPT     | . WKS       | .xml    |
+| . blg        | .dtsx | . log        | .pdf  | .rte     | .wma       | . XMLA   |
+| .CA_        | . eds  | . lpk        | .piz  | .rtf     | .wmv       | .xps    |
+| . -        | . EMF  | . manifest   | .pmls | . Voer     | . WMZ       | . XSD    |
+| . Cap        | . eml  | . Master     | .png  | .saz     | . WPS       | . XSN    |
+| .catx       | .emz  | .mdmp       | .potx | .sql     | . WPT       | . xxx    |
+| . CFG        | . err  | . MOF        | .ppt  | .sqlplan | . WSDL      | .z_     |
+| . gecomprimeerd | . etl  | .mp3        | .pptm | STP     | . WSP       | .z01    |
+| . Configuraties     | . evt  | .mpg        | .pptx | .svclog  | .wtl       | .z02    |
+| .cpk        | . evtx | .ms_        | . prn  | .tdb     | -          | . Zi     |
+| . cpp        | . KADE   | . msg        | .psf  | .tdf     | -          | .zi_    |
+| .cs         | .ex_  | . mso        | . PST  | . tekst    | -          | .zip    |
+| . BESTAND        | .ex0  | MSU        | . pub  | .thmx    | -          | .zip_   |
+| .cvr        | . FRD  | . nfo        | -     | .tif     | -          | .zipp   |
+| -           | .gif  | -           | -     | . TRC     | -          | . gezipt |
+| -           | . GUID | -           | -     | . TTD     | -          | .zippy  |
+| -           | . gz   | -           | -     | .tx_     | -          | .zipx   |
+| -           | -     | -           | -     | .txt     | -          | .zit    |
 | -           | -     | -           | -     | -        | -          | .zix    |
 | -           | -     | -           | -     | -        | -          | . zzz    |
 

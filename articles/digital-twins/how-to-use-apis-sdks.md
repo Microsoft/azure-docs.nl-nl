@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d2d3d04bdb8066db263c608bb1d42acca303a656
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: b9804e119f5b5cfbee1a61eabf217dad7dbf5500
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102433825"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507225"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>De Azure Digital Twins-API's en -SDK's gebruiken
 
@@ -68,7 +68,7 @@ De data-vlak-Api's gebruiken:
    - de SDK-bron is te vinden in GitHub: [Azure Azure Digital Apparaatdubbels core client library voor Java script](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core)
 * U kunt de **python-SDK** gebruiken. De python-SDK gebruiken...
    - u kunt het pakket weer geven en installeren vanuit PyPi: [Azure Azure Digital Apparaatdubbels core client library voor python](https://pypi.org/project/azure-digitaltwins-core/).
-   - u kunt de [SDK-referentie documentatie](/python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python&preserve-view=true)raadplegen.
+   - u kunt de [SDK-referentie documentatie](/python/api/azure-digitaltwins-core/azure.digitaltwins.core)raadplegen.
    - de SDK-bron is te vinden in GitHub: [Azure Azure Digital Apparaatdubbels core client library voor python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)
 * U kunt een SDK voor een andere taal genereren met behulp van auto rest. Volg de instructies in [*How to: aangepaste sdk's voor Azure Digital Apparaatdubbels maken met auto rest*](how-to-create-custom-sdks.md).
 

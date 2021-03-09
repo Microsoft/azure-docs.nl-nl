@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 10/02/2020
-ms.openlocfilehash: ef753043218f259c69082dbb8682517be79cf95c
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.openlocfilehash: e4f6db9e462f937d44bc0e1dbc2d3c4d3e915ba3
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100099792"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503637"
 ---
 # <a name="what-is-an-azure-machine-learning-compute-instance"></a>Wat is een Azure Machine Learning-rekeninstantie?
 
@@ -32,7 +32,7 @@ Zorg ervoor dat de communicatie tussen websockets niet is uitgeschakeld voor de 
 
 Een reken instantie is een volledig beheerd, op de cloud gebaseerd werk station dat is geoptimaliseerd voor uw machine learning-ontwikkel omgeving. Dit biedt de volgende voordelen:
 
-|Belangrijkste voordelen|Description|
+|Belangrijkste voordelen|Beschrijving|
 |----|----|
 |Productiviteit|U kunt modellen bouwen en implementeren met behulp van geïntegreerde notebooks en de volgende hulpprogram ma's in Azure Machine Learning studio:<br/>-Jupyter<br/>-Jjupyterlab<br/>-RStudio (preview-versie)<br/>Reken instantie is volledig geïntegreerd met Azure Machine Learning werk ruimte en Studio. U kunt notitie blokken en gegevens delen met andere gegevens wetenschappers in de werk ruimte.<br/> U kunt ook [VS code](https://techcommunity.microsoft.com/t5/azure-ai/power-your-vs-code-notebooks-with-azml-compute-instances/ba-p/1629630) gebruiken met reken instanties.
 |Beheerde & beveiligd|Verminder uw beveiligings footprint en voeg naleving toe met beveiligings vereisten voor ondernemingen. Reken instanties bieden robuust beheer beleid en beveiligde netwerk configuraties zoals:<br/><br/>-Autoinrichting van Resource Manager-sjablonen of Azure Machine Learning SDK<br/>- [Op rollen gebaseerd toegangs beheer op basis van Azure (Azure RBAC)](../role-based-access-control/overview.md)<br/>- [Ondersteuning voor virtuele netwerken](./how-to-secure-training-vnet.md#compute-instance)<br/>-SSH-beleid voor het inschakelen/uitschakelen van SSH-toegang<br/>TLS 1,2 ingeschakeld |
@@ -77,7 +77,7 @@ De volgende hulpprogram ma's en omgevingen zijn al geïnstalleerd op de compute-
 |Anaconda Python||
 |Jupyter en-extensies||
 |Jjupyterlab en-extensies||
-[Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)</br>van PyPI|Omvat het meren deel van de extra azureml-pakketten.  Als u de volledige lijst wilt weer geven, [opent u een Terminal venster op uw reken exemplaar](how-to-access-terminal.md) en voert u uit <br/> `conda list -n azureml_py36 azureml*` |
+[Azure Machine Learning-SDK voor Python](/python/api/overview/azure/ml/intro)</br>van PyPI|Omvat het meren deel van de extra azureml-pakketten.  Als u de volledige lijst wilt weer geven, [opent u een Terminal venster op uw reken exemplaar](how-to-access-terminal.md) en voert u uit <br/> `conda list -n azureml_py36 azureml*` |
 |Andere PyPI-pakketten|`jupytext`</br>`tensorboard`</br>`nbconvert`</br>`notebook`</br>`Pillow`|
 |Conda-pakketten|`cython`</br>`numpy`</br>`ipykernel`</br>`scikit-learn`</br>`matplotlib`</br>`tqdm`</br>`joblib`</br>`nodejs`</br>`nb_conda_kernels`|
 |Uitgebreide leer pakketten|`PyTorch`</br>`TensorFlow`</br>`Keras`</br>`Horovod`</br>`MLFlow`</br>`pandas-ml`</br>`scrapbook`|

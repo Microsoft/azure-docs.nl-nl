@@ -6,12 +6,12 @@ ms.author: margard
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.date: 07/10/2020
-ms.openlocfilehash: a33ba6813b4a67de7f46f3576a44fa7411278ba7
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 861463b13c6ce8b29911432ad96f98fed527745b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102031783"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501053"
 ---
 # <a name="tutorial-use-a-managed-identity-to-invoke-azure-functions-from-an-azure-spring-cloud-app"></a>Zelfstudie: Een beheerde identiteit gebruiken om Azure Functions aan te roepen vanuit een Azure Spring Cloud-app
 
@@ -175,4 +175,4 @@ Met dit voorbeeld wordt de door http geactiveerde functie aangeroepen door eerst
 
 * [Door het systeem toegewezen beheerde identiteit inschakelen voor de Azure Spring Cloud-toepassing](./spring-cloud-howto-enable-system-assigned-managed-identity.md)
 * [Meer informatie over beheerde identiteiten voor Azure-resources](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/managed-identities-azure-resources/overview.md)
-* [Een daemon-clienttoepassing configureren voor service-naar-service-aanroepen](../app-service/configure-authentication-provider-aad.md#configure-a-daemon-client-application-for-service-to-service-calls)
+* [Client-apps configureren voor toegang tot uw App Service](../app-service/configure-authentication-provider-aad.md#configure-client-apps-to-access-your-app-service)

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: 26a9e931c42822218e7935f50c1f222ac33c34f2
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 6f8cfc314c75221a88b58095cc71ea685280ac49
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102210089"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501007"
 ---
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -161,7 +161,7 @@ az vm encryption enable -g "MyResourceGroup" --name "myVM" --disk-encryption-key
 
 ###  <a name="azure-powershell"></a>Azure PowerShell 
 
-Gebruik de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey?view=azps-2.5.0) om een nieuwe KEK te genereren en op te slaan in uw sleutelkluis.
+Gebruik de Azure PowerShell-cmdlet [Add-AzKeyVaultKey](/powershell/module/az.keyvault/add-azkeyvaultkey) om een nieuwe KEK te genereren en op te slaan in uw sleutelkluis.
 
  ```powershell-interactive
 Add-AzKeyVaultKey -Name "myKEK" -VaultName "<your-unique-keyvault-name>" -Destination "HSM"
@@ -169,7 +169,7 @@ Add-AzKeyVaultKey -Name "myKEK" -VaultName "<your-unique-keyvault-name>" -Destin
 
 U kunt in plaats daarvan een persoonlijke sleutel importeren met behulp van de Azure PowerShell-opdracht [az keyvault key import](/cli/azure/keyvault/key#az-keyvault-key-import).
 
-In beide gevallen geeft u de id van uw KEK-sleutelkluis en de URL van uw KEK op aan de Azure PowerShell [Set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension?view=azps-2.5.0)-parameters -KeyEncryptionKeyVaultId en -KeyEncryptionKeyUrl. Houd er rekening mee dat in dit voorbeeld wordt aangenomen dat u dezelfde sleutelkluis gebruikt voor zowel de schijfversleutelingssleutel als de KEK.
+In beide gevallen geeft u de id van uw KEK-sleutelkluis en de URL van uw KEK op aan de Azure PowerShell [Set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension)-parameters -KeyEncryptionKeyVaultId en -KeyEncryptionKeyUrl. Houd er rekening mee dat in dit voorbeeld wordt aangenomen dat u dezelfde sleutelkluis gebruikt voor zowel de schijfversleutelingssleutel als de KEK.
 
  ```powershell-interactive
 $KeyVault = Get-AzKeyVault -VaultName "<your-unique-keyvault-name>" -ResourceGroupName "myResourceGroup"

@@ -11,6 +11,10 @@
   items:
     - name: Een voor deur standaard/Premium maken-Portal
       href: create-front-door-portal.md
+- name: Voorbeelden
+  items:
+    - name: Resource Manager-sjablonen
+      href: resource-manager-template-samples.md
 - name: Concepten
   items:
     - name: Veelgestelde vragen over Front Door

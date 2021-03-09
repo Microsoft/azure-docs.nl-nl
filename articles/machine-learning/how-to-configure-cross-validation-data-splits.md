@@ -11,12 +11,12 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 02/23/2021
-ms.openlocfilehash: add84c2cb53a362fc78fc50a6df13b4976e3868d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 31d3dc2c2d8194541ba1fe7d0865e6c939d75f73
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661032"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501575"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Gegevenssplitsingen en kruisvalidatie configureren in geautomatiseerde machine learning
 
@@ -24,7 +24,7 @@ In dit artikel vindt u informatie over de verschillende opties voor het configur
 
 Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. Meer [informatie over hoe metrische gegevens worden berekend op basis van het validatie type](#metric-calculation-for-cross-validation-in-machine-learning). 
 
-Automatische ML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
+Automatische ML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/). 
 
 Zie [uw geautomatiseerde machine learning experimenten in azure machine learning Studio maken](how-to-use-automated-ml-for-ml-models.md#create-and-run-experiment)voor een programma met weinig code of zonder code. 
 
@@ -47,7 +47,7 @@ Voor dit artikel hebt u het volgende nodig:
 
 ## <a name="default-data-splits-and-cross-validation-in-machine-learning"></a>Standaard gegevens splitsingen en kruis validatie in machine learning
 
-Gebruik het object [AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py) om uw instellingen voor experimenteren en trainingen te definiëren. In het volgende code fragment ziet u dat alleen de vereiste para meters zijn gedefinieerd. Dit zijn de para meters voor `n_cross_validation` of `validation_ data` worden **niet** opgenomen.
+Gebruik het object [AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig) om uw instellingen voor experimenteren en trainingen te definiëren. In het volgende code fragment ziet u dat alleen de vereiste para meters zijn gedefinieerd. Dit zijn de para meters voor `n_cross_validation` of `validation_ data` worden **niet** opgenomen.
 
 ```python
 data = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/creditcard.csv"

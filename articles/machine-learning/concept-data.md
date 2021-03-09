@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python, data4ml
-ms.openlocfilehash: 1c2a917712cbde95fda9321e56fe1c033ad444aa
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 601be8409db22162a410d481e6609d378718a7b4
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659712"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503586"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Beveiligde toegang tot gegevens in Azure Machine Learning
 
@@ -67,7 +67,7 @@ Ondersteunde cloud-gebaseerde opslag Services in azure die als gegevens opslag k
 + Azure Database for MySQL
 
 >[!TIP]
-> De algemeen beschik bare functionaliteit voor het maken van opslag plaatsen vereist verificatie op basis van referenties voor toegang tot opslag Services, zoals een service-principal of SAS-token (Shared Access Signature). Deze referenties zijn toegankelijk voor gebruikers die *lezers* toegang tot de werk ruimte hebben. <br><br>Als dit een probleem is,  [maakt u een gegevens opslag die gebruikmaakt van op identiteit gebaseerde gegevens toegang tot Storage-services (preview)](how-to-identity-based-data-access.md). Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd.
+> De algemeen beschik bare functionaliteit voor het maken van opslag plaatsen vereist verificatie op basis van referenties voor toegang tot opslag Services, zoals een service-principal of SAS-token (Shared Access Signature). Deze referenties zijn toegankelijk voor gebruikers die *lezers* toegang tot de werk ruimte hebben. <br><br>Als dit een probleem is,  [maakt u een gegevens opslag die gebruikmaakt van op identiteit gebaseerde gegevens toegang tot Storage-services (preview)](how-to-identity-based-data-access.md). Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd.
 
 <a name="datasets"></a>
 ## <a name="reference-data-in-storage-with-datasets"></a>Referentie gegevens in de opslag met gegevens sets
@@ -86,9 +86,9 @@ Gegevens sets kunnen worden gemaakt op basis van lokale bestanden, open bare url
 
 Er zijn twee typen gegevens sets: 
 
-+ Een [FileDataset](/python/api/azureml-core/azureml.data.file_dataset.filedataset?preserve-view=true&view=azure-ml-py) verwijst naar één of meer bestanden in uw gegevens opslag of open bare url's. Als uw gegevens al zijn gereinigd en klaar zijn voor gebruik in trainings experimenten, kunt u [bestanden downloaden of koppelen](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) waarnaar wordt verwezen door FileDatasets naar uw reken doel.
++ Een [FileDataset](/python/api/azureml-core/azureml.data.file_dataset.filedataset) verwijst naar één of meer bestanden in uw gegevens opslag of open bare url's. Als uw gegevens al zijn gereinigd en klaar zijn voor gebruik in trainings experimenten, kunt u [bestanden downloaden of koppelen](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) waarnaar wordt verwezen door FileDatasets naar uw reken doel.
 
-+ Een [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) vertegenwoordigt gegevens in tabel vorm door het bestand of de lijst met bestanden te parseren. U kunt een TabularDataset laden in een Panda of Spark data frame voor verdere manipulatie en reiniging. Voor een volledige lijst met gegevens indelingen waaruit u TabularDatasets kunt maken, raadpleegt u de [klasse TabularDatasetFactory](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory).
++ Een [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset) vertegenwoordigt gegevens in tabel vorm door het bestand of de lijst met bestanden te parseren. U kunt een TabularDataset laden in een Panda of Spark data frame voor verdere manipulatie en reiniging. Voor een volledige lijst met gegevens indelingen waaruit u TabularDatasets kunt maken, raadpleegt u de [klasse TabularDatasetFactory](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory).
 
 Aanvullende gegevens sets kunnen worden gevonden in de volgende documentatie:
 

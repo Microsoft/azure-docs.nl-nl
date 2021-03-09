@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: storage
 ms.subservice: queues
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: bb9eb2e91fb29849f27e7aba9bc4794698bf0b0b
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8f49485d00379f5845569976e793f06d56a8967d
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100570038"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506817"
 ---
 # <a name="monitoring-azure-queue-storage"></a>Azure Queue Storage controleren
 
@@ -108,6 +108,8 @@ Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt 
    > ![Archief opslag voor Diagnostische instellingen](media/monitor-queue-storage/diagnostic-logs-settings-pane-archive-storage.png)
 
 2. Selecteer in de vervolg keuzelijst **opslag account** het opslag account waarnaar u de logboeken wilt archiveren, klik op de knop **OK** en selecteer vervolgens de knop **Opslaan** .
+ 
+   [!INCLUDE [no retention policy](../../../includes/azure-storage-logs-retention-policy.md)]
 
    > [!NOTE]
    > Zie [Azure-resource logboeken archiveren](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) om te begrijpen wat de vereisten zijn voor het opslag account voordat u een opslag account als export doel kiest.
@@ -153,12 +155,14 @@ Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt 
 Schakel Logboeken in met behulp van de Power shell [-cmdlet Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) samen met de `StorageAccountId` para meter.
 
 ```powershell
-Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccountId <storage-account-resource-id> -Enabled $true -Category <operations-to-log> -RetentionEnabled <retention-bool> -RetentionInDays <number-of-days>
+Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccountId <storage-account-resource-id> -Enabled $true -Category <operations-to-log>
 ```
 
 Vervang de `<storage-service-resource--id>` tijdelijke aanduiding in dit code fragment door de resource-id van de wachtrij. U kunt de resource-ID vinden in de Azure Portal door de pagina **Eigenschappen** van uw opslag account te openen.
 
 U kunt `StorageRead` , `StorageWrite` en gebruiken `StorageDelete` voor de waarde van de **categorie** para meter.
+
+[!INCLUDE [no retention policy](../../../includes/azure-storage-logs-retention-policy.md)]
 
 Hier volgt een voorbeeld:
 
@@ -215,16 +219,18 @@ Als u ervoor kiest om uw logboeken te archiveren in een opslag account, betaalt 
 Schakel Logboeken in met behulp van de [`az monitor diagnostic-settings create`](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create) opdracht.
 
 ```azurecli-interactive
-az monitor diagnostic-settings create --name <setting-name> --storage-account <storage-account-name> --resource <storage-service-resource-id> --resource-group <resource-group> --logs '[{"category": <operations>, "enabled": true "retentionPolicy": {"days": <number-days>, "enabled": <retention-bool}}]'
+az monitor diagnostic-settings create --name <setting-name> --storage-account <storage-account-name> --resource <storage-service-resource-id> --resource-group <resource-group> --logs '[{"category": <operations>, "enabled": true}]'
 ```
 
 Vervang de `<storage-service-resource--id>` tijdelijke aanduiding in dit code fragment door de resource-id van de wachtrij. U kunt de resource-ID vinden in de Azure Portal door de pagina **Eigenschappen** van uw opslag account te openen.
 
 U kunt `StorageRead` , `StorageWrite` en gebruiken `StorageDelete` voor de waarde van de `category` para meter.
 
+[!INCLUDE [no retention policy](../../../includes/azure-storage-logs-retention-policy.md)]
+
 Hier volgt een voorbeeld:
 
-`az monitor diagnostic-settings create --name setting1 --storage-account mystorageaccount --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --resource-group myresourcegroup --logs '[{"category": StorageWrite, "enabled": true, "retentionPolicy": {"days": 90, "enabled": true}}]'`
+`az monitor diagnostic-settings create --name setting1 --storage-account mystorageaccount --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/queueServices/default --resource-group myresourcegroup --logs '[{"category": StorageWrite, "enabled": true}]'`
 
 Zie [resource logboeken archiveren via de Azure cli](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)voor een beschrijving van elke para meter.
 

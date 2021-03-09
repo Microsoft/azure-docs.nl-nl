@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: robinsh
 ms.custom: mqtt, devx-track-python
-ms.openlocfilehash: 1112df382fb10051ac06c4461a9e4328e1663388
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 77d51b2c839a64567838fa4d6308d203a6bb8b82
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92139316"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501138"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Bestanden van uw apparaat uploaden naar de Cloud met IoT Hub (python)
 
@@ -109,7 +109,7 @@ In deze sectie maakt u de app apparaat om een bestand te uploaden naar IoT hub.
             return (False, ex)
     ```
 
-    Met deze functie wordt de door gegeven *blob_info* -structuur geparseerd voor het maken van een URL die wordt gebruikt voor het initialiseren van een [Azure. storage. blob. BlobClient](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python). Vervolgens wordt het bestand geüpload naar Azure Blob-opslag met behulp van deze client.
+    Met deze functie wordt de door gegeven *blob_info* -structuur geparseerd voor het maken van een URL die wordt gebruikt voor het initialiseren van een [Azure. storage. blob. BlobClient](/python/api/azure-storage-blob/azure.storage.blob.blobclient). Vervolgens wordt het bestand geüpload naar Azure Blob-opslag met behulp van deze client.
 
 1. Voeg de volgende code toe om verbinding te maken met de client en het bestand te uploaden:
 
@@ -211,4 +211,4 @@ Meer informatie over Azure Blob Storage met de volgende koppelingen:
 
 * [Documentatie voor Azure Blob Storage](../storage/blobs/index.yml)
 
-* [Azure Blob Storage voor python API-documentatie](/python/api/overview/azure/storage-blob-readme?view=azure-python)
+* [Azure Blob Storage voor python API-documentatie](/python/api/overview/azure/storage-blob-readme)

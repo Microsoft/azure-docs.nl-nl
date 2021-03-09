@@ -6,13 +6,13 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 01/19/2021
-ms.openlocfilehash: bcfe26bc6f637dd140776df98f8267c4c43684ba
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/09/2021
+ms.openlocfilehash: 37ac292acc76c681ea38b2ae881ff8cd2ae5ec3c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049531"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502443"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -114,6 +114,14 @@ Bijvoorbeeld:
 Wanneer u labels uitbreidt naar assets in azure controle sfeer liggen, kunt u de labels selecteren die u beschikbaar wilt maken in controle sfeer liggen. Zie [nieuwe gevoeligheids labels maken of bestaande labels wijzigen](#creating-new-sensitivity-labels-or-modifying-existing-labels)voor meer informatie.
 ### <a name="creating-new-sensitivity-labels-or-modifying-existing-labels"></a>Nieuwe gevoeligheids labels maken of bestaande labels wijzigen
 
+Wanneer u gebruikmaakt van gevoeligheid labels voor Office-apps in Windows, macOS, iOS en Android, zien gebruikers nieuwe labels binnen vier uur en binnen één uur voor Office op internet. Het kan echter Maxi maal 24 uur duren voordat wijzigingen naar alle apps en services worden gerepliceerd.
+
+> [!IMPORTANT]
+> Verwijder geen label, tenzij u de impact van uw gebruikers begrijpt. Zie [Labels verwijderen en verwijderen](/microsoft-365/compliance/create-sensitivity-labels#removing-and-deleting-labels) in de documentatie van Microsoft 365 voor meer informatie.
+>
+
+**Nieuwe gevoeligheids labels maken of bestaande labels wijzigen**:
+
 1. Open het [Microsoft 365 Security and Compliance Center](https://protection.office.com/homepage). 
 
 1. Onder **oplossingen** selecteert u **gegevens beveiliging** en selecteert u vervolgens **een label maken**. 
@@ -152,10 +160,6 @@ Wanneer u labels uitbreidt naar assets in azure controle sfeer liggen, kunt u de
 
     Zie voor meer informatie [label prioriteit (kwesties best Ellen)](/microsoft-365/compliance/sensitivity-labels#label-priority-order-matters) in de Microsoft 365 documentatie.
 
-> [!IMPORTANT]
-> Verwijder geen label, tenzij u de impact van uw gebruikers begrijpt. 
->
-> Zie [Labels verwijderen en verwijderen](/microsoft-365/compliance/create-sensitivity-labels#removing-and-deleting-labels) in de documentatie van Microsoft 365 voor meer informatie.
 
 Ga door met [het scannen van uw gegevens om labels automatisch toe te passen](#scan-your-data-to-apply-labels-automatically)en vervolgens:
 
@@ -194,7 +198,7 @@ Scan uw gegevens in azure controle sfeer liggen om automatisch de labels toe te 
 
 Voor meer informatie over het instellen van scans op diverse assets in azure controle sfeer liggen raadpleegt u:
 
-|Bron  |Referentie  |
+|Bron  |Naslaginformatie  |
 |---------|---------|
 |**Azure Blob Storage**     |[Azure-Blob Storage registreren en controleren](register-scan-azure-blob-storage-source.md)         |
 |**Azure Data Lake Storage**     |[Azure Data Lake Storage Gen1 registreren en scannen](register-scan-adls-gen1.md) </br>[Azure Data Lake Storage Gen2 registreren en scannen](register-scan-adls-gen2.md)         |

@@ -4,12 +4,12 @@ description: Gebruik uw eigen sleutels (BYOK) om AKS-besturings systeem en gegev
 services: container-service
 ms.topic: article
 ms.date: 09/01/2020
-ms.openlocfilehash: 60a7e36039500ccb8a46fd1f5998c23c37174689
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 4b1c311132cc812ccb2bbbc95c4b7414b108008c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728132"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499200"
 ---
 # <a name="bring-your-own-keys-byok-with-azure-disks-in-azure-kubernetes-service-aks"></a>Breng uw eigen sleutels (BYOK) met Azure-schijven in azure Kubernetes service (AKS)
 
@@ -93,7 +93,7 @@ Wanneer er nieuwe knooppunt groepen worden toegevoegd aan het hierboven gemaakte
 De coderings sleutel van de besturingssysteem schijf wordt gebruikt voor het versleutelen van de gegevens schijf als er geen sleutel wordt gegeven voor de gegevens schijf van v 1.17.2, en u kunt ook AKS-gegevens schijven met uw andere sleutels versleutelen.
 
 > [!IMPORTANT]
-> Zorg ervoor dat u beschikt over de juiste AKS-referenties. De Service-Principal moet Inzender toegang hebben tot de resource groep waar de diskencryptionset wordt geïmplementeerd. Anders wordt er een fout bericht weer geven dat de service-principal geen machtigingen heeft.
+> Zorg ervoor dat u beschikt over de juiste AKS-referenties. De beheerde identiteit moet Inzender toegang hebben tot de resource groep waar de diskencryptionset wordt geïmplementeerd. Anders krijgt u een fout melding dat de beheerde identiteit geen machtigingen heeft.
 
 ```azurecli-interactive
 # Retrieve your Azure Subscription Id from id property as shown below

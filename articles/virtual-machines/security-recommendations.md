@@ -10,12 +10,12 @@ ms.date: 11/13/2019
 ms.author: mbaldwin
 ms.custom: security-recommendations
 ms.reviewer: cynthn
-ms.openlocfilehash: afb985ecbe91835369738966e39e751f06f8d796
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 622ebfed8294dbcb441aa509fc4f6ba75114f28d
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571336"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499353"
 ---
 # <a name="security-recommendations-for-virtual-machines-in-azure"></a>Beveiligings aanbevelingen voor virtuele machines in azure
 
@@ -33,7 +33,7 @@ Zie [Wat is Azure Security Center?](../security-center/security-center-introduct
 | Wanneer u aangepaste VM-installatie kopieën bouwt, moet u de meest recente updates Toep assen. | Voordat u installatie kopieën maakt, installeert u de meest recente updates voor het besturings systeem en voor alle toepassingen die deel zullen uitmaken van uw installatie kopie.  | - |
 | Zorg ervoor dat uw virtuele machines actueel blijven. | U kunt de [updatebeheer](../automation/update-management/overview.md) -oplossing in azure Automation gebruiken om updates van het besturings systeem voor uw Windows-en Linux-computers in azure te beheren. | [Ja](../security-center/asset-inventory.md) |
 | Maak een back-up van uw Vm's. | [Azure backup](../backup/backup-overview.md) helpt bij het beveiligen van uw toepassings gegevens en minimale operationele kosten. Toepassings fouten kunnen uw gegevens beschadigen en menselijke fouten kunnen leiden tot fouten in uw toepassingen. Azure Backup beveiligt uw virtuele machines waarop Windows en Linux worden uitgevoerd. | - |
-| Gebruik meerdere Vm's voor grotere tolerantie en meer Beschik baarheid. | Als uw VM toepassingen uitvoert die Maxi maal beschikbaar moeten zijn, gebruikt u meerdere Vm's of [beschikbaarheids sets](./manage-availability.md). | - |
+| Gebruik meerdere Vm's voor grotere tolerantie en meer Beschik baarheid. | Als uw VM toepassingen uitvoert die Maxi maal beschikbaar moeten zijn, gebruikt u meerdere Vm's of [beschikbaarheids sets](./availability.md). | - |
 | Stel een strategie voor bedrijfs continuïteit en nood herstel (BCDR) vast. | Met Azure Site Recovery kunt u kiezen uit verschillende opties die zijn ontworpen ter ondersteuning van bedrijfs continuïteit. Het ondersteunt verschillende scenario's voor replicatie en failover. Zie  [over site Recovery](../site-recovery/site-recovery-overview.md)voor meer informatie. | - |
 
 ## <a name="data-security"></a>Gegevensbeveiliging

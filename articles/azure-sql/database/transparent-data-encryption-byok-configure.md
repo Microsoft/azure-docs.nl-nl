@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: b4480f3d28cb89165a6ba3c5b26b10b1aba9765c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 610f0a9692c18afbd7bb446959b09bac14d6f629
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461849"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507616"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>Power shell en Azure CLI: Schakel Transparent Data Encryption in met door de klant beheerde sleutel van Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -37,7 +37,7 @@ In dit artikel wordt beschreven hoe u een sleutel gebruikt uit Azure Key Vault v
     - De sleutel kluis moet de volgende eigenschap hebben die moet worden gebruikt voor TDE:
   - [zacht verwijderen](../../key-vault/general/soft-delete-overview.md) en beveiliging opschonen
 - De sleutel moet de volgende kenmerken hebben om te kunnen worden gebruikt voor TDE:
-  - Geen verval datum
+  - Geen vervaldatum
   - Niet uitgeschakeld
   - Kan de *Get*-, *Terugloop*-, *sleutel bewerking uitpakken*
 - **(In preview-versie)** Als u een beheerde HSM-sleutel wilt gebruiken, volgt u de instructies om [een beheerde HSM te maken en te activeren met behulp van Azure cli](../../key-vault/managed-hsm/quick-create-cli.md)
@@ -79,7 +79,7 @@ Als u machtigingen wilt toevoegen aan uw server op een beheerde HSM, voegt u de 
 
 ## <a name="add-the-key-vault-key-to-the-server-and-set-the-tde-protector"></a>Voeg de Key Vault sleutel toe aan de server en stel de TDE-beveiliging in
 
-- Gebruik de cmdlet [Get-AzKeyVaultKey](/powershell/module/az.keyvault/get-azkeyvaultkey?view=azps-2.4.0) om de sleutel-id op te halen uit de sleutel kluis
+- Gebruik de cmdlet [Get-AzKeyVaultKey](/powershell/module/az.keyvault/get-azkeyvaultkey) om de sleutel-id op te halen uit de sleutel kluis
 - Gebruik de cmdlet [add-AzSqlServerKeyVaultKey](/powershell/module/az.sql/add-azsqlserverkeyvaultkey) om de sleutel van de Key Vault toe te voegen aan de-server.
 - Gebruik de cmdlet [set-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/set-azsqlservertransparentdataencryptionprotector) om de sleutel in te stellen als de TDe-Protector voor alle Server bronnen.
 - Gebruik de cmdlet [Get-AzSqlServerTransparentDataEncryptionProtector](/powershell/module/az.sql/get-azsqlservertransparentdataencryptionprotector) om te controleren of de TDe-Protector is geconfigureerd zoals bedoeld.

@@ -9,12 +9,12 @@ ms.author: nibaccam
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 03/27/2020
-ms.openlocfilehash: 4e1972e0530656bf6cc0e6319191ab4ebbfbfddb
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: f87175500fcf5bdbcf9a5c2f499f6bab96b37b63
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358572"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498962"
 ---
 # <a name="distributed-training-with-azure-machine-learning"></a>Gedistribueerde training met Azure Machine Learning
 
@@ -24,7 +24,7 @@ In de gedistribueerde training wordt de werk belasting voor het trainen van een 
 
 ## <a name="deep-learning-and-distributed-training"></a>Diep gaande lessen en gedistribueerde trainingen 
 
-Er zijn twee hoofd typen gedistribueerde training: [gegevens parallellisme](#data-parallelism) en [model parallellisme](#model-parallelism). Voor gedistribueerde training over diepe leer modellen ondersteunt de [Azure machine learning SDK in python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) integraties met populaire frameworks, PyTorch en tensor flow. Beide Frameworks gebruiken gegevens parallellisme voor gedistribueerde trainingen en kunnen gebruikmaken van [horovod](https://horovod.readthedocs.io/en/latest/summary_include.html) voor het optimaliseren van reken snelheden. 
+Er zijn twee hoofd typen gedistribueerde training: [gegevens parallellisme](#data-parallelism) en [model parallellisme](#model-parallelism). Voor gedistribueerde training over diepe leer modellen ondersteunt de [Azure machine learning SDK in python](/python/api/overview/azure/ml/intro) integraties met populaire frameworks, PyTorch en tensor flow. Beide Frameworks gebruiken gegevens parallellisme voor gedistribueerde trainingen en kunnen gebruikmaken van [horovod](https://horovod.readthedocs.io/en/latest/summary_include.html) voor het optimaliseren van reken snelheden. 
 
 * [Gedistribueerde training met PyTorch](how-to-train-pytorch.md#distributed-training)
 

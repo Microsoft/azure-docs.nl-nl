@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/19/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 01133ab5582e63c0e87d8a5cf8de12f5445394c5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e5ae08c23748e55a8c3b75eb8fb9c112684f022e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969701"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507903"
 ---
 # <a name="backup-and-disaster-recovery-for-azure-iaas-disks"></a>Back-ups en herstel na nood gevallen voor Azure IaaS-schijven
 
@@ -48,7 +48,7 @@ Deze architectuur heeft ervoor gezorgd dat Azure consistente duurzaamheid op bed
 
 Lokale hardwarestoringen op de compute-host of het opslagplatform kunnen soms leiden tot de tijdelijke onbeschikbaarheid van de virtuele machine die wordt gedekt door de [Azure SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/) voor VM-beschikbaarheid. Azure biedt ook een toonaangevende SLA voor afzonderlijke VM-instanties die gebruikmaken van Azure Premium SSD's.
 
-Om toepassingsworkloads te beschermen tegen downtime vanwege de tijdelijke onbeschikbaarheid van een schijf of virtuele machine, kunnen klanten [beschikbaarheidssets gebruiken](./manage-availability.md). Twee of meer virtuele machines in een beschikbaarheidsset bieden redundantie voor de toepassing. Azure maakt deze virtuele machines en schijven vervolgens in afzonderlijke foutdomeinen met verschillende stroom-, netwerk- en serveronderdelen.
+Om toepassingsworkloads te beschermen tegen downtime vanwege de tijdelijke onbeschikbaarheid van een schijf of virtuele machine, kunnen klanten [beschikbaarheidssets gebruiken](./availability.md). Twee of meer virtuele machines in een beschikbaarheidsset bieden redundantie voor de toepassing. Azure maakt deze virtuele machines en schijven vervolgens in afzonderlijke foutdomeinen met verschillende stroom-, netwerk- en serveronderdelen.
 
 Vanwege deze afzonderlijke foutdomeinen hebben lokale hardwarestoringen doorgaans geen invloed op meerdere virtuele machines in de set tegelijkertijd. Afzonderlijke foutdomeinen bieden een hoge beschikbaarheid voor uw toepassing. Het is een goede gewoonte om beschikbaarheidssets te gebruiken wanneer hoge beschikbaarheid is vereist. In de volgende sectie wordt herstel na noodgevallen beschreven.
 

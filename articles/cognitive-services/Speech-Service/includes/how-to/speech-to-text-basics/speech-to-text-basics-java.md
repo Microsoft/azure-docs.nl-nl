@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/11/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: fcb2ee164a7e574ed470c8daf33cab9c9defcf00
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: ad0c0023965b68c24d17e1e540b7758115650ecd
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102444929"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102511089"
 ---
 Een van de belangrijkste functies van de Speech-service is de mogelijkheid om menselijke spraak te herkennen en te transcriberen (ook wel spraak-naar-tekst genoemd). In deze quickstart leert u meer over het gebruik van de Speech-SDK in uw apps en producten om spraak-naar-tekst-conversie van hoge kwaliteit uit te voeren.
 
@@ -57,7 +57,7 @@ Er zijn een paar andere manieren waarop u een [`SpeechConfig`](/java/api/com.mic
 
 ## <a name="recognize-from-microphone"></a>Herkennen vanaf de microfoon
 
-Als u spraak wilt herkennen met de microfoon van uw apparaat, maakt u een `AudioConfig` aan met behulp van `fromDefaultMicrophoneInput()`. Initialiseer vervolgens een[`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer), waarbij uw `audioConfig` en `config` worden doorgegeven.
+Als u spraak wilt herkennen met de microfoon van uw apparaat, maakt u een `AudioConfig` aan met behulp van `fromDefaultMicrophoneInput()`. Initialiseer vervolgens een [`SpeechRecognizer`](/java/api/com.microsoft.cognitiveservices.speech.speechrecognizer), waarbij uw `audioConfig` en `config` worden doorgegeven.
 
 ```java
 import com.microsoft.cognitiveservices.speech.*;

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: a960150d68cf2f939e206321a20d98b0e4080313
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: fed7663e2342a708aee70b9a54e6e0a6b6f97e8c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371491"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504398"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Aangepaste waarschuwingen configureren voor het bewaken van aangekondigde routes
 
@@ -42,7 +42,7 @@ Controleer voordat u met de configuratie begint of u aan de volgende criteria he
 
 * U bent bekend met [Azure Logic apps](../logic-apps/logic-apps-overview.md).
 
-* U bent bekend met het gebruik van Azure PowerShell. Azure PowerShell is vereist voor het verzamelen van de netwerk voorvoegsels in de ExpressRoute-gateway. Zie de [Azure PowerShell documentatie](/powershell/azure/?view=azps-4.1.0)voor meer informatie over Azure PowerShell in het algemeen.
+* U bent bekend met het gebruik van Azure PowerShell. Azure PowerShell is vereist voor het verzamelen van de netwerk voorvoegsels in de ExpressRoute-gateway. Zie de [Azure PowerShell documentatie](/powershell/azure/)voor meer informatie over Azure PowerShell in het algemeen.
 
 ### <a name="notes-and-limitations"></a><a name="limitations"></a>Opmerkingen en beperkingen
 
@@ -74,11 +74,11 @@ Standaard wordt de rol **Inzender** toegewezen aan de service-principal die word
 
  Gebruik de volgende stappen om te bepalen welke rol u wilt toewijzen aan de service-principal die wordt gebruikt door uw uitvoeren als-account:
 
-1. Navigeer naar uw Automation-account. Navigeer naar **account instellingen**en selecteer vervolgens **uitvoeren als-accounts**.
+1. Navigeer naar uw Automation-account. Navigeer naar **account instellingen** en selecteer vervolgens **uitvoeren als-accounts**.
 
 2. Selecteer **rollen** om de roldefinitie weer te geven die wordt gebruikt.
 
-   :::image type="content" source="./media/custom-route-alert-portal/run-as-account-permissions.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/run-as-account-permissions.png" alt-text="Rol toewijzen":::
 
 ## <a name="create-and-configure-runbooks"></a><a name="runbooks"></a>Runbooks maken en configureren
 
@@ -88,25 +88,25 @@ Als u Power shell-cmdlets wilt uitvoeren in Azure Automation runbooks, moet u en
 
 1. Open uw Azure Automation-account en navigeer naar **modules**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/navigate-modules.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/navigate-modules.png" alt-text="Navigeren naar modules":::
 
-2. Zoek in de galerie en importeer de volgende modules: **AZ. accounts**, **AZ. Network**, **AZ. Automation**en **AZ. profile**.
+2. Zoek in de galerie en importeer de volgende modules: **AZ. accounts**, **AZ. Network**, **AZ. Automation** en **AZ. profile**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/import-modules.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/import-modules-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/import-modules.png" alt-text="Modules zoeken en importeren" lightbox="./media/custom-route-alert-portal/import-modules-expand.png":::
   
 ### <a name="2-create-a-runbook"></a><a name="create"></a>2. een runbook maken
 
-1. Als u uw Power shell-runbook wilt maken, gaat u naar uw Automation-account. Onder **proces automatisering**selecteert u de tegel **Runbooks** en selecteert u vervolgens **een runbook maken**.
+1. Als u uw Power shell-runbook wilt maken, gaat u naar uw Automation-account. Onder **proces automatisering** selecteert u de tegel **Runbooks** en selecteert u vervolgens **een runbook maken**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/create-runbook.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/create-runbook.png" alt-text="Runbook maken.":::
 
 2. Selecteer **maken** om het runbook te maken.
 
-   :::image type="content" source="./media/custom-route-alert-portal/create-runbook-2.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/create-runbook-2.png" alt-text="Selecteer maken.":::
 
 3. Selecteer het zojuist gemaakte runbook en selecteer vervolgens **bewerken**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/edit-runbook.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/edit-runbook.png" alt-text="Runbook bewerken":::
 
 4. Plak het Power shell-script in **bewerken**. Het [voorbeeld script](#script) kan worden gewijzigd en gebruikt voor het bewaken van ExpressRoute-gateways in een of meer resource groepen.
 
@@ -231,7 +231,7 @@ Write-Output  $jsonResults
 1. Selecteer **Opslaan** om een concept kopie van het runbook op te slaan.
 2. Selecteer **publiceren** om het runbook te publiceren als de officiële versie van het runbook in het Automation-account.
 
-   :::image type="content" source="./media/custom-route-alert-portal/save-publish-runbook.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/save-publish-runbook.png" alt-text="Sla het runbook op en publiceer het.":::
 
 Wanneer u het Power shell-script uitvoert, wordt een lijst met waarden verzameld:
  
@@ -263,7 +263,7 @@ Het Power shell-script converteert de verzamelde gegevens naar een JSON-uitvoer.
 
 Zodra het runbook is gemaakt, moet het worden gevalideerd. Selecteer **starten** en controleer de uitvoer en fouten voor de verschillende taak stromen.
 
-:::image type="content" source="./media/custom-route-alert-portal/validate-runbook.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/validate-runbook-expand.png":::
+:::image type="content" source="./media/custom-route-alert-portal/validate-runbook.png" alt-text="Het runbook valideren" lightbox="./media/custom-route-alert-portal/validate-runbook-expand.png":::
 
 ## <a name="create-and-configure-a-logic-app"></a><a name="logic"></a>Een logische app maken en configureren
 
@@ -273,21 +273,21 @@ Azure Logic Apps is de orchestrator van elk proces van verzamelen en acties. In 
 
 In deze werk stroom bouwt u een logische app die regel matig ExpressRoute-gateways bewaakt. Als er nieuwe items bestaan, stuurt de logische app een e-mail voor elk item. Wanneer u bent klaar, ziet uw logische app eruit als deze werkstroom op hoog niveau:
 
-:::image type="content" source="./media/custom-route-alert-portal/logic-apps-workflow.png" alt-text="Automation-account toevoegen":::
+:::image type="content" source="./media/custom-route-alert-portal/logic-apps-workflow.png" alt-text="Logic Apps werk stroom":::
 
 ### <a name="1-create-a-logic-app"></a>1. een logische app maken
 
-Maak in **Logic app Designer**een logische app met behulp van de sjabloon voor de **lege logische app** . Zie voor stappen [Logic apps maken](../logic-apps/quickstart-create-first-logic-app-workflow.md#create-your-logic-app).
+Maak in **Logic app Designer** een logische app met behulp van de sjabloon voor de **lege logische app** . Zie voor stappen [Logic apps maken](../logic-apps/quickstart-create-first-logic-app-workflow.md#create-your-logic-app).
 
-:::image type="content" source="./media/custom-route-alert-portal/blank-template.png" alt-text="Automation-account toevoegen":::
+:::image type="content" source="./media/custom-route-alert-portal/blank-template.png" alt-text="Lege sjabloon":::
 
 ### <a name="2-add-a-trigger"></a>2. een trigger toevoegen
 
 Elke logische app wordt gestart door een trigger. Een trigger wordt geactiveerd wanneer een bepaalde gebeurtenis plaatsvindt of wanneer aan een bepaalde voor waarde wordt voldaan. Steeds wanneer de trigger wordt geactiveerd, maakt de Azure Logic Apps-engine een exemplaar van een logische app dat wordt gestart en de werkstroom uitvoert.
 
-Als u regel matig een logische app wilt uitvoeren die is gebaseerd op een vooraf gedefinieerde tijd schema, voegt u het ingebouwde **terugkeer patroon: schema** toe aan uw werk stroom. Typ **schema**in het zoekvak. Selecteer **Triggers**. Selecteer in de lijst triggers de optie **terugkeer patroon**.
+Als u regel matig een logische app wilt uitvoeren die is gebaseerd op een vooraf gedefinieerde tijd schema, voegt u het ingebouwde **terugkeer patroon: schema** toe aan uw werk stroom. Typ **schema** in het zoekvak. Selecteer **Triggers**. Selecteer in de lijst triggers de optie **terugkeer patroon**.
 
-:::image type="content" source="./media/custom-route-alert-portal/schedule.png" alt-text="Automation-account toevoegen":::
+:::image type="content" source="./media/custom-route-alert-portal/schedule.png" alt-text="Terugkeer patroon: schema":::
 
 In de trigger plannings schema kunt u de tijd zone en een terugkeer patroon instellen voor het herhalen van die werk stroom. Het interval en de frequentie bepalen samen de planning van de trigger voor uw logische app. Houd rekening met de volgende factoren als u een redelijke minimale terugkeer frequentie wilt instellen:
 
@@ -299,161 +299,161 @@ In de trigger plannings schema kunt u de tijd zone en een terugkeer patroon inst
 
 Aan het einde van de werk stroom configuratie kunt u de consistentie van de terugkeer frequentie controleren door de werk stroom een paar keer uit te voeren en vervolgens de uitkomst te controleren in de **geschiedenis van uitvoeringen**.
 
-:::image type="content" source="./media/custom-route-alert-portal/recurrence.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/recurrence-expand.png":::
+:::image type="content" source="./media/custom-route-alert-portal/recurrence.png" alt-text="Scherm afbeelding toont het interval en de frequentie waarden van het terugkeer patroon." lightbox="./media/custom-route-alert-portal/recurrence-expand.png":::
 
 ### <a name="3-create-a-job"></a><a name="job"></a>3. een taak maken
 
 Een logische app heeft toegang tot andere apps, services en het platform, hoewel connectors. De volgende stap in deze werk stroom is het selecteren van een connector voor toegang tot het Azure Automation-account dat eerder is gedefinieerd.
 
-1. Selecteer in **Logic apps Designer**onder **recurrence**een **nieuwe stap**. Onder **Kies een actie** en het zoekvak, selecteert u **alle**.
+1. Selecteer in **Logic apps Designer** onder **recurrence** een **nieuwe stap**. Onder **Kies een actie** en het zoekvak, selecteert u **alle**.
 2. Typ **Azure Automation** en zoek in het zoekvak. Selecteer **taak maken**. **Maak een taak** die wordt gebruikt voor het starten van het Automation-runbook dat eerder is gemaakt.
 
-   :::image type="content" source="./media/custom-route-alert-portal/create-job.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/create-job.png" alt-text="Taak maken":::
 
 3. Meld u aan met een service-principal. U kunt een bestaande Service-Principal gebruiken, maar u kunt ook een nieuwe maken. Zie [de portal gebruiken om een Azure AD-Service-Principal te maken die toegang heeft tot bronnen](../active-directory/develop/howto-create-service-principal-portal.md)om een nieuwe service-principal te maken. Selecteer **verbinding maken met Service-Principal**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/sign-in.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/sign-in.png" alt-text="Scherm opname van de sectie ' recurrence ' met de actie ' Connect with Service Principal ' gemarkeerd.":::
 
-4. Typ de **naam**van een verbinding, voeg uw **client-ID** (toepassings-id), **client geheim**en uw **Tenant-id**toe. Ten slotte selecteert u **Create**.
+4. Typ de **naam** van een verbinding, voeg uw **client-ID** (toepassings-id), **client geheim** en uw **Tenant-id** toe. Ten slotte selecteert u **Create**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/connect-service-principal.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/connect-service-principal.png" alt-text="Verbinding maken met Service-Principal":::
 
 5. Op de pagina **taak maken** moet de service-principal de rol ' lezer ' hebben voor de **resource groep** die als host fungeert voor het Automation-account en ' Automation-taak operator ' op het **Automation-account**. Controleer bovendien of u de **runbooknaam** hebt toegevoegd als een nieuwe para meter.
 
-   :::image type="content" source="./media/custom-route-alert-portal/roles.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/roles-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/roles.png" alt-text="Scherm opname toont taak waarden in terugkeer patroon, waar u de Runbooknaam kunt controleren." lightbox="./media/custom-route-alert-portal/roles-expand.png":::
 
 ### <a name="4-get-the-job-output"></a><a name="output"></a>4. de taak uitvoer ophalen
 
 1. Selecteer **Nieuwe stap**. Zoek naar "Azure Automation". Selecteer in de lijst **acties** de optie **taak uitvoer ophalen**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/get-output.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/get-output.png" alt-text="Taakuitvoer ophalen":::
 
-2. Geef op de pagina **taak uitvoer ophalen** de vereiste informatie op voor toegang tot het Automation-account. Selecteer het **abonnement, de resource groep**en het **Automation-account** dat u wilt gebruiken. Klik in het vak **taak-id** . Wanneer de lijst met **dynamische inhoud** wordt weer gegeven, selecteert u **taak-id**.
+2. Geef op de pagina **taak uitvoer ophalen** de vereiste informatie op voor toegang tot het Automation-account. Selecteer het **abonnement, de resource groep** en het **Automation-account** dat u wilt gebruiken. Klik in het vak **taak-id** . Wanneer de lijst met **dynamische inhoud** wordt weer gegeven, selecteert u **taak-id**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/job-id.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/job-id-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/job-id.png" alt-text="Taak-id" lightbox="./media/custom-route-alert-portal/job-id-expand.png":::
 
 ### <a name="5-parse-the-json"></a><a name="parse"></a>5. de JSON parseren
 
 De informatie in de uitvoer van de actie ' Azure Automation taak maken ' (vorige stappen) genereert een JSON-object. Logic Apps **JSON parseren** is een ingebouwde actie om gebruikers vriendelijke tokens te maken op basis van de eigenschappen en hun waarden in JSON-inhoud. U kunt deze eigenschappen vervolgens gebruiken in uw werk stroom.
 
-1. Een actie toevoegen. Selecteer **nieuwe stap**onder **taak uitvoer ophalen->actie**.
+1. Een actie toevoegen. Selecteer **nieuwe stap** onder **taak uitvoer ophalen->actie**.
 2. Typ in het zoekvak **een actie kiezen** de tekst ' JSON parseren ' om te zoeken naar connectors die deze actie aanbieden. Selecteer in de lijst **acties** de actie **JSON parseren** voor de gegevens bewerkingen die u wilt gebruiken.
 
-   :::image type="content" source="./media/custom-route-alert-portal/parse-json.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/parse-json.png" alt-text="JSON parseren":::
 
 3. Klik in het vak **inhoud** . Wanneer de lijst met dynamische inhoud wordt weer gegeven, selecteert u **inhoud**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/content.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/content-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/content.png" alt-text="Scherm afbeelding toont het dialoog venster JSON parseren met geselecteerde inhoud." lightbox="./media/custom-route-alert-portal/content-expand.png":::
 
 4. Voor het parseren van een JSON is een schema vereist. Het schema kan worden gegenereerd met de uitvoer van het Automation-runbook. Open een nieuwe webbrowser sessie, voer het Automation-runbook uit en pak de uitvoer. Ga terug naar de **Logic apps bewerking JSON-gegevens parseren** . Selecteer aan de onderkant van de pagina **voor beeld Payload gebruiken om een schema te genereren**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/sample-payload.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/sample-payload.png" alt-text="Voorbeeld lading gebruiken om een schema te genereren":::
 
-5. Plak de uitvoer van het Automation-runbook en selecteer **gereed**om een voor beeld-JSON-nettolading in te **voegen of te plakken**.
+5. Plak de uitvoer van het Automation-runbook en selecteer **gereed** om een voor beeld-JSON-nettolading in te **voegen of te plakken**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/paste-payload.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/paste-payload-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/paste-payload.png" alt-text="Voorbeeld lading plakken" lightbox="./media/custom-route-alert-portal/paste-payload-expand.png":::
 
 6. Er wordt automatisch een schema gegenereerd door de JSON-invoer lading te parseren.
 
-   :::image type="content" source="./media/custom-route-alert-portal/generate-schema.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/generate-schema-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/generate-schema.png" alt-text="Schema genereren" lightbox="./media/custom-route-alert-portal/generate-schema-expand.png":::
 
 ### <a name="6-define-and-initialize-a-variable"></a><a name="define-variable"></a>6. een variabele definiëren en initialiseren
 
 In deze stap van de werk stroom maken we een voor waarde voor het verzenden van een waarschuwing per e-mail. Voor een flexibele, aangepaste opmaak van een bericht in de hoofd tekst van een e-mail wordt een hulp variabele geïntroduceerd in de werk stroom.
 
-1. Selecteer **nieuwe stap**onder de **actie taak uitvoer ophalen**. Zoek en selecteer in het zoekvak **variabelen**.
+1. Selecteer **nieuwe stap** onder de **actie taak uitvoer ophalen**. Zoek en selecteer in het zoekvak **variabelen**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/variables.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/variables.png" alt-text="Scherm afbeelding toont het dialoog venster een actie kiezen met variabele in het zoekvak en de geselecteerde variabelen.":::
 
 2. Selecteer in de lijst **acties** de actie **variabele initialiseren** .
 
-   :::image type="content" source="./media/custom-route-alert-portal/initialize-variables.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/initialize-variables.png" alt-text="Variabelen initialiseren":::
 
-3. Geef de naam van de variabele op. Selecteer bij **type**de optie **teken reeks**. De **waarde** van de variabele wordt later in de werk stroom toegewezen.
+3. Geef de naam van de variabele op. Selecteer bij **type** de optie **teken reeks**. De **waarde** van de variabele wordt later in de werk stroom toegewezen.
 
-   :::image type="content" source="./media/custom-route-alert-portal/string.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/string-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/string.png" alt-text="Scherm afbeelding toont JSON parseren die is gekoppeld aan de initialisatie variabele, waar u een naam, type en waarde kunt invoeren." lightbox="./media/custom-route-alert-portal/string-expand.png":::
 
 ### <a name="7-create-a-for-each-action"></a><a name="cycles-json"></a>7. een ' voor elke ' actie maken
 
 Zodra de JSON is geparseerd, wordt de inhoud in *de uitvoer van de* **geparseerde JSON-gegevens** opgeslagen. Als u de uitvoer wilt verwerken, kunt u een lus ' voor elke ' herhalen van een of meer acties op elk item in de matrix.
 
-1. Selecteer **een actie toevoegen**onder **variabele initialiseren**. Typ in het zoekvak ' voor elke ' als uw filter.
+1. Selecteer **een actie toevoegen** onder **variabele initialiseren**. Typ in het zoekvak ' voor elke ' als uw filter.
 
-   :::image type="content" source="./media/custom-route-alert-portal/control.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/control.png" alt-text="Scherm afbeelding toont het dialoog venster een actie kiezen met voor elk in het zoekvak en het geselecteerde besturings element.":::
 
 2. Selecteer in de lijst **acties** de actie **voor elk besturings element**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/for-each.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/for-each.png" alt-text="Voor elk besturings element":::
 
-3. Klik in het tekstvak **Selecteer een uitvoer van de vorige stappen** . Wanneer de lijst met **dynamische inhoud** wordt weer gegeven, selecteert u de **hoofd tekst**van de geparseerde JSON.
+3. Klik in het tekstvak **Selecteer een uitvoer van de vorige stappen** . Wanneer de lijst met **dynamische inhoud** wordt weer gegeven, selecteert u de **hoofd tekst** van de geparseerde JSON.
 
-   :::image type="content" source="./media/custom-route-alert-portal/body.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/body.png" alt-text="In de scherm afbeelding wordt de geïnitialiseerde variabele voor elke weer gegeven, die het tekstvak selecteer een uitvoer van vorige stappen bevat.":::
 
 4. We willen voor elk element van de JSON-hoofd tekst een voor waarde instellen. Selecteer in de actie groep de optie **besturings element**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/condition-control.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/condition-control.png" alt-text="Beheer":::
 
 5. Selecteer in de lijst **acties** de optie **voor waarde-besturings element**. De Condition-Control is een controle structuur die de gegevens in uw werk stroom vergelijkt met specifieke waarden of velden. U kunt vervolgens verschillende acties opgeven die worden uitgevoerd op basis van het feit of de gegevens voldoen aan de voor waarde.
 
-   :::image type="content" source="./media/custom-route-alert-portal/condition.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/condition.png" alt-text="Besturings element voor waarde":::
 
 6. Wijzig in de basis van de **voor waarde** de logische bewerking in **of**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/condition-or.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/condition-or-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/condition-or.png" alt-text="Of" lightbox="./media/custom-route-alert-portal/condition-or-expand.png":::
 
 7. Controleer de waarde voor het aantal netwerk-prefixen dat een ExpressRoute-gateway adverteert aan de twee BGP-peers. Het aantal routes is beschikbaar in ' numRoutePeer1 ' en ' numRoutePeer2 ' in **dynamische inhoud**. Typ in het vak waarde de waarde voor **numRoutePeer1**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/peer-1.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/peer-1.png" alt-text="numRoutesPeer1":::
 
 8. Als u een andere rij wilt toevoegen aan uw voor waarde, kiest u **toevoegen-> rij toevoegen**. In het tweede vak, van **dynamische inhoud**, selecteert u **numRoutePeer2**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/peer-2.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/peer-2.png" alt-text="numRoutesPeer2":::
 
 9. De logische voor waarde is waar wanneer een van de twee dynamische variabelen, numRoute1 of numRoute2, groter is dan de drempel waarde. In dit voor beeld wordt de drempel waarde vastgesteld op 160 (80% van de maximum waarde van 200 routes). U kunt de drempel waarde aanpassen aan uw vereisten. Voor consistentie moet de waarde dezelfde waarde zijn die wordt gebruikt in het runbook Power shell-script.
 
-   :::image type="content" source="./media/custom-route-alert-portal/logic-condition.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/logic-condition.png" alt-text="Logische voor waarde":::
 
 10. Onder **Indien waar**, kunt u de acties opmaken en de actie maken om de waarschuwing per e-mail te verzenden. Kies in * * een actie, zoek en selecteer **variabelen**.
 
-    :::image type="content" source="./media/custom-route-alert-portal/condition-if-true.png" alt-text="Automation-account toevoegen":::
+    :::image type="content" source="./media/custom-route-alert-portal/condition-if-true.png" alt-text="Indien waar":::
 
-11. Selecteer **een actie toevoegen**in variabelen. Selecteer in de lijst **acties** de optie **variabele instellen**.
+11. Selecteer **een actie toevoegen** in variabelen. Selecteer in de lijst **acties** de optie **variabele instellen**.
 
-    :::image type="content" source="./media/custom-route-alert-portal/condition-set-variable.png" alt-text="Automation-account toevoegen":::
+    :::image type="content" source="./media/custom-route-alert-portal/condition-set-variable.png" alt-text="Scherm afbeelding van de sectie ' Varia bles ' waarvoor het tabblad ' acties ' is geselecteerd en ' variabele instellen ' is gemarkeerd.":::
 
-12. In **naam**selecteert u de variabele met de naam **EmailBody** die u eerder hebt gemaakt. Plak voor **waarde**het HTML-script dat vereist is om de waarschuwings-e-mail op te maken. Gebruik de **dynamische inhoud** om de waarden van de JSON-hoofd tekst op te neemt. Na het configureren van deze instellingen is het resultaat dat de variabele **emailBody** alle informatie bevat die betrekking heeft op de waarschuwing, in HTML-indeling.
+12. In **naam** selecteert u de variabele met de naam **EmailBody** die u eerder hebt gemaakt. Plak voor **waarde** het HTML-script dat vereist is om de waarschuwings-e-mail op te maken. Gebruik de **dynamische inhoud** om de waarden van de JSON-hoofd tekst op te neemt. Na het configureren van deze instellingen is het resultaat dat de variabele **emailBody** alle informatie bevat die betrekking heeft op de waarschuwing, in HTML-indeling.
 
-    :::image type="content" source="./media/custom-route-alert-portal/paste-script.png" alt-text="Automation-account toevoegen":::
+    :::image type="content" source="./media/custom-route-alert-portal/paste-script.png" alt-text="Variabele instellen":::
 
 ### <a name="8-add-the-email-connector"></a><a name="email"></a>8. de e-mail Connector toevoegen
 
-Logic Apps biedt veel e-mailconnectors. In dit voor beeld voegen we een Outlook-Connector toe om de waarschuwing per e-mail te verzenden. Selecteer **een actie toevoegen**onder **variabele instellen**. Typ ' e-mail verzenden ' in het zoekvak om **een actie te kiezen**.
+Logic Apps biedt veel e-mailconnectors. In dit voor beeld voegen we een Outlook-Connector toe om de waarschuwing per e-mail te verzenden. Selecteer **een actie toevoegen** onder **variabele instellen**. Typ ' e-mail verzenden ' in het zoekvak om **een actie te kiezen**.
 
 1. Selecteer **Office 365 Outlook**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/email.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/email.png" alt-text="E-mail verzenden":::
 
 2. Selecteer in de lijst **acties** de optie **een E-mail verzenden (v2)**.
 
-   :::image type="content" source="./media/custom-route-alert-portal/email-v2.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/email-v2.png" alt-text="Een e-mail verzenden (v2)":::
 
 3. Meld u aan om een verbinding te maken met Office 365 Outlook.
 
-   :::image type="content" source="./media/custom-route-alert-portal/office-365.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/office-365.png" alt-text="Aanmelden":::
 
-4. Klik in het veld **hoofd tekst** op **dynamische inhoud toevoegen**. Voeg in het deel venster dynamische inhoud de variabele **emailBody**toe. Vul het **onderwerp** en het veld **in** .
+4. Klik in het veld **hoofd tekst** op **dynamische inhoud toevoegen**. Voeg in het deel venster dynamische inhoud de variabele **emailBody** toe. Vul het **onderwerp** en het veld **in** .
 
-   :::image type="content" source="./media/custom-route-alert-portal/emailbody.png" alt-text="Automation-account toevoegen":::
+   :::image type="content" source="./media/custom-route-alert-portal/emailbody.png" alt-text="Hoofdtekst":::
 
 5. Met de actie **een E-mail verzenden (v2)** wordt de werk stroom instelling voltooid.
 
-   :::image type="content" source="./media/custom-route-alert-portal/send-email-v2.png" alt-text="Automation-account toevoegen" lightbox="./media/custom-route-alert-portal/send-email-v2-expand.png":::
+   :::image type="content" source="./media/custom-route-alert-portal/send-email-v2.png" alt-text="E-mail verzenden v2" lightbox="./media/custom-route-alert-portal/send-email-v2-expand.png":::
 
 ### <a name="9-workflow-validation"></a><a name="validation"></a>9. werk stroom validatie
 
-De laatste stap is het valideren van de werk stroom. Selecteer in **Logic apps overzicht**de optie **trigger uitvoeren**. Selecteer **terugkeer patroon**. De werk stroom kan worden bewaakt en gecontroleerd in de **uitvoerings geschiedenis**.
+De laatste stap is het valideren van de werk stroom. Selecteer in **Logic apps overzicht** de optie **trigger uitvoeren**. Selecteer **terugkeer patroon**. De werk stroom kan worden bewaakt en gecontroleerd in de **uitvoerings geschiedenis**.
 
-:::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Automation-account toevoegen":::
+:::image type="content" source="./media/custom-route-alert-portal/trigger.png" alt-text="Trigger uitvoeren":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

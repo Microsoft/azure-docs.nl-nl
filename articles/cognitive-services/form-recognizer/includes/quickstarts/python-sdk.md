@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: lajanuar
-ms.openlocfilehash: 47082bd6a441bc857022c960abe3169995074dde
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 445fdea4cb92ed8080528a41cf19ad774751b9ce
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102444652"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510636"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
@@ -187,7 +187,7 @@ In deze sectie wordt beschreven hoe u algemene velden van verkoop facturen kunt 
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_invoice)]
 
 > [!TIP]
-> U kunt ook lokale factuur afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale factuur afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_invoices`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 
@@ -335,7 +335,7 @@ In deze sectie wordt beschreven hoe u algemene velden van Amerikaanse ontvangste
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart.py?name=snippet_receipts)]
 
 > [!TIP]
-> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale ontvangstbewijs afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_receipts`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 ### <a name="output"></a>Uitvoer
 
@@ -368,7 +368,7 @@ In deze sectie wordt beschreven hoe u algemene velden uit de Engelse visite kaar
 [!code-python[](~/cognitive-services-quickstart-code/python/FormRecognizer/FormRecognizerQuickstart-preview.py?name=snippet_bc)]
 
 > [!TIP]
-> U kunt ook lokale visite kaart afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python&preserve-view=true)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
+> U kunt ook lokale visite kaart afbeeldingen analyseren. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
 #### <a name="v20"></a>[v2.0](#tab/ga)
 

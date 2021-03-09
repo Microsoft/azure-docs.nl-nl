@@ -366,7 +366,7 @@
           href: monitor-azure-backup-with-backup-explorer.md
         - name: Azure Portal gebruiken
           href: backup-azure-monitoring-built-in-monitor.md
-        - name: Azure Monitor gebruiken
+        - name: Azure Monitor-Logboeken gebruiken
           href: backup-azure-monitoring-use-azuremonitor.md
     - name: Rapporten
       items:
@@ -374,10 +374,14 @@
           items:
             - name: Azure Backup-rapporten configureren
               href: configure-reports.md
+            - name: E-mail Azure Backup rapporten
+              href: backup-reports-email.md
         - name: Diagnostische gebeurtenissen configureren voor Recovery Services-kluizen
           items:
             - name: Diagnostische instellingen gebruik voor Recovery Services-kluizen
               href: backup-azure-diagnostic-events.md
+            - name: Systeem functies gebruiken
+              href: backup-reports-system-functions.md
             - name: Log Analytics-gegevensmodel voor resourcespecifieke gebeurtenissen
               href: backup-azure-reports-data-model.md
             - name: Log Analytics-gegevensmodel voor Azure Backup (Azure Diagnostics-modus)

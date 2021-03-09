@@ -1,22 +1,22 @@
 ---
-title: 'Zelfstudie: Hoge beschikbaarheid voor virtuele Windows-machines in Azure'
-description: In deze zelfstudie leert u hoe u Azure PowerShell gebruikt om maximaal beschikbare virtuele machines in beschikbaarheidssets te implementeren
+title: Vm's in een beschikbaarheidsset implementeren met behulp van Azure PowerShell
+description: Meer informatie over het gebruik van Azure PowerShell voor het implementeren van Maxi maal beschik bare virtuele machines in beschikbaarheids sets
 services: virtual-machines-windows
-author: cynthn
-ms.service: virtual-machines-windows
-ms.workload: infrastructure-services
-ms.topic: tutorial
-ms.date: 11/30/2018
-ms.author: cynthn
+author: mimckitt
+ms.service: virtual-machines
+ms.topic: how-to
+ms.date: 3/8/2021
+ms.author: mimckitt
+ms.reviewer: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e1c9cf0a60446fba6fae5c850231b0805e7ea135
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 90f57e48ef8cd2f71eea7a5c2b98fda83f282203
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736649"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509095"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Zelfstudie: Virtuele machines met hoge beschikbaarheid maken en implementeren met Azure PowerShell
+# <a name="create-and-deploy-virtual-machines-in-an-availability-set-using-azure-powershell"></a>Virtuele machines in een beschikbaarheidsset maken en implementeren met behulp van Azure PowerShell
 
 In deze zelfstudie leert u hoe u de beschikbaarheid en betrouwbaarheid van uw virtuele machines (VM’s) kunt vergroten met behulp van beschikbaarheidssets. Beschikbaarheidssets zorgen ervoor dat de VM's die u in Azure implementeert, worden verdeeld over meerdere geïsoleerde hardwareknooppunten in een cluster. 
 
@@ -28,14 +28,6 @@ In deze zelfstudie leert u het volgende:
 > * Beschikbare VM-grootten controleren
 > * Azure Advisor controleren
 
-
-## <a name="availability-set-overview"></a>Overzicht beschikbaarheidsset
-
-Een beschikbaarheidsset is een logische groeperingsmogelijkheid om VM-resources van elkaar te isoleren wanneer deze zijn geïmplementeerd. Azure zorgt ervoor dat de VM's die u in een beschikbaarheidsset plaatst, op meerdere fysieke servers, compute-racks, opslageenheden en netwerkswitches worden uitgevoerd. Als er een hardware- of softwarefout optreedt, heeft dit gevolgen voor slechts een subset van uw VM’s en blijft uw totale oplossing operationeel. Beschikbaarheidssets zijn essentieel voor het bouwen van betrouwbare cloudoplossingen.
-
-Laten we eens kijken naar een typische VM-oplossing met vier front-end webservers en twee VM's in de back-end. Met Azure wilt u twee beschikbaarheidssets definiëren voordat u uw VM's implementeert: eentje voor de web-laag en eentje voor de back-endlaag. Wanneer u een nieuwe VM maakt, geeft u de beschikbaarheidsset op als parameter. Azure zorgt ervoor dat de VM’s worden geïsoleerd over meerdere fysieke hardwareresources. Als er een probleem is met de fysieke hardware waarop een van uw servers draait, weet u dat de andere instanties van uw servers actief blijven, omdat ze worden uitgevoerd op andere hardware.
-
-Gebruik beschikbaarheidssets wanneer u betrouwbare VM-oplossingen wilt implementeren in Azure.
 
 ## <a name="launch-azure-cloud-shell"></a>Azure Cloud Shell starten
 

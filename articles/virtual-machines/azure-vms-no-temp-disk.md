@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: 30587fac7d7be37d7595a78502b7999adee9a30f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4dd078205989872179b0b2474974a29cf6b88dad
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665307"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507837"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Azure VM-grootten zonder lokale tijdelijke schijf 
 In dit artikel vindt u antwoorden op veelgestelde vragen over Azure VM-grootten die geen lokale tijdelijke schijf hebben (d.w.z. geen lokale tijdelijke schijf). Zie voor meer informatie over deze VM-grootten [specificaties voor Dv4-en Dsv4-Series (algemeen workloads)](dv4-dsv4-series.md) of [specificaties voor Ev4-en Esv4-serie (voor geheugen geoptimaliseerde workloads)](ev4-esv4-series.md).
@@ -40,8 +40,22 @@ Nee. De enige combi naties die zijn toegestaan voor het wijzigen van de grootte 
 1. VM (met lokale tijdelijke schijf)-> VM (met lokale tijdelijke schijf); maar 
 2. VM (zonder lokale tijdelijke schijf)-> VM (zonder lokale tijdelijke schijf). 
 
+Als u geïnteresseerd bent in een tijdelijke oplossing, raadpleegt u de volgende vraag.
+
 > [!NOTE]
 > Als een afbeelding afhankelijk is van de bron schijf, of als een wissel bestand of swapfile bestaat op de lokale tijdelijke schijf, werken de schijfloze installatie kopieën niet. gebruik in plaats daarvan het alternatief ' met schijf '. 
+
+## <a name="how-do-i-migrate-from-a-vm-size-with-local-temp-disk-to-a-vm-size-with-no-local-temp-disk"></a>Hoe kan ik migreren van een VM-grootte met een lokale tijdelijke schijf naar een VM-grootte zonder lokale tijdelijke schijf?  
+U kunt migreren door de volgende stappen uit te voeren: 
+
+1. Maak verbinding met uw virtuele machine met een lokale tijdelijke schijf (bijvoorbeeld een D: station) als een lokale beheerder.
+2. Volg de richt lijnen in de sectie "tijdelijk verplaatsen van pagefile.sys naar station C" van [het station D: gebruiken als gegevens station op een Windows-VM](./windows/change-drive-letter.md) om het wissel bestand van de lokale tijdelijke schijf (D: station) te verplaatsen naar station C:.
+
+   > [!NOTE]
+   > Volg de richt lijnen in de sectie "tijdelijk verplaatsen van pagefile.sys naar station C" van het station D: gebruiken als gegevens station op een Windows-VM om het wissel bestand van de lokale tijdelijke schijf (D: station) te verplaatsen naar C: station. **Afwijking van de stappen die worden beschreven, leidt tot het fout bericht: ' kan de grootte van de virtuele machine niet wijzigen omdat het wijzigen van de bron schijf naar niet-bron schijf VM-grootte en omgekeerd is niet toegestaan.**
+
+3. Maak een moment opname van de virtuele machine door de stappen te volgen die worden beschreven in [een moment opname maken met behulp van de portal of Azure cli](./linux/snapshot-copy-managed-disk.md). 
+4. Gebruik moment opname voor het maken van een nieuwe schijfloze VM (zoals Dv4, Dsv4, Ev4, Esv4 Series) door de stappen te volgen die worden beschreven in [een virtuele machine maken van een moment opname met CLI](./scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md). 
 
 ## <a name="do-these-vm-sizes-support-both-linux-and-windows-operating-systems-os"></a>Ondersteunen deze VM-grootten zowel Linux-als Windows-besturings systemen (OS)?
 Ja.

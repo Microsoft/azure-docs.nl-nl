@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 03/07/2021
 ms.author: banders
-ms.openlocfilehash: 0f30c90bf81a837b1e78ca5f91450cf085cc91bc
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: e7f5370e1e387947d196959fef31043ea8f4d3bd
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102495098"
+ms.locfileid: "102508517"
 ---
 # <a name="assign-roles-to-azure-enterprise-agreement-service-principal-names"></a>Rollen toewijzen aan Azure Enterprise Overeenkomst service principal names
 
@@ -23,7 +23,7 @@ U kunt de inschrijving van uw Enterprise Overeenkomst (EA) beheren in de [Azure 
 Voordat u begint, moet u ervoor zorgen dat u bekend bent met de volgende artikelen:
 
 - [Enter prise Agreement-rollen](understand-ea-roles.md)
-- [Aanmelden met Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-5.5.0&preserve-view=true)
+- [Aanmelden met Azure PowerShell](/powershell/azure/authenticate-azureps)
 - [REST-Api's aanroepen met postman](/rest/api/azure/#how-to-call-azure-rest-apis-with-postman)
 
 ## <a name="create-and-authenticate-your-service-principal"></a>Uw service-principal maken en verifiëren
@@ -89,7 +89,7 @@ De para meter is de ID van het facturerings account. U vindt deze in de Azure Po
 
 **billingRoleAssignmentName**
 
-De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.1&preserve-view=true) Power shell-opdracht.
+De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid) Power shell-opdracht.
 
 U kunt ook de website van de [online-GUID/UUID-Generator](https://guidgenerator.com/) gebruiken om een unieke GUID te genereren.
 
@@ -141,7 +141,7 @@ Het is de ID van het facturerings account. U vindt deze in de Azure Portal op de
 
 **billingRoleAssignmentName**
 
-De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.1&preserve-view=true) Power shell-opdracht.
+De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid) Power shell-opdracht.
 
 U kunt ook de website van de [online-GUID/UUID-Generator](https://guidgenerator.com/) gebruiken om een unieke GUID te genereren.
 
@@ -199,7 +199,7 @@ De para meter is de ID van het facturerings account. U vindt deze in de Azure Po
 
 **billingRoleAssignmentName**
 
-De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.1&preserve-view=true) Power shell-opdracht.
+De para meter is een unieke GUID die u moet opgeven. U kunt een GUID genereren met behulp van de [nieuwe-GUID](/powershell/module/microsoft.powershell.utility/new-guid) Power shell-opdracht.
 
 U kunt ook de website van de [online-GUID/UUID-Generator](https://guidgenerator.com/) gebruiken om een unieke GUID te genereren.
 **enrollmentAccountName**

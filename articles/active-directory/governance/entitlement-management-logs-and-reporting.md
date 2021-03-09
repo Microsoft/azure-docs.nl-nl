@@ -16,12 +16,12 @@ ms.date: 12/23/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b635a83c5ea1378a525ff607e5c6f2725337ad1a
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 4c5ab92fcc1d70d12e37ae351e768514b4e7522f
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453033"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501699"
 ---
 # <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Logboeken en rapporten archiveren op het beheer van rechten van Azure AD in Azure Monitor
 
@@ -130,7 +130,7 @@ Voer de volgende stappen uit om de roltoewijzing in te stellen en een query te m
 
 ### <a name="install-azure-powershell-module"></a>Azure PowerShell module installeren
 
-Zodra u de juiste roltoewijzing hebt, start u Power shell en [installeert u de module Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.3.0) (als u dat nog niet hebt gedaan) door het volgende te typen:
+Zodra u de juiste roltoewijzing hebt, start u Power shell en [installeert u de module Azure PowerShell](/powershell/azure/install-az-ps) (als u dat nog niet hebt gedaan) door het volgende te typen:
 
 ```azurepowershell
 install-module -Name az -allowClobber -Scope CurrentUser
@@ -168,8 +168,7 @@ $wks | ft CustomerId, Name
 ```
 
 ### <a name="send-the-query-to-the-log-analytics-workspace"></a>De query naar de Log Analytics-werk ruimte verzenden
-Ten slotte, wanneer u een werk ruimte hebt geïdentificeerd, kunt u [invoke-AzOperationalInsightsQuery](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery?view=azps-3.3.0
-) gebruiken om een Kusto-query naar die werk ruimte te verzenden. Deze query's worden geschreven in de [Kusto-query taal](/azure/kusto/query/).
+Ten slotte, wanneer u een werk ruimte hebt geïdentificeerd, kunt u [invoke-AzOperationalInsightsQuery](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery) gebruiken om een Kusto-query naar die werk ruimte te verzenden. Deze query's worden geschreven in de [Kusto-query taal](/azure/kusto/query/).
  
 U kunt bijvoorbeeld het datum bereik van de controle gebeurtenis records ophalen uit de werk ruimte Log Analytics, met Power shell-cmdlets voor het verzenden van een query zoals:
  

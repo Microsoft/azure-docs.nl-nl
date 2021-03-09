@@ -8,15 +8,15 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 08/07/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 55d110501d5e0273ebf8cbc666920cacb87cf5cf
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 455fdc7615e0909189f311755571d02a9acca24e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102434981"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501988"
 ---
 # <a name="azure-cosmos-db-attachments"></a>Azure Cosmos DB bijlagen
-[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
+[!INCLUDE[appliesto-sql-api](includes/appliesto-sql-mongodb-api.md)]
 
 Azure Cosmos DB bijlagen zijn speciale items die verwijzingen bevatten naar een gekoppelde meta gegevens met een externe BLOB of een media bestand.
 
@@ -40,6 +40,11 @@ De beheerde bijlagen van Azure Cosmos DB zijn niet hetzelfde als de ondersteunin
 - Bijlagen worden niet ondersteund in alle versies van de Sdk's van de Azure Cosmos DB.
 - Beheerde bijlagen zijn beperkt tot 2 GB aan opslag per database account.
 - Beheerde bijlagen zijn niet compatibel met de globale distributie van Azure Cosmos DB en ze worden niet gerepliceerd tussen regio's.
+
+> [!NOTE]
+> Azure Cosmos DB-API voor MongoDB versie 3,2 maakt gebruik van beheerde bijlagen voor GridFS, die daarom gelden voor de beperkingen van de beheerde bijlagen van Azure Cosmos DB.
+>
+> U wordt aangeraden ontwikkel aars die de MongoDB GridFS-functie hebt ingesteld, te upgraden naar Azure Cosmos DB-API voor MongoDB versie 3,6 of hoger, die is losgekoppeld van bijlagen en een sterker en robuustere ervaring biedt. Ontwikkel aars die gebruikmaken van de MongoDB GridFS-functieset, moeten ook overwegen Azure Blob Storage te gebruiken. Dit is gebaseerd op de opslag van blob-inhoud en biedt uitgebreide functionaliteit tegen lagere kosten vergeleken met GridFS.
 
 ## <a name="migrating-attachments-to-azure-blob-storage"></a>Bijlagen migreren naar Azure Blob Storage
 

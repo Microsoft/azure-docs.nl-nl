@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file, devx-track-azurecli
-ms.openlocfilehash: be6de283ed230a6e6a6b4986abb0a36386e36925
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 4c168738c0396b83412f9ed8c27fe3b2db9918d7
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102211988"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510621"
 ---
 Azure Disk Encryption kunnen worden ingeschakeld en beheerd via de [Azure cli](/cli/azure) en [Azure PowerShell](/powershell/azure/new-azureps-module-az). Hiervoor moet u de hulpprogram ma's lokaal installeren en verbinding maken met uw Azure-abonnement.
 
@@ -47,13 +47,13 @@ De [Azure PowerShell AZ-module](/powershell/azure/new-azureps-module-az) bevat e
 
 Als u dit al hebt geïnstalleerd, moet u ervoor zorgen dat u de nieuwste versie van Azure PowerShell SDK-versie gebruikt om Azure Disk Encryption te configureren. Down load de nieuwste versie van [Azure PowerShell release](https://github.com/Azure/azure-powershell/releases).
 
-Gebruik de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) om u aan [te melden bij uw Azure-account met Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0).
+Gebruik de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) om u aan [te melden bij uw Azure-account met Azure PowerShell](/powershell/azure/authenticate-azureps).
 
 ```powershell
 Connect-AzAccount
 ```
 
-Als u meerdere abonnementen hebt en er een wilt opgeven, gebruikt u de cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) om ze weer te geven, gevolgd door de cmdlet [set-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-2.5.0) :
+Als u meerdere abonnementen hebt en er een wilt opgeven, gebruikt u de cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription) om ze weer te geven, gevolgd door de cmdlet [set-AzContext](/powershell/module/az.accounts/set-azcontext) :
 
 ```powershell
 Set-AzContext -Subscription -Subscription <SubscriptionId>

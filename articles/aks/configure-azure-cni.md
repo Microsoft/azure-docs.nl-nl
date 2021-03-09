@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/03/2019
 ms.custom: references_regions
-ms.openlocfilehash: 6c0cc1c8da6fddfad6d3f70c88860ddcdd35a11a
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: ef9e3689f5846ddfc66c47a15967a18fc6550d35
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102182414"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504249"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Azure CNI-netwerken configureren in azure Kubernetes service (AKS)
 
@@ -24,10 +24,9 @@ Dit artikel laat u zien hoe u met *Azure cni* Networking een subnet voor een vir
 
 * Het virtuele netwerk voor het AKS-cluster moet uitgaande Internet verbinding toestaan.
 * AKS-clusters mogen niet `169.254.0.0/16` gebruikmaken `172.30.0.0/16` van,, `172.31.0.0/16` ,, of `192.0.2.0/24` voor het adres bereik van de Kubernetes-service, het Pod-adres bereik of het virtuele netwerk bereik van het cluster.
-* De service-principal die wordt gebruikt door het AKS-cluster moet ten minste [netwerkinzender](../role-based-access-control/built-in-roles.md#network-contributor) machtigingen hebben voor het subnet binnen het virtuele netwerk. Als u een [aangepaste rol](../role-based-access-control/custom-roles.md) wilt definiëren in plaats van de ingebouwde rol netwerk bijdrager te gebruiken, zijn de volgende machtigingen vereist:
+* De cluster-id die door het AKS-cluster wordt gebruikt, moet ten minste [netwerkinzender](../role-based-access-control/built-in-roles.md#network-contributor) machtigingen hebben voor het subnet binnen het virtuele netwerk. Als u een [aangepaste rol](../role-based-access-control/custom-roles.md) wilt definiëren in plaats van de ingebouwde rol netwerk bijdrager te gebruiken, zijn de volgende machtigingen vereist:
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`
-* In plaats van een Service-Principal kunt u de door het systeem toegewezen beheerde identiteit voor machtigingen gebruiken. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 * Het subnet dat is toegewezen aan de AKS-knooppunt groep mag geen [gedelegeerd subnet](../virtual-network/subnet-delegation-overview.md)zijn.
 
 ## <a name="plan-ip-addressing-for-your-cluster"></a>IP-adres sering voor uw cluster plannen

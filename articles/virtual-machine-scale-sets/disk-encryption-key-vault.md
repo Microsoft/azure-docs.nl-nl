@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 10/10/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: b8697e64eac69af8b8552f01fb6a03da0488a7cc
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 3d30d506ae3b49b2e247ee77ef17d101f94854c7
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102210088"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501006"
 ---
 # <a name="create-and-configure-a-key-vault-for-azure-disk-encryption"></a>Een sleutelkluis voor Azure Disk Encryption maken en configureren
 
@@ -36,7 +36,7 @@ U kunt de stappen in dit artikel voltooien met de [Azure CLI](/cli/azure/), de [
 
 ### <a name="connect-to-your-azure-account"></a>Verbinding maken met uw Azure-account
 
-Voordat u de Azure CLI of Azure PowerShell gebruikt, moet u eerst verbinding maken met uw Azure-abonnement. U doet dit door [u aan te melden met Azure CLI](/cli/azure/authenticate-azure-cli), [u aan te melden met Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-2.5.0)of uw referenties aan de Azure-portal op te geven wanneer u hierom wordt gevraagd.
+Voordat u de Azure CLI of Azure PowerShell gebruikt, moet u eerst verbinding maken met uw Azure-abonnement. U doet dit door [u aan te melden met Azure CLI](/cli/azure/authenticate-azure-cli), [u aan te melden met Azure PowerShell](/powershell/azure/authenticate-azureps)of uw referenties aan de Azure-portal op te geven wanneer u hierom wordt gevraagd.
 
 ```azurecli-interactive
 az login

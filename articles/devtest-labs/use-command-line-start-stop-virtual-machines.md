@@ -3,12 +3,12 @@ title: Gebruik opdracht regel Programma's om Vm's te starten en te stoppen Azure
 description: Meer informatie over het gebruik van opdracht regel Programma's voor het starten en stoppen van virtuele machines in Azure DevTest Labs.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 2b9be3d09c488fdae211d81daf88e8807bc7b4dc
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 2ddc1620cf86fa203b2f0e31359f9fd262df8916
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201189"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499540"
 ---
 # <a name="use-command-line-tools-to-start-and-stop-azure-devtest-labs-virtual-machines"></a>Opdracht regel Programma's gebruiken om Azure DevTest Labs virtuele machines te starten en te stoppen
 In dit artikel wordt beschreven hoe u Azure PowerShell of Azure CLI gebruikt om virtuele machines in een lab in Azure DevTest Labs te starten of te stoppen. U kunt Power shell/CLI-scripts maken om deze bewerkingen te automatiseren. 
@@ -29,7 +29,7 @@ In sommige gevallen wilt u echter mogelijk het starten en stoppen van Vm's vanui
 > [!NOTE]
 > Het volgende script maakt gebruik van de Azure PowerShell AZ-module. 
 
-Met het volgende Power shell-script wordt een virtuele machine in een Lab gestart. [Invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction?view=azps-1.7.0) is de primaire focus voor dit script. De **ResourceID** para meter is de volledig gekwalificeerde resource-id voor de virtuele machine in het lab. Met de **actie** parameter worden de opties voor **starten** of **stoppen** ingesteld, afhankelijk van wat er nodig is.
+Met het volgende Power shell-script wordt een virtuele machine in een Lab gestart. [Invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) is de primaire focus voor dit script. De **ResourceID** para meter is de volledig gekwalificeerde resource-id voor de virtuele machine in het lab. Met de **actie** parameter worden de opties voor **starten** of **stoppen** ingesteld, afhankelijk van wat er nodig is.
 
 ```powershell
 # The id of the subscription

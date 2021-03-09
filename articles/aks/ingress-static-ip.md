@@ -5,12 +5,12 @@ description: Meer informatie over het installeren en configureren van een NGINX 
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 58cda3f2bfc76f00deaa85347c059040e39f9ef5
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: fa6572ddc694cb892f48cb3e618c176f087524f6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98729010"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506562"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Een ingangs controller maken met een statisch openbaar IP-adres in azure Kubernetes service (AKS)
 
@@ -50,7 +50,7 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 ```
 
 > [!NOTE]
-> Met de bovenstaande opdrachten maakt u een IP-adres dat wordt verwijderd als u uw AKS-cluster verwijdert. U kunt ook een IP-adres maken in een andere resource groep die onafhankelijk van uw AKS-cluster kan worden beheerd. Als u een IP-adres in een andere resource groep maakt, moet u ervoor zorgen dat de service-principal die wordt gebruikt door het AKS-cluster, gedelegeerde machtigingen heeft voor de andere resource groep, zoals *Network contributor*. Zie [een statisch openbaar IP-adres en DNS-label gebruiken met de AKS-Load Balancer][aks-static-ip]voor meer informatie.
+> Met de bovenstaande opdrachten maakt u een IP-adres dat wordt verwijderd als u uw AKS-cluster verwijdert. U kunt ook een IP-adres maken in een andere resource groep die onafhankelijk van uw AKS-cluster kan worden beheerd. Als u een IP-adres in een andere resource groep maakt, moet u ervoor zorgen dat de cluster-id die wordt gebruikt door het AKS-cluster, gedelegeerde machtigingen heeft voor de andere resource groep, zoals *Network contributor*. Zie [een statisch openbaar IP-adres en DNS-label gebruiken met de AKS-Load Balancer][aks-static-ip]voor meer informatie.
 
 Implementeer nu het *nginx-ingress-* grafiek met helm. Voor toegevoegde redundantie worden er twee replica's van de NGINX-ingangscontrollers geïmplementeerd met de parameter `--set controller.replicaCount`. Om volledig te profiteren van het uitvoeren van replica's van de ingangs controller, moet u ervoor zorgen dat er meer dan één knoop punt in uw AKS-cluster is.
 

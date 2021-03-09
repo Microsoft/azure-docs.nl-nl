@@ -5,16 +5,16 @@ description: Meer informatie over het bijwerken of opnieuw instellen van de refe
 services: container-service
 ms.topic: article
 ms.date: 03/11/2019
-ms.openlocfilehash: ba2c31872ae026cfdfcb7be17d333fb98194dce6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 84cadc54a11c2e57d73fd1f06e98deb3d599d648
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389005"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501172"
 ---
 # <a name="update-or-rotate-the-credentials-for-azure-kubernetes-service-aks"></a>De referenties voor de Azure Kubernetes-service bijwerken of draaien (AKS)
 
-Standaard worden AKS-clusters gemaakt met een service-principal die een verval tijd van één jaar heeft. Bij de voor de verloop datum kunt u de referenties opnieuw instellen om de service-principal voor een extra periode uit te breiden. Het is ook mogelijk dat u de referenties wilt bijwerken of draaien, als onderdeel van een gedefinieerd beveiligings beleid. In dit artikel wordt beschreven hoe u deze referenties voor een AKS-cluster bijwerkt.
+AKS-clusters die zijn gemaakt met een Service-Principal, hebben een verval tijd van één jaar. Bij de voor de verloop datum kunt u de referenties opnieuw instellen om de service-principal voor een extra periode uit te breiden. Het is ook mogelijk dat u de referenties wilt bijwerken of draaien, als onderdeel van een gedefinieerd beveiligings beleid. In dit artikel wordt beschreven hoe u deze referenties voor een AKS-cluster bijwerkt.
 
 Mogelijk hebt u ook [uw AKS-cluster geïntegreerd met Azure Active Directory][aad-integration]en gebruikt u dit als een verificatie provider voor uw cluster. In dat geval hebt u nog twee identiteiten gemaakt voor uw cluster, de AAD-server-app en de AAD-client-app. u kunt deze referenties ook opnieuw instellen.
 

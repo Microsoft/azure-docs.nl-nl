@@ -9,14 +9,14 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/17/2020
-ms.openlocfilehash: 87b1f4ab7b7091970d7bb76ae1e00b06549fb0b4
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
-ms.translationtype: HT
+ms.openlocfilehash: 081eea7842652884363603bc5ba742ba48539f85
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96152664"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503608"
 ---
-**Rekendoelen kunnen opnieuw worden gebruikt voor trainingstaken.** Als u een externe VM koppelt aan uw werkruimte, kunt u die bijvoorbeeld voor meerdere taken gebruiken. Voor machine learning-pijplijn gebruikt u de juiste [pijplijnstap](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py) voor elk rekendoel.
+**Rekendoelen kunnen opnieuw worden gebruikt voor trainingstaken.** Als u een externe VM koppelt aan uw werkruimte, kunt u die bijvoorbeeld voor meerdere taken gebruiken. Voor machine learning-pijplijn gebruikt u de juiste [pijplijnstap](/python/api/azureml-pipeline-steps/azureml.pipeline.steps) voor elk rekendoel.
 
 U kunt voor de meeste taken een van de volgende resources gebruiken voor een rekendoel voor trainingsdoeleinden. Niet alle resources kunnen worden gebruikt voor geautomatiseerde machine learning, pijplijnen voor machine learning of de ontwerpfunctie.
 

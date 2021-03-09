@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/10/2019
-ms.openlocfilehash: 671a8f7c6fa4c20ef4fc88f57d4a946a84614389
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 3ba69a6ddf38083e5665e20081f5f909b7100024
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420866"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508483"
 ---
 # <a name="convert-to-dataset"></a>Converteren naar gegevensset
 
@@ -35,18 +35,18 @@ U wordt aangeraden de module [meta gegevens bewerken](edit-metadata.md) te gebru
 
 2. Verbind het met een wille keurige module die een gegevensset uitvoert.   
 
-    Zolang de gegevens [in tabel vorm](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py)zijn, kunt u deze converteren naar een gegevensset. Dit geldt ook voor gegevens die zijn geladen via gegevens [importeren](import-data.md), gegevens die zijn gemaakt via [gegevens hand matig invoeren](enter-data-manually.md)of data sets die zijn getransformeerd via [trans formatie Toep assen](apply-transformation.md).
+    Zolang de gegevens [in tabel vorm](/python/api/azureml-core/azureml.data.tabulardataset)zijn, kunt u deze converteren naar een gegevensset. Dit geldt ook voor gegevens die zijn geladen via gegevens [importeren](import-data.md), gegevens die zijn gemaakt via [gegevens hand matig invoeren](enter-data-manually.md)of data sets die zijn getransformeerd via [trans formatie Toep assen](apply-transformation.md).
 
 3.  Geef in de vervolg keuzelijst **actie** aan of u de gegevens wilt opschonen voordat u de gegevensset opslaat:  
   
-    - **Geen** : gebruik de gegevens als.  
+    - **Geen**: gebruik de gegevens als.  
   
-    - **SetMissingValue** : Stel een specifieke waarde in op een ontbrekende waarde in de gegevensset. De standaard aanduiding is het vraag teken (?), maar u kunt de aangepaste optie voor  **ontbrekende waarden** gebruiken om een andere waarde op te geven. Als u bijvoorbeeld een **taxi** voor een **aangepaste ontbrekende waarde** invoert, worden alle exemplaren van de **taxi** in de gegevensset gewijzigd in de ontbrekende waarde.
+    - **SetMissingValue**: Stel een specifieke waarde in op een ontbrekende waarde in de gegevensset. De standaard aanduiding is het vraag teken (?), maar u kunt de aangepaste optie voor  **ontbrekende waarden** gebruiken om een andere waarde op te geven. Als u bijvoorbeeld een **taxi** voor een **aangepaste ontbrekende waarde** invoert, worden alle exemplaren van de **taxi** in de gegevensset gewijzigd in de ontbrekende waarde.
   
-    - **ReplaceValues** : gebruik deze optie om een enkele exacte waarde op te geven die moet worden vervangen door een andere exacte waarde. U kunt ontbrekende waarden of aangepaste waarden vervangen door de **Vervang** methode in te stellen:
+    - **ReplaceValues**: gebruik deze optie om een enkele exacte waarde op te geven die moet worden vervangen door een andere exacte waarde. U kunt ontbrekende waarden of aangepaste waarden vervangen door de **Vervang** methode in te stellen:
 
-      - **Ontbrekend** : Kies deze optie om ontbrekende waarden in de invoer-gegevensset te vervangen. Voer bij **nieuwe waarde** de waarde in om de ontbrekende waarden te vervangen door.
-      - **Aangepast** : Kies deze optie om aangepaste waarden in de invoer-gegevensset te vervangen. Voer voor **aangepaste waarde** de waarde in die u wilt zoeken. Als uw gegevens bijvoorbeeld de teken reeks bevatten `obs` die wordt gebruikt als tijdelijke aanduiding voor ontbrekende waarden, voert u in `obs` . Voer bij **nieuwe waarde** de nieuwe waarde in om de oorspronkelijke teken reeks te vervangen door.
+      - **Ontbrekend**: Kies deze optie om ontbrekende waarden in de invoer-gegevensset te vervangen. Voer bij **nieuwe waarde** de waarde in om de ontbrekende waarden te vervangen door.
+      - **Aangepast**: Kies deze optie om aangepaste waarden in de invoer-gegevensset te vervangen. Voer voor **aangepaste waarde** de waarde in die u wilt zoeken. Als uw gegevens bijvoorbeeld de teken reeks bevatten `obs` die wordt gebruikt als tijdelijke aanduiding voor ontbrekende waarden, voert u in `obs` . Voer bij **nieuwe waarde** de nieuwe waarde in om de oorspronkelijke teken reeks te vervangen door.
   
     Houd er rekening mee dat de bewerking **ReplaceValues** alleen van toepassing is op exacte overeenkomsten. Deze teken reeksen worden bijvoorbeeld niet beïnvloed: `obs.` , `obsolete` .  
  

@@ -8,12 +8,12 @@ ms.date: 01/03/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: contperf-fy21q1, devx-track-azurecli
-ms.openlocfilehash: 6d8402f5e8a1a9af1f84ff6beff7324d1675e441
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 3abca397186572cabb4f7ae99edae8688ea4d9a6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102214402"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499506"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Azure Active Directory Domain Services authenticatie inschakelen op Azure Files
 
@@ -99,7 +99,7 @@ In de volgende afbeelding ziet u hoe u Azure AD DS-verificatie via SMB inschakel
 
 Als u Azure AD DS-verificatie via SMB met Azure PowerShell wilt inschakelen, installeert u de nieuwste AZ-module (2,4 of hoger) of de AZ. Storage-module (1,5 of hoger). Zie [Azure PowerShell installeren op Windows met PowerShellGet](/powershell/azure/install-Az-ps)voor meer informatie over het installeren van Power shell.
 
-Als u een nieuw opslag account wilt maken, roept u [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount?view=azps-2.5.0)aan en stelt u de para meter **EnableAzureActiveDirectoryDomainServicesForFile** in op **True**. In het volgende voor beeld moet u de waarden voor de tijdelijke aanduiding vervangen door uw eigen waarden. (Als u de vorige preview-module gebruikt, is de para meter voor het inschakelen van de functie **EnableAzureFilesAadIntegrationForSMB**.)
+Als u een nieuw opslag account wilt maken, roept u [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount)aan en stelt u de para meter **EnableAzureActiveDirectoryDomainServicesForFile** in op **True**. In het volgende voor beeld moet u de waarden voor de tijdelijke aanduiding vervangen door uw eigen waarden. (Als u de vorige preview-module gebruikt, is de para meter voor het inschakelen van de functie **EnableAzureFilesAadIntegrationForSMB**.)
 
 ```powershell
 # Create a new storage account

@@ -6,12 +6,12 @@ ms.author: crtreasu
 ms.date: 02/17/2021
 ms.topic: best-practice
 ms.service: azure-object-anchors
-ms.openlocfilehash: 5b84bfae4a338a15b75e4f61114869aab1e94f87
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: da3be6e3d97e50b27ded29ba017164fdbd9a0a5b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101746026"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503042"
 ---
 # <a name="best-practices"></a>Aanbevolen procedures
 
@@ -28,6 +28,8 @@ We raden u aan enkele van deze stappen uit te voeren om de beste resultaten te k
 - Onze model conversie service kan veel tijd in beslag nemen om een groot, hoog LOD-model (detail niveau) te verwerken. Voor de effectiviteit kunt u uw 3D-model voors verwerken om de interne gezichten te verwijderen.
 
 ## <a name="detection"></a>Detectie
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Mixed-Reality/Azure-Object-Anchors-Detection-and-Alignment-Best-Practices/player]
 
 - De meegeleverde runtime-SDK vereist een door de gebruiker verschaft Zoek regio voor het zoeken en detecteren van de fysieke object (en). De zoek regio kan een selectie kader, een bol, een weer gave-frustum of een combi natie hiervan zijn. Om een onjuiste detectie te voor komen, is het raadzaam om een zoek regio in te stellen die groot genoeg is om het object te kunnen behandelen. Wanneer u de meegeleverde voor beeld-apps gebruikt, kunt u aan één zijde van het object ongeveer 2 meters van het dichtstbijzijnde Opper vlak behalen en de app starten.
 - Voordat u de object-ankers-app op een HoloLens 2-apparaat start, verwijdert u de hologrammen in de buurt van uw werk plek via de hoofd instellingen van uw apparaten via ***instellingen->systeem >hologrammen***

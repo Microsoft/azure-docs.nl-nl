@@ -11,19 +11,21 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/02/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: 242fd57cbdbc9ef01ba28bea25d1aad4c6a17377
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: acd8df620e23ee4ebc103d8910c6443f47ffa141
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453373"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503824"
 ---
 # <a name="attach-apache-spark-pools-powered-by-azure-synapse-analytics-for-data-wrangling-preview"></a>Apache Spark Pools koppelen (aangedreven door Azure Synapse Analytics) voor data wrangling (preview)
 
 In dit artikel leert u hoe u een Apache Spark pool kunt koppelen en starten die is gemaakt door [Azure Synapse Analytics](/synapse-analytics/overview-what-is.md) voor data wrangling op schaal. 
 
+Dit artikel bevat richt lijnen voor het interactief uitvoeren van gegevens wrangling binnen een speciale Synapse-sessie in een Jupyter-notebook. Als u liever Azure Machine Learning pijp lijnen gebruikt, raadpleegt u [Apache Spark gebruiken (mogelijk gemaakt door Azure Synapse Analytics) in uw machine learning pijplijn (preview)](how-to-use-synapsesparkstep.md).
+
 >[!IMPORTANT]
-> De integratie van Azure Machine Learning en Azure Synapse Analytics is beschikbaar als preview-versie. De mogelijkheden die in dit artikel worden gepresenteerd, gebruiken het `azureml-synapse` pakket met [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
+> De integratie van Azure Machine Learning en Azure Synapse Analytics is beschikbaar als preview-versie. De mogelijkheden die in dit artikel worden gepresenteerd, gebruiken het `azureml-synapse` pakket met [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
 
 ## <a name="azure-machine-learning-and-azure-synapse-analytics-integration-preview"></a>Azure Machine Learning en integratie van Azure Synapse Analytics (preview-versie)
 
@@ -37,11 +39,13 @@ Met de integratie van Azure Synapse Analytics met Azure Machine Learning (previe
 
 * [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](../synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 
-* [Installeer de Azure machine learning python-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), die het `azureml-synapse` pakket (preview) bevat. 
-    * U kunt het zelf ook zelf installeren, maar dit is alleen compatibel met SDK-versie 1,20 of hoger. 
-        ```python
-        pip install azureml-synapse
-        ```
+* [Configureer uw ontwikkel omgeving](how-to-configure-environment.md) om de Azure machine learning SDK te installeren, of gebruik een [Azure machine learning Compute-exemplaar](concept-compute-instance.md#create) waarbij de SDK al is geïnstalleerd. 
+
+* Installeer het `azureml-synapse` pakket (preview) met de volgende code:
+
+  ```python
+  pip install azureml-synapse
+  ```
 
 * [Koppeling Azure machine learning werk ruimte en Azure Synapse Analytics-werk ruimte](how-to-link-synapse-ml-workspaces.md).
 
@@ -56,7 +60,7 @@ Bekijk alle gekoppelde services die zijn gekoppeld aan uw machine learning-werk 
 LinkedService.list(ws)
 ```
 
-In dit voor beeld wordt een bestaande gekoppelde service opgehaald, `synapselink1` vanuit de werk ruimte, `ws` met de- [`get()`](/python/api/azureml-core/azureml.core.linkedservice?preserve-view=true&view=azure-ml-py#get-workspace--name-) methode.
+In dit voor beeld wordt een bestaande gekoppelde service opgehaald, `synapselink1` vanuit de werk ruimte, `ws` met de- [`get()`](/python/api/azureml-core/azureml.core.linkedservice#get-workspace--name-) methode.
 ```python
 linked_service = LinkedService.get(ws, 'synapselink1')
 ```
@@ -108,7 +112,7 @@ attach_config = SynapseCompute.attach_configuration(linked_service, #Linked syna
                                                     pool_name="<Synapse Spark pool name>") #Name of Synapse spark pool 
 
 synapse_compute = ComputeTarget.attach(workspace= ws,                
-                                       name='<Synapse Spark pool alias in Azure ML>', 
+                                       name="<Synapse Spark pool alias in Azure ML>", 
                                        attach_configuration=attach_config
                                       )
 
@@ -180,7 +184,7 @@ De volgende code laat zien hoe u gegevens kunt lezen van een **Azure Blob-opslag
 
 # setup access key or SAS token
 sc._jsc.hadoopConfiguration().set("fs.azure.account.key.<storage account name>.blob.core.windows.net", "<access key>")
-sc._jsc.hadoopConfiguration().set("fs.azure.sas.<container name>.<storage account name>.blob.core.windows.net", "sas token")
+sc._jsc.hadoopConfiguration().set("fs.azure.sas.<container name>.<storage account name>.blob.core.windows.net", "<sas token>")
 
 # read from blob 
 df = spark.read.option("header", "true").csv("wasbs://demo@dprepdata.blob.core.windows.net/Titanic.csv")
@@ -295,4 +299,3 @@ input1 = train_ds.as_mount()
 
 * [Train een model](how-to-set-up-training-targets.md).
 * [Trainen met Azure Machine Learning-gegevensset](how-to-train-with-datasets.md)
-* [Een Azure machine learning-gegevensset maken](how-to-create-register-datasets.md).

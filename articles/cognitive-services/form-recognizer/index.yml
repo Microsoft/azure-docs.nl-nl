@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 09/05/2019
-  ms.openlocfilehash: 022e3cb5a6ec9cc85bf445f438ef5c25bc2914df
-  ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+  ms.openlocfilehash: 6aecdb69a390dd5dfd43a541b29437c0feebf53d
+  ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "100516761"
+  ms.lasthandoff: 03/09/2021
+  ms.locfileid: "102503059"
 landingContent:
 - title: Over Form Recognizer
   linkLists:
@@ -138,12 +138,12 @@ landingContent:
   linkLists:
   - linkListType: reference
     links:
-    - text: REST-API
-      url: https://docs.microsoft.com/rest/api/formrecognizer/
+    - text: Form Recognizer-API v2.0
+      url: https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm
     - text: .NET SDK
       url: /dotnet/api/overview/azure/ai.formrecognizer-readme
     - text: Python-SDK
-      url: /python/api/azure-ai-formrecognizer/?view=azure-python
+      url: /python/api/azure-ai-formrecognizer/
     - text: Java-SDK
       url: /java/api/overview/azure/ai-formrecognizer-readme
     - text: JavaScript SDK

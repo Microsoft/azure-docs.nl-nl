@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0dcf21190b52f966dafb9caa9ae28fdf9b99ba86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d245b780acee59afbc6cb8bde6c916bfd1046e3c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88007570"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508551"
 ---
 # <a name="deploy-a-windows-7-virtual-machine-on-windows-virtual-desktop"></a>Een virtuele Windows 7-machine implementeren in Windows Virtual Desktop
 
@@ -46,7 +46,7 @@ Een Windows 7-VM instellen op het virtuele bureau blad van Windows:
      shutdown /r /t 0
      ```
 
-12. Volg de instructies [hier](/powershell/module/az.desktopvirtualization/new-azwvdregistrationinfo?view=azps-4.3.0) om een registratie token op te halen.
+12. Volg de instructies [hier](/powershell/module/az.desktopvirtualization/new-azwvdregistrationinfo) om een registratie token op te halen.
 
       - Als u liever de Azure Portal, kunt u ook naar de overzichts pagina gaan van de hostgroep waaraan u de virtuele machine wilt toevoegen en daar een token maken.
 

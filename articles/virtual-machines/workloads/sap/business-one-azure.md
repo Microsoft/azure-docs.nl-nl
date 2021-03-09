@@ -6,12 +6,12 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.date: 07/15/2018
 ms.author: juergent
-ms.openlocfilehash: c9c2b0c3f55cf5fb6dfd32774baac2a49ec3609f
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e17739c65c0b80beb1f6fdd09f31897b317d7858
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677153"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506885"
 ---
 # <a name="sap-business-one-on-azure-virtual-machines"></a>SAP Business One in virtuele Azure-machines
 Dit document bevat richt lijnen voor het implementeren van SAP Business One in azure Virtual Machines. De documentatie is geen vervanging voor de installatie documentatie van Business One voor SAP. De documentatie moet betrekking hebben op elementaire plannings-en implementatie richtlijnen voor de Azure-infra structuur voor het uitvoeren van één toepassing op.
@@ -102,7 +102,7 @@ SQL Server en SAP HANA zijn beschikbaar voor het database type. Onafhankelijk va
 
 Hoewel er al een nadruk is gelegd op de specifieke en algemene database documenten, moet u vertrouwd zijn met:
 
-- [De beschik baarheid van virtuele Windows-machines in azure beheren](../../manage-availability.md) en [de beschik baarheid van virtuele Linux-machines in azure beheren](../../manage-availability.md)
+- [De beschik baarheid van virtuele Windows-machines in azure beheren](../../availability.md) en [de beschik baarheid van virtuele Linux-machines in azure beheren](../../availability.md)
 - [SLA voor virtuele machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/)
 
 Deze documenten moeten u helpen bij het bepalen van de selectie van opslag typen en de configuratie met een hoge Beschik baarheid.

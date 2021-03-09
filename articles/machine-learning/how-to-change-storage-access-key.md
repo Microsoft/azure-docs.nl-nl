@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 06/19/2020
-ms.openlocfilehash: 78829ae52d74cf6ec58c12779c51bca9a98e0af1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 787f7727e18b7055055ed2b764ddce5be20f5afc
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450802"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503433"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Toegangs sleutels voor het opslag account opnieuw genereren
 
@@ -33,7 +33,7 @@ Uit veiligheids overwegingen moet u de toegangs sleutels voor een Azure Storage-
 
 * Een Azure Machine Learning-werkruimte. Zie het artikel [een werk ruimte maken](how-to-manage-workspace.md) voor meer informatie.
 
-* De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+* De [Azure machine learning SDK](/python/api/overview/azure/ml/install).
 
 * De [Azure machine learning cli-extensie](reference-azure-machine-learning-cli.md).
 
@@ -142,4 +142,4 @@ Gebruik de volgende stappen om Azure Machine Learning bij te werken voor het geb
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de verwijzing naar een klasse voor meer informatie over het registreren van gegevens opslag [`Datastore`](/python/api/azureml-core/azureml.core.datastore%28class%29?preserve-view=true&view=azure-ml-py) .
+Zie de verwijzing naar een klasse voor meer informatie over het registreren van gegevens opslag [`Datastore`](/python/api/azureml-core/azureml.core.datastore%28class%29) .

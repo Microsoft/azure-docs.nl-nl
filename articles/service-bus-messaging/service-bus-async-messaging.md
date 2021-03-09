@@ -3,12 +3,12 @@ title: Asynchrone berichten Service Bus | Microsoft Docs
 description: Meer informatie over hoe Azure Service Bus asynchronism ondersteunt via een archief-en doorstuur mechanisme met wacht rijen, onderwerpen en abonnementen.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: ea09b809a19cfe7c7f024b059589748ff9e297d4
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: e37c18b95bca7ef1e6e8f0d74976bb73b214624a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631620"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500628"
 ---
 # <a name="asynchronous-messaging-patterns-and-high-availability"></a>Asynchrone bericht patronen en hoge Beschik baarheid
 
@@ -73,5 +73,5 @@ Nu u de basis principes van asynchrone berichten in Service Bus hebt geleerd, le
 [System.TimeSpan.Zero]: /dotnet/api/system.timespan.zero
 [IsTransient]: /dotnet/api/microsoft.servicebus.messaging.messagingexception
 [UnauthorizedAccessException]: /dotnet/api/system.unauthorizedaccessexception
-[BacklogQueueCount]: /dotnet/api/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions?redirectedfrom=MSDN
+[BacklogQueueCount]: /dotnet/api/microsoft.servicebus.messaging.sendavailabilitypairednamespaceoptions
 [handling outages and disasters]: service-bus-outages-disasters.md

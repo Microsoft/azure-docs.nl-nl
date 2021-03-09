@@ -10,12 +10,12 @@ ms.date: 05/05/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: e00e22862121f2f974f9531a9892e32e115d6041
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f556c7acd903c108193f9c12a2849500645b119b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101737644"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506698"
 ---
 # <a name="disaster-recovery-and-storage-account-failover"></a>Herstel na noodgeval en failover van opslagaccount
 
@@ -132,7 +132,7 @@ Omdat er geen failover wordt uitgevoerd voor de resource provider van Azure Stor
 
 ### <a name="azure-virtual-machines"></a>Azure-VM's
 
-Virtuele Azure-machines (Vm's) mislukken niet als onderdeel van een account-failover. Als de primaire regio niet beschikbaar is en u een failover naar de secundaire regio wilt uitvoeren, moet u de virtuele machines na de failover opnieuw maken. Het is ook mogelijk dat er gegevens verloren gaan bij de failover van het account. Micro soft raadt de volgende [hoge Beschik baarheid](../../virtual-machines/manage-availability.md) en richt lijnen voor [herstel na nood gevallen](../../virtual-machines/backup-recovery.md) aan die specifiek zijn voor virtuele machines in Azure.
+Virtuele Azure-machines (Vm's) mislukken niet als onderdeel van een account-failover. Als de primaire regio niet beschikbaar is en u een failover naar de secundaire regio wilt uitvoeren, moet u de virtuele machines na de failover opnieuw maken. Het is ook mogelijk dat er gegevens verloren gaan bij de failover van het account. Micro soft raadt de volgende [hoge Beschik baarheid](../../virtual-machines/availability.md) en richt lijnen voor [herstel na nood gevallen](../../virtual-machines/backup-recovery.md) aan die specifiek zijn voor virtuele machines in Azure.
 
 ### <a name="azure-unmanaged-disks"></a>Niet-beheerde Azure-schijven
 

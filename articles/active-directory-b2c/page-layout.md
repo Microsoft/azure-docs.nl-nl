@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/04/2021
+ms.date: 03/09/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: df94bb5e6066b83afd566181debbc0872dc1a5b4
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: b15c63545c71d4513abe9102b4de165e2ab5857a
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120259"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499846"
 ---
 # <a name="page-layout-versions"></a>Versie van pagina-indeling
 
@@ -73,6 +73,9 @@ Pagina-indelings pakketten worden regel matig bijgewerkt met oplossingen en verb
 - Eerste release
 
 ## <a name="unified-sign-in-sign-up-page-with-password-reset-link-unifiedssp"></a>Aanmeldings pagina voor Unified Sign-in met de koppeling voor het opnieuw instellen van een wacht woord (unifiedssp)
+
+> [!TIP]
+> Als u de pagina lokaliseert om meerdere land instellingen of talen in een gebruikers stroom te ondersteunen. Het artikel [lokalisatie-id's](localization-string-ids.md) bevat de lijst met lokalisatie-id's die u kunt gebruiken voor de pagina versie die u selecteert.
 
 **omschreven**
 - Het probleem met lokalisatie van code ring voor talen zoals Spaans en Frans is opgelost.

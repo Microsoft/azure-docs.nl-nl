@@ -10,12 +10,12 @@ ms.subservice: keys
 ms.topic: tutorial
 ms.date: 02/24/2021
 ms.author: ambapat
-ms.openlocfilehash: 511544f81f6de887014545e3f4bbc7a4172fc91e
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: f7761cf011a3a678bb7609e1063ac6ebec90d395
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488746"
+ms.locfileid: "102499183"
 ---
 # <a name="import-hsm-protected-keys-for-key-vault-ncipher"></a>Met HSM beveiligde sleutels importeren voor Key Vault (nCipher)
 
@@ -63,7 +63,7 @@ Raadpleeg de volgende tabel voor een lijst met vereisten voor BYOK voor Azure Ke
 | Een abonnement op Azure |Als u een Azure-sleutelkluis wilt maken, hebt u een Azure-abonnement nodig: meld u aan voor een [gratis proefversie](https://azure.microsoft.com/pricing/free-trial/). |
 | De Premium-servicelaag van Azure Key Vault voor de ondersteuning van met HSM beveiligde sleutels |Zie de [website met prijzen voor Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/) voor meer informatie over de servicelagen en mogelijkheden voor Azure Key Vault. |
 | HSM's uit de nCipher nShield-serie, smartcards en ondersteunende software |U moet toegang hebben tot een HSM (Hardware Security Module) van nCipher en weten hoe een HSM uit de nCipher nShield-serie in grote lijnen werkt. Zie [deze website van nCipher (Engelstalig)](https://go.ncipher.com/rs/104-QOX-775/images/nCipher_nShield_Family_Brochure.pdf?_ga=2.106120835.1607422418.1590478092-577009923.1587131206) voor een lijst met compatibele modellen, of om een HSM te kopen als u er nog geen hebt. |
-| De volgende hardware en software:<ol><li>Een offline x64-werkstation met minimaal Windows 7 en nCipher nShield-software van ten minste versie 11.50.<br/><br/>Als op dit werkstation Windows 7 wordt uitgevoerd, moet u [Microsoft .NET Framework 4.5 installeren](https://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Een werkstation met een internetverbinding en minimaal Windows 7 en **minimaal versie 1.1.0** van [Azure PowerShell](/powershell/azure/?view=azps-1.2.0).</li><li>Een USB-station of een ander draagbaar opslagapparaat met ten minste 16 MB beschikbare ruimte.</li></ol> |Uit veiligheidsoverwegingen raden we u aan het eerste werkstation niet aan te sluiten op een netwerk. Deze aanbeveling wordt echter niet programmatisch afgedwongen.<br/><br/>In de onderstaande instructies wordt dit werkstation het offline werkstation genoemd.</p></blockquote><br/>Als uw tenantsleutel is bedoeld voor een productienetwerk, adviseren we bovendien dat u een tweede, afzonderlijk werkstation gebruikt om de toolset te downloaden en de tenantsleutel te uploaden. Voor testdoeleinden kunt u echter hetzelfde werkstation gebruiken als het eerste.<br/><br/>In de onderstaande instructies wordt dit tweede werkstation het online werkstation genoemd.</p></blockquote><br/> |
+| De volgende hardware en software:<ol><li>Een offline x64-werkstation met minimaal Windows 7 en nCipher nShield-software van ten minste versie 11.50.<br/><br/>Als op dit werkstation Windows 7 wordt uitgevoerd, moet u [Microsoft .NET Framework 4.5 installeren](https://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Een werkstation met een internetverbinding en minimaal Windows 7 en **minimaal versie 1.1.0** van [Azure PowerShell](/powershell/azure/).</li><li>Een USB-station of een ander draagbaar opslagapparaat met ten minste 16 MB beschikbare ruimte.</li></ol> |Uit veiligheidsoverwegingen raden we u aan het eerste werkstation niet aan te sluiten op een netwerk. Deze aanbeveling wordt echter niet programmatisch afgedwongen.<br/><br/>In de onderstaande instructies wordt dit werkstation het offline werkstation genoemd.</p></blockquote><br/>Als uw tenantsleutel is bedoeld voor een productienetwerk, adviseren we bovendien dat u een tweede, afzonderlijk werkstation gebruikt om de toolset te downloaden en de tenantsleutel te uploaden. Voor testdoeleinden kunt u echter hetzelfde werkstation gebruiken als het eerste.<br/><br/>In de onderstaande instructies wordt dit tweede werkstation het online werkstation genoemd.</p></blockquote><br/> |
 
 ## <a name="generate-and-transfer-your-key-to-azure-key-vault-hsm"></a>Uw sleutel genereren en overbrengen naar een HSM van Azure Key Vault
 

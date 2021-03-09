@@ -1,22 +1,22 @@
 ---
-title: Een Windows-VM in de zone maken met de Azure Portal
+title: Een virtuele machine in de zone maken met de Azure Portal
 description: Een virtuele Windows-machine maken in een beschikbaarheids zone met de Azure Portal
 documentationcenter: virtual-machines
-author: cynthn
-ms.service: virtual-machines-windows
+author: mimckitt
+ms.service: virtual-machines
 ms.topic: conceptual
-ms.workload: infrastructure
-ms.date: 03/27/2018
-ms.author: cynthn
+ms.date: 3/8/2021
+ms.author: mimckitt
+ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 339c093e5444839f9b106cd08980438a864c0474
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c7f135d4033a31f855342c172d73f51478931ab
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87828911"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501682"
 ---
-# <a name="create-a-windows-virtual-machine-in-an-availability-zone-with-the-azure-portal"></a>Een virtuele Windows-machine maken in een beschikbaarheids zone met de Azure Portal
+# <a name="create-a-virtual-machine-in-an-availability-zone-using-the-azure-portal"></a>Een virtuele machine maken in een beschikbaarheids zone met behulp van de Azure Portal
 
 In dit artikel wordt beschreven hoe u de Azure Portal gebruikt voor het maken van een virtuele machine in een Azure-beschikbaarheids zone. Een [beschikbaarheidszone](../../availability-zones/az-overview.md) is een fysiek afgescheiden zone in een Azure-regio. Gebruik beschikbaarheidszones om uw apps en gegevens te beschermen tegen het onwaarschijnlijke risico van een storing of het verloren gaan van een heel datacenter.
 
@@ -40,7 +40,7 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
     ![Een VM-grootte selecteren](./media/create-portal-availability-zone/create-windows-vm-portal-sizes.png)  
 
-5. Selecteer onder **instellingen**  >  **hoge Beschik baarheid**een van de genummerde zones in de vervolg keuzelijst **beschikbaarheids zone** , behoud de resterende standaard waarden en klik op **OK**.
+5. Selecteer onder **instellingen**  >  **hoge Beschik baarheid** een van de genummerde zones in de vervolg keuzelijst **beschikbaarheids zone** , behoud de resterende standaard waarden en klik op **OK**.
 
     ![Een beschikbaarheids zone selecteren](./media/create-portal-availability-zone/create-windows-vm-portal-availability-zone.png)
 

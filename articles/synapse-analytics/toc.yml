@@ -340,15 +340,12 @@
                 - name: Opgeslagen procedures
                   href: sql/develop-stored-procedures.md
                 - name: Transacties
-                  href: sql/develop-transactions.md
-                - name: Transacties
                   items:
-                    - name: Serverloze SQL-pool
+                    - name: Toegewezen SQL-pool transacties
+                      href: sql/develop-transactions.md
+                    - name: Best practices-trans acties voor toegewezen SQL-Pools
                       displayname: 'Transaction, best, practices'
                       href: sql/develop-transaction-best-practices.md
-                    - name: Toegewezen SQL-pool
-                      displayname: 'Transactions, best, practices'
-                      href: ./sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Door de gebruiker gedefinieerde schema's
                   href: sql/develop-user-defined-schemas.md
                 - name: Variabele toewijzing

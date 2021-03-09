@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: e7e8d51b8227acd033c95583d6e61d78a56d62a3
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 6f073777930b4d026d826d2c3586e0886f906206
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590283"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503076"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Best practices voor beveiliging voor IaaS-workloads in Azure
 In dit artikel worden de aanbevolen beveiligings procedures voor Vm's en besturings systemen beschreven.
@@ -63,7 +63,7 @@ Uw abonnements beheerders en mede beheerders kunnen deze instelling wijzigen, zo
 Organisaties die de toegang tot de virtuele machine beheren en Setup verbeteren hun totale VM-beveiliging.
 
 ## <a name="use-multiple-vms-for-better-availability"></a>Gebruik meerdere Vm's voor een betere Beschik baarheid
-Als uw virtuele machine essentiële toepassingen uitvoert waarvoor hoge Beschik baarheid nodig is, raden we u ten zeerste aan meerdere Vm's te gebruiken. Gebruik een [beschikbaarheidsset](../../virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) of beschikbaarheids [zones](../../availability-zones/az-overview.md)voor een betere Beschik baarheid.
+Als uw virtuele machine essentiële toepassingen uitvoert waarvoor hoge Beschik baarheid nodig is, raden we u ten zeerste aan meerdere Vm's te gebruiken. Gebruik een [beschikbaarheidsset](../../virtual-machines/availability-set-overview.md) of beschikbaarheids [zones](../../availability-zones/az-overview.md)voor een betere Beschik baarheid.
 
 Een beschikbaarheidsset is een logische groepering die u in azure kunt gebruiken om ervoor te zorgen dat de VM-resources die u in de groep plaatst, van elkaar zijn geïsoleerd wanneer ze in een Azure-Data Center worden geïmplementeerd. Azure zorgt ervoor dat de Vm's die u in een beschikbaarheidsset plaatst, worden uitgevoerd op meerdere fysieke servers, reken rekken, opslag eenheden en netwerk switches. Als er sprake is van een hardware-of Azure-software fout, is dit alleen van invloed op een subset van uw virtuele machines en blijft uw volledige toepassing beschikbaar voor uw klanten. Beschikbaarheids sets vormen een essentiële mogelijkheid wanneer u betrouw bare cloud oplossingen wilt bouwen.
 

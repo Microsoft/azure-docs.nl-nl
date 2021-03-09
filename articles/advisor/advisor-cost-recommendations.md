@@ -3,12 +3,12 @@ title: Service kosten verminderen met behulp van Azure Advisor
 description: Gebruik Azure Advisor om de kosten van uw Azure-implementaties te optimaliseren.
 ms.topic: article
 ms.date: 09/27/2020
-ms.openlocfilehash: 767c82c818535304552c1c98ff50a252acc0d08a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 346b790c6970abc8670661e1ec180662957af47d
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458510"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102503371"
 ---
 # <a name="reduce-service-costs-by-using-azure-advisor"></a>Service kosten verminderen met behulp van Azure Advisor
 
@@ -21,7 +21,7 @@ Hoewel bepaalde toepassings scenario's kunnen leiden tot een laag gebruik door o
 De aanbevolen acties worden afgesloten of het formaat ervan worden gewijzigd, wat specifiek is voor de resource die wordt geëvalueerd.
 
 Het geavanceerde evaluatie model in Advisor houdt in dat u virtuele machines afsluit wanneer al deze instructies waar zijn: 
-- P95th van het maximum van de maximale waarde van het CPU-gebruik is minder dan 3%. 
+- De P95th van de maximale waarde van het CPU-gebruik is minder dan 3%. 
 - Netwerk gebruik is minder dan 2% gedurende een periode van zeven dagen.
 - Geheugen druk is lager dan de drempel waarden
 
@@ -101,7 +101,7 @@ Advisor identificeert bronnen voor het verkleinen van het Table cache-beleid Azu
 
 ## <a name="how-to-access-cost-recommendations-in-azure-advisor"></a>Toegang tot kosten aanbevelingen in Azure Advisor
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek en selecteer [**Advisor**](https://aka.ms/azureadvisordashboard) op elke pagina.
 

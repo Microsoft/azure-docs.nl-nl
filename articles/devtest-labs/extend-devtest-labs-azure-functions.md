@@ -3,12 +3,12 @@ title: Azure DevTest Labs uitbreiden met behulp van Azure Functions | Microsoft 
 description: Meer informatie over het uitbreiden van Azure DevTest Labs met behulp van Azure Functions.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 7a51f0935540df18cfb8805902bbe2c4ec365291
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 620cda83094ee65f421a5529a9d5b51e505ec48e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203671"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501155"
 ---
 # <a name="use-azure-functions-to-extend-devtest-labs"></a>Azure Functions gebruiken om DevTest Labs uit te breiden
 U kunt Azure Functions gebruiken ter ondersteuning van andere scenario's dan die die al door DevTest Labs worden ondersteund. Azure Functions kan worden gebruikt om de ingebouwde functionaliteit van de service uit te breiden om te voldoen aan uw bedrijfsspecifieke behoeften. De volgende lijst bevat enkele van de mogelijke scenario's. In dit artikel wordt beschreven hoe u een van deze voorbeeld scenario's implementeert.
@@ -44,7 +44,7 @@ Er is een extra actie die kan worden uitgevoerd voor alle virtuele machines waar
 In deze sectie vindt u stapsgewijze instructies voor het instellen van Azure-resources die nodig zijn om de **interne ondersteunings** pagina bij te werken. In dit overzicht vindt u een voor beeld van het uitbreiden van DevTest Labs. U kunt dit patroon gebruiken voor andere scenario's.
 
 ### <a name="step-1-create-a-service-principal"></a>Stap 1: een service-principal maken 
-De eerste stap bestaat uit het ophalen van een service-principal met machtigingen voor het abonnement dat het Lab bevat. De Service-Principal moet de verificatie op basis van wacht woorden gebruiken. U kunt dit doen met [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps?view=azps-2.5.0)of de [Azure Portal](../active-directory/develop/howto-create-service-principal-portal.md). Als u al een Service-Principal hebt om te gebruiken, kunt u deze stap overs Laan.
+De eerste stap bestaat uit het ophalen van een service-principal met machtigingen voor het abonnement dat het Lab bevat. De Service-Principal moet de verificatie op basis van wacht woorden gebruiken. U kunt dit doen met [Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli), [Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps)of de [Azure Portal](../active-directory/develop/howto-create-service-principal-portal.md). Als u al een Service-Principal hebt om te gebruiken, kunt u deze stap overs Laan.
 
 Noteer de **toepassings-id**, **sleutel** en **Tenant-id** voor de Service-Principal. U hebt deze later nodig in dit overzicht. 
 

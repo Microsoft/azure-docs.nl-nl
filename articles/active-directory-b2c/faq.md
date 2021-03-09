@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/14/2020
+ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e181b90219f340a29e818801ee2b53f1ccbd9c23
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: cef2636aeecf78a12c48b31b384af2cf76903879
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98660281"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498826"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -82,7 +82,10 @@ De e-mail handtekening bevat de naam van de Azure AD B2C Tenant die u hebt ingev
 1. Wijzig het veld **naam** .
 1. Klik bovenaan de pagina op **Opslaan**.
 
-Het is momenteel niet mogelijk om het veld van te wijzigen in het e-mail bericht.
+Op dit moment kunt u het veld van niet wijzigen in het e-mail bericht.
+
+> [!TIP]
+> Met Azure AD B2C [aangepast beleid](custom-policy-overview.md)kunt u de e-mail Azure AD B2C die naar gebruikers worden verzonden, met inbegrip van het veld van: in het e-mail bericht aanpassen. De aangepaste e-mail verificatie vereist het gebruik van een e-mail provider van derden, zoals [Mailjet](custom-email-mailjet.md), [SendGrid](custom-email-sendgrid.md)of [SparkPost](https://sparkpost.com).
 
 ### <a name="how-can-i-migrate-my-existing-user-names-passwords-and-profiles-from-my-database-to-azure-ad-b2c"></a>Hoe kan ik mijn bestaande gebruikers namen, wacht woorden en profielen van mijn data base migreren naar Azure AD B2C?
 

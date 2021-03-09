@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over selectieve back-ups en herst
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 38ead1591bf2ecadc8bfca5875ac1fa3e69d56ef
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: e82c959dc63222e8565243cc9ac805283cab6617
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806371"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501823"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Back-up en herstel van selectieve schijven voor virtuele Azure-machines
 
@@ -219,7 +219,7 @@ Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGro
 ### <a name="get-backup-item-object-to-be-passed-in-modify-protection-with-powershell"></a>Object voor back-upitem ophalen dat moet worden door gegeven in beveiliging wijzigen met Power shell
 
 ```azurepowershell
-$item= Get-AzRecoveryServicesBackupItem -BackupManagementType "AzureVM" -WorkloadType "AzureVM" -VaultId $Vault.ID -FriendlyName "V2VM"
+$item= Get-AzRecoveryServicesBackupItem -BackupManagementType "AzureVM" -WorkloadType "AzureVM" -VaultId $targetVault.ID -FriendlyName "V2VM"
 ```
 
 U moet het hierboven verkregen **$item** -object door geven aan de para meter **– item** in de volgende cmdlets.
@@ -249,7 +249,10 @@ Enable-AzRecoveryServicesBackupProtection -Item $item -ResetExclusionSettings -V
 ### <a name="restore-selective-disks-with-powershell"></a>Selectieve schijven herstellen met Power shell
 
 ```azurepowershell
-Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks" -VaultId $targetVault.ID -RestoreDiskList [Strings]
+$startDate = (Get-Date).AddDays(-7)
+$endDate = Get-Date
+$rp = Get-AzRecoveryServicesBackupRecoveryPoint -Item $item -StartDate $startdate.ToUniversalTime() -EndDate $enddate.ToUniversalTime() -VaultId $targetVault.ID
+Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks" -VaultId $targetVault.ID -RestoreDiskList [$disks]
 ```
 
 ### <a name="restore-only-os-disk-with-powershell"></a>Alleen besturingssysteem schijf herstellen met Power shell

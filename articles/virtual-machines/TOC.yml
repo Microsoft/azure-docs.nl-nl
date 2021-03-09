@@ -280,28 +280,26 @@
           href: ./linux/spot-template.md
         - name: Foutcodes
           href: error-codes-spot.md
-    - name: Aanschafmogelijkheden
+    - name: Azure Hybrid Benefit
       items:
-        - name: Azure Hybrid Benefit
+        - name: Linux
+          href: ./linux/azure-hybrid-benefit-linux.md
+        - name: Windows
           items:
-            - name: Linux
-              href: ./linux/azure-hybrid-benefit-linux.md
-            - name: Windows
-              items:
-                - name: Licentie voor Azure Hybrid Benefit gebruiken
-                  href: ./windows/hybrid-use-benefit-licensing.md
-                - name: Multitenant Hosting-rechten voor Windows 10 gebruiken
-                  href: ./windows/windows-desktop-multitenant-hosting-deployment.md
-        - name: Gereserveerde instanties
-          items:
-            - name: Vooruitbetalen voor VM's
-              href: ./prepay-reserved-vm-instances.md
-            - name: Vooruitbetalen voor toegewezen hosts
-              href: prepay-dedicated-hosts-reserved-instances.md
-            - name: Wat zijn Azure-reserveringen?
-              href: ../cost-management-billing/reservations/save-compute-costs-reservations.md?context=/azure/virtual-machines/context/context
-            - name: Flexibiliteit van de VM-instantiegrootte
-              href: reserved-vm-instance-size-flexibility.md
+            - name: Licentie voor Azure Hybrid Benefit gebruiken
+              href: ./windows/hybrid-use-benefit-licensing.md
+            - name: Multitenant Hosting-rechten voor Windows 10 gebruiken
+              href: ./windows/windows-desktop-multitenant-hosting-deployment.md
+    - name: Gereserveerde instanties
+      items:
+        - name: Vooruitbetalen voor VM's
+          href: ./prepay-reserved-vm-instances.md
+        - name: Vooruitbetalen voor toegewezen hosts
+          href: prepay-dedicated-hosts-reserved-instances.md
+        - name: Wat zijn Azure-reserveringen?
+          href: ../cost-management-billing/reservations/save-compute-costs-reservations.md?context=/azure/virtual-machines/context/context
+        - name: Flexibiliteit van de VM-instantiegrootte
+          href: reserved-vm-instance-size-flexibility.md
     - name: Virtuele Linux-machines maken
       items:
         - name: Goedgekeurde distributies
@@ -783,41 +781,52 @@
           href: ./windows/build-image-with-packer.md
 - name: Beschikbaarheid en schaal
   items:
-    - name: Schaalsets
-      href: ../virtual-machine-scale-sets/overview.md?context=/azure/virtual-machines/context/context
-    - name: Beschikbaarheid
+    - name: Overzicht
       href: availability.md
-    - name: Co-locatie
-      href: co-location.md
-    - name: Netwerkprestaties
-      href: ../virtual-network/virtual-network-optimize-network-bandwidth.md?context=/azure/virtual-machines/context/context
-    - name: Toestanden en levenscyclus
-      href: states-lifecycle.md
-    - name: Automatisch schalen
-      href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md?context=/azure/virtual-machines/context/context
-    - name: Hoge beschikbaarheid
-      href: manage-availability.md
     - name: Beschikbaarheidssets
       items:
-        - name: Linux
+        - name: Overzicht
+          href: availability-set-overview.md
+        - name: CLI
           href: ./linux/tutorial-availability-sets.md
-        - name: Windows
-          items:
-            - name: Een beschikbaarheidsset maken
-              href: ./windows/tutorial-availability-sets.md
-            - name: Een beschikbaarheidsset wijzigen
-              href: ./windows/change-availability-set.md
-    - name: Een nabijheidsplaatsingsgroep maken
-      displayName: PPG aligned colocation co-location
+        - name: PowerShell
+          href: ./windows/tutorial-availability-sets.md
+        - name: Een beschikbaarheidsset wijzigen
+          href: ./windows/change-availability-set.md
+    - name: Beschikbaarheidszones
       items:
+        - name: Overzicht
+          href: ../availability-zones/az-overview.md?context=/azure/virtual-machines/context/context
+        - name: CLI
+          href: ./linux/create-cli-availability-zone.md
+        - name: PowerShell
+          href: ./windows/create-powershell-availability-zone.md
+        - name: Portal
+          href: ./windows/create-portal-availability-zone.md
+    - name: Proximity-plaatsings groepen
+      items:
+        - name: Overzicht
+          href: co-location.md
         - name: CLI
           href: ./linux/proximity-placement-groups.md
-        - name: Portal
-          href: ./windows/proximity-placement-groups-portal.md
         - name: PowerShell
           href: ./windows/proximity-placement-groups.md
-    - name: Een virtuele machine maken in de beschikbaarheidszone
-      href: ./linux/create-cli-availability-zone.md
+        - name: Portal
+          href: ./windows/proximity-placement-groups-portal.md
+    - name: Virtuele-machineschaalsets
+      items:
+        - name: Overzicht
+          href: ../virtual-machine-scale-sets/overview.md?context=/azure/virtual-machines/context/context
+        - name: Automatisch schalen
+          href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md?context=/azure/virtual-machines/context/context
+        - name: Indelingsmodi
+          href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md?context=/azure/virtual-machines/context/context
+    - name: Meer informatie over het opnieuw opstarten van VM'S
+      href: understand-vm-reboots.md
+    - name: Toestanden en levenscyclus
+      href: states-lifecycle.md
+    - name: Azure-regio's
+      href: regions.md
 - name: Disks
   items:
     - name: Inleiding tot beheerde schijven

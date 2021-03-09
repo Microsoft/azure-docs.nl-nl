@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 5211555102c0a8d29eb05abd7a680935d828f9dc
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: bf2419799ad6c229c6ffb891bc588479e134d427
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683437"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500390"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Wat is een Azure Machine Learning-werkruimte?
 
@@ -52,7 +52,7 @@ U kunt op de volgende manieren met uw werk ruimte werken:
 + Op het web:
     + [Azure Machine Learning Studio ](https://ml.azure.com) 
     + [Azure Machine Learning-ontwerpprogramma](concept-designer.md) 
-+ In een python-omgeving met de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
++ In een python-omgeving met de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro).
 + In elke R-omgeving met de [Azure machine learning SDK voor R (preview)](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + Op de opdracht regel met behulp van de Azure Machine Learning [cli-extensie](./reference-azure-machine-learning-cli.md)
 + [Azure Machine Learning VS code-uitbrei ding](how-to-manage-resources-vscode.md#workspaces)

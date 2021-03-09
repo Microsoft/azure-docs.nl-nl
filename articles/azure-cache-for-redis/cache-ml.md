@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 09/30/2020
-ms.openlocfilehash: 83fc88a57a1cdbec35a8f939a81698799d290d70
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: ec8943bc73cac2020350dd4916f040f031cd842b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102183621"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499693"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-with-azure-cache-for-redis"></a>Een machine learning model implementeren voor het Azure Functions met Azure cache voor redis 
 
@@ -128,7 +128,7 @@ Zie [Score code definiëren](../machine-learning/how-to-deploy-and-where.md?tabs
 Deze entiteiten worden ingekapseld in een Afleidings __configuratie__. De deductieconfiguratie verwijst naar het invoerscript en andere afhankelijkheden.
 
 > [!IMPORTANT]
-> Wanneer u een configuratie voor afwijzen maakt voor gebruik met Azure Functions, moet u een [omgevings](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py) object gebruiken. Houd er rekening mee dat als u een aangepaste omgeving definieert, de standaard waarden van azureml en versie >= 1.0.45 als een PIP-afhankelijkheid worden toegevoegd. Dit pakket bevat de functionaliteit die nodig is om het model als een webservice te hosten. In het volgende voor beeld ziet u hoe u een omgevings object maakt en dit gebruikt met een configuratie voor ingaand gebruik:
+> Wanneer u een configuratie voor afwijzen maakt voor gebruik met Azure Functions, moet u een [omgevings](/python/api/azureml-core/azureml.core.environment%28class%29) object gebruiken. Houd er rekening mee dat als u een aangepaste omgeving definieert, de standaard waarden van azureml en versie >= 1.0.45 als een PIP-afhankelijkheid worden toegevoegd. Dit pakket bevat de functionaliteit die nodig is om het model als een webservice te hosten. In het volgende voor beeld ziet u hoe u een omgevings object maakt en dit gebruikt met een configuratie voor ingaand gebruik:
 >
 > ```python
 > from azureml.core.environment import Environment
@@ -161,7 +161,7 @@ pip install azureml-contrib-functions
 
 ## <a name="create-the-image"></a>De installatiekopie maken
 
-Als u de docker-installatie kopie wilt maken die is geïmplementeerd op Azure Functions, gebruikt u [azureml. contrib. functions. package](/python/api/azureml-contrib-functions/azureml.contrib.functions?preserve-view=true&view=azure-ml-py) of de specifieke pakket functie voor de trigger die u wilt gebruiken. In het volgende code fragment ziet u hoe u een nieuw pakket maakt met een HTTP-trigger uit het model en de configuratie voor afleiden:
+Als u de docker-installatie kopie wilt maken die is geïmplementeerd op Azure Functions, gebruikt u [azureml. contrib. functions. package](/python/api/azureml-contrib-functions/azureml.contrib.functions) of de specifieke pakket functie voor de trigger die u wilt gebruiken. In het volgende code fragment ziet u hoe u een nieuw pakket maakt met een HTTP-trigger uit het model en de configuratie voor afleiden:
 
 > [!NOTE]
 > In het code fragment wordt ervan uitgegaan dat het `model` een geregistreerd model bevat en dat `inference_config` de configuratie voor de afnemende omgeving bevat. Zie [modellen implementeren met Azure machine learning](../machine-learning/how-to-deploy-and-where.md)voor meer informatie.
@@ -317,5 +317,5 @@ Na enkele ogenblikken worden de resourcegroep en alle bijbehorende resources ver
 
 * Meer informatie over [Azure cache voor redis](./cache-overview.md)
 * Meer informatie over het configureren van uw functie-app in de [functions](../azure-functions/functions-create-function-linux-custom-image.md) -documentatie.
-* [Naslaginformatie voor API](/python/api/azureml-contrib-functions/azureml.contrib.functions?preserve-view=true&view=azure-ml-py) 
+* [Naslaginformatie voor API](/python/api/azureml-contrib-functions/azureml.contrib.functions) 
 * Een [python-app maken die gebruikmaakt van Azure cache voor redis](./cache-python-get-started.md)

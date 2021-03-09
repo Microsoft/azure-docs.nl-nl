@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/22/2020
 ms.author: shants
-ms.openlocfilehash: 3cf126caaaa0c518574418aca194ebd82cc4d6b9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 51df72e31acaadc83f4c094b99fa938377e5f023
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972064"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499999"
 ---
 # <a name="maintenance-for-virtual-machines-in-azure"></a>Onderhoud voor virtuele machines in Azure
 
@@ -23,7 +23,7 @@ Updates zijn zelden van invloed op de gehoste Vm's. Wanneer de updates een effec
 - Als de update niet opnieuw moet worden opgestart, wordt de virtuele machine onderbroken terwijl de host wordt bijgewerkt, of wordt de virtuele machine Live gemigreerd naar een al bijgewerkte host. 
 - Als het onderhoud opnieuw moet worden opgestart, ontvangt u een melding van het geplande onderhoud. Azure biedt ook een tijd venster waarin u het onderhoud zelf kunt starten, op het moment dat u voor u werkt. Het venster voor zelf onderhoud is doorgaans 35 dagen, tenzij het onderhoud urgent is. Azure is investeren in technologieën om het aantal cases te verminderen waarvoor gepland platform onderhoud vereist dat de Vm's opnieuw worden opgestart. Zie voor instructies voor het beheren van gepland onderhoud geplande onderhouds meldingen verwerken met Azure [cli](maintenance-notifications-cli.md), [Power shell](maintenance-notifications-powershell.md) of [Portal](maintenance-notifications-portal.md).
 
-Op deze pagina wordt beschreven hoe Azure beide soorten onderhoud uitvoert. Zie [de beschik baarheid van vm's voor Windows](./manage-availability.md) of het bijbehorende artikel voor [Linux](./manage-availability.md)beheren voor meer informatie over niet-geplande gebeurtenissen (uitval).
+Op deze pagina wordt beschreven hoe Azure beide soorten onderhoud uitvoert. Zie [de beschik baarheid van vm's voor Windows](./availability.md) of het bijbehorende artikel voor [Linux](./availability.md)beheren voor meer informatie over niet-geplande gebeurtenissen (uitval).
 
 Binnen een VM kunt u meldingen ontvangen over aanstaande onderhoud door [gebruik te maken van Scheduled Events voor Windows](./windows/scheduled-events.md) of voor [Linux](./linux/scheduled-events.md).
 
@@ -87,11 +87,11 @@ Binnen een beschikbaarheidsset worden afzonderlijke Vm's verdeeld over Maxi maal
 
 Virtuele-machine *schaal sets* vormen een Azure Compute-resource die u kunt gebruiken om een set identieke vm's te implementeren en te beheren als één resource. De schaalset wordt automatisch geïmplementeerd in de UDs, zoals virtuele machines in een beschikbaarheidsset. Net als bij beschikbaarheids sets, wanneer u schaal sets gebruikt, wordt slechts één UD bijgewerkt op een wille keurig tijdstip tijdens gepland onderhoud.
 
-Zie [de beschik baarheid van uw vm's voor Windows](./manage-availability.md) of het bijbehorende artikel voor [Linux](./manage-availability.md)beheren voor meer informatie over het instellen van uw vm's voor maximale Beschik baarheid.
+Zie [de beschik baarheid van uw vm's voor Windows](./availability.md) of het bijbehorende artikel voor [Linux](./availability.md)beheren voor meer informatie over het instellen van uw vm's voor maximale Beschik baarheid.
 
 #### <a name="availability-zones"></a>Beschikbaarheidszones
 
-Beschikbaarheids zones zijn unieke fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer datacenters die zijn voorzien van een onafhankelijke stroomvoorziening, koeling en netwerken. Om voor tolerantie te zorgen, is er een minimum van drie afzonderlijke zones in alle ingeschakelde regio's. 
+Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer datacenters die zijn voorzien van een onafhankelijke stroomvoorziening, koeling en netwerken. Om voor tolerantie te zorgen, is er een minimum van drie afzonderlijke zones in alle ingeschakelde regio's. 
 
 Een beschikbaarheids zone is een combi natie van een fout domein en een update domein. Als u drie of meer virtuele machines maakt voor drie zones in een Azure-regio, worden uw Vm's effectief gedistribueerd over drie fout domeinen en drie update domeinen. Het Azure-platform herkent deze verdeling over updatedomeinen om ervoor te zorgen dat virtuele machines in verschillende zones niet op hetzelfde moment worden bijgewerkt.
 

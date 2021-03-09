@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/04/2021
+ms.date: 03/09/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: db2715f0827203dac505fa4dc15c22bdab953010
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 7dfad71d05a882e3a3941a96e12489adb5fb3234
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120212"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500526"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -69,8 +69,8 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |passwordPolicies     |Tekenreeks|Het beleid van het wacht woord. Het is een teken reeks die bestaat uit een andere beleids naam, gescheiden door komma's. Bijvoorbeeld, DisablePasswordExpiration, DisableStrongPassword.|Nee|Nee|Persistent gemaakt, uitvoer|
 |physicalDeliveryOfficeName (officeLocation)|Tekenreeks|De kantoor locatie in de bedrijfs plaats van de gebruiker. Maximale lengte van 128.|Ja|Nee|Persistent gemaakt, uitvoer|
 |postalCode      |Tekenreeks|De post code voor het post adres van de gebruiker. De post code is specifiek voor het land/de regio van de gebruiker. In de Verenigde Staten van America bevat dit kenmerk de post code. Maximale lengte van 40.|Ja|Nee|Persistent gemaakt, uitvoer|
-|preferredLanguage    |Tekenreeks|De voorkeurs taal voor de gebruiker. De ISO 639-1-code moet volgen. Voor beeld: nl-nl.|Nee|Nee|Persistent gemaakt, uitvoer|
-|refreshTokensValidFromDateTime|DateTime|Vernieuwings tokens die vóór deze tijd zijn uitgegeven, zijn ongeldig en er wordt een fout melding weer gegeven wanneer toepassingen een ongeldig vernieuwings token gebruiken om een nieuw toegangs token op te halen. Als dit het geval is, moet de toepassing een nieuw vernieuwings token verkrijgen door een aanvraag naar het toestemming eind punt te maken. Alleen-lezen.|Nee|Nee|Uitvoer|
+|preferredLanguage    |Tekenreeks|De voorkeurs taal voor de gebruiker. De voorkeurs taal is gebaseerd op RFC 4646. De naam is een combi natie van een ISO 639 2-letter kleine-cultuur code die is gekoppeld aan de taal en een ISO 3166 2-letter hoofd code subcultuur voor het land of de regio. Voor beeld: "en-US" of "es-ES".|Nee|Nee|Persistent gemaakt, uitvoer|
+|refreshTokensValidFromDateTime (signInSessionsValidFromDateTime)|DateTime|Vernieuwings tokens die vóór deze tijd zijn uitgegeven, zijn ongeldig en er wordt een fout melding weer gegeven wanneer toepassingen een ongeldig vernieuwings token gebruiken om een nieuw toegangs token op te halen. Als dit het geval is, moet de toepassing een nieuw vernieuwings token verkrijgen door een aanvraag naar het toestemming eind punt te maken. Alleen-lezen.|Nee|Nee|Uitvoer|
 |signInNames ([identiteiten](#identities-attribute)) |Tekenreeks|De unieke aanmeldings naam van de gebruiker van het lokale account van een wille keurig type in de Directory. Gebruik dit kenmerk om een gebruiker op te halen met een aanmeldings waarde zonder het lokale account type op te geven.|Nee|Nee|Invoer|
 |signInNames. userName ([identiteiten](#identities-attribute)) |Tekenreeks|De unieke gebruikers naam van de lokale account gebruiker in de Directory. Gebruik dit kenmerk om een gebruiker te maken of op te halen met een specifieke gebruikers naam voor aanmelden. Als u deze para meter in PersistedClaims opgeeft, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|
 |signInNames. phoneNumber ([identiteiten](#identities-attribute)) |Tekenreeks|Het unieke telefoon nummer van de lokale account gebruiker in de Directory. Gebruik dit kenmerk om een gebruiker met een specifiek aanmeldings nummer te maken of op te halen. Als u dit kenmerk opgeeft in PersistedClaims tijdens een patch bewerking, worden andere typen signInNames verwijderd. Als u een nieuw type signInNames wilt toevoegen, moet u ook bestaande signInNames persistent maken.|Nee|Nee|Invoer, persistent, uitvoer|

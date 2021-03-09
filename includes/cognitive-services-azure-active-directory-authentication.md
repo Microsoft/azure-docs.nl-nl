@@ -4,12 +4,12 @@ ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/11/2020
-ms.openlocfilehash: fcb4113a4dab1e3de17eb022b1ad386cbc6a9583
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 2d186463f340be14113228baa583fdcf6ff55401
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102109269"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510940"
 ---
 ## <a name="authenticate-with-azure-active-directory"></a>Verifiëren met Azure Active Directory
 
@@ -25,13 +25,13 @@ In de volgende secties gebruikt u de Azure Cloud Shell-omgeving of de Azure CLI 
 
 De eerste stap is het maken van een aangepast subdomein. Als u een bestaande Cognitive Services resource zonder aangepaste subdomeinnaam wilt gebruiken, volgt u de instructies in [Cognitive Services aangepaste subdomeinen](../articles/cognitive-services/cognitive-services-custom-subdomains.md#how-does-this-impact-existing-resources) om het aangepaste subdomein voor uw resource in te scha kelen.
 
-1. Begin met het openen van de Azure Cloud Shell. [Selecteer vervolgens een abonnement](/powershell/module/az.accounts/set-azcontext?view=azps-3.3.0):
+1. Begin met het openen van de Azure Cloud Shell. [Selecteer vervolgens een abonnement](/powershell/module/az.accounts/set-azcontext):
 
    ```powershell-interactive
    Set-AzContext -SubscriptionName <SubscriptionName>
    ```
 
-2. Maak vervolgens [een Cognitive Services resource](/powershell/module/az.cognitiveservices/new-azcognitiveservicesaccount?view=azps-1.8.0) met een aangepast subdomein. De naam van het subdomein moet globaal uniek zijn en mag geen speciale tekens bevatten, zoals: ".", "!", ",".
+2. Maak vervolgens [een Cognitive Services resource](/powershell/module/az.cognitiveservices/new-azcognitiveservicesaccount) met een aangepast subdomein. De naam van het subdomein moet globaal uniek zijn en mag geen speciale tekens bevatten, zoals: ".", "!", ",".
 
    ```powershell-interactive
    $account = New-AzCognitiveServicesAccount -ResourceGroupName <RESOURCE_GROUP_NAME> -name <ACCOUNT_NAME> -Type <ACCOUNT_TYPE> -SkuName <SUBSCRIPTION_TYPE> -Location <REGION> -CustomSubdomainName <UNIQUE_SUBDOMAIN>
@@ -47,7 +47,7 @@ Nu u een aangepast subdomein hebt dat aan uw resource is gekoppeld, moet u een r
 > [!NOTE]
 > Houd er rekening mee dat Azure-roltoewijzingen het Maxi maal vijf minuten kan duren voordat deze wordt door gegeven.
 
-1. Eerst gaan we een Aad- [toepassing](/powershell/module/Az.Resources/New-AzADApplication?view=azps-1.8.0)registreren.
+1. Eerst gaan we een Aad- [toepassing](/powershell/module/Az.Resources/New-AzADApplication)registreren.
 
    ```powershell-interactive
    $SecureStringPassword = ConvertTo-SecureString -String <YOUR_PASSWORD> -AsPlainText -Force
@@ -57,7 +57,7 @@ Nu u een aangepast subdomein hebt dat aan uw resource is gekoppeld, moet u een r
 
    U hebt de **ApplicationId** nodig in de volgende stap.
 
-2. Vervolgens moet u [een service-principal maken](/powershell/module/az.resources/new-azadserviceprincipal?view=azps-1.8.0) voor de Aad-toepassing.
+2. Vervolgens moet u [een service-principal maken](/powershell/module/az.resources/new-azadserviceprincipal) voor de Aad-toepassing.
 
    ```powershell-interactive
    New-AzADServicePrincipal -ApplicationId <APPLICATION_ID>
@@ -66,7 +66,7 @@ Nu u een aangepast subdomein hebt dat aan uw resource is gekoppeld, moet u een r
    >[!NOTE]
    > Als u een toepassing registreert in de Azure Portal, wordt deze stap voor u voltooid.
 
-3. De laatste stap is het [toewijzen van de rol ' Cognitive Services gebruiker '](/powershell/module/az.Resources/New-azRoleAssignment?view=azps-1.8.0) aan de Service-Principal (bereik van de resource). Door een rol toe te wijzen, verleent u Service-Principal-toegang tot deze resource. U kunt dezelfde service-principal toegang verlenen tot meerdere resources in uw abonnement.
+3. De laatste stap is het [toewijzen van de rol ' Cognitive Services gebruiker '](/powershell/module/az.Resources/New-azRoleAssignment) aan de Service-Principal (bereik van de resource). Door een rol toe te wijzen, verleent u Service-Principal-toegang tot deze resource. U kunt dezelfde service-principal toegang verlenen tot meerdere resources in uw abonnement.
    >[!NOTE]
    > De ObjectId van de service-principal wordt gebruikt, niet de ObjectId voor de toepassing.
    > De ACCOUNT_ID is de Azure-resource-id van het Cognitive Services account dat u hebt gemaakt. U vindt de Azure-resource-id van ' Eigenschappen ' van de resource in Azure Portal.

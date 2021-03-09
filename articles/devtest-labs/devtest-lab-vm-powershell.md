@@ -3,12 +3,12 @@ title: Een virtuele machine maken in DevTest Labs met Azure PowerShell
 description: Meer informatie over het gebruik van Azure DevTest Labs voor het maken en beheren van virtuele machines met Azure PowerShell.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 6bcc1b8cfe1da7e5eafbee0af008a1defbe6f49d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f79b6ff92d633cf63477cddaabec918df352bec8
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85484108"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499251"
 ---
 # <a name="create-a-virtual-machine-with-devtest-labs-using-azure-powershell"></a>Een virtuele machine maken met DevTest Labs met behulp van Azure PowerShell
 In dit artikel wordt beschreven hoe u een virtuele machine in Azure DevTest Labs maakt met behulp van Azure PowerShell. U kunt Power shell-scripts gebruiken voor het automatiseren van het maken van virtuele machines in een lab in Azure DevTest Labs. 
@@ -17,10 +17,10 @@ In dit artikel wordt beschreven hoe u een virtuele machine in Azure DevTest Labs
 Voordat u begint:
 
 - [Een lab maken](devtest-lab-create-lab.md) als u geen bestaand Lab wilt gebruiken om het script of de opdrachten in dit artikel te testen. 
-- [Installeer Azure PowerShell](/powershell/azure/install-az-ps?view=azps-1.7.0) of gebruik de Azure Cloud shell die is geïntegreerd in de Azure Portal. 
+- [Installeer Azure PowerShell](/powershell/azure/install-az-ps) of gebruik de Azure Cloud shell die is geïntegreerd in de Azure Portal. 
 
 ## <a name="powershell-script"></a>PowerShell-script
-In het voorbeeld script in deze sectie wordt de cmdlet [invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction?view=azps-1.7.0) gebruikt.  Deze cmdlet neemt de resource-ID van het lab, de naam van de actie die moet worden uitgevoerd ( `createEnvironment` ) en de para meters die nodig zijn om die actie uit te voeren. De para meters bevinden zich in een hash-tabel die alle eigenschappen van de beschrijving van de virtuele machine bevat. 
+In het voorbeeld script in deze sectie wordt de cmdlet [invoke-AzResourceAction](/powershell/module/az.resources/invoke-azresourceaction) gebruikt.  Deze cmdlet neemt de resource-ID van het lab, de naam van de actie die moet worden uitgevoerd ( `createEnvironment` ) en de para meters die nodig zijn om die actie uit te voeren. De para meters bevinden zich in een hash-tabel die alle eigenschappen van de beschrijving van de virtuele machine bevat. 
 
 ```powershell
 [CmdletBinding()]

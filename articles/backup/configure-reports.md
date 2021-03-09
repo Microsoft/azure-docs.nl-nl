@@ -3,12 +3,12 @@ title: Azure Backup-rapporten configureren
 description: Rapporten voor Azure Backup configureren en weer geven met behulp van Log Analytics en Azure-werkmappen
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: 62bb59a8a77d11e30e54298317a35e1f883a9622
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e9f3d9dfa33e71d827a338258001f2b52af62b06
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101710614"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509358"
 ---
 # <a name="configure-azure-backup-reports"></a>Azure Backup-rapporten configureren
 
@@ -22,8 +22,8 @@ Momenteel biedt Azure Backup een rapportage oplossing die gebruikmaakt van [Azur
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
-- Back-uprapporten worden ondersteund voor virtuele Azure-machines, SQL in azure Vm's, SAP HANA in azure Vm's, Microsoft Azure Recovery Services (MARS) agent, Microsoft Azure Backup Server (MABS) en System Center Data Protection Manager (DPM). Voor Azure file share backup worden gegevens weer gegeven voor alle records die zijn gemaakt op of na 1 juni 2020.
-- Voor Azure file share backup worden gegevens over beveiligde instanties momenteel niet weer gegeven in de rapporten (standaard ingesteld op nul voor alle back-upitems).
+- Back-uprapporten worden ondersteund voor virtuele Azure-machines, SQL in azure Vm's, SAP HANA in azure Vm's, Microsoft Azure Recovery Services (MARS) agent, Microsoft Azure Backup Server (MABS) en System Center Data Protection Manager (DPM). Voor Azure file share backup worden gegevens weer gegeven voor records die zijn gemaakt op of na 1 juni 2020.
+- Voor Azure file share backup worden gegevens over beveiligde instanties weer gegeven voor records die zijn gemaakt na 1 februari, 2021 (standaard ingesteld op nul voor oudere records).
 - Voor DPM-workloads worden back-uprapporten ondersteund voor de DPM-versie 5.1.363.0 en hoger en de agent versie 2.0.9127.0 en hoger.
 - Voor MABS-werk belastingen worden back-uprapporten ondersteund voor de MABS-versie 13.0.415.0 en hoger en de agent versie 2.0.9170.0 en hoger.
 - Back-uprapporten kunnen worden weer gegeven voor alle back-upitems, kluizen, abonnementen en regio's, zolang hun gegevens worden verzonden naar een Log Analytics werk ruimte waartoe de gebruiker toegang heeft. Als u rapporten voor een set kluizen wilt weer geven, hoeft u alleen lezers toegang te hebben tot de Log Analytics werk ruimte waarnaar de kluizen hun gegevens verzenden. U hebt geen toegang tot de afzonderlijke kluizen.
@@ -142,17 +142,31 @@ Het filter **type back-upbeheer** boven aan het tabblad moet de items **SQL hebb
 
 ###### <a name="policy-adherence"></a>Inachtneming van beleid
 
-Op dit tabblad kunt u aangeven of al uw back-upinstanties elke dag minstens één geslaagde back-up hebben. U kunt de beleids regels weer geven op basis van de tijds periode of het back-upexemplaar.
+Op dit tabblad kunt u aangeven of al uw back-upinstanties elke dag minstens één geslaagde back-up hebben. Voor items met een wekelijks back-upbeleid kunt u dit tabblad gebruiken om te bepalen of alle back-upinstanties een week met een geslaagde back-up hebben gehad.
+
+Er zijn twee soorten beleids beschik bare weer gaven beschikbaar:
+
+* **Inachtneming van het beleid voor de tijds periode**: in deze weer gave kunt u bepalen hoeveel items ten minste één geslaagde back-up hebben gehad in een bepaalde dag en hoeveel er in die dag geen geslaagde back-up is gemaakt. U kunt klikken op een rij om details weer te geven van alle back-uptaken die op de geselecteerde dag zijn geactiveerd. Houd er rekening mee dat als u het tijds bereik verhoogt naar een grotere waarde, zoals de laatste 60 dagen, het raster wordt weer gegeven in een wekelijkse weer gave en wordt het aantal items weer gegeven met ten minste één geslaagde back-up op elke dag in de opgegeven week. Op dezelfde manier is er een maandelijkse weer gave voor grotere Peri Oden.
+
+In het geval van items die wekelijks worden opgeslagen, kunt u met dit raster alle items identificeren waarvoor ten minste één geslaagde back-up in de opgegeven week. Voor een groter tijds bereik, zoals de laatste 120 dagen, wordt het raster weer gegeven in de maand weergave en wordt het aantal items weer gegeven met ten minste één geslaagde back-up in elke week in de opgegeven maand. Raadpleeg [conventies die in back-uprapporten worden gebruikt](https://docs.microsoft.com/azure/backup/configure-reports#conventions-used-in-backup-reports) voor meer informatie over dagelijkse, wekelijkse en maandelijkse weer gaven.
+
+![Inachtneming van het beleid voor de tijds periode](./media/backup-azure-configure-backup-reports/policy-adherence-by-time-period.png)
+
+* Beleid dat wordt gebruikt **in de back-upinstantie**: in deze weer gave kunt u op het niveau van de back-upinstantie beleid nakijken over de details. Een cel die groen is, geeft aan dat het back-upexemplaar ten minste één geslaagde back-up op de opgegeven dag had. Een cel die rood is, geeft aan dat het back-upexemplaar nog niet een geslaagde back-up heeft gemaakt op de opgegeven dag. Dagelijkse, wekelijkse en maandelijkse aggregaties volgen hetzelfde gedrag als het beleid dat wordt bepaald door de weer gave van de tijds periode. U kunt klikken op een wille keurige rij om alle back-uptaken op het opgegeven back-upexemplaar in het geselecteerde tijds bereik weer te geven.
+
+![Beleid van toepassing op back-upexemplaar](./media/backup-azure-configure-backup-reports/policy-adherence-by-backup-instance.png)
 
 ###### <a name="email-azure-backup-reports"></a>E-mail Azure Backup rapporten
 
 Met de functie voor **e-mail** rapporten die beschikbaar is in back-uprapporten, kunt u geautomatiseerde taken maken voor het ontvangen van periodieke rapporten via e-mail. Deze functie werkt door een logische app te implementeren in uw Azure-omgeving die gegevens opvraagt van uw geselecteerde Log Analytics (LA)-werk ruimten, op basis van de invoer die u opgeeft.
 
-Zodra de logische app is gemaakt, moet u verbindingen met Azure Monitor-logboeken en Office 365 autoriseren. Als u dit wilt doen, gaat u naar **Logic apps** in de Azure Portal en zoekt u naar de naam van de taak die u hebt gemaakt. Als u het menu-item **API-verbindingen** selecteert, wordt de lijst met API-verbindingen weer gegeven die u moet autoriseren.
+Zodra de logische app is gemaakt, moet u verbindingen met Azure Monitor-logboeken en Office 365 autoriseren. Als u dit wilt doen, gaat u naar **Logic apps** in de Azure Portal en zoekt u naar de naam van de taak die u hebt gemaakt. Als u het menu-item **API-verbindingen** selecteert, wordt de lijst met API-verbindingen weer gegeven die u moet autoriseren. Meer [informatie over het configureren van e-mail berichten en het oplossen van problemen](backup-reports-email.md).
 
 ###### <a name="customize-azure-backup-reports"></a>Azure Backup-rapporten aanpassen
 
-Back-uprapporten gebruiken functies in Azure Monitor Logboeken. Deze functies werken op gegevens in de onbewerkte Azure Backup tabellen in LA en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's.
+Back-uprapporten gebruiken [systeem functies in azure monitor logboeken](backup-reports-system-functions.md). Deze functies werken op gegevens in de onbewerkte Azure Backup tabellen in LA en retour neren gegevens die u helpen bij het ophalen van gegevens van al uw back-upentiteiten, met behulp van eenvoudige query's. 
+
+Als u uw eigen rapport werkmappen wilt maken met behulp van back-uprapporten als basis, kunt u naar back-uprapporten gaan, op **bewerken** boven aan het rapport klikken en de query's weer geven/bewerken die in de rapporten worden gebruikt. Raadpleeg de [documentatie van Azure Workbooks](https://docs.microsoft.com/azure/azure-monitor/visualize/workbooks-overview) voor meer informatie over het maken van aangepaste rapporten. 
 
 ## <a name="export-to-excel"></a>Exporteren naar Excel
 
@@ -175,6 +189,8 @@ Als u [Azure Lighthouse](../lighthouse/index.yml) gebruikt met gedelegeerde toeg
 - Het rapport bevat details van taken (naast logboek taken) die zijn *geactiveerd* in het geselecteerde tijds bereik.
 - De waarden die worden weer gegeven voor **Cloud opslag** en **beveiligde instanties** bevinden zich aan het *einde* van het geselecteerde tijds bereik.
 - De back-upitems die in de rapporten worden weer gegeven, zijn de items die aan het *einde* van het geselecteerde tijds bereik bestaan. Back-upitems die in het midden van het geselecteerde tijds bereik zijn verwijderd, worden niet weer gegeven. Dezelfde Conventie geldt ook voor back-upbeleid.
+- Als het geselecteerde tijds bereik een periode van 30 dagen minder bevat, worden grafieken weer gegeven in de dagelijkse weer gave, waarbij één gegevens punt voor elke dag is. Als het tijds bereik een periode heeft die groter is dan 30 dagen en kleiner dan (of gelijk is aan) 90 dagen, worden grafieken weer gegeven in een wekelijkse weer gave. Voor grotere Peri Oden worden grafieken weer gegeven in de maand weergave. Het samen voegen van gegevens wekelijks of maandelijks helpt bij het verbeteren van de prestaties van query's en een betere Lees baarheid van gegevens in grafieken.
+- De beleids regels voor de naleving van het beleid volgen ook een vergelijk bare aggregatie logica zoals hierboven wordt beschreven. Er zijn echter enkele kleine verschillen. Het eerste verschil is dat er voor items met een wekelijks back-upbeleid geen dagelijkse weer gave is (alleen wekelijkse en maandelijkse weer gaven zijn beschikbaar). In de rasters voor items met een wekelijks back-upbeleid wordt een ' maand ' gezien als een periode van 4 weken (28 dagen) en niet 30 dagen, om te voor komen dat gedeeltelijke weken van overweging worden genomen.
 
 ## <a name="query-load-times"></a>Laad tijden query
 

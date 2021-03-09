@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: cynthn
-ms.openlocfilehash: 61af1f1a97e0ffad0332a34034f5dd1d007d1a5c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 397dd3d16fa994df29a08ff9095b4c7c6c4af815
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900886"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510896"
 ---
 | Resource | Limiet |
 | --- | --- |
@@ -17,7 +17,7 @@ ms.locfileid: "98900886"
 | Totaal aantal VM-cores per [abonnement](https://azure.microsoft.com/pricing/) |20<sup>1</sup> per regio. Neem contact op met de ondersteuning om de limiet te verhogen. |
 | Totaal aantal cores voor spot-VM's van Azure per [abonnement](https://azure.microsoft.com/pricing/) |20<sup>1</sup> per regio. Neem contact op met de ondersteuning om de limiet te verhogen. |
 | VM's per reeks, bijvoorbeeld Dv2 en F, cores per [abonnement](https://azure.microsoft.com/pricing/) |20<sup>1</sup> per regio. Neem contact op met de ondersteuning om de limiet te verhogen. |
-| [Beschikbaarheidssets](../articles/virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) per abonnement |2500 per regio. |
+| [Beschikbaarheidssets](../articles/virtual-machines/availability-set-overview.md) per abonnement |2500 per regio. |
 | Beschikbaarheidsset per virtuele machine | 200 |
 | [Nabijheidsplaatsingsgroep ](../articles/virtual-machines/windows/proximity-placement-groups-portal.md) per [resourcegroup](../articles/azure-resource-manager/management/overview.md#resource-groups) | 800 | 
 | Certificaten per beschikbaarheidsset | 199<sup>2</sup> |

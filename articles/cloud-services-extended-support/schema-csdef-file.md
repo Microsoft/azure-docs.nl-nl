@@ -8,12 +8,12 @@ author: gachandw
 ms.author: gachandw
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: ab85067184ebe5b34097a3c81aa521d509ae4b9a
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: d9bf1b54f1bfeebacbb406a50c8496817857204c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744604"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507565"
 ---
 # <a name="azure-cloud-services-extended-support-definition-schema-csdef-file"></a>Definitie schema voor Azure Cloud Services (uitgebreide ondersteuning) (csdef-bestand)
 
@@ -68,7 +68,7 @@ In de volgende tabel worden de kenmerken van het `ServiceDefinition` element bes
 | naam                    |Vereist. De naam van de service. De naam moet uniek zijn binnen het service account.|
 | topologyChangeDiscovery | Optioneel. Hiermee geeft u het type melding voor de topologie wijziging op. Mogelijke waarden zijn:<br /><br /> -   `Blast` -Hiermee wordt de update zo snel mogelijk verzonden naar alle rolinstanties. Als u optie kiest, moet de rol de update van de topologie kunnen afhandelen zonder opnieuw te worden opgestart.<br />-   `UpgradeDomainWalk` – Verzendt de update naar elke rolinstantie op een opeenvolgende manier nadat het vorige exemplaar de update heeft geaccepteerd.|
 | schemaVersion           | Optioneel. Hiermee geeft u de versie van het service definitie schema op. Met de schema versie kan Visual Studio de juiste SDK-hulpprogram ma's selecteren die voor schema validatie moeten worden gebruikt als meer dan één versie van de SDK naast elkaar is geïnstalleerd.|
-| upgradeDomainCount      | Optioneel. Hiermee geeft u het aantal upgrade domeinen op waarmee rollen in deze service worden toegewezen. Rolinstanties worden toegewezen aan een upgrade domein wanneer de service wordt geïmplementeerd. Zie [een Cloud service-rol of-implementatie bijwerken](sample-update-cloud-service.md) en [de beschik baarheid van virtuele machines beheren](../virtual-machines/manage-availability.md) voor meer informatie. u kunt Maxi maal 20 upgrade domeinen opgeven. Als u niets opgeeft, is het standaard aantal upgrade domeinen 5.|
+| upgradeDomainCount      | Optioneel. Hiermee geeft u het aantal upgrade domeinen op waarmee rollen in deze service worden toegewezen. Rolinstanties worden toegewezen aan een upgrade domein wanneer de service wordt geïmplementeerd. Zie [een Cloud service-rol of-implementatie bijwerken](sample-update-cloud-service.md) en [de beschik baarheid van virtuele machines beheren](../virtual-machines/availability.md) voor meer informatie. u kunt Maxi maal 20 upgrade domeinen opgeven. Als u niets opgeeft, is het standaard aantal upgrade domeinen 5.|
 
 ## <a name="see-also"></a>Zie ook
 

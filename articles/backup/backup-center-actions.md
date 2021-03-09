@@ -3,14 +3,14 @@ title: Acties uitvoeren met behulp van Back-upcentrum
 description: In dit artikel wordt uitgelegd hoe u acties kunt uitvoeren met behulp van Back-upcentrum
 ms.topic: conceptual
 ms.date: 09/07/2020
-ms.openlocfilehash: 06229eb0b8cb76482035d3dfe1949c3ab8354f17
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 8c21475e5a52cdce7e38bbeb9d00df3c3ac3a752
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98894572"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506446"
 ---
-# <a name="perform-actions-using-backup-center-preview"></a>Acties uitvoeren met behulp van Back-upcentrum (preview-versie)
+# <a name="perform-actions-using-backup-center"></a>Acties uitvoeren met behulp van Back-upcentrum
 
 Met backup Center kunt u acties uitvoeren die betrekking hebben op sleutel back-ups vanuit een centrale interface, zonder dat u naar een afzonderlijke kluis hoeft te navigeren. U kunt de volgende acties uitvoeren vanuit het Back-upcentrum:
 

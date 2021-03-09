@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-python
-ms.openlocfilehash: 27bcb220c67392661cc1b2875823abdca4593bd4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 77cde4fb580ebea14c09856b9ad2e7f093e20db3
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220946"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505049"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Python SDK voor SQL API: Opmerkingen bij de release en resources
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "98220946"
 | |  |
 |---|---|
 |**SDK downloaden**|[PyPI](https://pypi.org/project/azure-cosmos)|
-|**API-documentatie**|[Naslag documentatie voor python API](/python/api/azure-cosmos/?preserve-view=true&view=azure-python)|
+|**API-documentatie**|[Naslag documentatie voor python API](/python/api/azure-cosmos/)|
 |**SDK-installatie-instructies**|[Installatie-instructies voor python SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/cosmos/azure-cosmos)|
 |**Aan de slag**|[Aan de slag met de python-SDK](create-sql-api-python.md)|
 |**Huidig ondersteund platform**|[Python 2,7](https://www.python.org/downloads/) en [python 3.5.3 +](https://www.python.org/downloads/)|
@@ -55,7 +55,7 @@ ms.locfileid: "98220946"
 **Nieuwe functies**
 - De mogelijkheid om de TTL voor de analytische opslag in te stellen bij het maken van een nieuwe container is toegevoegd.
 
-**Oplossingen voor oplossingen**
+**Opgeloste fouten**
 - Ondersteuning voor dicteer functies als invoer voor get_client-Api's.
 - Vaste python 2/3-compatibiliteit in query-iterators.
 - Fout in Hint voor vast type (probleem #12570).

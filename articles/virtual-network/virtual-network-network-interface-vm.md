@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: 2b45bd2e2b9ad971891cbcb944286f40b4f66883
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 43d3da49688a7daeb3ea4e0c1c3dba505dcd3b59
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98216949"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508330"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Netwerkinterfaces toevoegen aan of verwijderen van netwerkinterfaces van virtuele machines
 
@@ -143,7 +143,7 @@ Zie [netwerk interfaces beheren](virtual-network-network-interface.md)voor meer 
 
 - U kunt bepalen met welke netwerk interface u uitgaand verkeer verzendt. Een virtuele machine verzendt standaard echter al het uitgaande verkeer naar het IP-adres dat is toegewezen aan de primaire IP-configuratie van de primaire netwerk interface.
 
-- In het verleden moesten alle virtuele machines in dezelfde beschikbaarheidsset een enkele of meerdere netwerk interfaces hebben. Vm's met een wille keurig aantal netwerk interfaces kunnen nu in dezelfde beschikbaarheidsset bestaan, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een virtuele machine toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie [de beschik baarheid van vm's in azure beheren](../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)voor meer informatie over beschikbaarheids sets.
+- In het verleden moesten alle virtuele machines in dezelfde beschikbaarheidsset een enkele of meerdere netwerk interfaces hebben. Vm's met een wille keurig aantal netwerk interfaces kunnen nu in dezelfde beschikbaarheidsset bestaan, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een virtuele machine toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie [de beschik baarheid van vm's in azure beheren](../virtual-machines/availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over beschikbaarheids sets.
 
 - U kunt netwerk interfaces in dezelfde virtuele machine verbinden met verschillende subnetten binnen een virtueel netwerk. De netwerk interfaces moeten echter allemaal zijn verbonden met hetzelfde virtuele netwerk.
 

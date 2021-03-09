@@ -1,28 +1,23 @@
 ---
-title: 'Zelfstudie: Hoge beschikbaarheid voor virtuele Linux-machines in Azure'
+title: Vm's in een beschikbaarheidsset implementeren met behulp van Azure CLI
 description: In deze zelfstudie leert u hoe u de Azure CLI gebruikt om maximaal beschikbare virtuele machines in beschikbaarheidssets te implementeren
 documentationcenter: ''
-services: virtual-machines-linux
-author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.topic: tutorial
-ms.date: 01/17/2020
-ms.author: cynthn
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 4b3817bd33c72ce6d1c3426aa8379101c84f5bc5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+services: virtual-machines
+author: mimckitt
+ms.service: virtual-machines
+ms.topic: how-to
+ms.date: 3/8/2021
+ms.author: mimckitt
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 6a54e0d808ef734a26a0fa309bd7367e73316856
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961507"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507062"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli"></a>Zelfstudie: Virtuele machines met hoge beschikbaarheid maken en implementeren met de Azure CLI
+# <a name="create-and-deploy-virtual-machines-in-an-availability-set-using-azure-cli"></a>Virtuele machines in een beschikbaarheidsset maken en implementeren met behulp van Azure CLI
 
 In deze zelfstudie leert u hoe u de beschikbaarheid en betrouwbaarheid van uw Virtual Machine-oplossingen op Azure kunt verhogen met behulp van beschikbaarheidssets. Beschikbaarheidssets zorgen ervoor dat de VM's die u op Azure implementeert, verdeeld worden over meerdere geïsoleerde hardwareclusters. Dit zorgt ervoor dat als er zich binnen Azure een hardware- of softwarestoring voordoet, er slechts een subset van uw VM's wordt beïnvloed en dat uw totale oplossing beschikbaar en operationeel blijft.
 
@@ -36,13 +31,6 @@ In deze zelfstudie leert u het volgende:
 In deze zelfstudie wordt gebruikgemaakt van de CLI in de [Azure Cloud Shell](../../cloud-shell/overview.md), die voortdurend wordt bijgewerkt naar de nieuwste versie. Als u de Cloud Shell wilt openen, selecteert u **Probeer het** bovenaan een willekeurig codeblok.
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.0.30 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
-
-## <a name="overview"></a>Overzicht
-
-Een beschikbaarheidsset is een logische groeperingsmogelijkheid die u in Azure kunt gebruiken om ervoor te zorgen dat de VM-resources die u erin plaatst, van elkaar worden geïsoleerd wanneer ze in een Azure-datacenter worden geïmplementeerd. Azure zorgt ervoor dat de VM's die u in een beschikbaarheidsset plaatst, op meerdere fysieke servers, rekenrekken, opslageenheden en netwerkswitches worden uitgevoerd. Als er zich een hardware- of softwarestoring in Azure voordoet, wordt slechts een subset van uw VM's getroffen en blijft uw totale toepassing actief en beschikbaar voor uw klanten. Beschikbaarheidssets zijn essentieel wanneer u betrouwbare cloudoplossingen wilt bouwen.
-
-Laten we eens kijken naar een typische VM-oplossing met vier front-end webservers en twee back-end VM's die een database hosten. Met Azure wilt u twee beschikbaarheidssets definiëren voordat u uw VM's implementeert: een beschikbaarheidsset voor de ‘web’-laag en een beschikbaarheidsset voor de ‘database’-laag. Bij het maken van een nieuwe VM kunt u vervolgens de beschikbaarheidsset opgeven als parameter voor de opdracht az vm create, en zorgt Azure er automatisch voor dat de VM's die u binnen de beschikbare set maakt, worden geïsoleerd over meerdere fysieke hardwareresources. Als er een probleem is met de fysieke hardware waarop een van uw webserver- of databaseserver-VM's draait, weet u dat de andere instanties van uw webserver en database-VM's actief blijven, omdat ze worden uitgevoerd op andere hardware.
-
 
 ## <a name="create-an-availability-set"></a>Een beschikbaarheidsset maken
 
@@ -116,5 +104,5 @@ Ga naar de volgende zelfstudie voor meer informatie over virtuele-machineschaals
 > [Een virtuele-machineschaalset maken](tutorial-create-vmss.md)
 
 * Ga naar de [documentatie over beschikbaarheidszones](../../availability-zones/az-overview.md) voor meer informatie over beschikbaarheidszones.
-* Meer documentatie over zowel beschikbaarheidssets als beschikbaarheidszones is ook [hier](../manage-availability.md) beschikbaar.
+* Meer documentatie over zowel beschikbaarheidssets als beschikbaarheidszones is ook [hier](../availability.md) beschikbaar.
 * Als u beschikbaarheidszones wilt uitproberen, gaat u naar [Create a Linux virtual machine in an availability zone with the Azure CLI](./create-cli-availability-zone.md) (Een virtuele Linux-machine maken in een beschikbaarheidszone met de Azure CLI)

@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: a84e4e767092a1507ef0608c21ff1896cb1dde0d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: de3d9aa60322cc3e6e189f6f16c35d6f42c0cf61
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880941"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500407"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Modellen trainen met Azure Machine Learning
 
@@ -41,13 +41,13 @@ Elk van deze trainings methoden kan gebruikmaken van verschillende soorten reken
 
 Met de Azure Machine Learning SDK voor python kunt u machine learning werk stromen maken en uitvoeren met Azure Machine Learning. U kunt met de service communiceren vanuit een interactieve python-sessie, Jupyter-notebooks, Visual Studio code of een andere IDE.
 
-* [Wat is de Azure Machine Learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)
-* [De SDK installeren/bijwerken](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)
+* [Wat is de Azure Machine Learning SDK voor python](/python/api/overview/azure/ml/intro)
+* [De SDK installeren/bijwerken](/python/api/overview/azure/ml/install)
 * [Een ontwikkelingsomgeving voor Azure Machine Learning configureren](how-to-configure-environment.md)
 
 ### <a name="run-configuration"></a>Configuratie uitvoeren
 
-Een algemene trainings taak met Azure Machine Learning kan worden gedefinieerd met behulp van de [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py). De configuratie voor het uitvoeren van scripts wordt vervolgens gebruikt, samen met uw trainings script (s) voor het trainen van een model op een compute-doel.
+Een algemene trainings taak met Azure Machine Learning kan worden gedefinieerd met behulp van de [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig). De configuratie voor het uitvoeren van scripts wordt vervolgens gebruikt, samen met uw trainings script (s) voor het trainen van een model op een compute-doel.
 
 U kunt beginnen met het uitvoeren van een configuratie voor uw lokale computer en overschakelen naar een op de cloud gebaseerd reken doel als dat nodig is. Wanneer u het berekenings doel wijzigt, wijzigt u alleen de configuratie van de uitvoering die u gebruikt. Een uitvoering registreert ook informatie over de trainings taak, zoals de invoer, uitvoer en Logboeken.
 

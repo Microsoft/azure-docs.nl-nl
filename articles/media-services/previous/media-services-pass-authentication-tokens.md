@@ -4,7 +4,7 @@ description: Meer informatie over het verzenden van verificatie tokens van de cl
 services: media-services
 keywords: inhouds beveiliging, DRM, token verificatie
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 7c3b35d9-1269-4c83-8c91-490ae65b0817
@@ -13,15 +13,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/19/2019
-ms.author: juliako
+ms.date: 03/08/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 498e6d9e38468b126dbe10e0d0f59f54f1816ff0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9007672f9a3e505578459f63a185c8751051ce0
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89261033"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507956"
 ---
 # <a name="learn-how-clients-pass-tokens-to-the-azure-media-services-key-delivery-service"></a>Meer informatie over hoe clients tokens door geven aan de Azure Media Services key delivery service
 
@@ -55,8 +55,6 @@ Deze optie wordt alleen gebruikt voor de aanschaf van PlayReady-licenties, via h
     </CustomData>
     ```
     Plaats uw verificatie token in het element token.
-
-- Via een alternatieve HTTP Live Streaming-afspeel lijst (HLS). Als u token verificatie wilt configureren voor AES en HLS afspelen op iOS/Safari, is er geen manier om rechtstreeks in het token te verzenden. Zie dit [blog bericht](https://azure.microsoft.com/blog/2015/03/06/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/)voor meer informatie over het maken van een alternatieve afspeel lijst om dit scenario in te scha kelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

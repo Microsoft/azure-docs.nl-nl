@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: de7eaf40271965d48dc0507e0335e6924bdfb73f
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 3e55ae476becca23e6ea23fdc9c5fc7ec72b68ef
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102204181"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509146"
 ---
 # <a name="solutions-on-azure-virtual-machines"></a>Oplossingen op virtuele machines van Azure
 
@@ -76,7 +76,7 @@ Volg een zelf studie over het uitvoeren van een Snelstartgids voor het implement
 
 Wanneer u virtuele machines in azure gebruikt, bent u verantwoordelijk voor het implementeren van een oplossing voor hoge Beschik baarheid en herstel na nood gevallen om uitval tijd te voor komen. 
 
-Azure vertrouwelijk computing ondersteunt momenteel geen zone-redundantie via Beschikbaarheidszones. Gebruik [beschikbaarheids sets](../virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)voor de hoogst mogelijke Beschik baarheid en redundantie voor vertrouwelijke computing. Vanwege de beperkingen van de hardware kunnen beschikbaarheids sets voor vertrouwelijke computing instanties slechts een maximum van 10 update domeinen hebben. 
+Azure vertrouwelijk computing ondersteunt momenteel geen zone-redundantie via Beschikbaarheidszones. Gebruik [beschikbaarheids sets](../virtual-machines/availability-set-overview.md)voor de hoogst mogelijke Beschik baarheid en redundantie voor vertrouwelijke computing. Vanwege de beperkingen van de hardware kunnen beschikbaarheids sets voor vertrouwelijke computing instanties slechts een maximum van 10 update domeinen hebben. 
 
 ## <a name="deployment-with-azure-resource-manager-arm-template"></a>De sjabloon implementatie met Azure Resource Manager (ARM)
 

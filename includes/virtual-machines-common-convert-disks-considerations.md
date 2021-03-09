@@ -4,14 +4,14 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 091e4dc0759ce1b227349d5d1b6b08b9eda66ee0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 72050ff4887642ba16d52948c1c1253ca01443c0
+ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017339"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102473735"
 ---
-* Voor de conversie moet de VM opnieuw worden opgestart. Plan daarom de migratie van uw VM's tijdens een reeds bestaand onderhoudsvenster. 
+* De virtuele machine wordt opnieuw gestart door de conversie, zodat de migratie van uw Vm's wordt gepland tijdens een reeds bestaand onderhouds venster. 
 
 * De conversie kan niet ongedaan worden gemaakt. 
 

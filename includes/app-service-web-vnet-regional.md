@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: ccompy
-ms.openlocfilehash: 3f9dd35959980eef4e1bec550bf7e9f583cf30d2
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: a4eb22320a15cc76a7543c25583003d57ea4e538
+ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98225211"
+ms.lasthandoff: 03/08/2021
+ms.locfileid: "102473766"
 ---
 Door gebruik te maken van regionale VNet-integratie kan uw app toegang tot:
 
@@ -38,6 +38,8 @@ Standaard stuurt uw app alleen RFC1918-verkeer naar uw VNet. Als u al het uitgaa
 
 > [!NOTE]
 > Als u al het uitgaande verkeer naar uw VNet routert, is het onderhevig aan de Nsg's en Udr's die worden toegepast op het integratie subnet. Wanneer u al het uitgaande verkeer naar uw VNet routert, zijn uw uitgaande adressen nog steeds de uitgaande adressen die worden vermeld in de app-eigenschappen, tenzij u routes opgeeft om het verkeer elders te verzenden.
+> 
+> De regionale VNet-integratie kan poort 25 niet gebruiken.
 
 Er zijn enkele beperkingen bij het gebruik van VNet-integratie met VNets in dezelfde regio:
 

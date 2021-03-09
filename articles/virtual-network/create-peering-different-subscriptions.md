@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: kumud
-ms.openlocfilehash: 9f3ea595c3cfacc479deea7b7db7689785e3b520
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 1f8b7162787e870337918794f353ab8dc94c1965
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694951"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518242"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions-and-azure-active-directory-tenants"></a>Een peering voor een virtueel netwerk maken-Resource Manager, verschillende abonnementen en Azure Active Directory tenants
 
@@ -276,7 +276,7 @@ In deze zelf studie worden verschillende accounts voor elk abonnement gebruikt. 
    }
    ```
 
-3. Meld u aan bij Azure als GebruikerA en implementeer de sjabloon met behulp van de [Portal](../azure-resource-manager/templates/deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-resources-from-custom-template), [Power shell](../azure-resource-manager/templates/deploy-powershell.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-local-template)of de [Azure cli](../azure-resource-manager/templates/deploy-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-local-template-or-bicep-file). Geef de bestands naam op die u hebt opgeslagen in stap 2 van de voorbeeld tekst van de JSON.
+3. Meld u aan bij Azure als GebruikerA en implementeer de sjabloon met behulp van de [Portal](../azure-resource-manager/templates/deploy-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-resources-from-custom-template), [Power shell](../azure-resource-manager/templates/deploy-powershell.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-local-template-or-bicep-file)of de [Azure cli](../azure-resource-manager/templates/deploy-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json#deploy-local-template-or-bicep-file). Geef de bestands naam op die u hebt opgeslagen in stap 2 van de voorbeeld tekst van de JSON.
 4. Kopieer de voor beeld-JSON van stap 2 naar een bestand op uw computer en breng wijzigingen aan in de regels die beginnen met:
    - **naam**: Wijzig *myVnetA/myVnetAToMyVnetB* in *myVnetB/myVnetBToMyVnetA*.
    - **id**: Vervang door `<subscription ID>` de abonnements-id van UserB en wijzig *myVnetB* in *myVnetA*.

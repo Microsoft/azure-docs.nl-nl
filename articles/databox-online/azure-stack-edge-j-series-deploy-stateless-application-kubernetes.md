@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/05/2021
 ms.author: alkohli
-ms.openlocfilehash: bc8d14f3d4621a41c2d2845802313033d0809b4b
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 40065189f3c1dd52f462985aef344e9cbeb12f0b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442125"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522373"
 ---
 # <a name="deploy-a-kubernetes-stateless-application-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Een Kubernetes stateless toepassing implementeren via kubectl op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -27,7 +27,7 @@ Voordat u een Kubernetes-cluster kunt maken en het `kubectl` opdracht regel prog
 
 - U hebt aanmeldings referenties naar een Azure Stack Edge Pro-apparaat met één knoop punt.
 
-- Windows Power shell 5,0 of hoger is geïnstalleerd op een Windows-client systeem om toegang te krijgen tot het Azure Stack Edge Pro-apparaat. U kunt ook een andere client met een ondersteund besturings systeem hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view=true).
+- Windows Power shell 5,0 of hoger is geïnstalleerd op een Windows-client systeem om toegang te krijgen tot het Azure Stack Edge Pro-apparaat. U kunt ook een andere client met een ondersteund besturings systeem hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell).
 
 - Compute is ingeschakeld op het Azure Stack Edge Pro-apparaat. Als u Compute wilt inschakelen, gaat u naar de **Compute** -pagina in de lokale gebruikers interface van het apparaat. Selecteer vervolgens een netwerk interface die u wilt inschakelen voor compute. Selecteer **Inschakelen**. Het inschakelen van Compute-resultaten bij het maken van een virtuele switch op het apparaat op die netwerk interface. Zie [Compute Network inschakelen op uw Azure stack Edge Pro](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md)voor meer informatie.
 

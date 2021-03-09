@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/22/2021
+ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: 4193e58c28b481297df38bca8f18d2ea766ce886
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 534870e6bd67b7aa5273289f3154a794a2b9bd22
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102443128"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519007"
 ---
 # <a name="use-certificates-with-azure-stack-edge-pro-gpu-device"></a>Certificaten gebruiken met Azure Stack Edge Pro GPU-apparaat
 
 [!INCLUDE [applies-to-GPU-and-pro-r-and-mini-r-skus](../../includes/azure-stack-edge-applies-to-gpu-pro-r-mini-r-sku.md)]
 
-In dit artikel worden de typen certificaten beschreven die op uw Azure Stack Edge Pro-apparaat kunnen worden geïnstalleerd. Het artikel bevat ook de Details voor elk certificaat type samen met de procedure voor het installeren en identificeren van de verval datum. 
+In dit artikel worden de typen certificaten beschreven die op uw Azure Stack Edge Pro-apparaat kunnen worden geïnstalleerd. Het artikel bevat ook de Details voor elk certificaat type samen met de procedure voor het installeren en identificeren van de verval datum.  
 
 ## <a name="about-certificates"></a>Over certificaten
 
@@ -400,7 +400,7 @@ De back-up van het pfx-bestand wordt nu opgeslagen op de locatie die u hebt gese
 
 ## <a name="supported-certificate-algorithms"></a>Ondersteunde certificaat algoritmen
 
- Alleen de Rivest – Shamir – Adleman (RSA)-certificaten worden ondersteund met uw Azure Stack Edge Pro-apparaat. Als elliptische curve ECDSA-certificaten (Digital Signature Algorithm) worden gebruikt, is het gedrag van het apparaat onbepaald.
+ Alleen de Rivest – Shamir – Adleman (RSA)-certificaten worden ondersteund met uw Azure Stack Edge Pro-apparaat. Elliptische ECDSA-certificaten (Digital Signature Algorithm) worden niet ondersteund.
 
  Certificaten die een open bare RSA-sleutel bevatten, worden RSA-certificaten genoemd. Certificaten die een met elliptische curve cryptografische (ECC) open bare sleutel bevatten, worden ECDSA (elliptische digitale hand tekening algoritme) genoemd. 
 

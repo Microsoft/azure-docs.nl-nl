@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e86ea0d90ea267b1c9ceecc8fed6c3d7e5102eaf
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 47531da9c1e508281a57074df7aa10ffffe78810
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102443570"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518735"
 ---
 # <a name="monitor-and-view-ml-run-logs-and-metrics"></a>MILLILITERs logboeken en-metrische gegevens bewaken en weer geven
 
@@ -39,7 +39,7 @@ Zie [trainings uitvoeringen starten, controleren en annuleren](how-to-manage-run
 
 ## <a name="monitor-runs-using-the-jupyter-notebook-widget"></a>Monitor uitvoeringen met behulp van de Jupyter notebook-widget
 
-Wanneer u de methode **ScriptRunConfig** gebruikt om uitvoeringen te verzenden, kunt u de voortgang van de uitvoering bekijken met behulp van de [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py). Net als het indienen van de run, is de widget asynchroon en biedt deze elke 10-15 seconden live updates totdat de taak is voltooid.
+Wanneer u de methode **ScriptRunConfig** gebruikt om uitvoeringen te verzenden, kunt u de voortgang van de uitvoering bekijken met behulp van de [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets). Net als het indienen van de run, is de widget asynchroon en biedt deze elke 10-15 seconden live updates totdat de taak is voltooid.
 
 Bekijk de widget Jupyter tijdens het wachten tot de uitvoering is voltooid.
     

@@ -12,12 +12,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 49e1e9efbd6f59bd037a8033f83836bf7fc71c43
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: ad641c2270f94b9d902a25e8d061fb1137a0cdb7
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630325"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518599"
 ---
 # <a name="where-to-save-and-write-files-for-azure-machine-learning-experiments"></a>Locatie voor het opslaan en schrijven van bestanden voor Azure Machine Learning experimenten
 
@@ -30,13 +30,13 @@ Wanneer u training uitvoert op een [Compute-doel](concept-compute-target.md), zi
 
 Voordat u een experiment kunt initiëren op een reken doel of op uw lokale computer, moet u ervoor zorgen dat de benodigde bestanden beschikbaar zijn voor het reken doel, zoals afhankelijkheids bestanden en gegevens bestanden die de code moet uitvoeren.
 
-Azure Machine Learning trainings scripts worden uitgevoerd door de hele bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [. ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neemt u het niet op in de bron directory. In plaats daarvan opent u uw gegevens met behulp van een gegevens [opslag](/python/api/azureml-core/azureml.data?preserve-view=true&view=azure-ml-py).
+Azure Machine Learning trainings scripts worden uitgevoerd door de hele bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [. ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neemt u het niet op in de bron directory. In plaats daarvan opent u uw gegevens met behulp van een gegevens [opslag](/python/api/azureml-core/azureml.data).
 
 De opslaglimiet voor momentopnamen van experimenten is 300 MB en/of 2000 bestanden.
 
 Daarom kunt u het beste het volgende doen:
 
-* **Uw bestanden worden opgeslagen in een Azure Machine Learning [gegevens opslag](/python/api/azureml-core/azureml.data?preserve-view=true&view=azure-ml-py).** Dit voor komt problemen met de latentie van experimenten en heeft de voor delen van het openen van gegevens van een extern Compute-doel, wat betekent dat verificatie en bevestiging wordt beheerd door Azure Machine Learning. Meer informatie over het opgeven van een gegevens opslag als bron directory en het uploaden van bestanden naar uw gegevens opslag in het artikel [toegangs gegevens van uw gegevens opslag](how-to-access-data.md) .
+* **Uw bestanden worden opgeslagen in een Azure Machine Learning [gegevens opslag](/python/api/azureml-core/azureml.data).** Dit voor komt problemen met de latentie van experimenten en heeft de voor delen van het openen van gegevens van een extern Compute-doel, wat betekent dat verificatie en bevestiging wordt beheerd door Azure Machine Learning. Meer informatie over het opgeven van een gegevens opslag als bron directory en het uploaden van bestanden naar uw gegevens opslag in het artikel [toegangs gegevens van uw gegevens opslag](how-to-access-data.md) .
 
 * **Als u alleen een aantal gegevens bestanden en afhankelijkheids scripts nodig hebt en u geen gegevens opslag kunt gebruiken, plaatst u** de bestanden in dezelfde map als uw trainings script. Geef deze map op als uw eigen `source_directory` trainings script of in de code die uw trainings script aanroept.
 
@@ -69,7 +69,7 @@ Wanneer u wijzigingen schrijft, raden we u aan om bestanden naar een Azure Machi
 Als u geen gegevens opslag nodig hebt, schrijft u de bestanden naar de `./outputs` map en/of `./logs` .
 
 >[!Important]
-> Twee mappen, *uitvoer* en *Logboeken* , een speciale behandeling ontvangen door Azure machine learning. Tijdens de training, wanneer u bestanden naar `./outputs` en `./logs` mappen schrijft, worden de bestanden automatisch naar de uitvoerings geschiedenis geüpload, zodat u er toegang tot hebt wanneer de uitvoering is voltooid.
+> Twee mappen, *uitvoer* en *Logboeken*, een speciale behandeling ontvangen door Azure machine learning. Tijdens de training, wanneer u bestanden naar `./outputs` en `./logs` mappen schrijft, worden de bestanden automatisch naar de uitvoerings geschiedenis geüpload, zodat u er toegang tot hebt wanneer de uitvoering is voltooid.
 
 * Schrijf **voor uitvoer, zoals status berichten of Score resultaten,** bestanden naar de `./outputs` map, zodat deze persistent zijn als artefacten in de uitvoerings geschiedenis. Mindful zijn van het aantal en de grootte van bestanden die naar deze map worden geschreven, omdat er een latentie kan optreden wanneer de inhoud wordt geüpload om de geschiedenis uit te voeren. Als latentie een probleem is, wordt het schrijven van bestanden naar een gegevens opslag aanbevolen.
 

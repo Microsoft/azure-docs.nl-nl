@@ -11,19 +11,19 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 02/22/2021
 ms.custom: how-to, contperf-fy21q1, devx-track-python, data4ml
-ms.openlocfilehash: dbfb4ea729b8360c7065d75cb3efbaf42b82c0da
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 68d07481e228b1d1b2f4571a783f925add261cff
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662457"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520010"
 ---
 # <a name="connect-to-storage-with-identity-based-data-access-preview"></a>Verbinding maken met opslag met op identiteit gebaseerde gegevens toegang (preview-versie)
 
 >[!IMPORTANT]
-> De functies die in dit artikel worden gepresenteerd, zijn beschikbaar in de preview-versie en moeten worden beschouwd als [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-onderdelen die op elk gewenst moment kunnen worden gewijzigd.
+> De functies die in dit artikel worden gepresenteerd, zijn beschikbaar in de preview-versie en moeten worden beschouwd als [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-onderdelen die op elk gewenst moment kunnen worden gewijzigd.
 
-In dit artikel leert u hoe u verbinding kunt maken met opslag Services op Azure met op identiteit gebaseerde gegevens toegang en Azure Machine Learning data stores via de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).  
+In dit artikel leert u hoe u verbinding kunt maken met opslag Services op Azure met op identiteit gebaseerde gegevens toegang en Azure Machine Learning data stores via de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro).  
 
 Normaal gesp roken gebruiken gegevens toegangs rechten op basis van referenties om te bevestigen dat u gemachtigd bent om toegang te krijgen tot de opslag service. Ze houden verbindings gegevens, zoals uw abonnements-ID en Token autorisatie, op in uw [Key Vault](https://azure.microsoft.com/services/key-vault/) dat is gekoppeld aan de werk ruimte. Wanneer u een gegevens opslag maakt die gebruikmaakt van op identiteit gebaseerde toegang tot Data Services, wordt uw Azure-aanmelding ([Azure Active Directory token](../active-directory/fundamentals/active-directory-whatis.md)) gebruikt om te bevestigen dat u gemachtigd bent om toegang te krijgen tot de opslag service. In dit scenario worden er geen verificatie referenties opgeslagen en worden alleen de gegevens van het opslag account opgeslagen in het gegevens archief. 
 
@@ -67,7 +67,7 @@ Bepaalde machine learning scenario's hebben betrekking op trainings modellen met
     - [Azure Data Lake gen 2](../storage/blobs/data-lake-storage-introduction.md)
     - [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md) (Azure SQL-database)
 
-- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install).
 
 - Een Azure Machine Learning-werkruimte.
   
@@ -105,7 +105,7 @@ In de volgende code ziet u het ontbreken van verificatie parameters, zoals `sas_
 
 ### <a name="azure-blob-container"></a>Azure Blob-container
 
-Als u een Azure Blob-container wilt registreren als gegevens opslag, gebruikt u [`register_azure_blob_container()`](/python/api/azureml-core/azureml.core.datastore%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-) .
+Als u een Azure Blob-container wilt registreren als gegevens opslag, gebruikt u [`register_azure_blob_container()`](/python/api/azureml-core/azureml.core.datastore%28class%29#register-azure-blob-container-workspace--datastore-name--container-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false--blob-cache-timeout-none--grant-workspace-access-false--subscription-id-none--resource-group-none-) .
 
 De volgende code maakt en registreert de `credentialless_blob` gegevens opslag voor de `ws` werk ruimte en wijst deze toe aan de variabele `blob_datastore` . Deze Data Store heeft toegang tot de `my_container_name` BLOB-container op het `my-account-name` opslag account.
 
@@ -119,7 +119,7 @@ blob_datastore = Datastore.register_azure_blob_container(workspace=ws,
 
 ### <a name="azure-data-lake-storage-generation-1"></a>Azure Data Lake Storage generatie 1
 
-Gebruik [register_azure_data_lake ()](/python/api/azureml-core/azureml.core.datastore.datastore?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-azure-data-lake-workspace--datastore-name--store-name--tenant-id-none--client-id-none--client-secret-none--resource-url-none--authority-url-none--subscription-id-none--resource-group-none--overwrite-false--grant-workspace-access-false-) om een gegevens opslag te registreren die is verbonden met een Azure DataLake Generation 1-opslag. Azure data Lake Storage
+Gebruik [register_azure_data_lake ()](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-workspace--datastore-name--store-name--tenant-id-none--client-id-none--client-secret-none--resource-url-none--authority-url-none--subscription-id-none--resource-group-none--overwrite-false--grant-workspace-access-false-) om een gegevens opslag te registreren die is verbonden met een Azure DataLake Generation 1-opslag. Azure data Lake Storage
 
 De volgende code maakt en registreert de `credentialless_adls1` gegevens opslag voor de `workspace` werk ruimte en wijst deze toe aan de variabele `adls_dstore` . Deze Data Store heeft toegang tot het `adls_storage` Azure data Lake Store Storage-account.
 
@@ -133,7 +133,7 @@ adls_dstore = Datastore.register_azure_data_lake(workspace = workspace,
 
 ### <a name="azure-data-lake-storage-generation-2"></a>Azure Data Lake Storage generatie 2
 
-Gebruik [register_azure_data_lake_gen2 ()](/python/api/azureml-core/azureml.core.datastore.datastore?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) om een gegevens opslag te registreren die is verbonden met een Azure DataLake gen 2-opslag. Azure data Lake Storage
+Gebruik [register_azure_data_lake_gen2 ()](/python/api/azureml-core/azureml.core.datastore.datastore#register-azure-data-lake-gen2-workspace--datastore-name--filesystem--account-name--tenant-id--client-id--client-secret--resource-url-none--authority-url-none--protocol-none--endpoint-none--overwrite-false-) om een gegevens opslag te registreren die is verbonden met een Azure DataLake gen 2-opslag. Azure data Lake Storage
 
 De volgende code maakt en registreert de `credentialless_adls2` gegevens opslag voor de `ws` werk ruimte en wijst deze toe aan de variabele `adls2_dstore` . Deze Data Store heeft toegang tot het bestands systeem `tabular` in het `myadls2` opslag account.  
 

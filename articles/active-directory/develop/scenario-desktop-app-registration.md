@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 155df45d975a30991edc80d587445d699a8d2695
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 8a1a2d7f5272def78cd162da1f6ac0265d4fb30b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103223"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517733"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Bureau blad-app voor het aanroepen van web-Api's: app-registratie
 
@@ -43,7 +43,7 @@ De omleidings-Uri's voor gebruik in een bureaublad toepassing is afhankelijk van
 - Als u interactieve verificatie of de code stroom van het apparaat gebruikt, gebruikt u `https://login.microsoftonline.com/common/oauth2/nativeclient` . Als u deze configuratie wilt behaalt, selecteert u de bijbehorende URL in het gedeelte **verificatie** voor uw toepassing.
 
   > [!IMPORTANT]
-  > Het gebruik van `https://login.microsoftonline.com/common/oauth2/nativeclient` als de omleidings-URI wordt aanbevolen als een beveiligings best practice.  Als er geen omleidings-URI is opgegeven, gebruikt MSAL.NET `urn:ietf:wg:oauth:2.0:oob` standaard die niet aanbevolen is.  Deze standaard instelling wordt bijgewerkt als gevolg van een wijziging in de volgende belang rijke release.
+  > Het gebruik van `https://login.microsoftonline.com/common/oauth2/nativeclient` als de omleidings-URI wordt aanbevolen als een beveiligings best practice.  Als er geen omleidings-URI is opgegeven, wordt MSAL.NET `urn:ietf:wg:oauth:2.0:oob` standaard gebruikt. dit wordt niet aanbevolen.  Deze standaard instelling wordt bijgewerkt als gevolg van een wijziging in de volgende belang rijke release.
 
 - Als u een systeem eigen doel-C of SWIFT-app voor macOS bouwt, moet u de omleidings-URI registreren op basis van de bundel-id van uw toepassing in de volgende indeling: `msauth.<your.app.bundle.id>://auth` . Vervang door `<your.app.bundle.id>` de bundel-id van uw toepassing.
 - Als uw app alleen geïntegreerde Windows-verificatie of een gebruikers naam en wacht woord gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stromen maken een retour afronding naar het micro soft Identity platform v 2.0-eind punt. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.

@@ -9,14 +9,14 @@ editor: ''
 ms.service: api-management
 ms.workload: integration
 ms.topic: article
-ms.date: 11/14/2020
+ms.date: 03/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 8ec0f8cf090b3ae85a8602fb39cb07f03a417133
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 98237efae89e7d88dd23cb7e8fc9f7e9f05bca70
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605595"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521540"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Beheerde identiteiten gebruiken in azure API Management
 
@@ -263,6 +263,19 @@ In het volgende voor beeld ziet u een Azure Resource Manager sjabloon die de vol
 ### <a name="authenticate-to-the-back-end-by-using-an-api-management-identity"></a>Verifiëren voor de back-end met behulp van een API Management identiteit
 
 U kunt de door het systeem toegewezen identiteit gebruiken om u te verifiëren bij de back-end via het beleid voor [beheerde identiteiten](api-management-authentication-policies.md#ManagedIdentity) van de verificatie.
+
+### <a name="connect-to-azure-resources-behind-ip-firewall-using-system-assigned-managed-identity"></a><a name="apim-as-trusted-service"></a>Verbinding maken met Azure-resources achter IP-Firewall met door het systeem toegewezen beheerde identiteit
+
+
+API Management is een vertrouwde micro soft-service voor de volgende resources. Hiermee kan de service verbinding maken met de volgende bronnen achter een firewall. Nadat de juiste Azure-rol expliciet aan de door het [systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) voor het betreffende bron exemplaar, wordt de reik wijdte van toegang voor het exemplaar overeenkomt met de Azure-rol die is toegewezen aan de beheerde identiteit.
+
+
+|Azure-service | Koppeling|
+|---|---|
+|Azure Storage | [Vertrouwde toegang tot Azure-opslag](../storage/common/storage-network-security.md?tabs=azure-portal#trusted-access-based-on-system-assigned-managed-identity)|
+|Azure Service Bus | [Trusted-Access-to-Azure-service-bus](../service-bus-messaging/service-bus-ip-filtering.md#trusted-microsoft-services)|
+|Azure Event Hub | [Trused-Access-to-Azure-Event-hub](../event-hubs/event-hubs-ip-filtering.md#trusted-microsoft-services)|
+
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Een door de gebruiker toegewezen beheerde identiteit maken
 

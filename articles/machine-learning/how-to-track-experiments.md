@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 07/30/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 0130af66152d4f70db47191ae2f271630a59e179
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 3d970193bd8d73baeac89fb45da4c8a3d81cbde4
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102441071"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518396"
 ---
 # <a name="enable-logging-in-ml-training-runs"></a>Logboek registratie inschakelen in ML-trainings uitvoeringen
 
@@ -37,7 +37,7 @@ Logboeken kunnen u helpen bij het diagnosticeren van fouten en waarschuwingen, o
 
 ## <a name="data-types"></a>Gegevenstypen
 
-U kunt meerdere gegevenstypen vastleggen, waaronder scalaire waarden, lijsten, tabellen, afbeeldingen, directory's en meer. Zie de [referentiepagina voor Run-klassen](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) voor meer informatie en Python-codevoorbeelden voor verschillende gegevenstypen.
+U kunt meerdere gegevenstypen vastleggen, waaronder scalaire waarden, lijsten, tabellen, afbeeldingen, directory's en meer. Zie de [referentiepagina voor Run-klassen](/python/api/azureml-core/azureml.core.run%28class%29) voor meer informatie en Python-codevoorbeelden voor verschillende gegevenstypen.
 
 ### <a name="logging-run-metrics"></a>Metrische gegevens over logboek registratie uitvoeren 
 
@@ -72,13 +72,13 @@ mlf_logger._run_id = run.id
 
 ## <a name="interactive-logging-session"></a>Interactieve logboekregistratiesessie
 
-Interactieve logboekregistratiesessies worden doorgaans gebruikt in notebookomgevingen. Met de methode [Experiment.start_logging()](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truestart-logging--args----kwargs-) wordt een interactieve logboekregistratiesessie gestart. Alle metrische gegevens die tijdens de sessie zijn geregistreerd, worden toegevoegd aan het uitvoeringsrecord in het experiment. Met de methode [run.complete()](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truecomplete--set-status-true-) worden de sessies beëindigd en de uitvoering als voltooid gemarkeerd.
+Interactieve logboekregistratiesessies worden doorgaans gebruikt in notebookomgevingen. Met de methode [Experiment.start_logging()](/python/api/azureml-core/azureml.core.experiment%28class%29#start-logging--args----kwargs-) wordt een interactieve logboekregistratiesessie gestart. Alle metrische gegevens die tijdens de sessie zijn geregistreerd, worden toegevoegd aan het uitvoeringsrecord in het experiment. Met de methode [run.complete()](/python/api/azureml-core/azureml.core.run%28class%29#complete--set-status-true-) worden de sessies beëindigd en de uitvoering als voltooid gemarkeerd.
 
 ## <a name="scriptrun-logs"></a>ScriptRun-logboeken
 
-In dit gedeelte leert u hoe u logboekcode in uitvoeringen toevoegt die zijn gemaakt toen de ScriptRunConfig werd geconfigureerd. Met de klasse [**ScriptRunConfig**](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py)-kunt u scripts en omgevingen inkapselen voor herhaalbare uitvoeringen. U kunt deze optie ook gebruiken om een visuele Jupyter Notebook-widget weer te geven voor bewakingsdoeleinden.
+In dit gedeelte leert u hoe u logboekcode in uitvoeringen toevoegt die zijn gemaakt toen de ScriptRunConfig werd geconfigureerd. Met de klasse [**ScriptRunConfig**](/python/api/azureml-core/azureml.core.scriptrunconfig)-kunt u scripts en omgevingen inkapselen voor herhaalbare uitvoeringen. U kunt deze optie ook gebruiken om een visuele Jupyter Notebook-widget weer te geven voor bewakingsdoeleinden.
 
-In dit voorbeeld wordt een parameteropruiming uitgevoerd op alfawaarden en worden de resultaten vastgelegd met de methode [run.log()](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truelog-name--value--description----).
+In dit voorbeeld wordt een parameteropruiming uitgevoerd op alfawaarden en worden de resultaten vastgelegd met de methode [run.log()](/python/api/azureml-core/azureml.core.run%28class%29#log-name--value--description----).
 
 1. Maak een trainingsscript dat de logica voor logboekregistratie bevat, `train.py`.
 

@@ -11,12 +11,12 @@ author: lostmygithubaccount
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to, data4ml, contperf-fy21q2
-ms.openlocfilehash: b62ed4c0b661ebc725bd4cd3737249d91e48c43e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5a3d16445c5a4276f07f4ed502b9830a10c4ff72
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656836"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518905"
 ---
 # <a name="detect-data-drift-preview-on-datasets"></a>Gegevens drift (preview) detecteren in gegevens sets
 
@@ -43,7 +43,7 @@ U kunt metrische gegevens over data drift weer geven met de python-SDK of in Azu
 U hebt het volgende nodig om de monitors voor de gegevensset te maken en te gebruiken:
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md).
-* De [Azure machine learning SDK voor python is geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waaronder het pakket met de azureml-gegevens sets.
+* De [Azure machine learning SDK voor python is geïnstalleerd](/python/api/overview/azure/ml/install), waaronder het pakket met de azureml-gegevens sets.
 * Gestructureerde (tabellaire) gegevens met een tijds tempel die is opgegeven in het bestandspad, de bestands naam of de kolom in de gegevens.
 
 ## <a name="what-is-data-drift"></a>Wat is gegevens drift?
@@ -107,7 +107,7 @@ De eigenschappen van de doel-dataset moeten worden `timeseries` ingesteld op de 
 # <a name="python"></a>[Python](#tab/python)
 <a name="sdk-dataset"></a>
 
-De [`Dataset`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) [`with_timestamp_columns()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)  methode class definieert de time stamp-kolom voor de gegevensset.
+De [`Dataset`](/python/api/azureml-core/azureml.data.tabulardataset#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-) [`with_timestamp_columns()`](/python/api/azureml-core/azureml.data.tabulardataset#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-)  methode class definieert de time stamp-kolom voor de gegevensset.
 
 ```python 
 from azureml.core import Workspace, Dataset, Datastore
@@ -135,7 +135,7 @@ dset = dset.register(ws, 'target')
 ```
 
 > [!TIP]
-> Voor een volledig voor beeld van het gebruik `timeseries` van de eigenschappen van gegevens sets raadpleegt u het [voor beeld-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) of de SDK-documentatie voor [gegevens sets](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=truewith-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
+> Voor een volledig voor beeld van het gebruik `timeseries` van de eigenschappen van gegevens sets raadpleegt u het [voor beeld-notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb) of de SDK-documentatie voor [gegevens sets](/python/api/azureml-core/azureml.data.tabulardataset#with-timestamp-columns-timestamp-none--partition-timestamp-none--validate-false----kwargs-).
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -355,7 +355,7 @@ Beperkingen en bekende problemen voor gegevens drift-monitors:
     1. Op het tabblad **gegevensset monitors** selecteert u de koppeling experiment om de uitvoerings status te controleren.  Deze koppeling bevindt zich helemaal rechts in de tabel.
     1. Als de uitvoering is voltooid, controleert u de logboeken van het stuur programma om te zien hoeveel metrische gegevens er zijn gegenereerd of of er waarschuwingen zijn.  Zoek het stuur programma-Logboeken op het tabblad **uitvoer en logboeken** nadat u op een experiment hebt geklikt.
 
-* Als de SDK `backfill()` -functie de verwachte uitvoer niet genereert, kan dit worden veroorzaakt door een verificatie probleem.  Wanneer u de compute maakt om deze functie door te geven, moet u niet gebruiken `Run.get_context().experiment.workspace.compute_targets` .  Gebruik in plaats daarvan [ServicePrincipalAuthentication](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?preserve-view=true&view=azure-ml-py) zoals de volgende om de compute te maken die u doorgeeft aan die `backfill()` functie: 
+* Als de SDK `backfill()` -functie de verwachte uitvoer niet genereert, kan dit worden veroorzaakt door een verificatie probleem.  Wanneer u de compute maakt om deze functie door te geven, moet u niet gebruiken `Run.get_context().experiment.workspace.compute_targets` .  Gebruik in plaats daarvan [ServicePrincipalAuthentication](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication) zoals de volgende om de compute te maken die u doorgeeft aan die `backfill()` functie: 
 
   ```python
    auth = ServicePrincipalAuthentication(

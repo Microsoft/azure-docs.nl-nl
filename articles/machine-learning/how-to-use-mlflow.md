@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: ed9d41a84e455241ed3cfc41b905a671f2a2d499
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 02684ba91c207357e15684870a6fa0ceab3e17ff
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912951"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520962"
 ---
 # <a name="train-and-track-ml-models-with-mlflow-and-azure-machine-learning-preview"></a>Conversieer en houd ML modellen met MLflow en Azure Machine Learning (preview)
 
@@ -46,7 +46,7 @@ In het volgende diagram ziet u hoe u met MLflow tracking de metrische gegevens v
 
  De volgende tabel bevat een overzicht van de verschillende clients die Azure Machine Learning kunnen gebruiken en hun respectieve functie mogelijkheden.
 
- MLflow tracking biedt metrische logboek registratie en opslag functies voor artefacten die alleen beschikbaar zijn via de [python-SDK van Azure machine learning](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
+ MLflow tracking biedt metrische logboek registratie en opslag functies voor artefacten die alleen beschikbaar zijn via de [python-SDK van Azure machine learning](/python/api/overview/azure/ml/intro).
 
 | Mogelijkheid | MLflow tracking &-implementatie | Azure Machine Learning python-SDK |  Azure Machine Learning CLI | Azure Machine Learning Studio|
 |---|---|---|---|---|
@@ -63,7 +63,7 @@ In het volgende diagram ziet u hoe u met MLflow tracking de metrische gegevens v
 ## <a name="prerequisites"></a>Vereisten
 
 * Installeer het `azureml-mlflow`-pakket. 
-    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
+    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
 * [Maak een Azure machine learning-werkruimte](how-to-manage-workspace.md).
     * Bekijk welke [toegangs machtigingen u nodig hebt om uw MLflow-bewerkingen uit te voeren met uw werk ruimte](how-to-assign-roles.md#mlflow-operations).
 
@@ -71,7 +71,7 @@ In het volgende diagram ziet u hoe u met MLflow tracking de metrische gegevens v
 
 MLflow tracking met Azure Machine Learning kunt u de vastgelegde metrische gegevens en artefacten van uw lokale uitvoeringen opslaan in uw Azure Machine Learning-werk ruimte.
 
-Importeer de `mlflow` klassen en en [`Workspace`](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py) Configureer de MLflow om uw werk ruimte te openen.
+Importeer de `mlflow` klassen en en [`Workspace`](/python/api/azureml-core/azureml.core.workspace%28class%29) Configureer de MLflow om uw werk ruimte te openen.
 
 In de volgende code wijst de `get_mlflow_tracking_uri()` methode een uniek tracerings-URI-adres toe aan de werk ruimte `ws` en `set_tracking_uri()` wijst de tracerings-URI van de MLflow naar dat adres.
 
@@ -118,7 +118,7 @@ dependencies:
     - numpy
 ```
 
-Configureer uw reken-en trainings uitvoerings omgeving in uw script met de- [`Environment`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) klasse. Maak vervolgens  [`ScriptRunConfig`](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?preserve-view=true&view=azure-ml-py) met uw externe Compute als het reken doel.
+Configureer uw reken-en trainings uitvoerings omgeving in uw script met de- [`Environment`](/python/api/azureml-core/azureml.core.environment.environment) klasse. Maak vervolgens  [`ScriptRunConfig`](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig) met uw externe Compute als het reken doel.
 
 ```Python
 import mlflow
@@ -145,7 +145,7 @@ Installeer het `azureml-mlflow` pakket om MLflow tracking te gebruiken met Azure
 pip install azureml-mlflow
 ```
 
-Importeer de `mlflow` klassen en en [`Workspace`](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py) Configureer de MLflow om uw werk ruimte te openen.
+Importeer de `mlflow` klassen en en [`Workspace`](/python/api/azureml-core/azureml.core.workspace%28class%29) Configureer de MLflow om uw werk ruimte te openen.
 
 ```Python
 import mlflow

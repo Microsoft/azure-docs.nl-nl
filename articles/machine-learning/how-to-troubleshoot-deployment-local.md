@@ -11,12 +11,12 @@ ms.reviewer: luquinta
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: ebd984ad6fd91aa29af9766042a03bc56efe17eb
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 69ac47296cb4624de6cdf05ddb3e72973751f631
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215745"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519619"
 ---
 # <a name="troubleshooting-with-a-local-model-deployment"></a>Problemen oplossen met een lokale model implementatie
 
@@ -28,7 +28,7 @@ Probeer de implementatie van een lokaal model als eerste stap in het oplossen va
 * Optie A (**Aanbevolen**): lokaal fouten opsporen in azure machine learning reken exemplaar
    * Een Azure Machine Learning-werkruimte met een [reken instantie](how-to-deploy-local-container-notebook-vm.md) die wordt uitgevoerd
 * Optie B: lokaal op uw computer fouten opsporen
-   * De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+   * De [Azure machine learning SDK](/python/api/overview/azure/ml/install).
    * De [Azure CLI](/cli/azure/install-azure-cli).
    * De [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
    * Een werkende docker-installatie op uw lokale systeem hebben. 
@@ -98,7 +98,7 @@ print(service.run(input_data=test_sample))
 > [!NOTE]
 > Het script wordt opnieuw geladen vanaf de locatie die is opgegeven door het `InferenceConfig` object dat door de service wordt gebruikt.
 
-Als u het model, Conda afhankelijkheden of implementatie configuratie wilt wijzigen, gebruikt u [Update ()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueupdate--args-). In het volgende voor beeld wordt het model bijgewerkt dat door de service wordt gebruikt:
+Als u het model, Conda afhankelijkheden of implementatie configuratie wilt wijzigen, gebruikt u [Update ()](/python/api/azureml-core/azureml.core.webservice%28class%29#update--args-). In het volgende voor beeld wordt het model bijgewerkt dat door de service wordt gebruikt:
 
 ```python
 service.update([different_model], inference_config, deployment_config)
@@ -106,7 +106,7 @@ service.update([different_model], inference_config, deployment_config)
 
 ### <a name="delete-the-service"></a>De service verwijderen
 
-Als u de service wilt verwijderen, gebruikt u [Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--).
+Als u de service wilt verwijderen, gebruikt u [Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29#delete--).
 
 ### <a name="inspect-the-docker-log"></a><a id="dockerlog"></a> Het docker-logboek controleren
 

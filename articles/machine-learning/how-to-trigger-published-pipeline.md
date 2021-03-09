@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 01/29/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 56a3183e259a0b1c661dfe84d5e47c4c221e5d48
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 3ecf4458b052f4fdc0eb2e6e697b0468c71ce9c2
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584856"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519653"
 ---
 # <a name="trigger-machine-learning-pipelines"></a>Trigger machine learning pijp lijnen
 
@@ -66,7 +66,7 @@ from azureml.pipeline.core.schedule import ScheduleRecurrence, Schedule
 
 ### <a name="create-a-time-based-schedule"></a>Een op tijd gebaseerde planning maken
 
-De `ScheduleRecurrence` constructor bevat een vereist `frequency` argument dat een van de volgende teken reeksen moet zijn: minutes, hours, Day, week of month (maand). Er is ook een argument integer vereist voor `interval` het opgeven van het aantal `frequency` eenheden dat moet worden verstrijkt tussen planning wordt gestart. Optionele argumenten bieden u meer specifieke informatie over de begin tijd, zoals beschreven in de [documenten van de SCHEDULERECURRENCE SDK](/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedulerecurrence?preserve-view=true&view=azure-ml-py).
+De `ScheduleRecurrence` constructor bevat een vereist `frequency` argument dat een van de volgende teken reeksen moet zijn: minutes, hours, Day, week of month (maand). Er is ook een argument integer vereist voor `interval` het opgeven van het aantal `frequency` eenheden dat moet worden verstrijkt tussen planning wordt gestart. Optionele argumenten bieden u meer specifieke informatie over de begin tijd, zoals beschreven in de [documenten van de SCHEDULERECURRENCE SDK](/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedulerecurrence).
 
 Maken van een `Schedule` die elke 15 minuten een uitvoer begint:
 
@@ -83,11 +83,11 @@ recurring_schedule = Schedule.create(ws, name="MyRecurringSchedule",
 
 Pijp lijnen die worden geactiveerd door bestands wijzigingen zijn mogelijk efficiënter dan op tijd gebaseerde schema's. Als u iets wilt doen voordat een bestand wordt gewijzigd of als een nieuw bestand wordt toegevoegd aan een gegevensadres lijst, kunt u dat bestand voorverwerken. U kunt wijzigingen in een gegevens opslag of wijzigingen bewaken in een specifieke map in het gegevens archief. Als u een specifieke directory bewaken, wordt een uitvoering _niet_ geactiveerd door wijzigingen in submappen van die map.
 
-Als u een bestand wilt maken `Schedule` , moet u de `datastore` para meter instellen in de aanroep naar [Schedule. Create](/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule?preserve-view=true&view=azure-ml-py#&preserve-view=truecreate-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Als u een map wilt bewaken, stelt u het `path_on_datastore` argument in.
+Als u een bestand wilt maken `Schedule` , moet u de `datastore` para meter instellen in de aanroep naar [Schedule. Create](/python/api/azureml-pipeline-core/azureml.pipeline.core.schedule.schedule#create-workspace--name--pipeline-id--experiment-name--recurrence-none--description-none--pipeline-parameters-none--wait-for-provisioning-false--wait-timeout-3600--datastore-none--polling-interval-5--data-path-parameter-name-none--continue-on-step-failure-none--path-on-datastore-none---workflow-provider-none---service-endpoint-none-). Als u een map wilt bewaken, stelt u het `path_on_datastore` argument in.
 
 Met het `polling_interval` argument kunt u in minuten opgeven, de frequentie waarmee het gegevens archief wordt gecontroleerd op wijzigingen.
 
-Als de pijp lijn is gemaakt met een [DataPath](/python/api/azureml-core/azureml.data.datapath.datapath?preserve-view=true&view=azure-ml-py) - [PipelineParameter](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter?preserve-view=true&view=azure-ml-py), kunt u deze variabele instellen op de naam van het gewijzigde bestand door het argument in te stellen `data_path_parameter_name` .
+Als de pijp lijn is gemaakt met een [DataPath](/python/api/azureml-core/azureml.data.datapath.datapath) - [PipelineParameter](/python/api/azureml-pipeline-core/azureml.pipeline.core.pipelineparameter), kunt u deze variabele instellen op de naam van het gewijzigde bestand door het argument in te stellen `data_path_parameter_name` .
 
 ```python
 datastore = Datastore(workspace=ws, name="workspaceblobstore")

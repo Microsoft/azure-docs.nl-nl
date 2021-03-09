@@ -10,23 +10,23 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 3fca8e74112b90b3cac70adaa955bbf242999705
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 472bc66c75881d622e8ecfe23031f58db773a919
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739583"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518922"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
 
-In dit artikel maakt, bekijkt en verwijdert u [**Azure machine learning-werk ruimten**](concept-workspace.md) voor [Azure machine learning](overview-what-is-azure-ml.md), met behulp van de Azure portal of de [SDK voor python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py)
+In dit artikel maakt, bekijkt en verwijdert u [**Azure machine learning-werk ruimten**](concept-workspace.md) voor [Azure machine learning](overview-what-is-azure-ml.md), met behulp van de Azure portal of de [SDK voor python](/python/api/overview/azure/ml/)
 
 Als uw behoeften veranderen of vereisten voor automatisering verhogen, kunt u ook werk ruimten maken en verwijderen [met behulp van de CLI](reference-azure-machine-learning-cli.md)of [via de VS code-extensie](tutorial-setup-vscode-extension.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
-* Als u de python-SDK gebruikt, [installeert u de SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+* Als u de python-SDK gebruikt, [installeert u de SDK](/python/api/overview/azure/ml/install).
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -111,7 +111,7 @@ Als u een werk ruimte maakt, wordt er standaard ook een Azure Container Registry
                              exist_ok=False)
    ```
 
-Zie Naslag informatie over de [werk ruimte-SDK](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py).
+Zie Naslag informatie over de [werk ruimte-SDK](/python/api/azureml-core/azureml.core.workspace.workspace).
 
 Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verificatie instellen voor Azure machine learning resources en werk stromen](how-to-setup-authentication.md), evenals de [verificatie in azure machine learning](https://aka.ms/aml-notebook-auth) notebook.
 
@@ -136,7 +136,7 @@ Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verif
    Werkruimtenaam |Voer een unieke naam in die uw werkruimte aanduidt. In dit voorbeeld gebruiken we **docs-ws**. Namen moeten uniek zijn binnen de resourcegroep. Gebruik een naam die gemakkelijk te onthouden is en te onderscheiden is van door anderen gemaakte werkruimten. De naam van de werk ruimte is niet hoofdletter gevoelig.
    Abonnement |Selecteer het Azure-abonnement dat u wilt gebruiken.
    Resourcegroep | Gebruik een bestaande resourcegroep in uw abonnement of voer een naam in om een nieuwe resourcegroep te maken. Een resourcegroep bevat gerelateerde resources voor een Azure-oplossing. In dit voorbeeld gebruiken we **docs-aml**. U hebt de rol *Inzender* of *eigenaar* nodig voor het gebruik van een bestaande resource groep.  Zie [toegang tot een Azure machine learning-werk ruimte beheren](how-to-assign-roles.md)voor meer informatie over toegang.
-   Regio | Selecteer de Azure-regio die het dichtst bij uw gebruikers ligt en de gegevens bronnen om uw werk ruimte te maken.
+   Region | Selecteer de Azure-regio die het dichtst bij uw gebruikers ligt en de gegevens bronnen om uw werk ruimte te maken.
    | Storage-account | Het standaard opslag account voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
    | Key Vault | De Azure Key Vault die wordt gebruikt door de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
    | Application Insights | Het Application Insights-exemplaar voor de werk ruimte. Standaard wordt er een nieuw item gemaakt. |
@@ -167,7 +167,7 @@ Als u problemen ondervindt bij het openen van uw abonnement, raadpleegt u [verif
 
 # <a name="python"></a>[Python](#tab/python)
 
-De Azure Machine Learning python SDK biedt de klasse [PrivateEndpointConfig](/python/api/azureml-core/azureml.core.privateendpointconfig?preserve-view=true&view=azure-ml-py) , die kan worden gebruikt met de [werk ruimte. Create ()](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-&preserve-view=true) om een werk ruimte met een persoonlijk eind punt te maken. Voor deze klasse is een bestaand virtueel netwerk vereist.
+De Azure Machine Learning python SDK biedt de klasse [PrivateEndpointConfig](/python/api/azureml-core/azureml.core.privateendpointconfig) , die kan worden gebruikt met de [werk ruimte. Create ()](/python/api/azureml-core/azureml.core.workspace.workspace#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---tags-none--friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--adb-workspace-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--private-endpoint-config-none--private-endpoint-auto-approval-true--exist-ok-false--show-output-true-) om een werk ruimte met een persoonlijk eind punt te maken. Voor deze klasse is een bestaand virtueel netwerk vereist.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -363,7 +363,7 @@ De standaard actie is niet om resources te verwijderen die zijn gekoppeld aan de
 
 Selecteer in de [Azure Portal](https://portal.azure.com/) **verwijderen**  boven aan de werk ruimte die u wilt verwijderen.
 
-:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Werk ruimte verwijderen":::
+:::image type="content" source="./media/how-to-manage-workspace/delete-workspace.png" alt-text="Werkruimte verwijderen":::
 
 ---
 
@@ -374,7 +374,7 @@ Selecteer in de [Azure Portal](https://portal.azure.com/) **verwijderen**  boven
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 * **Ondersteunde browsers in azure machine learning Studio**: we raden u aan om de meest recente browser te gebruiken die compatibel is met uw besturings systeem. De volgende browsers worden ondersteund:
-  * Micro soft Edge (de nieuwe micro soft Edge, nieuwste versie. Geen micro soft Edge verouderd)
+  * Microsoft Edge (de nieuwe, meest recente versie van Microsoft Edge. Geen verouderde versie van Microsoft Edge)
   * Safari (meest recente versie, alleen Mac)
   * Chrome (meest recente versie)
   * Firefox (meest recente versie)

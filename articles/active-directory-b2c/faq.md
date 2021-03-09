@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cef2636aeecf78a12c48b31b384af2cf76903879
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 722f3158c8eca4cec4dbf23658f9d8d4cb68c3ed
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102498826"
+ms.locfileid: "102517987"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -145,13 +145,13 @@ U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
 1. Verwijder alle **gebruikers stromen (beleids regels)** in uw Azure AD B2C-Tenant.
+1. Verwijder alle **id-providers** in uw Azure AD B2C-Tenant.
 1. Selecteer **app-registraties** en selecteer vervolgens het tabblad **alle toepassingen** .
 1. Alle toepassingen verwijderen die u hebt geregistreerd.
 1. Verwijder de **B2C-Extensions-app**.
 1. Selecteer onder **Beheren** de optie **Gebruikers**.
 1. Selecteer elke gebruiker op zijn beurt (sluit de gebruikers van de *abonnements beheerder* die u momenteel bent aangemeld als). Selecteer **verwijderen** onder aan de pagina en selecteer **Ja** wanneer u hierom wordt gevraagd.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
-1. Selecteer onder **beheren** de optie **gebruikers instellingen**.
 1. Selecteer onder **beheren** de optie **Eigenschappen**
 1. Selecteer onder **Toegangsbeheer voor Azure-resources** **Ja** en selecteer vervolgens **Opslaan**.
 1. Meld u af bij de Azure Portal en meld u weer aan om uw toegang te vernieuwen.

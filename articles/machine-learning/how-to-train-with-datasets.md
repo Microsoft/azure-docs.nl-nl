@@ -12,18 +12,18 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 688bec24cbcd88130470634abff0688ead8005ef
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 15bad877be00e143ce6f6956a4e1f23378c275c0
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881683"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521778"
 ---
 # <a name="train-models-with-azure-machine-learning-datasets"></a>Modellen trainen met Azure Machine Learning gegevens sets 
 
-In dit artikel leert u hoe u [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) kunt gebruiken om machine learning modellen te trainen.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden. 
+In dit artikel leert u hoe u [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29) kunt gebruiken om machine learning modellen te trainen.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden. 
 
-Azure Machine Learning gegevens sets bieden een naadloze integratie met Azure Machine Learning trainings functionaliteit, zoals [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), [HyperDrive](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) en [Azure machine learning pijp lijnen](./how-to-create-machine-learning-pipelines.md).
+Azure Machine Learning gegevens sets bieden een naadloze integratie met Azure Machine Learning trainings functionaliteit, zoals [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig), [HyperDrive](/python/api/azureml-train-core/azureml.train.hyperdrive) en [Azure machine learning pijp lijnen](./how-to-create-machine-learning-pipelines.md).
 
 Als u niet klaar bent om uw gegevens beschikbaar te maken voor model training, maar u uw gegevens wilt laden naar uw notitie blok voor het verkennen van gegevens, raadpleegt u hoe u [de gegevens in uw gegevensset kunt verkennen](how-to-create-register-datasets.md#explore-data). 
 
@@ -35,16 +35,16 @@ Als u gegevens sets wilt maken en trainen, hebt u het volgende nodig:
 
 * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md).
 
-* De [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), inclusief het `azureml-datasets` pakket.
+* De [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install) (>= 1.13.0), inclusief het `azureml-datasets` pakket.
 
 > [!Note]
-> Voor sommige verzamelings klassen zijn afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) . Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux, Ubuntu, Fedora en CentOS.
+> Voor sommige verzamelings klassen zijn afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/) . Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux, Ubuntu, Fedora en CentOS.
 
 ## <a name="consume-datasets-in-machine-learning-training-scripts"></a>Gegevens sets gebruiken in machine learning trainings scripts
 
 Als u gestructureerde gegevens nog niet hebt geregistreerd als een gegevensset, maakt u een TabularDataset en gebruikt u deze rechtstreeks in uw trainings script voor uw lokale of externe experiment.
 
-In dit voor beeld maakt u een niet-geregistreerde [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) en geeft u deze op als een script argument in het object ScriptRunConfig voor training. Zie [gegevens sets registreren in uw werk ruimte](how-to-create-register-datasets.md#register-datasets)als u deze TabularDataset met andere experimenten in uw werk ruimte wilt gebruiken.
+In dit voor beeld maakt u een niet-geregistreerde [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset) en geeft u deze op als een script argument in het object ScriptRunConfig voor training. Zie [gegevens sets registreren in uw werk ruimte](how-to-create-register-datasets.md#register-datasets)als u deze TabularDataset met andere experimenten in uw werk ruimte wilt gebruiken.
 
 ### <a name="create-a-tabulardataset"></a>Een TabularDataset maken
 
@@ -90,7 +90,7 @@ df = dataset.to_pandas_dataframe()
 
 ### <a name="configure-the-training-run"></a>De trainings uitvoering configureren
 
-Een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrun?preserve-view=true&view=azure-ml-py) -object wordt gebruikt om de uitvoering van de training te configureren en in te dienen.
+Een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrun) -object wordt gebruikt om de uitvoering van de training te configureren en in te dienen.
 
 Deze code maakt een ScriptRunConfig-object, `src` dat aangeeft
 
@@ -117,7 +117,7 @@ run.wait_for_completion(show_output=True)
 
 ## <a name="mount-files-to-remote-compute-targets"></a>Bestanden koppelen aan externe Compute-doelen
 
-Als u ongestructureerde gegevens hebt, maakt u een [FileDataset](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py) en koppelt of downloadt u uw gegevens bestanden om ze beschikbaar te maken voor uw externe Compute-doel voor training. Meer informatie over het gebruik van [Mount en down load](#mount-vs-download) voor uw externe trainings experimenten. 
+Als u ongestructureerde gegevens hebt, maakt u een [FileDataset](/python/api/azureml-core/azureml.data.filedataset) en koppelt of downloadt u uw gegevens bestanden om ze beschikbaar te maken voor uw externe Compute-doel voor training. Meer informatie over het gebruik van [Mount en down load](#mount-vs-download) voor uw externe trainings experimenten. 
 
 In het volgende voor beeld wordt een FileDataset gemaakt en wordt de gegevensset aan het reken doel gekoppeld door deze als een argument aan het trainings script door te geven. 
 
@@ -225,7 +225,7 @@ print (mounted_path)
 
 ## <a name="get-datasets-in-machine-learning-scripts"></a>Gegevens sets ophalen in machine learning scripts
 
-Geregistreerde gegevens sets zijn zowel lokaal als extern toegankelijk op reken clusters, zoals de Azure Machine Learning compute. Gebruik de volgende code om toegang te krijgen tot uw geregistreerde gegevensset voor experimenten en haal de gegevensset op die is gebruikt in de eerder ingediende uitvoering. De [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) methode voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte.
+Geregistreerde gegevens sets zijn zowel lokaal als extern toegankelijk op reken clusters, zoals de Azure Machine Learning compute. Gebruik de volgende code om toegang te krijgen tot uw geregistreerde gegevensset voor experimenten en haal de gegevensset op die is gebruikt in de eerder ingediende uitvoering. De [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset#get-by-name-workspace--name--version--latest--) methode voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte.
 
 ```Python
 %%writefile $script_folder/train.py

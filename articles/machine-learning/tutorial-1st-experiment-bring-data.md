@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 02/11/2021
 ms.custom: tracking-python
-ms.openlocfilehash: 5e1af60cccb48195db38e420dfe3df01f404669c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bbe28f4fda32ce7d55a437e4ac944dc206f436ee
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100377993"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522356"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Zelfstudie: Uw eigen gegevens gebruiken (Deel 4 van 4)
 
@@ -26,7 +26,7 @@ Deze zelfstudie is *deel 4 van een vierdelige zelfstudiereeks* waarin u de grond
 
 In [Deel 3: Een model trainen](tutorial-1st-experiment-sdk-train.md) zijn gegevens gedownload met behulp van de ingebouwde `torchvision.datasets.CIFAR10`-methode in de PyTorch-API. In veel gevallen wilt u echter uw eigen gegevens gebruiken in een externe trainingsuitvoering. In dit artikel ziet u welke werkstroom u kunt gebruiken om met uw eigen gegevens te werken in Azure Machine Learning.
 
-In deze zelfstudie hebt u:
+In deze zelfstudie gaat u:
 
 > [!div class="checklist"]
 > * Een trainingsscript configureren voor het gebruik van gegevens in een lokale map.
@@ -200,7 +200,7 @@ Het besturingsscript is vergelijkbaar met dat van [Deel 3 van deze serie](tutori
       `dataset = Dataset.File.from_files( ... )`
    :::column-end:::
    :::column span="2":::
-      Een [gegevensset](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py) wordt gebruikt om te verwijzen naar de gegevens die u hebt geüpload naar Azure Blob Storage. Gegevenssets zijn een abstracte laag bovenop uw gegevens die is ontworpen voor de verbetering van de betrouwbaarheid.
+      Een [gegevensset](/python/api/azureml-core/azureml.core.dataset.dataset) wordt gebruikt om te verwijzen naar de gegevens die u hebt geüpload naar Azure Blob Storage. Gegevenssets zijn een abstracte laag bovenop uw gegevens die is ontworpen voor de verbetering van de betrouwbaarheid.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -208,7 +208,7 @@ Het besturingsscript is vergelijkbaar met dat van [Deel 3 van deze serie](tutori
       `config = ScriptRunConfig(...)`
    :::column-end:::
    :::column span="2":::
-      [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) is gewijzigd en bevat een lijst met argumenten die worden doorgegeven aan `train.py`. Het argument `dataset.as_named_input('input').as_mount()` betekent dat de opgegeven map wordt _gekoppeld_ aan het rekendoel.
+      [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig) is gewijzigd en bevat een lijst met argumenten die worden doorgegeven aan `train.py`. Het argument `dataset.as_named_input('input').as_mount()` betekent dat de opgegeven map wordt _gekoppeld_ aan het rekendoel.
    :::column-end:::
 :::row-end:::
 

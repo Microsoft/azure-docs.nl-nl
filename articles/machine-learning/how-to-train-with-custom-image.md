@@ -10,12 +10,12 @@ author: saachigopal
 ms.date: 10/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: ad86ebdbef8bf8c8ec00e54e15b751fd2285ad68
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 03400173dd35660d6e7a98500b831a7c6aa4ebd7
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601334"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521167"
 ---
 # <a name="train-a-model-by-using-a-custom-docker-image"></a>Een model trainen met behulp van een aangepaste docker-installatie kopie
 
@@ -32,7 +32,7 @@ Voer de code uit in een van de volgende omgevingen:
   * Zoek in het Azure machine learning- [voor beeld-opslag plaats](https://github.com/Azure/azureml-examples)een voltooid notitie blok door naar de fastai-map **notebooks**  >    >  **-resnet34. ipynb** te gaan. 
 * Uw eigen Jupyter Notebook-server:
   * Maak een [configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
-  * Installeer de [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). 
+  * Installeer de [Azure machine learning SDK](/python/api/overview/azure/ml/install). 
   * Een [Azure container Registry](../container-registry/index.yml) of een ander docker-REGI ster maken dat op internet beschikbaar is.
 
 ## <a name="set-up-a-training-experiment"></a>Een trainings experiment instellen
@@ -41,7 +41,7 @@ In deze sectie kunt u uw trainings experiment instellen door een werk ruimte te 
 
 ### <a name="initialize-a-workspace"></a>Een werk ruimte initialiseren
 
-De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`Workspace`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) object te maken.
+De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`Workspace`](/python/api/azureml-core/azureml.core.workspace.workspace) object te maken.
 
 Maak een `Workspace` object op basis van de config.jsvoor het bestand dat u hebt gemaakt als een [vereiste](#prerequisites).
 
@@ -169,7 +169,7 @@ run.wait_for_completion(show_output=True)
 ```
 
 > [!WARNING]
-> Azure Machine Learning trainings scripts worden uitgevoerd door de hele bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [. ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neemt u het niet op in de bron directory. In plaats daarvan kunt u toegang krijgen tot uw gegevens met behulp van een gegevens [opslag](/python/api/azureml-core/azureml.data?preserve-view=true&view=azure-ml-py).
+> Azure Machine Learning trainings scripts worden uitgevoerd door de hele bronmap te kopiëren. Als u gevoelige gegevens hebt die u niet wilt uploaden, gebruikt u een [. ignore-bestand](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) of neemt u het niet op in de bron directory. In plaats daarvan kunt u toegang krijgen tot uw gegevens met behulp van een gegevens [opslag](/python/api/azureml-core/azureml.data).
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel hebt u een model getraind met behulp van een aangepaste docker-installatie kopie. Raadpleeg de volgende artikelen voor meer informatie over Azure Machine Learning:

@@ -3,12 +3,12 @@ title: Het toevoegen van een Lab-gebruiker in Azure DevTest Labs automatiseren |
 description: Dit artikel laat u zien hoe u het toevoegen van een gebruiker aan een lab in Azure DevTest Labs kunt automatiseren met Azure Resource Manager sjablonen, Power shell en CLI.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 6dddf06289da79e16cbd7e64869fa77f0a40dd22
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: dc5522cfe694f193b9bbeeb3145808a367a62c12
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102508823"
+ms.locfileid: "102519398"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Automatisch toevoegen van een Lab-gebruiker aan een lab in Azure DevTest Labs
 Met Azure DevTest Labs kunt u snel ontwikkel-en test omgevingen met self-service maken met behulp van de Azure Portal. Als u echter verschillende teams en verschillende DevTest Labs-instanties hebt, kan het maken van het aanmaak proces tijd besparen. Met [Azure Resource Manager sjablonen](https://github.com/Azure/azure-devtestlab/tree/master/Environments) kunt u Labs, Lab-vm's, aangepaste installatie kopieën en formules maken en gebruikers op een geautomatiseerde manier toevoegen. Dit artikel is specifiek gericht op het toevoegen van gebruikers aan een DevTest Labs-exemplaar.
@@ -161,7 +161,7 @@ New-AzureRmResourceGroupDeployment -Name "MyLabResourceGroup-$(New-Guid)" -Resou
 
 Het is belang rijk te weten dat de naam van de groeps implementatie en de GUID van de roltoewijzing uniek moeten zijn. Als u probeert een resource toewijzing met een niet-unieke GUID te implementeren, krijgt u een `RoleAssignmentUpdateNotPermitted` fout melding.
 
-Als u van plan bent om de sjabloon meerdere keren te gebruiken om verschillende Active Directory objecten toe te voegen aan de gebruikersrol DevTest Labs voor uw Lab, kunt u overwegen om dynamische objecten te gebruiken in uw Power shell-opdracht. In het volgende voor beeld wordt de cmdlet [New-GUID](/powershell/module/Microsoft.PowerShell.Utility/New-Guid?view=powershell-5.0) gebruikt om de naam van de implementatie van de resource groep en de GUID van de roltoewijzing dynamisch op te geven.
+Als u van plan bent om de sjabloon meerdere keren te gebruiken om verschillende Active Directory objecten toe te voegen aan de gebruikersrol DevTest Labs voor uw Lab, kunt u overwegen om dynamische objecten te gebruiken in uw Power shell-opdracht. In het volgende voor beeld wordt de cmdlet [New-GUID](/powershell/module/Microsoft.PowerShell.Utility/New-Guid) gebruikt om de naam van de implementatie van de resource groep en de GUID van de roltoewijzing dynamisch op te geven.
 
 ```powershell
 New-AzureRmResourceGroupDeployment -Name "MyLabResourceGroup-$(New-Guid)" -ResourceGroupName 'MyLabResourceGroup' -TemplateFile .\azuredeploy.json -roleAssignmentGuid "$(New-Guid)" -labName "MyLab" -principalId "11111111-1111-1111-1111-111111111111"

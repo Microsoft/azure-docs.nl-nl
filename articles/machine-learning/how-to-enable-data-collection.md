@@ -11,12 +11,12 @@ author: lostmygithubaccount
 ms.date: 07/14/2020
 ms.topic: conceptual
 ms.custom: how-to, data4ml
-ms.openlocfilehash: fc890dbaf717d3eb9ec87afcb69c87e80c7f14bc
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: f42a2f9e606eaa0475f2e35c479e99545ecf8193
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680962"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521897"
 ---
 # <a name="collect-data-from-models-in-production"></a>Gegevens verzamelen van modellen in productie
 
@@ -65,11 +65,11 @@ Het pad naar de uitvoer gegevens in de BLOB volgt de volgende syntaxis:
 
 - U hebt een AKS-cluster nodig. Voor informatie over hoe u een maakt en implementeert, raadpleegt [u hoe u implementeert en waar](how-to-deploy-and-where.md).
 
-- [Stel uw omgeving](how-to-configure-environment.md) in en installeer de [Azure machine learning monitoring-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+- [Stel uw omgeving](how-to-configure-environment.md) in en installeer de [Azure machine learning monitoring-SDK](/python/api/overview/azure/ml/install).
 
 ## <a name="enable-data-collection"></a>Gegevensverzameling inschakelen
 
-U kunt [gegevens verzameling](/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector?preserve-view=true&view=azure-ml-py) inschakelen, ongeacht het model dat u via Azure machine learning of andere hulpprogram ma's implementeert.
+U kunt [gegevens verzameling](/python/api/azureml-monitoring/azureml.monitoring.modeldatacollector.modeldatacollector) inschakelen, ongeacht het model dat u via Azure machine learning of andere hulpprogram ma's implementeert.
 
 Als u gegevens verzameling wilt inschakelen, moet u het volgende doen:
 

@@ -237,7 +237,7 @@
         - name: Voorwaardelijke toegang configureren
           href: conditional-access-user-flow.md
     - name: Leeftijdsbeperking configureren
-      href: basic-age-gating.md
+      href: age-gating.md
     - name: API-connectors (preview)
       items:
         - name: Overzicht

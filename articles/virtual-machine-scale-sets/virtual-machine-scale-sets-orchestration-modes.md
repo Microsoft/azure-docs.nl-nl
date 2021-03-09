@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 71ddb1217be7fe3e1254e0d49e1f40c43a55a3f0
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 8805b3c4947311a3054066b3378d881d673c2b14
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102502413"
+ms.locfileid: "102521744"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -128,7 +128,7 @@ De volgende tabel vergelijkt de flexibele Orchestration-modus, uniforme indeling
 |         Azure-waarschuwingen  |            Nee  |            Ja  |            Ja  |
 |         VM Insights  |            Nee  |            Ja  |            Ja  |
 |         Azure Backup  |            Ja  |            Ja  |            Ja  |
-|         Azure Site Recovery  |            Ja, alleen Power shell  |            Ja  |            Ja  |
+|         Azure Site Recovery  |            Nee  |            Nee  |            Ja  |
 |         Bestaande virtuele machine toevoegen aan/verwijderen uit de groep  |            Nee  |            Nee  |            Nee  | 
 
 

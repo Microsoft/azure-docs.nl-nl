@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/07/2021
 ms.author: duau
-ms.openlocfilehash: 59194f8d7b1783867ab1422597b361aa3a4a2a60
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 7819aaa1af588b0a74bb960cf47ea1feeeff8b3b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449863"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522288"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -60,7 +60,7 @@ De ExpressRoute-gateway adverteert de *adres ruimte (n)* van het Azure VNet, dat
 
 ### <a name="how-many-prefixes-can-be-advertised-from-a-vnet-to-on-premises-on-expressroute-private-peering"></a>Hoeveel voor voegsels kunnen worden geadverteerd van een VNet naar on-premises op ExpressRoute privé-peering?
 
-Er zijn Maxi maal 200 voor voegsels die worden geadverteerd op één ExpressRoute-verbinding of via VNet-peering met behulp van gateway-door voer. Als u bijvoorbeeld 199 adres ruimten hebt op één VNet dat is verbonden met een ExpressRoute-circuit, worden alle 199 van die voor voegsels op locatie geadverteerd. Als u een VNet hebt ingeschakeld om Gateway-overdracht toe te staan met 1 adres ruimte en 150 spaken VNets ingeschakeld met de optie externe gateway toestaan, adverteert het VNet dat is geïmplementeerd met de gateway 151 voor voegsels aan on-premises.
+Er zijn Maxi maal 1000 voor voegsels die worden geadverteerd op één ExpressRoute-verbinding of via VNet-peering met behulp van gateway-door voer. Als u bijvoorbeeld 199 adres ruimten hebt op één VNet dat is verbonden met een ExpressRoute-circuit, worden alle 199 van die voor voegsels op locatie geadverteerd. Als u een VNet hebt ingeschakeld om Gateway-overdracht toe te staan met 1 adres ruimte en 150 spaken VNets ingeschakeld met de optie externe gateway toestaan, adverteert het VNet dat is geïmplementeerd met de gateway 151 voor voegsels aan on-premises.
 
 ### <a name="what-happens-if-i-exceed-the-prefix-limit-on-an-expressroute-connection"></a>Wat gebeurt er als ik de limiet voor het voor voegsel voor een ExpressRoute-verbinding overschrijd?
 

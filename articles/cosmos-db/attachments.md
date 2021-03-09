@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 08/07/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 455fdc7615e0909189f311755571d02a9acca24e
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: a8e968d05a1f844a79d2e42d10c323ed4c392424
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102501988"
+ms.locfileid: "102521217"
 ---
 # <a name="azure-cosmos-db-attachments"></a>Azure Cosmos DB bijlagen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-mongodb-api.md)]
@@ -42,9 +42,9 @@ De beheerde bijlagen van Azure Cosmos DB zijn niet hetzelfde als de ondersteunin
 - Beheerde bijlagen zijn niet compatibel met de globale distributie van Azure Cosmos DB en ze worden niet gerepliceerd tussen regio's.
 
 > [!NOTE]
-> Azure Cosmos DB-API voor MongoDB versie 3,2 maakt gebruik van beheerde bijlagen voor GridFS, die daarom gelden voor de beperkingen van de beheerde bijlagen van Azure Cosmos DB.
+> Azure Cosmos DB-API voor MongoDB versie 3,2 maakt gebruik van beheerde bijlagen voor GridFS en is onderhevig aan dezelfde beperkingen.
 >
-> U wordt aangeraden ontwikkel aars die de MongoDB GridFS-functie hebt ingesteld, te upgraden naar Azure Cosmos DB-API voor MongoDB versie 3,6 of hoger, die is losgekoppeld van bijlagen en een sterker en robuustere ervaring biedt. Ontwikkel aars die gebruikmaken van de MongoDB GridFS-functieset, moeten ook overwegen Azure Blob Storage te gebruiken. Dit is gebaseerd op de opslag van blob-inhoud en biedt uitgebreide functionaliteit tegen lagere kosten vergeleken met GridFS.
+> U wordt aangeraden ontwikkel aars die de MongoDB GridFS-functie hebt ingesteld, te upgraden naar Azure Cosmos DB-API voor MongoDB versie 3,6 of hoger, die is losgekoppeld van bijlagen en een betere ervaring biedt. Ontwikkel aars die gebruikmaken van de MongoDB GridFS-functieset, moeten ook overwegen Azure Blob Storage te gebruiken. Dit is gebaseerd op de opslag van blob-inhoud en biedt uitgebreide functionaliteit tegen lagere kosten vergeleken met GridFS.
 
 ## <a name="migrating-attachments-to-azure-blob-storage"></a>Bijlagen migreren naar Azure Blob Storage
 

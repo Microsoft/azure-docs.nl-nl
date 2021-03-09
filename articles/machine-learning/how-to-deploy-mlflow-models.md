@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: aaa7dbf2ae7c8acb3b3beeb3e9098c5058af26a7
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: c45b819f9fc02fae40c2bf7fc5c2247c8c0a6147
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918195"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517477"
 ---
 # <a name="deploy-mlflow-models-as-azure-web-services-preview"></a>MLflow-modellen implementeren als Azure-webservices (preview)
 
@@ -44,14 +44,14 @@ In het volgende diagram ziet u dat u met de MLflow implementation API en Azure M
 * Een machine learning model. Als u geen getraind model hebt, kunt u het voor beeld van een notitie blok vinden dat het beste past bij uw reken scenario in [deze opslag plaats](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/using-mlflow) en de instructies volgen. 
 * [Stel de tracerings-URI voor MLflow in om verbinding te maken Azure machine learning](how-to-use-mlflow.md#track-local-runs).
 * Installeer het `azureml-mlflow`-pakket. 
-    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
+    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
 * Bekijk welke [toegangs machtigingen u nodig hebt om uw MLflow-bewerkingen uit te voeren met uw werk ruimte](how-to-assign-roles.md#mlflow-operations). 
 
 ## <a name="deploy-to-azure-container-instance-aci"></a>Implementeren naar Azure container instance (ACI)
 
 Als u uw MLflow-model wilt implementeren in een Azure Machine Learning-webservice, moet uw model zijn ingesteld met de [tracerings-URI van MLflow om verbinding te maken met Azure machine learning](how-to-use-mlflow.md). 
 
-Stel uw implementatie configuratie in met de methode [deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aciwebservice?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . U kunt ook Tags en beschrijvingen toevoegen om uw web-service bij te houden.
+Stel uw implementatie configuratie in met de methode [deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . U kunt ook Tags en beschrijvingen toevoegen om uw web-service bij te houden.
 
 ```python
 from azureml.core.webservice import AciWebservice, Webservice
@@ -84,7 +84,7 @@ webservice.wait_for_deployment(show_output=True)
 
 Als u uw MLflow-model wilt implementeren in een Azure Machine Learning-webservice, moet uw model zijn ingesteld met de [tracerings-URI van MLflow om verbinding te maken met Azure machine learning](how-to-use-mlflow.md). 
 
-Als u wilt implementeren op AKS, moet u eerst een AKS-cluster maken. Maak een AKS-cluster met behulp van de methode [ComputeTarget. Create ()](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py#&preserve-view=truecreate-workspace--name--provisioning-configuration-) . Het kan 20-25 minuten duren om een nieuw cluster te maken.
+Als u wilt implementeren op AKS, moet u eerst een AKS-cluster maken. Maak een AKS-cluster met behulp van de methode [ComputeTarget. Create ()](/python/api/azureml-core/azureml.core.computetarget#create-workspace--name--provisioning-configuration-) . Het kan 20-25 minuten duren om een nieuw cluster te maken.
 
 ```python
 from azureml.core.compute import AksCompute, ComputeTarget
@@ -104,7 +104,7 @@ aks_target.wait_for_completion(show_output = True)
 print(aks_target.provisioning_state)
 print(aks_target.provisioning_errors)
 ```
-Stel uw implementatie configuratie in met de methode [deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aciwebservice?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . U kunt ook Tags en beschrijvingen toevoegen om uw web-service bij te houden.
+Stel uw implementatie configuratie in met de methode [deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none-) . U kunt ook Tags en beschrijvingen toevoegen om uw web-service bij te houden.
 
 ```python
 from azureml.core.webservice import Webservice, AksWebservice
@@ -139,7 +139,7 @@ De implementatie van de service kan enkele minuten duren.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u niet van plan bent om uw geïmplementeerde webservice te gebruiken, kunt u `service.delete()` deze gebruiken om de service te verwijderen uit uw notitie blok.  Zie de documentatie voor [webservice. Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--)voor meer informatie.
+Als u niet van plan bent om uw geïmplementeerde webservice te gebruiken, kunt u `service.delete()` deze gebruiken om de service te verwijderen uit uw notitie blok.  Zie de documentatie voor [webservice. Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29#delete--)voor meer informatie.
 
 ## <a name="example-notebooks"></a>Voorbeeldnotebooks
 

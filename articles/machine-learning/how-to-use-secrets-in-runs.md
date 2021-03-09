@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: ce47041d888b8a7786f0f87f54e725919638e7f7
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: b93da1e252357830578783c8f3ab5ca02f5a3e5b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349015"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520741"
 ---
 # <a name="use-authentication-credential-secrets-in-azure-machine-learning-training-runs"></a>Verificatie referentie geheimen gebruiken in Azure Machine Learning training-uitvoeringen
 
@@ -33,7 +33,7 @@ De standaard stroom voor het gebruik van geheimen is:
 
 ## <a name="set-secrets"></a>Geheimen instellen
 
-In de Azure Machine Learning bevat de klasse sleutel [kluis](/python/api/azureml-core/azureml.core.keyvault.keyvault?preserve-view=true&view=azure-ml-py) methoden voor het instellen van geheimen. In uw lokale python-sessie moet u eerst een verwijzing naar uw werk ruimte verkrijgen Key Vault en vervolgens de [`set_secret()`](/python/api/azureml-core/azureml.core.keyvault.keyvault?preserve-view=true&view=azure-ml-py#&preserve-view=trueset-secret-name--value-) methode gebruiken om een geheim op naam en waarde in te stellen. De __set_secret__ methode werkt de geheime waarde bij als de naam al bestaat.
+In de Azure Machine Learning bevat de klasse sleutel [kluis](/python/api/azureml-core/azureml.core.keyvault.keyvault) methoden voor het instellen van geheimen. In uw lokale python-sessie moet u eerst een verwijzing naar uw werk ruimte verkrijgen Key Vault en vervolgens de [`set_secret()`](/python/api/azureml-core/azureml.core.keyvault.keyvault#set-secret-name--value-) methode gebruiken om een geheim op naam en waarde in te stellen. De __set_secret__ methode werkt de geheime waarde bij als de naam al bestaat.
 
 ```python
 from azureml.core import Workspace
@@ -49,13 +49,13 @@ keyvault.set_secret(name="mysecret", value = my_secret)
 
 Plaats de geheime waarde niet in uw Python-code omdat deze onveilig is om deze in het bestand op te slaan als een lees bare tekst. Haal in plaats daarvan de geheime waarde op uit een omgevings variabele, bijvoorbeeld Azure DevOps build Secret of van interactieve gebruikers invoer.
 
-U kunt geheime namen vermelden met behulp van de- [`list_secrets()`](/python/api/azureml-core/azureml.core.keyvault.keyvault?preserve-view=true&view=azure-ml-py#&preserve-view=truelist-secrets--) methode en er is ook een batch versie,[set_secrets ()](/python/api/azureml-core/azureml.core.keyvault.keyvault?preserve-view=true&view=azure-ml-py#&preserve-view=trueset-secrets-secrets-batch-) waarmee u meerdere geheimen tegelijk kunt instellen.
+U kunt geheime namen vermelden met behulp van de- [`list_secrets()`](/python/api/azureml-core/azureml.core.keyvault.keyvault#list-secrets--) methode en er is ook een batch versie,[set_secrets ()](/python/api/azureml-core/azureml.core.keyvault.keyvault#set-secrets-secrets-batch-) waarmee u meerdere geheimen tegelijk kunt instellen.
 
 ## <a name="get-secrets"></a>Geheimen ophalen
 
-In uw lokale code kunt u de- [`get_secret()`](/python/api/azureml-core/azureml.core.keyvault.keyvault?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-secret-name-) methode gebruiken om de geheime waarde op naam op te halen.
+In uw lokale code kunt u de- [`get_secret()`](/python/api/azureml-core/azureml.core.keyvault.keyvault#get-secret-name-) methode gebruiken om de geheime waarde op naam op te halen.
 
-Voor uitvoeringen verzonden [`Experiment.submit`](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py#&preserve-view=truesubmit-config--tags-none----kwargs-)  , gebruikt u de- [`get_secret()`](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-secret-name-) methode met de- [`Run`](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) klasse. Omdat een ingediende uitvoering op de hoogte is van de werk ruimte, wordt met deze methode de activering van de werk ruimte versneld en wordt de geheime waarde direct geretourneerd.
+Voor uitvoeringen verzonden [`Experiment.submit`](/python/api/azureml-core/azureml.core.experiment.experiment#submit-config--tags-none----kwargs-)  , gebruikt u de- [`get_secret()`](/python/api/azureml-core/azureml.core.run.run#get-secret-name-) methode met de- [`Run`](/python/api/azureml-core/azureml.core.run%28class%29) klasse. Omdat een ingediende uitvoering op de hoogte is van de werk ruimte, wordt met deze methode de activering van de werk ruimte versneld en wordt de geheime waarde direct geretourneerd.
 
 ```python
 # Code in submitted run
@@ -67,7 +67,7 @@ secret_value = run.get_secret(name="mysecret")
 
 Zorg ervoor dat u de geheime waarde niet beschikbaar maakt door deze te schrijven of af te drukken.
 
-Er is ook een batch versie, [get_secrets ()](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-secrets-secrets-) voor het openen van meerdere geheimen tegelijk.
+Er is ook een batch versie, [get_secrets ()](/python/api/azureml-core/azureml.core.run.run#get-secrets-secrets-) voor het openen van meerdere geheimen tegelijk.
 
 ## <a name="next-steps"></a>Volgende stappen
 

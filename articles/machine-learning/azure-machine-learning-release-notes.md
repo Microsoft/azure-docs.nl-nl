@@ -9,18 +9,49 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: ebd4aed284869eb74760de8612a76139d26d47f5
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: b61337f29eac11ca3fb45056b9348fbc70956b53
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102502345"
+ms.locfileid: "102521200"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro) .
 
 __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de volgende URL in uw feedlezer te kopiëren en plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+machine+learning+release+notes%22&locale=en-us`
+
+
+## <a name="2021-03-08"></a>2021-03-08
+
+### <a name="azure-machine-learning-sdk-for-python-v1240"></a>Azure Machine Learning SDK voor python v-1.24.0
++ **Nieuwe functies**
+  + **azureml-automl-core**
+    + Achterwaarts compatibele Imports verwijderd uit `azureml.automl.core.shared` . Fouten van module niet gevonden in de `azureml.automl.core.shared` naam ruimte kunnen worden opgelost door te importeren uit `azureml.automl.runtime.shared` .
+  + **azureml-contrib-automl-DNN-Vision**
+    + Yolo model voor blootgestelde object detectie.
+  + **azureml-contrib-dataset**
+    + Er is functionaliteit toegevoegd om Tabellaire gegevens sets te filteren op kolom waarden en bestands gegevens sets op basis van meta gegevens.
+  + **azureml-contrib-fairness**
+    + JSON-schema in het wiel toevoegen voor `azureml-contrib-fairness`
+  + **azureml-contrib-K8S**
+    + Moet nu resource_id voorzien van een koppeling in plaats van de resource groep en de cluster naam.
+  + **azureml-contrib-Mir**
+    + Bij het instellen van show_output op True bij het implementeren van modellen, worden configuratie-en implementatie configuratie voor inschakeling opnieuw afgespeeld voordat de aanvraag naar de server wordt verzonden.
+  + **azureml-core**
+    + Er is functionaliteit toegevoegd om Tabellaire gegevens sets te filteren op kolom waarden en bestands gegevens sets op basis van meta gegevens.
+    + Voorheen was het mogelijk dat gebruikers inrichtings configuraties kunnen maken voor ComputeTarget die niet voldoen aan de vereisten voor wachtwoord sterkte voor het `admin_user_password` veld (dat wil zeggen dat ze ten minste 3 van het volgende moeten bevatten: 1 kleine letter, 1 hoofd letter, 1 cijfer en 1 speciaal teken uit de volgende set: ``\`~!@#$%^&*()=+_[]{}|;:./'",<>?`` ). Als de gebruiker een configuratie met een zwak wacht woord heeft gemaakt en een taak met die configuratie heeft uitgevoerd, mislukt de taak tijdens runtime. Nu zal de aanroep naar `AmlCompute.provisioning_configuration` een `ComputeTargetException` met een bijbehorend fout bericht genereren waarin de vereisten voor wachtwoord sterkte worden uitgelegd. 
+    + Daarnaast was het ook mogelijk dat in sommige gevallen een configuratie met een negatief aantal knoop punten wordt opgegeven. Het is niet meer mogelijk om dit te doen. Nu `AmlCompute.provisioning_configuration` wordt een `ComputeTargetException` als het `max_nodes` argument een negatief geheel getal is.
+    + Bij het instellen van show_output op True bij het implementeren van modellen, wordt de configuratie van de inschakeling en implementatie weer gegeven.
+    + Met het instellen van show_output op waar wanneer moet worden gewacht tot de implementatie van het model is voltooid, wordt de voortgang van de implementatie bewerking weer gegeven.
+    + Door de klant opgegeven configuratie directory voor AzureML auth via omgevings variabele toestaan: AZUREML_AUTH_CONFIG_DIR
+    + Voorheen was het mogelijk een inrichtings configuratie te maken met het minimum aantal knoop punten dat kleiner is dan het maximum aantal knoop punten. De taak wordt uitgevoerd, maar mislukt tijdens runtime. Deze bug is nu opgelost. Als u nu probeert een inrichtings configuratie te maken met `min_nodes < max_nodes` de SDK, wordt er een gegenereerd `ComputeTargetException` .
+  + **azureml-interpret**
+    + verholpen uitleg van het dash board wordt niet weer gegeven voor de belangrijkste toelichtingen van de cumulatieve functie
+    + geoptimaliseerd geheugen gebruik van ExplanationClient in het pakket voor azureml-interpretatie
+  + **azureml-train-automl-client**
+    +  Fixed show_output = False om de controle te retour neren aan de gebruiker wanneer deze wordt uitgevoerd met Spark.
 
 ## <a name="2021-02-28"></a>2021-02-28
 ### <a name="azure-machine-learning-studio-notebooks-experience-february-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update voor februari)
@@ -39,6 +70,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
   + Verbeterde snelheid en kernel-betrouw baarheid
   + Het draai wiel is toegevoegd om de voortgang weer te geven voor alle actieve [reken activiteiten](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#status-indicators).
   + Klik met de rechter muisknop in Verkenner. Als u met de rechter muisknop op een bestand klikt, worden nu Bestands bewerkingen geopend. 
+
 
 ## <a name="2021-02-16"></a>2021-02-16
 

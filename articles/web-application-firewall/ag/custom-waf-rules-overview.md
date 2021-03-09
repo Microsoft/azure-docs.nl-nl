@@ -7,12 +7,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 04/14/2020
 ms.author: victorh
-ms.openlocfilehash: c0f802f5113e38e811c110ee913099e76fa7be0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd917bcf54022564640d22a5968738c27f75ff38
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81383817"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519041"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2-on-azure-application-gateway"></a>Aangepaste regels voor Web Application firewall v2 op Azure-toepassing gateway
 
@@ -26,7 +26,7 @@ Aangepaste regels bieden ondersteuning voor het gebruik van samengestelde logica
 
 Verschillende overeenkomende voor waarden binnen dezelfde regel worden altijd samengesteld met **en**. Bijvoorbeeld verkeer blok keren van een specifiek IP-adres en alleen als ze een bepaalde browser gebruiken.
 
-Als u **of** twee verschillende voor waarden wilt, moeten de twee voor waarden in verschillende regels zijn. Bijvoorbeeld verkeer blok keren van een specifiek IP-adres of verkeer blok keren als ze een specifieke browser gebruiken.
+Als u **of** tussen twee verschillende voor waarden wilt gebruiken, moeten de twee voor waarden in verschillende regels zijn. Bijvoorbeeld verkeer blok keren van een specifiek IP-adres of verkeer blok keren als ze een specifieke browser gebruiken.
 
 > [!NOTE]
 > Het maximum aantal aangepaste WAF-regels is 100. Zie [Azure-abonnement en service limieten, quota's en beperkingen](../../azure-resource-manager/management/azure-subscription-service-limits.md#application-gateway-limits)voor meer informatie over Application Gateway limieten.
@@ -101,7 +101,7 @@ De naam van de regel.  Deze wordt weer gegeven in de logboeken.
 
 ### <a name="rule-type-required"></a>Regel type [vereist]
 
-Momenteel moet **MatchRule**zijn.
+Momenteel moet **MatchRule** zijn.
 
 ### <a name="match-variable-required"></a>Overeenkomende variabele [required]
 

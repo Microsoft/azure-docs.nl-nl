@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 03/08/2021
 ms.custom: how-to, devx-track-python, data4ml, synapse-azureml
-ms.openlocfilehash: 8941a7f7a27f6ffe58cda3f0bf2c6833ec226783
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: d1c4defc53c4af0fb481a57c0a455e987fdd480a
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102456237"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519993"
 ---
 # <a name="link-azure-synapse-analytics-and-azure-machine-learning-workspaces-preview"></a>Azure Synapse Analytics en Azure Machine Learning-werk ruimten (preview) koppelen
 
@@ -29,7 +29,7 @@ U kunt uw Synapse-werk ruimte en de werk ruimte van uw ML koppelen via de [pytho
 U kunt ook werk ruimten koppelen en een Synapse Spark-groep koppelen aan een enkele [Azure Resource Manager (arm)-sjabloon](https://github.com/Azure/azure-quickstart-templates/blob/master/101-machine-learning-linkedservice-create/azuredeploy.json).
 
 >[!IMPORTANT]
-> De Azure Machine Learning-en Azure Synapse-integratie bevindt zich in de open bare preview. De functionaliteit van het `azureml-synapse` pakket is [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies en kan op elk gewenst moment worden gewijzigd.
+> De Azure Machine Learning-en Azure Synapse-integratie bevindt zich in de open bare preview. De functionaliteit van het `azureml-synapse` pakket is [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies en kan op elk gewenst moment worden gewijzigd.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,7 +39,7 @@ U kunt ook werk ruimten koppelen en een Synapse Spark-groep koppelen aan een enk
 
 * [Apache Spark groep maken met behulp van Azure Portal, web tools of Synapse Studio](/synapse-analytics/quickstart-create-apache-spark-pool-portal.md)
 
-* De [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) installeren
+* De [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/intro) installeren
 
 * Toegang tot de [Azure machine learning Studio](https://ml.azure.com/).
 
@@ -51,7 +51,7 @@ U kunt ook werk ruimten koppelen en een Synapse Spark-groep koppelen aan een enk
 >
 > Als u geen **eigenaar** bent en alleen een **bijdrager** aan de Synapse-werk ruimte bent, kunt u alleen bestaande gekoppelde services gebruiken. Zie [een bestaande gekoppelde service ophalen en gebruiken](how-to-data-prep-synapse-spark-pool.md#get-an-existing-linked-service).
 
-De volgende code maakt gebruik van [`LinkedService`](/python/api/azureml-core/azureml.core.linked_service.linkedservice?preserve-view=true&view=azure-ml-py) de [`SynapseWorkspaceLinkedServiceConfiguration`](/python/api/azureml-core/azureml.core.linked_service.synapseworkspacelinkedserviceconfiguration?preserve-view=true&view=azure-ml-py) klassen en en
+De volgende code maakt gebruik van [`LinkedService`](/python/api/azureml-core/azureml.core.linked_service.linkedservice) de [`SynapseWorkspaceLinkedServiceConfiguration`](/python/api/azureml-core/azureml.core.linked_service.synapseworkspacelinkedserviceconfiguration) klassen en en
 
 * Koppel uw machine learning-werk ruimte aan `ws` uw Azure Synapse-werk ruimte.
 * Registreer uw Synapse-werk ruimte met Azure Machine Learning als een gekoppelde service.

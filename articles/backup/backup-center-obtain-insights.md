@@ -3,12 +3,12 @@ title: Inzichten verkrijgen met behulp van Back-upcentrum
 description: Meer informatie over het analyseren van historische trends en het verkrijgen van meer inzicht in uw back-ups met Back-upcentrum.
 ms.topic: conceptual
 ms.date: 09/01/2020
-ms.openlocfilehash: 47158e53e6248b2b9cef4ff6fd6b5da5972786eb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c48173749a9b47be7eeb906e9f8eec716e0cb200
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719454"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506005"
 ---
 # <a name="obtain-insights-using-backup-center"></a>Inzichten verkrijgen met behulp van Back-upcentrum
 
@@ -44,17 +44,19 @@ Hieronder ziet u de beschik bare weer gaven:
 
 1. **Samen vatting** : gebruik dit tabblad om een overzicht te krijgen van uw back-ups op hoog niveau. [Meer informatie](./configure-reports.md#summary)
 
-1. **Back-** upitems: gebruik dit tabblad om informatie en trends in Cloud opslag te bekijken die worden gebruikt op een back-upitemniveau. [Meer informatie](./configure-reports.md#backup-items)
+2. **Back-** upitems: gebruik dit tabblad om informatie en trends in Cloud opslag te bekijken die worden gebruikt op een back-upitemniveau. [Meer informatie](./configure-reports.md#backup-items)
 
-1. **Gebruik** : gebruik dit tabblad om de para meters voor de sleutel facturering voor uw back-ups weer te geven. [Meer informatie](./configure-reports.md#usage)
+3. **Gebruik** : gebruik dit tabblad om de para meters voor de sleutel facturering voor uw back-ups weer te geven. [Meer informatie](./configure-reports.md#usage)
 
-1. **Taken** : gebruik dit tabblad om langlopende trends voor taken weer te geven, zoals het aantal mislukte taken per dag en de belangrijkste oorzaken van een mislukte taak. [Meer informatie](./configure-reports.md#jobs)
+4. **Taken** : gebruik dit tabblad om langlopende trends voor taken weer te geven, zoals het aantal mislukte taken per dag en de belangrijkste oorzaken van een mislukte taak. [Meer informatie](./configure-reports.md#jobs)
 
-1. **Beleid** : gebruik dit tabblad om informatie weer te geven over al uw actieve beleids regels, zoals het aantal gekoppelde items en de totale Cloud opslag die wordt gebruikt door items waarvan een back-up is gemaakt onder een bepaald beleid. [Meer informatie](./configure-reports.md#policies)
+5. **Beleid** : gebruik dit tabblad om informatie weer te geven over al uw actieve beleids regels, zoals het aantal gekoppelde items en de totale Cloud opslag die wordt gebruikt door items waarvan een back-up is gemaakt onder een bepaald beleid. [Meer informatie](./configure-reports.md#policies)
 
-1. **Optimaliseer** : gebruik dit tabblad om inzicht te krijgen in potentiële mogelijkheden voor kosten optimalisatie voor uw back-ups. [Meer informatie](./configure-reports.md#optimize)
+6. **Optimaliseer** : gebruik dit tabblad om inzicht te krijgen in potentiële mogelijkheden voor kosten optimalisatie voor uw back-ups. [Meer informatie](./configure-reports.md#optimize)
 
-1. Naleving van **beleid** : gebruik dit tabblad om inzicht te krijgen in de vraag of elk back-upexemplaar ten minste één geslaagde back-up per dag heeft.
+7. Naleving van **beleid** : gebruik dit tabblad om inzicht te krijgen in de vraag of elk back-upexemplaar ten minste één geslaagde back-up per dag heeft. [Meer informatie](./configure-reports.md#policy-adherence)
+
+U kunt ook e-mails voor deze rapporten configureren met behulp van de [e-mail rapport](backup-reports-email.md) functie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

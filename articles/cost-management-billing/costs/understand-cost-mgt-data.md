@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: ad099fc7dfcee168186ef5229785933f4b1c5a90
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 568f3d811876073dc899204cb8ca4d1753d9cfd0
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650878"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499292"
 ---
 # <a name="understand-cost-management-data"></a>Inzicht in gegevens van Cost Management
 
@@ -130,6 +130,7 @@ Als er geen specifieke tag wordt weergegeven in Cost Management, ga dan het volg
     - Data Factory
     - Databricks
     - Load balancers
+    - Reken instanties van Machine Learning werk ruimte
     - Network Watcher
     - Notification Hubs
     - Service Bus

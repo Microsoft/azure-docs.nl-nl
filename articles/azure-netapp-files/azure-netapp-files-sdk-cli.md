@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.author: b-juche
-ms.openlocfilehash: e2f7328a0acc8e5206abc600a4052f83828a87f6
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 705b74fe1fe38e8f65fe24e88c5ffa9bf1ad6175
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102174220"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507786"
 ---
 # <a name="azure-netapp-files-sdks-cli-tools-and-arm-templates"></a>Azure NetApp Files Sdk's, CLI-hulpprogram ma's en ARM-sjablonen
 
@@ -45,7 +45,7 @@ De volgende tabel bevat de ondersteunde CLI-hulpprogram ma's en de bijbehorende 
 |    Hulpprogramma    |    Opdracht verwijzing    |
 |------------------|--------------------------------------------|
 |    Azure CLI  |    [AZ netappfiles](/cli/azure/netappfiles)    |
-|    PowerShell   |    [Azure PowerShell voor Azure NetApp Files](/powershell/module/az.netappfiles/?view=azps-2.5.0#netapp_files&preserve-view=true)    |
+|    PowerShell   |    [Azure PowerShell voor Azure NetApp Files](/powershell/module/az.netappfiles/#netapp_files&preserve-view=true)    |
 
 ## <a name="code-samples"></a>Codevoorbeelden
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b26a020b9b4b1641d67a4f5ca55908b8d37f31e4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: a5c6545c634d14b5bd1d6dbb47f878f6f4f5f0b6
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596493"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502821"
 ---
 # <a name="azure-security-baseline-for-azure-public-ip"></a>Azure-beveiligings basislijn voor open bare Azure-IP
 
@@ -242,7 +242,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 

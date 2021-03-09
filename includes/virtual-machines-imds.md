@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: e18c09130fcbcdbb470abc19d76bdf2ccfef0775
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 554730919d4226c07e099d5e457cd0fd20dbad30
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175704"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102511008"
 ---
 De Azure Instance Metadata Service (IMDS) bevat informatie over actieve exemplaren van virtuele machines. U kunt deze gebruiken om uw virtuele machines te beheren en te configureren.
 Deze informatie omvat de gebeurtenissen SKU, opslag, netwerk configuraties en gepland onderhoud. Zie overzicht van de [eindpunt categorieën](#endpoint-categories)voor een volledige lijst met beschik bare gegevens.
@@ -345,8 +345,8 @@ Schema-uitsplitsing:
 | `osType` | Linux of Windows | 2017-04-02
 | `placementGroupId` | [Plaatsings groep](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) van de schaalset voor virtuele machines | 2017-08-01
 | `plan` | [Plan](/rest/api/compute/virtualmachines/createorupdate#plan) met naam, product en uitgever voor een virtuele machine als dit een Azure Marketplace-installatie kopie is | 2018-04-02
-| `platformUpdateDomain` |  [Domein bijwerken](../articles/virtual-machines/manage-availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
-| `platformFaultDomain` | [Fout domein](../articles/virtual-machines/manage-availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
+| `platformUpdateDomain` |  [Domein bijwerken](../articles/virtual-machines/availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
+| `platformFaultDomain` | [Fout domein](../articles/virtual-machines/availability.md) waarop de VM wordt uitgevoerd | 2017-04-02
 | `priority` | De prioriteit van de virtuele machine. Raadpleeg [Spot vm's](../articles/virtual-machines/spot-vms.md) voor meer informatie | 2020-12-01
 | `provider` | Provider van de virtuele machine | 2018-10-01
 | `publicKeys` | [Verzameling van open bare sleutels](/rest/api/compute/virtualmachines/createorupdate#sshpublickey) die zijn toegewezen aan de virtuele machine en de paden | 2018-04-02

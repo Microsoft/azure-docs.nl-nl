@@ -5,12 +5,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 01/13/2021
 ms.custom: mvc,subject-armqs, devx-track-azurecli
-ms.openlocfilehash: 56bacf1ae68081d5822fdb0e80762926d4eb581c
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: f17e42915968f52aee8bd106b5cadd26457998ff
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102173708"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102501312"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-arm-template"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met behulp van een ARM-sjabloon
 
@@ -32,7 +32,7 @@ Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van A
 
 - Voor dit artikel is versie 2.0.61 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-- Als u een AKS-cluster wilt maken met behulp van een Resource Manager-sjabloon, geeft u een open bare SSH-sleutel en Azure Active Directory-service-principal op. U kunt voor machtigingen ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal. Als u een van deze resources nodig hebt, raadpleegt u de volgende sectie. Ga anders naar de sectie [De sjabloon controleren](#review-the-template).
+- Als u een AKS-cluster wilt maken met een resource manager-sjabloon, geeft u een open bare SSH-sleutel op. Als u deze resource nodig hebt, raadpleegt u de volgende sectie. Ga anders verder met de sectie [de sjabloon controleren](#review-the-template) .
 
 ### <a name="create-an-ssh-key-pair"></a>Een SSH-sleutelpaar maken
 
@@ -47,28 +47,6 @@ ssh-keygen -t rsa -b 2048
 ```
 
 Zie [SSH-sleutels maken en beheren voor verificatie in Azure][ssh-keys] voor meer informatie over het maken van SSH-sleutels.
-
-### <a name="create-a-service-principal"></a>Een service-principal maken
-
-Een AKS-cluster heeft een service-principal van Azure Active Directory nodig om met andere Azure-resources te kunnen communiceren. Maak een service-principal met behulp van de opdracht [az ad sp create-for-rbac][az-ad-sp-create-for-rbac]. De parameter `--skip-assignment` zorgt ervoor dat eventuele extra machtigingen beperkt kunnen worden toegewezen. Standaard is de service-principal geldig voor één jaar. U kunt ook een beheerde identiteit gebruiken in plaats van een service-principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
-
-```azurecli-interactive
-az ad sp create-for-rbac --skip-assignment
-```
-
-De uitvoer lijkt op die in het volgende voorbeeld:
-
-```json
-{
-  "appId": "8b1ede42-d407-46c2-a1bc-6b213b04295f",
-  "displayName": "azure-cli-2019-04-19-21-42-11",
-  "name": "http://azure-cli-2019-04-19-21-42-11",
-  "password": "27e5ac58-81b0-46c1-bd87-85b4ef622682",
-  "tenant": "73f978cf-87f2-41bf-92ab-2e7ce012db57"
-}
-```
-
-Noteer de *appId* en *wachtwoord*. Deze waarden worden gebruikt in de volgende stappen.
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 
@@ -95,13 +73,10 @@ Zie de site [AKS-quickstartsjablonen][aks-quickstart-templates] voor meer AKS-vo
     * **DNS-voorvoegsel**: voer een uniek DNS-voorvoegsel voor uw cluster in, zoals *myakscluster*.
     * **Linux-gebruikersnaam van beheerder**: voer een gebruikersnaam in om verbinding te maken via SSH, zoals *azureuser*.
     * **Openbare SSH-RSA-sleutel**: kopieer en plak het *openbare* onderdeel van uw SSH-sleutelpaar (standaard de inhoud van *~/.ssh/id_rsa.pub*).
-    * **Client-id service-principal**: kopieer en plak de *appId* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
-    * **Clientgeheim service-principal**: kopieer en plak het *wachtwoord* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
-    * **Ik ga akkoord met de bovenstaande voorwaarden**: schakel dit selectievakje in om akkoord te gaan.
 
     ![Resource Manager-sjabloon om een Azure Kubernetes Service-cluster te maken in de portal](./media/kubernetes-walkthrough-rm-template/create-aks-cluster-using-template-portal.png)
 
-3. Selecteer **Aankoop**.
+3. Selecteer **Controleren + maken**.
 
 Het duurt een paar minuten om het AKS-cluster te maken. Wacht totdat het cluster met succes is geïmplementeerd voordat u met de volgende stap verdergaat.
 

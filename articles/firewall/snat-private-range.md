@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: victorh
-ms.openlocfilehash: 0df91680dadbc4ac19299a4df48a585a11f044e8
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: c425afc314435c38d15d53ab0c38dcd48e35a40b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072238"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508925"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Persoonlijke IP-adresbereiken van Azure Firewall SNAT
 
@@ -58,7 +58,7 @@ New-AzFirewall @azFw
 > [!NOTE]
 > IANAPrivateRanges wordt uitgebreid naar de huidige standaard waarden op Azure Firewall terwijl de andere bereiken hieraan worden toegevoegd. Als u de IANAPrivateRanges standaard wilt behouden in uw specificatie van het persoonlijk bereik, moet deze in uw specificatie blijven, `PrivateRange` zoals wordt weer gegeven in de volgende voor beelden.
 
-Zie [New-AzFirewall](/powershell/module/az.network/new-azfirewall?view=azps-3.3.0)voor meer informatie.
+Zie [New-AzFirewall](/powershell/module/az.network/new-azfirewall)voor meer informatie.
 
 ### <a name="existing-firewall"></a>Bestaande firewall
 

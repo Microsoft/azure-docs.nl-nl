@@ -5,12 +5,12 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 1bd4a3bfc2ba208371ed71720cc8c89a796ad9a2
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: bdab80725f66814b9bf6bfa9429e3eff96fbc908
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98940811"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505100"
 ---
 # <a name="quickstart-create-apache-kafka-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een Apache Kafka-cluster maken in Azure HDInsight met een ARM-sjabloon
 
@@ -148,7 +148,7 @@ Kafka slaat gegevensstromen op in zogenaamde *onderwerpen (topics)* . U kunt het
         
         In regio's met drie foutdomeinen zorgt een replicatiefactor van drie ervoor dat replica's worden verdeeld over de foutdomeinen. In regio's met twee foutdomeinen zorgt een replicatiefactor van vier ervoor dat replica's worden verdeeld over de domeinen.
         
-        Raadpleeg het document [Beschikbaarheid van virtuele Linux-machines](../../virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) voor informatie over het aantal foutdomeinen in een regio.
+        Raadpleeg het document [Beschikbaarheid van virtuele Linux-machines](../../virtual-machines/availability.md) voor informatie over het aantal foutdomeinen in een regio.
 
         Kafka kan niet overweg met Azure-foutdomeinen. Bij het maken van partitiereplica's voor onderwerpen worden replica's mogelijk niet goed gedistribueerd voor hoge beschikbaarheid.
 

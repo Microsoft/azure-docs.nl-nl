@@ -5,18 +5,18 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 01/08/2021
-ms.openlocfilehash: fd599c69b3072831461acc94827d97c4520292e9
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 19ece696dabc81e643e8a904d506d22e40eaa099
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102182448"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499149"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Verifiëren bij Azure Container Registry vanuit Azure Kubernetes Service
 
 Wanneer u Azure Container Registry (ACR) met Azure Kubernetes service (AKS) gebruikt, moet er een verificatie mechanisme tot stand worden gebracht. Deze bewerking wordt geïmplementeerd als onderdeel van de CLI-en Portal-ervaring door de vereiste machtigingen te verlenen aan uw ACR. In dit artikel vindt u voor beelden voor het configureren van verificatie tussen deze twee Azure-Services. 
 
-U kunt de AKS instellen op ACR-integratie in enkele eenvoudige opdrachten met de Azure CLI. Met deze integratie wordt de AcrPull-rol toegewezen aan de service-principal die is gekoppeld aan het AKS-cluster.
+U kunt de AKS instellen op ACR-integratie in enkele eenvoudige opdrachten met de Azure CLI. Deze integratie wijst de AcrPull-rol toe aan de beheerde identiteit die is gekoppeld aan het AKS-cluster.
 
 > [!NOTE]
 > Dit artikel behandelt automatische verificatie tussen AKS en ACR. Als u een installatie kopie moet ophalen uit een persoonlijk extern REGI ster, gebruikt u een [installatie kopie pull Secret][Image Pull Secret].
@@ -28,11 +28,11 @@ Voor de volgende voor beelden is vereist:
 * De rol van **eigenaar** of **Azure-account beheerder** voor het **Azure-abonnement**
 * Azure CLI-versie 2.7.0 of hoger
 
-Om te voor komen dat een **eigenaar** of een rol beheerder van een **Azure-account** nodig is, kunt u een Service-Principal hand matig configureren of een bestaande Service-Principal gebruiken om ACR van AKS te verifiëren. Zie [ACR-verificatie met service-principals](../container-registry/container-registry-auth-service-principal.md) of [Verifiëren vanaf Kubernetes met pullgeheim](../container-registry/container-registry-auth-kubernetes.md) voor meer informatie.
+Om te voor komen dat een **eigenaar** of een rol beheerder voor een **Azure-account** nodig is, kunt u een beheerde identiteit hand matig configureren of een bestaande beheerde identiteit gebruiken om ACR van AKS te verifiëren. Zie [een door Azure beheerde identiteit gebruiken om te verifiëren bij een Azure container Registry](../container-registry/container-registry-authentication-managed-identity.md)voor meer informatie.
 
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Een nieuw AKS-cluster maken met ACR-integratie
 
-U kunt AKS-en ACR-integratie instellen tijdens het maken van de eerste keer dat u uw AKS-cluster maakt.  Als u een AKS-cluster wilt toestaan om te communiceren met ACR, wordt een Azure Active Directory **Service-Principal** gebruikt. Met de volgende CLI-opdracht kunt u een bestaande ACR in uw abonnement autoriseren en de juiste **ACRPull** -rol configureren voor de Service-Principal. Geef hieronder geldige waarden voor de para meters op.
+U kunt AKS-en ACR-integratie instellen tijdens het maken van de eerste keer dat u uw AKS-cluster maakt.  Als u een AKS-cluster wilt toestaan om te communiceren met ACR, wordt een Azure Active Directory **beheerde identiteit** gebruikt. Met de volgende CLI-opdracht kunt u een bestaande ACR in uw abonnement autoriseren en de juiste **ACRPull** -rol configureren voor de beheerde identiteit. Geef hieronder geldige waarden voor de para meters op.
 
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique

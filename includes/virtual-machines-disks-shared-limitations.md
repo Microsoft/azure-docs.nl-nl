@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/30/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 4a61399bbb75639fdf4f03da7b77f22a2136adbe
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: 22a1a4b99717df32a40ea69ebb65a3a8e14ee2b4
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99628959"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510892"
 ---
 Het inschakelen van gedeelde schijven is alleen beschikbaar voor een subset van schijf typen. Op dit moment kunnen alleen Ultra disks en Premium Ssd's gedeelde schijven inschakelen. Op elke beheerde schijf waarvoor gedeelde schijven zijn ingeschakeld, gelden de volgende beperkingen, geordend op schijf type:
 
@@ -34,7 +34,7 @@ Gedeelde Ultra schijven zijn beschikbaar in alle regio's die standaard ondersteu
 - Kan alleen worden ingeschakeld op gegevens schijven, niet op OS-schijven.
 - **Alleen-lezen** host-caching is niet beschikbaar voor Premium-ssd's met `maxShares>1` .
 - Schijf bursting is niet beschikbaar voor Premium-Ssd's met `maxShares>1` .
-- Wanneer u beschikbaarheids sets en virtuele-machine schaal sets gebruikt met gedeelde Azure-schijven, wordt de uitlijning van het [opslag fout domein](../articles/virtual-machines/manage-availability.md#use-managed-disks-for-vms-in-an-availability-set) met het fout domein van de virtuele machine niet afgedwongen voor de gedeelde gegevens schijf.
+- Wanneer u beschikbaarheids sets en virtuele-machine schaal sets gebruikt met gedeelde Azure-schijven, wordt de uitlijning van het [opslag fout domein](../articles/virtual-machines/availability.md) met het fout domein van de virtuele machine niet afgedwongen voor de gedeelde gegevens schijf.
 - Wanneer u [proximity placement groups (PPG)](../articles/virtual-machines/windows/proximity-placement-groups.md)gebruikt, moeten alle virtuele machines die een schijf delen deel uitmaken van dezelfde PPG.
 - Alleen standaard schijven kunnen worden gebruikt in combi natie met sommige versies van Windows Server-failovercluster, voor meer informatie, [Hardware-vereisten en opslag opties voor failover clustering](/windows-server/failover-clustering/clustering-requirements).
 - Azure Site Recovery-ondersteuning is nog niet beschikbaar.

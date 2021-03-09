@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: 11ad3bdcaa40c479c9358fd623edf0e6fdafa0d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: dadd86521a7b6c20dab2ed036555b798b869344c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002069"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510963"
 ---
 Gebruik de Event Hubs-uitvoerbinding om gebeurtenissen naar een gebeurtenisstroom te schrijven. U moet een verzendmachtiging voor een Event Hub hebben om er gebeurtenissen naar te kunnen schrijven.
 
@@ -274,7 +274,7 @@ Er zijn twee opties voor het uitvoeren van een Event Hub-bericht van een functie
 
 - **Retourwaarde**: stel de eigenschap `name` in *function. json* in op `$return`. Met deze configuratie wordt de retourwaarde van de functie persistent gemaakt als een Event Hub-bericht.
 
-- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out?view=azure-python). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
+- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
 
 # <a name="java"></a>[Java](#tab/java)
 

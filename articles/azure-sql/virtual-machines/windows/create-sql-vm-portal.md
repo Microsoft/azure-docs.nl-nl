@@ -15,12 +15,12 @@ ms.date: 11/07/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7914f924492264810acd929cc7d422e0cc780a89
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: f0b7e04becd42180df3393d7036294c1629cdc21
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358789"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499489"
 ---
 # <a name="how-to-use-the-azure-portal-to-provision-a-windows-virtual-machine-with-sql-server"></a>De Azure Portal gebruiken om een virtuele Windows-machine in te richten met SQL Server
 
@@ -33,7 +33,7 @@ Gebruik deze hand leiding om uw eigen SQL Server-VM te maken. Of gebruik deze al
 > [!TIP]
 > Als u vragen hebt over virtuele machines met SQL Server, raadpleegt u [Veelgestelde vragen](frequently-asked-questions-faq.md).
 
-Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 ## <a name="sql-server-virtual-machine-gallery-images"></a><a id="select"></a> Installatie kopieën van de galerie met virtuele machines SQL Server
 
@@ -105,7 +105,7 @@ Configureer uw schijf opties op het tabblad **schijven** .
 * Onder **Geavanceerd** selecteert u **ja** onder gebruik **Managed disks**.
 
    > [!NOTE]
-   > Microsoft raadt Managed Disks aan voor SQL Server. Managed Disks verwerken de opslag achter de schermen. Bovendien distribueert Azure de opslagresources zodat voldoende redundantie wordt geboden wanneer virtuele machines met Managed Disks zich in dezelfde beschikbaarheidsset bevinden. Zie [overzicht van Azure Managed disks](../../../virtual-machines/managed-disks-overview.md)voor meer informatie. Zie [Managed Disks gebruiken schijven voor virtuele machines in een beschikbaarheidsset](../../../virtual-machines/manage-availability.md) voor meer informatie over Managed Disks in een beschikbaarheidsset.
+   > Microsoft raadt Managed Disks aan voor SQL Server. Managed Disks verwerken de opslag achter de schermen. Bovendien distribueert Azure de opslagresources zodat voldoende redundantie wordt geboden wanneer virtuele machines met Managed Disks zich in dezelfde beschikbaarheidsset bevinden. Zie [overzicht van Azure Managed disks](../../../virtual-machines/managed-disks-overview.md)voor meer informatie. Zie [Managed Disks gebruiken schijven voor virtuele machines in een beschikbaarheidsset](../../../virtual-machines/availability.md) voor meer informatie over Managed Disks in een beschikbaarheidsset.
 
 ![SQL-VM-schijf instellingen](./media/create-sql-vm-portal/azure-sqlvm-disks.png)
   

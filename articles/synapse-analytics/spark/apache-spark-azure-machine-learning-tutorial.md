@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: fc9909614a9d557c19a22e215b7513a038f88c33
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 89309cfe427183d594a5cc2f76332ae150d4f803
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98942337"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498673"
 ---
 # <a name="tutorial-train-a-model-in-python-with-automated-machine-learning"></a>Zelfstudie: Een model trainen in Python met geautomatiseerde machine learning
 
@@ -144,7 +144,7 @@ ws = Workspace(workspace_name = workspace_name,
 ```
 
 ## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Een data frame converteren naar een Azure Machine Learning-gegevensset
-Als u een extern experiment wilt verzenden, moet u uw gegevensset converteren naar een Azure Machine Learning- ```TabularDatset``` exemplaar. [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) staat voor gegevens in tabel vorm door de meegeleverde bestanden te parseren.
+Als u een extern experiment wilt verzenden, moet u uw gegevensset converteren naar een Azure Machine Learning- ```TabularDatset``` exemplaar. [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset) staat voor gegevens in tabel vorm door de meegeleverde bestanden te parseren.
 
 Met de volgende code worden de bestaande werk ruimte en de standaard Azure Machine Learning gegevens opslag opgehaald. Vervolgens worden de gegevens opslag en bestands locaties door gegeven aan de para meter Path om een nieuw exemplaar te maken ```TabularDataset``` . 
 

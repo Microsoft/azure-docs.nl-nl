@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: d64dfdad0c51950228288b704b3fdb7579496abb
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 98ea51957014a4e9d83f27adefd86d8d0708b500
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488066"
+ms.locfileid: "102503178"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Een Azure Resource Manager sjabloon gebruiken om een werk ruimte te maken voor Azure Machine Learning
 
@@ -30,7 +30,7 @@ Zie [een toepassing implementeren met Azure Resource Manager sjabloon](../azure-
 
 * Een **Azure-abonnement**. Als u er nog geen hebt, probeer [dan de gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 
-* Als u een sjabloon van een CLI wilt gebruiken, moet u [Azure PowerShell](/powershell/azure/?view=azps-1.2.0) of de [Azure cli](/cli/azure/install-azure-cli).
+* Als u een sjabloon van een CLI wilt gebruiken, moet u [Azure PowerShell](/powershell/azure/) of de [Azure cli](/cli/azure/install-azure-cli).
 
 * Voor sommige scenario's moet u een ondersteunings ticket openen. Deze scenario's zijn:
 

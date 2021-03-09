@@ -5,35 +5,31 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 3d1e0eb90005abf69d90b46acc59e0258c9914c6
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 377b7fd44b4f5afa2fd3892d9cb920484bc11c0b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630027"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509435"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
-In dit artikel wordt beschreven hoe u Azure App Service of Azure Functions kunt configureren om Azure Active Directory (Azure AD) als verificatie provider te gebruiken.
+In dit artikel wordt beschreven hoe u verificatie voor Azure App Service of Azure Functions zodanig configureert dat uw app zich aanmeldt bij gebruikers met Azure Active Directory (Azure AD) als verificatie provider.
 
-> [!NOTE]
-> Met de Express-instellingen stroom wordt een AAD v1-toepassing geregistreerd. Als u [Azure Active Directory v 2.0](../active-directory/develop/v2-overview.md) (inclusief [MSAL](../active-directory/develop/msal-overview.md)) wilt gebruiken, volgt u de [Geavanceerde configuratie-instructies](#advanced).
-
-Volg deze aanbevolen procedures bij het instellen van uw app en verificatie:
-
-- Geef elke App Service-app eigen machtigingen en toestemming.
-- Configureer elke App Service-app met een eigen registratie.
-- Vermijd het delen van machtigingen tussen omgevingen door afzonderlijke app-registraties voor afzonderlijke implementatie sleuven te gebruiken. Bij het testen van nieuwe code kunt u deze procedure gebruiken om te voor komen dat problemen van invloed zijn op de productie-app.
-
-> [!NOTE]
-> Deze functie is momenteel niet beschikbaar in het verbruiks abonnement voor Linux voor Azure Functions
+Deze functie is momenteel niet beschikbaar in het Linux-verbruiks abonnement voor Azure Functions.
 
 ## <a name="configure-with-express-settings"></a><a name="express"> </a>Configureren met Express-instellingen
 
+De optie **Express** is ontworpen om het inschakelen van verificatie eenvoudig te maken en vereist slechts enkele klikken.
+
+Met de Express-instellingen wordt automatisch een toepassings registratie gemaakt die gebruikmaakt van het Azure Active Directory v1-eind punt. Als u [Azure Active Directory v 2.0](../active-directory/develop/v2-overview.md) (inclusief [MSAL](../active-directory/develop/msal-overview.md)) wilt gebruiken, volgt u de [Geavanceerde configuratie-instructies](#advanced).
+
 > [!NOTE]
 > De **Express** -optie is niet beschikbaar voor overheids Clouds.
+
+Voer de volgende stappen uit om verificatie in te scha kelen met behulp van de **snelle** optie:
 
 1. In de [Azure Portal]zoekt en selecteert u **app Services** en selecteert u vervolgens uw app.
 2. Selecteer in de linkernavigatiebalk **verificatie/autorisatie**  >  **in**.
@@ -58,27 +54,24 @@ Zie [deze zelf studie](scenario-secure-app-authentication-app-service.md)voor ee
 
 ## <a name="configure-with-advanced-settings"></a><a name="advanced"> </a>Configureren met geavanceerde instellingen
 
-U kunt app-instellingen hand matig configureren als u een app-registratie wilt gebruiken vanuit een andere Azure AD-Tenant. Deze aangepaste configuratie volt ooien:
-
-1. Een registratie maken in azure AD.
-2. Geef een aantal van de registratie gegevens op App Service.
+Om ervoor te zorgen dat Azure AD als verificatie provider voor uw app fungeert, moet u uw app ermee registreren. De optie Express doet dit voor u automatisch. Met de optie Geavanceerd kunt u uw app hand matig registreren, de registratie aanpassen en de registratie Details hand matig opnieuw instellen op de App Service. Dit is bijvoorbeeld handig als u een app-registratie wilt gebruiken van een andere Azure AD-Tenant dan die waar uw App Service zich bevindt.
 
 ### <a name="create-an-app-registration-in-azure-ad-for-your-app-service-app"></a><a name="register"> </a>Een app-registratie maken in azure AD voor uw app service-app
 
-U hebt de volgende informatie nodig wanneer u uw App Service-app configureert:
+Eerst maakt u de registratie van uw app. Als u dit doet, verzamelt u de volgende informatie die u later nodig hebt bij het configureren van de verificatie in de App Service-app:
 
 - Client-id
 - Tenant-id
 - Client geheim (optioneel)
 - URI voor de toepassings-ID
 
-Voer de volgende stappen uit:
+Voer de volgende stappen uit om de app te registreren:
 
 1. Meld u aan bij de [Azure Portal], zoek en selecteer **app Services** en selecteer vervolgens uw app. Noteer de **URL** van uw app. U gebruikt deze om de registratie van uw Azure Active Directory-app te configureren.
-1. Selecteer **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie**.
+1. Selecteer **Azure Active Directory** in het menu Portal, ga naar het tabblad **app-registraties** en selecteer **nieuwe registratie**.
 1. Voer op de pagina **een toepassing registreren** een **naam** in voor de registratie van uw app.
 1. In **omleidings-URI** selecteert u **Web** en type `<app-url>/.auth/login/aad/callback` . Bijvoorbeeld `https://contoso.azurewebsites.net/.auth/login/aad/callback`.
-1. Selecteer **REGISTREREN**.
+1. Selecteer **Registreren**.
 1. Nadat de app-registratie is gemaakt, kopieert u de **toepassings-id** en de **Directory (Tenant)-ID** voor later.
 1. Selecteer **Verificatie**. Schakel onder **impliciete toekenning** **id-tokens** in om OpenID Connect te verbinden met gebruikers aanmeldingen van app service.
 1. Beschrijving Selecteer **huis stijl**. Voer de URL van uw App Service-app in op de URL van de **Start pagina** en selecteer **Opslaan**.
@@ -113,9 +106,13 @@ Voer de volgende stappen uit:
 
 U bent nu klaar om Azure Active Directory te gebruiken voor verificatie in uw App Service-app.
 
-## <a name="configure-a-native-client-application"></a>Een systeem eigen client toepassing configureren
+## <a name="configure-client-apps-to-access-your-app-service"></a>Client-apps configureren voor toegang tot uw App Service
 
-U kunt systeem eigen clients registreren om verificatie toe te staan voor de host van de Web-API in uw app met behulp van een client bibliotheek zoals de **Active Directory Authentication Library**.
+In de vorige sectie hebt u uw App Service-of Azure-functie geregistreerd om gebruikers te verifiëren. In deze sectie wordt uitgelegd hoe u systeem eigen client-of daemon-apps kunt registreren, zodat ze toegang kunnen aanvragen tot Api's die door uw App Service worden weer gegeven namens gebruikers of op zichzelf. Het is niet nodig om de stappen in deze sectie uit te voeren als u alleen gebruikers wilt verifiëren.
+
+### <a name="native-client-application"></a>Systeem eigen client toepassing
+
+U kunt systeem eigen clients registreren om toegang te vragen tot de Api's van uw App Service-app namens een aangemelde gebruiker.
 
 1. Selecteer in de [Azure Portal] **Active Directory**  >  **app-registraties**  >  **nieuwe registratie**.
 1. Voer op de pagina **een toepassing registreren** een **naam** in voor de registratie van uw app.
@@ -129,9 +126,9 @@ U kunt systeem eigen clients registreren om verificatie toe te staan voor de hos
 1. Selecteer de app-registratie die u eerder hebt gemaakt voor uw App Service-app. Als u de app-registratie niet ziet, zorg er dan voor dat u het **user_impersonation** bereik hebt toegevoegd in [een app-registratie in azure AD maken voor uw app service-app](#register).
 1. Selecteer onder **gedelegeerde machtigingen** de optie **user_impersonation** en selecteer vervolgens **machtigingen toevoegen**.
 
-U hebt nu een systeem eigen client toepassing geconfigureerd die toegang heeft tot uw App Service-app namens een gebruiker.
+U hebt nu een systeem eigen client toepassing geconfigureerd die toegang kan aanvragen tot uw App Service-app namens een gebruiker.
 
-## <a name="configure-a-daemon-client-application-for-service-to-service-calls"></a>Een daemon-clienttoepassing configureren voor service-naar-service-aanroepen
+### <a name="daemon-client-application-service-to-service-calls"></a>Daemon-client toepassing (service-naar-service-aanroepen)
 
 Uw toepassing kan een token verkrijgen voor het aanroepen van een web-API die wordt gehost in uw App Service of functie-app namens zichzelf (niet namens een gebruiker). Dit scenario is nuttig voor niet-interactieve daemon-toepassingen die taken uitvoeren zonder een aangemelde gebruiker. De standaard OAuth 2,0- [client referenties](../active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow.md) worden verleend.
 
@@ -155,6 +152,14 @@ Op dit moment kan _elke_ client toepassing in uw Azure AD-Tenant een toegangs to
 1. In de doel-App Service of functie-app code kunt u nu valideren of de verwachte rollen aanwezig zijn in het token (dit wordt niet uitgevoerd door App Service verificatie/autorisatie). Zie voor meer informatie [gebruikers claims voor toegang](app-service-authentication-how-to.md#access-user-claims).
 
 U hebt nu een daemon-client toepassing geconfigureerd die toegang heeft tot uw App Service-app met behulp van een eigen identiteit.
+
+## <a name="best-practices"></a>Aanbevolen procedures
+
+Ongeacht de configuratie die u gebruikt om verificatie in te stellen, blijven de volgende aanbevolen procedures uw Tenant en toepassingen beter beveiligd:
+
+- Geef elke App Service-app eigen machtigingen en toestemming.
+- Configureer elke App Service-app met een eigen registratie.
+- Vermijd het delen van machtigingen tussen omgevingen door afzonderlijke app-registraties voor afzonderlijke implementatie sleuven te gebruiken. Bij het testen van nieuwe code kunt u deze procedure gebruiken om te voor komen dat problemen van invloed zijn op de productie-app.
 
 ## <a name="next-steps"></a><a name="related-content"> </a>Volgende stappen
 

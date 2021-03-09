@@ -1,24 +1,20 @@
 ---
-title: Vm's samen zoeken
-description: Meer informatie over hoe u de Azure VM-resources voor verbeterde latentie kunt vinden.
+title: Nabijheidsplaatsingsgroepen
+description: Meer informatie over het gebruik van proximity placement groups in Azure.
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 3/07/2021
 ms.reviewer: zivr
-ms.openlocfilehash: e193b7d084723ad50ddc0d1a40e0b6c8a111af73
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 584d98c93083bc0b203276c8eda2801841da3ad7
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96924281"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507854"
 ---
-# <a name="co-locate-resources-for-improved-latency"></a>Resources gecombineerd zoeken voor verbeterde latentie
-
-Wanneer u uw toepassing in azure implementeert, wordt er netwerk latentie gemaakt, wat van invloed kan zijn op de algehele prestaties van uw toepassing. 
-
-## <a name="proximity-placement-groups"></a>Nabijheidsplaatsingsgroepen
+# <a name="proximity-placement-groups"></a>Nabijheidsplaatsingsgroepen
 
 Het plaatsen van Vm's in één regio vermindert de fysieke afstand tussen de exemplaren. Als u ze in één beschikbaarheids zone plaatst, worden deze ook fysiek dichter bij elkaar gebracht. Naarmate de Azure-footprint groeit, kan één beschikbaarheids zone echter meerdere fysieke data centers omvatten, wat kan leiden tot een netwerk latentie die van invloed is op uw toepassing. 
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 81a5f28f0bf2f7f7ea005a4d9fe8d42337f6d0b9
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 02dc2b4e86c9d0bad0c8274967aa4da77440ec01
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103393"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498758"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -54,12 +54,12 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Selecteer **Registreren** om de toepassing te maken.
 > 1. Selecteer **Verificatie** onder **Beheren**.
 > 1. Selecteer **Een platform toevoegen** > **Mobiele en desktoptoepassingen**.
-> 1. Selecteer `https://login.microsoftonline.com/common/oauth2/nativeclient` in de sectie **Omleidings-URI's**.
+> 1. Selecteer in de sectie **omleidings** -uri's `https://login.microsoftonline.com/common/oauth2/nativeclient` de optie en in **aangepaste omleidings-uri's** toevoegen `ms-appx-web://microsoft.aad.brokerplugin/{client_id}` waar `{client_id}` de toepassing (client) ID van uw toepassing (dezelfde GUID die in het selectie vakje wordt weer gegeven `msal{client_id}://auth` ).
 > 1. Selecteer **Configureren**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
-> Voor het code voorbeeld in deze Snelstartgids werkt u een **omleidings-URI** van toe `https://login.microsoftonline.com/common/oauth2/nativeclient` .
+> Voor het code voorbeeld in deze Snelstartgids werkt u een **omleidings-URI** van `https://login.microsoftonline.com/common/oauth2/nativeclient` en toe `ms-appx-web://microsoft.aad.brokerplugin/{client_id}` .
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Deze wijziging voor mij maken]()
 >

@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.custom: how-to, data4ml
-ms.openlocfilehash: 554c815e6384115d56611e497f49a2c97ed15e38
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0e2230bdcf2b2f4358db4a0d600506b711f39c45
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461442"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508228"
 ---
 # <a name="connect-to-data-with-the-azure-machine-learning-studio"></a>Verbinding maken met gegevens met behulp van de Azure Machine Learning Studio
 
@@ -31,7 +31,7 @@ In de volgende tabel worden de voor delen van data stores en gegevens sets gedef
 
 Zie het artikel over [beveiligde toegang](concept-data.md#data-workflow) als u wilt weten waar gegevens opslag en gegevens sets passen in de algehele werk stroom van Azure machine learning Data Access.
 
-Raadpleeg de volgende artikelen voor een code-eerste ervaring om de [Azure machine learning python-SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py) te gebruiken voor het volgende:
+Raadpleeg de volgende artikelen voor een code-eerste ervaring om de [Azure machine learning python-SDK](/python/api/overview/azure/ml/) te gebruiken voor het volgende:
 * [Verbinding maken met Azure Storage-services met gegevens opslag](how-to-access-data.md). 
 * [Azure machine learning gegevens sets maken](how-to-create-register-datasets.md). 
 
@@ -117,9 +117,9 @@ Het gegevens Profiel van Azure Machine Learning gegevensset bevat met name het v
 |Profiel| In-line visualisatie op basis van het type dat is afgeleid. Teken reeksen, Booleaanse waarden en datums hebben bijvoorbeeld een aantal aantallen, terwijl decimalen (cijfers) geschatte histogrammen hebben. Zo kunt u een goed inzicht krijgen in de distributie van de gegevens.
 |Type distributie| In-line waarde van het aantal typen in een kolom. Nullen zijn hun eigen type, waardoor deze visualisatie nuttig is voor het detecteren van oneven of ontbrekende waarden.
 |Type|Het type van de kolom is afgeleid. Mogelijke waarden zijn: teken reeksen, booleans, datums en decimalen.
-|Min.| Minimum waarde van de kolom. Lege vermeldingen worden weer gegeven voor functies waarvan het type geen inherente ordening (zoals Boole-waarden) heeft.
-|Max.| De maximum waarde van de kolom. 
-|Aantal| Totaal aantal ontbrekende en niet-ontbrekende vermeldingen in de kolom.
+|Min| Minimum waarde van de kolom. Lege vermeldingen worden weer gegeven voor functies waarvan het type geen inherente ordening (zoals Boole-waarden) heeft.
+|Max| De maximum waarde van de kolom. 
+|Count| Totaal aantal ontbrekende en niet-ontbrekende vermeldingen in de kolom.
 |Niet-ontbrekend aantal| Het aantal vermeldingen in de kolom die niet ontbreken. Lege teken reeksen en fouten worden beschouwd als waarden, zodat ze niet bijdragen aan het aantal niet-ontbrekende items.
 |Kwantielen| Geschatte waarden bij elke quantile om een idee te geven van de distributie van de gegevens.
 |Gemiddeld| Reken kundige gemiddelde of gemiddelde van de kolom.

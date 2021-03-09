@@ -10,12 +10,12 @@ ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
 ms.date: 01/02/2021
-ms.openlocfilehash: 7b5bc77375d684340116a21b7f95cf576d99dad2
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 6003ca9156d8553604d7ebbf94c5c3373d077f0f
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065351"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500696"
 ---
 # <a name="execute-python-script-module"></a>Python-script module uitvoeren
 
@@ -93,7 +93,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 ```
 
 ## <a name="upload-files"></a>Bestanden uploaden
-De script module voor het uitvoeren van python ondersteunt het uploaden van bestanden met behulp van de [Azure machine learning PYTHON SDK](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#upload-file-name--path-or-stream-).
+De script module voor het uitvoeren van python ondersteunt het uploaden van bestanden met behulp van de [Azure machine learning PYTHON SDK](/python/api/azureml-core/azureml.core.run%28class%29#upload-file-name--path-or-stream-).
 
 In het volgende voor beeld ziet u hoe u een afbeeldings bestand uploadt in de script module voor het uitvoeren van python:
 

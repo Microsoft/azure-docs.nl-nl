@@ -75,14 +75,14 @@
       href: sample-get-cloud-service.md
     - name: Een Cloud service opnieuw instellen
       href: sample-reset-cloud-service.md
-- name: Referentie
+- name: Naslaginformatie
   items:
     - name: Voor beelden van implementatie bestanden
       href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
     - name: AZ. Microsoftcompute-module
       href: 'https://www.powershellgallery.com/packages/Az.CloudService/0.1.0'
     - name: PowerShell-cmdlets
-      href: /powershell/module/az.cloudservice/?view=azps-5.4.0#cloudservice
+      href: /powershell/module/az.cloudservice/#cloudservice
     - name: Naslag informatie voor ARM-sjablonen
       href: /azure/templates/microsoft.compute/cloudservices
     - name: REST

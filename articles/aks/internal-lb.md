@@ -5,12 +5,12 @@ description: Leer hoe u een interne load balancer maakt en gebruikt om uw servic
 services: container-service
 ms.topic: article
 ms.date: 03/04/2019
-ms.openlocfilehash: ec8fd1f1b32d5bba6dc4dc756e1f95f4a74f9a96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4c2c0866aa9a721a73e1eb8fa230f0022cf6b8ca
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87285880"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505627"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Een interne load balancer gebruiken met Azure Kubernetes service (AKS)
 
@@ -23,11 +23,11 @@ Als u de toegang tot uw toepassingen in azure Kubernetes service (AKS) wilt bepe
 
 In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
 
-Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
-De AKS-Cluster service-principal moet machtigingen hebben om netwerk bronnen te beheren als u een bestaand subnet of een bestaande resource groep gebruikt. Zie kubenet- [netwerken gebruiken met uw eigen IP-adresbereiken in azure Kubernetes service (AKS)][use-kubenet] of [Azure cni-netwerken configureren in de Azure Kubernetes-service (AKS)][advanced-networking]voor meer informatie. Als u uw load balancer configureert om een [IP-adres in een ander subnet][different-subnet]te gebruiken, moet u ervoor zorgen dat de service-principal van de AKS-cluster ook lees toegang heeft tot dat subnet.
+De identiteit van het AKS-cluster cluster moet machtigingen hebben om netwerk bronnen te beheren als u een bestaand subnet of een bestaande resource groep gebruikt. Zie kubenet- [netwerken gebruiken met uw eigen IP-adresbereiken in azure Kubernetes service (AKS)][use-kubenet] of [Azure cni-netwerken configureren in de Azure Kubernetes-service (AKS)][advanced-networking]voor meer informatie. Als u uw load balancer configureert voor het gebruik [van een IP-adres in een ander subnet][different-subnet], zorg er dan voor dat de identiteit van het AKS-cluster ook lees toegang heeft tot dat subnet.
 
-In plaats van een Service-Principal kunt u ook de door het systeem toegewezen beheerde identiteit voor machtigingen gebruiken. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie. Zie [AKS toegang tot andere Azure-resources delegeren][aks-sp]voor meer informatie over machtigingen.
+Zie [AKS toegang tot andere Azure-resources delegeren][aks-sp]voor meer informatie over machtigingen.
 
 ## <a name="create-an-internal-load-balancer"></a>Een interne load balancer maken
 
@@ -110,7 +110,7 @@ internal-app   LoadBalancer   10.1.15.188   10.0.0.35     80:31669/TCP   1m
 ```
 
 > [!NOTE]
-> Mogelijk moet u de service-principal voor uw AKS-cluster de rol *Network contributor* verlenen aan de resource groep waar uw virtuele Azure-netwerk resources zijn geïmplementeerd. Bekijk de service-principal met [AZ AKS show][az-aks-show], zoals `az aks show --resource-group myResourceGroup --name myAKSCluster --query "servicePrincipalProfile.clientId"` . Als u een roltoewijzing wilt maken, gebruikt u de opdracht [AZ Role Assignment Create][az-role-assignment-create] .
+> Mogelijk moet u de cluster-id voor uw AKS-cluster de rol *Network contributor* verlenen aan de resource groep waar uw virtuele Azure-netwerk resources zijn geïmplementeerd. Bekijk de cluster identiteit met [AZ AKS show][az-aks-show], zoals `az aks show --resource-group myResourceGroup --name myAKSCluster --query "identity"` . Als u een roltoewijzing wilt maken, gebruikt u de opdracht [AZ Role Assignment Create][az-role-assignment-create] .
 
 ## <a name="specify-a-different-subnet"></a>Geef een ander subnet op
 

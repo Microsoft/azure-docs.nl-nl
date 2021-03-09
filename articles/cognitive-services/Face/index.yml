@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 9/01/2020
-  ms.openlocfilehash: cbaa9c1b499dc2374037af69cd1aa1f0847e6589
-  ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+  ms.openlocfilehash: dc7ef676663e94d6ad03a5cfed8ae68cfcfc26c3
+  ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/07/2021
-  ms.locfileid: "102426277"
+  ms.lasthandoff: 03/09/2021
+  ms.locfileid: "102507735"
 landingContent:
 - title: Over de Face-service
   linkLists:
@@ -97,7 +97,7 @@ landingContent:
     - text: .NET SDK
       url: /dotnet/api/overview/azure/cognitiveservices/client/faceapi
     - text: Python-SDK
-      url: /python/api/azure-cognitiveservices-vision-face/?view=azure-python
+      url: /python/api/azure-cognitiveservices-vision-face/
     - text: Java-SDK
       url: /java/api/overview/azure/cognitiveservices/client/faceapi
     - text: Node.js SDK

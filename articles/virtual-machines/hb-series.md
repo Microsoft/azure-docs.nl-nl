@@ -1,25 +1,25 @@
 ---
 title: HB-serie
 description: Specificaties voor de virtuele machines uit de HB-serie.
-author: ju-shim
+author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: conceptual
-ms.date: 10/09/2020
+ms.date: 03/08/2021
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 56bb942418642f5b884e285e0135064aa5d16963
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 65bf943c57151d209e60aff67892c3ef9c71cb36
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102203080"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502175"
 ---
 # <a name="hb-series"></a>HB-serie
 
-Vm's uit de HB-serie zijn geoptimaliseerd voor toepassingen die worden aangedreven door geheugen bandbreedte, zoals een Hydraulic-Dynamics, een expliciete, beperkte element analyse en weer modellen. HB Vm's feature 60 AMD EPYC 7551-processor kernen, 4 GB RAM per CPU-kern en zonder gelijktijdige multi threading. Een HB-VM biedt tot 260 GB/sec. geheugen bandbreedte.
+Vm's uit de HB-serie zijn geoptimaliseerd voor toepassingen die worden aangedreven door geheugen bandbreedte, zoals een Hydraulic-dynamiek, een expliciete, geeindigd element analyse en weer modellen. HB Vm's feature 60 AMD EPYC 7551-processor kernen, 4 GB RAM per CPU-kern en zonder gelijktijdige multi threading. Een HB-VM biedt tot 260 GB/sec. geheugen bandbreedte.
 
-HB-serie-Vm's functie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's zijn verbonden met een niet-blokkerende Fat-structuur voor geoptimaliseerde en consistente RDMA-prestaties. Deze Vm's ondersteunen adaptieve route ring en het dynamische Connected Trans Port (DCT, in aanvulling op Standard RC en UD Transports). Deze functies verbeteren de prestaties, schaal baarheid en consistentie van toepassingen, en het gebruik ervan wordt ten zeerste aanbevolen.
+HB-serie-Vm's functie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's zijn verbonden met een niet-blokkerende Fat-structuur voor geoptimaliseerde en consistente RDMA-prestaties. Deze Vm's ondersteunen adaptieve route ring en het dynamisch verbonden Trans Port (DCT, naast de standaard-RC-en UD-transporten). Deze functies verbeteren de prestaties, schaal baarheid en consistentie van toepassingen en het gebruik ervan wordt aanbevolen.
 
 [ACU](acu.md): 199-216<br>
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
@@ -33,7 +33,11 @@ HB-serie-Vm's functie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's zijn verbond
 
 | Grootte | vCPU | Processor | Geheugen (GiB) | Geheugen bandbreedte GB/s | Basis-CPU-frequentie (GHz) | Frequentie van alle kernen (GHz, piek) | Frequentie met één kern geheugen (GHz, piek) | RDMA-prestaties (GB/s) | MPI-ondersteuning | Tijdelijke opslag (GiB) | Max. aantal gegevensschijven | Maximum aantal Ethernet-Vnic's |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_HB60rs | 60 | AMD EPYC 7551 | 240 | 263 | 2,0 | 2.55 | 2.55 | 100 | Alles | 700 | 4 | 8 |
+| Standard_HB60rs | 60 | AMD EPYC 7551 | 228 | 263 | 2,0 | 2.55 | 2.55 | 100 | Alles | 700 | 4 | 8 |
+
+Meer informatie over de onderliggende [architectuur](./workloads/hpc/hb-series-overview.md)en de verwachte [prestaties](./workloads/hpc/hb-series-performance.md) van de HB-serie VM.
+
+[!INCLUDE [hpc-include.md](./workloads/hpc/includes/hpc-include.md)]
 
 [!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
 
@@ -47,7 +51,7 @@ HB-serie-Vm's functie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's zijn verbond
 - [Vorige generaties](sizes-previous-gen.md)
 
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [het configureren van uw vm's, het](./workloads/hpc/configure.md) [inschakelen van Infiniband](./workloads/hpc/enable-infiniband.md), het [instellen van MPI](./workloads/hpc/setup-mpi.md)en het optimaliseren van HPC-toepassingen voor Azure bij [HPC-workloads](./workloads/hpc/overview.md).
-- Lees over de laatste aankondigingen en enkele HPC-voorbeelden en -resultaten in de [Azure Compute Tech Community-blogs](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
+
+- Meer informatie over de laatste aankondigingen, HPC-voor beelden en prestatie resultaten vindt u in de blogs van de [technische community van Azure Compute](https://techcommunity.microsoft.com/t5/azure-compute/bg-p/AzureCompute).
 - Zie [High Performance Computing (HPC) op Azure](/azure/architecture/topics/high-performance-computing/) voor een gedetailleerdere architectuurweergave van HPC-workloads die worden uitgevoerd.
 - Meer informatie over hoe [Azure Compute units (ACU)](acu.md) u kan helpen bij het vergelijken van de reken prestaties in azure-sku's.

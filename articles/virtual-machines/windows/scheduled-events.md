@@ -11,12 +11,12 @@ ms.date: 06/01/2020
 ms.author: ericrad
 ms.reviwer: mimckitt
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0dcfdfbd480cdc708fced38d421b7588c5224a52
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3a388ade2b44260bfa21e22866d85a46e482bc97
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101673318"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499948"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Azure Metadata Service: Scheduled Events voor Windows-Vm's
 
@@ -137,7 +137,7 @@ Als er geplande gebeurtenissen zijn, bevat het antwoord een matrix met gebeurten
 | Gebeurtenis | De wereld wijde unieke id voor deze gebeurtenis. <br><br> Voorbeeld: <br><ul><li>602d9444-d2cd-49c7-8624-8643e7171297  |
 | EventType | Dit heeft invloed op deze gebeurtenis. <br><br> Waarden: <br><ul><li> `Freeze`: De virtuele machine is gepland om enkele seconden te worden onderbroken. De CPU-en netwerk verbinding wordt mogelijk onderbroken, maar er is geen invloed op het geheugen of geopende bestanden.<li>`Reboot`: De virtuele machine is gepland voor opnieuw opstarten (niet-permanent geheugen gaat verloren). <li>`Redeploy`: De virtuele machine is ingepland om te worden verplaatst naar een ander knoop punt (tijdelijke schijven gaan verloren). <li>`Preempt`: De locatie van de virtuele machine wordt verwijderd (tijdelijke schijven gaan verloren). <li> `Terminate`: De virtuele machine is gepland om te worden verwijderd. |
 | ResourceType | Type resource waarop deze gebeurtenis betrekking heeft. <br><br> Waarden: <ul><li>`VirtualMachine`|
-| Resources| Lijst met resources die deze gebeurtenis beïnvloedt. De lijst is gegarandeerd dat machines uit Maxi maal één [update domein](../manage-availability.md)worden opgenomen, maar bevat mogelijk niet alle computers in de UD. <br><br> Voorbeeld: <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
+| Resources| Lijst met resources die deze gebeurtenis beïnvloedt. De lijst is gegarandeerd dat machines uit Maxi maal één [update domein](../availability.md)worden opgenomen, maar bevat mogelijk niet alle computers in de UD. <br><br> Voorbeeld: <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | EventStatus | De status van deze gebeurtenis. <br><br> Waarden: <ul><li>`Scheduled`: Deze gebeurtenis is gepland om te starten na het tijdstip dat is opgegeven in de `NotBefore` eigenschap.<li>`Started`: Deze gebeurtenis is gestart.</ul> Er `Completed` is ooit geen of vergelijk bare status. De gebeurtenis wordt niet meer geretourneerd wanneer de gebeurtenis is voltooid.
 | NotBefore| Tijdstip waarna deze gebeurtenis kan worden gestart. <br><br> Voorbeeld: <br><ul><li> Ma, 19 sep 2016 18:29:47 GMT  |
 | Beschrijving | Beschrijving van deze gebeurtenis. <br><br> Voorbeeld: <br><ul><li> De hostserver ondergaat onderhoud. |

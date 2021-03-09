@@ -8,14 +8,14 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 03/07/2021
 ms.author: yelevin
-ms.openlocfilehash: 56587ae91de086cccb7cc85c125f935be2a56f73
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 00e634ec62d1fda4b1f2763a8c69b8e950d54beb
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102491266"
+ms.locfileid: "102505185"
 ---
-# <a name="connect-azure-key-vault-diagnostics-and-auditing-logs"></a>Azure Key Vault diagnostische gegevens en controle logboeken verbinden
+# <a name="connect-azure-key-vault-diagnostics-logs"></a>Azure Key Vault Diagnostische logboeken verbinden
 
 Azure Key Vault is een Cloud service voor het veilig opslaan en openen van geheimen. Een geheim is alles wat u de toegang tot, zoals API-sleutels, wacht woorden, certificaten of cryptografische sleutels, nauw keurig wilt beheren.
 

@@ -6,12 +6,12 @@ ms.author: elhorton
 ms.service: iot-develop
 ms.topic: overview
 ms.date: 02/11/2021
-ms.openlocfilehash: 4ac675d0b6c2ce1e735a8ad530bc004f993a1833
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: fa10ddad8d2fbbc414f0ccaf16b9b99fae0b0786
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102435491"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505032"
 ---
 # <a name="overview-of-azure-iot-device-sdks"></a>Overzicht van de Sdk's van het Azure IoT-apparaat
 
@@ -116,7 +116,7 @@ Deze Sdk's kunnen worden uitgevoerd op elk apparaat dat een meertalige taal vers
 * [Voorbeelden](https://github.com/Azure/azure-iot-sdk-python/tree/master/azure-iot-device/samples)
 * [Pakket](https://pypi.org/project/azure-iot-device/)
 * [Referentie documentatie](/python/api/azure-iot-device)
-* [Naslag documentatie voor Edge-modules](/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python&preserve-view=true)
+* [Naslag documentatie voor Edge-modules](/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient)
 
 ### <a name="service-sdks"></a>Service-SDK's
 Azure IoT biedt ook service-Sdk's waarmee u toepassingen aan de oplossings zijde kunt bouwen om apparaten te beheren, inzichten te verkrijgen, gegevens te visualiseren en meer. Deze Sdk's zijn specifiek voor elke Azure IoT-service en zijn beschikbaar in C#, Java, java script en python om uw ontwikkel ervaring te vereenvoudigen. 
@@ -147,7 +147,7 @@ Naslag documentatie voor voor beelden van de **Java ADT Service SDK**: [github-o
 
 Naslag documentatie voor **Node.js ADT Service SDK**: [github-opslag plaats](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core)  |  [pakket](https://www.npmjs.com/package/@azure/digital-twins-core)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/digital-twins-core/samples)  |  [](/javascript/api/@azure/digital-twins-core/)
 
-**ADT van python-Service-SDK**: github-naslag documentatie voor [opslag plaats](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)  |  [pakket](https://pypi.org/project/azure-digitaltwins-core/)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core/samples)  |  [](/python/api/azure-digitaltwins-core/azure.digitaltwins.core?view=azure-python&preserve-view=true)
+**ADT van python-Service-SDK**: github-naslag documentatie voor [opslag plaats](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core)  |  [pakket](https://pypi.org/project/azure-digitaltwins-core/)  |  [voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/digitaltwins/azure-digitaltwins-core/samples)  |  [](/python/api/azure-digitaltwins-core/azure.digitaltwins.core)
 
 #### <a name="device-provisioning-service"></a>Device Provisioning Service
 

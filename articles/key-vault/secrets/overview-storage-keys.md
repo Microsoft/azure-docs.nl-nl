@@ -10,12 +10,12 @@ ms.author: mbaldwin
 manager: rkarlin
 ms.date: 09/18/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8473d3a19a86027b5b01af59d24833dc40cd1fe9
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
-ms.translationtype: HT
+ms.openlocfilehash: e89716d0560cbf7960cb7bde67156c8df0045a31
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95242352"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102499217"
 ---
 # <a name="manage-storage-account-keys-with-key-vault-and-the-azure-cli"></a>Sleutels voor opslagaccounts beheren met Key Vault en de Azure CLI
 > [!IMPORTANT]
@@ -56,7 +56,7 @@ U moet eerst het volgende doen om deze handleiding te voltooien:
 
 ### <a name="connect-to-your-azure-account"></a>Verbinding maken met uw Azure-account
 
-Verifieer uw Azure CLI-sessie met behulp van de [az login](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0)-opdrachten.
+Verifieer uw Azure CLI-sessie met behulp van de [az login](/powershell/module/az.accounts/connect-azaccount)-opdrachten.
 
 ```azurecli-interactive
 az login

@@ -5,12 +5,12 @@ description: Meer informatie over het maken en gebruiken van een statisch IP-adr
 services: container-service
 ms.topic: article
 ms.date: 11/14/2020
-ms.openlocfilehash: 22fd099633556fa9ddce575c2ac238b4950667cb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 102df48ca22fb996e0f4d9c402b8ce8f0fa80f2c
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651886"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509469"
 ---
 # <a name="use-a-static-public-ip-address-and-dns-label-with-the-azure-kubernetes-service-aks-load-balancer"></a>Gebruik een statisch openbaar IP-adres en een DNS-label met de Azure Kubernetes-service (AKS) load balancer
 
@@ -63,16 +63,14 @@ $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicI
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>Een service maken met behulp van het statische IP-adres
 
-Voordat u een service maakt, moet u ervoor zorgen dat de service-principal die wordt gebruikt door het AKS-cluster gedelegeerde machtigingen heeft voor de andere resource groep. Bijvoorbeeld:
+Voordat u een service maakt, moet u ervoor zorgen dat de cluster-id die wordt gebruikt door het AKS-cluster gedelegeerde machtigingen heeft voor de andere resource groep. Bijvoorbeeld:
 
 ```azurecli-interactive
 az role assignment create \
-    --assignee <SP Client ID> \
+    --assignee <Client ID> \
     --role "Network Contributor" \
     --scope /subscriptions/<subscription id>/resourceGroups/<resource group name>
 ```
-
-U kunt ook de door het systeem toegewezen beheerde identiteit voor machtigingen gebruiken in plaats van de Service-Principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
 > [!IMPORTANT]
 > Als u uw uitgaande IP-adres hebt aangepast, moet u ervoor zorgen dat uw cluster identiteit machtigingen heeft voor zowel het uitgaande open bare IP-adres als dit inkomende open bare IP.

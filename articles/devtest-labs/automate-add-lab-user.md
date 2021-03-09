@@ -3,12 +3,12 @@ title: Het toevoegen van een Lab-gebruiker in Azure DevTest Labs automatiseren |
 description: Dit artikel laat u zien hoe u het toevoegen van een gebruiker aan een lab in Azure DevTest Labs kunt automatiseren met Azure Resource Manager sjablonen, Power shell en CLI.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 61853efacc5974b81d46b2b8cca0f2796672d72d
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: 6dddf06289da79e16cbd7e64869fa77f0a40dd22
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327957"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102508823"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Automatisch toevoegen van een Lab-gebruiker aan een lab in Azure DevTest Labs
 Met Azure DevTest Labs kunt u snel ontwikkel-en test omgevingen met self-service maken met behulp van de Azure Portal. Als u echter verschillende teams en verschillende DevTest Labs-instanties hebt, kan het maken van het aanmaak proces tijd besparen. Met [Azure Resource Manager sjablonen](https://github.com/Azure/azure-devtestlab/tree/master/Environments) kunt u Labs, Lab-vm's, aangepaste installatie kopieën en formules maken en gebruikers op een geautomatiseerde manier toevoegen. Dit artikel is specifiek gericht op het toevoegen van gebruikers aan een DevTest Labs-exemplaar.
@@ -100,7 +100,7 @@ De roldefinitie-ID is de teken reeks-id voor de bestaande functie definitie. De 
 
 De abonnements-ID wordt verkregen met behulp van de `subscription().subscriptionId` sjabloon functie.  
 
-U moet de functie definitie voor de `DevTest Labs User` ingebouwde rol ophalen. Als u de GUID voor de [gebruikersrol DevTest Labs](../role-based-access-control/built-in-roles.md#devtest-labs-user) wilt ophalen, kunt u de [roltoewijzingen gebruiken rest API](/rest/api/authorization/roleassignments) of de cmdlet [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition?view=azps-1.8.0) .
+U moet de functie definitie voor de `DevTest Labs User` ingebouwde rol ophalen. Als u de GUID voor de [gebruikersrol DevTest Labs](../role-based-access-control/built-in-roles.md#devtest-labs-user) wilt ophalen, kunt u de [roltoewijzingen gebruiken rest API](/rest/api/authorization/roleassignments) of de cmdlet [Get-AzRoleDefinition](/powershell/module/az.resources/get-azroledefinition) .
 
 ```powershell
 $dtlUserRoleDefId = (Get-AzRoleDefinition -Name "DevTest Labs User").Id

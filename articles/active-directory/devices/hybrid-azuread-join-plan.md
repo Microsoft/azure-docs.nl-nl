@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 419823086fd7ba05ba5023216be302576350e30a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cadba181ea7d6a12ca64c78f3c7c58654d5f756f
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101687279"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102500805"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Procedure: de implementatie van uw hybride Azure Active Directory-koppeling plannen
 
@@ -171,7 +171,7 @@ De onderstaande tabel bevat gedetailleerde informatie over de ondersteuning voor
 | ----- | ----- | ----- | ----- |
 | Bare | Federatief | Van 1703 release | Algemeen beschikbaar |
 | Niet-routeerbaar | Federatief | Van 1803 release | Algemeen beschikbaar |
-| Bare | Beheerd | Van 1803 release | Azure AD SSPR op Windows-vergrendelings scherm is algemeen beschikbaar. |
+| Bare | Beheerd | Van 1803 release | Azure AD SSPR op Windows-vergrendelings scherm is algemeen beschikbaar. De on-premises UPN moet worden gesynchroniseerd met het     `onPremisesUserPrincipalName` kenmerk in azure AD |
 | Niet-routeerbaar | Beheerd | Niet ondersteund | |
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -2,13 +2,13 @@
 title: Azure Red Hat open Shift v4. x configureren met container Insights | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u bewaking configureert voor een Kubernetes-cluster met Azure Monitor dat wordt gehost op Azure Red Hat open Shift versie 4 of hoger.
 ms.topic: conceptual
-ms.date: 06/30/2020
-ms.openlocfilehash: a9e04818f1a915a853d32b5db408a521cdae9f4c
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/05/2021
+ms.openlocfilehash: 02cb794463b965ebafef0b6861477dbf69227511
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101713929"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506409"
 ---
 # <a name="configure-azure-red-hat-openshift-v4x-with-container-insights"></a>Azure Red Hat open Shift v4. x configureren met container Insights
 
@@ -61,21 +61,8 @@ Ga als volgt te werk om bewaking in te scha kelen voor een Azure Red Hat open Sh
 
     `curl -o enable-monitoring.sh -L https://aka.ms/enable-monitoring-bash-script`
 
-1. Voer de volgende opdrachten uit om de *kubeContext* van uw cluster te identificeren
+1. Maak verbinding met ARO v4-cluster met behulp van de instructies in de [zelf studie: verbinding maken met een Azure Red Hat open Shift 4-cluster](../../openshift/tutorial-connect-cluster.md).
 
-    ```
-    adminUserName=$(az aro list-credentials -g $clusterResourceGroup -n $clusterName --query 'kubeadminUsername' -o tsv)
-    adminPassword=$(az aro list-credentials -g $clusterResourceGroup -n $clusterName --query 'kubeadminPassword' -o tsv)
-    apiServer=$(az aro show -g $clusterResourceGroup -n $clusterName --query apiserverProfile.url -o tsv)
-    oc login $apiServer -u $adminUserName -p $adminPassword
-    # openshift project name for Container insights
-    openshiftProjectName="azure-monitor-for-containers"
-    oc new-project $openshiftProjectName
-    # get the kube config context
-    kubeContext=$(oc config current-context)
-    ```
-
-1. Kopieer de waarde voor later gebruik.
 
 ### <a name="integrate-with-an-existing-workspace"></a>Integreren met een bestaande werk ruimte
 
@@ -113,17 +100,16 @@ Als u geen werk ruimte hebt om op te geven, kunt u door gaan naar de sectie de [
 
 1. Zoek in de uitvoer de naam van de werk ruimte en kopieer de volledige Resource-ID van die Log Analytics werk ruimte onder de veld **-id**.
 
-1. Voer de volgende opdracht uit om controle in te scha kelen. Vervang de waarden voor de `azureAroV4ClusterResourceId` `logAnalyticsWorkspaceResourceId` `kubeContext` para meters, en.
+1. Voer de volgende opdracht uit om controle in te scha kelen. Vervang de waarden voor de `azureAroV4ClusterResourceId` `logAnalyticsWorkspaceResourceId` para meters en.
 
     ```bash
-    export azureAroV4ClusterResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>”
-    export logAnalyticsWorkspaceResourceId=“/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>”
-    export kubeContext="<kubeContext name of your ARO v4 cluster>"  
+    export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
+    export logAnalyticsWorkspaceResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/microsoft.operationalinsights/workspaces/<workspaceName>" 
     ```
 
     Dit is de opdracht die u moet uitvoeren nadat u de drie variabelen hebt gevuld met export opdrachten:
 
-    `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext --workspace-id $logAnalyticsWorkspaceResourceId`
+    `bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --workspace-id $logAnalyticsWorkspaceResourceId`
 
 Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens voor de status voor het cluster kunt weer geven.
 
@@ -135,16 +121,15 @@ In dit voor beeld bent u niet verplicht een bestaande werk ruimte vooraf te make
 
 De standaardwerk ruimte die wordt gemaakt, heeft de indeling *DefaultWorkspace- \<GUID> - \<Region>*.  
 
-Vervang de waarden voor de `azureAroV4ClusterResourceId` `kubeContext` para meters en.
+Vervang de waarde voor de `azureAroV4ClusterResourceId` para meter.
 
 ```bash
 export azureAroV4ClusterResourceId="/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RedHatOpenShift/OpenShiftClusters/<clusterName>"
-export kubeContext="<kubeContext name of your ARO v4 cluster>"
 ```
 
 Bijvoorbeeld:
 
-`bash enable-monitoring.sh --resource-id $azureAroV4ClusterResourceId --kube-context $kubeContext`
+' bash enable-monitoring.sh--resource-id $azureAroV 4ClusterResourceId 
 
 Nadat u bewaking hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de metrische gegevens van de status voor het cluster kunt weer geven.
 

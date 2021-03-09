@@ -10,12 +10,12 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 381cba23175086a4d9bac7cc0ba71807bc248056
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4298c10d6344a1b0173a2ea79aeba9b8bbfffe4c
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101751129"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510872"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -93,6 +93,24 @@ const connectionString = process.env['COMMUNICATION_SERVICES_CONNECTION_STRING']
 const identityClient = new CommunicationIdentityClient(connectionString);
 ```
 
+U kunt ook het eind punt en de toegangs sleutel afzonderlijk scheiden.
+```javascript
+// This code demonstrates how to fetch your endpoint and access key
+// from an environment variable.
+const endpoint = process.env["COMMUNICATION_SERVICES_ENDPOINT"];
+const accessKey = process.env["COMMUNICATION_SERVICES_ACCESSKEY"];
+const tokenCredential = new AzureKeyCredential(accessKey);
+// Instantiate the identity client
+const identityClient = new CommunicationIdentityClient(endpoint, tokenCredential)
+```
+
+Als u beheerde identiteit hebt ingesteld, raadpleegt u beheerde identiteiten [gebruiken](../managed-identity.md). u kunt ook verifiëren met beheerde identiteit.
+```javascript
+const endpoint = process.env["COMMUNICATION_SERVICES_ENDPOINT"];
+const tokenCredential = new DefaultAzureCredential();
+var client = new CommunicationIdentityClient(endpoint, tokenCredential);
+```
+
 ## <a name="create-an-identity"></a>Een identiteit maken
 
 Azure Communication Services onderhoudt een lichte identiteitsmap. Gebruik de methode `createUser` om een nieuwe vermelding in de map te maken met een unieke `Id`. Sla de ontvangen identiteit op met een toewijzing aan gebruikers van uw toepassing. U kunt dit bijvoorbeeld doen door ze op te slaan in de database van uw toepassingsserver. De identiteit is later vereist voor het uitgeven van toegangstokens.
@@ -104,11 +122,11 @@ console.log(`\nCreated an identity with ID: ${identityResponse.communicationUser
 
 ## <a name="issue-access-tokens"></a>Toegangstokens uitgeven
 
-Gebruik de methode `issueToken` om een toegangstoken voor een al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `communicationUser` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
+Gebruik de methode `getToken` om een toegangstoken voor een al bestaande Communication Services-identiteit uit te geven. Met de parameter `scopes` wordt een set primitieven gedefinieerd, waarmee dit toegangstoken wordt geautoriseerd. Raadpleeg de [lijst met ondersteunde acties](../../concepts/authentication.md). Er kan een nieuw exemplaar van de parameter `communicationUser` worden samengesteld op basis van de tekenreeksweergave van de Azure Communication Service-identiteit.
 
 ```javascript
 // Issue an access token with the "voip" scope for an identity
-let tokenResponse = await identityClient.issueToken(identityResponse, ["voip"]);
+let tokenResponse = await identityClient.getToken(identityResponse, ["voip"]);
 const { token, expiresOn } = tokenResponse;
 console.log(`\nIssued an access token with 'voip' scope that expires at ${expiresOn}:`);
 console.log(token);
@@ -131,7 +149,7 @@ console.log(token);
 
 ## <a name="refresh-access-tokens"></a>Toegangstokens vernieuwen
 
-Toegangstokens vernieuwen komt neer op `issueToken` aanroepen met dezelfde identiteit die is gebruikt om de tokens uit te geven. U moet ook de `scopes` voor de vernieuwde tokens opgeven. 
+Toegangstokens vernieuwen komt neer op `getToken` aanroepen met dezelfde identiteit die is gebruikt om de tokens uit te geven. U moet ook de `scopes` voor de vernieuwde tokens opgeven.
 
 ```javascript
 // // Value of identityResponse represents the Azure Communication Services identity stored during identity creation and then used to issue the tokens being refreshed
@@ -143,7 +161,7 @@ let refreshedTokenResponse = await identityClient.issueToken(identityResponse, [
 
 In sommige gevallen kunt u toegangstokens expliciet intrekken. Wanneer de gebruiker van een toepassing bijvoorbeeld het wachtwoord wijzigt dat wordt gebruikt voor verificatie bij uw service. Met de methode `revokeTokens` worden alle actieve toegangstokens die zijn verleend aan de identiteit ongeldig gemaakt.
 
-```javascript  
+```javascript
 await identityClient.revokeTokens(identityResponse);
 console.log(`\nSuccessfully revoked all access tokens for identity with ID: ${identityResponse.communicationUserId}`);
 ```

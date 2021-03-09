@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: d0ac8e0cf187d1a6a329f2c7332c9ec37018d4cf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fa92002cfef070218902aa7919900dde9fe5a9b5
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005228"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102505406"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>Een web-app maken in een App Service Environment v1
 
@@ -31,7 +31,7 @@ Deze zelf studie laat zien hoe u web-apps en App Service plannen maakt in een [a
 ## <a name="prerequisites"></a>Vereisten
 In deze zelf studie wordt ervan uitgegaan dat u een App Service Environment hebt gemaakt. Als u dit nog niet hebt gedaan, raadpleegt u [een app service Environment maken](app-service-web-how-to-create-an-app-service-environment.md). 
 
-## <a name="create-a-web-app"></a>Een webtoepassing maken
+## <a name="create-a-web-app"></a>Een web-app maken
 1. Klik in [Azure Portal](https://portal.azure.com/)op **een resource maken > web en mobiel > web-app**. 
    
     ![Scherm afbeelding die laat zien waar u een web-app maakt in de Azure Portal.][1]
@@ -105,4 +105,4 @@ Nadat u uw web-app hebt gemaakt en App Service plant, kunt u ze het beste schale
 [HowtoScale]: app-service-web-scale-a-web-app-in-an-app-service-environment.md
 [HowtoConfigureASE]: app-service-web-configure-an-app-service-environment.md
 [ResourceGroups]: ../../azure-resource-manager/management/overview.md
-[AzurePowershell]: /powershell/azure/?view=azps-3.8.0
+[AzurePowershell]: /powershell/azure/

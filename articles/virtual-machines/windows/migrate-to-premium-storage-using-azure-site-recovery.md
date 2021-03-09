@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/15/2017
 ms.author: luywang
 ms.subservice: disks
-ms.openlocfilehash: 58d4459e1869a9d1f7ccb8234c0356ac486a950c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e2bc42f8222c1c713b995a6184ac8a2d1d304d7e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975549"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502719"
 ---
 # <a name="migrate-to-premium-storage-by-using-azure-site-recovery"></a>Migreren naar Premium Storage met behulp van Azure Site Recovery
 
@@ -73,8 +73,8 @@ U kunt Site Recovery gebruiken om virtuele Azure IaaS-machines te migreren tusse
 
 ### <a name="step-1-create-a-recovery-services-vault"></a>Stap 1: een Recovery Services kluis maken
 
-1. Open [Azure Portal](https://portal.azure.com).
-2. Selecteer **een resource**  >  **beheer**-  >  **Backup en site Recovery (OMS)** maken. U kunt ook **Bladeren**  >  **Recovery Services kluis**  >  **toevoegen**selecteren.
+1. Open de [Azure Portal](https://portal.azure.com).
+2. Selecteer **een resource**  >  **beheer**-  >  **Backup en site Recovery (OMS)** maken. U kunt ook **Bladeren**  >  **Recovery Services kluis**  >  **toevoegen** selecteren.
    >[!NOTE]
    >Backup en Site Recovery waren voorheen onderdeel van het [OMS-pakket](../../azure-monitor/terminology.md#april-2018---retirement-of-operations-management-suite-brand).
 1. Geef een regio op waarnaar Vm's worden gerepliceerd. Voor het doel van de migratie in dezelfde regio selecteert u de regio waar uw bron-Vm's en bron opslag accounts zijn. 
@@ -82,17 +82,17 @@ U kunt Site Recovery gebruiken om virtuele Azure IaaS-machines te migreren tusse
 ### <a name="step-2-choose-your-protection-goals"></a>Stap 2: Kies uw beveiligings doelen 
 
 1. Open de [Azure Portal](https://portal.azure.com)op de virtuele machine waarop u de configuratie server wilt installeren.
-2. Ga naar **Recovery Services kluizen**-  >  **instellingen**  >  **site Recovery**  >  **stap 1: infrastructuur**  >  **beveiliging**voorbereiden.
+2. Ga naar **Recovery Services kluizen**-  >  **instellingen**  >  **site Recovery**  >  **stap 1: infrastructuur**  >  **beveiliging** voorbereiden.
 
    ![Bladeren naar het deel venster beveiligings doelstelling][2]
 
-3. Selecteer onder **beveiligings doel**in de vervolg keuzelijst de optie **Azure**. Selecteer in de tweede vervolg keuzelijst **niet gevirtualiseerd/Overig**en selecteer vervolgens **OK**.
+3. Selecteer onder **beveiligings doel** in de vervolg keuzelijst de optie **Azure**. Selecteer in de tweede vervolg keuzelijst **niet gevirtualiseerd/Overig** en selecteer vervolgens **OK**.
 
    ![Deel venster beveiligings doelstelling met ingevulde vakken][3]
 
 ### <a name="step-3-set-up-the-source-environment-configuration-server"></a>Stap 3: de bron omgeving instellen (configuratie server)
 
-1. Down load **Azure site Recovery Unified Setup** en de kluis registratie sleutel door te gaan naar de deel Vensters voor het voorbereiden van de bron voor het toevoegen van de **infra structuur**  >  **Prepare source**  >  **Add Server** . 
+1. Down load **Azure site Recovery Unified Setup** en de kluis registratie sleutel door te gaan naar de deel Vensters voor het voorbereiden van de bron voor het toevoegen van de **infra structuur**  >    >   . 
  
    U hebt de kluis registratie sleutel nodig om de geïntegreerde installatie uit te voeren. De sleutel blijft vijf dagen na het genereren ervan geldig.
 
@@ -108,11 +108,11 @@ U kunt Site Recovery gebruiken om virtuele Azure IaaS-machines te migreren tusse
 
       ![Voordat u begint met de pagina][6]
 
-   2. Blader in **registratie**en selecteer de registratie sleutel die u hebt gedownload van de kluis.
+   2. Blader in **registratie** en selecteer de registratie sleutel die u hebt gedownload van de kluis.
 
       ![Registratie pagina][7]
 
-   3. Selecteer bij **Details van de omgeving** of u virtuele VMware-machines wilt repliceren. Kies **Nee**in dit migratie scenario.
+   3. Selecteer bij **Details van de omgeving** of u virtuele VMware-machines wilt repliceren. Kies **Nee** in dit migratie scenario.
 
       ![Pagina omgevings Details][8]
 
@@ -125,7 +125,7 @@ U kunt Site Recovery gebruiken om virtuele Azure IaaS-machines te migreren tusse
 
 ### <a name="step-4-set-up-the-target-environment"></a>Stap 4: de doel omgeving instellen
 
-Selecteer **infrastructuur**  >  **doel**voorbereiden en geef het implementatie model op dat u wilt gebruiken voor vm's na een failover. U kunt **klassiek** of **Resource Manager**kiezen, afhankelijk van uw scenario.
+Selecteer **infrastructuur**  >  **doel** voorbereiden en geef het implementatie model op dat u wilt gebruiken voor vm's na een failover. U kunt **klassiek** of **Resource Manager** kiezen, afhankelijk van uw scenario.
 
 ![Doel venster][10]
 
@@ -154,7 +154,7 @@ Als u wilt controleren of uw configuratie server is gekoppeld aan het replicatie
    De failover-VM heeft twee tijdelijke schijven: een van de primaire virtuele machine en de andere die is gemaakt tijdens het inrichten van de virtuele machine in de herstel regio. Als u de tijdelijke schijf vóór replicatie wilt uitsluiten, installeert u de Mobility-service voordat u replicatie inschakelt. Zie [schijven uitsluiten van replicatie](../../site-recovery/vmware-azure-tutorial.md)voor meer informatie over het uitsluiten van de tijdelijke schijf.
 
 2. Schakel als volgt replicatie in:
-   1. Selecteer **toepassings**  >  **bron**repliceren. Nadat u de replicatie voor de eerste keer hebt ingeschakeld, selecteert u **+ repliceren** in de kluis om replicatie in te scha kelen voor aanvullende machines.
+   1. Selecteer **toepassings**  >  **bron** repliceren. Nadat u de replicatie voor de eerste keer hebt ingeschakeld, selecteert u **+ repliceren** in de kluis om replicatie in te scha kelen voor aanvullende machines.
    2. In stap 1 stelt u de **bron** in als uw proces server.
    3. Geef in stap 2 het implementatie model na failover op, een Premium-opslag account om te migreren naar, een Standard-opslag account om logboeken op te slaan en een virtueel netwerk te laten mislukken.
    4. Voeg in stap 3 beveiligde Vm's toe op IP-adres. (Mogelijk hebt u een intern IP-adres nodig om ze te vinden.)
@@ -167,7 +167,7 @@ Als u wilt controleren of uw configuratie server is gekoppeld aan het replicatie
 
    ![Het deel venster replicatie inschakelen met de geselecteerde bron][13]
 
-Wanneer u uw Azure Storage-omgeving ontwerpt, raden we u aan om afzonderlijke opslag accounts voor elke virtuele machine in een beschikbaarheidsset te gebruiken. U wordt aangeraden de best practice in de opslaglaag te volgen om [meerdere opslag accounts voor elke beschikbaarheidsset te gebruiken](../manage-availability.md). Het distribueren van VM-schijven naar meerdere opslag accounts helpt u bij het verbeteren van de beschik baarheid van opslag en het distribueren van de I/O over de Azure-opslag infrastructuur.
+Wanneer u uw Azure Storage-omgeving ontwerpt, raden we u aan om afzonderlijke opslag accounts voor elke virtuele machine in een beschikbaarheidsset te gebruiken. U wordt aangeraden de best practice in de opslaglaag te volgen om [meerdere opslag accounts voor elke beschikbaarheidsset te gebruiken](../availability.md). Het distribueren van VM-schijven naar meerdere opslag accounts helpt u bij het verbeteren van de beschik baarheid van opslag en het distribueren van de I/O over de Azure-opslag infrastructuur.
 
 Als uw Vm's zich in een beschikbaarheidsset bevinden, kunt u het beste meerdere Vm's meerdere keren migreren in plaats van schijven van alle Vm's te repliceren naar één opslag account. Op die manier delen de virtuele machines in dezelfde beschikbaarheidsset niet één opslag account. Gebruik het deel venster **replicatie inschakelen** voor het instellen van een bestemmings opslag account voor elke virtuele machine, één per keer.
  

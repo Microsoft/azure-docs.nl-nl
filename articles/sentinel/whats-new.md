@@ -8,12 +8,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 03/08/2021
-ms.openlocfilehash: 66294e3c59c2252042e30864dd220683106cd574
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 88ac8bb1bc804604b96d5c90025b8325a6ce4962
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102485381"
+ms.locfileid: "102503114"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -72,6 +72,9 @@ Met de CMMC-werkmap kunnen beveiligings architecten, technici, beveiligings anal
 Zelfs als u niet verplicht bent om te voldoen aan CMMC, is de CMMC-werkmap handig bij het bouwen van beveiligings bewerkings centra, het ontwikkelen van waarschuwingen, het visualiseren van bedreigingen en het geven van belang bewuste werk belastingen.
 
 Open de CMMC-werkmap in het gebied voor de Azure-Sentinel- **werkmappen** . Selecteer **sjabloon** en zoek naar **CMMC**.
+
+:::image type="content" source="media/whats-new/cmmc-guide-toggle.gif" alt-text="Scha kelen tussen de CMMC-werkmap gids in-en uitschakelen" lightbox="media/whats-new/cmmc-guide-toggle.gif":::
+
 
 Zie voor meer informatie:
 

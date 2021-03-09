@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/02/2020
 ms.reviewer: nieberts, jomore
-ms.openlocfilehash: 564ebfd0a0a8aa8500b38edbc37c9a42b02b06ec
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 639bed3dcd8f3f443b73f51efb60e7c8aeaa00a0
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101735162"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102504215"
 ---
 # <a name="use-kubenet-networking-with-your-own-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Gebruik kubenet-netwerken met uw eigen IP-adresbereiken in azure Kubernetes service (AKS)
 
@@ -25,7 +25,7 @@ Dit artikel laat u zien hoe u *kubenet* -netwerken kunt gebruiken om een subnet 
 * Het virtuele netwerk voor het AKS-cluster moet uitgaande Internet verbinding toestaan.
 * Maak niet meer dan één AKS-cluster in hetzelfde subnet.
 * AKS-clusters mogen niet worden gebruikt `169.254.0.0/16` , `172.30.0.0/16` , `172.31.0.0/16` , of `192.0.2.0/24` voor het adres bereik van de Kubernetes-service, het Pod-adres bereik of het virtuele netwerk bereik van het cluster.
-* De service-principal die wordt gebruikt door het AKS-cluster moet ten minste een rol voor [netwerkinzender](../role-based-access-control/built-in-roles.md#network-contributor) hebben in het subnet binnen het virtuele netwerk. U moet ook beschikken over de juiste machtigingen, zoals de eigenaar van het abonnement, om een service-principal te maken en de machtigingen toe te wijzen. Als u een [aangepaste rol](../role-based-access-control/custom-roles.md) wilt definiëren in plaats van de ingebouwde rol netwerk bijdrager te gebruiken, zijn de volgende machtigingen vereist:
+* De cluster-id die wordt gebruikt door het AKS-cluster moet ten minste een rol voor [netwerkinzender](../role-based-access-control/built-in-roles.md#network-contributor) hebben in het subnet binnen het virtuele netwerk. U moet ook beschikken over de juiste machtigingen, zoals de eigenaar van het abonnement, om een cluster identiteit te maken en machtigingen toe te wijzen. Als u een [aangepaste rol](../role-based-access-control/custom-roles.md) wilt definiëren in plaats van de ingebouwde rol netwerk bijdrager te gebruiken, zijn de volgende machtigingen vereist:
   * `Microsoft.Network/virtualNetworks/subnets/join/action`
   * `Microsoft.Network/virtualNetworks/subnets/read`
 

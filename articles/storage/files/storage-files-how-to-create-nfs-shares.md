@@ -8,12 +8,12 @@ ms.date: 01/22/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 2ff669d0ff3bde791de9bc7773e13d880762f898
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 778d82cd36e1f7389a443630f0982dd8774fe3ee
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102214419"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102509197"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Een NFS-share maken
 Azure-bestands shares zijn volledig beheerde bestands shares die zich in de cloud bevinden. In dit artikel wordt beschreven hoe u een bestands share maakt die gebruikmaakt van het NFS-protocol. Zie [Azure file share-protocollen](storage-files-compare-protocols.md)voor meer informatie over beide protocollen.
@@ -208,7 +208,7 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
    Install-Module Az.Storage -Repository PsGallery -RequiredVersion 2.5.2-preview -AllowClobber -AllowPrerelease -Force  
    ```
 
-   Zie [de module Azure PowerShell installeren](/powershell/azure/install-az-ps?view=azps-3.0.0&preserve-view=true) voor meer informatie over het installeren van Power shell-modules.
+   Zie [de module Azure PowerShell installeren](/powershell/azure/install-az-ps) voor meer informatie over het installeren van Power shell-modules.
    
 1. Als u een Premium-bestands share met de module Azure PowerShell wilt maken, gebruikt u de cmdlet [New-AzRmStorageShare](/powershell/module/az.storage/new-azrmstorageshare) .
 

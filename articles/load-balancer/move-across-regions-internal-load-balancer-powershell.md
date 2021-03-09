@@ -6,12 +6,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 73a9356de555e33996b92f05c3bbbabb651f1c9f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2c89ad69207a51a92b56d268c685aa2be4118cf1
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014224"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507582"
 ---
 # <a name="move-azure-internal-load-balancer-to-another-region-using-powershell"></a>Interne Azure-Load Balancer naar een andere regio verplaatsen met behulp van Power shell
 
@@ -43,18 +43,18 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 ### <a name="export-the-virtual-network-template-and-deploy-from-azure-powershell"></a>De virtuele-netwerk sjabloon exporteren en implementeren vanuit Azure PowerShell
 
-1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) en volg de instructies op het scherm:
+1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
-2.  Haal de bron-ID op van het virtuele netwerk dat u wilt verplaatsen naar de doel regio en plaats deze in een variabele met [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+2.  Haal de bron-ID op van het virtuele netwerk dat u wilt verplaatsen naar de doel regio en plaats deze in een variabele met [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork):
 
     ```azurepowershell-interactive
     $sourceVNETID = (Get-AzVirtualNetwork -Name <source-virtual-network-name> -ResourceGroupName <source-resource-group-name>).Id
 
     ```
-3. Exporteer het virtuele bron netwerk naar een. JSON-bestand naar de map waar u de opdracht [export-AzResourceGroup](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0)uitvoert:
+3. Exporteer het virtuele bron netwerk naar een. JSON-bestand naar de map waar u de opdracht [export-AzResourceGroup](/powershell/module/az.resources/export-azresourcegroup)uitvoert:
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
@@ -98,7 +98,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
     ```
   
-7. Als u regio codes wilt ophalen, kunt u de Azure PowerShell cmdlet [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) gebruiken door de volgende opdracht uit te voeren:
+7. Als u regio codes wilt ophalen, kunt u de Azure PowerShell cmdlet [Get-AzLocation](/powershell/module/az.resources/get-azlocation) gebruiken door de volgende opdracht uit te voeren:
 
     ```azurepowershell-interactive
 
@@ -196,20 +196,20 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 9.  Sla het **\<resource-group-name> JSON** -bestand op.
 
-10. Maak een resource groep in de doel regio voor het doel-VNET dat moet worden geïmplementeerd met [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0)
+10. Maak een resource groep in de doel regio voor het doel-VNET dat moet worden geïmplementeerd met [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup)
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-11. Implementeer het bewerkte **\<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Implementeer het bewerkte **\<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment):
 
     ```azurepowershell-interactive
 
     New-AzResourceGroupDeployment -ResourceGroupName <target-resource-group-name> -TemplateFile <source-resource-group-name>.json
     
     ```
-12. Als u wilt controleren of de resources zijn gemaakt in de doel regio, gebruikt u [Get-AzResourceGroup](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) en [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0):
+12. Als u wilt controleren of de resources zijn gemaakt in de doel regio, gebruikt u [Get-AzResourceGroup](/powershell/module/az.resources/get-azresourcegroup) en [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork):
     
     ```azurepowershell-interactive
 
@@ -224,19 +224,19 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
     ```
 ### <a name="export-the-internal-load-balancer-template-and-deploy-from-azure-powershell"></a>De interne load balancer sjabloon exporteren en implementeren vanuit Azure PowerShell
 
-1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) en volg de instructies op het scherm:
+1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
 
-2. Haal de resource-ID op van de interne load balancer die u wilt verplaatsen naar de doel regio en plaats deze in een variabele met [Get-AzLoadBalancer](/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
+2. Haal de resource-ID op van de interne load balancer die u wilt verplaatsen naar de doel regio en plaats deze in een variabele met [Get-AzLoadBalancer](/powershell/module/az.network/get-azloadbalancer):
 
     ```azurepowershell-interactive
     $sourceIntLBID = (Get-AzLoadBalancer -Name <source-internal-lb-name> -ResourceGroupName <source-resource-group-name>).Id
 
     ```
-3. Exporteer de interne load balancer configuratie van de bron naar een. JSON-bestand naar de map waar u de opdracht [export-AzResourceGroup](/powershell/module/az.resources/export-azresourcegroup?view=azps-2.6.0)uitvoert:
+3. Exporteer de interne load balancer configuratie van de bron naar een. JSON-bestand naar de map waar u de opdracht [export-AzResourceGroup](/powershell/module/az.resources/export-azresourcegroup)uitvoert:
    
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceIntLBID -IncludeParameterDefaultValue
@@ -263,7 +263,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
              }
     ```
  
-6. Als u de waarde van het virtuele doel netwerk dat hierboven is verplaatst, wilt bewerken, moet u eerst de resource-ID ophalen en deze vervolgens kopiëren en plakken in het **\<resource-group-name> JSON** -bestand.  Gebruik [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork?view=azps-2.6.0)om de id te verkrijgen:
+6. Als u de waarde van het virtuele doel netwerk dat hierboven is verplaatst, wilt bewerken, moet u eerst de resource-ID ophalen en deze vervolgens kopiëren en plakken in het **\<resource-group-name> JSON** -bestand.  Gebruik [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork)om de id te verkrijgen:
    
    ```azurepowershell-interactive
     $targetVNETID = (Get-AzVirtualNetwork -Name <target-vnet-name> -ResourceGroupName <target-resource-group-name>).Id
@@ -306,7 +306,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
                 },
     ```
 
-11. Als u regio codes wilt ophalen, kunt u de Azure PowerShell cmdlet [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) gebruiken door de volgende opdracht uit te voeren:
+11. Als u regio codes wilt ophalen, kunt u de Azure PowerShell cmdlet [Get-AzLocation](/powershell/module/az.resources/get-azlocation) gebruiken door de volgende opdracht uit te voeren:
 
     ```azurepowershell-interactive
 
@@ -433,12 +433,12 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
     
 13. Sla het **\<resource-group-name> JSON** -bestand op.
     
-10. Maak een resource groep in de doel regio voor de interne load balancer van het doel dat moet worden geïmplementeerd met [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). De bestaande resource groep van boven kan ook opnieuw worden gebruikt als onderdeel van dit proces:
+10. Maak een resource groep in de doel regio voor de interne load balancer van het doel dat moet worden geïmplementeerd met [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). De bestaande resource groep van boven kan ook opnieuw worden gebruikt als onderdeel van dit proces:
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
-11. Implementeer het bewerkte **\<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Implementeer het bewerkte **\<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment):
 
     ```azurepowershell-interactive
 
@@ -446,7 +446,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
     
     ```
 
-12. Als u wilt controleren of de resources zijn gemaakt in de doel regio, gebruikt u [Get-AzResourceGroup](/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) en [Get-AzLoadBalancer](/powershell/module/az.network/get-azloadbalancer?view=azps-2.6.0):
+12. Als u wilt controleren of de resources zijn gemaakt in de doel regio, gebruikt u [Get-AzResourceGroup](/powershell/module/az.resources/get-azresourcegroup) en [Get-AzLoadBalancer](/powershell/module/az.network/get-azloadbalancer):
     
     ```azurepowershell-interactive
 
@@ -462,7 +462,7 @@ De volgende stappen laten zien hoe u de interne load balancer voorbereidt voor h
 
 ## <a name="discard"></a>Verwijderen 
 
-Als u na de implementatie wilt beginnen of het virtuele netwerk wilt negeren en load balancer in het doel wilt verwijderen, verwijdert u de resource groep die is gemaakt in het doel en het verplaatste virtuele netwerk en de load balancer worden verwijderd.  Gebruik [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0)om de resource groep te verwijderen:
+Als u na de implementatie wilt beginnen of het virtuele netwerk wilt negeren en load balancer in het doel wilt verwijderen, verwijdert u de resource groep die is gemaakt in het doel en het verplaatste virtuele netwerk en de load balancer worden verwijderd.  Gebruik [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup)om de resource groep te verwijderen:
 
 ```azurepowershell-interactive
 
@@ -472,7 +472,7 @@ Remove-AzResourceGroup -Name <resource-group-name>
 
 ## <a name="clean-up"></a>Opschonen
 
-Als u de wijzigingen wilt door voeren en de NSG wilt verplaatsen, verwijdert u de bron-NSG of de resource groep, gebruikt u [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0) of [Remove-AzVirtualNetwork](/powershell/module/az.network/remove-azvirtualnetwork?view=azps-2.6.0) en [Remove-AzLoadBalancer](/powershell/module/az.network/remove-azloadbalancer?view=azps-2.6.0)
+Als u de wijzigingen wilt door voeren en de NSG wilt verplaatsen, verwijdert u de bron-NSG of de resource groep, gebruikt u [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) of [Remove-AzVirtualNetwork](/powershell/module/az.network/remove-azvirtualnetwork) en [Remove-AzLoadBalancer](/powershell/module/az.network/remove-azloadbalancer)
 
 ```azurepowershell-interactive
 

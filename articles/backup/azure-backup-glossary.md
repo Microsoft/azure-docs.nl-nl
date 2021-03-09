@@ -3,12 +3,12 @@ title: Azure Backup woordenlijst
 description: In dit artikel worden de termen gedefinieerd die nuttig zijn voor gebruik met Azure Backup.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 5b575e0f56c9cf39987e9e77850ab1d9b2e80d93
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: fb46415c8bdb463556d57004e37d741c1b9a9b57
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98723911"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502022"
 ---
 # <a name="azure-backup-glossary"></a>Azure Backup woordenlijst
 
@@ -299,6 +299,18 @@ Maakt back-ups van bestanden van het besturings systeem. Met deze back-up kunt u
 ## <a name="tenant"></a>Tenant
 
 Een tenant vertegenwoordigt een organisatie. Een tenant is een toegewezen Azure AD-exemplaar dat een organisatie of app-ontwikkelaar ontvangt wanneer deze een relatie start met Microsoft, door zich bijvoorbeeld aan te melden voor Azure, Microsoft Intune of Microsoft 365.
+
+## <a name="tier"></a>Laag
+
+Azure Backup ondersteunt momenteel de volgende opslag lagen voor back-ups:
+
+### <a name="snapshot-tier"></a>Momentopname-laag
+
+(Specifieke werkbelasting voorwaarde) In de eerste fase van de back-up van de VM wordt de moment opname die is gemaakt samen met de schijf opgeslagen. Deze vorm van opslag wordt aangeduid als moment opname-laag. Het terugzetten van de moment opname-laag is sneller (dan het herstellen van een kluis), omdat ze de wacht tijd voor moment opnamen die worden gekopieerd uit de kluis elimineren voordat de herstel bewerking wordt geactiveerd.
+
+### <a name="vault-standard-tier"></a>Laag Vault-Standard
+
+Back-upgegevens voor alle werk belastingen die door Azure Backup worden ondersteund, worden opgeslagen in kluizen met back-upopslag, een automatisch Schalende set opslag accounts die worden beheerd door Azure Backup. De laag Vault-Standard is een online opslaglaag waarmee u een geïsoleerde kopie van back-upgegevens kunt opslaan in een door micro soft beheerde Tenant, waardoor een extra beveiligingslaag wordt gemaakt. Voor werk belastingen waarbij de momentopname tier wordt ondersteund, is er een kopie van de back-upgegevens in zowel de laag snap shot als de laag kluis-Standard. Met de standaardlaag van de kluis wordt gegarandeerd dat er back-upgegevens beschikbaar zijn, zelfs als de gegevens bron waarvan een back-up wordt gemaakt, wordt verwijderd of beschadigd.
 
 ## <a name="unmanaged-disk"></a>Niet-beheerde schijf
 

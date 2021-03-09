@@ -3,12 +3,12 @@ title: Een opslag plaats voor artefacten toevoegen aan uw Lab in Azure DevTest L
 description: Meer informatie over het opgeven van uw eigen artefact opslagplaats voor uw Lab in Azure DevTest Labs om hulpprogram ma's op te slaan die niet beschikbaar zijn in de open bare artefact opslagplaats.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 5dd7d89020bf077e29b177f6871f43b52467b0d8
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: da4e345b18a46226853d71bbf66af0487f1a761f
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512008"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502192"
 ---
 # <a name="add-an-artifact-repository-to-your-lab-in-devtest-labs"></a>Een opslag plaats voor artefacten toevoegen aan uw Lab in DevTest Labs
 Met DevTest Labs kunt u een artefact opgeven die moet worden toegevoegd aan een virtuele machine op het moment dat de virtuele machine wordt gemaakt of nadat de virtuele machine is aangemaakt. Dit artefact kan een hulp programma of een toepassing zijn die u wilt installeren op de VM. Artefacten worden gedefinieerd in een JSON-bestand dat is geladen vanuit een GitHub-of Azure DevOps Git-opslag plaats.
@@ -55,7 +55,7 @@ Als u een opslag plaats aan uw Lab wilt toevoegen, moet u eerst belang rijke inf
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken
 In deze sectie worden de stappen beschreven voor het toevoegen van een artefact opslagplaats aan een lab in de Azure Portal.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **meer services** en selecteer vervolgens **DevTest Labs** in de lijst met Services.
 3. Selecteer in de lijst met Labs uw Lab.
 4. Selecteer **configuratie en beleid** in het menu links.
@@ -183,7 +183,7 @@ New-AzResourceGroupDeployment `
 Nadat de New-AzResourceGroupDeployment uitgevoerd, voert de opdracht belang rijke informatie uit, zoals de inrichtings status (moet zijn geslaagd) en eventuele uitvoer van de sjabloon.
 
 ## <a name="use-azure-powershell"></a>Azure PowerShell gebruiken
-Deze sectie biedt een voor beeld van een Power shell-script dat kan worden gebruikt om een artefact opslagplaats toe te voegen aan een lab. Als u geen Azure PowerShell hebt, raadpleegt u [Azure PowerShell installeren en configureren](/powershell/azure/?view=azps-1.2.0) voor gedetailleerde instructies om het te installeren.
+Deze sectie biedt een voor beeld van een Power shell-script dat kan worden gebruikt om een artefact opslagplaats toe te voegen aan een lab. Als u geen Azure PowerShell hebt, raadpleegt u [Azure PowerShell installeren en configureren](/powershell/azure/) voor gedetailleerde instructies om het te installeren.
 
 ### <a name="full-script"></a>Volledige script
 Dit is het volledige script, inclusief enkele uitgebreide berichten en opmerkingen:

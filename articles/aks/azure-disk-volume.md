@@ -4,12 +4,12 @@ description: Meer informatie over het hand matig maken van een volume met Azure-
 services: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.openlocfilehash: d44c8a7241308c26a3f1148ec70a7a5730dd0c89
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 7d8a038926fc6bf3234b43a82c0259ba633df11e
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900856"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102506647"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Hand matig een volume maken en gebruiken met Azure-schijven in azure Kubernetes service (AKS)
 
@@ -28,9 +28,9 @@ Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfiguree
 
 ## <a name="create-an-azure-disk"></a>Een Azure-schijf maken
 
-Wanneer u een Azure-schijf maakt voor gebruik met AKS, kunt u de schijf resource in de **knooppunt** resource groep maken. Met deze methode kan het AKS-cluster toegang krijgen tot de schijf bron en deze beheren. Als u in plaats daarvan de schijf in een afzonderlijke resource groep maakt, moet u de service-principal van de Azure Kubernetes-service (AKS) voor uw cluster de `Contributor` rol toekennen aan de resource groep van de schijf. U kunt ook de door het systeem toegewezen beheerde identiteit voor machtigingen gebruiken in plaats van de Service-Principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
+Wanneer u een Azure-schijf maakt voor gebruik met AKS, kunt u de schijf resource in de **knooppunt** resource groep maken. Met deze methode kan het AKS-cluster toegang krijgen tot de schijf bron en deze beheren. Als u in plaats daarvan de schijf in een afzonderlijke resource groep maakt, moet u de beheerde identiteit van de Azure Kubernetes-service (AKS) voor uw cluster de `Contributor` rol geven aan de resource groep van de schijf.
 
-Voor dit artikel maakt u de schijf in de knooppunt resource groep. Haal eerst de naam van de resource groep op met de opdracht [AZ AKS show][az-aks-show] en voeg de `--query nodeResourceGroup` query parameter toe. In het volgende voor beeld wordt de resource groep node opgehaald voor de AKS-cluster naam *myAKSCluster* in de naam van de resource groep *myResourceGroup* :
+Voor dit artikel maakt u de schijf in de knooppunt resource groep. Haal eerst de naam van de resource groep op met de opdracht [AZ AKS show][az-aks-show] en voeg de `--query nodeResourceGroup` query parameter toe. In het volgende voor beeld wordt de resource groep node opgehaald voor de AKS-cluster naam *myAKSCluster* in de naam van de resource groep *myResourceGroup*:
 
 ```azurecli-interactive
 $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -38,7 +38,7 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Maak nu een schijf met behulp van de opdracht [AZ Disk Create][az-disk-create] . Geef de naam op van de resource groep van het knoop punt die u hebt verkregen in de vorige opdracht en vervolgens een naam voor de schijf bron, zoals *myAKSDisk* . In het volgende voor beeld *wordt een GiB* -schijf gemaakt en wordt de id van de schijf uitgevoerd nadat deze is gemaakt. Als u een schijf moet maken voor gebruik met Windows Server-containers, voegt u de `--os-type windows` para meter toe om de schijf correct te Format teren.
+Maak nu een schijf met behulp van de opdracht [AZ Disk Create][az-disk-create] . Geef de naam op van de resource groep van het knoop punt die u hebt verkregen in de vorige opdracht en vervolgens een naam voor de schijf bron, zoals *myAKSDisk*. In het volgende voor beeld *wordt een GiB*-schijf gemaakt en wordt de id van de schijf uitgevoerd nadat deze is gemaakt. Als u een schijf moet maken voor gebruik met Windows Server-containers, voegt u de `--os-type windows` para meter toe om de schijf correct te Format teren.
 
 ```azurecli-interactive
 az disk create \
@@ -59,7 +59,7 @@ De bron-ID van de schijf wordt weer gegeven zodra de opdracht is voltooid, zoals
 
 ## <a name="mount-disk-as-volume"></a>Schijf koppelen als volume
 
-Als u de Azure-schijf wilt koppelen aan uw Pod, configureert u het volume in de container specificatie. Maak een nieuw bestand `azure-disk-pod.yaml` met de naam met de volgende inhoud. Werk `diskName` bij met de naam van de schijf die u in de vorige stap hebt gemaakt en `diskURI` met de schijf-id die wordt weer gegeven in de uitvoer van de opdracht schijf maken. Indien gewenst, werkt u de `mountPath` , die het pad is naar de Azure-schijf, in het pod. Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"* .
+Als u de Azure-schijf wilt koppelen aan uw Pod, configureert u het volume in de container specificatie. Maak een nieuw bestand `azure-disk-pod.yaml` met de naam met de volgende inhoud. Werk `diskName` bij met de naam van de schijf die u in de vorige stap hebt gemaakt en `diskURI` met de schijf-id die wordt weer gegeven in de uitvoer van de opdracht schijf maken. Indien gewenst, werkt u de `mountPath` , die het pad is naar de Azure-schijf, in het pod. Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"*.
 
 ```yaml
 apiVersion: v1

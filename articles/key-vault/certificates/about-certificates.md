@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 66f077028b9f9f7a7644a318d4447eeaaab19e98
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
-ms.translationtype: HT
+ms.openlocfilehash: b410dc89b286ef830f0d5b6a9c33fe77d380f5d1
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919927"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102507208"
 ---
 # <a name="about-azure-key-vault-certificates"></a>Informatie over Azure Key Vault-certificaten
 
@@ -91,7 +91,7 @@ Een certificaatbeleid bevat informatie over het maken en beheren van de levenscy
 
 Wanneer een volledig nieuw Key Vault-certificaat wordt gemaakt, moet er een beleid worden aangeleverd. Het beleid bepaalt hoe u deze Key Vault-certificaatversie maakt, of de volgende Key Vault-certificaatversie. Als er beleid is ingesteld, is dit niet nodig bij daaropvolgende nieuwe bewerkingen voor toekomstige versies. Er is slechts één beleidsexemplaar voor alle versies van een Key Vault-certificaat.  
 
-Op hoog niveau bevat certificaatbeleid de volgende informatie (de definities ervan zijn [hier](/powershell/module/az.keyvault/set-azkeyvaultcertificatepolicy?view=azps-4.4.0) te vinden):  
+Op hoog niveau bevat certificaatbeleid de volgende informatie (de definities ervan zijn [hier](/powershell/module/az.keyvault/set-azkeyvaultcertificatepolicy) te vinden):  
 
 -   Eigenschappen X509-certificaat: Bevat de onderwerpnaam, alternatieve onderwerpnamen en andere eigenschappen waarmee de aanvraag van een x509-certificaat wordt gemaakt.  
 -   Sleuteleigenschappen: bevat sleuteltype, sleutellengte, exporteerbare en ReuseKeyOnRenewal-velden. Met deze velden wordt de sleutelkluis geïnstrueerd hoe een sleutel moet worden gegenereerd. 

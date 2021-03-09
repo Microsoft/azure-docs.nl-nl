@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: 659a8a3b38a79cc9dcc97f6f1e9c4395426ef7a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7d21852ad684782fa1cb917442fee236d3c882b
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450263"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102502141"
 ---
 # <a name="manage-rolling-upgrades-of-cloud-applications-by-using-sql-database-active-geo-replication"></a>Rolling upgrades van Cloud toepassingen beheren door gebruik te maken van SQL Database actieve geo-replicatie
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -92,7 +92,7 @@ Om het mogelijk te maken om de upgrade te herstellen, moet u een faserings omgev
 
 1. Implementeer een faserings omgeving van de web-app in de primaire regio (6).
 2. Maak een secundaire data base in de primaire Azure-regio (7). Configureer de faserings omgeving van de web-app om er verbinding mee te maken. 
-3. Maak een andere geo-redundante, secundaire data base in de back-upregio door de secundaire data base te repliceren in de primaire regio. (Deze methode wordt *aaneengeschakelde geo-replicatie*genoemd.) (8).
+3. Maak een andere geo-redundante, secundaire data base in de back-upregio door de secundaire data base te repliceren in de primaire regio. (Deze methode wordt *aaneengeschakelde geo-replicatie* genoemd.) (8).
 4. Implementeer een faserings omgeving van het web-app-exemplaar in de back-upregio (9) en configureer deze om verbinding te maken met de geo-redundante secundaire data base die is gemaakt om (8).
 
 > [!NOTE]
@@ -110,7 +110,7 @@ ALTER DATABASE <Prod_DB>
 SET (ALLOW_CONNECTIONS = NO)
 ```
 
-2. Beëindig geo-replicatie door de verbinding van de secundaire te verbreken (11). Met deze actie wordt een onafhankelijke, volledig gesynchroniseerde kopie van de productie database gemaakt. Er wordt een upgrade voor deze data base uitgevoerd. In het volgende voor beeld wordt Transact-SQL gebruikt, maar [Power shell](/powershell/module/az.sql/remove-azsqldatabasesecondary?view=azps-1.5.0&preserve-view=true) is ook beschikbaar. 
+2. Beëindig geo-replicatie door de verbinding van de secundaire te verbreken (11). Met deze actie wordt een onafhankelijke, volledig gesynchroniseerde kopie van de productie database gemaakt. Er wordt een upgrade voor deze data base uitgevoerd. In het volgende voor beeld wordt Transact-SQL gebruikt, maar [Power shell](/powershell/module/az.sql/remove-azsqldatabasesecondary) is ook beschikbaar. 
 
 ```sql
 -- Disconnect the secondary, terminating geo-replication

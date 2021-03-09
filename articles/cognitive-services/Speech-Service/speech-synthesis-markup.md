@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: d5cf5cd4c2667af3064b74ab2b1c5cd5bd347446
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: f2d3b6b40a7b258da682d36260f6292d10635095
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102434284"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102498716"
 ---
 # <a name="improve-synthesis-with-speech-synthesis-markup-language-ssml"></a>De synthese verbeteren met Markup Language voor spraak synthese (SSML)
 
@@ -144,7 +144,7 @@ speechConfig.setProperty(
 
 # <a name="python"></a>[Python](#tab/python)
 
-Zie <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig?view=azure-python#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>voor meer informatie.
+Zie <a href="https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech.speechconfig#set-property-by-name-property-name--str--value--str-" target="_blank"> `set_property_by_name` </a>voor meer informatie.
 
 ```python
 speech_config.set_property_by_name(
@@ -250,7 +250,7 @@ De bovenstaande wijzigingen worden toegepast op het niveau van de zin, en stijle
 
 Gebruik deze tabel om te bepalen welke spraak stijlen worden ondersteund voor elke Neural-stem.
 
-| Spraak                   | Stijl                     | Description                                                 |
+| Spraak                   | Stijl                     | Beschrijving                                                 |
 |-------------------------|---------------------------|-------------------------------------------------------------|
 | `en-US-AriaNeural`      | `style="newscast-formal"` | Een formele, vertrouwende en bindende Toon voor nieuws levering |
 |                         | `style="newscast-casual"` | Een veelzijdige en informe Toon voor algemene nieuws levering        |
@@ -398,7 +398,7 @@ Gebruik het `break` element om pauzes (of onderbrekingen) tussen woorden in te v
 | `strength` | Hiermee geeft u de relatieve duur van een onderbreking op met een van de volgende waarden:<ul><li>geen</li><li>x-zwak</li><li>Schakel</li><li>gemiddeld (standaard)</li><li>strakk</li><li>x-Strong</li></ul> | Optioneel |
 | `time` | Hiermee geeft u de absolute duur van een onderbreking in seconden of milliseconden, deze waarde moet worden ingesteld op minder dan 5000ms. Voor beelden van geldige waarden zijn `2s` en `500ms` | Optioneel |
 
-| Hoger                      | Description |
+| Hoger                      | Beschrijving |
 |-------------------------------|-------------|
 | Geen, of als er geen waarde wordt gegeven | 0 MS        |
 | x-zwak                        | 250 MS      |

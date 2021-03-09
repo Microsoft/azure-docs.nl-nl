@@ -3,18 +3,20 @@ ms.service: logic-apps
 ms.topic: include
 author: ecfan
 ms.author: estfan
-ms.date: 06/06/2020
-ms.openlocfilehash: 1113201941ce0757b58e361c08c9d79d7dd374cc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.date: 03/08/2021
+ms.openlocfilehash: 252117d21da199ef702dd090686ac17789d8ebcb
+ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999570"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102510853"
 ---
 Wanneer u een trigger of actie toevoegt die voor het eerst verbinding maakt met een service of systeem, vraagt de Logic App Designer u om een *verbinding* te maken door de nodige informatie op te geven die per verbinding varieert, bijvoorbeeld:
 
-* Een naam die moet worden gebruikt voor de nieuwe verbinding
-* De naam van de server of het systeem
+* De naam die u wilt gebruiken voor de nieuwe verbinding
+
+* De naam voor het systeem of de server
+
 * Uw gebruikers- of accountreferenties
+
 * Het te gebruiken verificatietype
-* Het Azure-abonnement en de -naam voor de gegevensgateway die u eerder hebt gemaakt toen u verbinding maakte met on-premises gegevensbronnen

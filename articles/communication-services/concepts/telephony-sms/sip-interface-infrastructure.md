@@ -8,12 +8,12 @@ ms.author: bobazile
 ms.date: 02/09/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 432a9dab851bda65ecf8736d725b08c5e726ac16
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a94aa0a0deea14cca2b558c602ff7e35ca0ba81f
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659253"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487374"
 ---
 # <a name="sip-interface-infrastructure-requirements"></a>Vereisten voor de infra structuur van de SIP-interface 
 
@@ -158,12 +158,12 @@ Het poort bereik van de media processors wordt weer gegeven in de volgende tabel
 
 ## <a name="media-traffic-media-processors-geography"></a>Media verkeer: Geografie van media processors
 
-Het media verkeer loopt via onderdelen die media processors worden genoemd. Media processors worden in dezelfde data centers geplaatst als SIP-proxy's. Er zijn ook extra media processors om media stroom te optimaliseren. We hebben nu bijvoorbeeld geen SIP-proxy onderdeel in Australië (SIP-stromen via Singapore of Hongkong), maar we hebben de media processor lokaal in Australië. De nood zaak van de media processors lokaal wordt bepaald door de latentie die wij ervaren door het verzenden van interlokale verkeer, bijvoorbeeld van Australië naar Singapore of Hong Kong. Hoewel latentie in het voor beeld van verkeer van Australië naar Hong Kong of Singapore aanvaardbaar is om goede gesprek kwaliteit voor SIP-verkeer te behouden, is dit niet het geval bij Real-time media verkeer.
+Het media verkeer loopt via onderdelen die media processors worden genoemd. Media processors worden in dezelfde data centers geplaatst als SIP-proxy's. Er zijn ook extra media processors om media stroom te optimaliseren. Het is bijvoorbeeld niet mogelijk een SIP-proxy onderdeel nu in Australië (SIP-stromen via Singapore of Hongkong SAR), maar we hebben de media processor lokaal in Australië. De nood zaak van de media processors lokaal wordt bepaald door de latentie die wij ervaren door het verzenden van interlokale verkeer, bijvoorbeeld Australië naar Singapore of Hong Kong SAR. Hoewel latentie in het voor beeld van verkeer van Australië naar Hong Kong SAR of Singapore aanvaardbaar is om goede gesprek kwaliteit voor SIP-verkeer te behouden, is dit niet het geval bij Real-time media verkeer.
 
 Locaties waar zowel de SIP-proxy als de media processor onderdelen zijn geïmplementeerd:
 - VS (twee in VS West en VS Oost-data centers)
 - Europa (Amsterdam en Dublin data centers)
-- Azië (Singapore en Hong Kong-data centers)
+- Azië (Singapore en Hong Kong SAR-data centers)
 - Australië (AU-oost en Zuidoost-data centers)
 
 Locaties waar alleen media processors worden geïmplementeerd (SIP-stromen via het dichtstbijzijnde Data Center dat hierboven wordt vermeld):

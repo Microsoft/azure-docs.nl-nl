@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 06/30/2020
 ms.author: Zhchia
 ms.openlocfilehash: 7419f5f8b519b8c3e978e358afb9f15a61132769
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96177817"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102494733"
 ---
 # <a name="tutorial-configure-linkedin-learning-for-automatic-user-provisioning"></a>Zelfstudie: LinkedIn Learning configureren voor het automatisch inrichten van gebruikers
 

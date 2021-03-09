@@ -5,14 +5,14 @@ author: sidramadoss
 ms.author: sidram
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 06/21/2018
+ms.date: 03/08/2021
 ms.custom: seodec18
-ms.openlocfilehash: 3356e0bdd45b6a213ef5ef4a814e64585d8e8924
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6d3558511721a91c3a195cb510a1a00d5d8a9a51
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101726764"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487875"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Meer informatie over Stream Analytics taak bewaking en het bewaken van query's
 
@@ -30,7 +30,7 @@ Het venster wordt weer gegeven zoals hieronder weer gegeven:
 | ---------------------- | ---------------------------------------- |
 | Inachterstand, invoer gebeurtenissen       | Aantal invoer gebeurtenissen dat achterstand is. Een waarde die niet gelijk is aan nul voor deze metriek houdt in dat uw taak het aantal binnenkomende gebeurtenissen niet kan blijven gebruiken. Als deze waarde langzaam toeneemt of constant niet-nul is, moet u uw taak uitschalen. U kunt meer informatie vinden door te kijken naar [streaming-eenheden begrijpen en aanpassen](stream-analytics-streaming-unit-consumption.md). |
 | Gegevens conversie fouten | Aantal uitvoer gebeurtenissen dat niet kan worden geconverteerd naar het verwachte uitvoer schema. Fout beleid kan worden gewijzigd in drop om gebeurtenissen te verwijderen die in dit scenario optreden. |
-| Percentage CPU-gebruik (preview-versie)       | Het percentage CPU-gebruik dat door uw taak wordt gebruikt. Als deze metriek consequent hoger is dan 80%, kan dit betekenen dat uw taak is afwijkt van het CPU-gebruik en dat er waarschijnlijk invoer gebeurtenissen optreden om achterstand te krijgen. U kunt het aantal aan uw taak toegewezen SUs verhogen om dergelijke problemen te verhelpen. |
+| Percentage CPU-gebruik (preview-versie)       | Het percentage CPU-gebruik dat door uw taak wordt gebruikt. Zelfs als deze waarde zeer hoog is (90% of hoger), mag u het aantal SUs alleen op basis van deze metrische gegevens verhogen. Als het aantal ingrijpende invoer gebeurtenissen of watermerk vertraging toeneemt, kunt u deze CPU% gebruikwaarde gebruiken om te bepalen of CPU het knel punt is. Het is mogelijk dat deze metriek af en toe pieken heeft. U wordt aangeraden schaal tests uit te voeren om de bovengrens van uw taak te bepalen, waarna de invoer van de achterstand of het watermerk vertraging wordt verhoogd vanwege een CPU-knel punt. |
 | Vroege invoer gebeurtenissen       | Gebeurtenissen waarvan het tijds tempel van de toepassing voor meer dan vijf minuten eerder is dan de aankomst tijd. |
 | Mislukte functie aanvragen | Aantal mislukte Azure Machine Learning functie aanroepen (indien aanwezig). |
 | Functie gebeurtenissen        | Het aantal gebeurtenissen dat is verzonden naar de Azure Machine Learning functie (indien aanwezig). |

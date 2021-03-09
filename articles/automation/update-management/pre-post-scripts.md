@@ -3,14 +3,14 @@ title: Pre-scripts en post scripts beheren in uw Updatebeheer-implementatie in a
 description: In dit artikel leest u hoe u vooraf-scripts en post scripts voor update-implementaties configureert en beheert.
 services: automation
 ms.subservice: update-management
-ms.date: 12/17/2020
+ms.date: 03/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 3ca1dec1b6139f3192edb09f8748c8f23a9d399e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ce60c773626d951062de3cc830b898e3b875f3cb
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101701498"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485534"
 ---
 # <a name="manage-pre-scripts-and-post-scripts"></a>Scripts voorafgaand aan de back-up en scripts die erop volgen, beheren
 
@@ -19,6 +19,8 @@ Pre-scripts en post scripts zijn runbooks die in uw Azure Automation-account wor
 ## <a name="pre-script-and-post-script-requirements"></a>Pre-script-en post script-vereisten
 
 Een runbook kan alleen worden gebruikt als een pre-script of post script als u het wilt importeren in uw Automation-account en [het runbook wilt publiceren](../manage-runbooks.md#publish-a-runbook).
+
+Op dit moment worden alleen runbooks van Power shell en Python 2 ondersteund als pre/post-scripts. Andere runbook-typen zoals python 3, grafische power shell-werk stroom, grafische power shell-werk stroom worden momenteel niet ondersteund als pre/post-scripts.
 
 ## <a name="pre-script-and-post-script-parameters"></a>Pre-script en post-script-para meters
 
@@ -91,9 +93,6 @@ Een volledig voor beeld met alle eigenschappen vindt u op: [Software-update conf
 > [!NOTE]
 > Het `SoftwareUpdateConfigurationRunContext` object kan dubbele vermeldingen voor machines bevatten. Dit kan ervoor zorgen dat scripts en post scripts meerdere keren op dezelfde computer worden uitgevoerd. U kunt dit probleem omzeilen door `Sort-Object -Unique` alleen unieke VM-namen te selecteren.
 
-> [!NOTE]
-> Momenteel worden alleen Power shell-runbooks ondersteund als pre/post-scripts. Andere runbook-typen zoals python, grafische power shell-werk stroom, grafische power shell-werk stroom worden momenteel niet ondersteund als pre/post-scripts.
-
 ## <a name="use-a-pre-script-or-post-script-in-a-deployment"></a>Een pre-script of post script gebruiken in een implementatie
 
 Als u een pre-script of post script wilt gebruiken in een update-implementatie, moet u beginnen met het maken van een update-implementatie. Selecteer **pre-scripts + post scripts**. Met deze actie opent **u de pagina pre-scripts + post-scripts selecteren** .
@@ -120,7 +119,7 @@ Als u de update-implementatie-uitvoering selecteert, worden er aanvullende detai
 
 ## <a name="stop-a-deployment"></a>Een implementatie stoppen
 
-Als u een implementatie op basis van een pre-script wilt stoppen, moet u een uitzonde ring [genereren](../automation-runbook-execution.md#throw) . Als dat niet het geval is, worden de implementatie en het post script nog steeds uitgevoerd. Het volgende code fragment laat zien hoe u een uitzonde ring genereert.
+Als u een implementatie op basis van een pre-script wilt stoppen, moet u een uitzonde ring [genereren](../automation-runbook-execution.md#throw) . Als dat niet het geval is, worden de implementatie en het post script nog steeds uitgevoerd. Het volgende code fragment laat zien hoe u een uitzonde ring genereert met behulp van Power shell.
 
 ```powershell
 #In this case, we want to terminate the patch job if any run fails.
@@ -134,6 +133,8 @@ foreach($summary in $finalStatus)
     }
 }
 ```
+
+In Python 2 wordt de verwerking van uitzonde ringen beheerd in een [try](https://www.python-course.eu/exception_handling.php) -blok.
 
 ## <a name="interact-with-machines"></a>Communiceren met computers
 
@@ -169,6 +170,13 @@ if (<My custom error logic>)
     #Throw an error to fail the patch deployment.
     throw "There was an error, abort deployment"
 }
+```
+
+Als u in Python 2 een fout wilt genereren wanneer zich een bepaalde voor waarde voordoet, gebruikt u een instructie [Raise](https://docs.python.org/2.7/reference/simple_stmts.html#the-raise-statement) .
+
+```python
+If (<My custom error logic>)
+   raise Exception('Something happened.')
 ```
 
 ## <a name="samples"></a>Voorbeelden

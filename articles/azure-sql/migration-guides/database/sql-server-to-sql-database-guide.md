@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: a9dfd185af012314ddc481b598f181b6760640ec
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2d43eda404a5257c0ec28a884b6ebf182330ba51
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690937"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488412"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Migratie handleiding: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -59,6 +59,8 @@ Zie [Services en hulpprogram ma's die beschikbaar zijn voor scenario's voor gege
 
 ### <a name="assess"></a>Evalueren 
 
+[!INCLUDE [assess-estate-with-azure-migrate](../../../../includes/azure-migrate-to-assess-sql-data-estate.md)]
+
 Nadat gegevens bronnen zijn gedetecteerd, evalueert u alle on-premises SQL Server Data Base (s) die kunnen worden gemigreerd naar Azure SQL Database om migratie blokken of compatibiliteits problemen te identificeren. 
 
 U kunt de Data Migration Assistant (versie 4,1 en hoger) gebruiken om te bepalen welke data bases er worden opgehaald: 
@@ -100,7 +102,7 @@ Als u meerdere servers en data bases hebt die op schaal moeten worden beoordeeld
 > [!IMPORTANT]
 > Het uitvoeren van analyses op schaal voor meerdere data bases, met name grote bestanden, kan ook worden geautomatiseerd met behulp van het [hulp programma voor de DMA-opdracht regel](/sql/dma/dma-commandline) en geüpload naar [Azure migrate](/sql/dma/dma-assess-sql-data-estate-to-sqldb#view-target-readiness-assessment-results) voor verdere analyse en doel gereedheid.
 
-## <a name="migrate"></a>Stap over
+## <a name="migrate"></a>Migrate
 
 Nadat u taken hebt voltooid die zijn gekoppeld aan de fase voorafgaand aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. 
 
@@ -157,7 +159,7 @@ Als u de migratie naar Azure SQL Database wilt versnellen, moet u rekening houde
 |  | Bron conflicten | Aanbeveling |
 |--|--|--|
 | **Bron (doorgaans on-premises)** |Primair knel punt tijdens de migratie in bron is gegevens-I/O en latentie van gegevens bestanden die zorgvuldig moeten worden gecontroleerd.  |Op basis van de latentie van DATA IO en gegevens bestanden en afhankelijk van of het een virtuele machine of fysieke server is, moet u de opslag beheerder en de opties verkennen om het knel punt te verhelpen. |
-|**Doel (Azure SQL Database)**|De grootste beperkende factor is de frequentie van het genereren en de latentie van het logboek bestand. Met Azure SQL Database kunt u Maxi maal 96 MB/s logboek generatie frequentie aanvragen. | Als u de migratie wilt versnellen, schaalt u de doel-SQL-Data Base naar Bedrijfskritiek GEN5 8 VCore om de maximale logboek generatie snelheid van 96 MB/s te verkrijgen en kunt u ook lage latentie voor het logboek bestand bereiken. De [grootschalige](../../database/service-tier-hyperscale.md) -servicelaag levert een logboek frequentie van 100 MB per seconde, ongeacht het gekozen service niveau |
+|**Doel (Azure SQL Database)**|De grootste beperkende factor is de frequentie van het genereren en de latentie van het logboek bestand. Met Azure SQL Database kunt u een frequentie van Maxi maal 96 MB/s-logboek generatie ophalen. | Als u de migratie wilt versnellen, schaalt u de doel-SQL-Data Base naar Bedrijfskritiek GEN5 8 vCore om de maximale logboek generatie snelheid van 96 MB/s te verkrijgen en kunt u ook lage latentie voor het logboek bestand bereiken. De [grootschalige](../../database/service-tier-hyperscale.md) -servicelaag levert een logboek frequentie van 100 MB per seconde, ongeacht het gekozen service niveau |
 |**Netwerk** |De benodigde netwerk bandbreedte is gelijk aan het maximale aantal opname snelheden van het logboek 96 MB/s (768 MB/s) |Afhankelijk van de netwerk verbinding van uw on-premises Data Center naar Azure, controleert u uw netwerk bandbreedte (doorgaans [Azure ExpressRoute](../../../expressroute/expressroute-introduction.md#bandwidth-options)) om te voldoen aan de maximale opname frequentie van het logboek. |
 |**Virtuele machine die wordt gebruikt voor Data Migration Assistant (DMA)** |CPU is het belangrijkste knel punt voor de virtuele machine met DMA |Overwegingen bij het versnellen van de gegevens migratie met behulp van </br>-Virtuele machines van Azure compute </br>-Gebruik ten minste F8s_v2 (8 VCore) VM voor het uitvoeren van DMA </br>-Zorg ervoor dat de virtuele machine wordt uitgevoerd in dezelfde Azure-regio als het doel |
 |**Azure Database Migration Service (DMS)** |De berekenings capaciteit van bronnen en database objecten berekenen voor DMS |Gebruik Premium 4 vCore. DMS zorgt automatisch voor database objecten zoals refererende sleutels, triggers, beperkingen en niet-geclusterde indexen en vereist geen hand matige tussen komst.  |

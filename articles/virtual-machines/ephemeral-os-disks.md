@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/23/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 9c13a914a002f63f3c0d5bd988b0d76b951586dd
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 814824fb6708abaf549bb3de19b4aced4774a244
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124683"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485755"
 ---
 # <a name="ephemeral-os-disks-for-azure-vms"></a>Tijdelijke besturingssysteem schijven voor virtuele Azure-machines
 
@@ -247,7 +247,7 @@ A: tijdelijke schijven bieden geen ondersteuning voor:
 
 > [!NOTE]
 > 
-> De tijdelijke schijf is niet toegankelijk via de portal. U ontvangt mogelijk de fout melding ' bron niet gevonden ' of ' 404 ' bij het openen van de tijdelijke schijf.
+> De tijdelijke schijf is niet toegankelijk via de portal. U ontvangt de fout melding "resource niet gevonden" of "404" bij het openen van de tijdelijke schijf die wordt verwacht.
 > 
  
 ## <a name="next-steps"></a>Volgende stappen

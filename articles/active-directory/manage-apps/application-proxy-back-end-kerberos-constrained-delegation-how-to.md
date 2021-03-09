@@ -11,12 +11,12 @@ ms.topic: troubleshooting
 ms.date: 04/23/2019
 ms.author: kenwith
 ms.reviewer: asteen, japere
-ms.openlocfilehash: 65d68924fbc3a777ef7ef59d2532a1ae20e23c48
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: b8562f3bdd82b5b0c2c1340f511f87ad90dfbe3b
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258215"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487947"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Problemen oplossen met Kerberos-beperkte overdrachtsconfiguraties voor toepassingsproxy
 
@@ -161,7 +161,7 @@ Als u nog steeds geen voortgang kunt maken, kan micro soft-ondersteuning u helpe
 ## <a name="other-scenarios"></a>Andere scenario's
 
 - Azure-toepassing proxy een Kerberos-ticket aanvraagt voordat het verzoek naar een toepassing wordt verzonden. Sommige toepassingen van derden vallen niet zoals deze verificatie methode. Deze toepassingen verwachten dat er meer conventionele onderhandelingen worden uitgevoerd. De eerste aanvraag is anoniem, waardoor de toepassing kan reageren met de verificatie typen die het ondersteunt via een 401. Dit type Kerberos-onderhandeling kan worden ingeschakeld met behulp van de stappen die in dit document worden beschreven: [beperkte Kerberos-overdracht voor eenmalige aanmelding](application-proxy-configure-single-sign-on-with-kcd.md).
-- Verificatie met meerdere hops wordt doorgaans gebruikt in scenario's waarbij een toepassing wordt gelaagd, met een back-end en front-end, waarbij beide verificatie vereisen, zoals SQL Server Reporting Services. Als u het scenario met meerdere hops wilt configureren, raadpleegt u het ondersteunings artikel [Kerberos-beperkte overdracht vereist mogelijk protocol overgang in scenario's met meerdere hops](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul).
+- Verificatie met meerdere hops wordt doorgaans gebruikt in scenario's waarbij een toepassing wordt gelaagd, met een back-end en front-end, waarbij beide verificatie vereisen, zoals SQL Server Reporting Services. Zie [How to configure Kerberos-beperkte overdracht voor web Enrollment proxy pages](/troubleshoot/windows-server/identity/configure-kerberos-constrained-delegation)(Engelstalig) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

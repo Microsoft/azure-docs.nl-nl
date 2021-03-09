@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 02/09/2021
-ms.openlocfilehash: 34b37fde83ca957e7c90302561589e2568beb59b
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 752f38c0a44d40f2bf7e7b5961dca7743fbf4b76
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215048"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488032"
 ---
 # <a name="configure-azure-private-link-for-an-azure-machine-learning-workspace"></a>Een persoonlijke Azure-koppeling configureren voor een Azure Machine Learning-werk ruimte
 
@@ -36,7 +36,7 @@ Met de persoonlijke Azure-koppeling kunt u verbinding maken met uw werk ruimte m
 * U moet een bestaand virtueel netwerk hebben om het persoonlijke eind punt in te kunnen maken. U moet ook [netwerk beleid voor persoonlijke eind punten uitschakelen](../private-link/disable-private-endpoint-network-policy.md) voordat u het persoonlijke eind punt toevoegt.
 ## <a name="limitations"></a>Beperkingen
 
-* Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government regio's en Azure China 21Vianet.
+* Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de Azure Government regio's.
 * Als u open bare toegang inschakelt voor een werk ruimte die is beveiligd met een persoonlijke koppeling en gebruikmaakt van Azure Machine Learning Studio via het open bare Internet, kunnen sommige functies, zoals de ontwerper, geen toegang krijgen tot uw gegevens. Dit probleem treedt op wanneer de gegevens worden opgeslagen in een service die is beveiligd achter het VNet. Bijvoorbeeld een Azure Storage-account.
 
 ## <a name="create-a-workspace-that-uses-a-private-endpoint"></a>Een werk ruimte maken die gebruikmaakt van een persoonlijk eind punt

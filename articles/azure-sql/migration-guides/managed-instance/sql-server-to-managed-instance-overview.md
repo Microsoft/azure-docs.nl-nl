@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 59c000a816d55d248febb841b695d366cb9979cc
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 9074480f44e75a90c202f0d0813c43aed1f7ba95
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102455226"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488202"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -88,9 +88,10 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 
 |Technologie | Beschrijving|
 |---------|---------|
+| [Azure Migrate](/azure/migrate/how-to-create-azure-sql-assessment) | Met Azure Migrate voor Azure SQL kunt u uw SQL-gegevens op schaal ontdekken en beoordelen in VMware, met aanbevelingen voor de implementatie van Azure SQL, doel grootte en maandelijkse schattingen. | 
 |[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md)  | Azure-service van de eerste partij die migratie in de offline modus ondersteunt voor toepassingen die downtime tijdens het migratie proces kunnen veroorloven. In tegens telling tot de continue migratie in de online modus, voert migratie van de offline modus eenmalige herstel van een volledige database back-up uit van de bron naar het doel. | 
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | SQL Managed instance biedt ondersteuning voor herstel van systeem eigen SQL Server database back-ups (. bak-bestanden), waardoor het de eenvoudigste migratie optie is voor klanten die volledige database back-ups naar Azure Storage kunnen leveren. Volledige en differentiële back-ups worden ook ondersteund en beschreven in de [sectie migratie-assets](#migration-assets) verderop in dit artikel.| 
-|[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | Dit is een Cloud service die is ingeschakeld voor beheerde exemplaren op basis van de SQL Server technieken voor het vastleggen van logboek bestanden, waardoor het een migratie optie is voor klanten die volledige, differentiële en logboek database back-ups naar Azure Storage kunnen leveren. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar.| 
+|[Replay-service voor logboeken (LRS)](../../managed-instance/log-replay-service-migrate.md) | Dit is een Cloud service die is ingeschakeld voor beheerde exemplaren op basis van de SQL Server technieken voor het vastleggen van logboek bestanden, waardoor het een migratie optie is voor klanten die volledige, differentiële en logboek database back-ups kunnen bieden in azure Storage. LRS wordt gebruikt om back-upbestanden van Azure Blob Storage te herstellen naar een door SQL beheerd exemplaar.| 
 | | |
 
 ### <a name="alternative-tools"></a>Alternatieve hulpprogram ma's

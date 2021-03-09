@@ -1,25 +1,25 @@
 ---
 title: 'Zelfstudie: Nieuwe resources beveiligen met vergrendelingen'
 description: In deze zelfstudie gebruikt u de opties voor resourcevergrendeling Alleen-lezen en Niet verwijderen in Azure Blueprints om nieuwe geïmplementeerde resources te beveiligen.
-ms.date: 01/27/2021
+ms.date: 03/08/2021
 ms.topic: tutorial
-ms.openlocfilehash: c671d641982ba833b54586c1b33979a97747396b
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 87da0f5a1fff2feb103b32533c8d314fb7690f80
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98915404"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485738"
 ---
 # <a name="tutorial-protect-new-resources-with-azure-blueprints-resource-locks"></a>Zelfstudie: Nieuwe resources beveiligen met resourcevergrendelingen in Azure Blueprints
 
-Met [resourcevergrendelingen](../concepts/resource-locking.md) in Azure Blueprints kunt u nieuwe geïmplementeerde resources beveiligen tegen onrechtmatige wijzigingen, ook door accounts met de rol van _Eigenaar_. U kunt deze beveiliging toevoegen in de blauwdrukkdefinities van resources die zijn gemaakt met een artefact van een Azure Resource Manager-sjabloon (ARM-sjabloon).
+Met [resourcevergrendelingen](../concepts/resource-locking.md) in Azure Blueprints kunt u nieuwe geïmplementeerde resources beveiligen tegen onrechtmatige wijzigingen, ook door accounts met de rol van _Eigenaar_. U kunt deze beveiliging toevoegen in de blauwdrukkdefinities van resources die zijn gemaakt met een artefact van een Azure Resource Manager-sjabloon (ARM-sjabloon). De resource vergrendeling blauw druk is ingesteld tijdens de toewijzing van blauw drukken.
 
 In deze zelfstudie voert u de volgende stappen uit:
 
 > [!div class="checklist"]
 > - Een blauwdrukdefinitie maken
 > - De definitie van uw blauwdruk markeren als **Gepubliceerd**
-> - De blauwdrukdefinitie toewijzen aan een bestaand abonnement
+> - De blauw druk-definitie toewijzen aan een bestaand abonnement (**resource vergrendelingen instellen**)
 > - De nieuwe resourcegroep inspecteren
 > - De toewijzing van de blauwdruk ongedaan maken om vergrendelingen te verwijderen
 
@@ -56,6 +56,9 @@ Maak eerst de blauwdrukdefinitie.
    1. Selecteer de rij **Artefact toevoegen** onder de vermelding **RGtoLock**.
    1. Selecteer **Azure Resource Manager-sjabloon** onder **Type artefact**, stel **Weergavenaam van artefact** in op **StorageAccount** en laat de optie **Beschrijving** leeg.
    1. Op het tabblad **Sjabloon** plakt u de volgende ARM-sjabloon in het editorvak. Nadat u de sjabloon hebt geplakt, selecteert u **Toevoegen** om het artefact aan de blauwdruk toe te voegen.
+
+      > [!NOTE]
+      > Met deze stap definieert u de resources die moeten worden geïmplementeerd die worden vergrendeld met de resource vergrendeling blauw drukken, maar niet de resource vergrendelingen blauw drukken. De resource vergrendelingen blauw drukken worden ingesteld als een para meter van de toewijzing van de blauw druk.
 
    ```json
    {
@@ -142,6 +145,9 @@ Nadat de blauwdrukdefinitie is gepubliceerd, kunt u deze toewijzen aan een abonn
    - **Vergrendelingstoewijzing**
 
      Selecteer blauwdrukvergrendelingsmodus **Alleen-lezen**. Zie voor meer informatie [Vergrendeling van blauwdrukresources](../concepts/resource-locking.md).
+
+     > [!NOTE]
+     > Met deze stap wordt de resource vergrendeling van de blauw druk op de zojuist geïmplementeerde resources geconfigureerd.
 
    - **Beheerde identiteit**
 

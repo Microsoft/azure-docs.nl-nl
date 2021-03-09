@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/25/2021
 ms.custom: generated
-ms.openlocfilehash: 1ee422d4c040e8546135981e0640484acc997b0a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c91172ff110b950335c66f2c0ea9ac59c37e0a76
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101718723"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487848"
 ---
 # <a name="azure-resource-provider-operations"></a>Azure-resource provider bewerkingen
 
@@ -50,6 +50,7 @@ Klik op de naam van de resource provider in de volgende tabel om de lijst met be
 | [micro soft. storagesync](#microsoftstoragesync) |
 | [Microsoft.StorSimple](#microsoftstorsimple) |
 | **Web** |
+| [Micro soft. AppPlatform](#microsoftappplatform) |
 | [Microsoft.CertificateRegistration](#microsoftcertificateregistration) |
 | [Micro soft. DomainRegistration](#microsoftdomainregistration) |
 | [Micro soft. Maps](#microsoftmaps) |
@@ -86,7 +87,7 @@ Klik op de naam van de resource provider in de volgende tabel om de lijst met be
 | [Micro soft. Synapse](#microsoftsynapse) |
 | **Blockchain** |
 | [Micro soft. Block Chain](#microsoftblockchain) |
-| **AI en machine learning** |
+| **AI + machine learning** |
 | [Micro soft. BotService](#microsoftbotservice) |
 | [Microsoft.CognitiveServices](#microsoftcognitiveservices) |
 | [Microsoft.MachineLearning](#microsoftmachinelearning) |
@@ -2047,6 +2048,62 @@ Azure-service: [StorSimple](../storsimple/index.yml)
 > | Micro soft. StorSimple/Operations/lezen | Hiermee worden de bewerkingen weer gegeven of opgehaald |
 
 ## <a name="web"></a>Web
+
+### <a name="microsoftappplatform"></a>Micro soft. AppPlatform
+
+Azure-service: [Azure lente-Cloud](../spring-cloud/index.yml)
+
+> [!div class="mx-tableFixed"]
+> | Bewerking | Beschrijving |
+> | --- | --- |
+> | Micro soft. AppPlatform/REGI ster/actie | Het abonnement registreren bij de resource provider micro soft. AppPlatform |
+> | Micro soft. AppPlatform/registratie/actie | De registratie van het abonnement bij de resource provider micro soft. AppPlatform ongedaan maken |
+> | Micro soft. AppPlatform/locaties/checkNameAvailability/actie | Beschik baarheid van resource naam controleren |
+> | Micro soft. AppPlatform/locaties/operationResults/veer/lezen | Resultaat van bron bewerking lezen |
+> | Micro soft. AppPlatform/locaties/operationStatus/operationId/lezen | Bewerkings status van resource lezen |
+> | Micro soft. AppPlatform/Operations/lezen | Beschik bare bewerkingen van Microsoft Azure lente Cloud weer geven |
+> | Micro soft. AppPlatform/sku's/lezen | Beschik bare sku's van Microsoft Azure lente-Cloud weer geven |
+> | Micro soft. AppPlatform/lente/schrijven | Een specifiek Azure lente-Cloud service-exemplaar maken of bijwerken |
+> | Micro soft. AppPlatform/lente/verwijderen | Een specifiek Azure veer Cloud service-exemplaar verwijderen |
+> | Micro soft. AppPlatform/lente/lezen | Azure lente-Cloud service-exemplaren ophalen |
+> | Micro soft. AppPlatform/lente/enableTestEndpoint/actie | Test eindpunt functionaliteit inschakelen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/lente/disableTestEndpoint/actie | Test eindpunt functionaliteit uitschakelen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/lente/listTestKeys/actie | Test sleutels voor een specifiek Azure lente-Cloud service-exemplaar weer geven |
+> | Micro soft. AppPlatform/lente/regenerateTestKey/actie | Test sleutel opnieuw genereren voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/lente/apps/schrijven | De toepassing maken of bijwerken voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/lente/apps/verwijderen | De toepassing voor een specifiek Azure veer Cloud service-exemplaar verwijderen |
+> | Micro soft. AppPlatform/lente/apps/lezen | De toepassingen ophalen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/lente/apps/getResourceUploadUrl/actie | De resource-upload-URL van een specifieke Microsoft Azure lente-Cloud toepassing ophalen |
+> | Micro soft. AppPlatform/lente/apps/validateDomain/actie | Het aangepaste domein voor een specifieke toepassing valideren |
+> | Micro soft. AppPlatform/lente/apps/bindingen/schrijven | De binding voor een specifieke toepassing maken of bijwerken |
+> | Micro soft. AppPlatform/lente/apps/bindingen/verwijderen | De binding voor een specifieke toepassing verwijderen |
+> | Micro soft. AppPlatform/lente/apps/bindingen/lezen | De bindingen voor een specifieke toepassing ophalen |
+> | Micro soft. AppPlatform/lente/apps/implementaties/schrijven | De implementatie voor een specifieke toepassing maken of bijwerken |
+> | Micro soft. AppPlatform/lente/apps/implementaties/verwijderen | De implementatie voor een specifieke toepassing verwijderen |
+> | Micro soft. AppPlatform/lente/apps/implementaties/lezen | De implementaties voor een specifieke toepassing ophalen |
+> | Micro soft. AppPlatform/lente/apps/implementaties/starten/actie | De implementatie voor een specifieke toepassing starten |
+> | Micro soft. AppPlatform/lente/apps/implementaties/stoppen/actie | De implementatie voor een specifieke toepassing stoppen |
+> | Micro soft. AppPlatform/lente/apps/implementaties/opnieuw starten/actie | De implementatie voor een specifieke toepassing opnieuw starten |
+> | Micro soft. AppPlatform/lente/apps/implementaties/getLogFileUrl/actie | De URL van het logboek bestand van een specifieke Microsoft Azure lente-implementatie van een Cloud toepassing ophalen |
+> | Micro soft. AppPlatform/lente/apps/implementaties/sku's/lezen | Beschik bare sku's van een toepassings implementatie weer geven |
+> | Micro soft. AppPlatform/lente/Apps/domeinen/schrijven | Het aangepaste domein voor een specifieke toepassing maken of bijwerken |
+> | Micro soft. AppPlatform/lente/Apps/domeinen/verwijderen | Het aangepaste domein voor een specifieke toepassing verwijderen |
+> | Micro soft. AppPlatform/lente/Apps/domeinen/lezen | De aangepaste domeinen voor een specifieke toepassing ophalen |
+> | Micro soft. AppPlatform/lente/certificaten/schrijven | Het certificaat voor een specifiek Azure veer Cloud service-exemplaar maken of bijwerken |
+> | Micro soft. AppPlatform/lente/certificaten/verwijderen | Het certificaat voor een specifiek Azure veer Cloud service-exemplaar verwijderen |
+> | Micro soft. AppPlatform/lente/certificaten/lezen | De certificaten ophalen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/veer/configServers/lezen | De configuratie server ophalen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/veer/configServers/schrijven | De configuratie server voor een specifiek Azure veer Cloud service-exemplaar maken of bijwerken |
+> | Micro soft. AppPlatform/lente/implementaties/lezen | De implementaties voor een specifiek Azure veer Cloud service-exemplaar ophalen |
+> | Micro soft. AppPlatform/lente/detectoren/lezen | De detectoren ophalen voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/veer/monitoringSettings/lezen | De bewakings instelling voor een specifiek Azure veer Cloud service-exemplaar ophalen |
+> | Micro soft. AppPlatform/veer/monitoringSettings/schrijven | De bewakings instelling voor een specifiek Azure veer Cloud service-exemplaar maken of bijwerken |
+> | **DataAction** | **Beschrijving** |
+> | Micro soft. AppPlatform/veer/bestand configservice/lezen | De configuratie-inhoud (bijvoorbeeld Application. yaml) lezen voor een specifieke Azure lente-Cloud service-exemplaar |
+> | Micro soft. AppPlatform/veer/eurekaService/lezen | De registratie gegevens van de gebruiker (s) voor een specifiek Azure veer Cloud service-exemplaar lezen |
+> | Micro soft. AppPlatform/veer/eurekaService/schrijven | De registratie gegevens van de gebruiker (s) schrijven voor een specifiek Azure veer Cloud service-exemplaar |
+> | Micro soft. AppPlatform/veer/eurekaService/verwijderen | De registratie gegevens van de gebruikers-app voor een specifiek Azure veer Cloud service-exemplaar verwijderen |
+> | Micro soft. AppPlatform/veer/logstreamService/lezen | Het streaming-logboek van de gebruikers-app lezen voor een specifiek Azure lente-Cloud service-exemplaar |
 
 ### <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 
@@ -7673,7 +7730,7 @@ Azure-service: [Azure DevOps](/azure/devops/)
 > | Micro soft. Visual Studio/project/verwijderen | Project verwijderen |
 > | Micro soft. Visual Studio/project/lezen | Project lezen |
 
-## <a name="migrate"></a>Stap over
+## <a name="migrate"></a>Migrate
 
 ### <a name="microsoftmigrate"></a>Micro soft. migrate
 
@@ -10443,7 +10500,7 @@ Azure-service: micro soft monitoring Insights
 > | Micro soft. intune/diagnosticsettings/verwijderen | Een diagnostische instelling verwijderen |
 > | Micro soft. intune/diagnosticsettingscategories/lezen | Categorieën voor Diagnostische instellingen lezen |
 
-## <a name="other"></a>Anders
+## <a name="other"></a>Overige
 
 ### <a name="microsoftdesktopvirtualization"></a>Micro soft. DesktopVirtualization
 

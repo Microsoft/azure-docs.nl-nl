@@ -5,19 +5,19 @@ ms.topic: how-to
 manager: nitinme
 ms.author: lajanuar
 author: laujan
-ms.date: 02/11/2021
-ms.openlocfilehash: 104329928c507c288537704fbbef4e35b65cb445
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/05/2021
+ms.openlocfilehash: e40fc569ad1c8ec5894f06915422bea37cfc40ee
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101739433"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489630"
 ---
-# <a name="create-sas-tokens-for-document-translation"></a>SAS-tokens maken voor document vertalingen
+# <a name="create-sas-tokens-for-document-translation-processing"></a>SAS-tokens maken voor het verwerken van document vertalingen
 
 In dit artikel leert u hoe u SAS-tokens (Shared Access Signature) kunt maken met behulp van de Azure Storage Explorer of de Azure Portal. Een SAS-token biedt beveiligde, gedelegeerde toegang tot resources in uw Azure-opslag account.
 
-## <a name="create-sas-tokens-with-azure-storage-explorer"></a>SAS-tokens met Azure Storage Explorer maken
+## <a name="create-your-sas-tokens-with-azure-storage-explorer"></a>Uw SAS-tokens maken met Azure Storage Explorer
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -65,7 +65,7 @@ In dit artikel leert u hoe u SAS-tokens (Shared Access Signature) kunt maken met
 ## <a name="create-sas-tokens-for-blobs-in-the-azure-portal"></a>SAS-tokens maken voor blobs in de Azure Portal
 
 > [!NOTE]
-> Het maken van SAS-tokens voor containers rechtstreeks in het Azure Portal wordt momenteel niet ondersteund. U kunt echter een SAS-token met [**Azure Storage Explorer**](#create-sas-tokens-with-azure-storage-explorer) maken of de taak [via een programma](../../../storage/blobs/sas-service-create.md)volt ooien.
+> Het maken van SAS-tokens voor containers rechtstreeks in het Azure Portal wordt momenteel niet ondersteund. U kunt echter een SAS-token met [**Azure Storage Explorer**](#create-your-sas-tokens-with-azure-storage-explorer) maken of de taak [via een programma](../../../storage/blobs/sas-service-create.md)volt ooien.
 
 <!-- markdownlint-disable MD024 -->
 ### <a name="prerequisites"></a>Vereisten
@@ -74,7 +74,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 * Een actief [**Azure-account**](https://azure.microsoft.com/free/cognitive-services/).  Als u er nog geen hebt, kunt u [**een gratis account maken**](https://azure.microsoft.com/free/).
 * Een [**Translator**](https://ms.portal.azure.com/#create/Microsoft) -service resource (**niet** een Cognitive Services meerdere service bronnen.  *Zie* [een nieuwe Azure-resource maken](../../cognitive-services-apis-create-account.md#create-a-new-azure-cognitive-services-resource).  
-* Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Alle toegang tot Azure Storage vindt plaats via een opslagaccount.
+* Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). U maakt containers om uw BLOB-gegevens binnen uw opslag account op te slaan en te organiseren.
 
 ### <a name="create-your-tokens"></a>Uw tokens maken
 

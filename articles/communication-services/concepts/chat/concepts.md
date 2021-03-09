@@ -9,14 +9,17 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 2360cc8d202ed29051551231d14bef69c0e66ce4
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4fc94181b0f6369f288be129436d1659c85725c5
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657805"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485924"
 ---
 # <a name="chat-concepts"></a>Chatconcepten
+
+[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
+
 
 Chat-clientbibliotheken van Azure Communication Services kunnen worden gebruikt om realtime tekstchats aan uw toepassingen toe te voegen. Op deze pagina vindt u een overzicht van de belangrijkste chatconcepten en mogelijkheden.
 

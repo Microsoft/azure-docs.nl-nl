@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/18/2020
+ms.date: 02/25/2021
 ms.author: jeedes
-ms.openlocfilehash: b471e113a7e5ae2277e275d53ff8ac8ca9187d1d
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 23b534f1ccbd51b028beeee173e5c3e0accd47a3
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98731216"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102486128"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-printerlogic-saas"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met PrinterLogic SaaS
 
@@ -37,10 +37,10 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* PrinterLogic SaaS ondersteunt eenmalige aanmelding via **SP en IDP**
-* PrinterLogic SaaS biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
+* PrinterLogic SaaS ondersteunt door **SP en IDP** geïnitieerde SSO.
+* PrinterLogic SaaS ondersteunt **just-in-time** -gebruikers inrichting.
 
-## <a name="adding-printerlogic-saas-from-the-gallery"></a>PrinterLogic SaaS toevoegen vanuit de galerie
+## <a name="add-printerlogic-saas-from-the-gallery"></a>PrinterLogic SaaS toevoegen vanuit de galerie
 
 Als u de integratie van PrinterLogic SaaS met Azure AD wilt configureren, voegt u PrinterLogic SaaS vanuit de galerie toe aan uw lijst met beheerde SaaS-apps.
 
@@ -146,17 +146,16 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van AskYourTeam, waar u de aanmeldingsstroom kunt initiëren.  
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL van de PrinterLogic SaaS-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
-* Ga rechtstreeks naar de aanmeldings-URL van AskYourTeam en initieer hier de aanmeldingsstroom.
+* Ga rechtstreeks naar de URL van de PrinterLogic SaaS-aanmeld en start de aanmeldings stroom vanaf daar.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij de instantie van AskYourTeam waarvoor u eenmalige aanmelding hebt ingesteld 
+* Klik op **test deze toepassing** in azure Portal en meld u automatisch aan bij de PrinterLogic SaaS waarvoor u de SSO hebt ingesteld. 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in 'Mijn apps' op de tegel 'AskYourTeam' klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het AskYourTeam-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
-
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de PrinterLogic SaaS-tegel in de mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de PrinterLogic SaaS waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u PrinterLogic SaaS hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u PrinterLogic SaaS hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

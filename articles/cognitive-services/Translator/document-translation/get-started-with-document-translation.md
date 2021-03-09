@@ -5,13 +5,13 @@ ms.topic: how-to
 manager: nitinme
 ms.author: lajanuar
 author: laujan
-ms.date: 02/11/2021
-ms.openlocfilehash: 886889ef9a42e358fca22a9d86955a23c5419dfa
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/05/2021
+ms.openlocfilehash: cb6b3af8d8fb6c2d3fe63964e59f8e3e32f0f0fd
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101738154"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102486655"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Aan de slag met document vertalingen (preview-versie)
 
@@ -19,27 +19,27 @@ ms.locfileid: "101738154"
 
 ## <a name="prerequisites"></a>Vereisten
 
+> [!NOTE]
+> Wanneer u in de Azure Portal een cognitieve service bron maakt, hebt u de mogelijkheid om een sleutel voor meerdere service abonnementen of een abonnements sleutel met één service te maken. Document vertalingen worden momenteel echter alleen ondersteund in de Translator-resource (single-service) en is **niet** opgenomen in de resource van de Cognitive Services (meerdere services).
+
 Om aan de slag te gaan, hebt u het volgende nodig:
 
 * Een actief [**Azure-account**](https://azure.microsoft.com/free/cognitive-services/).  Als u er nog geen hebt, kunt u [**een gratis account maken**](https://azure.microsoft.com/free/).
 
-* Een [**Translator**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation) -service resource (**niet** een Cognitive Services resource). 
+* Een [**Translator**](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation) -service resource (**niet** een Cognitive Services resource).
 
-* Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). Alle toegang tot Azure Storage vindt plaats via een opslagaccount.
+* Een [**Azure Blob-opslag account**](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM). U maakt containers om uw BLOB-gegevens binnen uw opslag account op te slaan en te organiseren.
 
 * Een volledig [**formulier voor het vertalen van documenten (preview)**](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-riVR3Xj0tOnIRdZOALbM9UOEE4UVdFQVBRQVBWWDBRQUM3WjYxUEpUTC4u) om uw Azure-abonnement in te scha kelen voor gebruik van de nieuwe functie voor document vertalingen.
-
-> [!NOTE]
-> Document vertalingen worden momenteel alleen ondersteund in de Translator-resource (single-service), **niet** de Cognitive Services resource (meerdere services).
 
 ## <a name="get-your-custom-domain-name-and-subscription-key"></a>Uw aangepaste domein naam en abonnements sleutel ophalen
 
 > [!IMPORTANT]
 >
-> * U kunt het eind punt dat u hebt gevonden op uw Azure Portal bron _sleutels en de eindpunt_ pagina of het globale Translator-eind punt niet gebruiken `api.cognitive.microsofttranslator.com` om HTTP-aanvragen voor document omzetting te maken.
+> * U gebruikt niet het eind punt dat u hebt gevonden op uw Azure Portal bron _sleutels en eindpunt_ pagina of het globale Translator-eind punt — `api.cognitive.microsofttranslator.com` — om HTTP-aanvragen te maken voor document vertalingen.
 > * **Voor alle API-aanvragen voor de document Vertaal service is een aangepast domein eindpunt vereist**.
 
-### <a name="what-is-the-custom-domain-endpoint"></a>Wat is het aangepaste domein eindpunt? 
+### <a name="what-is-the-custom-domain-endpoint"></a>Wat is het aangepaste domein eindpunt?
 
 Het aangepaste domein-eind punt is een URL die is opgemaakt met uw resource naam, hostnaam en Translator-submappen:
 
@@ -72,9 +72,9 @@ U moet in uw [**Azure Blob Storage-account**](https://ms.portal.azure.com/#creat
 * **Doel container**. In deze container worden uw vertaalde bestanden opgeslagen (vereist).  
 * **Container voor verklarende woorden lijst**. In deze container kunt u uw woordenlijst bestanden uploaden (optioneel).  
 
-*Zie* **SAS-toegangs tokens maken voor document vertalingen**
+### <a name="create-sas-access-tokens-for-document-translation"></a>**SAS-toegangs tokens maken voor document vertalingen**
 
-De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Access Signature-token (SAS) bevatten, toegevoegd als een query reeks. Het token kan worden toegewezen aan uw container of specifieke blobs.
+De `sourceUrl` , `targetUrl` en optioneel `glossaryUrl`  moeten een Shared Access Signature-token (SAS) bevatten, toegevoegd als een query reeks. Het token kan worden toegewezen aan uw container of specifieke blobs. *Zie* [**SAS-tokens maken voor het vertalen van documenten**](create-sas-tokens.md).
 
 * Uw **bron** container of BLOB moet de aangewezen  **Lees** -en **lijst** toegang hebben.
 * Uw **doel** container of BLOB moet  **Schrijf** -en **lijst** toegang hebben.
@@ -271,7 +271,9 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 
 > [!IMPORTANT]
 >
-> Voor de voorbeeld code moet u mogelijk de volgende velden bijwerken, afhankelijk van de bewerking:
+> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
+>
+> Mogelijk moet u de volgende velden bijwerken, afhankelijk van de bewerking:
 >>>
 >> * `endpoint`
 >> * `subscriptionKey`
@@ -280,13 +282,18 @@ De volgende headers zijn opgenomen in elke document Translator API-aanvraag:
 >> * `glossaryURL`
 >> * `id`  (taak-ID)
 >>
-> Waar de waarde moet worden gezocht `id` :
-> * U vindt de taak `id`  in de URL-waarde van de antwoord header van de methode post `Operation-Location`  . De laatste para meter van de URL is de taak van de bewerking **`id`** .  
-> * U kunt ook een aanvraag voor het ophalen van taken gebruiken om de taak `id`  voor een document Vertaal bewerking op te halen.
+
+#### <a name="locating--the-id-value"></a>De waarde zoeken `id`
+
+* U vindt de taak `id`  in de URL-waarde van de antwoord header Post-methode `Operation-Location`  . De laatste para meter van de URL is de taak van de bewerking **`id`** :
+
+|**Reactie header**|**Resultaten-URL**|
+|-----------------------|----------------|
+Operation-Location   | https://<<span>naam-van-uw-bron>. cognitiveservices.Azure.com/Translator/text/batch/v1.0-Preview.1/batches/9dce0aa9-78dc-41ba-8cae-2e2f3c2ff8ec</span>
+
+* U kunt ook een aanvraag **Get Jobs** gebruiken om een taak voor document conversie op te halen `id` .
+
 >
-> Voor de onderstaande code voorbeelden geeft u uw sleutel en het eind punt op waar aangegeven. Vergeet niet om de sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen.  
->
-> Zie [Azure Cognitive Services Security](/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp) voor manieren om uw referenties veilig op te slaan en te openen.
 
 ## <a name="_post-document-translation_-request"></a>Aanvraag voor _document vertaling boeken_
 

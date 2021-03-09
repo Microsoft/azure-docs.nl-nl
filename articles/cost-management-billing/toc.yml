@@ -292,6 +292,8 @@
           href: manage/mca-check-azure-credits-balance.md
         - name: Migreren van EA naar MCA-API's
           href: costs/migrate-cost-management-api.md
+        - name: Rollen toewijzen aan Spn's
+          href: manage/assign-roles-azure-service-principals.md
     - name: Reserveringen aanschaffen en beheren
       items:
         - name: Bepalen wat u moet aanschaffen

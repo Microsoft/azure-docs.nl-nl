@@ -3,21 +3,21 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 11/25/2020
-ms.openlocfilehash: e1df53a7aea0b7642828bba80cd7237e26a7182f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a8b089ce834d5b49e4ad32081a58e371835e8602
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101728226"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488295"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
 In dit artikel wordt uitgelegd hoe de implementatie en configuratie van de on-premises VMware HCX-connector voor de privécloud van uw Azure VMware Solution in zijn werk gaat. Met VMware HCX kunt u uw VMware-workloads migreren naar Azure VMware Solution en andere verbonden sites mogelijk via verschillende migratietypen. Omdat Azure VMware Solution de HCX Cloud Manager implementeert en configureert, moet u de HCX-connector in uw on-premises VMware-datacenter downloaden, activeren en configureren.
 
-VMware HCX Advanced Connector is vooraf geïmplementeerd in Azure VMware Solution. De connector ondersteunt maximaal drie siteverbindingen (on-premises naar de cloud of van cloud naar cloud). Als u meer dan drie site verbindingen nodig hebt, dient u een [ondersteuningsaanvraag](https://portal.azure.com/#create/Microsoft.Support) in om de invoegtoepassing [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/) in te schakelen. Deze invoegtoepassing is momenteel in preview. 
+VMware HCX Advanced Connector is vooraf geïmplementeerd in Azure VMware Solution. De connector ondersteunt maximaal drie siteverbindingen (on-premises naar de cloud of van cloud naar cloud). Als u meer dan drie site verbindingen nodig hebt, dient u een [ondersteuningsaanvraag](https://portal.azure.com/#create/Microsoft.Support) in om de invoegtoepassing [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/) in te schakelen.  
 
 >[!TIP]
->Hoewel het hulpprogramma VMware Configuration Maximum 25 aangeeft als het maximale aantal siteparen tussen de on-premises-connector en Cloud Manager, beperkt de licentie die tot drie voor Advanced en 10 voor Enterprise Edition.
+>Hoewel het maximum aantal site paren van het hulp programma VMware-configuratie een beschrijving heeft van 25 tussen de on-premises connector en Cloud Manager, wordt dit door de licentie limiet beperkt tot drie voor HCX Advanced en 10 voor HCX Enter prise Edition.
 
 >[!NOTE]
 >VMware HCX Enterprise is beschikbaar bij Azure VMware Solution als een preview-service. Het is gratis en de voorwaarden voor een preview-service zijn van toepassing. Nadat de VMware HCX Enterprise-service algemeen beschikbaar is, krijgt u een melding dat de facturering over 30 dagen wordt omgeschakeld. U hebt ook de mogelijkheid om de service uit te schakelen of op te zeggen. Er is geen eenvoudig pad om van VMware HCX Enterprise naar VMware HCX Advanced te downgraden. Als u besluit om te downgraden, moet u de implementatie opnieuw uitvoeren. Dit brengt downtime met zich mee.
@@ -58,9 +58,9 @@ Zorg ervoor dat uw on-premises vSphere-omgeving (bronomgeving) voldoet aan de [m
 
 ### <a name="network-and-ports"></a>Netwerk en poorten
 
-* [Azure ExpressRoute Global Reach](tutorial-expressroute-global-reach-private-cloud.md) is geconfigureerd tussen on-premises en Azure VMware Solution SDDC ExpressRoute-circuits.
+* [Azure ExpressRoute Global Reach](tutorial-expressroute-global-reach-private-cloud.md) is geconfigureerd tussen on-premises en Azure VMware-oplossing Private Cloud ExpressRoute-circuits.
 
-* [Alle vereiste poorten](https://ports.vmware.com/home/VMware-HCX) zijn geopend voor communicatie tussen on-premises onderdelen en Azure VMware Solution SDDC.
+* [Alle vereiste poorten](https://ports.vmware.com/home/VMware-HCX) zijn geopend voor communicatie tussen on-premises onderdelen en Azure VMware-oplossingen persoonlijk.
 
 ### <a name="ip-addresses"></a>IP-adressen
 
@@ -169,7 +169,7 @@ Nadat de services opnieuw zijn gestart, zult u zien dat vCenter groen wordt weer
 Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Activeer de video over HCX ](https://www.youtube.com/embed/PnVg6SZkQsY?rel=0&amp;vq=hd720).
 
    > [!IMPORTANT]
-   > Of u nu VMware HCX Advanced of VMware HCX Enterprise gebruikt, u moet waarschijnlijk toch de patch installeren uit het [KB-artikel 81558](https://kb.vmware.com/s/article/81558) over VMware. 
+   > Of u nu HCX Advanced of HCX Enter prise gebruikt, u moet mogelijk de patch installeren vanuit het [KB-artikel 81558](https://kb.vmware.com/s/article/81558)van VMware. 
 
 ## <a name="configure-the-vmware-hcx-connector"></a>VMware HCX-connector configureren
 
@@ -282,7 +282,7 @@ Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Sol
 
 ### <a name="create-a-service-mesh"></a>Een service-mesh maken
 
-Het is nu tijd om een service-mesh tussen on-premises en Azure VMware Solution SDDC te configureren.
+Nu is het tijd om een service-net te configureren tussen on-premises en Azure VMware-oplossing privécloud.
 
 
 
@@ -369,7 +369,7 @@ Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Sol
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als de interconnect-tunnelstatus van het apparaat **UP** en groen is, kunt u virtuele machines van Azure VMware Solution migreren en beveiligen met behulp van VMware HCX. De Azure VMware Solution ondersteunt migraties van workloads (met of zonder een netwerkextensie). U kunt nog steeds workload migreren in uw vSphere-omgeving, naast het on-premises maken van netwerken en de implementatie van virtuele machines op die netwerken.  
+Als de HCX Interconnect-tunnel status is **ingesteld** op groen, kunt u virtuele machines van Azure VMware-oplossingen migreren en beveiligen met behulp van VMware HCX. De Azure VMware Solution ondersteunt migraties van workloads (met of zonder een netwerkextensie). U kunt nog steeds workload migreren in uw vSphere-omgeving, naast het on-premises maken van netwerken en de implementatie van virtuele machines op die netwerken.  
 
 Ga naar de technische documentatie voor VMware voor meer informatie over het gebruik van HCX:
 

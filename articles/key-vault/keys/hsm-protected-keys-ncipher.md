@@ -8,23 +8,24 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: tutorial
-ms.date: 05/29/2020
+ms.date: 02/24/2021
 ms.author: ambapat
-ms.openlocfilehash: 8a1f3b5e80152fb0fb9458aef0d3524dd2d6f5eb
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
-ms.translationtype: HT
+ms.openlocfilehash: 511544f81f6de887014545e3f4bbc7a4172fc91e
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092326"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488746"
 ---
 # <a name="import-hsm-protected-keys-for-key-vault-ncipher"></a>Met HSM beveiligde sleutels importeren voor Key Vault (nCipher)
+
+> [!WARNING]
+> De in dit document beschreven methode voor het importeren van de HSM-sleutel wordt **afgeschaft** en wordt in de toekomst niet meer ondersteund. Het werkt alleen met nCipher nShield-familie van Hsm's met firmware 12.40.2 of 12,50 met een hotfix. Het gebruik van de [nieuwe methode voor het importeren van HSM-sleutels](hsm-protected-keys-byok.md) wordt ten zeerste aanbevolen.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Als u Azure Key Vault gebruikt, kunt u het beste sleutels in HSM's (Hardware Security Modules) importeren of genereren die de HSM-grens nooit overschrijden. Dit scenario wordt vaak *Bring Your Own Key* of BYOK genoemd. Azure Key Vault maakt gebruik van de nCipher nShield-serie van HSM's (gevalideerd voor FIPS 140-2 Level 2) om uw sleutels te beveiligen.
 
-> [!NOTE]
-> De in dit document beschreven methode voor het importeren van HSM-sleutels werkt alleen met de nCipher nShield-serie van HSM's. [Hier](hsm-protected-keys-byok.md) vindt u meer informatie over het importeren van HSM-sleutels uit andere HSM's.
 
 Gebruik de informatie in dit artikel bij het plannen, genereren en ten slotte overbrengen van uw eigen, met HSM beveiligde sleutels voor gebruik met Azure Key Vault. 
 

@@ -5,25 +5,25 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 01/06/2021
 ms.custom: seo-nov-2020
-ms.openlocfilehash: 7fedd45585698aef9248318a1b055cb656f25d02
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 6bdb167990afeb5c1b6c68185f24a8f930287bed
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335125"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487896"
 ---
 # <a name="distribute-your-data-globally-with-azure-cosmos-db"></a>Gegevens wereldwijd distribueren met Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Van toepassingen wordt tegenwoordig vereist dat ze zeer responsief en altijd online zijn. Voor het bereiken van lage latentie en hoge beschikbaarheid moeten de instanties van deze toepassingen worden geïmplementeerd in datacenters die zich dicht bij de gebruikers ervan bevinden. Deze toepassingen worden doorgaans geïmplementeerd in meerdere data centers en worden wereld wijd gedistribueerd genoemd. Globaal gedistribueerde toepassingen hebben een globaal gedistribueerde database nodig die overal ter wereld transparant gegevens kan repliceren om de toepassingen in staat te stellen te werken met een kopie van de gegevens die zich dicht bij de gebruikers bevindt. 
+Van toepassingen wordt tegenwoordig vereist dat ze zeer responsief en altijd online zijn. Voor het bereiken van lage latentie en hoge beschikbaarheid moeten de instanties van deze toepassingen worden geïmplementeerd in datacenters die zich dicht bij de gebruikers ervan bevinden. Deze toepassingen worden doorgaans geïmplementeerd in meerdere datacentrums en worden 'globaal gedistribueerd' genoemd. Globaal gedistribueerde toepassingen hebben een globaal gedistribueerde database nodig die overal ter wereld transparant gegevens kan repliceren om de toepassingen in staat te stellen te werken met een kopie van de gegevens die zich dicht bij de gebruikers bevindt. 
 
-Azure Cosmos DB is een wereld wijd gedistribueerd database systeem waarmee u gegevens van de lokale replica's van uw data base kunt lezen en schrijven. Azure Cosmos DB worden de gegevens op transparante wijze gerepliceerd naar alle regio's die zijn gekoppeld aan uw Cosmos-account. Azure Cosmos DB is een wereld wijd gedistribueerde database service die is ontworpen om te voorzien in een lage latentie, elastische schaal baarheid van door Voer, goed gedefinieerde semantiek voor consistentie van gegevens en hoge Beschik baarheid. Kortom, als uw toepassing een snelle respons tijd overal ter wereld nodig heeft, als deze altijd online moet zijn, en u een onbeperkte en elastische schaal baarheid van door Voer en opslag nodig hebt, moet u uw toepassing bouwen op Azure Cosmos DB.
+Azure Cosmos DB is een wereldwijd gedistribueerd databasesysteem waarmee u gegevens uit lokale replica's van uw database kunt lezen of schrijven. Azure Cosmos DB biedt op transparante wijze replica's van de gegevens in alle regio's die zijn gekoppeld aan uw Cosmos-account. Azure Cosmos DB is een wereld wijd gedistribueerde database service die is ontworpen om te voorzien in een lage latentie, elastische schaal baarheid van door Voer, goed gedefinieerde semantiek voor consistentie van gegevens en hoge Beschik baarheid. Kortom, als uw toepassing een snelle respons tijd overal ter wereld nodig heeft, als deze altijd online moet zijn, en u een onbeperkte en elastische schaal baarheid van door Voer en opslag nodig hebt, moet u uw toepassing bouwen op Azure Cosmos DB.
 
-U kunt uw data bases zo configureren dat deze globaal worden gedistribueerd en beschikbaar zijn in een van de Azure-regio's. Als u de latentie wilt verlagen, plaatst u de gegevens dichtbij waar uw gebruikers zich bevinden. Het kiezen van de vereiste regio's is afhankelijk van het wereld wijde bereik van uw toepassing en waar uw gebruikers zich bevinden. Cosmos DB worden de gegevens op transparante wijze gerepliceerd naar alle regio's die zijn gekoppeld aan uw Cosmos-account. Het biedt één systeem kopie van uw wereld wijd gedistribueerde Azure Cosmos-data base en containers die uw toepassing lokaal kan lezen en ernaar kan schrijven. 
+U kunt uw data bases zo configureren dat deze globaal worden gedistribueerd en beschikbaar zijn in een van de Azure-regio's. Als u de latentie wilt verlagen, plaatst u de gegevens dichtbij waar uw gebruikers zich bevinden. Het kiezen van de vereiste regio's is afhankelijk van het wereld wijde bereik van uw toepassing en waar uw gebruikers zich bevinden. Cosmos DB worden de gegevens op transparante wijze gerepliceerd naar alle regio's die zijn gekoppeld aan uw Cosmos-account. Het biedt één systeem kopie van uw wereld wijd gedistribueerde Azure Cosmos-data base en containers die uw toepassing lokaal kan lezen en ernaar kan schrijven.
 
-Met Azure Cosmos DB kunt u op elk gewenst moment de regio's toevoegen of verwijderen die aan uw account zijn gekoppeld. Uw toepassing hoeft niet te worden onderbroken of opnieuw te worden geïmplementeerd om een regio toe te voegen of te verwijderen. Het blijft altijd Maxi maal beschikbaar als gevolg van de mogelijkheden voor multi-multihoming die de service systeem eigen heeft.
+Met Azure Cosmos DB kunt u op elk gewenst moment de regio's toevoegen of verwijderen die aan uw account zijn gekoppeld. Uw toepassing hoeft niet te worden onderbroken of opnieuw te worden geïmplementeerd om een regio toe te voegen of te verwijderen.
 
 :::image type="content" source="./media/distribute-data-globally/deployment-topology.png" alt-text="Implementatie topologie met hoge Beschik baarheid" border="false":::
 
@@ -35,7 +35,7 @@ Met Azure Cosmos DB kunt u op elk gewenst moment de regio's toevoegen of verwijd
 - 99,999% Beschik baarheid voor lezen en schrijven over de hele wereld.
 - Gegarandeerde lees-en schrijf bewerkingen in minder dan 10 milliseconden in het 99e percentiel.
 
-Met de Azure Cosmos DB multi-multihoming-Api's is uw toepassing op de hoogte van de dichtstbijzijnde regio en kan hij aanvragen verzenden naar deze regio. De dichtstbijzijnde regio wordt geïdentificeerd zonder configuratie wijzigingen. Wanneer u regio's toevoegt aan en verwijdert uit uw Azure Cosmos-account, hoeft uw toepassing niet opnieuw te worden geïmplementeerd of gepauzeerd. deze is altijd Maxi maal beschikbaar.
+Wanneer u regio's toevoegt aan en verwijdert uit uw Azure Cosmos-account, hoeft uw toepassing niet opnieuw te worden geïmplementeerd of gepauzeerd. deze is altijd Maxi maal beschikbaar.
 
 **Bouw zeer snel reagerende apps.** Uw toepassing kan bijna realtime Lees-en schrijf bewerkingen uitvoeren op alle regio's die u voor uw data base hebt gekozen. Azure Cosmos DB beheert intern de gegevens replicatie tussen regio's met consistentie niveau van het niveau dat u hebt geselecteerd.
 

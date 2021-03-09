@@ -9,12 +9,12 @@ ms.reviewer: estfan, daviburg, logicappspm
 ms.topic: article
 ms.date: 03/08/2021
 tags: connectors
-ms.openlocfilehash: 3e98dc36b3d58ce5289fccde7b5f5a49973c9de6
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: b9238d099c7b33e904c2fc8de3c4fc08369f1f36
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102454223"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489834"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Verbinding maken met SAP-systemen in Azure Logic Apps
 
@@ -752,7 +752,7 @@ U kunt SAP instellen voor het [verzenden van IDocs in pakketten](https://help.sa
 
 Hier volgt een voor beeld waarin wordt uitgelegd hoe u afzonderlijke IDocs uit een pakket kunt ophalen met behulp van de [ `xpath()` functie](./workflow-definition-language-functions-reference.md#xpath):
 
-1. Voordat u begint, hebt u een logische app met een SAP-trigger nodig. Als u deze logische app nog niet hebt, volgt u de vorige stappen in dit onderwerp om [een logische app in te stellen met een SAP-trigger](#receive-message-from-sap).
+1. Voordat u begint, hebt u een logische app met een SAP-trigger nodig. Als u dit nog niet in uw logische app hebt, volgt u de vorige stappen in dit onderwerp om [een logische app in te stellen met een SAP-trigger](#receive-message-from-sap).
 
     > [!IMPORTANT]
     > De SAP **-programma-id** is hoofdletter gevoelig. Zorg ervoor dat u voor de **programma-id** consistent dezelfde indeling voor het hoofdletter gebruik gebruikt wanneer u uw logische app en SAP-server configureert. Anders kan het zijn dat de volgende fouten worden weer gegeven in de tRFC-monitor (T-code SM58) wanneer u probeert een IDoc naar SAP te verzenden:
@@ -765,6 +765,14 @@ Hier volgt een voor beeld waarin wordt uitgelegd hoe u afzonderlijke IDocs uit e
    Bijvoorbeeld:
 
    ![SAP-trigger toevoegen aan de logische app](./media/logic-apps-using-sap-connector/first-step-trigger.png)
+
+1. [Voeg een reactie actie toe aan uw logische app](/azure/connectors/connectors-native-reqres#add-a-response-action) om direct te antwoorden met de status van uw SAP-aanvraag. Het is een best practice om deze actie onmiddellijk na de trigger toe te voegen, om het communicatie kanaal met uw SAP-server vrij te maken. Kies een van de volgende status codes ( `statusCode` ) die u wilt gebruiken in uw reactie actie:
+
+    * **202 geaccepteerd**, wat betekent dat de aanvraag is geaccepteerd voor verwerking, maar de verwerking nog niet is voltooid.
+
+    * **204 geen inhoud**, wat betekent dat de server de aanvraag heeft voltooid en dat er geen aanvullende inhoud kan worden verzonden in de hoofd tekst van de antwoord lading. 
+
+    * **200 OK**. Deze status code bevat altijd een Payload, zelfs als de server een Payload-hoofd tekst met een lengte van nul genereert. 
 
 1. Haal de hoofd naam ruimte op uit de XML-IDoc die uw logische app van SAP ontvangt. Als u deze naam ruimte uit het XML-document wilt extra heren, voegt u een stap toe die een lokale teken reeks variabele maakt en slaat die naam ruimte op met behulp van een `xpath()` expressie:
 

@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 07/20/2020
 ms.author: sebansal
-ms.openlocfilehash: 0720e6b55cec8150eea9d41ca89b2c9b21a0bc94
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
-ms.translationtype: HT
+ms.openlocfilehash: c7948230164258aa785f3dd6c1f487c51ece9333
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93287692"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487182"
 ---
 # <a name="renew-your-azure-key-vault-certificates"></a>Azure Key Vault-certificaten verlengen
 
@@ -73,7 +73,10 @@ Zie [een CSR maken en samenvoegen in Key Vault]( https://docs.microsoft.com/azur
 Azure Key Vault verwerkt ook het automatisch verlengen van zelfondertekende certificaten. Zie [Automatisch roteren van certificaatconfiguratie in Key Vault](./tutorial-rotate-certificates.md#update-lifecycle-attributes-of-a-stored-certificate) voor meer informatie over het wijzigen van het uitgiftebeleid en het bijwerken van de levenscycluskenmerken van een certificaat.
 
 ## <a name="troubleshoot"></a>Problemen oplossen
-Als het uitgegeven certificaat in Azure Portal de status *uitgeschakeld* heeft, gaat u naar **Certificaatbewerking** om het foutbericht voor dat certificaat te bekijken.
+* Als het uitgegeven certificaat in Azure Portal de status *uitgeschakeld* heeft, gaat u naar **Certificaatbewerking** om het foutbericht voor dat certificaat te bekijken.
+* Fout type ' de CSR die is gebruikt om het certificaat op te halen, is al gebruikt. Maak een nieuw certificaat met een nieuwe CSR.
+  Ga naar de sectie Geavanceerd beleid van het certificaat en controleer of de optie **sleutel opnieuw gebruiken bij vernieuwen** is uitgeschakeld.
+
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

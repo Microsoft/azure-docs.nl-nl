@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 849afe54125588cb7664ee221e4f229e83be8f96
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 4c2d1cd1c73b377d85501fd31d0f5a1893df5183
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185475"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487415"
 ---
 # <a name="camera-placement-guide"></a>Gids voor camera plaatsing
 
@@ -72,12 +72,12 @@ Gebruik de onderstaande tabel om de afstand van de camera te bepalen van het bra
 
 | Camera hoogte | Camera-naar-brandpuntsafstand-punt-afstand (min/max) |  
 | ------------- | ---------------------------------------- |  
-| achtste            | 10 '-13 '                                  |  
-| 6           | 7 '-13 '                                   |  
-| 12           | 10 '-17 '                                  |  
-| 15           | 11 '-18 '                                  |  
-| 18           | 12 '-22 '                                  |  
-| 20           | 15 '-30 '                                  |  
+| achtste            | 4.6-8                                  |  
+| 6           | 5,8-10                                 |  
+| 12           | 7 '-12 '                                   |  
+| 15           | 8 '-14 ' '                                  |  
+| 18           | 9.2-16                                 |  
+| 20           | 11,5 '-20 '                                |  
 
 In de volgende afbeelding worden camera weergaven gesimuleerd op basis van de meest overeenkomende camera-naar-focus punt afstanden.
 
@@ -91,15 +91,9 @@ In deze sectie worden geldige bereiken voor het koppelen van camera hoeken besch
 
 ### <a name="line-configuration"></a>Lijn configuratie
 
-De volgende tabel bevat aanbevelingen voor camera's die zijn geconfigureerd voor de bewerking **cognitiveservices. Vision. spatialanalysis-personcrossingline** . Voor detectie van gezichts maskers is +/-30 graden de optimale camera montage hoek voor de camera hoogte tussen 8 en 12.
+Voor de bewerking **cognitiveservices. Vision. spatialanalysis-personcrossingline** is +/-5 ° de optimale camera-montage hoek om de nauw keurigheid te maximaliseren.
 
-| Camera hoogte | Camera-naar-scherpere punt afstand | Optimale camera montage hoek (min/max) |  
-| ------------- | ------------------------------ | ------------------------------------------ |  
-| achtste            | 9,4                             | +/-40 °                                     |  
-| 6           | 6                            | +/-30 °                                     |  
-| 12           | 13                            | +/-20 °                                     |  
-| 18           | 18,0                            | +/-10 °                                     |  
-| 20           | 21                            | +/-10 °                                     |  
+Voor detectie van gezichts maskers is +/-30 graden de optimale camera montage hoek voor de camera hoogte tussen 8 en 12.
 
 In de volgende afbeelding worden de camera weergaven gesimuleerd met behulp van de meest linkse (-) en meest rechtse (+)-montage hoek aanbevelingen voor het gebruik van **cognitiveservices. Vision. spatialanalysis-personcrossingline** om te beginnen met tellen.
 

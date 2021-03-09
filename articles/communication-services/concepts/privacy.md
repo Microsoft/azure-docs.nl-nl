@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: f6e4218290de6ef41ef6eedc78b3b0b55ee322e8
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 50b8bc0882a5a219e70a44fdefe7dff30ae9e0ae
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102438554"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487641"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
@@ -65,7 +65,7 @@ Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijder
 
 ### <a name="sms"></a>Sms
 
-Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard. 
+Verzonden en ontvangen SMS-berichten worden kortstondig verwerkt door de service en worden niet bewaard.
 
 ### <a name="pstn-voice-calling"></a>PSTN-spraakoproepen
 

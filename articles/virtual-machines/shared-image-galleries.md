@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: baba35bd29ec6708aca77bd9c6d74401a365014a
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 9a5bc0620468980da68e1b92f758d5f3862ac7d3
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101091888"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487250"
 ---
 # <a name="shared-image-galleries-overview"></a>Galerieën met gedeelde installatiekopieën (overzicht)
 
@@ -104,7 +104,7 @@ Voor gespecialiseerde VM's is geen proces gevolgd om computerspecifieke gegevens
 
 ## <a name="regional-support"></a>Regionale ondersteuning
 
-Alle openbare regio's kunnen doelregio's zijn, maar als u naar Australië - centraal en Australië - centraal 2 wilt repliceren, moet uw abonnement aan de lijst met toegestane regio's worden toegevoegd. Als u wilt aanvragen dat een abonnement wordt toegevoegd aan de lijst met toegestane regio's, gaat u naar: https://azure.microsoft.com/global-infrastructure/australia/contact/
+Alle openbare regio's kunnen doelregio's zijn, maar als u naar Australië - centraal en Australië - centraal 2 wilt repliceren, moet uw abonnement aan de lijst met toegestane regio's worden toegevoegd. Als u wilt aanvragen dat een abonnement wordt toegevoegd aan de lijst met toegestane regio's, gaat u naar: https://docs.microsoft.com/azure/virtual-machines/shared-image-galleries#regional-support
 
 ## <a name="limits"></a>Limieten 
 
@@ -325,4 +325,3 @@ Daarnaast kunt u uw vraag met `azure-virtual-machines-images` op [Q&A](/answers/
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het implementeren van gedeelde installatie kopieën met behulp van [Azure cli](shared-images-cli.md) of [Power shell](shared-images-powershell.md).
-

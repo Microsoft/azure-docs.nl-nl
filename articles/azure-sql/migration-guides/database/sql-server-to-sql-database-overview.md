@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2d97d02aec84fec92e29e971cd5c667c847b2541
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 733b2375a26b0157f88bc148b52932e2f3e3f2e2
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368044"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488270"
 ---
 # <a name="migration-overview-sql-server-to-sql-database"></a>Migratie overzicht: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -104,6 +104,7 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 
 |Technologie | Beschrijving|
 |---------|---------|
+| [Azure Migrate](/azure/migrate/how-to-create-azure-sql-assessment) | Met Azure Migrate voor Azure SQL kunt u uw SQL-gegevens op schaal ontdekken en beoordelen in VMware, met aanbevelingen voor de implementatie van Azure SQL, doel grootte en maandelijkse schattingen. | 
 |[Data Migration Assistant (DMA)](/sql/dma/dma-migrateonpremsqltosqldb)|De Data Migration Assistant is een bureau blad dat zorgt voor naadloze evaluaties van SQL Server en migraties naar Azure SQL Database (schema en gegevens). Het hulp programma kan worden geïnstalleerd op een on-premises server of op uw lokale computer die verbinding heeft met uw bron databases. Het migratie proces is een logische gegevens verplaatsing tussen objecten in de bron-en doel database. </br> -Eén data base (schema en gegevens) migreren|
 |[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-azure-sql.md)|Een Azure-service voor de eerste partij waarmee u uw SQL Server-data bases kunt migreren naar Azure SQL Database met behulp van de Azure Portal of geautomatiseerde met Power shell. Voor Azure DMS moet u een voor Keurs-Azure-Virtual Network (VNet) selecteren tijdens de inrichting om ervoor te zorgen dat er verbinding is met uw bron SQL Server-data bases. </br> -Migreer afzonderlijke data bases of op een schaal. |
 | | |
@@ -194,7 +195,7 @@ Naast geavanceerde beheer-en beveiligings functies biedt SQL Database een aantal
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Description  |
+|Asset  |Beschrijving  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren, waarmee u grote en ongeëvenaarde evaluaties versnelt door een geautomatiseerd en uniform platform besluitvormings proces te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, inclusief Azure SQL Database.|

@@ -5,14 +5,14 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 09/18/2020
+ms.date: 01/06/2021
 ms.author: mjbrown
-ms.openlocfilehash: d8763a794d2fb96d0c464fb1249b9eb400fd23e7
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d542e2b4e5db86fd3354514790e718f0694a09a5
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339866"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489749"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Een Azure Cosmos-account beheren
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -198,7 +198,7 @@ Zie [prioriteit van failover instellen met Azure cli](manage-with-cli.md#set-fai
 
 Zie [prioriteit van failover instellen met Power shell](manage-with-powershell.md#modify-failover-priority)
 
-## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Hand matige failover uitvoeren op een Azure Cosmos-account
+## <a name="perform-manual-failover-on-an-azure-cosmos-account"></a><a id="manual-failover"></a>Handmatige failover uitvoeren voor een Azure Cosmos-account
 
 > [!IMPORTANT]
 > Het Azure Cosmos-account moet worden geconfigureerd voor een hand matige failover zodat deze bewerking kan worden voltooid.
@@ -206,7 +206,7 @@ Zie [prioriteit van failover instellen met Power shell](manage-with-powershell.m
 Het proces voor het uitvoeren van een hand matige failover omvat het wijzigen van de schrijf regio van het account (failover priority = 0) naar een andere regio die is geconfigureerd voor het account.
 
 > [!NOTE]
-> Voor accounts met meerdere schrijf regio's kan hand matig geen failover worden uitgevoerd. Voor toepassingen die gebruikmaken van de Azure Cosmos SDK detecteert de SDK wanneer een regio niet meer beschikbaar is en wordt automatisch omgeleid naar de dichtstbijzijnde regio als u gebruikmaakt van de multi-multihoming-API in de SDK.
+> Voor accounts met meerdere schrijf regio's kan hand matig geen failover worden uitgevoerd. Voor toepassingen die de Azure Cosmos-SDK gebruiken, detecteert de SDK wanneer een regio niet meer beschikbaar is en wordt automatisch omgeleid naar de volgende dichtstbijzijnde regio.
 
 ### <a name="azure-portal"></a><a id="enable-manual-failover-via-portal"></a>Azure Portal
 

@@ -10,16 +10,25 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 4f5ea68102e98a9abc3e5a0a31d3153bc1bd1663
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 78746e7623f58af5ae9df829b48245295dc39f01
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101738222"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487097"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
 Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij de release, video's, blogposts en andere soorten informatie zijn. Voeg een bladwijzer toe voor deze pagina om up-to-date te blijven over de service.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="computer-vision-32-public-preview-update"></a>Computer Vision 3,2 open bare preview-update
+
+De open bare preview van Computer Vision-API v 3.2 is bijgewerkt. De preview-versie bevat alle Computer Vision-functies en bijgewerkte Api's voor lezen en analyseren.
+
+> [!div class="nextstepaction"]
+> [Zie Computer Vision v 3.2 Public Preview 3](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005)
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -34,7 +43,7 @@ De open bare preview-versie van Computer Vision Lees-API v 3.2, beschikbaar als 
 Meer [informatie](concept-recognizing-text.md) over de Lees-API.
 
 > [!div class="nextstepaction"]
-> [De Lees-API v 3.2 open bare preview gebruiken](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)
+> [De Lees-API v 3.2 open bare preview gebruiken](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005)
 
 
 ## <a name="january-2021"></a>Januari 2021

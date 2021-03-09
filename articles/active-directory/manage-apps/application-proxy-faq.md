@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 19a5d223b587e47c562977cc9fea34f990eb0e46
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: edd2ec633bd78ce1a596782deab57105e9d7f1c3
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100370815"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487743"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -37,6 +37,21 @@ Als uw licentie is verlopen, wordt de toepassings proxy automatisch uitgeschakel
 Zorg ervoor dat er ten minste een Azure AD Premium P1-of P2-licentie en een Azure AD-toepassingsproxy-connector is geïnstalleerd. Nadat u uw eerste connector hebt geïnstalleerd, wordt de Azure AD-toepassingsproxy-service automatisch ingeschakeld.
 
 ## <a name="connector-configuration"></a>Connector configuratie
+
+### <a name="why-is-my-connector-still-using-an-older-version-and-not-auto-upgraded-to-latest-version"></a>Waarom maakt mijn connector nog steeds gebruik van een oudere versie en niet automatisch bijgewerkt naar de nieuwste versie?
+
+Dit kan worden veroorzaakt doordat de Updater-Service niet goed werkt of omdat er geen nieuwe updates beschikbaar zijn die door de service kunnen worden geïnstalleerd.
+
+De Updater-Service is in orde als deze wordt uitgevoerd en er zijn geen fouten vastgelegd in het gebeurtenis logboek (toepassingen en services-logboeken-> micro soft-> AadApplicationProxy-> Updater->-beheerder). 
+
+> [!IMPORTANT]
+> Alleen primaire versies worden vrijgegeven voor automatische upgrades. U wordt aangeraden uw connector hand matig te updaten volgens een regel matig schema. Voor meer informatie over nieuwe releases, het type van de release (down load, automatische upgrade), fout oplossingen en nieuwe functies Zie, [Azure AD-toepassingsproxy: release geschiedenis van versie](application-proxy-release-version-history.md).
+
+Een connector hand matig bijwerken:
+
+-  Down load de nieuwste versie van de connector. (U vindt deze onder toepassings proxy in azure Portal. U kunt ook de koppeling vinden op [Azure AD-toepassingsproxy: release geschiedenis](application-proxy-release-version-history.md)van de versie.
+-   Het installatie programma start de Azure AD-toepassingsproxy connector-services opnieuw. In sommige gevallen kan het nodig zijn om de server opnieuw op te starten als het installatie programma niet alle bestanden kan vervangen. Daarom wordt u aangeraden alle toepassingen (bijvoorbeeld Logboeken) te sluiten voordat u de upgrade start.
+-   Voer het installatieprogramma uit. Het upgrade proces is snel en vereist geen referenties en de connector wordt niet opnieuw geregistreerd.
 
 ### <a name="can-application-proxy-connector-services-run-in-a-different-user-context-than-the-default"></a>Kunnen Application proxy connector services worden uitgevoerd in een andere gebruikers context dan de standaard instelling?
 

@@ -5,17 +5,17 @@ author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
-ms.date: 05/23/2019
+ms.date: 01/06/2021
 ms.author: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: fedcdd55a465f5c09c331a0fa917811c349b15b1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 019ca26143a4879efafa973299703f0abcb21162
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097223"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488083"
 ---
-# <a name="tuning-query-performance-with-azure-cosmos-db"></a>Queryprestaties afstemmen met Azure Cosmos DB
+# <a name="tuning-query-performance-with-azure-cosmos-db"></a>Query prestaties afstemmen met Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 Azure Cosmos DB biedt een [SQL-API voor het opvragen van gegevens](./sql-query-getting-started.md), zonder dat er schema-of secundaire indexen vereist zijn. In dit artikel vindt u de volgende informatie voor ontwikkel aars:
@@ -143,7 +143,6 @@ Hier volgen de meest voorkomende factoren die van invloed zijn op de prestaties 
 | Ingerichte doorvoer | Meet RU per query en zorg ervoor dat u beschikt over de vereiste ingerichte door Voer voor uw query's. | 
 | Partitioneren en partitie sleutels | Voor keur query's met de partitie sleutel waarde in de component filter voor lage latentie. |
 | SDK-en query opties | Volg de aanbevolen procedures voor de SDK, zoals directe connectiviteit en het afstemmen van de uitvoerings opties voor query's aan de client zijde. |
-| Netwerklatentie | Account voor de berekenings capaciteit van het netwerk en het gebruik van multi-multihoming-Api's voor het lezen van de dichtstbijzijnde regio. |
 | Indexeringsbeleid | Zorg ervoor dat u beschikt over de vereiste indexerings paden/-beleid voor de query. |
 | Metrische gegevens voor query uitvoering | Analyseer de metrische gegevens voor query uitvoering om mogelijke herschrijf bewerkingen van query's en gegevensshapes te identificeren.  |
 
@@ -239,7 +238,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 ```
 
-| Metrisch gegeven | Eenheid | Beschrijving | 
+| Metrisch | Eenheid | Beschrijving | 
 | ------ | -----| ----------- |
 | `totalExecutionTimeInMs` | milliseconden | Uitvoerings tijd van query | 
 | `queryCompileTimeInMs` | milliseconden | Compilatie tijd van de query  | 

@@ -7,12 +7,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 2/19/2021
 ms.author: cavoeg
-ms.openlocfilehash: 675030ac47cb26e817a9ef7ee51999f25020f292
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9ed78baed35312b9a33c71a3e49b7e9dca22eb9f
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712692"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487216"
 ---
 # <a name="how-to-export-fhir-data"></a>FHIR-gegevens exporteren
 
@@ -38,6 +38,13 @@ Wanneer gegevens worden geëxporteerd, wordt een afzonderlijk bestand gemaakt vo
 
 Daarnaast wordt het controleren van de export status via de URL die wordt geretourneerd door de locatie-header tijdens de wachtrij, ondersteund in combi natie met het annuleren van de daad werkelijke export taak.
 
+### <a name="exporting-fhir-data-to-adls-gen2"></a>FHIR-gegevens exporteren naar ADLS Gen2
+
+Momenteel ondersteunen we $export voor ADLS Gen2 ingeschakelde opslag accounts, met de volgende beperking:
+
+- De gebruiker kan nog niet profiteren van [hiërarchische naam ruimten](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace) . Er is geen manier om het exporteren naar een specifieke submap binnen de container te richten. We bieden alleen de mogelijkheid om een specifieke container te richten (waarbij we een nieuwe map voor elke export maken).
+
+- Zodra een export is voltooid, worden er nooit opnieuw items naar die map geëxporteerd, omdat volgende export naar dezelfde container zich in een nieuw gemaakte map bevindt.
 
 
 ## <a name="settings-and-parameters"></a>Instellingen en para meters

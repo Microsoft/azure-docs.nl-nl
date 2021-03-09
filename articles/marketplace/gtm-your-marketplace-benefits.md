@@ -4,15 +4,15 @@ description: 'Go-to-Market-Services: micro soft-bronnen die uitgevers kunnen geb
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-ms.date: 01/13/2021
+ms.date: 03/03/2021
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: 07535add495484abae06fc6ac8ac435d84bccc52
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 06f98a8e303d2ff692c0f84314e639c2a51cbcc1
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246244"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489460"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Uw voor delen voor commerciële Marketplace
 
@@ -38,7 +38,7 @@ U krijgt ondersteuning bij het goed keuren van de beschik bare bronnen en in de 
 
 Gedetailleerde beschrijvingen van alle programma voordelen vindt u in deze [Marketplace-programma presentatie](https://aka.ms/marketplacerewards).
 
-Het is eenvoudig om aan de slag te gaan:
+## <a name="getting-started-is-easy"></a>Het is eenvoudig om aan de slag te gaan:
 
 1. Publiceer een aanbieding in Microsoft AppSource of op Azure Marketplace.
 2. Ga naar [Marketplace-beloningen](https://partner.microsoft.com/dashboard/mpn/program/commercialmarketplace) in partner centrum en selecteer **inschrijven in Marketplace-belonings programma**.
@@ -49,19 +49,19 @@ Het is eenvoudig om aan de slag te gaan:
     1. Geef het telefoonnummer en de voorkeurstaal van de contactpersoon voor deze marketing-contactpersoon op. Wanneer u klaar bent met het invoeren van deze gegevens, selecteert u **Gebruiker toewijzen**.
     1. Nadat u de marketing contactpersoon hebt bijgewerkt, selecteert u **activeren** voor het voor deel dat u wilt gaan gebruiken. Zodra u een voordeel hebt geactiveerd, neemt een lid van het team Beloningen binnen een week contact op met uw marketing-contactpersoon.
 
-### <a name="technical-benefits"></a>Technische voordelen
+> [!NOTE]
+> Als uw aanbieding al meer dan vier weken Live is en u geen bericht hebt ontvangen, controleert u of u de eigenaar bent van de betreffende aanbieding in het partner centrum. De communicatie en de volgende stappen moeten worden uitgevoerd.
 
-1. U kunt uw technische voor delen gebruiken om technische hulp te vragen tijdens de ontwikkelings fase van de voor-en implementatie van uw Cloud en hybride oplossingen. Als u hulp wilt aanvragen, vult u het aanvraag formulier in en selecteert u vervolgens **aanvraag verzenden**.
-2. Het gebruik van de voor delen van Azure sponsor wordt gedeeld via een e-mail wanneer u deze voor delen ontgrendelt.
-
->[!NOTE]
->Als uw aanbieding al meer dan vier weken Live is en u geen bericht hebt ontvangen, controleert u of u de eigenaar bent van de betreffende aanbieding in het partner centrum. De communicatie en de volgende stappen moeten worden uitgevoerd.<br><br>Als u de eigenaar niet kunt bepalen, of als de eigenaar uw bedrijf heeft verlaten, kan u een ondersteunings ticket genereren bij [Help en ondersteuning](https://aka.ms/marketplacepublishersupport).
+Als u de eigenaar niet kunt bepalen, of als de eigenaar uw bedrijf heeft verlaten, kan u een ondersteunings ticket genereren bij [Help en ondersteuning](https://aka.ms/marketplacepublishersupport).
 
 Het bereik van de activiteiten die beschikbaar zijn voor u kunt u uitbreiden naarmate uw aanbiedingen in de commerciële Marketplace worden uitgebreid. Alle vermeldingen ontvangen een basis niveau van optimalisatie aanbevelingen en promotie als onderdeel van een eigen e-mail van resources en aanbevolen procedures.
 
 ## <a name="list-trial-and-consulting-benefits"></a>Lijst-, proef-en advies voordelen
 
-Als u een proef-of advies versie van het concept, de implementatie of de workshop publiceert, wordt er drie maanden een engagement manager aan u toegewezen, die u helpt bij een succes volle go-to-Market-abonnement. U kunt deze drie maanden herhalen telkens wanneer u een nieuwe aanbieding publiceert, om ervoor te zorgen dat al uw nieuwe aanbiedingen aan de slag gaan.
+Telkens wanneer u publiceert op Microsoft AppSource of Azure Marketplace, hebt u toegang tot een nieuwe set voor delen. Zodra uw aanbieding Live is, gaat u naar [partner centrum](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpartner.microsoft.com%2Fdashboard%2Fmpn%2Fmembership%2Fbenefits%2Fcommercialmarketplace&data=04%7C01%7Cv-kilieb%40microsoft.com%7C3b13a8a6e41a47d6d96008d8c7cb3b50%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637479022971578374%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=MF1ZlPX9M5JiJZE2e%2B6kXEsRX1klB5hTcSqcHYDjZq8%3D&reserved=0) om uw in aanmerking komende marketing-, verkoop-en technische voor delen te activeren.
+
+> [!NOTE]
+> Alle voor delen van proef versie en Consulting verlopen na drie maanden.
 
 In de volgende tabel vindt u een overzicht van de vereisten voor lijst, proef versie en Consulting:
 

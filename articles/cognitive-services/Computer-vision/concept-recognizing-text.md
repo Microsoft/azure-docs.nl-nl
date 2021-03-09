@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 2833fd44b75f4bebf41b5100eb2350ca69436520
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e0247560afa8229f4fa5c25ec7dfbbca4f7defb2
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362791"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102486095"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -133,17 +133,17 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie:
 ```
 
 ## <a name="natural-reading-order-output-latin-only"></a>Uitvoer van natuurlijke Lees volgorde (alleen Latijn)
-Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `readingOrder` query parameter. Gebruik `natural` dit voor een meer mensen vriendelijke Lees volgorde, zoals wordt weer gegeven in het volgende voor beeld. Deze functie wordt alleen ondersteund voor Latijnse talen.
+Met de [Lees-API voor lezen 3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005)geeft u de volg orde op waarin de tekst regels worden uitgevoerd met de `readingOrder` query parameter. Gebruik `natural` dit voor een meer mensen vriendelijke Lees volgorde, zoals wordt weer gegeven in het volgende voor beeld. Deze functie wordt alleen ondersteund voor Latijnse talen.
 
 :::image border type="content" source="./Images/ocr-reading-order-example.png" alt-text="Voor beeld van OCR-Lees volgorde":::
 
 ## <a name="handwritten-classification-for-text-lines-latin-only"></a>Handgeschreven classificatie voor tekst regels (alleen Latijn)
-Het antwoord op de preview-versie van de [Lees-3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005) bevat classificatie voor elke tekst regel of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen. In het volgende voor beeld ziet u de handgeschreven classificatie voor de tekst in de afbeelding.
+Het antwoord op de preview-versie van de [Lees-3,2](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005) bevat classificatie voor elke tekst regel of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen. In het volgende voor beeld ziet u de handgeschreven classificatie voor de tekst in de afbeelding.
 
 :::image border type="content" source="./Images/ocr-handwriting-classification.png" alt-text="Voor beeld van de classificatie van OCR-hand schrift":::
 
 ## <a name="select-pages-or-page-ranges-for-text-extraction"></a>Pagina ('s) of paginabereiken selecteren voor tekst extractie
-Met de [lezen 3,2 Preview-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005)voor grote documenten met meerdere pagina's, gebruikt `pages` u de query parameter om pagina nummers of paginabereiken op te geven om alleen tekst uit die pagina's op te halen. In het volgende voor beeld ziet u een document met 10 pagina's, waarbij de tekst wordt geëxtraheerd voor beide gevallen: alle pagina's (1-10) en geselecteerde pagina's (3-6).
+Met de [lezen 3,2 Preview-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005)voor grote documenten met meerdere pagina's, gebruikt `pages` u de query parameter om pagina nummers of paginabereiken op te geven om alleen tekst uit die pagina's op te halen. In het volgende voor beeld ziet u een document met 10 pagina's, waarbij de tekst wordt geëxtraheerd voor beide gevallen: alle pagina's (1-10) en geselecteerde pagina's (3-6).
 
 :::image border type="content" source="./Images/ocr-select-pages.png" alt-text="Uitvoer van geselecteerde pagina's":::
 
@@ -166,4 +166,4 @@ De [OCR-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/com
 
 - Ga aan de slag met de [Computer Vision rest API of de Snelstartgids voor de client bibliotheek](./quickstarts-sdk/client-library.md).
 - Meer informatie over de [lees 3,1-rest API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005).
-- Meer informatie over de [open bare preview-versie van 3,2-lees rest API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-2/operations/5d986960601faab4bf452005) met ondersteuning voor een totaal van 73 talen.
+- Meer informatie over de [open bare preview-versie van 3,2-lees rest API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-3/operations/5d986960601faab4bf452005) met ondersteuning voor een totaal van 73 talen.

@@ -8,14 +8,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: tutorial
-ms.date: 02/01/2021
+ms.date: 02/24/2021
 ms.author: ambapat
-ms.openlocfilehash: 86807899c06cb333238344b7168b5675e8f2e9a3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a7e709ba9a4de5ff77524a2d2b1b64a5933131a2
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "100366582"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489409"
 ---
 # <a name="import-hsm-protected-keys-to-key-vault"></a>Met HSM beveiligde sleutels importeren in Key Vault
 
@@ -33,7 +33,7 @@ Het overdragen van met HSM beveiligde sleutels naar Key Vault wordt ondersteund 
 
 |Naam van leverancier|Type leverancier|Ondersteunde HSM-modellen|Ondersteunde methode voor het overdragen van HSM-sleutels|
 |---|---|---|---|
-|[nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|Fabrikant,<br/>HSM as a Service|<ul><li>nShield-serie van HSM's</li><li>nShield as a service</ul>|**Methode 1:** [nCipher BYOK](hsm-protected-keys-ncipher.md) (met sterke attestatie voor sleutelimport en HSM-validatie)<br/>**Methode 2:** [De nieuwe BYOK-methode gebruiken](hsm-protected-keys-byok.md) |
+|[nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure)|Fabrikant,<br/>HSM as a Service|<ul><li>nShield-serie van HSM's</li><li>nShield as a service</ul>|**Methode 1:** [nCipher BYOK](hsm-protected-keys-ncipher.md) (afgeschaft)<br/>**Methode 2:** de [New BYOK-methode gebruiken](hsm-protected-keys-byok.md) (aanbevolen)|
 |Thales|Fabrikant|<ul><li>Luna HSM 7-serie met firmwareversie 7.3 of hoger</li></ul>| [De nieuwe BYOK-methode gebruiken](hsm-protected-keys-byok.md)|
 |Fortanix|Fabrikant,<br/>HSM as a Service|<ul><li>Self-Defending Key Management Service (SDKMS)</li><li>Equinix SmartKey</li></ul>|[De nieuwe BYOK-methode gebruiken](hsm-protected-keys-byok.md)|
 |Marvell|Fabrikant|Alle LiquidSecurity-HSM's met<ul><li>Firmwareversie 2.0.4 of hoger</li><li>Firmwareversie 3.2 of hoger</li></ul>|[De nieuwe BYOK-methode gebruiken](hsm-protected-keys-byok.md)|

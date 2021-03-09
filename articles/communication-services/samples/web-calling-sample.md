@@ -9,12 +9,12 @@ ms.author: mariusu
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 5752f20cb433a417a684076338214cd2ea80bc8b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: aadecd3c57f5a145efd43058a5113205d7517c0b
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101658094"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102486400"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
@@ -23,6 +23,9 @@ Het voorbeeld van webaanroeping is een webtoepassing die als stapsgewijze instru
 Dit voorbeeld is gebouwd voor ontwikkelaars en maakt het eenvoudig om aan de slag te gaan met Communication Services. De gebruikersinterface is onderverdeeld in meerdere secties, elk met de knop 'Code weergeven' waarmee u rechtstreeks vanuit uw browser codes kunt kopiëren naar uw eigen Communication Services-toepassing.
 
 ## <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
+
+[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
+
 
 > [!IMPORTANT]
 > [Dit voorbeeld is beschikbaar op GitHub.](https://github.com/Azure-Samples/communication-services-web-calling-tutorial/).

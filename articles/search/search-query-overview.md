@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: 234a0137f0a9487a56b3e0343eaea375d2f9a1af
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 97b0a4ca3e4fb94a21cbd30a27a3037f45fed782
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102043011"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487114"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
@@ -24,10 +24,11 @@ In Cognitive Search is een query een volledige specificatie van een round-trip- 
 ```http
 POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 {
-    "queryType": "simple"
-    "search": "`New York` +restaurant",
-    "searchFields": "Description, Address/City, Tags",
-    "select": "HotelId, HotelName, Description, Rating, Address/City, Tags",
+    "queryType": "simple",
+    "searchMode": "all",
+    "search": "restaurant +view",
+    "searchFields": "HotelName, Description, Address/City, Address/StateProvince, Tags",
+    "select": "HotelName, Description, Address/City, Address/StateProvince, Tags",
     "top": "10",
     "count": "true",
     "orderby": "Rating desc"
@@ -38,9 +39,11 @@ De para meters die worden gebruikt tijdens het uitvoeren van query's zijn:
 
 + **`queryType`** Hiermee stelt u de parser in, ofwel de [standaard-query-parser](search-query-simple-examples.md) (optimaal voor zoeken in volledige tekst), of de [volledige lucene-query-parser](search-query-lucene-examples.md) die wordt gebruikt voor geavanceerde query constructies, zoals reguliere expressies, proximity Search, fuzzy en Joker tekens zoeken.
 
++ **`searchMode`** Hiermee wordt aangegeven of overeenkomsten zijn gebaseerd op criteria voor ' alle ' of ' elk criterium ' in de expressie. De standaard waarde is any.
+
 + **`search`** biedt de match criteria, meestal hele termen of zinsdelen, met of zonder Opera tors. Elk veld waarvoor een *zoekbaar* kenmerk is in het index schema, is een kandidaat voor deze para meter.
 
-+ **`searchFields`** beperkt de uitvoering van query's naar specifieke Doorzoek bare velden.
++ **`searchFields`** beperkt de uitvoering van query's naar specifieke Doorzoek bare velden. Tijdens de ontwikkeling is het handig om dezelfde velden lijst te gebruiken voor selecteren en zoeken. Anders is het mogelijk dat een overeenkomst is gebaseerd op veld waarden die u niet in de resultaten kunt zien, waardoor er onzekerheid is over de reden waarom het document is geretourneerd.
 
 Para meters die worden gebruikt om de reactie te vormen:
 
@@ -114,4 +117,4 @@ Raadpleeg de voor beelden voor elke syntaxis voor een beter overzicht van de imp
 
 + [Voorbeelden van eenvoudige query's](search-query-simple-examples.md)
 + [Voor beelden van Lucene-syntaxis query's voor het maken van geavanceerde query's](search-query-lucene-examples.md)
-+ [Hoe zoeken in de volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)
++ [Hoe zoeken in volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md)git

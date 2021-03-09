@@ -5,14 +5,14 @@ services: route-server
 author: duongau
 ms.service: route-server
 ms.topic: article
-ms.date: 03/02/2021
+ms.date: 03/08/2021
 ms.author: duau
-ms.openlocfilehash: 994fdf3f929f1f64ab4a064d7f2bd24c19322629
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 6eed0ed3e936b0e9a534c82a3105c2ed37cab3d5
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679702"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485416"
 ---
 # <a name="azure-route-server-preview-faq"></a>Veelgestelde vragen over Azure route server (preview)
 
@@ -70,7 +70,7 @@ Voor de Azure route Server gelden de volgende limieten (per implementatie).
 | Aantal routes dat elke BGP-peer kan adverteren naar Azure route server | 200 |
 | Aantal routes dat door Azure route server kan worden geadverteerd naar ExpressRoute of VPN-gateway | 200 |
 
-Zie voor meer informatie [een probleem met de route ring van een Azure virtual machine diagnosticeren](../virtual-network/diagnose-network-routing-problem.md).
+Als uw NVA meer routes adverteert dan de limiet, wordt de BGP-sessie verwijderd. Als dit gebeurt met de gateway en Azure route server, verliest u de connectiviteit van uw on-premises netwerk naar Azure. Zie voor meer informatie [een probleem met de route ring van een Azure virtual machine diagnosticeren](../virtual-network/diagnose-network-routing-problem.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.author: nmurav
 ms.date: 01/03/2012
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 08fe9e56298218936e700518cdd150f54d7f01de
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: adb9ddee3d1caaac4c7530755b5e49ac50ab3181
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102425716"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488865"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
 
@@ -161,7 +161,7 @@ module.exports ={
     output: {
         filename:'app.js',
         path: path.resolve(__dirname, 'dist'),
-    }     
+    }
 }
 ```
 
@@ -218,7 +218,7 @@ Het bestand moet er nu als volgt uitzien:
 }
 ```
 
-U hebt de opdracht toegevoegd die kan worden gebruikt vanuit NPM. 
+U hebt de opdracht toegevoegd die kan worden gebruikt vanuit NPM.
 
 :::image type="content" source="./media/step-one-pic-12.png" alt-text="Scherm afbeelding waarin de wijziging van package.jsop wordt weer gegeven.":::
 
@@ -327,7 +327,7 @@ Deze configuratie wordt samengevoegd met `webpack.common.js` (waar u het invoer 
 Voeg in `package.json` de volgende code toe:
 
 ```JavaScript
-"build:prod": "webpack --config webpack.prod.js" 
+"build:prod": "webpack --config webpack.prod.js"
 ```
 
 Uw bestand ziet er als volgt uit:
@@ -341,14 +341,14 @@ Uw bestand ziet er als volgt uit:
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack-dev-server --config webpack.dev.js",
-    "build:prod": "webpack --config webpack.prod.js" 
+    "build:prod": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@azure/communication-calling": "^1.0.0-beta.3",
-    "@azure/communication-common": "^1.0.0-beta.3"
+    "@azure/communication-calling": "^1.0.0-beta.6",
+    "@azure/communication-common": "^1.0.0"
   },
   "devDependencies": {
     "webpack": "^4.42.0",
@@ -374,7 +374,7 @@ Met deze opdracht maakt `dist` u een map en een `app.js` statisch bestand dat ge
  
  
 ### <a name="deploy-your-app-to-azure-storage"></a>Uw app implementeren naar Azure Storage
- 
+
 Kopieer `index.html` en `app.css` naar de `dist` map.
 
 `dist`Maak een bestand met de naam in de map `404.html` . Kopieer de volgende opmaak in dat bestand:

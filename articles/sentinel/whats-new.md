@@ -8,12 +8,12 @@ ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 03/08/2021
-ms.openlocfilehash: c24512ad38f9397c9a40a85489c45fcb0de906b3
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 66294e3c59c2252042e30864dd220683106cd574
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453798"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485381"
 ---
 # <a name="whats-new-in-azure-sentinel"></a>Wat is er nieuw in azure Sentinel
 
@@ -29,6 +29,32 @@ Genoteerde functies zijn momenteel beschikbaar als PREVIEW-versie. De [Aanvullen
 >
 > U kunt ook bijdragen leveren. Doe mee aan de [Azure-omgeving voor Sentinel-dreigingen github-Community](https://github.com/Azure/Azure-Sentinel/wiki).
 > 
+
+## <a name="march-2021"></a>2021 maart
+
+- [Microsoft 365 Defender-incident integratie](#microsoft-365-defender-incident-integration) (open bare preview)
+- [Nieuwe micro soft-service connectors met behulp van Azure Policy](#new-microsoft-service-connectors-using-azure-policy)
+
+### <a name="microsoft-365-defender-incident-integration"></a>Integratie van Microsoft 365 Defender-incident
+
+Met de integratie van Azure Sentinel [Microsoft 365 Defender (M365D)](/microsoft-365/security/mtp/microsoft-threat-protection) kunt u alle M365D-incidenten streamen naar Azure Sentinel en ze gesynchroniseerd houden tussen beide portals. Incidenten van M365D (voorheen bekend als micro soft Threat Protection of MTP) bevatten alle gerelateerde waarschuwingen, entiteiten en relevante informatie, zodat u over voldoende context beschikt voor het uitvoeren van sorteren en voorlopig onderzoek in azure Sentinel. Eenmaal in Sentinel blijven incidenten bidirectionele gesynchroniseerd met M365D, zodat u kunt profiteren van de voor delen van beide portals in uw incident onderzoek.
+
+Als u zowel Azure Sentinel als Microsoft 365 Defender samen gebruikt, hebt u het beste van beide werelden. U krijgt inzicht in de mate van inzichten die een SIEM geeft aan het hele bereik van informatie bronnen van uw organisatie, en tevens de diepte van de aangepaste en aanpas bare voedings kracht die een XDR biedt om uw Microsoft 365-bronnen te beschermen, beide gecoördineerd en gesynchroniseerd voor naadloze SOC-trans actie.
+
+Zie [Microsoft 365 Defender-integratie met Azure Sentinel](microsoft-365-defender-sentinel-integration.md)voor meer informatie.
+
+### <a name="new-microsoft-service-connectors-using-azure-policy"></a>Nieuwe micro soft-service connectors met behulp van Azure Policy
+
+[Azure Policy](../governance/policy/overview.md) is een Azure-service waarmee u beleid kunt gebruiken om de eigenschappen van een resource af te dwingen en te beheren. Het gebruik van beleid zorgt ervoor dat de resources blijven voldoen aan de standaarden van uw IT-governance.
+
+Onder de eigenschappen van bronnen die door het beleid kunnen worden beheerd, worden diagnostische gegevens en controle logboeken gemaakt en verwerkt. Azure Sentinel gebruikt nu Azure Policy zodat u een gemeen schappelijke set diagnostische logboek instellingen kunt Toep assen op alle (huidige en toekomstige) resources van een bepaald type waarvan de logboeken die u wilt opnemen in azure Sentinel. Bedankt voor het Azure Policy u niet langer de instellingen resource voor Diagnostische logboeken per resource hoeft in te stellen.
+
+Op Azure Policy gebaseerde connectors zijn nu beschikbaar voor de volgende Azure-Services:
+- [Azure Key Vault](connect-azure-key-vault.md) (open bare preview)
+- [Azure Kubernetes-service](connect-azure-kubernetes-service.md) (open bare preview)
+- Azure SQL-data bases/-servers (GA)
+
+Klanten kunnen de logboeken nog steeds hand matig verzenden voor specifieke exemplaren en hoeven de beleids engine niet te gebruiken.
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -86,7 +112,7 @@ Onze verzameling integraties van derden blijft groeien, met dertig Connect oren 
 - [Symantec Endpoint Protection](connect-data-sources.md)
 - [Thycotic Secret Server](connect-thycotic-secret-server.md)
 - [Trend Micro XDR](connect-data-sources.md)
-- [VMWare-ESXi](connect-vmware-esxi.md)
+- [VMware ESXi](connect-vmware-esxi.md)
 
 ### <a name="ueba-insights-in-the-entity-page"></a>UEBA Insights op de pagina entiteit
 

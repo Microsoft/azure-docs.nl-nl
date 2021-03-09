@@ -66,40 +66,46 @@
               href: connect-aws.md
             - name: Azure Active Directory
               href: connect-azure-active-directory.md
-            - name: Office 365 (nu met Teams!)
-              href: connect-office-365.md
-            - name: Dynamics 365 (nieuw!)
-              href: connect-dynamics-365.md
-            - name: Cloud App Security
-              href: connect-cloud-app-security.md
             - name: Azure-activiteitenlogboek
               href: connect-azure-activity.md
             - name: Azure AD-identiteitsbeveiliging
               href: connect-azure-ad-identity-protection.md
-            - name: Azure Information Protection
-              href: connect-azure-information-protection.md
-            - name: Microsoft 365 Defender
-              href: connect-microsoft-365-defender.md
-            - name: Microsoft Defender voor Eindpunten (voorheen MDATP)
-              href: connect-microsoft-defender-advanced-threat-protection.md
-            - name: Microsoft Defender voor Identiteit (voorheen Azure ATP)
-              href: connect-azure-atp.md
-            - name: Microsoft Defender voor Office 365 (voorheen Office 365 ATP)
-              href: connect-office-365-advanced-threat-protection.md
             - name: Azure Defender-waarschuwingen van ASC
               href: connect-azure-security-center.md
-            - name: Defender voor IoT (voorheen ASC voor IoT)
-              href: connect-asc-iot.md
             - name: Azure DDoS Protection
               href: connect-azure-ddos-protection.md
             - name: Azure Firewall
               href: connect-azure-firewall.md
-            - name: Azure Web Application Firewall (WAF)
-              href: connect-azure-waf.md
+            - name: Azure Information Protection
+              href: connect-azure-information-protection.md
+            - name: Azure Key Vault
+              href: connect-azure-key-vault.md
+            - name: Azure Kubernetes Service (AKS)
+              href: connect-azure-kubernetes-service.md
             - name: Azure SQL-databaselogboeken
               href: connect-azure-sql-logs.md
+            - name: Azure Web Application Firewall (WAF)
+              href: connect-azure-waf.md
+            - name: Defender voor IoT (voorheen ASC voor IoT)
+              href: connect-asc-iot.md
             - name: Domeinnaamserver
               href: connect-dns.md
+            - name: Dynamics 365 (nieuw!)
+              href: connect-dynamics-365.md
+            - name: Microsoft 365 Defender
+              href: connect-microsoft-365-defender.md
+              expanded: true
+              items:
+                - name: Cloud App Security
+                  href: connect-cloud-app-security.md
+                - name: Microsoft Defender voor Eindpunten (voorheen MDATP)
+                  href: connect-microsoft-defender-advanced-threat-protection.md
+                - name: Microsoft Defender voor Identiteit (voorheen Azure ATP)
+                  href: connect-azure-atp.md
+                - name: Microsoft Defender voor Office 365 (voorheen Office 365 ATP)
+                  href: connect-office-365-advanced-threat-protection.md
+            - name: Office 365 (nu met Teams!)
+              href: connect-office-365.md
             - name: Windows Firewall
               href: connect-windows-firewall.md
             - name: Windows-beveiligingsgebeurtenissen

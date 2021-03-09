@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/28/2021
+ms.date: 02/17/2021
 ms.author: jeedes
-ms.openlocfilehash: c5bdab2038f2f41c7240addaff99bd831d29f489
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: d4c9d2e290f6a8f07878a019b755c8add2ab69ea
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101643810"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488441"
 ---
 # <a name="tutorial-integrate-dropbox-business-with-azure-active-directory"></a>Zelfstudie: Dropbox Business integreren met Azure Active Directory
 
@@ -38,9 +38,9 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-* In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen. Dropbox Business ondersteunt door **SP** geïnitieerde eenmalige aanmelding
+* In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen. Dropbox Business ondersteunt door **SP** geïnitieerde SSO.
 
-* Dropbox Business biedt ondersteuning voor het [automatisch inrichten van gebruikers](dropboxforbusiness-tutorial.md)
+* Dropbox Business ondersteunt [automatische gebruikers inrichting en](dropboxforbusiness-tutorial.md)het ongedaan maken van de inrichting.
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -82,11 +82,11 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Op de pagina **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://www.dropbox.com/sso/<id>`
-
-    b. Typ in het vak **Id (Entiteits-id)** de waarde: `Dropbox`
-
+    
+     b. Typ in het vak **Id (Entiteits-id)** de waarde: `Dropbox`
+    
     > [!NOTE]
-    > De bovenstaande waarde voor de aanmeldings-URL is geen echte waarde. U werkt de waarde bij met de werkelijke aanmeldings-URL, zoals later in de zelfstudie wordt uitgelegd.
+    > U kunt de **SSO-id van de Dropbox-ondertekening** vinden op de Dropbox-site in Dropbox > de >-instellingen van de beheer console > eenmalige aanmelding > AANMELD-URL voor SSO.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -137,23 +137,23 @@ In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te ge
 
 4. Klik op het **Gebruikerspictogram** en selecteer het tabblad **Instellingen**.
 
-    ![Schermopname met de actie "USER ICON" en "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure1.png "Eenmalige aanmelding configureren")
+    ![Schermopname met de actie "USER ICON" en "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure-1.png "Eenmalige aanmelding configureren")
 
 5. Klik in het navigatievenster aan de linkerkant op **Beheerconsole**.
 
-    ![Schermopname met "Admin console" geselecteerd.](./media/dropboxforbusiness-tutorial/configure2.png "Eenmalige aanmelding configureren")
+    ![Schermopname met "Admin console" geselecteerd.](./media/dropboxforbusiness-tutorial/configure-2.png "Eenmalige aanmelding configureren")
 
 6. Klik in de **Beheerconsole** op **Instellingen** in het navigatievenster links.
 
-    ![Schermopname met "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure3.png "Eenmalige aanmelding configureren")
+    ![Schermopname met "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure-3.png "Eenmalige aanmelding configureren")
 
 7. Selecteer de optie **Eenmalige aanmelding** in het gedeelte **Verificatie**.
 
-    ![Schermopname met de sectie "Authentication" met "Single sign-on" geselecteerd.](./media/dropboxforbusiness-tutorial/configure4.png "Eenmalige aanmelding configureren")
+    ![Schermopname met de sectie "Authentication" met "Single sign-on" geselecteerd.](./media/dropboxforbusiness-tutorial/configure-4.png "Eenmalige aanmelding configureren")
 
 8. Voer in het gedeelte **Eenmalige aanmelding** de volgende stappen uit:  
 
-    ![Schermopname met de configuratie-instellingen voor eenmalige aanmelding.](./media/dropboxforbusiness-tutorial/configure5.png "Eenmalige aanmelding configureren")
+    ![Schermopname met de configuratie-instellingen voor eenmalige aanmelding.](./media/dropboxforbusiness-tutorial/configure-5.png "Eenmalige aanmelding configureren")
 
     a. Selecteer de optie **Vereist** in de vervolgkeuzelijst voor de **Eenmalige aanmelding**.
 
@@ -174,7 +174,7 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in Dropbox Busine
 >[!Note]
 >Als u handmatig een gebruiker moet maken, neem dan contact op met [het ondersteuningsteam van Dropbox Business](https://www.dropbox.com/business/contact)
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
@@ -186,4 +186,4 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u een Dropbox-bedrijf hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+Zodra u een Dropbox-bedrijf hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

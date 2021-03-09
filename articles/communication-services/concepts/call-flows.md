@@ -9,14 +9,16 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 5b1d24dc6056de0b8dd19d0d0e52c85055596a1d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0efe9cc3bad599d4ab621fef7308a807cc5e9967
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664139"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102485983"
 ---
 # <a name="call-flow-basics"></a>Basis principes van oproep stroom
+
+[!INCLUDE [Public Preview Notice](../includes/public-preview-include.md)]
 
 De volgende sectie bevat een overzicht van de oproepstromen in Azure Communication Services. Signalerings- en mediastromen zijn afhankelijk van de typen oproepen die uw gebruikers maken. Voorbeelden van oproeptypen zijn een-op-een VoIP, een-op-een PSTN en groepsgesprekken met een combinatie van via VoIP en PSTN verbonden deelnemers. Bekijk [Oproeptypen](./voice-video-calling/about-call-types.md).
 

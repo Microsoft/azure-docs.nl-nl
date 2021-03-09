@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/05/2021
-ms.openlocfilehash: 8fdb6a53ed0fd64953b75238c3ba3df62c4b644e
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 7f7a09b9e20b461a8a1e448bf4a7b0747a35fbb1
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102432941"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102487138"
 ---
 # <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
 
@@ -172,12 +172,12 @@ Antwoord voor de bovenstaande query retourneert de volgende overeenkomst als de 
 
 De volgende tabel bevat een overzicht van de query parameters die in een semantische query worden gebruikt, zodat u ze op een holistische manier kunt zien. Zie [zoeken naar documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) voor een lijst met alle para meters.
 
-| Parameter | Type | Description |
+| Parameter | Type | Beschrijving |
 |-----------|-------|-------------|
 | Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
 | queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |
 | searchFields | Tekenreeks | Een door komma's gescheiden lijst met Doorzoek bare velden. Optioneel, maar aanbevolen. Hiermee geeft u de velden op waarover de semantische classificatie plaatsvindt. </br></br>In tegens telling tot eenvoudige en volledige query typen, bepaalt de volg orde waarin velden worden weer gegeven voor rang.|
-| beantwoordt |Tekenreeks | Optioneel veld om op te geven of semantische antwoorden worden opgenomen in het resultaat. Op dit moment wordt alleen ' extra heren ' geïmplementeerd. Antwoorden kunnen worden geconfigureerd om Maxi maal vijf te retour neren. Dit voor beeld "extra heren|count3 ' ' bevat een aantal van drie antwoorden. De standaardwaarde is 1.|
+| beantwoordt |Tekenreeks | Optioneel veld om op te geven of semantische antwoorden worden opgenomen in het resultaat. Op dit moment wordt alleen ' extra heren ' geïmplementeerd. Antwoorden kunnen worden geconfigureerd om Maxi maal vijf te retour neren. De standaard waarde is één. Dit voor beeld toont een aantal van drie antwoorden: ' extractie \| count3 ' '. |
 
 ## <a name="query-with-search-explorer"></a>Query uitvoeren met Search Explorer
 
@@ -186,7 +186,7 @@ De volgende query streeft naar de ingebouwde hotels-voor beeld-index, met API-ve
 ### <a name="with-querytypesemantic"></a>Met query type = semantisch
 
 ```json
-search=I want a nice hotel on the water with a great restaurant&$select=HotelId,HotelName,Description,Tags&queryType=semantic&queryLanguage=english&searchFields=Description,Tags
+search=nice hotel on water with a great restaurant&$select=HotelId,HotelName,Description,Tags&queryType=semantic&queryLanguage=english&searchFields=Description,Tags
 ```
 
 De eerste paar resultaten zijn als volgt.

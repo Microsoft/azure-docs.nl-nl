@@ -9,16 +9,15 @@ ms.date: 10/05/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
 ms.custom: references_regions
-ms.openlocfilehash: 4fda626581265b4b1f6541a3b453b164ccd27963
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4acc1cb93fb04ba190173fea05805a1a4b833ffc
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690444"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488763"
 ---
 # <a name="quickstart-get-a-phone-number-using-the-azure-portal"></a>Quickstart: Een telefoonnummer aanvragen met behulp van de Azure-portal
 
-[!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 [!INCLUDE [Regional Availability Notice](../../includes/regional-availability-include.md)]
 
 Ga aan de slag met Azure Communication Services om een telefoonnummer te kopen met behulp van de Azure-portal.
@@ -40,15 +39,15 @@ Ga naar de blade **Telefoonnummers** in het resourcemenu.
 
 :::image type="content" source="../media/manage-phone-azure-portal-phone-page.png" alt-text="Schermopname van de telefoonnummerpagina van een Communicatie Services-resource.":::
 
-Druk op de knop **Ophalen** om de wizard te starten. U wordt door de wizard op de blade **Telefoonnummers** door een reeks vragen begeleidt waarmee u het telefoonnummer kunt kiezen dat het beste bij uw scenario past. 
+Druk op de knop **Ophalen** om de wizard te starten. U wordt door de wizard op de blade **Telefoonnummers** door een reeks vragen begeleidt waarmee u het telefoonnummer kunt kiezen dat het beste bij uw scenario past.
 
-U moet eerst bij het **land of de regio** kiezen waar u het telefoonnummer wilt inrichten. Nadat u een land/regio hebt geselecteerd, moet u de **Use-case** selecteren die het beste bij uw behoeften past. 
+U moet eerst bij het **land of de regio** kiezen waar u het telefoonnummer wilt inrichten. Nadat u een land/regio hebt geselecteerd, moet u de **Use-case** selecteren die het beste bij uw behoeften past.
 
 :::image type="content" source="../media/manage-phone-azure-portal-get-numbers.png" alt-text="Schermopname van de weergave voor het aanvragen van telefoonnummers.":::
 
 ### <a name="select-your-phone-number-features"></a>Telefoonnummerfuncties selecteren
 
-Het configureren van uw telefoonnummer is onderverdeeld in twee stappen: 
+Het configureren van uw telefoonnummer is onderverdeeld in twee stappen:
 
 1. De selectie van het [nummertype](../../concepts/telephony-sms/plan-solution.md#phone-number-types-in-azure-communication-services)
 2. De selectie van de [nummerfuncties](../../concepts/telephony-sms/plan-solution.md#phone-number-features-in-azure-communication-services)

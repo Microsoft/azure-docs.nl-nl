@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: ac8b0e0c2cdbd46626677f4be0f78800d839ad28
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 67f5665225bc1297d0eb1b1e1da954fb47660dee
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358891"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102488950"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -57,6 +57,8 @@ U kunt ook de [micro soft Assessment and Planning Toolkit (de ' kaart Toolkit 
 Zie [Services en hulpprogram ma's die beschikbaar zijn voor scenario's voor gegevens migratie](../../../dms/dms-tools-matrix.md)voor meer informatie over de hulpprogram ma's die beschikbaar zijn voor gebruik voor de Discover-fase. 
 
 ### <a name="assess"></a>Evalueren 
+
+[!INCLUDE [assess-estate-with-azure-migrate](../../../../includes/azure-migrate-to-assess-sql-data-estate.md)]
 
 Nadat gegevens bronnen zijn gedetecteerd, evalueert u alle on-premises SQL Server exemplaren die kunnen worden gemigreerd naar Azure SQL Managed instance om migratie blok keringen of compatibiliteits problemen te identificeren. 
 
@@ -102,7 +104,7 @@ Als u de prestaties van uw werk belasting wilt vergelijken met de oorspronkelijk
 Maak op basis van de informatie in de fase detecteren en beoordelen een passend, met een doel gericht SQL beheerd exemplaar. U kunt dit doen met behulp van de sjabloon [Azure Portal](../../managed-instance/instance-create-quickstart.md), [Power shell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)of een [Azure Resource Manager (arm)](../../managed-instance/create-template-quickstart.md). 
 
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 Nadat u taken hebt voltooid die zijn gekoppeld aan de fase voorafgaand aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. 
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: b013c66feefade077c85194ba3b1ff04ff4c4aa5
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 5a89e9ae05b0733c865d537ffeb1714d3b3ebef1
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536829"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489358"
 ---
 # <a name="creating-queries-in-azure-cognitive-search"></a>Query's maken in azure Cognitive Search
 
@@ -21,18 +21,21 @@ Als u een query voor de eerste keer bouwt, worden in dit artikel benaderingen en
 
 ## <a name="whats-a-query-request"></a>Wat is een query aanvraag?
 
-Een query is een alleen-lezen aanvraag voor de docs-verzameling van een enkele zoek index. Er wordt een ' query type ' en een query-expressie opgegeven, hoewel de para meter ' Search ' is. De query-expressie kan zoek termen, een gegroepeerde aanhalings tekens en Opera tors bevatten.
+Een query is een alleen-lezen aanvraag voor de docs-verzameling van een enkele zoek index. Hiermee wordt een para meter ' Search ' opgegeven, die de query-expressie bevat, die bestaat uit termen, woord groepen met een aanhalings teken en Opera tors.
 
-Een query kan ook ' count ' bevatten om het aantal gevonden overeenkomsten in de index te retour neren, ' Select ' selecteren om te kiezen welke velden worden geretourneerd in het Zoek resultaat en ' OrderBy ' om de resultaten te sorteren. In het volgende voor beeld krijgt u een algemeen idee van een query aanvraag door een subset van de beschik bare para meters weer te geven. Zie [query typen en-samen stellingen](search-query-overview.md) en [documenten zoeken (rest)](/rest/api/searchservice/search-documents)voor meer informatie over het samen stellen van query's.
+Aanvullende para meters bieden meer definitie van de query en het antwoord. Bijvoorbeeld, ' searchFields ' bereiken query's uitvoeren naar specifieke velden ' Select ' geeft aan welke velden worden geretourneerd in de resultaten en ' count ' retourneert het aantal overeenkomsten dat in de index is gevonden.
+
+In het volgende voor beeld krijgt u een algemeen idee van een query aanvraag door een subset van de beschik bare para meters weer te geven. Zie [query typen en-samen stellingen](search-query-overview.md) en [documenten zoeken (rest)](/rest/api/searchservice/search-documents)voor meer informatie over het samen stellen van query's.
 
 ```http
 POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/search?api-version=2020-06-30
 {
-    "queryType": "simple"
-    "search": "`New York` +restaurant",
-    "select": "HotelId, HotelName, Description, Rating, Address/City, Tags",
-    "count": "true",
-    "orderby": "Rating desc"
+    "search": "NY +view",
+    "queryType": "simple",
+    "searchMode": "all",
+    "searchFields": "HotelName, Description, Address/City, Address/StateProvince, Tags",
+    "select": "HotelName, Description, Address/City, Address/StateProvince, Tags",
+    "count": "true"
 }
 ```
 

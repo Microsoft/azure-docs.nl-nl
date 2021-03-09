@@ -9,12 +9,12 @@ ms.date: 03/03/2021
 ms.author: cherylmc
 ms.custom: references_regions
 Customer intent: As someone with a networking background, I want to find a Virtual WAN partner
-ms.openlocfilehash: d1f05e76768ffc8ce930d97573c7729b8e4afafe
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 4a02a02eeb40c1a61df88c49bf967b2ca57befc3
+ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102452744"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102489324"
 ---
 # <a name="virtual-wan-partners-and-virtual-hub-locations"></a>Virtuele WAN-partners en virtuele-hub-locaties
 
@@ -62,9 +62,9 @@ Deze partners hebben **beheerde toepassings** aanbiedingen die nu beschikbaar zi
 |---|---|
 |[Barracuda Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overviewus/marketplace/apps/barracudanetworks.barracuda_cloudgenwan_gateway?tab=Overview)| [Barracuda CloudGen WAN Deployment Guide (Engelstalig)](https://campus.barracuda.com/product/cloudgenwan/doc/91980640/deployment/)|
 |[Cisco Cloud service router (CSR) VWAN](https://aka.ms/ciscoMarketPlaceOffer)| Tijdens de open bare preview van Cisco Cloud Services (CSR) WAN in VWAN hub vereist Cisco dat de eind klant zich registreert als een Cisco EFT (vroege veld proef versie) door een e-mail te verzenden naar vwan_public_preview@external.cisco.com en de implementatie handleiding voor vManage te aanvragen. 
-|[VMware SD-WAN in virtuele WAN-hub](https://kb.vmware.com/s/article/82746) | Tijdens de open bare preview van VMware SD-WAN in VWAN hub vereist VMware dat de klant zich registreert door een e-mail te verzenden naar vhubsupport@vmware.com . [Implementatie handleiding voor VMware SD-WAN in virtuele WAN-hub](https://kb.vmware.com/s/article/82746)|
+|[VMware SD-WAN in virtuele WAN-hub](https://sdwan.vmware.com/partners/microsoft) | Tijdens de open bare preview van VMware SD-WAN in VWAN hub vereist VMware dat de klant zich registreert door een e-mail te verzenden naar vhubsupport@vmware.com . [Implementatie handleiding voor VMware SD-WAN in virtuele WAN-hub](https://kb.vmware.com/s/article/82746)|
 
-De volgende partners zijn zou om NVA in de virtuele hub te bieden in de nabije toekomst: Aviatrix-, Citrix-, VeloCloud-en versa-netwerken.
+De volgende partners zijn zou om NVA te bieden in de virtuele hub in de nabije toekomst: Aviatrix-, Citrix-en versa-netwerken.
 
 ## <a name="locations"></a><a name="locations"></a>Locaties
 

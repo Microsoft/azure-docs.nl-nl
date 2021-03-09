@@ -12,12 +12,12 @@ ms.date: 02/28/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9612a26d7ac2e7a059655636fc1a2a7a43e3b8d7
-ms.sourcegitcommit: e3151d9b352d4b69c4438c12b3b55413b4565e2f
+ms.openlocfilehash: 2d6c76a15ee62c26e0d0261c6b0d2d1e27443a40
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100526235"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518039"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Aan de slag met aangepast beleid in Azure Active Directory B2C
 
@@ -30,6 +30,10 @@ ms.locfileid: "100526235"
 - Als u nog geen account hebt, [maakt u een Azure AD B2C-Tenant](tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 - [Registreer uw toepassing](tutorial-register-applications.md) in de Tenant die u hebt gemaakt, zodat deze kan communiceren met Azure AD B2C.
 - Voer de stappen in [instellen registratie in en meld u aan met een Facebook-account](identity-provider-facebook.md) om een Facebook-toepassing te configureren. Hoewel een Facebook-toepassing niet vereist is voor het gebruik van aangepast beleid, wordt deze in deze walkthrough gebruikt om aan te tonen dat sociale aanmelding in een aangepast beleid wordt ingeschakeld.
+
+> [!TIP]
+> In dit artikel wordt uitgelegd hoe u uw Tenant hand matig kunt instellen. U kunt het hele proces automatiseren vanuit dit artikel. Met Automation wordt de Azure AD B2C [SocialAndLocalAccountsWithMFA Starter Pack](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack)geïmplementeerd, waarmee u zich kunt aanmelden en aanmelden, wacht woord opnieuw instellen en het bewerken van profielen. Ga naar de [IEF-installatie-app](https://aka.ms/iefsetup) en volg de instructies om het onderstaande overzicht te automatiseren.
+
 
 ## <a name="add-signing-and-encryption-keys"></a>Ondertekenings-en versleutelings sleutels toevoegen
 

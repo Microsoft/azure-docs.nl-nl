@@ -6,14 +6,14 @@ author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 01/13/2021
+ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: f2bad214045710fe861040514beb3c536664d684
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 281b22db692087f2876b4011563fee8c56bd476e
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201886"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522390"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -164,7 +164,7 @@ U ziet de volgende uitvoer:
     WSManStackVersion              3.0
 ```
 
-Als uw versie lager is dan 6.2.4, moet u een upgrade uitvoeren van uw versie van Windows PowerShell. Zie [Azure PowerShell installeren](/powershell/scripting/install/installing-powershell?view=powershell-7&preserve-view=true) voor informatie over het installeren van de meest recente versie van Windows PowerShell.
+Als uw versie lager is dan 6.2.4, moet u een upgrade uitvoeren van uw versie van Windows PowerShell. Zie [Azure PowerShell installeren](/powershell/scripting/install/installing-powershell) voor informatie over het installeren van de meest recente versie van Windows PowerShell.
 
 **Azure PowerShell- en Data Box-modules installeren**
 
@@ -355,22 +355,34 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     ![Uitgevouwen opties voor het gebruiken van een eigen wachtwoord voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-02.png) 
 
    - Als u uw eigen wachtwoord wilt gebruiken voor uw nieuwe apparaat, selecteert u **Voorkeur voor het apparaatwachtwoord instellen**. Selecteer **Uw eigen wachtwoord gebruiken** en typ een wachtwoord dat aan de beveiligingsvereisten voldoet.
+     
+     Het wacht woord moet alfanumeriek zijn en tussen de 12 en 15 tekens bevatten, met ten minste één hoofd letter, één kleine letter, één speciaal teken en één cijfer. 
+
+     - Toegestane speciale tekens: @ #-$% ^! + = ; : _ ( )
+     - Tekens niet toegestaan: I i L o 0
    
      ![Opties voor het gebruiken van uw eigen apparaatwachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-03.png)
 
  - Uw eigen wachtwoorden gebruiken voor shares:
 
-   - Selecteer bij **Voorkeur voor share-wachtwoorden instellen** de optie **Uw eigen wachtwoorden gebruiken** en vervolgens **Wachtwoorden voor de shares selecteren**.
+   1. Selecteer bij **Voorkeur voor share-wachtwoorden instellen** de optie **Uw eigen wachtwoorden gebruiken** en vervolgens **Wachtwoorden voor de shares selecteren**.
      
-        ![Opties voor het gebruiken van uw eigen sharewachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-04.png)
+       ![Opties voor het gebruiken van uw eigen sharewachtwoord in het scherm Beveiliging voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-04.png)
 
-    - Typ een wachtwoord voor elk opslagaccount in de order. Het wachtwoord wordt gebruikt voor alle shares voor het opslagaccount.
-     
-        Selecteer **Kopiëren naar alle** om hetzelfde wachtwoord te gebruiken voor alle opslagaccounts. Selecteer **Opslaan** wanneer u klaar bent.
-     
-        ![Scherm voor het invoeren van share-wachtwoorden voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-05.png)
+    1. Typ een wachtwoord voor elk opslagaccount in de order. Het wachtwoord wordt gebruikt voor alle shares voor het opslagaccount.
+    
+       Het wacht woord moet alfanumeriek zijn en tussen de 12 en 64 tekens bevatten, met ten minste één hoofd letter, één kleine letter, één speciaal teken en één cijfer.
 
-       In het scherm **Beveiliging** kunt u met **Wachtwoorden weergeven of wijzigen** de wachtwoorden wijzigen.
+       - Toegestane speciale tekens: @ #-$% ^! + = ; : _ ( )
+       - Tekens niet toegestaan: I i L o 0
+     
+    1. Selecteer **Kopiëren naar alle** om hetzelfde wachtwoord te gebruiken voor alle opslagaccounts. 
+
+    1. Selecteer **Opslaan** wanneer u klaar bent.
+     
+       ![Scherm voor het invoeren van share-wachtwoorden voor een Data Box-importorder](media/data-box-deploy-ordered/select-data-box-import-security-05.png)
+
+    In het scherm **Beveiliging** kunt u met **Wachtwoorden weergeven of wijzigen** de wachtwoorden wijzigen.
 
 16. Als u dubbele versleuteling op basis van software wilt inschakelen, selecteert u in **Beveiliging** de optie **Dubbele versleuteling (voor zeer veilige omgevingen)** en selecteer **Dubbele versleuteling inschakelen voor de order**.
 

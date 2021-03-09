@@ -11,12 +11,12 @@ manager: cgronlun
 ms.date: 02/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, automl
-ms.openlocfilehash: da973cf377ceace4a92d1cdd1e956321a5592e6a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0de3c9a7cf464f38a1a12d8bc19451fb1158a5ad
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101692212"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520503"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Automatische ML gebruiken in een Azure Machine Learning pijp lijn in python
 
@@ -37,7 +37,7 @@ Automatische ML in een pijp lijn wordt vertegenwoordigd door een `AutoMLStep` ob
 
 Er zijn verschillende subklassen van `PipelineStep` . Naast de wordt in `AutoMLStep` dit artikel een `PythonScriptStep` voor bereiding van gegevens weer gegeven en een andere voor het registreren van het model.
 
-De voorkeurs manier _om gegevens naar_ een ml-pijp lijn te verplaatsen, is met `Dataset` objecten. Als u gegevens wilt verplaatsen _tussen_ stappen en mogelijke gegevens uitvoer wilt opslaan van uitvoeringen, is de voorkeurs manier voor [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) en [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) objecten. Voor gebruik met `AutoMLStep` `PipelineData` moet het object worden omgezet in een- `PipelineOutputTabularDataset` object. Zie [invoer-en uitvoer gegevens van ml-pijp lijnen](how-to-move-data-in-out-of-pipelines.md)voor meer informatie.
+De voorkeurs manier _om gegevens naar_ een ml-pijp lijn te verplaatsen, is met `Dataset` objecten. Als u gegevens wilt verplaatsen _tussen_ stappen en mogelijke gegevens uitvoer wilt opslaan van uitvoeringen, is de voorkeurs manier voor [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig) en [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig) objecten. Voor gebruik met `AutoMLStep` `PipelineData` moet het object worden omgezet in een- `PipelineOutputTabularDataset` object. Zie [invoer-en uitvoer gegevens van ml-pijp lijnen](how-to-move-data-in-out-of-pipelines.md)voor meer informatie.
 
 De `AutoMLStep` is geconfigureerd via een- `AutoMLConfig` object. `AutoMLConfig` is een flexibele klasse, zoals beschreven in [automatische ml experimenten configureren in python](./how-to-configure-auto-train.md#configure-your-experiment-settings). 
 

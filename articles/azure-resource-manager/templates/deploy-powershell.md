@@ -1,18 +1,20 @@
 ---
 title: Resources implementeren met Power shell en sjabloon
-description: Gebruik Azure Resource Manager en Azure PowerShell om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
+description: Gebruik Azure Resource Manager en Azure PowerShell om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
 ms.topic: conceptual
-ms.date: 01/26/2021
-ms.openlocfilehash: efefb6706794bc2488aa4d4fef6c4ecc082b41a7
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.date: 03/04/2021
+ms.openlocfilehash: 784f17566ce4fb19a7ec5e3fd4a504d7c25f90fe
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881262"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521625"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-powershell"></a>Resources implementeren met ARM-sjablonen en Azure PowerShell
 
-In dit artikel wordt uitgelegd hoe u Azure PowerShell kunt gebruiken met Azure Resource Manager sjablonen (ARM-sjablonen) om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u [overzicht van sjabloon implementatie](overview.md).
+In dit artikel wordt uitgelegd hoe u Azure PowerShell kunt gebruiken met Azure Resource Manager sjablonen (ARM-sjablonen) of Bicep bestanden om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u overzicht van [sjabloon implementatie](overview.md) of [Bicep overzicht](bicep-overview.md).
+
+Voor het implementeren van Bicep-bestanden hebt u [Azure PowerShell versie 5.6.0 of hoger](/powershell/azure/install-az-ps)nodig.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,13 +34,13 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 - Als u wilt implementeren in een **resource groep**, gebruikt u [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment):
 
   ```azurepowershell
-  New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile <path-to-template>
+  New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile <path-to-template-or-bicep>
   ```
 
 - Als u wilt implementeren in een **abonnement**, gebruikt u [New-AzSubscriptionDeployment](/powershell/module/az.resources/new-azdeployment) . Dit is een alias van de `New-AzDeployment` cmdlet:
 
   ```azurepowershell
-  New-AzSubscriptionDeployment -Location <location> -TemplateFile <path-to-template>
+  New-AzSubscriptionDeployment -Location <location> -TemplateFile <path-to-template-or-bicep>
   ```
 
   Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
@@ -46,7 +48,7 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 - Als u wilt implementeren in een **beheer groep**, gebruikt u [New-AzManagementGroupDeployment](/powershell/module/az.resources/New-AzManagementGroupDeployment).
 
   ```azurepowershell
-  New-AzManagementGroupDeployment -Location <location> -TemplateFile <path-to-template>
+  New-AzManagementGroupDeployment -Location <location> -TemplateFile <path-to-template-or-bicep>
   ```
 
   Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
@@ -54,7 +56,7 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 - Gebruik [New-AzTenantDeployment](/powershell/module/az.resources/new-aztenantdeployment)om te implementeren in een **Tenant**.
 
   ```azurepowershell
-  New-AzTenantDeployment -Location <location> -TemplateFile <path-to-template>
+  New-AzTenantDeployment -Location <location> -TemplateFile <path-to-template-or-bicep>
   ```
 
   Zie [resources maken op Tenant niveau](deploy-to-tenant.md)voor meer informatie over implementaties op Tenant niveau.
@@ -89,7 +91,7 @@ Wanneer u een unieke naam voor elke implementatie opgeeft, kunt u deze gelijktij
 
 Geef elke implementatie een unieke naam om conflicten met gelijktijdige implementaties te voor komen en te zorgen voor unieke vermeldingen in de implementatie geschiedenis.
 
-## <a name="deploy-local-template"></a>Een lokale sjabloon implementeren
+## <a name="deploy-local-template-or-bicep-file"></a>Lokale sjabloon of Bicep-bestand implementeren
 
 U kunt een sjabloon implementeren vanaf uw lokale computer of een die extern is opgeslagen. In deze sectie wordt het implementeren van een lokale sjabloon beschreven.
 
@@ -99,18 +101,21 @@ Als u implementeert in een resource groep die niet bestaat, maakt u de resource 
 New-AzResourceGroup -Name ExampleGroup -Location "Central US"
 ```
 
-Als u een lokale sjabloon wilt implementeren, gebruikt u de `-TemplateFile` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt die afkomstig is uit de sjabloon.
+Als u een lokaal sjabloon-of Bicep-bestand wilt implementeren, gebruikt u de `-TemplateFile` para meter in de implementatie opdracht. In het volgende voor beeld ziet u ook hoe u een parameter waarde instelt die afkomstig is uit de sjabloon.
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
   -Name ExampleDeployment `
   -ResourceGroupName ExampleGroup `
-  -TemplateFile c:\MyTemplates\azuredeploy.json
+  -TemplateFile <path-to-template-or-bicep>
 ```
 
 Het volt ooien van de implementatie kan enkele minuten duren.
 
 ## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
+
+> [!NOTE]
+> Momenteel biedt Azure PowerShell geen ondersteuning voor het implementeren van externe Bicep-bestanden. Als u een extern Bicep-bestand wilt implementeren, gebruikt u CLI Bicep om eerst het Bicep-bestand te compileren naar een JSON-sjabloon.
 
 In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
 
@@ -145,6 +150,8 @@ Zie [relatief pad gebruiken voor gekoppelde sjablonen](./linked-templates.md#lin
 
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 
+> [!NOTE]
+> Momenteel biedt Azure PowerShell geen ondersteuning voor het maken van sjabloon specificaties door Bicep-bestanden op te geven. U kunt echter een Bicep-bestand maken met de resource [micro soft. resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) voor het implementeren van een sjabloon specificatie. Hier volgt een [voor beeld](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep).
 In plaats van een lokale of externe sjabloon te implementeren, kunt u een [sjabloon specificatie](template-specs.md)maken. De sjabloon specificatie is een resource in uw Azure-abonnement die een ARM-sjabloon bevat. Het is eenvoudig om de sjabloon veilig te delen met gebruikers in uw organisatie. U gebruikt op rollen gebaseerd toegangs beheer van Azure (Azure RBAC) om toegang te verlenen tot de sjabloon specificatie. Deze functie is momenteel beschikbaar als preview-versie.
 
 In de volgende voor beelden ziet u hoe u een sjabloon specificatie maakt en implementeert.
@@ -187,7 +194,7 @@ Als u inline-para meters wilt door geven, geeft u de namen van de para meter op 
 ```powershell
 $arrayParam = "value1", "value2"
 New-AzResourceGroupDeployment -ResourceGroupName testgroup `
-  -TemplateFile c:\MyTemplates\demotemplate.json `
+  -TemplateFile <path-to-template-or-bicep> `
   -exampleString "inline string" `
   -exampleArray $arrayParam
 ```
@@ -197,7 +204,7 @@ U kunt ook de inhoud van het bestand ophalen en deze inhoud als een inline-para 
 ```powershell
 $arrayParam = "value1", "value2"
 New-AzResourceGroupDeployment -ResourceGroupName testgroup `
-  -TemplateFile c:\MyTemplates\demotemplate.json `
+  -TemplateFile <path-to-template-or-bicep> `
   -exampleString $(Get-Content -Path c:\MyTemplates\stringcontent.txt -Raw) `
   -exampleArray $arrayParam
 ```
@@ -211,13 +218,13 @@ $hash1 = @{ Name = "firstSubnet"; AddressPrefix = "10.0.0.0/24"}
 $hash2 = @{ Name = "secondSubnet"; AddressPrefix = "10.0.1.0/24"}
 $subnetArray = $hash1, $hash2
 New-AzResourceGroupDeployment -ResourceGroupName testgroup `
-  -TemplateFile c:\MyTemplates\demotemplate.json `
+  -TemplateFile <path-to-template-or-bicep> `
   -exampleArray $subnetArray
 ```
 
 ### <a name="parameter-files"></a>Parameter bestanden
 
-In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameter bestand kan een lokaal bestand of een extern bestand met een toegankelijke URI zijn.
+In plaats van parameters als inline waarden door te geven in uw script, is het wellicht eenvoudiger een JSON-bestand te gebruiken dat de parameterwaarden bevat. Het parameter bestand kan een lokaal bestand of een extern bestand met een toegankelijke URI zijn. Zowel de ARM-sjabloon als het Bicep-bestand gebruiken JSON-parameter bestanden.
 
 Zie [Een Resource Manager-parameterbestand maken](parameter-files.md) voor meer informatie over het parameterbestand.
 
@@ -225,7 +232,7 @@ Als u een lokaal parameter bestand wilt door geven, gebruikt u de `TemplateParam
 
 ```powershell
 New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
-  -TemplateFile c:\MyTemplates\azuredeploy.json `
+  -TemplateFile <path-to-template-or-bicep> `
   -TemplateParameterFile c:\MyTemplates\storage.parameters.json
 ```
 

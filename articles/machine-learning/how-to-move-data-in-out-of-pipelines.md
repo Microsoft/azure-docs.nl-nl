@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 02/26/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
-ms.openlocfilehash: 8f1cea6e9bc833c6d441c39c401f60d872cd9099
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: a4d1d1c4f4d6354d0206bf598a0622112dc99453
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102174934"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518701"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
 
@@ -36,7 +36,7 @@ U hebt het volgende nodig:
 
 - Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer de [gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 
-- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)of toegang tot [Azure machine learning Studio](https://ml.azure.com/).
+- De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro)of toegang tot [Azure machine learning Studio](https://ml.azure.com/).
 
 - Een Azure Machine Learning-werkruimte.
   
@@ -55,7 +55,7 @@ U hebt het volgende nodig:
 
 ## <a name="use-dataset-objects-for-pre-existing-data"></a>`Dataset`Objecten gebruiken voor bestaande gegevens 
 
-De voorkeurs manier om gegevens op te nemen in een pijp lijn is het gebruik van een object [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) . `Dataset` objecten vertegenwoordigen permanente gegevens die beschikbaar zijn in een werk ruimte.
+De voorkeurs manier om gegevens op te nemen in een pijp lijn is het gebruik van een object [DataSet](/python/api/azureml-core/azureml.core.dataset%28class%29) . `Dataset` objecten vertegenwoordigen permanente gegevens die beschikbaar zijn in een werk ruimte.
 
 Er zijn veel manieren om objecten te maken en te registreren `Dataset` . Tabellaire gegevens sets zijn voor een scheidings teken dat beschikbaar is in een of meer bestanden. Bestand gegevens sets zijn voor binaire gegevens (zoals installatie kopieën) of voor gegevens die u gaat parseren. De eenvoudigste manier om objecten te maken `Dataset` , is het gebruik van bestaande blobs in werkruimte opslag of open bare url's:
 
@@ -154,7 +154,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-outputfiledatasetconfig-for-intermediate-data"></a>Gebruiken `OutputFileDatasetConfig` voor tussenliggende gegevens
 
-Hoewel `Dataset` objecten alleen persistente gegevens vertegenwoordigen, [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) kunnen object (en) worden gebruikt voor tijdelijke gegevens uitvoer van pijplijn stappen **en** permanente uitvoer gegevens. `OutputFileDatasetConfig` biedt ondersteuning voor het schrijven van gegevens naar Blob Storage, file share, adlsgen1 of adlsgen2. Het ondersteunt zowel de koppel modus als de upload modus. In de modus koppelen worden bestanden die naar de gekoppelde Directory zijn geschreven, permanent opgeslagen wanneer het bestand wordt gesloten. In de upload modus worden bestanden die naar de uitvoermap worden geschreven, aan het einde van de taak geüpload. Als de taak mislukt of wordt geannuleerd, wordt de uitvoermap niet geüpload.
+Hoewel `Dataset` objecten alleen persistente gegevens vertegenwoordigen, [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig) kunnen object (en) worden gebruikt voor tijdelijke gegevens uitvoer van pijplijn stappen **en** permanente uitvoer gegevens. `OutputFileDatasetConfig` biedt ondersteuning voor het schrijven van gegevens naar Blob Storage, file share, adlsgen1 of adlsgen2. Het ondersteunt zowel de koppel modus als de upload modus. In de modus koppelen worden bestanden die naar de gekoppelde Directory zijn geschreven, permanent opgeslagen wanneer het bestand wordt gesloten. In de upload modus worden bestanden die naar de uitvoermap worden geschreven, aan het einde van de taak geüpload. Als de taak mislukt of wordt geannuleerd, wordt de uitvoermap niet geüpload.
 
  `OutputFileDatasetConfig` het standaard gedrag van het object is om te schrijven naar de standaard gegevens opslag van de werk ruimte. Geef uw `OutputFileDatasetConfig` objecten door aan uw `PythonScriptStep` met de `arguments` para meter.
 

@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 02/16/2021
+ms.date: 03/09/2021
 ms.author: victorh
-ms.openlocfilehash: 31948d5e98ea3024c838bf0fa4b05609a5662ec5
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 621bf6138e4336c63ca137a6a8c54f77a4a99d61
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102485517"
+ms.locfileid: "102520282"
 ---
 # <a name="azure-firewall-premium-preview-certificates"></a>Preview-certificaten voor Azure Firewall Premium 
 
@@ -96,7 +96,7 @@ Als u een CA-certificaat wilt configureren in het beleid voor de Firewall Premiu
 Om u te helpen bij het testen en verifiëren van TLS-inspectie, kunt u de volgende scripts gebruiken om uw eigen zelf-ondertekende basis-CA en een tussenliggende certificerings instantie te maken.
 
 > [!IMPORTANT]
-> Voor productie moet u uw zakelijke PKI gebruiken om een tussenliggend CA-certificaat te maken. Een bedrijfs-PKI maakt gebruik van de bestaande infra structuur en verwerkt de distributie van de basis certificerings instantie op alle eindpunt computers.
+> Voor productie moet u uw zakelijke PKI gebruiken om een tussenliggend CA-certificaat te maken. Een bedrijfs-PKI maakt gebruik van de bestaande infra structuur en verwerkt de distributie van de basis certificerings instantie op alle eindpunt computers. Zie ondernemings-CA- [certificaten implementeren en configureren voor Azure firewall preview](premium-deploy-certificates-enterprise-ca.md)voor meer informatie.
 
 Er zijn twee versies van dit script:
 - een bash-script `cert.sh` 

@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
-ms.openlocfilehash: d7a0832fd15df402c88e1ba565c90a24e0d6eb8a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a91a4f3a2e686c8d502093dc41520df32b313209
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101692416"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520627"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Automatische machine learning modellen maken, controleren en implementeren met Azure Machine Learning
 
@@ -136,7 +136,7 @@ Als dat niet het geval is, ziet u een lijst met uw recente geautomatiseerde mach
     ------|------
     Primaire metrische gegevens| De belangrijkste waarde die wordt gebruikt voor het scoren van uw model. Meer [informatie over de metrische gegevens van modellen](how-to-configure-auto-train.md#primary-metric).
     Uitleg geven over het beste model | Selecteer deze optie om in of uit te scha kelen om uitleg voor het aanbevolen model weer te geven. <br> Deze functionaliteit is momenteel niet beschikbaar voor [bepaalde prognose algoritmen](how-to-machine-learning-interpretability-automl.md#interpretability-during-training-for-the-best-model). 
-    Geblokkeerd algoritme| Selecteer de algoritmen die u wilt uitsluiten van de trainings taak. <br><br> Het toestaan van algoritmen is alleen beschikbaar voor [SDK-experimenten](how-to-configure-auto-train.md#supported-models). <br> Zie de [ondersteunde modellen voor elk taak type](/python/api/azureml-automl-core/azureml.automl.core.shared.constants.supportedmodels?preserve-view=true&view=azure-ml-py).
+    Geblokkeerd algoritme| Selecteer de algoritmen die u wilt uitsluiten van de trainings taak. <br><br> Het toestaan van algoritmen is alleen beschikbaar voor [SDK-experimenten](how-to-configure-auto-train.md#supported-models). <br> Zie de [ondersteunde modellen voor elk taak type](/python/api/azureml-automl-core/azureml.automl.core.shared.constants.supportedmodels).
     Criterium voor afsluiten| Wanneer aan een van deze criteria wordt voldaan, wordt de trainings taak gestopt. <br> *Tijd van trainings taak (uren)*: hoe lang het mogelijk is om de trainings taak uit te voeren. <br> *Drempel waarde voor metrische Score*: minimale metrische score voor alle pijp lijnen. Dit zorgt ervoor dat als u een gedefinieerde doel metriek hebt die u wilt bereiken, u niet meer tijd op de trainings taak brengt dan nodig is.
     Validatie| Selecteer een van de opties voor kruis validatie die u wilt gebruiken in de trainings taak. <br> Meer [informatie over Kruis validatie](how-to-configure-cross-validation-data-splits.md#prerequisites).<br> <br>Prognoses bieden alleen ondersteuning voor kruis validatie met k-vouwen.
     Gelijktijdigheid| Maximum aantal *gelijktijdige herhalingen*: Maxi maal toegestane pijp lijnen (iteraties) om in de trainings taak te testen. De taak wordt niet meer uitgevoerd dan het opgegeven aantal iteraties. Meer informatie over hoe automatische ML [meerdere onderliggende uitvoeringen op clusters](how-to-configure-auto-train.md#multiple-child-runs-on-clusters)uitvoert.

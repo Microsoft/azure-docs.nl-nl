@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: 6a722746c8e06a691e702b095d3081f1530645de
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b922c25561843d140f1e2b8221f62fad89ea00c8
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318919"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520894"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Gebruik persoonlijke Python-pakketten met Azure Machine Learning
 
@@ -31,12 +31,12 @@ De persoonlijke pakketten worden gebruikt via de [omgevings](/python/api/azureml
 
 ## <a name="prerequisites"></a>Vereisten
 
- * De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)
+ * De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install)
  * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md)
 
 ## <a name="use-small-number-of-packages-for-development-and-testing"></a>Klein aantal pakketten gebruiken voor ontwikkelen en testen
 
-Gebruik de statische methode voor een klein aantal privé-pakketten voor één werk ruimte [`Environment.add_private_pip_wheel()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-private-pip-wheel-workspace--file-path--exist-ok-false-) . Met deze aanpak kunt u snel een persoonlijk pakket toevoegen aan de werk ruimte en is het goed geschikt voor ontwikkelings-en test doeleinden.
+Gebruik de statische methode voor een klein aantal privé-pakketten voor één werk ruimte [`Environment.add_private_pip_wheel()`](/python/api/azureml-core/azureml.core.environment.environment#add-private-pip-wheel-workspace--file-path--exist-ok-false-) . Met deze aanpak kunt u snel een persoonlijk pakket toevoegen aan de werk ruimte en is het goed geschikt voor ontwikkelings-en test doeleinden.
 
 Wijs het pad naar het bestand naar een lokaal wiel bestand en voer de ```add_private_pip_wheel``` opdracht uit. De opdracht retourneert een URL die wordt gebruikt om de locatie van het pakket in uw werk ruimte bij te houden. Leg de opslag-URL vast en geef deze de `add_pip_package()` methode door.
 
@@ -58,7 +58,7 @@ Deze benadering maakt gebruik van een persoonlijk toegangs token voor verificati
 
  1. [Maak een persoonlijk toegangs token (Pat)](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?preserve-view=true&tabs=preview-page&view=azure-devops#create-a-pat) voor uw Azure DevOps-exemplaar. Stel het bereik van het token in op __verpakt > lezen__. 
 
- 2. Voeg de URL van Azure DevOps en PAT als werkruimte eigenschappen toe met behulp van de [Workspace.set_connection](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py#&preserve-view=trueset-connection-name--category--target--authtype--value-) methode.
+ 2. Voeg de URL van Azure DevOps en PAT als werkruimte eigenschappen toe met behulp van de [Workspace.set_connection](/python/api/azureml-core/azureml.core.workspace.workspace#set-connection-name--category--target--authtype--value-) methode.
 
      ```python
     from azureml.core import Workspace

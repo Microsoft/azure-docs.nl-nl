@@ -10,12 +10,12 @@ ms.author: gopalv
 ms.date: 11/25/2020
 ms.topic: troubleshooting
 ms.custom: contperf-fy20q4, devx-track-python, deploy, contperf-fy21q2
-ms.openlocfilehash: 1a7116f0edbed8270a3345bc924bf50872615b04
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 8bec083e62bec6a0311487c1e64e780ad14f451b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102217156"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518260"
 ---
 # <a name="troubleshooting-remote-model-deployment"></a>Problemen met de implementatie van externe modellen oplossen 
 
@@ -32,7 +32,7 @@ Informatie over het oplossen en oplossen van veelvoorkomende fouten die kunnen o
 ## <a name="prerequisites"></a>Vereisten
 
 * Een **Azure-abonnement**. Probeer de [gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
-* De [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+* De [Azure machine learning SDK](/python/api/overview/azure/ml/install).
 * De [Azure CLI](/cli/azure/install-azure-cli).
 * De [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
 
@@ -99,7 +99,7 @@ Gebruik de informatie in het artikel [het docker-logboek controleren](how-to-tro
 
 ## <a name="function-fails-get_model_path"></a>De functie is mislukt: get_model_path ()
 
-Vaak wordt de functie `init()` [model.get_model_path ()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-model-path-model-name--version-none---workspace-none-) van de functie in het Score script aangeroepen om een model bestand of een map met model bestanden in de container te vinden. Als het modelbestand of de map niet wordt gevonden, mislukt de functie. De eenvoudigste manier om deze fout op te lossen is door de onderstaande python-code uit te voeren in de container shell:
+Vaak wordt de functie `init()` [model.get_model_path ()](/python/api/azureml-core/azureml.core.model.model#get-model-path-model-name--version-none---workspace-none-) van de functie in het Score script aangeroepen om een model bestand of een map met model bestanden in de container te vinden. Als het modelbestand of de map niet wordt gevonden, mislukt de functie. De eenvoudigste manier om deze fout op te lossen is door de onderstaande python-code uit te voeren in de container shell:
 
 ```python
 from azureml.core.model import Model
@@ -177,7 +177,7 @@ Er zijn twee dingen die u kunnen helpen bij het voor komen van 503-status codes:
     > [!NOTE]
     > Als er pieken van aanvragen worden ontvangen die groter zijn dan de nieuwe minimum replica's kunnen worden verwerkt, kunt u 503s opnieuw ontvangen. Als het verkeer naar uw service toeneemt, is het mogelijk dat u de minimum replica's moet verg Roten.
 
-`autoscale_target_utilization` `autoscale_max_replicas` `autoscale_min_replicas` Zie de naslag gids voor [AksWebservice](/python/api/azureml-core/azureml.core.webservice.akswebservice?preserve-view=true&view=azure-ml-py) voor meer informatie over het instellen, en voor.
+`autoscale_target_utilization` `autoscale_max_replicas` `autoscale_min_replicas` Zie de naslag gids voor [AksWebservice](/python/api/azureml-core/azureml.core.webservice.akswebservice) voor meer informatie over het instellen, en voor.
 
 ## <a name="http-status-code-504"></a>HTTP-statuscode 504
 

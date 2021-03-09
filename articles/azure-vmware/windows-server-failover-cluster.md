@@ -2,17 +2,17 @@
 title: Windows Server-failovercluster op Azure VMware Solution vSAN met systeem eigen gedeelde schijven
 description: Windows Server failover cluster (WSFC) in te stellen op de Azure VMware-oplossing en gebruik te maken van oplossingen waarvoor WSFC-functionaliteit is vereist.
 ms.topic: how-to
-ms.date: 03/08/2021
-ms.openlocfilehash: 84bb846cd3fb6dd1b138308670db7ccf122b2187
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.date: 03/09/2021
+ms.openlocfilehash: d667eef00fcad0e3f5243c6ab580e2e8371c6793
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102491274"
+ms.locfileid: "102518990"
 ---
 # <a name="windows-server-failover-cluster-on-azure-vmware-solution-vsan-with-native-shared-disks"></a>Windows Server-failovercluster op Azure VMware Solution vSAN met systeem eigen gedeelde schijven
 
-In dit artikel wordt beschreven hoe u Windows Server-failovercluster kunt instellen in de Azure VMware-oplossing. De implementatie in dit artikel is bedoeld voor het testen van concept-en test doeleinden.
+In dit artikel wordt beschreven hoe u Windows Server-failovercluster kunt instellen in de Azure VMware-oplossing. De implementatie in dit artikel is bedoeld voor het testen van concept-en test doeleinden. U kunt het beste een CIB-configuratie (cluster-in-a-Box) gebruiken totdat het plaatsings beleid beschikbaar is.
 
 WSFC (Windows Server failover cluster), voorheen bekend als micro soft service Cluster service (MSCS), is een functie van het Windows Server-besturings systeem (OS). WSFC is een bedrijfskritische functie en voor veel toepassingen is vereist. WSFC is bijvoorbeeld vereist voor de volgende configuraties:
 
@@ -143,7 +143,7 @@ De volgende activiteiten worden niet ondersteund en kunnen een WSFC-knooppunt fa
         
       - **Netwerk communicatie valideren**. De cluster validatie test genereert een waarschuwing dat er slechts één netwerk interface per cluster knooppunt beschikbaar is. U kunt deze waarschuwing negeren. De Azure VMware-oplossing biedt de vereiste Beschik baarheid en prestaties omdat de knoop punten zijn verbonden met een van de NSX-T-segmenten. Bewaar dit item echter als onderdeel van de cluster validatie test, omdat hierdoor andere aspecten van de netwerk communicatie worden gevalideerd.
 
-16. Maak een DRS-regel voor het scheiden van de virtuele WSFC-Vm's tussen Azure VMware-oplossings knooppunten. Gebruik de volgende regels: één host-naar-VM-affiniteit en een regel voor de anti-affiniteit van VM-naar-VM. Op deze manier kunnen cluster knooppunten niet worden uitgevoerd op dezelfde Azure VMware-oplossings host.
+16. Maak een DRS-regel om de WSFC-Vm's op dezelfde Azure VMware-oplossings knooppunten te plaatsen. Hiervoor hebt u een host-naar-VM-affiniteits regel nodig. Op deze manier worden cluster knooppunten uitgevoerd op dezelfde Azure VMware Solution host. Dit geldt ook voor test doeleinden totdat het plaatsings beleid beschikbaar is.
 
     >[!NOTE]
     > Hiervoor moet u een ticket voor ondersteunings aanvraag maken. Onze ondersteunings organisatie van Azure kan u hierbij helpen.

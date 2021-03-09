@@ -11,12 +11,12 @@ ms.author: laobri
 ms.reviewer: laobri
 ms.date: 10/13/2020
 ms.custom: contperf-fy20q4, devx-track-python
-ms.openlocfilehash: 8222f88f5118c4ac8f489bb05ee5ca2724dbf067
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 570bfed5ae5fc6fafea36b9ed1f2673a0daae22b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184081"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521506"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Zelfstudie: Een Azure Machine Learning-pijplijn bouwen voor batchgewijs scoren
 
@@ -138,7 +138,7 @@ model = Model.register(model_path="models/inception_v3.ckpt",
 
 Machine learning-pijplijnen kunnen niet lokaal worden uitgevoerd, dus u kunt ze uitvoeren op cloudresources of *externe rekendoelen*. Een extern rekendoel is een herbruikbare virtuele rekenomgeving waarin u experimenten en machine learning-werkstromen kunt uitvoeren. 
 
-Voer de volgende code uit om een [`AmlCompute`](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?preserve-view=true&view=azure-ml-py)-doel met GPU te maken en deze vervolgens aan uw werkruimte te koppelen. Zie het [conceptuele artikel](./concept-compute-target.md) voor meer informatie over rekendoelen.
+Voer de volgende code uit om een [`AmlCompute`](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute)-doel met GPU te maken en deze vervolgens aan uw werkruimte te koppelen. Zie het [conceptuele artikel](./concept-compute-target.md) voor meer informatie over rekendoelen.
 
 
 ```python
@@ -301,7 +301,7 @@ Een pijplijnstap is een object dat alles inkapselt dat u nodig hebt om een pijpl
 * Invoer- en uitvoergegevens en eventuele aangepaste parameters
 * Verwijzing naar een script of SDK-logica om uit te voeren tijdens de stap
 
-Meerdere klassen worden overgenomen van de bovenliggende klasse [`PipelineStep`](/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep?preserve-view=true&view=azure-ml-py). U kunt klassen kiezen om specifieke frameworks of stacks te gebruiken om een stap te maken. In dit voorbeeld gebruikt u de klasse `ParallelRunStep` om uw staplogica te definiëren met behulp van een aangepast Python-script. Als een argument voor uw script een invoer of een uitvoer is van de stap, moet het argument worden gedefinieerd in *zowel* de `arguments`-matrix *als* in de `input`- of `output`-parameter. 
+Meerdere klassen worden overgenomen van de bovenliggende klasse [`PipelineStep`](/python/api/azureml-pipeline-core/azureml.pipeline.core.builder.pipelinestep). U kunt klassen kiezen om specifieke frameworks of stacks te gebruiken om een stap te maken. In dit voorbeeld gebruikt u de klasse `ParallelRunStep` om uw staplogica te definiëren met behulp van een aangepast Python-script. Als een argument voor uw script een invoer of een uitvoer is van de stap, moet het argument worden gedefinieerd in *zowel* de `arguments`-matrix *als* in de `input`- of `output`-parameter. 
 
 In scenario's waarin er meer dan één stap is, wordt een objectverwijzing in de matrix `outputs` beschikbaar als *invoer* voor een volgende pijplijnstap.
 
@@ -325,7 +325,7 @@ batch_score_step = ParallelRunStep(
 )
 ```
 
-Voor een lijst met alle klassen die u voor verschillende typen stappen kunt gebruiken, raadpleegt u het [stappenpakket](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py).
+Voor een lijst met alle klassen die u voor verschillende typen stappen kunt gebruiken, raadpleegt u het [stappenpakket](/python/api/azureml-pipeline-steps/azureml.pipeline.steps).
 
 ## <a name="submit-the-pipeline"></a>De pijplijn indienen
 
@@ -382,9 +382,9 @@ published_pipeline
 
 Als u de pijplijn vanuit het REST-eindpunt wilt uitvoeren, hebt u een OAuth2-verificatieheader nodig. In het volgende voorbeeld wordt gebruikgemaakt van interactieve verificatie (ter illustratie), maar voor de meeste productiescenario's waarvoor geautomatiseerde of headless verificatie is vereist, gebruikt u verificatie met de service-principal, zoals [beschreven in dit artikel](how-to-setup-authentication.md).
 
-Voor verificatie met de service-principal moet u een *app-registratie* maken in *Azure Active Directory*. Eerst genereert u een clientgeheim en vervolgens verleent u uw service-principal *roltoegang* tot uw machine learning-werkruimte. Gebruik de [`ServicePrincipalAuthentication`](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication?preserve-view=true&view=azure-ml-py)-klasse om uw verificatiestroom te beheren. 
+Voor verificatie met de service-principal moet u een *app-registratie* maken in *Azure Active Directory*. Eerst genereert u een clientgeheim en vervolgens verleent u uw service-principal *roltoegang* tot uw machine learning-werkruimte. Gebruik de [`ServicePrincipalAuthentication`](/python/api/azureml-core/azureml.core.authentication.serviceprincipalauthentication)-klasse om uw verificatiestroom te beheren. 
 
-Zowel [`InteractiveLoginAuthentication`](/python/api/azureml-core/azureml.core.authentication.interactiveloginauthentication?preserve-view=true&view=azure-ml-py) als `ServicePrincipalAuthentication` worden overgenomen van `AbstractAuthentication`. In beide gevallen gebruikt u de functie [`get_authentication_header()`](/python/api/azureml-core/azureml.core.authentication.abstractauthentication?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-authentication-header--) op dezelfde manier om de header op te halen:
+Zowel [`InteractiveLoginAuthentication`](/python/api/azureml-core/azureml.core.authentication.interactiveloginauthentication) als `ServicePrincipalAuthentication` worden overgenomen van `AbstractAuthentication`. In beide gevallen gebruikt u de functie [`get_authentication_header()`](/python/api/azureml-core/azureml.core.authentication.abstractauthentication#get-authentication-header--) op dezelfde manier om de header op te halen:
 
 ```python
 from azureml.core.authentication import InteractiveLoginAuthentication

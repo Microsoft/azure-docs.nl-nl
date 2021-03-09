@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
 ms.reviewer: cynthn
-ms.openlocfilehash: eb02bff77ffedc0a1f2fee0a186d544c39374dbf
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a3138da0ecbcabaeb7ef910975afc3b7005e5b50
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101693863"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519704"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
 
@@ -391,7 +391,7 @@ Eigenschappen aanpassen:
 - **validExitCodes** – optioneel, geldige codes die kunnen worden geretourneerd door de script/inline opdracht, waardoor het mislukken van de script/inline-opdracht wordt voor komen.
 - **runElevated** : optioneel, Booleaans, ondersteuning voor het uitvoeren van opdrachten en scripts met verhoogde machtigingen.
 - **sha256Checksum** -waarde van de sha256-controlesom van het bestand, u genereert dit lokaal en vervolgens wordt de opbouw functie voor installatie kopieën gecontroleerd en gevalideerd.
-    * De sha256Checksum genereren met behulp van een Power shell op Windows [Get-hash](/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6)
+    * De sha256Checksum genereren met behulp van een Power shell op Windows [Get-hash](/powershell/module/microsoft.powershell.utility/get-filehash)
 
 
 ### <a name="file-customizer"></a>Bestands aanpassing
@@ -456,7 +456,7 @@ Eigenschappen aanpassen:
 - **updateLimit** – optioneel, definieert het aantal updates dat kan worden geïnstalleerd, standaard 1000.
  
 > [!NOTE]
-> De Windows Update-aanpassings bewerking kan mislukken als er openstaande Windows-startingen of toepassings installaties nog steeds worden uitgevoerd. deze fout kan meestal worden weer geven in de aanpassingen. log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . U kunt het beste overwegen om in een Windows-computer opnieuw op te starten en/of toepassingen voldoende tijd te geven om de installatie te volt ooien met behulp van [slapen] of wacht opdrachten ( https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7) in de inline-opdrachten of-scripts voordat u Windows Update uitvoert.
+> De Windows Update-aanpassings bewerking kan mislukken als er openstaande Windows-startingen of toepassings installaties nog steeds worden uitgevoerd. deze fout kan meestal worden weer geven in de aanpassingen. log, `System.Runtime.InteropServices.COMException (0x80240016): Exception from HRESULT: 0x80240016` . Wij adviseren u ten zeerste aan het toevoegen van Windows opnieuw op te starten en/of toepassingen voldoende tijd te geven voor het volt ooien van de installatie met behulp van de [slaap](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep) -of wait-opdrachten in de inline-opdrachten of-scripts voordat u Windows Update uitvoert.
 
 ### <a name="generalize"></a>Generaliseren 
 Azure Image Builder voert standaard ook de code ' provisioning ' uit aan het einde van elke aanpassings fase van de installatie kopie tot ' generalize ' in de installatie kopie. Generalize is een proces waarbij de installatie kopie wordt ingesteld zodat deze opnieuw kan worden gebruikt om meerdere virtuele machines te maken. Voor virtuele Windows-machines maakt Azure Image Builder gebruik van Sysprep. Voor Linux voert Azure Image Builder ' waagent-deprovision ' uit. 

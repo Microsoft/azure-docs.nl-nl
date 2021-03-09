@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: 98ea51957014a4e9d83f27adefd86d8d0708b500
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 9df8a67fd3dfbf23986f1cc5ed18392463fc7ecb
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102503178"
+ms.locfileid: "102522203"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Een Azure Resource Manager sjabloon gebruiken om een werk ruimte te maken voor Azure Machine Learning
 
@@ -32,12 +32,7 @@ Zie [een toepassing implementeren met Azure Resource Manager sjabloon](../azure-
 
 * Als u een sjabloon van een CLI wilt gebruiken, moet u [Azure PowerShell](/powershell/azure/) of de [Azure cli](/cli/azure/install-azure-cli).
 
-* Voor sommige scenario's moet u een ondersteunings ticket openen. Deze scenario's zijn:
-
-    * __Werkruimte met Private Link, met een door de klant beheerde sleutel__
-    * __Azure Container Registry voor de werkruimte achter uw virtuele netwerk__
-
-    Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
+* Voor sommige scenario's moet u een ondersteunings ticket openen. Als u bijvoorbeeld een werk ruimte met persoonlijke koppelingen gebruikt met een door de klant beheerde sleutel. Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
 
 ## <a name="limitations"></a>Beperkingen
 

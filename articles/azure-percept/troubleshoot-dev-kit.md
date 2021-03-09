@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: c8027b62c0c463e134817f589ba3e1957cea5b39
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a6d099e8d267c9fe03e0bb676276e7a4ab8157ab
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101679575"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521523"
 ---
 # <a name="azure-percept-dk-dev-kit-troubleshooting"></a>Problemen oplossen met Azure percept DK (dev kit)
 
@@ -60,9 +60,9 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Azure IoT Edge          |```sudo journalctl -u iotedge -f``` |de logboeken van de Azure IoT Edge Security Manager weer geven |
 |Azure IoT Edge          |```sudo systemctl restart iotedge``` |de Azure IoT Edge-beveiligings-daemon opnieuw opstarten |
 |Azure IoT Edge          |```sudo iotedge list```           |de geïmplementeerde Azure IoT Edge modules weer geven |
-|Anders             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
-|Anders             |```ip route get 1.1.1.1```        |apparaat-IP en interface-informatie weer geven |
-|Anders             |```ip route get 1.1.1.1 \| awk '{print $7}'``` <br> ```ifconfig [interface]``` |alleen IP-adres van apparaat weer geven |
+|Overige             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
+|Overige             |```ip route get 1.1.1.1```        |apparaat-IP en interface-informatie weer geven |
+|Overige             |```ip route get 1.1.1.1 \| awk '{print $7}'``` <br> ```ifconfig [interface]``` |alleen IP-adres van apparaat weer geven |
 
 
 De ```journalctl``` Wi-Fi-opdrachten kunnen worden gecombineerd met de volgende opdracht:
@@ -95,7 +95,7 @@ Er zijn drie kleine Led's boven op de draag huis kaart. Er wordt een Cloud picto
 |GELEID             |Staat      |Beschrijving                      |
 |----------------|-----------|---------------------------------|
 |LED 1 (IoT Hub) |Aan (vast) |Het apparaat is verbonden met een IoT Hub. |
-|LED 2 (Wi-Fi)   |Langzaam knip peren |De verificatie van het apparaat wordt uitgevoerd. |
+|LED 2 (Wi-Fi)   |Langzaam knip peren |Het apparaat is klaar om te worden geconfigureerd door Wi-Fi Easy Connect en de aanwezigheid ervan wordt aangekondigd aan een Configurator. |
 |LED 2 (Wi-Fi)   |Snel blinken |De verificatie is voltooid, de apparaats koppeling wordt uitgevoerd. |
 |LED 2 (Wi-Fi)   |Aan (vast) |De verificatie en koppeling zijn geslaagd; het apparaat is verbonden met een Wi-Fi netwerk. |
 |LED 3           |NA         |LED wordt niet gebruikt. |

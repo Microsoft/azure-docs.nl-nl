@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: d72d2d094e220bd4e460cfca6b422f0609c083af
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: fde25e4ba75bfb86c9837582d7168f85335836b6
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880064"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520537"
 ---
 # <a name="version-and-track-azure-machine-learning-datasets"></a>Versie en bijhouden van Azure Machine Learning gegevens sets
 
@@ -31,7 +31,7 @@ Typische scenario's voor versies:
 
 Voor deze zelfstudie hebt u het volgende nodig:
 
-- [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py). Deze SDK bevat het pakket met de [azureml-gegevens sets](/python/api/azureml-core/azureml.core.dataset?preserve-view=true&view=azure-ml-py) .
+- [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install). Deze SDK bevat het pakket met de [azureml-gegevens sets](/python/api/azureml-core/azureml.core.dataset) .
     
 - Een [Azure machine learning-werk ruimte](concept-workspace.md). U kunt een bestaand item ophalen door de volgende code uit te voeren of [een nieuwe werk ruimte te maken](how-to-manage-workspace.md).
 
@@ -62,7 +62,7 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 
 ### <a name="retrieve-a-dataset-by-name"></a>Een gegevensset op naam ophalen
 
-De methode [get_by_name ()](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte. 
+De methode [get_by_name ()](/python/api/azureml-core/azureml.core.dataset.dataset#get-by-name-workspace--name--version--latest--) voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte. 
 
 Met de volgende code wordt versie 1 van de `titanic_ds` gegevensset opgehaald.
 
@@ -182,7 +182,7 @@ Hier volgen enkele scenario's waarin uw gegevens worden bijgehouden als een **ui
 
 Voor elk Machine Learning experiment kunt u eenvoudig de gegevens sets traceren die worden gebruikt als invoer met het `Run` object experiment.
 
-De volgende code gebruikt de [`get_details()`](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-details--) methode om bij te houden welke invoer gegevens sets zijn gebruikt bij de uitvoering van het experiment:
+De volgende code gebruikt de [`get_details()`](/python/api/azureml-core/azureml.core.run.run#get-details--) methode om bij te houden welke invoer gegevens sets zijn gebruikt bij de uitvoering van het experiment:
 
 ```Python
 # get input datasets

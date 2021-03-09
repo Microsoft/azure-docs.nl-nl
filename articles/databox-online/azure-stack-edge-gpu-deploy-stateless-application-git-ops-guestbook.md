@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: f47f795335204ecd0c74463b76583d7dd79f8532
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 920f7912a1289fe92618d893b94943784e4a9a3a
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102436427"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520724"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Implementeer een PHP- `Guestbook` staatloze toepassing met redis op het Kubernetes-cluster op basis van Azure stack Edge Pro GPU
 
@@ -51,7 +51,7 @@ Voordat u de stateless toepassing kunt implementeren, moet u ervoor zorgen dat u
 
 1. U hebt een Windows-client systeem dat wordt gebruikt om toegang te krijgen tot het Azure Stack Edge Pro-apparaat.
   
-    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7&preserve-view = true).
+    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell).
     
     - U kunt ook een andere client met een [ondersteund besturings systeem](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. 
     

@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, data4ml
 ms.date: 05/14/2020
-ms.openlocfilehash: a4f15a1a0911e5a33da8b5f9445709cb42e7e10e
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 2eec512af9b139b2707c435fd0c78b7d50ac1b11
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99981507"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521047"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Azure Machine Learning gegevensset maken en verkennen met labels
 
@@ -27,8 +27,8 @@ We verwijzen naar het Azure Machine Learning gegevens sets met labels als gelabe
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://aka.ms/AMLFree) aan voordat u begint.
-* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)of toegang tot [Azure machine learning Studio](https://ml.azure.com/).
-    * Het pakket [Azure-contrib-dataset](/python/api/azureml-contrib-dataset/?preserve-view=true&view=azure-ml-py) installeren
+* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro)of toegang tot [Azure machine learning Studio](https://ml.azure.com/).
+    * Het pakket [Azure-contrib-dataset](/python/api/azureml-contrib-dataset/) installeren
 * Een Machine Learning-werkruimte. Raadpleeg [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md).
 * Toegang tot een Azure Machine Learning gegevens labelen project. Als u geen label project hebt, maakt u er een met [de volgende stappen](how-to-create-labeling-projects.md).
 
@@ -55,7 +55,7 @@ Laad uw gelabelde gegevens sets in een Panda data frame-of Torchvision-gegevenss
 
 ### <a name="pandas-dataframe"></a>Panda data frame
 
-U kunt gegevens sets met de [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueto-pandas-dataframe-on-error--null---out-of-range-datetime--null--) methode vanuit de klasse laden in een Panda data frame `azureml-contrib-dataset` . Installeer de klasse met de volgende shell-opdracht: 
+U kunt gegevens sets met de [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) methode vanuit de klasse laden in een Panda data frame `azureml-contrib-dataset` . Installeer de klasse met de volgende shell-opdracht: 
 
 ```shell
 pip install azureml-contrib-dataset
@@ -90,7 +90,7 @@ imgplot = plt.imshow(img)
 
 ### <a name="torchvision-datasets"></a>Torchvision gegevens sets
 
-U kunt gegevens sets in Torchvision-gegevensset laden met de methode [to_torchvision ()](/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueto-torchvision--) , ook uit de `azureml-contrib-dataset` klasse. Als u deze methode wilt gebruiken, moet [PyTorch](https://pytorch.org/) zijn geïnstalleerd. 
+U kunt gegevens sets in Torchvision-gegevensset laden met de methode [to_torchvision ()](/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset#to-torchvision--) , ook uit de `azureml-contrib-dataset` klasse. Als u deze methode wilt gebruiken, moet [PyTorch](https://pytorch.org/) zijn geïnstalleerd. 
 
 In de volgende code is de `animal_labels` gegevensset de uitvoer van een label project dat eerder is opgeslagen in de werk ruimte.
 

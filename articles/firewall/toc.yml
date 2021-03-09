@@ -99,6 +99,8 @@
       href: firewall-workbook.md
     - name: Firewall Premium implementeren en configureren
       href: premium-deploy.md
+    - name: CA-ondernemings certificaten implementeren voor Premium
+      href: premium-deploy-certificates-enterprise-ca.md
     - name: Migreren naar Azure Firewall Premium
       href: premium-migrate.md
 - name: Naslaginformatie

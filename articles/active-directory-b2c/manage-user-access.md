@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 10/15/2020
+ms.date: 03/09/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fadc739f16ce9690a735be22758f58857ff8b9ff
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0ee26e7fe74d87f7b20f9a28b049b8043b376273
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951618"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518050"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Gebruikers toegang beheren in Azure Active Directory B2C
 
@@ -83,7 +83,53 @@ Als een toepassing op een betrouw bare manier DOB of land/regio-gegevens heeft v
 - Als een gebruiker is bekend als volwassene, werkt u het Directory kenmerk **ageGroup** bij met de waarde **volwassen**.
 - Als een gebruiker een kleine waarde is, werkt u de Directory-kenmerk **ageGroup** met de waarden **Minor** en set **consentProvidedForMinor**, indien van toepassing.
 
-Zie [Age beperking gebruiken in azure AD B2C](basic-age-gating.md)voor meer informatie over het verzamelen van Dob-gegevens.
+## <a name="minor-calculation-rules"></a>Secundaire berekenings regels
+
+De leeftijds beperking omvat twee leeftijds waarden: de leeftijd die niet langer wordt beschouwd als een kleine, en de leeftijd waarbij een kleine persoon toestemming moet geven over ouders. De volgende tabel bevat de leeftijds regels die worden gebruikt voor het definiëren van een kleine en kleine, vereiste toestemming.
+
+| Land/regio | Naam van land/regio | Duur van de secundaire toestemming | Secundaire leeftijd |
+| -------------- | ------------------- | ----------------- | --------- |
+| Standaard | Geen | Geen | 18 |
+| AE | Verenigde Arabische Emiraten | Geen | 21 |
+| AT | Oostenrijk | 14 | 18 |
+| BE | België | 14 | 18 |
+| BG | Bulgarije | 16 | 18 |
+| BH | Bahrein | Geen | 21 |
+| CM | Kameroen | Geen | 21 |
+| CY | Cyprus | 16 | 18 |
+| CZ | Tsjechische Republiek | 16 | 18 |
+| DE | Duitsland | 16 | 18 |
+| DK | Denemarken | 16 | 18 |
+| EE | Estland | 16 | 18 |
+| EG | Egypte | Geen | 21 |
+| ES | Spanje | 13 | 18 |
+| FR | Frankrijk | 16 | 18 |
+| GB | Verenigd Koninkrijk | 13 | 18 |
+| GR | Griekenland | 16 | 18 |
+| HR | Kroatië | 16 | 18 |
+| HU | Hongarije | 16 | 18 |
+| IE | Ierland | 13 | 18 |
+| IT | Italië | 16 | 18 |
+| KR | Zuid-Korea | 14 | 18 |
+| LT | Litouwen | 16 | 18 |
+| LU | Luxemburg | 16 | 18 |
+| LV | Letland | 16 | 18 |
+| MT | Malta | 16 | 18 |
+| NA | Namibië | Geen | 21 |
+| NL | Nederland | 16 | 18 |
+| PL | Polen | 13 | 18 |
+| PT | Portugal | 16 | 18 |
+| RO | Roemenië | 16 | 18 |
+| SE | Zweden | 13 | 18 |
+| SG | Singapore | Geen | 21 |
+| SI | Slovenië | 16 | 18 |
+| SK | Slowakije | 16 | 18 |
+| TD | Tsjaad | Geen | 21 |
+| TH | Thailand | Geen | 20 |
+| TW | Taiwan | Geen | 20 |
+| VS | Verenigde Staten | 13 | 18 |
+
+
 
 ## <a name="capture-terms-of-use-agreement"></a>Gebruiksrecht overeenkomst vastleggen
 
@@ -175,5 +221,6 @@ Hier volgt een voor beeld van een op versies gebaseerde gebruiksrecht overeenkom
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- De [leeftijds beperking inschakelen in azure AD B2C](age-gating.md).
 - Zie [gebruikers gegevens beheren](manage-user-data.md)voor meer informatie over het verwijderen en exporteren van gebruikers gegevens.
 - Voor een voor beeld van een aangepast beleid waarmee een prompt van het gebruik van de gebruiksrecht overeenkomst wordt geïmplementeerd, raadpleegt [u een aangepast beleid voor B2C IEF-aanmelden en aanmelden met de prompt ' gebruiksrecht overeenkomst '](https://github.com/azure-ad-b2c/samples/tree/master/policies/sign-in-sign-up-versioned-tou).

@@ -12,85 +12,96 @@ ms.date: 05/23/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: ecbb7ec503011d78c2f83a76cea921e1cf438ac1
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 43990952f6cbe90c729ac2df421c682fe8d42b1b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215099"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517928"
 ---
 # <a name="support-and-help-options-for-developers"></a>Ondersteunings- en Help-opties voor ontwikkelaars
 
-Als u net begint met de integratie met Azure Active Directory (Azure AD), micro soft-identiteiten of Microsoft Graph-API, of wanneer u een nieuwe functie implementeert voor uw toepassing, zijn er situaties waarin u hulp nodig hebt bij de Community of de ondersteunings opties kunt begrijpen die u als ontwikkelaar hebt. Dit artikel helpt u bij het begrijpen van deze opties, waaronder:
+Als u net begint met de integratie met Azure Active Directory (Azure AD), micro soft-identiteiten of Microsoft Graph-API, of wanneer u een nieuwe functie implementeert voor uw toepassing, zijn er situaties waarin u hulp nodig hebt bij de Community of de ondersteunings opties kunt begrijpen die u als ontwikkelaar hebt. Hier vindt u suggesties voor waar u hulp kunt krijgen bij het ontwikkelen van uw micro soft Identity platform-oplossingen.
 
-> [!div class="checklist"]
-> * Zoeken of uw vraag niet is beantwoord door de Community of dat er al een bestaande documentatie is voor de functie die u wilt implementeren.
-> * In sommige gevallen wilt u de ondersteunings Programma's gebruiken om u te helpen bij het opsporen van een specifiek probleem.
-> * Als u het antwoord dat u nodig hebt niet kunt vinden, kunt u een vraag stellen op *micro soft Q&a*
-> * Als u een probleem met een van onze verificatie bibliotheken tegen komt, kunt u een *github* -probleem veroorzaken
-> * Ten slotte, als u met iemand moet praten, wilt u mogelijk een ondersteunings aanvraag openen
+## <a name="create-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag maken
 
-## <a name="search"></a>Zoeken
+<div class='icon is-large'>
+    <img alt='Azure support' src='https://docs.microsoft.com/media/logos/logo_azure.svg'>
+</div>
 
-Als u een vraag hebt over de ontwikkeling, kunt u het antwoord mogelijk vinden in de documentatie, github-voor [beelden](https://github.com/azure-samples)of antwoorden op [micro soft Q&een](/answers/products/) vragen.
+Verken het aanbod aan [ondersteuningsopties voor Azure en kies het abonnement](https://azure.microsoft.com/support/plans) dat het meest geschikt voor u is, of u nu een ontwikkelaar bent die net aan zijn of haar kennismaking met de cloud is begonnen of bij een grote organisatie werkt die bedrijfskritische, strategische toepassingen implementeert. Azure-klanten kunnen ondersteuningsaanvragen maken en beheren in de Azure-portal.
 
-### <a name="scoped-search"></a>Zoek opdracht in bereik
+- Als u al een ondersteunings abonnement voor Azure hebt, kunt u [hier een ondersteunings aanvraag openen](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-
-Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](https://docs.microsoft.com/answers/products/) de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
-
-Voor snellere resultaten kunt u uw zoek opdracht bereiken naar [micro soft Q&](/answers/products/)de documentatie en de code voorbeelden met behulp van de volgende query in uw favoriete zoek machine:
-
-
-```
-{Your Search Terms} (site:http://www.docs.microsoft.com/answers/products/ OR site:docs.microsoft.com OR site:github.com/azure-samples OR site:cloudidentity.com OR site:developer.microsoft.com/graph)
-```
-
-Waar *{uw zoek termen}* overeenkomen met uw zoek woorden.
-
-## <a name="use-the-development-support-tools"></a>De hulpprogram ma's voor ontwikkelings ondersteuning gebruiken
-
-| Hulpprogramma  | Beschrijving  |
-|---------|---------|
-| [jwt.ms](https://jwt.ms) | Plak een ID of toegangs token om de claim namen en-waarden te decoderen. |
-| [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)| Hulp programma waarmee u aanvragen kunt doen en reacties op de Microsoft Graph-API ziet. |
+- Als u geen Azure-klant bent, kunt u ook een ondersteunings aanvraag openen met micro soft via [onze commerciële ondersteuning](https://support.serviceshub.microsoft.com/supportforbusiness).
 
 ## <a name="post-a-question-to-microsoft-qa"></a>Een vraag stellen aan micro soft Q&A
+<div class='icon is-large'>
+    <img alt='Microsoft Q&A' src='./media/common/question-mark-icon.png'>
+</div>             
 
-[Micro soft Q&A](/answers/products/) is het voorkeurs kanaal voor vragen met betrekking tot ontwikkeling. Hier zijn leden van de ontwikkelaars community en micro soft-team leden rechtstreeks betrokken bij het helpen om uw problemen op te lossen.
+Krijg direct antwoord op uw vragen over het ontwikkelen van apps voor identiteiten van micro soft-technici, Azure Most Valuable Professionals (Mvp's) en leden van onze expert community.
 
-Als u via zoeken geen antwoord op uw vraag kunt vinden, kunt u een nieuwe vraag verzenden naar [micro soft Q&a](/answers/products/) . Gebruik een van de volgende tags bij het stellen van vragen om de community te helpen uw vraag sneller te identificeren en te beantwoorden:
+[Micro soft Q&A](/answers/products/) is de aanbevolen bron van Community-ondersteuning voor Azure.
 
-|Onderdeel/gebied  | Tags |
-|---------|---------|
-| ADAL-bibliotheek | [adal](/answers/topics/azure-ad-adal-deprecation.html) |
-| MSAL-bibliotheek     | [msal](/answers/topics/azure-ad-msal.html) |
-| OWIN-middleware  | [[Azure-Active-Directory]](/answers/topics/azure-active-directory.html) |
-| [Azure B2B](../external-identities/what-is-b2b.md)  | [[Azure-AD-B2B]](/answers/topics/azure-ad-b2b.html) |
-| [Azure-B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[Azure-AD-B2C]](/answers/topics/azure-ad-b2c.html) |
-| [Microsoft Graph API](https://developer.microsoft.com/graph/) | [[Azure-AD-Graph]](/answers/topics/azure-ad-graph.html) |
-| Elk ander gebied dat betrekking heeft op verificatie-of autorisatie-onderwerpen | [[Azure-Active-Directory]](/answers/topics/azure-active-directory.html) |
+Als u een antwoord op uw probleem niet kunt vinden door te zoeken naar micro soft Q&A, dient u een nieuwe vraag te verzenden. Gebruik een van de volgende tags wanneer u een vraag hebt over de [hoge kwaliteit](https://docs.microsoft.com/answers/articles/24951/how-to-write-a-quality-question.html):
 
-De volgende berichten van [micro soft Q&A](/answers/products/) bevatten tips voor het stellen van vragen en het toevoegen van de bron code. Volg deze richt lijnen om de kans te verg Roten dat leden van de Community uw vraag snel kunnen beoordelen en beantwoorden:
-
-* [Hoe kan ik een goede vraag stellen](/answers/articles/24951/how-to-write-a-quality-question.html)
-* [Een mini maal, volledig en verifieerbaar voor beeld maken](/answers/articles/24907/how-to-write-a-quality-answer.html)
+| Onderdeel/gebied| Tags  |
+|------------|---------------------------|
+| Active Directory Authentication Library (ADAL)                              | [adal](https://docs.microsoft.com/answers/topics/azure-ad-adal-deprecation.html)                |
+| Microsoft Authentication Library (MSAL)                                     | [msal](https://docs.microsoft.com/answers/topics/azure-ad-msal.html)                            |
+| Open Web interface voor .NET (OWIN) middleware                               | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
+| [B2B/externe identiteiten voor Azure AD](../external-identities/what-is-b2b.md) | [[Azure-AD-B2B]](https://docs.microsoft.com/answers/topics/azure-ad-b2b.html)                     |
+| [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/)  | [[Azure-AD-B2C]](https://docs.microsoft.com/answers/topics/azure-ad-b2c.html)                     |
+| [Microsoft Graph API](https://developer.microsoft.com/graph/)               | [[Azure-AD-Graph]](https://docs.microsoft.com/answers/topics/azure-ad-graph.html)                 |
+| Alle andere verificatie-en autorisatie gebieden                            | [[Azure-Active-Directory]](https://docs.microsoft.com/answers/topics/azure-active-directory.html) |
 
 ## <a name="create-a-github-issue"></a>Een GitHub-probleem maken
 
-Als u een fout of probleem met betrekking tot onze bibliotheken vindt, kunt u een probleem veroorzaken in onze GitHub-opslag plaatsen. Omdat onze bibliotheken open source zijn, kunt u ook een pull-aanvraag indienen.
+<div class='icon is-large'>
+    <img alt='GitHub-image' src='./media/common/github.svg'>
+</div>
 
-Voor een lijst met bibliotheken en hun GitHub-opslag plaatsen raadpleegt u het volgende:
+Als u hulp nodig hebt bij een van de micro soft-verificatie bibliotheken (MSAL), opent u een probleem in de opslag plaats op GitHub.
 
-* [Azure Active Directory-bibliotheken (Authentication Library) en github-opslag plaatsen (ADAL)](../azuread-dev/active-directory-authentication-libraries.md)
-* [Micro soft Authentication Library (MSAL)-](reference-v2-libraries.md) bibliotheken en github-opslag plaatsen
+| MSAL-bibliotheek | URL voor GitHub-problemen|
+| --- | --- |
+| MSAL voor Android | https://github.com/AzureAD/microsoft-authentication-library-for-android/issues |
+| MSAL hoek | https://github.com/AzureAD/microsoft-authentication-library-for-js/issues |
+| MSAL voor iOS en macOS| https://github.com/AzureAD/microsoft-authentication-library-for-objc/issues |
+| MSAL Java | https://github.com/AzureAD/microsoft-authentication-library-for-java/issues |
+| MSAL.js | https://github.com/AzureAD/microsoft-authentication-library-for-js/issues |
+|MSAL.NET| https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues |
+| MSAL Node | https://github.com/AzureAD/microsoft-authentication-library-for-js/issues |
+| MSAL Python | https://github.com/AzureAD/microsoft-authentication-library-for-python/issues |
+| MSAL reageren | https://github.com/AzureAD/microsoft-authentication-library-for-js/issues |
 
-## <a name="open-a-support-request"></a>Een ondersteunings aanvraag openen
+## <a name="submit-feedback-on-azure-feedback"></a>Feedback geven op Azure Feedback
 
-Als u contact moet opnemen met iemand, kunt u een ondersteunings aanvraag openen. Als u een Azure-klant bent, zijn er verschillende ondersteunings opties beschikbaar. Zie [Deze pagina voor het](https://azure.microsoft.com/support/plans/)vergelijken van plannen. Ondersteuning voor ontwikkel aars is ook beschikbaar voor Azure-klanten. Zie [Deze pagina](https://azure.microsoft.com/support/plans/developer/)voor meer informatie over het kopen van ondersteunings abonnementen voor ontwikkel aars.
+<div class='icon is-large'>
+    <img alt='UserVoice' src='https://docs.microsoft.com/media/logos/logo-uservoice.svg'>
+</div>
 
-* Als u al een ondersteunings abonnement voor Azure hebt, kunt u [hier een ondersteunings aanvraag openen](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
+Als u nieuwe functies wilt aanvragen, plaatst u deze op Azure Feedback. Deel uw ideeën zodat u het micro soft Identity-platform beter kunt gebruiken voor de toepassingen die u ontwikkelt.
 
-* Als u geen Azure-klant bent, kunt u ook een ondersteunings aanvraag openen met micro soft via [onze commerciële ondersteuning](https://support.serviceshub.microsoft.com/supportforbusiness).
+| Service                       | URL voor Azure Feedback |
+|-------------------------------|---------------|
+| Azure Active Directory | https://feedback.azure.com/forums/169401-azure-active-directory |
+| Azure Active Directory-ervaring voor ontwikkel aars             | https://feedback.azure.com/forums/169401-azure-active-directory?category_id=164757 |
+| Azure Active Directory-verificatie             | https://feedback.azure.com/forums/169401-azure-active-directory?category_id=167256 |
 
-U kunt ook een [virtuele agent](https://support.microsoft.com/contactus/?ws=support) proberen om ondersteuning te verkrijgen of vragen te stellen.
+## <a name="stay-informed-of-updates-and-new-releases"></a>Blijf op de hoogte van updates en nieuwe releases
+
+<div class='icon is-large'>
+    <img alt='Stay informed' src='https://docs.microsoft.com/media/common/i_blog.svg'>
+</div>
+
+- [Azure-updates](https://azure.microsoft.com/updates/?category=identity): meer informatie over belang rijke product updates, een route kaart en aankondigingen.
+
+- [Wat is er nieuw in docs](https://docs.microsoft.com/azure/active-directory/develop/whats-new-docs): ontdek wat er nieuw is in de documentatie voor micro soft Identity platform.
+
+- [Azure Active Directory identiteits blog](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity): Nieuws en informatie over Azure AD ophalen.
+
+- [Technische community](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/bg-p/Identity/): deel uw ervaringen en leer van experts.
+
+

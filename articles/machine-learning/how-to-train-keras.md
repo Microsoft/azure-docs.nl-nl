@@ -11,12 +11,12 @@ ms.reviewer: peterlu
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d9bad49b7c3d71304a33691cf5004c853228f8e8
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 2b4af9dec2bf397ad2766c68d547eeac85a9a9a3
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797227"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518361"
 ---
 # <a name="train-keras-models-at-scale-with-azure-machine-learning"></a>Keras-modellen op schaal trainen met Azure Machine Learning
 
@@ -42,7 +42,7 @@ Voer deze code uit in een van de volgende omgevingen:
 
  - Uw eigen Jupyter Notebook-server
 
-    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.15.0).
+    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install) (>= 1.15.0).
     - [Maak een configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
     - [De voorbeeld script bestanden downloaden](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/keras/train-hyperparameter-tune-deploy-with-keras) `keras_mnist.py` maar `utils.py`
 
@@ -68,7 +68,7 @@ from azureml.core.compute_target import ComputeTargetException
 
 ### <a name="initialize-a-workspace"></a>Een werk ruimte initialiseren
 
-De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) object te maken.
+De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace) object te maken.
 
 Maak een werkruimte object op basis van het `config.json` bestand dat in de [sectie vereisten](#prerequisites)is gemaakt.
 
@@ -196,7 +196,7 @@ Zie [trainings uitvoeringen configureren en verzenden](how-to-set-up-training-ta
 
 ### <a name="submit-your-run"></a>Uw uitvoering verzenden
 
-Het [object run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) biedt de interface voor de uitvoerings geschiedenis terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
+Het [object run](/python/api/azureml-core/azureml.core.run%28class%29) biedt de interface voor de uitvoerings geschiedenis terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
 
 ```Python
 run = Experiment(workspace=ws, name='Tutorial-Keras-Minst').submit(src)

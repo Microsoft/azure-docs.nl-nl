@@ -10,12 +10,12 @@ ms.author: jhirono
 author: jhirono
 ms.reviewer: larryfr
 ms.date: 11/09/2020
-ms.openlocfilehash: 211ef9571b5a126686b4583330dc0f80863fd47e
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 13d5c02fbb4ae06c7a5279ab7c5d3af90c263f71
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992043"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521064"
 ---
 # <a name="data-encryption-with-azure-machine-learning"></a>Gegevens versleuteling met Azure Machine Learning
 
@@ -29,7 +29,7 @@ Azure Machine Learning maakt gebruik van een aantal Azure-Services voor gegevens
 ## <a name="encryption-at-rest"></a>Versleuteling 'at rest'
 
 > [!IMPORTANT]
-> Als uw werk ruimte gevoelige gegevens bevat, kunt u het beste de [hbi_workspace vlag](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) instellen tijdens het maken van uw werk ruimte. De `hbi_workspace` vlag kan alleen worden ingesteld wanneer een werk ruimte wordt gemaakt. Het kan niet worden gewijzigd voor een bestaande werk ruimte.
+> Als uw werk ruimte gevoelige gegevens bevat, kunt u het beste de [hbi_workspace vlag](/python/api/azureml-core/azureml.core.workspace%28class%29#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) instellen tijdens het maken van uw werk ruimte. De `hbi_workspace` vlag kan alleen worden ingesteld wanneer een werk ruimte wordt gemaakt. Het kan niet worden gewijzigd voor een bestaande werk ruimte.
 
 De `hbi_workspace` markering bepaalt de hoeveelheid [gegevens die micro soft verzamelt voor diagnostische doel einden](#microsoft-collected-data) en maakt [extra versleuteling mogelijk in door micro soft beheerde omgevingen](../security/fundamentals/encryption-atrest.md). Daarnaast kunnen de volgende acties worden uitgevoerd:
 
@@ -68,7 +68,7 @@ Voer de volgende acties uit om het inrichten van een Cosmos DB-exemplaar in uw a
     * `cmk_keyvault`: Deze para meter is de resource-ID van de sleutel kluis in uw abonnement. Deze sleutel kluis moet zich in dezelfde regio en hetzelfde abonnement bevinden als de-werk ruimte die u wilt gebruiken voor de Azure Machine Learning. 
     
         > [!NOTE]
-        > Dit sleutel kluis exemplaar kan afwijken van de sleutel kluis die door Azure Machine Learning wordt gemaakt wanneer u de werk ruimte inricht. Als u hetzelfde sleutel kluis exemplaar voor de werk ruimte wilt gebruiken, moet u dezelfde sleutel kluis door geven tijdens het inrichten van de werk ruimte met behulp van de [para meter key_vault](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truecreate-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). 
+        > Dit sleutel kluis exemplaar kan afwijken van de sleutel kluis die door Azure Machine Learning wordt gemaakt wanneer u de werk ruimte inricht. Als u hetzelfde sleutel kluis exemplaar voor de werk ruimte wilt gebruiken, moet u dezelfde sleutel kluis door geven tijdens het inrichten van de werk ruimte met behulp van de [para meter key_vault](/python/api/azureml-core/azureml.core.workspace%28class%29#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-). 
 
 [!INCLUDE [machine-learning-customer-managed-keys.md](../../includes/machine-learning-customer-managed-keys.md)]
 
@@ -105,7 +105,7 @@ Als u de sleutel wilt gebruiken bij het implementeren van een model naar Azure c
 
 Zie de volgende artikelen voor meer informatie over het maken en gebruiken van een implementatie configuratie:
 
-* Referentie voor [AciWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-)
+* Referentie voor [AciWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none-)
 * [Waar en hoe u implementeert](how-to-deploy-and-where.md)
 * [Een model implementeren op Azure Container Instances](how-to-deploy-azure-container-instance.md)
 
@@ -136,7 +136,7 @@ Wanneer u services zoals automatische Machine Learning gebruikt, kan micro soft 
 
 U kunt ook [Diagnostische gegevens die vanuit uw geïmplementeerde eind punt zijn geregistreerd](how-to-enable-app-insights.md) , versleutelen in uw Azure-toepassing Insights-exemplaar.
 
-## <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
+## <a name="encryption-in-transit"></a>Versleuteling 'in transit'
 
 Azure Machine Learning gebruikt TLS om interne communicatie tussen verschillende Azure Machine Learning micro services te beveiligen. Alle Azure Storage toegang vindt ook plaats via een beveiligd kanaal.
 
@@ -148,7 +148,7 @@ Azure Machine Learning maakt gebruik van TLS om externe aanroepen naar het Score
 
 Micro soft kan gegevens over niet-gebruikers identificeren, zoals resource namen (bijvoorbeeld de naam van de gegevensset of de naam van het machine learning experiment) of taak omgevings variabelen voor diagnostische doel einden. Al deze gegevens worden opgeslagen met behulp van door micro soft beheerde sleutels in de opslag die wordt gehost in micro soft-abonnementen en [de standaard standaarden voor privacybeleid en gegevens verwerking van micro soft](https://privacy.microsoft.com/privacystatement)worden gevolgd.
 
-Micro soft adviseert ook niet om gevoelige informatie (zoals account sleutel geheimen) op te slaan in omgevings variabelen. Omgevings variabelen worden geregistreerd, versleuteld en opgeslagen door ons. Zorg er ook voor dat u een naam [run_id](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py)geeft, Vermijd het gebruik van gevoelige gegevens zoals gebruikers namen of geheime project namen. Deze informatie kan worden weer gegeven in telemetrie-logboeken die toegankelijk zijn voor Microsoft Ondersteuning engineers.
+Micro soft adviseert ook niet om gevoelige informatie (zoals account sleutel geheimen) op te slaan in omgevings variabelen. Omgevings variabelen worden geregistreerd, versleuteld en opgeslagen door ons. Zorg er ook voor dat u een naam [run_id](/python/api/azureml-core/azureml.core.run%28class%29)geeft, Vermijd het gebruik van gevoelige gegevens zoals gebruikers namen of geheime project namen. Deze informatie kan worden weer gegeven in telemetrie-logboeken die toegankelijk zijn voor Microsoft Ondersteuning engineers.
 
 U kunt zich afmelden van diagnostische gegevens die worden verzameld door de `hbi_workspace` para meter in te stellen op `TRUE` tijdens het inrichten van de werk ruimte. Deze functionaliteit wordt ondersteund bij het gebruik van de AzureML python SDK, CLI, REST-Api's of Azure Resource Manager sjablonen.
 

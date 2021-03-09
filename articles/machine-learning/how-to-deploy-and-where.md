@@ -12,12 +12,12 @@ ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: f8865c9e6726a19e5e215886f92507734ebf0662
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: fa68db4bd166ebe1acd1ae85fca2d7e51236a4c4
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101657312"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522050"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -46,7 +46,7 @@ Zie [modellen beheren, implementeren en bewaken met Azure machine learning](conc
 
 - Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
 - Een model. Als u geen getraind model hebt, kunt u het model en de afhankelijkheids bestanden van [deze zelf studie](https://aka.ms/azml-deploy-cloud)gebruiken.
-- De [Azure machine learning-Software Development Kit (SDK) voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
+- De [Azure machine learning-Software Development Kit (SDK) voor python](/python/api/overview/azure/ml/intro).
 
 ---
 
@@ -71,7 +71,7 @@ from azureml.core import Workspace
 ws = Workspace.from_config(path=".file-path/ws_config.json")
 ```
 
-Zie de documentatie van [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?view=azure-ml-py&preserve-view=true#workspace) voor meer informatie over het gebruik van de SDK om verbinding te maken met een werk ruimte.
+Zie de documentatie van [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro#workspace) voor meer informatie over het gebruik van de SDK om verbinding te maken met een werk ruimte.
 
 
 ---
@@ -82,7 +82,7 @@ Zie de documentatie van [Azure machine learning SDK voor python](/python/api/ove
 Een geregistreerd model is een logische container voor een of meer bestanden die het model vormen. Als u bijvoorbeeld een model hebt dat is opgeslagen in meerdere bestanden, kunt u ze registreren als één model in de werk ruimte. Nadat u de bestanden hebt geregistreerd, kunt u het geregistreerde model downloaden of implementeren en alle bestanden ontvangen die u hebt geregistreerd.
 
 > [!TIP] 
-> Het registreren van een model voor versie tracering wordt aanbevolen, maar is niet vereist. Als u liever door wilt gaan zonder een model te registreren, moet u een bronmap opgeven in uw [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py) of [inferenceconfig.jsop](./reference-azure-machine-learning-cli.md#inference-configuration-schema) en ervoor zorgen dat uw model zich in die bron directory bevindt.
+> Het registreren van een model voor versie tracering wordt aanbevolen, maar is niet vereist. Als u liever door wilt gaan zonder een model te registreren, moet u een bronmap opgeven in uw [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig) of [inferenceconfig.jsop](./reference-azure-machine-learning-cli.md#inference-configuration-schema) en ervoor zorgen dat uw model zich in die bron directory bevindt.
 
 > [!TIP]
 > Wanneer u een model registreert, geeft u het pad op naar een Cloud locatie (van een trainings uitvoering) of van een lokale map. Dit pad is alleen bedoeld voor het vinden van de bestanden die worden geüpload als onderdeel van het registratie proces. Het hoeft niet overeen te komen met het pad dat wordt gebruikt in het vermeldings script. Zie voor meer informatie [model bestanden zoeken in uw invoer script](./how-to-deploy-advanced-entry-script.md#load-registered-models).
@@ -118,7 +118,7 @@ Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `-p` u h
 
 ### <a name="register-a-model-from-an-azure-ml-training-run"></a>Een model registreren vanuit een Azure ML-trainings uitvoering
 
-  Wanneer u de SDK gebruikt voor het trainen van een model, kunt u een [uitvoerings](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py) object of een [AutoMLRun](/python/api/azureml-train-automl-client/azureml.train.automl.run.automlrun) -object ontvangen, afhankelijk van hoe u het model hebt getraind. Elk object kan worden gebruikt voor het registreren van een model dat is gemaakt door een experiment.
+  Wanneer u de SDK gebruikt voor het trainen van een model, kunt u een [uitvoerings](/python/api/azureml-core/azureml.core.run.run) object of een [AutoMLRun](/python/api/azureml-train-automl-client/azureml.train.automl.run.automlrun) -object ontvangen, afhankelijk van hoe u het model hebt getraind. Elk object kan worden gebruikt voor het registreren van een model dat is gemaakt door een experiment.
 
   + Een model van een `azureml.core.Run` object registreren:
  
@@ -129,7 +129,7 @@ Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `-p` u h
     print(model.name, model.id, model.version, sep='\t')
     ```
 
-    De `model_path` para meter verwijst naar de locatie van de cloud van het model. In dit voor beeld wordt het pad van één bestand gebruikt. Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `model_path` u het pad in naar een map die de bestanden bevat. Zie de [Run.register_model](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none----kwargs-) -documentatie voor meer informatie.
+    De `model_path` para meter verwijst naar de locatie van de cloud van het model. In dit voor beeld wordt het pad van één bestand gebruikt. Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `model_path` u het pad in naar een map die de bestanden bevat. Zie de [Run.register_model](/python/api/azureml-core/azureml.core.run.run#register-model-model-name--model-path-none--tags-none--properties-none--model-framework-none--model-framework-version-none--description-none--datasets-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none----kwargs-) -documentatie voor meer informatie.
 
   + Een model van een `azureml.train.automl.run.AutoMLRun` object registreren:
 
@@ -171,7 +171,7 @@ U kunt een model registreren door het lokale pad van het model op te geven. U ku
 
   Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `model_path` u het pad in naar een map die de bestanden bevat.
 
-Zie de documentatie voor de [model klasse](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de documentatie voor de [model klasse](/python/api/azureml-core/azureml.core.model.model)voor meer informatie.
 
 Zie [een bestaand model implementeren](how-to-deploy-existing-model.md)voor meer informatie over het werken met modellen die buiten Azure machine learning zijn getraind.
 
@@ -227,7 +227,7 @@ inference_config = InferenceConfig(entry_script='path-to-score.py',
 
 Zie [omgevingen maken en beheren voor training en implementatie](how-to-use-environments.md)voor meer informatie over omgevingen.
 
-Zie de documentatie van [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py) voor meer informatie over de configuratie van de afleiding.
+Zie de documentatie van [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig) voor meer informatie over de configuratie van de afleiding.
 
 ---
 
@@ -305,7 +305,7 @@ service.wait_for_deployment(show_output = True)
 print(service.state)
 ```
 
-Zie de documentatie voor [LocalWebservice](/python/api/azureml-core/azureml.core.webservice.local.localwebservice?preserve-view=true&view=azure-ml-py), [model. Deploy ()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)en [webservice](/python/api/azureml-core/azureml.core.webservice.webservice?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de documentatie voor [LocalWebservice](/python/api/azureml-core/azureml.core.webservice.local.localwebservice), [model. Deploy ()](/python/api/azureml-core/azureml.core.model.model#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-)en [webservice](/python/api/azureml-core/azureml.core.webservice.webservice)voor meer informatie.
 
 ---
 
@@ -357,7 +357,7 @@ Meer informatie over [het verwijderen van een webservice](/cli/azure/ext/azure-c
 Als u een geïmplementeerde webservice wilt verwijderen, gebruikt u `service.delete()` .
 Als u een geregistreerd model wilt verwijderen, gebruikt u `model.delete()` .
 
-Zie de documentatie voor [webservice. Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--) en [model. Delete ()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedelete--)voor meer informatie.
+Zie de documentatie voor [webservice. Delete ()](/python/api/azureml-core/azureml.core.webservice%28class%29#delete--) en [model. Delete ()](/python/api/azureml-core/azureml.core.model.model#delete--)voor meer informatie.
 
 ---
 

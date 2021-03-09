@@ -11,17 +11,17 @@ ms.subservice: core
 ms.date: 07/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 75882701984dfff3005aa3661274a8dc94b22a28
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 038e1394c68df63221d99b87449e5502ae62fadc
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596346"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521030"
 ---
 # <a name="create--use-software-environments-in-azure-machine-learning"></a>Software omgevingen maken & gebruiken in Azure Machine Learning
 
 
-In dit artikel leert u hoe u Azure Machine Learning [omgevingen](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py)kunt maken en beheren. Gebruik de omgevingen om de software afhankelijkheden van uw projecten bij te houden en te reproduceren tijdens het ontwikkelen.
+In dit artikel leert u hoe u Azure Machine Learning [omgevingen](/python/api/azureml-core/azureml.core.environment.environment)kunt maken en beheren. Gebruik de omgevingen om de software afhankelijkheden van uw projecten bij te houden en te reproduceren tijdens het ontwikkelen.
 
 Beheer van de software-afhankelijkheid is een algemene taak voor ontwikkel aars. U wilt er zeker van zijn dat de builds worden verreproduceerd zonder uitgebreide hand matige software configuratie. De Azure Machine Learning- `Environment` klassen accounts voor lokale ontwikkel oplossingen, zoals PIP en Conda en gedistribueerde Cloud ontwikkeling via docker-mogelijkheden.
 
@@ -36,7 +36,7 @@ Zie [Wat zijn omgevingen van ml?](concept-environments.md) voor een overzicht va
 
 ## <a name="prerequisites"></a>Vereisten
 
-* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0)
+* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/install) (>= 1.13.0)
 * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md)
 
 ## <a name="create-an-environment"></a>Een omgeving maken
@@ -87,7 +87,7 @@ for env in envs:
 
 ### <a name="use-conda-dependencies-or-pip-requirements-files"></a>Conda-of PIP-vereisten bestanden gebruiken
 
-U kunt een omgeving maken op basis van een Conda-specificatie of een PIP-vereisten bestand. Gebruik de [`from_conda_specification()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-conda-specification-name--file-path-) methode of de- [`from_pip_requirements()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-pip-requirements-name--file-path-) methode. Neem in het argument methode de naam van uw omgeving en het bestandspad van het gewenste bestand op. 
+U kunt een omgeving maken op basis van een Conda-specificatie of een PIP-vereisten bestand. Gebruik de [`from_conda_specification()`](/python/api/azureml-core/azureml.core.environment.environment#from-conda-specification-name--file-path-) methode of de- [`from_pip_requirements()`](/python/api/azureml-core/azureml.core.environment.environment#from-pip-requirements-name--file-path-) methode. Neem in het argument methode de naam van uw omgeving en het bestandspad van het gewenste bestand op. 
 
 ```python
 # From a Conda specification file
@@ -103,7 +103,7 @@ myenv = Environment.from_pip_requirements(name = "myenv",
 
 Wanneer u docker inschakelt, maakt Azure Machine Learning een docker-installatie kopie en wordt er in die container een python-omgeving gemaakt, op basis van uw specificaties. De docker-installatie kopieën worden in de cache opgeslagen en opnieuw gebruikt: de eerste uitvoering in een nieuwe omgeving duurt doorgaans langer naarmate de installatie kopie wordt gemaakt.
 
-[`DockerSection`](/python/api/azureml-core/azureml.core.environment.dockersection?preserve-view=true&view=azure-ml-py)Met de van de Azure machine learning- `Environment` klasse kunt u het gast besturingssysteem waarmee u uw training uitvoert, nauw keurig aanpassen en beheren. De `arguments` variabele kan worden gebruikt om extra argumenten op te geven die moeten worden door gegeven aan de opdracht docker run.
+[`DockerSection`](/python/api/azureml-core/azureml.core.environment.dockersection)Met de van de Azure machine learning- `Environment` klasse kunt u het gast besturingssysteem waarmee u uw training uitvoert, nauw keurig aanpassen en beheren. De `arguments` variabele kan worden gebruikt om extra argumenten op te geven die moeten worden door gegeven aan de opdracht docker run.
 
 ```python
 # Creates the environment inside a Docker container.
@@ -179,7 +179,7 @@ myenv.python.interpreter_path = "/opt/miniconda/bin/python"
 
 #### <a name="retrieve-image-details"></a>Details van installatie kopie ophalen
 
-Voor een geregistreerde omgeving kunt u details van de installatie kopie ophalen met behulp van de volgende code, waarbij `details` een instantie van [DockerImageDetails](/python/api/azureml-core/azureml.core.environment.dockerimagedetails?preserve-view=true&view=azure-ml-py) is (AzureML python SDK >= 1,11) en alle informatie bevat over de omgevings afbeelding, zoals de dockerfile, het REGI ster en de naam van de installatie kopie.
+Voor een geregistreerde omgeving kunt u details van de installatie kopie ophalen met behulp van de volgende code, waarbij `details` een instantie van [DockerImageDetails](/python/api/azureml-core/azureml.core.environment.dockerimagedetails) is (AzureML python SDK >= 1,11) en alle informatie bevat over de omgevings afbeelding, zoals de dockerfile, het REGI ster en de naam van de installatie kopie.
 
 ```python
 details = environment.get_image_details(workspace=ws)
@@ -195,14 +195,14 @@ details = run.get_environment().get_image_details(workspace=ws)
 
 Als u een bestaande Conda-omgeving hebt op uw lokale computer, kunt u de service gebruiken om een omgevings object te maken. Door deze strategie te gebruiken, kunt u uw lokale interactieve omgeving opnieuw gebruiken op externe uitvoeringen.
 
-Met de volgende code wordt een omgevings object gemaakt op basis van de bestaande Conda-omgeving `mycondaenv` . De methode wordt gebruikt [`from_existing_conda_environment()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-existing-conda-environment-name--conda-environment-name-) .
+Met de volgende code wordt een omgevings object gemaakt op basis van de bestaande Conda-omgeving `mycondaenv` . De methode wordt gebruikt [`from_existing_conda_environment()`](/python/api/azureml-core/azureml.core.environment.environment#from-existing-conda-environment-name--conda-environment-name-) .
 
 ``` python
 myenv = Environment.from_existing_conda_environment(name="myenv",
                                                     conda_environment_name="mycondaenv")
 ```
 
-Een omgevings definitie kan worden opgeslagen in een map in een gemakkelijk te bewerken indeling met de- [`save_to_directory()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truesave-to-directory-path--overwrite-false-) methode. Na wijziging kan een nieuwe omgeving worden geïnstantieerd door bestanden uit de map te laden.
+Een omgevings definitie kan worden opgeslagen in een map in een gemakkelijk te bewerken indeling met de- [`save_to_directory()`](/python/api/azureml-core/azureml.core.environment.environment#save-to-directory-path--overwrite-false-) methode. Na wijziging kan een nieuwe omgeving worden geïnstantieerd door bestanden uit de map te laden.
 
 ```python
 # save the enviroment
@@ -232,13 +232,13 @@ run.wait_for_completion(show_output=True)
 
 ## <a name="add-packages-to-an-environment"></a>Pakketten toevoegen aan een omgeving
 
-Voeg pakketten toe aan een omgeving met behulp van Conda-, PIP-of privé-wiel bestanden. Geef elke pakket afhankelijkheid op met behulp van de- [`CondaDependency`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?preserve-view=true&view=azure-ml-py) klasse. Voeg deze toe aan de omgeving `PythonSection` .
+Voeg pakketten toe aan een omgeving met behulp van Conda-, PIP-of privé-wiel bestanden. Geef elke pakket afhankelijkheid op met behulp van de- [`CondaDependency`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies) klasse. Voeg deze toe aan de omgeving `PythonSection` .
 
 ### <a name="conda-and-pip-packages"></a>Conda-en PIP-pakketten
 
 Als een pakket beschikbaar is in een Conda-pakket opslagplaats, is het raadzaam om de installatie van Conda te gebruiken in plaats van de PIP-installatie. Conda-pakketten worden meestal geleverd met vooraf gemaakte binaire bestanden die de installatie betrouwbaarder maken.
 
-In het volgende voor beeld wordt toegevoegd aan de omgeving `myenv` . Er wordt versie 1.17.0 van toegevoegd `numpy` . Het pakket wordt ook toegevoegd `pillow` . In het voor beeld worden [`add_conda_package()`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-conda-package-conda-package-) respectievelijk de methode en de [`add_pip_package()`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?preserve-view=true&view=azure-ml-py#&preserve-view=trueadd-pip-package-pip-package-) methode gebruikt.
+In het volgende voor beeld wordt toegevoegd aan de omgeving `myenv` . Er wordt versie 1.17.0 van toegevoegd `numpy` . Het pakket wordt ook toegevoegd `pillow` . In het voor beeld worden [`add_conda_package()`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies#add-conda-package-conda-package-) respectievelijk de methode en de [`add_pip_package()`](/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies#add-pip-package-pip-package-) methode gebruikt.
 
 ```python
 from azureml.core.environment import Environment
@@ -276,7 +276,7 @@ Omgevingen beheren, zodat u ze kunt bijwerken, volgen en opnieuw gebruiken in re
 
 ### <a name="register-environments"></a>Omgevingen registreren
 
-De omgeving wordt automatisch bij uw werk ruimte geregistreerd wanneer u een uitvoeren of een webservice implementeert. U kunt de omgeving ook hand matig registreren met behulp van de- [`register()`](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-workspace-) methode. Met deze bewerking wordt de omgeving omgezet in een entiteit die wordt bijgehouden en geversiond in de Cloud. De entiteit kan worden gedeeld tussen werk ruimte-gebruikers.
+De omgeving wordt automatisch bij uw werk ruimte geregistreerd wanneer u een uitvoeren of een webservice implementeert. U kunt de omgeving ook hand matig registreren met behulp van de- [`register()`](/python/api/azureml-core/azureml.core.environment%28class%29#register-workspace-) methode. Met deze bewerking wordt de omgeving omgezet in een entiteit die wordt bijgehouden en geversiond in de Cloud. De entiteit kan worden gedeeld tussen werk ruimte-gebruikers.
 
 Met de volgende code wordt de `myenv` omgeving geregistreerd bij de `ws` werk ruimte.
 
@@ -292,11 +292,11 @@ De `Environment` klasse biedt methoden waarmee u bestaande omgevingen in uw werk
 
 #### <a name="view-a-list-of-environments"></a>Een lijst met omgevingen weer geven
 
-Bekijk de omgevingen in uw werk ruimte met behulp van de- [`Environment.list(workspace="workspace_name")`](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truelist-workspace-) klasse. Selecteer vervolgens een omgeving die u opnieuw wilt gebruiken.
+Bekijk de omgevingen in uw werk ruimte met behulp van de- [`Environment.list(workspace="workspace_name")`](/python/api/azureml-core/azureml.core.environment%28class%29#list-workspace-) klasse. Selecteer vervolgens een omgeving die u opnieuw wilt gebruiken.
 
 #### <a name="get-an-environment-by-name"></a>Een omgeving op naam ophalen
 
-U kunt ook een specifieke omgeving verkrijgen op naam en versie. De volgende code gebruikt de [`get()`](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-workspace--name--version-none-) methode om de versie `1` van de `myenv` omgeving op te halen in de `ws` werk ruimte.
+U kunt ook een specifieke omgeving verkrijgen op naam en versie. De volgende code gebruikt de [`get()`](/python/api/azureml-core/azureml.core.environment%28class%29#get-workspace--name--version-none-) methode om de versie `1` van de `myenv` omgeving op te halen in de `ws` werk ruimte.
 
 ```python
 restored_environment = Environment.get(workspace=ws,name="myenv",version="1")
@@ -304,7 +304,7 @@ restored_environment = Environment.get(workspace=ws,name="myenv",version="1")
 
 #### <a name="train-a-run-specific-environment"></a>Een run-specifieke omgeving trainen
 
-Gebruik de methode in de-klasse om de omgeving op te halen die voor een specifieke uitvoering is gebruikt nadat de training is voltooid [`get_environment()`](/python/api/azureml-core/azureml.core.run.run?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-environment--) `Run` .
+Gebruik de methode in de-klasse om de omgeving op te halen die voor een specifieke uitvoering is gebruikt nadat de training is voltooid [`get_environment()`](/python/api/azureml-core/azureml.core.run.run#get-environment--) `Run` .
 
 ```python
 from azureml.core import Run
@@ -319,7 +319,7 @@ Als u een python-pakket versie in een bestaande omgeving wilt bijwerken, geeft u
 
 ### <a name="debug-the-image-build"></a>Fouten opsporen in de installatie kopie maken
 
-In het volgende voor beeld wordt de [`build()`](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truebuild-workspace--image-build-compute-none-) methode gebruikt om hand matig een omgeving te maken als docker-installatie kopie. Hiermee worden de uitvoer logboeken van de installatie kopie gecontroleerd met behulp van [`wait_for_completion()`](/python/api/azureml-core/azureml.core.image%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truewait-for-creation-show-output-false-) . De ingebouwde installatie kopie wordt vervolgens weer gegeven in de Azure Container Registry-instantie van de werk ruimte. Deze informatie is nuttig voor het opsporen van fouten.
+In het volgende voor beeld wordt de [`build()`](/python/api/azureml-core/azureml.core.environment%28class%29#build-workspace--image-build-compute-none-) methode gebruikt om hand matig een omgeving te maken als docker-installatie kopie. Hiermee worden de uitvoer logboeken van de installatie kopie gecontroleerd met behulp van [`wait_for_completion()`](/python/api/azureml-core/azureml.core.image%28class%29#wait-for-creation-show-output-false-) . De ingebouwde installatie kopie wordt vervolgens weer gegeven in de Azure Container Registry-instantie van de werk ruimte. Deze informatie is nuttig voor het opsporen van fouten.
 
 ```python
 from azureml.core import Image
@@ -327,7 +327,7 @@ build = env.build(workspace=ws)
 build.wait_for_completion(show_output=True)
 ```
 
-Het is handig eerst installatie kopieën lokaal te bouwen met behulp van de- [`build_local()`](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#&preserve-view=truebuild-local-workspace--platform-none----kwargs-) methode. Stel de optionele para meter in om een docker-installatie kopie te maken `useDocker=True` . Als u de resulterende installatie kopie naar het container register van de AzureML-werk ruimte wilt pushen, stelt u in `pushImageToWorkspaceAcr=True` .
+Het is handig eerst installatie kopieën lokaal te bouwen met behulp van de- [`build_local()`](/python/api/azureml-core/azureml.core.environment.environment#build-local-workspace--platform-none----kwargs-) methode. Stel de optionele para meter in om een docker-installatie kopie te maken `useDocker=True` . Als u de resulterende installatie kopie naar het container register van de AzureML-werk ruimte wilt pushen, stelt u in `pushImageToWorkspaceAcr=True` .
 
 ```python
 build = env.build_local(workspace=ws, useDocker=True, pushImageToWorkspaceAcr=True)
@@ -342,7 +342,7 @@ Als u een trainings uitvoering wilt verzenden, moet u uw omgeving, het [reken do
 
 Wanneer u een trainings uitvoering verzendt, kan het maken van een nieuwe omgeving enkele minuten duren. De duur is afhankelijk van de grootte van de vereiste afhankelijkheden. De omgevingen worden in de cache opgeslagen door de service. Als de omgevings definitie ongewijzigd blijft, maakt u de volledige instel tijd slechts één keer.
 
-In het volgende voor beeld van een lokaal script wordt aangegeven waar u kunt gebruiken [`ScriptRunConfig`](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?preserve-view=true&view=azure-ml-py) als uw wrapper-object.
+In het volgende voor beeld van een lokaal script wordt aangegeven waar u kunt gebruiken [`ScriptRunConfig`](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig) als uw wrapper-object.
 
 ```python
 from azureml.core import ScriptRunConfig, Experiment
@@ -371,7 +371,7 @@ U kunt omgevingen gebruiken wanneer u uw model als een webservice implementeert.
 
 Als u uw eigen omgeving voor de implementatie van de webservice definieert, moet u `azureml-defaults` een lijst maken met versie >= 1.0.45 als een PIP-afhankelijkheid. Dit pakket bevat de functionaliteit die nodig is om het model als een webservice te hosten.
 
-Als u een webservice wilt implementeren, combineert u de omgeving, verlaagt u de reken kracht, het Score script en het geregistreerde model in uw implementatie object [`deploy()`](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) . Zie [hoe en waar modellen worden geïmplementeerd](how-to-deploy-and-where.md)voor meer informatie.
+Als u een webservice wilt implementeren, combineert u de omgeving, verlaagt u de reken kracht, het Score script en het geregistreerde model in uw implementatie object [`deploy()`](/python/api/azureml-core/azureml.core.model.model#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) . Zie [hoe en waar modellen worden geïmplementeerd](how-to-deploy-and-where.md)voor meer informatie.
 
 In dit voor beeld wordt ervan uitgegaan dat u een trainings uitvoering hebt voltooid. Nu wilt u dat model implementeren naar Azure Container Instances. Wanneer u de webservice bouwt, worden het model en de Score bestanden gekoppeld aan de installatie kopie en wordt de Azure Machine Learning ring stack toegevoegd aan de installatie kopie.
 
@@ -437,4 +437,4 @@ az ml environment download -n myenv -d downloaddir
 
 * Zie [zelf studie: een model trainen](tutorial-train-models-with-aml.md)als u een beheerd Compute-doel wilt gebruiken voor het trainen van een model.
 * Nadat u een getraind model hebt, leert u [hoe en waar u modellen kunt implementeren](how-to-deploy-and-where.md).
-* Bekijk de [ `Environment` Naslag informatie](/python/api/azureml-core/azureml.core.environment%28class%29?preserve-view=true&view=azure-ml-py)voor de klasse-SDK.
+* Bekijk de [ `Environment` Naslag informatie](/python/api/azureml-core/azureml.core.environment%28class%29)voor de klasse-SDK.

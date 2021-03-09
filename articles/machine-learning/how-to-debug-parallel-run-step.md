@@ -11,16 +11,16 @@ ms.reviewer: larryfr, vaidyas, laobri, tracych
 ms.author: trmccorm
 author: tmccrmck
 ms.date: 09/23/2020
-ms.openlocfilehash: ee41ae2a705ceaa0e9742c91552d6bdae26820ce
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b5511c8ecc33238e0409b5ee4c1c7a11adddeac5
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690274"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522152"
 ---
 # <a name="troubleshooting-the-parallelrunstep"></a>Probleem met de ParallelRunStep oplossen
 
-In dit artikel leert u hoe u problemen kunt oplossen wanneer u fouten krijgt met behulp van de [ParallelRunStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep?preserve-view=true&view=azure-ml-py) -klasse van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py).
+In dit artikel leert u hoe u problemen kunt oplossen wanneer u fouten krijgt met behulp van de [ParallelRunStep](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep) -klasse van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro).
 
 Zie [problemen met machine learning pijp lijnen oplossen](how-to-debug-pipelines.md)voor algemene tips voor het oplossen van problemen met een pijp lijn.
 
@@ -212,7 +212,7 @@ def run(mini_batch):
 
 De gebruiker kan referentie gegevens door geven aan een script met behulp van side_inputs para meter ParalleRunStep. Alle gegevens sets die als side_inputs worden gegeven, worden op elk worker-knoop punt gekoppeld. De gebruiker kan de locatie van de koppeling verkrijgen door het argument door te geven.
 
-Maak een [gegevensset](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py) met de referentie gegevens en Registreer deze bij uw werk ruimte. Geef deze door aan de `side_inputs` para meter van uw `ParallelRunStep` . Daarnaast kunt u het pad in de sectie toevoegen `arguments` om eenvoudig toegang te krijgen tot het gekoppelde pad:
+Maak een [gegevensset](/python/api/azureml-core/azureml.core.dataset.dataset) met de referentie gegevens en Registreer deze bij uw werk ruimte. Geef deze door aan de `side_inputs` para meter van uw `ParallelRunStep` . Daarnaast kunt u het pad in de sectie toevoegen `arguments` om eenvoudig toegang te krijgen tot het gekoppelde pad:
 
 ```python
 label_config = label_ds.as_named_input("labels_input")
@@ -262,6 +262,6 @@ registered_ds = ds.register(ws, '***dataset-name***', create_new_version=True)
 
 * Bekijk deze [Jupyter-notebooks die Azure machine learning pijp lijnen demonstreren](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
 
-* Raadpleeg de SDK-Naslag informatie voor hulp met het pakket met de stappen voor de [azureml-pipelines](/python/api/azureml-pipeline-steps/azureml.pipeline.steps?preserve-view=true&view=azure-ml-py) . Referentie [documentatie](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?preserve-view=true&view=azure-ml-py) voor de klasse ParallelRunStep weer geven.
+* Raadpleeg de SDK-Naslag informatie voor hulp met het pakket met de stappen voor de [azureml-pipelines](/python/api/azureml-pipeline-steps/azureml.pipeline.steps) . Referentie [documentatie](/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep) voor de klasse ParallelRunStep weer geven.
 
 * Volg de [Geavanceerde zelf studie](tutorial-pipeline-batch-scoring-classification.md) over het gebruik van pijp lijnen met ParallelRunStep. De zelf studie laat zien hoe u een ander bestand als een kantlijn invoer kunt door geven.

@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 02/11/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 65c609343aece4e23917ede79dfb3c4723ffb70c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: bee2b31f215758bf5cf73ff5393058fb915cdf25
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369051"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522339"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Zelfstudie: Uw eerste machine learning-model trainen (deel 3 van 4)
 
@@ -132,7 +132,7 @@ if __name__ == "__main__":
       `env = ...`
    :::column-end:::
    :::column span="2":::
-      Azure Machine Learning biedt het concept van een [omgeving](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) als een reproduceerbare Python-omgeving met versies waarin u experimenten kunt uitvoeren. Het is eenvoudig om een omgeving te maken op basis van een lokale Conda- of PIP-omgeving.
+      Azure Machine Learning biedt het concept van een [omgeving](/python/api/azureml-core/azureml.core.environment.environment) als een reproduceerbare Python-omgeving met versies waarin u experimenten kunt uitvoeren. Het is eenvoudig om een omgeving te maken op basis van een lokale Conda- of PIP-omgeving.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -140,7 +140,7 @@ if __name__ == "__main__":
       `config.run_config.environment = env`
    :::column-end:::
    :::column span="2":::
-      De omgeving wordt toegevoegd aan [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py).
+      De omgeving wordt toegevoegd aan [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig).
    :::column-end:::
 :::row-end:::
 
@@ -262,7 +262,7 @@ Wanneer u deze keer de studio bezoekt, gaat u naar het tabblad **Metrische gegev
 
 In deze sessie hebt u een upgrade uitgevoerd van een basis 'Hallo wereld!' script naar een realistischer trainingsscript dat vereist dat een specifieke Python-omgeving wordt uitgevoerd. U hebt gezien hoe u een lokale Conda-omgeving naar de cloud kunt brengen met Azure Machine Learning-omgevingen. Ten slotte hebt u gezien hoe u in een paar regels code de metrische gegevens kunt vastleggen voor Azure Machine Learning.
 
-Er zijn andere manieren om Azure Machine Learning-omgevingen te maken, zoals [van een TXT-bestand met PIP-vereisten](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#from-pip-requirements-name--file-path-) of [van een bestaande lokale Conda-omgeving](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#from-existing-conda-environment-name--conda-environment-name-).
+Er zijn andere manieren om Azure Machine Learning-omgevingen te maken, zoals [van een TXT-bestand met PIP-vereisten](/python/api/azureml-core/azureml.core.environment.environment#from-pip-requirements-name--file-path-) of [van een bestaande lokale Conda-omgeving](/python/api/azureml-core/azureml.core.environment.environment#from-existing-conda-environment-name--conda-environment-name-).
 
 In de volgende sessie ziet u hoe u kunt werken met gegevens in Azure Machine Learning door de CIFAR10-gegevensset naar Azure te uploaden.
 

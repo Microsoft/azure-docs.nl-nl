@@ -11,12 +11,12 @@ author: cjgronlund
 ms.reviewer: larryfr
 ms.date: 06/11/2020
 ms.custom: deploy
-ms.openlocfilehash: e1eebf88b72c87ce9db02760c5c44a0aa25c57cc
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9336dbd4d5615a93bbc029ba51b561b18f5a1c15
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305915"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521982"
 ---
 # <a name="deploy-a-model-for-use-with-cognitive-search"></a>Een model implementeren voor gebruik met Cognitive Search
 
@@ -25,7 +25,7 @@ In dit artikel leert u hoe u Azure Machine Learning kunt gebruiken om een model 
 
 Cognitive Search voert inhouds verwerking uit via heterogene-inhoud, zodat deze kan worden doorzocht door mensen of toepassingen. Dit proces kan worden uitgebreid met behulp van een model dat is geïmplementeerd vanuit Azure Machine Learning.
 
-Azure Machine Learning kunt een getraind model implementeren als een webservice. De webservice wordt vervolgens Inge sloten in een Cognitive Search _vaardigheid_ , die onderdeel wordt van de verwerkings pijplijn.
+Azure Machine Learning kunt een getraind model implementeren als een webservice. De webservice wordt vervolgens Inge sloten in een Cognitive Search _vaardigheid_, die onderdeel wordt van de verwerkings pijplijn.
 
 > [!IMPORTANT]
 > De informatie in dit artikel is specifiek voor de implementatie van het model. Het bevat informatie over de ondersteunde implementatie configuraties waarmee het model door Cognitive Search kan worden gebruikt.
@@ -46,7 +46,7 @@ Bij het implementeren van een model voor gebruik met Azure Cognitive Search moet
 
 * Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
 
-* Een python-ontwikkel omgeving met de Azure Machine Learning SDK geïnstalleerd. Zie [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)voor meer informatie.  
+* Een python-ontwikkel omgeving met de Azure Machine Learning SDK geïnstalleerd. Zie [Azure machine learning SDK](/python/api/overview/azure/ml/install)voor meer informatie.  
 
 * Een geregistreerd model. Als u geen model hebt, gebruikt u het voorbeeld notitieblok op [https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/AzureML-Custom-Skill) .
 
@@ -75,7 +75,7 @@ except:
 
 ## <a name="create-a-kubernetes-cluster"></a>Een Kubernetes-cluster maken
 
-**Geschatte tijd** : circa 20 minuten.
+**Geschatte tijd**: circa 20 minuten.
 
 Een Kubernetes-cluster is een set virtuele-machine-instanties (knoop punten genaamd) die worden gebruikt voor het uitvoeren van container toepassingen.
 
@@ -241,7 +241,7 @@ aks_config = AksWebservice.deploy_configuration(autoscale_enabled=True,
                                                        max_request_wait_time=5000)
 ```
 
-Zie de referentie documentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-)voor meer informatie.
+Zie de referentie documentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-)voor meer informatie.
 
 ## <a name="define-the-inference-configuration"></a>De configuratie voor het afstellen van interferentie definiëren
 
@@ -252,7 +252,7 @@ from azureml.core.model import InferenceConfig
 inf_config = InferenceConfig(entry_script='score.py', environment=myenv)
 ```
 
-Zie de referentie documentatie voor [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de referentie documentatie voor [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig)voor meer informatie.
 
 ## <a name="deploy-the-model"></a>Het model implementeren
 
@@ -277,7 +277,7 @@ aks_service.wait_for_deployment(show_output = True)
 print(aks_service.state)
 ```
 
-Zie de referentie documentatie voor [model](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de referentie documentatie voor [model](/python/api/azureml-core/azureml.core.model.model)voor meer informatie.
 
 ## <a name="issue-a-sample-query-to-your-service"></a>Een voorbeeld query voor uw service uitgeven
 

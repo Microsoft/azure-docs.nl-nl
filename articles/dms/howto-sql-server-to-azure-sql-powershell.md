@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019, devx-track-azurepowershell
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: 87505557653e70aab7f1392aeea8dbdf505327e0
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a8f7e14500fb377b46f651b53e2704d8477aea7a
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962753"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520656"
 ---
 # <a name="migrate-a-sql-server-database-to-azure-sql-database-using-azure-powershell"></a>Een SQL Server-Data Base migreren naar Azure SQL Database met behulp van Azure PowerShell
 
@@ -42,7 +42,7 @@ Als u deze stappen wilt uitvoeren, hebt u het volgende nodig:
 * [Data Migration Assistant](https://www.microsoft.com/download/details.aspx?id=53595) v 3.3 of hoger.
 * Als u een Microsoft Azure Virtual Network wilt maken met behulp van het Azure Resource Manager-implementatie model, dat de Azure Database Migration Service met site-naar-site-verbinding met uw on-premises bron servers biedt met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 * Als u de evaluatie van uw on-premises data base en schema migratie met behulp van Data Migration Assistant wilt volt ooien, zoals beschreven in het artikel [een SQL Server migratie-evaluatie uitvoeren](/sql/dma/dma-assesssqlonprem)
-* Voor het downloaden en installeren van de module AZ. DataMigration van de PowerShell Gallery met behulp van de [Power shell-cmdlet install-module](/powershell/module/powershellget/Install-Module?view=powershell-5.1); Zorg ervoor dat u het Power shell-opdracht venster opent met uitvoeren als Administrator.
+* Voor het downloaden en installeren van de module AZ. DataMigration van de PowerShell Gallery met behulp van de [Power shell-cmdlet install-module](/powershell/module/powershellget/Install-Module); Zorg ervoor dat u het Power shell-opdracht venster opent met uitvoeren als Administrator.
 * Om ervoor te zorgen dat de referenties die worden gebruikt om verbinding te maken met de bron SQL Server, de machtiging voor de [besturings server](/sql/t-sql/statements/grant-server-permissions-transact-sql) hebben.
 * Om ervoor te zorgen dat de referenties die worden gebruikt om verbinding te maken met een Azure SQL DB-exemplaar, de machtiging voor het beheren van de data base hebben voor het doel Azure SQL Database data bases
 * Een Azure-abonnement. Als u er nog geen hebt, maakt u een [gratis](https://azure.microsoft.com/free/) account voordat u begint.

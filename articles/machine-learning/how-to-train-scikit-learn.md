@@ -10,12 +10,12 @@ author: jpe316
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: e80f33e6c36e1525eff954376d17c8a8b76204cb
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 807174fdbede2e4631b3ca1df7220904038da4c8
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796020"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518293"
 ---
 # <a name="train-scikit-learn-models-at-scale-with-azure-machine-learning"></a>Scikit trainen-modellen op schaal leren met Azure Machine Learning
 
@@ -35,7 +35,7 @@ Voer deze code uit in een van de volgende omgevingen:
 
  - Uw eigen Jupyter Notebook-server
 
-    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0).
+    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install) (>= 1.13.0).
     - [Maak een configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
 
 ## <a name="set-up-the-experiment"></a>Het experiment instellen
@@ -44,7 +44,7 @@ In deze sectie wordt het trainings experiment opgesteld door het laden van de ve
 
 ### <a name="initialize-a-workspace"></a>Een werk ruimte initialiseren
 
-De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) object te maken.
+De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace) object te maken.
 
 Maak een werkruimte object op basis van het `config.json` bestand dat in de [sectie vereisten](#prerequisites)is gemaakt.
 
@@ -162,7 +162,7 @@ import joblib
 joblib.dump(svm_model_linear, 'model.joblib')
 ```
 
-Registreer het model in uw werk ruimte met de volgende code. Door de para meters op te geven, en wordt de `model_framework` `model_framework_version` implementatie van `resource_configuration` geen code model beschikbaar. Met de implementatie van geen code model kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model [`ResourceConfiguration`](/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration?preserve-view=true&view=azure-ml-py) . het object definieert de reken resource voor de webservice.
+Registreer het model in uw werk ruimte met de volgende code. Door de para meters op te geven, en wordt de `model_framework` `model_framework_version` implementatie van `resource_configuration` geen code model beschikbaar. Met de implementatie van geen code model kunt u uw model rechtstreeks implementeren als een webservice vanuit het geregistreerde model [`ResourceConfiguration`](/python/api/azureml-core/azureml.core.resource_configuration.resourceconfiguration) . het object definieert de reken resource voor de webservice.
 
 ```Python
 from azureml.core import Model
@@ -181,7 +181,7 @@ Het model dat u zojuist hebt geregistreerd, kan op dezelfde manier worden geïmp
 
 ### <a name="preview-no-code-model-deployment"></a>Evaluatie Implementatie van geen code model
 
-In plaats van de traditionele implementatie route kunt u ook de functie voor het implementeren van geen code (preview) gebruiken voor scikit-learn. Implementatie van geen code model wordt ondersteund voor alle ingebouwde scikit-informatie over model typen. Als u het model registreert zoals hierboven wordt weer gegeven, `model_framework` `model_framework_version` `resource_configuration` kunt u gewoon de [`deploy()`](/python/api/azureml-core/azureml.core.model%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) statische functie gebruiken om uw model te implementeren.
+In plaats van de traditionele implementatie route kunt u ook de functie voor het implementeren van geen code (preview) gebruiken voor scikit-learn. Implementatie van geen code model wordt ondersteund voor alle ingebouwde scikit-informatie over model typen. Als u het model registreert zoals hierboven wordt weer gegeven, `model_framework` `model_framework_version` `resource_configuration` kunt u gewoon de [`deploy()`](/python/api/azureml-core/azureml.core.model%28class%29#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) statische functie gebruiken om uw model te implementeren.
 
 ```python
 web_service = Model.deploy(ws, "scikit-learn-service", [model])

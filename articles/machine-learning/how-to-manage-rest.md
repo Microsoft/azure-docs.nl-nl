@@ -10,18 +10,18 @@ ms.subservice: core
 ms.date: 01/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: fba7fd9faed9a587aebc198c7038b13e26d2ceac
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: b61050db29ff960b7923f2211b2f09649608b37e
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102218261"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520316"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Azure ML-resources maken, uitvoeren en verwijderen met REST
 
 
 
-Er zijn verschillende manieren om uw Azure ML-resources te beheren. U kunt de [Portal](https://portal.azure.com/), de [opdracht regel interface](/cli/azure)of de [python-SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)gebruiken. U kunt ook de REST API kiezen. De REST API maakt gebruik van HTTP-termen op een standaard manier om resources te maken, op te halen, bij te werken en te verwijderen. De REST API werkt met elke taal of elk hulp programma waarmee HTTP-aanvragen kunnen worden gemaakt. Met de eenvoudige structuur van de REST is het vaak een goede keuze in script omgevingen en voor MLOps Automation. 
+Er zijn verschillende manieren om uw Azure ML-resources te beheren. U kunt de [Portal](https://portal.azure.com/), de [opdracht regel interface](/cli/azure)of de [python-SDK](/python/api/overview/azure/ml/intro)gebruiken. U kunt ook de REST API kiezen. De REST API maakt gebruik van HTTP-termen op een standaard manier om resources te maken, op te halen, bij te werken en te verwijderen. De REST API werkt met elke taal of elk hulp programma waarmee HTTP-aanvragen kunnen worden gemaakt. Met de eenvoudige structuur van de REST is het vaak een goede keuze in script omgevingen en voor MLOps Automation. 
 
 In dit artikel leert u het volgende:
 

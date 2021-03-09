@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 02/11/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 18f76480d1327d6ab41c475395a689f8024d7b25
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4f2b01b7a04958c4bd1f97332b54a1ff4fc32356
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369018"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522322"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Zelfstudie: Een Python-script voor 'Hallo wereld' uitvoeren (deel 2 van 4)
 
@@ -92,7 +92,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `ws = Workspace.from_config()`
    :::column-end:::
    :::column span="2":::
-      [Werkruimte](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) maakt verbinding met uw Azure Machine Learning-werkruimte, zodat u kunt communiceren met uw Azure Machine Learning-resources.
+      [Werkruimte](/python/api/azureml-core/azureml.core.workspace.workspace) maakt verbinding met uw Azure Machine Learning-werkruimte, zodat u kunt communiceren met uw Azure Machine Learning-resources.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -100,7 +100,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `experiment =  Experiment( ... )`
    :::column-end:::
    :::column span="2":::
-      [Experiment](/python/api/azureml-core/azureml.core.experiment.experiment?preserve-view=true&view=azure-ml-py) biedt een eenvoudige manier om meerdere uitvoeringen onder één naam te organiseren. Later kunt u zien hoe experimenten het eenvoudig maken om metrische gegevens te vergelijken tussen tientallen uitvoeringen.
+      [Experiment](/python/api/azureml-core/azureml.core.experiment.experiment) biedt een eenvoudige manier om meerdere uitvoeringen onder één naam te organiseren. Later kunt u zien hoe experimenten het eenvoudig maken om metrische gegevens te vergelijken tussen tientallen uitvoeringen.
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -108,7 +108,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `config = ScriptRunConfig( ... )` 
    :::column-end:::
    :::column span="2":::
-      Met [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) wordt uw `hello.py`-code ingepakt en doorgegeven aan uw werkruimte. Zoals de naam suggereert, kunt u deze klasse gebruiken om te _configureren_ hoe u wilt dat uw _script_ wordt _uitgevoerd_ in Azure Machine Learning. Het specificeert ook op welk rekendoel het script wordt uitgevoerd. In deze code is het doel het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
+      Met [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig) wordt uw `hello.py`-code ingepakt en doorgegeven aan uw werkruimte. Zoals de naam suggereert, kunt u deze klasse gebruiken om te _configureren_ hoe u wilt dat uw _script_ wordt _uitgevoerd_ in Azure Machine Learning. Het specificeert ook op welk rekendoel het script wordt uitgevoerd. In deze code is het doel het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -116,7 +116,7 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
       `run = experiment.submit(config)`
    :::column-end:::
    :::column span="2":::
-       Hiermee wordt het script verzonden. Deze inzending wordt een [uitvoering](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) genoemd. Een uitvoering bevat één uitvoering van uw code. Gebruik een uitvoering om de voortgang van het script te bewaken, de uitvoer vast te leggen, de resultaten te analyseren, metrische gegevens te visualiseren en meer.
+       Hiermee wordt het script verzonden. Deze inzending wordt een [uitvoering](/python/api/azureml-core/azureml.core.run%28class%29) genoemd. Een uitvoering bevat één uitvoering van uw code. Gebruik een uitvoering om de voortgang van het script te bewaken, de uitvoer vast te leggen, de resultaten te analyseren, metrische gegevens te visualiseren en meer.
    :::column-end:::
 :::row-end:::
 :::row:::

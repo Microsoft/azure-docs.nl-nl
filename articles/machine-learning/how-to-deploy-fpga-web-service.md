@@ -11,16 +11,16 @@ author: jpe316
 ms.date: 09/24/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q2, devx-track-python, deploy
-ms.openlocfilehash: 39c7d980bf9a90e5f72dfc9366d0ec44204b1ed2
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: e6a58a6555602af2494683037721a1f83e7ea33c
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102212787"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519313"
 ---
 # <a name="deploy-ml-models-to-field-programmable-gate-arrays-fpgas-with-azure-machine-learning"></a>ML-modellen implementeren op veld-Programmeer bare poort matrices (Fpga's) met Azure Machine Learning 
 
-In dit artikel leert u meer over Fpga's en hoe u uw ML-modellen implementeert in een Azure-FPGA met behulp van het [python-pakket met hardware-versnelde modellen](/python/api/azureml-accel-models/azureml.accel?preserve-view=true&view=azure-ml-py) van [Azure machine learning](overview-what-is-azure-ml.md).
+In dit artikel leert u meer over Fpga's en hoe u uw ML-modellen implementeert in een Azure-FPGA met behulp van het [python-pakket met hardware-versnelde modellen](/python/api/azureml-accel-models/azureml.accel) van [Azure machine learning](overview-what-is-azure-ml.md).
 
 ## <a name="what-are-fpgas"></a>Wat zijn Fpga's?
 FPGA's bevatten een matrix van programmeerbare logische blokken en een hiërarchie van herconfigureerbare interconnects. Met de onderlinge verbindingen kunnen deze blokken na de productie op verschillende manieren worden geconfigureerd. Vergeleken met andere chips, biedt Fpga's een combi natie van programmeer baarheid en prestaties. 
@@ -31,7 +31,7 @@ U kunt Fpga's opnieuw configureren voor verschillende soorten machine learning m
 
 ![Diagram van Azure Machine Learning FPGA-vergelijking](./media/how-to-deploy-fpga-web-service/azure-machine-learning-fpga-comparison.png)
 
-|Processor| Afkorting |Description|
+|Processor| Afkorting |Beschrijving|
 |---|:-------:|------|
 |Toepassingsspecifieke geïntegreerde circuits|ASICs|Aangepaste circuits, zoals Google tensor processor units (TPU), bieden de hoogste efficiëntie. Ze kunnen niet opnieuw worden geconfigureerd als uw behoeften veranderen.|
 |Veld-Programmeer bare poort matrices|FPGAs|Fpga's, zoals die beschikbaar zijn op Azure, bieden de prestaties bijna ASICs. Ze zijn ook flexibel en kunnen na verloop van tijd opnieuw worden geconfigureerd om nieuwe logica te implementeren.|
@@ -56,7 +56,7 @@ De **PBS-serie van Azure-vm's** bevat Intel Arria 10 fpga's. Het wordt weer gege
 
 ## <a name="deploy-models-on-fpgas"></a>Modellen implementeren op Fpga's
 
-U kunt een model als een webservice implementeren op Fpga's met [Azure Machine Learning modellen met hardwareversnelling](/python/api/azureml-accel-models/azureml.accel?preserve-view=true&view=azure-ml-py). Het gebruik van Fpga's biedt een dering van ultra lage latentie, zelfs met één batch grootte. 
+U kunt een model als een webservice implementeren op Fpga's met [Azure Machine Learning modellen met hardwareversnelling](/python/api/azureml-accel-models/azureml.accel). Het gebruik van Fpga's biedt een dering van ultra lage latentie, zelfs met één batch grootte. 
 
 In dit voor beeld maakt u een tensor flow-grafiek om de invoer installatie kopie voor te verwerken, een featurizer te maken met ResNet 50 op een FPGA en vervolgens de functies uit te voeren via een getrainde classificatie voor de ImageNet gegevensset. Vervolgens wordt het model geïmplementeerd naar een AKS-cluster.
 
@@ -80,7 +80,7 @@ In dit voor beeld maakt u een tensor flow-grafiek om de invoer installatie kopie
 
 ### <a name="define-the-tensorflow-model"></a>Het tensor flow-model definiëren
 
-Begin met het maken van een service definitie met behulp van de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) . Een service definitie is een bestand met een beschrijving van een pijp lijn van grafieken (invoer, featurizer en classificatie) op basis van tensor flow. De implementatie opdracht comprimeert de definitie en grafieken in een ZIP-bestand en uploadt de ZIP naar Azure Blob-opslag. De DNN is al geïmplementeerd om te worden uitgevoerd op de FPGA.
+Begin met het maken van een service definitie met behulp van de [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro) . Een service definitie is een bestand met een beschrijving van een pijp lijn van grafieken (invoer, featurizer en classificatie) op basis van tensor flow. De implementatie opdracht comprimeert de definitie en grafieken in een ZIP-bestand en uploadt de ZIP naar Azure Blob-opslag. De DNN is al geïmplementeerd om te worden uitgevoerd op de FPGA.
 
 1. Azure Machine Learning werk ruimte laden
 

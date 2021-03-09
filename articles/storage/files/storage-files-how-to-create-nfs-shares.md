@@ -8,12 +8,12 @@ ms.date: 01/22/2021
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 778d82cd36e1f7389a443630f0982dd8774fe3ee
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: b085b9991175d8cd43e2dac0db80c5af4e703c34
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102509197"
+ms.locfileid: "102521234"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Een NFS-share maken
 Azure-bestands shares zijn volledig beheerde bestands shares die zich in de cloud bevinden. In dit artikel wordt beschreven hoe u een bestands share maakt die gebruikmaakt van het NFS-protocol. Zie [Azure file share-protocollen](storage-files-compare-protocols.md)voor meer informatie over beide protocollen.
@@ -192,7 +192,7 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
    echo $PSVersionTable.PSVersion.ToString() 
    ```
     
-   Zie [bestaande Windows Power shell upgraden](/powershell/scripting/install/installing-windows-powershell?view=powershell-6&preserve-view=true#upgrading-existing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
+   Zie [bestaande Windows Power shell upgraden](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) voor informatie over het bijwerken van uw versie van Power shell
     
 1. Installeer de nieuwste versie van de PowershellGet-module.
 

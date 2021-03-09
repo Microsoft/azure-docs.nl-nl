@@ -7,14 +7,14 @@ ms.service: web-application-firewall
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: victorh
-ms.openlocfilehash: 6949c1e8f83ebf47878a3d449796ccc03920756a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: cd1f21f150094094a6bf856b04a64a02963f35a8
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89225149"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521710"
 ---
-# <a name="azure-web-application-firewall-on-azure-content-delivery-network"></a>Azure Web Application Firewall op Azure Content Delivery Network
+# <a name="azure-web-application-firewall-on-azure-content-delivery-network-from-microsoft"></a>Azure Web Application firewall op Azure Content Delivery Network van micro soft
 
 Azure WAF (Web Application Firewall) op Azure CDN (Content Delivery Network) van Microsoft biedt gecentraliseerde beveiliging voor uw webinhoud. WAF beschermt uw webservices tegen veelvoorkomende aanvallen en beveiligingsproblemen. De firewall houdt uw service maximaal beschikbaar voor uw gebruikers en helpt u te voldoen aan de nalevingsvereisten.
 
@@ -100,7 +100,7 @@ Door Azure beheerde regelsets bieden een eenvoudige manier om beveiliging te imp
 - Protocolaanvallen
 
 Het versienummer van de standaardregelset wordt verhoogd wanneer er nieuwe aanvalshandtekeningen worden toegevoegd aan de regelset.
-De standaardregelset is standaard ingeschakeld in de *detectie*modus in uw WAF-beleid. U kunt afzonderlijke regels in de standaardregelset uit- of inschakelen om te voldoen aan de vereisten van uw toepassing. U kunt ook specifieke acties (TOESTAAN, BLOKKEREN, LOGBOEK en OMLEIDEN) instellen per regel. De standaardactie voor de beheerde standaardregelset is *blokkeren*.
+De standaardregelset is standaard ingeschakeld in de *detectie* modus in uw WAF-beleid. U kunt afzonderlijke regels in de standaardregelset uit- of inschakelen om te voldoen aan de vereisten van uw toepassing. U kunt ook specifieke acties (TOESTAAN, BLOKKEREN, LOGBOEK en OMLEIDEN) instellen per regel. De standaardactie voor de beheerde standaardregelset is *blokkeren*.
 
 Aangepaste regels worden altijd toegepast voordat regels in de standaardregelset worden geëvalueerd. Als een aanvraag overeenkomt met een aangepaste regel, wordt de bijbehorende regelactie toegepast. De aanvraag wordt geblokkeerd of doorgegeven aan de back-end. Er worden geen andere aangepaste regels verwerkt, evenmin als de regels in de standaardregelset. U kunt ook de standaardregelset uit uw WAF-beleid verwijderen.
 

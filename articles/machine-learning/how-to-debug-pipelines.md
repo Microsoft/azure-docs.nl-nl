@@ -10,16 +10,16 @@ ms.author: laobri
 ms.date: 10/22/2020
 ms.topic: troubleshooting
 ms.custom: troubleshooting, devx-track-python, contperf-fy21q2
-ms.openlocfilehash: 0f27688e31f772cc8d784371aa570d55c41f5695
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 195942d1787cdef51ee480fa5c5595db99bc7c78
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131811"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522084"
 ---
 # <a name="troubleshooting-machine-learning-pipelines"></a>Problemen met machine learning pijp lijnen oplossen
 
-In dit artikel leert u hoe u problemen kunt oplossen wanneer er fouten optreden tijdens het uitvoeren van een [machine learning pijp lijn](concept-ml-pipelines.md) in de [Azure Machine Learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) en [Azure machine learning Designer](./concept-designer.md). 
+In dit artikel leert u hoe u problemen kunt oplossen wanneer er fouten optreden tijdens het uitvoeren van een [machine learning pijp lijn](concept-ml-pipelines.md) in de [Azure Machine Learning SDK](/python/api/overview/azure/ml/intro) en [Azure machine learning Designer](./concept-designer.md). 
 
 ## <a name="troubleshooting-tips"></a>Tips voor probleemoplossing
 
@@ -192,7 +192,7 @@ De onderstaande tabel bevat informatie over verschillende opties voor fout opspo
 
 | Bibliotheek                    | Type   | Voorbeeld                                                          | Doel                                  | Resources                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|--------|------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Azure Machine Learning-SDK | Metrisch | `run.log(name, val)`                                             | Gebruikers interface van Azure Machine Learning Portal             | [Experimenten bijhouden](how-to-track-experiments.md)<br>[de klasse azureml. core. run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py)                                                                                                                                                 |
+| Azure Machine Learning-SDK | Metrisch | `run.log(name, val)`                                             | Gebruikers interface van Azure Machine Learning Portal             | [Experimenten bijhouden](how-to-track-experiments.md)<br>[de klasse azureml. core. run](/python/api/azureml-core/azureml.core.run%28class%29)                                                                                                                                                 |
 | Python afdrukken/logboek registratie    | Logboek    | `print(val)`<br>`logging.info(message)`                          | Logboeken van Stuur Programma's, Azure Machine Learning Designer | [Experimenten bijhouden](how-to-track-experiments.md)<br><br>[Python-logboek registratie](https://docs.python.org/2/library/logging.html)                                                                                                                                                                       |
 | OpenCensus Python          | Logboek    | `logger.addHandler(AzureLogHandler())`<br>`logging.log(message)` | Application Insights-traceringen                | [Fouten met pijplijnen opsporen in Application Insights](./how-to-log-pipelines-application-insights.md)<br><br>[OpenCensus Azure Monitor Exporters](https://github.com/census-instrumentation/opencensus-python/tree/master/contrib/opencensus-ext-azure)<br>[Python-logboek registratie Cookbook](https://docs.python.org/3/howto/logging-cookbook.html) |
 
@@ -244,7 +244,7 @@ Wanneer u een pijplijn uitvoering verzendt en op de bewerkings pagina blijft, ku
 1. Ga in het rechterdeel venster van de module naar het tabblad  **uitvoer en logboeken** .
 1. Vouw het rechterdeel venster uit en selecteer het **70_driver_log.txt** om het bestand in de browser weer te geven. U kunt Logboeken ook lokaal downloaden.
 
-    ![Uitgevouwen uitvoer deel venster in de ontwerp functie](./media/how-to-debug-pipelines/designer-logs.png)? View = Azure-ml-py&pres Erve-View = True)? View = Azure-ml-py&pres Erve-View = True)
+    ![Uitgevouwen uitvoer deel venster in de ontwerp functie](./media/how-to-debug-pipelines/designer-logs.png)
 
 ### <a name="get-logs-from-pipeline-runs"></a>Logboeken ophalen van pijplijn uitvoeringen
 
@@ -274,6 +274,6 @@ In sommige gevallen moet u mogelijk interactief fouten opsporen in de python-cod
 
 * Zie [Automated ml gebruiken in een Azure machine learning-pijp lijn in python](how-to-use-automlstep-in-pipelines.md)voor een volledig voor beeld van automatische machine learning in ml-pijp lijnen.
 
-* Raadpleeg de SDK-Naslag informatie voor hulp met het kern pakket voor [azureml-pipelines-core](/python/api/azureml-pipeline-core/?preserve-view=true&view=azure-ml-py) en het pakket met [azureml-pijp lijnen-stappen](/python/api/azureml-pipeline-steps/?preserve-view=true&view=azure-ml-py) .
+* Raadpleeg de SDK-Naslag informatie voor hulp met het kern pakket voor [azureml-pipelines-core](/python/api/azureml-pipeline-core/) en het pakket met [azureml-pijp lijnen-stappen](/python/api/azureml-pipeline-steps/) .
 
 * Bekijk de lijst met [uitzonde ringen en fout codes voor Designer](algorithm-module-reference/designer-error-codes.md).

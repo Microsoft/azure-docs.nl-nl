@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 9e0102cdb7e8494a8540b1970932f0d9f7f39fde
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: a894a46ce7c78b65dde80c52f9516fcbe4d27bcb
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912914"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520996"
 ---
 # <a name="track-azure-databricks-ml-experiments-with-mlflow-and-azure-machine-learning-preview"></a>Azure Databricks ML experimenten bijhouden met MLflow en Azure Machine Learning (preview)
 
@@ -35,7 +35,7 @@ Zie [experimenten volgen met MLflow en Azure machine learning](how-to-use-mlflow
 ## <a name="prerequisites"></a>Vereisten
 
 * Installeer het `azureml-mlflow`-pakket. 
-    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
+    * Dit pakket maakt automatisch deel uit `azureml-core` van de [Azure machine learning PYTHON-SDK](/python/api/overview/azure/ml/install), waarmee de connectiviteit voor MLflow wordt geboden om toegang te krijgen tot uw werk ruimte.
 * Een [Azure Databricks-werk ruimte en-cluster](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal).
 * [Maak een Azure machine learning-werkruimte](how-to-manage-workspace.md).
     * Bekijk welke [toegangs machtigingen u nodig hebt om uw MLflow-bewerkingen uit te voeren met uw werk ruimte](how-to-assign-roles.md#mlflow-operations).

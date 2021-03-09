@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 2a955273c01d8c0d865aabd91bb1bfcce70fd373
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 29922f088a51e4876e5e2ec8fe87c3bbce4482f3
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100587364"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521676"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Application Insights-agent (voorheen met de naam Status Monitor v2): gedetailleerde instructies
 
@@ -29,7 +29,7 @@ U hebt een instrumentatie sleutel nodig om aan de slag te gaan. Zie [een Applica
 Power Shell heeft machtigingen op beheerders niveau nodig om wijzigingen aan te brengen op uw computer.
 ### <a name="execution-policy"></a>Uitvoerings beleid
 - Beschrijving: standaard is het uitvoeren van Power shell-scripts uitgeschakeld. We raden u aan om RemoteSigned-scripts alleen toe te staan voor de huidige scope.
-- Naslag [informatie: over uitvoerings beleid](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6) en [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6).
+- Naslag [informatie: over uitvoerings beleid](/powershell/module/microsoft.powershell.core/about/about_execution_policies) en [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy).
 - Opdracht: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` .
 - Optionele para meter:
     - `-Force`. De bevestigings prompt wordt omzeild.
@@ -71,14 +71,14 @@ Deze instructies zijn geschreven en getest op een computer met Windows 10 en de 
 Met deze stappen wordt de server voor bereid om modules te downloaden van PowerShell Gallery.
 
 > [!NOTE] 
-> PowerShell Gallery wordt ondersteund op Windows 10, Windows Server 2016 en Power shell 6.
+> PowerShell Gallery wordt ondersteund op Windows 10, Windows Server 2016 en Power shell 6 +.
 > Zie [Installing PowerShellGet](/powershell/scripting/gallery/installing-psget)(Engelstalig) voor meer informatie over eerdere versies.
 
 
 1. Voer Power shell uit als beheerder met een verhoogd uitvoerings beleid.
 2. Installeer de NuGet-pakket provider.
     - Beschrijving: u hebt deze provider nodig om te communiceren met op NuGet gebaseerde opslag plaatsen zoals PowerShell Gallery.
-    - Referentie: [install-package provider](/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
+    - Referentie: [install-package provider](/powershell/module/packagemanagement/install-packageprovider).
     - Opdracht: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201` .
     - Optionele para meters:
         - `-Proxy`. Hiermee geeft u een proxy server voor de aanvraag op.
@@ -98,7 +98,7 @@ Met deze stappen wordt de server voor bereid om modules te downloaden van PowerS
 
 3. Configureer PowerShell Gallery als een vertrouwde opslag plaats.
     - Beschrijving: standaard is PowerShell Gallery een niet-vertrouwde opslag plaats.
-    - Verwijzing: [set-PSRepository](/powershell/module/powershellget/set-psrepository?view=powershell-6).
+    - Verwijzing: [set-PSRepository](/powershell/module/powershellget/set-psrepository).
     - Opdracht: `Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted` .
     - Optionele para meter:
         - `-Proxy`. Hiermee geeft u een proxy server voor de aanvraag op.
@@ -144,7 +144,7 @@ Met deze stappen wordt de module AZ. ApplicationMonitor gedownload van PowerShel
 1. Zorg ervoor dat aan alle vereisten voor PowerShell Gallery worden voldaan.
 2. Voer Power shell uit als beheerder met een verhoogd uitvoerings beleid.
 3. Installeer de module AZ. ApplicationMonitor.
-    - Verwijzing: [install-module](/powershell/module/powershellget/install-module?view=powershell-6).
+    - Verwijzing: [install-module](/powershell/module/powershellget/install-module).
     - Opdracht: `Install-Module -Name Az.ApplicationMonitor` .
     - Optionele para meters:
         - `-Proxy`. Hiermee geeft u een proxy server voor de aanvraag op.
@@ -170,7 +170,7 @@ Zie [een Power shell-module installeren](/powershell/scripting/developer/module/
 #### <a name="unzip-nupkg-as-a-zip-file-by-using-expand-archive-v1010"></a>Nupkg uitpakken als een zip-bestand met behulp van Expand-Archive (v 1.0.1.0)
 
 - Beschrijving: de basis versie van micro soft. Power shell. Archive (v 1.0.1.0) kan nupkg-bestanden niet uitpakken. Wijzig de naam van het bestand met de extensie. zip.
-- Naslag informatie: [Expand-Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6).
+- Naslag informatie: [Expand-Archive](/powershell/module/microsoft.powershell.archive/expand-archive).
 - Cmd
 
     ```console
@@ -184,7 +184,7 @@ Zie [een Power shell-module installeren](/powershell/scripting/developer/module/
 #### <a name="unzip-nupkg-by-using-expand-archive-v1100"></a>Nupkg uitpakken met behulp van Expand-Archive (v 1.1.0.0)
 
 - Beschrijving: gebruik een huidige versie van Expand-Archive om nupkg-bestanden uit te pakken zonder de extensie te wijzigen.
-- Naslag informatie: [Expand-Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) en [micro soft. Power shell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
+- Naslag informatie: [Expand-Archive](/powershell/module/microsoft.powershell.archive/expand-archive) en [micro soft. Power shell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
 - Cmd
 
     ```console
@@ -197,7 +197,7 @@ Zie [een Power shell-module installeren](/powershell/scripting/developer/module/
 Installeer de hand matig gedownloade Power shell-module in een Power shell-Directory, zodat deze kan worden gedetecteerd door Power shell-sessies.
 Zie [een Power shell-module installeren](/powershell/scripting/developer/module/installing-a-powershell-module)voor meer informatie.
 
-Als u de module in een andere Directory installeert, importeert u de module hand matig met behulp van [import-module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
+Als u de module in een andere Directory installeert, importeert u de module hand matig met behulp van [import-module](/powershell/module/microsoft.powershell.core/import-module).
 
 > [!IMPORTANT] 
 > Dll's worden geïnstalleerd via relatieve paden.

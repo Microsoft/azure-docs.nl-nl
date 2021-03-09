@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: 8480a0b8722fbfff0f1d8a8fafc1a64f38d21d6e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6797c32ded5c12bbac3fafa1eabd1e6f74d28e07
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307217"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519245"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Een diep leer model implementeren voor demijnen met GPU
 
@@ -38,7 +38,7 @@ Detrainer of model Score is de fase waarin het geïmplementeerde model wordt geb
 
 * Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
 
-* Een python-ontwikkel omgeving met de Azure Machine Learning SDK geïnstalleerd. Zie [Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py)voor meer informatie.  
+* Een python-ontwikkel omgeving met de Azure Machine Learning SDK geïnstalleerd. Zie [Azure machine learning SDK](/python/api/overview/azure/ml/install)voor meer informatie.  
 
 * Een geregistreerd model dat gebruikmaakt van een GPU.
 
@@ -176,7 +176,7 @@ gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled=False,
                                                     memory_gb=4)
 ```
 
-Zie de referentie documentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-)voor meer informatie.
+Zie de referentie documentatie voor [AksService.deploy_configuration](/python/api/azureml-core/azureml.core.webservice.akswebservice#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-)voor meer informatie.
 
 ## <a name="define-the-inference-configuration"></a>De configuratie voor het afstellen van interferentie definiëren
 
@@ -192,7 +192,7 @@ inference_config = InferenceConfig(entry_script="score.py", environment=myenv)
 ```
 
 Zie [omgevingen maken en beheren voor training en implementatie](how-to-use-environments.md)voor meer informatie over omgevingen.
-Zie de referentie documentatie voor [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de referentie documentatie voor [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig)voor meer informatie.
 
 ## <a name="deploy-the-model"></a>Het model implementeren
 
@@ -217,7 +217,7 @@ aks_service.wait_for_deployment(show_output=True)
 print(aks_service.state)
 ```
 
-Zie de referentie documentatie voor [model](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de referentie documentatie voor [model](/python/api/azureml-core/azureml.core.model.model)voor meer informatie.
 
 ## <a name="issue-a-sample-query-to-your-service"></a>Een voorbeeld query voor uw service uitgeven
 

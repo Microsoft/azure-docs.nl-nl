@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: c24d88e47569da430153dedfd1ff68a584083775
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ef41c52fa1b63094d952dc34f81db36f7aeaac95
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695240"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521285"
 ---
 # <a name="quickstart-create-and-configure-route-server-using-azure-cli"></a>Snelstartgids: route server maken en configureren met behulp van Azure CLI 
 
@@ -56,8 +56,8 @@ az account set --subscription "<subscription ID>"
 Voordat u een Azure-route server kunt maken, hebt u een virtueel netwerk nodig om de implementatie te hosten. Gebruik de volgende opdracht om een resource groep en een virtueel netwerk te maken. Als u al een virtueel netwerk hebt, kunt u door gaan naar de volgende sectie.
 
 ```azurecli-interactive
-az group create -n “RouteServerRG” -l “westus” 
-az network vnet create -g “RouteServerRG” -n “myVirtualNetwork” --address-prefix “10.0.0.0/16” 
+az group create -n "RouteServerRG" -l "westus" 
+az network vnet create -g "RouteServerRG" -n "myVirtualNetwork" --address-prefix "10.0.0.0/16" 
 ``` 
 
 ### <a name="add-a-subnet"></a>Een subnet toevoegen 
@@ -65,13 +65,13 @@ az network vnet create -g “RouteServerRG” -n “myVirtualNetwork” --addres
 1. Voeg een subnet met de naam *RouteServerSubnet* toe om de Azure route server in te implementeren. Dit subnet is alleen een specifiek subnet voor Azure route server. De RouteServerSubnet moet/27 of een kortere voor voegsel (zoals/26,/25) zijn of u ontvangt een fout bericht wanneer u de Azure route server toevoegt.
 
     ```azurecli-interactive 
-    az network vnet subnet create -g “RouteServerRG” --vnet-name “myVirtualNetwork” --name “RouteServerSubnet” --address-prefix “10.0.0.0/24”  
+    az network vnet subnet create -g "RouteServerRG" --vnet-name "myVirtualNetwork" --name "RouteServerSubnet" --address-prefix "10.0.0.0/24"  
     ``` 
 
 1. Haal de RouteServerSubnet-ID op. Als u de resource-ID van alle subnetten in het virtuele netwerk wilt weer geven, gebruikt u deze opdracht: 
 
     ```azurecli-interactive 
-    subnet_id = $(az network vnet subnet show -n “RouteServerSubnet” --vnet-name “myVirtualNetwork” -g “RouteServerRG” --query id -o tsv) 
+    subnet_id = $(az network vnet subnet show -n "RouteServerSubnet" --vnet-name "myVirtualNetwork" -g "RouteServerRG" --query id -o tsv) 
     ``` 
 
 De RouteServerSubnet-ID ziet er als volgt uit: 
@@ -83,7 +83,7 @@ De RouteServerSubnet-ID ziet er als volgt uit:
 Maak de route server met de volgende opdracht: 
 
 ```azurecli-interactive
-az network routeserver create -n “myRouteServer” -g “RouteServerRG” --hosted-subnet $subnet_id  
+az network routeserver create -n "myRouteServer" -g "RouteServerRG" --hosted-subnet $subnet_id  
 ``` 
 
 De locatie moet overeenkomen met de locatie van het virtuele netwerk. De HostedSubnet is de RouteServerSubnet-ID die u hebt verkregen in de vorige sectie. 
@@ -94,7 +94,7 @@ Gebruik de volgende opdracht om peering van de route server naar het NVA te make
 
 ```azurecli-interactive 
 
-az network routeserver peering create --routeserver-name “myRouteServer” -g “RouteServerRG” --peer-ip “nva_ip” --peer-asn “nva_asn” -n “NVA1_name” 
+az network routeserver peering create --routeserver-name "myRouteServer" -g "RouteServerRG" --peer-ip "nva_ip" --peer-asn "nva_asn" -n "NVA1_name" 
 
 ``` 
 
@@ -104,7 +104,7 @@ Gebruik deze opdracht om peering in te stellen met een ander NVA of een ander ex
 
 ```azurecli-interactive 
 
-az network routeserver peering create --routeserver-name “myRouteServer” -g “RouteServerRG” --peer-ip “nva_ip” --peer-asn “nva_asn” -n “NVA2_name” 
+az network routeserver peering create --routeserver-name "myRouteServer" -g "RouteServerRG" --peer-ip "nva_ip" --peer-asn "nva_asn" -n "NVA2_name" 
 ``` 
 
 ## <a name="complete-the-configuration-on-the-nva"></a>De configuratie op de NVA volt ooien 
@@ -112,7 +112,7 @@ az network routeserver peering create --routeserver-name “myRouteServer” -g 
 Als u de configuratie wilt volt ooien op de NVA en de BGP-sessies wilt inschakelen, hebt u het IP-adres en de ASN van Azure route server nodig. U kunt deze informatie ophalen met behulp van de volgende opdracht: 
 
 ```azurecli-interactive 
-az network routeserver show -g “RouteServerRG” -n “myRouteServer” 
+az network routeserver show -g "RouteServerRG" -n "myRouteServer" 
 ``` 
 
 De uitvoer bevat de volgende informatie. 
@@ -143,14 +143,14 @@ Als u een ExpressRoute-gateway en een Azure VPN-gateway in hetzelfde VNet hebt e
 1. Als u route uitwisseling tussen Azure route server en de gateway (s) wilt inschakelen, gebruikt u deze opdracht:
 
 ```azurecli-interactive 
-az network routeserver update -g “RouteServerRG” -n “myRouteServer” --allow-b2b-traffic true 
+az network routeserver update -g "RouteServerRG" -n "myRouteServer" --allow-b2b-traffic true 
 
 ``` 
 
 2. Als u route uitwisseling tussen Azure route server en de gateway (s) wilt uitschakelen, gebruikt u deze opdracht:
 
 ```azurecli-interactive
-az network routeserver update -g “RouteServerRG” -n “myRouteServer” --allow-b2b-traffic false 
+az network routeserver update -g "RouteServerRG" -n "myRouteServer" --allow-b2b-traffic false 
 ``` 
 
 ## <a name="troubleshooting"></a>Problemen oplossen 
@@ -169,13 +169,13 @@ Als u de Azure route server niet meer nodig hebt, gebruikt u deze opdrachten om 
 1. Verwijder de BGP-peering tussen Azure route server en een NVA met deze opdracht:
 
 ```azurecli-interactive
-az network routeserver peering delete --routeserver-name “myRouteServer” -g “RouteServerRG” -n “NVA2_name” 
+az network routeserver peering delete --routeserver-name "myRouteServer" -g "RouteServerRG" -n "NVA2_name" 
 ``` 
 
 2. Azure route server verwijderen met deze opdracht: 
 
 ```azurecli-interactive 
-az network routeserver delete -n “myRouteServer” -g “RouteServerRG” 
+az network routeserver delete -n "myRouteServer" -g "RouteServerRG" 
 ``` 
 
 ## <a name="next-steps"></a>Volgende stappen

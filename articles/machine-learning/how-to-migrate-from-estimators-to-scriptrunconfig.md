@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 12/14/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: d603a12f851dac5b7cefc5bad728d42967bb27dc
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: ae0623a11b940a4d142f6bfae02d4b20727a6f55
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878592"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518869"
 ---
 # <a name="migrating-from-estimators-to-scriptrunconfig"></a>Migreren van schattingen naar ScriptRunConfig
 
@@ -30,7 +30,7 @@ Dit artikel heeft betrekking op algemene overwegingen bij de migratie van schatt
 > Als u wilt migreren naar ScriptRunConfig van schattingen, moet u >= 1.15.0 van de python-SDK gebruiken.
 
 ## <a name="scriptrunconfig-documentation-and-samples"></a>Documentatie en voor beelden ScriptRunConfig
-Azure Machine Learning documentatie en voor beelden zijn bijgewerkt om [ScriptRunConfig](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?preserve-view=true&view=azure-ml-py) te gebruiken voor taak configuratie en-verzen ding.
+Azure Machine Learning documentatie en voor beelden zijn bijgewerkt om [ScriptRunConfig](/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig) te gebruiken voor taak configuratie en-verzen ding.
 
 Raadpleeg de volgende documentatie voor meer informatie over het gebruik van ScriptRunConfig:
 * [Trainingsuitvoering configureren en verzenden](how-to-set-up-training-targets.md)
@@ -107,7 +107,7 @@ Zie voor meer informatie over het gebruik van gegevens voor training:
 * [Train met gegevens sets in azure ML](./how-to-train-with-datasets.md)
 
 ## <a name="distributed-training"></a>Gedistribueerde training
-Als u een gedistribueerde taak voor training moet configureren, moet u de `distributed_job_config` para meter in de ScriptRunConfig-constructor opgeven. Geef een [MpiConfiguration](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?preserve-view=true&view=azure-ml-py), [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration?preserve-view=true&view=azure-ml-py)of [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration?preserve-view=true&view=azure-ml-py) door voor gedistribueerde taken van de respectieve typen.
+Als u een gedistribueerde taak voor training moet configureren, moet u de `distributed_job_config` para meter in de ScriptRunConfig-constructor opgeven. Geef een [MpiConfiguration](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration), [PyTorchConfiguration](/python/api/azureml-core/azureml.core.runconfig.pytorchconfiguration)of [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) door voor gedistribueerde taken van de respectieve typen.
 
 In het volgende voor beeld wordt een PyTorch-trainings taak geconfigureerd voor het gebruik van gedistribueerde training met MPI/Horovod:
 ```python

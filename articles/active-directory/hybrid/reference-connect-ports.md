@@ -16,12 +16,12 @@ ms.date: 03/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da318840426d1c0b94eab06b89ff3152df9d26fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 681d92ed162feff0510067556d7eeaa47b12d988
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80331096"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520027"
 ---
 # <a name="hybrid-identity-required-ports-and-protocols"></a>Voor hybride identiteit benodigde poorten en protocollen
 Het volgende document bevat technische Naslag informatie over de vereiste poorten en protocollen voor het implementeren van een hybride identiteits oplossing. Gebruik de volgende afbeelding en Raadpleeg de bijbehorende tabel.
@@ -39,7 +39,7 @@ In deze tabel worden de poorten en protocollen beschreven die vereist zijn voor 
 | LDAP |389 (TCP/UDP) |Wordt gebruikt voor het importeren van gegevens uit AD. Gegevens zijn versleuteld met het Kerberos-teken & zegel. |
 | SMB | 445 (TCP) |Wordt gebruikt door naadloze SSO voor het maken van een computer account in het AD-forest. |
 | LDAP/SSL |636 (TCP/UDP) |Wordt gebruikt voor het importeren van gegevens uit AD. De gegevens overdracht is ondertekend en versleuteld. Wordt alleen gebruikt als u TLS gebruikt. |
-| RPC |49152-65535 (wille keurige hoge RPC-poort) (TCP) |Wordt gebruikt tijdens de eerste configuratie van Azure AD Connect wanneer deze verbinding maakt met de AD-forests en tijdens wachtwoord synchronisatie. Zie [KB929851](https://support.microsoft.com/kb/929851), [KB832017](https://support.microsoft.com/kb/832017)en [KB224196](https://support.microsoft.com/kb/224196) voor meer informatie. |
+| RPC |49152-65535 (wille keurige hoge RPC-poort) (TCP) |Wordt gebruikt tijdens de eerste configuratie van Azure AD Connect wanneer deze verbinding maakt met de AD-forests en tijdens wachtwoord synchronisatie. Als de dynamische poort is gewijzigd, moet u die poort openen. Zie [KB929851](https://support.microsoft.com/kb/929851), [KB832017](https://support.microsoft.com/kb/832017)en [KB224196](https://support.microsoft.com/kb/224196) voor meer informatie. |
 |WinRM  | 5985 (TCP) |Wordt alleen gebruikt als u AD FS installeert met behulp van de wizard gMSA door Azure AD Connect|
 |AD DS-webservices | 9389 (TCP) |Wordt alleen gebruikt als u AD FS installeert met behulp van de wizard gMSA door Azure AD Connect |
 

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.author: joncole
-ms.openlocfilehash: 4e209bfe5e3856f3847b0c24852c487a92c8f182
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 84a6bba390b0f6b101bd8243cf47b79af9618999
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102454733"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521642"
 ---
 # <a name="best-practices-for-azure-cache-for-redis"></a>Aanbevolen procedures voor Azure Cache voor Redis 
 Door deze aanbevolen procedures te volgen, kunt u de prestaties en het rendabele gebruik van uw Azure-cache voor redis-instantie maximaliseren.
@@ -30,6 +30,8 @@ Door deze aanbevolen procedures te volgen, kunt u de prestaties en het rendabele
  * **Zoek uw cache-exemplaar en uw toepassing in dezelfde regio.**  Als er verbinding wordt gemaakt met een cache in een andere regio, kan dit leiden tot een aanzienlijk hogere latentie en kan dit ten koste gaan van de betrouwbaarheid.  Terwijl u verbinding kunt maken vanuit Azure, is het niet aanbevolen om *redis als een cache te gebruiken*.  Als u redis als alleen een sleutel/waarde-archief gebruikt, is latentie mogelijk niet het belangrijkste probleem. 
 
  * **Verbindingen opnieuw gebruiken.**  Het maken van nieuwe verbindingen is duur en neemt vertraging in beslag, dus hergebruik zo veel mogelijk verbindingen. Als u ervoor kiest nieuwe verbindingen te maken, moet u ervoor zorgen dat u de oude verbindingen sluit voordat u ze uitgeeft (zelfs in beheerde geheugen talen zoals .NET of Java).
+
+* **Gebruik pipeline.**  Kies een redis-client die ondersteuning biedt voor [redis pipelining](https://redis.io/topics/pipelining) om optimaal gebruik te kunnen maken van het netwerk om de beste door voer te krijgen.
 
  * **Configureer uw client bibliotheek zodanig dat er een *time-out* voor de verbinding van ten minste 15 seconden wordt gebruikt**, waarbij de systeem tijd nodig is om verbinding te maken, zelfs onder hogere CPU-omstandigheden.  Een time-outwaarde voor een kleine verbinding garandeert niet dat de verbinding in dat tijds bestek tot stand is gebracht.  Als er iets mis gaat (hoge CPU van client, een hoge CPU van een server, enzovoort), wordt de verbindings poging mislukt als er een korte time-outwaarde voor de verbinding is. Dit gedrag zorgt vaak voor een slechtere situatie.  In plaats van hulp te bieden, verergert u het probleem door het systeem te dwingen het proces van opnieuw proberen opnieuw verbinding te maken, wat kan leiden tot een *verbindings > mislukken > probeer het opnieuw* . U wordt aangeraden de verbindingstime-out op 15 seconden of hoger te laten staan. Het is beter om uw verbindings poging na 15 of 20 seconden te laten slagen dan om het probleem alleen snel op te verbreken. Een dergelijke retry-lus kan ertoe leiden dat uw onderbreking langer duurt dan wanneer u het systeem gewoon in eerste instantie neemt.  
      > [!NOTE]

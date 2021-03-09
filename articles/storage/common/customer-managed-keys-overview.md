@@ -5,23 +5,23 @@ description: U kunt uw eigen versleutelings sleutel gebruiken om de gegevens in 
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 03/05/2021
+ms.date: 03/09/2021
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 92a83e03d486d0bf9344fbdcf705703ea788528c
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 358be21a1f7f13c0c0ce1bf0e57dda53174216b2
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102218567"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517528"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Door de klant beheerde sleutels voor Azure Storage versleuteling
 
 U kunt uw eigen versleutelings sleutel gebruiken om de gegevens in uw opslag account te beveiligen. Wanneer u een door klant beheerde sleutel opgeeft, wordt die sleutel gebruikt voor het beveiligen en beheren van de toegang tot de sleutel waarmee uw gegevens worden versleuteld. Door de klant beheerde sleutels bieden meer flexibiliteit om toegangsbeheer te beheren.
 
-U moet Azure Key Vault of Azure Key Vault beheerde hardware security model (HSM) (preview) gebruiken om uw door de klant beheerde sleutels op te slaan. U kunt een eigen sleutel maken en deze opslaan in de sleutel kluis of beheerde HSM, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren. Het opslag account en de sleutel kluis of beheerde HSM moeten zich in dezelfde regio bevinden en in dezelfde Azure Active Directory (Azure AD)-Tenant, maar ze kunnen zich in verschillende abonnementen bevinden.
+U moet Azure Key Vault of Azure Key Vault beheerde Hardware Security module (HSM) (preview) gebruiken om uw door de klant beheerde sleutels op te slaan. U kunt een eigen sleutel maken en deze opslaan in de sleutel kluis of beheerde HSM, of u kunt de Azure Key Vault-Api's gebruiken om sleutels te genereren. Het opslag account en de sleutel kluis of beheerde HSM moeten zich in dezelfde regio bevinden en in dezelfde Azure Active Directory (Azure AD)-Tenant, maar ze kunnen zich in verschillende abonnementen bevinden.
 
 Zie [Wat is Azure Key Vault?](../../key-vault/general/overview.md)voor meer informatie over Azure Key Vault.
 

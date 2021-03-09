@@ -11,12 +11,12 @@ ms.date: 02/16/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: 47d2c8865109e8ef43317b3c4a19c36e692aff91
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 2966b685e1904102467bf16994ea781556544047
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102218839"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519194"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
@@ -36,7 +36,7 @@ Triton is een raam werk dat is *geoptimaliseerd voor* demijnen. Het biedt een be
 
 * Een **Azure-abonnement**. Als u er nog geen hebt, probeer [dan de gratis of betaalde versie van Azure machine learning](https://aka.ms/AMLFree).
 * Vertrouwd met [het implementeren van een model](how-to-deploy-and-where.md) met Azure machine learning.
-* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/?view=azure-ml-py) **of** de [Azure cli](/cli/azure/) -en [machine learning-extensie](reference-azure-machine-learning-cli.md).
+* De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/) **of** de [Azure cli](/cli/azure/) -en [machine learning-extensie](reference-azure-machine-learning-cli.md).
 * Een werkende installatie van docker voor lokale tests. Zie [Orientation en Setup](https://docs.docker.com/get-started/) in de docker-documentatie voor meer informatie over het installeren en valideren van docker.
 
 ## <a name="architectural-overview"></a>Architectuuroverzicht
@@ -134,7 +134,7 @@ model = Model.register(
 )
 
 ```
-Zie de documentatie voor de [model klasse](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py)voor meer informatie.
+Zie de documentatie voor de [model klasse](/python/api/azureml-core/azureml.core.model.model)voor meer informatie.
 
 ---
 
@@ -276,7 +276,7 @@ Met een Afleidings configuratie kunt u een invoer script en het Azure Machine Le
 > [!IMPORTANT]
 > U moet de met de curator gevoerde `AzureML-Triton` [omgeving](./resource-curated-environments.md)opgeven.
 >
-> Het code voorbeeld van python wordt gekloond `AzureML-Triton` in een andere omgeving met de naam `My-Triton` . De Azure CLI-code gebruikt ook deze omgeving. Zie de referentie [environment. Clone ()](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#clone-new-name-) voor meer informatie over het klonen van een omgeving.
+> Het code voorbeeld van python wordt gekloond `AzureML-Triton` in een andere omgeving met de naam `My-Triton` . De Azure CLI-code gebruikt ook deze omgeving. Zie de referentie [environment. Clone ()](/python/api/azureml-core/azureml.core.environment.environment#clone-new-name-) voor meer informatie over het klonen van een omgeving.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
@@ -337,7 +337,7 @@ Zie [een model gebruiken dat is geïmplementeerd als een webservice](how-to-cons
 
 ### <a name="setting-the-number-of-workers"></a>Het aantal werk rollen instellen
 
-Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) object hebt aangeroepen `env` , kunt u het volgende doen:
+Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment) object hebt aangeroepen `env` , kunt u het volgende doen:
 
 ```{py}
 env.environment_variables["WORKER_COUNT"] = "1"

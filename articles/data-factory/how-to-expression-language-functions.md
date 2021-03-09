@@ -1,18 +1,18 @@
 ---
 title: Para meters en expressies gebruiken in Azure Data Factory
 description: In dit artikel vindt u informatie over expressies en functies die u kunt gebruiken om data factory entiteiten te maken.
-author: dcstwh
-ms.author: weetok
+author: ssabat
+ms.author: susabat
 ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 11/25/2019
-ms.openlocfilehash: 9cf37d554081ddd300a3ea4c16e2f167c5b98895
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.date: 03/08/2020
+ms.openlocfilehash: 4aa8a0790e7f5812e8c6a70eab1718f92a5e00d0
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/09/2021
-ms.locfileid: "102510464"
+ms.locfileid: "102520299"
 ---
 # <a name="how-to-use-parameters-expressions-and-functions-in-azure-data-factory"></a>Para meters, expressies en functies gebruiken in Azure Data Factory
 
@@ -21,7 +21,11 @@ ms.locfileid: "102510464"
 > * [Huidige versie](how-to-expression-language-functions.md)
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-In dit artikel richten we voornamelijk op het leren van concepten met voor beelden en zelf studies over het verkennen van de mogelijkheid om gegevens pijplijnen met para meters te maken in Azure Data Factory. Parameterisering en dynamische expressies zijn dergelijke belang rijke toevoegingen aan ADF, omdat het een enorme hoeveelheid tijd kan besparen en een veel flexibele oplossing voor het uitpakken, transformeren, laden (ETL) of extractie, Load, trans formatie (ELT) biedt, waardoor de kosten voor onderhoud van oplossingen aanzienlijk worden verminderd en de implementatie van nieuwe functies in bestaande pijp lijnen kan worden versneld. Deze winsten zijn omdat parameterisering de hoeveelheid harde code ring minimaliseert en het aantal herbruikbare objecten en processen in een oplossing verhoogt.
+In dit document wordt hoofd zakelijk aandacht besteed aan het leren van basis concepten met verschillende voor beelden om de mogelijkheid te bieden om gegevens pijplijnen met para meters te maken in Azure Data Factory. Parameterisering en dynamische expressies zijn dergelijke belang rijke toevoegingen aan ADF, omdat ze een enorme tijd kunnen besparen en een veel flexibele oplossing voor het uitpakken, transformeren, laden (ETL) of extract, Load, trans formatie (ELT) hebben, waardoor de kosten voor het onderhoud van oplossingen aanzienlijk worden verminderd en de implementatie van nieuwe functies in bestaande pijp lijnen kan worden versneld. Deze winsten zijn omdat parameterisering de hoeveelheid harde code ring minimaliseert en het aantal herbruikbare objecten en processen in een oplossing verhoogt.
+
+## <a name="azure-data-factory-ui-and-parameters"></a>Gebruikers interface en-para meters van Azure data factory
+
+Als u geen ervaring hebt met het gebruik van Azure data factory-para meters in de gebruikers interface van ADF, raadpleegt u [Data Factory-UI voor gekoppelde services met para meters](https://docs.microsoft.comazure/data-factory/parameterize-linked-services#data-factory-ui)  en [Data Factory-gebruikers interface voor door meta gegevens gestuurde pijp lijnen met para meters](https://docs.microsoft.com/azure/data-factory/how-to-use-trigger-parameterization#data-factory-ui) voor visuele
 
 ## <a name="parameter-and-expression-concepts"></a>Para meter-en expressie concepten 
 
@@ -39,7 +43,7 @@ Bijvoorbeeld:
 "name": "@pipeline().parameters.password"
 ```
 
-Expressies kunnen ergens in een JSON-teken reeks waarde worden weer gegeven en hebben altijd een andere JSON-waarde. Als een JSON-waarde een expressie is, wordt de hoofd tekst van de expressie geëxtraheerd door de at-teken ( \@ ) te verwijderen. Als er een letterlijke teken reeks nodig is die begint met \@ , moet deze worden ontsnapd met behulp van \@ \@ . In de volgende voor beelden ziet u hoe expressies worden geëvalueerd.  
+Expressies kunnen ergens in een JSON-teken reeks waarde worden weer gegeven en hebben altijd een andere JSON-waarde. Hier is het *wacht woord* een pijplijn parameter in de expressie. Als een JSON-waarde een expressie is, wordt de hoofd tekst van de expressie geëxtraheerd door de at-teken ( \@ ) te verwijderen. Als er een letterlijke teken reeks nodig is die begint met \@ , moet deze worden ontsnapd met behulp van \@ \@ . In de volgende voor beelden ziet u hoe expressies worden geëvalueerd.  
   
 |JSON-waarde|Resultaat|  
 |----------------|------------|  
@@ -301,13 +305,20 @@ Deze functies zijn handig in voor waarden en kunnen worden gebruikt om elk type 
 | [Ticks](control-flow-expression-language-functions.md#ticks) | De `ticks` eigenschaps waarde voor een opgegeven tijds tempel retour neren. |
 | [utcNow](control-flow-expression-language-functions.md#utcNow) | De huidige tijds tempel retour neren als een teken reeks. |
 
-## <a name="detailed-azure-data-factory-copy-pipeline-with-parameters"></a>Gedetailleerde Azure data factory Copy-pijp lijn met para meters 
+## <a name="detailed-examples-for-practice"></a>Gedetailleerde voor beelden voor de praktijk
+
+### <a name="detailed-azure-data-factory-copy-pipeline-with-parameters"></a>Gedetailleerde Azure data factory Copy-pijp lijn met para meters 
 
 In deze [zelf studie voor het door geven van de Azure Data Factory-pipeline-para meter](https://azure.microsoft.com/mediahandler/files/resourcefiles/azure-data-factory-passing-parameters/Azure%20data%20Factory-Whitepaper-PassingParameters.pdf) wordt uitgelegd hoe u para meters tussen een pijp lijn en activiteit en tussen de activiteiten kunt door geven.
 
-## <a name="detailed--mapping-data-flow-pipeline-with-parameters"></a>Gegevens stroom pijplijn voor gedetailleerde toewijzing met para meters 
+### <a name="detailed--mapping-data-flow-pipeline-with-parameters"></a>Gegevens stroom pijplijn voor gedetailleerde toewijzing met para meters 
 
 Volg de [toewijzings gegevens stroom met para meters](https://docs.microsoft.com/azure/data-factory/parameters-data-flow) voor een uitgebreid voor beeld over het gebruik van para meters in de gegevens stroom.
+
+### <a name="detailed-metadata-driven-pipeline-with-parameters"></a>Gedetailleerde, door Meta gegevensgestuurde pijp lijn met para meters
+
+Volg de [META gegevensgestuurde pijp lijn met para meters](https://docs.microsoft.com/azure/data-factory/how-to-use-trigger-parameterization) voor meer informatie over het gebruik van para meters voor het ontwerpen van door Meta gegevensgestuurde pijp lijnen. Dit is een veelgebruikte use-case voor para meters.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie [systeem variabelen](control-flow-system-variables.md)voor een lijst met systeem variabelen die u in expressies kunt gebruiken.

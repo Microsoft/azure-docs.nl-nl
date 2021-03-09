@@ -10,12 +10,12 @@ author: BlackMist
 ms.date: 11/04/2020
 ms.custom: devx-track-python
 adobe-target: true
-ms.openlocfilehash: 09be6a73b092f6298099e4a11bcd606759515c07
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 00a3ab2954d09a7e70e81d8de3644b678b79d005
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374249"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521387"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -42,7 +42,7 @@ Prognoses of voorspellingen op basis van machine learning kunnen apps en apparat
 Azure Machine Learning biedt alle hulpprogramma's die ontwikkelaars en gegevenswetenschappers nodig hebben voor hun machine learning-werkstromen, waaronder:
 + De [Azure Machine Learning-ontwerpfunctie](tutorial-designer-automobile-price-train-score.md): modules slepen om experimenten te bouwen en vervolgens pijplijnen te implementeren.
 
-+ Jupyter-notebooks: gebruik onze [voorbeelden van notebooks](https://github.com/Azure/MachineLearningNotebooks) of maak uw eigen notebooks om onze <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">SDK voor Python</a> in te zetten voor uw machine learning. 
++ Jupyter-notebooks: gebruik onze [voorbeelden van notebooks](https://github.com/Azure/MachineLearningNotebooks) of maak uw eigen notebooks om onze <a href="/python/api/overview/azure/ml/intro" target="_blank">SDK voor Python</a> in te zetten voor uw machine learning. 
 
 + R-scripts of notebooks waarin u de <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">SDK voor R</a> gebruikt voor het schrijven van uw eigen code of het gebruik van R-modules in de ontwerpfunctie.
 
@@ -60,7 +60,7 @@ U kunt zelfs [MLflow gebruiken om metrische gegevens bij te houden en modellen t
 
 ## <a name="build-ml-models-in-python-or-r"></a>ML-modellen bouwen in Python of R
 
-Begin met het trainen van modellen op uw lokale machine met behulp van de <a href="/python/api/overview/azure/ml/intro?view=azure-ml-py" target="_blank">Python-SDK</a> of <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">R-SDK</a> van Azure Machine Learning. Vervolgens kunt u uitschalen naar de cloud. 
+Begin met het trainen van modellen op uw lokale machine met behulp van de <a href="/python/api/overview/azure/ml/intro" target="_blank">Python-SDK</a> of <a href="https://azure.github.io/azureml-sdk-for-r/reference/index.html" target="_blank">R-SDK</a> van Azure Machine Learning. Vervolgens kunt u uitschalen naar de cloud. 
 
 Dankzij de vele beschikbare [rekendoelen](how-to-create-attach-compute-studio.md) zoals Azure Machine Learning Compute en [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks), en [geavanceerde afstemmingsservices van hyperparameters](how-to-tune-hyperparameters.md), kunt u sneller betere modellen bouwen, met de kracht van de cloud.
 
@@ -91,7 +91,7 @@ U kunt de SDK ook gebruiken voor het [automatiseren van het trainen en afstemmen
 ## <a name="mlops-deploy--lifecycle-management"></a>MLOps: Implementatie- en levenscyclusbeheer
 Wanneer u het juiste model hebt, kunt u dit eenvoudig gebruiken in een webservice, op een IoT-apparaat of in Power BI. Zie het artikel [Hoe implementeren en waar](how-to-deploy-and-where.md) voor meer informatie.
 
-Daarna kunt u uw geïmplementeerde modellen beheren met de [Azure Machine Learning SDK voor Python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py), [Azure Machine Learning Studio](https://ml.azure.com) of de [machine learning CLI](reference-azure-machine-learning-cli.md).
+Daarna kunt u uw geïmplementeerde modellen beheren met de [Azure Machine Learning SDK voor Python](/python/api/overview/azure/ml/), [Azure Machine Learning Studio](https://ml.azure.com) of de [machine learning CLI](reference-azure-machine-learning-cli.md).
 
 Deze modellen kunnen in [realtime](how-to-consume-web-service.md) of [asynchroon](./tutorial-pipeline-batch-scoring-classification.md) worden uitgevoerd om voorspellingen te retourneren voor grote hoeveelheden gegevens.
 

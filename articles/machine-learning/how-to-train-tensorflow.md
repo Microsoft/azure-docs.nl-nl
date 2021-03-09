@@ -10,12 +10,12 @@ author: mx-iao
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 41231e19960edfe1a4f0521b8738fa62a463c927
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 583f588004f41fc07037e7f5e4ce75538a581c70
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796462"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518327"
 ---
 # <a name="train-tensorflow-models-at-scale-with-azure-machine-learning"></a>Tensor flow-modellen op schaal trainen met Azure Machine Learning
 
@@ -36,7 +36,7 @@ Voer deze code uit in een van de volgende omgevingen:
  
  - Uw eigen Jupyter Notebook-server
 
-    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.15.0).
+    - [Installeer de Azure machine learning SDK](/python/api/overview/azure/ml/install) (>= 1.15.0).
     - [Maak een configuratie bestand voor de werk ruimte](how-to-configure-environment.md#workspace).
     - [De voorbeeld script bestanden downloaden](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow/train-hyperparameter-tune-deploy-with-tensorflow) `tf_mnist.py` maar `utils.py`
      
@@ -66,7 +66,7 @@ from azureml.core.compute_target import ComputeTargetException
 
 ### <a name="initialize-a-workspace"></a>Een werk ruimte initialiseren
 
-De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py) object te maken.
+De [Azure machine learning werk ruimte](concept-workspace.md) is de resource op het hoogste niveau voor de service. Het biedt u een centrale locatie voor het werken met alle artefacten die u maakt. In de python-SDK hebt u toegang tot de werkruimte artefacten door een [`workspace`](/python/api/azureml-core/azureml.core.workspace.workspace) object te maken.
 
 Maak een werkruimte object op basis van het `config.json` bestand dat in de [sectie vereisten](#prerequisites)is gemaakt.
 
@@ -192,7 +192,7 @@ Zie [software omgevingen maken en gebruiken in azure machine learning](how-to-us
 
 ### <a name="create-a-scriptrunconfig"></a>Een ScriptRunConfig maken
 
-Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Eventuele argumenten voor uw trainings script worden door gegeven via de opdracht regel indien opgegeven in de `arguments` para meter.
+Maak een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig)-object om de configuratiegegevens van uw trainingstaak op te geven, inclusief het trainingsscript, de omgeving die u wilt gebruiken en het rekendoel om uit te voeren. Eventuele argumenten voor uw trainings script worden door gegeven via de opdracht regel indien opgegeven in de `arguments` para meter.
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -220,7 +220,7 @@ Zie [trainings uitvoeringen configureren en verzenden](how-to-set-up-training-ta
 
 ### <a name="submit-a-run"></a>Een run verzenden
 
-Het [object run](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py) biedt de interface voor de uitvoerings geschiedenis terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
+Het [object run](/python/api/azureml-core/azureml.core.run%28class%29) biedt de interface voor de uitvoerings geschiedenis terwijl de taak wordt uitgevoerd en nadat deze is voltooid.
 
 ```Python
 run = Experiment(workspace=ws, name='Tutorial-TF-Mnist').submit(src)
@@ -289,7 +289,7 @@ dependencies:
   - horovod==0.19.5
 ```
 
-Als u een gedistribueerde taak wilt uitvoeren met behulp van MPI/Horovod op Azure ML, moet u een [MpiConfiguration](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration?preserve-view=true&view=azure-ml-py) opgeven voor de `distributed_job_config` para meter van de ScriptRunConfig-constructor. De onderstaande code configureert een gedistribueerde taak van 2 knoop punten die per knoop punt wordt uitgevoerd. Als u ook meerdere processen per knoop punt wilt uitvoeren (dat wil zeggen, als uw cluster-SKU meerdere Gpu's heeft), geeft u ook de `process_count_per_node` para meter op in MpiConfiguration (de standaard instelling is `1` ).
+Als u een gedistribueerde taak wilt uitvoeren met behulp van MPI/Horovod op Azure ML, moet u een [MpiConfiguration](/python/api/azureml-core/azureml.core.runconfig.mpiconfiguration) opgeven voor de `distributed_job_config` para meter van de ScriptRunConfig-constructor. De onderstaande code configureert een gedistribueerde taak van 2 knoop punten die per knoop punt wordt uitgevoerd. Als u ook meerdere processen per knoop punt wilt uitvoeren (dat wil zeggen, als uw cluster-SKU meerdere Gpu's heeft), geeft u ook de `process_count_per_node` para meter op in MpiConfiguration (de standaard instelling is `1` ).
 
 ```python
 from azureml.core import ScriptRunConfig
@@ -309,7 +309,7 @@ Zie [gedistribueerde tensor flow met Horovod](https://github.com/Azure/MachineLe
 
 Als u [systeem eigen gedistribueerde tensor flow](https://www.tensorflow.org/guide/distributed_training) in uw trainings code gebruikt, bijvoorbeeld tensor Flow 2. x `tf.distribute.Strategy` API, kunt u de gedistribueerde taak ook starten via Azure ml. 
 
-Als u dit wilt doen, geeft u een [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration?preserve-view=true&view=azure-ml-py) op voor de `distributed_job_config` para meter van de ScriptRunConfig-constructor. Als u gebruikt `tf.distribute.experimental.MultiWorkerMirroredStrategy` , geeft u de `worker_count` in het TensorflowConfiguration op dat overeenkomt met het aantal knoop punten voor uw trainings taak.
+Als u dit wilt doen, geeft u een [TensorflowConfiguration](/python/api/azureml-core/azureml.core.runconfig.tensorflowconfiguration) op voor de `distributed_job_config` para meter van de ScriptRunConfig-constructor. Als u gebruikt `tf.distribute.experimental.MultiWorkerMirroredStrategy` , geeft u de `worker_count` in het TensorflowConfiguration op dat overeenkomt met het aantal knoop punten voor uw trainings taak.
 
 ```python
 import os

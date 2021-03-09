@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: 1309ad1b3e3f6bd6f9b543959220bf71c569f083
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: fcb678efe29178784c9233e79b307f705c40e3f7
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175002"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518671"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -69,9 +69,14 @@ In de volgende vijf secties ziet u hoe u het netwerk scenario kunt beveiligen da
 Gebruik de volgende stappen om uw werk ruimte en de bijbehorende resources te beveiligen. Met deze stappen kunnen uw services communiceren in het virtuele netwerk.
 
 1. Maak een [persoonlijke werk ruimte voor koppelen](how-to-secure-workspace-vnet.md#secure-the-workspace-with-private-endpoint) om communicatie tussen uw VNet en de werk ruimte mogelijk te maken.
-1. Voeg Azure Key Vault toe aan het virtuele netwerk met een [service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md) of een [persoonlijk eind punt](../key-vault/general/private-link-service.md). Stel Key Vault in op [' vertrouwde micro soft-services mogen deze firewall overs Laan '](how-to-secure-workspace-vnet.md#secure-azure-key-vault).
-1. Voeg uw Azure Storage-account toe aan het virtuele netwerk met een [service-eind](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) punt of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints).
-1. [Configureer Azure container Registry om een persoonlijk eind punt te gebruiken](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr).
+1. Voeg de volgende services toe aan het virtuele _netwerk met behulp van_ een service- __eind__ punt of een __persoonlijk eind punt__. U moet ook vertrouwde micro soft-Services toegang geven tot deze services:
+    
+    | Service | Eindpunt gegevens | Vertrouwde informatie toestaan |
+    | ----- | ----- | ----- |
+    | __Azure Key Vault__| [Service-eind punt](../key-vault/general/overview-vnet-service-endpoints.md)</br>[Persoonlijk eind punt](../key-vault/general/private-link-service.md) | [Vertrouwde micro soft-Services toestaan deze firewall over te slaan](how-to-secure-workspace-vnet.md#secure-azure-key-vault) |
+    | __Azure Storage-account__ | [Service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints)</br>[Persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints) | [Toegang verlenen aan vertrouwde Azure-Services](../storage/common/storage-network-security.md#grant-access-to-trusted-azure-services) |
+    | __Azure Container Registry__ | [Service-eind punt](how-to-secure-workspace-vnet.md#enable-azure-container-registry-acr)</br>[Persoonlijk eind punt](../container-registry/container-registry-private-link.md) | [Vertrouwde services toestaan](../container-registry/allow-access-trusted-services.md) |
+
 
 ![Architectuur diagram dat laat zien hoe de werk ruimte en gekoppelde resources met elkaar communiceren via service-eind punten of particuliere eind punten binnen een VNet](./media/how-to-network-security-overview/secure-workspace-resources.png)
 

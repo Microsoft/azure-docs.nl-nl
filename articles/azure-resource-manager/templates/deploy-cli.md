@@ -2,19 +2,19 @@
 title: Resources implementeren met Azure CLI en sjabloon
 description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources worden gedefinieerd in een resource manager-sjabloon of een Bicep-bestand.
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 547b860869738f3cfe12d6a22262829ef132a671
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/04/2021
+ms.openlocfilehash: d0c48a5cf05d6cec495a7a96e181910a0849a1ac
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101741120"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521693"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Resources implementeren met ARM-sjablonen en Azure CLI
 
-In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager sjablonen (ARM-sjablonen) of Bicep-bestand om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u overzicht van [sjabloon implementatie](overview.md) of [Bicep overzicht](bicep-overview.md).
+In dit artikel wordt uitgelegd hoe u Azure CLI gebruikt met Azure Resource Manager sjablonen (ARM-sjablonen) of Bicep-bestanden om uw resources te implementeren in Azure. Als u niet bekend bent met de concepten van het implementeren en beheren van uw Azure-oplossingen, raadpleegt u overzicht van [sjabloon implementatie](overview.md) of [Bicep overzicht](bicep-overview.md).
 
-De implementatie-opdrachten zijn gewijzigd in azure CLI-versie 2.2.0. Voor de voor beelden in dit artikel is Azure CLI-versie 2.2.0 of hoger vereist.
+De implementatie-opdrachten zijn gewijzigd in azure CLI-versie 2.2.0. Voor de voor beelden in dit artikel is Azure CLI-versie 2.2.0 of hoger vereist. Voor het implementeren van Bicep-bestanden hebt u [Azure CLI versie 2.20.0 of hoger](/cli/azure/install-azure-cli)nodig.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
@@ -85,7 +85,7 @@ De implementatie kan enkele minuten duren. Wanneer het is voltooid, ziet u een b
 ## <a name="deploy-remote-template"></a>Externe sjabloon implementeren
 
 > [!NOTE]
-> Op dit moment biedt Azure CLI geen ondersteuning voor het implementeren van Remove Bicep-bestanden.
+> Momenteel biedt Azure CLI geen ondersteuning voor het implementeren van externe Bicep-bestanden. Als u een extern Bicep-bestand wilt implementeren, gebruikt u CLI Bicep om eerst het Bicep-bestand te compileren naar een JSON-sjabloon.
 
 In plaats van ARM-sjablonen op uw lokale computer op te slaan, kunt u ze beter opslaan op een externe locatie. U kunt sjablonen opslaan in een opslagplaats voor broncodebeheer (zoals GitHub). U kunt de sjablonen ook opslaan in een Azure-opslagaccount voor gedeelde toegang in uw organisatie.
 
@@ -148,7 +148,7 @@ Geef elke implementatie een unieke naam om conflicten met gelijktijdige implemen
 ## <a name="deploy-template-spec"></a>Sjabloonspecificatie implementeren
 
 > [!NOTE]
-> Momenteel biedt Azure CLI geen ondersteuning voor het maken van sjabloon specificaties door Bicep-bestanden op te geven. U kunt echter een ARM-sjabloon of een Bicep-bestand maken met de resource [micro soft. resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) voor het implementeren van een sjabloon specificatie. Hier volgt een [voor beeld](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep).
+> Momenteel biedt Azure CLI geen ondersteuning voor het maken van sjabloon specificaties door Bicep-bestanden op te geven. U kunt echter een Bicep-bestand maken met de resource [micro soft. resources/templateSpecs](/azure/templates/microsoft.resources/templatespecs) voor het implementeren van een sjabloon specificatie. Hier volgt een [voor beeld](https://github.com/Azure/azure-docs-json-samples/blob/master/create-template-spec-using-template/azuredeploy.bicep).
 
 In plaats van een lokale of externe sjabloon te implementeren, kunt u een [sjabloon specificatie](template-specs.md)maken. De sjabloon specificatie is een resource in uw Azure-abonnement die een ARM-sjabloon bevat. Het is eenvoudig om de sjabloon veilig te delen met gebruikers in uw organisatie. U gebruikt op rollen gebaseerd toegangs beheer van Azure (Azure RBAC) om toegang te verlenen tot de sjabloon specificatie. Deze functie is momenteel beschikbaar als preview-versie.
 

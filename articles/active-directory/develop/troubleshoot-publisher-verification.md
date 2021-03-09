@@ -13,12 +13,12 @@ ms.date: 01/28/2021
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 9ae5d2279baab69d762a71b2f6400009747c16fe
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: acce282dcaac971716a97d7722543d78e28b7a34
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584210"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517664"
 ---
 # <a name="troubleshoot-publisher-verification"></a>Problemen met Verificatie van uitgever oplossen
 Als u het proces niet kunt volt ooien of onverwachte problemen ondervindt met de verificatie van de [Uitgever](publisher-verification-overview.md), moet u eerst het volgende doen als u fouten ontvangt of een onverwacht gedrag ziet: 
@@ -241,7 +241,7 @@ Wanneer een aanvraag voor het toevoegen van een geverifieerde uitgever wordt ged
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u alle voor gaande informatie hebt gecontroleerd en nog steeds een fout ontvangt van Microsoft Graph, moet u zoveel mogelijk van de volgende informatie verzamelen die betrekking heeft op de mislukte aanvraag en [contact opnemen met micro soft ondersteuning](developer-support-help-options.md#open-a-support-request).
+Als u alle voor gaande informatie hebt gecontroleerd en nog steeds een fout ontvangt van Microsoft Graph, moet u zoveel mogelijk van de volgende informatie verzamelen die betrekking heeft op de mislukte aanvraag en [contact opnemen met micro soft ondersteuning](developer-support-help-options.md#create-an-azure-support-request).
 
 - Tijdstempel 
 - CorrelationId 

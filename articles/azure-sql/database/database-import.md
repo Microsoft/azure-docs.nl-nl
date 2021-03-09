@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/29/2020
-ms.openlocfilehash: 30a511caec82ead406f0a80f107e4261a707bfdb
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
-ms.translationtype: HT
+ms.openlocfilehash: 8d246f06db9fc9f4e6916ea69ec49ddaf8cf0667
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040176"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519772"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-database-in-azure-sql-database-or-azure-sql-managed-instance"></a>Quickstart: Een BACPAC-bestand importeren in een database in Azure SQL Database of Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -42,7 +42,7 @@ Als u een database wilt migreren naar een [Azure SQL Managed Instance](../manage
 > [!NOTE]
 > Op machines waarmee import-/exportaanvragen worden verwerkt die zijn verzonden via Azure Portal of PowerShell, moet het BACPAC-bestand worden opgeslagen, evenals tijdelijke bestanden die worden gegenereerd door Data-Tier Application Framework (DacFX). De benodigde schijfruimte varieert aanzienlijk tussen databases met dezelfde grootte. Er kan tot drie keer zoveel schijfruimte nodig zijn als de grootte van de database. Machines waarmee de import-/exportaanvraag wordt uitgevoerd, hebben slechts 450 GB lokale schijfruimte. Als gevolg hiervan kunnen sommige aanvragen mislukken met de fout `There is not enough space on the disk`. Dit kan worden opgelost door sqlpackage.exe uit te voeren op een machine met voldoende lokale schijfruimte. Om dit probleem te voorkomen wordt u aangeraden SqlPackage te gebruiken om databases te importeren/exporteren die groter zijn dan 150 GB.
 
-1. Als u vanuit een BACPAC-bestand wilt importeren in één nieuwe database met behulp van Azure Portal, opent u de juiste serverpagina en selecteert u vervolgens op de werkbalk **Database importeren** .  
+1. Als u vanuit een BACPAC-bestand wilt importeren in één nieuwe database met behulp van Azure Portal, opent u de juiste serverpagina en selecteert u vervolgens op de werkbalk **Database importeren**.  
 
    ![Database-import1](./media/database-import/sql-server-import-database.png)
 
@@ -52,9 +52,9 @@ Als u een database wilt migreren naar een [Azure SQL Managed Instance](../manage
 
    ![Database-import2](./media/database-import/sql-server-import-database-settings.png)
 
-1. Klik op **OK** .
+1. Klik op **OK**.
 
-1. Als u de voortgang van het importeren wilt volgen, opent u de serverpagina van de database en selecteert u bij **Instellingen** de optie **Geschiedenis van importeren/exporteren** . Wanneer het importeren is gelukt, wordt de status **Voltooid** weergegeven.
+1. Als u de voortgang van het importeren wilt volgen, opent u de serverpagina van de database en selecteert u bij **Instellingen** de optie **Geschiedenis van importeren/exporteren**. Wanneer het importeren is gelukt, wordt de status **Voltooid** weergegeven.
 
    ![Status van database importeren](./media/database-import/sql-server-import-database-history.png)
 
@@ -68,7 +68,7 @@ Voor schaalbaarheid en prestaties wordt u aangeraden in de meeste productieomgev
 
 Het op DTU gebaseerde inrichtingsmodel ondersteunt de waarden voor geselecteerde databases met een maximale grootte voor elke laag. Bij het importeren van een database [moet u een van deze ondersteunde waarden gebruiken](/sql/t-sql/statements/create-database-transact-sql). 
 
-Met de volgende SqlPackage-opdracht wordt de **AdventureWorks2008R2** -database uit de lokale opslag in een logische SQL-server met de naam **mynewserver20170403** geïmporteerd. Er wordt een nieuwe database gemaakt met de naam **myMigratedDatabase** met een **Premium** -servicelaag en een **P6** Service Objective. Wijzig deze waarden in waarden die geschikt zijn voor uw omgeving.
+Met de volgende SqlPackage-opdracht wordt de **AdventureWorks2008R2**-database uit de lokale opslag in een logische SQL-server met de naam **mynewserver20170403** geïmporteerd. Er wordt een nieuwe database gemaakt met de naam **myMigratedDatabase** met een **Premium**-servicelaag en een **P6** Service Objective. Wijzig deze waarden in waarden die geschikt zijn voor uw omgeving.
 
 ```cmd
 sqlpackage.exe /a:import /tcs:"Data Source=<serverName>.database.windows.net;Initial Catalog=<migratedDatabase>;User Id=<userId>;Password=<password>" /sf:AdventureWorks2008R2.bacpac /p:DatabaseEdition=Premium /p:DatabaseServiceObjective=P6
@@ -126,7 +126,7 @@ while ($importStatus.Status -eq "InProgress") {
 $importStatus
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de opdracht [az-sql-db-import](/cli/azure/sql/db#az-sql-db-import) om een aanvraag voor het importeren van een database te verzenden naar Azure. Afhankelijk van de grootte van de database kan het enige tijd duren voordat de importbewerking is voltooid. Het op DTU gebaseerde inrichtingsmodel ondersteunt de waarden voor geselecteerde databases met een maximale grootte voor elke laag. Bij het importeren van een database [moet u een van deze ondersteunde waarden gebruiken](/sql/t-sql/statements/create-database-transact-sql). 
 
@@ -144,6 +144,15 @@ az sql db import --resource-group "<resourceGroup>" --server "<server>" --name "
 
 > [!TIP]
 > Zie [Database uit een BACPAC-bestand importeren](scripts/import-from-bacpac-powershell.md) voor een ander scriptvoorbeeld.
+
+## <a name="cancel-the-import-request"></a>De import aanvraag annuleren
+
+Gebruik de [API data base-annuleren](https://docs.microsoft.com/rest/api/sql/databaseoperations/cancel) of de Power shell [-opdracht stop-AzSqlDatabaseActivity](https://docs.microsoft.com/powershell/module/az.sql/Stop-AzSqlDatabaseActivity?view=azps-5.5.0). Hier volgt een voor beeld van een Power shell-opdracht.
+
+```cmd
+Stop-AzSqlDatabaseActivity -ResourceGroupName $ResourceGroupName -ServerName $ServerName -DatabaseName $DatabaseName -OperationId $Operation.OperationId
+```
+
 
 ## <a name="limitations"></a>Beperkingen
 

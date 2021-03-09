@@ -16,12 +16,12 @@ ms.date: 08/13/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88eae702782e2f1af9c20797676214db458c2adc
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: eeede88bfbe024a66e40270240d32488e581dd77
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937619"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517698"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Naadloze eenmalige aanmelding met Azure Active Directory
 
@@ -37,7 +37,7 @@ Naadloze SSO kan worden gecombineerd met de aanmeldings methoden voor [wachtwoor
 
 ## <a name="sso-via-primary-refresh-token-vs-seamless-sso"></a>Eenmalige aanmelding via het primaire vernieuwings token versus naadloze SSO
 
-Voor Windows 10 is het raadzaam SSO via het primaire vernieuwings token (PRT) te gebruiken. Voor Windows 7 en 8,1 is het raadzaam om naadloze SSO te gebruiken.
+Voor Windows 10, Windows Server 2016 en hoger, is het raadzaam om SSO via het primaire vernieuwings token (PRT) te gebruiken. Voor Windows 7 en 8,1 is het raadzaam om naadloze SSO te gebruiken.
 Voor naadloze SSO moet het apparaat van de gebruiker lid zijn van een domein, maar dit wordt niet gebruikt op apparaten die zijn toegevoegd aan Windows 10 [Azure AD](../devices/concept-azure-ad-join.md) of [hybride Azure AD gekoppelde apparaten](../devices/concept-azure-ad-join-hybrid.md). SSO op Azure AD join, hybride Azure AD toegevoegd en geregistreerde Azure AD-apparaten werken op basis van het [primaire vernieuwings token (PRT)](../devices/concept-primary-refresh-token.md)
 
 SSO via PRT werkt wanneer apparaten zijn geregistreerd bij Azure AD voor hybride Azure AD, gekoppelde of persoonlijke geregistreerde apparaten van Azure via werk-of school account toevoegen. Zie voor meer informatie over hoe SSO werkt met Windows 10 met behulp van PRT: [primair vernieuwings token (PRT) en Azure AD](../devices/concept-primary-refresh-token.md)

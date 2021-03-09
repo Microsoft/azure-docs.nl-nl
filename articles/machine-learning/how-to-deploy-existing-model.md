@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 07/17/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy
-ms.openlocfilehash: 0a536781f3218807c36f6eefe738b9a375de8d4b
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 8076e3f6b2198abe46ae49cd8e0fd2b02f000231
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102213127"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102519347"
 ---
 # <a name="deploy-your-existing-model-with-azure-machine-learning"></a>Uw bestaande model implementeren met Azure Machine Learning
 
@@ -28,11 +28,11 @@ Zie [machine learning modellen beheren, implementeren en bewaken](concept-model-
 ## <a name="prerequisites"></a>Vereisten
 
 * [Een Azure Machine Learning-werk ruimte](how-to-manage-workspace.md)
-  + Bij python-voor beelden wordt ervan uitgegaan dat de `ws` variabele is ingesteld op uw Azure machine learning-werk ruimte. Raadpleeg de [documentatie van Azure machine learning SDK voor python](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=trueworkspace)voor meer informatie over het maken van een verbinding met de werk ruimte.
+  + Bij python-voor beelden wordt ervan uitgegaan dat de `ws` variabele is ingesteld op uw Azure machine learning-werk ruimte. Raadpleeg de [documentatie van Azure machine learning SDK voor python](/python/api/overview/azure/ml/#workspace)voor meer informatie over het maken van een verbinding met de werk ruimte.
   
   + CLI-voor beelden gebruiken tijdelijke aanduidingen van `myworkspace` en `myresourcegroup` , die u moet vervangen door de naam van uw werk ruimte en de resource groep waarin deze is opgenomen.
 
-* De [Azure machine learning python-SDK](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).  
+* De [Azure machine learning python-SDK](/python/api/overview/azure/ml/install).  
 
 * De [Azure cli](/cli/azure/install-azure-cli) -en [machine learning cli-extensie](reference-azure-machine-learning-cli.md).
 
@@ -52,7 +52,7 @@ model = Model.register(model_path = "./models",
                        workspace = ws)
 ```
 
-Zie voor meer informatie de referentie [model. register ()](/python/api/azureml-core/azureml.core.model%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none-) .
+Zie voor meer informatie de referentie [model. register ()](/python/api/azureml-core/azureml.core.model%28class%29#register-workspace--model-path--model-name--tags-none--properties-none--description-none--datasets-none--model-framework-none--model-framework-version-none--child-paths-none--sample-input-dataset-none--sample-output-dataset-none--resource-configuration-none-) .
 
 ```azurecli
 az ml model register -p ./models -n sentiment -w myworkspace -g myresourcegroup
@@ -103,7 +103,7 @@ inference_config = InferenceConfig(entry_script="score.py",
 Raadpleeg voor meer informatie de volgende artikelen:
 
 + [Het gebruik van omgevingen](how-to-use-environments.md).
-+ [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig?preserve-view=true&view=azure-ml-py) -verwijzing.
++ [InferenceConfig](/python/api/azureml-core/azureml.core.model.inferenceconfig) -verwijzing.
 
 
 De CLI laadt de configuratie van de deinterferentie van een YAML-bestand:
@@ -220,7 +220,7 @@ Zie [Modellen implementeren met Azure Machine Learning](how-to-deploy-and-where.
 
 ## <a name="define-deployment"></a>Implementatie definiëren
 
-Het [webservice](/python/api/azureml-core/azureml.core.webservice?preserve-view=true&view=azure-ml-py) -pakket bevat de klassen die worden gebruikt voor de implementatie. De klasse die u gebruikt, bepaalt waar het model wordt geïmplementeerd. Als u bijvoorbeeld wilt implementeren als webservice op de Azure Kubernetes-service, gebruikt u [AksWebService.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py&preserve-view=true#&preserve-view=truedeploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-) om de implementatie configuratie te maken.
+Het [webservice](/python/api/azureml-core/azureml.core.webservice) -pakket bevat de klassen die worden gebruikt voor de implementatie. De klasse die u gebruikt, bepaalt waar het model wordt geïmplementeerd. Als u bijvoorbeeld wilt implementeren als webservice op de Azure Kubernetes-service, gebruikt u [AksWebService.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.akswebservice#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none--gpu-cores-none--period-seconds-none--initial-delay-seconds-none--timeout-seconds-none--success-threshold-none--failure-threshold-none--namespace-none--token-auth-enabled-none--compute-target-name-none-) om de implementatie configuratie te maken.
 
 De volgende python-code definieert een implementatie configuratie voor een lokale implementatie. Met deze configuratie wordt het model als een webservice geïmplementeerd op uw lokale computer.
 
@@ -233,7 +233,7 @@ from azureml.core.webservice import LocalWebservice
 deployment_config = LocalWebservice.deploy_configuration()
 ```
 
-Zie de referentie [LocalWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.localwebservice?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-configuration-port-none-) voor meer informatie.
+Zie de referentie [LocalWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.localwebservice#deploy-configuration-port-none-) voor meer informatie.
 
 De CLI laadt de implementatie configuratie van een YAML-bestand:
 
@@ -260,7 +260,7 @@ print(service.state)
 print("scoring URI: " + service.scoring_uri)
 ```
 
-Zie de naslag gids voor [model. Deploy ()](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py#&preserve-view=truedeploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) voor meer informatie.
+Zie de naslag gids voor [model. Deploy ()](/python/api/azureml-core/azureml.core.model.model#deploy-workspace--name--models--inference-config-none--deployment-config-none--deployment-target-none--overwrite-false-) voor meer informatie.
 
 Gebruik de volgende opdracht om het model te implementeren vanuit de CLI. Met deze opdracht wordt versie 1 van het geregistreerde model ( `sentiment:1` ) geïmplementeerd met behulp van de inschakel-en implementatie configuratie die is opgeslagen in de `inferenceConfig.json` `deploymentConfig.json` bestanden en:
 

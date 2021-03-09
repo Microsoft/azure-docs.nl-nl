@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/07/2021
 ms.author: damendo
 ms.custom: subject-armqs
-ms.openlocfilehash: ded7b24461fdcdbc3d020a487cafc20620633097
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: bc075e5074fe39ad38e45235af932b40fef78fce
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019717"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521863"
 ---
 # <a name="quickstart-configure-network-security-group-flow-logs-by-using-an-arm-template"></a>Quickstart: Stroomlogboeken voor netwerkbeveiligingsgroepen configureren met behulp van een ARM-sjabloon
 
@@ -82,7 +82,7 @@ Zie [Microsoft.Network networkWatchers/flowLogs](/azure/templates/microsoft.netw
 
 Raadpleeg, als u voor de eerste keer ARM-sjablonen gebruikt, de volgende artikelen voor meer informatie over ARM-sjablonen:
 
-- [Resources implementeren met ARM-sjablonen en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md#deploy-local-template)
+- [Resources implementeren met ARM-sjablonen en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md#deploy-local-template-or-bicep-file)
 - [Zelfstudie: uw eerste ARM-sjabloon maken en implementeren](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
 
 Het volgende voorbeeld is een volledige sjabloon. Het is ook de eenvoudigste versie van de sjabloon. Het voorbeeld bevat de minimale parameters die worden doorgegeven voor het instellen van NSG-stroomlogboeken. Zie het overzichtsartikel [NSG-stroomlogboeken vanuit een Azure Resource Manager-sjabloon configureren](network-watcher-nsg-flow-logging-azure-resource-manager.md) voor meer voorbeelden.
@@ -145,7 +145,7 @@ New-AzResourceGroupDeployment -Name EnableFlowLog -ResourceGroupName NetworkWatc
 U hebt twee opties om te controleren of uw implementatie is geslaagd:
 
 - In uw PowerShell-console wordt `ProvisioningState` weergeven als `Succeeded`.
-- Ga naar de [portalpagina voor NSG-stroomlogboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) om uw wijzigingen te bevestigen. 
+- Ga naar de [portalpagina voor NSG-stroomlogboeken](https://ms.portal.azure.com/#blade/Microsoft_Azure_Network/NetworkWatcherMenuBlade/flowLogs) om uw wijzigingen te bevestigen.
 
 Als er problemen zijn met de implementatie, raadpleegt u [Veelvoorkomende fouten in Azure-implementaties met Azure Resource Manager oplossen](../azure-resource-manager/templates/common-deployment-errors.md).
 

@@ -823,8 +823,8 @@
           href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes.md?context=/azure/virtual-machines/context/context
     - name: Meer informatie over het opnieuw opstarten van VM'S
       href: understand-vm-reboots.md
-    - name: Toestanden en levenscyclus
-      href: states-lifecycle.md
+    - name: Staten en facturering
+      href: states-billing.md
     - name: Azure-regio's
       href: regions.md
 - name: Disks
@@ -1355,7 +1355,7 @@
             - name: Veelgestelde vragen over algemene beschikbaarheid
               href: ../azure-monitor/vm/vminsights-ga-release-faq.md?context=%2fazure%2fvirtual-machines%2fcontext%2fcontext
             - name: Veelgestelde vragen
-              href: ../azure-monitor/faq.md
+              href: ../azure-monitor/faq.md?context=/azure/virtual-machines/context/context
             - name: Bewaking inschakelen
               items:
                 - name: Bewakingsoverzicht inschakelen

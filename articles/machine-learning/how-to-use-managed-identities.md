@@ -10,12 +10,12 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 014c592713a8568b3bbc7e8e536f81b203271ccc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a7efd57100ad89fa9824b7a635e11698515e13ae
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388070"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102521013"
 ---
 # <a name="use-managed-identities-with-azure-machine-learning-preview"></a>Beheerde identiteiten gebruiken met Azure Machine Learning (preview-versie)
 
@@ -38,7 +38,7 @@ In dit artikel leert u hoe u beheerde identiteiten kunt gebruiken voor het volge
 
 - Een Azure Machine Learning-werkruimte. Zie [een Azure machine learning-werk ruimte maken](how-to-manage-workspace.md)voor meer informatie.
 - De [Azure cli-extensie voor de machine learning-service](reference-azure-machine-learning-cli.md)
-- De [Azure machine learning python-SDK](/python/api/overview/azure/ml/intro?view=azure-ml-py).
+- De [Azure machine learning python-SDK](/python/api/overview/azure/ml/intro).
 - Als u rollen wilt toewijzen, moet de aanmelding voor uw Azure-abonnement de rol [Managed Identity-operator](../role-based-access-control/built-in-roles.md#managed-identity-operator) hebben, of een andere rol die de vereiste acties verleent (zoals __eigenaar__).
 - U moet bekend zijn met het maken en werken met [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md).
 
@@ -107,7 +107,7 @@ Om toegang te krijgen tot de ACR van de werk ruimte, maakt u machine learning Co
 
 # <a name="python"></a>[Python](#tab/python)
 
-Wanneer u een reken cluster maakt met de [AmlComputeProvisioningConfiguration](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcomputeprovisioningconfiguration?view=azure-ml-py), gebruikt `identity_type` u de para meter om het type beheerde identiteit in te stellen.
+Wanneer u een reken cluster maakt met de [AmlComputeProvisioningConfiguration](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcomputeprovisioningconfiguration), gebruikt `identity_type` u de para meter om het type beheerde identiteit in te stellen.
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
@@ -191,7 +191,7 @@ In dit scenario bouwt Azure Machine Learning service de training of de detrainin
 
         De resource-ID van de UAI is de Azure-Resource-ID van de door de gebruiker toegewezen identiteit in de indeling `/subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<UAI name>` .
 
-1. Geef de externe ACR en de client-ID op van de door de __gebruiker toegewezen beheerde identiteit__ in werkruimte verbindingen met behulp van [Workspace.set_connection methode](/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#set-connection-name--category--target--authtype--value-):
+1. Geef de externe ACR en de client-ID op van de door de __gebruiker toegewezen beheerde identiteit__ in werkruimte verbindingen met behulp van [Workspace.set_connection methode](/python/api/azureml-core/azureml.core.workspace.workspace#set-connection-name--category--target--authtype--value-):
 
     ```python
     workspace.set_connection(
@@ -211,7 +211,7 @@ env = Environment(name="my-env")
 env.docker.base_image = "<acr url>/my-repo/my-image:latest"
 ```
 
-Desgewenst kunt u de URL van de beheerde identiteits bron en de client-ID opgeven in de omgevings definitie zelf met behulp van [RegistryIdentity](/python/api/azureml-core/azureml.core.container_registry.registryidentity?view=azure-ml-py). Als u de register identiteit expliciet gebruikt, worden alle eerder opgegeven werkruimte verbindingen overschreven:
+Desgewenst kunt u de URL van de beheerde identiteits bron en de client-ID opgeven in de omgevings definitie zelf met behulp van [RegistryIdentity](/python/api/azureml-core/azureml.core.container_registry.registryidentity). Als u de register identiteit expliciet gebruikt, worden alle eerder opgegeven werkruimte verbindingen overschreven:
 
 ```python
 from azureml.core.container_registry import RegistryIdentity

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: fe3f2328bb1ec9e7bb2ef79c09a821412ce7f7e1
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 5748bf3d428102e296067dc5d1927ba487d575bc
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102423982"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518718"
 ---
 # <a name="run-jupyter-notebooks-in-your-workspace"></a>Jupyter-notebooks uitvoeren in uw werk ruimte
 
@@ -115,7 +115,7 @@ Alleen u kunt de compute-instanties zien en gebruiken die u maakt.  Uw **gebruik
 
 ### <a name="view-logs-and-output"></a>Logboeken en uitvoer weer geven
 
-Gebruik [notebook widgets](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py) om de voortgang van de uitvoering en logboeken weer te geven. Een widget is asynchroon en levert updates totdat de training is voltooid. Azure Machine Learning widgets worden ook ondersteund in Jupyter en JupterLab.
+Gebruik [notebook widgets](/python/api/azureml-widgets/azureml.widgets) om de voortgang van de uitvoering en logboeken weer te geven. Een widget is asynchroon en levert updates totdat de training is voltooid. Azure Machine Learning widgets worden ook ondersteund in Jupyter en JupterLab.
 
 :::image type="content" source="media/how-to-run-jupyter-notebooks/jupyter-widget.png" alt-text="Scherm opname: Jupyter notebook-widget ":::
 
@@ -195,7 +195,7 @@ Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraag
 
    :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
 
-| Shortcutdimensie                      | Description                          |
+| Shortcutdimensie                      | Beschrijving                          |
 | ----------------------------- | ------------------------------------|
 | Enter                         | De modus Bewerken openen             |        
 | Shift+Enter                 | Run-cel, hieronder selecteren         |     
@@ -239,7 +239,7 @@ De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraa
 
 Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
 
-| Shortcutdimensie                      | Description|                                     
+| Shortcutdimensie                      | Beschrijving|                                     
 | ----------------------------- | ----------------------------------------------- |
 | Escape                        | Voer de opdracht modus in|  
 | Control/Command + Space       | IntelliSense activeren |

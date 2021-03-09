@@ -8,16 +8,16 @@ ms.date: 01/19/2021
 ms.topic: how-to
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fad065795345314c58e83c8d2614ed01c9e78e49
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 174ec8c42ea17ccae04769d7c0baaa91b8e7025b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805526"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102517868"
 ---
 # <a name="cloud-sync-troubleshooting"></a>Problemen met Cloud synchronisatie oplossen
 
-Cloud synchronisatie raakt veel verschillende dingen en heeft veel verschillende afhankelijkheden. Dit breed bereik kan verschillende problemen veroorzaken. Dit artikel helpt u bij het oplossen van deze problemen. Hierin worden de typische gebieden geïntroduceerd voor het richten op, het verzamelen van aanvullende informatie en de verschillende technieken die u kunt gebruiken om problemen op te sporen.
+Cloudsynchronisatie heeft veel verschillende aspecten en afhankelijkheden. Het brede bereik ervan kan leiden tot verschillende problemen. Dit artikel helpt u bij het oplossen van deze problemen. Het geeft aan op welke gebieden u zich het beste kunt richten, hoe u aanvullende informatie kunt verzamelen, en welke verschillende technieken u kunt gebruiken om problemen op te sporen.
 
 
 ## <a name="common-troubleshooting-areas"></a>Algemene probleemoplossings gebieden
@@ -120,7 +120,7 @@ Er wordt mogelijk een fout bericht weer gegeven wanneer u de Cloud inrichtings A
 
 Dit probleem wordt meestal veroorzaakt door de agent waardoor de Power shell-registratie scripts niet kunnen worden uitgevoerd vanwege het lokale Power shell-uitvoerings beleid.
 
-Om dit probleem op te lossen, wijzigt u het Power shell-uitvoerings beleid op de-server. U moet het beleid voor de computer en gebruiker instellen op niet- *gedefinieerde* of *RemoteSigned*. Als ze zijn ingesteld als *onbeperkt*, wordt deze fout weer geven. Zie [Power shell Execution policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6)(Engelstalig) voor meer informatie. 
+Om dit probleem op te lossen, wijzigt u het Power shell-uitvoerings beleid op de-server. U moet het beleid voor de computer en gebruiker instellen op niet- *gedefinieerde* of *RemoteSigned*. Als ze zijn ingesteld als *onbeperkt*, wordt deze fout weer geven. Zie [Power shell Execution policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)(Engelstalig) voor meer informatie. 
 
 ### <a name="log-files"></a>Logboekbestanden
 

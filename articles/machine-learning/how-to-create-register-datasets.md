@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 9a50d8402515cb7aafa9a1b02c8b8c18412f6618
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a8f1ca1da54c816199a0504eb17fa0a7bbfc441b
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101659389"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102522186"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -43,16 +43,16 @@ Als u gegevens sets wilt maken en gebruiken, hebt u het volgende nodig:
 
 * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md).
 
-* De [Azure machine learning SDK voor python is geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py), waaronder het pakket met de azureml-gegevens sets.
+* De [Azure machine learning SDK voor python is geïnstalleerd](/python/api/overview/azure/ml/install), waaronder het pakket met de azureml-gegevens sets.
 
     * Maak een [Azure machine learning Compute-exemplaar](how-to-create-manage-compute-instance.md), een volledig geconfigureerde en beheerde ontwikkel omgeving met daarin geïntegreerde notebooks en de SDK die al is geïnstalleerd.
 
     **OF**
 
-    * Werk met uw eigen Jupyter-notebook en installeer de SDK zelf met [deze instructies](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py).
+    * Werk met uw eigen Jupyter-notebook en installeer de SDK zelf met [deze instructies](/python/api/overview/azure/ml/install).
 
 > [!NOTE]
-> Sommige dataset-klassen hebben afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) . Dit is alleen compatibel met 64-bits python. Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) en CentOS (7). Als u niet-ondersteunde distributies gebruikt, volgt u [deze hand leiding](/dotnet/core/install/linux) om .net Core 2,1 te installeren om door te gaan. 
+> Sommige dataset-klassen hebben afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/) . Dit is alleen compatibel met 64-bits python. Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux (7, 8), Ubuntu (14,04, 16,04, 18,04), Fedora (27, 28), Debian (8, 9) en CentOS (7). Als u niet-ondersteunde distributies gebruikt, volgt u [deze hand leiding](/dotnet/core/install/linux) om .net Core 2,1 te installeren om door te gaan. 
 
 ## <a name="compute-size-guidance"></a>Richt lijn voor reken capaciteit
 
@@ -68,14 +68,14 @@ Er zijn twee typen gegevensset, op basis van de manier waarop gebruikers ze in t
 
 ### <a name="filedataset"></a>FileDataset
 
-Een [FileDataset](/python/api/azureml-core/azureml.data.file_dataset.filedataset?preserve-view=true&view=azure-ml-py) verwijst naar één of meer bestanden in uw gegevens opslag of open bare url's. Als uw gegevens al zijn gereinigd en klaar zijn om te worden gebruikt in trainings experimenten, kunt u de bestanden [downloaden of koppelen](how-to-train-with-datasets.md#mount-vs-download) aan uw Compute als een FileDataset-object. 
+Een [FileDataset](/python/api/azureml-core/azureml.data.file_dataset.filedataset) verwijst naar één of meer bestanden in uw gegevens opslag of open bare url's. Als uw gegevens al zijn gereinigd en klaar zijn om te worden gebruikt in trainings experimenten, kunt u de bestanden [downloaden of koppelen](how-to-train-with-datasets.md#mount-vs-download) aan uw Compute als een FileDataset-object. 
 
 We raden FileDatasets aan voor uw machine learning-werk stromen, aangezien de bron bestanden een wille keurige indeling hebben, waardoor een breder scala van machine learning scenario's mogelijk is, waaronder diep gaande lessen.
 
 Maak een FileDataset met de [python-SDK](#create-a-filedataset) of de [Azure machine learning Studio](how-to-connect-data-ui.md#create-datasets) .
 ### <a name="tabulardataset"></a>TabularDataset
 
-Een [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) vertegenwoordigt gegevens in tabel vorm door het bestand of de lijst met bestanden te parseren. Dit biedt u de mogelijkheid om de gegevens in een Panda of Spark-data frame te realiseren, zodat u kunt werken met vertrouwde gegevens voorbereiding en trainings bibliotheken zonder dat u uw notebook hoeft te verlaten. U kunt een `TabularDataset` object maken van. CSV-,. tsv-,. Parquet-,. json-bestanden en uit [SQL-query resultaten](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-sql-query-query--validate-true--set-column-types-none--query-timeout-30-).
+Een [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset) vertegenwoordigt gegevens in tabel vorm door het bestand of de lijst met bestanden te parseren. Dit biedt u de mogelijkheid om de gegevens in een Panda of Spark-data frame te realiseren, zodat u kunt werken met vertrouwde gegevens voorbereiding en trainings bibliotheken zonder dat u uw notebook hoeft te verlaten. U kunt een `TabularDataset` object maken van. CSV-,. tsv-,. Parquet-,. json-bestanden en uit [SQL-query resultaten](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory#from-sql-query-query--validate-true--set-column-types-none--query-timeout-30-).
 
 Met TabularDatasets kunt u een tijds tempel opgeven van een kolom in de gegevens of van de locatie waar de patroon gegevens voor het pad zijn opgeslagen om een time series-eigenschappen in te scha kelen. Met deze specificatie kunt u eenvoudig en efficiënt filteren op tijd. Zie voor een voor beeld [Time Series-gerelateerde API-demo met NOAA-weer gegevens](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/timeseries-datasets/tabular-timeseries-dataset-filtering.ipynb).
 
@@ -96,7 +96,7 @@ Gegevens sets moeten worden gemaakt op basis van paden in [Azure machine learnin
 
 > [!TIP] 
 > U kunt rechtstreeks gegevens sets maken op basis van opslag-url's die toegang hebben tot de identiteit. Meer informatie over [verbinding maken met opslag met op identiteit gebaseerde gegevens toegang (preview)](how-to-identity-based-data-access.md)<br><br>
-Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
+Deze mogelijkheid is een [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
 
  
 Gegevens sets maken op basis van een gegevens opslag met de python-SDK:
@@ -110,7 +110,7 @@ Gegevens sets maken op basis van een gegevens opslag met de python-SDK:
 
 ### <a name="create-a-filedataset"></a>Een FileDataset maken
 
-Gebruik de [`from_files()`](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#&preserve-view=truefrom-files-path--validate-true-) methode in de- `FileDatasetFactory` klasse om bestanden in een wille keurige indeling te laden en een niet-geregistreerde FileDataset te maken. 
+Gebruik de [`from_files()`](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory#from-files-path--validate-true-) methode in de- `FileDatasetFactory` klasse om bestanden in een wille keurige indeling te laden en een niet-geregistreerde FileDataset te maken. 
 
 Als uw opslag zich achter een virtueel netwerk of een firewall bevindt, stelt u de para meter `validate=False` in uw `from_files()` methode in. Hiermee wordt de eerste validatie stap omzeild en zorgt u ervoor dat u uw gegevensset kunt maken op basis van deze beveiligde bestanden. Meer informatie over het [gebruik van data stores en gegevens sets in een virtueel netwerk](how-to-secure-workspace-vnet.md#secure-datastores-and-datasets).
 
@@ -127,7 +127,7 @@ mnist_ds = Dataset.File.from_files(path=web_paths)
 Als u gegevens sets in het experiment opnieuw wilt gebruiken en delen in uw werk ruimte, moet [u uw gegevensset registreren](#register-datasets). 
 
 > [!TIP] 
-> Upload bestanden uit een lokale map en maak een FileDataset in één methode met de open bare preview-methode, [upload_directory ()](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#upload-directory-src-dir--target--pattern-none--overwrite-false--show-progress-true-). Deze methode is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
+> Upload bestanden uit een lokale map en maak een FileDataset in één methode met de open bare preview-methode, [upload_directory ()](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory#upload-directory-src-dir--target--pattern-none--overwrite-false--show-progress-true-). Deze methode is een [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
 > 
 >  Met deze methode worden gegevens naar uw onderliggende opslag geüpload, waardoor opslag kosten in rekening worden gebracht. 
 
@@ -159,7 +159,7 @@ weather_ds = Dataset.Tabular.from_delimited_files(path=datastore_paths)
 ```
 ### <a name="set-data-schema"></a>Gegevens schema instellen
 
-Wanneer u een TabularDataset maakt, worden de kolom gegevens typen standaard automatisch afgeleid. Als de instelde typen niet overeenkomen met uw verwachtingen, kunt u uw gegevensset-schema bijwerken door kolom typen met de volgende code op te geven. De para meter `infer_column_type` is alleen van toepassing op gegevens sets die zijn gemaakt van bestanden met scheidings tekens. Meer [informatie over ondersteunde gegevens typen](/python/api/azureml-core/azureml.data.dataset_factory.datatype?preserve-view=true&view=azure-ml-py).
+Wanneer u een TabularDataset maakt, worden de kolom gegevens typen standaard automatisch afgeleid. Als de instelde typen niet overeenkomen met uw verwachtingen, kunt u uw gegevensset-schema bijwerken door kolom typen met de volgende code op te geven. De para meter `infer_column_type` is alleen van toepassing op gegevens sets die zijn gemaakt van bestanden met scheidings tekens. Meer [informatie over ondersteunde gegevens typen](/python/api/azureml-core/azureml.data.dataset_factory.datatype).
 
 
 ```Python
@@ -201,7 +201,7 @@ mount_context = dataset.mount(mounted_path)
 mount_context.start()
 ```
 
-Gebruik voor TabularDatasets de [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) methode om uw gegevens in een data frame weer te geven. 
+Gebruik voor TabularDatasets de [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) methode om uw gegevens in een data frame weer te geven. 
 
 ```python
 # preview the first 3 rows of titanic_ds
@@ -245,13 +245,13 @@ dataset = Dataset.Tabular.from_delimited_files(path = [(datastore, ('data/prepar
 ```
 
 > [!TIP]
-> Maak en Registreer een TabularDataset van een in het geheugen Spark-of Panda-data frame met één methode met open bare preview-methoden, [`register_spark_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#methods) en [`register_pandas_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#methods) . Deze registratie methoden zijn [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies en kunnen op elk gewenst moment worden gewijzigd. 
+> Maak en Registreer een TabularDataset van een in het geheugen Spark-of Panda-data frame met één methode met open bare preview-methoden, [`register_spark_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory#methods) en [`register_pandas_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory#methods) . Deze registratie methoden zijn [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functies en kunnen op elk gewenst moment worden gewijzigd. 
 > 
 >  Met deze methoden worden gegevens naar uw onderliggende opslag geüpload, waardoor opslag kosten in rekening worden gebracht. 
 
 ## <a name="register-datasets"></a>Gegevens sets registreren
 
-Als u het aanmaak proces wilt volt ooien, registreert u uw gegevens sets met een werk ruimte. Gebruik de [`register()`](/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueregister-workspace--name--description-none--tags-none--create-new-version-false-) methode voor het registreren van gegevens sets met uw werk ruimte om ze te delen met anderen en ze opnieuw te gebruiken voor experimenten in uw werk ruimte:
+Als u het aanmaak proces wilt volt ooien, registreert u uw gegevens sets met een werk ruimte. Gebruik de [`register()`](/python/api/azureml-core/azureml.data.abstract_dataset.abstractdataset#&preserve-view=trueregister-workspace--name--description-none--tags-none--create-new-version-false-) methode voor het registreren van gegevens sets met uw werk ruimte om ze te delen met anderen en ze opnieuw te gebruiken voor experimenten in uw werk ruimte:
 
 ```Python
 titanic_ds = titanic_ds.register(workspace=workspace,

@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 083d750db0db050265c93cc658d4f3b6556b850d
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 6d23b0204cc597898eb2202a329d93ff349f8c13
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102176209"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102518531"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Een Azure Machine Learning-werk ruimte beveiligen met virtuele netwerken
 
@@ -65,7 +65,7 @@ Azure Machine Learning ondersteunt opslag accounts die zijn geconfigureerd voor 
 >
 > Het standaard opslag account wordt automatisch ingericht wanneer u een werk ruimte maakt.
 >
-> Voor niet-standaard opslag accounts `storage_account` kunt u met de para meter in de [ `Workspace.create()` functie](/python/api/azureml-core/azureml.core.workspace%28class%29?preserve-view=true&view=azure-ml-py#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-&preserve-view=true) een aangepast opslag account opgeven op basis van de Azure-resource-id.
+> Voor niet-standaard opslag accounts `storage_account` kunt u met de para meter in de [ `Workspace.create()` functie](/python/api/azureml-core/azureml.core.workspace%28class%29#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) een aangepast opslag account opgeven op basis van de Azure-resource-id.
 
 Als u een Azure-opslag account wilt gebruiken voor de werk ruimte in een virtueel netwerk, gebruikt u de volgende stappen:
 
@@ -195,8 +195,6 @@ Als u Azure Container Registry binnen een virtueel netwerk wilt gebruiken, moet 
 
     Wanneer ACR zich achter een virtueel netwerk bevindt, kan Azure Machine Learning het niet gebruiken om docker-installatie kopieën rechtstreeks te bouwen. In plaats daarvan wordt het berekenings cluster gebruikt voor het bouwen van de installatie kopieën.
 
-* Voordat u ACR gebruikt met Azure Machine Learning in een virtueel netwerk, moet u een ondersteunings incident openen om deze functionaliteit in te scha kelen. Zie [Quota's beheren en verhogen](how-to-manage-quotas.md#private-endpoint-and-private-dns-quota-increases)voor meer informatie.
-
 Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Container Registry in te scha kelen.
 
 1. Zoek de naam van de Azure Container Registry voor uw werk ruimte met behulp van een van de volgende methoden:
@@ -232,66 +230,7 @@ Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Co
     > [!IMPORTANT]
     > Uw opslag account, reken cluster en Azure Container Registry moeten zich allemaal in hetzelfde subnet van het virtuele netwerk bevinden.
     
-    Zie voor meer informatie de verwijzing naar methode [Update ()](/python/api/azureml-core/azureml.core.workspace.workspace?preserve-view=true&view=azure-ml-py#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-&preserve-view=true) .
-
-1. Pas de volgende Azure Resource Manager sjabloon toe. Met deze sjabloon kan uw werk ruimte communiceren met ACR.
-
-    ```json
-    {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "keyVaultArmId": {
-        "type": "string"
-        },
-        "workspaceName": {
-        "type": "string"
-        },
-        "containerRegistryArmId": {
-        "type": "string"
-        },
-        "applicationInsightsArmId": {
-        "type": "string"
-        },
-        "storageAccountArmId": {
-        "type": "string"
-        },
-        "location": {
-        "type": "string"
-        }
-    },
-    "resources": [
-        {
-        "type": "Microsoft.MachineLearningServices/workspaces",
-        "apiVersion": "2019-11-01",
-        "name": "[parameters('workspaceName')]",
-        "location": "[parameters('location')]",
-        "identity": {
-            "type": "SystemAssigned"
-        },
-        "sku": {
-            "tier": "basic",
-            "name": "basic"
-        },
-        "properties": {
-            "sharedPrivateLinkResources":
-    [{"Name":"Acr","Properties":{"PrivateLinkResourceId":"[concat(parameters('containerRegistryArmId'), '/privateLinkResources/registry')]","GroupId":"registry","RequestMessage":"Approve","Status":"Pending"}}],
-            "keyVault": "[parameters('keyVaultArmId')]",
-            "containerRegistry": "[parameters('containerRegistryArmId')]",
-            "applicationInsights": "[parameters('applicationInsightsArmId')]",
-            "storageAccount": "[parameters('storageAccountArmId')]"
-        }
-        }
-    ]
-    }
-    ```
-
-    Met deze sjabloon maakt u een _persoonlijk eind punt_ voor netwerk toegang vanuit de werk ruimte naar uw ACR. In de onderstaande scherm afbeelding ziet u een voor beeld van dit persoonlijke eind punt.
-
-    :::image type="content" source="media/how-to-secure-workspace-vnet/acr-private-endpoint.png" alt-text="ACR persoonlijke eindpunt instellingen":::
-
-    > [!IMPORTANT]
-    > Verwijder dit eind punt niet. Als u deze per ongeluk verwijdert, kunt u de sjabloon in deze stap opnieuw Toep assen om een nieuwe te maken.
+    Zie voor meer informatie de verwijzing naar methode [Update ()](/python/api/azureml-core/azureml.core.workspace.workspace#update-friendly-name-none--description-none--tags-none--image-build-compute-none--enable-data-actions-none-) .
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: bcf5f75cf5cabe42f530a6a179c2cafd43b5520d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b6e6288f125da2a29a8eff56b64f327914f90cb4
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952536"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102520469"
 ---
 # <a name="use-azure-ad-identity-with-your-machine-learning-web-service-in-azure-kubernetes-service"></a>Azure AD-identiteit gebruiken met uw Machine Learning-webservice in Azure Kubernetes Service
 
@@ -24,7 +24,7 @@ In deze procedure leert u hoe u een Azure Active Directory-identiteit (Azure AD)
 
 ## <a name="prerequisites"></a>Vereisten
 
-- De [Azure cli-extensie voor de machine learning-service](reference-azure-machine-learning-cli.md), de [Azure machine learning SDK voor Python](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
+- De [Azure cli-extensie voor de machine learning-service](reference-azure-machine-learning-cli.md), de [Azure machine learning SDK voor Python](/python/api/overview/azure/ml/intro)of de [Azure machine learning Visual Studio code extension](tutorial-setup-vscode-extension.md).
 
 - Toegang tot uw AKS-cluster met behulp van de `kubectl` opdracht. Zie [verbinding maken met het cluster](../aks/kubernetes-walkthrough.md#connect-to-the-cluster) voor meer informatie.
 

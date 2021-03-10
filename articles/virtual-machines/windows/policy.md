@@ -3,18 +3,18 @@ title: Beveiliging afdwingen met beleid op Windows-Vm's in azure
 description: Een beleid Toep assen op een virtuele Azure Resource Manager Windows-machine
 author: mimckitt
 manager: vashan
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: security
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/02/2017
 ms.author: mimckitt
-ms.openlocfilehash: fb847a8935a438b4d2668733e87571aefdca26a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4a4e54510c4683dc1be9da09b96d6289136a26f1
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288280"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550260"
 ---
 # <a name="apply-policies-to-windows-vms-with-azure-resource-manager"></a>Beleid Toep assen op Windows-Vm's met Azure Resource Manager
 Door gebruik te maken van beleids regels kan een organisatie verschillende conventies en regels voor de hele onderneming afdwingen. Afdwinging van het gewenste gedrag kan het risico verkleinen en bijdragen aan het succes van de organisatie. In dit artikel wordt beschreven hoe u Azure Resource Manager-beleid kunt gebruiken om het gewenste gedrag voor de Virtual Machines van uw organisatie te definiëren.

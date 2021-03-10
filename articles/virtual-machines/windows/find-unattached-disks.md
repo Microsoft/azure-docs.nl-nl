@@ -2,17 +2,17 @@
 title: Niet-aangesloten beheerde en niet-beheerde Azure-schijven zoeken en verwijderen
 description: Het zoeken en verwijderen van niet-gekoppelde, door Azure beheerde en onbeheerde en niet-beheerde schijven (Vhd's/pagina-blobs) met behulp van Azure PowerShell.
 author: roygara
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 02/22/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 4f217a53c23df4f161207aaceb528680ddcddbe7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 66a54ea74fcc6d8d354f5adbffe214c34b4c20d5
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972795"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554375"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks"></a>Niet-aangesloten beheerde en niet-beheerde Azure-schijven zoeken en verwijderen
 

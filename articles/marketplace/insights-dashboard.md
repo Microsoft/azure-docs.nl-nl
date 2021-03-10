@@ -7,18 +7,18 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 9089fee7565633b198043efeed929fc7446437d5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a8a53a54d30df9a2f7079d705f754e554328c3f7
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458287"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553932"
 ---
 # <a name="marketplace-insights-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Inzichten marketplace in Commerciële marketplace-analyses
 
 Dit artikel bevat informatie over het Marketplace Insights-dash board in het partner centrum. In dit dash board wordt een samen vatting weer gegeven van webanalysen voor commerciële Marketplace waarmee uitgevers de klant betrokkenheid kunnen meten voor hun respectieve product detail pagina's die worden vermeld in de online winkels voor commerciële Marketplace: Microsoft AppSource en Azure Marketplace.
 
-Voor toegang tot het **Marketplace Insights** -dash board in Partner Center, onder commerciële Marketplace, selecteert u **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **Marketplace Insights** analyseren.
+Voor toegang tot het **Marketplace Insights** -dash board in Partner Center, onder commerciële Marketplace, selecteert u **[](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **Marketplace Insights** analyseren.
 
 Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
 
@@ -28,7 +28,7 @@ Het Marketplace Insights-dash board biedt een overzicht van de bedrijfs prestati
 
 - Trend van pagina bezoekers
 - Actie trend aanroepen
-- Pagina bezoeken en aanroepen naar acties voor aanbiedingen, referentie domeinen en campagne-id's
+- Pagina bezoeken en aanroepen naar acties voor aanbiedingen, referentie domeinen en campagne-Id's
 - Marketplace-inzichten op geografie
 - Informatie tabel voor Marketplace Insights
 
@@ -86,7 +86,7 @@ Voor de geselecteerde reken periode toont het heatmap het aantal bezoeken aan de
 
 :::image type="content" source="./media/insights-dashboard/geographical-spread.png" alt-text="Illustreert het geografische sprei ding diagram op het Marketplace Insights-dash board.":::
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - U kunt de kaart verplaatsen om de exacte locatie weer te geven.
 - U kunt inzoomen op een specifieke locatie.
@@ -103,6 +103,19 @@ Deze tabel bevat een overzicht van de bezoeken van de pagina en de aanroepen naa
 
 > [!TIP]
 > U kunt het Download pictogram in de rechter bovenhoek van een wille keurige widget gebruiken om de gegevens te downloaden. U kunt feedback geven voor elk van de widgets door te klikken op het pictogram duim omhoog of duim omlaag.
+
+| Kolom naam in<br>gebruikersinterface | Kenmerknaam | Definitie | Kolom naam in programma code<br>Access-rapporten |
+| ------------ | ------------- | ------------- | ------------- |
+| Datum | Datum van bezoek | De datum van de pagina ga en/of CTA Klik op gebeurtenis genereren op de pagina van de aanbieding in azure Marketplace en/of AppSource. | Datum |
+| Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. | OfferName |
+| Referentie domein | Referentie domein | De naam van het referentie domein van waaruit de pagina zich voordeed. Als er geen referentie domeinen zijn vastgelegd voor de pagina bezoek, is het bijbehorende item ' referentie domein niet aanwezig '. |  ReferralDomain |
+| Naam van land/regio | Naam van land/regio | De naam van het land van waaruit het bezoek aan de pagina is gebeurd. | Landnaam |
+| Pagina bezoeken | Pagina bezoeken | Het aantal pagina bezoeken dat is gekoppeld aan de naam van het aanbod voor een bepaalde datum. | PageVisits |
+| Nu downloaden | Nu downloaden | Het aantal klikken naar de CTA ' nu downloaden ' op de pagina van de aanbieding voor een bepaalde datum. | GetItNow |
+| Contact opnemen | Contact opnemen | Het aantal klikken naar de CTA voor contact persoon op de pagina van de aanbieding voor een bepaalde datum. | ContactMe |
+| Test Drive | Test Drive | Het aantal klikken naar de CTA ' test drive ' op de pagina van de aanbieding voor een bepaalde datum. | TestDrive |
+| Gratis proefversie | Gratis proefversie | Het aantal klikken naar de CTA voor een gratis proef versie op de pagina van de aanbieding voor een bepaalde datum. | Gratis proef versie |
+|||||
 
 ## <a name="next-steps"></a>Volgende stappen
 

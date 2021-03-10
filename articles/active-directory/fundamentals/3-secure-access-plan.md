@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 202f2190e68b89d790c628248ae89f0cb274ff76
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 266142240ba9e892c905ac8aa6521da5a14c4c3d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725208"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554017"
 ---
 # <a name="3-create-a-security-plan-for-external-access"></a>3. een beveiligings plan voor externe toegang maken 
 
@@ -132,7 +132,7 @@ Houd rekening met het volgende wanneer uw beleids regels zeer worden aangepast a
 
    * Als u [verbonden organisaties](../governance/entitlement-management-organization.md) gebruikt voor het groeperen van alle gebruikers van één partner, moet u regel matig beoordelingen plannen met de eigenaar van het bedrijf en de vertegenwoordiger van de partner.
 
-* **Microsoft 365 groepen**. Stel een [verloop beleid voor groepen](/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide) in voor Microsoft 365 groepen waaraan externe gebruikers worden uitgenodigd. 
+* **Microsoft 365 groepen**. Stel een [verloop beleid voor groepen](/microsoft-365/solutions/microsoft-365-groups-expiration-policy) in voor Microsoft 365 groepen waaraan externe gebruikers worden uitgenodigd. 
 
 * **Andere opties**. Als externe gebruikers toegang hebben tot buiten rechten beheer toegangs pakketten of Microsoft 365 groepen, stelt u bedrijfs processen in om te controleren wanneer accounts inactief moeten worden gemaakt of verwijderd. Bijvoorbeeld:
 

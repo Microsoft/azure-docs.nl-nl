@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 077730d63d388566bd842a4ba185bd5fd6637043
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: d76c4206ca39518c3a09d27ee470c05db108ae6d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588995"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551878"
 ---
 # <a name="set-up-a-cicd-pipeline-for-a-java-app-with-azure-devops-starter"></a>Een CI/CD-pijplijn voor een Java-app instellen met Azure DevOps Starter
 
@@ -131,4 +131,4 @@ U kunt Azure App Service en andere gerelateerde resources verwijderen wanneer u 
 De build en pijplijnen zijn automatisch gemaakt toen u het CI/CD-proces configureerde. U kunt deze build- en release-pipelines desgewenst wijzigen in overeenstemming met de behoeften van uw team. Voor meer informatie over de CI/CD-pijplijn raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [CD-proces aanpassen](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)
+> [CD-proces aanpassen](/azure/devops/pipelines/release/define-multistage-release-process)

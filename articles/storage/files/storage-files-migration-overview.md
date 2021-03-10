@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 3/18/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 4a874e6f1e026a1888b9039799be71c95f040ac6
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 27056f39885949d52c9fcc0d1472033cfc8f9aa0
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202345"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554867"
 ---
 # <a name="migrate-to-azure-file-shares"></a>Migreren naar Azure-bestandsshares
 
@@ -81,13 +81,12 @@ Een scenario zonder een koppeling heeft nog geen gepubliceerde migratie handleid
 | Bron | Doel: </br>Hybride implementatie | Doel: </br>Implementatie in de Cloud |
 |:---|:--|:--|
 | | Combi natie van gereedschap:| Combi natie van gereedschap: |
-| Windows Server 2012 R2 en hoger | <ul><li>[Azure File Sync](storage-sync-files-deployment-guide.md)</li><li>[Azure File Sync en Azure Data Box](storage-sync-offline-data-transfer.md)</li><li>[Azure File Sync en vooraf geseede bestanden in de Cloud](storage-sync-offline-data-transfer.md#azure-file-sync-and-pre-seeded-files-in-the-cloud)</li><li>Azure File Sync-en opslag migratie service</li></ul> | <ul><li>Azure File Sync</li><li>Azure File Sync en Data Box</li><li>Azure File Sync-en opslag migratie service</li><li>RoboCopy</li></ul> |
-| Windows Server 2012 en lager | <ul><li>Azure File Sync en Data Box</li><li>Azure File Sync-en opslag migratie service</li></ul> | <ul><li>Azure File Sync-en opslag migratie service</li><li>RoboCopy</li></ul> |
-| NAS (Network-Attached Storage) | <ul><li>[Azure File Sync en RoboCopy](storage-files-migration-nas-hybrid.md)</li></ul> | <ul><li>RoboCopy</li></ul> |
-| Linux of samba | <ul><li>[Azure File Sync en RoboCopy](storage-files-migration-linux-hybrid.md)</li></ul> | <ul><li>RoboCopy</li></ul> |
-| Microsoft Azure StorSimple Cloud apparaat 8100 of StorSimple Cloud Appliance 8600 | <ul><li>[Azure File Sync en StorSimple Cloud Appliance 8020](storage-files-migration-storsimple-8000.md)</li></ul> | |
-| StorSimple Cloud Appliance 1200 | <ul><li>[Azure File Sync](storage-files-migration-storsimple-1200.md)</li></ul> | |
-| | | |
+| Windows Server 2012 R2 en hoger | <ul><li>[Azure File Sync](storage-sync-files-deployment-guide.md)</li><li>[Azure File Sync en Azure DataBox](storage-sync-offline-data-transfer.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li><li>Via Azure File Sync</li></ul> |
+| Windows Server 2012 en lager | <ul><li>Via DataBox en Azure File Sync naar recent server-besturings systeem</li><li>Via de opslag migratie service naar de recente server met Azure File Sync en upload</li></ul> | <ul><li>Via Storage Migration service naar recente server met Azure File Sync</li><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
+| NAS (Network-Attached Storage) | <ul><li>[Via Azure File Sync uploaden](storage-files-migration-nas-hybrid.md)</li><li>[Via DataBox + Azure File Sync](storage-files-migration-nas-hybrid-databox.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
+| Linux-Samba | <ul><li>[Azure File Sync en RoboCopy](storage-files-migration-linux-hybrid.md)</li></ul> | <ul><li>Via RoboCopy naar een gekoppelde Azure-bestands share</li></ul> |
+| Microsoft Azure StorSimple Cloud apparaat 8100 of StorSimple Cloud Appliance 8600 | <ul><li>[Via een exclusieve gegevens migratie Cloud service](storage-files-migration-storsimple-8000.md)</li></ul> | |
+| StorSimple Cloud Appliance 1200 | <ul><li>[Via Azure File Sync](storage-files-migration-storsimple-1200.md)</li></ul> | |
 
 ## <a name="migration-toolbox"></a>Werkset voor migratie
 
@@ -120,9 +119,9 @@ De volgende tabel classificeert micro soft-hulpprogram ma's en hun huidige gesch
 |![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| RoboCopy | Ondersteund. Azure-bestands shares kunnen worden gekoppeld als netwerk stations. | Volledige kwaliteit. * |
 |![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| Azure File Sync | Systeem eigen geïntegreerd in azure-bestands shares. | Volledige kwaliteit. * |
 |![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| Opslag migratie service | Indirect ondersteund. Azure-bestands shares kunnen worden gekoppeld als netwerk stations op SMS-doel servers. | Volledige kwaliteit. * |
-|![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| AzCopy, versie 10,4 of hoger| Ondersteund. | Volledige kwaliteit. * |
-|![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| Data Box | Ondersteund. | DataBox biedt nu volledige ondersteuning voor meta gegevens. [Data box kan ook worden gebruikt in combi natie met Azure file sync](storage-sync-offline-data-transfer.md). |
-|![Niet volledig aanbevolen](media/storage-files-migration-overview/triangle-yellow-exclamation.png)| Azure Storage Explorer, versie 1,14 | Ondersteund. | Er worden geen Acl's gekopieerd. Ondersteunt tijds tempels.  |
+|![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| AzCopy </br>versie 10,6 | Ondersteund. | Ondersteunt geen kopie van de toegangs beheer lijst van de bron-root, anders volledige kwaliteit. * </br>[Meer informatie over het gebruik van AzCopy met Azure-bestands shares](../common/storage-use-azcopy-files.md) |
+|![Ja, aanbevolen](media/storage-files-migration-overview/circle-green-checkmark.png)| Data Box | Ondersteund. | DataBox biedt volledige ondersteuning voor meta gegevens. |
+|![Niet volledig aanbevolen](media/storage-files-migration-overview/triangle-yellow-exclamation.png)| Azure Storage Explorer </br>versie 1,14 | Ondersteund. | Er worden geen Acl's gekopieerd. Ondersteunt tijds tempels.  |
 |![Niet aanbevolen](media/storage-files-migration-overview/circle-red-x.png)| Azure Data Factory | Ondersteund. | Meta gegevens worden niet gekopieerd. |
 |||||
 
@@ -149,7 +148,7 @@ De geteste versie van het hulp programma is versie 4.4.1. Het is compatibel met 
 1. Maak een plan voor de implementatie van Azure-bestands shares (alleen in de Cloud of hybride) die u wilt.
 1. Bekijk de lijst met beschik bare migratie handleidingen om de gedetailleerde hand leiding te vinden die overeenkomt met uw bron en de implementatie van Azure-bestands shares.
 
-Hier vindt u meer informatie over de Azure Files technologieën die in dit artikel worden vermeld:
+Meer informatie over de Azure Files technologieën die in dit artikel worden genoemd:
 
 * [Overzicht van de Azure-bestands share](storage-files-introduction.md)
 * [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)

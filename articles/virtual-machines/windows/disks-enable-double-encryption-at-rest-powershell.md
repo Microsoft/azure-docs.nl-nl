@@ -5,15 +5,15 @@ author: roygara
 ms.date: 08/24/2020
 ms.topic: how-to
 ms.author: rogarana
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 9f0642d3421e775d1c6930b672b37643a961178f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: cfef3925152c0b94a59c662443cf202724dadc0a
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736285"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549546"
 ---
 # <a name="use-the-azure-powershell-module-to-enable-double-encryption-at-rest-for-managed-disks"></a>De module Azure PowerShell gebruiken om dubbele versleuteling in te scha kelen voor beheerde schijven
 

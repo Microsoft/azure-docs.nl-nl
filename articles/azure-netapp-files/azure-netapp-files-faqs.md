@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 03/09/2021
 ms.author: b-juche
-ms.openlocfilehash: 2cb0e3829011ca9bd0f2b6f36ebf3e6744a180ec
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6d9d56a7f6d1e265508081f735e2dbc379f195fb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101713402"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552028"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -147,6 +147,16 @@ Zorg ervoor dat `CaseSensitiveLookup` is ingeschakeld op de Windows-client om de
 2. Koppel het volume op de Windows-Server.   
     Voorbeeld:   
     `Mount -o rsize=1024 -o wsize=1024 -o mtype=hard \\10.x.x.x\testvol X:*`
+
+### <a name="how-does-azure-netapp-files-support-nfsv41-file-locking"></a>Hoe wordt het vergren delen van bestanden in NFSv 4.1 ondersteund Azure NetApp Files? 
+
+Voor NFSv 4.1-clients ondersteunt Azure NetApp Files het NFSv 4.1 file-locking-mechanisme waarmee de status van alle bestands vergrendelingen onder een op een lease gebaseerd model behouden blijft. 
+
+Per RFC 3530 definieert Azure NetApp Files één lease periode voor alle statussen van een NFS-client. Als de client de lease niet binnen de gedefinieerde periode verlengt, worden alle statussen die zijn gekoppeld aan de lease van de client, vrijgegeven door de-server.  
+
+Als bijvoorbeeld een client die een volume koppelt, niet meer reageert of langer loopt dan de time-outs, worden de vergren delingen vrijgegeven. De client kan zijn lease expliciet of impliciet vernieuwen door bewerkingen uit te voeren, zoals het lezen van een bestand.   
+
+Een respijt periode definieert een periode van speciale verwerking waarin clients hun vergrendelings status kunnen proberen op te heffen tijdens het herstel van de server. De standaardtime-out voor de leases is 30 seconden, met een respijt periode van 45 seconden. Na deze periode wordt de lease van de client vrijgegeven.   
 
 ## <a name="smb-faqs"></a>Veelgestelde vragen over SMB
 

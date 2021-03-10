@@ -1,7 +1,7 @@
 ---
 title: Micro Focus Enter prise Server 5,0 implementeren naar AKS | Microsoft Docs
 description: Host uw IBM z/OS mainframe-workloads met behulp van de micro focus ontwikkelings-en test omgeving op virtuele machines van Azure (Vm's).
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: ''
 author: maggsl
 ms.author: edprice
@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 6780942d922f885c7afebd8e64f4f28654c3800e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e5b3857c2252a939080206fb1f92cc422f326fc
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87042542"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564353"
 ---
 # <a name="deploy-micro-focus-enterprise-server-50-to-aks"></a>Micro Focus Enter prise Server 5,0 implementeren naar AKS
 
@@ -39,11 +39,11 @@ Voortzetten? Laten we aan de slag gaan!
 
 ## <a name="create-the-azure-container-registry"></a>De Azure Container Registry maken
 
-Selecteer in de Azure Portal **een resource maken** in de linkerbovenhoek. Selecteer in het Marketplace-dash board **containers en** vervolgens **container Registry**. Hiermee gaat u naar het deel venster **container register maken** waarin u de **register naam**, het Azure- **abonnement**, de **resource groep**en de **locatie**moet invullen. De **register naam** moet worden omgezet en moet uniek zijn. Selecteer de **resource groep** die u hebt gebruikt in het vorige blog bericht en dezelfde corresponderende **locatie**. Selecteer **inschakelen** voor **gebruiker met beheerders** rechten en **basis** voor de **SKU**. Zodra u alles hebt ingevuld, selecteert u **maken**.
+Selecteer in de Azure Portal **een resource maken** in de linkerbovenhoek. Selecteer in het Marketplace-dash board **containers en** vervolgens **container Registry**. Hiermee gaat u naar het deel venster **container register maken** waarin u de **register naam**, het Azure- **abonnement**, de **resource groep** en de **locatie** moet invullen. De **register naam** moet worden omgezet en moet uniek zijn. Selecteer de **resource groep** die u hebt gebruikt in het vorige blog bericht en dezelfde corresponderende **locatie**. Selecteer **inschakelen** voor **gebruiker met beheerders** rechten en **basis** voor de **SKU**. Zodra u alles hebt ingevuld, selecteert u **maken**.
 
 ![Container register interface maken](media/deploy-image-1.png)
 
-Nadat het REGI ster is geïmplementeerd, selecteert **u Ga naar resource**. Hiermee gaat u naar de hoofd Blade voor de Azure Container Registry. Hier vindt u de menu optie **Quick Start** . Selecteer dit en u ziet instructies voor wat er moet gebeuren om installatie kopieën naar en van het REGI ster te pushen en te halen. We gaan nu het volgende doen:
+Nadat het REGI ster is geïmplementeerd, selecteert **u Ga naar resource**. Hiermee gaat u naar de hoofd Blade voor de Azure Container Registry. Hier vindt u de menu optie **snel starten** . Selecteer dit en u ziet instructies voor wat er moet gebeuren om installatie kopieën naar en van het REGI ster te pushen en te halen. We gaan nu het volgende doen:
 
 1.  **Docker installeren** : u hoeft zich geen zorgen te maken over dit probleem, omdat deze al is uitgevoerd.
 
@@ -57,7 +57,7 @@ Nadat het REGI ster is geïmplementeerd, selecteert **u Ga naar resource**. Hier
 
 5.  **Pull uit uw REGI ster** : het is niet relevant voor deze procedure, maar u kunt het beste weten als u een andere docker-installatie kopie moet uitvoeren.
 
-Voordat u de portal verlaat, moet u de referenties voor het REGI ster ophalen zodat u zich kunt aanmelden. Sluit de Blade **Quick Start** af en selecteer **toegangs sleutels** in het menu REGI ster. Kopieer de **gebruikers naam** en een van de **wacht woorden** (er zijn er twee) naar het klem bord of Klad blok. U hebt deze later nodig om u aan te melden.
+Voordat u de portal verlaat, moet u de referenties voor het REGI ster ophalen zodat u zich kunt aanmelden. Sluit de Blade **snel starten** af en selecteer **toegangs sleutels** in het menu REGI ster. Kopieer de **gebruikers naam** en een van de **wacht woorden** (er zijn er twee) naar het klem bord of Klad blok. U hebt deze later nodig om u aan te melden.
 
 Nu u weet wat u moet doen, meldt u zich aan bij de virtuele machine.
 
@@ -71,7 +71,7 @@ Nadat u bent aangemeld, opent u een opdracht prompt en initieert u de volgende d
 
 -   **docker-installatie kopieën** : Hiermee wordt een lijst weer gegeven met alle geïnstalleerde installatie kopieën op de VM. Let op de **MicroFocus/es-acctdemo** omdat dit het account is dat u wilt gebruiken.
 
--   **docker-aanmeldings acrmf50.azurecr.io** : de juiste indeling is *docker login \<registry name\> *. Vervang elke naam die u hebt gebruikt bij het maken van het REGI ster.
+-   **docker-aanmeldings acrmf50.azurecr.io** : de juiste indeling is *docker login \<registry name\>*. Vervang elke naam die u hebt gebruikt bij het maken van het REGI ster.
 
     -   U hebt de **gebruikers naam** en het **wacht woord** nodig die u van de Azure Portal hebt gekopieerd. Er verschijnt een tekst die er ongeveer uitziet als in de volgende afbeelding.
 
@@ -85,7 +85,7 @@ Nadat u bent aangemeld, opent u een opdracht prompt en initieert u de volgende d
 
     ![Opdracht prompt venster voor beheerders](media/deploy-image-4.png)
 
-Ga nu terug naar de Azure Portal, specifiek voor de **opslag plaats**. Selecteer in het menu voor de **opslag plaats** **opslag**plaatsen en u moet **es-acctdemo** weer gegeven. Maak nu het AKS-cluster.
+Ga nu terug naar de Azure Portal, specifiek voor de **opslag plaats**. Selecteer in het menu voor de **opslag plaats** **opslag** plaatsen en u moet **es-acctdemo** weer gegeven. Maak nu het AKS-cluster.
 
 ## <a name="create-the-azure-kubernetes-aks-cluster"></a>Het Azure Kubernetes (AKS)-cluster maken
 
@@ -119,4 +119,4 @@ Als een actief pod moet u es-acctdemo zien, zoals in de volgende afbeelding.
 
 ![Scherm afbeelding es-acctdemo als een actief pod](media/deploy-image-9.png)
 
-Gefeliciteerd! U voert nu de Enter prise-server uit in de Azure Kubernetes-service. In het volgende artikel wordt uitgelegd hoe u toegang krijgt tot de beheer console van de Enter prise-server en hoe u Kubernetes kunt gebruiken om uw implementatie uit te breiden.
+Gefeliciteerd U voert nu de Enter prise-server uit in de Azure Kubernetes-service. In het volgende artikel wordt uitgelegd hoe u toegang krijgt tot de beheer console van de Enter prise-server en hoe u Kubernetes kunt gebruiken om uw implementatie uit te breiden.

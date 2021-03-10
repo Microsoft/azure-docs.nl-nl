@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a5c6545c634d14b5bd1d6dbb47f878f6f4f5f0b6
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 3dfb2cd445edf33ed8db4807efcc2e6326f838ab
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102502821"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549002"
 ---
 # <a name="azure-security-baseline-for-azure-public-ip"></a>Azure-beveiligings basislijn voor open bare Azure-IP
 
@@ -114,9 +114,9 @@ Openbaar IP-adres zelf maakt geen logboeken met betrekking tot netwerk verkeer d
 
 Vooraf gedefinieerde ingebouwde Azure-rollen voor het uitvoeren van een query bestaan voor bepaalde bronnen via hulpprogram ma's als Azure CLI, Azure PowerShell of de Azure Portal.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 **Monitoring door Azure Security Center**: Ja
 

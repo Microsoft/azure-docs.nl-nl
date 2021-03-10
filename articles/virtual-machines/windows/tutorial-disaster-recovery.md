@@ -2,18 +2,19 @@
 title: 'Zelfstudie: herstel na noodgevallen voor virtuele Windows-machines instellen met Azure Site Recovery'
 description: Leer hoe u herstel na noodgevallen voor virtuele Windows-machines in een andere Azure-regio kunt inschakelen met de Azure Site Recovery-service.
 author: rayne-wiselman
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.collection: windows
 ms.subservice: recovery
 ms.topic: tutorial
 ms.date: 11/05/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 53cc0b820bd2ffb9fc28b37f44bb71a7b9d3cd30
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
-ms.translationtype: HT
+ms.openlocfilehash: e9f44ea2af832729a47bf4b719b90f9b14e401b9
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379824"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555853"
 ---
 # <a name="tutorial-enable-disaster-recovery-for-windows-vms"></a>Zelfstudie: Herstel na noodgeval inschakelen voor virtuele Windows-machines
 

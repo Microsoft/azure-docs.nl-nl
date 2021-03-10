@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/04/2021
 ms.author: justinha
-ms.openlocfilehash: fd93635e7087d6f4a3590ec7bcb25482dc8382da
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 1619622ad9594f252c3d4cf5551704c6a788f9f8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102174717"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564081"
 ---
 # <a name="tutorial-configure-secure-ldap-for-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Secure LDAP configureren voor een door Azure Active Directory Domain Services beheerd domein
 
@@ -152,7 +152,7 @@ Voordat u het digitale certificaat dat u hebt gemaakt in de vorige stap kunt geb
 
     Kies op de pagina **Beveiliging** de optie voor **Wachtwoord** om het *PFX*-certificaatbestand te beveiligen. Het versleutelingsalgoritme moet *TripleDES-SHA1* zijn. Voer een wachtwoord in en bevestig dit. Selecteer vervolgens **Volgende**. Dit wachtwoord wordt in de volgende sectie gebruikt om Secure LDAP in te schakelen voor uw beheerde domein.
 
-    Als u exporteert met de [Power shell-cmdlet Export-pfx](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate?view=win10-ps), moet u de vlag *-CryptoAlgorithmOption* door geven met TripleDES_SHA1.
+    Als u exporteert met de [Power shell-cmdlet Export-pfx](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate), moet u de vlag *-CryptoAlgorithmOption* door geven met TripleDES_SHA1.
 
     ![Scherm afbeelding van het versleutelen van het wacht woord](./media/tutorial-configure-ldaps/encrypt.png)
 

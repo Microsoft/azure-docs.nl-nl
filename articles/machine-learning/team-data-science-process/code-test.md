@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
-ms.openlocfilehash: ce37ee51e549a2bd6f2747f28af8c038c39d8f1f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 66853b580ba1b619bf4cc995e05bd3cfaff07cfb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656832"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565866"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Gegevens wetenschappen code testen op Azure met het team data Science process en Azure DevOps Services
 Dit artikel bevat voorlopige richt lijnen voor het testen van code in een Data Science-werk stroom. Dergelijke tests bieden gegevens wetenschappers een systematische en efficiënte manier om de kwaliteit en het verwachte resultaat van hun code te controleren. We gebruiken een team data Science process (TDSP)- [project dat gebruikmaakt van de gegevensset van de ICB volwassene voor volwassenen](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) die eerder is gepubliceerd om te laten zien hoe code tests kunnen worden uitgevoerd. 
@@ -26,7 +26,7 @@ Dit artikel bevat voorlopige richt lijnen voor het testen van code in een Data S
 
 * Gegevensvoorbereiding
 * Kwaliteits onderzoek van gegevens
-* Modellen maken
+* Modelleren
 * Modelimplementatie 
 
 In dit artikel wordt de term ' eenheid testen ' vervangen door ' code testen '. Er wordt gerefereerd aan het testen als de functies die helpen te beoordelen of de code voor een bepaalde stap van een levens cyclus van een data technologie de resultaten levert zoals verwacht. De persoon die de test schrijft, definieert wat er wordt verwacht, afhankelijk van het resultaat van de functie, bijvoorbeeld gegevens kwaliteit controleren of model leren.
@@ -124,7 +124,7 @@ Gebruik de volgende stappen voor het instellen en uitvoeren van code testen en e
 
     ![Lijst met sjablonen en de knop ' leeg proces '](./media/code-test/start_empty_process_template.PNG)
 
-    d. Noem de build en selecteer de agent. U kunt hier de standaard optie kiezen als u een DSVM wilt gebruiken om het bouw proces te volt ooien. Zie [Build and release agents](/azure/devops/pipelines/agents/agents?view=vsts)(Engelstalig) voor meer informatie over het instellen van agents.
+    d. Noem de build en selecteer de agent. U kunt hier de standaard optie kiezen als u een DSVM wilt gebruiken om het bouw proces te volt ooien. Zie [Build and release agents](/azure/devops/pipelines/agents/agents)(Engelstalig) voor meer informatie over het instellen van agents.
     
     ![Selecties voor Build en agent](./media/code-test/select_agent.PNG)
 

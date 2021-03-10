@@ -9,12 +9,12 @@ ms.date: 11/17/2020
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: bc761d0bf4001fb1e3fb757b9be9e1e19689913d
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: b524869998dd2464ed359ec61ce655a807899aaa
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202991"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565713"
 ---
 # <a name="programmatically-create-azure-subscriptions-with-preview-apis"></a>Programmatisch Azure-abonnementen maken met preview-API's
 
@@ -190,7 +190,7 @@ New-AzSubscription -OfferType MS-AZR-0017P -Name "Dev Team Subscription" -Enroll
 | `EnrollmentAccountObjectId`      | Ja       | Tekenreeks | De object-id van het inschrijvingsaccount waaronder het abonnement wordt gemaakt en waarvoor het wordt gefactureerd. De waarde is een GUID die u ophaalt van `Get-AzEnrollmentAccount`. |
 | `OwnerObjectId`      | Nee       | Tekenreeks | De object-id van een gebruiker die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer deze wordt gemaakt.  |
 | `OwnerSignInName`    | Nee       | Tekenreeks | De object-id van een gebruiker die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer dit wordt gemaakt. U kunt de parameter gebruiken in plaats van `OwnerObjectId`.|
-| `OwnerApplicationId` | Nee       | Tekenreeks | De toepassing-id van een service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt. U kunt de parameter gebruiken in plaats van `OwnerObjectId`. Wanneer u de parameter gebruikt, moet de service-principal [leestoegang voor de map hebben](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole&preserve-view=true).|
+| `OwnerApplicationId` | Nee       | Tekenreeks | De toepassing-id van een service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt. U kunt de parameter gebruiken in plaats van `OwnerObjectId`. Wanneer u de parameter gebruikt, moet de service-principal [leestoegang voor de map hebben](/powershell/azure/active-directory/signing-in-service-principal#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole).|
 
 Zie [New-AzSubscription](/powershell/module/az.subscription/New-AzSubscription) voor een volledige lijst met parameters.
 
@@ -211,7 +211,7 @@ az account create --offer-type "MS-AZR-0017P" --display-name "Dev Team Subscript
 | `enrollment-account-object-id`      | Ja       | Tekenreeks | De object-id van het inschrijvingsaccount waaronder het abonnement wordt gemaakt en waarvoor het wordt gefactureerd. De waarde is een GUID die u ophaalt van `az billing enrollment-account list`. |
 | `owner-object-id`      | Nee       | Tekenreeks | De object-id van een gebruiker die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer deze wordt gemaakt.  |
 | `owner-upn`    | Nee       | Tekenreeks | De object-id van een gebruiker die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer dit wordt gemaakt. U kunt de parameter gebruiken in plaats van `owner-object-id`.|
-| `owner-spn` | Nee       | Tekenreeks | De toepassing-id van een service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt. U kunt de parameter gebruiken in plaats van `owner-object-id`. Wanneer u de parameter gebruikt, moet de service-principal [leestoegang voor de map hebben](/powershell/azure/active-directory/signing-in-service-principal?view=azureadps-2.0#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole&preserve-view=true).|
+| `owner-spn` | Nee       | Tekenreeks | De toepassing-id van een service-principal die moet worden toegevoegd als Azure RBAC-eigenaar voor het abonnement wanneer het wordt gemaakt. U kunt de parameter gebruiken in plaats van `owner-object-id`. Wanneer u de parameter gebruikt, moet de service-principal [leestoegang voor de map hebben](/powershell/azure/active-directory/signing-in-service-principal#give-the-service-principal-reader-access-to-the-current-tenant-get-azureaddirectoryrole).|
 
 Zie [az account create](/cli/azure/ext/subscription/account#-ext-subscription-az-account-create) voor een volledige lijst met parameters.
 

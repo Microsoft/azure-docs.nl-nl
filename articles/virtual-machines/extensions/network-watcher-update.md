@@ -1,24 +1,25 @@
 ---
 title: De Network Watcher-extensie bijwerken naar de nieuwste versie
 description: Meer informatie over hoe u de Azure Network Watcher-extensie bijwerkt naar de nieuwste versie.
-services: virtual-machines-windows
+services: virtual-machines
 documentationcenter: ''
 author: damendo
 manager: balar
 editor: ''
 tags: azure-resource-manager
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: extensions
+ms.collection: windows
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 09/23/2020
 ms.author: damendo
-ms.openlocfilehash: 144320ea1b2505d8a43e1885091ec14a847e4ab1
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 42efe2927b4d711f7fa66a96ebd25f1a62bf654a
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96853659"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563605"
 ---
 # <a name="update-the-network-watcher-extension-to-the-latest-version"></a>De Network Watcher-extensie bijwerken naar de nieuwste versie
 

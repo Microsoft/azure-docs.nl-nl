@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: dc75ada87db6fdbb3861c2e4e495f93147513421
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 671991a936fd0330c31017dd5f64e7b5eca9b3f4
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102440561"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563656"
 ---
 # <a name="encoding-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van een code ring
 
@@ -58,9 +58,7 @@ Klik op de onderstaande afbeelding om een grotere versie te zien.
 
 ### <a name="v3-encoding-workflow"></a>V3 encoding-werk stroom
 
-<Token>
-<object data="./media/migration-guide/v3-pretty2.svg" width="80%"></object>
-</Token>
+[![Werk stroom voor het coderen van v3 ](./media/migration-guide/V3-pretty.svg)](./media/migration-guide/V3-pretty.svg#lightbox)
 
 1. Instellen
     1. Maak een activum of gebruik een bestaande Asset. Als u een nieuwe Asset gebruikt, uploadt u inhoud naar die Asset. Als u een bestaand activum gebruikt, moet u bestanden coderen die al bestaan in de Asset. *Upload meer inhoud naar die Asset.*

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 2fdebffbf9643febc08cba997b3a5a5fc4bb5998
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 8aafb08ff0ccc9391071f796450e69f87de279ba
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652310"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102547829"
 ---
 #   <a name="key-phrase-extraction-cognitive-skill"></a>Sleuteltermextractie cognitieve vaardigheid
 
@@ -37,10 +37,11 @@ De maximale grootte van een record moet 50.000 tekens zijn, zoals gemeten door [
 
 Parameters zijn hoofdlettergevoelig.
 
-| Invoer | Beschrijving |
+| Invoerwaarden | Beschrijving |
 |---------------------|-------------|
 | `defaultLanguageCode` | Beschrijving De taal code die moet worden toegepast op documenten die geen taal expliciet opgeven.  Als de standaard taal code niet wordt opgegeven, wordt Engels (en) gebruikt als de standaard taal code. <br/> Bekijk de [volledige lijst met ondersteunde talen](../cognitive-services/text-analytics/language-support.md). |
 | `maxKeyPhraseCount`   | Beschrijving Het maximum aantal sleutel zinnen dat moet worden geproduceerd. |
+| `modelVersion`   | Beschrijving De versie van het model dat moet worden gebruikt bij het aanroepen van de Text Analytics service. Het is standaard de meest recente versie die beschikbaar is wanneer deze niet is opgegeven. We raden u aan deze waarde alleen op te geven als dit absoluut nood zakelijk is. Zie [model versie beheer in de Text Analytics-API](../cognitive-services/text-analytics/concepts/model-versioning.md) voor meer informatie. |
 
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
@@ -109,8 +110,8 @@ Voor het bovenstaande voor beeld wordt de uitvoer van uw vaardigheid geschreven 
 
 U kunt ' document-myKeyPhrases ' gebruiken als invoer voor andere vaardig heden of als bron van een [uitvoer veld toewijzing](cognitive-search-output-field-mapping.md).
 
-## <a name="errors-and-warnings"></a>Fouten en waarschuwingen
-Als u een niet-ondersteunde taal code opgeeft, wordt er een fout gegenereerd en worden er geen sleutel zinnen geëxtraheerd.
+## <a name="warnings"></a>Waarschuwingen
+Als u een niet-ondersteunde taal code opgeeft, wordt er een waarschuwing gegenereerd en worden er geen sleutel zinnen geëxtraheerd.
 Als uw tekst leeg is, wordt er een waarschuwing gegenereerd.
 Als uw tekst groter is dan 50.000 tekens, worden alleen de eerste 50.000 tekens geanalyseerd en wordt er een waarschuwing gegeven.
 

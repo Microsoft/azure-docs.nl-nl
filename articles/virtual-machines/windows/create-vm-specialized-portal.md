@@ -2,17 +2,19 @@
 title: Een Windows-VM maken op basis van een gespecialiseerde VHD in de Azure Portal
 description: Maak een nieuwe Windows-VM op basis van een VHD in het Azure Portal.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: imaging
+ms.collection: windows
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 01/18/2019
 ms.author: cynthn
-ms.openlocfilehash: 31677482660a48e2bb4c71b81b04681eba725fcd
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a93ab207960133ecbf5a68927c5d16a6daf94fd4
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455130"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102562211"
 ---
 # <a name="create-a-vm-from-a-vhd-by-using-the-azure-portal"></a>Een virtuele machine maken op basis van een VHD met behulp van de Azure Portal
 

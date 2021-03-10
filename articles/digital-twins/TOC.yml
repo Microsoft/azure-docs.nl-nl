@@ -97,10 +97,10 @@
       items:
         - name: De API's en SDK's gebruiken
           href: how-to-use-apis-sdks.md
+        - name: Maak Sdk's met aangepaste taal met auto rest
+          href: how-to-create-custom-sdks.md
         - name: Verzoeken indienen met Postman
           href: how-to-use-postman.md
-        - name: Aangepaste SDK's maken met AutoRest
-          href: how-to-create-custom-sdks.md
         - name: Integreren met Azure SignalR Service
           href: how-to-integrate-azure-signalr.md
     - name: Invoer verbinden

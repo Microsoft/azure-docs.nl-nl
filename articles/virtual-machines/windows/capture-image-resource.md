@@ -2,19 +2,19 @@
 title: Een beheerde installatie kopie maken in azure
 description: Een beheerde installatie kopie maken van een gegeneraliseerde virtuele machine of VHD in Azure. Installatie kopieën kunnen worden gebruikt om meerdere virtuele machines te maken die gebruikmaken van beheerde schijven.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: 9b63ec5b8a5d0684a0e144de7dfe4114af9777e2
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 9128c44b7f446ab849d2afac055005a1b5fb3fcb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881886"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102562228"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Een beheerde installatiekopie maken van een gegeneraliseerde VM in Azure
 

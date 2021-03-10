@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 8e97a2f077efd4d00eec4a91645dc1b65057ebd9
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 3dbdfb461bc2ae79439f39df3efbc2c564782110
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565004"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548390"
 ---
 # <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Een VPN-client configureren voor P2S OpenVPN-protocolverbindingen: Azure Active Directory-verificatie
 
@@ -192,7 +192,7 @@ U kunt het gedownloade XML-profiel bestand wijzigen **\<dnsservers> \<dnsserver>
 ```
 
 > [!NOTE]
-> De OpenVPN Azure AD-client maakt gebruik van NRPT-vermeldingen (DNS Name Resolution Policy Table), wat betekent dat de DNS-servers niet worden vermeld onder de uitvoer van `ipconfig /all` . Raadpleeg [Get-DnsClientNrptPolicy](/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=win10-ps) in Power shell om uw DNS-instellingen in gebruik te bevestigen.
+> De OpenVPN Azure AD-client maakt gebruik van NRPT-vermeldingen (DNS Name Resolution Policy Table), wat betekent dat de DNS-servers niet worden vermeld onder de uitvoer van `ipconfig /all` . Raadpleeg [Get-DnsClientNrptPolicy](/powershell/module/dnsclient/get-dnsclientnrptpolicy) in Power shell om uw DNS-instellingen in gebruik te bevestigen.
 >
 
 ### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Hoe kan ik aangepaste routes toevoegen aan de VPN-client?

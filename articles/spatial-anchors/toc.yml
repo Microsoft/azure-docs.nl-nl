@@ -107,6 +107,8 @@
       href: concepts/logging-diagnostics.md
     - name: Coarse-relokalisatie
       href: concepts/coarse-reloc.md
+    - name: Strategie voor anker zoeken
+      href: concepts/anchor-locate-strategy.md
 - name: Verwijzingen
   items:
     - name: SDK voor Unity

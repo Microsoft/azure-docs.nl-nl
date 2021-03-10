@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 948b30cbf37ae5f4f357860569579d8591412414
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 5ee4481b3151e28d5d37760e486a43adbc194994
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630393"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553218"
 ---
 # <a name="part-one-enable-ad-ds-authentication-for-your-azure-file-shares"></a>Deel 1: Schakel AD DS verificatie in voor uw Azure-bestands shares 
 
@@ -41,7 +41,7 @@ Het AD DS-account dat is gemaakt door de cmdlet vertegenwoordigt het opslag acco
 Vervang de tijdelijke aanduidingen door uw eigen waarden in de onderstaande para meters voordat u deze in Power shell uitvoert.
 > [!IMPORTANT]
 > Met de cmdlet domein toevoegen wordt een AD-account gemaakt dat het opslag account (bestands share) in AD vertegenwoordigt. Zie [Veelgestelde vragen](./storage-files-faq.md#security-authentication-and-access-control) voor meer informatie over het registreren van een computer account of een service-aanmeldings account. Voor computer accounts is er een standaard leeftijd voor wachtwoord verloop ingesteld in AD om 30 dagen. Op dezelfde manier kan voor het service-aanmeldings account een standaard leeftijd voor het wacht woord voor het verlopen van het AD-domein of de organisatie-eenheid (OE) zijn ingesteld.
-> Voor beide account typen raden we u aan de leeftijd van het wacht woord te controleren dat in uw AD-omgeving is geconfigureerd en om [het wacht woord van uw opslag account-id](storage-files-identity-ad-ds-update-password.md) van het ad-account bij te werken vóór de maximale wachtwoord duur. U kunt overwegen om [een nieuwe AD-organisatie-eenheid (OE) in AD te maken](/powershell/module/addsadministration/new-adorganizationalunit?view=win10-ps) en het verloop beleid voor wacht woorden op [computer accounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)) of service-aanmeldings accounts dienovereenkomstig uit te scha kelen. 
+> Voor beide account typen raden we u aan de leeftijd van het wacht woord te controleren dat in uw AD-omgeving is geconfigureerd en om [het wacht woord van uw opslag account-id](storage-files-identity-ad-ds-update-password.md) van het ad-account bij te werken vóór de maximale wachtwoord duur. U kunt overwegen om [een nieuwe AD-organisatie-eenheid (OE) in AD te maken](/powershell/module/addsadministration/new-adorganizationalunit) en het verloop beleid voor wacht woorden op [computer accounts](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj852252(v=ws.11)) of service-aanmeldings accounts dienovereenkomstig uit te scha kelen. 
 
 ```PowerShell
 #Change the execution policy to unblock importing AzFilesHybrid.psm1 module
@@ -89,7 +89,7 @@ Als u het bovenstaande script al hebt uitgevoerd `Join-AzStorageAccountForAuth` 
 
 ### <a name="checking-environment"></a>Omgeving controleren
 
-Eerst moet u de status van uw omgeving controleren. U moet in het bijzonder controleren of [Active Directory Power shell](/powershell/module/addsadministration/?view=win10-ps) is geïnstalleerd en of de shell wordt uitgevoerd met beheerders bevoegdheden. Controleer vervolgens of de [Az.Storage 2.0-module](https://www.powershellgallery.com/packages/Az.Storage/2.0.0) is geïnstalleerd, en installeer deze als dit niet het geval is. Nadat u deze controles hebt voltooid, controleert u uw AD DS om te zien of er een [computer account](/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (standaard) of een [service aanmeldings account](/windows/win32/ad/about-service-logon-accounts) is dat al is gemaakt met SPN/UPN als CIFS/uw-Storage-account-name. file. core. Windows. net. Als het account niet bestaat, maakt u er een zoals beschreven in de volgende sectie.
+Eerst moet u de status van uw omgeving controleren. U moet in het bijzonder controleren of [Active Directory Power shell](/powershell/module/addsadministration/) is geïnstalleerd en of de shell wordt uitgevoerd met beheerders bevoegdheden. Controleer vervolgens of de [Az.Storage 2.0-module](https://www.powershellgallery.com/packages/Az.Storage/2.0.0) is geïnstalleerd, en installeer deze als dit niet het geval is. Nadat u deze controles hebt voltooid, controleert u uw AD DS om te zien of er een [computer account](/windows/security/identity-protection/access-control/active-directory-accounts#manage-default-local-accounts-in-active-directory) (standaard) of een [service aanmeldings account](/windows/win32/ad/about-service-logon-accounts) is dat al is gemaakt met SPN/UPN als CIFS/uw-Storage-account-name. file. core. Windows. net. Als het account niet bestaat, maakt u er een zoals beschreven in de volgende sectie.
 
 ### <a name="creating-an-identity-representing-the-storage-account-in-your-ad-manually"></a>Een identiteit maken die het opslag account in uw AD hand matig weergeeft
 

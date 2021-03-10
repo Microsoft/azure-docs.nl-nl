@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/12/2021
-ms.openlocfilehash: b8cfb483f2b06c072707c57ff45b7ad995a22eb4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: a2f6023b86b96266be8e625fd5b0d6625500e3fc
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034435"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551467"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Overzicht van Azure Monitor agents
 
@@ -152,10 +152,10 @@ De volgende tabellen geven een lijst van de besturings systemen die worden onder
 
 ### <a name="linux"></a>Linux
 
-| Besturingssysteem | Azure Monitor-agent | Log Analytics-agent | Agent voor afhankelijkheden | Diagnostics-extensie | 
+| Besturingssysteem | Azure Monitor agent <sup>1</sup> | Log Analytics agent <sup>1</sup> | Agent voor afhankelijkheden | Uitbrei ding van diagnostische gegevens <sup>2</sup>| 
 |:---|:---:|:---:|:---:|:---:
 | Amazon Linux 2017,09                                        |   | X |   |   |
-| CentOS Linux 8 <sup>1</sup> <sup>2</sup>                    | X | X | X |   |
+| CentOS Linux 8                                              | X <sup>3</sup> | X | X |   |
 | CentOS Linux 7                                              | X | X | X | X |
 | CentOS Linux 6                                              |   | X |   |   |
 | CentOS Linux 6.5 +                                           |   | X | X | X |
@@ -164,26 +164,28 @@ De volgende tabellen geven een lijst van de besturings systemen die worden onder
 | Debian 8                                                    |   | X | X |   |
 | Debian 7                                                    |   |   |   | X |
 | OpenSUSE 13.1 +                                              |   |   |   | X |
-| Oracle Linux 8 <sup>1</sup> <sup>2</sup>                    | X | X |   |   |
+| Oracle Linux 8                                              | X <sup>3</sup> | X |   |   |
 | Oracle Linux 7                                              | X | X |   | X |
 | Oracle Linux 6                                              |   | X |   |   |
 | Oracle Linux 6.4 +                                           |   | X |   | X |
-| Red Hat Enterprise Linux Server 8 <sup>1</sup> <sup>2</sup> | X | X | X |   |
+| Red Hat Enterprise Linux Server 8                           | X <sup>3</sup> | X | X |   |
 | Red Hat Enterprise Linux Server 7                           | X | X | X | X |
 | Red Hat Enterprise Linux Server 6                           |   | X | X |   |
 | Red Hat Enterprise Linux Server 6,7 +                        |   | X | X | X |
-| SUSE Linux Enterprise Server 15,2 <sup>1</sup> <sup>2</sup> | X |   |   |   |
-| SUSE Linux Enterprise Server 15,1 <sup>1</sup> <sup>2</sup> | X | X |   |   |
+| SUSE Linux Enterprise Server 15,2                           | X <sup>3</sup> |   |   |   |
+| SUSE Linux Enterprise Server 15,1                           | X <sup>3</sup> | X |   |   |
 | SUSE Linux Enterprise Server 15                             | X | X | X |   |
 | SUSE Linux Enterprise Server 12                             | X | X | X | X |
-| Ubuntu 20,04 LTS <sup>1</sup>                               | X | X | X |   |
+| Ubuntu 20,04 LTS                                            | X | X | X |   |
 | Ubuntu 18.04 LTS                                            | X | X | X | X |
 | Ubuntu 16.04 LTS                                            | X | X | X | X |
 | Ubuntu 14,04 LTS                                            |   | X |   | X |
 
-<sup>1</sup> python 3 moet zijn geïnstalleerd op de computer.
+<sup>1</sup> vereist python (2 of 3) om op de computer te worden geïnstalleerd.
 
-<sup>2</sup> bekend probleem bij het verzamelen van syslog-gebeurtenissen. Momenteel worden alleen prestatie gegevens ondersteund.
+<sup>2</sup> op de computer moet Python 2 zijn geïnstalleerd.
+
+<sup>3</sup> bekend probleem bij het verzamelen van syslog-gebeurtenissen. Momenteel worden alleen prestatie gegevens ondersteund.
 #### <a name="dependency-agent-linux-kernel-support"></a>Ondersteuning voor Linux-kernel van afhankelijkheids agent
 
 Omdat de afhankelijkheids agent werkt op het niveau van de kernel, is ondersteuning ook afhankelijk van de versie van de kernel. De volgende tabel geeft een overzicht van de belangrijkste en secundaire Linux-versie van het besturings systeem en ondersteunde kernel-versies voor de afhankelijkheids agent.
@@ -195,7 +197,7 @@ Omdat de afhankelijkheids agent werkt op het niveau van de kernel, is ondersteun
 |                    | 8.0     | 4.18.0-80. \* EL8.x86_64<br>4.18.0-80.\*el8_0.x86_64 |
 |  Red Hat Linux 7   | 7.9     | 3.10.0-1160 |
 |                    | 7,8     | 3.10.0-1136 |
-|                    | 7,7     | 3.10.0-1062 |
+|                    | 7.7     | 3.10.0-1062 |
 |                    | 7.6     | 3.10.0-957  |
 |                    | 7,5     | 3.10.0-862  |
 |                    | 7.4     | 3.10.0-693  |
@@ -206,7 +208,7 @@ Omdat de afhankelijkheids agent werkt op het niveau van de kernel, is ondersteun
 |                    | 8.0     | 4.18.0-80. \* EL8.x86_64<br>4.18.0-80.\*el8_0.x86_64 |
 | CentOS Linux 7     | 7.9     | 3.10.0-1160 |
 |                    | 7,8     | 3.10.0-1136 |
-|                    | 7,7     | 3.10.0-1062 |
+|                    | 7.7     | 3.10.0-1062 |
 | CentOS Linux 6     | 6.10    | 2.6.32-754.3.5<br>2.6.32-696.30.1 |
 |                    | 6.9     | 2.6.32-696.30.1<br>2.6.32-696.18.7 |
 | Ubuntu Server      | 20,04   | 5,4\* |

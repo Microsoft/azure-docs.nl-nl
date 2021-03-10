@@ -7,14 +7,14 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 11/02/2020
 ms.author: allensu
-ms.openlocfilehash: 68a4703cc2dc1b2898057e138fda7de9eff146e7
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: afd1f8b6c80cfd7aa8d5142841458d76511a9e96
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807459"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102562908"
 ---
-# <a name="use-powershell-to-create-a-private-endpoint"></a>Power shell gebruiken voor het maken van een persoonlijk eind punt
+# <a name="quickstart-create-an-azure-private-endpoint-using-azure-powershell"></a>Snelstartgids: een persoonlijk Azure-eind punt maken met Azure PowerShell
 
 Ga aan de slag met Azure Private Link door een privé-eindpunt te gebruiken om veilig verbinding te maken met een Azure-web-app.
 

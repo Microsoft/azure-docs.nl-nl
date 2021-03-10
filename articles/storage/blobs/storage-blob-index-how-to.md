@@ -9,19 +9,19 @@ ms.subservice: blobs
 ms.topic: how-to
 ms.reviewer: klaasl
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 32bb51751430dcd0208849f798d21f2b25e6b82b
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: a820f7efc39af8c6ab66c883d285b507c7bc7368
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102430867"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563265"
 ---
 # <a name="use-blob-index-tags-preview-to-manage-and-find-data-on-azure-blob-storage"></a>Gebruik BLOB index Tags (preview) om gegevens te beheren en te zoeken op Azure Blob Storage
 
 Met Blob-index Tags worden gegevens in uw opslag account gecategoriseerd met behulp van code kenmerken van de sleutel waarde. Deze tags worden automatisch geïndexeerd en weer gegeven als een Doorzoek bare multi-dimensionale index om eenvoudig gegevens te vinden. Dit artikel laat u zien hoe u gegevens kunt instellen, ophalen en zoeken met behulp van BLOB-index Tags.
 
 > [!IMPORTANT]
-> Index Tags voor blobs zijn momenteel beschikbaar als **Preview-versie** en zijn verkrijgbaar in de regio's **Canada-centraal**, **Canada-Oost**, **Frankrijk-centraal** en **Frankrijk-Zuid** . Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+> Index Tags voor blobs zijn momenteel beschikbaar als **Preview-versie** en zijn verkrijgbaar in alle open bare regio's. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
 
 Zie [Azure Blob-gegevens beheren en zoeken met Blob-index Tags (preview)](storage-manage-find-blobs.md)voor meer informatie over deze functie, samen met bekende problemen en beperkingen.
 

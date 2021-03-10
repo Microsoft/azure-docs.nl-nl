@@ -14,16 +14,16 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0fb61388b13b912166c9c07b9ee28b365c4a63b9
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: c1f41dca3b52ce75ba2342506f621cca0618a3bf
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740377"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565883"
 ---
 # <a name="azure-ad-administrative-units-troubleshooting-and-faq"></a>Azure AD-beheer eenheden: problemen oplossen en veelgestelde vragen
 
-Voor gedetailleerdere administratieve controle in Azure Active Directory (Azure AD) kunt u gebruikers toewijzen aan een Azure AD-rol met een bereik dat beperkt is tot een of meer beheer eenheden. Zie [werken met beheer eenheden](/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0&preserve-view=true)voor voor beelden van Power shell-scripts voor algemene taken.
+Voor gedetailleerdere administratieve controle in Azure Active Directory (Azure AD) kunt u gebruikers toewijzen aan een Azure AD-rol met een bereik dat beperkt is tot een of meer beheer eenheden. Zie [werken met beheer eenheden](/powershell/azure/active-directory/working-with-administrative-units)voor voor beelden van Power shell-scripts voor algemene taken.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
@@ -69,9 +69,9 @@ Beheer eenheden, zoals organisatie-eenheden in Windows Server Active Directory, 
 
 **V: worden er administratieve eenheden ondersteund in Power shell en de Graph API?**
 
-**A:** Klikt. U vindt ondersteuning voor beheer eenheden in [Power shell-cmdlet-documentatie](/powershell/module/Azuread/?view=azureadps-2.0&preserve-view=true) en [voorbeeld scripts](/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0&preserve-view=true).
+**A:** Klikt. U vindt ondersteuning voor beheer eenheden in [Power shell-cmdlet-documentatie](/powershell/module/Azuread/) en [voorbeeld scripts](/powershell/azure/active-directory/working-with-administrative-units).
 
-Zoek ondersteuning voor het [resource type administrativeUnit](/graph/api/resources/administrativeunit?view=graph-rest-1.0&preserve-view=true) in Microsoft Graph.
+Zoek ondersteuning voor het [resource type administrativeUnit](/graph/api/resources/administrativeunit) in Microsoft Graph.
 
 ## <a name="next-steps"></a>Volgende stappen
 

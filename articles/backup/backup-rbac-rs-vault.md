@@ -3,13 +3,13 @@ title: Back-ups beheren met op rollen gebaseerd toegangs beheer van Azure
 description: Gebruik Azure op rollen gebaseerd toegangs beheer voor het beheren van de toegang tot back-upbeheer bewerkingen in Recovery Services kluis.
 ms.reviewer: utraghuv
 ms.topic: conceptual
-ms.date: 06/24/2019
-ms.openlocfilehash: 0dd8d08c4ee79082f47929cf7d453f3f4bbd60ee
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.date: 03/09/2021
+ms.openlocfilehash: 179cb6efcff4bcf50a64a6d58f861622e853b02b
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090876"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553405"
 ---
 # <a name="use-azure-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Op rollen gebaseerd toegangs beheer van Azure gebruiken voor het beheren van Azure Backup herstel punten
 
@@ -28,26 +28,28 @@ Als u uw eigen rollen wilt definiëren voor nog meer controle, raadpleegt u [aan
 
 ## <a name="mapping-backup-built-in-roles-to-backup-management-actions"></a>Ingebouwde functies voor back-ups koppelen aan back-upbeheer acties
 
+### <a name="minimum-role-requirements-for-azure-vm-backup"></a>Minimale functie vereisten voor Azure VM-back-up
+
 In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende minimale Azure-rol vastgelegd die is vereist om deze bewerking uit te voeren.
 
-| Beheer bewerking | Mini maal vereiste Azure-rol | Bereik vereist |
-| --- | --- | --- |
-| Een Recovery Services-kluis maken | Back-upinzender | Resource groep met de kluis |
-| Back-ups van virtuele Azure-machines inschakelen | Back-upoperator | Resource groep met de kluis |
-| | Inzender voor virtuele machines | VM-resource |
-| Back-up op aanvraag van de virtuele machine | Back-upoperator | Recovery Services-kluis |
-| VM herstellen | Back-upoperator | Recovery Services-kluis |
-| | Inzender | De resource groep waarin de VM wordt geïmplementeerd |
-| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |
+| Beheer bewerking | Mini maal vereiste Azure-rol | Bereik vereist | Vervangen |
+| --- | --- | --- | --- |
+| Een Recovery Services-kluis maken | Back-upinzender | Resource groep met de kluis |   |
+| Back-ups van virtuele Azure-machines inschakelen | Back-upoperator | Resource groep met de kluis |   |
+| | Inzender voor virtuele machines | VM-resource |  U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| Back-up op aanvraag van de virtuele machine | Back-upoperator | Recovery Services-kluis |   |
+| VM herstellen | Back-upoperator | Recovery Services-kluis |   |
+| | Inzender | De resource groep waarin de VM wordt geïmplementeerd |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. resources/abonnementen/resourceGroups/schrijven micro soft. DomainRegistration/domeinen/schrijven, micro soft. Compute/informatie/write micro soft. Network/virtualNetworks/micro soft. Network/virtualNetworks/subnets/samen voegen/actie | 
+| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
 | Back-up van niet-beheerde schijven herstellen | Back-upoperator | Recovery Services-kluis |
-| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |
-| | Inzender voor opslagaccounts | Bron van het opslag account waar de schijven zullen worden teruggezet |
+| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| | Inzender voor opslagaccounts | Bron van het opslag account waar de schijven zullen worden teruggezet |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Storage/Storage accounts/write |
 | Beheerde schijven terugzetten vanuit een back-up van de VM | Back-upoperator | Recovery Services-kluis |
-| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |
-| | Inzender voor opslagaccounts | Het tijdelijke opslag account dat is geselecteerd als onderdeel van de herstel bewerking om gegevens van de kluis te bewaren voordat deze naar beheerde schijven worden geconverteerd |
-| | Inzender | De resource groep waarvoor beheerde schijven worden hersteld |
+| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |    U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| | Inzender voor opslagaccounts | Het tijdelijke opslag account dat is geselecteerd als onderdeel van de herstel bewerking om gegevens van de kluis te bewaren voordat deze naar beheerde schijven worden geconverteerd |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Storage/Storage accounts/write |
+| | Inzender | De resource groep waarvoor beheerde schijven worden hersteld | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen met de volgende machtigingen: micro soft. resources/abonnementen/resourceGroups/schrijven|
 | Afzonderlijke bestanden herstellen vanuit een back-up van de VM | Back-upoperator | Recovery Services-kluis |
-| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |
+| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
 | Back-upbeleid voor Azure VM-back-up maken | Back-upinzender | Recovery Services-kluis |
 | Back-upbeleid van Azure VM-back-up wijzigen | Back-upinzender | Recovery Services-kluis |
 | Back-upbeleid van Azure VM-back-up verwijderen | Back-upinzender | Recovery Services-kluis |
@@ -58,7 +60,25 @@ In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende mini
 > [!IMPORTANT]
 > Als u de rol van de VM in een VM-bron bereik opgeeft en **back-up** selecteert als onderdeel van de VM-instellingen, wordt het scherm **back-up inschakelen** geopend, zelfs als er al een back-up van de virtuele machine wordt gemaakt. Dit komt doordat de aanroep om de status van de back-up te controleren alleen op abonnements niveau werkt. Om dit te voor komen, gaat u naar de kluis en opent u de weer gave back-upitem van de virtuele machine of geeft u de rol van de VM-bijdrage op abonnements niveau op.
 
-## <a name="minimum-role-requirements-for-the-azure-file-share-backup"></a>Minimale functie vereisten voor de back-up van de Azure-bestands share
+### <a name="minimum-role-requirements-for-azure-workload-backups-sql-and-hana-db-backups"></a>Minimale functie vereisten voor back-ups van Azure-workloads (SQL-en HANA DB-back-ups)
+
+In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende minimale Azure-rol vastgelegd die is vereist om deze bewerking uit te voeren.
+
+| Beheer bewerking | Mini maal vereiste Azure-rol | Bereik vereist | Vervangen |
+| --- | --- | --- | --- |
+| Een Recovery Services-kluis maken | Back-upinzender | Resource groep met de kluis |   |
+| Back-ups van SQL-en/of HANA-data bases inschakelen | Back-upoperator | Resource groep met de kluis |   |
+| | Inzender voor virtuele machines | VM-resource waarin de data base is geïnstalleerd |  U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| Back-up op aanvraag van data base | Back-upoperator | Recovery Services-kluis |   |
+| Data base herstellen of herstellen als bestanden | Back-upoperator | Recovery Services-kluis |   |
+| | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| | Inzender voor virtuele machines | Doel-VM waarin de data base wordt hersteld of bestanden worden gemaakt |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| Back-upbeleid voor Azure VM-back-up maken | Back-upinzender | Recovery Services-kluis |
+| Back-upbeleid van Azure VM-back-up wijzigen | Back-upinzender | Recovery Services-kluis |
+| Back-upbeleid van Azure VM-back-up verwijderen | Back-upinzender | Recovery Services-kluis |
+| Back-up stoppen (met gegevens behouden of gegevens verwijderen) bij een back-up van de VM | Back-upinzender | Recovery Services-kluis |
+
+### <a name="minimum-role-requirements-for-the-azure-file-share-backup"></a>Minimale functie vereisten voor de back-up van de Azure-bestands share
 
 In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende rol vastgelegd die vereist zijn voor het uitvoeren van een Azure file share-bewerking.
 

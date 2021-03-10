@@ -2,18 +2,19 @@
 title: Azure Disk Encryption inschakelen voor Linux-VM's
 description: In dit artikel vindt u instructies voor het inschakelen van Microsoft Azure schijf versleuteling voor virtuele Linux-machines.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: de67e356e54328944c55f41dc0c9670e2540e82e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 066fb32dc9da13e8a77660a9144b53675d689f63
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694373"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553796"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Azure Disk Encryption voor Linux-VM's 
 
@@ -72,7 +73,7 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | RedHat | RHEL 8,1 | 8.1 | RedHat: RHEL: 8.1: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7-LVM | 7-LVM | RedHat: RHEL: 7-LVM: 7.8.2020111201 | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,8 | 7,8 | RedHat: RHEL: 7,8: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
-| RedHat | RHEL 7,7 | 7,7 | RedHat: RHEL: 7,7: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
+| RedHat | RHEL 7,7 | 7.7 | RedHat: RHEL: 7,7: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,6 | 7.6 | RedHat: RHEL: 7,6: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7.5 | 7,5 | RedHat: RHEL: 7.5: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
 | RedHat | RHEL 7,4 | 7.4 | RedHat: RHEL: 7.4: nieuwste | Besturings systeem en gegevens schijf (zie opmerking hieronder) |
@@ -85,7 +86,7 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 | OpenLogic | CentOS 8,1 | 8_1 | Open Logic: CentOS: 8_1: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7-LVM | 7-LVM | Open Logic: CentOS-LVM: 7-LVM: 7.8.2020111100 | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,8 | 7,8 | Open Logic: CentOS: 7_8: nieuwste | Besturings systeem en gegevens schijf |
-| OpenLogic | CentOS 7,7 | 7,7 | Open Logic: CentOS: 7,7: nieuwste | Besturings systeem en gegevens schijf |
+| OpenLogic | CentOS 7,7 | 7.7 | Open Logic: CentOS: 7,7: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7,6 | 7.6 | Open Logic: CentOS: 7,6: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7.5 | 7,5 | Open Logic: CentOS: 7.5: nieuwste | Besturings systeem en gegevens schijf |
 | OpenLogic | CentOS 7.4 | 7.4 | Open Logic: CentOS: 7.4: nieuwste | Besturings systeem en gegevens schijf |

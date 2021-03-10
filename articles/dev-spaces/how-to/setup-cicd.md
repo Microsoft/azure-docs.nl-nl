@@ -8,12 +8,12 @@ ms.topic: conceptual
 manager: gwallace
 description: Meer informatie over het instellen van continue integratie/continue implementatie met Azure DevOps met Azure dev Spaces
 keywords: Docker, Kubernetes, azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: de409aa060034c9ba0faaaa56ce21f904b02cdac
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 142f01a04066b919a81e1ad1ea95efa31f51f6ca
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017777"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548730"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>CI/CD gebruiken met Azure Dev Spaces
 
@@ -28,7 +28,7 @@ Hoewel dit artikel u begeleidt bij Azure DevOps, zijn dezelfde concepten ook van
 ## <a name="prerequisites"></a>Vereisten
 * Azure Kubernetes service (AKS)-cluster met Azure dev Spaces ingeschakeld
 * [Azure dev Spaces CLI geïnstalleerd](upgrade-tools.md)
-* [Azure DevOps-organisatie met een project](/azure/devops/user-guide/sign-up-invite-teammates?view=vsts)
+* [Azure DevOps-organisatie met een project](/azure/devops/user-guide/sign-up-invite-teammates)
 * [Azure Container Registry (ACR)](../../container-registry/container-registry-get-started-azure-cli.md)
     * Details van Azure Container Registry- [beheerders account](../../container-registry/container-registry-authentication.md#admin-account) beschikbaar
 * [Uw AKS-cluster autoriseren om te halen uit uw Azure Container Registry](../../aks/cluster-container-registry-integration.md)
@@ -70,7 +70,7 @@ De optie om uit te scha kelen:
 > [!Note]
 > De preview-functie voor het maken van Azure DevOps _nieuwe YAML-pijp lijn_ veroorzaakt een conflict met het maken van vooraf gedefinieerde build-pijp lijnen. U moet dit nu uitschakelen om onze vooraf gedefinieerde build-pijp lijn te kunnen implementeren.
 
-In de _azds_updates_ Branch hebben we een eenvoudige [Azure pipeline-yaml](/azure/devops/pipelines/yaml-schema?view=vsts&tabs=schema) opgenomen waarmee de build-stappen worden gedefinieerd die vereist zijn voor *mywebapi* en *webfrontend*.
+In de _azds_updates_ Branch hebben we een eenvoudige [Azure pipeline-yaml](/azure/devops/pipelines/yaml-schema?tabs=schema) opgenomen waarmee de build-stappen worden gedefinieerd die vereist zijn voor *mywebapi* en *webfrontend*.
 
 Afhankelijk van de taal die u hebt gekozen, is de pijplijn YAML ingecheckt in een pad dat lijkt op het volgende: `samples/dotnetcore/getting-started/azure-pipelines.dotnetcore.yml`
 

@@ -1,23 +1,24 @@
 ---
 title: Tijd synchronisatie voor virtuele Linux-machines in azure
 description: Tijd synchronisatie voor virtuele Linux-machines.
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: ''
 author: cynthn
 manager: gwallace
 tags: azure-resource-manager
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/20/2020
 ms.author: cynthn
-ms.openlocfilehash: 399022c1ef740865e4b2f7b82e2175e748a2a925
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 18c8570a8066985cab5263c4779787062dc32d75
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91306953"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552640"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Tijd synchronisatie voor virtuele Linux-machines in azure
 
@@ -114,7 +115,7 @@ root        391      2  0 17:52 ?        00:00:00 [hv_balloon]
 
 ### <a name="check-for-ptp-clock-source"></a>Controleren op PTP-Clock-bron
 
-Met nieuwere versies van Linux is een timer-klok bron (Precision Time Protocol) beschikbaar als onderdeel van de VMICTimeSync-provider. In oudere versies van Red Hat Enterprise Linux of CentOS 7. x de [Linux-integratie Services](https://github.com/LIS/lis-next) kunnen worden gedownload en gebruikt om het bijgewerkte stuur programma te installeren. Wanneer de PTP-Clock-bron beschikbaar is, is het Linux-apparaat de vorm/dev/PTP*x*. 
+Met nieuwere versies van Linux is een timer-klok bron (Precision Time Protocol) beschikbaar als onderdeel van de VMICTimeSync-provider. In oudere versies van Red Hat Enterprise Linux of CentOS 7. x de [Linux-integratie Services](https://github.com/LIS/lis-next) kunnen worden gedownload en gebruikt om het bijgewerkte stuur programma te installeren. Wanneer de PTP-Clock-bron beschikbaar is, is het Linux-apparaat de vorm/dev/PTP *x*. 
 
 Bekijk welke PTP-timer bronnen beschikbaar zijn.
 
@@ -144,7 +145,7 @@ Zie [NTP configureren](https://access.redhat.com/documentation/en-us/red_hat_ent
 
 Zie [using chrony](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-configuring_ntp_using_the_chrony_suite#sect-Using_chrony)(Engelstalig) voor meer informatie over chrony.
 
-Als zowel de chrony-als de VMICTimeSync-bron tegelijk zijn ingeschakeld, kunt u een als voor **keur**markeren, waarmee de andere bron wordt ingesteld als back-up. Omdat de NTP-Services de klok voor grote scheefheden, behalve na een lange periode, niet bijwerken, zal de VMICTimeSync de klok van onderbroken VM-gebeurtenissen veel sneller worden hersteld dan op NTP gebaseerde hulpprogram ma's.
+Als zowel de chrony-als de VMICTimeSync-bron tegelijk zijn ingeschakeld, kunt u een als voor **keur** markeren, waarmee de andere bron wordt ingesteld als back-up. Omdat de NTP-Services de klok voor grote scheefheden, behalve na een lange periode, niet bijwerken, zal de VMICTimeSync de klok van onderbroken VM-gebeurtenissen veel sneller worden hersteld dan op NTP gebaseerde hulpprogram ma's.
 
 Chronyd versnelt of vertraagt standaard de systeem klok om tijds drift te verhelpen. Als de drift te groot wordt, chrony de drift niet oplossen. Om dit op te lossen, `makestep` kan de para meter in **/etc/chrony.conf** worden gewijzigd om een tijd synchronisatie af te dwingen als de waarde van de drift de opgegeven drempel overschrijdt.
 

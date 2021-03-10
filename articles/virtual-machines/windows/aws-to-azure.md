@@ -2,17 +2,18 @@
 title: Een Windows AWS EC2-exemplaar verplaatsen naar Azure
 description: Verplaats een Amazon Web Services (AWS) EC2 Windows-exemplaar naar een virtuele machine van Azure.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.collection: windows
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 9f66653996cb36e58054756ac877f859559609be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86d3e67b121bf7d66651e1e823e5f137e918a171
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87267095"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550787"
 ---
 # <a name="move-a-windows-vm-from-amazon-web-services-aws-to-an-azure-virtual-machine"></a>Een Windows-VM verplaatsen van Amazon Web Services (AWS) naar een virtuele machine van Azure
 
@@ -58,6 +59,6 @@ Nadat de VHD is geëxporteerd, volgt u de instructies in [Hoe kan ik een object 
 U kunt nu de VHD uploaden naar Azure en een nieuwe VM maken. 
 
 - Zie [een gegeneraliseerde VHD uploaden en deze gebruiken voor het maken van een nieuwe virtuele machine in azure](upload-generalized-managed.md) als u Sysprep op uw bron hebt uitgevoerd om deze te **generaliseren** voordat u het bestand exporteert.
-- Als u Sysprep niet hebt uitgevoerd vóór het exporteren, wordt de VHD als **gespecialiseerd**beschouwd. Zie [een gespecialiseerde VHD uploaden naar Azure en een nieuwe VM maken](create-vm-specialized.md)
+- Als u Sysprep niet hebt uitgevoerd vóór het exporteren, wordt de VHD als **gespecialiseerd** beschouwd. Zie [een gespecialiseerde VHD uploaden naar Azure en een nieuwe VM maken](create-vm-specialized.md)
 
  

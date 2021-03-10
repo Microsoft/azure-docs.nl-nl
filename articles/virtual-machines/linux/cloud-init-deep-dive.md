@@ -2,18 +2,18 @@
 title: Wat is Cloud-init?
 description: Meer informatie over het inrichten van een Azure-VM met behulp van Cloud-init.
 author: danielsollondon
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: f5028abadbe5600058c83a144d0095aee1278fe6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94dd57310375febb4bc9a55efa704a5fbf4e80e8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86042069"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559440"
 ---
 # <a name="diving-deeper-into-cloud-init"></a>Meer diep in de Cloud-init
 Voor meer informatie over [Cloud-init](https://cloudinit.readthedocs.io/en/latest/index.html) of het oplossen van problemen met een lager niveau, moet u weten hoe het werkt. Dit document markeert de belang rijke onderdelen en legt de details van Azure uit.

@@ -5,15 +5,15 @@ author: roygara
 ms.date: 08/24/2020
 ms.topic: how-to
 ms.author: rogarana
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 3882aae0fb1ecf330917f886555208c3937dd9a5
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: b5f58b549fc9d879f6c2e5515c679d82c3ff44e4
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358215"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560358"
 ---
 # <a name="use-the-azure-portal-to-enable-double-encryption-at-rest-for-managed-disks"></a>Gebruik de Azure Portal om dubbele versleuteling in te scha kelen voor beheerde schijven
 
@@ -21,7 +21,7 @@ Azure Disk Storage ondersteunt dubbele versleuteling in rust voor beheerde schij
 
 ## <a name="getting-started"></a>Aan de slag
 
-1. Meld u aan bij de [Azure-portal](https://aka.ms/diskencryptionupdates).
+1. Meld u aan bij [Azure Portal](https://aka.ms/diskencryptionupdates).
 
     > [!IMPORTANT]
     > U moet de [beschik bare koppeling](https://aka.ms/diskencryptionupdates) gebruiken om toegang te krijgen tot de Azure Portal. Dubbele versleuteling bij rest is momenteel niet zichtbaar in de open bare Azure Portal zonder de koppeling te gebruiken.
@@ -61,7 +61,7 @@ Azure Disk Storage ondersteunt dubbele versleuteling in rust voor beheerde schij
     ![Scherm opname van geslaagde machtiging en roltoewijzing voor uw sleutel kluis.](media/virtual-machines-disks-double-encryption-at-rest-portal/disk-encryption-notification-success.png)
 
 1. Navigeer naar uw schijf.
-1. Selecteer **versleuteling**.
+1. Selecteer **Versleuteling**.
 1. Voor **versleutelings type** selecteert u **dubbele versleuteling met door het platform beheerde en door de klant beheerde sleutels**.
 1. Selecteer uw schijf versleutelings.
 1. selecteer **Opslaan**.

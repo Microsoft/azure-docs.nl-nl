@@ -2,13 +2,13 @@
 title: CI/CD met Azure-pijp lijnen en-sjablonen
 description: Hierin wordt beschreven hoe u doorlopende integratie in azure-pijp lijnen configureert met behulp van Azure Resource Manager sjablonen. U ziet hoe u een Power shell-script gebruikt of bestanden kopieert naar een faserings locatie en vanaf daar implementeert.
 ms.topic: conceptual
-ms.date: 02/05/2021
-ms.openlocfilehash: ea1ccac00f121bd81fd8b9b1f182b565fc53d214
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.date: 03/09/2021
+ms.openlocfilehash: 4a2f1f15de0abd802f3dce138b2cea33e52e3dfc
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594194"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561939"
 ---
 # <a name="integrate-arm-templates-with-azure-pipelines"></a>Resource Manager-sjablonen integreren met Azure-pijplijnen
 
@@ -234,4 +234,5 @@ Wanneer u **Opslaan** selecteert, wordt de build-pijp lijn automatisch uitgevoer
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Azure Resource Manager sjablonen implementeren met behulp van github-acties](deploy-github-actions.md)voor meer informatie over het gebruik van arm-sjablonen met github-acties.
+* Als u de bewerking What-if in een pijp lijn wilt gebruiken, raadpleegt u [arm-sjablonen testen met What-If in een pijp lijn](https://4bes.nl/2021/03/06/test-arm-templates-with-what-if/).
+* Zie [Azure Resource Manager sjablonen implementeren met behulp van github-acties](deploy-github-actions.md)voor meer informatie over het gebruik van arm-sjablonen met github-acties.

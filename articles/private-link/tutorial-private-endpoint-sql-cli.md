@@ -1,5 +1,5 @@
 ---
-title: 'Zelfstudie: Verbinding maken met een Azure SQL-server met behulp van een privé-eindpunt in Azure - Azure CLI'
+title: 'Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een Azure-privé-eind punt-Azure CLI'
 description: Gebruik deze zelfstudie om te leren hoe u een Azure SQL-server maakt met een privé-eindpunt met behulp van Azure CLI
 services: private-link
 author: asudbring
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 11/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit
-ms.openlocfilehash: ab530817e912495049ad3fe8b36f9a5fad47eb2c
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 998b52a23894dcb7fa08b2c0fd42e4ef8e3678ae
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102096578"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554986"
 ---
-# <a name="tutorial---connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-cli"></a>Zelfstudie: Verbinding maken met een Azure SQL-server met behulp van een privé-eindpunt in Azure - Azure CLI
+# <a name="tutorial-connect-to-an-azure-sql-server-using-an-azure-private-endpoint---azure-cli"></a>Zelf studie: verbinding maken met een Azure SQL-Server met behulp van een Azure-privé-eind punt-Azure CLI
 
 Een privé-eindpunt in Azure is de fundamentele bouwsteen voor een Private Link in Azure. Het biedt Azure-resources, zoals virtuele machines, de mogelijkheid om Private Link-resources te gebruiken om privé met elkaar communiceren.
 
@@ -328,8 +328,6 @@ In deze zelfstudie hebt u het volgende gemaakt:
 
 U hebt de virtuele machine gebruikt om de connectiviteit met de SQL-server via het privé-eindpunt veilig te testen.
 
-Als volgende stap hebt u mogelijk ook geïnteresseerd in de web- [app met een particuliere verbinding met het Azure SQL database](https://docs.microsoft.com/azure/architecture/example-scenario/private-web-app/private-web-app) Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
-
-Een Private Link-service maken:
+Als volgende stap hebt u mogelijk ook geïnteresseerd in de web- **app met een particuliere verbinding met het Azure SQL database** Architecture-scenario, waarmee een webtoepassing buiten het virtuele netwerk wordt verbonden met het persoonlijke eind punt van een Data Base.
 > [!div class="nextstepaction"]
-> [Een Private Link-service maken](create-private-link-service-portal.md)
+> [Web-app met persoonlijke connectiviteit met Azure SQL database](/azure/architecture/example-scenario/private-web-app/private-web-app)

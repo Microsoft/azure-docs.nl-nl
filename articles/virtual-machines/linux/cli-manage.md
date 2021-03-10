@@ -2,16 +2,16 @@
 title: Algemene Azure CLI-opdrachten
 description: Meer informatie over de algemene Azure CLI-opdrachten waarmee u aan de slag kunt met het beheer van uw Vm's in Azure Resource Manager modus
 author: RicksterCDN
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 05/12/2017
 ms.author: rclaus
-ms.openlocfilehash: 5a9dd8aaeed0642461e4244a72a3dab5c96a77b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2084d79ecbbc53ef9e3c75bae0664eae7de0eccb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87372243"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559627"
 ---
 # <a name="common-azure-cli-commands-for-managing-azure-resources"></a>Algemene Azure CLI-opdrachten voor het beheren van Azure-resources
 
@@ -26,7 +26,7 @@ Voor gedetailleerde hulp bij specifieke opdracht regel opties en-opties kunt u d
 | Taak | Azure CLI-opdrachten |
 | --- | --- |
 | Een resourcegroep maken | `az group create --name myResourceGroup --location eastus` |
-| Een Linux-VM maken | `az vm create --resource-group myResourceGroup --name myVM --image ubuntults` |
+| Een virtuele Linux-machine maken | `az vm create --resource-group myResourceGroup --name myVM --image ubuntults` |
 | Een Windows-VM maken | `az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter` |
 
 ### <a name="manage-vm-state"></a>Status van de virtuele machine beheren

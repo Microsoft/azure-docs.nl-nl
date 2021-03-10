@@ -1,28 +1,28 @@
 ---
 title: Overzicht voor Azure Logic Apps-preview
-description: Azure Logic Apps Preview is een Cloud oplossing voor het bouwen van geautomatiseerde stateful en stateless werk stromen die apps, gegevens, services en systemen integreren met minimale code voor scenario's op ondernemings niveau.
+description: Azure Logic Apps Preview is een Cloud oplossing voor het bouwen van geautomatiseerde, single tenant-, stateful en stateless werk stromen die apps, gegevens, services en systemen integreren met minimale code voor scenario's op ondernemings niveau.
 services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/05/2021
-ms.openlocfilehash: ad059931d87603c957e446e82b894731dca984dd
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.date: 03/08/2021
+ms.openlocfilehash: d53a36d99c9a54fdfef7baceb50edb4e8f5ae4c8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442737"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561854"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
 > [!IMPORTANT]
 > Deze functie is in openbare preview en wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-Met Azure Logic Apps Preview kunt u automatiserings-en integratie oplossingen maken voor apps, gegevens, Cloud Services en systemen door logische apps te maken en uit te voeren die [ *stateful* en *stateless* werk stromen](#stateful-stateless) bevatten met behulp van het nieuwe resource type **Logic app (preview)** . Met dit nieuwe type logische app kunt u meerdere werk stromen bouwen die worden aangedreven door de opnieuw ontworpen Azure Logic Apps Preview-runtime, die draag baarheid, betere prestaties en flexibiliteit biedt voor het implementeren en uitvoeren in verschillende hosting omgevingen, niet alleen Azure, maar ook docker-containers.
+Met Azure Logic Apps Preview kunt u automatiserings-en integratie oplossingen bouwen in apps, gegevens, Cloud Services en systemen door logische apps met één Tenant te maken en uit te voeren met het nieuwe resource type **Logic app (preview)** . Met dit type logische app voor één Tenant kunt u meerdere [ *stateful* en *stateless* werk stromen](#stateful-stateless) bouwen die worden aangedreven door de opnieuw ontworpen Azure Logic Apps Preview-runtime, die draag baarheid, betere prestaties en flexibiliteit biedt voor het implementeren en uitvoeren in verschillende hosting omgevingen, waaronder niet alleen Azure, maar ook docker-containers.
 
-Hoe is dat mogelijk? De opnieuw ontworpen runtime maakt gebruik van het [Azure functions-uitbreidings model](../azure-functions/functions-bindings-register.md) en wordt gehost als een uitbrei ding van de Azure functions runtime. Deze architectuur houdt in dat u het type nieuwe logische app kunt uitvoeren waar Azure Functions wordt uitgevoerd. U kunt de opnieuw ontworpen runtime hosten op bijna elke netwerk topologie en een beschik bare reken grootte kiezen voor het verwerken van de benodigde werk belasting die wordt vereist door uw werk stromen. Zie [Inleiding tot Azure functions](../azure-functions/functions-overview.md) en [Azure functions triggers en bindingen](../azure-functions/functions-triggers-bindings.md)voor meer informatie.
+Hoe is dat mogelijk? De opnieuw ontworpen runtime maakt gebruik van het [Azure functions-uitbreidings model](../azure-functions/functions-bindings-register.md) en wordt gehost als een uitbrei ding van de Azure functions runtime. Deze architectuur houdt in dat u het type logische app met één Tenant kunt uitvoeren waar Azure Functions wordt uitgevoerd. U kunt de opnieuw ontworpen runtime hosten op bijna elke netwerk topologie en een beschik bare reken grootte kiezen voor het verwerken van de benodigde werk belasting die wordt vereist door uw werk stromen. Zie [Inleiding tot Azure functions](../azure-functions/functions-overview.md) en [Azure functions triggers en bindingen](../azure-functions/functions-triggers-bindings.md)voor meer informatie.
 
-U kunt de **logische app (preview)** -resource maken door te [beginnen in de Azure Portal](create-stateful-stateless-workflows-azure-portal.md) of door [een project te maken in Visual Studio code met de extensie Azure Logic apps (preview)](create-stateful-stateless-workflows-visual-studio-code.md). Daarnaast kunt u in Visual Studio code uw werk stromen bouwen *en lokaal uitvoeren* in uw ontwikkel omgeving. Of u de portal of Visual Studio code gebruikt, u kunt het nieuwe type logische app implementeren en uitvoeren in hetzelfde soort hosting omgevingen.
+U kunt de **logische app (preview)** -resource maken door te [beginnen in de Azure Portal](create-stateful-stateless-workflows-azure-portal.md) of door [een project te maken in Visual Studio code met de extensie Azure Logic apps (preview)](create-stateful-stateless-workflows-visual-studio-code.md). Daarnaast kunt u in Visual Studio code uw werk stromen bouwen *en lokaal uitvoeren* in uw ontwikkel omgeving. Of u de portal of Visual Studio code gebruikt, u kunt het type van de logische app voor één Tenant implementeren en uitvoeren in hetzelfde soort hosting omgevingen.
 
 In dit overzicht worden de volgende gebieden beschreven:
 
@@ -48,7 +48,7 @@ Raadpleeg de volgende onderwerpen voor meer informatie:
 
 ## <a name="how-does-azure-logic-apps-preview-differ"></a>Hoe verschilt Azure Logic Apps Preview?
 
-De Azure Logic Apps Preview-runtime gebruikt [Azure functions](../azure-functions/functions-overview.md) uitbreid baarheid en wordt gehost als een uitbrei ding van de Azure functions runtime. Met deze architectuur kunt u het type van de nieuwe logische app uitvoeren waar Azure Functions wordt uitgevoerd. U kunt de runtime van Azure Logic Apps Preview hosten op bijna elke gewenste netwerk topologie en een beschik bare reken grootte kiezen voor het afhandelen van de benodigde werk belasting die uw werk stroom nodig heeft. Zie [Webjobs SDK: aangepaste invoer-en uitvoer bindingen maken](https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings)voor meer informatie over Azure functions uitbreid baarheid.
+De Azure Logic Apps Preview-runtime gebruikt [Azure functions](../azure-functions/functions-overview.md) uitbreid baarheid en wordt gehost als een uitbrei ding van de Azure functions runtime. Met deze architectuur kunt u het type van de logische app met één Tenant uitvoeren, waar Azure Functions uitgevoerd. U kunt de runtime van Azure Logic Apps Preview hosten op bijna elke gewenste netwerk topologie en een beschik bare reken grootte kiezen voor het afhandelen van de benodigde werk belasting die uw werk stroom nodig heeft. Zie [Webjobs SDK: aangepaste invoer-en uitvoer bindingen maken](https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings)voor meer informatie over Azure functions uitbreid baarheid.
 
 Met deze nieuwe benadering zijn de runtime van Azure Logic Apps Preview en uw werk stromen beide deel uit van uw app die u kunt inpakken. Met deze mogelijkheid kunt u uw werk stromen implementeren en uitvoeren door simpelweg artefacten naar de hostomgeving te kopiëren en de app te starten. Deze benadering biedt ook een meer gestandaardiseerde ervaring voor het bouwen van implementatie pijplijnen rond de werk stroom projecten voor het uitvoeren van de vereiste tests en validaties voordat u wijzigingen in productie omgevingen implementeert. Zie Azure Logic Apps de uitvoering van [Anywhere-runtime grondig](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-runtime-deep-dive/ba-p/1835564)uit voor meer informatie.
 
@@ -56,16 +56,18 @@ De volgende tabel geeft een overzicht van de verschillen in de manier waarop wer
 
 | Omgeving | Resources delen en verbruiken |
 |-------------|----------------------------------|
-| Azure Logic Apps (multi tenant) | Werk stromen *van klanten in meerdere tenants* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
-| Azure Logic Apps (preview-versie) | Werk stromen *in dezelfde logische app* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
+| Azure Logic Apps (multi tenant) | Werk stromen *van klanten over meerdere tenants* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
+| Azure Logic Apps (preview, single-tenant) | Werk stromen *in dezelfde logische app en één Tenant* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
 | Integratie service omgeving (niet beschikbaar in de preview-versie) | Werk stromen in *dezelfde omgeving* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
 ||||
 
-Ondertussen kunt u nog steeds het type van de oorspronkelijke logische app maken in de Azure Portal en in Visual Studio code met behulp van de oorspronkelijke Azure Logic Apps extensie. Hoewel de ontwikkelings ervaring verschilt van de oorspronkelijke en nieuwe typen logische apps, kan uw Azure-abonnement beide typen bevatten. U kunt alle geïmplementeerde Logic apps in uw Azure-abonnement weer geven en openen, maar de apps zijn ingedeeld in hun eigen categorieën en secties.
+Ondertussen kunt u nog steeds het type logische app voor meerdere tenants maken in de Azure Portal en in Visual Studio code met behulp van de Azure Logic Apps extensie voor meerdere tenants. Hoewel de ontwikkelings ervaring verschilt tussen de typen van de logische app met meerdere tenants en single tenants, kan uw Azure-abonnement beide typen bevatten. U kunt alle geïmplementeerde Logic apps in uw Azure-abonnement weer geven en openen, maar de apps zijn ingedeeld in hun eigen categorieën en secties.
 
 <a name="stateful-stateless"></a>
 
 ## <a name="stateful-and-stateless-workflows"></a>Stateful en stateless werk stromen
+
+Met het type logische app voor één Tenant kunt u deze werk stroom typen maken binnen dezelfde logische app:
 
 * *Stateful*
 
@@ -149,9 +151,9 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 
   * [Azure Logic Apps Anywhere-netwerk mogelijkheden uitvoeren met Azure Logic Apps Preview](https://techcommunity.microsoft.com/t5/integrations-on-azure/logic-apps-anywhere-networking-possibilities-with-logic-app/ba-p/2105047)
 
-* Opnieuw genereren van toegangs sleutels voor beheerde verbindingen die door afzonderlijke werk stromen worden gebruikt in een **logische app (preview)-** resource. Volg voor deze taak [dezelfde stappen voor de **Logic apps** resource, maar op het individuele werk stroom niveau](logic-apps-securing-a-logic-app.md#regenerate-access-keys), niet op het resource niveau van de logische app.
+* Opnieuw genereren van toegangs sleutels voor beheerde verbindingen die door afzonderlijke werk stromen worden gebruikt in de resource voor een logische app met één Tenant **(preview-versie)** . Volg voor deze taak [dezelfde stappen voor de multi tenant- **Logic apps** resource, maar op het individuele werk stroom niveau](logic-apps-securing-a-logic-app.md#regenerate-access-keys), niet op het resource niveau van de logische app.
 
-* Voeg parallelle vertakkingen in de nieuwe ontwerp functie toe door dezelfde stappen te volgen als de ontwerp functie voor niet-preview-versie.
+* Voeg parallelle vertakkingen toe aan de single tenant Designer door dezelfde stappen te volgen als de multi tenant-ontwerp functie.
 
 Zie voor meer informatie [gewijzigde, beperkte, niet-beschik bare en niet-ondersteunde mogelijkheden](#limited-unavailable-unsupported) en de [pagina met bekende problemen met de Logic apps open bare preview in github](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md).
 
@@ -159,14 +161,14 @@ Zie voor meer informatie [gewijzigde, beperkte, niet-beschik bare en niet-onders
 
 ## <a name="pricing-model"></a>Prijsmodel
 
-Wanneer u het type nieuwe logische app maakt in de Azure Portal of implementeren vanuit Visual Studio code, moet u kiezen voor een hosting abonnement, ofwel [app service of Premium](../azure-functions/functions-scale.md), voor uw logische app. Dit abonnement bepaalt het prijs model dat van toepassing is op het uitvoeren van uw logische app. Als u het App Service plan selecteert, moet u ook een [prijs categorie](../app-service/overview-hosting-plans.md)kiezen.
+Wanneer u het type logische app voor één Tenant maakt in de Azure Portal of implementeren vanuit Visual Studio code, moet u een hosting abonnement kiezen, hetzij [app service of Premium](../azure-functions/functions-scale.md), voor uw logische app. Dit abonnement bepaalt het prijs model dat van toepassing is op het uitvoeren van uw logische app. Als u het App Service plan selecteert, moet u ook een [prijs categorie](../app-service/overview-hosting-plans.md)kiezen.
 
 *Stateful* werk stromen gebruiken [externe opslag](../azure-functions/storage-considerations.md#storage-account-requirements), zodat de [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/) van toepassing zijn op opslag transacties die de Azure Logic Apps Preview-runtime uitvoert. Wacht rijen worden bijvoorbeeld gebruikt voor de planning, terwijl tabellen en blobs worden gebruikt voor het opslaan van werk stroom statussen.
 
 > [!NOTE]
 > Tijdens de open bare preview worden met Logic apps op App Service geen *extra* kosten boven op het geselecteerde abonnement gemaakt.
 
-Raadpleeg de volgende onderwerpen voor meer informatie over de prijs modellen die van toepassing zijn op dit nieuwe resource type:
+Lees de volgende onderwerpen voor meer informatie over de prijs modellen die van toepassing zijn op het resource type met één Tenant:
 
 * [Schaal en hosting van Azure Functions](../azure-functions/functions-scale.md)
 * [Een app omhoog schalen in Azure App Service](../app-service/manage-scale-up.md)
@@ -202,9 +204,9 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
       In de Azure Portal kunt u een HTTP-trigger functie selecteren, waar u toegang hebt door een verbinding te maken via de gebruikers ervaring. Als u de JSON-definitie van de functie actie in de code weergave of de **workflow.jsin** het bestand inspecteert, verwijst de actie naar de functie met behulp van een `connectionName` verwijzing. Deze versie bevat een samen vatting van de gegevens van de functie als een verbinding, die u kunt vinden in deconnections.jsvan het project **in** het bestand, wat beschikbaar is nadat u een verbinding hebt gemaakt.
 
       > [!NOTE]
-      > In de preview-versie ondersteunt de functie actie alleen verificatie van de query-teken reeks. Azure Logic Apps Preview haalt de standaard sleutel van de functie op bij het maken van de verbinding, slaat die sleutel op in de instellingen van uw app en gebruikt de sleutel voor verificatie bij het aanroepen van de functie.
+      > In de versie met één Tenant ondersteunt de functie actie alleen verificatie van de query-teken reeks. Azure Logic Apps Preview haalt de standaard sleutel van de functie op bij het maken van de verbinding, slaat die sleutel op in de instellingen van uw app en gebruikt de sleutel voor verificatie bij het aanroepen van de functie.
       >
-      > Net als bij de oorspronkelijke versie, als u deze sleutel verlengt, bijvoorbeeld door de Azure Functions ervaring in de portal, werkt de functie actie niet meer vanwege de ongeldige sleutel. U kunt dit probleem oplossen door de verbinding opnieuw tot stand te brengen met de functie die u wilt aanroepen of de instellingen van uw app bij te werken met de nieuwe sleutel.
+      > Net als bij de multi tenant versie, als u deze sleutel verlengt, bijvoorbeeld door de Azure Functions ervaring in de portal, werkt de functie actie niet meer vanwege de ongeldige sleutel. U kunt dit probleem oplossen door de verbinding opnieuw tot stand te brengen met de functie die u wilt aanroepen of de instellingen van uw app bij te werken met de nieuwe sleutel.
 
     * De ingebouwde actie, de [inline code-execute Java script-code](logic-apps-add-run-inline-code.md) is nu **inline code bewerkingen-online java script uitvoeren**.
 
@@ -222,7 +224,7 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
 
 * [Aangepaste connectors](../connectors/apis-list.md#custom-apis-and-connectors) worden momenteel niet ondersteund voor preview.
 
-* **Beschik baarheid hosting plan**: ongeacht of u een nieuwe **logische app (preview)** -resource type maakt in de Azure portal of implementeren vanuit Visual Studio code, kunt u alleen het Premium-of app service-hosting abonnement in azure gebruiken. Abonnementen voor het hosten van verbruik zijn niet beschikbaar en worden niet ondersteund voor de implementatie van dit bron type. U kunt implementeren vanuit Visual Studio code naar een docker-container, maar niet naar een [integratie service omgeving (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
+* **Beschik baarheid hosting abonnement**: ongeacht of u het resource type voor de logische app met één Tenant **(preview)** in de Azure portal of implementeren vanuit Visual Studio code maakt, kunt u alleen het Premium-of app service-hosting abonnement in azure gebruiken. Abonnementen voor het hosten van verbruik zijn niet beschikbaar en worden niet ondersteund voor de implementatie van dit bron type. U kunt implementeren vanuit Visual Studio code naar een docker-container, maar niet naar een [integratie service omgeving (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md).
 
 * **Fout opsporing in Visual Studio code voor onderbrekings** punten: Hoewel u onderbrekings punten kunt toevoegen en gebruiken in het **workflow.js** bestand voor een werk stroom, worden onderbrekings punten alleen ondersteund voor acties die op dit moment niet worden uitgevoerd. Zie [stateful en stateless werk stromen maken in Visual Studio code](create-stateful-stateless-workflows-visual-studio-code.md#manage-breakpoints)voor meer informatie.
 
@@ -233,6 +235,17 @@ In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn moment
    * Als u de uitvoerings geschiedenis wilt weer geven, opent u de werk stroom in uw logische app. Selecteer in het menu werk stroom onder **ontwikkelaar** de optie **monitor**.
 
    * Als u de trigger geschiedenis wilt bekijken, opent u de werk stroom in uw logische app. Selecteer in het menu werk stroom onder **ontwikkelaar** **trigger GESCHIEDENISS**.
+
+<a name="firewall-permissions"></a>
+
+## <a name="permit-traffic-in-strict-network-and-firewall-scenarios"></a>Verkeer in strikte netwerk-en firewall scenario's toestaan
+
+Als uw omgeving strikte netwerk vereisten of firewalls heeft die verkeer beperken, moet u toegang toestaan voor trigger-of actie verbindingen in uw logische app-werk stromen.
+
+Als u de FQDN-namen (Fully Qualified Domain names) voor deze verbindingen wilt vinden, raadpleegt u de bijbehorende secties in deze onderwerpen:
+
+* [Firewall machtigingen voor single tenant Logic apps-Visual Studio code](create-stateful-stateless-workflows-visual-studio-code.md#firewall-setup)
+* [Firewall machtigingen voor logische apps met één Tenant-Azure Portal](create-stateful-stateless-workflows-azure-portal.md#firewall-setup)
 
 <a name="limits"></a>
 

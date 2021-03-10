@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 3cf5047dbb79f6d8b35b0fe089069a20ab4a50a6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/08/2021
+ms.openlocfilehash: ff938d29d998b6fcf0b2cfae72a9a9e685a10dc5
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736336"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563940"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-the-azure-portal-with-azure-logic-apps-preview"></a>Stateful en stateless werk stromen maken in de Azure Portal met Azure Logic Apps Preview
 
@@ -236,7 +236,33 @@ Voordat u een trigger aan een lege werk stroom kunt toevoegen, moet u ervoor zor
 
 1. Sla uw werk op. Selecteer **Opslaan** op de werkbalk van de ontwerper.
 
-Activeer vervolgens hand matig een uitvoering om uw werk stroom te testen.
+1. Als uw omgeving strikte netwerk vereisten of firewalls heeft die het verkeer beperken, moet u machtigingen instellen voor elke trigger of actie verbinding die in uw werk stroom voor komt. De volledig gekwalificeerde 
+
+   Als u de werk stroom wilt testen, moet u [een uitvoering hand matig activeren](#trigger-workflow).
+
+<a name="firewall-setup"></a>
+
+##  <a name="find-domain-names-for-firewall-access"></a>Domein namen voor toegang tot de firewall zoeken
+
+Voordat u uw logische app implementeert en uw werk stroom in de Azure Portal uitvoert en uw omgeving strikte netwerk vereisten of firewalls heeft die verkeer beperken, moet u netwerk-of firewall machtigingen instellen voor trigger-of actie verbindingen in de werk stromen die in uw logische app bestaan.
+
+Voer de volgende stappen uit om de FQDN-namen (FULLy Qualified Domain names) voor deze verbindingen te vinden:
+
+1. Selecteer **verbindingen** onder **werk stromen** in het menu van de logische app. Op het tabblad **API-verbindingen** selecteert u de resource naam van de verbinding, bijvoorbeeld:
+
+   ![Scherm opname van het menu Azure Portal en Logic-app met de verbindings resource naam Connections en offic365 selected.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-connections.png)
+
+1. Breid uw browser breed genoeg uit zodat de **JSON-weer gave** wordt weer gegeven in de rechter bovenhoek van de browser. Selecteer **JSON-weer gave**.
+
+   ![Scherm opname van het deel venster Azure Portal en API-verbinding met JSON-weer gave geselecteerd.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-connection-view-json.png)
+
+1. Zoek, kopieer en sla de `connectionRuntimeUrl` waarde van de eigenschap op een veilige plek op, zodat u de firewall met deze gegevens kunt instellen.
+
+   ![Scherm afbeelding met de geselecteerde eigenschaps waarde ' connectionRuntimeUrl '.](./media/create-stateful-stateless-workflows-azure-portal/logic-app-connection-runtime-url.png)
+
+1. Herhaal de relevante stappen voor elke verbinding.
+
+<a name="trigger-workflow"></a>
 
 ## <a name="trigger-the-workflow"></a>De werk stroom activeren
 

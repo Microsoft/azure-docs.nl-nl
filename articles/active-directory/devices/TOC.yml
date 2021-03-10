@@ -80,7 +80,7 @@
     - name: Graph API's
       items:
         - name: API voor apparaat-id
-          href: /graph/api/resources/device?view=graph-rest-1.0
+          href: /graph/api/resources/device
 - name: Resources
   items:
     - name: Azure-feedbackforum

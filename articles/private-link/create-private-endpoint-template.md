@@ -1,19 +1,19 @@
 ---
-title: Een privé-eindpunt maken in Azure Private Link
+title: 'Quick Start: een persoonlijk eind punt maken met behulp van een ARM-sjabloon'
 description: In deze quickstart gebruikt u een ARM-sjabloon (Azure Resource Manager-sjabloon) om een privé-eindpunt te maken.
 services: private-link
-author: mblanco77
+author: asudbring
 ms.service: private-link
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/26/2020
 ms.author: allensu
-ms.openlocfilehash: 553d36a86671617417b6b9b1ea47966c3ba3fdf6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: e80adc16e08e676ac2daabec01a11c10d537c547
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88705806"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102562942"
 ---
 # <a name="quickstart-create-a-private-endpoint-by-using-an-arm-template"></a>Quickstart: Een privé-eindpunt maken met behulp van een ARM-sjabloon
 
@@ -118,7 +118,7 @@ U kunt als volgt verbinding maken met de SQL Database-server vanaf de VM met beh
     - **Servernaam**: Selecteer **sqlserver{uniekeid}.database.windows.net**.
     - **Gebruikersnaam**: Voer een gebruikersnaam in die tijdens het maken is opgegeven.
     - **Wachtwoord**: Voer een wachtwoord in dat tijdens het maken is opgegeven.
-    - **Wachtwoord onthouden**: Selecteer **Ja**.
+    - **Wachtwoord onthouden**: Selecteer  **Ja**.
 
 5.  Selecteer **Verbinden**.
 6.  Ga in het menu aan de linkerkant naar **Databases**.
@@ -137,4 +137,6 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees meer over [Azure Private Link](private-link-overview.md).
+Zie voor meer informatie over de services die een privé-eindpunt ondersteunen:
+> [!div class="nextstepaction"]
+> [Beschikbaarheid van Private Link](private-link-overview.md#availability)

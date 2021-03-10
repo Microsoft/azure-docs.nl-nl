@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3bba64f8c07545107d57f79ae94dab96e517815f
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: ceea2dbcf408b6b35ef7c26580278d3979244119
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900702"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551535"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Problemen met licentie toewijzing voor een groep in Azure Active Directory identificeren en oplossen
 
@@ -106,7 +106,7 @@ Als u Exchange Online gebruikt, zijn sommige gebruikers in uw organisatie mogeli
 > ```
 > Get-Recipient -ResultSize unlimited | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
 > ```
-> Zie het [fout bericht ' proxy adres wordt al gebruikt ' in Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online)voor meer informatie over dit probleem. Het artikel bevat ook informatie over [het maken van verbinding met Exchange Online met behulp van externe Power shell](/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps).
+> Zie het [fout bericht ' proxy adres wordt al gebruikt ' in Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online)voor meer informatie over dit probleem. Het artikel bevat ook informatie over [het maken van verbinding met Exchange Online met behulp van externe Power shell](/powershell/exchange/connect-to-exchange-online-powershell).
 
 Nadat u de problemen met het proxy adres voor de betrokken gebruikers hebt opgelost, moet u ervoor zorgen dat de licentie verwerking voor de groep afdwingt, zodat u zeker weet dat de licenties nu kunnen worden toegepast.
 

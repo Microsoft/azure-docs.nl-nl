@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: bed1c8fd77e84c69571cfad7dd6b7eeb6607209f
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: f1bce5c0ecdab4a9c96c3f2cc0e9734247bdfd66
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808045"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102566342"
 ---
 # <a name="troubleshoot-storsimple-device-deployment-issues"></a>Problemen met de implementatie van StorSimple-apparaten oplossen
 ## <a name="overview"></a>Overzicht
@@ -189,7 +189,7 @@ Wanneer u netwerk interfaces configureert voor een implementatie voor de eerste 
    * Als de interface in orde is, maar niet is ingeschakeld, wordt de status van **ifIndex** weer gegeven als **NotPresent**.
    * Als de interface niet bestaat, wordt deze niet weer gegeven in deze lijst. In de gebruikers interface van de StorSimple-Apparaatbeheer-service wordt deze interface nog steeds weer gegeven met de status mislukt.
 
-Ga voor meer informatie over het gebruik van deze cmdlet naar [Get-netadapter](/powershell/module/netadapter/get-netadapter?view=win10-ps&preserve-view=true) in de naslag gids voor Windows Power shell-cmdlets.
+Ga voor meer informatie over het gebruik van deze cmdlet naar [Get-netadapter](/powershell/module/netadapter/get-netadapter) in de naslag gids voor Windows Power shell-cmdlets.
 
 In de volgende secties worden voor beelden van uitvoer van de cmdlet weer gegeven `Get-NetAdapter` .
 

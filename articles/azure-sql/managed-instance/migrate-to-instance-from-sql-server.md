@@ -11,12 +11,12 @@ author: bonova
 ms.author: bonova
 ms.reviewer: ''
 ms.date: 07/11/2019
-ms.openlocfilehash: 2761b97e595f5e11b00e75cd778ee269b12bfcae
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 49d37a5537ada260eae453bbb5f81716d42657a5
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917797"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565816"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-managed-instance"></a>Migratie van SQL Server-exemplaren naar Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -59,6 +59,26 @@ Als u alle geïdentificeerde migratie blokkeringen hebt opgelost en u doorgaat m
 - Nieuwe functies die u gebruikt, zoals TDE (transparent data base Encryption) of groepen voor automatische failover, kunnen invloed hebben op CPU-en IO-gebruik.
 
 SQL Managed instance garandeert een Beschik baarheid van 99,99%, zelfs in kritieke scenario's, waardoor overhead die door deze functies wordt veroorzaakt, niet kan worden uitgeschakeld. Zie [de hoofd oorzaken van SQL Server en Azure SQL Managed instance](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)voor meer informatie.
+
+#### <a name="in-memory-oltp-memory-optimized-tables"></a>In-Memory OLTP (tabellen geoptimaliseerd voor geheugen)
+
+SQL Server biedt In-Memory OLTP-mogelijkheid voor gebruik van tabellen die zijn geoptimaliseerd voor geheugen, geoptimaliseerd voor geheugen en systeem eigen, gecompileerde SQL-modules voor het uitvoeren van workloads met hoge door Voer en lage latentie verwerkings vereisten voor transactionele trans acties. 
+
+> [!IMPORTANT]
+> In-Memory OLTP wordt alleen ondersteund in de Bedrijfskritiek-laag van een Azure SQL Managed instance (en wordt niet ondersteund in de Algemeen-laag).
+
+Als u voor geheugen geoptimaliseerde tabellen of tabel typen die zijn geoptimaliseerd voor geheugen hebt in uw on-premises SQL Server en u wilt migreren naar Azure SQL Managed instance, moet u:
+
+- Kies Bedrijfskritiek laag voor uw doel exemplaar van Azure SQL Managed dat In-Memory OLTP ondersteunt, of
+- Als u wilt migreren naar Algemeen tier in Azure SQL Managed instance, verwijdert u tabellen die zijn geoptimaliseerd voor geheugen, geoptimaliseerde tabel typen en systeem eigen gecompileerde SQL-modules die communiceren met objecten die zijn geoptimaliseerd voor geheugen voordat u uw data base (s) migreert. De volgende T-SQL-query kan worden gebruikt om alle objecten te identificeren die moeten worden verwijderd voordat de migratie naar Algemeen laag kan worden uitgevoerd:
+
+```tsql
+SELECT * FROM sys.tables WHERE is_memory_optimized=1
+SELECT * FROM sys.table_types WHERE is_memory_optimized=1
+SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
+```
+
+Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/in-memory-oltp-overview) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
 
 ### <a name="create-a-performance-baseline"></a>Een basis lijn voor prestaties maken
 

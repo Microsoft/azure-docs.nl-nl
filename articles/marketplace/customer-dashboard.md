@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: c98b47507a7543002f00aae82370f5ea0043510d
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: c5c50787ef3e287d164e051ece26da4e83199d47
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954274"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555632"
 ---
 # <a name="customers-dashboard-in-commercial-marketplace-analytics"></a>Dash board klanten in commerciële Marketplace-analyse
 
@@ -82,7 +82,7 @@ De tabel **klanten per orders/gebruik** heeft drie tabbladen: orders, genormalis
 
 :::image type="content" source="./media/customer-dashboard/customers-by-orders-usage.png" alt-text="Illustreert het tabblad orders van de widget klanten per orders en gebruik op de pagina klanten.":::
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - Het Leader Board geeft details weer van de klanten gerangschikt op Bestel aantal. Nadat u een klant hebt geselecteerd, worden de details van de klant weer gegeven in de secties ' Details ', ' orders per Sku's ' en ' Sku's per seat '.
 - De details van het klant profiel worden in deze ruimte weer gegeven wanneer uitgevers zijn aangemeld met een rol van eigenaar. Als uitgevers zijn aangemeld met een rol Inzender, is de informatie in deze sectie niet beschikbaar.
@@ -119,7 +119,7 @@ Voor de geselecteerde berekenings periode geeft de heatmap het totale aantal kla
 
 [![Illustreert het tabblad orders van de widget orders per geografie op de pagina klanten.](./media/customer-dashboard/customers-by-geography.png)](./media/customer-dashboard/customers-by-geography.png#lightbox)
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - U kunt de kaart verplaatsen om de exacte locatie weer te geven.
 - U kunt inzoomen op een specifieke locatie.
@@ -130,7 +130,7 @@ en let op het volgende:
 
 In de tabel **klant gegevens** wordt een genummerde lijst met de top 1.000-klanten weer gegeven, gesorteerd op de datum waarop ze voor het eerst een van uw aanbiedingen hebben verkregen. U kunt een sectie uitbreiden door het uitbreidings pictogram op het lint details te selecteren.
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - Persoonlijke gegevens van de klant zijn alleen beschikbaar als de klant toestemming heeft gegeven. U kunt deze informatie alleen weer geven als u bent aangemeld met een eigenaars bevoegdheids niveau.
 - Elke kolom in het raster is sorteerbaar.
@@ -142,28 +142,28 @@ en let op het volgende:
 
 _**Tabel 1: woorden lijst met gegevens termen**_
 
-| Kolomnaam | Kenmerknaam | Definitie |
-| ------------ | ------------- | ------------- |
-| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. |
-| DateAcquired | Aanschaf datum | De eerste datum waarop de klant een aanbieding heeft gekocht die u hebt gepubliceerd. |
-| DateLost | Datum verloren | De laatste datum waarop de klant de laatste van alle eerder gekochte aanbiedingen heeft geannuleerd. |
-| Naam van provider | Naam van provider | De naam van de provider die deel uitmaakt van de relatie tussen micro soft en de klant. Als de klant een onderneming is via wederverkoper, is dit de wederverkoper. Als er een Cloud Solution Provider (CSP) betrokken is, wordt dit de CSP. |
-| E-mail van provider | E-mail van provider | Het e-mail adres van de provider die deel uitmaakt van de relatie tussen micro soft en de klant. Als de klant een onderneming is via wederverkoper, is dit de wederverkoper. Als er een Cloud Solution Provider (CSP) betrokken is, wordt dit de CSP. |
-| FirstName | Voor naam van klant | De voor naam van de klant. De naam kan afwijken van de naam die is opgenomen in het Azure-abonnement van de klant. |
-| LastName | Achternaam van klant | De achternaam van de klant. De naam kan afwijken van de naam die is opgenomen in het Azure-abonnement van de klant. |
-| E-mail | E-mail van klant | Het e-mail adres van de eind gebruiker. E-mail kan afwijken van het e-mail adres in het Azure-abonnement van een klant. |
-| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de plaats in het Azure-abonnement van een klant. |
-| CustomerCity | Klant plaats | De naam van de plaats van de klant. De stad kan afwijken van de plaats in het Azure-abonnement van een klant. |
-| Post code van de klant | Post code van de klant | De post code die de klant heeft ontvangen. De code kan afwijken van de post code die is opgenomen in het Azure-abonnement van een klant. |
-| CustomerCommunicationCulture | Taal van klant communicatie | De taal die door de klant wordt aanbevolen voor communicatie. |
-| CustomerCountryRegion | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |
-| AzureLicenseType | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het _kanaal_. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Onderneming</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
-| PromotionalCustomers | Is de contact persoon voor de reclame in | De waarde laat u weten of de klant proactief heeft gekozen voor een contact persoon van uitgevers. Op dit moment bieden we geen optie voor klanten, dus hebben we "no" aangegeven op het bord. Nadat deze functie is geïmplementeerd, gaan we dienovereenkomstig met bijwerken. |
-| CustomerState | Klant status | De staat van de woon plaats van de klant. De status kan afwijken van de status die is opgenomen in het Azure-abonnement van de klant. |
-| CommerceRootCustomer | Commerce root-klant | Een facturerings account-ID kan worden gekoppeld aan meerdere klant-Id's.<br>Een combi natie van een facturerings account-ID en een klant-ID kan worden gekoppeld aan meerdere commerciële Marketplace-abonnementen.<br>De commerce root-klant geeft de naam aan van de klant van het abonnement. |
-| Klant-id | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. |
-| Facturerings account-id | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. |
-||||
+| Kolom naam in<br>gebruikersinterface | Kenmerknaam | Definitie | Kolom naam in programma code<br>Access-rapporten |
+| ------------ | ------------- | ------------- | ------------- |
+| Marketplace-abonnements-ID | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. | MarketplaceSubscriptionId |
+| DateAcquired | Aanschaf datum | De eerste datum waarop de klant een aanbieding heeft gekocht die u hebt gepubliceerd. | DateAcquired |
+| DateLost | Datum verloren | De laatste datum waarop de klant de laatste van alle eerder gekochte aanbiedingen heeft geannuleerd. | DateLost |
+| Naam van provider | Naam van provider | De naam van de provider die deel uitmaakt van de relatie tussen micro soft en de klant. Als de klant een onderneming is via wederverkoper, is dit de wederverkoper. Als er een Cloud Solution Provider (CSP) betrokken is, wordt dit de CSP. | ProviderName |
+| E-mail van provider | E-mail van provider | Het e-mail adres van de provider die deel uitmaakt van de relatie tussen micro soft en de klant. Als de klant een onderneming is via wederverkoper, is dit de wederverkoper. Als er een Cloud Solution Provider (CSP) betrokken is, wordt dit de CSP. | ProviderEmail |
+| FirstName | Voor naam van klant | De voor naam van de klant. De naam kan afwijken van de naam die is opgenomen in het Azure-abonnement van de klant. | FirstName |
+| LastName | Achternaam van klant | De achternaam van de klant. De naam kan afwijken van de naam die is opgenomen in het Azure-abonnement van de klant. | LastName |
+| E-mail | E-mail van klant | Het e-mail adres van de eind gebruiker. E-mail kan afwijken van het e-mail adres in het Azure-abonnement van een klant. | E-mail |
+| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de plaats in het Azure-abonnement van een klant. | CustomerCompany-naam |
+| CustomerCity | Klant plaats | De naam van de plaats van de klant. De stad kan afwijken van de plaats in het Azure-abonnement van een klant. | CustomerCity |
+| Post code van de klant | Post code van de klant | De post code die de klant heeft ontvangen. De code kan afwijken van de post code die is opgenomen in het Azure-abonnement van een klant. | CustomerPostal-code |
+| CustomerCommunicationCulture | Taal van klant communicatie | De taal die door de klant wordt aanbevolen voor communicatie. | CustomerCommunicationCulture |
+| CustomerCountryRegion | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. | CustomerCountryRegion |
+| AzureLicenseType | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het _kanaal_. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> | AzureLicenseType |
+| PromotionalCustomers | Is de contact persoon voor de reclame in | De waarde laat u weten of de klant proactief heeft gekozen voor een contact persoon van uitgevers. Op dit moment bieden we geen optie voor klanten, dus hebben we "no" aangegeven op het bord. Nadat deze functie is geïmplementeerd, gaan we dienovereenkomstig met bijwerken. | PromotionalCustomers |
+| CustomerState | Klant status | De staat van de woon plaats van de klant. De status kan afwijken van de status die is opgenomen in het Azure-abonnement van de klant. | CustomerState |
+| CommerceRootCustomer | Commerce root-klant | Een facturerings account-ID kan worden gekoppeld aan meerdere klant-Id's.<br>Een combi natie van een facturerings account-ID en een klant-ID kan worden gekoppeld aan meerdere commerciële Marketplace-abonnementen.<br>De commerce root-klant geeft de naam aan van de klant van het abonnement. | CommerceRootCustomer |
+| Klant-ID | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. | CustomerId |
+| Facturerings account-ID | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. | BillingAccountId |
+|||||
 
 ### <a name="customers-page-filters"></a>Pagina filters voor klanten
 

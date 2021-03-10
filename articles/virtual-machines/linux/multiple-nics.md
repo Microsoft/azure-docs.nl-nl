@@ -2,18 +2,18 @@
 title: Een virtuele Linux-machine in azure maken met meerdere Nic's
 description: Meer informatie over het maken van een virtuele Linux-machine waaraan meerdere Nic's zijn gekoppeld met behulp van de Azure CLI-of Resource Manager-sjablonen.
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: networking
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
-ms.openlocfilehash: 86910ece57d8fb72ade0c67a9e6787023c4283f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0eea74890665297a0d450c8afd0a5d60dd1ae00
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836918"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551807"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Een virtuele Linux-machine in azure maken met meerdere netwerk interface kaarten
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u een virtuele machine met meerdere Nic's ma
 ## <a name="create-supporting-resources"></a>Ondersteunende resources maken
 Installeer de nieuwste [Azure cli](/cli/azure/install-az-cli2) en meld u aan bij een Azure-account met de opdracht [AZ login](/cli/azure/reference-index).
 
-Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *mystorageaccount*en *myVM*.
+Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *mystorageaccount* en *myVM*.
 
 Maak eerst een resourcegroep met [az group create](/cli/azure/group). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
@@ -42,7 +42,7 @@ az network vnet create \
     --subnet-prefix 10.0.1.0/24
 ```
 
-Maak een subnet voor het back-end-verkeer met [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet). In het volgende voor beeld wordt een subnet met de naam *mySubnetBackEnd*gemaakt:
+Maak een subnet voor het back-end-verkeer met [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet). In het volgende voor beeld wordt een subnet met de naam *mySubnetBackEnd* gemaakt:
 
 ```azurecli
 az network vnet subnet create \
@@ -110,7 +110,7 @@ az network nic create \
     --network-security-group myNetworkSecurityGroup
 ```
 
-Als u een NIC aan een bestaande virtuele machine wilt toevoegen, moet u eerst de toewijzing van de VM ongedaan maken met [AZ VM deallocate](/cli/azure/vm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM*ongedaan gemaakt:
+Als u een NIC aan een bestaande virtuele machine wilt toevoegen, moet u eerst de toewijzing van de VM ongedaan maken met [AZ VM deallocate](/cli/azure/vm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* ongedaan gemaakt:
 
 
 ```azurecli
@@ -135,7 +135,7 @@ az vm start --resource-group myResourceGroup --name myVM
 Voeg routerings tabellen toe aan het gast besturingssysteem door de stappen in [het gast besturingssysteem configureren voor meerdere nic's](#configure-guest-os-for-multiple-nics)uit te voeren.
 
 ## <a name="remove-a-nic-from-a-vm"></a>Een NIC verwijderen uit een VM
-Als u een NIC van een bestaande virtuele machine wilt verwijderen, moet u eerst de toewijzing van de VM ongedaan maken met [AZ VM deallocate](/cli/azure/vm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM*ongedaan gemaakt:
+Als u een NIC van een bestaande virtuele machine wilt verwijderen, moet u eerst de toewijzing van de VM ongedaan maken met [AZ VM deallocate](/cli/azure/vm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* ongedaan gemaakt:
 
 ```azurecli
 az vm deallocate --resource-group myResourceGroup --name myVM
@@ -220,7 +220,7 @@ ssh azureuser@137.117.58.232
 
 Als u wilt verzenden naar of van een secundaire netwerk interface, moet u hand matig permanente routes toevoegen aan het besturings systeem voor elke secundaire netwerk interface. In dit artikel is *eth1* de secundaire interface. Instructies voor het toevoegen van permanente routes aan het besturings systeem variëren per distributie. Raadpleeg de documentatie voor uw distributie voor instructies.
 
-Bij het toevoegen van de route naar het besturings systeem is het gateway adres *1 voor het* subnet waarin de netwerk interface zich bevindt. Als de netwerk interface bijvoorbeeld het adres *10.0.2.4*toegewezen, is de gateway die u opgeeft voor de route *10.0.2.1*. U kunt een specifiek netwerk definiëren voor de bestemming van de route of een bestemming van *0.0.0.0*opgeven als u wilt dat al het verkeer voor de interface via de opgegeven gateway gaat. De gateway voor elk subnet wordt beheerd door het virtuele netwerk.
+Bij het toevoegen van de route naar het besturings systeem is het gateway adres *1 voor het* subnet waarin de netwerk interface zich bevindt. Als de netwerk interface bijvoorbeeld het adres *10.0.2.4* toegewezen, is de gateway die u opgeeft voor de route *10.0.2.1*. U kunt een specifiek netwerk definiëren voor de bestemming van de route of een bestemming van *0.0.0.0* opgeven als u wilt dat al het verkeer voor de interface via de opgegeven gateway gaat. De gateway voor elk subnet wordt beheerd door het virtuele netwerk.
 
 Wanneer u de route voor een secundaire interface hebt toegevoegd, controleert u of de route in de route tabel is opgenomen `route -n` . De volgende voorbeeld uitvoer is voor de route tabel met de twee netwerk interfaces die zijn toegevoegd aan de virtuele machine in dit artikel:
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 02/04/2021
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: d1ac17c93bdf95e36f68af678d2ee38b896ef1e7
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 5712448c8c5248d3c84ce43f8a41c669355f1d43
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979739"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565730"
 ---
 # <a name="tutorial-move-azure-vms-across-regions"></a>Zelfstudie: Virtuele Azure-machines tussen regio's verplaatsen
 
@@ -40,6 +40,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 ## <a name="prerequisites"></a>Vereisten
 **Vereiste** | **Beschrijving**
 --- | ---
+**Ondersteuning voor resource-toedrijfing** | [Bekijk](common-questions.md) ondersteunde regio's en andere veelgestelde vragen.
 **Abonnements machtigingen** | Controleer of u toegang hebt tot de *eigenaar* van het abonnement dat de resources bevat die u wilt verplaatsen<br/><br/> **Waarom heb ik de eigenaar toegang nodig?** De eerste keer dat u een resource toevoegt voor een specifiek bron- en doelpaar in een Azure-abonnement maakt Resource Mover een [door het systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (vroeger MSI genoemd (Managed Service Identity)) die door het abonnement wordt vertrouwd. Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaars* machtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
 **VM-ondersteuning** |  Controleer of de virtuele machines die u wilt verplaatsen, worden ondersteund.<br/><br/> - [Controleer](support-matrix-move-region-azure-vm.md#windows-vm-support) de ondersteunde Windows-vm's.<br/><br/> - [Controleer](support-matrix-move-region-azure-vm.md#linux-vm-support) ondersteunde vm's en kernel-versies van Linux.<br/><br/> -Ondersteunde instellingen voor [Compute](support-matrix-move-region-azure-vm.md#supported-vm-compute-settings), [opslag](support-matrix-move-region-azure-vm.md#supported-vm-storage-settings)en [netwerk](support-matrix-move-region-azure-vm.md#supported-vm-networking-settings) controle.
 **Doel abonnement** | Het abonnement in de doel regio moet voldoende quota hebben om de resources te maken die u verplaatst in de doel regio. Als de quota onvoldoende zijn, moet u [hogere limieten aanvragen](../azure-resource-manager/management/azure-subscription-service-limits.md).

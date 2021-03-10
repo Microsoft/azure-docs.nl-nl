@@ -10,19 +10,19 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b93addfe659847187dffe61f12f5a2bfac9dca21
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: a8080720480beaeb7bc8692f2dcddddad5da0e3c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209624"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548458"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Gedeelde Azure Synapse Analytics-metagegevenstabellen
 
 
 Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en door Parquet ondersteunde tabellen delen tussen de Apache Spark-pools en de serverloze SQL-pool.
 
-Wanneer een database is gemaakt met een Spark-taak, kunt u er tabellen in maken met Spark waarin Parquet als de opslagindeling wordt gebruikt. Deze tabellen zijn direct beschikbaar voor het uitvoeren van query's door een Spark-pool van de Azure Synapse-werkruimte. Ze kunnen ook worden gebruikt vanuit een van de Spark-taken waarvoor machtigingen gelden.
+Wanneer een database is gemaakt met een Spark-taak, kunt u er tabellen in maken met Spark waarin Parquet als de opslagindeling wordt gebruikt. Tabel namen worden omgezet in kleine letters en moeten worden opgevraagd met behulp van de naam van de kleine letter. Deze tabellen zijn direct beschikbaar voor het uitvoeren van query's door een Spark-pool van de Azure Synapse-werkruimte. Ze kunnen ook worden gebruikt vanuit een van de Spark-taken waarvoor machtigingen gelden.
 
 De door Spark gemaakte, beheerde en externe tabellen worden ook beschikbaar gemaakt als externe tabellen met dezelfde naam in de bijbehorende gesynchroniseerde database in de serverloze SQL-pool. In [Exposing a Spark table in SQL](#expose-a-spark-table-in-sql) (Een Spark-tabel in SQL weergeven) vindt u meer informatie over tabelsynchronisatie.
 
@@ -101,17 +101,17 @@ In dit scenario hebt u een Spark-database met de naam `mytestdb`. Zie [Een Spark
 Maak een beheerde Spark-tabel met SparkSQL door de volgende opdracht uit te voeren:
 
 ```sql
-    CREATE TABLE mytestdb.myParquetTable(id int, name string, birthdate date) USING Parquet
+    CREATE TABLE mytestdb.myparquettable(id int, name string, birthdate date) USING Parquet
 ```
 
-Met deze opdracht maakt u de tabel `myParquetTable` in de database `mytestdb`. Na een korte vertraging wordt de tabel in uw serverloze SQL-pool weergegeven. Voer bijvoorbeeld de volgende instructie uit vanuit uw serverloze SQL-pool.
+Met deze opdracht maakt u de tabel `myparquettable` in de database `mytestdb`. Tabel namen worden omgezet in kleine letters. Na een korte vertraging wordt de tabel in uw serverloze SQL-pool weergegeven. Voer bijvoorbeeld de volgende instructie uit vanuit uw serverloze SQL-pool.
 
 ```sql
     USE mytestdb;
     SELECT * FROM sys.tables;
 ```
 
-Controleer of `myParquetTable` is opgenomen in de resultaten.
+Controleer of `myparquettable` is opgenomen in de resultaten.
 
 >[!NOTE]
 >Een tabel die Parquet niet gebruikt als de opslagindeling, wordt niet gesynchroniseerd.
@@ -136,13 +136,13 @@ var schema = new StructType
     );
 
 var df = spark.CreateDataFrame(data, schema);
-df.Write().Mode(SaveMode.Append).InsertInto("mytestdb.myParquetTable");
+df.Write().Mode(SaveMode.Append).InsertInto("mytestdb.myparquettable");
 ```
 
 Nu kunt u de gegevens van uw serverloze SQL-pool als volgt lezen:
 
 ```sql
-SELECT * FROM mytestdb.dbo.myParquetTable WHERE name = 'Alice';
+SELECT * FROM mytestdb.dbo.myparquettable WHERE name = 'Alice';
 ```
 
 Als het goed is, wordt de volgende rij als resultaat weergegeven:
@@ -160,26 +160,26 @@ In dit voorbeeld maakt u een externe Spark-tabel via de Parquet-gegevensbestande
 Bijvoorbeeld met SparkSQL-uitvoering:
 
 ```sql
-CREATE TABLE mytestdb.myExternalParquetTable
+CREATE TABLE mytestdb.myexternalparquettable
     USING Parquet
     LOCATION "abfss://<fs>@arcadialake.dfs.core.windows.net/synapse/workspaces/<synapse_ws>/warehouse/mytestdb.db/myparquettable/"
 ```
 
 Vervang de tijdelijke aanduiding `<fs>` door de naam van het bestandssysteem dat het standaardbestandssysteem is voor de werkruimte en de tijdelijke aanduiding `<synapse_ws>` met de naam van de Synapse-werkruimte die u gebruikt om dit voorbeeld uit te voeren.
 
-Met het vorige voorbeeld maakt u de tabel `myExtneralParquetTable` in de database`mytestdb`. Na een korte vertraging wordt de tabel in uw serverloze SQL-pool weergegeven. Voer bijvoorbeeld de volgende instructie uit vanuit uw serverloze SQL-pool.
+Met het vorige voorbeeld maakt u de tabel `myextneralparquettable` in de database`mytestdb`. Na een korte vertraging wordt de tabel in uw serverloze SQL-pool weergegeven. Voer bijvoorbeeld de volgende instructie uit vanuit uw serverloze SQL-pool.
 
 ```sql
 USE mytestdb;
 SELECT * FROM sys.tables;
 ```
 
-Controleer of `myExternalParquetTable` is opgenomen in de resultaten.
+Controleer of `myexternalparquettable` is opgenomen in de resultaten.
 
 Nu kunt u de gegevens van uw serverloze SQL-pool als volgt lezen:
 
 ```sql
-SELECT * FROM mytestdb.dbo.myExternalParquetTable WHERE name = 'Alice';
+SELECT * FROM mytestdb.dbo.myexternalparquettable WHERE name = 'Alice';
 ```
 
 Als het goed is, wordt de volgende rij als resultaat weergegeven:

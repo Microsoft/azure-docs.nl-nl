@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 02/24/2021
-ms.openlocfilehash: 7fc964abf7e6832341ad8b1ad55711b3a9993506
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9107ef6100a3c362eae982412d54a981851bcb42
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712505"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561395"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-the-azure-portal"></a>Zelfstudie: Een Azure Load Balancer voor meerdere regio's maken met behulp van Azure Portal
 
@@ -200,9 +200,6 @@ In deze zelfstudie hebt u:
 * Een load balancer-regel toegevoegd.
 * De load balancer getest.
 
-Zie [Load balancer voor meerdere regio's (preview)](cross-region-overview.md) voor meer informatie over load balancers voor meerdere regio's.
-
-
-Ga naar het volgende artikel om te lezen hoe u dit doet:
+Zie voor meer informatie over de cross-regio load balancer:
 > [!div class="nextstepaction"]
-> [Taken over VM's in meerdere beschikbaarheidszones verdelen](tutorial-load-balancer-standard-public-zone-redundant-portal.md)
+> [Load balancer voor meerdere regio's (preview-versie)](cross-region-overview.md)

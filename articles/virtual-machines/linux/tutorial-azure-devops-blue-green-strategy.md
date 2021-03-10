@@ -2,22 +2,22 @@
 title: 'Zelfstudie: Canary-implementaties configureren voor virtuele Linux-machines van Azure'
 description: In deze zelfstudie leert u hoe u een pijplijn voor continue implementatie (CD) kunt instellen. Met deze pijplijn wordt een groep virtuele Linux-machines van Azure bijgewerkt met behulp van de blauw-groene implementatiestrategie.
 author: moala
-manager: jpconnock
 tags: azure-devops-pipelines
 ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: tutorial
 ms.tgt_pltfrm: azure-pipelines
 ms.workload: infrastructure
 ms.date: 4/10/2020
 ms.author: moala
 ms.custom: devops
-ms.openlocfilehash: f349ff62fe211f0610341864a4c7528ee6bfe9c5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.openlocfilehash: 4545891cce926f049673cd2c2380a8309f2e71a1
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961524"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552584"
 ---
 # <a name="tutorial---configure-the-blue-green-deployment-strategy-for-azure-linux-virtual-machines"></a>Zelfstudie: de blauw-groene implementatiestrategie configureren voor virtuele Linux-machines van Azure
 

@@ -1,26 +1,19 @@
 ---
-title: 'Quickstart: Een Azure Storage-account integreren met Azure CDN'
-description: Leer hoe u Azure Content Delivery Network (CDN) kunt gebruiken en hoe u inhoud met een hoge bandbreedte via CDN kunt leveren door blobs van Azure Storage in de cache op te slaan.
+title: 'Snelstart: Een Azure Storage-account integreren met Azure CDN'
+description: In deze Quick Start leert u hoe u Azure Content Delivery Network (CDN) kunt gebruiken voor het leveren van inhoud met een hoge band breedte door blobs in cache te plaatsen vanuit Azure Storage.
 services: cdn
-documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: cbc2ff98-916d-4339-8959-622823c5b772
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: b80437fa1ac41bb240565923eb40e562c8cf8c5b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 7cd1c6b0b11ba291a36f49a2a9990a2755cdd74b
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018610"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561922"
 ---
 # <a name="quickstart-integrate-an-azure-storage-account-with-azure-cdn"></a>Snelstart: Een Azure Storage-account integreren met Azure CDN
 
@@ -125,7 +118,4 @@ In de voorgaande stappen hebt u een CDN-profiel en een eindpunt in een resourceg
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Een Azure CDN-profiel en -eindpunt maken](cdn-create-new-endpoint.md)
-
-> [!div class="nextstepaction"]
-> [Zelfstudie: CDN gebruiken om statische serverinhoud van een web-app weer te geven](cdn-add-to-web-app.md)
+> [Zelfstudie: CDN gebruiken om statische inhoud van een web-app weer te geven](cdn-add-to-web-app.md)

@@ -1,7 +1,7 @@
 ---
 title: 'Quickstart: Een profiel en eindpunt maken - Resource Manager-sjabloon'
 titleSuffix: Azure Content Delivery Network
-description: Meer informatie over het maken van een Azure Content Delivery Network-profiel en eindpunt met een Resource Manager-sjabloon
+description: In deze Quick Start leert u hoe u een Azure Content Delivery Network-profiel en een resource manager-sjabloon maakt
 services: cdn
 author: asudbring
 manager: KumudD
@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs, devx-track-azurecli
 ms.date: 06/25/2020
 ms.author: allensu
-ms.openlocfilehash: b215dfff3bf62b67b89aa260b0134381de6edeae
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
-ms.translationtype: HT
+ms.openlocfilehash: a36484bea3a2bc9caadc5cf4482aae3bea84eafa
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695723"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560460"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint---arm-template"></a>Quickstart: Een Azure CDN-profiel en -eindpunt maken - ARM-sjabloon
 
@@ -107,7 +107,7 @@ U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken
 
 ### <a name="powershell"></a>PowerShell
 
-U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=latest) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
+U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
 
 ```azurepowershell-interactive 
 Remove-AzResourceGroup -Name myResourceGroupCDN
@@ -126,5 +126,5 @@ In deze quickstart hebt u het volgende gemaakt:
 
 Als u meer wilt weten over Azure CDN en Azure Resource Manager, vindt u meer informatie in de onderstaande artikelen.
 
-* Een [overzicht van Azure CDN](cdn-overview.md) lezen
-* Meer informatie over [Azure Resource Manager](../azure-resource-manager/management/overview.md)
+> [!div class="nextstepaction"]
+> [Zelf studie: CDN gebruiken voor het leveren van statische inhoud van een web-app](cdn-add-to-web-app.md)

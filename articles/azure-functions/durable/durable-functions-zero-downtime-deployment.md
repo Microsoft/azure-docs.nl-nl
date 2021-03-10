@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: azfuncdf
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2c96f2cc37c47c77b82ca86d5fd0295f0c66a896
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 707d624c47c536e00e98910a8902772703733515
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009480"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558760"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Implementatie met een nul-uitval tijd voor Durable Functions
 
@@ -111,7 +111,7 @@ public static async Task<IActionResult> StatusCheck(
 }
 ```
 
-Configureer vervolgens de staging-Gate zodat er wordt gewacht tot er geen Orchestrations worden uitgevoerd. Zie [release Deployment Control using Gates](/azure/devops/pipelines/release/approvals/gates?view=azure-devops) (Engelstalig) voor meer informatie.
+Configureer vervolgens de staging-Gate zodat er wordt gewacht tot er geen Orchestrations worden uitgevoerd. Zie [release Deployment Control using Gates](/azure/devops/pipelines/release/approvals/gates) (Engelstalig) voor meer informatie.
 
 ![Implementatiepoort](media/durable-functions-zero-downtime-deployment/deployment-gate.png)
 

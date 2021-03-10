@@ -2,17 +2,18 @@
 title: De besturingssysteem schijf voor een Azure-VM wisselen met Power shell
 description: Wijzig de besturingssysteem schijf die wordt gebruikt door een virtuele machine van Azure met behulp van Power shell.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: disks
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 04/24/2018
 ms.author: cynthn
-ms.openlocfilehash: 2d4abd68e60201a17e56ee105777614c42691bfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8e928944a7508cc2a0ed35e89189fa2dd8c50665
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87020335"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550379"
 ---
 # <a name="change-the-os-disk-used-by-an-azure-vm-using-powershell"></a>De besturingssysteem schijf wijzigen die wordt gebruikt door een Azure VM met behulp van Power shell
 

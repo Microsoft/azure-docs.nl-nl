@@ -1,26 +1,19 @@
 ---
 title: 'Quickstart: Een Azure CDN-profiel en een eindpunt maken'
 description: In deze quickstart ziet u hoe u Azure CDN inschakelt door een nieuw CDN-profiel en CDN-eindpunt te maken.
-services: cdn
-documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
 ms.assetid: 4ca51224-5423-419b-98cf-89860ef516d2
 ms.service: azure-cdn
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
 ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 45edf57ed41f8cf7be839edade5038a0787424a4
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e8b3b5c28d00b4d7c81fa3e245113119ae3134ad
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367283"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555700"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Snelstart: Een Azure CDN-profiel en een eindpunt maken
 
@@ -82,6 +75,3 @@ In de voorgaande stappen hebt u een CDN-profiel en een eindpunt in een resourceg
 
 > [!div class="nextstepaction"]
 > [Zelf studie: CDN gebruiken voor het leveren van statische inhoud van een web-app](cdn-add-to-web-app.md)
-
-> [!div class="nextstepaction"]
-> [Zelfstudie: Een aangepast domein toevoegen aan uw Azure CDN-eindpunt](cdn-map-content-to-custom-domain.md)

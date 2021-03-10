@@ -2,15 +2,15 @@
 title: Sjabloon implementeren - Azure Portal
 description: Leer hoe u uw eerste Azure Resource Manager-sjabloon (ARM-sjabloon) maakt via Azure Portal en hoe u deze implementeert.
 author: mumian
-ms.date: 01/26/2021
+ms.date: 03/09/2021
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 946156caa7252a89cab006d604eb6b441e09c643
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 20b1bf47ae2fd63e91a11c8cccd1f03cf3464899
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98892492"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548128"
 ---
 # <a name="quickstart-create-and-deploy-arm-templates-by-using-the-azure-portal"></a>Quickstart: ARM-sjablonen maken en implementeren met behulp van Azure Portal
 
@@ -34,7 +34,7 @@ Veel ervaren sjabloonontwikkelaars gebruiken deze methode om sjablonen te genere
     ![De optie Een resource maken selecteren in het Azure-portalmenu](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-create-a-resource.png)
 
 1. Typ **opslag account** in het zoekvak en druk vervolgens op **[ENTER]**.
-1. Selecteer **Maken**.
+1. Selecteer de pijl-omlaag naast **maken** en selecteer vervolgens **opslag account**.
 
     ![Een Azure-opslagaccount maken](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-create-storage-account-portal.png)
 
@@ -59,7 +59,7 @@ Veel ervaren sjabloonontwikkelaars gebruiken deze methode om sjablonen te genere
 
     In het hoofdvenster wordt de sjabloon getoond. Het is een JSON-bestand met zes elementen van het hoogste niveau: `schema`, `contentVersion`, `parameters`, `variables`, `resources` en `output`. Zie [Informatie over de structuur en de syntaxis van ARM-sjablonen](./template-syntax.md) voor meer informatie
 
-    Er zijn acht parameters gedefinieerd. Een van deze parameters heet **storageAccountName**. In het tweede gemarkeerde gedeelte van de bovenstaande schermopname ziet u hoe u in de sjabloon naar deze parameter kunt verwijzen. In het volgende gedeelte bewerkt u de sjabloon zodat er voor het opslagaccount gebruik wordt gemaakt van een gegenereerde naam.
+    Er zijn negen para meters gedefinieerd. Een van deze parameters heet **storageAccountName**. In het tweede gemarkeerde gedeelte van de bovenstaande schermopname ziet u hoe u in de sjabloon naar deze parameter kunt verwijzen. In het volgende gedeelte bewerkt u de sjabloon zodat er voor het opslagaccount gebruik wordt gemaakt van een gegenereerde naam.
 
     In de sjabloon is er één Azure-resource gedefinieerd. Het type is `Microsoft.Storage/storageAccounts`. Bekijk hoe de resource wordt gedefinieerd en wat de definitiestructuur is.
 1. Selecteer **Downloaden** bovenin het scherm.
@@ -92,72 +92,76 @@ Azure vereist dat elke Azure-service een unieke naam heeft. De implementatie mis
    - Verwijder de parameter **storageAccountName**, zoals in de vorige schermopname wordt weergegeven.
    - Voeg een variabele toe met de naam **storageAccountName**, zoals in de vorige schermopname wordt weergegeven:
 
-       ```json
-       "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
-       ```
+      ```json
+      "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
+      ```
 
-       Er worden hier twee sjabloonfuncties gebruikt: `concat()` en `uniqueString()`.
+      Er worden hier twee sjabloonfuncties gebruikt: `concat()` en `uniqueString()`.
    - Werk het naamelement bij van de resource **Microsoft.Storage/storageAccounts** voor gebruik van de nieuw gedefinieerde variabele in plaats van de parameter:
 
-       ```json
-       "name": "[variables('storageAccountName')]",
-       ```
+      ```json
+      "name": "[variables('storageAccountName')]",
+      ```
 
-     De uiteindelijke sjabloon moet er als volgt uitzien:
+      De uiteindelijke sjabloon moet er als volgt uitzien:
 
-     ```json
-     {
-       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-       "contentVersion": "1.0.0.0",
-       "parameters": {
-         "location": {
-           "type": "string"
-         },
-         "accountType": {
-           "type": "string"
-         },
-         "kind": {
-           "type": "string"
-         },
-         "accessTier": {
-           "type": "string"
-         },
-         "minimumTlsVersion": {
-           "type": "string"
-         },
-         "supportsHttpsTrafficOnly": {
-          "type": "bool"
-         },
-         "allowBlobPublicAccess": {
-           "type": "bool"
-         }
-       },
-       "variables": {
-         "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
-       },
-       "resources": [
-         {
-           "name": "[variables('storageAccountName')]",
-           "type": "Microsoft.Storage/storageAccounts",
-           "apiVersion": "2019-06-01",
-           "location": "[parameters('location')]",
-           "properties": {
-             "accessTier": "[parameters('accessTier')]",
-             "minimumTlsVersion": "[parameters('minimumTlsVersion')]",
-             "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
-             "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]"
-           },
-           "dependsOn": [],
-           "sku": {
-             "name": "[parameters('accountType')]"
-           },
-           "kind": "[parameters('kind')]",
-           "tags": {}
-         }
-       ],
-       "outputs": {}
-     }
-     ```
+      ```json
+      {
+        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "location": {
+            "type": "string"
+          },
+          "accountType": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "accessTier": {
+            "type": "string"
+          },
+          "minimumTlsVersion": {
+            "type": "string"
+          },
+          "supportsHttpsTrafficOnly": {
+            "type": "bool"
+          },
+          "allowBlobPublicAccess": {
+            "type": "bool"
+          },
+          "allowSharedKeyAccess": {
+            "type": "bool"
+          }
+        },
+        "variables": {
+          "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
+        },
+        "resources": [
+          {
+            "name": "[variables('storageAccountName')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
+            "location": "[parameters('location')]",
+            "properties": {
+              "accessTier": "[parameters('accessTier')]",
+              "minimumTlsVersion": "[parameters('minimumTlsVersion')]",
+              "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
+              "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]",
+              "allowSharedKeyAccess": "[parameters('allowSharedKeyAccess')]"
+            },
+            "dependsOn": [],
+            "sku": {
+              "name": "[parameters('accountType')]"
+            },
+            "kind": "[parameters('kind')]",
+            "tags": {}
+          }
+        ],
+        "outputs": {}
+      }
+      ```
 
 1. Selecteer **Opslaan**.
 1. Voer de volgende waarden in:
@@ -173,6 +177,7 @@ Azure vereist dat elke Azure-service een unieke naam heeft. De implementatie mis
     |**Minimale TLS-versie**|Voer **TLS1_0** in. |
     |**Ondersteunt alleen HTTPS-verkeer**| Selecteer voor deze snelstart **true**. |
     |**Openbare blobtoegang toestaan**| Selecteer voor deze snelstart **false**. |
+    |**Gedeelde sleutel toegang toestaan**| Selecteer voor deze snelstart **true**. |
 
 1. Selecteer **Controleren + maken**.
 1. Selecteer **Maken**.

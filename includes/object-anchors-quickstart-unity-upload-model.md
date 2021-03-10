@@ -4,16 +4,16 @@ ms.service: azure-object-anchors
 ms.topic: include
 ms.date: 03/02/2021
 ms.author: crtreasu
-ms.openlocfilehash: 8b7ab183dfb7b6721beae7835acd75bc7a05e72c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d8dfc3d4b7a8447250481b98c1adadc865a29da1
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102044624"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102532601"
 ---
 ### <a name="upload-your-model"></a>Uw model uploaden
 
-Als u nog geen object ankers model hebt, volgt u de instructies in [Create a model](/object-anchors/quickstarts/get-started-model-conversion.md) om er een te maken. Ga vervolgens hier terug.
+Als u nog geen object ankers model hebt, volgt u de instructies in [Create a model](/azure/object-anchors/quickstarts/get-started-model-conversion) om er een te maken. Ga vervolgens hier terug.
 
 Als uw HoloLens is verbonden met de Windows-portal voor apparaten, volgt u deze stappen om een model te uploaden dat de app kan gebruiken:
 

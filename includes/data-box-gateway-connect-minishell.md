@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: alkohli
-ms.openlocfilehash: c0ba6aee0e23dc0c68348c59c8ca8acdcd606435
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
-ms.translationtype: MT
+ms.openlocfilehash: 03aed175b105ad650407acb4a839c5a5b8004465
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900872"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102532649"
 ---
 Afhankelijk van het besturings systeem van de client zijn de procedures om een externe verbinding met het apparaat te maken verschillend.
 
@@ -58,11 +58,11 @@ Volg deze stappen om vanaf een Windows-client extern verbinding te maken.
 
 Op de Linux-client die u gebruikt om verbinding te maken:
 
-- [Installeer de meest recente Power shell-kern voor Linux](/powershell/scripting/install/installing-powershell-core-on-linux?preserve-view=true&view=powershell-6) van github om de functie SSH Remoting op te halen. 
+- [Installeer de meest recente Power shell-kern voor Linux](/powershell/scripting/install/installing-powershell-core-on-linux) van github om de functie SSH Remoting op te halen. 
 - [Alleen het `gss-ntlmssp` pakket installeren vanuit de NTLM-module](https://github.com/Microsoft/omi/blob/master/Unix/doc/setup-ntlm-omi.md). Gebruik de volgende opdracht voor Ubuntu-clients:
     - `sudo apt-get install gss-ntlmssp`
 
-Ga voor meer informatie naar [externe toegang tot Power shell via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?preserve-view=true&view=powershell-6).
+Ga voor meer informatie naar [externe toegang tot Power shell via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 Volg deze stappen om vanaf een NFS-client extern verbinding te maken.
 

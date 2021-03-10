@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 607cb824a50da3778ebe34f184abc0dc97c15961
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d125471d4a6c68aff12921a8524a91ef75b6c51a
+ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025728"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102532576"
 ---
 Als u de cmdlets wilt uitvoeren, kunt u Azure Cloud Shell gebruiken, een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Selecteer **kopiëren** om de code te kopiëren en plak deze in Cloud shell. Selecteer vervolgens **Enter** om het uit te voeren. Er zijn enkele manieren om Cloud Shell te starten:
 
@@ -29,4 +29,4 @@ Als u Azure Cloud Shell niet wilt gebruiken, kunt u in plaats daarvan lokaal Pow
 
 Als u de versie van Power shell wilt vinden die u lokaal uitvoert, gebruikt u de cmdlet **Get-module-ListAvailable AZ** . Zie [de module Azure PowerShell installeren](/powershell/azure/azurerm/install-azurerm-ps)om bij te werken. Zie [Azure PowerShell installeren en configureren](/powershell/azure/azurerm/overview)voor meer informatie.
 
-Als u Power shell op macOS gebruikt, volgt u de stappen in [Power Shell installeren op MacOS.](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)
+Als u Power shell op macOS gebruikt, volgt u de stappen in [Power Shell installeren op MacOS.](/powershell/scripting/install/installing-powershell-core-on-macos)

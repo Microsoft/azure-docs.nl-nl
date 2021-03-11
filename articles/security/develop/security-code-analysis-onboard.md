@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 4fe13c418452a7a88dcd97939d6e853039f3fb64
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 30d6061e15b8eb17c1450500d9e8c141a83a3e08
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517067"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553915"
 ---
 # <a name="onboarding-and-installing"></a>Onboarding en installeren
 
@@ -90,7 +90,7 @@ Nadat u de uitbrei ding hebt geïnstalleerd, zijn de taken voor het ontwikkelen 
 > - Selecteer altijd **door gaan bij fout** voor het maken van beveiligde ontwikkel taken. Zelfs als één hulp programma mislukt, kunnen de andere functies worden uitgevoerd. Er zijn geen onderlinge afhankelijkheden tussen hulpprogram ma's.
 > - Micro soft security code Analysis-taken kunnen alleen worden uitgevoerd als het uitvoeren van een hulp programma is mislukt. Maar ze slagen zelfs als een hulp programma problemen in de code identificeert. Met behulp van de taak voor het maken van een post-analyse kunt u instellen dat uw build mislukt wanneer een hulp programma problemen in de code identificeert.
 > - Sommige Azure DevOps-build-taken worden niet ondersteund wanneer ze worden uitgevoerd via een release pijplijn. Meer specifiek: Azure DevOps biedt geen ondersteuning voor taken die artefacten publiceren vanuit een release pijplijn.
-> - Zie [Azure DevOps build Varia bles](/azure/devops/pipelines/build/variables?tabs=batch&view=vsts)(Engelstalig) voor een lijst met vooraf gedefinieerde variabelen in azure DevOps team build die u als para meters kunt opgeven.
+> - Zie [Azure DevOps build Varia bles](/azure/devops/pipelines/build/variables?tabs=batch)(Engelstalig) voor een lijst met vooraf gedefinieerde variabelen in azure DevOps team build die u als para meters kunt opgeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

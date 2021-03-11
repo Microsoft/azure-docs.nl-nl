@@ -27,8 +27,6 @@
       href: cdn-custom-ssl.md
     - name: Regels voor caching instellen
       href: cdn-caching-rules-tutorial.md
-    - name: HTTPS afdwingen met de standaardregelengine
-      href: cdn-standard-rules-engine.md
 - name: Voorbeelden
   items:
     - name: Codevoorbeelden
@@ -76,6 +74,8 @@
           href: cdn-improve-performance.md
         - name: Eindpunt met meerdere origines
           href: endpoint-multiorigin.md
+        - name: HTTPS afdwingen met de standaardregelengine
+          href: cdn-standard-rules-engine.md
         - name: Cachinggedrag beheren
           items:
             - name: Cachinggedrag beheren met cachingregels

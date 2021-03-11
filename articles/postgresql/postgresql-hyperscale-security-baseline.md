@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 19935037e98bbc7ce9c4152b034b664d802a8f3a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: c373bb172be01594bb5642a626cad24838b66ea2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100588269"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102607982"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---hyperscale-citus"></a>Azure-beveiligings basislijn voor Azure Database for PostgreSQL-grootschalige (Citus)
 
@@ -544,9 +544,9 @@ Azure Resource Manager heeft ook de mogelijkheid om de sjabloon in JavaScript Ob
 
 **Richt lijnen**: als u aangepaste Azure-beleids definities gebruikt voor uw grootschalige-exemplaren (Citus) en gerelateerde resources, gebruikt u Azure opslag plaatsen om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops&preserve-view=true)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index?view=azure-devops&preserve-view=true)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

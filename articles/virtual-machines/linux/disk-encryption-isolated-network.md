@@ -2,18 +2,19 @@
 title: Azure Disk Encryption op een geïsoleerd netwerk
 description: In dit artikel vindt u informatie over probleemoplossings tips voor het Microsoft Azure schijf versleuteling op Linux-Vm's.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 02/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: 1d7e019e7759e22e945bddee477a4cb77f17350b
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 8d8d2b88251f837a23c4e82a90eb4d4eb0043702
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913820"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553048"
 ---
 # <a name="azure-disk-encryption-on-an-isolated-network"></a>Azure Disk Encryption op een geïsoleerd netwerk
 
@@ -25,12 +26,12 @@ Azure Disk Encryption is afhankelijk van een aantal onderdelen, die meestal word
 
 Dit zijn de pakketten die nodig zijn voor elke distributie. Zie [ondersteunde vm's en besturings systemen](disk-encryption-overview.md#supported-vms-and-operating-systems)voor een volledige lijst met ondersteunde distributies-en volume typen.
 
-- **Ubuntu 14,04, 16,04, 18,04** : lsscsi, psmisc, op, cryptsetup-bin, python-parted, python-zes, procps, grub-pc-bin
-- **CentOS 7,2-7,7** : lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup, cryptsetup-reencryption, pyparted, procps-aardgas, util-linux
-- **CentOS 6,8** : lsscsi, psmisc, lvm2, uuid, at, cryptsetup-reencrypte, pyparted, python-zes
-- **RedHat 7,2-7,7** : lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup, cryptsetup-reencryption, procps-aardgas, util-linux
-- **RedHat 6,8** : lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup opnieuw versleutelen
-- **openSUSE 42,3, SLES 12-SP4, 12-SP3** : lsscsi, cryptsetup
+- **Ubuntu 14,04, 16,04, 18,04**: lsscsi, psmisc, op, cryptsetup-bin, python-parted, python-zes, procps, grub-pc-bin
+- **CentOS 7,2-7,7**: lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup, cryptsetup-reencryption, pyparted, procps-aardgas, util-linux
+- **CentOS 6,8**: lsscsi, psmisc, lvm2, uuid, at, cryptsetup-reencrypte, pyparted, python-zes
+- **RedHat 7,2-7,7**: lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup, cryptsetup-reencryption, procps-aardgas, util-linux
+- **RedHat 6,8**: lsscsi, psmisc, lvm2, uuid, at, patch, cryptsetup opnieuw versleutelen
+- **openSUSE 42,3, SLES 12-SP4, 12-SP3**: lsscsi, cryptsetup
 
 Wanneer een proxy is vereist op Red Hat, moet u ervoor zorgen dat het abonnement-manager en yum correct zijn ingesteld. Zie problemen [oplossen met abonnement-manager en yum](https://access.redhat.com/solutions/189533)voor meer informatie.  
 

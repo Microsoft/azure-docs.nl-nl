@@ -10,12 +10,12 @@ ms.date: 9/1/2020
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: 18282bbe902599c471775a853704e459ea44bac1
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 24f64e19077488223e13d01e110b5b5118231673
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101661643"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603356"
 ---
 ## <a name="prerequisites"></a>Vereisten
 Voordat u aan de slag gaat, moet u het volgende doen:
@@ -140,22 +140,22 @@ Gebruik de methode `createThread` om een chat-thread te maken.
 - Gebruiken `topic` om een onderwerp te geven aan deze chat sessie. Onderwerpen kunnen worden bijgewerkt nadat de chat thread is gemaakt met behulp van de `UpdateThread` functie.
 - Gebruik `participants` om de deel nemers weer te geven die moeten worden toegevoegd aan de chat-thread.
 
-Indien opgelost, `createChatThread` retourneert methode een `CreateChatThreadResponse` . Dit model bevat een `chatThread` eigenschap waar u toegang hebt tot de `id` van de zojuist gemaakte thread. Vervolgens kunt u de gebruiken `id` om een exemplaar van een te verkrijgen `ChatThreadClient` . De `ChatThreadClient` kan vervolgens worden gebruikt om de bewerking uit te voeren binnen de thread, zoals het verzenden van berichten of het weer geven van deel nemers.
+Indien opgelost, `createChatThread` retourneert methode een `CreateChatThreadResult` . Dit model bevat een `chatThread` eigenschap waar u toegang hebt tot de `id` van de zojuist gemaakte thread. Vervolgens kunt u de gebruiken `id` om een exemplaar van een te verkrijgen `ChatThreadClient` . De `ChatThreadClient` kan vervolgens worden gebruikt om de bewerking uit te voeren binnen de thread, zoals het verzenden van berichten of het weer geven van deel nemers.
 
 ```JavaScript
 async function createChatThread() {
     let createThreadRequest = {
         topic: 'Preparation for London conference',
         participants: [{
-                    user: { communicationUserId: '<USER_ID_FOR_JACK>' },
+                    id: { communicationUserId: '<USER_ID_FOR_JACK>' },
                     displayName: 'Jack'
                 }, {
-                    user: { communicationUserId: '<USER_ID_FOR_GEETA>' },
+                    id: { communicationUserId: '<USER_ID_FOR_GEETA>' },
                     displayName: 'Geeta'
                 }]
     };
-    let createThreadResponse = await chatClient.createChatThread(createThreadRequest);
-    let threadId = createThreadResponse.chatThread.id;
+    let createChatThreadResult = await chatClient.createChatThread(createThreadRequest);
+    let threadId = createChatThreadResult.chatThread.id;
     return threadId;
     }
 
@@ -184,7 +184,7 @@ Thread created: <thread_id>
 De methode `getChatThreadClient` retourneert een `chatThreadClient` voor een thread die al bestaat. Het kan worden gebruikt voor het uitvoeren van bewerkingen op de gemaakte thread: deel nemers toevoegen, berichten verzenden, enzovoort thread is de unieke ID van de bestaande chat-thread.
 
 ```JavaScript
-let chatThreadClient = await chatClient.getChatThreadClient(threadId);
+let chatThreadClient = chatClient.getChatThreadClient(threadId);
 console.log(`Chat Thread client for threadId:${threadId}`);
 
 ```
@@ -195,35 +195,33 @@ Chat Thread client for threadId: <threadId>
 
 ## <a name="send-a-message-to-a-chat-thread"></a>Een bericht verzenden naar een chat-thread
 
-Gebruik de methode `sendMessage` om een chatbericht te verzenden naar de thread die u zojuist hebt gemaakt, geïdentificeerd door threadId.
+Gebruik `sendMessage` methode om een bericht te verzenden naar een thread die wordt geïdentificeerd door thread.
 
-`sendMessageRequest` beschrijft de vereiste velden van de chatberichtaanvraag:
+`sendMessageRequest` wordt gebruikt om de bericht aanvraag te beschrijven:
 
 - Gebruik `content` om de inhoud van het chatbericht op te geven;
 
-`sendMessageOptions` beschrijft de optionele velden van de chatberichtaanvraag:
+`sendMessageOptions` wordt gebruikt voor het beschrijven van de bewerking optionele para meters:
 
-- Gebruik `priority` om het prioriteits niveau voor chat berichten op te geven, zoals normaal of hoog. Deze eigenschap kan worden gebruikt om een UI-indicator weer te geven voor de ontvanger van de gebruiker in uw app om de aandacht te vestigen op het bericht of aangepaste bedrijfs logica uit te voeren.
 - Gebruik `senderDisplayName` om de weergavenaam van de afzender op te geven.
+- Gebruiken `type` om het bericht type op te geven, zoals tekst of HTML;
 
-Het antwoord `sendChatMessageResult` bevat een id. Dit is de unieke id van het bericht.
+`SendChatMessageResult` is het antwoord dat wordt geretourneerd door het verzenden van een bericht, bevat het een ID. Dit is de unieke ID van het bericht.
 
 ```JavaScript
-
 let sendMessageRequest =
 {
     content: 'Hello Geeta! Can you share the deck for the conference?'
 };
 let sendMessageOptions =
 {
-    priority: 'Normal',
-    senderDisplayName : 'Jack'
+    senderDisplayName : 'Jack',
+    type: 'text'
 };
 let sendChatMessageResult = await chatThreadClient.sendMessage(sendMessageRequest, sendMessageOptions);
 let messageId = sendChatMessageResult.id;
-console.log(`Message sent!, message id:${messageId}`);
-
 ```
+
 Voeg deze code toe in plaats van de opmerking `<SEND MESSAGE TO A CHAT THREAD>` in **client.js**, vernieuw uw browsertabblad en controleer de console.
 ```console
 Message sent!, message id:<number>
@@ -286,7 +284,7 @@ Zodra u een chat-thread hebt gemaakt, kunt u gebruikers toevoegen en verwijderen
 Voordat u de `addParticipants` -methode aanroept, moet u ervoor zorgen dat u een nieuw toegangs token en een nieuwe identiteit hebt verkregen voor die gebruiker. De gebruiker heeft dat toegangstoken nodig om zijn chat-client te initialiseren.
 
 `addParticipantsRequest` Hierin wordt het object aanvraag beschreven `participants` waarin de deel nemers worden toegevoegd aan de chat-thread.
-- `user`, vereist, is de communicatiegebruiker die moet worden toegevoegd aan de chat-thread.
+- `id`, vereist, is de communicatie-id die moet worden toegevoegd aan de chat-thread.
 - `displayName`, optioneel, is de weergave naam voor de deel nemer aan de thread.
 - `shareHistoryTime`, optioneel, is de tijd waarop de chat geschiedenis wordt gedeeld met de deel nemer. Als u de geschiedenis wilt delen sinds het begin van de chat-thread, stelt u deze eigenschap in op een willekeurige datum die gelijk is aan of kleiner is dan de aanmaaktijd van de thread. Als u geen geschiedenis wilt delen vóór wanneer de deel nemer is toegevoegd, stelt u deze in op de huidige datum. Als u een deel van de geschiedenis wilt delen, stelt u de eigenschap in op de gewenste datum.
 
@@ -296,7 +294,7 @@ let addParticipantsRequest =
 {
     participants: [
         {
-            user: { communicationUserId: '<NEW_PARTICIPANT_USER_ID>' },
+            id: { communicationUserId: '<NEW_PARTICIPANT_USER_ID>' },
             displayName: 'Jane'
         }
     ]

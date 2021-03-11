@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 225aca8c4695db33e504a5857acb856f4e01d1f1
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 32b4cf1555a2d0e074ae1551a5c0085f2758fa2b
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/10/2021
-ms.locfileid: "102551059"
+ms.locfileid: "102609138"
 ---
 # <a name="shared-image-galleries-overview"></a>Galerieën met gedeelde installatiekopieën (overzicht)
 
@@ -104,7 +104,7 @@ Voor gespecialiseerde VM's is geen proces gevolgd om computerspecifieke gegevens
 
 ## <a name="regional-support"></a>Regionale ondersteuning
 
-Alle openbare regio's kunnen doelregio's zijn, maar als u naar Australië - centraal en Australië - centraal 2 wilt repliceren, moet uw abonnement aan de lijst met toegestane regio's worden toegevoegd. Als u wilt aanvragen dat een abonnement wordt toegevoegd aan de lijst met toegestane regio's, gaat u naar: https://docs.microsoft.com/azure/virtual-machines/shared-image-galleries#regional-support
+Alle open bare regio's kunnen doel regio's zijn, maar bepaalde regio's vereisen dat klanten een aanvraag proces door lopen om toegang te krijgen. Als u wilt aanvragen dat een abonnement wordt toegevoegd aan de acceptatie lijst voor een regio zoals Australië-centraal of Australië-centraal 2, moet u [een toegangs aanvraag](/troubleshoot/azure/general/region-access-request-process) indienen
 
 ## <a name="limits"></a>Limieten 
 

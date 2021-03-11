@@ -8,18 +8,18 @@ ms.author: pamistel
 ms.date: 02/11/2021
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 409498201ac94882f1a28917693ffd3a65631fc7
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 43273ccd7c882bbac6cbc68d359db4ecb100800e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/10/2021
-ms.locfileid: "102583787"
+ms.locfileid: "102617400"
 ---
 # <a name="understanding-the-anchorlocatecriteria-class"></a>Informatie over de klasse AnchorLocateCriteria
 In dit artikel vindt u informatie over de verschillende opties die u kunt gebruiken bij het uitvoeren van een query op een anker. We gaan over de AnchorLocateCriteria-klasse, de opties en geldige combi Naties van oplossingen.
 
 ## <a name="anchor-locate-criteria"></a>Criteria voor anker zoeken
-De [AnchorLocateCriteria-klasse](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.anchorlocatecriteria?view=spatialanchors-dotnet) helpt u bij het opvragen van de service voor eerder gemaakte ankers. Eén AnchorLocateCriteria-object kan op elk gewenst moment per Watcher worden gebruikt. Elk AnchorLocateCriteria-object moet **exact een** van de volgende eigenschappen bevatten: [identifiers](#identifiers), [NearAnchor](#nearanchor)of [NearDevice](#neardevice). Aanvullende eigenschappen, zoals [strategie](#strategy), [BypassCache](#bypasscache)en [RequestedCategories](#requestedcategories) , kunnen worden ingesteld indien gewenst. 
+De [AnchorLocateCriteria-klasse](https://docs.microsoft.com/dotnet/api/microsoft.azure.spatialanchors.anchorlocatecriteria) helpt u bij het opvragen van de service voor eerder gemaakte ankers. Eén AnchorLocateCriteria-object kan op elk gewenst moment per Watcher worden gebruikt. Elk AnchorLocateCriteria-object moet **exact een** van de volgende eigenschappen bevatten: [identifiers](#identifiers), [NearAnchor](#nearanchor)of [NearDevice](#neardevice). Aanvullende eigenschappen, zoals [strategie](#strategy), [BypassCache](#bypasscache)en [RequestedCategories](#requestedcategories) , kunnen worden ingesteld indien gewenst. 
 
 ### <a name="properties"></a>Eigenschappen
 Definieer **exact een** van de volgende eigenschappen in de Watcher:

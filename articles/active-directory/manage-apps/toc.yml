@@ -38,8 +38,14 @@
       items:
         - name: Overzicht van app Management-voor beelden
           href: app-management-powershell-samples.md
-        - name: 'Alle app-registraties, geheimen en certificaten exporteren'
+        - name: Geheimen en certificaten exporteren (app-registraties)
           href: ./scripts/powershell-export-all-app-registrations-secrets-and-certs.md
+        - name: Geheimen en certificaten exporteren (Enter prise-apps)
+          href: ./scripts/powershell-export-all-enterprise-apps-secrets-and-certs.md
+        - name: Verlopen geheimen en certificaten exporteren
+          href: ./scripts/powershell-export-apps-with-expriring-secrets.md
+        - name: Exporteren van geheimen en certificaten die na de vereiste datum verlopen
+          href: ./scripts/powershell-export-apps-with-secrets-beyond-required.md
     - name: Power shell-voor beelden voor app proxy
       href: application-proxy-powershell-samples.md
 - name: Concepten

@@ -1,6 +1,6 @@
 ---
-title: Inrichting van de Cloud synchronisatie op aanvraag Azure AD Connect
-description: In dit artikel wordt de functie voor het inrichten op aanvraag beschreven.
+title: Inrichting op aanvraag in Azure AD Connect Cloud synchronisatie
+description: In dit artikel wordt beschreven hoe u de functie Cloud synchronisatie van Azure AD Connect gebruikt om configuratie wijzigingen te testen.
 services: active-directory
 author: billmath
 manager: daveba
@@ -11,88 +11,90 @@ ms.date: 09/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ac186d4b460165605ccf0fc53bdb0b691348bf3
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 5048b78c7d59b3358dbffe2e3e6eedf41decabb8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98622521"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554272"
 ---
-# <a name="azure-ad-connect-cloud-sync-on-demand-provisioning"></a>Inrichting van de Cloud synchronisatie op aanvraag Azure AD Connect
+# <a name="on-demand-provisioning-in-azure-ad-connect-cloud-sync"></a>Inrichting op aanvraag in Azure AD Connect Cloud synchronisatie
 
-Azure AD Connect Cloud sync een nieuwe functie heeft geïntroduceerd, waarmee u configuratie wijzigingen kunt testen door deze wijzigingen toe te passen op één gebruiker.  U kunt dit gebruiken om te valideren en te controleren of de wijzigingen die zijn aangebracht in de configuratie correct zijn toegepast en correct worden gesynchroniseerd met Azure AD.  
+U kunt de Cloud synchronisatie functie van Azure Active Directory (Azure AD) gebruiken om de configuratie wijzigingen te testen door deze wijzigingen toe te passen op één gebruiker. Met deze inrichting op aanvraag kunt u valideren en controleren of de wijzigingen die zijn aangebracht in de configuratie correct zijn toegepast en correct worden gesynchroniseerd met Azure AD.  
 
 > [!IMPORTANT] 
-> Wanneer u inrichtings op aanvraag gebruikt, worden de bereik filters niet toegepast op de gebruiker die u hebt geselecteerd.  Dit betekent dat u on-demand inrichten kunt gebruiken voor gebruikers buiten de organisatie-eenheden die u hebt opgegeven.
+> Wanneer u inrichtings op aanvraag gebruikt, worden de bereik filters niet toegepast op de gebruiker die u hebt geselecteerd. U kunt inrichten op aanvraag gebruiken voor gebruikers die zich niet in de organisatie-eenheden bevinden die u hebt opgegeven.
 
-
-## <a name="using-on-demand-provisioning"></a>Inrichten op aanvraag gebruiken
-Volg de onderstaande stappen om de nieuwe functie te gebruiken.
-
+## <a name="validate-a-user"></a>Een gebruiker valideren
+Voer de volgende stappen uit om inrichting op aanvraag te gebruiken:
 
 1.  Selecteer in Azure Portal **Azure Active Directory**.
 2.  Selecteer **Azure AD Connect**.
 3.  Selecteer **Cloud synchronisatie beheren**.
 
-    ![Inrichting beheren](media/how-to-install/install-6.png)
+    ![Scherm afbeelding met de koppeling voor het beheren van Cloud synchronisatie.](media/how-to-install/install-6.png)
 4. Selecteer uw configuratie onder **configuratie**.
-5. Klik onder **valideren** op de knop **een gebruiker inrichten** . 
+5. Onder **valideren** selecteert u de knop **een gebruiker inrichten** . 
 
- ![Een gebruiker inrichten](media/how-to-on-demand-provision/on-demand-2.png)
+   ![Scherm afbeelding met de knop voor het inrichten van een gebruiker.](media/how-to-on-demand-provision/on-demand-2.png)
 
-6. In het inrichtings scherm op aanvraag.  Voer de **DN-naam** van een gebruiker in en klik op de knop **inrichten** .  
+6. Op het scherm **inrichten op aanvraag** voert u de DN-naam van een gebruiker in en selecteert u de knop **inrichten** .  
  
- ![Op aanvraag inrichten](media/how-to-on-demand-provision/on-demand-3.png)
-7. Zodra het proces is voltooid, ziet u een geslaagd scherm en vier groene selectie vakjes die aangeven dat het is ingericht.  Eventuele fouten worden aan de linkerkant weer gegeven.
+   ![Scherm afbeelding met een gebruikers naam en een inrichtings knop.](media/how-to-on-demand-provision/on-demand-3.png)
+7. Nadat het inrichten is voltooid, wordt het scherm geslaagd weer gegeven met vier groene vinkjes. Er worden fouten weer gegeven aan de linkerkant.
 
-  ![Geslaagd](media/how-to-on-demand-provision/on-demand-4.png)
+   ![Scherm opname waarin geslaagde inrichting wordt weer gegeven.](media/how-to-on-demand-provision/on-demand-4.png)
 
-Nu kunt u de gebruiker bekijken en bepalen of de wijzigingen die u in de configuratie hebt aangebracht, zijn toegepast.  In de rest van dit document worden de afzonderlijke secties beschreven die worden weer gegeven in de details van een gesynchroniseerde gebruiker.
+## <a name="get-details-about-provisioning"></a>Details over het inrichten ophalen
+Nu kunt u de gebruikers gegevens bekijken en bepalen of de wijzigingen die u hebt aangebracht in de configuratie zijn toegepast. In de rest van dit artikel worden de afzonderlijke secties beschreven die in de details van een gesynchroniseerde gebruiker worden weer gegeven.
 
-## <a name="import-user-details"></a>Gebruikers gegevens importeren
-Deze sectie bevat informatie over de gebruiker die is geïmporteerd uit Active Directory.  Dit is wat de gebruiker ziet voordat deze wordt ingericht in azure AD.  Klik op de koppeling **Details weer geven** om deze informatie weer te geven.
+### <a name="import-user"></a>Gebruiker importeren
+De sectie **gebruiker importeren** bevat informatie over de gebruiker die is geïmporteerd uit Active Directory. Dit is wat de gebruiker ziet voordat deze wordt ingericht in azure AD. Selecteer de koppeling **Details weer geven** om deze informatie weer te geven.
 
-![Gebruiker importeren](media/how-to-on-demand-provision/on-demand-5.png)
+![Scherm afbeelding van de knop voor het weer geven van Details van een geïmporteerde gebruiker.](media/how-to-on-demand-provision/on-demand-5.png)
 
-Aan de hand van deze informatie kunt u de verschillende kenmerken en hun waarden bekijken die zijn geïmporteerd.  Als u een aangepaste kenmerk toewijzing hebt gemaakt, kunt u hier de waarde zien.
-![Gebruikers gegevens importeren](media/how-to-on-demand-provision/on-demand-6.png)
+Met behulp van deze informatie kunt u de verschillende kenmerken (en hun waarden) zien die zijn geïmporteerd. Als u een aangepaste kenmerk toewijzing hebt gemaakt, kunt u hier de waarde zien.
 
-## <a name="determine-if-user-is-in-scope-details"></a>Bepalen of de gebruiker zich in de scope Details bevindt
-Deze sectie bevat informatie over de vraag of de gebruiker die is geïmporteerd naar Azure AD binnen het bereik valt.  Klik op de koppeling **Details weer geven** om deze informatie weer te geven.
+![Scherm opname van de gebruikers details.](media/how-to-on-demand-provision/on-demand-6.png)
 
-![Gebruikers bereik](media/how-to-on-demand-provision/on-demand-7.png)
+### <a name="determine-if-user-is-in-scope"></a>Bepalen of de gebruiker binnen het bereik ligt
+De sectie **bepalen of de gebruiker zich in het bereik bevindt** geeft informatie over of de gebruiker die is geïmporteerd in azure AD, binnen het bereik valt. Selecteer de koppeling **Details weer geven** om deze informatie weer te geven.
 
-Met deze informatie kunt u aanvullende informatie bekijken over het bereik van uw gebruikers.
+![Scherm afbeelding van de knop voor het weer geven van Details over het gebruikers bereik.](media/how-to-on-demand-provision/on-demand-7.png)
 
-![Details van het gebruikers bereik](media/how-to-on-demand-provision/on-demand-10a.png)
+Met behulp van deze informatie kunt u zien of de gebruiker binnen het bereik is.
 
-## <a name="match-user-between-source-and-target-system-details"></a>Gebruikers zoeken tussen bron-en doel systeem Details
-Deze sectie bevat informatie over of de gebruiker al bestaat in azure AD en dat er een koppeling moet worden uitgevoerd in plaats van een nieuwe gebruiker in te richten.  Klik op de koppeling **Details weer geven** om deze informatie weer te geven.
-![Details weergeven](media/how-to-on-demand-provision/on-demand-8.png)
+![Scherm opname van Details van het gebruikers bereik.](media/how-to-on-demand-provision/on-demand-10a.png)
 
-Aan de hand van deze informatie kunt u zien of er een overeenkomst is gevonden of dat er een nieuwe gebruiker wordt gemaakt.
+### <a name="match-user-between-source-and-target-system"></a>Overeenkomende gebruikers tussen het bron-en doel systeem
+De sectie **gebruiker overeenkomen tussen bron-en doel systeem** bevat informatie over de vraag of de gebruiker al bestaat in azure AD en of een koppeling moet worden uitgevoerd in plaats van een nieuwe gebruiker in te richten. Selecteer de koppeling **Details weer geven** om deze informatie weer te geven.
 
-![Gebruikersgegevens](media/how-to-on-demand-provision/on-demand-11.png)
+![Scherm afbeelding van de knop voor het weer geven van Details van een overeenkomende gebruiker.](media/how-to-on-demand-provision/on-demand-8.png)
 
-In de overeenkomende Details wordt een bericht weer gegeven met een van de drie volgende bewerkingen.  Dit zijn:
-- Maken: er wordt een gebruiker gemaakt in azure AD
-- Update: een gebruiker wordt bijgewerkt op basis van een wijziging die is aangebracht in de configuratie
-- Verwijderen: een gebruiker wordt verwijderd uit Azure AD.
+Met behulp van deze informatie kunt u zien of er een overeenkomst is gevonden of dat er een nieuwe gebruiker wordt gemaakt.
+
+![Scherm opname van de gebruikers gegevens.](media/how-to-on-demand-provision/on-demand-11.png)
+
+In de overeenkomende Details wordt een bericht weer gegeven met een van de drie volgende bewerkingen:
+- **Maken**: er wordt een gebruiker gemaakt in azure AD.
+- **Update**: een gebruiker wordt bijgewerkt op basis van een wijziging die is aangebracht in de configuratie.
+- **Verwijderen**: een gebruiker wordt verwijderd uit Azure AD.
 
 Afhankelijk van het type bewerking dat u hebt uitgevoerd, is het bericht afhankelijk.
 
-## <a name="perform-action-details"></a>Details van actie uitvoeren
-Deze sectie bevat informatie over de gebruiker die is ingericht of geëxporteerd naar Azure AD nadat de configuratie is toegepast.  Dit is wat de gebruiker ziet als deze eenmaal is ingericht in azure AD.  Klik op de koppeling **Details weer geven** om deze informatie weer te geven.
-![Details van actie uitvoeren](media/how-to-on-demand-provision/on-demand-9.png)
+### <a name="perform-action"></a>Actie uitvoeren
+De sectie **actie uitvoeren** bevat informatie over de gebruiker die is ingericht of geëxporteerd naar Azure AD nadat de configuratie is toegepast. Dit is wat de gebruiker ziet nadat deze is ingericht in azure AD. Selecteer de koppeling **Details weer geven** om deze informatie weer te geven.
 
-Met deze informatie kunt u de waarden van de kenmerken zien nadat de configuratie is toegepast.  Zien ze er ongeveer uit als er iets anders is geïmporteerd?  Is de configuratie geslaagd?  
+![Scherm afbeelding van de knop voor het weer geven van Details van een uitgevoerde actie.](media/how-to-on-demand-provision/on-demand-9.png)
 
-Op deze manier kunt u de kenmerk transformatie traceren terwijl deze door de Cloud en in uw Azure AD-Tenant wordt verplaatst.
+Met behulp van deze informatie kunt u de waarden van de kenmerken zien nadat de configuratie is toegepast. Zien ze er ongeveer uit wat er is geïmporteerd, of zijn ze verschillend? Is de configuratie met succes toegepast?  
 
-![Traceer kenmerk](media/how-to-on-demand-provision/on-demand-12.png)
+Met dit proces kunt u de kenmerk transformatie traceren terwijl deze door de Cloud en in uw Azure AD-Tenant wordt verplaatst.
+
+![Scherm opname van Details van traceer kenmerken.](media/how-to-on-demand-provision/on-demand-12.png)
 
 ## <a name="next-steps"></a>Volgende stappen 
 
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)
 - [Azure AD Connect Cloud synchronisatie installeren](how-to-install.md)
  

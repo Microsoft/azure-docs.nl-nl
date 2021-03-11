@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 2/08/2021
 ms.author: amgowda
-ms.openlocfilehash: 9ca98c032a7c8bd1820a92bff77079a61c515d65
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 9205513c4eb7e377fee0c5d18577d76a82476cf2
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653377"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553388"
 ---
 # <a name="confidential-computing-nodes-on-azure-kubernetes-service"></a>Vertrouwelijke computing-knoop punten op de Azure Kubernetes-service
 

@@ -8,12 +8,12 @@ ms.date: 01/28/2020
 ms.author: dech
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a5b8842718aa2d9f90ac06283abc5fe2fdd925cb
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: c7246511a88e2d2756a8ef56c5adf51ddbfd3e58
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95996998"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560528"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Een CI/CD-pijp lijn instellen met de taak Azure Cosmos DB emulator bouwen in azure DevOps
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -33,13 +33,13 @@ U kunt de build-taak pas gebruiken als u deze eerst installeert in uw Azure DevO
 Kies vervolgens de organisatie waarin u de extensie installeren. 
 
 > [!NOTE]
-> Als u een uitbrei ding wilt installeren in een Azure DevOps-organisatie, moet u een account eigenaar of beheerder van een project verzameling zijn. Als u niet bevoegd bent, maar wel lid bent van het account, kunt u extensies aanvragen. [Meer informatie.](/azure/devops/marketplace/faq-extensions?preserve-view=true&view=vsts)
+> Als u een uitbrei ding wilt installeren in een Azure DevOps-organisatie, moet u een account eigenaar of beheerder van een project verzameling zijn. Als u niet bevoegd bent, maar wel lid bent van het account, kunt u extensies aanvragen. [Meer informatie.](/azure/devops/marketplace/faq-extensions)
 
 :::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_2.png" alt-text="Een Azure DevOps-organisatie kiezen voor het installeren van een uitbrei ding":::
 
 ## <a name="create-a-build-definition"></a>Een build-definitie maken
 
-Nu de uitbrei ding is geïnstalleerd, meldt u zich aan bij uw Azure DevOps-organisatie en gaat u naar het project in het dash board projecten. U kunt een [build-pipeline](/azure/devops/pipelines/get-started-designer?preserve-view=true&tabs=new-nav&view=vsts) aan uw project toevoegen of een bestaande build-pipeline wijzigen. Als u al een build-pipeline hebt, kunt u verdergaan met[Build-taak van de emulator toevoegen aan een build-definitie](#addEmulatorBuildTaskToBuildDefinition).
+Nu de uitbrei ding is geïnstalleerd, meldt u zich aan bij uw Azure DevOps-organisatie en gaat u naar het project in het dash board projecten. U kunt een [build-pipeline](/azure/devops/pipelines/get-started-designer?preserve-view=true&tabs=new-nav) aan uw project toevoegen of een bestaande build-pipeline wijzigen. Als u al een build-pipeline hebt, kunt u verdergaan met[Build-taak van de emulator toevoegen aan een build-definitie](#addEmulatorBuildTaskToBuildDefinition).
 
 1. Om een nieuwe build-definitie te maken, gaat u naar het tabblad **Builds** in Azure DevOps. Selecteer **+ Nieuw.** \> **Nieuwe build-pipeline**
 
@@ -52,7 +52,7 @@ Nu de uitbrei ding is geïnstalleerd, meldt u zich aan bij uw Azure DevOps-organ
 3. Selecteer ten slotte de gewenste sjabloon voor de build-pipeline. We selecteren de sjabloon **ASP.NET** voor deze zelfstudie. U hebt nu een build-pijp lijn die u kunt instellen voor het gebruik van de Azure Cosmos DB emulator-opbouw taak. 
 
 > [!NOTE]
-> Voor de agent groep die moet worden geselecteerd voor deze CI moet docker voor Windows zijn geïnstalleerd, tenzij de installatie hand matig wordt uitgevoerd in een eerdere taak als onderdeel van de CI. Zie het artikel [micro soft hosted agents](/azure/devops/pipelines/agents/hosted?preserve-view=true&tabs=yaml&view=azure-devops) voor een selectie van agent groepen; We raden u aan om te beginnen met `Hosted VS2017` .
+> Voor de agent groep die moet worden geselecteerd voor deze CI moet docker voor Windows zijn geïnstalleerd, tenzij de installatie hand matig wordt uitgevoerd in een eerdere taak als onderdeel van de CI. Zie het artikel [micro soft hosted agents](/azure/devops/pipelines/agents/hosted?tabs=yaml) voor een selectie van agent groepen; We raden u aan om te beginnen met `Hosted VS2017` .
 
 De gehoste VS2019-agent groep wordt momenteel niet ondersteund door de Azure Cosmos DB-emulator. De emulator wordt echter al met VS2019 geïnstalleerd en u gebruikt deze door de emulator te starten met de volgende Power shell-cmdlets. Als u problemen ondervindt bij het gebruik van de VS2019, kunt u contact met het [Azure DevOps](https://developercommunity.visualstudio.com/spaces/21/index.html) -team bereiken voor hulp:
 

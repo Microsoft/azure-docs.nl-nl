@@ -1,21 +1,31 @@
 ---
 title: Voorbereidende stappen voor het migreren van gegevens naar de API van Azure Cosmos DB voor MongoDB
 description: Dit document bevat een overzicht van de vereisten voor een gegevens migratie van MongoDB naar Cosmos DB.
-author: christopheranderson
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.author: chrande
-ms.openlocfilehash: ced795385fdf00e706ea897db80f558b513a9f9d
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.author: anfeldma
+ms.openlocfilehash: cdc5dc9cee3520d9a3f22ff710dfa193e6ef4fed
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101656955"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553286"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Stappen voorafgaand aan de migratie voor gegevens migraties van MongoDB naar de API van Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
+
+> [!IMPORTANT]  
+> Deze MongoDB-hand leiding voor vóór de migratie is de eerste in een reeks bij het migreren van MongoDB naar Azure Cosmos DB Mongo-API op schaal. Klanten die licenties hebben en MongoDB op zelf beheerde infra structuur implementeren, kunnen de kosten van hun gegevens beperken en beheren door te migreren naar een beheerde Cloud service, zoals Azure Cosmos DB met prijzen voor betalen per gebruik en een elastische schaal baarheid. Het doel van deze serie is de klant te begeleiden door het migratie proces:
+>
+> 1. [Voorafgaand](mongodb-pre-migration.md) aan de migratie: Inventariseer de bestaande MongoDb data onroerend goed, plan migratie en kies de juiste migratie hulpprogramma's.
+> 2. Uitvoering: migreren van MongoDB naar Azure Cosmos DB met behulp van de meegeleverde [zelf studies]().
+> 3. [Na de migratie](mongodb-post-migration.md) : bestaande toepassingen bijwerken en optimaliseren om uit te voeren op uw nieuwe Azure Cosmos DB Data-erfgoed.
+>
+
+Een vast pre-migratie plan kan een grote invloed hebben op de tijd lijn en het slagen van de migratie van uw team. Een goede analogeie voor vóór de migratie begint met het maken van vereisten. u kunt beginnen met het definiëren van behoeften, vervolgens een overzicht geven van de taken die zijn betrokken en de grootste taken die als eerste moeten worden behandeld. Dit helpt om uw project planning voorspelbaar te maken, maar uiteraard kunnen er onverwachte vereisten ontstaan en de project planning bemoeilijken. Als u terugkeert naar migratie: door een uitgebreid uitvoerings plan te bouwen in de fase voorafgaand aan de migratie, minimaliseert u de kans dat u onverwachte migratie taken in de loop van het proces zult ontdekken, bespaart u tijd tijdens de migratie en helpt u ervoor te zorgen dat er doelen worden gehaald.
 
 Voordat u uw gegevens migreert van MongoDB (on-premises of in de Cloud) naar de API van Azure Cosmos DB voor MongoDB, moet u het volgende doen:
 

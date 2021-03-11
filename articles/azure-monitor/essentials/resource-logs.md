@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: bwren
-ms.openlocfilehash: cb4f1ecdada68218c104558a85277417641906f6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 2435e4ed16889d9d4701b6047c0a1f602ee7ae91
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102033009"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558692"
 ---
 # <a name="azure-resource-logs"></a>Azure-resourcelogboeken
 Azure-resource logboeken zijn [platform logboeken](../essentials/platform-logs-overview.md) die inzicht bieden in bewerkingen die zijn uitgevoerd in een Azure-resource. De inhoud van bron Logboeken is afhankelijk van de Azure-service en het resource type. Bron logboeken worden niet standaard verzameld. U moet een diagnostische instelling maken voor elke Azure-resource om de resource logboeken te verzenden naar een Log Analytics-werk ruimte die u wilt gebruiken met [Azure monitor-logboeken](../logs/data-platform-logs.md), Azure Event hubs om buiten Azure door te sturen of om te Azure Storage voor archivering.
@@ -28,11 +28,11 @@ Zie [Diagnostische instellingen maken om platform logboeken en metrische gegeven
 
 [Een diagnostische instelling maken](../essentials/diagnostic-settings.md) om bron logboeken te verzenden naar een log Analytics-werk ruimte. Deze gegevens worden opgeslagen in tabellen zoals beschreven in de [structuur van Azure monitor logboeken](../logs/data-platform-logs.md). De tabellen die door resource logboeken worden gebruikt, zijn afhankelijk van het type verzameling dat de resource gebruikt:
 
-- Azure Diagnostics-alle gegevens die zijn geschreven, worden naar de tabel _AzureDiagnostics_ .
+- Azure Diagnostics-alle gegevens die zijn geschreven, worden naar de tabel [AzureDiagnostics](/azure/azure-monitor/reference/tables/azurediagnostics) .
 - Resource-specifiek: gegevens worden naar afzonderlijke tabellen geschreven voor elke categorie van de resource.
 
 ### <a name="azure-diagnostics-mode"></a>Diagnostische modus van Azure 
-In deze modus worden alle gegevens van een diagnostische instelling verzameld in de tabel _AzureDiagnostics_ . Dit is de verouderde methode die momenteel door de meeste Azure-Services wordt gebruikt. Aangezien meerdere bron typen gegevens naar dezelfde tabel verzenden, is het bijbehorende schema de hoofd verzameling van de schema's van alle verschillende gegevens typen die worden verzameld.
+In deze modus worden alle gegevens van een diagnostische instelling verzameld in de tabel [AzureDiagnostics](/azure/azure-monitor/reference/tables/azurediagnostics) . Dit is de verouderde methode die momenteel door de meeste Azure-Services wordt gebruikt. Aangezien meerdere bron typen gegevens naar dezelfde tabel verzenden, is het bijbehorende schema de hoofd verzameling van de schema's van alle verschillende gegevens typen die worden verzameld. Zie [AzureDiagnostics-verwijzing](/azure/azure-monitor/reference/tables/azurediagnostics) voor meer informatie over de structuur van deze tabel en hoe deze werkt met een mogelijk groot aantal kolommen.
 
 Bekijk het volgende voor beeld waarin Diagnostische instellingen worden verzameld in dezelfde werk ruimte voor de volgende gegevens typen:
 
@@ -95,16 +95,6 @@ Met de meeste Azure-resources worden gegevens naar de werk ruimte geschreven in 
 U kunt een bestaande diagnostische instelling wijzigen in de resource-specifieke modus. In dit geval blijven de gegevens die al zijn verzameld in de tabel _AzureDiagnostics_ totdat deze is verwijderd volgens de Bewaar instelling voor de werk ruimte. Nieuwe gegevens worden verzameld in de toegewezen tabel. Gebruik de operator [Union](/azure/kusto/query/unionoperator) om gegevens op te vragen over beide tabellen.
 
 Ga door met het bekijken van [Azure updates](https://azure.microsoft.com/updates/) blog voor aankondigingen over Azure-services die Resource-Specific modus ondersteunen.
-
-### <a name="column-limit-in-azurediagnostics"></a>Kolom limiet in AzureDiagnostics
-Er is een limiet van 500 eigenschappen voor een tabel in Azure Monitor Logboeken. Zodra deze limiet is bereikt, worden alle rijen met gegevens die zich buiten de eerste 500 bevinden, verwijderd op de opname tijd. De *AzureDiagnostics* -tabel is met name vatbaar voor deze limiet omdat deze eigenschappen bevat voor alle Azure-Services die ernaar schrijven.
-
-Als u bron logboeken verzamelt van meerdere services, overschrijden _AzureDiagnostics_ mogelijk deze limiet en worden de gegevens niet geregistreerd. Totdat alle Azure-Services ondersteuning bieden voor de resource-specifieke modus, moet u bronnen zo configureren dat deze naar meerdere werk ruimten schrijven om de kans te verkleinen dat de limiet van 500 kolommen wordt bereikt.
-
-### <a name="azure-data-factory"></a>Azure Data Factory
-Azure Data Factory, vanwege een gedetailleerde set logboeken, is een service waarvan bekend is dat ze een groot aantal kolommen schrijven, waardoor het mogelijk is dat _AzureDiagnostics_ de limiet overschrijdt. Voor alle diagnostische instellingen die zijn geconfigureerd voordat de resource-specifieke modus was ingeschakeld, wordt er een nieuwe kolom gemaakt voor elke unieke benoemde gebruikers parameter voor elke activiteit. Er worden meer kolommen gemaakt vanwege de uitgebreide aard van de activiteit invoer en uitvoer.
- 
-U moet uw logboeken zo snel mogelijk naar de resource-specifieke modus migreren. Als u dit niet onmiddellijk kunt doen, is een tussentijds alternatief het isoleren van Azure Data Factory Logboeken in hun eigen werk ruimte om de kans te verkleinen dat deze logboeken invloed hebben op andere logboek typen die worden verzameld in uw werk ruimten.
 
 
 ## <a name="send-to-azure-event-hubs"></a>Verzenden naar Azure Event Hubs

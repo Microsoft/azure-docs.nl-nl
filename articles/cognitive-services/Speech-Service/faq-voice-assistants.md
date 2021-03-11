@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: 4b0bbb982ed48dc052b1a15514ad36b1d69b62b5
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 511eb12df511fd037fc0b5bec701c0cc5c29bad2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599422"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617774"
 ---
 # <a name="voice-assistants-frequently-asked-questions"></a>Veelgestelde vragen over spraak assistenten
 
@@ -36,7 +36,7 @@ Als u geen antwoorden op uw vragen in dit document kunt vinden, Bekijk dan [Ande
 **A:** De beste manier om te beginnen met het maken van een aangepaste opdrachten (preview)-toepassing of basis-bot-raam werk.
 
 - [Een aangepaste opdrachten (preview)-toepassing maken](./quickstart-custom-commands-application.md)
-- [Een eenvoudige bot-Framework-bot maken](/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0)
+- [Een eenvoudige bot-Framework-bot maken](/azure/bot-service/bot-builder-tutorial-basic-deploy)
 - [Een bot aansluiten op het directe lijn spraak kanaal](/azure/bot-service/bot-service-channel-connect-directlinespeech)
 
 ## <a name="debugging"></a>Foutopsporing

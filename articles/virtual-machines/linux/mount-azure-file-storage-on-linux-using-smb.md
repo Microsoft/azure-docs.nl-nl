@@ -2,17 +2,18 @@
 title: Azure File Storage koppelen aan linux-Vm's met behulp van SMB
 description: Azure File Storage koppelen op Linux Vm's met behulp van SMB met de Azure CLI
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 6a5d4f388d9e5f47a13812687489525590c520c3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 45042f474f39b3f64d45913905765016fae3cb26
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016094"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551790"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Azure File Storage koppelen aan linux-Vm's met behulp van SMB
 
@@ -33,7 +34,7 @@ Maak een resource groep met de naam *myResourceGroup* op de locatie *VS-Oost* .
 az group create --name myResourceGroup --location eastus
 ```
 
-## <a name="create-a-storage-account"></a>Create a storage account
+## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Maak een nieuw opslag account in de resource groep die u hebt gemaakt met [AZ Storage account create](/cli/azure/storage/account). In dit voor beeld wordt een opslag account gemaakt met de naam *mySTORAGEACCT \<random number>* en wordt de naam van dat opslag account in de variabele **STORAGEACCT** geplaatst. Namen van opslag accounts moeten uniek zijn, waarbij `$RANDOM` een getal wordt toegevoegd aan het einde om het uniek te maken.
 

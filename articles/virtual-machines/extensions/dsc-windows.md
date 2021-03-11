@@ -1,25 +1,19 @@
 ---
 title: Extensie-handler voor desired state Configuration van Azure
 description: Een Power shell DSC-configuratie op een Azure-VM uploaden en Toep assen met behulp van DSC-extensie
-services: virtual-machines-windows
-documentationcenter: ''
-author: bobbytreed
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: virtual-machines-windows
-ms.subservice: extensions
 ms.topic: article
-ms.tgt_pltfrm: windows
-ms.workload: ''
-ms.date: 03/26/2018
+ms.service: virtual-machines
+ms.subservice: extensions
+author: bobbytreed
 ms.author: robreed
-ms.openlocfilehash: 5254d83c18ddc9f2a5518ed4f711d4cd73ab6de7
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.collection: windows
+ms.date: 03/26/2018
+ms.openlocfilehash: 72f66aeee64133a13ce0e49155c4b2a90240a3fb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510937"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559984"
 ---
 # <a name="powershell-dsc-extension"></a>Power shell DSC-extensie
 
@@ -100,7 +94,7 @@ De volgende JSON toont het schema voor het gedeelte instellingen van de DSC-uitb
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2018-10-01 | datum |
+| apiVersion | 2018-10-01 | date |
 | publisher | Micro soft. Power shell. DSC | tekenreeks |
 | type | DSC | tekenreeks |
 | typeHandlerVersion | 2,77 | int |
@@ -132,7 +126,7 @@ De volgende JSON toont het schema voor het gedeelte instellingen van de DSC-uitb
 
 Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen.
 Sjablonen zijn ideaal bij het implementeren van een of meer virtuele machines waarvoor na de implementatie configuratie een vereiste is.
-Een voor beeld van een resource manager-sjabloon die de DSC-extensie voor Windows bevat, kunt u vinden in de [Galerie van Azure Quick Start](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
+Een voor beeld van een resource manager-sjabloon die de DSC-extensie voor Windows bevat, kunt u vinden in de [Galerie van Azure snel starten](https://github.com/Azure/azure-quickstart-templates/blob/master/101-automation-configuration/nested/provisionServer.json#L91).
 
 ## <a name="troubleshoot-and-support"></a>Problemen oplossen en ondersteuning
 

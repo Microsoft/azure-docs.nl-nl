@@ -3,19 +3,20 @@ title: Gedeelde Azure Linux VM-installatie kopieën maken met behulp van de port
 description: Meer informatie over het gebruik van Azure Portal voor het maken en delen van installatie kopieën van virtuele Linux-machines.
 author: cynthn
 tags: azure-resource-manager
-ms.service: virtual-machines-linux
-ms.subservice: imaging
+ms.service: virtual-machines
+ms.subservice: shared-image-gallery
+ms.collection: linux
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 01d095a5506ec0886cdee875b57edbbbeca6fc86
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 90ed91caa1c4b71ae90b86f5b0783a6d5c1c669e
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878818"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552793"
 ---
 # <a name="create-a-shared-image-gallery-using-the-portal"></a>Een galerie met gedeelde afbeeldingen maken met behulp van de portal
 

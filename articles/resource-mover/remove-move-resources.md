@@ -5,14 +5,14 @@ manager: evansma
 author: rayne-wiselman
 ms.service: resource-move
 ms.topic: how-to
-ms.date: 11/30/2020
+ms.date: 02/22/2020
 ms.author: raynew
-ms.openlocfilehash: 63548e2bf470c012e0dd8a5f879a51eeb631f453
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 25311e93e1081b3c7638c275c39153b2c357048d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459272"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559109"
 ---
 # <a name="manage-move-collections-and-resource-groups"></a>Verplaats verzamelingen en resource groepen beheren
 
@@ -39,70 +39,111 @@ U kunt een verzameling/resource groep verplaatsen in de Portal verwijderen.
 
 ## <a name="remove-a-resource-powershell"></a>Een resource verwijderen (Power shell)
 
-U kunt als volgt een resource (in ons voor beeld van de PSDemoVM-machines) verwijderen uit een verzameling met behulp van Power shell:
+Met Power shell-cmdlets kunt u één resource uit een MoveCollection verwijderen of meerdere resources verwijderen.
+
+### <a name="remove-a-single-resource"></a>Eén resource verwijderen
+
+Verwijder een resource (in ons voor beeld het virtuele netwerk *psdemorm-vnet*) als volgt:
 
 ```azurepowershell-interactive
 # Remove a resource using the resource ID
-Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus -Name PSDemoVM
+Remove-AzResourceMoverMoveResource -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS" -Name "psdemorm-vnet"
 ```
-**Verwachte uitvoer**
+**Uitvoer na het uitvoeren van de cmdlet**
 
-![Uitvoer tekst nadat een resource is verwijderd uit een verzameling voor verplaatsen](./media/remove-move-resources/remove-resource.png)
+![Uitvoer tekst nadat een resource is verwijderd uit een verzameling voor verplaatsen](./media/remove-move-resources/powershell-remove-single-resource.png)
 
-## <a name="remove-a-collection-powershell"></a>Een verzameling verwijderen (Power shell)
+### <a name="remove-multiple-resources"></a>Meerdere resources verwijderen
 
-Verwijder een volledige verzameling voor verplaatsen met behulp van Power shell, als volgt:
+U verwijdert meerdere resources als volgt:
 
-1. Volg de bovenstaande instructies voor het verwijderen van resources in de verzameling met behulp van Power shell.
-2. Voer het volgende uit:
+1. Afhankelijkheden valideren:
+
+    ````azurepowershell-interactive
+    $resp = Invoke-AzResourceMoverBulkRemove -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS"  -MoveResource $('psdemorm-vnet') -ValidateOnly
+    ```
+
+    **Output after running cmdlet**
+
+    ![Output text after removing multiple resources from a move collection](./media/remove-move-resources/remove-multiple-validate-dependencies.png)
+
+2. Retrieve the dependent resources that need to be removed (along with our example virtual network psdemorm-vnet):
+
+    ````azurepowershell-interactive
+    $resp.AdditionalInfo[0].InfoMoveResource
+    ```
+
+    **Output after running cmdlet**
+
+    ![Output text after removing multiple resources from a move collection](./media/remove-move-resources/remove-multiple-get-dependencies.png)
+
+
+3. Remove all resources, along with the virtual network:
+
+    
+    ````azurepowershell-interactive
+    Invoke-AzResourceMoverBulkRemove -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS"  -MoveResource $('PSDemoVM','psdemovm111', 'PSDemoRM-vnet','PSDemoVM-nsg')
+    ```
+
+    **Output after running cmdlet**
+
+    ![Output text after removing all resources from a move collection](./media/remove-move-resources/remove-multiple-all.png)
+
+
+## Remove a collection (PowerShell)
+
+Remove an entire move collection from the subscription, as follows:
+
+1. Follow the instructions above to remove resources in the collection using PowerShell.
+2. Run:
 
     ```azurepowershell-interactive
-    # Remove a resource using the resource ID
-    Remove-AzResourceMoverMoveCollection -SubscriptionId <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus -MoveCollectionName MoveCollection-centralus-westcentralus
+    Remove-AzResourceMoverMoveCollection -ResourceGroupName "RG-MoveCollection-demoRMS" -MoveCollectionName "PS-centralus-westcentralus-demoRMS"
     ```
-    **Verwachte uitvoer**
+
+    **Output after running cmdlet**
     
-    ![Uitvoer tekst na het verwijderen van een verzameling voor verplaatsen](./media/remove-move-resources/remove-collection.png)
+    ![Output text after removing a move collection](./media/remove-move-resources/remove-collection.png)
 
-## <a name="vm-resource-state-after-removing"></a>Resource status van de VM na het verwijderen
+## VM resource state after removing
 
-Wat er gebeurt wanneer u een VM-resource uit een verzameling voor verplaatsen verwijdert, is afhankelijk van de status van de resource, zoals in de tabel wordt beschreven.
+What happens when you remove a VM resource from a move collection depends on the resource state, as summarized in the table.
 
-###  <a name="remove-vm-state"></a>VM-status verwijderen
-**Resource status** | **VM** | **Netwerken**
+###  Remove VM state
+**Resource state** | **VM** | **Networking**
 --- | --- | --- 
-**Toegevoegd aan verzameling verplaatsen** | Verwijderen uit de verzameling verplaatsen. | Verwijderen uit de verzameling verplaatsen. 
-**Opgeloste afhankelijkheden/voorbereiden** | Verwijderen uit verzameling verplaatsen  | Verwijderen uit de verzameling verplaatsen. 
-**Voor bereiding wordt uitgevoerd**<br/> (of een andere status in behandeling) | De Verwijder bewerking is mislukt met een fout.  | De Verwijder bewerking is mislukt met een fout.
-**Voorbereiden is mislukt** | Verwijderen uit de verzameling verplaatsen.<br/>Verwijder alle items die zijn gemaakt in de doel regio, inclusief replica schijven. <br/><br/> Infrastructuur resources die zijn gemaakt tijdens de verplaatsing, moeten hand matig worden verwijderd. | Verwijderen uit de verzameling verplaatsen.  
-**Initiëren verplaatsen in behandeling** | Verwijderen uit de verzameling verplaatsen.<br/><br/> Verwijder alle items die zijn gemaakt in de doel regio, inclusief VM, replica schijven, enzovoort.  <br/><br/> Infrastructuur resources die zijn gemaakt tijdens de verplaatsing, moeten hand matig worden verwijderd. | Verwijderen uit de verzameling verplaatsen.
-**Verplaatsen is mislukt** | Verwijderen uit de verzameling verplaatsen.<br/><br/> Verwijder alle items die zijn gemaakt in de doel regio, inclusief VM, replica schijven, enzovoort.  <br/><br/> Infrastructuur resources die zijn gemaakt tijdens de verplaatsing, moeten hand matig worden verwijderd. | Verwijderen uit de verzameling verplaatsen.
-**Door voeren in behandeling** | U wordt aangeraden de verplaatsing te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan. | U wordt aangeraden de verplaatsing te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan. 
-**Door voeren is mislukt** | U wordt aangeraden om het verwijderen te annuleren zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan. | U wordt aangeraden de verplaatsing te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan.
-**Verwijderen is voltooid** | De resource gaat terug naar de status **initiëren verplaatsen in behandeling** .<br/><br/> Het wordt verwijderd uit de verzameling verplaatsen, samen met iets dat u hebt gemaakt bij doel-VM, replica schijven, kluis, enzovoort.  <br/><br/> Infrastructuur resources die zijn gemaakt tijdens de verplaatsing, moeten hand matig worden verwijderd. <br/><br/> Infrastructuur resources die zijn gemaakt tijdens de verplaatsing, moeten hand matig worden verwijderd. |  De resource gaat terug naar de status **initiëren verplaatsen in behandeling** .<br/><br/> Het wordt verwijderd uit de verzameling verplaatsen.
-**Kan niet verwijderen** | U wordt aangeraden de verplaatsingen te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> Daarna gaat de resource terug naar de status **initiëren verplaatsen in behandeling** , waarna u kunt door gaan. | U wordt aangeraden de verplaatsingen te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> Daarna gaat de resource terug naar de status **initiëren verplaatsen in behandeling** , waarna u kunt door gaan.
-**Bron verwijderen in behandeling** | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt.  | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt.
-**Bron verwijderen is mislukt** | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt. | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt.
+**Added to move collection** | Delete from move collection. | Delete from move collection. 
+**Dependencies resolved/prepare pending** | Delete from move collection  | Delete from move collection. 
+**Prepare in progress**<br/> (or any other state in progress) | Delete operation fails with error.  | Delete operation fails with error.
+**Prepare failed** | Delete from the move collection.<br/>Delete anything created in the target region, including replica disks. <br/><br/> Infrastructure resources created during the move need to be deleted manually. | Delete from the move collection.  
+**Initiate move pending** | Delete from move collection.<br/><br/> Delete anything created in the target region, including VM, replica disks etc.  <br/><br/> Infrastructure resources created during the move need to be deleted manually. | Delete from move collection.
+**Initiate move failed** | Delete from move collection.<br/><br/> Delete anything created in the target region, including VM, replica disks etc.  <br/><br/> Infrastructure resources created during the move need to be deleted manually. | Delete from move collection.
+**Commit pending** | We recommend that you discard the move so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there. | We recommend that you discard the move so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there. 
+**Commit failed** | We recommend that you discard the  so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there. | We recommend that you discard the move so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there.
+**Discard completed** | The resource goes back to the **Initiate move pending** state.<br/><br/> It's deleted from the move collection, along with anything created at target - VM, replica disks, vault etc.  <br/><br/> Infrastructure resources created during the move need to be deleted manually. <br/><br/> Infrastructure resources created during the move need to be deleted manually. |  The resource goes back to the **Initiate move pending** state.<br/><br/> It's deleted from the move collection.
+**Discard failed** | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there. | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there.
+**Delete source pending** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.  | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.
+**Delete source failed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region.
 
-## <a name="sql-resource-state-after-removing"></a>SQL-resource status na het verwijderen
+## SQL resource state after removing
 
-Wat er gebeurt wanneer u een Azure SQL-resource uit een verzameling voor verplaatsen verwijdert, is afhankelijk van de status van de resource, zoals in de tabel wordt beschreven.
+What happens when you remove an Azure SQL resource from a move collection depends on the resource state, as summarized in the table.
 
-**Resource status** | **SQL** 
+**Resource state** | **SQL** 
 --- | --- 
-**Toegevoegd aan verzameling verplaatsen** | Verwijderen uit de verzameling verplaatsen. 
-**Opgeloste afhankelijkheden/voorbereiden** | Verwijderen uit verzameling verplaatsen 
-**Voor bereiding wordt uitgevoerd**<br/> (of een andere status in behandeling)  | De Verwijder bewerking is mislukt met een fout. 
-**Voorbereiden is mislukt** | Verwijderen uit verzameling verplaatsen<br/><br/>Verwijder alle items die zijn gemaakt in de doel regio. 
-**Initiëren verplaatsen in behandeling** |  Verwijderen uit verzameling verplaatsen<br/><br/>Verwijder alle items die zijn gemaakt in de doel regio. De SQL database bestaat op dit moment en wordt verwijderd. 
-**Verplaatsen is mislukt** | Verwijderen uit verzameling verplaatsen<br/><br/>Verwijder alle items die zijn gemaakt in de doel regio. De SQL database bestaat op dit moment en moet worden verwijderd. 
-**Door voeren in behandeling** | U wordt aangeraden de verplaatsing te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan.
-**Door voeren is mislukt** | U wordt aangeraden de verplaatsing te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> De resource gaat terug naar de status **initiëren verplaatsen in behandeling** en u kunt door gaan. 
-**Verwijderen is voltooid** |  De resource gaat terug naar de status **initiëren verplaatsen in behandeling** .<br/><br/> Het wordt verwijderd uit de verzameling verplaatsen, samen met alles wat is gemaakt bij doel, inclusief SQL-data bases. 
-**Kan niet verwijderen** | U wordt aangeraden de verplaatsingen te verwijderen, zodat de doel resources eerst worden verwijderd.<br/><br/> Daarna gaat de resource terug naar de status **initiëren verplaatsen in behandeling** , waarna u kunt door gaan. 
-**Bron verwijderen in behandeling** | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt. 
-**Bron verwijderen is mislukt** | Verwijderd uit de verzameling verplaatsen.<br/><br/> Er worden geen items verwijderd die in de doel regio worden gemaakt. 
+**Added to move collection** | Delete from move collection. 
+**Dependencies resolved/prepare pending** | Delete from move collection 
+**Prepare in progress**<br/> (or any other state in progress)  | Delete operation fails with error. 
+**Prepare failed** | Delete from move collection<br/><br/>Delete anything created in the target region. 
+**Initiate move pending** |  Delete from move collection<br/><br/>Delete anything created in the target region. The SQL database exists at this point and will be deleted. 
+**Initiate move failed** | Delete from move collection<br/><br/>Delete anything created in the target region. The SQL database exists at this point and must be deleted. 
+**Commit pending** | We recommend that you discard the move so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there.
+**Commit failed** | We recommend that you discard the move so that the target resources are deleted first.<br/><br/> The resource goes back to the **Initiate move pending** state, and you can continue from there. 
+**Discard completed** |  The resource goes back to the **Initiate move pending** state.<br/><br/> It's deleted from the move collection, along with anything created at target, including SQL databases. 
+**Discard failed** | We recommend that you discard the moves so that the target resources are deleted first.<br/><br/> After that, the resource goes back to the **Initiate move pending** state, and you can continue from there. 
+**Delete source pending** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. 
+**Delete source failed** | Deleted from the move collection.<br/><br/> It doesn't delete anything created in the target region. 
 
-## <a name="next-steps"></a>Volgende stappen
+## Next steps
 
-Verplaats [een virtuele machine](tutorial-move-region-virtual-machines.md) naar een andere regio met resource-overschakeling.
+Try [moving a VM](tutorial-move-region-virtual-machines.md) to another region with Resource Mover.

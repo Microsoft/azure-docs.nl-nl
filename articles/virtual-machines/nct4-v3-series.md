@@ -2,17 +2,17 @@
 title: NCas T4 v3-serie
 description: Specificaties voor de virtuele machines uit de NCas T4 v3-serie.
 ms.service: virtual-machines
-ms.subservice: hpc
+ms.subservice: vm-sizes-gpu
 author: vikancha-MSFT
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: vikancha
-ms.openlocfilehash: 0ead1c5772cb4a2e231867ef1e77bfa646cbb29e
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: b7418825b4f22bfe4fe1941cb1f70ffb9f0a939b
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042739"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609206"
 ---
 # <a name="ncast4_v3-series"></a>NCasT4_v3-series 
 
@@ -28,7 +28,7 @@ De virtuele machines uit de NCasT4_v3-serie worden aangedreven door [Nvidia Tesl
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 [Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
-NVIDIA NVLink Interconnect: niet ondersteund<br>
+NVIDIA NVLink Interconnect: ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | GPU | GPU-geheugen: GiB | Max. aantal gegevensschijven | Maximum aantal Nic's/verwachte netwerk bandbreedte (Mbps) |

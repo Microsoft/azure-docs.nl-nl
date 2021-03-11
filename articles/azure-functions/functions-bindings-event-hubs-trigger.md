@@ -6,12 +6,12 @@ ms.assetid: daf81798-7acc-419a-bc32-b5a41c6db56b
 ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: efc785c96c76cca5deeadbd30fa962becb18d25b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c2b8302e64f7dcc657fd20ed5d918ed6816d750d
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997296"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608905"
 ---
 # <a name="azure-event-hubs-trigger-for-azure-functions"></a>Azure Event Hubs trigger voor Azure Functions
 
@@ -20,6 +20,10 @@ In dit artikel wordt uitgelegd hoe u kunt werken met de [Azure Event hubs](../ev
 Zie het [overzicht](functions-bindings-event-hubs.md)voor meer informatie over de installatie-en configuratie details.
 
 [!INCLUDE [functions-bindings-event-hubs-trigger](../../includes/functions-bindings-event-hubs-trigger.md)]
+
+## <a name="hostjson-settings"></a>host.jsop instellingen
+
+De [host.jsin](functions-host-json.md#eventhub) het bestand bevat instellingen die het trigger gedrag van de Event hub regelen. Zie de sectie [host.jsop instellingen](functions-bindings-event-hubs.md#hostjson-settings) voor meer informatie over de beschik bare instellingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

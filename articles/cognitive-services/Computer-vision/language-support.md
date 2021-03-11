@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 2e0cd424b71ff828ed0d8ad4c16d3333cf8a1c45
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 43804907d68ddd58e55c7ce453e0731d0cb4b9b5
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575869"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560375"
 ---
 # <a name="language-support-for-computer-vision"></a>Taal ondersteuning voor Computer Vision
 
@@ -68,13 +68,13 @@ De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen 
 |Italiaans | `it` |✔ |✔ |✔ |
 |Japans | `ja` |✔ | |✔ |
 |Javaans | `jv` | | |✔ |
+|K'iche'  | `quc` | | |✔ |
 |Kabuverdianu | `kea` | | |✔ |
 |Kachin (Latijns) | `kac` | | |✔ |
 |Kara-Kalpak | `kaa` | | |✔ |
 |Kashubian | `csb` | | |✔ |
 |Khasi  | `kha` | | |✔ |
 |Koreaans | `ko` |✔ | |✔ |
-|K'iche'  | `quc` | | |✔ |
 |Koerdisch (Latijn) | `kur` | | |✔ |
 |Luxemburgs  | `lb` | | |✔ |
 |Maleis (Latijns)  | `ms` | | |✔ |
@@ -113,7 +113,7 @@ De OCR-Api's van Computer Vision ondersteunen verschillende talen. U hoeft geen 
 
 Sommige acties van de [analyse-image-](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) API kunnen resultaten retour neren in andere talen, opgegeven met de `language` query-para meter. Andere acties retour neren resultaten in het Engels, ongeacht de taal die is opgegeven, en anderen genereren een uitzonde ring voor niet-ondersteunde talen. Acties zijn opgegeven met de `visualFeatures` `details` para meters en query; Zie het [overzicht](overview.md) voor een lijst met alle acties die u kunt uitvoeren met afbeeldings analyse.
 
-|Taal | Taalcode | Categorieën | Tags | Description | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
+|Taal | Taalcode | Categorieën | Tags | Beschrijving | Volwassene | Merken | Kleur | Gezichten | ImageType | Objecten | Beroemdheden | Oriëntatiepunten |
 |:---|:---:|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Chinees | `zh`    | ✔ | ✔| ✔|-|-|-|-|-|❌|✔|✔|
 |Engels | `en`   | ✔ | ✔| ✔|✔|✔|✔|✔|✔|✔|✔|✔|

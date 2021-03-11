@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 84caa287803fa64b12d9da4c2afb1f8dd1418e13
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 6a486057a265b02ce30059940c8c98837ec43f8e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102455277"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617638"
 ---
 # <a name="encoding-video-and-audio-with-media-services"></a>Video en audio coderen met Media Services
 
@@ -95,20 +95,25 @@ Media Services ondersteunt de volgende ingebouwde coderings definities:
 
 [BuiltInStandardEncoderPreset](/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) wordt gebruikt voor het instellen van een ingebouwde voor instelling voor het coderen van de invoer video met de standaard encoder.
 
-De volgende voor instellingen worden momenteel ondersteund:
+De volgende ingebouwde voor instellingen worden momenteel ondersteund:
 
 - **EncoderNamedPreset. AACGoodQualityAudio**: produceert één MP4-bestand met alleen stereo audio dat is gecodeerd met 192 kbps.
-- **EncoderNamedPreset. AdaptiveStreaming** (aanbevolen): Zie [automatisch genereren van een bitrate ladder](autogen-bitrate-ladder.md)voor meer informatie.
-- **EncoderNamedPreset. ContentAwareEncoding**: beschrijft een voor instelling voor code ring met inhoud. Op basis van de invoer inhoud probeert de service automatisch het optimale aantal lagen en de juiste bitrate-en resolutie-instellingen te bepalen voor levering door adaptieve streaming. De onderliggende algoritmen blijven in de loop van de tijd worden uitgevoerd. De uitvoer bevat MP4-bestanden met Interleaved video-en audio-indeling. Zie voor meer informatie [code ring met inhoud](content-aware-encoding.md).
-
+- **EncoderNamedPreset. AdaptiveStreaming** (aanbevolen): dit ondersteunt de code ring van de Adaptive bitrate van H. 264. Zie [automatisch genereren van een bitsnelheid](autogen-bitrate-ladder.md)voor meer informatie.
+- **EncoderNamerPreset. H265AdaptiveStreaming** : vergelijkbaar met de AdaptiveStreaming-voor instelling, maar maakt gebruik van de HEVC-codec (H. 265). Produceert een set GOP terug-afgevulde MP4-bestanden met H. 265 video en stereo AAC-audio. Genereert automatisch een bitrate voor een bitsnelheid op basis van de invoer resolutie, de bitsnelheid en de frame frequentie. De automatisch gegenereerde voor instelling overschrijdt nooit de invoer resolutie. Als de invoer bijvoorbeeld 720p is, blijft de uitvoer in de beste 720p.
+- **EncoderNamedPreset. ContentAwareEncoding**: beschrijft een vooraf ingestelde optie voor H. 264-inhoud bewuste code ring. Op basis van de invoer inhoud probeert de service automatisch het optimale aantal lagen en de juiste bitrate-en resolutie-instellingen te bepalen voor levering door adaptieve streaming. De onderliggende algoritmen blijven in de loop van de tijd worden uitgevoerd. De uitvoer bevat MP4-bestanden met Interleaved video-en audio-indeling. Zie voor meer informatie [code ring met inhoud](content-aware-encoding.md).
+- **EncoderNamedPreset. H265ContentAwareEncoding**: beschrijft een vooraf ingestelde code ring voor HEVC (H. 265). Produceert een reeks GOP terug-uitgelijnde Mp4's met behulp van inhoud-bewuste code ring. Op basis van de invoer inhoud voert de service een initiële licht gewicht analyse uit van de invoer inhoud en gebruikt de resultaten om het optimale aantal lagen, de juiste bitrate en resolutie-instellingen voor levering door adaptieve streaming te bepalen. Deze vooraf ingestelde versie is bijzonder effectief voor Video's met een lage of middel grote complexiteit, waarbij de uitvoer bestanden lagere bitrates hebben, maar een kwaliteit heeft die nog steeds een goede ervaring voor kijkers biedt. De uitvoer bevat MP4-bestanden met Interleaved video-en audio-indeling.
   > [!NOTE]
-  > Zorg ervoor dat u **ContentAwareEncoding** niet ContentAwareEncodingExperimental gebruikt.
+  > Zorg ervoor dat u **ContentAwareEncoding** gebruikt die niet ContentAwareEncodingExperimental is en dat nu is afgeschaft
+
 - **EncoderNamedPreset. H264MultipleBitrate1080p**: produceert een set van acht GOP terug-afgevulde MP4-bestanden, variërend van 6000 kbps tot 400 kbps en stereo AAC-audio. De oplossing begint om 1080p en gaat omlaag naar 360p.
 - **EncoderNamedPreset. H264MultipleBitrate720p**: produceert een set van zes GOP terug-afgevulde MP4-bestanden, variërend van 3400 kbps tot 400 kbps en stereo AAC-audio. De oplossing begint op 720p en gaat omlaag naar 360p.
 - **EncoderNamedPreset. H264MultipleBitrateSD**: produceert een set van vijf GOP terug-afgevulde MP4-bestanden, variërend van 1600 kbps tot 400 kbps en stereo AAC-audio. De oplossing begint bij 480p en gaat omlaag naar 360p.
 - **EncoderNamedPreset. H264SingleBitrate1080p**: produceert een MP4-bestand waarin de video is gecodeerd met de H. 264-codec van 6750 kbps en een afbeeldings hoogte van 1080 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 64 kbps.
 - **EncoderNamedPreset. H264SingleBitrate720p**: produceert een MP4-bestand waarin de video is gecodeerd met de H. 264-codec van 4500 kbps en een afbeeldings hoogte van 720 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 64 kbps.
 - **EncoderNamedPreset. H264SingleBitrateSD**: produceert een MP4-bestand waarin de video is gecodeerd met de H. 264-codec van 2200 kbps en een afbeeldings hoogte van 480 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 64 kbps.
+- **EncoderNamedPreset. H265SingleBitrate720P**: produceert een MP4-bestand waarin de video is gecodeerd met de HEVC (H. 265) codec van 1800 kbps en een afbeeldings hoogte van 720 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 128 kbps.
+- **EncoderNamedPreset. H265SingleBitrate1080p**: produceert een MP4-bestand waarin de video is gecodeerd met de HEVC (H. 265) codec van 3500 kbps en een afbeeldings hoogte van 1080 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 128 kbps.
+- **EncoderNamedPreset. H265SingleBitrate4K**: produceert een MP4-bestand waarin de video is gecodeerd met de HEVC (H. 265) codec van 9500 kbps en een afbeeldings hoogte van 2160 pixels en de stereo-audio is gecodeerd met AAC-LC-codec op 128 kbps.
 
 Zie [ingebouwde voor instellingen voor het coderen van Video's](/rest/api/media/transforms/createorupdate#encodernamedpreset)voor een overzicht van de meest recente lijst met voor waarden.
 
@@ -135,6 +140,7 @@ Media Services volledig ondersteunt het aanpassen van alle waarden in voor inste
 - [Voor instellingen aanpassen met CLI](custom-preset-cli-howto.md)
 - [Voor instellingen aanpassen met REST](custom-preset-rest-howto.md)
 
+
 ## <a name="preset-schema"></a>Vooraf ingesteld schema
 
 In Media Services v3 zijn de voor instellingen sterk getypeerde entiteiten in de API zelf. U kunt de definitie ' schema ' voor deze objecten vinden in de [open API-specificatie (of Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01). U kunt de vooraf ingestelde definities (zoals **StandardEncoderPreset**) ook weer geven in de [rest API](/rest/api/media/transforms/createorupdate#standardencoderpreset), [.NET SDK](/dotnet/api/microsoft.azure.management.media.models.standardencoderpreset) (of een andere Media Services v3 SDK-referentie documentatie).
@@ -142,6 +148,7 @@ In Media Services v3 zijn de voor instellingen sterk getypeerde entiteiten in de
 ## <a name="scaling-encoding-in-v3"></a>Versleuteling schalen in v3
 
 Zie [schalen met CLI](media-reserved-units-cli-how-to.md)voor informatie over het schalen van media verwerking.
+Voor accounts die zijn gemaakt met met de **2020-05-01** -versie van de API of via de Azure Portal, zijn schalen en gereserveerde media-eenheden niet meer vereist. Schalen wordt automatisch uitgevoerd en wordt door de service intern afgehandeld.
 
 ## <a name="billing"></a>Billing
 

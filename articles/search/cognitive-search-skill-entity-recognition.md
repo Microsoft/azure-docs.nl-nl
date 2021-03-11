@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: ddfca965ea32ca726df39f894ba45f9580225d9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3300d68c6356cb7cdd56a9ad79eb0ac011942eb2
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542458"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102547897"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Herkennings vaardigheid van entity erkennen
 
@@ -53,7 +53,7 @@ Para meters zijn hoofdletter gevoelig en zijn allemaal optioneel.
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
 > [!NOTE]
-> Niet alle entiteits categorieën worden ondersteund voor alle talen. De `"Person"` `"Location"` categorie typen,, en `"Organization"` entiteit worden ondersteund voor de volledige lijst met talen hierboven. Alleen _de_modules _, en,_ _es_, _fr_en _zh-Hans_ ondersteunen extra heren,,, `"Quantity"` `"Datetime"` `"URL"` en `"Email"` typen. Zie [taal-en regio ondersteuning voor de Text Analytics-API](../cognitive-services/text-analytics/language-support.md)voor meer informatie.  
+> Niet alle entiteits categorieën worden ondersteund voor alle talen. De `"Person"` `"Location"` categorie typen,, en `"Organization"` entiteit worden ondersteund voor de volledige lijst met talen hierboven. Alleen _de_ modules _, en,_ _es_, _fr_ en _zh-Hans_ ondersteunen extra heren,,, `"Quantity"` `"Datetime"` `"URL"` en `"Email"` typen. Zie [taal-en regio ondersteuning voor de Text Analytics-API](../cognitive-services/text-analytics/language-support.md)voor meer informatie.  
 
 | Uitvoer naam      | Beschrijving                   |
 |---------------|-------------------------------|
@@ -189,8 +189,8 @@ Para meters zijn hoofdletter gevoelig en zijn allemaal optioneel.
 
 Houd er rekening mee dat de verplaatsingen die worden geretourneerd voor entiteiten in de uitvoer van deze vaardigheid rechtstreeks worden geretourneerd uit de [Text Analytics-API](../cognitive-services/text-analytics/overview.md). Dit betekent dat als u deze gebruikt om te indexeren in de oorspronkelijke teken reeks, u de [StringInfo](/dotnet/api/system.globalization.stringinfo) -klasse in .net moet gebruiken om de juiste inhoud te extra heren.  [Meer informatie vindt u hier.](../cognitive-services/text-analytics/concepts/text-offsets.md)
 
-## <a name="error-cases"></a>Fout cases
-Als de taal code voor het document niet wordt ondersteund, wordt een fout geretourneerd en worden er geen entiteiten geëxtraheerd.
+## <a name="warning-cases"></a>Waarschuwings cases
+Als de taal code voor het document niet wordt ondersteund, wordt een waarschuwing geretourneerd en worden er geen entiteiten geëxtraheerd.
 
 ## <a name="see-also"></a>Zie ook
 

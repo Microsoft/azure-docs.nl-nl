@@ -4,12 +4,12 @@ description: Meer informatie over het draaien van uw certificaten in een Azure K
 services: container-service
 ms.topic: article
 ms.date: 11/15/2019
-ms.openlocfilehash: 1871a8deed4d189534915a9b46b6ace071c1126c
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: fa26762c54ad54835b174b8d814a2e77cb38b885
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102181768"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102619032"
 ---
 # <a name="rotate-certificates-in-azure-kubernetes-service-aks"></a>Certificaten in azure Kubernetes service (AKS) draaien
 
@@ -28,8 +28,6 @@ AKS genereert en gebruikt de volgende certificaten, certificerings instanties en
 * De AKS API-server maakt een certificerings instantie (CA) die de cluster-CA wordt genoemd.
 * De API-server heeft een cluster-CA, die certificaten ondertekent voor eenrichtings communicatie van de API-server naar kubelets.
 * Elke kubelet maakt ook een aanvraag voor certificaat ondertekening (CSR), die door de cluster-CA is ondertekend, voor communicatie van de kubelet naar de API-server.
-* De etcd-sleutel waarde Store heeft een certificaat dat is ondertekend door de cluster-CA voor communicatie van etcd naar de API-server.
-* De etcd-sleutel waarde Store maakt een certificerings instantie die certificaten ondertekent voor het verifiëren en autoriseren van gegevens replicatie tussen etcd-replica's in het AKS-cluster.
 * De API aggregator gebruikt de cluster-CA om certificaten uit te geven voor communicatie met andere Api's. De API aggregator kan ook een eigen certificerings instantie hebben voor het uitgeven van die certificaten, maar maakt momenteel gebruik van de cluster-CA.
 * Elk knoop punt maakt gebruik van een token voor service accounts (SA), dat is ondertekend door de cluster-CA.
 * De `kubectl` client heeft een certificaat voor communicatie met het AKS-cluster.

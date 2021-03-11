@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
-ms.date: 2/9/2021
+ms.date: 03/09/2021
 ms.author: duau
-ms.openlocfilehash: ef6ea9017a9aaa98e153df0d67f0b54fe5a2b64d
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 9926102a2e6b25060c2a8840b56d690ce2868ade
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124156"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618740"
 ---
 # <a name="add-ipv6-support-for-private-peering-using-the-azure-portal-preview"></a>IPv6-ondersteuning voor privé-peering toevoegen met behulp van de Azure Portal (preview-versie)
 
@@ -22,8 +22,9 @@ In dit artikel wordt beschreven hoe u IPv6-ondersteuning kunt toevoegen om via E
 > Deze functie is momenteel beschikbaar voor preview in [Azure-regio's met Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-region#azure-regions-with-availability-zones). Uw ExpressRoute-circuit kan daarom worden gemaakt met behulp van een wille keurige locatie, maar de IPv6-implementaties waarmee deze verbinding maakt, moeten zich in een regio met Beschikbaarheidszones bevinden.
 
 ## <a name="register-for-public-preview"></a>Registreren voor open bare preview
-Voordat u IPv6-ondersteuning toevoegt, moet u uw abonnement eerst registreren. Ga als volgt te werk om de registratie uit te voeren via Azure PowerShell:
-1.  Meld u aan bij Azure en selecteer het abonnement. U moet dit doen voor het abonnement dat uw ExpressRoute-circuit bevat, evenals het abonnement dat uw Azure-implementaties bevat (als deze verschillend zijn).
+Voordat u IPv6-ondersteuning toevoegt, moet u uw abonnement eerst registreren. Als u wilt inschrijven, voert u de volgende opdrachten uit via Azure PowerShell:
+
+1.  Meld u aan bij Azure en selecteer het abonnement. Voer deze opdrachten uit voor het abonnement met uw ExpressRoute-circuit en het abonnement met uw Azure-implementaties (als deze niet overeenkomen).
 
     ```azurepowershell-interactive
     Connect-AzAccount 
@@ -31,7 +32,7 @@ Voordat u IPv6-ondersteuning toevoegt, moet u uw abonnement eerst registreren. G
     Select-AzSubscription -Subscription "<SubscriptionID or SubscriptionName>"
     ```
 
-2. Registreer uw abonnement voor open bare Preview met de volgende opdracht:
+1. Registreer uw abonnement voor open bare Preview met de volgende opdracht:
     ```azurepowershell-interactive
     Register-AzProviderFeature -FeatureName AllowIpv6PrivatePeering -ProviderNamespace Microsoft.Network
     ```
@@ -44,21 +45,21 @@ Ga in een browser naar de [Azure Portal](https://portal.azure.com)en meld u verv
 
 ## <a name="add-ipv6-private-peering-to-your-expressroute-circuit"></a>Persoonlijke IPv6-peering toevoegen aan uw ExpressRoute-circuit
 
-1. [Maak een ExpressRoute-circuit](https://docs.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager) of navigeer naar het bestaande circuit dat u wilt wijzigen.
+1. [Maak een ExpressRoute-circuit](expressroute-howto-circuit-portal-resource-manager.md) of navigeer naar het bestaande circuit dat u wilt wijzigen.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-circuit.png" alt-text="Navigeer naar het circuit":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-circuit.png" alt-text="Scherm opname van de lijst met ExpressRoute-circuits.":::
 
-2. Selecteer de configuratie van de **persoonlijke Azure** -peering.
+1. Selecteer de configuratie van de **persoonlijke Azure** -peering.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-peering.png" alt-text="Ga naar de peering":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-peering.png" alt-text="Scherm opname van de pagina overzicht van ExpressRoute.":::
 
-3. Voeg een persoonlijke IPv6-peering toe aan uw bestaande IPv4-persoonlijke peering-configuratie door beide te selecteren voor **subnetten** of alleen IPv6-persoonlijke peering in te scha kelen op het nieuwe circuit door IPv6 te selecteren. Geef een combi natie van/126 IPv6-subnetten op die u voor uw primaire koppeling en secundaire koppelingen hebt. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. **Sla** uw peering-configuratie op nadat u alle para meters hebt opgegeven.
+1. Voeg een persoonlijke IPv6-peering toe aan uw bestaande IPv4-persoonlijke peering-configuratie door beide te selecteren voor **subnetten** of alleen IPv6-persoonlijke peering in te scha kelen op het nieuwe circuit door IPv6 te selecteren. Geef een combi natie van/126 IPv6-subnetten op die u voor uw primaire koppeling en secundaire koppelingen hebt. Vanuit elk van deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien micro soft gebruikmaakt van de tweede bruikbare IP voor de router. **Sla** uw peering-configuratie op nadat u alle para meters hebt opgegeven.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-peering.png" alt-text="Persoonlijke IPv6-peering toevoegen":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-peering.png" alt-text="Scherm afbeelding van het toevoegen van IPv6 op een pagina met persoonlijke peering.":::
 
-4. Nadat de configuratie is geaccepteerd, ziet u iets dat lijkt op het volgende voor beeld.
+1. Nadat de configuratie is geaccepteerd, ziet u iets dat lijkt op het volgende voor beeld.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/view-ipv6-peering.png" alt-text="De persoonlijke IPv6-peering weer geven":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/view-ipv6-peering.png" alt-text="Scherm afbeelding van IPv6 geconfigureerd voor privé-peering.":::
 
 ## <a name="update-your-connection-to-an-existing-virtual-network"></a>Uw verbinding met een bestaand virtueel netwerk bijwerken
 
@@ -66,34 +67,34 @@ Voer de volgende stappen uit als u een bestaande omgeving van Azure-resources in
 
 1. Navigeer naar het virtuele netwerk waarmee uw ExpressRoute-circuit is verbonden.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-vnet.png" alt-text="Navigeer naar het vnet":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/navigate-to-vnet.png" alt-text="Scherm opname van de lijst met virtuele netwerken.":::
 
-2. Navigeer naar het tabblad **adres ruimte** en voeg een IPv6-adres ruimte toe aan het virtuele netwerk. **Sla** uw adres ruimte op.
+1. Navigeer naar het tabblad **adres ruimte** en voeg een IPv6-adres ruimte toe aan het virtuele netwerk. **Sla** uw adres ruimte op.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-space.png" alt-text="IPv6-adres ruimte toevoegen":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-space.png" alt-text="Scherm opname van het toevoegen van een IPv6-adres ruimte aan een virtueel netwerk.":::
 
-3. Navigeer naar het tabblad **subnetten** en selecteer de **GatewaySubnet**. Controleer de **IPv6-adres ruimte toevoegen** en geef een IPv6-adres ruimte op voor uw subnet. Het IPv6-subnet van de gateway moet/64 of groter zijn. **Sla** uw configuratie op nadat u alle para meters hebt opgegeven.
+1. Navigeer naar het tabblad **subnetten** en selecteer de **GatewaySubnet**. Controleer de **IPv6-adres ruimte toevoegen** en geef een IPv6-adres ruimte op voor uw subnet. Het IPv6-subnet van de gateway moet/64 of groter zijn. **Sla** uw configuratie op nadat u alle para meters hebt opgegeven.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-gateway-space.png" alt-text="IPv6-adres ruimte toevoegen aan het subnet":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/add-ipv6-gateway-space.png" alt-text="Scherm opname van het toevoegen van een IPv6-adres ruimte aan het subnet.":::
 
-4. Als u een bestaande zone-redundante gateway hebt, navigeert u naar uw ExpressRoute-gateway en vernieuwt u de resource om IPv6-connectiviteit in te scha kelen. Als dat niet het geval is, [maakt u de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ.
+1. Als u een bestaande zone-redundante gateway hebt, navigeert u naar uw ExpressRoute-gateway en vernieuwt u de resource om IPv6-connectiviteit in te scha kelen. Als dat niet het geval is, [maakt u de gateway van het virtuele netwerk](expressroute-howto-add-gateway-portal-resource-manager.md) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ.
 
-    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/refresh-gateway.png" alt-text="De gateway vernieuwen":::
+    :::image type="content" source="./media/expressroute-howto-add-ipv6-portal/refresh-gateway.png" alt-text="Scherm opname van het vernieuwen van de gateway.":::
 
 ## <a name="create-a-connection-to-a-new-virtual-network"></a>Een verbinding maken met een nieuw virtueel netwerk
 
 Volg de onderstaande stappen als u van plan bent om verbinding te maken met een nieuwe set Azure-resources in een regio met Beschikbaarheidszones met behulp van uw IPv6-persoonlijke peering.
 
-1. Maak een virtueel netwerk met dubbele stack met IPv4-en IPv6-adres ruimte. Zie [een virtueel netwerk maken](https://docs.microsoft.com/azure/virtual-network/quick-create-portal#create-a-virtual-network)voor meer informatie.
+1. Maak een virtueel netwerk met dubbele stack met IPv4-en IPv6-adres ruimte. Zie [een virtueel netwerk maken](../virtual-network/quick-create-portal.md#create-a-virtual-network)voor meer informatie.
 
-2. [Maak het subnet met dubbele stack-gateways](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager#create-the-gateway-subnet).
+1. [Maak het subnet met dubbele stack-gateways](expressroute-howto-add-gateway-portal-resource-manager.md#create-the-gateway-subnet).
 
-3. [Maak de gateway van het virtuele netwerk](https://docs.microsoft.com/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager#create-the-virtual-network-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat dit alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
+1. [Maak de gateway van het virtuele netwerk](expressroute-howto-add-gateway-portal-resource-manager.md#create-the-virtual-network-gateway) met behulp van een zone-redundante SKU (ErGw1AZ, ErGw2AZ, ErGw3AZ). Als u van plan bent FastPath te gebruiken, gebruikt u ErGw3AZ (Houd er rekening mee dat deze optie alleen beschikbaar is voor circuits met behulp van ExpressRoute direct).
 
-4. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](https://docs.microsoft.com/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager).
+1. [Koppel uw virtuele netwerk aan uw ExpressRoute-circuit](expressroute-howto-linkvnet-portal-resource-manager.md).
 
 ## <a name="limitations"></a>Beperkingen
-Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in regio's met Beschikbaarheidszones, worden de volgende use-cases niet ondersteund:
+Hoewel IPv6-ondersteuning beschikbaar is voor verbindingen met implementaties in regio's met Beschikbaarheidszones, biedt het geen ondersteuning voor de volgende use-cases:
 
 * Verbindingen met implementaties in azure via een niet-AZ ExpressRoute gateway SKU
 * Verbindingen met implementaties in niet-AZ regio's

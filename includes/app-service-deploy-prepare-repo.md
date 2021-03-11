@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/12/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: f783245b17a880a67b62aa24a3feabb9b113053b
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 93bfb515c46413400ecd47105de378c7b677cecd
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102122252"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564952"
 ---
 ## <a name="prepare-your-repository"></a>Uw opslagplaats voorbereiden
 
@@ -34,6 +34,6 @@ Als u automatische builds van Azure App Service build-server wilt maken, moet u 
 Als u uw implementatie wilt aanpassen, neemt u een *DEPLOYMENT*-bestand op in de hoofdmap van de opslagplaats. Zie [Customize deployments](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) (Implementaties aanpassen) en [Custom deployment script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) (Aangepast implementatiescript) voor meer informatie.
 
 > [!NOTE]
-> Als u in Visual Studio ontwikkelt, laat [u Visual Studio een opslagplaats voor u maken](/azure/devops/repos/git/creatingrepo?view=vsts&tabs=visual-studio&preserve-view=true). Het project kan direct worden geïmplementeerd met behulp van Git.
+> Als u in Visual Studio ontwikkelt, laat [u Visual Studio een opslagplaats voor u maken](/azure/devops/repos/git/creatingrepo?tabs=visual-studio). Het project kan direct worden geïmplementeerd met behulp van Git.
 >
 

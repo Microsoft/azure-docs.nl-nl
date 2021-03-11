@@ -3,12 +3,12 @@ title: Back-ups maken van Azure VMware-oplossing Vm's met Azure Backup Server
 description: Configureer uw Azure VMware-oplossings omgeving voor het maken van back-ups van virtuele machines met behulp van Azure Backup Server.
 ms.topic: how-to
 ms.date: 02/04/2021
-ms.openlocfilehash: ea2164ba19703660e54879c25b975342d824662c
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 163065556b7dbc979d68613744ea827c209d9fda
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585021"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618913"
 ---
 # <a name="back-up-azure-vmware-solution-vms-with-azure-backup-server"></a>Back-ups maken van Azure VMware-oplossing Vm's met Azure Backup Server
 
@@ -73,7 +73,7 @@ Voor VMware 6,7 werd TLS ingeschakeld als communicatie protocol.
 
 1. Kopieer de volgende register instellingen en plak deze in Klad blok. Sla het bestand vervolgens op als TLS. REG zonder de extensie. txt.
 
-   ```text
+   ```
    
    Windows Registry Editor Version 5.00
    

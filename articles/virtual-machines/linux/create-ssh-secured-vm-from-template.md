@@ -2,16 +2,17 @@
 title: Een virtuele Linux-machine in azure maken op basis van een sjabloon
 description: De Azure CLI gebruiken om een virtuele Linux-machine te maken op basis van een resource manager-sjabloon
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
-ms.openlocfilehash: 184e856636a74ce5b7ac72b2e8cab3d1f19c4e17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a4e1bf56df52717255d2bae0a38186335d922ff1
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89074386"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554680"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Een virtuele Linux-machine maken met Azure Resource Manager sjablonen
 
@@ -29,7 +30,7 @@ Azure Resource Manager sjablonen zijn JSON-bestanden waarmee de infra structuur 
 
 Het maken van een virtuele machine in azure omvat meestal twee stappen:
 
-1. Maak een resourcegroep. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Voordat een virtuele machine wordt gemaakt, moet een resourcegroep worden gemaakt.
+1. Een resourcegroep maken. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Voordat een virtuele machine wordt gemaakt, moet een resourcegroep worden gemaakt.
 1. Hiermee maakt u een virtuele machine.
 
 In het volgende voor beeld wordt een VM gemaakt op basis van een [Azure Quick](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json)start-sjabloon. Alleen SSH-verificatie is toegestaan voor deze implementatie. Wanneer u hierom wordt gevraagd, geeft u de waarde van uw eigen open bare SSH-sleutel op, zoals de inhoud van *~/.ssh/id_rsa. pub*. Als u een SSH-sleutel paar moet maken, raadpleegt [u een SSH-sleutel paar maken en gebruiken voor virtuele Linux-machines in azure](mac-create-ssh-keys.md). Hier volgt een kopie van de sjabloon:
@@ -78,8 +79,8 @@ In dit voor beeld hebt u een virtuele Linux-machine gemaakt. Ga naar de [Azure Q
 
 Voor meer informatie over het maken van sjablonen bekijkt u de JSON-syntaxis en de eigenschappen voor de typen resources die u hebt geïmplementeerd:
 
-- [Microsoft.Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)
+- [Micro soft. Network/networkSecurityGroups](/azure/templates/microsoft.network/networksecuritygroups)
 - [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
 - [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
-- [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
-- [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)
+- [Micro soft. Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+- [Micro soft. Compute/informatie](/azure/templates/microsoft.compute/virtualmachines)

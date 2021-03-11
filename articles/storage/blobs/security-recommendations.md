@@ -7,19 +7,19 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.date: 01/13/2021
+ms.date: 03/01/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 5653b59ed29495334079e932fb305fd4ba10475c
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 40067815ad582191606ad5a53cf06c9584d83350
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592356"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618012"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
-Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Lees voor meer informatie over hoe micro soft voldoet aan de verantwoordelijkheden van de service provider de [gedeelde verantwoordelijkheden voor Cloud Computing](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/225366/1/Shared%20Responsibility%20for%20Cloud%20Computing-2019-10-25.pdf).
+Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Zie [gedeelde verantwoordelijkheid in de Cloud](/azure/security/fundamentals/shared-responsibility)voor meer informatie over de manier waarop micro soft aan de verantwoordelijkheden van service providers voldoet.
 
 Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt door Azure Security Center. Azure Security Center is de eerste verdedigings linie bij het beveiligen van uw resources in Azure. Zie [Wat is er Azure Security Center?](../../security-center/security-center-introduction.md) voor informatie over Azure Security Center.
 
@@ -33,7 +33,7 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 | Azure Defender inschakelen voor al uw opslag accounts | Azure Defender voor Azure Storage biedt een extra beveiligingslaag die ongebruikelijke en mogelijk schadelijke pogingen detecteert om toegang te krijgen tot of misbruik te maken van opslag accounts. Beveiligings waarschuwingen worden in Azure Security Center geactiveerd wanneer afwijkingen in de activiteit optreden en ook via e-mail worden verzonden naar abonnements beheerders, met details over verdachte activiteiten en aanbevelingen voor het onderzoeken en oplossen van bedreigingen. Zie [Azure Defender configureren voor Azure Storage](../common/azure-defender-storage-configure.md)voor meer informatie. | [Ja](../../security-center/security-center-remediate-recommendations.md) |
 | Voorlopig verwijderen instellen voor blobs | Met zacht verwijderen voor blobs kunt u BLOB-gegevens herstellen nadat deze is verwijderd. Zie voor meer informatie over het voorlopig verwijderen van blobs de [voor het voorlopig verwijderen van Azure Storage-blobs](./soft-delete-blob-overview.md). | - |
 | Voorlopig verwijderen inschakelen voor containers | Met zacht verwijderen voor containers kunt u een container herstellen nadat deze is verwijderd. Zie [voorlopig verwijderen voor containers (preview)](./soft-delete-container-overview.md)voor meer informatie over het voorlopig verwijderen van containers. | - |
-| Het opslag account vergren delen om te voor komen dat er onbedoeld accounts worden verwijderd | U kunt een Azure Resource Manager resources, zoals een abonnement, een resource groep of een opslag account, vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk deze verwijderen of wijzigen. Het vergren delen van een opslag account voor komt niet dat gegevens in dat account kunnen worden verwijderd. Hiermee wordt alleen voor komen dat het account zelf wordt verwijderd. Zie voor meer informatie [bronnen vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
+| Vergrendel het opslag account om onbedoelde of schadelijke verwijderings-of configuratie wijzigingen te voor komen | Pas een Azure Resource Manager vergrendeling toe op uw opslag account om het account te beschermen tegen onbedoeld of kwaad aardige verwijdering of configuratie wijziging. Het vergren delen van een opslag account voor komt niet dat gegevens in dat account kunnen worden verwijderd. Hiermee wordt alleen voor komen dat het account zelf wordt verwijderd. Zie [een Azure Resource Manager Lock Toep assen op een opslag account](../common/lock-account-resource.md)voor meer informatie.
 | Bedrijfs kritieke gegevens opslaan in onveranderbare blobs | Configureer juridische bewaringen en bewaar beleidsregels op basis van tijd voor het opslaan van BLOB-gegevens in een WORM (Write Once, Read Many). De opgeslagen immutably van blobs kunnen worden gelezen, maar kunnen niet worden gewijzigd of verwijderd voor de duur van de Bewaar periode. Zie voor meer informatie [bedrijfs kritieke BLOB-gegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md). | - |
 | Beveiligde overdracht (HTTPS) naar het opslag account vereisen | Wanneer u een beveiligde overdracht van een opslag account nodig hebt, moeten alle aanvragen voor het opslag account via HTTPS worden ingediend. Aanvragen die via HTTP worden verzonden, worden geweigerd. Micro soft raadt u aan om altijd een veilige overdracht te vereisen voor al uw opslag accounts. Zie [veilige overdracht vereisen voor beveiligde verbindingen](../common/storage-require-secure-transfer.md)voor meer informatie. | - |
 | Alleen SAS-tokens (Shared Access Signature) beperken tot HTTPS-verbindingen | HTTPS vereisen wanneer een client een SAS-token gebruikt voor toegang tot BLOB-gegevens helpt het risico op inbreuk te minimaliseren. Zie [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](../common/storage-sas-overview.md)voor meer informatie. | - |

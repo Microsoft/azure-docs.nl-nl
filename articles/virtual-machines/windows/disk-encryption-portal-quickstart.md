@@ -3,16 +3,17 @@ title: Een virtuele Windows-machine maken en versleutelen met behulp van de Azur
 description: In deze quickstart leert u hoe u de Azure Portal gebruikt om een virtuele Windows-machine te maken en te versleutelen
 author: msmbaldwin
 ms.author: mbaldwin
-ms.service: virtual-machines-windows
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: windows
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 98764df41d5488afaaf7a24e0f1aa2535b0691d7
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: e29d1de976a027e32564a258fd5669b1e54c60f3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896953"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564438"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Quickstart: Een virtuele Windows-machine maken en versleutelen met de Azure-portal
 

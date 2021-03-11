@@ -10,12 +10,12 @@ ms.date: 03/03/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4e6dac1ab7350caeb29e23b21eace433568b38ea
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: da869091fb1f7bf31a29ba1bc6db8c1c42254dc4
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102031630"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618080"
 ---
 # <a name="point-in-time-restore-for-block-blobs"></a>Herstel naar een bepaald tijdstip voor blok-blobs
 
@@ -47,7 +47,7 @@ De bewerking **BLOB-bereiken herstellen** retourneert een Restore-id waarmee de 
 > Lees bewerkingen van de secundaire locatie kunnen door gaan tijdens de herstel bewerking als het opslag account geo-gerepliceerd is.
 
 > [!CAUTION]
-> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen.
+> Herstel naar een bepaald tijdstip biedt ondersteuning voor het herstellen van bewerkingen die alleen op blok-blobs hebben afgehandeld. Bewerkingen die zijn uitgevoerd op containers, kunnen niet worden hersteld. Als u bijvoorbeeld een container verwijdert uit het opslag account door de bewerking voor het [verwijderen](/rest/api/storageservices/delete-container) van een container aan te roepen, kan die container niet worden hersteld met een herstel bewerking naar een bepaald tijdstip. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen.
 
 ### <a name="prerequisites-for-point-in-time-restore"></a>Vereisten voor herstel naar een bepaald tijdstip
 

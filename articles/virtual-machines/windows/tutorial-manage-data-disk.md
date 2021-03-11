@@ -2,7 +2,7 @@
 title: 'Zelfstudie: Azure-schijven beheren met Azure PowerShell'
 description: In deze zelfstudie leert u hoe u Azure PowerShell gebruikt voor het maken en beheren van Azure-schijven voor virtuele machines
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: disks
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-windows
@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 8ddc94301ae8954fb0a35827ebd21e090c9dfe89
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a61d7425a7a907230008ab1d4f15a836150e1518
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734695"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549053"
 ---
 # <a name="tutorial---manage-azure-disks-with-azure-powershell"></a>Zelfstudie: Azure-schijven beheren met Azure PowerShell
 
@@ -52,11 +52,11 @@ Azure biedt twee typen schijven.
 
 **Standard-schijven** - ondersteund door HDD's en bieden voordelige en hoogwaardige opslag. Standard-schijven zijn ideaal voor een kostenefficiënte werkbelasting voor ontwikkelen en testen.
 
-**Premium-schijven** - ondersteund door hoogwaardige schijven met een lage latentie op basis van SSD. Ideaal voor virtuele machines met een productiewerkbelasting. VM-grootten met een  **S** in de [groottenaam](../vm-naming-conventions.md), ondersteunen doorgaans Premium Storage. VM's uit de DS-serie, DSv2-serie, GS-serie en FS-serie ondersteunen premium opslag. Wanneer u een schijfgrootte selecteert, wordt de waarde omhoog afgerond naar het volgende type. Als de schijfgrootte bijvoorbeeld groter dan 64 GB maar kleiner dan 128 GB is, dan is het schijftype P10. 
+**Premium-schijven** - ondersteund door hoogwaardige schijven met een lage latentie op basis van SSD. Ideaal voor virtuele machines met een productiewerkbelasting. VM-grootten met een  **S** in de [groottenaam](../vm-naming-conventions.md), bieden doorgaans ondersteuning voor Premium Storage. VM's uit de DS-serie, DSv2-serie, GS-serie en FS-serie ondersteunen premium opslag. Wanneer u een schijfgrootte selecteert, wordt de waarde omhoog afgerond naar het volgende type. Als de schijfgrootte bijvoorbeeld groter is dan 64 GB maar kleiner dan 128 GB, is het schijftype P10. 
 <br>
 [!INCLUDE [disk-storage-premium-ssd-sizes](../../../includes/disk-storage-premium-ssd-sizes.md)]
 
-Wanneer u een premium opslag-schijf inricht, in tegenstelling tot standaard opslag, bent u verzekerd van de capaciteit, IOPS en doorvoer van die schijf. Als u bijvoorbeeld een P50-schijf maakt, dan richt Azure een opslagcapaciteit van 4.095 GB in, 7.500 IOPS en een doorvoer van 250 MB/s voor die schijf. Uw toepassing kan alle of een deel van de capaciteit en prestaties gebruiken. Premium-SSD-schijven zijn zodanig ontworpen dat er in de voorgaande tabel 99,9% van de tijd minder dan één milliseconde latentie en doel-IOPS en -doorvoer wordt beschreven.
+Wanneer u een Premium Storage-schijf inricht, bent u, in tegenstelling tot standaard opslag, verzekerd van de capaciteit, IOPS en doorvoer van die schijf. Als u bijvoorbeeld een P50-schijf maakt, richt Azure een schijf in met een opslagcapaciteit van 4.095 GB, 7.500 IOPS en een doorvoer van 250 MB/s. Uw toepassing kan alle of een deel van de capaciteit en prestaties gebruiken. Premium SSD-schijven zijn zodanig ontworpen dat er in de voorgaande tabel 99,9% van de tijd minder dan één milliseconde latentie en doel-IOPS en -doorvoer wordt beschreven.
 
 In de bovenstaande tabel wordt het max. IOP's per schijf aangegeven, maar er kan een hoger prestatieniveau worden bereikt door striping van meerdere gegevensschijven. Er kunnen bijvoorbeeld 64 gegevensschijven worden gekoppeld aan Standard_GS5 VM. Als voor elk van deze schijven een P30-grootte wordt gebruikt, kan een maximum van 80.000 IOP's worden behaald. Zie [VM-typen en -grootten](../sizes.md) voor gedetailleerde informatie over het maximum aantal IOP's per VM.
 

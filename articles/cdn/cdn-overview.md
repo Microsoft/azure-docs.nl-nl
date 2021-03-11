@@ -15,12 +15,12 @@ ms.topic: overview
 ms.date: 05/09/2018
 ms.author: duau
 ms.custom: mvc
-ms.openlocfilehash: b0c8170947b59b3d40a388642dac3df772238197
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.openlocfilehash: 54ee903b490e10f7ea4ca3bca91f742b5811404d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778341"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563299"
 ---
 # <a name="what-is-a-content-delivery-network-on-azure"></a>Wat is een netwerk voor contentlevering in Azure?
 Een netwerk voor contentlevering (CDN) is een gedistribueerd netwerk van servers dat webinhoud efficiënt aan gebruikers kan leveren. In CDN's wordt in de cache opgeslagen inhoud opgeslagen op randservers in aanwezigheidspunt (POP)-locaties in de buurt van eindgebruikers om de latentie zo klein mogelijk te maken. 
@@ -74,8 +74,7 @@ Azure CDN biedt de volgende belangrijke functies:
 Zie [Azure CDN-producteigenschappen vergelijken](cdn-features.md) voor een complete lijst met eigenschappen waarvoor elk Azure CDN-product ondersteuning biedt.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 - Zie [Aan de slag met Azure CDN](cdn-create-new-endpoint.md) om aan de slag te gaan met CDN.
 - Beheer uw CDN-eindpunten via [Microsoft Azure Portal](https://portal.azure.com) of met [PowerShell](cdn-manage-powershell.md).
 - Meer informatie over hoe u Azure CDN kunt automatiseren met [.NET](cdn-app-dev-net.md) of [Node.js](cdn-app-dev-node.md).
-- Bekijk de [Azure-video's](https://azure.microsoft.com/resources/videos/index/?services=cdn&sort=newest) als u Azure CDN in actie wilt zien.
-- Zie het [Azure CDN-blog](https://azure.microsoft.com/blog/tag/azure-cdn/) voor informatie over de nieuwste Azure CDN-functies.

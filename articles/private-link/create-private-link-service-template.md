@@ -1,19 +1,19 @@
 ---
-title: Een Private Link-service maken in Azure Private Link
+title: 'Snelstartgids: een persoonlijke koppelings service maken in een persoonlijke Azure-koppeling'
 description: In deze quickstart gebruikt u een ARM-sjabloon (Azure Resource Manager-sjabloon) om een Private Link-service te maken.
 services: private-link
-author: mblanco77
+author: asudbring
 ms.service: private-link
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/29/2020
 ms.author: allensu
-ms.openlocfilehash: dce80d70af7cd711cf852a60b98ad65b6d21117f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 34993ad3d3d0494f89bd264a8b7194f52129ad7c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88705245"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555054"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-an-arm-template"></a>Quickstart: Een Private Link-service maken met behulp van een ARM-sjabloon
 
@@ -112,4 +112,7 @@ Remove-AzResourceGroup -Name <your resource group name>
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Lees meer over [Azure Private Link](private-link-overview.md).
+
+Zie voor meer informatie over de services die een privé-eindpunt ondersteunen:
+> [!div class="nextstepaction"]
+> [Beschikbaarheid van Private Link](private-link-overview.md#availability)

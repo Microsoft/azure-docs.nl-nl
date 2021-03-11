@@ -2,18 +2,18 @@
 title: bestand opnemen
 description: bestand opnemen
 services: active-directory
-author: barclayn
+author: ajburnle
 ms.service: active-directory
 ms.topic: include
 ms.date: 12/07/2020
-ms.author: barclayn
+ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: 0b1606e4506e7a1781426632d1f22221f7028b88
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 9c91eb6cfa18c5302a83347f671e4552befcf3e2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102193897"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102623252"
 ---
 ## <a name="create-one-or-more-access-reviews"></a>Een of meer toegangs beoordelingen maken
 
@@ -38,6 +38,7 @@ ms.locfileid: "102193897"
     > [!NOTE]
     > - Rollen die hier zijn geselecteerd [, zijn zowel permanente als in aanmerking komende rollen](../articles/active-directory/privileged-identity-management/pim-how-to-add-role-to-user.md).
     > - Als u meerdere rollen selecteert, worden er meerdere toegangs beoordelingen gemaakt. Als u bijvoorbeeld vijf rollen selecteert, worden er vijf afzonderlijke toegangs beoordelingen gemaakt.
+    > - Voor rollen met groepen die aan hen zijn toegewezen, wordt de toegang van elke groep die is gekoppeld aan de rol onder controle beoordeeld als onderdeel van de toegangs beoordeling.
 
     Als u een toegangs beoordeling van **Azure AD-rollen** maakt, ziet u een voor beeld van de lijst lidmaatschap controleren.
 
@@ -52,8 +53,8 @@ ms.locfileid: "102193897"
     ![Lijst met revisoren van geselecteerde gebruikers of leden (zelf)](./media/active-directory-privileged-identity-management-access-reviews/reviewers.png)
 
     - **Geselecteerde gebruikers** : gebruik deze optie als u niet weet wie er toegang moet hebben. Met deze optie kunt u de beoordeling toewijzen aan een resource-eigenaar of groeps Manager om te volt ooien.
-    - **Leden (zelf)** : gebruik deze optie om de gebruikers hun eigen roltoewijzingen te laten beoordelen.
-    - **Beheerder** : gebruik deze optie om ervoor te hebben dat de Manager van de gebruiker de roltoewijzing controleert. Wanneer u Manager selecteert, hebt u ook de optie om een terugval revisor op te geven. Terugval controleurs wordt gevraagd een gebruiker te controleren wanneer de gebruiker geen beheerder heeft opgegeven in de map.
+    - **Leden (zelf)** : gebruik deze optie om de gebruikers hun eigen roltoewijzingen te laten beoordelen. Groepen die zijn toegewezen aan de rol, maken geen deel uit van de beoordeling wanneer deze optie is geselecteerd.
+    - **Beheerder** : gebruik deze optie om ervoor te hebben dat de Manager van de gebruiker de roltoewijzing controleert. Wanneer u Manager selecteert, hebt u ook de optie om een terugval revisor op te geven. Terugval controleurs wordt gevraagd een gebruiker te controleren wanneer de gebruiker geen beheerder heeft opgegeven in de map. Groepen die aan de rol zijn toegewezen, worden door de terugval-revisor gecontroleerd als er een is geselecteerd. 
 
 ### <a name="upon-completion-settings"></a>Bij voltooiings instellingen
 

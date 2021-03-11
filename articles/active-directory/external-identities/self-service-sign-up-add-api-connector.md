@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5265b875769e6a1b8f1728c9c41c0bee00619956
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: f190b8ffbb98c6ff5465af869305de4c9135cc3f
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101647384"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102610094"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Een API-connector toevoegen aan een gebruikers stroom
 
@@ -27,7 +27,7 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 
 ## <a name="create-an-api-connector"></a>Een API-connector maken
 
-1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
 4. Selecteer **alle API-connectors** en selecteer vervolgens **nieuwe API-connector**.
@@ -36,15 +36,35 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 
 5. Geef een weergave naam op voor de aanroep. **Controleer bijvoorbeeld goedkeurings status**.
 6. Geef de **eind punt-URL** voor de API-aanroep op.
-7. Geef de verificatie gegevens op voor de API.
+7. Kies het **verificatie type** en configureer de verificatie gegevens voor het aanroepen van uw API. Zie de sectie hieronder voor opties voor het beveiligen van uw API.
 
-   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u een dummy **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint?code=0123456789` ).
+    ![Een API-connector configureren](./media/self-service-sign-up-add-api-connector/api-connector-config.png)
 
-   ![Een nieuwe API-connector configureren](./media/self-service-sign-up-add-api-connector/api-connector-config.png)
 8. Selecteer **Opslaan**.
 
+## <a name="securing-the-api-endpoint"></a>Het API-eind punt beveiligen
+U kunt uw API-eind punt beveiligen door HTTP-basis verificatie of HTTPS-verificatie van client certificaten (preview) te gebruiken. In beide gevallen geeft u de referenties op die Azure Active Directory gebruikt voor het aanroepen van uw API-eind punt. Uw API-eind punt controleert vervolgens de referenties en voert autorisatie beslissingen uit.
+
+### <a name="http-basic-authentication"></a>HTTP-basis verificatie
+Basis verificatie HTTP is gedefinieerd in [RFC 2617](https://tools.ietf.org/html/rfc2617). Azure Active Directory verzendt een HTTP-aanvraag met de client referenties ( `username` en `password` ) in de `Authorization` header. De referenties zijn ingedeeld als de base64-gecodeerde teken reeks `username:password` . Uw API controleert vervolgens deze waarden om te bepalen of u een API-aanroep wilt afwijzen of niet.
+
+### <a name="https-client-certificate-authentication-preview"></a>HTTPS-verificatie van client certificaten (preview-versie)
+
 > [!IMPORTANT]
-> Voorheen moest u configureren welke gebruikers kenmerken moeten worden verzonden naar de API (' claims to send ') en welke gebruikers kenmerken moeten worden geaccepteerd van de API (' claims to receive '). Nu worden alle gebruikers kenmerken standaard verzonden als ze een waarde hebben en elk gebruikers kenmerk kan worden geretourneerd door de API in een vervolg-antwoord.
+> Deze functionaliteit is beschikbaar als preview-versie en wordt uitgevoerd zonder een service overeenkomst. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Verificatie van client certificaten is een wederzijdse verificatie op basis van certificaten, waarbij de client een client certificaat voor de server biedt om zijn identiteit te bewijzen. In dit geval gebruikt Azure Active Directory het certificaat dat u uploadt als onderdeel van de configuratie van de API-connector. Dit gebeurt als onderdeel van de SSL-handshake. Alleen services die over de juiste certificaten beschikken, hebben toegang tot uw API-service. Het client certificaat is een X. 509-digitaal certificaat. In productie omgevingen moet het worden ondertekend door een certificerings instantie. 
+
+Als u een certificaat wilt maken, kunt u [Azure Key Vault](../../key-vault/certificates/create-certificate.md)gebruiken, dat beschikt over opties voor zelfondertekende certificaten en integraties met leveranciers van uitgevers van certificaten voor ondertekende certificaten. Vervolgens kunt u [het certificaat exporteren](../../key-vault/certificates/how-to-export-certificate.md) en uploaden voor gebruik in de API connectors-configuratie. Het wacht woord is alleen vereist voor certificaat bestanden die worden beveiligd met een wacht woord. U kunt ook de [cmdlet New-SelfSignedCertificate](../../active-directory-b2c/secure-rest-api.md#prepare-a-self-signed-certificate-optional) van Power shell gebruiken om een zelfondertekend certificaat te genereren.
+
+Zie voor Azure App Service en Azure Functions [TLS-wederzijdse verificatie configureren](../../app-service/app-service-web-configure-tls-mutual-auth.md) voor meer informatie over het inschakelen en valideren van het certificaat vanuit uw API-eind punt.
+
+U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder **alle API** -connectors en klikt u op **nieuwe connector uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure Active Directory gebruikt.
+
+### <a name="api-key"></a>API-sleutel
+Sommige services gebruiken een API-sleutel om het moeilijker te maken om tijdens de ontwikkeling toegang te krijgen tot uw HTTP-eind punten. Voor [Azure functions](../../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
+
+Dit is geen mechanisme dat alleen in productie mag worden gebruikt. Daarom is configuratie voor basis verificatie of certificaat authenticatie altijd vereist. Als u een verificatie methode wilt implementeren (niet aanbevolen) voor ontwikkelings doeleinden, kunt u basis verificatie kiezen en tijdelijke waarden gebruiken voor `username` en `password` dat uw API kan worden genegeerd tijdens het implementeren van de autorisatie in uw API.
 
 ## <a name="the-request-sent-to-your-api"></a>De aanvraag die naar uw API wordt verzonden
 Een API-connector resultatenset als een **http post-** aanvraag, waarbij gebruikers kenmerken (' claims ') worden verzonden als sleutel-waardeparen in een JSON-hoofd tekst. Kenmerken worden op dezelfde manier geserialiseerd als [Microsoft Graph](/graph/api/resources/user#properties) gebruikers eigenschappen. 
@@ -85,7 +105,7 @@ Aangepaste kenmerken bestaan in de indeling **extension_ \<extensions-app-id> _A
 Daarnaast wordt de **gebruikers interface land instellingen (' ui_locales ')** standaard in alle aanvragen verzonden. Het biedt de land instellingen van een gebruiker, zoals geconfigureerd op hun apparaat, dat door de API kan worden gebruikt om internationale reacties te retour neren.
 
 > [!IMPORTANT]
-> Als een claim voor verzenden geen waarde heeft op het moment dat het API-eind punt wordt aangeroepen, wordt de claim niet verzonden naar de API. Uw API moet worden ontworpen om expliciet te controleren op de verwachte waarde.
+> Als een claim geen waarde heeft op het moment dat het API-eind punt wordt aangeroepen, wordt de claim niet verzonden naar de API. Uw API moet zo worden ontworpen dat er expliciet wordt gecontroleerd of de aanvraag wordt verwerkt.
 
 > [!TIP] 
 > [**identiteiten (' Identities ')**](/graph/api/resources/objectidentity) en het **e-mail adres (' e-mail ')** kunnen worden gebruikt door uw API om een gebruiker te identificeren voordat ze een account in uw Tenant hebben. De claim ' Identities ' wordt verzonden wanneer een gebruiker zich verifieert met een id-provider zoals Google of Facebook. e-mail bericht wordt altijd verzonden.
@@ -109,11 +129,7 @@ Volg deze stappen om een API-connector toe te voegen aan een self-service voor h
 
 ## <a name="after-signing-in-with-an-identity-provider"></a>Nadat u zich hebt aangemeld met een id-provider
 
-Een API-connector in deze stap van het registratie proces wordt direct geactiveerd nadat de gebruiker zich bij een id-provider (Google, Facebook, Azure AD) heeft geverifieerd. Deze stap gaat vooraf aan de ***pagina kenmerk verzameling***. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. 
-
-<!-- The following are examples of API connector scenarios you may enable at this step:
-- Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, pre-fill the attribute collection page, and make them available to return in the token.
-- Validate whether the user is included in an allow or deny list, and control whether they can continue with the sign-up flow. -->
+Een API-connector in deze stap van het registratie proces wordt onmiddellijk geactiveerd nadat de gebruiker is geverifieerd met een id-provider (zoals Google, Facebook, & Azure AD). Deze stap gaat vooraf aan de ***pagina kenmerk verzameling***. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. Deze stap wordt niet aangeroepen als een gebruiker wordt geregistreerd met een lokaal account.
 
 ### <a name="example-request-sent-to-the-api-at-this-step"></a>Voorbeeld aanvraag die wordt verzonden naar de API in deze stap
 ```http
@@ -165,13 +181,6 @@ Bekijk een voor beeld van een [blokkerend antwoord](#example-of-a-blocking-respo
 
 Een API-connector in deze stap van het registratie proces wordt aangeroepen na de pagina kenmerk verzameling, als er een is opgenomen. Deze stap wordt altijd aangeroepen voordat een gebruikers account wordt gemaakt in azure AD. 
 
-<!-- The following are examples of scenarios you might enable at this point during sign-up: -->
-<!-- 
-- Validate user input data and ask a user to resubmit data.
-- Block a user sign-up based on data entered by the user.
-- Perform identity verification.
-- Query external systems for existing data about the user and overwrite the user-provided value. -->
-
 ### <a name="example-request-sent-to-the-api-at-this-step"></a>Voorbeeld aanvraag die wordt verzonden naar de API in deze stap
 
 ```http
@@ -212,7 +221,6 @@ Wanneer de Web-API tijdens een gebruikers stroom een HTTP-aanvraag van Azure AD 
 - Validatie antwoord
 
 #### <a name="continuation-response"></a>Vervolg reactie
-
 Een vervolg antwoord geeft aan dat de gebruikers stroom moet door gaan naar de volgende stap: Maak de gebruiker in de Directory.
 
 In een vervolg reactie kan de API claims retour neren. Als een claim wordt geretourneerd door de API, doet de claim het volgende:
@@ -252,7 +260,7 @@ Content-type: application/json
 | versie                                            | Tekenreeks            | Ja      | De versie van de API.                                                                                                                                                                                                                                                                |
 | actie                                             | Tekenreeks            | Ja      | Waarde moet zijn `Continue` .                                                                                                                                                                                                                                                              |
 | \<builtInUserAttribute>                            | \<attribute-type> | Nee       | Waarden kunnen worden opgeslagen in de map als ze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en **gebruikers kenmerken** voor een gebruikers stroom. Waarden kunnen worden geretourneerd in het token als deze zijn geselecteerd als een **toepassings claim**.                                              |
-| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De geretourneerde claim hoeft niet te bevatten `_<extensions-app-id>_` . Waarden worden opgeslagen in de map als deze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en het **gebruikers kenmerk** voor een gebruikers stroom. Aangepaste kenmerken kunnen niet terug worden verzonden in het token. |
+| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De geretourneerde claim hoeft niet te bevatten `_<extensions-app-id>_` . Geretourneerde waarden kunnen waarden overschrijven die zijn verzameld van een gebruiker. Ze kunnen ook worden geretourneerd in het token indien geconfigureerd als onderdeel van de toepassing.  |
 
 ### <a name="example-of-a-blocking-response"></a>Voor beeld van een blokkerend antwoord
 
@@ -264,7 +272,6 @@ Content-type: application/json
     "version": "1.0.0",
     "action": "ShowBlockPage",
     "userMessage": "There was a problem with your request. You are not able to sign up at this time.",
-    "code": "CONTOSO-BLOCK-00"
 }
 
 ```
@@ -274,7 +281,6 @@ Content-type: application/json
 | versie     | Tekenreeks | Ja      | De versie van de API.                                                    |
 | actie      | Tekenreeks | Ja      | Waarde moet `ShowBlockPage`                                              |
 | userMessage | Tekenreeks | Ja      | Bericht dat wordt weergegeven aan de gebruiker.                                            |
-| code        | Tekenreeks | Nee       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
 
 **Eind gebruikers ervaring met een blokkerend antwoord**
 
@@ -291,17 +297,18 @@ Content-type: application/json
     "status": 400,
     "action": "ValidationError",
     "userMessage": "Please enter a valid Postal Code.",
-    "code": "CONTOSO-VALIDATION-00"
 }
 ```
 
 | Parameter   | Type    | Vereist | Beschrijving                                                                |
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
-| versie     | Tekenreeks  | Ja      | De versie van de API.                                                    |
+| versie     | Tekenreeks  | Ja      | De versie van uw API.                                                    |
 | actie      | Tekenreeks  | Ja      | Waarde moet zijn `ValidationError` .                                           |
 | status      | Geheel getal | Ja      | Dit moet een waarde zijn `400` voor een ValidationError-antwoord.                        |
 | userMessage | Tekenreeks  | Ja      | Bericht dat wordt weergegeven aan de gebruiker.                                            |
-| code        | Tekenreeks  | Nee       | Foutcode. Kan worden gebruikt voor fout opsporing. Niet weer gegeven voor de gebruiker. |
+
+> [!NOTE]
+> De HTTP-status code moet naast de status waarde in de hoofd tekst van het antwoord ' 400 ' zijn.
 
 **Eind gebruikers ervaring met validatie-fout bericht**
 
@@ -311,7 +318,7 @@ Content-type: application/json
 ## <a name="best-practices-and-how-to-troubleshoot"></a>Aanbevolen procedures en problemen oplossen
 
 ### <a name="using-serverless-cloud-functions"></a>Cloud functies zonder server gebruiken
-Serverloze functies, zoals HTTP-triggers in Azure Functions, bieden een eenvoudige manier om API-eind punten te maken voor gebruik met de API-connector. U kunt de Cloud functie zonder server gebruiken om [bijvoorbeeld](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts)validatie logica uit te voeren en aanmeldings pogingen te beperken tot specifieke domeinen. De Cloud functie zonder server kan ook andere web-Api's, gebruikers archieven en andere Cloud Services aanroepen en aanroepen voor complexere scenario's.
+Serverloze functies, zoals HTTP-triggers in Azure Functions, bieden een eenvoudige manier om API-eind punten te maken voor gebruik met de API-connector. U kunt de Cloud functie zonder server gebruiken om [bijvoorbeeld](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts)validatie logica uit te voeren en aanmeldings pogingen te beperken tot specifieke e-mail domeinen. De Cloud functie zonder server kan ook andere web-Api's, gebruikers archieven en andere Cloud Services aanroepen en aanroepen voor complexere scenario's.
 
 ### <a name="best-practices"></a>Aanbevolen procedures
 Zorg ervoor dat:
@@ -319,8 +326,7 @@ Zorg ervoor dat:
 * De **eind punt-URL** van de API-connector verwijst naar het juiste API-eind punt.
 * Uw API controleert expliciet op null-waarden van ontvangen claims.
 * Uw API reageert zo snel mogelijk om een onervaren gebruikers ervaring te garanderen.
-    * Als u een serverloze functie of schaal bare webservice gebruikt, gebruikt u een hosting abonnement waarmee de API ' actief ' of ' warme ' wordt bewaard. Voor Azure Functions is het raadzaam om het [Premium-abonnement](../../azure-functions/functions-premium-plan.md)te gebruiken. 
-
+    * Als u een serverloze functie of schaal bare webservice gebruikt, gebruikt u een hosting abonnement waarmee de API ' actief ' of ' warme ' wordt bewaard. in productie. Voor Azure Functions is de aanbevolen het Premium- [abonnement](../../azure-functions/functions-scale.md) te gebruiken
 
 ### <a name="use-logging"></a>Logboek registratie gebruiken
 Over het algemeen is het handig om de hulpprogram ma's voor logboek registratie te gebruiken die zijn ingeschakeld door uw web API-service, zoals [Application Insights](../../azure-functions/functions-monitoring.md), om uw API te controleren op onverwachte fout codes, uitzonde ringen en slechte prestaties.
@@ -330,7 +336,5 @@ Over het algemeen is het handig om de hulpprogram ma's voor logboek registratie 
 * Controleer uw API op lange reactie tijden.
 
 ## <a name="next-steps"></a>Volgende stappen
-<!-- - Learn [where you can enable an API connector](api-connectors-overview.md#where-you-can-enable-an-api-connector-in-a-user-flow) -->
 - Meer informatie over het [toevoegen van een aangepaste goedkeurings werk stroom aan self-service registratie](self-service-sign-up-add-approvals.md)
-- Ga aan de slag met onze voor [beelden van Azure function Quick](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts)start.
-<!-- - Learn how to [use API connectors to verify a user identity](code-samples-self-service-sign-up.md#identity-verification) -->
+- Ga aan de slag met onze Quick start-voor [beelden](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts).

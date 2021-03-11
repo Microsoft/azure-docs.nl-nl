@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: evansma
 ms.service: resource-move
 ms.topic: conceptual
-ms.date: 02/04/2021
+ms.date: 02/21/2021
 ms.author: raynew
-ms.openlocfilehash: a75cd3c5dbf205f49aa606bfe96623a61bce39db
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: e900250aea84b4a9c9112fa54632a2be8b9cb49c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007053"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564268"
 ---
 # <a name="common-questions"></a>Veelgestelde vragen
 
@@ -24,6 +24,15 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over [Azure resource-Ov
 ### <a name="can-i-move-resources-across-any-regions"></a>Kan ik resources over alle regio's verplaatsen?
 
 Op dit moment kunt u resources verplaatsen van elke open bare bron regio naar een open bare doel regio, afhankelijk van de [beschik bare resource typen in die regio](https://azure.microsoft.com/global-infrastructure/services/). Het verplaatsen van resources in Azure Government regio's wordt momenteel niet ondersteund.
+
+### <a name="what-regions-are-currently-supported"></a>Welke regio's worden momenteel ondersteund?
+
+Azure resource-overdrijfing is momenteel beschikbaar als volgt:
+
+**Ondersteuning** | **Details**
+--- | ---
+Ondersteuning verplaatsen | Azure-resources die worden ondersteund voor verplaatsen met resource-overschakeling, kunnen vanuit elke open bare regio naar een andere open bare regio worden verplaatst.
+Meta gegevens ondersteuning |  Ondersteunde regio's voor het opslaan van meta gegevens over machines die moeten worden verplaatst, zijn onder andere Oost-VS2, Europa-noord, Zuidoost-Azië, Japan-Oost, UK-zuid en Australië-oost als meta gegevensregios. <br/><br/> Het verplaatsen van resources binnen de Azure China-regio wordt ook ondersteund met de meta gegevens regio China North2.
 
 ### <a name="what-resources-can-i-move-across-regions-using-resource-mover"></a>Welke resources kan ik verplaatsen tussen regio's met resource-overdrijf?
 
@@ -44,15 +53,14 @@ U kunt geen schijven als bronnen selecteren voor de verplaatsing tussen regio's.
 
 ### <a name="what-does-it-mean-to-move-a-resource-group"></a>Wat betekent het verplaatsen van een resource groep?
 
-Wanneer een resource wordt geselecteerd voor verplaatsen, wordt de bijbehorende resource groep automatisch toegevoegd voor verplaatsen. Dit is nodig omdat de doel resource moet worden geplaatst onder een resource groep, zoals in het doel. U kunt ervoor kiezen om een bestaande-resource groep aan te passen en op te geven nadat deze is toegevoegd voor verplaatsen. Houd er rekening mee dat het verplaatsen van een resource groep **niet** betekent dat alle resources in de resource groep van de bron worden verplaatst.
+Wanneer een resource wordt geselecteerd voor verplaatsen, wordt de bijbehorende resource groep automatisch toegevoegd voor verplaatsen. Dit is zo dat de doel resource in een resource groep kan worden geplaatst. U kunt kiezen of u een bestaande resource groep wilt aanpassen en opgeven, nadat deze is toegevoegd voor verplaatsen. Het verplaatsen van een resource groep betekent niet dat alle resources in de resource groep van de bron worden verplaatst.
 
 ### <a name="can-i-move-resources-across-subscriptions-when-i-move-them-across-regions"></a>Kan ik resources verplaatsen tussen abonnementen wanneer ik deze Verplaats tussen regio's?
 
 U kunt het abonnement wijzigen nadat u resources naar de doel regio hebt verplaatst. Meer [informatie](../azure-resource-manager/management/move-resource-group-and-subscription.md) over het verplaatsen van resources naar een ander abonnement. 
 
-### <a name="does-azure-resource-move-service-store-customer-data"></a>Worden klant gegevens door Azure resource Move service opgeslagen? 
-Nee. De resource Move-service slaat geen klant gegevens op; hierin worden alleen meta gegevens opgeslagen die de tracering en voortgang van de resources die zijn geselecteerd voor verplaatsing, vergemakkelijkt door de klant.
-
+### <a name="does-azure-resource-mover-store-customer-data"></a>Slaat Azure resource-verhuis wagen klant gegevens op? 
+Nee. Met resource Facility service worden geen klant gegevens opgeslagen; hierin worden alleen meta gegevens opgeslagen die het bijhouden en de voortgang van resources die u verplaatsen vereenvoudigt.
 
 ### <a name="where-is-the-metadata-for-moving-across-regions-stored"></a>Waar worden de meta gegevens voor het verplaatsen van meerdere opgeslagen regio's?
 
@@ -85,13 +93,15 @@ Wanneer u resources toevoegt in de Resource Mover-hub in de portal, worden de ma
 > [!IMPORTANT]
 > We raden u ten zeerste aan geen toewijzing van identiteits rollen te wijzigen of verwijderen. 
 
-### <a name="what-should-i-do-if-i-dont-have-permissions-to-assign-role-identity"></a>Wat moet ik doen als ik geen machtiging heb om een rol-id toe te wijzen?
+### <a name="what-if-i-dont-have-permissions-to-assign-role-identity"></a>Wat moet ik doen als ik geen machtiging heb om een rol-id toe te wijzen?
+
+Er zijn een aantal redenen waarom u mogelijk geen machtigingen hebt.
 
 **Mogelijke oorzaak** | **Aanbeveling**
 --- | ---
 U bent geen *Inzender* en *beheerder van gebruikers toegang* (of *eigenaar*) wanneer u een resource voor de eerste keer toevoegt. | Gebruik een account met de machtigingen *Inzender* en *beheerder voor gebruikers toegang* (of *eigenaar*) voor het abonnement.
 De beheerde identiteit van de resource-overschakeling heeft niet de vereiste rol. | Voeg de rollen Inzender en beheerder van gebruikers toegang toe.
-De beheerde identiteit voor resource-overschakeling is opnieuw ingesteld op *geen*. | Schakel een door het systeem toegewezen identiteit opnieuw in voor de verzameling > **identiteit** voor het verplaatsen van verzamelingen. U kunt de resource ook opnieuw toevoegen in **resources toevoegen**, wat hetzelfde doet.  
+De beheerde identiteit voor resource-overschakeling is opnieuw ingesteld op *geen*. | Schakel een door het systeem toegewezen identiteit opnieuw in bij de instellingen voor het verplaatsen van verzamelingen > **identiteit**. U kunt ook in **resources toevoegen** de resource opnieuw toevoegen, wat hetzelfde doet.  
 Het abonnement is verplaatst naar een andere Tenant. | Schakel de beheerde identiteit voor de verzameling verplaatsen uit en vervolgens in.
 
 ### <a name="how-can-i-do-multiple-moves-together"></a>Hoe kan ik meerdere verplaatsen tegelijk uitvoeren?
@@ -100,7 +110,7 @@ Wijzig zo nodig de bron-en doel combinaties met de optie wijzigen in de portal.
 
 ### <a name="what-happens-when-i-remove-a-resource-from-a-list-of-move-resources"></a>Wat gebeurt er wanneer ik een resource Verwijder uit een lijst met resources verplaatsen?
 
-U kunt resources verwijderen die u hebt toegevoegd aan de lijst verplaatsen. Gedrag wanneer u een resource uit de lijst verwijdert, is afhankelijk van de status van de resource. [Meer informatie](remove-move-resources.md#vm-resource-state-after-removing).
+U kunt resources verwijderen die u hebt toegevoegd aan de lijst verplaatsen. Het precieze gedrag voor verwijderen is afhankelijk van de status van de resource. [Meer informatie](remove-move-resources.md#vm-resource-state-after-removing).
 
 
 

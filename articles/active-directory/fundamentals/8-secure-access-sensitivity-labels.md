@@ -13,22 +13,22 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0ac3141823eb72b17754a771cd63264fe851949d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 6fc8ceddce4d41244d72632db058aa58c0d919db
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365358"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565169"
 ---
 # <a name="control-access-with-sensitivity-labels"></a>Toegang beheren met gevoeligheids labels 
 
-Met [gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide) kunt u de toegang tot uw inhoud beheren in Office 365-toepassingen en in containers zoals micro soft-Teams, Microsoft 365-groepen en share point-sites. Ze kunnen uw inhoud beschermen zonder de samenwerkings-en productie vaardigheden van uw gebruikers te belemmeren. Met gevoeligheids labels kunt u de inhoud van uw organisatie verzenden naar apparaten, apps en services, terwijl u uw gegevens beveiligt en uw nalevings-en beveiligings beleid beantwoordt. 
+Met [gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels) kunt u de toegang tot uw inhoud beheren in Office 365-toepassingen en in containers zoals micro soft-Teams, Microsoft 365-groepen en share point-sites. Ze kunnen uw inhoud beschermen zonder de samenwerkings-en productie vaardigheden van uw gebruikers te belemmeren. Met gevoeligheids labels kunt u de inhoud van uw organisatie verzenden naar apparaten, apps en services, terwijl u uw gegevens beveiligt en uw nalevings-en beveiligings beleid beantwoordt. 
 
 Met gevoeligheids labels kunt u het volgende doen:
 
 * **Inhoud classificeren zonder beveiligings instellingen toe te voegen**. U kunt een classificatie toewijzen aan inhoud (zoals een sticker) die persistent wordt gemaakt en de inhoud doorneemt wanneer deze wordt gebruikt en gedeeld. U kunt deze classificatie gebruiken om gebruiksrapporten te genereren en om activiteitsgegevens voor uw gevoelige inhoud te zien.
 
-* **Beveiligings instellingen afdwingen, zoals versleuteling, water merken en toegangs beperkingen**. Gebruikers kunnen bijvoorbeeld een vertrouwelijk label op een document of e-mail bericht Toep assen en dat label kan [de inhoud versleutelen](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) en een ' vertrouwelijk ' water merk toevoegen. Daarnaast kunt u [een gevoeligheids label Toep assen op een container](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide) , zoals een share point-site, en afdwingen of externe gebruikers toegang hebben tot de inhoud die het bevat.
+* **Beveiligings instellingen afdwingen, zoals versleuteling, water merken en toegangs beperkingen**. Gebruikers kunnen bijvoorbeeld een vertrouwelijk label op een document of e-mail bericht Toep assen en dat label kan [de inhoud versleutelen](/microsoft-365/compliance/encryption-sensitivity-labels) en een ' vertrouwelijk ' water merk toevoegen. Daarnaast kunt u [een gevoeligheids label Toep assen op een container](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites) , zoals een share point-site, en afdwingen of externe gebruikers toegang hebben tot de inhoud die het bevat.
 
 Gevoeligheids labels voor e-mail en andere inhoud die met de inhoud worden getransporteerd. Gevoeligheids labels op containers kunnen de toegang tot de container beperken, maar de inhoud in de container neemt het label niet over. Een gebruiker kan bijvoorbeeld inhoud ophalen van een beveiligde site, deze downloaden en deze vervolgens delen zonder beperkingen, tenzij de inhoud ook een gevoeligheids label had.
 
@@ -52,7 +52,7 @@ Bepaal het volgende als u wilt weten hoe u externe toegang tot uw inhoud bepaalt
 
 * Hoe kunt u bepalen wat het effect van hoog, gemiddeld of laag bedrijf is (HBI, MBI, LBI)? Houd rekening met de impact van uw organisatie als specifieke typen inhoud op een juiste manier worden gedeeld.
 
-   * Inhoud met specifieke typen [inhoud die vertrouwelijk gevoelig](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide)is, zoals credit cards of pass Port-nummers
+   * Inhoud met specifieke typen [inhoud die vertrouwelijk gevoelig](/microsoft-365/compliance/apply-sensitivity-label-automatically)is, zoals credit cards of pass Port-nummers
 
    * Inhoud die is gemaakt door specifieke groepen of personen (bijvoorbeeld nalevings ambtenaren, financiële functionarissen of leidinggevenden)
 
@@ -66,21 +66,21 @@ Bepaal het volgende als u wilt weten hoe u externe toegang tot uw inhoud bepaalt
 
 * Welke standaard waarden moeten er worden gebruikt voor HBI-gegevens,-sites of-Microsoft 365 groepen?
 
-* Waar gebruikt u gevoeligheids labels voor [labelen en bewaken](/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide), vergeleken met het [afdwingen van versleuteling](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide) of het [afdwingen van toegangs beperkingen voor containers](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)?
+* Waar gebruikt u gevoeligheids labels voor [labelen en bewaken](/microsoft-365/compliance/sensitivity-labels), vergeleken met het [afdwingen van versleuteling](/microsoft-365/compliance/encryption-sensitivity-labels) of het [afdwingen van toegangs beperkingen voor containers](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)?
 
 **Voor e-mail en inhoud**
 
-* Wilt u [automatisch gevoeligheids labels Toep assen](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) op inhoud of dit hand matig doen?
+* Wilt u [automatisch gevoeligheids labels Toep assen](/microsoft-365/compliance/apply-sensitivity-label-automatically) op inhoud of dit hand matig doen?
 
-   * Als u ervoor kiest om dit hand matig te doen, wilt u [de gebruikers aanbevelen een label toe te passen](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide)?
+   * Als u ervoor kiest om dit hand matig te doen, wilt u [de gebruikers aanbevelen een label toe te passen](/microsoft-365/compliance/apply-sensitivity-label-automatically)?
 
 **Voor containers**
 
 * Welke criteria bepalen of voor M365 groepen, teams of share point-sites toegang moet worden beperkt met behulp van gevoeligheids labels?
 
-* Wilt u alleen inhoud in deze containers naar een andere label verplaatsen, of wilt u de bestaande bestanden [automatisch labelen](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide) in share point en OneDrive?
+* Wilt u alleen inhoud in deze containers naar een andere label verplaatsen, of wilt u de bestaande bestanden [automatisch labelen](/microsoft-365/compliance/apply-sensitivity-label-automatically) in share point en OneDrive?
 
-Bekijk deze [algemene scenario's voor gevoeligheids labels](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide) voor andere ideeën over het gebruik van gevoeligheids labels.
+Bekijk deze [algemene scenario's voor gevoeligheids labels](/microsoft-365/compliance/get-started-with-sensitivity-labels) voor andere ideeën over het gebruik van gevoeligheids labels.
 
 ### <a name="sensitivity-labels-on-email-and-content"></a>Gevoeligheids labels voor e-mail en inhoud
 
@@ -100,7 +100,7 @@ Wanneer u een gevoeligheids label toewijst aan een document of e-mail bericht, z
 
 ### <a name="sensitivity-labels-on-containers"></a>Gevoeligheids labels op containers
 
-U kunt gevoeligheids labels Toep assen op containers, zoals [Microsoft 365 groepen](../enterprise-users/groups-assign-sensitivity-labels.md), [micro soft teams](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)en [share point-sites](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide). Wanneer u dit gevoeligheids label toepast op een ondersteunde container, past het label de instellingen voor classificatie en beveiliging automatisch toe op de verbonden site of groep. Gevoeligheids labels op deze containers kunnen de volgende aspecten van containers bepalen:
+U kunt gevoeligheids labels Toep assen op containers, zoals [Microsoft 365 groepen](../enterprise-users/groups-assign-sensitivity-labels.md), [micro soft teams](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)en [share point-sites](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites). Wanneer u dit gevoeligheids label toepast op een ondersteunde container, past het label de instellingen voor classificatie en beveiliging automatisch toe op de verbonden site of groep. Gevoeligheids labels op deze containers kunnen de volgende aspecten van containers bepalen:
 
 * **Privacy**. U kunt kiezen wie de site kan zien: specifieke gebruikers, alle interne gebruikers of iedereen.
 
@@ -116,25 +116,25 @@ U kunt gevoeligheids labels Toep assen op containers, zoals [Microsoft 365 groep
 
 Wanneer u een gevoeligheids label toepast op een container, zoals een share point-site, wordt deze niet toegepast op inhoud daar: gevoeligheids labels op containers bepalen de toegang tot de inhoud in de container. 
 
-* Als u automatisch labels wilt Toep assen op de inhoud van de container, raadpleegt u [automatisch een gevoeligheid Toep assen op inhoud](/microsoft-365/compliance/apply-sensitivity-label-automatically?view=o365-worldwide).
+* Als u automatisch labels wilt Toep assen op de inhoud van de container, raadpleegt u [automatisch een gevoeligheid Toep assen op inhoud](/microsoft-365/compliance/apply-sensitivity-label-automatically).
 
-* Als u wilt dat gebruikers hand matig labels kunnen Toep assen op deze inhoud, moet u ervoor zorgen dat u de [gevoeligheids labels voor Office-bestanden in share point en OneDrive hebt ingeschakeld](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide).
+* Als u wilt dat gebruikers hand matig labels kunnen Toep assen op deze inhoud, moet u ervoor zorgen dat u de [gevoeligheids labels voor Office-bestanden in share point en OneDrive hebt ingeschakeld](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files).
 
 ### <a name="plan-to-implement-sensitivity-labels"></a>De implementatie van gevoeligheids labels plannen
 
 Wanneer u hebt bepaald hoe u de gevoeligheids labels wilt gebruiken en op welke inhoud en sites u deze wilt Toep assen, raadpleegt u de volgende documentatie om u te helpen uw implementatie uit te voeren.
 
-1. [Aan de slag met gevoeligheids labels](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
+1. [Aan de slag met gevoeligheids labels](/microsoft-365/compliance/get-started-with-sensitivity-labels)
 
-2. [Een implementatie strategie maken](/microsoft-365/compliance/get-started-with-sensitivity-labels?view=o365-worldwide)
+2. [Een implementatie strategie maken](/microsoft-365/compliance/get-started-with-sensitivity-labels)
 
-3. [Gevoeligheids labels maken en publiceren](/microsoft-365/compliance/create-sensitivity-labels?view=o365-worldwide)
+3. [Gevoeligheids labels maken en publiceren](/microsoft-365/compliance/create-sensitivity-labels)
 
-4. [Toegang tot inhoud beperken met behulp van gevoeligheids labels om versleuteling toe te passen](/microsoft-365/compliance/encryption-sensitivity-labels?view=o365-worldwide)
+4. [Toegang tot inhoud beperken met behulp van gevoeligheids labels om versleuteling toe te passen](/microsoft-365/compliance/encryption-sensitivity-labels)
 
-5. [Gevoeligheids labels gebruiken voor teams, groepen en sites](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites?view=o365-worldwide)
+5. [Gevoeligheids labels gebruiken voor teams, groepen en sites](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites)
 
-6. [Gevoeligheids labels voor Office-bestanden inschakelen in share point en OneDrive](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files?view=o365-worldwide)
+6. [Gevoeligheids labels voor Office-bestanden inschakelen in share point en OneDrive](/microsoft-365/compliance/sensitivity-labels-sharepoint-onedrive-files)
 
 ### <a name="next-steps"></a>Volgende stappen
 

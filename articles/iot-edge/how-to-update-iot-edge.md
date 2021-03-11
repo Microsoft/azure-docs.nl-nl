@@ -9,12 +9,12 @@ ms.date: 03/01/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9c311826c2b17f8e9f95d1ef31980922154635b9
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: db809807f0494b8510ba7eb71c742a7a7631f97e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042314"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609580"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -120,8 +120,9 @@ Als u wilt bijwerken naar de meest recente versie van IoT Edge, gebruikt u de vo
 # <a name="windows"></a>[Windows](#tab/windows)
 
 <!-- 1.1 -->
-:::moniker range="iotedge-2018-06"
-Met IoT Edge voor Linux op Windows wordt IoT Edge uitgevoerd in een virtuele Linux-machine die wordt gehost op een Windows-apparaat. Deze virtuele machine is vooraf geïnstalleerd met IoT Edge en wordt beheerd met Microsoft Update om de onderdelen up-to-date te houden. Er zijn momenteel geen updates beschikbaar.
+::: moniker range="iotedge-2018-06"
+
+Met IoT Edge voor Linux op Windows wordt IoT Edge uitgevoerd in een virtuele Linux-machine die wordt gehost op een Windows-apparaat. Deze virtuele machine is vooraf geïnstalleerd met IoT Edge en wordt beheerd met Microsoft Update om de onderdelen up-to-date te houden. Als automatische updates is ingeschakeld, worden nieuwe updates gedownload en geïnstalleerd wanneer deze beschikbaar zijn.
 
 Met IoT Edge voor Windows wordt IoT Edge rechtstreeks uitgevoerd op het Windows-apparaat. Zie [Azure IOT Edge voor Windows installeren en beheren](how-to-install-iot-edge-windows-on-windows.md)voor instructies voor het bijwerken van Power shell-scripts.
 :::moniker-end

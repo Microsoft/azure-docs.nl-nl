@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/13/2020
 ms.author: rogarana
-ms.openlocfilehash: 2214dbc9dcbd4ba7728065ee45471e9f94b9e513
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 6098497e89ad66fad7659aa64c9a7849380f8c43
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95739992"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102547497"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Overzicht-on-premises Active Directory Domain Services authenticatie via SMB voor Azure-bestands shares
 
@@ -33,10 +33,14 @@ Als u geen ervaring hebt met Azure-bestands shares, raden we u aan onze [plannin
 
 Wanneer u AD DS voor Azure-bestands shares via SMB inschakelt, kunnen uw AD DS-gekoppelde computers Azure-bestands shares koppelen met behulp van uw bestaande AD DS referenties. Deze mogelijkheid kan worden ingeschakeld met een AD DS-omgeving die wordt gehost op on-premises computers of die wordt gehost in Azure.
 
-> [!NOTE]
-> Om u te helpen bij het instellen van Azure Files AD-verificatie voor enkele veelvoorkomende gebruiks gevallen, hebben we twee Video's gepubliceerd met stapsgewijze instructies voor de volgende scenario's:
-> - [Vervangen van on-premises bestands servers met Azure Files (inclusief de installatie van een persoonlijke koppeling voor bestanden en AD-verificatie)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
-> - [Azure Files gebruiken als de profiel container voor het virtuele Windows-bureau blad (inclusief Setup in AD-verificatie en FsLogix-configuratie)](https://www.youtube.com/embed/9S5A1IJqfOQ)
+## <a name="videos"></a>Video's
+
+Om u te helpen bij het instellen van Azure Files AD-verificatie voor enkele veelvoorkomende gebruiks gevallen, hebben we twee Video's gepubliceerd met stapsgewijze instructies voor de volgende scenario's:
+
+| Vervangen van on-premises bestands servers met Azure Files (inclusief de installatie van een persoonlijke koppeling voor bestanden en AD-verificatie) | Azure Files gebruiken als de profiel container voor het virtuele Windows-bureau blad (inclusief Setup in AD-verificatie en FsLogix-configuratie)  |
+|-|-|
+| [![Screen cast van het vervangen van on-premises bestands servers video-klik om af te spelen.](./media/storage-files-identity-auth-active-directory-enable/replace-on-prem-server-thumbnail.png)](https://www.youtube.com/watch?v=jd49W33DxkQ) | [![Screen cast van het gebruik van Azure Files als de profiel container video-klik om af te spelen.](./media/storage-files-identity-auth-active-directory-enable/files-ad-ds-fslogix-thumbnail.png)](https://www.youtube.com/watch?v=9S5A1IJqfOQ) |
+
 
 ## <a name="prerequisites"></a>Vereisten 
 

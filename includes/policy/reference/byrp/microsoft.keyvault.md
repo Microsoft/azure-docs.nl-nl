@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 2a5c3c107f9a574842c469c5535992c66f37414b
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 4951e86b7fd14809811ebc2cb8e50442a8d28248
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428104"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609436"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -23,6 +23,7 @@ ms.locfileid: "102428104"
 |[Certificaten moeten toegestane sleuteltypen gebruiken](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1151cede-290b-4ba0-8b38-0ad145ac888f) |Beheer de nalevingsvereisten van uw organisatie door de toegestane sleuteltypen voor certificaten te beperken. |controleren, weigeren, uitgeschakeld |[2.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Certificates_AllowedKeyTypes.json) |
 |[Certificaten die gebruikmaken van elliptische curve-cryptografie moeten toegestane curvenamen hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fbd78111f-4953-4367-9fd5-7e08808b54bf) |Beheer de toegestane elliptische curve-namen voor ECC-certificaten die zijn opgeslagen in de sleutelkluis. Meer informatie vindt u op [https://aka.ms/akvpolicy](https://aka.ms/akvpolicy). |controleren, weigeren, uitgeschakeld |[2.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Certificates_EC_AllowedCurveNames.json) |
 |[Certificaten met RSA-cryptografie moeten de opgegeven minimale sleutelgrootte hebben](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fcee51871-e572-4576-855c-047c820360f0) |Beheer de nalevingsvereisten van uw organisatie door een minimale sleutelgrootte voor RSA-certificaten op te geven die zijn opgeslagen in uw sleutelkluis. |controleren, weigeren, uitgeschakeld |[2.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/Certificates_RSA_MinimumKeySize.json) |
+|[Implementeren: Diagnostische instellingen voor Azure Key Vault voor Log Analytics werk ruimte configureren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F951af2fa-529b-416e-ab6e-066fd85ac459) |Hiermee worden de diagnostische instellingen voor Azure Key Vault geïmplementeerd om bron logboeken te streamen naar een Log Analytics-werk ruimte wanneer een Key Vault waarvoor deze diagnostische instellingen ontbreken, wordt gemaakt of bijgewerkt. |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/DataConnectorsAzureKeyVault_PolicyAssignment.json) |
 |[Implementeren: Diagnostische instellingen configureren voor een Log Analytics werkruimte die moet worden ingeschakeld op Azure Key Vault beheerde HSM](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb3884c81-31aa-473d-a9bb-9466fe0ec2a0) |Hiermee worden de diagnostische instellingen voor Azure Key Vault beheerde HSM geïmplementeerd zodat deze naar een regionale Log Analytics werkruimte worden gestreamd wanneer een Azure Key Vault beheerde HSM wordt gemaakt en deze diagnostische instellingen ontbreekt. |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/ManagedHsm_DeployDiagnosticLog_Deploy_LogAnalytics.json) |
 |[Implementeren: Diagnostische instellingen configureren voor een event hub die moet worden ingeschakeld op Azure Key Vault beheerde HSM](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa6d2c800-5230-4a40-bff3-8268b4987d42) |Hiermee worden de diagnostische instellingen voor Azure Key Vault beheerde HSM geïmplementeerd zodat deze naar een regionale Event hub kan worden gestreamd wanneer een Azure Key Vault beheerde HSM die ontbreekt, deze diagnostische instellingen wordt gemaakt of bijgewerkt. |DeployIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/ManagedHsm_DiagnosticLog_Deploy.json) |
 |[Diagnostische instellingen voor Key Vault toepassen op Event Hub](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fed7c8c13-51e7-49d1-8a43-8490431a0da2) |Hiermee worden de diagnostische instellingen voor Key Vault geïmplementeerd en naar een regionale Event Hub gestreamd wanneer een Key Vault waarvoor deze diagnostische instellingen ontbreken, wordt gemaakt of bijgewerkt. |deployIfNotExists |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Key%20Vault/KeyVault_DiagnosticLog_Deploy.json) |

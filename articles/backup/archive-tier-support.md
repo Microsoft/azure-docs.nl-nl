@@ -3,12 +3,12 @@ title: Ondersteuning voor archief lagen (preview-versie)
 description: Meer informatie over de ondersteuning van de archiefmap voor Azure Backup
 ms.topic: conceptual
 ms.date: 02/18/2021
-ms.openlocfilehash: 30a7915332d1d7ecab87b0db1ddc6dacc0fa69c9
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 6c597d640f24dc4c680bfd5db16f9df09017ee54
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050608"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609849"
 ---
 # <a name="archive-tier-support-preview"></a>Ondersteuning voor archief lagen (preview-versie)
 
@@ -40,7 +40,12 @@ Ondersteunde clients:
 
 ## <a name="get-started-with-powershell"></a>Aan de slag met PowerShell
 
-1. Down load de [meest recente Power shell-module](https://github.com/Azure/azure-powershell/tree/Az.RecoveryServices-preview) (preview).
+1. Voer de volgende opdracht uit in PowerShell:
+  
+    ```azurepowershell
+    install-module -name Az.RecoveryServices -Repository PSGallery -RequiredVersion 4.0.0-preview -AllowPrerelease -force
+    ```
+
 1. Maak verbinding met Azure met behulp van de cmdlet [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
 1. Meld u aan bij uw abonnement:
 

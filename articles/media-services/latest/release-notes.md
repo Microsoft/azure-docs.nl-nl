@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: f14328567fdc9840b0a3d07aa23fe2496fd537ca
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 98310f65767efc6081451d9931c4ea9772df5f3b
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102213093"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609393"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -37,6 +37,77 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 > U kunt de [Azure Portal](https://portal.azure.com/) gebruiken om v3 [Live-gebeurtenissen](live-events-outputs-concept.md)te beheren, v3- [assets](assets-concept.md) en-taken weer te geven, informatie over het openen van api's te verkrijgen, inhoud te versleutelen. Gebruik voor alle andere beheer taken (bijvoorbeeld trans formaties en taken beheren) de [rest API](/rest/api/media/accountfilters), [cli](/cli/azure/ams)of een van de ondersteunde [sdk's](media-services-apis-overview.md#sdks).
 >
 > Zie voor meer informatie: [de Azure Portal beperkingen voor Media Services v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
+
+
+## <a name="february-2021"></a>Februari 2021
+
+### <a name="hevc-encoding-support-in-standard-encoder"></a>Ondersteuning voor HEVC-code ring in de standaard encoder
+
+De standaard encoder ondersteunt nu ondersteuning voor het coderen van 8-bits HEVC (H. 265). HEVC-inhoud kan worden geleverd en verpakt via de dynamische Pakketer met behulp van de hev1-indeling.  
+
+Er is een nieuwe, aangepaste .NET-code ring met HEVC-voor beeld beschikbaar in de [opslag plaats Media-Services-v3-DotNet Git hub](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESCustomPreset_HEVC).
+Naast aangepaste code ring zijn de volgende nieuwe ingebouwde HEVC-coderings definities nu beschikbaar:
+
+- H265ContentAwareEncoding
+- H265AdaptiveStreaming
+- H265SingleBitrate720P
+- H265SingleBitrate1080p
+- H265SingleBitrate4K
+
+
+Klanten die voorheen HEVC gebruiken in de Premium encoder van de v2-API, moeten migreren om de nieuwe ondersteuning voor HEVC-code ring te gebruiken in de standaard encoder.
+
+### <a name="azure-media-services-v2-api-and-sdks-deprecation-announcement"></a>Aankondiging van Azure Media Services v2 API en Sdk's-afschaffing
+
+#### <a name="update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024"></a>Werk uw Azure Media Services REST API en Sdk's bij naar v3 op 29 februari 2024
+
+Omdat versie 3 van Azure Media Services REST API en client-Sdk's voor .NET en Java meer mogelijkheden hebben dan versie 2, wordt versie 2 van de Azure Media Services REST API en de client-Sdk's voor .NET en Java buiten gebruik gesteld. We raden u aan de switch sneller te laten profiteren van de uitgebreide voor delen van versie 3 van Azure Media Services REST API en de client-Sdk's voor .NET en Java. Versie 3 biedt: 
+ 
+- 24x7 ondersteuning voor Live-gebeurtenissen
+- ARM REST Api's, client-Sdk's voor .NET core, Node.js, Python, Java, Go en Ruby.
+- Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://review.docs.microsoft.com/en-us/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
+
+#### <a name="action-required"></a>Actie vereist:
+
+Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](https://go.microsoft.com/fwlink/?linkid=2149150&clcid=0x409) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
+**Na 29 februari 2024** wordt door Azure Media Services geen verkeer meer geaccepteerd op de rest API van versie 2, de arm Account Management API-versie 2015-10-01 of van de sdk's van versie 2 .net client. Dit geldt ook voor open source client-SDK'S van derden die de API van versie 2 kunnen aanroepen.  
+
+Zie de officiële [aankondiging van Azure-updates](https://azure.microsoft.com/updates/update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024/).
+
+### <a name="standard-encoder-support-for-v2-api-features"></a>Standard encoder-ondersteuning voor v2 API-functies
+
+Naast de nieuwe, toegevoegde ondersteuning voor HEVC (H. 265)-code ring zijn de volgende functies nu beschikbaar in de 2020-05-01-versie van de coderings-API. 
+
+- Meerdere invoer bestanden worden nu ondersteund met behulp van de nieuwe **JobInputClip** -ondersteuning. 
+    - Er is een voor beeld beschikbaar voor .NET waarin wordt getoond hoe [twee assets samen worden gecombineerd](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESCustomStitchTwoAssets).
+- Met de optie voor het bijhouden van audio nummers kunnen klanten de inkomende audio sporen selecteren en toewijzen en deze naar de uitvoer voor code ring routeren
+    - Zie de [rest API OpenAPI voor meer informatie](https://github.com/Azure/azure-rest-api-specs/blob/8d15dc681b081cca983e4d67fbf6441841d94ce4/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json#L385) over **AudioTrackDescriptor** en het bijhouden van de selectie
+- De selectie voor code ring bijhouden: Hiermee kunnen klanten nummers kiezen van een ABR-bron bestand of een live-archief met meerdere bitrate sporen. Zeer nuttig voor het genereren van Mp4's uit de bestanden van de live-gebeurtenis archivering.
+    - Zie [VideoTrackDescriptor](https://github.com/Azure/azure-rest-api-specs/blob/8d15dc681b081cca983e4d67fbf6441841d94ce4/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json#L1562)
+- Mogelijkheden voor redactie (vervaging) die zijn toegevoegd aan FaceDetector
+    - Zie de modi [redactie](https://github.com/Azure/azure-rest-api-specs/blob/8d15dc681b081cca983e4d67fbf6441841d94ce4/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json#L634) en [gecombineerd](https://github.com/Azure/azure-rest-api-specs/blob/8d15dc681b081cca983e4d67fbf6441841d94ce4/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json#L649) van de voor instelling FaceDetector
+
+### <a name="new-client-sdk-releases-for-2020-05-01-version-of-the-azure-media-services-api"></a>Nieuwe client SDK-releases voor 2020-05-01 versie van de Azure Media Services-API
+
+Nieuwe client SDK-versies voor alle beschik bare talen zijn nu beschikbaar met de bovenstaande functies.
+Werk de nieuwste client-Sdk's in uw code bases bij met behulp van uw pakket beheer.
+
+- [.NET SDK-pakket 3.0.4](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/)
+- [Node.js type script-versie 8.1.0](https://www.npmjs.com/package/@azure/arm-mediaservices)
+- [Python Azure-verbeheerder-Media 3.1.0](https://pypi.org/project/azure-mgmt-media/)
+- [Java SDK 1.0.0-Beta. 2](https://search.maven.org/artifact/com.azure.resourcemanager/azure-resourcemanager-mediaservices/1.0.0-beta.2/jar)
+
+### <a name="updated-typescript-nodejs-samples-using-isomorphic-sdk-for-javascript"></a>Bijgewerkte type script-Node.js-voor beelden met isomorphic SDK voor Java script
+
+De Node.js-voor beelden zijn bijgewerkt voor gebruik van de meest recente isomorphic-SDK. In de voor beelden wordt nu het gebruik van type script weer gegeven. Daarnaast is er een nieuw live streaming-voor beeld toegevoegd voor Node.js/typescript.
+
+Zie de meest recente voor beelden in de **[Media-Services-v3-node-zelf studies](https://github.com/Azure-Samples/media-services-v3-node-tutorials)** Git hub opslag plaats.
+
+### <a name="new-live-stand-by-mode-to-support-faster-startup-from-warm-state"></a>Nieuwe stand-by-modus om sneller opstarten vanuit een warme status te ondersteunen
+
+Live-gebeurtenissen bieden nu ondersteuning voor een goedkope facturerings modus voor "stand-by". Hierdoor kunnen klanten live-gebeurtenissen vooraf toewijzen tegen lagere kosten voor het maken van ' hot Pools '. Klanten kunnen vervolgens de stand-by-Live-gebeurtenissen gebruiken om sneller over te stappen op de actieve status dan bij het maken van koud.  Dit vermindert de tijd om het kanaal aanzienlijk te starten en maakt snelle toewijzing van dynamische groepen mogelijk van machines die in een lagere prijs modus worden uitgevoerd.
+Bekijk [hier](https://azure.microsoft.com/pricing/details/media-services)de meest recente prijs informatie.
+Zie het artikel- [live gebeurtenis Staten en facturering](https://docs.microsoft.com/azure/media-services/latest/live-event-states-billing) voor meer informatie over de stand-by status en de andere statussen van Live Events.
 
 ## <a name="december-2020"></a>December 2020
 

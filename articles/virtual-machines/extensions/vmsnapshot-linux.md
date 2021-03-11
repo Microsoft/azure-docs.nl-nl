@@ -1,22 +1,22 @@
 ---
 title: Linux-extensie voor VM-moment opname voor Azure Backup
 description: Maak toepassings consistente back-ups van de virtuele machine van Azure Backup met Linux-extensie voor VM-moment opnamen.
-services: backup, virtual-machines-linux
+services: backup, virtual-machines
 documentationcenter: ''
 author: trinadhkotturu
-manager: gwallace
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: extensions
+ms.collection: linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.date: 12/17/2018
 ms.author: trinadhk
-ms.openlocfilehash: 2bf653bb42351c9ab4811fde695c8f821fd42d7c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: ea984fdc4abeb08f4b080e913a0c34b99c59d93c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966765"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561106"
 ---
 # <a name="vm-snapshot-linux-extension-for-azure-backup"></a>Linux-extensie voor VM-moment opname voor Azure Backup
 
@@ -65,7 +65,7 @@ De volgende JSON toont het schema voor de extensie van de VM-moment opname. Voor
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | taskId | e07354cf-041e-4370-929f-25a319ce8933_1 | tekenreeks |
 | commandStartTimeUTCTicks | 6.36458 e + 17 | tekenreeks |
 | landinstelling | nl-nl | tekenreeks |
@@ -77,7 +77,7 @@ De volgende JSON toont het schema voor de extensie van de VM-moment opname. Voor
 
 ## <a name="template-deployment"></a>Sjabloonimplementatie
 
-Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. De aanbevolen manier om een VM-momentopname extensie toe te voegen aan een virtuele machine is echter door back-up op de virtuele machine in te scha kelen. Dit kan worden bereikt via een resource manager-sjabloon.  Een voor beeld van een resource manager-sjabloon waarmee back-ups op een virtuele machine kunnen worden gemaakt, vindt u in de [Azure Quick Start-galerie](https://azure.microsoft.com/resources/templates/101-recovery-services-backup-vms/).
+Azure VM-extensies kunnen worden geïmplementeerd met Azure Resource Manager sjablonen. De aanbevolen manier om een VM-momentopname extensie toe te voegen aan een virtuele machine is echter door back-up op de virtuele machine in te scha kelen. Dit kan worden bereikt via een resource manager-sjabloon.  Een voor beeld van een resource manager-sjabloon waarmee back-ups op een virtuele machine kunnen worden gemaakt, vindt u in de [Azure snel starten-galerie](https://azure.microsoft.com/resources/templates/101-recovery-services-backup-vms/).
 
 
 ## <a name="azure-cli-deployment"></a>Implementatie van Azure CLI

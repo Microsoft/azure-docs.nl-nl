@@ -3,16 +3,16 @@ title: Implementeren in een IoT Edge voor Linux op Windows-Azure
 description: Dit artikel bevat richt lijnen voor het implementeren van een IoT Edge voor Linux op een Windows-apparaat.
 ms.topic: how-to
 ms.date: 02/18/2021
-ms.openlocfilehash: b635070d6a4834da2c6d82cc768684b6cde9cd71
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 9ec28c62ca804137ede3cd60d1980e55fbaa2807
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042178"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618131"
 ---
 # <a name="deploy-to-an-iot-edge-for-linux-on-windows-eflow-device"></a>Implementeren op een IoT Edge voor Linux op Windows (EFLOW)
 
-In dit artikel leert u hoe u live video Analytics kunt implementeren op een edge-apparaat dat [IOT Edge voor Linux op Windows (EFLOW)](https://docs.microsoft.com/azure/iot-edge/iot-edge-for-linux-on-windows?view=iotedge-2018-06)heeft. Zodra u klaar bent met het volgen van de stappen in dit document, kunt u een [Media grafiek](media-graph-concept.md) uitvoeren waarmee beweging in een video wordt gedetecteerd en dergelijke gebeurtenissen worden verzonden naar de IOT-hub in de Cloud. U kunt vervolgens de media grafiek voor geavanceerde scenario's uitschakelen en de kracht van live video analyse naar uw Windows-IoT Edge apparaat brengen.
+In dit artikel leert u hoe u live video Analytics kunt implementeren op een edge-apparaat dat [IOT Edge voor Linux op Windows (EFLOW)](https://docs.microsoft.com/azure/iot-edge/iot-edge-for-linux-on-windows)heeft. Zodra u klaar bent met het volgen van de stappen in dit document, kunt u een [Media grafiek](media-graph-concept.md) uitvoeren waarmee beweging in een video wordt gedetecteerd en dergelijke gebeurtenissen worden verzonden naar de IOT-hub in de Cloud. U kunt vervolgens de media grafiek voor geavanceerde scenario's uitschakelen en de kracht van live video analyse naar uw Windows-IoT Edge apparaat brengen.
 
 ## <a name="prerequisites"></a>Vereisten 
 

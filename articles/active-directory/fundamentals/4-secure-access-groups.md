@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7eb168610f10ac336084ac04c19679d26fc913e0
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 2d9d63c7a703987d7b17e6e03d8b5596d5f1dfa5
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98725241"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560613"
 ---
 # <a name="securing-external-access-with-groups"></a>Externe toegang beveiligen met groepen 
 
@@ -54,7 +54,7 @@ Wanneer u de groeps strategie ontwikkelt om externe toegang tot uw resources te 
 
    * *Standaard kunnen alle gebruikers M365 groepen en groepen maken zijn geopend voor alle (interne en externe) gebruikers in uw Tenant om lid te* worden. 
 
-      * [U kunt het maken van Microsoft 365 groepen beperken](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide) tot de leden van een bepaalde beveiligings groep. Gebruik Windows Power shell om deze instelling te configureren. 
+      * [U kunt het maken van Microsoft 365 groepen beperken](/microsoft-365/solutions/manage-creation-of-groups) tot de leden van een bepaalde beveiligings groep. Gebruik Windows Power shell om deze instelling te configureren. 
 
 * **Wie moet personen kunnen uitnodigen voor groepen?** Kunnen alle leden van de groep andere leden toevoegen, of kunnen alleen leden van de groep eigen aren toevoegen?
 
@@ -150,13 +150,13 @@ Hybride organisaties hebben zowel een on-premises infra structuur als een Azure 
 
 ## <a name="microsoft-365-groups"></a>Microsoft 365 groepen
 
-[Microsoft 365 groepen](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) zijn de basis lidmaatschaps service waarmee alle toegang via M365 wordt geclusterd. Ze kunnen worden gemaakt op basis van de [Azure Portal](https://portal.azure.com/), of de [M365-Portal](https://admin.microsoft.com/). Wanneer een M365-groep is gemaakt, kunt u toegang verlenen tot een groep resources die wordt gebruikt om samen te werken. Zie [overzicht van Microsoft 365 groepen voor beheerders](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) voor een volledige lijst met deze resources.
+[Microsoft 365 groepen](/microsoft-365/admin/create-groups/office-365-groups) zijn de basis lidmaatschaps service waarmee alle toegang via M365 wordt geclusterd. Ze kunnen worden gemaakt op basis van de [Azure Portal](https://portal.azure.com/), of de [M365-Portal](https://admin.microsoft.com/). Wanneer een M365-groep is gemaakt, kunt u toegang verlenen tot een groep resources die wordt gebruikt om samen te werken. Zie [overzicht van Microsoft 365 groepen voor beheerders](/microsoft-365/admin/create-groups/office-365-groups) voor een volledige lijst met deze resources.
 
 M365-groepen hebben de volgende nuances voor hun rollen
 
 * **Eigen** aren: groeps eigenaren kunnen leden toevoegen of verwijderen en beschikken over unieke machtigingen zoals de mogelijkheid om gesp rekken uit het gedeelde Postvak in te verwijderen of door de groeps instellingen te wijzigen. Groeps eigenaren kunnen de naam van de groep wijzigen, de beschrijving of afbeelding bijwerken en nog veel meer.
 
-* **Leden** : leden hebben toegang tot alles in de groep, maar kunnen geen groeps instellingen wijzigen. Standaard kunnen groeps leden gasten uitnodigen om lid te worden van uw groep, maar u kunt [deze instelling beheren](/microsoft-365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide).
+* **Leden** : leden hebben toegang tot alles in de groep, maar kunnen geen groeps instellingen wijzigen. Standaard kunnen groeps leden gasten uitnodigen om lid te worden van uw groep, maar u kunt [deze instelling beheren](/microsoft-365/admin/create-groups/manage-guest-access-in-groups).
 
 * **Gasten-groep** gasten zijn leden die afkomstig zijn van buiten uw organisatie. Gasten hebben standaard enkele limieten voor de functionaliteit van teams.
 

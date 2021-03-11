@@ -2,14 +2,14 @@
 title: Aanbevolen procedures voor het verbeteren van de prestaties met behulp van Azure Service Bus
 description: Hierin wordt beschreven hoe u Service Bus kunt gebruiken om de prestaties te optimaliseren bij het uitwisselen van brokered berichten.
 ms.topic: article
-ms.date: 01/15/2021
+ms.date: 03/09/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4c775555f82258c532d72917220129e3913ad314
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 10435f74cfb7c87ccb28b64e1b3f136add1dc927
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102456042"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561871"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Best Practices voor prestatieverbeteringen met Service Bus Messaging
 
@@ -44,17 +44,22 @@ Zie [.net-implementatie ondersteuning](/dotnet/standard/net-standard#net-impleme
 # <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
 De Service Bus-objecten die communiceren met de service, zoals [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient), [ServiceBusSender](/dotnet/api/azure.messaging.servicebus.servicebussender), [ServiceBusReceiver](/dotnet/api/azure.messaging.servicebus.servicebusreceiver)en [ServiceBusProcessor](/dotnet/api/azure.messaging.servicebus.servicebusprocessor), moeten worden geregistreerd voor het invoegen van afhankelijkheden als Singleton (of eenmaal en gedeeld). ServiceBusClient kan worden geregistreerd voor het injecteren van afhankelijkheden met de [ServiceBusClientBuilderExtensions](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/src/Compatibility/ServiceBusClientBuilderExtensions.cs). 
 
-U wordt aangeraden deze objecten niet te sluiten of te verwijderen na het verzenden of ontvangen van elk bericht. Het sluiten of afstoten van de entiteit-specifieke objecten (ServiceBusSender/receiver/processor) resulteert in het ontkoppelen van de koppeling naar de Service Bus service. Als u de ServiceBusClient-resultaten onthoudt, wordt de verbinding met de Service Bus-service verwijderd. Het tot stand brengen van een verbinding is een dure bewerking die u kunt vermijden door dezelfde ServiceBusClient opnieuw te gebruiken en de vereiste entiteit-specifieke objecten van hetzelfde ServiceBusClient-exemplaar te maken. U kunt deze client objecten veilig gebruiken voor gelijktijdige asynchrone bewerkingen en uit meerdere threads.
+U wordt aangeraden deze objecten niet te sluiten of te verwijderen na het verzenden of ontvangen van elk bericht. Het sluiten of afstoten van de entiteit-specifieke objecten (ServiceBusSender/receiver/processor) resulteert in het ontkoppelen van de koppeling naar de Service Bus service. Als u de ServiceBusClient-resultaten onthoudt, wordt de verbinding met de Service Bus-service verwijderd. 
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
-Service Bus-client objecten, zoals implementaties van [`IQueueClient`][QueueClient] of [`IMessageSender`][MessageSender] , moeten worden geregistreerd voor afhankelijkheids injectie als Singleton (of één keer en gedeeld). U wordt aangeraden geen bericht fabrieken, wacht rijen, onderwerpen of abonnements-clients te sluiten nadat u een e-mail hebt verzonden en ze vervolgens opnieuw te maken wanneer u het volgende bericht verzendt. Als u een Messa ging-Factory sluit, wordt de verbinding met de Service Bus-service verwijderd. Er wordt een nieuwe verbinding gemaakt wanneer de fabriek opnieuw wordt gemaakt. Het tot stand brengen van een verbinding is een dure bewerking die u kunt vermijden door dezelfde fabrieks-en client objecten voor meerdere bewerkingen te gebruiken. U kunt deze client objecten veilig gebruiken voor gelijktijdige asynchrone bewerkingen en uit meerdere threads.
+Service Bus-client objecten, zoals implementaties van [`IQueueClient`][QueueClient] of [`IMessageSender`][MessageSender] , moeten worden geregistreerd voor afhankelijkheids injectie als Singleton (of één keer en gedeeld). U wordt aangeraden geen bericht fabrieken, wacht rijen, onderwerpen of abonnements-clients te sluiten nadat u een e-mail hebt verzonden en ze vervolgens opnieuw te maken wanneer u het volgende bericht verzendt. Als u een Messa ging-Factory sluit, wordt de verbinding met de Service Bus-service verwijderd. Er wordt een nieuwe verbinding gemaakt wanneer de fabriek opnieuw wordt gemaakt. 
 
 # <a name="windowsazureservicebus-sdk"></a>[WindowsAzure. ServiceBus SDK](#tab/net-framework-sdk)
 
-Service Bus-client objecten, zoals `QueueClient` of `MessageSender` , worden gemaakt via een [MessagingFactory][MessagingFactory] -object, dat ook intern beheer van verbindingen biedt. U wordt aangeraden geen bericht fabrieken, wacht rijen, onderwerpen of abonnements-clients te sluiten nadat u een e-mail hebt verzonden en ze vervolgens opnieuw te maken wanneer u het volgende bericht verzendt. Als u een Messa ging-Factory sluit, wordt de verbinding met de Service Bus-service verwijderd en wordt er een nieuwe verbinding tot stand gebracht wanneer de fabriek opnieuw wordt gemaakt. Het tot stand brengen van een verbinding is een dure bewerking die u kunt vermijden door dezelfde fabrieks-en client objecten voor meerdere bewerkingen te gebruiken. U kunt deze client objecten veilig gebruiken voor gelijktijdige asynchrone bewerkingen en uit meerdere threads.
+Service Bus-client objecten, zoals `QueueClient` of `MessageSender` , worden gemaakt via een [MessagingFactory][MessagingFactory] -object, dat ook intern beheer van verbindingen biedt. U wordt aangeraden geen bericht fabrieken, wacht rijen, onderwerpen of abonnements-clients te sluiten nadat u een e-mail hebt verzonden en ze vervolgens opnieuw te maken wanneer u het volgende bericht verzendt. Als u een Messa ging-Factory sluit, wordt de verbinding met de Service Bus-service verwijderd en wordt er een nieuwe verbinding tot stand gebracht wanneer de fabriek opnieuw wordt gemaakt. 
 
 ---
+
+De volgende opmerking is van toepassing op alle Sdk's:
+
+> [!NOTE]
+> Het tot stand brengen van een verbinding is een dure bewerking die u kunt vermijden door dezelfde fabrieks-en client objecten voor meerdere bewerkingen te gebruiken. U kunt deze client objecten veilig gebruiken voor gelijktijdige asynchrone bewerkingen en uit meerdere threads.
 
 ## <a name="concurrent-operations"></a>Gelijktijdige bewerkingen
 Bewerkingen zoals verzenden, ontvangen, verwijderen, enzovoort, nemen enige tijd in beslag. Deze tijd omvat de tijd die de Service Bus-service nodig heeft om de bewerking en de latentie van de aanvraag en de reactie te verwerken. Om het aantal bewerkingen per tijd te verhogen, moeten bewerkingen gelijktijdig worden uitgevoerd.

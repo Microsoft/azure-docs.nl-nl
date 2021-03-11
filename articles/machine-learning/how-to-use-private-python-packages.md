@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2020
-ms.openlocfilehash: b922c25561843d140f1e2b8221f62fad89ea00c8
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 5cc1025528959f8c81aa80703e3fc26d59c5266f
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102520894"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618097"
 ---
 # <a name="use-private-python-packages-with-azure-machine-learning"></a>Gebruik persoonlijke Python-pakketten met Azure Machine Learning
 
@@ -52,11 +52,11 @@ Intern wordt de URL door Azure Machine Learning service vervangen door een bevei
 
 ## <a name="use-a-repository-of-packages-from-azure-devops-feed"></a>Een opslag plaats van pakketten van Azure DevOps feed gebruiken
 
-Als u Python-pakketten actief ontwikkelt voor uw machine learning-toepassing, kunt u deze als artefacten hosten in een Azure DevOps-opslag plaats en publiceren als een feed. Met deze aanpak kunt u de DevOps-werk stroom voor het bouwen van pakketten integreren met uw Azure Machine Learning-werkruimte. Lees aan de [slag met Python-pakketten in azure artefacten](/azure/devops/artifacts/quickstarts/python-packages?preserve-view=true&view=azure-devops) voor meer informatie over het instellen van python-feeds met behulp van Azure DevOps
+Als u Python-pakketten actief ontwikkelt voor uw machine learning-toepassing, kunt u deze als artefacten hosten in een Azure DevOps-opslag plaats en publiceren als een feed. Met deze aanpak kunt u de DevOps-werk stroom voor het bouwen van pakketten integreren met uw Azure Machine Learning-werkruimte. Lees aan de [slag met Python-pakketten in azure artefacten](/azure/devops/artifacts/quickstarts/python-packages) voor meer informatie over het instellen van python-feeds met behulp van Azure DevOps
 
 Deze benadering maakt gebruik van een persoonlijk toegangs token voor verificatie op basis van de opslag plaats. Dezelfde benadering is van toepassing op andere opslag plaatsen met verificatie op basis van tokens, zoals persoonlijke GitHub-opslag plaatsen. 
 
- 1. [Maak een persoonlijk toegangs token (Pat)](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?preserve-view=true&tabs=preview-page&view=azure-devops#create-a-pat) voor uw Azure DevOps-exemplaar. Stel het bereik van het token in op __verpakt > lezen__. 
+ 1. [Maak een persoonlijk toegangs token (Pat)](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?tabs=preview-page#create-a-pat) voor uw Azure DevOps-exemplaar. Stel het bereik van het token in op __verpakt > lezen__. 
 
  2. Voeg de URL van Azure DevOps en PAT als werkruimte eigenschappen toe met behulp van de [Workspace.set_connection](/python/api/azureml-core/azureml.core.workspace.workspace#set-connection-name--category--target--authtype--value-) methode.
 

@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 01/08/2021
+ms.date: 03/09/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5cf43310c68c8446b9465a39d85f84c8273a68d8
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 24d955b0d1c53f57f5927f9e893b6ecd75fb3ca8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051221"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561888"
 ---
 # <a name="storage-account-overview"></a>Overzicht van opslagaccounts
 
@@ -52,7 +52,7 @@ In de volgende tabel worden de typen opslag accounts, de services die worden ond
 
 De volgende redundantieopties zijn beschikbaar voor een opslagaccount:
 
-- **Lokaal redundante opslag (LRS)**: een eenvoudige, voordelige redundantie strategie. Gegevens worden synchroon drie keer binnen één fysieke locatie in de primaire regio gekopieerd.
+- **Lokaal redundante opslag (LRS)**: een eenvoudige, voordelige redundantie strategie. Gegevens worden drie keer synchroon gekopieerd binnen één fysieke locatie in de primaire regio.
 - **Zone-redundante opslag (ZRS)**: redundantie voor scenario's die hoge Beschik baarheid vereisen. Gegevens worden synchroon gekopieerd naar drie Azure-beschikbaarheidszones in de primaire regio.
 - **Geografisch redundante opslag (GRS)**: Kruis regionale redundantie om te beschermen tegen regionale storingen. Gegevens worden synchroon drie keer in de primaire regio gekopieerd en vervolgens asynchroon gekopieerd naar de secundaire regio. Voor leestoegang tot gegevens in de secundaire regio schakelt u geografisch redundante opslag met leestoegang (RA-GRS) in.
 - **Geo-zone-redundante opslag (GZRS)**: redundantie voor scenario's waarbij hoge Beschik baarheid en maximale duurzaamheid zijn vereist. Gegevens worden synchroon gekopieerd naar drie Azure-beschikbaarheidszones in de primaire regio en vervolgens asynchroon gekopieerd naar de secundaire regio. Voor leestoegang tot gegevens in de secundaire regio schakelt u geografisch zone-redundante opslag met lees toegang (RA-GZRS) in.
@@ -71,7 +71,7 @@ V2-opslag accounts voor algemeen gebruik ondersteunen de nieuwste functies van A
 - Tabellen
 
 > [!NOTE]
-> Micro soft raadt u aan om voor de meeste scenario's een v2-opslag account voor algemeen gebruik te gebruiken. U kunt eenvoudig een algemeen v1-of Blob Storage-account bijwerken naar een v2-account voor algemeen gebruik zonder uitval tijd en hoeft u geen gegevens te kopiëren.
+> Micro soft raadt u aan om voor de meeste scenario's een v2-opslag account voor algemeen gebruik te gebruiken. U kunt eenvoudig een algemeen v1-of Blob Storage-account bijwerken naar een v2-account voor algemeen gebruik zonder uitval tijd en hoeft u geen gegevens te kopiëren. De upgrade kan echter niet ongedaan worden gemaakt.
 >
 > Zie voor meer informatie over het uitvoeren van een upgrade naar een v2-account voor algemeen gebruik [upgraden naar een algemeen v2-opslag account](storage-account-upgrade.md).
 
@@ -87,13 +87,18 @@ V1-opslag accounts voor algemeen gebruik bieden toegang tot alle Azure Storage-s
 - Wachtrijen
 - Tabellen
 
-Micro soft adviseert v2-accounts voor algemeen gebruik voor de meeste scenario's. U kunt voor deze scenario's algemene v1-accounts gebruiken:
+U kunt voor deze scenario's algemene v1-accounts gebruiken:
 
 - Voor uw toepassingen is het klassieke Azure-implementatie model vereist. V2-accounts voor algemeen gebruik en Blob Storage-accounts ondersteunen alleen het implementatie model van Azure Resource Manager.
 
 - Uw toepassingen zijn transactie intensief of gebruiken aanzienlijke band breedte met geo-replicatie, maar vereisen geen grote capaciteit. In dit geval is algemeen-doel v1 de meest economische keuze.
 
 - U gebruikt een versie van de [Storage services-rest API](/rest/api/storageservices/Versioning-for-the-Azure-Storage-Services) die ouder is dan 2014-02-14 of een client bibliotheek met een lagere versie dan 4. x. U kunt de toepassing niet bijwerken.
+
+> [!NOTE]
+> Hoewel micro soft voor de meeste scenario's v2-accounts voor algemeen gebruik aanbeveelt, zal micro soft v1-accounts voor algemeen gebruik blijven ondersteunen voor nieuwe en bestaande klanten. Wanneer Azure Storage in deze regio's beschikbaar is, kunt u in nieuwe regio's v1-opslag accounts voor algemeen gebruik maken. Micro soft heeft momenteel niet de mogelijkheid om ondersteuning te geven voor de V1-accounts voor algemeen gebruik en zal ten minste één jaar de voorafgaande kennisgeving opleveren voordat een Azure Storage functie wordt afgeleverd. Micro soft blijft beveiligings updates bieden voor v1-accounts voor algemeen gebruik, maar er wordt geen nieuwe functie ontwikkeling verwacht voor dit account type.
+>
+> Met ingang van 1 oktober 2020 zijn de prijzen voor algemeen v1-accounts in nieuwe Azure Storage regio's gelijk aan de prijzen voor algemeen gebruik v2-accounts in die regio's. De prijzen in bestaande Azure Storage regio's zijn niet gewijzigd. Zie de pagina met prijzen voor Azure Storage voor prijs informatie voor algemeen v1-accounts in een specifieke regio. Kies uw regio en Selecteer naast **prijs aanbiedingen** **andere**.
 
 ### <a name="blockblobstorage-accounts"></a>BlockBlobStorage-accounts
 

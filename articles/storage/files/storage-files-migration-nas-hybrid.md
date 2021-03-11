@@ -7,21 +7,30 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 73dc2520fbe970123a52133cb00909fea190610a
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 86e79302716fa502d8562dd563b0a5c5fb220a67
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202668"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102547545"
 ---
 # <a name="migrate-from-network-attached-storage-nas-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Migreren van NAS (Network Attached Storage) naar een hybride Cloud implementatie met Azure File Sync
+
+Dit migratie artikel is een van de tref woorden NAS en Azure File Sync. Controleer of dit artikel van toepassing is op uw scenario:
+
+> [!div class="checklist"]
+> * Gegevens Bron: NAS (Network Attached Storage)
+> * Migratie route: NAS &rArr; Windows Server &rArr; uploaden en synchroniseren met Azure-bestands shares
+> * On-premises bestanden opslaan in cache: Ja, het uiteindelijke doel is een Azure File Sync-implementatie.
+
+Als uw scenario anders is, bekijkt u de [tabel met migratie handleidingen](storage-files-migration-overview.md#migration-guides).
 
 Azure File Sync werkt op DAS-locaties (Direct Attached Storage) en biedt geen ondersteuning voor synchronisatie met NAS-locaties (Network Attached Storage).
 Dit leidt tot een migratie van uw bestanden die nodig zijn. in dit artikel wordt u begeleid bij het plannen en uitvoeren van een dergelijke migratie.
 
 ## <a name="migration-goals"></a>Migratiedoelen
 
-Het doel is om de shares die u op uw NAS-apparaat hebt geplaatst, te verplaatsen naar een Windows-Server. Gebruik vervolgens Azure File Sync voor een hybride Cloud implementatie. Deze migratie moet zo worden uitgevoerd dat de integriteit van de productie gegevens en de beschik baarheid tijdens de migratie gewaarborgd is. Ten laatste moet de downtime tot een minimum worden beperkt, zodat deze kan worden aangepast aan of slechts een beetje meer regel matig onderhouds Vensters kan hebben.
+Het doel is om de shares die u op uw NAS-apparaat hebt geplaatst, te verplaatsen naar een Windows-Server. Gebruik vervolgens Azure File Sync voor een hybride Cloud implementatie. Over het algemeen moeten migraties worden uitgevoerd op een manier die de integriteit van de productie gegevens Guaranty en de beschik baarheid tijdens de migratie. Ten laatste moet de downtime tot een minimum worden beperkt, zodat deze kan worden aangepast aan of slechts een beetje meer regel matig onderhouds Vensters kan hebben.
 
 ## <a name="migration-overview"></a>Migratieoverzicht
 
@@ -45,14 +54,14 @@ Zoals vermeld in het [overzichts artikel](storage-files-migration-overview.md)ov
 * Maak een Windows Server 2019-met een minimale 2012R2-als een virtuele machine of fysieke server. Een failover-cluster van Windows Server wordt ook ondersteund.
 * Het inrichten of toevoegen van direct gekoppelde opslag (DAS in vergelijking met NAS), wat niet wordt ondersteund.
 
-    De hoeveelheid opslag ruimte die u hebt ingericht, kan kleiner zijn dan wat u momenteel op uw NAS-apparaat gebruikt, als u Azure-bestands synchronisatie gebruikt voor het maken van [Cloud lagen](storage-sync-cloud-tiering-overview.md) .
+    De hoeveelheid opslag ruimte die u hebt ingericht, kan kleiner zijn dan wat u momenteel op uw NAS-apparaat gebruikt. Voor deze configuratie optie moet u ook gebruikmaken van de functie voor het maken van [Cloud lagen](storage-sync-cloud-tiering-overview.md) in azure file sync.
     Wanneer u echter uw bestanden vanuit de grotere NAS-ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
 
     1. Een set bestanden verplaatsen die op de schijf passen
     2. bestands synchronisatie en Cloud lagen actief laten
-    3. Wanneer er meer vrije ruimte op het volume wordt gemaakt, gaat u door met de volgende batch bestanden. 
+    3. Wanneer er meer vrije ruimte op het volume wordt gemaakt, gaat u door met de volgende batch bestanden. U kunt ook de RoboCopy-opdracht in het komende [Robocopy-gedeelte](#phase-7-robocopy) controleren voor gebruik van de nieuwe `/LFSM` Switch. Met `/LFSM` kunt u uw Robocopy-taken aanzienlijk vereenvoudigen, maar dit is niet compatibel met een aantal andere Robocopy-switches die u mogelijk afhankelijk maakt.
     
-    U kunt deze methode voor batch verwerking vermijden door de gelijkwaardige ruimte op de Windows-Server in te richten die uw bestanden op het NAS-apparaat innemen. Overweeg ontdubbeling op NAS/Windows. Als u deze hoge hoeveelheid opslag ruimte niet permanent wilt door voeren naar uw Windows-Server, kunt u de volume grootte na de migratie verkleinen en voordat u het beleid voor Cloud lagen hebt aangepast. Hiermee maakt u een kleinere on-premises cache van uw Azure-bestands shares.
+    U kunt deze methode voor batch verwerking vermijden door de gelijkwaardige ruimte op de Windows-Server in te richten die uw bestanden op het NAS-apparaat innemen. Overweeg ontdubbeling op NAS/Windows. Als u deze hoge hoeveelheid opslag ruimte niet permanent wilt door voeren naar uw Windows-Server, kunt u de volume grootte na de migratie verkleinen en voordat u het beleid voor Cloud lagen aanpast. Hiermee maakt u een kleinere on-premises cache van uw Azure-bestands shares.
 
 De resource configuratie (reken kracht en RAM) van de Windows-Server die u implementeert, is vooral afhankelijk van het aantal items (bestanden en mappen) dat u wilt synchroniseren. Als u problemen hebt, kunt u het beste een configuratie met hogere prestaties uitvoeren.
 
@@ -108,76 +117,7 @@ Met de volgende RoboCopy-opdracht worden bestanden van uw NAS-opslag naar de doe
 Als u minder opslag ruimte op uw Windows-Server hebt ingericht dan uw bestanden op het NAS-apparaat innemen, hebt u Cloud lagen geconfigureerd. Omdat het lokale Windows Server-volume vol is, worden er [Cloud lagen](storage-sync-cloud-tiering-overview.md) in gemaakt en lagen die al zijn gesynchroniseerd. Cloud-lagen genereren voldoende ruimte om het kopiëren van het NAS-apparaat voort te zetten. Controles voor Cloud lagen worden één keer per uur uitgevoerd om te zien wat er is gesynchroniseerd en om schijf ruimte vrij te maken voor het bereiken van de beschik bare ruimte van 99% volume.
 Het is mogelijk dat RoboCopy bestanden sneller verplaatst dan u naar de Cloud en laag lokaal kunt synchroniseren, waardoor er geen lokale schijf ruimte meer beschikbaar is. RoboCopy mislukt. Het wordt aanbevolen dat u de shares in een volg orde doorloopt, waardoor dat niet mogelijk is. U kunt bijvoorbeeld geen RoboCopy-taken voor alle shares tegelijk starten of alleen shares verplaatsen die passen bij de huidige hoeveelheid beschik bare ruimte op de Windows-Server, om een paar te vermelden.
 
-```console
-Robocopy /MT:32 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
-```
-
-Achtergrondbitmap
-
-:::row:::
-   :::column span="1":::
-      /MT
-   :::column-end:::
-   :::column span="1":::
-      Hiermee kan RoboCopy meerdere threads uitvoeren. De standaard waarde is 8, maximum is 128.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /UNILOG:\<file name\>
-   :::column-end:::
-   :::column span="1":::
-      Hiermee wordt de status van de uitvoer naar een logboek bestand opgeslagen als UNICODE (het bestaande logboek wordt overschreven).
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /TEE
-   :::column-end:::
-   :::column span="1":::
-      Uitvoer naar console venster. Wordt gebruikt in combi natie met uitvoer naar een logboek bestand.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /B
-   :::column-end:::
-   :::column span="1":::
-      Voert RoboCopy uit in dezelfde modus als een back-uptoepassing zou gebruiken. Hiermee kan RoboCopy bestanden verplaatsen waarnaar de huidige gebruiker geen machtigingen heeft.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /MIR
-   :::column-end:::
-   :::column span="1":::
-      Hiermee kan deze RoboCopy-opdracht verschillende keren worden uitgevoerd, opeenvolgend op hetzelfde doel/dezelfde bestemming. Hiermee wordt aangegeven wat er eerder is gekopieerd en wordt deze wegge laten. Alleen wijzigingen, toevoegingen en '*verwijderingen*' worden verwerkt, die zijn opgetreden sinds de laatste uitvoering. Als de opdracht nog niet eerder is uitgevoerd, wordt er niets wegge laten. De vlag */Mir* is een uitstekende optie voor bron locaties die nog steeds worden gebruikt en worden gewijzigd.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /COPY: copyflag [s]
-   :::column-end:::
-   :::column span="1":::
-      betrouw baarheid van het bestand kopiëren (standaard is/COPY: DAT), kopieer vlaggen: D = gegevens, A = kenmerken, T = tijds tempels, S = Security = NTFS Acl's, O = eigenaargegevens, U = controle-informatie
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      / COPYALL
-   :::column-end:::
-   :::column span="1":::
-      ALLE bestands gegevens kopiëren (gelijk aan/COPY: DATSOU)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /DCOPY: copyflag [s]
-   :::column-end:::
-   :::column span="1":::
-      betrouw baarheid voor het kopiëren van mappen (standaard is/DCOPY: DA), kopieer vlaggen: D = gegevens, A = kenmerken, T = tijds tempels
-   :::column-end:::
-:::row-end:::
+[!INCLUDE [storage-files-migration-robocopy](../../../includes/storage-files-migration-robocopy.md)]
 
 ## <a name="phase-8-user-cut-over"></a>Fase 8: gebruikers knippen
 
@@ -196,7 +136,7 @@ De tweede keer dat deze sneller wordt voltooid, hoeft alleen wijzigingen te word
 
 Herhaal dit proces totdat u tevreden bent over de hoeveelheid tijd die nodig is voor het volt ooien van een RoboCopy voor een specifieke locatie binnen een aanvaardbaar venster voor uitval tijd.
 
-Wanneer u de beschik bare downtime in overweging neemt en u bent voor bereid de NAS-locatie offline te halen: als u de gebruikers toegang offline wilt maken, kunt u de Acl's op de hoofdmap van de share wijzigen, zodat gebruikers geen toegang meer hebben tot de locatie of een andere geschikte stap kunnen ondernemen die voor komt dat inhoud in deze map op de NAS wordt gewijzigd.
+Wanneer u de downtime in overweging neemt, moet u de gebruikers toegang tot uw op NAS gebaseerde shares verwijderen. U kunt dit doen door alle stappen die voor komen dat gebruikers de structuur en inhoud van bestanden en mappen wijzigen. Een voor beeld is om uw DFS-Namespace naar een niet-bestaande locatie te wijzen of de hoofd-Acl's op de share te wijzigen.
 
 Voer een laatste RoboCopy-ronde uit. Er worden wijzigingen opgehaald, die mogelijk zijn gemist.
 Hoe lang deze laatste stap duurt, is afhankelijk van de snelheid van de RoboCopy-scan. U kunt een schatting maken van de tijd (die gelijk is aan uw downtime) door te meten hoe lang de vorige uitvoering heeft geduurd.

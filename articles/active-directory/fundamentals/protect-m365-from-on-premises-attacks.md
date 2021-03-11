@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9913132ca6ff3ce2840b55aa771f7bd9be2404ea
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e6d548f4d792d8980e2aa5040b09530eaf7868c4
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101650971"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609903"
 ---
 # <a name="protecting-microsoft-365-from-on-premises-attacks"></a>Microsoft 365 beveiligen tegen on-premises aanvallen
 
@@ -69,7 +69,7 @@ Voor het oplossen van de bedreigings vectoren die eerder zijn beschreven, raden 
 
     Deze beheerders accounts zijn accounts met beperkte toegang. *Geen on-premises accounts moeten beheerders bevoegdheden hebben in Microsoft 365.* 
 
-    Zie het [overzicht van Microsoft 365 beheerders rollen](/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)voor meer informatie. Zie ook [rollen voor Microsoft 365 in azure AD](../roles/m365-workload-docs.md).
+    Zie het [overzicht van Microsoft 365 beheerders rollen](/microsoft-365/admin/add-users/about-admin-roles)voor meer informatie. Zie ook [rollen voor Microsoft 365 in azure AD](../roles/m365-workload-docs.md).
 
 1. **Apparaten beheren vanaf Microsoft 365.** Gebruik Azure AD-deelname en cloud-gebaseerde Mobile Device Management (MDM) om afhankelijkheden te elimineren op uw on-premises infra structuur voor Apparaatbeheer. Deze afhankelijkheden kunnen apparaat-en beveiligings maatregelen veroorzaken.
 
@@ -151,7 +151,7 @@ Bij gebruik bij het inrichten van hybride accounts is het Azure-AD-uit-Cloud-sys
 
 Met Cloud groepen kunt u uw samen werking en toegang tot uw on-premises infra structuur afbreken.
 
-* **Samen werking**: gebruik Microsoft 365 groepen en micro soft teams voor moderne samen werking. On-premises distributie lijsten buiten gebruik stellen en [distributie lijsten upgraden naar Microsoft 365 groepen in Outlook](/office365/admin/manage/upgrade-distribution-lists?view=o365-worldwide).
+* **Samen werking**: gebruik Microsoft 365 groepen en micro soft teams voor moderne samen werking. On-premises distributie lijsten buiten gebruik stellen en [distributie lijsten upgraden naar Microsoft 365 groepen in Outlook](/office365/admin/manage/upgrade-distribution-lists).
 
 * **Toegang**: Azure AD-beveiligings groepen of Microsoft 365 groepen gebruiken om toegang te verlenen tot toepassingen in azure AD.
 * **Office 365-licentie verlening**: gebruik op groepen gebaseerde licentie verlening voor het inrichten van Office 365 door gebruik te maken van Cloud groepen. Deze methode is van invloed op het beheer van groepslid maatschap vanuit een on-premises infra structuur.
@@ -203,9 +203,9 @@ Gebruik voorwaardelijke toegang van Azure AD om signalen te interpreteren en geb
 
 * Gebruik voorwaardelijke toegang om zoveel mogelijk [verouderde verificatie protocollen te blok keren](../conditional-access/howto-conditional-access-policy-block-legacy.md) . Daarnaast kunt u verouderde verificatie protocollen op toepassings niveau uitschakelen met behulp van een toepassingsspecifieke configuratie.
 
-   Zie [verouderde verificatie protocollen](../fundamentals/auth-sync-overview.md)voor meer informatie. Of Zie specifieke Details voor [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) en [share point online](/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps).
+   Zie [verouderde verificatie protocollen](../fundamentals/auth-sync-overview.md)voor meer informatie. Of Zie specifieke Details voor [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) en [share point online](/powershell/module/sharepoint-online/set-spotenant).
 
-* Implementeer de aanbevolen [identiteits-en toegangs configuraties voor apparaten](/microsoft-365/security/office-365-security/identity-access-policies?view=o365-worldwide).
+* Implementeer de aanbevolen [identiteits-en toegangs configuraties voor apparaten](/microsoft-365/security/office-365-security/identity-access-policies).
 
 * Als u een versie van Azure AD gebruikt die geen voorwaardelijke toegang bevat, moet u ervoor zorgen dat u de [standaard instellingen voor Azure AD-beveiliging](../fundamentals/concept-fundamentals-security-defaults.md)gebruikt.
 

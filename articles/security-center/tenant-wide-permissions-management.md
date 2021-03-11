@@ -6,20 +6,17 @@ ms.author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 02/25/2021
-ms.openlocfilehash: b3ddbdf04dc736b6f78a04dc6bb2bc484e67f70f
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.date: 03/11/2021
+ms.openlocfilehash: 0a24546579df020dcb7c7a9b01ee3d181226d2df
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102107686"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617485"
 ---
 # <a name="grant-and-request-tenant-wide-visibility"></a>Zicht baarheid van de hele Tenant verlenen en aanvragen
 
 Een gebruiker met de Azure Active Directory (AD) rol van de **globale beheerder** heeft mogelijk verantwoordelijkheden voor de hele Tenant, maar heeft geen toegang tot de Azure-machtigingen voor het weer geven van de organisatie-brede informatie in azure Security Center. Machtigings verhoging is vereist omdat Azure AD-roltoewijzingen geen toegang verlenen tot Azure-resources. 
-
-> [!TIP]
-> Meer informatie over de uitbrei ding van machtigingen voor de rol globale beheerder in toegangs rechten voor het [beheren van alle Azure-abonnementen en-beheer groepen](../role-based-access-control/elevate-access-global-admin.md).
 
 ## <a name="grant-tenant-wide-permissions-to-yourself"></a>Machtigingen voor de hele Tenant verlenen
 
@@ -45,6 +42,14 @@ Machtigingen op Tenant niveau toewijzen:
 1. Meld u af bij de Azure Portal en meld u vervolgens opnieuw aan.
 
 1. Zodra u toegang hebt tot verhoogde bevoegdheden, opent of vernieuwt u Azure Security Center om te controleren of u zicht hebt op alle abonnementen onder uw Azure AD-Tenant. 
+
+Het eenvoudige proces hierboven voert een aantal bewerkingen automatisch uit voor u:
+
+1. De machtigingen van de gebruiker zijn tijdelijk verhoogd.
+1. Met de nieuwe machtigingen wordt de gebruiker toegewezen aan de gewenste Azure RBAC-rol in de hoofd beheer groep.
+1. De verhoogde machtigingen worden verwijderd.
+
+Zie [toegang verhogen voor het beheer van alle Azure-abonnementen en-beheer groepen](../role-based-access-control/elevate-access-global-admin.md)voor meer informatie over het Azure AD-uitbrei ding van bevoegdheden.
 
 
 ## <a name="request-tenant-wide-permissions-when-yours-are-insufficient"></a>Machtigingen voor de hele Tenant aanvragen wanneer u niet voldoende bent

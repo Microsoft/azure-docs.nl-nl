@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/04/2021
+ms.date: 03/10/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: c9453f2fc5803fb6ce09d8749cbf7fa1c7c2ec46
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 17c73257db371bbec0c72a23b1303847a8d14102
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102174815"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102607914"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Aangepaste kenmerken definiëren in Azure Active Directory B2C
 
@@ -30,6 +30,8 @@ Uw Azure AD B2C-directory wordt geleverd met een [ingebouwde set kenmerken](user
 * Een klant gerichte toepassing moet een **LoyaltyId** -kenmerk persistent maken.
 * Een id-provider heeft een unieke gebruikers-id, **uniqueUserGUID**, die persistent moet zijn.
 * Voor een aangepaste gebruikers traject moet de status van de gebruiker, **migrationStatus**, worden behouden, zodat er een andere logica kan worden uitgevoerd.
+
+De *extensie-eigenschap*, het *aangepaste kenmerk* en de *aangepaste claim* verwijzen naar hetzelfde item in de context van dit artikel. De naam kan variëren, afhankelijk van de context, zoals toepassing, object of beleid.
 
 Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk gebruikers account uitbreiden. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](microsoft-graph-operations.md).
 
@@ -66,11 +68,7 @@ Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom, 
 
 ## <a name="azure-ad-b2c-extensions-app"></a>App voor Azure AD B2C extensies
 
-Extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing met de naam B2C-Extensions-app. Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure AD B2C, app-registraties.
-
-De *extensie-eigenschap*, het *aangepaste kenmerk* en de *aangepaste claim* verwijzen naar hetzelfde item in de context van dit artikel. De naam kan variëren, afhankelijk van de context, zoals toepassing, object of beleid.
-
-## <a name="get-the-application-properties"></a>De toepassings eigenschappen ophalen
+Extensie kenmerken kunnen alleen worden geregistreerd voor een toepassings object, hoewel ze mogelijk gegevens voor een gebruiker bevatten. Het kenmerk extension is gekoppeld aan de toepassing `b2c-extensions-app` . Wijzig deze toepassing niet, omdat deze wordt gebruikt door Azure AD B2C om gebruikers gegevens op te slaan. U kunt deze toepassing vinden onder Azure AD B2C, app-registraties. De toepassings eigenschappen ophalen:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
@@ -80,14 +78,6 @@ De *extensie-eigenschap*, het *aangepaste kenmerk* en de *aangepaste claim* verw
 1. Kopieer de volgende id's naar het klem bord en sla ze op:
     * **Toepassings-id**. Bijvoorbeeld: `11111111-1111-1111-1111-111111111111`.
     * **Object-id**. Bijvoorbeeld: `22222222-2222-2222-2222-222222222222`.
-
-## <a name="using-custom-attribute-with-ms-graph-api"></a>Aangepast kenmerk gebruiken met MS Graph API
-
-Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de Conventie `extension_ApplicationClientID_attributename` , waarbij de de `ApplicationClientID` toepassing is van de **toepassings-id (client)** van de `b2c-extensions-app` toepassing. Houd er rekening mee dat de ID van de **toepassing (client)** zoals deze wordt weer gegeven in de naam van het uitbreidings kenmerk geen afbreek streepjes bevat. Bijvoorbeeld:
-
-```json
-"extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
-``` 
 
 ::: zone pivot="b2c-custom-policy"
 
@@ -172,6 +162,14 @@ In het volgende voor beeld ziet u het gebruik van een aangepast kenmerk in Azure
 ```
 
 ::: zone-end
+
+## <a name="using-custom-attribute-with-ms-graph-api"></a>Aangepast kenmerk gebruiken met MS Graph API
+
+Microsoft Graph-API ondersteunt het maken en bijwerken van een gebruiker met extensie kenmerken. Extensie kenmerken in de Graph API worden genoemd met behulp van de Conventie `extension_ApplicationClientID_attributename` , waarbij de de `ApplicationClientID` toepassing is van de **toepassings-id (client)** van de `b2c-extensions-app` toepassing. Houd er rekening mee dat de ID van de **toepassing (client)** zoals deze wordt weer gegeven in de naam van het uitbreidings kenmerk geen afbreek streepjes bevat. Bijvoorbeeld:
+
+```json
+"extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyId": "212342" 
+``` 
 
 ## <a name="next-steps"></a>Volgende stappen
 

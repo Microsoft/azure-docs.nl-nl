@@ -2,24 +2,25 @@
 title: Virtuele Windows-machines maken en beheren in azure die gebruikmaken van meerdere Nic's
 description: Meer informatie over het maken en beheren van een Windows-VM waaraan meerdere Nic's zijn gekoppeld met behulp van Azure PowerShell-of Resource Manager-sjablonen.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.collection: windows
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 09/26/2017
 ms.author: cynthn
-ms.openlocfilehash: 66a135cd1629aa2befcd4c56d835473791d62ce8
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2664d175818a6e29dcd3f704c6938987bae050cd
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974002"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555173"
 ---
 # <a name="create-and-manage-a-windows-virtual-machine-that-has-multiple-nics"></a>Een virtuele Windows-machine met meerdere Nic's maken en beheren
 Aan virtuele machines (Vm's) in azure kunnen meerdere Nic's (virtuele netwerk interface kaarten) zijn gekoppeld. Een veelvoorkomend scenario is om verschillende subnetten te hebben voor de connectiviteit van front-end-en back-end. U kunt meerdere Nic's aan een virtuele machine koppelen aan meerdere subnetten, maar deze subnetten moeten zich allemaal in hetzelfde virtuele netwerk (vNet) bevinden. In dit artikel vindt u informatie over het maken van een VM waaraan meerdere Nic's zijn gekoppeld. U leert ook hoe u Nic's kunt toevoegen aan of verwijderen uit een bestaande virtuele machine. Verschillende [VM-grootten](../sizes.md) ondersteunen een variërend aantal nic's, dus grootte van uw virtuele machine dienovereenkomstig.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myVnet*en *myVM*.
+Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myVnet* en *myVM*.
 
  
 
@@ -121,7 +122,7 @@ Begin nu met het maken van de VM-configuratie. Voor elke VM-grootte geldt een li
 ## <a name="add-a-nic-to-an-existing-vm"></a>Een NIC toevoegen aan een bestaande virtuele machine
 U kunt een virtuele NIC toevoegen aan een bestaande virtuele machine door de toewijzing van de VM ongedaan te maken, de virtuele NIC toe te voegen en vervolgens de VM te starten. Verschillende [VM-grootten](../sizes.md) ondersteunen een variërend aantal nic's, dus grootte van uw virtuele machine dienovereenkomstig. Indien nodig kunt u [de grootte van een virtuele machine wijzigen](resize-vm.md).
 
-1. Hef de toewijzing van de virtuele machine op met [AzVM](/powershell/module/az.compute/stop-azvm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in *myResourceGroup*ongedaan gemaakt:
+1. Hef de toewijzing van de virtuele machine op met [AzVM](/powershell/module/az.compute/stop-azvm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in *myResourceGroup* ongedaan gemaakt:
 
     ```powershell
     Stop-AzVM -Name "myVM" -ResourceGroupName "myResourceGroup"
@@ -177,7 +178,7 @@ U kunt een virtuele NIC toevoegen aan een bestaande virtuele machine door de toe
 ## <a name="remove-a-nic-from-an-existing-vm"></a>Een NIC verwijderen van een bestaande virtuele machine
 Als u een virtuele NIC van een bestaande VM wilt verwijderen, moet u de toewijzing van de VM ongedaan maken, de virtuele NIC verwijderen en vervolgens de VM starten.
 
-1. Hef de toewijzing van de virtuele machine op met [AzVM](/powershell/module/az.compute/stop-azvm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in *myResourceGroup*ongedaan gemaakt:
+1. Hef de toewijzing van de virtuele machine op met [AzVM](/powershell/module/az.compute/stop-azvm). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in *myResourceGroup* ongedaan gemaakt:
 
     ```powershell
     Stop-AzVM -Name "myVM" -ResourceGroupName "myResourceGroup"
@@ -189,7 +190,7 @@ Als u een virtuele NIC van een bestaande VM wilt verwijderen, moet u de toewijzi
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. Informatie over de NIC verwijderen met [Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface). In het volgende voor beeld wordt informatie over *myNic3*opgehaald:
+3. Informatie over de NIC verwijderen met [Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface). In het volgende voor beeld wordt informatie over *myNic3* opgehaald:
 
     ```powershell
     # List existing NICs on the VM if you need to determine NIC name
@@ -285,7 +286,7 @@ Azure wijst een standaard gateway toe aan de eerste (primaire) netwerk interface
               0.0.0.0          0.0.0.0      192.168.2.1      192.168.2.4   5015
     ```
 
-    De route die wordt vermeld bij *192.168.1.1* onder **Gateway**, is de route die standaard is voor de primaire netwerk interface. De route met *192.168.2.1* onder **Gateway**is de route die u hebt toegevoegd.
+    De route die wordt vermeld bij *192.168.1.1* onder **Gateway**, is de route die standaard is voor de primaire netwerk interface. De route met *192.168.2.1* onder **Gateway** is de route die u hebt toegevoegd.
 
 ## <a name="next-steps"></a>Volgende stappen
 Controleer de [grootte van Windows-vm's](../sizes.md) wanneer u een VM met meerdere nic's wilt maken. Let op het maximum aantal Nic's dat elke VM-grootte ondersteunt.

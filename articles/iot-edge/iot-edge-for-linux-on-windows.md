@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: kgremban
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 9d6bb9da67f66f46e5c72d5d64b8b6c111c98e08
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 63538661cceb7e1bdd4151a3592ccbd4de0033b0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215354"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612011"
 ---
 # <a name="what-is-azure-iot-edge-for-linux-on-windows-preview"></a>Wat is Azure IoT Edge voor Linux op Windows (preview)?
 
@@ -52,13 +52,11 @@ Zie [Windows 10 IOT](https://github.com/microsoft/Windows-IoT-Samples)-voor beel
 
 IoT Edge voor Linux in Windows is momenteel beschikbaar als [open bare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). De installatie-en beheer processen kunnen afwijken van de algemene beschik bare functies.
 
-Op dit moment maakt IoT Edge voor Linux op Windows gebruik van de Windows Insider preview-versie van het Windows-beheer centrum. Zie [Wat is het Windows Insider-programma?](https://insider.windows.com/about-windows-insider-program)voor meer informatie over het Windows Insider-programma en om te registreren.
-
 ## <a name="support"></a>Ondersteuning
 
 Gebruik de IoT Edge ondersteuning en feedback kanalen om hulp te krijgen bij IoT Edge voor Linux in Windows.
 
-**Fouten rapporteren** : fouten kunnen worden gerapporteerd op de [pagina kwesties](https://github.com/azure/iotedge/issues) van het open-source project IOT Edge. 
+**Fouten rapporteren** : fouten kunnen worden gerapporteerd op de [pagina kwesties](https://github.com/azure/iotedge/issues) van het open-source project IOT Edge. Fouten gerelateerd aan Azure IoT Edge voor Linux op Windows kunnen worden gerapporteerd op de [pagina met iotedge-eflow-problemen](https://github.com/azure/iotedge-eflow/issues).
 
 **Klanten ondersteuning van micro soft** : gebruikers die een [ondersteunings plan](https://azure.microsoft.com/support/plans/) hebben, kunnen het micro soft Customer Support-team benaderen door rechtstreeks vanuit de [Azure Portal](https://ms.portal.azure.com/signin/index/?feature.settingsportalinstance=mpac)een ondersteunings ticket te maken.
 

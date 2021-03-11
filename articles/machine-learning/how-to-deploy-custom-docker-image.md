@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 749ef16139bbab2742c43a81e985fb0a49e9393b
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 440723167ded15933ba46a3a58f9a873496bd6a7
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102519330"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609359"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-base-image"></a>Een model implementeren met behulp van een aangepaste docker-basis installatie kopie
 
@@ -354,4 +354,4 @@ Zie de sectie model registratie, profile ring en implementatie van de [cli-uitbr
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [waar u kunt implementeren en hoe u](how-to-deploy-and-where.md)dit kunt doen.
-* Leer hoe u [machine learning modellen traint en implementeert met behulp van Azure-pijp lijnen](/azure/devops/pipelines/targets/azure-machine-learning?view=azure-devops&preserve-view=true).
+* Leer hoe u [machine learning modellen traint en implementeert met behulp van Azure-pijp lijnen](/azure/devops/pipelines/targets/azure-machine-learning).

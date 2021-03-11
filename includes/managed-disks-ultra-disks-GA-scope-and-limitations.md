@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 26a5537496d9e881ece135437c403baf4a4fd67c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e94b14584f8eece3d772f67b680df4a2ffb8b5cd
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016626"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603338"
 ---
 Voor nu hebben Ultra disks de volgende beperkingen:
 
@@ -26,7 +26,7 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 
 |Regio's  |Redundantie opties  |
 |---------|---------|
-|Brazil South     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
+|Brazilië - zuid     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |India - centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Azië - oost     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Duitsland - west-centraal     |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
@@ -39,8 +39,8 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 |Australië - centraal    |Alleen enkele Vm's (beschikbaarheids sets en virtuele-machine schaal sets worden niet ondersteund)|
 |Australië - oost     |Drie beschikbaarheids zones         |
 |Azië - zuidoost    |Drie beschikbaarheids zones        |
-|Canada-centraal *     |Drie beschikbaarheids zones          |
-|Central US     |Drie beschikbaarheids zones          |
+|Canada - midden     |Drie beschikbaarheids zones          |
+|VS - centraal     |Drie beschikbaarheids zones          |
 |VS - oost     |Drie beschikbaarheids zones          |
 |VS - oost 2     |Drie beschikbaarheids zones         |
 |Frankrijk - centraal    |Twee beschikbaarheids zones        |
@@ -49,8 +49,6 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
 |Verenigd Koninkrijk Zuid    |Drie beschikbaarheids zones        |
 |Europa -west    | Drie beschikbaarheids zones|
 |VS - west 2    |Drie beschikbaarheids zones|
-
-\* Neem contact op met de ondersteuning van Azure om toegang te krijgen tot Beschikbaarheidszones voor deze regio.
 
 - Worden alleen ondersteund in de volgende VM-reeks:
     - [ESv3](../articles/virtual-machines/ev3-esv3-series.md#esv3-series)

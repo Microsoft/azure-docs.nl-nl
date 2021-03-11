@@ -4,13 +4,13 @@ description: Aangepaste onderdelen toevoegen aan HDInsight-clusters met behulp v
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, contperf-fy21q2
-ms.date: 09/02/2020
-ms.openlocfilehash: ed1277df0ebfa42d6ee95d58fa568241b291656b
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.date: 03/09/2021
+ms.openlocfilehash: 00ed8c26bbafeb94b1481e6157a242dad7ed84c6
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102434675"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102610260"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Azure HDInsight-clusters aanpassen met behulp van script acties
 
@@ -25,7 +25,7 @@ Een script actie is een bash script dat wordt uitgevoerd op de knoop punten in e
 - Moet worden opgeslagen op een URI die toegankelijk is vanuit het HDInsight-cluster. De volgende opslag locaties zijn mogelijk:
 
     - Voor normale (niet-ESP) clusters:
-      - Data Lake Storage Gen1-Gen2: de Service-Principal HDInsight gebruikt om toegang te krijgen tot Data Lake Storage moet lees toegang hebben tot het script. De URI-indeling voor scripts die zijn opgeslagen in Data Lake Storage Gen1 is `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file` . De URI-indeling voor Data Lake Storage Gen2 scripts is `abfs://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/<PATH>`
+      - Data Lake Storage Gen1-Gen2: de Service-Principal HDInsight gebruikt om toegang te krijgen tot Data Lake Storage moet lees toegang hebben tot het script. De URI-indeling voor scripts die zijn opgeslagen in Data Lake Storage Gen1 is `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file` . 
       - Een BLOB in een Azure Storage-account dat ofwel het primaire of extra opslag account voor het HDInsight-cluster is. Bij het maken van het cluster wordt aan HDInsight toegang verleend tot beide typen opslag accounts.
 
         > [!IMPORTANT]  

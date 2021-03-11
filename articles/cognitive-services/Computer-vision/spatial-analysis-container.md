@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 9989c6ea6b75203d43c37854caef7fdcbc321779
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 1a107f812ceb46649126bdbefcf3b828e1938ff3
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102519024"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612895"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -306,7 +306,7 @@ Installeer de 1.0.9-release:
 sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
 ```
 
-Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md?view=iotedge-2018-06).
+Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md).
 
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
@@ -468,7 +468,7 @@ Installeer de 1.0.9-release:
 sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
 ```
 
-Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md?view=iotedge-2018-06).
+Registreer vervolgens de virtuele machine als IoT Edge apparaat in uw IoT Hub-exemplaar met behulp van een [Connection String](../../iot-edge/how-to-register-device.md).
 
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 

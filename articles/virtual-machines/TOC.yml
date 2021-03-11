@@ -1231,16 +1231,24 @@
           href: ../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md?context=/azure/virtual-machines/context/context
     - name: Aanmelden voor Linux Active Directory
       href: ./linux/login-using-aad.md
-- name: Onderhoud en updates
+- name: Updates en onderhoud
   items:
-    - name: Overzicht
-      href: maintenance-and-updates.md
-    - name: Automatische patch-toepassing van VM-gast (preview)
-      href: automatic-vm-guest-patching.md
+    - name: Updates van gast besturingssystemen
+      items:
+        - name: Patching voor het gast besturingssysteem
+          items:
+            - name: Automatische patch-toepassing van VM-gast (preview)
+              href: automatic-vm-guest-patching.md
+            - name: Hotpatching
+              href: ../automanage/automanage-hotpatch.md?context=/azure/virtual-machines/context/context
+        - name: Upgrade van automatische installatie kopie van besturings systeem
+          href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
     - name: Upgrade van automatische extensie (preview-versie)
       href: automatic-extension-upgrade.md
-    - name: Onderhoudsbeheer
+    - name: Onderhoud
       items:
+        - name: Overzicht
+          href: maintenance-and-updates.md
         - name: Onderhoudsmeldingen
           items:
             - name: Overzicht
@@ -1251,7 +1259,7 @@
               href: maintenance-notifications-portal.md
             - name: PowerShell
               href: maintenance-notifications-powershell.md
-        - name: Platformonderhoud
+        - name: Onderhoudsbeheer
           items:
             - name: Overzicht
               href: maintenance-control.md
@@ -1273,16 +1281,6 @@
               href: ./linux/tutorial-config-management.md
             - name: Windows
               href: ./windows/tutorial-config-management.md
-        - name: Upgrades voor besturingssysteeminstallatiekopieën van virtuele-machineschaalset
-          items:
-            - name: Automatische upgrades voor het besturingssysteem
-              href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md?context=/azure/virtual-machines/context/context
-            - name: Onderhoudsbeheer
-              items:
-                - name: Overzicht (Preview)
-                  href: virtual-machine-scale-sets-maintenance-control.md
-                - name: PowerShell (Preview)
-                  href: virtual-machine-scale-sets-maintenance-control-powershell.md
 - name: Bewaking
   items:
     - name: Overzicht

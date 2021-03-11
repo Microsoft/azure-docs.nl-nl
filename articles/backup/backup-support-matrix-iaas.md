@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: 2536ae0d33767de5ad53740407622e67c582cc37
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 82de73944bd833ec5f921e07a29960ac6d175f8d
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101710665"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609784"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -72,6 +72,7 @@ Dit wordt ondersteund als u een back-up wilt maken van Linux-machines.
 Back-ups van virtuele Linux-machines maken met de Azure VM-agent van Linux | Bestands consistente back-up.<br/><br/> App-consistente back-up met behulp van [aangepaste scripts](backup-azure-linux-app-consistent.md).<br/><br/> Tijdens het herstellen kunt u een nieuwe virtuele machine maken, een schijf herstellen en gebruiken om een virtuele machine te maken of een schijf herstellen en gebruiken om een schijf op een bestaande virtuele machine te vervangen. U kunt ook afzonderlijke bestanden en mappen herstellen.
 Back-ups maken van virtuele Linux-machines met een MARS-agent | Wordt niet ondersteund.<br/><br/> De MARS-agent kan alleen worden geïnstalleerd op Windows-machines.
 Back-ups maken van virtuele Linux-machines met DPM/MABS | Wordt niet ondersteund.
+Back-ups maken van virtuele Linux Azure-machines met docker-koppel punten | Op dit moment biedt Azure Backup geen ondersteuning voor de uitsluiting van docker-koppel punten, omdat deze elke keer worden gekoppeld op verschillende paden.
 
 ## <a name="operating-system-support-linux"></a>Ondersteuning voor besturings systeem (Linux)
 
@@ -170,6 +171,7 @@ Gedeelde opslag| Het maken van back-ups van virtuele machines met Cluster Shared
 [Gedeelde schijven](../virtual-machines/disks-shared-enable.md) | Wordt niet ondersteund.
 Ultra-SSD schijven | Wordt niet ondersteund. Zie deze [beperkingen](selective-disk-backup-restore.md#limitations)voor meer informatie.
 [Tijdelijke schijven](../virtual-machines/managed-disks-overview.md#temporary-disk) | Er wordt geen back-up van de tijdelijke schijven gemaakt door Azure Backup.
+NVMe/kortstondige schijven | Wordt niet ondersteund.
 
 ## <a name="vm-network-support"></a>VM-netwerk ondersteuning
 

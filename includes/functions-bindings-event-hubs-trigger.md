@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 03/05/2019
 ms.author: cshoe
-ms.openlocfilehash: 0cd514c852e13b83a679821ca2d940e4ed112bd8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: 145db7693db126d4e114e8c8a885ea7fd7809e69
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95554455"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608904"
 ---
 Gebruik de functietrigger om te reageren op een gebeurtenis die naar een event hub-gebeurtenisstroom wordt verzonden. U moet leestoegang hebben tot de onderliggende event hub om de trigger in te stellen. Wanneer de functie wordt geactiveerd, wordt het aan de functie doorgegeven bericht getypeerd als een tekenreeks.
 
@@ -360,9 +360,59 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**eventHubName** |**EventHubName** | Functions 2.x en hoger. De naam van de event hub. Wanneer de event hub-naam ook aanwezig is in de verbindingsreeks, overschrijft die waarde deze eigenschap tijdens runtime. Hiernaar kan worden verwezen via [app-instellingen](../articles/azure-functions/functions-bindings-expressions-patterns.md#binding-expressions---app-settings) `%eventHubName%` |
 |**consumerGroup** |**ConsumerGroup** | Een optionele eigenschap waarmee de [consumentengroep](../articles/event-hubs/event-hubs-features.md#event-consumers) wordt ingesteld die wordt gebruikt om abonnementen te nemen op gebeurtenissen in de hub. Als deze wordt weggelaten, wordt de `$Default`-consumentengroep gebruikt. |
 |**cardinality** | N.v.t. | Wordt gebruikt voor alle niet- C#-talen. Stel in op `many` om batchverwerking mogelijk te maken.  Als deze eigenschap wordt weggelaten of ingesteld op `one`, wordt er één bericht doorgegeven aan de functie.<br><br>In C# wordt deze eigenschap automatisch toegewezen wanneer de trigger een matrix voor het type heeft.|
-|**connection** |**Verbinding** | De naam van een app-instelling die de verbindingsreeks naar de naamruimte van de event hub bevat. Kopieer deze verbindingsreeks door op de knop **Verbindingsgegevens** voor de [naamruimte](../articles/event-hubs/event-hubs-create.md#create-an-event-hubs-namespace) te klikken, en niet op de event hub zelf. Deze verbindingsreeks moet minimaal leesmachtigingen hebben om de trigger te activeren.|
+|**connection** |**Verbinding** | De naam van een app-instelling die de verbindingsreeks naar de naamruimte van de event hub bevat. Kopieer deze verbindingsreeks door op de knop **Verbindingsgegevens** voor de [naamruimte](../articles/event-hubs/event-hubs-create.md#create-an-event-hubs-namespace) te klikken, en niet op de event hub zelf. Deze verbindingsreeks moet minimaal leesmachtigingen hebben om de trigger te activeren.<br><br>Als u [versie 5. x of hoger van de extensie](../articles/azure-functions/functions-bindings-event-hubs.md#event-hubs-extension-5x-and-higher)gebruikt in plaats van een Connection String, kunt u een verwijzing naar een configuratie sectie opgeven waarmee de verbinding wordt gedefinieerd. Zie [verbindingen](../articles/azure-functions/functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../articles/azure-functions/../../includes/functions-app-settings-local.md)]
+
+## <a name="usage"></a>Gebruik
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+### <a name="default"></a>Standaard
+
+U kunt de volgende parameter typen gebruiken voor de trigger Event hub:
+
+* `string`
+* `byte[]`
+* `POCO`
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+
+### <a name="additional-types"></a>Aanvullende typen 
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+
+- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
+
+# <a name="c-script"></a>[C# Script](#tab/csharp-script)
+
+### <a name="default"></a>Standaard
+
+U kunt de volgende parameter typen gebruiken voor de trigger Event hub:
+
+* `string`
+* `byte[]`
+* `POCO`
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+
+### <a name="additional-types"></a>Aanvullende typen 
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+
+- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
+
+# <a name="java"></a>[Java](#tab/java)
+
+Raadpleeg het [voor beeld](#example) van Java-trigger voor meer informatie.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Raadpleeg het [voor beeld](#example) van Java script-trigger voor meer informatie.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Raadpleeg het [voor beeld](#example) van python-trigger voor meer informatie.
+
+
+---
+
 
 ## <a name="event-metadata"></a>Gebeurtenismetagegevens
 
@@ -379,10 +429,3 @@ De Event Hubs-trigger biedt verschillende [metagegevenseigenschappen](../article
 |`SystemProperties`|`IDictionary<String,Object>`|De systeemeigenschappen, inclusief de gebeurtenisgegevens.|
 
 Zie [codevoorbeelden](#example) die gebruikmaken van deze eigenschappen eerder in dit artikel.
-
-## <a name="hostjson-properties"></a>host.json-eigenschappen
-<a name="host-json"></a>
-
-Het [host.json](../articles/azure-functions/functions-host-json.md#eventhub)-bestand bevat instellingen die het gedrag van Event Hubs-triggers regelen. De configuratie verschilt afhankelijk van de versie van Azure Functions.
-
-[!INCLUDE [functions-host-json-event-hubs](../articles/azure-functions/../../includes/functions-host-json-event-hubs.md)]

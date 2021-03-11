@@ -7,12 +7,12 @@ ms.topic: article
 author: emuench
 ms.author: navits
 ms.date: 07/17/2020
-ms.openlocfilehash: b9685081c0beacd745a83067b9d9876384933377
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9be90cdac742a581c6346f923f44e769c8a70f76
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131238"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102613626"
 ---
 # <a name="appsource-dynamics-365-finance-and-operations-functional-validation"></a>AppSource Dynamics 365 Finance and Operations functionele validatie
 
@@ -50,13 +50,13 @@ Als u een laatste beoordelings oproep wilt plannen, neemt u contact op [appsourc
 
 2. Neem de volgende scherm afbeeldingen van de [LCS](https://lcs.dynamics.com/) -omgeving op die overeenkomen met de aanbieding of oplossing die u wilt publiceren. Ze moeten duidelijk genoeg zijn voor het certificerings team om de tekst te lezen. Sla de scherm afbeeldingen op als JPG-bestanden. U kunt [appSourceCRM@microsoft.com](mailto:appSourceCRM@microsoft.com) toestemming geven voor uw LCS-omgeving, zodat we de installatie kunnen controleren in plaats van scherm afbeeldingen te bieden.
 
-    1. Ga naar **LCS** de  >  Project bibliotheek van LCS **Business Process Modeler**  >  **Project library** . Maak scherm opnamen van alle proces stappen. Voeg de **diagrammen** en de **gereviseerde** kolommen toe, zoals hier wordt weer gegeven:
+    1. Ga naar de  >  Project bibliotheek van LCS **Business Process Modeler**  >  . Maak scherm opnamen van alle proces stappen. Voeg de **diagrammen** en de **gereviseerde** kolommen toe, zoals hier wordt weer gegeven:
 
        :::image type="content" source="media/dynamics-365-finance-operations/project-library.png" alt-text="Hiermee wordt het venster Project bibliotheek weer gegeven.":::
 
-      2. Ga naar **LCS** het  >  **Solution Management**  >  **test pakket** voor de oplossing voor het beheer van LCS-oplossingen. Maak scherm opnamen met het overzicht en de inhoud van het pakket, zoals in deze voor beelden wordt weer gegeven:
+      2. Ga naar het  >    >  **test pakket** voor de oplossing voor het beheer van LCS-oplossingen. Maak scherm opnamen met het overzicht en de inhoud van het pakket, zoals in deze voor beelden wordt weer gegeven:
 
-    | Veld | Installatiekopie <img src="" width="400px">|
+    | Veld | Installatiekopie |
     | --- | --- |
     | Overzicht van pakket | [![Scherm opname van het venster pakket overzicht.](media/dynamics-365-finance-operations/package-overview-45.png)](media/dynamics-365-finance-operations/package-overview.png#lightbox) |
     | <ul><li>Oplossings fiatteurs</li></ul> | [![Scherm overzicht van package](media/dynamics-365-finance-operations/solution-approvers-45.png)](media/dynamics-365-finance-operations/solution-approvers.png#lightbox) |

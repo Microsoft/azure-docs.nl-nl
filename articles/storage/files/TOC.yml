@@ -231,6 +231,8 @@
               href: storage-files-migration-linux-hybrid.md
             - name: Migreren van on-premises NAS naar een hybride bestandsserver met Azure File Sync
               href: storage-files-migration-nas-hybrid.md
+            - name: Migreren van een on-premises NAS naar een hybride Bestands server met DataBox
+              href: storage-files-migration-nas-hybrid-databox.md
         - name: Uit StorSimple
           items:
             - name: Migratiehandleiding voor StorSimple 8100 en 8600

@@ -1,25 +1,26 @@
 ---
 title: 'Zelfstudie: Virtuele Linux-machines maken en beheren met de Azure CLI'
 description: In deze zelfstudie leert u hoe u Azure CLI gebruikt voor het maken en beheren van virtuele Linux-machines in Azure
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
 tags: azure-resource-manager
 ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: aeb44a52dc7a83321752bb00e09270fe7bfd0bbe
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.openlocfilehash: 77213fe83a56a33f4d10658f85465349949be792
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972183"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555598"
 ---
 # <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Zelfstudie: Virtuele Linux-machines maken en beheren met de Azure CLI
 

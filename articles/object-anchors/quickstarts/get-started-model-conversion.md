@@ -7,12 +7,12 @@ ms.author: crtreasu
 ms.date: 02/22/2021
 ms.topic: quickstart
 ms.service: azure-object-anchors
-ms.openlocfilehash: 93443a321f22d232f8b2bfa6a0fe5a05a5e18175
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 69d23b9d02eb176a2e42985ef5c3673e83d9bb7e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748548"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102607897"
 ---
 # <a name="quickstart-create-an-object-anchors-model-from-a-3d-model"></a>Quick Start: een object ankers model maken op basis van een 3D-model
 
@@ -102,7 +102,7 @@ U kunt nu door gaan en uw 3D-model converteren.
 
     | Veld                    | Beschrijving                       |
     | ---                      | ---                               |
-    | InputAssetPath           | Absoluut pad naar een 3D-model op de lokale computer (er is een voorbeeld model in de `assets/models` map die u kunt gebruiken). Ondersteunde bestands indelingen zijn `fbx` , `ply` , `obj` , en `glb` `gltf` . |
+    | InputAssetPath           | Het absolute pad naar een 3D-model op de lokale computer. Ondersteunde bestands indelingen zijn `fbx` , `ply` , `obj` , en `glb` `gltf` . |
     | AssetDimensionUnit       | De meet eenheid van uw 3D-model. Alle ondersteunde meet eenheden kunnen worden geopend met behulp van de `Azure.MixedReality.ObjectAnchors.Conversion.AssetLengthUnit` inventarisatie. |
     | Gelopen                  | De richting van de ZWAARTE vector van het 3D-model. Deze 3D-vector biedt de neerwaartse richting van het coördinaten systeem van uw model. Als dit bijvoorbeeld negatief is `y` , is de richting van het model in de 3D-ruimte `Vector3(0.0f, -1.0f, 0.0f)` . |
 

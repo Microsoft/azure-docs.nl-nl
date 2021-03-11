@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 03/03/2021
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 8dc290ed59a7738a1e2263b4203ab0d5be338ec8
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 5af8294518759181326e7736ef755f0a83581014
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102122269"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564953"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Continue implementatie naar Azure App Service
 
@@ -160,7 +160,7 @@ Voor Windows-apps kunt u een continue implementatie hand matig configureren vanu
 
 ## <a name="more-resources"></a>Meer bronnen
 
-* [Implementeren van Azure-pijp lijnen naar Azure-app Services](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps?view=azure-devops&preserve-view=true)
+* [Implementeren van Azure-pijp lijnen naar Azure-app Services](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps)
 * [Veelvoorkomende problemen met doorlopende implementatie onderzoeken](https://github.com/projectkudu/kudu/wiki/Investigating-continuous-deployment)
 * [Azure PowerShell gebruiken](/powershell/azure/)
 * [Project Kudu](https://github.com/projectkudu/kudu/wiki)

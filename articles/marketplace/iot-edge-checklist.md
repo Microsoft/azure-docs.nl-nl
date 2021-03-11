@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 03/01/2021
-ms.openlocfilehash: 4782e6c0ed866c467051fc1811a60df0010a3db1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c1d4c9be1f76e62be3c17d4dec22479db003b77a
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101744672"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608254"
 ---
 # <a name="pre-certification-checklist-for-iot-edge-modules"></a>Controle lijst voor de pre-certificering voor IoT Edge-modules
 
@@ -74,6 +74,7 @@ Controleer het volgende:
 - Connection string voor lead beheer is aanwezig.
 - Privacybeleid aanwezig
 - Gebruiksvoorwaarden aanwezig
+- Ondersteunde IoT Edge apparaat-koppeling toevoegen vanuit [Azure IOT-apparaatinstantie](https://devicecatalog.azure.com/devices?certificationBadgeTypes=IoTEdgeCompatible) 
 
 ## <a name="next-steps"></a>Volgende stappen
 

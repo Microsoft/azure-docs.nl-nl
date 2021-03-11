@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
-ms.date: 11/18/2020
-ms.openlocfilehash: 862d33e523562511796999d82b67d2b4b11efaf3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/10/2021
+ms.openlocfilehash: 5879c9107a0ab5a2ef150d119e8b5ac8e16ac01d
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101690606"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609920"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Automatische back-ups-Azure SQL Database & SQL Managed instance
 
@@ -140,9 +140,12 @@ Voor zowel SQL Database als SQL Managed Instance kunt u een volledige back-up vo
 
 Voor meer informatie over LTR, Zie [lange termijn retentie van back-ups](long-term-retention-overview.md).
 
-## <a name="storage-costs"></a>Opslagkosten
+## <a name="backup-storage-costs"></a>Kosten voor back-upopslag
 
 De prijs voor back-upopslag varieert en is afhankelijk van uw aankoop model (DTU of vCore), de gekozen optie voor opslag redundantie van back-ups en ook in uw regio. De back-upopslag wordt in rekening gebracht per GB/maand verbruikt voor prijzen Zie [Azure SQL database prijs](https://azure.microsoft.com/pricing/details/sql-database/single/) pagina en [prijs pagina Azure SQL Managed instance](https://azure.microsoft.com/pricing/details/azure-sql/sql-managed-instance/single/) .
+
+> [!NOTE]
+> In azure factuur wordt alleen de overtollige back-upopslag weer gegeven, niet het volledige verbruik van back-upopslag. Als u bijvoorbeeld in een hypothetisch scenario hebt ingericht 4 TB van gegevens opslag, krijgt u 4 TB aan beschik bare opslag ruimte voor back-ups. Als u de totale hoeveelheid 5,8 TB aan opslag ruimte voor back-ups hebt gebruikt, wordt in azure factuur slechts 1,8 TB weer gegeven, omdat alleen overtollige back-upopslag wordt gefactureerd.
 
 ### <a name="dtu-model"></a>DTU-model
 
@@ -446,7 +449,7 @@ Volgende nieuwe ingebouwde beleids regels worden toegevoegd, die kunnen worden t
 Voor het afdwingen van vereisten voor gegevens locatie op een organisatie niveau, kunnen deze beleids regels worden toegewezen aan een abonnement. Nadat deze zijn toegewezen op abonnements niveau, kunnen gebruikers in het gegeven abonnement geen data base of een beheerd exemplaar maken met geografisch redundante back-upopslag via Azure Portal of Azure PowerShell. 
 
 > [!IMPORTANT]
-> Azure-beleid wordt niet afgedwongen bij het maken van een Data Base via T-SQL. Als u gegevens locatie wilt afdwingen bij het maken van een Data Base met behulp van T-SQL, [gebruikt u ' local ' of ' zone ' als invoer voor BACKUP_STORAGE_REDUNDANCY para meter in de instructie Create Data Base](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current#create-database-using-zone-redundancy-for-backups).
+> Azure-beleid wordt niet afgedwongen bij het maken van een Data Base via T-SQL. Als u gegevens locatie wilt afdwingen bij het maken van een Data Base met behulp van T-SQL, [gebruikt u ' local ' of ' zone ' als invoer voor BACKUP_STORAGE_REDUNDANCY para meter in de instructie Create Data Base](/sql/t-sql/statements/create-database-transact-sql#create-database-using-zone-redundancy-for-backups).
 
 Meer informatie over het toewijzen van beleid met behulp van de [Azure Portal](../../governance/policy/assign-policy-portal.md) of [Azure PowerShell](../../governance/policy/assign-policy-powershell.md)
 
@@ -458,4 +461,5 @@ Meer informatie over het toewijzen van beleid met behulp van de [Azure Portal](.
 - Meer informatie over het herstellen van [een Data Base naar een bepaald tijdstip met behulp van Power shell](scripts/restore-database-powershell.md).
 - Voor informatie over het configureren, beheren en herstellen van een lange termijn retentie van automatische back-ups in Azure Blob-opslag met behulp van de Azure Portal, Zie [lange termijn retentie van back-ups beheren met behulp van de Azure Portal](long-term-backup-retention-configure.md).
 - Zie [lange termijn retentie van back-ups beheren met Power shell](long-term-backup-retention-configure.md)voor meer informatie over het configureren, beheren en herstellen van een lange termijn retentie van automatische back-ups in Azure Blob-opslag met behulp van Power shell.
+- Zie [back-upopslag verbruik op beheerde instantie wordt uitgelegd](https://aka.ms/mi-backup-explained)voor meer informatie over het gebruik van back-upopslag in Azure SQL Managed instance.
 - Zie voor meer informatie over het afstemmen van back-upopslag en-kosten voor Azure SQL Managed instance de [kosten voor back-upopslag verfijnen op een beheerd exemplaar](https://aka.ms/mi-backup-tuning).

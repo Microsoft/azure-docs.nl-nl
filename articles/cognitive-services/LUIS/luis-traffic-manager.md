@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 08/20/2019
-ms.openlocfilehash: 6fc5bea71909d0e17b4ef0256ab0cad644dacbb3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 37c4bd2af080a76e93bc9599f06e4d502985979f
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95993819"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609648"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Microsoft Azure Traffic Manager gebruiken voor het beheren van eindpunt quotum voor sleutels
 Language Understanding (LUIS) biedt de mogelijkheid om het quotum voor eindpunt aanvragen te verhogen buiten het quotum van een enkele sleutel. Dit doet u door meer sleutels te maken voor LUIS en deze toe te voegen aan de LUIS-toepassing op de pagina **publiceren** in de sectie **resources en sleutels** .
@@ -371,7 +371,7 @@ Verwijder de twee LUIS-eindpunt sleutels, de drie Traffic Manager profielen en d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bekijk de [middleware](/azure/bot-service/bot-builder-create-middleware?tabs=csaddmiddleware%252ccsetagoverwrite%252ccsmiddlewareshortcircuit%252ccsfallback%252ccsactivityhandler&view=azure-bot-service-4.0) -opties in BotFramework v4 om te begrijpen hoe deze Traffic Management-code kan worden toegevoegd aan een BotFramework-bot.
+Bekijk de [middleware](/azure/bot-service/bot-builder-create-middleware?tabs=csaddmiddleware%252ccsetagoverwrite%252ccsmiddlewareshortcircuit%252ccsfallback%252ccsactivityhandler) -opties in BotFramework v4 om te begrijpen hoe deze Traffic Management-code kan worden toegevoegd aan een BotFramework-bot.
 
 [traffic-manager-marketing]: https://azure.microsoft.com/services/traffic-manager/
 [traffic-manager-docs]: ../../traffic-manager/index.yml

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: a84942337b3c8eb5f7509f61f9ba5bcd564d8bb3
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: ceac1e7b5e8efa7e87ecf6e1f4c9dd8286c87e98
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653075"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614068"
 ---
 # <a name="team-data-science-process-for-developer-operations"></a>Team data Science process voor ontwikkelaars bewerkingen
 
@@ -62,7 +62,7 @@ De volgende tabel bevat richt lijnen op basis van een niveau om de DevOps-doel s
 |  |  | [In deze resource wordt uitgelegd hoe u voorspellende analytische experimenten codeert en maakt met behulp van het op het web gebaseerde Azure Machine Learning Studio (klassiek)](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio) | Azure Machine Learning Studio (klassiek) | Behaald | Software ontwikkeling |
 |  |  | [Deze verwijzing bevat een lijst en een studie koppeling naar alle ontwikkel tools op het Data Science Virtual Machine in azure](../data-science-virtual-machine/overview.md) | Data Science Virtual Machine | Behaald | Software ontwikkeling, data Science |
 |  |  | [Alle verwijzingen in dit Azure Security Trust Center lezen en begrijpen voor beveiliging, privacy en naleving-zeer belang rijk](https://azure.microsoft.com/support/trust-center/) | Azure-beveiliging | Gevorderd | Systeem architectuur, ervaring op het gebied van de ontwikkeling van beveiliging |
-|  | Ontwikkelen | [In deze cursus leert u hoe u DevOps practices kunt inschakelen met Visual Studio Codespace build](https://mva.microsoft.com/training-courses/enabling-devops-practices-with-visual-studio-online-build-12478?l=ipCj6MuNB_6305094681) | Visual Studio Codespace | Behaald | Software ontwikkeling, vertrouwdheid met een SDLC |
+|  | Build | [In deze cursus leert u hoe u DevOps practices kunt inschakelen met Visual Studio Codespace build](https://mva.microsoft.com/training-courses/enabling-devops-practices-with-visual-studio-online-build-12478?l=ipCj6MuNB_6305094681) | Visual Studio Codespace | Behaald | Software ontwikkeling, vertrouwdheid met een SDLC |
 |  |  | [In deze naslag wordt uitgelegd hoe u met Visual Studio compileert en bouwt](/previous-versions/visualstudio/visual-studio-2015/ide/compiling-and-building-in-visual-studio) | Visual Studio | Gevorderd | Software ontwikkeling, vertrouwdheid met een SDLC |
 |  |  | [In deze naslag wordt uitgelegd hoe u processen kunt organiseren, zoals software builds met Runbooks](/system-center/orchestrator/automate-runbooks) | System Center | Behaald | Ervaring met System Center Orchestrator |
 |  | Testen | [Gebruik deze Naslag informatie om inzicht te krijgen in het gebruik van Visual Studio Codespace voor test case management](http://www.almguide.com/2014/07/visual-studio-online-test-case-management/) | Visual Studio Codespace | Behaald | Software ontwikkeling, vertrouwdheid met een SDLC |
@@ -74,10 +74,10 @@ De volgende tabel bevat richt lijnen op basis van een niveau om de DevOps-doel s
 |  |  | [In deze verwijzing wordt uitgelegd hoe u een gegevens pijplijn voor uw oplossing maakt, die u als een JSON-sjabloon kunt opslaan als een ' pakket '](../../data-factory/v1/data-factory-introduction.md) | Azure Data Factory | Gevorderd | Algemene achtergrond van computing, gegevens project ervaring |
 |  |  | [In dit onderwerp wordt de structuur van een Azure Resource Manager sjabloon beschreven](../../azure-resource-manager/templates/template-syntax.md) | Azure Resource Manager | Gevorderd | Vertrouwd zijn met het Microsoft Azure-platform |
 |  |  | [DSC is een beheer platform in Power shell waarmee u uw IT-en ontwikkelings infrastructuur kunt beheren met configuratie als code, opgeslagen als een pakket. Dit is een overzicht van dit onderwerp](/powershell/scripting/dsc/overview/overview) | Configuratie van desired state power shell | Gevorderd | Power shell-code ring, vertrouwd met bedrijfs architecturen, Scripting |
-|  | Release | [Dit hoofd artikel bevat concepten voor het bouwen, testen en vrijgeven van CI/CD-omgevingen](/azure/devops/pipelines/?view=azure-devops) | Visual Studio Codespace | Behaald | Software ontwikkeling, vertrouwdheid met CI/CD-omgevingen, vertrouwd met een SDLC |
+|  | Release | [Dit hoofd artikel bevat concepten voor het bouwen, testen en vrijgeven van CI/CD-omgevingen](/azure/devops/pipelines/) | Visual Studio Codespace | Behaald | Software ontwikkeling, vertrouwdheid met CI/CD-omgevingen, vertrouwd met een SDLC |
 |  |  | [Gebruik deze vorige referentie voor Runbooks om release beheer te automatiseren met System Center](/system-center/orchestrator/automate-runbooks) | System Center | Behaald | Ervaring met System Center Orchestrator |
 |  |  | [Dit artikel helpt u bij het bepalen van de beste optie voor het implementeren van de bestanden voor uw web-app, back-end van mobiele apps of API-app voor Azure App Service, en u kunt u vervolgens naar de juiste bronnen begeleiden met specifieke instructies voor uw voorkeurs optie](../../app-service/deploy-local-git.md) | Microsoft Azure-implementatie | Gevorderd | Software ontwikkeling, ervaring met het Microsoft Azure platform |
-|  | Controleren | [In deze referentie wordt uitgelegd Application Insights en hoe u deze kunt toevoegen aan uw geavanceerde analyse oplossingen](../../azure-monitor/app/app-insights-overview.md) | Application Insights | Gevorderd | Software ontwikkeling, vertrouwd met het Microsoft Azure platform |
+|  | Monitor | [In deze referentie wordt uitgelegd Application Insights en hoe u deze kunt toevoegen aan uw geavanceerde analyse oplossingen](../../azure-monitor/app/app-insights-overview.md) | Application Insights | Gevorderd | Software ontwikkeling, vertrouwd met het Microsoft Azure platform |
 |  |  | [In dit onderwerp worden basis concepten uitgelegd over Operations Manager voor de beheerder die de Operations Manager-infra structuur en de operator die de geavanceerde analyse oplossing bewaakt en ondersteunt.](/previous-versions/system-center/system-center-2012-R2/hh230741(v=sc.12)) | System Center | Behaald | Vertrouwd met bedrijfs bewaking, System Center Operations Manager |
 |  |  | [In dit blog bericht wordt uitgelegd hoe u de Azure Data Factory kunt gebruiken om de Advanced Analytics-pijp lijn te bewaken en te beheren](https://azure.microsoft.com/blog/azure-data-factory-updates-monitoring-and-management-enhancements/) | Azure Data Factory | Gevorderd | Vertrouwdheid met Azure Data Factory |
 |  |  | [In deze video ziet u hoe u een logboek bewaakt met Azure Monitor-logboeken](https://channel9.msdn.com/Shows/Data-Exposed/Enterprise-HDInsight-Monitoring-with-Operations-Management-Suite) | Azure-logboeken, Power shell | Behaald | Vertrouwd met het Azure-platform |

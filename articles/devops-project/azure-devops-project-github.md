@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 03/24/2020
 author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 41f2ee9806b8f6818f2b2dd7a48920ac9907ca79
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: c03ba657ac264b72d035f28956354398421ed2f9
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91854644"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102566597"
 ---
 # <a name="create-a-cicd-pipeline-for-github-repo-using-azure-devops-starter"></a>Een CI/CD-pijplijn voor een GitHub-opslagplaats maken met Azure DevOps Starter
 
@@ -55,7 +55,7 @@ In Azure DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure Pipelines. U k
 
 1. Selecteer **GitHub** of een externe **Git**-opslagplaats voor uw code. Voor deze zelfstudie selecteert u **GitHub**. Mogelijk moet u zich de eerste keer bij GitHub verifiëren om Azure toegang te geven tot uw GitHub-opslagplaats.
 
-1. Selecteer een **opslagplaats** en een **vertakking**en selecteer vervolgens **Volgende**.
+1. Selecteer een **opslagplaats** en een **vertakking** en selecteer vervolgens **Volgende**.
 
 1. Als u Docker-containers gebruikt, wijzigt u **App geconverteerd voor Docker-uitvoering** in **Ja**. Voor deze zelfstudie laat u de instelling staan op **Nee** en selecteert u vervolgens **Volgende**. Als u meer informatie wilt over het gebruik van Docker-containers, houdt u de muisaanwijzer op het pictogram **i**.
 
@@ -118,7 +118,7 @@ Toen u het CI/CD-proces in deze zelfstudie configureerde, zijn er automatisch ee
 Voor meer informatie over de CI/CD-pijplijn raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [Een CD-pijplijn (continue implementatie) met meerdere fasen definiëren](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)
+> [Een CD-pijplijn (continue implementatie) met meerdere fasen definiëren](/azure/devops/pipelines/release/define-multistage-release-process)
 
 Zie voor meer informatie over toepassingsbewaking:
   

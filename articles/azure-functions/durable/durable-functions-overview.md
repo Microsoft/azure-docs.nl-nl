@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 12/23/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 2079a3a7c9ce6817186e743bb09d31facdecf0e7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 15e1dff37e1782baf5740a3fb35119bbbbffc297
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97931718"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558794"
 ---
 # <a name="what-are-durable-functions"></a>Wat is Durable Functions?
 
@@ -23,7 +23,7 @@ Durable Functions ondersteunt momenteel de volgende talen:
 
 * **C#**: zowel [vooraf gecompileerde klassebibliotheken](../functions-dotnet-class-library.md) als [C#-script](../functions-reference-csharp.md).
 * **JavaScript**: alleen ondersteund voor versie 2.x van de Azure Functions-runtime. Versie 1.7.0 of hoger van de Durable Functions-extensie vereist. 
-* **Python**: vereist versie 2.3.1 of hoger van de Durable Functions-extensie. Ondersteuning voor Durable Functions is momenteel beschikbaar als openbare preview.
+* **Python**: vereist versie 2.3.1 of hoger van de Durable Functions-extensie.
 * **F#**: vooraf gecompileerde klassebibliotheken en F#-script. F#-script wordt alleen ondersteund voor versie 1.x van de Azure Functions-runtime.
 * **PowerShell**: ondersteuning voor Durable Functions is momenteel beschikbaar als openbare preview. Wordt alleen ondersteund voor versie 3.x van de Azure Functions-runtime en PowerShell 7. Versie 2.2.2 of hoger van de Durable Functions-extensie vereist. Alleen de volgende patronen worden momenteel ondersteund: [Functiekoppeling](#chaining), [uit-/inwaaieren](#fan-in-out) [asynchrone HTTP-API's](#async-http).
 

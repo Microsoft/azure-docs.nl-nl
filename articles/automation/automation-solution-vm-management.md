@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: e58f63b6ed7fb26a4e3b3069773810c5e5b7cdc3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e9a5427f7c3a057f291067ac83d3d9032d7e693d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101732272"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559355"
 ---
 # <a name="startstop-vms-during-off-hours-overview"></a>Overzicht van VM's buiten bedrijfsuren starten/stoppen
 
-Met de functie VM's buiten bedrijfsuren starten/stoppen worden de ingeschakelde Azure-Vm's gestart of gestopt. Hiermee worden computers op door de gebruiker gedefinieerde planningen gestart of gestopt, vindt u inzichten via Azure Monitor-logboeken en verzendt u optionele e-mail berichten met behulp van [actie groepen](../azure-monitor/alerts/action-groups.md). De functie kan worden ingeschakeld op zowel Azure Resource Manager als klassieke Vm's voor de meeste scenario's. 
+Met de functie VM's buiten bedrijfsuren starten/stoppen worden de ingeschakelde Azure-Vm's gestart of gestopt. Hiermee worden computers op door de gebruiker gedefinieerde planningen gestart of gestopt, vindt u inzichten via Azure Monitor-logboeken en verzendt u optionele e-mail berichten met behulp van [actie groepen](../azure-monitor/alerts/action-groups.md). De functie kan worden ingeschakeld op zowel Azure Resource Manager als klassieke Vm's voor de meeste scenario's.
 
 Deze functie maakt gebruik van de cmdlet [Start-AzVm](/powershell/module/az.compute/start-azvm) om vm's te starten. Er wordt gebruikgemaakt van [Stop-AzVM](/powershell/module/az.compute/stop-azvm) voor het stoppen van vm's.
 
@@ -34,6 +34,9 @@ Hier volgen enkele beperkingen met betrekking tot de huidige functie:
 
 - Het beheert Vm's in een wille keurige regio, maar kan alleen worden gebruikt in hetzelfde abonnement als uw Azure Automation-account.
 - Het is beschikbaar in Azure en Azure Government voor elke regio die een Log Analytics-werk ruimte, een Azure Automation-account en waarschuwingen ondersteunt. Azure Government regio's ondersteunen momenteel geen e-mail functionaliteit.
+
+> [!NOTE]
+> Voordat u deze versie installeert, willen we u weten over de [volgende versie](https://github.com/microsoft/startstopv2-deployments), die nu in preview is.  Deze nieuwe versie (v2) biedt dezelfde functionaliteit als deze, maar is ontworpen om te profiteren van de nieuwe technologie in Azure. Er worden enkele van de vaakst aangevraagde functies van klanten toegevoegd, zoals ondersteuning voor meerdere abonnementen van één start/stop-exemplaar.
 
 ## <a name="prerequisites"></a>Vereisten
 

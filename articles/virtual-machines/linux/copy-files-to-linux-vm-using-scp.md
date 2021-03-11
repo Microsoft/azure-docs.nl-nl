@@ -2,18 +2,19 @@
 title: Bestanden verplaatsen naar en van virtuele machines van Azure Linux met SCP
 description: Bestanden veilig verplaatsen van en naar een virtuele Linux-machine in azure met behulp van SCP en een SSH-sleutel paar.
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.workload: infrastructure
 ms.topic: how-to
 ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 83c054a9e2dd829dbfb34a3873f06332e504b832
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 83b57055ee7a3fedab014abeab96520c3877b843
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201192"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558437"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Bestanden verplaatsen van en naar een virtuele Linux-machine met behulp van SCP
 

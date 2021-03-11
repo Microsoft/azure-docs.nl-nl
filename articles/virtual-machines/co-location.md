@@ -4,15 +4,16 @@ description: Meer informatie over het gebruik van proximity placement groups in 
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
+ms.subservice: proximity-placement-groups
 ms.topic: conceptual
 ms.date: 3/07/2021
 ms.reviewer: zivr
-ms.openlocfilehash: 584d98c93083bc0b203276c8eda2801841da3ad7
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 1a65a1e4ecd989f3a7c4968c424472c3c6dfe472
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102507854"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559071"
 ---
 # <a name="proximity-placement-groups"></a>Nabijheidsplaatsingsgroepen
 

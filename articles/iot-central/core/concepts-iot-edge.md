@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - device-developer
 - iot-edge
-ms.openlocfilehash: 1a464b9e039f256fae52c32d828b1ec39a20a228
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: e0f3464420c5cb429f780999bf5983b2ab142567
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102123272"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608628"
 ---
 # <a name="connect-azure-iot-edge-devices-to-an-azure-iot-central-application"></a>Azure IoT Edge-apparaten verbinden met een Azure IoT Central-toepassing
 
@@ -74,8 +74,6 @@ In het volgende diagram ziet u verbindingen met een IoT Edge gateway apparaat vi
 Downstream-apparaten kunnen via meerdere aangepaste modules verbinding maken met een IoT Edge gateway-apparaat. In het volgende diagram worden downstream-apparaten weer gegeven die verbinding maken via een aangepaste Modbus-module, een afgeleide aangepaste module en de module *IOT Edge hub*  :
 
 :::image type="content" source="media/concepts-iot-edge/gateway-two-modules-transparent.png" alt-text="Diagram van verbinding maken met behulp van meerdere aangepaste modules" border="false":::
-
-<!-- To do: add link to how to configure gateway article? -->
 
 ## <a name="iot-edge-devices-and-iot-central"></a>IoT Edge apparaten en IoT Central
 
@@ -286,7 +284,7 @@ U kunt de IoT Edge runtime ook installeren in de volgende omgevingen:
 
 Als u een IoT Edge apparaat hebt geselecteerd om een gateway apparaat te zijn, kunt u downstream-relaties toevoegen aan apparaten modellen voor apparaten die u wilt verbinden met het gateway apparaat.
 
-<!-- TODO - add link to Edge Gateway how-to -->
+Zie [apparaten verbinden via een IOT Edge transparante gateway](how-to-connect-iot-edge-transparent-gateway.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

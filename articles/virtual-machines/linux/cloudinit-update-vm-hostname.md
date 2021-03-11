@@ -2,16 +2,17 @@
 title: Cloud-init gebruiken om de hostnaam in te stellen voor een virtuele Linux-machine
 description: Cloud-init gebruiken voor het aanpassen van een virtuele Linux-machine tijdens het maken met de Azure CLI
 author: rickstercdn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 85d2772596224a3c4252d950ca6ca8d6af02991b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c3195fd338d17e2dae3ff2aadfb90790519715b
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373654"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559389"
 ---
 # <a name="use-cloud-init-to-set-hostname-for-a-linux-vm-in-azure"></a>Cloud-init gebruiken om de hostnaam in te stellen voor een virtuele Linux-machine in azure
 Dit artikel laat u zien hoe u [Cloud-init](https://cloudinit.readthedocs.io) kunt gebruiken voor het configureren van een specifieke hostnaam op een virtuele machine (VM) of virtuele-machine schaal sets (VMSS) bij het inrichten van de tijd in Azure. Deze Cloud-init-scripts worden uitgevoerd bij de eerste keer opstarten zodra de resources zijn ingericht door Azure. Zie [Cloud-init Overview](using-cloud-init.md) (Engelstalig) voor meer informatie over hoe Cloud-init standaard werkt in Azure en de ondersteunde Linux-distributies

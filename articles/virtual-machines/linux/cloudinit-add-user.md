@@ -2,22 +2,23 @@
 title: Cloud-init gebruiken om een gebruiker toe te voegen aan een virtuele Linux-machine in azure
 description: Cloud-init gebruiken om een gebruiker toe te voegen aan een Linux-VM tijdens het maken met de Azure CLI
 author: rickstercdn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: 569ceb4c7158ba9dc08c99c234951fb4507b69f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c459965f2eb29a469ac90fdeb42107d1dbcf86a
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87370067"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559406"
 ---
 # <a name="use-cloud-init-to-add-a-user-to-a-linux-vm-in-azure"></a>Cloud-init gebruiken om een gebruiker toe te voegen aan een virtuele Linux-machine in azure
 Dit artikel laat u zien hoe u [Cloud-init](https://cloudinit.readthedocs.io) kunt gebruiken om een gebruiker toe te voegen op een virtuele machine (VM) of virtuele-machine schaal sets (VMSS) bij het inrichten van de tijd in Azure. Dit Cloud-init-script wordt uitgevoerd bij de eerste keer opstarten zodra de resources zijn ingericht door Azure. Zie [Cloud-init Overview](using-cloud-init.md)(Engelstalig) voor meer informatie over de manier waarop Cloud-init systeem eigen werkt in Azure en de ondersteunde Linux-distributies.
 
 ## <a name="add-a-user-to-a-vm-with-cloud-init"></a>Een gebruiker toevoegen aan een virtuele machine met Cloud-init
-Een van de eerste taken op een nieuwe virtuele Linux-machine is het toevoegen van een extra gebruiker voor uzelf om het gebruik van de *hoofdmap*te voor komen. SSH-sleutels zijn best practice voor beveiliging en gebruiks gemak. Sleutels worden toegevoegd aan het bestand *~/.ssh/authorized_keys* met dit script voor Cloud-init.
+Een van de eerste taken op een nieuwe virtuele Linux-machine is het toevoegen van een extra gebruiker voor uzelf om het gebruik van de *hoofdmap* te voor komen. SSH-sleutels zijn best practice voor beveiliging en gebruiks gemak. Sleutels worden toegevoegd aan het bestand *~/.ssh/authorized_keys* met dit script voor Cloud-init.
 
 Als u een gebruiker aan een virtuele Linux-machine wilt toevoegen, maakt u een bestand in uw huidige shell met de naam *cloud_init_add_user.txt* en plakt u de volgende configuratie. In dit voor beeld maakt u het bestand in het Cloud Shell niet op uw lokale computer. U kunt elke editor die u wilt gebruiken. Voer `sensible-editor cloud_init_add_user.txt` in voor het maken van het bestand en om een overzicht van beschikbare editors te zien. Kies #1 om de **nano** -editor te gebruiken. Zorg ervoor dat het hele Cloud-init-bestand correct wordt gekopieerd, met name de eerste regel.  U moet uw eigen open bare sleutel (zoals de inhoud van *~/.ssh/id_rsa. pub*) opgeven voor de waarde `ssh-authorized-keys:` -deze is inge kort om het voor beeld te vereenvoudigen.
 

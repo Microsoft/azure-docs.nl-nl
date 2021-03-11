@@ -5,17 +5,17 @@ services: virtual-machines
 documentationcenter: ''
 author: mimckitt
 ms.author: mimckitt
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: how-to
 ms.tgt_pltfrm: vm
 ms.workload: infrastructure-services
 ms.date: 07/28/2020
-ms.openlocfilehash: b845d547224fb173d2a4b156575778783e0281fa
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ba973bd5609dacf05eca842025d4e828d8a9f841
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488562"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550944"
 ---
 # <a name="understanding-azure-virtual-machine-usage"></a>Meer informatie over het gebruik van virtuele machines in azure
 Door uw Azure-gebruiks gegevens te analyseren, kunnen er krachtige verbruiks inzichten worden verworven: inzichten waarmee betere kosten beheer en toewijzing in uw organisatie mogelijk zijn. In dit document vindt u meer informatie over uw Azure Compute-verbruik. Ga voor meer informatie over het algemene Azure-gebruik naar [inzicht in uw factuur](../cost-management-billing/understand/review-individual-bill.md).
@@ -40,7 +40,7 @@ Door uw Azure-gebruiks gegevens te analyseren, kunnen er krachtige verbruiks inz
 | Tags| Label dat u toewijst aan de resource. Tags gebruiken om factureringsrecords te groeperen. Meer informatie over het coderen van uw Virtual Machines met behulp van de [cli](./tag-cli.md) of [Power shell](./tag-portal.md) dit is alleen beschikbaar voor virtuele machines van Resource Manager.| `{"myDepartment":"RD","myUser":"myName"}`|
 | Aanvullende informatie | Servicespecifieke metagegevens. Voor Vm's vullen we de volgende gegevens in het veld aanvullende gegevens in: <br><br> Afbeeldings type-specifieke installatie kopie die u hebt uitgevoerd. Zoek de volledige lijst met ondersteunde teken reeksen onder afbeeldings typen.<br><br> Service type: de grootte die u hebt geïmplementeerd.<br><br> VMName: naam van de virtuele machine. Dit veld wordt alleen ingevuld voor virtuele machines met schaal sets. Als u de VM-naam voor virtuele machines van de schaalset nodig hebt, kunt u deze vinden in de bovenstaande teken reeks voor exemplaar-ID.<br><br> UsageType: Hiermee geeft u het type gebruik op dat dit vertegenwoordigt.<br><br> ComputeHR is het reken uren-gebruik voor de onderliggende VM, zoals Standard_D1_v2.<br><br> ComputeHR_SW is de Premium-software kosten als de virtuele machine Premium-software gebruikt, zoals Microsoft R Server. | Virtual Machines<br>`{"ImageType":"Canonical","ServiceType":"Standard_DS1_v2","VMName":"", "UsageType":"ComputeHR"}`<br><br>Virtuele-machineschaalsets<br> `{"ImageType":"Canonical","ServiceType":"Standard_DS1_v2","VMName":"myVM1", "UsageType":"ComputeHR"}`<br><br>Premium-software<br> `{"ImageType":"","ServiceType":"Standard_DS1_v2","VMName":"", "UsageType":"ComputeHR_SW"}` |
 
-## <a name="image-type"></a>Type installatie kopie
+## <a name="image-type"></a>Type installatiekopie
 Voor sommige installatie kopieën in de Azure-galerie wordt het type afbeelding ingevuld in het veld aanvullende informatie. Hierdoor kunnen gebruikers begrijpen en bijhouden wat ze op hun virtuele machine hebben geïmplementeerd. De volgende waarden die in dit veld worden ingevuld op basis van de installatie kopie die u hebt geïmplementeerd:
 - BitRock 
 - Canonieke FreeBSD 
@@ -72,7 +72,7 @@ De regio naam die is ingevuld in het veld Resource locatie in de gebruiks gegeve
 | CanadaCentral | CA - centraal|
 | CanadaEast | CA - oost|
 | CentralIndia | IN - centraal|
-| centralus | Central US|
+| centralus | VS - centraal|
 | chinaeast | China East|
 | chinanorth | China - noord|
 | eastasia | Azië - oost|
@@ -86,7 +86,7 @@ De regio naam die is ingevuld in het veld Resource locatie in de gebruiks gegeve
 | KoreaSouth | KR - zuid|
 | northcentralus | VS - noord-centraal|
 | northeurope | Europa - noord|
-| southcentralus | South Central US|
+| southcentralus | VS - zuid-centraal|
 | southeastasia | Azië - zuidoost|
 | SouthIndia | IN - zuid|
 | UKNorth | VS Noord|

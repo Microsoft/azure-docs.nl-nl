@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: b61337f29eac11ca3fb45056b9348fbc70956b53
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 8c876a09c77a2ed5441a2f40acc2da508697febb
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102521200"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608679"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -59,8 +59,8 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
   + [Systeem eigen terminal (ga)](https://docs.microsoft.com/azure/machine-learning/how-to-access-terminal). Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de geïntegreerde Terminal.
   + [Notitieblok fragmenten (preview-versie)](https://azure.github.io/azureml-web/docs/vs-code-snippets/snippets). Algemene code fragmenten van Azure ML zijn nu beschikbaar in uw hand bereik. Navigeer naar het paneel code fragmenten dat toegankelijk is via de werk balk of Activeer het menu met code fragmenten met Ctrl + spatie.  
   + [Sneltoetsen](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#shortcut-keys). Volledige pariteit met sneltoetsen die beschikbaar zijn in Jupyter. 
-  + Geef de para meters van de cel aan. Toont gebruikers met een cel in een notitie blok is een para meter-cel en kan notitie blokken met para meters uitvoeren via [Papermill](https://github.com/nteract/papermill) op het reken proces.
-  + Terminal en kernel Session Manager: gebruikers kunnen alle kernels en Terminal sessies beheren die op uw computer worden uitgevoerd.
+  + Geef de para meters van de cel aan. Toont gebruikers die cellen in een notitie blok zijn parameter cellen en kunnen notitie blokken met para meters uitvoeren via [Papermill](https://github.com/nteract/papermill) op het reken proces.
+  + Terminal en kernel Session Manager: gebruikers kunnen alle kernels en Terminal sessies beheren die op hun Compute worden uitgevoerd.
   + Knop delen. Gebruikers kunnen nu bestanden in het notebook bestand Verkenner delen door met de rechter muisknop op het bestand te klikken en de knop delen te gebruiken.
 
 

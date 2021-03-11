@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.reviewer: anilmur
-ms.openlocfilehash: f6e9c0a3d9100bc447314f5874107363c6bf5d8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0cf89a755090010bb80507c52f90baa2a4e804a
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89289440"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617621"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Standaard indelingen en-codecs voor encoders
 
@@ -98,7 +98,7 @@ De volgende tabel geeft een lijst van de codecs en bestands indelingen die worde
 
 | Bestandsindeling | Videocodec | Audiocodec |
 | --- | --- | --- |
-| MP4 <br/><br/>(inclusief multi-bitrate MP4-containers) |H. 264 (High-, Main-en baseline-profielen) |AAC-LC, hij-AAC v1, HE-AAC v2 |
+| MP4 <br/><br/>(inclusief multi-bitrate MP4-containers) |H. 264 (High-, Main-en baseline-profielen), HEVC (H. 265) 8-bits |AAC-LC, hij-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H. 264 (High-, Main-en baseline-profielen) |AAC-LC, hij-AAC v1, HE-AAC v2 |
 
 ## <a name="next-steps"></a>Volgende stappen

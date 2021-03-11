@@ -1,25 +1,26 @@
 ---
 title: Uitbrei ding van NVIDIA GPU-stuur programma-Azure Windows-Vm's
 description: Microsoft Azure-uitbrei ding voor het installeren van NVIDIA GPU-Stuur Programma's op virtuele machines met N-serie Compute die Windows uitvoeren.
-services: virtual-machines-windows
+services: virtual-machines
 documentationcenter: ''
 author: vermagit
 manager: gwallace
 editor: ''
 ms.assetid: ''
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: extensions
+ms.collection: windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: akjosh
-ms.openlocfilehash: 82ed1d57d72a4479005d8bfd2234c124a97096ee
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7cd2c5e54ccb81294a93c0ecebaa174df8d14011
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965983"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559661"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Uitbrei ding voor NVIDIA GPU-stuur programma voor Windows
 
@@ -74,7 +75,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Micro soft. HpcCompute | tekenreeks |
 | type | NvidiaGpuDriverWindows | tekenreeks |
 | typeHandlerVersion | 1.3 | int |

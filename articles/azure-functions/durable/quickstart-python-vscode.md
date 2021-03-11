@@ -5,12 +5,12 @@ author: anthonychu
 ms.topic: quickstart
 ms.date: 12/23/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 749dea2d9d46cb69d0c7c8a799a3f82c04d020e8
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 567388277f5a68ae23e8c806a8581c177c3fd1dd
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936172"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549461"
 ---
 # <a name="create-your-first-durable-function-in-python"></a>Uw eerste Durable Function maken in Python
 
@@ -58,22 +58,7 @@ In deze sectie gebruikt u Visual Studio Code om een lokaal Azure Functions-proje
 
 Visual Studio Code installeert zo nodig de Azure Functions Core Tools. Er wordt ook een functie-app-project gemaakt in een map. Dit project bevat de configuratiebestanden [host.json](../functions-host-json.md) en [local.settings.json](../functions-run-local.md#local-settings-file).
 
-Er wordt ook een requirement.txt-bestand gemaakt in de hoofdmap. Dit geeft de Python-pakketten op die nodig zijn om uw functie-app uit te voeren.
-
-## <a name="update-azure-functions-extension-bundles-version"></a>Versie van Azure Functions-extensiebundels bijwerken
-
-Voor Python Azure Functions is versie 2.x van [Azure Functions-extensiebundels](../functions-bindings-register.md#access-extensions-in-non-net-languages) vereist. Extensiebundels worden geconfigureerd in *host.json*.
-
-1. Open *host.json* in het project. Werk de extensiebundel `version` bij naar `[2.*, 3.0.0)`. Hiermee wordt een versiebereik weergegeven die 2.0 of hoger is, maar lager dan 3.0.
-
-    ```json
-    "extensionBundle": {
-        "id": "Microsoft.Azure.Functions.ExtensionBundle",
-        "version": "[2.*, 3.0.0)"
-    }
-    ```
-
-1. VS Code moet opnieuw worden geladen voordat de bijgewerkte versie van de extensiebundel wordt weergegeven. Voer in het opdrachtenpalet een zoekopdracht uit voor de opdracht *Ontwikkelaar: venster opnieuw laden*, en voer deze uit.
+Er wordt ook een *requirements.txt* -bestand gemaakt in de hoofdmap. Dit geeft de Python-pakketten op die nodig zijn om uw functie-app uit te voeren.
 
 ## <a name="install-azure-functions-durable-from-pypi"></a>Azure-functions-durable installeren vanaf PyPI
 
@@ -83,7 +68,7 @@ Toen u het project heeft aangemaakt, heeft de Azure Functions VS Code-extensie a
 
     ```
     azure-functions
-    azure-functions-durable>=1.0.0b12
+    azure-functions-durable
     ```
 
 1. Open de geïntegreerde terminal van de editor in de huidige map (<kbd>Ctrl+Shift+`</kbd>).

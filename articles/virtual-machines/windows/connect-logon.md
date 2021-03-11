@@ -2,18 +2,18 @@
 title: Verbinding maken met een Windows Server-VM
 description: Meer informatie over hoe u verbinding maakt met een Windows-VM met behulp van het Azure Portal en het Resource Manager-implementatie model.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/26/2018
 ms.author: cynthn
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: dacf34d7098472e98c7f68f7f60fa9bac1a4e5ec
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5d14160a47789e10f1881fa0e55afd4af122c990
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875768"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550753"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Verbinding maken en aanmelden bij een virtuele machine van Azure waarop Windows wordt uitgevoerd
 U gebruikt de knop **Verbinden** in Azure Portal om een Extern bureaublad-sessie (RDP) te starten vanaf een Windows-computer. Eerst maakt u verbinding met de virtuele machine en meldt u zich aan.

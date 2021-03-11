@@ -1,7 +1,7 @@
 ---
 title: Azure IoT Central uitbreiden met aangepaste analyses | Microsoft Docs
 description: Configureer als ontwikkelaar van oplossingen een IoT Central-toepassing om aangepaste analyses en visualisaties uit te voeren. Deze oplossing maakt gebruik van Azure Databricks.
-author: TheJasonAndrew
+author: TheRealJasonAndrew
 ms.author: v-anjaso
 ms.date: 02/18/2020
 ms.topic: how-to
@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 86f94b8059d85b892a87c82537b1e9b02552f8f7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 11e5ba3c0700cc9b29b8a11c0f9aa20cb5adb132
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101741678"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102551314"
 ---
 # <a name="extend-azure-iot-central-with-custom-analytics-using-azure-databricks"></a>Azure IoT Central uitbreiden met aangepaste analyses met behulp van Azure Databricks
 
@@ -103,7 +103,7 @@ De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding
 
 Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
-1. Ga naar de pagina voor het **exporteren van gegevens (verouderd)** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
+1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
 1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**:
 
     | Instelling | Waarde |

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/29/2019
 ms.author: memildin
-ms.openlocfilehash: 778feda8d72101d4ae2a0f0c27549701dfb53340
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 1ce20deed8b26dc5f5bebf4656dd3f1c370d766f
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341410"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561225"
 ---
 # <a name="endpoint-protection-assessment-and-recommendations-in-azure-security-center"></a>Endpoint Protection-evaluatie en aanbevelingen in Azure Security Center
 
@@ -29,9 +29,9 @@ Azure Security Center biedt status beoordelingen van [ondersteunde](security-cen
 
 ## <a name="windows-defender"></a>Windows Defender
 
-* Security Center raadt u **aan om Endpoint Protection-oplossingen te installeren op de virtuele machine** wanneer [Get-MpComputerStatus](/powershell/module/defender/get-mpcomputerstatus?preserve-view=true&view=win10-ps) wordt uitgevoerd en het resultaat **AMServiceEnabled is: False**
+* Security Center raadt u **aan om Endpoint Protection-oplossingen te installeren op de virtuele machine** wanneer [Get-MpComputerStatus](/powershell/module/defender/get-mpcomputerstatus) wordt uitgevoerd en het resultaat **AMServiceEnabled is: False**
 
-* Security Center raadt u **aan om problemen met de Endpoint Protection-status op uw computers op te lossen** wanneer [Get-MpComputerStatus](/powershell/module/defender/get-mpcomputerstatus?preserve-view=true&view=win10-ps) wordt uitgevoerd en een van de volgende situaties zich voordoet:
+* Security Center raadt u **aan om problemen met de Endpoint Protection-status op uw computers op te lossen** wanneer [Get-MpComputerStatus](/powershell/module/defender/get-mpcomputerstatus) wordt uitgevoerd en een van de volgende situaties zich voordoet:
 
   * Een van de volgende eigenschappen is onwaar:
 

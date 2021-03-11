@@ -8,22 +8,22 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: ff54c1dc62189f2a00528c6a82abe26c667c5538
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 331ef39facb9f7cf8f069f2a238be325f53de2d0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038693"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618030"
 ---
 # <a name="cicd-for-azure-spring-cloud"></a>CI/CD voor Azure lente-Cloud
 
-Met de hulpprogram ma's voor continue integratie en continue levering kunt u snel updates implementeren voor bestaande toepassingen met minimale inspanning en risico. Azure DevOps helpt u bij het organiseren en beheren van deze belang rijke taken. Momenteel biedt Azure lente Cloud geen specifieke Azure DevOps-invoeg toepassing.  U kunt echter uw lente-Cloud toepassingen integreren met DevOps met behulp van een [Azure cli-taak](/azure/devops/pipelines/tasks/deploy/azure-cli?preserve-view=true&view=azure-devops).
+Met de hulpprogram ma's voor continue integratie en continue levering kunt u snel updates implementeren voor bestaande toepassingen met minimale inspanning en risico. Azure DevOps helpt u bij het organiseren en beheren van deze belang rijke taken. Momenteel biedt Azure lente Cloud geen specifieke Azure DevOps-invoeg toepassing.  U kunt echter uw lente-Cloud toepassingen integreren met DevOps met behulp van een [Azure cli-taak](/azure/devops/pipelines/tasks/deploy/azure-cli).
 
 Dit artikel laat u zien hoe u een Azure CLI-taak kunt gebruiken met Azure veer Cloud om te integreren met Azure DevOps.
 
 ## <a name="create-an-azure-resource-manager-service-connection"></a>Een Azure Resource Manager service verbinding maken
 
-Lees [dit artikel](/azure/devops/pipelines/library/connect-to-azure?preserve-view=true&view=azure-devops) voor meer informatie over het maken van een Azure Resource Manager service verbinding met uw Azure DevOps-project. Zorg ervoor dat u hetzelfde abonnement selecteert dat u gebruikt voor uw Azure lente-Cloud service-exemplaar.
+Lees [dit artikel](/azure/devops/pipelines/library/connect-to-azure) voor meer informatie over het maken van een Azure Resource Manager service verbinding met uw Azure DevOps-project. Zorg ervoor dat u hetzelfde abonnement selecteert dat u gebruikt voor uw Azure lente-Cloud service-exemplaar.
 
 ## <a name="azure-cli-task-templates"></a>Azure CLI-taak sjablonen
 ::: zone pivot="programming-language-csharp"

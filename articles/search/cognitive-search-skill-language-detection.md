@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: 087989638193bb59001ed33c4ee253d61682d8bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 078a9312a7ee1b3b0eafd000928ed74348a540c3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935990"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548050"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Herkennings vaardigheid van taal detectie
 
@@ -21,7 +21,7 @@ De **taaldetectie** vaardigheid detecteert de taal van invoer tekst en rapportee
 
 Deze mogelijkheid is vooral nuttig wanneer u de taal van de tekst wilt opgeven als invoer voor andere vaardig heden (bijvoorbeeld de kwalificatie [sentimentanalyse vaardigheid](cognitive-search-skill-sentiment.md) of [tekst splitsen](cognitive-search-skill-textsplit.md)).
 
-Met taal detectie kunt u gebruikmaken van de natuurlijke taal verwerkings bibliotheken van Bing, die het aantal [ondersteunde talen en regio's](../cognitive-services/text-analytics/language-support.md) overschrijdt dat voor Text Analytics wordt vermeld. De exacte lijst met talen wordt niet gepubliceerd, maar bevat alle talen met veel spraak, plus varianten, dialecten en enkele regionale en culturele talen. Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u [de taaldetectie-API proberen](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) om te zien of er een code wordt geretourneerd. Het antwoord op talen dat niet kan worden gedetecteerd is `unknown` .
+Met taal detectie kunt u gebruikmaken van de natuurlijke taal verwerkings bibliotheken van Bing, die het aantal [ondersteunde talen en regio's](../cognitive-services/text-analytics/language-support.md) overschrijdt dat voor Text Analytics wordt vermeld. De exacte lijst met talen wordt niet gepubliceerd, maar bevat alle talen met veel spraak, plus varianten, dialecten en enkele regionale en culturele talen. Als er inhoud in een minder vaak gebruikte taal wordt weer gegeven, kunt u [de taaldetectie-API proberen](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) om te zien of er een code wordt geretourneerd. Het antwoord op talen dat niet kan worden gedetecteerd is `(Unknown)` .
 
 > [!NOTE]
 > Als u het bereik uitbreidt door de verwerkings frequentie te verhogen, meer documenten toe te voegen of meer AI-algoritmen toe te voegen, moet u [een factureer bare Cognitive Services resource koppelen](cognitive-search-attach-cognitive-services.md). Er worden kosten in rekening gebracht bij het aanroepen van Api's in Cognitive Services en voor het ophalen van afbeeldingen als onderdeel van de fase voor het kraken van documenten in azure Cognitive Search. Er worden geen kosten in rekening gebracht voor het ophalen van tekst uit documenten.
@@ -35,6 +35,15 @@ Micro soft. skills. Text. LanguageDetectionSkill
 ## <a name="data-limits"></a>Gegevenslimieten
 De maximale grootte van een record moet 50.000 tekens zijn, zoals gemeten door [`String.Length`](/dotnet/api/system.string.length) . Als u uw gegevens wilt opsplitsen voordat u deze naar de taal detectie vaardigheid verzendt, kunt u de [Kwalificatie tekst splitsen](cognitive-search-skill-textsplit.md)gebruiken.
 
+## <a name="skill-parameters"></a>Vaardigheids parameters
+
+Parameters zijn hoofdlettergevoelig.
+
+| Invoerwaarden | Beschrijving |
+|---------------------|-------------|
+| `defaultCountryHint` | Beschrijving Een ISO 3166-1 alpha-2 2 letter land code kan worden gebruikt als hint voor het taal detectie model als de taal niet kan worden dubbel zinnigheid. Zie [de documentatie over Text Analytics](../cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection.md#ambiguous-content) in dit onderwerp voor meer informatie. Met name de `defaultCountryHint` para meter wordt gebruikt met documenten die de `countryHint` invoer niet expliciet opgeven.  |
+| `modelVersion`   | Beschrijving De versie van het model dat moet worden gebruikt bij het aanroepen van de Text Analytics service. Het is standaard de meest recente versie die beschikbaar is wanneer deze niet is opgegeven. We raden u aan deze waarde alleen op te geven als dit absoluut nood zakelijk is. Zie [model versie beheer in de Text Analytics-API](../cognitive-services/text-analytics/concepts/model-versioning.md) voor meer informatie. |
+
 ## <a name="skill-inputs"></a>Vaardigheids invoer
 
 Parameters zijn hoofdlettergevoelig.
@@ -42,6 +51,7 @@ Parameters zijn hoofdlettergevoelig.
 | Invoerwaarden     | Beschrijving |
 |--------------------|-------------|
 | `text` | De tekst die moet worden geanalyseerd.|
+| `countryHint` | Een ISO 3166-1 alpha-2 2 letter land code die als hint voor het taal detectie model moet worden gebruikt als de taal niet kan worden dubbel zinnigheid. Zie [de documentatie over Text Analytics](../cognitive-services/text-analytics/how-tos/text-analytics-how-to-language-detection.md#ambiguous-content) in dit onderwerp voor meer informatie. |
 
 ## <a name="skill-outputs"></a>Vaardigheids uitvoer
 
@@ -60,6 +70,10 @@ Parameters zijn hoofdlettergevoelig.
       {
         "name": "text",
         "source": "/document/text"
+      },
+      {
+        "name": "countryHint",
+        "source": "/document/countryHint"
       }
     ],
     "outputs": [
@@ -98,6 +112,14 @@ Parameters zijn hoofdlettergevoelig.
            {
              "text": "Estamos muy felices de estar con ustedes."
            }
+      },
+      {
+        "recordId": "3",
+        "data":
+           {
+             "text": "impossible",
+             "countryHint": "fr"
+           }
       }
     ]
 ```
@@ -125,14 +147,19 @@ Parameters zijn hoofdlettergevoelig.
               "languageName": "Spanish",
               "score": 1,
             }
+      },
+      {
+        "recordId": "3",
+        "data":
+            {
+              "languageCode": "fr",
+              "languageName": "French",
+              "score": 1,
+            }
       }
     ]
 }
 ```
-
-
-## <a name="error-cases"></a>Fout cases
-Als de tekst wordt weer gegeven in een niet-ondersteunde taal, wordt er een fout gegenereerd en wordt er geen taal-id geretourneerd.
 
 ## <a name="see-also"></a>Zie ook
 

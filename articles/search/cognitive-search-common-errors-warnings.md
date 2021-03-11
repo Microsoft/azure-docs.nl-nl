@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 6625cd5ad91826ac5cdf8ec63382e9f94d8a2c08
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 3ba0abe8510291351c10ba085ba7e42b8197d886
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895936"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553235"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Veelvoorkomende fouten en waarschuwingen voor Indexeer functies in azure Cognitive Search oplossen
 
@@ -236,6 +236,8 @@ Als u een standaard waarde wilt opgeven in het geval van een ontbrekende invoer,
 
 ## <a name="warning--skill-input-languagecode-has-the-following-language-codes-xyz-at-least-one-of-which-is-invalid"></a>Waarschuwing: de vaardigheids invoer language code heeft de volgende taal codes X, Y, Z, ten minste één is ongeldig.
 Een of meer van de waarden die zijn door gegeven aan de optionele `languageCode` invoer van een stroomafwaartse vaardigheid, wordt niet ondersteund. Dit kan gebeuren als u de uitvoer van de [LanguageDetectionSkill](cognitive-search-skill-language-detection.md) doorgeeft aan de volgende vaardig heden en de uitvoer bestaat uit meer talen dan wordt ondersteund in deze downstream-vaardig heden.
+
+Opmerking: er kan ook een waarschuwing worden weer gegeven die vergelijkbaar is met deze melding als een ongeldige `countryHint` invoer wordt doorgevoerd naar de LanguageDetectionSkill. Als dat het geval is, moet u controleren of het veld dat u in uw gegevens bron gebruikt voor die invoer geldige ISO 3166-1 alpha-2 2 letter-land codes bevat. Als sommige geldig zijn en sommige ongeldig zijn, gaat u verder met de volgende instructies, maar vervangt `languageCode` `countryHint` u door en `defaultLanguageCode` met `defaultCountryHint` om uw use-case te vergelijken.
 
 Als u weet dat uw gegevensset zich in één taal bevindt, moet u de [LanguageDetectionSkill](cognitive-search-skill-language-detection.md) en de `languageCode` vaardigheids invoer verwijderen en `defaultLanguageCode` in plaats daarvan de para meter vaardig heden voor die vaardigheid gebruiken, ervan uitgaande dat de taal wordt ondersteund voor die kwalificatie.
 

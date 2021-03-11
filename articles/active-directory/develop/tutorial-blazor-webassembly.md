@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 7118ff589e580fd3aa1f693e72152f1ad4c18e10
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 47b4f36aec9a906317a9704a7d73bf66385d9e88
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99979875"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552113"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
 
@@ -49,7 +49,7 @@ Na registratie selecteert u onder **beheren** de optie  >  **impliciete toekenni
 Als u de app wilt maken, hebt u de nieuwste Blazor-sjablonen nodig. U kunt deze met de volgende opdracht installeren voor de .NET Core CLI:
 
 ```dotnetcli
-dotnet new --install Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.1
+dotnet new -i Microsoft.Identity.Web.ProjectTemplates::1.6.0
 ```
 
 Voer vervolgens de volgende opdracht uit om de toepassing te maken. Vervang de tijdelijke aanduidingen in de opdracht door de juiste informatie op de overzichtspagina van uw app en voer de opdracht uit in een opdrachtshell. De uitvoerlocatie die is opgegeven met de optie `-o|--output` maakt een projectmap als deze nog niet bestaat, en gaat deel uitmaken van de naam van de app.

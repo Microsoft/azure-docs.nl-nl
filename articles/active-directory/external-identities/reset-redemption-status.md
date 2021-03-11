@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d843755847d074e00aec9ed2830cb873b6bb3382
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: dea13444a6bd18bd67f05d93a38af70b3b7a2368
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365409"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556312"
 ---
 # <a name="reset-redemption-status-for-a-guest-user"></a>De status van de terugbetaling voor een gast gebruiker opnieuw instellen
 
@@ -43,7 +43,7 @@ New-AzureADMSInvitation -InvitedUserEmailAddress <<external email>> -SendInvitat
 
 ## <a name="use-microsoft-graph-api-to-reset-redemption-status"></a>Microsoft Graph-API gebruiken om de status van de terugbetaling opnieuw in te stellen
 
-Stel met behulp van de [API voor Microsoft Graph-uitnodiging](/graph/api/resources/invitation?view=graph-rest-1.0)de eigenschap in `resetRedemption` op `true` en geef het nieuwe e-mail adres op in de `invitedUserEmailAddress` eigenschap.
+Stel met behulp van de [API voor Microsoft Graph-uitnodiging](/graph/api/resources/invitation)de eigenschap in `resetRedemption` op `true` en geef het nieuwe e-mail adres op in de `invitedUserEmailAddress` eigenschap.
 
 ```json
 POST https://graph.microsoft.com/beta/invitations  

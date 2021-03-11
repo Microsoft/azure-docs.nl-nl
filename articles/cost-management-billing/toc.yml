@@ -52,8 +52,6 @@
           href: costs/ingest-azure-usage-at-scale.md
         - name: Cost Management voor partners
           href: costs/get-started-partners.md
-        - name: Migreren van EA-rapportage naar Azure Resource Manager-API's
-          href: costs/migrate-from-enterprise-reporting-to-azure-resource-manager-apis.md
     - name: Reservations
       items:
         - name: Wat zijn Azure-reserveringen?
@@ -296,8 +294,10 @@
           href: manage/mca-check-azure-credits-balance.md
         - name: Migreren van EA naar MCA-API's
           href: costs/migrate-cost-management-api.md
-        - name: Rollen toewijzen aan Spn's
+        - name: Rollen toewijzen aan EA-Spn's
           href: manage/assign-roles-azure-service-principals.md
+        - name: Migreren van EA-rapportage naar Azure Resource Manager-API's
+          href: costs/migrate-from-enterprise-reporting-to-azure-resource-manager-apis.md
     - name: Reserveringen aanschaffen en beheren
       items:
         - name: Bepalen wat u moet aanschaffen

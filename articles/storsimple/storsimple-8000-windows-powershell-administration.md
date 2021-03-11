@@ -6,12 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: e41d2e531a051738a31325b4ea33961bfb39e7f9
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: 3292f337a39e2adb7dc5e78f12785ead8759f5d1
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98808034"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611943"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Een apparaat beheren met Windows PowerShell voor StorSimple
 
@@ -29,7 +29,7 @@ Na het lezen van dit artikel kunt u het volgende doen:
 
 > [!NOTE]
 > * Met Windows PowerShell voor StorSimple-cmdlets kunt u uw StorSimple-apparaat vanuit een seriële console of extern beheren via Windows Power shell Remoting. Voor meer informatie over elk van de afzonderlijke cmdlets die in deze interface kunnen worden gebruikt, gaat u naar de [cmdlet-naslag voor Windows PowerShell voor StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps&preserve-view=true).
-> * De Azure PowerShell StorSimple-cmdlets zijn een andere verzameling cmdlets waarmee u StorSimple service-en migratie taken kunt automatiseren vanaf de opdracht regel. Voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple gaat u naar de naslag informatie voor de [Azure StorSimple-cmdlet](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0&viewFallbackFrom=azuresmps-3.7.0&preserve-view=true#azure).
+> * De Azure PowerShell StorSimple-cmdlets zijn een andere verzameling cmdlets waarmee u StorSimple service-en migratie taken kunt automatiseren vanaf de opdracht regel. Voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple gaat u naar de naslag informatie voor de [Azure StorSimple-cmdlet](/powershell/module/servicemanagement/azure.service/#azure).
 
 
 U kunt de Windows PowerShell voor StorSimple met een van de volgende methoden openen:

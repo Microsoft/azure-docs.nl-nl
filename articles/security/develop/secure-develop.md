@@ -13,12 +13,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 8e69803f4740a58adb4230bd82cc723221762cb4
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 52c93bef4529f27ad38677f17209e7b48e997368
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576613"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548441"
 ---
 # <a name="develop-secure-applications-on-azure"></a>Beveiligde toepassingen ontwikkelen in Azure
 In dit artikel bieden we beveiligings activiteiten en-controles waarmee u rekening moet houden bij het ontwikkelen van toepassingen voor de Cloud. Beveiligings vragen en-concepten waarmee u rekening moet houden tijdens de implementatie-en verificatie fasen van micro soft [Security Development Lifecycle (SDL)](/previous-versions/windows/desktop/cc307891(v=msdn.10)) vallen onder de dekking. Het doel is om u te helpen bij het definiëren van activiteiten en Azure-Services die u kunt gebruiken om een veiligere toepassing te ontwikkelen.
@@ -34,7 +34,7 @@ Stel dat uw toepassing wordt gebruikt op een manier die u niet wilt gebruiken. Z
 
 ### <a name="perform-code-reviews"></a>Code beoordelingen uitvoeren
 
-Voordat u code incheckt, voert u [code beoordelingen](/azure/devops/learn/devops-at-microsoft/code-reviews-not-primarily-finding-bugs) uit om de algehele code kwaliteit te verbeteren en het risico op het maken van fouten te verminderen. U kunt [Visual Studio](/azure/devops/repos/tfvc/get-code-reviewed-vs?view=vsts) gebruiken om het code controle proces te beheren.
+Voordat u code incheckt, voert u [code beoordelingen](/azure/devops/learn/devops-at-microsoft/code-reviews-not-primarily-finding-bugs) uit om de algehele code kwaliteit te verbeteren en het risico op het maken van fouten te verminderen. U kunt [Visual Studio](/azure/devops/repos/tfvc/get-code-reviewed-vs) gebruiken om het code controle proces te beheren.
 
 ### <a name="perform-static-code-analysis"></a>Statische codeanalyse uitvoeren
 

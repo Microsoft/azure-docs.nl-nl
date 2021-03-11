@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/04/2021
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: a2f6a3fd8d36bb54773db21e3d36dab0060bae57
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3035b5d2803ff91e84bc6b47a99963185f9195d3
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102178372"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102623312"
 ---
 ## <a name="disk-level-bursting"></a>Bursting op schijf niveau
 
@@ -147,7 +147,7 @@ Wanneer de virtuele machine wordt gestart, wordt de burst-limiet van 1.280 MB/s 
 
 Na het opstarten start u een toepassing met een niet-kritieke werk belasting. Voor deze toepassing is 15 MB/s vereist die gelijkmatig over alle schijven wordt verdeeld.
 
-![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. op deze schijven wordt 5 MB/s als resultaat gegeven. VM retourneert 15 MB/s voor de toepassing.](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-idling.jpg)
+![De toepassing verzendt een aanvraag voor 15 MB/s van de door voer naar een virtuele machine. de VM haalt een aanvraag en stuurt elke schijf een aanvraag voor 5 MB/s. elke keer retourneert 5 MB/s-antwoorden, op een virtuele machine 15 MB/s voor de toepassing.](media/managed-disks-bursting/bursting-vm-bursting-disk/burst-vm-burst-disk-idling.jpg)
 
 Vervolgens moet de toepassing een batch taak verwerken die 360 MB/s vereist. De Standard_L8s_v2-bursts om aan deze vraag te voldoen en vervolgens aanvragen. De besturingssysteem schijf heeft slechts 20 MB/s nodig. De resterende 340 MB/s worden verwerkt door de burst-P4-gegevens schijven.
 

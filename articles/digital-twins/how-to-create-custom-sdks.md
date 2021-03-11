@@ -1,39 +1,44 @@
 ---
-title: Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
+title: Maak Sdk's met aangepaste taal met auto rest
 titleSuffix: Azure Digital Twins
-description: Zie aangepaste Sdk's genereren voor het gebruik van Azure Digital Apparaatdubbels met andere talen dan C#.
+description: Meer informatie over het gebruik van autorest voor het genereren van Sdk's voor aangepaste talen, voor het schrijven van Azure Digital Apparaatdubbels-code in andere talen waarvoor geen Sdk's zijn uitgegeven.
 author: baanders
 ms.author: baanders
-ms.date: 4/24/2020
+ms.date: 3/9/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.custom: devx-track-js
-ms.openlocfilehash: e7239bfdca1dc464048c0db08488029b0868deb5
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.custom:
+- devx-track-js
+- contperf-fy21q3
+ms.openlocfilehash: 35cf54199f8f2c187ad397c21fb941111f07c4a3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102049794"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561837"
 ---
-# <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
+# <a name="create-custom-language-sdks-for-azure-digital-twins-using-autorest"></a>Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
 
-Op dit moment is het enige gepubliceerde gegevenslaag-Sdk's voor interactie met de Azure Digital Apparaatdubbels Api's voor .NET (C#), java script en Java. Meer informatie over deze Sdk's en de Api's in het algemeen vindt u in de [*instructies: gebruik de Azure Digital Apparaatdubbels api's en sdk's*](how-to-use-apis-sdks.md). Als u in een andere taal werkt, leert u in dit artikel hoe u uw eigen gegevenslaag SDK kunt genereren in de taal van uw keuze, met behulp van auto rest.
+Als u met Azure Digital Apparaatdubbels moet werken met een taal die geen [gepubliceerde Azure Digital APPARAATDUBBELS SDK](how-to-use-apis-sdks.md)heeft, wordt in dit artikel uitgelegd hoe u auto rest kunt gebruiken om uw eigen SDK te genereren in de taal van uw keuze. 
 
->[!NOTE]
-> U kunt auto rest ook gebruiken om een Control vlak-SDK te genereren als u dat wilt. U doet dit door de stappen in dit artikel uit te voeren met behulp van het meest recente OpenAPI-bestand ( **Control plan Swagger** ) van de [Control vlak Swagger-map](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/) in plaats van het gegevens vlak One.
+In de voor beelden in dit artikel wordt het maken van een [Data-SDK](how-to-use-apis-sdks.md#overview-data-plane-apis)weer gegeven, maar dit proces werkt ook voor het genereren van een  [beheer vlak-SDK](how-to-use-apis-sdks.md#overview-control-plane-apis) .
 
-## <a name="set-up-your-machine"></a>Uw machine instellen
+## <a name="prerequisites"></a>Vereisten
 
-Als u een SDK wilt genereren, hebt u het volgende nodig:
-* Auto [rest](https://github.com/Azure/autorest), version 2.0.4413 (versie 3 wordt momenteel niet ondersteund)
-* [Node.js](https://nodejs.org) als een vereiste voor auto rest
-* Het meest recente Azure Digital Apparaatdubbelse **Swagger** -bestand (OpenAPI) van de [Data vlak Swagger-map](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins)en de bijbehorende map met voor beelden.  Down load het Swagger-bestand *digitaltwins.jsop* en de map met voor beelden naar uw lokale computer.
+Als u een SDK wilt genereren, moet u eerst de volgende installatie uitvoeren op uw lokale computer:
+* Auto [**rest**](https://github.com/Azure/autorest)installeren, versie 2.0.4413 (versie 3 wordt momenteel niet ondersteund)
+* Installeer [**Node.js**](https://nodejs.org), een vereiste voor het gebruik van auto rest
+* [ **Visual Studio** installeren](https://visualstudio.microsoft.com/downloads/)
+* Down load het nieuwste Azure Digital Apparaatdubbels **Data vlak Swagger** (OpenAPI)-bestand van de [Data vlak Swagger-map](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/data-plane/Microsoft.DigitalTwins), samen met de bijbehorende map met voor beelden. Het Swagger-bestand bevindt zich in de naam *digitaltwins.jsop*.
 
-Zodra de computer is uitgerust met alles uit de bovenstaande lijst, kunt u auto rest gebruiken om de SDK te maken.
+>[!TIP]
+> Als u in plaats daarvan een **Control-SDK** wilt maken, voert u de stappen in dit artikel uit met behulp van het meest recente OpenAPI-bestand ( **Control best Swagger** ) van de [Control vlak Swagger-map](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins/) in plaats van het gegevens vlak één.
 
-## <a name="create-the-sdk-with-autorest"></a>De SDK maken met auto rest 
+Zodra de computer is uitgerust met alles uit de bovenstaande lijst, kunt u auto rest gebruiken om een SDK te maken.
 
-Als Node.js is geïnstalleerd, kunt u deze opdracht uitvoeren om te controleren of u de juiste versie van auto rest hebt geïnstalleerd:
+## <a name="create-the-sdk-using-autorest"></a>De SDK maken met auto rest 
+
+Zodra u Node.js hebt geïnstalleerd, kunt u deze opdracht uitvoeren om ervoor te zorgen dat de vereiste versie van auto rest is geïnstalleerd:
 ```cmd/sh
 npm install -g autorest@2.0.4413
 ```
@@ -51,11 +56,11 @@ Als gevolg hiervan ziet u een nieuwe map met de naam *DigitalTwinsApi* in uw wer
 
 Auto rest ondersteunt een breed scala aan taal code generators.
 
-## <a name="add-the-sdk-to-a-visual-studio-project"></a>De SDK toevoegen aan een Visual Studio-project
+## <a name="make-the-sdk-into-a-class-library"></a>De SDK in een klassen bibliotheek maken
 
-U kunt de bestanden die worden gegenereerd door autorest rechtstreeks toevoegen aan een .NET-oplossing. Het is echter waarschijnlijk dat u de Azure Digital Apparaatdubbels SDK wilt gebruiken in verschillende afzonderlijke projecten (uw client-apps, Azure Functions-apps, enzovoort). Daarom kan het handig zijn om een afzonderlijk project (een .NET-klassen bibliotheek) te bouwen op basis van de gegenereerde bestanden. Vervolgens kunt u dit klassen bibliotheek project in meerdere oplossingen insluiten als een project verwijzing.
+U kunt de bestanden die worden gegenereerd door autorest rechtstreeks toevoegen aan een .NET-oplossing. Het is echter waarschijnlijk dat u de Azure Digital Apparaatdubbels SDK wilt gebruiken in verschillende afzonderlijke projecten (uw client-apps, Azure Functions apps en meer). Daarom kan het handig zijn om een afzonderlijk project (een .NET-klassen bibliotheek) te bouwen op basis van de gegenereerde bestanden. Vervolgens kunt u dit klassen bibliotheek project in meerdere oplossingen insluiten als een project verwijzing.
 
-In deze sectie vindt u instructies voor het bouwen van de SDK als een klassen bibliotheek. Dit is een eigen project en kan in andere projecten worden opgenomen. Deze stappen zijn afhankelijk van **Visual Studio** (u kunt de nieuwste versie [hier](https://visualstudio.microsoft.com/downloads/)installeren).
+In deze sectie vindt u instructies voor het bouwen van de SDK als een klassen bibliotheek. Dit is een eigen project en kan in andere projecten worden opgenomen. Deze stappen zijn afhankelijk van **Visual Studio**.
 
 Dit zijn de stappen:
 
@@ -81,7 +86,7 @@ Als u deze wilt toevoegen, opent u *Hulpprogram ma's > NuGet Package Manager > N
 
 U kunt nu het project bouwen en dit toevoegen als een project verwijzing in een Azure Digital Apparaatdubbels-toepassing die u schrijft.
 
-## <a name="general-guidelines-for-generated-sdks"></a>Algemene richt lijnen voor gegenereerde Sdk's
+## <a name="tips-for-using-the-sdk"></a>Tips voor het gebruik van de SDK
 
 Deze sectie bevat algemene informatie en richt lijnen voor het gebruik van de gegenereerde SDK.
 

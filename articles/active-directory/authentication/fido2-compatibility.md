@@ -11,12 +11,12 @@ author: knicholasa
 manager: martinco
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e5eb77a27a7c74ad9738a0e1784066a6a859e43
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3f90edd5729ff5229be09bc3798082c33bdeead2
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175365"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632098"
 ---
 # <a name="browser-support-of-fido2-passwordless-authentication"></a>Browser ondersteuning voor FIDO2-verificatie met wacht woord
 
@@ -54,8 +54,7 @@ Hier volgen de minimale vereisten voor de browser versie.
 | ---- | ---- |
 | Chrome | 76 |
 | Edge | Windows 10 versie 1903<sup>1</sup> |
-| Firefox | Chrome |
-| ChromeOS | 66 |
+| Firefox | 66 |
 
 <sup>1</sup> Alle versies van de nieuwe op chroom gebaseerde micro soft Edge ondersteunen Fido2. Ondersteuning voor micro soft Edge verouderd is toegevoegd in 1903.
 

@@ -1,24 +1,25 @@
 ---
 title: InfiniBand-stuur programma-uitbrei ding-Azure Linux-Vm's
 description: Microsoft Azure-extensie voor het installeren van InfiniBand-Stuur Programma's op de H-en N-serie Compute-Vm's waarop Linux wordt uitgevoerd.
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: ''
 author: vermagit
 editor: ''
 ms.assetid: ''
-ms.service: virtual-machines-linux
-ms.subservice: extensions
+ms.service: virtual-machines
+ms.subservice: hpc
+ms.collection: linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/20/2020
 ms.author: amverma
-ms.openlocfilehash: 2a5aa8983e6cbb0745e05ce275edeadeccb60736
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1219f5befb4de81850681a53c10f03dc81249d53
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966034"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559729"
 ---
 # <a name="infiniband-driver-extension-for-linux"></a>InfiniBand-stuur programma-uitbrei ding voor Linux
 
@@ -72,7 +73,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Micro soft. HpcCompute | tekenreeks |
 | type | InfiniBandDriverLinux | tekenreeks |
 | typeHandlerVersion | 1.1 | int |

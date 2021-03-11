@@ -10,12 +10,12 @@ ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 7972385ba017059407b994029c37f347b919cad3
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: a625ad780d01f3d19d26f2b9626ead3ae455b86b
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102435117"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631469"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Azure Storage BLOB-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)
 
@@ -92,9 +92,9 @@ Bekijk de JSON voor een inventaris beleid door het tabblad **code weergave** te 
 
 | Parameternaam | Parametertype        | Notities | Vereist? |
 |----------------|-----------------------|-------|-----------|
-| doel    | Tekenreeks                | De doel container waar alle inventarisatie bestanden worden gegenereerd. De doel container moet al bestaan. | Yes |
-| enabled        | Booleaans               | Wordt gebruikt om het hele beleid uit te scha kelen. Als deze eigenschap is ingesteld op **True**, wordt deze para meter overschreven door het veld op regel niveau ingeschakeld. Wanneer dit is uitgeschakeld, wordt de inventarisatie voor alle regels uitgeschakeld. | Yes |
-| regels          | Matrix van regel objecten | Er is ten minste één regel vereist in een beleid. Maxi maal 10 regels worden ondersteund. | Yes |
+| doel    | Tekenreeks                | De doel container waar alle inventarisatie bestanden worden gegenereerd. De doel container moet al bestaan. | Ja |
+| enabled        | Booleaans               | Wordt gebruikt om het hele beleid uit te scha kelen. Als deze eigenschap is ingesteld op **True**, wordt deze para meter overschreven door het veld op regel niveau ingeschakeld. Wanneer dit is uitgeschakeld, wordt de inventarisatie voor alle regels uitgeschakeld. | Ja |
+| regels          | Matrix van regel objecten | Er is ten minste één regel vereist in een beleid. Maxi maal 10 regels worden ondersteund. | Ja |
 
 ## <a name="inventory-rules"></a>Inventarisatie regels
 
@@ -104,9 +104,9 @@ Elke regel in het beleid heeft verschillende para meters:
 
 | Parameternaam | Parametertype                 | Notities | Vereist? |
 |----------------|--------------------------------|-------|-----------|
-| naam           | Tekenreeks                         | Een regel naam kan Maxi maal 256 hoofdletter gevoelige alfanumerieke tekens bevatten. De naam moet uniek zijn binnen een beleid. | Yes |
-| enabled        | Booleaans                        | Een vlag waarmee een regel kan worden ingeschakeld of uitgeschakeld. De standaard waarde is **True**. | Yes |
-| definitie     | Definitie van JSON-inventarisatie regel | Elke definitie bestaat uit een ingestelde regel filter. | Yes |
+| naam           | Tekenreeks                         | Een regel naam kan Maxi maal 256 hoofdletter gevoelige alfanumerieke tekens bevatten. De naam moet uniek zijn binnen een beleid. | Ja |
+| enabled        | Booleaans                        | Een vlag waarmee een regel kan worden ingeschakeld of uitgeschakeld. De standaard waarde is **True**. | Ja |
+| definitie     | Definitie van JSON-inventarisatie regel | Elke definitie bestaat uit een ingestelde regel filter. | Ja |
 
 De vlag globale **BLOB-inventaris ingeschakeld** heeft voor rang op de *ingeschakelde* para meter in een regel.
 
@@ -116,10 +116,10 @@ Er zijn verschillende filters beschikbaar voor het aanpassen van een BLOB-invent
 
 | Bestandsnaam         | Filtertype                     | Notities | Vereist? |
 |---------------------|---------------------------------|-------|-----------|
-| blobTypes           | Matrix van vooraf gedefinieerde Enum-waarden | Geldige waarden zijn `blockBlob` en `appendBlob` voor hiërarchische,, en `blockBlob` , `appendBlob` , en `pageBlob` voor andere accounts geschikte accounts. | Yes |
-| prefixMatch         | Matrix van Maxi maal 10 teken reeksen voor voor voegsels die moeten worden vergeleken. Een voor voegsel moet beginnen met een container naam, bijvoorbeeld "container1/foo" | Als u geen *prefixMatch* definieert of een leeg voor voegsel opgeeft, is de regel van toepassing op alle blobs in het opslag account. | No |
-| includeSnapshots    | Booleaans                         | Hiermee geeft u op of de inventaris moment opnamen moet bevatten. De standaard waarde is **False**. | No |
-| includeBlobVersions | Booleaans                         | Hiermee geeft u op of de inventaris BLOB-versies moet bevatten. De standaard waarde is **False**. | No |
+| blobTypes           | Matrix van vooraf gedefinieerde Enum-waarden | Geldige waarden zijn `blockBlob` en `appendBlob` voor hiërarchische,, en `blockBlob` , `appendBlob` , en `pageBlob` voor andere accounts geschikte accounts. | Ja |
+| prefixMatch         | Matrix van Maxi maal 10 teken reeksen voor voor voegsels die moeten worden vergeleken. Een voor voegsel moet beginnen met een container naam, bijvoorbeeld "container1/foo" | Als u geen *prefixMatch* definieert of een leeg voor voegsel opgeeft, is de regel van toepassing op alle blobs in het opslag account. | Nee |
+| includeSnapshots    | Booleaans                         | Hiermee geeft u op of de inventaris moment opnamen moet bevatten. De standaard waarde is **False**. | Nee |
+| includeBlobVersions | Booleaans                         | Hiermee geeft u op of de inventaris BLOB-versies moet bevatten. De standaard waarde is **False**. | Nee |
 
 Bekijk de JSON voor inventarisatie regels door het tabblad **code weergave** te selecteren in het gedeelte **BLOB-inventaris** van het Azure Portal. Filters worden opgegeven in de definitie van een regel.
 
@@ -205,4 +205,5 @@ Voorbeeld gebeurtenis:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Blob Storage levenscyclus beheren](storage-lifecycle-management-concepts.md)
+- [Het aantal en de totale grootte van blobs per container berekenen](calculate-blob-count-size.md)
+- [Azure Blob Storage levenscyclus beheren](storage-lifecycle-management-concepts.md)

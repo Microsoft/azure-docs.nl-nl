@@ -2,18 +2,19 @@
 title: Een SUSE Linux-VHD maken en uploaden in azure
 description: Meer informatie over het maken en uploaden van een virtuele harde schijf (VHD) van Azure die een SUSE Linux-besturings systeem bevat.
 author: danielsollondon
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: imaging
+ms.collection: linux
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: danis
-ms.openlocfilehash: 3d6a981db93cd84f0dbe5ab229ba1e90ee0bd1e7
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 276f5f4542ecea42c665764b8c4e5f66f2531126
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200733"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552708"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Een op SLES of openSUSE gebaseerde virtuele machine voor Azure voorbereiden
 
@@ -161,7 +162,7 @@ Als alternatief voor het maken van uw eigen VHD publiceert SUSE ook BYOS-install
 2. Klik op **verbinding maken** om het venster voor de virtuele machine te openen.
 3. Voer op de shell de opdracht uit `zypper lr` . Als met deze opdracht uitvoer wordt geretourneerd die vergelijkbaar is met de volgende, worden de opslag plaatsen op de verwachte manier geconfigureerd--er zijn geen aanpassingen nodig (Houd er rekening mee dat versie nummers kunnen variëren):
 
-   | # | Alias                 | Naam                  | Ingeschakeld | Vernieuwen
+   | # | Alias                 | Name                  | Ingeschakeld | Vernieuwen
    | - | :-------------------- | :-------------------- | :------ | :------
    | 1 | Cloud: Tools_13.1      | Cloud: Tools_13.1      | Ja     | Ja
    | 2 | openSUSE_13 openSUSE_13.1_OSS     | openSUSE_13 openSUSE_13.1_OSS     | Ja     | Ja

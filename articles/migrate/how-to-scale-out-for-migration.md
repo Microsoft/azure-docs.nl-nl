@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: 6e81b3d62fb5b208c88257d7660f74ac25f099b8
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1c93002a6dd97aadbf407713ab25091436bd85e0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102047937"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612062"
 ---
 # <a name="scale-agentless-migration-of-vmware-virtual-machines-to-azure"></a>De migratie van virtuele VMware-machines in een agent schalen naar Azure
 
@@ -147,10 +147,10 @@ Als u de registratie van het scale-out apparaat wilt volt ooien, klikt u op **im
 1. Selecteer in het pop-upvenster dat u in de vorige stap hebt geopend de locatie van het gekopieerde zip-bestand voor de configuratie en klik op **Opslaan**.
 
 Zodra de bestanden zijn geïmporteerd, wordt de registratie van het Scale-outapparaat voltooid en ziet u de tijds tempel van de laatste geslaagde import bewerking. U kunt de registratie gegevens ook bekijken door te klikken op **Details weer geven**.
-:::image type="content" source="./media/how-to-scale-out-for-migration/import-success.png" alt-text="Het importeren is voltooid":::
+:::image type="content" source="./media/how-to-scale-out-for-migration/import-success.png" alt-text="In de scherm afbeelding wordt de registratie van het uitschalen van een apparaat met Azure Migrate project weer gegeven.":::
 
 Op dit moment moet u opnieuw valideren of het scale-out-apparaat verbinding kan maken met uw vCenter-Server. Klik op opnieuw **valideren** om vCenter Server connectiviteit van scale-out apparaat te valideren.
-:::image type="content" source="./media/how-to-scale-out-for-migration/view-sources.png" alt-text="Het importeren is voltooid":::
+:::image type="content" source="./media/how-to-scale-out-for-migration/view-sources.png" alt-text="Scherm afbeelding toont de weer gave van referenties en detectie bronnen die moeten worden gevalideerd.":::
 
 > [!IMPORTANT]
 > Als u de vCenter Server referenties op het primaire apparaat bewerkt, moet u ervoor zorgen dat u de configuratie bestanden opnieuw importeert naar het scale-out-apparaat om de nieuwste configuratie op te halen en doorlopende replicaties voort te zetten.<br/> Als u het scale-out-apparaat niet langer nodig hebt, moet u ervoor zorgen dat u het scale-out apparaat uitschakelt. Meer [**informatie**](./common-questions-appliance.md) over het uitschakelen van het scale-out toestel wanneer dit niet nodig is.

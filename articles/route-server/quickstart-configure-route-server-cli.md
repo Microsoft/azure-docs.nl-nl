@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: ef41c52fa1b63094d952dc34f81db36f7aeaac95
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 73dc54ca04ad6ddb275947663959164cc2e3c019
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102521285"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102547880"
 ---
 # <a name="quickstart-create-and-configure-route-server-using-azure-cli"></a>Snelstartgids: route server maken en configureren met behulp van Azure CLI 
 
@@ -162,7 +162,7 @@ az network routeserver peering list-advertised-routes -g RouteServerRG --vrouter
 az network routeserver peering list-learned-routes -g RouteServerRG --vrouter-name myRouteServer -n NVA1_name 
 ``` 
 
-## <a name="clean-up"></a>Opschonen 
+## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u de Azure route server niet meer nodig hebt, gebruikt u deze opdrachten om de BGP-peering te verwijderen en de route server vervolgens te verwijderen. 
 

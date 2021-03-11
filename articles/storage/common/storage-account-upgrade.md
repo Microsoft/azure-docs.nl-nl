@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/11/2020
+ms.date: 03/09/2021
 ms.author: tamram
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 50a0894898dcdc817ee253ad326b88a9bb61b9d6
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 85520032e9bc63b6296e40dd1c1055e36762dcc8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357361"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555003"
 ---
 # <a name="upgrade-to-a-general-purpose-v2-storage-account"></a>Upgraden naar een V2-opslagaccount voor algemeen gebruik
 
@@ -24,6 +24,15 @@ Een upgrade uitvoeren naar een v2-opslag account voor algemeen gebruik vanuit uw
 
 > [!IMPORTANT]
 > Een upgrade uitvoeren van een v1-of Blob Storage-account voor algemeen gebruik naar algemeen gebruik v2 is permanent en kan niet ongedaan worden gemaakt.
+
+> [!NOTE]
+> Hoewel micro soft voor de meeste scenario's v2-accounts voor algemeen gebruik aanbeveelt, zal micro soft v1-accounts voor algemeen gebruik blijven ondersteunen voor nieuwe en bestaande klanten. Wanneer Azure Storage in deze regio's beschikbaar is, kunt u in nieuwe regio's v1-opslag accounts voor algemeen gebruik maken. Micro soft heeft momenteel niet de mogelijkheid om ondersteuning te geven voor de V1-accounts voor algemeen gebruik en zal ten minste één jaar de voorafgaande kennisgeving opleveren voordat een Azure Storage functie wordt afgeleverd. Micro soft blijft beveiligings updates bieden voor v1-accounts voor algemeen gebruik, maar er wordt geen nieuwe functie ontwikkeling verwacht voor dit account type.
+>
+> Met ingang van 1 oktober 2020 zijn de prijzen voor algemeen v1-accounts in nieuwe Azure Storage regio's gelijk aan de prijzen voor algemeen gebruik v2-accounts in die regio's. De prijzen in bestaande Azure Storage regio's zijn niet gewijzigd. Zie de pagina met prijzen voor Azure Storage voor prijs informatie voor algemeen v1-accounts in een specifieke regio. Kies uw regio en Selecteer naast **prijs aanbiedingen** **andere**.
+
+## <a name="upgrade-an-account"></a>Een account upgraden
+
+Gebruik Azure Portal, Power shell of Azure CLI om een upgrade van een algemeen v1-of Blob Storage-account te upgraden naar een algemeen v2-account.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -47,7 +56,8 @@ Roep vervolgens de volgende opdracht aan om het account bij te werken, de naam v
 ```powershell
 Set-AzStorageAccount -ResourceGroupName <resource-group> -Name <storage-account> -UpgradeToStorageV2 -AccessTier <Hot/Cool>
 ```
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een algemeen v1-account wilt bijwerken naar een v2-account voor algemeen gebruik met behulp van Azure CLI, moet u eerst de nieuwste versie van Azure CLI installeren. Zie [Azure CLI 2.0 installeren](/cli/azure/install-azure-cli) voor meer informatie over het installeren van de CLI.
 

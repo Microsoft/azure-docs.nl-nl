@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2020
-ms.openlocfilehash: 37ba5fc7ce118e2e8532ea4db18634265aaacb64
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: 9df5c63ef175d0cf736ce16036466158ab6565f9
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99556859"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618301"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Welkom bij Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -19,6 +19,9 @@ ms.locfileid: "99556859"
 Van toepassingen wordt tegenwoordig vereist dat ze zeer responsief en altijd online zijn. Voor het bereiken van lage latentie en hoge beschikbaarheid moeten de instanties van deze toepassingen worden geïmplementeerd in datacenters die zich dicht bij de gebruikers ervan bevinden. Toepassingen moeten in realtime reageren op grote fluctuaties in het gebruik tijdens piekuren, moeten steeds toenemende gegevensvolumes kunnen opslaan en deze gegevens in milliseconden beschikbaar kunnen maken voor gebruikers.
 
 Azure Cosmos DB is een volledig beheerde NoSQL-database voor de ontwikkeling van moderne apps. Reactietijden van slechts enkele milliseconden, en automatische en directe schaalbaarheid, garanderen snelheid op elke schaal. De bedrijfscontinuïteit is gewaarborgd met [door SLA ondersteunde](https://azure.microsoft.com/support/legal/sla/cosmos-db) beschikbaarheid en beveiliging op bedrijfsniveau. App-ontwikkeling is sneller en productiever dankzij kant-en-klare gegevensdistributie voor meerdere regio's, opensource-API's en SDK's voor populaire talen. Als volledig beheerde service neemt Azure Cosmos DB u het databasebeheer volledig uit handen met automatisch beheer, updates en patches. Daarnaast wordt capaciteitsbeheer afgehandeld met rendabele opties voor serverloze en automatische schaling die inspelen op de behoeften van de toepassing om de capaciteit af te stemmen op de vraag.
+
+> [!NOTE]
+> Wilt u helpen bij het verbeteren van Azure Cosmos DB documenten door deel te nemen aan een gebruikers studie? Neem even de tijd om deze [controle enquête](https://aka.ms/cosmosdb-documentation-screener-survey)van vijf minuten in te vullen. Als u in aanmerking komt, wordt u omgeleid naar een planner waarbij u een sleuf kunt boeken om deel te nemen aan een interactieve onderzoek sessie. Er worden tijdens dit proces geen persoonlijke gegevens verzameld volgens onze [privacyverklaring](https://go.microsoft.com/fwlink/?LinkId=521839).
 
 U kunt [Azure Cosmos DB gratis proberen](https://azure.microsoft.com/try/cosmosdb/) zonder een Azure-abonnement en geheel kosteloos en zonder verplichtingen, of de [gratis Azure Cosmos DB-laag](optimize-dev-test.md#azure-cosmos-db-free-tier) gebruiken om een account te maken waarbij de eerste 400 RU/s en 5 GB aan opslagruimte gratis zijn.
 

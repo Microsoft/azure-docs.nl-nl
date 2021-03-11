@@ -5,12 +5,12 @@ description: Meer informatie over het hand matig maken van een volume met Azure 
 services: container-service
 ms.topic: article
 ms.date: 03/01/2019
-ms.openlocfilehash: a6e28464df2ff9c9dcc7734a127cc00f887e08dd
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 4e009c5de2e24c1b0bd94fb4c11b0c52a3bc378d
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246958"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609070"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Hand matig een volume maken en gebruiken met Azure Files share in azure Kubernetes service (AKS)
 
@@ -67,7 +67,8 @@ Gebruik de `kubectl create secret` opdracht om het geheim te maken. In het volge
 kubectl create secret generic azure-secret --from-literal=azurestorageaccountname=$AKS_PERS_STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY
 ```
 
-## <a name="mount-the-file-share-as-a-volume"></a>De bestands share koppelen als een volume
+## <a name="mount-file-share-as-an-inline-volume"></a>Bestands share koppelen als inline volume
+> Opmerking: vanaf 1.18.15, 1.19.7, 1.20.2, 1.21.0, geheime naam ruimte in inline `azureFile` volume kan alleen worden ingesteld als `default` naam ruimte, om een andere geheime naam ruimte op te geven. gebruik in plaats daarvan het voor beeld van een permanent volume.
 
 Als u de Azure Files share in uw Pod wilt koppelen, configureert u het volume in de container specificatie. Maak een nieuw bestand `azure-files-pod.yaml` met de naam met de volgende inhoud. Als u de naam van de bestands share of geheime naam hebt gewijzigd, werkt u de *sharename* en de *secretnaam* bij. Als dat gewenst is, werkt u de `mountPath` , die het pad is naar de bestands share in de pod. Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"*.
 
@@ -131,9 +132,10 @@ Volumes:
 [...]
 ```
 
-## <a name="mount-options"></a>Koppelingsopties
+## <a name="mount-file-share-as-an-persistent-volume"></a>Bestands share koppelen als permanent volume
+ - Koppelingsopties
 
-De standaard waarde voor *file mode* en *dirMode* is *0755* voor Kubernetes-versie 1.9.1 en hoger. Als u een cluster met Kubernetes-versie 1.8.5 of hoger gebruikt en het permanente volume statisch maakt, moeten er koppelings opties worden opgegeven voor het *PersistentVolume* -object. In het volgende voor beeld wordt *0777* ingesteld:
+De standaard waarde voor *file mode* en *dirMode* is *0777* voor Kubernetes versie 1,15 en hoger. In het volgende voor beeld wordt *0755* ingesteld op het *PersistentVolume* -object:
 
 ```yaml
 apiVersion: v1
@@ -147,18 +149,17 @@ spec:
     - ReadWriteMany
   azureFile:
     secretName: azure-secret
+    secretNamespace: default
     shareName: aksshare
     readOnly: false
   mountOptions:
-  - dir_mode=0777
-  - file_mode=0777
+  - dir_mode=0755
+  - file_mode=0755
   - uid=1000
   - gid=1000
   - mfsymlinks
   - nobrl
 ```
-
-Als u een cluster van versie 1.8.0-1.8.4 gebruikt, kan een beveiligings context worden opgegeven met de *runAsUser* -waarde ingesteld op *0*. Zie [Configure a security context][kubernetes-security-context](Engelstalig) voor meer informatie over pod-beveiligings context.
 
 Als u de koppelings opties wilt bijwerken, maakt u een *azurefile-mount-options-PV. yaml-* bestand met een *PersistentVolume*. Bijvoorbeeld:
 

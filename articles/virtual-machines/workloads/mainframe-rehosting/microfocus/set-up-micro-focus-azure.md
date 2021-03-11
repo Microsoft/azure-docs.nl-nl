@@ -1,7 +1,7 @@
 ---
 title: Micro Focus Enter prise Server 5,0 en Enter prise Developer 5,0 op Azure installeren | Microsoft Docs
 description: In dit artikel leest u hoe u micro focus Enter prise Server 5,0 en Enter prise Developer 5,0 op Microsoft Azure installeert.
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: ''
 author: maggsl
 ms.author: edprice
@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: d9e5f9b531fc28caf8f3162a70318927d40bb923
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0d0a7d9060d751dbf05d39545b332c13010cbfae
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483059"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102553575"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Micro Focus Enter prise Server 5,0 en Enter prise Developer 5,0 op Azure installeren
 
@@ -87,7 +87,7 @@ Controleer na de installatie of er aanvullende updates zijn als een aantal verei
 
 1.  Start het micro focus licentie beheer.
 
-2.  Selecteer **Start** \> licentie beheer voor Start **micro focus licentie beheer** \> **License Administration** en klik vervolgens op het tabblad **installeren** . Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld: voor een bestand, in **licentie bestand**, bladert u naar het *- `mflic` bestand dat u eerder hebt geüpload naar de virtuele machine en selecteert u **Licenties installeren**.
+2.  Selecteer  \> licentie beheer voor Start **micro focus licentie beheer** \> en klik vervolgens op het tabblad **installeren** . Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld: voor een bestand, in **licentie bestand**, bladert u naar het *- `mflic` bestand dat u eerder hebt geüpload naar de virtuele machine en selecteert u **Licenties installeren**.
 
     ![Scherm afbeelding toont het dialoog venster micro focus licentie beheer waarin u licenties installeren kunt selecteren.](media/install-image-3.png)
 
@@ -115,7 +115,7 @@ Controleer na de installatie of er aanvullende updates zijn als een aantal verei
 
     ![Bericht installatie voltooid](media/install-image-6.png)
 
-6.  Start de micro focus-licentie beheer net zoals u dat voor de Enter prise-server hebt gedaan. Kies **Start** \> licentie beheer starten met **micro focus licentie beheer** \> **License Administration** en klik op het tabblad **installeren** .
+6.  Start de micro focus-licentie beheer net zoals u dat voor de Enter prise-server hebt gedaan. Kies  \> licentie beheer starten met **micro focus licentie beheer** \> en klik op het tabblad **installeren** .
 
 7.  Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld, voor een bestand, in **licentie bestand**, bladert u naar het `mflic` bestand dat eerder is geüpload naar de virtuele machine en selecteer  **Licenties installeren**.
 

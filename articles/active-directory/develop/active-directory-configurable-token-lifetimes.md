@@ -13,12 +13,12 @@ ms.date: 02/01/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 1bd60a60aa5f6fffcc459f0e14d550740e48496d
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 374e8bb61886a78289fcf44ce9582df325a4e64c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99428146"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549036"
 ---
 # <a name="configurable-token-lifetimes-in-the-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in het micro soft Identity-platform (preview-versie)
 
@@ -240,7 +240,7 @@ Vervolgens probeert de gebruiker toegang tot Web Application B te krijgen. De ge
 
 ## <a name="cmdlet-reference"></a>Cmdlet-naslaginformatie
 
-Dit zijn de cmdlets in de [module Azure Active Directory Power shell voor Graph preview](/powershell/module/azuread/?view=azureadps-2.0-preview#service-principals&preserve-view=true&preserve-view=true).
+Dit zijn de cmdlets in de [module Azure Active Directory Power shell voor Graph preview](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#service-principals).
 
 ### <a name="manage-policies"></a>Beleid beheren
 

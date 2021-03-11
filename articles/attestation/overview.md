@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.custom: references_regions
-ms.openlocfilehash: 85585b771d9c0ed7c6fcdba9cfef7b589a987c8c
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: 020ba74948a062d23d61272ee912eb3364180f1e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429259"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617995"
 ---
 # <a name="microsoft-azure-attestation"></a>Microsoft Azure Attestation 
 
@@ -78,10 +78,10 @@ Azure Attestation is de voorkeurskeuze voor het afleveren van TEEs omdat het de 
 Clusters die in twee regio's zijn geïmplementeerd, werken onder normale omstandigheden onafhankelijk. In het geval van een storing of uitval van één regio vindt het volgende plaats:
 
 - Azure Attestation BCDR zorgt voor een naadloze failover waarbij klanten geen extra stap hoeven uit te voeren om te herstellen
-- De [Azure Traffic Manager](../traffic-manager/index.yml) voor de regio detecteert dat de statustest is gedegradeerd en schakelt het eindpunt over naar de gekoppelde regio
+- De [Azure-Traffic Manager](../traffic-manager/index.yml) voor de regio detecteert dat de status test is gedegradeerd en het eind punt overschakelt naar de gekoppelde regio
 - Bestaande verbindingen werken niet en ontvangen een interne serverfout of time-out voor problemen
-- Alle besturingsvlak-bewerkingen worden geblokkeerd. Klanten kunnen geen Attestation-providers in de primaire regio maken of beleid bijwerken
-- Alle gegevensvlakbewerkingen, inclusief attest, blijven werken in de primaire regio
+- Alle besturingsvlak-bewerkingen worden geblokkeerd. Klanten kunnen geen Attestation-providers in de primaire regio maken
+- Alle gegevenslaag bewerkingen, inclusief attest gesprekken en beleids configuratie, worden geleverd door de secundaire regio. Klanten kunnen blijven werken aan gegevenslaag bewerkingen met de oorspronkelijke URI die overeenkomt met de primaire regio
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure Attestation-basisconcepten](basic-concepts.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: kumud
-ms.openlocfilehash: cc0028a8c7d6d15277c3789118b13b80ed4306ea
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1ec4e26e266a1777857fe0e890b093f60a3597f0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100596636"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612521"
 ---
 # <a name="create-change-or-delete-a-virtual-network"></a>Een virtueel netwerk maken, wijzigen of verwijderen
 
@@ -53,7 +53,7 @@ Voer de volgende taken uit voordat u de stappen in een van de secties van dit ar
      > Als een virtueel netwerk adresbereiken heeft die overlappen met een ander virtueel netwerk of een on-premises netwerk, kunnen de twee netwerken niet worden verbonden. Voordat u een adres bereik definieert, moet u overwegen of u het virtuele netwerk in de toekomst mogelijk wilt verbinden met andere virtuele netwerken of on-premises netwerken. Micro soft raadt aan om virtuele netwerk adresbereiken te configureren met een privé adres ruimte of open bare adres ruimte die eigendom is van uw organisatie.
      >
 
-     - **Subnetnaam**: de naam van het subnet moet uniek zijn binnen het virtuele netwerk. U kunt de naam van het subnet niet wijzigen nadat het subnet is gemaakt. Voor de portal moet u één subnet definiëren wanneer u een virtueel netwerk maakt, zelfs als een virtueel netwerk geen subnets nodig heeft. In de portal kunt u slechts één subnet definiëren wanneer u een virtueel netwerk maakt. U kunt later meer subnetten toevoegen aan het virtuele netwerk nadat het virtuele netwerk is gemaakt. Zie [subnets beheren](virtual-network-manage-subnet.md)om een subnet toe te voegen aan een virtueel netwerk. U kunt een virtueel netwerk met meerdere subnetten maken met behulp van Azure CLI of Power shell.
+     - **Subnetnaam**: de naam van het subnet moet uniek zijn binnen het virtuele netwerk. U kunt de naam van het subnet niet wijzigen nadat het subnet is gemaakt. Voor de portal moet u één subnet definiëren wanneer u een virtueel netwerk maakt, zelfs als een virtueel netwerk geen subnets nodig heeft. In de portal kunt u een of meer subnetten definiëren wanneer u een virtueel netwerk maakt. U kunt later meer subnetten toevoegen aan het virtuele netwerk nadat het virtuele netwerk is gemaakt. Zie [subnets beheren](virtual-network-manage-subnet.md)om een subnet toe te voegen aan een virtueel netwerk. U kunt een virtueel netwerk met meerdere subnetten maken met behulp van Azure CLI of Power shell.
 
        >[!TIP]
        >Soms maken beheerders verschillende subnetten om verkeers routering tussen de subnetten te filteren of te beheren. Bedenk voordat u subnetten definieert hoe u verkeer tussen uw subnetten wilt filteren en routeren. Zie [netwerk beveiligings groepen](./network-security-groups-overview.md)voor meer informatie over het filteren van verkeer tussen subnetten. Azure routeert automatisch verkeer tussen subnetten, maar u kunt de standaard routes van Azure onderdrukken. Zie [route ring Overview](virtual-networks-udr-overview.md)voor meer informatie over de standaard routerings routering van het subnet van Azure.

@@ -2,16 +2,17 @@
 title: Een OpenBSD-installatie kopie maken en uploaden
 description: Meer informatie over het maken en uploaden van een virtuele harde schijf (VHD) die het OpenBSD-besturings systeem bevat om een virtuele Azure-machine te maken met behulp van Azure CLI
 author: gbowerman
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 05/24/2017
 ms.author: guybo
-ms.openlocfilehash: efa38384778bb63857d3c867d74ace7f4f199118
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3437fcd2d1d521aad237ecf6d3f7937b4835d376
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685086"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102554595"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Een OpenBSD-schijf kopie maken en uploaden naar Azure
 In dit artikel wordt beschreven hoe u een virtuele harde schijf (VHD) die het OpenBSD-besturings systeem bevat maakt en uploadt. Nadat u het hebt geüpload, kunt u dit als uw eigen installatie kopie gebruiken om een virtuele machine (VM) in azure te maken via Azure CLI.
@@ -87,7 +88,7 @@ U kunt de virtuele machine nu afsluiten.
 
 
 ## <a name="prepare-the-vhd"></a>De VHD voorbereiden
-De VHDX-indeling wordt niet ondersteund in azure, alleen **vaste VHD**. U kunt de schijf converteren naar een vaste VHD-indeling met behulp van Hyper-V-beheer of de Power shell [-cmdlet Convert-VHD](/powershell/module/hyper-v/convert-vhd?view=win10-ps) . Een voor beeld is als volgt.
+De VHDX-indeling wordt niet ondersteund in azure, alleen **vaste VHD**. U kunt de schijf converteren naar een vaste VHD-indeling met behulp van Hyper-V-beheer of de Power shell [-cmdlet Convert-VHD](/powershell/module/hyper-v/convert-vhd) . Een voor beeld is als volgt.
 
 ```powershell
 Convert-VHD OpenBSD61.vhdx OpenBSD61.vhd -VHDType Fixed

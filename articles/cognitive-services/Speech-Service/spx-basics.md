@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 01/13/2021
 ms.author: trbye
-ms.openlocfilehash: 4a6c7b36665c7a38534ce8e470bc8b327c274d95
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 53138a22c58e89ade4af234630e9429a19738a6a
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "99095174"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556465"
 ---
 # <a name="get-started-with-the-azure-speech-cli"></a>Aan de slag met de Azure speech CLI
 
@@ -86,7 +86,7 @@ spx synthesize --text "Testing synthesis using the Speech CLI" --speakers
 U kunt de uitgesynthesizerde uitvoer ook opslaan in een bestand. In dit voor beeld maken we een bestand met `my-sample.wav` de naam in de map die met de opdracht wordt uitgevoerd.
 
 ```console
-spx synthesize --text "We hope that you enjoy using the Speech CLI." --audio output my-sample.wav
+spx synthesize --text "Enjoy using the Speech CLI." --audio output my-sample.wav
 ```
 
 In deze voor beelden wordt ervan uitgegaan dat u in het Engels test. We ondersteunen echter spraak synthese in veel talen. U kunt een volledige lijst met stemmen weer geven met deze opdracht of door de [pagina taal ondersteuning](./language-support.md)te bezoeken.

@@ -3,12 +3,12 @@ title: Ondersteunings matrix voor MABS & System Center DPM
 description: Dit artikel bevat een overzicht van Azure Backup ondersteuning wanneer u Microsoft Azure Backup Server (MABS) of System Center DPM gebruikt om back-ups te maken van on-premises en Azure VM-resources.
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: aaa68dba0bbd1f3f5ffb5480a2bdb0a48ae85656
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: e888b43ea5641f1943a096f045747d547c52fcfa
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986053"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609750"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Ondersteunings matrix voor back-up met Microsoft Azure Backup Server of System Center DPM
 
@@ -60,9 +60,9 @@ DPM/MABS kan worden geïmplementeerd, zoals in de volgende tabel wordt samenvatt
 
 **Implementatie** | **Ondersteuning** | **Details**
 --- | --- | ---
-**On-premises geïmplementeerd** | Fysieke server<br/><br/>Hyper-V VM<br/><br/> VMware-VM | Raadpleeg de [beveiligings matrix](backup-mabs-protection-matrix.md) voor meer informatie. 
+**On-premises geïmplementeerd** | Fysieke server, maar niet in een fysiek cluster.<br/><br/>Hyper-V-VM. U kunt MABS als een gast machine implementeren op een zelfstandige Hyper Visor of cluster. Het kan niet worden geïmplementeerd op een knoop punt van een cluster of zelfstandige Hyper Visor. De Azure Backup Server is ontworpen om te worden uitgevoerd op een toegewezen server met één doel.<br/><br/> Als een virtuele Windows-machine in een VMware-omgeving. | On-premises MABS-servers kunnen op Azure gebaseerde workloads niet beveiligen. <br><br> Zie [Protection matrix](backup-mabs-protection-matrix.md)voor meer informatie.
 **Geïmplementeerd als een Azure Stack VM** | Alleen MABS | DPM kan niet worden gebruikt om back-ups te maken van Azure Stack Vm's.
-**Geïmplementeerd als een virtuele machine van Azure** | Beveiligt Azure-Vm's en-workloads die worden uitgevoerd op deze Vm's | DPM-MABS die in Azure worden uitgevoerd, kunnen geen back-ups maken van on-premises machines.
+**Geïmplementeerd als een virtuele machine van Azure** | Beveiligt Azure-Vm's en-workloads die worden uitgevoerd op deze Vm's | DPM-MABS die in Azure worden uitgevoerd, kunnen geen back-ups maken van on-premises machines. Het kan alleen werk belastingen beveiligen die worden uitgevoerd in azure IaaS Vm's.
 
 ## <a name="supported-mabs-and-dpm-operating-systems"></a>Ondersteunde MABS-en DPM-besturings systemen
 
@@ -80,13 +80,16 @@ Azure Backup kunt een back-up maken van DPM-MABS-exemplaren waarop een van de vo
 
 ## <a name="management-support"></a>Beheer ondersteuning
 
-**Probleem** | **Details**
+**Name** | **Details**
 --- | ---
 **Installatie** | Installeer DPM-MABS op een computer met één doel.<br/><br/> Installeer DPM/MABS niet op een domein controller, op een computer met de installatie van de functie toepassings server op een computer met micro soft Exchange Server of System Center Operations Manager, of op een cluster knooppunt.<br/><br/> [Controleer alle DPM-systeem vereisten](/system-center/dpm/prepare-environment-for-dpm#dpm-server).
 **Domein** | DPM/MABS moet lid zijn van een domein. Installeer eerst en voeg vervolgens DPM-MABS toe aan een domein. Het verplaatsen van DPM-MABS naar een nieuw domein na implementatie wordt niet ondersteund.
 **Storage** | Moderne back-upopslag (MBS) wordt ondersteund vanuit DPM 2016/MABS v2 en hoger. Het is niet beschikbaar voor MABS v1.
 **MABS-upgrade** | U kunt MABS v3 rechtstreeks installeren of een upgrade uitvoeren naar MABS v3 vanuit MABS v2. [Meer informatie](backup-azure-microsoft-azure-backup.md#upgrade-mabs).
 **MABS verplaatsen** | Het is niet mogelijk om MABS naar een nieuwe server te verplaatsen terwijl de opslag wordt behouden als u MBS gebruikt.<br/><br/> De server moet dezelfde naam hebben als de oorspronkelijke. U kunt de naam niet wijzigen als u dezelfde opslag groep wilt bewaren en dezelfde MABS-Data Base wilt gebruiken om gegevens herstel punten op te slaan.<br/><br/> U hebt een back-up van de MABS-data base nodig, omdat u deze moet herstellen.
+
+>[!NOTE]
+>Het wijzigen van de naam van de DPM-MABS-server wordt niet ondersteund.
 
 ## <a name="mabs-support-on-azure-stack"></a>MABS-ondersteuning voor Azure Stack
 
@@ -168,11 +171,19 @@ Geen connectiviteit langer dan 15 dagen | Verlopen/niet-ingericht | Geen back-up
 |Vereiste |Details |
 |---------|---------|
 |Domain    | De DPM-MABS-server moet zich in een Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 domein.        |
-|Domeinvertrouwen   |  DPM/MABS ondersteunt gegevens beveiliging tussen forests, zolang u een twee richtings vertrouwensrelatie op forestniveau tot stand brengt tussen de afzonderlijke forests.   <BR><BR>   DPM/MABS kan servers en werk stations in domeinen beveiligen binnen een forest met een twee richtings vertrouwensrelatie met het DPM/MABS-Server domein. Zie [back-ups maken en herstellen in werk groepen en niet-vertrouwde domeinen](/system-center/dpm/back-up-machines-in-workgroups-and-untrusted-domains) voor het beveiligen van computers in werk groepen of niet-vertrouwde domeinen.  |
+|Domeinvertrouwen   |  DPM/MABS ondersteunt gegevens beveiliging tussen forests, zolang u een twee richtings vertrouwensrelatie op forestniveau tot stand brengt tussen de afzonderlijke forests.   <BR><BR>   DPM/MABS kan servers en werk stations in domeinen beveiligen binnen een forest met een twee richtings vertrouwensrelatie met het DPM/MABS-Server domein. Zie [back-ups maken en herstellen in werk groepen en niet-vertrouwde domeinen](/system-center/dpm/back-up-machines-in-workgroups-and-untrusted-domains) voor het beveiligen van computers in werk groepen of niet-vertrouwde domeinen. <br><br> Als u een back-up wilt maken van Hyper-V-Server clusters, moeten ze zich in hetzelfde domein bevinden als de MABS-server of in een vertrouwd of onderliggend domein. U kunt een back-up maken van servers en clusters in een niet-vertrouwd domein of niet-vertrouwde werkbelasting met behulp van NTLM of verificatie via certificaat voor een enkele server, of alleen verificatie via certificaat voor een cluster.  |
 
 ## <a name="dpmmabs-storage-support"></a>Ondersteuning voor DPM/MABS-opslag
 
 Gegevens waarvan een back-up is gemaakt naar DPM/MABS, worden opgeslagen op de lokale schijf opslag.
+
+USB-of verwijder bare stations worden niet ondersteund.
+
+NTFS-compressie wordt niet ondersteund op DPM-MABS-volumes.
+
+BitLocker kan alleen worden ingeschakeld nadat u de schijf aan de opslag groep hebt toegevoegd. Schakel BitLocker niet in voordat u deze toevoegt.
+
+Network-Attached Storage (NAS) wordt niet ondersteund voor gebruik in de DPM-opslag groep.
 
 **Storage** | **Details**
 --- | ---
@@ -199,6 +210,38 @@ Voor informatie over de verschillende servers en workloads die u kunt beveiligen
 
 - Het maken van een back-up van geclusterde werk belastingen door DPM/MABS moet zich in hetzelfde domein als DPM/MABS of in een onderliggend/vertrouwd domein bevallen.
 - U kunt NTLM/certificaat verificatie gebruiken om een back-up te maken van gegevens in niet-vertrouwde domeinen of werk groepen.
+
+## <a name="deduplicated-volumes-support"></a>Ondersteuning voor ontdubbelde volumes
+
+>[!NOTE]
+> Ondersteuning voor ontdubbeling voor MABS is afhankelijk van de ondersteuning van het besturings systeem.
+
+### <a name="for-ntfs-volumes"></a>Voor NTFS-volumes
+
+| Besturings systeem van beveiligde server  | Besturings systeem van MABS server  | MABS-versie  | Ondersteuning voor ontdubbeling |
+| ------------------------------------------ | ------------------------------------- | ------------------ | -------------------- |
+| Windows Server 2019                       | Windows Server 2019                  | MABS v3            | J                    |
+| Windows Server 2016                       | Windows Server 2019                  | MABS v3            | Vorig                   |
+| Windows Server 2012 R2                    | Windows Server 2019                  | MABS v3            | N                    |
+| Windows Server 2012                       | Windows Server 2019                  | MABS v3            | N                    |
+| Windows Server 2019                       | Windows Server 2016                  | MABS v3            | Y * *                  |
+| Windows Server 2016                       | Windows Server 2016                  | MABS v3            | J                    |
+| Windows Server 2012 R2                    | Windows Server 2016                  | MABS v3            | J                    |
+| Windows Server 2012                       | Windows Server 2016                  | MABS v3            | J                    |
+
+- \* Bij het beveiligen van een WS 2016 NTFS-volume met MABS v3 dat wordt uitgevoerd op WS 2019, kunnen de herstel bewerkingen worden beïnvloed. Er is een oplossing voor het herstellen van herstel bewerkingen op een niet-ontdubbelde manier. Neem contact op met MABS-ondersteuning als u deze oplossing op MABS v3 UR1 nodig hebt.
+- \** Wanneer u een WS 2019 NTFS-volume met MABS v3 op WS 2016 beveiligt, worden de back-ups en herstel bewerkingen niet-ontdubbeld. Dit betekent dat de back-ups meer ruimte op de MABS-server verbruiken dan het oorspronkelijke NTFS-volume dat is ontdubbeld.
+
+**Probleem**: als u het beveiligde besturings systeem van de server bijwerkt van windows server 2016 naar Windows Server 2019, wordt de back-up van het ontdubbelde NTFS-volume beïnvloed door wijzigingen in de gegevensontdubbeling-logica.
+
+**Tijdelijke oplossing**: Neem contact op met MABS-ondersteuning voor het geval u deze oplossing voor MABS v3 UR1 nodig hebt.
+
+### <a name="for-refs-volumes"></a>Voor ReFS-volumes
+
+>[!NOTE]
+> We hebben enkele problemen geïdentificeerd met back-ups van ontdubbelde ReFS-volumes. We werken eraan om deze sectie bij te werken zodra er een oplossing beschikbaar is. Tot slot wordt de ondersteuning voor het maken van back-ups van ontdubbelde ReFS-volumes uit MABS v3 verwijderd.
+>
+> MABS v3 UR1 en hoger blijven de bescherming en het herstel van normale ReFS-volumes ondersteunen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

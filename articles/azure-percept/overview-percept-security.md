@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: a08876cde9fac64c3a361b469049b4e33678a86f
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 6a3049709c6c094f722a8132ee4c4b2051e24d95
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102098142"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616686"
 ---
 # <a name="azure-percept-security-overview"></a>Overzicht van Azure percept-beveiliging
 
@@ -37,7 +37,7 @@ Azure percept-apparaten gebruiken het vertrouwen van de hoofdmap van de hardware
 
 ### <a name="iot-edge"></a>IoT Edge
 
-Azure percept DK maakt verbinding met Azure percept Studio met extra beveiliging en andere Azure-Services die gebruikmaken van Transport Layer Security (TLS)-protocol. Azure percept DK is een Azure IoT Edge ingeschakeld apparaat. IoT Edge runtime is een verzameling Program ma's die een apparaat in een IoT Edge apparaat omzetten. De IoT Edge-runtime-onderdelen maken het samen IoT Edge apparaten de mogelijkheid code te ontvangen die aan de rand worden uitgevoerd en de resultaten te communiceren. Azure percept DK maakt gebruik van docker-containers voor het isoleren van IoT Edge workloads van het hostbesturingssysteem en de Edge-toepassingen. Meer informatie over het Azure IoT Edge Security Framework vindt u in de [IOT Edge Security Manager](https://docs.microsoft.com/azure/iot-edge/iot-edge-security-manager?view=iotedge-2018-06).
+Azure percept DK maakt verbinding met Azure percept Studio met extra beveiliging en andere Azure-Services die gebruikmaken van Transport Layer Security (TLS)-protocol. Azure percept DK is een Azure IoT Edge ingeschakeld apparaat. IoT Edge runtime is een verzameling Program ma's die een apparaat in een IoT Edge apparaat omzetten. De IoT Edge-runtime-onderdelen maken het samen IoT Edge apparaten de mogelijkheid code te ontvangen die aan de rand worden uitgevoerd en de resultaten te communiceren. Azure percept DK maakt gebruik van docker-containers voor het isoleren van IoT Edge workloads van het hostbesturingssysteem en de Edge-toepassingen. Meer informatie over het Azure IoT Edge Security Framework vindt u in de [IOT Edge Security Manager](https://docs.microsoft.com/azure/iot-edge/iot-edge-security-manager).
 
 ### <a name="device-update-for-iot-hub"></a>Update van het apparaat voor IoT Hub
 
@@ -57,7 +57,7 @@ Deze controle lijst is een start punt voor firewall regels:
 |*. auth.azureperceptdk.azure.net|   443|    SOM van Azure DK-verificatie en-autorisatie|
 |*. auth.projectsantacruz.azure.net| 443|    SOM van Azure DK-verificatie en-autorisatie|
 
-Bekijk ook de lijst met [verbindingen die door Azure IOT Edge worden gebruikt](https://docs.microsoft.com/azure/iot-edge/production-checklist?view=iotedge-2018-06#allow-connections-from-iot-edge-devices).
+Bekijk ook de lijst met [verbindingen die door Azure IOT Edge worden gebruikt](https://docs.microsoft.com/azure/iot-edge/production-checklist#allow-connections-from-iot-edge-devices).
 
 <!---
 ## Additional Recommendations for Deployment to Production

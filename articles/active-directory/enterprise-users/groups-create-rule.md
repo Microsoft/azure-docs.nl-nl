@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a25caa3b59d242b8dcc8a52e1a5d684815cf7bf
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 8525e9a76fa2439692cdb26b36c0bb761d63177c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547777"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550226"
 ---
 # <a name="create-or-update-a-dynamic-group-in-azure-active-directory"></a>Een dynamische groep in Azure Active Directory maken of bijwerken
 
@@ -80,7 +80,7 @@ Als de regel die u hebt ingevoerd niet geldig is, wordt uitgelegd waarom de rege
 
 ## <a name="turn-on-or-off-welcome-email"></a>Welkomst bericht in-of uitschakelen
 
-Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, wordt een welkomst-e-mail melding verzonden naar de gebruikers die aan de groep zijn toegevoegd. Later, als de kenmerken van een gebruiker of apparaat wijzigen, worden alle regels van de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps&preserve-view=true).
+Wanneer een nieuwe Microsoft 365 groep wordt gemaakt, wordt een welkomst-e-mail melding verzonden naar de gebruikers die aan de groep zijn toegevoegd. Later, als de kenmerken van een gebruiker of apparaat wijzigen, worden alle regels van de dynamische groep in de organisatie verwerkt voor wijzigingen in het lidmaatschap. Gebruikers die zijn toegevoegd, ontvangen ook de welkomst melding. U kunt dit gedrag uitschakelen in [Exchange Power shell](/powershell/module/exchange/users-and-groups/Set-UnifiedGroup).
 
 ## <a name="check-processing-status-for-a-rule"></a>De verwerkings status controleren voor een regel
 

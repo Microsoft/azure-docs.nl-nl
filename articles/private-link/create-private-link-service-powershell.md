@@ -1,20 +1,20 @@
 ---
 title: 'Snelstartgids: een persoonlijke Azure-koppelings service maken met behulp van Azure PowerShell'
-description: Meer informatie over het maken van een persoonlijke Azure-koppelings service met Azure PowerShell
+description: In deze Quick Start leert u hoe u een persoonlijke Azure-koppelings service kunt maken met behulp van Azure PowerShell
 services: private-link
 author: asudbring
 ms.service: private-link
 ms.topic: quickstart
 ms.date: 01/24/2021
 ms.author: allensu
-ms.openlocfilehash: 4780bc573796581438b8d331b1d1d9421a65414f
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 366be37135808a6d3d5cc1a277e2de3e3d6da8ae
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100653241"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102566393"
 ---
-# <a name="create-a-private-link-service-using-azure-powershell"></a>Een persoonlijke koppelings service maken met behulp van Azure PowerShell
+# <a name="quickstart-create-a-private-link-service-using-azure-powershell"></a>Snelstartgids: een persoonlijke koppelings service maken met behulp van Azure PowerShell
 
 Aan de slag met een Private Link-service die naar uw service verwijst.  Geef Private Link toegang tot uw service of resource die achter een Azure Standard Load Balancer is geïmplementeerd.  Gebruikers van uw service hebben persoonlijke toegang via hun virtuele netwerk.
 

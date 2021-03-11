@@ -4,12 +4,6 @@
   items:
     - name: Wat is een beheerd exemplaar van Azure voor Apache Cassandra?
       href: introduction.md
-- name: Concepten
-  items:
-    - name: Veelgestelde vragen
-      href: faq.md
-    - name: Beheerd exemplaar versus Azure Cosmos DB Cassandra-API
-      href: compare-cosmosdb-managed-instance.md
 - name: Quickstarts
   items:
     - name: Een cluster maken-Portal
@@ -20,9 +14,23 @@
       href: configure-hybrid-cluster.md
     - name: Spark-cluster implementeren met Databricks
       href: deploy-cluster-databricks.md
+- name: Concepten
+  items:
+    - name: Veelgestelde vragen
+      href: faq.md
+    - name: Beheerd exemplaar versus Azure Cosmos DB Cassandra-API
+      href: compare-cosmosdb-managed-instance.md
 - name: Instructiegidsen
   items:
     - name: Beheren met Azure CLI
       href: manage-resources-cli.md
     - name: Metrische gegevens visualiseren in Prometheus met Grafana
       href: visualize-prometheus-grafana.md
+- name: Naslaginformatie
+  items:
+    - name: REST-API
+      items:
+        - name: Cassandra-clusters
+          href: /rest/api/cosmos-db-resource-provider/2021-03-01-preview/cassandraclusters
+        - name: Cassandra-data centers
+          href: /rest/api/cosmos-db-resource-provider/2021-03-01-preview/cassandradatacenters

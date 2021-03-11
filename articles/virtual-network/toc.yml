@@ -409,15 +409,13 @@
               href: move-across-regions-publicip-powershell.md
     - name: NAT
       items:
-        - name: NAT-gateway maken - PowerShell
-          href: quickstart-create-nat-gateway-powershell.md
+        - name: NAT-gateway maken en valideren - PowerShell
+          href: tutorial-create-nat-gateway-powershell.md
         - name: NAT-gateway maken - CLI
           href: quickstart-create-nat-gateway-cli.md
         - name: NAT-gateway maken - ARM-sjabloon
           displayname: Resource Manager
           href: quickstart-create-nat-gateway-template.md
-        - name: NAT-gateway maken en valideren - PowerShell
-          href: tutorial-create-validate-nat-gateway-powershell.md
         - name: NAT-gateway maken en valideren - CLI
           href: tutorial-create-validate-nat-gateway-cli.md
     - name: Problemen oplossen

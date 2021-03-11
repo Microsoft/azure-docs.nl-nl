@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 5e2ecf8dff432f2a0ce6b3356ce3eca7a8127932
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 09456c06f2a171ec32c1b885dc2b4e475fea5371
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100586854"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550294"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 
@@ -76,7 +76,7 @@ Diagnostische instellingen voor uw data factory maken of toevoegen.
    ![Geef uw instellingen een naam en selecteer een werk ruimte voor logboek analyse](media/data-factory-monitor-oms/monitor-oms-image2.png)
 
     > [!NOTE]
-    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../azure-monitor/essentials/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
+    > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [AzureDiagnostics-logboeken](/azure-monitor/reference/tables/azurediagnostics#additionalfields-column)voor meer informatie.
 
 1. Selecteer **Opslaan**.
 
@@ -265,7 +265,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 }
 ```
 
-| Eigenschap | Type | Description |
+| Eigenschap | Type | Beschrijving |
 | --- | --- | --- |
 | **storageAccountId** |Tekenreeks | De resource-ID van het opslag account waarnaar u Diagnostische logboeken wilt verzenden. |
 | **Servicebusruleid kunnen** |Tekenreeks | De service bus-regel-ID van de service bus-naam ruimte waarin u Event Hubs wilt maken voor het streamen van Diagnostische logboeken. De regel-ID heeft de indeling `{service bus resource ID}/authorizationrules/{key name}` .|
@@ -574,7 +574,7 @@ Hier vindt u de logboek kenmerken van SSIS IR start/stop/onderhouds bewerkingen.
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                      | `MySSISIR` |
 | **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                  | `Informational` |
 | **resultType**             | Tekenreeks | Het resultaat van uw SSIS IR-bewerking                          | `Started/InProgress/Succeeded/Failed` |
-| **Bericht**                | Tekenreeks | Het uitvoer bericht van uw SSIS IR-bewerking                  | `The stopping of your SSIS integration runtime has succeeded.` |
+| **message**                | Tekenreeks | Het uitvoer bericht van uw SSIS IR-bewerking                  | `The stopping of your SSIS integration runtime has succeeded.` |
 | **resourceId**             | Tekenreeks | De unieke ID van de ADF-resource                            | `/SUBSCRIPTIONS/<subscriptionID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 
 #### <a name="ssis-event-message-context-log-attributes"></a>Kenmerken van context logboek van SSIS-gebeurtenis berichten
@@ -667,7 +667,7 @@ Hier vindt u de logboek kenmerken van gebeurtenis berichten die door SSIS-pakket
 | **messageTime**            | Tekenreeks | Het tijdstip waarop uw gebeurtenis bericht is gemaakt in UTC-indeling          | `2017-06-28T21:00:27.3534352Z` |
 | **Message type**            | Tekenreeks | Het type gebeurtenis bericht                                     | `70`( [meer bericht typen](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database#remarks)weer geven) |
 | **messageSourceType**      | Tekenreeks | Het type van de bron van het gebeurtenis bericht                              | `20`(Zie [meer bron typen van berichten](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database#remarks)) |
-| **Bericht**                | Tekenreeks | De tekst van uw gebeurtenis bericht                                     | `MyPackage:Validation has started.` |
+| **message**                | Tekenreeks | De tekst van uw gebeurtenis bericht                                     | `MyPackage:Validation has started.` |
 | **packageName**            | Tekenreeks | De naam van het uitgevoerde pakket bestand                             | `MyPackage.dtsx` |
 | **eventName**              | Tekenreeks | De naam van de gerelateerde runtime gebeurtenis                                 | `OnPreValidate` |
 | **messageSourceName**      | Tekenreeks | De naam van het pakket onderdeel als bron van het gebeurtenis bericht         | `Data Flow Task` |

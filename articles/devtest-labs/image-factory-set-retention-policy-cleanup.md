@@ -3,12 +3,12 @@ title: Bewaar beleid instellen in Azure DevTest Labs | Microsoft Docs
 description: Meer informatie over het configureren van een Bewaar beleid, het opschonen van de fabriek en het buiten gebruik stellen van oude installatie kopieën van DevTest Labs.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 115fdff215399a9a51171161191ecf5009e8e20e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85384e88f8d456c7bf67302a57618d7a9703a5ee
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85476050"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550022"
 ---
 # <a name="set-up-retention-policy-in-azure-devtest-labs"></a>Bewaar beleid instellen in Azure DevTest Labs
 In dit artikel vindt u informatie over het instellen van een Bewaar beleid, het opschonen van de fabriek en het buiten gebruik stellen van oude installatie kopieën van alle andere DevTest Labs in de organisatie. 
@@ -60,11 +60,11 @@ Nu u de build-definitie hebt voltooid, moet u een nieuwe build in de wachtrij pl
 ## <a name="summary"></a>Samenvatting
 U hebt nu een image Factory die aangepaste installatie kopieën kan genereren en distribueren naar uw Labs op aanvraag. Op dit moment is het slechts een kwestie van het correct instellen van uw installatie kopieën en het identificeren van de doel-Labs. Zoals vermeld in het vorige artikel, specificeert de **Labs.jsvoor** het bestand in de map **Configuration** welke installatie kopieën beschikbaar moeten worden gemaakt in elk van de doel-Labs. Wanneer u andere DevTest Labs toevoegt aan uw organisatie, hoeft u alleen maar een vermelding toe te voegen aan de Labs.jsop voor het nieuwe lab.
 
-Het toevoegen van een nieuwe installatie kopie aan uw fabriek is ook eenvoudig. Wanneer u een nieuwe installatie kopie in uw fabriek wilt toevoegen, gaat u naar [Azure Portal](https://portal.azure.com)de DevTest Labs en selecteert u de knop voor het toevoegen van een virtuele machine en kiest u de gewenste installatie kopie en artefacten van de Marketplace. In plaats van de knop **maken** te selecteren om de nieuwe VM te maken, selecteert u **Azure Resource Manager sjabloon weer geven**en slaat u de sjabloon op als een JSON-bestand ergens in de map **GoldenImages** in uw opslag plaats. De volgende keer dat u de installatie kopie-Factory uitvoert, wordt uw aangepaste installatie kopie gemaakt.
+Het toevoegen van een nieuwe installatie kopie aan uw fabriek is ook eenvoudig. Wanneer u een nieuwe installatie kopie in uw fabriek wilt toevoegen, gaat u naar [Azure Portal](https://portal.azure.com)de DevTest Labs en selecteert u de knop voor het toevoegen van een virtuele machine en kiest u de gewenste installatie kopie en artefacten van de Marketplace. In plaats van de knop **maken** te selecteren om de nieuwe VM te maken, selecteert u **Azure Resource Manager sjabloon weer geven** en slaat u de sjabloon op als een JSON-bestand ergens in de map **GoldenImages** in uw opslag plaats. De volgende keer dat u de installatie kopie-Factory uitvoert, wordt uw aangepaste installatie kopie gemaakt.
 
 
 ## <a name="next-steps"></a>Volgende stappen
-1. [Plan uw build/release](/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=designer) om de installatie kopie in de fabriek periodiek uit te voeren. De door de fabriek gegenereerde installatie kopieën worden regel matig vernieuwd.
+1. [Plan uw build/release](/azure/devops/pipelines/build/triggers?tabs=designer) om de installatie kopie in de fabriek periodiek uit te voeren. De door de fabriek gegenereerde installatie kopieën worden regel matig vernieuwd.
 2. Maak meer gouden installatie kopieën voor uw fabriek. U kunt ook overwegen om [artefacten te maken](devtest-lab-artifact-author.md) om extra onderdelen van uw VM-installatie taken te script en de artefacten in uw fabrieks installatie kopieën op te nemen.
 4. Maak een [afzonderlijke build/release](/azure/devops/pipelines/overview?view=azure-devops-2019) om het **DistributeImages** -script afzonderlijk uit te voeren. U kunt dit script uitvoeren wanneer u wijzigingen aanbrengt in Labs.jsen afbeeldingen kopieert naar doel-Labs zonder dat u alle installatie kopieën opnieuw hoeft te maken.
 

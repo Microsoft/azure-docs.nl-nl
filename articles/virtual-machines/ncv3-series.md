@@ -3,16 +3,16 @@ title: NCv3-serie-Azure Virtual Machines
 description: Specificaties voor de virtuele machines uit de NCv3-serie.
 author: vikancha-MSFT
 ms.service: virtual-machines
-ms.subservice: sizes
+ms.subservice: vm-sizes-gpu
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 313ca9ddb893ad2d84fdb3f808bdee38dfc9e846
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: c28ed042156865c52607ce031507c696f28b4e7c
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102119753"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617298"
 ---
 # <a name="ncv3-series"></a>NCv3-serie
 
@@ -24,7 +24,7 @@ Virtuele machines uit de NCv3-serie worden aangedreven door NVIDIA Tesla V100 Gp
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
-[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 NVIDIA NVLink Interconnect: niet ondersteund<br>
 
 > [!IMPORTANT]

@@ -4,12 +4,12 @@ ms.service: databox
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: alkohli
-ms.openlocfilehash: 03aed175b105ad650407acb4a839c5a5b8004465
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
-ms.translationtype: HT
+ms.openlocfilehash: f9707ab48d64ede2e796675eb3a0a6e7820c7073
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102532649"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102603283"
 ---
 Afhankelijk van het besturings systeem van de client zijn de procedures om een externe verbinding met het apparaat te maken verschillend.
 
@@ -68,7 +68,7 @@ Volg deze stappen om vanaf een NFS-client extern verbinding te maken.
 
 1. Als u Power shell-sessie wilt openen, typt u:
 
-    `sudo pwsh`
+    `pwsh`
  
 2. Als u verbinding wilt maken via de externe client, typt u:
 

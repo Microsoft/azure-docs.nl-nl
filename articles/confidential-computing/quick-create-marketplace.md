@@ -3,17 +3,17 @@ title: 'Quickstart: een Azure VM met Confidential Computing maken met Marketplac
 description: Ga aan de slag met uw implementaties door te leren hoe u snel een virtuele machine met Confidential Computing kunt maken met Marketplace.
 author: JBCook
 ms.service: virtual-machines
-ms.subservice: workloads
+ms.subservice: confidential-computing
 ms.workload: infrastructure
 ms.topic: quickstart
 ms.date: 04/06/2020
 ms.author: JenCook
-ms.openlocfilehash: 82d9c143f84dfced639c928bf12693024079c2ba
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
-ms.translationtype: HT
+ms.openlocfilehash: aba23b67574fb74b7cd571dc5d4642bb8b991b93
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409490"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102566631"
 ---
 # <a name="quickstart-deploy-an-azure-confidential-computing-vm-in-the-marketplace"></a>Quickstart: een VM met Azure Confidential Computing implementeren in de Marketplace
 

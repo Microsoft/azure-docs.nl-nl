@@ -2,18 +2,19 @@
 title: Azure Disk Encryption met Azure AD-app Linux IaaS Vm's (vorige versie)
 description: In dit artikel vindt u instructies voor het inschakelen van Microsoft Azure schijf versleuteling voor virtuele Linux IaaS-machines.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: c8228086eb67478d80aa041004e0da3eed71f896
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: d1607ef4ff277f9c9cdb55db3e58da1052a00756
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741796"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558391"
 ---
 # <a name="enable-azure-disk-encryption-with-azure-ad-on-linux-vms-previous-release"></a>Azure Disk Encryption met Azure AD inschakelen op virtuele Linux-machines (vorige versie)
 
@@ -36,7 +37,7 @@ Neem een [moment opname](snapshot-copy-managed-disk.md), maak een back-up of bei
 
  
 
-## <a name="enable-encryption-on-an-existing-or-running-iaas-linux-vm"></a><a name="bkmk_RunningLinux"> </a> Versleuteling inschakelen op een bestaande of actieve IaaS Linux VM
+## <a name="enable-encryption-on-an-existing-or-running-iaas-linux-vm"></a><a name="bkmk_RunningLinux"></a> Versleuteling inschakelen op een bestaande of actieve IaaS Linux VM
 
 In dit scenario kunt u versleuteling inschakelen met behulp van de Azure Resource Manager-sjabloon, Power shell-cmdlets of Azure CLI-opdrachten. 
 
@@ -78,7 +79,7 @@ Gebruik de opdracht [AZ VM Encryption Enable](/cli/azure/vm/encryption#az-vm-enc
          az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type DATA
      ```
 
-### <a name="enable-encryption-on-an-existing-or-running-linux-vm-by-using-powershell"></a><a name="bkmk_RunningLinuxPSH"> </a> Versleuteling inschakelen op een bestaande of uitgevoerde Linux-VM met behulp van Power shell
+### <a name="enable-encryption-on-an-existing-or-running-linux-vm-by-using-powershell"></a><a name="bkmk_RunningLinuxPSH"></a> Versleuteling inschakelen op een bestaande of uitgevoerde Linux-VM met behulp van Power shell
 Gebruik de cmdlet [set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension) om versleuteling in te scha kelen op een actieve IaaS-virtuele machine in Azure. Neem een [moment opname](snapshot-copy-managed-disk.md) of maak een back-up van de virtuele machine met [Azure backup](../../backup/backup-azure-vms-encryption.md) voordat de schijven zijn versleuteld. De para meter-skipVmBackup is al opgegeven in de Power shell-scripts voor het versleutelen van een actieve Linux-VM.
 
 - **Een actieve VM versleutelen met behulp van een client geheim:** Het volgende script initialiseert uw variabelen en voert de Set-AzVMDiskEncryptionExtension-cmdlet uit. De resource groep, de VM, de sleutel kluis, de Azure AD-app en het client geheim moeten al zijn gemaakt als vereisten. Vervang MyVirtualMachineResourceGroup, MyKeyVaultResourceGroup, MySecureVM, MySecureVault, my-AAD-client-ID en My-AAD-client-Secret door uw waarden. Wijzig de para meter-VolumeType om op te geven welke schijven u wilt versleutelen.
@@ -132,7 +133,7 @@ Gebruik de cmdlet [set-AzVMDiskEncryptionExtension](/powershell/module/az.comput
      ```
 
 
-### <a name="enable-encryption-on-an-existing-or-running-iaas-linux-vm-with-a-template"></a><a name="bkmk_RunningLinux"> </a> Versleuteling op een bestaande of actieve IaaS Linux-VM inschakelen met een sjabloon
+### <a name="enable-encryption-on-an-existing-or-running-iaas-linux-vm-with-a-template"></a><a name="bkmk_RunningLinux"></a> Versleuteling op een bestaande of actieve IaaS Linux-VM inschakelen met een sjabloon
 
 U kunt schijf versleuteling inschakelen op een bestaande of actieve IaaS Linux-VM in azure met behulp van de [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm).
 
@@ -148,7 +149,7 @@ De volgende tabel bevat de para meters van Resource Manager-sjablonen voor besta
 | AADClientSecret | Client geheim van de Azure AD-toepassing met machtigingen voor het schrijven van geheimen naar uw sleutel kluis. |
 | keyVaultName | De naam van de sleutel kluis waarnaar de sleutel moet worden geüpload. U kunt deze ophalen met behulp van de Azure CLI-opdracht `az keyvault show --name "MySecureVault" --query KVresourceGroup` . |
 |  keyEncryptionKeyURL | De URL van de coderings sleutel die wordt gebruikt om de gegenereerde sleutel te versleutelen. Deze para meter is optioneel als u **nokek** selecteert in de vervolg keuzelijst **UseExistingKek** . Als u **Kek** selecteert in de vervolg keuzelijst **UseExistingKek** , moet u de _keyEncryptionKeyURL_ -waarde invoeren. |
-| volumeType | Type volume waarop de versleutelings bewerking wordt uitgevoerd. Geldige ondersteunde waarden zijn _besturings systeem_ of _alle_ . (Zie Ondersteunde Linux-distributies en hun versies voor besturings systeem-en gegevens schijven in de sectie vereisten eerder.) |
+| volumeType | Type volume waarop de versleutelings bewerking wordt uitgevoerd. Geldige ondersteunde waarden zijn _besturings systeem_ of _alle_. (Zie Ondersteunde Linux-distributies en hun versies voor besturings systeem-en gegevens schijven in de sectie vereisten eerder.) |
 | sequenceVersion | Sequentie versie van de BitLocker-bewerking. Verhoog dit versie nummer elke keer dat er een schijf versleutelings bewerking wordt uitgevoerd op dezelfde VM. |
 | vmName | De naam van de virtuele machine waarop de versleutelings bewerking moet worden uitgevoerd. |
 | wachtwoordzin | Typ een sterke wachtwoordzin als de gegevens versleutelings sleutel. |
@@ -164,7 +165,7 @@ De para meter EncryptFormatAll vermindert de tijd voor het versleutelen van Linu
 > EncryptFormatAll mag niet worden gebruikt wanneer er gegevens nodig zijn op de gegevens volumes van de virtuele machine. U kunt schijven uitsluiten van versleuteling door deze te ontkoppelen. Probeer eerst de para meter EncryptFormatAll op een VM testen om inzicht te krijgen in de para meter en de implicatie van de functie voordat u deze op de productie-VM probeert te gebruiken. De EncryptFormatAll-optie formatteert de gegevens schijf, zodat alle gegevens erop verloren gaan. Voordat u doorgaat, controleert u of alle schijven die u wilt uitsluiten, correct zijn ontkoppeld. </br></br>
  >Als u deze para meter instelt terwijl u de versleutelings instellingen bijwerkt, kan dit ertoe leiden dat de computer opnieuw wordt opgestart vóór de daad werkelijke versleuteling. In dit geval wilt u ook de schijf die u niet wilt Format teren uit het fstab-bestand verwijderen. U moet ook de partitie die u wilt versleutelen, toevoegen aan het fstab-bestand voordat u de versleutelings bewerking initieert. 
 
-### <a name="encryptformatall-criteria"></a><a name="bkmk_EFACriteria"> </a> EncryptFormatAll criteria
+### <a name="encryptformatall-criteria"></a><a name="bkmk_EFACriteria"></a> EncryptFormatAll criteria
 De para meter doorloopt alle partities en versleutelt deze zolang *ze voldoen aan de volgende* criteria: 
 - Is geen hoofdmap/OS/opstart partitie
 - Is nog niet versleuteld
@@ -175,16 +176,16 @@ De para meter doorloopt alle partities en versleutelt deze zolang *ze voldoen aa
 
 Versleutel de schijven die het RAID-of LVM-volume vormen, in plaats van het RAID-of LVM-volume.
 
-### <a name="use-the-encryptformatall-parameter-with-a-template"></a><a name="bkmk_EFATemplate"> </a> De para meter EncryptFormatAll gebruiken met een sjabloon
+### <a name="use-the-encryptformatall-parameter-with-a-template"></a><a name="bkmk_EFATemplate"></a> De para meter EncryptFormatAll gebruiken met een sjabloon
 Als u de optie EncryptFormatAll wilt gebruiken, gebruikt u een bestaande Azure Resource Manager sjabloon die een virtuele Linux-machine versleutelt en wijzigt u het veld **EncryptionOperation** voor de AzureDiskEncryption-resource.
 
 1. Gebruik bijvoorbeeld de [Resource Manager-sjabloon om een actieve Linux IaaS-VM te versleutelen](https://github.com/vermashi/azure-quickstart-templates/tree/encrypt-format-running-linux-vm/201-encrypt-running-linux-vm). 
 2. Selecteer **implementeren naar Azure** in de Azure Quick Start-sjabloon.
-3. Wijzig het veld **EncryptionOperation** van **EnableEncryption** in **EnableEncryptionFormatAl** .
+3. Wijzig het veld **EncryptionOperation** van **EnableEncryption** in **EnableEncryptionFormatAl**.
 4. Selecteer het abonnement, de resource groep, de locatie van de resource groep, andere para meters, juridische voor waarden en de overeenkomst. Selecteer **maken** om versleuteling in te scha kelen op de bestaande of actieve IaaS-VM.
 
 
-### <a name="use-the-encryptformatall-parameter-with-a-powershell-cmdlet"></a><a name="bkmk_EFAPSH"> </a> De para meter EncryptFormatAll gebruiken met een Power shell-cmdlet
+### <a name="use-the-encryptformatall-parameter-with-a-powershell-cmdlet"></a><a name="bkmk_EFAPSH"></a> De para meter EncryptFormatAll gebruiken met een Power shell-cmdlet
 Gebruik de cmdlet [set-AzVMDiskEncryptionExtension](/powershell/module/az.compute/set-azvmdiskencryptionextension) met de para meter EncryptFormatAll.
 
 **Een actieve VM versleutelen met behulp van een client geheim en EncryptFormatAll:** Het volgende script initialiseert bijvoorbeeld uw variabelen en voert de Set-AzVMDiskEncryptionExtension cmdlet uit met de para meter EncryptFormatAll. De resource groep, de VM, de sleutel kluis, de Azure AD-app en het client geheim moeten al zijn gemaakt als vereisten. Vervang MyKeyVaultResourceGroup, MyVirtualMachineResourceGroup, MySecureVM, MySecureVault, my-AAD-client-ID en My-AAD-client-Secret door uw waarden.
@@ -203,7 +204,7 @@ Gebruik de cmdlet [set-AzVMDiskEncryptionExtension](/powershell/module/az.comput
    ```
 
 
-### <a name="use-the-encryptformatall-parameter-with-logical-volume-manager-lvm"></a><a name="bkmk_EFALVM"> </a> Gebruik de para meter EncryptFormatAll met Logical Volume Manager (LVM) 
+### <a name="use-the-encryptformatall-parameter-with-logical-volume-manager-lvm"></a><a name="bkmk_EFALVM"></a> Gebruik de para meter EncryptFormatAll met Logical Volume Manager (LVM) 
 We raden u aan om een LVM-on-cryptografie installatie uit te voeren. Voor alle volgende voor beelden vervangt u het pad naar het apparaat en de mountpoints door een wille keurige wens. Deze installatie kan als volgt worden uitgevoerd:
 
 - Voeg de gegevens schijven toe waarmee de virtuele machine wordt samengesteld.
@@ -238,7 +239,7 @@ We raden u aan om een LVM-on-cryptografie installatie uit te voeren. Voor alle v
 
 
 
-## <a name="new-iaas-vms-created-from-customer-encrypted-vhd-and-encryption-keys"></a><a name="bkmk_VHDpre"> </a> Nieuwe IaaS-vm's gemaakt op basis van door de klant versleutelde VHD-en versleutelings sleutels
+## <a name="new-iaas-vms-created-from-customer-encrypted-vhd-and-encryption-keys"></a><a name="bkmk_VHDpre"></a> Nieuwe IaaS-vm's gemaakt op basis van door de klant versleutelde VHD-en versleutelings sleutels
 In dit scenario kunt u versleutelen inschakelen met behulp van de Resource Manager-sjabloon, Power shell-cmdlets of CLI-opdrachten. In de volgende secties vindt u meer informatie over de Resource Manager-sjabloon en CLI-opdrachten. 
 
 Volg de instructies in de bijlage voor het voorbereiden van vooraf versleutelde installatie kopieën die kunnen worden gebruikt in Azure. Nadat de installatie kopie is gemaakt, kunt u de stappen in de volgende sectie gebruiken om een versleutelde Azure-VM te maken.
@@ -252,7 +253,7 @@ Volg de instructies in de bijlage voor het voorbereiden van vooraf versleutelde 
 
 
 
-### <a name="use-azure-powershell-to-encrypt-iaas-vms-with-pre-encrypted-vhds"></a><a name="bkmk_VHDprePSH"> </a> Azure PowerShell gebruiken om IaaS vm's te versleutelen met vooraf versleutelde vhd's 
+### <a name="use-azure-powershell-to-encrypt-iaas-vms-with-pre-encrypted-vhds"></a><a name="bkmk_VHDprePSH"></a> Azure PowerShell gebruiken om IaaS vm's te versleutelen met vooraf versleutelde vhd's 
 U kunt schijf versleuteling op uw versleutelde VHD inschakelen met behulp van de Power shell [-cmdlet Set-AzVMOSDisk](/powershell/module/az.compute/set-azvmosdisk#examples). In het volgende voor beeld krijgt u enkele algemene para meters. 
 
 ```powershell
@@ -341,7 +342,7 @@ U kunt versleuteling uitschakelen met behulp van Azure PowerShell, de Azure CLI 
          az vm encryption disable --name "MySecureVM" --resource-group "MyVirtualMachineResourceGroup" --volume-type [ALL, DATA, OS]
      ```
 - **Versleuteling uitschakelen met een resource manager-sjabloon:** Als u versleuteling wilt uitschakelen, gebruikt u de sjabloon [versleuteling uitschakelen voor een actieve Linux-VM](https://aka.ms/decrypt-linuxvm) .
-     1. Selecteer **implementeren naar Azure** .
+     1. Selecteer **implementeren naar Azure**.
      2. Selecteer het abonnement, de resource groep, de locatie, de virtuele machine, de juridische voor waarden en de overeenkomst.
      3. Selecteer **aankoop** om schijf versleuteling uit te scha kelen op een actieve Windows-VM. 
 

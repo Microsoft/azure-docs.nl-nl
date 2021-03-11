@@ -4,15 +4,15 @@ description: Een Windows Virtual Desktop-hostgroep maken met behulp van de Azure
 author: Heidilohr
 ms.topic: tutorial
 ms.custom: references_regions
-ms.date: 02/17/2021
+ms.date: 03/10/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 46a029a3b803428d6250b74059190f66183be452
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 60566b95447c1b69fb257435f45a11524ac5d8b2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100651456"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617337"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Zelfstudie: Een hostpool maken met de Azure-portal
 
@@ -101,18 +101,16 @@ Ga als volgt te werk om uw virtuele machine in te stellen binnen het installatie
 
 1. Kies onder **Resourcegroep** de resourcegroep waarin u de virtuele machines wilt maken. Dit kan een andere resourcegroep zijn dan die u hebt gebruikt voor de hostgroep.
 
-2. Kies de **locatie van de virtuele machine** waarin u de virtuele machines wilt maken. Deze kunnen hetzelfde zijn of verschillen van de regio die u hebt geselecteerd voor de hostgroep.
+2. Daarna geeft u een **Naamvoorvoegsel** op om de virtuele machines die door het installatieproces zijn gemaakt een naam te geven. Het achtervoegsel wordt `-` met getallen die beginnen bij 0.
 
-3. Kies vervolgens de **grootte van de virtuele machine** die u wilt gebruiken. U kunt de standaardgrootte behouden of **Formaat wijzigen** selecteren om de grootte te wijzigen. Als u **Formaat wijzigen** selecteert, kiest u in het venster dat verschijnt de grootte van de virtuele machine die geschikt is voor de workload.
+3. Kies de **locatie van de virtuele machine** waarin u de virtuele machines wilt maken. Deze kunnen hetzelfde zijn of verschillen van de regio die u hebt geselecteerd voor de hostgroep.
+   
+4. Kies vervolgens de optie voor de beschik baarheid die het beste bij uw behoeften past. Zie [beschikbaarheids opties voor virtuele machines in azure](../virtual-machines/availability.md) en [onze veelgestelde vragen](faq.md#which-availability-option-is-best-for-me)voor meer informatie over welke optie geschikt is voor u.
+   
+   > [!div class="mx-imgBorder"]
+   > [Een scherm opname van de vervolg keuzelijst beschik bare zone. De optie ' beschikbaarheids zone ' is gemarkeerd.](media/availability-zone.png)
 
-4. Geef bij **Aantal virtuele machines** het aantal virtuele machines op dat u voor de hostgroep wilt maken.
-
-    >[!NOTE]
-    >Het installatieproces kan maximaal 400 VM's maken tijdens het instellen van uw hostgroep, en tijdens elk VM-installatieproces worden vier objecten in de resourcegroep gemaakt. Tijdens het maken wordt het quotum voor uw abonnement niet gecontroleerd. Controleer daarom of het aantal VM's dat u invoert binnen de limieten voor virtuele machines en API's van Azure voor uw resourcegroep en abonnement valt. U kunt meer VM's toevoegen als u klaar bent met het maken van de hostgroep.
-
-5. Daarna geeft u een **Naamvoorvoegsel** op om de virtuele machines die door het installatieproces zijn gemaakt een naam te geven. Het achtervoegsel wordt `-` met getallen die beginnen bij 0.
-
-6. Kies vervolgens de installatiekopie die moet worden gebruikt om de virtuele machine te maken. U kunt kiezen tussen **Galerie** en **Opslagblob**.
+5. Kies vervolgens de installatiekopie die moet worden gebruikt om de virtuele machine te maken. U kunt kiezen tussen **Galerie** en **Opslagblob**.
 
     - Als u **Galerie** kiest, selecteert u een van de aanbevolen installatiekopieën in het vervolgkeuzemenu:
 
@@ -122,23 +120,30 @@ Ga als volgt te werk om uw virtuele machine in te stellen binnen het installatie
       - Windows 10 Enterprise voor meerdere sessies, versie 2004
       - Windows 10 Enterprise voor meerdere sessies, versie 2004 + Microsoft 365 Apps
 
-     Als u de gewenste installatiekopie niet ziet, selecteert u **Door alle afbeeldingen en schijven bladeren**, waarmee u een andere afbeelding in uw galerie of een installatiekopie van Microsoft en andere uitgevers kunt selecteren. Zorg ervoor dat de afbeelding die u kiest een van de [ondersteunde installatie kopieën van het besturings systeem](overview.md#supported-virtual-machine-os-images)is.
+      Als u de gewenste installatie kopie niet ziet, selecteert u **alle afbeeldingen weer geven**, waarmee u een andere afbeelding in uw galerie of een afbeelding van micro soft en andere uitgevers kunt selecteren. Zorg ervoor dat de afbeelding die u kiest een van de [ondersteunde installatie kopieën van het besturings systeem](overview.md#supported-virtual-machine-os-images)is.
 
-     > [!div class="mx-imgBorder"]
-     > ![Een schermopname van de Marketplace met een lijst met installatiekopieën van Microsoft.](media/marketplace-images.png)
+      > [!div class="mx-imgBorder"]
+      > ![Een schermopname van de Marketplace met een lijst met installatiekopieën van Microsoft.](media/marketplace-images.png)
 
-     U kunt ook naar **Mijn objecten** gaan en een aangepaste installatiekopie kiezen die u al hebt geüpload.
+      U kunt ook naar **Mijn objecten** gaan en een aangepaste installatiekopie kiezen die u al hebt geüpload.
 
-     > [!div class="mx-imgBorder"]
-     > ![Een schermopname van het tabblad Mijn objecten.](media/my-items.png)
+      > [!div class="mx-imgBorder"]
+      > ![Een schermopname van het tabblad Mijn objecten.](media/my-items.png)
 
-    - Als u **Opslagblob** kiest, kunt u gebruikmaken van uw eigen installatiekopiebuild via Hyper-V of op een Azure VM. U hoeft alleen de locatie van de installatiekopie in de opslagblob als een URI in te voeren.
+    - Als u **opslag-BLOB** kiest, kunt u uw eigen installatie kopie maken met behulp van Hyper-V of op een Azure VM. U hoeft alleen de locatie van de installatiekopie in de opslagblob als een URI in te voeren.
+   
+   De locatie van de installatie kopie is onafhankelijk van de optie voor de beschik baarheid, maar de zone tolerantie van de afbeelding bepaalt of die afbeelding kan worden gebruikt in combi natie met een beschikbaarheids zone. Als u een beschikbaarheids zone selecteert tijdens het maken van uw installatie kopie, moet u ervoor zorgen dat u een installatie kopie uit de galerie gebruikt waarvoor zone tolerantie is ingeschakeld. Raadpleeg [de veelgestelde vragen](faq.md#which-availability-option-is-best-for-me)voor meer informatie over de optie voor zone tolerantie die u moet gebruiken.
 
-7. Kies welk type besturingssysteemschijven u wilt gebruiken voor uw VM's: Standard - SSD, Premium - SSD of Standard-HDD.
+6. Vervolgens kiest u de grootte van de **virtuele machine** die u wilt gebruiken. U kunt de standaardgrootte behouden of **Formaat wijzigen** selecteren om de grootte te wijzigen. Als u **Formaat wijzigen** selecteert, kiest u in het venster dat verschijnt de grootte van de virtuele machine die geschikt is voor de workload.
 
-8. Onder Netwerk en beveiliging selecteert u het **virtuele netwerk** en het **subnet** waar u de virtuele machines die u maakt, wilt plaatsen. Zorg ervoor dat het virtuele netwerk verbinding kan maken met de domeincontroller omdat u de virtuele machines in het virtuele netwerk moet toevoegen aan het domein. De DNS-servers van het virtuele netwerk dat u hebt geselecteerd, moeten worden geconfigureerd om het IP-adres van de domeincontroller te gebruiken.
+7. Geef bij **Aantal virtuele machines** het aantal virtuele machines op dat u voor de hostgroep wilt maken.
 
-9. Selecteer vervolgens of u een openbaar IP-adres voor de virtuele machines wilt. U kunt het beste **Nee** selecteren, omdat een privé-IP-adres veiliger is.
+    >[!NOTE]
+    >Het installatieproces kan maximaal 400 VM's maken tijdens het instellen van uw hostgroep, en tijdens elk VM-installatieproces worden vier objecten in de resourcegroep gemaakt. Tijdens het maken wordt het quotum voor uw abonnement niet gecontroleerd. Controleer daarom of het aantal VM's dat u invoert binnen de limieten voor virtuele machines en API's van Azure voor uw resourcegroep en abonnement valt. U kunt meer VM's toevoegen als u klaar bent met het maken van de hostgroep.
+
+8. Kies welk type besturingssysteemschijven u wilt gebruiken voor uw VM's: Standard - SSD, Premium - SSD of Standard-HDD.
+
+9. Onder Netwerk en beveiliging selecteert u het **virtuele netwerk** en het **subnet** waar u de virtuele machines die u maakt, wilt plaatsen. Zorg ervoor dat het virtuele netwerk verbinding kan maken met de domeincontroller omdat u de virtuele machines in het virtuele netwerk moet toevoegen aan het domein. De DNS-servers van het virtuele netwerk dat u hebt geselecteerd, moeten worden geconfigureerd om het IP-adres van de domeincontroller te gebruiken.
 
 10. Selecteer het gewenste type beveiligingsgroep: **Basis**, **Geavanceerd** of **Geen**.
 
@@ -154,9 +159,9 @@ Ga als volgt te werk om uw virtuele machine in te stellen binnen het installatie
 
 11. Selecteer daarna of u wilt dat de virtuele machines aan een specifiek domein en een specifieke organisatie-eenheid worden gekoppeld. Als u **Ja** kiest, geeft u het domein op dat u wilt toevoegen. U kunt eventueel een specifieke organisatie-eenheid toevoegen waarin u de virtuele machines wilt plaatsen. Als u **Nee** kiest, worden de virtuele machines gekoppeld aan het domein dat overeenkomt met het achtervoegsel van de **UPN van de AD-domeindeelname**.
 
-  - Zorg er bij het specificeren van een OE voor dat u het volledige pad (Distinguished Name) zonder aanhalingstekens gebruikt.
+    - Wanneer u een OE opgeeft, moet u ervoor zorgen dat u het volledige pad (Distinguished Name) en zonder aanhalings tekens gebruikt.
 
-12. Voer onder Administrator-account de referenties in voor de Active Directory Domain-beheerder van het virtuele netwerk dat u hebt geselecteerd. Voor dit account kan geen Multi-Factor Authentication (MFA) zijn ingeschakeld. Wanneer u lid wordt van een Azure Active Directory Domain Services-domein (Azure AD DS), moet het account deel uitmaken van de Azure AD DC-beheerdersgroep en moet het accountwachtwoord werken in Azure AD DS.
+12. Voer onder domein beheerders account de referenties in voor de Active Directory-domein beheerder van het virtuele netwerk dat u hebt geselecteerd. Voor dit account kan geen Multi-Factor Authentication (MFA) zijn ingeschakeld. Wanneer u lid wordt van een Azure Active Directory Domain Services-domein (Azure AD DS), moet het account deel uitmaken van de Azure AD DC-beheerdersgroep en moet het accountwachtwoord werken in Azure AD DS.
 
 13. Selecteer **Volgende: Werkruimte >** .
 

@@ -55,7 +55,7 @@
         - name: Licenties
           href: concept-mfa-licensing.md
         - name: MFA voor Office 365
-          href: /office365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide
+          href: /office365/admin/security-and-compliance/set-up-multi-factor-authentication
         - name: Veelgestelde vragen
           href: multi-factor-authentication-faq.md
     - name: Wachtwoordbeveiliging

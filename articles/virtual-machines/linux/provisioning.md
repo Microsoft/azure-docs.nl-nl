@@ -2,19 +2,20 @@
 title: Overzicht van Linux-inrichting
 description: Overzicht van hoe uw eigen Linux VM-installatiekopieën gebruikt of nieuwe installatiekopieën maakt voor gebruik in Azure.
 author: danielsollondon
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: imaging
+ms.collection: linux
 ms.topic: overview
 ms.workload: infrastructure
 ms.date: 06/22/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: a7d9aa7de8bb75a22acc85c77924765eaa1b6b3b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 6dafa400f2ce2421db6775084befc0abeab70a04
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87080145"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563214"
 ---
 # <a name="azure-linux-vm-provisioning"></a>Azure Linux VM inrichten
 Wanneer u een virtuele machine maakt op basis van een gegeneraliseerde installatiekopie (gedeelde installatiekopiegalerie of beheerde installatiekopie), kunt u met het besturingselement een virtuele machine maken en parameters en instellingen doorgeven aan de virtuele machine. Dit heet de VM *inrichten*. Tijdens het inrichten maakt het platform vereiste parameterwaarden voor de virtuele machine (hostname, gebruikersnaam, wachtwoord, SSH-sleutels, customData) die tijdens het opstarten beschikbaar zijn voor de virtuele machine. 

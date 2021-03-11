@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 2/24/2021
-ms.openlocfilehash: ef90a21ab8fad0e18542c1c88ee808237ff150c5
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 3/08/2021
+ms.openlocfilehash: d3759590cdd926b5e144cdc11761630a0aba4e29
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032582"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563775"
 ---
 # <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Meer informatie over het verkopen van micro soft verkoop teams en partners
 
@@ -37,11 +37,16 @@ Een mede-verkoop kans is elk type samen werking met micro soft-verkoop teams, mi
 
 ## <a name="co-sell-statuses"></a>Statussen samen verkopen
 
-Er zijn vier niveaus van de co-sell-status die kunnen worden toegepast op een aanbieding:
+Dit zijn de niveaus van de co-sell-status die kunnen worden toegepast op een aanbieding.
+
+Mede-verkoop statussen voor Azure:
 
 - Klaar voor samen verkopen
 - Klaar voor samen verkopen
 - Azure IP-gemotiveerd verkopen
+
+Mede-verkoop statussen voor zakelijke toepassingen
+- ISV Connect-standaard voor het kopen van apps
 - Online-apps ISV Connect Premium  
 
 Zie [vereisten voor co-selling](co-sell-requirements.md)voor meer informatie over de vereisten voor het uitvoeren van deze co-sell-statussen.
@@ -54,7 +59,7 @@ Zie voor bereidingen voor het samen verkopen van kant [-en-klare en gemotiveerd-
 
 ## <a name="benefits-of-co-sell-incentivized-status"></a>Voor delen van gemotiveerd status van co-sell
 
-_Gemotiveerd_ -status van de co-verkoop, inclusief _Azure IP-gemotiveerd_ en online-apps voor het maken van een _ISV-verbinding voor Premium-verbindingen_. Deze statussen incentivize partners om uw aanbieding te verkopen. Als u deze status wilt behaalt, moet u ook de status van de coselling Ready hebben. Gemotiveerd-status van co-verkoop verdienen alle voor delen van kant-en-klare oplossingen en kan extra prikkels voor micro soft-verkoop teams verdienen en komen in aanmerking voor meer commerciële Marketplace-voor delen.
+_Gemotiveerd_ -status van de co-verkoop, inclusief _Azure IP-gemotiveerd_ en _online-apps, ISV Connect Standard of Premium-stimulans_. Deze statussen incentivize micro soft Sales teams om uw aanbieding te verkopen. Als u deze status wilt behaalt, moet u ook de status van de coselling Ready hebben. Gemotiveerd-status van co-verkoop verdienen alle voor delen van de kant-en-klare status en kan extra prikkels voor micro soft-verkoop teams verdienen en komen in aanmerking voor meer commerciële Marketplace-voor delen.
 
 De gemotiveerd-status van Azure IP-co-sell kan worden toegepast op de volgende aanbiedings typen:
 
@@ -64,18 +69,17 @@ De gemotiveerd-status van Azure IP-co-sell kan worden toegepast op de volgende a
 - Module IoT Edge
 - Software als een dienst (SaaS)
 
-U kunt de status van een prestatie beloning voor een online-app ISV Connect Toep assen op de volgende aanbiedings typen:
+U kunt de standaard-of Premium-prestatie status van de online-app voor het stimuleren van de apps Toep assen op deze aanbiedings typen
 
-- Dynamics 365 Business Central
 - Dynamics 365 voor klant betrokkenheid & PowerApps
 - Dynamics 365 voor bewerkingen
 
-Aanbiedingen die de _gemotiveerd-status van Azure IP-co-verkoop_ verzorgen, profiteren van de volgende commerciële Marketplace:
+Aanbiedingen die _Azure IP-gemotiveerd_ of _Premium-apps met een ISV connect-verbinding_ voor het bedrijf kunnen verkrijgen.
 
 - De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-oplossing (Infrastructure as a Service) of als SaaS (Software as a Service) die wordt verkocht via de commerciële Marketplace. Zie [Commercial Marketplace service-kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees)voor meer informatie.
 - Cloud Solution Provider (CSP)-partners ontvangen een stimulans van 10% om uw IaaS-oplossing of SaaS-aanbieding te verkopen. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over het CSP-programma.
 - Verkoop van uw aanbieding via de commerciële Marketplace draagt bij aan de verplichtingen van het Azure-verbruik van klanten. In aanmerking komende klanten zien dat de aanbieding is gemarkeerd als **Azure-voor deel dat in aanmerking komt** in azure Portal. Zie voor [delen van Azure-verbruik](azure-consumption-commitment-benefit.md)voor meer informatie.
-- Aanbiedingen die _Azure IP-gemotiveerd_ of-Premium- _apps met een ISV-verbinding_ voor het verkrijgen van toegang tot de klant bieden, ontvangen een logo van de **voor keuren** van de aanbieding in de online winkels. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken. Zie [Voorkeurs oplossingen in Microsoft AppSource en Azure Marketplace](preferred-solutions.md)voor meer informatie.
+- Aanbiedingen die _Azure IP-gemotiveerd_ of _Premium-apps met een ISV-verbinding_ voor het maken van een micro soft-product kunnen behalen, krijgen een van de **voor keuren** van de leverancier van de aanbieding in de online winkels. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken.
 
 Zie voor [bereidingen](co-sell-requirements.md)voor het samen verkopen van de verkoop en de gemotiveerd-status van de verkoop van de kant-en-klare en verkoop-gemotiveerd voor meer informatie.
 

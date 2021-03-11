@@ -7,16 +7,16 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 03/04/2021
 ms.author: memildin
-ms.openlocfilehash: d9d0739704a9f5f16bdbde80661192b2f1ca9bb1
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 17f3440df4fa88995f2148680aba926207a0e46b
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102099417"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561259"
 ---
 # <a name="configure-auto-provisioning-for-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en uitbrei dingen van Azure Security Center configureren
 
-Security Center verzamelt gegevens uit uw resources met behulp van de relevante agent of uitbrei dingen voor die bron en het type gegevens verzameling dat u hebt ingeschakeld. Gebruik de onderstaande precedures om ervoor te zorgen dat uw resource over het vereiste is dat in dit artikel wordt beschreven hoe u automatische inrichting van de Log Analytics agent en andere agents en extensies instelt die worden gebruikt door Azure Security Center
+Azure Security Center verzamelt gegevens uit uw resources met behulp van de relevante agent of uitbrei dingen voor die bron en het type gegevens verzameling dat u hebt ingeschakeld. Gebruik de onderstaande procedures om ervoor te zorgen dat uw resources de benodigde agents en extensies hebben die door Security Center worden gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 U moet over een abonnement op Microsoft Azure beschikken om met Security Center aan de slag te gaan. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).
@@ -35,7 +35,9 @@ U moet over een abonnement op Microsoft Azure beschikken om met Security Center 
 
 Security Center verzamelt gegevens van uw virtuele Azure-machines (VM's), virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers (waaronder on-premises computers) om deze te bewaken op beveiligingsproblemen en bedreigingen. 
 
-Het verzamelen van gegevens is vereist om inzicht te krijgen in ontbrekende updates, onjuist geconfigureerde beveiligingsinstellingen voor het besturingssysteem, eindpuntbeveiligingsstatus, beveiliging van de status en beveiliging tegen bedreigingen. Het verzamelen van gegevens is alleen nodig voor rekenresources (VM's, virtuele-machineschaalsets, IaaS-containers en niet-Azure-computers). U kunt profiteren van Azure Security Center, zelfs als u geen agents inricht. U hebt echter beperkte beveiliging en de mogelijkheden die hierboven worden vermeld, worden niet ondersteund.  
+Het verzamelen van gegevens is vereist om inzicht te krijgen in ontbrekende updates, onjuist geconfigureerde beveiligingsinstellingen voor het besturingssysteem, eindpuntbeveiligingsstatus, beveiliging van de status en beveiliging tegen bedreigingen. Het verzamelen van gegevens is alleen nodig voor reken resources zoals Vm's, schaal sets voor virtuele machines, IaaS containers en niet-Azure-computers. 
+
+U kunt profiteren van Azure Security Center, zelfs als u geen agents inricht. U hebt echter beperkte beveiliging en de mogelijkheden die hierboven worden vermeld, worden niet ondersteund.  
 
 Gegevens worden verzameld met:
 
@@ -51,7 +53,7 @@ Elk van de agents en extensies die op deze pagina worden beschreven *kunnen* han
 Het is raadzaam om automatische inrichting in te schakelen, maar het is standaard uitgeschakeld.
 
 ## <a name="how-does-auto-provisioning-work"></a>Hoe werkt automatische inrichting?
-De instellingen voor automatische inrichting van Security Center hebben een wisselknop voor elk type ondersteunde extensie. Wanneer u automatisch inrichten van een extensie inschakelt, wijst u het juiste beleid **Implementeren indien niet aanwezig** toe om ervoor te zorgen dat de extensie wordt ingericht op alle bestaande en toekomstige resources van dat type.
+De instellingen voor automatische inrichting van Security Center hebben een wisselknop voor elk type ondersteunde extensie. Wanneer u automatisch inrichten van een uitbrei ding inschakelt, wijst u de juiste **implementatie toe als er geen beleid bestaat** . Dit beleids type zorgt ervoor dat de uitbrei ding wordt ingericht op alle bestaande en toekomstige resources van dat type.
 
 > [!TIP]
 > Meer informatie over effecten van Azure Policy, zoals Implementeren indien niet aanwezig, vindt u in [Inzicht in de effecten van Azure Policy](../governance/policy/concepts/effects.md).
@@ -162,7 +164,7 @@ Bij het bepalen van de gebeurtenissen voor de opties **Algemeen** en **Minimaal*
 - **Minimaal**: ervoor zorgen dat deze set alleen gebeurtenissen bevat die kunnen wijzen op een geslaagde inbraak, en belangrijke gebeurtenissen met een zeer laag volume. Deze set bevat bijvoorbeeld geslaagde en mislukte aanmeldingspogingen van gebruikers (gebeurtenis-id's 4624 en 4625), maar geen afmeldingen; die zijn belangrijk voor de controle, maar zijn niet belangrijk voor detectie en hebben een betrekkelijk hoog volume. Het grootste deel van het gegevensvolume van deze set bestaat uit de aanmeldingsgebeurtenissen en de procesaanmaakgebeurtenis (gebeurtenis-id 4688).
 - **Algemeen**: een volledig auditlogboek bieden in deze set. Deze set bevat bijvoorbeeld zowel aanmeldingen als afmeldingen van gebruikers (gebeurtenis-ID 4634). Hierin zijn controleacties opgenomen zoals wijzigingen van beveiligingsgroep, belangrijke Kerberos-bewerkingen voor domeincontrollers, en andere gebeurtenissen die worden aanbevolen door brancheorganisaties.
 
-Gebeurtenissen met een zeer laag volume zijn opgenomen in de set Algemeen, aangezien de belangrijkste motivatie om deze te verkiezen boven Alle gebeurtenissen het verminderen van het volume is, en niet om specifieke gebeurtenissen eruit te filteren.
+Gebeurtenissen met een zeer laag volume zijn opgenomen in de gemeen schappelijke set als de belangrijkste motivatie om deze te kiezen voor alle gebeurtenissen om het volume te verminderen en om specifieke gebeurtenissen niet uit te filteren.
 
 Hier volgt een volledige uitsplitsing van de gebeurtenis-id's van Security en App Locker voor elke set:
 
@@ -282,4 +284,4 @@ Automatische inrichting van een agent uitschakelen:
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Op deze pagina wordt uitgelegd hoe u automatisch inrichten voor de Log Analytics agent en andere Security Center extensies inschakelt. Ook wordt beschreven hoe u een Log Analytics werk ruimte definieert waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Wanneer u gegevens opslaat in Log Analytics, ongeacht of u een nieuwe of bestaande werkruimte gebruikt, kunnen er extra kosten in rekening worden gebracht voor gegevensopslag. Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.
+Op deze pagina wordt uitgelegd hoe u automatisch inrichten voor de Log Analytics agent en andere Security Center extensies inschakelt. Ook wordt beschreven hoe u een Log Analytics werk ruimte definieert waarin de verzamelde gegevens worden opgeslagen. Beide bewerkingen zijn vereist om gegevensverzameling mogelijk te maken. Het opslaan van gegevens in Log Analytics, ongeacht of u een nieuwe of bestaande werk ruimte gebruikt, kan er meer kosten in rekening worden gebracht voor gegevens opslag. Zie [Security Center prijzen](https://azure.microsoft.com/pricing/details/security-center/)voor prijs informatie in de valuta van uw keuze en volgens uw regio.

@@ -3,18 +3,18 @@ title: Een afbeelding uit een andere galerie kopiëren met behulp van Power shel
 description: Een afbeelding uit een andere galerie kopiëren met behulp van Azure PowerShell.
 author: cynthn
 ms.service: virtual-machines
-ms.subservice: imaging
+ms.subservice: shared-image-gallery
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 85bc6f4468e0365d247b0adc204bd53ce9fa3006
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: d9bbe40e35bdad6fac5c5ccb0b15b909e77b938c
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676713"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564013"
 ---
 # <a name="copy-an-image-from-another-gallery-using-powershell"></a>Een afbeelding uit een andere galerie kopiëren met behulp van Power shell
 

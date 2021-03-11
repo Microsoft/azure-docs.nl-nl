@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.date: 12/09/2020
-ms.openlocfilehash: c7a0be6f1d402cc994532ab4bc5a5d0ea39bc8b7
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 06586b5bf20619f57b2ad1c3d5de84dd61952261
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599042"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561242"
 ---
 # <a name="plan-and-manage-costs-for-azure-synapse-analytics"></a>Kosten voor Azure Synapse Analytics plannen en beheren
 
@@ -113,7 +113,12 @@ Zie [kosten beheer voor serverloze SQL-groepen in azure Synapse Analytics](./sql
 
 U kunt de kosten voor een toegewezen SQL-groep beheren door de resource te onderbreken wanneer deze niet wordt gebruikt. Als u de database bijvoorbeeld ‘s nachts en in het weekend niet gebruikt, kunt u deze dan onderbreken en gedurende de dag hervatten. Zie voor meer informatie [de reken kracht onderbreken en hervatten in de toegewezen SQL-groep via de Azure Portal](./sql-data-warehouse/pause-and-resume-compute-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 
-<!-- ### Serverless Apache Spark pool -->
+### <a name="serverless-apache-spark-pool"></a>Serverloze Apache Spark-pool
+
+Als u de kosten voor uw serverloze Apache Spark groep wilt beheren, schakelt u de functie serverloze Apache Spark automatisch onderbreken in en stelt u de time-outwaarde in.  Wanneer u Synapse Studio gebruikt voor uw ontwikkeling, verzendt de Studio een Keep Alive-bericht om de sessie actief te houden, die ook kan worden geconfigureerd. stel daarom een korte time-outwaarde in voor automatisch onderbreken.  Wanneer u klaar bent, sluit u uw sessie en wordt de Apache Spark groep automatisch onderbroken zodra de time-outwaarde is bereikt.
+ 
+Maak tijdens de ontwikkeling meerdere Apache Spark pool definities van verschillende grootten.  Het maken van Apache Spark groeps definities is gratis en er worden alleen kosten in rekening gebracht voor het gebruik.  Apache Spark gebruik in azure Synapse wordt in rekening gebracht per vCore uur en per minuut.  Gebruik bijvoorbeeld kleine groeps grootten voor code ontwikkeling en-validatie, terwijl u een grotere pool grootte gebruikt voor prestatie testen.
+
 
 ### <a name="data-integration---pipelines-and-data-flows"></a>Gegevens integratie-pijp lijnen en gegevens stromen 
 

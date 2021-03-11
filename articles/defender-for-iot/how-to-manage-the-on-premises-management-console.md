@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: d76db6830839902a46aaf6515f816fdcc36d0df5
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: f3c9f8f78f17153c3d2eb7b014cf616253b3c0c9
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523937"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618250"
 ---
 # <a name="manage-the-on-premises-management-console"></a>De on-premises beheerconsole beheren
 
@@ -226,7 +226,7 @@ Wanneer u de CLI-opdracht gebruikt:
 
 Beheer uw certificaten met de volgende opdrachten:
 
-| Description | CLI-opdracht |
+| Beschrijving | CLI-opdracht |
 |--|--|
 | Een nieuwe aanvraag voor een persoonlijke sleutel en certificaat ondertekening genereren | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
 | Een zelfondertekend certificaat maken | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
@@ -236,7 +236,7 @@ Beheer uw certificaten met de volgende opdrachten:
 
 Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controleren, gebruikt u deze opdrachten.
 
-| Description | CLI-opdracht |
+| Beschrijving | CLI-opdracht |
 |--|--|
 | Een aanvraag voor certificaat ondertekening controleren (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
 | Een persoonlijke sleutel controleren | `openssl rsa -in privateKey.key -check` |
@@ -244,13 +244,13 @@ Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controler
 
 Als er een fout bericht wordt weer gegeven dat de persoonlijke sleutel niet overeenkomt met het certificaat, of dat een certificaat dat u hebt geïnstalleerd op een site niet wordt vertrouwd, gebruikt u deze opdrachten om de fout op te lossen.
 
-| Description | CLI-opdracht |
+| Beschrijving | CLI-opdracht |
 |--|--|
 | Een MD5-hash van de open bare sleutel controleren om ervoor te zorgen dat deze overeenkomt met wat er in een CSR of persoonlijke sleutel staat | i. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> twee. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
 
 Als u certificaten en sleutels naar verschillende indelingen wilt converteren om ze compatibel te maken met specifieke typen servers of software, gebruikt u deze opdrachten.
 
-| Description | CLI-opdracht |
+| Beschrijving | CLI-opdracht |
 |--|--|
 | Een DER-bestand (. CRT. cer. der) converteren naar PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
 | Een PEM-bestand converteren naar DER | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |
@@ -415,7 +415,21 @@ In de volgende procedure wordt beschreven hoe u de software versie van de on-pre
 
 1. Selecteer het bestand dat u hebt gedownload van de pagina Defender voor IoT- **updates** .
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="mail-server-settings"></a>E-mailserver instellingen
+
+Instellingen voor de SMTP-mail server definiëren voor de on-premises beheer console.
+
+Definiëren:
+
+1. Meld u aan bij de CLI voor het on-premises beheer met beheerders referenties.
+1. Typ ```nano /var/cyberx/properties/remote-interfaces.properties```.
+1. Selecteer Enter. De volgende prompts worden weer gegeven.
+```mail.smtp_server= ```
+```mail.port=25 ```
+```mail.sender=```
+1. Voer de naam van de SMTP-server en de afzender in en selecteer ENTER.
+
+## <a name="see-also"></a>Zie ook
 
 [Sens oren beheren vanuit de beheer console](how-to-manage-sensors-from-the-on-premises-management-console.md)
 

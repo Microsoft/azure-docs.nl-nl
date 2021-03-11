@@ -1,5 +1,5 @@
 ---
-title: Dash board orders van de partner centrum in de commerciële Marketplace Analytics, Microsoft AppSource en Azure Marketplace
+title: Dash board bestellingen van partner centrum in de commerciële Marketplace-analyse | Microsoft AppSource en Azure Marketplace
 description: Meer informatie over het openen van analytische rapporten over uw commerciële Marketplace-bestellingen in een grafische en download bare indeling.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 31216db98cc02724ac3625eb1a8fa18b0f75c6ee
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: ed12e470f3f3d8c1035c1e4e2e0fa7a3b33e2369
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955022"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561378"
 ---
 # <a name="orders-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Bestellingen in Commerciële marketplace-analyses
 
@@ -73,7 +73,7 @@ SaaS-aanbiedingen kunnen gebruikmaken van een van de twee prijs modellen voor el
 - **Per gebruiker**: Schakel toegang tot uw aanbieding in met een prijs op basis van het aantal gebruikers dat toegang heeft tot de aanbieding of stoelen kan innemen. Met dit model op basis van gebruik kunt u het minimale en maximale aantal gebruikers instellen dat door het plan wordt ondersteund. U kunt meerdere plannen maken om verschillende prijs punten te configureren op basis van het aantal gebruikers. Deze velden zijn optioneel. Als deze optie niet is geselecteerd, wordt het aantal gebruikers geïnterpreteerd als een limiet van Mini maal 1 en Maxi maal zo lang uw service kan ondersteunen. Deze velden kunnen worden bewerkt als onderdeel van een update voor uw plan.
 - **Factuur met data limiet**: bovenop de prijs van een vast tarief. Met dit prijs model kunt u optioneel plannen voor data limieten definiëren die gebruikmaken van de API voor de Marketplace-meter service om klanten in rekening te brengen voor gebruik dat niet wordt gedekt door het vaste tarief.
 
-Zie [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md)voor meer informatie over de Seat, site en op basis van een Data limiet.
+Zie [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md)voor meer informatie over de locatie van de Seat, site en op basis van een Data limiet.
 
 ### <a name="orders-by-offers-and-skus"></a>Orders per aanbiedingen en Sku's
 
@@ -94,7 +94,7 @@ Voor de geselecteerde berekenings periode geeft de heatmap het totale aantal ord
 
 [![Illustreert het geografische sprei ding diagram op het dash board orders.](./media/orders-dashboard/geographical-spread.png)](./media/orders-dashboard/geographical-spread.png#lightbox)
 
-en let op het volgende:
+Houd rekening met het volgende:
 
 - U kunt de kaart verplaatsen om de exacte locatie weer te geven.
 - U kunt inzoomen op een specifieke locatie.
@@ -111,32 +111,32 @@ In de tabel Order Details wordt een genummerde lijst met de 1.000 belangrijkste 
 - Filters toep assen op de tabel **Order Details** om alleen de gegevens weer te geven waarin u bent geïnteresseerd. Filteren op land/regio, type Azure-licentie, licentie type voor commerciële Marketplace, type aanbieding, Bestel status, gratis sporen, abonnements-ID van de commerciële Marketplace, klant-ID en bedrijfs naam.
 - Wanneer een bestelling door een beveiligde klant wordt aangeschaft, worden de gegevens in de **gedetailleerde gegevens** van de orders gemaskeerd (* * * * * * * * * * * *).
 
-**_Tabel 1: woorden lijst met gegevens termen_* _
+***Tabel 1: woorden lijst met gegevens termen***
 
-| Kolomnaam | Kenmerknaam | Definitie |
-| ------------ | ------------- | ------------- |
-| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. |
-| MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. |
-| Type aanbieding | Type aanbieding | Het soort commerciële Marketplace-aanbieding. |
-| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als Channel. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Onderneming</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
-| Marketplace-licentie type | Marketplace-licentie type | De facturerings methode van de aanbieding voor commerciële Marketplace. De verschillende waarden zijn:<ul><li>Gefactureerd via Azure</li><li>Neem uw eigen licentie mee</li><li>Gratis</li><li>Micro soft als wederverkoper</li></ul> |
-| SKU | SKU | Het plan dat is gekoppeld aan de aanbieding |
-| Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |
-| Is preview-SKU | Is preview-SKU | De waarde laat u weten of u de SKU hebt gelabeld als ' preview '. De waarde is "ja" als de SKU dienovereenkomstig is gelabeld en alleen Azure-abonnementen die door u zijn geautoriseerd, kunnen deze installatie kopie implementeren en gebruiken. De waarde is ' nee ' als de SKU niet is geïdentificeerd als ' preview '. |
-| Order-id | Order-id | De unieke id van de klant bestelling voor uw commerciële Marketplace-service. Aanbiedingen op basis van het gebruik van virtuele machines zijn niet gekoppeld aan een order. |
-| Orderhoeveelheid | Orderhoeveelheid | Aantal activa dat is gekoppeld aan de order-ID voor actieve orders |
-| Naam van Cloud exemplaar | Naam van Cloud exemplaar | De Microsoft Cloud waarin een VM-implementatie is opgetreden. |
-| Is nieuwe klant | Is nieuwe klant | De waarde geeft aan of een nieuwe klant voor de eerste keer een of meer van uw aanbiedingen heeft aangeschaft. De waarde is ' ja ' in dezelfde kalender maand voor ' verworven datum '. De waarde is "nee" als de klant een van de aanbiedingen vóór de gemelde kalender maand heeft gekocht. |
-| Orderstatus | Orderstatus | De status van een commerciële Marketplace-bestelling op het moment dat de gegevens voor het laatst zijn vernieuwd. |
-| Annulerings datum van bestelling | Annulerings datum van bestelling | De datum waarop de commerciële Marketplace-bestelling is geannuleerd. |
-| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de plaats in het Azure-abonnement van een klant. |
-| Aankoop datum van bestelling | Aankoop datum van bestelling | De datum waarop de commerciële Marketplace-order is gemaakt. |
-| Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. |
-| Eind datum van proef versie | Eind datum van proef versie | De datum waarop de proef periode voor deze order wordt beëindigd of beëindigd. |
-| Klant-id | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. |
-| Facturerings account-id | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs het *facturerings account-id** toe aan **customerID** om verbinding te maken met uw rapport met de uitbetalings transacties met de klant-, order-en gebruiks rapporten. |
-| AssetCount | Aantal assets | Het aantal assets dat is gekoppeld aan de order-ID. |
-||||
+| Kolom naam in<br>gebruikersinterface | Kenmerknaam | Definitie | Kolom naam in programma code<br>Access-rapporten |
+| ------------ | ------------- | ------------- | ------------- |
+| Marketplace-abonnements-ID | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. Voor de infra structuur biedt dit de Azure-abonnements-GUID van de klant. Voor SaaS-aanbiedingen wordt dit weer gegeven als nullen aangezien SaaS-aankopen geen Azure-abonnement nodig hebben. | Marketplace-abonnements-ID |
+| MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. De indeling is jjjj-mm-dd. | MonthStartDate |
+| Type aanbieding | Type aanbieding | Het soort commerciële Marketplace-aanbieding. | Offer type |
+| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als Channel. De mogelijke waarden zijn:<ul><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> | AzureLicenseType |
+| Marketplace-licentie type | Marketplace-licentie type | De facturerings methode van de aanbieding voor commerciële Marketplace. De verschillende waarden zijn:<ul><li>Gefactureerd via Azure</li><li>Neem uw eigen licentie mee</li><li>Gratis</li><li>Micro soft als wederverkoper</li></ul> | MarketplaceLicenseType |
+| SKU | SKU | Het plan dat is gekoppeld aan de aanbieding | SKU |
+| Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. | CustomerCountry |
+| Is preview-SKU | Is preview-SKU | De waarde laat u weten of u de SKU hebt gelabeld als ' preview '. De waarde is "ja" als de SKU dienovereenkomstig is gelabeld en alleen Azure-abonnementen die door u zijn geautoriseerd, kunnen deze installatie kopie implementeren en gebruiken. De waarde is ' nee ' als de SKU niet is geïdentificeerd als ' preview '. | IsPreviewSKU |
+| Order-id | Order-id | De unieke id van de klant bestelling voor uw commerciële Marketplace-service. Aanbiedingen op basis van het gebruik van virtuele machines zijn niet gekoppeld aan een order. | OrderId |
+| Orderhoeveelheid | Orderhoeveelheid | Aantal activa dat is gekoppeld aan de order-ID voor actieve orders | OrderQuantity |
+| Naam van Cloud exemplaar | Naam van Cloud exemplaar | De Microsoft Cloud waarin een VM-implementatie is opgetreden. | CloudInstanceName |
+| Is nieuwe klant | Is nieuwe klant | De waarde geeft aan of een nieuwe klant voor de eerste keer een of meer van uw aanbiedingen heeft aangeschaft. De waarde is ' ja ' in dezelfde kalender maand voor ' verworven datum '. De waarde is "nee" als de klant een van de aanbiedingen vóór de gemelde kalender maand heeft gekocht. | IsNewCustomer |
+| Orderstatus | Orderstatus | De status van een commerciële Marketplace-bestelling op het moment dat de gegevens voor het laatst zijn vernieuwd. | OrderStatus |
+| Annulerings datum van bestelling | Annulerings datum van bestelling | De datum waarop de commerciële Marketplace-bestelling is geannuleerd. | OrderCancelDate |
+| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de plaats in het Azure-abonnement van een klant. | CustomerCompanyName |
+| Aankoop datum van bestelling | Aankoop datum van bestelling | De datum waarop de commerciële Marketplace-order is gemaakt. De indeling is jjjj-mm-dd. | OrderPurchaseDate |
+| Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. | OfferName |
+| Eind datum van proef versie | Eind datum van proef versie | De datum waarop de proef periode voor deze order wordt beëindigd of beëindigd. | TrialEndDate |
+| Klant-ID | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. | CustomerId |
+| Facturerings account-ID | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. | BillingAccountId |
+| AssetCount | Aantal assets | Het aantal assets dat is gekoppeld aan de order-ID. | Afgeschaft |
+|||||
 
 ### <a name="orders-page-filters"></a>Pagina filters voor orders
 

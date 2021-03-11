@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: trbye
-ms.openlocfilehash: e28bd5b5caca259201758f0c633b2120a411f422
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 65c0d80394317c2b2bfbf621d3cc2ad0c2e3448a
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007445"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618403"
 ---
 # <a name="long-audio-api"></a>Lange audio-API
 
@@ -47,6 +47,13 @@ Wanneer u het tekst bestand voorbereidt, moet u het volgende controleren:
 * Bevat meer dan 400 tekens voor onbewerkte tekst of 400 [factureer bare tekens](./text-to-speech.md#pricing-note) voor SSML tekst en minder dan 10.000 alinea's
   * Voor tekst zonder opmaak wordt elke alinea gescheiden door op **Enter/Return** - [invoer voor beeld tekst zonder opmaak](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/en-US.txt) weer te geven
   * Voor SSML tekst wordt elk SSML-stuk beschouwd als een alinea. SSML stuks moeten worden gescheiden door verschillende alinea's- [voor beeld van SSML-tekst invoer](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/SSMLTextInputSample.txt) weer geven
+
+## <a name="sample-code"></a>Voorbeeldcode
+De rest van deze pagina is gericht op python, maar voorbeeld code voor de API voor lange audio is beschikbaar op GitHub voor de volgende programmeer talen:
+
+* [Voorbeeld code: python](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/CustomVoice-API-Samples/Python)
+* [Voorbeeld code: C #](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/CustomVoice-API-Samples/CSharp)
+* [Voorbeeld code: Java](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/)
 
 ## <a name="python-example"></a>Python-voor beeld
 
@@ -456,10 +463,3 @@ Flexibele indelingen voor audio-uitvoer worden ondersteund. U kunt audio-uitvoer
 * Audio-24khz-48kbitrate-mono-mp3
 * Audio-24khz-96kbitrate-mono-mp3
 * Audio-24khz-160kbitrate-mono-mp3
-
-## <a name="sample-code"></a>Voorbeeldcode
-Voorbeeld code voor lange audio-API is beschikbaar op GitHub.
-
-* [Voorbeeld code: python](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/CustomVoice-API-Samples/Python)
-* [Voorbeeld code: C #](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/CustomVoice-API-Samples/CSharp)
-* [Voorbeeld code: Java](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Java/)

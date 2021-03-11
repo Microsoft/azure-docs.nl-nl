@@ -7,14 +7,23 @@ ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: f95585237bbee743083b855dd78cc850c4daffe8
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: ff26318cafdf493579961fc718643f831ae9efeb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202685"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564251"
 ---
 # <a name="migrate-from-linux-to-a-hybrid-cloud-deployment-with-azure-file-sync"></a>Migreren van Linux naar een hybride Cloud implementatie met Azure File Sync
+
+Dit migratie artikel is een van de verschillende sleutel woorden NFS en Azure File Sync. Controleer of dit artikel van toepassing is op uw scenario:
+
+> [!div class="checklist"]
+> * Gegevens Bron: NAS (Network Attached Storage)
+> * Migratie route: Linux-server met SAMBA &rArr; Windows Server 2012R2 of later &rArr; synchroniseren met Azure-bestands shares
+> * On-premises bestanden opslaan in cache: Ja, het uiteindelijke doel is een Azure File Sync-implementatie.
+
+Als uw scenario anders is, bekijkt u de [tabel met migratie handleidingen](storage-files-migration-overview.md#migration-guides).
 
 Azure File Sync werkt op Windows Server-exemplaren met Direct Attached Storage (DAS). Het biedt geen ondersteuning voor synchronisatie van en naar Linux-clients of een externe SMB-share (Server Message Block) of NFS-shares (Network File System).
 
@@ -22,13 +31,13 @@ Als gevolg hiervan is het transformeren van uw bestands Services naar een hybrid
 
 ## <a name="migration-goals"></a>Migratiedoelen
 
-Het doel is om de shares die u hebt op uw Linux Samba-server te verplaatsen naar een Windows Server-exemplaar. Gebruik vervolgens Azure File Sync voor een hybride Cloud implementatie. Deze migratie moet zo worden uitgevoerd dat de integriteit van de productie gegevens en de beschik baarheid tijdens de migratie gewaarborgd is. Ten laatste moet de downtime tot een minimum worden beperkt, zodat deze kan worden aangepast aan of slechts een beetje meer regel matig onderhouds Vensters kan hebben.
+Het doel is om de shares die u hebt op uw Linux Samba-server te verplaatsen naar een Windows Server-exemplaar. Gebruik vervolgens Azure File Sync voor een hybride Cloud implementatie. Deze migratie moet worden uitgevoerd op een manier die de integriteit van de productie gegevens en beschik baarheid tijdens de migratie waarborgt. Ten laatste moet de downtime tot een minimum worden beperkt, zodat deze kan worden aangepast aan of slechts een beetje meer regel matig onderhouds Vensters kan hebben.
 
 ## <a name="migration-overview"></a>Migratieoverzicht
 
 Zoals vermeld in het [overzichts artikel](storage-files-migration-overview.md)over Azure files migratie, met het juiste Kopieer programma en de aanpak is belang rijk. Uw Linux Samba-server maakt SMB-shares rechtstreeks beschikbaar op uw lokale netwerk. Robocopy, ingebouwd in Windows Server, is de beste manier om uw bestanden in dit migratie scenario te verplaatsen.
 
-Als u niet werkt met Samba op uw Linux-server en liever mappen wilt migreren naar een hybride implementatie op Windows Server, kunt u Linux-Kopieer hulpprogramma's gebruiken in plaats van Robocopy. Als u dit doet, moet u rekening houden met de betrouw baarheid van uw hulp programma voor het kopiëren van bestanden. Raadpleeg de [sectie basis beginselen](storage-files-migration-overview.md#migration-basics) van migratie in het artikel migratie overzicht voor meer informatie over wat u moet zoeken in een kopieer programma.
+Als u niet werkt met Samba op uw Linux-server en liever mappen wilt migreren naar een hybride implementatie op Windows Server, kunt u Linux-Kopieer hulpprogramma's gebruiken in plaats van Robocopy. Houd rekening met de betrouw baarheid van uw Kopieer programma. Raadpleeg de [sectie basis beginselen](storage-files-migration-overview.md#migration-basics) van migratie in het artikel migratie overzicht voor meer informatie over wat u moet zoeken in een kopieer programma.
 
 ## <a name="phase-1-identify-how-many-azure-file-shares-you-need"></a>Fase 1: bepalen hoeveel Azure-bestands shares u nodig hebt
 
@@ -39,11 +48,13 @@ Als u niet werkt met Samba op uw Linux-server en liever mappen wilt migreren naa
 * Maak een exemplaar van Windows Server 2019 als een virtuele machine of fysieke server. Windows Server 2012 R2 is de minimale vereiste. Een failover-cluster van Windows Server wordt ook ondersteund.
 * Direct Attached Storage (DAS) inrichten of toevoegen. Network Attached Storage (NAS) wordt niet ondersteund.
 
-  De hoeveelheid opslag ruimte die u inricht kan kleiner zijn dan wat u momenteel gebruikt op uw Linux Samba-server, als u de Azure File Sync [Cloud-laag](storage-sync-cloud-tiering-overview.md) functie gebruikt. Wanneer u echter uw bestanden vanuit de grotere Linux Samba-server ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
+  De hoeveelheid opslag ruimte die u inricht kan kleiner zijn dan wat u momenteel gebruikt op uw Linux Samba-server, als u de Azure File Sync [Cloud-laag](storage-sync-cloud-tiering-overview.md) functie gebruikt. 
+
+De hoeveelheid opslag ruimte die u hebt ingericht, kan kleiner zijn dan wat u momenteel op uw Linux Samba-server gebruikt. Voor deze configuratie optie moet u ook gebruikmaken van de functie voor het maken van [Cloud lagen](storage-sync-cloud-tiering-overview.md) in azure file sync. Wanneer u echter uw bestanden vanuit de grotere Linux Samba-server ruimte naar het kleinere Windows Server-volume in een latere fase kopieert, moet u in batches werken:
 
   1. Verplaats een reeks bestanden die op de schijf passen.
   2. Bestands synchronisatie en Cloud lagen laten deel nemen.
-  3. Wanneer er meer vrije ruimte op het volume wordt gemaakt, gaat u door met de volgende batch bestanden. 
+  3. Wanneer er meer vrije ruimte op het volume wordt gemaakt, gaat u door met de volgende batch bestanden. U kunt ook de RoboCopy-opdracht in het komende [Robocopy-gedeelte](#phase-7-robocopy) controleren voor gebruik van de nieuwe `/LFSM` Switch. Met `/LFSM` kunt u uw Robocopy-taken aanzienlijk vereenvoudigen, maar dit is niet compatibel met een aantal andere Robocopy-switches die u mogelijk afhankelijk maakt.
     
   U kunt deze batch aanpak vermijden door de gelijkwaardige ruimte in te richten op het Windows Server-exemplaar dat uw bestanden op de Linux Samba-server innemen. Overweeg om ontdubbeling in Windows in te scha kelen. Als u deze hoge hoeveelheid opslag ruimte niet permanent wilt door voeren voor uw Windows Server-exemplaar, kunt u de grootte van het volume beperken na de migratie en voordat u het beleid voor Cloud lagen hebt aangepast. Hiermee maakt u een kleinere on-premises cache van uw Azure-bestands shares.
 
@@ -102,76 +113,7 @@ Als u minder opslag ruimte op uw Windows Server-exemplaar hebt ingericht dan uw 
 
 Het is mogelijk dat Robocopy sneller bestanden verplaatst dan u naar de Cloud en laag kunt synchroniseren, waardoor er geen lokale schijf ruimte meer beschikbaar is. Robocopy mislukt. U wordt aangeraden de shares te door lopen in een reeks die het probleem voor komt. Denk bijvoorbeeld aan dat u geen Robocopy-taken voor alle shares tegelijk kunt starten. Of overweeg het verplaatsen van shares die passen bij de huidige hoeveelheid beschik bare ruimte op het Windows Server-exemplaar. Als uw Robocopy-taak mislukt, kunt u de opdracht altijd opnieuw uitvoeren, mits u de volgende optie voor spie gelen/opschonen gebruikt:
 
-```console
-Robocopy /MT:32 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
-```
-
-Achtergrondbitmap
-
-:::row:::
-   :::column span="1":::
-      /MT
-   :::column-end:::
-   :::column span="1":::
-      Hiermee kan Robocopy meerdere threads uitvoeren. De standaard waarde is 8, maximum is 128.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /UNILOG:\<file name\>
-   :::column-end:::
-   :::column span="1":::
-      Hiermee wordt de status van de uitvoer naar een logboek bestand geschreven als Unicode (het bestaande logboek wordt overschreven).
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /TEE
-   :::column-end:::
-   :::column span="1":::
-      Uitvoer naar een console venster. Wordt gebruikt in combi natie met uitvoer naar een logboek bestand.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /B
-   :::column-end:::
-   :::column span="1":::
-      Voert Robocopy uit in dezelfde modus als die van een back-uptoepassing zou gebruiken. Hiermee kan Robocopy bestanden verplaatsen waarnaar de huidige gebruiker geen machtigingen heeft.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /MIR
-   :::column-end:::
-   :::column span="1":::
-      Hiermee kan deze Robocopy-opdracht enkele keren op hetzelfde doel/op hetzelfde doel worden uitgevoerd. Hiermee wordt geïdentificeerd en wegge laten wat er eerder is gekopieerd. Alleen wijzigingen, toevoegingen en verwijderingen die hebben plaatsgevonden sinds de laatste uitvoering, worden verwerkt. Als de opdracht nog niet eerder is uitgevoerd, wordt er niets wegge laten. De vlag **/Mir** is een uitstekende optie voor bron locaties die nog steeds worden gebruikt en worden gewijzigd.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /COPY: copyflag [s]
-   :::column-end:::
-   :::column span="1":::
-      Betrouw baarheid van het bestand kopiëren (standaard is/COPY: DAT). Kopieer vlaggen zijn: D = Data, A = Attributes, T = Time Stamps, S = Security = NTFS Acl's, O = owner info, U = controle-informatie.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      / COPYALL
-   :::column-end:::
-   :::column span="1":::
-      Kopieer alle bestands informatie (gelijk aan/COPY: DATSOU).
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="1":::
-      /DCOPY: copyflag [s]
-   :::column-end:::
-   :::column span="1":::
-      Betrouw baarheid voor het kopiëren van mappen (de standaard waarde is/DCOPY: DA). Kopieer vlaggen zijn: D = gegevens, A = kenmerken, T = tijds tempels.
-   :::column-end:::
-:::row-end:::
+[!INCLUDE [storage-files-migration-robocopy](../../../includes/storage-files-migration-robocopy.md)]
 
 ## <a name="phase-8-user-cut-over"></a>Fase 8: gebruikers knippen
 

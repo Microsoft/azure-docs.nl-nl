@@ -1,7 +1,7 @@
 ---
 title: Micro Focus Enter prise Server 5,0 uitvoeren in een docker-container in azure | Microsoft Docs
 description: In dit artikel leert u hoe u micro focus Enter prise Server 5,0 kunt uitvoeren in een docker-container op Microsoft Azure.
-services: virtual-machines-linux
+services: virtual-machines
 documentationcenter: ''
 author: maggsl
 ms.author: edprice
@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: f34767c160c8229eb5b63806924926a46ea00cc2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 5c436eae53b16c980e9725cfef0573367d144842
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127192"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548373"
 ---
 # <a name="run-micro-focus-enterprise-server-50-in-a-docker-container-on-azure"></a>Micro Focus Enter prise Server 5,0 uitvoeren in een docker-container in azure
 
@@ -25,7 +25,7 @@ U kunt Micro Focus Enter prise Server 5,0 uitvoeren in een docker-container in A
 
 Docker voegt portabiliteit en isolatie toe aan toepassingen. U kunt bijvoorbeeld een docker-installatie kopie van een virtuele Windows-machine (VM) exporteren om deze uit te voeren op een andere, of vanuit een opslag plaats naar een Windows-Server met docker. De docker-installatie kopie wordt uitgevoerd op de nieuwe locatie met dezelfde configuratie, zonder dat u de Enter prise-server hoeft te installeren. Het maakt deel uit van de installatie kopie. Overwegingen voor licenties zijn nog steeds van toepassing.
 
-In deze zelf studie wordt het **Windows 2016 Data Center met containers** VM geïnstalleerd vanuit Azure Marketplace. Deze VM bevat **docker 18.09.0** . De volgende stappen laten zien hoe u de container implementeert, uitvoert en er verbinding mee maakt met een 3270-emulator.
+In deze zelf studie wordt het **Windows 2016 Data Center met containers** VM geïnstalleerd vanuit Azure Marketplace. Deze VM bevat **docker 18.09.0**. De volgende stappen laten zien hoe u de container implementeert, uitvoert en er verbinding mee maakt met een 3270-emulator.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,7 +44,7 @@ Bekijk de volgende vereisten voordat u aan de slag gaat:
 
 1.  Beveilig de media van het \_ bestand server \_ dockerfiles \_ 5,0 \_windows.zip. Beveilig het licentie bestand ES-docker-Prod-XXXXXXXX. mflic (vereist om de docker-installatie kopieën te bouwen).
 
-2.  Maak de VM. Hiertoe opent u Azure Portal, selecteert u **een resource maken** in het menu linksboven en filtert u op *Windows Server-besturings systeem* . Selecteer in de resultaten **Windows Server.** Selecteer in het volgende scherm **Windows Server 2016 Data Center – met containers** .
+2.  Maak de VM. Hiertoe opent u Azure Portal, selecteert u **een resource maken** in het menu linksboven en filtert u op *Windows Server-besturings systeem*. Selecteer in de resultaten **Windows Server.** Selecteer in het volgende scherm **Windows Server 2016 Data Center – met containers**.
 
     ![Scherm opname van Azure Portal Zoek resultaten](./media/run-image-1.png)
 
@@ -54,11 +54,11 @@ Bekijk de volgende vereisten voordat u aan de slag gaat:
 
     2.  Selecteer de **regio** en de **resource groep** die u wilt implementeren.
 
-    3.  Gebruik de standaard instelling voor **beschikbaarheids opties** .
+    3.  Gebruik de standaard instelling voor **beschikbaarheids opties**.
 
     4.  Typ bij **gebruikers naam** het beheerders account dat u wilt gebruiken en het wacht woord.
 
-    5.  Controleer of **poort 3389 RDP** is geopend. Alleen deze poort moet openbaar worden blootgesteld, zodat u zich kunt aanmelden bij de VM. Accepteer vervolgens alle standaard waarden en klik op **beoordelen + maken** .
+    5.  Controleer of **poort 3389 RDP** is geopend. Alleen deze poort moet openbaar worden blootgesteld, zodat u zich kunt aanmelden bij de VM. Accepteer vervolgens alle standaard waarden en klik op **beoordelen + maken**.
 
     ![Scherm afbeelding van het deel venster een virtuele machine maken](./media/run-image-2.png)
 
@@ -66,7 +66,7 @@ Bekijk de volgende vereisten voordat u aan de slag gaat:
 
 5.  Selecteer **Ga naar resource** om naar de Blade **overzicht** voor uw virtuele machine te gaan.
 
-6.  Selecteer aan de rechter kant **verbinding maken** . De opties **verbinding met virtuele machine maken** worden aan de rechter kant weer gegeven.
+6.  Selecteer aan de rechter kant **verbinding maken**. De opties **verbinding met virtuele machine maken** worden aan de rechter kant weer gegeven.
 
 7.  Selecteer de knop **RDP-bestand downloaden** om het RDP-bestand (Remote Desktop Protocol) te downloaden waarmee u kunt koppelen aan de virtuele machine.
 
@@ -81,11 +81,11 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
 
 ## <a name="create-a-sandbox-directory-and-upload-the-zip-file"></a>Een sandbox-map maken en het zip-bestand uploaden
 
-1.  Maak een map op de virtuele machine waar u de demo-en licentie bestanden kunt uploaden. Bijvoorbeeld **C: \\ sandbox** .
+1.  Maak een map op de virtuele machine waar u de demo-en licentie bestanden kunt uploaden. Bijvoorbeeld **C: \\ sandbox**.
 
 2.  Upload **\_ server \_ dockerfiles \_ 5,0 \_windows.zip** en het bestand **es-docker-Prod-xxxxxxxx. mflic** naar de map die u hebt gemaakt.
 
-3.  Pak de inhoud van het zip-bestand uit naar de map **\_ \_ dockerfiles \_ 5,0 \_ Windows** die door het uitpak proces is gemaakt. Deze map bevat een Leesmij-bestand (als HTML-en txt-bestand) en twee submappen, **EnterpriseServer** en **voor beelden** .
+3.  Pak de inhoud van het zip-bestand uit naar de map **\_ \_ dockerfiles \_ 5,0 \_ Windows** die door het uitpak proces is gemaakt. Deze map bevat een Leesmij-bestand (als HTML-en txt-bestand) en twee submappen, **EnterpriseServer** en **voor beelden**.
 
 4.  Kopieer **es-docker-Prod-xxxxxxxx. mflic** naar de map C \\ : \\ sandbox \_ \_ dockerfiles \_ 5,0 \_ Windows \\ EnterpriseServer en C: de \\ sandbox \\ \_ server \_ dockerfiles \_ 5,0 Windows- \_ \\ voor beelden van CICS- \\ directory's.  
       
@@ -103,7 +103,7 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
     De versie was bijvoorbeeld 18.09.0 toen deze werd geschreven.
 
 3.  Als u de map wilt wijzigen, typt u:  
-    **cd \\ Sandbox \\ \_ server \_ dockerfiles \_ 5,0 \_ Windows \\ EnterpriseServer** .
+    **cd \\ Sandbox \\ \_ server \_ dockerfiles \_ 5,0 \_ Windows \\ EnterpriseServer**.
 
 4.  Typ **bld.bat IacceptEULA** om het bouw proces voor de oorspronkelijke basis installatie kopie te starten. Wacht enkele minuten totdat dit proces is uitgevoerd. In de resultaten ziet u de twee installatie kopieën die zijn gemaakt: één voor x64 en een voor x86:
 
@@ -111,7 +111,7 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
 
 5.  Als u de laatste installatie kopie voor de CICS-demonstratie wilt maken, gaat u naar de CICS-map door **cd \\ Sandbox \\ \_ \_ dockerfiles \_ 5,0 \_ Windows- \\ voor beelden \\ CICS** te typen.
 
-6.  Als u de installatie kopie wilt maken, typt u **bld.bat x64** . Wacht een paar minuten totdat het proces is uitgevoerd en het bericht verschijnt dat de installatie kopie is gemaakt.
+6.  Als u de installatie kopie wilt maken, typt u **bld.bat x64**. Wacht een paar minuten totdat het proces is uitgevoerd en het bericht verschijnt dat de installatie kopie is gemaakt.
 
 7.  Typ **docker-installatie kopieën** om een lijst weer te geven van alle docker-installatie kopieën die op de virtuele machine zijn geïnstalleerd. Zorg ervoor dat er een van de **focussen/es-acctdemo** is.
 
@@ -129,7 +129,7 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
 
 2.  Het IP-adres van de acctdemo-container ophalen zodat docker kan fungeren als een Dynamic Host Configuration Protocol-server (DHCP) voor de containers die worden beheerd:
 
-    1.  Haal de ID van de container die wordt uitgevoerd op. Typ **docker PS** bij de opdracht prompt en noteer de id ( **22a0fe3159d0** in dit voor beeld). Sla het bestand op voor de volgende stap.
+    1.  Haal de ID van de container die wordt uitgevoerd op. Typ **docker PS** bij de opdracht prompt en noteer de id (**22a0fe3159d0** in dit voor beeld). Sla het bestand op voor de volgende stap.
 
     2.  Als u het IP-adres voor de acctdemo-container wilt ophalen, gebruikt u de container-ID uit de vorige stap als volgt:
 
@@ -147,7 +147,7 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
 
     ![Scherm opname van Opdrachtvenster met IP-adres](./media/run-image-5.png)
 
-5. Koppel de installatie kopie met behulp van de emulator. Configureer de emulator om het adres van de acctdemo-installatie kopie en poort 9040 te gebruiken. Hier is het **172.19.202.52:9040** . Dit is vergelijkbaar. Het scherm **Aanmelden bij CICS** wordt geopend.
+5. Koppel de installatie kopie met behulp van de emulator. Configureer de emulator om het adres van de acctdemo-installatie kopie en poort 9040 te gebruiken. Hier is het **172.19.202.52:9040**. Dit is vergelijkbaar. Het scherm **Aanmelden bij CICS** wordt geopend.
 
     ![Scherm opname van aanmelding naar CICS](./media/run-image-6.png)
 
@@ -155,15 +155,15 @@ Op dit moment wordt de virtuele machine uitgevoerd en aangesloten via RDP. U ben
 
 7. Schakel het scherm uit met behulp van de keymap van de emulator. Selecteer voor x3270 de menu optie **keymap** .
 
-8. Als u de acctdemo-toepassing wilt starten, typt u **acct** . Het eerste scherm voor de toepassing wordt weer gegeven.
+8. Als u de acctdemo-toepassing wilt starten, typt u **acct**. Het eerste scherm voor de toepassing wordt weer gegeven.
 
      ![Scherm afbeelding toont een console venster waarin de toepassing wordt weer gegeven.](./media/run-image-7.png)
 
-9. Experimenteer met typen weergave accounts. Typ bijvoorbeeld **D** voor de aanvraag en **11111** voor het **account** . Andere account nummers die moeten worden geprobeerd, zijn 22222, 33333, enzovoort.
+9. Experimenteer met typen weergave accounts. Typ bijvoorbeeld **D** voor de aanvraag en **11111** voor het **account**. Andere account nummers die moeten worden geprobeerd, zijn 22222, 33333, enzovoort.
 
     ![Scherm afbeelding toont het bewerken van verschillende waarden in de toepassing.](./media/run-image-8.png)
 
-10. Als u de beheer console van de Enter prise-server wilt weer geven, gaat u naar de opdracht prompt en typt u **Start http: 172.19.202.52:86** .
+10. Als u de beheer console van de Enter prise-server wilt weer geven, gaat u naar de opdracht prompt en typt u **Start http: 172.19.202.52:86**.
 
     ![Enter prise server-beheer console](media/run-image-9.png)
 

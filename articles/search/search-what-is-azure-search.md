@@ -7,26 +7,29 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 01/22/2021
+ms.date: 03/09/2021
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 893bf37a5a4c8a314e5182bf2ac4bc28502b98d9
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: e17d08d09814c135af3e0b4fc299b6e6f42326d4
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699431"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102549886"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
 Azure Cognitive Search ([voorheen 'Azure Search'](whats-new.md#new-service-name)) is een cloudzoekservice die ontwikkelaars API’s en hulpprogramma’s biedt. Hiermee kunnen ze een uitgebreide zoekervaring bouwen binnen privé- en heterogene inhoud in web-, mobiele en ondernemingstoepassingen. 
 
+Search is een basis voor elke app die inhoud naar gebruikers verstuurt, met veelvoorkomende scenario's, zoals het zoeken in Catalog of documenten, het zoeken van e-commerce sites, of kennis analyse voor gegevens wetenschap. De Api's en de architectuur van Cognitive Search vereenvoudigen de taak voor het toevoegen van geavanceerde informatie over het ophalen van gegevens aan een oplossing.
+
 Een zoek service heeft de volgende onderdelen:
 
 + Zoek machine voor zoeken in volledige tekst
 + Permanente opslag van geïndexeerde inhoud die eigendom is van de gebruiker
-+ Api's voor indexering en query's
-+ Optionele [op AI gebaseerde verrijkingen](cognitive-search-concept-intro.md), waardoor Doorzoek bare inhoud kan worden gemaakt van installatie kopieën, onbewerkte tekst, toepassings bestanden
-+ Optionele integratie met andere Azure-Services voor gegevens, machine learning/AI en beveiliging
++ Api's voor het indexeren en opvragen van inhoud
++ Optionele [op AI gebaseerde verrijkingen](cognitive-search-concept-intro.md), voor het maken van Doorzoek bare inhoud uit installatie kopieën, onbewerkte ongestructureerde tekst, toepassings bestanden
++ Optionele integratie met andere Azure-Services voor gegevens, machine learning/AI, bewaking en beveiliging
++ Optionele implementatie van [semantisch zoeken (preview)](semantic-search-overview.md) voor betere relevantie
 
 In architectuur is een zoek service tussen de externe gegevens archieven die uw niet-geïndexeerde gegevens bevatten, en uw client-app die query aanvragen naar een zoek index verzendt en het antwoord verwerkt.
 
@@ -74,8 +77,9 @@ Een end-to-end-onderzoek van de belangrijkste zoekfuncties kan in vier stappen w
 
 1. [**Vraag een index op**](search-query-overview.md) met behulp van [Search Explorer](search-explorer.md) in de portal, [REST API](search-get-started-rest.md), [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search) of een andere SDK.
 
-> [!TIP]
-> Beperk het aantal stappen door te beginnen met de [**wizard Gegevens importeren**](search-get-started-portal.md) en een Azure-gegevensbron om in een paar minuten een index te maken, te laden en op te vragen.
+Voor het eerste onderzoek begint u met de [**wizard gegevens importeren**](search-get-started-portal.md) en een ingebouwde Azure-gegevens bron om in een paar minuten een index te maken, te laden en op te vragen.
+
+[**Neem contact op met een partner**](resource-partners-knowledge-mining.md) met grondige expertise in cognitive Search technologie voor meer informatie over complexe of aangepaste oplossingen.
 
 ## <a name="compare-search-options"></a>Zoekopties vergelijken
 

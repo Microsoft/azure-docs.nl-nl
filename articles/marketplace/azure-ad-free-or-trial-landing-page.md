@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/04/2020
-ms.openlocfilehash: 699271316eccec1244db886ed2296f87c52f91ae
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: e7cee47e90e6484a4258ba82e47af03725c41d34
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348352"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102559287"
 ---
 # <a name="build-the-landing-page-for-your-free-or-trial-saas-offer-in-the-commercial-marketplace"></a>Bouw de landings pagina voor uw gratis of proef SaaS-aanbieding in de commerciële Marketplace
 
@@ -59,7 +59,7 @@ Als u verhoogde machtigingen nodig hebt als onderdeel van het voorbereidings-of 
 
 Micro soft heeft verschillende voor beelden gegeven van apps die een eenvoudige website implementeren waarvoor Azure AD-aanmelding is ingeschakeld. Nadat uw toepassing is geregistreerd in azure AD, biedt de Blade **Quick** start een lijst met algemene toepassings typen en ontwikkelings Stacks (afbeelding 1). Kies het abonnement dat overeenkomt met uw omgeving en volg de instructies voor downloaden en instellen.
 
-**_Afbeelding 1: de Blade Quick Start in de Azure Portal_* _
+***Afbeelding 1: de Blade Quick Start in de Azure Portal***
 
 :::image type="content" source="./media/azure-ad-saas/azure-ad-quickstart-blade.png" alt-text="Illustreert de Blade Quick Start in de Azure Portal.":::
 
@@ -82,7 +82,7 @@ Als onderdeel van de [OpenID Connect Connect](../active-directory/develop/v2-pro
 
 ## <a name="use-the-microsoft-graph-api"></a>De Microsoft Graph API gebruiken
 
-Het ID-token bevat basis informatie voor het identificeren van de gebruiker, maar uw activerings proces vereist mogelijk aanvullende details, zoals het bedrijf van de gebruiker, om het voorbereidings proces te volt ooien. Gebruik de [Microsoft Graph-API](/graph/use-the-api) om deze informatie aan te vragen om te voor komen dat de gebruiker deze gegevens opnieuw invoert. De standaard _ *gebruiker. Read* *-machtigingen bevatten de volgende informatie:
+Het ID-token bevat basis informatie voor het identificeren van de gebruiker, maar uw activerings proces vereist mogelijk aanvullende details, zoals het bedrijf van de gebruiker, om het voorbereidings proces te volt ooien. Gebruik de [Microsoft Graph-API](/graph/use-the-api) om deze informatie aan te vragen om te voor komen dat de gebruiker deze gegevens opnieuw invoert. De standaard **gebruiker. Lees** machtigingen zijn standaard de volgende informatie:
 
 | Waarde | Beschrijving |
 | ------------ | ------------- |
@@ -95,7 +95,7 @@ Het ID-token bevat basis informatie voor het identificeren van de gebruiker, maa
 | surname | De achternaam van de gebruiker. |
 |||
 
-Aanvullende eigenschappen, zoals de naam van het bedrijf van de gebruiker of de locatie van de gebruiker (land), kunnen worden geselecteerd voor opname in de aanvraag. Zie [Eigenschappen voor het resource type van de gebruiker](/graph/api/resources/user?view=graph-rest-1.0&preserve-view=true#properties)voor meer informatie.
+Aanvullende eigenschappen, zoals de naam van het bedrijf van de gebruiker of de locatie van de gebruiker (land), kunnen worden geselecteerd voor opname in de aanvraag. Zie [Eigenschappen voor het resource type van de gebruiker](/graph/api/resources/user#properties)voor meer informatie.
 
 De meeste apps die zijn geregistreerd bij Azure AD, hebben gedelegeerde machtigingen voor het lezen van de gegevens van de gebruiker uit de Azure AD-Tenant van hun bedrijf. Elke aanvraag voor het Microsoft Graph van die informatie moet vergezeld gaan van een toegangs token als verificatie. Specifieke stappen voor het genereren van het toegangs token zijn afhankelijk van de technologie stack die u gebruikt, maar de voorbeeld code bevat een voor beeld. Zie [toegang namens een gebruiker verkrijgen](/graph/auth-v2-user)voor meer informatie.
 

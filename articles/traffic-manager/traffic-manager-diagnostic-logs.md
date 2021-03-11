@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: duau
-ms.openlocfilehash: 0c1273f4a2025658520118ed843d90b3378a129f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 4cf3709574e2055f40759fd2d7026c93ac9db098
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577876"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102608016"
 ---
 # <a name="enable-resource-logging-in-azure-traffic-manager"></a>Bron logboek registratie inschakelen in azure Traffic Manager
 
@@ -39,14 +39,14 @@ U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shel
 
 2. **Bron logboek registratie inschakelen voor het Traffic Manager profiel:**
 
-    Schakel de bron logboek registratie voor het Traffic Manager profiel in met behulp van de ID die in de vorige stap is verkregen met [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting?view=latest). Met de volgende opdracht worden uitgebreide logboeken voor het Traffic Manager profiel opgeslagen in een opgegeven Azure Storage-account. 
+    Schakel de bron logboek registratie voor het Traffic Manager profiel in met behulp van de ID die in de vorige stap is verkregen met [set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting). Met de volgende opdracht worden uitgebreide logboeken voor het Traffic Manager profiel opgeslagen in een opgegeven Azure Storage-account. 
 
       ```azurepowershell-interactive
     Set-AzDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId> -StorageAccountId <storageAccountId> -Enabled $true
       ``` 
 3. **Controleer de diagnostische instellingen:**
 
-      Controleer de diagnostische instellingen voor het Traffic Manager profiel met behulp van [Get-AzDiagnosticSetting](/powershell/module/az.monitor/get-azdiagnosticsetting?view=latest). Met de volgende opdracht worden de categorieën weer gegeven die zijn geregistreerd voor een resource.
+      Controleer de diagnostische instellingen voor het Traffic Manager profiel met behulp van [Get-AzDiagnosticSetting](/powershell/module/az.monitor/get-azdiagnosticsetting). Met de volgende opdracht worden de categorieën weer gegeven die zijn geregistreerd voor een resource.
 
      ```azurepowershell-interactive
      Get-AzDiagnosticSetting -ResourceId <TrafficManagerprofileResourceId>

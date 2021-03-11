@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7924b06b9056a53fa9861fcd0df516845662b34b
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 113c8adccc5e8b1c3321569f32ca3fb33423ccd8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341563"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102562874"
 ---
 # <a name="access-built-in-metrics"></a>Ingebouwde metrische gegevens openen
 
@@ -44,13 +44,15 @@ Toegang tot metrische gegevens van de host door de metrische poort van de module
 Kies verschillende en unieke host-poort nummers als u de metrische gegevens van de edgeHub-en edgeAgent-eind punten toewijst.
 
 > [!NOTE]
-> Als u metrische gegevens wilt uitschakelen, stelt u de `MetricsEnabled` omgevings variabele in op `false` voor **edgeAgent**.
+> De omgevings variabele `httpSettings__enabled` mag niet worden ingesteld op `false` voor ingebouwde meet waarden die beschikbaar zijn voor de verzameling.
+>
+> Omgevings variabelen die kunnen worden gebruikt om metrische gegevens uit te scha kelen, worden weer gegeven in het [Azure-iotedge opslag plaats-document](https://github.com/Azure/iotedge/blob/master/doc/EnvironmentVariables.md).
 
 ## <a name="available-metrics"></a>Beschikbare metrische gegevens
 
 Metrische gegevens bevatten Tags waarmee u de aard van de metrische gegevens die worden verzameld, kunt identificeren. Alle metrische gegevens bevatten de volgende Tags:
 
-| Label | Beschrijving |
+| Tag | Beschrijving |
 |-|-|
 | iothub | De hub waarmee het apparaat is praten |
 | edge_device | De ID van het huidige apparaat |
@@ -62,7 +64,7 @@ De quantiles voor het ingebouwde histogram en de samenvattings gegevens zijn 0,1
 
 De **edgeHub** -module levert de volgende metrische gegevens:
 
-| Naam | Dimensies | Beschrijving |
+| Name | Dimensies | Beschrijving |
 |-|-|-|
 | `edgehub_gettwin_total` | `source` (bewerkings bron)<br> `id` (module-ID) | Type: teller<br> Totaal aantal GetTwin-aanroepen |
 | `edgehub_messages_received_total` | `route_output` (uitvoer die bericht heeft verzonden)<br> `id` | Type: teller<br> Totaal aantal berichten ontvangen van clients |
@@ -85,7 +87,7 @@ De **edgeHub** -module levert de volgende metrische gegevens:
 
 De **edgeAgent** -module levert de volgende metrische gegevens:
 
-| Naam | Dimensies | Beschrijving |
+| Name | Dimensies | Beschrijving |
 |-|-|-|
 | `edgeAgent_total_time_running_correctly_seconds` | `module_name` | Type: meter<br> De hoeveelheid tijd die de module in de implementatie heeft opgegeven en de status actief heeft |
 | `edgeAgent_total_time_expected_running_seconds` | `module_name` | Type: meter<br> De hoeveelheid tijd die de module in de implementatie heeft opgegeven |

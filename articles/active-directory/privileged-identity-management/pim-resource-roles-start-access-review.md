@@ -11,30 +11,28 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: pim
-ms.date: 02/11/2021
+ms.date: 03/09/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8f05ca02068c82a3839b22b698e49a7be818a56
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 4276b48584ecbad91794de58abafd7e3367f6877
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100370543"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564030"
 ---
 # <a name="create-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Een toegangs beoordeling van Azure-resource rollen maken in Privileged Identity Management
 
-Toegang tot bevoegde Azure-resource rollen voor werk nemers verandert in de loop van de tijd. Om het risico te verminderen dat is gekoppeld aan verouderde roltoewijzingen, moet u de toegang regel matig controleren. U kunt Azure Active Directory (Azure AD) Privileged Identity Management (PIM) gebruiken om toegangs beoordelingen te maken voor beschermde Azure-resource rollen. U kunt ook terugkerende toegangs beoordelingen configureren die automatisch worden uitgevoerd.
+De nood zaak om toegang te krijgen tot beschermde Azure-resource rollen door werk nemers wijzigingen in de loop van de tijd. Om het risico te verminderen dat is gekoppeld aan verouderde roltoewijzingen, moet u de toegang regel matig controleren. U kunt Azure Active Directory (Azure AD) Privileged Identity Management (PIM) gebruiken om toegangs beoordelingen te maken voor uitgebreide toegang tot Azure-resource rollen. U kunt ook terugkerende toegangs beoordelingen configureren die automatisch worden uitgevoerd. In dit artikel wordt beschreven hoe u een of meer toegangs beoordelingen maakt.
 
-In dit artikel wordt beschreven hoe u een of meer toegangs beoordelingen maakt voor beschermde Azure-resource rollen.
-
-## <a name="prerequisites"></a>Vereisten
+## <a name="prerequisite-role"></a>Vereiste rol
 
  Als u toegangs beoordelingen wilt maken, moet u worden toegewezen aan de Azure-rol [eigenaar](../../role-based-access-control/built-in-roles.md#owner) of [beheerder voor gebruikers toegang](../../role-based-access-control/built-in-roles.md#user-access-administrator) voor de resource.
 
 ## <a name="open-access-reviews"></a>Toegangs beoordelingen openen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/) met een gebruiker die lid is van de beheerdersrol privileged Role.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/) met een gebruiker die is toegewezen aan een van de vereiste rollen.
 
 1. Open **Azure AD privileged Identity Management**.
 

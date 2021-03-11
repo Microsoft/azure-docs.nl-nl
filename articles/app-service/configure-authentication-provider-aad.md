@@ -5,20 +5,18 @@ ms.assetid: 6ec6a46c-bce4-47aa-b8a3-e133baef22eb
 ms.topic: article
 ms.date: 04/14/2020
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 377b7fd44b4f5afa2fd3892d9cb920484bc11c0b
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 2805500e4a4c98ad7b8360393e7d69ad9fb704a3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102509435"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563333"
 ---
 # <a name="configure-your-app-service-or-azure-functions-app-to-use-azure-ad-login"></a>Uw App Service of Azure Functions app configureren voor het gebruik van Azure AD-aanmelding
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
 
 In dit artikel wordt beschreven hoe u verificatie voor Azure App Service of Azure Functions zodanig configureert dat uw app zich aanmeldt bij gebruikers met Azure Active Directory (Azure AD) als verificatie provider.
-
-Deze functie is momenteel niet beschikbaar in het Linux-verbruiks abonnement voor Azure Functions.
 
 ## <a name="configure-with-express-settings"></a><a name="express"> </a>Configureren met Express-instellingen
 

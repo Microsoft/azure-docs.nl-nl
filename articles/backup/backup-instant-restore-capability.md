@@ -4,12 +4,12 @@ description: Azure direct Restore-mogelijkheid en veelgestelde vragen over VM-ba
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 147fadc92429157ed2f9ba3eb68297a3e1d08d24
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 3448b162c17dec2ab5b7637a3527d1c470bd415c
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96014445"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618573"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Profiteer van verbeterde prestaties voor back-up en herstel met Azure Backup functie voor direct terugzetten
 
@@ -112,7 +112,13 @@ Het nieuwe model staat het verwijderen van het herstel punt (Tier2) niet toe, te
 
 ### <a name="why-does-my-snapshot-still-exist-even-after-the-set-retention-period-in-backup-policy"></a>Waarom bestaat mijn moment opname nog, zelfs na het instellen van de Bewaar periode in back-upbeleid?
 
-Als het herstel punt een moment opname heeft en het meest recente herstel punt beschikbaar is, wordt het behouden tot de volgende geslaagde back-up. Dit is afhankelijk van het ingestelde beleid voor garbage collection (GC). Het is verplicht dat er altijd ten minste één laatste herstel punt aanwezig is, in het geval dat alle volgende back-ups mislukken vanwege een probleem in de virtuele machine. In normale scenario's worden herstel punten Maxi maal 24 uur na verloop van tijd opgeruimd.
+Als het herstel punt een moment opname heeft en het meest recente herstel punt beschikbaar is, wordt het behouden tot de volgende geslaagde back-up. Dit is afhankelijk van het ingestelde beleid voor garbage collection (GC). Het is verplicht dat er altijd ten minste één laatste herstel punt aanwezig is, in het geval dat alle volgende back-ups mislukken vanwege een probleem in de virtuele machine. In normale scenario's worden herstel punten Maxi maal 24 uur na verloop van tijd opgeruimd. In zeldzame scenario's kunnen zich een of twee extra moment opnamen bevinden op basis van de zwaarste belasting op de garbage collector (GC).
+
+### <a name="why-do-i-see-more-snapshots-than-my-retention-policy"></a>Waarom zie ik meer moment opnamen dan mijn Bewaar beleid?
+
+In een scenario waarin een Bewaar beleid is ingesteld op ' 1 ', vindt u twee moment opnamen. Dit wil zeggen dat er altijd ten minste één laatste herstel punt aanwezig is, in het geval dat alle volgende back-ups mislukken vanwege een probleem in de virtuele machine. Dit kan de aanwezigheid van twee moment opnamen veroorzaken.<br></br>Als het beleid bijvoorbeeld is voor moment opnamen van ' n ', kunt u de moment opnamen ' n + 1 ' op momenten vinden. U kunt zelfs ' n + 1 + 2 ' moment opnamen vinden als er een vertraging optreedt in garbagecollection. Dit kan in zeldzame gevallen optreden wanneer:
+- U kunt moment opnamen opschonen, die eerder zijn bewaard.
+- De garbage collector (GC) in de back-end is zware belasting.
 
 ### <a name="i-dont-need-instant-restore-functionality-can-it-be-disabled"></a>Ik heb niet de functionaliteit voor direct terugzetten nodig. Kan deze worden uitgeschakeld?
 
@@ -120,5 +126,5 @@ De functie voor direct terugzetten is ingeschakeld voor iedereen en kan niet wor
 
 ### <a name="is-it-safe-to-restart-the-vm-during-the-transfer-process-which-can-take-many-hours-will-restarting-the-vm-interrupt-or-slow-down-the-transfer"></a>Is het veilig om de virtuele machine opnieuw op te starten tijdens het overdrachts proces (dit kan veel uren duren)? Wordt de VM-interrupt opnieuw gestart of wordt de overdracht vertraagd?
 
-Ja, dat is veilig en er is geen invloed op de snelheid van de gegevens overdracht.
+Ja, het is veilig en er is geen invloed op de snelheid van de gegevens overdracht.
 

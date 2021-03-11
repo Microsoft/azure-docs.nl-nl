@@ -2,17 +2,18 @@
 title: Opslag van beheerde schijven converteren tussen verschillende schijf typen met behulp van Azure CLI
 description: Het converteren van Azure Managed disks tussen de verschillende typen schijven met behulp van de Azure CLI.
 author: roygara
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 02/13/2021
 ms.author: albecker
 ms.subservice: disks
-ms.openlocfilehash: ec6d5b10b4c2336ba7fd221b43a7dbf43ed5cee1
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 35ba681ae35e60d7cd275c9e649b2463d2dc30a0
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516818"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558454"
 ---
 # <a name="convert-azure-managed-disks-storage-from-standard-to-premium-or-premium-to-standard"></a>Azure Managed disks-opslag converteren van Standard naar Premium of Premium naar Standard
 

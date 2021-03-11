@@ -3,17 +3,17 @@ title: Windows-client installatie kopieën in azure gebruiken
 description: De voor delen van Visual Studio-abonnementen gebruiken om Windows 7, Windows 8 of Windows 10 in azure te implementeren voor dev/test-scenario's
 author: cynthn
 ms.subservice: imaging
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: 0f8a17ca69da15d650ba88642d7a81e477a6c537
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: d09f27eebba5db2edb56185b658c8ae2b06e42d3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99627143"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102552266"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Windows-client in Azure gebruiken voor scenario's voor ontwikkelen/testen
 U kunt Windows 7, Windows 8 of Windows 10 Enter prise (x64) gebruiken in azure voor ontwikkel-en test scenario's met de juiste Visual Studio (voorheen MSDN)-abonnement. 

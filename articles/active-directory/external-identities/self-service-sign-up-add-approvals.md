@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b447873df882847f052125254ea52b5ae6ab9ec4
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 95274f42da7f6cac9b193504df834232d7c0eb90
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101644864"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609979"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Een aangepaste goedkeurings werk stroom toevoegen aan self-service registratie
 
@@ -156,7 +156,6 @@ Content-type: application/json
     "version": "1.0.0",
     "action": "ShowBlockPage",
     "userMessage": "Your access request is already processing. You'll be notified when your request has been approved.",
-    "code": "CONTOSO-APPROVAL-PENDING"
 }
 ```
 
@@ -168,7 +167,6 @@ Content-type: application/json
     "version": "1.0.0",
     "action": "ShowBlockPage",
     "userMessage": "Your sign up request has been denied. Please contact an administrator if you believe this is an error",
-    "code": "CONTOSO-APPROVAL-DENIED"
 }
 ```
 
@@ -244,7 +242,6 @@ Content-type: application/json
     "version": "1.0.0",
     "action": "ShowBlockPage",
     "userMessage": "Your account is now waiting for approval. You'll be notified when your request has been approved.",
-    "code": "CONTOSO-APPROVAL-REQUESTED"
 }
 ```
 
@@ -256,7 +253,6 @@ Content-type: application/json
     "version": "1.0.0",
     "action": "ShowBlockPage",
     "userMessage": "Your sign up request has been denied. Please contact an administrator if you believe this is an error",
-    "code": "CONTOSO-APPROVAL-AUTO-DENIED"
 }
 ```
 
@@ -268,12 +264,12 @@ De `userMessage` in het antwoord wordt weer gegeven voor de gebruiker, bijvoorbe
 
 Na het verkrijgen van hand matige goed keuring maakt het aangepaste goedkeurings systeem een [gebruikers](/graph/azuread-users-concept-overview) account met behulp van [Microsoft Graph](/graph/use-the-api). De manier waarop uw goedkeurings systeem de gebruikers account inricht, is afhankelijk van de ID-provider die door de gebruiker is gebruikt.
 
-### <a name="for-a-federated-google-or-facebook-user"></a>Voor een federatieve Google-of Facebook-gebruiker
+### <a name="for-a-federated-google-or-facebook-user-and-email-one-time-passcode"></a>Voor een federatieve Google-of Facebook-gebruiker en E-mail eenmalige wachtwoord code
 
 > [!IMPORTANT]
-> Het goedkeurings systeem moet expliciet controleren `identities` of `identities[0]` en `identities[0].issuer` aanwezig zijn en gelijk zijn aan `identities[0].issuer` Facebook of Google om deze methode te gebruiken.
+> Het goedkeurings systeem moet expliciet controleren `identities` of `identities[0]` en `identities[0].issuer` aanwezig zijn en gelijk zijn aan `identities[0].issuer` Facebook, Google of mail om deze methode te gebruiken.
 
-Als uw gebruiker zich heeft aangemeld met een Google-of Facebook-account, kunt u de API voor het [maken van gebruikers](/graph/api/user-post-users?tabs=http)gebruiken.
+Als uw gebruiker zich heeft aangemeld met een Google-of Facebook-account of een wacht woord voor eenmalige E-mail, kunt u de API voor het [maken van gebruikers](/graph/api/user-post-users?tabs=http)gebruiken.
 
 1. Met het goedkeurings systeem wordt de HTTP-aanvraag van de gebruikers stroom ontvangen.
 
@@ -331,9 +327,9 @@ Content-type: application/json
 | \<otherBuiltInAttribute>                            | Nee       | Andere ingebouwde kenmerken `displayName` , zoals, `city` en anderen. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                            |
 | \<extension\_\{extensions-app-id}\_CustomAttribute> | Nee       | Aangepaste kenmerken van de gebruiker. Parameter namen zijn hetzelfde als de para meters die worden verzonden door de API-connector.                                                            |
 
-### <a name="for-a-federated-azure-active-directory-user"></a>Voor een federatieve Azure Active Directory gebruiker
+### <a name="for-a-federated-azure-active-directory-user-or-microsoft-account-user"></a>Voor een federatieve Azure Active Directory gebruiker of Microsoft-account gebruiker
 
-Als een gebruiker zich aanmeldt met een federatieve Azure Active Directory account, moet u de [API voor uitnodigingen](/graph/api/invitation-post) gebruiken om de gebruiker te maken en vervolgens de [API voor gebruikers updates](/graph/api/user-update) om meer kenmerken aan de gebruiker toe te wijzen.
+Als een gebruiker zich aanmeldt met een federatieve Azure Active Directory account of een Microsoft-account, moet u de [API voor uitnodigingen](/graph/api/invitation-post) gebruiken om de gebruiker te maken en vervolgens de [API voor gebruikers updates](/graph/api/user-update) om meer kenmerken aan de gebruiker toe te wijzen.
 
 1. Het goedkeurings systeem ontvangt de HTTP-aanvraag van de gebruikers stroom.
 

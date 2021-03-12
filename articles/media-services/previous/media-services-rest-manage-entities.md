@@ -1,7 +1,7 @@
 ---
 title: Media Services entiteiten beheren met REST | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u Media Services entiteiten beheert met REST API.
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 95124f101b1f14a70dabedd7d44077c5c1b6e99c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 3/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 2821c4c2b13edaf5dfb34664c4b9f78ab56d98a7
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89264229"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015553"
 ---
 # <a name="managing-media-services-entities-with-rest"></a>Media Services entiteiten beheren met REST
 

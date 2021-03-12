@@ -6,14 +6,14 @@ ms.reviewer: adwise
 ms.service: cost-management-billing
 ms.subservice: common
 ms.topic: reference
-ms.date: 11/19/2020
+ms.date: 03/10/2021
 ms.author: banders
-ms.openlocfilehash: 93dda4fc3a152b0a07a95ff327c9ea619f25787c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 24fbf52c8fd0338537862a54e15e8a249541a701
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355813"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102635787"
 ---
 # <a name="migrate-from-enterprise-reporting-to-azure-resource-manager-apis"></a>Migreren van Enterprise Reporting naar Azure Resource Manager API’s
 
@@ -51,28 +51,7 @@ Nadat u een service-principal hebt gemaakt om via een programma de Azure Resourc
 
 ### <a name="azure-billing-hierarchy-access"></a>Hiërarchietoegang tot Azure-facturering
 
-Gebruik de API's voor [Factureringsmachtigingen](/rest/api/billing/2019-10-01-preview/billingpermissions), [Roldefinities voor facturering](/rest/api/billing/2019-10-01-preview/billingroledefinitions) en [Toewijzingen voor facturering](/rest/api/billing/2019-10-01-preview/billingroleassignments) om service-principal-machtigingen toe te wijzen aan het bereik Enterprise-factureringsaccount, Afdelingen, of Inschrijvingsaccount.
-
-- Gebruik de API's voor Factureringsmachtigingen om de machtigingen te identificeren die een service-principal al heeft in een bepaald bereik, zoals een Factureringsaccount of Afdeling.
-- Gebruik de API's voor Roldefinities voor facturering om de beschikbare rollen op te sommen die kunnen worden toegewezen aan uw service-principal.
-  - De rollen Alleen-lezen EA-beheerder en Alleen-lezen Afdelingsbeheerder kunnen op dit moment worden toegewezen aan service-principals.
-- Gebruik de API's voor Roltoewijzingen voor facturering om een rol toe te wijzen aan uw service-principal.
-
-In het volgende voorbeeld ziet u hoe u de API voor roltoewijzingen aanroept om een service-principal toegang te verlenen tot uw factureringsaccount. We raden u aan om [PostMan](https://postman.com) te gebruiken om deze configuraties voor eenmalige machtiging uit te voeren.
-
-```json
-POST https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/createBillingRoleAssignment?api-version=2019-10-01-preview
-```
-
-#### <a name="request-body"></a>Aanvraagtekst
-
-```json
-{
-  "principalId": "00000000-0000-0000-0000-000000000000",
-  "billingRoleDefinitionId": "/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/providers/Microsoft.Billing/billingRoleDefinition/10000000-aaaa-bbbb-cccc-100000000000"
-}
-
-```
+Zie [rollen toewijzen aan Azure Enterprise overeenkomst service principal names](../manage/assign-roles-azure-service-principals.md)voor het toewijzen van Service-Principal-machtigingen voor uw zakelijke facturerings account, afdelingen of inschrijvings accounts.
 
 ### <a name="azure-role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer voor Azure
 

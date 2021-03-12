@@ -7,15 +7,15 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: aashishb
 author: aashishb
-ms.date: 01/04/2021
+ms.date: 03/11/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e0e25a804ac66ca33715906ce4d397b80887037d
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 71cb2e9e112c49d77a2a0b47c24c49cabfa86589
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102518548"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149015"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 
@@ -97,7 +97,7 @@ U kunt TLS inschakelen met behulp van micro soft-certificaat of een aangepast ce
     provisioning_config = AksCompute.provisioning_configuration()
 
     # Leaf domain label generates a name using the formula
-    #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+    #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.com"
     #  where "######" is a random series of characters
     provisioning_config.enable_ssl(leaf_domain_label = "contoso")
 
@@ -107,7 +107,7 @@ U kunt TLS inschakelen met behulp van micro soft-certificaat of een aangepast ce
                                           cluster_name = cluster_name)
 
     # Leaf domain label generates a name using the formula
-    #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.net"
+    #  "<leaf-domain-label>######.<azure-region>.cloudapp.azure.com"
     #  where "######" is a random series of characters
     attach_config.enable_ssl(leaf_domain_label = "contoso")
     ```
@@ -173,7 +173,7 @@ Als het certificaat oorspronkelijk is gegenereerd door micro soft (als de *leaf_
 
 > [!IMPORTANT]
 > * Als het bestaande certificaat nog geldig is, gebruikt u `renew=True` (SDK) of `--ssl-renew` (CLI) om de configuratie te forceren om deze te vernieuwen. Als het bestaande certificaat bijvoorbeeld 10 dagen nog geldig is en u niet gebruikt `renew=True` , kan het certificaat mogelijk niet worden verlengd.
-> * Wanneer de service oorspronkelijk is geïmplementeerd, `leaf_domain_label` wordt het gebruikt om een DNS-naam te maken met behulp van het patroon `<leaf-domain-label>######.<azure-region>.cloudapp.azure.net` . Als u de bestaande naam (inclusief de oorspronkelijk gegenereerde zes cijfers) wilt behouden, gebruikt u de oorspronkelijke `leaf_domain_label` waarde. Neem niet de 6 cijfers op die zijn gegenereerd.
+> * Wanneer de service oorspronkelijk is geïmplementeerd, `leaf_domain_label` wordt het gebruikt om een DNS-naam te maken met behulp van het patroon `<leaf-domain-label>######.<azure-region>.cloudapp.azure.com` . Als u de bestaande naam (inclusief de oorspronkelijk gegenereerde zes cijfers) wilt behouden, gebruikt u de oorspronkelijke `leaf_domain_label` waarde. Neem niet de 6 cijfers op die zijn gegenereerd.
 
 **De SDK gebruiken**
 

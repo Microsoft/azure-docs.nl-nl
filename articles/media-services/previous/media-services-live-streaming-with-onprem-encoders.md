@@ -3,7 +3,7 @@ title: Live streamen met on-premises coderings Programma's die multi-bitrate str
 description: In dit onderwerp wordt beschreven hoe u een kanaal instelt dat een multi-bitrate Live Stream ontvangt van een on-premises encoder.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: d9f0912d-39ec-4c9c-817b-e5d9fcf1f7ea
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
-ms.openlocfilehash: 746fe9132dcb06678e2a0a975c8eed0aba6c3fad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 316372f091833519f0479d07355d2845c82743b6
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89269621"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014839"
 ---
 # <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders"></a>Werken met kanalen die een multi-bitrate live stream van on-premises encoders ontvangen
 
@@ -31,7 +31,7 @@ ms.locfileid: "89269621"
 ## <a name="overview"></a>Overzicht
 In Azure Media Services vertegenwoordigt een *kanaal* een pijp lijn voor het verwerken van live-streaming-inhoud. Een kanaal ontvangt Live-invoer stromen op een van de volgende twee manieren:
 
-* Een on-premises Live coderings programma verzendt een multi-bitrate RTMP-of Smooth Streaming (gefragmenteerde MP4)-stream naar het kanaal dat niet is ingeschakeld voor het uitvoeren van Live code ring met Media Services. De opgenomen streams passeren kanalen zonder verdere verwerking. Deze methode wordt *Pass-Through*genoemd. Een Live Encoder kan ook een stream met één bitsnelheid verzenden naar een kanaal dat niet is ingeschakeld voor Live encoding, maar dit wordt niet aangeraden. Media Services de stroom levert aan klanten die deze aanvragen.
+* Een on-premises Live coderings programma verzendt een multi-bitrate RTMP-of Smooth Streaming (gefragmenteerde MP4)-stream naar het kanaal dat niet is ingeschakeld voor het uitvoeren van Live code ring met Media Services. De opgenomen streams passeren kanalen zonder verdere verwerking. Deze methode wordt *Pass-Through* genoemd. Een Live Encoder kan ook een stream met één bitsnelheid verzenden naar een kanaal dat niet is ingeschakeld voor Live encoding, maar dit wordt niet aangeraden. Media Services de stroom levert aan klanten die deze aanvragen.
 
   > [!NOTE]
   > Het gebruik van een Pass-Through-methode is de voordeligste manier om live streamen uit te voeren.
@@ -41,7 +41,7 @@ In Azure Media Services vertegenwoordigt een *kanaal* een pijp lijn voor het ver
 
 Als u begint met de release van Media Services 2,10, kunt u, wanneer u een kanaal maakt, opgeven hoe u wilt dat uw kanaal de invoer stroom ontvangt. U kunt ook opgeven of u wilt dat het kanaal Live code ring van uw stream uitvoert. U hebt hiervoor twee opties:
 
-* **Pass**through: geef deze waarde op als u van plan bent een on-premises Live coderings programma te gebruiken dat een multi-bitrate stroom (een Pass-Through-stroom) als uitvoer heeft. In dit geval wordt de inkomende stroom door gegeven aan de uitvoer zonder code ring. Dit is het gedrag van een kanaal vóór de 2,10-release. In dit artikel vindt u informatie over het werken met kanalen van dit type.
+* **Pass** through: geef deze waarde op als u van plan bent een on-premises Live coderings programma te gebruiken dat een multi-bitrate stroom (een Pass-Through-stroom) als uitvoer heeft. In dit geval wordt de inkomende stroom door gegeven aan de uitvoer zonder code ring. Dit is het gedrag van een kanaal vóór de 2,10-release. In dit artikel vindt u informatie over het werken met kanalen van dit type.
 * **Live encoding**: Kies deze waarde als u Media Services wilt gebruiken om uw live stream met één bitsnelheid te coderen naar een multi-bitrate stream. Als u een live coderings kanaal in een **actieve** status laat staan, worden facturerings kosten in rekening gebracht. We raden u aan uw actieve kanalen direct te stoppen nadat uw live-streaming-gebeurtenis is voltooid om extra kosten per uur te voor komen. Media Services de stroom levert aan klanten die deze aanvragen.
 
 > [!NOTE]

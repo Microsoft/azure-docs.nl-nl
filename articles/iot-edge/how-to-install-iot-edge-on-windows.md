@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: c12dbeb81fd2b3d67863b5b84fa30cf77e165549
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 812bfcc8d82c08600bd7391cdf70661585ceaf2f
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102123187"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015179"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -43,18 +43,11 @@ In dit artikel worden de stappen beschreven voor het instellen van IoT Edge op e
   * Minimum-RAM: 4 GB (8 GB aanbevolen)
   * Minimale opslag: 10 GB
 
-* Toegang tot het Windows-beheer centrum Insider-build met de Azure IoT Edge-extensie voor Windows-beheer centrum geïnstalleerd:  <!-- The link below needs the language localization to work; otherwise broken -->
-   1. Ga naar de [Preview-versie van Windows Insider](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver).
+* Toegang tot het Windows-beheer centrum met de uitbrei ding Azure IoT Edge voor Windows-beheer centrum is geïnstalleerd:
 
-   1. Selecteer in de vervolg keuzelijst voor beelden de optie **Windows-beheer centrum preview-Build 2012** en kies **bevestigen**.
+   1. Down load het [installatie programma voor het Windows-beheer centrum](https://aka.ms/wacdownload).
 
-      ![Kies de Windows-beheer centrum preview-build 2012 in het vervolg keuzemenu van beschik bare previews.](./media/how-to-install-iot-edge-on-windows/select-windows-admin-center-preview-build.png)
-
-   1. Kies in de vervolg keuzelijst **taal selecteren** de optie **Engels** en kies vervolgens **bevestigen**.
-
-   1. Kies **nu downloaden** om de *WindowsAdminCenterPreview2012.msi* te downloaden.
-
-   1. Voer de *WindowsAdminCenterPreview2012.msi* uit en volg de installatie wizard prompts om Windows-beheer centrum te installeren. Zodra het is geïnstalleerd, opent u Windows-beheer centrum.
+   1. Voer het gedownloade installatie programma uit en volg de installatie wizard prompts om Windows-beheer centrum te installeren. Zodra het is geïnstalleerd, opent u Windows-beheer centrum.
 
    1. Bij het eerste gebruik van Windows-beheer centrum wordt u gevraagd om een certificaat te selecteren dat u wilt gebruiken. Selecteer de **Windows-beheer centrum-client** als uw certificaat.
 
@@ -143,7 +136,7 @@ Installeer IoT Edge voor Linux in Windows op uw doel apparaat als u dat nog niet
    ```azurepowershell-interactive
    $msiPath = $([io.Path]::Combine($env:TEMP, 'AzureIoTEdge.msi'))
    $ProgressPreference = 'SilentlyContinue'
-   Invoke-WebRequest "https://aka.ms/AzureEdgeForLinuxOnWindowsMSI" -OutFile $msiPath
+   Invoke-WebRequest "https://aka.ms/AzEflowMSI" -OutFile $msiPath
    ```
 
 1. Installeer IoT Edge voor Linux in Windows op uw apparaat.

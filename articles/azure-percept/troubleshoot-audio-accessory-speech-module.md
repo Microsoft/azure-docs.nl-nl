@@ -1,18 +1,18 @@
 ---
-title: Problemen oplossen met Azure percept audio en spraak modules
-description: Tips voor het oplossen van problemen met enkele van de meest voorkomende problemen die tijdens de on-boarding-ervaring zijn gevonden
+title: Problemen met Azure percept audio en de module spraak oplossen
+description: Tips voor het oplossen van problemen met Azure percept audio en azureearspeechclientmodule
 author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: a3877ea680e7b4c705f127c54e0fa10c45d3b51d
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: f34013bdb14481bfe872a9b3c4234d603bc2d7ec
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102097972"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102635566"
 ---
 # <a name="azure-percept-audio-and-speech-module-troubleshooting"></a>Problemen met de Azure percept-audio en spraak module oplossen
 
@@ -23,13 +23,13 @@ Gebruik de onderstaande richt lijnen voor het oplossen van problemen met toepass
 Als u deze opdrachten wilt uitvoeren, [maakt u verbinding met het Azure PERCEPT DK Wi-Fi toegangs punt en maakt u verbinding met de dev kit via SSH](./how-to-ssh-into-percept-dk.md) en voert u de opdrachten in de SSH-terminal in.
 
 ```console
- iotedge logs azureearspeechclientmodule
+sudo iotedge logs azureearspeechclientmodule
 ```
 
 Als u de uitvoer naar een txt-bestand wilt omleiden voor verdere analyse, gebruikt u de volgende syntaxis:
 
 ```console
-[command] > [file name].txt
+sudo [command] > [file name].txt
 ```
 
 Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar uw host-PC via SCP:
@@ -52,18 +52,18 @@ Als de runtime status van **azureearspeechclientmodule** niet wordt weer gegeven
 
 U kunt LED-indica toren gebruiken om te begrijpen in welke staat het apparaat zich bevindt. Doorgaans duurt het ongeveer twee minuten voordat de module volledig kan worden geïnitialiseerd na *inschakeling*. Tijdens de initialisatie stappen ziet u het volgende:
 
-1. 1 Center-witte LED: het apparaat is ingeschakeld. 
-2. 1 midden-wit LED-knipperend-verificatie wordt uitgevoerd. 
+1. 1 Center-witte LED: het apparaat is ingeschakeld.
+2. 1 midden-wit LED-knipperend-verificatie wordt uitgevoerd.
 3. Alle drie de Led's worden gewijzigd in blauw zodra het apparaat is geverifieerd en gereed is voor gebruik.
 
-|GELEID|   LED-status|  De SoM-status van het oormerk|
-|---|------------|----------------| 
-|L02|   1x-wit, statisch op |Inschakelen |
-|L02|   1x-wit, 0,5 Hz flashen|  Verificatie wordt uitgevoerd |
-|L01 & L02 & L03|   3x blauw, statisch op|     Wachten op sleutel woord|
-|L01 & L02 & L03|   LED voor matrix flitsen, 20fps | Luis teren of spreken|
-|L01 & L02 & L03|   LED array Racing, 20fps|    Gedachten|
-|L01 & L02 & L03|   3x rood, statisch op | Dempen|
+|GELEID|LED-status|De SoM-status van het oormerk|
+|---|---------|--------------|
+|L02|1x-wit, statisch op|Inschakelen |
+|L02|1x-wit, 0,5 Hz flashen|Verificatie wordt uitgevoerd |
+|L01 & L02 & L03|3x blauw, statisch op|Wachten op sleutel woord|
+|L01 & L02 & L03|LED voor matrix flitsen, 20fps |Luis teren of spreken|
+|L01 & L02 & L03|LED array Racing, 20fps|Gedachten|
+|L01 & L02 & L03|3x rood, statisch op |Dempen|
 
 ## <a name="next-steps"></a>Volgende stappen
 

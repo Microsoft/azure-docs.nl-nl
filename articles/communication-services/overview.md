@@ -8,12 +8,12 @@ ms.author: mikben
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 30b075cfbd7d38ff81cdf79a05a3a95b87b0bc13
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: c84bea660b5d4408e399c471d6dd08d849f5e842
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488542"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102635855"
 ---
 # <a name="what-is-azure-communication-services"></a>Wat is Azure Communication Services?
 
@@ -48,8 +48,8 @@ De volgende resources zijn een goed startpunt als u geen ervaring hebt met Azure
 | Resource                               |Beschrijving                           |
 |---                                    |---                                   |
 |**[Voeg u aanroepende app toe aan een Teams-meeting](./quickstarts/voice-video-calling/get-started-teams-interop.md)**|Azure Communication Services kan worden gebruikt voor het bouwen van aangepaste vergaderervaringen die communiceren met Microsoft Teams. Gebruikers van uw oplossingen voor communicatie Services kunnen communiceren met teams deel nemers over spraak, video, chatten en het delen van het scherm.|
-|**[Een Communication Services-resource maken](./quickstarts/create-communication-resource.md)**|U kunt Azure Communication Services beginnen gebruiken met behulp van de clientbibliotheek Azure Portal of Communication Services Administration om uw eerste Communication Services-resource in te richten. Zodra u de verbindingsreeks van uw Communication Services-resource hebt, kunt u uw eerste toegangstokens voor gebruikers inrichten.|
-|**[Uw eerste toegangstokens voor gebruikers maken](./quickstarts/access-tokens.md)**|Toegangstokens voor gebruikers worden gebruikt om services te verifiëren bij uw Azure Communication Services-resource. Deze tokens worden ingericht en opnieuw uitgegeven met behulp van de clientbibliotheek voor het beheer van Communication Services.|
+|**[Een Communication Services-resource maken](./quickstarts/create-communication-resource.md)**|U kunt Azure Communication Services gaan gebruiken met behulp van de client bibliotheek Azure Portal of communicatie Services om uw eerste communicatie Services-resource in te richten. Zodra u de verbindingsreeks van uw Communication Services-resource hebt, kunt u uw eerste toegangstokens voor gebruikers inrichten.|
+|**[Uw eerste toegangstokens voor gebruikers maken](./quickstarts/access-tokens.md)**|Toegangstokens voor gebruikers worden gebruikt om services te verifiëren bij uw Azure Communication Services-resource. Deze tokens zijn ingericht en opnieuw uitgegeven met de communicatie Services-client bibliotheek.|
 |**[Een telefoonnummer aanvragen](./quickstarts/telephony-sms/get-phone-number.md)**|U kunt Azure Communication Services gebruiken om telefoonnummers in te richten en uit te voeren. Deze telefoon nummers kunnen worden gebruikt om uitgaande oproepen te initiëren en oplossingen voor SMS-communicatie te bouwen.|
 |**[Een SMS-bericht verzenden vanuit uw app](./quickstarts/telephony-sms/send.md)**|Met de SMS-clientbibliotheek van Azure Communication Services kunt u SMS-berichten verzenden en ontvangen van uw .NET-en Javascript-toepassingen.|
 |**[Aan de slag met spraak- en videogesprekken](./quickstarts/voice-video-calling/getting-started-with-calling.md)**| Met Azure Communication Services kunt u spraak- en videogesprekken aan uw apps toevoegen met behulp van de clientbibliotheek Oproepen. Deze bibliotheek werkt op basis van WebRTC en stelt u in staat om peer-to-peer, met multimedia en realtime te communiceren binnen uw toepassing.|

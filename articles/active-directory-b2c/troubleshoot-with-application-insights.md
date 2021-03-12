@@ -8,20 +8,20 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: troubleshooting
-ms.date: 10/16/2020
+ms.date: 03/10/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d4a68b492bad4ac091b4600c9ec81ac0de27cc05
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 435a0b85d205328d10f8762498c7a981d7ee45f5
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100572894"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611824"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Azure Active Directory B2C-logboeken met Application Insights verzamelen
 
-In dit artikel worden de stappen beschreven voor het verzamelen van logboeken van Active Directory B2C (Azure AD B2C), zodat u problemen met uw aangepaste beleids regels kunt vaststellen. Application Insights biedt een manier om uitzonde ringen te diagnosticeren en prestatie problemen van toepassingen te visualiseren. Azure AD B2C bevat een functie voor het verzenden van gegevens naar Application Insights.
+In dit artikel worden de stappen beschreven voor het verzamelen van logboeken van Active Directory B2C (Azure AD B2C), zodat u problemen met uw aangepaste beleids regels kunt vaststellen. AppInsights biedt een manier om uitzonderingen te diagnosticeren en prestatieproblemen van toepassingen te visualiseren. Azure AD B2C bevat een functie voor het verzenden van gegevens naar AppInsights.
 
 De gedetailleerde activiteiten logboeken die hier worden beschreven, moeten **alleen** worden ingeschakeld tijdens de ontwikkeling van uw aangepaste beleids regels.
 
@@ -51,7 +51,7 @@ Als u er nog geen hebt, maakt u een instantie van Application Insights in uw abo
    UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
    ```
 
-1. Als deze nog niet bestaat, voegt `<UserJourneyBehaviors>` u een onderliggend knoop punt toe aan het `<RelyingParty>` knoop punt. Deze moet direct na worden geplaatst `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />` .
+1. Als deze nog niet bestaat, voegt `<UserJourneyBehaviors>` u een onderliggend knoop punt toe aan het `<RelyingParty>` knoop punt. Het moet zich bevinden na `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />` .
 1. Voeg het volgende knoop punt toe als onderliggend item van het `<UserJourneyBehaviors>` element. Zorg ervoor dat u vervangt door `{Your Application Insights Key}` de Application Insights **instrumentatie sleutel** die u eerder hebt vastgelegd.
 
     ```xml
@@ -94,7 +94,7 @@ Er is een korte vertraging, meestal minder dan vijf minuten, voordat u nieuwe lo
 
 Hier volgt een lijst met query's die u kunt gebruiken om de logboeken weer te geven:
 
-| Query’s uitvoeren | Description |
+| Query’s uitvoeren | Beschrijving |
 |---------------------|--------------------|
 `traces` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Alle logboeken weer geven die zijn gegenereerd door Azure AD B2C voor de afgelopen dag
@@ -130,7 +130,7 @@ Als u de prestaties van uw productie omgeving en betere gebruikers ervaring wilt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De community heeft een reis viewer voor gebruikers ontwikkeld om identiteits ontwikkelaars te helpen. Het leest van uw Application Insights-exemplaar en biedt een goed gestructureerde weer gave van de reis gebeurtenissen van de gebruiker. U verkrijgt de bron code en implementeert deze in uw eigen oplossing.
+De community heeft een viewer voor gebruikersbeleving ontwikkeld om identiteitsontwikkelaars te helpen. Deze leest van uw exemplaar van AppInsights en biedt een goed gestructureerde weergave van de gebeurtenissen van de gebruikersbeleving. U verkrijgt de broncode en implementeert deze in uw eigen oplossing.
 
 De gebruikers reis speler wordt niet ondersteund door micro soft en wordt strikt beschikbaar gesteld.
 

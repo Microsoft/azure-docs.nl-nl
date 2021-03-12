@@ -6,17 +6,18 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: iqshahmicrosoft
 ms.author: krsh
-ms.date: 1/5/2021
-ms.openlocfilehash: 560699296b8cae83413c36820106eedf7fef7414
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.date: 02/19/2021
+ms.openlocfilehash: 870482ca7894c5e260a78270fb036d6a6b22ee41
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914158"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630058"
 ---
 # <a name="how-to-generate-a-sas-uri-for-a-vm-image"></a>Een SAS-URI voor een VM-installatie kopie genereren
 
-Tijdens het publicatie proces moet u een SAS-URI (Shared Access Signature) opgeven voor elke VHD die is gekoppeld aan uw plannen (voorheen Sku's genoemd). Tijdens het certificerings proces moet micro soft toegang hebben tot deze Vhd's. U voert deze URI in op het tabblad **plannen** in partner centrum.
+> [!NOTE]
+> U hebt geen SAS-URI nodig om uw virtuele machine te publiceren. U kunt een afbeelding gewoon delen in het deel centrum. Raadpleeg [een virtuele machine maken met behulp van een goedgekeurde basis](https://docs.microsoft.com/azure/marketplace/azure-vm-create-using-approved-base) of [Maak een virtuele machine met behulp van uw eigen installatie kopie](https://docs.microsoft.com/azure/marketplace/azure-vm-create-using-own-image) -instructies.
 
 Voor het genereren van SAS-Uri's voor uw Vhd's gelden de volgende vereisten:
 
@@ -24,6 +25,71 @@ Voor het genereren van SAS-Uri's voor uw Vhd's gelden de volgende vereisten:
 - Alleen lijst-en lees machtigingen zijn vereist. Geef geen toegang voor schrijven of verwijderen op.
 - De duur voor toegang (verval datum) moet mini maal drie weken zijn vanaf het moment dat de SAS-URI wordt gemaakt.
 - Als u wilt beveiligen tegen UTC-tijd wijzigingen, stelt u de begin datum in op één dag voor de huidige datum. Als de huidige datum bijvoorbeeld 16 juni 2020 is, selecteert u 6/15/2020.
+
+## <a name="extract-vhd-from-a-vm"></a>VHD extra heren uit een virtuele machine
+
+> [!NOTE]
+> U kunt deze stap overs Laan als u al een VHD hebt geüpload in een opslag account.
+
+Als u de VHD wilt extra heren uit uw VM, moet u een moment opname maken van de VM-schijf en de VHD extra heren uit de moment opname.
+
+Begin met het maken van een moment opname van de VM-schijf:
+
+1. Meld u aan bij de Azure-portal.
+2. Selecteer een resource maken in de linkerbovenhoek, zoek naar en selecteer moment opname.
+3. Selecteer maken op de Blade moment opname.
+4. Voer een naam in voor de moment opname.
+5. Selecteer een bestaande resource groep of voer een naam in voor een nieuwe.
+6. Voor de bron schijf selecteert u de beheerde schijf voor de moment opname.
+7. Het account type selecteren dat moet worden gebruikt voor het opslaan van de moment opname. Gebruik Standard-HDD tenzij u het hebt opgeslagen op een high-upssd.
+8. Selecteer Maken.
+
+### <a name="extract-the-vhd"></a>De VHD extra heren
+
+Gebruik het volgende script om de moment opname te exporteren naar een VHD in uw opslag account.
+
+```azurecli
+#Provide the subscription Id where the snapshot is created
+$subscriptionId=yourSubscriptionId
+
+#Provide the name of your resource group where the snapshot is created
+$resourceGroupName=myResourceGroupName
+
+#Provide the snapshot name
+$snapshotName=mySnapshot
+
+#Provide Shared Access Signature (SAS) expiry duration in seconds (such as 3600)
+#Know more about SAS here: https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1
+$sasExpiryDuration=3600
+
+#Provide storage account name where you want to copy the underlying VHD file. 
+$storageAccountName=mystorageaccountname
+
+#Name of the storage container where the downloaded VHD will be stored.
+$storageContainerName=mystoragecontainername
+
+#Provide the key of the storage account where you want to copy the VHD 
+$storageAccountKey=mystorageaccountkey
+
+#Give a name to the destination VHD file to which the VHD will be copied.
+$destinationVHDFileName=myvhdfilename.vhd
+
+az account set --subscription $subscriptionId
+
+sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
+
+az storage blob copy start --destination-blob $destinationVHDFileName --destination-container $storageContainerName --account-name $storageAccountName --account-key $storageAccountKey --source-uri $sas
+```
+
+### <a name="script-explanation"></a>Uitleg van het script
+In dit script worden de volgende opdrachten gebruikt om de SAS-URI voor een moment opname te genereren en wordt de onderliggende VHD gekopieerd naar een opslag account met behulp van de SAS-URI. Elke opdracht in de tabel is een koppeling naar specifieke documentatie over de opdracht.
+
+
+|Opdracht  |Opmerkingen  |
+|---------|---------|
+| az disk grant-access    |     Hiermee genereert u een SAS met het kenmerk alleen-lezen die wordt gebruikt om het onderliggende VHD-bestand te kopiëren naar een opslagaccount of om het bestand on-premises te downloaden    |
+|  az storage blob copy start   |    Hiermee wordt een BLOB Asynchroon gekopieerd van het ene opslag account naar het andere. Gebruik AZ Storage BLOB show om de status van de nieuwe BLOB te controleren.     |
+|
 
 ## <a name="generate-the-sas-address"></a>Het SAS-adres genereren
 

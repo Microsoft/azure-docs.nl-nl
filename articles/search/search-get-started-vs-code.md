@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Aan de slag met Visual Studio Code'
+title: 'Snelstartgids: aan de slag met Azure Cognitive Search met Visual Studio code'
 titleSuffix: Azure Cognitive Search
 description: Leer hoe u de Visual Studio Code-extensie voor Azure Cognitive Search installeert en gebruikt.
 author: dereklegenzoff
@@ -7,21 +7,19 @@ manager: luisca
 ms.author: delegenz
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 01/12/2021
-ms.openlocfilehash: 7a613dd6cba55831b02a60f833088b6c34bfc4a7
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.date: 03/10/2021
+ms.openlocfilehash: 3237a32a90e3964644ff84958a065656cdf7f3ab
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122687"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015842"
 ---
-# <a name="get-started-with-visual-studio-code-and-azure-cognitive-search"></a>Aan de slag met Visual Studio Code en Azure Cognitive Search
+# <a name="get-started-with-azure-cognitive-search-using-visual-studio-code"></a>Aan de slag met Azure Cognitive Search met Visual Studio code
 
-In dit artikel wordt uitgelegd hoe u REST API-aanvragen interactief kunt formuleren met behulp van de [Azure Cognitive Search REST API's](/rest/api/searchservice) en een API-client voor het verzenden en ontvangen van aanvragen. Met een API-client en deze instructies kunt u aanvragen verzenden en antwoorden bekijken voordat u code gaat schrijven.
+In dit artikel wordt uitgelegd hoe u REST API aanvragen interactief kunt formuleren met behulp van de [Azure COGNITIVE Search rest api's](/rest/api/searchservice) en [Visual Studio code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurecognitivesearch). Met de [Visual Studio code Extension voor Azure Cognitive Search (preview)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurecognitivesearch) en deze instructies kunt u aanvragen verzenden en antwoorden weer geven voordat u code schrijft.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-
-In het artikel wordt gebruikgemaakt van een Visual Studio Code-extensie (preview) voor Azure Cognitive Search REST API's.
 
 > [!IMPORTANT] 
 > Deze functie is momenteel beschikbaar als openbare preview-versie. Deze previewfunctie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie. 
@@ -35,18 +33,6 @@ De volgende services en hulpprogramma's zijn vereist voor deze quickstart.
 + [Azure Cognitive Search voor Visual Studio Code (preview)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurecognitivesearch)
 
 + [Maak een Azure Cognitive Search-service](search-create-service-portal.md) of [zoek een bestaande service](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) onder uw huidige abonnement. U kunt een gratis service voor deze quickstart gebruiken. 
-
-## <a name="copy-a-key-and-url"></a>Een sleutel en URL kopiëren
-
-REST-aanroepen hebben voor elke aanvraag de service-URL en een toegangssleutel nodig. Een zoekservice wordt gemaakt met beide, dus als u Azure Cognitive Search aan uw abonnement hebt toegevoegd, volgt u deze stappen om de benodigde informatie op te halen:
-
-1. [Meld u aan bij Azure Portal](https://portal.azure.com/) en haal op de pagina **Overzicht** van uw zoekservice de URL op. Een eindpunt ziet er bijvoorbeeld uit als `https://mydemo.search.windows.net`.
-
-1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
-
-![Een HTTP-eindpunt en toegangssleutel ophalen](media/search-get-started-rest/get-url-key.png "Een HTTP-eindpunt en toegangssleutel ophalen")
-
-Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
 ## <a name="install-the-extension"></a>De extensie installeren
 

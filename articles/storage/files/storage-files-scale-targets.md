@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: ffc5f49e357591b41a18ae15c5551c1f447095fb
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: aa24989103cca5bb7031a21ca106b93ada0c3904
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102440306"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149457"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Schaalbaarheids- en prestatiedoelen in Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via de protocollen van het SMB-en NFS-bestands systeem. In dit artikel worden de schaalbaarheids-en prestatie doelen voor Azure Files en Azure File Sync beschreven.
@@ -138,9 +138,9 @@ Terwijl synchronisatie gegevens uploadt naar de Azure-bestands share, is er geen
 
 Initiële synchronisatie wordt doorgaans beperkt door de initiële upload frequentie van 20 bestanden per seconde per synchronisatie groep. Klanten kunnen een schatting maken van de tijd voor het uploaden van alle gegevens naar Azure, met behulp van de volgende formule om tijd in dagen te krijgen:  
 
-   **Tijd (in dagen) voor het uploaden van bestanden naar een synchronisatie groep = (aantal objecten in het Cloud eindpunt)/(20 * 60 * 60 * 24)**
+   **Tijd (in dagen) voor het uploaden van bestanden naar een synchronisatie groep = (aantal objecten in Server eindpunt)/(20 * 60 * 60 * 24)**
 
-Het opsplitsen van uw gegevens naar meerdere server-eind punten en synchronisatie groepen kan deze initiële gegevens sneller uploaden, omdat het uploaden parallel kan worden uitgevoerd voor meerdere synchronisatie groepen met een snelheid van 20 items per seconde. Daarom worden twee synchronisatie groepen uitgevoerd met een gecombineerd aantal van 40 items per seconde. De totale tijd die moet worden voltooid, is de tijd schatting voor de synchronisatie groep met de meeste bestanden die moeten worden gesynchroniseerd
+Het opsplitsen van uw gegevens naar meerdere server-eind punten en synchronisatie groepen kan deze initiële gegevens sneller uploaden, omdat het uploaden parallel kan worden uitgevoerd voor meerdere synchronisatie groepen met een snelheid van 20 items per seconde. Daarom worden twee synchronisatie groepen uitgevoerd met een gecombineerd aantal van 40 items per seconde. De totale tijd die moet worden voltooid, is de tijd schatting voor de synchronisatie groep met de meeste bestanden die moeten worden gesynchroniseerd.
 
 **Door Voer van naam ruimte downloaden** Wanneer een nieuw server eindpunt wordt toegevoegd aan een bestaande synchronisatie groep, downloadt de Azure File Sync-agent geen bestands inhoud van het eind punt in de Cloud. Eerst wordt de volledige naam ruimte gesynchroniseerd en vervolgens wordt de achtergrond terugroepen geactiveerd om de bestanden te downloaden, in hun geheel of, als Cloud lagen zijn ingeschakeld, naar het beleid voor Cloud lagen dat is ingesteld op het server eindpunt.
 

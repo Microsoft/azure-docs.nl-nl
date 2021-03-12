@@ -2,17 +2,18 @@
 title: Tijd synchronisatie voor Windows-Vm's in azure
 description: Tijd synchronisatie voor virtuele Windows-machines.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.collection: windows
 ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 830bdd45be4b0365ac45bc3ea366b99a34882a4c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 85abc77757d31f3b1054a0670ea3f65a4fcb2e52
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010619"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555955"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Tijd synchronisatie voor Windows-Vm's in azure
 

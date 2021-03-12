@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 09/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 844a45c9b596522b949443b6edc311308da7806c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f40e3d555d6e1472b9d2368a114ee27d588f6383
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004609"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149474"
 ---
 # <a name="manage-schedules-in-azure-automation"></a>Schema's in Azure Automation beheren
 
@@ -41,7 +41,7 @@ Met de cmdlets in de volgende tabel worden Automation-schema's gemaakt en beheer
 U kunt een nieuw schema maken voor uw runbooks in de Azure Portal of met Power shell. Als u wilt voor komen dat uw runbooks en de processen worden geautomatiseerd, moet u eerst runbooks met gekoppelde planningen testen met een Automation-account dat is toegewezen voor testen. Een test valideert dat uw geplande runbooks correct blijven werken. Als er een probleem wordt weer geven, kunt u problemen oplossen en alle vereiste wijzigingen Toep assen voordat u de bijgewerkte runbook-versie naar productie migreert.
 
 > [!NOTE]
-> Uw Automation-account haalt niet automatisch nieuwe versies van modules op, tenzij u deze hand matig hebt bijgewerkt door de optie [Azure-modules bijwerken](../automation-update-azure-modules.md) uit **modules**te selecteren. Azure Automation gebruikt de nieuwste modules in uw Automation-account wanneer een nieuwe geplande taak wordt uitgevoerd. 
+> Uw Automation-account haalt niet automatisch nieuwe versies van modules op, tenzij u deze hand matig hebt bijgewerkt door de optie [Azure-modules bijwerken](../automation-update-azure-modules.md) uit **modules** te selecteren. Azure Automation gebruikt de nieuwste modules in uw Automation-account wanneer een nieuwe geplande taak wordt uitgevoerd. 
 
 ### <a name="create-a-new-schedule-in-the-azure-portal"></a>Een nieuw schema maken in de Azure Portal
 
@@ -53,17 +53,17 @@ U kunt een nieuw schema maken voor uw runbooks in de Azure Portal of met Power s
     >Automation-schema's bieden momenteel geen ondersteuning voor het gebruik van speciale tekens in de naam van de planning.
     >
 
-4. Selecteer of het schema één keer of volgens een terugkerende planning wordt uitgevoerd door **één keer** of **herhaaldelijk**te selecteren. Als u **eenmaal**selecteert, geeft u een begin tijd op en selecteert u **maken**. Als u **terugkerend**selecteert, geeft u een begin tijd op. Voor **herhalen elke**, selecteert u hoe vaak het runbook moet worden herhaald. Selecteren per uur, dag, week of maand.
+4. Selecteer of het schema één keer of volgens een terugkerende planning wordt uitgevoerd door **één keer** of **herhaaldelijk** te selecteren. Als u **eenmaal** selecteert, geeft u een begin tijd op en selecteert u **maken**. Als u **terugkerend** selecteert, geeft u een begin tijd op. Voor **herhalen elke**, selecteert u hoe vaak het runbook moet worden herhaald. Selecteren per uur, dag, week of maand.
 
-    * Als u **week**selecteert, worden de dagen van de week weer gegeven waaruit u kunt kiezen. Selecteer zoveel dagen als u wilt. De eerste uitvoering van uw planning gebeurt op de eerste dag die na de begin tijd is geselecteerd. Als u bijvoorbeeld een weekend planning wilt kiezen, selecteert u zaterdag en zondag.
+    * Als u **week** selecteert, worden de dagen van de week weer gegeven waaruit u kunt kiezen. Selecteer zoveel dagen als u wilt. De eerste uitvoering van uw planning gebeurt op de eerste dag die na de begin tijd is geselecteerd. Als u bijvoorbeeld een weekend planning wilt kiezen, selecteert u zaterdag en zondag.
 
     ![Terugkerende weekend planning instellen](../media/schedules/week-end-weekly-recurrence.png)
 
-    * Als u **maand**selecteert, krijgt u verschillende opties. Voor de optie voor **maandelijkse exemplaren** selecteert u **maand dagen** of **week dagen**. Als u **maand dagen**selecteert, wordt er een kalender weer gegeven zodat u zoveel dagen kunt kiezen als u wilt. Als u een datum kiest zoals de 31e die niet voor komt in de huidige maand, wordt het schema niet uitgevoerd. Als u wilt dat het schema op de laatste dag wordt uitgevoerd, selecteert u **Ja** onder **uitvoeren op de laatste dag van de maand**. Als u **week dagen**selecteert, wordt **elke optie herhalen** weer gegeven. Kies **eerste**, **tweede**, **derde**, **vierde**of **laatste**. Kies ten slotte een dag om te herhalen.
+    * Als u **maand** selecteert, krijgt u verschillende opties. Voor de optie voor **maandelijkse exemplaren** selecteert u **maand dagen** of **week dagen**. Als u **maand dagen** selecteert, wordt er een kalender weer gegeven zodat u zoveel dagen kunt kiezen als u wilt. Als u een datum kiest zoals de 31e die niet voor komt in de huidige maand, wordt het schema niet uitgevoerd. Als u wilt dat het schema op de laatste dag wordt uitgevoerd, selecteert u **Ja** onder **uitvoeren op de laatste dag van de maand**. Als u **week dagen** selecteert, wordt **elke optie herhalen** weer gegeven. Kies **eerste**, **tweede**, **derde**, **vierde** of **laatste**. Kies ten slotte een dag om te herhalen.
 
     ![Maandelijks plannen op de eerste, vijftiende en laatste dag van de maand](../media/schedules/monthly-first-fifteenth-last.png)
 
-5. Wanneer u klaar bent, selecteert u **maken**.
+5. Wanneer u klaar bent, selecteert u **Maken**.
 
 ### <a name="create-a-new-schedule-with-powershell"></a>Een nieuw schema maken met Power shell
 
@@ -119,6 +119,47 @@ In het volgende voor beeld ziet u hoe u een terugkerend schema maakt dat wordt u
 ```azurepowershell-interactive
 $StartTime = (Get-Date "18:00:00").AddDays(1)
 New-AzAutomationSchedule -AutomationAccountName "TestAzureAuto" -Name "1st, 15th and Last" -StartTime $StartTime -DaysOfMonth @("One", "Fifteenth", "Last") -ResourceGroupName "TestAzureAuto" -MonthInterval 1
+```
+
+## <a name="create-a-schedule-with-a-resource-manager-template"></a>Een schema maken met een resource manager-sjabloon
+
+In dit voor beeld gebruiken we een Automation Resource Manager-sjabloon (ARM) waarmee een nieuwe taak planning wordt gemaakt. Zie voor algemene informatie over deze sjabloon voor het beheren van Automation-taak schema's [micro soft. Automation automationAccounts/jobSchedules Temp late Reference](/templates/microsoft.automation/automationaccounts/jobschedules#quickstart-templates).
+
+Kopieer dit sjabloon bestand naar een tekst editor:
+
+```json
+{
+  "name": "5d5f3a05-111d-4892-8dcc-9064fa591b96",
+  "type": "Microsoft.Automation/automationAccounts/jobSchedules",
+  "apiVersion": "2015-10-31",
+  "properties": {
+    "schedule": {
+      "name": "scheduleName"
+    },
+    "runbook": {
+      "name": "runbookName"
+    },
+    "runOn": "hybridWorkerGroup",
+    "parameters": {}
+  }
+}
+```
+
+Bewerk de volgende parameter waarden en sla de sjabloon op als een JSON-bestand:
+
+* Naam van het taak schema object: een GUID (Globally Unique Identifier) wordt gebruikt als de naam van het taak plannings object.
+
+   >[!IMPORTANT]
+   > Voor elk taak schema dat met een ARM-sjabloon is geïmplementeerd, moet de GUID uniek zijn. Ook als u een bestaande planning opnieuw wilt plannen, moet u de GUID wijzigen. Dit geldt ook als u eerder een bestaande taak planning hebt verwijderd die met dezelfde sjabloon is gemaakt. Het opnieuw gebruiken van dezelfde GUID resulteert in een mislukte implementatie.</br></br>
+   > Er zijn online services die een nieuwe GUID voor u kunnen genereren, zoals deze [gratis online-GUID-Generator](https://guidgenerator.com/).
+
+* Schema naam: dit is de naam van het Automation-taak schema dat wordt gekoppeld aan het opgegeven runbook.
+* Runbooknaam: vertegenwoordigt de naam van het Automation-runbook waaraan het taak schema moet worden gekoppeld.
+
+Zodra het bestand is opgeslagen, kunt u het taak schema voor het runbook maken met de volgende Power shell-opdracht. De opdracht gebruikt de `TemplateFile` para meter om het pad en de bestands naam van de sjabloon op te geven.
+
+```powershell
+New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "<path>\RunbookJobSchedule.json"
 ```
 
 ## <a name="link-a-schedule-to-a-runbook"></a>Een planning aan een runbook koppelen

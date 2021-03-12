@@ -11,12 +11,12 @@ ms.custom:
 ms.author: timlt
 author: timlt
 ms.date: 11/12/2019
-ms.openlocfilehash: 112039b9227d5ff34e68b6dc6643597f335fbdb5
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: caa61170504c3ee4b7162cc06db4df16d1232395
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832229"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014363"
 ---
 # <a name="tutorial-create-an-in-store-analytics-application-in-azure-iot-central"></a>Zelfstudie: een in-store analytics-toepassing maken in Azure IoT Central
 
@@ -228,8 +228,8 @@ Voor deze zelfstudie gebruikt u de volgende set echte en gesimuleerde apparaten 
 
 Volg de stappen in de volgende twee artikelen om een echte Rigado-gateway en echte RuuviTag-sensoren te verbinden. Als u daarmee klaar bent, keert u terug naar deze zelfstudie. Omdat u al apparaatsjablonen hebt gemaakt in deze zelfstudie, hoeft u deze niet opnieuw te maken in de volgende reeks instructies.
 
-- Als u een Rigado-gateway wilt verbinden, raadpleegt u [Connect a Rigado Cascade 500 gateway device to your Azure IoT Central application](../core/howto-connect-rigado-cascade-500.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json) (Een Rigado Cascade 500-gateway verbinden met uw Azure IoT Central-toepassing).
-- Als u een RuuviTag-sensoren wilt verbinden, raadpleegt u [Connect a RuuviTag sensor to your Azure IoT Central application](../core/howto-connect-ruuvi.md?toc=/azure/iot-central/retail/toc.json&bc=/azure/iot-central/retail/breadcrumb/toc.json) (Een RuuviTag-sensor verbinden met uw Azure IoT Central-toepassing). U kunt deze instructies ook gebruiken om twee gesimuleerde sensoren te maken, indien nodig.
+- Als u een Rigado-gateway wilt verbinden, raadpleegt u [Connect a Rigado Cascade 500 gateway device to your Azure IoT Central application](../core/howto-connect-rigado-cascade-500.md) (Een Rigado Cascade 500-gateway verbinden met uw Azure IoT Central-toepassing).
+- Als u een RuuviTag-sensoren wilt verbinden, raadpleegt u [Connect a RuuviTag sensor to your Azure IoT Central application](../core/howto-connect-ruuvi.md) (Een RuuviTag-sensor verbinden met uw Azure IoT Central-toepassing). U kunt deze instructies ook gebruiken om twee gesimuleerde sensoren te maken, indien nodig.
 
 ## <a name="add-rules-and-actions"></a>Regels en acties toevoegen
 Als onderdeel van het gebruik van sensoren in uw Azure IoT Central-toepassing om omstandigheden te bewaken, kunt u regels maken om acties uit te voeren wanneer aan bepaalde voorwaarden wordt voldaan. Een regel wordt gekoppeld aan een apparaatsjabloon en een of meer apparaten en bevat voorwaarden waaraan moet worden voldaan op basis van telemetrie van apparaten of gebeurtenissen. Een regel heeft ook een of meer gekoppelde acties. Voorbeelden van acties zijn het verzenden van meldingen per e-mail en het activeren van een webhookactie voor het verzenden van gegevens naar andere services. De toepassingssjabloon **In-Store Analytics: betaling** bevat enkele vooraf gedefinieerde regels voor de apparaten in de toepassing.

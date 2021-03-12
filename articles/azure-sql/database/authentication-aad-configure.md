@@ -12,12 +12,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: b8711b3995c322614c547434850d7c031abfadd5
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: f3c34526fd4005dbbb0be7e763721e125ed7828e
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99094940"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201202"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Azure AD-verificatie configureren en beheren met Azure SQL
 
@@ -190,7 +190,7 @@ Voer de volgende Azure PowerShell opdrachten uit om een Azure AD-beheerder in te
 
 De cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor uw SQL Managed instance worden weer gegeven in de volgende tabel:
 
-| Naam van cmdlet | Description |
+| Naam van cmdlet | Beschrijving |
 | --- | --- |
 | [Set-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Richt een Azure AD-beheerder in voor het beheerde exemplaar van SQL in het huidige abonnement. (Moet afkomstig zijn van het huidige abonnement)|
 | [Remove-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Hiermee verwijdert u een Azure AD-beheerder voor het beheerde exemplaar van SQL in het huidige abonnement. |
@@ -279,7 +279,7 @@ Als u Power shell-cmdlets wilt uitvoeren, moet Azure PowerShell zijn geïnstalle
 
 Cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor SQL Database en Azure Synapse:
 
-| Naam van cmdlet | Description |
+| Naam van cmdlet | Beschrijving |
 | --- | --- |
 | [Set-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Richt een Azure Active Directory beheerder in voor de server die als host fungeert voor SQL Database of Azure Synapse. (Moet afkomstig zijn van het huidige abonnement) |
 | [Remove-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Hiermee verwijdert u een Azure Active Directory beheerder voor de server die als host fungeert voor SQL Database of Azure Synapse.|
@@ -345,8 +345,8 @@ Op alle client computers, van waaruit uw toepassingen of gebruikers verbinding m
 - .NET Framework 4,6 of hoger van [https://msdn.microsoft.com/library/5a4x27ek.aspx](/dotnet/framework/install/guide-for-developers) .
 - Azure Active Directory-verificatie bibliotheek voor SQL Server (*ADAL.DLL*). Hieronder vindt u de Download koppelingen voor het installeren van het nieuwste SSMS-, ODBC-en OLE DB-stuur programma dat de *ADAL.DLL* -bibliotheek bevat.
   - [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)
-  - [ODBC-stuur programma 17 voor SQL Server](https://www.microsoft.com/download/details.aspx?id=56567)
-  - [OLE DB stuur programma 18 voor SQL Server](https://www.microsoft.com/download/details.aspx?id=56730)
+  - [ODBC-stuur programma 17 voor SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15)
+  - [OLE DB stuur programma 18 voor SQL Server](/sql/connect/oledb/download-oledb-driver-for-sql-server?view=sql-server-ver15)
 
 U kunt aan de volgende vereisten voldoen:
 
@@ -355,9 +355,9 @@ U kunt aan de volgende vereisten voldoen:
   - SSDT installeert de amd64-versie van *ADAL.DLL*.
   - De nieuwste Visual Studio- [down loads van Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs) voldoen aan de vereiste van .NET Framework 4,6, maar installeert de vereiste amd64-versie van *ADAL.DLL* niet.
 
-## <a name="create-contained-users-mapped-to-azure-ad-identities"></a>Opgenomen gebruikers maken die zijn toegewezen aan Azure AD-identiteiten
+## <a name="create-contained-users-mapped-to-azure-ad-identities"></a>Ingesloten gebruikers maken die zijn toegewezen aan Azure AD-identiteiten
 
-Omdat SQL Managed instance Azure AD server-principals (aanmeldingen) ondersteunt, is het gebruik van Inge sloten database gebruikers niet vereist. Met Azure AD server-principals (aanmeldingen) kunt u aanmeldingen maken van Azure AD-gebruikers,-groepen of-toepassingen. Dit betekent dat u bij uw SQL Managed Instance kunt verifiëren met behulp van de Azure AD-Server aanmelding in plaats van een Inge sloten database gebruiker. Zie [overzicht van SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md#azure-active-directory-integration)voor meer informatie. Zie <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">login maken</a>voor de syntaxis voor het maken van Azure ad-server principals (aanmeldingen).
+Omdat SQL Managed instance Azure AD server-principals (aanmeldingen) ondersteunt, is het gebruik van Inge sloten database gebruikers niet vereist. Met Azure AD-serverprincipals (aanmeldingen) kunt u aanmeldingen maken van Azure AD-gebruikers, -groepen of -toepassingen. Dit betekent dat u bij uw SQL Managed Instance kunt verifiëren met behulp van de Azure AD-Server aanmelding in plaats van een Inge sloten database gebruiker. Zie [overzicht van SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md#azure-active-directory-integration)voor meer informatie. Zie <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">login maken</a>voor de syntaxis voor het maken van Azure ad-server principals (aanmeldingen).
 
 Voor het gebruik van Azure Active Directory-verificatie met SQL Database en Azure Synapse moet Inge sloten database gebruikers echter worden gebruikt op basis van een Azure AD-identiteit. Een Inge sloten database gebruiker heeft geen aanmelding in de hoofd database en wijst toe aan een identiteit in azure AD die is gekoppeld aan de data base. De Azure AD-identiteit kan een individueel gebruikersaccount of een groep zijn. Zie [Contained Database Users- Making Your Database Portable](/sql/relational-databases/security/contained-database-users-making-your-database-portable) (Gebruikers van ingesloten databases: een draagbare database maken) voor meer informatie over gebruikers van ingesloten databases.
 

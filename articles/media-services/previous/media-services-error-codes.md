@@ -1,7 +1,7 @@
 ---
 title: Fout codes Azure Media Services | Microsoft Docs
 description: U kunt HTTP-fout codes van de service ontvangen, afhankelijk van problemen zoals verificatie tokens die verlopen zijn voor acties die niet worden ondersteund in Media Services. Dit artikel bevat een overzicht van Azure Media Services v2 API-fout codes.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
-ms.openlocfilehash: c30808a46b5cecfaf2e761b3f7a611020cd2cdfb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 10ade5c8f34d806ca5706ccaaf4b7ff2e05ba657
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89263668"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103013411"
 ---
 # <a name="azure-media-services-error-codes"></a>Foutcodes van Azure Media Services
 
@@ -54,7 +54,7 @@ De aanvraag kan niet worden geverifieerd (voordat deze kan worden geautoriseerd)
   * Het token is verlopen. 
   * Het token bevat een ongeldige hand tekening.
 
-## <a name="403-forbidden"></a>403 verboden
+## <a name="403-forbidden"></a>403 Verboden
 De aanvraag is niet toegestaan vanwege een van de volgende redenen:
 
 * Het Media Services-account is niet gevonden of is verwijderd.

@@ -1,19 +1,19 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure API voor FHIR
 description: Een overzicht van de ingebouwde Azure Policy-beleidsdefinities voor Azure API voor FHIR. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 author: matjazl
 ms.author: matjazl
 ms.service: healthcare-apis
 ms.subservice: fhir
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: b8481d5e2d4085773c980b1d6950d0130b172ed2
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 0a15e8e7031ca07e799e88626885543c829b77b7
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428679"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612033"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-api-for-fhir"></a>Ingebouwde Azure Policy-definities voor Azure API voor FHIR
 

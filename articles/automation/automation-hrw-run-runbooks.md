@@ -3,14 +3,14 @@ title: Azure Automation runbooks uitvoeren op een Hybrid Runbook Worker
 description: In dit artikel wordt beschreven hoe u runbooks uitvoert op machines in uw lokale Data Center of een andere Cloud provider met de Hybrid Runbook Worker.
 services: automation
 ms.subservice: process-automation
-ms.date: 01/29/2021
+ms.date: 03/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: a6827f8629423b9ed3adc362d3d05fd740e25a65
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 6d1f504458aed440464015a34479d75992fe5c45
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633305"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149372"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Runbooks uitvoeren op een Hybrid Runbook Worker
 
@@ -56,10 +56,10 @@ Hybrid Runbook Workers op virtuele machines van Azure kunnen beheerde identiteit
 Volg de volgende stappen om een beheerde identiteit voor Azure-resources te gebruiken op een Hybrid Runbook Worker:
 
 1. Maak een Azure VM.
-2. Configureer beheerde identiteiten voor Azure-resources op de VM. Zie [beheerde identiteiten voor Azure-resources configureren op een virtuele machine met behulp van de Azure Portal](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
-3. Geef de virtuele machine toegang tot een resource groep in Resource Manager. Raadpleeg [een door Windows-VM-systeem toegewezen beheerde identiteit gebruiken om toegang te krijgen tot Resource Manager](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
-4. Installeer de Hybrid Runbook Worker op de VM. Zie [een Windows-Hybrid Runbook worker implementeren](automation-windows-hrw-install.md) of [een Linux-Hybrid Runbook worker implementeren](automation-linux-hrw-install.md).
-5. Werk het runbook bij om de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) te gebruiken met de `Identity` para meter voor verificatie bij Azure-resources. Deze configuratie vermindert de nood zaak om een uitvoeren als-account te gebruiken en het bijbehorende account beheer uit te voeren.
+1. Configureer beheerde identiteiten voor Azure-resources op de VM. Zie [beheerde identiteiten voor Azure-resources configureren op een virtuele machine met behulp van de Azure Portal](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#enable-system-assigned-managed-identity-on-an-existing-vm).
+1. Geef de virtuele machine toegang tot een resource groep in Resource Manager. Raadpleeg [een door Windows-VM-systeem toegewezen beheerde identiteit gebruiken om toegang te krijgen tot Resource Manager](../active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-arm.md#grant-your-vm-access-to-a-resource-group-in-resource-manager).
+1. Installeer de Hybrid Runbook Worker op de VM. Zie [een Windows-Hybrid Runbook worker implementeren](automation-windows-hrw-install.md) of [een Linux-Hybrid Runbook worker implementeren](automation-linux-hrw-install.md).
+1. Werk het runbook bij om de cmdlet [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) te gebruiken met de `Identity` para meter voor verificatie bij Azure-resources. Deze configuratie vermindert de nood zaak om een uitvoeren als-account te gebruiken en het bijbehorende account beheer uit te voeren.
 
     ```powershell
     # Connect to Azure using the managed identities for Azure resources identity configured on the Azure VM that is hosting the hybrid runbook worker
@@ -76,20 +76,24 @@ Volg de volgende stappen om een beheerde identiteit voor Azure-resources te gebr
 
 In plaats van uw runbook zelf verificatie te bieden voor lokale resources, kunt u een uitvoeren als-account opgeven voor een Hybrid Runbook Worker groep. Als u een uitvoeren als-account wilt opgeven, moet u een [referentie-element](./shared-resources/credentials.md) definiëren dat toegang heeft tot lokale bronnen. Deze resources omvatten certificaat archieven en alle runbooks worden onder deze referenties uitgevoerd op een Hybrid Runbook Worker in de groep.
 
-De gebruikers naam voor de referentie moet een van de volgende indelingen hebben:
+- De gebruikers naam voor de referentie moet een van de volgende indelingen hebben:
 
-* vorm
-* username@domain
-* gebruikers naam (voor accounts lokaal op de on-premises computer)
+   * vorm
+   * username@domain
+   * gebruikers naam (voor accounts lokaal op de on-premises computer)
+
+- Als u de Power shell **-runbook-export-RunAsCertificateToHybridWorker** wilt gebruiken, moet u de AZ-modules voor Azure Automation op de lokale computer installeren.
+
+#### <a name="use-a-credential-asset-to-specify-a-run-as-account"></a>Een referentie-element gebruiken om een uitvoeren als-account op te geven
 
 Gebruik de volgende procedure om een uitvoeren als-account op te geven voor een Hybrid Runbook Worker groep:
 
 1. Maak een [referentie-element](./shared-resources/credentials.md) met toegang tot lokale bronnen.
-2. Open het Automation-account in de Azure Portal.
-3. Selecteer **Hybrid worker groepen** en selecteer vervolgens de specifieke groep.
-4. Selecteer **alle instellingen**, gevolgd door de instellingen van de **Hybrid worker-groep**.
-5. Wijzig de waarde van **uitvoeren als** van **standaard** in **aangepast**.
-6. Selecteer de referentie en klik op **Opslaan**.
+1. Open het Automation-account in de Azure Portal.
+1. Selecteer **Hybrid worker groepen** en selecteer vervolgens de specifieke groep.
+1. Selecteer **alle instellingen**, gevolgd door de instellingen van de **Hybrid worker-groep**.
+1. Wijzig de waarde van **uitvoeren als** van **standaard** in **aangepast**.
+1. Selecteer de referentie en klik op **Opslaan**.
 
 ## <a name="install-run-as-account-certificate"></a><a name="runas-script"></a>Het certificaat van het uitvoeren als-account installeren
 
@@ -178,11 +182,11 @@ Get-AzAutomationAccount | Select-Object AutomationAccountName
 De voor bereiding van het uitvoeren als-account volt ooien:
 
 1. Sla het runbook **export-RunAsCertificateToHybridWorker** op uw computer op met de extensie **. ps1** .
-2. Importeer deze in uw Automation-account.
-3. Bewerk het runbook en wijzig de waarde van de `Password` variabele in uw eigen wacht woord.
-4. Publiceer het runbook.
-5. Voer het runbook uit om te richten op de Hybrid Runbook Worker groep die runbooks uitvoert en verifieert met behulp van het run as-account. 
-6. Controleer de taak stroom om te zien dat de poging om het certificaat te importeren in het archief van de lokale computer, gevolgd door meerdere regels. Dit gedrag is afhankelijk van het aantal Automation-accounts dat u in uw abonnement hebt gedefinieerd en de mate van succes van de verificatie.
+1. Importeer deze in uw Automation-account.
+1. Bewerk het runbook en wijzig de waarde van de `Password` variabele in uw eigen wacht woord.
+1. Publiceer het runbook.
+1. Voer het runbook uit om te richten op de Hybrid Runbook Worker groep die runbooks uitvoert en verifieert met behulp van het run as-account. 
+1. Controleer de taak stroom om te zien dat de poging om het certificaat te importeren in het archief van de lokale computer, gevolgd door meerdere regels. Dit gedrag is afhankelijk van het aantal Automation-accounts dat u in uw abonnement hebt gedefinieerd en de mate van succes van de verificatie.
 
 ## <a name="work-with-signed-runbooks-on-a-windows-hybrid-runbook-worker"></a>Werken met ondertekende runbooks op een Windows-Hybrid Runbook Worker
 
@@ -267,13 +271,13 @@ Als u de GPG sleutel hanger en het sleutel paar wilt maken, gebruikt u het [acco
     sudo su – nxautomation
     ```
 
-2. Wanneer u **nxautomation** gebruikt, genereert u het GPG-sleutel paar. GPG begeleidt u bij de stappen. U moet een naam, e-mail adres, verval tijd en wachtwoordzin opgeven. Vervolgens wacht u tot er voldoende entropie op de computer is om de sleutel te genereren.
+1. Wanneer u **nxautomation** gebruikt, genereert u het GPG-sleutel paar. GPG begeleidt u bij de stappen. U moet een naam, e-mail adres, verval tijd en wachtwoordzin opgeven. Vervolgens wacht u tot er voldoende entropie op de computer is om de sleutel te genereren.
 
     ```bash
     sudo gpg --generate-key
     ```
 
-3. Omdat de GPG-map is gegenereerd met sudo, moet u de eigenaar ervan wijzigen in **nxautomation** met behulp van de volgende opdracht.
+1. Omdat de GPG-map is gegenereerd met sudo, moet u de eigenaar ervan wijzigen in **nxautomation** met behulp van de volgende opdracht.
 
     ```bash
     sudo chown -R nxautomation ~/.gnupg

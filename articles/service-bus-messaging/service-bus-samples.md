@@ -5,12 +5,12 @@ author: spelluru
 ms.topic: article
 ms.date: 10/14/2020
 ms.author: spelluru
-ms.openlocfilehash: f8729d0a947ebf2fd918a478fb3354e6d84fe1e3
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 177c0eff7d0e7df254df4cc6c77c0a0cf674147d
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95803091"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201548"
 ---
 # <a name="service-bus-messaging-samples"></a>Voor beelden van Service Bus-berichten
 In de Service Bus Messa ging-voor beelden worden de belangrijkste functies van [Service Bus Messa ging](https://azure.microsoft.com/services/service-bus/)gedemonstreerd. Op dit moment kunt u de voor beelden vinden op de volgende locaties:
@@ -25,7 +25,7 @@ In de Service Bus Messa ging-voor beelden worden de belangrijkste functies van [
 ## <a name="java-samples"></a>Java-voorbeelden
 | Pakket | Locatie van voor beelden | 
 | ------- | ---------------- | 
-| Azure-Messa ging-servicebus (nieuwste) | https://docs.microsoft.com/samples/azure/azure-sdk-for-java/servicebus-samples/ |
+| azure-messaging-servicebus (nieuwste) | https://docs.microsoft.com/samples/azure/azure-sdk-for-java/servicebus-samples/ |
 | Azure-servicebus (verouderd) | https://github.com/Azure/azure-service-bus/tree/master/samples/Java |
 
 ## <a name="python-samples"></a>Python-voorbeelden
@@ -33,10 +33,15 @@ In de Service Bus Messa ging-voor beelden worden de belangrijkste functies van [
 | -------------------- | ----------------------- |
 | Azure. servicebus | https://docs.microsoft.com/samples/azure/azure-sdk-for-python/servicebus-samples/ |
 
+## <a name="typescript-samples"></a>TypeScript-voorbeelden
+| Pakket | Locatie van voor beelden | 
+| ------- | ---------------- | 
+| @azure/service-bus | https://docs.microsoft.com/samples/azure/azure-sdk-for-js/service-bus-typescript/ | 
+
 ## <a name="javascript-samples"></a>JavaScript-voorbeelden
 | Pakket | Locatie van voor beelden | 
 | ------- | ---------------- | 
-| Azure/service-bus | https://docs.microsoft.com/samples/azure/azure-sdk-for-js/service-bus-javascript/ | 
+| @azure/service-bus | https://docs.microsoft.com/samples/azure/azure-sdk-for-js/service-bus-javascript/ | 
 
 ## <a name="go-samples"></a>Go-voor beelden
 | Pakket | Locatie van voor beelden | 

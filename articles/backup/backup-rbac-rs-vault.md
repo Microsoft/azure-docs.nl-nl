@@ -4,12 +4,12 @@ description: Gebruik Azure op rollen gebaseerd toegangs beheer voor het beheren 
 ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 03/09/2021
-ms.openlocfilehash: 179cb6efcff4bcf50a64a6d58f861622e853b02b
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 0b321a5f33bd75ce8615d6d2a90442a83d9fff67
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/10/2021
-ms.locfileid: "102553405"
+ms.locfileid: "102613439"
 ---
 # <a name="use-azure-role-based-access-control-to-manage-azure-backup-recovery-points"></a>Op rollen gebaseerd toegangs beheer van Azure gebruiken voor het beheren van Azure Backup herstel punten
 
@@ -39,7 +39,7 @@ In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende mini
 | | Inzender voor virtuele machines | VM-resource |  U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
 | Back-up op aanvraag van de virtuele machine | Back-upoperator | Recovery Services-kluis |   |
 | VM herstellen | Back-upoperator | Recovery Services-kluis |   |
-| | Inzender | De resource groep waarin de VM wordt geïmplementeerd |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. resources/abonnementen/resourceGroups/schrijven micro soft. DomainRegistration/domeinen/schrijven, micro soft. Compute/informatie/write micro soft. Network/virtualNetworks/micro soft. Network/virtualNetworks/subnets/samen voegen/actie | 
+| | Inzender | De resource groep waarin de VM wordt geïmplementeerd |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. resources/abonnementen/resourceGroups/schrijven micro soft. DomainRegistration/domeinen/schrijven, micro soft. Compute/informatie/write micro soft. Network/virtualNetworks/micro soft. Network/virtualNetworks/subnets/samen voegen/actie |
 | | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt |   U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
 | Back-up van niet-beheerde schijven herstellen | Back-upoperator | Recovery Services-kluis |
 | | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
@@ -50,6 +50,7 @@ In de volgende tabel worden de acties voor back-upbeheer en de bijbehorende mini
 | | Inzender | De resource groep waarvoor beheerde schijven worden hersteld | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen met de volgende machtigingen: micro soft. resources/abonnementen/resourceGroups/schrijven|
 | Afzonderlijke bestanden herstellen vanuit een back-up van de VM | Back-upoperator | Recovery Services-kluis |
 | | Inzender voor virtuele machines | Bron-VM waarvan een back-up is gemaakt | U kunt ook in plaats van een ingebouwde rol een aangepaste rol overwegen die de volgende machtigingen heeft: micro soft. Compute/informatie/write |
+| Meerdere regio's herstellen | Back-upoperator | Abonnement van de Recovery Services-kluis | Dit is een aanvulling op de hierboven genoemde herstel machtigingen. Met name voor CRR, in plaats van een ingebouwde rol, kunt u een aangepaste rol overwegen met de volgende machtigingen: "micro soft. Recovery Services/locations/backupAadProperties/read" "micro soft. Recovery Services/location/backupCrrJobs/Action" "micro soft. Recovery Services/locations/backupCrrJob/Action" "micro soft. Recovery Services/locations/backupCrossRegionRestore/Action" "micro soft. Recovery Services/locations/backupCrrOperationResults/read" "micro soft. Recovery Services/locations/backupCrrOperationsStatus/read" |
 | Back-upbeleid voor Azure VM-back-up maken | Back-upinzender | Recovery Services-kluis |
 | Back-upbeleid van Azure VM-back-up wijzigen | Back-upinzender | Recovery Services-kluis |
 | Back-upbeleid van Azure VM-back-up verwijderen | Back-upinzender | Recovery Services-kluis |

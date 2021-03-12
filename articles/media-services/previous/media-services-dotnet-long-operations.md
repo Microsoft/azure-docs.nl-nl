@@ -3,7 +3,7 @@ title: Long-Running bewerkingen pollen | Microsoft Docs
 description: Azure Media Services biedt Api's die aanvragen verzenden naar Media Services om bewerkingen te starten (bijvoorbeeld het maken, starten, stoppen of verwijderen van een kanaal), deze bewerkingen worden uitgevoerd. In dit onderwerp wordt uitgelegd hoe u langlopende bewerkingen kunt controleren.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 writer: juliako
 manager: femila
 editor: ''
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 44cecbd8d2cdc95e342d7aaf2b33f6cc0192e182
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7926f7aaa427d49d13cab5e13f5153bcd22e5898
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89262023"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103013819"
 ---
 # <a name="delivering-live-streaming-with-azure-media-services"></a>Live streamen leveren met Azure Media Services
 
@@ -33,9 +33,9 @@ Microsoft Azure Media Services biedt Api's die aanvragen verzenden naar Media Se
 De Media Services .NET SDK biedt Api's die de aanvraag verzenden en wachten op het volt ooien van de bewerking (intern worden de Api's gecontroleerd op de voortgang van de bewerking). Wanneer u bijvoorbeeld een kanaal aanroept. Start (), de methode wordt geretourneerd nadat het kanaal is gestart. U kunt ook de asynchrone versie gebruiken: await Channel. StartAsync () (Zie [tikken](./media-services-mes-schema.md)) (voor informatie over asynchroon patroon op basis van een taak). Api's die een bewerkings aanvraag verzenden en vervolgens naar de status pollen totdat de bewerking is voltooid, worden ' polling methoden ' genoemd. Deze methoden (met name de async-versie) worden aanbevolen voor uitgebreide client toepassingen en/of stateful Services.
 
 Er zijn scenario's waarin een toepassing niet kan wachten op een langlopende HTTP-aanvraag en wil hand matig pollen voor de voortgang van de bewerking. Een typisch voor beeld is een browser interactie met een stateless webservice: wanneer de browser een kanaal wil maken, wordt een langlopende bewerking door de webservice gestart en wordt de bewerkings-ID naar de browser geretourneerd. De browser kan vervolgens de webservice vragen de bewerkings status op te halen op basis van de ID. De Media Services .NET SDK biedt Api's die nuttig zijn voor dit scenario. Deze Api's worden "niet-polling methoden" genoemd.
-De "niet-polling methoden" hebben het volgende naamgevings patroon: de bewerking voor het verzenden van de*bewerking*(bijvoorbeeld SendCreateOperation). De bewerkings methoden van de verzend*bewerking*retour neren het **IOperation** -object; het geretourneerde object bevat informatie die kan worden gebruikt om de bewerking bij te houden. De OperationAsync-methoden van de verzend*bewerking*retour neren een **taak \<IOperation> **.
+De "niet-polling methoden" hebben het volgende naamgevings patroon: de bewerking voor het verzenden van de *bewerking*(bijvoorbeeld SendCreateOperation). De bewerkings methoden van de verzend *bewerking* retour neren het **IOperation** -object; het geretourneerde object bevat informatie die kan worden gebruikt om de bewerking bij te houden. De OperationAsync-methoden van de verzend *bewerking* retour neren een **taak \<IOperation>**.
 
-Momenteel ondersteunen de volgende klassen niet-polling methoden:  **Channel**, **StreamingEndpoint**en **Program**.
+Momenteel ondersteunen de volgende klassen niet-polling methoden:  **Channel**, **StreamingEndpoint** en **Program**.
 
 Als u wilt pollen voor de bewerkings status, gebruikt u de methode **GetOperation** voor de klasse **OperationBaseCollection** . Gebruik de volgende intervallen om de bewerkings status te controleren: voor **Channel** -en **StreamingEndpoint** -bewerkingen gebruikt u 30 seconden; gebruik 10 seconden voor **programma** bewerkingen.
 

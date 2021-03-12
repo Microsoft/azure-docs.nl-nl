@@ -12,23 +12,27 @@ ms.reviewer: nibaccam
 ms.date: 03/04/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d142c523862d61bf56723726be50cd6f095c5ee9
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 977498abb17fe592cef344f407a662d3b79749b7
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102520333"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634763"
 ---
-# <a name="start-monitor-and-cancel-training-runs-in-python"></a>Trainings uitvoeringen in python starten, controleren en annuleren
+# <a name="start-monitor-and-track-runs"></a>Uitvoeringen, bewaken en bijhouden 
 
 De [Azure machine learning SDK voor python](/python/api/overview/azure/ml/intro), [Machine Learning cli](reference-azure-machine-learning-cli.md)en [Azure machine learning Studio](https://ml.azure.com) bieden verschillende methoden om uw uitvoeringen te controleren, te organiseren en te beheren voor training en experimenten.
 
 In dit artikel vindt u voor beelden van de volgende taken:
 
 * Prestaties van uitvoering bewaken.
+* De melding voor de uitvoerings status per e-mail bewaken.
+* Uitvoeringen en zoeken.
+* Voeg een beschrijving voor de uitvoering toe. 
+* Zoek opdracht uitvoeren. 
 * Annuleren of niet uitvoeren.
 * Onderliggende uitvoeringen maken.
-* Uitvoeringen en zoeken.
+ 
 
 > [!TIP]
 > Zie [Azure machine learning bewaken](monitor-azure-machine-learning.md)als u informatie zoekt over het bewaken van de Azure machine learning-service en de bijbehorende Azure-Services.
@@ -50,7 +54,8 @@ U hebt de volgende items nodig:
     print(azureml.core.VERSION)
     ```
 
-* De [Azure cli](/cli/azure/) -en [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
+* De [Azure cli](/cli/azure/?preserve-view=true&view=azure-cli-latest) -en [cli-extensie voor Azure machine learning](reference-azure-machine-learning-cli.md).
+
 
 ## <a name="monitor-run-performance"></a>Prestaties van de uitvoering bewaken
 
@@ -96,7 +101,7 @@ U hebt de volgende items nodig:
     
         Met deze opdracht maakt u een `.azureml` submap die voor beelden van runconfig-en Conda-omgevings bestanden bevat. Het bevat ook een `config.json` bestand dat wordt gebruikt om te communiceren met uw Azure machine learning-werk ruimte.
     
-        Zie voor meer informatie [AZ ml map attach](/cli/azure/ext/azure-cli-ml/ml/folder#ext-azure-cli-ml-az-ml-folder-attach).
+        Zie voor meer informatie [AZ ml map attach](/cli/azure/ext/azure-cli-ml/ml/folder?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
     
     2. Gebruik de volgende opdracht om de uitvoering te starten. Wanneer u deze opdracht gebruikt, geeft u de naam op van het runconfig-bestand (de tekst voor \* . runconfig als u uw bestands systeem bekijkt) op basis van de para meter-c.
     
@@ -111,7 +116,7 @@ U hebt de volgende items nodig:
         >
         > Zie voor meer voor beelden van runconfig-bestanden [https://github.com/MicrosoftDocs/pipelines-azureml/](https://github.com/MicrosoftDocs/pipelines-azureml/) .
     
-        Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
+        Zie [AZ ml run-script uitvoeren](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script)voor meer informatie.
 
     # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -162,7 +167,7 @@ U hebt de volgende items nodig:
     
         Met deze opdracht wordt een JSON-document geretourneerd dat informatie bevat over de uitvoeringen van dit experiment.
     
-        Zie voor meer informatie [AZ ml experimenten List](/cli/azure/ext/azure-cli-ml/ml/experiment#ext-azure-cli-ml-az-ml-experiment-list).
+        Zie voor meer informatie [AZ ml experimenten List](/cli/azure/ext/azure-cli-ml/ml/experiment?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
     
     * Als u informatie wilt weer geven over een specifieke uitvoering, gebruikt u de volgende opdracht. Vervang door `runid` de id van de run:
     
@@ -172,7 +177,7 @@ U hebt de volgende items nodig:
     
         Met deze opdracht wordt een JSON-document geretourneerd dat informatie bevat over de uitvoering.
     
-        Zie voor meer informatie [AZ ml run show](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-show).
+        Zie voor meer informatie [AZ ml run show](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-show).
     
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
@@ -192,6 +197,29 @@ U hebt de volgende items nodig:
     1. Als u de uitvoerings logboeken wilt weer geven, selecteert u een specifieke uitvoering en op het tabblad **uitvoer en logboeken** kunt u diagnostische en fout logboeken vinden voor de uitvoering.
     
     ---
+
+## <a name="monitor-the-run-status-by-email-notification"></a>Meldingen over de uitvoerings status per e-mail bewaken
+
+1. Selecteer in de [Azure Portal](https://ms.portal.azure.com/)in de linker navigatie balk het tabblad **monitor** . 
+
+1. Selecteer **Diagnostische instellingen** en selecteer **+ Diagnostische instelling toevoegen**.
+
+    ![Scherm opname van diagnostische instellingen voor e-mail meldingen](./media/how-to-manage-runs/diagnostic-setting.png)
+
+1. In de diagnostische instelling, 
+    1. Selecteer de **AmlRunStatusChangedEvent** onder de **categorie Details**. 
+    1. Selecteer in de **doel gegevens** de **werk ruimte verzenden naar log Analytics**  en geef het **abonnement** en de **log Analytics-werk ruimte** op. 
+
+    > [!NOTE]
+    > De **azure log Analytics-werk ruimte** is een ander type Azure-resource dan de **Azure machine learning service-werk ruimte**. Als er geen opties in die lijst staan, kunt u [een log Analytics-werk ruimte maken](https://docs.microsoft.com/azure/azure-monitor/logs/quick-create-workspace). 
+    
+    ![Locatie voor het opslaan van e-mail meldingen](./media/how-to-manage-runs/log-location.png)
+
+1. Voeg op het tabblad **Logboeken** een **nieuwe waarschuwings regel** toe. 
+
+    ![Nieuwe waarschuwingsregel](./media/how-to-manage-runs/new-alert-rule.png)
+
+1. Zie [logboek waarschuwingen maken en beheren met behulp van Azure monitor](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-log).
 
 ## <a name="run-description"></a>Beschrijving van de uitvoering 
 
@@ -253,7 +281,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoerin
     az ml run update -r runid --add-tag quality='fantastic run'
     ```
     
-    Zie [AZ ml run update](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-update)(Engelstalig) voor meer informatie.
+    Zie [AZ ml run update](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-update)(Engelstalig) voor meer informatie.
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
     
@@ -287,17 +315,17 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoerin
     az ml run list --experiment-name experiment [?properties.author=='azureml-user' && tags.quality=='fantastic run']
     ```
     
-    Zie voor meer informatie over het uitvoeren van query's in azure CLI-resultaten query uitvoeren op [uitvoer van Azure cli-opdracht](/cli/azure/query-azure-cli).
+    Zie voor meer informatie over het uitvoeren van query's in azure CLI-resultaten query uitvoeren op [uitvoer van Azure cli-opdracht](/cli/azure/query-azure-cli?preserve-view=true&view=azure-cli-latest).
     
     # <a name="studio"></a>[Studio](#tab/azure-studio)
     
-    1. Ga naar de lijst  **alle uitvoeringen** .
+    Als u wilt zoeken naar specifieke uitvoeringen, gaat u naar de lijst  **alle uitvoeringen** . Er zijn twee opties:
     
-    1. Gebruik de zoek balk om de meta gegevens van de uitvoering te filteren, zoals de tags, beschrijvingen, namen van experimenten en naam indiener. Het filter tags kan ook worden gebruikt om op de tags te filteren. 
+    1. Gebruik de knop **filter toevoegen** en selecteer filteren op labels om uw uitvoeringen te filteren op label dat aan de run (s) is toegewezen. <br><br>
+    OF
     
-    ---
-
-
+    1. Gebruik de zoek balk om snel uitvoeringen te vinden door te zoeken naar de meta gegevens van de uitvoering, zoals de uitvoerings status, beschrijvingen, namen van experimenten en naam indiener. 
+    
 ## <a name="cancel-or-fail-runs"></a>Annuleren of mislukken wordt uitgevoerd
 
 Als u een fout melding krijgt of als de uitvoering te lang duurt om te volt ooien, kunt u de uitvoering annuleren.
@@ -331,7 +359,7 @@ Als u een uitvoering wilt annuleren met de CLI, gebruikt u de volgende opdracht.
 az ml run cancel -r runid -w workspace_name -e experiment_name
 ```
 
-Zie voor meer informatie [AZ ml run Cancel](/cli/azure/ext/azure-cli-ml/ml/run#ext-azure-cli-ml-az-ml-run-cancel).
+Zie voor meer informatie [AZ ml run Cancel](/cli/azure/ext/azure-cli-ml/ml/run?preserve-view=true&view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-cancel).
 
 # <a name="studio"></a>[Studio](#tab/azure-studio)
 
@@ -375,7 +403,7 @@ Als u veel onderliggende items efficiënt wilt maken, gebruikt u de- [`create_ch
 
 ### <a name="submit-child-runs"></a>Onderliggende uitvoeringen verzenden
 
-Onderliggende uitvoeringen kunnen ook worden verzonden vanuit een bovenliggende run. Hierdoor kunt u hiërarchieën van bovenliggende en onderliggende uitvoeringen maken. U kunt geen bovenliggend element zonder onderliggende items maken: zelfs als de bovenliggende run niets doet maar geen onderliggende uitvoeringen start, is het nog steeds nodig om de hiërarchie te maken. De status van alle uitvoeringen is onafhankelijk: een bovenliggend item kan de `"Completed"` status geslaagd hebben, zelfs als een of meer onderliggende uitvoeringen zijn geannuleerd of mislukt.  
+Onderliggende uitvoeringen kunnen ook worden verzonden vanuit een bovenliggende run. Hierdoor kunt u hiërarchieën van bovenliggende en onderliggende uitvoeringen maken. U kunt geen bovenliggend element zonder onderliggende items maken: zelfs als de bovenliggende run niets doet maar geen onderliggende uitvoeringen start, is het nog steeds nodig om de hiërarchie te maken. De statussen van alle uitvoeringen zijn onafhankelijk: een bovenliggend item kan de `"Completed"` status geslaagd hebben, zelfs als een of meer onderliggende uitvoeringen zijn geannuleerd of mislukt.  
 
 Mogelijk wilt u dat uw kind een andere uitvoerings configuratie gebruikt dan de bovenliggende run. U kunt bijvoorbeeld een minder krachtige, op CPU gebaseerde configuratie voor het bovenliggende knoop punt gebruiken, terwijl u op GPU gebaseerde configuraties voor uw kinderen gebruikt. Een andere gang bare wens is om elke onderliggende andere argumenten en gegevens door te geven. Als u een onderliggende uitvoering wilt aanpassen, maakt u een- `ScriptRunConfig` object voor de onderliggende run. De onderstaande code doet het volgende:
 

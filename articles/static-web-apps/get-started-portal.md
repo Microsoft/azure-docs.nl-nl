@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 09/03/2020
 ms.author: cshoe
-ms.openlocfilehash: c54a56843be5121e16449d95fb18c24901a95a8d
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: b19c37a45131e3689fdc9726d186f220ab5ba9fe
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650559"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149525"
 ---
 # <a name="quickstart-building-your-first-static-site-in-the-azure-portal"></a>Quickstart: Uw eerste statische site bouwen in de Azure-portal
 
@@ -115,9 +115,9 @@ Als u deze toepassing verder niet gaat gebruiken, kunt u het Azure Static Web Ap
 
 1. Open de [Azure-portal](https://portal.azure.com)
 1. Ga in de bovenste zoekbalk naar **mijn-eerste-statische-web-app**
-1. Selecteer de naam van de app
-1. Selecteer de knop **Verwijderen**
-1. Selecteer **Ja** om de verwijdering te bevestigen
+1. De naam van de app selecteren
+1. Selecteer de knop **verwijderen**
+1. Selecteer **Ja** om de actie verwijderen te bevestigen (deze actie kan even duren)
 
 ## <a name="next-steps"></a>Volgende stappen
 

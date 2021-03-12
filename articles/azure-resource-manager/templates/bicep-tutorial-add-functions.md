@@ -2,16 +2,16 @@
 title: Zelf studie-functies toevoegen aan Azure Resource Manager Bicep-bestanden
 description: Voeg functies toe aan uw Bicep-bestanden om waarden te maken.
 author: mumian
-ms.date: 03/02/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: references_regions
-ms.openlocfilehash: 9c66ab132d3343115b1a9bd852d3eb3d83ae4ca7
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b909beb0cce9ad04ba00068ee25247520dcff47d
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748105"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633152"
 ---
 # <a name="tutorial-add-functions-to-azure-resource-manager-bicep-file"></a>Zelf studie: functies toevoegen aan Azure Resource Manager Bicep-bestand
 
@@ -37,7 +37,7 @@ De locatie van het opslagaccount is in code vastgelegd als **US - oost**. Het is
 
 Met functies kunt u flexibiliteit toevoegen aan uw Bicep-bestand door waarden dynamisch op te halen tijdens de implementatie. In deze zelfstudie gebruikt u een functie om de locatie op te halen van de resourcegroep die u voor de implementatie gebruikt.
 
-In het volgende voorbeeld ziet u de benodigde wijzigingen voor het toevoegen van een parameter met de naam `location`. De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
+In het volgende voor beeld ziet u de wijzigingen voor het toevoegen van een para meter met de naam `location` . De standaardwaarde van de parameter roept de functie [resourceGroup](template-functions-resource.md#resourcegroup) aan. Deze functie retourneert een-object met informatie over de resourcegroep die wordt gebruikt voor de implementatie. Een van de eigenschappen van het object is een location-eigenschap. Wanneer u de standaardwaarde gebruikt, is de locatie van het opslagaccount hetzelfde als die van de resourcegroep. De resources in een resourcegroep hoeven niet dezelfde locatie te delen. U kunt zo nodig ook een andere locatie opgeven.
 
 Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 

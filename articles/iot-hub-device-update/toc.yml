@@ -56,8 +56,6 @@
       href: create-update-group.md
     - name: Een update voor een apparaat implementeren
       href: deploy-update.md
-    - name: Een update voor een apparaat implementeren
-      href: deploy-update.md
     - name: Micro soft Connected cache op één niveau
       href: connected-cache-single-level.md
     - name: Door micro soft verbonden cache op genest niveau
@@ -75,7 +73,7 @@
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
-      href: ../iot-fundamentals/iot-support-help.md
+      href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-hub-device-update/toc.json&bc=/azure/iot-hub-device-update/breadcrumb/toc.json
     - name: Azure IoT-services
       items:
         - name: IoT Hub

@@ -3,7 +3,7 @@ title: Filters maken met Azure Media Services .NET SDK
 description: In dit onderwerp wordt beschreven hoe u filters maakt, zodat uw client deze kan gebruiken om specifieke secties van een stroom te streamen. Media Services .NET SDK maakt dynamische manifesten om deze selectief streaming te verzorgen.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 2f6894ca-fb43-43c0-9151-ddbb2833cafd
@@ -12,16 +12,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.reviewer: cenkdin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 862385d1117e0a1b5d2220c06885e0fd0ecfa4d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd5435f7a2969c486042c9447a0fffbb745229f9
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531624"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014108"
 ---
 # <a name="creating-filters-with-media-services-net-sdk"></a>Filters maken met Media Services .NET SDK
 
@@ -33,7 +33,7 @@ ms.locfileid: "90531624"
 > 
 > 
 
-Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten kunnen kiezen voor het uitvoeren van dingen als: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die aan de Asset zijn gekoppeld). Dit filter van uw assets wordt bereikt via de **dynamische manifesten**die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
+Met ingang van 2,17 versie Media Services kunt u filters voor uw assets definiëren. Deze filters zijn regels aan de server zijde waarmee uw klanten kunnen kiezen voor het uitvoeren van dingen als: alleen een sectie van een video afspelen (in plaats van de volledige video afspelen), of alleen een subset van audio-en video weergaven opgeven die het apparaat van de klant kan verwerken (in plaats van alle vertoningen die aan de Asset zijn gekoppeld). Dit filter van uw assets wordt bereikt via de **dynamische manifesten** die worden gemaakt op de aanvraag van uw klant om een video te streamen op basis van opgegeven filter (s).
 
 Zie [overzicht van dynamische manifesten](media-services-dynamic-manifest-overview.md)voor meer informatie over filters en dynamische manifesten.
 

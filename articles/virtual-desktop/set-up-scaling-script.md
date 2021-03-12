@@ -3,15 +3,15 @@ title: Sessie met host schalen Azure Automation-Azure
 description: Windows Virtual Desktop Session hosts automatisch schalen met Azure Automation.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 03/30/2020
+ms.date: 03/09/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 12a15ab1a4c7369c448e9f65862121b03ca05bba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f60341ea51f1cf4e856b1b4598887da3dc37ebb2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078551"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102613116"
 ---
 # <a name="scale-session-hosts-using-azure-automation"></a>Sessie-hosts schalen met behulp van Azure Automation
 
@@ -52,6 +52,9 @@ Het hulp programma heeft echter ook de volgende beperkingen:
 - Deze oplossing geldt alleen voor gegroepeerde Vm's met meerdere sessies.
 - Deze oplossing beheert Vm's in een wille keurige regio, maar kan alleen worden gebruikt in hetzelfde abonnement als uw Azure Automation-account en Azure Logic-app.
 - De maximale runtime van een taak in het runbook is 3 uur. Als het starten of stoppen van de virtuele machines in de hostgroep langer duurt dan dat, mislukt de taak. Zie [gedeelde bronnen](../automation/automation-runbook-execution.md#fair-share)voor meer informatie.
+- Ten minste één virtuele machine of sessie-host moet worden ingeschakeld om het schaal algoritme goed te laten werken.
+- Het hulp programma voor schalen biedt geen ondersteuning voor schalen op basis van CPU of geheugen.
+- Schalen werkt alleen met bestaande hosts in de hostgroep. Het hulp programma voor schalen biedt geen ondersteuning voor het schalen van nieuwe sessie-hosts.
 
 >[!NOTE]
 >Het hulp programma voor schalen bepaalt de taakverdelings modus van de hostgroep die momenteel wordt geschaald. Het hulp programma maakt gebruik van de modus breedte-eerste taak verdeling voor zowel de piek als de piek uren.
@@ -136,7 +139,7 @@ Elke gebruiker die lid is van de rol abonnements beheerders en mede beheerder va
 
 Een uitvoeren als-account maken in uw Azure Automation-account:
 
-1. Selecteer in de Azure-portal de optie **Alle services**. In de lijst met resources voert u **Automation-accounts**in en selecteert u deze.
+1. Selecteer in de Azure-portal de optie **Alle services**. In de lijst met resources voert u **Automation-accounts** in en selecteert u deze.
 
 2. Selecteer op de pagina **Automation-accounts** de naam van uw Azure Automation-account.
 
@@ -264,7 +267,7 @@ Navigeer naar het runbook in de resource groep die als host fungeert voor het Az
 
 ### <a name="check-the-runbook-script-version-number"></a>Het versie nummer van het runbook-script controleren
 
-U kunt controleren welke versie van het runbook-script u gebruikt door het runbook-bestand te openen in uw Azure Automation-account en **weer gave**te selecteren. Er wordt een script voor het runbook weer gegeven aan de rechter kant van het scherm. In het script ziet u het versie nummer in de indeling `v#.#.#` onder de `SYNOPSIS` sectie. U kunt [hier](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/wvd-scaling-script/ARM_based/basicScale.ps1#L1)het meest recente versie nummer vinden. Als u geen versie nummer in uw runbook-script ziet, betekent dit dat u een eerdere versie van het script gebruikt en dit meteen moet bijwerken. Als u uw runbook-script moet bijwerken, volgt u de instructies in [een Azure Automation-account maken of bijwerken](#create-or-update-an-azure-automation-account).
+U kunt controleren welke versie van het runbook-script u gebruikt door het runbook-bestand te openen in uw Azure Automation-account en **weer gave** te selecteren. Er wordt een script voor het runbook weer gegeven aan de rechter kant van het scherm. In het script ziet u het versie nummer in de indeling `v#.#.#` onder de `SYNOPSIS` sectie. U kunt [hier](https://github.com/Azure/RDS-Templates/blob/master/wvd-templates/wvd-scaling-script/ARM_based/basicScale.ps1#L1)het meest recente versie nummer vinden. Als u geen versie nummer in uw runbook-script ziet, betekent dit dat u een eerdere versie van het script gebruikt en dit meteen moet bijwerken. Als u uw runbook-script moet bijwerken, volgt u de instructies in [een Azure Automation-account maken of bijwerken](#create-or-update-an-azure-automation-account).
 
 ### <a name="reporting-issues"></a>Rapportage problemen
 
@@ -282,7 +285,7 @@ Wanneer u een probleem meldt, moet u de volgende informatie opgeven om problemen
     - OMSIngestionAPI
     - Az.DesktopVirtualization
 
-- De verval datum voor het [Run as-account](#create-an-azure-automation-run-as-account). Als u dit wilt vinden, opent u uw Azure Automation-account en selecteert u **uitvoeren als-accounts** onder **account instellingen** in het deel venster aan de linkerkant van het venster. De verval datum moet onder het **Azure uitvoeren als-account**vallen.
+- De verval datum voor het [Run as-account](#create-an-azure-automation-run-as-account). Als u dit wilt vinden, opent u uw Azure Automation-account en selecteert u **uitvoeren als-accounts** onder **account instellingen** in het deel venster aan de linkerkant van het venster. De verval datum moet onder het **Azure uitvoeren als-account** vallen.
 
 ### <a name="log-analytics"></a>Log Analytics
 

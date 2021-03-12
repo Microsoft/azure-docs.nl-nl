@@ -7,13 +7,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
-ms.date: 10/27/2020
-ms.openlocfilehash: 8b63dfb015c7337e36dac3812e92ddc53914206d
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.date: 03/10/2021
+ms.openlocfilehash: f8ddcbef6d2ce4a9cba625374db9908335954424
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247162"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630891"
 ---
 # <a name="how-to-review-and-publish-an-offer-to-the-commercial-marketplace"></a>Een aanbieding bekijken en publiceren naar de commerciële Marketplace
 
@@ -74,6 +74,13 @@ De eerste stap in het publicatie proces is een set automatische validaties. Elke
 - **Validatie en registratie van lead beheer** (<15 min)
 
     We bevestigen dat uw systeem voor het beheer van potentiële klanten leads kan ontvangen op basis van de details die u hebt ingevoerd op de pagina **aanbieding instellen** . Deze stap is alleen van toepassing op aanbiedingen waarvoor Lead beheer is ingeschakeld.
+
+- **Aanbiedings validatie** (<30 minuten)
+
+    Alleen voor SaaS-aanbiedingen voeren we snelle validaties uit voor inhoud en technische configuraties. Het maken van een voor beeld wordt niet geblokkeerd voor validatie problemen die in deze stap zijn gedetecteerd. Als er problemen zijn die de certificering kunnen hebben, wordt een koppeling naar het rapport met een **weergave validatie** weer gegeven op de **overzichts** pagina van de aanbieding. Het rapport bevat beschrijvingen van beleids schendingen.
+
+    > [!IMPORTANT]
+    > Zorg ervoor dat u alle waarschuwingen in de stap voor de aanbiedings validatie bekijkt en adresseer voordat u de knop **Go Live** selecteert. Anders is het risico dat er een storing optreedt in de certificering waardoor uw aanbieding wordt vertraagd.
 
 ## <a name="certification-phase"></a>Certificerings fase
 
@@ -143,16 +150,19 @@ Als u de aanbieding op een later tijdstip wilt publiceren, moet u eerst het publ
 
 Wanneer de aanbieding klaar is om te worden gecontroleerd en u bent afgemeld, sturen we u een e-mail om u te vragen uw aanbiedings voorbeeld te controleren en goed te keuren. U kunt ook de pagina **overzicht van aanbieding** in uw browser vernieuwen om te zien of uw aanbieding de afmeldings fase van de uitgever heeft bereikt. Als dat het geval is, is de knop **Live** en voor beeld-koppelingen beschikbaar.
 
-De volgende scherm afbeelding toont de pagina **overzicht van aanbieding** voor een SaaS-aanbieding. De validatie stappen die u op deze pagina ziet, variëren afhankelijk van het type aanbieding en de selecties die u hebt gemaakt tijdens het maken van de aanbieding.
+Op de volgende scherm afbeelding ziet u de **overzichts** pagina van de aanbieding in het Commercial Marketplace-programma in Partner Center. De validatie stappen die u op deze pagina ziet, variëren afhankelijk van het type aanbieding en de selecties die u hebt gemaakt tijdens het maken van de aanbieding. Houd er rekening mee dat de certificerings fase kan plaatsvinden tijdens het indienen van een voor beeld of verzen ding naar Live, afhankelijk van het type aanbieding.
 
 ![Illustreert de pagina overzicht van aanbieding voor een aanbieding in partner centrum. De knop Go Live en de preview-koppelingen worden weer gegeven.](./media/publish-status-publisher-signoff.png)
 
 ### <a name="previewing-and-approving-your-offer"></a>Uw aanbieding bekijken en goed keuren
 
 > [!IMPORTANT]
-> Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u uw aanbieding terwijl deze in preview is. Informeer micro soft eerst met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt. Als uw aanbieding een contact persoon voor u is, test u of een lead is gemaakt zoals verwacht door de contact gegevens voor deze persoon op te geven tijdens de preview-versie.
+> Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u uw aanbieding terwijl deze in preview is. Informeer micro soft eerst met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt. Als uw aanbieding een _contact persoon_ voor u is, test u of een lead is gemaakt zoals verwacht door de contact gegevens voor deze persoon op te geven tijdens de preview-versie.
 
 Op de **overzichts** pagina van de aanbieding ziet u een voor beeld van koppelingen onder de knop **Go Live** . Er is een koppeling naar de preview-versie van AppSource, de preview van Azure Marketplace, of beide, afhankelijk van de opties die u hebt gekozen bij het maken van uw aanbieding. Als u ervoor kiest om uw aanbieding via micro soft te verkopen, kan iedereen die is toegevoegd aan de preview-doel groep de aanschaf en implementatie van uw aanbieding testen om ervoor te zorgen dat deze aan uw vereisten voldoet tijdens deze fase.
+
+> [!IMPORTANT]
+> Zorg ervoor dat u alle waarschuwingen in de stap voor de _aanbiedings validatie_ bekijkt en adresseer voordat u de knop **Go Live** selecteert. Anders is het risico dat er een storing optreedt in de certificering waardoor uw aanbieding wordt vertraagd.
 
 Nadat u uw Preview hebt goedgekeurd, selecteert u **Live** om uw aanbieding Live naar de commerciële Marketplace te publiceren. 
 
@@ -225,7 +235,7 @@ U kunt filters gebruiken om de volledige geschiedenis van uw aanbieding te verfi
 Er zijn vier filters:
 * Gebeurtenissen
 * Gebruikers
-* Date
+* Datum
 * Pagina's
 
 Wanneer u het filter **Pages** kiest, kunt u een van de partner centrum-pagina's selecteren die van toepassing zijn op uw aanbiedings type. Wanneer u **dit toepast,** worden in het filter alle **ingediende aanbiedingen** weer gegeven met wijzigingen aan de pagina die u hebt geselecteerd.

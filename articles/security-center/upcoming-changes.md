@@ -1,23 +1,18 @@
 ---
 title: Belangrijke wijzigingen afkomstig van Azure Security Center
 description: Aanstaande wijzigingen in Azure Security Center waarvan u mogelijk op de hoogte moet zijn en waarmee u mogelijk rekening moet houden
-services: security-center
-documentationcenter: na
 author: memildin
 manager: rkarlin
 ms.service: security-center
-ms.devlang: na
 ms.topic: overview
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 03/04/2021
+ms.date: 03/10/2021
 ms.author: memildin
-ms.openlocfilehash: 6bec9f0a1c22691d818566cec3f59c1ec0f3d3bb
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 49141f7f11c0e8ead090459238e15b56f57b990b
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102051613"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633713"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -32,7 +27,6 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
 - [Aanbevelingen van AWS worden uitgebracht voor algemene Beschik baarheid (GA)](#recommendations-from-aws-will-be-released-for-general-availability-ga)
-- [Met twee oudere aanbevelingen worden gegevens niet meer rechtstreeks naar Azure-activiteiten logboek geschreven](#two-legacy-recommendations-will-no-longer-write-data-directly-to-azure-activity-log)
 - [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
 - [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
 - [Afschaffing van 11 Azure Defender-waarschuwingen](#deprecation-of-11-azure-defender-alerts)
@@ -53,21 +47,6 @@ Met deze wijziging worden twee sets van AWS-aanbevelingen verplaatst naar GA:
 
 Wanneer dit GA en de evaluaties worden uitgevoerd op uw AWS-resources, zijn de resultaten van invloed op uw gecombineerde beveiligde score voor al uw multi-en hybride cloud resources. 
 
-
-
-### <a name="two-legacy-recommendations-will-no-longer-write-data-directly-to-azure-activity-log"></a>Met twee oudere aanbevelingen worden gegevens niet meer rechtstreeks naar Azure-activiteiten logboek geschreven 
-
-**Geschatte datum voor wijziging:** 2021 maart
-
-Security Center geeft de gegevens voor bijna alle beveiligings aanbevelingen door aan Azure Advisor die op zijn beurt deze naar het [Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)schrijven.
-
-Voor twee aanbevelingen worden de gegevens tegelijkertijd rechtstreeks naar het Azure-activiteiten logboek geschreven. Met deze wijziging stopt Security Center het schrijven van gegevens voor deze verouderde beveiligings aanbevelingen rechtstreeks in het activiteiten logboek. In plaats daarvan exporteren we de gegevens naar Azure Advisor zoals we voor alle andere aanbevelingen doen. 
-
-De twee oudere aanbevelingen zijn:
-- Statusproblemen met eindpuntbescherming moeten worden opgelost voor uw machines
-- Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld
-
-Als u toegang hebt tot informatie voor deze twee aanbevelingen in de categorie ' aanbeveling van type TaskDiscovery ' van het activiteiten logboek, is dit niet langer beschikbaar.
 
 ### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 

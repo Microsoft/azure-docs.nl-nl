@@ -12,27 +12,22 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 5b74c817a974378a7fefc71e4eed67e6564765be
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 372efa217e400ffd4bcecd286f3c3dc7b81f64d6
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98756560"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103007958"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Bureau blad-app voor het aanroepen van web-Api's: code configuratie
 
 Nu u de toepassing hebt gemaakt, leert u hoe u de code kunt configureren met de coördinaten van de toepassing.
 
-## <a name="microsoft-authentication-libraries"></a>Micro soft-verificatie bibliotheken
+## <a name="microsoft-libraries-supporting-desktop-apps"></a>Micro soft-bibliotheken die bureau blad-apps ondersteunen
 
-De volgende micro soft-verificatie bibliotheken (MSALs) ondersteunen desktop toepassingen.
+De volgende micro soft-bibliotheken ondersteunen bureau blad-apps:
 
-  Microsoft Authentication Library | Beschrijving
-  ------------ | ----------
-  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Biedt ondersteuning voor het bouwen van een bureaublad toepassing op meerdere platformen, zoals Linux, Windows en macOS.
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Biedt ondersteuning voor het bouwen van een bureaublad toepassing op meerdere platforms.
-  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Biedt ondersteuning voor het bouwen van een bureaublad toepassing op meerdere platforms.
-  ![MSAL iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL iOS | Biedt ondersteuning voor desktop toepassingen die alleen op macOS worden uitgevoerd.
+[!INCLUDE [active-directory-develop-libraries-desktop](../../../includes/active-directory-develop-libraries-desktop.md)]
 
 ## <a name="public-client-application"></a>Openbare clienttoepassing
 
@@ -104,7 +99,7 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Meer informatie
+### <a name="learn-more"></a>Lees meer
 
 Voor meer informatie over het configureren van een MSAL.NET-bureaublad toepassing:
 

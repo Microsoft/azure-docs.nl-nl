@@ -6,13 +6,13 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/03/2021
-ms.openlocfilehash: 63509262b8a75eebaffc34eca9861fe6748ff969
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/12/2021
+ms.openlocfilehash: 4026d2f987ca37834231ac4d7e827ff543af9d2e
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102048451"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232389"
 ---
 # <a name="copy-data-from-an-sap-table-by-using-azure-data-factory"></a>Gegevens uit een SAP-tabel kopiëren met behulp van Azure Data Factory
 
@@ -238,6 +238,10 @@ Als u gegevens wilt kopiëren uit een SAP-tabel, worden de volgende eigenschappe
 >Als `partitionOption` `partitionOnInt` voor beeld wordt het aantal rijen in elke partitie berekend met de volgende formule: (totaal aantal rijen tussen `partitionUpperBound` en `partitionLowerBound` )/ `maxPartitionsNumber` .<br/>
 <br/>
 >Als u gegevens partities parallel wilt laden om de kopie sneller te maken, wordt de parallelle graad bepaald door de [`parallelCopies`](copy-activity-performance-features.md#parallel-copy) instelling in de Kopieer activiteit. Als u bijvoorbeeld hebt ingesteld `parallelCopies` op vier, worden met Data Factory gelijktijdig vier query's gegenereerd en uitgevoerd op basis van uw opgegeven partitie optie en instellingen, en met elke query wordt een deel van de gegevens uit uw SAP-tabel opgehaald. We raden u ten zeerste aan `maxPartitionsNumber` een veelvoud van de waarde van de eigenschap te maken `parallelCopies` . Bij het kopiëren van gegevens naar gegevens opslag op basis van een bestand, is het ook opnieuw opdracht om naar een map te schrijven als meerdere bestanden (Geef alleen de mapnaam op). in dat geval zijn de prestaties beter dan het schrijven naar één bestand.
+
+
+>[!TIP]
+> De `BASXML` is standaard ingeschakeld voor deze SAP-tabel connector aan Azure Data Factory zijde.
 
 In `rfcTableOptions` kunt u de volgende algemene SAP-query operators gebruiken om de rijen te filteren:
 

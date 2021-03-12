@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Bastion?
       href: bastion-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een host met VM-instellingen maken
@@ -57,6 +57,8 @@
       href: diagnostic-logs.md
     - name: Sessies bewaken en beheren
       href: session-monitoring.md
+    - name: 'Metrische gegevens, bewaking en waarschuwingen'
+      href: howto-metrics-monitor-alert.md
     - name: Problemen oplossen
       href: troubleshoot.md
 - name: Naslaginformatie

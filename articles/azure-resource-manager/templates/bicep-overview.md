@@ -2,19 +2,19 @@
 title: Bicep-taal voor Azure Resource Manager sjablonen
 description: Beschrijft de Bicep-taal voor het implementeren van de infra structuur naar Azure via Azure Resource Manager sjablonen.
 ms.topic: conceptual
-ms.date: 03/03/2021
-ms.openlocfilehash: 2fb13bca9e9d456889185d512ee2fc9d4cbbe673
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/12/2021
+ms.openlocfilehash: 11ba562fa3d91ffc7baeca647ed05e839f9c8013
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036381"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232967"
 ---
 # <a name="what-is-bicep-preview"></a>Wat is Bicep (preview)?
 
-Bicep is een taal voor declaratieve implementatie van Azure-resources. Het vereenvoudigt de ontwerp ervaring door een beknopte syntaxis te bieden en betere ondersteuning voor hergebruik van code. Bicep is een domein-specifieke taal (DSL), wat betekent dat het is ontworpen voor een bepaald scenario of domein. Bicep is niet bedoeld als een algemene programmeer taal voor het schrijven van toepassingen.
+Bicep is een taal voor declaratieve implementatie van Azure-resources. U kunt Bicep gebruiken in plaats van JSON voor het ontwikkelen van uw Azure Resource Manager sjablonen (ARM-sjablonen). Bicep vereenvoudigt de ontwerp ervaring door een beknopte syntaxis te bieden, betere ondersteuning voor het hergebruik van code en verbeterde type beveiliging. Bicep is een domein-specifieke taal (DSL), wat betekent dat het is ontworpen voor een bepaald scenario of domein. Het is niet bedoeld als een algemene programmeer taal voor het schrijven van toepassingen.
 
-In het verleden hebt u Azure Resource Manager sjablonen (ARM-sjablonen) ontwikkeld met JSON. De JSON-syntaxis voor het maken van een sjabloon kan uitgebreid zijn en gecompliceerde expressies vereisen. Bicep verbetert de ervaring zonder dat de mogelijkheden van een JSON-sjabloon verloren gaan. Het is een transparante abstractie voor de JSON voor ARM-sjablonen. Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand.
+De JSON-syntaxis voor het maken van een sjabloon kan uitgebreid zijn en gecompliceerde expressies vereisen. Bicep verbetert de ervaring zonder dat de mogelijkheden van een JSON-sjabloon verloren gaan. Het is een transparante abstractie voor de JSON voor ARM-sjablonen. Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand. Er zijn enkele [bekende beperkingen](#known-limitations) in de huidige release.
 
 ## <a name="get-started"></a>Aan de slag
 
@@ -55,7 +55,15 @@ Met Bicep kunt u uw project in meerdere modules opdelen.
 
 De structuur van het Bicep-bestand is flexibeler dan de JSON-sjabloon. U kunt de para meters, variabelen en uitvoer overal in het bestand declareren. In JSON moet u alle para meters, variabelen en uitvoer in de bijbehorende secties van de sjabloon declareren.
 
-De VS code-extensie voor Bicep biedt uitgebreide validatie en IntelliSense. De uitbrei ding heeft bijvoorbeeld IntelliSense voor het ophalen van eigenschappen van een resource.
+De VS code-extensie voor Bicep biedt uitgebreide validatie en IntelliSense. U kunt bijvoorbeeld IntelliSense gebruiken voor het ophalen van eigenschappen van een resource.
+
+## <a name="known-limitations"></a>Bekende beperkingen
+
+De volgende limieten bestaan momenteel:
+
+* Kan de modus of Batch grootte niet instellen voor kopieer lussen.
+* Kan geen lussen en voor waarden combi neren.
+* Objecten en matrices met één regel, zoals `['a', 'b', 'c']` , worden niet ondersteund.
 
 ## <a name="faq"></a>Veelgestelde vragen
 

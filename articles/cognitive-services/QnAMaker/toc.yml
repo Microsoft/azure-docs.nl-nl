@@ -32,14 +32,16 @@
       href: Concepts/data-sources-and-content.md
     - name: Azure RBAC (op rollen gebaseerd toegangsbeheer van Azure)
       href: Concepts/role-based-access-control.md
+    - name: Nauwkeurige antwoorden
+      href: reference-precise-answering.md
+    - name: Actief leren inschakelen
+      href: How-To/use-active-learning.md
     - name: Rangschikkingsproces
       displayName: 'DefaultAnswer, Default answer'
       href: Concepts/query-knowledge-base.md
     - name: Levenscyclus van ontwikkeling
       href: Concepts/development-lifecycle-knowledge-base.md
       displayName: 'version control, test, index, publish, monitor usage, create'
-    - name: Nauwkeurige antwoorden
-      href: reference-precise-answering.md
     - name: Aanbevolen procedures
       href: Concepts/best-practices.md
       displayName: 'tag, rank, score, threshold, question, alternate, filter, synonym, answer, active learning, collaborate, alteration, metadata, bot, personality, extraction, chit-chat'
@@ -47,15 +49,17 @@
       href: choose-natural-language-processing-service.md
 - name: Instructiegidsen
   items:
-    - name: Azure-resources beheren
-      href: How-To/set-up-qnamaker-service-azure.md
-      displayName: 'azure, resource, key, upgrade, pricing, tier,'
-    - name: QnA Maker-resources configureren
-      href: How-To/configure-QnA-Maker-resources.md
-    - name: Netwerk isolatie voor Azure-resources
-      href: How-To/network-isolation.md
-    - name: Toegang tot QnA Maker bronnen beheren
-      href: How-To/manage-qna-maker-app.md
+    - name: QnA Maker-resources beheren
+      items:
+        - name: QnA Maker-resources instellen
+          href: How-To/set-up-qnamaker-service-azure.md
+          displayName: 'azure, resource, key, upgrade, pricing, tier,'
+        - name: Toegang tot QnA Maker bronnen beheren
+          href: How-To/manage-qna-maker-app.md
+        - name: QnA Maker-resources configureren
+          href: How-To/configure-qna-maker-resources.md
+        - name: Netwerk isolatie voor Azure-resources
+          href: How-To/network-isolation.md
     - name: Knowledge base beheren
       items:
         - name: Een knowledge base maken
@@ -65,7 +69,7 @@
         - name: Migreren naar een nieuwe knowledge base
           href: Tutorials/migrate-knowledge-base.md
           displayName: 'metadata, pair'
-        - name: Testen
+        - name: Kennis basis testen
           href: How-To/test-knowledge-base.md
     - name: QnA-paren beheren
       items:
@@ -79,15 +83,15 @@
         - name: Standaardantwoord wijzigen
           href: How-To/change-default-answer.md
     - name: Knowledge base bewerken
-      href: How-To/metadata-generateanswer-usage.md
-      displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
-    - name: Actief leren instellen om de Knowledge Base te verbeteren
       items:
-        - name: Actief leren inschakelen
-          href: How-To/use-active-learning.md
-        - name: Voorgestelde alternatieve vragen ophalen
-          href: How-to/improve-knowledge-base.md
-          displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
+        - name: GenerateAnswer-API gebruiken
+          href: How-To/metadata-generateanswer-usage.md
+          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context, 200, 2xx, 400, 401, 403, 404'
+        - name: QnAs filteren op meta gegevens
+          href: How-To/query-knowledge-base-with-metadata.md
+    - name: Voorgestelde alternatieve vragen ontvangen via actief leren
+      href: How-to/improve-knowledge-base.md
+      displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning, clusterHead, totalAutoSuggestedCount, totalUserSuggestedCount, autoSuggestedCount, userSuggestedCount'
     - name: Analyse en telemetrie
       href: How-To/get-analytics-knowledge-base.md
 - name: Naslaginformatie

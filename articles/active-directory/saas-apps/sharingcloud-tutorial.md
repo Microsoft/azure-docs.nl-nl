@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/09/2021
+ms.date: 03/10/2021
 ms.author: jeedes
-ms.openlocfilehash: 7ae447a9577feba8b43b5b03a757ec4095ee2cb4
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3f5c189e63a8be3c9c46c406ab7bd0250dc75ec5
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102177892"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633492"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sharingcloud"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met SharingCloud
 
@@ -26,14 +26,13 @@ In deze zelf studie leert u hoe u SharingCloud integreert met Azure Active Direc
 * Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij SharingCloud met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
-Zie [Wat is toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory](../manage-apps/what-is-single-sign-on.md)als u meer wilt weten over SaaS-app-integratie met Azure AD.
-
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) een gratis proefversie van één maand ontvangen.
-* SharingCloud-abonnement dat is ingeschakeld voor eenmalige aanmelding (SSO).
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Sapient-abonnement dat is ingeschakeld voor eenmalige aanmelding (SSO).
+
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -46,30 +45,19 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van SharingCloud in azure AD wilt configureren, moet u SharingCloud uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
-
-    ![De knop Azure Active Directory](common/select-azuread.png)
-    
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-    
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
-    
 1. Typ in de sectie **toevoegen vanuit de galerie** **SharingCloud** in het zoekvak.
-
-    ![SharingCloud in de lijst met resultaten](common/search-new-app.png)
-    
 1. Selecteer **SharingCloud** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-sharingcloud"></a>Eenmalige aanmelding voor Azure AD configureren en testen voor SharingCloud
+
+## <a name="configure-and-test-azure-ad-sso-for-sharingcloud"></a>Azure AD SSO voor SharingCloud configureren en testen
 
 Azure AD SSO met SharingCloud configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SharingCloud.
 
-Als u Azure AD SSO wilt configureren en testen met SharingCloud, voltooit u de volgende bouw stenen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met SharingCloud:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -82,15 +70,9 @@ Als u Azure AD SSO wilt configureren en testen met SharingCloud, voltooit u de v
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in het [Azure Portal](https://portal.azure.com/)op de pagina Toepassings integratie van **SharingCloud** de sectie **beheren** en selecteer **eenmalige aanmelding**.
-    
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-    
+1. Zoek in het Azure Portal op de pagina Toepassings integratie van **SharingCloud** de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-1. Klik op de pagina **eenmalige aanmelding met SAML instellen** op het pictogram **bewerken** voor **eenvoudige SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -98,15 +80,15 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     Upload het meta gegevensbestand met XML-bestand dat is verschaft door SharingCloud. Neem contact op met het [ondersteunings team van SharingCloud](mailto:support@sharingcloud.com) om het bestand op te halen.
 
-    ![image](common/upload-metadata.png)
+    ![Scherm opname van de gebruikers interface van de basis configuratie van SAML met de * * meta gegevensbestand * * gemarkeerde koppeling.](common/upload-metadata.png)
     
     Selecteer het door gegeven meta gegevensbestand en klik op **uploaden**.
 
-    ![image](common/browse-upload-metadata.png)
+    ![Scherm opname van het meta gegevensbestand dat is voorzien van de gebruikers interface, met het pictogram bestand selecteren en de knop * * Upload * * gemarkeerd.](common/browse-upload-metadata.png)
 
 1. De SharingCloud-toepassing verwacht de SAML-beweringen in een specifieke indeling. hiervoor moet u aangepaste kenmerk toewijzingen toevoegen aan de configuratie van uw SAML-token kenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
-    ![image](common/edit_attribute.png)
+    ![Scherm afbeelding van de gebruikers interface met de kenmerken van de gebruiker met het bewerkings pictogram gemarkeerd.](common/edit_attribute.png)
 
 1. Daarnaast verwacht SharingCloud toepassing nog maar weinig kenmerken die worden door gegeven in de SAML-respons die hieronder worden weer gegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
 
@@ -119,10 +101,6 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 1. Klik op de pagina **eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekening certificaat** op pictogram **kopiëren** om de URL van de **federatieve meta gegevens** te kopiëren van de opgegeven opties volgens uw vereiste.
 
     ![De URL van de meta gegevens die moet worden gekopieerd](common/copy_metadataurl.png)
-
-## <a name="configure-sharingcloud-sso"></a>SharingCloud SSO configureren
-
-Als u eenmalige aanmelding wilt configureren op **SharingCloud** , moet u de gekopieerde **URL voor federatieve meta gegevens** van Azure Portal naar het [ondersteunings team van SharingCloud](mailto:support@sharingcloud.com)verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
@@ -143,16 +121,14 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer in de lijst toepassingen de optie **SharingCloud**.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-   ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-sharingcloud-sso"></a>SharingCloud SSO configureren
+
+Als u eenmalige aanmelding wilt configureren op **SharingCloud** , moet u de gekopieerde **URL voor federatieve meta gegevens** van Azure Portal naar het [ondersteunings team van SharingCloud](mailto:support@sharingcloud.com)verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-sharingcloud-test-user"></a>SharingCloud-test gebruiker maken
 
@@ -160,7 +136,20 @@ In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in SharingClo
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-* Ga rechtstreeks naar uw SharingCloud-URL en begin met de aanmeldings stroom.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
+
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
+
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor SharingCloud-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
+
+* Ga rechtstreeks naar de URL voor SharingCloud-aanmelding en start de aanmeldings stroom vanaf daar.
+
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de SharingCloud waarvoor u de SSO hebt ingesteld 
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel SharingCloud in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze in de IDP-modus is geconfigureerd, moet u automatisch worden aangemeld bij de SharingCloud waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

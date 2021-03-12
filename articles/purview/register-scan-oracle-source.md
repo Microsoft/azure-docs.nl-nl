@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 2/25/2021
-ms.openlocfilehash: 3ae81a9c05f0c88a52db6409bf870ee0427f09db
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 37f6a779e7dd83a6aa61de9850ad3b49b57393f9
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101696151"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010434"
 ---
 # <a name="register-and-scan-oracle-source-preview"></a>Oracle-bron registreren en scannen (preview)
 
@@ -31,7 +31,7 @@ De Oracle-bron ondersteunt **volledige scan** om meta gegevens uit een Oracle-Da
 
 3.  Controleer of \" Visual C++ redistributable 2012 update 4 \" is geïnstalleerd op de zelf-hostende Integration runtime-computer. Als u de app \' nog niet hebt geïnstalleerd, kunt u deze [hier](https://www.microsoft.com/download/details.aspx?id=30679)downloaden.
 
-4.  U moet hand matig een Oracle JDBC-stuur programma met de naam Oracle. JDBC. driver. OracleDriver downloaden \' van de virtuele machine waarop de zelf-hostende Integration runtime wordt uitgevoerd.
+4.  U moet een Oracle JDBC-stuur programma hand matig downloaden [op uw virtuele machine waarop zelf](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html) -hostende Integration runtime wordt uitgevoerd.
 
     > [!Note] 
     > Het stuurprogramma moet toegankelijk zijn voor alle accounts in de VM. Installeer het niet in een gebruikers account.

@@ -1,7 +1,7 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure Image Builder
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Image Builder. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.topic: sample
 author: cynthn
 ms.author: cynthn
@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: image-builder
 ms.collection: linux
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 0805f8317873e1c584fae844cf1a8f6c732746cb
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 014d55714599872eaecb3d26f494d05f824207c9
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102439733"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631847"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-image-builder"></a>Azure Policy regulerende nalevings controles voor Azure Image Builder
 

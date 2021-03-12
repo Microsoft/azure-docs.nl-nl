@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: b425cd9268b336a8926e4fad9cb1f288f4fe3e87
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 2a1c0c0685ab5a908a89f4a43073f9f773cd58c3
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897914"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631996"
 ---
 # <a name="media-services-terminology-and-concepts"></a>Terminologie en concepten Media Services
 
@@ -26,10 +26,6 @@ ms.locfileid: "98897914"
 In dit onderwerp vindt u een kort overzicht van Azure Media Services terminologie en concepten. Het artikel bevat ook koppelingen naar artikelen met uitgebreide uitleg over Media Services v3-concepten en-functionaliteit.
 
 De basis concepten die in deze onderwerpen worden beschreven, moeten worden gecontroleerd voordat de ontwikkeling wordt gestart.
-
-> [!NOTE]
-> Op dit moment kunt u de [Azure Portal](https://portal.azure.com/) gebruiken om te: Media Services v3 [Live Events](live-events-outputs-concept.md)beheren, v3- [assets](assets-concept.md)weer geven (niet beheren) en [informatie opvragen over toegang tot api's](./access-api-howto.md).
-> Gebruik voor alle andere beheertaken (bijvoorbeeld [transformaties en taken](transforms-jobs-concept.md) en [inhoudsbeveiliging](content-protection-overview.md)), de [REST API](/rest/api/media/accountfilters), [CLI](/cli/azure/ams) of een van de ondersteunde [SDK's](media-services-apis-overview.md#sdks).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

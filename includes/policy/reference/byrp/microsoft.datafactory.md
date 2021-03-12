@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 637a8ab934c1a0858da480064f73fb0170c3db5c
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: a4aafd7dc1608bc2e19be2aec804e6cd7b2c7092
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102432418"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612627"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -21,3 +21,4 @@ ms.locfileid: "102432418"
 |[Azure Data Factory gekoppelde services moeten door het systeem toegewezen beheerde identiteits verificatie gebruiken wanneer deze wordt ondersteund](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ff78ccdb4-7bf4-4106-8647-270491d2978a) |Door een door het systeem toegewezen beheerde identiteit te gebruiken bij het communiceren met gegevens archieven via gekoppelde services, voor komt u het gebruik van minder beveiligde referenties, zoals wacht woorden of verbindings reeksen. |Controleren, Weigeren, Uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Factory/LinkedService_All_Auth_Audit_except_MSI.json) |
 |[Azure Data Factory moet een Git-opslag plaats gebruiken voor broncode beheer](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F77d40665-3120-4348-b539-3192ec808307) |Schakel broncode beheer in op gegevens fabrieken om mogelijkheden te verkrijgen, zoals het bijhouden van wijzigingen, samen werking, continue integratie en implementatie. |Controleren, Weigeren, Uitgeschakeld |[1.0.0-preview](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Factory/Factory_None_GIT_Audit.json) |
 |[Open bare netwerk toegang op Azure Data Factory moet zijn uitgeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F1cf164be-6819-4a50-b8fa-4bcaa4f98fb6) |Het uitschakelen van de eigenschap open bare netwerk toegang verbetert de beveiliging door ervoor te zorgen dat uw Azure Data Factory alleen toegankelijk is vanuit een persoonlijk eind punt. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Factory/DataFactory_PublicNetworkAccess_Audit.json) |
+|[SQL Server Integration Services Integration Runtimes op Azure Data Factory moeten worden gekoppeld aan een virtueel netwerk](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0088bc63-6dee-4a9c-9d29-91cfdc848952) |Azure Virtual Network-implementatie biedt verbeterde beveiliging en isolatie voor uw SQL Server Integration Services Integration Runtimes op Azure Data Factory, evenals subnetten, Toegangs beheer beleid en andere functies om de toegang verder te beperken. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Data%20Factory/SSISIR_JoinVirtualNetwork_Audit.json) |

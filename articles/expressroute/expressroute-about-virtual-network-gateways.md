@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: duau
-ms.openlocfilehash: 45b059784cc0b442b615a2a1cb50386da6ee990f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 038e018a22af3546f5d3c66f6d8ee3963483cce1
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101740916"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615054"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Info over virtuele ExpressRoute-netwerkgateways voor meer informatie over de virtuele ExpressRoute-netwerkgateway
 
@@ -93,7 +93,7 @@ Zie de volgende pagina's voor aanvullende technische bronnen en specifieke synta
 
 | **Klassieke** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure) |[PowerShell](/powershell/module/az.network#networking) |
+| [PowerShell](/powershell/module/servicemanagement/azure.service/#azure) |[PowerShell](/powershell/module/az.network#networking) |
 | [REST API](/previous-versions/azure/reference/jj154113(v=azure.100)) |[REST API](/rest/api/virtual-network/) |
 
 ## <a name="next-steps"></a>Volgende stappen

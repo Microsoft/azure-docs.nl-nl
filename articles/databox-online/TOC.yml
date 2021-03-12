@@ -55,7 +55,7 @@
     - name: Overzicht
       items:
         - name: Wat is Azure Stack Edge Pro R?
-          href: azure-stack-edge-j-series-overview.md
+          href: azure-stack-edge-pro-r-overview.md
     - name: Concepten
       items:
         - name: Veiligheid voorbereiden
@@ -171,7 +171,7 @@
         - name: IoT Edge-voorbeelden implementeren
           items:
             - name: Module uit de Nvidia-galerie
-              href: azure-stack-edge-j-series-configure-gpu-modules.md
+              href: azure-stack-edge-gpu-configure-gpu-modules.md
             - name: GPU-module van Git-opslagplaats
               href: azure-stack-edge-gpu-deploy-sample-module.md
             - name: GPU-module via Marketplace
@@ -189,7 +189,7 @@
                 - name: Compute-versnelling
                   href: azure-stack-edge-gpu-deploy-compute-acceleration.md
                 - name: Staatloze app
-                  href: azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md
+                  href: azure-stack-edge-gpu-deploy-stateless-application-kubernetes.md
                 - name: Statisch ingerichte stateful-app
                   href: azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md
                 - name: Dynamisch ingerichte stateful-app
@@ -199,7 +199,7 @@
                 - name: Staatloze app
                   href: azure-stack-edge-gpu-deploy-stateless-application-iot-edge-module.md
                 - name: C#-module ontwikkelen
-                  href: azure-stack-edge-j-series-create-iot-edge-module.md
+                  href: azure-stack-edge-gpu-create-iot-edge-module.md
             - name: Via Azure Arc (preview)
               items:
                 - name: Arc inschakelen op Kubernetes-cluster
@@ -211,11 +211,11 @@
         - name: Azure Resource Manager (preview) configureren
           items:
             - name: Verbinding maken via Azure PowerShell
-              href: azure-stack-edge-j-series-connect-resource-manager.md
+              href: azure-stack-edge-gpu-connect-resource-manager.md
             - name: Wachtwoord instellen voor Azure Resource Manager
-              href: azure-stack-edge-j-series-set-azure-resource-manager-password.md
+              href: azure-stack-edge-gpu-set-azure-resource-manager-password.md
             - name: TLS-instellingen van client configureren
-              href: azure-stack-edge-j-series-configure-tls-settings.md
+              href: azure-stack-edge-gpu-configure-tls-settings.md
         - name: VM's (preview) implementeren
           items:
             - name: VM's implementeren - Azure Portal
@@ -229,7 +229,7 @@
             - name: VM's implementeren - Azure PowerShell-script
               href: azure-stack-edge-gpu-deploy-virtual-machine-powershell-script.md
             - name: VM's implementeren - Azure CLI/Python
-              href: azure-stack-edge-j-series-deploy-virtual-machine-cli-python.md
+              href: azure-stack-edge-gpu-deploy-virtual-machine-cli-python.md
             - name: Aangepaste scriptextensies implementeren in VM's
               href: azure-stack-edge-gpu-deploy-virtual-machine-custom-script-extension.md
             - name: VM-installatiekopie maken
@@ -247,23 +247,23 @@
             - name: Certificaatfouten oplossen
               href: azure-stack-edge-gpu-certificate-troubleshooting.md
         - name: Edge-rekenproces beheren
-          href: azure-stack-edge-j-series-manage-compute.md
+          href: azure-stack-edge-gpu-manage-compute.md
         - name: Edge-containerregister beheren
           href: azure-stack-edge-gpu-edge-container-registry.md
         - name: Opslag-gateway beheren
           items:
             - name: 'Toevoegen, verbinding maken met share'
-              href: azure-stack-edge-j-series-deploy-add-shares.md
+              href: azure-stack-edge-gpu-deploy-add-shares.md
             - name: 'Toevoegen, verbinding maken met opslagaccounts'
-              href: azure-stack-edge-j-series-deploy-add-storage-accounts.md
+              href: azure-stack-edge-gpu-deploy-add-storage-accounts.md
             - name: Shares
-              href: azure-stack-edge-j-series-manage-shares.md
+              href: azure-stack-edge-gpu-manage-shares.md
             - name: Gebruikers
-              href: azure-stack-edge-j-series-manage-users.md
+              href: azure-stack-edge-gpu-manage-users.md
             - name: Opslagaccounts
-              href: azure-stack-edge-j-series-manage-storage-accounts.md
+              href: azure-stack-edge-gpu-manage-storage-accounts.md
             - name: Bandbreedteschema's
-              href: azure-stack-edge-j-series-manage-bandwidth-schedules.md
+              href: azure-stack-edge-gpu-manage-bandwidth-schedules.md
         - name: Apparaten beheren
           items:
             - name: 'Energieopties, toegang en connectiviteit'
@@ -318,6 +318,9 @@
           href: /rest/api/databoxedgegateway
         - name: .NET SDK
           href: /dotnet/api/overview/azure/databoxedge/databoxgateway
+        - name: Ingebouwde modules voor Azure Policy
+          displayName: 'samples, policies, definitions'
+          href: ./policy-reference.md
 - name: Azure Stack Edge Pro - FPGA
   items:
     - name: Overzicht
@@ -403,23 +406,10 @@
           href: ../databox-gateway/data-box-gateway-1905-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
         - name: Algemene beschikbaarheid (GA)
           href: ../databox-gateway/data-box-gateway-release-notes.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-online/breadcrumb/toc.json
-    - name: Naslaginformatie
-      items:
-        - name: Azure PowerShell
-          href: /powershell/module/az.stackedge/#stack_edge
-        - name: REST-API
-          href: /rest/api/databoxedgegateway
-        - name: .NET SDK
-          href: /dotnet/api/overview/azure/databoxedge/databoxgateway
 - name: Beveiliging
   items:
     - name: Beveiligingsbasislijn
       href: security-baseline.md
-- name: Referenties
-  items:
-    - name: Ingebouwde modules voor Azure Policy
-      displayName: 'samples, policies, definitions'
-      href: ./policy-reference.md
 - name: Resources
   items:
     - name: Voorbeelden van Azure Stack Edge Pro C#-module (.NET)

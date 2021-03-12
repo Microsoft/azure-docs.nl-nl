@@ -1,6 +1,6 @@
 ---
-title: 'Azure AD-toepassingsproxy: release geschiedenis van versie'
-description: In dit artikel wordt een overzicht gegeven van alle versies van Azure AD-toepassingsproxy en worden nieuwe functies en opgeloste problemen beschreven
+title: 'Azure Active Directory-toepassingsproxy: release geschiedenis van versie'
+description: In dit artikel vindt u een overzicht van alle releases van Azure Active Directory-toepassingsproxy en worden nieuwe functies en problemen beschreven.
 services: active-directory
 author: kenwith
 manager: daveba
@@ -8,15 +8,16 @@ ms.assetid: ''
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 07/22/2020
+ms.date: 02/17/2021
 ms.subservice: app-mgmt
 ms.author: kenwith
-ms.openlocfilehash: 6ba622bd52dc13fb0053b61b65529db6e6912611
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.reviewer: japere
+ms.openlocfilehash: 0244e0ca66f452649d3136eb122d1c2666182ae2
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101686713"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200973"
 ---
 # <a name="azure-ad-application-proxy-version-release-history"></a>Azure AD-toepassingsproxy: release geschiedenis van versie
 In dit artikel vindt u een overzicht van de versies en functies van de toepassings proxy van Azure Active Directory (Azure AD) die is uitgebracht. Het Azure AD-team werkt de toepassings proxy regel matig bij met nieuwe functies en functionaliteit. Application proxy-connectors worden automatisch bijgewerkt wanneer een nieuwe versie wordt uitgebracht. 
@@ -25,11 +26,11 @@ We raden u aan om ervoor te zorgen dat automatische updates zijn ingeschakeld vo
 
 Hier volgt een lijst met verwante resources:
 
-Resource |  Details
---------- | --------- |
-Toepassings proxy inschakelen | De vereisten voor het inschakelen van toepassings proxy en het installeren en registreren van een connector worden beschreven in deze [zelf studie](application-proxy-add-on-premises-application.md).
-Azure AD-toepassingsproxy-connectors begrijpen | Meer informatie over [connector beheer](application-proxy-connectors.md) en hoe connectors [automatisch worden bijgewerkt](application-proxy-connectors.md#automatic-updates).
-Downloaden van Azure AD-toepassingsproxy-connector |  [Down load de nieuwste connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download).
+| Resource                                         | Details                                                      |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| Toepassings proxy inschakelen                  | De vereisten voor het inschakelen van toepassings proxy en het installeren en registreren van een connector worden beschreven in deze [zelf studie](application-proxy-add-on-premises-application.md). |
+| Azure AD-toepassingsproxy-connectors begrijpen | Meer informatie over [connector beheer](application-proxy-connectors.md) en hoe connectors [automatisch worden bijgewerkt](application-proxy-connectors.md#automatic-updates). |
+| Downloaden van Azure AD-toepassingsproxy-connector    | [Down load de nieuwste connector](https://download.msappproxy.net/subscription/d3c8b69d-6bf7-42be-a529-3fe9c2e70c90/connector/download). |
 
 ## <a name="1519750"></a>1.5.1975.0
 
@@ -41,6 +42,7 @@ Downloaden van Azure AD-toepassingsproxy-connector |  [Down load de nieuwste con
 -   Verbeterde ondersteuning voor Azure Government-Cloud omgevingen. Voor stappen voor het correct installeren van de connector voor Azure Government Cloud, raadpleegt u de [vereisten](../hybrid/reference-connect-government-cloud.md#allow-access-to-urls) en [installatie stappen](../hybrid/reference-connect-government-cloud.md#install-the-agent-for-the-azure-government-cloud).
 - Ondersteuning voor het gebruik van de Extern bureaublad-services-webclient met toepassings proxy. Zie [extern bureaublad publiceren met Azure AD-toepassingsproxy](application-proxy-integrate-with-remote-desktop-services.md) voor meer informatie.
 - Verbeterde WebSocket-extensie onderhandelingen. 
+- Ondersteuning voor geoptimaliseerde route ring tussen connector groepen en Cloud Services van de toepassings proxy op basis van de regio. Zie [verkeers stroom optimaliseren met Azure Active Directory-toepassingsproxy](application-proxy-network-topology.md) voor meer informatie. 
 
 ### <a name="fixed-issues"></a>Opgeloste problemen
 - Er is een fout opgetreden bij een WebSocket met geforceerde kleine teken reeksen.

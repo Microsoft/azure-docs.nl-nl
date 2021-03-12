@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 02/22/2021
+ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: e8005bbf0373c91cf9f3515059544b9af3d52384
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 922480eb2f4795729919c6ed039ccf61f19875b3
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102443791"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630364"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101
 
@@ -29,7 +29,7 @@ Dit artikel is van toepassing op de **Azure stack Edge 2101** -release, die word
 
 De volgende nieuwe functies zijn beschikbaar in de Azure Stack Edge 2101-release. 
 
-- **Algemene Beschik baarheid van Azure stack Edge Pro r-en Azure stack Edge mini-r-apparaten** : vanaf deze release worden Azure stack Edge Pro R-en Azure stack Edge mini-r-apparaten beschikbaar. Zie [Wat is Azure stack Edge Pro R](azure-stack-edge-j-series-overview.md) en [Wat is Azure stack Edge mini-r](azure-stack-edge-k-series-overview.md)voor meer informatie.  
+- **Algemene Beschik baarheid van Azure stack Edge Pro r-en Azure stack Edge mini-r-apparaten** : vanaf deze release worden Azure stack Edge Pro R-en Azure stack Edge mini-r-apparaten beschikbaar. Zie [Wat is Azure stack Edge Pro R](azure-stack-edge-pro-r-overview.md) en [Wat is Azure stack Edge mini-r](azure-stack-edge-mini-r-overview.md)voor meer informatie.  
 - **Cloud beheer van virtual machines** -het starten van deze release kunt u de virtuele machines op het apparaat maken en beheren via de Azure Portal. Zie [Vm's implementeren via de Azure Portal](azure-stack-edge-gpu-deploy-virtual-machine-portal.md)voor meer informatie.
 - **Integratie met Azure monitor** : u kunt Azure monitor nu gebruiken om containers te bewaken vanuit de compute-toepassingen die op uw apparaat worden uitgevoerd. Het opslag Azure Monitor metrische gegevens wordt niet ondersteund in deze versie. Zie [Azure monitor op het apparaat inschakelen](azure-stack-edge-gpu-enable-azure-monitor.md)voor meer informatie.
 - **Edge-container register** : in deze release is er een rand container register beschikbaar dat een opslag plaats biedt aan de rand van uw apparaat. U kunt dit REGI ster gebruiken om container installatie kopieën op te slaan en te beheren. Zie [Edge container Registry inschakelen](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md)voor meer informatie. 

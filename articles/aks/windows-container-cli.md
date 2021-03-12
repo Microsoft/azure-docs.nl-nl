@@ -4,12 +4,12 @@ description: Meer informatie over hoe u snel een Kubernetes-cluster maakt, een t
 services: container-service
 ms.topic: article
 ms.date: 07/16/2020
-ms.openlocfilehash: 4d429b7136158723fa6110975326217c5540bc2e
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 13b4fbd21bb348d1ef79a3ca68128869115745cc
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102180969"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200907"
 ---
 # <a name="create-a-windows-server-container-on-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Een Windows Server-container maken op een Azure Kubernetes service (AKS)-cluster met behulp van Azure CLI
 
@@ -69,32 +69,35 @@ In de volgende voorbeelduitvoer ziet u dat de resourcegroep is gemaakt:
 
 Als u een AKS-cluster wilt uitvoeren dat knooppunt Pools ondersteunt voor Windows Server-containers, moet uw cluster gebruikmaken van een netwerk beleid dat gebruikmaakt van de invoeg toepassing [Azure cni][azure-cni-about] (Geavanceerd). Zie [Azure cni-netwerken configureren][use-advanced-networking]voor meer informatie over het plannen van de vereiste subnet bereiken en netwerk overwegingen. Gebruik de opdracht [AZ AKS Create][az-aks-create] om een AKS-cluster te maken met de naam *myAKSCluster*. Met deze opdracht worden de benodigde netwerk bronnen gemaakt als deze nog niet bestaan.
 
-* Het cluster is geconfigureerd met twee knoop punten
-* De para meters *Windows-admin-password* en *Windows-admin-username* stellen de beheerders referenties in voor alle Windows Server-containers die op het cluster zijn gemaakt en moeten voldoen aan de [vereisten voor Windows Server-wacht woorden][windows-server-password].
-* De knooppunt groep gebruikt `VirtualMachineScaleSets`
+* Het cluster is geconfigureerd met twee knoop punten.
+* `--windows-admin-password`Met de `--windows-admin-username` para meters en worden de beheerders referenties ingesteld voor Windows Server-containers die op het cluster zijn gemaakt en moeten voldoen aan de [vereisten voor Windows Server-wacht woorden][windows-server-password]. Als u de para meter *Windows-admin-password* niet opgeeft, wordt u gevraagd een waarde op te geven.
+* De knooppunt groep gebruikt `VirtualMachineScaleSets` .
 
 > [!NOTE]
 > Om ervoor te zorgen dat uw cluster betrouwbaar functioneert, moet u ten minste twee knoop punten in de standaard knooppunt groep uitvoeren.
 
-Geef uw eigen veilige *PASSWORD_WIN* op (Houd er rekening mee dat de opdrachten in dit artikel worden ingevoerd in een bash-shell):
+Maak een gebruikers naam om te gebruiken als beheerders referenties voor uw Windows Server-containers in uw cluster. Met de volgende opdrachten wordt u naar een gebruikers naam gevraagd en deze WINDOWS_USERNAME instellen voor gebruik in een latere opdracht (Houd er rekening mee dat de opdrachten in dit artikel worden ingevoerd in een BASH-shell).
 
 ```azurecli-interactive
-PASSWORD_WIN="P@ssw0rd1234"
+echo "Please enter the username to use as administrator credentials for Windows Server containers on your cluster: " && read WINDOWS_USERNAME
+```
 
+Maak uw cluster om een para meter op te geven `--windows-admin-username` . Met de volgende voorbeeld opdracht maakt u een cluster met behulp van de waarde uit *WINDOWS_USERNAME* die u in de vorige opdracht hebt ingesteld. U kunt ook rechtstreeks een andere gebruikers naam opgeven in de para meter in plaats van met *WINDOWS_USERNAME*. Met de volgende opdracht wordt u ook gevraagd om een wacht woord te maken voor de beheerders referenties voor uw Windows Server-containers in uw cluster. U kunt ook de para meter *Windows-admin-password* gebruiken en daar uw eigen waarde opgeven.
+
+```azurecli-interactive
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --node-count 2 \
     --enable-addons monitoring \
     --generate-ssh-keys \
-    --windows-admin-password $PASSWORD_WIN \
-    --windows-admin-username azureuser \
+    --windows-admin-username $WINDOWS_USERNAME \
     --vm-set-type VirtualMachineScaleSets \
     --network-plugin azure
 ```
 
 > [!NOTE]
-> Als er een fout optreedt bij het valideren van het wacht woord, controleert u of de para meter *Windows-Administrator-Password* voldoet aan de [vereisten voor Windows Server-wacht woorden][windows-server-password]. Als uw wacht woord aan de vereisten voldoet, kunt u proberen om de resource groep te maken in een andere regio. Probeer vervolgens het cluster te maken met de nieuwe resource groep.
+> Als er een fout is opgetreden bij het valideren van het wacht woord, controleert u of het wacht woord dat u instelt voldoet aan de [vereisten voor Windows Server][windows-server-password] Als uw wacht woord aan de vereisten voldoet, kunt u proberen om de resource groep te maken in een andere regio. Probeer vervolgens het cluster te maken met de nieuwe resource groep.
 
 Na enkele minuten is de opdracht voltooid en retourneert deze informatie over het cluster in JSON-indeling. Af en toe kan het cluster langer dan een paar minuten duren. In deze gevallen Maxi maal 10 minuten toestaan.
 

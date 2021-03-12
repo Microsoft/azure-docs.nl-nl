@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.author: inhenkel
-ms.openlocfilehash: 9be00fd89234be0a8b5740af9e12811f36a47619
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 4f4f53d4a20397f38b565cb73e74b01d15cc3022
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101092327"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633050"
 ---
 # <a name="dynamic-packaging-in-media-services-v3"></a>Dynamische pakketten in Media Services v3
 
@@ -27,9 +27,6 @@ ms.locfileid: "101092327"
 Microsoft Azure Media Services kunnen worden gebruikt voor het coderen van veel mediabronbestandsindelingen. Deze worden geleverd via verschillende streamingprotocollen, met of zonder inhoudsbeveiliging, om alle grote apparaten te bereiken (zoals iOS- en Android-apparaten). Deze clients werken met verschillende protocollen. Zo vereist iOS dat stromen worden geleverd in HLS-indeling (HTTP Live Streaming), en Android-apparaten ondersteunen zowel HLS als MPEG DASH.
 
 In Media Services vertegenwoordigt een [streaming-eindpunt](streaming-endpoint-concept.md) (origin) een dynamische service (just-in-time) die u uw live en on-demand-inhoud rechtstreeks kan leveren aan een client-speler-app. De service maakt gebruik van een van de algemene protocollen voor het streamen van media die worden vermeld in de volgende sectie. *Dynamische pakketten* is een functie die standaard wordt geleverd op alle streaming-eindpunten.
-
-> [!NOTE]
-> U kunt de [Azure-portal](https://portal.azure.com/) gebruiken voor het beheren van v3 [live gebeurtenissen](live-events-outputs-concept.md), v3 [assets](assets-concept.md) weergeven, informatie opvragen over toegang tot API's. Gebruik voor alle andere beheertaken (bijvoorbeeld transformaties en taken) de [REST API](/rest/api/media/), [CLI](/cli/azure/ams)of een van de ondersteunde [SDK's](media-services-apis-overview.md#sdks).
 
 ## <a name="to-prepare-your-source-files-for-delivery"></a>Voorbereiding van de bronbestanden voor levering
 

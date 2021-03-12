@@ -4,16 +4,16 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: 4a9454abc2c4e41d711a4aef6a30438a72d27edb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e013765579fd560952172166b24f898b354c1d17
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101750061"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103020876"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
+- Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een geïmplementeerde Communication Services-resource. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een `User Access Token` om de aanroepende client in te schakelen. Voor meer informatie over het [verkrijgen van een `User Access Token`](../../access-tokens.md)
 - Optioneel: Voltooi de Snelstartgids om aan de [slag te gaan met het toevoegen van een oproep aan uw toepassing](../getting-started-with-calling.md)
@@ -63,14 +63,14 @@ const deviceManager = await callClient.getDeviceManager()
 
 ## <a name="place-an-outgoing-call"></a>Een uitgaande oproep plaatsen
 
-Als u een gesprek wilt maken en starten, moet u een van de Api's op CallAgent gebruiken en een gebruiker bieden die u hebt gemaakt via de client bibliotheek voor communicatie Services-beheer.
+Als u een gesprek wilt maken en starten, moet u een van de Api's op CallAgent gebruiken en een gebruiker bieden die u hebt gemaakt via de client bibliotheek van de communicatie Services-identiteit.
 
 Aanroepen maken en starten is synchroon. Met het gesprek exemplaar kunt u zich abonneren op het aanroepen van gebeurtenissen.
 
 ## <a name="place-a-call"></a>Een oproep doen
 
 ### <a name="place-a-11-call-to-a-user-or-pstn"></a>Een 1:1-aanroep naar een gebruiker of PSTN plaatsen
-Als u een aanroep naar een andere communicatie Services-gebruiker wilt plaatsen, roept u de- `startCall` methode aan `callAgent` en geeft u de CommunicationUserIdentifier van de oproep door die u hebt [gemaakt met de beheer bibliotheek voor communicatie Services](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens).
+Als u een aanroep naar een andere communicatie Services-gebruiker wilt plaatsen, roept u de- `startCall` methode aan `callAgent` en geeft u de CommunicationUserIdentifier van de oproep door die u hebt [gemaakt met de communicatie Services-identiteits bibliotheek](https://docs.microsoft.com/azure/communication-services/quickstarts/access-tokens).
 
 ```js
 const userCallee = { communicationUserId: '<ACS_USER_ID>' }
@@ -254,10 +254,10 @@ U kunt de `mute` en asynchrone api's gebruiken om het lokale eind punt te dempen
 
 ```js
 
-//mute local device 
+//mute local device
 await call.mute();
 
-//unmute local device 
+//unmute local device
 await call.unmute();
 
 ```
@@ -401,7 +401,7 @@ Als u de video stromen en de streams voor het delen van externe deel nemers wilt
 const remoteVideoStream: RemoteVideoStream = call.remoteParticipants[0].videoStreams[0];
 const streamType: MediaStreamType = remoteVideoStream.mediaStreamType;
 ```
- 
+
 Als u een wilt weer geven `RemoteVideoStream` , moet u zich abonneren op een `isAvailableChanged` gebeurtenis.
 Als de `isAvailable` eigenschap wordt gewijzigd in `true` , wordt een stroom door een externe deel nemer verzonden.
 Als dat gebeurt, maakt u een nieuw exemplaar van `Renderer` en maakt u vervolgens een nieuw `RendererView` exemplaar met behulp van de asynchrone `createView` methode.  U kunt vervolgens `view.target` aan elk UI-element worden gekoppeld.
@@ -581,7 +581,7 @@ const isRecordingActiveChangedHandler = () => {
 };
 
 callRecordingApi.on('isRecordingActiveChanged', isRecordingActiveChangedHandler);
-               
+
 ```
 
 ## <a name="call-transfer-management"></a>Beheer van oproep overdracht

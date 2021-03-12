@@ -312,6 +312,8 @@
           href: search-query-create.md
         - name: Een semantische query maken
           href: semantic-how-to-query-request.md
+        - name: Een semantisch antwoord retour neren
+          href: semantic-answers.md
         - name: Spelling controle aan query's toevoegen
           href: speller-how-to-add.md
         - name: Querytypen en querysamenstelling
@@ -330,6 +332,8 @@
               href: index-add-suggesters.md
             - name: Automatisch aanvullen en suggesties toevoegen
               href: search-autocomplete-tutorial.md
+        - name: Paginering en aantallen
+          href: search-pagination-page-layout.md
         - name: Naslaginformatie over syntaxis
           items:
             - name: Vereenvoudigde querysyntaxis
@@ -352,16 +356,14 @@
           href: search-query-understand-collection-filters.md
         - name: Filteren op taal
           href: search-filters-language.md
-    - name: Resultaten
+    - name: Relevantie
       items:
-        - name: Werken met resultaten
-          href: search-pagination-page-layout.md
-        - name: Een semantisch antwoord structureren
-          href: semantic-how-to-query-response.md
+        - name: Classificatie van gelijkenis
+          href: index-ranking-similarity.md
+        - name: Semantische classificatie
+          href: semantic-ranking.md
         - name: Scoreprofielen
           href: index-add-scoring-profiles.md
-        - name: Vergelijkbaarheidsalgoritme
-          href: index-ranking-similarity.md
     - name: Beveiliging
       items:
         - name: Gegevensversleuteling

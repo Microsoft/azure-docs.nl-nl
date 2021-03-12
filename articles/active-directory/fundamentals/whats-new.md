@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9abed17f5a3d23f811c7cec0d4fd31e4433f651d
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: df90857bf30b6fff3c18faf126efabe8c959c0c6
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102177013"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633424"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -211,7 +211,7 @@ Lees voor meer informatie [Gebruikers inrichten automatiseren voor SaaS-toepassi
  
 10 ingebouwde rollen van Azure AD zijn hernoemd zodat ze zijn afgestemd op de [Microsoft 365 beheer centrum](https://docs.microsoft.com/microsoft-365/admin/microsoft-365-admin-center-preview), de [Azure AD-portal](https://portal.azure.com/)en de [Microsoft Graph](https://developer.microsoft.com/graph/). Raadpleeg [beheerders rollen machtigingen in azure Active Directory](../roles/permissions-reference.md#all-roles)voor meer informatie over de nieuwe rollen.
 
-![Tabel met nieuwe rolnaams](media/whats-new/roles-table-rbac.png)
+![Tabel met de rolnaam in MS Graph API en de Azure Portal en de voorgestelde uiteindelijke naam in de API, Azure Portal en Mac.](media/whats-new/roles-table-rbac.png)
 
 ---
 
@@ -968,7 +968,7 @@ U kunt nu eigen aren van toepassingen toestaan om activiteiten te bewaken door d
  
 Sommige ingebouwde rollen van Azure Active Directory (AD) hebben namen die verschillen van de functies die worden weer gegeven in Microsoft 365 beheer centrum, de Azure AD-Portal en Microsoft Graph. Deze inconsistentie kan problemen veroorzaken in geautomatiseerde processen. Met deze update worden de namen van 10 rolnaam gewijzigd zodat ze consistent zijn. De volgende tabel bevat de nieuwe rolnaams:
 
-![Tabel met nieuwe rolnaams](media/whats-new/azure-role.png)
+![Tabel met de namen van rollen in MS Graph API en de Azure Portal en de voorgestelde nieuwe rolnaam in M365-beheer centrum, Azure Portal en API.](media/whats-new/azure-role.png)
 
 ---
 

@@ -149,6 +149,10 @@
               href: alert-service-principal.md
             - name: Waarschuwingen met betrekking tot Secure LDAP
               href: alert-ldaps.md
+- name: Naslaginformatie
+  items:
+    - name: Azure PowerShell
+      href: /powershell/module/az.addomainservices/
 - name: Resources
   items:
     - name: Veelgestelde vragen

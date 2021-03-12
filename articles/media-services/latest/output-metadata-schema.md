@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 1a27db81866760bff56c900a908162f356c01a66
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: f26905366949c2c198e52f78bc7adb734cbb7f90
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895200"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612453"
 ---
 # <a name="output-metadata"></a>Uitvoermetagegevens
 
@@ -52,8 +52,8 @@ Elk fysiek AssetFile kan in de waarde nul bevatten of meer Video's worden getrac
 | Naam | Beschrijving |
 | --- | --- |
 | **Id**<br /> Vereist |Op nul gebaseerde index van deze video track. **Opmerking:**  Deze **id** is niet noodzakelijkerwijs de TrackID die in een MP4-bestand wordt gebruikt. <br /><br />Voorbeeld: `"Id": 1`|
-| **FourCC**<br />Vereist | Een code van de video-codec die wordt gerapporteerd door ffmpeg.  <br /><br />Voorbeeld: `"FourCC": "avc1"`|
-| **Profiel** |H264-Profiel (alleen van toepassing op H264-codec).  <br /><br />Voorbeeld: `"Profile": "High"` |
+| **FourCC**<br />Vereist | Een code van de video-codec die wordt gerapporteerd door ffmpeg.  <br /><br />Voorbeeld: `"FourCC": "avc1" | "hev1" | "hvc1"`|
+| **Profiel** |H264-Profiel (alleen van toepassing op H264-codec)  <br /><br />Voorbeeld: `"Profile": "High"` |
 | **Afvlakking** |Niveau H264 (alleen van toepassing op H264-codec).  <br /><br />Voorbeeld: `"Level": "3.2"`|
 | **Breedte**<br />Vereist |Breedte van gecodeerde video in pixels.  <br /><br />Voorbeeld: `"Width": "1280"`|
 | **Hoogte**<br />Vereist |Versleutelde video hoogte in pixels.  <br /><br />Voorbeeld: `"Height": "720"`|

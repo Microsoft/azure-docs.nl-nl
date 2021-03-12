@@ -3,13 +3,13 @@ title: Azure Active Directory door Pod beheerde identiteiten gebruiken in azure 
 description: Meer informatie over het gebruik van met AAD pod beheerde beheerde identiteiten in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 12/01/2020
-ms.openlocfilehash: e7c8a96ad012afdcd724a4a242c27018563f3a10
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 3/12/2021
+ms.openlocfilehash: 8b94c859800c3757842ad56df6e20f215bb13a7d
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102176311"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103233493"
 ---
 # <a name="use-azure-active-directory-pod-managed-identities-in-azure-kubernetes-service-preview"></a>Azure Active Directory door Pod beheerde identiteiten gebruiken in azure Kubernetes service (preview)
 
@@ -24,13 +24,13 @@ Azure Active Directory door Pod beheerde identiteiten gebruikt Kubernetes primit
 
 U moet de volgende bron hebben geïnstalleerd:
 
-* De Azure CLI, versie 2.8.0 of hoger
-* De `azure-preview` extensie versie 0.4.68 of hoger
+* De Azure CLI, versie 2.20.0 of hoger
+* De `azure-preview` extensie versie 0.5.5 of hoger
 
 ### <a name="limitations"></a>Beperkingen
 
-* Er zijn Maxi maal 50 pod-identiteiten toegestaan voor een cluster.
-* Er zijn Maxi maal 50 pod-identiteits uitzonderingen toegestaan voor een cluster.
+* Er zijn Maxi maal 200 pod-identiteiten toegestaan voor een cluster.
+* Er zijn Maxi maal 200 pod-identiteits uitzonderingen toegestaan voor een cluster.
 * Pod-beheerde identiteiten zijn alleen beschikbaar in Linux-knooppunt groepen.
 
 ### <a name="register-the-enablepodidentitypreview"></a>Registreer de `EnablePodIdentityPreview`
@@ -66,6 +66,21 @@ Gebruik [AZ AKS Get-referenties][az-aks-get-credentials] om u aan te melden bij 
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+```
+## <a name="create-an-aks-cluster-with-kubenet-network-plugin"></a>Een AKS-cluster maken met de Kubenet-netwerk-invoeg toepassing
+
+Een AKS-cluster maken met Kubenet-netwerk-invoeg toepassing en pod-beheerde identiteit ingeschakeld.
+
+```azurecli-interactive
+az aks create -g $MY_RESOURCE_GROUP -n $MY_CLUSTER --enable-pod-identity --enable-pod-identity-with-kubenet
+```
+
+## <a name="update-an-existing-aks-cluster-with-kubenet-network-plugin"></a>Een bestaand AKS-cluster bijwerken met Kubenet-netwerk-invoeg toepassing
+
+Werk een bestaand AKS-cluster bij met Kubnet-netwerk-invoeg toepassing voor het toevoegen van een door Pod beheerde identiteit.
+
+```azurecli-interactive
+az aks update -g $MY_RESOURCE_GROUP -n $MY_CLUSTER --enable-pod-identity --enable-pod-identity-with-kubenet
 ```
 
 ## <a name="create-an-identity"></a>Een identiteit maken

@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: kexia
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb138ade0f579a7545c0910646b6adfb7d5ac02a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4b69daf9e9fbbb3f6d6597a8e8349dc8bec61fbf
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996658"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008771"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Een huis stijl toevoegen aan de Azure Active Directory aanmeldings pagina van uw organisatie
 Gebruik het logo van uw organisatie en aangepaste kleuren schema's om een consistent uiterlijk te geven op uw aanmeldings pagina's van Azure Active Directory (Azure AD). Uw aanmeldings pagina's worden weer gegeven wanneer gebruikers zich aanmelden bij de webtoepassingen van uw organisatie, zoals Microsoft 365, die Azure AD als id-provider gebruikt.
@@ -58,7 +58,7 @@ Uw aangepaste huis stijl wordt niet onmiddellijk weer gegeven wanneer uw gebruik
 
         - **Banner logo.** Selecteer een PNG-of JPG-versie van uw logo om op de aanmeldings pagina te worden weer gegeven nadat de gebruiker een gebruikers naam heeft ingevoerd en op de portal pagina **mijn apps** .
             
-            De afbeelding mag niet groter zijn dan 60 pixels of breder zijn dan 280 pixels. We raden u aan een transparante installatie kopie te gebruiken omdat de achtergrond mogelijk niet overeenkomt met de achtergrond van uw logo. We raden u ook aan om opvulling rond de afbeelding niet toe te voegen of uw logo lijkt klein te maken.
+            De afbeelding mag niet hoger zijn dan 60 pixels of breder dan 280 pixels en het bestand mag niet groter zijn dan 10 KB. We raden u aan een transparante installatie kopie te gebruiken omdat de achtergrond mogelijk niet overeenkomt met de achtergrond van uw logo. We raden u ook aan om opvulling rond de afbeelding niet toe te voegen of uw logo lijkt klein te maken. 
 
         - **Hint voor gebruikers naam.** Typ de tekst van de hint die wordt weer gegeven voor gebruikers als ze hun gebruikers naam verg eten. Deze tekst moet Unicode zijn, zonder links of code, en mag niet langer zijn dan 64 tekens. Als gasten zich aanmelden bij uw app, raden we u aan deze Hint niet toe te voegen.
 

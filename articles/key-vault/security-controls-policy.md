@@ -1,18 +1,18 @@
 ---
 title: Nalevingscontroles van Azure Policy-regelgeving voor Azure Key Vault
 description: Een overzicht van de beschikbare nalevingscontroles van Azure Policy-regelgeving voor Azure Key Vault. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.topic: sample
 author: msmbaldwin
 ms.author: mbaldwin
 ms.service: key-vault
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 3da49840c1a43836036c8ba17024c5940f772c7b
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 16a213db1900d9f3e3a4c8e67705e9d5f7fdeb41
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102436874"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634431"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-key-vault"></a>Nalevingscontroles van Azure Policy-regelgeving voor Azure Key Vault
 

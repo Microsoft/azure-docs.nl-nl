@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: cfc980fdabdb9c6e7085088db12754243f133d89
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0ddbd4b798d37498af92cec40af6a80a88115fab
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100581395"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014890"
 ---
 # <a name="security-best-practices"></a>Aanbevolen procedures voor beveiliging
 
@@ -29,16 +29,16 @@ Hier vindt u de beveiligings behoeften die u nodig hebt voor de implementatie va
 
 | Beveiligings behoeften | Is de klant hiervoor verantwoordelijk? |
 |---------------|:-------------------------:|
-|Identiteit|Yes|
-|Gebruikers apparaten (Mobile en PC)|Yes|
-|App-beveiliging|Yes|
-|Session Host-besturings systeem|Yes|
-|Implementatie configuratie|Yes|
-|Netwerk besturings elementen|Yes|
-|Besturings vlak voor virtualisatie|No|
-|Fysieke hosts|No|
-|Fysiek netwerk|No|
-|Fysiek Data Center|No|
+|Identiteit|Ja|
+|Gebruikers apparaten (Mobile en PC)|Ja|
+|App-beveiliging|Ja|
+|Session Host-besturings systeem|Ja|
+|Implementatie configuratie|Ja|
+|Netwerk besturings elementen|Ja|
+|Besturings vlak voor virtualisatie|Nee|
+|Fysieke hosts|Nee|
+|Fysiek netwerk|Nee|
+|Fysiek Data Center|Nee|
 
 De beveiligings behoeften die de klant niet verantwoordelijk is voor worden verwerkt door micro soft.
 
@@ -117,7 +117,6 @@ U kunt deze nieuwe functie als volgt testen:
 >[!NOTE]
 >Tijdens de preview-periode ondersteunen alleen volledige bureaublad verbindingen van Windows 10-eind punten deze functie.
 
-
 ### <a name="enable-endpoint-protection"></a>Endpoint Protection inschakelen
 
 Als u uw implementatie wilt beveiligen tegen bekende schadelijke software, wordt u aangeraden Endpoint Protection in te scha kelen op alle sessie-hosts. U kunt Windows Defender anti virus of een programma van derden gebruiken. Zie [implementatie handleiding voor Windows Defender anti virus in een VDI-omgeving](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus)voor meer informatie.
@@ -169,6 +168,52 @@ Door de mogelijkheden van het besturings systeem te beperken, kunt u de beveilig
 - Ken gebruikers beperkte machtigingen toe wanneer ze toegang krijgen tot lokale en externe bestands systemen. U kunt machtigingen beperken door ervoor te zorgen dat uw lokale en externe bestands systemen Access Control List met mini maal privilege gebruiken. Op deze manier hebben gebruikers alleen toegang tot wat ze nodig hebben en kunnen ze geen essentiële resources wijzigen of verwijderen.
 
 - Voor komen dat ongewenste software wordt uitgevoerd op sessie-hosts. U kunt de app-kluis inschakelen voor extra beveiliging op sessie hosts, zodat alleen de apps die u toestaat op de host kunnen worden uitgevoerd.
+
+## <a name="windows-virtual-desktop-support-for-trusted-launch"></a>Ondersteuning voor Windows-virtueel bureau blad voor vertrouwde start
+
+Trusted Launch is Gen2 Azure Vm's met verbeterde beveiligings functies die zijn gericht op het beschermen van ' bottom of the stack ' bedreigingen via aanvals vectoren, zoals rootkits, opstart kits en malware op kernel-niveau. Hieronder vindt u de verbeterde beveiligings functies van vertrouwde start, die allemaal worden ondersteund in het virtuele bureau blad van Windows. Ga voor meer informatie over Trusted Launch naar [Trusted Launch voor Azure virtual machines (preview)](../virtual-machines/trusted-launch.md).
+
+### <a name="secure-boot"></a>Secure Boot
+
+Beveiligd opstarten is een modus die door platform firmware wordt ondersteund en die uw firmware beveiligt tegen op malware gebaseerde rootkit-en opstart Kits. Deze modus staat alleen ondertekende besturings systemen en stuur Programma's toe om de computer op te starten. 
+
+### <a name="monitor-boot-integrity-using-remote-attestation"></a>Opstart integriteit controleren met externe Attestation
+
+Externe Attestation is een uitstekende manier om de status van uw Vm's te controleren. Externe Attestation controleert of gemeten opstart records aanwezig, authentiek en afkomstig zijn van de virtuele Trusted Platform Module (vTPM). Als status controle biedt het cryptografische zekerheid dat een platform op de juiste wijze is opgestart. 
+
+### <a name="vtpm"></a>vTPM
+
+Een vTPM is een gevirtualiseerde versie van een hardware-Trusted Platform Module (TPM), met een virtueel exemplaar van een TPM per VM. vTPM maakt externe Attestation mogelijk door de integriteits meting van de volledige opstart keten van de virtuele machine (UEFI, OS, System en stuur Programma's) uit te voeren. 
+
+We raden u aan om vTPM in te scha kelen voor het gebruik van externe Attestation op uw Vm's. Als vTPM is ingeschakeld, kunt u ook BitLocker-functionaliteit inschakelen, die versleuteling van een volledig volume biedt om gegevens te beveiligen. Alle functies die gebruikmaken van vTPM, resulteren in geheimen die gebonden zijn aan de specifieke virtuele machine. Wanneer gebruikers verbinding maken met de virtueel-bureaublad service van Windows in een gegroepeerd scenario, kunnen gebruikers worden omgeleid naar elke virtuele machine in de hostgroep. Afhankelijk van de manier waarop de functie is ontworpen, kan dit gevolgen hebben.
+
+>[!NOTE]
+>BitLocker mag niet worden gebruikt voor het versleutelen van de specifieke schijf waarop u de FSLogix-profiel gegevens opslaat.
+
+### <a name="virtualization-based-security"></a>Beveiliging op basis van virtualisatie
+
+Op basis van virtualisatie beveiliging (VBS) wordt de Hyper Visor gebruikt voor het maken en isoleren van een veilig gebied van geheugen dat niet toegankelijk is voor het besturings systeem. Hypervisor-Protected-code-integriteit (HVCI) en Windows Defender Credential Guard gebruiken VBS voor betere beveiliging tegen beveiligings problemen. 
+
+#### <a name="hypervisor-protected-code-integrity"></a>Code-integriteit Hypervisor-Protected
+
+HVCI is een krachtige systeem beperking die gebruikmaakt van VBS om Windows-kernelmodus-processen te beschermen tegen injectie en uitvoering van schadelijke of niet-geverifieerde code.
+
+#### <a name="windows-defender-credential-guard"></a>Windows Defender Credential Guard
+
+Windows Defender Credential Guard maakt gebruik van VBS om geheimen te isoleren en beveiligen, zodat alleen bevoegde systeem software deze kan openen. Hiermee wordt voor komen dat onbevoegden toegang krijgen tot deze geheimen en aanvallen op referentie diefstal, zoals Pass-the-hash-aanvallen.
+
+### <a name="deploy-trusted-launch-in-your-windows-virtual-desktop-environment"></a>Vertrouwde start implementeren in uw Windows Virtual Desktop-omgeving
+
+Windows Virtual Desktop biedt momenteel geen ondersteuning voor het automatisch configureren van een vertrouwde start tijdens het installatie proces van de hostgroep. Als u een vertrouwde start wilt gebruiken in uw Windows Virtual Desktop-omgeving, moet u de vertrouwde start normaal implementeren en de virtuele machine vervolgens hand matig toevoegen aan de gewenste hostgroep.
+
+## <a name="nested-virtualization"></a>Geneste virtualisatie
+
+De volgende besturings systemen ondersteunen het uitvoeren van geneste virtualisatie op virtuele Windows-Bureau bladen:
+
+- Windows Server 2016
+- Windows Server 2019
+- Windows 10 Enterprise
+- Windows 10 Enter prise multi-session.
 
 ## <a name="next-steps"></a>Volgende stappen
 

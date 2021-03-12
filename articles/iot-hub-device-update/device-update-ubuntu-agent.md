@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: ea9d893f825822638803394e678e6e68f57a32d9
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 245998fb7229c483fb7f664ea000b62abf07eda9
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102507293"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149780"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-package-agent-on-ubuntu-server-1804-x64"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de pakket agent op Ubuntu Server 18,04 x64
 
@@ -106,7 +106,7 @@ De volgende hand matige stappen voor het installeren en configureren van het app
 
 Voor het bijwerken van apparaten voor Azure IoT Hub-software pakketten gelden de volgende licentie voorwaarden:
   * [Update van het apparaat voor IoT Hub licentie](https://github.com/Azure/iot-hub-device-update/blob/main/LICENSE.md)
-  * [Delivery Optimization-client licentie](https://github.com/microsoft/do-client/blob/main/LICENSE.md)
+  * [Delivery Optimization-client licentie](https://github.com/microsoft/do-client/blob/main/LICENSE)
 
 Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en het gebruik van een pakket zijn uw acceptatie van deze voor waarden. Als u niet akkoord gaat met de licentie voorwaarden, mag u dat pakket niet gebruiken.
 

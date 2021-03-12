@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/12/2020
+ms.date: 03/03/2021
 ms.author: jeedes
-ms.openlocfilehash: f9e4af3330ecf5fbe161f7ba92ddf96eb04880a1
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 1996024d163a4bf7cfa741110038bb8db5b883e8
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728021"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632735"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-beyondtrust-remote-support"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met BeyondTrust Remote Support
 
@@ -51,7 +51,7 @@ Als u de integratie van BeyondTrust Remote Support in Azure Active Directory wil
 1. Typ in de sectie **Toevoegen uit de galerie** **BeyondTrust Remote Support** in het zoekvak:.
 1. Selecteer **BeyondTrust Remote Support** in het resultatenvenster en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-beyondtrust-remote-support"></a>Eenmalige aanmelding van Azure AD configureren en testen voor BeyondTrust Remote Support
+## <a name="configure-and-test-azure-ad-sso-for-beyondtrust-remote-support"></a>Azure AD SSO configureren en testen voor externe ondersteuning van BeyondTrust
 
 Configureer en test eenmalige aanmelding van Azure AD voor BeyondTrust Remote Support met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in BeyondTrust Remote Support.
 
@@ -76,14 +76,14 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<HOSTNAME>.bomgar.com/saml`
+    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<HOSTNAME>.bomgar.com`
 
-    b. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<HOSTNAME>.bomgar.com`
-
-    c. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<HOSTNAME>.bomgar.com/saml/sso`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<HOSTNAME>.bomgar.com/saml/sso`
+    
+    c. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<HOSTNAME>.bomgar.com/saml`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, de antwoord-URL en de aanmeldings-URL. Deze waarden worden verderop in de zelfstudie uitgelegd.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, antwoord-URL en aanmeldings-URL. Deze waarden worden verderop in de zelfstudie uitgelegd.
 
 1. Uw BeyondTrust Remote Support-toepassing verwacht de SAML-asserties in een specifieke indeling, waarvoor u aangepaste kenmerktoewijzingen moet toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -167,6 +167,10 @@ In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te
 
 ### <a name="create-beyondtrust-remote-support-test-user"></a>BeyondTrust Remote Support-testgebruiker maken
 
+In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in BeyondTrust Remote Support. BeyondTrust Remote Support ondersteunt just-in-time-gebruikers inrichting, dat standaard is ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in BeyondTrust-externe ondersteuning, wordt er na verificatie een nieuwe gemaakt.
+
+Volg de onderstaande procedure, die verplicht is voor het configureren van de BeyondTrust-externe ondersteuning.
+
 De instellingen voor het inrichten van gebruikers worden hier geconfigureerd. Voor de waarden die in deze sectie worden gebruikt, wordt verwezen vanuit de sectie **Gebruikerskenmerken en claims** sectie in Azure Portal. De waarden zijn geconfigureerd als de standaardwaarden die al worden geïmporteerd op het moment dat ze worden gemaakt, maar de waarde kan indien nodig worden aangepast.
 
 ![Schermopname van de instellingen voor het inrichten van de gebruiker, waar u gebruikerswaarden kunt configureren.](./media/bomgarremotesupport-tutorial/user-attribute.png)
@@ -174,7 +178,7 @@ De instellingen voor het inrichten van gebruikers worden hier geconfigureerd. Vo
 > [!NOTE]
 > Het groeps- en e-mailkenmerk zijn voor deze implementatie niet nodig. Als u Azure AD-groepen gebruikt en toewijst aan BeyondTrust Remote Support-groepsbeleid voor machtigingen, moet naar de object-id van de groep worden verwezen via de eigenschappen in Azure Portal. Vervolgens moeten ze in de sectie Beschikbare groepen worden geplaatst. Zodra dit is voltooid, kan de object-id/AD-groep nu aan een groepsbeleid voor machtigingen worden toegewezen.
 
-![Schermopname van de sectie 'IT' met het type lidmaatschap, de bron, het type en object-id.](./media/bomgarremotesupport-tutorial/config-user2.png)
+![Schermopname van de sectie 'IT' met het type lidmaatschap, de bron, het type en object-id.](./media/bomgarremotesupport-tutorial/config-user-2.png)
 
 ![Schermopname van de pagina 'Basisinstellingen' voor een groepsbeleid.](./media/bomgarremotesupport-tutorial/group-policy.png)
 

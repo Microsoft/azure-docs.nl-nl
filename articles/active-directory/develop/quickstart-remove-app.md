@@ -13,12 +13,12 @@ ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.openlocfilehash: a0543905f41abc9c21327159d63f7adaa5b025dc
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e04884c078bd9a5693ddcbc4e71470bb23e13d60
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101645888"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199797"
 ---
 # <a name="how-to-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Een toepassing verwijderen die bij het Microsoft Identity Platform is geregistreerd
 
@@ -47,7 +47,8 @@ Als u een toepassing wilt verwijderen, moet u worden vermeld als eigenaar van de
 1. Zoek en selecteer de **Azure Active Directory**. 
 1. Selecteer onder **beheren** de optie **app-registraties**  en selecteer de toepassing die u wilt configureren. Wanneer u de app hebt geselecteerd, ziet u de pagina **Overzicht**.
 1. Selecteer **Verwijderen** op de pagina **Overzicht**.
-1. Selecteer **Ja** om te bevestigen dat u de app wilt verwijderen.
+1. Lees de gevolgen voor het verwijderen.  Schakel het selectie vakje in als er onder in het deel venster een wordt weer gegeven.
+1. Selecteer **verwijderen** om te bevestigen dat u de app wilt verwijderen.
 
 ## <a name="remove-an-application-authored-by-another-organization"></a>Een toepassing verwijderen die is geschreven door een andere organisatie
 

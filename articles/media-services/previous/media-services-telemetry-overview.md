@@ -3,7 +3,7 @@ title: Azure Media Services telemetrie | Microsoft Docs
 description: Dit artikel bevat een overzicht van Microsoft Azure Media Services telemetrie.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 95c20ec4-c782-4063-8042-b79f95741d28
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/01/2019
-ms.author: juliako
-ms.openlocfilehash: 4bf9a96d7ffc3b939abe8cfb889c5bd49fee09cc
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.date: 3/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: b17b5901248056f6000710fa25d2ea1e9df2e2a5
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98694585"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103009084"
 ---
 # <a name="azure-media-services-telemetry"></a>Azure Media Services telemetrie  
 

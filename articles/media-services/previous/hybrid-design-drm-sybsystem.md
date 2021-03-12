@@ -3,7 +3,7 @@ title: Hybride ontwerp van DRM-subsysteem (en) met behulp van Azure Media Servic
 description: In dit onderwerp wordt het hybride ontwerp van DRM-subsysteem (en) beschreven met behulp van Azure Media Services.
 services: media-services
 documentationcenter: ''
-author: willzhan
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 18213fc1-74f5-4074-a32b-02846fe90601
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/31/2020
+ms.date: 03/10/2021
 ms.author: willzhan
 ms.reviewer: juliako
-ms.openlocfilehash: 1bf01e98e418edfe8f15043d16a199b276b71020
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a48e761c4fb74802c6b1db63884ee192446720a4
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266898"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103016267"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Hybride ontwerp van DRM-subsystemen
 
@@ -95,7 +95,7 @@ Via de configuratie van een leverings beleid voor assets kunt u de volgende kenm
 
 ## <a name="scenarios-and-samples"></a>Scenario's en voor beelden
 
-Op basis van de uitleg in de vorige sectie gebruiken de volgende vijf hybride scenario's de **Content key**verschillende configuratie combinaties voor het - **leverings beleid** voor de inhouds sleutel. de voor beelden in de laatste kolom volgen de tabel.
+Op basis van de uitleg in de vorige sectie gebruiken de volgende vijf hybride scenario's de verschillende configuratie combinaties voor het - **leverings beleid** voor de inhouds sleutel. de voor beelden in de laatste kolom volgen de tabel.
 
 |**Inhoud hosten & oorsprong**|**DRM-versleuteling**|**Levering van DRM-licentie**|**Inhouds sleutel configureren**|**Leverings beleid voor assets configureren**|**Voorbeeld**|
 |---|---|---|---|---|---|

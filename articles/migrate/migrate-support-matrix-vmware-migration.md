@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: fc3ba062f4995e975015d7c4db145ccde0c3f701
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cbb1db15eed53af1d0e4590e1b228e5e47680560
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101705208"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614918"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Ondersteuningsmatrix voor VMware-migratie
 
@@ -73,7 +73,7 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 **IPv6** | Wordt niet ondersteund.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
 **Gelijktijdige replicatie** | 500 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 500.
-**Automatische installatie van de Azure VM-agent (Windows-agent)** | Ondersteund voor Windows Server 2008 R2.
+**Automatische installatie van de Azure VM-agent (Windows-en Linux-agent)** | Ondersteund voor Windows Server 2008 R2. <br/> Ondersteund voor RHEL6, RHEL7, CentOS7, Ubuntu 14,04, Ubuntu 16,04, Ubuntu 18.04. Bekijk de lijst met [vereiste pakketten](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements)) voor deze Linux-besturings systemen.
 
 ### <a name="appliance-requirements-agentless"></a>Vereisten voor apparaten (zonder agent)
 

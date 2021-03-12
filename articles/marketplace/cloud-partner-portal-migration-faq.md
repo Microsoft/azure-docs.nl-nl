@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: 091feacceb510038786ae487c0895f9ff1e47aba
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: e071692a1c6fe423b048dab884164d9b3c98f1fd
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98880335"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102613609"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Veelgestelde vragen over overgang van de Cloud Partner-portal naar het partner centrum
 
@@ -22,7 +22,7 @@ De Cloud Partner-portal is overgegaan naar het partner centrum. Partner centrum 
 
 U kunt nu door gaan met zakendoen in Partner Center:
 
-| Gebied<img src="" width=200px> | Wijzigingen |
+| Gebied | Wijzigingen |
 | --- | --- |
 | Account | U hoeft geen nieuw partner centrum-account te maken. u kunt uw bestaande Cloud Partner-portal referenties gebruiken om u aan te melden bij het partner centrum, waar u nu uw account, gebruikers, machtigingen en facturering beheert. De gegevens voor de publicatie overeenkomst en het bedrijfs profiel worden gemigreerd naar uw nieuwe partner centrum-account, samen met alle informatie over het profiel voor uitbetaling, gebruikers accounts en machtigingen en actieve aanbiedingen. Meer informatie over [het beheren van uw commerciële Marketplace-account in Partner Center](partner-center-portal/manage-account.md). |
 | Aanbieding voor publicatie en aanbod beheer | Uw aanbiedings gegevens zijn verplaatst van de Cloud Partner-portal naar het partner centrum. U hebt nu toegang tot uw aanbiedingen in partner centrum. Dit biedt een verbeterde gebruikers ervaring en intuïtieve interface. Meer informatie over [het bijwerken van een bestaande aanbieding in de commerciële Marketplace](partner-center-portal/update-existing-offer.md). |
@@ -41,7 +41,7 @@ Nee, uw account wordt bewaard. Dit betekent dat als u een bestaande partner bent
 
 Hieronder vindt u partner Center-koppelingen voor pagina's die vaak worden gebruikt in de Cloud Partner-portal. Als u de Cloud Partner-portal koppelingen als blad wijzers hebt opgeslagen, moet u deze bijwerken.
 
-| Cloud Partner-portal pagina <img src="" width=100px>| Koppeling naar Cloud Partner-portal pagina | Koppeling naar de pagina partner centrum |
+| Cloud Partner-portal pagina | Koppeling naar Cloud Partner-portal pagina | Koppeling naar de pagina partner centrum |
 | --- | --- | --- |
 | Pagina voor Alle aanbiedingen | [https://cloudpartner.azure.com/#alloffers](https://cloudpartner.azure.com/#alloffers) | [https://partner.microsoft.com/dashboard/commercial-marketplace/overview](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) |
 | Pagina voor Alle uitgevers | [https://cloudpartner.azure.com/#publishers](https://cloudpartner.azure.com/#publishers) | [https://partner.microsoft.com/dashboard/account/v3/publishers/list](https://partner.microsoft.com/dashboard/account/v3/publishers/list) |
@@ -75,7 +75,7 @@ Alle aanbiedings typen die eerder worden ondersteund in de Cloud Partner-portal 
 
 Voor de aanbiedings typen die in Partner Center worden ondersteund, zijn alle aanbiedingen verplaatst, ongeacht hun status. de aanbiedingen concept, genoteerd en alleen voor beeld zijn ook verplaatst.
 
-| Type aanbieding <img src="" width=150px>| Verplaatst naar het partner centrum? <img src="" width=100px>| Volgende stappen |
+| Type aanbieding | Verplaatst naar het partner centrum? | Volgende stappen |
 | --- | --- | --- |
 | SaaS | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een SaaS-aanbieding voor de commerciële Marketplace](plan-saas-offer.md). |
 | Virtuele machine | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een aanbieding voor een virtuele machine](marketplace-virtual-machines.md). |
@@ -181,7 +181,7 @@ U kunt aanvragen om het [verkopen van een aanbieding](partner-center-portal/upda
 
 De Cloud Partner-portal-Api's zijn geïntegreerd met partner centrum en blijven werken. De overgang naar het partner centrum introduceert kleine wijzigingen. Raadpleeg de onderstaande tabel om te controleren of uw code blijft werken in het partner centrum.
 
-| API <img src="" width=100px>| Beschrijving wijziging | Impact |
+| API | Beschrijving wijziging | Impact |
 | --- | --- | --- |
 | POST publiceren, GoLive, annuleren | Voor gemigreerde aanbiedingen heeft de reactie header een andere indeling, maar blijft op dezelfde manier werken, waarbij een relatief pad wordt opgegeven om de bewerkings status op te halen. | Bij het verzenden van een van de bijbehorende POST-aanvragen voor een aanbieding, heeft de locatie header een van de twee indelingen, afhankelijk van de migratie status van de aanbieding: <ul><li>Niet-gemigreerde aanbiedingen: `/api/operations/{PublisherId}${offerId}$2$preview?api-version=2017-10-31`</li><li>Gemigreerde aanbiedingen: `/api/publishers/{PublisherId}/offers/{offereId}/operations/408a4835-0000-1000-0000-000000000000?api-version=2017-10-31`</li></ul>|
 | GET-bewerking | Voor aanbiedingen waarvoor eerder een veld met de meldings-e in het antwoord wordt ondersteund, wordt dit veld afgeschaft en wordt het niet langer geretourneerd voor gemigreerde aanbiedingen. | Voor gemigreerde aanbiedingen worden er geen meldingen meer verzonden naar de lijst met e-mail berichten die in de aanvragen zijn opgegeven. In plaats daarvan wordt de API-service uitgelijnd met het e-mail proces voor meldingen in het partner centrum om e-mail berichten te verzenden. In het bijzonder worden meldingen van de voortgang van de bewerking verzonden naar het e-mail adres dat is ingesteld in het gedeelte contact gegevens van de verkoper van uw account instellingen in partner centrum.<br><br>Zorg ervoor dat het e-mail adres dat is ingesteld in het gedeelte contact gegevens van de verkoper in de [account instellingen](https://partner.microsoft.com/dashboard/account/management) in Partner Center juist is voor het ontvangen van meldingen. |

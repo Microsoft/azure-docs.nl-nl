@@ -1,27 +1,27 @@
 ---
-title: Defender voor IoT micro agent installeren
+title: Defender installeren voor IoT micro agent (preview)
 titleSuffix: Azure Defender for IoT
 description: Meer informatie over het installeren en verifiëren van de Defender micro agent.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 3/3/2021
+ms.date: 3/9/2021
 ms.topic: quickstart
 ms.service: azure
-ms.openlocfilehash: ccf28c47e2e1438a141e2497da70d32c1832ddb9
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 8984b1dbcb9a6aca6d313d8195a75093ae421bbd
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120433"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611666"
 ---
-# <a name="install-defender-for-iot-micro-agent"></a>Defender voor IoT micro agent installeren 
+# <a name="install-defender-for-iot-micro-agent-preview"></a>Defender installeren voor IoT micro agent (preview)
 
 Dit artikel bevat een uitleg over het installeren en verifiëren van de Defender micro agent.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de Defender voor IoT-module installeert, moet u een module-ID maken in de IoT Hub. Zie voor meer informatie over het maken van een module-identiteit [een Defender IOT micro Agent-module maken, twee ](quickstart-create-micro-agent-module-twin.md).
+Voordat u de Defender voor IoT-module installeert, moet u een module-ID maken in de IoT Hub. Zie [een Defender IOT micro Agent-module maken (preview)](quickstart-create-micro-agent-module-twin.md)voor meer informatie over het maken van een module-identiteit.
 
 ## <a name="install-the-package"></a>Het pakket installeren
 
@@ -49,13 +49,37 @@ sudo apt-get install defender-iot-micro-agent
 
 De twee opties die worden gebruikt voor het verifiëren van de Defender voor IoT micro agent zijn: 
 
-- Verbindings reeks. 
+- Module-identiteits connection string. 
 
 - Certificaat.
 
-### <a name="authenticate-using-a-connection-string"></a>Verifiëren met een verbindingsreeks
+### <a name="authenticate-using-a-module-identity-connection-string"></a>Verifiëren met behulp van een module-id connection string
 
-Verificatie met behulp van een connection string:
+Zorg ervoor dat aan de [vereisten](#prerequisites) voor dit artikel wordt voldaan en dat u een module-identiteit maakt voordat u deze stappen uitvoert. 
+
+#### <a name="get-the-module-identity-connection-string"></a>De module-identiteit ophalen connection string
+
+De module-identiteits connection string ophalen uit de IoT Hub: 
+
+1. Ga naar het IoT Hub en selecteer uw hub.
+
+1. Selecteer in het menu links, onder de sectie **Explorers** , IOT- **apparaten**.
+
+   :::image type="content" source="media/quickstart-standalone-agent-binary-installation/iot-devices.png" alt-text="Selecteer IoT-apparaten in het menu aan de linkerkant.":::
+
+1. Selecteer een apparaat in de lijst apparaat-ID om de **detail** pagina van het apparaat weer te geven.
+
+1. Selecteer het tabblad **module-identiteiten**   en selecteer vervolgens de module **DefenderIotMicroAgent**   in de lijst met module-identiteiten die zijn gekoppeld aan het apparaat.
+
+   :::image type="content" source="media/quickstart-standalone-agent-binary-installation/module-identities.png" alt-text="Selecteer het tabblad module-identiteiten.":::
+
+1. Kopieer de primaire sleutel op de pagina **id-Details van module** door de knop **kopiëren** te selecteren.
+
+   :::image type="content" source="media/quickstart-standalone-agent-binary-installation/copy-button.png" alt-text="Selecteer de Kopieer knop om de primaire sleutel te kopiëren.":::
+
+#### <a name="configure-authentication-using-a-module-identity-connection-string"></a>Verificatie configureren met behulp van een module-id connection string
+
+De agent configureren om te verifiëren met behulp van een module-id connection string:
 
 1. Plaats een bestand `connection_string.txt` met de naam met de Connection String gecodeerd in UTF-8 in het pad van de map Defender-agent `/var/defender_iot_micro_agent` door de volgende opdracht in te voeren:
 
@@ -63,7 +87,7 @@ Verificatie met behulp van een connection string:
     sudo bash -c 'echo "<connection string" > /var/defender_iot_micro_agent/connection_string.txt' 
     ```
 
-    De `connection_string.txt` moet zich nu bevinden op de volgende locatie van het pad `/var/defender_iot_micro_agent/connection_string.txt` .
+    De `connection_string.txt` moet zich bevinden op de volgende locatie van het pad `/var/defender_iot_micro_agent/connection_string.txt` .
 
 1. Start de service opnieuw met de volgende opdracht:  
 

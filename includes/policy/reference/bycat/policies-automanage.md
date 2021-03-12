@@ -2,16 +2,16 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 83e00b96897e973641c5e5c9175d2520bb2a4600
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: d110f6b64bcd7f297bca77e2f8552261c709d975
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102429173"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102610779"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Automanage inschakelen: best practices voor virtuele Azure-machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F270610db-8c04-438a-a739-e8e6745b22d3) |Met Automanage worden virtuele machines geregistreerd, geconfigureerd en bewaakt volgens de best practices voor Azure-VM's. Gebruik dit beleid om Automanage op uw geselecteerde bereik toe te passen. |deployIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automanage/Automanage_Windows_Deploy.json) |
+|[Virtuele machines configureren voor het onboarden van Azure automanage](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F270610db-8c04-438a-a739-e8e6745b22d3) |Met Azure automanage worden virtuele machines geregistreerd, geconfigureerd en bewaakt met best practice zoals gedefinieerd in het Microsoft Cloud-acceptatie raamwerk voor Azure. Gebruik dit beleid om Automanage op uw geselecteerde bereik toe te passen. |DeployIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Automanage/Automanage_Deploy.json) |

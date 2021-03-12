@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 1ca526b7ecbe20a54ec115521cdfbc93c713e0da
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 0acb882410d103cf6f6c34bbecf2006094437b04
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360051"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634682"
 ---
 # <a name="input-metadata"></a>Invoermetagegevens
 
@@ -39,9 +39,7 @@ Aan het einde van dit artikel vindt u het voor beeld van een JSON-schema.
 Bevat een verzameling AssetFile-elementen voor de coderings taak.  
 
 > [!NOTE]
-> De volgende vier onderliggende elementen moeten in een reeks worden weer gegeven.  
-> 
-> 
+> De volgende vier onderliggende elementen moeten in een reeks worden weer gegeven.
 
 | Naam  | Beschrijving |
 | --- | --- | 
@@ -67,7 +65,7 @@ Bevat een verzameling AssetFile-elementen voor de coderings taak.
 
 | Naam | Beschrijving |
 | --- | --- |
-| **FourCC**<br />Vereist |Een code van de video-codec die wordt gerapporteerd door ffmpeg.<br /><br />Voorbeeld: `"FourCC": "avc1"` |
+| **FourCC**<br />Vereist |Een code van de video-codec die wordt gerapporteerd door ffmpeg.<br /><br />Voorbeeld: `"FourCC": "avc1" | "hev1" | "hvc1"` |
 | **Profiel** |Profiel van video spoor. <br /><br />Voorbeeld: `"Profile": "Main"`|
 | **Afvlakking** |Niveau van de video track. <br /><br />Voorbeeld: `"Level": "3.2"`|
 | **PixelFormat** |Pixel indeling van video track. <br /><br />Voorbeeld: `"PixelFormat": "yuv420p"`|
@@ -82,9 +80,9 @@ Bevat een verzameling AssetFile-elementen voor de coderings taak.
 | **HasBFrames** |Video track van het aantal B-frames. <br /><br />Voorbeeld: `"HasBFrames": 2`|
 | **Metagegevens** |Algemene sleutel/waarde-teken reeksen die kunnen worden gebruikt voor het opslaan van verschillende gegevens. <br />Bekijk het volledige voor beeld aan het einde van het artikel. |
 | **Id**<br />Vereist |Op nul gebaseerde index van dit audio-of video spoor.<br /><br /> Deze **id** is niet noodzakelijkerwijs de TrackID die in een MP4-bestand wordt gebruikt. <br /><br />Voorbeeld: `"Id": 2`|
-| **Videocodec** |Video track-codec teken reeks. <br /><br />Voorbeeld: `"Codec": "h264"`|
+| **Videocodec** |Video track-codec teken reeks. <br /><br />Voorbeeld: `"Codec": "h264 | hev1"`|
 | **CodecLongName** |De lange naam van de audio-of video track-codec. <br /><br />Voorbeeld: `"CodecLongName": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10"`|
-| **Videocodec** |Video track-codec teken reeks. <br /><br />Voorbeeld: `"Codec": "h264"`|
+| **Videocodec** |Video track-codec teken reeks. <br /><br />Voorbeeld: `"Codec": "h264 | hev1"`|
 | **Negatieve**<br />Vereist |Tijd basis.<br /><br />Voorbeeld: `"TimeBase": "1/30000"`|
 | **NumberOfFrames** |Aantal frames (aanwezig voor video tracks). <br /><br />Voorbeeld: `"NumberOfFrames": 2107`|
 | **StartTime** |Start tijd bijhouden.<br /><br />Voorbeeld: `"StartTime": "PT0.033S"` |

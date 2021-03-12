@@ -180,7 +180,7 @@
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
-      href: ../iot-fundamentals/iot-support-help.md
+      href: ../iot-fundamentals/iot-support-help.md?toc=/azure/time-series-insights/toc.json&bc=/azure/time-series-insights/breadcrumb/toc.json
     - name: Aanvragen van klantgegevens
       href: time-series-insights-customer-data-requests.md
     - name: Bronnen voor ontwikkelaars

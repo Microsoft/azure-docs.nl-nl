@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: d8ef616ef059424846d5c42a91262881b8f6d30b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 4d75e60d0e497dcdd2aa121f8da73f11a7e2af5b
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101701804"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015213"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -206,7 +206,7 @@ Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegan
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
-|Anders|`---`|`---`|
+|Overige|`---`|`---`|
 
 Bestanden ontvangen niet de X-bit omdat deze niet van toepassing is op bestanden in een alleen-opslag systeem. 
 
@@ -285,7 +285,7 @@ Toewijzingen van Azure-rollen nemen toe. Toewijzingen stroomt van de resources v
 
 ### <a name="does-data-lake-storage-gen2-support-inheritance-of-acls"></a>Ondersteunt Data Lake Storage Gen2 overname van Acl's?
 
-Standaard-Acl's kunnen worden gebruikt om Acl's in te stellen voor nieuwe onderliggende submappen en bestanden die zijn gemaakt in de bovenliggende map. Als u Acl's voor bestaande onderliggende items wilt bijwerken, moet u de Acl's voor de gewenste Directory hiërarchie recursief toevoegen, bijwerken of verwijderen. Zie [acl's (Access Control Lists) recursief instellen voor Azure data Lake Storage Gen2](#set-access-control-lists)voor meer informatie. 
+Standaard-Acl's kunnen worden gebruikt om Acl's in te stellen voor nieuwe onderliggende submappen en bestanden die zijn gemaakt in de bovenliggende map. Als u Acl's voor bestaande onderliggende items wilt bijwerken, moet u de Acl's voor de gewenste Directory hiërarchie recursief toevoegen, bijwerken of verwijderen. Zie de sectie [acl's instellen](#set-access-control-lists) in dit artikel voor meer informatie. 
 
 ### <a name="which-permissions-are-required-to-recursively-delete-a-directory-and-its-contents"></a>Welke machtigingen zijn vereist voor het recursief verwijderen van een map en de inhoud ervan?
 

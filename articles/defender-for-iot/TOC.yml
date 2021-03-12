@@ -4,13 +4,13 @@
   displayName: 'IoT, OT, getting started'
   href: overview.md
   items:
+    - name: Wat is nieuw?
+      href: release-notes.md
     - name: Architectuur van oplossing zonder agent
       displayName: 'deployment, where to deploy'
       href: architecture.md
     - name: Architectuur van oplossingen op basis van agent
       href: architecture-agent-based.md
-- name: Wat is nieuw?
-  href: release-notes.md
 - name: Snelstartgidsen
   expanded: true
   items:
@@ -111,13 +111,13 @@
         - name: Uw netwerk voorbereiden
           items:
             - name: Vereiste apparaten identificeren
-              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, deployment'
               href: how-to-identify-required-appliances.md
+              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, deployment, DL20, EL300, R340, enterprise, SMB, corporate'
             - name: Uw netwerk instellen
               displayName: 'passive, browsers, network access, TAP, switch, mirroring, firewall, SPAN, monitoring, tuning'
               href: how-to-set-up-your-network.md
             - name: Software installeren
-              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, install'
+              displayName: 'virtual, Dell, HPE, SMB, certified, hardware, port mirroring, ESXi, DL20, EL300, R340,enterprise, SMB, corporate'
               href: how-to-install-software.md
         - name: Uw sensoren voorbereiden
           items:
@@ -155,8 +155,8 @@
         - name: Sensoren in de cloud beheren
           href: how-to-manage-sensors-on-the-cloud.md
         - name: De on-premises beheerconsole beheren
-          displayName: 'upgrade, activation, certificate, software update, backup, restore, proxy, password recovery'
           href: how-to-manage-the-on-premises-management-console.md
+          displayName: 'mail, SMTP, activation, certificate, software update, backup, restore, proxy, password recovery'
         - name: Werken met bedreigingsinformatiepakketten
           href: how-to-work-with-threat-intelligence-packages.md
         - name: Werken met informatie over de inventaris van apparaten
@@ -295,17 +295,12 @@
             - name: Een apparaat onderzoeken
               displayName: 'access, data, kql, ports, logins, process'
               href: how-to-investigate-device.md
-- name: Problemen oplossen
-  items:
-    - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
-      displayName: 'service status, review logs'
-      href: troubleshoot-defender-micro-agent.md
-- name: Functie ondersteuning en buiten gebruik stellen
-  items:
-    - name: Functie ondersteuning en buiten gebruik stellen
-      displayName: 'C, C#, deprecation, support'
-      href: edge-security-module-deprecation.md
-- name: Verwijzingen
+    - name: Problemen oplossen
+      items:
+        - name: Oplossen van problemen met micro agent voor Defender IoT (preview-versie)
+          displayName: 'service status, review logs'
+          href: troubleshoot-defender-micro-agent.md
+- name: Naslaginformatie
   items:
     - name: Oplossing zonder agent voor organisaties
       items:
@@ -334,7 +329,12 @@
           href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
     - name: Defender for IoT-woordenlijst
       href: references-defender-for-iot-glossary.md
-- name: Resources
+    - name: Functie ondersteuning en buiten gebruik stellen
+      items:
+        - name: Functie ondersteuning en buiten gebruik stellen
+          displayName: 'C, C#, deprecation, support'
+          href: edge-security-module-deprecation.md
+- name: Resource
   items:
     - name: Oplossing met agent voor apparaatbouwer
       items:

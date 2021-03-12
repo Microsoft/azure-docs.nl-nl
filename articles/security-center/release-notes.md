@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
-ms.date: 03/04/2021
+ms.date: 03/10/2021
 ms.author: memildin
-ms.openlocfilehash: da2201931c92939029724b1086589803845109a7
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 7080f79ca85a401ddcd3d421bb4a0292994508dd
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102439626"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636671"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -36,6 +36,7 @@ De updates in maart zijn onder andere:
 - [Azure Monitor werkmappen die zijn geïntegreerd in Security Center en drie sjablonen](#azure-monitor-workbooks-integrated-into-security-center-and-three-templates-provided)
 - [Het dash board nalevings beleid bevat nu Azure audit rapporten (preview-versie)](#regulatory-compliance-dashboard-now-includes-azure-audit-reports-preview)
 - [Updates voor het beleid voor het implementeren van werk stroom automatisering](#updates-to-the-policies-for-deploying-workflow-automation)
+- [Twee oudere aanbevelingen schrijven gegevens niet meer rechtstreeks naar Azure-activiteiten logboek](#two-legacy-recommendations-no-longer-write-data-directly-to-azure-activity-log)
 
 
 ### <a name="azure-firewall-management-integrated-into-security-center"></a>Azure Firewall-beheer geïntegreerd in Security Center
@@ -113,6 +114,19 @@ Er zijn twee updates voor de functies van deze beleids regels:
 Aan de slag met [sjablonen voor werkstroomautomatisering](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
 
 Meer informatie over het [automatiseren van reacties op Security Center triggers](workflow-automation.md).
+
+
+### <a name="two-legacy-recommendations-no-longer-write-data-directly-to-azure-activity-log"></a>Twee oudere aanbevelingen schrijven gegevens niet meer rechtstreeks naar Azure-activiteiten logboek 
+
+Security Center geeft de gegevens voor bijna alle beveiligings aanbevelingen door aan Azure Advisor die op zijn beurt deze naar het [Azure-activiteiten logboek](../azure-monitor/essentials/activity-log.md)schrijven.
+
+Voor twee aanbevelingen worden de gegevens tegelijkertijd rechtstreeks naar het Azure-activiteiten logboek geschreven. Met deze wijziging Security Center stopt met het schrijven van gegevens voor deze verouderde beveiligings aanbevelingen rechtstreeks in het activiteiten logboek. In plaats daarvan exporteren we de gegevens naar Azure Advisor voor alle andere aanbevelingen.
+
+De twee oudere aanbevelingen zijn:
+- Statusproblemen met eindpuntbescherming moeten worden opgelost voor uw machines
+- Beveiligingsproblemen in de beveiligingsconfiguratie op uw computers moeten worden hersteld
+
+Als u toegang hebt tot informatie over deze twee aanbevelingen in het activiteiten logboek ' aanbeveling van het type TaskDiscovery ', is dit niet meer beschikbaar.
 
 
 

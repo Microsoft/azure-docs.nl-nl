@@ -475,8 +475,6 @@
           items:
             - name: Metrische waarschuwingen beheren
               href: alerts/alerts-metric.md
-            - name: Beschikbaarheid
-              href: app/monitor-web-app-availability.md
             - name: Dynamische drempels gebruiken
               href: alerts/alerts-dynamic-thresholds.md
             - name: Enkele waarschuwingen voor veel tijdreeksen

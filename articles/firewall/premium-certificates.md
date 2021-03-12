@@ -7,12 +7,12 @@ services: firewall
 ms.topic: conceptual
 ms.date: 03/09/2021
 ms.author: victorh
-ms.openlocfilehash: 621bf6138e4336c63ca137a6a8c54f77a4a99d61
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 47ebc752dedd72bbdedc02908911f1686584acda
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102520282"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615496"
 ---
 # <a name="azure-firewall-premium-preview-certificates"></a>Preview-certificaten voor Azure Firewall Premium 
 
@@ -111,7 +111,8 @@ De scripts genereren de volgende bestanden:
 
 > [!IMPORTANT]
 > rootCA. key moet worden opgeslagen op een veilige offline locatie. De scripts genereren een certificaat met een geldigheid van 1024 dagen.
-
+> De scripts vereisen openssl binaire bestanden die zijn geïnstalleerd op uw lokale machine. Zie voor meer informatie https://www.openssl.org/
+> 
 Nadat de certificaten zijn gemaakt, implementeert u deze op de volgende locaties:
 - rootCA. CRT-implementeren op eindpunt computers (alleen openbaar certificaat).
 - interCA. pfx: importeren als certificaat op een Key Vault en toewijzen aan het firewall beleid.

@@ -3,7 +3,7 @@ title: Azure Media Services telemetrie configureren met .NET | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de Azure Media Services telemetrie gebruikt met behulp van .NET SDK.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: f8f55e37-0714-49ea-bf4a-e6c1319bec44
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 263bf1cd2a7e2a37a1c4fae172ce4f66b1e59b5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6bd7b472d8f42bd7872aeacf8b78aac8b249f4bd
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89265977"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103013726"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-net"></a>Azure Media Services telemetrie configureren met .NET
 

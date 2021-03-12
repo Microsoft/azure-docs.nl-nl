@@ -1,17 +1,17 @@
 ---
 title: Client fout codes voor het bijwerken van het apparaat voor Azure IoT Hub | Microsoft Docs
 description: Dit document bevat een tabel met client fout codes voor diverse onderdelen voor het bijwerken van apparaten.
-author: lichris
+author: chrisjlin
 ms.author: lichris
 ms.date: 2/18/2021
 ms.topic: reference
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 5251d0cb09e40305d1efd89c31d3af0fa36ad385
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: dbdddc7cee0c3664a83501ba619a38e1cc44e1f3
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101662669"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200340"
 ---
 # <a name="device-update-for-iot-hub-error-codes"></a>Update van het apparaat voor IoT Hub fout codes
 
@@ -59,26 +59,19 @@ De niet-ondertekende hex-weer gave van `-536870781` is `FFFFFFFF E0000083` .
 ## <a name="delivery-optimization-agent"></a>Delivery Optimization agent
 De volgende tabel bevat de fout codes die betrekking hebben op het onderdeel Delivery Optimization (DO) van de client voor het bijwerken van het apparaat. Het onderdeel DO is verantwoordelijk voor het downloaden van update-inhoud naar het IoT-apparaat.
 
-De fout code ' kan worden verkregen door de uitzonde ringen die worden gegenereerd als reactie op een API-aanroep te controleren.
+De fout code ' kan worden verkregen door de uitzonde ringen die worden gegenereerd als reactie op een API-aanroep te controleren. Alle DO-fout codes kunnen worden geïdentificeerd met het voor voegsel 0x80D0.
 
 | Foutcode  | Teken reeks fout                       | Type                 | Beschrijving |
 |-------------|------------------------------------|----------------------|-------------|
 | 0x80D01001L | DO_E_NO_SERVICE                    | n.v.t.                  | De service kan niet worden geleverd met de leverings optimalisatie |
 | 0x80D02002L | DO_E_DOWNLOAD_NO_PROGRESS          | Download taak         | Het downloaden van een bestand zag geen voortgang binnen de gedefinieerde periode |
-| 0x80D02003L | DO_E_JOB_NOT_FOUND                 | Download taak         | Taak is niet gevonden |
-| 0x80D02005L | DO_E_NO_DOWNLOADS                  | Download taak         | Er zijn momenteel geen down loads |
-| 0x80D0200CL | DO_E_JOB_TOO_OLD                   | Download taak         | De taak is niet voltooid of geannuleerd vóór het bereiken van de drempel waarde voor de maximale leeftijd |
 | 0x80D02011L | DO_E_UNKNOWN_PROPERTY_ID           | Download taak         | SetProperty () of GetProperty () aangeroepen met een onbekende eigenschaps-ID |
 | 0x80D02012L | DO_E_READ_ONLY_PROPERTY            | Download taak         | Kan SetProperty () niet aanroepen voor een alleen-lezen eigenschap |
 | 0x80D02013L | DO_E_INVALID_STATE                 | Download taak         | De aangevraagde actie is niet toegestaan in de huidige taak status. De taak is mogelijk geannuleerd of is overgedragen. De status is nu alleen-lezen. |
 | 0x80D02018L | DO_E_FILE_DOWNLOADSINK_UNSPECIFIED | Download taak         | Kan het downloaden niet starten omdat er geen Sink voor downloaden (lokaal bestand of stream-Interface) is opgegeven |
 | 0x80D02200L | DO_E_DOWNLOAD_NO_URI               | IDODownload-interface| Het downloaden is gestart zonder een URI op te geven |
 | 0x80D03805L | DO_E_BLOCKED_BY_NO_NETWORK         | Tijdelijke omstandigheden | Downloaden onderbroken wegens verlies van netwerk verbinding |
-| 0x80D05001L | DO_E_HTTP_BLOCKSIZE_MISMATCH       | HTTP                 | HTTP-server heeft een antwoord geretourneerd met een gegevens grootte die niet gelijk is aan wat is aangevraagd |
-| 0x80D05002L | DO_E_HTTP_CERT_VALIDATION          | HTTP                 | Validatie van het HTTP-server certificaat is mislukt |
-| 0x80D05010L | DO_E_INVALID_RANGE                 | HTTP                 | Het opgegeven bereik van de byte is ongeldig |
-| 0x80D05011L | DO_E_INSUFFICIENT_RANGE_SUPPORT    | HTTP                 | De server biedt geen ondersteuning voor het benodigde HTTP-protocol. Voor Delivery Optimization (DO) moet de server de protocol header Range ondersteunen |
-| 0x80D05012L | DO_E_OVERLAPPING_RANGES            | HTTP                 | De lijst met byte bereiken bevat overlappende bereiken die niet worden ondersteund |
+
 ## <a name="device-update-content-service"></a>Inhouds service voor het bijwerken van apparaten
 De volgende tabel bevat de fout codes die betrekking hebben op het onderdeel content service van de service voor het bijwerken van apparaten. Het onderdeel content service is verantwoordelijk voor het verwerken van het importeren van update-inhoud.
 

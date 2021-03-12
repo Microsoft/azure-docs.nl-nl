@@ -4,17 +4,17 @@ description: Meer informatie over het maken van een installatie kopie van een mo
 author: cynthn
 ms.topic: how-to
 ms.service: virtual-machines
-ms.subservice: imaging
+ms.subservice: shared-image-gallery
 ms.workload: infrastructure
 ms.date: 06/30/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: f4ca28efce28933eed9be5cca7bd412f2d9505aa
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 70ef194ab7f7403f31ad431eba25db5f71dfb580
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98679531"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556900"
 ---
 # <a name="create-an-image-from-a-managed-disk-or-snapshot-in-a-shared-image-gallery-using-powershell"></a>Een installatie kopie maken van een beheerde schijf of moment opname in een galerie met gedeelde afbeeldingen met behulp van Power shell
 

@@ -175,8 +175,6 @@
               href: iot-hub-mqtt-5-reference.md
         - name: AMQP-ondersteuning
           href: iot-hub-amqp-support.md
-        - name: Woordenlijst
-          href: iot-hub-devguide-glossary.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn
@@ -497,6 +495,8 @@
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-hub/toc.json&bc=/azure/iot-hub/breadcrumb/toc.json
+    - name: IoT-woorden lijst
+      href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-hub/toc.json&bc=/azure/iot-hub/breadcrumb/toc.json
     - name: Azure IoT-services
       items:
         - name: IoT Hub

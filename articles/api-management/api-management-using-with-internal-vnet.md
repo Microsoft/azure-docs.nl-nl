@@ -12,14 +12,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/31/2019
+ms.date: 03/09/2021
 ms.author: apimpm
-ms.openlocfilehash: 0832c975ecb410b97a24c975f9fc0f4799120abd
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 10154f496d76ce6b9eb19d610fdff8d7a4023c2d
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145511"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565951"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Azure API Management-service gebruiken met een intern virtueel netwerk
 Met Azure Virtual Networks kunnen Azure API Management Api's beheren die niet toegankelijk zijn via internet. Er zijn een aantal VPN-technologieën beschikbaar om verbinding te maken. API Management kan in twee hoofd modi in een virtueel netwerk worden geïmplementeerd:
@@ -43,11 +43,11 @@ Met API Management in de interne modus kunt u de volgende scenario's uitvoeren:
 
 Voor het uitvoeren van de stappen die in dit artikel worden beschreven, hebt u het volgende nodig:
 
-+ **Een actief Azure-abonnement** .
++ **Een actief Azure-abonnement**.
 
     [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-+ **Een Azure API Management-exemplaar** . Zie [een Azure API Management-exemplaar maken](get-started-create-service-instance.md)voor meer informatie.
++ **Een Azure API Management-exemplaar**. Zie [een Azure API Management-exemplaar maken](get-started-create-service-instance.md)voor meer informatie.
 + Wanneer een API Management-service in een virtueel netwerk wordt geïmplementeerd, wordt een [lijst met poorten](./api-management-using-with-vnet.md#required-ports) gebruikt en moet deze worden geopend. 
 
 ## <a name="creating-an-api-management-in-an-internal-virtual-network"></a><a name="enable-vpn"> </a>Een API Management in een intern virtueel netwerk maken
@@ -56,25 +56,25 @@ De API Management-service in een intern virtueel netwerk wordt gehost achter een
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Een virtuele netwerk verbinding inschakelen met behulp van de Azure Portal
 
 1. Blader naar uw Azure API Management-exemplaar in het [Azure Portal](https://portal.azure.com/).
-2. Selecteer **virtueel netwerk** .
+2. Selecteer **virtueel netwerk**.
 3. Configureer het API Management-exemplaar dat in het virtuele netwerk moet worden geïmplementeerd.
 
     ![Menu voor het instellen van een Azure-API Management in een intern virtueel netwerk][api-management-using-internal-vnet-menu]
 
-4. Selecteer **Opslaan** .
+4. Selecteer **Opslaan**.
 
 Nadat de implementatie is voltooid, ziet u het **persoonlijke** virtuele IP-adres en het **open bare** virtuele IP-adres van uw API Management-service op de Blade overzicht. Het **persoonlijke** virtuele IP-adres is een IP-adres met taak verdeling vanuit het API Management overgedragen subnet waarover `gateway` , `portal` `management` en `scm` eind punten toegankelijk zijn. Het **open bare** virtuele IP-adres wordt **alleen** gebruikt voor controle vlak verkeer naar `management` het eind punt via poort 3443 en kan worden vergrendeld op de [ApiManagement][ServiceTags] servicetag.
 
 ![API Management dash board met een intern virtueel netwerk geconfigureerd][api-management-internal-vnet-dashboard]
 
 > [!NOTE]
-> De test console die beschikbaar is in azure Portal, werkt niet voor **intern** geïmplementeerde Services, omdat de gateway-URL niet is geregistreerd op de open bare DNS-server. U moet in plaats daarvan de test console gebruiken die is opgenomen in de **ontwikkelaars Portal** .
+> De test console die beschikbaar is in azure Portal, werkt niet voor **intern** geïmplementeerde Services, omdat de gateway-URL niet is geregistreerd op de open bare DNS-server. U moet in plaats daarvan de test console gebruiken die is opgenomen in de **ontwikkelaars Portal**.
 
 ### <a name="deploy-api-management-into-virtual-network"></a><a name="deploy-apim-internal-vnet"> </a>API Management implementeren in Virtual Network
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-api-management-create-with-internal-vnet%2Fazuredeploy.json)
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)] 
 
 U kunt ook virtuele netwerk connectiviteit inschakelen met behulp van Power shell-cmdlets.
 
@@ -83,7 +83,7 @@ U kunt ook virtuele netwerk connectiviteit inschakelen met behulp van Power shel
 * Een bestaande implementatie van een API Management-service in een virtueel netwerk bijwerken: gebruik de cmdlet [Update-AzApiManagementRegion](/powershell/module/az.apimanagement/update-azapimanagementregion) om een bestaande API Management service in een virtueel netwerk te verplaatsen en deze te configureren voor het gebruik van het interne virtuele-netwerk type.
 
 ## <a name="dns-configuration"></a><a name="apim-dns-configuration"></a>DNS-configuratie
-Wanneer API Management zich in de modus Extern virtueel netwerk bevindt, wordt de DNS beheerd door Azure. Voor interne virtuele netwerk modus moet u uw eigen DNS beheren.
+Wanneer API Management zich in de modus Extern virtueel netwerk bevindt, wordt de DNS beheerd door Azure. Voor interne virtuele netwerk modus moet u uw eigen DNS beheren. Het configureren van een Azure DNS privé zone en koppelen aan het virtuele netwerk API Management service is geïmplementeerd in is de aanbevolen optie.  Klik [hier](../dns/private-dns-getstarted-portal.md) voor meer informatie over het instellen van een privé zone in azure DNS.
 
 > [!NOTE]
 > API Management-service luistert niet naar aanvragen die afkomstig zijn van IP-adressen. Deze reageert alleen op aanvragen voor de hostnaam die is geconfigureerd op de service-eind punten. Deze eind punten omvatten gateway, het Azure Portal en de ontwikkelaars Portal, het direct beheer eindpunt en git.
@@ -124,7 +124,7 @@ Als u een aangepaste DNS-server in een virtueel netwerk gebruikt, kunt u ook een
 
 2. Vervolgens kunt u in uw DNS-server records maken voor toegang tot de eind punten die alleen toegankelijk zijn vanuit uw virtuele netwerk.
 
-## <a name="routing"></a><a name="routing"> </a> Route ring
+## <a name="routing"></a><a name="routing"></a> Route ring
 
 * Een *privé* -IP-adres met gelijke taak verdeling van het subnet-bereik wordt gereserveerd en wordt gebruikt voor toegang tot de API Management service-eind punten vanuit het virtuele netwerk. Dit *privé* -IP-adres bevindt zich op de Blade overzicht voor de service in de Azure Portal. Dit adres moet worden geregistreerd bij de DNS-servers die worden gebruikt door het virtuele netwerk.
 * Een *openbaar* IP-adres (VIP) met gelijke taak verdeling wordt ook gereserveerd om toegang te bieden tot het beheer service-eind punt via poort 3443. Dit *open bare* IP-adres bevindt zich op de Blade overzicht voor de service in de Azure Portal. Het *open bare* IP-adres wordt alleen gebruikt voor het beheer van het verkeer naar het `management` eind punt via poort 3443 en kan worden vergrendeld op de [ApiManagement][ServiceTags] servicetag.

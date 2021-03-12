@@ -3,12 +3,12 @@ title: Query's uitvoeren op de Knowledge Base-QnA Maker
 description: Een Knowledge Base moet worden gepubliceerd. Zodra de Knowledge Base is gepubliceerd, wordt deze in de runtime-Voorspellings eindpunt opgevraagd met behulp van de generateAnswer-API.
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: deefc53fdc94851da0e9e255962fbf85692d1393
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: c723d1446c90290929bc8cad066b4744e284f3f4
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820378"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008668"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>De Knowledge Base doorzoeken op antwoorden
 
@@ -84,10 +84,9 @@ Een gebruikers query is de vraag of de eind gebruiker de Knowledge Base vraagt, 
     "userId": "sd53lsY="
 }
 ```
+U bepaalt het antwoord door eigenschappen zoals [scoreThreshold](./confidence-score.md#choose-a-score-threshold), [Top](../how-to/improve-knowledge-base.md#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers)en [strictFilters](../how-to/query-knowledge-base-with-metadata.md)in te stellen.
 
-U bepaalt het antwoord door eigenschappen zoals [scoreThreshold](./confidence-score.md#choose-a-score-threshold), [Top](../how-to/improve-knowledge-base.md#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers)en [strictFilters](../how-to/metadata-generateanswer-usage.md#filter-results-with-strictfilters-for-metadata-tags)in te stellen.
-
-Gebruik [gespreks context](../how-to/metadata-generateanswer-usage.md#use-question-and-answer-results-to-keep-conversation-context) met [multi-turn-functionaliteit](../how-to/multiturn-conversation.md) om de conversatie te laten verfijnen om de vragen en antwoorden op te lossen, om het juiste en laatste antwoord te vinden.
+Gebruik [gespreks context](../how-to/query-knowledge-base-with-metadata.md) met [multi-turn-functionaliteit](../how-to/multiturn-conversation.md) om de conversatie te laten verfijnen om de vragen en antwoorden op te lossen, om het juiste en laatste antwoord te vinden.
 
 ### <a name="the-response-from-a-call-to-generate-an-answer"></a>Het antwoord van een aanroep om een antwoord te genereren
 

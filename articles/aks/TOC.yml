@@ -136,8 +136,10 @@
       items:
         - name: De schaal van een AKS-cluster aanpassen
           href: scale-cluster.md
-        - name: Een AKS-cluster stoppen (preview)
+        - name: Een AKS-cluster stoppen
           href: start-stop-cluster.md
+        - name: Gepland onderhoud gebruiken (preview-versie)
+          href: planned-maintenance.md
         - name: Een AKS-cluster upgraden
           href: upgrade-cluster.md
         - name: SLA voor uptime gebruiken

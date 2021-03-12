@@ -6,13 +6,13 @@ author: dcstwh
 ms.author: weetok
 ms.reviewer: maghan
 ms.topic: conceptual
-ms.date: 02/18/2021
-ms.openlocfilehash: 2fd8911ca11ee6dfcf795347e1fe7f2c36a2b636
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/11/2021
+ms.openlocfilehash: 4f03236176acea14bed2dfaac53b1a1e6cf7a1e2
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101716518"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103197872"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -333,6 +333,10 @@ Hier volgt een uitleg van de manier waarop de vorige sjabloon is samengesteld, o
 #### <a name="datasets"></a>Gegevenssets
 
 * Hoewel het type-specifieke aanpassing beschikbaar is voor gegevens sets, kunt u een configuratie opgeven zonder dat u expliciet een configuratie op een niveau hoeft te maken \* . In het vorige voor beeld zijn alle eigenschappen van de gegevensset onder `typeProperties` para meters.
+
+> [!NOTE]
+> **Waarschuwingen en matrices van Azure**  als deze zijn geconfigureerd voor een pijp lijn, worden momenteel niet ondersteund als para meters voor arm-implementaties. Als u de waarschuwingen en matrices opnieuw wilt Toep assen in een nieuwe omgeving, volgt u [Data Factory bewaking, waarschuwingen en matrices.](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor#data-factory-metrics)
+> 
 
 ### <a name="default-parameterization-template"></a>Standaard parameterisering-sjabloon
 
@@ -678,6 +682,8 @@ Als u gebruik wilt maken van Git-integratie met uw data factory en een CI/CD-pij
 -   U kunt niet publiceren vanuit privé-filialen.
 
 -   U kunt momenteel geen projecten hosten op bitbucket.
+
+-   U kunt momenteel geen waarschuwingen en matrices exporteren en importeren als para meters. 
 
 ## <a name="sample-pre--and-post-deployment-script"></a><a name="script"></a> Voor beeld van een script vóór en na implementatie
 

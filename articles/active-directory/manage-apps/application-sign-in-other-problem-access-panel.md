@@ -12,12 +12,12 @@ ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 2a0411e97f78104de1356d482e4e43a42701c073
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a54c7d6cc4ccf1d9f42702be030598ad1edfab24
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101687621"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225146"
 ---
 # <a name="troubleshoot-problems-signing-in-to-an-application-from-azure-ad-my-apps"></a>Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps
 
@@ -148,7 +148,7 @@ Dit komt doordat mijn apps momenteel Maxi maal 999 app-roltoewijzingen lezen om 
 Voer de volgende stappen uit om te controleren of een gebruiker meer dan 999 app-roltoewijzingen heeft:
 1. Installeer de Power shell-module [**micro soft. Graph**](https://github.com/microsoftgraph/msgraph-sdk-powershell) .
 2. Voer `Connect-MgGraph -Scopes "User.ReadBasic.All Application.Read.All"` uit.
-3. Voer uit `(Get-MgUserAppRoleAssignment -UserId "<userId>" -Top 999).Count` om te bepalen hoeveel app-roltoewijzingen aan de gebruiker momenteel zijn verleend.
+3. Voer uit `(Get-MgUserAppRoleAssignment -UserId "<user-id>" -PageSize 999).Count` om te bepalen hoeveel app-roltoewijzingen aan de gebruiker momenteel zijn verleend.
 4. Als het resultaat 999 is, heeft de gebruiker waarschijnlijk meer dan 999 app-rollen toegewezen.
 
 ### <a name="check-a-users-assigned-licenses"></a>De toegewezen licenties van een gebruiker controleren

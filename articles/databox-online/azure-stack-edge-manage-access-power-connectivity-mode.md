@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 6455e4c9fa9460e47e3be7c860f89be540a514b0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 240d3872536e6974d7f65eed22dace6816844e9e
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453067"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200207"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro"></a>De toegang, de kracht en de connectiviteits modus voor uw Azure Stack Edge Pro beheren
 
@@ -103,7 +103,7 @@ Naast de standaard modus volledig verbonden, kan het apparaat ook worden uitgevo
 
 - **Volledig verbonden** : dit is de normale standaard modus waarin het apparaat actief is. Het uploaden en downloaden van gegevens in de Cloud is in deze modus ingeschakeld. U kunt de Azure Portal of de lokale web-UI gebruiken om het apparaat te beheren.
 
-- **Gedeeltelijk verbroken** : in deze modus kan het apparaat geen share gegevens uploaden of downloaden, maar kan ook worden beheerd via de Azure Portal.
+- **Gedeeltelijk verbonden** : in deze modus kan het apparaat geen share gegevens uploaden of downloaden, maar kan ook worden beheerd via de Azure Portal.
 
     Deze modus wordt doorgaans gebruikt wanneer op een satelliet netwerk met een Data limiet het doel is om het gebruik van de netwerk bandbreedte te minimaliseren. Mini maal netwerk verbruik kan nog steeds optreden voor bewerkingen voor het controleren van apparaten.
 

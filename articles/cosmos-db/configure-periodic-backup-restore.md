@@ -7,17 +7,17 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 185320868c491d98df5fb6e31d9a627157431944
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 69a9f0a82f5c19504564825e47f69ab8414e0909
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99527377"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565827"
 ---
 # <a name="configure-azure-cosmos-db-account-with-periodic-backup"></a>Azure Cosmos DB account configureren met periodieke back-up
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Azure Cosmos DB maakt met regel matige tussen pozen automatisch back-ups van uw gegevens. De automatische back-ups worden gemaakt zonder dat dit van invloed is op de prestaties of Beschik baarheid van de database bewerkingen. Alle back-ups worden afzonderlijk in een opslag service opgeslagen en deze back-ups worden wereld wijd gerepliceerd voor flexibiliteit tegen regionale rampen. Met Azure Cosmos DB, niet alleen uw gegevens, maar ook de back-ups van uw gegevens zijn zeer redundant en robuust voor regionale rampen. De volgende stappen laten zien hoe Azure Cosmos DB gegevens back-up uitvoert:
+Azure Cosmos DB maakt op regelmatige tijdstippen automatisch back-ups van uw gegevens. De automatische back-ups worden gemaakt zonder dat dit van invloed is op de prestaties of beschikbaarheid van de databasebewerkingen. Alle back-ups worden afzonderlijk in een opslag service opgeslagen en deze back-ups worden wereld wijd gerepliceerd voor flexibiliteit tegen regionale rampen. Met Azure Cosmos DB, niet alleen uw gegevens, maar ook de back-ups van uw gegevens zijn zeer redundant en robuust voor regionale rampen. De volgende stappen laten zien hoe Azure Cosmos DB gegevens back-up uitvoert:
 
 * Azure Cosmos DB maakt automatisch een volledige back-up van uw data base in elke 4 uur en op elk gewenst moment worden alleen de meest recente twee back-ups standaard opgeslagen. Als de standaard intervallen niet voldoende zijn voor uw workloads, kunt u het back-upinterval en de retentie periode van de Azure Portal wijzigen. U kunt de back-upconfiguratie wijzigen tijdens of nadat het Azure Cosmos-account is gemaakt. Als de container of Data Base wordt verwijderd, Azure Cosmos DB de bestaande moment opnamen van een bepaalde container of data base gedurende 30 dagen behouden.
 
@@ -33,7 +33,7 @@ Azure Cosmos DB maakt met regel matige tussen pozen automatisch back-ups van uw 
 
 ## <a name="modify-the-backup-interval-and-retention-period"></a><a id="configure-backup-interval-retention"></a>Het back-upinterval en de Bewaar periode wijzigen
 
-Azure Cosmos DB maakt automatisch een volledige back-up van uw gegevens voor elke 4 uur en op elk gewenst moment worden de meest recente twee back-ups opgeslagen. Deze configuratie is de standaard optie en wordt aangeboden zonder extra kosten. U kunt het standaard interval voor back-ups en de Bewaar periode wijzigen tijdens het maken van het Azure Cosmos-account of nadat het account is gemaakt. De back-upconfiguratie wordt ingesteld op het niveau van het Azure Cosmos-account en u moet deze voor elk account configureren. Nadat u de back-upopties voor een account hebt geconfigureerd, wordt deze toegepast op alle containers in dat account. U kunt de back-upopties momenteel alleen wijzigen in Azure Portal.
+Azure Cosmos DB maakt automatisch een volledige back-up van uw gegevens voor elke 4 uur en op elk gewenst moment worden de meest recente twee back-ups opgeslagen. Deze configuratie is de standaard optie en wordt aangeboden zonder extra kosten. U kunt het standaardwaarden voor het back-upinterval en de bewaartermijn wijzigen terwijl u het Azure Cosmos-account maakt of daarna. De back-upconfiguratie wordt ingesteld op het niveau van het Azure Cosmos-account en u moet deze voor elk account configureren. Nadat u de back-upopties voor een account hebt geconfigureerd, wordt deze toegepast op alle containers in dat account. U kunt de back-upopties momenteel alleen wijzigen in Azure Portal.
 
 Als u uw gegevens per ongeluk hebt verwijderd of beschadigd **voordat u een ondersteunings aanvraag voor het herstellen van de gegevens maakt, moet u de retentie van de back-up voor uw account verg Roten tot ten minste zeven dagen. Het is het beste om uw Bewaar periode binnen 8 uur na deze gebeurtenis te verg Roten.** Op deze manier heeft het Azure Cosmos DB-team voldoende tijd om uw account te herstellen.
 
@@ -115,7 +115,7 @@ Als u de door Voer inricht op database niveau, gebeurt het back-up-en herstel pr
 Principals die deel uitmaken van de rol [CosmosdbBackupOperator](../role-based-access-control/built-in-roles.md#cosmosbackupoperator), eigenaar of Inzender, kunnen een herstel aanvraag aanvragen of de Bewaar periode wijzigen.
 
 ## <a name="understanding-costs-of-extra-backups"></a>Meer informatie over de kosten van extra back-ups
-Twee back-ups zijn gratis en extra back-ups worden in rekening gebracht op basis van de op regio's gebaseerde prijs voor back-upopslag die wordt beschreven in de [prijzen voor back-upopslag](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/). Als back-upbewaaring bijvoorbeeld is geconfigureerd op 240 uur, 10 dagen en een back-upinterval van 24 uur. Dit betekent 10 kopieën van de back-upgegevens. Uitgaande van 1 TB aan gegevens in het VS-West 2, is het 1000 * 0,12 ~ $120 voor back-upopslag in de gegeven maand. 
+Twee back-ups zijn gratis en extra back-ups worden in rekening gebracht op basis van de op regio's gebaseerde prijs voor back-upopslag die wordt beschreven in de [prijzen voor back-upopslag](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/). Als back-upbewaaring bijvoorbeeld is geconfigureerd op 240 uur, 10 dagen en een back-upinterval van 24 uur. Dit betekent 10 kopieën van de back-upgegevens. Uitgaande van 1 TB aan gegevens in VS-West 2, zijn de kosten 0,12 * 1000 * 8 voor back-upopslag in de opgegeven maand. 
 
 
 ## <a name="options-to-manage-your-own-backups"></a>Opties voor het beheren van uw eigen back-ups

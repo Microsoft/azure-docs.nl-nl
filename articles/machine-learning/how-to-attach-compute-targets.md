@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 10/02/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: 318afced85f3cca0a450d77f8be7b2a1d6c388ed
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 9fa6a1758bc2e2a76291efc3bb239c5249a6e21e
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102504930"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149338"
 ---
 # <a name="set-up-compute-targets-for-model-training-and-deployment"></a>Reken doelen instellen voor model training en implementatie
 
@@ -64,11 +64,7 @@ Wanneer u uw lokale computer **gebruikt voor** demijnen, moet docker zijn geïns
 
 ## <a name="remote-virtual-machines"></a><a id="vm"></a>Externe virtuele machines
 
-Azure Machine Learning biedt ook ondersteuning voor het meebrengen van uw eigen reken resource en het koppelen aan uw werk ruimte. Een van deze bron typen is een wille keurige externe virtuele machine, zolang deze toegankelijk is vanaf Azure Machine Learning. De resource kan een Azure-VM, een externe server in uw organisatie of on-premises zijn. Met name op basis van het IP-adres en de referenties (gebruikers naam en wacht woord of SSH-sleutel) kunt u elke toegankelijke virtuele machine gebruiken voor externe uitvoeringen.
-
-U kunt een door het [systeem gemaakte Conda-omgeving](how-to-use-environments.md), een al bestaande [python-omgeving](how-to-configure-environment.md#local)of een [docker-container](https://docs.docker.com/engine/install/ubuntu/)gebruiken. Als u wilt uitvoeren op een docker-container, moet er een docker-engine op de VM worden uitgevoerd. Deze functionaliteit is vooral nuttig wanneer u een flexibele, Cloud ontwikkeling/experimentatie omgeving wilt gebruiken dan uw lokale computer.
-
-Gebruik Azure Data Science Virtual Machine (DSVM) als de Azure-VM van de keuze voor dit scenario. Deze VM is een vooraf geconfigureerde data Science-en AI-ontwikkel omgeving in Azure. De virtuele machine biedt een geruime keuze aan hulpprogram ma's en frameworks voor een volledige levenscyclus machine learning ontwikkeling. Zie [Configure a Development Environment](./how-to-configure-environment.md#dsvm)(Engelstalig) voor meer informatie over het gebruik van de DSVM met Azure machine learning.
+Azure Machine Learning biedt ook ondersteuning voor het koppelen van een virtuele machine van Azure. De virtuele machine moet een Azure-Data Science Virtual Machine (DSVM) zijn. Deze VM is een vooraf geconfigureerde data Science-en AI-ontwikkel omgeving in Azure. De virtuele machine biedt een geruime keuze aan hulpprogram ma's en frameworks voor een volledige levenscyclus machine learning ontwikkeling. Zie [Configure a Development Environment](./how-to-configure-environment.md#dsvm)(Engelstalig) voor meer informatie over het gebruik van de DSVM met Azure machine learning.
 
 1. **Maken**: Maak een DSVM voordat u het gebruikt om het model te trainen. Zie [de data Science virtual machine inrichten voor Linux (Ubuntu)](./data-science-virtual-machine/dsvm-ubuntu-intro.md)als u deze resource wilt maken.
 

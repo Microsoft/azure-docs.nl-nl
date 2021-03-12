@@ -1,14 +1,14 @@
 ---
 title: Index van blauwdrukvoorbeelden
 description: Index van compatibiliteits- en standaardvoorbeelden voor het implementeren van omgevingen, beleidsregels en grondbeginselen voor Cloud Adoptions Framework met Azure Blueprints.
-ms.date: 02/08/2020
+ms.date: 03/11/2021
 ms.topic: sample
-ms.openlocfilehash: c64bc02c1dea4e2c53d4ff195add2ac7fa57874f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0873de5879a40b13bea03c97e0b78d146f0d6696
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100370951"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200992"
 ---
 # <a name="azure-blueprints-samples"></a>Azure Blueprints-voorbeelden
 
@@ -22,7 +22,8 @@ De volgende tabel bevat links naar voorbeelden voor Azure Blueprints. Elk voorbe
 | [Azure Security-benchmark](./azure-security-benchmark.md) | Biedt richtlijnen voor de naleving van de [Azure Security-benchmark](../../../security/benchmarks/overview.md). |
 | [Azure Security Bench Mark-basis](./azure-security-benchmark-foundation/index.md) | Implementeert en configureert Azure Security Bench Mark Foundation. |
 | [Canada Federal PBMM](./canada-federal-pbmm/index.md) | Voorziet in richtlijnen om te voldoen aan de naleving van PBMM (Canada Federal Protected B, Medium Integrity, Medium Availability). |
-| [CIS Microsoft Azure Foundations Benchmark](./cis-azure-1-1-0.md)| Biedt een set beleidsregels om te voldoen aan de aanbevelingen van CIS Microsoft Azure Foundations Benchmark. |
+| [CIS-Microsoft Azure Stichting voor bench Mark v 1.3.0](./cis-azure-1-3-0.md)| Voorziet in een set beleids regels die u helpen te voldoen aan de aanbevelingen van CIS Microsoft Azure Stichting-benchmark v 1.3.0. |
+| [CIS Microsoft Azure Foundations Benchmark v1.1.0](./cis-azure-1-1-0.md)| Voorziet in een set beleids regels die u helpen te voldoen aan de aanbevelingen van CIS Microsoft Azure Stichting-benchmark v 1.1.0. |
 | [DoD Impact Level 4](./dod-impact-level-4/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 4. |
 | [DoD Impact Level 5](./dod-impact-level-5/index.md) | Bied een set beleidsregels om te helpen voldoen aan DoD Impact Level 5. |
 | [FedRAMP Moderate](./fedramp-m/index.md) | Bied een set beleidsregels om te helpen voldoen aan FedRAMP Moderate. |

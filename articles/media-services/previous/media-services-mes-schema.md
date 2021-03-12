@@ -1,7 +1,7 @@
 ---
 title: Media Encoder Standard schema | Microsoft Docs
 description: In dit artikel worden enkele elementen en typen van het XML-schema beschreven waarop Media Encoder Standard voor instellingen zijn gebaseerd.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/19/2019
-ms.author: juliako
-ms.openlocfilehash: 35f79702b7aad51b764ce2edb37c3c76d1fe98e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: f82e0c3f76dba05c3404b11e07c7130119ce0b9d
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89261509"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015655"
 ---
 # <a name="media-encoder-standard-schema"></a>Media Encoder Standard-schema
 
@@ -64,7 +64,7 @@ Bevat een reeks van de volgende elementen:
 | **TwoPass**<br/><br/> minOccurs = "0" |**XS: Boolean** |Op dit moment wordt slechts één pass-code ring ondersteund. |
 | **KeyFrameInterval**<br/><br/> minOccurs = "0"<br/><br/> **standaard instelling = "00:00:02"** |**XS: tijd** |Bepaalt de vaste afstand tussen IDR frames in eenheden van seconden. Wordt ook wel de GOP terug-duur genoemd. Zie **SceneChangeDetection** om te bepalen of het coderings programma kan afwijken van deze waarde. |
 | **SceneChangeDetection**<br/><br/> minOccurs = "0"<br/><br/> standaard = "false" |**XS: Boolean** |Als deze eigenschap is ingesteld op True, probeert encoder de scène wijziging in de video te detecteren en wordt een IDR-frame ingevoegd. |
-| **Complexe**<br/><br/> minOccurs = "0"<br/><br/> standaard instelling = "evenwichtig" |**XS: teken reeks** |Hiermee bepaalt u de afweging tussen de snelheid en video kwaliteit van de code ring. Dit kan een van de volgende waarden zijn: **snelheid**, **gebalanceerd**of **kwaliteit**<br/><br/> Standaard: **evenwichtig** |
+| **Complexe**<br/><br/> minOccurs = "0"<br/><br/> standaard instelling = "evenwichtig" |**XS: teken reeks** |Hiermee bepaalt u de afweging tussen de snelheid en video kwaliteit van de code ring. Dit kan een van de volgende waarden zijn: **snelheid**, **gebalanceerd** of **kwaliteit**<br/><br/> Standaard: **evenwichtig** |
 | **SyncMode**<br/><br/> minOccurs = "0" | |De functie wordt weer gegeven in een toekomstige versie. |
 | **H264Layers**<br/><br/> minOccurs = "0" |[H264Layers](media-services-mes-schema.md#H264Layers) |Verzameling video lagen voor uitvoer. |
 
@@ -117,7 +117,7 @@ Standaard, als u een invoer verzendt naar het coderings programma dat alleen aud
 
 | Naam | Type | Beschrijving |
 | --- | --- | --- |
-| **Profiel**<br/><br/> minOccurs = "0"<br/><br/> standaard instelling = "AACLC" |**XS: teken reeks** |Dit kan een van de volgende waarden zijn: **AACLC**, **HEAACV1**of **HEAACV2**. |
+| **Profiel**<br/><br/> minOccurs = "0"<br/><br/> standaard instelling = "AACLC" |**XS: teken reeks** |Dit kan een van de volgende waarden zijn: **AACLC**, **HEAACV1** of **HEAACV2**. |
 
 ### <a name="attributes"></a>Kenmerken
 

@@ -10,14 +10,16 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 45df700cc1772250e42a0e007fb4ea91b49471ba
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: f4f2f8522f6d3d1039673803d946323deb485db9
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684200"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200250"
 ---
 # <a name="monitor-iot-edge-deployments"></a>IoT Edge-implementaties bewaken
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Azure IoT Edge biedt rapportage waarmee u real-time informatie kunt controleren over de modules die op uw IoT Edge apparaten zijn geïmplementeerd. De IoT Hub-service haalt de status op van de apparaten en maakt ze beschikbaar voor de operator. Bewaking is ook belang rijk voor [implementaties die op schaal zijn gemaakt](module-deployment-monitoring.md) en die automatische implementaties en gelaagde implementaties bevatten.
 

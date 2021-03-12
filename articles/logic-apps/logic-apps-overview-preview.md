@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/08/2021
-ms.openlocfilehash: d53a36d99c9a54fdfef7baceb50edb4e8f5ae4c8
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.date: 03/10/2021
+ms.openlocfilehash: 7120b6ff17657232c0e614f49b75bb24263712b7
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102561854"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636332"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -59,7 +59,7 @@ De volgende tabel geeft een overzicht van de verschillen in de manier waarop wer
 | Azure Logic Apps (multi tenant) | Werk stromen *van klanten over meerdere tenants* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
 | Azure Logic Apps (preview, single-tenant) | Werk stromen *in dezelfde logische app en één Tenant* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
 | Integratie service omgeving (niet beschikbaar in de preview-versie) | Werk stromen in *dezelfde omgeving* delen dezelfde verwerking (Compute), opslag, netwerk, enzovoort. |
-||||
+|||
 
 Ondertussen kunt u nog steeds het type logische app voor meerdere tenants maken in de Azure Portal en in Visual Studio code met behulp van de Azure Logic Apps extensie voor meerdere tenants. Hoewel de ontwikkelings ervaring verschilt tussen de typen van de logische app met meerdere tenants en single tenants, kan uw Azure-abonnement beide typen bevatten. U kunt alle geïmplementeerde Logic apps in uw Azure-abonnement weer geven en openen, maar de apps zijn ingedeeld in hun eigen categorieën en secties.
 
@@ -122,7 +122,10 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 
 * Maak Logic apps en hun werk stromen van [400 en connectors](/connectors/connector-reference/connector-reference-logicapps-connectors) voor software-as-a-Service (SaaS) en platform-as-a-Service (PaaS)-apps en-services plus connectors voor on-premises systemen.
 
-  * Sommige beheerde connectors, zoals Azure Service Bus, Azure Event Hubs, SQL Server en MQ, worden op dezelfde manier uitgevoerd als de ingebouwde triggers en acties die standaard zijn voor de voorbeeld runtime van Azure Logic Apps, bijvoorbeeld de trigger voor aanvragen en de HTTP-actie.
+  * Sommige beheerde connectors zijn nu beschikbaar als ingebouwde versies, die op dezelfde manier worden uitgevoerd als de ingebouwde triggers en acties, zoals de trigger voor aanvragen en de HTTP-actie, die systeem eigen worden uitgevoerd op de Azure Logic Apps Preview-runtime. Deze nieuwe ingebouwde connectors bevatten bijvoorbeeld Azure Service Bus, Azure Event Hubs, SQL Server en MQ.
+
+    > [!NOTE]
+    > Voor de ingebouwde SQL Server-connector kan alleen de actie **query uitvoeren** rechtstreeks verbinding maken met virtuele Azure-netwerken zonder dat de [on-premises gegevens gateway](logic-apps-gateway-connection.md)is vereist.
 
   * Maak uw eigen ingebouwde Connect oren voor elke service die u nodig hebt met behulp [van het uitbreidings raamwerk van de preview-versie](https://techcommunity.microsoft.com/t5/integrations-on-azure/azure-logic-apps-running-anywhere-built-in-connector/ba-p/1921272). Net als bij ingebouwde connectors, zoals Azure Service Bus en SQL Server, maar in tegens telling tot [aangepaste connectors](../connectors/apis-list.md#custom-apis-and-connectors) die momenteel niet worden ondersteund voor preview, bieden deze connectors een hogere door Voer, lage latentie en lokale connectiviteit, en worden ze systeem eigen uitgevoerd in hetzelfde proces als de runtime van de preview-versie.
 

@@ -2,18 +2,19 @@
 title: Een sleutel kluis maken en configureren voor Azure Disk Encryption met Azure AD (vorige versie)
 description: Dit artikel bevat de vereisten voor het gebruik van Microsoft Azure schijf versleuteling voor Linux-Vm's.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 3862a07eea2dcec3e67c0145fcdcff8140d19ec3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 20cb94dd8bfca6adeba151d2169b1896cc7ff5a3
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746786"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102557876"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption-with-azure-ad-previous-release-for-linux-vms"></a>Een sleutel kluis maken en configureren voor Azure Disk Encryption met Azure AD (vorige versie) voor Linux-Vm's
 
@@ -61,7 +62,7 @@ U kunt een sleutel kluis maken met Azure PowerShell met behulp van de cmdlet [Ne
      New-AzKeyVault -VaultName 'MySecureVault' -ResourceGroupName 'MyKeyVaultResourceGroup' -Location 'East US'
      ```
 
-4. Noteer de **naam** van de kluis, de naam van de **resource groep** , de **resource-id** , de **kluis-URI** en de **object-id** die wordt geretourneerd voor later gebruik wanneer u de schijven versleutelt. 
+4. Noteer de **naam** van de kluis, de naam van de **resource groep**, de **resource-id**, de **kluis-URI** en de **object-id** die wordt geretourneerd voor later gebruik wanneer u de schijven versleutelt. 
 
 
 ### <a name="create-a-key-vault-with-azure-cli"></a><a name="bkmk_KVCLI"></a> Een sleutel kluis maken met Azure CLI
@@ -80,14 +81,14 @@ U kunt uw sleutel kluis beheren met Azure CLI met behulp van de opdracht [AZ-klu
      az keyvault create --name "MySecureVault" --resource-group "MyKeyVaultResourceGroup" --location "East US"
      ```
 
-4. Noteer de naam van de **kluis** (naam), de naam van de **resource groep** , de **resource-id** (id), de **kluis-URI** en de **object-id** die wordt geretourneerd voor later gebruik. 
+4. Noteer de naam van de **kluis** (naam), de naam van de **resource groep**, de **resource-id** (id), de **kluis-URI** en de **object-id** die wordt geretourneerd voor later gebruik. 
 
 ### <a name="create-a-key-vault-with-a-resource-manager-template"></a><a name="bkmk_KVRM"></a> Een sleutel kluis maken met een resource manager-sjabloon
 
 U kunt een sleutel kluis maken met behulp van de [Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
-1. Klik in de quickstart-sjabloon van Azure op **Implementeren naar Azure** .
-2. Selecteer het abonnement, de resource groep, de locatie van de resource groep, de Key Vault naam, de object-ID, de juridische voor waarden en de overeenkomst en klik vervolgens op **kopen** . 
+1. Klik in de quickstart-sjabloon van Azure op **Implementeren naar Azure**.
+2. Selecteer het abonnement, de resource groep, de locatie van de resource groep, de Key Vault naam, de object-ID, de juridische voor waarden en de overeenkomst en klik vervolgens op **kopen**. 
 
 
 ## <a name="set-up-an-azure-ad-app-and-service-principal"></a><a name="bkmk_ADapp"></a> Een Azure AD-app en service-principal instellen 
@@ -161,10 +162,10 @@ az keyvault set-policy --name "MySecureVault" --spn "<spn created with CLI/the A
 ### <a name="set-the-key-vault-access-policy-for-the-azure-ad-app-with-the-portal"></a><a name="bkmk_KVAPRM"></a> Het toegangs beleid voor de sleutel kluis instellen voor de Azure AD-app met de portal
 
 1. Open de resource groep met uw sleutel kluis.
-2. Selecteer uw sleutel kluis, ga naar **toegangs beleid** en klik vervolgens op **nieuwe toevoegen** .
+2. Selecteer uw sleutel kluis, ga naar **toegangs beleid** en klik vervolgens op **nieuwe toevoegen**.
 3. Zoek onder **Principal selecteren** naar de Azure AD-toepassing die u hebt gemaakt en selecteer deze. 
-4. Voor **sleutel machtigingen** controleert u de **toets SHIFT** onder **cryptografische bewerkingen** .
-5. Controleer bij **geheime machtigingen** **instellen** onder **geheime beheer bewerkingen** .
+4. Voor **sleutel machtigingen** controleert u de **toets SHIFT** onder **cryptografische bewerkingen**.
+5. Controleer bij **geheime machtigingen** **instellen** onder **geheime beheer bewerkingen**.
 6. Klik op **OK** om het toegangs beleid op te slaan. 
 
 ![Azure Key Vault cryptografische bewerkingen-terugloop sleutel](./media/disk-encryption/keyvault-portal-fig3.png)
@@ -217,10 +218,10 @@ Gebruik [az keyvault update](/cli/azure/keyvault#az-keyvault-update) om schijfve
 
 ### <a name="set-key-vault-advanced-access-policies-through-the-azure-portal"></a><a name="bkmk_KVperrm"></a> Geavanceerd toegangs beleid voor sleutel kluis instellen via de Azure Portal
 
-1. Selecteer uw sleutel kluis, ga naar **toegangs beleid** en **Klik om geavanceerd toegangs beleid weer te geven** .
+1. Selecteer uw sleutel kluis, ga naar **toegangs beleid** en **Klik om geavanceerd toegangs beleid weer te geven**.
 2. Schakel het selectievakje **Toegang tot Azure Disk Encryption voor volumeversleuteling inschakelen** in.
-3. Selecteer indien nodig **Toegang tot Azure Virtual Machines inschakelen voor implementatie** en/of **Toegang tot Azure Resource Manager inschakelen voor sjabloonimplementatie** . 
-4. Klik op **Opslaan** .
+3. Selecteer indien nodig **Toegang tot Azure Virtual Machines inschakelen voor implementatie** en/of **Toegang tot Azure Resource Manager inschakelen voor sjabloonimplementatie**. 
+4. Klik op **Opslaan**.
 
 ![Geavanceerd toegangsbeleid voor Azure Key Vault](./media/disk-encryption/keyvault-portal-fig4.png)
 

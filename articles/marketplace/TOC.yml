@@ -308,6 +308,48 @@
       href: partner-center-portal/downloads-dashboard.md
     - name: Dashboard voor classificaties en beoordelingen
       href: partner-center-portal/ratings-reviews.md
+    - name: Programmatische toegang tot Analytics
+      items:
+        - name: Aan de slag
+          href: analytics-get-started.md
+        - name: Vereisten voor toegang op programmeer niveau
+          href: analytics-prerequisites.md
+        - name: Paradigma voor toegang tot software
+          href: analytics-programmatic-access.md
+        - name: Uw eerste API-oproep maken
+          href: analytics-make-your-first-api-call.md
+        - name: Lijst met systeem query's
+          href: analytics-system-queries.md
+        - name: Voorbeeldquery's
+          href: analytics-sample-queries.md
+        - name: Voorbeeldtoepassing
+          href: analytics-sample-application.md
+        - name: Aangepaste query specificatie
+          href: analytics-custom-query-specification.md
+        - name: Veelgestelde vragen over programmatische analyses
+          href: analytics-programmatic-faq.md
+        - name: Naslag informatie voor Analytics API
+          items:
+            - name: Lijst met Api's
+              href: analytics-available-apis.md
+            - name: Alle gegevens sets ophalen
+              href: analytics-api-get-all-datasets.md
+            - name: API voor rapport query's ophalen
+              href: analytics-api-get-report-queries.md
+            - name: API voor rapport query's verwijderen
+              href: analytics-api-delete-report-queries.md
+            - name: Query-API voor rapporten uitproberen
+              href: analytics-api-try-report-queries.md
+            - name: Rapport-API ophalen
+              href: analytics-api-get-report.md
+            - name: Rapport-API bijwerken
+              href: analytics-api-update-report.md
+            - name: Rapport-API verwijderen
+              href: analytics-api-delete-report.md
+            - name: De API voor rapport uitvoeringen onderbreken
+              href: analytics-api-pause-report-executions.md
+            - name: API voor rapport uitvoeringen hervatten
+              href: analytics-api-resume-report-executions.md
     - name: Afwijkingen in de gefactureerde facturering beheren
       href: anomaly-detection.md
     - name: Algemene vragen over analyses

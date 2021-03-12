@@ -8,12 +8,12 @@ ms.date: 02/11/2021
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 75beb214682536b996cf4896588ea32d568579f1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: edca5a278414288ceb3c3d13f5d49e723e0ee5c2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102045986"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615921"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -23,7 +23,7 @@ In dit artikel vindt u informatie over welke systemen en onderdelen worden onder
 
 Als u problemen ondervindt bij het gebruik van de Azure IoT Edge-service, zijn er verschillende manieren om ondersteuning te zoeken. Probeer een van de volgende kanalen voor ondersteuning:
 
-**Fouten rapporteren** : het meren deel van de ontwikkeling dat in het Azure IOT Edge product plaatsvindt, vindt plaats in het IOT Edge open-source project. U kunt fouten melden op de [pagina kwesties](https://github.com/azure/iotedge/issues) van het project. Oplossingen maken snel hun eigen werk van het project in op product updates.
+**Fouten rapporteren** : het meren deel van de ontwikkeling dat in het Azure IOT Edge product plaatsvindt, vindt plaats in het IOT Edge open-source project. U kunt fouten melden op de [pagina kwesties](https://github.com/azure/iotedge/issues) van het project. Fouten gerelateerd aan Azure IoT Edge voor Linux op Windows kunnen worden gerapporteerd op de [pagina met iotedge-eflow-problemen](https://github.com/azure/iotedge-eflow/issues). Oplossingen maken snel hun eigen werk van de projecten in op product updates.
 
 **Klanten ondersteuning van micro soft** : gebruikers die een [ondersteunings plan](https://azure.microsoft.com/support/plans/) hebben, kunnen het micro soft Customer Support-team benaderen door rechtstreeks vanuit de [Azure Portal](https://ms.portal.azure.com/signin/index/?feature.settingsportalinstance=mpac)een ondersteunings ticket te maken.
 

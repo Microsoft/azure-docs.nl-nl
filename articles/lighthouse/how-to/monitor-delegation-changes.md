@@ -1,20 +1,20 @@
 ---
 title: Overdrachts wijzigingen in uw beheer Tenant bewaken
 description: Meer informatie over het bewaken van overdrachts activiteiten van klant tenants naar uw beheer Tenant.
-ms.date: 01/27/2021
+ms.date: 02/18/2021
 ms.topic: how-to
-ms.openlocfilehash: 3bf6cc044d807d0c830b15c6d9c9a6d507f1a54f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 8bd9e89039c114f3d1088df44198fe00c69bbf82
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593133"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199063"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Overdrachts wijzigingen in uw beheer Tenant bewaken
 
 Als service provider wilt u mogelijk weten wanneer klanten abonnementen of resource groepen worden gedelegeerd aan uw Tenant via [Azure Lighthouse](../overview.md)of wanneer eerder gedelegeerde resources worden verwijderd.
 
-In het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md) wordt in de Tenant beheren de activiteit overdracht op Tenant niveau bijgehouden. Deze geregistreerde activiteit bevat eventuele toegevoegde of verwijderde delegaties van alle tenants van klanten.
+In het [Azure-activiteiten logboek](../../azure-monitor/essentials/platform-logs-overview.md) wordt in de Tenant beheren de activiteit overdracht op Tenant niveau bijgehouden. Deze geregistreerde activiteit bevat eventuele toegevoegde of verwijderde delegaties van de tenants van de klant.
 
 In dit onderwerp worden de machtigingen beschreven die nodig zijn voor het bewaken van overdrachts activiteiten aan uw Tenant (in al uw klanten). Het bevat ook een voorbeeld script met één methode voor het uitvoeren van query's en rapportage over deze gegevens.
 

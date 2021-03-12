@@ -12,14 +12,16 @@ ms.custom:
 - amqp
 - mqtt
 - devx-track-js
-ms.openlocfilehash: 44fe128658b90d2327f17f22b2a33aaa1d4da1fc
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: dc2d2d3e92435c7a028b43a095f456c2c383ecb4
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102046122"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199621"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Een downstreamapparaat verbinden met een Azure IoT Edge-gateway
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Dit artikel bevat instructies voor het tot stand brengen van een vertrouwde verbinding tussen downstream-apparaten en IoT Edge transparante gateways. In een transparant Gateway scenario kunnen een of meer apparaten hun berichten door geven via één gateway apparaat waarmee de verbinding met IoT Hub wordt onderhouden.
 
@@ -44,7 +46,19 @@ In dit artikel verwijzen de voor waarden *Gateway* en *IOT Edge gateway* naar ee
 
 ## <a name="prepare-a-downstream-device"></a>Een downstream-apparaat voorbereiden
 
+<!-- 1.1 -->
+:::moniker range="iotedge-2018-06"
 Een downstream-apparaat kan een toepassing of platform zijn met een identiteit die is gemaakt met de Azure IoT Hub-Cloud service. In veel gevallen gebruiken deze toepassingen de [Azure IOT Device SDK](../iot-hub/iot-hub-devguide-sdks.md). Een downstream-apparaat kan zelfs een toepassing zijn die wordt uitgevoerd op het IoT Edge gateway-apparaat zelf. Een andere IoT Edge apparaat kan echter niet worden downstream van een IoT Edge gateway.
+:::moniker-end
+<!-- end 1.1 -->
+
+<!-- 1.2 -->
+:::moniker range=">=iotedge-2020-11"
+Een downstream-apparaat kan een toepassing of platform zijn met een identiteit die is gemaakt met de Azure IoT Hub-Cloud service. In veel gevallen gebruiken deze toepassingen de [Azure IOT Device SDK](../iot-hub/iot-hub-devguide-sdks.md). Een downstream-apparaat kan zelfs een toepassing zijn die wordt uitgevoerd op het IoT Edge gateway-apparaat zelf.
+
+Dit artikel bevat de stappen voor het verbinden van een IoT-apparaat als een downstream-apparaat. Als u een IoT Edge apparaat als een downstream-apparaat hebt, raadpleegt u [een downstream IOT edge apparaat verbinden met een Azure IOT Edge gateway](how-to-connect-downstream-iot-edge-device.md).
+:::moniker-end
+<!-- end 1.2 -->
 
 >[!NOTE]
 >IoT-apparaten die zijn geregistreerd met IoT Hub kunnen [module apparaatdubbels](../iot-hub/iot-hub-devguide-module-twins.md) gebruiken om verschillende processen, hardware of functies op één apparaat te isoleren. IoT Edge gateways ondersteunen downstream-module verbindingen met behulp van symmetrische sleutel verificatie, maar niet X. 509-certificaat verificatie.

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 02/03/2021
-ms.openlocfilehash: 39a1400bfe642672ba276686851d4f0edebbeb00
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: cbf070dce056795ad8e4a5f3e4d609e7d36d631e
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387849"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200818"
 ---
 # <a name="understanding-resource-sets"></a>Informatie over resourcesets
 
@@ -21,7 +21,7 @@ Dit artikel helpt u te begrijpen hoe Azure controle sfeer liggen gebruikmaakt va
 
 Bij schaal bare gegevens verwerkings systemen wordt één tabel op een schijf opgeslagen als meerdere bestanden. Dit concept wordt weer gegeven in azure controle sfeer liggen met behulp van resource sets. Een resourceset is een enkel object in de catalogus dat een groot aantal assets in de opslag vertegenwoordigt.
 
-Stel bijvoorbeeld dat uw Spark-cluster een data frame heeft opgeslagen in een Azure data Lake Storage (ADLS) Gen2-gegevens bron. Hoewel de tabel er in Spark uitziet als een enkele logische resource, is er op de schijf waarschijnlijk duizenden Parquet-bestanden, die elk een partitie van de totale inhoud van de data frame vertegenwoordigen. IoT-gegevens en Web-logboek gegevens hebben dezelfde uitdaging. Stel dat u een sensor hebt die logboek bestanden een aantal malen per seconde uitvoert. Het duurt niet lang voordat u honderd duizenden logboek bestanden van die ene sensor hebt.
+Stel bijvoorbeeld dat uw Spark-cluster een data frame heeft opgeslagen in Azure Data Lake Storage een Gen2-gegevens bron (ADLS). Hoewel de tabel er in Spark uitziet als een enkele logische resource, is er op de schijf waarschijnlijk duizenden Parquet-bestanden, die elk een partitie van de totale inhoud van de data frame vertegenwoordigen. IoT-gegevens en Web-logboek gegevens hebben dezelfde uitdaging. Stel dat u een sensor hebt die logboek bestanden een aantal malen per seconde uitvoert. Het duurt niet lang voordat u honderd duizenden logboek bestanden van die ene sensor hebt.
 
 Azure controle sfeer liggen maakt gebruik van resource sets om de uitdaging van het toewijzen van een groot aantal gegevensassets aan één logische resource te verhelpen.
 

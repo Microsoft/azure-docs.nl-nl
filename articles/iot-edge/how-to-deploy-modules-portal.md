@@ -8,14 +8,16 @@ ms.date: 10/13/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: ef3f09648e0d9101d07c6d8941ee7f79ae97b2b8
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 9248c9578d94b000c04c82b33eeeb089e55a26ef
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048029"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200301"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Azure IoT Edge modules implementeren vanuit de Azure Portal
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Wanneer u IoT Edge modules met uw bedrijfs logica hebt gemaakt, wilt u deze implementeren op uw apparaten zodat ze aan de rand kunnen worden uitgevoerd. Als u meerdere modules hebt die samen werken om gegevens te verzamelen en te verwerken, kunt u ze allemaal tegelijk implementeren en de routerings regels declareren waarmee ze verbinding maken.
 
@@ -32,7 +34,7 @@ In dit artikel wordt beschreven hoe de Azure Portal u begeleidt bij het maken va
 
 Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. Zie [begrijpen hoe IOT Edge modules kunnen worden gebruikt, geconfigureerd en opnieuw worden gebruikt](module-composition.md)voor meer informatie over hoe implementatie manifesten werken en hoe u ze kunt maken.
 
-De Azure Portal bevat een wizard die u helpt bij het maken van het implementatie manifest, in plaats van het JSON-document hand matig te bouwen. Er zijn drie stappen: **modules toevoegen**, **routes opgeven**en de **implementatie controleren**.
+De Azure Portal bevat een wizard die u helpt bij het maken van het implementatie manifest, in plaats van het JSON-document hand matig te bouwen. Er zijn drie stappen: **modules toevoegen**, **routes opgeven** en de **implementatie controleren**.
 
 >[!NOTE]
 >De stappen in dit artikel zijn gebaseerd op de meest recente schema versie van de IoT Edge agent en hub. Schema versie 1,1 is uitgebracht samen met IoT Edge versie 1.0.10 en maakt de module opstart volgorde en de functies voor het door sturen van prioriteit.
@@ -90,9 +92,9 @@ U kunt een IoT Edge module implementeren vanuit Azure Marketplace en vanaf uw Io
 
 ### <a name="deploy-from-azure-marketplace"></a>Implementeren vanuit Azure Marketplace
 
-Bekijk de IoT Edge-modules in de Marketplace en wanneer u het gewenste item kunt implementeren door **maken** of **nu downloaden**te selecteren. Ga door met de stappen in de wizard implementatie die kunnen variëren, afhankelijk van de IoT Edge module die u hebt geselecteerd:
+Bekijk de IoT Edge-modules in de Marketplace en wanneer u het gewenste item kunt implementeren door **maken** of **nu downloaden** te selecteren. Ga door met de stappen in de wizard implementatie die kunnen variëren, afhankelijk van de IoT Edge module die u hebt geselecteerd:
 
-1. Bevestig de gebruiks voorwaarden en het privacybeleid van de provider door **door gaan**te selecteren. Mogelijk moet u eerst contact gegevens opgeven.
+1. Bevestig de gebruiks voorwaarden en het privacybeleid van de provider door **door gaan** te selecteren. Mogelijk moet u eerst contact gegevens opgeven.
 1. Kies uw abonnement en het IoT Hub waaraan het doel apparaat is gekoppeld.
 1. Kies **implementeren op een apparaat**.
 1. Voer de naam van het apparaat in of selecteer **apparaat zoeken** om te bladeren tussen de apparaten die zijn geregistreerd bij de hub.
@@ -105,10 +107,10 @@ Controleer of de module is geïmplementeerd in uw IoT Hub in de Azure Portal. Se
 U kunt snel een module implementeren vanuit Azure Marketplace op uw apparaat in uw IoT Hub in de Azure Portal.
 
 1. Ga in Azure Portal naar uw IoT Hub.
-1. Selecteer in het linkerdeel venster onder **automatische Apparaatbeheer**de optie **IOT Edge**.
+1. Selecteer in het linkerdeel venster onder **automatische Apparaatbeheer** de optie **IOT Edge**.
 1. Selecteer het IoT Edge apparaat dat de implementatie moet ontvangen.
 1. Selecteer op de bovenste balk **Modules instellen**.
-1. Klik in de sectie **IOT Edge modules** op **toevoegen**en selecteer **Marketplace module** in de vervolg keuzelijst.
+1. Klik in de sectie **IOT Edge modules** op **toevoegen** en selecteer **Marketplace module** in de vervolg keuzelijst.
 
 ![Module toevoegen in IoT Hub](./media/how-to-deploy-modules-portal/iothub-add-module.png)
 

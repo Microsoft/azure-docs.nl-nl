@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 855765648d68756598f2942e0c994fa939bcbda0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 679df881e928825496a03b2fef7c9374d61593f7
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695665"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199991"
 ---
 # <a name="access-external-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot externe opslag met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
-In dit document wordt beschreven hoe gebruikers gegevens kunnen lezen uit bestanden die zijn opgeslagen in Azure Storage in een serverloze SQL-pool. Gebruikers hebben de volgende opties om toegang te krijgen tot de opslag:
+In dit artikel wordt beschreven hoe gebruikers gegevens kunnen lezen van de bestanden die zijn opgeslagen op Azure Storage in een serverloze SQL-groep. Gebruikers hebben de volgende opties om toegang te krijgen tot de opslag:
 
 - De functie [OPENROWSET](develop-openrowset.md) die ad-hocquery's voor de bestanden in Azure Storage mogelijk maakt.
 - [Externe tabel](develop-tables-external-tables.md) dat een vooraf gedefinieerde gegevensstructuur is die boven op de set externe bestanden is gebouwd.

@@ -11,14 +11,16 @@ services: iot-edge
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 431c116fee22da27ed0487fc6d2fe3644575491f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: f7f05fb84ff6cbe320e8f479912bdcdefdc41021
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102046020"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201656"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Een IoT Edge apparaat configureren om te fungeren als transparante gateway
+
+[!INCLUDE [iot-edge-version-201806-or-202011](../../includes/iot-edge-version-201806-or-202011.md)]
 
 In dit artikel vindt u gedetailleerde instructies voor het configureren van een IoT Edge apparaat om te werken als een transparante gateway zodat andere apparaten kunnen communiceren met IoT Hub. In dit artikel wordt de term *IOT Edge gateway* gebruikt om te verwijzen naar een IOT edge apparaat dat is geconfigureerd als een transparante gateway. Zie [How a IOT edge-apparaten kunnen worden gebruikt als een gateway](./iot-edge-as-gateway.md)voor meer informatie.
 
@@ -142,10 +144,10 @@ Als u de certificaten op een andere machine hebt gemaakt, kopieert u deze naar u
 
 1. Sla het bestand op en sluit het.
 
-1. Start IoT Edge opnieuw.
+1. Pas de wijzigingen toe.
 
    ```bash
-   sudo iotedge system restart
+   sudo iotedge config apply
    ```
 
 :::moniker-end

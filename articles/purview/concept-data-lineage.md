@@ -7,16 +7,16 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.openlocfilehash: ceb30cee194994e5b31db312f191194932c937b4
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 476355f41de5e0e6aaffdedea8947cab5221767a
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552772"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200732"
 ---
 # <a name="data-lineage-in-azure-purview-data-catalog-client"></a>Data afkomst in azure controle sfeer liggen Data Catalog-client
 
-Dit artikel bevat een overzicht van de gegevens afkomst in azure controle sfeer liggen Data Catalog. Ook wordt beschreven hoe gegevens systemen met de catalogus kunnen worden geïntegreerd om afkomst gegevens vast te leggen. Controle sfeer liggen kan afkomst vastleggen voor gegevens in verschillende delen van uw organisatie, en op verschillende manieren van de voor bereiding, waaronder:
+Dit artikel bevat een overzicht van de gegevens afkomst in azure controle sfeer liggen Data Catalog. Ook wordt beschreven hoe gegevens systemen met de catalogus kunnen worden geïntegreerd om afkomst gegevens vast te leggen. Controle sfeer liggen kan afkomst vastleggen voor gegevens in verschillende delen van de gegevens van uw organisatie en op verschillende manieren van de voor bereiding, waaronder:
 
 - Volledig onbewerkte gegevens die vanaf verschillende platforms worden klaargezet
 - Getransformeerde en voor bereide gegevens
@@ -65,6 +65,6 @@ Afkomst is een belang rijke functie van de controle sfeer liggen-Data Catalog te
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Snelstartgids: een Azure controle sfeer liggen-account maken in de Azure Portal](create-catalog-portal.md)
-* [Snelstartgids: een Azure controle sfeer liggen-account maken met behulp van Azure PowerShell/Azure CLI](create-catalog-powershell.md)
+* [Quickstart: Een Azure Purview-account maken in Azure Portal](create-catalog-portal.md)
+* [Quickstart: Een Azure Purview-account maken met behulp van Azure PowerShell/Azure CLI](create-catalog-powershell.md)
 * [Snelstartgids: controle sfeer liggen Studio gebruiken](use-purview-studio.md)

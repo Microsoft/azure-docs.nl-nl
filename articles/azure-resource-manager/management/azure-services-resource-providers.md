@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: cc9793bfc0ca6cc0afbede241534453209685d94
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 65fa6a690f05a61e54bae2d22f4889c3193bcb1a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198928"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008702"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -98,7 +98,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. HanaOnAzure | [SAP HANA on Azure Large Instances](../../virtual-machines/workloads/sap/hana-overview-architecture.md) |
 | Micro soft. HardwareSecurityModules | [Azure Dedicated HSM](../../dedicated-hsm/index.yml) |
 | Microsoft.HDInsight | [HDInsight](../../hdinsight/index.yml) |
-| Micro soft. HealthcareApis | [Azure-API voor FHIR](../../healthcare-apis/index.yml) |
+| Micro soft. HealthcareApis | [Azure-API voor FHIR](../../healthcare-apis/fhir/index.yml) |
 | Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
 | Micro soft. HybridData | [StorSimple](../../storsimple/index.yml) |
 | Micro soft. HybridNetwork  | [Zones met persoonlijke randen](../../networking/edge-zones-overview.md) |

@@ -4,14 +4,14 @@ description: Meer informatie over het maken en opsporen van C#-functies met behu
 ms.date: 03/03/2021
 ms.topic: how-to
 zone_pivot_groups: development-environment-functions
-ms.openlocfilehash: 70eacc5ec7f6adb65ba6e01c55acc6c6e3075ca9
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 9751d5d354d738a64d6b02e8153464491d78ec14
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102583896"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201377"
 ---
-# <a name="develop-and-publish-net-5-function-using-azure-functions"></a>.NET 5-functie ontwikkelen en publiceren met behulp van Azure Functions 
+# <a name="develop-and-publish-net-5-functions-using-azure-functions"></a>.NET 5-functies ontwikkelen en publiceren met behulp van Azure Functions 
 
 Dit artikel laat u zien hoe u met C#-functies werkt met behulp van .NET 5,0, die out-of-process wordt uitgevoerd vanuit de Azure Functions runtime. U leert hoe u lokale .NET-functies voor geïsoleerde processen kunt maken, opsporen en publiceren naar Azure. In Azure worden deze functies uitgevoerd in een geïsoleerd proces dat .NET 5,0 ondersteunt. Zie voor meer informatie de [hand leiding voor het uitvoeren van functies op .net 5,0 in azure](dotnet-isolated-process-guide.md).
 
@@ -152,7 +152,7 @@ Op dit moment kunt u de opdracht uitvoeren `func start` vanuit de hoofdmap van d
  
 1. In de uitvoer van Azure Functions runtime noteert u de proces-ID van het hostproces, waaraan u een debugger kunt koppelen. Noteer ook de URL van uw lokale functie.
 
-1. Selecteer in het menu **fout opsporing** in Visual Studio **koppelen aan proces...**, zoek het dotnet.exe proces dat overeenkomt met de proces-id en selecteer **bijvoegen**. 
+1. Selecteer in het menu **fout opsporing** in Visual Studio **koppelen aan proces...**, zoek het proces dat overeenkomt met de proces-id en selecteer **bijvoegen**. 
     
     :::image type="content" source="media/dotnet-isolated-process-developer-howtos/attach-to-process.png" alt-text="De debugger koppelen aan het hostproces van functions":::    
 

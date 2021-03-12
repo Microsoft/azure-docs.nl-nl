@@ -2,7 +2,7 @@
 Titel: Azure Media Services v3-overzicht: Azure Media Services beschrijving: een overzicht op hoog niveau van Azure Media Services V3 met koppelingen naar Quick starts, zelf studies en code voorbeelden.
 Services: Media Services documentationcenter: na Auteur: IngridAtMicrosoft Manager: femila editor: ' ' Tags: ' ' tref woorden: Azure Media Services, stream, broadcast, Live, offline
 
-MS. service: Media-Services MS. devlang: meerdere MS. topic: overzicht ms.tgt_pltfrm: meerdere MS. workload: medium MS. date: 08/31/2020 MS. Author: inhenkel MS. Custom: MVC
+MS. service: Media-Services MS. devlang: meerdere MS. topic: overzicht ms.tgt_pltfrm: meerdere MS. workload: medium MS. date: 3/10/2021 MS. Author: inhenkel MS. Custom: MVC
 #<a name="customer-intent-as-a-developer-or-a-content-provider-i-want-to-encode-stream-on-demand-or-live-analyze-my-media-content-so-that-my-customers-can-view-the-content-on-a-wide-variety-of-browsers-and-devices-gain-valuable-insights-from-recorded-content"></a>Klant intentie: als ontwikkelaar of een inhouds provider, ik wil coderen, streamen (op aanvraag of Live), mijn media-inhoud analyseren zodat mijn klanten het volgende kunnen doen: Bekijk de inhoud van een groot aantal browsers en apparaten, krijg waardevolle inzichten van opgenomen inhoud.
 ---
 
@@ -13,9 +13,6 @@ MS. service: Media-Services MS. devlang: meerdere MS. topic: overzicht ms.tgt_pl
 Azure Media Services is een cloudgebaseerd platform waarmee u oplossingen bouwt voor het creëren van videostreaming van broadcast-kwaliteit, het verbeteren van toegankelijkheid en distributie, het analyseren van inhoud en nog veel meer. Ongeacht of u een ontwikkelaar van apps, een callcenter, een overheidsinstelling of een entertainmentbedrijf bent, is Media Services het perfecte hulpmiddel bij het maken van apps die media-ervaringen van uitzonderlijke kwaliteit willen aanbieden aan grote doelgroepen, op alle populaire mobiele apparaten en in de meestgebruikte browsers van dit moment.
 
 De Media Services v3-SDK's zijn gebaseerd op [Media Services v3 OpenAPI-specificatie (Swagger)](https://aka.ms/ams-v3-rest-sdk).
-
-> [!NOTE]
-> U kunt de [Azure-portal](https://portal.azure.com/) gebruiken voor het beheren van Media Services v3-[livegebeurtenissen](live-events-outputs-concept.md), het bekijken (niet beheren) van v3-[assets](assets-concept.md) en het [opvragen van informatie over toegang tot API's](./access-api-howto.md). Gebruik voor alle andere beheertaken (bijvoorbeeld [transformaties en taken](transforms-jobs-concept.md) en [inhoudsbeveiliging](content-protection-overview.md)), de [REST API](/rest/api/media/), [CLI](/cli/azure/ams) of een van de ondersteunde [SDK's](media-services-apis-overview.md#sdks).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

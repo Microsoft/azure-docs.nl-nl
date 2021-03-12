@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 01/28/2021
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 34168a02b5a2d2dfe74e2a5839e0bfddcf684222
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ee9b38343176eec82d8e227e86faa97814f5be13
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712178"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616533"
 ---
 # <a name="what-is-azure-private-link"></a>Wat is Azure Private Link? 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners.
@@ -65,7 +65,7 @@ Azure Private Link biedt de volgende voordelen:
 |Azure Service Bus | Alle openbare regio's<br/>Alle Government-regio's  | Ondersteund met de Premium-laag van Azure Service Bus. [Selecteren voor lagen](../service-bus-messaging/service-bus-premium-messaging.md) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Service Bus.](../service-bus-messaging/private-link-service.md)    |
 |Azure Relay | Alle openbare regio's      |  | Preview <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Relay.](../azure-relay/private-link-service.md)  |
 |Azure Event Grid| Alle openbare regio's<br/> Alle Government-regio's       |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Event Grid.](../event-grid/network-security.md) |
-|Azure Web Apps | Alle openbare regio's      | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
+|Azure Web Apps | Alle openbare regio's<br/> China-noord 2 & Oost 2    | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
 |Azure Machine Learning | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Machine Learning.](../machine-learning/how-to-configure-private-link.md)   |
 | Azure Automation  | Alle openbare regio's<br/> Alle Government-regio's |  | Preview </br> [Meer informatie over het maken van een privé-eindpunt voor Azure Automation.](../automation/how-to/private-link-security.md)| |
 | Azure IoT Hub | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure IoT Hub.](../iot-hub/virtual-network-support.md) |

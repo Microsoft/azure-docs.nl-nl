@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: e4de77a8a56ce21511ad099af59a77e10ab1815d
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: b5e25e9ed25ced96d38994928bcb6275ce79420f
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787533"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612793"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ’s) over Language Understanding
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over Language Understanding (LUIS).
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 Meer [informatie](whats-new.md) over wat er nieuw is in language UNDERSTANDING (Luis).
 
@@ -286,7 +286,7 @@ Als u de Azure Bot Service gebruikt en het probleem is dat de **test in Web Chat
 
 #### <a name="resolve-issue-while-debugging-on-local-machine-with-bot-framework"></a>Los het probleem op bij het opsporen van fouten op een lokale computer met bot Framework.
 
-Zie [fouten opsporen in een bot](/azure/bot-service/bot-service-debug-bot?view=azure-bot-service-4.0)voor meer informatie over de lokale fout opsporing van een bot.
+Zie [fouten opsporen in een bot](/azure/bot-service/bot-service-debug-bot)voor meer informatie over de lokale fout opsporing van een bot.
 
 ## <a name="integrating-luis"></a>LUIS integreren
 

@@ -2,18 +2,19 @@
 title: Azure-schijven toewijzen aan gast schijven van Linux VM
 description: De Azure-schijven bepalen die aan de gast schijven van een virtuele Linux-machine.
 author: timbasham
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: disks
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: tibasham
-ms.openlocfilehash: 4f0e48bf1c14728c54d4e89f30700017b0420d7d
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.collection: linux
+ms.openlocfilehash: bc6c6273ab3d1a4403763e4ed0a8c491995fb2df
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523619"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556720"
 ---
 # <a name="how-to-map-azure-disks-to-linux-vm-guest-disks"></a>Azure-schijven toewijzen aan gast schijven van Linux VM
 
@@ -23,7 +24,7 @@ Mogelijk moet u de Azure-schijven bepalen die de gast schijven van een virtuele 
 
 Een LUN (Logical Unit Number) is een nummer dat wordt gebruikt om een specifiek opslag apparaat te identificeren. Elk opslag apparaat krijgt een unieke numerieke id, beginnend bij nul. Het volledige pad naar een apparaat wordt vertegenwoordigd door het busnummer, het doel-ID-nummer en het LUN (Logical Unit Number). 
 
-Bijvoorbeeld: ***bus nummer 0, doel-id 0, LUN 3** _
+Bijvoorbeeld: ***bus nummer 0, doel-id 0, LUN 3***
 
 Voor onze oefening hoeft u alleen het LUN te gebruiken.
 
@@ -36,7 +37,7 @@ Hieronder ziet u twee methoden voor het vinden van het LUN van een schijf in Lin
 1. Verbinding maken met de virtuele machine
 1. `sudo lsscsi`
 
-De eerste kolom die wordt vermeld, bevat het LUN, de indeling is [host: kanaal: doel: _ * LUN * *].
+De eerste kolom die wordt vermeld, bevat het LUN, de indeling is [host: kanaal: doel:**LUN**].
 
 ### <a name="listing-block-devices"></a>Apparaten weer geven blok keren
 

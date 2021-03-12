@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 06/05/2020
+ms.date: 03/10/2021
 ms.author: justinha
-ms.openlocfilehash: 76af477af8290634d2658c58574b8f96cff7b1fb
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 5473ef46751d64fdbbf1d52f39c66f49d707e615
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620338"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631384"
 ---
 # <a name="management-concepts-for-user-accounts-passwords-and-administration-in-azure-active-directory-domain-services"></a>Beheer concepten voor gebruikers accounts, wacht woorden en beheer in Azure Active Directory Domain Services
 
@@ -80,7 +80,7 @@ In azure AD DS zijn de beschik bare prestaties en functies gebaseerd op de SKU. 
 
 | SKU-naam   | Maximum aantal objecten | Back-upfrequentie | Maximum aantal uitgaande forest-vertrouwens relaties |
 |------------|----------------------|------------------|----|
-| Standard   | Onbeperkt            | Elke 7 dagen     | 0  |
+| Standard   | Onbeperkt            | Elke 5 dagen     | 0  |
 | Enterprise | Onbeperkt            | Elke 3 dagen     | 5  |
 | Premium    | Onbeperkt            | Dagelijks            | 10 |
 

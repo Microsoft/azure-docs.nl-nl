@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 1/21/2021
 ms.author: baanders
-ms.openlocfilehash: 59506b1d1d3fbbc5a532c597d46dc92ee3c2e98e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9f8ca9ab6dc184abb8d9dcd25ebe87cbd7761722
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101751121"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630258"
 ---
 Als u het project wilt publiceren naar een functie-app in azure, klikt u met de rechter muisknop op het project in *Solution Explorer* en kiest u **publiceren**.
 
@@ -57,6 +57,4 @@ Controleer in het deelvenster *Publish* dat wordt geopend in het hoofdvenster va
 >
 > Volg de prompts om een upgrade uit te voeren naar de meest recente runtime-versie van Azure Functions. Dit probleem kan optreden als u een oudere versie van Visual Studio gebruikt.
 
-De functie-app is nu gepubliceerd naar Azure. 
-
-Als uw functie-app toegang moet hebben tot Azure Digital Apparaatdubbels, moet er een door het systeem beheerde identiteit zijn met machtigingen voor toegang tot uw Azure Digital Apparaatdubbels-instantie. Daarna stelt u dat in.
+De functie-app is nu gepubliceerd naar Azure.

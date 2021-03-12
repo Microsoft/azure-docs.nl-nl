@@ -5,12 +5,12 @@ author: stevelas
 ms.topic: article
 ms.date: 07/21/2020
 ms.author: stevelas
-ms.openlocfilehash: e5f0fe76b599874afe8d64c293f3d914da5dd243
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 4e82be0e81e5e8c0182e061a0fba0f880bd45cc6
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705163"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632387"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Geo-replicatie in Azure Container Registry
 
@@ -22,6 +22,7 @@ Een register met geo-replicatie biedt de volgende voordelen:
 * Verbeter de prestaties en betrouw baarheid van regionale implementaties met netwerk-sluit register toegang
 * Verlaag de kosten voor gegevens overdracht door afbeeldings lagen van een lokaal, gerepliceerd REGI ster in dezelfde of nabijgelegen regio als de container host op te halen.
 * Eén beheerpunt voor een register in meerdere regio's
+* Register tolerantie als er een regionale storing optreedt
 
 > [!NOTE]
 > Als u kopieën van containerinstallaties in meer dan één Azure-containerregister wilt behouden, kunt u met Azure Container Registry ook [installatiekopieën importeren](container-registry-import-images.md). U kunt bijvoorbeeld binnen een DevOps-werkstroom een installatiekopie uit een ontwikkelingsregister naar een productieregister importeren zonder Docker-opdrachten te gebruiken.
@@ -59,6 +60,7 @@ De functie voor geo-replicatie van Azure Container Registry biedt de volgende vo
 * Eén configuratie van installatie kopie-implementaties beheren, omdat alle regio's dezelfde afbeeldings-URL gebruiken: `contoso.azurecr.io/public/products/web:1.2`
 * Push naar één REGI ster, terwijl ACR de geo-replicatie beheert. ACR repliceert alleen unieke lagen en vermindert de gegevens overdracht tussen regio's. 
 * Configureer regionale [webhooken](container-registry-webhook.md) om u op de hoogte te stellen van gebeurtenissen in specifieke replica's.
+* Geef een Maxi maal beschikbaar REGI ster op dat kan worden uitgebreid naar regionale storingen.
 
 Azure Container Registry biedt ook ondersteuning voor [beschikbaarheids zones](zone-redundancy.md) om in een Azure-regio een robuuste en Maxi maal beschik bare Azure container Registry te maken. De combi natie van beschikbaarheids zones voor redundantie binnen een regio en geo-replicatie tussen meerdere regio's, verbetert de betrouw baarheid en prestaties van een REGI ster.
 

@@ -2,16 +2,18 @@
 title: Opties voor DNS-naam omzetting voor virtuele Linux-machines
 description: Scenario's voor naam omzetting voor virtuele Linux-machines in azure IaaS, inclusief de meegeleverde DNS-services, hybride externe DNS en uw eigen DNS-server.
 author: RicksterCDN
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: networking
 ms.topic: conceptual
 ms.date: 10/19/2016
 ms.author: rclaus
-ms.openlocfilehash: aa007888c68df41242f937e1062a90ec1b7fc3ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.collection: linux
+ms.openlocfilehash: e689e934f11e3cc2a621f25525e507a72a7044b8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87372821"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556788"
 ---
 # <a name="dns-name-resolution-options-for-linux-virtual-machines-in-azure"></a>Opties voor DNS-naam omzetting voor virtuele Linux-machines in azure
 Azure biedt standaard DNS-naam omzetting voor alle virtuele machines die zich in één virtueel netwerk bevinden. U kunt uw eigen DNS-oplossing voor naam omzetting implementeren door uw eigen DNS-services te configureren op de virtuele machines die door Azure worden gehost. De volgende scenario's kunnen u helpen bij het kiezen van het abonnement dat geschikt is voor uw situatie.

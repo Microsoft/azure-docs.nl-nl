@@ -8,14 +8,16 @@ ms.author: kgremban
 ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 2ae6d46198d979f91de5bf31d389f75961b4ab88
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 6e5b5c021eb6a83de9ecfb31757855065b70c290
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437164"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196945"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Visual Studio 2019 gebruiken voor het ontwikkelen en opsporen van fouten in modules voor Azure IoT Edge
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 U kunt uw bedrijfs logica omzetten in modules voor Azure IoT Edge. Dit artikel laat u zien hoe u Visual Studio 2019 kunt gebruiken als het belangrijkste hulp programma voor het ontwikkelen en opsporen van fouten in modules.
 
@@ -166,7 +168,7 @@ Normaal gesp roken wilt u elke module testen en fouten opsporen voordat u deze u
 
 Wanneer u klaar bent met het ontwikkelen van een enkele module, wilt u mogelijk een volledige oplossing met meerdere modules uitvoeren en fouten opsporen.
 
-1. Voeg in **Solution Explorer** een tweede module aan de oplossing toe door met de rechter muisknop op **AzureIoTEdgeApp1** te klikken en **Add**  >  **nieuwe IOT Edge module** toevoegen te selecteren. De standaard naam van de tweede module is **IotEdgeModule2** en zal fungeren als een andere pipe-module.
+1. Voeg in **Solution Explorer** een tweede module aan de oplossing toe door met de rechter muisknop op **AzureIoTEdgeApp1** te klikken en   >  **nieuwe IOT Edge module** toevoegen te selecteren. De standaard naam van de tweede module is **IotEdgeModule2** en zal fungeren als een andere pipe-module.
 
 1. Open het bestand `deployment.template.json` en u ziet dat **IotEdgeModule2** is toegevoegd in de sectie **modules** . Vervang de sectie **routes** door het volgende. Als u de module namen hebt aangepast, moet u deze namen bijwerken zodat deze overeenkomen.
 
@@ -222,7 +224,7 @@ Wanneer u klaar bent met het ontwikkelen van een enkele module, wilt u mogelijk 
 
 In dit snelstartartikel voor het instellen van uw IoT Edge-apparaat hebt u een module geïmplementeerd met behulp van de Azure-portal. U kunt modules ook implementeren met behulp van de Cloud Explorer voor Visual Studio. U hebt al een implementatie manifest voor bereid voor uw scenario, het `deployment.json` bestand en alles wat u hoeft te doen, selecteert u een apparaat om de implementatie te ontvangen.
 
-1. Open **Cloud Explorer** door te klikken op **View**  >  **Cloud Explorer** weer geven. Zorg ervoor dat u bent aangemeld bij Visual Studio 2019.
+1. Open **Cloud Explorer** door te klikken op   >  **Cloud Explorer** weer geven. Zorg ervoor dat u bent aangemeld bij Visual Studio 2019.
 
 1. Vouw in **Cloud Explorer** uw abonnement uit, Zoek uw Azure-IOT hub en het Azure IOT edge-apparaat dat u wilt implementeren.
 

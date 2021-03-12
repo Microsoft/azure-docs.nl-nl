@@ -1,18 +1,18 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure API Management
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure API Management. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.topic: sample
 author: dlepow
 ms.author: apimpm
 ms.service: api-management
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 70cb31691e4164b8f643bfc78319a909417a44ab
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: b62b1670d9436ea4e1bcbeb38aa9fe83988d0815
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102440634"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630814"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-api-management"></a>Azure Policy regulerende nalevings controles voor Azure API Management
 

@@ -2,15 +2,15 @@
 title: 'Zelf studie: JSON-sjabloon exporteren vanuit de Azure Portal for Bicep Development'
 description: Meer informatie over het gebruik van een geëxporteerde JSON-sjabloon om uw Bicep-ontwikkeling te volt ooien.
 author: mumian
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0cba91a8c021f4baa90d1a4264bf84d3c56930ec
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 3bc7ed4ada4f7810e9864778c7f76a0573c9dc89
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748077"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632556"
 ---
 # <a name="tutorial-use-exported-json-template-from-the-azure-portal"></a>Zelf studie: een geëxporteerde JSON-sjabloon gebruiken uit de Azure Portal
 
@@ -79,7 +79,7 @@ Op dit moment ondersteunt de Azure Portal alleen het exporteren van JSON-sjablon
 
 De niet-nageleefde geëxporteerde sjabloon biedt u de meeste Bicep die u nodig hebt, maar u moet deze aanpassen voor uw Bicep-bestand. Let vooral op verschillen in para meters en variabelen tussen uw Bicep-bestand en het geëxporteerde Bicep-bestand. Het export proces kent uiteraard niet de para meters en variabelen die u al hebt gedefinieerd in uw Bicep-bestand.
 
-In het volgende voor beeld worden de toevoegingen aan uw Bicep-bestand gemarkeerd. Het bevat de geëxporteerde code plus enkele wijzigingen. Eerst wordt de naam van de parameter gewijzigd zodat deze overeenkomt met uw naamconventie. Ten tweede wordt uw locatieparameter gebruikt voor de locatie van het App Service-plan. Ten derde worden enkele van de eigenschappen waar de standaardwaarde goed is, verwijderd.
+In het volgende voor beeld ziet u de toevoegingen aan uw Bicep-bestand. Het bevat de geëxporteerde code plus enkele wijzigingen. Eerst wordt de naam van de parameter gewijzigd zodat deze overeenkomt met uw naamconventie. Ten tweede wordt uw locatieparameter gebruikt voor de locatie van het App Service-plan. Ten derde worden enkele van de eigenschappen waar de standaardwaarde goed is, verwijderd.
 
 Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 

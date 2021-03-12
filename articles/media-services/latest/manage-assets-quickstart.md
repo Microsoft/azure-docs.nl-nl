@@ -6,21 +6,18 @@ ms.date: 08/31/2020
 author: IngridAtMicrosoft
 ms.author: inhenkel
 manager: femila
-ms.openlocfilehash: 3831892b6cd241643b3e5753689f768d59e27704
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 9b66fa6cd688cf0680e742ffa9fbe4d61a444ab2
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955967"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632975"
 ---
 # <a name="quickstart-upload-encode-and-stream-content-with-portal"></a>Quickstart: Inhoud uploaden, coderen en streamen met de portal
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 In deze quickstart ziet u hoe u Azure Portal kunt gebruiken om inhoud te uploaden, coderen en streamen met Azure Media Services.
-
-> [!NOTE]
-> Zorg ervoor dat u [de beperkingen van Azure Portal voor Media Services v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3) controleert.
   
 ## <a name="overview"></a>Overzicht
 

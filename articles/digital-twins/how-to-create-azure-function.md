@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 4889744347b72603a0f6318f981bc2db4906b835
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 7bb9b6d4a6ca006952d709244e6526345d44431e
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102433536"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630257"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -63,7 +63,7 @@ Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoege
 * [System .net. http](https://www.nuget.org/packages/System.Net.Http/)
 * [Azure. core](https://www.nuget.org/packages/Azure.Core/)
 
-Open vervolgens in uw Visual Studio-Solution Explorer het _Function1.cs_ -bestand met voorbeeld code en voeg de volgende `using` instructies voor deze pakketten toe aan uw functie. 
+Open vervolgens in uw Visual Studio-Solution Explorer het _Function1.cs_ -bestand met voorbeeld code en voeg de volgende `using` instructies voor deze pakketten toe aan uw functie.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs" id="Function_dependencies":::
 
@@ -96,6 +96,20 @@ Nu uw toepassing is geschreven, kunt u deze publiceren naar Azure met behulp van
 ## <a name="publish-the-function-app-to-azure"></a>De functie-app publiceren naar Azure
 
 [!INCLUDE [digital-twins-publish-azure-function.md](../../includes/digital-twins-publish-azure-function.md)]
+
+### <a name="verify-function-publish"></a>Functie publiceren controleren
+
+1. Meld u aan met uw referenties in de [Azure Portal](https://portal.azure.com/).
+2. Zoek in de zoek balk boven in het venster naar de naam van de **functie-app**.
+
+    :::image type="content" source="media/how-to-create-azure-function/search-function-app.png" alt-text="Zoek naar de functie-app met de naam in de Azure Portal." lightbox="media/how-to-create-azure-function/search-function-app.png":::
+
+3. Op de pagina *functie-app* die wordt geopend, kiest u *functies* in de menu opties aan de linkerkant. Als de functie is gepubliceerd, ziet u de naam van de functie in de lijst.
+Mogelijk moet u enkele minuten wachten of de pagina paar keren vernieuwen voordat u de functie ziet die wordt weer gegeven in de lijst gepubliceerde functies.
+
+    :::image type="content" source="media/how-to-create-azure-function/view-published-functions.png" alt-text="Bekijk gepubliceerde functies in de Azure Portal." lightbox="media/how-to-create-azure-function/view-published-functions.png":::
+
+Als uw functie-app toegang moet hebben tot Azure Digital Apparaatdubbels, moet er een door het systeem beheerde identiteit zijn met machtigingen voor toegang tot uw Azure Digital Apparaatdubbels-instantie. Daarna stelt u dat in.
 
 ## <a name="set-up-security-access-for-the-function-app"></a>Beveiligings toegang instellen voor de functie-app
 
@@ -155,7 +169,7 @@ Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen wor
 
     :::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
 
-1. Selecteer op de pagina functie-app de optie _identiteit_ in de navigatie balk aan de linkerkant om te werken met een beheerde identiteit voor de functie. Controleer op de pagina _systeem toegewezen_ of de _status_ is ingesteld op aan op aan (als dit niet het geval is, stelt u deze nu in en *Sla* de wijziging **op** ).
+1. Selecteer op de pagina functie-app de optie _identiteit_ in de navigatie balk aan de linkerkant om te werken met een beheerde identiteit voor de functie. Controleer op de pagina _systeem toegewezen_ of de _status_ is ingesteld op aan (indien dit niet het geval is, nu instellen en *Sla* de wijziging **op** ).
 
     :::image type="content" source="media/how-to-create-azure-function/verify-system-managed-identity.png" alt-text="Scherm opname van de Azure Portal: op de pagina identiteit voor de functie-app, is de optie status ingesteld op aan." lightbox="media/how-to-create-azure-function/verify-system-managed-identity.png":::
 

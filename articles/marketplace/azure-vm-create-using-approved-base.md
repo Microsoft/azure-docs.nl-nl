@@ -6,17 +6,17 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: emuench
 ms.author: krsh
-ms.date: 01/06/2021
-ms.openlocfilehash: 9164c1e2542024a02bf4868658d0f29728f32c7b
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.date: 02/18/2021
+ms.openlocfilehash: 7ed3f707ad69c60111bcc97e139c0825fd503d8e
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976857"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630100"
 ---
 # <a name="how-to-create-a-virtual-machine-using-an-approved-base"></a>Een virtuele machine maken met behulp van een goedgekeurde basis
 
-In dit artikel wordt beschreven hoe u Azure gebruikt om een virtuele machine (VM) te maken die een vooraf geconfigureerd, goedgekeurd besturings systeem bevat. Als dit niet compatibel is met uw oplossing, is het mogelijk [een on-premises VM te maken en te configureren](azure-vm-create-using-own-image.md) met behulp van een goedgekeurd besturings systeem, vervolgens te configureren en voor te bereiden voor het uploaden, zoals beschreven in [een Windows-VHD of VHDX voorbereiden om te uploaden naar Azure](../virtual-machines/windows/prepare-for-upload-vhd-image.md).
+In dit artikel wordt beschreven hoe u Azure gebruikt om een virtuele machine (VM) te maken die een vooraf geconfigureerd, goedgekeurd besturings systeem bevat. Als dit niet compatibel is met uw oplossing, is het mogelijk [een on-premises VM te maken en te configureren](azure-vm-create-using-own-image.md) met behulp van een goedgekeurd besturings systeem.
 
 > [!NOTE]
 > Voordat u met deze procedure begint, controleert u de [technische vereisten](marketplace-virtual-machines.md#technical-requirements) voor Azure VM-aanbiedingen, inclusief vereisten voor virtuele harde schijven (VHD).
@@ -36,7 +36,7 @@ Azure biedt een scala aan goedgekeurde Linux-distributies. Zie voor een actuele 
 
 ## <a name="create-vm-on-the-azure-portal"></a>Een VM maken op het Azure Portal
 
-1. Meld u aan bij de [Azure-portal](https://ms.portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://ms.portal.azure.com/).
 2. Selecteer **Virtuele machines**.
 3. Selecteer **+ toevoegen** om het scherm **een virtuele machine maken** te openen.
 4. Selecteer de installatie kopie in de vervolg keuzelijst of selecteer **Bladeren alle open bare en persoonlijke installatie kopieën** om te zoeken of door alle beschik bare installatie kopieën van virtuele machines te bladeren.
@@ -78,5 +78,5 @@ Raadpleeg de volgende documentatie om verbinding te maken met uw virtuele [Windo
 ## <a name="next-steps"></a>Volgende stappen
 
 - Aanbevolen volgende stap: [Test uw VM-installatie kopie](azure-vm-image-test.md) om te controleren of deze voldoet aan de publicatie vereisten voor Azure Marketplace. Dit is optioneel.
-- Als u de VM-installatie kopie niet test, gaat u door met [het genereren van de SAS-URI](azure-vm-get-sas-uri.md).
+- Als u uw VM-installatie kopie niet wilt testen, meldt u zich aan bij [Partner Center](https://partner.microsoft.com/) om uw installatie kopie te publiceren.
 - Zie [Veelgestelde vragen over vm's voor Azure Marketplace](azure-vm-create-faq.md)als u problemen ondervindt bij het maken van uw nieuwe VHD op basis van Azure.

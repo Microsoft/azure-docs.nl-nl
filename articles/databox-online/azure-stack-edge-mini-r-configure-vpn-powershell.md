@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 11/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 763ccd397d8cd704ca161032e65f17979bccb53b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9fa4c678a04342b47601f81ede7c49ab841f42ba
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466902"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630959"
 ---
 # <a name="configure-vpn-on-your-azure-stack-edge-mini-r-device-via-azure-powershell"></a>VPN configureren op uw Azure Stack Edge mini-R-apparaat via Azure PowerShell
 
@@ -284,7 +284,7 @@ Volg deze stappen op de lokale gebruikers interface van uw Azure Stack edge-appa
 
     ![VPN configureren 1](media/azure-stack-edge-mini-r-configure-vpn-powershell/configure-vpn-1.png)
 
-2. Op de Blade **VPN configureren** :
+2. Doe het volgende op de blade **VPN configureren**:
     
     1. Wijs in het bestand telefoon lijst uploaden het. pbk-bestand aan dat u in de vorige stap hebt gemaakt.
     2. Geef in het configuratie bestand voor de open bare IP-lijst een Azure Data Center-JSON-bestand op als invoer. U hebt dit bestand in een eerdere stap gedownload van: [https://www.microsoft.com/download/details.aspx?id=56519](https://www.microsoft.com/download/details.aspx?id=56519) .
@@ -303,7 +303,7 @@ Volg deze stappen op de lokale gebruikers interface van uw Azure Stack edge-appa
 
 ## <a name="validate-data-transfer-through-vpn"></a>Gegevens overdracht via VPN valideren
 
-Kopieer gegevens naar een SMB-share om te controleren of de VPN-verbinding werkt. Volg de stappen in [een share toevoegen](azure-stack-edge-j-series-manage-shares.md#add-a-share) op uw Azure stack edge-apparaat. 
+Kopieer gegevens naar een SMB-share om te controleren of de VPN-verbinding werkt. Volg de stappen in [een share toevoegen](azure-stack-edge-gpu-manage-shares.md#add-a-share) op uw Azure stack edge-apparaat. 
 
 1. Kopieer een bestand, bijvoorbeeld \data\pictures\waterfall.jpg naar de SMB-share die u op het client systeem hebt gekoppeld. 
 2. Controleren of de gegevens via VPN worden verzonden terwijl de gegevens worden gekopieerd:

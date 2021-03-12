@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: a0f0324d1f7308eb1392c4f7a98a6a5d226026be
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: b765d92778df40caec0864dc6f547324216fdb07
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705503"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611977"
 ---
 # <a name="infrastructure-as-code"></a>Infrastructure als code
 
@@ -91,7 +91,7 @@ microservices_sfpkg.close()
 ```
 
 ## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Automatische upgrade configuratie van het besturings systeem van de virtuele machine van Azure 
-Het upgraden van uw virtuele machines is een door de gebruiker geïnitieerde bewerking. het wordt aanbevolen dat u de Schaalset voor de virtuele machine gebruikt voor het [automatisch bijwerken van het besturings systeem](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) voor Azure service Fabric clusters host patch management; Patch Orchestration Application is een alternatieve oplossing die is bedoeld voor wanneer deze buiten Azure wordt gehost, maar POA kan worden gebruikt in azure, waarbij de overhead van het hosten van POA in azure een gemeen schappelijke reden is om de voor keur te geven aan een automatische upgrade van het besturings systeem van de virtuele machine over POA. Hieronder vindt u de eigenschappen van de Resource Manager-sjabloon voor de berekening van de virtuele machine Scale set om automatische upgrades van besturings systemen in te scha kelen:
+Het upgraden van uw virtuele machines is een door de gebruiker geïnitieerde bewerking. het wordt aanbevolen dat u de Schaalset voor de virtuele machine gebruikt voor het [automatisch bijwerken van het besturings systeem](service-fabric-patch-orchestration-application.md) voor Azure service Fabric clusters host patch management; Patch Orchestration Application is een alternatieve oplossing die is bedoeld voor wanneer deze buiten Azure wordt gehost, maar POA kan worden gebruikt in azure, waarbij de overhead van het hosten van POA in azure een gemeen schappelijke reden is om de voor keur te geven aan een automatische upgrade van het besturings systeem van de virtuele machine over POA. Hieronder vindt u de eigenschappen van de Resource Manager-sjabloon voor de berekening van de virtuele machine Scale set om automatische upgrades van besturings systemen in te scha kelen:
 
 ```json
 "upgradePolicy": {

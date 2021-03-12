@@ -3,14 +3,14 @@ title: Azure Automation gegevens beveiliging
 description: In dit artikel leest u hoe Azure Automation uw privacy beschermt en uw gegevens beveiligt.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 03/02/2021
+ms.date: 03/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: 2bdf25ef24f1fbf4aaf4dec154ea6af3421b915a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: e41e9af418b08210f5f0f40de9951d03711dc8e7
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050814"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616113"
 ---
 # <a name="management-of-azure-automation-data"></a>Beheer van Azure Automation-gegevens
 
@@ -26,7 +26,7 @@ Om de beveiliging van gegevens die onderweg zijn naar Azure Automation te verzek
 
 * DSC-knoop punten
 
-Er zijn oudere versies van TLS/Secure Sockets Layer (SSL) gevonden die kwetsbaar zijn en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**. Het wordt niet aanbevolen om uw agent expliciet in te stellen voor gebruik van TLS 1,2, tenzij dit absoluut nood zakelijk is, omdat de beveiligings functies op platform niveau kunnen worden vermeden, zodat u nieuwe beveiligde protocollen automatisch kunt detecteren en gebruiken wanneer deze beschikbaar zijn, zoals TLS 1,3.
+Er zijn oudere versies van TLS/Secure Sockets Layer (SSL) gevonden die kwetsbaar zijn en terwijl ze nog steeds werken om achterwaartse compatibiliteit mogelijk te maken, worden ze **niet aanbevolen**. Het wordt niet aanbevolen om uw agent expliciet in te stellen voor gebruik van TLS 1,2, tenzij dit nood zakelijk is, omdat deze beveiligings functies op platform niveau kan verstoren, zodat u nieuwe beveiligde protocollen automatisch kunt detecteren en gebruiken wanneer deze beschikbaar zijn, zoals TLS 1,3.
 
 Zie [log Analytics agent Overview-TLS 1,2](..//azure-monitor/agents/log-analytics-agent.md#tls-12-protocol)voor informatie over ondersteuning van TLS 1,2 met de log Analytics-agent voor Windows en Linux. Dit is een afhankelijkheid voor de Hybrid Runbook worker-rol.
 
@@ -41,7 +41,7 @@ Zie [log Analytics agent Overview-TLS 1,2](..//azure-monitor/agents/log-analytic
 
 ## <a name="data-retention"></a>Gegevensretentie
 
-Wanneer u een resource in Azure Automation verwijdert, wordt deze gedurende een aantal dagen voor controle doeleinden bewaard voordat deze definitief worden verwijderd. U kunt de resource niet zien of gebruiken tijdens deze periode. Dit beleid is ook van toepassing op bronnen die horen bij een verwijderd Automation-account. Het Bewaar beleid is van toepassing op alle gebruikers en kan momenteel niet worden aangepast. Als u gegevens gedurende een langere periode wilt blijven gebruiken, kunt u de [gegevens van Azure Automation-taak naar Azure monitor-logboeken door sturen](automation-manage-send-joblogs-log-analytics.md).
+Wanneer u een resource in Azure Automation verwijdert, wordt deze veel dagen bewaard voor controle doeleinden voordat permanent wordt verwijderd. U kunt de resource niet zien of gebruiken tijdens deze periode. Dit beleid is ook van toepassing op bronnen die horen bij een verwijderd Automation-account. Het Bewaar beleid is van toepassing op alle gebruikers en kan momenteel niet worden aangepast. Als u gegevens gedurende een langere periode wilt blijven gebruiken, kunt u de [gegevens van Azure Automation-taak naar Azure monitor-logboeken door sturen](automation-manage-send-joblogs-log-analytics.md).
 
 De volgende tabel bevat een overzicht van het Bewaar beleid voor verschillende resources.
 
@@ -68,7 +68,7 @@ U kunt uw runbooks exporteren naar script bestanden met behulp van de Azure Port
 
 ### <a name="integration-modules"></a>Integratiemodules
 
-U kunt geen integratie modules exporteren van Azure Automation. U moet deze beschikbaar maken buiten het Automation-account.
+U kunt geen integratie modules exporteren vanuit Azure Automation, ze moeten beschikbaar worden gesteld buiten het Automation-account.
 
 ### <a name="assets"></a>Assets
 
@@ -84,7 +84,10 @@ U kunt uw DSC-configuraties exporteren naar script bestanden met behulp van de A
 
 Geo-replicatie is standaard in Azure Automation-accounts. U kiest een primaire regio bij het instellen van uw account. Met de interne Automation geo-Replication-service wordt automatisch een secundaire regio aan het account toegewezen. De service maakt vervolgens voortdurend een back-up van de account gegevens van de primaire regio naar de secundaire regio. U kunt de volledige lijst met primaire en secundaire regio's vinden op [bedrijfs continuïteit en herstel na nood gevallen (BCDR): gekoppelde Azure-regio's](../best-practices-availability-paired-regions.md).
 
-De back-up die is gemaakt door de geo-replicatie service voor automatisering is een volledige kopie van Automation-assets, configuraties en dergelijke. Deze back-up kan worden gebruikt als de primaire regio uitvalt en gegevens verliest. In het onwaarschijnlijke geval dat de gegevens voor een primaire regio verloren zijn gegaan, probeert micro soft deze te herstellen. Als het bedrijf de primaire gegevens niet kan herstellen, wordt automatische failover gebruikt en wordt u geïnformeerd over de situatie via uw Azure-abonnement.
+De back-up die is gemaakt door de geo-replicatie service voor automatisering is een volledige kopie van Automation-assets, configuraties en dergelijke. Deze back-up kan worden gebruikt als de primaire regio uitvalt en gegevens verliest. In het onwaarschijnlijke geval dat de gegevens voor een primaire regio verloren zijn gegaan, probeert micro soft deze te herstellen.
+
+> [!NOTE]
+> Azure Automation klant gegevens worden opgeslagen in de regio die door de klant is geselecteerd. Voor BCDR zijn voor alle regio's behalve Brazilië-zuid en Zuidoost-Azië Azure Automation gegevens opgeslagen in een andere regio (Azure gekoppelde regio). Alleen voor de regio van de Brazilië-zuid (Sao Paulo-staat) van Brazilië Geografie en Zuidoost-Azië (Singapore) van de Azië en Stille Oceaan geografie slaan we Azure Automation gegevens op in dezelfde regio voor gegevens locatie vereisten voor deze regio's.
 
 De geo-replicatie service voor automatisering is niet rechtstreeks toegankelijk voor externe klanten als er sprake is van een regionale storing. Als u de automatiserings configuratie en runbooks wilt behouden tijdens regionale storingen:
 

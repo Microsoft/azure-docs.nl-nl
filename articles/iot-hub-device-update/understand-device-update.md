@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/11/2021
 ms.topic: overview
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 0d12ce74cb961148776d81b3d7cabc281bbc59fc
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 17674c1a5d7acff50a3dd17b9d98f5295c2e1b19
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665409"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633033"
 ---
 # <a name="device-update-for-iot-hub-preview-overview"></a>Overzicht van updates voor apparaten voor IoT Hub (preview-versie)
 
@@ -23,10 +23,10 @@ Om de volledige voor delen van het gebruik van IoT-Digital Transformation te rea
 
 ## <a name="support-for-a-wide-range-of-iot-devices"></a>Ondersteuning voor een breed scala aan IoT-apparaten
 
-Update van het apparaat voor IoT Hub is ontworpen om geoptimaliseerde update-implementaties en gestroomlijnde bewerkingen te bieden via integratie met [Azure IOT hub](https://azure.microsoft.com/en-us/services/iot-hub/). Met deze integratie kunt u eenvoudig een update van het apparaat op een bestaande oplossing aanbrengen. Het biedt een in de Cloud gehoste oplossing om verbinding te maken met vrijwel elk apparaat. Device update biedt ondersteuning voor een breed scala aan IoT-besturings systemen, waaronder Linux en [Azure rto's](https://azure.microsoft.com/en-us/services/rtos/) (realtime besturings systeem), en is uitbreidbaar via open source. 
+Update van het apparaat voor IoT Hub is ontworpen om geoptimaliseerde update-implementaties en gestroomlijnde bewerkingen te bieden via integratie met [Azure IOT hub](https://azure.microsoft.com/en-us/services/iot-hub/). Met deze integratie kunt u eenvoudig een update van het apparaat op een bestaande oplossing aanbrengen. Het biedt een in de Cloud gehoste oplossing om verbinding te maken met vrijwel elk apparaat. Device update biedt ondersteuning voor een breed scala aan IoT-besturings systemen, waaronder Linux en [Azure rto's](https://azure.microsoft.com/en-us/services/rtos/) (realtime besturings systeem), en is uitbreidbaar via open source. Er wordt een update van het apparaat voor IoT Hub-aanbiedingen met onze halfgeleider partners, waaronder STMicroelectronics, NXP, Renesas en micro chip. Bekijk de voor [beelden](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU) van de evaluatie boards voor belangrijkste halfgeleiders die de aan de slag-hand leidingen bevatten voor meer informatie over het configureren, bouwen en implementeren van de over-the-Air (OTA)-updates voor MCU Class-apparaten.
 
 Er worden zowel de binaire als de Raspberry Pi Reference yocto-installatie kopieën van het apparaat bijgewerkt.
-Update van het apparaat voor IoT Hub biedt ook ondersteuning voor het bijwerken van Azure IoT Edge apparaten. Er wordt een update agent voor apparaten gegeven voor Ubuntu Server 18,04 amd64-platform. Update van het apparaat voor IoT Hub biedt ook open-source code als u een van de bovenstaande platformen niet uitvoert. Zo kunt u de agent overbrengen naar de distributie die u uitvoert.
+Update van het apparaat voor IoT Hub biedt ook ondersteuning voor het bijwerken van Azure IoT Edge apparaten. Er wordt een update agent voor apparaten gegeven voor Ubuntu Server 18,04 amd64-platform. Update van het apparaat voor IoT Hub biedt ook open-source code als u een van de bovenstaande platformen niet uitvoert. U kunt de agent overbrengen naar de distributie die u uitvoert.
 
 Het bijwerken van het apparaat werkt met IoT Plug en Play (PnP) en kan elk apparaat beheren dat de vereiste PnP-interfaces ondersteunt. Zie voor meer informatie [apparaat bijwerken voor IOT hub en IoT Plug en Play](device-update-plug-and-play.md).
 

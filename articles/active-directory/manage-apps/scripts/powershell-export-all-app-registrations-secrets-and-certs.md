@@ -1,6 +1,6 @@
 ---
-title: 'Power shell-voor beeld: app-registraties, geheimen en certificaten exporteren in Azure Active Directory Tenant.'
-description: Power shell-voor beeld van het exporteren van alle app-registraties, geheimen en certificaten voor de opgegeven apps in uw Azure Active Directory-Tenant.
+title: 'Power shell-voor beeld: geheimen exporteren en certificaten voor app-registraties in Azure Active Directory Tenant.'
+description: Power shell-voor beeld dat alle geheimen en certificaten voor de opgegeven app-registraties in uw Azure Active Directory Tenant exporteert.
 services: active-directory
 author: kenwith
 manager: daveba
@@ -8,19 +8,19 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: sample
-ms.date: 02/18/2021
+ms.date: 03/09/2021
 ms.author: kenwith
 ms.reviewer: mifarca
-ms.openlocfilehash: 768f2f3241144085acb7a218b60034cdfa9e45b9
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: d0de96d0d8a5edc6fbacc25dcbcb868073e57183
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102185373"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556550"
 ---
-# <a name="export-app-registrations-secrets-and-certificates"></a>App-registraties, geheimen en certificaten exporteren
+# <a name="export-secrets-and-certificates-for-app-registrations"></a>Geheimen en certificaten voor app-registraties exporteren
 
-Met dit Power shell-voorbeeld script worden alle app-registraties, geheimen en certificaten voor de opgegeven apps in uw directory geëxporteerd.
+Met dit Power shell-voorbeeld script worden alle geheimen en certificaten voor de opgegeven app-registraties vanuit uw directory geëxporteerd naar een CSV-bestand.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
 
@@ -28,13 +28,17 @@ Voor dit voorbeeld is de [AzureAD V2 PowerShell voor Graph-module](/powershell/a
 
 ## <a name="sample-script"></a>Voorbeeldscript
 
-[!code-azurepowershell[main](~/powershell_scripts/application-management/export-all-app-registrations-secrets-and-certs.ps1 "Exports all app registrations, secrets, and certificates for the specified apps in your directory.")]
+[!code-azurepowershell[main](~/powershell_scripts/application-management/export-all-app-registrations-secrets-and-certs.ps1 "Exports all secrets and certificates for the specified app registrations in your directory.")]
 
 ## <a name="script-explanation"></a>Uitleg van het script
 
+De opdracht ' lid toevoegen ' is verantwoordelijk voor het maken van de kolommen in het CSV-bestand.
+U kunt de variabele ' $Path ' rechtstreeks in Power shell wijzigen, met een pad naar een CSV-bestand, als u de voor keur geeft aan het exporteren naar niet-interactief.
+
 | Opdracht | Opmerkingen |
 |---|---|
-| [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication?view=azureadps-2.0&preserve-view=true) | Exporteert alle app-registraties, geheimen en certificaten voor de opgegeven apps in uw Directory. |
+| [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) | Hiermee haalt u een toepassing op uit uw Directory. |
+| [Get-AzureADApplicationOwner](/powershell/module/azuread/Get-AzureADApplicationOwner) | Hiermee haalt u de eigen aren van een toepassing uit uw Directory. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

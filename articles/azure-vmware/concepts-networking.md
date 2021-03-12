@@ -2,13 +2,13 @@
 title: Concepten-netwerk-interconnectiviteit
 description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: ddf8f5b6aa06154a6edde7b4a78902d8f13eab78
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/11/2021
+ms.openlocfilehash: 9531e08ea4e50ae30058b0630cd12c2383d90fde
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100364899"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103197179"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
 
@@ -56,6 +56,9 @@ In het onderstaande diagram ziet u de interconnectiviteit on-premises naar de pr
 :::image type="content" source="media/concepts/adjacency-overview-drawing-double.png" alt-text="Virtuele netwerken en on-premises volledige particuliere cloud connectiviteit" border="false":::
 
 Voor een volledige interconnectiviteit in uw privécloud schakelt u ExpressRoute Global Reach in en vraagt u een autorisatie sleutel en een privé-peering-ID voor Global Reach op in de Azure Portal. De autorisatie sleutel en de peering-ID worden gebruikt om Global Reach te maken tussen een ExpressRoute-circuit in uw abonnement en het ExpressRoute-circuit voor uw nieuwe privécloud. Zodra de twee ExpressRoute-circuits zijn gekoppeld, worden netwerk verkeer tussen uw on-premises omgevingen gerouteerd naar uw privécloud.  Zie de [zelf studie voor het maken van een ExpressRoute Global Reach peering naar een privécloud](tutorial-expressroute-global-reach-private-cloud.md)voor meer informatie over de procedures om de autorisatie sleutel en de PEERING-id te vragen en te gebruiken.
+
+## <a name="limitations"></a>Beperkingen
+[!INCLUDE [azure-vmware-solutions-limits](includes/azure-vmware-solutions-limits.md)]
 
 ## <a name="next-steps"></a>Volgende stappen 
 

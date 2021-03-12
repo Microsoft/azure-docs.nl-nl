@@ -4,15 +4,15 @@ description: 'Go-to-Market-Services: micro soft-bronnen die uitgevers kunnen geb
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-ms.date: 03/03/2021
+ms.date: 03/09/2021
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: 06f98a8e303d2ff692c0f84314e639c2a51cbcc1
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 58e55527c84db0c368e676f2bf1314dca32e78db
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102489460"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631028"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Uw voor delen voor commerciële Marketplace
 
@@ -34,7 +34,7 @@ Voor Transact-partners, wanneer u uw gefactureerde verkoop via het commerciële 
 
 De minimale vereiste voor het publiceren in de online winkels is een MPNID, zodat deze voor delen beschikbaar zijn voor alle partners, ongeacht de status van de MPN-competentie of het partner type. Elke partner is gemachtigd om hun bedrijf te laten groeien door de commerciële Marketplace als een platform.
 
-U krijgt ondersteuning bij het goed keuren van de beschik bare bronnen en in de implementatie van de best practices, die u ook zelf kunt [controleren](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/).
+U krijgt ondersteuning bij de informatie over de bronnen die voor u beschikbaar zijn en het implementeren van aanbevolen procedures, die u ook zelf kunt [controleren](https://partner.microsoft.com/asset/collection/azure-marketplace-and-appsource-publisher-toolkit#/).
 
 Gedetailleerde beschrijvingen van alle programma voordelen vindt u in deze [Marketplace-programma presentatie](https://aka.ms/marketplacerewards).
 
@@ -50,17 +50,15 @@ Gedetailleerde beschrijvingen van alle programma voordelen vindt u in deze [Mark
     1. Nadat u de marketing contactpersoon hebt bijgewerkt, selecteert u **activeren** voor het voor deel dat u wilt gaan gebruiken. Zodra u een voordeel hebt geactiveerd, neemt een lid van het team Beloningen binnen een week contact op met uw marketing-contactpersoon.
 
 > [!NOTE]
-> Als uw aanbieding al meer dan vier weken Live is en u geen bericht hebt ontvangen, controleert u of u de eigenaar bent van de betreffende aanbieding in het partner centrum. De communicatie en de volgende stappen moeten worden uitgevoerd.
-
-Als u de eigenaar niet kunt bepalen, of als de eigenaar uw bedrijf heeft verlaten, kan u een ondersteunings ticket genereren bij [Help en ondersteuning](https://aka.ms/marketplacepublishersupport).
+> Als uw aanbieding al meer dan vier weken Live is en u geen bericht hebt ontvangen, controleert u of u de eigenaar bent van de betreffende aanbieding in het partner centrum. De communicatie en de volgende stappen moeten worden uitgevoerd.<br><br>Als u de eigenaar niet kunt bepalen, of als de eigenaar uw bedrijf heeft verlaten, verhoogt u een ondersteunings ticket bij [Help en ondersteuning](https://aka.ms/marketplacepublishersupport).
 
 Het bereik van de activiteiten die beschikbaar zijn voor u kunt u uitbreiden naarmate uw aanbiedingen in de commerciële Marketplace worden uitgebreid. Alle vermeldingen ontvangen een basis niveau van optimalisatie aanbevelingen en promotie als onderdeel van een eigen e-mail van resources en aanbevolen procedures.
 
 ## <a name="list-trial-and-consulting-benefits"></a>Lijst-, proef-en advies voordelen
 
-Telkens wanneer u publiceert op Microsoft AppSource of Azure Marketplace, hebt u toegang tot een nieuwe set voor delen. Zodra uw aanbieding Live is, gaat u naar [partner centrum](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpartner.microsoft.com%2Fdashboard%2Fmpn%2Fmembership%2Fbenefits%2Fcommercialmarketplace&data=04%7C01%7Cv-kilieb%40microsoft.com%7C3b13a8a6e41a47d6d96008d8c7cb3b50%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637479022971578374%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=MF1ZlPX9M5JiJZE2e%2B6kXEsRX1klB5hTcSqcHYDjZq8%3D&reserved=0) om uw in aanmerking komende marketing-, verkoop-en technische voor delen te activeren.
+Telkens wanneer u publiceert op Microsoft AppSource of Azure Marketplace, hebt u toegang tot een nieuwe set voor delen. Zodra uw aanbieding Live is, gaat u naar [partner centrum](https://partner.microsoft.com/dashboard) om uw in aanmerking komende marketing-, verkoop-en technische voor delen te activeren.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Alle voor delen van proef versie en Consulting verlopen na drie maanden.
 
 In de volgende tabel vindt u een overzicht van de vereisten voor lijst, proef versie en Consulting:
@@ -71,7 +69,7 @@ Gedetailleerde beschrijvingen voor al deze voor delen vindt u in het [Marketplac
 
 ## <a name="marketplace-rewards-for-transact-partners"></a>Marketplace-beloningen voor Transact-partners
 
-Wanneer u met uw transactable-aanbieding in Microsoft AppSource of Azure Marketplace gaat, hebt u toegang tot extra voor delen naarmate u uw gefactureerde verkoop transacties of stoelen die worden verkocht via de commerciële Marketplace, kunt verg Roten.
+Wanneer u live met uw transactable-aanbieding in Microsoft AppSource of Azure Marketplace gaat, hebt u toegang tot extra voor delen naarmate u uw gefactureerde verkoop transacties of stoelen die worden verkocht via de commerciële Marketplace, kunt verg Roten.
 
 >[!NOTE]
 >De drempel waarde voor verkochte seats is alleen van toepassing op Microsoft 365-apps (SaaS-toepassingen met integraties met micro soft teams, Office, Outlook of share point) en de voor delen moeten zijn voltooid op 30 juni 2021.
@@ -80,13 +78,19 @@ Deze voor delen zijn ontworpen om u te ondersteunen in marketing-, verkoop-en te
 
 Alle partners die een live-aanbieding hebben, gaan werken met een toegewezen engagement manager om de activiteiten met de hoogste waarde te kiezen voor uw portefeuille van commerciële Marketplace-aanbiedingen. Deze betrokkenheid is groen en per aanbieding, wat betekent dat u uw activiteiten en de timing van deze activiteiten kunt kiezen om af te stemmen op de timing van de bredere marketing-en verkoop strategieën van uw bedrijf.
 
+### <a name="marketing-benefits-for-transact-offers"></a>Marketing voordelen voor de aanbiedingen van trans acties
+
 ![Marketing voordelen](./media/marketplace-publishers-guide/marketing-benefit.png)
+
+### <a name="sales-benefits-for-transact-offers"></a>Verkoop voordelen voor aanbiedingen van de Transact
 
 ![Verkoop voordelen](./media/marketplace-publishers-guide/sales-benefit.png)
 
+### <a name="technical-benefits-for-transact-offers"></a>Technische voor delen voor de aanbiedingen van trans acties
+
 ![Technische voordelen](./media/marketplace-publishers-guide/technical-benefit.png)
 
-\* De drempel voor de verkochte seat is alleen van toepassing op Microsoft 365-apps (SaaS-toepassingen met integraties met micro soft teams, Office, Outlook of share point) en de voor delen moeten worden voltooid op 30 juni 2021.
+De drempel voor de verkochte seat is alleen van toepassing op Microsoft 365-apps (SaaS-toepassingen met integraties met micro soft teams, Office, Outlook of share point) en de voor delen moeten worden voltooid op 30 juni 2021.
 
 Gedetailleerde beschrijvingen voor al deze voor delen vindt u in het [Marketplace-programma voor markt beloningen](https://aka.ms/marketplacerewards).
 

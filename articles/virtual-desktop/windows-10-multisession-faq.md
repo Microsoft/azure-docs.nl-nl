@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d76fd3b30d823efbf85e84a74a21c694f5a0e6fb
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: aafac1133b2bee54624d5f0b00061c5332fcd90b
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102565560"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631877"
 ---
 # <a name="windows-10-enterprise-multi-session-faq"></a>Veelgestelde vragen over meervoudige Windows 10 Enterprise-sessies
 
@@ -63,7 +63,7 @@ Windows 10 Enter prise meerdere sessies, versie 1809 en hoger worden ondersteund
 
 ## <a name="which-profile-management-solution-should-i-use-for-windows-10-enterprise-multi-session"></a>Welke oplossing voor Profiel beheer moet ik gebruiken voor meerdere sessies van Windows 10 Enter prise?
 
-We raden u aan om FSLogix-profiel containers te gebruiken wanneer u Windows 10 Enter prise configureert in niet-permanente omgevingen of in andere scenario's waarvoor een centraal opgeslagen profiel nodig is. FSLogix zorgt ervoor dat het gebruikers profiel beschikbaar is en up-to-date is voor elke gebruikers sessie. We raden u ook aan uw FSLogix-profiel container te gebruiken om een gebruikers profiel op te slaan in een SMB-share met de juiste machtigingen, maar u kunt indien nodig gebruikers profielen opslaan in een Azure-pagina-Blob-opslag. Windows-gebruikers van virtueel bureau blad kunnen FSLogix zonder extra kosten gebruiken.
+We raden u aan om FSLogix-profiel containers te gebruiken wanneer u Windows 10 Enter prise configureert in niet-permanente omgevingen of in andere scenario's waarvoor een centraal opgeslagen profiel nodig is. FSLogix zorgt ervoor dat het gebruikers profiel beschikbaar is en up-to-date is voor elke gebruikers sessie. We raden u ook aan uw FSLogix-profiel container te gebruiken om een gebruikers profiel op te slaan in een SMB-share met de juiste machtigingen, maar u kunt indien nodig gebruikers profielen opslaan in een Azure-pagina-Blob-opslag. Windows-gebruikers van virtueel bureau blad kunnen FSLogix zonder extra kosten gebruiken.  FSLogix wordt vooraf geïnstalleerd op alle Windows 10 Enter prise-installatie kopieën voor meerdere sessies, maar de IT-beheerder is nog steeds verantwoordelijk voor het configureren van de FSLogix-profiel container.
 
 Zie [Configure the FSLogix profile container](create-host-pools-user-profile.md#configure-the-fslogix-profile-container)(Engelstalig) voor meer informatie over het configureren van een FSLogix-profiel container.
 

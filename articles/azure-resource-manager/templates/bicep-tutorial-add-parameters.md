@@ -2,15 +2,15 @@
 title: Zelf studie-para meters toevoegen aan Azure Resource Manager Bicep-bestand
 description: Voeg para meters toe aan uw Bicep-bestand om het opnieuw te kunnen worden gebruikt.
 author: mumian
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 603aa8f8bdb8136f4418d8f9a77bb40ec39243c0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 00df2ffc6272011127c5a1eb0c1e302011f8de5f
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748096"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632778"
 ---
 # <a name="tutorial-add-parameters-to-azure-resource-manager-bicep-file"></a>Zelf studie: para meters toevoegen aan Azure Resource Manager Bicep-bestand
 
@@ -34,7 +34,7 @@ Mogelijk hebt u gemerkt dat er een probleem is met dit Bicep-bestand. De naam va
 
 ## <a name="make-bicep-file-reusable"></a>Het Bicep-bestand herbruikbaar maken
 
-Als u wilt dat uw Bicep-bestand opnieuw kan worden gebruikt, gaan we een para meter toevoegen die u kunt gebruiken om de naam van een opslag account door te geven. In het gemarkeerde Bicep in het volgende voor beeld ziet u wat er is gewijzigd in het bestand. De parameter `storageName` wordt geïdentificeerd als een tekenreeks. De maximale lengte is ingesteld op 24 tekens om ervoor te zorgen dat namen niet te lang worden.
+Als u wilt dat uw Bicep-bestand opnieuw kan worden gebruikt, gaan we een para meter toevoegen die u kunt gebruiken om de naam van een opslag account door te geven. In het volgende Bicep-bestand ziet u wat er in het bestand is gewijzigd. De parameter `storageName` wordt geïdentificeerd als een tekenreeks. De maximale lengte is ingesteld op 24 tekens om ervoor te zorgen dat namen niet te lang worden.
 
 Kopieer het hele bestand en vervang dit door de volgende inhoud.
 

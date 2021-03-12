@@ -211,8 +211,6 @@
           href: core/howto-connect-rigado-cascade-500.md
         - name: Verbinding maken met andere IoT-clouds
           href: core/howto-build-iotc-device-bridge.md
-        - name: Uw apparaten beheren
-          href: core/how-to-move-device-to-iot.md
     - name: Geïntegreerde oplossingen bouwen
       items:
         - name: Tegels toevoegen aan uw dashboard
@@ -245,6 +243,8 @@
           href: core/howto-manage-devices.md
         - name: Een taak uitvoeren
           href: core/howto-run-a-job.md
+        - name: Apparaten verplaatsen van IoT Hub
+          href: core/how-to-move-device-to-iot.md
     - name: Uw oplossing beheren
       items:
         - name: Toepassingsinstellingen wijzigen

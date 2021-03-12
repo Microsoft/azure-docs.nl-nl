@@ -21,13 +21,6 @@
         - name: ARM-sjabloon
           displayName: Resource Manager
           href: quick-create-template.md
-- name: Concepten
-  items:
-    - name: Dashboards delen met op rollen gebaseerd toegangsbeheer in Azure
-      href: azure-portal-dashboard-share-access.md
-    - name: Op programmatische wijze Azure-dashboards maken
-      href: azure-portal-dashboards-create-programmatically.md
-      displayName: 'Azure CLI, az portal dashboard, az portal'
 - name: Instructiegidsen
   items:
     - name: Azure-portalinstellingen en -voorkeuren beheren
@@ -38,8 +31,13 @@
       href: manage-filter-resource-views.md
     - name: Azure-dashboards maken
       items:
-        - name: Azure-dashboards maken en delen
+        - name: Een Azure-dash board maken
           href: azure-portal-dashboards.md
+        - name: Een Azure-dash board delen
+          href: azure-portal-dashboard-share-access.md
+        - name: Programmatisch een Azure-dash board maken
+          href: azure-portal-dashboards-create-programmatically.md
+          displayName: 'Azure CLI, az portal dashboard, az portal'
         - name: Een aangepaste markdown-tegel gebruiken
           href: azure-portal-markdown-tile.md
     - name: Videoserie met instructies voor de Azure-portal

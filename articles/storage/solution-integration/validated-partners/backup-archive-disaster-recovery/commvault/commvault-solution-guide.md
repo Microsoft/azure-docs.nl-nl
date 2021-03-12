@@ -9,12 +9,12 @@ ms.date: 11/11/2020
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: f340a06f3b6b7c8fc0d78051fb0496dcab11fb5d
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: bc5bcca394fa66cea9cbf6bc20ac7d164c671cf7
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102122745"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632948"
 ---
 # <a name="back-up-to-azure-with-commvault"></a>Back-ups maken naar Azure met CommVault
 
@@ -118,7 +118,7 @@ In deze sectie vindt u een korte hand leiding voor het toevoegen van Azure Stora
 
 1. Open de Azure Portal en zoek naar "opslag accounts" of klik op het pictogram standaard services.
     
-    1. ![Azure-portal](../media/azure-portal.png)
+    1. ![Azure Portal](../media/azure-portal.png)
   
     1. ![Opslag accounts in azure Portal](../media/locate-storage-account.png)
 
@@ -161,11 +161,11 @@ In deze sectie vindt u een korte hand leiding voor het toevoegen van Azure Stora
 
 9. Ga vervolgens naar ' opslag '--> ' Cloud ' in CommVault Command Center. Kies toevoegen. Voer een beschrijvende naam in voor het opslag account en selecteer vervolgens ' Microsoft Azure Storage ' in de lijst ' type '. Selecteer een media agent-server die moet worden gebruikt voor het overzetten van back-ups naar Azure Storage. Voeg de door u gemaakte container toe, kies de opslaglaag die u wilt gebruiken binnen het Azure Storage-account en selecteer de referenties die u in stap #8 hebt gemaakt. Kies ten slotte of de ontdubbelde back-ups moeten worden overgedragen of niet en een locatie voor de ontdubbeling-data base.
     
-     ![CommVault opslag toevoegen](../media/commvault-add-storage.png)
+     ![Scherm opname van de gebruikers interface van de Cloud toevoegen. In de vervolg keuzelijst archief hebt u de optie * * Archief * * geselecteerd.](../media/commvault-add-storage.png)
 
 10. Voeg ten slotte uw nieuwe Azure Storage-Resource toe aan een bestaand of nieuw plan in CommVault Command Center via ' Manage '--> ' Plans ' als een ' back-upbestemming '.
 
-    ![CommVault opslag toevoegen](../media/commvault-plan.png)
+    ![Scherm afbeelding van de gebruikers interface van het COMMVAULT-opdracht centrum. In de linkernavigatiebalk, onder * * beheer * *, * *, wordt * * geselecteerd.](../media/commvault-plan.png)
 
 11. ***(Optioneel)*** Als u van plan bent om gebruik te maken van Azure als een herstel site of CommVault voor het migreren van servers en toepassingen naar Azure, is het een best practice voor het implementeren van een LEVERANCIERSPECIFIEKE proxy in Azure. [Hier](https://documentation.commvault.com/commvault/v11/article?p=106208.htm)vindt u gedetailleerde instructies.  
 

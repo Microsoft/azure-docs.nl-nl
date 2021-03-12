@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 16fecf5ce0d4551125ded4ba05fcbc41530efaf1
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 7329962d547fcb0635e3a9af3d80e562da59f7f2
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102430561"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199777"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Instanties in Durable Functions in azure beheren
 
@@ -202,6 +202,9 @@ De methode retourneert een object met de volgende eigenschappen:
   * **Mislukt**: het exemplaar is mislukt met een fout.
   * **Beëindigd**: het exemplaar is abrupt gestopt.
 * **Geschiedenis**: de uitvoerings geschiedenis van de indeling. Dit veld wordt alleen ingevuld als deze `showHistory` is ingesteld op `true` .
+
+> [!NOTE]
+> Een Orchestrator is niet gemarkeerd als `Completed` totdat alle geplande taken zijn voltooid _en_ de Orchestrator is geretourneerd. Met andere woorden, het is niet voldoende voor een Orchestrator om de instructie te bereiken `return` om deze te markeren als `Completed` . Dit is met name van belang voor gevallen waarin `WhenAny` wordt gebruikt. Deze orchestrator is vaak `return` vóór alle geplande taken uitgevoerd.
 
 Met deze methode wordt `null` (.net), `undefined` (Java script) of `None` (python) geretourneerd als het exemplaar niet bestaat.
 

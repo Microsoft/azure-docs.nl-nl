@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: f3e1ea8861646490875667f6238b3f8813bd6c4b
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 608f3d72aecb0c6d53325c0d082b1779822e9c80
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518161"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200529"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Peering-problemen van virtueel netwerk oplossen
 
@@ -44,7 +44,7 @@ Gebruik de methoden in de volgende artikelen om de peering van het virtuele netw
 >
 > * Virtuele machines (Vm's) achter de ILB-SKU (Basic Internal load balancer)
 > * Redis-cache (maakt gebruik van Basic ILB SKU)
-> * Application Gateway (maakt gebruik van Basic ILB SKU)
+> * Application Gateway v1 (maakt gebruik van Basic ILB SKU)
 > * Schaal sets voor virtuele machines (maakt gebruik van Basic ILB SKU)
 > * Azure Service Fabric-clusters (maakt gebruik van Basic ILB SKU)
 > * SQL Server always on (maakt gebruik van Basic ILB SKU)

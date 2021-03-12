@@ -9,14 +9,16 @@ ms.date: 08/07/2019
 ms.topic: conceptual
 ms.service: iot-edge
 ms.custom: devx-track-js
-ms.openlocfilehash: ebc12e6d64d015267497497bebc22c8586adf999
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eae6f1ec8cb6917d0d51deca8c9e88725c9b01a7
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995910"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200637"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Visual Studio code gebruiken voor het ontwikkelen en opsporen van fouten in modules voor Azure IoT Edge
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 U kunt uw bedrijfs logica omzetten in modules voor Azure IoT Edge. Dit artikel laat u zien hoe u Visual Studio code kunt gebruiken als het belangrijkste hulp programma voor het ontwikkelen en opsporen van fouten in modules.
 
@@ -79,7 +81,7 @@ Als u uw module op een apparaat wilt testen, hebt u een actieve IoT-hub met ten 
 
 In de volgende stappen ziet u hoe u een IoT Edge module maakt in uw voorkeurs taal (waaronder Azure Functions, geschreven in C#) met behulp van Visual Studio code en de Azure IoT-Hulpprogram Ma's. U begint met het maken van een oplossing en het genereren van de eerste module in die oplossing. Elke oplossing kan meerdere modules bevatten.
 
-1. Selecteer **View**  >  **opdracht palet** weer geven.
+1. Selecteer   >  **opdracht palet** weer geven.
 
 1. Voer in het opdracht palet de opdracht **Azure IOT Edge: nieuwe IOT EDGE-oplossing** in en voer deze uit.
 
@@ -160,7 +162,7 @@ Als u de Simulator wilt instellen en starten, voert u de opdracht uit **Azure IO
 
 1. Uw omgeving voorbereiden op fout opsporing volgens de vereisten van uw ontwikkel taal, een onderbrekings punt in uw module instellen en de configuratie voor fout opsporing selecteren die moet worden gebruikt:
    - **C#**
-     - Wijzig in de Visual Studio code Integrated-Terminal de map in de map **_&lt; your module &gt; name_* _ en voer vervolgens de volgende opdracht uit om de .net core-toepassing te bouwen.
+     - Wijzig de map in de map ***&lt; naam &gt;*** van de module met Visual Studio code en voer de volgende opdracht uit om de .net core-toepassing te bouwen.
 
        ```cmd
        dotnet build
@@ -168,13 +170,13 @@ Als u de Simulator wilt instellen en starten, voert u de opdracht uit **Azure IO
 
      - Open het bestand `Program.cs` en voeg een onderbrekings punt toe.
 
-     - Ga naar de weer gave fout opsporing van Visual Studio-code door _* weer gave > debug * * te selecteren. Selecteer de configuratie voor fout opsporing * *_ &lt; uw module naam &gt; _ Local debug (.net core) * * in de vervolg keuzelijst.
+     - Ga naar de weer gave fout opsporing Visual Studio-code door **weer gave > debug** te selecteren. Selecteer in de vervolg keuzelijst de **_&lt; module &gt; naam_** fouten opsporen in het configuratie programma.
 
         > [!NOTE]
         > Als uw .NET core `TargetFramework` niet consistent is met uw programmapad in `launch.json` , moet u het programmapad hand matig bijwerken zodat `launch.json` deze overeenkomt met de `TargetFramework` in uw. csproj-bestand zodat Visual Studio code dit programma kan starten.
 
    - **Node.js**
-     - Wijzig in de Visual Studio code Integrated-Terminal de map in de map **_&lt; your module &gt; name_* _ en voer vervolgens de volgende opdracht uit om knooppunt pakketten te installeren
+     - Wijzig in de Visual Studio code Integrated-Terminal de map in de map ***&lt; naam &gt;*** van de module en voer de volgende opdracht uit om knooppunt pakketten te installeren
 
        ```cmd
        npm install
@@ -182,7 +184,7 @@ Als u de Simulator wilt instellen en starten, voert u de opdracht uit **Azure IO
 
      - Open het bestand `app.js` en voeg een onderbrekings punt toe.
 
-     - Ga naar de weer gave fout opsporing van Visual Studio-code door _* weer gave > debug * * te selecteren. Selecteer de configuratie voor fout opsporing * *_ &lt; uw module naam &gt; _ Local debug (Node.js) * * in de vervolg keuzelijst.
+     - Ga naar de weer gave fout opsporing Visual Studio-code door **weer gave > debug** te selecteren. Selecteer in de vervolg keuzelijst de **_&lt; naam &gt;_ van de module voor fout opsporing in de lokale fout opsporing (Node.js)** .
    - **Java**
      - Open het bestand `App.java` en voeg een onderbrekings punt toe.
 
@@ -234,7 +236,7 @@ U kunt in uw ontwikkel computer een IoT Edge Simulator starten in plaats van de 
 
    ![Variabelen bekijken](media/how-to-vs-code-develop-module/view-log.png)
 
-1. Ga naar de weer gave fout opsporing Visual Studio-code en selecteer het configuratie bestand voor fout opsporing voor uw module. De naam van de optie voor fout opsporing moet overeenkomen met de naam van de **_&lt; &gt; module_ externe fout opsporing**
+1. Ga naar de weer gave fout opsporing Visual Studio-code en selecteer het configuratie bestand voor fout opsporing voor uw module. De naam van de optie voor fout opsporing moet overeenkomen met de naam van de ***&lt; &gt; module* externe fout opsporing**
 
 1. Selecteer **Start Debugging** of druk op **F5**. Selecteer het proces dat u wilt koppelen.
 
@@ -322,13 +324,13 @@ U kunt deze sectie overs Laan als uw modules worden uitgevoerd op dezelfde compu
 
   - Zorg ervoor dat de module op de computer waarvoor fouten worden opgespoord, wordt uitgevoerd en gereed is voor het toevoegen van fout opsporing en dat poort 9229 extern toegankelijk is. U kunt dit controleren door te openen `http://<target-machine-IP>:9229/json` op de computer voor fout opsporing. Deze URL moet informatie weer geven over de Node.js-module waarvoor fouten worden opgespoord.
   
-  - Open Visual Studio code op uw ontwikkel computer en bewerk dit `launch.json` zodat de adres waarde van het profiel van de **_&lt; module naam &gt;_ Remote Debug (Node.js)** (of **_&lt; uw module naam &gt;_ externe fout opsporing (Node.js in het Windows-container profiel)** is als de module wordt uitgevoerd als een Windows-container.
+  - Open Visual Studio code op uw ontwikkel computer en bewerk dit `launch.json` zodat de adres waarde van het profiel van de ***&lt; module naam &gt;* Remote Debug (Node.js)** (of **_&lt; uw module naam &gt;_ externe fout opsporing (Node.js in het Windows-container profiel)** is als de module wordt uitgevoerd als een Windows-container.
 
 - **Java**
 
   - Bouw een SSH-tunnel naar de computer waarvoor u fouten wilt opsporen door uit te voeren `ssh -f <username>@<target-machine> -L 5005:127.0.0.1:5005 -N` .
   
-  - Open Visual Studio code op uw ontwikkel computer en bewerk het profiel **_&lt; module naam &gt;_ Remote Debug (Java)** in `launch.json` , zodat u deze kunt koppelen aan de doel computer. `launch.json`Zie de sectie over [het configureren van het fout opsporingsprogramma](https://code.visualstudio.com/docs/java/java-debugging#_configuration)voor meer informatie over het bewerken en opsporen van fouten in Java met Visual Studio code.
+  - Open Visual Studio code op uw ontwikkel computer en bewerk het profiel ***&lt; module naam &gt;* Remote Debug (Java)** in `launch.json` , zodat u deze kunt koppelen aan de doel computer. `launch.json`Zie de sectie over [het configureren van het fout opsporingsprogramma](https://code.visualstudio.com/docs/java/java-debugging#_configuration)voor meer informatie over het bewerken en opsporen van fouten in Java met Visual Studio code.
 
 - **Python**
 
@@ -336,11 +338,11 @@ U kunt deze sectie overs Laan als uw modules worden uitgevoerd op dezelfde compu
 
   - In de code `ptvsd.enable_attach(('0.0.0.0', 5678))` die u eerder hebt ingevoegd `main.py` , wijzigt u **0.0.0.0** in het IP-adres van de computer waarvoor u fouten wilt opsporen. Bouw, push en implementeer uw IoT Edge module opnieuw.
 
-  - Open Visual Studio code op uw ontwikkel computer en bewerk dit `launch.json` zodat de `host` waarde van het profiel van de **_&lt; module naam &gt;_ Remote Debug (python)** het IP-adres van de doel computer gebruikt in plaats van `localhost` .
+  - Open Visual Studio code op uw ontwikkel computer en bewerk dit `launch.json` zodat de `host` waarde van het profiel van de ***&lt; module naam &gt;* Remote Debug (python)** het IP-adres van de doel computer gebruikt in plaats van `localhost` .
 
 ### <a name="debug-your-module"></a>Fouten opsporen in uw module
 
-1. Selecteer in de weer gave fout opsporing Visual Studio-code het configuratie bestand voor fout opsporing voor uw module. De naam van de optie voor fout opsporing moet overeenkomen met de naam van de **_&lt; &gt; module_ externe fout opsporing**
+1. Selecteer in de weer gave fout opsporing Visual Studio-code het configuratie bestand voor fout opsporing voor uw module. De naam van de optie voor fout opsporing moet overeenkomen met de naam van de ***&lt; &gt; module* externe fout opsporing**
 
 1. Open het module bestand voor uw ontwikkel taal en voeg een onderbrekings punt toe:
 

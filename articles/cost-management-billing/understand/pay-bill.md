@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 01/13/2021
 ms.author: banders
-ms.openlocfilehash: 8117f3ca70f51f2d9b11c479803ac33b49f416e7
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: ecc5c8ebef0d2add365d128e11caedaa173d9d63
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540044"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232140"
 ---
 # <a name="how-to-pay-your-bill-for-microsoft-azure"></a>Uw factuur voor Microsoft Azure betalen
 
@@ -37,7 +37,7 @@ De standaardbetalingswijze van uw factureringsprofiel kan een creditcard, een be
 
 Als de standaardbetalingswijze van uw factureringsprofiel een creditcard of betaalpas is, worden kosten automatisch elke factureringsperiode hierop in rekening gebracht.
 
-Als de automatische afschrijving van uw creditcard of betaalpas wordt afgewezen, kunt u in Azure Portal met **Nu betalen** een eenmalige betaling uitvoeren met een creditcard of betaalpas.
+Als de automatische afschrijving van uw creditcard of debitcard wordt afgewezen, kunt u in Azure Portal met **Nu betalen** een eenmalige betaling uitvoeren met een creditcard of debitcard.
 
 Zie [Betalen via factuur](../manage/pay-by-invoice.md) als u wilt weten hoe u uw standaardbetalingswijze kunt wijzigen in cheque of directe overboeking.
 
@@ -45,7 +45,7 @@ Zie [Betalen via factuur](../manage/pay-by-invoice.md) als u wilt weten hoe u uw
 
 Als de standaardbetalingswijze van uw factureringsprofiel cheque of directe overboeking is, volgt u de betalingsinstructies in het PDF-bestand van uw factuur.
 
-Als uw factuurbedrag lager is dan het drempelbedrag voor uw valuta, kunt u een eenmalige betaling uitvoeren in Azure Portal met **Nu betalen** met een creditcard of betaalpas. Als uw factuurbedrag de drempelwaarde overschrijdt, kunt u de factuur niet betalen met een creditcard of betaalpas. U vindt de drempelwaarde voor uw valuta in Azure Portal nadat u **Nu betalen** hebt geselecteerd.
+Als uw factuurbedrag lager is dan het drempelbedrag voor uw valuta, kunt u een eenmalige betaling uitvoeren in Azure Portal met **Nu betalen** met een creditcard of debitcard. Als uw factuurbedrag de drempelwaarde overschrijdt, kunt u de factuur niet betalen met een creditcard of debitcard. U vindt de drempelwaarde voor uw valuta in Azure Portal nadat u **Nu betalen** hebt geselecteerd.
 
 ## <a name="pay-now-in-the-azure-portal"></a>Nu betalen in Azure Portal
 
@@ -59,6 +59,18 @@ Om facturen te betalen in de Azure Portal, moet u de correcte [MCA-machtigingen]
 1. Nadat u een betalingswijze hebt geselecteerd, selecteert u **Nu betalen**.
 
 De factuurstatus verandert binnen 24 uur in *betaald*.
+
+## <a name="pay-now-for-customers-in-india"></a>Betaal nu voor klanten in India
+
+De Reserve Bank van India heeft [nieuwe reglementering](https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12002&Mode=0) uitgegeven die van kracht worden op 1 april 2021. Na deze datum kunnen de banken in India beginnen met het weigeren van automatische terugkerende betalingen en moeten betalingen hand matig worden gemaakt in de Azure Portal.
+
+Als uw bank een automatische terugkerende betaling afwijst, zullen we u per e-mail op de hoogte stellen en instructies geven over hoe u kunt door gaan.
+
+Vanaf 1 april 2021, kunt u op elk gewenst moment een openstaand saldo betalen door de volgende stappen uit te voeren: 
+
+1. Meld u als accountbeheerder aan bij [Azure Portal](https://portal.azure.com/).
+1. Zoek naar **Kostenbeheer en facturering**.
+1. Selecteer op de pagina overzicht de knop **Nu betalen** . (Als u de button **Nu betalen** niet ziet, hebt u geen openstaand saldo.)
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Toegang tot een Microsoft-klantovereenkomst controleren
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]

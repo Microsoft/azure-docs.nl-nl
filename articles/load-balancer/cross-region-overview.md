@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 1d435c3b15433b7fec00d5dfa80970c04323e635
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 8e14b22895c4734f1efd8688a5b20c946422a080
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103199371"
+ms.locfileid: "103225622"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -94,7 +94,7 @@ De back-end-groep van de load balancer met meerdere regio's bevat een of meer re
 
 Voeg uw bestaande load balancer-implementaties toe aan een kruis regio load balancer voor een Maxi maal beschik bare implementatie voor meerdere regio's.
 
-In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd. Deze regio heeft geen invloed op hoe het verkeer wordt doorgestuurd. Als een thuis regio uitvalt, wordt de verkeers stroom niet beïnvloed.
+In de **regio thuis** wordt de kruis regio Load Balancer of het open bare IP-adres van de globale laag geïmplementeerd. Deze regio heeft geen invloed op hoe het verkeer wordt doorgestuurd. Als een thuis regio uitvalt, wordt de verkeers stroom niet beïnvloed.
 
 ### <a name="home-regions"></a>Thuis regio's
 * VS - oost 2
@@ -106,7 +106,7 @@ In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd
 * Azië - oost
 
 > [!NOTE]
-> U kunt uw load balancer voor meerdere regio's alleen implementeren in een van de bovenstaande 7 regio's.
+> U kunt de cross-regio load balancer of het open bare IP-adres alleen implementeren in een globale laag in een van de bovenstaande 7 regio's.
 
 In een **deelnemende regio** is het globale open bare IP-adres van de Load Balancer beschikbaar. 
 

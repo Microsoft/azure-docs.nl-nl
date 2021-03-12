@@ -9,12 +9,12 @@ ms.date: 02/19/2021
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 22f4db04f37985e49065f80da6e4578ed71c5db1
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: b00956a6fb5a79b09602ca1752cc547595f32db6
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428436"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224591"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
@@ -112,7 +112,7 @@ De volgende Azure Storage-functies worden niet ondersteund wanneer u het NFS 3,0
   
 ## <a name="nfs-30-features-not-yet-supported"></a>NFS 3,0-functies die nog niet worden ondersteund
 
-De volgende NFS 3,0-functies worden nog niet ondersteund met Azure Data Lake Storage Gen2.
+De volgende NFS 3,0-functies worden nog niet ondersteund.
 
 - NFS 3,0 via UDP. Alleen NFS 3,0 over TCP wordt ondersteund.
 
@@ -127,6 +127,12 @@ De volgende NFS 3,0-functies worden nog niet ondersteund met Azure Data Lake Sto
 - Harde koppeling
 
 - Een container exporteren als alleen-lezen
+
+## <a name="nfs-30-clients-not-yet-supported"></a>NFS 3,0-clients worden nog niet ondersteund
+
+De volgende NFS 3,0-clients worden nog niet ondersteund.
+
+- Windows-client voor NFS
 
 ## <a name="pricing"></a>Prijzen
 

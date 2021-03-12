@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: c6b9cfab4256c72118a65f7fb0c8e672e2082ffe
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 18ae21c4b1348a1690818f8c07a5b3fae45102cd
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102199659"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232270"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Postman gebruiken om aanvragen te verzenden naar de Azure Digital Apparaatdubbels-Api's
 
@@ -52,7 +52,7 @@ Als dat niet het geval is, kunt u een [Azure Cloud shell](https://shell.azure.co
     az login
     ```
 
-1. Gebruik vervolgens de opdracht [AZ account Get-access-token](/cli/azure/account#az_account_get_access_token) om een Bearer-token te verkrijgen met toegang tot de Azure Digital apparaatdubbels-service.
+1. Gebruik vervolgens de opdracht [AZ account Get-access-token](/cli/azure/account#az_account_get_access_token) om een Bearer-token te verkrijgen met toegang tot de Azure Digital apparaatdubbels-service. In deze opdracht geeft u de resource-ID voor het Azure Digital Apparaatdubbels service-eind punt (een statische waarde van `0b07f429-9f4b-4714-9392-cc5e8e80c8b0` ) door om een toegangs token te verkrijgen waarmee toegang kan worden verkregen tot Azure Digital apparaatdubbels-resources.
 
     ```azurecli-interactive
     az account get-access-token --resource 0b07f429-9f4b-4714-9392-cc5e8e80c8b0

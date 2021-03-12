@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 3f4c33a88d9a8fbf2c3d64135d93da54cf75fab3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 36ecef007e10f9a090dbabc8b5a91fd473930141
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097497"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633849"
 ---
 # <a name="optimize-request-cost-in-azure-cosmos-db"></a>De aanvraag kosten optimaliseren in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -105,7 +105,7 @@ De RU-kosten voor het schrijven van een item zijn afhankelijk van:
 - De grootte van het item.
 - Het aantal eigenschappen dat onder het [indexerings beleid](index-policy.md) valt en dat moet worden geïndexeerd.
 
-Er wordt een 1 KB-item met minder dan 5 eigenschappen ingevoegd om de kosten te indexeren rond 5 RUs. Het vervangen van een item kost twee keer de kosten die nodig zijn om hetzelfde item in te voegen.
+Een 1 KB-item invoegen zonder kosten te indexeren rond ~ 5,5 RUs. Het vervangen van een item kost twee keer de kosten die nodig zijn om hetzelfde item in te voegen.
 
 ### <a name="optimizing-writes"></a>Schrijf bewerkingen optimaliseren
 

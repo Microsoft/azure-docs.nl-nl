@@ -1,0 +1,148 @@
+- name: Azure-API voor FHIR
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Over Azure-API voor FHIR
+      href: overview.md
+    - name: Over Azure IoT Connector for FHIR (preview)
+      href: overview.md#azure-iot-connector-for-fhir-preview
+- name: Snelstartgidsen
+  expanded: true
+  items:
+    - name: Azure API for FHIR implementeren
+      expanded: false
+      items:
+        - name: Portal gebruiken
+          href: fhir-paas-portal-quickstart.md
+        - name: PowerShell gebruiken
+          href: fhir-paas-powershell-quickstart.md
+        - name: CLI gebruiken
+          href: fhir-paas-cli-quickstart.md
+        - name: ARM-sjabloon gebruiken
+          displayName: Resource Manager
+          href: fhir-paas-arm-template-quickstart.md
+    - name: Azure IoT Connector for FHIR (preview) implementeren
+      expanded: false
+      items:
+        - name: Portal gebruiken
+          href: iot-fhir-portal-quickstart.md
+        - name: ARM-sjabloon gebruiken
+          href: iot-fhir-arm-template-quickstart.md
+- name: Zelfstudies
+  expanded: false
+  items:
+    - name: JavaScript-toepassing implementeren
+      expanded: false
+      items:
+        - name: 1. Initiële installatie en FHIR-implementatie
+          href: tutorial-web-app-fhir-server.md
+        - name: 2. Openbare client-app registreren
+          href: tutorial-web-app-public-app-reg.md
+        - name: 3. Installatie testen met Postman
+          href: tutorial-web-app-test-postman.md
+        - name: 4. Webtoepassing schrijven
+          href: tutorial-web-app-write-web-app.md
+    - name: Toegang tot FHIR-API met Postman
+      href: access-fhir-postman-tutorial.md
+    - name: SMART op FHIR-proxy gebruiken
+      href: use-smart-on-fhir-proxy.md
+    - name: Gegevens opnemen van IoT-apparaten
+      expanded: false
+      items:
+        - name: Apparaatgegevens ontvangen via Azure IoT Hub
+          href: device-data-through-iot-hub.md
+- name: Instructiegidsen
+  expanded: false
+  items:
+    - name: Toepassingen registreren
+      expanded: false
+      items:
+        - name: Overzicht van toepassingen registreren voor Azure API for FHIR
+          href: fhir-app-registration.md
+        - name: Resourcetoepassing
+          href: register-resource-azure-ad-client-app.md
+        - name: Vertrouwelijke clienttoepassing
+          href: register-confidential-azure-ad-client-app.md
+        - name: Openbare clienttoepassing
+          href: register-public-azure-ad-client-app.md
+        - name: Serviceclienttoepassing
+          href: register-service-azure-ad-client-app.md
+    - name: Instellingen configureren
+      expanded: false
+      items:
+        - name: Aanvullende Azure API for FHIR-instellingen configureren
+          href: azure-api-for-fhir-additional-settings.md
+        - name: Azure RBAC configureren
+          href: configure-azure-rbac.md
+        - name: Lokale RBAC configureren
+          href: configure-local-rbac.md
+        - name: Database-instellingen configureren
+          href: configure-database.md
+        - name: Door de klant beheerde sleutels configureren
+          href: customer-managed-key.md
+        - name: CORS configureren
+          href: configure-cross-origin-resource-sharing.md
+        - name: Export configureren
+          href: configure-export-data.md
+        - name: Private Link configureren
+          href: configure-private-link.md
+    - name: Gegevens exporteren
+      expanded: false
+      items:
+        - name: Gegevens exporteren
+          href: export-data.md
+        - name: Niet-geïdentificeerde export
+          href: de-identified-export.md
+    - name: Gegevens converteren
+      expanded: false
+      items:
+        - name: Sjablonen voor de extensie $convert-data-en FHIR-Converter
+          href: convert-data.md
+    - name: ID's van identiteitsobjecten vinden
+      href: find-identity-object-ids.md
+    - name: Diagnostische logboeken en metrische gegevens
+      expanded: false
+      items:
+        - name: Registratie in diagnoselogboek inschakelen in Azure API for FHIR
+          href: enable-diagnostic-logging.md
+        - name: Azure IoT Connector for FHIR weergeven en configureren (preview) Metrische gegevens
+          href: iot-metrics-display.md
+    - name: Een token verkrijgen voor Azure-API voor FHIR - CLI
+      href: get-healthcare-apis-access-token-cli.md
+    - name: Fouten oplossen in Azure IoT Connector for FHIR (preview)
+      href: iot-troubleshoot-guide.md
+- name: Concepten
+  expanded: false
+  items:
+    - name: Overzicht van Azure AD en Azure API for FHIR
+      href: azure-ad-hcapi.md
+    - name: Validatie van toegangstokens
+      href: azure-ad-hcapi-token-validation.md
+    - name: Aangepaste HTTP-headers gebruiken om gegevens toe te voegen aan auditlogboeken
+      href: use-custom-headers.md
+    - name: Bewerkingen in Azure IoT Connector for FHIR (preview)
+      expanded: false
+      items:
+        - name: Gegevensstroom van Azure IoT Connector for FHIR (preview)
+          href: iot-data-flow.md
+        - name: Toewijzingssjablonen in Azure IoT Connector for FHIR (preview)
+          href: iot-mapping-templates.md
+    - name: Beveiliging
+      items:
+        - name: Besturingselementen voor beveiliging van Azure Policy
+          href: ./security-controls-policy.md
+- name: Resources
+  items:
+    - name: Veelgestelde vragen
+      href: fhir-faq.md
+    - name: Ondersteunde functies
+      href: fhir-features-supported.md
+    - name: Partnerecosysteem
+      href: partner-ecosystem.md
+- name: Naslaginformatie
+  items:
+    - name: Azure CLI
+      href: /cli/azure/ext/healthcareapis/healthcareapis
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md

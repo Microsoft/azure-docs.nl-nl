@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 03/02/2021
-ms.openlocfilehash: 3193c5c00789b793a5b5beaf662f94ab9525888a
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: d9088e5c6302c41c64f2a2e9034e7c3d659e37eb
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102107591"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615632"
 ---
 # <a name="use-private-endpoints-for-your-purview-account"></a>Privé-eind punten gebruiken voor uw controle sfeer liggen-account
 
@@ -24,15 +24,15 @@ U kunt privé-eind punten voor uw controle sfeer liggen-accounts gebruiken om cl
 
 1. Algemene informatie vullen en connectiviteits methode instellen op privé-eind punt op het tabblad **netwerk** . Stel uw persoonlijke eind punten voor opname in door Details te verstrekken van het **abonnement, Vnet en subnet** dat u wilt koppelen aan uw persoonlijke eind punt.
 
-    :::image type="content" source="media/catalog-private-link/create-pe-azure-portal.png" alt-text="PE maken tijdens het maken van het account":::
+    :::image type="content" source="media/catalog-private-link/create-pe-azure-portal.png" alt-text="Een persoonlijk eind punt maken in de Azure Portal":::
 
 1. U kunt desgewenst ook een **privé-DNS zone** instellen voor elk privé-eind punt voor inslikken.
 
 1. Klik op toevoegen om een persoonlijk eind punt toe te voegen voor uw controle sfeer liggen-account.
 
-1. Stel op de Blade privé-eind punt maken controle sfeer liggen subresource in op **account**, kies uw virtuele netwerk en subnet, en selecteer de privé-DNS zone waar de DNS wordt geregistreerd (u kunt ook uw binnengehaalde DNS-servers gebruiken of DNS-records maken met behulp van host-bestanden op uw virtuele machines).
+1. Op de pagina persoonlijk eind punt maken stelt u controle sfeer liggen subresource in op **account**, kiest u uw virtuele netwerk en subnet en selecteert u de privé-DNS zone waarin de DNS wordt geregistreerd (u kunt ook uw binnengehaalde DNS-servers gebruiken of DNS-records maken met behulp van host-bestanden op uw virtuele machines).
 
-    :::image type="content" source="media/catalog-private-link/create-pe-account.png" alt-text="PE maken tijdens het maken van het account":::
+    :::image type="content" source="media/catalog-private-link/create-pe-account.png" alt-text="Selecties voor het maken van een persoonlijk eind punt":::
 
 1. Selecteer **OK**.
 
@@ -45,7 +45,7 @@ U kunt privé-eind punten voor uw controle sfeer liggen-accounts gebruiken om cl
 ## <a name="create-a-private-endpoint-for-the-purview-web-portal"></a>Een persoonlijk eind punt maken voor de controle sfeer liggen-webportal
 
 1. Ga naar het controle sfeer liggen-account dat u zojuist hebt gemaakt, selecteer de verbindingen voor privé-eind punten in de sectie instellingen.
-    
+
 1. Klik op + persoonlijk eind punt om een nieuw persoonlijk eind punt te maken.
 
     :::image type="content" source="media/catalog-private-link/pe-portal.png" alt-text="Persoonlijk eind punt voor de portal maken":::
@@ -68,31 +68,32 @@ De onderstaande instructies zijn voor het veilig openen van controle sfeer ligge
 
 1. Navigeer naar uw virtuele machine in de Azure Portal en selecteer het tabblad netwerken onder instellingen. Selecteer vervolgens regels voor uitgaande poort en klik op regel voor uitgaande poort toevoegen.
 
-    :::image type="content" source="media/catalog-private-link/outbound-rule-add.png" alt-text="Uitgaande regel toevoegen":::
+   :::image type="content" source="media/catalog-private-link/outbound-rule-add.png" alt-text="Uitgaande regel toevoegen":::
 
 2. Selecteer in de Blade uitgaande poort regel toevoegen de optie *doel* naar service-tag, doel service-tag als **AzureActiveDirectory**, doel poort bereik om toe te voegen, **prioriteit moet hoger zijn dan de regel die alle Internet verkeer heeft geweigerd**. Maak de regel.
 
-    :::image type="content" source="media/catalog-private-link/outbound-rule-details.png" alt-text="Details van uitgaande regel toevoegen":::
- 
+   :::image type="content" source="media/catalog-private-link/outbound-rule-details.png" alt-text="Details van uitgaande regel toevoegen":::
+
 3. Volg dezelfde stappen om een andere regel te maken voor het toestaan van de service label **AzureResourceManager**. Als u toegang nodig hebt tot de Azure Portal, kunt u ook een regel toevoegen voor de service label *AzurePortal*.
 
 4. Maak verbinding met de virtuele machine, open de browser, ga naar de browser console (CTRL + SHIFT + J) en schakel over naar het tabblad netwerk om netwerk aanvragen te bewaken. Voer web.purview.azure.com in het vak URL in en probeer u aan te melden met uw AAD-referenties. Aanmelden kan waarschijnlijk mislukken en op het tabblad netwerk op de-console ziet u een AAD-poging om toegang te krijgen tot aadcdn.msauth.net, maar om te worden geblokkeerd.
 
-    :::image type="content" source="media/catalog-private-link/login-fail.png" alt-text="Details van mislukte aanmelding":::
- 
+   :::image type="content" source="media/catalog-private-link/login-fail.png" alt-text="Details van mislukte aanmelding":::
+
 5. In dit geval opent u een opdracht prompt op de VM en pingt u deze URL (aadcdn.msauth.net), haalt u het IP-adres op en voegt u vervolgens een regel voor uitgaande poort toe voor het IP-adres voor de netwerk beveiligings regels van de virtuele machine. Stel de bestemming in op IP-adres en stel doel-IP-adressen in op IP van aadcdn. Vanwege load balancer en Traffic Manager kan het IP-adres van het AAD-CDN dynamisch zijn. Zodra u het IP-adres hebt ontvangen, is het beter om het toe te voegen aan het hostbestand van de virtuele machine om ervoor te zorgen dat de browser het IP-adres van AAD kan ophalen.
 
-    :::image type="content" source="media/catalog-private-link/ping.png" alt-text="Ping testen":::
+   :::image type="content" source="media/catalog-private-link/ping.png" alt-text="Ping testen":::
 
-    :::image type="content" source="media/catalog-private-link/aadcdn-rule.png" alt-text="AAD CDN-regel":::
- 
+   :::image type="content" source="media/catalog-private-link/aadcdn-rule.png" alt-text="AAD CDN-regel":::
+
 6. Zodra de nieuwe regel is gemaakt, gaat u terug naar de virtuele machine en probeert u zich opnieuw aan te melden met uw AAD-referenties. Als de aanmelding is geslaagd, is de controle sfeer liggen-Portal klaar voor gebruik. In sommige gevallen wordt AAD omgeleid naar andere domeinen om zich aan te melden op basis van het account type van de klant. Bijvoorbeeld: voor een live.com-account wordt AAD omgeleid naar live.com naar login, waarna deze aanvragen opnieuw worden geblokkeerd. Voor micro soft-werknemers accounts krijgt AAD toegang tot msft.sts.microsoft.com voor aanmeldings gegevens. Controleer het tabblad netwerk aanvragen in browser netwerk om te zien welke aanvragen van het domein worden geblokkeerd, voer de vorige stap opnieuw uit om het IP-adres op te halen en uitgaande poort regels toe te voegen aan de netwerk beveiligings groep om aanvragen voor dat IP-adres toe te staan. Als u de IP-adresbereiken van het precieze aanmeldings domein kent, kunt u ze ook rechtstreeks toevoegen aan netwerk regels.
 
 7. Meld u nu aan bij AAD. De controle sfeer liggen-portal wordt geladen, maar het weer geven van alle controle sfeer liggen-accounts werkt niet omdat alleen toegang kan worden gekregen tot een specifiek controle sfeer liggen-account. Voer *Web. controle sfeer liggen. Azure. com/resource/{PurviewAccountName}* in om direct het controle sfeer liggen-account te bezoeken waarvoor u een persoonlijk eind punt hebt ingesteld.
 
-##  <a name="enable-private-endpoint-on-existing-purview-accounts"></a>Persoonlijk eind punt inschakelen voor bestaande controle sfeer liggen-accounts
+## <a name="enable-private-endpoint-on-existing-purview-accounts"></a>Persoonlijk eind punt inschakelen voor bestaande controle sfeer liggen-accounts
 
 Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te voegen nadat u uw controle sfeer liggen-account hebt gemaakt:
+
 - De Azure Portal gebruiken (controle sfeer liggen-account)
 - Het persoonlijke koppelings centrum gebruiken
 
@@ -101,16 +102,16 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 1. Ga naar het controle sfeer liggen-account in het Azure Portal, selecteer de verbindingen voor privé-eind punten in het gedeelte **netwerken** van **instellingen**.
 
 :::image type="content" source="media/catalog-private-link/pe-portal.png" alt-text="Persoonlijk eind punt voor de portal maken":::
-    
-2. Klik op + persoonlijk eind punt om een nieuw persoonlijk eind punt te maken.
 
-3. Vul basis informatie in.
+1. Klik op + persoonlijk eind punt om een nieuw persoonlijk eind punt te maken.
 
-4. Selecteer in het tabblad resource de optie Resource type als **micro soft. controle sfeer liggen/accounts**.
+1. Vul basis informatie in.
 
-5. Selecteer de resource die als controle sfeer liggen-account moet worden en selecteer doel-subresource om **account** te worden.
+1. Selecteer in het tabblad resource de optie Resource type als **micro soft. controle sfeer liggen/accounts**.
 
-6. Selecteer het **virtuele netwerk** en de **zone privé-DNS** op het tabblad Configuratie. Ga naar de pagina samen vatting en klik op **maken** om het persoonlijke eind punt voor de portal te maken.
+1. Selecteer de resource die als controle sfeer liggen-account moet worden en selecteer doel-subresource om **account** te worden.
+
+1. Selecteer het **virtuele netwerk** en de **zone privé-DNS** op het tabblad Configuratie. Ga naar de pagina samen vatting en klik op **maken** om het persoonlijke eind punt voor de portal te maken.
 
 > [!NOTE]
 > U moet dezelfde stappen volgen als hierboven voor de doel subresource die als **Portal** is geselecteerd.
@@ -123,7 +124,7 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 
 3. Klik op + toevoegen en vul de basis gegevens in.
 
-    :::image type="content" source="media/catalog-private-link/private-link-center.png" alt-text="PE maken op basis van een persoonlijk koppelings centrum":::
+   :::image type="content" source="media/catalog-private-link/private-link-center.png" alt-text="PE maken op basis van een persoonlijk koppelings centrum":::
 
 4. Selecteer de resource die het al gemaakte controle sfeer liggen-account moet zijn en selecteer doel-subresource om **account** te maken.
 
@@ -135,4 +136,5 @@ Er zijn twee manieren om controle sfeer liggen persoonlijke eind punten toe te v
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Door de Azure controle sfeer liggen-Data Catalog bladeren](how-to-browse-catalog.md)
-- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)  
+
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

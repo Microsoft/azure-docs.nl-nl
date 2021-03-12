@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 45f45e71546909b71c71c66303c1459edd74548f
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: f971466f25c2b7a4bd28e5b7eec6268f1b2e8b3d
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102199608"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225571"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -41,7 +41,9 @@ Deze wijzigingen zijn onder andere:
 
 ## <a name="some-logging-is-not-auto-collected"></a>Een deel van de logboek registratie wordt niet automatisch verzameld
 
-Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfigureerde drempel waarde voor logboek registratie raamwerken en de tweede ook voldoet aan de Application Insights geconfigureerde drempel waarde.
+Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan het niveau dat is geconfigureerd voor het logboek registratie raamwerk en de tweede, ook voldoet aan het niveau dat is geconfigureerd voor Application Insights.
+
+Als uw Framework voor logboek registratie bijvoorbeeld is ingesteld op logboek `WARN` (en hoger) van het pakket `com.example` , en Application Insights is geconfigureerd voor het vastleggen `INFO` van (en hoger), wordt door Application Insights alleen het `WARN` pakket vastgelegd (en hierboven) `com.example` .
 
 De beste manier om te bepalen of een bepaalde logboek registratie-instructie voldoet aan de geconfigureerde drempel waarde voor registratie raamwerken is om te bevestigen dat deze wordt weer gegeven in uw normale toepassings logboek (bijvoorbeeld bestand of console).
 

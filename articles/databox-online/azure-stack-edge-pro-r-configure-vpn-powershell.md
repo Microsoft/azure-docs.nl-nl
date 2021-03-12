@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 10/23/2020
 ms.author: alkohli
-ms.openlocfilehash: 2139080367cdce9a5f018afab0970a7bd0e7504c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 66edd4cad5b2f38696ef1df2030687bf4c7d9956
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466604"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634172"
 ---
 # <a name="configure-vpn-on-your-azure-stack-edge-pro-r-device-via-azure-powershell"></a>VPN configureren op uw Azure Stack Edge Pro R-apparaat via Azure PowerShell
 
@@ -165,7 +165,7 @@ Vervolgens configureert u de VPN-verbinding op de lokale webgebruikersinterface 
 
 ## <a name="validate-data-transfer-through-vpn"></a>Gegevens overdracht via VPN valideren
 
-Kopieer gegevens naar een SMB-share om te controleren of de VPN-verbinding werkt. Volg de stappen in [een share toevoegen](azure-stack-edge-j-series-manage-shares.md#add-a-share) op uw Azure stack Edge Pro R-apparaat. 
+Kopieer gegevens naar een SMB-share om te controleren of de VPN-verbinding werkt. Volg de stappen in [een share toevoegen](azure-stack-edge-gpu-manage-shares.md#add-a-share) op uw Azure stack Edge Pro R-apparaat. 
 
 1. Kopieer een bestand, bijvoorbeeld \data\pictures\waterfall.jpg naar de SMB-share die u op het client systeem hebt gekoppeld. 
 2. Controleer of dit bestand wordt weer gegeven in uw opslag account in de Cloud.

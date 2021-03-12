@@ -5,13 +5,13 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 02/10/2021
-ms.openlocfilehash: c282e6890d56fe047b319f72e05cdc97de76cfcf
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/11/2021
+ms.openlocfilehash: efc1438fdc539af278ebff1f292c5fa0a91b7b91
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038183"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103016097"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
 
@@ -36,6 +36,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Automation/automationAccounts | Ja| Nee | [Automation-accounts](../essentials/metrics-supported.md#microsoftautomationautomationaccounts) |
 |Micro soft. AVS/privateClouds | Nee | Nee | [Azure VMware Solution](../essentials/metrics-supported.md#microsoftavsprivateclouds) |
 |Microsoft.Bat-CH/batchAccounts | Ja | Nee | [Batchaccounts](../essentials/metrics-supported.md#microsoftbatchbatchaccounts) |
+|Micro soft. BotService/botServices | Ja | Nee | [Bot Services](../essentials/metrics-supported.md#microsoftbotservicebotservices) |
 |Microsoft.Cache/Redis | Ja | Ja | [Azure Cache voor Redis](../essentials/metrics-supported.md#microsoftcacheredis) |
 |Micro soft. ClassicCompute/domein naam/sleuven/rollen | Nee | Nee | [Klassieke Cloud Services](../essentials/metrics-supported.md#microsoftclassiccomputedomainnamesslotsroles) |
 |Micro soft. ClassicCompute/informatie | Nee | Nee | [Klassieke Virtual Machines](../essentials/metrics-supported.md#microsoftclassiccomputevirtualmachines) |
@@ -45,6 +46,8 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. ClassicStorage/Storage accounts/queueServices | Ja | Nee | [Opslag accounts (klassiek)-wacht rijen](../essentials/metrics-supported.md#microsoftclassicstoragestorageaccountsqueueservices) |
 |Micro soft. ClassicStorage/Storage accounts/tableServices | Ja | Nee | [Opslag accounts (klassiek)-tabellen](../essentials/metrics-supported.md#microsoftclassicstoragestorageaccountstableservices) |
 |Micro soft. CognitiveServices/accounts | Ja | Nee | [Cognitive Services](../essentials/metrics-supported.md#microsoftcognitiveservicesaccounts) |
+|Micro soft. Compute/cloudServices | Ja | Nee |  [Cloudservices](../essentials/metrics-supported.md#microsoftcomputecloudservices) |
+|Micro soft. Compute/cloudServices/roles | Ja | Nee |  [Cloud service rollen](../essentials/metrics-supported.md#microsoftcomputecloudservicesroles) |
 |Microsoft.Compute/virtualMachines | Ja | Ja<sup>1</sup> | [Virtual Machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](../essentials/metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](../essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups) |
@@ -56,9 +59,10 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Microsoft.DataShare/accounts | Ja | Nee | [Gegevens shares](../essentials/metrics-supported.md#microsoftdatashareaccounts) |
 |Microsoft.DBforMariaDB/servers | Nee | Nee | [DB voor MariaDB](../essentials/metrics-supported.md#microsoftdbformariadbservers) |
 |Microsoft.DBforMySQL/servers | Nee | Nee |[DB voor MySQL](../essentials/metrics-supported.md#microsoftdbformysqlservers)|
+|Microsoft.DBforPostgreSQL/flexibleServers | Ja | Nee | [DB voor PostgreSQL (flexibele servers)](../essentials/metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
+|Micro soft. DBforPostgreSQL/serverGroupsv2 | Ja | Nee | DB voor PostgreSQL (grootschalige) |
 |Microsoft.DBforPostgreSQL/servers | Nee | Nee | [DB voor PostgreSQL](../essentials/metrics-supported.md#microsoftdbforpostgresqlservers)|
 |Micro soft. DBforPostgreSQL/serversv2 | Nee | Nee | [DB voor PostgreSQL v2](../essentials/metrics-supported.md#microsoftdbforpostgresqlserversv2)|
-|Microsoft.DBforPostgreSQL/flexibleServers | Ja | Nee | [DB voor PostgreSQL (flexibele servers)](../essentials/metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Ja | Nee |[IoT Hub](../essentials/metrics-supported.md#microsoftdevicesiothubs) |
 |Micro soft. devices/provisioningServices| Ja | Nee | [Services voor het inrichten van apparaten](../essentials/metrics-supported.md#microsoftdevicesprovisioningservices) |
 |Micro soft. DigitalTwins/digitalTwinsInstances | Ja | Nee | [Digital Twins](../essentials/metrics-supported.md#microsoftdigitaltwinsdigitaltwinsinstances) |
@@ -75,6 +79,8 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Logic/integrationServiceEnvironments | Ja | Nee |[Integratie service omgevingen](../essentials/metrics-supported.md#microsoftlogicintegrationserviceenvironments) |
 |Microsoft.Logic/workflows | Nee | Nee |[Logic Apps](../essentials/metrics-supported.md#microsoftlogicworkflows) |
 |Micro soft. MachineLearningServices/werk ruimten | Ja | Nee | [Machine Learning](../essentials/metrics-supported.md#microsoftmachinelearningservicesworkspaces) |
+|Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints | Ja | Nee | Machine Learning-eind punten |
+|Micro soft. MachineLearningServices/werk ruimten/onlineEndpoints/implementaties | Ja | Nee | Implementaties van Machine Learning-eind punten |
 |Micro soft. Maps/accounts | Ja | Nee | [Maps-accounts](../essentials/metrics-supported.md#microsoftmapsaccounts) |
 |Micro soft. Media/Media Services | Nee | Nee | [Media Services](../essentials/metrics-supported.md#microsoftmediamediaservices) |
 |Micro soft. Media/Media Services/streamingEndpoints | Ja | Nee | [Media Services streaming-eind punten](../essentials/metrics-supported.md#microsoftmediamediaservicesstreamingendpoints) |

@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 02/07/2021
-ms.openlocfilehash: 556570b02664a0afd01137f939bea67a1014b680
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: ea33eff30e712c1597c3606d74cb6d56683211ae
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449489"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615581"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -117,7 +117,7 @@ Als u uw opslag account hebt geconfigureerd om toegang vanaf geselecteerde netwe
 ### <a name="create-or-update-data-export-rule"></a>Regel voor het exporteren van gegevens maken of bijwerken
 Een regel voor het exporteren van gegevens definieert de tabellen waarvoor gegevens worden geëxporteerd en de bestemming. U kunt op dit moment één regel maken voor elke bestemming.
 
-Als u een lijst met tabellen in uw workapce voor de configuratie van de export regels nodig hebt, voert u deze query uit in uw werk ruimte.
+De export regel moet tabellen bevatten die u in uw werk ruimte hebt. Voer deze query uit voor een lijst met beschik bare tabellen in uw werk ruimte.
 
 ```kusto
 find where TimeGenerated > ago(24h) | distinct Type

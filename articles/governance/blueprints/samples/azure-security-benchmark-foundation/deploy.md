@@ -1,14 +1,14 @@
 ---
 title: Voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 description: Implementeer stappen voor het voor beeld van de Azure Security Bench Mark Foundation-blauw druk, inclusief details van de artefact parameter.
-ms.date: 02/18/2020
+ms.date: 03/12/2021
 ms.topic: sample
-ms.openlocfilehash: e48f3da383bdb6d5c9960595f3c0fdcabc27dc75
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: af41dd50c976ac6c0570b8a089211fa310ef4ef1
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101740678"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232610"
 ---
 # <a name="deploy-the-azure-security-benchmark-foundation-blueprint-sample"></a>Het voor beeld van Azure Security Bench Mark Foundation blauw punt implementeren
 

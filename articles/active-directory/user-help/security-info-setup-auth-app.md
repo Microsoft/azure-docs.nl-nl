@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: e383896e50ccf06ef6d1b5caaeb0ef36ece2ce3b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c947bee0b702797a86d1e038f74c6c10e2b23eb4
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348293"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103197475"
 ---
 # <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>De app Microsoft Authenticator instellen als uw verificatiemethode
 
@@ -46,8 +46,8 @@ Methoden voor beveiligingsgegevens worden zowel gebruikt voor tweeledige beveili
 
 Afhankelijk van de instellingen van uw organisatie kunt u mogelijk een verificatie-app gebruiken als een van uw methoden voor beveiligings gegevens. U hoeft de Microsoft Authenticator-app niet te gebruiken en u kunt een andere app kiezen tijdens het instellen van het proces. In dit artikel wordt echter uitgegaan van de app Microsoft Authenticator.
 
->[!Important]
-> Als u Microsoft Authenticator-app hebt ingesteld op vijf verschillende apparaten of 5 hardware-tokens, kunt u een zesde versie niet instellen en ziet u mogelijk het volgende fout bericht.
+> [!IMPORTANT]
+> Als u de app Microsoft Authenticator op vijf verschillende apparaten hebt ingesteld of als u vijf hardware-tokens hebt gebruikt, kunt u een zesde versie niet instellen en ziet u mogelijk het volgende fout bericht:
 > 
 > **U kunt Microsoft Authenticator niet instellen omdat u al vijf verificator-apps of-hardware-tokens hebt. Neem contact op met uw beheerder om een van uw verificator-apps of-hardware-tokens te verwijderen.**
 
@@ -57,7 +57,7 @@ Afhankelijk van de instellingen van uw organisatie kunt u mogelijk een verificat
 
     ![Mijn profiel pagina, met gemarkeerde koppelingen voor beveiligings gegevens](media/security-info/securityinfo-myprofile-page.png)
 
-2. Selecteer **beveiligings gegevens** in het navigatie deel venster links of op de koppeling in het blok met **beveiligings gegevens** en selecteer vervolgens **methode toevoegen** op de pagina **beveiligings gegevens** .
+2. Selecteer **beveiligings gegevens** in het linkermenu of via de koppeling in het deel venster **beveiligings gegevens** . Als u al bent Inge schreven, wordt u gevraagd om twee ledige verificatie. Selecteer vervolgens **methode toevoegen** in het deel venster **beveiligings gegevens** .
 
     ![Pagina met beveiligings gegevens met de gemarkeerde optie methode toevoegen](media/security-info/securityinfo-myprofile-addmethod-page.png)
 

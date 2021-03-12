@@ -9,12 +9,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.custom: mqtt
-ms.openlocfilehash: 03e05eb2bc56a07c2bda3d3fb224012abb3c9e4a
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1fcf560ba1fef137a28ab1872635cc2182cd07e1
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735928"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103009195"
 ---
 # <a name="azure-iot-hub-developer-guide"></a>Ontwikkelaars handleiding voor Azure IoT Hub
 
@@ -75,5 +75,3 @@ Deze IoT Hub ontwikkelaars handleiding bevat de volgende artikelen:
 * [Naslag informatie over apparaat-en service-sdk's](iot-hub-devguide-sdks.md) bevat de Azure IOT-sdk's voor het ontwikkelen van apparaat-en service-apps die communiceren met uw IOT-hub. Het artikel bevat koppelingen naar online API-documentatie.
 
 * [Referentie-IOT hub MQTT-ondersteuning](iot-hub-mqtt-support.md) bevat gedetailleerde informatie over hoe IOT hub het MQTT-protocol ondersteunt. In dit artikel wordt de ondersteuning voor het MQTT-protocol ingebouwd in de Azure IoT-Sdk's beschreven en vindt u informatie over het rechtstreeks gebruik van het MQTT-protocol.
-
-* [Verklarende woorden](iot-hub-devguide-glossary.md) lijst met algemene IOT hub voor waarden.

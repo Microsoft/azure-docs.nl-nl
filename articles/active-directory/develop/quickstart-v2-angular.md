@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 95747bb68a904212e7e075fc29b2497932d66e5f
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 5ac6a19fc569d60f75f9da788629331a70b0a4c9
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103852"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225044"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Angular-toepassing met één pagina
 
@@ -102,8 +102,8 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 >|Voer_hier_de_omleidings-URI_in|Vervang door **http://localhost:4200** .|
 >|cacheLocation  | (Optioneel) Stel de browseropslag in voor de verificatiestatus. De standaardwaarde is **sessionStorage**.   |
 >|storeAuthStateInCookie  | (Optioneel) De bibliotheek identificeren waarin de status van de verificatie-aanvraag wordt opgeslagen. Deze status is vereist voor het valideren van de verificatiestromen in de browsercookies. Deze cookie is ingesteld voor Internet Explorer en Microsoft Edge om deze twee browsers te kunnen ondersteunen. Zie de pagina met [bekende problemen](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues->on-IE-and-Edge-Browser#issues). |
-> > [!TIP]
-> > Om de waarden van **Toepassings-id (client-id)** , **Map-id (tenant-id)** en **Ondersteunde accounttypen** te achterhalen, gaat u naar de **Overzichtspagina** van de app in de Azure-portal.
+>
+> Om de waarden van **Toepassings-id (client-id)** , **Map-id (tenant-id)** en **Ondersteunde accounttypen** te achterhalen, gaat u naar de **Overzichtspagina** van de app in de Azure-portal.
 
 Raadpleeg [Clienttoepassingen initialiseren](msal-js-initializing-client-applications.md) voor meer informatie over beschikbare opties die u kunt configureren.
 

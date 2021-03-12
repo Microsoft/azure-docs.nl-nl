@@ -14,20 +14,79 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: atsenthi
-ms.openlocfilehash: 7d52d49ab5d3a47dd69fdc1708f9e52f4f796a92
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: e51b247f8c1a5a9ed8f6ec8e24363015afb2f7de
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390637"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614408"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Het Windows-besturings systeem in uw Service Fabric cluster bijwerken
 
-> [!IMPORTANT]
-> Vanaf 30 april 2019 wordt patch Orchestration Application versie 1,2. * niet meer ondersteund. Zorg ervoor dat u een upgrade uitvoert naar de nieuwste versie. VM-Upgrades waarbij ' Windows Update ' patches van besturings systemen toepast zonder de besturingssysteem schijf te vervangen, worden niet ondersteund. 
+## <a name="automatic-os-image-upgrades"></a>Automatische upgrades van de besturingssysteem installatie kopie
 
-> [!NOTE]
-> Het downloaden van [automatische installatie kopieën van besturings systemen op de schaalset voor virtuele machines](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) is de best practice voor het bewaren van uw besturings systeem in Azure. Voor virtuele-machine schaal sets op basis van automatische installatie kopieën van besturings systemen is een grotere duurzaamheid vereist voor een schaalset. Voor knooppunt typen met de duurzaamheids categorie bronzen dit wordt niet ondersteund. gebruik in dit geval de toepassing patch Orchestration.
+[U krijgt automatische installatie kopieën van besturings systemen op uw Virtual Machine Scale sets](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) de best practice voor het bewaren van uw besturings systeem in Azure. Voor virtuele-machine schaal sets op basis van automatische installatie kopieën van besturings systemen is een grotere duurzaamheid vereist voor een schaalset.
+
+Vereisten voor automatische upgrades van installatie kopieën van besturings systemen door Virtual Machine Scale Sets
+-   Service Fabric [duurzaamheids niveau](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) is zilver of goud en niet bronzen.
+-   De Service Fabric-extensie voor de model definitie van de schaalset moet TypeHandlerVersion 1,1 of hoger hebben.
+-   Duurzaamheids niveau moet hetzelfde zijn op het Service Fabric cluster en Service Fabric extensie in de model definitie van de schaalset.
+- Een extra status test of het gebruik van de toepassings status extensie voor Virtual Machine Scale Sets is niet vereist.
+
+Zorg ervoor dat de duurzaamheids instellingen niet overeenkomen met het Service Fabric cluster en de uitbrei ding Service Fabric, omdat een niet-overeenkomend resultaat is opgetreden tijdens de upgrade. Duurzaamheids niveaus kunnen worden gewijzigd volgens de richt lijnen die op [Deze pagina](../service-fabric/service-fabric-cluster-capacity.md#changing-durability-levels)worden beschreven.
+
+Met Bronze duurzaamheid is de automatische upgrade van de installatie kopie van het besturings systeem niet beschikbaar. Hoewel [patch Orchestration-toepassing](#patch-orchestration-application ) (alleen bedoeld voor niet door Azure gehoste clusters) *niet wordt aanbevolen* voor Silver-of hogere duurzaamheids niveaus, is dit de enige optie om Windows-updates te automatiseren met betrekking tot service Fabric upgrade domeinen.
+
+> [!IMPORTANT]
+> De in-VM-Upgrades waarbij ' Windows Update ' patches van besturings systemen toepast zonder de besturingssysteem schijf te vervangen, worden niet ondersteund in azure Service Fabric.
+
+Er zijn twee stappen nodig om de functie in te scha kelen met uitgeschakelde Windows Update op het besturings systeem.
+
+1. Automatisch bijwerken van installatie kopie van besturings systeem inschakelen, ARM van Windows-updates uitschakelen 
+    ```json
+    "virtualMachineProfile": { 
+        "properties": {
+          "upgradePolicy": {
+            "automaticOSUpgradePolicy": {
+              "enableAutomaticOSUpgrade":  true
+            }
+          }
+        }
+      }
+    ```
+    
+    ```json
+    "virtualMachineProfile": { 
+        "osProfile": { 
+            "windowsConfiguration": { 
+                "enableAutomaticUpdates": false 
+            }
+        }
+    }
+    ```
+
+    Azure PowerShell
+    ```azurepowershell-interactive
+    Update-AzVmss -ResourceGroupName $resourceGroupName -VMScaleSetName $scaleSetName -AutomaticOSUpgrade $true -EnableAutomaticUpdate $false
+    ``` 
+    
+1. Model voor het bijwerken van schaal sets nadat deze configuratie is gewijzigd, is het wijzigen van de installatie kopie van alle computers nodig om het model van de schaalset bij te werken, zodat de wijziging van kracht wordt.
+    
+    Azure PowerShell
+    ```azurepowershell-interactive
+    $scaleSet = Get-AzVmssVM -ResourceGroupName $resourceGroupName -VMScaleSetName $scaleSetName
+    $instances = foreach($vm in $scaleSet)
+    {
+        Set-AzVmssVM -ResourceGroupName $resourceGroupName -VMScaleSetName $scaleSetName -InstanceId $vm.InstanceID -Reimage
+    }
+    ``` 
+    
+Bekijk de [automatische upgrades van de besturingssysteem installatie kopie door Virtual Machine Scale sets](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) voor verdere instructies.
+
+## <a name="patch-orchestration-application"></a>Patch Orchestration-toepassing
+
+> [!IMPORTANT]
+> Vanaf 30 april 2019 wordt patch Orchestration Application versie 1,2. * niet meer ondersteund. Zorg ervoor dat u een upgrade uitvoert naar de nieuwste versie.
 
 Patch Orchestration Application (POA) is een wrapper rond de Azure Service Fabric Repair Manager-service, waarmee de patch planning op basis van het besturings systeem kan worden geconfigureerd voor niet door Azure gehoste clusters. POA is niet vereist voor niet door Azure gehoste clusters, maar het plannen van een patch-installatie per update domein is vereist voor het patchen van Service Fabric cluster-hosts zonder uitval tijd.
 
@@ -311,7 +370,7 @@ Ga als volgt te werk om inzicht te krijgen in hoe updates worden uitgevoerd op e
 
    Als er meer problemen moeten worden gevonden, meldt u zich aan bij uw virtuele machine (VM) of Vm's en leert u deze met behulp van Windows-gebeurtenis Logboeken. De eerder genoemde reparatie taak kan alleen voor komen in de volgende Substatussen van de module:
 
-      ExecutorSubState | Description
+      ExecutorSubState | Beschrijving
     -- | -- 
       Geen = 1 |  Betekent dat er geen actieve bewerking op het knoop punt is. De status kan in overgang zijn.
       DownloadCompleted = 2 | Houdt in dat de Download bewerking is voltooid met succes, gedeeltelijk mislukt of mislukt.

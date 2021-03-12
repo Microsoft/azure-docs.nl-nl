@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/14/2021
 ms.author: jamesmantu
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: fb7479f7e3b9ac631c164bbddf65ed8be3bab438
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 1d5fc097be188c820f9be15594f4bb382754b849
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102122643"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224925"
 ---
 # <a name="quickstart-sign-in-and-get-an-access-token-in-an-angular-spa-using-the-auth-code-flow"></a>Snelstartgids: Meld u aan en ontvang een toegangs token in een hoek SPA met behulp van de verificatie code stroom
 
@@ -117,12 +117,18 @@ In deze Snelstartgids wordt gebruikgemaakt van MSAL hoek v2 met de autorisatie c
 > Wijzig de waarden in de sectie `auth`, zoals hier wordt beschreven:
 >
 > - `Enter_the_Application_Id_Here` is de **Toepassings-id (client-id)** voor de toepassing die u hebt geregistreerd.
+>
+>    Als u de waarde van **Toepassings-id (client)** wilt vinden, gaat u naar de pagina **Overzicht** van de app-registratie in de Azure Portal.
 > - `Enter_the_Cloud_Instance_Id_Here` is de instantie van de Azure-cloud. Voer `https://login.microsoftonline.com/` in voor de primaire of algemene Azure-cloud. Zie [Nationale clouds](authentication-national-cloud.md) voor **nationale** clouds (bijvoorbeeld China).
 > - `Enter_the_Tenant_info_here` wordt ingesteld op een van de volgende:
 >   - Als uw toepassing ondersteuning biedt voor *accounts in deze organisatiemap*, vervangt u deze waarde door de **Tenant-id** of **Tenantnaam**. Bijvoorbeeld `contoso.microsoft.com`.
+>
+>    Als u de waarde van de **Directory-id (Tenant)** wilt vinden, gaat u naar de **overzichts** pagina van de app-registratie in de Azure Portal.
 >   - Als uw toepassing ondersteuning biedt voor *accounts in elke organisatiemap*, vervangt u waarde door `organizations`.
 >   - Als uw toepassing ondersteuning biedt voor *accounts in elke organisatiemap en persoonlijke Microsoft-accounts*, vervangt u deze waarde door `common`. Gebruik `common` **voor deze quickstart**.
 >   - Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts*, vervangt u deze waarde door `consumers`.
+>
+>    Ga naar de **overzichts** pagina van de app-registratie in de Azure Portal om de waarde van **ondersteunde account typen** te vinden.
 > - `Enter_the_Redirect_Uri_Here` is `http://localhost:4200/`.
 >
 > De `authority` waarde in uw *app. module. TS* moet er als volgt uitzien als u de hoofd-Azure-Cloud (wereld wijd) gebruikt:
@@ -131,8 +137,6 @@ In deze Snelstartgids wordt gebruikgemaakt van MSAL hoek v2 met de autorisatie c
 > authority: "https://login.microsoftonline.com/common",
 > ```
 >
-> > [!TIP]
-> > Om de waarden van **Toepassings-id (client-id)** , **Map-id (tenant-id)** en **Ondersteunde accounttypen** te achterhalen, gaat u naar de **Overzichtspagina** van de app-registratie in Azure Portal.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Stap 3: Uw app is geconfigureerd en klaar om te worden uitgevoerd

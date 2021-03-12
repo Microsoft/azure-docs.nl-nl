@@ -2,13 +2,13 @@
 title: Concepten-opslag
 description: Meer informatie over de mogelijkheden voor de belangrijkste opslag in azure VMware-oplossingen voor persoonlijke Clouds.
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 522e4f651b36532ac0c144b3889b2b67c91dc77b
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.date: 03/11/2021
+ms.openlocfilehash: a4c34f8767b20de3ca0647e09c5dc9edad3d45fb
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536947"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200548"
 ---
 #  <a name="azure-vmware-solution-storage-concepts"></a>Concepten van Azure VMware-oplossingen opslag
 
@@ -32,7 +32,7 @@ vSAN data stores gebruiken standaard versleuteling voor Data-at-rest. De versleu
 
 ## <a name="scaling"></a>Schalen
 
-De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die fungeren als host, wordt de onbewerkte cluster capaciteit met 15,4 TB verhoogd met elke toegevoegde host. Clusters die zijn gebouwd met GP-hosts hebben hun onbewerkte capaciteit verhoogd met 7,7 TB met elke toegevoegde host. In beide typen clusters nemen hosts ongeveer 10 minuten toe om aan een cluster te worden toegevoegd. Zie voor instructies voor het schalen van clusters de [zelf studie][tutorial-scale-private-cloud]over het schalen van een privécloud.
+De capaciteit van de systeem eigen cluster opslag wordt geschaald door hosts toe te voegen aan een cluster. Voor clusters die gebruikmaken van AVS36-hosts, wordt de onbewerkte cluster capaciteit met 15,4 TB verhoogd met elke toegevoegde host. Het duurt ongeveer 10 minuten om hosts aan een cluster toe te voegen. Zie voor instructies voor het schalen van clusters de [zelf studie][tutorial-scale-private-cloud]over het schalen van een privécloud.
 
 ## <a name="azure-storage-integration"></a>Integratie van Azure Storage
 

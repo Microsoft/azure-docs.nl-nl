@@ -3,7 +3,7 @@ title: Geavanceerde code ring met Media Encoder Premium Workflow | Microsoft Doc
 description: Meer informatie over het coderen met Media Encoder Premium Workflow. Code voorbeelden zijn geschreven in C# en gebruiken de Media Services SDK voor .NET.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7f3efa23ad0b5e79e84a2436aaf56b67a805d05f
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b58a1ae2a20afb357f6363077e70b692256d2ce7
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92017230"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103013496"
 ---
 # <a name="advanced-encoding-with-media-encoder-premium-workflow"></a>Geavanceerd coderen met Media Encoder Premium Workflow
 
@@ -35,7 +35,7 @@ Microsoft Azure Media Services introduceert de **Media Encoder Premium workflow*
 
 De volgende onderwerpen bevatten informatie over de **Media Encoder Premium workflow**:
 
-* [Indelingen die worden ondersteund door de Media Encoder Premium workflow](./media-services-encode-asset.md) : hierin worden de bestands indelingen en codecs besproken die door **Media Encoder Premium workflow**worden ondersteund.
+* [Indelingen die worden ondersteund door de Media Encoder Premium workflow](./media-services-encode-asset.md) : hierin worden de bestands indelingen en codecs besproken die door **Media Encoder Premium workflow** worden ondersteund.
 * [Overzicht en vergelijking van media encoders van Azure op aanvraag](media-services-encode-asset.md) vergelijkt de coderings mogelijkheden van **Media Encoder Premium workflow** en **Media Encoder Standard**.
 
 In dit artikel wordt beschreven hoe u kunt coderen met **Media Encoder Premium workflow** met behulp van .net.
@@ -233,7 +233,7 @@ namespace MediaEncoderPremiumWorkflowSample
 }
 ```
 
-## <a name="need-help"></a>Hebt u hulp nodig?
+## <a name="need-help"></a>Hulp nodig?
 
 U kunt een ondersteunings ticket openen door te navigeren naar de [nieuwe ondersteunings aanvraag](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 

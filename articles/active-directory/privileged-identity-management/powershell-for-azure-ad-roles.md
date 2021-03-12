@@ -16,12 +16,12 @@ ms.date: 09/15/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7d04a2941888592ffa37acfe6cba52a33fda528
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 2774c63d34de3de951aa8076b56d203b976158ec
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92365507"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548747"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>Power shell voor Azure AD-rollen in Privileged Identity Management
 
@@ -49,12 +49,12 @@ Dit artikel bevat instructies voor het gebruik van Azure Active Directory (Azure
     Connect-AzureAD -Credential $AzureAdCred
     ```
 
-1. Zoek de Tenant-id voor uw Azure AD-organisatie door naar de map met **Azure Active Directory**  >  **Properties**  >  **-** eigenschappen te gaan. Gebruik in de sectie cmdlets deze ID wanneer u de resourceId wilt opgeven.
+1. Zoek de Tenant-id voor uw Azure AD-organisatie door naar de map met **Azure Active Directory**  >    >  **-** eigenschappen te gaan. Gebruik in de sectie cmdlets deze ID wanneer u de resourceId wilt opgeven.
 
     ![De organisatie-ID in de eigenschappen voor de Azure AD-organisatie zoeken](./media/powershell-for-azure-ad-roles/tenant-id-for-Azure-ad-org.png)
 
 > [!Note]
-> De volgende secties bieden eenvoudige voor beelden waarmee u aan de slag kunt. Meer gedetailleerde documentatie over de volgende cmdlets vindt u op [https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true](/powershell/module/azuread/?view=azureadps-2.0-preview#privileged_role_management&preserve-view=true) . U moet echter "kunt" in de para meter providerID vervangen door "aadRoles". U moet ook de Tenant-ID voor uw Azure AD-organisatie gebruiken als de para meter resourceId.
+> De volgende secties bieden eenvoudige voor beelden waarmee u aan de slag kunt. Meer gedetailleerde documentatie over de volgende cmdlets vindt u op [https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#privileged_role_management](/powershell/module/azuread/?view=azureadps-2.0-preview&preserve-view=true#privileged_role_management) . U moet echter "kunt" in de para meter providerID vervangen door "aadRoles". U moet ook de Tenant-ID voor uw Azure AD-organisatie gebruiken als de para meter resourceId.
 
 ## <a name="retrieving-role-definitions"></a>Roldefinities ophalen
 

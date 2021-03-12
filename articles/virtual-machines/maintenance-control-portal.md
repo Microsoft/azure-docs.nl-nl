@@ -3,16 +3,17 @@ title: Onderhouds beheer voor virtuele Azure-machines met behulp van de Azure Po
 description: Meer informatie over hoe u kunt bepalen wanneer onderhoud wordt toegepast op uw Azure-Vm's met behulp van onderhouds beheer en de Azure Portal.
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: maintenance-control
 ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
-ms.openlocfilehash: b174e2631131e6bf26d7b1cb62442c8a99102e2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0dea30723a3ebe1598d6304ac3c98bfe1b55b466
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397280"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563010"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-portal"></a>Updates beheren met onderhouds beheer en de Azure Portal
 
@@ -20,7 +21,7 @@ Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op u
 
 ## <a name="create-a-maintenance-configuration"></a>Een onderhoudsconfiguratie maken
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 
 1. Zoeken naar **onderhouds configuraties**.
 
@@ -38,7 +39,7 @@ Met de onderhouds controle kunt u bepalen wanneer u updates wilt Toep assen op u
 
    ![Scherm afbeelding die laat zien hoe Tags worden toegevoegd aan een onderhouds configuratie](media/virtual-machines-maintenance-control-portal/maintenance-configurations-tags.png)
 
-1. Bekijk de samenvatting. Klik op **Maken**.
+1. Bekijk de samenvatting. Klik op **Create**.
 
    ![Scherm afbeelding die laat zien hoe u een onderhouds configuratie maakt](media/virtual-machines-maintenance-control-portal/maintenance-configurations-create.png)
 
@@ -70,7 +71,7 @@ U kunt ook de configuratie van een specifieke virtuele machine op de eigenschapp
 
 ## <a name="check-for-pending-updates"></a>Controleren op updates die nog niet zijn uitgevoerd
 
-Er zijn ook twee manieren om te controleren of updates in behandeling zijn voor een onderhouds configuratie. In **onderhouds configuraties**klikt u op de details van de configuratie op **toewijzingen** en controleert u de **onderhouds status**.
+Er zijn ook twee manieren om te controleren of updates in behandeling zijn voor een onderhouds configuratie. In **onderhouds configuraties** klikt u op de details van de configuratie op **toewijzingen** en controleert u de **onderhouds status**.
 
 ![Scherm afbeelding die laat zien hoe updates in behandeling worden gecontroleerd](media/virtual-machines-maintenance-control-portal/maintenance-configurations-pending.png)
 
@@ -86,7 +87,7 @@ U kunt openstaande updates op aanvraag Toep assen met behulp van **virtual machi
 
 ## <a name="check-the-status-of-applying-updates"></a>De status van het Toep assen van updates controleren 
 
-U kunt de voortgang van de updates controleren voor een configuratie in **onderhouds configuraties** of met behulp van **virtual machines**. Klik op **onderhoud**onder Details van de virtuele machine. In het volgende voor beeld ziet u in de **onderhouds status** dat een update **in behandeling**is.
+U kunt de voortgang van de updates controleren voor een configuratie in **onderhouds configuraties** of met behulp van **virtual machines**. Klik op **onderhoud** onder Details van de virtuele machine. In het volgende voor beeld ziet u in de **onderhouds status** dat een update **in behandeling** is.
 
 ![Scherm afbeelding die laat zien hoe de status van updates in behandeling moet worden gecontroleerd](media/virtual-machines-maintenance-control-portal/maintenance-configurations-status.png)
 

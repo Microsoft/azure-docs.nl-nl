@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 03/05/2021
-ms.openlocfilehash: ab2d7c23e69c73c78c852de722733e8f0d09fcec
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.date: 03/08/2021
+ms.openlocfilehash: f7f8082cc9120345336610d5cb49741140d3b606
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449727"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102557009"
 ---
 # <a name="create-stateful-and-stateless-workflows-in-visual-studio-code-with-the-azure-logic-apps-preview-extension"></a>Stateful en stateless werk stromen maken in Visual Studio code met de extensie Azure Logic Apps (preview)
 
@@ -33,6 +33,8 @@ In dit artikel wordt uitgelegd hoe u een logische app en een werk stroom maakt i
 * Voeg een trigger en een actie toe.
 
 * Uitvoeren, testen, fouten opsporen en de uitvoerings geschiedenis lokaal controleren.
+
+* Details van de domein naam voor toegang tot de firewall zoeken.
 
 * Implementeren naar Azure, inclusief optioneel inschakelen Application Insights.
 
@@ -576,7 +578,7 @@ Voer de volgende stappen uit om een onderbrekings punt toe te voegen:
 
 1. Als u de beschik bare informatie wilt bekijken wanneer een onderbrekings punt wordt gevonden, bekijkt u in de weer gave uitvoeren het deel venster **variabelen** .
 
-1. Als u wilt door gaan met het uitvoeren van de werk stroom, selecteert u op de werk balk fout opsporing **door gaan** (knop afspelen). 
+1. Als u wilt door gaan met het uitvoeren van de werk stroom, selecteert u op de werk balk fout opsporing **door gaan** (knop afspelen).
 
 U kunt op elk gewenst moment onderbrekings punten toevoegen en verwijderen tijdens de uitvoering van de werk stroom. Als u de **workflow.jsin** het bestand bijwerkt nadat de uitvoering is gestart, worden onderbrekings punten niet automatisch bijgewerkt. Als u de onderbrekings punten wilt bijwerken, start u de logische app opnieuw.
 
@@ -650,7 +652,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    ![Scherm afbeelding van de overzichts pagina van de werk stroom met de status en geschiedenis van de uitvoering](./media/create-stateful-stateless-workflows-visual-studio-code/post-trigger-call.png)
 
-   | Uitvoerings status | Description |
+   | Uitvoerings status | Beschrijving |
    |------------|-------------|
    | **Aborted** | De uitvoering is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | De uitvoering is geactiveerd en gestart, maar er is een annulerings aanvraag ontvangen. |
@@ -674,7 +676,7 @@ Als u uw logische app wilt testen, voert u de volgende stappen uit om een foutop
 
    Hier volgen de mogelijke statussen die elke stap in de werk stroom kan hebben:
 
-   | Actie status | Pictogram | Description |
+   | Actie status | Pictogram | Beschrijving |
    |---------------|------|-------------|
    | **Aborted** | ![Pictogram voor de actie status ' afgebroken '][aborted-icon] | De actie is gestopt of niet voltooid vanwege externe problemen, bijvoorbeeld een systeem storing of een vervallen Azure-abonnement. |
    | **Gevraagd** | ![Pictogram voor de actie status geannuleerd][cancelled-icon] | De actie is uitgevoerd, maar er is een aanvraag ontvangen om te annuleren. |
@@ -758,6 +760,55 @@ Nadat u updates hebt gemaakt voor uw logische app, kunt u een andere test uitvoe
    ![Scherm opname van de status van elke stap in de bijgewerkte werk stroom plus de invoer en uitvoer in de uitgevouwen reactie actie.](./media/create-stateful-stateless-workflows-visual-studio-code/run-history-details-rerun.png)
 
 1. Als u de foutopsporingssessie wilt stoppen, selecteert u in het menu **uitvoeren** de optie **fout opsporing stoppen** (SHIFT + F5).
+
+<a name="firewall-setup"></a>
+
+##  <a name="find-domain-names-for-firewall-access"></a>Domein namen voor toegang tot de firewall zoeken
+
+Voordat u uw werk stroom voor de logische app implementeert en uitvoert in de Azure Portal, moet u, als uw omgeving strikte netwerk vereisten of firewalls heeft die verkeer beperken, machtigingen instellen voor elke trigger of actie verbinding die in uw werk stroom voor komt.
+
+Voer de volgende stappen uit om de FQDN-namen (FULLy Qualified Domain names) voor deze verbindingen te vinden:
+
+1. Open in uw logische app-project de **connections.jsin** het bestand, dat wordt gemaakt nadat u de eerste trigger of actie op basis van een verbinding hebt toegevoegd aan uw werk stroom en zoek het `managedApiConnections` object op.
+
+1. Voor elke verbinding die u hebt gemaakt, zoekt, kopieert en slaat u de waarde van de eigenschap op een veilige manier op, `connectionRuntimeUrl` zodat u uw firewall met deze gegevens kunt instellen.
+
+   Dit voor beeld **connections.js** een bestand bevat twee verbindingen, een AS2-verbinding en een Office 365-verbinding met deze `connectionRuntimeUrl` waarden:
+
+   * AS2 `"connectionRuntimeUrl": https://9d51d1ffc9f77572.00.common.logic-{Azure-region}.azure-apihub.net/apim/as2/11d3fec26c87435a80737460c85f42ba`
+
+   * Office 365: `"connectionRuntimeUrl": https://9d51d1ffc9f77572.00.common.logic-{Azure-region}.azure-apihub.net/apim/office365/668073340efe481192096ac27e7d467f`
+
+   ```json
+   {
+      "managedApiConnections": {
+         "as2": {
+            "api": {
+               "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/as2"
+            },
+            "connection": {
+               "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Web/connections/{connection-resource-name}"
+            },
+            "connectionRuntimeUrl": https://9d51d1ffc9f77572.00.common.logic-{Azure-region}.azure-apihub.net/apim/as2/11d3fec26c87435a80737460c85f42ba,
+            "authentication": {
+               "type":"ManagedServiceIdentity"
+            }
+         },
+         "office365": {
+            "api": {
+               "id": "/subscriptions/{Azure-subscription-ID}/providers/Microsoft.Web/locations/{Azure-region}/managedApis/office365"
+            },
+            "connection": {
+               "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Web/connections/{connection-resource-name}"
+            },
+            "connectionRuntimeUrl": https://9d51d1ffc9f77572.00.common.logic-{Azure-region}.azure-apihub.net/apim/office365/668073340efe481192096ac27e7d467f,
+            "authentication": {
+               "type":"ManagedServiceIdentity"
+            }
+         }
+      }
+   }
+   ```
 
 <a name="deploy-azure"></a>
 

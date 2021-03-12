@@ -1,26 +1,19 @@
 ---
 title: Extensie van virtuele machine voor Azure Network Watcher agent voor Linux
 description: Implementeer de Network Watcher-agent op de virtuele Linux-machine met behulp van een extensie voor virtuele machines.
-services: virtual-machines-linux
-documentationcenter: ''
-author: mimckitt
-manager: vashan
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 5c81e94c-e127-4dd2-ae83-a236c4512345
-ms.service: virtual-machines-linux
-ms.subservice: extensions
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
+ms.service: virtual-machines
+ms.subservice: extensions
+author: amjads1
+ms.author: amjads
+ms.collection: linux
 ms.date: 02/14/2017
-ms.author: mimckitt
-ms.openlocfilehash: 870606299ee0e76c7a55578f258e837c4b8a9368
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bc252e560df782625d795b30c6688a34f5c2bd79
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952264"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563588"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-linux"></a>VM-extensie van Network Watcher Agent voor Linux installeren
 

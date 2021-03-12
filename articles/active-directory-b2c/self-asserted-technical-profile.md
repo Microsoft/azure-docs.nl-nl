@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/26/2020
+ms.date: 03/10/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 08b08e3e799ff7b579889a62ecec70677a3cbce9
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 8d3343838216522abfc11ec3f202ae2da1c0e38f
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059055"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611875"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een zelf-bevestigd technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -212,11 +212,13 @@ U kunt ook een REST API technisch profiel aanroepen met uw bedrijfs logica, invo
 | setting. enableRememberMe <sup>2</sup>| Nee| Hiermee wordt het selectie vakje [aangemeld blijven](session-behavior.md?pivots=b2c-custom-policy#enable-keep-me-signed-in-kmsi) weer gegeven. Mogelijke waarden: `true` , of `false` (standaard). |
 | setting. inputVerificationDelayTimeInMilliseconds <sup>3</sup>| Nee| Verbetert de gebruikers ervaring door te wachten tot de gebruiker stopt met typen en vervolgens de waarde te valideren. Standaard waarde 2000 milliseconden. |
 | IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
+|forgotPasswordLinkOverride <sup>4</sup>| Nee | Er moet een claim uitwisseling voor wacht woord opnieuw instellen worden uitgevoerd. Zie [selfservice voor wacht woord opnieuw instellen](add-password-reset-policy.md)voor meer informatie. |
 
 Opmerkingen:
 1. Beschikbaar voor inhouds definitie [DataUri](contentdefinitions.md#datauri) type van `unifiedssp` of `unifiedssd` .
 1. Beschikbaar voor inhouds definitie [DataUri](contentdefinitions.md#datauri) type van `unifiedssp` of `unifiedssd` . [Versie](page-layout.md) 1.1.0 en hoger van de pagina-indeling.
 1. Beschikbaar voor de versie 1.2.0 en hoger van de [pagina-indeling](page-layout.md) .
+1. Beschikbaar voor inhouds definitie [DataUri](contentdefinitions.md#datauri) type van `unifiedssp` . [Versie](page-layout.md) 2.1.2 en hoger van de pagina-indeling.
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 

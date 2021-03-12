@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 32b1558bf4af2ee151fef33a8c0cbe7df82f1e84
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 4ed3b3d60be0e5e4bedcb604ce021f6a64002120
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201750"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201261"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -61,7 +61,7 @@ De verbindings reeks is vereist. U kunt uw connection string vinden in uw Applic
 }
 ```
 
-U kunt de connection string ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_CONNECTION_STRING` .
+U kunt de connection string ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_CONNECTION_STRING` (die vervolgens voor rang krijgt als de Connection String ook is opgegeven in de JSON-configuratie).
 
 Als u de connection string niet instelt, wordt de Java-Agent uitgeschakeld.
 
@@ -81,7 +81,7 @@ Als u de naam van de Cloud functie wilt instellen:
 
 Als de naam van de Cloud functie niet is ingesteld, wordt de naam van de Application Insights resource gebruikt voor het labelen van het onderdeel op de toepassings toewijzing.
 
-U kunt ook de naam van de Cloud functie instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_NAME` .
+U kunt de naam van de Cloud functie ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_NAME` (die vervolgens voor rang krijgt als de naam van de Cloud functie ook is opgegeven in de JSON-configuratie).
 
 ## <a name="cloud-role-instance"></a>Cloud rolinstantie
 
@@ -98,7 +98,7 @@ Als u de Cloud rolinstantie wilt instellen op iets anders dan de naam van de com
 }
 ```
 
-U kunt ook de Cloud rolinstantie instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_INSTANCE` .
+U kunt ook de functie-instantie van de Cloud instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_ROLE_INSTANCE` (die vervolgens voor rang krijgt als de Cloud rolinstantie ook is opgegeven in de JSON-configuratie).
 
 ## <a name="sampling"></a>Steekproeven
 
@@ -117,7 +117,7 @@ Hier volgt een voor beeld van het instellen van de steek proef voor het vastlegg
 }
 ```
 
-U kunt het steekproef percentage ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` .
+U kunt het steekproef percentage ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SAMPLING_PERCENTAGE` (die vervolgens voor rang krijgt als het steekproef percentage ook is opgegeven in de JSON-configuratie).
 
 > [!NOTE]
 > Kies voor het steekproef percentage een percentage dat dicht bij 100/N ligt waarbij N een geheel getal is. De huidige steek proef biedt geen ondersteuning voor andere waarden.
@@ -150,9 +150,6 @@ Als u een aantal aanvullende JMX-metrische gegevens wilt verzamelen:
 `attribute` is de naam van het kenmerk in de JMX-MBean die u wilt verzamelen.
 
 De waarden voor de numerieke en Booleaanse JMX-metriek worden ondersteund. Booleaanse JMX-metrische gegevens worden toegewezen aan `0` voor onwaar en `1` voor waar.
-
-[//]: # "Opmerking: APPLICATIONINSIGHTS_JMX_METRICS hier niet te documenteren"
-[//]: # "JSON embedded in env var is rommelf en moet alleen worden gedocumenteerd voor het scenarioloze koppeling"
 
 ## <a name="custom-dimensions"></a>Aangepaste dimensies
 
@@ -201,7 +198,7 @@ De standaard drempel voor Application Insights is `INFO` . Als u dit niveau wilt
 }
 ```
 
-U kunt de drempel waarde ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL` .
+U kunt het niveau ook instellen met behulp van de omgevings variabele `APPLICATIONINSIGHTS_INSTRUMENTATION_LOGGING_LEVEL` (die vervolgens voor rang krijgt als het niveau ook is opgegeven in de JSON-configuratie).
 
 Dit zijn de geldige `level` waarden die u in het bestand kunt opgeven `applicationinsights.json` en hoe ze overeenkomen met de registratie niveaus in verschillende registratie raamwerken:
 
@@ -284,7 +281,7 @@ Application Insights Java 3,0 verzendt standaard elke 15 minuten een heartbeat-m
 ```
 
 > [!NOTE]
-> U kunt de frequentie van de heartbeat niet verlagen, omdat de heartbeat-gegevens ook worden gebruikt om Application Insights gebruik bij te houden.
+> U kunt het interval niet langer dan 15 minuten verhogen, omdat de heartbeat-gegevens ook worden gebruikt om Application Insights gebruik bij te houden.
 
 ## <a name="http-proxy"></a>HTTP-proxy
 
@@ -300,6 +297,30 @@ Als uw toepassing zich achter een firewall bevindt en niet rechtstreeks verbindi
 ```
 
 Application Insights Java 3,0 is ook van toepassing op het globale `-Dhttps.proxyHost` en `-Dhttps.proxyPort` als deze zijn ingesteld.
+
+## <a name="metric-interval"></a>Interval voor metrische gegevens
+
+Deze functie is beschikbaar als preview-versie.
+
+Standaard worden metrische gegevens elke 60 seconden vastgelegd.
+
+Vanaf versie 3.0.3-Bèta kunt u dit interval wijzigen:
+
+```json
+{
+  "preview": {
+    "metricIntervalSeconds": 300
+  }
+}
+```
+
+De instelling geldt voor al deze metrische gegevens:
+
+* Standaard prestatie meter items, bijvoorbeeld CPU en geheugen
+* Standaard aangepaste metrische gegevens, bijvoorbeeld Garbage Collection-timing
+* Geconfigureerde metrische JMX-gegevens ([Zie hierboven](#jmx-metrics))
+* Metrische gegevens over micrometer ([Zie hierboven](#auto-collected-micrometer-metrics-including-spring-boot-actuator-metrics))
+
 
 [//]: # "Opmerking OpenTelemetry-ondersteuning bevindt zich in een persoonlijke preview totdat de OpenTelemetry-API 1,0 bedraagt"
 
@@ -349,7 +370,7 @@ Application Insights Java 3,0-logboeken worden standaard op niveau `INFO` naar h
 
 `maxHistory` is het aantal doorgevoerde logboek bestanden dat wordt bewaard (naast het huidige logboek bestand).
 
-Vanaf versie 3.0.2 kunt u de zelf diagnostische gegevens ook instellen `level` met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` .
+Vanaf versie 3.0.2 kunt u de zelf diagnostische gegevens ook instellen `level` met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` (die vervolgens voor rang krijgt als de zelf diagnostische gegevens `level` ook zijn opgegeven in de JSON-configuratie).
 
 ## <a name="an-example"></a>Een voor beeld
 

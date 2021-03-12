@@ -1,7 +1,7 @@
 ---
 title: Azure Media Services inhoud publiceren met REST
 description: Meer informatie over het maken van een Locator die wordt gebruikt voor het bouwen van een streaming-URL. De code maakt gebruik van REST API.
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 438a816ca28b9414557e64591d9ece2dbb173370
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: b8733d499b2396160a73906f16a69291cf0b9d71
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256868"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015417"
 ---
 # <a name="publish-azure-media-services-content-using-rest"></a>Azure Media Services inhoud publiceren met REST
 

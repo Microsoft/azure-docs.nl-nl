@@ -76,7 +76,7 @@
 - name: Resources
   items:
     - name: Opties voor ondersteuning en hulp
-      href: ../iot-fundamentals/iot-support-help.md
+      href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-develop/toc.json&bc=/azure/iot-develop/breadcrumb/toc.json
     - name: Azure IoT-voorbeelden
       items:
         - name: C# (.NET)

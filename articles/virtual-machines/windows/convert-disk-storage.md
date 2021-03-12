@@ -2,17 +2,17 @@
 title: Opslag van Managed disks tussen verschillende schijf typen converteren met behulp van Azure PowerShell
 description: Het converteren van Azure Managed disks tussen de verschillende typen schijven met behulp van Azure PowerShell.
 author: roygara
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: disks
 ms.topic: how-to
 ms.date: 02/13/2021
 ms.author: albecker
-ms.subservice: disks
-ms.openlocfilehash: 1d1c191c746d6853f922302d74c6eefcba547f80
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: e2541607b116159e4f6ec4028c83ecc9a45eded8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519742"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102550736"
 ---
 # <a name="update-the-storage-type-of-a-managed-disk"></a>Het opslag type van een beheerde schijf bijwerken
 

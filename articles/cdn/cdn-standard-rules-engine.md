@@ -7,12 +7,12 @@ ms.service: azure-cdn
 ms.topic: how-to
 ms.date: 11/01/2019
 ms.author: allensu
-ms.openlocfilehash: 1c596bf10d8afbce504b5abf04eacb877989521a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b94798580b2d4ba746c152486c0de753cf64d2c9
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887537"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102564897"
 ---
 # <a name="set-up-the-standard-rules-engine-for-azure-cdn"></a>De Standard Rules engine instellen voor Azure CDN
 
@@ -44,7 +44,7 @@ U kunt de standaard regels-engine voor Azure CDN gebruiken om aan te passen hoe 
 1. Selecteer **regel toevoegen** en voer een regel naam in. Regel namen moeten beginnen met een letter en mogen alleen cijfers en letters bevatten.
 
 1. Om het type aanvragen te identificeren waarop de regel van toepassing is, maakt u een matching-voor waarde:
-    1. Selecteer **voor waarde toevoegen**en selecteer vervolgens de voor waarde **aanvraag protocol** match.
+    1. Selecteer **voor waarde toevoegen** en selecteer vervolgens de voor waarde **aanvraag protocol** match.
     1. Selecteer voor **operator** de optie **Is gelijk aan**.
     1. Selecteer voor **waarde** **http**.
    
@@ -54,8 +54,8 @@ U kunt de standaard regels-engine voor Azure CDN gebruiken om aan te passen hoe 
    > U kunt kiezen uit meerdere match-voor waarden in de vervolg keuzelijst **voor waarde toevoegen** . Zie voor een gedetailleerde lijst met match-voor waarden [overeenkomst in de standaard regels-engine](cdn-standard-rules-engine-match-conditions.md).
    
 1. Selecteer de actie die moet worden toegepast op de aanvragen die voldoen aan de voor waarde match:
-   1. Selecteer **actie toevoegen**en selecteer vervolgens **URL-omleiding**.
-   1. Selecteer bij **type**de optie **gevonden (302)**.
+   1. Selecteer **actie toevoegen** en selecteer vervolgens **URL-omleiding**.
+   1. Selecteer bij **type** de optie **gevonden (302)**.
    1. Bij **Protocol** selecteert u **HTTPS**.
    1. Laat alle andere velden leeg om binnenkomende waarden te gebruiken.
    

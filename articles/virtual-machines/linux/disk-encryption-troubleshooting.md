@@ -2,18 +2,19 @@
 title: Problemen met Azure Disk Encryption voor Linux-Vm's oplossen
 description: In dit artikel vindt u tips voor het oplossen van problemen met Microsoft Azure schijf versleuteling voor Linux-Vm's.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: troubleshooting
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0a1bdce0478961b27bde7dd32733d95c58ba2361
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 58ea788d6959b039ff5de8a4a889c531b987d826
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972234"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102563367"
 ---
 # <a name="azure-disk-encryption-for-linux-vms-troubleshooting-guide"></a>Probleemoplossings gids voor Azure Disk Encryption voor Linux Vm's
 
@@ -22,7 +23,7 @@ Deze hand leiding is voor IT-professionals, gegevens beveiligings analisten en C
 Voordat u een van de volgende stappen uitvoert, moet u eerst controleren of de virtuele machines die u probeert te versleutelen, worden ondersteund door de [ondersteunde VM-grootten en-besturings systemen](disk-encryption-overview.md#supported-vms-and-operating-systems)en dat u aan alle vereisten hebt voldaan:
 
 - [Aanvullende vereisten voor Vm's](disk-encryption-overview.md#supported-vms-and-operating-systems)
-- [Netwerk vereisten](disk-encryption-overview.md#networking-requirements)
+- [Netwerkvereisten](disk-encryption-overview.md#networking-requirements)
 - [Opslag vereisten voor de versleutelings sleutel](disk-encryption-overview.md#encryption-key-storage-requirements)
 
  

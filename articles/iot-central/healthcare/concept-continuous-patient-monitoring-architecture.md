@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 093e069fa7a3eab06c61f796421a3253d9b92cb1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6f7359b2b2fb0a1ea6ce92ec52bba15fc74fc75a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727495"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017151"
 ---
 # <a name="continuous-patient-monitoring-architecture"></a>Architectuur van continue patiëntbewaking
 
@@ -37,7 +37,7 @@ De primaire functie van de mobiele app is het verzamelen van BLE-gegevens van me
 
 ### <a name="export-to-azure-api-for-fhirreg"></a>Exporteren naar Azure API for FHIR&reg;
 
-Azure IoT Central voldoet aan HIPAA en is gecertificeerd door HITRUST&reg;. U kunt ook gezondheidsgegevens van patiënten naar andere services verzenden met behulp van de [Azure API for FHIR](../../healthcare-apis/overview.md). Azure API for FHIR is een op standaarden gebaseerde API voor klinische gezondheidsgegevens. Met de [Azure IoT Connector for FHIR](../../healthcare-apis/iot-fhir-portal-quickstart.md) kunt u de Azure API for FHIR gebruiken als een doorlopend gegevensexportdoel van IoT Central.
+Azure IoT Central voldoet aan HIPAA en is gecertificeerd door HITRUST&reg;. U kunt ook gezondheidsgegevens van patiënten naar andere services verzenden met behulp van de [Azure API for FHIR](../../healthcare-apis/fhir/overview.md). Azure API for FHIR is een op standaarden gebaseerde API voor klinische gezondheidsgegevens. Met de [Azure IoT Connector for FHIR](../../healthcare-apis/fhir/iot-fhir-portal-quickstart.md) kunt u de Azure API for FHIR gebruiken als een doorlopend gegevensexportdoel van IoT Central.
 
 ### <a name="machine-learning"></a>Machine learning
 

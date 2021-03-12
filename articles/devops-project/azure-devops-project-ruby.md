@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 9e2f7115560148a1d3b9d2671be54c1ba4d61946
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: 3da2e116f1f58ca7a5c75da49f64bb8fc046e3ac
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588910"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102548492"
 ---
 # <a name="create-a-cicd-pipeline-for-ruby-on-rails-by-using-azure-devops-starter"></a>Een CI/CD-pijplijn voor Ruby on Rails maken met behulp van Azure DevOps Starter
 
@@ -126,4 +126,4 @@ U kunt het Azure App Service-exemplaar en de gerelateerde resources die u in dez
 Voor meer informatie over het wijzigen van de build- en release-pijplijnen in overeenstemming met de behoeften van uw team, raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [Een CD-pijplijn (continue implementatie) met meerdere fasen definiëren](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts)
+> [Een CD-pijplijn (continue implementatie) met meerdere fasen definiëren](/azure/devops/pipelines/release/define-multistage-release-process)

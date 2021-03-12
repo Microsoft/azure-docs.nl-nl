@@ -12,26 +12,22 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 1187c768a54dd04d25b6de0e6785ebb81a7dfc24
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 34a28768d57aac8cf18bef6bc031da66bb361936
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584428"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103007887"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Een mobiele app configureren die web-Api's aanroept
 
 Nadat u de toepassing hebt gemaakt, leert u hoe u de code kunt configureren met behulp van de app-registratie parameters. Mobiele toepassingen bieden een aantal complexe aspecten die betrekking hebben op de aanpassing aan het maken van hun Framework.
 
-## <a name="find-msal-support-for-mobile-apps"></a>MSAL-ondersteuning voor mobiele apps zoeken
+## <a name="microsoft-libraries-supporting-mobile-apps"></a>Micro soft-bibliotheken die mobiele apps ondersteunen
 
-De volgende typen micro soft Authentication Library (MSAL) ondersteunen mobiele apps.
+De volgende micro soft-bibliotheken ondersteunen mobiele apps:
 
-MSAL | Description
------------- | ----------
-![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Wordt gebruikt voor het ontwikkelen van draag bare toepassingen. MSAL.NET ondersteunt de volgende platforms voor het bouwen van een mobiele toepassing: Universeel Windows-platform (UWP), Xamarin. iOS en Xamarin. Android.
-![MSAL. iOS](media/sample-v2-code/logo_iOS.png) <br/> MSAL. iOS | Wordt gebruikt voor het ontwikkelen van systeem eigen iOS-toepassingen met behulp van objectief-C of SWIFT.
-![MSAL. Android](media/sample-v2-code/logo_android.png) <br/> MSAL. Android | Wordt gebruikt voor het ontwikkelen van systeem eigen Android-toepassingen in Java voor Android.
+[!INCLUDE [active-directory-develop-libraries-mobile](../../../includes/active-directory-develop-libraries-mobile.md)]
 
 ## <a name="instantiate-the-application"></a>De toepassing instantiëren
 

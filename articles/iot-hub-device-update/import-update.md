@@ -6,12 +6,12 @@ ms.author: andbrown
 ms.date: 2/11/2021
 ms.topic: how-to
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 6502728a14ea825fadfde107e61f235db5619ae0
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: b9d40848abdd85beeca592001b697e3c50b7cd59
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102507276"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008559"
 ---
 # <a name="import-new-update"></a>Nieuwe update importeren
 Meer informatie over het importeren van een nieuwe update voor het bijwerken van apparaten in IoT Hub. Als u dit nog niet hebt gedaan, moet u vertrouwd zijn met de basis concepten voor het [importeren](import-concepts.md).
@@ -33,9 +33,9 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 
 1. Zorg ervoor dat het bestand met de update-afbeelding of het APT-manifest bestand zich bevindt in een map die toegankelijk is vanuit Power shell.
 
-2. Kopieer de [Update van het apparaat voor IOT hub opslag plaats](https://github.com/azure/iot-hub-device-update)of down load het als een zip-bestand naar een locatie die toegankelijk is vanuit Power shell (zodra het zip-bestand is gedownload, klikt u met de rechter muisknop op > tab om te voor `Properties`  >  `General` `Unblock` komen dat `Security` Power shell-beveiligings waarschuwingen worden gevraagd).
+2. Maak een tekst bestand met de naam **AduUpdate. psm1** in de map waarin het bestand met de update-installatie kopie of het apt-manifest bestand zich bevindt. Open vervolgens de Power shell-cmdlet [AduUpdate. psm1](https://github.com/Azure/iot-hub-device-update/tree/main/tools/AduCmdlets) , kopieer de inhoud naar het tekst bestand en sla het tekst bestand op.
 
-3. Ga in Power shell naar `tools/AduCmdlets` map en voer uit:
+3. Ga in Power shell naar de map waarin u de Power shell-cmdlet van stap 2 hebt gemaakt. Voer vervolgens
 
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
@@ -57,11 +57,11 @@ Meer informatie over het importeren van een nieuwe update voor het bijwerken van
 
     | Parameter | Beschrijving |
     | --------- | ----------- |
-    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso. Eigenschap van het [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties) van de _fabrikant_ moet overeenkomen
-    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld pop-up. Eigenschap voor _model_ [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties) moet overeenkomen
+    | deviceManufacturer | Fabrikant van het apparaat waarmee de update compatibel is, bijvoorbeeld contoso. De eigenschap van het [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties)van de _fabrikant_ moet overeenkomen.
+    | deviceModel | Model van het apparaat waarmee de update compatibel is, bijvoorbeeld pop-up. De eigenschap van het _model_ [apparaat](https://docs.microsoft.com/azure/iot-hub-device-update/device-update-plug-and-play#device-properties)moet overeenkomen.
     | updateProvider | Entiteit die de update maakt of rechtstreeks verantwoordelijk is. Het is vaak een bedrijfs naam.
     | updatenaam | Id voor een klasse van updates. De klasse kan alles zijn wat u kiest. Het is vaak een apparaat-of model naam.
-    | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Kan al dan niet overeenkomen met een versie van een afzonderlijk software onderdeel op het apparaat.
+    | updateVersion | Het versie nummer waarmee deze update wordt onderscheiden van anderen die dezelfde provider en naam hebben. Komt niet overeen met een versie van een afzonderlijk software onderdeel op het apparaat (maar kan desgewenst worden gekozen).
     | updateType | <ul><li>Opgeven `microsoft/swupdate:1` voor bijwerken van installatie kopie</li><li>Opgeven `microsoft/apt:1` voor pakket update</li></ul>
     | installedCriteria | <ul><li>Geef de waarde van SWVersion voor het `microsoft/swupdate:1` Update type op</li><li>Geef de aanbevolen waarde voor het `microsoft/apt:1` Update type op.
     | updateFilePath (s) | Pad naar de update bestand (en) op uw computer
@@ -111,6 +111,9 @@ Voorbeeld:
 ```
 
 ## <a name="import-update"></a>Update importeren
+
+[!NOTE]
+De volgende instructies laten zien hoe u een update importeert via de gebruikers interface van Azure Portal. U kunt ook de [Update van het apparaat voor IOT hub-api's](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) gebruiken om een update te importeren. 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw IOT hub met het bijwerken van het apparaat.
 

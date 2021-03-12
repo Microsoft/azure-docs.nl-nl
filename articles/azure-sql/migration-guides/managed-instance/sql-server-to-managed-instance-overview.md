@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 02/18/2020
-ms.openlocfilehash: 9074480f44e75a90c202f0d0813c43aed1f7ba95
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: ac2b535b2e6b7a6b4169d08dd1768d69e685a216
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488202"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561990"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -64,6 +64,8 @@ U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolg
 
 > [!IMPORTANT]
 > Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md)   netwerken. 
+
+Een andere belang rijke overweging in de selectie van de doellaag van Azure SQL Managed instance (Algemeen VS Bedrijfskritiek) is de beschik baarheid van bepaalde functies, zoals In-Memory OLTP, die alleen beschikbaar is in de Bedrijfskritiek-laag. 
 
 ### <a name="sql-server-vm-alternative"></a>SQL Server VM-alternatief
 
@@ -191,6 +193,26 @@ Bij het migreren van data bases die zijn beveiligd door  [transparent Data Enc
 #### <a name="system-databases"></a>Systeem databases
 
 Het herstellen van systeem databases wordt niet ondersteund. Als u objecten op exemplaar niveau wilt migreren (opgeslagen in Master-of msdb-data bases), scripteert u deze met behulp van Transact-SQL (T-SQL) en maakt u ze opnieuw op het beheerde exemplaar van de doel groep. 
+
+#### <a name="in-memory-oltp-memory-optimized-tables"></a>In-Memory OLTP (tabellen geoptimaliseerd voor geheugen)
+
+SQL Server biedt In-Memory OLTP-mogelijkheid voor gebruik van tabellen die zijn geoptimaliseerd voor geheugen, geoptimaliseerd voor geheugen en systeem eigen, gecompileerde SQL-modules voor het uitvoeren van workloads met hoge door Voer en lage latentie verwerkings vereisten voor transactionele trans acties. 
+
+> [!IMPORTANT]
+> In-Memory OLTP wordt alleen ondersteund in de Bedrijfskritiek-laag van een Azure SQL Managed instance (en wordt niet ondersteund in de Algemeen-laag).
+
+Als u voor geheugen geoptimaliseerde tabellen of tabel typen die zijn geoptimaliseerd voor geheugen hebt in uw on-premises SQL Server en u wilt migreren naar Azure SQL Managed instance, moet u:
+
+- Kies Bedrijfskritiek laag voor uw doel exemplaar van Azure SQL Managed dat In-Memory OLTP ondersteunt, of
+- Als u wilt migreren naar Algemeen tier in Azure SQL Managed instance, verwijdert u tabellen die zijn geoptimaliseerd voor geheugen, geoptimaliseerde tabel typen en systeem eigen gecompileerde SQL-modules die communiceren met objecten die zijn geoptimaliseerd voor geheugen voordat u uw data base (s) migreert. De volgende T-SQL-query kan worden gebruikt om alle objecten te identificeren die moeten worden verwijderd voordat de migratie naar Algemeen laag kan worden uitgevoerd:
+
+```tsql
+SELECT * FROM sys.tables WHERE is_memory_optimized=1
+SELECT * FROM sys.table_types WHERE is_memory_optimized=1
+SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
+```
+
+Zie [prestaties optimaliseren met in-Memory technologieën in Azure SQL database en Azure SQL Managed instance](https://docs.microsoft.com/azure/azure-sql/in-memory-oltp-overview) (Engelstalig) voor meer informatie over de technologieën in het geheugen.
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 

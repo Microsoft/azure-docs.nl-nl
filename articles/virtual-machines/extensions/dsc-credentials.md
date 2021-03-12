@@ -1,27 +1,19 @@
 ---
 title: Referenties door geven aan Azure met behulp van desired state Configuration
 description: Informatie over het veilig door geven van referenties aan virtuele Azure-machines met behulp van de desired state Configuration (DSC) van Power shell.
-services: virtual-machines-windows
-documentationcenter: ''
-author: bobbytreed
-manager: carmonm
-editor: ''
-tags: azure-resource-manager
-keywords: dsc
-ms.assetid: ea76b7e8-b576-445a-8107-88ea2f3876b9
-ms.service: virtual-machines-windows
-ms.subservice: extensions
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
-ms.workload: na
-ms.date: 05/02/2018
+ms.service: virtual-machines
+ms.subservice: extensions
+author: bobbytreed
 ms.author: robreed
-ms.openlocfilehash: f191ab5819cd69ce90699db60be1665ef77e10a9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.collection: windows
+ms.date: 05/02/2018
+ms.openlocfilehash: 6817dd6baacd835b7d433177ff18af1238ee44a6
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955885"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102560072"
 ---
 # <a name="pass-credentials-to-the-azure-dscextension-handler"></a>Referenties door geven aan de Azure DSCExtension-handler
 

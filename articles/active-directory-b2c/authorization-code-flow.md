@@ -7,16 +7,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/19/2019
+ms.date: 03/10/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 10444974cf31b95fccd2d11aef20bfd57fab7939
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: a6a993fdf4fd266afb9459fedd13412d8796e0a5
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275281"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611501"
 ---
 # <a name="oauth-20-authorization-code-flow-in-azure-active-directory-b2c"></a>OAuth 2,0-autorisatie code stroom in Azure Active Directory B2C
 
@@ -72,6 +72,9 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 | verschijnt |Optioneel |Het type gebruikers interactie dat is vereist. Op dit moment is de enige geldige waarde `login` die de gebruiker in staat stelt hun referenties in te voeren voor deze aanvraag. Eenmalige aanmelding wordt niet van kracht. |
 | code_challenge  | Aanbevolen/vereist | Wordt gebruikt voor het beveiligen van autorisatie code subsidies via de bewijs code voor code Exchange (PKCE). Vereist als `code_challenge_method` is opgenomen. Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. Dit wordt nu aanbevolen voor alle toepassings typen: systeem eigen apps, SPAs en vertrouwelijke clients, zoals web-apps. | 
 | `code_challenge_method` | Aanbevolen/vereist | De methode die wordt gebruikt voor het coderen `code_verifier` van de voor de `code_challenge` para meter. Dit *moet* zijn `S256` , maar de spec staat het gebruik van toe `plain` als de client om de een of andere reden sha256 niet kan ondersteunen. <br/><br/>Als deze is uitgesloten, `code_challenge` wordt ervan uitgegaan dat de tekst zonder opmaak wordt gebruikt `code_challenge` . Micro soft Identity platform ondersteunt zowel `plain` als `S256` . Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. Dit is vereist voor [apps van één pagina die gebruikmaken van de autorisatie code stroom](tutorial-register-spa.md).|
+| login_hint | Nee| Kan worden gebruikt om het veld voor de aanmeldings naam van de aanmeldings pagina vooraf in te vullen. Zie [vooraf invullen van de aanmeldings naam](direct-signin.md#prepopulate-the-sign-in-name)voor meer informatie.  |
+| domain_hint | Nee| Biedt een hint voor het Azure AD B2C van de ID-provider voor sociale netwerken die moet worden gebruikt voor aanmelding. Als een geldige waarde is opgenomen, gaat de gebruiker rechtstreeks naar de aanmeldings pagina van de identiteits provider.  Zie voor meer informatie [aanmelden door sturen naar een sociale provider](direct-signin.md#redirect-sign-in-to-a-social-provider). |
+| Aangepaste parameters | Nee| Aangepaste para meters die kunnen worden gebruikt met [aangepaste beleids regels](custom-policy-overview.md). Bijvoorbeeld een [dynamische URL voor aangepaste pagina-inhoud](customize-ui-with-html.md?pivots=b2c-custom-policy#configure-dynamic-custom-page-content-uri)of [claim conflicten voor sleutel waarden](claim-resolver-overview.md#oauth2-key-value-parameters). |
 
 Op dit moment wordt de gebruiker gevraagd om de werk stroom van de gebruikers stroom te volt ooien. Dit kan betekenen dat de gebruiker die de gebruikers naam en het wacht woord invoert, zich aanmeldt met een sociale identiteit, zich aanmeldt voor de Directory of een ander aantal stappen uitvoert. Gebruikers acties zijn afhankelijk van de manier waarop de gebruikers stroom is gedefinieerd.
 

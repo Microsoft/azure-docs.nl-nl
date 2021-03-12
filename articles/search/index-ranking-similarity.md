@@ -1,39 +1,43 @@
 ---
-title: Algoritme voor het vergelijken van de rang schikking configureren
+title: Het gelijkenis algoritme configureren
 titleSuffix: Azure Cognitive Search
-description: Het gelijkenis algoritme instellen om het nieuwe gelijkenis algoritme voor classificatie te proberen
+description: Meer informatie over hoe u BM25 kunt inschakelen voor oudere Zoek Services en hoe BM25-para meters kunnen worden aangepast om de inhoud van uw indexen beter in te passen.
 manager: nitinme
 author: luiscabrer
 ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/02/2021
-ms.openlocfilehash: 9f806b512ae8e118fca8f32115c8be3b493fd681
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.date: 03/12/2021
+ms.openlocfilehash: 52b3523d3c092f1b9375f53038cc3b20d0ddedcc
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677785"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232831"
 ---
-# <a name="configure-ranking-algorithms-in-azure-cognitive-search"></a>Classificatie-algoritmen configureren in azure Cognitive Search
+# <a name="configure-the-similarity-ranking-algorithm-in-azure-cognitive-search"></a>Het classificatie algoritme voor overeenkomsten in azure configureren Cognitive Search
 
 Azure Cognitive Search ondersteunt twee vergelijk bare classificatie algoritmen:
 
 + Een *klassiek soortgelijk* algoritme, dat wordt gebruikt door alle zoek services tot en met 15 juli 2020.
 + Een implementatie van de *OKAPI BM25* -algoritme, die wordt gebruikt in alle zoek services die zijn gemaakt na 15 juli.
 
-De BM25-classificatie is de nieuwe standaard waarde omdat deze een zoek volgorde produceert die beter is afgestemd op de verwachtingen van de gebruiker. Daarnaast kunt u hiermee configuratie opties voor het afstemmen van resultaten op basis van factoren zoals de document grootte. Voor nieuwe services die zijn gemaakt na 15 juli 2020, wordt BM25 automatisch gebruikt en is het enige gelijkenis algoritme. Als u een gelijkenis wilt instellen met ClassicSimilarity op een nieuwe service, wordt er een HTTP 400-fout geretourneerd, omdat die algoritme niet wordt ondersteund door de service.
+De BM25-classificatie is de nieuwe standaard waarde omdat deze een zoek volgorde produceert die beter is afgestemd op de verwachtingen van de gebruiker. Het bevat [para meters](#set-bm25-parameters) voor het afstemmen van resultaten op basis van factoren zoals de document grootte. 
 
-Voor oudere services die vóór 15 juli 2020 zijn gemaakt, blijft klassieke gelijkenis het standaard algoritme. Oudere Services kunnen eigenschappen instellen voor een zoek index om BM25 aan te roepen, zoals hieronder wordt uitgelegd. Als u overschakelt van klassiek naar BM25, kunt u verwachten dat er een aantal verschillen wordt weer gegeven in de volg orde van de zoek resultaten.
+Voor nieuwe services die zijn gemaakt na 15 juli 2020, wordt BM25 automatisch gebruikt en is het enige gelijkenis algoritme. Als u een gelijkenis wilt instellen met ClassicSimilarity op een nieuwe service, wordt er een HTTP 400-fout geretourneerd, omdat die algoritme niet wordt ondersteund door de service.
+
+Voor oudere services die vóór 15 juli 2020 zijn gemaakt, blijft klassieke gelijkenis het standaard algoritme. Oudere Services kunnen per index worden bijgewerkt naar BM25, zoals hieronder wordt uitgelegd. Als u overschakelt van klassiek naar BM25, kunt u verwachten dat er een aantal verschillen wordt weer gegeven in de volg orde van de zoek resultaten.
 
 > [!NOTE]
-> Semantische zoek actie is een aanvullend algoritme voor het herordenen van semantische informatie waardoor de kloof tussen de verwachtingen en resultaten nog verder wordt beperkt. In tegens telling tot de andere algoritmen is het een invoeg toepassing die wordt herhaald over een bestaande resultatenset. Als u het voor beeld van semantische zoek algoritme wilt gebruiken, moet u een nieuwe service maken en moet u een [semantisch query type](semantic-how-to-query-request.md)opgeven. Zie voor meer informatie [overzicht van semantisch zoeken](semantic-search-overview.md).
+> Semantische classificatie, momenteel in de preview-versie van de standaard services in geselecteerde regio's, is een extra stap voor het produceren van meer relevante resultaten. In tegens telling tot de andere algoritmen is het een invoeg toepassing die wordt herhaald over een bestaande resultatenset. Zie [overzicht van semantische zoek acties](semantic-search-overview.md) en [semantische classificatie](semantic-ranking.md)voor meer informatie.
 
-## <a name="create-a-search-index-for-bm25-scoring"></a>Een zoek index maken voor BM25 Score
+## <a name="enable-bm25-scoring-on-older-services"></a>BM25-scoreing inschakelen voor oudere Services
 
-Als u een zoek service uitvoert die is gemaakt vóór 15 juli 2020, kunt u de eigenschap gelijkenis instellen op BM25Similarity of ClassicSimilarity in de index definitie. Als de eigenschap gelijkenis wordt wegge laten of op null is ingesteld, gebruikt de index het Klassieke algoritme.
+Als u een zoek service uitvoert die is gemaakt vóór 15 juli 2020, kunt u BM25 inschakelen door een soort gelijke eigenschap in te stellen voor nieuwe indexen. De eigenschap wordt alleen weer gegeven op nieuwe indexen, dus als u BM25 op een bestaande index wilt, moet u [de index verwijderen en opnieuw samen stellen](search-howto-reindex.md) met een nieuwe soort gelijke eigenschap die is ingesteld op micro soft. Azure. Search. BM25Similarity.
 
-Het algoritme voor gelijkenis kan alleen worden ingesteld tijdens het maken van de index. Als een index echter is gemaakt met BM25, kunt u de bestaande index bijwerken om de BM25-para meters in te stellen of te wijzigen.
+Als er een index met een gelijkenis eigenschap bestaat, kunt u scha kelen tussen BM25Similarity of ClassicSimilarity. 
+
+In de volgende koppelingen wordt de eigenschap gelijkenis in de Azure-Sdk's beschreven. 
 
 | Clientbibliotheek | Eigenschap voor soort gelijke eigenschappen |
 |----------------|---------------------|
@@ -70,7 +74,7 @@ PUT https://[search service name].search.windows.net/indexes/[index name]?api-ve
 }
 ```
 
-## <a name="bm25-similarity-parameters"></a>BM25 gelijkenis parameters
+## <a name="set-bm25-parameters"></a>BM25-para meters instellen
 
 BM25 gelijkenis voegt twee door de gebruiker aanpas bare para meters toe om de berekende relevantie score te bepalen. U kunt BM25-para meters instellen tijdens het maken van de index of als index-update als de BM25-algoritme is opgegeven tijdens het maken van de index.
 

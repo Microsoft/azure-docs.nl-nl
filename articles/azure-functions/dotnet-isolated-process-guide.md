@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.custom: template-concept
-ms.openlocfilehash: c6ab0748a310a970ad845bc27d915c7fa767b0c5
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: cfef510646489e65f5cbc5d0d3e14c468301f48e
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102631690"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199958"
 ---
 # <a name="guide-for-running-functions-on-net-50-in-azure"></a>Hand leiding voor het uitvoeren van functies op .NET 5,0 in azure
 
@@ -177,7 +177,7 @@ In deze sectie worden de huidige status van de functionele en gedrags verschille
 | Functie/gedrag |  In-process (.NET Core 3,1) | Out-of-process (.NET 5,0) |
 | ---- | ---- | ---- |
 | .NET-versies | LTS (.NET Core 3,1) | Huidige (.NET 5,0) |
-| Kern pakketten | [Micro soft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) | [Micro soft. Azure. functions. worker](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker/)<br/>[Micro soft. Azure. functions. worker](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Sdk) | 
+| Kern pakketten | [Micro soft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) | [Micro soft. Azure. functions. worker](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker/)<br/>[Micro soft. Azure. functions. Worker. SDK](https://www.nuget.org/packages/Microsoft.Azure.Functions.Worker.Sdk) | 
 | Bindings extensie pakketten | [`Microsoft.Azure.WebJobs.Extensions.*`](https://www.nuget.org/packages?q=Microsoft.Azure.WebJobs.Extensions)  | Onder [`Microsoft.Azure.Functions.Worker.Extensions.*`](https://www.nuget.org/packages?q=Microsoft.Azure.Functions.Worker.Extensions) | 
 | Logboekregistratie | [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) door gegeven aan de functie | [`ILogger`](/dotnet/api/microsoft.extensions.logging.ilogger?view=dotnet-plat-ext-5.0&preserve-view=true) verkregen van `FunctionContext` |
 | Annulerings tokens | [Ondersteund](functions-dotnet-class-library.md#cancellation-tokens) | Niet ondersteund |

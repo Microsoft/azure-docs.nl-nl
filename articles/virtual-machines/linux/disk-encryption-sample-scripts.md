@@ -2,18 +2,19 @@
 title: Voorbeeldscripts voor Azure Disk Encryption
 description: Dit artikel is de bijlage voor Microsoft Azure schijf versleuteling voor Linux-Vm's.
 author: msmbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
+ms.collection: linux
 ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: d178ae39d3af6b39047501f0bc47acbc6e792f48
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: f11677d9ebc31f1c1f7cc6332b07b69f8e35ad52
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911491"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102561174"
 ---
 # <a name="azure-disk-encryption-sample-scripts-for-linux-vms"></a>Voorbeeld scripts voor virtuele Linux-machines Azure Disk Encryption
 
@@ -58,9 +59,9 @@ In de volgende tabel ziet u welke para meters kunnen worden gebruikt in het Powe
 |$keyVaultName|De naam van de kluis waarin de versleutelings sleutels moeten worden geplaatst. Er wordt een nieuwe kluis met deze naam gemaakt als er nog geen bestaat.| Waar|
 |$location|Locatie van de sleutel kluis. Zorg ervoor dat de sleutel kluis en de virtuele machines die moeten worden gecodeerd, zich op dezelfde locatie bevinden. Haal een locatielijst op met `Get-AzLocation`.|Waar|
 |$subscriptionId|De id van het Azure-abonnement dat moet worden gebruikt.  U kunt uw abonnements-ID ophalen met `Get-AzSubscription`.|Waar|
-|$aadAppName|De naam van de Azure AD-toepassing die wordt gebruikt om geheimen te schrijven naar de sleutel kluis. Als er nog geen toepassing met deze naam bestaat, wordt deze aangemaakt. Als deze app al bestaat, geeft u de para meter aadClientSecret door aan het script.|False|
-|$aadClientSecret|Client geheim van de Azure AD-toepassing die eerder is gemaakt.|False|
-|$keyEncryptionKeyName|Naam van optionele coderings sleutel in de sleutel kluis. Er wordt een nieuwe sleutel met deze naam gemaakt als deze nog niet bestaat.|False|
+|$aadAppName|De naam van de Azure AD-toepassing die wordt gebruikt om geheimen te schrijven naar de sleutel kluis. Als er nog geen toepassing met deze naam bestaat, wordt deze aangemaakt. Als deze app al bestaat, geeft u de para meter aadClientSecret door aan het script.|Niet waar|
+|$aadClientSecret|Client geheim van de Azure AD-toepassing die eerder is gemaakt.|Niet waar|
+|$keyEncryptionKeyName|Naam van optionele coderings sleutel in de sleutel kluis. Er wordt een nieuwe sleutel met deze naam gemaakt als deze nog niet bestaat.|Niet waar|
 
 ### <a name="encrypt-or-decrypt-vms-without-an-azure-ad-app"></a>Vm's versleutelen of ontsleutelen zonder Azure AD-app
 
@@ -231,7 +232,7 @@ Configureer versleuteling om met Azure te werken door de volgende stappen uit te
     fi
    ```
 
-2. Wijzig de cryptografie configuratie in */etc/crypttab* . Dit ziet er als volgt uit:
+2. Wijzig de cryptografie configuratie in */etc/crypttab*. Dit ziet er als volgt uit:
    ```
     xxx_crypt uuid=xxxxxxxxxxxxxxxxxxxxx none luks,discard,keyscript=/usr/local/sbin/azure_crypt_key.sh
     ```
@@ -375,7 +376,7 @@ Als u versleuteling wilt configureren voor gebruik met Azure, voert u de volgend
    ```bash
     if [ -z "$DRACUT_SYSTEMD" ]; then
    ```
-   in op
+   tot
    ```bash
     if [ 1 ]; then
    ```

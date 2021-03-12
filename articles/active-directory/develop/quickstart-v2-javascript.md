@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 60eed96e20ffcebc3ddefccffa2761017e28e0d2
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: cf5b24bb55f278d9d33916d2d54d3ee5a169c3e8
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103614"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224398"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -109,15 +109,19 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > [!div renderon="docs"]
 >
 > Waar:
-> - *\<Enter_the_Application_Id_Here>* is de **Toepassings-id (client-id)** voor de toepassing die u hebt geregistreerd.
-> - *\<Enter_the_Cloud_Instance_Id_Here>* is de instantie van de Azure-cloud. Voer *https://login.microsoftonline.com* in voor de hoofd- (of globale) Azure-cloud. Zie [Nationale clouds](./authentication-national-cloud.md) voor **nationale** clouds (bijvoorbeeld China).
-> - *\<Enter_the_Tenant_info_here>* is ingesteld op een van de volgende opties:
->    - Als uw toepassing *accounts in deze organisatiemap* ondersteunt, vervangt u deze waarde door de **tenant-id** of **tenantnaam** (bijvoorbeeld *contoso.microsoft.com*).
->    - Als uw toepassing *accounts in elke organisatiemap* ondersteunt, vervang deze waarde dan door **organisaties**.
->    - Als uw toepassing *accounts in elke organisatiemap en persoonlijke Microsoft-accounts* ondersteunt, vervang deze waarde dan door **algemeen**. Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts*, vervang deze waarde dan door **consumenten**.
+> - `Enter_the_Application_Id_Here` is de **Toepassings-id (client-id)** voor de toepassing die u hebt geregistreerd.
 >
-> > [!TIP]
-> > Om de waarden van **Toepassings-id (client-id)** , **Map-id (tenant-id)** en **Ondersteunde accounttypen** te achterhalen, gaat u naar de **Overzichtspagina** van de app in de Azure-portal.
+>    Als u de waarde van de **toepassings-id (client)** wilt vinden, gaat u naar de **overzichts** pagina van de app in de Azure Portal.
+> - `Enter_the_Cloud_Instance_Id_Here` is de instantie van de Azure-cloud. Voer `https://login.microsoftonline.com` in voor de hoofd- (of globale) Azure-cloud. Zie [Nationale clouds](./authentication-national-cloud.md) voor **nationale** clouds (bijvoorbeeld China).
+> - `Enter_the_Tenant_info_here` is ingesteld op een van de volgende opties:
+>    - Als uw toepassing *accounts in deze organisatie Directory* ondersteunt, vervangt u deze waarde door de **Tenant-id** of **Tenant naam** (bijvoorbeeld `contoso.microsoft.com` ).
+>
+>    Als u de waarde van de **Directory-id (Tenant)** wilt vinden, gaat u naar de **overzichts** pagina van de app-registratie in de Azure Portal.
+>    - Als uw toepassing ondersteuning biedt voor *accounts in elke organisatiemap*, vervangt u waarde door `organizations`.
+>    - Als uw toepassing *accounts in elke organisatiemap en persoonlijke Microsoft-accounts* ondersteunt, vervang deze waarde dan door `common`. Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts*, vervang deze waarde dan door `consumers`.
+>
+>    Ga naar de **overzichts** pagina van de app-registratie in de Azure Portal om de waarde van **ondersteunde account typen** te vinden.
+>
 >
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Stap 3: Uw app is geconfigureerd en klaar om te worden uitgevoerd

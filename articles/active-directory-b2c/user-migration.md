@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/14/2020
+ms.date: 03/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 34bc50f5f95725b59c0d2b30b529e12abb6aa7fa
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: d2d4a61f653c5bedb31223d2eb3d37b92a076821
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661150"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010164"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Gebruikers migreren naar Azure AD B2C
 
@@ -50,7 +50,7 @@ De naadloze migratie stroom heeft daarom twee fasen: *pre-migratie* en *Referent
 ### <a name="phase-1-pre-migration"></a>Fase 1: vooraf migreren
 
 1. Uw migratie toepassing leest de gebruikers accounts van de oude ID-provider.
-1. De migratie toepassing maakt corresponderende gebruikers accounts in uw Azure AD B2C Directory, maar *stelt geen wacht woorden* in.
+1. De migratie toepassing maakt corresponderende gebruikers accounts in uw Azure AD B2C Directory, maar *stelt wille keurige wacht woorden* in die u genereert.
 
 ### <a name="phase-2-set-credentials"></a>Fase 2: Referenties instellen
 

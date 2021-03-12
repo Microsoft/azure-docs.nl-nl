@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95274f42da7f6cac9b193504df834232d7c0eb90
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 68ac8eab22054099a6ba6735c020f0ba70d1037f
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102609979"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634249"
 ---
 # <a name="add-a-custom-approval-workflow-to-self-service-sign-up"></a>Een aangepaste goedkeurings werk stroom toevoegen aan self-service registratie
 
@@ -264,12 +264,12 @@ De `userMessage` in het antwoord wordt weer gegeven voor de gebruiker, bijvoorbe
 
 Na het verkrijgen van hand matige goed keuring maakt het aangepaste goedkeurings systeem een [gebruikers](/graph/azuread-users-concept-overview) account met behulp van [Microsoft Graph](/graph/use-the-api). De manier waarop uw goedkeurings systeem de gebruikers account inricht, is afhankelijk van de ID-provider die door de gebruiker is gebruikt.
 
-### <a name="for-a-federated-google-or-facebook-user-and-email-one-time-passcode"></a>Voor een federatieve Google-of Facebook-gebruiker en E-mail eenmalige wachtwoord code
+### <a name="for-a-federated-google-or-facebook-user-and-email-one-time-passcode"></a>Voor een federatieve Google-of Facebook-gebruiker en e-mail eenmalige wachtwoord code
 
 > [!IMPORTANT]
 > Het goedkeurings systeem moet expliciet controleren `identities` of `identities[0]` en `identities[0].issuer` aanwezig zijn en gelijk zijn aan `identities[0].issuer` Facebook, Google of mail om deze methode te gebruiken.
 
-Als uw gebruiker zich heeft aangemeld met een Google-of Facebook-account of een wacht woord voor eenmalige E-mail, kunt u de API voor het [maken van gebruikers](/graph/api/user-post-users?tabs=http)gebruiken.
+Als uw gebruiker zich heeft aangemeld met een Google-of Facebook-account of een wacht woord voor eenmalige e-mail, kunt u de API voor het [maken van gebruikers](/graph/api/user-post-users?tabs=http)gebruiken.
 
 1. Met het goedkeurings systeem wordt de HTTP-aanvraag van de gebruikers stroom ontvangen.
 

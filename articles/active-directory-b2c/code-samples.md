@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: sample
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: a75896dde7a23ea346e0af73ed145094e78812ca
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b09587d90024a8c376be8b0d93f7ef7b6cc51a1e
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101654490"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008481"
 ---
 # <a name="azure-active-directory-b2c-code-samples"></a>Azure Active Directory B2C: codevoorbeelden
 
@@ -47,9 +47,10 @@ In de volgende tabellen ziet u koppelingen naar voorbeelden voor toepassingen, w
 
 | Voorbeeld | Beschrijving |
 |--------| ----------- |
+| [MS-Identity-java script-reageren: zelf studie](https://github.com/Azure-Samples/ms-identity-javascript-react-tutorial/tree/main/3-Authorization-II/2-call-api-b2c) | Een toepassing met één pagina (SPA) die een web-API aanroept. De verificatie wordt uitgevoerd met Azure AD B2C met behulp van MSAL reageren. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt. |
 | [ms-identity-b2c-javascript-spa](https://github.com/Azure-Samples/ms-identity-b2c-javascript-spa) | Een toepassing met één pagina (SPA) die een web-API aanroept. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt. |
-| [Java script-nodejs-beheer](https://github.com/Azure-Samples/ms-identity-b2c-javascript-nodejs-management/tree/main/Chapter1) | Een toepassing met één pagina (SPA) die Microsoft Graph aanroept voor het beheren van gebruikers in een B2C-map. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt.|
 | [javascript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) | Een toepassing met één pagina (SPA) die een web-API aanroept. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voor beeld wordt de impliciete stroom gebruikt.|
+| [Java script-nodejs-beheer](https://github.com/Azure-Samples/ms-identity-b2c-javascript-nodejs-management/tree/main/Chapter1) | Een toepassing met één pagina (SPA) die Microsoft Graph aanroept voor het beheren van gebruikers in een B2C-map. Verificatie wordt uitgevoerd met Azure AD B2C door gebruik te maken van MSAL.js. In dit voorbeeld wordt de autorisatiecodestroom met PKCE gebruikt.|
 
 ## <a name="consoledaemon-apps"></a>Console/daemon-apps
 

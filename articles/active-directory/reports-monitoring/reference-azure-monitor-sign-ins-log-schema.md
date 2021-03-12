@@ -13,16 +13,16 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/18/2019
+ms.date: 03/12/2021
 ms.author: markvi
-ms.reviewer: dhanyahk
+ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d912707a1f41a0c3063d6f3fb67aa6914bd2d390
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: bad8ae86827144269e816a6c2e01d6af3f4d88ac
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100592307"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225415"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Het schema voor logboek registraties van Azure AD interpreteren in Azure Monitor
 
@@ -143,29 +143,31 @@ In dit artikel wordt het Azure Active Directory (Azure AD)-aanmeldings logboek s
 
 ## <a name="field-descriptions"></a>Veldbeschrijvingen
 
-| Veldnaam | Beschrijving |
-|------------|-------------|
-| Tijd | De datum en tijd, in UTC. |
-| ResourceId | Deze waarde is niet-toegewezen en u kunt dit veld veilig negeren.  |
-| OperationName | Voor aanmeldingen is deze waarde altijd *aanmeldings activiteit*. |
-| OperationVersion | De REST API versie die door de client is aangevraagd. |
-| Categorie | Voor aanmeldingen is deze waarde altijd *Aanmelden*. | 
-| TenantId | De Tenant-GUID die is gekoppeld aan de logboeken. |
-| ResultType | Het resultaat van de aanmeldings bewerking kan *slagen* of *mislukken*. | 
-| ResultSignature | Bevat de fout code, indien aanwezig, voor de aanmeldings bewerking. |
-| ResultDescription | Bevat de fout beschrijving voor de aanmeldings bewerking. |
+| Veldnaam | Sleutel | Beschrijving |
+| --- | --- | --- | 
+| Tijd |  - | De datum en tijd, in UTC. |
+| ResourceId | - | Deze waarde is niet-toegewezen en u kunt dit veld veilig negeren.  |
+| OperationName | - | Voor aanmeldingen is deze waarde altijd *aanmeldings activiteit*. |
+| OperationVersion | - | De REST API versie die door de client is aangevraagd. |
+| Categorie | - | Voor aanmeldingen is deze waarde altijd *Aanmelden*. | 
+| TenantId | - | De Tenant-GUID die is gekoppeld aan de logboeken. |
+| ResultType | - | Het resultaat van de aanmeldings bewerking kan *slagen* of *mislukken*. | 
+| ResultSignature | - | Bevat de fout code, indien aanwezig, voor de aanmeldings bewerking. |
+| ResultDescription | N.v.t. of leeg | Bevat de fout beschrijving voor de aanmeldings bewerking. |
 | riskDetail | riskDetail | Biedt de ' reason ' achter een specifieke status van een Risk ante gebruiker, aanmelding of een risico detectie. De mogelijke waarden zijn: `none` , `adminGeneratedTemporaryPassword` , `userPerformedSecuredPasswordChange` , `userPerformedSecuredPasswordReset` , `adminConfirmedSigninSafe` , `aiConfirmedSigninSafe` , `userPassedMFADrivenByRiskBasedPolicy` , `adminDismissedAllRiskForUser` , `adminConfirmedSigninCompromised` , `unknownFutureValue` . De waarde `none` betekent dat er geen actie is uitgevoerd voor de gebruiker of zich tot nu toe heeft aangemeld. <br>**Opmerking:** Voor de details van deze eigenschap is een Azure AD Premium P2-licentie vereist. Andere licenties retour neren de waarde `hidden` . |
 | riskEventTypes | riskEventTypes | Typen risico detectie die zijn gekoppeld aan de aanmelding. De mogelijke waarden zijn: `unlikelyTravel` , `anonymizedIPAddress` , `maliciousIPAddress` , `unfamiliarFeatures` , `malwareInfectedIPAddress` , `suspiciousIPAddress` , `leakedCredentials` , `investigationsThreatIntelligence` ,  `generic` en `unknownFutureValue` . |
+| authProcessingDetails | Azure AD-App-verificatie bibliotheek | Bevat informatie over familie, bibliotheek en platform in indeling: "familie: ADAL-bibliotheek: ADAL.JS 1.0.0-platform: JS" |
+| authProcessingDetails | IsCAEToken | Waarden zijn waar of onwaar |
 | riskLevelAggregated | riskLevel | Samengevoegd risico niveau. De mogelijke waarden zijn: `none` , `low` , `medium` , `high` , `hidden` en `unknownFutureValue` . De waarde `hidden` betekent dat de gebruiker of aanmelding niet is ingeschakeld voor Azure AD Identity Protection. **Opmerking:** De Details voor deze eigenschap zijn alleen beschikbaar voor klanten met een Azure AD Premium P2. Alle andere klanten worden geretourneerd `hidden` . |
 | riskLevelDuringSignIn | riskLevel | Risico niveau tijdens het aanmelden. De mogelijke waarden zijn: `none` , `low` , `medium` , `high` , `hidden` en `unknownFutureValue` . De waarde `hidden` betekent dat de gebruiker of aanmelding niet is ingeschakeld voor Azure AD Identity Protection. **Opmerking:** De Details voor deze eigenschap zijn alleen beschikbaar voor klanten met een Azure AD Premium P2. Alle andere klanten worden geretourneerd `hidden` . |
 | riskState | riskState | Hiermee wordt de status van de Risk ante gebruiker, het aanmelden of een risico detectie gerapporteerd. De mogelijke waarden zijn: `none` , `confirmedSafe` , `remediated` , `dismissed` , `atRisk` , `confirmedCompromised` , `unknownFutureValue` . |
-| DurationMs |  Deze waarde is niet-toegewezen en u kunt dit veld veilig negeren. |
-| CallerIpAddress | Het IP-adres van de client die de aanvraag heeft ingediend. | 
-| CorrelationId | De optionele GUID die door de client wordt door gegeven. Deze waarde kan bijdragen aan de activiteiten aan de client zijde met bewerkingen aan de server zijde en is handig wanneer u Logboeken traceert die services omvatten. |
-| Identiteit | De identiteit van het token dat is gepresenteerd tijdens het maken van de aanvraag. Dit kan een gebruikers account, systeem account of Service-Principal zijn. |
-| Niveau | Geeft het type bericht. Voor audit is het altijd *informatief*. |
-| Locatie | Hiermee wordt de locatie van de aanmeldings activiteit verstrekt. |
-| Eigenschappen | Een lijst met alle eigenschappen die aan aanmeldingen zijn gekoppeld. Zie [Microsoft Graph API-verwijzing](/graph/api/resources/signin?view=graph-rest-beta)voor meer informatie. In dit schema worden dezelfde kenmerk namen gebruikt als voor de aanmeldings resource, voor de Lees baarheid.
+| DurationMs | - | Deze waarde is niet-toegewezen en u kunt dit veld veilig negeren. |
+| CallerIpAddress | - | Het IP-adres van de client die de aanvraag heeft ingediend. | 
+| CorrelationId | - | De optionele GUID die door de client wordt door gegeven. Deze waarde kan bijdragen aan de activiteiten aan de client zijde met bewerkingen aan de server zijde en is handig wanneer u Logboeken traceert die services omvatten. |
+| Identiteit | - | De identiteit van het token dat is gepresenteerd tijdens het maken van de aanvraag. Dit kan een gebruikers account, systeem account of Service-Principal zijn. |
+| Niveau | - | Geeft het type bericht. Voor audit is het altijd *informatief*. |
+| Locatie | - | Hiermee wordt de locatie van de aanmeldings activiteit verstrekt. |
+| Eigenschappen | - | Een lijst met alle eigenschappen die aan aanmeldingen zijn gekoppeld.|
 
 ## <a name="next-steps"></a>Volgende stappen
 

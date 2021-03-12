@@ -1,9 +1,9 @@
 ---
 title: Overzicht van Media Services bewerkingen REST API | Microsoft Docs
-description: De API ' Media Services Operations REST ' wordt gebruikt voor het maken van taken, assets, Live kanalen en andere resources in een Media Services-account. In dit artikel vindt u een overzicht van Azure Media Services v2 REST API.
+description: De Media Services bewerkingen REST API wordt gebruikt voor het maken van taken, assets, Live-kanalen en andere resources in een Media Services-account. In dit artikel vindt u een overzicht van Azure Media Services v2 REST API.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: a5f1c5e7-ec52-4e26-9a44-d9ea699f68d9
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
+ms.date: 3/10/2021
+ms.author: inhenkel
 ms.reviewer: johndeu
-ms.openlocfilehash: f48a01bb81829ff2bc10b4db1ed543382f992b58
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 9f147e333e4d1b95a14dd3121d7ab304b6166248
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696224"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010045"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Overzicht van Media Services bewerkingen REST API
 
@@ -78,7 +78,7 @@ Hier volgt een aantal optionele kopteksten:
 
 | Header | Type | Waarde |
 | --- | --- | --- |
-| Date |RFC 1123-datum |Tijds tempel van de aanvraag |
+| Datum |RFC 1123-datum |Tijds tempel van de aanvraag |
 | Accepteren |Inhoudstype |Het aangevraagde inhouds type voor het antwoord, zoals de volgende:<p> -application/json; odata = verbose<p> -Application/Atom + XML<p> Antwoorden kunnen een ander inhouds type hebben, zoals het ophalen van een blob, waarbij een geslaagd antwoord de BLOB-stream als de payload bevat. |
 | Accept-Encoding |Gzip, verkleinen |GZIP-en deflate-code ring, indien van toepassing. Opmerking: voor grote bronnen kan Media Services deze header negeren en niet-gecomprimeerde gegevens retour neren. |
 | Accept-Language |"en", "ES", enzovoort. |Hiermee geeft u de voorkeurs taal op voor het antwoord. |
@@ -94,7 +94,7 @@ Hier volgt een reeks kopteksten die kunnen worden geretourneerd, afhankelijk van
 | --- | --- | --- |
 | aanvraag-id |Tekenreeks |Een unieke id voor de huidige bewerking, gegenereerde service. |
 | client-aanvraag-id |Tekenreeks |Een id die is opgegeven door de aanroeper in de oorspronkelijke aanvraag, indien aanwezig. |
-| Date |RFC 1123-datum |De datum/tijd waarop de aanvraag is verwerkt. |
+| Datum |RFC 1123-datum |De datum/tijd waarop de aanvraag is verwerkt. |
 | Content-Type |Varieert |Het inhouds type van de antwoord tekst. |
 | Content-Encoding |Varieert |Gzip of verkleinen, indien van toepassing. |
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/22/2020
 ms.author: marsma
 ms.custom: aaddev, scenarios:getting-started, languages:js, devx-track-js
-ms.openlocfilehash: 5ca8c41dc1e6a05975227555abd91f5d6725285a
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: d6be9753cbcb2a6be9836b27f82f1b60068570b8
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101092182"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224976"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-node-web-app-using-the-auth-code-flow"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Node.js-web-app met behulp van de verificatiecodestroom
 
@@ -48,6 +48,15 @@ In deze quickstart wordt de Microsoft Authentication Library voor Node.js (MSAL 
 > 1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
 > 1. Selecteer onder **Beheren** achtereenvolgens **Certificaten en geheimen** > **Nieuw clientgeheim**.  Laat de beschrijving leeg, en laat de standaardwaarde voor de vervaldatum staan. Selecteer vervolgens **Toevoegen**.
 > 1. Noteer de **Waarde** van het **Clientgeheim** voor later gebruik.
+
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-1-configure-the-application-in-azure-portal"></a>Stap 1: de toepassing configureren in Azure Portal
+> Het code voorbeeld voor deze Quick Start werkt alleen als u een client geheim maakt en een antwoord-URL toevoegt als **http://localhost:3000/redirect** .
+> > [!div renderon="portal" id="makechanges" class="nextstepaction"]
+> > [Deze wijziging voor mij maken]()
+>
+> > [!div id="appconfigured" class="alert alert-info"]
+> > ![Al geconfigureerd](media/quickstart-v2-windows-desktop/green-check.png) Uw toepassing is al geconfigureerd met deze kenmerken.
 
 #### <a name="step-2-download-the-project"></a>Stap 2: Het project downloaden
 
@@ -91,16 +100,17 @@ In deze quickstart wordt de Microsoft Authentication Library voor Node.js (MSAL 
 > Wijzig de waarden in de sectie `config`, zoals hier wordt beschreven:
 >
 > - `Enter_the_Application_Id_Here` is de **Toepassings-id (client-id)** voor de toepassing die u hebt geregistreerd.
+>
+>    Als u de waarde van **Toepassings-id (client)** wilt vinden, gaat u naar de pagina **Overzicht** van de app-registratie in de Azure Portal.
 > - `Enter_the_Client_Secret_Here` is de **Waarde** van het **Clientgeheim** voor de toepassing die u hebt geregistreerd.
+>
+>    Als u een nieuw **client geheim** wilt ophalen of genereren, selecteert u onder **beheren** de optie **certificaten & geheimen**.
 >
 > De standaard `authority`-waarde vertegenwoordigt de belangrijkste (globale) Azure-cloud:
 >
 > ```javascript
 > authority: "https://login.microsoftonline.com/common",
 > ```
->
-> > [!TIP]
-> > Als u de waarde van **Toepassings-id (client)** wilt vinden, gaat u naar de pagina **Overzicht** van de app-registratie in de Azure Portal. Ga naar **Certificaten & geheimen** om een nieuw **Clientgeheim** te verkrijgen of te genereren.
 >
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-3-your-app-is-configured-and-ready-to-run"></a>Stap 3: Uw app is geconfigureerd en klaar om te worden uitgevoerd

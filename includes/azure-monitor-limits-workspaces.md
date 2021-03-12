@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: c55314764f973a5a015a2bfc02815a58ce659901
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ee7ccb126eb04e168ccc213f0429d41a76a8bc2f
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101734027"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103021138"
 ---
 **Volume gegevensverzameling en gegevensretentie** 
 
@@ -57,6 +57,7 @@ ms.locfileid: "101734027"
 | Maximale aanvraagsnelheid | 200 aanvragen per 30 seconden per IP-adres van Azure AD-gebruikers of client | Zie [Snelheidslimieten](https://dev.loganalytics.io/documentation/Using-the-API/Limits) voor meer informatie. |
 
 **Connector voor Azure Monitor-logboeken**
+
 | Categorie | Limiet | Opmerkingen |
 |:---|:---|:---|
 | Maximum aantal records | 500.000 | |

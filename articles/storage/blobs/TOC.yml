@@ -295,6 +295,8 @@
               href: storage-blob-copy.md
             - name: Blobindextags gebruiken
               href: storage-blob-index-how-to.md
+            - name: Aantal blobs en totale grootte berekenen
+              href: calculate-blob-count-size.md
         - name: Toegang tot blobgegevens autoriseren
           items:
             - name: Autorisatie-opties voor gebruikers

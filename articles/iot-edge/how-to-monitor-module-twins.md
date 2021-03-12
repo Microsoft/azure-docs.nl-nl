@@ -9,14 +9,16 @@ ms.topic: conceptual
 ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d968fb066e68fe1bb6986c63ce750c5de5c98cf9
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 0b7013979199eefa873a651d99e87dc8b2c47856
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633175"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201606"
 ---
 # <a name="monitor-module-twins"></a>Dubbele modules bewaken
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Met de module apparaatdubbels in IoT Hub Azure kunt u de connectiviteit en status van uw IoT Edge-implementaties controleren. Module apparaatdubbels bevatten nuttige informatie over de prestaties van uw actieve modules in uw IoT-hub. De [IOT Edge-agent](iot-edge-runtime.md#iot-edge-agent) en de runtime modules van [IOT Edge hub](iot-edge-runtime.md#iot-edge-hub) onderhouden hun module apparaatdubbels `$edgeAgent` en `$edgeHub` respectievelijk:
 

@@ -3,7 +3,7 @@ title: Gebruik Azure-webhooks om meldingen over Media Services taken te bewaken 
 description: Meer informatie over het gebruik van Azure-webhooks om Media Services taak meldingen te bewaken. Het code voorbeeld is geschreven in C# en maakt gebruik van de Media Services SDK voor .NET.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: a61fe157-81b1-45c1-89f2-224b7ef55869
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e99d2c2676d05772106296d8b960dd55fd30501c
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: 5ae1bdfeeffdb904ba80ed42919e4f51411871c3
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696469"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103016148"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Gebruik Azure-webhooks om Media Services taak meldingen te bewaken met .NET
 
@@ -78,7 +78,7 @@ Als uw functie-app is geïmplementeerd, kunt u deze vinden in **App Services** A
 3. Selecteer **generieke webhook-C#**.
 4. Geef uw webhook een naam en druk op **maken**.
 
-### <a name="files"></a>Files
+### <a name="files"></a>Bestanden
 
 Uw Azure-functie is gekoppeld aan code bestanden en andere bestanden die in deze sectie worden beschreven. Standaard is een functie gekoppeld aan **function.js** en **Run. CSX** (C#)-bestanden. U moet eenproject.jstoevoegen **aan** het bestand. In de rest van deze sectie worden de definities van deze bestanden weer gegeven.
 

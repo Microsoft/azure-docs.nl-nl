@@ -4,12 +4,12 @@ description: Bevat een samenvatting van ondersteuningsinstellingen en -beperking
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: d8ffaf2c5aa32e8e0f851510adb58a78167abccb
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.openlocfilehash: 655a90ebc3164f076c333760beffcef5acefcd91
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103149032"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225544"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Ondersteunings matrix voor Azure Backup
 
@@ -40,6 +40,7 @@ In de volgende tabel worden de functies van Recovery Services kluizen beschreven
 **Gegevens verplaatsen tussen kluizen** | Het verplaatsen van gegevens waarvan een back-up wordt gemaakt tussen kluizen, wordt niet ondersteund.
 **Type kluis opslag wijzigen** | U kunt het type opslag replicatie (geografisch redundante opslag of lokaal redundante opslag) voor een kluis wijzigen voordat er back-ups worden opgeslagen. Nadat een back-ups in de kluis is begonnen, kan het replicatietype niet meer worden gewijzigd.
 **Zone-redundante opslag (ZRS)** | Beschikbaar in de regio's UK-zuid (UKS) en Zuid Azië-oost (SEA).
+**Privé-eindpunten** | Zie [deze sectie](https://docs.microsoft.com/azure/backup/private-endpoints#before-you-start) voor vereisten voor het maken van persoonlijke eind punten voor een Recovery service-kluis.  
 
 ## <a name="on-premises-backup-support"></a>On-premises ondersteuning voor back-ups
 

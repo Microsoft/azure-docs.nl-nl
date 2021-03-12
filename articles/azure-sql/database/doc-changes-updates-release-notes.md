@@ -9,14 +9,14 @@ ms.subservice: service
 ms.custom: sqldbrb=2
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 06/17/2020
+ms.date: 03/10/2021
 ms.author: sstein
-ms.openlocfilehash: 86687e8259e7abcb9ff0e97f8cb75d96c0abfca8
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 0ddd2c96be3513d253537cefd5b9eb83da2b3c12
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102042501"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634835"
 ---
 # <a name="whats-new-in-azure-sql-database--sql-managed-instance"></a>Wat is er nieuw in Azure SQL Database & SQL Managed instance?
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -50,13 +50,10 @@ Deze tabel bevat een snelle vergelijking voor de wijziging in de terminologie:
 
 | Functie | Details |
 | ---| --- |
-| Versneld database herstel met afzonderlijke data bases en elastische Pools | Zie [versneld database herstel](../accelerated-database-recovery.md)voor meer informatie.|
-| Gegevensdetectie en -classificatie  |Zie [Azure SQL database en Azure Synapse Analytics data discovery & classificatie](data-discovery-and-classification-overview.md)voor meer informatie.|
 | Taken voor Elastic data base (preview-versie) | Zie [elastische taken maken, configureren en beheren](elastic-jobs-overview.md)voor meer informatie. |
 | Elastische query’s | Zie [overzicht van elastische query's](elastic-query-overview.md)voor meer informatie. |
 | Elastische transacties | [Gedistribueerde trans acties over Cloud databases](elastic-transactions-overview.md). |
 | Query-Editor in het Azure Portal |Zie [de SQL-query editor van het Azure Portal gebruiken om verbinding te maken en gegevens op te vragen](connect-query-portal.md)voor meer informatie.|
-| R Services/machine learning met afzonderlijke data bases en elastische Pools |Zie [Machine Learning Services in Azure SQL database](/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database)voor meer informatie.|
 |SQL Analytics|Zie [Azure SQL-analyse](../../azure-monitor/insights/azure-sql.md)voor meer informatie.|
 | &nbsp; |
 
@@ -66,7 +63,7 @@ Deze tabel bevat een snelle vergelijking voor de wijziging in de terminologie:
 | ---| --- |
 | <a href="/azure/azure-sql/database/elastic-transactions-overview">Gedistribueerde transacties</a> | Gedistribueerde trans acties over beheerde exemplaren. |
 | <a href="/azure/sql-database/sql-database-instance-pools">Exemplaargroepen</a> | Een handige en rendabele manier om kleinere SQL-instanties naar de cloud te migreren. |
-| <a href="/en-gb/sql/t-sql/statements/create-login-transact-sql">Azure AD server-principals op exemplaar niveau (aanmeldingen)</a> | Aanmeldingen op exemplaar niveau maken met behulp van de instructie een <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current">aanmelding maken vanuit een externe provider</a> . |
+| <a href="/en-gb/sql/t-sql/statements/create-login-transact-sql">Azure AD server-principals op exemplaar niveau (aanmeldingen)</a> | Aanmeldingen op exemplaar niveau maken met behulp van de instructie een <a href="/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current&preserve-view=true">aanmelding maken vanuit een externe provider</a> . |
 | [Transactionele replicatie](../managed-instance/replication-transactional-overview.md) | Repliceer de wijzigingen van uw tabellen in andere data bases in een SQL Managed instance, SQL Database of SQL Server. Of werk uw tabellen bij wanneer sommige rijen worden gewijzigd in andere exemplaren van SQL Managed instance of SQL Server. Zie [replicatie configureren in Azure SQL Managed instance](../managed-instance/replication-between-two-instances-configure-tutorial.md)voor meer informatie. |
 | Detectie van bedreigingen |Zie [detectie van dreigingen configureren in Azure SQL Managed instance](../managed-instance/threat-detection-configure.md)voor meer informatie.|
 | Langetermijnretentie van back-ups | Zie voor meer informatie [lange termijn back-up van Bewaar periode configureren in Azure SQL Managed instance](../managed-instance/long-term-backup-retention-configure.md), dat momenteel een beperkte open bare preview is. | 
@@ -101,7 +98,7 @@ De volgende functies zijn ingeschakeld in het implementatie model voor SQL-behee
 |[Sp_send_dbmail van de procedure kan tijdelijk mislukken wanneer de @query para meter wordt gebruikt](#procedure-sp_send_dbmail-may-transiently-fail-when--parameter-is-used)|Jan 2021|Heeft tijdelijke oplossing||
 |[Gedistribueerde trans acties kunnen worden uitgevoerd nadat het beheerde exemplaar is verwijderd uit de vertrouwens groep van de server](#distributed-transactions-can-be-executed-after-removing-managed-instance-from-server-trust-group)|Okt 2020|Heeft tijdelijke oplossing||
 |[Gedistribueerde trans acties kunnen niet worden uitgevoerd nadat de bewerking voor het schalen van het beheerde exemplaar](#distributed-transactions-cannot-be-executed-after-managed-instance-scaling-operation)|Okt 2020|Heeft tijdelijke oplossing||
-|[Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql) / De [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql?view=sql-server-ver15) in Azure SQL en de `BACKUP` / `RESTORE` instructie in het beheerde exemplaar kunnen de Azure AD-identiteit voor het beheren van de verificatie bij Azure Storage niet gebruiken|Sep 2020|Heeft tijdelijke oplossing||
+|[Bulk Insert](/sql/t-sql/statements/bulk-insert-transact-sql) / De [OpenRowSet](/sql/t-sql/functions/openrowset-transact-sql) in Azure SQL en de `BACKUP` / `RESTORE` instructie in het beheerde exemplaar kunnen de Azure AD-identiteit voor het beheren van de verificatie bij Azure Storage niet gebruiken|Sep 2020|Heeft tijdelijke oplossing||
 |[Service-Principal heeft geen toegang tot Azure AD en Azure](#service-principal-cannot-access-azure-ad-and-akv)|Aug 2020|Heeft tijdelijke oplossing||
 |[Hand matige back-up herstellen zonder CONTROLESOM kan mislukken](#restoring-manual-backup-without-checksum-might-fail)|Mei 2020|Opgelost|Juni 2020|
 |[Agent reageert niet meer wanneer u bestaande taken wijzigt, uitschakelt of inschakelt](#agent-becomes-unresponsive-upon-modifying-disabling-or-enabling-existing-jobs)|Mei 2020|Opgelost|Juni 2020|
@@ -174,7 +171,7 @@ GO
 BULK INSERT Sales.Invoices FROM 'inv-2017-12-08.csv' WITH (DATA_SOURCE = 'MyAzureBlobStorage');
 ```
 
-**Tijdelijke oplossing**: gebruik [Shared Access Signature om te verifiëren bij de opslag](/sql/t-sql/statements/bulk-insert-transact-sql?view=sql-server-ver15#f-importing-data-from-a-file-in-azure-blob-storage).
+**Tijdelijke oplossing**: gebruik [Shared Access Signature om te verifiëren bij de opslag](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage).
 
 ### <a name="service-principal-cannot-access-azure-ad-and-akv"></a>Service-Principal heeft geen toegang tot Azure AD en Azure
 

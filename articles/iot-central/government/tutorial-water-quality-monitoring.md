@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: a928b1223b91faae6d4aca68b81cc16c827933b3
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: 3e55970b0603da9be9bf28a50d4c474e34a1cad3
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820061"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017236"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Zelfstudie: Een toepassing voor het bewaken van de waterkwaliteit maken in Azure IoT Central
 
@@ -56,7 +56,7 @@ In dit gedeelte gebruikt u de sjabloon **Bewaking van waterkwaliteit** van Azure
     * **URL**: U kunt elke gewenste URL invoeren of de URL-waarde later wijzigen.
     * Als u een Azure-abonnement hebt, voert u waarden in voor **Map**, **Azure-abonnement** en **Locatie**. Als u geen abonnement hebt, kunt u een **gratis proefversie van zeven dagen** inschakelen en de vereiste contactgegevens invullen.
 
-    Zie de quickstart [Create an Azure IoT Central application](../core/quick-deploy-iot-central.md?toc=/azure/iot-central-pnp/toc.json&bc=/azure/iot-central-pnp/breadcrumb/toc.json) (Een Azure IoT Central-toepassing maken) voor meer informatie over mappen en abonnementen.
+    Zie de quickstart [Create an Azure IoT Central application](../core/quick-deploy-iot-central.md) (Een Azure IoT Central-toepassing maken) voor meer informatie over mappen en abonnementen.
 
 1. Selecteer linksonder op de pagina de knop **Maken**.
 

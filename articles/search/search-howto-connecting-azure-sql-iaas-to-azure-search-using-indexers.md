@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/12/2020
-ms.openlocfilehash: a13f78b6aa4fc3cb6f6777c76bc762ec565624fc
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: dce4c41d0d6f15ac9dc33e687c9a5ac7b7b96e06
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951312"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200787"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Een verbinding van een Azure Cognitive Search Indexeer functie configureren om te SQL Server op een Azure VM
 
@@ -75,18 +75,9 @@ IP-adres Sering kan enkele uitdagingen opleveren die eenvoudig kunnen worden ver
 #### <a name="restrict-access-to-the-azure-cognitive-search"></a>Toegang tot de Azure-Cognitive Search beperken
 We raden u ten zeerste aan de toegang tot het IP-adres van de zoek service en het IP-adres bereik van de `AzureCognitiveSearch` [service tag](../virtual-network/service-tags-overview.md#available-service-tags) in de ACL te beperken, in plaats van uw SQL Azure-vm's open te maken voor alle verbindings aanvragen.
 
-U kunt het IP-adres vinden door de FQDN-namen (bijvoorbeeld `<your-search-service-name>.search.windows.net` ) van uw zoek service te pingen.
+U kunt het IP-adres vinden door de FQDN-namen (bijvoorbeeld `<your-search-service-name>.search.windows.net` ) van uw zoek service te pingen. Hoewel het mogelijk is dat het IP-adres van de zoek service kan worden gewijzigd, is het onwaarschijnlijk dat het wordt gewijzigd. Het IP-adres is doorgaans statisch voor de levens duur van de service.
 
 U kunt het IP-adres bereik van de `AzureCognitiveSearch` [servicetag](../virtual-network/service-tags-overview.md#available-service-tags) van de service opvragen door [Download bare json-bestanden](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files) te gebruiken of via de [service tag discovery-API](../virtual-network/service-tags-overview.md#use-the-service-tag-discovery-api-public-preview). Het IP-adres bereik wordt wekelijks bijgewerkt.
-
-#### <a name="managing-ip-address-fluctuations"></a>Schommelingen van IP-adressen beheren
-Als uw zoek service slechts één Zoek eenheid (dat wil zeggen, één replica en één partitie) heeft, wordt het IP-adres gewijzigd tijdens het starten van de routine service, waarbij een bestaande ACL met het IP-adres van uw zoek service ongeldig wordt.
-
-Eén manier om de volgende verbindings fout te vermijden, is door meer dan één replica en één partitie in azure Cognitive Search te gebruiken. Hierdoor worden de kosten verhoogd, maar wordt ook het probleem met het IP-adres opgelost. In azure Cognitive Search worden IP-adressen niet gewijzigd als u meer dan één Zoek eenheid hebt.
-
-Een tweede aanpak is om de verbinding te laten mislukken en vervolgens de Acl's opnieuw te configureren in de NSG. Gemiddeld kunt u instellen dat IP-adressen om de paar weken worden gewijzigd. Voor klanten die het indexeren regel matig uitvoeren, kan deze aanpak levensvatbaar zijn.
-
-Een derde levensvat bare methode (maar niet bijzonder veilig) is het IP-adres bereik opgeven van de Azure-regio waar uw zoek service is ingericht. De lijst met IP-bereiken waaruit open bare IP-adressen worden toegewezen aan Azure-resources, wordt gepubliceerd op [Azure Data Center IP-adresbereiken](https://www.microsoft.com/download/details.aspx?id=41653). 
 
 #### <a name="include-the-azure-cognitive-search-portal-ip-addresses"></a>De IP-adressen van de Azure Cognitive Search-Portal toevoegen
 Als u de Azure Portal gebruikt om een Indexeer functie te maken, moet Azure Cognitive Search-Portal-logica ook toegang hebben tot uw SQL Azure VM tijdens de aanmaak tijd. IP-adressen van Azure Cognitive Search-Portal kunnen worden gevonden door te pingen `stamp2.search.ext.azure.com` .

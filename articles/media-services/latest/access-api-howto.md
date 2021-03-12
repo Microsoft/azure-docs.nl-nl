@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 03/10/2021
 ms.author: inhenkel
-ms.openlocfilehash: 00808c25ac84da852cce6169fb210767ee2b56cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f55d1dcc3364f119faab0c728f6e3b7f5ecbb06
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89265878"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614935"
 ---
 # <a name="get-credentials-to-access-media-services-api"></a>Referenties voor toegang tot Media Services-API ophalen
 
@@ -37,7 +37,7 @@ In dit artikel worden de stappen beschreven voor het verkrijgen van referenties 
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure-account. Als u geen account hebt, kunt u beginnen met een [gratis proef versie van Azure](https://azure.microsoft.com/pricing/free-trial/). 
+- Een Azure-account. Als u geen account hebt, kunt u beginnen met een [gratis proef versie van Azure](https://azure.microsoft.com/pricing/free-trial/).
 - Een Media Services-account. Zie [een Azure Media Services-account maken met behulp van de Azure Portal](create-account-howto.md)voor meer informatie.
 
 ## <a name="portal"></a>[Portal](#tab/portal/)
@@ -47,8 +47,8 @@ In dit artikel worden de stappen beschreven voor het verkrijgen van referenties 
 Op de pagina **API-toegang** kunt u de verificatie methode selecteren die u wilt gebruiken om verbinding te maken met de API. De pagina bevat ook de waarden die u nodig hebt om verbinding te maken met de API.
 
 1. Selecteer uw Media Services account in de [Azure Portal](https://portal.azure.com/).
-2. Selecteer de Blade **API-toegang (nieuw)** op de linkernavigatiebalk.
-3. Selecteer onder **verbinding maken met Media Services-API**de versie van de Media Services-API waarmee u verbinding wilt maken (v3 is de nieuwste versie van de service).
+2. Selecteer de Blade **API-toegang** op de linkernavigatiebalk.
+3. Selecteer onder **verbinding maken met Media Services-API** de versie van de Media Services-API waarmee u verbinding wilt maken (v3 is de nieuwste versie van de service).
 
 ### <a name="service-principal-authentication--recommended"></a>Service-Principal-verificatie (aanbevolen)
 

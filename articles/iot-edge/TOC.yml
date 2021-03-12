@@ -115,8 +115,6 @@
       href: support.md
     - name: Controlelijst voor productie-implementatie
       href: production-checklist.md
-    - name: IoT Edge-woordenlijst
-      href: iot-edge-glossary.md
 - name: Instructiegidsen
   items:
     - name: Een IoT Edge-apparaat maken
@@ -259,6 +257,8 @@
   items:
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-edge/toc.json&bc=/azure/iot-edge/breadcrumb/toc.json
+    - name: IoT-woorden lijst
+      href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-edge/toc.json&bc=/azure/iot-edge/breadcrumb/toc.json
     - name: Azure IoT-services
       items:
         - name: IoT Hub

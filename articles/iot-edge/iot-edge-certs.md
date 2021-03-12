@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mqtt
-ms.openlocfilehash: e5b1950935e6279995b44c2e07931519e82359d2
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 9b066dfd260a18f35149822b4107ea2c37db931c
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102040631"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200237"
 ---
 # <a name="understand-how-azure-iot-edge-uses-certificates"></a>Meer informatie over het gebruik van Azure IoT Edge certificaten
 
@@ -90,7 +90,7 @@ Omdat productie-en bewerkings processen worden gescheiden, moet u rekening houde
 
 ## <a name="devtest-implications"></a>Implicaties voor dev/test
 
-Om ontwikkel-en test scenario's te vereenvoudigen, biedt micro soft een aantal [gebruiks vriendelijke scripts](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates) voor het genereren van niet-productie certificaten die geschikt zijn voor IOT Edge in het transparante Gateway scenario. Zie [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md)voor voor beelden van de werking van de scripts.
+Om ontwikkel-en test scenario's te vereenvoudigen, biedt micro soft een aantal [gebruiks vriendelijke scripts](https://github.com/Azure/iotedge/tree/master/tools/CACertificates) voor het genereren van niet-productie certificaten die geschikt zijn voor IOT Edge in het transparante Gateway scenario. Zie [demo certificaten maken om IOT Edge apparaatfuncties te testen](how-to-create-test-certificates.md)voor voor beelden van de werking van de scripts.
 
 >[!Tip]
 > Als u uw apparaat IoT-Leaf-apparaten en-toepassingen wilt verbinden die gebruikmaken van onze IoT Device SDK via IoT Edge, moet u de optionele para meter GatewayHostName toevoegen aan het einde van de connection string van het apparaat. Wanneer het Edge hub-server certificaat wordt gegenereerd, is het gebaseerd op een kleine versie van de hostnaam uit het configuratie bestand, dus als de namen overeenkomen en de verificatie van het TLS-certificaat slaagt, moet u de para meter GatewayHostName in kleine letters invoeren.

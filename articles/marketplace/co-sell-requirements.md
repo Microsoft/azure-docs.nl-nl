@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 2/24/2021
-ms.openlocfilehash: 9fb86b3d4a46a70d71aa0c3fe9fd1b4a1ea6f298
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.date: 3/12/2021
+ms.openlocfilehash: fa8f2b5e952ddd188f99d130c2154d4602191c2b
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102120127"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225061"
 ---
 # <a name="co-sell-requirements"></a>Vereisten voor co-sell
 
@@ -24,7 +24,7 @@ In deze tabel worden alle mogelijke co-sell-statussen weer gegeven:
 | ------------ | ------------- |
 | Klaar voor samen verkopen | Er is niet voldaan aan de minimum [vereisten voor de status gereed voor samen verkoop](#requirements-for-co-sell-ready-status) . |
 | Klaar voor samen verkopen | Er is voldaan aan alle [vereisten voor de status van de co-sell-gereedheid](#requirements-for-co-sell-ready-status) . |
-| Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](#requirements-for-ip-co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
+| Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](#requirements-for-azure-ip-co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
 | Stimulans voor het stimuleren van de ISV Connect-apps  | Deze status is van toepassing op Dynamics 365 en Power Apps biedt en geeft aan dat aan alle [vereisten voor deze status](#requirements-for-biz-apps-isv-connect-premium-incentive-status) is voldaan. |
 |||
 
@@ -35,7 +35,7 @@ U moet voldoen aan de volgende vereisten voor een aanbieding om de status gereed
 **Alle partners**:
 
 - Een MPN-ID en een actief [Commercial Marketplace-account hebben in het partner centrum](./partner-center-portal/create-account.md).
-- Zorg ervoor dat u beschikt over een volledig [zakelijk profiel](/partner-center/create-a-marketing-profile.md) in Partner Center. Als gekwalificeerde micro soft-partner helpt uw bedrijfs profiel uw bedrijf te presen teren aan klanten die op zoek zijn naar uw unieke oplossingen en expertise om hun bedrijfs behoeften op te lossen, wat resulteert in [referrals](/partner-center/referrals.md).
+- Zorg ervoor dat u beschikt over een volledig [zakelijk profiel](/partner-center/create-a-marketing-profile) in Partner Center. Als gekwalificeerde micro soft-partner helpt uw bedrijfs profiel uw bedrijf te presen teren aan klanten die op zoek zijn naar uw unieke oplossingen en expertise om hun bedrijfs behoeften op te lossen, wat resulteert in [referrals](/partner-center/referrals).
 - Vul het tabblad **samen met micro soft** in en publiceer de aanbieding naar de commerciële Marketplace.
 - Geef een verkoop contactpersoon op voor elke in aanmerking komende Geografie en vereiste stuk lijst)
 
@@ -60,7 +60,7 @@ We bieden sjablonen die u helpen bij het maken van deze documenten. Voor meer in
 
 Als u in aanmerking wilt komen voor de status van de mede koop Ready, moet uw aanbieding of oplossing Live worden gepubliceerd naar ten minste één van de online winkels voor commerciële Marketplace: Azure Marketplace of Microsoft AppSource. Voor informatie over het publiceren van aanbiedingen naar de commerciële Marketplace, Zie [publicatie handleiding per aanbiedings type](publisher-guide-by-offer-type.md). Als u nog geen aanbieding in de handels Marketplace hebt gepubliceerd, moet u ervoor zorgen dat u een [commercieel Marketplace-account](./partner-center-portal/create-account.md)hebt.
 
-## <a name="requirements-for-ip-co-sell-incentivized-status"></a>Vereisten voor de gemotiveerd-status van de IP-co-verkoop
+## <a name="requirements-for-azure-ip-co-sell-incentivized-status"></a>Vereisten voor Azure IP co-gemotiveerd-status
 
 De gemotiveerd-status van Azure IP co-Sell is van toepassing op de volgende aanbiedings typen:
 

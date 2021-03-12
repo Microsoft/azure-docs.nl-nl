@@ -1,14 +1,14 @@
 ---
 title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
-ms.date: 02/03/2020
+ms.date: 03/11/2020
 ms.topic: conceptual
-ms.openlocfilehash: 278aae410af536a5cc41e55dabf1dd71de04151b
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 0b3dfe6d974f2cc2449faf54c4549589e0baa7cf
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550858"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199855"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -25,8 +25,8 @@ In dit artikel wordt een verzameling aanbevolen procedures en handige tips besch
 
 - **Pool toewijzings modus** Bij het maken van een batch-account kunt u kiezen uit twee pool toewijzings modi: **batch-service** of **gebruikers abonnement**. In de meeste gevallen moet u de standaard batch-service modus gebruiken, waarin Pools achter de schermen worden toegewezen in door batch beheerde abonnementen. In de alternatieve modus Gebruikersabonnement worden Batch-VM's en andere resources rechtstreeks in uw abonnement gemaakt wanneer er een groep wordt gemaakt. Abonnements accounts voor gebruikers worden voornamelijk gebruikt om een belang rijke, maar kleine subset van scenario's mogelijk te maken. Meer informatie over de modus gebruikers abonnement vindt u op [aanvullende configuratie voor de modus gebruikers abonnement](batch-account-create-portal.md#additional-configuration-for-user-subscription-mode).
 
-- **' cloudServiceConfiguration ' of ' virtualMachineConfiguration '.**
-    ' virtualMachineConfiguration ' moet worden gebruikt. Alle batch-functies worden ondersteund door groepen van ' virtualMachineConfiguration '. Niet alle functies worden ondersteund voor cloudServiceConfiguration-groepen en er worden geen nieuwe mogelijkheden gepland.
+- **' virtualMachineConfiguration ' of ' virtualMachineConfiguration '.**
+    Hoewel u momenteel Pools kunt maken met behulp van een van de configuraties, moeten nieuwe groepen worden geconfigureerd met behulp van ' virtualMachineConfiguration ' en niet ' virtualMachineConfiguration '. Alle huidige en nieuwe batch-functies worden ondersteund door de virtuele-machine configuratie groepen. Cloud Services configuratie Pools bieden geen ondersteuning voor alle functies en er worden geen nieuwe mogelijkheden gepland. U kunt geen nieuwe ' CloudServiceConfiguration-groepen maken of nieuwe knoop punten toevoegen aan bestaande Pools [na 29 februari 2024](https://azure.microsoft.com/updates/azure-batch-cloudserviceconfiguration-pools-will-be-retired-on-29-february-2024/). Zie de [batch pool configuratie migreren van Cloud Services naar de virtuele machine](batch-pool-cloud-service-to-virtual-machine-configuration.md)voor meer informatie.
 
 - **Denk na over taak-en taak uitvoerings tijd bij het bepalen van de taak voor pool toewijzing.**
     Als u taken hebt die voornamelijk uit korte uitvoeringen bestaan, en het verwachte totale aantal taken klein is, zodat de totale verwachte uitvoerings tijd van de taak niet lang is, kunt u geen nieuwe groep voor elke taak toewijzen. De toewijzings tijd van de knoop punten vermindert de uitvoerings tijd van de taak.

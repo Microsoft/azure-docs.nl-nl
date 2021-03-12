@@ -3,26 +3,47 @@ title: Dynamische configuratie in een Spring Boot-app gebruiken
 titleSuffix: Azure App Configuration
 description: Meer informatie over het dynamisch bijwerken van configuratiegegevens voor Spring Boot-apps
 services: azure-app-configuration
-author: AlexandraKemperMS
+author: mrm9084
 ms.service: azure-app-configuration
 ms.topic: tutorial
-ms.date: 08/06/2020
+ms.date: 12/09/2020
 ms.custom: devx-track-java
-ms.author: alkemper
-ms.openlocfilehash: c32e928bd4a83b4884c99e3ec3a9c647f5433e87
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.author: mametcal
+ms.openlocfilehash: 076ab0bb7dbc85a31b626a24d977e6fea558143e
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929154"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636535"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-a-java-spring-app"></a>Zelfstudie: Dynamische configuratie in een Java Spring-app gebruiken
 
-De App Configuration Spring Boot-clientbibliotheek biedt ondersteuning voor het bijwerken van een set configuratie-instellingen op aanvraag, zonder dat een toepassing opnieuw hoeft te worden opgestart. De clientbibliotheek slaat elke instelling in de cache op om te veel aanroepen naar het configuratiearchief te voorkomen. De waarde wordt niet door de vernieuwingsbewerking bijgewerkt, zelfs niet wanneer de waarde in de configuratieopslag is gewijzigd. De standaardvervaltijd voor elke aanvraag is dertig seconden. Deze kan zo nodig worden overschreven.
+App-configuratie heeft twee bibliotheken voor een bron. `spring-cloud-azure-appconfiguration-config` nood opstartdiskette vereist en maakt een afhankelijkheid van `spring-cloud-context` . `spring-cloud-azure-appconfiguration-config-web` vereist een lente-web samen met een Spring boot. Beide bibliotheken ondersteunen hand matige activering om te controleren op vernieuwde configuratie waarden. `spring-cloud-azure-appconfiguration-config-web` voegt ook ondersteuning toe voor automatische controle van de configuratie vernieuwing.
 
-U kunt op aanvraag op bijgewerkte instellingen controleren door methode `refreshConfigurations()` van `AppConfigurationRefresh` aan te roepen.
+Met vernieuwen kunt u de configuratie waarden vernieuwen zonder dat u de toepassing opnieuw hoeft op te starten, maar worden alle bonen in de opnieuw `@RefreshScope` gemaakt. De client bibliotheek slaat een hash-id van de momenteel geladen configuraties op om te veel aanroepen naar het configuratie archief te voor komen. De waarde wordt niet door de vernieuwingsbewerking bijgewerkt, zelfs niet wanneer de waarde in de configuratieopslag is gewijzigd. De standaardvervaltijd voor elke aanvraag is dertig seconden. Deze kan zo nodig worden overschreven.
 
-U kunt ook pakket `spring-cloud-azure-appconfiguration-config-web` gebruiken, dat afhankelijk is van `spring-web` voor het afhandelen van automatische vernieuwing.
+`spring-cloud-azure-appconfiguration-config-web`automatische vernieuwing wordt geactiveerd op basis van activiteit, met name lente van het web `ServletRequestHandledEvent` . Als er `ServletRequestHandledEvent` geen wordt geactiveerd, `spring-cloud-azure-appconfiguration-config-web` wordt door automatisch vernieuwen geen vernieuwing geactiveerd, zelfs niet als de verval tijd van de cache is verlopen.
+
+## <a name="use-manual-refresh"></a>Hand matig vernieuwen gebruiken
+
+In de app-configuratie wordt weer gegeven `AppConfigurationRefresh` Wat kan worden gebruikt om te controleren of de cache is verlopen en of een vernieuwing is verlopen.
+
+```java
+import com.microsoft.azure.spring.cloud.config.AppConfigurationRefresh;
+
+...
+
+@Autowired
+private AppConfigurationRefresh appConfigurationRefresh;
+
+...
+
+public void myConfigurationRefreshCheck() {
+    Future<Boolean> triggeredRefresh = appConfigurationRefresh.refreshConfigurations();
+}
+```
+
+`AppConfigurationRefresh``refreshConfigurations()`retourneert een waarde `Future` die waar is als er een vernieuwings bewerking is geactiveerd en False als dat niet het geval is. ONWAAR betekent dat de verval tijd van de cache niet is verlopen, er geen wijziging is of een andere thread momenteel controleert op vernieuwen.
 
 ## <a name="use-automated-refresh"></a>Automatisch vernieuwen gebruiken
 
@@ -59,7 +80,7 @@ Open vervolgens bestand *pom.xml* in een teksteditor en voeg een `<dependency>` 
     mvn spring-boot:run
     ```
 
-1. Open een browservenster en ga naar de URL: `http://localhost:8080`.  U ziet het bericht dat bij uw sleutel hoort. 
+1. Open een browservenster en ga naar de URL: `http://localhost:8080`.  U ziet het bericht dat bij uw sleutel hoort.
 
     U kunt ook *curl* gebruiken om uw toepassing te testen, bijvoorbeeld: 
     

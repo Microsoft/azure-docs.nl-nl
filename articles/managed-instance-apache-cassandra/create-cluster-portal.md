@@ -7,12 +7,12 @@ ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.custom: references_regions
-ms.openlocfilehash: d94bedad1ba7a2c6d814021b733404ccc58148ed
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: db3f188cc796642285d9b082b46371879491c632
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102424679"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225231"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-from-the-azure-portal-preview"></a>Snelstartgids: een door Azure beheerd exemplaar voor Apache Cassandra-cluster maken op basis van de Azure Portal (preview-versie)
  
@@ -70,7 +70,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
    ```
 
    > [!NOTE]
-   > De `assignee` `role` waarden en in de vorige opdracht zijn respectievelijk een vast Service principe en rol-id's.
+   > De `assignee` `role` waarden en in de vorige opdracht zijn vaste waarden. Voer deze waarden precies zoals vermeld in de opdracht in. Als u dit niet doet, leidt dit tot fouten bij het maken van het cluster. Als er fouten optreden tijdens het uitvoeren van deze opdracht, bent u mogelijk niet gemachtigd om deze uit te voeren. Neem contact op met uw beheerder voor machtigingen.
 
 1. Nu u klaar bent met het netwerk, klikt u op **controleren +** aanmaken  >  **maken**
 

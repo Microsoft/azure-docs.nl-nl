@@ -3,15 +3,15 @@ title: Veelgestelde vragen over Windows virtueel bureau blad-Azure
 description: Veelgestelde vragen en aanbevolen procedures voor virtueel bureau blad van Windows.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 10/15/2020
+ms.date: 03/09/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3bdb38b8a9590cf6191c75fdef024543c2b1c190
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 8592b679fcfbb860962bf75b882dc1a0543412c0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101720270"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102613966"
 ---
 # <a name="windows-virtual-desktop-faq"></a>Veelgestelde vragen over Windows Virtual Desktop
 
@@ -140,3 +140,22 @@ Ten slotte, als u de resource provider van het CSP-eigenaars account hebt ingesc
 ## <a name="how-often-should-i-turn-my-vms-on-to-prevent-registration-issues"></a>Hoe vaak moet ik mijn Vm's inschakelen om registratie problemen te voor komen?
 
 Nadat u een virtuele machine hebt geregistreerd bij een hostgroep in de virtueel-bureaublad service van Windows, vernieuwt de agent regel matig het token van de virtuele machine wanneer de VM actief is. Het certificaat voor het registratie token is 90 dagen geldig. Als gevolg van deze limiet van 90 dagen raden we u aan om elke 90 dagen uw Vm's te starten. Als uw virtuele machine binnen deze tijds limiet wordt ingesteld, kan het registratie token verlopen of ongeldig worden. Als u de virtuele machine na 90 dagen hebt gestart en registratie problemen ondervindt, volgt u de instructies in de [Windows-hand leiding voor het oplossen van problemen met Virtual Desktop agent](troubleshoot-agent.md#your-issue-isnt-listed-here-or-wasnt-resolved) om de virtuele machine uit de hostgroep te verwijderen, installeert u de agent opnieuw en registreert u deze opnieuw in de groep.
+
+## <a name="can-i-set-availability-options-when-creating-host-pools"></a>Kan ik beschikbaarheids opties instellen bij het maken van hostgroepen?
+
+Ja. Windows-hostgroepen voor virtuele Bureau bladen hebben een optie voor het selecteren van beschikbaarheids sets of beschikbaarheids zones wanneer u een VM maakt. Deze beschikbaarheids opties zijn hetzelfde als die van Azure compute. Als u een zone selecteert voor de virtuele machine die u in een hostgroep maakt, wordt de instelling automatisch toegepast op alle Vm's die u in die zone maakt. Als u de virtuele machines van uw hostgroep wilt verspreiden over meerdere zones, moet u de instructies in [virtuele machines toevoegen met de Azure Portal](expand-existing-host-pool.md#add-virtual-machines-with-the-azure-portal) om hand matig een nieuwe zone te selecteren voor elke nieuwe VM die u maakt.
+
+## <a name="which-availability-option-is-best-for-me"></a>Welke beschikbaarheids optie is het meest geschikt voor mij?
+
+De optie voor de beschik baarheid die u moet gebruiken voor uw Vm's is afhankelijk van de locatie van uw installatie kopie en de velden voor beheerde schijven. In de volgende tabel wordt de relatie van elke instelling met deze variabelen beschreven, waarmee u kunt bepalen welke optie het meest geschikt is voor uw implementatie. 
+
+| Beschikbaarheids optie | Locatie van installatie kopie | Keuze rondje Managed Disk gebruiken (keuze rondje) |
+|---|---|---|
+| Geen | Galerie | Uitgeschakeld met ' ja ' als standaard instelling |
+| Geen | Blob Storage | Ingeschakeld met ' nee ' als standaard instelling |
+| Beschikbaarheidszone | Galerie (Blob-opslag optie uitgeschakeld) | Uitgeschakeld met ' ja ' als standaard instelling |
+| Beschikbaarheidsset met beheerde SKU (beheerde schijf) | Galerie | Uitgeschakeld met ' ja ' als standaard instelling |
+| Beschikbaarheidsset met beheerde SKU (beheerde schijf) | Blob Storage | Ingeschakeld met ' nee ' als standaard instelling |
+| Beschikbaarheidsset met beheerde SKU (beheerde schijf) | Blob-opslag (Galerie optie uitgeschakeld) | Uitgeschakeld met ' nee ' als standaard instelling |
+| Beschikbaarheidsset (nieuw gemaakt door gebruiker) | Galerie | Uitgeschakeld met ' ja ' als standaard instelling |
+| Beschikbaarheidsset (nieuw gemaakt door gebruiker) | Blob Storage | Ingeschakeld met ' nee ' als standaard instelling |

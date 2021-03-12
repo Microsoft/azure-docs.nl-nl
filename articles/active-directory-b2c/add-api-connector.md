@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: facdb99a49c3778a75e733abf1fc72eed67549ab
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 59246c3739ad4de27e65641cc9d2154b33a6ee5e
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102611608"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008430"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow-preview"></a>Een API-connector toevoegen aan een registratie gebruikers stroom (preview-versie)
 
@@ -61,9 +61,9 @@ Zie voor Azure App Service en Azure Functions [TLS-wederzijdse verificatie confi
 U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder API-connectors **(preview)** en klikt u op **Nieuw certificaat uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure AD B2C gebruikt.
 
 ### <a name="api-key"></a>API-sleutel
-Sommige services gebruiken een API-sleutel om het moeilijker te maken om tijdens de ontwikkeling toegang te krijgen tot uw HTTP-eind punten. Voor [Azure functions](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
+Sommige services gebruiken een API-sleutel om de toegang tot uw HTTP-eind punten op te maken tijdens de ontwikkeling. Voor [Azure functions](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
 
-Dit is geen mechanisme dat alleen in productie mag worden gebruikt. Daarom is configuratie voor basis verificatie of certificaat authenticatie altijd vereist. Als u een verificatie methode wilt implementeren (niet aanbevolen) voor ontwikkelings doeleinden, kunt u basis verificatie kiezen en tijdelijke waarden gebruiken voor `username` en `password` dat uw API kan worden genegeerd tijdens het implementeren van de autorisatie in uw API.
+Dit is geen mechanisme dat alleen in productie mag worden gebruikt. Daarom is configuratie voor basis verificatie of certificaat authenticatie altijd vereist. Als u een verificatie methode niet wilt implementeren (niet aanbevolen) voor ontwikkelings doeleinden, kunt u basis verificatie kiezen en tijdelijke waarden gebruiken voor `username` en `password` dat uw API kan worden genegeerd tijdens het implementeren van de autorisatie in uw API.
 
 ## <a name="the-request-sent-to-your-api"></a>De aanvraag die naar uw API wordt verzonden
 Een API-connector resultatenset als een **http post-** aanvraag, waarbij gebruikers kenmerken (' claims ') worden verzonden als sleutel-waardeparen in een JSON-hoofd tekst. Kenmerken worden op dezelfde manier geserialiseerd als [Microsoft Graph](/graph/api/resources/user#properties) gebruikers eigenschappen. 

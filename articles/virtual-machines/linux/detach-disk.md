@@ -2,18 +2,19 @@
 title: Een gegevens schijf loskoppelen van een virtuele Linux-machine-Azure
 description: Leer hoe u een gegevens schijf loskoppelt van een virtuele machine in azure met behulp van Azure CLI of de Azure Portal.
 author: roygara
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.collection: linux
 ms.topic: how-to
 ms.date: 07/18/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d8694a715e53f820556231ae6a549e98b2963fa1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 29a2cbbf2c390b81aa62b064a7cf93decbaa7457
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102035701"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102565985"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-linux-virtual-machine"></a>Een gegevensschijf loskoppelen van een virtuele Linux-machine
 

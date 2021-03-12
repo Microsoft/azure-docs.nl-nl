@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: d898efb44bb92151a5d044a6699a4efb70fa9390
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 765f4f358d593cd5fcc021fbf4ec2276c422c4d8
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215728"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102555122"
 ---
 # <a name="usage-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Gebruik in Commerciële marketplace-analyses
 
@@ -62,7 +62,7 @@ Er zijn twee representaties van gebruiks uren: genormaliseerd gebruik van virtue
 
 In deze sectie vindt u het totale gebruiks uren en de trend voor uw aanbiedingen op basis van gebruik in azure Marketplace. De grafiek genormaliseerd gebruik per aanbiedingen wordt hieronder beschreven.
 
-- Het **genormaliseerde gebruik per biedt** gestapeld kolom diagram geeft een uitsplitsing van genormaliseerde gebruiks uren voor de top 5-aanbiedingen op basis van de geselecteerde reken periode. De vijf belangrijkste aanbiedingen worden weer gegeven in een grafiek, terwijl de rest wordt gegroepeerd in de categorie **rest alle** .
+- Het **genormaliseerde gebruik per biedt** gestapeld kolom diagram geeft een uitsplitsing van genormaliseerde gebruiks uren voor de vijf meest voorkomende aanbiedingen op basis van de geselecteerde reken periode. De vijf belangrijkste aanbiedingen worden weer gegeven in een grafiek, terwijl de rest wordt gegroepeerd in de categorie **rest alle** .
 - In het gestapelde kolom diagram wordt een maand per maand weer gegeven voor het geselecteerde datum bereik. De maand kolommen vertegenwoordigen de gebruiks uren van de aanbiedingen met de hoogste gebruiks uren voor de betreffende maand. In het lijn diagram wordt de trend van het groei percentage weer gegeven die op de secundaire Y-as is getekend.
 - U kunt specifieke aanbiedingen in de legenda selecteren om alleen die aanbiedingen in de grafiek weer te geven.
 
@@ -117,46 +117,45 @@ In de tabel **gebruiks gegevens** wordt een genummerde lijst weer gegeven met de
 
 _**Tabel 1: woorden lijst met gegevens termen**_
 
-| Kolomnaam | Kenmerknaam | Definitie |
-| ------------ | ------------- | ------------- |
-| Marketplace-abonnements-id | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. De ID was voorheen de GUID van het Azure-abonnement. |
-| MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. |
-| Type aanbieding | Type aanbieding | Het soort commerciële Marketplace-aanbieding. |
-| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het kanaal. De mogelijke waarden zijn:<ui><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> |
-| Marketplace-licentie type | Marketplace-licentie type | De facturerings methode van de aanbieding voor commerciële Marketplace. De mogelijke waarden zijn:<ul><li>Gefactureerd via Azure</li><li>Neem uw eigen licentie mee</li><li>Gratis</li><li>Micro soft als wederverkoper</li></ul> |
-| SKU | SKU | Het plan dat is gekoppeld aan de aanbieding. |
-| Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. |
-| Is preview-SKU | Is preview-SKU | De waarde geeft aan of u de SKU hebt gelabeld als ' preview '. De waarde is "ja" als de SKU dienovereenkomstig is gelabeld en alleen Azure-abonnementen die door u zijn geautoriseerd, kunnen deze installatie kopie implementeren en gebruiken. De waarde is ' nee ' als de SKU niet is geïdentificeerd als ' preview '. |
-| Facturerings type SKU | Facturerings type SKU | Het facturerings type dat is gekoppeld aan elke SKU in de aanbieding. De mogelijke waarden zijn:<ul><li>Gratis</li><li>Betaald</li></ul> |
-| Wordt dat IsInternal | Afgeschaft | Afgeschaft |
-| VM-grootte | Grootte van de virtuele machine | Voor typen op basis van een virtuele machine biedt deze entiteit de grootte van de VM die is gekoppeld aan de SKU van de aanbieding. |
-| Naam van Cloud exemplaar | Naam van Cloud exemplaar | De Microsoft Cloud waarin een VM-implementatie is opgetreden. |
-| ServicePlanName | Afgeschaft | Afgeschaft (dezelfde definitie als SKU) |
-| Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. |
-| DeploymentMethod | Afgeschaft | Afgeschaft (dezelfde definitie als het aanbiedings type)
- |
-| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de naam in het Azure-abonnement van een klant. |
-| Gebruiksdatum | Gebruiksdatum | De datum van het genereren van de gebruiks gebeurtenis voor op gebruik gebaseerde activa. |
-| IsMultisolution | Is multisolution | Geeft aan of de aanbieding een type van een aanbieding voor de oplossing is. |
-| Is nieuwe klant | Afgeschaft | Afgeschaft |
-| Kern grootte | Kern grootte | Het aantal kernen dat is gekoppeld aan de op de virtuele machine gebaseerde aanbieding. |
-| Gebruikstype | Gebruikstype | Geeft aan of de gebruiks gebeurtenis die aan de aanbieding is gekoppeld, een van de volgende is:<ul><li>Genormaliseerd gebruik</li><li>Onbewerkt gebruik</li><li>Gebruik met data limiet</li></ul> |
-| Eind datum van proef versie | Eind datum van proef versie | De datum waarop de proef periode voor deze order wordt beëindigd of beëindigd. |
-| Klant valuta (CC) | Valuta van klant | De valuta die de klant voor de trans actie voor commerciële Marketplace gebruikt. |
-| Prijs (CC) | Prijs | Eenheids prijs van de SKU die wordt weer gegeven in de valuta van de klant. |
-| Valuta voor betaling (PC) | Valuta voor betaling | De uitgever wordt betaald voor de gebruiks gebeurtenissen die zijn gekoppeld aan het activum in de valuta die is geconfigureerd door de uitgever. |
-| Geschatte prijs (PC) | Geschatte prijs | Eenheids prijs van de SKU in de valuta die is geconfigureerd door de uitgever. |
-| Gebruiks referentie | Gebruiks referentie | Een samengevoegde GUID die wordt gebruikt om het gebruiks rapport (in commerciële Marketplace-analyse) te verbinden met het rapport uitbetalings transacties. Gebruiks verwijzing is gekoppeld aan OrderId en LineItemId in het rapport uitbetalings transacties. |
-| Gebruiks eenheid | Gebruiks eenheid | De verbruiks eenheid die aan de SKU is gekoppeld. |
-| Klant-id | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. |
-| Facturerings account-id | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. |
-| Gebruiks hoeveelheid | Gebruiks hoeveelheid | De totale verbruikte eenheden die worden verbruikt door de activa die door de klant worden geïmplementeerd.<br>Dit is gebaseerd op het gebruiks type item. Als het gebruiks type bijvoorbeeld genormaliseerd gebruik is, is de hoeveelheid verbruik voor het normale gebruik. |
-| NormalizedUsage | Genormaliseerd gebruik | Het totale aantal genormaliseerde verbruiks eenheden dat door de klant wordt gebruikt.<br>Genormaliseerde gebruiks uren worden gedefinieerd als het gebruik van uren die zijn genormaliseerd voor het aantal VM-kernen ([aantal VM-kernen] x [uur van onbewerkt gebruik]). Vm's die zijn aangewezen als "SHAREDCORE" gebruiken 1/6 (of 0,1666) als [aantal VM-kernen] vermenigvuldiger. |
-| MeteredUsage | Gebruik met data limiet | De totale verbruikte eenheden die worden gebruikt door de meters die zijn geconfigureerd met de aanbieding die door de klant wordt geïmplementeerd. |
-| RawUsage | Onbewerkt gebruik | Het totale aantal onbewerkte verbruiks eenheden dat door de klant wordt gebruikt.<br>Onbewerkte gebruiks uren worden gedefinieerd als de hoeveelheid tijd waarop Vm's zijn uitgevoerd in termen van gebruiks eenheden. |
-| Geschatte berekende toeslag (CC) | Geschatte berekende toeslag in de klant valuta | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de prijs (CC) en het onbewerkte gebruik. |
-| Geschatte uitgebreide lading (PC) | Geschatte berekende kosten in de valuta voor betaling | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de geschatte prijs (PC) en het onbewerkte gebruik. |
-|
+| Kolom naam in<br>gebruikersinterface | Kenmerknaam | Definitie | Kolom naam in programma code<br>Access-rapporten |
+| ------------ | ------------- | ------------- | ------------- |
+| Marketplace-abonnements-ID | Marketplace-abonnements-ID | De unieke id die is gekoppeld aan het Azure-abonnement dat de klant heeft gebruikt om uw aanbieding voor commerciële Marketplace aan te schaffen. De ID was voorheen de GUID van het Azure-abonnement. | MarketplaceSubscriptionId |
+| MonthStartDate | Begin datum maand | De begin datum van de maand vertegenwoordigt de maand van de aankoop. | MonthStartDate |
+| Type aanbieding | Type aanbieding | Het soort commerciële Marketplace-aanbieding. | Offer type |
+| Azure-licentie type | Azure-licentie type | Het type licentie overeenkomst dat door klanten wordt gebruikt om Azure aan te schaffen. Ook wel bekend als het kanaal. De mogelijke waarden zijn:<ui><li>Cloud Solution Provider</li><li>Enterprise</li><li>Enter prise via wederverkoper</li><li>Betalen naar gebruik</li></ul> | AzureLicenseType |
+| Marketplace-licentie type | Marketplace-licentie type | De facturerings methode van de aanbieding voor commerciële Marketplace. De mogelijke waarden zijn:<ul><li>Gefactureerd via Azure</li><li>Neem uw eigen licentie mee</li><li>Gratis</li><li>Micro soft als wederverkoper</li></ul> | MarketplaceLicenseType |
+| SKU | SKU | Het plan dat is gekoppeld aan de aanbieding. | SKU |
+| Klant land | Land/regio van klant | De land/regio naam die door de klant wordt verschaft. Land/regio kan afwijken van het land/de regio in het Azure-abonnement van een klant. | CustomerCountry |
+| Is preview-SKU | Is preview-SKU | De waarde geeft aan of u de SKU hebt gelabeld als ' preview '. De waarde is "ja" als de SKU dienovereenkomstig is gelabeld en alleen Azure-abonnementen die door u zijn geautoriseerd, kunnen deze installatie kopie implementeren en gebruiken. De waarde is ' nee ' als de SKU niet is geïdentificeerd als ' preview '. | IsPreviewSKU |
+| Facturerings type SKU | Facturerings type SKU | Het facturerings type dat is gekoppeld aan elke SKU in de aanbieding. De mogelijke waarden zijn:<ul><li>Gratis</li><li>Betaald</li></ul> | SKUBillingType |
+| Wordt dat IsInternal | Afgeschaft | Afgeschaft | Afgeschaft |
+| VM-grootte | Grootte van de virtuele machine | Voor aanbiedings typen op basis van een virtuele machine geeft deze entiteit de grootte aan van de VM die is gekoppeld aan de SKU van de aanbieding. | VMSize |
+| Naam van Cloud exemplaar | Naam van Cloud exemplaar | De Microsoft Cloud waarin een VM-implementatie is opgetreden. | CloudInstanceName |
+| ServicePlanName | Afgeschaft | Afgeschaft (dezelfde definitie als SKU) | ServicePlanName |
+| Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. | OfferName |
+| DeploymentMethod | Afgeschaft | Afgeschaft (dezelfde definitie als het aanbiedings type) | DeploymentMethod |
+| Bedrijfs naam van klant | Bedrijfs naam van klant | De bedrijfs naam die door de klant is verschaft. De naam kan afwijken van de naam in het Azure-abonnement van een klant. | CustomerCompanyName |
+| Gebruiksdatum | Gebruiksdatum | De datum van het genereren van de gebruiks gebeurtenis voor op gebruik gebaseerde activa. | UsageDate |
+| IsMultisolution | Is multisolution | Geeft aan of de aanbieding een type van een aanbieding voor de oplossing is. | IsMultisolution |
+| Is nieuwe klant | Afgeschaft | Afgeschaft | IsNewCustomer |
+| Kern grootte | Kern grootte | Het aantal kernen dat is gekoppeld aan de op de virtuele machine gebaseerde aanbieding. | Formaat wijzigen |
+| Gebruikstype | Gebruikstype | Geeft aan of de gebruiks gebeurtenis die aan de aanbieding is gekoppeld, een van de volgende is:<ul><li>Genormaliseerd gebruik</li><li>Onbewerkt gebruik</li><li>Gebruik met data limiet</li></ul> | UsageType |
+| Eind datum van proef versie | Eind datum van proef versie | De datum waarop de proef periode voor deze order wordt beëindigd of beëindigd. | TrialEndDate |
+| Klant valuta (CC) | Valuta van klant | De valuta die de klant voor de trans actie voor commerciële Marketplace gebruikt. | CustomerCurrencyCC |
+| Prijs (CC) | Prijs | Eenheids prijs van de SKU die wordt weer gegeven in de valuta van de klant. | PriceCC |
+| Valuta voor betaling (PC) | Valuta voor betaling | De uitgever wordt betaald voor de gebruiks gebeurtenissen die zijn gekoppeld aan het activum in de valuta die is geconfigureerd door de uitgever. | PayoutCurrencyPC |
+| Geschatte prijs (PC) | Geschatte prijs | Eenheids prijs van de SKU in de valuta die is geconfigureerd door de uitgever. | EstimatedPricePC |
+| Gebruiks referentie | Gebruiks referentie | Een samengevoegde GUID die wordt gebruikt om het gebruiks rapport (in commerciële Marketplace-analyse) te verbinden met het rapport uitbetalings transacties. Gebruiks verwijzing is gekoppeld aan OrderId en LineItemId in het rapport uitbetalings transacties. | UsageReference |
+| Gebruiks eenheid | Gebruiks eenheid | De verbruiks eenheid die aan de SKU is gekoppeld. | UsageUnit |
+| Klant-ID | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. | CustomerId |
+| Facturerings account-ID | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs de **facturerings account-id** toe aan **CustomerID** om uw rapport met de uitbetalings transacties te koppelen aan de klant-, order-en gebruiks rapporten. | BillingAccountId |
+| Gebruiks hoeveelheid | Gebruiks hoeveelheid | De totale verbruikte eenheden die worden gebruikt door de activa die door de klant worden geïmplementeerd.<br>Dit is gebaseerd op het gebruiks type item. Als het gebruiks type bijvoorbeeld genormaliseerd gebruik is, is de hoeveelheid verbruik voor het normale gebruik. | UsageQuantity |
+| NormalizedUsage | Genormaliseerd gebruik | Het totale aantal genormaliseerde gebruiks eenheden dat door de klant wordt gebruikt.<br>Genormaliseerde gebruiks uren worden gedefinieerd als het gebruik van uren die zijn genormaliseerd voor het aantal VM-kernen ([aantal VM-kernen] x [uur van onbewerkt gebruik]). Vm's die zijn aangewezen als "SHAREDCORE" gebruiken 1/6 (of 0,1666) als [aantal VM-kernen] vermenigvuldiger. | NormalizedUsage |
+| MeteredUsage | Gebruik met data limiet | De totale verbruikte eenheden die worden gebruikt door de meters die zijn geconfigureerd met de aanbieding die door de klant wordt geïmplementeerd. | MeteredUsage |
+| RawUsage | Onbewerkt gebruik | Het totale aantal onbewerkte verbruiks eenheden dat is gebruikt door de activa die door de klant worden geïmplementeerd.<br>Onbewerkte gebruiks uren worden gedefinieerd als de hoeveelheid tijd waarop Vm's zijn uitgevoerd in termen van gebruiks eenheden. | RawUsage |
+| Geschatte berekende toeslag (CC) | Geschatte berekende toeslag in de klant valuta | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de prijs (CC) en het gebruiks aantal. | EstimatedExtendedChargeCC |
+| Geschatte uitgebreide lading (PC) | Geschatte berekende kosten in de valuta voor betaling | Geeft de kosten aan die zijn gekoppeld aan het gebruik. De kolom is het product van de geschatte prijs (PC) en het gebruiks aantal. | EstimatedExtended ChargePC |
+|||||
 
 ### <a name="usage-page-filters"></a>Filters voor gebruiks pagina's
 

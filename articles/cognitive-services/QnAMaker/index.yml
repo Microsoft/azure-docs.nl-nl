@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Documentatie voor QnA Maker
   description: QnA Maker is een cloudgebaseerde API-service voor het maken van een vraag- en antwoordlaag over uw gegevens in gespreksstijl. Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen. De QnA Maker-service beantwoordt de in natuurlijke taal gestelde vragen van uw gebruikers door deze te koppelen aan de best mogelijke antwoorden uit de QnA's in uw Knowledge Base.
-  ms.openlocfilehash: 00e2f029d467e4bf4acfbc9ee55727328c23ba72
-  ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+  ms.openlocfilehash: d993dfcc4d486190e2501940465598b53808b965
+  ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/09/2021
-  ms.locfileid: "102502209"
+  ms.lasthandoff: 03/10/2021
+  ms.locfileid: "102613881"
 landingContent:
 - title: Over QnA Maker
   linkLists:
@@ -91,7 +91,7 @@ landingContent:
     - text: 'Power-apps: Een door QnA Maker gestuurde bot maken'
       url: tutorials/integrate-with-power-virtual-assistant-fallback-topic.md
     - text: 'Bot-framework: Verzending tussen LUIS- en QnA Maker-apps'
-      url: /azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0
+      url: /azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs
     - text: Andere botvoorbeelden
       url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
 - title: Naslaginformatie

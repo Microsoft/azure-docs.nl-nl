@@ -1,18 +1,18 @@
 ---
 title: Algemene problemen met Azure percept DK en IoT Edge oplossen
-description: Tips voor het oplossen van problemen met enkele van de meest voorkomende problemen die tijdens de on-boarding-ervaring zijn gevonden
+description: Tips voor het oplossen van problemen met een aantal van de meest voorkomende problemen met Azure percept DK
 author: mimcco
 ms.author: mimcco
 ms.service: azure-percept
 ms.topic: how-to
 ms.date: 02/18/2021
 ms.custom: template-how-to
-ms.openlocfilehash: a6d099e8d267c9fe03e0bb676276e7a4ab8157ab
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 93812cf2b0db7fc3557e31c8d9e8053831c7b90f
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102521523"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010997"
 ---
 # <a name="azure-percept-dk-dev-kit-troubleshooting"></a>Problemen oplossen met Azure percept DK (dev kit)
 
@@ -28,7 +28,7 @@ Als u deze opdrachten wilt uitvoeren,
 Als u de uitvoer naar een txt-bestand wilt omleiden voor verdere analyse, gebruikt u de volgende syntaxis:
 
 ```console
-[command] > [file name].txt
+sudo [command] > [file name].txt
 ```
 
 Nadat de uitvoer naar een txt-bestand is omgeleid, kopieert u het bestand naar uw host-PC via SCP:
@@ -47,13 +47,13 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Besturingssysteem                |```cat /etc/os-subrelease```      |versie van afgeleide installatie kopie controleren |
 |Besturingssysteem                |```cat /etc/adu-version```        |Controleer de ADU-versie |
 |Temperatuur       |```cat /sys/class/thermal/thermal_zone0/temp``` |de Tempe ratuur van Devkit controleren |
-|Wi-Fi             |```journalctl -u hostapd.service``` |SoftAP-logboeken controleren|
-|Wi-Fi             |```journalctl -u wpa_supplicant.service``` |Wi-Fi Services-logboeken controleren |
-|Wi-Fi             |```journalctl -u ztpd.service```  |controleren Wi-Fi nul aanraak service logboeken |
-|Wi-Fi             |```journalctl -u systemd-networkd``` |Controleer de logboeken van Mariner-netwerk stacks |
-|Wi-Fi             |```/data/misc/wifi/hostapd_virtual.conf``` |Details van de configuratie van het Wi-Fi-toegangs punt controleren |
-|OOBE              |```journalctl -u oobe -b```       |OOBE-logboeken controleren |
-|Telemetrie         |```azure-device-health-id```      |unieke telemetrie-HW_ID zoeken |
+|Wi-Fi             |```sudo journalctl -u hostapd.service``` |SoftAP-logboeken controleren|
+|Wi-Fi             |```sudo journalctl -u wpa_supplicant.service``` |Wi-Fi Services-logboeken controleren |
+|Wi-Fi             |```sudo journalctl -u ztpd.service```  |controleren Wi-Fi nul aanraak service logboeken |
+|Wi-Fi             |```sudo journalctl -u systemd-networkd``` |Controleer de logboeken van Mariner-netwerk stacks |
+|Wi-Fi             |```sudo cat /etc/hostapd/hostapd-wlan1.conf``` |Details van de configuratie van het Wi-Fi-toegangs punt controleren |
+|OOBE              |```sudo journalctl -u oobe -b```       |OOBE-logboeken controleren |
+|Telemetrie         |```sudo azure-device-health-id```      |unieke telemetrie-HW_ID zoeken |
 |Azure IoT Edge          |```sudo iotedge check```          |configuratie-en connectiviteits controles voor veelvoorkomende problemen uitvoeren |
 |Azure IoT Edge          |```sudo iotedge logs [container name]``` |Raadpleeg container logboeken, zoals spraak-en Vision-modules |
 |Azure IoT Edge          |```sudo iotedge support-bundle --since 1h``` |module Logboeken, Azure IoT Edge Security Manager-logboeken, logboeken van de container-engine, ```iotedge check``` JSON-uitvoer en andere nuttige informatie over fout opsporing van het afgelopen uur verzamelen |
@@ -61,26 +61,26 @@ Raadpleeg de documentatie voor het [oplossen van problemen met het Azure IOT edg
 |Azure IoT Edge          |```sudo systemctl restart iotedge``` |de Azure IoT Edge-beveiligings-daemon opnieuw opstarten |
 |Azure IoT Edge          |```sudo iotedge list```           |de geïmplementeerde Azure IoT Edge modules weer geven |
 |Overige             |```df [option] [file]```          |informatie over beschik bare/totale ruimte in opgegeven bestands systeem (en) weer geven |
-|Overige             |```ip route get 1.1.1.1```        |apparaat-IP en interface-informatie weer geven |
-|Overige             |```ip route get 1.1.1.1 \| awk '{print $7}'``` <br> ```ifconfig [interface]``` |alleen IP-adres van apparaat weer geven |
+|Overige             |`ip route get 1.1.1.1`        |apparaat-IP en interface-informatie weer geven |
+|Overige             |<code>ip route get 1.1.1.1 &#124; awk '{print $7}'</code> <br> `ifconfig [interface]` |alleen IP-adres van apparaat weer geven |
 
 
 De ```journalctl``` Wi-Fi-opdrachten kunnen worden gecombineerd met de volgende opdracht:
 
 ```console
-journalctl -u hostapd.service -u wpa_supplicant.service -u ztpd.service -u systemd-networkd -b
+sudo journalctl -u hostapd.service -u wpa_supplicant.service -u ztpd.service -u systemd-networkd -b
 ```
 
 ## <a name="docker-troubleshooting-commands"></a>Opdrachten voor het oplossen van problemen met docker
 
 |Cmd                        |Functieassembly                  |
 |--------------------------------|---------------------------|
-|```docker ps``` |[Hiermee wordt weer gegeven welke containers worden uitgevoerd](https://docs.docker.com/engine/reference/commandline/ps/) |
-|```docker images``` |[Hiermee wordt aangegeven welke installatie kopieën op het apparaat staan](https://docs.docker.com/engine/reference/commandline/images/)|
-|```docker rmi [image id] -f``` |[Hiermee wordt een installatie kopie van het apparaat verwijderd](https://docs.docker.com/engine/reference/commandline/rmi/) |
-|```docker logs -f edgeAgent``` <br> ```docker logs -f [module_name]``` |[neemt container logboeken van de opgegeven module op](https://docs.docker.com/engine/reference/commandline/logs/) |
-|```docker image prune``` |[Hiermee verwijdert u alle Dangling-installatie kopieën](https://docs.docker.com/engine/reference/commandline/image_prune/) |
-|```watch docker ps``` <br> ```watch ifconfig [interface]``` |Download status van docker-container controleren |
+|```sudo docker ps``` |[Hiermee wordt weer gegeven welke containers worden uitgevoerd](https://docs.docker.com/engine/reference/commandline/ps/) |
+|```sudo docker images``` |[Hiermee wordt aangegeven welke installatie kopieën op het apparaat staan](https://docs.docker.com/engine/reference/commandline/images/)|
+|```sudo docker rmi [image id] -f``` |[Hiermee wordt een installatie kopie van het apparaat verwijderd](https://docs.docker.com/engine/reference/commandline/rmi/) |
+|```sudo docker logs -f edgeAgent``` <br> ```sudo docker logs -f [module_name]``` |[neemt container logboeken van de opgegeven module op](https://docs.docker.com/engine/reference/commandline/logs/) |
+|```sudo docker image prune``` |[Hiermee verwijdert u alle Dangling-installatie kopieën](https://docs.docker.com/engine/reference/commandline/image_prune/) |
+|```sudo watch docker ps``` <br> ```watch ifconfig [interface]``` |Download status van docker-container controleren |
 
 ## <a name="usb-updating"></a>USB-update
 

@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e82be52cff824c69dd2fe4ea5e7e1c0d7489be1d
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 49f2c290c69fcadd594d6cbd5879e7d9f5304a42
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740326"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558012"
 ---
 # <a name="administrative-units-in-azure-active-directory"></a>Beheereenheden in Azure Active Directory
 
@@ -47,8 +47,8 @@ Voor het gebruik van beheereenheden heeft u een Azure Active Directory Premium-l
 U kunt beheereenheden beheren met behulp van Azure Portal, PowerShell-cmdlets en -scripts of Microsoft Graph. Zie voor meer informatie:
 
 - [Rollen maken, verwijderen, vullen en toevoegen aan beheereenheden](admin-units-manage.md): Bevat volledige instructieprocedures.
-- [Werken met beheereenheden](/powershell/azure/active-directory/working-with-administrative-units?view=azureadps-2.0&preserve-view=true): Behandelt het werken met beheereenheden met behulp van PowerShell.
-- [Graph-ondersteuning voor beheereenheden](/graph/api/resources/administrativeunit?view=graph-rest-1.0&preserve-view=true): Geeft gedetailleerde documentatie over Microsoft Graph voor beheereenheden.
+- [Werken met beheereenheden](/powershell/azure/active-directory/working-with-administrative-units): Behandelt het werken met beheereenheden met behulp van PowerShell.
+- [Graph-ondersteuning voor beheereenheden](/graph/api/resources/administrativeunit): Geeft gedetailleerde documentatie over Microsoft Graph voor beheereenheden.
 
 ### <a name="plan-your-administrative-units"></a>Plan uw beheereenheden
 

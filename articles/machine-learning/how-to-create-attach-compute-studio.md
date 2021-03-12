@@ -11,20 +11,20 @@ ms.subservice: core
 ms.date: 08/06/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1
-ms.openlocfilehash: ab7a74166e85f2ba9fd73e7323cf9cd200cf32e4
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 4194c71823e1affde1dcae47fd7e64668b57c0cf
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031025"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149355"
 ---
 # <a name="create-compute-targets-for-model-training-and-deployment-in-azure-machine-learning-studio"></a>Reken doelen voor model training en implementatie in Azure Machine Learning Studio maken
 
 In dit artikel leert u hoe u Compute-doelen kunt maken en beheren in azure machine Studio.  U kunt ook Compute-doelen maken en beheren met:
 
 * Azure Machine Learning Learning SDK of CLI-extensie voor Azure Machine Learning
-  * [Rekenproces](how-to-create-manage-compute-instance.md)
-  * [Rekencluster](how-to-create-attach-compute-cluster.md)
+  * [Reken instantie](how-to-create-manage-compute-instance.md)
+  * [Reken cluster](how-to-create-attach-compute-cluster.md)
   * [Azure Kubernetes service-cluster](how-to-create-attach-kubernetes.md)
   * [Andere reken bronnen](how-to-attach-compute-targets.md)
 * De [VS code-extensie](how-to-manage-resources-vscode.md#compute-clusters) voor Azure machine learning.
@@ -68,7 +68,7 @@ Volg de vorige stappen om de lijst met Compute-doelen weer te geven. Gebruik ver
 
 1. Vul het formulier in voor het reken type:
 
-  * [Rekenproces](#compute-instance)
+  * [Reken instantie](#compute-instance)
   * [Reken clusters](#amlcompute)
   * [Clusters afleiding](#inference-clusters)
   * [Gekoppelde compute](#attached-compute)
@@ -132,7 +132,7 @@ Maak of koppel een Azure Kubernetes service-cluster (AKS) voor grootschalige dei
 |---------|---------|
 |Naam berekening     |  <li>De naam is vereist. De naam moet tussen 2 en 16 tekens lang zijn. </li><li>Geldige tekens zijn onder andere hoofd letters, cijfers en het  **-** teken.</li><li>De naam moet beginnen met een letter</li><li>De naam moet uniek zijn voor alle bestaande berekeningen binnen een Azure-regio. U ziet een waarschuwing als de naam die u kiest, niet uniek is</li><li>Als het **-**  teken wordt gebruikt, moet dit worden gevolgd door ten minste één letter later in de naam</li>     |
 |Kubernetes-service | Selecteer **nieuwe maken** en vul de rest van het formulier in.  Of selecteer **bestaande gebruiken** en selecteer vervolgens een bestaand AKS-cluster in uw abonnement.
-|Regio |  Selecteer de regio waar het cluster wordt gemaakt |
+|Region |  Selecteer de regio waar het cluster wordt gemaakt |
 |Grootte van de virtuele machine     |  Ondersteunde grootten voor virtuele machines kunnen worden beperkt in uw regio. De [beschikbaarheids lijst](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines) controleren     |
 |Cluster doel  | Selecteer **productie** of **dev-test** |
 |Aantal knooppunten | Het aantal knoop punten vermenigvuldigd met het aantal kernen van de virtuele machine (Vcpu's) moet groter zijn dan of gelijk zijn aan 12. |
@@ -147,7 +147,7 @@ Gebruik de [bovenstaande stappen](#portal-create) om een reken proces te koppele
 
 1. Voer een naam in voor het berekenings doel. 
 1. Selecteer het type berekening dat u wilt koppelen. Niet alle reken typen kunnen worden bijgevoegd vanuit Azure Machine Learning Studio. De berekenings typen die momenteel aan de training kunnen worden gekoppeld, zijn:
-    * Een externe VM
+    * Een virtuele machine van Azure (om een Data Science Virtual Machine toe te voegen)
     * Azure Databricks (voor gebruik in machine learning pijp lijnen)
     * Azure Data Lake Analytics (voor gebruik in machine learning pijp lijnen)
     * Azure HDInsight

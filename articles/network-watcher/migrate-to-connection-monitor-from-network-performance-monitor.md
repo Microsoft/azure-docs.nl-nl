@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: e95f6fdff164a6f5f9d4af4f19b1876d1483a70c
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 998b0cb04d465f675423e2472a7ca8c6441b1fed
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102038710"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010402"
 ---
 # <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 
@@ -37,6 +37,9 @@ De migratie helpt de volgende resultaten te produceren:
 * Gegevens bewaking:
    * **Gegevens in log Analytics**: vóór de migratie blijven de gegevens in de werk ruimte waarin NPM is geconfigureerd in de tabel NetworkMonitoring. Na de migratie worden de gegevens verplaatst naar de tabel NetworkMonitoring, de tabel NWConnectionMonitorTestResult en NWConnectionMonitorPathResult in dezelfde werk ruimte. Nadat de tests zijn uitgeschakeld in NPM, worden de gegevens alleen opgeslagen in de tabel NWConnectionMonitorTestResult en in de tabel NWConnectionMonitorPathResult.
    * **Waarschuwingen op basis van Logboeken, Dash boards en integraties**: u moet de query's hand matig bewerken op basis van de nieuwe tabel NWConnectionMonitorTestResult en de tabel NWConnectionMonitorPathResult. Zie [netwerk connectiviteit controleren met verbindings monitor](./connection-monitor-overview.md#metrics-in-azure-monitor)als u de waarschuwingen in metrische gegevens opnieuw wilt maken.
+* Voor ExpressRoute bewaking:
+    * **End-to-end-verlies en latentie**: met de verbindings monitor kunt u dit eenvoudiger maken dan NPM omdat gebruikers niet hoeven te configureren welke circuits en peerings moeten worden bewaakt. Circuits in het pad worden automatisch gedetecteerd. de gegevens zijn beschikbaar in metrieken (sneller dan LA, waarbij NPM de resultaten heeft opgeslagen). De topologie werkt ook net zo.
+    * **Bandbreedte metingen**: met het starten van aan band breedte gerelateerde metrische gegevens, is de NPM op basis van logboek analyse niet effectief bij het controleren van de band breedte voor ExpressRoute-klanten. Deze mogelijkheid is nu niet beschikbaar in de verbindings monitor.
     
 ## <a name="prerequisites"></a>Vereisten
 
@@ -60,7 +63,7 @@ Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd:
    * Er wordt één verbindings monitor per regio en abonnement gemaakt. Voor testen met on-premises agents wordt de naam van de nieuwe verbindings monitor opgemaakt als `<workspaceName>_"workspace_region_name"` . Voor testen met Azure-agents wordt de naam van de nieuwe verbindings monitor opgemaakt als `<workspaceName>_<Azure_region_name>` .
    * Bewakings gegevens worden nu opgeslagen in dezelfde Log Analytics werk ruimte waarin NPM is ingeschakeld, in nieuwe tabellen de naam NWConnectionMonitorTestResult Table en NWConnectionMonitorPathResult Table. 
    * De test naam wordt getransporteerd als de naam van de test groep. De beschrijving van de test wordt niet gemigreerd.
-   * De bron-en doel-eind punten worden gemaakt en gebruikt in de nieuwe test groep. Voor on-premises agents worden de eind punten opgemaakt als `<workspaceName>_<FQDN of on-premises machine>` .
+   * De bron-en doel-eind punten worden gemaakt en gebruikt in de nieuwe test groep. Voor on-premises agents worden de eind punten opgemaakt als `<workspaceName>_<FQDN of on-premises machine>` . De beschrijving van de agent wordt niet gemigreerd.
    * De doel poort en het probing-interval worden verplaatst naar een test configuratie met de naam `TC_<protocol>_<port>` en `TC_<protocol>_<port>_AppThresholds` . Het protocol wordt ingesteld op basis van de poort waarden. Voor ICMP worden de test configuraties benoemd als `TC_<protocol>` en `TC_<protocol>_AppThresholds` . De drempel waarden voor geslaagde en andere optionele eigenschappen als de set wordt gemigreerd, wordt anders leeg gelaten.
    * Als de migratie tests agents bevatten die niet worden uitgevoerd, moet u de agents inschakelen en opnieuw migreren.
 * NPM is niet uitgeschakeld. de gemigreerde tests kunnen dus blijven gegevens verzenden naar de tabel NetworkMonitoring, NWConnectionMonitorTestResult tabel en NWConnectionMonitorPathResult. Deze aanpak zorgt ervoor dat bestaande waarschuwingen en integraties op basis van het logboek niet worden beïnvloed.

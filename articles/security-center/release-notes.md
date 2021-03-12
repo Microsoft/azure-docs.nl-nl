@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: reference
-ms.date: 03/10/2021
+ms.date: 03/11/2021
 ms.author: memildin
-ms.openlocfilehash: 7080f79ca85a401ddcd3d421bb4a0292994508dd
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 4f2b31a4760a07779eebdd9492731ffe7e324d37
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/11/2021
-ms.locfileid: "102636671"
+ms.locfileid: "103149631"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -35,6 +35,7 @@ De updates in maart zijn onder andere:
 - [Evaluatie van SQL-beveiligings problemen bevat nu de ervaring ' regel uitschakelen ' (preview-versie)](#sql-vulnerability-assessment-now-includes-the-disable-rule-experience-preview)
 - [Azure Monitor werkmappen die zijn geïntegreerd in Security Center en drie sjablonen](#azure-monitor-workbooks-integrated-into-security-center-and-three-templates-provided)
 - [Het dash board nalevings beleid bevat nu Azure audit rapporten (preview-versie)](#regulatory-compliance-dashboard-now-includes-azure-audit-reports-preview)
+- [Aanbevelings gegevens kunnen worden weer gegeven in azure resource Graph met ' verkennen in ARG '](#recommendation-data-can-be-viewed-in-azure-resource-graph-with-explore-in-arg)
 - [Updates voor het beleid voor het implementeren van werk stroom automatisering](#updates-to-the-policies-for-deploying-workflow-automation)
 - [Twee oudere aanbevelingen schrijven gegevens niet meer rechtstreeks naar Azure-activiteiten logboek](#two-legacy-recommendations-no-longer-write-data-directly-to-azure-activity-log)
 
@@ -91,6 +92,17 @@ Meer informatie over [het beheren van de standaarden in het dash board voor nale
 
 :::image type="content" source="media/release-notes/audit-reports-list-regulatory-compliance-dashboard.png" alt-text="De lijst met beschik bare Azure-controle rapporten filteren":::
 
+
+
+### <a name="recommendation-data-can-be-viewed-in-azure-resource-graph-with-explore-in-arg"></a>Aanbevelings gegevens kunnen worden weer gegeven in azure resource Graph met ' verkennen in ARG '
+
+De pagina met aanbevelings Details bevat nu de werkbalk knop "verkennen in ARG". Gebruik deze knop om een Azure resource Graph-query te openen en de gegevens van de aanbeveling te verkennen, te exporteren en te delen.
+
+Azure resource Graph (ARG) biedt directe toegang tot resource gegevens in uw Cloud omgevingen met krachtige filters, groeperingen en sorteer mogelijkheden. Het is een snelle en efficiënte manier om via programma code of vanuit de Azure Portal informatie op te vragen over Azure-abonnementen.
+
+Meer informatie over [Azure resource Graph (ARG)](../governance/resource-graph/index.yml).
+
+:::image type="content" source="media/release-notes/explore-in-resource-graph.png" alt-text="Bekijk aanbevelings gegevens in azure resource Graph.":::
 
 
 ### <a name="updates-to-the-policies-for-deploying-workflow-automation"></a>Updates voor het beleid voor het implementeren van werk stroom automatisering

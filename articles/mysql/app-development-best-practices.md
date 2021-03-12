@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/11/2020
-ms.openlocfilehash: afe14bc03f0d12e56e1512aeb788a77c64151b58
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 7f98e14c2eae133941f3fc87247a427198ebcdc2
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547245"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102611960"
 ---
 # <a name="best-practices-for-building-an-application-with-azure-database-for-mysql"></a>Aanbevolen procedures voor het bouwen van een toepassing met Azure Database for MySQL 
 
@@ -73,10 +73,10 @@ U kunt [replicatie van inkomende gegevens](./howto-data-in-replication.md) gebru
 
 U ziet een vertraging tussen de bron en de replica, omdat de replicatie asynchroon is. Netwerk vertraging kan worden beïnvloed door veel factoren, zoals de grootte van de werk belasting die wordt uitgevoerd op de bron server en de latentie tussen data centers. In de meeste gevallen ligt de replica vertraging van een paar seconden naar een paar minuten.
 
-## <a name="database-deployment"></a>Data base-implementatie 
+## <a name="database-deployment"></a>Database-implementatie 
 
 ### <a name="configure-an-azure-database-for-mysql-task-in-your-cicd-deployment-pipeline"></a>Een Azure data base for MySQL-taak configureren in uw CI/CD-implementatie pijplijn
-Af en toe moet u wijzigingen in uw data base implementeren. In dergelijke gevallen kunt u doorlopende integratie (CI) en continue levering (CD) via [Azure-pijp lijnen](https://azure.microsoft.com/services/devops/pipelines/) gebruiken en een taak voor [uw MySQL-server](/azure/devops/pipelines/tasks/deploy/azure-mysql-deployment?view=azure-devops&preserve-view=true) gebruiken om de data base bij te werken door er een aangepast script op uit te voeren.
+Af en toe moet u wijzigingen in uw data base implementeren. In dergelijke gevallen kunt u doorlopende integratie (CI) en continue levering (CD) via [Azure-pijp lijnen](https://azure.microsoft.com/services/devops/pipelines/) gebruiken en een taak voor [uw MySQL-server](/azure/devops/pipelines/tasks/deploy/azure-mysql-deployment) gebruiken om de data base bij te werken door er een aangepast script op uit te voeren.
 
 ### <a name="use-an-effective-process-for-manual-database-deployment"></a>Een effectief proces gebruiken voor hand matige implementatie van de data base 
 Voer tijdens hand matige implementatie van de data base de volgende stappen uit om de downtime te minimaliseren of het risico op mislukte implementatie te verminderen: 

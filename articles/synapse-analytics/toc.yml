@@ -1131,6 +1131,8 @@
           href: ./machine-learning/tutorial-cognitive-services-sentiment.md
         - name: Anomaliedetectie met Cognitive Services
           href: ./machine-learning/tutorial-cognitive-services-anomaly.md
+        - name: Machine learning-toepassingen maken met micro Soft Machine Learning voor Apache Spark (preview-versie)
+          href: ./machine-learning/tutorial-build-applications-use-mmlspark.md
 - name: Data Catalog en governance
   items:
     - name: Snelstartgidsen

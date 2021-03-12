@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/18/2021
 ms.author: jeedes
-ms.openlocfilehash: 1d66396b2d97a7f33158f91025f5735c7714cd65
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 537378ef11333bd8942a61ab2bbb4e8a251c2b59
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99221043"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196809"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github-ae"></a>Zelfstudie: Azure Active Directory-integratie met GitHub AE voor eenmalige aanmelding
 
@@ -101,9 +101,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Klik op **groepen selecteren** en zoek de **groep** op die u wilt toevoegen aan deze claim, waarbij de leden beheerders voor GHAE moeten zijn.
 
-1. Selecteer **kenmerk** voor **bron** en voer **waar** in voor de **waarde**. 
+1. Selecteer het **kenmerk** voor de **bron** en voer **waar** (zonder aanhalings tekens) in voor de **waarde**. 
 
-10. Klik op **Opslaan**.
+1. Klik op **Opslaan**.
 
     ![claim beheren](./media/github-ae-tutorial/administrator.png)
 
@@ -112,7 +112,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
-    ![De link om het certificaat te downloaden](common/certificateBase64.png)
+    ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
 1. In de sectie **GitHub AE instellen** kopieert u de juiste URL('s) op basis van uw behoeften.
 

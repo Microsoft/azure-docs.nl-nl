@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 7c477655dfb24eebab9a2669697d9ef610088198
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 3fe6ee8336872c04e85b732713494adf0fefa28a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99592021"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011439"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Voorgestelde vragen over actieve trainingen in de Knowledge Base accepteren
 
@@ -79,25 +79,24 @@ Wanneer u deze app opnieuw importeert, gaat het actieve leer proces verder met h
 
 Een bot of andere client toepassing moet de volgende architectuur stroom gebruiken om actief leren te gebruiken:
 
-* Bot [haalt het antwoord op uit de Knowledge Base](#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers) met de GENERATEANSWER-API met behulp van de `top` eigenschap om een aantal antwoorden op te halen.
+1. Bot [haalt het antwoord op uit de Knowledge Base](#use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers) met de GENERATEANSWER-API met behulp van de `top` eigenschap om een aantal antwoorden op te halen.
 
-    #### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Gebruik de eigenschap Top in de GenerateAnswer-aanvraag om verschillende overeenkomende antwoorden te verkrijgen
-
-    Bij het indienen van een vraag om QnA Maker voor een antwoord, `top` stelt de eigenschap van de JSON-hoofd tekst het aantal antwoorden in dat moet worden geretourneerd.
-
-    ```json
-    {
-        "question": "wi-fi",
-        "isTest": false,
-        "top": 3
-    }
-    ```
-
-* Bot bepaalt expliciete feedback:
+2. Bot bepaalt expliciete feedback:
     * Met uw eigen [aangepaste bedrijfs logica](#use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user)filtert u de lage scores.
     * In de bot of client-toepassing geeft u een lijst met mogelijke antwoorden op de gebruiker weer en het geselecteerde antwoord van de gebruiker ophalen.
-* Bot [stuurt het geselecteerde antwoord terug naar QnA Maker](#bot-framework-sample-code) met de [trein-API](#train-api).
+3. Bot [stuurt het geselecteerde antwoord terug naar QnA Maker](#bot-framework-sample-code) met de [trein-API](#train-api).
 
+### <a name="use-the-top-property-in-the-generateanswer-request-to-get-several-matching-answers"></a>Gebruik de eigenschap Top in de GenerateAnswer-aanvraag om verschillende overeenkomende antwoorden te verkrijgen
+
+Bij het indienen van een vraag om QnA Maker voor een antwoord, `top` stelt de eigenschap van de JSON-hoofd tekst het aantal antwoorden in dat moet worden geretourneerd.
+
+```json
+{
+    "question": "wi-fi",
+    "isTest": false,
+    "top": 3
+}
+```
 
 ### <a name="use-the-score-property-along-with-business-logic-to-get-list-of-answers-to-show-user"></a>Gebruik de eigenschap Score samen met bedrijfs logica om een lijst met antwoorden te krijgen voor weer geven gebruiker
 

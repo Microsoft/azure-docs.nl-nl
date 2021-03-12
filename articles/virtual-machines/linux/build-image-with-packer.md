@@ -2,18 +2,19 @@
 title: Linux Azure VM-installatie kopieën maken met Packer
 description: Meer informatie over het gebruik van Packer voor het maken van installatie kopieën van virtuele Linux-machines in azure
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/07/2019
 ms.author: cynthn
-ms.openlocfilehash: 29a0c47bf24ecd916fb9402ffcb2a3ff13a36a84
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.collection: linux
+ms.openlocfilehash: 4d85106cb78b5f4799a78d18463d83594f54dbac
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016417"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556737"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Hoe kan ik met behulp van Packer installatie kopieën voor virtuele Linux-machines maken in azure?
 Elke virtuele machine (VM) in azure wordt gemaakt op basis van een installatie kopie die de Linux-distributie-en besturingssysteem versie definieert. Installatie kopieën kunnen vooraf geïnstalleerde toepassingen en configuraties bevatten. De Azure Marketplace biedt veel kopieën van de eerste en derde partij voor de meeste gang bare distributies en toepassings omgevingen, of u kunt uw eigen aangepaste installatie kopieën maken die zijn afgestemd op uw behoeften. In dit artikel wordt beschreven hoe u met behulp van de open source tool [Packer](https://www.packer.io/) aangepaste installatie kopieën in azure definieert en bouwt.

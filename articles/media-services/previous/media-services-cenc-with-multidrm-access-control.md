@@ -3,7 +3,7 @@ title: Ontwerp van een inhouds beschermings systeem met toegangs beheer met Azur
 description: Meer informatie over licenties voor de micro soft Smooth Streaming client Porting kit.
 services: media-services
 documentationcenter: ''
-author: willzhan
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,16 +11,16 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/14/2019
+ms.date: 03/10/2021
 ms.author: willzhan
 ms.reviewer: kilroyh;yanmf;juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b98b66d8f0350c32e89d62d776ee1288d9271712
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1a4f151b597b57b77fa6517c6ea0d586c1106986
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010908"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017134"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Ontwerp van een inhouds beschermings systeem met toegangs beheer met Azure Media Services
 
@@ -28,7 +28,7 @@ ms.locfileid: "96010908"
 
 ## <a name="overview"></a>Overzicht
 
-Het ontwerpen en bouwen van een Digital Rights Management-subsysteem (DRM) voor een over-the-top (OTT) of online streaming-oplossing is een complexe taak. Opera tors/online video providers doen deze taak doorgaans door aan gespecialiseerde DRM-service providers. Het doel van dit document is een referentie ontwerp en implementatie van een end-to-end DRM-subsysteem in een OTT of online streaming-oplossing te presen teren.
+Het ontwerpen en bouwen van een digital rights management-subsysteem (DRM) voor een over-the-top (OTT) of online streaming-oplossing is een complexe taak. Opera tors/online video providers doen deze taak doorgaans door aan gespecialiseerde DRM-service providers. Het doel van dit document is een referentie ontwerp en implementatie van een end-to-end DRM-subsysteem in een OTT of online streaming-oplossing te presen teren.
 
 De doel lezers voor dit document zijn technici die werken in DRM-subsystemen van OTT of online streaming/multiscreen-oplossingen of lezers die geïnteresseerd zijn in DRM-subsystemen. De veronderstelling is dat lezers bekend zijn met ten minste één van de DRM-technologieën op de markt, zoals PlayReady, Widevine, FairPlay of Adobe Access.
 

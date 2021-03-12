@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 08/03/2020
+ms.date: 03/04/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d5671626e05145f79c3ad5fc0ecdb5628ac9421
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 7f316b17096e1241fe23cbf2c965122fd8966522
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102427127"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630874"
 ---
 # <a name="conditional-access-users-and-groups"></a>Voorwaardelijke toegang: gebruikers en groepen
 
@@ -38,7 +38,7 @@ De volgende opties zijn beschikbaar voor opname bij het maken van beleid voor vo
    - Alle gast-en externe gebruikers
       - Deze selectie omvat alle B2B-gasten en externe gebruikers, inclusief alle gebruikers waarvoor het `user type` kenmerk is ingesteld op `guest` . Deze selectie geldt ook voor elke externe gebruiker die is aangemeld vanuit een andere organisatie, zoals een Cloud Solution Provider (CSP). 
    - Directory-rollen
-      - Hiermee kunnen beheerders specifieke Azure AD-Directory rollen selecteren die worden gebruikt voor het bepalen van de toewijzing. Bijvoorbeeld: organisaties kunnen een meer beperkend beleid maken voor gebruikers aan wie de rol van globale beheerder is toegewezen.
+      - Hiermee kunnen beheerders specifieke ingebouwde Azure AD-Directory rollen selecteren die worden gebruikt om de beleids toewijzing te bepalen. Bijvoorbeeld: organisaties kunnen een meer beperkend beleid maken voor gebruikers aan wie de rol van globale beheerder is toegewezen. Andere typen rollen worden niet ondersteund, met inbegrip van Directory rollen met administratieve eenheden, aangepaste rollen.
    - Gebruikers en groepen
       - Hiermee kunnen specifieke sets van gebruikers worden bereikt. Organisaties kunnen bijvoorbeeld een groep selecteren die alle leden van de afdeling HR bevat wanneer een HR-app is geselecteerd als de Cloud-app. Een groep kan elk wille keurig type groep in azure AD zijn, met inbegrip van dynamische of toegewezen beveiligings-en distributie groepen. Het beleid wordt toegepast op geneste gebruikers en groepen.
 

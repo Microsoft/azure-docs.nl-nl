@@ -6,12 +6,12 @@ author: bwren
 ms.author: bwren
 ms.date: 12/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: 7aa8221c960685149a5d475665be105acaf7aa15
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: bb2e12082b80c397eec27409b1177379a92fdd7d
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102046666"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634155"
 ---
 # <a name="enable-vm-insights-overview"></a>Overzicht van VM Insights inschakelen
 
@@ -54,6 +54,7 @@ VM Insights ondersteunt alle besturings systemen die ondersteuning bieden voor d
 > [!IMPORTANT]
 > De functie voor het gebruik van de VM Insights-gast heeft een beperkte ondersteuning voor het besturings systeem in de open bare preview-versie. Zie [VM Insights-gast status inschakelen (preview)](../vm/vminsights-health-enable.md) voor een gedetailleerde lijst.
 
+### <a name="linux-considerations"></a>Linux-overwegingen
 Raadpleeg de volgende lijst met overwegingen voor Linux-ondersteuning van de afhankelijkheids agent die VM Insights ondersteunt:
 
 - Alleen standaard- en SMP Linux kernelversies worden ondersteund.
@@ -61,7 +62,22 @@ Raadpleeg de volgende lijst met overwegingen voor Linux-ondersteuning van de afh
 - Aangepaste kernels, met inbegrip van hercompilaties van standaard-kernels, worden niet ondersteund.
 - Voor Debian andere distributies dan versie 9,4 is de functie map niet ondersteund en is de functie prestaties alleen beschikbaar vanuit het Azure Monitor menu. Het is niet rechtstreeks beschikbaar vanuit het linkerdeel venster van de Azure-VM.
 - De CentOSPlus-kernel wordt ondersteund.
-- Er moet een patch worden uitgevoerd voor de Linux-kernel voor het Spectre-beveiligings probleem. Neem contact op met de leverancier van de Linux-distributie voor meer informatie.
+
+De Linux-kernel moet worden bijgewerkt voor de beveiligings lekken Spectre en Meltdown. Neem contact op met de leverancier van de Linux-distributie voor meer informatie. Voer de volgende opdracht uit om te controleren op beschikbaar als Spectre/Meltdown is verminderd:
+
+```
+$ grep . /sys/devices/system/cpu/vulnerabilities/*
+```
+
+De uitvoer voor deze opdracht ziet er ongeveer als volgt uit en geeft aan of een computer kwetsbaar is voor een van beide problemen. Als deze bestanden ontbreken, wordt de computer niet geïnstalleerd.
+
+```
+/sys/devices/system/cpu/vulnerabilities/meltdown:Mitigation: PTI
+/sys/devices/system/cpu/vulnerabilities/spectre_v1:Vulnerable
+/sys/devices/system/cpu/vulnerabilities/spectre_v2:Vulnerable: Minimal generic ASM retpoline
+```
+
+
 ## <a name="log-analytics-workspace"></a>Log Analytics-werkruimte
 Voor VM-inzichten is een Log Analytics-werk ruimte vereist. Zie [log Analytics werkruimte configureren voor VM Insights](vminsights-configure-workspace.md) voor meer informatie en vereisten van deze werk ruimte.
 ## <a name="agents"></a>Agents

@@ -11,18 +11,16 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 98310f65767efc6081451d9931c4ea9772df5f3b
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: fc48c9b8a0a7510dd8792c959c1f63a0340f89ce
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102609393"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011201"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
-
->Ontvang een melding over wanneer u deze pagina voor updates opnieuw moet bezoeken door deze URL te kopiëren en te plakken: `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+v3+release+notes%22&locale=en-us` in uw RSS-feed-lezer.
 
 Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u informatie over:
 
@@ -32,12 +30,6 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Afgeschafte functionaliteit
 
 ## <a name="known-issues"></a>Bekende problemen
-
-> [!NOTE]
-> U kunt de [Azure Portal](https://portal.azure.com/) gebruiken om v3 [Live-gebeurtenissen](live-events-outputs-concept.md)te beheren, v3- [assets](assets-concept.md) en-taken weer te geven, informatie over het openen van api's te verkrijgen, inhoud te versleutelen. Gebruik voor alle andere beheer taken (bijvoorbeeld trans formaties en taken beheren) de [rest API](/rest/api/media/accountfilters), [cli](/cli/azure/ams)of een van de ondersteunde [sdk's](media-services-apis-overview.md#sdks).
->
-> Zie voor meer informatie: [de Azure Portal beperkingen voor Media Services v3](frequently-asked-questions.md#what-are-the-azure-portal-limitations-for-media-services-v3).
-
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -54,20 +46,22 @@ Naast aangepaste code ring zijn de volgende nieuwe ingebouwde HEVC-coderings def
 - H265SingleBitrate1080p
 - H265SingleBitrate4K
 
-
 Klanten die voorheen HEVC gebruiken in de Premium encoder van de v2-API, moeten migreren om de nieuwe ondersteuning voor HEVC-code ring te gebruiken in de standaard encoder.
 
 ### <a name="azure-media-services-v2-api-and-sdks-deprecation-announcement"></a>Aankondiging van Azure Media Services v2 API en Sdk's-afschaffing
 
 #### <a name="update-your-azure-media-services-rest-api-and-sdks-to-v3-by-29-february-2024"></a>Werk uw Azure Media Services REST API en Sdk's bij naar v3 op 29 februari 2024
 
-Omdat versie 3 van Azure Media Services REST API en client-Sdk's voor .NET en Java meer mogelijkheden hebben dan versie 2, wordt versie 2 van de Azure Media Services REST API en de client-Sdk's voor .NET en Java buiten gebruik gesteld. We raden u aan de switch sneller te laten profiteren van de uitgebreide voor delen van versie 3 van Azure Media Services REST API en de client-Sdk's voor .NET en Java. Versie 3 biedt: 
+Omdat versie 3 van Azure Media Services REST API en client-Sdk's voor .NET en Java meer mogelijkheden hebben dan versie 2, wordt versie 2 van de Azure Media Services REST API en de client-Sdk's voor .NET en Java buiten gebruik gesteld.
+
+We raden u aan de switch sneller te laten profiteren van de uitgebreide voor delen van versie 3 van Azure Media Services REST API en de client-Sdk's voor .NET en Java.
+Versie 3 biedt:
  
 - 24x7 ondersteuning voor Live-gebeurtenissen
 - ARM REST Api's, client-Sdk's voor .NET core, Node.js, Python, Java, Go en Ruby.
-- Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://review.docs.microsoft.com/en-us/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
+- Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://review.docs.microsoft.com/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
 
-#### <a name="action-required"></a>Actie vereist:
+#### <a name="action-required"></a>Actie vereist
 
 Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](https://go.microsoft.com/fwlink/?linkid=2149150&clcid=0x409) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
 **Na 29 februari 2024** wordt door Azure Media Services geen verkeer meer geaccepteerd op de rest API van versie 2, de arm Account Management API-versie 2015-10-01 of van de sdk's van versie 2 .net client. Dit geldt ook voor open source client-SDK'S van derden die de API van versie 2 kunnen aanroepen.  
@@ -76,9 +70,9 @@ Zie de officiële [aankondiging van Azure-updates](https://azure.microsoft.com/u
 
 ### <a name="standard-encoder-support-for-v2-api-features"></a>Standard encoder-ondersteuning voor v2 API-functies
 
-Naast de nieuwe, toegevoegde ondersteuning voor HEVC (H. 265)-code ring zijn de volgende functies nu beschikbaar in de 2020-05-01-versie van de coderings-API. 
+Naast de nieuwe, toegevoegde ondersteuning voor HEVC (H. 265)-code ring zijn de volgende functies nu beschikbaar in de 2020-05-01-versie van de coderings-API.
 
-- Meerdere invoer bestanden worden nu ondersteund met behulp van de nieuwe **JobInputClip** -ondersteuning. 
+- Meerdere invoer bestanden worden nu ondersteund met behulp van de nieuwe **JobInputClip** -ondersteuning.
     - Er is een voor beeld beschikbaar voor .NET waarin wordt getoond hoe [twee assets samen worden gecombineerd](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/main/VideoEncoding/EncodingWithMESCustomStitchTwoAssets).
 - Met de optie voor het bijhouden van audio nummers kunnen klanten de inkomende audio sporen selecteren en toewijzen en deze naar de uitvoer voor code ring routeren
     - Zie de [rest API OpenAPI voor meer informatie](https://github.com/Azure/azure-rest-api-specs/blob/8d15dc681b081cca983e4d67fbf6441841d94ce4/specification/mediaservices/resource-manager/Microsoft.Media/stable/2020-05-01/Encoding.json#L385) over **AudioTrackDescriptor** en het bijhouden van de selectie
@@ -96,6 +90,15 @@ Werk de nieuwste client-Sdk's in uw code bases bij met behulp van uw pakket behe
 - [Node.js type script-versie 8.1.0](https://www.npmjs.com/package/@azure/arm-mediaservices)
 - [Python Azure-verbeheerder-Media 3.1.0](https://pypi.org/project/azure-mgmt-media/)
 - [Java SDK 1.0.0-Beta. 2](https://search.maven.org/artifact/com.azure.resourcemanager/azure-resourcemanager-mediaservices/1.0.0-beta.2/jar)
+
+### <a name="new-security-features-available-in-the-2020-05-01-version-of-the-azure-media-services-api"></a>Nieuwe beveiligings functies die beschikbaar zijn in de 2020-05-01-versie van de Azure Media Services-API
+
+- Door de **[klant beheerde sleutels](concept-use-customer-managed-keys-byok.md)**: inhouds sleutels en andere gegevens die zijn opgeslagen in accounts die zijn gemaakt met de versie-API 2020-05-01, worden versleuteld met een account sleutel. Klanten kunnen een sleutel opgeven om de account sleutel te versleutelen.
+
+- **[Vertrouwde opslag](concept-trusted-storage.md)**: Media Services kunnen worden geconfigureerd voor toegang tot Azure Storage met behulp van een beheerde identiteit die is gekoppeld aan het Media Services-account. Wanneer opslag accounts worden geopend met behulp van een beheerde identiteit, kunnen klanten meer beperkende netwerk-Acl's configureren voor het opslag account zonder dat Media Services scenario's worden geblokkeerd.
+
+- **[Beheerde identiteiten](concept-managed-identities.md)**: klanten kunnen een door het systeem toegewezen beheerde identiteit inschakelen voor een Media Services account om toegang te bieden tot sleutel kluizen (voor door de klant beheerde sleutels) en opslag accounts (voor vertrouwde opslag).
+
 
 ### <a name="updated-typescript-nodejs-samples-using-isomorphic-sdk-for-javascript"></a>Bijgewerkte type script-Node.js-voor beelden met isomorphic SDK voor Java script
 
@@ -143,7 +146,8 @@ Met Live Encoding wordt nu de mogelijkheid toegevoegd voor het uitvoeren van vas
 ## <a name="august-2020"></a>Augustus 2020
 
 ### <a name="dynamic-encryption"></a>Dynamische versleuteling
-Ondersteuning voor de verouderde (PIFF 1,1) versleuteling van de oudere PlayReady-bestands indeling is nu beschikbaar in de dynamische Pakketset. Dit biedt ondersteuning voor verouderde slimme TV-sets van Samsung en LG waarmee de vroege concepten van de Common Encryption Standard (CENC) die door micro soft zijn gepubliceerd, zijn geïmplementeerd.  De PIFF 1,1-indeling wordt ook wel bekend als de versleutelings indeling die eerder werd ondersteund door de Silverlight-client bibliotheek. Het enige use-case scenario voor deze versleutelings indeling is het doel van de verouderde Smart TV-markt als er een niet-gelastig aantal Smart Tv's in sommige regio's wordt ondersteund dat alleen ondersteuning biedt voor Smooth Streaming met PIFF 1,1-versleuteling. 
+
+Ondersteuning voor de verouderde (PIFF 1,1) versleuteling van de oudere PlayReady-bestands indeling is nu beschikbaar in de dynamische Pakketset. Dit biedt ondersteuning voor verouderde slimme TV-sets van Samsung en LG waarmee de vroege concepten van de Common Encryption Standard (CENC) die door micro soft zijn gepubliceerd, zijn geïmplementeerd.  De PIFF 1,1-indeling wordt ook wel bekend als de versleutelings indeling die eerder werd ondersteund door de Silverlight-client bibliotheek. Het enige use-case scenario voor deze versleutelings indeling is het doel van de verouderde Smart TV-markt als er een niet-gelastig aantal Smart Tv's in sommige regio's wordt ondersteund dat alleen ondersteuning biedt voor Smooth Streaming met PIFF 1,1-versleuteling.
 
 Als u de nieuwe ondersteuning voor PIFF 1,1-versleuteling wilt gebruiken, wijzigt u de versleutelings waarde in ' piff ' in het URL-pad van de streaming-Locator. Zie [Content Protection-overzicht](content-protection-overview.md) voor meer informatie.
 Bijvoorbeeld: `https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(encryption=piff)`|

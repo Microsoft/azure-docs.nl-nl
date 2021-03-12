@@ -303,6 +303,8 @@
       href: /samples/browse/?expanded=azure&products=azure-iot-central
     - name: Opties voor ondersteuning en hulp
       href: ../iot-fundamentals/iot-support-help.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
+    - name: IoT-woorden lijst
+      href: ../iot-fundamentals/iot-glossary.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json
     - name: Azure IoT-services
       items:
         - name: IoT Hub

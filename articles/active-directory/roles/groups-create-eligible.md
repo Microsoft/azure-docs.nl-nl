@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f06a1e9ea83fc7ad758ad17245ffa5d7ca973f6
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 9bf0a9ca193be9fd61d0b284338c0f581c9f91e3
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742095"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012051"
 ---
 # <a name="create-a-role-assignable-group-in-azure-active-directory"></a>Een door een functie toewijs bare groep maken in Azure Active Directory
 
@@ -51,14 +51,14 @@ De groep wordt gemaakt met de rollen die u mogelijk hebt toegewezen.
 ### <a name="install-the-azure-ad-preview-module"></a>De Azure AD-preview-module installeren
 
 ```powershell
-install-module azureadpreview
-import-module azureadpreview
+Install-Module -Name AzureADPreview
+Import-Module -Name AzureADPreview
 ```
 
 Als u wilt controleren of de module gereed is voor gebruik, geeft u de volgende opdracht:
 
 ```powershell
-get-module azureadpreview
+Get-Module -Name AzureADPreview
 ```
 
 ### <a name="create-a-group-that-can-be-assigned-to-role"></a>Een groep maken die kan worden toegewezen aan een rol
@@ -73,9 +73,9 @@ Voor dit type groep is `isPublic` altijd False en is `isSecurityEnabled` altijd 
 
 ```powershell
 #Basic set up
-install-module azureadpreview
-import-module azureadpreview
-get-module azureadpreview
+Install-Module -Name AzureADPreview
+Import-Module -Name AzureADPreview
+Get-Module -Name AzureADPreview
 
 #Connect to Azure AD. Sign in as Privileged Role Administrator or Global Administrator. Only these two roles can create a role-assignable group.
 Connect-AzureAD
@@ -107,7 +107,7 @@ Add-AzureADGroupMember -ObjectId $roleAssignablegroup.Id -RefObjectId $member.Ob
 
 ### <a name="create-a-role-assignable-group-in-azure-ad"></a>Een door een functie toewijs bare groep maken in azure AD
 
-```powershell
+```http
 POST https://graph.microsoft.com/beta/groups
 {
 "description": "This group is assigned to Helpdesk Administrator built-in role of Azure AD.",

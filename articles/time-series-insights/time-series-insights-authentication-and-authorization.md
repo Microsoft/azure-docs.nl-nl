@@ -11,19 +11,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/23/2021
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 02d9edd555566f86fd8bb09cf4acef4956ae53e4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 88fd575d40cc31f12f052158bda0aed9a5335555
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102041209"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103009263"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Verificatie en autorisatie voor Azure Time Series Insights-API
 
-Afhankelijk van de behoeften van uw bedrijf bevat uw oplossing mogelijk een of meer client toepassingen die u gebruikt om te communiceren met de [api's](/rest/api/time-series-insights/reference-data-access-overview)van uw Azure time series Insights-omgeving. Azure Time Series Insights voert verificatie uit met behulp [van Azure AD-beveiligings tokens op basis van OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims). Als u uw client (s) wilt verifiëren, moet u een Bearer-token met de juiste machtigingen krijgen en dit samen met uw API-aanroepen door geven. In dit document worden verschillende methoden voor het verkrijgen van referenties beschreven die u kunt gebruiken om een Bearer-token en verificatie te verkrijgen.
-
-
-  een app registreren in Azure Active Directory met behulp van de nieuwe Azure Active Directory-Blade. Met apps die zijn geregistreerd in Azure Active Directory kunnen gebruikers verifiëren en worden gemachtigd om de Azure time series Insight-API te gebruiken die is gekoppeld aan een Azure Time Series Insights omgeving.
+Afhankelijk van de behoeften van uw bedrijf bevat uw oplossing mogelijk een of meer client toepassingen die u gebruikt om te communiceren met de [api's](/rest/api/time-series-insights/reference-data-access-overview)van uw Azure time series Insights-omgeving. Azure Time Series Insights voert verificatie uit met behulp [van Azure AD-beveiligings tokens op basis van OAUTH 2,0](../active-directory/develop/security-tokens.md#json-web-tokens-and-claims). Als u uw client (s) wilt verifiëren, moet u een Bearer-token met de juiste machtigingen krijgen en dit samen met uw API-aanroepen door geven. In dit document worden verschillende methoden beschreven voor het verkrijgen van referenties die u kunt gebruiken voor het verkrijgen van een Bearer-token en verificatie, waaronder het gebruik van beheerde identiteits-en Azure Active Directory app-registratie.
 
 ## <a name="managed-identities"></a>Beheerde identiteiten
 
@@ -108,10 +105,7 @@ Zodra de beheerde identiteit of app-registratie is ingericht en een rol is toege
 
 Volg de richt lijnen in de [tokens voor het verkrijgen van Azure-resources](../app-service/overview-managed-identity.md)wanneer u toegang hebt tot Azure app service of functies.
 
-> [!TIP]
-> Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via de [Azure Identity client-bibliotheek](/dotnet/api/overview/azure/identity-readme) voor .net. 
-
-Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via het pakket micro soft. Azure. Services. AppAuthentication. Dit pakket is populair vanwege de eenvoud en beveiligings voordelen. Ontwikkel aars kunnen code eenmaal schrijven en de client bibliotheek laten bepalen hoe verificatie wordt uitgevoerd op basis van de toepassings omgeving-of op een ontwikkel werkstation met behulp van een ontwikkelaars account of geïmplementeerd in azure met behulp van een beheerde service-identiteit. Voor migratie richtlijnen vanuit de voorafgaande AppAuthentication-bibliotheek Lees [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](/dotnet/api/overview/azure/app-auth-migration).
+Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met een beheerde identiteit via de [Azure Identity client-bibliotheek](/dotnet/api/overview/azure/identity-readme) voor .net. Deze client bibliotheek is populair vanwege de eenvoud en beveiligings voordelen. Ontwikkel aars kunnen code eenmaal schrijven en de client bibliotheek laten bepalen hoe verificatie wordt uitgevoerd op basis van de toepassings omgeving-of op een ontwikkel werkstation met behulp van een ontwikkelaars account of geïmplementeerd in azure met behulp van een beheerde service-identiteit. Voor migratie richtlijnen vanuit de voorafgaande AppAuthentication-bibliotheek Lees [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](/dotnet/api/overview/azure/app-auth-migration).
 
 Een token aanvragen voor Azure Time Series Insights met behulp van C# en de Azure Identity client-bibliotheek voor .NET:
 

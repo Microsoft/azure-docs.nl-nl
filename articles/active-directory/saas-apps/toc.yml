@@ -2140,6 +2140,8 @@
           href: bpanda-provisioning-tutorial.md
         - name: Brivo OnAir-identiteitsconnector
           href: brivo-onair-identity-connector-provisioning-tutorial.md
+        - name: Britive
+          href: britive-provisioning-tutorial.md
         - name: Cerner Central
           href: cernercentral-provisioning-tutorial.md
         - name: Cisco Webex

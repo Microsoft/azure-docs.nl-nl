@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 163bd7dbdac4de7b7d9c1657ac3debf45382a27a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 746845004a7a1baf1cafb872aae9322177879b6b
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027268"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011099"
 ---
 # <a name="about-transferring-billing-ownership-for-an-azure-subscription"></a>De eigendom van facturering voor een Azure-abonnement overdragen
 
@@ -30,16 +30,30 @@ Als u een EA-klant (Enterprise Agreement) bent, kan uw ondernemingsbeheerder het
 
 Alleen de factureringsbeheerder van een account kan het eigendom van een abonnement overdragen.
 
-## <a name="determine-account-billing-administrator"></a>Factureringsbeheerder van account bepalen
+## <a name="determine-if-you-are-a-billing-administrator"></a>Bepalen of u een facturerings beheerder bent
 
 <a name="whoisaa"></a>
 
-De factureringsbeheerder is de persoon die gemachtigd is om de facturering voor een account te beheren. Ze hebben toegang tot de facturering in de [Azure-portal](https://portal.azure.com) en kunnen diverse factureringstaken uitvoeren. Ze kunnen bijvoorbeeld abonnementen maken, facturen weergeven en betalen van facturen of betalingswijzen bijwerken.
+Als u de overdracht wilt uitvoeren, zoekt u de persoon die toegang heeft tot het beheren van de facturering voor een account. Ze hebben toegang tot de facturering in de [Azure-portal](https://portal.azure.com) en kunnen diverse factureringstaken uitvoeren. Ze kunnen bijvoorbeeld abonnementen maken, facturen weergeven en betalen van facturen of betalingswijzen bijwerken.
 
-Ga naar de pagina [Kostenbeheer en facturering in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview) om accounts te identificeren waarvoor u een factureringsbeheerder bent. Selecteer in het linkerdeelvenster **Alle factureringsbereiken**. Op de pagina met abonnementen worden alle abonnementen weergegeven waarvoor u factureringsbeheerder bent.
+### <a name="check-if-you-have-billing-access"></a>Controleren of u toegang hebt tot facturering
 
-Als u niet zeker weet wie de accountbeheerder is voor een abonnement, gaat u naar de [Abonnementenpagina in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). Selecteer het abonnement dat u wilt controleren en kijk vervolgens bij **Instellingen**. Selecteer **Eigenschappen**. De accountbeheerder van het abonnement wordt weergegeven in het vak **Accountbeheerder**.
+1. Als u accounts wilt identificeren waarvoor u toegang hebt tot de facturering, gaat u naar de [pagina Cost Management + facturering in azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/Overview).
 
+2. Selecteer **facturerings accounts** in het menu aan de linkerkant.
+
+3. Op de pagina overzicht van het **facturerings bereik** worden alle abonnementen weer gegeven waar u toegang hebt tot de facturerings gegevens.
+
+### <a name="check-by-subscription"></a>Controleren op abonnement
+
+1. Als u niet zeker weet wie de accountbeheerder is voor een abonnement, gaat u naar de [Abonnementenpagina in Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade). 
+
+2. Selecteer het abonnement dat u wilt controleren.
+
+3. Selecteer onder de kop **instellingen** de optie **Eigenschappen**. Zie het vak **account beheer** voor meer informatie over wie de account beheerder van het abonnement is.
+
+   > [!NOTE]
+   > Niet alle typen abonnementen geven de eigenschappen weer.
 
 ## <a name="supported-subscription-types"></a>Ondersteunde abonnementstypen
 

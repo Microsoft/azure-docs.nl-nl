@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 17d9d3bf787b67716fb2270cd055e30a4fefbe0f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bebc2e629193944c840948c9c573462a43e3032e
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702195"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201708"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -111,7 +111,7 @@ Schakel als volgt replicatie in:
     > Als u een andere beschikbaarheidsoptie wilt selecteren voor een set virtuele machines, gaat u naar stap 1 en herhaalt u de stappen door andere beschikbaarheidsopties te selecteren na het starten van de replicatie voor één set virtuele machines.
 
 
- ![VM-rekeninstellingen](./media/tutorial-migrate-vmware/compute-settings.png)
+
 
 12. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
    
@@ -189,7 +189,7 @@ Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de 
 ## <a name="complete-the-migration"></a>Migratie voltooien
 
 1. Nadat de migratie is voltooid, klikt u met de rechtermuisknop op de VM > **Replicatie stoppen**. Hiermee stopt de replicatie voor de on-premises machine, en worden de gegevens over de replicatiestatus voor de VM opgeschoond.
-2. Installeer de Azure-VM-[Linux](../virtual-machines/extensions/agent-linux.md)-agent op de gemigreerde computers, als op de machine het Linux-besturingssysteem wordt uitgevoerd. Tijdens de migratie wordt de VM-agent voor Windows-VM's automatisch geïnstalleerd.
+2. Tijdens de migratie wordt de VM-agent voor Windows-Vm's en Linux automatisch geïnstalleerd. Bekijk de [vereisten](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements) voor de Azure VM Linux-agent op de gemigreerde computers als de computer Linux-besturings systeem heeft om ervoor te zorgen dat de installatie van de Linux VM-agent correct wordt uitgevoerd. 
 3. Voer correcties van de app uit na de migratie, zoals updates van de databaseverbindingsreeksen en webserverconfiguraties.
 4. Voer acceptatietesten van de toepassing en de migratie uit op de gemigreerde toepassing die nu wordt uitgevoerd in Azure.
 5. Leid het verkeer naar het gemigreerde Azure VM-exemplaar.

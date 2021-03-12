@@ -108,7 +108,10 @@
         - name: Reacties op aanbevelingen automatiseren
           displayName: workflow
           href: workflow-automation.md
-        - name: Een resource uitsluiten van een aanbeveling
+        - name: Een aanbeveling uitschakelen
+          href: tutorial-security-policy.md#disable-security-policies-and-disable-recommendations
+        - name: 'Aanbevelingen per resource, abonnement of beheer groep uitsluiten'
+          displayName: disable
           href: exempt-resource.md
         - name: Aangepaste beveiligings initiatieven en-beleid maken
           href: custom-security-policies.md
@@ -233,7 +236,8 @@
       href: security-center-partner-integration.md
     - name: Netwerkresources beschermen
       href: security-center-network-recommendations.md
-    - name: Identiteit en toegang beveiligen
+    - name: MFA afdwingen en beheren
+      displayName: 'identity, access, AAD, active directory, multi-factor, authentication, multifactor, users, passwords'
       href: security-center-identity-access.md
     - name: De extra bedreigingen voor beveiliging van Security Center gebruiken
       href: other-threat-protections.md

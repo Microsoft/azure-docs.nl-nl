@@ -3,7 +3,7 @@ title: Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Serv
 description: Meer informatie over toegang tot Azure Media Services-API met Azure Active Directory-verificatie met behulp van REST.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.reviewer: willzhan; johndeu
-ms.openlocfilehash: 28719046c9a8ccc65d231244ef8b5b3f8e116282
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: a2b4e7bf03ebb1fbc197b78287cb50b3f421d713
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98694727"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017304"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Azure Active Directory-verificatie gebruiken voor toegang tot de Media Services-API met REST
 

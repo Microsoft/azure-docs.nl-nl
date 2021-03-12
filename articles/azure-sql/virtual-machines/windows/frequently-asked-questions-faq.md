@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/05/2019
 ms.author: mathoma
-ms.openlocfilehash: 91f93faded7c18a1bc24f17053231f9011080c57
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 014bbe4421bf00f35b2d80505cea288e75f8ca94
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036237"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224670"
 ---
 # <a name="frequently-asked-questions-for-sql-server-on-azure-vms"></a>Veelgestelde vragen over SQL Server op virtuele Azure-machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -244,6 +244,10 @@ In dit artikel vindt u antwoorden op enkele van de meest voorkomende vragen over
 1. **Worden gedistribueerde trans acties met MSDTC ondersteund op SQL Server Vm's?**
    
     Ja. Lokale DTC wordt ondersteund voor SQL Server 2016 SP2 en hoger. Toepassingen moeten echter worden getest wanneer er gebruik wordt gemaakt van AlwaysOn-beschikbaarheids groepen, omdat trans acties in de vlucht tijdens een failover mislukken en opnieuw moeten worden geprobeerd. Geclusterde DTC is beschikbaar vanaf Windows Server 2019. 
+    
+1. **Worden klant gegevens buiten de regio verplaatst of opgeslagen door Azure SQL-machines?**
+
+   Nee. De virtuele machine van Azure SQL en de SQL IaaS agent-extensie bevatten eigenlijk geen klant gegevens.
 
 ## <a name="sql-server-iaas-agent-extension"></a>SQL Server IaaS Agent-extensie
 

@@ -10,12 +10,12 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: a00e5d262724f4799f8b7b91a54e4b2710f4ce2b
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: 6170f91d11b47a43e15488bcbb0e91ff3f7c906e
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100008065"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616091"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-windows-device-preview"></a>Quick Start: uw eerste IoT Edge-module implementeren op een Windows-apparaat (preview)
 
@@ -51,9 +51,16 @@ Maak een resource groep voor de Cloud voor het beheren van alle resources die u 
 
 Zorg ervoor dat uw IoT Edge-apparaat voldoet aan de volgende vereisten:
 
-* Windows-PC of-Server versie 1809 of hoger
-* Ten minste 4 GB geheugen, aanbevolen 8 GB geheugen
-* 10 GB beschikbare schijfruimte
+* Edities
+  * Windows 10 versie 1809 of hoger; Build 17763 of hoger
+    * Professional, Enter prise, IoT Enter prise
+  * Windows Server 2019 build 17763 of hoger
+
+  
+* Hardwarevereisten
+  * Mini maal beschikbaar geheugen: 2 GB
+  * Minimale vrije schijf ruimte: 10 GB
+
 
 >[!NOTE]
 >Deze Snelstartgids maakt gebruik van Windows-beheer centrum voor het maken van een implementatie van IoT Edge voor Linux in Windows. U kunt ook Power shell gebruiken. Als u Power shell wilt gebruiken om uw implementatie te maken, volgt u de stappen in de hand leiding voor het [installeren en inrichten van Azure IOT Edge voor Linux op een Windows-apparaat](how-to-install-iot-edge-on-windows.md).
@@ -108,7 +115,7 @@ Installeer IoT Edge voor Linux in Windows op uw apparaat en configureer dit met 
 
 ![Diagram waarin de stap voor het starten van de IoT Edge-runtime wordt weer gegeven.](./media/quickstart/start-runtime.png)
 
-1. [Down load Windows-beheer centrum](https://aka.ms/WACDownloadEFLOW).
+1. [Down load Windows-beheer centrum](https://aka.ms/wacdownload).
 
 1. Volg de aanwijzingen in de installatie wizard om Windows-beheer centrum op uw apparaat in te stellen.
 

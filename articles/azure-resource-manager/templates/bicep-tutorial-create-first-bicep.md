@@ -2,16 +2,16 @@
 title: Zelf studie-Azure Resource Manager Bicep-bestanden maken & implementeren
 description: Maak uw eerste Bicep-bestand voor de implementatie van Azure-resources. In de zelf studie vindt u informatie over de syntaxis van het Bicep-bestand en het implementeren van een opslag account.
 author: mumian
-ms.date: 03/03/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 6a335b554fa0cfc2e12c8ddbe3e24a50fdedec0f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: b04dbb7f708a4019ae70c716d4faa05ca2c28720
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036299"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632574"
 ---
 # <a name="tutorial-create-and-deploy-first-azure-resource-manager-bicep-file"></a>Zelf studie: het eerste Azure Resource Manager Bicep-bestand maken en implementeren
 
@@ -76,7 +76,7 @@ U bent klaar om te beginnen met het leren over Bicep.
     De resource declaratie bestaat uit vier onderdelen:
 
     - **resource**: sleutel woord.
-    - **symbolische naam** (STG): een symbolische naam is een id voor het verwijzen naar de resource in uw Bicep-bestand. Het is niet wat de naam van de resource is wanneer deze wordt geïmplementeerd. De naam van de resource wordt gedefinieerd door de eigenschap **naam** .  Zie het vierde onderdeel in deze lijst. Om de zelf studies gemakkelijk te volgen, wordt **STG** gebruikt als de symbolische naam voor de bron van het opslag account in deze zelfstudie reeks.
+    - **symbolische naam** (STG): een symbolische naam is een id voor het verwijzen naar de resource in uw Bicep-bestand. Het is niet wat de naam van de resource is wanneer deze wordt geïmplementeerd. De naam van de resource wordt gedefinieerd door de eigenschap **naam** .  Zie het vierde onderdeel in deze lijst. Om de zelf studies gemakkelijk te volgen, wordt **STG** gebruikt als de symbolische naam voor de bron van het opslag account in deze zelfstudie reeks. Zie [uitvoer toevoegen](./bicep-tutorial-add-outputs.md)als u wilt zien hoe u de symbolische naam kunt gebruiken om een volledige lijst met object eigenschappen te krijgen.
     - **resource type** ( Microsoft.Storage/storageAccounts@2019-06-01 ): het bestaat uit de resource provider (micro soft. Storage), resource type (Storage accounts) en apiVersion (2019-06-01). Elke resourceprovider publiceert eigen API-versies. Met andere woorden, elk type heeft een specifieke waarde. U kunt meer typen en apiVersions vinden voor verschillende Azure-resources van [arm-sjabloon verwijzing](/azure/templates/).
     - **Eigenschappen** (alles binnen = {...}): Dit zijn de specifieke eigenschappen die u wilt opgeven voor het opgegeven resource type. Dit zijn precies dezelfde eigenschappen die voor u beschikbaar zijn in een ARM-sjabloon. Elke resource heeft een `name` eigenschap. De meeste resources hebben ook de eigenschap `location`. Hiermee wordt de regio ingesteld waarin de resource wordt geïmplementeerd. De overige eigenschappen variëren per resourcetype en API-versie. Het is belangrijk om inzicht te krijgen in het verband tussen de API-versie en de beschikbare eigenschappen. Daarom gaan we er hier dieper op in.
 

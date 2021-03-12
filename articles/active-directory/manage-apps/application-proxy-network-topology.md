@@ -1,31 +1,26 @@
 ---
-title: Aandachtspunten voor de netwerk topologie voor Azure AD-toepassingsproxy
-description: Bestrijkt overwegingen bij de netwerk topologie bij het gebruik van Azure AD-toepassingsproxy.
+title: Overwegingen voor de netwerk topologie voor Azure Active Directory-toepassingsproxy
+description: Bestrijkt overwegingen bij de netwerk topologie bij het gebruik van Azure Active Directory-toepassingsproxy.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: daveba
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/22/2019
+ms.date: 02/22/2021
 ms.author: kenwith
-ms.reviewer: harshja
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d67505e7112c41b21b2ae5e8acc834ff047a470d
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.reviewer: japere
+ms.openlocfilehash: bbab5463f0d022cb9bf155c7d33e2d81c8bdd448
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99254802"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199682"
 ---
-# <a name="network-topology-considerations-when-using-azure-active-directory-application-proxy"></a>Overwegingen voor de netwerk topologie bij het gebruik van Azure Active Directory-toepassingsproxy
+# <a name="optimize-traffic-flow-with-azure-active-directory-application-proxy"></a>De verkeers stroom optimaliseren met Azure Active Directory-toepassingsproxy
 
-In dit artikel worden de overwegingen voor netwerk topologie beschreven bij het gebruik van Azure Active Directory-toepassings proxy (Azure AD) voor het op afstand publiceren en openen van uw toepassingen.
+In dit artikel wordt uitgelegd hoe u de verkeers stroom-en netwerk topologie overwegingen optimaliseert bij het gebruik van Azure Active Directory-toepassings proxy (Azure AD) voor het extern publiceren en openen van uw toepassingen.
 
 ## <a name="traffic-flow"></a>Verkeers stroom
 
@@ -35,13 +30,32 @@ Wanneer een toepassing wordt gepubliceerd via Azure AD-toepassingsproxy, loopt h
 1. De Application proxy-service maakt verbinding met de toepassings proxy connector
 1. De Application proxy-connector maakt verbinding met de doel toepassing
 
-![Diagram van de verkeers stroom van de gebruiker naar de doel toepassing](./media/application-proxy-network-topology/application-proxy-three-hops.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-three-hops.png" alt-text="Diagram waarin de verkeers stroom van de gebruiker naar de doel toepassing wordt weer gegeven." lightbox="./media/application-proxy-network-topology/application-proxy-three-hops.png":::
 
-## <a name="tenant-location-and-application-proxy-service"></a>Tenant locatie en toepassings proxy service
+## <a name="optimize-connector-groups-to-use-closest-application-proxy-cloud-service-preview"></a>Groeps beleidsobjecten optimaliseren voor gebruik van de dichtstbijzijnde Cloud service voor de toepassing proxy (preview-versie)
 
-Wanneer u zich aanmeldt voor een Azure AD-Tenant, wordt de regio van uw Tenant bepaald door het land/de regio die u opgeeft. Wanneer u toepassings proxy inschakelt, worden de service-exemplaren van de toepassings proxy voor uw Tenant geselecteerd of gemaakt in dezelfde regio als uw Azure AD-Tenant of de dichtstbijzijnde regio.
+Wanneer u zich aanmeldt voor een Azure AD-Tenant, wordt de regio van uw Tenant bepaald door het land/de regio die u opgeeft. Wanneer u toepassings proxy inschakelt, worden de **standaard** Cloud service-exemplaren van de toepassings proxy voor uw Tenant gekozen in dezelfde regio als uw Azure AD-Tenant of de dichtstbijzijnde regio.
 
-Als het land of de regio van uw Azure AD-Tenant bijvoorbeeld het Verenigd Konink rijk is, gebruiken alle connectors van de toepassings proxy service-exemplaren in Europese data centers. Wanneer uw gebruikers toegang krijgen tot gepubliceerde toepassingen, loopt het verkeer via de service-exemplaren van de toepassings proxy op deze locatie.
+Als het land of de regio van uw Azure AD-Tenant bijvoorbeeld het Verenigd Konink rijk is, worden alle connectors van de toepassings proxy **standaard** toegewezen aan het gebruik van service-exemplaren in Europese data centers. Wanneer uw gebruikers toegang krijgen tot gepubliceerde toepassingen, loopt het verkeer via de Cloud service-exemplaren van de toepassings proxy op deze locatie.
+
+Als u connectors hebt geïnstalleerd in regio's die verschillen van uw standaard regio, kan het nuttig zijn om te wijzigen in welke regio uw connector groep is geoptimaliseerd voor het verbeteren van de prestaties die toegang hebben tot deze toepassingen. Zodra een regio is opgegeven voor een connector groep, wordt deze verbonden met Cloud Services van de toepassings proxy in de aangewezen regio.
+
+Wijs de connector groep toe aan de dichtstbijzijnde regio om de verkeers stroom te optimaliseren en de latentie te verminderen voor een connector groep. Een regio toewijzen:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/) als een toepassingsbeheerder van de map die gebruikmaakt van Application Proxy. Als het domein van de tenant bijvoorbeeld contoso.com is, moet de beheerder admin@contoso.com of een andere beheerdersalias in dat domein zijn.
+1. Selecteer uw gebruikersnaam in de rechterbovenhoek. Controleer of u bent aangemeld in een directory die gebruikmaakt van Application Proxy. Als u van directory moet veranderen, selecteert u **Schakelen tussen directory’s** en kiest u een directory die gebruikmaakt van Application Proxy.
+1. Selecteer **Azure Active Directory** in het navigatiepaneel aan de linkerkant.
+1. Selecteer onder **Beheren** de optie **Application Proxy**.
+1. Selecteer **nieuwe connector groep**, geef een **naam** op voor de connector groep.
+1. Klik vervolgens onder **Geavanceerde instellingen** en selecteer de vervolg keuzelijst onder optimaliseren voor een specifieke regio en selecteer de regio die het dichtst bij de connectors ligt.
+1. Selecteer **Maken**.
+    
+    :::image type="content" source="./media/application-proxy-network-topology/geo-routing.png" alt-text="Configureer een nieuwe connector groep." lightbox="./media/application-proxy-network-topology/geo-routing.png":::
+
+1. Zodra de nieuwe connector groep is gemaakt, kunt u selecteren welke connectors u wilt toewijzen aan deze connector groep. 
+   - U kunt alleen connectors verplaatsen naar uw connector groep als deze zich in een connector groep bevindt met de standaard regio. De beste manier is om altijd te beginnen met de connectors die in de standaard groep zijn geplaatst en deze vervolgens te verplaatsen naar de juiste connector groep.
+   - U kunt de regio van een connector groep alleen wijzigen als er **geen** connectors aan zijn toegewezen of hieraan apps zijn toegewezen.
+1. Wijs vervolgens de connector groep toe aan uw toepassingen. Wanneer er toegang wordt verkregen tot de apps, gaat het verkeer naar de Cloud service Application proxy in de regio waarin de connector groep is geoptimaliseerd.
 
 ## <a name="considerations-for-reducing-latency"></a>Overwegingen voor het verminderen van de latentie
 
@@ -96,7 +110,7 @@ Als u een speciaal VPN-of ExpressRoute hebt ingesteld met privé-peering tussen 
 
 De latentie wordt niet aangetast omdat verkeer via een specifieke verbinding loopt. U krijgt ook verbeterde latentie van de service-to-connector van de toepassings proxy omdat de connector is geïnstalleerd in een Azure-Data Center, dicht bij uw Azure AD-Tenant locatie.
 
-![Diagram van weer gave van een connector die is geïnstalleerd in een Azure-Data Center](./media/application-proxy-network-topology/application-proxy-expressroute-private.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-expressroute-private.png" alt-text="Diagram van weer gave van een connector die is geïnstalleerd in een Azure-Data Center" lightbox="./media/application-proxy-network-topology/application-proxy-expressroute-private.png":::
 
 ### <a name="other-approaches"></a>Andere benaderingen
 
@@ -124,7 +138,7 @@ Voor deze scenario's noemen we elke verbinding een ' hop ' en nummer ze voor een
 
 Dit is een eenvoudig patroon. U optimaliseert hop 3 door de connector in de buurt van de app te plaatsen. Dit is ook een natuurlijke keuze, omdat de connector doorgaans wordt geïnstalleerd met een gezichts lijn voor de app en het Data Center voor het uitvoeren van KCD-bewerkingen.
 
-![Diagram waarin gebruikers, proxy, connector en app worden weer gegeven, zijn allemaal in de Verenigde Staten](./media/application-proxy-network-topology/application-proxy-pattern1.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern1.png" alt-text="Diagram waarin gebruikers, proxy, connector en app worden weer gegeven, zijn allemaal in de Verenigde Staten." lightbox="./media/application-proxy-network-topology/application-proxy-pattern1.png":::
 
 ### <a name="use-case-2"></a>Use-case 2
 
@@ -134,7 +148,7 @@ Dit is een eenvoudig patroon. U optimaliseert hop 3 door de connector in de buur
 
 Het algemene patroon is dat u de hop 3 optimaliseert, waar u de connector in de buurt van de app plaatst. Hop 3 is doorgaans duur, als deze zich in dezelfde regio bevindt. Hop 1 kan echter duurder zijn, afhankelijk van waar de gebruiker zich bevindt, omdat gebruikers over de hele wereld toegang moeten hebben tot het toepassings proxy-exemplaar in de Verenigde Staten. Het is een goed idee dat elke proxy oplossing vergelijk bare kenmerken heeft met betrekking tot de gebruikers die wereld wijd worden verspreid.
 
-![Gebruikers zijn wereld wijd verspreid, maar alle andere gegevens bevinden zich in de VS](./media/application-proxy-network-topology/application-proxy-pattern2.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern2.png" alt-text="Gebruikers zijn wereld wijd verspreid, maar alle andere gegevens bevinden zich in de VS" lightbox="./media/application-proxy-network-topology/application-proxy-pattern2.png":::
 
 ### <a name="use-case-3"></a>Use-case 3
 
@@ -146,7 +160,7 @@ Plaats eerst de connector zo dicht mogelijk bij de app. Vervolgens gebruikt het 
 
 Als de ExpressRoute-koppeling gebruikmaakt van micro soft-peering, loopt het verkeer tussen de proxy en de connector over deze koppeling. Hop 2 heeft een geoptimaliseerde latentie.
 
-![Diagram van de ExpressRoute tussen de proxy en connector](./media/application-proxy-network-topology/application-proxy-pattern3.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern3.png" alt-text="Diagram van de ExpressRoute tussen de proxy en connector" lightbox="./media/application-proxy-network-topology/application-proxy-pattern3.png":::
 
 ### <a name="use-case-4"></a>Use-case 4
 
@@ -158,19 +172,25 @@ Plaats de connector in het Azure-Data Center dat is verbonden met het bedrijfs n
 
 De connector kan in het Azure-Data Center worden geplaatst. Omdat de connector nog steeds een regel voor een zicht heeft op de toepassing en het Data Center via het particuliere netwerk, blijft hop 3 geoptimaliseerd. Daarnaast is hop 2 verder geoptimaliseerd.
 
-![Connector in azure Data Center, ExpressRoute tussen connector en app](./media/application-proxy-network-topology/application-proxy-pattern4.png)
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern4.png" alt-text="Connector in azure Data Center, ExpressRoute tussen connector en app" lightbox="./media/application-proxy-network-topology/application-proxy-pattern4.png":::
 
 ### <a name="use-case-5"></a>Use-case 5
 
-**Scenario:** De app bevindt zich in het netwerk van een organisatie in Europa, met het exemplaar van de toepassings proxy en de meeste gebruikers in de VS.
+**Scenario:** De app bevindt zich in het netwerk van een organisatie in Europa, de standaard Tenant regio is Verenigde Staten, met de meeste gebruikers in de Europa.
 
-**Aanbeveling:** Plaats de connector in de buurt van de app. Omdat de Amerikaanse gebruikers toegang krijgen tot een toepassings proxy-exemplaar dat zich in dezelfde regio bevindt, is hop 1 niet te duur. Hop 3 is geoptimaliseerd. Overweeg het gebruik van ExpressRoute om hop 2 te optimaliseren.
+**Aanbeveling:** Plaats de connector in de buurt van de app. Werk de connector groep bij zodat deze is geoptimaliseerd voor het gebruik van service-exemplaren van de euro-toepassings proxy. Voor de stappen raadpleegt [u connector groepen optimaliseren voor het gebruik van de dichtstbijzijnde Cloud service van de toepassings proxy](application-proxy-network-topology#Optimize connector-groups-to-use-closest-Application-Proxy-cloud-service).
 
-![Diagram toont gebruikers en proxy in de V.S., connector en app in Europa](./media/application-proxy-network-topology/application-proxy-pattern5b.png)
+Omdat Europe-gebruikers toegang krijgen tot een exemplaar van een toepassings proxy dat zich in dezelfde regio bevindt, is hop 1 niet duur. Hop 3 is geoptimaliseerd. Overweeg het gebruik van ExpressRoute om hop 2 te optimaliseren.
 
-U kunt ook overwegen om in deze situatie een andere variant te gebruiken. Als de meeste gebruikers in de organisatie zich in de Verenigde Staten bevinden, is de kans groot dat uw netwerk ook wordt uitgebreid naar de Verenigde Staten. Plaats de connector in de VS en gebruik de exclusieve interne bedrijfs netwerk lijn voor de toepassing in Europa. Op deze manier worden de hops 2 en 3 geoptimaliseerd.
+### <a name="use-case-6"></a>Use-case 6
 
-![Diagram toont gebruikers, proxy en connectors in de VS, app in Europa](./media/application-proxy-network-topology/application-proxy-pattern5c.png)
+**Scenario:** De app bevindt zich in het netwerk van een organisatie in Europa, de standaard Tenant regio is Verenigde Staten, met de meeste gebruikers in de VS.
+
+**Aanbeveling:** Plaats de connector in de buurt van de app. Werk de connector groep bij zodat deze is geoptimaliseerd voor het gebruik van service-exemplaren van de euro-toepassings proxy. Voor de stappen raadpleegt [u connector groepen optimaliseren voor het gebruik van de dichtstbijzijnde Cloud service van de toepassings proxy](/application-proxy-network-topology#Optimize connector-groups-to-use-closest-Application-Proxy-cloud-service). Hop 1 kan duurder zijn omdat alle Amerikaanse gebruikers toegang moeten hebben tot het toepassings proxy-exemplaar in Europa.
+
+U kunt ook overwegen om in deze situatie een andere variant te gebruiken. Als de meeste gebruikers in de organisatie zich in de Verenigde Staten bevinden, is de kans groot dat uw netwerk ook wordt uitgebreid naar de Verenigde Staten. Plaats de connector in de VS, blijf de standaard Amerikaanse regio voor uw connector groepen gebruiken en gebruik de exclusieve regel voor het interne bedrijfs netwerk voor de toepassing in Europa. Op deze manier worden de hops 2 en 3 geoptimaliseerd.
+
+:::image type="content" source="./media/application-proxy-network-topology/application-proxy-pattern5c.png" alt-text="In het diagram worden gebruikers, proxy en connectors in de Verenigde Staten, apps in Europa, weer gegeven." lightbox="./media/application-proxy-network-topology/application-proxy-pattern5c.png":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

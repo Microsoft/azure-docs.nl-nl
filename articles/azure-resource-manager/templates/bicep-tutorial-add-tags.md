@@ -2,16 +2,16 @@
 title: Zelf studie-Tags toevoegen aan resources in Azure Resource Manager Bicep-bestand
 description: Tags toevoegen aan resources die u in uw Bicep-bestanden implementeert. Gebruik tags om resources logisch te ordenen.
 author: mumian
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 05bb68609705ac4c13ad77d2c74db7c105ba23fb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ea5e078eb692d002b3f86cd43663dd042d692611
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748081"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632596"
 ---
 # <a name="tutorial-add-tags-in-azure-resource-manager-bicep-files"></a>Zelf studie: Tags toevoegen in Azure Resource Manager Bicep-bestanden
 
@@ -37,7 +37,7 @@ Na de implementatie van deze resources wilt u mogelijk de kosten bijhouden en re
 
 U tagt resources om waarden toe te voegen waarmee u het gebruik van de resources kunt identificeren. U kunt bijvoorbeeld tags toevoegen die de omgeving en het project vermelden. Maar u kunt ook tags toevoegen die een kostenplaats aangeven of het team dat eigenaar is van de resource. U kunt alle waarden invoeren voor tags die voor uw organisatie van belang zijn.
 
-In het volgende voor beeld worden de wijzigingen in het Bicep-bestand gemarkeerd. Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
+In het volgende voor beeld ziet u de wijzigingen in het Bicep-bestand. Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 
 :::code language="bicep" source="~/resourcemanager-templates/get-started-with-templates/add-tags/azuredeploy.bicep" range="1-81" highlight="27-30,38,51,71":::
 

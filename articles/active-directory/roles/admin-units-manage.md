@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44faaa6f05a325c2c64040938a1c9d0eb3e864e7
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 0706fad1e5340625c32eab691ac3e4d58eeafc9f
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100574162"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012097"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Beheer eenheden in Azure Active Directory beheren
 
@@ -69,10 +69,15 @@ U kunt de waarden die zijn Inge sloten tussen aanhalings tekens, indien nodig, w
 
 ### <a name="use-microsoft-graph"></a>Microsoft Graph gebruiken
 
+Aanvraag
+
 ```http
-Http Request
 POST /administrativeUnits
-Request body
+```
+
+Hoofdtekst
+
+```http
 {
   "displayName": "North America Operations",
   "description": "North America Operations administration"
@@ -94,18 +99,23 @@ In azure AD kunt u een administratieve eenheid verwijderen die u niet meer nodig
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
 ```powershell
-$delau = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
-Remove-AzureADMSAdministrativeUnit -ObjectId $delau.ObjectId
+$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
+Remove-AzureADMSAdministrativeUnit -ObjectId $adminUnitObj.ObjectId
 ```
 
 U kunt de waarden tussen aanhalings tekens, zoals vereist voor de specifieke omgeving, wijzigen.
 
 ### <a name="use-the-graph-api"></a>Met behulp van de Graph API
 
+Aanvraag
+
 ```http
-HTTP request
-DELETE /administrativeUnits/{Admin id}
-Request body
+DELETE /administrativeUnits/{admin-unit-id}
+```
+
+Hoofdtekst
+
+```http
 {}
 ```
 

@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/08/2021
+ms.date: 03/10/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e867fee753fb9db530db2b2015c3aea9280bc16f
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: b60b447d8302b89813ca462c3220603ef926eb26
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448641"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631180"
 ---
 # <a name="localization-string-ids"></a>Id's van lokalisatiereeksen
 
@@ -152,7 +152,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **cancel_message** | De gebruiker heeft het invoeren van zelfbevestigende informatie geannuleerd |
 | **preloader_alt** | Een ogenblik geduld |
 | **ver_but_send** | Verificatie code verzenden |
-| **alert_yes** | Yes |
+| **alert_yes** | Ja |
 | **error_fieldIncorrect** | Een of meer velden zijn onjuist ingevuld. Controleer uw vermeldingen en probeer het opnieuw. |
 | **jaareinde** | Year |
 | **verifying_blurb** | De gegevens worden verwerkt. een ogen blik geduld... |
@@ -170,7 +170,7 @@ Hieronder ziet u de Id's voor een inhouds definitie met een ID van `api.localacc
 | **ver_incorrect_format** | Onjuiste indeling. |
 | **ver_but_edit** | E-mail wijzigen |
 | **ver_but_verify** | Code verifiëren |
-| **alert_no** | No |
+| **alert_no** | Nee |
 | **ver_info_msg** | De verificatie code is verzonden naar het postvak in. Kopieer het naar het invoervak hieronder. |
 | **profieldag** | Dag |
 | **ver_fail_throttled** | Er zijn te veel aanvragen om dit e-mail adres te controleren. Wacht even en probeer het opnieuw. |
@@ -356,7 +356,7 @@ Hier volgen de Id's voor een [besturings element](display-control-verification.m
 
 | Id | Standaardwaarde |
 | -- | ------------- |
-|intro_msg| Verificatie is nood zakelijk. Klik op de knop verzenden.|
+|intro_msg <sup>*</sup>| Verificatie is nood zakelijk. Klik op de knop verzenden.|
 |success_send_code_msg | De verificatie code is verzonden. Kopieer het naar het invoervak hieronder.|
 |failure_send_code_msg | Er zijn problemen met het controleren van uw e-mail adres. Geef een geldig e-mail adres op en probeer het opnieuw.|
 |success_verify_code_msg | E-mail adres geverifieerd. U kunt nu door gaan.|
@@ -365,6 +365,12 @@ Hier volgen de Id's voor een [besturings element](display-control-verification.m
 |but_verify_code | Code verifiëren|
 |but_send_new_code | Nieuwe code verzenden|
 |but_change_claims | E-mail wijzigen|
+
+Opmerking: het `intro_msg` element is verborgen en wordt niet weer gegeven op de pagina zelf-bevestigingen. Gebruik het [HTML-customiztion](customize-ui-with-html.md) met Cascading Style Sheet om het zichtbaar te maken. Bijvoorbeeld:
+    
+```css
+.verificationInfoText div{display: block!important}
+```
 
 ### <a name="verification-display-control-example"></a>Controle voorbeeld voor verificatie weergave
 

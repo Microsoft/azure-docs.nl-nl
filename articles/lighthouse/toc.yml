@@ -53,48 +53,50 @@
         - name: Activiteit van serviceprovider bekijken
           displayName: 'monitor, log, customer, visibility, transparency, control'
           href: ./how-to/view-service-provider-activity.md
-    - name: Een klant onboarden in Azure Lighthouse
-      displayName: resource management
-      href: ./how-to/onboard-customer.md
-    - name: Een aanbieding voor beheerde service publiceren in Azure Marketplace
-      displayName: 'managed services offer, azure marketplace, publish, marketplace'
-      href: ./how-to/publish-managed-services-offers.md
+    - name: Beheer van onboarding en overdracht
+      items:
+        - name: Onboard klanten
+          displayName: 'ARM, template, delegation, authorization, resource management'
+          href: ./how-to/onboard-customer.md
+        - name: Een aanbieding voor beheerde service publiceren in Azure Marketplace
+          displayName: 'managed services offer, azure marketplace, publish, marketplace'
+          href: ./how-to/publish-managed-services-offers.md
+        - name: Overdrachten bijwerken
+          displayName: upgrade
+          href: ./how-to/update-delegation.md
+        - name: Toegang tot delegaties verwijderen
+          displayName: 'delete, undelegate'
+          href: ./how-to/remove-delegation.md
+        - name: Delegatiewijzigingen bewaken
+          displayName: activity log
+          href: ./how-to/monitor-delegation-changes.md
     - name: Klanten weergeven en beheren
       displayName: my customers
       href: ./how-to/view-manage-customers.md
     - name: Uw partner-ID koppelen
       displayName: 'partner earned credit, pec, mpn'
       href: ./how-to/partner-earned-credit.md
-    - name: Een delegatie bijwerken
-      displayName: upgrade
-      href: ./how-to/update-delegation.md
-    - name: Toegang tot een delegatie verwijderen
-      displayName: 'delete, undelegate'
-      href: ./how-to/remove-delegation.md
-    - name: Azure Arc-integratie
-      displayName: 'server, kubernetes, hybrid, infrastructure'
-      href: ./how-to/manage-hybrid-infrastructure-arc.md
-    - name: Azure Migrate-integratie
-      displayName: 'migration, project, on-prem'
-      href: ./how-to/migration-at-scale.md
-    - name: Azure Monitor-integratie
+    - name: Integratie van Azure-service
       items:
-        - name: Azure Monitor-logboeken op schaal gebruiken
+        - name: Azure Arc-integratie
+          displayName: 'server, kubernetes, hybrid, infrastructure'
+          href: ./how-to/manage-hybrid-infrastructure-arc.md
+        - name: Azure Migrate-integratie
+          displayName: 'migration, project, on-prem'
+          href: ./how-to/migration-at-scale.md
+        - name: Azure Monitor-integratie
           displayName: 'log, analytics, analyze, activity'
           href: ./how-to/monitor-at-scale.md
-        - name: Delegatiewijzigingen bewaken
-          displayName: activity log
-          href: ./how-to/monitor-delegation-changes.md
-    - name: Integratie van Azure Policy
-      items:
-        - name: Een beleid op schaal implementeren
-          displayName: storage
-          href: ./how-to/policy-at-scale.md
-        - name: Beleid implementeren dat kan worden hersteld
-          displayName: 'deployIfNotExists, modify, managed identities, managed identity'
-          href: ./how-to/deploy-policy-remediation.md
-    - name: Azure Sentinel-integratie
-      href: ./how-to/manage-sentinel-workspaces.md
+        - name: Integratie van Azure Policy
+          items:
+            - name: Een beleid op schaal implementeren
+              displayName: storage
+              href: ./how-to/policy-at-scale.md
+            - name: Beleid implementeren dat kan worden hersteld
+              displayName: 'deployIfNotExists, modify, managed identities, managed identity'
+              href: ./how-to/deploy-policy-remediation.md
+        - name: Azure Sentinel-integratie
+          href: ./how-to/manage-sentinel-workspaces.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

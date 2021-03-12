@@ -3,7 +3,7 @@ title: Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Serv
 description: In dit onderwerp wordt beschreven hoe u Azure Active Directory (Azure AD)-verificatie gebruikt voor toegang tot Azure Media Services-API (AMS) met .NET.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/18/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: 9de7505ffaab244713706984bdeb9ab395766321
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: fd19bce05d18eb8f9b8fd3806082caeebe98bdad
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98695735"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103013989"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Services-API met .NET
 

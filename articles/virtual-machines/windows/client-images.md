@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: d09f27eebba5db2edb56185b658c8ae2b06e42d3
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 21038a8d1eabfcca21329c093b866607f0343070
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102552266"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200007"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Windows-client in Azure gebruiken voor scenario's voor ontwikkelen/testen
 U kunt Windows 7, Windows 8 of Windows 10 Enter prise (x64) gebruiken in azure voor ontwikkel-en test scenario's met de juiste Visual Studio (voorheen MSDN)-abonnement. 
@@ -41,10 +41,10 @@ De volgende tabel bevat informatie over de aanbieding-Id's die in aanmerking kom
 | [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) |0148P | Windows 10 Enter prise N (x64) <br> Windows 8,1 ENTER prise N (x64) <br> Windows 7 Enter prise N met SP1 (x64) |
 
 ## <a name="check-your-azure-subscription"></a>Uw Azure-abonnement controleren
-Als u uw aanbiedings-ID niet weet, kunt u deze op een van de volgende twee manieren verkrijgen via de Azure Portal:  
+Als u uw aanbiedings-ID niet weet, kunt u deze verkrijgen via de Azure Portal.  
 - In het venster *abonnementen* : ![ Details van de aanbiedings-ID van de Azure Portal](./media/client-images/offer-id-azure-portal.png) 
-- U kunt ook op **facturering** klikken en vervolgens op uw abonnements-id klikken. De aanbiedings-ID wordt weer gegeven in het *facturerings* venster.
-U kunt de aanbiedings-ID ook bekijken op het [tabblad abonnementen](https://account.windowsazure.com/Subscriptions) van de Azure-account portal: ![ Details van de aanbiedings-id van de Azure-account Portal](./media/client-images/offer-id-azure-account-portal.png) 
+- U kunt ook op **facturering** klikken en vervolgens op uw abonnements-id klikken. De aanbiedings-ID wordt weer gegeven in het *facturerings* venster. 
+- U kunt de aanbiedings-ID ook bekijken op het [tabblad abonnementen](https://account.windowsazure.com/Subscriptions) van de Azure-account portal: ![ Details van de aanbiedings-id van de Azure-account Portal](./media/client-images/offer-id-azure-account-portal.png) 
 
 ## <a name="next-steps"></a>Volgende stappen
 U kunt nu uw Vm's implementeren met behulp van [Power shell](quick-create-powershell.md), [Resource Manager-sjablonen](ps-template.md)of [Visual Studio](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md).

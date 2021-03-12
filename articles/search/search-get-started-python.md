@@ -7,14 +7,14 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 01/29/2021
+ms.date: 03/12/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: eb5de33fd41d3a454f4d0b8d44325ed30f9c5d47
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 8b9c4792fa6dbdc70f657ce3c5f1757473a22fda
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071627"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225214"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-python-using-jupyter-notebook"></a>Snelstartgids: een Azure Cognitive Search-index in python maken met behulp van Jupyter Notebook
 
@@ -271,9 +271,9 @@ Voor het laden van documenten maakt u een verzameling documenten met behulp van 
 
 ## <a name="3---search-an-index"></a>3 - Een index doorzoeken
 
-In deze stap ziet u hoe u een query kunt uitvoeren op een index met behulp van de [Zoek documenten (rest)](/rest/api/searchservice/search-documents).
+In deze stap ziet u hoe u een query uitvoert op een index met behulp van de **Zoek** methode van de [klasse Search. client](/python/api/azure-search-documents/azure.search.documents.searchclient).
 
-1. Gebruik search_client voor deze bewerking. Deze query voert een lege zoekopdracht (`search=*`) uit, die een niet-geclassificeerde lijst (zoekscore = 1,0) met willekeurige documenten retourneert. Omdat er geen criteria zijn, worden alle documenten opgenomen in de resultaten. Met deze query worden slechts twee velden in elk document afgedrukt. Er wordt ook `include_total_count=True` toegevoegd om een telling van alle documenten (4) in de resultaten te krijgen.
+1. In de volgende stap wordt een lege zoek opdracht uitgevoerd ( `search=*` ), waarbij een niet-gerangte lijst (zoek score = 1,0) met wille keurige documenten wordt geretourneerd. Omdat er geen criteria zijn, worden alle documenten opgenomen in de resultaten. Met deze query worden slechts twee velden in elk document afgedrukt. Er wordt ook `include_total_count=True` toegevoegd om een telling van alle documenten (4) in de resultaten te krijgen.
 
     ```python
     results =  search_client.search(search_text="*", include_total_count=True)

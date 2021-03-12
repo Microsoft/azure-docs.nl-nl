@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: sample
-ms.date: 02/04/2021
+ms.date: 03/10/2021
 ms.author: justinha
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e79bbb2ac6febb39fec27aa6ac3c82ff58f81122
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 8056e95b731b1818e10d7415cb813d6aba0ec7fa
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575819"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149064"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Azure Active Directory Domain Services inschakelen met behulp van PowerShell
 
@@ -39,6 +39,13 @@ U hebt de volgende resources nodig om dit artikel te voltooien:
     * Zorg ervoor dat u zich bij de Azure-tenant aanmeldt met behulp van de [Connect-AzureAD][Connect-AzureAD]-cmdlet.
 * U hebt *bevoegdheden van een globale beheerder* voor de Azure AD-tenant nodig om Azure AD DS in te schakelen.
 * U hebt bevoegdheden van een *Inzender* voor uw Azure-abonnement nodig om de vereiste Azure AD DS-resources te maken.
+
+  > [!IMPORTANT]
+  > Hoewel de Power shell-module **AZ. ADDomainServices** in preview is, moet u deze afzonderlijk installeren met behulp van de `Install-Module` cmdlet.
+
+  ```azurepowershell-interactive
+  Install-Module -Name Az.ADDomainServices
+  ```
 
 ## <a name="create-required-azure-ad-resources"></a>Vereiste Azure AD-resources maken
 
@@ -93,13 +100,13 @@ Add-AzureADGroupMember -ObjectId $GroupObjectId.ObjectId -RefObjectId $UserObjec
 
 Registreer eerst de Azure AD Domain Services-resourceprovider met behulp van de [Register-AzResourceProvider][Register-AzResourceProvider]-cmdlet:
 
-```powershell
+```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.AAD
 ```
 
 Maak vervolgens een resourcegroep met behulp van de [New-AzResourceGroup][New-AzResourceGroup]-cmdlet. De resourcegroep in het volgende voorbeeld heet *myResourceGroup* en is gemaakt in de regio *westus*. Gebruik uw eigen naam en gewenste regio:
 
-```powershell
+```azurepowershell-interactive
 $ResourceGroupName = "myResourceGroup"
 $AzureLocation = "westus"
 
@@ -113,7 +120,7 @@ Maak het virtuele netwerk en de subnetten voor Azure AD Domain Services. Er zijn
 
 Maak de subnetten met behulp van de [New-AzVirtualNetworkSubnetConfig][New-AzVirtualNetworkSubnetConfig]-cmdlet. Maak vervolgens het virtuele netwerk met behulp van de [New-AzVirtualNetwork][New-AzVirtualNetwork]-cmdlet.
 
-```powershell
+```azurepowershell-interactive
 $VnetName = "myVnet"
 
 # Create the dedicated subnet for Azure AD Domain Services.
@@ -142,7 +149,7 @@ Azure AD DS heeft een netwerkbeveiligingsgroep nodig om de poorten die nodig zij
 
 De volgende PowerShell-cmdlets gebruiken [New-AzNetworkSecurityRuleConfig][New-AzNetworkSecurityRuleConfig] om de regels te maken en vervolgens [New-AzNetworkSecurityGroup][New-AzNetworkSecurityGroup] om de netwerkbeveiligingsgroep te maken. De netwerkbeveiligingsgroep en regels worden vervolgens gekoppeld aan het subnet van het virtuele netwerk met behulp van de [set-AzVirtualNetworkSubnetConfig][Set-AzVirtualNetworkSubnetConfig]-cmdlet.
 
-```powershell
+```azurepowershell-interactive
 $NSGName = "aaddsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
@@ -196,17 +203,24 @@ Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke
 
 U hoeft niets te configureren voor Azure AD DS om te worden gedistribueerd over zones. De distributie van resources over zones wordt automatisch afgehandeld op het Azure-platform. Zie [Wat zijn beschikbaarheidszones in Azure?][availability-zones] voor meer informatie en om de beschikbaarheid van regio’s te zien.
 
-```powershell
+```azurepowershell-interactive
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
 $ManagedDomainName = "aaddscontoso.com"
 
 # Enable Azure AD Domain Services for the directory.
-New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.AAD/DomainServices/$ManagedDomainName" `
-  -ApiVersion "2017-06-01" `
-  -Location $AzureLocation `
-  -Properties @{"DomainName"=$ManagedDomainName; `
-    "SubnetId"="/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"} `
-  -Force -Verbose
+$replicaSetParams = @{
+  Location = $AzureLocation
+  SubnetId = "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"
+}
+$replicaSet = New-AzADDomainServiceReplicaSetObject @replicaSetParams
+
+$domainServiceParams = @{
+  Name = $ManagedDomainName
+  ResourceGroupName = $ResourceGroupName
+  DomainName = $ManagedDomainName
+  ReplicaSet = $replicaSet
+}
+New-AzADDomainService @domainServiceParams
 ```
 
 Het duurt enkele minuten om de resource te maken en het beheer terug te geven aan de PowerShell-prompt. Het inrichten van het beheerde domein wordt op de achtergrond voortgezet. Het kan een uur duren voordat de implementatie is voltooid. Op de **Overzichtspagina** voor uw beheerde domein in de Azure-portal wordt de huidige status weergegeven tijdens deze implementatiefase.
@@ -224,7 +238,7 @@ In het volgende voltooide PowerShell-script worden alle taken gecombineerd die i
 > [!NOTE]
 > Als u Azure AD DS wilt inschakelen, moet u een globale beheerder zijn voor de Azure AD-tenant. U hebt ook minstens de bevoegdheden van een *Inzender* nodig voor het Azure-abonnement.
 
-```powershell
+```azurepowershell-interactive
 # Change the following values to match your deployment.
 $AaddsAdminUserUpn = "admin@contoso.onmicrosoft.com"
 $ResourceGroupName = "myResourceGroup"
@@ -292,7 +306,7 @@ $Vnet=New-AzVirtualNetwork `
   -Name $VnetName `
   -AddressPrefix 10.0.0.0/16 `
   -Subnet $AaddsSubnet,$WorkloadSubnet
-  
+
 $NSGName = "aaddsNSG"
 
 # Create a rule to allow inbound TCP port 3389 traffic from Microsoft secure access workstations for troubleshooting
@@ -336,12 +350,19 @@ Set-AzVirtualNetworkSubnetConfig -Name $SubnetName `
 $vnet | Set-AzVirtualNetwork
 
 # Enable Azure AD Domain Services for the directory.
-New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.AAD/DomainServices/$ManagedDomainName" `
-  -ApiVersion "2017-06-01" `
-  -Location $AzureLocation `
-  -Properties @{"DomainName"=$ManagedDomainName; `
-    "SubnetId"="/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"} `
-  -Force -Verbose
+$replicaSetParams = @{
+  Location = $AzureLocation
+  SubnetId = "/subscriptions/$AzureSubscriptionId/resourceGroups/$ResourceGroupName/providers/Microsoft.Network/virtualNetworks/$VnetName/subnets/DomainServices"
+}
+$replicaSet = New-AzADDomainServiceReplicaSetObject @replicaSetParams
+
+$domainServiceParams = @{
+  Name = $ManagedDomainName
+  ResourceGroupName = $ResourceGroupName
+  DomainName = $ManagedDomainName
+  ReplicaSet = $replicaSet
+}
+New-AzADDomainService @domainServiceParams
 ```
 
 Het duurt enkele minuten om de resource te maken en het beheer terug te geven aan de PowerShell-prompt. Het inrichten van het beheerde domein wordt op de achtergrond voortgezet. Het kan een uur duren voordat de implementatie is voltooid. Op de **Overzichtspagina** voor uw beheerde domein in de Azure-portal wordt de huidige status weergegeven tijdens deze implementatiefase.

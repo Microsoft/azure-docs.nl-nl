@@ -7,12 +7,12 @@ ms.topic: include
 author: mingshen-ms
 ms.author: krsh
 ms.date: 10/20/2020
-ms.openlocfilehash: addc18a0ebf9e49d3474d3f40cb1e2a6e0f0b272
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: c60d2a9b13cce9251ff0f730081a9d677206770d
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826582"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630101"
 ---
 ## <a name="generalize-the-image"></a>De installatie kopie generaliseren
 
@@ -38,60 +38,31 @@ Het volgende proces generaliseert een Linux-VM en implementeert deze opnieuw als
     1. Selecteer in de Azure Portal uw resource groep (RG) en de virtuele machine opnieuw toe te wijzen.
     2. Uw VM is nu gegeneraliseerd en u kunt een nieuwe virtuele machine maken met behulp van deze VM-schijf.
 
-### <a name="take-a-snapshot-of-the-vm-disk"></a>Een moment opname van de VM-schijf maken
+### <a name="capture-image"></a>Installatie kopie vastleggen
 
-1. Meld u aan bij de [Azure-portal](https://ms.portal.azure.com/).
-2. Selecteer **een resource maken** in de linkerbovenhoek, zoek naar en selecteer **moment opname**.
-3. Selecteer  **maken** op de Blade moment opname.
-4. Voer een **naam** in voor de moment opname.
-5. Selecteer een bestaande resource groep of voer een naam in voor een nieuwe.
-6. Voor de **bron schijf** selecteert u de beheerde schijf voor de moment opname.
-7. Het **account type** selecteren dat moet worden gebruikt voor het opslaan van de moment opname. Gebruik **Standard-HDD** tenzij u het hebt opgeslagen op een high-upssd.
-8. Selecteer **Maken**.
+Zodra uw VM klaar is, kunt u deze vastleggen in een galerie met gedeelde installatie kopieën van Azure. Volg de onderstaande stappen voor het vastleggen van:
 
-#### <a name="extract-the-vhd"></a>De VHD extra heren
+1. Ga op [Azure Portal](https://ms.portal.azure.com/)naar de pagina van de virtuele machine.
+2. Selecteer **vastleggen**.
+3. Selecteer in de **Galerie afbeelding delen naar gedeelde installatie kopie** **de optie Ja en delen deze naar een galerie als afbeeldings versie**.
+4. Selecteer gegeneraliseerd onder status van het **besturings systeem** .
+5. Selecteer een galerie met doel afbeeldingen of **Maak een nieuwe**.
+6. Selecteer een definitie voor de doel installatie kopie of **Maak een nieuwe**.
+7. Geef een **versie nummer** op voor de installatie kopie.
+8. Selecteer **beoordeling + maken** om uw keuzes te controleren.
+9. Nadat de validatie is voltooid, selecteert u **maken**.
 
-Gebruik het volgende script om de moment opname te exporteren naar een VHD in uw opslag account.
+Voor het publiceren moet het account van de uitgever een eigenaar hebben van de toegang tot de SIG. Toegang verlenen:
 
-```azurecli-interactive
-#Provide the subscription Id where the snapshot is created
-$subscriptionId=yourSubscriptionId
+1. Ga naar de galerie met gedeelde afbeeldingen.
+2. Selecteer **toegangs beheer** (IAM) in het linkerdeel venster.
+3. Selecteer **toevoegen** en vervolgens **functie toewijzing toevoegen**.
+4. Selecteer een **rol** of **eigenaar**.
+5. Onder **toegang toewijzen om** **gebruiker, groep of Service-Principal** te selecteren.
+6. Selecteer de Azure-e-mail van de persoon die de installatie kopie gaat publiceren.
+7. Selecteer **Opslaan**.
 
-#Provide the name of your resource group where the snapshot is created
-$resourceGroupName=myResourceGroupName
+:::image type="content" source="../media/create-vm/add-role-assignment.png" alt-text="Hiermee wordt het venster roltoewijzing toevoegen weer gegeven.":::
 
-#Provide the snapshot name
-$snapshotName=mySnapshot
-
-#Provide Shared Access Signature (SAS) expiry duration in seconds (such as 3600)
-#Know more about SAS here: https://docs.microsoft.com/en-us/azure/storage/storage-dotnet-shared-access-signature-part-1
-$sasExpiryDuration=3600
-
-#Provide storage account name where you want to copy the underlying VHD file. 
-$storageAccountName=mystorageaccountname
-
-#Name of the storage container where the downloaded VHD will be stored.
-$storageContainerName=mystoragecontainername
-
-#Provide the key of the storage account where you want to copy the VHD 
-$storageAccountKey=mystorageaccountkey
-
-#Give a name to the destination VHD file to which the VHD will be copied.
-$destinationVHDFileName=myvhdfilename.vhd
-
-az account set --subscription $subscriptionId
-
-sas=$(az snapshot grant-access --resource-group $resourceGroupName --name $snapshotName --duration-in-seconds $sasExpiryDuration --query [accessSas] -o tsv)
-
-az storage blob copy start --destination-blob $destinationVHDFileName --destination-container $storageContainerName --account-name $storageAccountName --account-key $storageAccountKey --source-uri $sas
-```
-
-#### <a name="script-explanation"></a>Uitleg van het script
-
-In dit script worden de volgende opdrachten gebruikt om de SAS-URI voor een moment opname te genereren en wordt de onderliggende VHD gekopieerd naar een opslag account met behulp van de SAS-URI. Elke opdracht in de tabel is een koppeling naar specifieke documentatie over de opdracht.
-
-| Opdracht | Opmerkingen |
-| --- | --- |
-| az disk grant-access | Hiermee genereert u een SAS met het kenmerk alleen-lezen die wordt gebruikt om het onderliggende VHD-bestand te kopiëren naar een opslagaccount of om het bestand on-premises te downloaden
-| az storage blob copy start | Hiermee wordt een BLOB Asynchroon gekopieerd van het ene opslag account naar het andere. Gebruiken `az storage blob show` om de status van de nieuwe BLOB te controleren. |
-|
+> [!NOTE]
+> U hoeft geen SAS-Uri's te genereren, omdat u nu een SIG-installatie kopie kunt publiceren in het partner centrum. Als u echter nog steeds moet verwijzen naar de stappen voor het genereren van SAS-URI'S, raadpleegt u [een SAS-URI voor een VM-installatie kopie genereren](../azure-vm-get-sas-uri.md).

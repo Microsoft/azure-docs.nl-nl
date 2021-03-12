@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 56d9c621579e19cf2c32562560e40fe42ff3989b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 5fcf688bbe8a5be2fc10b70950990b7b6ca71df8
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677507"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225588"
 ---
 # <a name="query-json-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Een query uitvoeren op JSON-bestanden met serverloze SQL-groep in azure Synapse Analytics
 
@@ -126,12 +126,13 @@ De query voorbeelden lezen *JSON* -bestanden met documenten met de volgende stru
 
 ### <a name="query-json-files-using-json_value"></a>Een query uitvoeren op JSON-bestanden met JSON_VALUE
 
-De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om scalaire waarden (titel, uitgever) op te halen uit een JSON-document:
+De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om scalaire waarden ( `date_rep` , `countries_and_territories` ,) op te halen `cases` uit een JSON-document:
 
 ```sql
 select
     JSON_VALUE(doc, '$.date_rep') AS date_reported,
     JSON_VALUE(doc, '$.countries_and_territories') AS country,
+    CAST(JSON_VALUE(doc, '$.deaths') AS INT) as fatal,
     JSON_VALUE(doc, '$.cases') as cases,
     doc
 from openrowset(
@@ -143,6 +144,8 @@ from openrowset(
     ) with (doc nvarchar(max)) as rows
 order by JSON_VALUE(doc, '$.geo_id') desc
 ```
+
+Als u JSON-eigenschappen uit een JSON-document hebt geëxtraheerd, kunt u kolom aliassen definiëren en eventueel de tekstuele waarde naar een bepaald type converteren.
 
 ### <a name="query-json-files-using-openjson"></a>Een query uitvoeren op JSON-bestanden met openjson
 
@@ -166,6 +169,10 @@ from openrowset(
 where country = 'Serbia'
 order by country, date_rep desc;
 ```
+De resultaten zijn functioneel hetzelfde als de resultaten die zijn geretourneerd met behulp van de `JSON_VALUE` functie. In sommige gevallen `OPENJSON` kan het voor deel zijn van `JSON_VALUE` :
+- In de `WITH` component kunt u de kolom aliassen en de typen voor elke eigenschap expliciet instellen. U hoeft de `CAST` functie niet in elke kolom in de lijst te plaatsen `SELECT` .
+- `OPENJSON` kan sneller zijn als u een groot aantal eigenschappen retourneert. Als u slechts 1-2 eigenschappen retourneert, is de `OPENJSON` functie mogelijk overhead.
+- U moet de `OPENJSON` functie gebruiken als u de matrix van elk document wilt parseren en deze wilt koppelen aan de bovenliggende rij.
 
 ## <a name="next-steps"></a>Volgende stappen
 

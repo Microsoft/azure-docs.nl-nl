@@ -3,7 +3,7 @@ title: Media Encoder Standard gebruiken om een bitrate ladder automatisch te gen
 description: In dit onderwerp wordt uitgelegd hoe u Media Encoder Standard (MES) kunt gebruiken om automatisch een bitrate ladder te genereren op basis van de invoer resolutie en bitrate.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/14/2019
-ms.author: juliako
-ms.openlocfilehash: 0309579a674533ebd056c8493b149cc78beef607
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 6ea28d61cc142c3191d591721b92e08d651c7ed5
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89254056"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014397"
 ---
 #  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Media Encoder Standard gebruiken om een bitrate ladder automatisch te genereren
 

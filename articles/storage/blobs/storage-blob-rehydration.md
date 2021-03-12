@@ -4,17 +4,17 @@ description: U kunt de blobs uit archief opslag opnieuw gebruiken zodat u toegan
 services: storage
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 01/08/2021
+ms.date: 03/11/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: hux
-ms.openlocfilehash: 5a89e5a9eca653a2d15e5b09605b78bc18d76b8f
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 2f0ddca9cbd7d85909b1d86e68b92fa1d847476d
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165668"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225078"
 ---
 # <a name="rehydrate-blob-data-from-the-archive-tier"></a>BLOB-gegevens worden opnieuw gehydrateerd op basis van de opslaglaag
 
@@ -29,6 +29,10 @@ Terwijl een BLOB zich in de Access-laag Archive bevindt, wordt deze als offline 
 
 [!INCLUDE [storage-blob-rehydration](../../../includes/storage-blob-rehydrate-include.md)]
 
+### <a name="lifecycle-management"></a>Levenscyclus beheer
+
+Reactiveren een BLOB heeft geen invloed op de `Last-Modified` tijd. Met de functie [levenscyclus beheer](storage-lifecycle-management-concepts.md) kunt u een scenario maken waarbij een BLOB opnieuw wordt gehydrateerd. vervolgens verplaatst een levenscyclus beheer beleid de BLOB terug naar Archive, omdat de `Last-Modified` tijd buiten de drempel waarde voor het beleid ligt. Om dit scenario te voor komen, gebruikt u de methode *[een gearchiveerde BLOB kopiëren naar een online-laag](#copy-an-archived-blob-to-an-online-tier)* . Met de methode Copy wordt een nieuw exemplaar van de BLOB gemaakt met een bijgewerkte `Last-Modified` tijd en wordt het levenscyclus beheer beleid niet geactiveerd.
+
 ## <a name="monitor-rehydration-progress"></a>Voortgang van rehydratatie bewaken
 
 Gebruik tijdens rehydratatie de bewerking BLOB eigenschappen ophalen om het kenmerk **Archive status** te controleren en te bevestigen wanneer de laag wijziging is voltooid. De status is "rehydrate-pending-to-hot" of "rehydrate-pending-to-cool", afhankelijk van de doellaag. Na voltooiing wordt de eigenschap archief status verwijderd en de BLOB-eigenschap van de **Access-laag** weerspiegelt de nieuwe hot of cool-laag.
@@ -42,7 +46,7 @@ Het kopiëren van een BLOB uit het archief kan uren duren, afhankelijk van de ge
 > [!IMPORTANT]
 > Verwijder de bron-BLOB pas als de Kopieer bewerking is voltooid op het doel. Als de bron-BLOB wordt verwijderd, wordt de doel-BLOB mogelijk niet volledig gekopieerd en is deze leeg. U kunt de *x-MS-Copy-status* controleren om de status van de Kopieer bewerking te bepalen.
 
-Archief-blobs kunnen alleen worden gekopieerd naar online doel lagen binnen hetzelfde opslag account. Het kopiëren van een archief-BLOB naar een andere archief-BLOB wordt niet ondersteund. De volgende tabel geeft de mogelijkheden van CopyBlob aan.
+Archief-blobs kunnen alleen worden gekopieerd naar online doel lagen binnen hetzelfde opslag account. Het kopiëren van een archief-BLOB naar een andere archief-BLOB wordt niet ondersteund. In de volgende tabel ziet u de mogelijkheden van een **Kopieer-BLOB** -bewerking.
 
 |                                           | **Bron van warme laag**   | **Bron van de cool-laag** | **Bron van Archive-laag**    |
 | ----------------------------------------- | --------------------- | -------------------- | ------------------- |

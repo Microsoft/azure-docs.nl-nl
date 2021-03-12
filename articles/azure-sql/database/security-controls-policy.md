@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure SQL Database
 description: Hier vindt u een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure SQL Database en SQL Managed Instance. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.topic: sample
 author: stevestein
 ms.author: sstein
 ms.service: sql-database
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: ae7261fdab9508fb5de8633f895b4a1d5eb7043e
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 6c05be2a539044287815971c78345fb2f01d3307
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442469"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631711"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-sql-database--sql-managed-instance"></a>Overzicht van controles voor naleving van Azure Policy-regelgeving voor Azure SQL Database en SQL Managed Instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]

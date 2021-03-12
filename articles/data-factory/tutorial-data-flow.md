@@ -7,22 +7,25 @@ ms.reviewer: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/09/2019
-ms.openlocfilehash: b0f564f68a638e7efd1cd1ce9116a26f4d19f277
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 03/11/2021
+ms.openlocfilehash: 5deaef04330e21c8d9c580bf2a16814d4e902f6a
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497041"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199871"
 ---
 # <a name="transform-data-using-mapping-data-flows"></a>Gegevens transformeren met toewijzingsgegevensstromen
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Zie [Inleiding tot Azure Data Factory](introduction.md) als u niet bekend bent met Azure Data Factory.
 
 In deze zelf studie gebruikt u de Azure Data Factory gebruikers interface (UX) om een pijp lijn te maken waarmee gegevens worden gekopieerd en getransformeerd van een Azure Data Lake Storage (ADLS) Gen2-bron naar een ADLS Gen2-Sink met toewijzings gegevens stroom. Het configuratie patroon in deze zelf studie kan worden uitgebreid bij het transformeren van gegevens met behulp van de toewijzings gegevens stroom
 
+ >[!NOTE]
+   >Deze zelf studie is bedoeld voor het toewijzen van gegevens stromen in het algemeen. Gegevens stromen zijn beschikbaar in Azure Data Factory-en Synapse-pijp lijnen. Als u geen ervaring hebt met gegevens stromen in azure Synapse-pijp lijnen, kunt u de [gegevens stroom volgen met behulp van Azure Synapse-pijp lijnen](https://docs.microsoft.com/azure/synapse-analytics/concepts-data-flow-overview) 
+   
 In deze zelfstudie voert u de volgende stappen uit:
 
 > [!div class="checklist"]
@@ -38,7 +41,7 @@ In deze zelfstudie voert u de volgende stappen uit:
 
 Het bestand dat u in deze zelf studie transformeert, is MoviesDB.csv, dat u [hier](https://raw.githubusercontent.com/djpmsft/adf-ready-demo/master/moviesDB.csv)kunt vinden. Als u het bestand wilt ophalen uit GitHub, kopieert u de inhoud naar een tekst editor van uw keuze om lokaal op te slaan als een CSV-bestand. Als u het bestand naar uw opslag account wilt uploaden, raadpleegt u [blobs uploaden met de Azure Portal](../storage/blobs/storage-quickstart-blobs-portal.md). De voor beelden verwijzen naar een container met de naam ' Sample-Data '.
 
-## <a name="create-a-data-factory"></a>Een data factory maken
+## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
 In deze stap maakt u een data factory en opent u de Data Factory UX om een pijp lijn te maken in de data factory.
 
@@ -95,10 +98,10 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 1. Geef uw bron **MoviesDB** een naam. Klik op **Nieuw** om een nieuwe bron gegevensset te maken.
 
     ![Scherm afbeelding die laat zien waar u nieuw selecteert nadat u de naam van uw bron hebt gewijzigd.](media/tutorial-data-flow/dataflow3.png)
-1. Kies **Azure data Lake Storage Gen2**. Klik op Doorgaan.
+1. Kies **Azure data Lake Storage Gen2**. Klik op door gaan.
 
     ![Scherm opname van de Azure Data Lake Storage Gen2 tegel.](media/tutorial-data-flow/dataset1.png)
-1. Kies **DelimitedText**. Klik op Doorgaan.
+1. Kies **DelimitedText**. Klik op door gaan.
 
     ![Scherm afbeelding waarin de tegel DelimitedText wordt weer gegeven.](media/tutorial-data-flow/dataset2.png)
 1. Geef uw gegevensset een naam **MoviesDB**. Kies in de vervolg keuzelijst gekoppelde service de optie **Nieuw**.
@@ -163,10 +166,10 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 1. Geef **uw Sink een naam.** Klik op **Nieuw** om uw Sink-gegevensset te maken.
 
     ![Scherm afbeelding die laat zien waar u uw Sink kunt benoemen en een nieuwe Sink-gegevensset maakt.](media/tutorial-data-flow/sink2.png)
-1. Kies **Azure data Lake Storage Gen2**. Klik op Doorgaan.
+1. Kies **Azure data Lake Storage Gen2**. Klik op door gaan.
 
     ![Scherm opname van de Azure Data Lake Storage Gen2 tegel die u kunt kiezen.](media/tutorial-data-flow/dataset1.png)
-1. Kies **DelimitedText**. Klik op Doorgaan.
+1. Kies **DelimitedText**. Klik op door gaan.
 
     ![Gegevensset](media/tutorial-data-flow/dataset2.png)
 1. Geef uw Sink-gegevensset een naam **MoviesSink**. Voor gekoppelde service kiest u de gekoppelde ADLS Gen2-service die u in stap 6 hebt gemaakt. Voer een uitvoermap in om uw gegevens naar te schrijven. In deze zelf studie schrijven we naar map ' uitvoer ' in container ' voor beeld-gegevens '. De map hoeft niet vooraf te bestaan en kan dynamisch worden gemaakt. Stel de **eerste rij als koptekst** in op True en selecteer **geen** voor het **import schema**. Klik op Voltooien.

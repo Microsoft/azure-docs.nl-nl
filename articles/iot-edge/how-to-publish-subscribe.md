@@ -10,14 +10,16 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: e4043fd8b7c9571b62cbf65d7398754b27375efd
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 730680b0cb6e8a728ed3072419674346de649368
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100633968"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200676"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
+
+[!INCLUDE [iot-edge-version-202011](../../includes/iot-edge-version-202011.md)]
 
 U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van berichten. In dit artikel leest u hoe u verbinding kunt maken met deze Broker, hoe u berichten publiceert en hierop abonneert via door de gebruiker gedefinieerde onderwerpen en hoe u IoT Hub bericht primitieven kunt gebruiken. De IoT Edge MQTT Broker is ingebouwd in de IoT Edge hub. Zie de functies voor het [brokerpen van de IOT Edge hub](iot-edge-runtime.md)voor meer informatie.
 

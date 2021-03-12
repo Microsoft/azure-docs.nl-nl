@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
-ms.openlocfilehash: 2c86086a636ea667cff4fc8a853c4ef20fa6ae04
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: dae9ab56ca1349d288aee02f7e2dfa4eccf1508c
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102041838"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199163"
 ---
 # <a name="install-log-analytics-agent-on-linux-computers"></a>Log Analytics-agent installeren op Linux-computers
 In dit artikel vindt u informatie over het installeren van de Log Analytics-agent op Linux-computers met behulp van de volgende methoden:
@@ -41,7 +41,7 @@ Vanaf versies die na augustus 2018 zijn uitgebracht, maken we de volgende wijzig
 * Versies die de ondersteunings datum van de fabrikant hebben door gegeven, worden niet ondersteund.
 * Alleen VM-installatie kopieën ondersteunen; containers, zelfs degene die zijn afgeleid van officiële distributie-publicatie kopieën, worden niet ondersteund.
 * Nieuwe versies van AMI worden niet ondersteund.  
-* Alleen versies waarop SSL 1. x wordt uitgevoerd, worden standaard ondersteund.
+* Alleen versies met OpenSSL 1. x worden standaard ondersteund.
 
 >[!NOTE]
 >Als u gebruikmaakt van een distributie of-versie die momenteel niet wordt ondersteund en niet is afgestemd op ons ondersteunings model, wordt u aangeraden deze opslag plaats te splitsen en te bevestigen dat micro soft support geen ondersteuning biedt voor gevorkeerde agent versies.

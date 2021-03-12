@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 8805b3c4947311a3054066b3378d881d673c2b14
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: d1290b1dcc1e97d63dd41d5be8ca19b81e32f838
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102521744"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225027"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -128,12 +128,22 @@ De volgende tabel vergelijkt de flexibele Orchestration-modus, uniforme indeling
 |         Azure-waarschuwingen  |            Nee  |            Ja  |            Ja  |
 |         VM Insights  |            Nee  |            Ja  |            Ja  |
 |         Azure Backup  |            Ja  |            Ja  |            Ja  |
-|         Azure Site Recovery  |            Nee  |            Nee  |            Ja  |
+|         Azure Site Recovery  |     Nee  |            Nee  |            Ja  |
 |         Bestaande virtuele machine toevoegen aan/verwijderen uit de groep  |            Nee  |            Nee  |            Nee  | 
 
 
 ## <a name="register-for-flexible-orchestration-mode"></a>Registreren voor flexibele Orchestration-modus
 Voordat u schaal sets voor virtuele machines kunt implementeren in de flexibele Orchestration-modus, moet u eerst uw abonnement registreren voor de preview-functie. Het volt ooien van de registratie kan enkele minuten duren. U kunt de volgende Azure PowerShell of Azure CLI-opdrachten gebruiken om te registreren.
+
+### <a name="azure-portal"></a>Azure Portal
+Ga naar de detail pagina voor het abonnement dat u wilt maken van een schaalset in de flexibele Orchestration-modus en selecteer preview-functies in het menu. Selecteer de twee Orchestrator-functies om in te scha kelen: _VMOrchestratorSingleFD_ en _VMOrchestratorMultiFD_, en druk op de knop registreren. De registratie van onderdelen kan Maxi maal 15 minuten duren.
+
+![Onderdeel registratie.](https://user-images.githubusercontent.com/157768/110361543-04d95880-7ff5-11eb-91a7-2e98f4112ae0.png)
+
+Zodra de functies voor uw abonnement zijn geregistreerd, voltooit u het aanmeldings proces door de wijziging door te geven aan de provider van de reken resource. Navigeer naar het tabblad Resource providers voor uw abonnement, selecteer micro soft. Compute en klik op opnieuw registreren.
+
+![Opnieuw registreren](https://user-images.githubusercontent.com/157768/110362176-cd1ee080-7ff5-11eb-8cc8-36aa967e267a.png)
+
 
 ### <a name="azure-powershell"></a>Azure PowerShell 
 Gebruik de cmdlet [REGI ster-AzProviderFeature](/powershell/module/az.resources/register-azproviderfeature) om de preview voor uw abonnement in te scha kelen. 

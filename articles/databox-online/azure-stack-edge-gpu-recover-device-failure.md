@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/22/2021
 ms.author: alkohli
-ms.openlocfilehash: b32757dddf745e7aaa0ea8276a3527fa464cc0d4
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: b1bfbda007619bf5bd94d47297845881758037bc
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442159"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636637"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Herstellen van een mislukt Azure Stack Edge Pro GPU-apparaat 
 
@@ -52,10 +52,10 @@ U bent nu klaar om de werk belastingen te implementeren die u op het oude appara
 
 Volg deze stappen om de gegevens op de Edge-Cloud shares op uw apparaat te herstellen:
 
-1. [Voeg shares toe](azure-stack-edge-j-series-manage-shares.md#add-a-share) met dezelfde share namen die eerder zijn gemaakt op het apparaat waarvoor een fout is opgetreden. Zorg ervoor dat bij het maken van shares de optie **BLOB-container** is ingesteld op gebruik van de **bestaande** opties en selecteer vervolgens de container die is gebruikt met het vorige apparaat.
-1. [Gebruikers toevoegen](azure-stack-edge-j-series-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
-1. [Voeg opslag accounts toe](azure-stack-edge-j-series-manage-storage-accounts.md#add-an-edge-storage-account) die zijn gekoppeld aan de shares eerder op het apparaat. Bij het maken van Edge-opslag accounts, selecteert u een bestaande container en wijst u de container aan die is toegewezen aan het Azure Storage account dat is toegewezen op het vorige apparaat. Alle gegevens van het apparaat die zijn geschreven naar het Edge-opslag account op het vorige apparaat, zijn geüpload naar de geselecteerde opslag container in het toegewezen Azure Storage-account.
-1. [De share](azure-stack-edge-j-series-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Hiermee worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
+1. [Voeg shares toe](azure-stack-edge-gpu-manage-shares.md#add-a-share) met dezelfde share namen die eerder zijn gemaakt op het apparaat waarvoor een fout is opgetreden. Zorg ervoor dat bij het maken van shares de optie **BLOB-container** is ingesteld op gebruik van de **bestaande** opties en selecteer vervolgens de container die is gebruikt met het vorige apparaat.
+1. [Gebruikers toevoegen](azure-stack-edge-gpu-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
+1. [Voeg opslag accounts toe](azure-stack-edge-gpu-manage-storage-accounts.md#add-an-edge-storage-account) die zijn gekoppeld aan de shares eerder op het apparaat. Bij het maken van Edge-opslag accounts, selecteert u een bestaande container en wijst u de container aan die is toegewezen aan het Azure Storage account dat is toegewezen op het vorige apparaat. Alle gegevens van het apparaat die zijn geschreven naar het Edge-opslag account op het vorige apparaat, zijn geüpload naar de geselecteerde opslag container in het toegewezen Azure Storage-account.
+1. [De share](azure-stack-edge-gpu-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Hiermee worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
 
 ## <a name="restore-edge-local-shares"></a>Edge-lokale shares herstellen
 
@@ -73,7 +73,7 @@ Nadat het vervangende apparaat volledig is geconfigureerd, schakelt u het appara
 Voer de volgende stappen uit om de gegevens te herstellen vanaf lokale shares:
 
 1. [Configureer Compute op het apparaat](azure-stack-edge-gpu-deploy-configure-compute.md).
-1. [Voeg een lokale share terug toe](azure-stack-edge-j-series-manage-shares.md#add-a-local-share) .
+1. [Voeg een lokale share terug toe](azure-stack-edge-gpu-manage-shares.md#add-a-local-share) .
 1. Voer de herstel procedure uit die is geboden door de gegevens beveiligings oplossing van de keuze. Raadpleeg de verwijzingen in de voor gaande tabel.
 
 ## <a name="restore-vm-files-and-folders"></a>VM-bestanden en-mappen herstellen

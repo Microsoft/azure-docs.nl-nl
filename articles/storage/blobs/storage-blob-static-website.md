@@ -9,12 +9,12 @@ ms.reviewer: dineshm
 ms.date: 09/04/2020
 ms.subservice: blobs
 ms.custom: devx-track-js
-ms.openlocfilehash: b9eb65311951706863c3b18c5fc91bae8c41c7dc
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bbb996362df1f99a8702de310bc11f6828cc303a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96007338"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008447"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Een statische website hosten in Azure Storage
 
@@ -25,9 +25,6 @@ U kunt statische inhoud (HTML-, CSS-, java script-en afbeeldings bestanden) rech
 Als u een webserver nodig hebt om inhoud weer te geven, kunt u [Azure app service](https://azure.microsoft.com/services/app-service/)gebruiken.
 
 [!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
-
-> [!NOTE]
-> Zorg ervoor dat u een standaardopslagaccount van het type v2 voor algemeen gebruik maakt. Statische websites zijn niet beschikbaar in een ander type opslagaccount.
 
 ## <a name="setting-up-a-static-website"></a>Instellen van een statische website
 
@@ -46,10 +43,10 @@ Bestanden in de **$Web** -container zijn hoofdletter gevoelig, worden aangeboden
 U kunt elk van deze hulpprogram ma's gebruiken om inhoud te uploaden naar de container **$Web** :
 
 > [!div class="checklist"]
-> * [Azure CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
+> * [Azure-CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
 > * [Azure PowerShell-module](storage-blob-static-website-how-to.md?tabs=azure-powershell)
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
-> * [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/)
+> * [Azure-opslagverkenner](https://azure.microsoft.com/features/storage-explorer/)
 > * [Azure-pijplijnen](https://azure.microsoft.com/services/devops/pipelines/)
 > * [Visual Studio Code-extensie](/azure/developer/javascript/tutorial-vscode-static-website-node-01)
 

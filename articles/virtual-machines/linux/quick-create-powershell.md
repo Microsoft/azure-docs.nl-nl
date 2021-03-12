@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 07/31/2020
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5711e3f406af04d0dc3a233031379c9ef18244ba
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 2cef611fe79ca04303840076b09b4cf6344b7e7d
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/10/2021
-ms.locfileid: "102549648"
+ms.locfileid: "102616227"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-azure-with-powershell"></a>Quickstart: Een virtuele Linux-machine maken in Azure met PowerShell
 
@@ -34,7 +34,7 @@ Gebruik[ssh-keygen](https://www.ssh.com/ssh/keygen/) om een SSH-sleutelpaar te m
 
 
 ```azurepowershell-interactive
-ssh-keygen -m PEM -t rsa -b 4096
+ssh-keygen -t rsa -b 4096
 ```
 
 U wordt gevraagd om een bestandsnaam op te geven voor het sleutelpaar of u kunt op **Enter** drukken om de standaardlocatie van `/home/<username>/.ssh/id_rsa` te gebruiken. U kunt desgewenst ook een wachtwoord voor de sleutels maken.

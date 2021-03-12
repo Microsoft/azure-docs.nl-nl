@@ -49,8 +49,6 @@
       items:
         - name: Een account maken met ARM
           href: quickstart-arm-template-account.md
-    - name: Python Basic Encoding Quick Start
-      href: quickstart-basic-encoding-python.md
 - name: Zelfstudies
   items:
     - name: .NET
@@ -86,6 +84,10 @@
       items:
         - name: Een extern bestand Node.js coderen en streamen
           href: stream-files-nodejs-quickstart.md
+    - name: Python
+      items:
+        - name: Python Basic Encoding Quick Start
+          href: quickstart-basic-encoding-python.md
     - name: Azure Portal
       items:
         - name: Zelfstudie voor door de klant beheerde sleutels of BYOK

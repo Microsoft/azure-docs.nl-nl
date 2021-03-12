@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/13/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 92bf066c9769cc4b2525923b9e18ed3c0e9c577a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 2ad5bf08542cd98f7acae36827b1a7b284a893b0
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937144"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149292"
 ---
 # <a name="identify-required-appliances"></a>Vereiste apparaten identificeren
 
@@ -38,13 +38,13 @@ Defender voor IoT ondersteunt zowel fysieke als virtuele implementaties.
 
 Deze sectie bevat een overzicht van fysieke sensor modellen die beschikbaar zijn. U kunt Sens oren aanschaffen met vooraf geconfigureerde software of Sens oren die niet vooraf zijn geconfigureerd.
 
-| Implementatie type | Bedrijf | Enterprise | SMB |
-|--|--|--|--|
-| Installatiekopie | :::image type="content" source="media/how-to-prepare-your-network/corporate-hpe-proliant-dl360-v2.png" alt-text="Het model op bedrijfs niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op ondernemings niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op SMB-niveau."::: |
-| Model | HPE ProLiant DL360 | HPE ProLiant DL20 | HPE ProLiant DL20 |
-| Bewakings poorten | Maxi maal 15 RJ45 of 8 OPT | Maxi maal 8 RJ45 of 6 OPT | 4 RJ45 |
-| Maximale band breedte [1](#anchortext) | 3 GB per seconde | 1 GB per seconde | 200 MB per seconde |
-| Maxi maal beveiligde apparaten | 30.000 | 15.000 | 1000 |
+| Implementatie type | Bedrijf | Enterprise | SMB-rack koppeling| SMB is robuust|
+|--|--|--|--|--|
+| Installatiekopie | :::image type="content" source="media/how-to-prepare-your-network/corporate-hpe-proliant-dl360-v2.png" alt-text="Het model op bedrijfs niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op ondernemings niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/enterprise-and-smb-hpe-proliant-dl20-v2.png" alt-text="Het model op SMB-niveau."::: | :::image type="content" source="media/how-to-prepare-your-network/office-ruggedized.png" alt-text="Het SMB-robuust niveau model."::: |
+| Model | HPE ProLiant DL360 | HPE ProLiant DL20 | HPE ProLiant DL20 | HPE EL300 |
+| Bewakings poorten | Maxi maal 15 RJ45 of 8 OPT | Maxi maal 8 RJ45 of 6 OPT | 4 RJ45 | Maxi maal 5 |
+| Maximale band breedte [1](#anchortext) | 3 GB/sec. | 1 GB/sec. | 200 MB/sec. | 100 MB/sec. |
+| Maxi maal beveiligde apparaten | 30.000 | 15.000 | 1000 | 800 |
 
 Zie [specificaties](#appliance-specifications) van het apparaat voor details van de leverancier.
 
@@ -195,6 +195,45 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | 512485-B21 | HPE iLO adv 1-server licentie 1 jaar ondersteuning | 1 |
 | 775612-B21 | De korte wrijvings Rail Kit voor HPE 1U | 1 |
 
+## <a name="smb-rugged-hpe-edgeline-el300"></a>SMB-robuust: HPE Edgeline EL300
+
+| Onderdeel | Technische specificaties |
+|--|--|
+| Bouw | Aluminium, fanless & stof-proef ontwerpen |
+| Afmetingen (hoogte x breedte x diepte) | 200.5 mm (7,9 ") hoog, 232mm (9,14") breed op 100mm (3,9 ") diep |
+| Gewicht | 4,91 KG (10,83 lbs) |
+| CPU | Intel Core i7-8650U (1,9 GHz/4-core/15W) |
+| Chipset | Hub Intel® Q170 platform controller |
+| Geheugen | 8 GB DDR4 2133MHz Wide Tempe ratuur SODIMM |
+| Storage | 128 GB 3ME3-mSATA SSD (Wide Tempe ratuur) |
+| Netwerk controller | 6x Gigabit Ethernet-poorten door Intel® I219 |
+| Apparaattoegang  | 4 USBs: 2 voor zijde; 2 achterzijde; 1 intern |
+| Stroom adapter | 250V/10 BIS |
+| Muur | Montagekit, DIN-rail |
+| Bedrijfs temperatuur | 0C naar + 70C  |
+| Vochtigheid | 10% ~ 90%, niet-condenserend |
+| Trill | 0,3 Grms 10Hz tot 300Hz, 15 minuten per as-DIN-rail   |
+| Puls | 10G 10 MS, halve sinus, drie voor elke as. (Zowel positieve & negatief Pulse) – DIN-rail |
+
+### <a name="appliance-bom"></a>Apparaat-stuk lijst
+| Product | Beschrijving |
+|--|--|
+| P25828-B21 | HPE Edgeline EL300 v2 geconvergeerd Edge-systeem |
+| P25828-B21 B19 | HPE EL300 v2-systeem met geconvergeerde rand |
+| P25833-B21 | Intel Core i7-8650U (1,9 GHz/4-core/15W) FIO Basic processor Kit for HPE Edgeline EL300 |
+| P09176-B21 | HPE Edgeline 8 GB (1x8GB) Dual Rank X8 DDR4-2666 SODIMM WT CAS-19-19-19 geregistreerde geheugen FIO Kit |
+| P09188-B21 | HPE Edgeline 256GB SATA 6G Lees intensieve M. 2 2242 3 jaar Wty volledige tijdelijke SSD |
+| P04054-B21 | HPE Edgeline EL300 SFF-naar-M. 2-activerings pakket |
+| P08120-B21 | HPE Edgeline EL300 12VDC FIO overdracht Board |
+| P08641-B21 | HPE Edgeline EL300 80W 12VDC-voeding |
+| AF564A | HPE C13-SI-32 IL 250V 10Amp 1.83 m stroom kabel |
+| P25835-B21 | HPE EL300 v2 FIO-Carrier Board |
+| R1P49AAE | HPE EL300 iSM adv 3 jaar 24x7 Sup_Upd E-LTU |
+| P08018-B21 optioneel | HPE Edgeline EL300-pakket met laag profiel haakje  |
+| P08019-B21 optioneel | HPE Edgeline EL300 DIN Rail Mount-Kit |
+| P08020-B21 optioneel | HPE Edgeline EL300 Wall Mount-Kit |
+| P03456-B21 optioneel | HPE Edgeline 1GbE 4-Port TSN FIO dochter kaart |
+
 ## <a name="virtual-appliance-specifications"></a>Specificaties van virtuele apparaten
 
 ### <a name="sensors"></a>Oren
@@ -238,7 +277,7 @@ Nadat u het apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defe
 
 | Onderdeel | Technische specificaties |
 |--|--|
-| Chassis | 1U-rack server |
+| Chassis | 1U-rack server
 | Dimensies | 42,8 x 434,0 x 596 (mm)/1,67 "x 17,09" x 23,5 "(in) |
 | Gewicht | Maxi maal 29,98 lb/13,6 kg |
 | Processor | Intel Xeon E-2144G 3,6 GHz, 8 min. cache, 4C/8T, Turbo (71 W) |
@@ -260,3 +299,4 @@ Nadat u het apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defe
 [Over de installatie van Azure Defender voor IoT](how-to-install-software.md)
 
 [Over de installatie van het Azure Defender for IoT-netwerk](how-to-set-up-your-network.md)
+

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: alkohli
-ms.openlocfilehash: 6836777c761fa2cce482cb000b6c86919e6b5613
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: 829f89f716a29f09f88a2e02b257aba1b207d072
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834065"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102634189"
 ---
 # <a name="azure-stack-edge-mini-r-system-requirements"></a>Systeem vereisten voor de Azure Stack Edge mini maal
 
@@ -38,7 +38,7 @@ De systeem vereisten voor de Azure Stack Edge mini maal R bevatten:
 
 ## <a name="supported-edge-storage-accounts"></a>Ondersteunde Edge-opslag accounts
 
-De volgende Edge-opslag accounts worden ondersteund met de REST-interface van het apparaat. De Edge-opslag accounts worden op het apparaat gemaakt. Zie [Edge Storage-accounts](azure-stack-edge-j-series-manage-storage-accounts.md#about-edge-storage-accounts) voor meer informatie.
+De volgende Edge-opslag accounts worden ondersteund met de REST-interface van het apparaat. De Edge-opslag accounts worden op het apparaat gemaakt. Zie [Edge Storage-accounts](azure-stack-edge-gpu-manage-storage-accounts.md#about-edge-storage-accounts) voor meer informatie.
 
 |Type  |Storage-account  |Opmerkingen  |
 |---------|---------|---------|

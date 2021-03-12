@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 08/31/2020
-ms.openlocfilehash: 356b954c65086ff65264ce7a62b038cd7a8eac3d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: ab6607175c596a0d82cf75f0ad786a76e85b6959
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350956"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612147"
 ---
 # <a name="tutorial-create-an-faq-bot-with-azure-bot-service"></a>Zelfstudie: Een FAQ-bot maken met Azure Bot Service
 Een FAQ-bot maken met QnA Maker en Azure [Bot Service](https://azure.microsoft.com/services/bot-service/) zonder code te schrijven.
@@ -80,4 +80,4 @@ Wanneer u wijzigingen aanbrengt in de knowledge base en deze opnieuw publiceert,
     De chatbot reageert met een antwoord uit uw knowledge base.
 
     :::image type="content" source="../media/qnamaker-create-publish-knowledge-base/test-web-chat.png" alt-text="Voer een gebruikersquery in om de webchat testen.":::
-1. De bot oplichten in aanvullende [ondersteunde kanalen](/azure/bot-service/bot-service-manage-channels?preserve-view=true&view=azure-bot-service-4.0).
+1. De bot oplichten in aanvullende [ondersteunde kanalen](/azure/bot-service/bot-service-manage-channels).

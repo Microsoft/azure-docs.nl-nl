@@ -8,14 +8,16 @@ ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: e38b3c617ded9c0001b01e481d4d3c1120be62ef
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 218c0f345e4ea453a2300b3de85ac8856a09c6ee
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100634750"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199279"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Continue integratie en continue implementatie naar Azure IoT Edge apparaten (klassieke editor)
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 U kunt eenvoudig DevOps met uw Azure IoT Edge-toepassingen met de ingebouwde Azure IoT Edge taken in azure-pijp lijnen. In dit artikel wordt beschreven hoe u de functies continue integratie en continue implementatie van Azure-pijp lijnen kunt gebruiken om toepassingen snel en efficiënt te bouwen, Azure IoT Edge te testen en te implementeren met behulp van de klassieke editor. U kunt ook [yaml gebruiken](how-to-continuous-integration-continuous-deployment.md).
 

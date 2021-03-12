@@ -17,12 +17,12 @@ ms.topic: how-to
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 0e644b7937f6ccb23b4833405b8f4ed3119879a5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a3aff7b99dad910a9691eef2004df856ca883789
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362281"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224381"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Installatie van Azure AD Connect Health-Agent
 
@@ -38,7 +38,7 @@ De volgende tabel bevat de vereisten voor het gebruik van Azure AD Connect Healt
 | U bent een globale beheerder in azure AD. |Standaard kunnen alleen globale beheerders de Health-Agents installeren en configureren, de portal openen en bewerkingen uitvoeren in Azure AD Connect Health. Voor meer informatie raadpleegt u [Uw Azure AD-directory beheren](../fundamentals/active-directory-whatis.md). <br /><br /> Door gebruik te maken van op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u andere gebruikers in uw organisatie toegang geven tot Azure AD Connect Health. Zie [Azure RBAC voor Azure AD Connect Health](how-to-connect-health-operations.md#manage-access-with-azure-rbac)voor meer informatie. <br /><br />**Belang rijk**: gebruik een werk-of school account om de agents te installeren. U kunt geen Microsoft-account gebruiken. Zie [registreren voor Azure als organisatie](../fundamentals/sign-up-organization.md)voor meer informatie. |
 | De Azure AD Connect Health-Agent wordt op elke doel server geïnstalleerd. | Health-Agents moeten worden geïnstalleerd en geconfigureerd op de doel servers, zodat ze gegevens kunnen ontvangen en bewakings-en analyse mogelijkheden bieden. <br /><br />Als u bijvoorbeeld gegevens wilt ophalen uit de infra structuur van uw Active Directory Federation Services (AD FS), moet u de agent installeren op de AD FS-server en de webtoepassingsproxy. Op dezelfde manier moet u de agent op de domein controllers installeren om gegevens op te halen van uw on-premises Azure AD Domain Services (Azure AD DS)-infra structuur.  |
 | De eind punten van de Azure-service hebben een uitgaande verbinding. | Tijdens de installatie en runtime moet de agent verbonden zijn met de Azure AD Connect Health-service-eindpunten. Als firewalls uitgaande verbindingen blok keren, voegt u de [uitgaande connectiviteit-eind punten](how-to-connect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) toe aan de acceptatie lijst. |
-|Uitgaande connectiviteit is gebaseerd op IP-adressen. | Zie [Azure IP-bereiken](https://www.microsoft.com/download/details.aspx?id=41653)voor informatie over het filteren van firewalls op basis van IP-adressen.|
+|Uitgaande connectiviteit is gebaseerd op IP-adressen. | Zie [Azure IP-bereiken](https://www.microsoft.com/download/details.aspx?id=56519)voor informatie over het filteren van firewalls op basis van IP-adressen.|
 | TLS-inspectie voor uitgaand verkeer wordt gefilterd of uitgeschakeld. | De agent registratie stap of het uploaden van gegevens kan mislukken als er TLS-inspectie of-beëindiging voor uitgaand verkeer op de netwerklaag is. Zie [TLS-inspectie instellen](/previous-versions/tn-archive/ee796230(v=technet.10))voor meer informatie. |
 | De agent wordt uitgevoerd op de firewall poorten op de server. |De agent moet de volgende firewall poorten open hebben zodat deze kan communiceren met de Azure AD Connect Health Service-eind punten: <br /><li>TCP-poort 443</li><li>TCP-poort 5671</li> <br />Voor de nieuwste versie van de agent is poort 5671 niet vereist. Voer een upgrade uit naar de nieuwste versie zodat alleen poort 443 is vereist. Zie voor meer informatie [hybride identiteit vereiste poorten en protocollen](./reference-connect-ports.md). |
 | Als verbeterde beveiliging van Internet Explorer is ingeschakeld, kunt u opgegeven websites toestaan.  |Als verbeterde beveiliging van Internet Explorer is ingeschakeld, kunt u de volgende websites op de server waarop u de Agent installeert, toestaan:<br /><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com</li><li>https:\//login.windows.net</li><li>https: \/ /aadcdn.msftauth.net</li><li>De Federatie server voor uw organisatie die wordt vertrouwd door Azure AD (bijvoorbeeld https: \/ /STS.contoso.com)</li> <br />Zie [How to configure Internet Explorer](https://support.microsoft.com/help/815141/internet-explorer-enhanced-security-configuration-changes-the-browsing)(Engelstalig) voor meer informatie. Als u een proxy in uw netwerk hebt, kunt u de notitie aan het einde van deze tabel weer geven.|

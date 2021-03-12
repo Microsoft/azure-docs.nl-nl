@@ -1,7 +1,7 @@
 ---
 title: Overzicht van Widevine-licentie sjablonen | Microsoft Docs
 description: Dit onderwerp bevat een overzicht van een Widevine-licentie sjabloon die wordt gebruikt voor het configureren van Widevine-licenties.
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 services: media-services
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 7bdffa607a1cbe47b940590d19f6140238d31bf0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 3/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: d4a3805e50ce48d1439696a3d9015d6ba8571470
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266490"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011184"
 ---
 # <a name="widevine-license-template-overview"></a>Overzicht van Widevine-licentiesjablonen
 
@@ -64,7 +64,7 @@ Een Widevine-licentie aanvraag wordt opgemaakt als een JSON-bericht.
 ```
 
 ## <a name="json-message"></a>JSON-bericht
-| Naam | Waarde | Beschrijving |
+| Name | Waarde | Beschrijving |
 | --- | --- | --- |
 | nettolading |Met base64 gecodeerde teken reeks |De licentie aanvraag die door een client is verzonden. |
 | content_id |Met base64 gecodeerde teken reeks |Id die wordt gebruikt voor het afleiden van de sleutel-ID en de inhouds sleutel voor elke content_key_specs. track_type. |
@@ -82,7 +82,7 @@ Als er al een bestaand beleid bestaat, hoeft u geen van de waarden in de specifi
 
 Elke content_key_specs waarde moet worden opgegeven voor alle sporen, ongeacht de use_policy_overrides_exclusively optie. 
 
-| Naam | Waarde | Beschrijving |
+| Name | Waarde | Beschrijving |
 | --- | --- | --- |
 | content_key_specs. track_type |tekenreeks |De naam van het tracerings type. Als content_key_specs is opgegeven in de licentie aanvraag, moet u alle typen spoor expliciet opgeven. Als u dit niet doet, kan het afspelen van de afgelopen 10 seconden mislukken. |
 | content_key_specs  <br/> security_level |uint32 |Hiermee worden de vereisten voor het afspelen van clients gedefinieerd. <br/> -Op software gebaseerde, witte box crypto grafie is vereist. <br/> -Software-crypto grafie en een verborgen decoder zijn vereist. <br/> -Het sleutel materiaal en cryptografische bewerkingen moeten worden uitgevoerd binnen een vertrouwde, door hardware ondersteunde omgeving. <br/> -De crypto grafie en de code ring van inhoud moet worden uitgevoerd binnen een vertrouwde, door hardware ondersteunde omgeving.  <br/> -De crypto grafie, het decoderen en alle verwerking van de media (gecomprimeerd en niet-gecomprimeerd) moeten worden afgehandeld binnen een vertrouwde, door hardware ondersteunde omgeving. |
@@ -91,7 +91,7 @@ Elke content_key_specs waarde moet worden opgegeven voor alle sporen, ongeacht d
 | content_key_specs content_key_specs.key_id |Base64-gecodeerde teken reeks binair, 16 bytes |De unieke id voor de sleutel. |
 
 ## <a name="policy-overrides"></a>Beleids onderdrukkingen
-| Naam | Waarde | Beschrijving |
+| Name | Waarde | Beschrijving |
 | --- | --- | --- |
 | policy_overrides. can_play |Boolean, True of False |Hiermee wordt aangegeven dat het afspelen van de inhoud is toegestaan. De standaardinstelling is onwaar. |
 | policy_overrides. can_persist |Boolean, True of False |Geeft aan dat de licentie kan worden bewaard voor niet-vluchtige opslag voor offline gebruik. De standaardinstelling is onwaar. |
@@ -106,7 +106,7 @@ Elke content_key_specs waarde moet worden opgegeven voor alle sporen, ongeacht d
 | policy_overrides. renew_with_usage |Boolean, True of False |Geeft aan dat de licentie wordt verzonden voor verlenging wanneer het gebruik wordt gestart. Dit veld wordt alleen gebruikt als can_renew waar is. |
 
 ## <a name="session-initialization"></a>Sessie-initialisatie
-| Naam | Waarde | Beschrijving |
+| Name | Waarde | Beschrijving |
 | --- | --- | --- |
 | provider_session_token |Met base64 gecodeerde teken reeks |Dit sessie token wordt weer gegeven in de licentie en komt voor in latere vernieuwingen. Het sessie token wordt niet persistent gemaakt buiten sessies. |
 | provider_client_token |Met base64 gecodeerde teken reeks |Client token om terug te sturen naar de reactie van de licentie. Als de licentie aanvraag een client token bevat, wordt deze waarde genegeerd. Het client token blijft in de voorbije licentie sessies. |

@@ -24,10 +24,14 @@
       items:
         - name: Angular
           href: quickstart-v2-angular.md
+        - name: Hoek-auth-code stroom
+          href: quickstart-v2-javascript-auth-code-angular.md
         - name: JavaScript - Verificatiecodestroom
           href: quickstart-v2-javascript-auth-code.md
         - name: JavaScript - Impliciete stroom
           href: quickstart-v2-javascript.md
+        - name: Reactie-auth-code stroom
+          href: quickstart-v2-javascript-auth-code-react.md
     - name: Web-app
       items:
         - name: ASP.NET

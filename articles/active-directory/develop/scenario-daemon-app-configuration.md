@@ -11,26 +11,22 @@ ms.workload: identity
 ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 8a01ee4e2b0d4e72c1b17cf56953675e735ead79
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 300df35918ea4868664fcb7c5882709eee4090ca
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582887"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103007993"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Daemon-app die web-Api's aanroept-code configuratie
 
 Meer informatie over het configureren van de code voor uw daemon-toepassing die web-Api's aanroept.
 
-## <a name="msal-libraries-that-support-daemon-apps"></a>MSAL-bibliotheken die ondersteuning bieden voor daemon-apps
+## <a name="microsoft-libraries-supporting-daemon-apps"></a>Micro soft libraries ondersteunen daemon-apps
 
-Deze micro soft-bibliotheken ondersteunen daemon-apps:
+De volgende micro soft-bibliotheken ondersteunen daemon-apps:
 
-  MSAL-bibliotheek | Description
-  ------------ | ----------
-  ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | De .NET Framework-en .NET Core-platformen worden ondersteund voor het bouwen van daemon-toepassingen. (UWP, Xamarin. iOS en Xamarin. Android worden niet ondersteund omdat deze platformen worden gebruikt voor het bouwen van open bare client toepassingen.)
-  ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Ondersteuning voor daemon-toepassingen in python.
-  ![Java](media/sample-v2-code/logo_java.png) <br/> MSAL Java | Ondersteuning voor daemon-toepassingen in Java.
+[!INCLUDE [active-directory-develop-libraries-daemon](../../../includes/active-directory-develop-libraries-daemon.md)]
 
 ## <a name="configure-the-authority"></a>De instantie configureren
 

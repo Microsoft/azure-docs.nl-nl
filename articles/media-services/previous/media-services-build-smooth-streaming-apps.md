@@ -3,7 +3,7 @@ title: Zelf studie voor de Windows Store-app Smooth Streaming | Microsoft Docs
 description: Meer informatie over het gebruik van Azure Media Services voor het maken van een C# Windows Store-toepassing met een XML-media element-besturings element voor het afspelen van een Smoothe stream-inhoud.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 0fa5d8c5-3d5f-4886-ae55-fb6de4f5256d
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/14/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9b616b03698e83d256a7b81e4548edbf21dba058
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 20c7068fa0cb56699fdbc6d75b279abadd583832
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021126"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017115"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Een Smooth Streaming Windows Store-toepassing bouwen
 
@@ -88,7 +88,7 @@ Zie voor meer informatie over het ontwikkelen van Windows Store-toepassing [fant
     | Name | Waarde |
     | --- | --- |
     | Verwijzings groep |Windows/uitbrei dingen |
-    | Referentie |Selecteer micro soft Smooth Streaming client SDK voor Windows 8 en micro soft Visual C++ runtime-pakket |
+    | Naslaginformatie |Selecteer micro soft Smooth Streaming client SDK voor Windows 8 en micro soft Visual C++ runtime-pakket |
 
 1. Klik op **OK**. 
 

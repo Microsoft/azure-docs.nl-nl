@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.author: cshoe
-ms.openlocfilehash: 0de65c4546f5e87377b119370ee629f5a365b24e
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: be320b57117343371d52249c2c4452e74d33a4bf
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650526"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632931"
 ---
 # <a name="quickstart-building-your-first-static-site-using-the-azure-cli"></a>Quickstart: Uw eerste statische site bouwen met behulp van Azure CLI
 
@@ -104,6 +104,9 @@ Nu de opslagplaats is gemaakt, kunt u een statische web-app maken vanuit de Azur
     ```
 
     ---
+    
+    > [!IMPORTANT]
+    > De URL die wordt door gegeven aan de `s` para meter mag niet het `.git` achtervoegsel bevatten.
 
     - `<RESOURCE_GROUP_NAME>`: Vervang deze waarde door de naam van een bestaande Azure-resourcegroep.
 

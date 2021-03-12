@@ -9,14 +9,17 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: kgremban
-ms.openlocfilehash: c24389a1957f9e0cfb23e3bb5b8604c34e57a915
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+monikerRange: iotedge-2018-06
+ms.openlocfilehash: bb87d09b67658f9a3d7c68f635bfcd9a29de675c
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102609512"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201637"
 ---
 # <a name="install-and-manage-azure-iot-edge-with-windows-containers"></a>Azure IoT Edge installeren en beheren met Windows-containers
+
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
 Met de Azure IoT Edge runtime wordt een apparaat omgezet in een IoT Edge apparaat. Zodra een apparaat is geconfigureerd met de IoT Edge-runtime, kunt u beginnen met het implementeren van bedrijfslogica vanuit de cloud. Zie [inzicht krijgen in de Azure IOT Edge runtime en de bijbehorende architectuur](iot-edge-runtime.md)voor meer informatie.
 

@@ -6,12 +6,12 @@ ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
-ms.openlocfilehash: 86fa7e2e45dacb86b6601b699dca46b1b909fd08
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 28599c08f25533e042c03612d035912a8d0f17c0
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102424696"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225367"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-using-azure-cli-preview"></a>Quick Start: een door Azure beheerd exemplaar maken voor Apache Cassandra-cluster met behulp van Azure CLI (preview)
 
@@ -56,7 +56,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
    ```
 
    > [!NOTE]
-   > De `assignee` `role` waarden en in de vorige opdracht zijn respectievelijk een vast Service principe en rol-id's.
+   > De `assignee` `role` waarden en in de vorige opdracht zijn vaste waarden. Voer deze waarden precies zoals vermeld in de opdracht in. Als u dit niet doet, leidt dit tot fouten bij het maken van het cluster. Als er fouten optreden tijdens het uitvoeren van deze opdracht, bent u mogelijk niet gemachtigd om deze uit te voeren. Neem contact op met uw beheerder voor machtigingen.
 
 1. Maak vervolgens het cluster in uw nieuw gemaakte Virtual Network. Voer de volgende opdracht uit en zorg ervoor dat u de `Resource ID` waarde die in de vorige opdracht is opgehaald als de waarde van `delegatedManagementSubnetId` Variable gebruikt:
 

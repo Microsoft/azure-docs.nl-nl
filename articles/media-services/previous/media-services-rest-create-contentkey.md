@@ -3,7 +3,7 @@ title: Inhouds sleutels maken met REST | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u inhouds sleutels maakt die beveiligde toegang tot assets bieden.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 95e9322b-168e-4a9d-8d5d-d7c946103745
@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 5038a6d70f3293dfa1556d72b2f85aa930794949
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: a9960ece05b7cab4ddd26fdac7516f4adbccf5b0
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89256970"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017253"
 ---
 # <a name="create-content-keys-with-rest"></a>Inhouds sleutels maken met REST
 
@@ -31,13 +31,13 @@ ms.locfileid: "89256970"
 > 
 > 
 
-Met Media Services kunt u versleutelde assets leveren. Een **ContentKey** biedt veilige toegang tot uw **Asset**s. 
+Met Media Services kunt u versleutelde assets leveren. Een **ContentKey** biedt veilige toegang tot uw **Asset** s. 
 
-Wanneer u een nieuw activum maakt (bijvoorbeeld voordat u [bestanden uploadt](media-services-rest-upload-files.md)), kunt u de volgende versleutelings opties opgeven: **StorageEncrypted**, **CommonEncryptionProtected**of **EnvelopeEncryptionProtected**. 
+Wanneer u een nieuw activum maakt (bijvoorbeeld voordat u [bestanden uploadt](media-services-rest-upload-files.md)), kunt u de volgende versleutelings opties opgeven: **StorageEncrypted**, **CommonEncryptionProtected** of **EnvelopeEncryptionProtected**. 
 
 Wanneer u assets levert aan uw clients, kunt u [configureren dat activa dynamisch moeten worden versleuteld](media-services-rest-configure-asset-delivery-policy.md) met een van de volgende twee versleuteling: **DynamicEnvelopeEncryption** of **DynamicCommonEncryption**.
 
-Versleutelde assets moeten worden gekoppeld aan **ContentKey**s. In dit artikel wordt beschreven hoe u een inhouds sleutel maakt.
+Versleutelde assets moeten worden gekoppeld aan **ContentKey** s. In dit artikel wordt beschreven hoe u een inhouds sleutel maakt.
 
 Hieronder vindt u algemene stappen voor het genereren van inhouds sleutels die u koppelt aan activa die u wilt versleutelen. 
 
@@ -71,7 +71,7 @@ Hieronder vindt u algemene stappen voor het genereren van inhouds sleutels die u
      }
     ```
 
-5. Maak de inhouds sleutel met de **EncryptedContentKey** (geconverteerd naar base64-gecodeerde teken reeks), **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType**en **controlesom** waarden die u in de vorige stappen hebt ontvangen.
+5. Maak de inhouds sleutel met de **EncryptedContentKey** (geconverteerd naar base64-gecodeerde teken reeks), **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType** en **controlesom** waarden die u in de vorige stappen hebt ontvangen.
 6. Koppel de **ContentKey** -entiteit aan uw **Asset** -entiteit via de $links bewerking.
 
 In dit artikel wordt niet uitgelegd hoe u een AES-sleutel genereert, de sleutel versleutelt en de controlesom berekent. 

@@ -2,17 +2,18 @@
 title: Veelgestelde vragen over virtuele Windows-machines in azure
 description: Hierin vindt u antwoorden op enkele veelgestelde vragen over virtuele Windows-machines die zijn gemaakt met het Resource Manager-model.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.collection: windows
 ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: eaa3f56389e8cc101b57aefce833266fa20f66f7
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 0de25b29dc1e930956c01f342ca2614d1a9082ca
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197469"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102557502"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Veelgestelde vragen over Windows Virtual Machines
 In dit artikel worden enkele veelgestelde vragen over virtuele Windows-machines die zijn gemaakt in azure, behandeld met het Resource Manager-implementatie model. Voor de Linux-versie van dit onderwerp raadpleegt u [Veelgestelde vragen over Linux virtual machines](../linux/faq.md).

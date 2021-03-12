@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 550481b9153d8fe8745d2a745fe6b6f00d09cdb1
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 509d267dcdaef58a9792609a60c8a9401e90e867
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100365817"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199717"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -147,7 +147,7 @@ Hieronder ziet u hoe deze acties kunnen worden verholpen.
 
 ### <a name="q-i-cannot-add-more-than-3-azure-ad-user-accounts-under-the-same-user-session-on-a-windows-10-device-why"></a>V: Ik kan niet meer dan 3 Azure AD-gebruikers accounts toevoegen onder dezelfde gebruikers sessie op een Windows 10-apparaat, waarom?
 
-**A**: Azure AD heeft ondersteuning toegevoegd voor meerdere Azure AD-accounts in Windows 10 1803 release. Windows 10 beperkt het aantal Azure AD-accounts op een apparaat echter tot 3 om de grootte van token aanvragen te beperken en betrouw bare eenmalige aanmelding (SSO) in te scha kelen. Zodra 3 accounts zijn toegevoegd, zien gebruikers een fout voor volgende accounts. De aanvullende probleem informatie op het scherm fout geeft het volgende bericht weer waarin wordt aangegeven dat de bewerking voor het toevoegen van een account is geblokkeerd omdat de limiet voor account is bereikt. 
+**A**: Azure AD heeft ondersteuning toegevoegd voor meerdere Azure AD-accounts in Windows 10 1803 release. Windows 10 beperkt het aantal Azure AD-accounts op een apparaat echter tot 3 om de grootte van token aanvragen te beperken en betrouw bare eenmalige aanmelding (SSO) in te scha kelen. Zodra 3 accounts zijn toegevoegd, zien gebruikers een fout voor volgende accounts. De aanvullende probleem informatie op het scherm fout geeft het volgende bericht weer waarin wordt aangegeven dat de bewerking voor het toevoegen van een account is geblokkeerd, omdat de account limiet is bereikt. 
 
 ---
 ## <a name="azure-ad-join-faq"></a>Veelgestelde vragen over Azure AD-deelname

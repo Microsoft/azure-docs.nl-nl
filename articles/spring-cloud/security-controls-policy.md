@@ -1,18 +1,18 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure lente-Cloud
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure lente-Cloud. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.topic: sample
 author: bmitchell287
 ms.author: brendm
 ms.service: spring-cloud
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 0066502f655988e4bb8f1e3542c456cdd6f71d09
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 483a32191cbdd14ddb99bddb9a4cb404873247a8
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442436"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102633445"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-spring-cloud"></a>Azure Policy regulerende nalevings controles voor Azure lente-Cloud
 

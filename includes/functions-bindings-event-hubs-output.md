@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: dadd86521a7b6c20dab2ed036555b798b869344c
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 9fca69804220021ca7935e562f2026c11749515a
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102510963"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102623419"
 ---
 Gebruik de Event Hubs-uitvoerbinding om gebeurtenissen naar een gebeurtenisstroom te schrijven. U moet een verzendmachtiging voor een Event Hub hebben om er gebeurtenissen naar te kunnen schrijven.
 
@@ -250,7 +250,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**name** | N.v.t. | De naam van de variabele die in functiecode wordt gebruikt, vertegenwoordigt de gebeurtenis. |
 |**path** |**EventHubName** | Alleen Functions 1.x. De naam van de event hub. Wanneer de event hub-naam ook aanwezig is in de verbindingsreeks, overschrijft die waarde deze eigenschap tijdens runtime. |
 |**eventHubName** |**EventHubName** | Functions 2.x en hoger. De naam van de event hub. Wanneer de event hub-naam ook aanwezig is in de verbindingsreeks, overschrijft die waarde deze eigenschap tijdens runtime. |
-|**connection** |**Verbinding** | De naam van een app-instelling die de verbindingsreeks naar de naamruimte van de event hub bevat. Kopieer deze verbindingsreeks door op de knop **Verbindingsgegevens** voor de *naamruimte* te klikken, en niet op de event hub zelf. Deze verbindingsreeks moet verzendrechten hebben om het bericht naar de gebeurtenisstroom te verzenden.|
+|**connection** |**Verbinding** | De naam van een app-instelling die de verbindingsreeks naar de naamruimte van de event hub bevat. Kopieer deze verbindingsreeks door op de knop **Verbindingsgegevens** voor de [naamruimte](../articles/event-hubs/event-hubs-create.md#create-an-event-hubs-namespace) te klikken, en niet op de event hub zelf. Deze verbindingsreeks moet verzendrechten hebben om het bericht naar de gebeurtenisstroom te verzenden. <br><br>Als u [versie 5. x of hoger van de extensie](../articles/azure-functions/functions-bindings-event-hubs.md#event-hubs-extension-5x-and-higher)gebruikt in plaats van een Connection String, kunt u een verwijzing naar een configuratie sectie opgeven waarmee de verbinding wordt gedefinieerd. Zie [verbindingen](../articles/azure-functions/functions-reference.md#connections).|
 
 [!INCLUDE [app settings to local.settings.json](../articles/azure-functions/../../includes/functions-app-settings-local.md)]
 
@@ -258,11 +258,39 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 
 # <a name="c"></a>[C#](#tab/csharp)
 
+### <a name="default"></a>Standaard
+
+U kunt de volgende parameter typen gebruiken voor de uitvoer binding van Event hub:
+
+* `string`
+* `byte[]`
+* `POCO`
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+
 Verzend berichten met behulp van een methodeparameter, zoals `out string paramName`. In C#-script is `paramName` de waarde die is opgegeven in de eigenschap `name` van *function.json*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<string>` of `IAsyncCollector<string>` gebruiken in plaats van `out string`.
+
+### <a name="additional-types"></a>Aanvullende typen 
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+
+- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
 
 # <a name="c-script"></a>[C# Script](#tab/csharp-script)
 
+### <a name="default"></a>Standaard
+
+U kunt de volgende parameter typen gebruiken voor de uitvoer binding van Event hub:
+
+* `string`
+* `byte[]`
+* `POCO`
+* `EventData` -De standaard eigenschappen van Event Data zijn opgenomen in de voor de [micro soft. Azure. Event hubs-naam ruimte](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet).
+
 Verzend berichten met behulp van een methodeparameter, zoals `out string paramName`. In C#-script is `paramName` de waarde die is opgegeven in de eigenschap `name` van *function.json*. Als u meerdere berichten wilt schrijven, kunt u `ICollector<string>` of `IAsyncCollector<string>` gebruiken in plaats van `out string`.
+
+### <a name="additional-types"></a>Aanvullende typen 
+Apps die gebruikmaken van de 5.0.0 of een hogere versie van de Event hub-uitbrei ding gebruiken het `EventData` type in [Azure. Messa ging. Event hubs](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata?view=azure-dotnet) in plaats van de extensie in de [naam ruimte micro soft. Azure. Event hubs](https://docs.microsoft.com/dotnet/api/microsoft.azure.eventhubs.eventdata?view=azure-dotnet). Deze versie biedt geen ondersteuning voor het oudere `Body` type voor de volgende typen:
+
+- [EventBody](https://docs.microsoft.com/dotnet/api/azure.messaging.eventhubs.eventdata.eventbody?view=azure-dotnet)
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 

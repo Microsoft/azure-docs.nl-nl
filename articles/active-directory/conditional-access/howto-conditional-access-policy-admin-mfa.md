@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 08/03/2020
+ms.date: 03/04/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57826fcff03e79d5617c7eb69aac7d535d3c86f7
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 35178ecc9bc736bbaca3adc932022b15cc2fc956
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915705"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632081"
 ---
 # <a name="conditional-access-require-mfa-for-administrators"></a>Voorwaardelijke toegang: MFA vereisen voor beheerders
 
@@ -56,7 +56,7 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
 1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
-   1. Onder **insluiten** selecteert u **Directory rollen (preview)** en kiest u ten minste de volgende rollen:
+   1. Onder **insluiten** selecteert u **Directory rollen** en kiest u ingebouwde rollen als:
       * Verificatiebeheerder
       * Factureringsbeheerder
       * Beheerder van voorwaardelijke toegang
@@ -69,12 +69,11 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
       * Gebruikersbeheerder
    
       > [!WARNING]
-      > Het beleid voor voorwaardelijke toegang biedt geen ondersteuning voor gebruikers die zijn toegewezen aan een directory-rol [binnen een administratieve eenheid](../roles/admin-units-assign-roles.md) of Directory-rollen die rechtstreeks aan een object zijn gekoppeld, zoals via [aangepaste rollen](../roles/custom-create.md).
+      > Beleids regels voor voorwaardelijke toegang ondersteunen ingebouwde rollen. Beleids regels voor voorwaardelijke toegang worden niet afgedwongen voor andere typen rollen, inclusief [administratieve eenheid-scoped](../roles/admin-units-assign-roles.md) of [aangepaste rollen](../roles/custom-create.md).
 
    1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
    1. Selecteer **Gereed**.
 1. Onder **Cloud-apps of acties**  >  , selecteert u **alle Cloud-apps** en selecteert u **gereed**.
-1. Onder **voor waarden**  >  **client**-apps  gaat u naar **Ja** en selecteert u onder **Selecteer de client-apps waarop dit beleid van toepassing is om** alle geselecteerde standaard instellingen te behouden en selecteert u **gereed**.
 1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **multi-factor Authentication vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid in te stellen.

@@ -3,16 +3,16 @@ title: Een Linux-VM maken en versleutelen met behulp van Azure Portal
 description: In deze quickstart leert u hoe u de Azure Portal gebruikt om een virtuele Linux-machine te maken en te versleutelen
 author: msmbaldwin
 ms.author: mbaldwin
-ms.service: virtual-machines-linux
-ms.subservice: security
+ms.service: virtual-machines
+ms.subservice: disks
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 13e6077ee9bd24cdfc9a7c1f405199989546680f
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: 188ba72f4da4e5a24554f895473f1c74e48d50fa
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896018"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102558352"
 ---
 # <a name="quickstart-create-and-encrypt-a-virtual-machine-with-the-azure-portal"></a>Quickstart: Een virtuele machine maken en versleutelen met Azure Portal
 
@@ -42,7 +42,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
     >
     > Om verwarring te voorkomen, raden we aan het tabblad *Schijven* helemaal over te slaan tijdens deze zelfstudie.
 
-1. Selecteer het tabblad 'Beheer' en controleer of u een Diagnostics-opslagaccount hebt. Als u geen opslagaccounts hebt, selecteert u *Nieuw maken* , geeft u het nieuwe account de naam *myStorageAccount* en selecteert u 'OK'
+1. Selecteer het tabblad 'Beheer' en controleer of u een Diagnostics-opslagaccount hebt. Als u geen opslagaccounts hebt, selecteert u *Nieuw maken*, geeft u het nieuwe account de naam *myStorageAccount* en selecteert u 'OK'
 
     :::image type="content" source="../media/disk-encryption/portal-quickstart-vm-creation-storage.png" alt-text="Scherm Resourcegroep maken":::
 

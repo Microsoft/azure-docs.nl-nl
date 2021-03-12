@@ -5,14 +5,14 @@ author: jseb225
 ms.author: jeanb
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 12/06/2018
+ms.date: 3/12/2021
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 633885bb1062edac8226c073768ffdeba84fcb55
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 9adc4c92e3e637b9d3e18249b5de00782a94baab
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012628"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232882"
 ---
 # <a name="management-net-sdk-set-up-and-run-analytics-jobs-using-the-azure-stream-analytics-api-for-net"></a>Management .NET SDK: analyse taken instellen en uitvoeren met behulp van de Azure Stream Analytics-API voor .NET
 Meer informatie over het instellen en uitvoeren van analyse taken met behulp van de Stream Analytics-API voor .NET met behulp van de Management .NET SDK. Stel een project in en maak invoer-en uitvoer bronnen, trans formaties en taken voor starten en stoppen. Voor uw analyse taken kunt u gegevens streamen vanuit Blob Storage of van een Event Hub.
@@ -207,6 +207,12 @@ De methode **TestConnection** test of de stream Analytics taak verbinding kan ma
    // Test the connection to the input
    ResourceTestStatus testInputResult = streamAnalyticsManagementClient.Inputs.Test(resourceGroupName, streamingJobName, inputName);
    ```
+Het resultaat van de TestConnection-aanroep is een *ResourceTestResult* -object dat twee eigenschappen bevat:
+
+- *status*: dit kan een van de volgende teken reeksen zijn: ["TestNotAttempted", "TestSucceeded", "TestFailed"]
+- *fout*: het type ErrorResponse bevat de volgende eigenschappen:
+   - *code*: een vereiste eigenschap van het type teken reeks. De waarde is standaard System .net. http status code ontvangen tijdens het testen.
+   - *bericht*: een vereiste eigenschap van het type teken reeks die de fout vertegenwoordigt. 
 
 ## <a name="create-a-stream-analytics-output-target"></a>Een Stream Analytics-uitvoer doel maken
 Het maken van een uitvoer doel is vergelijkbaar met het maken van een Stream Analytics invoer bron. Uitvoer doelen zijn als invoer bronnen gekoppeld aan een specifieke taak. Als u hetzelfde uitvoer doel voor verschillende taken wilt gebruiken, moet u de methode opnieuw aanroepen en een andere taak naam opgeven.

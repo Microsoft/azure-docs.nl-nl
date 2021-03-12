@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7828313844b8f95b2bac5bff37022a822686ab33
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 9f0fb81a4daa57b473e8b2b4b937426eafbf903d
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740241"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103014533"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Aangepaste rollen met resource bereik toewijzen met behulp van Power shell in Azure Active Directory
 
@@ -35,16 +35,16 @@ Maak verbinding met uw Azure AD-organisatie met behulp van een algemeen beheerde
 Installeer de Azure AD Power shell-module vanuit het [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview). Importeer vervolgens de Azure AD PowerShell preview-module met de volgende opdracht:
 
 ``` PowerShell
-Import-Module AzureADPreview
+Import-Module -Name AzureADPreview
 ```
 
 Als u wilt controleren of de module gereed is voor gebruik, gaat u naar de versie die wordt geretourneerd door de volgende opdracht:
 
 ``` PowerShell
-Get-Module AzureADPreview
+Get-Module -Name AzureADPreview
   ModuleType Version      Name                         ExportedCommands
   ---------- ---------    ----                         ----------------
-  Binary     2.0.0.115    azureadpreview               {Add-AzureADMSAdministrati...}
+  Binary     2.0.0.115    AzureADPreview               {Add-AzureADMSAdministrati...}
 ```
 
 U kunt nu beginnen met het gebruik van de cmdlets in de module. Zie voor een volledige beschrijving van de cmdlets in de Azure AD-module de online referentie documentatie voor [Azure ad preview-module](https://www.powershellgallery.com/packages/AzureADPreview).

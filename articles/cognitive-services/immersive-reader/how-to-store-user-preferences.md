@@ -6,21 +6,21 @@ author: metanMSFT
 manager: guillasi
 ms.service: cognitive-services
 ms.subservice: immersive-reader
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/29/2020
 ms.author: metang
-ms.openlocfilehash: 31c1ef8d75b4c12e4dd6a360852feb27857ac412
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 16ecd2166604d29fbc2242229f625b30ffd684e5
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636541"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617689"
 ---
 # <a name="how-to-store-user-preferences"></a>Gebruikers voorkeuren opslaan
 
-In dit artikel wordt beschreven hoe u de gebruikers interface-instellingen van de gebruiker, formeel bekend als **gebruikers voorkeuren** , kunt opslaan via de opties [voor voor keuren](./reference.md#options) en [-ONPREFERENCESCHANGED](./reference.md#options) insluitende lezer SDK.
+In dit artikel wordt beschreven hoe u de gebruikers interface-instellingen van de gebruiker, formeel bekend als **gebruikers voorkeuren**, kunt opslaan via de opties [voor voor keuren](./reference.md#options) en [-ONPREFERENCESCHANGED](./reference.md#options) insluitende lezer SDK.
 
-Wanneer de [CookiePolicy](./reference.md#cookiepolicy-options) SDK-optie is ingesteld op *ingeschakeld* , slaat de toepassing voor insluitende lezer de **gebruikers voorkeuren** (tekst grootte, thema kleur, letter type enzovoort) op in cookies, die lokaal zijn voor een specifieke browser en een specifiek apparaat. Telkens wanneer de gebruiker de insluitende lezer op dezelfde browser en hetzelfde apparaat start, wordt deze geopend met de voor keuren van de gebruiker van de laatste sessie op het apparaat. Als de gebruiker echter de insluitende lezer op een andere browser of een ander apparaat opent, worden de instellingen in eerste instantie geconfigureerd met de standaard instellingen van de insluitende lezer. de gebruiker moet de voor keuren opnieuw instellen, enzovoort voor elk apparaat dat ze gebruiken. De- `-preferences` en `-onPreferencesChanged` insluitende Reader SDK-opties bieden een manier om toepassingen de voor keuren van een gebruiker te laten zwerven over verschillende browsers en apparaten, zodat de gebruiker een consistente ervaring heeft wanneer ze de toepassing gebruiken.
+Wanneer de [CookiePolicy](./reference.md#cookiepolicy-options) SDK-optie is ingesteld op *ingeschakeld*, slaat de toepassing voor insluitende lezer de **gebruikers voorkeuren** (tekst grootte, thema kleur, letter type enzovoort) op in cookies, die lokaal zijn voor een specifieke browser en een specifiek apparaat. Telkens wanneer de gebruiker de insluitende lezer op dezelfde browser en hetzelfde apparaat start, wordt deze geopend met de voor keuren van de gebruiker van de laatste sessie op het apparaat. Als de gebruiker echter de insluitende lezer op een andere browser of een ander apparaat opent, worden de instellingen in eerste instantie geconfigureerd met de standaard instellingen van de insluitende lezer. de gebruiker moet de voor keuren opnieuw instellen, enzovoort voor elk apparaat dat ze gebruiken. De- `-preferences` en `-onPreferencesChanged` insluitende Reader SDK-opties bieden een manier om toepassingen de voor keuren van een gebruiker te laten zwerven over verschillende browsers en apparaten, zodat de gebruiker een consistente ervaring heeft wanneer ze de toepassing gebruiken.
 
 Ten eerste, door de `-onPreferencesChanged` call back SDK-optie op te geven bij het starten van de toepassing voor insluitende lezer, stuurt de insluitende lezer een `-preferences` teken reeks terug naar de hosttoepassing telkens wanneer de gebruiker de voor keuren wijzigt tijdens de insluitende lezer-sessie. De hosttoepassing is dan verantwoordelijk voor het opslaan van de gebruikers voorkeuren in hun eigen systeem. Wanneer dezelfde gebruiker vervolgens de insluitende lezer weer start, kan de hosttoepassing de voor keuren van die gebruiker ophalen uit de opslag, en deze opgeven als de `-preferences` teken reeks-SDK-optie bij het starten van de toepassing voor insluitende lezer, zodat de voor keuren van de gebruiker worden hersteld.
 

@@ -11,12 +11,12 @@ ms.author: asrastog
 ms.custom:
 - 'Role: Cloud Development'
 - devx-track-csharp
-ms.openlocfilehash: 19ae5dc24e0a08548f4914114c9c0a6be65f4f0b
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: d2fe8f32ec854e1e6db644a039e6a249cfbddcaa
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101096095"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012884"
 ---
 # <a name="use-iot-hub-message-routing-to-send-device-to-cloud-messages-to-different-endpoints"></a>IoT Hub bericht routering gebruiken om apparaat-naar-Cloud-berichten te verzenden naar verschillende eind punten
 
@@ -126,7 +126,7 @@ U kunt de terugval route in-of uitschakelen op de Blade voor de Azure Portal->be
 
 ## <a name="non-telemetry-events"></a>Niet-telemetrie-gebeurtenissen
 
-Naast het telemetrie van apparaten kunnen ook bericht routering het verzenden van dubbele wijzigings gebeurtenissen, levenscyclus gebeurtenissen van apparaten en gebeurtenissen voor digitale dubbele wijzigingen. Als er bijvoorbeeld een route is gemaakt met een gegevens bron die is ingesteld op **dubbele wijzigings gebeurtenissen** van het apparaat, IOT hub stuurt berichten naar het eind punt dat de wijziging in het dubbele apparaat bevat. Als er een route is gemaakt met een gegevens bron die is ingesteld op **levens cyclus gebeurtenissen van apparaten**, IOT hub een bericht verzenden dat aangeeft of het apparaat is verwijderd of gemaakt. Ten slotte kan een ontwikkelaar, als onderdeel van [Azure IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md), routes maken met een gegevens bron die is ingesteld op **digitale dubbele wijzigings gebeurtenissen** en IOT hub berichten verzendt wanneer een digitale dubbele [eigenschap](../iot-pnp/iot-plug-and-play-glossary.md) is ingesteld of gewijzigd, een [digitaal](../iot-pnp/iot-plug-and-play-glossary.md) dubbel punt wordt vervangen of wanneer een wijzigings gebeurtenis plaatsvindt voor het onderliggende apparaat dubbele.
+Naast het telemetrie van apparaten kunnen ook bericht routering het verzenden van dubbele wijzigings gebeurtenissen, levenscyclus gebeurtenissen van apparaten en gebeurtenissen voor digitale dubbele wijzigingen. Als er bijvoorbeeld een route is gemaakt met een gegevens bron die is ingesteld op **dubbele wijzigings gebeurtenissen** van het apparaat, IOT hub stuurt berichten naar het eind punt dat de wijziging in het dubbele apparaat bevat. Als er een route is gemaakt met een gegevens bron die is ingesteld op **levens cyclus gebeurtenissen van apparaten**, IOT hub een bericht verzenden dat aangeeft of het apparaat is verwijderd of gemaakt. Ten slotte kan een ontwikkelaar, als onderdeel van [Azure IoT Plug en Play](../iot-pnp/overview-iot-plug-and-play.md), routes maken met een gegevens bron die is ingesteld op **digitale dubbele wijzigings gebeurtenissen** en IOT hub berichten verzendt wanneer een digitale dubbele eigenschap is ingesteld of gewijzigd, een digitaal dubbel punt wordt vervangen of wanneer een wijzigings gebeurtenis plaatsvindt voor het onderliggende apparaat dubbele.
 
 [IOT hub integreert ook met Azure Event grid](iot-hub-event-grid.md) voor het publiceren van faxgebeurtenissen om realtime integraties en automatisering van werk stromen te ondersteunen op basis van deze gebeurtenissen. Bekijk de belangrijkste [verschillen tussen bericht Routering en Event grid](iot-hub-event-grid-routing-comparison.md) om te leren welke het beste werkt voor uw scenario.
 

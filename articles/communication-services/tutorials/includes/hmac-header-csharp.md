@@ -1,6 +1,6 @@
 ---
 title: 'Een HTTP-aanvraag ondertekenen met C #'
-description: Dit is de C#-versie van het ondertekenen van een HTTP-aanvraag met een HMAC-hand tekening voor communicatie Services.
+description: In deze zelf studie wordt de C#-versie van het ondertekenen van een HTTP-aanvraag met een HMAC-hand tekening voor Azure Communication Services uitgelegd.
 author: alexandra142
 manager: soricos
 services: azure-communication-services
@@ -8,30 +8,30 @@ ms.author: apistrak
 ms.date: 01/15/2021
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: 3c1b56f81e5164bbdfa94fdaeca5f5f1f55b3b51
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: c8cf2eb091aa7ab70fa6dba1a8b1f56bea1a00bf
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100551802"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631338"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u aan de slag gaat, moet u het volgende doen:
-- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie. 
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/) installeren 
-- Maak een Azure Communication Services-resource. Zie [een Azure Communication-resource maken](../../quickstarts/create-communication-resource.md)voor meer informatie. U moet uw **resourceEndpoint** en  **resourceAccessKey** voor deze zelf studie vastleggen.
 
-
+- Maak een Azure-account met een actief abonnement. Zie [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voor meer informatie.
+- Installeer [Visual Studio](https://visualstudio.microsoft.com/downloads/).
+- Maak een Azure Communication Services-resource. Zie [een Azure Communication Services-resource maken](../../quickstarts/create-communication-resource.md)voor meer informatie. U moet uw **resourceEndpoint** en **resourceAccessKey** voor deze zelf studie vastleggen.
 
 ## <a name="sign-an-http-request-with-c"></a>Een HTTP-aanvraag ondertekenen met C #
-Toegangs sleutel verificatie maakt gebruik van een gedeelde geheime sleutel voor het genereren van een HMAC-hand tekening voor elke HTTP-aanvraag. Deze hand tekening wordt gegenereerd met het SHA256-algoritme en wordt `Authorization` met behulp van het schema in de header verzonden `HMAC-SHA256` . Bijvoorbeeld:
+
+Toegangs sleutel verificatie maakt gebruik van een gedeelde geheime sleutel voor het genereren van een HMAC-hand tekening voor elke HTTP-aanvraag. Deze hand tekening wordt gegenereerd met het SHA256-algoritme en wordt in de header verzonden met `Authorization` behulp van het `HMAC-SHA256` schema. Bijvoorbeeld:
 
 ```
 Authorization: "HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signature=<hmac-sha256-signature>"
 ```
 
-De `hmac-sha256-signature` bestaat uit: 
+De `hmac-sha256-signature` bestaat uit:
 
 - HTTP-term (bijvoorbeeld `GET` of `PUT` )
 - HTTP-aanvraag pad
@@ -39,18 +39,19 @@ De `hmac-sha256-signature` bestaat uit:
 - Host
 - x-MS-content-sha256
 
-## <a name="setting-up"></a>Instellen
-In de volgende stappen wordt beschreven hoe u de autorisatie-header bouwt:
+## <a name="setup"></a>Instellen
+
+In de volgende stappen wordt beschreven hoe u de autorisatie-header bouwt.
 
 ### <a name="create-a-new-c-application"></a>Een nieuwe C#-toepassing maken
 
-Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `SignHmacTutorial`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs**.
+In een console venster, zoals cmd, Power shell of bash, gebruikt u de `dotnet new` opdracht om een nieuwe console-app met de naam te maken `SignHmacTutorial` . Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: **Program.cs**.
 
 ```console
 dotnet new console -o SignHmacTutorial
 ```
 
-Wijzig uw map in de zojuist gemaakte app-map en gebruik de opdracht `dotnet build` om uw toepassing te compileren.
+Wijzig uw map in de zojuist gemaakte app-map. Gebruik de `dotnet build` opdracht voor het compileren van uw toepassing.
 
 ```console
 cd SignHmacTutorial
@@ -59,13 +60,13 @@ dotnet build
 
 ## <a name="install-the-package"></a>Het pakket installeren
 
-Installeer het pakket `Newtonsoft.Json` , dat wordt gebruikt voor de serialisatie van hoofd tekst:
+Installeer het pakket `Newtonsoft.Json` dat wordt gebruikt voor de serialisatie van de hoofd tekst.
 
 ```console
 dotnet add package Newtonsoft.Json
 ```
 
-Update de `Main` methode declaratie ter ondersteuning van async-code. Gebruik de volgende code om te beginnen:
+Update de `Main` methode declaratie ter ondersteuning van async-code. Gebruik de volgende code om te beginnen.
 
 ```csharp
 using System;
@@ -82,21 +83,22 @@ namespace SignHmacTutorial
         static async Task Main(string[] args)
         {
             Console.WriteLine("Azure Communication Services - Sign an HTTP request Tutorial");
-            // Tutorial code goes here
+            // Tutorial code goes here.
         }
     }
 }
 
 ```
+
 ## <a name="create-a-request-message"></a>Een aanvraag bericht maken
 
-Voor dit voor beeld ondertekenen we een aanvraag om een nieuwe identiteit te maken met behulp van de API voor verificatie van Communication Services (versie `2021-03-07` )
+Voor dit voor beeld ondertekenen we een aanvraag om een nieuwe identiteit te maken met behulp van de API voor verificatie van Communication Services (versie `2021-03-07` ).
 
-Voeg de volgende code toe aan de `Main` methode:
+Voeg de volgende code toe aan de methode `Main`.
 
 ```csharp
 string resourceEndpoint = "resourceEndpoint";
-//Create an uri you are going to call
+//Create a uri you are going to call.
 var requestUri = new Uri($"{resourceEndpoint}/identities?api-version=2021-03-07");
 //Endpoint identities?api-version=2021-03-07 accepts list of scopes as a body
 var body = new[] { "chat" }; 
@@ -109,7 +111,7 @@ var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri)
 
 Vervang door `resourceEndpoint` de werkelijke waarde van het resource-eind punt.
 
-## <a name="create-content-hash"></a>Hash voor inhoud maken
+## <a name="create-a-content-hash"></a>Een hash voor inhoud maken
 
 De hash voor inhoud maakt deel uit van uw HMAC-hand tekening. Gebruik de volgende code om de hash van de inhoud te berekenen. U kunt deze methode toevoegen aan `Progam.cs` de `Main` methode.
 
@@ -125,7 +127,8 @@ static string ComputeContentHash(string content)
 ```
 
 ## <a name="compute-a-signature"></a>Een hand tekening berekenen
-Gebruik de volgende code om een methode te maken voor het Computing van een HMAC-hand tekening.
+
+Gebruik de volgende code om een methode te maken voor het berekenen van uw HMAC-hand tekening.
 
 ```csharp
  static string ComputeSignature(string stringToSign)
@@ -140,48 +143,49 @@ Gebruik de volgende code om een methode te maken voor het Computing van een HMAC
 }
 ```
 
-Vervang door `resourceAccessKey` de toegangs sleutel van uw werkelijke Azure Communication Services-resource.
+Vervang door `resourceAccessKey` een toegangs sleutel van uw werkelijke communicatie Services-resource.
 
 ## <a name="create-an-authorization-header-string"></a>Een teken reeks voor een autorisatie-header maken
 
-We maken nu de teken reeks die we gaan toevoegen aan onze autorisatie-header:
+We maken nu de teken reeks die we gaan toevoegen aan onze autorisatie-header.
 
-1. Een hash voor inhoud berekenen
-2. De tijds tempel van de UTC (Coordinated Universal Time) opgeven
-3. Een teken reeks voorbereiden om te ondertekenen
-4. De hand tekening berekenen
-5. De teken reeks die wordt gebruikt in de autorisatie-header samen voegen
+1. Een hash voor inhoud berekenen.
+1. Geef de UTC-tijds tempel (Coordinated Universal Time) op.
+1. Een teken reeks voorbereiden om te ondertekenen.
+1. De hand tekening te berekenen.
+1. De teken reeks die wordt gebruikt in de autorisatie-header samen voegen.
  
-Voeg de volgende code toe aan de `Main` methode:
+Voeg de volgende code toe aan de methode `Main`.
 
 ```csharp
-// Compute a content hash
+// Compute a content hash.
 var contentHash = ComputeContentHash(serializedBody);
-//Specify the Coordinated Universal Time (UTC) timestamp
+//Specify the Coordinated Universal Time (UTC) timestamp.
 var date = DateTimeOffset.UtcNow.ToString("r", CultureInfo.InvariantCulture);
-//Prepare a string to sign
+//Prepare a string to sign.
 var stringToSign = $"POST\n{requestUri.PathAndQuery}\n{date};{requestUri.Authority};{contentHash}";
-//Compute the signature
+//Compute the signature.
 var signature = ComputeSignature(stringToSign);
-//Concatenate the string, which will be used in authorization header
+//Concatenate the string, which will be used in the authorization header.
 var authorizationHeader = $"HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signature={signature}";
 ```
 
 ## <a name="add-headers-to-requestmessage"></a>Headers toevoegen aan requestMessage
 
-Gebruik de volgende code om de vereiste headers toe te voegen aan uw `requestMessage` :
+Gebruik de volgende code om de vereiste kopteksten toe te voegen aan uw `requestMessage` .
 
 ```csharp
-//Add content hash header
+//Add a content hash header.
 requestMessage.Headers.Add("x-ms-content-sha256", contentHash);
-//add date header
+//Add a date header.
 requestMessage.Headers.Add("Date", date);
-//add Authorization header
+//Add an authorization header.
 requestMessage.Headers.Add("Authorization", authorizationHeader);
 ```
 
 ## <a name="test-the-client"></a>De client testen
-Roep het eind punt aan met `HttpClient` en controleer het antwoord.
+
+Roep het eind punt aan met en `HttpClient` Controleer het antwoord.
 
 ```csharp
 HttpClient httpClient = new HttpClient

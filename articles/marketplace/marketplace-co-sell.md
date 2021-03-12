@@ -7,12 +7,12 @@ ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
 ms.date: 3/08/2021
-ms.openlocfilehash: d3759590cdd926b5e144cdc11761630a0aba4e29
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 7d1d4a1a89931e3ded8274a4731aa3606695771b
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102563775"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199886"
 ---
 # <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Meer informatie over het verkopen van micro soft verkoop teams en partners
 
@@ -46,8 +46,8 @@ Mede-verkoop statussen voor Azure:
 - Azure IP-gemotiveerd verkopen
 
 Mede-verkoop statussen voor zakelijke toepassingen
-- ISV Connect-standaard voor het kopen van apps
-- Online-apps ISV Connect Premium  
+- Online-app ISV Connect Standard of Premium-stimulans Standard
+- Online-apps ISV Connect Standard of Premium-stimulans Premium  
 
 Zie [vereisten voor co-selling](co-sell-requirements.md)voor meer informatie over de vereisten voor het uitvoeren van deze co-sell-statussen.
 
@@ -74,12 +74,12 @@ U kunt de standaard-of Premium-prestatie status van de online-app voor het stimu
 - Dynamics 365 voor klant betrokkenheid & PowerApps
 - Dynamics 365 voor bewerkingen
 
-Aanbiedingen die _Azure IP-gemotiveerd_ of _Premium-apps met een ISV connect-verbinding_ voor het bedrijf kunnen verkrijgen.
+Aanbiedingen die de _gemotiveerd-status van Azure IP-co-verkoop_ verzorgen, profiteren van de volgende commerciële Marketplace:
 
 - De kosten voor Marketplace-service zijn gereduceerd van 20% tot 10%. Deze korting is van toepassing op uw IaaS-oplossing (Infrastructure as a Service) of als SaaS (Software as a Service) die wordt verkocht via de commerciële Marketplace. Zie [Commercial Marketplace service-kosten](marketplace-commercial-transaction-capabilities-and-considerations.md#commercial-marketplace-service-fees)voor meer informatie.
 - Cloud Solution Provider (CSP)-partners ontvangen een stimulans van 10% om uw IaaS-oplossing of SaaS-aanbieding te verkopen. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over het CSP-programma.
 - Verkoop van uw aanbieding via de commerciële Marketplace draagt bij aan de verplichtingen van het Azure-verbruik van klanten. In aanmerking komende klanten zien dat de aanbieding is gemarkeerd als **Azure-voor deel dat in aanmerking komt** in azure Portal. Zie voor [delen van Azure-verbruik](azure-consumption-commitment-benefit.md)voor meer informatie.
-- Aanbiedingen die _Azure IP-gemotiveerd_ of _Premium-apps met een ISV-verbinding_ voor het maken van een micro soft-product kunnen behalen, krijgen een van de **voor keuren** van de leverancier van de aanbieding in de online winkels. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken.
+- Aanbiedingen die _Azure IP gemotiveerd_ of _online ISV Connect Standard of Premium stimuleren._ de status ontvangt een badge met de **Voorkeurs oplossingen van micro soft** op de aanbiedings pagina in de online winkels. De badge profileert de kwaliteit, prestaties en mogelijkheid van een aanbieding om klant behoeften in een bepaalde branche verticaal of oplossings gebied aan te pakken.
 
 Zie voor [bereidingen](co-sell-requirements.md)voor het samen verkopen van de verkoop en de gemotiveerd-status van de verkoop van de kant-en-klare en verkoop-gemotiveerd voor meer informatie.
 

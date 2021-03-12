@@ -3,7 +3,7 @@ title: Gids voor probleem oplossing voor live streamen | Microsoft Docs
 description: Dit artikel bevat suggesties voor het oplossen van problemen met het Azure Media Services van live streamen.
 services: media-services
 documentationcenter: ''
-author: juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 97ad3048fccc4f8ed6baf0f1d5304f1c8d81c3f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 3/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 1b7a7ec746f5400fe65e3e1db88ae61e97ae710a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89269230"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103009042"
 ---
 # <a name="troubleshooting-guide-for-live-streaming"></a>Handleiding voor het oplossen van problemen met live streaming
 
@@ -33,7 +33,7 @@ Deze sectie bevat suggesties voor het oplossen van problemen met betrekking tot 
 * **Mogelijk probleem**: kan encoder-logboeken niet vinden die kunnen helpen bij het oplossen van problemen.
   
   * **Telestream Wirecast**: u kunt meestal logboeken vinden onder C:\Users \{ username} \AppData\Roaming\Wirecast\ 
-  * **Elementair Live**: u vindt koppelingen naar Logboeken op de beheer Portal. Klik op **Statistieken**en vervolgens op **Logboeken**. Op de pagina **logboek bestanden** ziet u een lijst met Logboeken voor alle LiveEvent-items. Selecteer het abonnement dat overeenkomt met uw huidige sessie. 
+  * **Elementair Live**: u vindt koppelingen naar Logboeken op de beheer Portal. Klik op **Statistieken** en vervolgens op **Logboeken**. Op de pagina **logboek bestanden** ziet u een lijst met Logboeken voor alle LiveEvent-items. Selecteer het abonnement dat overeenkomt met uw huidige sessie. 
   * **Flash Media Live Encoder**: u kunt de **Logboekmap vinden...** door te navigeren naar het tabblad **coderings logboek** .
 
 ### <a name="problem-there-is-no-option-for-outputting-a-progressive-stream"></a>Probleem: er is geen optie voor het uitvoeren van een progressieve stroom

@@ -16,12 +16,12 @@ ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: bd58f18959df3aa290083f907be8ab703366a7c6
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: d980b92bc4effc58ef84ef6ec70c3908f575e484
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360098"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615598"
 ---
 # <a name="pricing-guidance-for-sql-server-on-azure-vms"></a>Prijs informatie voor SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -97,10 +97,7 @@ Zie de volgende koppelingen voor het maken van een Azure-VM met SQL Server 2017 
 
 ## <a name="bring-your-own-license-byol"></a><a id="byol"></a> Bring Your Own License (BYOL)
 
-Met behulp van een bestaande SQL Server volume licentie met Software Assurance in een Azure-VM kunt u **uw eigen SQL Server-licentie meenemen via License Mobility**, ook wel **BYOL** genoemd. Met een SQL Server-VM met BYOL worden alleen kosten in rekening gebracht voor de kosten van het uitvoeren van de virtuele machine, niet voor SQL Server licenties, gezien dat u al licenties en Software Assurance hebt aangeschaft via een volume licentie programma.
-
-> [!IMPORTANT]
-> Voor BYOL-installatie kopieën is een Enterprise Agreement met Software Assurance vereist. Ze zijn op dit moment niet beschikbaar als onderdeel van de Azure Cloud Solution partner (CSP). CSP-klanten kunnen hun eigen licentie gebruiken door een betalen per gebruik-installatie kopie te implementeren en vervolgens de [Azure Hybrid Benefit](licensing-model-azure-hybrid-benefit-ahb-change.md)in te scha kelen.
+Met behulp van een bestaande SQL Server volume licentie met Software Assurance in een Azure-VM kunt u **uw eigen SQL Server-licentie meenemen via License Mobility**, ook wel **BYOL** genoemd. Een SQL Server virtuele machine met BYOL alleen kosten in rekening voor de kosten van het uitvoeren van de virtuele machine, niet voor SQL Server licentie, gezien dat u al licenties en Software Assurance hebt aangeschaft via een volume licentie programma of via een Cloud Solution partner (CSP).
 
 > [!NOTE]
 > De BYOL-installatie kopieën zijn momenteel alleen beschikbaar voor virtuele Windows-machines. U kunt SQL Server echter hand matig installeren op een virtuele Linux-machine. Zie de richt lijnen in de [SQL Server op een Linux-VM met veelgestelde vragen](../linux/frequently-asked-questions-faq.md).
@@ -113,7 +110,7 @@ U wordt aangeraden uw eigen SQL Server-licenties te halen via License Mobility.
 
 Als u BYOL wilt gebruiken met een SQL Server-VM, moet u een licentie hebben voor SQL Server Standard of ENTER prise en [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1), een vereiste optie via sommige volume licentie Programma's en een optionele aankoop met anderen. Het prijs niveau dat door de volume licentie Programma's wordt gegeven, is afhankelijk van het type overeenkomst en het aantal en of de toezeg ging naar SQL Server. Maar als vuist regel biedt uw eigen licentie voor continue productie werkbelastingen de volgende voor delen:
 
-| BYOL voor deel | Description |
+| BYOL voor deel | Beschrijving |
 |-----|-----|
 | **Kostenbesparingen** | De [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) biedt een besparing van maxi maal 55%. Zie voor meer informatie [switching licentie model](licensing-model-azure-hybrid-benefit-ahb-change.md) |
 | **Gratis passieve secundaire replica** | Een ander voor deel van het meebrengen van uw eigen licentie is de [gratis licentie voor één passieve secundaire replica](https://azure.microsoft.com/pricing/licensing-faq/) per SQL Server voor hoge Beschik baarheid. Dit is de helft van de licentie kosten van een Maxi maal beschik bare SQL Server implementatie (bijvoorbeeld met behulp van AlwaysOn-beschikbaarheids groepen). De rechten om de passieve secundaire uit te voeren, worden via het Fail-Over servers Software Assurance-voor deel verschaft. |

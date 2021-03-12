@@ -2,16 +2,16 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 03/05/2021
+ms.date: 03/10/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: d056b83cc83de75015cfbfa9c1b775cbaa43e041
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 60ddf7a90f478fa0b286f14a1cba4d609b02e321
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102442578"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103021199"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[SQL-servers moeten worden geconfigureerd met 90 dagen retentie of hoger](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |SQL-servers moeten worden geconfigureerd met 90 dagen bewakingsretentie of hoger. |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |
+|[SQL-servers moeten controle gegevens gedurende ten minste 90 dagen bewaren](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F89099bee-89e0-4b26-a5f4-165451757743) |Voor het onderzoeken van incidenten wordt aangeraden de gegevens retentie voor de controle gegevens van uw SQL-servers tot ten minste 90 dagen in te stellen. Controleer of u de benodigde Bewaar regels hebt voor de regio's waarin u werkt. Dit is soms vereist om te voldoen aan de regelgevings normen. |AuditIfNotExists, uitgeschakeld |[2.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/SQL/SqlServerAuditingRetentionDays_Audit.json) |

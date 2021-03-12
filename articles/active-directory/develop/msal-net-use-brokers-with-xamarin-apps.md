@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 6958302a429fd88d4e26087b860b7f473bf4a1f9
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 226e94510709b37a7e6b1aae90a7e0ec5b4222b9
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103988"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199582"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
@@ -326,6 +326,8 @@ De voorwaartse slash ( `/` ) voor de hand tekening in de `android:path` waarde i
                     android:path="/hgbUYHVBYUTvuvT&Y6tr554365466="/>
 ```
 
+Voor meer informatie over het configureren van uw toepassing voor de ondersteuning van de systeem browser en Android 11 raadpleegt u [het Android-manifest bijwerken voor systeem browser ondersteuning](msal-net-xamarin-android-considerations.md#update-the-android-manifest-for-system-webview-support).
+
 Als alternatief kunt u MSAL configureren om terug te vallen op de Inge sloten browser, die niet afhankelijk is van een omleidings-URI:
 
 ```csharp
@@ -344,22 +346,22 @@ Hier volgen enkele tips voor het vermijden van problemen wanneer u brokered-veri
 
     Voor beeld: als u Microsoft Authenticator voor het eerst installeert en vervolgens Intune-bedrijfsportal installeert, wordt de brokered-verificatie *alleen* uitgevoerd op de Microsoft Authenticator.
 - **Logboeken** : als u een probleem ondervindt met brokered Authentication, kunt u de logboeken van de Broker raadplegen om de oorzaak te achterhalen.
-  - Microsoft Authenticator logboeken weer geven:
+  - Microsoft Authenticator-logboeken ophalen:
 
     1. Selecteer de menu knop in de rechter bovenhoek van de app.
-    1. Selecteer **Help**-  >  **Logboeken verzenden** logboeken  >  **weer geven**.
-    1. Selecteer **Alles kopiëren** om de Broker logboeken te kopiëren naar het klem bord van het apparaat.
+    1. Selecteer **feedback** over  >  **problemen verzenden?**.
+    1. Onder **Wat wilt u doen? selecteert u** een optie en voegt u een beschrijving toe.
+    1. Als u de logboeken wilt verzenden, selecteert u de pijl in de rechter bovenhoek van de app.
 
-    De beste manier om fouten op te lossen met deze logboeken is door ze naar uzelf te sturen en ze weer te geven op uw ontwikkel computer. Het kan zijn dat u de logboeken op uw computer gemakkelijker kunt parseren in plaats van op het apparaat zelf. U kunt ook een test editor op Android gebruiken om de logboeken op te slaan als een tekst bestand en vervolgens een USB-kabel gebruiken om het bestand naar een computer te kopiëren.
+    Nadat u de logboeken hebt verzonden, wordt in een dialoog venster de incident-ID weer gegeven. Noteer de incident-ID en neem deze op als u om hulp vraagt.
 
-  - Intune-bedrijfsportal logboeken weer geven:
+  - Intune-bedrijfsportal-logboeken ophalen:
 
-    1. Selecteer de menu knop in de linkerbovenhoek van de app
-    1.   >  **Diagnostische gegevens** voor instellingen selecteren
-    1. Selecteer **Logboeken kopiëren** om de Broker-logboeken te kopiëren naar de SD-kaart van het apparaat.
-    1. Verbind het apparaat met een computer met behulp van een USB-kabel om de logboeken op uw ontwikkel machine weer te geven.
+    1. Selecteer de menu knop in de linkerbovenhoek van de app.
+    1. Selecteer **Help**  >  **-e-mail ondersteuning**.
+    1. Als u de logboeken wilt verzenden, selecteert u **alleen logboeken uploaden**.
 
-    Zodra u de logboeken hebt, kunt u ze doorzoeken op uw verificatie pogingen via de correlatie-ID. De correlatie-ID is gekoppeld aan elke verificatie aanvraag. Als u fouten wilt vinden die worden geretourneerd door het micro soft Identity platform-verificatie-eind punt, zoekt u naar `AADSTS` .
+    Nadat u de logboeken hebt verzonden, wordt in een dialoog venster de incident-ID weer gegeven. Noteer de incident-ID en neem deze op als u om hulp vraagt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

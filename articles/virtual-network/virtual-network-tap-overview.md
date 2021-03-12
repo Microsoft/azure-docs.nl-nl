@@ -15,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/14/2019
 ms.author: kaanan
-ms.openlocfilehash: 8347dcd60dcdfbf03f52e25eb24744909c69465a
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 6160dd09edc57f2f52306d4dad0dde413fff0616
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804867"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102617179"
 ---
 # <a name="virtual-network-tap"></a>Virtual Network TAP
 > [!IMPORTANT]
-> Het voor beeld van een virtueel netwerk Tik is momenteel in de wachtrij voor alle Azure-regio's. U kunt ons een e-mail sturen met <azurevnettap@microsoft.com> uw abonnements-id en u ontvangt een melding met toekomstige updates over de preview-versie. In de tijdelijke oplossing kunt u op agents gebaseerde of NVA oplossingen gebruiken die de zichtbaarheids functionaliteit van tikken/netwerk bieden via onze [pakket Broker-partner oplossingen](#virtual-network-tap-partner-solutions) die beschikbaar zijn in [Azure Marketplace-aanbiedingen](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/networking?page=1&subcategories=appliances%3Ball&search=Network%20Traffic&filters=partners).
+> Het voor beeld van een virtueel netwerk Tik is momenteel in de wachtrij voor alle Azure-regio's. U kunt ons een e-mail sturen met <azurevnettap@microsoft.com> uw abonnements-id en u ontvangt een melding met toekomstige updates over de preview-versie. In de tijdelijke oplossing kunt u op agents gebaseerde of NVA oplossingen gebruiken die de zichtbaarheids functionaliteit van tikken/netwerk bieden via onze [pakket Broker-partner oplossingen](#virtual-network-tap-partner-solutions) die beschikbaar zijn in [Azure Marketplace-aanbiedingen](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances%3Ball&search=Network%20Traffic&filters=partners).
 
 Met het virtuele netwerk van Azure (Terminal Access Point) kunt u het netwerk verkeer van de virtuele machine continu streamen naar een netwerk pakket verzamelaar of een analyse programma. Het hulp programma Collector of Analytics wordt verschaft door een [virtuele netwerk apparaat](https://azure.microsoft.com/solutions/network-appliances/) -partner. Zie [partner oplossingen](#virtual-network-tap-partner-solutions)voor een lijst met partner oplossingen die zijn gevalideerd om te werken met Virtual Network tikken.
 In de volgende afbeelding ziet u hoe virtuele netwerk tikken werkt. U kunt een TAP-configuratie toevoegen aan een [netwerk interface](virtual-network-network-interface.md) die is gekoppeld aan een virtuele machine die is geïmplementeerd in uw virtuele netwerk. De bestemming is een IP-adres van een virtueel netwerk in hetzelfde virtuele netwerk als de bewaakte netwerk interface of een gekoppeld [virtueel](virtual-network-peering-overview.md) netwerk. De Collector-oplossing voor Virtual Network TIKT kan worden geïmplementeerd achter een interne Load Balancer van Azure voor hoge Beschik baarheid.
@@ -64,6 +64,7 @@ De accounts die u gebruikt voor het Toep assen van TIKT op netwerk interfaces, m
 - [Flowmon](https://www.flowmon.com/blog/azure-vtap)
 - [Netfort LANGuardian](https://www.netfort.com/languardian/solutions/visibility-in-azure-network-tap/)
 - [Netscout vSTREAM]( https://www.netscout.com/marketplace-azure)
+- [Beveiliging op naam](https://nonamesecurity.com/)
 - [Riverbed SteelCentral AppResponse]( https://www.riverbed.com/products/steelcentral/steelcentral-appresponse-11.html)
 - [® Platform voor RSA-netwitness](https://www.rsa.com/content/dam/en/solution-brief/rsa-netwitness-platform-overview-for-federal-agencies.pdf)
 - [Vectra Cognito](https://vectra.ai/microsoftazure)

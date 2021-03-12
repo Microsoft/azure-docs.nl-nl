@@ -6,16 +6,16 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/27/2020
-ms.openlocfilehash: a124f576b2540399d27fcd97e0e58476dba4ba4b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 883b76929ac3310dd3089ecb088a4691adbb4ca1
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492808"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103010351"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Back-ups maken en herstellen in Azure Database for MySQL
 
-Azure Database for MySQL maakt automatisch server back-ups en slaat ze op in een door de gebruiker geconfigureerde lokaal redundante of geografisch redundante opslag. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Backup en Restore zijn een essentieel onderdeel van een strategie voor bedrijfs continuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
+In Azure DB for MySQL worden automatisch serverback-ups gemaakt en opgeslagen in een door de gebruiker geconfigureerde lokaal of geografisch redundante opslag. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Back-ups maken en herstellen zijn essentiële onderdelen van een strategie voor bedrijfscontinuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
 
 ## <a name="backups"></a>Back-ups
 
@@ -86,7 +86,17 @@ Er zijn twee soorten herstel beschikbaar:
 - **Herstel naar** een bepaald tijdstip is beschikbaar met de optie voor redundantie van back-ups en maakt een nieuwe server in dezelfde regio als de oorspronkelijke server die gebruikmaakt van de combi natie van volledige en transactie logboek back-ups.
 - **Geo-Restore** is alleen beschikbaar als u uw server hebt geconfigureerd voor geo-redundante opslag en u uw server naar een andere regio kunt herstellen met de meest recente back-up die u hebt gemaakt.
 
-De geschatte duur van de herstel bewerking is afhankelijk van verschillende factoren, zoals de grootte van de data base, het transactie logboek, de netwerk bandbreedte en het totale aantal data bases dat op hetzelfde moment in dezelfde regio wordt hersteld. De herstel tijd is doorgaans minder dan 12 uur.
+De geschatte tijd voor het herstel van de server is afhankelijk van verschillende factoren:
+* De grootte van de data bases
+* Het aantal transactie logboeken dat betrokken is
+* De hoeveelheid activiteit die opnieuw moet worden afgespeeld om het herstel punt te herstellen
+* De netwerk bandbreedte als het terugzetten naar een andere regio gaat
+* Het aantal gelijktijdige herstel aanvragen dat wordt verwerkt in de doel regio
+* De aanwezigheid van de primaire sleutel in de tabellen in de data base. Voor een snellere herstel kunt u de primaire sleutel voor alle tabellen in uw data base toevoegen. Als u wilt controleren of uw tabellen een primaire sleutel hebben, kunt u de volgende query gebruiken:
+```sql
+select tab.table_schema as database_name, tab.table_name from information_schema.tables tab left join information_schema.table_constraints tco on tab.table_schema = tco.table_schema and tab.table_name = tco.table_name and tco.constraint_type = 'PRIMARY KEY' where tco.constraint_type is null and tab.table_schema not in('mysql', 'information_schema', 'performance_schema', 'sys') and tab.table_type = 'BASE TABLE' order by tab.table_schema, tab.table_name;
+```
+Voor een grote of zeer actieve Data Base kan het herstellen enkele uren duren. Als er een langdurige storing in een regio optreedt, is het mogelijk dat er een groot aantal aanvragen voor geo-herstel worden gestart voor herstel na nood gevallen. Wanneer er veel aanvragen zijn, kan de herstel tijd voor afzonderlijke data bases toenemen. De meeste data bases worden hersteld in minder dan 12 uur.
 
 > [!IMPORTANT]
 > Verwijderde servers kunnen alleen binnen **vijf dagen** na de verwijdering worden hersteld, waarna de back-ups worden verwijderd. De back-up van de data base kan worden geopend en alleen worden teruggezet vanuit het Azure-abonnement dat als host fungeert voor de server. Raadpleeg [gedocumenteerde stappen](howto-restore-dropped-server.md)om een verwijderde server te herstellen. Beheerders kunnen gebruikmaken van [beheer vergrendelingen](../azure-resource-manager/management/lock-resources.md)om Server bronnen te beveiligen, na implementatie van onopzettelijk verwijderen of onverwachte wijzigingen.

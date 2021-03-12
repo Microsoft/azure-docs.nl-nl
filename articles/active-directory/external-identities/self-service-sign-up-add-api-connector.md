@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f190b8ffbb98c6ff5465af869305de4c9135cc3f
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 703e3b4c951bc4c3a22f82b9faa31789d1abf868
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102610094"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103008719"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Een API-connector toevoegen aan een gebruikers stroom
 
@@ -59,12 +59,12 @@ Als u een certificaat wilt maken, kunt u [Azure Key Vault](../../key-vault/certi
 
 Zie voor Azure App Service en Azure Functions [TLS-wederzijdse verificatie configureren](../../app-service/app-service-web-configure-tls-mutual-auth.md) voor meer informatie over het inschakelen en valideren van het certificaat vanuit uw API-eind punt.
 
-U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder **alle API** -connectors en klikt u op **nieuwe connector uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure Active Directory gebruikt.
+U wordt aangeraden herinnerings waarschuwingen in te stellen voor wanneer uw certificaat verloopt. Als u een nieuw certificaat wilt uploaden naar een bestaande API-connector, selecteert u de API-connector onder **alle API** -connectors en klikt u op **Nieuw certificaat uploaden**. Het laatst geüploade certificaat dat niet is verlopen en na de begin datum valt, wordt automatisch door Azure Active Directory gebruikt.
 
 ### <a name="api-key"></a>API-sleutel
-Sommige services gebruiken een API-sleutel om het moeilijker te maken om tijdens de ontwikkeling toegang te krijgen tot uw HTTP-eind punten. Voor [Azure functions](../../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
+Sommige services gebruiken een API-sleutel om de toegang tot uw HTTP-eind punten op te maken tijdens de ontwikkeling. Voor [Azure functions](../../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys)kunt u dit doen door de `code` para meter als query op te nemen in de **eind punt-URL**. Bijvoorbeeld `https://contoso.azurewebsites.net/api/endpoint` <b>`?code=0123456789`</b> ). 
 
-Dit is geen mechanisme dat alleen in productie mag worden gebruikt. Daarom is configuratie voor basis verificatie of certificaat authenticatie altijd vereist. Als u een verificatie methode wilt implementeren (niet aanbevolen) voor ontwikkelings doeleinden, kunt u basis verificatie kiezen en tijdelijke waarden gebruiken voor `username` en `password` dat uw API kan worden genegeerd tijdens het implementeren van de autorisatie in uw API.
+Dit is geen mechanisme dat alleen in productie mag worden gebruikt. Daarom is configuratie voor basis verificatie of certificaat authenticatie altijd vereist. Als u een verificatie methode niet wilt implementeren (niet aanbevolen) voor ontwikkelings doeleinden, kunt u basis verificatie kiezen en tijdelijke waarden gebruiken voor `username` en `password` dat uw API kan worden genegeerd tijdens het implementeren van de autorisatie in uw API.
 
 ## <a name="the-request-sent-to-your-api"></a>De aanvraag die naar uw API wordt verzonden
 Een API-connector resultatenset als een **http post-** aanvraag, waarbij gebruikers kenmerken (' claims ') worden verzonden als sleutel-waardeparen in een JSON-hoofd tekst. Kenmerken worden op dezelfde manier geserialiseerd als [Microsoft Graph](/graph/api/resources/user#properties) gebruikers eigenschappen. 
@@ -76,7 +76,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [ // Sent for Google, Facebook, and Email One Time Passcode identity providers 
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -138,7 +138,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [ // Sent for Google, Facebook, and Email One Time Passcode identity providers 
      {
      "signInType":"federated",
      "issuer":"facebook.com",
@@ -189,7 +189,7 @@ Content-type: application/json
 
 {
  "email": "johnsmith@fabrikam.onmicrosoft.com",
- "identities": [ //Sent for Google and Facebook identity providers
+ "identities": [ // Sent for Google, Facebook, and Email One Time Passcode identity providers 
      {
      "signInType":"federated",
      "issuer":"facebook.com",

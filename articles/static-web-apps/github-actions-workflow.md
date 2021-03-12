@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: cshoe
-ms.openlocfilehash: 785fd535c46b67cfd631cd18560f396a6901e5c0
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 57c83a94925e94088085efacf1192416f63e6383
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99593945"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232032"
 ---
 # <a name="github-actions-workflows-for-azure-static-web-apps-preview"></a>GitHub actions-werk stromen voor de preview-versie van Azure static Web Apps
 
@@ -138,9 +138,9 @@ with:
 
 | Eigenschap | Beschrijving | Vereist |
 |---|---|---|
-| `app_location` | Locatie van de toepassings code.<br><br>Voer bijvoorbeeld `/` in als de bron code van uw toepassing zich in de hoofdmap van de opslag plaats bevindt, of `/app` als de code van uw toepassing zich in de map bevindt `app` . | Yes |
-| `api_location` | De locatie van uw Azure Functions-code.<br><br>Voer bijvoorbeeld `/api` in als uw app-code zich in een map met de naam bevindt `api` . Als er geen Azure Functions-app wordt gedetecteerd in de map, mislukt de build, wordt ervan uitgegaan dat u geen API wilt. | No |
-| `output_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `output_location` waarde instellen. | No |
+| `app_location` | Locatie van de toepassings code.<br><br>Voer bijvoorbeeld `/` in als de bron code van uw toepassing zich in de hoofdmap van de opslag plaats bevindt, of `/app` als de code van uw toepassing zich in de map bevindt `app` . | Ja |
+| `api_location` | De locatie van uw Azure Functions-code.<br><br>Voer bijvoorbeeld `/api` in als uw app-code zich in een map met de naam bevindt `api` . Als er geen Azure Functions-app wordt gedetecteerd in de map, mislukt de build, wordt ervan uitgegaan dat u geen API wilt. | Nee |
+| `output_location` | Locatie van de map voor het build-uitvoer ten opzichte van de `app_location` .<br><br>Bijvoorbeeld, als de bron code van uw toepassing zich in bevindt `/app` en het build-script bestanden naar de `/app/build` map levert, vervolgens `build` als `output_location` waarde instellen. | Nee |
 
 De `repo_token` `action` waarden, en `azure_static_web_apps_api_token` worden door Azure static web apps voor u ingesteld, niet hand matig worden gewijzigd.
 
@@ -152,7 +152,7 @@ De implementatie aanroept altijd `npm install` vóór een aangepaste opdracht.
 
 | Opdracht            | Beschrijving |
 |---------------------|-------------|
-| `app_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een hoek toepassing wilt configureren, maakt u een NPM-script `build-prod` met de naam voor uitvoeren `ng build --prod` en voert u `npm run build-prod` als de aangepaste opdracht in. Als dit veld leeg blijft, probeert de werk stroom de of-opdrachten uit te voeren `npm run build` `npm run build:Azure` .  |
+| `app_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de toepassing voor statische inhoud.<br><br>Als u bijvoorbeeld een productie-build voor een hoek toepassing wilt configureren, maakt u een NPM-script `build-prod` met de naam voor uitvoeren `ng build --prod` en voert u `npm run build-prod` als de aangepaste opdracht in. Als dit veld leeg blijft, probeert de werk stroom de of-opdrachten uit te voeren `npm run build` `npm run build:azure` .  |
 | `api_build_command` | Hiermee wordt een aangepaste opdracht gedefinieerd die moet worden uitgevoerd tijdens de implementatie van de Azure Functions API-toepassing. |
 
 ## <a name="route-file-location"></a>Locatie van routebestand

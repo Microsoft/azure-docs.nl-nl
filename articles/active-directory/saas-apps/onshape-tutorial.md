@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/03/2021
 ms.author: jeedes
-ms.openlocfilehash: 5d1c4d05748fd9efdc51e18396c8df14e12df63d
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 2ead9bd72691dc120afb60c025ce563684716038
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102185377"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199322"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-onshape"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met Onshape
 
@@ -74,26 +74,12 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in het Azure Portal op de pagina Toepassings integratie van **Onshape** de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
-
-   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
-
-1. In de sectie **SAML-basisconfiguratie** hoeft de gebruiker geen enkele stap uit te voeren omdat de app al vooraf is geïntegreerd met Azure.
-
-1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
-
-    In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.onshape.com`
-
-    > [!NOTE]
-    > De waarde is niet echt. Werk de waarde bij met de werkelijke aanmeldings-URL. Neem contact op met het [ondersteunings team van Onshape](mailto:support@onshape.com) om de waarde op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
-
-1. Klik op **Opslaan**.
-
-1. De Onshape-toepassing verwacht de SAML-beweringen in een specifieke indeling. hiervoor moet u aangepaste kenmerk toewijzingen toevoegen aan de configuratie van uw SAML-token kenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
+1. Als u wordt gevraagd om de instelling voor eenmalige aanmelding op te slaan, selecteert u **Ja**. 
+1. De Onshape-toepassing verwacht de SAML-beweringen in een specifieke indeling, waarvoor u aangepaste kenmerk toewijzingen moet toevoegen aan de configuratie van uw SAML-token kenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
     ![image](common/default-attributes.png)
 
-1. Daarnaast verwacht Onshape toepassing nog maar weinig kenmerken die worden door gegeven in de SAML-respons die hieronder worden weer gegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
+1. In aanvulling op de hierboven verwachtte de Onshape-toepassing nog enkele kenmerken die hieronder worden weer gegeven in het SAML-antwoord. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
     
     | Naam |  Bronkenmerk|
     | --------------- | --------- |
@@ -102,9 +88,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | companyName | <COMPANY_NAME> |
 
     > [!NOTE]
-    > Bewerk de waarde van de claim ' companyName ' met het domein voorvoegsel. Bijvoorbeeld, als de klant toegang heeft tot de Onshape-toepassing met behulp van een URL zoals https://acme.onshape.com , is het domein voorvoegsel ' Acme '. De kenmerk waarde moet alleen het voor voegsel zijn, niet de volledige DNS-naam.
+    > U _moet_ de waarde van het kenmerk **companyName** wijzigen in het *domein voorvoegsel* van uw Onshape-onderneming. Als u bijvoorbeeld toegang hebt tot de Onshape-toepassing met behulp van een URL zoals `https://acme.onshape.com` , is uw domein voorvoegsel *Acme*. De kenmerk waarde moet alleen het voor voegsel zijn, niet de volledige DNS-naam.
 
-1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
+1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden en vervolgens op te slaan op de computer.
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
@@ -137,7 +123,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 
 ## <a name="configure-onshape-sso"></a>Onshape SSO configureren
 
-Als u eenmalige aanmelding wilt configureren op **Onshape** , moet u het gedownloade **XML-bestand met federatieve meta gegevens** en de juiste gekopieerde url's verzenden van Azure Portal naar [Onshape ondersteunings team](mailto:support@onshape.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Zie [integreren met Microsoft Azure AD](https://cad.onshape.com/help/Content/MS_AzureAD.htm)voor meer informatie over het configureren van eenmalige aanmelding aan de kant van de **Onshape** .
 
 ### <a name="create-onshape-test-user"></a>Onshape-test gebruiker maken
 

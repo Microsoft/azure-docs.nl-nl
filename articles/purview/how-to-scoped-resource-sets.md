@@ -1,5 +1,5 @@
 ---
-title: 'Procedure: een configuratie met een scoped resource set maken'
+title: Een configuratie van een resourceset met een bereik maken
 description: Meer informatie over het maken van een configuratie regel voor een scoped bron instellen om te overschrijven hoe assets worden gegroepeerd in resource sets
 author: djpmsft
 ms.author: daperlov
@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/17/2021
-ms.openlocfilehash: 8d7d482f38d58c8d6a8959acb51c94c0fb814697
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 10e925a84dbe187ccdf5e444cb8b3dd4b7bb4676
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101668432"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102607999"
 ---
 # <a name="create-scoped-resource-set-configuration-rules"></a>Configuratie regels voor het bereik van de bron maken
 
@@ -24,20 +24,29 @@ Bij het scannen van een opslag account gebruikt Azure controle sfeer liggen een 
 
 Volg de onderstaande stappen om een nieuwe configuratie voor het configureren van een resource te maken:
 
-1. Ga naar het beheer centrum. Selecteer **scoped resource sets** in het menu. Klik op **+ Nieuw** om een nieuwe set met configuratie regels te maken.
-        :::image type="content" source="media/how-to-scoped-resource-sets/create-new-scoped-resource-set-rule.png" alt-text="Nieuwe regel voor het instellen van een resourceset maken" border="true":::
+1. Ga naar het beheer centrum. Selecteer **scoped resource sets** in het menu. Selecteer **+ Nieuw** om een nieuwe set met configuratie regels te maken.
 
-1. Geef het bereik van de configuratie van het bereik van de resource groep op. Selecteer uw type opslag account en de naam van het opslag account waarvoor u een regelset wilt maken. Elke set regels wordt toegepast ten opzichte van een pad naar een map die is opgegeven in het veld **pad map** . 
-        :::image type="content" source="media/how-to-scoped-resource-sets/create-new-scoped-resource-set-scope.png" alt-text="Nieuwe regel voor het instellen van een resourceset maken" border="true":::
+   :::image type="content" source="media/how-to-scoped-resource-sets/create-new-scoped-resource-set-rule.png" alt-text="Nieuwe regel voor het instellen van een resourceset maken" border="true":::
+
+1. Geef het bereik van de configuratie van het bereik van de resource groep op. Selecteer uw type opslag account en de naam van het opslag account waarvoor u een regelset wilt maken. Elke set regels wordt toegepast ten opzichte van een pad naar een map die is opgegeven in het veld **pad map** .
+
+   :::image type="content" source="media/how-to-scoped-resource-sets/create-new-scoped-resource-set-scope.png" alt-text="Configuraties voor het instellen van scopes maken" border="true":::
 
 1. Als u een regel voor een configuratie bereik wilt invoeren, selecteert u **+ nieuwe regel**.
+
 1. Voer in de volgende velden in om een regel te maken:
-    1. **Regel naam:** De naam van de configuratie regel. Dit veld heeft geen invloed op de activa waarop de regel van toepassing is.
-    1. **Gekwalificeerde naam:** Een gekwalificeerde pad dat gebruikmaakt van een combi natie van tekst, dynamische vervangingen en statische vervangingen om activa te koppelen aan de configuratie regel. Dit pad is relatief ten opzichte van het bereik van de configuratie regel. Zie de sectie [syntaxis](#syntax) hieronder voor gedetailleerde instructies voor het opgeven van gekwalificeerde namen. 
-    1. **Weergave naam:** De weergave naam van de Asset. Dit veld is optioneel. Gebruik onbewerkte tekst en statische vervangingen om te bepalen hoe een activum in de catalogus wordt weer gegeven. Zie de sectie [syntaxis](#syntax) hieronder voor meer gedetailleerde instructies.
-    1. **Niet groeperen als resourceset:** Als deze functie is ingeschakeld, wordt overeenkomende resource niet gegroepeerd in een resourceset. 
-        :::image type="content" source="media/how-to-scoped-resource-sets/scoped-resource-set-rule-example.png" alt-text="Nieuwe regel voor het instellen van een resourceset maken" border="true"::: 
-1. Sla de regel op door op **toevoegen** te klikken. 
+
+   1. **Regel naam:** De naam van de configuratie regel. Dit veld heeft geen invloed op de activa waarop de regel van toepassing is.
+
+   1. **Gekwalificeerde naam:** Een gekwalificeerde pad dat gebruikmaakt van een combi natie van tekst, dynamische vervangingen en statische vervangingen om activa te koppelen aan de configuratie regel. Dit pad is relatief ten opzichte van het bereik van de configuratie regel. Zie de sectie [syntaxis](#syntax) hieronder voor gedetailleerde instructies voor het opgeven van gekwalificeerde namen.
+
+   1. **Weergave naam:** De weergave naam van de Asset. Dit veld is optioneel. Gebruik onbewerkte tekst en statische vervangingen om te bepalen hoe een activum in de catalogus wordt weer gegeven. Zie de sectie [syntaxis](#syntax) hieronder voor meer gedetailleerde instructies.
+
+   1. **Niet groeperen als resourceset:** Als deze functie is ingeschakeld, wordt overeenkomende resource niet gegroepeerd in een resourceset.
+
+      :::image type="content" source="media/how-to-scoped-resource-sets/scoped-resource-set-rule-example.png" alt-text="Nieuwe configuratie regel maken." border="true":::
+
+1. Sla de regel op door op **toevoegen** te klikken.
 
 ## <a name="scoped-resource-set-syntax"></a><a name="syntax"></a> Syntaxis van het bereik van de resourceset
 
@@ -69,21 +78,23 @@ Hieronder vindt u de beschik bare typen die kunnen worden gebruikt in statische 
 | ---- | --------- |
 | tekenreeks | Een reeks van 1 of meer Unicode-tekens met scheidings teken zoals spaties. |
 | int | Een reeks van 1 of meer 0-9 ASCII-tekens, de waarde kan 0 voor voegsel zijn (bijvoorbeeld 0001). |
-| guid | Een reeks van 32 of 8-4-4-4-12 teken reeks representatie van een UUID als defineddefa in https://tools.ietf.org/html/rfc4122 |
-| date | Een reeks van 6 of 8 0-9 ASCII-tekens met optioneel gescheiden: jjjmmdd, jjjj-mm-dd, JJMMDD, jj-mm-dd, opgegeven in https://tools.ietf.org/html/rfc3339 |
-| tijd | Een reeks van 4 of 6 0-9 ASCII-tekens met optioneel gescheiden: HHmm, uu: mm, HHmmss, uu: mm: SS opgegeven in https://tools.ietf.org/html/rfc3339 |
-| tijdstempel | Een reeks van 12 of 14 0-9 ASCII-tekens met optioneel gescheiden: jjjj-mm-ddTuu: mm, yyyymmddhhmm, jjjj-mm-ddTuu: mm: SS, jjjjmmdduummss opgegeven in https://tools.ietf.org/html/rfc3339 |
+| guid | Een reeks van 32 of 8-4-4-4-12 teken reeks representatie van een UUID als defineddefa in [RFC 4122](https://tools.ietf.org/html/rfc4122). |
+| date | Een reeks van 6 of 8 0-9 ASCII-tekens met optioneel gescheiden: jjjmmdd, jjjj-mm-dd, JJMMDD, jj-mm-dd, opgegeven in [RFC 3339](https://tools.ietf.org/html/rfc3339). |
+| tijd | Een reeks van 4 of 6 0-9 ASCII-tekens met optioneel gescheiden: HHmm, uu: mm, HHmmss, uu: mm: SS opgegeven in [RFC 3339](https://tools.ietf.org/html/rfc3339). |
+| tijdstempel | Een reeks van 12 of 14 0-9 ASCII-tekens met optioneel gescheiden: jjjj-mm-ddTuu: mm, yyyymmddhhmm, jjjj-mm-ddTuu: mm: SS, jjjjmmdduummss opgegeven in [RFC 3339](https://tools.ietf.org/html/rfc3339). |
 | booleaans | Kan ' waar ' of ' onwaar ' bevatten, niet hoofdletter gevoelig. |
-| getal | Een reeks van 0 of meer 0-9 ASCII-tekens, de waarde mag 0 (bijvoorbeeld 0001) zijn, gevolgd door een punt. en een reeks van 1 of meer 0-9 ASCII-tekens, de waarde kan 0 postfixed zijn (bijvoorbeeld. 100) | 
+| getal | Een reeks van 0 of meer 0-9 ASCII-tekens, de waarde mag 0 (bijvoorbeeld 0,001) zijn, gevolgd door een punt '. ' en een reeks van 1 of meer 0-9 ASCII-tekens, het kan 0 postfixed zijn (bijvoorbeeld. 100) |
 | hex | Een reeks van 1 of meer ASCII-tekens uit de set 0-1 en A-F, de waarde kan 0 vooraf zijn. |
-| landinstelling | Een teken reeks die overeenkomt met de syntaxis die is opgegeven in https://tools.ietf.org/html/rfc5646 |
+| landinstelling | Een teken reeks die overeenkomt met de syntaxis die is opgegeven in [RFC 5646](https://tools.ietf.org/html/rfc5646). |
 
-## <a name="order-of-scoped-resource-set-rules-getting-applied"></a>Volg orde van de regels voor het bereik van de resourceset die worden toegepast.
+## <a name="order-of-scoped-resource-set-rules-getting-applied"></a>Volg orde van de regels voor het bereik van de resourceset die worden toegepast
 
 Hieronder ziet u de volg orde van bewerkingen voor het Toep assen van regels voor het instellen van een resourceset:
 
-1. Meer specifieke bereiken hebben prioriteit als een Asset overeenkomt met twee regels. Regels in een bereik `container/folder` worden bijvoorbeeld toegepast vóór regels in het bereik `container` . 
+1. Meer specifieke bereiken hebben prioriteit als een Asset overeenkomt met twee regels. Regels in een bereik `container/folder` worden bijvoorbeeld toegepast vóór regels in het bereik `container` .
+
 1. Volg orde van de regels binnen een bepaald bereik. Dit kan in de UX worden bewerkt.
+
 1. Als een activum niet overeenkomt met een opgegeven regel, zijn de standaard heuristiek van de resourceset van toepassing.
 
 ## <a name="examples"></a>Voorbeelden
@@ -95,16 +106,16 @@ SAP-gegevens extractie in volledige en Delta belasting
 #### <a name="inputs"></a>Invoerwaarden
 
 Logbestanden
--   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/13/saptable_customer_20200101_20200102_01.txt`
--   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/13/saptable_customer_20200101_20200102_02.txt`
--   `https://myazureblob.blob.core.windows.net/bar/customer/delta/2020/01/15/saptable_customer_20200101_20200102_01.txt`
--   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/17/saptable_customer_20200101_20200102_01.txt`
--   `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/17/saptable_customer_20200101_20200102_02.txt`
 
+- `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/13/saptable_customer_20200101_20200102_01.txt`
+- `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/13/saptable_customer_20200101_20200102_02.txt`
+- `https://myazureblob.blob.core.windows.net/bar/customer/delta/2020/01/15/saptable_customer_20200101_20200102_01.txt`
+- `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/17/saptable_customer_20200101_20200102_01.txt`
+- `https://myazureblob.blob.core.windows.net/bar/customer/full/2020/01/17/saptable_customer_20200101_20200102_02.txt`
 
-#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset
 
-**Bereik:**https://myazureblob.blob.core.windows.net/bar/
+**Bereik:**`https://myazureblob.blob.core.windows.net/bar/`
 
 **Weergave naam:** Externe klant
 
@@ -112,7 +123,7 @@ Logbestanden
 
 **Resource set:** waar
 
-#### <a name="output"></a>Uitvoer 
+#### <a name="output"></a>Uitvoer
 
 Eén resource set-Asset
 
@@ -124,17 +135,18 @@ Eén resource set-Asset
 
 IoT-gegevens in de Avro-indeling
 
-#### <a name="inputs"></a>Invoerwaarden 
+#### <a name="inputs"></a>Invoerwaarden
 
 Logbestanden
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-#### <a name="scoped-resource-set-rules"></a>Regels voor het bereik van bron sets 
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-**Bereik:**https://myazureblob.blob.core.windows.net/bar/
+#### <a name="scoped-resource-set-rules"></a>Regels voor het bereik van bron sets
+
+**Bereik:**`https://myazureblob.blob.core.windows.net/bar/`
 
 Regel 1
 
@@ -150,11 +162,11 @@ Regel 2
 
 **Gekwalificeerde naam:**`raw/machinename-90/{date:date}/{time:time}-{id:int}.avro`
 
-#### <a name="resource-set-true"></a>*Resource set: waar* 
+#### <a name="resource-set-true"></a>*Resource set: waar*
 
-#### <a name="outputs"></a>Uitvoerwaarden 
+#### <a name="outputs"></a>Uitvoerwaarden
 
-2 resource sets 
+2 resource sets
 
 Resource set 1
 
@@ -172,17 +184,18 @@ Resource set 2
 
 IoT-gegevens in de Avro-indeling
 
-#### <a name="inputs"></a>Invoerwaarden 
+#### <a name="inputs"></a>Invoerwaarden
 
 Logbestanden
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
--   `https://myazureblob.blob.core.windows.netbar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
+- `https://myazureblob.blob.core.windows.netbar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-**Bereik:**https://myazureblob.blob.core.windows.net/bar/
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de resourceset
+
+**Bereik:**`https://myazureblob.blob.core.windows.net/bar/`
 
 **Weergave naam:** ' Machine-{{MachineID}} '
 
@@ -190,7 +203,7 @@ Logbestanden
 
 **Resource set:** waar
 
-#### <a name="outputs"></a>Uitvoerwaarden 
+#### <a name="outputs"></a>Uitvoerwaarden
 
 Resource set 1
 
@@ -208,25 +221,26 @@ Resource set 2
 
 Niet groeperen in resource sets
 
-#### <a name="inputs"></a>Invoerwaarden 
+#### <a name="inputs"></a>Invoerwaarden
 
 Logbestanden
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
--   `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de Resourceset 
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/01-01-2020/22:33:22-002.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-89/02-01-2020/22:33:22-001.avro`
+- `https://myazureblob.blob.core.windows.net/bar/raw/machinename-90/01-01-2020/22:33:22-001.avro`
 
-**Bereik:**https://myazureblob.blob.core.windows.net/bar/
+#### <a name="scoped-resource-set-rule"></a>Regel voor het bereik van de resourceset
 
-**Weergave naam:** ' Machine-{{MachineID}} '
+**Bereik:**`https://myazureblob.blob.core.windows.net/bar/`
+
+**Weergave naam:**`Machine-{{machineid}}`
 
 **Gekwalificeerde naam:**`raw/machinename-{{machineid:int}}/{{:date}}/{{:time}}-{{:int}}.avro`
 
 **Resource set:** False
 
-#### <a name="outputs"></a>Uitvoerwaarden 
+#### <a name="outputs"></a>Uitvoerwaarden
 
 4 afzonderlijke assets
 

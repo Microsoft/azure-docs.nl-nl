@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: f1b25b853977b3a1f4871e232a562d6a3cfd2fae
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: c1c1b5f58aa0e760ff626af4607cf8e2d1e13910
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102434199"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232418"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-azure-digital-twins-explorer"></a>Quick Start: een voor beeld van een Azure Digital Apparaatdubbels-scenario verkennen met behulp van Azure Digital Apparaatdubbels Explorer
 
@@ -93,13 +93,16 @@ Open een consolevenster op de maplocatie **Azure_Digital_Twins__ADT__explorer/cl
 
 1. Voer de URL van de Azure Digital Twins-instantie in die u eerder hebt opgehaald uit de sectie [Een Azure Digital Twins-instantie instellen](#set-up-an-azure-digital-twins-instance) in de indeling *https://{instance host name}* .
 
->[!NOTE]
-> U kunt deze informatie op elk gewenst moment opnieuw bekijken/bewerken door hetzelfde pictogram te selecteren om het vak **Sign in** (Aanmelden) weer te openen. De waarden die u hebt doorgegeven, blijven bewaard.
-
 > [!TIP]
 > Als het foutbericht `SignalRService.subscribe` wordt weergegeven wanneer u verbinding maakt, moet u ervoor zorgen dat de URL van uw Azure Digital Twins begint met *https://* .
 
+> [!TIP]
+> Als er een verificatie fout wordt weer gegeven, kunt u de omgevings variabelen controleren om ervoor te zorgen dat de referenties die zijn opgenomen, geldig zijn voor Azure Digital Apparaatdubbels. De DefaultAzureCredential probeert te verifiëren aan de hand van de [referentie typen](/dotnet/api/overview/azure/identity-readme#defaultazurecredential) in een specifieke volg orde, en omgevings variabelen worden eerst geëvalueerd.
+
 Als u het pop-upvenster **Aangevraagde machtigingen** van Microsoft ziet, geeft u deze toepassing toestemming en accepteert u dit om door te gaan.
+
+>[!NOTE]
+> U kunt deze informatie op elk gewenst moment opnieuw bekijken/bewerken door hetzelfde pictogram te selecteren om het vak **Sign in** (Aanmelden) weer te openen. De waarden die u hebt doorgegeven, blijven bewaard.
 
 ## <a name="add-the-sample-data"></a>De voorbeeldgegevens toevoegen
 

@@ -3,7 +3,7 @@ title: Bestanden uploaden naar een Azure Media Services-account met behulp van R
 description: Meer informatie over het verkrijgen van media-inhoud in Media Services door assets te maken en te uploaden met behulp van REST.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
-ms.openlocfilehash: 49863bec4cbd367b6b309ef5a79e7287cb53ee5b
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.date: 3/10/2021
+ms.author: inhenkel
+ms.openlocfilehash: 9f27a427df07302840ce719d35c7876f9dc17dbf
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042969"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012935"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Bestanden uploaden naar een Media Services-account met REST
 
@@ -90,13 +90,13 @@ Zie voor meer informatie over het instellen van Postman voor deze zelf studie [p
         ]
     }
     ```
-4. Klik aan de linkerkant van het venster **postman** op **1. Token voor Aad-verificatie ophalen** het  ->  **Azure AD-Token ophalen voor de Service-Principal** .
+4. Klik aan de linkerkant van het venster **postman** op **1. Token voor Aad-verificatie ophalen** het  ->  **Azure AD-Token ophalen voor de Service-Principal**.
 
     Het URL-gedeelte wordt gevuld met de omgevings variabele **AzureADSTSEndpoint** (eerder in de zelf studie stelt u de waarden van omgevings variabelen in die ondersteuning bieden voor de verzameling).
 
     ![Scherm afbeelding waarin "1" wordt weer gegeven. Een D-verificatie Token ophalen: Azure A D-token voor Service-Principal ophalen, geselecteerd in het venster ' postman ' en de knop verzenden geselecteerd.](./media/media-services-rest-upload-files/postment-get-token.png)
 
-5. Druk op **Verzenden** .
+5. Druk op **Verzenden**.
 
     U ziet het antwoord met de access_token. Het script test neemt deze waarde en stelt de omgevings variabele **AccessToken** in (zoals hierboven beschreven). Als u de omgevings variabelen onderzoekt, ziet u dat deze variabele nu de toegangs token (Bearer-token) bevat die in de rest van de bewerkingen wordt gebruikt. 
 
@@ -113,8 +113,8 @@ Voordat u bestanden naar Blob Storage uploadt, stelt u de rechten voor het toega
 
 ### <a name="create-an-access-policy"></a>Een toegangs beleid maken
 
-1. Selecteer **AccessPolicy**  ->  **maken om AccessPolicy te uploaden** .
-2. Druk op **Verzenden** .
+1. Selecteer **AccessPolicy**  ->  **maken om AccessPolicy te uploaden**.
+2. Druk op **Verzenden**.
 
     ![Scherm afbeelding met de optie ' AccessPolicy-AccessPolicy voor uploaden ', geselecteerd in het menu aan de linkerkant en de knop verzenden geselecteerd.](./media/media-services-rest-upload-files/postman-access-policy.png)
 
@@ -126,7 +126,7 @@ Voordat u bestanden naar Blob Storage uploadt, stelt u de rechten voor het toega
 
 Een [Asset](/rest/api/media/operations/asset) is een container voor meerdere typen of verzamelingen van objecten in Media Services, zoals video, audio, afbeeldingen, miniatuur verzamelingen, tekst sporen en ondertitelings bestanden. In de REST API vereist het maken van een Asset POST-aanvraag verzenden naar Media Services en het plaatsen van eigenschaps informatie over uw asset in de hoofd tekst van de aanvraag.
 
-Een van de eigenschappen die u kunt toevoegen wanneer u een Asset maakt, is **Opties** . U kunt een van de volgende versleutelings opties opgeven: **geen** (standaard, er wordt geen versleuteling gebruikt), **StorageEncrypted** (voor inhoud die vooraf is versleuteld met opslag versleuteling aan de client zijde), **CommonEncryptionProtected** of **EnvelopeEncryptionProtected** . Wanneer u een versleuteld activum hebt, moet u een leverings beleid configureren. Zie beleid voor levering van [assets configureren](media-services-rest-configure-asset-delivery-policy.md)voor meer informatie.
+Een van de eigenschappen die u kunt toevoegen wanneer u een Asset maakt, is **Opties**. U kunt een van de volgende versleutelings opties opgeven: **geen** (standaard, er wordt geen versleuteling gebruikt), **StorageEncrypted** (voor inhoud die vooraf is versleuteld met opslag versleuteling aan de client zijde), **CommonEncryptionProtected** of **EnvelopeEncryptionProtected**. Wanneer u een versleuteld activum hebt, moet u een leverings beleid configureren. Zie beleid voor levering van [assets configureren](media-services-rest-configure-asset-delivery-policy.md)voor meer informatie.
 
 Als uw asset is versleuteld, moet u een **ContentKey** maken en koppelen aan uw asset, zoals wordt beschreven in het volgende artikel: [een ContentKey maken](media-services-rest-create-contentkey.md). Nadat u de bestanden in de Asset hebt geüpload, moet u de versleutelings eigenschappen van de entiteit **AssetFile** bijwerken met de waarden die u tijdens de **Asset** Encryption hebt gekregen. Doe dit met behulp van de HTTP-aanvraag voor **samen voegen** . 
 
@@ -134,8 +134,8 @@ In dit voor beeld maken we een niet-versleutelde Asset.
 
 ### <a name="create-an-asset"></a>Een asset maken
 
-1. Selecteer **activa**  ->  **maken activa** .
-2. Druk op **Verzenden** .
+1. Selecteer **activa**  ->  **maken activa**.
+2. Druk op **Verzenden**.
 
     ![Scherm opname van ' assets: activa maken ' geselecteerd in het menu verzamelingen en de knop verzenden geselecteerd.](./media/media-services-rest-upload-files/postman-create-asset.png)
 
@@ -165,8 +165,8 @@ Hierbij geldt het volgende:
 
 ### <a name="create-a-sas-locator"></a>Een SAS-Locator maken
 
-1. Selecteer een **Locator**  ->  **maken SAS-Locator** .
-2. Druk op **Verzenden** .
+1. Selecteer een **Locator**  ->  **maken SAS-Locator**.
+2. Druk op **Verzenden**.
 
     Met het script ' test ' wordt de ' upload-URL ' gemaakt op basis van de media bestands naam die u hebt opgegeven en de SAS-locatorgegevens en wordt de juiste omgevings variabele ingesteld.
 
@@ -191,11 +191,11 @@ De upload aanvraag maakt geen deel uit van de **Media** -verzameling.
 Een nieuwe aanvraag maken en instellen:
 1. Klik op **+** om een nieuw tabblad aanvraag te maken.
 2. Selecteer **put** -bewerking en plak **{{UploadURL}}** in de URL.
-2. Laat het tabblad **autorisatie** ongewijzigd (niet instellen op het **Bearer-token** ).
-3. Geef op het tabblad **headers** : **Key** : "x-MS-BLOB-type" en **waarde** : "BlockBlob" op.
-2. Klik op het tabblad **hoofd tekst** op **binair** .
+2. Laat het tabblad **autorisatie** ongewijzigd (niet instellen op het **Bearer-token**).
+3. Geef op het tabblad **headers** : **Key**: "x-MS-BLOB-type" en **waarde**: "BlockBlob" op.
+2. Klik op het tabblad **hoofd tekst** op **binair**.
 4. Kies het bestand met de naam die u hebt opgegeven in de omgevings variabele **MediaFileName** .
-5. Druk op **Verzenden** .
+5. Druk op **Verzenden**.
 
     ![Scherm opname van het tabblad ' (UploadU R L) ' is geselecteerd.](./media/media-services-rest-upload-files/postman-upload-file.png)
 
@@ -203,10 +203,10 @@ Een nieuwe aanvraag maken en instellen:
 
 Zodra het bestand is geüpload, moet u een meta gegevens maken in de Asset voor het Media bestand dat u hebt geüpload naar de Blob-opslag die is gekoppeld aan uw asset.
 
-1. Selecteer **AssetFiles**  ->  **CreateFileInfos** .
-2. Druk op **Verzenden** .
+1. Selecteer **AssetFiles**  ->  **CreateFileInfos**.
+2. Druk op **Verzenden**.
 
-    ![Bestand uploaden](./media/media-services-rest-upload-files/postman-create-file-info.png)
+    ![Een bestand uploaden](./media/media-services-rest-upload-files/postman-create-file-info.png)
 
 Het bestand moet worden geüpload en de meta gegevens zijn ingesteld.
 

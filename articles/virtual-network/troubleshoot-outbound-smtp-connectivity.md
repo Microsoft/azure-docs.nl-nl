@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: genli
-ms.openlocfilehash: 518b8e33ac9adfdd1aa121e0cb8d1558545980e7
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: c28790b2ef423a3d0f996d7c6030b04198756eb1
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054851"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102607608"
 ---
 # <a name="troubleshoot-outbound-smtp-connectivity-problems-in-azure"></a>Problemen met uitgaande SMTP-connectiviteit in azure oplossen
 
@@ -76,6 +76,10 @@ Voor abonnementen van de volgende typen die zijn gemaakt na 15 november 2017, zi
 Als u rechtstreeks e-mail berichten van Azure-vm's naar externe e-mail providers wilt verzenden (zonder een geverifieerde SMTP-relay), kunt u een aanvraag indienen door een ondersteunings aanvraag te openen met behulp van het volgende probleem type: **technische**  >  **Virtual Network**  >  **connectiviteit**  >  **kan geen e-mail verzenden (SMTP/poort 25)**. Zorg ervoor dat u gegevens toevoegt over waarom uw implementatie e-mail rechtstreeks naar e-mail providers moet verzenden in plaats van een geverifieerde relay te gebruiken. Aanvragen worden beoordeeld en goedgekeurd door micro soft. Aanvragen worden pas verleend nadat aanvullende AntiFraud-controles zijn voltooid. 
 
 Nadat een abonnement is uitgesloten en de Vm's zijn gestopt en opnieuw zijn opgestart in de Azure Portal, worden alle Vm's in dat abonnement doorgestuurd. De uitzonde ring geldt alleen voor het aangevraagde abonnement en alleen voor VM-verkeer dat rechtstreeks naar het Internet wordt gerouteerd.
+
+## <a name="changing-subscription-type"></a>Abonnements type wijzigen
+
+Als u het abonnements type wijzigt of als uw provider voor betalen per gebruik is goedgekeurd, moet u de virtuele machine stoppen, opnieuw toewijzen en opnieuw starten om het nieuwe beleid van kracht te laten worden. En als u een abonnements type hebt dat standaard is toegestaan en u vervolgens overschakelt naar een type abonnement dat niet is toegestaan, kan poort 25 worden geblokkeerd vanwege de wijzigingen in de implementatie.
 
 ## <a name="need-help-contact-support"></a>Hulp nodig? Contact opnemen met ondersteuning
 

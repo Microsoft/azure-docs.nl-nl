@@ -116,6 +116,16 @@
           href: fix-deployment-provisioning-failures.md
     - name: Veelgestelde vragen
       href: faq.yml
+    - name: Video's
+      items:
+        - name: Afspeel lijst
+          href: 'https://youtube.com/playlist?list=PL1NLwHeM6ewbZu0dC0guj-OSpIoZnnJin'
+        - name: Integratie met Azure-service
+          href: 'https://youtu.be/m26iLu6DHbU'
+        - name: Integratie met Azure-toepassing gateway
+          href: 'https://youtu.be/BoQYvqzb6Y8'
+        - name: Migratie en capaciteits planning
+          href: 'https://youtu.be/NoNG-hkksrA'
 - name: Naslaginformatie
   items:
     - name: Azure CLI

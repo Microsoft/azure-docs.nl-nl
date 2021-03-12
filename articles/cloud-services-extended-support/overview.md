@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 8ed21d8689bf5340c1bde0a7f782bb8614f7cf11
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ecf115b7ce902fcd8b50f0eca32ffda6ef47e068
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101700198"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102618471"
 ---
 # <a name="about-azure-cloud-services-extended-support"></a>Over Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -57,7 +57,7 @@ De belangrijkste verschillen tussen Cloud Services (klassiek) en Cloud Services 
 
 ## <a name="migration-to-azure-resource-manager"></a>Migratie naar Azure Resource Manager
 
-Cloud Services (uitgebreide ondersteuning) biedt twee paden die u kunt migreren van [Azure Service Manager](/powershell/azure/servicemanagement/overview?preserve-view=true&view=azuresmps-4.0.0) naar [Azure Resource Manager](../azure-resource-manager/management/overview.md). 
+Cloud Services (uitgebreide ondersteuning) biedt twee paden die u kunt migreren van [Azure Service Manager](/powershell/azure/servicemanagement/overview) naar [Azure Resource Manager](../azure-resource-manager/management/overview.md). 
 1) Klanten implementeren Cloud Services rechtstreeks in Azure Resource Manager en verwijderen vervolgens de oude Cloud service in azure Service Manager. 
 2) In-place migratie biedt ondersteuning voor de mogelijkheid om Cloud Services (klassiek) te migreren met minimale uitval tijd tot Cloud Services (uitgebreide ondersteuning). 
 

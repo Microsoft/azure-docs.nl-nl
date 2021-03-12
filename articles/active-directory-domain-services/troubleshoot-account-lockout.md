@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: justinha
-ms.openlocfilehash: 7967347fa63c657ba6211328bdd1d55512358521
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 3341f290a5a5bb169b6e70ea22459a2afafedbbc
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618770"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103198963"
 ---
 # <a name="troubleshoot-account-lockout-problems-with-an-azure-active-directory-domain-services-managed-domain"></a>Problemen met account vergrendeling oplossen met een door Azure Active Directory Domain Services beheerd domein
 
@@ -83,6 +83,23 @@ AADDomainServicesAccountManagement
 | where OperationName has "4740"
 | sort by TimeGenerated asc
 ```
+
+**Opmerking**
+
+Mogelijk vindt u de gebeurtenis Details van het bron werkstation: leeg op 4776 en 4740. Dit komt doordat het wacht woord van de netwerk aanmelding via een aantal andere apparaten is overschreden.
+Bijvoorbeeld: als u een RADIUS-server hebt, waarmee u de verificatie kunt door sturen naar AAD Active Directory. Om te controleren of het inschakelen van RDP voor DC-back-end Netlogon-logboeken configureren.
+
+03/04 19:07:29 [Aanmelden] [10752] contoso: SamLogon: transitieve netwerk aanmelding van contoso\Nagappan.Veerappan van (via LOB11-RADIUS) ingevoerd 
+
+03/04 19:07:29 [Aanmelden] [10752] contoso: SamLogon: transitieve netwerk aanmelding van contoso\Nagappan.Veerappan van (via LOB11-RADIUS) retourneert 0xC000006A
+
+03/04 19:07:35 [Aanmelden] [10753] contoso: SamLogon: transitieve netwerk aanmelding van contoso\Nagappan.Veerappan van (via LOB11-RADIUS) ingevoerd 
+
+03/04 19:07:35 [Aanmelden] [10753] contoso: SamLogon: transitieve netwerk aanmelding van contoso\Nagappan.Veerappan van (via LOB11-RADIUS) retourneert 0xC000006A
+
+Schakel RDP in voor uw Dc's in NSG naar de back-end om diagnostische gegevens te configureren (dat wil zeggen Netlogon) https://docs.microsoft.com/azure/active-directory-domain-services/alert-nsg#inbound-security-rules Als u de standaard NSG al hebt gewijzigd, kunt u de PSlet-methode inschakelen https://docs.microsoft.com/azure/active-directory-domain-services/network-considerations#port-3389---management-using-remote-desktop
+
+Netlogon-logboek inschakelen op elke server https://docs.microsoft.com/troubleshoot/windows-client/windows-security/enable-debug-logging-netlogon-service
 
 ## <a name="next-steps"></a>Volgende stappen
 

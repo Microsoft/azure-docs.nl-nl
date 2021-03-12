@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 02/25/2020
 ms.custom: mvc
-ms.openlocfilehash: 5881d03603002cc8d5bef1680083f6b4145bc77f
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 19de94db517afb2a8eeb855e76f2381096f8d7c0
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526684"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102609104"
 ---
 # <a name="migrate-to-azure-kubernetes-service-aks"></a>Migreren naar Azure Kubernetes service (AKS)
 
@@ -114,7 +114,7 @@ Stateless toepassings migratie is de meest eenvoudige situatie. Pas uw resource 
 Plan uw migratie van stateful toepassingen om verlies van gegevens of onverwachte downtime te voor komen.
 
 Als u Azure Files gebruikt, kunt u de bestands share als een volume koppelen aan het nieuwe cluster:
-* [Statische Azure Files koppelen als een volume](./azure-files-volume.md#mount-the-file-share-as-a-volume)
+* [Statische Azure Files koppelen als een volume](./azure-files-volume.md#mount-file-share-as-an-persistent-volume)
 
 Als u Azure Managed Disks gebruikt, kunt u de schijf alleen koppelen als deze is gekoppeld aan een virtuele machine:
 * [Statische Azure-schijf koppelen als een volume](./azure-disk-volume.md#mount-disk-as-volume)

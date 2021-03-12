@@ -8,12 +8,12 @@ ms.author: chpalm
 ms.date: 10/03/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 6fbc20ec7145a474d9f3aada153f2d012aba34f8
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 4e9ea1ec85067a59c5ee6bcd27993e294559f410
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102561344"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232083"
 ---
 # <a name="region-availability-and-data-residency"></a>Regiobeschikbaarheid en gegevenslocatie
 
@@ -51,12 +51,14 @@ Door de API’s van Azure Portal of Azure Resource Manager te gebruiken met Comm
 
 ### <a name="telephone-number-management"></a>Telefoonnummerbeheer
 
-Azure Communication Services onderhoudt een directory met telefoonnummers die zijn gekoppeld aan een Communication Services-resource. Gebruik deze API’s om telefoonnummers op te halen en te verwijderen:
+Azure Communication Services onderhoudt een directory met telefoonnummers die zijn gekoppeld aan een Communication Services-resource. Gebruik [api's](/rest/api/communication/phonenumberadministration) voor het beheren van telefoon nummers en verwijder ze om deze op te halen:
+
+- `Get All Phone Numbers`
 - `Release Phone Number`
 
 ### <a name="chat"></a>Chat
 
-Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijderd. Een volledig inactief gesprek wordt na 30 dagen automatisch verwijderd. Gebruik [Chat-API’s](/rest/api/communication/chat/deletechatmessage/deletechatmessage) om berichten op te halen, weer te geven, bij te werken en te verwijderen.
+Chatgesprekken en -berichten worden bewaard totdat ze expliciet worden verwijderd. Een volledig inactief gesprek wordt na 30 dagen automatisch verwijderd. Gebruik [Chat-API’s](/rest/api/communication/chat/chatthread) om berichten op te halen, weer te geven, bij te werken en te verwijderen.
 
 - `Get Thread`
 - `Get Message`

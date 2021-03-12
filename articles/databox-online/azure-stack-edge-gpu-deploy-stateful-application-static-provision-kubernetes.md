@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/22/2021
+ms.date: 03/09/2021
 ms.author: alkohli
-ms.openlocfilehash: 51c4a873ca0f4d8c3013e77399f0f9b948875fb6
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 01ba8e1f22deb376fd461be24d3f66f0a7f5e1ae
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102520707"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102610481"
 ---
 # <a name="use-kubectl-to-run-a-kubernetes-stateful-application-with-a-persistentvolume-on-your-azure-stack-edge-pro-device"></a>Gebruik kubectl om een Kubernetes stateful-toepassing uit te voeren met een PersistentVolume op uw Azure Stack Edge Pro-apparaat
 
@@ -21,7 +21,7 @@ ms.locfileid: "102520707"
 
 In dit artikel wordt beschreven hoe u een stateful-toepassing met één instantie in Kubernetes implementeert met behulp van een PersistentVolume (PV) en een implementatie. De implementatie maakt gebruik `kubectl` van opdrachten op een bestaand Kubernetes-cluster en implementeert de MySQL-toepassing. 
 
-Deze procedure is bedoeld voor gebruikers die de Kubernetes- [opslag op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-storage.md) hebben gecontroleerd en bekend zijn met de concepten van [Kubernetes Storage](https://kubernetes.io/docs/concepts/storage/).
+Deze procedure is bedoeld voor gebruikers die de Kubernetes- [opslag op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-storage.md) hebben gecontroleerd en bekend zijn met de concepten van [Kubernetes Storage](https://kubernetes.io/docs/concepts/storage/). 
 
 Azure Stack Edge Pro biedt ook ondersteuning voor het uitvoeren van Azure SQL Edge-containers en deze kunnen op een vergelijk bare manier worden geïmplementeerd als voor MySQL. Zie [Azure SQL Edge](../azure-sql-edge/overview.md)(Engelstalig) voor meer informatie.
 
@@ -62,7 +62,8 @@ U bent klaar om een stateful toepassing te implementeren op uw Azure Stack Edge 
 Als u een PV statisch wilt inrichten, moet u een share op het apparaat maken. Volg deze stappen om een HW te richten op uw SMB-share. 
 
 > [!NOTE]
-> Het specifieke voor beeld dat in dit artikel wordt gebruikt, werkt niet met NFS-shares. Over het algemeen kunnen NFS-shares op uw Azure Stack edge-apparaat worden ingericht met niet-database toepassingen.
+> - Het specifieke voor beeld dat in dit artikel wordt gebruikt, werkt niet met NFS-shares. Over het algemeen kunnen NFS-shares op uw Azure Stack edge-apparaat worden ingericht met niet-database toepassingen.
+> - Als u stateful toepassingen wilt implementeren die gebruikmaken van opslag volumes om permanente opslag te bieden, raden we u aan om te gebruiken `StatefulSet` . Dit voor beeld wordt gebruikt `Deployment` met slechts één replica en is geschikt voor ontwikkeling en testen. 
 
 1. Kies of u een Edge-share of een Edge-lokale share wilt maken. Volg de instructies in [een share toevoegen](azure-stack-edge-manage-shares.md#add-a-share) om een share te maken. Zorg ervoor dat u het selectie vakje inschakelt voor **het gebruik van de share met Edge Compute**.
 

@@ -6,15 +6,15 @@ metadata:
   description: Meer informatie over het gebruik van Azure VMware Solution om een VMware-privécloud te implementeren in Azure
   ms.service: azure-vmware
   ms.topic: landing-page
-  author: dikamath
-  ms.author: dikamath
-  ms.date: 11/19/2020
-  ms.openlocfilehash: 7bff439db0b9567292707efeac085f8537de33a5
-  ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+  author: shortpatti
+  ms.author: v-patsho
+  ms.date: 03/12/2021
+  ms.openlocfilehash: 9014dbbfdb9d1f0ef4af975da917abdcf71d8b2a
+  ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/10/2021
-  ms.locfileid: "102612130"
+  ms.lasthandoff: 03/12/2021
+  ms.locfileid: "103232950"
 landingContent:
 - title: Over Azure VMware Solution
   linkLists:
@@ -140,9 +140,9 @@ landingContent:
     links:
     - text: Afspeel lijst
       url: https://youtube.com/playlist?list=PL1NLwHeM6ewbZu0dC0guj-OSpIoZnnJin
-    - text: Mysterie DNS en beveiligde communicatie
+    - text: Integratie met Azure-service
       url: https://youtu.be/m26iLu6DHbU
-    - text: Met Azure Application Gateway integreren
+    - text: Integratie met Azure-toepassing gateway
       url: https://youtu.be/BoQYvqzb6Y8
     - text: Migratie en capaciteits planning
       url: https://youtu.be/NoNG-hkksrA

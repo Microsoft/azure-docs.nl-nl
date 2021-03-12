@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: msjogarrig
 ms.author: jogarrig
 ms.date: 09/04/2020
-ms.openlocfilehash: d4fb3354b7035149b80191528b2f5335b593b764
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 09badebab86da8e4fd8d35307aa6648a26e91821
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433552"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232253"
 ---
 # <a name="publishing-guide-for-azure-managed-applications"></a>Publicatie handleiding voor door Azure beheerde toepassingen
 
@@ -33,8 +33,8 @@ Gebruik het aanbiedings type beheerde toepassing onder de volgende voor waarden:
 |Vereisten |Details  |
 |---------|---------|
 |Een Azure-abonnement | Beheerde toepassingen moeten worden geïmplementeerd op het abonnement van een klant, maar kunnen worden beheerd door derden. |
-|Facturering en meting    |  De resources zijn opgenomen in het Azure-abonnement van een klant. Vm's die gebruikmaken van het betalen per gebruik-betalings model, worden door micro soft gefactureerd met de klant via het Azure-abonnement van de klant. <br><br> Voor uw Vm's met uw eigen licentie, factureert micro soft kosten voor de infra structuur die in het abonnement van de klant worden gemaakt, maar u kunt ook de kosten voor software licenties ook rechtstreeks aan de klant door geven.        |
-|Een virtuele harde schijf die compatibel is met Azure (VHD)    |   Vm's moeten zijn gebouwd op Windows of Linux.<br><br>Zie [Linux-distributies die zijn goedgekeurd op Azure](../virtual-machines/linux/endorsed-distros.md)voor meer informatie over het maken van een virtuele Linux-harde schijf.<br><br>Zie [een Azure-toepassings aanbieding maken](./create-new-azure-apps-offer.md)voor meer informatie over het maken van een Windows-VHD. |
+|Facturering en meting    |  De resources zijn opgenomen in het Azure-abonnement van een klant. Azure-resources die gebruikmaken van het betalen per gebruik-betalings model, worden door micro soft gefactureerd met de klant via het Azure-abonnement van de klant. <br><br> Voor de Azure-resources die uw eigen licentie bieden, factureert micro soft eventuele infrastructuur kosten die zijn gemaakt in het abonnement van de klant, maar u kunt ook de kosten voor software licenties ook rechtstreeks aan de klant door geven.        |
+|Een door Azure beheerd toepassings pakket    |   De geconfigureerde Azure Resource Manager sjabloon en de definitie van de gebruikers interface maken die wordt gebruikt om uw toepassing te implementeren in het abonnement van de klant.<br><br>Zie [overzicht van beheerde toepassingen](../azure-resource-manager/managed-applications/publish-service-catalog-app.md)voor meer informatie over het maken van een beheerde toepassing.|
 
 ---
 

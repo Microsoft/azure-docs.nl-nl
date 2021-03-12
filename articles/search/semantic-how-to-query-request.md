@@ -7,22 +7,22 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/05/2021
-ms.openlocfilehash: 7f7a09b9e20b461a8a1e448bf4a7b0747a35fbb1
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.date: 03/12/2021
+ms.openlocfilehash: 621cfa8977d4d0ed987b7d38407bbf5bbb370950
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102487138"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232733"
 ---
 # <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
 
 > [!IMPORTANT]
-> Semantisch query type bevindt zich in de open bare preview-versie, die beschikbaar is via de preview-REST API en Azure Portal. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden. Tijdens de eerste preview-versie worden er geen kosten in rekening gebracht voor semantisch zoeken. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
+> Semantisch query type bevindt zich in de open bare preview-versie, die beschikbaar is via de preview-REST API en Azure Portal. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
-In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt van semantische classificatie en dat er semantische bijschriften en antwoorden worden gegenereerd.
+In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt van semantische classificatie. De aanvraag retourneert semantische bijschriften en eventueel [semantische antwoorden](semantic-answers.md), met de nadruk op de meest relevante termen en zinsdelen.
 
-Semantische query's werken meestal het beste bij zoek indexen die zijn opgebouwd uit tekst-zware inhoud, zoals Pdf's of documenten met grote stukken tekst.
+Zowel bijschriften als antwoorden worden uitgepakt Verbatim uit tekst in het zoek document. Het semantische subsysteem bepaalt welke inhoud de kenmerken van een bijschrift of een antwoord heeft, maar er worden geen nieuwe zinnen of zinsdelen samengesteld. Daarom werken inhoud met uitleg of definities het beste voor semantisch zoeken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -36,13 +36,13 @@ Semantische query's werken meestal het beste bij zoek indexen die zijn opgebouwd
 
   De Search-client moet de preview REST-Api's voor de query aanvraag ondersteunen. U kunt [postman](search-get-started-rest.md), [Visual Studio code](search-get-started-vs-code.md)of code gebruiken die u hebt gewijzigd om rest-aanroepen naar de preview-api's te maken. U kunt ook [Search Explorer](search-explorer.md) in azure Portal gebruiken om een semantische query in te dienen.
 
-+ Een aanvraag voor [zoeken naar documenten](/rest/api/searchservice/preview-api/search-documents) met de semantische optie en andere para meters die in dit artikel worden beschreven.
++ Een [query aanvraag](/rest/api/searchservice/preview-api/search-documents) moet de semantische optie en andere para meters bevatten die in dit artikel worden beschreven.
 
 ## <a name="whats-a-semantic-query"></a>Wat is een semantische query?
 
 In Cognitive Search is een query een aanvraag met para meters die de verwerking van query's en de vorm van de reactie bepaalt. Een *semantische query* voegt para meters toe die het semantische herstel model aanroepen dat de context en betekenis van overeenkomende resultaten kan beoordelen, meer relevante overeenkomsten voor het hoogste niveau moet verhogen en semantische antwoorden en bijschriften kan retour neren.
 
-De volgende aanvraag is representatief voor een algemene semantische query (zonder antwoorden).
+De volgende aanvraag is representatief voor een minimale semantische query (zonder antwoorden).
 
 ```http
 POST https://[service name].search.windows.net/indexes/[index name]/docs/search?api-version=2020-06-30-Preview      
@@ -54,15 +54,25 @@ POST https://[service name].search.windows.net/indexes/[index name]/docs/search?
 }
 ```
 
-Net als bij alle query's in Cognitive Search streeft de aanvraag naar de verzameling documenten van een enkele index. Bovendien gaat een semantische query dezelfde volg orde van parseren, analyses en scannen als een niet-semantische query. Het verschil ligt in de manier waarop relevantie wordt berekend. Zoals gedefinieerd in deze preview-versie, is een semantische query waarvan de *resultaten* opnieuw worden verwerkt met behulp van geavanceerde algoritmen, waardoor het mogelijk is om de overeenkomsten te laten Opper lopen die het meest relevant zijn voor de semantische rangorde, in plaats van de scores die worden toegewezen door het standaard classificatie algoritme voor gelijkenis. 
+Net als bij alle query's in Cognitive Search streeft de aanvraag naar de verzameling documenten van een enkele index. Bovendien gaat een semantische query dezelfde volg orde van parseren, analyses, scannen en scores als een niet-semantische query. 
 
-Alleen de Top 50 treffers van de oorspronkelijke resultaten kan semantisch worden geclassificeerd en alle ondertiteling in het antwoord worden meegenomen. Desgewenst kunt u een **`answer`** para meter opgeven voor de aanvraag om een mogelijk antwoord uit te pakken. In dit model worden Maxi maal vijf mogelijke antwoorden op de query geformuleerd, die u kunt weer geven boven aan de zoek pagina.
+Het verschil ligt in relevantie en score. Zoals gedefinieerd in deze preview-versie, is een semantische query waarvan de *resultaten* worden herstemd met behulp van een semantisch taal model, waardoor het mogelijk is om de overeenkomsten te laten lopen die het meest relevant zijn voor de semantische rangorde, in plaats van de scores die worden toegewezen door het standaard classificatie algoritme voor gelijkenis.
 
-## <a name="query-using-rest-apis"></a>Query's uitvoeren met REST-Api's
+Alleen de Top 50 treffers van de oorspronkelijke resultaten kan semantisch worden geclassificeerd en alle ondertiteling in het antwoord worden meegenomen. Desgewenst kunt u een **`answer`** para meter opgeven voor de aanvraag om een mogelijk antwoord uit te pakken. Zie voor meer informatie [semantische antwoorden](semantic-answers.md).
 
-De volledige specificatie van de REST API kan worden gevonden in [Zoek documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents).
+## <a name="query-with-search-explorer"></a>Query uitvoeren met Search Explorer
 
-Semantische query's bieden bijschriften en worden automatisch gemarkeerd. Als u wilt dat het antwoord antwoorden bevat, kunt u een optionele **`answer`** para meter toevoegen aan de aanvraag. Deze para meter, plus de constructie van de query teken reeks zelf, produceert een antwoord in de reactie.
+[Search Explorer](search-explorer.md) is bijgewerkt met opties voor semantische query's. Deze opties worden weer gegeven in de portal nadat u toegang hebt tot de preview-versie. Met query opties kunnen semantische query's, searchFields en spelling correctie worden ingeschakeld.
+
+U kunt ook de vereiste query parameters in de query teken reeks plakken.
+
+:::image type="content" source="./media/semantic-search-overview/search-explorer-semantic-query-options.png" alt-text="Query opties in Search Explorer" border="true":::
+
+## <a name="query-using-rest"></a>Query uitvoeren met REST
+
+Gebruik de [Zoek documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) om de aanvraag via een programma te formuleren.
+
+Een antwoord bevat bijschriften en wordt automatisch gemarkeerd. Als u wilt dat het antwoord spelling correctie of antwoorden bevat, voegt u een optionele **`speller`** of **`answers`** para meter toe aan de aanvraag.
 
 In het volgende voor beeld wordt gebruikgemaakt van de hotels-voor beeld-index voor het maken van een semantisch query verzoek met semantische antwoorden en bijschriften:
 
@@ -81,6 +91,16 @@ POST https://[service name].search.windows.net/indexes/hotels-sample-index/docs/
     "count": true
 }
 ```
+
+De volgende tabel bevat een overzicht van de query parameters die in een semantische query worden gebruikt, zodat u ze op een holistische manier kunt zien. Zie [zoeken naar documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) voor een lijst met alle para meters.
+
+| Parameter | Type | Beschrijving |
+|-----------|-------|-------------|
+| Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
+| queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |
+| searchFields | Tekenreeks | Een door komma's gescheiden lijst met Doorzoek bare velden. Optioneel, maar aanbevolen. Hiermee geeft u de velden op waarover de semantische classificatie plaatsvindt. </br></br>In tegens telling tot eenvoudige en volledige query typen, bepaalt de volg orde waarin velden worden weer gegeven voor rang. Zie [stap 2: set searchFields](#searchfields)voor meer gebruiks instructies. |
+| speller | Tekenreeks | Optionele para meter, niet specifiek voor semantische query's, waarmee verkeerd gespelde termen worden gecorrigeerd voordat de zoek machine wordt bereikt. Zie [spelling correctie toevoegen aan query's](speller-how-to-add.md)voor meer informatie. |
+| beantwoordt |Tekenreeks | Optionele para meters die aangeven of semantische antwoorden worden opgenomen in het resultaat. Op dit moment wordt alleen ' extra heren ' geïmplementeerd. Antwoorden kunnen worden geconfigureerd om Maxi maal vijf te retour neren. De standaard waarde is één. Dit voor beeld toont een aantal van drie antwoorden: ' extractie \| count3 ' '. Zie voor meer informatie [semantische antwoorden retour neren](semantic-answers.md).|
 
 ### <a name="formulate-the-request"></a>De aanvraag formuleren
 
@@ -109,7 +129,7 @@ Deze para meter is optioneel omdat er geen fout is als u deze verlaat, maar een 
 
 De para meter searchFields wordt gebruikt om de door gang te identificeren die moet worden geëvalueerd voor ' semantische gelijkenis ' met de query. Voor de preview-versie raden we u aan om searchFields leeg te laten, omdat het model een hint vereist om aan te geven welke velden het belangrijkst zijn voor het proces.
 
-De volg orde van de searchFields is kritiek. Als u searchFields al gebruikt in bestaande eenvoudige of volledige lucene-query's, moet u deze para meter opnieuw bezoeken wanneer u overschakelt naar een semantisch query type.
+De volg orde van de searchFields is kritiek. Als u searchFields al gebruikt in bestaande eenvoudige of volledige lucene-query's, moet u deze para meter opnieuw bezoeken om te controleren op veld volgorde wanneer u overschakelt naar een semantisch query type.
 
 Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of meer searchFields zijn opgegeven:
 
@@ -117,11 +137,11 @@ Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of 
 
 + Het eerste veld moet altijd beknopt zijn (zoals een titel of naam), in het ideale geval met 25 woorden.
 
-+ Als de index een URL-veld heeft dat tekst is (leesbaar voor mensen zoals `www.domain.com/name-of-the-document-and-other-details` en niet op computer gericht `www.domain.com/?id=23463&param=eis` , zoals), plaatst u het in de lijst (of eerst als er geen beknopt titel veld is).
++ Als de index een URL-veld heeft dat tekst bevat (leesbaar voor mensen zoals `www.domain.com/name-of-the-document-and-other-details` en niet op computer gericht `www.domain.com/?id=23463&param=eis` , zoals), plaatst u het in de lijst (of eerst als er geen beknopt titel veld is).
 
 + Volg deze velden op beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document.
 
-Als er slechts één veld is opgegeven, gebruikt u een beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat.
+Als er slechts één veld is opgegeven, gebruikt u een beschrijvende veld waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat. Om ervoor te zorgen dat tijdig wordt verwerkt, worden alleen de eerste 20.000-tokens van de gezamenlijke inhoud van searchFields een semantische evaluatie en classificatie.
 
 #### <a name="step-3-remove-orderby-clauses"></a>Stap 3: orderBy-componenten verwijderen
 
@@ -129,15 +149,7 @@ Verwijder alle orderBy-componenten, als deze in een bestaande aanvraag aanwezig 
 
 #### <a name="step-4-add-answers"></a>Stap 4: antwoorden toevoegen
 
-Voeg eventueel ' antwoorden ' toe als u aanvullende verwerking wilt opnemen die een antwoord geeft. Antwoorden (en bijschriften) worden geformuleerd op basis van passeren die worden gevonden in de velden in searchFields. Zorg ervoor dat u velden met uitgebreide inhoud in searchFields opneemt om de beste antwoorden en bijschriften in een antwoord te krijgen.
-
-Er zijn expliciete en impliciete voor waarden die antwoorden genereren. 
-
-+ Expliciete voor waarden zijn het toevoegen van ' antwoorden = extra heren '. Als u het aantal antwoorden wilt opgeven dat wordt geretourneerd in het antwoord, voegt u ook ' count ' toe, gevolgd door een getal: `"answers=extractive|count=3"` .  De standaard waarde is één. Maximum is vijf.
-
-+ Impliciete voor waarden bevatten een query teken reeks constructie die zichzelf onderleent aan een antwoord. Een query die bestaat uit ' wat is de groene kamer heeft ', is waarschijnlijk meer ' beantwoord ' dan een query die bestaat uit een instructie met een decoratieve binnenkant. Zoals u zou kunnen verwachten, kan de query niet worden opgegeven of null.
-
-Het belang rijk punt om te worden verwijderd is dat als de query niet eruitziet als een vraag, de antwoord verwerking wordt overgeslagen, zelfs als de para meter "antwoorden" is ingesteld.
+Voeg eventueel ' antwoorden ' toe als u aanvullende verwerking wilt opnemen die een antwoord geeft. Antwoorden (en bijschriften) worden geëxtraheerd uit passeren die zijn gevonden in de velden in searchFields. Zorg ervoor dat u in searchFields inhouds opgemaakte velden in kunt gebruiken om de beste antwoorden in een antwoord te krijgen. Zie voor meer informatie [semantische antwoorden retour neren](semantic-answers.md).
 
 #### <a name="step-5-add-other-parameters"></a>Stap 5: andere para meters toevoegen
 
@@ -145,129 +157,33 @@ Stel alle andere para meters in die u in de aanvraag wilt. Para meters zoals [sp
 
 Desgewenst kunt u de markerings stijl aanpassen die wordt toegepast op bijschriften. Met bijschriften past u de markerings opmaak toe op de sleutel door gang in het document waarin het antwoord wordt samenvatten. De standaardwaarde is `<em>`. Als u het type opmaak (bijvoorbeeld gele achtergrond) wilt opgeven, kunt u de highlightPreTag en highlightPostTag instellen.
 
-### <a name="review-the-response"></a>Het antwoord controleren
+## <a name="evaluate-the-response"></a>Het antwoord evalueren
 
-Antwoord voor de bovenstaande query retourneert de volgende overeenkomst als de eerste verzameling. Bijschriften worden automatisch geretourneerd, met tekst zonder opmaak en gemarkeerde versies. Zie voor meer informatie over semantische antwoorden [semantische rang schikking en reacties](semantic-how-to-query-response.md).
+Net als bij alle query's bestaat een antwoord uit alle velden die zijn gemarkeerd als ophaalbaar, of alleen de velden die worden vermeld in de Select-para meter. Het bevat de oorspronkelijke relevantie score en kan ook een aantal of batch resultaten bevatten, afhankelijk van hoe u de aanvraag hebt opgesteld.
+
+In een semantische query heeft het antwoord extra elementen: een nieuwe semantisch geclassificeerde relevantie score, bijschriften in tekst zonder opmaak en met hooglichten, en optioneel een antwoord.
+
+In een client-app kunt u de zoek pagina zodanig structureren dat een bijschrift wordt toegevoegd als de beschrijving van de overeenkomst, in plaats van de volledige inhoud van een specifiek veld. Dit is handig als afzonderlijke velden te dicht bij de pagina met zoek resultaten zijn.
+
+Het antwoord voor de bovenstaande voorbeeld query retourneert de volgende overeenkomst als de eerste verzameling. Bijschriften worden automatisch geretourneerd, met tekst zonder opmaak en gemarkeerde versies. Antwoorden worden uit het voor beeld wegge laten omdat er geen kan worden vastgesteld voor deze specifieke query en verzameling.
 
 ```json
-"@odata.count": 29,
+"@odata.count": 35,
+"@search.answers": [],
 "value": [
     {
-        "@search.score": 1.8920634,
-        "@search.rerankerScore": 1.1091284966096282,
+        "@search.score": 1.8810667,
+        "@search.rerankerScore": 1.1446577133610845,
         "@search.captions": [
             {
-                "text": "Oceanside Resort. Budget. New Luxury Hotel. Be the first to stay. Bay views from every room, location near the pier, rooftop pool, waterfront dining & more.",
-                "highlights": "<strong>Oceanside Resort.</strong> Budget. New Luxury Hotel. Be the first to stay.<strong> Bay views</strong> from every room, location near the pier, rooftop pool, waterfront dining & more."
+                "text": "Oceanside Resort. Luxury. New Luxury Hotel. Be the first to stay. Bay views from every room, location near the pier, rooftop pool, waterfront dining & more.",
+                "highlights": "<strong>Oceanside Resort.</strong> Luxury. New Luxury Hotel. Be the first to stay.<strong> Bay</strong> views from every room, location near the pier, rooftop pool, waterfront dining & more."
             }
         ],
-        "HotelId": "18",
         "HotelName": "Oceanside Resort",
-        "Description": "New Luxury Hotel.  Be the first to stay. Bay views from every room, location near the pier, rooftop pool, waterfront dining & more.",
-        "Category": "Budget"
+        "Description": "New Luxury Hotel. Be the first to stay. Bay views from every room, location near the pier, rooftop pool, waterfront dining & more.",
+        "Category": "Luxury"
     },
-```
-
-### <a name="parameters-used-in-a-semantic-query"></a>Para meters die worden gebruikt in een semantische query
-
-De volgende tabel bevat een overzicht van de query parameters die in een semantische query worden gebruikt, zodat u ze op een holistische manier kunt zien. Zie [zoeken naar documenten (rest preview)](/rest/api/searchservice/preview-api/search-documents) voor een lijst met alle para meters.
-
-| Parameter | Type | Beschrijving |
-|-----------|-------|-------------|
-| Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
-| queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |
-| searchFields | Tekenreeks | Een door komma's gescheiden lijst met Doorzoek bare velden. Optioneel, maar aanbevolen. Hiermee geeft u de velden op waarover de semantische classificatie plaatsvindt. </br></br>In tegens telling tot eenvoudige en volledige query typen, bepaalt de volg orde waarin velden worden weer gegeven voor rang.|
-| beantwoordt |Tekenreeks | Optioneel veld om op te geven of semantische antwoorden worden opgenomen in het resultaat. Op dit moment wordt alleen ' extra heren ' geïmplementeerd. Antwoorden kunnen worden geconfigureerd om Maxi maal vijf te retour neren. De standaard waarde is één. Dit voor beeld toont een aantal van drie antwoorden: ' extractie \| count3 ' '. |
-
-## <a name="query-with-search-explorer"></a>Query uitvoeren met Search Explorer
-
-De volgende query streeft naar de ingebouwde hotels-voor beeld-index, met API-versie 2020-06-30-preview, en wordt uitgevoerd in Search Explorer. De `$select` component beperkt de resultaten tot slechts een paar velden, waardoor het eenvoudiger is om te scannen in de uitgebreide json in Search Explorer.
-
-### <a name="with-querytypesemantic"></a>Met query type = semantisch
-
-```json
-search=nice hotel on water with a great restaurant&$select=HotelId,HotelName,Description,Tags&queryType=semantic&queryLanguage=english&searchFields=Description,Tags
-```
-
-De eerste paar resultaten zijn als volgt.
-
-```json
-{
-    "@search.score": 0.38330218,
-    "@search.rerankerScore": 0.9754053303040564,
-    "HotelId": "18",
-    "HotelName": "Oceanside Resort",
-    "Description": "New Luxury Hotel. Be the first to stay. Bay views from every room, location near the pier, rooftop pool, waterfront dining & more.",
-    "Tags": [
-        "view",
-        "laundry service",
-        "air conditioning"
-    ]
-},
-{
-    "@search.score": 1.8920634,
-    "@search.rerankerScore": 0.8829904259182513,
-    "HotelId": "36",
-    "HotelName": "Pelham Hotel",
-    "Description": "Stunning Downtown Hotel with indoor Pool. Ideally located close to theatres, museums and the convention center. Indoor Pool and Sauna and fitness centre. Popular Bar & Restaurant",
-    "Tags": [
-        "view",
-        "pool",
-        "24-hour front desk service"
-    ]
-},
-{
-    "@search.score": 0.95706713,
-    "@search.rerankerScore": 0.8538530203513801,
-    "HotelId": "22",
-    "HotelName": "Stone Lion Inn",
-    "Description": "Full breakfast buffet for 2 for only $1.  Excited to show off our room upgrades, faster high speed WiFi, updated corridors & meeting space. Come relax and enjoy your stay.",
-    "Tags": [
-        "laundry service",
-        "air conditioning",
-        "restaurant"
-    ]
-},
-```
-
-### <a name="with-querytype-default"></a>Met query type (standaard)
-
-Voer voor vergelijking dezelfde query uit als hierboven, zodat u deze kunt verwijderen `&queryType=semantic&queryLanguage=english&searchFields=Description,Tags` . U ziet dat er geen `"@search.rerankerScore"` resultaten zijn en dat verschillende hotels op de drie belangrijkste posities worden weer gegeven.
-
-```json
-{
-    "@search.score": 8.633856,
-    "HotelId": "3",
-    "HotelName": "Triple Landscape Hotel",
-    "Description": "The Hotel stands out for its gastronomic excellence under the management of William Dough, who advises on and oversees all of the Hotel’s restaurant services.",
-    "Tags": [
-        "air conditioning",
-        "bar",
-        "continental breakfast"
-    ]
-},
-{
-    "@search.score": 6.407289,
-    "HotelId": "40",
-    "HotelName": "Trails End Motel",
-    "Description": "Only 8 miles from Downtown.  On-site bar/restaurant, Free hot breakfast buffet, Free wireless internet, All non-smoking hotel. Only 15 miles from airport.",
-    "Tags": [
-        "continental breakfast",
-        "view",
-        "view"
-    ]
-},
-{
-    "@search.score": 5.843788,
-    "HotelId": "14",
-    "HotelName": "Twin Vertex Hotel",
-    "Description": "New experience in the Making.  Be the first to experience the luxury of the Twin Vertex. Reserve one of our newly-renovated guest rooms today.",
-    "Tags": [
-        "bar",
-        "restaurant",
-        "air conditioning"
-    ]
-},
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

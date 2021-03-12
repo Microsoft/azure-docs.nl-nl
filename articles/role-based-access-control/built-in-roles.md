@@ -9,12 +9,12 @@ author: rolyon
 ms.author: rolyon
 ms.date: 02/25/2021
 ms.custom: generated
-ms.openlocfilehash: 90c0be8e6df3e489595bdafed1f29d1ed0ef00f8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: baa783d0dfb54e0e606e3f6c6d5397941ae7b7bc
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101724503"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011626"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -128,7 +128,7 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer van schemaregisters (preview)](#schema-registry-reader-preview) | Schemaregistergroepen en schema's lezen en weergeven. | 2c56ea50-c6b3-40a6-83c0-9d98858bc7d2 |
 > | **Blockchain** |  |  |
 > | [Toegang tot Block Chain-leden knooppunt (preview-versie)](#blockchain-member-node-access-preview) | Hiermee wordt toegang tot Block Chain-leden knooppunten toegestaan | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
-> | **AI en machine learning** |  |  |
+> | **AI + machine learning** |  |  |
 > | [Inzender Cognitive Services](#cognitive-services-contributor) | Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijderen en beheren. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services Custom Vision Inzender](#cognitive-services-custom-vision-contributor) | Volledige toegang tot het project, inclusief de mogelijkheid om projecten weer te geven, te maken, te bewerken of te verwijderen. | c1ff6cc2-C111-46fe-8896-e0ef812ad9f3 |
 > | [Implementatie van Cognitive Services Custom Vision](#cognitive-services-custom-vision-deployment) | Modellen publiceren, publicatie ongedaan maken of exporteren. Implementatie kan het project weer geven, maar kan het niet bijwerken. | 5c4089e1-6d96-4d2f-b296-c1bc7137275f |
@@ -6702,7 +6702,7 @@ Hiermee kunt u EventGrid-gebeurtenis abonnementen lezen. [Meer informatie](../ev
 
 ### <a name="fhir-data-contributor"></a>Inzender voor FHIR-gegevens
 
-De rol maakt gebruiker of Principal volledige toegang tot FHIR-gegevens [meer informatie](../healthcare-apis/configure-azure-rbac.md)
+De rol maakt gebruiker of Principal volledige toegang tot FHIR-gegevens [meer informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -6741,7 +6741,7 @@ De rol maakt gebruiker of Principal volledige toegang tot FHIR-gegevens [meer in
 
 ### <a name="fhir-data-exporter"></a>FHIR-gegevens exporteur
 
-De rol staat gebruikers of Principal toe om FHIR gegevens te lezen en exporteren [meer informatie](../healthcare-apis/configure-azure-rbac.md)
+De rol staat gebruikers of Principal toe om FHIR gegevens te lezen en exporteren [meer informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -6782,7 +6782,7 @@ De rol staat gebruikers of Principal toe om FHIR gegevens te lezen en exporteren
 
 ### <a name="fhir-data-reader"></a>Gegevens lezer FHIR
 
-De rol staat gebruikers of Principal toe om FHIR gegevens te lezen [meer informatie](../healthcare-apis/configure-azure-rbac.md)
+De rol staat gebruikers of Principal toe om FHIR gegevens te lezen [meer informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -6821,7 +6821,7 @@ De rol staat gebruikers of Principal toe om FHIR gegevens te lezen [meer informa
 
 ### <a name="fhir-data-writer"></a>FHIR-gegevens schrijver
 
-De rol staat gebruikers of Principal toe om FHIR gegevens te lezen en te schrijven. meer [informatie](../healthcare-apis/configure-azure-rbac.md)
+De rol staat gebruikers of Principal toe om FHIR gegevens te lezen en te schrijven. meer [informatie](../healthcare-apis/fhir/configure-azure-rbac.md)
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -10429,7 +10429,7 @@ Hiermee kunt u tags op entiteiten beheren zonder dat u toegang hebt tot de entit
 }
 ```
 
-## <a name="other"></a>Anders
+## <a name="other"></a>Overige
 
 
 ### <a name="azure-digital-twins-data-owner"></a>Azure Digital Apparaatdubbels-gegevens eigenaar

@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla, rarayudu
 ms.topic: conceptual
-ms.date: 02/22/2021
-ms.openlocfilehash: 21edde3eba76b565332acb9c67225f3bbb0fe803
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 03/09/2021
+ms.openlocfilehash: 7b082c226b38633d6c34ee2fe4d5227252b2bfcb
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102177280"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556380"
 ---
 # <a name="secure-access-and-data-in-azure-logic-apps"></a>Beveiligde toegang en gegevens in Azure Logic Apps
 
@@ -933,7 +933,7 @@ Deze tabel bevat de verificatie typen die beschikbaar zijn voor de triggers en a
 | [Client certificaat](#client-certificate-authentication) | Azure API Management, Azure-app Services, HTTP, HTTP + Swagger, HTTP-webhook |
 | [Active Directory OAuth](#azure-active-directory-oauth-authentication) | Azure API Management, Azure-app Services, Azure Functions, HTTP, HTTP + Swagger, HTTP-webhook |
 | [Onbewerkt](#raw-authentication) | Azure API Management, Azure-app Services, Azure Functions, HTTP, HTTP + Swagger, HTTP-webhook |
-| [Beheerde identiteit](#managed-identity-authentication) | **Ingebouwde triggers en acties** <p><p>Azure API Management, Azure-app Services, Azure Functions, HTTP, HTTP-webhook <p><p>**Beheerde connectors** <p><p>Azure AD Identity Protection, Azure Automation, Azure container instance, Azure Data Explorer, Azure Data Factory, Azure Data Lake, Azure Event Grid, Azure IoT Central v3, Azure Key Vault, Azure Log Analytics, Azure Monitor logs, Azure Resource Manager, Azure Sentinel, HTTP met Azure AD <p><p>**Opmerking**: ondersteuning voor beheerde connectors is momenteel beschikbaar als preview-versie. |
+| [Beheerde identiteit](#managed-identity-authentication) | **Ingebouwde triggers en acties** <p><p>Azure API Management, Azure-app Services, Azure Functions, HTTP, HTTP-webhook <p><p>**Beheerde connectors** <p><p>Azure AD Identity Protection, Azure Automation, Azure container instance, Azure Data Explorer, Azure Data Factory, Azure Data Lake, Azure Event Grid, Azure IoT Central v3, Azure Key Vault, Azure Resource Manager, Azure Sentinel, HTTP met Azure AD <p><p>**Opmerking**: ondersteuning voor beheerde connectors is momenteel beschikbaar als preview-versie. |
 |||
 
 <a name="basic-authentication"></a>

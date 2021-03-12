@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 02/22/2021
+ms.date: 03/08/2021
 ms.author: alkohli
-ms.openlocfilehash: 5289f9b558a200bf3dbefdf584eab59d1792439b
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: ddbf3c99845f4c38f511260f4dec274903a9d586
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102437737"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631950"
 ---
 # <a name="connect-to-and-manage-a-kubernetes-cluster-via-kubectl-on-your-azure-stack-edge-pro-gpu-device"></a>Verbinding maken met en beheren van een Kubernetes-cluster via kubectl op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -105,7 +105,7 @@ In deze benadering maakt u een naam ruimte en een gebruiker. Vervolgens koppelt 
 
 4. Het configuratie bestand moet zich in de `.kube` map van uw gebruikers profiel op de lokale computer bevinden. Kopieer het bestand naar de map in uw gebruikers profiel.
 
-    ![Locatie van het configuratie bestand op de client](media/azure-stack-edge-j-series-create-kubernetes-cluster/location-config-file.png)
+    ![Locatie van het configuratie bestand op de client](media/azure-stack-edge-gpu-create-kubernetes-cluster/location-config-file.png)
 
 5. Koppel de naam ruimte aan de gebruiker die u hebt gemaakt. Type:
 
@@ -169,9 +169,9 @@ U kunt nu uw toepassingen implementeren in de naam ruimte en vervolgens de toepa
 
 Als u het Kubernetes-cluster wilt verwijderen, moet u de IoT Edge configuratie verwijderen.
 
-Ga naar [IOT Edge configuratie verwijderen](azure-stack-edge-j-series-manage-compute.md#remove-iot-edge-service)voor gedetailleerde instructies.
+Ga voor gedetailleerde instructies naar [beheer IOT Edge configuratie](azure-stack-edge-gpu-manage-compute.md#manage-iot-edge-configuration).
    
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro](azure-stack-edge-j-series-deploy-stateless-application-kubernetes.md).
+- [Implementeer een staatloze toepassing op uw Azure stack Edge Pro](azure-stack-edge-gpu-deploy-stateless-application-kubernetes.md).

@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/11/2021
 ms.topic: overview
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 17674c1a5d7acff50a3dd17b9d98f5295c2e1b19
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 60dfd448a66ca67a241f97570c91f683323a7d6d
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102633033"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232372"
 ---
 # <a name="device-update-for-iot-hub-preview-overview"></a>Overzicht van updates voor apparaten voor IoT Hub (preview-versie)
 
@@ -23,7 +23,8 @@ Om de volledige voor delen van het gebruik van IoT-Digital Transformation te rea
 
 ## <a name="support-for-a-wide-range-of-iot-devices"></a>Ondersteuning voor een breed scala aan IoT-apparaten
 
-Update van het apparaat voor IoT Hub is ontworpen om geoptimaliseerde update-implementaties en gestroomlijnde bewerkingen te bieden via integratie met [Azure IOT hub](https://azure.microsoft.com/en-us/services/iot-hub/). Met deze integratie kunt u eenvoudig een update van het apparaat op een bestaande oplossing aanbrengen. Het biedt een in de Cloud gehoste oplossing om verbinding te maken met vrijwel elk apparaat. Device update biedt ondersteuning voor een breed scala aan IoT-besturings systemen, waaronder Linux en [Azure rto's](https://azure.microsoft.com/en-us/services/rtos/) (realtime besturings systeem), en is uitbreidbaar via open source. Er wordt een update van het apparaat voor IoT Hub-aanbiedingen met onze halfgeleider partners, waaronder STMicroelectronics, NXP, Renesas en micro chip. Bekijk de voor [beelden](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU) van de evaluatie boards voor belangrijkste halfgeleiders die de aan de slag-hand leidingen bevatten voor meer informatie over het configureren, bouwen en implementeren van de over-the-Air (OTA)-updates voor MCU Class-apparaten.
+
+Update van het apparaat voor IoT Hub is ontworpen om geoptimaliseerde update-implementaties en gestroomlijnde bewerkingen te bieden via integratie met [Azure IOT hub](https://azure.microsoft.com/en-us/services/iot-hub/). Met deze integratie kunt u eenvoudig een update van het apparaat op een bestaande oplossing aanbrengen. Het biedt een in de Cloud gehoste oplossing om verbinding te maken met vrijwel elk apparaat. Device update biedt ondersteuning voor een breed scala aan IoT-besturings systemen, waaronder Linux en [Azure rto's](https://azure.microsoft.com/en-us/services/rtos/) (realtime besturings systeem), en is uitbreidbaar via open source. Er wordt een update van het apparaat voor IoT Hub-aanbiedingen met onze halfgeleider partners, waaronder STMicroelectronics, NXP, Renesas en micro chip. Bekijk de voor [beelden](https://github.com/azure-rtos/samples/tree/PublicPreview/ADU) van de evaluatie boards voor belangrijkste halfgeleiders die de aan de slag-hand leidingen bevatten voor meer informatie over het configureren, bouwen en implementeren van de over-the-Air (OTA)-updates voor MCU Class-apparaten. 
 
 Er worden zowel de binaire als de Raspberry Pi Reference yocto-installatie kopieën van het apparaat bijgewerkt.
 Update van het apparaat voor IoT Hub biedt ook ondersteuning voor het bijwerken van Azure IoT Edge apparaten. Er wordt een update agent voor apparaten gegeven voor Ubuntu Server 18,04 amd64-platform. Update van het apparaat voor IoT Hub biedt ook open-source code als u een van de bovenstaande platformen niet uitvoert. U kunt de agent overbrengen naar de distributie die u uitvoert.
@@ -79,7 +80,7 @@ Wanneer een update opdracht wordt ontvangen op een apparaat, wordt de aangevraag
 
 ### <a name="importing"></a>Importeren
 
-Importeren is de mogelijkheid om uw update te importeren in het bijwerken van het apparaat. Het bijwerken van het apparaat ondersteunt het implementeren van één update per apparaat. Dit is ideaal voor updates met volledige installatie kopieën die een volledige OS-partitie tegelijk bijwerken, of een apt-manifest dat alle pakketten beschrijft die u op uw apparaat wilt bijwerken. Als u updates wilt importeren in een update van het apparaat, maakt u eerst een import manifest met een beschrijving van de update en uploadt u de update bestanden en het import manifest naar een locatie die toegankelijk is via internet. Daarna kunt u de Azure Portal of de REST API update voor het bijwerken van het apparaat gebruiken om het asynchrone proces van het importeren van updates te initiëren. Het bijwerken van het apparaat uploadt de bestanden, verwerkt ze en maakt ze beschikbaar voor distributie naar IoT-apparaten.
+Importeren is hoe uw updates worden opgenomen in de update van het apparaat, zodat ze kunnen worden geïmplementeerd op apparaten. Het bijwerken van het apparaat ondersteunt het implementeren van één update per apparaat. Dit is ideaal voor updates met volledige installatie kopieën die een volledige OS-partitie tegelijk bijwerken, of een apt-manifest dat alle pakketten beschrijft die u op uw apparaat wilt bijwerken. Als u updates wilt importeren in een update van het apparaat, maakt u eerst een import manifest met een beschrijving van de update en uploadt u de update bestanden en het import manifest naar een locatie die toegankelijk is via internet. Daarna kunt u de Azure Portal of de [rest API update](https://github.com/Azure/iot-hub-device-update/tree/main/docs/publish-api-reference) voor het bijwerken van het apparaat gebruiken om het asynchrone proces van het importeren van updates te initiëren. Het bijwerken van het apparaat uploadt de bestanden, verwerkt ze en maakt ze beschikbaar voor distributie naar IoT-apparaten.
 
 Voor gevoelige inhoud kunt u de down load beveiligen met behulp van een Shared Access Signature (SAS), zoals een ad-hoc SAS voor Azure Blob Storage. [Meer informatie over SAS](https://docs.microsoft.com/azure/storage/common/storage-sas-overview)
 

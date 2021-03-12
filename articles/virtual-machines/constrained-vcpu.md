@@ -3,15 +3,16 @@ title: Beperkte vCPU-grootten
 description: Geeft een lijst van de VM-grootten die een beperkt aantal vCPU kunnen hebben.
 author: mimckitt
 ms.service: virtual-machines
+ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 03/09/2018
 ms.author: mimckitt
-ms.openlocfilehash: 530ae08dabe54ed279a4055e52109aad0ef4f842
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 7faeec8494a908b9aab00be9b63904354b5e0994
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94426150"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102557077"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Gebonden vCPU-VM-grootten
 
@@ -24,7 +25,7 @@ De huidige VM-grootte Standard_GS5 bijvoorbeeld geleverd met 32 Vcpu's, 448 GB R
 De licentie kosten voor SQL Server of Oracle zijn beperkt tot het nieuwe vCPU-aantal en andere producten moeten worden gefactureerd op basis van het nieuwe vCPU aantal. Dit resulteert in een verhoging van 50% tot 75% van de verhouding van de VM-specificaties naar actief (Factureerbaar) Vcpu's. Met deze nieuwe VM-grootten kunnen klant werkbelastingen gebruikmaken van dezelfde geheugen, opslag en I/O-band breedte, terwijl de kosten voor software licenties worden geoptimaliseerd. Op dit moment blijven de reken kosten, met inbegrip van OS-licenties, hetzelfde als de oorspronkelijke grootte. Zie [Azure VM-grootten voor meer informatie over rendabele data base-workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/).
 
 
-| Naam                | vCPU | Specificaties           |
+| Name                | vCPU | Specificaties           |
 |---------------------|------|-----------------|
 | Standard_M8-2ms     | 2    | Hetzelfde als M8 MS    |
 | Standard_M8-4 MS     | 4    | Hetzelfde als M8 MS    |
@@ -90,8 +91,8 @@ De licentie kosten voor SQL Server of Oracle zijn beperkt tot het nieuwe vCPU-aa
 
 ## <a name="other-sizes"></a>Andere grootten
 - [Geoptimaliseerde rekenkracht](./sizes-compute.md)
-- [Geoptimaliseerd geheugen](./sizes-memory.md)
-- [Geoptimaliseerde opslag](./sizes-storage.md)
+- [Geoptimaliseerd voor geheugen](./sizes-memory.md)
+- [Geoptimaliseerd voor opslag](./sizes-storage.md)
 - [GPU](./sizes-gpu.md)
 - [Krachtig rekenvermogen](./sizes-hpc.md)
 

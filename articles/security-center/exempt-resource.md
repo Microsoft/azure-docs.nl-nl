@@ -3,16 +3,16 @@ title: Een Azure Security Center aanbeveling uitsluiten van een resource, abonne
 description: Meer informatie over het maken van regels voor het uitsluiten van beveiligings aanbevelingen van abonnementen of beheer groepen en om te voor komen dat ze invloed hebben op uw beveiligde Score
 author: memildin
 ms.author: memildin
-ms.date: 03/10/2021
+ms.date: 03/11/2021
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: a7a010b1014181ed325500fa501212579ef67d26
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: d3627f6bcda7a18204c24fc2a1347c4a512c5369
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102617570"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149729"
 ---
 # <a name="exempting-resources-and-recommendations-from-your-secure-score"></a>Resources en aanbevelingen uitsluiten van uw beveiligde Score 
 
@@ -35,7 +35,7 @@ In dergelijke gevallen kunt u een uitzonde ring voor een aanbeveling maken voor 
 | Releasestatus:                  | Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)]                                                                                                                                                                                                                                             |
 | Prijzen:                        | Dit is een Premium Azure-beleids mogelijkheid die wordt aangeboden aan Azure Defender-klanten zonder extra kosten. Voor andere gebruikers kunnen kosten in de toekomst worden toegepast.                                                                                                                                                                 |
 | Vereiste rollen en machtigingen: | **Eigenaar van abonnement** of **beleids bijdrage** voor het maken van een uitzonde ring<br>Als u een regel wilt maken, hebt u machtigingen nodig voor het bewerken van beleid in Azure Policy.<br>Meer informatie vindt u in de [Azure RBAC-machtigingen in azure Policy](../governance/policy/overview.md#azure-rbac-permissions-in-azure-policy).                                            |
-| Beperkingen:                    | Uitzonde ringen kunnen alleen worden gemaakt voor aanbevelingen die zijn opgenomen in het standaard initiatief van Security Center, Azure Security Bench Mark. Aanbevelingen die worden gegenereerd op basis van aangepaste initiatieven, kunnen niet worden uitgesloten. Meer informatie over de relaties tussen [beleid, initiatieven en aanbevelingen](security-policy-concept.md). |
+| Beperkingen:                    | Uitzonde ringen kunnen alleen worden gemaakt voor aanbevelingen die zijn opgenomen in het standaard initiatief van Security Center, Azure Security Bench Mark of een van de opgegeven regelgevings standaard initiatieven. Aanbevelingen die worden gegenereerd op basis van aangepaste initiatieven, kunnen niet worden uitgesloten. Meer informatie over de relaties tussen [beleid, initiatieven en aanbevelingen](security-policy-concept.md). |
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)                                                                                                                                                                                         |
 |                                 |                                                                                                                                                                                                                                                                                                                                    |
 
@@ -47,7 +47,7 @@ Als u de aanbevelingen voor beveiliging die Security Center maakt voor uw abonne
 - Een **of meer resources** markeren als ' verminderd ' of ' risico geaccepteerd ' voor een specifieke aanbeveling.
 
 > [!NOTE]
-> Uitzonde ringen kunnen alleen worden gemaakt voor aanbevelingen die zijn opgenomen in het standaard initiatief van Security Center, Azure Security Bench Mark. Aanbevelingen die worden gegenereerd op basis van aangepaste initiatieven die aan uw abonnementen zijn toegewezen, kunnen niet worden uitgesloten. Meer informatie over de relaties tussen [beleid, initiatieven en aanbevelingen](security-policy-concept.md).
+> Uitzonde ringen kunnen alleen worden gemaakt voor aanbevelingen die zijn opgenomen in het standaard initiatief van Security Center, Azure Security Bench Mark of een van de opgegeven regelgevings standaard initiatieven. Aanbevelingen die worden gegenereerd op basis van aangepaste initiatieven die aan uw abonnementen zijn toegewezen, kunnen niet worden uitgesloten. Meer informatie over de relaties tussen [beleid, initiatieven en aanbevelingen](security-policy-concept.md).
 
 > [!TIP]
 > U kunt ook uitzonde ringen maken met behulp van de API. Zie [Azure Policy-uitsluitings structuur](../governance/policy/concepts/exemption-structure.md)voor een voor beeld-JSON en een uitleg van de relevante structuren.

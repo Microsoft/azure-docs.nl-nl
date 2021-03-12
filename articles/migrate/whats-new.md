@@ -7,12 +7,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: f50737bdefc9065c9b16633ba3360bda1d028cd6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 41476c5f8165729caa6780f8e74eb6c3ae30a59c
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102043045"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614629"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Nieuwe functies in Azure Migrate
 
@@ -20,7 +20,9 @@ ms.locfileid: "102043045"
 
 ## <a name="update-march-2021"></a>Update (maart 2021)
 - Ondersteuning voor het bieden van meerdere Server referenties op Azure Migrate apparaat om geïnstalleerde toepassingen (software-inventarisatie), afhankelijkheids analyse zonder agent en detectie van SQL Server instanties en data bases in uw VMware-omgeving te detecteren. [Meer informatie](tutorial-discover-vmware.md#provide-server-credentials)
-- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md)<br/>Gebruik [deze koppeling](https://aka.ms/AzureMigrate/SQL) om een project te maken in **Australië-Oost** regio om deze functie uit te proberen. Raadpleeg de zelf studies voor [detectie](tutorial-discover-vmware.md) en [beoordelingen](tutorial-assess-sql.md) om aan de slag te gaan.
+- Detectie en evaluatie van SQL Server instanties en data bases die worden uitgevoerd in uw VMware-omgeving is nu beschikbaar als preview-versie. [Meer informatie](concepts-azure-sql-assessment-calculation.md)<br/>Als u deze functie wilt proberen, gebruikt u [deze koppeling](https://aka.ms/AzureMigrate/SQL) om een project te maken in de regio **Australië - oost**. Raadpleeg de zelfstudies over [detectie](tutorial-discover-vmware.md) en [evaluatie](tutorial-assess-sql.md) om aan de slag te gaan.
+- VMware-migratie zonder agent ondersteunt nu gelijktijdige replicatie van 500 Vm's per vCenter.
+- In Azure Migrate wordt nu automatisch de Azure VM-agent op de VMware-VM's geïnstalleerd tijdens de migratie naar Azure, met behulp van de methode voor VMware-migratie zonder agent.
 
 ## <a name="update-january-2021"></a>Update (januari 2021)
 -  Azure Migrate: met het hulp programma voor server migratie kunt u nu virtuele VMware-machines, fysieke servers en virtuele machines migreren van andere Clouds naar Azure virtual machines met schijven die zijn versleuteld met versleuteling aan de server zijde met door de klant beheerde sleutels (CMK).

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: troubleshooting
 ms.date: 11/09/2020
-ms.openlocfilehash: aea205bee41aed232b8453417dca521d2dfc83ab
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 7b7ac20672ee653cbf6d2b82b7a9454c1d742b2c
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233777"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612691"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Problemen oplossen voor QnA Maker
 
@@ -389,7 +389,7 @@ Als u inhoud uit meerdere talen hebt, moet u ervoor zorgen dat u voor elke taal 
 <details>
 <summary><b>Moet ik bot Framework gebruiken om QnA Maker te kunnen gebruiken?</b></summary>
 
-**Antwoord**: Nee, u hoeft niet het [bot-Framework](https://github.com/Microsoft/botbuilder-dotnet) met QnA Maker te gebruiken. QnA Maker wordt echter aangeboden als een van de verschillende sjablonen in [Azure bot service](/azure/bot-service/?preserve-view=true&view=azure-bot-service-4.0). Met de bot-service kunt u snel slimme bot-ontwikkeling maken via micro soft bot Framework en wordt uitgevoerd in een omgeving zonder servers.
+**Antwoord**: Nee, u hoeft niet het [bot-Framework](https://github.com/Microsoft/botbuilder-dotnet) met QnA Maker te gebruiken. QnA Maker wordt echter aangeboden als een van de verschillende sjablonen in [Azure bot service](/azure/bot-service/). Met de bot-service kunt u snel slimme bot-ontwikkeling maken via micro soft bot Framework en wordt uitgevoerd in een omgeving zonder servers.
 
 </details>
 
@@ -438,7 +438,7 @@ De eindpunt sleutel van de Knowledge Base bevindt zich `QnAAuthkey` in de ABS-se
 <details>
 <summary><b>Moet ik bot Framework gebruiken om QnA Maker te kunnen gebruiken?</b></summary>
 
-**Antwoord**: Nee, u hoeft niet het [bot-Framework](https://github.com/Microsoft/botbuilder-dotnet) met QnA Maker te gebruiken. QnA Maker wordt echter aangeboden als een van de verschillende sjablonen in [Azure bot service](/azure/bot-service/?preserve-view=true&view=azure-bot-service-4.0). Met de bot-service kunt u snel slimme bot-ontwikkeling maken via micro soft bot Framework en wordt uitgevoerd in een omgeving zonder servers.
+**Antwoord**: Nee, u hoeft niet het [bot-Framework](https://github.com/Microsoft/botbuilder-dotnet) met QnA Maker te gebruiken. QnA Maker wordt echter aangeboden als een van de verschillende sjablonen in [Azure bot service](/azure/bot-service/). Met de bot-service kunt u snel slimme bot-ontwikkeling maken via micro soft bot Framework en wordt uitgevoerd in een omgeving zonder servers.
 
 </details>
 

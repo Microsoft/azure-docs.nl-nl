@@ -1,26 +1,26 @@
 ---
-title: Blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark
-description: Overzicht van blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties bekijken.
-ms.date: 01/27/2021
+title: Voor beeld van CIS Microsoft Azure basis Bench Mark v 1.1.0 blauw druk
+description: Overzicht van het CIS-voor beeld van het DIS Microsoft Azure fundament-benchmark v 1.1.0. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties bekijken.
+ms.date: 03/11/2021
 ms.topic: sample
-ms.openlocfilehash: fc9e2443cd1e413588487646d6400ae1f2185208
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: b6188d96971329a83bc82042a1f840bd893354eb
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918413"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103197802"
 ---
-# <a name="cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark
+# <a name="cis-microsoft-azure-foundations-benchmark-v110-blueprint-sample"></a>Voor beeld van CIS Microsoft Azure basis Bench Mark v 1.1.0 blauw druk
 
-Het blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark biedt beheerrichtlijnen op basis van [Azure Policy](../../policy/overview.md) waarmee u specifieke aanbevelingen van CIS Microsoft Azure Foundations Benchmark kunt beoordelen. Deze blauwdruk helpt klanten bij het implementeren van een beleidskernset voor architectuur die in Azure wordt geïmplementeerd en waarin aanbevelingen van CIS Microsoft Azure Foundations Benchmark moeten worden geïmplementeerd.
+Het CIS-voor beeld van het DIS Microsoft Azure Stichting 1.1.0e blauw drukken biedt bewakings schermen met [Azure Policy](../../policy/overview.md) die u helpen bij het beoordelen van specifieke aanbevelingen van CIS Microsoft Azure Stichtings benchmarks. Deze blauw druk helpt klanten bij het implementeren van een kern verzameling beleids regels voor elke Azure-geïmplementeerde architectuur die Microsoft Azure CIS-1.1.0-aanbevelingen moet implementeren.
 
 ## <a name="recommendation-mapping"></a>Toewijzing van aanbevelingen
 
-De [toewijzing van de aanbeveling van Azure-beleid](../../policy/samples/cis-azure-1-1-0.md) bevat details over beleidsdefinities die in deze blauwdruk zijn opgenomen en hoe deze beleidsdefinities worden toegewezen aan de **nalevingsdomeinen** en **besturingselementen** in CIS Microsoft Azure Foundations Benchmark v1.1.0. Wanneer resources worden toegewezen aan een architectuur, worden deze op niet-naleving van toegewezen beleidsregels geëvalueerd door Azure Policy. Zie [Azure Policy](../../policy/overview.md) voor meer informatie.
+De [toewijzing van de Azure Policy aanbeveling](../../policy/samples/cis-azure-1-1-0.md) bevat details over de beleids definities die zijn opgenomen in deze blauw druk en hoe deze beleids definities worden toegewezen aan de **aanbevelingen** in cis-Microsoft Azure fundament Bench Mark v-1.1.0. Wanneer resources worden toegewezen aan een architectuur, worden deze op niet-naleving van toegewezen beleidsregels geëvalueerd door Azure Policy. Zie [Azure Policy](../../policy/overview.md) voor meer informatie.
 
 ## <a name="deploy"></a>Implementeren
 
-Als u het blauwdrukvoorbeeld voor CIS Microsoft Azure Foundations Benchmark wilt implementeren, moet u de volgende stappen uitvoeren:
+De volgende stappen moeten worden uitgevoerd voor het implementeren van het Azure-blauw drukken CIS Microsoft Azure Stichting voor beeld van de basisbenchmark v-1.1.0:
 
 > [!div class="checklist"]
 > - Een nieuwe blauwdruk maken op basis van het voorbeeld
@@ -50,7 +50,7 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 ### <a name="publish-the-sample-copy"></a>De voorbeeldkopie publiceren
 
-Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept**-modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het blauwdrukvoorbeeld kan worden aangepast aan uw omgeving en behoeften, maar door die aanpassing is het mogelijk dat de kopie niet meer is afgestemd op de aanbevelingen van CIS Microsoft Azure Foundations Benchmark.
+Uw kopie van het blauwdrukvoorbeeld is nu gemaakt in uw omgeving. De kopie is gemaakt in de **Concept**-modus en moet worden **Gepubliceerd** voordat deze kan worden toegewezen en geïmplementeerd. De kopie van het voor beeld van de blauw druk kan worden aangepast aan uw omgeving en behoeften, maar deze wijziging kan worden verplaatst van de uitlijning met CIS-Microsoft Azure basis benchmark v-1.1.0 aanbevelingen.
 
 1. Selecteer **Alle services** in het linkerdeelvenster. Zoek en selecteer **Blauwdrukken**.
 
@@ -101,8 +101,8 @@ In de volgende tabel ziet u een lijst met de blauwdrukartefactparameters:
 
 |Naam van het artefact|Type artefact|Parameternaam|Beschrijving|
 |-|-|-|-|
-|Aanbevelingen voor CIS Microsoft Azure Foundations Benchmark 1.1.0 controleren en specifieke ondersteunde VM-extensies implementeren|Beleidstoewijzing|Lijst met regio's waar Network Watcher moet worden ingeschakeld|Een door puntkomma's gescheiden lijst met regio's. Als u een volledige lijst met regio's wilt weergeven, gebruikt u Get-AzLocation. Voorbeeld: eastus; eastus2|
-|Aanbevelingen voor CIS Microsoft Azure Foundations Benchmark 1.1.0 controleren en specifieke ondersteunde VM-extensies implementeren|Beleidstoewijzing|Lijst met virtuele-machine-uitbreidingen die zijn goedgekeurd voor gebruik|Een door puntkomma's gescheiden lijst met uitbreidingen. Als u een volledige lijst met virtuele-machine-uitbreidingen wilt weergeven, gebruikt u Get-AzVMExtensionImage. Bijvoorbeeld: AzureDiskEncryption; IaaSAntimalware|
+|CIS-Microsoft Azure-aanbevelingen voor bench Mark v 1.1.0 controleren en specifieke ondersteunende VM-extensies implementeren|Beleidstoewijzing|Lijst met regio's waar Network Watcher moet worden ingeschakeld|Een door puntkomma's gescheiden lijst met regio's. Als u een volledige lijst met regio's wilt weergeven, gebruikt u Get-AzLocation. Voorbeeld: eastus; eastus2|
+|CIS-Microsoft Azure-aanbevelingen voor bench Mark v 1.1.0 controleren en specifieke ondersteunende VM-extensies implementeren|Beleidstoewijzing|Lijst met virtuele-machine-uitbreidingen die zijn goedgekeurd voor gebruik|Een door puntkomma's gescheiden lijst met uitbreidingen. Als u een volledige lijst met virtuele-machine-uitbreidingen wilt weergeven, gebruikt u Get-AzVMExtensionImage. Bijvoorbeeld: AzureDiskEncryption; IaaSAntimalware|
 
 ## <a name="next-steps"></a>Volgende stappen
 

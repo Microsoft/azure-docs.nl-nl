@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 02/18/2021
 ms.author: kenwith
 ms.reviewer: mifarca
-ms.openlocfilehash: 46297f7f0f648c8bebc887a9093e25dfea99f695
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: f5f7ec8245a43440a400b9ca6b55bf1093eb62cc
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102561497"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636182"
 ---
 # <a name="azure-active-directory-powershell-examples-for-application-management"></a>Azure Active Directory Power shell-voor beelden voor toepassings beheer
 
@@ -31,5 +31,5 @@ Zie [toepassingen](/powershell/module/azuread/#applications)voor meer informatie
 |**Scripts voor toepassings beheer**||
 | [Geheimen en certificaten exporteren (app-registraties)](scripts/powershell-export-all-app-registrations-secrets-and-certs.md) | Exporteer geheimen en certificaten voor app-registraties in Azure Active Directory Tenant. |
 | [Geheimen en certificaten exporteren (Enter prise-apps)](scripts/powershell-export-all-enterprise-apps-secrets-and-certs.md) | Exporteer geheimen en certificaten voor zakelijke apps in Azure Active Directory Tenant. |
-| [Verlopen geheimen en certificaten exporteren](scripts/powershell-export-apps-with-expriring-secrets.md) | Apps met verlopen geheimen en certificaten exporteren in Azure Active Directory Tenant. |
-| [Exporteren van geheimen en certificaten die na de vereiste datum verlopen](scripts/powershell-export-apps-with-secrets-beyond-required.md) | Exporteer apps met geheimen en certificaten die na de vereiste datum in Azure Active Directory Tenant verlopen. |
+| [Verlopen geheimen en certificaten exporteren](scripts/powershell-export-apps-with-expriring-secrets.md) | App-registraties exporteren met verlopen geheimen en certificaten en hun eigen aren in Azure Active Directory Tenant. |
+| [Exporteren van geheimen en certificaten die na de vereiste datum verlopen](scripts/powershell-export-apps-with-secrets-beyond-required.md) | App-registraties exporteren met geheimen en certificaten die na de vereiste datum in Azure Active Directory Tenant verlopen. Hierbij wordt gebruikgemaakt van de niet-interactieve Client_Credentials OAuth-stroom. |

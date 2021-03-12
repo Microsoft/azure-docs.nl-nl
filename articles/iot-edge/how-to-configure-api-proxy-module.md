@@ -12,14 +12,16 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 894398d63e326db3c6ee9de9bebc426a6e621600
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1070a4c8daecfedae513f2fd8738c27abfb33078
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024667"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200586"
 ---
 # <a name="configure-the-api-proxy-module-for-your-gateway-hierarchy-scenario-preview"></a>De API-proxy module configureren voor uw gateway hiërarchie scenario (preview-versie)
+
+[!INCLUDE [iot-edge-version-202011](../../includes/iot-edge-version-202011.md)]
 
 Met de API-proxy module kunnen IoT Edge-apparaten HTTP-aanvragen via gateways verzenden in plaats van directe verbindingen met Cloud Services te maken. In dit artikel worden de configuratie opties beschreven, zodat u de module kunt aanpassen ter ondersteuning van de vereisten voor de gateway-hiërarchie.
 
@@ -50,7 +52,7 @@ De API-proxy module wordt geleverd met een standaard configuratie die algemene s
 
 Momenteel zijn de standaard omgevings variabelen:
 
-| Omgevingsvariabele | Description |
+| Omgevingsvariabele | Beschrijving |
 | -------------------- | ----------- |
 | `PROXY_CONFIG_ENV_VAR_LIST` | Een lijst met alle variabelen die u wilt bijwerken in een lijst met door komma's gescheiden waarden. Met deze stap wordt voor komen dat de verkeerde configuratie-instellingen per ongeluk worden gewijzigd.
 | `NGINX_DEFAULT_PORT` | Hiermee wijzigt u de poort waarnaar de nginx-proxy luistert. Als u deze omgevings variabele bijwerkt, moet u ervoor zorgen dat de poort die u selecteert ook wordt weer gegeven in de module dockerfile en is gedeclareerd als een poort binding in het implementatie manifest.<br><br>De standaard waarde is 443.<br><br>Wanneer de implementatie wordt geïmplementeerd vanuit Azure Marketplace, wordt de standaard poort bijgewerkt naar 8000, om conflicten met de edgeHub-module te voor komen. Zie [open poorten minimaliseren](#minimize-open-ports)voor meer informatie. |

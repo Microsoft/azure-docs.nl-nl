@@ -13,6 +13,8 @@
       href: partner-center-portal/company-work-accounts.md
     - name: Accountmigratie van CPP naar Partnercentrum
       href: partner-center-portal/account-migration-from-cpp-to-pc.md
+    - name: Micro soft op de hoogte stellen
+      href: submit-legal-notice.md
 - name: Concepten
   items:
     - name: Aanbiedingsopties
@@ -41,7 +43,7 @@
           href: test-drive-hosted-detailed-config.md
         - name: Een Azure-abonnement instellen voor gehoste test drives
           href: test-drive-azure-subscription-setup.md
-    - name: Gebruikskenmerken van klanten van Azure-partners
+    - name: Toewijzing van Azure-klant gebruik
       href: azure-partner-customer-usage-attribution.md
     - name: Go-To-Market-opties
       items:

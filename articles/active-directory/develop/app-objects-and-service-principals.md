@@ -13,12 +13,12 @@ ms.date: 02/15/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: f0a9298b6d8ee011052a20dc34d314adbc5a0b1e
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 358e066631304e727d18d092bd4b9a5b2a0bb89a
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101646398"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199616"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
@@ -63,11 +63,10 @@ Het toepassings object is de *wereld wijde* weer gave van uw toepassing voor geb
 
 Het toepassingsobject fungeert als de sjabloon waaruit gemeenschappelijke en standaardeigenschappen worden *afgeleid* voor gebruik bij het maken van de bijbehorende service-principal-objecten. Een toepassings object heeft daarom een 1:1-relatie met de software toepassing en een 1: veel-relatie met de bijbehorende service-principal-object (en).
 
-Een Service-Principal moet worden gemaakt in elke Tenant waar de toepassing wordt gebruikt, waardoor er een identiteit kan worden ingesteld voor aanmelding en/of toegang tot bronnen die worden beveiligd door de Tenant. Een toepassing in één tenant heeft slechts één service-principal (in de starttenant) die is gemaakt en waarvoor toestemming is gegeven voor gebruik tijdens de toepassingsregistratie. Een webtoepassing/API met meerdere tenants bevat ook een service-principal die is gemaakt in elke Tenant, waar een gebruiker van die Tenant toestemming heeft gegeven om het te gebruiken.
+Een Service-Principal moet worden gemaakt in elke Tenant waar de toepassing wordt gebruikt, waardoor er een identiteit kan worden ingesteld voor aanmelding en/of toegang tot bronnen die worden beveiligd door de Tenant. Een toepassing in één tenant heeft slechts één service-principal (in de starttenant) die is gemaakt en waarvoor toestemming is gegeven voor gebruik tijdens de toepassingsregistratie. Een multi tenant-toepassing heeft ook een service-principal die is gemaakt in elke Tenant, waar een gebruiker van die Tenant toestemming heeft gegeven om het te gebruiken.
 
-Wijzigingen die u aanbrengt in het toepassings object, inclusief verwijdering, worden weer gegeven in het bijbehorende service-principal-object in de thuis Tenant van de toepassing (de Tenant waar deze is geregistreerd). Voor multi tenant-toepassingen worden wijzigingen aan het toepassings object niet weer gegeven in de Service-Principal-objecten van een consumenten Tenant, totdat de toegang wordt verwijderd via het [toegangs venster](https://myapps.microsoft.com) van de toepassing en opnieuw wordt toegewezen.
-
-Systeem eigen toepassingen worden standaard geregistreerd als multi tenant.
+### <a name="consequences-of-modifying-and-deleting-applications"></a>Gevolgen van het wijzigen en verwijderen van toepassingen
+Wijzigingen die u aanbrengt in uw toepassings object, worden ook weer gegeven in het bijbehorende service-principal-object in de thuis Tenant van de toepassing (de Tenant waar deze is geregistreerd). Dit betekent dat bij het verwijderen van een toepassings object ook het Principal-object van de thuis Tenant service wordt verwijderd.  Als u dat toepassings object herstelt, wordt de bijbehorende service-principal echter niet hersteld. Voor multi tenant-toepassingen worden wijzigingen aan het toepassings object niet weer gegeven in de Service-Principal-objecten van een consumenten Tenant, totdat de toegang wordt verwijderd via het [toegangs venster](https://myapps.microsoft.com) van de toepassing en opnieuw wordt toegewezen.
 
 ## <a name="example"></a>Voorbeeld
 

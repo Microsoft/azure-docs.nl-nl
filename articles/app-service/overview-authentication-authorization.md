@@ -6,16 +6,16 @@ ms.topic: article
 ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: 1b95b1e96dc26fb72338518fc969c69b035d5f68
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 83758f63b7e60d08a31f1da9da4a6eec6ba7d4a4
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095233"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102632064"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Verificatie en autorisatie in Azure App Service en Azure Functions
 
-Azure App Service biedt ingebouwde ondersteuning voor verificatie en autorisatie, zodat u gebruikers kunt aanmelden en toegang hebt tot gegevens door minimale of geen code te schrijven in uw web-app, de REST-API en de mobiele back-end en ook [Azure functions](../azure-functions/functions-overview.md). In dit artikel wordt beschreven hoe App Service de verificatie en autorisatie voor uw app vereenvoudigt.
+Azure App Service biedt ingebouwde ondersteuning voor verificatie en autorisatie (ook wel ' eenvoudige verificatie ' genoemd), zodat u gebruikers kunt aanmelden en toegang hebt tot gegevens door minimale of geen code te schrijven in uw web-app, de REST-API en de mobiele back-end en ook [Azure functions](../azure-functions/functions-overview.md). In dit artikel wordt beschreven hoe App Service de verificatie en autorisatie voor uw app vereenvoudigt.
 
 Voor beveiligde verificatie en autorisatie is grondige inzichten van beveiliging vereist, waaronder Federatie, versleuteling, [JSON-webtokens (JWT)](https://wikipedia.org/wiki/JSON_Web_Token) -beheer, [toekennings typen](https://oauth.net/2/grant-types/), enzovoort. App Service biedt deze hulpprogram ma's, zodat u meer tijd en energie kunt best Eden aan het leveren van bedrijfs waarde aan uw klant.
 
@@ -26,14 +26,11 @@ Voor beveiligde verificatie en autorisatie is grondige inzichten van beveiliging
 >
 
 > [!NOTE]
-> De functie voor verificatie/autorisatie wordt ook wel ' eenvoudige verificatie ' genoemd.
-
-> [!NOTE]
 > Als u deze functie inschakelt, worden **alle** niet-beveiligde HTTP-aanvragen voor uw toepassing automatisch omgeleid naar https, ongeacht de app service configuratie-instelling voor het [afdwingen van HTTPS](configure-ssl-bindings.md#enforce-https). Als dat nodig is, kunt u dit uitschakelen via de `requireHttps` instelling in het [configuratie bestand auth-instellingen](app-service-authentication-how-to.md#configuration-file-reference), maar u moet er wel voor zorgen dat er geen beveiligings tokens meer worden verzonden via niet-beveiligde HTTP-verbindingen.
 
 Zie [gebruikers verificatie en autorisatie voor mobiele apps met Azure app service](/previous-versions/azure/app-service-mobile/app-service-mobile-auth)voor meer informatie over systeem eigen mobiele apps.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 ### <a name="on-windows"></a>In Windows
 

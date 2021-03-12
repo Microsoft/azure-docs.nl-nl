@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 3/08/2021
-ms.openlocfilehash: 7d1d4a1a89931e3ded8274a4731aa3606695771b
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.date: 3/12/2021
+ms.openlocfilehash: 47f8f4ec3b5c5dd2d4545fc67561487d4f5a465c
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103199886"
+ms.locfileid: "103225303"
 ---
 # <a name="co-sell-with-microsoft-sales-teams-and-partners-overview"></a>Meer informatie over het verkopen van micro soft verkoop teams en partners
 
@@ -33,7 +33,7 @@ Een mede-verkoop kans is elk type samen werking met micro soft-verkoop teams, mi
 - **Samen verkopen met micro soft-verkoop teams** : werk samen met een of meer verkoop teams van micro soft om actief te voldoen aan de behoeften van de klant. Dit kan het verkopen van uw aanbiedingen, micro soft-aanbiedingen of beide omvatten. U en micro soft verkoop teams kunnen opportuniteiten van klanten identificeren en delen, waarbij uw oplossingen goed kunnen worden aangepast.
 - **Partner-to-partner (P2P)** : werk samen met een andere micro soft-partner om actief een klant probleem op te lossen.
 - **Privé-deal** : deel wat u onafhankelijk samen met micro soft hebt, zodat deze wordt weer gegeven in het micro soft-rapportage systeem voor analyse en prognose.
-- **Oplossings evaluatie (SA)** : werk samen met partners die zijn gecontroleerd door het Business team van de oplossings beoordeling om toegang te krijgen tot de technologie behoeften van klanten die gebruikmaken van of planning voor het gebruik van micro soft-technologieën.
+- **Oplossings evaluatie (SA)** : werk samen met partners die gecontroleerd zijn door het Business team van de oplossings evaluaties om de technologie behoeften te beoordelen van klanten die gebruikmaken van of planning voor het gebruik van micro soft-technologieën.
 
 ## <a name="co-sell-statuses"></a>Statussen samen verkopen
 

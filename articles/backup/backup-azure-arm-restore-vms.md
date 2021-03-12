@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: c15b2dc39202c6f8386031bcf055688aa2d279df
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 506c764250347bfccc3f80dcb055f1203583748c
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101722684"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103016522"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -181,7 +181,7 @@ De [productie-RPO](azure-backup-glossary.md#rpo-recovery-point-objective) van de
 
 Met [Azure zone vastgemaakte vm's](../virtual-machines/windows/create-portal-availability-zone.md) kunnen worden hersteld in alle [beschikbaarheids zones](../availability-zones/az-overview.md) van dezelfde regio.
 
-In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Als de zone vastgemaakt niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone, omdat de gegevens waarvan een back-up is gemaakt, niet zonally worden gerepliceerd.
+In het herstel proces ziet u de optie **beschikbaarheids zone.** U ziet eerst uw standaard zone. Als u een andere zone wilt kiezen, kiest u het gewenste nummer voor de zone. Als de zone vastgemaakt niet beschikbaar is, kunt u de gegevens niet herstellen naar een andere zone, omdat de gegevens waarvan een back-up is gemaakt, niet zonally worden gerepliceerd. Het terugzetten in beschikbaarheids zones kan alleen worden uitgevoerd vanuit herstel punten in de kluis-laag.
 
 ![Beschikbaarheids zone kiezen](./media/backup-azure-arm-restore-vms/cross-zonal-restore.png)
 

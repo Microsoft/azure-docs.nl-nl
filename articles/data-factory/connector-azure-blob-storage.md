@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/08/2020
-ms.openlocfilehash: 809dc6d0958b754911362f933e9fe964bce9c679
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 279d432dbc5770cc89486c517b8fcbe6392b03d1
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727920"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012187"
 ---
 # <a name="copy-and-transform-data-in-azure-blob-storage-by-using-azure-data-factory"></a>Gegevens kopiëren en transformeren in Azure Blob-opslag met behulp van Azure Data Factory
 
@@ -229,7 +229,7 @@ Deze eigenschappen worden ondersteund voor een gekoppelde Azure Blob Storage-ser
 |:--- |:--- |:--- |
 | type | De eigenschap **type** moet worden ingesteld op **AzureBlobStorage**. | Ja |
 | Serviceendpoint toegevoegd | Geef het Azure Blob Storage-service-eind punt met het patroon van op `https://<accountName>.blob.core.windows.net/` . | Ja |
-| accountKind | Geef het type van uw opslag account op. Toegestane waarden zijn: **Storage** (algemeen gebruik v1), **StorageV2** (algemeen gebruik v2), **BlobStorage** of **BlockBlobStorage**. <br/> Wanneer u een gekoppelde Azure Blob-service gebruikt in de gegevens stroom, wordt beheerde identiteits-of Service-Principal-verificatie niet ondersteund als het account type leeg of opslag is. Geef het juiste account soort op, kies een andere verificatie of werk uw opslag account bij naar algemeen gebruik v2. | Nee |
+| accountKind | Geef het type van uw opslag account op. Toegestane waarden zijn: **Storage** (algemeen gebruik v1), **StorageV2** (algemeen gebruik v2), **BlobStorage** of **BlockBlobStorage**. <br/><br/>Wanneer u een gekoppelde Azure Blob-service gebruikt in de gegevens stroom, wordt beheerde identiteits-of Service-Principal-verificatie niet ondersteund als het account type leeg of opslag is. Geef het juiste account soort op, kies een andere verificatie of werk uw opslag account bij naar algemeen gebruik v2. | Nee |
 | servicePrincipalId | Geef de client-ID van de toepassing op. | Ja |
 | servicePrincipalKey | Geef de sleutel van de toepassing op. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
 | tenant | Geef de Tenant gegevens op (domein naam of Tenant-ID) waaronder uw toepassing zich bevindt. Haal de waarde op door de muis aanwijzer boven de rechter bovenhoek van de Azure Portal te klikken. | Ja |
@@ -237,7 +237,9 @@ Deze eigenschappen worden ondersteund voor een gekoppelde Azure Blob Storage-ser
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of de zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als deze eigenschap niet is opgegeven, gebruikt de service de standaard Azure Integration runtime. | Nee |
 
 >[!NOTE]
->Als uw BLOB-account [zacht verwijderen](../storage/blobs/soft-delete-blob-overview.md)maakt, wordt Service-Principal-verificatie niet ondersteund in de gegevens stroom.
+>
+>- Als uw BLOB-account [zacht verwijderen](../storage/blobs/soft-delete-blob-overview.md)maakt, wordt Service-Principal-verificatie niet ondersteund in de gegevens stroom.
+>- Als u toegang hebt tot de Blob-opslag via een persoonlijk eind punt met behulp van de gegevens stroom, moet u er rekening mee houden wanneer Service-Principal-verificatie wordt gebruikt gegevens stroom verbinding maakt met het ADLS Gen2 eind punt in plaats van Zorg ervoor dat u het bijbehorende persoonlijke eind punt in ADF maakt om toegang in te scha kelen.
 
 >[!NOTE]
 >Service-Principal-verificatie wordt alleen ondersteund door de gekoppelde service van het type ' AzureBlobStorage ', niet de vorige gekoppelde service van het type ' opslag '.
@@ -289,11 +291,13 @@ Deze eigenschappen worden ondersteund voor een gekoppelde Azure Blob Storage-ser
 |:--- |:--- |:--- |
 | type | De eigenschap **type** moet worden ingesteld op **AzureBlobStorage**. | Ja |
 | Serviceendpoint toegevoegd | Geef het Azure Blob Storage-service-eind punt met het patroon van op `https://<accountName>.blob.core.windows.net/` . | Ja |
-| accountKind | Geef het type van uw opslag account op. Toegestane waarden zijn: **Storage** (algemeen gebruik v1), **StorageV2** (algemeen gebruik v2), **BlobStorage** of **BlockBlobStorage**. <br/> Wanneer u een gekoppelde Azure Blob-service gebruikt in de gegevens stroom, wordt beheerde identiteits-of Service-Principal-verificatie niet ondersteund als het account type leeg of opslag is. Geef het juiste account soort op, kies een andere verificatie of werk uw opslag account bij naar algemeen gebruik v2. | Nee |
+| accountKind | Geef het type van uw opslag account op. Toegestane waarden zijn: **Storage** (algemeen gebruik v1), **StorageV2** (algemeen gebruik v2), **BlobStorage** of **BlockBlobStorage**. <br/><br/>Wanneer u een gekoppelde Azure Blob-service gebruikt in de gegevens stroom, wordt beheerde identiteits-of Service-Principal-verificatie niet ondersteund als het account type leeg of opslag is. Geef het juiste account soort op, kies een andere verificatie of werk uw opslag account bij naar algemeen gebruik v2. | Nee |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of de zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als deze eigenschap niet is opgegeven, gebruikt de service de standaard Azure Integration runtime. | Nee |
 
 > [!NOTE]
-> Als voor uw BLOB-account [zacht verwijderen](../storage/blobs/soft-delete-blob-overview.md)is ingeschakeld, wordt beheerde identiteits verificatie niet ondersteund in de gegevens stroom.
+>
+> - Als voor uw BLOB-account [zacht verwijderen](../storage/blobs/soft-delete-blob-overview.md)is ingeschakeld, wordt beheerde identiteits verificatie niet ondersteund in de gegevens stroom.
+> - Als u de Blob-opslag via een persoonlijk eind punt opent met behulp van de gegevens stroom, Let er dan op dat de beheerde identiteits verificatie wordt gebruikt en dat de gegevens stroom verbinding maakt met het ADLS Gen2-eind punt in plaats van Zorg ervoor dat u het bijbehorende persoonlijke eind punt in ADF maakt om toegang in te scha kelen.
 
 > [!NOTE]
 > Beheerde identiteiten voor Azure-resource authenticatie worden alleen ondersteund door de gekoppelde service van het type ' AzureBlobStorage ', niet aan de vorige gekoppelde service van het type ' opslag '.

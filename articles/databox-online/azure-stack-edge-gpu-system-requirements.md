@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 02/05/2021
 ms.author: alkohli
-ms.openlocfilehash: d2fa464214f6a4201b1ecd62ee1a5dacdd7ec158
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: e72ad50b495dec7e3a647bb7bcbdeafd53f5de7b
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99832450"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636620"
 ---
 # <a name="system-requirements-for-azure-stack-edge-pro-with-gpu"></a>Systeem vereisten voor Azure Stack Edge Pro met GPU 
 
@@ -38,7 +38,7 @@ De systeem vereisten voor de Azure Stack Edge Pro zijn onder andere:
 
 ## <a name="supported-edge-storage-accounts"></a>Ondersteunde Edge-opslag accounts
 
-De volgende Edge-opslag accounts worden ondersteund met de REST-interface van het apparaat. De Edge-opslag accounts worden op het apparaat gemaakt. Zie [Edge Storage accounts](azure-stack-edge-j-series-manage-storage-accounts.md#about-edge-storage-accounts)voor meer informatie.
+De volgende Edge-opslag accounts worden ondersteund met de REST-interface van het apparaat. De Edge-opslag accounts worden op het apparaat gemaakt. Zie [Edge Storage accounts](azure-stack-edge-gpu-manage-storage-accounts.md#about-edge-storage-accounts)voor meer informatie.
 
 |Type  |Storage-account  |Opmerkingen  |
 |---------|---------|---------|

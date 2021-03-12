@@ -3,14 +3,14 @@ title: Naslag informatie over Java script-ontwikkel aars voor Azure Functions
 description: Meer informatie over het ontwikkelen van functies met behulp van Java script.
 ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
-ms.date: 11/17/2020
+ms.date: 03/07/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 71fe2d342f928c9d50a3fcf3f5367c21d7fba2ff
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 971fb2a3239614a708e14c109e567081f1ec9ff6
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100591045"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102614901"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Javascript
 
@@ -201,7 +201,7 @@ module.exports = (context) => {
 
 De context die wordt door gegeven aan de functie `executionContext` , bevat een eigenschap, een object met de volgende eigenschappen:
 
-| Naam van eigenschap  | Type  | Description |
+| Naam van eigenschap  | Type  | Beschrijving |
 |---------|---------|---------|
 | `invocationId` | Tekenreeks | Biedt een unieke id voor de specifieke functie aanroep. |
 | `functionName` | Tekenreeks | Geeft de naam van de functie die wordt uitgevoerd |
@@ -507,20 +507,20 @@ In de volgende tabel ziet u de huidige ondersteunde Node.js versies voor elke ho
 
 | Functie versie | Knooppunt versie (Windows) | Knooppunt versie (Linux) |
 |---|---| --- |
+| 3. x (aanbevolen) | `~14` aanbevelingen<br/>`~12`<br/>`~10` | `node|14` aanbevelingen<br/>`node|12`<br/>`node|10` |
+| 2.x  | `~12`<br/>`~10`<br/>`~8` | `node|10`<br/>`node|8`  |
 | 1.x | 6.11.2 (vergrendeld door de runtime) | n.v.t. |
-| 2.x  | `~8`<br/>`~10` aanbevelingen<br/>`~12` | `node|8`<br/>`node|10` aanbevelingen  |
-| 3.x | `~10`<br/>`~12` aanbevelingen<br/>`~14` evaluatie  | `node|10`<br/>`node|12` aanbevelingen<br/>`node|14` evaluatie |
 
 U kunt de huidige versie bekijken die door de runtime wordt gebruikt door logboek registratie `process.version` vanuit een functie.
 
 ### <a name="setting-the-node-version"></a>De knooppunt versie instellen
 
-Voor Windows-functie-apps moet u de versie in azure richten door de `WEBSITE_NODE_DEFAULT_VERSION` [app-instelling](functions-how-to-use-azure-function-app-settings.md#settings) in te stellen op een ondersteunde versie van LTS, zoals `~12` .
+Voor Windows-functie-apps moet u de versie in azure richten door de `WEBSITE_NODE_DEFAULT_VERSION` [app-instelling](functions-how-to-use-azure-function-app-settings.md#settings) in te stellen op een ondersteunde versie van LTS, zoals `~14` .
 
 Voor Linux-functie-apps voert u de volgende Azure CLI-opdracht uit om de knooppunt versie bij te werken.
 
 ```bash
-az functionapp config set --linux-fx-version "node|12" --name "<MY_APP_NAME>" --resource-group "<MY_RESOURCE_GROUP_NAME>"
+az functionapp config set --linux-fx-version "node|14" --name "<MY_APP_NAME>" --resource-group "<MY_RESOURCE_GROUP_NAME>"
 ```
 
 ## <a name="dependency-management"></a>Beheer van afhankelijkheden
@@ -597,6 +597,23 @@ module.exports = async function (context, myTimer) {
 
     context.log("AzureWebJobsStorage: " + process.env["AzureWebJobsStorage"]);
     context.log("WEBSITE_SITE_NAME: " + process.env["WEBSITE_SITE_NAME"]);
+};
+```
+
+## <a name="ecmascript-modules-preview"></a><a name="ecmascript-modules"></a>ECMAScript-modules (preview-versie)
+
+> [!NOTE]
+> Aangezien ECMAScript-modules momenteel *experimenteel* zijn gelabeld in Node.js 14, zijn ze beschikbaar als preview-functie in Node.js 14 Azure functions. Totdat Node.js 14-ondersteuning voor ECMAScript-modules *stabiel* wordt, is het mogelijk dat de API of het gedrag ervan wordt gewijzigd.
+
+[ECMAScript-modules](https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_modules_ecmascript_modules) (ES-modules) vormen het nieuwe officiële standaard module systeem voor Node.js. Tot nu toe gebruiken de code voorbeelden in dit artikel de CommonJS-syntaxis. Wanneer u Azure Functions in Node.js 14 uitvoert, kunt u ervoor kiezen uw functies te schrijven met behulp van de syntaxis van de ES-modules.
+
+Als u ES-modules in een functie wilt gebruiken, moet u de bestands naam ervan wijzigen om een `.mjs` uitbrei ding te gebruiken. Het volgende voor beeld van een *index. mjs* -bestand is een door http geactiveerde functie die de syntaxis van es-modules gebruikt voor het importeren van de `uuid` bibliotheek en het retour neren van een waarde.
+
+```js
+import { v4 as uuidv4 } from 'uuid';
+
+export default async function (context, req) {
+    context.res.body = uuidv4();
 };
 ```
 

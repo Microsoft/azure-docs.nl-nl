@@ -136,9 +136,13 @@
           href: ./security-controls-policy.md
         - name: Beveiligingsbasislijn
           href: security-baseline.md
-    - name: AMQP 1.0-protocolhandleiding
-      href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
-      maintainContext: true
+    - name: AMQP
+      items:
+        - name: AMQP 1.0-protocolhandleiding
+          href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
+          maintainContext: true
+        - name: AMQP-fouten
+          href: event-hubs-amqp-troubleshoot.md
 - name: Instructiegidsen
   items:
     - name: Een schemaregister maken

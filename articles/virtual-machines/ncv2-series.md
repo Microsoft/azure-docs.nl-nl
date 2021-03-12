@@ -7,12 +7,12 @@ ms.subservice: vm-sizes-gpu
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 14d352a4b960395753b34ddb527955ef35220867
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 9d057afc130b75bdd62031e6d2b9372bc9a37615
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/10/2021
-ms.locfileid: "102562415"
+ms.locfileid: "102615020"
 ---
 # <a name="ncv2-series"></a>NCv2-serie
 
@@ -26,7 +26,7 @@ De NC24rs v2-configuratie biedt een netwerk interface met lage latentie en hoge 
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
-[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): niet ondersteund <br>
+[Tijdelijke besturingssysteem schijven](ephemeral-os-disks.md): ondersteund <br>
 NVIDIA NVLink Interconnect: niet ondersteund
 
 > [!IMPORTANT]

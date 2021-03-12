@@ -2,17 +2,18 @@
 title: Een gegevens schijf koppelen aan een virtuele Linux-machine
 description: Gebruik de portal om een nieuwe of bestaande gegevens schijf te koppelen aan een virtuele Linux-machine.
 author: cynthn
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 647564a9b9ca909d2f45ae66673d8beac168a4aa
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.collection: linux
+ms.openlocfilehash: a6ef2cd62fc14958e8505a03e69e4b20cf6ce49f
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575971"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102556822"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Een gegevens schijf koppelen aan een virtuele Linux-machine met behulp van de portal 
 Dit artikel laat u zien hoe u met de Azure Portal zowel nieuwe als bestaande schijven kunt koppelen aan een virtuele Linux-machine. U kunt ook [een gegevens schijf koppelen aan een virtuele Windows-machine in de Azure Portal](../windows/attach-managed-disk-portal.md). 

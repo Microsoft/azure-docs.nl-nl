@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: peshultz
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 6cc6e6a9739b8b06ab3c48dd3fd75f19de8d0787
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: 6c96c5b03a3561ae57807ad2788064f2a568f84c
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106271"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418705"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Zelfstudie: Python-scripts uitvoeren via Azure Data Factory met behulp van Azure Batch
 
@@ -34,7 +34,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 * Een geïnstalleerde [Python](https://www.python.org/downloads/)-distributie voor lokaal testen.
 * Het `pip`-pakket [azure-storage-blob](https://pypi.org/project/azure-storage-blob/).
-* De [iris.csv-gegevensset](https://www.kaggle.com/uciml/iris/version/2#Iris.csv)
+* De [iris.csv-gegevensset](https://github.com/Azure-Samples/batch-adf-pipeline-tutorial/blob/master/iris.csv)
 * Een Azure Batch-account en een gekoppeld Azure Storage-account. Zie [Een Batch-account maken](quick-create-portal.md#create-a-batch-account) voor meer informatie over het maken en koppelen van Batch-accounts aan opslagaccounts.
 * Een Azure Data Factory-account. Zie [Een data factory maken](../data-factory/quickstart-create-data-factory-portal.md#create-a-data-factory) voor meer informatie over het maken van een data factory via de Azure-portal.
 * [Batch Explorer](https://azure.github.io/BatchExplorer/).
@@ -67,7 +67,7 @@ Hier maakt u blob-containers waarmee de invoer- en uitvoer bestanden voor de OCR
 1. Meld u aan bij Storage Explorer met uw Azure-referenties.
 1. Met het opslagaccount dat is gekoppeld aan uw Batch-account, maakt u twee blob-containers (één voor invoerbestanden, één voor uitvoerbestanden) door de stappen te volgen op [Een blob-container maken](../vs-azure-tools-storage-explorer-blobs.md#create-a-blob-container).
     * In dit voorbeeld roepen we onze invoercontainer `input`en onze uitvoercontainer`output` aan.
-1. Upload [`iris.csv`](https://www.kaggle.com/uciml/iris/version/2#Iris.csv) naar uw invoercontainer `input` met behulp van Storage Explorer door de stappen te volgen in [Blobs in een BLOB-container beheren](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
+1. Upload [`iris.csv`](https://github.com/Azure-Samples/batch-adf-pipeline-tutorial/blob/master/iris.csv) naar uw invoercontainer `input` met behulp van Storage Explorer door de stappen te volgen in [Blobs in een BLOB-container beheren](../vs-azure-tools-storage-explorer-blobs.md#managing-blobs-in-a-blob-container).
 
 ## <a name="develop-a-script-in-python"></a>Een script ontwikkelen in Python
 
@@ -75,32 +75,28 @@ Het volgende Python-script laadt de `iris.csv` gegevensset uit uw `input` contai
 
 ``` python
 # Load libraries
-from azure.storage.blob import BlobServiceClient
+from azure.storage.blob import BlobClient
 import pandas as pd
 
 # Define parameters
-storageAccountURL = "<storage-account-url>"
-storageKey         = "<storage-account-key>"
-containerName      = "output"
+connectionString = "<storage-account-connection-string>"
+containerName = "output"
+outputBlobName  = "iris_setosa.csv"
 
 # Establish connection with the blob storage account
-blob_service_client = BlockBlobService(account_url=storageAccountURL,
-                               credential=storageKey
-                               )
+blob = BlobClient.from_connection_string(conn_str=connectionString, container_name=containerName, blob_name=outputBlobName)
 
 # Load iris dataset from the task node
 df = pd.read_csv("iris.csv")
 
-# Subset records
+# Take a subset of the records
 df = df[df['Species'] == "setosa"]
 
 # Save the subset of the iris dataframe locally in task node
-df.to_csv("iris_setosa.csv", index = False)
+df.to_csv(outputBlobName, index = False)
 
-# Upload iris dataset
-container_client = blob_service_client.get_container_client(containerName)
-with open("iris_setosa.csv", "rb") as data:
-    blob_client = container_client.upload_blob(name="iris_setosa.csv", data=data)
+with open(outputBlobName, "rb") as data:
+    blob.upload_blob(data)
 ```
 
 Sla het script op als `main.py` en uploadt dit script naar de **Azure Storage** `input`-container. Zorg ervoor dat u de functionaliteit lokaal test en valideert voordat u deze uploadt naar uw blob-container:
@@ -119,19 +115,17 @@ In deze sectie maakt en valideert u een pijplijn met behulp van uw Python-script
 
     ![Stel op het tabblad Algemeen de naam van de pijplijn in als 'Python uitvoeren'](./media/run-python-batch-azure-data-factory/create-pipeline.png)
 
-1. Vouw in het vak **Activiteiten** **Batch-service** uit. Sleep de aangepaste activiteit uit de werkset **Activiteiten** naar het ontwerpoppervlak voor pijplijnen.
-1. Geef op het tabblad **Algemeen** **testPipeline** op als Naam
-
-    ![Geef op het tabblad Algemeen testPipeline op als naam](./media/run-python-batch-azure-data-factory/create-custom-task.png)
-1. Voeg op het tabblad **Azure Batch** de **Batch-account** toe die in de vorige stappen is gemaakt en kies **Verbinding testen** om ervoor te zorgen dat het succesvol is
-
+1. Vouw in het vak **Activiteiten** **Batch-service** uit. Sleep de aangepaste activiteit uit de werkset **Activiteiten** naar het ontwerpoppervlak voor pijplijnen. Vul de volgende tabbladen in voor de aangepaste activiteit:
+    1. Geef op het tabblad **Algemeen** **TestPipeline** op als naam ![ op het tabblad Algemeen en geef testPipeline op bij naam.](./media/run-python-batch-azure-data-factory/create-custom-task.png)
+    1. Voeg op het tabblad **Azure batch** het **batch-account** toe dat in de vorige stappen is gemaakt en **test de verbinding** om er zeker van te zijn dat het lukt.
     ![Voeg op het tabblad Azure Batch het Batch-account toe dat in de vorige stappen is gemaakt en test vervolgens de verbinding](./media/run-python-batch-azure-data-factory/integrate-pipeline-with-azure-batch.png)
+    1. Op het tabblad **instellingen** :
+        1. Stel de **opdracht** in op als `python main.py` .
+        1. Voeg voor de **Resource gekoppelde service** het opslagaccount toe dat in de vorige stappen is gemaakt. Test de verbinding om er zeker van te zijn dat deze is geslaagd.
+        1. Selecteer in het pad **Map** de naam van de **Azure Blob Storage**-container die het Python-script en de bijbehorende invoer bevat. Hiermee worden de geselecteerde bestanden van de container naar de exemplaren voor het groepsknooppunt gedownload voordat het Python-script wordt uitgevoerd.
 
-1. Voer de opdracht **in op het tabblad** Instellingen`python main.py`.
-1. Voeg voor de **Resource gekoppelde service** het opslagaccount toe dat in de vorige stappen is gemaakt. Test de verbinding om er zeker van te zijn dat deze is geslaagd.
-1. Selecteer in het pad **Map** de naam van de **Azure Blob Storage**-container die het Python-script en de bijbehorende invoer bevat. Hiermee worden de geselecteerde bestanden van de container naar de exemplaren voor het groepsknooppunt gedownload voordat het Python-script wordt uitgevoerd.
+        ![Selecteer in het mappad de naam van de Azure Blob Storage-container](./media/run-python-batch-azure-data-factory/create-custom-task-py-script-command.png)
 
-    ![Selecteer in het mappad de naam van de Azure Blob Storage-container](./media/run-python-batch-azure-data-factory/create-custom-task-py-script-command.png)
 1. Klik in de pijplijnwerkbalk boven het canvas op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of de pijplijn is gevalideerd. Klik op de &gt;&gt; (pijl-rechts) om de uitvoergegevens van de validatie te sluiten.
 1. Klik op **fouten opsporen** om de pijplijn te testen en te controleren of deze correct werkt.
 1. Klik op **Publiceren** om de pijplijn te publiceren.

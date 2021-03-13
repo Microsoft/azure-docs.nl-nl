@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019"
-ms.openlocfilehash: 8fd64023b9c07e8dd426b2b51916db4515a5405a
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 866fe01e11ee53188cea6ea490304462acc1f6a2
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102451503"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419997"
 ---
 # <a name="backup-and-restore-in-azure-synapse-dedicated-sql-pool"></a>Back-ups maken en herstellen in een toegewezen SQL-groep in azure Synapse
 
@@ -48,7 +48,7 @@ order by run_id desc
 Met deze functie kunt u hand matig moment opnamen activeren om herstel punten van uw data warehouse te maken voor en na grote wijzigingen. Deze functionaliteit zorgt ervoor dat herstel punten logisch consistent zijn, wat een extra gegevens bescherming biedt bij onderbrekingen van de werk belasting of gebruikers fouten voor snelle herstel tijd. Door de gebruiker gedefinieerde herstel punten zijn zeven dagen beschikbaar en worden namens u automatisch verwijderd. U kunt de Bewaar periode van door de gebruiker gedefinieerde herstel punten niet wijzigen. **42 door de gebruiker gedefinieerde herstel punten** worden op elk moment gegarandeerd, zodat ze moeten worden [verwijderd](/powershell/module/azurerm.sql/remove-azurermsqldatabaserestorepoint) voordat er een nieuw herstel punt wordt gemaakt. U kunt moment opnamen activeren om door de gebruiker gedefinieerde herstel punten te maken via [Power shell](/powershell/module/az.sql/new-azsqldatabaserestorepoint?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsont#examples) of de Azure Portal.
 
 > [!NOTE]
-> Als u herstel punten van meer dan zeven dagen nodig hebt, kunt u [hier](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/35114410-user-defined-retention-periods-for-restore-points)stemmen voor deze functie. U kunt ook een door de gebruiker gedefinieerd herstel punt maken en herstellen vanuit het zojuist gemaakte herstel punt naar een nieuw data warehouse. Nadat u hebt hersteld, hebt u de exclusieve SQL-groep online en kunt u deze voor onbepaalde tijd voor het besparen van reken kosten pauzeren. De gepauzeerde data base maakt kosten per seconde op het Premium Storage tarief van Azure. Als u een actieve kopie van het herstelde data warehouse nodig hebt, kunt u hervatten. dit duurt slechts enkele minuten.
+> Als u herstel punten van meer dan zeven dagen nodig hebt, kunt u [hier](https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/35114410-user-defined-retention-periods-for-restore-points)stemmen voor deze functie. U kunt ook een door de gebruiker gedefinieerd herstel punt maken en herstellen vanuit het zojuist gemaakte herstel punt naar een nieuw data warehouse. Nadat u hebt hersteld, hebt u de exclusieve SQL-groep online en kunt u deze voor onbepaalde tijd voor het besparen van reken kosten pauzeren. De gepauzeerde data base maakt kosten voor opslag bij de opslag snelheid van Azure Synapse. Als u een actieve kopie van het herstelde data warehouse nodig hebt, kunt u hervatten. dit duurt slechts enkele minuten.
 
 ### <a name="restore-point-retention"></a>Bewaar periode van het herstel punt
 

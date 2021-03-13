@@ -3,12 +3,12 @@ title: Bicep-taal voor Azure Resource Manager sjablonen
 description: Beschrijft de Bicep-taal voor het implementeren van de infra structuur naar Azure via Azure Resource Manager sjablonen.
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: 11ba562fa3d91ffc7baeca647ed05e839f9c8013
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: 599cb378da51c5d13e7db3cf45cacf750c5843cc
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103232967"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419827"
 ---
 # <a name="what-is-bicep-preview"></a>Wat is Bicep (preview)?
 
@@ -24,7 +24,7 @@ Probeer de [Bicep-zelf studie](./bicep-tutorial-create-first-bicep.md)na de inst
 
 Als u gelijkwaardige JSON-en Bicep-bestanden naast elkaar wilt weer geven, raadpleegt u de [Bicep-Playground](https://aka.ms/bicepdemo).
 
-Als u een bestaande ARM-sjabloon hebt die u wilt converteren naar Bicep, raadpleegt u [JSON decompileren op Bicep](compare-template-syntax.md#decompile-json-to-bicep).
+Als u een bestaande ARM-sjabloon hebt die u wilt converteren naar Bicep, raadpleegt u [arm-sjablonen converteren tussen JSON en Bicep](bicep-decompile.md).
 
 ## <a name="bicep-improvements"></a>Verbeteringen in Bicep
 
@@ -89,7 +89,7 @@ Bicep is een DSL gericht op het implementeren van complete oplossingen voor Azur
 
 Ze blijven precies hetzelfde functioneren als ze altijd hebben. U hoeft geen wijzigingen door te voeren. De taal van de onderliggende ARM-sjabloon wordt nog steeds ondersteund. Bicep-bestanden worden gecompileerd naar JSON en die JSON wordt naar Azure verzonden voor implementatie.
 
-Wanneer u klaar bent, kunt u [de json-bestanden converteren naar Bicep](compare-template-syntax.md#decompile-json-to-bicep).
+Wanneer u klaar bent, kunt u [de json-bestanden converteren naar Bicep](bicep-decompile.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

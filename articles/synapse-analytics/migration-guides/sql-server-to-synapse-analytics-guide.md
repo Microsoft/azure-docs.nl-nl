@@ -2,26 +2,24 @@
 title: 'SQL Server naar Azure Synapse Analytics: migratie handleiding'
 description: Volg deze hand leiding om uw SQL-data bases te migreren naar de Azure Synapse Analytics SQL-groep.
 ms.service: synapse-analytics
-ms.subservice: ''
-ms.custom: ''
-ms.devlang: ''
+ms.subservice: sql
 ms.topic: conceptual
 author: julieMSFT
 ms.author: jrasnick
 ms.reviewer: jrasnick
 ms.date: 03/10/2021
-ms.openlocfilehash: 09914b409c7d8412f6ba30d4412e28e264bd50f6
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: 9a7888d3ccf7e033f15f184227c65c746780aa12
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225739"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418025"
 ---
 # <a name="migration-guide-sql-server-to-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Migratie handleiding: SQL Server naar een toegewezen SQL-groep in azure Synapse Analytics 
-In de volgende secties vindt u een overzicht van wat er is betrokken bij het migreren van een bestaande SQL Server Data Warehouse-oplossing naar de Azure Synapse Analytics SQL-groep
+In de volgende secties vindt u een overzicht van de functies die zijn betrokken bij het migreren van een bestaande SQL Server Data Warehouse-oplossing naar de Azure Synapse Analytics SQL-groep.
 
 ## <a name="overview"></a>Overzicht
-Voordat u migreert, moet u controleren of Azure Synapse Analytics de beste oplossing voor uw werk belasting is. Azure Synapse Analytics is een gedistribueerd systeem dat is ontworpen voor het uitvoeren van analyses op grote gegevens. Voor de migratie naar Azure Synapse Analytics zijn enkele ontwerp wijzigingen vereist die niet moeilijk te begrijpen zijn, maar dit kan enige tijd duren om te implementeren. Als uw bedrijf een Data Warehouse op bedrijfs niveau vereist, zijn de voor delen de moeite waard. Als u de kracht van Azure Synapse Analytics echter niet nodig hebt, is het rendabeler om [SQL Server](https://docs.microsoft.com/sql/sql-server/) of [Azure SQL database](https://docs.microsoft.com/azure/azure-sql/)te gebruiken.
+Voordat u migreert, moet u controleren of Azure Synapse Analytics de beste oplossing voor uw werk belasting is. Azure Synapse Analytics is een gedistribueerd systeem dat is ontworpen voor het uitvoeren van analyses op grote gegevens. Voor de migratie naar Azure Synapse Analytics zijn enkele ontwerp wijzigingen vereist die niet moeilijk te begrijpen zijn, maar dit kan enige tijd duren om te implementeren. Als uw bedrijf een Data Warehouse op bedrijfs niveau vereist, zijn de voor delen de moeite waard. Als u de kracht van Azure Synapse Analytics echter niet nodig hebt, is het rendabeler om [SQL Server](/sql/sql-server/) of [Azure SQL database](/azure/azure-sql/database/sql-database-paas-overview)te gebruiken.
 
 U kunt met behulp van Azure Synapse Analytics het volgende doen:
 - Een of meer terabytes aan gegevens hebben.
@@ -44,10 +42,10 @@ Als u uw SQL Server naar Azure Synapse Analytics wilt migreren, moet u ervoor zo
 - Een [exclusieve SQL-groep](../get-started-create-workspace.md) in de Azure Synapse-werk ruimte. 
 
 ## <a name="pre-migration"></a>Premigratie
-Nadat u de beslissing hebt genomen voor het migreren van een bestaande oplossing naar Azure Synapse Analytics, is het belang rijk dat u de migratie plant voordat u aan de slag gaat. Een primair doel van het plannen is om ervoor te zorgen dat uw gegevens, tabel schema's en code compatibel zijn met Azure Synapse Analytics. Er zijn een aantal compatibiliteits verschillen tussen uw huidige systeem en SQL Data Warehouse die u moet omzeilen. Bovendien kost het migreren van grote hoeveel heden gegevens naar Azure tijd. Met een zorgvuldige planning wordt het proces van het ophalen van uw gegevens naar Azure sneller uitgevoerd. Een ander belang rijk doel van het plannen is om uw ontwerp aan te passen om ervoor te zorgen dat uw oplossing optimaal profiteert van de hoge query prestaties die Azure Synapse Analytics is ontworpen om te bieden. Met het ontwerpen van data warehouses voor schalen worden unieke ontwerp patronen geïntroduceerd. traditionele benaderingen zijn dus niet altijd het beste. Hoewel er na de migratie enkele ontwerp aanpassingen kunnen worden aangebracht, bespaart u later tijd bij wijzigingen.
+Nadat u de beslissing hebt genomen voor het migreren van een bestaande oplossing naar Azure Synapse Analytics, is het belang rijk dat u de migratie plant voordat u aan de slag gaat. Een primair doel van het plannen is om ervoor te zorgen dat uw gegevens, tabel schema's en code compatibel zijn met Azure Synapse Analytics. Er zijn een aantal compatibiliteits verschillen tussen uw huidige systeem en SQL Data Warehouse die u moet omzeilen. Ook is het tijd om grote hoeveel heden gegevens naar Azure te migreren. Met een zorgvuldige planning wordt het proces van het ophalen van uw gegevens naar Azure sneller uitgevoerd. Een ander belang rijk doel van het plannen is om uw ontwerp aan te passen om ervoor te zorgen dat uw oplossing optimaal profiteert van de hoge query prestaties die Azure Synapse Analytics is ontworpen om te bieden. Met het ontwerpen van data warehouses voor schalen worden unieke ontwerp patronen geïntroduceerd. traditionele benaderingen zijn dus niet altijd het beste. Hoewel er na de migratie enkele ontwerp aanpassingen kunnen worden aangebracht, bespaart u later tijd bij wijzigingen.
 
 ## <a name="azure-synapse-pathway"></a>Azure Synapse-routes
-Een van de belang rijke blok keringen van klanten vertaalt de SQL-code bij het migreren van het ene systeem naar het andere. Met [Azure Synapse traject](https://docs.microsoft.com/sql/tools/synapse-pathway/azure-synapse-pathway-overview) kunt u een upgrade uitvoeren naar een modern Data Warehouse-platform door de code omzetting van uw bestaande Data Warehouse te automatiseren. Het is een gratis, intuïtief en gemakkelijk te gebruiken hulp programma waarmee de code omzetting wordt geautomatiseerd, waardoor de migratie naar Azure Synapse Analytics sneller kan worden gemigreerd.
+Een van de belang rijke blok keringen van klanten vertaalt de SQL-code bij het migreren van het ene systeem naar het andere. Met [Azure Synapse traject](/sql/tools/synapse-pathway/azure-synapse-pathway-overview) kunt u een upgrade uitvoeren naar een modern Data Warehouse-platform door de code omzetting van uw bestaande Data Warehouse te automatiseren. Het is een gratis, intuïtief en gemakkelijk te gebruiken hulp programma waarmee de code omzetting wordt geautomatiseerd, waardoor de migratie naar Azure Synapse Analytics sneller kan worden gemigreerd.
 
 ## <a name="migrate"></a>Migrate
 Als u een geslaagde migratie wilt uitvoeren, moet u de tabel schema's, code en gegevens migreren. Voor meer informatie over deze onderwerpen raadpleegt u:

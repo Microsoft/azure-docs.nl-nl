@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: a008551ac6f149617feedd01e256b637f83e975d
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: e3078c8f71f8862cacad552bb3176c08530e79bb
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103235015"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418841"
 ---
 # <a name="semantic-ranking-in-azure-cognitive-search"></a>Semantische classificatie in azure Cognitive Search
 
@@ -30,9 +30,9 @@ Voor een semantische classificatie gebruikt het model zowel de Lees vaardigheid 
 
 1. Voor elk document evalueert de semantische rangorde de velden in de para meter searchFields om de inhoud te consolideren in één grote teken reeks.
 
-1. De teken reeks wordt vervolgens bijgesneden om ervoor te zorgen dat de totale lengte niet meer is dan 20.000 tokens. Als u zeer grote documenten hebt, met een inhouds veld of merged_content veld met veel pagina's met inhoud, worden alleen de eerste 20.000-tokens gebruikt.
+1. De teken reeks wordt vervolgens bijgesneden om ervoor te zorgen dat de totale lengte niet meer is dan 8.000 tokens. Als u zeer grote documenten hebt, met een inhouds veld of merged_content veld dat veel pagina's met inhoud bevat, wordt iets na de token limiet genegeerd.
 
-1. Elk van de 50-documenten wordt nu vertegenwoordigd door één lange teken reeks die Maxi maal 20.000 tokens is. Deze teken reeks wordt naar het samenvattings model verzonden. Het samenvattings model produceert bijschriften (en antwoorden) met behulp van de Lees vaardigheid van de machine om gangen te identificeren die worden weer gegeven om de inhoud te samenvatten of de vraag te beantwoorden. De uitvoer van het samenvattings model is een verder verlaagde teken reeks met Maxi maal 128 tokens.
+1. Elk van de 50-documenten wordt nu vertegenwoordigd door één lange teken reeks. Deze teken reeks wordt naar het samenvattings model verzonden. Het samenvattings model produceert bijschriften (en antwoorden) met behulp van de Lees vaardigheid van de machine om gangen te identificeren die worden weer gegeven om de inhoud te samenvatten of de vraag te beantwoorden. De uitvoer van het samenvattings model is een verder verlaagde teken reeks met Maxi maal 128 tokens.
 
 1. De kleinere teken reeks wordt het bijschrift van het document. het vertegenwoordigt de meest relevante gangen die worden gevonden in de grotere teken reeks. De set met ondertiteling van 50 (of minder) wordt vervolgens gerangschikt op volg orde van relevantie. 
 

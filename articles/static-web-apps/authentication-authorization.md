@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: e95cd313d341844eabf4f5c5feae8a8ca3dc9c2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ab41a336c32a1827c23f4c4619f47dc294a4d2ea
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826544"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419283"
 ---
 # <a name="authentication-and-authorization-for-azure-static-web-apps-preview"></a>Verificatie en autorisatie voor API-apps in Azure Static Web Apps Preview
 
@@ -62,7 +62,7 @@ Uitnodigingen zijn specifiek voor afzonderlijke autorisatie providers. Houd daar
 | Twitter                | gebruikersnaam          |
 
 1. Navigeer naar een statische Web Apps resource in de [Azure Portal](https://portal.azure.com).
-1. Klik onder _instellingen_op **functie beheer**.
+1. Klik onder _instellingen_ op **functie beheer**.
 1. Klik op de knop **uitnodiging** .
 1. Selecteer een _autorisatie provider_ in de lijst met opties.
 1. Voeg de gebruikers naam of het e-mail adres van de ontvanger toe in het vak Details van de _uitnodiging_ .
@@ -84,7 +84,7 @@ Wanneer de gebruiker op de koppeling in de uitnodiging klikt, wordt u gevraagd z
 ### <a name="update-role-assignments"></a>Roltoewijzingen bijwerken
 
 1. Navigeer naar een statische Web Apps resource in de [Azure Portal](https://portal.azure.com).
-1. Klik onder _instellingen_op **functie beheer**.
+1. Klik onder _instellingen_ op **functie beheer**.
 1. Klik op de gebruiker in de lijst.
 1. Bewerk de lijst met rollen in het vak _rol_ .
 1. Klik op de knop **bijwerken** .
@@ -92,7 +92,7 @@ Wanneer de gebruiker op de koppeling in de uitnodiging klikt, wordt u gevraagd z
 ### <a name="remove-user"></a>Gebruiker verwijderen
 
 1. Navigeer naar een statische Web Apps resource in de [Azure Portal](https://portal.azure.com).
-1. Klik onder _instellingen_op **functie beheer**.
+1. Klik onder _instellingen_ op **functie beheer**.
 1. Zoek de gebruiker in de lijst.
 1. Schakel het selectie vakje in de rij van de gebruiker in.
 1. Klik op de knop **Verwijderen**.
@@ -145,19 +145,18 @@ Als u zich bijvoorbeeld wilt aanmelden met GitHub, kunt u een aanmeldings koppel
 
 Als u hebt gekozen voor het ondersteunen van meer dan één provider, moet u een providerspecifieke koppeling beschikbaar stellen voor elk van uw websites.
 
-U kunt een [route regel](routes.md) gebruiken om een standaard provider toe te wijzen aan een beschrijvende route, zoals _/login_.
+U kunt een [route regel](./configuration.md#routes) gebruiken om een standaard provider toe te wijzen aan een beschrijvende route, zoals _/login_.
 
 ```json
 {
   "route": "/login",
-  "serve": "/.auth/login/github"
+  "redirect": "/.auth/login/github"
 }
 ```
 
 ### <a name="post-login-redirect"></a>Omleiding van post-aanmelding
 
 Als u een gebruiker wilt terugkeren naar een specifieke pagina na de aanmelding, geeft u een URL op in de `post_login_redirect_uri` query teken reeks parameter.
-
 
 ## <a name="logout"></a>Afmelden
 
@@ -167,12 +166,12 @@ De `/.auth/logout` route meldt gebruikers van de website. U kunt een koppeling t
 <a href="/.auth/logout">Log out</a>
 ```
 
-U kunt een [route regel](routes.md) gebruiken om een beschrijvende route te koppelen, zoals _/logout_.
+U kunt een [route regel](./configuration.md#routes) gebruiken om een beschrijvende route te koppelen, zoals _/logout_.
 
 ```json
 {
   "route": "/logout",
-  "serve": "/.auth/logout"
+  "redirect": "/.auth/logout"
 }
 ```
 

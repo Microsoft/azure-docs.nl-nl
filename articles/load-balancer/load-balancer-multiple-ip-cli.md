@@ -13,14 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: d928a86f958e54552f5cc8d030b0fb74fa3bd3c2
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 67f3ffa15b46eec9f352e08b0fe7c8b1bb15ac7e
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102214504"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417787"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-azure-cli"></a>Taak verdeling op meerdere IP-configuraties met behulp van Azure CLI
+
+> [!div class="op_single_selector"]
+> * [Portal](load-balancer-multiple-ip.md)
+> * [CLI](load-balancer-multiple-ip-cli.md)
+> * [PowerShell](load-balancer-multiple-ip-powershell.md)
 
 In dit artikel wordt beschreven hoe u Azure Load Balancer gebruikt met meerdere IP-adressen op een secundaire netwerk interface (NIC). Voor dit scenario hebben we twee Vm's met Windows, elk met een primaire en een secundaire NIC. Elk van de secundaire Nic's heeft twee IP-configuraties. Elke virtuele machine host zowel websites contoso.com als fabrikam.com. Elke website is gebonden aan een van de IP-configuraties op de secundaire NIC. We gebruiken Azure Load Balancer om twee frontend-IP-adressen beschikbaar te maken, één voor elke website, om verkeer te distribueren naar de respectieve IP-configuratie voor de website. In dit scenario wordt hetzelfde poort nummer gebruikt voor zowel front-ends als voor beide IP-adressen van de back-end-pool.
 

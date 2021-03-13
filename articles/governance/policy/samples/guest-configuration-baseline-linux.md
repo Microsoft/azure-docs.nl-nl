@@ -1,19 +1,19 @@
 ---
 title: Referentie-Azure Policy gast configuratie basislijn voor Linux
 description: Details van de Linux-basis lijn op Azure die via Azure Policy-gast configuratie zijn geïmplementeerd.
-ms.date: 02/26/2021
+ms.date: 03/12/2021
 ms.topic: reference
 ms.custom: generated
-ms.openlocfilehash: 20f589b02f2a43bb3feb954dc4eac2dd6a9c3925
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: 6b1d3048fdc0945e1ee64e211d2f7b1f9de5e6e6
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103234998"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419861"
 ---
 # <a name="azure-policy-guest-configuration-baseline-for-linux"></a>Azure Policy-configuratie basislijn voor Linux
 
-In het volgende artikel wordt beschreven wat de **\[ Preview-versie \] van Linux-machines moet voldoen aan de vereisten voor de audits van Azure Security Baseline** gast configuratie beleid. Zie [Azure Policy-gast configuratie](../concepts/guest-configuration.md) en [overzicht van de Azure Security Bench Mark (v2)](../../../security/benchmarks/overview.md)voor meer informatie.
+In het volgende artikel wordt beschreven wat de **\[ Preview- \] machines van Linux moeten voldoen aan de vereisten voor de controle van de definitie van het Azure Security Baseline** gast configuratie beleid. Zie [Azure Policy-gast configuratie](../concepts/guest-configuration.md) en [overzicht van de Azure Security Bench Mark (v2)](../../../security/benchmarks/overview.md)voor meer informatie.
 
 ## <a name="general-security-controls"></a>Algemene beveiligings controles
 

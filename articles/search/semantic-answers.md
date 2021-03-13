@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: 1bccfa4d36ad39aec79a50c8a6b6c50260370223
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: b99cbf91d7fc1c5d90753dfa1461a58eda055180
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103235021"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418892"
 ---
 # <a name="return-a-semantic-answer-in-azure-cognitive-search"></a>Een semantisch antwoord op Azure Cognitive Search retour neren
 
@@ -63,7 +63,7 @@ De para meter ' searchFields ' is essentieel voor het retour neren van een antwo
 
 + Een query reeks mag niet null zijn en moet worden geformuleerd als vraag. In deze preview-versie moet het ' query type ' en ' queryLanguage ' precies worden ingesteld zoals in het voor beeld wordt weer gegeven.
 
-+ De para meter ' searchFields ' bepaalt welke velden tokens aan het extractie model bieden. Er worden Maxi maal 20.000 tokens gebruikt tijdens het innemen van het token, dus start de lijst met velden met beknopte velden en vervolgens voortgang naar velden met uitgebreide tekst. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld.
++ De para meter ' searchFields ' bepaalt welke velden tokens aan het extractie model bieden. Zorg ervoor dat u deze para meter instelt. U moet ten minste één teken reeks veld hebben, maar een wille keurig teken reeks veld opnemen dat nuttig is voor het bieden van een antwoord. Er worden slechts 8.000-tokens per document door gegeven aan het model. De lijst met velden starten met beknopte velden en vervolgens voortgang naar velden met tekst opmaak. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld.
 
 + Voor "antwoorden" is de basis parameter constructie `"answers": "extractive"` , waarbij het standaard aantal geretourneerde antwoorden één is. U kunt het aantal antwoorden verhogen door een aantal toe te voegen tot een maximum van vijf.  Of u meer dan één antwoord nodig hebt, is afhankelijk van de gebruikers ervaring van uw app en hoe u de resultaten wilt weer geven.
 

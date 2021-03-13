@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 5a896d3fbe2d191473b10655ccb19c5759762131
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d28946aad263af635a0139e68d424a77a1eab25
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84803635"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417821"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-by-using-the-azure-portal"></a>Taak verdeling op meerdere IP-configuraties met behulp van de Azure Portal
 
@@ -26,7 +26,6 @@ ms.locfileid: "84803635"
 > * [Portal](load-balancer-multiple-ip.md)
 > * [PowerShell](load-balancer-multiple-ip-powershell.md)
 > * [CLI](load-balancer-multiple-ip-cli.md)
-
 
 In dit artikel laten we u zien hoe u Azure Load Balancer kunt gebruiken met meerdere IP-adressen op een secundaire netwerk interface controller (NIC). In het volgende diagram ziet u het scenario:
 
@@ -72,7 +71,7 @@ Voor elke virtuele machine in uw virtuele netwerk voegt u de IP-configuratie voo
     
     2. Selecteer **IP-configuraties**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**.
 
-    3. Voeg onder **IP-configuraties toevoegen**een tweede IP-configuratie toe aan de NIC: 
+    3. Voeg onder **IP-configuraties toevoegen** een tweede IP-configuratie toe aan de NIC: 
 
         1. Voer een naam in voor de secundaire IP-configuratie. (Geef bijvoorbeeld voor VM1 en VM2 de IP-configuratie **VM1NIC2-ipconfig2** en **VM2NIC2-ipconfig2**.)
 
@@ -90,11 +89,11 @@ Maak uw load balancer voor de configuratie:
 
 2. Selecteer in de linkerbovenhoek van het scherm **een resource maken**  >  **netwerk**  >  **Load Balancer**. Selecteer vervolgens **maken**.
 
-3. Typ onder **Load Balancer maken**een naam voor uw Load Balancer. In dit scenario gebruiken we de naam **mylb**.
+3. Typ onder **Load Balancer maken** een naam voor uw Load Balancer. In dit scenario gebruiken we de naam **mylb**.
 
-4. Maak onder **openbaar IP-adres**een nieuwe open bare IP met de naam **PublicIP1**.
+4. Maak onder **openbaar IP-adres** een nieuwe open bare IP met de naam **PublicIP1**.
 
-5. Onder **resource groep**selecteert u de bestaande resource groep voor uw virtuele machines (bijvoorbeeld **contosofabrikam**). Selecteer de locatie waar u uw load balancer wilt implementeren en selecteer vervolgens **OK**.
+5. Onder **resource groep** selecteert u de bestaande resource groep voor uw virtuele machines (bijvoorbeeld **contosofabrikam**). Selecteer de locatie waar u uw load balancer wilt implementeren en selecteer vervolgens **OK**.
 
 De implementatie van de load balancer wordt gestart. Het kan een paar minuten duren voordat de implementatie is voltooid. Nadat de implementatie is voltooid, wordt de load balancer als resource weer gegeven in de resource groep.
 
@@ -108,9 +107,9 @@ Configureer voor elke website (contoso.com en fabrikam.com) de front-end-IP-adre
 
    1. Typ een naam voor het IP-adres van de front-end.
 
-   2. Voor **resource groep**selecteert u de bestaande resource groep voor uw virtuele machines (bijvoorbeeld **contosofabrikam**).
+   2. Voor **resource groep** selecteert u de bestaande resource groep voor uw virtuele machines (bijvoorbeeld **contosofabrikam**).
 
-   3. Voor **locatie**selecteert u dezelfde locatie als de vm's.
+   3. Voor **locatie** selecteert u dezelfde locatie als de vm's.
 
    4. Selecteer **OK**.
 
@@ -120,11 +119,11 @@ Configureer voor elke website (contoso.com en fabrikam.com) de front-end-IP-adre
 
 4. Selecteer de load balancer (**mylb**) waaraan u de front-end-IP-groep wilt toevoegen.
 
-5. Selecteer bij **instellingen**de optie Front **-end-IP-configuratie**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**.
+5. Selecteer bij **instellingen** de optie Front **-end-IP-configuratie**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**.
 
 6. Typ een naam voor uw front-end-IP-adres (bijvoorbeeld **contosofe** of **fabrikamfe**).
 
-7. <a name="step3-7"></a>Selecteer **IP-adres**. Selecteer onder **openbaar IP-adres kiezen**de IP-adressen voor uw front-end (**PublicIP1** of **PublicIP2**).
+7. <a name="step3-7"></a>Selecteer **IP-adres**. Selecteer onder **openbaar IP-adres kiezen** de IP-adressen voor uw front-end (**PublicIP1** of **PublicIP2**).
 
 8. Maak het tweede front-end-IP-adres door <a href="#step3-3">stap 3</a> te herhalen in <a href="#step3-7">stap 7</a> in deze sectie.
 
@@ -138,19 +137,19 @@ Configureer voor elke website (contoso.com en fabrikam.com) de back-end-adres gr
 
 2. Selecteer de load balancer (**mylb**) waaraan u de back-end-pool wilt toevoegen.
 
-3. Selecteer **back-Pools**onder **instellingen**. Typ een naam voor de back-end-pool (bijvoorbeeld **contosopool** of **fabrikampool**). Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
+3. Selecteer **back-Pools** onder **instellingen**. Typ een naam voor de back-end-pool (bijvoorbeeld **contosopool** of **fabrikampool**). Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
 
-4. Selecteer voor **gekoppeld aan**de optie **beschikbaarheidsset**.
+4. Selecteer voor **gekoppeld aan** de optie **beschikbaarheidsset**.
 
-5. Voor **beschikbaarheidsset**selecteert u **myAvailset**.
+5. Voor **beschikbaarheidsset** selecteert u **myAvailset**.
 
 6. Voeg de IP-configuraties van het doelnet netwerk voor beide Vm's toe: 
 
     ![Back-endservers voor load balancer configureren](./media/load-balancer-multiple-ip/lb-backendpool.PNG)
     
-    1. Selecteer voor doel-VM de **virtuele machine**die u wilt toevoegen aan de back-end-pool (bijvoorbeeld **VM1** of **VM2**).
+    1. Selecteer voor doel-VM de **virtuele machine** die u wilt toevoegen aan de back-end-pool (bijvoorbeeld **VM1** of **VM2**).
 
-    2. Voor **netwerk-IP-configuratie**selecteert u de IP-configuratie van de secundaire NIC voor de virtuele machine die u in de vorige stap hebt geselecteerd (bijvoorbeeld **VM1NIC2-ipconfig2** of **VM2NIC2-ipconfig2**).
+    2. Voor **netwerk-IP-configuratie** selecteert u de IP-configuratie van de secundaire NIC voor de virtuele machine die u in de vorige stap hebt geselecteerd (bijvoorbeeld **VM1NIC2-ipconfig2** of **VM2NIC2-ipconfig2**).
 
 7. Selecteer **OK**.
 
@@ -164,7 +163,7 @@ Configureer een status test voor uw load balancer:
 
 2. Selecteer de load balancer (**mylb**) waaraan u de status test wilt toevoegen.
 
-3. Onder **instellingen**selecteert u **status test**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
+3. Onder **instellingen** selecteert u **status test**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
 
 4. Typ een naam voor de status test (bijvoorbeeld **http**). Selecteer **OK**.
 
@@ -172,11 +171,11 @@ Configureer een status test voor uw load balancer:
 
 Configureer voor elke website (contoso.com en fabrikam.com) de taakverdelings regels:
     
-1. <a name="step6-1"></a>Klik onder **instellingen**op **taakverdelings regels**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
+1. <a name="step6-1"></a>Klik onder **instellingen** op **taakverdelings regels**. Selecteer in het volgende deel venster boven aan de bovenkant de optie **toevoegen**. 
 
-2. Typ bij **naam**een naam voor de taakverdelings regel (bijvoorbeeld **HTTPc** voor contoso.com of **HTTPf** voor fabrikam.com).
+2. Typ bij **naam** een naam voor de taakverdelings regel (bijvoorbeeld **HTTPc** voor contoso.com of **HTTPf** voor fabrikam.com).
 
-3. Selecteer bij **frontend-IP-adres**het front-end-IP-adres dat u eerder hebt gemaakt (bijvoorbeeld **contosofe** of **fabrikamfe**).
+3. Selecteer bij **frontend-IP-adres** het front-end-IP-adres dat u eerder hebt gemaakt (bijvoorbeeld **contosofe** of **fabrikamfe**).
 
 4. Voor **poort** -en **backend-poort**, behoud de standaard waarde **80**.
 

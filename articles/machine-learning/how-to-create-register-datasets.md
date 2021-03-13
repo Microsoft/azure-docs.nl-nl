@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: a8f1ca1da54c816199a0504eb17fa0a7bbfc441b
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 54b1fd14f97855dd42afde9a4bb34795373ff229
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102522186"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417634"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -182,9 +182,55 @@ titanic_ds.take(3).to_pandas_dataframe()
 
 Als u gegevens sets wilt hergebruiken en delen in experimenten in uw werk ruimte, moet [u uw gegevensset registreren](#register-datasets).
 
+## <a name="wrangle-data"></a>Wrangle-gegevens
+Nadat u uw gegevensset hebt gemaakt en [geregistreerd](#register-datasets) , kunt u deze in uw notebook laden voor gegevens wrangling en [onderzoek](#explore-data) voordat u een model training maakt. 
+
+Als u geen gegevens wrangling of onderzoek nodig hebt, raadpleegt u gegevens sets in uw trainings scripts gebruiken voor het indienen van ML-experimenten in [trein met gegevens sets](how-to-train-with-datasets.md).
+
+### <a name="filter-datasets-preview"></a>Gegevens sets filteren (preview-versie)
+Filter mogelijkheden zijn afhankelijk van het type gegevensset dat u hebt. 
+> [!IMPORTANT]
+> Het filteren van gegevens sets met de open bare preview-methode [`filter()`](/python/api/azureml-core/azureml.data.tabulardataset#filter-expression-) is een [experimentele](/python/api/overview/azure/ml/#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
+> 
+**Voor TabularDatasets** kunt u kolommen met de methoden [keep_columns ()](/python/api/azureml-core/azureml.data.tabulardataset#keep-columns-columns--validate-false-) en [drop_columns ()](/python/api/azureml-core/azureml.data.tabulardataset#drop-columns-columns-) bijeenhouden of verwijderen.
+
+Als u rijen wilt filteren op een bepaalde kolom waarde in een TabularDataset, gebruikt u de methode [filter ()](/python/api/azureml-core/azureml.data.tabulardataset#filter-expression-) (preview). 
+
+In de volgende voor beelden wordt een niet-geregistreerde gegevensset geretourneerd op basis van de opgegeven expressies.
+
+```python
+# TabularDataset that only contains records where the age column value is greater than 15
+tabular_dataset = tabular_dataset.filter(tabular_dataset['age'] > 15)
+
+# TabularDataset that contains records where the name column value contains 'Bri' and the age column value is greater than 15
+tabular_dataset = tabular_dataset.filter((tabular_dataset['name'].contains('Bri')) & (tabular_dataset['age'] > 15))
+```
+
+**In FileDatasets** correspondeert elke rij met een pad van een bestand, dus filteren op kolom waarde is niet nuttig. U kunt echter wel [() rijen filteren](/python/api/azureml-core/azureml.data.filedataset#filter-expression-) op meta gegevens zoals CreationTime, size, enzovoort.
+
+In de volgende voor beelden wordt een niet-geregistreerde gegevensset geretourneerd op basis van de opgegeven expressies.
+
+```python
+# FileDataset that only contains files where Size is less than 100000
+file_dataset = file_dataset.filter(file_dataset.file_metadata['Size'] < 100000)
+
+# FileDataset that only contains files that were either created prior to Jan 1, 2020 or where 
+file_dataset = file_dataset.filter((file_dataset.file_metadata['CreatedTime'] < datetime(2020,1,1)) | (file_dataset.file_metadata['CanSeek'] == False))
+```
+
+Een speciaal geval is een **gelabelde gegevens sets** die zijn gemaakt op basis van [gegevens label projecten](how-to-create-labeling-projects.md) . Deze gegevens sets zijn een type TabularDataset dat bestaat uit afbeeldings bestanden. Voor deze typen gegevens sets kunt u afbeeldingen [filteren ()](/python/api/azureml-core/azureml.data.tabulardataset#filter-expression-) op meta gegevens en op kolom waarden zoals `label` en `image_details` .
+
+```python
+# Dataset that only contains records where the label column value is dog
+labeled_dataset = labeled_dataset.filter(labeled_dataset['label'] == 'dog')
+
+# Dataset that only contains records where the label and isCrowd columns are True and where the file size is larger than 100000
+labeled_dataset = labeled_dataset.filter((labeled_dataset['label']['isCrowd'] == True) & (labeled_dataset.file_metadata['Size'] > 100000))
+```
+
 ## <a name="explore-data"></a>Gegevens verkennen
 
-Nadat u uw gegevensset hebt gemaakt en [geregistreerd](#register-datasets) , kunt u deze in uw notebook laden voor het verkennen van gegevens voorafgaand aan de model training. Als u geen gegevens meer hoeft te verkennen, raadpleegt u gegevens sets in uw trainings scripts gebruiken voor het indienen van ML-experimenten in [trein met gegevens sets](how-to-train-with-datasets.md).
+Wanneer u klaar bent met het wrangling van uw gegevens, kunt u uw gegevensset [registreren](#register-datasets) en deze vervolgens laden in uw notebook voor het verkennen van gegevens voorafgaand aan de model training.
 
 Voor FileDatasets kunt u uw gegevensset **koppelen** of **downloaden** en de python-bibliotheken Toep assen die u normaal gesp roken gebruikt voor het verkennen van gegevens. Meer [informatie over koppeling en down load](how-to-train-with-datasets.md#mount-vs-download).
 
@@ -261,7 +307,7 @@ titanic_ds = titanic_ds.register(workspace=workspace,
 
 ## <a name="create-datasets-using-azure-resource-manager"></a>Gegevens sets maken met behulp van Azure Resource Manager
 
-Er zijn een aantal sjablonen op [https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-dataset-create-*](https://github.com/Azure/azure-quickstart-templates/tree/master/) die kunnen worden gebruikt om gegevens sets te maken.
+Er zijn veel sjablonen op [https://github.com/Azure/azure-quickstart-templates/tree/master/101-machine-learning-dataset-create-*](https://github.com/Azure/azure-quickstart-templates/tree/master/) die kunnen worden gebruikt om gegevens sets te maken.
 
 Zie [een Azure Resource Manager sjabloon gebruiken om een werk ruimte voor Azure machine learning te maken](how-to-create-workspace-template.md)voor meer informatie over het gebruik van deze sjablonen.
 

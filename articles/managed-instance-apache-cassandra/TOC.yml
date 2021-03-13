@@ -9,6 +9,7 @@
     - name: Een cluster maken-Portal
       href: create-cluster-portal.md
     - name: Een cluster maken-CLI
+      displayName: 'az managed-cassandra, cluster, datacenter, connect'
       href: create-cluster-cli.md
     - name: Een hybride cluster configureren
       href: configure-hybrid-cluster.md
@@ -17,12 +18,14 @@
 - name: Concepten
   items:
     - name: Veelgestelde vragen
+      displayName: 'cost, region, monitor, backup'
       href: faq.md
     - name: Beheerd exemplaar versus Azure Cosmos DB Cassandra-API
       href: compare-cosmosdb-managed-instance.md
 - name: Instructiegidsen
   items:
     - name: Beheren met Azure CLI
+      displayName: 'az managed-cassandra, cluster, datacenter'
       href: manage-resources-cli.md
     - name: Metrische gegevens visualiseren in Prometheus met Grafana
       href: visualize-prometheus-grafana.md

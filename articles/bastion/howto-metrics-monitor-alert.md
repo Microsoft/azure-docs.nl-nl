@@ -6,14 +6,14 @@ services: bastion
 author: mialdrid
 ms.service: bastion
 ms.topic: how-to
-ms.date: 03/09/2021
+ms.date: 03/12/2021
 ms.author: mialdrid
-ms.openlocfilehash: dc16b9007c381f1bb0dce9332243842d8d4af9cd
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 3a5beba3938b5a845a378ede155f2f64e6baac7a
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103202554"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417940"
 ---
 # <a name="how-to-configure-monitoring-and-metrics-for-azure-bastion-using-azure-monitor"></a>Bewaking en metrische gegevens voor Azure Bastion configureren met behulp van Azure Monitor
 
@@ -72,7 +72,7 @@ U kunt geheugen gebruik weer geven voor elk Bastion-exemplaar, splitsen over elk
 
 #### <a name="session-count"></a>Aantal sessies
 
-U kunt het aantal actieve sessies per Bastion-exemplaar weer geven, geaggregeerd over elk sessie type (RDP en SSH). Elk Azure-Bastion kan een aantal actieve RDP-en SSH-sessies ondersteunen. Door deze metrische gegevens te controleren, kunt u zien of u het aantal exemplaren moet aanpassen dat de Bastion-service uitvoert. Raadpleeg de [Veelgestelde vragen over Azure Bastion](bastion-faq.md)voor meer informatie over het aantal sessies dat door Azure Bastion kan worden ondersteund. Raadpleeg [about Bastion sku's](bastion-connect-vm-scale-set.md)voor meer informatie over welke Bastion sku's het schalen van het exemplaar ondersteunen.
+U kunt het aantal actieve sessies per Bastion-exemplaar weer geven, geaggregeerd over elk sessie type (RDP en SSH). Elk Azure-Bastion kan een aantal actieve RDP-en SSH-sessies ondersteunen. Door deze metrische gegevens te controleren, kunt u zien of u het aantal exemplaren moet aanpassen dat de Bastion-service uitvoert. Raadpleeg de [Veelgestelde vragen over Azure Bastion](bastion-faq.md)voor meer informatie over het aantal sessies dat door Azure Bastion kan worden ondersteund.
 
 :::image type="content" source="./media/metrics-monitor-alert/session-count.png" alt-text="Scherm opname van aantal sessies.":::
 

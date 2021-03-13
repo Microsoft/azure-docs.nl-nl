@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, azla
 ms.topic: reference
-ms.date: 02/18/2021
-ms.openlocfilehash: 484ee9e67aa2adc11529f8a2239a813b3b12f7b2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/12/2021
+ms.openlocfilehash: 8093b61213c3e26b93df2a3f495e7efe0a61d523
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101702484"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103420031"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Naslag Gids voor het gebruik van functies in expressies voor Azure Logic Apps en energie automatisering
 
@@ -4708,16 +4708,22 @@ workflow().<property>
 
 | Parameter | Vereist | Type | Beschrijving |
 | --------- | -------- | ---- | ----------- |
-| <*eigenschap*> | Nee | Tekenreeks | De naam van de werk stroom eigenschap waarvan u de waarde wilt <p>Een werk stroom object heeft de volgende eigenschappen: **naam**, **type**, **id**, **locatie** en **uitvoeren**. De waarde van de **uitvoerings** eigenschap is ook een object met de volgende eigenschappen: **naam**, **type** en **id**. |
+| <*eigenschap*> | Nee | Tekenreeks | De naam van de werk stroom eigenschap waarvan u de waarde wilt <p><p>Standaard heeft een werk stroom object de volgende eigenschappen: `name` , `type` , `id` , `location` , `run` en `tags` . <p><p>-De `run` waarde van de eigenschap is een JSON-object dat de volgende eigenschappen bevat: `name` , `type` en `id` . <p><p>-De `tags` eigenschap is een JSON-object dat [Tags bevat die zijn gekoppeld aan uw logische app in azure Logic apps of stroom in automatische energie automatisering](../azure-resource-manager/management/tag-resources.md) en de waarden voor die tags. Raadpleeg voor meer informatie over tags in azure-bronnen [Label resources, resource groepen en abonnementen voor logische organisatie in azure](../azure-resource-manager/management/tag-resources.md). <p><p>**Opmerking**: standaard bevat een logische app geen tags, maar een stroom automatiseren stroom heeft de `flowDisplayName` `environmentName` labels en. |
 |||||
 
-*Voorbeeld*
+*Voorbeeld 1*
 
 In dit voor beeld wordt de naam van de huidige uitvoering van een werk stroom geretourneerd:
 
-```
-workflow().run.name
-```
+`workflow().run.name`
+
+*Voorbeeld 2*
+
+Als u energie automatisering gebruikt, kunt u een `@workflow()` expressie maken die de `tags` uitvoer eigenschap gebruikt om de waarden van uw stroom of eigenschap op te halen `flowDisplayName` `environmentName` .
+
+U kunt bijvoorbeeld aangepaste e-mail meldingen verzenden vanuit de stroom zelf die een koppeling naar uw stroom heeft. Deze meldingen kunnen een HTML-koppeling bevatten die de weergave naam van de stroom bevat in de titel van het e-mail bericht en volgt de volgende syntaxis:
+
+`<a href=https://flow.microsoft.com/manage/environments/@{workflow()['tags']['environmentName']}/flows/@{workflow()['name']}/details>Open flow @{workflow()['tags']['flowDisplayName']}</a>`
 
 <a name="xml"></a>
 

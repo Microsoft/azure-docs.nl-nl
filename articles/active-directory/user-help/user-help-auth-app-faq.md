@@ -12,12 +12,12 @@ ms.topic: end-user-help
 ms.date: 01/28/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 84dde96276414e98cbde05d6e046dce03227f60d
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 8ddc02075d2cdeba4a4fa83a2475ec20c3f18d6e
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100547856"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418076"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -260,7 +260,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **V**: zullen mijn werk nemers of studenten gebruikmaken van het automatisch invullen van wacht woorden in de verificator-app?
 
-**A**: Ja, automatisch door voeren is nu geschikt voor de meeste zakelijke gebruikers, zelfs wanneer een werk-of school account wordt toegevoegd aan de verificator-app. U kunt een formulier invullen om automatisch door voeren voor uw organisatie te configureren (toestaan of weigeren) en [dit te verzenden naar het verificator-team](https://aka.ms/ConfigureAutofillInAuthenticator).
+**A**: Ja, automatisch invullen voor uw [persoonlijke micro soft-accounts](https://go.microsoft.com/fwlink/?linkid=2144423) werkt nu voor de meeste zakelijke gebruikers, zelfs wanneer een werk-of school account wordt toegevoegd aan de verificator-app. U kunt een formulier invullen voor het toestaan of weigeren van automatisch invullen voor uw organisatie en het [naar het verificator team te verzenden](https://aka.ms/ConfigureAutofillInAuthenticator). Automatisch door voeren is momenteel niet beschikbaar voor werk-of school accounts.
 
 **V**: wordt het wacht woord voor het werk-of school account van mijn gebruikers automatisch gesynchroniseerd?
 

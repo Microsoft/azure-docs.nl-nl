@@ -6,12 +6,12 @@ ms.author: vimeht
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 245998fb7229c483fb7f664ea000b62abf07eda9
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.openlocfilehash: f7e12567269304b33a98ff1eb9727cfdf0afbdc4
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103149780"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418637"
 ---
 # <a name="device-update-for-azure-iot-hub-tutorial-using-the-package-agent-on-ubuntu-server-1804-x64"></a>Zelf studie over het bijwerken van apparaten voor Azure IoT Hub met behulp van de pakket agent op Ubuntu Server 18,04 x64
 
@@ -128,9 +128,11 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 ## <a name="import-update"></a>Update importeren
 
-1. Down load het volgende [apt-manifest bestand](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/libcurl4-doc-apt-manifest.json) en [Importeer het manifest bestand](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/sample-package-update-1.0.1-importManifest.json). In dit apt-manifest wordt de nieuwste beschik bare versie van `libcurl4-doc package` op uw apparaat geïnstalleerd.
+1. Ga in github naar updates voor het [apparaat](https://github.com/Azure/iot-hub-device-update/releases) en klik op de vervolg keuzelijst activa.
 
-   U kunt dit [apt-manifest bestand](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/libcurl4-doc-7.58-apt-manifest.json) ook downloaden en het [manifest bestand importeren](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/sample-package-update-2-2.0.1-importManifest.json). Hiermee wordt een specifieke versie v-7.58.0 van de `libcurl4-doc package` op uw apparaat geïnstalleerd.
+3. Down load de `apt-update-import-samples.zip` door erop te klikken.
+
+5. Pak de inhoud van de map uit om verschillende update voorbeelden en de bijbehorende import manifesten te detecteren. 
 
 2. Selecteer in Azure Portal de optie apparaat bijwerken onder Automatische Apparaatbeheer in de navigatie balk aan de linkerkant van uw IoT Hub.
 
@@ -138,7 +140,10 @@ Lees de licentie voorwaarden voordat u een pakket gebruikt. Uw installatie en he
 
 4. Selecteer + nieuwe update importeren.
 
-5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het import manifest dat u eerder hebt gedownload. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het apt-manifest update bestand dat u eerder hebt gedownload.
+5. Selecteer het mappictogram of het tekstvak onder ' Selecteer een manifest bestand voor importeren '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-package-update-1.0.1-importManifest.json` import manifest in de map die u eerder hebt gedownload. Selecteer vervolgens het mappictogram of het tekstvak onder ' Selecteer een of meer update bestanden '. U ziet een dialoog venster voor het kiezen van een bestand. Selecteer het `sample-1.0.1-libcurl4-doc-apt-manifest.json` apt-manifest update bestand in de map die u eerder hebt gedownload.
+Met deze update wordt de meest recente beschik bare versie van `libcurl4-doc package` op uw apparaat geïnstalleerd.
+
+   U kunt ook het `sample-package-update-2-2.0.1-importManifest.json` bestand manifest bestand importeren en `sample-2.0.1-libcurl4-doc-7.58-apt-manifest.json` apt manifest update in de map die u eerder hebt gedownload. Hiermee wordt een specifieke versie v-7.58.0 van de `libcurl4-doc package` op uw apparaat geïnstalleerd.
 
    :::image type="content" source="media/import-update/select-update-files.png" alt-text="Scherm opname van de selectie van update bestanden." lightbox="media/import-update/select-update-files.png":::
 
@@ -213,9 +218,9 @@ U hebt nu een voltooide end-to-end pakket update voltooid met update voor het bi
 
 ## <a name="bonus-steps"></a>Bonus stappen
 
-1. Down load het volgende [apt-manifest bestand](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/libcurl4-doc-remove-apt-manifest.json) en [Importeer het manifest bestand](https://github.com/Azure/iot-hub-device-update/tree/main/docs/sample-artifacts/sample-package-update-1.0.2-importManifest.json). Met dit apt-manifest wordt de installatie `libcurl4-doc package` van het apparaat verwijderd.
-
 1. De secties ' update importeren ' en ' update implementeren ' herhalen
+
+3. Selecteer tijdens de stap import update de optie `sample-package-update-1.0.2-importManifest.json` manifest bestand en `sample-1.0.2-libcurl4-doc-remove-apt-manifest.json` apt manifest update bestand importeren uit de map die u eerder hebt gedownload. Met deze update wordt de installatie `libcurl4-doc package` van het apparaat verwijderd.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

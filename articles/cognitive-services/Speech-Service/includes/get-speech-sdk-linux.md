@@ -4,16 +4,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: d0298bcd675b1b94999dab3a1ad1c40a6feb7438
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2466b9b9b812ae9fb590a6678d840661c74f47bd
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93135648"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103439034"
 ---
 :::row:::
     :::column span="3":::
-        De Speech SDK ondersteunt alleen **Ubuntu 16.04/18.04/20.04** , **Debian 9/10** , **Red Hat Enterprise Linux (RHEL) 7/8** en **CentOS 7/8** op de volgende doel architecturen wanneer deze worden gebruikt in combi natie met Linux:
+        De Speech SDK ondersteunt alleen **Ubuntu 16.04/18.04/20.04**, **Debian 9/10**, **Red Hat Enterprise Linux (RHEL) 7/8** en **CentOS 7/8** op de volgende doel architecturen wanneer deze worden gebruikt in combi natie met Linux:
     :::column-end:::
     :::column:::
         <br>
@@ -30,6 +30,9 @@ ms.locfileid: "93135648"
 
 > [!IMPORTANT]
 > Voor C# op Linux ARM64 is het .NET Core 3. x (DotNet-SDK-3. x-pakket) vereist.
+
+> [!NOTE]
+> Als u de Speech SDK in Alpine Linux wilt gebruiken, maakt u een Debian chroot-omgeving zoals beschreven in de Alpine Linux-wiki op [https://wiki.alpinelinux.org/wiki/Running_glibc_programs](running glibc programs) en volgt u vervolgens de Debian-instructies hier.
 
 ### <a name="system-requirements"></a>Systeemvereisten
 

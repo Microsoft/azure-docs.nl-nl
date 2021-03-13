@@ -1,14 +1,14 @@
 ---
 title: Aanbevolen beveiligingsprocedures
 description: Wanneer u Azure Lighthouse gebruikt, is het belang rijk om te overwegen voor beveiliging en toegangs beheer.
-ms.date: 08/12/2020
+ms.date: 03/12/2021
 ms.topic: conceptual
-ms.openlocfilehash: ef2c41cf052e5f79ecf4abf01c8f3fab3dd1de14
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 3aa50833b547882506bfad125992bb1c2f4e85bc
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843720"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419300"
 ---
 # <a name="recommended-security-practices"></a>Aanbevolen beveiligingsprocedures
 
@@ -17,11 +17,11 @@ Wanneer u [Azure Lighthouse](../overview.md)gebruikt, is het belang rijk om te o
 > [!TIP]
 > Deze aanbevelingen zijn ook van toepassing op [ondernemingen die meerdere tenants beheren](enterprise.md) met Azure Lighthouse.
 
-## <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication vereisen
+## <a name="require-azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication vereisen
 
 Met [Azure AD multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md) (ook wel verificatie in twee stappen genoemd) kunt u voor komen dat aanvallers toegang krijgen tot een account door meerdere verificatie stappen te vereisen. U moet Multi-Factor Authentication vereisen voor alle gebruikers in uw Tenant beheren, met inbegrip van gebruikers die toegang hebben tot gedelegeerde klanten resources.
 
-We raden u aan uw klanten te vragen om Azure AD-Multi-Factor Authentication ook in hun tenants te implementeren.
+U wordt aangeraden om uw klanten ook in te stellen om Azure AD-Multi-Factor Authentication te implementeren in hun tenants.
 
 ## <a name="assign-permissions-to-groups-using-the-principle-of-least-privilege"></a>Machtigingen toewijzen aan groepen met behulp van het principe van minimale bevoegdheden
 
@@ -47,5 +47,6 @@ Houd er rekening mee dat bij het opheffen van [klanten via een openbaar beheerd 
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Lees de [informatie over de beveiligings basislijn](../security-baseline.md) om te begrijpen hoe de richt lijnen van Azure Security van toepassing zijn op Azure Lighthouse.
 - [Azure AD-multi-factor Authentication implementeren](../../active-directory/authentication/howto-mfa-getstarted.md).
 - Meer informatie over [beheerervaring in meerdere tenants](cross-tenant-management-experience.md).

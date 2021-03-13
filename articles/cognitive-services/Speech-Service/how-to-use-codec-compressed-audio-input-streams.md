@@ -12,12 +12,12 @@ ms.date: 03/30/2020
 ms.author: amishu
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-twenty-two
-ms.openlocfilehash: 410c0942b9040a6707a51e4ff9f375b9d4728668
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 1e08203076de2073e39c5b5f5eb40b66c88490d7
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97821567"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417701"
 ---
 # <a name="use-codec-compressed-audio-input-with-the-speech-sdk"></a>Gecomprimeerde audio-invoer van codec gebruiken met de spraak-SDK
 
@@ -25,13 +25,14 @@ De Speech Service SDK **gecomprimeerde audio input stream** API biedt een manier
 
 Platform | Talen | Ondersteunde GStreamer-versie
 | :--- | ---: | :---:
-Windows (met uitzonde ring van UWP)  | C++, C#, Java, python | [1.15.1](https://gstreamer.freedesktop.org/releases/gstreamer/1.5.1.html)
+Windows (met uitzonde ring van UWP)  | C++, C#, Java, python | [1.18.3](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.3/)
 Linux  | C++, C#, Java, python | [ondersteunde Linux-distributies en doel architecturen](~/articles/cognitive-services/speech-service/speech-sdk.md)
-Android  | Java | [1.14.4](https://gstreamer.freedesktop.org/data/pkg/android/1.14.4/)
+Android  | Java | [1.18.3](https://gstreamer.freedesktop.org/data/pkg/android/1.18.3/)
 
 ## <a name="speech-sdk-version-required-for-compressed-audio-input"></a>Speech SDK-versie vereist voor gecomprimeerde audio-invoer
 * Speech SDK-versie 1.10.0 of hoger is vereist voor RHEL 8 en CentOS 8
 * Speech SDK versie 1.11.0 of hoger is vereist voor voor Windows.
+* Speech SDK versie 1.16.0 of hoger voor de nieuwste versie van gstreamer in Windows en Android.
 
 [!INCLUDE [supported-audio-formats](includes/supported-audio-formats.md)]
 

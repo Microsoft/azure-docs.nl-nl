@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 86e4bb52f2a97bf36dc4be86289bd513a9f05091
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: bb7769298940095900da25e61e13612b92bad00c
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99538252"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419096"
 ---
 # <a name="what-is-ipv6-for-azure-virtual-network"></a>Wat is IPv6 voor Azure Virtual Network?
 
@@ -77,8 +77,7 @@ De huidige virtuele netwerk versie van IPv6 voor Azure heeft de volgende beperki
 - IPv6 voor Azure Virtual Network is beschikbaar in alle wereld wijde regio's van de Verenigde Staten van Azure en met behulp van alle implementatie methoden.  
 - ExpressRoute-gateways kunnen worden gebruikt voor IPv4-verkeer in een VNET waarvoor IPv6 is ingeschakeld.  Ondersteuning voor IPv6-verkeer vindt u op ons schema.   
 - VPN-gateways kunnen niet worden gebruikt in een VNET waarbij IPv6 is ingeschakeld, hetzij rechtstreeks of gelijkwaardig met ' UseRemoteGateway '.
-- Het Azure-platform (AKS, enzovoort) biedt geen ondersteuning voor IPv6-communicatie voor containers.  
-- IPv6 kan alleen worden verdeeld over de primaire netwerk interface (NIC) op Azure-Vm's. Taak verdeling van IPv6-verkeer naar secundaire Nic's wordt niet ondersteund.    
+- Het Azure-platform (AKS, enzovoort) biedt geen ondersteuning voor IPv6-communicatie voor containers. 
 - Alleen IPv6-Virtual Machines of Virtual Machines schaal sets worden niet ondersteund. elke NIC moet ten minste één IPv4 IP-configuratie bevatten. 
 - Bij het toevoegen van IPv6 aan bestaande IPv4-implementaties kunnen IPv6-bereiken niet worden toegevoegd aan een VNET met bestaande bronnen navigatie koppelingen.  
 - Forward DNS voor IPv6 wordt vandaag ondersteund voor de open bare Azure-DNS, maar omgekeerde DNS wordt nog niet ondersteund.   

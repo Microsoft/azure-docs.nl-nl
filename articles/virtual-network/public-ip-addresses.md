@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: f2818965013e44cbbe3202887bf79a737dbbbb58
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: ffdd673cc8a357a7156fb3b3e932c524c831db15
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806953"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418059"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -54,7 +54,7 @@ Standaard-SKU open bare IP-adressen:
 - Hebben een aanpasbare time-out voor inactiviteit van de stroom met inkomende gegevens van 4-30 minuten (de standaardwaarde is vier minuten), en een vaste time-out voor inactiviteit van de stroom met uitgaande gegevens van vier minuten.
 - Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](./network-security-groups-overview.md#network-security-groups)toestaan.
 - Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Kan zone-redundante (op te maken van alle drie zones), zonegebonden (gegarandeerd in een specifieke vooraf geselecteerde beschikbaarheids zone) of geen zone (niet gekoppeld aan een specifieke vooraf geselecteerde beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](../availability-zones/az-region.md) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
+- Kan worden zone-redundant (geadverteerd van alle drie de zones), zonegebonden (gegarandeerd in een specifieke vooraf geselecteerde beschikbaarheids zone) of geen zone (niet gekoppeld aan een specifieke vooraf geselecteerde beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](../availability-zones/az-region.md) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
 - Kan worden gebruikt als anycast frontend-Ip's voor [meerdere regio's load balancers](../load-balancer/cross-region-overview.md) (Preview-functionaliteit).
  
 > [!NOTE]
@@ -162,14 +162,17 @@ Zie [Standaard-SKU's van Azure Load Balancer](../load-balancer/load-balancer-ove
 * Virtuele netwerken van Azure.
 * On-premises netwerk (en). 
 
-Er wordt een openbaar IP-adres toegewezen aan de VPN Gateway om communicatie met het externe netwerk mogelijk te maken. U kunt alleen een *dynamisch* openbaar IP-adres uit de Basic-SKU toewijzen aan een VPN-gateway.
+Er wordt een openbaar IP-adres toegewezen aan de VPN Gateway om communicatie met het externe netwerk mogelijk te maken. 
+
+* Wijs een **dynamisch** openbaar IP-adres toe aan een VPNGW 1-5 sku's-front-end-configuratie.
+* Wijs een **statisch** standaard openbaar IP-adres toe aan een VPNGWAZ 1-5 sku's-front-end-configuratie.
 
 ## <a name="application-gateways"></a>Toepassingsgateways
 
 U kunt een openbaar IP-adres koppelen aan een Azure-[toepassingsgateway](../application-gateway/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) door het toe te wijzen aan de **front-end**-configuratie van de gateway. 
 
 * Wijs een **dynamisch** , algemeen openbaar IP-adres toe aan een Application Gateway v1-front-end-configuratie. 
-* Wijs een **statisch** standaard-SKU-adres toe aan een v2-front-end-configuratie.
+* Wijs een **statisch** standaard openbaar IP-adres toe aan een v2-front-end-configuratie.
 
 ## <a name="azure-firewall"></a>Azure Firewall
 

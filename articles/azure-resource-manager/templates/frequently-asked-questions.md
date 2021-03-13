@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 03/03/2021
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 24baa0dc7444f632040ddaf9fcc2266f9e4ccae5
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: e64253aa79cfaeb2655bb091d038dc7c98b198bd
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036137"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419402"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Veelgestelde vragen over ARM-sjablonen
 
@@ -100,7 +100,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Resource Man
 
 * **Kunt u een hulp programma voor het converteren van mijn JSON-sjablonen naar de taal van de nieuwe sjabloon bieden?**
 
-  Ja. Zie [JSON decompileren op Bicep](compare-template-syntax.md#decompile-json-to-bicep).
+  Ja. Zie [arm-sjablonen converteren tussen JSON en Bicep](bicep-decompile.md).
 
 ## <a name="template-specs"></a>Sjabloonspecificaties
 

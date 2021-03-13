@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/04/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 372342611265640a2a64100f003880a430d61ca0
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 4b708e80bf335ba8bdce074285857a6f8b77b972
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620937"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103439157"
 ---
 In de preview-versie heeft NFS de volgende beperkingen:
 
@@ -25,6 +25,7 @@ In de preview-versie heeft NFS de volgende beperkingen:
 - Alleen beschikbaar voor de Premium-laag.
 - NFS-shares accepteren alleen numerieke UID/GID. Als u wilt voor komen dat uw clients alfanumerieke UID/GID verzenden, moet u ID-toewijzing uitschakelen.
 - Shares kunnen alleen worden gekoppeld vanuit één opslag account op een afzonderlijke virtuele machine, wanneer persoonlijke koppelingen worden gebruikt. Poging om shares te koppelen van andere opslag accounts, mislukt.
+- U kunt het beste gebruikmaken van de machtigingen die zijn toegewezen aan de primaire groep. De machtigingen die zijn toegewezen aan de niet-primaire groep van de gebruiker kunnen er soms toe leiden dat de toegang wordt geweigerd vanwege een bekende fout.
 
 ### <a name="azure-storage-features-not-yet-supported"></a>Azure Storage functies die nog niet worden ondersteund
 

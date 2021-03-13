@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 7b9ae52a0d62da6a8637f63f15d8680b54aeefd1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0531305364b3e6f914a6de00614a3f9af4be3531
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101688566"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418773"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
 
@@ -74,6 +74,18 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure App Service te 
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 Azure Arc enabled Kubernetes ondersteunt momenteel de [toegewezen identiteit](../../azure-arc/kubernetes/connect-cluster.md#azure-arc-agents-for-kubernetes)van het systeem. Het beheerde service-identiteits certificaat wordt gebruikt door alle Azure Arc enabled Kubernetes-agents voor communicatie met Azure.
+
+### <a name="azure-arc-enabled-servers"></a>Servers met Azure Arc
+
+| Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
+| --- | :-: | :-: | :-: | :-: |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+
+Op alle servers van Azure Arc is een systeem toegewezen identiteit ingesteld. U kunt de door het systeem toegewezen identiteit niet uitschakelen of wijzigen op een Azure Arc-server. Raadpleeg de volgende bronnen voor meer informatie over het gebruiken van beheerde identiteiten op servers met Azure-Arc:
+
+- [Verifiëren met Azure-resources met servers waarop Arc is ingeschakeld](../../azure-arc/servers/managed-identity-authentication.md)
+- [Een beheerde identiteit gebruiken met servers waarop Arc is ingeschakeld](../../azure-arc/servers/security-overview.md#using-a-managed-identity-with-arc-enabled-servers)
 
 ### <a name="azure-automanage"></a>Azure Automanage
 

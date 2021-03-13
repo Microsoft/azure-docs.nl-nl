@@ -1,14 +1,14 @@
 ---
 title: Hybride infra structuur op schaal beheren met Azure Arc
 description: Meer informatie over het effectief beheren van de computers en Kubernetes-clusters van uw klanten buiten Azure.
-ms.date: 09/22/2020
+ms.date: 03/12/2021
 ms.topic: how-to
-ms.openlocfilehash: 66a798265683045d7ff9f3d8d811141800d08f9b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec32389cd7444405580530a00c8b7c5bc48bcd56
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336612"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419317"
 ---
 # <a name="manage-hybrid-infrastructure-at-scale-with-azure-arc"></a>Hybride infra structuur op schaal beheren met Azure Arc
 
@@ -18,9 +18,9 @@ Als service provider hebt u mogelijk meerdere tenants voor klanten in [Azure Lig
 
 Met [Azure Arc-servers](../../azure-arc/servers/overview.md)kunnen klanten alle Windows-en Linux-machines beheren die buiten Azure worden gehost op hun bedrijfs netwerk, op dezelfde manier als waarop ze systeem eigen virtuele machines van Azure beheren. Door een hybride computer aan Azure te koppelen, wordt deze verbonden en wordt deze behandeld als een resource in Azure. Service providers kunnen vervolgens deze niet-Azure-machines beheren samen met de Azure-resources van hun klanten.
 
-Met [Azure Arc enabled Kubernetes (preview)](../../azure-arc/kubernetes/overview.md) kunnen klanten Kubernetes-clusters binnen of buiten Azure aansluiten en configureren. Wanneer een Kubernetes-cluster is gekoppeld aan Azure-Arc, wordt het weer gegeven in de Azure Portal, met een Azure Resource Manager-ID en een beheerde identiteit. Clusters zijn gekoppeld aan standaardabonnementen in Azure, bevinden zich in een resourcegroep, en kunnen labels ontvangen zoals elke andere Azure-resource.
+Met [Azure Arc enabled Kubernetes](../../azure-arc/kubernetes/overview.md) kunnen klanten Kubernetes-clusters binnen of buiten Azure aansluiten en configureren. Wanneer een Kubernetes-cluster is gekoppeld aan Azure-Arc, wordt het weer gegeven in de Azure Portal, met een Azure Resource Manager-ID en een beheerde identiteit. Clusters zijn gekoppeld aan standaardabonnementen in Azure, bevinden zich in een resourcegroep, en kunnen labels ontvangen zoals elke andere Azure-resource.
 
-In dit onderwerp vindt u een overzicht van hoe service providers Azure Arc ingeschakelde servers en Kubernetes (preview) van Azure Arc kunnen gebruiken op een schaal bare manier om de hybride omgeving van hun klanten te beheren, met zicht baarheid van alle beheerde tenants van klanten.
+In dit onderwerp vindt u een overzicht van hoe service providers Azure Arc-servers en Azure Arc-Kubernetes kunnen gebruiken op een schaal bare manier om de hybride omgeving van hun klanten te beheren, met zicht baarheid in alle beheerde tenants van de klant.
 
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, is deze richt lijn ook van toepassing op [ondernemingen die Azure Lighthouse gebruiken om meerdere tenants te beheren](../concepts/enterprise.md).
@@ -33,10 +33,7 @@ Wanneer u resources weergeeft voor een gedelegeerd abonnement in de Azure Portal
 
 U kunt er bijvoorbeeld voor [zorgen dat dezelfde set beleids regels wordt toegepast op hybride computers van klanten](../../azure-arc/servers/learn/tutorial-assign-policy-portal.md). U kunt Azure Security Center ook gebruiken om de naleving van alle hybride omgevingen van uw klanten te bewaken of [Azure monitor gebruiken om gegevens rechtstreeks van uw hybride computers te verzamelen](../../azure-arc/servers/learn/tutorial-enable-vm-insights.md) in een log Analytics-werk ruimte. [Extensies voor virtuele machines](../../azure-arc/servers/manage-vm-extensions.md) kunnen worden geïmplementeerd op niet-Azure Windows-en Linux-vm's, waardoor het beheer van de hybride machines van de klant wordt vereenvoudigd.
 
-## <a name="manage-hybrid-kubernetes-clusters-at-scale-with-azure-arc-enabled-kubernetes-preview"></a>Hybride Kubernetes-clusters op schaal beheren met Azure-Arc ingeschakeld Kubernetes (preview-versie)
-
-> [!NOTE]
-> Azure Arc enabled Kubernetes is momenteel beschikbaar als preview-versie. Het is op dit moment niet aanbevolen om dit te doen voor productie werkbelastingen.
+## <a name="manage-hybrid-kubernetes-clusters-at-scale-with-azure-arc-enabled-kubernetes"></a>Hybride Kubernetes-clusters op schaal beheren met Azure-Arc ingeschakeld Kubernetes
 
 U kunt Kubernetes-clusters beheren die zijn [verbonden met het abonnement van een klant met Azure Arc](../../azure-arc/kubernetes/connect-cluster.md), net alsof ze in azure werden uitgevoerd.
 
@@ -48,9 +45,8 @@ U kunt ook verbonden clusters bewaken met Azure Monitor en [Azure Policy gebruik
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Bekijk de gestarte en voor beelden in de [Azure Arc github-opslag plaats](https://github.com/microsoft/azure_arc). 
+- Bekijk de gestarte en voor beelden in de [Azure Arc github-opslag plaats](https://github.com/microsoft/azure_arc).
 - Meer informatie over [ondersteunde scenario's voor Azure Arc-servers](../../azure-arc/servers/overview.md#supported-scenarios).
 - Meer informatie over [Kubernetes-distributies die worden ondersteund door Azure Arc](../../azure-arc/kubernetes/overview.md#supported-kubernetes-distributions).
 - Meer informatie over het [implementeren van een beleid op schaal](policy-at-scale.md).
 - Meer informatie over het [gebruik van Azure monitor-logboeken op schaal](monitor-at-scale.md).
-

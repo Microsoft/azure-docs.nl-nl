@@ -6,13 +6,13 @@ ms.author: jlian
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 02/12/2021
-ms.openlocfilehash: 27552b2c39f2d1e5d9cc1719a9cc2944e088773a
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.date: 03/12/2021
+ms.openlocfilehash: 539e420cb9085fad10ea3972ba0e9e5ffb9d0622
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100517124"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419759"
 ---
 # <a name="managing-public-network-access-for-your-iot-hub"></a>Open bare netwerk toegang beheren voor uw IoT-hub
 
@@ -29,6 +29,10 @@ Als u de toegang tot alleen [het persoonlijke eind punt voor uw IOT-hub in uw VN
 :::image type="content" source="media/iot-hub-publicnetworkaccess/turn-off-public-network-access.png" alt-text="Afbeelding met Azure Portal waar open bare netwerk toegang wordt uitgeschakeld" lightbox="media/iot-hub-publicnetworkaccess/turn-off-public-network-access.png":::
 
 Als u open bare netwerk toegang wilt inschakelen, selecteert u **alle netwerken** en vervolgens **Opslaan**.
+
+## <a name="accessing-the-iot-hub-after-disabling-public-network-access"></a>Toegang tot de IoT Hub na het uitschakelen van open bare netwerk toegang
+
+Nadat open bare netwerk toegang is uitgeschakeld, is de IoT Hub alleen toegankelijk via [het VNet-persoonlijke eind punt met behulp van een persoonlijke Azure-koppeling](virtual-network-support.md). Deze beperking omvat het openen via Azure Portal, omdat API-aanroepen naar de IoT Hub-service direct worden gemaakt met uw referenties via uw browser. 
 
 ## <a name="iot-hub-endpoint-ip-address-and-ports-after-disabling-public-network-access"></a>IoT Hub-eind punt, IP-adres en poorten na het uitschakelen van de toegang tot het open bare netwerk
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: 621cfa8977d4d0ed987b7d38407bbf5bbb370950
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: 9ff98a2613143474afd6041ccf52d4eb509d646b
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103232733"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418875"
 ---
 # <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
 
@@ -141,7 +141,7 @@ Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of 
 
 + Volg deze velden op beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document.
 
-Als er slechts één veld is opgegeven, gebruikt u een beschrijvende veld waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat. Om ervoor te zorgen dat tijdig wordt verwerkt, worden alleen de eerste 20.000-tokens van de gezamenlijke inhoud van searchFields een semantische evaluatie en classificatie.
+Als er slechts één veld is opgegeven, gebruikt u een beschrijvende veld waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat. Om ervoor te zorgen dat de verwerking tijdig verloopt, worden alleen de 8.000-tokens van de gezamenlijke inhoud van searchFields als semantische evaluatie en classificatie ondergaan.
 
 #### <a name="step-3-remove-orderby-clauses"></a>Stap 3: orderBy-componenten verwijderen
 

@@ -6,13 +6,13 @@ ms.author: susabat
 ms.reviewer: susabat
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 12/03/2020
-ms.openlocfilehash: d96c467807af868c07be12f52d913f881b82f732
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 03/12/2021
+ms.openlocfilehash: 4be015b1a8ba4b6fc6ea3acc74318f9a8b298e8e
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175869"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418093"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
@@ -178,19 +178,21 @@ Azure Resource Manager beperkt de sjabloon grootte tot 4 MB. Beperk de grootte v
 
 Voor kleine tot middelgrote oplossingen is één sjabloon eenvoudiger te begrijpen en te onderhouden. U kunt alle resources en waarden in één bestand bekijken. Voor geavanceerde scenario's kunt u met gekoppelde sjablonen de oplossing opsplitsen in de beoogde onderdelen. Voer de best practice uit [met behulp van gekoppelde en geneste sjablonen](../azure-resource-manager/templates/linked-templates.md?tabs=azure-powershell).
 
-### <a name="cannot-connect-to-git-enterprise"></a>Kan geen verbinding maken met GIT Enter prise 
+### <a name="cannot-connect-to-git-enterprise-cloud"></a>Kan geen verbinding maken met een GIT Enter prise-Cloud 
 
 ##### <a name="issue"></a>Probleem
 
-U kunt geen verbinding maken met een GIT-onderneming vanwege machtigings problemen. U ziet fout als **422-entiteit** die niet kan worden verwerkt.
+U kunt geen verbinding maken met een GIT-bedrijfs Cloud vanwege machtigings problemen. U ziet fout als **422-entiteit** die niet kan worden verwerkt.
 
 #### <a name="cause"></a>Oorzaak
 
-U hebt OAuth voor ADF niet geconfigureerd. De URL is onjuist geconfigureerd.
+* U gebruikt Git Enter prise on-premises server. 
+* U hebt OAuth voor ADF niet geconfigureerd. 
+* De URL is onjuist geconfigureerd.
 
 ##### <a name="resolution"></a>Oplossing
 
-U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de organisatie (s) van de klant. Bijvoorbeeld: ADF probeert eerst... *https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .* en mislukt. Vervolgens wordt het geprobeerd *https://hostname/api/v3/orgs/ <org> / <repo> ...* en slaagt. 
+U verleent eerst OAuth-toegang tot ADF. Vervolgens moet u de juiste URL gebruiken om verbinding te maken met een GIT-onderneming. De configuratie moet worden ingesteld op de organisatie (s) van de klant. Voor beeld: ADF probeert eerst *https://hostname/api/v3/search/repositories?q=user%3 <customer credential> .* ... op het eerste en mislukt. Vervolgens wordt het geprobeerd *https://hostname/api/v3/orgs/ <org> / <repo> ...* en slaagt. 
  
 ### <a name="recover-from-a-deleted-data-factory"></a>Herstellen van een verwijderde data factory
 

@@ -2,13 +2,13 @@
 title: Syntaxis van Azure Resource Manager sjablonen in JSON en Bicep vergelijken
 description: Vergelijkt Azure Resource Manager sjablonen die zijn ontwikkeld met JSON en Bicep en laat zien hoe u kunt converteren tussen de talen.
 ms.topic: conceptual
-ms.date: 03/03/2021
-ms.openlocfilehash: 29c2b9948957ebc10a26f22f0fe3daf383dfe5ba
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/12/2021
+ms.openlocfilehash: 85f85e66e69eede68bab847e4bc68514e65115eb
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036211"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418042"
 ---
 # <a name="comparing-json-and-bicep-for-templates"></a>JSON en Bicep vergelijken voor sjablonen
 
@@ -40,42 +40,7 @@ Als u bekend bent met het gebruik van JSON voor het ontwikkelen van ARM-sjablone
 * Gebruik een consistente behuizing voor id's. Als u niet zeker weet welk type behuizing u moet gebruiken, kunt u Camel-behuizing proberen. Bijvoorbeeld `param myCamelCasedParameter string`.
 * Voeg alleen een beschrijving toe aan een para meter als de beschrijving essentiële informatie voor gebruikers bevat. U kunt `//` opmerkingen voor bepaalde informatie gebruiken.
 
-## <a name="decompile-json-to-bicep"></a>JSON decompileren op Bicep
-
-De Bicep CLI biedt een opdracht voor het decompileren van een bestaande ARM-sjabloon in een Bicep-bestand. Gebruik voor het decompileren van een JSON-bestand: `bicep decompile "path/to/file.json"`
-
-Met deze opdracht wordt een start punt geboden voor Bicep-ontwerp, maar de opdracht werkt niet voor alle sjablonen. De opdracht kan mislukken of u moet mogelijk problemen oplossen na de decompilatie. Op dit moment kunnen geneste sjablonen alleen worden ontcompileerd als ze het evaluatie bereik ' binnenste ' gebruiken.
-
-U kunt de sjabloon voor een resource groep exporteren en deze vervolgens rechtstreeks door geven aan de opdracht Bicep decompile. In het volgende voor beeld ziet u hoe u een geëxporteerde sjabloon decompileert.
-
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-
-```azurecli
-az group export --name "your_resource_group_name" > main.json
-bicep decompile main.json
-```
-
-# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
-
-```azurepowershell
-Export-AzResourceGroup -ResourceGroupName "your_resource_group_name" -Path ./main.json
-bicep decompile main.json
-```
-
-# <a name="portal"></a>[Portal](#tab/azure-portal)
-
-[Exporteer de sjabloon](export-template-portal.md) via de portal. Gebruiken `bicep decompile <filename>` op het gedownloade bestand.
-
----
-
-## <a name="build-json-from-bicep"></a>JSON maken op basis van Bicep
-
-De Bicep CLI biedt ook een opdracht om Bicep te converteren naar JSON. Als u een JSON-bestand wilt maken, gebruikt u: `bicep build "path/to/file.json"`
-
-## <a name="side-by-side-view"></a>Weer gave naast elkaar
-
-Met de [Bicep Playground](https://aka.ms/bicepdemo) kunt u GELIJKWAARDIGe JSON-en Bicep-bestanden naast elkaar weer geven. U kunt een voorbeeld sjabloon selecteren om beide versies weer te geven. Of selecteer `Decompile` om uw eigen JSON-sjabloon te uploaden en het equivalente Bicep-bestand weer te geven.
-
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Bicep-zelf studie](./bicep-tutorial-create-first-bicep.md)voor meer informatie over de Bicep.
+* Zie [Bicep-zelf studie](./bicep-tutorial-create-first-bicep.md)voor meer informatie over de Bicep.
+* Zie [arm-sjablonen converteren tussen JSON en Bicep](bicep-decompile.md)voor meer informatie over het converteren van sjablonen tussen de talen.

@@ -7,12 +7,12 @@ author: vikancha-MSFT
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: vikancha
-ms.openlocfilehash: b7418825b4f22bfe4fe1941cb1f70ffb9f0a939b
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: d73bd81f15263c79e16b574eb961d4ae0ac61175
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102609206"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103417804"
 ---
 # <a name="ncast4_v3-series"></a>NCasT4_v3-series 
 
@@ -46,6 +46,8 @@ NVIDIA NVLink Interconnect: ondersteund<br>
 Als u gebruik wilt maken van de GPU-mogelijkheden van Azure NCasT4_v3-serie Vm's waarop Windows of Linux wordt uitgevoerd, moeten de NVIDIA GPU-Stuur Programma's zijn geïnstalleerd.
 
 Als u de NVIDIA GPU-Stuur Programma's hand matig wilt installeren, raadpleegt u [N-Series GPU-stuur programma-installatie voor Windows](./windows/n-series-driver-setup.md) voor ondersteunde besturings systemen, stuur Programma's, installatie en verificaties tappen.
+
+Met de uitbrei ding van het Azure NVIDIA GPU-stuur programma worden CUDA-Stuur Programma's geïmplementeerd op de Vm's van de NCasT4_v3 serie. Voor grafische en visualisatie werk belastingen installeert u hand matig de raster Stuur Programma's die door Azure worden ondersteund.
 
 ## <a name="other-sizes"></a>Andere grootten
 

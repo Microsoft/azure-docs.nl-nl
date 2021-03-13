@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 8e97fe287335837ad79e6446bb7abf196cda6f75
-  ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+  ms.openlocfilehash: be3cbee5bee706bc10036349950c3b128d007a34
+  ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 02/03/2021
-  ms.locfileid: "99508113"
+  ms.lasthandoff: 03/13/2021
+  ms.locfileid: "103419623"
 highlightedContent:
   items:
   - title: Wat is de Speech-service?
@@ -44,7 +44,7 @@ conceptualContent:
       text: Aan de slag met spraak-naar-tekst
       url: get-started-speech-to-text.md
     - itemType: overview
-      text: Over Custom Speech
+      text: Nauwkeurigheid verbeteren met Custom Speech
       url: custom-speech-overview.md
     footerLink:
       text: Meer
@@ -60,6 +60,12 @@ conceptualContent:
     - itemType: how-to-guide
       text: Synthese verbeteren met SSML
       url: speech-synthesis-markup.md
+    - itemType: overview
+      text: Een aangepaste stem maken
+      url: custom-neural-voice.md
+    - itemType: how-to-guide
+      text: Tekst-naar-spraak-geluid natuurlijk maken
+      url: how-to-audio-content-creation.md
     footerLink:
       text: Meer
       url: index-text-to-speech.yml
@@ -74,20 +80,6 @@ conceptualContent:
     footerLink:
       text: Meer
       url: index-speech-translation.yml
-  - title: Intentieherkenning
-    links:
-    - itemType: quickstart
-      text: Spraak, intenties en entiteiten herkennen
-      url: quickstarts/intent-recognition.md
-    - itemType: how-to-guide
-      text: Spraakintenties herkennen met LUIS en C#
-      url: how-to-recognize-intents-from-speech-csharp.md
-    - itemType: reference
-      text: Language Understanding-portal (LUIS)
-      url: https://www.luis.ai
-    footerLink:
-      text: Meer
-      url: index-intent-recognition.yml
   - title: Speaker Recognition
     links:
     - itemType: overview
@@ -107,6 +99,20 @@ conceptualContent:
     - itemType: quickstart
       text: Aan de slag met Aangepast sleutelwoord
       url: custom-keyword-basics.md
+  - title: Intentieherkenning
+    links:
+    - itemType: quickstart
+      text: Spraak, intenties en entiteiten herkennen
+      url: quickstarts/intent-recognition.md
+    - itemType: how-to-guide
+      text: Spraakintenties herkennen met LUIS en C#
+      url: how-to-recognize-intents-from-speech-csharp.md
+    - itemType: reference
+      text: Language Understanding-portal (LUIS)
+      url: https://www.luis.ai
+    footerLink:
+      text: Meer
+      url: index-intent-recognition.yml
   - title: Uitgebreide scenario's
     links:
     - itemType: overview

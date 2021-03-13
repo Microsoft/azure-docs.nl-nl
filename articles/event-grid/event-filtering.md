@@ -3,12 +3,12 @@ title: Gebeurtenis filtering voor Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen filtert bij het maken van een Azure Event Grid-abonnement.
 ms.topic: conceptual
 ms.date: 03/04/2021
-ms.openlocfilehash: 94445341891149d5d02c7f33caef20bf45123e9b
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: fa63296f97bfa888cb0f425d0c03a5e4a7e46525
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102197772"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419844"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Gebeurtenis filters begrijpen voor Event Grid-abonnementen
 
@@ -355,6 +355,7 @@ FOR_EACH filter IN (a, b, c)
         IF key CONTAINS filter
             FAIL_MATCH
 ```
+Zie de sectie [beperkingen](#limitations) voor huidige beperking van deze operator.
 
 ## <a name="stringbeginswith"></a>StringBeginsWith
 De operator **StringBeginsWith** evalueert naar waar als de **sleutel** waarde **begint met** een van de opgegeven **filter** waarden. In het volgende voor beeld wordt gecontroleerd of de waarde van het `key1` kenmerk in de `data` sectie begint met `event` of `grid` . `event hubs`Begint bijvoorbeeld met `event` .  
@@ -634,6 +635,7 @@ Geavanceerde filtering heeft de volgende beperkingen:
 * 5 geavanceerde filters en 25 filter waarden voor alle filters per Event grid-abonnement
 * 512 tekens per teken reeks waarde
 * Vijf waarden voor **in** en **niet in** Opera tors
+* De `StringNotContains` operator is momenteel niet beschikbaar in de portal.
 * Sleutels met een teken **`.` (punt)** . Bijvoorbeeld: `http://schemas.microsoft.com/claims/authnclassreference` of `john.doe@contoso.com` . Er is momenteel geen ondersteuning voor Escape tekens in sleutels. 
 
 Dezelfde sleutel kan in meer dan één filter worden gebruikt.

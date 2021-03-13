@@ -286,6 +286,8 @@
           items:
             - name: Aangepaste vaardigheden integreren
               href: cognitive-search-custom-skill-interface.md
+            - name: Aangepaste vaardig heden uitschalen
+              href: cognitive-search-custom-skill-scale.md
             - name: Voorbeeld - Azure Functions (Python)
               href: cognitive-search-custom-skill-python.md
             - name: Voorbeeld - Azure Functions

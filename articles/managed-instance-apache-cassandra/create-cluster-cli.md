@@ -6,12 +6,12 @@ ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
-ms.openlocfilehash: 28599c08f25533e042c03612d035912a8d0f17c0
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: 6de2e0f1744b333a830fbe500e2df51e7eaca62d
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225367"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419069"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-using-azure-cli-preview"></a>Quick Start: een door Azure beheerd exemplaar maken voor Apache Cassandra-cluster met behulp van Azure CLI (preview)
 
@@ -26,12 +26,12 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-* Voor dit artikel is de Azure CLI-versie 2.12.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
-
 * [Azure Virtual Network](../virtual-network/virtual-networks-overview.md) met connectiviteit voor uw zelf-hostende of on-premises omgeving. Zie het artikel [een on-premises netwerk verbinden met Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/) voor meer informatie over het verbinden van on-premises omgevingen met Azure.
 
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
+> [!IMPORTANT]
+> Voor dit artikel is de Azure CLI-versie 2.12.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-managed-instance-cluster"></a><a id="create-cluster"></a>Een beheerd exemplaar cluster maken
 

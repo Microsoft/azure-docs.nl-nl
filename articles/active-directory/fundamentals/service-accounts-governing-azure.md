@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4311d0acc7c417bf31c71f46e6c25c65312b894d
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: ee6ac21d67f32fbc61db19b348fc29cdf3ee9fd7
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034525"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103418178"
 ---
 # <a name="governing-azure-ad-service-accounts"></a>Azure AD-service accounts beheren
 
@@ -172,7 +172,7 @@ Stel een beoordelings proces in om ervoor te zorgen dat service accounts regel m
 
 **De processen voor het ongedaan maken van de inrichting moeten de volgende taken bevatten.**
 
-1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](../reports-monitoring/concept-all-sign-ins.md#sign-ins-report) en de toegang tot bronnen door het service account.
+1. Zodra de inrichting van de bijbehorende toepassing of het script is opheffen, controleert u de [aanmeldingen](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins#sign-ins-report) en de toegang tot bronnen door het service account.
 
    * Als het account nog steeds actief is, bepaalt u hoe het wordt gebruikt voordat u de volgende stappen uitvoert.
  

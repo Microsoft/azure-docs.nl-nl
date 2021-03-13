@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 56ec893de159f4c8a90c5a229ccf7669856fb066
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e77bbd6e82d0d4a48b72e13e60b60608f2d7674
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89020215"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419588"
 ---
 # <a name="how-to-process-and-extract-information-from-images-in-ai-enrichment-scenarios"></a>Informatie over het verwerken en extra heren van afbeeldingen in AI-verrijkings scenario's
 
@@ -88,7 +88,7 @@ Wanneer de *imageAction* is ingesteld op een andere waarde dan ' geen ', bevat h
 ]
 ```
 
-## <a name="image-related-skills"></a>Image-gerelateerde vaardig heden
+## <a name="image-related-skills"></a>Aan afbeeldingen gerelateerde vaardig heden
 
 Er zijn twee ingebouwde cognitieve vaardig heden die afbeeldingen als invoer maken: [OCR](cognitive-search-skill-ocr.md) en [afbeeldings analyse](cognitive-search-skill-image-analysis.md). 
 
@@ -213,6 +213,77 @@ Als helper moet u het volgende algoritme gebruiken als u genormaliseerde coördi
             return original;
         }
 ```
+## <a name="passing-images-to-custom-skills"></a>Afbeeldingen door geven aan aangepaste vaardig heden
+
+Voor scenario's waarin u een aangepaste vaardigheid nodig hebt om aan afbeeldingen te werken, kunt u afbeeldingen door geven aan de aangepaste vaardigheid en er tekst of afbeeldingen als resultaat geven. De installatie kopie van het python-voor [beeld](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Image-Processing) -verwerking illustreert de werk stroom. De volgende vaardig heden zijn afkomstig uit het voor beeld.
+
+In de volgende vaardig heden wordt gebruikgemaakt van de genormaliseerde afbeelding (verkregen tijdens het kraken van documenten) en worden segmenten van de afbeelding uitgevoerd.
+
+#### <a name="sample-skillset"></a>Voor beeld-vaardig heden
+```json
+{
+  "description": "Extract text from images and merge with content text to produce merged_text",
+  "skills":
+  [
+    {
+          "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+          "name": "ImageSkill",
+          "description": "Segment Images",
+          "context": "/document/normalized_images/*",
+          "uri": "https://your.custom.skill.url",
+          "httpMethod": "POST",
+          "timeout": "PT30S",
+          "batchSize": 100,
+          "degreeOfParallelism": 1,
+          "inputs": [
+            {
+              "name": "image",
+              "source": "/document/normalized_images/*"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "slices",
+              "targetName": "slices"
+            }
+          ],
+          "httpHeaders": {}
+        }
+  ]
+}
+```
+
+#### <a name="custom-skill"></a>Aangepaste vaardigheid
+
+De aangepaste vaardigheid zelf is extern voor de vaardig heden. In dit geval is de python-code die de eerste keer de batch met aanvraag records in de aangepaste vaardigheids indeling herhaalt en vervolgens de base64-gecodeerde teken reeks converteert naar een afbeelding.
+
+```python
+# deserialize the request, for each item in the batch
+for value in values:
+  data = value['data']
+  base64String = data["image"]["data"]
+  base64Bytes = base64String.encode('utf-8')
+  inputBytes = base64.b64decode(base64Bytes)
+  # Use numpy to convert the string to an image
+  jpg_as_np = np.frombuffer(inputBytes, dtype=np.uint8)
+  # you now have an image to work with
+```
+Net als bij het retour neren van een afbeelding retourneert een base64-gecodeerde teken reeks binnen een JSON-object met een `$type` eigenschap van `file` .
+
+```python
+def base64EncodeImage(image):
+    is_success, im_buf_arr = cv2.imencode(".jpg", image)
+    byte_im = im_buf_arr.tobytes()
+    base64Bytes = base64.b64encode(byte_im)
+    base64String = base64Bytes.decode('utf-8')
+    return base64String
+
+ base64String = base64EncodeImage(jpg_as_np)
+ result = { 
+  "$type": "file", 
+  "data": base64String 
+}
+```
 
 ## <a name="see-also"></a>Zie ook
 + [Indexeer functie maken (REST)](/rest/api/searchservice/create-indexer)
@@ -221,3 +292,4 @@ Als helper moet u het volgende algoritme gebruiken als u genormaliseerde coördi
 + [Tekst samenvoegings vaardigheid](cognitive-search-skill-textmerger.md)
 + [Een vaardig heden definiëren](cognitive-search-defining-skillset.md)
 + [Verrijkte velden toewijzen](cognitive-search-output-field-mapping.md)
++ [Installatie kopieën door geven aan aangepaste vaardig heden](https://github.com/Azure-Samples/azure-search-python-samples/tree/master/Image-Processing)

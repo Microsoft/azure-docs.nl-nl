@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: overview
 ms.date: 11/30/2020
-ms.openlocfilehash: 77da3406897c31e48d808541f1f9d579eb0a9cb7
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 3fadfa9d4467209ddbe997afabba27a3752f685d
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401539"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419929"
 ---
 # <a name="what-is-azure-purview"></a>Wat is Azure Purview?
 
@@ -69,6 +69,9 @@ Nadat u een gegevensbron hebt geregistreerd, kunt u de metagegevens ervan verrij
 Het primaire doel van het registreren van de bronnen is het detecteren en begrijpen van gegevensbronnen en het gebruik ervan. Zakelijke gebruikers hebben mogelijk gegevens nodig voor bedrijfsinformatie, ontwikkeling van toepassingen, data science of een andere taak waarbij de juiste gegevens vereist zijn. Ze gebruiken de detectiefunctie van de gegevenscatalogus om snel te zoeken naar gegevens die ze nodig hebben, de gegevens te beoordelen op geschiktheid. Ze gebruiken de gegevens door het openen van de gegevensbron in een hulpprogramma naar keuze.
 
 Tegelijkertijd kunnen gebruikers bijdragen aan de catalogus door tags, documentatie en aantekeningen te maken voor gegevensbronnen die al zijn geregistreerd. Ze kunnen ook nieuwe gegevensbronnen registreren, die vervolgens worden gevonden, begrepen en gebruikt door de community van catalogusgebruikers.
+
+## <a name="in-region-data-residency"></a>Gegevenslocatie in uw regio
+Azure controle sfeer liggen verplaatst of slaat geen klant gegevens op uit de regio waarin deze is geïmplementeerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,12 +4,12 @@ description: Controleer uw web- en werkrollen op een effectieve manier met Appli
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: 1f9204534fcdfbf7c393eaafdbae62c4c4321f2f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 264d6d4b0b397a29b5dc1db4bb299297c1e30584
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573867"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419232"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights voor Azure Cloud Services
 [Application Insights][start] kunt [Azure Cloud service-apps](https://azure.microsoft.com/services/cloud-services/) bewaken voor Beschik baarheid, prestaties, fouten en gebruik door gegevens van Application Insights sdk's te combi neren met [Azure Diagnostics](../agents/diagnostics-extension-overview.md) gegevens uit uw Cloud Services. Op basis van de feedback die u krijgt over de prestaties en de effectiviteit van uw app tijdens het gebruik, kunt u weldoordachte beslissingen nemen over de richting van het ontwerp in elke fase van de ontwikkelingslevenscyclus.
@@ -52,9 +52,8 @@ De telemetrie van uw app wordt opgeslagen, geanalyseerd en weer gegeven in een A
 Elke resource behoort tot een resourcegroep. Resource groepen worden gebruikt voor het beheren van kosten, het verlenen van toegang aan team leden en het implementeren van updates in één gecoördineerde trans actie. U kunt bijvoorbeeld [een script schrijven om](../../azure-resource-manager/templates/deploy-powershell.md) een Azure-Cloud service en het Application Insights bewakings bronnen in één bewerking te implementeren.
 
 ### <a name="resources-for-components"></a>Resources voor onderdelen
-U kunt het beste een afzonderlijke resource maken voor elk onderdeel van uw app. Dat wil zeggen dat u een resource maakt voor elke webrol en werk rollen. U kunt elk onderdeel afzonderlijk analyseren, maar u maakt een [dash board](./overview-dashboard.md) waarin de belangrijkste grafieken van alle onderdelen worden gecombineerd, zodat u ze in één weer gave kunt vergelijken en controleren. 
 
-Een alternatieve methode is het verzenden van de telemetrie van meer dan één rol naar dezelfde resource, maar [u kunt een dimensie-eigenschap toevoegen aan elk telemetrie-item](./api-filtering-sampling.md#addmodify-properties-itelemetryinitializer) dat de bijbehorende bron functie identificeert. In deze benadering wordt in metrische grafieken, zoals uitzonde ringen, normaal gesp roken een aggregatie van de aantallen van de verschillende rollen weer gegeven, maar u kunt de grafiek zo nodig met de rol-id segmenteren. U kunt Zoek opdrachten ook filteren op dezelfde dimensie. Dit alternatief maakt het een beetje eenvoudiger om alles tegelijk te bekijken, maar kan ook leiden tot Verwar ring tussen de rollen.
+We raden u [aan een dimensie-eigenschap toe te voegen aan elk telemetrie-item](./api-filtering-sampling.md#addmodify-properties-itelemetryinitializer) dat de bijbehorende bron functie identificeert. In deze benadering wordt in metrische grafieken, zoals uitzonde ringen, normaal gesp roken een aggregatie van de aantallen van de verschillende rollen weer gegeven, maar u kunt de grafiek zo nodig met de rol-id segmenteren. U kunt Zoek opdrachten ook filteren op dezelfde dimensie. Dit alternatief maakt het een beetje eenvoudiger om alles tegelijk te bekijken, maar kan ook leiden tot Verwar ring tussen de rollen.
 
 Telemetrie van de browser wordt gewoonlijk opgenomen in dezelfde resource als de gegevens van de webrol op de server.
 

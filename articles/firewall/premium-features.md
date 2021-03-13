@@ -5,14 +5,15 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: conceptual
-ms.date: 03/08/2021
+ms.date: 03/12/2021
 ms.author: victorh
-ms.openlocfilehash: a3f72d235d6c52ce91ae351c2606ee6cf4285159
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.custom: references_regions
+ms.openlocfilehash: 22ee920c38a8cacaf37a1e3a6cfc5165dfa0bb44
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453424"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419946"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -100,6 +101,44 @@ of
 
 U kunt een aanvraag indienen bij [https://aka.ms/azfw-webcategories-request](https://aka.ms/azfw-webcategories-request) .
  
+## <a name="supported-regions"></a>Ondersteunde regio’s
+
+Azure Firewall Premium Preview wordt ondersteund in de volgende regio's:
+
+- Europa-west (openbaar/Europa)
+- VS-Oost (openbaar/Verenigde Staten)
+- Australië-oost (openbaar/Australië)
+- Zuidoost-Azië (openbaar/Azië en Stille Oceaan)
+- UK-zuid (openbaar/Verenigd Konink rijk)
+- Europa-noord (openbaar/Europa)
+- VS-Oost 2 (openbaar/Verenigde Staten)
+- VS Zuid-Centraal (openbaar/Verenigde Staten)
+- VS-West 2 (openbaar/Verenigde Staten)
+- VS-West (openbaar/Verenigde Staten)
+- VS-centraal (openbaar/Verenigde Staten)
+- Noord-Centraal VS (openbaar/Verenigde Staten)
+- Japan-Oost (openbaar/Japan)
+- Azië-oost (openbaar/Azië en Stille Oceaan)
+- Canada-centraal (openbaar/Canada)
+- Frankrijk-centraal (openbaar/Frank rijk)
+- Zuid-Afrika-noord (openbaar/Zuid-Afrika)
+- UAE-noord (openbaar/VAE)
+- Zwitserland-noord (openbaar/Zwitser land)
+- Brazilië-zuid (openbaar/Brazilië)
+- Noor wegen-Oost (openbaar/Noor wegen)
+- Australië-centraal (openbaar/Australië)
+- Australië-centraal 2 (openbaar/Australië)
+- Australië-zuidoost (openbaar/Australië)
+- Canada-oost (openbaar/Canada)
+- Centrale VS-EUAP (openbaar/Canarische (VS))
+- Frankrijk-zuid (openbaar/Frank rijk)
+- Japan-West (openbaar/Japan)
+- Korea-zuid (openbaar/Korea)
+- UAE-centraal (openbaar/VAE)
+- UK-west (openbaar/Verenigd Konink rijk)
+- VS-West-Centraal (openbaar/Verenigde Staten)
+- India-West (openbaar/India)
+
 
 ## <a name="known-issues"></a>Bekende problemen
 

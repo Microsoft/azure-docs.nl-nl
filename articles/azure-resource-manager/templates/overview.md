@@ -2,13 +2,13 @@
 title: Overzicht van sjablonen
 description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
-ms.date: 03/08/2021
-ms.openlocfilehash: 3a144b69f69c90b997b17d9526c9c3e0f259c554
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.date: 03/12/2021
+ms.openlocfilehash: 14bcbbd7a7ae7315dbb8e9d3e7e44ce0ffe0a4b4
+ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102455732"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "103419980"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -19,6 +19,10 @@ Om aan deze uitdagingen te voldoen, kunt u implementaties automatiseren en de in
 Gebruik Azure Resource Manager sjablonen (ARM-sjablonen) om de infra structuur te implementeren als code voor uw Azure-oplossingen. De sjabloon is een JavaScript Object Notation-bestand (JSON) waarmee de infra structuur en configuratie voor uw project worden gedefinieerd. De sjabloon gebruikt een declaratieve syntaxis. Dit is een syntaxis waarmee u kunt aangeven wat u wilt implementeren zonder hiervoor de nodige reeks programmeeropdrachten te hoeven maken. In de sjabloon geeft u de resources op die u wilt implementeren en de eigenschappen voor deze resources.
 
 We hebben een nieuwe taal geïntroduceerd voor het ontwikkelen van ARM-sjablonen. De taal heeft de naam Bicep en is momenteel beschikbaar als preview-versie. Bicep en JSON-sjablonen bieden dezelfde mogelijkheden. U kunt de sjabloon tussen de twee talen converteren. Bicep biedt een syntaxis die eenvoudiger is te gebruiken voor het maken van sjablonen. Zie [Wat is Bicep (preview)?](bicep-overview.md)voor meer informatie.
+
+Zie de volgende video voor meer informatie over hoe u aan de slag kunt met ARM-sjablonen.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Enablement/How-and-why-to-learn-about-ARM-templates/player]
 
 ## <a name="why-choose-arm-templates"></a>Waarom kiest u ARM-sjablonen?
 

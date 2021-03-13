@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/03/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 02fd6c1d4cbd1c2db287a38e086045042b5f220a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e477e4bb3b31477f9407e981d4c8da2340411f55
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309540"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615734"
 ---
 # <a name="move-data-from-a-sql-server-database-to-sql-database-with-azure-data-factory"></a>Gegevens verplaatsen van een SQL Server Data Base naar SQL Database met Azure Data Factory
 
@@ -87,7 +87,7 @@ De stapsgewijze procedure voor het maken van gekoppelde services vindt u in [gek
 Maak tabellen waarmee de structuur, locatie en beschik baarheid van de gegevens sets worden opgegeven met de volgende procedures op basis van een script. JSON-bestanden worden gebruikt voor het definiëren van de tabellen. Zie [gegevens sets](../../data-factory/concepts-datasets-linked-services.md)voor meer informatie over de structuur van deze bestanden.
 
 > [!NOTE]
-> U moet de `Add-AzureAccount` cmdlet uitvoeren voordat u de cmdlet [New-AzureDataFactoryTable](/previous-versions/azure/dn835096(v=azure.100)) uitvoert om te bevestigen dat het juiste Azure-abonnement is geselecteerd voor het uitvoeren van de opdracht. Zie [add-AzureAccount](/powershell/module/servicemanagement/azure.service/add-azureaccount?view=azuresmps-3.7.0)voor documentatie van deze cmdlet.
+> U moet de `Add-AzureAccount` cmdlet uitvoeren voordat u de cmdlet [New-AzureDataFactoryTable](/previous-versions/azure/dn835096(v=azure.100)) uitvoert om te bevestigen dat het juiste Azure-abonnement is geselecteerd voor het uitvoeren van de opdracht. Zie [add-AzureAccount](/powershell/module/servicemanagement/azure.service/add-azureaccount)voor documentatie van deze cmdlet.
 >
 >
 
@@ -138,7 +138,7 @@ De tabel definitie voor de SQL Server is opgegeven in het volgende JSON-bestand:
 
 De kolom namen zijn hier niet opgenomen. U kunt de kolom namen subselecteren door deze hier op te nemen (Zie het onderwerp [ADF-documentatie](../../data-factory/copy-activity-overview.md) voor meer informatie.
 
-Kopieer de JSON-definitie van de tabel naar een bestand met de naam *onpremtabledef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\onpremtabledef.jsop* ). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
+Kopieer de JSON-definitie van de tabel naar een bestand met de naam *onpremtabledef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\onpremtabledef.jsop*). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
 
 ```azurepowershell
 New-AzureDataFactoryTable -ResourceGroupName ADFdsprg -DataFactoryName ADFdsp –File C:\temp\onpremtabledef.json
@@ -173,7 +173,7 @@ De definitie voor de tabel voor de blob van de uitvoer is als volgt (Hiermee wor
 }
 ```
 
-Kopieer de JSON-definitie van de tabel naar een bestand met de naam *bloboutputtabledef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\bloboutputtabledef.jsop* ). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
+Kopieer de JSON-definitie van de tabel naar een bestand met de naam *bloboutputtabledef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\bloboutputtabledef.jsop*). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
 
 ```azurepowershell
 New-AzureDataFactoryTable -ResourceGroupName adfdsprg -DataFactoryName adfdsp -File C:\temp\bloboutputtabledef.json
@@ -207,7 +207,7 @@ De definitie voor de tabel voor de SQL Azure uitvoer bevindt zich in het volgend
 }
 ```
 
-Kopieer de JSON-definitie van de tabel naar een bestand met de naam *AzureSqlTable.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\AzureSqlTable.jsop* ). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
+Kopieer de JSON-definitie van de tabel naar een bestand met de naam *AzureSqlTable.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\AzureSqlTable.jsop*). Maak de tabel in ADF met de volgende Azure PowerShell-cmdlet:
 
 ```azurepowershell
 New-AzureDataFactoryTable -ResourceGroupName adfdsprg -DataFactoryName adfdsp -File C:\temp\AzureSqlTable.json
@@ -294,7 +294,7 @@ Met behulp van de tabel definities die eerder zijn opgegeven, wordt de pijplijn 
 }
 ```
 
-Kopieer deze JSON-definitie van de pijp lijn naar een bestand met de naam *pipelinedef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\pipelinedef.jsop* ). Maak de pijp lijn in ADF met de volgende Azure PowerShell-cmdlet:
+Kopieer deze JSON-definitie van de pijp lijn naar een bestand met de naam *pipelinedef.jsin* het bestand en sla het op een bekende locatie op (dit wordt waarschijnlijk *C:\temp\pipelinedef.jsop*). Maak de pijp lijn in ADF met de volgende Azure PowerShell-cmdlet:
 
 ```azurepowershell
 New-AzureDataFactoryPipeline  -ResourceGroupName adfdsprg -DataFactoryName adfdsp -File C:\temp\pipelinedef.json

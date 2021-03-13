@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/24/2020
-ms.openlocfilehash: e429b87397b91de28f7fea14729b0d18187fa8ff
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 99a8e331e265e686d1de06f8143d2345e51143f1
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102031375"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102612997"
 ---
 # <a name="connect-operations-manager-to-azure-monitor"></a>Operations Manager verbinden met Azure Monitor
 
@@ -99,6 +99,10 @@ Om ervoor te zorgen dat de beveiliging van gegevens die onderweg zijn Azure Moni
 ## <a name="connecting-operations-manager-to-azure-monitor"></a>Operations Manager verbinding maken met Azure Monitor
 
 Voer de volgende stappen uit om uw Operations Manager-beheergroep te verbinden met een van uw Log Analytics-werkruimten.
+
+> [!NOTE]
+> Als u ziet dat Log Analytics gegevens niet meer beschikbaar zijn in van een specifieke agent of beheer server, kunt u proberen om de Winsock-catalogus opnieuw in te stellen (gebruik `netsh winsock reset` ) en vervolgens de server opnieuw op te starten. Als de Winsock-catalogus opnieuw wordt ingesteld, kunnen netwerk verbindingen worden hersteld die zijn verbroken.
+
 
 Tijdens de eerste registratie van uw Operations Manager-beheer groep met een Log Analytics-werk ruimte is de optie om de proxy configuratie voor de beheer groep op te geven niet beschikbaar in de operations-console.  Deze optie is pas beschikbaar als de beheergroep bij de service is geregistreerd.  Als u dit wilt omzeilen, moet u de systeem proxy configuratie bijwerken met behulp van Netsh op het systeem waarop de operations-console wordt uitgevoerd om de integratie te configureren en alle beheerser vers in de beheer groep.  
 

@@ -7,12 +7,12 @@ ms.author: andyriv
 ms.date: 2/16/2021
 ms.topic: tutorial
 ms.service: iot-hub-device-update
-ms.openlocfilehash: 1501153b73683081dfac0684d6714eb537c03380
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 0128d0de4f078b62bc9571c8758d80cb26585354
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664626"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102615377"
 ---
 # <a name="microsoft-connected-cache-preview-deployment-scenario-sample-two-level-nested-azure-iot-edge-gateway-with-outbound-unauthenticated-proxy"></a>Voor beeld van micro soft Connected cache preview Deployment scenario: geneste Azure IoT Edge gateway op twee niveaus met uitgaande niet-geverifieerde proxy
 
@@ -70,7 +70,7 @@ In het onderstaande diagram wordt het scenario beschreven waarbij één Azure Io
 ## <a name="child-gateway-configuration"></a>Configuratie van onderliggende gateway
 
 >[!Note]
->Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Raadpleeg voor meer informatie [zelf studie: een hiërarchie van IOT edge apparaten maken-Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-nested-iot-edge?view=iotedge-2020-11&tabs=azure-portal#deploy-modules-to-the-lower-layer-device&preserve-view=true) voor meer informatie.
+>Als u containers in uw eigen persoonlijke REGI ster hebt gebruikt in uw configuratie, moet u een wijziging aanbrengen in de configuratie. toml-instellingen en runtime-instellingen in de module-implementatie. Raadpleeg voor meer informatie [zelf studie: een hiërarchie van IOT edge apparaten maken-Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-nested-iot-edge?view=iotedge-2020-11&tabs=azure-portal&preserve-view=true#deploy-modules-to-the-lower-layer-device) voor meer informatie.
 
 1. Wijzig het pad naar de afbeelding voor de Edge-agent, zoals wordt getoond in het volgende voor beeld:
 

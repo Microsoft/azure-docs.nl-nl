@@ -3,14 +3,14 @@ title: De integratie van broncode beheer in Azure Automation gebruiken
 description: In dit artikel wordt uitgelegd hoe u Azure Automation broncode beheer synchroniseert met andere opslag plaatsen.
 services: automation
 ms.subservice: process-automation
-ms.date: 11/12/2020
+ms.date: 03/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: e7a6b6d3e753352820cdcb910dcbfa9362793493
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 281da27ce95649e85dae5d0795bb743f21fdb578
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99050767"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102631741"
 ---
 # <a name="use-source-control-integration"></a>Integratie van bronbeheer gebruiken
 
@@ -30,7 +30,7 @@ Azure Automation ondersteunt drie typen broncode beheer:
 
 * Een broncode beheer bibliotheek (GitHub of Azure opslag plaatsen)
 * Een [uitvoeren als-account](automation-security-overview.md#run-as-accounts)
-* De [meest recente Azure-modules](automation-update-azure-modules.md) in uw Automation-account, inclusief de `Az.Accounts` module (AZ module equivalent van `AzureRM.Profile` )
+* De [ `AzureRM.Profile` module](/powershell/module/azurerm.profile/) moet worden geïmporteerd in uw Automation-account. Houd er rekening mee dat de equivalente AZ-module ( `Az.Accounts` ) niet werkt met het besturings element voor automatiserings bronnen.
 
 > [!NOTE]
 > Synchronisatie taken voor broncode beheer worden uitgevoerd onder het Automation-account van de gebruiker en worden gefactureerd tegen hetzelfde aantal als andere Automation-taken.
@@ -62,7 +62,7 @@ Gebruik deze procedure voor het configureren van broncode beheer met behulp van 
     |Mappad     | De map die de runbooks bevat die moeten worden gesynchroniseerd, bijvoorbeeld **/Runbooks**. Alleen runbooks in de opgegeven map worden gesynchroniseerd. Recursie wordt niet ondersteund.        |
     |Automatische synchronisatie<sup>1</sup>     | Instelling waarmee automatische synchronisatie wordt in-of uitgeschakeld wanneer een door Voer in de bron beheer opslagplaats wordt gemaakt.        |
     |Runbook publiceren     | Instelling van op als runbooks automatisch worden gepubliceerd na synchronisatie vanuit broncode beheer, en anders uit.           |
-    |Description     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
+    |Beschrijving     | Tekst waarin aanvullende details over het broncode beheer worden opgegeven.        |
 
     <sup>1</sup> als u automatische synchronisatie wilt inschakelen bij het configureren van de integratie van broncode beheer met Azure opslag plaatsen, moet u een project beheerder zijn.
 

@@ -3,12 +3,12 @@ title: Actie regels voor Azure Monitor waarschuwingen
 description: Meer informatie over actie regels in Azure Monitor zijn en hoe u deze kunt configureren en beheren.
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 07d179f557671a515a7933b64a25e6d41f75219b
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 1a86493b4b478e8ebc75545bf80dafa425132fe4
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102045612"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015995"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
@@ -61,19 +61,25 @@ Kies eerst het bereik (Azure-abonnement, resource groep of doel resource). U kun
 
 ### <a name="filter-criteria"></a>Filter criteria
 
-U kunt ook filters definiëren om ze te beperken tot een specifieke subset van de waarschuwingen.
+U kunt desgewenst filters definiëren zodat de regel van toepassing is op een specifieke subset van de waarschuwingen of op specifieke gebeurtenissen op elke waarschuwing (bijvoorbeeld alleen ' geactiveerd ' of alleen ' opgelost ').
 
 De beschikbare filters zijn:
 
-* **Ernst**: de optie voor het selecteren van een of meer waarschuwings ernst. **Ernst = Sev1** betekent dat de actie regel van toepassing is op alle waarschuwingen die zijn ingesteld op Sev1.
-* **Bewakings service**: een filter op basis van de oorspronkelijke bewakings service. Dit filter is ook meervoudige selectie. Bijvoorbeeld: de **controle service = "Application Insights"** betekent dat de actie regel van toepassing is voor alle waarschuwingen op basis van Application Insights.
-* **Resource type**: een filter op basis van een specifiek resource type. Dit filter is ook meervoudige selectie. Bijvoorbeeld, **resource type = "virtual machines"** betekent dat de actie regel van toepassing is voor alle virtuele machines.
-* **Waarschuwings regel-id**: een optie om te filteren op specifieke waarschuwings regels met behulp van de resource manager-id van de waarschuwings regel.
-* **Bewakings voorwaarde**: een filter voor waarschuwings exemplaren die worden **geactiveerd** of **omgezet** als de monitor voorwaarde.
-* **Beschrijving**: een regex (reguliere expressie) die overeenkomt met een teken reeks die overeenkomt met de beschrijving, gedefinieerd als onderdeel van de waarschuwings regel. De **Beschrijving bevat bijvoorbeeld ' Prod '** die overeenkomt met alle waarschuwingen die de teken reeks ' Prod ' in hun beschrijvingen bevatten.
-* **Waarschuwings context (Payload)**: een matching-overeenkomst die een teken reeks overeenkomst definieert op basis van de waarschuwings context velden van de nettolading van een waarschuwing. Bijvoorbeeld: **waarschuwings context (Payload) bevat ' computer-01 '** komt overeen met alle waarschuwingen waarvan de nettolading de teken reeks ' computer-01 ' bevatten.
+* **Ernst**: deze regel is alleen van toepassing op waarschuwingen met de geselecteerde ernst.  
+Bijvoorbeeld ' **Ernst = Sev1** ' betekent dat de regel alleen van toepassing is op waarschuwingen met de ernst Sev1.
+* **Service bewaken**: deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van de geselecteerde bewakings Services.  
+Bijvoorbeeld: de **controle service = "Azure backup"** betekent dat de regel alleen van toepassing is op back-upwaarschuwingen (afkomstig van Azure backup).
+* **Resource type**: deze regel is alleen van toepassing op waarschuwingen voor de geselecteerde resource typen.  
+Bijvoorbeeld, **resource type = "virtual machines"** betekent dat de regel alleen van toepassing is op waarschuwingen op virtuele machines.
+* **Waarschuwings regel-id**: deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van een specifieke waarschuwings regel. De waarde moet de Resource Manager-ID van de waarschuwings regel zijn.  
+Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/ResourceGroup1/providers/Microsoft.Insights/metricalerts/MyAPI-highLatency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn uit de regel ' MyAPI-highLatency '.
+* **Bewakings voorwaarde**: deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde, ofwel **geactiveerd** of **opgelost**.
+* **Beschrijving**: deze regel is alleen van toepassing op waarschuwingen die een specifieke teken reeks in het veld Beschrijving van waarschuwing bevatten. Dit veld bevat de beschrijving van de waarschuwings regel.  
+De **Beschrijving bevat bijvoorbeeld ' Prod '** , zodat de regel alleen overeenkomt met waarschuwingen die de teken reeks ' Prod ' in de beschrijving bevatten.
+* **Waarschuwings context (Payload)**: deze regel is alleen van toepassing op waarschuwingen die een of meer specifieke waarden bevatten in de context velden van de waarschuwing.  
+Bijvoorbeeld: **waarschuwings context (Payload) bevat ' computer-01 '** betekent dat de regel alleen van toepassing is op waarschuwingen waarvan de payload de teken reeks ' computer-01 ' bevat.
 
-Deze filters worden in combi natie met elkaar toegepast. Als u bijvoorbeeld **resource type = virtual machines** en **Ernst = Sev0** hebt ingesteld, hebt u gefilterd op alle **Sev0** -waarschuwingen op uw virtuele machines.
+Als u meerdere filters in een regel instelt, zijn deze allemaal van toepassing. Als u bijvoorbeeld **resource type = virtual machines** en **Ernst = Sev0** instelt, is de regel alleen van toepassing op Sev0-waarschuwingen op virtuele machines.
 
 ![Actie regel filters](media/alerts-action-rules/action-rules-new-rule-creation-flow-filters.png)
 

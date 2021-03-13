@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/27/2021
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 61ba50f8ec9e1de18238160b23096670753cffd6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 275afc504a5e7b92ae3274c02372eee6b488c782
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367500"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616397"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Zelfstudie: HTTPS op een aangepast Azure CDN-domein configureren
 
@@ -356,6 +356,11 @@ In de volgende tabel wordt de bewerkingsvoortgang weergegeven die plaatsvindt na
 7. *Hoe werkt het vernieuwen van certificaten met Bring Your Own Certificate?*
 
     Upload uw nieuwe certificaat naar Azure-sleutel kluis om ervoor te zorgen dat er een nieuwere certificaat wordt geïmplementeerd op de PoP-infra structuur. Kies in uw TLS-instellingen op Azure CDN de nieuwste certificaat versie en selecteer Opslaan. Azure CDN zal vervolgens uw nieuwe bijgewerkte certificaat doorgeven. 
+
+8. *Moet ik HTTPS opnieuw inschakelen nadat het eind punt opnieuw is opgestart?*
+
+    Ja. Als u **Azure CDN van Akamai** gebruikt en het eind punt wordt gestopt en opnieuw wordt opgestart, moet u de https-instelling opnieuw inschakelen als de instelling eerder actief was.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

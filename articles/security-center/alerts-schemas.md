@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/19/2020
 ms.author: memildin
-ms.openlocfilehash: 7778607b533a836eb5a47a12b73374c2a8299621
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 55f8d37d435aa8adeb4d97246ce7b2c7811140be
+ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590572"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102557995"
 ---
 # <a name="security-alerts-schemas"></a>Schema's voor beveiligings waarschuwingen
 
@@ -140,7 +140,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 
 ### <a name="the-data-model-of-the-schema"></a>Het gegevens model van het schema
 
-|Veld|Description|
+|Veld|Beschrijving|
 |----|----|
 |**detailhandelkanalen**|Constante, ' bewerking '|
 |**correlationId**|De meldings-ID Azure Security Center|
@@ -173,7 +173,7 @@ U kunt de gebeurtenissen voor beveiligings waarschuwingen in het activiteiten lo
 
 Microsoft Graph is de gateway naar gegevens en intelligentie in Microsoft 365. Het biedt een uniform programmeerbaar model dat u kunt gebruiken voor toegang tot de enorme hoeveelheid gegevens in Microsoft 365, Windows 10 en Enterprise Mobility + Security. Gebruik de schat aan gegevens in Microsoft Graph om apps te bouwen voor organisaties en consumenten die met miljoenen gebruikers communiceren.
 
-Het schema en een JSON-weer gave voor beveiligings waarschuwingen die naar MS Graph worden verzonden, zijn beschikbaar in [de Microsoft Graph documentatie](/graph/api/resources/alert?preserve-view=true&view=graph-rest-1.0).
+Het schema en een JSON-weer gave voor beveiligings waarschuwingen die naar MS Graph worden verzonden, zijn beschikbaar in [de Microsoft Graph documentatie](/graph/api/resources/alert).
 
 ---
 

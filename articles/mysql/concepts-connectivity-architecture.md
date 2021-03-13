@@ -6,12 +6,12 @@ ms.author: bahusse
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 2/11/2021
-ms.openlocfilehash: 3ec582a429008fc073f68cbc9795e264d6814ccb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 263d27f4236ba43f6514f6a084e58cfe0a13a9d2
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101730011"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103199519"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mysql"></a>Connectiviteits architectuur in Azure Database for MySQL
 In dit artikel wordt uitgelegd wat de Azure Database for MySQL connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for MySQL exemplaar van clients, zowel binnen als buiten Azure.
@@ -59,7 +59,9 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Frankrijk - centraal | 40.79.137.0, 40.79.129.1  | | |
 | Frankrijk - zuid | 40.79.177.0     | | |
 | Duitsland - centraal | 51.4.144.100     | | |
+| Duitsland - noord | 51.116.56.0 | |
 | Duitsland-noord Oost | 51.5.144.179  | | |
+| Duitsland - west-centraal | 51.116.152.0 | |
 | India - centraal | 104.211.96.159     | | |
 | India - zuid | 104.211.224.146  | | |
 | India - west | 104.211.160.80    | | |
@@ -73,6 +75,8 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Zuid-Afrika - west | 102.133.24.0   | | |
 | VS - zuid-centraal |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
 | Azië - zuidoost | 40.78.233.2, 23.98.80.12     | 104.43.15.0 | |
+| Zwitserland - noord | 51.107.56.0 ||
+| Zwitserland - west | 51.107.152.0||
 | UAE - centraal | 20.37.72.64  | | |
 | VAE - noord | 65.52.248.0    | | |
 | Verenigd Koninkrijk Zuid | 51.140.184.11   | | |
@@ -85,17 +89,48 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 
 ## <a name="connection-redirection"></a>Verbindings omleiding
 
-Azure Database for MySQL ondersteunt een extra verbindings beleid, **omleiding**, waarmee de netwerk latentie tussen client toepassingen en MySQL-servers kan worden gereduceerd. Als deze functie is ingesteld, wordt na de eerste TCP-sessie naar de Azure Database for MySQL-server het back-end-adres van het knoop punt dat als host fungeert voor de MySQL-server naar de client geretourneerd. Daarna stroomt alle volgende pakketten rechtstreeks naar de server, zodat de gateway wordt omzeild. Als pakketten rechtstreeks naar de server stromen, hebben latentie en door Voer betere prestaties.
+Azure Database for MySQL ondersteunt een extra verbindings beleid, **omleiding**, waarmee de netwerk latentie tussen client toepassingen en MySQL-servers kan worden gereduceerd. Met omleiding en nadat de eerste TCP-sessie is ingesteld op de Azure Database for MySQL server, retourneert de server het back-end-adres van het knoop punt dat als host fungeert voor de MySQL-server naar de client. Daarna stroomt alle volgende pakketten rechtstreeks naar de server, zodat de gateway wordt omzeild. Als pakketten rechtstreeks naar de server stromen, hebben latentie en door Voer betere prestaties.
 
 Deze functie wordt ondersteund in Azure Database for MySQL-servers met Engine versies 5,6, 5,7 en 8,0.
 
 Ondersteuning voor omleiding is beschikbaar in de PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) -uitbrei ding, ontwikkeld door micro soft en is beschikbaar op [PECL](https://pecl.php.net/package/mysqlnd_azure). Zie het artikel [omleiding configureren](./howto-redirection.md) voor meer informatie over het gebruik van omleiding in uw toepassingen.
 
+
 > [!IMPORTANT]
 > Ondersteuning voor omleiding in de PHP [mysqlnd_azure](https://github.com/microsoft/mysqlnd_azure) -uitbrei ding is momenteel als preview-versie beschikbaar.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
+### <a name="what-you-need-to-know-about-this-planned-maintenance"></a>Wat u moet weten over dit geplande onderhoud?
+Dit is alleen een DNS-wijziging die transparant maakt voor clients. Terwijl het IP-adres voor FQDN wordt gewijzigd op de DNS-server, wordt de lokale DNS-cache vernieuwd binnen vijf minuten en wordt deze automatisch uitgevoerd door de besturings systemen. Nadat de lokale DNS-vernieuwing is uitgevoerd, worden alle nieuwe verbindingen verbinding gemaakt met het nieuwe IP-adres. alle bestaande verbindingen blijven verbonden met het oude IP-adres zonder onderbreking totdat de oude IP-adressen volledig buiten gebruik zijn gesteld. Het oude IP-adres neemt ongeveer drie tot vier weken in beslag voordat u het buiten gebruik stelt. Daarom mag het geen effect hebben op de client toepassingen.
+
+### <a name="what-are-we-decommissioning"></a>Wat is het buiten gebruik stellen?
+Alleen gateway knooppunten worden buiten gebruik gesteld. Wanneer gebruikers verbinding maken met hun servers, is de eerste stop van de verbinding naar het gateway knooppunt voordat de verbinding wordt doorgestuurd naar de server. We ontmantelen oude gateway ringen (niet tenants die de server uitvoert) Raadpleeg de [connectiviteits architectuur](#connectivity-architecture) voor meer informatie.
+
+### <a name="how-can-you-validate-if-your-connections-are-going-to-old-gateway-nodes-or-new-gateway-nodes"></a>Hoe kunt u controleren of uw verbindingen naar oude gateway knooppunten of nieuwe gateway knooppunten gaan?
+Ping de FQDN van de server, bijvoorbeeld  ``ping xxx.mysql.database.azure.com`` . Als het geretourneerde IP-adres een van de IP-adressen is die in het bovenstaande document worden weer gegeven met de naam van de gateway (uit het buiten gebruik stellen), betekent dit dat uw verbinding via de oude gateway gaat. Daarentegen, als het geretourneerde IP-adres een van de IP-adressen is die worden weer gegeven onder gateway-ip's, betekent dit dat uw verbinding via de nieuwe gateway gaat.
+
+U kunt ook testen door [PSPing](https://docs.microsoft.com/sysinternals/downloads/psping) of TCPPing van de database server van uw client toepassing met poort 3306 en ervoor te zorgen dat het GERETOURNEERDe IP-adres niet de IP-adressen uit de buiten gebruik stelt.
+
+### <a name="how-do-i-know-when-the-maintenance-is-over-and-will-i-get-another-notification-when-old-ip-addresses-are-decommissioned"></a>Hoe kan ik weet wanneer het onderhoud wordt uitgevoerd en krijgt hij een andere melding wanneer oude IP-adressen buiten gebruik worden gesteld?
+U ontvangt een e-mail bericht waarin u wordt gewaarschuwd wanneer het onderhouds werk wordt gestart. Het onderhoud kan tot één maand duren, afhankelijk van het aantal servers dat in al regio's moet worden gemigreerd. Bereid uw client voor om verbinding te maken met de database server met behulp van de FQDN of gebruik het nieuwe IP-adres uit de bovenstaande tabel. 
+
+### <a name="what-do-i-do-if-my-client-applications-are-still-connecting-to-old-gateway-server-"></a>Wat moet ik doen als mijn client toepassingen nog steeds verbinding maken met de oude Gateway server?
+Dit geeft aan dat uw toepassingen verbinding maken met de server met een statisch IP-adres in plaats van een FQDN-naam. Controleer de instellingen voor verbindings reeksen en groepsgewijze verbindingen, de instelling AKS of zelfs in de bron code.
+
+### <a name="is-there-any-impact-for-my-application-connections"></a>Zijn er gevolgen voor de verbindingen van mijn toepassing?
+Dit onderhoud is alleen een DNS-wijziging, waardoor het transparant is voor de client. Zodra de DNS-cache is vernieuwd in de client (automatisch uitgevoerd door het besturings systeem), wordt alle nieuwe verbinding gemaakt met het nieuwe IP-adres en blijft de bestaande verbinding goed werken totdat het oude IP-adres volledig uit bedrijf is genomen, meestal een aantal weken later. En de logica voor opnieuw proberen is niet vereist voor deze aanvraag, maar het is wel goed om te zien of de toepassing een nieuwe pogings logica heeft geconfigureerd. Gebruik FQDN om verbinding te maken met de database server of schakel de nieuwe gateway-IP-adressen in het connection string van uw toepassing in.
+Deze onderhouds bewerking verwijdert de bestaande verbindingen niet. Hierdoor worden alleen de nieuwe verbindings aanvragen naar de nieuwe gateway ring gestuurd.
+
+### <a name="can-i-request-for-a-specific-time-window-for-the-maintenance"></a>Kan ik een specifiek tijd venster voor het onderhoud aanvragen? 
+Omdat de migratie transparant moet zijn en geen invloed heeft op de connectiviteit van de klant, verwachten we dat er geen problemen zijn voor de meeste gebruikers. Controleer uw toepassing proactief en zorg ervoor dat u FQDN gebruikt om verbinding te maken met de database server of schakel de nieuwe gateway-IP-adressen in uw toepassing in connection string.
+
+### <a name="i-am-using-private-link-will-my-connections-get-affected"></a>Ik gebruik een persoonlijke koppeling, mijn verbindingen worden beïnvloed?
+Nee, dit is een gateway-hardware buiten gebruik stellen en heeft geen relatie met persoonlijke koppelingen of privé-IP-adressen, maar heeft alleen invloed op open bare IP-adressen die worden vermeld onder de uit bedrijf nemende IP-adressen.
+
+
+
+## <a name="next-steps"></a>Volgende stappen
 * [Azure Database for MySQL firewall regels maken en beheren met behulp van de Azure Portal](./howto-manage-firewall-using-portal.md)
 * [Azure Database for MySQL firewall regels maken en beheren met Azure CLI](./howto-manage-firewall-using-cli.md)
 * [Omleiding configureren met Azure Database for MySQL](./howto-redirection.md)

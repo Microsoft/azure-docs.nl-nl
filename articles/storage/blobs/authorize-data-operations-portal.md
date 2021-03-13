@@ -11,12 +11,12 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: blobs
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 319bbdd7809e224ca608fdac06d4b304c2052e86
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: a12936f8f9f84dacfab4850253df665ae7758be1
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391538"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102613240"
 ---
 # <a name="choose-how-to-authorize-access-to-blob-data-in-the-azure-portal"></a>Kies hoe u de toegang tot BLOB-gegevens in de Azure Portal wilt autoriseren
 
@@ -66,9 +66,9 @@ Aangepaste rollen kunnen verschillende combi Naties van dezelfde machtigingen on
 
 ## <a name="navigate-to-blobs-in-the-azure-portal"></a>Navigeer naar blobs in de Azure Portal
 
-Als u BLOB-gegevens in de portal wilt weer geven, gaat u naar het **overzicht** voor uw opslag account en klikt u op de koppelingen voor **blobs**. U kunt ook naar de **BLOB service** sectie in het menu navigeren.
+Als u BLOB-gegevens in de portal wilt weer geven, gaat u naar het **overzicht** voor uw opslag account en klikt u op de koppelingen voor **blobs**. U kunt ook naar de sectie **containers** in het menu navigeren.
 
-:::image type="content" source="media/anonymous-read-access-configure/blob-public-access-portal.png" alt-text="Scherm afbeelding die laat zien hoe u navigeert naar BLOB-gegevens in de Azure Portal":::
+:::image type="content" source="media/authorize-data-operations-portal/blob-access-portal.png" alt-text="Scherm afbeelding die laat zien hoe u navigeert naar BLOB-gegevens in de Azure Portal":::
 
 ## <a name="determine-the-current-authentication-method"></a>De huidige verificatie methode bepalen
 

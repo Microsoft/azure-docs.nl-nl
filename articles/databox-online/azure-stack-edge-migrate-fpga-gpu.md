@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: tutorial
 ms.date: 02/10/2021
 ms.author: alkohli
-ms.openlocfilehash: 1db6574f8ca22b6fe60899f00700ee19d61eab3b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5b68ab545e87035d138558ba1911294ef805af6d
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100382817"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102630738"
 ---
 # <a name="migrate-workloads-from-an-azure-stack-edge-pro-fpga-to-an-azure-stack-edge-pro-gpu"></a>Werk belastingen migreren van een Azure Stack Edge Pro-FPGA naar een Azure Stack Edge Pro GPU
 
@@ -157,10 +157,10 @@ U gaat nu gegevens van het bron apparaat kopiëren naar de Edge-Cloud shares en 
 
 Volg deze stappen om de gegevens op de Edge-Cloud shares op uw doel apparaat te synchroniseren:
 
-1. [Voeg shares toe](azure-stack-edge-j-series-manage-shares.md#add-a-share) die overeenkomen met de share namen die op het bron apparaat zijn gemaakt. Zorg ervoor dat bij het maken van shares de optie **BLOB-container** is ingesteld op gebruik van de **bestaande** opties en selecteer vervolgens de container die is gebruikt met het vorige apparaat.
-1. [Gebruikers toevoegen](azure-stack-edge-j-series-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
-1. [De share](azure-stack-edge-j-series-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Hiermee worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
-1. Maak de bandbreedte schema's opnieuw die moeten worden gekoppeld aan uw shares. Zie [een bandbreedte schema toevoegen](azure-stack-edge-j-series-manage-bandwidth-schedules.md#add-a-schedule) voor gedetailleerde stappen.
+1. [Voeg shares toe](azure-stack-edge-gpu-manage-shares.md#add-a-share) die overeenkomen met de share namen die op het bron apparaat zijn gemaakt. Zorg ervoor dat bij het maken van shares de optie **BLOB-container** is ingesteld op gebruik van de **bestaande** opties en selecteer vervolgens de container die is gebruikt met het vorige apparaat.
+1. [Gebruikers toevoegen](azure-stack-edge-gpu-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
+1. [De share](azure-stack-edge-gpu-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Hiermee worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
+1. Maak de bandbreedte schema's opnieuw die moeten worden gekoppeld aan uw shares. Zie [een bandbreedte schema toevoegen](azure-stack-edge-gpu-manage-bandwidth-schedules.md#add-a-schedule) voor gedetailleerde stappen.
 
 
 ### <a name="2-from-edge-local-shares"></a>2. lokale shares van Edge
@@ -172,7 +172,7 @@ Nadat het vervangende apparaat volledig is geconfigureerd, schakelt u het appara
 Voer de volgende stappen uit om de gegevens te herstellen vanaf lokale shares:
 
 1. [Configureer Compute op het apparaat](azure-stack-edge-gpu-deploy-configure-compute.md).
-1. Voeg alle lokale shares op het doel apparaat toe. Zie de gedetailleerde stappen in [een lokale share toevoegen](azure-stack-edge-j-series-manage-shares.md#add-a-local-share).
+1. Voeg alle lokale shares op het doel apparaat toe. Zie de gedetailleerde stappen in [een lokale share toevoegen](azure-stack-edge-gpu-manage-shares.md#add-a-local-share).
 1. Als u de SMB-shares op het bron apparaat opent, worden de IP-adressen gebruikt die op het doel apparaat worden gebruikt. Zie [verbinding maken met een SMB-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-smb-share). Als u verbinding wilt maken met NFS-shares op het doel apparaat, moet u de nieuwe IP-adressen gebruiken die zijn gekoppeld aan het apparaat. Zie [verbinding maken met een NFS-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-nfs-share). 
 
     Als u de gegevens van uw share over een tussenliggende server via SMB/NFS hebt gekopieerd, kunt u deze gegevens kopiëren naar shares op het doel apparaat. U kunt de gegevens ook rechtstreeks vanaf het bron apparaat kopiëren als zowel de bron als het doel apparaat *online* zijn.

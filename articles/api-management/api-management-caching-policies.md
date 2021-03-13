@@ -4,21 +4,16 @@ description: Meer informatie over de cache beleidsregels die beschikbaar zijn vo
 services: api-management
 documentationcenter: ''
 author: vladvino
-manager: erikre
-editor: ''
-ms.assetid: 8147199c-24d8-439f-b2a9-da28a70a890c
 ms.service: api-management
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/13/2020
+ms.date: 03/08/2021
 ms.author: apimpm
-ms.openlocfilehash: bd3a63db7dd4946a9836b3978992fb544b9ab0ab
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9888627bed0fbf90abc75c81564dacc0d1aac18e
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101688039"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103233463"
 ---
 # <a name="api-management-caching-policies"></a>API Management-cachebeleid
 In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids regels. Zie [beleid in API Management](./api-management-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -29,8 +24,8 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 ## <a name="caching-policies"></a><a name="CachingPolicies"></a> Cache beleidsregels
 
 - Beleid voor antwoord caching
-    - [Ophalen uit cache](api-management-caching-policies.md#GetFromCache) -cache uitvoeren en een geldig antwoord in de cache retour neren wanneer deze beschikbaar zijn.
-    - [Opslaan in cache](api-management-caching-policies.md#StoreToCache) -caches op basis van de opgegeven cache beheer configuratie.
+    - [Ophalen uit cache](#GetFromCache) -cache uitvoeren en een geldig antwoord in de cache retour neren wanneer deze beschikbaar zijn.
+    - [Opslaan in cache](#StoreToCache) -caches op basis van de opgegeven cache beheer configuratie.
 - Beleid voor waarde in cache opslaan
     - [Waarde ophalen uit cache](#GetFromCacheByKey) -een item in de cache ophalen met behulp van sleutel.
     - [Waarde voor opslaan in cache](#StoreToCacheByKey) : een item in de cache opslaan per sleutel.
@@ -40,7 +35,7 @@ In dit onderwerp vindt u een verwijzing naar de volgende API Management-beleids 
 Gebruik het `cache-lookup` beleid voor het opzoeken van de cache en het retour neren van een geldig antwoord in de cache, indien beschikbaar. Dit beleid kan worden toegepast in gevallen waarin de inhoud van de reactie in een bepaalde periode statisch blijft. Antwoord caching vermindert de band breedte en de verwerkings vereisten op de back-end-webserver en verlaagt de latentie die wordt waargenomen door API-consumers.
 
 > [!NOTE]
-> Dit beleid moet een bijbehorend [Archief voor cache](api-management-caching-policies.md#StoreToCache) beleid hebben.
+> Dit beleid moet een bijbehorend [Archief voor cache](#StoreToCache) beleid hebben.
 
 ### <a name="policy-statement"></a>Beleids verklaring
 
@@ -135,7 +130,7 @@ Het `cache-store` beleid slaat antwoorden op volgens de opgegeven cache-instelli
 ### <a name="policy-statement"></a>Beleids verklaring
 
 ```xml
-<cache-store duration="seconds" />
+<cache-store duration="seconds" cache-response="true | false" />
 ```
 
 ### <a name="examples"></a>Voorbeelden
@@ -190,7 +185,8 @@ Zie [beleids expressies](api-management-policy-expressions.md) en [context varia
 
 | Naam             | Beschrijving                                                                                                                                                                                                                                                                                                                                                 | Vereist | Standaard           |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------------------|
-| duur         | De TTL (time-to-Live) van de in de cache opgeslagen vermeldingen, opgegeven in seconden.                                                                                                                                                                                                                                                                                                   | Ja      | N.v.t.               |
+| duur         | De TTL (time-to-Live) van de in de cache opgeslagen vermeldingen, opgegeven in seconden.     | Ja      | N.v.t.               |
+| cache-antwoord         | Stel deze waarde in op True om het huidige HTTP-antwoord in de cache op te slaan. Als het kenmerk wordt wegge laten of op ONWAAR is ingesteld, worden alleen HTTP-antwoorden met de status code `200 OK` in de cache opgeslagen.                           | Nee      | onjuist               |
 
 ### <a name="usage"></a>Gebruik
 Dit beleid kan worden gebruikt in de volgende beleids [secties](./api-management-howto-policies.md#sections) en [bereiken](./api-management-howto-policies.md#scopes).

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 15f0b01304f3333b8650ab2079cd56271d0095db
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 2c98546d20e9f977a605ccbac21010aa9b1dbadc
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102424492"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232491"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -39,6 +39,8 @@ Een model dat is getraind voor een subset van scenario's kan alleen goed worden 
 > Begin met kleine sets voorbeeld gegevens die overeenkomen met de taal en akoestische die uw model zal tegen komen.
 > Neem bijvoorbeeld een klein, maar representatieve steek proef van de audio op dezelfde hardware en in dezelfde akoestische omgeving in uw model vindt u in productie scenario's.
 > Kleine gegevens sets van de mede werker van de vertegenwoordiger kunnen problemen bloot leggen voordat u hebt geïnvesteerd in het verzamelen van een veel grotere gegevens sets voor training.
+>
+> Overweeg om voorbeeld gegevens te gebruiken om snel aan de slag te gaan. Bekijk deze GitHub-opslag plaats voor <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/sampledata/customspeech" target="_target">voorbeeld Custom speech gegevens </a>
 
 ## <a name="data-types"></a>Gegevenstypen
 
@@ -46,21 +48,18 @@ In deze tabel worden de geaccepteerde gegevens typen vermeld, wanneer elk gegeve
 
 | Gegevenstype | Gebruikt voor testen | Aanbevolen aantal | Gebruikt voor training | Aanbevolen aantal |
 |-----------|-----------------|----------|-------------------|----------|
-| [Audio](#audio-data-for-testing) | Yes<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | No | N.v.t. |
-| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Yes<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Yes | 1-20 uur aan audio |
-| [Gerelateerde tekst](#related-text-data-for-training) | No | N.v.t. | Yes | 1-200 MB aan Verwante tekst |
-
-Wanneer u een nieuw model traint, begint u met [Verwante tekst](#related-text-data-for-training). Met deze gegevens wordt de herkenning van speciale termen en zinsdelen al verbeterd. Training met tekst is veel sneller dan training met audio (minuten versus dagen).
+| [Audio](#audio-data-for-testing) | Ja<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | Nee | N.v.t. |
+| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Ja<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Ja | 1-20 uur aan audio |
+| [Gerelateerde tekst](#related-text-data-for-training) | Nee | N.v.t. | Ja | 1-200 MB aan Verwante tekst |
 
 Bestanden moeten worden gegroepeerd op type in een gegevensset en worden geüpload als zip-bestand. Elke gegevensset kan slechts één gegevens type bevatten.
 
 > [!TIP]
-> Overweeg om voorbeeld gegevens te gebruiken om snel aan de slag te gaan. Bekijk deze GitHub-opslag plaats voor <a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/sampledata/customspeech" target="_target">voorbeeld Custom speech gegevens </a>
+> Wanneer u een nieuw model traint, begint u met [Verwante tekst](#related-text-data-for-training). Met deze gegevens wordt de herkenning van speciale termen en zinsdelen al verbeterd. Training met tekst is veel sneller dan training met audio (minuten versus dagen).
 
 > [!NOTE]
 > Niet alle basis modellen ondersteunen training met audio. Als een basis model dit niet ondersteunt, gebruikt de spraak service alleen de tekst uit de transcripten en wordt de audio genegeerd. Zie [taal ondersteuning](language-support.md#speech-to-text) voor een lijst met basis modellen die ondersteuning bieden voor training met audio gegevens. Zelfs als een basis model training met audio gegevens ondersteunt, kan de service slechts een deel van de audio gebruiken. Nog steeds alle transcripten worden gebruikt.
-
-> [!NOTE]
+>
 > Als u het basis model dat wordt gebruikt voor de training wijzigt en u audio hebt in de trainings-gegevensset, moet u *altijd* controleren of het nieuwe basis model [training voor audio gegevens ondersteunt](language-support.md#speech-to-text). Als het eerder gebruikte basis model geen training met audio gegevens ondersteunt, en de training-gegevensset bevat audio, wordt de trainings tijd met het nieuwe basis model **drastisch** verhoogd en kan het enkele uren tot enkele dagen en langer duren. Dit geldt vooral als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
 >
 > Als u het probleem voor komt dat in de bovenstaande alinea wordt beschreven, kunt u de trainings tijd snel verlagen door de hoeveelheid audio in de gegevensset te verminderen of deze volledig te verwijderen en alleen de tekst te verlaten. De laatste optie wordt sterk aanbevolen als uw abonnement op de spraak service zich **niet** in een regio bevindt [met de speciale hardware](custom-speech-overview.md#set-up-your-azure-account) voor training.
@@ -103,7 +102,7 @@ Gebruik deze tabel om ervoor te zorgen dat uw audio bestanden correct zijn inged
 
 Gebruik <a href="http://sox.sourceforge.net" target="_blank" rel="noopener">Sox </a> om audio-eigenschappen te controleren of bestaande audio om te zetten in de juiste notaties. Hieronder ziet u enkele voor beelden van de manier waarop elk van deze activiteiten kan worden uitgevoerd via de SoX-opdracht regel:
 
-| Activiteit | Description | SoX-opdracht |
+| Activiteit | Beschrijving | SoX-opdracht |
 |----------|-------------|-------------|
 | Audio-indeling controleren | Gebruik deze opdracht om te controleren<br>de indeling van het audio bestand. | `sox --i <filename>` |
 | Audio-indeling converteren | Gebruik deze opdracht om te converteren<br>het audio bestand op één kanaal, 16-bits, 16 KHz. | `sox <input> -b 16 -e signed-integer -c 1 -r 16k -t wav <output>.wav` |

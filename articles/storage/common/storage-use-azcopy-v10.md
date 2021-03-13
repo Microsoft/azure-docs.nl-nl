@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: bec221f762213fa8576ccef30e9b6a27aa708f01
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: a1651ef1b49ecedb8070f32c56e9d23a0f8fd0da
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98944149"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103201575"
 ---
 # <a name="get-started-with-azcopy"></a>Aan de slag met AzCopy
 
@@ -100,6 +100,9 @@ Zie [using Shared Access signatures (SAS) (Engelstalig)](./storage-sas-overview.
 ## <a name="transfer-data"></a>Gegevens overdragen
 
 Nadat u uw identiteit hebt goedgekeurd of een SAS-token hebt aangeschaft, kunt u beginnen met het overbrengen van gegevens.
+
+> [!NOTE]
+> De instelling [beveiligde overdracht vereist](storage-require-secure-transfer.md) van een opslag account bepaalt of de verbinding met een opslag account is beveiligd met Transport Layer Security (TLS). Deze instelling is standaard ingeschakeld.   
 
 Zie een van deze artikelen om voorbeeld opdrachten te vinden.
 

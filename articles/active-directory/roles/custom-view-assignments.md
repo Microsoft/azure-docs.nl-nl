@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc83a069f4a7ee8fc654da06f57cf876b6b5a139
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 23f95ede778752a8367f77717247fff82ead7131
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98741975"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012068"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Aangepaste roltoewijzingen in Azure Active Directory weer geven
 
@@ -48,17 +48,17 @@ Eerst moet u [de Azure ad preview Power shell-module downloaden](https://www.pow
 Als u de Azure AD Power shell-module wilt installeren, gebruikt u de volgende opdrachten:
 
 ``` PowerShell
-install-module azureadpreview
-import-module azureadpreview
+Install-Module -Name AzureADPreview
+Import-Module -Name AzureADPreview
 ```
 
 Als u wilt controleren of de module gereed is voor gebruik, gebruikt u de volgende opdracht:
 
 ``` PowerShell
-get-module azuread
+Get-Module -Name AzureADPreview
   ModuleType Version      Name                         ExportedCommands
   ---------- ---------    ----                         ----------------
-  Binary     2.0.0.115    azuread                      {Add-AzureADAdministrati...}
+  Binary     2.0.0.115    AzureADPreview               {Add-AzureADAdministrati...}
 ```
 
 ### <a name="view-the-assignments-of-a-role"></a>De toewijzingen van een rol weer geven

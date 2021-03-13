@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 4ed3b3d60be0e5e4bedcb604ce021f6a64002120
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: e58d69634712a9cc640ba9e4785a7bf1effaf88c
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103201261"
+ms.locfileid: "103224653"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -184,9 +184,11 @@ Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-teleme
 
 Log4j, logback en Java. util. logging zijn automatisch instrumenteel en logboek registratie die via deze logboek registratie raamwerken wordt uitgevoerd, wordt automatisch verzameld.
 
-Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan de geconfigureerde drempel waarde voor logboek registratie raamwerken en de tweede ook voldoet aan de Application Insights geconfigureerde drempel waarde.
+Logboek registratie wordt alleen vastgelegd als het eerst voldoet aan het niveau dat is geconfigureerd voor het logboek registratie raamwerk en de tweede, ook voldoet aan het niveau dat is geconfigureerd voor Application Insights.
 
-De standaard drempel voor Application Insights is `INFO` . Als u dit niveau wilt wijzigen:
+Als uw Framework voor logboek registratie bijvoorbeeld is ingesteld op logboek `WARN` (en hoger) van het pakket `com.example` , en Application Insights is geconfigureerd voor het vastleggen `INFO` van (en hoger), wordt door Application Insights alleen het `WARN` pakket vastgelegd (en hierboven) `com.example` .
+
+Het standaard niveau dat is geconfigureerd voor Application Insights is `INFO` . Als u dit niveau wilt wijzigen:
 
 ```json
 {

@@ -3,12 +3,12 @@ title: Ondersteuning voor het verplaatsen van bewerkingen per resource type
 description: Een lijst met de Azure-resource typen die kunnen worden verplaatst naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
 ms.date: 01/11/2021
-ms.openlocfilehash: fe8f6705fdce1a692dd8a969cfc4b3b21d2d2a11
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: ae59bcc65f296a10c68b88f5f6a1ecbc923f8856
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072102"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232593"
 ---
 # <a name="move-operation-support-for-resources"></a>Ondersteuning voor het verplaatsen van resources voor bronnen
 
@@ -858,7 +858,7 @@ Ga naar de naam ruimte van een resource provider:
 > [!div class="mx-tableFixed"]
 > | Resourcetype | Resourcegroep | Abonnement |
 > | ------------- | ----------- | ---------- |
-> | flexibleServers | Ja | Ja |
+> | flexibleServers | Nee | Nee |
 > | servergroups | Nee | Nee |
 > | Server | Ja | Ja |
 > | serversv2 | Ja | Ja |

@@ -9,14 +9,16 @@ ms.date: 10/13/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9d03b6f4a512c22564480405ec0f0e0c0e62a958
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: db27a466ca5f1370e8b43ceb472f5deeaba509f1
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048420"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200319"
 ---
 # <a name="deploy-iot-edge-modules-at-scale-using-the-azure-portal"></a>Implementeer IoT Edge modules op schaal met behulp van de Azure Portal
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Maak een **IOT Edge automatische implementatie** in de Azure portal voor het beheren van doorlopende implementaties voor veel apparaten tegelijk. Automatische implementaties voor IoT Edge maken deel uit van de functie voor het [automatisch beheren van apparaten](../iot-hub/iot-hub-automatic-device-management.md) van IOT hub. Implementaties zijn dynamische processen waarmee u meerdere modules op meerdere apparaten kunt implementeren, de status en status van de modules kunt volgen en waar nodig wijzigingen kunt aanbrengen.
 
@@ -43,13 +45,13 @@ Zie voor meer informatie over apparaatdubbels en tags voor apparaten [inzicht in
 
 ## <a name="create-a-deployment"></a>Een implementatie maken
 
-IoT Edge biedt twee verschillende soorten automatische implementaties die u kunt gebruiken om uw scenario aan te passen. U kunt een standaard *implementatie*maken, die de systeem runtime modules en eventuele extra modules en routes bevat. Op elk apparaat kan slechts één implementatie worden toegepast. U kunt ook een *gelaagde implementatie*maken, die alleen aangepaste modules en routes bevat, niet de systeem runtime. Veel gelaagde implementaties kunnen worden gecombineerd op een apparaat, bovenop een standaard implementatie. Zie voor meer informatie over de manier waarop de twee typen automatische implementaties samen werken [inzicht IOT Edge automatische implementaties voor afzonderlijke apparaten of op schaal](module-deployment-monitoring.md).
+IoT Edge biedt twee verschillende soorten automatische implementaties die u kunt gebruiken om uw scenario aan te passen. U kunt een standaard *implementatie* maken, die de systeem runtime modules en eventuele extra modules en routes bevat. Op elk apparaat kan slechts één implementatie worden toegepast. U kunt ook een *gelaagde implementatie* maken, die alleen aangepaste modules en routes bevat, niet de systeem runtime. Veel gelaagde implementaties kunnen worden gecombineerd op een apparaat, bovenop een standaard implementatie. Zie voor meer informatie over de manier waarop de twee typen automatische implementaties samen werken [inzicht IOT Edge automatische implementaties voor afzonderlijke apparaten of op schaal](module-deployment-monitoring.md).
 
 De stappen voor het maken van een implementatie en een gelaagde implementatie zijn vergelijkbaar. Eventuele verschillen worden in de volgende stappen genoemd.
 
 1. Ga in het [Azure Portal](https://portal.azure.com)naar uw IOT hub.
 1. Selecteer in het menu in het linkerdeel venster **IOT Edge** onder **automatische Apparaatbeheer**.
-1. Selecteer **implementatie maken** of **gelaagde implementatie maken**op de bovenste balk.
+1. Selecteer **implementatie maken** of **gelaagde implementatie maken** op de bovenste balk.
 
 Er zijn vijf stappen voor het maken van een implementatie. In de volgende secties wordt elke stap uitgelegd.
 
@@ -132,7 +134,7 @@ Als meerdere implementaties gericht zijn op hetzelfde apparaat, wordt alleen het
 Een gelaagde implementatie die gericht is op een apparaat, moet een hogere prioriteit hebben dan de basis implementatie om toe te passen.
 
 1. Voer een positief geheel getal in voor de implementatie **prioriteit**.
-1. Geef een **doel voorwaarde** op om te bepalen welke apparaten worden bedoeld voor deze implementatie.De voor waarde is gebaseerd op apparaatspecifieke Tags of dubbele gerapporteerde eigenschappen van het apparaat en moet overeenkomen met de indeling van de expressie.Bijvoorbeeld `tags.environment='test'` of `properties.reported.devicemodel='4000x'`.
+1. Geef een **doel voorwaarde** op om te bepalen welke apparaten worden bedoeld voor deze implementatie. De voor waarde is gebaseerd op apparaatspecifieke Tags of dubbele gerapporteerde eigenschappen van het apparaat en moet overeenkomen met de indeling van de expressie. Bijvoorbeeld `tags.environment='test'` of `properties.reported.devicemodel='4000x'`.
 
 Selecteer **volgende: controleren + maken** om door te gaan naar de laatste stap.
 
@@ -156,7 +158,7 @@ Wanneer u een implementatie wijzigt, worden de wijzigingen onmiddellijk gereplic
 
 1. Selecteer **IOT Edge** in het linkerdeel venster van uw IOT-hub.
 1. Selecteer het tabblad **IOT Edge implementaties** en selecteer vervolgens de implementatie die u wilt configureren.
-1. Selecteer het tabblad **doel voorwaarde** . Wijzig de **doel voorwaarde** zodat deze op de gewenste apparaten is gericht. U kunt de **prioriteit**ook aanpassen.  Selecteer **Opslaan**.
+1. Selecteer het tabblad **doel voorwaarde** . Wijzig de **doel voorwaarde** zodat deze op de gewenste apparaten is gericht. U kunt de **prioriteit** ook aanpassen.  Selecteer **Opslaan**.
 
     Als u de doel voorwaarde bijwerkt, worden de volgende updates uitgevoerd:
 
@@ -182,7 +184,7 @@ Wanneer u een implementatie verwijdert, nemen alle geïmplementeerde apparaten d
 
 1. Gebruik het selectie vakje om de implementatie te selecteren die u wilt verwijderen.
 1. Selecteer **Verwijderen**.
-1. Er wordt een prompt weer gegeven waarin wordt vermeld dat deze implementatie wordt verwijderd en teruggezet naar de vorige status voor alle apparaten.Een implementatie met een lagere prioriteit is van toepassing.Als er geen andere implementatie is gericht, worden er geen modules verwijderd. Als u alle modules van uw apparaat wilt verwijderen, maakt u een implementatie met nul modules en implementeert u deze op dezelfde apparaten.Selecteer **Ja** ter bevestiging.
+1. Er wordt een prompt weer gegeven waarin wordt vermeld dat deze implementatie wordt verwijderd en teruggezet naar de vorige status voor alle apparaten. Een implementatie met een lagere prioriteit is van toepassing. Als er geen andere implementatie is gericht, worden er geen modules verwijderd. Als u alle modules van uw apparaat wilt verwijderen, maakt u een implementatie met nul modules en implementeert u deze op dezelfde apparaten. Selecteer **Ja** ter bevestiging.
 
 ## <a name="next-steps"></a>Volgende stappen
 

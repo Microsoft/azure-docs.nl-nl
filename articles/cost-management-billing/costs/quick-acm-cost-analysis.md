@@ -3,18 +3,18 @@ title: 'Quickstart: Azure-kosten verkennen met kostenanalyse'
 description: Deze snelstart helpt u kostenanalyse te gebruiken om de kosten van Azure voor uw bedrijf te verkennen en te analyseren.
 author: bandersmsft
 ms.author: banders
-ms.date: 01/04/2021
+ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 83f2d87e3f4a03ff17526ea5706e4f87b8f39487
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
-ms.translationtype: HT
+ms.openlocfilehash: 86f7bbbb52b1596e20fb1f3a67e42b2dd27c501a
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882446"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103012599"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Quickstart: Kosten verkennen en analyseren met kostenanalyse
 
@@ -68,11 +68,9 @@ De initiële kostenanalyseweergave omvat de volgende gebieden.
 
 ### <a name="understand-forecast"></a>Prognose begrijpen
 
-In de kostenprognose wordt een schatting van de kosten voor de geselecteerde periode weergegeven. Het model is gebaseerd op een regressiemodel met tijdreeksen. Er zijn ten minste tien dagen van recente kosten- en gebruiksgegevens nodig om kosten nauwkeurig te kunnen schatten. Voor een bepaalde periode vereist het prognosemodel gelijke delen van trainingsgegevens voor de prognoseperiode. Voor een prognose van drie maanden bijvoorbeeld zijn ten minste drie maanden aan recente kosten- en gebruiksgegevens vereist.
+Op basis van uw recente gebruik tonen kosten prognoses een projectie van de geschatte kosten voor de geselecteerde tijds periode. Als een budget wordt ingesteld voor de kosten analyse, kunt u weer geven wanneer de prognose van de uitgaven waarschijnlijk de budget drempel overschrijdt. Het prognose model kan toekomstige kosten voors pellen tot een jaar. Selecteer Filters om de gedetailleerde prognose kosten voor de geselecteerde dimensie weer te geven.
 
-Het model gebruikt een maximum van zes maanden aan trainingsgegevens om kosten voor een heel jaar te schatten. Er zijn minimaal zeven dagen aan trainingsgegevens nodig om de voorspelling te wijzigen. De voorspelling is gebaseerd op opvallende wijzigingen, zoals pieken en dalen, in kosten- en gebruikspatronen. De prognose genereert geen afzonderlijke schattingen voor elk item in **Groeperen op**-eigenschappen. Er wordt alleen een schatting gegeven van het totaal aan samengevoegde kosten. Als u meerdere valuta's gebruikt, geeft het model prognoses voor de kosten alleen in Amerikaanse dollars.
-
-Omdat het model gebruikmaakt van gegevenspieken en -dalen, zorgen grote aankopen zoals gereserveerde instanties ervoor dat uw prognose kunstmatig wordt opgedreven. De prognoseperiode en de grootte van de aankopen bepalen hoelang de prognose wordt beïnvloed. De prognose wordt weer normaal zodra de uitgaven zich stabiliseren.
+Het prognose model is gebaseerd op een tijd reeks regressie model. Er zijn ten minste tien dagen van recente kosten- en gebruiksgegevens nodig om kosten nauwkeurig te kunnen schatten. Voor een bepaalde periode vereist het prognosemodel gelijke delen van trainingsgegevens voor de prognoseperiode. Voor een prognose van drie maanden bijvoorbeeld zijn ten minste drie maanden aan recente kosten- en gebruiksgegevens vereist.
 
 ## <a name="customize-cost-views"></a>Kostenweergaven aanpassen
 

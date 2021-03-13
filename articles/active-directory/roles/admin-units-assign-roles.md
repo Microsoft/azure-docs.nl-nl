@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ecfa9186ef42d4822c9b3053d76b7c0160841621
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 1fc0c4bf9f71a8fe7e8cf49b83d32ac594dbe062
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740394"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103011380"
 ---
 # <a name="assign-scoped-roles-to-an-administrative-unit"></a>Specifieke rollen toewijzen aan een beheereenheid
 
@@ -72,23 +72,27 @@ U kunt een scoped-rol toewijzen met behulp van de Azure Portal, Power shell of M
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
 ```powershell
-$AdminUser = Get-AzureADUser -ObjectId "Use the user's UPN, who would be an admin on this unit"
-$Role = Get-AzureADDirectoryRole | Where-Object -Property DisplayName -EQ -Value "User Account Administrator"
-$administrativeUnit = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
-$RoleMember = New-Object -TypeName Microsoft.Open.AzureAD.Model.RoleMemberInfo
-$RoleMember.ObjectId = $AdminUser.ObjectId
-Add-AzureADMSScopedRoleMembership -ObjectId $administrativeUnit.ObjectId -RoleObjectId $Role.ObjectId -RoleMemberInfo $RoleMember
+$adminUser = Get-AzureADUser -ObjectId "Use the user's UPN, who would be an admin on this unit"
+$role = Get-AzureADDirectoryRole | Where-Object -Property DisplayName -EQ -Value "User Account Administrator"
+$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
+$roleMember = New-Object -TypeName Microsoft.Open.AzureAD.Model.RoleMemberInfo
+$roleMember.ObjectId = $adminUser.ObjectId
+Add-AzureADMSScopedRoleMembership -ObjectId $adminUnitObj.ObjectId -RoleObjectId $role.ObjectId -RoleMemberInfo $roleMember
 ```
 
 U kunt de gemarkeerde sectie wijzigen als vereist voor de specifieke omgeving.
 
 ### <a name="use-microsoft-graph"></a>Microsoft Graph gebruiken
 
+Aanvraag
+
 ```http
-Http request
-POST /directory/administrativeUnits/{id}/scopedRoleMembers
+POST /directory/administrativeUnits/{admin-unit-id}/scopedRoleMembers
+```
     
-Request body
+Hoofdtekst
+
+```http
 {
   "roleId": "roleId-value",
   "roleMemberInfo": {
@@ -114,18 +118,23 @@ U kunt alle roltoewijzingen weer geven die zijn gemaakt met een bereik administr
 ### <a name="use-powershell"></a>PowerShell gebruiken
 
 ```powershell
-$administrativeUnit = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
-Get-AzureADMSScopedRoleMembership -ObjectId $administrativeUnit.ObjectId | fl *
+$adminUnitObj = Get-AzureADMSAdministrativeUnit -Filter "displayname eq 'The display name of the unit'"
+Get-AzureADMSScopedRoleMembership -ObjectId $adminUnitObj.ObjectId | fl *
 ```
 
 U kunt de gemarkeerde sectie wijzigen als vereist voor uw specifieke omgeving.
 
 ### <a name="use-microsoft-graph"></a>Microsoft Graph gebruiken
 
+Aanvraag
+
 ```http
-Http request
-GET /directory/administrativeUnits/{id}/scopedRoleMembers
-Request body
+GET /directory/administrativeUnits/{admin-unit-id}/scopedRoleMembers
+```
+
+Hoofdtekst
+
+```http
 {}
 ```
 

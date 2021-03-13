@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: load-balancer
 ms.topic: tutorial
 ms.date: 03/04/2021
-ms.openlocfilehash: c41dc65b920c80d25a81a09f4550e76a8fd1095a
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 83efb428a94d49b77ecd923d4868afe034374b5f
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102204543"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103225180"
 ---
 # <a name="tutorial-create-a-cross-region-azure-load-balancer-using-azure-cli"></a>Zelf studie: een Azure Load Balancer voor meerdere regio's maken met behulp van Azure CLI
 
@@ -81,23 +81,6 @@ Maak een load balancer voor meerdere regio's met [AZ Network cross-Region-lb Cre
     --backend-pool-name myBackEndPool-CR     
 ```
 
-### <a name="create-the-health-probe"></a>Statustest maken
-
-Maak een cross-regio load balancer status test met [AZ Network cross-Region lb probe Create](/cli/azure/network/cross-region-lb/probe#az_network_cross_region_lb_probe_create):
-
-* Met de naam **myHealthProbe-CR**.
-* Protocol **TCP**.
-* Poort **80**.
-
-```azurecli-interactive
-  az network cross-region lb probe create \
-    --lb-name myLoadBalancer-CR \
-    --name myHealthProbe-CR \
-    --port 80 \
-    --protocol Tcp \
-    --resource-group myResourceGroupLB-CR
-```
-
 ### <a name="create-the-load-balancer-rule"></a>Load balancer-regel maken
 
 Met een load balancer-regel wordt het volgende gedefinieerd:
@@ -122,8 +105,7 @@ Maak een load balancer regel met [AZ Network cross-Region-lb regel Create](/cli/
     --protocol tcp \
     --resource-group myResourceGroupLB-CR \
     --backend-pool-name myBackEndPool-CR \
-    --frontend-ip-name myFrontEnd-CR \
-    --probe-name myHealthProbe-CR
+    --frontend-ip-name myFrontEnd-CR
 ```
 
 ## <a name="create-backend-pool"></a>Back-endpool maken
@@ -204,7 +186,6 @@ Gebruik de opdracht [az group delete](/cli/azure/group#az-group-delete) om de re
 In deze zelfstudie hebt u:
 
 * Een load balancer voor meerdere regio's gemaakt.
-* Er is een status test gemaakt.
 * Een load balancer-regel toegevoegd.
 * Regionale standaard load balancers toegevoegd aan de back-end-pool van de load balancer voor meerdere regio's.
 * De load balancer getest.

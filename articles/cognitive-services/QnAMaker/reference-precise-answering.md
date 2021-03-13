@@ -5,22 +5,22 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 11/09/2020
-ms.openlocfilehash: 6c597e8fd48eb157b69c918ae5fd5f699611ad75
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9c7b265118e395dde2b4b5f3959ba397d75ddac5
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703402"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232185"
 ---
 # <a name="precise-answering"></a>Nauwkeurige antwoorden
 
 Met de nauw keurige antwoord functie die is geïntroduceerd in QnA Maker Managed (preview), kunt u het exacte korte antwoord krijgen van het antwoord op de best mogelijke vraag die aanwezig is in de Knowledge Base voor elke gebruikers query. Deze functie maakt gebruik van een diepe leer model dat in runtime inzicht heeft in het doel van de gebruikers query en detecteert het precieze korte antwoord van het antwoord op de hand. als er een kort antwoord aanwezig is in het antwoord dat wordt door gegeven. 
 
-Deze functie is standaard ingeschakeld in het test venster, zodat u de functionaliteit kunt testen die specifiek is voor uw scenario. Deze functie is zeer nuttig voor ontwikkel aars van inhoud en eind gebruikers. Ontwikkel aars van inhoud hoeven de specifieke QnA-paren nu niet hand matig toe te kennen voor elk feit dat aanwezig is in de Knowledge Base, en de eind gebruiker hoeft niet te kijken naar het volledige antwoord dat wordt geretourneerd door de service om het daad werkelijke feit te vinden dat de query van de gebruiker beantwoordt. 
+Deze functie is standaard ingeschakeld in het test venster, zodat u de functionaliteit kunt testen die specifiek is voor uw scenario. Deze functie is zeer nuttig voor ontwikkel aars van inhoud en eind gebruikers. Ontwikkel aars van inhoud hoeven de specifieke QnA-paren nu niet hand matig toe te kennen voor elk feit dat aanwezig is in de Knowledge Base, en de eind gebruiker hoeft niet te kijken naar het volledige antwoord dat wordt geretourneerd door de service om het daad werkelijke feit te vinden dat de query van de gebruiker beantwoordt. U kunt [nauw keurige antwoorden ophalen via de antwoord-API genereren](How-To/metadata-generateanswer-usage.md#get-precise-answers-with-generateanswer-api).
 
 ## <a name="precise-answering-on-qna-maker-portal"></a>Nauw keurige beantwoording op QnA Maker Portal
 
-Wanneer u in de QnA Maker-Portal het deel venster testen opent, ziet u een optie om het **korte antwoord bovenaan weer te geven** . Deze optie wordt standaard geselecteerd. Wanneer u een query in het test venster invoert, ziet u een korte antwoord samen met de antwoord richting, als er een kort antwoord aanwezig is in het antwoord door te passeren. 
+Wanneer u in de QnA Maker-Portal het deel venster testen opent, ziet u een optie om het **korte antwoord bovenaan weer te geven** . Deze optie wordt standaard geselecteerd. Wanneer u een query in het test venster invoert, ziet u een korte antwoord samen met de antwoord richting, als er een kort antwoord aanwezig is in het antwoord door te passeren.
  
 ![Beheerd ingeschakeld testvenster](../QnAMaker/media/conversational-context/test-pane-with-managed.png)
 

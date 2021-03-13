@@ -6,14 +6,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 03/02/2021
+ms.date: 03/12/2021
 ms.custom: references_regions
-ms.openlocfilehash: 36f10bebfc42ae5e9e75206392e8a5f8ccef563a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b4dc8ab44d341b293c044843e6dff2a3b6d3102c
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694594"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103233545"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -23,7 +23,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |  Beschrijving | Beschikbaarheid  |
 |------------------------------|---------------|---------------|
-| [Semantische zoekopdrachten](semantic-search-overview.md) | Een verzameling query-gerelateerde functies waarmee de relevantie van zoek resultaten met weinig moeite wordt verbeterd. Met kleine wijzigingen in een zoek opdracht kunt u deze functies uitproberen op bestaande indexen.</br></br>[Semantische query](semantic-how-to-query-request.md) is een nieuw query type dat versnelt in de verwerking van natuurlijke taal verkrijgt om de rang orde te verbeteren, en om inzicht te krijgen in de query intentie om antwoorden, bijschriften en semantische hooglichten te bieden.</br></br>[Semantische classificatie en Reacties (antwoorden, bijschriften en hooglichten)](semantic-how-to-query-response.md) verwijzen naar het model dat de resultaten evalueert en de mogelijkheid van het model om een structuur toe te voegen aan het antwoord. | Open bare Preview ([op aanvraag](https://aka.ms/SemanticSearchPreviewSignup)). </br></br>[Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) API-Version = 2020-06 -30-preview en [Search explorer](search-explorer.md) gebruiken in azure Portal. </br></br>De beperkingen voor de regio en de laag zijn van toepassing. |
+| [Semantische zoekopdrachten](semantic-search-overview.md) | Een verzameling query-gerelateerde functies waarmee de relevantie van zoek resultaten aanzienlijk wordt verbeterd met zeer weinig moeite. </br></br>Met [semantische classificatie](semantic-ranking.md) worden relevantie scores berekend op basis van de semantische betekenis achter woorden en inhoud. </br></br>[Semantische bijschriften](semantic-how-to-query-request.md) zijn relevante door gang van het document dat het document het beste samenvatten, met de nadruk op de belangrijkste termen of zinsdelen. </br></br>[Semantische antwoorden](semantic-answers.md) zijn sleutel overgangen, geëxtraheerd uit een zoek document, die worden geformuleerd als een direct antwoord op een query die eruitziet als een vraag. | Open bare Preview ([op aanvraag](https://aka.ms/SemanticSearchPreviewSignup)). </br></br>[Zoek documenten (rest)](/rest/api/searchservice/preview-api/search-documents) API-Version = 2020-06 -30-preview en [Search explorer](search-explorer.md) gebruiken in azure Portal. </br></br>De beperkingen voor de regio en de laag zijn van toepassing. |
 | [Spelling controle van query termen](speller-how-to-add.md) | Voordat de query termen de zoek machine bereiken, kunt u ze controleren op spel fouten. De `speller` optie werkt met elk query type (eenvoudig, volledig of semantisch). |  Open bare preview, alleen REST, API-Version = 2020-06 -30-preview|
 | [Indexer van share point online](search-howto-index-sharepoint-online.md) | Met deze indexer maakt u verbinding met een share point online-site, zodat u inhoud kunt indexeren vanuit een document bibliotheek. | Open bare preview, alleen REST, API-Version = 2020-06 -30-preview |
 

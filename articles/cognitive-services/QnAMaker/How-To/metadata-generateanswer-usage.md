@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 7e8d1b13dfd802df820bea4015e411dbb85540ba
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 9d2100dbc2c5f24742a949778a1b7450bf303c5f
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103011422"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103232202"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api"></a>Een antwoord krijgen met de GenerateAnswer-API
 
@@ -174,9 +174,13 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 De vorige JSON heeft alleen antwoorden aangevraagd die 30% of hoger zijn dan de drempel waarde.
 
-## <a name="return-precise-answers"></a>Nauw keurige antwoorden retour neren
+## <a name="get-precise-answers-with-generateanswer-api"></a>Nauw keurige antwoorden krijgen met GenerateAnswer-API
 
-### <a name="generate-answer-api"></a>Antwoord-API genereren 
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
+
+We bieden nauw keurige antwoord functie alleen met de QnA Maker beheerde versie.
+
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 De gebruiker kan [nauw keurige antwoorden](../reference-precise-answering.md) inschakelen wanneer de door QnA Maker beheerde resource wordt gebruikt. De para meter answerSpanRequest moet worden bijgewerkt voor dezelfde.
 
@@ -211,6 +215,8 @@ Als u nauw keurige antwoord instellingen voor uw bot-service wilt configureren, 
 |Alleen nauw keurige antwoorden|true|true|
 |Alleen lange antwoorden|onjuist|onjuist|
 |Zowel lange als nauw keurige antwoorden|waar|onjuist|
+
+---
 
 ## <a name="common-http-errors"></a>Veelvoorkomende HTTP-fouten
 

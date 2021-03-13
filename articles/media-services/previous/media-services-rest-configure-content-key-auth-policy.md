@@ -3,7 +3,7 @@ title: Een autorisatie beleid voor de inhouds sleutel configureren met REST-Azur
 description: Meer informatie over het configureren van een verificatie beleid voor een inhouds sleutel met behulp van de Media Services REST API.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.assetid: 7af5f9e2-8ed8-43f2-843b-580ce8759fd4
@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/20/2019
-ms.author: juliako
+ms.date: 03/10/2021
+ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9f7910219c34c811cc49f530af145c6e1589711f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66649eb6109339cd7723ab4a7e3a12c5c322973d
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89257021"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103017287"
 ---
 # <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Dynamische versleuteling: een autorisatie beleid voor de inhouds sleutel configureren
 
@@ -29,7 +29,7 @@ ms.locfileid: "89257021"
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ## <a name="overview"></a>Overzicht
- U kunt Azure Media Services gebruiken om uw inhoud (dynamisch) te versleutelen met de Advanced Encryption Standard (AES) door gebruik te maken van 128-bits coderings sleutels en PlayReady of Widevine Digital Rights Management (DRM). Media Services biedt ook een service voor het leveren van sleutels en PlayReady/Widevine-licenties voor gemachtigde clients.
+ U kunt Azure Media Services gebruiken om uw inhoud (dynamisch) te versleutelen met de Advanced Encryption Standard (AES) door gebruik te maken van 128-bits coderings sleutels en PlayReady of Widevine digital rights management (DRM). Media Services biedt ook een service voor het leveren van sleutels en PlayReady/Widevine-licenties voor gemachtigde clients.
 
 Als u Media Services een Asset wilt versleutelen, moet u een versleutelings sleutel (CommonEncryption of EnvelopeEncryption) koppelen aan de Asset. Zie [Create content keys with rest](media-services-rest-create-contentkey.md)(Engelstalig) voor meer informatie. U moet ook autorisatie beleid configureren voor de sleutel (zoals beschreven in dit artikel).
 

@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: asrastog
-ms.openlocfilehash: 29127a9dff42c0f733e3721d1ea5fea7350e774e
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3abff5645775d724042acba3ee2461c7cad771a7
+ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547351"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103149661"
 ---
 # <a name="troubleshooting-message-routing"></a>Problemen met bericht routering oplossen
 
@@ -37,7 +37,7 @@ Analyseer het volgende om dit probleem op te lossen.
 
 #### <a name="the-routing-metrics-for-this-endpoint"></a>De metrische gegevens van de route ring voor dit eind punt
 
-Alle [IOT hub metrische gegevens met betrekking tot route ring](monitor-iot-hub-reference.md#routing-metrics) worden voorafgegaan door *route ring* . U kunt informatie uit meerdere metrische gegevens combi neren om de hoofd oorzaak van problemen vast te stellen. Gebruik bijvoorbeeld metrische **route ring bezorgings pogingen** om het aantal berichten te identificeren dat aan een eind punt is geleverd of verwijderd wanneer de query's niet overeenkomen met een van de routes en de terugval route zijn uitgeschakeld. Controleer de metrische gegevens van het **routerings latentie** om na te gaan of de latentie voor de levering van berichten constant is of wordt verg root. Een groeiende latentie kan duiden op een probleem met een bepaald eind punt en het wordt aangeraden om [de status van het eind punt](#the-health-of-the-endpoint)te controleren. Deze routerings gegevens hebben ook [dimensies](monitor-iot-hub-reference.md#metric-dimensions) die details geven over de metriek, zoals het eindpunt type, de specifieke naam van het eind punt en een reden waarom het bericht niet is bezorgd.
+Alle [IOT hub metrische gegevens met betrekking tot route ring](monitor-iot-hub-reference.md#routing-metrics) worden voorafgegaan door *route ring*. U kunt informatie uit meerdere metrische gegevens combi neren om de hoofd oorzaak van problemen vast te stellen. Gebruik bijvoorbeeld metrische **route ring bezorgings pogingen** om het aantal berichten te identificeren dat aan een eind punt is geleverd of verwijderd wanneer de query's niet overeenkomen met een van de routes en de terugval route zijn uitgeschakeld. Controleer de metrische gegevens van het **routerings latentie** om na te gaan of de latentie voor de levering van berichten constant is of wordt verg root. Een groeiende latentie kan duiden op een probleem met een bepaald eind punt en het wordt aangeraden om [de status van het eind punt](#the-health-of-the-endpoint)te controleren. Deze routerings gegevens hebben ook [dimensies](monitor-iot-hub-reference.md#metric-dimensions) die details geven over de metriek, zoals het eindpunt type, de specifieke naam van het eind punt en een reden waarom het bericht niet is bezorgd.
 
 #### <a name="the-resource-logs-for-any-operational-issues"></a>De resource logboeken voor operationele problemen
 
@@ -82,4 +82,4 @@ Hieronder vindt u de namen van de bewerkingen en de fout codes die zijn vastgele
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u meer hulp nodig hebt, kunt u contact opnemen met de Azure-experts op [MSDN Azure en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer **ondersteuning verkrijgen** .
+Als u meer hulp nodig hebt, kunt u contact opnemen met de Azure-experts op de [micro soft Q&A en stack overflow forums](https://azure.microsoft.com/support/forums/). U kunt ook een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer **ondersteuning verkrijgen**.

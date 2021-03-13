@@ -1,18 +1,23 @@
 ---
 title: Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit
 description: Meer informatie over de belangrijkste factoren die van invloed zijn op de prestaties van het verplaatsen van gegevens in Azure Data Factory wanneer u de Kopieer activiteit gebruikt.
+services: data-factory
+documentationcenter: ''
 ms.author: jingwang
 author: linda33wj
+manager: shwang
+ms.reviewer: douglasl
 ms.service: data-factory
+ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/15/2020
-ms.openlocfilehash: 1c166b99243e5a6ee576100b8470aa38b9535c7a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: cba248d3f254c9bb97c66ff7a3d39275b4b912c4
+ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100387662"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102616074"
 ---
 # <a name="copy-activity-performance-and-scalability-guide"></a>Handleiding voor prestaties en schaalbaarheid van kopieeractiviteit
 
@@ -48,8 +53,8 @@ ADF biedt een serverloze architectuur die parallellisme op verschillende niveaus
 
 Met deze architectuur kunt u pijp lijnen ontwikkelen die de door Voer van gegevens verplaatsing voor uw omgeving maximaliseren. Deze pijp lijnen maken volledig gebruik van de volgende resources:
 
-* Netwerkbandbreedte
-* Opslag invoer/uitvoer-bewerkingen per seconde (IOPS) en band breedte
+* Netwerk bandbreedte tussen de bron-en doel gegevens archieven
+* Invoer/uitvoer-bewerkingen per seconde (IOPS) en band breedte van bron-of doel gegevens opslag
 
 Dit volledige gebruik houdt in dat u de algehele door Voer kunt schatten door de minimale door Voer die beschikbaar is met de volgende resources te meten:
 
@@ -57,7 +62,7 @@ Dit volledige gebruik houdt in dat u de algehele door Voer kunt schatten door de
 * Doelgegevensarchief
 * Netwerk bandbreedte tussen de bron-en doel gegevens archieven
 
-De onderstaande tabel berekent de duur van de kopie. De duur is gebaseerd op de gegevens grootte en de bandbreedte limiet voor uw omgeving.
+De onderstaande tabel berekent de duur van de kopie. De duur is gebaseerd op de gegevens grootte en de bandbreedte limiet voor netwerk/gegevens opslag voor uw omgeving.
 
 &nbsp;
 

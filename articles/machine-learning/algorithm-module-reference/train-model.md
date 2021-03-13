@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 11/25/2020
-ms.openlocfilehash: 7063452d23d2975cf0c26a89e7a08a422de54942
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.date: 03/10/2021
+ms.openlocfilehash: 77927472dae6c8e7e6fddacf9088b479636edd37
+ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751934"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103224321"
 ---
 # <a name="train-model-module"></a>Train model-module
 
@@ -60,12 +60,34 @@ In Azure Machine Learning is het maken en gebruiken van een machine learning mod
     > [!TIP] 
     > Als u problemen ondervindt met het gebruik van de kolom kiezer, raadpleegt u het artikel [kolommen in gegevensset selecteren](./select-columns-in-dataset.md) voor tips. Hierin worden enkele algemene scenario's en tips beschreven voor het gebruik van de opties **with Rules** en **op naam** .
   
-1.  Verzend de pijp lijn. Als u veel gegevens hebt, kan dit enige tijd duren.
+1.  Verzend de pijp lijn. Als u veel gegevens hebt, kan het enige tijd duren.
 
     > [!IMPORTANT] 
     > Als u een ID-kolom hebt die de ID is van elke rij of een tekst kolom die te veel unieke waarden bevat, kan het **Train-model** een fout aanduiden zoals ' aantal unieke waarden in kolom: ' {COLUMN_NAME} ' groter is dan toegestaan.
     >
     > Dit komt doordat de kolom de drempel waarde van unieke waarden bereikt en er mogelijk onvoldoende geheugen beschikbaar is. U kunt [meta gegevens bewerken](edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren en deze wordt niet gebruikt in de training, of de [N-gram-functies uit de tekst module extra heren](extract-n-gram-features-from-text.md) om de tekst kolom vooraf te verwerken. Raadpleeg de [fout code](././designer-error-codes.md) van de Designer voor meer informatie over fouten.
+
+## <a name="model-interpretability"></a>Model interpretatie
+
+Model interpretatie biedt de mogelijkheid om het ML-model te begrijpen en de onderliggende basis te presen teren om besluit vorming op een manier die begrijpelijk is voor mensen.
+
+De huidige **Train model** -module ondersteunt [het gebruik van interpretatief pakket om ml-modellen te verklaren](https://docs.microsoft.com/azure/machine-learning/how-to-machine-learning-interpretability-aml#generate-feature-importance-values-via-remote-runs). De volgende ingebouwde algoritmen worden ondersteund:
+
+- Lineaire regressie
+- Regressie neuraal netwerk
+- Logistieke regressie met twee klassen
+- Two-Class Support Vector Machine
+- Forest met meerdere klassen besluiten
+
+Als u de beschrijving van het model wilt genereren, selecteert u **waar** in de vervolg keuzelijst met **model uitleg** in de module Train model. De standaard instelling is False in de **Train model** -module. Houd er rekening mee dat voor het genereren van uitleg extra reken kosten nodig zijn.
+
+![Selectie vakje scherm afbeelding met uitleg van model](./media/module/train-model-explanation-checkbox.png)
+
+Nadat de uitvoering van de pijp lijn is voltooid, kunt u het tabblad **uitleg** in het rechterdeel venster van de module **Train model** bezoeken en de prestaties van het model en de prioriteit van de gegevensset en het onderdeel verkennen.
+
+![Scherm opname van diagrammen met uitleg over modellen](./media/module/train-model-explanations-tab.gif)
+
+Raadpleeg het artikel over het [interpreteren van milliliters modellen](https://docs.microsoft.com/azure/machine-learning/how-to-machine-learning-interpretability-aml#generate-feature-importance-values-via-remote-runs)voor meer informatie over het gebruik van model verklaringen in azure machine learning.
 
 ## <a name="results"></a>Resultaten
 

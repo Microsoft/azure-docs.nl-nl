@@ -2,16 +2,16 @@
 title: 'Zelf studie: uitvoer toevoegen aan Azure Resource Manager Bicep-bestand'
 description: Voeg uitvoer toe aan uw Bicep-bestand om de syntaxis te vereenvoudigen.
 author: mumian
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 279417f22ded89db21abddad7a91a4cce520c6bd
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ce2d1044fb0e45a72ce34b14bb654974d29051dc
+ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101748093"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102636237"
 ---
 # <a name="tutorial-add-outputs-to-azure-resource-manager-bicep-file"></a>Zelf studie: uitvoer toevoegen aan Azure Resource Manager Bicep-bestand
 
@@ -37,7 +37,7 @@ Er wordt een opslagaccount geïmplementeerd, maar er wordt geen informatie over 
 
 U kunt uitvoer gebruiken om waarden van de implementatie te retour neren. Het kan bijvoorbeeld nuttig zijn om de eindpunten voor uw nieuwe opslagaccount op te halen.
 
-In het volgende voor beeld wordt de wijziging in het Bicep-bestand gemarkeerd om een uitvoer waarde toe te voegen. Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
+In het volgende voor beeld ziet u de wijziging in uw Bicep-bestand om een uitvoer waarde toe te voegen. Kopieer het hele bestand en vervang het Bicep-bestand door de inhoud ervan.
 
 :::code language="bicep" source="~/resourcemanager-templates/get-started-with-templates/add-outputs/azuredeploy.bicep" range="1-33" highlight="33":::
 
@@ -45,7 +45,9 @@ Er zijn enkele belangrijke dingen die u moet weten over de uitvoerwaarde die u h
 
 Het type van de geretourneerde waarde is ingesteld op `object` , wat betekent dat er een sjabloon object wordt geretourneerd.
 
-Als u de `primaryEndpoints` eigenschap van het opslag account wilt ophalen, gebruikt u de symbolische naam van het opslag account.
+Als u de `primaryEndpoints` eigenschap van het opslag account wilt ophalen, gebruikt u de symbolische naam van het opslag account. De functie automatisch aanvullen van de Visual Studio-code geeft u een volledige lijst met eigenschappen:
+
+   ![Eigenschappen van symbolische naam Bicep van Visual Studio code](./media/bicep-tutorial-add-outputs/visual-studio-code-bicep-output-properties.png)
 
 ## <a name="deploy-bicep-file"></a>Bicep-bestand implementeren
 

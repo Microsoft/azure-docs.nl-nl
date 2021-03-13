@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 - device-developer
-ms.openlocfilehash: 828f0ff81048ca0b6f07b7fdee9ed29c87991db4
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: dc0655aba424d29a4055f0d50a20057f22d084ed
+ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032633"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "103015452"
 ---
 # <a name="get-connected-to-azure-iot-central"></a>Verbinding maken met Azure IoT Central
 
@@ -178,7 +178,7 @@ Deze aanpak is nuttig wanneer u experimenteert met IoT Central of apparaten test
 
 ## <a name="associate-a-device-with-a-device-template"></a>Een apparaat koppelen aan een apparaatprofiel
 
-IoT Central koppelt automatisch een apparaat aan een apparaatprofiel wanneer het apparaat verbinding maakt. Een apparaat verzendt een [model-id](../../iot-pnp/iot-plug-and-play-glossary.md#model-id) wanneer deze verbinding maakt. IoT Central maakt gebruik van de model-ID voor het identificeren van de apparaatprofiel voor dat specifieke model van het apparaat. Het detectie proces werkt als volgt:
+IoT Central koppelt automatisch een apparaat aan een apparaatprofiel wanneer het apparaat verbinding maakt. Een apparaat verzendt een [model-id](../../iot-fundamentals/iot-glossary.md?toc=/azure/iot-central/toc.json&bc=/azure/iot-central/breadcrumb/toc.json#model-id) wanneer deze verbinding maakt. IoT Central maakt gebruik van de model-ID voor het identificeren van de apparaatprofiel voor dat specifieke model van het apparaat. Het detectie proces werkt als volgt:
 
 1. Als de sjabloon voor het apparaat al is gepubliceerd in de IoT Central toepassing, wordt het apparaat gekoppeld aan de sjabloon voor het apparaat.
 1. Als de sjabloon voor het apparaat nog niet is gepubliceerd in de IoT Central toepassing, IoT Central zoekt u het model van het apparaat in de [open bare model opslagplaats](https://github.com/Azure/iot-plugandplay-models). Als IoT Central het model vindt, wordt het gebruikt voor het genereren van een basis sjabloon voor het apparaat.

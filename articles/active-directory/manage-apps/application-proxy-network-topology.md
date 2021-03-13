@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/22/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bbab5463f0d022cb9bf155c7d33e2d81c8bdd448
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: a8f1f902b14dda7d95e3643c335e82ed7c7e5a3f
+ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103199682"
+ms.locfileid: "103232916"
 ---
 # <a name="optimize-traffic-flow-with-azure-active-directory-application-proxy"></a>De verkeers stroom optimaliseren met Azure Active Directory-toepassingsproxy
 
@@ -41,6 +41,9 @@ Als het land of de regio van uw Azure AD-Tenant bijvoorbeeld het Verenigd Konink
 Als u connectors hebt geïnstalleerd in regio's die verschillen van uw standaard regio, kan het nuttig zijn om te wijzigen in welke regio uw connector groep is geoptimaliseerd voor het verbeteren van de prestaties die toegang hebben tot deze toepassingen. Zodra een regio is opgegeven voor een connector groep, wordt deze verbonden met Cloud Services van de toepassings proxy in de aangewezen regio.
 
 Wijs de connector groep toe aan de dichtstbijzijnde regio om de verkeers stroom te optimaliseren en de latentie te verminderen voor een connector groep. Een regio toewijzen:
+
+> [!IMPORTANT]
+> Connectors moeten ten minste versie 1.5.1975.0 gebruiken om deze functie te kunnen gebruiken.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/) als een toepassingsbeheerder van de map die gebruikmaakt van Application Proxy. Als het domein van de tenant bijvoorbeeld contoso.com is, moet de beheerder admin@contoso.com of een andere beheerdersalias in dat domein zijn.
 1. Selecteer uw gebruikersnaam in de rechterbovenhoek. Controleer of u bent aangemeld in een directory die gebruikmaakt van Application Proxy. Als u van directory moet veranderen, selecteert u **Schakelen tussen directory’s** en kiest u een directory die gebruikmaakt van Application Proxy.

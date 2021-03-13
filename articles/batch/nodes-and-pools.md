@@ -2,13 +2,13 @@
 title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
-ms.date: 11/20/2020
-ms.openlocfilehash: be38d4f91afcaa1ac31e9b9bbc6d2547da2ee99e
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 03/11/2021
+ms.openlocfilehash: e1edcc805e0e8c59d189a4622e494101fb31bb6d
+ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102183655"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103200228"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
@@ -65,7 +65,7 @@ Wanneer u een batch-pool maakt, geeft u de configuratie van de virtuele Azure-ma
 Er zijn twee soorten pool configuraties beschikbaar in batch.
 
 > [!IMPORTANT]
-> Pools moeten worden geconfigureerd met virtuele-machine configuratie en niet Cloud Services configuratie. Alle batch-functies worden ondersteund door Pools met virtuele-machine configuratie en er worden nieuwe functies toegevoegd. Cloud Services-configuratie Pools bieden geen ondersteuning voor alle functies en er worden geen nieuwe mogelijkheden gepland.
+> Hoewel u momenteel Pools kunt maken met behulp van een van de configuraties, moeten nieuwe groepen worden geconfigureerd met de configuratie van de virtuele machine en niet Cloud Services configuratie. Alle huidige en nieuwe batch-functies worden ondersteund door de virtuele-machine configuratie groepen. Cloud Services configuratie Pools bieden geen ondersteuning voor alle functies en er worden geen nieuwe mogelijkheden gepland. U kunt geen nieuwe ' CloudServiceConfiguration-groepen maken of nieuwe knoop punten toevoegen aan bestaande Pools [na 29 februari 2024](https://azure.microsoft.com/updates/azure-batch-cloudserviceconfiguration-pools-will-be-retired-on-29-february-2024/).
 
 ### <a name="virtual-machine-configuration"></a>Configuratie van virtuele machine
 
@@ -76,13 +76,13 @@ De [batch-knooppunt agent](https://github.com/Azure/Batch/blob/master/changelogs
 ### <a name="cloud-services-configuration"></a>Cloud Services configuratie
 
 > [!WARNING]
-> De configuratie groepen van de Cloud service zijn afgeschaft. Gebruik in plaats daarvan configuratie groepen voor virtuele machines.
+> Cloud Services configuratie groepen zijn [afgeschaft](https://azure.microsoft.com/updates/azure-batch-cloudserviceconfiguration-pools-will-be-retired-on-29-february-2024/). Gebruik in plaats daarvan configuratie groepen voor virtuele machines. Zie de [batch pool configuratie migreren van Cloud Services naar de virtuele machine](batch-pool-cloud-service-to-virtual-machine-configuration.md)voor meer informatie.
 
 De **configuratie** van de Cloud Services geeft aan dat de groep bestaat uit Azure Cloud Services knoop punten. Cloud Services biedt alleen Windows-reken knooppunten.
 
 Beschik bare besturings systemen voor Cloud Services-configuratie groepen worden weer gegeven in de [Azure Guest OS releases en SDK Compatibility Matrix](../cloud-services/cloud-services-guestos-update-matrix.md)en de beschik bare grootte van reken knooppunten worden weer gegeven in [grootten voor Cloud Services](../cloud-services/cloud-services-sizes-specs.md). Wanneer u een pool maakt die Cloud Services knoop punten bevat, geeft u de grootte van het knoop punt en de bijbehorende *besturingssysteem familie* op (die bepaalt welke versies van .net worden geïnstalleerd met het besturings systeem). Cloud Services wordt sneller geïmplementeerd in azure dan virtuele machines waarop Windows wordt uitgevoerd. Als u pools met Windows-rekenknooppunten wilt, zult u merken dat Cloud Services prestatievoordelen biedt wat de implementatietijd betreft.
 
-Net als bij werkrollen in Cloud Services kan het *type besturingssysteem* worden opgegeven (zie [Overzicht van Cloud Services](../cloud-services/cloud-services-choose-me.md) voor meer informatie over werkrollen). We raden u `Latest (*)` aan voor de versie van het *besturings systeem* op te geven, zodat de knoop punten automatisch worden bijgewerkt en er geen werk vereist is om nieuwe versies vrij te maken. Er wordt voornamelijk voor een specifieke versie van een besturingssysteem gekozen om ervoor te zorgen dat toepassingen compatibel blijven, en om compatibiliteitstests met eerdere versies te kunnen uitvoeren alvorens toe te staan dat de versie mag worden bijgewerkt. Na validatie kan de *versie van het besturings systeem* voor de pool worden bijgewerkt en kan de nieuwe installatie kopie van het besturings systeem worden geïnstalleerd. Actieve taken worden onderbroken en opnieuw in de wachtrij geplaatst.
+Net als bij werk rollen in Cloud Services kunt u een versie van het *besturings systeem* opgeven. We raden u `Latest (*)` aan voor de versie van het *besturings systeem* op te geven, zodat de knoop punten automatisch worden bijgewerkt en er geen werk vereist is om nieuwe versies vrij te maken. Er wordt voornamelijk voor een specifieke versie van een besturingssysteem gekozen om ervoor te zorgen dat toepassingen compatibel blijven, en om compatibiliteitstests met eerdere versies te kunnen uitvoeren alvorens toe te staan dat de versie mag worden bijgewerkt. Na validatie kan de *versie van het besturings systeem* voor de pool worden bijgewerkt en kan de nieuwe installatie kopie van het besturings systeem worden geïnstalleerd. Actieve taken worden onderbroken en opnieuw in de wachtrij geplaatst.
 
 ### <a name="node-agent-skus"></a>Node agent-Sku's
 

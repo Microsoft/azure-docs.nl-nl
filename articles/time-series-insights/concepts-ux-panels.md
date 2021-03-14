@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/22/2021
 ms.custom: seodec18
-ms.openlocfilehash: 55e102cc7e27cbcd9a65999f590c8264f1ad4434
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 77c6e8790451ef830b37cc5914ce9de8e92174f5
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736849"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103464085"
 ---
 # <a name="azure-time-series-insights-explorer"></a>Azure Time Series Insights Explorer
 
@@ -25,7 +25,7 @@ In dit artikel worden de verschillende functies en opties beschreven die beschik
 
 Om aan de slag te gaan met de Azure Time Series Insights Explorer, moet u het volgende doen:
 
-* Een Azure Time Series Insights Gen2-omgeving hebben ingericht. Lees de [Azure time series Insights Gen2](./tutorials-set-up-tsi-environment.md) -zelf studie voor meer informatie over het inrichten van een exemplaar.
+* Een Azure Time Series Insights Gen2-omgeving hebben ingericht. Lees de [Azure time series Insights Gen2](./tutorial-set-up-environment.md) -zelf studie voor meer informatie over het inrichten van een exemplaar.
 * [Geef gegevens toegang](./concepts-access-policies.md) tot de Azure time series Insights Gen2-omgeving die u hebt gemaakt voor het account. U kunt ook toegang verlenen aan anderen en aan uzelf.
 * Voeg een gebeurtenis bron toe aan de Azure Time Series Insights Gen2-omgeving om gegevens naar de omgeving te pushen:
   * Meer informatie [over verbinding maken met een event hub](./how-to-ingest-data-event-hub.md)
@@ -92,7 +92,7 @@ Op de juiste weer gave worden exemplaar velden en andere meta gegevens gekoppeld
 
 U kunt specifieke gegevens elementen uit uw huidige gegevens bron verwijderen door het besturings element rood **verwijderen** (prullenbak kan) aan de linkerkant van het element te selecteren. Daarnaast kunt u zelf bepalen hoe elk element in de grafiek wordt weer gegeven. U kunt ervoor kiezen om min/Maxe scha duwen, gegevens punten toe te voegen, het element in tijd te verschuiven en het exemplaar op een getrapte manier te visualiseren.
 
-Daarnaast kunt u met het besturings element verkennen eenvoudig tijd verschuivingen en spreidings diagrammen maken.  
+Daarnaast kunt u met het besturings element verkennen eenvoudig tijd verschuivingen en spreidings diagrammen maken.
 
   [![Opties voor goed lay-out](media/v2-update-explorer/well-layout-options.png)](media/v2-update-explorer/well-layout-options.png#lightbox)
 

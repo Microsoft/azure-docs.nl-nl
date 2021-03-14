@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: terrylan
 manager: rkarlin
 ms.date: 02/19/2021
-ms.openlocfilehash: b39b1d33885de46607cd55acee9919473fab7733
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 0146e4fcaf70d37975dc587a266c47bf4b3f4601
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102051426"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461671"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Klanten-lockbox voor Microsoft Azure
 
@@ -24,7 +24,7 @@ Klanten-lockbox voor Microsoft Azure biedt klanten een interface om aanvragen vo
 
 In dit artikel wordt beschreven hoe u Klanten-lockbox inschakelt en hoe lockbox-aanvragen worden gestart, bijgehouden en opgeslagen voor latere beoordelingen en controles.
 
-<a name='supported-services-and-scenarios-in-general-availability'><a name='supported-services-and-scenarios-in-preview'>
+<a name='supported-services-and-scenarios-in-general-availability'></a><a name='supported-services-and-scenarios-in-preview'></a>
 ## <a name="supported-services-and-scenarios-general-availability"></a>Ondersteunde services en scenario's (algemene Beschik baarheid)
 
 De volgende services zijn nu algemeen beschikbaar voor Klanten-lockbox:

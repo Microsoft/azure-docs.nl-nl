@@ -9,16 +9,21 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp, devx-track-azurecli
-ms.openlocfilehash: 0ed085a161ced22efb1e5022e34b6f9b0344f942
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b59f8343c9dff07a32accd471f70ddf9f5309b8d
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101721426"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463082"
 ---
 # <a name="tutorial-configure-an-azure-iot-edge-device"></a>Zelf studie: een Azure IoT Edge apparaat configureren
 
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
+
 In dit artikel wordt een virtuele Azure-machine met Linux zodanig geconfigureerd dat deze een Azure IoT Edge apparaat is dat als transparante gateway fungeert. Met een dergelijke configuratie kunnen apparaten via de gateway verbinding maken met Azure IoT Hub zonder dat ze van het bestaan van de gateway af weten. Op hetzelfde moment is een gebruiker met de apparaten in IoT Hub niet op de hoogte van het tussenliggende gateway apparaat. Uiteindelijk voegen we Edge Analytics toe aan ons systeem door IoT Edge modules toe te voegen aan de transparante gateway.
+
+>[!NOTE]
+>De concepten in deze zelf studie zijn van toepassing op alle versies van IoT Edge, maar het voorbeeld apparaat dat u maakt om het scenario uit te proberen, wordt uitgevoerd IoT Edge versie 1,1.
 
 De stappen in dit artikel worden doorgaans uitgevoerd door een cloud-ontwikkelaar.
 

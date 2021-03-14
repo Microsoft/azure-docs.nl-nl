@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: ae07f51a91745acdaf2601d3a50bf282129dac71
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 7b7e29b6e2ebb3b229045df439848264540b59b1
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881802"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461620"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Azure Time Series Insights Gen2-gebeurtenis bronnen
 
@@ -27,7 +27,7 @@ Gebeurtenissen moeten worden verzonden als JSON met UTF-8-code ring.
 
 ## <a name="create-or-edit-event-sources"></a>Gebeurtenis bronnen maken of bewerken
 
-De bron (nen) van uw gebeurtenis kan in hetzelfde Azure-abonnement wonen als uw Azure Time Series Insights Gen2-omgeving of een ander abonnement. U kunt de [Azure Portal](./tutorials-set-up-tsi-environment.md#create-an-azure-time-series-insights-gen2-environment), [Azure cli](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [ARM-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [rest API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om de gebeurtenis bronnen van uw omgeving te maken, bewerken of verwijderen.
+De bron (nen) van uw gebeurtenis kan in hetzelfde Azure-abonnement wonen als uw Azure Time Series Insights Gen2-omgeving of een ander abonnement. U kunt de [Azure Portal](./tutorial-set-up-environment.md#create-an-azure-time-series-insights-gen2-environment), [Azure cli](https://github.com/Azure/azure-cli-extensions/tree/master/src/timeseriesinsights), [ARM-sjablonen](time-series-insights-manage-resources-using-azure-resource-manager-template.md)en de [rest API](/rest/api/time-series-insights/management(gen1/gen2)/eventsources) gebruiken om de gebeurtenis bronnen van uw omgeving te maken, bewerken of verwijderen.
 
 Wanneer u een gebeurtenis bron verbindt, worden in uw Azure Time Series Insights Gen2-omgeving alle gebeurtenissen gelezen die momenteel zijn opgeslagen in uw IOT of event hub, te beginnen met de oudste gebeurtenis.
 

@@ -9,18 +9,20 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: b352bd92ecc69ca68a6870d3a59ef5e0cdd1daba
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+ms.openlocfilehash: fea8f52ebf40ba8195de134098693f90315bb384
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920857"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461416"
 ---
-# <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Zelfstudie: IoT Edge-modules ontwikkelen voor Linux-apparaten
+# <a name="tutorial-develop-iot-edge-modules-with-linux-containers"></a>Zelf studie: IoT Edge-modules ontwikkelen met Linux-containers
 
-Visual Studio Code gebruiken voor het ontwikkelen en implementeren van code voor Linux-apparaten met IoT Edge.
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-In de quickstart hebt u een IoT Edge-apparaat gemaakt met behulp van een virtuele Linux-machine en een module geïmplementeerd vanuit Azure Marketplace. In deze zelfstudie wordt uitgelegd hoe u uw eigen code ontwikkelt en implementeert op een IoT Edge-apparaat. Het is handig dit artikel door te nemen voor de andere zelfstudies, die dieper ingaan op specifieke programmeertalen of Azure-services.
+Gebruik Visual Studio code om code te ontwikkelen en te implementeren op apparaten met IoT Edge.
+
+In de Snelstartgids hebt u een IoT Edge apparaat gemaakt en een module geïmplementeerd vanuit Azure Marketplace. In deze zelfstudie wordt uitgelegd hoe u uw eigen code ontwikkelt en implementeert op een IoT Edge-apparaat. Het is handig dit artikel door te nemen voor de andere zelfstudies, die dieper ingaan op specifieke programmeertalen of Azure-services.
 
 In deze zelfstudie wordt gebruikgemaakt van het voorbeeld van de implementatie van een **C#-module op een Linux-apparaat**. Dit voorbeeld is gekozen omdat dit het meest voorkomende ontwikkelaarsscenario voor IoT Edge oplossingen is. Ook als u van plan bent een andere taal te gebruiken of een Azure-service te implementeren, is deze zelfstudie nog steeds nuttig om meer te leren over de ontwikkelhulpprogramma's en -concepten. Voltooi deze inleiding tot het ontwikkelproces en kies vervolgens de gewenste taal of Azure-service om de details te bekijken.
 
@@ -44,7 +46,7 @@ Een ontwikkelcomputer:
 * [De extensie C# voor Visual Studio Code (van OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 * [.NET Core 2.1 SDK](https://www.microsoft.com/net/download).
 
-Een Azure IoT Edge-apparaat op Linux:
+Een Azure IoT Edge-apparaat:
 
 * We raden u aan om IoT Edge niet uit te voeren op uw ontwikkelcomputer, maar een afzonderlijk apparaat te gebruiken. Dit onderscheid tussen ontwikkelcomputer en IoT Edge apparaat sluit nauwer aan op een echt implementatiescenario en helpt om de verschillende concepten uit elkaar te houden.
 * Als u geen tweede apparaat beschikbaar hebt, gebruikt u het quickstart-artikel om een IoT Edge-apparaat in Azure te maken met een [virtuele Linux-machine](quickstart-linux.md).
@@ -61,7 +63,10 @@ In deze zelfstudie doorloopt u de ontwikkeling van een IoT Edge-module. Een *IoT
 
 Bij het ontwikkelen van IoT Edge-modules is het belangrijk dat u begrijpt wat het verschil is tussen de ontwikkelcomputer en het IoT Edge doelapparaat waarop de module uiteindelijk zal worden geïmplementeerd. De container die u voor de modulecode bouwt, moet overeenkomen met het besturingssysteem van het *doelapparaat*. Zo is het meest voorkomende scenario dat iemand een module ontwikkelt op een Windows-computer met het doel deze op een Linux-apparaat met IoT Edge te implementeren. In dat geval zou het besturingssysteem van de container Linux zijn. Als u deze zelfstudie doorloopt, moet u rekening houden met het verschil tussen het *besturingssysteem van de ontwikkelcomputer* en het *besturingssysteem van de container*.
 
-Deze zelfstudie richt zich op Linux-apparaten met IoT Edge. Als de ontwikkelcomputer Linux-containers uitvoert, kunt u uw favoriete besturingssysteem gebruiken. We raden u aan om Visual Studio Code te gebruiken voor het ontwikkelen voor Linux-apparaten, en dat wordt dan ook in deze zelfstudie gebruikt. U kunt ook Visual Studio gebruiken, maar er zijn wel verschillen in ondersteuning tussen de twee hulpprogramma's.
+>[!TIP]
+>Als u [IOT Edge voor Linux op Windows](iot-edge-for-linux-on-windows.md)gebruikt, is het *doel apparaat* in uw scenario de virtuele Linux-machine, niet de Windows-host.
+
+In deze zelf studie wordt gestreefd naar apparaten met IoT Edge Linux-containers. Als de ontwikkelcomputer Linux-containers uitvoert, kunt u uw favoriete besturingssysteem gebruiken. We raden u aan om Visual Studio code te gebruiken voor het ontwikkelen met Linux-containers, zodat deze zelf studie wordt gebruikt. U kunt ook Visual Studio gebruiken, maar er zijn wel verschillen in ondersteuning tussen de twee hulpprogramma's.
 
 De volgende tabel bevat een overzicht van de ondersteunde ontwikkelscenario's voor **Linux-containers** in Visual Studio Code en Visual Studio.
 

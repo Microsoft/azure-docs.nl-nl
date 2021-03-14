@@ -9,18 +9,23 @@ ms.date: 08/03/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, amqp, devx-track-csharp
-ms.openlocfilehash: edbe2b8370b943aa93a1cef425c64e9f11feb735
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 4e01b1ca9a3858ff31ad9b5da1d1159209c44330
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705588"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103464055"
 ---
-# <a name="tutorial-develop-c-iot-edge-modules-for-windows-devices"></a>Zelfstudie: C#-modules ontwikkelen voor Windows-apparaten met IoT Edge
+# <a name="tutorial-develop-c-iot-edge-modules-using-windows-containers"></a>Zelf studie: C#-IoT Edge modules ontwikkelen met behulp van Windows-containers
+
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
 Dit artikel toont hoe u Visual Studio kunt gebruiken om C#-code te ontwikkelen en te implementeren op een Windows-apparaat dat Azure IoT Edge uitvoert.
 
-U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert. 
+>[!NOTE]
+>IoT Edge 1,1 LTS is het laatste release kanaal dat ondersteuning biedt voor Windows-containers. Vanaf versie 1,2 worden Windows-containers niet ondersteund. Overweeg het gebruik of verplaatsen van [IOT Edge voor Linux in Windows](iot-edge-for-linux-on-windows.md) om IOT Edge op Windows-apparaten uit te voeren.
+
+U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code waarmee uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten wordt geïmplementeerd. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert.
 
 In deze zelfstudie leert u het volgende:
 
@@ -31,27 +36,27 @@ In deze zelfstudie leert u het volgende:
 > * De module implementeren op uw IoT Edge-apparaat.
 > * Gegenereerde gegevens weergeven.
 
-De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens die door uw apparaat worden gegenereerd. Deze module verzendt alleen gegevens upstream als de temperatuur boven een opgegeven drempelwaarde komt. Dit soort analyse is nuttig om de hoeveelheid gegevens te reduceren die worden gecommuniceerd naar en worden opgeslagen in de cloud.
+De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens die door uw apparaat worden gegenereerd. Deze module verzendt alleen gegevens upstream als de temperatuur boven een bepaalde drempelwaarde komt. Dit soort analyse is nuttig om de hoeveelheid gegevens te reduceren die worden gecommuniceerd naar en worden opgeslagen in de cloud.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
-Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in C# met behulp van Visual Studio 2019 en hoe u deze kunt implementeren op een Windows-apparaat. Als u modules voor Linux-apparaten ontwikkelt, gaat u naar [C#-modules ontwikkelen voor Linux-apparaten met IoT Edge](tutorial-csharp-module.md).
+Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in C# met behulp van Visual Studio 2019 en hoe u deze kunt implementeren op een Windows-apparaat. Als u modules ontwikkelt met Linux-containers, gaat u naar [C#-IOT Edge modules ontwikkelen met Linux-containers](tutorial-csharp-module.md) .
 
-Bekijk de volgende tabel om inzicht te krijgen in de opties voor het ontwikkelen en implementeren van C#-modules op Windows-apparaten:
+Raadpleeg de volgende tabel voor meer informatie over de mogelijkheden voor het ontwikkelen en implementeren van C#-modules met behulp van Windows-containers:
 
 | C# | Visual&nbsp;Studio&nbsp;Code | Visual Studio 2017&nbsp;en&nbsp;2019 |
 | -- | :------------------: | :------------------: |
 | Windows AMD64 ontwikkelen | ![C#-modules ontwikkelen voor WinAMD64 in Visual Studio Code](./media/tutorial-c-module/green-check.png) | ![C#-modules ontwikkelen voor WinAMD64 in Visual Studio](./media/tutorial-c-module/green-check.png) |
 | Windows AMD64 fouten opsporen |   | ![Fouten opsporen in C#-modules voor WinAMD64 in Visual Studio](./media/tutorial-c-module/green-check.png) |
 
-Voordat u met deze zelfstudie begint, moet u uw ontwikkelomgeving instellen door de instructies te volgen in de zelfstudie [IoT Edge-modules voor Windows-apparaten ontwikkelen](tutorial-develop-for-windows.md). Nadat u deze hebt voltooid, bevat uw omgeving de volgende vereisten:
+Voordat u met deze zelf studie begint, moet u uw ontwikkel omgeving instellen door de instructies in de zelf studie [IOT Edge-modules ontwikkelen met behulp van Windows-containers](tutorial-develop-for-windows.md) te volgen. Nadat u deze hebt voltooid, bevat uw omgeving de volgende vereisten:
 
 * Een gratis of standaard [IoT-hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een [Windows-apparaat met Azure IoT Edge](quickstart.md).
+* Een [Windows-apparaat met Azure IoT Edge](how-to-install-iot-edge-windows-on-windows.md).
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
-* [Visual Studio 2019](/visualstudio/install/install-visual-studio) geconfigureerd met de extensie [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
+* [Visual Studio 2019](/visualstudio/install/install-visual-studio), geconfigureerd met de extensie [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 * [Docker Desktop](https://docs.docker.com/docker-for-windows/install/), geconfigureerd voor het uitvoeren van Windows-containers.
 
 > [!TIP]
@@ -67,9 +72,9 @@ Azure IoT Edge Tools bieden projectsjablonen voor alle ondersteunde IoT Edge-mod
 
 1. Open Visual Studio 2019 en selecteer **Een nieuw project maken**.
 
-1. Zoek in het deelvenster **Een nieuw project maken** naar **IoT Edge**. Selecteer vervolgens in de resultatenlijst het project **Azure IOT Edge (Windows amd64)** .
+1. Zoek in het deelvenster **Nieuw project maken** naar **IoT Edge**. Selecteer vervolgens in de resultatenlijst het project **Azure IOT Edge (Windows amd64)** .
 
-   ![Schermopname van het IoT Edge-deelvenster 'Een nieuw project maken'.](./media/tutorial-csharp-module-windows/new-project.png)
+   ![Schermopname van het IoT Edge-deelvenster Nieuw project maken.](./media/tutorial-csharp-module-windows/new-project.png)
 
 1. Selecteer **Next**.
 
@@ -83,16 +88,16 @@ Azure IoT Edge Tools bieden projectsjablonen voor alle ondersteunde IoT Edge-mod
 
    Het deelvenster **Module toevoegen** wordt geopend.
 
-   ![Schermopname van het deelvenster 'Module toevoegen' voor het configureren van uw project.](./media/tutorial-csharp-module-windows/add-application-and-module.png)
+   ![Schermopname van het deelvenster Module toevoegen voor het configureren van uw project.](./media/tutorial-csharp-module-windows/add-application-and-module.png)
 
-1. Voer het volgende uit op de pagina **Uw nieuwe project configureren**:
+1. Op de pagina **Uw nieuwe project configureren** gaat u als volgt te werk:
 
    a. Selecteer in het linkerdeelvenster de **C# Module**-sjabloon.  
    b. Voer **CSharpModule** in het vak **Naam van module** in.  
-   c. Ga naar het vak van de **URL van opslagplaats**. Vervang vervolgens **localhost:5000** door de waarde van de **Aanmeldingsserver** uit uw Azure-containerregister. Volg hierbij het volgende indeling: `<registry name>.azurecr.io/csharpmodule`
+   c. Ga naar het vak **URL van opslagplaats**. Vervang **localhost:5000** door de waarde van de **aanmeldingsserver** uit uw Azure-containerregister. Volg hierbij het volgende indeling: `<registry name>.azurecr.io/csharpmodule`
 
     > [!NOTE]
-    > Een opslagplaats voor afbeeldingen bevat de naam van het containerregister en de naam van uw containerafbeelding. De containerafbeelding wordt vooraf ingevuld met de naam van het moduleproject.  U vindt de aanmeldingsserver op de overzichtspagina van het containerregister in de Azure Portal.
+    > Een opslagplaats voor installatiekopieën bevat de naam van het containerregister en de naam van uw containerinstallatiekopie. De containerinstallatiekopie wordt vooraf ingevuld met de waarde van de naam van het moduleproject.  U vindt de aanmeldingsserver op de overzichtspagina van het containerregister in Azure Portal.
 
 1. Selecteer **Toevoegen** om het project te maken.
 
@@ -102,7 +107,7 @@ In het distributiemanifest worden de referenties voor het containerregister gede
 
 1. Open het bestand *deployment.template.json* in Visual Studio Solution Explorer.
 
-1. Zoek de eigenschap **registryCredentials** in de gewenste $edgeAgent-eigenschappen. Het registeradres van de eigenschap moet worden aangevuld met de informatie die u hebt ingevoerd tijdens het maken van het project. De velden voor gebruikersnaam en wachtwoord moeten namen van variabelen bevatten. Bijvoorbeeld:
+1. Zoek de eigenschap **registryCredentials** in de gewenste $edgeAgent-eigenschappen. Het registeradres van de eigenschap moet automatisch worden gevuld met de informatie die u hebt ingevoerd tijdens het maken van het project. De velden voor gebruikersnaam en wachtwoord moeten namen van variabelen bevatten. Bijvoorbeeld:
 
    ```json
    "registryCredentials": {
@@ -114,11 +119,11 @@ In het distributiemanifest worden de referenties voor het containerregister gede
    }
    ```
 
-1. Open het omgevingsbestand (ENV) in uw moduleoplossing. Het bestand is standaard verborgen in de Solution Explorer, dus u moet mogelijk de knop **Alle bestanden weergeven** selecteren om het bestand weer te geven. Het ENV-bestand moet dezelfde variabelen voor de gebruikersnaam en het wachtwoord bevatten als het bestand *deployment.template.json*.
+1. Open het omgevingsbestand (ENV) in uw moduleoplossing. Het bestand is standaard verborgen in Solution Explorer, dus u moet mogelijk de knop **Alle bestanden weergeven** selecteren om het bestand weer te geven. Het ENV-bestand moet dezelfde variabelen voor de gebruikersnaam en het wachtwoord bevatten als het bestand *deployment.template.json*.
 
 1. Voeg de waarden voor de **gebruikersnaam** en het **wachtwoord** toe uit het Azure-containerregister.
 
-1. Sla uw wijzigingen in het .env-bestand op.
+1. Sla uw wijzigingen in het ENV-bestand op.
 
 ### <a name="update-the-module-with-custom-code"></a>De module bijwerken met aangepaste code
 
@@ -310,7 +315,7 @@ In de vorige sectie hebt u een IoT Edge-oplossing gemaakt en code toegevoegd aan
    docker login -u <ACR username> -p <ACR password> <ACR login server>
    ```
 
-   Mogelijk wordt een beveiligingswaarschuwing weergegeven waarin het gebruik van `--password-stdin` wordt aanbevolen. Hoewel dit als best practice wordt aanbevolen voor productiescenario's, valt het buiten het bereik van deze zelfstudie. Zie de documentatie voor [aanmelding bij Docker](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin) voor meer informatie.
+   Mogelijk wordt een beveiligingswaarschuwing weergegeven waarin het gebruik van `--password-stdin` wordt aanbevolen. Hoewel dit voor productiescenario's als best practice wordt aanbevolen, valt het buiten het bereik van deze zelfstudie. Zie de documentatie voor [aanmelding bij Docker](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin) voor meer informatie.
 
 ### <a name="build-and-push"></a>Bouwen en pushen
 
@@ -319,7 +324,7 @@ In de vorige sectie hebt u een IoT Edge-oplossing gemaakt en code toegevoegd aan
 1. Selecteer **IoT Edge-modules bouwen en pushen**.
 
    Met de opdracht voor bouwen en pushen worden drie bewerkingen gestart:
-   * Eerst wordt een nieuwe map gemaakt in de oplossing met de naam *configuratie*. Deze map bevat het volledige distributiemanifest. Het is gebaseerd op de informatie in de implementatiesjabloon en andere oplossingsbestanden. 
+   * Eerst wordt een nieuwe map in de oplossing gemaakt met de naam *config*. Deze map bevat het volledige distributiemanifest. Het is gebaseerd op informatie in de implementatiesjabloon en andere oplossingsbestanden. 
    * Daarna wordt `docker build` uitgevoerd om de containerinstallatiekopie te bouwen. Dit gebeurt op basis van de juiste Dockerfile voor uw doelarchitectuur. 
    * Vervolgens wordt `docker push` uitgevoerd om de opslagplaats van de installatiekopie naar het containerregister te pushen.
 
@@ -337,13 +342,13 @@ Zorg ervoor dat uw IoT Edge-apparaat actief is.
 
 1. Selecteer **Implementatie maken**.
 
-1. Ga in Visual Studio File Explorer naar de map *config* van uw oplossing. Selecteer vervolgens het bestand *deployment.windows-amd64.json*.
+1. Ga in Visual Studio File Explorer naar de map *config* van uw oplossing. Selecteer hierin het bestand *deployment.windows-amd64.json*.
 
-1. Vernieuw Cloud Explorer om de geïmplementeerde modules die onder uw apparaat staan weer te geven.
+1. Vernieuw Cloud Explorer om de geïmplementeerde modules weer te geven die onder uw apparaat vermeld staan.
 
 ## <a name="view-generated-data"></a>Gegenereerde gegevens weergeven
 
-Nadat u het implementatiemanifest op uw IoT Edge-apparaat hebt toepast, verzamelt de IoT Edge-runtime op het apparaat de informatie over de nieuwe implementatie en wordt deze uitgevoerd. Modules die worden uitgevoerd op het apparaat, maar die niet zijn opgenomen in het implementatiemanifest, worden gestopt. Modules die ontbreken op het apparaat worden gestart.
+Nadat u het distributiemanifest op uw IoT Edge-apparaat hebt toegepast, verzamelt de IoT Edge-runtime op het apparaat de informatie over de nieuwe implementatie en wordt deze uitgevoerd. Modules die worden uitgevoerd op het apparaat, maar die niet zijn opgenomen in het distributiemanifest, worden gestopt. Modules die op het apparaat ontbreken, worden gestart.
 
 U kunt de IoT Edge Tools-extensie gebruiken om berichten weer te geven terwijl ze arriveren in uw IoT-hub.
 
@@ -373,9 +378,9 @@ U heeft de CSharpModule-moduledubbel gebruikt om de drempelwaarde voor de temper
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u van plan bent door te gaan met het volgende aanbevolen artikel, kunt u de resources en configuraties die u hebt gemaakt behouden en opnieuw gebruiken in deze zelfstudie. U kunt ook hetzelfde IoT Edge-apparaat blijven gebruiken als een testapparaat.
+Als u van plan bent door te gaan met het volgende aanbevolen artikel, kunt u de resources en configuraties die u in deze zelfstudie hebt gemaakt, bewaren en opnieuw gebruiken. U kunt ook hetzelfde IoT Edge-apparaat blijven gebruiken als een testapparaat.
 
-Anders kunt u, om kosten te vermijden, de lokale configuraties en Azure-resources die u hier hebt gebruikt verwijderen.
+Anders kunt u, om kosten te vermijden, de lokale configuraties en Azure-resources verwijderen die u hier hebt gebruikt.
 
 [!INCLUDE [iot-edge-clean-up-cloud-resources](../../includes/iot-edge-clean-up-cloud-resources.md)]
 

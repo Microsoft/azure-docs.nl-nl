@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/03/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: dfedec85208ef9afaa58db2b200dc9f9988a845b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: fc7892db2ca11ab7970835f8979360961ee01104
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101709237"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463337"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Taal pakketten toevoegen aan een Windows 10-installatie kopie met meerdere sessies
 
@@ -54,6 +54,7 @@ U hebt de volgende zaken nodig om uw installatie kopieën met meerdere sessies v
           - [Windows 10, versie 2004 of 20H2 **10C** LXP ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2010C.iso)
           - [Windows 10, versie 2004 of 20H2 **11C** LXP ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2011C.iso)
           - [Windows 10, versie 2004 of 20H2 **1c** LXP ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2101C.iso)
+          - [Windows 10, versie 2004 of 20H2 **2c** LXP ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2102C.iso)
 
 - Een Azure Files share of bestands share op een virtuele machine met Windows-Bestands server
 

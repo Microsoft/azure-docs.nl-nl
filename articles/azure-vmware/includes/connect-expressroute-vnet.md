@@ -3,12 +3,12 @@ title: ExpressRoute verbinden met de gateway voor het virtuele netwerk
 description: Stappen om ExpressRoute te verbinden met de gateway voor het virtuele netwerk.
 ms.topic: include
 ms.date: 12/08/2020
-ms.openlocfilehash: 5f9a565a7662041dbd85e61388129496fa376962
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: cea07f9a75e91b2b8ff444c9dda4a59d421ca37c
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861511"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462320"
 ---
 <!-- Used in deploy-azure-vmware-solution.md and tutorial-configure-networking.md -->
 
@@ -31,6 +31,8 @@ ms.locfileid: "96861511"
    | **Autorisatiesleutel**  | Kopieer en plak de autorisatiesleutel vanuit het tabblad ExpressRoute voor de resourcegroep. |
    | **URI van peercircuit**  | Kopieer en plak de ExpressRoute-id vanuit het tabblad ExpressRoute voor uw resourcegroep.  |
 
-   :::image type="content" source="../media/expressroute-global-reach/open-cloud-shell.png" alt-text="Geef op de pagina Verbinding toevoegen waarden op voor de velden en selecteer OK." border="true" lightbox="../media/expressroute-global-reach/open-cloud-shell.png":::
+   :::image type="content" source="../media/expressroute-global-reach/expressroute-add-connection.png" alt-text="Scherm opname van de pagina verbinding toevoegen om ExpressRoute te verbinden met de virtuele netwerk gateway.":::
 
 De verbinding tussen het ExpressRoute-circuit en uw virtuele netwerk wordt gemaakt.
+
+:::image type="content" source="../media/expressroute-global-reach/virtual-network-gateway-connections.png" alt-text="Scherm opname van de gateway verbindingen van het virtuele netwerk.":::

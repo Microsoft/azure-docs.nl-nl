@@ -2,13 +2,13 @@
 title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
-ms.date: 11/25/2020
-ms.openlocfilehash: a8b089ce834d5b49e4ad32081a58e371835e8602
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.date: 03/13/2021
+ms.openlocfilehash: d1b0792ab9b9975edf45ab8addb81410e1da4107
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488295"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462287"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -157,7 +157,7 @@ Nadat u de VMware HCX-connector OVA on-premises hebt geïmplementeerd en het app
    > [!NOTE]
    > Normaal gesproken is dit hetzelfde als uw FQDN of uw IP-adres voor vCenter.
 
-1. Controleer of de ingevoerde gegevens juist zijn en selecteer **Restart**.
+1. Controleer of de ingevoerde gegevens juist zijn en selecteer **opnieuw starten**.
     
    > [!NOTE]
    > Er vindt een vertraging plaats na het opnieuw opstarten voordat u wordt gevraagd om de volgende stap.
@@ -183,7 +183,7 @@ U kunt de VMware HCX-cloudbeheerder in Azure VMware Solution verbinden met de VM
 
 1. Selecteer onder **Infrastructure** de optie **Site Pairing** en selecteer vervolgens de optie **Connect To Remote Site** (in het midden van het scherm). 
 
-1. Voer de eerder genoteerde URL van Azure VMware Solution HCX Cloud Manager of het eerder genoteerde IP-adres `https://x.x.x.9`, de gebruikersnaam cloudadmin@vsphere.local en het wachtwoord van Azure VMware Solution in. Selecteer vervolgens **Connect**.
+1. Voer de Azure VMware-oplossing HCX Cloud Manager-URL of het IP-adres in die u eerder hebt genoteerd `https://x.x.x.9` , de Azure VMware-oplossing cloudadmin \@ vSphere. lokale gebruikers naam en het wacht woord. Selecteer vervolgens **Connect**.
 
    > [!NOTE]
    > Een site-paar maken:

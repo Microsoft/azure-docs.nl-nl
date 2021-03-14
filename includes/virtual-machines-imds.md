@@ -8,12 +8,12 @@ ms.date: 01/04/2021
 ms.author: chhenk
 ms.reviewer: azmetadatadev
 ms.custom: references_regions
-ms.openlocfilehash: 554730919d4226c07e099d5e457cd0fd20dbad30
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 357223751112af03bf797ae9a0e6352a10132ab9
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102511008"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103464994"
 ---
 De Azure Instance Metadata Service (IMDS) bevat informatie over actieve exemplaren van virtuele machines. U kunt deze gebruiken om uw virtuele machines te beheren en te configureren.
 Deze informatie omvat de gebeurtenissen SKU, opslag, netwerk configuraties en gepland onderhoud. Zie overzicht van de [eindpunt categorieën](#endpoint-categories)voor een volledige lijst met beschik bare gegevens.
@@ -1140,174 +1140,168 @@ Als er geen gegevens element is gevonden of een ongeldige aanvraag is, retournee
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-**Ik krijg de fout melding `400 Bad Request, Required metadata header not specified` . Wat betekent dit?**
+- Ik krijg de fout melding `400 Bad Request, Required metadata header not specified` . Wat betekent dit?
+  - IMDS vereist dat de header `Metadata: true` in de aanvraag wordt door gegeven. Als deze header door de REST-aanroep wordt door gegeven, is toegang tot IMDS mogelijk.
 
-IMDS vereist dat de header `Metadata: true` in de aanvraag wordt door gegeven. Als deze header door de REST-aanroep wordt door gegeven, is toegang tot IMDS mogelijk.
+- Waarom krijg ik geen reken gegevens voor mijn virtuele machine?
+  - Momenteel ondersteunt IMDS alleen instanties die zijn gemaakt met Azure Resource Manager.
 
-**Waarom krijg ik geen reken gegevens voor mijn virtuele machine?**
+- Ik heb Azure Resource Manager enige tijd geleden mijn virtuele machine gemaakt. Waarom zie ik geen gegevens over de berekening van meta gegevens?
+  - Als u na september 2016 uw VM hebt gemaakt, voegt u een [tag](../articles/azure-resource-manager/management/tag-resources.md) toe om de reken-meta gegevens te bekijken. Als u vóór september 2016 uw VM hebt gemaakt, kunt u uitbrei dingen of gegevens schijven toevoegen aan of verwijderen uit het VM-exemplaar om meta gegevens te vernieuwen.
 
-Momenteel ondersteunt IMDS alleen instanties die zijn gemaakt met Azure Resource Manager.
+- Waarom worden niet alle gegevens weer gegeven die zijn ingevoerd voor een nieuwe versie?
+  - Als u na september 2016 uw VM hebt gemaakt, voegt u een [tag](../articles/azure-resource-manager/management/tag-resources.md) toe om de reken-meta gegevens te bekijken. Als u vóór september 2016 uw VM hebt gemaakt, kunt u uitbrei dingen of gegevens schijven toevoegen aan of verwijderen uit het VM-exemplaar om meta gegevens te vernieuwen.
 
-**Ik heb Azure Resource Manager enige tijd geleden mijn virtuele machine gemaakt. Waarom zie ik geen gegevens over de berekening van meta gegevens?**
+- Waarom krijg ik de fout `500 Internal Server Error` of `410 Resource Gone` ?
+  - Probeer de aanvraag opnieuw uit te voeren. Zie [tijdelijke fout afhandeling](/azure/architecture/best-practices/transient-faults)voor meer informatie. Als het probleem zich blijft voordoen, maakt u een ondersteunings probleem in de Azure Portal voor de virtuele machine.
 
-Als u na september 2016 uw VM hebt gemaakt, voegt u een [tag](../articles/azure-resource-manager/management/tag-resources.md) toe om de reken-meta gegevens te bekijken. Als u vóór september 2016 uw VM hebt gemaakt, kunt u uitbrei dingen of gegevens schijven toevoegen aan of verwijderen uit het VM-exemplaar om meta gegevens te vernieuwen.
+- Zou dit werken voor instanties van de schaalset voor virtuele machines?
+  - Ja, IMDS is beschikbaar voor instanties van virtuele-machine schaal sets.
 
-**Waarom worden niet alle gegevens weer gegeven die zijn ingevoerd voor een nieuwe versie?**
+- Ik heb mijn tags in virtuele-machine schaal sets bijgewerkt, maar ze worden niet weer gegeven in de instanties (in tegens telling tot Vm's met één exemplaar). Wil ik iets verkeerd doen?
+  - Momenteel worden labels voor virtuele-machine schaal sets alleen weer gegeven voor de VM op het moment dat de computer opnieuw wordt opgestart, de installatie kopie of de schijf wordt gewijzigd.
 
-Als u na september 2016 uw VM hebt gemaakt, voegt u een [tag](../articles/azure-resource-manager/management/tag-resources.md) toe om de reken-meta gegevens te bekijken. Als u vóór september 2016 uw VM hebt gemaakt, kunt u uitbrei dingen of gegevens schijven toevoegen aan of verwijderen uit het VM-exemplaar om meta gegevens te vernieuwen.
+- Waarom zie ik de SKU-informatie voor mijn VM niet in `instance/compute` Details?
+  - Voor aangepaste installatie kopieën die zijn gemaakt op basis van Azure Marketplace, behoudt Azure platform de SKU-informatie voor de aangepaste installatie kopie en de Details voor alle Vm's die zijn gemaakt op basis van de aangepaste installatie kopie. Dit is standaard en wordt dus niet weer gegeven in de gegevens van de virtuele machine `instance/compute` .
 
-**Waarom krijg ik de fout `500 Internal Server Error` of `410 Resource Gone` ?**
+- Waarom is er een time-out opgetreden voor mijn aanvraag voor mijn oproep naar de service?
+  - Meta gegevens moeten worden gemaakt op basis van het primaire IP-adres dat is toegewezen aan de primaire netwerk kaart van de virtuele machine. Als u uw routes hebt gewijzigd, moet er bovendien een route voor het 169.254.169.254/32-adres in de lokale routerings tabel van de VM zijn.
 
-Probeer de aanvraag opnieuw uit te voeren. Zie [tijdelijke fout afhandeling](/azure/architecture/best-practices/transient-faults)voor meer informatie. Als het probleem zich blijft voordoen, maakt u een ondersteunings probleem in de Azure Portal voor de virtuele machine.
+    ### <a name="windows"></a>[Windows](#tab/windows/)
 
-**Zou dit werken voor instanties van de schaalset voor virtuele machines?**
+    1. Dump uw lokale routerings tabel en zoek naar de IMDS-vermelding. Bijvoorbeeld:
+        ```console
+        > route print
+        IPv4 Route Table
+        ===========================================================================
+        Active Routes:
+        Network Destination        Netmask          Gateway       Interface  Metric
+                0.0.0.0          0.0.0.0      172.16.69.1      172.16.69.7     10
+                127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+                127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+        127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+            168.63.129.16  255.255.255.255      172.16.69.1      172.16.69.7     11
+        169.254.169.254  255.255.255.255      172.16.69.1      172.16.69.7     11
+        ... (continues) ...
+        ```
+    1. Controleer of er een route bestaat voor `169.254.169.254` en noteer de bijbehorende netwerk interface (bijvoorbeeld `172.16.69.7` ).
+    1. Dump de configuratie van de interface en zoek de interface die overeenkomt met het punt waarnaar wordt verwezen in de routerings tabel. Dit is het MAC-adres (fysiek).
+        ```console
+        > ipconfig /all
+        ... (continues) ...
+        Ethernet adapter Ethernet:
 
-Ja, IMDS is beschikbaar voor instanties van virtuele-machine schaal sets.
+        Connection-specific DNS Suffix  . : xic3mnxjiefupcwr1mcs1rjiqa.cx.internal.cloudapp.net
+        Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+        Physical Address. . . . . . . . . : 00-0D-3A-E5-1C-C0
+        DHCP Enabled. . . . . . . . . . . : Yes
+        Autoconfiguration Enabled . . . . : Yes
+        Link-local IPv6 Address . . . . . : fe80::3166:ce5a:2bd5:a6d1%3(Preferred)
+        IPv4 Address. . . . . . . . . . . : 172.16.69.7(Preferred)
+        Subnet Mask . . . . . . . . . . . : 255.255.255.0
+        ... (continues) ...
+        ```
+    1. Controleer of de interface overeenkomt met de primaire NIC van de virtuele machine en het primaire IP-adres. U kunt de primaire NIC en het IP-adres vinden door te kijken naar de netwerk configuratie in de Azure Portal of door de Azure CLI te bekijken. Noteer de privé Ip's (en het MAC-adres als u de CLI gebruikt). Hier volgt een Power shell CLI-voor beeld:
+        ```powershell
+        $ResourceGroup = '<Resource_Group>'
+        $VmName = '<VM_Name>'
+        $NicNames = az vm nic list --resource-group $ResourceGroup --vm-name $VmName | ConvertFrom-Json | Foreach-Object { $_.id.Split('/')[-1] }
+        foreach($NicName in $NicNames)
+        {
+            $Nic = az vm nic show --resource-group $ResourceGroup --vm-name $VmName --nic $NicName | ConvertFrom-Json
+            Write-Host $NicName, $Nic.primary, $Nic.macAddress
+        }
+        # Output: wintest767 True 00-0D-3A-E5-1C-C0
+        ```
+    1. Als ze niet overeenkomen, werkt u de routerings tabel bij zodat de primaire NIC en IP zijn gericht.
 
-**Ik heb mijn tags in virtuele-machine schaal sets bijgewerkt, maar ze worden niet weer gegeven in de instanties (in tegens telling tot Vm's met één exemplaar). Wil ik iets verkeerd doen?**
+    ### <a name="linux"></a>[Linux](#tab/linux/)
 
-Momenteel worden labels voor virtuele-machine schaal sets alleen weer gegeven voor de VM op het moment dat de computer opnieuw wordt opgestart, de installatie kopie of de schijf wordt gewijzigd.
+    1. Dump uw lokale routerings tabel met een opdracht zoals `netstat -r` en zoek naar het IMDS-item (bijvoorbeeld):
+        ```console
+        ~$ netstat -r
+        Kernel IP routing table
+        Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+        default         _gateway        0.0.0.0         UG        0 0          0 eth0
+        168.63.129.16   _gateway        255.255.255.255 UGH       0 0          0 eth0
+        169.254.169.254 _gateway        255.255.255.255 UGH       0 0          0 eth0
+        172.16.69.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
+        ```
+    1. Controleer of er een route bestaat voor `169.254.169.254` en noteer de bijbehorende netwerk interface (bijvoorbeeld `eth0` ).
+    1. De interface configuratie voor de bijbehorende interface in de routerings tabel dumpen (Let op de exacte naam van het configuratie bestand kan variëren)
+        ```console
+        ~$ cat /etc/netplan/50-cloud-init.yaml
+        network:
+        ethernets:
+            eth0:
+                dhcp4: true
+                dhcp4-overrides:
+                    route-metric: 100
+                dhcp6: false
+                match:
+                    macaddress: 00:0d:3a:e4:c7:2e
+                set-name: eth0
+        version: 2
+        ```
+    1. Als u een dynamisch IP-adres gebruikt, noteert u de MAC-adressen. Als u een statisch IP-adres gebruikt, noteert u mogelijk de vermelde IP ('s) en/of MAC-adressen.
+    1. Controleer of de interface overeenkomt met de primaire NIC van de virtuele machine en het primaire IP-adres. U kunt de primaire NIC en het IP-adres vinden door te kijken naar de netwerk configuratie in de Azure Portal of door de Azure CLI te bekijken. Noteer de privé Ip's (en het MAC-adres als u de CLI gebruikt). Hier volgt een Power shell CLI-voor beeld:
+        ```powershell
+        $ResourceGroup = '<Resource_Group>'
+        $VmName = '<VM_Name>'
+        $NicNames = az vm nic list --resource-group $ResourceGroup --vm-name $VmName | ConvertFrom-Json | Foreach-Object { $_.id.Split('/')[-1] }
+        foreach($NicName in $NicNames)
+        {
+            $Nic = az vm nic show --resource-group $ResourceGroup --vm-name $VmName --nic $NicName | ConvertFrom-Json
+            Write-Host $NicName, $Nic.primary, $Nic.macAddress
+        }
+        # Output: ipexample606 True 00-0D-3A-E4-C7-2E
+        ```
+    1. Als ze niet overeenkomen, werkt u de routerings tabel bij, zodat de primaire NIC/IP is gericht.
 
-**Waarom is er een time-out opgetreden voor mijn aanvraag voor mijn oproep naar de service?**
+    ---
 
-Meta gegevens moeten worden gemaakt op basis van het primaire IP-adres dat is toegewezen aan de primaire netwerk kaart van de virtuele machine. Als u uw routes hebt gewijzigd, moet er bovendien een route voor het 169.254.169.254/32-adres in de lokale routerings tabel van de VM zijn.
+- Failover Clustering in Windows Server
+  - Wanneer u een query uitvoert op IMDS met failover clustering, is het soms nodig om een route toe te voegen aan de routerings tabel. U doet dit als volgt:
 
-#### <a name="windows"></a>[Windows](#tab/windows/)
+    1. Open een opdrachtprompt met beheerdersbevoegdheden.
 
-1. Dump uw lokale routerings tabel en zoek naar de IMDS-vermelding. Bijvoorbeeld:
-    ```console
-    > route print
+    1. Voer de volgende opdracht uit en noteer het adres van de interface voor de netwerk bestemming ( `0.0.0.0` ) in de IPv4-route tabel.
+
+    ```bat
+    route print
+    ```
+
+    > [!NOTE]
+    > De volgende voorbeeld uitvoer is van een Windows Server-VM met een failovercluster ingeschakeld. Voor de eenvoud bevat de uitvoer alleen de IPv4-route tabel.
+
+    ```
     IPv4 Route Table
     ===========================================================================
     Active Routes:
     Network Destination        Netmask          Gateway       Interface  Metric
-              0.0.0.0          0.0.0.0      172.16.69.1      172.16.69.7     10
+            0.0.0.0          0.0.0.0         10.0.1.1        10.0.1.10    266
+            10.0.1.0  255.255.255.192         On-link         10.0.1.10    266
+            10.0.1.10  255.255.255.255         On-link         10.0.1.10    266
+            10.0.1.15  255.255.255.255         On-link         10.0.1.10    266
+            10.0.1.63  255.255.255.255         On-link         10.0.1.10    266
             127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
             127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
-      127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
-        168.63.129.16  255.255.255.255      172.16.69.1      172.16.69.7     11
-      169.254.169.254  255.255.255.255      172.16.69.1      172.16.69.7     11
-    ... (continues) ...
+    127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+        169.254.0.0      255.255.0.0         On-link     169.254.1.156    271
+        169.254.1.156  255.255.255.255         On-link     169.254.1.156    271
+    169.254.255.255  255.255.255.255         On-link     169.254.1.156    271
+            224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+            224.0.0.0        240.0.0.0         On-link     169.254.1.156    271
+    255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+    255.255.255.255  255.255.255.255         On-link     169.254.1.156    271
+    255.255.255.255  255.255.255.255         On-link         10.0.1.10    266
     ```
-1. Controleer of er een route bestaat voor `169.254.169.254` en noteer de bijbehorende netwerk interface (bijvoorbeeld `172.16.69.7` ).
-1. Dump de configuratie van de interface en zoek de interface die overeenkomt met het punt waarnaar wordt verwezen in de routerings tabel. Dit is het MAC-adres (fysiek).
-    ```console
-    > ipconfig /all
-    ... (continues) ...
-    Ethernet adapter Ethernet:
 
-       Connection-specific DNS Suffix  . : xic3mnxjiefupcwr1mcs1rjiqa.cx.internal.cloudapp.net
-       Description . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
-       Physical Address. . . . . . . . . : 00-0D-3A-E5-1C-C0
-       DHCP Enabled. . . . . . . . . . . : Yes
-       Autoconfiguration Enabled . . . . : Yes
-       Link-local IPv6 Address . . . . . : fe80::3166:ce5a:2bd5:a6d1%3(Preferred)
-       IPv4 Address. . . . . . . . . . . : 172.16.69.7(Preferred)
-       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-    ... (continues) ...
+    Voer de volgende opdracht uit en gebruik het adres van de interface voor de netwerk bestemming ( `0.0.0.0` ) () `10.0.1.10` in dit voor beeld.
+
+    ```bat
+    route add 169.254.169.254/32 10.0.1.10 metric 1 -p
     ```
-1. Controleer of de interface overeenkomt met de primaire NIC van de virtuele machine en het primaire IP-adres. U kunt de primaire NIC en het IP-adres vinden door te kijken naar de netwerk configuratie in de Azure Portal of door de Azure CLI te bekijken. Noteer de privé Ip's (en het MAC-adres als u de CLI gebruikt). Hier volgt een Power shell CLI-voor beeld:
-    ```powershell
-    $ResourceGroup = '<Resource_Group>'
-    $VmName = '<VM_Name>'
-    $NicNames = az vm nic list --resource-group $ResourceGroup --vm-name $VmName | ConvertFrom-Json | Foreach-Object { $_.id.Split('/')[-1] }
-    foreach($NicName in $NicNames)
-    {
-        $Nic = az vm nic show --resource-group $ResourceGroup --vm-name $VmName --nic $NicName | ConvertFrom-Json
-        Write-Host $NicName, $Nic.primary, $Nic.macAddress
-    }
-    # Output: wintest767 True 00-0D-3A-E5-1C-C0
-    ```
-1. Als ze niet overeenkomen, werkt u de routerings tabel bij zodat de primaire NIC en IP zijn gericht.
-
-#### <a name="linux"></a>[Linux](#tab/linux/)
-
- 1. Dump uw lokale routerings tabel met een opdracht zoals `netstat -r` en zoek naar het IMDS-item (bijvoorbeeld):
-    ```console
-    ~$ netstat -r
-    Kernel IP routing table
-    Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-    default         _gateway        0.0.0.0         UG        0 0          0 eth0
-    168.63.129.16   _gateway        255.255.255.255 UGH       0 0          0 eth0
-    169.254.169.254 _gateway        255.255.255.255 UGH       0 0          0 eth0
-    172.16.69.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
-    ```
-1. Controleer of er een route bestaat voor `169.254.169.254` en noteer de bijbehorende netwerk interface (bijvoorbeeld `eth0` ).
-1. De interface configuratie voor de bijbehorende interface in de routerings tabel dumpen (Let op de exacte naam van het configuratie bestand kan variëren)
-    ```console
-    ~$ cat /etc/netplan/50-cloud-init.yaml
-    network:
-    ethernets:
-        eth0:
-            dhcp4: true
-            dhcp4-overrides:
-                route-metric: 100
-            dhcp6: false
-            match:
-                macaddress: 00:0d:3a:e4:c7:2e
-            set-name: eth0
-    version: 2
-    ```
-1. Als u een dynamisch IP-adres gebruikt, noteert u de MAC-adressen. Als u een statisch IP-adres gebruikt, noteert u mogelijk de vermelde IP ('s) en/of MAC-adressen.
-1. Controleer of de interface overeenkomt met de primaire NIC van de virtuele machine en het primaire IP-adres. U kunt de primaire NIC en het IP-adres vinden door te kijken naar de netwerk configuratie in de Azure Portal of door de Azure CLI te bekijken. Noteer de privé Ip's (en het MAC-adres als u de CLI gebruikt). Hier volgt een Power shell CLI-voor beeld:
-    ```powershell
-    $ResourceGroup = '<Resource_Group>'
-    $VmName = '<VM_Name>'
-    $NicNames = az vm nic list --resource-group $ResourceGroup --vm-name $VmName | ConvertFrom-Json | Foreach-Object { $_.id.Split('/')[-1] }
-    foreach($NicName in $NicNames)
-    {
-        $Nic = az vm nic show --resource-group $ResourceGroup --vm-name $VmName --nic $NicName | ConvertFrom-Json
-        Write-Host $NicName, $Nic.primary, $Nic.macAddress
-    }
-    # Output: ipexample606 True 00-0D-3A-E4-C7-2E
-    ```
-1. Als ze niet overeenkomen, werkt u de routerings tabel bij, zodat de primaire NIC/IP is gericht.
-
----
-
-**Failover Clustering in Windows Server**
-
-Wanneer u een query uitvoert op IMDS met failover clustering, is het soms nodig om een route toe te voegen aan de routerings tabel. U doet dit als volgt:
-
-1. Open een opdrachtprompt met beheerdersbevoegdheden.
-
-1. Voer de volgende opdracht uit en noteer het adres van de interface voor de netwerk bestemming ( `0.0.0.0` ) in de IPv4-route tabel.
-
-```bat
-route print
-```
-
-> [!NOTE]
-> De volgende voorbeeld uitvoer is van een Windows Server-VM met een failovercluster ingeschakeld. Voor de eenvoud bevat de uitvoer alleen de IPv4-route tabel.
-
-```
-IPv4 Route Table
-===========================================================================
-Active Routes:
-Network Destination        Netmask          Gateway       Interface  Metric
-          0.0.0.0          0.0.0.0         10.0.1.1        10.0.1.10    266
-         10.0.1.0  255.255.255.192         On-link         10.0.1.10    266
-        10.0.1.10  255.255.255.255         On-link         10.0.1.10    266
-        10.0.1.15  255.255.255.255         On-link         10.0.1.10    266
-        10.0.1.63  255.255.255.255         On-link         10.0.1.10    266
-        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
-        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
-  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
-      169.254.0.0      255.255.0.0         On-link     169.254.1.156    271
-    169.254.1.156  255.255.255.255         On-link     169.254.1.156    271
-  169.254.255.255  255.255.255.255         On-link     169.254.1.156    271
-        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
-        224.0.0.0        240.0.0.0         On-link     169.254.1.156    271
-  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
-  255.255.255.255  255.255.255.255         On-link     169.254.1.156    271
-  255.255.255.255  255.255.255.255         On-link         10.0.1.10    266
-```
-
-Voer de volgende opdracht uit en gebruik het adres van de interface voor de netwerk bestemming ( `0.0.0.0` ) () `10.0.1.10` in dit voor beeld.
-
-```bat
-route add 169.254.169.254/32 10.0.1.10 metric 1 -p
-```
 
 ## <a name="support"></a>Ondersteuning
 
@@ -1315,12 +1309,12 @@ Als u na meerdere pogingen geen meta gegevens reactie krijgt, kunt u een onderst
 
 ## <a name="product-feedback"></a>Productfeedback
 
-U kunt product feedback en ideeën geven aan ons gebruikers feedback kanaal onder Virtual Machines > hier Instance Metadata Service: https://feedback.azure.com/forums/216843-virtual-machines?category_id=394627
+U kunt product feedback en ideeën geven aan ons gebruikers feedback kanaal onder Virtual Machines > [hier](https://feedback.azure.com/forums/216843-virtual-machines?category_id=394627) instance metadata service
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Een toegangs token voor de virtuele machine ophalen](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
+- [Een toegangs token voor de virtuele machine ophalen](../articles/active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
 
-[Geplande gebeurtenissen voor Linux](../articles/virtual-machines/linux/scheduled-events.md)
+- [Geplande gebeurtenissen voor Linux](../articles/virtual-machines/linux/scheduled-events.md)
 
-[Geplande gebeurtenissen voor Windows](../articles/virtual-machines/windows/scheduled-events.md)
+- [Geplande gebeurtenissen voor Windows](../articles/virtual-machines/windows/scheduled-events.md)

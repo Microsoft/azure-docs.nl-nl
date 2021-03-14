@@ -2,25 +2,25 @@
 title: 'Zelfstudie: Toegang tot uw privécloud'
 description: Meer informatie over het openen van een Azure VMware Solution-privécloud
 ms.topic: tutorial
-ms.date: 02/22/2021
-ms.openlocfilehash: 456767a9edd78a70a0aba45c7b44a2150a2217a1
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/13/2021
+ms.openlocfilehash: f689a0c706b6427497c80dabb01579ace161d1e2
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102045000"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462240"
 ---
 # <a name="tutorial-access-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Toegang tot een privécloud van Azure VMware Solution
 
-U kunt met Azure VMware Solution geen privécloud beheren met uw on-premises vCenter. U moet via een jumpbox aanvullende instellingen en verbindingen met een lokaal vCenter-exemplaar uitvoeren. 
+U kunt met Azure VMware Solution geen privécloud beheren met uw on-premises vCenter. U moet verbinding maken met het exemplaar van de Azure VMware-oplossing vCenter via een Jump box. 
 
-In deze zelfstudie maakt u een jumpbox in de resourcegroep die u hebt gemaakt in de [vorige zelfstudie](tutorial-configure-networking.md) en meldt u zich aan bij vCenter. De jumpbox een virtuele Windows-machine in hetzelfde virtuele netwerk dat u hebt gemaakt.  Het biedt toegang tot vCenter en NSX Manager. 
+In deze zelf studie maakt u een Jump box in de resource groep die u hebt gemaakt in de [vorige zelf studie](tutorial-configure-networking.md) en meldt u zich aan bij de Azure VMware-oplossing vCenter. Deze Jump box is een virtuele Windows-machine (VM) in hetzelfde virtuele netwerk dat u hebt gemaakt.  Het biedt toegang tot zowel vCenter als de NSX Manager. 
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Een virtuele Windows-machine maken om verbinding te maken met vCenter
-> * Aanmelden bij vCenter vanaf uw virtuele machine
+> * Een virtuele Windows-machine maken voor toegang tot de Azure VMware-oplossings vCenter
+> * Aanmelden bij vCenter vanuit deze virtuele machine
 
 ## <a name="create-a-new-windows-virtual-machine"></a>Een nieuwe virtuele Windows-machine maken
 
@@ -28,16 +28,16 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="connect-to-the-local-vcenter-of-your-private-cloud"></a>Verbinding maken met het lokale vCenter van uw privécloud
 
-1. Meld u vanuit de jumpbox aan bij de vSphere-client met VMware vCenter SSO met een gebruikersnaam voor de cloudbeheerder en controleer of de gebruikersinterface correct wordt weergegeven.
+1. Meld u vanuit het Jump box aan bij vSphere client met VMware vCenter SSO met een gebruikers naam voor de Cloud beheerder en controleer of de gebruikers interface correct wordt weer gegeven.
 
-1. Selecteer in de Azure Portal uw privécloud en **beheer** vervolgens  >  **identiteit**. 
+1. Selecteer in de Azure Portal uw privécloud en vervolgens   >  **identiteit** beheren. 
 
    De URL's en gebruikersreferenties voor vCenter en NSX-T-beheer van de privécloud worden weergegeven.
 
    >[!TIP]
    >Selecteer **een nieuw wacht woord genereren** om nieuwe vCenter-en NSX-T-wacht woorden te genereren.
 
-   :::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true" lightbox="media/tutorial-access-private-cloud/ss4-display-identity.png":::
+   :::image type="content" source="media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true" lightbox="media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png":::
 
 1. Ga naar de virtuele machine die u in de vorige stap hebt gemaakt en maak verbinding met de virtuele machine. 
 

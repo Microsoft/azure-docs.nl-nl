@@ -9,18 +9,20 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 71bfc84eb50521aef72f78b482bddda112c00c6c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 01b30fed23b33719f08e93907075eee757343b1c
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964351"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461737"
 ---
-# <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Zelfstudie: C#-module ontwikkelen voor Linux-apparaten met IoT Edge
+# <a name="tutorial-develop-a-c-iot-edge-module-using-linux-containers"></a>Zelf studie: een C#-IoT Edge module ontwikkelen met Linux-containers
 
-Visual Studio Code gebruiken om C#-code te ontwikkelen en te implementeren op een Linux-apparaat met Azure IoT Edge.
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
-U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert. U gebruikt het gesimuleerde IoT Edge-apparaat dat u hebt gemaakt in de quickstarts over het implementeren van Azure IoT Edge op een gesimuleerd apparaat in [Windows](quickstart.md) of [Linux](quickstart-linux.md). In deze zelfstudie leert u het volgende:
+Gebruik Visual Studio code voor het ontwikkelen van C#-code en implementeer deze op een apparaat met Azure IoT Edge.
+
+U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert. U gebruikt het gesimuleerde IoT Edge-apparaat dat u hebt gemaakt in de snelstarts. In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 >
@@ -35,9 +37,9 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 ## <a name="prerequisites"></a>Vereisten
 
-Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **C#** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. Als u modules voor Windows-apparaten ontwikkelt, gaat u naar [Een C#-module ontwikkelen voor Windows-apparaten met IoT Edge](tutorial-csharp-module-windows.md).
+In deze zelf studie wordt gedemonstreerd hoe u een module in **C#** ontwikkelt met **Visual Studio code** en deze implementeert op een IOT edge apparaat. Als u modules ontwikkelt met behulp van Windows-containers, gaat u naar [een C#-IOT Edge module ontwikkelen met behulp van Windows-containers](tutorial-csharp-module-windows.md) .
 
-Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkelen en implementeren van C#-modules in Linux:
+Gebruik de volgende tabel om inzicht te krijgen in de mogelijkheden voor het ontwikkelen en implementeren van C#-modules met Linux-containers:
 
 | C# | Visual Studio Code | Visual Studio |
 | -- | ------------------ | ------------- |
@@ -47,10 +49,10 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 >[!NOTE]
 >Ondersteuning voor Linux ARM64-apparaten is beschikbaar in [openbare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Zie [ARM64 IoT Edge-modules ontwikkelen in Visual Studio Code en er fouten in opsporen (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) voor meer informatie.
 
-Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving in te stellen: [Een IoT Edge-module ontwikkelen voor een Linux-apparaat](tutorial-develop-for-linux.md). Na voltooiing van die zelfstudie moet u beschikken over de volgende vereisten:
+Voordat u met deze zelf studie begint, moet u de vorige zelf studie hebben door lopen om uw ontwikkel omgeving in te stellen, [een IOT Edge module ontwikkelen met Linux-containers](tutorial-develop-for-linux.md). Na voltooiing van die zelfstudie moet u de volgende vereisten al hebben:
 
 * Een gratis of standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een [Linux-apparaat met Azure IoT Edge](quickstart-linux.md).
+* Een apparaat met Azure IoT Edge. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) geconfigureerd met de [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * [Docker CE](https://docs.docker.com/install/) geconfigureerd voor het uitvoeren van Linux-containers.

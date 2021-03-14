@@ -2,13 +2,13 @@
 title: Concepten-persoonlijke Clouds en clusters
 description: Meer informatie over de belangrijkste mogelijkheden van de Azure VMware-oplossing software-gedefinieerde data centers en vSphere-clusters.
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 87bd2592da681726227f89b403916a12593a9db8
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.date: 03/13/2021
+ms.openlocfilehash: d1837ae7cf01fcb9642e0cafe4e0430e403b9899
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391385"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462509"
 ---
 #  <a name="azure-vmware-solution-private-cloud-and-cluster-concepts"></a>Azure VMware-oplossing persoonlijke Cloud-en cluster concepten
 
@@ -20,8 +20,6 @@ In dit artikel worden al deze concepten beschreven.
 
 ![Afbeelding van twee persoonlijke Clouds in een klant abonnement](./media/hosts-clusters-private-clouds-final.png)
 
->[!NOTE]
->Vanwege de lagere mogelijke behoeften van een ontwikkel omgeving gebruikt u kleinere clusters met hosts met een lagere capaciteit. 
 
 ## <a name="private-clouds"></a>Privéclouds
 
@@ -30,7 +28,7 @@ Persoonlijke Clouds bevatten vSAN-clusters die zijn gebouwd met speciale, Bare-M
 Net als bij andere resources worden persoonlijke Clouds geïnstalleerd en beheerd vanuit een Azure-abonnement. Het aantal privé-Clouds in een abonnement is schaalbaar. In eerste instantie is er een limiet van één privécloud per abonnement.
 
 ## <a name="clusters"></a>Clusters
-Voor elke privécloud die is gemaakt, is er standaard één vSAN-cluster. U kunt clusters toevoegen, verwijderen en schalen met behulp van de Azure Portal of via de API.  Alle clusters hebben een standaard grootte van drie hosts en kunnen tot 16 hosts worden geschaald.  De hosts die in een cluster worden gebruikt, moeten hetzelfde type host zijn.
+Voor elke privécloud die is gemaakt, is er standaard één vSAN-cluster. U kunt clusters toevoegen, verwijderen en schalen met behulp van de Azure Portal of via de API.  Alle clusters hebben een standaard grootte van drie hosts en kunnen tot 16 hosts worden geschaald. U kunt Maxi maal vier clusters per privécloud hebben.
 
 Proef clusters kunnen worden geëvalueerd en beperkt tot drie hosts. Er is één proef cluster per privécloud. U kunt een proef cluster op één host schalen tijdens de evaluatie periode.
 
@@ -38,11 +36,11 @@ U gebruikt vSphere en NSX-T-beheer om de meeste andere aspecten van de cluster c
 
 ## <a name="hosts"></a>Hosts
 
-Azure VMware-oplossing Private Cloud clusters gebruiken Hyper-geconvergeerde, Bare-Metal Infrastructure-hosts. In de volgende tabel ziet u het RAM-geheugen, de CPU en de schijf capaciteit van de host. 
+Azure VMware-oplossings clusters zijn gebaseerd op de Hyper-geconvergeerde, Bare-Metal infra structuur. In de volgende tabel ziet u het RAM-geheugen, de CPU en de schijf capaciteit van de host.
 
 | Hosttype              |             CPU             |   RAM (GB)   |  vSAN NVMe-cache-laag (TB, RAW)  |  vSAN SSD-capaciteits tier (TB, RAW)  |
 | :---                   |            :---:            |    :---:     |               :---:              |                :---:               |
-| High-End (HE)          |  Dual Intel 18 Core 2,3 GHz  |     576      |                3.2               |                15,20               |
+| AVS36          |  Dual Intel 18 Core 2,3 GHz  |     576      |                3.2               |                15,20               |
 
 Hosts die worden gebruikt voor het bouwen of schalen van clusters, zijn afkomstig uit een geïsoleerde groep hosts. Deze hosts hebben hardware-tests door lopen en alle gegevens zijn veilig verwijderd. 
 
@@ -55,10 +53,7 @@ Hosts die worden gebruikt voor het bouwen of schalen van clusters, zijn afkomsti
 
 Host onderhoud en levenscyclus beheer hebben geen invloed op de capaciteit of prestaties van de particuliere cloud clusters.  Voor beelden van automatische host onderhoud zijn onder andere firmware-upgrades en reparaties of vervangingen van hardware.
 
-Micro soft is verantwoordelijk voor het levenscyclus beheer van NSX-T-apparaten, zoals NSX-T-beheer en NSX-T EDGE. Ze zijn ook verantwoordelijk voor het Boots trappen van de netwerk configuratie, zoals het maken van de laag-0-gateway en het inschakelen van North-South route ring. U bent zelf verantwoordelijk voor de configuratie van NSX-T SDN. Bijvoorbeeld netwerk segmenten, gedistribueerde firewall regels, laag 1-gateways en load balancers.
-
-> [!IMPORTANT]
-> Wijzig de configuratie van de gateway NSX-T-rand of laag-0 niet, omdat dit kan leiden tot een verlies van de service.
+Micro soft is verantwoordelijk voor het levenscyclus beheer van NSX-T-apparaten, zoals NSX-T-beheer en NSX-T EDGE. Micro soft is verantwoordelijk voor het Boots trappen van de netwerk configuratie, zoals het maken van de laag-0-gateway en het inschakelen van North-South route ring. U bent zelf verantwoordelijk voor de configuratie van NSX-T SDN. Bijvoorbeeld netwerk segmenten, gedistribueerde firewall regels, laag 1-gateways en load balancers.
 
 ## <a name="backup-and-restoration"></a>Back-ups maken en herstellen
 

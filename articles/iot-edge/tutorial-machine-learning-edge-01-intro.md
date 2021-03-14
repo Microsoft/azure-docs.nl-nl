@@ -8,16 +8,21 @@ ms.date: 11/11/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b23324a7226d4b3de4908bd78a8f19c799e59f06
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 67cc470b4f7f119b7f5b86bcb82ea284ab662dfe
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932180"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463235"
 ---
 # <a name="tutorial-an-end-to-end-solution-using-azure-machine-learning-and-iot-edge"></a>Zelfstudie: Een end-to-end oplossing met behulp van Azure Machine Learning en IoT Edge
 
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
+
 Vaak willen IoT-toepassingen profiteren van de intelligente cloud en de intelligente rand van het netwerk. In deze zelfstudie wordt u begeleid bij het trainen van een machine learning-model met gegevens die zijn verzameld van IoT-apparaten in de cloud, waarbij u dat model implementeert naar IoT Edge en het model regelmatig onderhoudt en verfijnt.
+
+>[!NOTE]
+>De concepten in deze set zelf studies zijn van toepassing op alle versies van IoT Edge, maar het voorbeeld apparaat dat u maakt om het scenario uit te proberen, wordt uitgevoerd IoT Edge versie 1,1.
 
 Het belangrijkste doel van deze zelfstudie is het introduceren van de verwerking van IoT-gegevens met machine learning, met name aan de rand. Hoewel we veel aspecten van een algemene machine learning-werkstroom behandelen, is deze zelfstudie niet bedoeld als een diepgaande inleiding tot machine learning. Als voorbeeld wordt niet geprobeerd een model met hoge betrouwbaarheid te maken voor de use-case. We doen net genoeg om het proces van het maken en gebruiken van een levensvatbaar model voor IoT-gegevensverwerking te illustreren.
 
@@ -69,9 +74,9 @@ De gegevens die in deze zelfstudie worden gebruikt, zijn afkomstig uit de [Simul
 
 In het Leesmij-bestand:
 
-***Experimenteel scenario** _
+***Experimenteel scenario***
 
-_Gegevenssets bestaan uit meerdere multidimensionale tijdreeksen. Elke gegevensset wordt verder onderverdeeld in trainings- en testsubsets. Elke tijdreeks is afkomstig van een andere motor, dat wil zeggen dat de gegevens kunnen worden beschouwd als een vloot van motoren van hetzelfde type. Elke motor begint met een afwijkende mate van eerste slijtage en productievariaties die voor de gebruiker onbekend zijn. Deze slijtage en variant worden als normaal beschouwd, dat wil zeggen, niet als een probleemvoorwaarde. Er zijn drie operationele instellingen die een aanzienlijk effect hebben op de prestaties van de motor. Deze instellingen zijn ook opgenomen in de gegevens. De gegevens worden verontreinigd met sensorruis.*
+*Gegevenssets bestaan uit meerdere multidimensionale tijdreeksen. Elke gegevensset wordt verder onderverdeeld in trainings- en testsubsets. Elke tijdreeks is afkomstig van een andere motor, dat wil zeggen dat de gegevens kunnen worden beschouwd als een vloot van motoren van hetzelfde type. Elke motor begint met een afwijkende mate van eerste slijtage en productievariaties die voor de gebruiker onbekend zijn. Deze slijtage en variant worden als normaal beschouwd, dat wil zeggen, niet als een probleemvoorwaarde. Er zijn drie operationele instellingen die een aanzienlijk effect hebben op de prestaties van de motor. Deze instellingen zijn ook opgenomen in de gegevens. De gegevens worden verontreinigd met sensorruis.*
 
 *De motor werkt normaal aan het begin van elke tijdreeks en ontwikkelt op een bepaald moment tijdens de serie een fout. In de Trainingsset wordt de fout in omvang vergroot tot systeemstoringen. In de testset eindigt de tijdserie enige tijd voordat de systeemfout optreedt. Het doel van de competitie is het voorspellen van het aantal resterende operationele cycli vóór het mislukken van de testset, d.w.z. het aantal operationele cycli na de laatste cyclus dat de motor actief blijft. Daarnaast hebt u ook een vectorgegeven van de resterende levensduur (RUL)-waarden voor de testgegevens.*
 

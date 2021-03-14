@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 02/11/2021
-ms.openlocfilehash: 1857eab485e8651c05959f82cf11e69b6353c575
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 3802d25ebd8f21ab5b8991a66ceb6650f2f276a9
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101673511"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461705"
 ---
 # <a name="credentials-for-source-authentication-in-azure-purview"></a>Referenties voor de verificatie van de bron in azure controle sfeer liggen
 
@@ -41,7 +41,7 @@ Als u de beheerde identiteit controle sfeer liggen gebruikt om scans in te stell
 
 Voordat u een referentie kunt maken, moet u eerst een of meer van uw bestaande Azure Key Vault-exemplaren koppelen aan uw Azure controle sfeer liggen-account.
 
-1. Selecteer uw Azure controle sfeer liggen-account in de [Azure Portal](https://portal.azure.com). Navigeer naar het **Management Center** en navigeer vervolgens naar **referenties**.
+1. Selecteer uw Azure controle sfeer liggen-account in het [Azure Portal](https://portal.azure.com)en open Azure controle sfeer liggen Studio. Ga naar het **beheer centrum** in azure controle sfeer liggen Studio en navigeer vervolgens naar **referenties**.
 
 2. Selecteer op de pagina **referenties** de optie **Key Vault verbindingen beheren**.
 

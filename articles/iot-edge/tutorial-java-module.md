@@ -12,16 +12,18 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
-ms.openlocfilehash: cbe4942b63389faab00861438a0149b68c0e89c0
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 3f24f38db7704557894d866b789890763f9e1316
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102177297"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463252"
 ---
-# <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Zelfstudie: Een Java IoT Edge-module ontwikkelen voor Linux-apparaten
+# <a name="tutorial-develop-a-java-iot-edge-module-using-linux-containers"></a>Zelf studie: een Java IoT Edge-module ontwikkelen met Linux-containers
 
-U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert. U gebruikt het gesimuleerde IoT Edge-apparaat dat u hebt gemaakt in de quickstarts over het implementeren van Azure IoT Edge op een gesimuleerd apparaat in [Linux](quickstart-linux.md). In deze zelfstudie leert u het volgende:
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
+
+U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u een IoT Edge-module te maken die sensorgegevens filtert. U gebruikt het gesimuleerde IoT Edge-apparaat dat u hebt gemaakt in de implementatie Azure IoT Edge op een gesimuleerd apparaat in de Quick Start-artikelen. In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
 >
@@ -36,7 +38,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 ## <a name="prerequisites"></a>Vereisten
 
-Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **Java** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. IoT Edge biedt geen ondersteuning voor Java-modules voor Windows-apparaten.
+In deze zelf studie wordt gedemonstreerd hoe u een module in **Java** ontwikkelt met **Visual Studio code** en hoe u deze implementeert op een IOT edge apparaat. IoT Edge biedt geen ondersteuning voor Java-modules die zijn gebouwd als Windows-containers.
 
 Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkelen en implementeren van Java-modules:
 
@@ -48,12 +50,12 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u een van deze zelfstudies hebt voltooid, voldoet u aan de volgende vereisten:
 
 * Een gratis of standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een [Linux-apparaat met Azure IoT Edge](quickstart-linux.md)
+* Een apparaat met Azure IoT Edge. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) geconfigureerd met de [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * [Docker CE](https://docs.docker.com/install/) geconfigureerd voor het uitvoeren van Linux-containers.
 
-Om een IoT Edge-module te ontwikkelen in Java, installeert u de volgende aanvullende vereisten op uw ontwikkelcomputer: 
+Om een IoT Edge-module te ontwikkelen in Java, installeert u de volgende aanvullende vereisten op uw ontwikkelcomputer:
 
 * [Java-uitbreidingspakket](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) voor Visual Studio Code.
 * [Java SE Development Kit 11](/azure/developer/java/fundamentals/java-jdk-long-term-support)en [Stel de `JAVA_HOME` omgevings variabele](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) in op uw jdk-installatie.

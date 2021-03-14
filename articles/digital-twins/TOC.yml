@@ -13,8 +13,12 @@
   items:
     - name: Een client-app coderen
       href: tutorial-code.md
-    - name: De basisbeginselen verkennen met een voorbeeldclient-app
-      href: tutorial-command-line-app.md
+    - name: Graaf maken
+      items:
+        - name: Een voor beeld-client-app gebruiken
+          href: tutorial-command-line-app.md
+        - name: De Azure CLI-opdrachten gebruiken
+          href: tutorial-command-line-cli.md
     - name: Een end-to-end-oplossing verbinden
       href: tutorial-end-to-end.md
 - name: Concepten

@@ -2,13 +2,13 @@
 title: 'Zelfstudie: netwerken configureren voor uw VMware-privécloud in Azure'
 description: Meer informatie over het maken en configureren van de netwerken die nodig zijn voor het implementeren van uw privécloud in Azure
 ms.topic: tutorial
-ms.date: 02/23/2021
-ms.openlocfilehash: 8871e678ba43aa69eb49c02e386bfb47c6871de7
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/13/2021
+ms.openlocfilehash: 0fc934cfec17d8d3bb69c21d324f06bee3f9515c
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102044971"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462321"
 ---
 # <a name="tutorial-configure-networking-for-your-vmware-private-cloud-in-azure"></a>Zelfstudie: Netwerken configureren voor uw VMware-privécloud in Azure
 
@@ -94,7 +94,7 @@ Als u zich wilt aanmelden bij vCenter en NSX Manager, hebt u de Url's nodig voor
 
 Ga naar uw Azure VMware Solution-privécloud en selecteer onder **Beheren** de optie **Identiteit**. Hier vindt u de vereiste informatie.
 
-:::image type="content" source="./media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="Scherm afbeelding van de vCenter-en NSX-T-referenties en web client-Url's." border="true" lightbox="media/tutorial-access-private-cloud/ss4-display-identity.png":::
+:::image type="content" source="./media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png" alt-text="Scherm afbeelding van de vCenter-en NSX-T-referenties en web client-Url's." border="true" lightbox="media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

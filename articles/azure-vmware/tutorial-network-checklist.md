@@ -2,13 +2,13 @@
 title: 'Zelfstudie: checklist voor netwerkplanning'
 description: Meer informatie over de netwerk vereisten voor netwerk connectiviteit en netwerk poorten in de Azure VMware-oplossing.
 ms.topic: tutorial
-ms.date: 01/27/2021
-ms.openlocfilehash: f493443da617f5f76771e5d1b2b3b190b37f9b5d
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.date: 03/13/2021
+ms.openlocfilehash: 8cee5fa24aab8bd7fe6a9527f9c8e7cdff997511
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918582"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462062"
 ---
 # <a name="networking-planning-checklist-for-azure-vmware-solution"></a>Checklist voor netwerkplanning voor Azure VMware Solution 
 
@@ -89,13 +89,12 @@ Toepassingen en workloads die worden uitgevoerd in een privécloud-omgeving, moe
 
 Gebruik de DHCP-service die is ingebouwd in NSX of een lokale DHCP-server in de privécloud in plaats van broadcast-DHCP-verkeer via het WAN terug naar on-premises te leiden.
 
+Zie het artikel [DHCP-services leveren aan NSX-T-netwerk segment](deploy-azure-vmware-solution.md#optional-provide-dhcp-services-to-nsx-t-network-segment) voor meer informatie.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelf studie hebt u geleerd over de overwegingen en vereisten voor het implementeren van een persoonlijke cloud van Azure VMware-oplossing. 
-
-
-Zodra u de juiste netwerken hebt ingesteld, gaat u verder met de volgende zelfstudie om uw Azure VMware Solution-privécloud te maken.
+In deze zelf studie hebt u geleerd over de overwegingen en vereisten voor het implementeren van een persoonlijke cloud van Azure VMware-oplossing. Zodra u de juiste netwerken hebt ingesteld, gaat u verder met de volgende zelfstudie om uw Azure VMware Solution-privécloud te maken.
 
 > [!div class="nextstepaction"]
 > [Een Azure VMware Solution-privécloud maken](tutorial-create-private-cloud.md)

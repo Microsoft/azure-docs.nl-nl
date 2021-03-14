@@ -1,18 +1,18 @@
 ---
-title: 'Zelf studie: een privécloud van Azure VMware-oplossing maken en implementeren'
+title: Zelf studie-een persoonlijke cloud van Azure VMware-oplossing implementeren
 description: Meer informatie over het maken en implementeren van een Azure VMware-oplossing privécloud
 ms.topic: tutorial
 ms.date: 02/22/2021
-ms.openlocfilehash: 2afd88bca05a9bcab309faff373bedf6a22e9f4b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: ed916305cd1a67162f07c24e3bf97766e5389b74
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101725397"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462164"
 ---
-# <a name="tutorial-create-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Een Azure VMware Solution-privécloud maken
+# <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud"></a>Zelf studie: een persoonlijke cloud van Azure VMware-oplossing implementeren
 
-In deze zelf studie leert u hoe u een privécloud van Azure VMware-oplossingen maakt en implementeert. De minimale initiële implementatie van hosts is drie. Extra hosts kunnen een voor een worden toegevoegd, maximaal 16 hosts per cluster. 
+Met Azure VMware Solution kunt u een vSphere-cluster in Azure implementeren. De minimale initiële implementatie is drie hosts. Extra hosts kunnen een voor een worden toegevoegd, maximaal 16 hosts per cluster.
 
 Met Azure VMware Solution kunt u bij het starten uw privécloud niet met uw on-premises vCenter beheren. Daarom moet u aanvullende configuratie uitvoeren. Deze procedures en gerelateerde vereisten worden behandeld in deze zelfstudie.
 
@@ -48,7 +48,7 @@ Selecteer **Nu proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud 
 
 #### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een resourcegroep met de opdracht `[az group create](/cli/azure/group)`. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
+Maak een resource groep met de opdracht [AZ Group Create](/cli/azure/group) . Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 

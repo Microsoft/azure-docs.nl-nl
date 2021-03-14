@@ -5,12 +5,12 @@ author: cachai2
 ms.topic: conceptual
 ms.date: 1/21/2021
 ms.author: cachai
-ms.openlocfilehash: f826c947b1e47c1c996a8e9102492e85adafa326
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 0267184a921c92c3dc092908a09467ef3a090175
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102215150"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463031"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -87,7 +87,7 @@ Zie [service-eind punten voor virtueel netwerk](../virtual-network/virtual-netwo
 
 ## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslag account beperken tot een virtueel netwerk 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. Deze functie werkt momenteel voor alle ondersteunde sku's van Virtual Network, waaronder Standard en Premium, met uitzonde ring van op Flex-tempels waarbij virtuele netwerken alleen beschikbaar zijn voor Premium SKU. Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt. Deze functie werkt momenteel voor alle ondersteunde sku's van het Windows-netwerk, met inbegrip van Standard en Premium, met uitzonde ring van het gebruik van Flex-tempels waarbij virtuele netwerken alleen beschikbaar zijn voor Premium SKU. Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
 
 1. Maak een functie met een opslag account waarvoor geen service-eind punten zijn ingeschakeld.
 1. Configureer de functie om verbinding te maken met uw virtuele netwerk.

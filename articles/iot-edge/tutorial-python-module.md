@@ -10,16 +10,18 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 402b61bb0845532d601e9f5dcaaf55eacce685d1
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: d6a95dae91ef3e6aa7d39cf8af51c355a87ea73a
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959370"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462725"
 ---
-# <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Zelfstudie: Een IoT Edge-module schrijven in Python en implementeren voor Linux-apparaten
+# <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-using-linux-containers"></a>Zelf studie: een python IoT Edge-module ontwikkelen en implementeren met Linux-containers
 
-Gebruik Visual Studio Code om Python-code te ontwikkelen en te implementeren op een Linux-apparaat met Azure IoT Edge.
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
+
+Gebruik Visual Studio code voor het ontwikkelen van python-code en implementeer deze op een apparaat met Azure IoT Edge.
 
 U kunt Azure IoT Edge-modules gebruiken voor het implementeren van code die uw bedrijfslogica rechtstreeks op uw IoT Edge-apparaten implementeert. In deze zelfstudie leert u hoe u een IoT Edge-module maakt en implementeert die sensorgegevens filtert op het gesimuleerde IoT Edge-apparaat dat u hebt ingesteld in de quickstart. In deze zelfstudie leert u het volgende:
 
@@ -36,19 +38,21 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 ## <a name="prerequisites"></a>Vereisten
 
-Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **Python** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. IoT Edge biedt geen ondersteuning voor Python-modules voor Windows-apparaten.
+In deze zelf studie wordt gedemonstreerd hoe u een module in **python** kunt ontwikkelen met **Visual Studio code** en hoe u deze implementeert op een IOT edge apparaat.
 
-Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkelen en implementeren van Python-modules in Linux:
+IoT Edge ondersteunt geen python-modules met Windows-containers.
+
+Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkelen en implementeren van python-modules met Linux-containers:
 
 | Python | Visual Studio Code | Visual Studio 2017/2019 |
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![VS Code gebruiken voor Python-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![VS Code gebruiken voor Python-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) |  |
 
-Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
+Voordat u met deze zelf studie begint, moet u de vorige zelf studie hebben door lopen om uw ontwikkel omgeving in te stellen voor Linux-container ontwikkeling: [ontwikkel IOT Edge-modules met behulp van Linux-containers](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
 
 * Een gratis of standaard [IoT Hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Een [Linux-apparaat met Azure IoT Edge](quickstart-linux.md)
+* Een apparaat met Azure IoT Edge. U kunt de Quick starts gebruiken om een [Linux-apparaat](quickstart-linux.md) of [Windows-apparaat](quickstart.md)in te stellen.
 * Een containerregister, zoals [Azure Container Registry](../container-registry/index.yml).
 * [Visual Studio Code](https://code.visualstudio.com/) geconfigureerd met de [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 * [Docker CE](https://docs.docker.com/install/) geconfigureerd voor het uitvoeren van Linux-containers.

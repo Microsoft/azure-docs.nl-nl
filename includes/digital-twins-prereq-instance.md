@@ -5,16 +5,16 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 10/29/2020
 ms.author: baanders
-ms.openlocfilehash: 8ea371e25f149c52412153aa0b9c3b7475dc77fd
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: 2be13256ff0fcc93aa40db3bcb2f38aa0cf58cbc
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96303570"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463754"
 ---
 Als u in dit artikel met Azure Digital Twins wilt werken, moet u eerst **een Azure Digital Twins-instantie instellen**, evenals de vereiste machtigingen om die te gebruiken. Als u al een Azure Digital Twins-exemplaar hebt ingesteld voor een eerdere opdracht, kunt u dit exemplaar gebruiken.
 
-Volg anders de instructies in [Een instantie en verificatie instellen](../articles/digital-twins/how-to-set-up-instance-portal.md). De instructies bevatten ook stappen om te controleren of u elke stap hebt voltooid en gereed bent om door te gaan met het nieuwe exemplaar.
+Volg anders de instructies in [*Instructies: een exemplaar en verificatie instellen*](../articles/digital-twins/how-to-set-up-instance-portal.md). De instructies bevatten ook stappen om te controleren of u elke stap hebt voltooid en gereed bent om door te gaan met het nieuwe exemplaar.
 
 Nadat u uw Azure Digital Twins-exemplaar hebt ingesteld, noteert u de volgende waarden die u later nodig hebt om verbinding te maken met het exemplaar:
 * de **_hostnaam_** van het exemplaar. U vindt deze waarde in Azure Portal ([instructies](../articles/digital-twins/how-to-set-up-instance-portal.md#verify-success-and-collect-important-values)).

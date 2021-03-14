@@ -214,14 +214,18 @@
           href: content-key-policy-concept.md
     - name: Bewaking
       items:
-        - name: Gebeurtenissen met Event Grid
-          href: reacting-to-media-services-events.md
-        - name: Event Grid-schema's
-          href: media-services-event-schemas.md
-        - name: Metrische gegevens en diagnostische logboeken
-          href: media-services-metrics-diagnostic-logs.md
-        - name: Schema's van diagnostische logboeken
-          href: media-services-diagnostic-logs-schema.md
+        - name: Controleren met Azure Monitor
+          items:
+            - name: Media Services bewaken
+              href: monitoring/monitor-media-services.md
+            - name: Media Services gegevens referentie bewaken
+              href: monitoring/monitor-media-services-data-reference.md
+        - name: Bewaken met Event Grid
+          items:
+            - name: Gebeurtenissen met Event Grid
+              href: reacting-to-media-services-events.md
+            - name: Event Grid-schema's
+              href: media-services-event-schemas.md
     - name: Compatibele spelers
       items:
         - name: Media spelers voor Media Services

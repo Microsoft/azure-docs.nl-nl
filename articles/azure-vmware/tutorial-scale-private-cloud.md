@@ -2,13 +2,13 @@
 title: 'Zelfstudie: een privécloud schalen'
 description: In deze zelfstudie gebruikt u de Azure-portal voor het schalen van een privécloud van Azure VMware Solution.
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: d49d973cc6d97280dc0c7ea6681f2602b871e1ba
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.date: 03/13/2021
+ms.openlocfilehash: 2129a3f5d04311883369b7b708689a13f07ec118
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791236"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463591"
 ---
 # <a name="tutorial-scale-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: een privécloud van Azure VMware Solution schalen
 
@@ -22,7 +22,7 @@ In deze zelfstudie gebruikt u de Azure-portal voor het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Een privécloud om deze zelfstudie te voltooien. Als u nog geen privécloud hebt gemaakt, gebruikt u de [Zelfstudie Een privécloud maken](tutorial-create-private-cloud.md) om een cloud te maken. Configureer netwerken voor uw VMware-privécloud in Azure om het vereiste virtuele netwerk in te stellen.
+U hebt een bestaande privécloud nodig om deze zelf studie te volt ooien. Als u nog geen privécloud hebt gemaakt, gebruikt u de [Zelfstudie Een privécloud maken](tutorial-create-private-cloud.md) om een cloud te maken. 
 
 ## <a name="add-a-new-cluster"></a>Een nieuw cluster toevoegen
 
@@ -46,7 +46,7 @@ Een privécloud om deze zelfstudie te voltooien. Als u nog geen privécloud hebt
 
    :::image type="content" source="./media/tutorial-scale-private-cloud/ss5-scale-cluster.png" alt-text="Gebruik op de pagina Cluster bewerken de schuifregelaar om het aantal hosts te selecteren. Selecteer Opslaan." border="true":::
 
-   Het toevoegen van hosts aan het cluster wordt gestart.
+   De toevoeging van hosts aan het cluster wordt gestart.
 
 ## <a name="next-steps"></a>Volgende stappen
 

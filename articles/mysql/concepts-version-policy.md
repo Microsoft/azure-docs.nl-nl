@@ -1,5 +1,5 @@
 ---
-title: Versie beheer beleid-Azure Database for MySQL-één server en flexibele server (preview)
+title: Beleid voor versie ondersteuning-Azure Database for MySQL-één server en flexibele server (preview)
 description: Beschrijft het beleid voor de primaire en secundaire versies van MySQL in Azure Database for MySQL
 author: sr-msft
 ms.author: srranga
@@ -7,14 +7,14 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6acb3268ba40399612940b395437fde3beffda1a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 9f34e1ff7134788d064a82ec7b646df915dbe24e
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101732867"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462555"
 ---
-# <a name="azure-database-for-mysql-versioning-policy"></a>Beleid voor Azure Database for MySQL-versie
+# <a name="azure-database-for-mysql-version-support-policy"></a>Ondersteunings beleid voor Azure Database for MySQL-versie
 
 Op deze pagina wordt het Azure Database for MySQL-versie beleid beschreven en is van toepassing op de implementatie modi Azure Database for MySQL-één server en Azure Database for MySQL-flexibele server (preview).
 

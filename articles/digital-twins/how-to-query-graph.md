@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: a38af4c942de280e7b1c094885a1ede6774ead56
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 3fd504ec36abae3f00cd2a7eb4e1f7b639be0cea
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102433213"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462674"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -36,8 +36,10 @@ Digitale apparaatdubbels ophalen op basis van **Eigenschappen** (waaronder id en
 
 :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty1":::
 
-> [!NOTE]
-> De id van een digitale dubbel wordt opgevraagd met behulp van het metagegevensveld `$dtId`.
+Zoals in de bovenstaande query wordt weer gegeven, wordt er met behulp van het veld meta gegevens een query uitgevoerd voor de ID van een digitaal twee `$dtId` .
+
+>[!TIP]
+> Als u Cloud Shell gebruikt om een query uit te voeren met meta gegevens velden die beginnen met `$` , moet u de `$` with a-apostroffen om te laten Cloud shell weten dat het geen variabele is en moet worden gebruikt als een letterlijke waarde in de query tekst.
 
 U kunt ook apparaatdubbels ophalen op basis van **het feit of een bepaalde eigenschap is gedefinieerd**. Hier volgt een query waarmee apparaatdubbels worden opgehaald die een gedefinieerde *locatie* -eigenschap hebben:
 

@@ -2,13 +2,13 @@
 title: 'Zelfstudie: Een NSX-T-netwerksegment toevoegen in Azure VMware Solution'
 description: Meer informatie over hoe u een NSX-T-netwerksegment kunt maken om virtuele machines (VM's) te gebruiken in vCenter.
 ms.topic: tutorial
-ms.date: 11/09/2020
-ms.openlocfilehash: 8ecb37a42e2986bd1c6261b8fe6c23382323b31d
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
-ms.translationtype: HT
+ms.date: 03/13/2021
+ms.openlocfilehash: 9125e552f9641a2d26b9584b66a4447f9c152161
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335044"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462117"
 ---
 # <a name="tutorial-add-a-network-segment-in-azure-vmware-solution"></a>Zelfstudie: Een netwerksegment toevoegen in Azure VMware Solution 
 

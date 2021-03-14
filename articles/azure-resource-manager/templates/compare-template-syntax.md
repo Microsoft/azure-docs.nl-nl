@@ -3,40 +3,275 @@ title: Syntaxis van Azure Resource Manager sjablonen in JSON en Bicep vergelijke
 description: Vergelijkt Azure Resource Manager sjablonen die zijn ontwikkeld met JSON en Bicep en laat zien hoe u kunt converteren tussen de talen.
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: 85f85e66e69eede68bab847e4bc68514e65115eb
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 225e52e9534a77a01502b762f043a4f34df19caa
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103418042"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461791"
 ---
 # <a name="comparing-json-and-bicep-for-templates"></a>JSON en Bicep vergelijken voor sjablonen
 
 In dit artikel wordt Bicep-syntaxis vergeleken met de JSON-syntaxis voor Azure Resource Manager sjablonen (ARM-sjablonen). In de meeste gevallen biedt Bicep de syntaxis minder uitgebreid dan het equivalent in JSON.
 
-## <a name="syntax-equivalents"></a>Syntaxis equivalenten
+Als u bekend bent met het gebruik van JSON voor het ontwikkelen van ARM-sjablonen, kunt u de volgende voor beelden gebruiken om meer te weten te komen over de equivalente syntaxis voor Bicep.
 
-Als u bekend bent met het gebruik van JSON voor het ontwikkelen van ARM-sjablonen, gebruikt u de volgende tabel voor meer informatie over de equivalente syntaxis voor Bicep.
+## <a name="expressions"></a>Expressies
 
-| Scenario | Bicep | JSON |
-| -------- | ------------ | ----- |
-| Een expressie maken | `func()` | `"[func()]"` |
-| Parameter waarde ophalen | `exampleParameter` | `[parameters('exampleParameter'))]` |
-| Waarde van variabele ophalen | `exampleVar` | `[variables('exampleVar'))]` |
-| Tekenreeksen samenvoegen | `'${namePrefix}-vm'` | `[concat(parameters('namePrefix'), '-vm')]` |
-| Eigenschap van de resource instellen | `sku: '2016-Datacenter'` | `"sku": "2016-Datacenter",` |
-| Retourneert de logische en | `isMonday && isNovember` | `[and(parameter('isMonday'), parameter('isNovember'))]` |
-| Resource-ID van resource ophalen in de sjabloon | `nic1.id` | `[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]` |
-| Eigenschap ophalen uit resource in de sjabloon | `diagsAccount.properties.primaryEndpoints.blob` | `[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))).primaryEndpoints.blob]` |
-| Voorwaardelijk een waarde instellen | `isMonday ? 'valueIfTrue' : 'valueIfFalse'` | `[if(parameters('isMonday'), 'valueIfTrue', 'valueIfFalse')]` |
-| Een oplossing scheiden in meerdere bestanden | Modules gebruiken | Gekoppelde sjablonen gebruiken |
-| Het doel bereik van de implementatie instellen | `targetScope = 'subscription'` | `"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#"` |
-| Afhankelijkheid instellen | Vertrouw op automatische detectie van afhankelijkheden of stel de afhankelijkheid hand matig in met `dependsOn: [ stg ]` | `"dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts', 'parameters('storageAccountName'))]"]` |
-| Resource declaratie | `resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = {...}` | `"resources": [ { "type": "Microsoft.Compute/virtualMachines", "apiVersion": "2020-06-01", ... } ]` |
+Een expressie schrijven:
+
+```bicep
+func()
+```
+
+```json
+"[func()]"
+```
+
+## <a name="parameters"></a>Parameters
+
+Een para meter declareren met een standaard waarde:
+
+```bicep
+param demoParam string = 'Contoso'
+```
+
+```json
+"parameters": {
+  "demoParam": {
+    "type": "string",
+    "defaultValue": "Contoso"
+  }
+}
+```
+
+Een parameter waarde ophalen:
+
+```bicep
+demoParam
+```
+
+```json
+[parameters('demoParam'))]
+```
+
+## <a name="variables"></a>Variabelen
+
+Een variabele declareren:
+
+```bicep
+var demoVar = 'example value'
+```
+
+```json
+"variables": {
+  "demoVar": "example value"
+},
+```
+
+De waarde van een variabele ophalen:
+
+```bicep
+demoVar
+```
+
+```json
+[variables('demoVar'))]
+```
+
+## <a name="strings"></a>Tekenreeksen
+
+Teken reeksen samen voegen:
+
+```bicep
+'${namePrefix}-vm'
+```
+
+```json
+[concat(parameters('namePrefix'), '-vm')]
+```
+
+## <a name="logical-operators"></a>Logische operators
+
+U kunt als volgt de logische **en**:
+
+```bicep
+isMonday && isNovember
+```
+
+```json
+[and(parameter('isMonday'), parameter('isNovember'))]
+```
+
+Als u een waarde voorwaardelijk wilt instellen:
+
+```bicep
+isMonday ? 'valueIfTrue' : 'valueIfFalse'
+```
+
+```json
+[if(parameters('isMonday'), 'valueIfTrue', 'valueIfFalse')]
+```
+
+## <a name="deployment-scope"></a>Implementatie bereik
+
+Het doel bereik van de implementatie instellen:
+
+```bicep
+targetScope = 'subscription'
+```
+
+```json
+"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#"
+```
+
+## <a name="resources"></a>Resources
+
+Een resource declareren:
+
+```bicep
+resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = {
+  ...
+}
+```
+
+```json
+"resources": [ 
+  { 
+    "type": "Microsoft.Compute/virtualMachines", 
+    "apiVersion": "2020-06-01", 
+    ... 
+  } 
+]
+```
+
+Een resource voorwaardelijk implementeren:
+
+```bicep
+resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = if(deployVM) {
+  ...
+}
+```
+
+```json
+"resources": [ 
+  {
+    "condition": "[parameters('deployVM')]",
+    "type": "Microsoft.Compute/virtualMachines", 
+    "apiVersion": "2020-06-01", 
+    ... 
+  } 
+]
+```
+
+Eigenschap van de resource instellen:
+
+```bicep
+sku: '2016-Datacenter'
+```
+
+```json
+"sku": "2016-Datacenter",
+```
+
+Resource-ID van de resource ophalen in de sjabloon:
+
+```bicep
+nic1.id
+```
+
+```json
+[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]
+```
+
+## <a name="loops"></a>Lussen
+
+Items in een matrix of aantal herhalen:
+
+```bicep
+[for storageName in storageAccounts: {
+  ...
+}]
+```
+
+```json
+"copy": {
+  "name": "storagecopy",
+  "count": "[length(parameters('storageAccounts'))]"
+},
+...
+```
+
+## <a name="resource-dependencies"></a>Bronafhankelijkheden
+
+De afhankelijkheid tussen resources instellen:
+
+Voor Bicep is afhankelijk van de automatische detectie van afhankelijkheden of het hand matig instellen van afhankelijkheden.
+
+```bicep
+dependsOn: [ stg ]
+```
+
+```json
+"dependsOn": ["[resourceId('Microsoft.Storage/storageAccounts', 'parameters('storageAccountName'))]"]
+```
+
+## <a name="reference-resources"></a>Naslag bronnen
+
+Een eigenschap ophalen van een resource in de sjabloon:
+
+```bicep
+diagsAccount.properties.primaryEndpoints.blob
+```
+
+```json
+[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAccountName'))).primaryEndpoints.blob]
+```
+
+Een eigenschap ophalen uit een bestaande resource die niet in de sjabloon is geïmplementeerd:
+
+```bicep
+resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' existing = {
+  name: storageAccountName
+}
+
+// use later in template as often as needed
+stg.properties.primaryEndpoints.blob
+```
+
+```json
+// required every time the property is needed
+"[reference(resourceId('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
+```
+
+## <a name="outputs"></a>Uitvoerwaarden
+
+Een eigenschap uitvoeren vanuit een resource in de sjabloon:
+
+```bicep
+output hostname string = publicIP.properties.dnsSettings.fqdn
+```
+
+```json
+"outputs": {
+  "hostname": {
+    "type": "string",
+    "value": "[reference(resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))).dnsSettings.fqdn]"
+  },
+}
+```
+
+## <a name="code-reuse"></a>Code opnieuw gebruiken
+
+Een oplossing scheiden in meerdere bestanden:
+
+* Gebruik [modules](bicep-tutorial-add-modules.md)voor Bicep.
+* Gebruik [gekoppelde sjablonen](linked-templates.md)voor JSON.
 
 ## <a name="recommendations"></a>Aanbevelingen
 
 * Vermijd het gebruik van de functies [Reference](template-functions-resource.md#reference) en [ResourceID](template-functions-resource.md#resourceid) in uw Bicep-bestand, indien mogelijk. Wanneer u verwijst naar een resource in dezelfde Bicep-implementatie, gebruikt u in plaats daarvan de resource-id. Als u bijvoorbeeld een resource in uw Bicep-bestand hebt geïmplementeerd met `stg` als resource-id, gebruikt u syntaxis zoals `stg.id` of `stg.properties.primaryEndpoints.blob` om eigenschaps waarden op te halen. Met behulp van de resource-id maakt u een impliciete afhankelijkheid tussen resources. U hoeft de afhankelijkheid niet expliciet in te stellen met de eigenschap dependsOn.
+* Als de resource niet is geïmplementeerd in het Bicep-bestand, kunt u nog steeds een symbolische verwijzing naar de resource krijgen met behulp van het **bestaande** sleutel woord.
 * Gebruik een consistente behuizing voor id's. Als u niet zeker weet welk type behuizing u moet gebruiken, kunt u Camel-behuizing proberen. Bijvoorbeeld `param myCamelCasedParameter string`.
 * Voeg alleen een beschrijving toe aan een para meter als de beschrijving essentiële informatie voor gebruikers bevat. U kunt `//` opmerkingen voor bepaalde informatie gebruiken.
 

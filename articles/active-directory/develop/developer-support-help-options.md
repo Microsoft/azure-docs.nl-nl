@@ -1,27 +1,26 @@
 ---
-title: Ondersteunings-en Help-opties voor Azure AD-App-ontwikkel aars
-description: Informatie over het verkrijgen van hulp en ondersteuning voor ontwikkel vragen en problemen bij het maken van een toepassing die is geïntegreerd met micro soft-identiteiten (Azure Active Directory en Microsoft-account)
+title: Ondersteunings-en Help-opties voor ontwikkel aars van micro soft-identiteits platforms | Azure
+description: Leer hoe u hulp kunt krijgen en antwoorden kunt vinden op uw vragen bij het bouwen van oplossingen voor identiteits-en toegangs beheer (IAM) die zijn geïntegreerd met Azure Active Directory (Azure AD) en andere onderdelen van het micro soft-identiteits platform.
 services: active-directory
-author: rwike77
+author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/23/2019
-ms.author: ryanwi
+ms.date: 03/09/2021
+ms.author: marsma
 ms.reviewer: jmprieur, saeeda
-ms.custom: aaddev
-ms.openlocfilehash: 43990952f6cbe90c729ac2df421c682fe8d42b1b
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 8b0d6ffc00a140073c2dfb5789fbf9760e1767c9
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102517928"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462759"
 ---
 # <a name="support-and-help-options-for-developers"></a>Ondersteunings- en Help-opties voor ontwikkelaars
 
-Als u net begint met de integratie met Azure Active Directory (Azure AD), micro soft-identiteiten of Microsoft Graph-API, of wanneer u een nieuwe functie implementeert voor uw toepassing, zijn er situaties waarin u hulp nodig hebt bij de Community of de ondersteunings opties kunt begrijpen die u als ontwikkelaar hebt. Hier vindt u suggesties voor waar u hulp kunt krijgen bij het ontwikkelen van uw micro soft Identity platform-oplossingen.
+Als u een antwoord op een vraag wilt stellen of hulp nodig hebt bij het oplossen van een probleem dat niet in onze documentatie wordt behandeld, is het mogelijk dat u contact opneemt met experts voor hulp. Hier volgen enkele suggesties voor het verkrijgen van antwoorden op uw vragen bij het ontwikkelen van toepassingen die zijn geïntegreerd met het micro soft-identiteits platform.
 
 ## <a name="create-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag maken
 
@@ -33,9 +32,10 @@ Verken het aanbod aan [ondersteuningsopties voor Azure en kies het abonnement](h
 
 - Als u al een ondersteunings abonnement voor Azure hebt, kunt u [hier een ondersteunings aanvraag openen](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
-- Als u geen Azure-klant bent, kunt u ook een ondersteunings aanvraag openen met micro soft via [onze commerciële ondersteuning](https://support.serviceshub.microsoft.com/supportforbusiness).
+- Als u geen Azure-klant bent, kunt u een ondersteunings aanvraag openen met [Microsoft ondersteuning voor bedrijven](https://support.serviceshub.microsoft.com/supportforbusiness).
 
 ## <a name="post-a-question-to-microsoft-qa"></a>Een vraag stellen aan micro soft Q&A
+
 <div class='icon is-large'>
     <img alt='Microsoft Q&A' src='./media/common/question-mark-icon.png'>
 </div>             

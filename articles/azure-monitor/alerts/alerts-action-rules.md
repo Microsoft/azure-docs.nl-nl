@@ -3,12 +3,12 @@ title: Actie regels voor Azure Monitor waarschuwingen
 description: Meer informatie over actie regels in Azure Monitor zijn en hoe u deze kunt configureren en beheren.
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 1a86493b4b478e8ebc75545bf80dafa425132fe4
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: bf254249f5b347d32255820da370a499c84da212
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103015995"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463065"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
@@ -65,18 +65,25 @@ U kunt desgewenst filters definiëren zodat de regel van toepassing is op een sp
 
 De beschikbare filters zijn:
 
-* **Ernst**: deze regel is alleen van toepassing op waarschuwingen met de geselecteerde ernst.  
+* **Ernst**  
+Deze regel is alleen van toepassing op waarschuwingen met de geselecteerde ernst.  
 Bijvoorbeeld ' **Ernst = Sev1** ' betekent dat de regel alleen van toepassing is op waarschuwingen met de ernst Sev1.
-* **Service bewaken**: deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van de geselecteerde bewakings Services.  
+* **Service bewaken**  
+Deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van de geselecteerde bewakings Services.  
 Bijvoorbeeld: de **controle service = "Azure backup"** betekent dat de regel alleen van toepassing is op back-upwaarschuwingen (afkomstig van Azure backup).
-* **Resource type**: deze regel is alleen van toepassing op waarschuwingen voor de geselecteerde resource typen.  
+* **Resourcetype**  
+Deze regel is alleen van toepassing op waarschuwingen voor de geselecteerde resource typen.  
 Bijvoorbeeld, **resource type = "virtual machines"** betekent dat de regel alleen van toepassing is op waarschuwingen op virtuele machines.
-* **Waarschuwings regel-id**: deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van een specifieke waarschuwings regel. De waarde moet de Resource Manager-ID van de waarschuwings regel zijn.  
-Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/ResourceGroup1/providers/Microsoft.Insights/metricalerts/MyAPI-highLatency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn uit de regel ' MyAPI-highLatency '.
-* **Bewakings voorwaarde**: deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde, ofwel **geactiveerd** of **opgelost**.
-* **Beschrijving**: deze regel is alleen van toepassing op waarschuwingen die een specifieke teken reeks in het veld Beschrijving van waarschuwing bevatten. Dit veld bevat de beschrijving van de waarschuwings regel.  
+* **ID van waarschuwings regel**  
+Deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van een specifieke waarschuwings regel. De waarde moet de Resource Manager-ID van de waarschuwings regel zijn.  
+Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/ResourceGroup1/providers/Microsoft.Insights/metricalerts/API-latency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn van de WAARSCHUWINGS regel API-latentie.
+* **Bewakings voorwaarde**  
+Deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde-ofwel **geactiveerd** of **opgelost**.
+* **Beschrijving**  
+Deze regel is alleen van toepassing op waarschuwingen die een specifieke teken reeks in het veld Beschrijving van waarschuwing bevatten. Dit veld bevat de beschrijving van de waarschuwings regel.  
 De **Beschrijving bevat bijvoorbeeld ' Prod '** , zodat de regel alleen overeenkomt met waarschuwingen die de teken reeks ' Prod ' in de beschrijving bevatten.
-* **Waarschuwings context (Payload)**: deze regel is alleen van toepassing op waarschuwingen die een of meer specifieke waarden bevatten in de context velden van de waarschuwing.  
+* **Waarschuwings context (Payload)**  
+Deze regel is alleen van toepassing op waarschuwingen die een of meer specifieke waarden bevatten in de context velden van de waarschuwing.  
 Bijvoorbeeld: **waarschuwings context (Payload) bevat ' computer-01 '** betekent dat de regel alleen van toepassing is op waarschuwingen waarvan de payload de teken reeks ' computer-01 ' bevat.
 
 Als u meerdere filters in een regel instelt, zijn deze allemaal van toepassing. Als u bijvoorbeeld **resource type = virtual machines** en **Ernst = Sev0** instelt, is de regel alleen van toepassing op Sev0-waarschuwingen op virtuele machines.

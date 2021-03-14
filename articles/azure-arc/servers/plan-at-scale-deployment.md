@@ -1,16 +1,16 @@
 ---
 title: Een schaal bare implementatie van Azure Arc-servers plannen
 description: Meer informatie over het inschakelen van een groot aantal machines aan Azure Arc-servers om de configuratie van essentiële beveiligings-, beheer-en bewakings mogelijkheden in azure te vereenvoudigen.
-ms.date: 02/23/2021
+ms.date: 03/12/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0e77fc00f94f2f46c60bb2c5dcecc10a4e2e3bc5
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 63e224180cff8cab6e700bc72b8a5c39a7f26857
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032225"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461297"
 ---
-# <a name="planing-for-an-at-scale-deployment-of-azure-arc-enabled-servers"></a>Een grootschalige implementatie van Azure Arc-servers plannen
+# <a name="plan-and-deploy-arc-enabled-servers-at-scale"></a>Op schaal niveau ingeschakelde Arc-servers plannen en implementeren
 
 De implementatie van een IT-infrastructuur service of bedrijfs toepassing is een uitdaging voor elk bedrijf. Om het goed te kunnen uitvoeren en onwelkomloze en ongeplande kosten te voor komen, moet u deze zorgvuldig plannen om ervoor te zorgen dat u zo klaar mogelijk bent. Voor het plannen van de implementatie van Azure Arc enabled servers op schaal, moet dit betrekking hebben op de ontwerp-en implementatie criteria waaraan moet worden voldaan om de taken uit te voeren om een implementatie op schaal te ondersteunen.
 
@@ -67,7 +67,7 @@ In deze fase stellen systeem engineers of beheerders de belangrijkste functies i
 
 ## <a name="phase-2-deploy-arc-enabled-servers"></a>Fase 2: Arc ingeschakelde servers implementeren
 
-We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door de implementatie voor te bereiden en de installatie van de agent uit te voeren.
+We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door het voorbereiden en implementeren van de op Arc ingeschakelde servers aangesloten machine agent.
 
 |Taak |Detail |Duur |
 |-----|-------|---------|
@@ -77,7 +77,7 @@ We voegen vervolgens toe aan de basis die in fase 1 is vastgelegd door de implem
 
 ## <a name="phase-3-manage-and-operate"></a>Fase 3: beheren en uitvoeren
 
-Fase 3 ziet beheerders of systeem technici die automatisering van hand matige taken mogelijk maken voor het beheren en uitvoeren van de verbonden machine agent en de computer tijdens hun levens duur.
+Fase 3 laat beheerders of systeem technici de automatisering van hand matige taken mogelijk maken voor het beheren en uitvoeren van de verbonden machine agent en de computer tijdens hun levens cyclus.
 
 |Taak |Detail |Duur |
 |-----|-------|---------|

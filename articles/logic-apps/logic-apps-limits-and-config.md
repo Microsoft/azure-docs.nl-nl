@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 03/03/2021
-ms.openlocfilehash: 39d7516b9cec1a3b9aa4484c2ff93564bd5772da
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/18/2021
+ms.openlocfilehash: f4336350af92c27760369d668c6babddc4d4ea30
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034282"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462913"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -50,7 +50,7 @@ Dit zijn de limieten voor het uitvoeren van een enkele logische app:
 | Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
 |------|--------------------|---------------------------------------|-------|
 | Uitvoeringsduur | 90 dagen | 366 dagen | De uitvoerings duur wordt berekend met behulp van de begin tijd van de uitvoering en de limiet die is opgegeven in de werk stroom instelling, [**uitvoerings geschiedenis in dagen**](#change-duration) op die begin tijd. <p><p>Als u de standaard limiet wilt wijzigen, raadpleegt u de [uitvoerings duur en de retentie van de geschiedenis in de opslag ruimte wijzigen](#change-duration). |
-| Bewaar periode voor geschiedenis in opslag | 90 dagen | 366 dagen | Als de duur van een uitvoering de huidige Bewaar limiet voor de uitvoerings geschiedenis overschrijdt, wordt de uitvoering verwijderd uit de uitvoerings geschiedenis in de opslag. Of de uitvoering is voltooid of er een time-out optreedt, de retentie van de uitvoerings geschiedenis wordt altijd berekend met behulp van de begin tijd van de uitvoering en de huidige limiet die is opgegeven in de werk stroom instelling, de [**Bewaar periode voor de geschiedenis in dagen**](#change-retention). Ongeacht de vorige limiet wordt de huidige limiet altijd gebruikt voor het berekenen van de Bewaar periode. <p><p>Als u de standaard limiet wilt wijzigen en meer informatie wilt, raadpleegt u de [duur en de retentie van de uitvoerings geschiedenis in de opslag ruimte wijzigen](#change-retention). Als u de maximum limiet wilt verhogen, [neemt u contact op met het Logic apps team](mailto://logicappsemail@microsoft.com) voor hulp bij uw vereisten. |
+| Bewaar periode voor geschiedenis in opslag | 90 dagen | 366 dagen | Als de duur van een uitvoering de huidige Bewaar limiet voor de uitvoerings geschiedenis overschrijdt, wordt de uitvoering verwijderd uit de uitvoerings geschiedenis in de opslag. Of de uitvoering is voltooid of er een time-out optreedt, de retentie van de uitvoerings geschiedenis wordt altijd berekend met behulp van de begin tijd van de uitvoering en de huidige limiet die is opgegeven in de werk stroom instelling, de [**Bewaar periode voor de geschiedenis in dagen**](#change-retention). Ongeacht de vorige limiet wordt de huidige limiet altijd gebruikt voor het berekenen van de Bewaar periode. <p><p>Als u de standaard limiet wilt wijzigen en meer informatie wilt, raadpleegt u de [duur en de retentie van de uitvoerings geschiedenis in de opslag ruimte wijzigen](#change-retention). Als u de maximum limiet wilt verhogen, [neemt u contact op met het Logic apps team](mailto://logicappspm@microsoft.com) voor hulp bij uw vereisten. |
 | Mini maal terugkeer patroon | 1 seconde | 1 seconde ||
 | Maximum interval van terugkeer patroon | 500 dagen | 500 dagen ||
 |||||
@@ -203,8 +203,8 @@ Zie [overzicht: de implementatie voor Azure Logic apps automatiseren met behulp 
 
   | Name | Limiet | Notities |
   |------|-------|-------|
-  | Uitvoerings limiet basis eenheid | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Biedt ~ 4.000 actie-uitvoeringen per minuut, wat ~ 160.000.000 actie uitvoeringen per maand is | |
-  | Limiet voor het uitvoeren van schaal eenheden | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Elke schaal eenheid kan ~ 2.000 extra actie-uitvoeringen per minuut bieden, wat ~ 80.000.000 meer actie-uitvoeringen per maand | |
+  | Uitvoerings limiet basis eenheid | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Biedt ~ 4.000 actie-uitvoeringen per minuut, wat ~ 160.000.000 actie uitvoeringen per maand is |
+  | Limiet voor het uitvoeren van schaal eenheden | Systeem-beperkt wanneer de capaciteit van de infra structuur 80% bereikt | Elke schaal eenheid kan ~ 2.000 extra actie-uitvoeringen per minuut bieden, wat ~ 80.000.000 meer actie-uitvoeringen per maand |
   | Maximale schaal eenheden die u kunt toevoegen | 10 | |
   ||||
 
@@ -244,11 +244,11 @@ Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webh
 
 #### <a name="character-limits"></a>Teken limieten
 
-| Name | Notities |
-|------|-------|
+| Name | Limiet | Notities |
+|------|-------|-------|
 | Limiet voor evaluatie van expressie | 131.072 tekens | De `@concat()` , `@base64()` , `@string()` expressies mogen niet langer zijn dan deze limiet. |
-| Maximum aantal tekens van aanvraag-URL | 16.384 tekens |
-|||
+| Maximum aantal tekens van aanvraag-URL | 16.384 tekens | |
+||||
 
 <a name="retry-policy-limits"></a>
 

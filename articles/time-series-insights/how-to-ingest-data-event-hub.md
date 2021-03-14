@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: f4b5d4915cd6520edd7a45af85a836c3360eee32
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: ee66e68216933c410092865a1cdb781476a944c6
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696326"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461131"
 ---
 # <a name="add-an-event-hub-event-source-to-your-azure-time-series-insights-environment"></a>Een Event Hub gebeurtenis bron toevoegen aan uw Azure Time Series Insights omgeving
 
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u de Azure Portal kunt gebruiken om een gebe
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Een Azure Time Series Insights omgeving maken zoals beschreven in [een Azure time series Insights omgeving maken](./tutorials-set-up-tsi-environment.md).
+- Een Azure Time Series Insights omgeving maken zoals beschreven in [een Azure time series Insights omgeving maken](./tutorial-set-up-environment.md).
 - Maak een Event Hub. Lees [een event hubs naam ruimte en een event hub maken met behulp van de Azure Portal](../event-hubs/event-hubs-create.md).
 - Er moeten actieve bericht gebeurtenissen naar het Event Hub worden verzonden. Meer informatie over [het verzenden van gebeurtenissen naar Azure Event hubs met behulp van de .NET Framework](../event-hubs/event-hubs-dotnet-framework-getstarted-send.md).
 - Maak een speciale Consumer groep in de Event Hub waarvan de Azure Time Series Insights omgeving kan worden gebruikt. Elke Azure Time Series Insights gebeurtenis bron moet een eigen toegewezen consumenten groep hebben die niet met een andere consument wordt gedeeld. Als meerdere lezers gebeurtenissen van dezelfde consumenten groep gebruiken, kunnen alle lezers waarschijnlijk fouten vertonen. Er is een limiet van 20 consumenten groepen per Event Hub. Lees de [Event hubs-programmeer gids](../event-hubs/event-hubs-programming-guide.md)voor meer informatie.
@@ -54,7 +54,7 @@ Een nieuwe consumenten groep toevoegen aan uw Event Hub:
 
 ## <a name="add-a-new-event-source"></a>Een nieuwe gebeurtenis bron toevoegen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek uw bestaande Azure Time Series Insights-omgeving. Selecteer in het menu links **alle resources** en selecteer vervolgens uw Azure time series Insights omgeving.
 

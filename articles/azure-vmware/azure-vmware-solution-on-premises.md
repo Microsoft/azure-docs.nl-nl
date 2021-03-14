@@ -2,13 +2,13 @@
 title: Azure VMware Solution verbinden met uw on-premises omgeving
 description: Leer Azure VMware Solution verbinden met uw on-premises omgeving.
 ms.topic: tutorial
-ms.date: 12/28/2020
-ms.openlocfilehash: 753835b0206d8bbabe42b057fa40a2d6c4c8c414
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
-ms.translationtype: HT
+ms.date: 03/13/2021
+ms.openlocfilehash: 6d1c52784eae2efabe79a9ba5c6cdf9bbfdc1950
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809680"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103461641"
 ---
 # <a name="connect-azure-vmware-solution-to-your-on-premises-environment"></a>Azure VMware Solution verbinden met uw on-premises omgeving
 
@@ -17,7 +17,7 @@ In dit artikel gaat u door met het gebruik van de [informatie verzameld tijden d
 Voordat u begint, zijn er twee vereisten om Azure VMware Solution te verbinden met uw on-premises omgeving:
 
 - Een ExpressRoute-circuit van uw on-premises omgeving naar Azure.
-- Een/29 niet-overlappend blok met netwerkadressen voor de ExpressRoute Global Reach-peering, dat u heeft gedefinieerd tijdens de [planningsfase](production-ready-deployment-steps.md).
+- Een/29 niet-overlappend CIDR-netwerk adres blok voor de ExpressRoute-Global Reach peering, die u hebt gedefinieerd als onderdeel van de [plannings fase](production-ready-deployment-steps.md).
 
 >[!NOTE]
 > U kunt verbinding maken via VPN, maar dit wordt niet besproken in deze quickstart.
@@ -25,6 +25,10 @@ Voordat u begint, zijn er twee vereisten om Azure VMware Solution te verbinden m
 ## <a name="establish-an-expressroute-global-reach-connection"></a>Een ExpressRoute Global Reach-verbinding maken
 
 Als u een on-premises verbinding tot stand wilt brengen met uw VMware Solution-privécloud met behulp van ExpressRoute Global Reach, volg dan de zelfstudie [On-premises omgevingen peeren met een privécloud](tutorial-expressroute-global-reach-private-cloud.md).
+
+Deze zelf studie resulteert in een verbinding zoals in het diagram wordt weer gegeven.
+
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png" alt-text="ExpressRoute Global Reach on-premises netwerk verbindings diagram." lightbox="media/pre-deployment/azure-vmware-solution-on-premises-diagram.png":::
 
 ## <a name="verify-on-premises-network-connectivity"></a>On-premises netwerkverbinding controleren
 

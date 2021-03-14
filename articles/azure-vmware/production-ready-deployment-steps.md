@@ -2,19 +2,19 @@
 title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
-ms.date: 02/22/2021
-ms.openlocfilehash: f9d49d7ff8109364c9fc1eee4388b30ccc1a61b6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/13/2021
+ms.openlocfilehash: f1895f14361b7121ae0d78950cdf8eca3cf7eb52
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733654"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103462419"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
-In dit artikel wordt het planningsproces getoond om gegevens die gebruikt worden tijdens de implementatie te identificeren en te verzamelen. Zorg dat u bij het plannen van uw implementatie alle verzamelde informatie documenteert om er tijdens de implementatie snel naar te kunnen verwijzen.
+In dit artikel wordt het plannings proces beschreven voor het identificeren en verzamelen van de informatie die u tijdens de implementatie gaat gebruiken. Zorg dat u bij het plannen van uw implementatie alle verzamelde informatie documenteert om er tijdens de implementatie snel naar te kunnen verwijzen.
 
-De processen van deze quickstart zorgen voor een omgeving die gereed is om virtuele machines (VM's) te maken en te migreren. 
+Met de stappen die worden beschreven in deze Quick start krijgt u een omgeving die gereed is voor productie voor het maken van virtuele machines (Vm's) en migratie. 
 
 >[!IMPORTANT]
 >Voordat u uw Azure VMware Solution-resource maakt, is het raadzaam het artikel [Een Azure VMware Solution-resouce inschakelen](enable-azure-vmware-solution.md) te volgen om een ondersteuningsticket in te dienen om uw hosts te laten toewijzen. Zodra het ondersteuningsteam uw aanvraag heeft ontvangen, duurt het maximaal vijf werkdagen om uw aanvraag te bevestigen en uw hosts toe te wijzen. Als u een bestaande privécloud van Azure VMware Solution hebt en u meer hosts wilt toewijzen, dan volgt u hetzelfde proces. 
@@ -46,21 +46,30 @@ Definieer de naam van de resource die u tijdens de implementatie wilt gebruiken.
 
 Bepaal de omvang van de hosts die u wilt gebruiken om Azure VMware Solution te implementeren.  Raadpleeg voor een volledige lijst de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#hosts).
 
-## <a name="number-of-hosts"></a>Aantal hosts
+## <a name="number-of-clusters-and-hosts"></a>Aantal clusters en hosts
 
-Definieer het aantal hosts dat u wilt implementeren in de Azure VMware Solution-privécloud.  Het minimum aantal hosts is drie, en het maximum is 16 per cluster.  Raadpleeg voor meer informatie de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#clusters).
+In de Azure VMware-oplossing implementeert u een privécloud en maakt u meerdere clusters. Voor uw implementatie moet u het aantal clusters en de f-hosts definiëren die u in elk cluster wilt implementeren. Het minimum aantal hosts per cluster is drie, en de maximum waarde is 16. Het maximum aantal clusters per privécloud is vier. Het maximum aantal knoop punten per privécloud is 64.
 
-U kunt de cluster later altijd uitbreiden als u verder moet gaan dan het oorspronkelijke implementatie-aantal.
+Raadpleeg voor meer informatie de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#clusters).
 
-## <a name="ip-address-segment"></a>Segment IP-adres
+>[!TIP]
+>U kunt de cluster later altijd uitbreiden als u verder moet gaan dan het oorspronkelijke implementatie-aantal.
 
-De eerste stap bij het plannen van de implementatie is de planning van de IP-segmentatie.  De Azure VMware Solution neemt een /22-netwerk op dat u opgeeft. Vervolgens deelt het dat op in kleinere segmenten, en gebruikt het die IP-segmenten voor vCenter, VMware, HCX, NSX-T en vMotion.
+## <a name="vcenter-admin-password"></a>Beheerderswachtwoord van vCenter
+Stel het beheerderswachtwoord van vCenter in. Tijdens de implementatie maakt u een beheerderswachtwoord voor vCenter. Het wacht woord wordt toegewezen aan het cloudadmin@vsphere.local beheerders account tijdens het maken van de vCenter. U gebruikt deze referenties om u aan te melden bij vCenter.
 
-Azure VMware Solution maakt verbinding met Microsoft Azure Virtual Network via een intern ExpressRoute-circuit. In de meeste gevallen maakt het verbinding met uw datacentrum via ExpressRoute Global Reach. 
+## <a name="nsx-t-admin-password"></a>NSX-T-beheerderswachtwoord
+Definieer het NSX-T-beheerderswachtwoord. Tijdens de implementatie maakt u een NSX-T-beheerderswachtwoord. Het wachtwoord wordt toegewezen aan de gebruiker met beheerdersrechten in het NSX-account tijdens de NSX-build. U gebruikt deze referenties om u aan te melden bij NSX-T-beheer.
 
-Azure VMware Solution, uw bestaande Azure-omgeving en uw on-premises omgeving wisselen (meestal) allemaal routes uit. Dat wil zeggen dat het adresblok voor het /22 CIDR-netwerkadres dat u in deze stap definieert, niet mag overlappen met iets wat u al on-premises of in Azure hebt.
+## <a name="ip-address-segment-for-private-cloud-management"></a>IP-adres segment voor privé-Cloud beheer
+
+De eerste stap bij het plannen van de implementatie is de planning van de IP-segmentatie. Voor de Azure VMware-oplossing is een/22 CIDR-netwerk vereist. Deze adres ruimte Carves het in kleinere netwerk segmenten (subnetten) en wordt gebruikt voor de functionaliteit van vCenter, VMware HCX, NSX-T en vMotion.
+
+Dit/22 CIDR-netwerk adres blok mag niet overlappen met een bestaand netwerk segment dat u on-premises of in azure al hebt.
 
 **Voorbeeld:** 10.0.0.0/22
+
+De Azure VMware-oplossing maakt verbinding met uw Microsoft Azure Virtual Network via een intern ExpressRoute-Global Reach circuit (D-MSEE in de onderstaande visualisatie). Deze functionaliteit maakt deel uit van de Azure VMware-oplossings service en er worden geen kosten in rekening gebracht.
 
 Zie de [Controlelijst voor netwerkplanning](tutorial-network-checklist.md#routing-and-subnet-considerations) voor meer informatie.
 
@@ -68,12 +77,12 @@ Zie de [Controlelijst voor netwerkplanning](tutorial-network-checklist.md#routin
 
 ## <a name="ip-address-segment-for-virtual-machine-workloads"></a>IP-adressegment voor workloads van virtuele machines
 
-Identificeer een IP-segment om uw eerste netwerk (NSX-segment) in uw privécloud te maken.  U moet met andere woorden een netwerksegment maken op Azure VMware Solution, zodat u virtuele machines kunt implementeren in Azure VMware Solution.   
+Identificeer een IP-segment om uw eerste netwerk te maken voor werk belastingen (NSX segment) in uw privécloud. Met andere woorden, u moet een netwerk segment maken op de Azure VMware-oplossing, zodat u Vm's kunt implementeren in de Azure VMware-oplossing.
 
-Zelfs als u alleen van plan bent om L2-netwerken uit te breiden, maakt u een netwerksegment waarmee de omgeving kan worden gevalideerd.
+Zelfs als u van plan bent om netwerken van on-premises uit te breiden naar de Azure VMware-oplossing (L2), moet u nog steeds een netwerk segment maken dat de omgeving valideert.
 
-Houd er rekening mee dat alle gemaakte IP-segmenten uniek moeten zijn binnen uw configuratie in Azure en on-premises.  
-
+Houd er rekening mee dat alle gemaakte IP-segmenten uniek moeten zijn binnen uw configuratie in Azure en on-premises.
+  
 **Voorbeeld:** 10.0.4.0/24
 
 :::image type="content" source="media/pre-deployment/nsx-segment-diagram.png" alt-text="Identificeren - IP-adressegment voor workloads van virtuele machines" border="false":::     
@@ -87,9 +96,9 @@ Denk hierbij aan het volgende:
 - Als u van plan bent om netwerken van on-premises uit te breiden, moeten die netwerken verbinding maken met een [vSphere Distributed Switch (vDS)](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-B15C6A13-797E-4BCB-B9D9-5CBC5A60C3A6.html) in uw on-premises VMware-omgeving.  
 - Als het netwerk/de netwerken die u wilt uitbreiden zich op een [vSphere Standard Switch](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.networking.doc/GUID-350344DE-483A-42ED-B0E2-C811EE927D59.html) bevinden, dan kunnen ze niet worden uitgebreid.
 
-## <a name="attach-virtual-network-to-azure-vmware-solution"></a>Virtueel netwerk koppelen aan de Azure VMware-oplossing
+## <a name="attach-azure-virtual-network-to-azure-vmware-solution"></a>Azure Virtual Network koppelen aan de Azure VMware-oplossing
 
-In deze stap identificeert u een virtuele ExpressRoute-netwerk gateway en de ondersteunende Azure-Virtual Network die wordt gebruikt om verbinding te maken met het ExpressRoute-circuit van de Azure VMware-oplossing.  Het ExpressRoute-circuit vereenvoudigt de connectiviteit van en naar de privécloud van Azure VMware-oplossingen voor andere Azure-Services, Azure-resources en on-premises omgevingen.
+In deze stap identificeert u een virtuele ExpressRoute-netwerk gateway en de ondersteunende Azure-Virtual Network die worden gebruikt om verbinding te maken met het ExpressRoute-circuit van de Azure VMware-oplossing.  Het ExpressRoute-circuit vereenvoudigt de connectiviteit van en naar de privécloud van Azure VMware-oplossingen voor andere Azure-Services, Azure-resources en on-premises omgevingen.
 
 U kunt een *bestaande* of *nieuwe* ExpressRoute virtuele netwerk gateway gebruiken.
 

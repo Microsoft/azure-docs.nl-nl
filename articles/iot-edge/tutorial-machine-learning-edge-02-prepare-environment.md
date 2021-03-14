@@ -8,14 +8,16 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d86a273a69203a92a9b437f021486feb3bcb31da
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 723d7b6ae5b96cf6dc622be1b1bb98065151787f
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932367"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463143"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Zelfstudie: Een omgeving instellen voor machine learning op IoT Edge
+
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
 In dit artikel leert u hoe u uw omgeving voorbereidt voor ontwikkeling en implementatie. Stel eerst een ontwikkelingsmachine in met alle hulpprogramma's die u nodig hebt. Maak vervolgens de benodigde cloudresources in Azure.
 

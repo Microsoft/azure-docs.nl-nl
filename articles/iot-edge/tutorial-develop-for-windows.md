@@ -9,18 +9,23 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: e46105f5889f4925be9873fd8613021fe5e8ac2d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+ms.openlocfilehash: b5ff515f5a6d25285009f6579570aa3afa5a711f
+ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920767"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103463354"
 ---
-# <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Zelfstudie: IoT Edge-modules ontwikkelen voor Windows-apparaten
+# <a name="tutorial-develop-iot-edge-modules-using-windows-containers"></a>Zelf studie: IoT Edge-modules ontwikkelen met behulp van Windows-containers
+
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
 Visual Studio gebruiken voor het ontwikkelen en implementeren van code voor Windows-apparaten met IoT Edge.
 
-In de quickstart hebt u een IoT Edge-apparaat gemaakt met behulp van een virtuele Windows-machine en een vooraf gebouwde module geïmplementeerd vanuit Azure Marketplace. In deze zelfstudie wordt uitgelegd wat er nodig is om uw eigen code te ontwikkelen en te implementeren op een IoT Edge-apparaat. Het is handig deze zelfstudie door te nemen voor de andere zelfstudies, die dieper ingaan op specifieke programmeertalen of Azure-services.
+>[!NOTE]
+>IoT Edge 1,1 LTS is het laatste release kanaal dat ondersteuning biedt voor Windows-containers. Vanaf versie 1,2 worden Windows-containers niet ondersteund. Overweeg het gebruik of verplaatsen van [IOT Edge voor Linux in Windows](iot-edge-for-linux-on-windows.md) om IOT Edge op Windows-apparaten uit te voeren.
+
+In deze zelfstudie wordt uitgelegd wat er nodig is om uw eigen code te ontwikkelen en te implementeren op een IoT Edge-apparaat. Het is handig deze zelfstudie door te nemen voor de andere zelfstudies, die dieper ingaan op specifieke programmeertalen of Azure-services.
 
 In deze zelfstudie wordt gebruikgemaakt van het voorbeeld van de implementatie van een **C#-module op een Windows-apparaat**. Dit voorbeeld is gekozen omdat dit het meest voorkomende ontwikkelscenario is. Als u in een andere taal wilt ontwikkelen of als u Azure-services wilt implementeren als modules, is deze zelfstudie eveneens nuttig voor meer informatie over de hulpprogramma's voor ontwikkeling. Wanneer u de ontwikkelconcepten begrijpt, kunt u de gewenste taal of Azure-service kiezen voor meer informatie.
 
@@ -44,8 +49,8 @@ Een ontwikkelcomputer:
 
 Een Azure IoT Edge-apparaat op Windows:
 
-* We raden u aan om IoT Edge niet uit te voeren op uw ontwikkelcomputer, maar een afzonderlijk apparaat te gebruiken. Dit onderscheid tussen ontwikkelcomputer en IoT Edge apparaat sluit nauwer aan op een echt implementatiescenario en helpt om de verschillende concepten uit elkaar te houden.
-* Als u geen tweede apparaat beschikbaar hebt, gebruikt u het quickstart-artikel om een IoT Edge-apparaat in Azure te maken met een [virtuele Windows-machine](quickstart.md).
+* [Installeer en beheer Azure IOT Edge met Windows-containers](how-to-install-iot-edge-windows-on-windows.md).
+* Het is raadzaam om IoT Edge niet uit te voeren op uw ontwikkel computer, maar als dat mogelijk is, gebruikt u een afzonderlijk apparaat. Dit onderscheid tussen ontwikkelcomputer en IoT Edge apparaat sluit nauwer aan op een echt implementatiescenario en helpt om de verschillende concepten uit elkaar te houden.
 
 Cloudresources:
 

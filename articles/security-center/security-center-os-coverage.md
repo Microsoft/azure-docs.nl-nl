@@ -7,12 +7,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 65f383b37b6fb5c89fb987f179d7900eb667d76e
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: 88dc0760f320a99b0cbc99b7637dc34dd11dfecc
+ms.sourcegitcommit: 33ac5cd254c33659f668a76a2e295fddcd5d194d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102438281"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103465443"
 ---
 # <a name="supported-platforms"></a>Ondersteunde platforms 
 
@@ -51,7 +51,7 @@ Virtuele machines worden ook in een klantabonnement gemaakt als onderdeel van so
 
 Virtuele machines die worden uitgevoerd in een cloudservice, worden ook ondersteund. Alleen webwerkrollen in de cloudservice die worden uitgevoerd in productiesites, worden bewaakt. Zie [Overzicht van Azure Cloud Services](../cloud-services/cloud-services-choose-me.md) voor meer informatie over de cloudservice.
 
-De beveiliging van virtuele machines die zich in Azure Stack bevinden, wordt ook ondersteund. Zie [Uw virtuele Azure Stack-machines onboarden naar Security Center](quickstart-onboard-machines.md) voor meer informatie over de integratie van Security Center met Azure Stack. 
+De beveiliging van Vm's die zich in Azure Stack hub bevinden, wordt ook ondersteund. Zie voor meer informatie over de integratie van Security Center met Azure Stack hub [de virtuele machines van Azure stack hub Onboarden om te Security Center](quickstart-onboard-machines.md?pivots=azure-portal#onboard-your-azure-stack-hub-vms). 
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 zone_pivot_groups: non-azure-machines
-ms.openlocfilehash: b5dd06c148c53517214b47b39f083c99d0f37e0b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 68fcf8a8feb046fca2c26041d92264dd8b3a638e
+ms.sourcegitcommit: 33ac5cd254c33659f668a76a2e295fddcd5d194d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101712195"
+ms.lasthandoff: 03/14/2021
+ms.locfileid: "103465494"
 ---
 # <a name="connect-your-non-azure-machines-to-security-center"></a>Uw niet-Azure-machines verbinden met Security Center
 
@@ -75,24 +75,24 @@ Meer informatie over [servers met Azure Arc](../azure-arc/servers/overview.md).
 
     Kies hier de relevante procedure, afhankelijk van het type machines dat u aan het onboarden bent:
 
-    - [Uw Azure Stack-VM's onboarden](#onboard-your-azure-stack-vms)
+    - [Onboarding van uw Azure Stack hub-Vm's](#onboard-your-azure-stack-hub-vms)
     - [Uw Linux-machines onboarden](#onboard-your-linux-machines)
     - [Uw Windows-machines onboarden](#onboard-your-windows-machines)
 
-### <a name="onboard-your-azure-stack-vms"></a>Uw Azure Stack-VM's onboarden
+### <a name="onboard-your-azure-stack-hub-vms"></a>Onboarding van uw Azure Stack hub-Vm's
 
-Om Azure Stack-VM's toe te kunnen voegen, hebt u de gegevens op de pagina **Agentbeheer** nodig en moet u de VM-extensie **Azure Monitor, update- en configuratiebeheer** configureren op de virtuele machines die op uw Azure Stack draaien.
+Om Azure Stack hub-Vm's toe te voegen, moet u de informatie op de pagina **agents beheren** en de uitbrei ding van de virtuele machine voor de **Azure monitor, update en configuratie beheer** configureren voor de virtuele machines die worden uitgevoerd op uw Azure stack hub-exemplaar.
 
 1. Kopieer op de pagina **Agentbeheer** de **werkruimte-id** en **primaire sleutel** in Kladblok.
-1. Meld u aan bij uw **Azure Stack**-portal en open de pagina **Virtuele machines**.
+1. Meld u aan bij uw **Azure stack hub** -Portal en open de pagina **virtuele machines** .
 1. Selecteer de virtuele machine die u met Security Center wilt beveiligen.
     >[!TIP]
-    > Zie [deze quickstart voor virtuele Windows-machines](/azure-stack/user/azure-stack-quick-windows-portal) of [deze quickstart voor virtuele Linux-machines](/azure-stack/user/azure-stack-quick-linux-portal) voor meer informatie over het maken van een virtuele machine op Azure Stack.
+    > Meer informatie over het maken van een virtuele machine op Azure Stack Hub vindt u in [deze Snelstartgids voor virtuele Windows-machines](/azure-stack/user/azure-stack-quick-windows-portal) of [op deze Quick start voor virtuele Linux-machines](/azure-stack/user/azure-stack-quick-linux-portal).
 1. Selecteer **Extensies**. De lijst met virtuele machine-extensies die op deze virtuele machine is geïnstalleerd, wordt weergegeven.
 1. Selecteer het tabblad **Toevoegen**. Het menu **Nieuwe resource** toont de lijst met beschikbare extensies voor virtuele machines.
 1. Selecteer achtereenvolgens de extensie **Azure Monitor, update- en configuratiebeheer** en **Maken**. De configuratiepagina **Extensie installeren** wordt geopend.
     >[!NOTE]
-    > Als u de extensie **Azure Monitor, update-en configuratiebeheer** die wordt vermeld in uw Marketplace niet ziet, kunt u contact opnemen met uw Azure Stack-operator om deze beschikbaar te maken.
+    > Als u de **Azure monitor-, update-en configuratie beheer** uitbreiding die wordt vermeld in uw Marketplace niet ziet, kunt u contact opnemen met uw Azure stack hub-operator om deze beschikbaar te maken.
 1. Op de configuratiepagina **Extensie installeren** plakt u de **werkruimte-id** en **werkruimtesleutel (primaire sleutel)** die u in de vorige stap naar Kladblok hebt gekopieerd.
 1. Selecteer **OK** nadat u de configuratie hebt afgerond. De status van de extensie wordt weergegeven als **Inrichten geslaagd**. Het kan een uur duren voordat de virtuele machine wordt weergegeven in Security Center.
 

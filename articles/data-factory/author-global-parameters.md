@@ -5,13 +5,13 @@ ms.service: data-factory
 ms.topic: conceptual
 author: dcstwh
 ms.author: weetok
-ms.date: 03/04/2021
-ms.openlocfilehash: 06d04eb8679b4484f330b69a8cffb263d353bdcd
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.date: 03/15/2021
+ms.openlocfilehash: 3110ce8cb97379fd4690903ec769cc1dfc7f1326
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102197877"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492758"
 ---
 # <a name="global-parameters-in-azure-data-factory"></a>Globale para meters in Azure Data Factory
 
@@ -49,7 +49,10 @@ Er zijn twee manieren om globale para meters te integreren in uw continue integr
 Voor de meeste gebruiks voorbeelden wordt aanbevolen globale para meters in de ARM-sjabloon in te sluiten. Dit wordt systeem eigen geïntegreerd met de oplossing die wordt beschreven in [het CI/cd-document](continuous-integration-deployment.md). Globale para meters worden standaard toegevoegd als een ARM-sjabloon parameter, aangezien ze vaak van omgeving veranderen in omgeving. U kunt het opnemen van globale para meters in de ARM-sjabloon inschakelen via de hub **beheren** .
 
 > [!NOTE]
-> De configuratie **voor het insluiten van arm-sjablonen** is alleen beschikbaar in de modus git. Het is momenteel uitgeschakeld in de modus ' Live-modus ' of ' Data Factory '.
+> De configuratie **voor het insluiten van arm-sjablonen** is alleen beschikbaar in de modus git. Het is momenteel uitgeschakeld in de modus ' Live-modus ' of ' Data Factory '. 
+
+> [!WARNING]
+>U kunt '-' niet gebruiken in de parameter naam. U ontvangt een fout code "{" ":" onjuiste aanvraag "," bericht ":" error waarde = InvalidTemplate, ErrorMessage = de expressie > pipeline (). globalParameters. myParam-dbtest-URL is niet geldig:....}. Maar u kunt de ' _ ' gebruiken in de parameter naam.
 
 ![In ARM-sjabloon toevoegen](media/author-global-parameters/include-arm-template.png)
 

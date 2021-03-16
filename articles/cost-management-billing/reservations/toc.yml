@@ -124,6 +124,8 @@
           href: reservation-renew.md?toc=/azure/cost-management-billing/reservations/toc.json
     - name: Problemen oplossen
       items:
+        - name: Een reserverings reservering zoeken vanuit Azure-logboeken
+          href: find-reservation-purchaser-from-logs.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Problemen met overdrachten tussen tenants oplossen
           href: troubleshoot-reservation-transfers-between-tenants.md?toc=/azure/cost-management-billing/reservations/toc.json
         - name: Geen geschikte abonnementen

@@ -11,12 +11,12 @@ metadata:
   author: mlottner
   ms.author: mlottner
   ms.date: 09/07/2020
-  ms.openlocfilehash: a56e82d81839d94029bc34dcdec30544e7158ea1
-  ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+  ms.openlocfilehash: 1e7f3b151691c80861c9add3188a3d4479fac059
+  ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/26/2021
-  ms.locfileid: "98802672"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103496096"
 landingContent:
 - title: Aan de slag met Azure Defender for IoT
   linkLists:
@@ -58,7 +58,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Edge-beveiligingsmodule
+    - text: Edge Defender-IoT-micro-agent
       url: security-edge-architecture.md
   - linkListType: quickstart
     links:
@@ -66,7 +66,7 @@ landingContent:
       url: quickstart-onboard-iot-hub.md
     - text: Uw IoT-beveiligingsoplossing configureren
       url: quickstart-configure-your-solution.md
-    - text: Uw beveiligingsmodule voor Azure RTOS configureren
+    - text: Uw Defender-IoT-micro agent voor Azure RTO'S configureren
       url: quickstart-azure-rtos-security-module.md
     - text: Een moduledubbel maken voor Azure Defender for IoT
       url: quickstart-create-security-twin.md

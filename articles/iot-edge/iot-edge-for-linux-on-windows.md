@@ -10,14 +10,16 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: kgremban
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 63538661cceb7e1bdd4151a3592ccbd4de0033b0
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 330eaf5c12372347917e9f3a4aeafb6a2088c592
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102612011"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492571"
 ---
 # <a name="what-is-azure-iot-edge-for-linux-on-windows-preview"></a>Wat is Azure IoT Edge voor Linux op Windows (preview)?
+
+[!INCLUDE [iot-edge-version-201806](../../includes/iot-edge-version-201806.md)]
 
 Met Azure IoT Edge voor Linux in Windows kunt u in containers geplaatste Linux-workloads uitvoeren naast Windows-toepassingen in Windows IoT-implementaties. Bedrijven die vertrouwen op Windows IoT om hun rand apparaten te laten werken, kunnen nu profiteren van de Cloud-systeem eigen analyse oplossingen die in Linux zijn ingebouwd.
 

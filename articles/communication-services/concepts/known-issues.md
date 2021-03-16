@@ -5,15 +5,15 @@ author: mikben
 manager: jken
 services: azure-communication-services
 ms.author: mikben
-ms.date: 10/03/2020
+ms.date: 03/10/2021
 ms.topic: troubleshooting
 ms.service: azure-communication-services
-ms.openlocfilehash: e58335f1e266af651eb5867ca98e9ec979803b94
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 2c6ac34d8daf00578cb1d03833a28eb8535708b7
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101655884"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493639"
 ---
 # <a name="faq--known-issues"></a>Veelgestelde vragen/bekende problemen
 Dit artikel bevat informatie over bekende problemen en veelgestelde vragen met betrekking tot Azure Communication Services.

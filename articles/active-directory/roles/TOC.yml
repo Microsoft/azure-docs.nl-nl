@@ -4,89 +4,68 @@
   items:
     - name: Wat is Azure AD RBAC?
       href: custom-overview.md
-    - name: Inzicht in de Azure AD-rollen
-      href: concept-understand-roles.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
-    - name: Onbeperkte app-registraties maken
-      href: quickstart-app-registration-limits.md
-- name: Zelfstudies
-  expanded: true
-  items:
-    - name: Gebruikers aan beheerdersrollen toewijzen
+    - name: Rollen toewijzen aan gebruikers
       href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
 - name: Concepten
-  expanded: true
   items:
-    - name: Azure AD-beheerdersrollen delegeren
-      href: concept-delegation.md
-    - name: Standaardgebruikersmachtigingen vergelijken
-      href: ../fundamentals/users-default-permissions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-    - name: Azure- en Azure AD-rollen vergelijken
-      href: ../../role-based-access-control/rbac-and-directory-admin-roles.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-    - name: Beheereenheden in Azure AD begrijpen
+    - name: Inzicht in de Azure AD-rollen
+      href: concept-understand-roles.md
+    - name: Rollen vergelijken
+      items:
+        - name: Azure- en Azure AD-rollen vergelijken
+          href: ../../role-based-access-control/rbac-and-directory-admin-roles.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
+        - name: Microsoft 365-rollen
+          href: m365-workload-docs.md
+    - name: Roltoewijzingen op basis van groepen
+      href: groups-concept.md
+    - name: Beheereenheden
       href: administrative-units.md
-- name: Instructiegidsen
-  expanded: true
-  items:
-    - name: Rollen en machtigingen
-      expanded: true
-      items:
-        - name: Rollen en machtigingen
-          href: permissions-reference.md
-        - name: Rollen weergeven en toewijzen
-          href: manage-roles-portal.md
-        - name: 'Mijn personeel: delegering'
-          href: my-staff-configure.md
-    - name: Aangepaste rollen
-      expanded: true
-      items:
-        - name: Een aangepaste rol maken
-          href: custom-create.md
-        - name: Aangepaste roltoewijzingen weergeven
-          href: custom-view-assignments.md
-        - name: Aangepaste rollen toewijzen in Azure Portal
-          href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Aangepaste rollen toewijzen in PowerShell
-          href: custom-assign-powershell.md
-        - name: Aangepaste rollen toewijzen voor zakelijke apps
-          href: custom-enterprise-apps.md
-        - name: Aangepaste rolmachtigingen
-          items:
-            - name: Machtigingen voor app-registratie
-              href: custom-available-permissions.md
-            - name: Machtigingen voor zakelijke apps
-              href: custom-enterprise-app-permissions.md
-            - name: Machtigingen voor app-toestemming
-              href: custom-consent-permissions.md
-        - name: App-beheerdersrol delegeren
-          href: delegate-app-roles.md
-    - name: Rollen toewijzen aan groepen
-      items:
-        - name: Preview van op groepen gebaseerde roltoewijzing
-          href: groups-concept.md
-        - name: Een roltoewijzbare groep maken
-          href: groups-create-eligible.md
-        - name: Rollen toewijzen aan een groep
-          href: groups-assign-role.md
-        - name: Roltoewijzingen verwijderen uit een groep
-          href: groups-remove-assignment.md
-        - name: De roltoewijzingen voor een groep bekijken
-          href: groups-view-assignments.md
-        - name: Een groep geschikt maken voor een rol in PIM
-          href: groups-pim-eligible.md
-        - name: Veelgestelde vragen en probleemoplossing
-          href: groups-faq-troubleshooting.md
-    - name: Uw rollen beveiligen
+    - name: Beveiliging
       items:
         - name: Rolbeveiliging plannen
           href: security-planning.md
         - name: Accounts voor noodgevallen maken
           href: security-emergency-access.md
+- name: Instructiegidsen
+  items:
+    - name: Lijst met roldefinities weergeven
+      href: role-definitions-list.md
+    - name: Lijst met roltoewijzingen weergeven
+      items:
+        - name: Lijst met roltoewijzingen weergeven
+          href: view-assignments.md
+        - name: Roltoewijzingen voor groepen weer geven
+          href: groups-view-assignments.md
+    - name: Rollen toewijzen
+      items:
+        - name: Rollen toewijzen aan gebruikers
+          href: manage-roles-portal.md
+        - name: Een roltoewijzbare groep maken
+          href: groups-create-eligible.md
+        - name: Rollen toewijzen aan groepen
+          href: groups-assign-role.md
+        - name: Een groep geschikt maken voor een rol in PIM
+          href: groups-pim-eligible.md
+        - name: Rollen toewijzen met bereik met behulp van Power shell
+          href: custom-assign-powershell.md
+        - name: Rollen toewijzen met Graph API
+          href: custom-assign-graph.md
+    - name: Roltoewijzingen verwijderen
+      items:
+        - name: Roltoewijzingen uit groepen verwijderen
+          href: groups-remove-assignment.md
+    - name: Aangepast rollen maken
+      items:
+        - name: Een aangepaste rol maken
+          href: custom-create.md
+        - name: Aangepaste rollen maken voor zakelijke apps
+          href: custom-enterprise-apps.md
+        - name: Onbeperkte app-registraties maken
+          href: quickstart-app-registration-limits.md
     - name: Beheereenheden
       items:
-        - name: Overzicht van beheereenheden
-          href: administrative-units.md
         - name: Toevoegen en beheren
           href: admin-units-manage.md
         - name: Gebruikers toevoegen en beheren
@@ -95,23 +74,39 @@
           href: admin-units-add-manage-groups.md
         - name: Een rol met bereik toewijzen
           href: admin-units-assign-roles.md
-        - name: Veelgestelde vragen en probleemoplossing
-          href: admin-units-faq-troubleshoot.md
+    - name: Gedelegeerde
+      items:
+        - name: App-beheerdersrol delegeren
+          href: delegate-app-roles.md
+        - name: 'Mijn personeel: delegering'
+          href: my-staff-configure.md
     - name: Problemen oplossen
       items:
+        - name: Problemen met rollen die aan groepen zijn toegewezen oplossen
+          href: groups-faq-troubleshooting.md
+        - name: Problemen met beheer eenheden oplossen
+          href: admin-units-faq-troubleshoot.md
         - name: Ondersteuning voor Azure AD vragen
           href: ../fundamentals/active-directory-troubleshooting-support-howto.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
 - name: Naslaginformatie
   items:
+    - name: Ingebouwde rollen
+      href: permissions-reference.md
     - name: Minst bevoorrechte rollen per taak
       href: delegate-by-task.md
-    - name: Documentatie voor Microsoft 365-rollen
-      href: m365-workload-docs.md
-    - name: Graph API
-      href: /graph/api/resources/directoryrole
-    - name: Azure AD CLI
-      href: /cli/azure/ad
-    - name: Azure AD PowerShell voor Graph
-      href: /powershell/azure/active-directory/install-adv2
+    - name: Standaardmachtigingen voor gebruikers
+      href: ../fundamentals/users-default-permissions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: Aangepaste rolmachtigingen
+      items:
+        - name: Machtigingen voor app-registratie
+          href: custom-available-permissions.md
+        - name: Machtigingen voor zakelijke apps
+          href: custom-enterprise-app-permissions.md
+        - name: Machtigingen voor app-toestemming
+          href: custom-consent-permissions.md
     - name: Beperkingen van de Azure AD-service
       href: ../enterprise-users/directory-service-limits-restrictions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: Azure AD PowerShell
+      href: /powershell/azure/active-directory/overview
+    - name: Graph API
+      href: /graph/api/overview

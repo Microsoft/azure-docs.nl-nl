@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: wiassaf, sstein
 ms.date: 02/26/2019
-ms.openlocfilehash: a51840daa2c8b19c323ad761ff6e6d1dcef15f75
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1a74a2f44ac9b03e39e9fea48a3428b82111a48c
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497959"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471999"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database-and-azure-sql-managed-instance"></a>Resource Health gebruiken om problemen met de verbinding voor Azure SQL Database en Azure SQL Managed instance op te lossen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -61,7 +61,7 @@ U hebt toegang tot de status geschiedenis van Maxi maal 14 dagen in het gedeelte
 
 ### <a name="downtime-reasons"></a>Oorzaken van uitval tijd
 
-Wanneer uw data base downtime betoont, wordt de analyse uitgevoerd om een reden te bepalen. Wanneer beschikbaar, wordt de downtime-reden gerapporteerd in het gedeelte status geschiedenis van Resource Health. Redenen voor downtime worden doorgaans 30 minuten na een gebeurtenis gepubliceerd.
+Wanneer uw data base downtime betoont, wordt de analyse uitgevoerd om een reden te bepalen. Wanneer beschikbaar, wordt de downtime-reden gerapporteerd in het gedeelte status geschiedenis van Resource Health. De oorzaken van uitval tijd worden doorgaans binnen 45 minuten na een gebeurtenis gepubliceerd.
 
 #### <a name="planned-maintenance"></a>Gepland onderhoud
 

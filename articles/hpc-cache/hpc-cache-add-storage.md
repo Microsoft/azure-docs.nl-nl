@@ -4,20 +4,20 @@ description: Hoe u opslag doelen definieert zodat uw Azure HPC-cache uw on-premi
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 01/28/2021
+ms.date: 03/11/2021
 ms.author: v-erkel
-ms.openlocfilehash: b4df5863cc746490f13685a8d412232217af3bc8
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 4e6c5b5ea69c55c09887528f1723414f53fcb0f9
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054362"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471937"
 ---
 # <a name="add-storage-targets"></a>Opslagdoelen toevoegen
 
 *Opslag doelen* zijn back-end opslag voor bestanden die worden geopend via een Azure HPC-cache. U kunt NFS-opslag (zoals een on-premises hardware-systeem) toevoegen of gegevens opslaan in Azure Blob.
 
-U kunt Maxi maal tien verschillende opslag doelen definiëren voor één cache. De cache geeft alle opslag doelen weer in één geaggregeerde naam ruimte.
+U kunt Maxi maal 20 verschillende opslag doelen definiëren voor één cache. De cache geeft alle opslag doelen weer in één geaggregeerde naam ruimte.
 
 De naam ruimte paden worden afzonderlijk geconfigureerd nadat u de opslag doelen hebt toegevoegd. In het algemeen kan een NFS-opslag doel Maxi maal tien naam ruimte paden hebben, of meer voor sommige grote configuraties. Lees [NFS-naam ruimte paden](add-namespace-paths.md#nfs-namespace-paths) voor meer informatie.
 
@@ -29,7 +29,7 @@ Voeg opslag doelen toe nadat u de cache hebt gemaakt. Volg deze procedure:
 1. Een opslag doel definiëren (informatie in dit artikel)
 1. [De client gerichte paden maken](add-namespace-paths.md) (voor de [geaggregeerde naam ruimte](hpc-cache-namespace.md))
 
-De procedure voor het toevoegen van een opslag doel verschilt enigszins, afhankelijk van of u Azure Blob-opslag of een NFS-export toevoegt. Hieronder vindt u meer informatie.
+De procedure voor het toevoegen van een opslag doel verschilt enigszins, afhankelijk van het type opslag dat wordt gebruikt. Hieronder vindt u meer informatie.
 
 Klik op de onderstaande afbeelding om een [video demonstratie](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/) te bekijken van het maken van een cache en het toevoegen van een opslag doel van de Azure Portal.
 
@@ -40,6 +40,9 @@ Klik op de onderstaande afbeelding om een [video demonstratie](https://azure.mic
 Een nieuw Blob-opslag doel vereist een lege BLOB-container of een container die is gevuld met gegevens in de bestandssysteem indeling van de Azure HPC-cache. Lees meer over het vooraf laden van een BLOB-container in [gegevens verplaatsen naar Azure Blob-opslag](hpc-cache-ingest.md).
 
 De pagina **opslag doel Azure portal toevoegen** bevat de optie om een nieuwe BLOB-container te maken voordat u deze toevoegt.
+
+> [!NOTE]
+> Voor met NFS gekoppelde Blob-opslag gebruikt u het [ADLS-NFS-opslag doel](#) type.
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
@@ -161,38 +164,48 @@ Een NFS-opslag doel heeft verschillende instellingen van een Blob Storage-doel. 
 > Voordat u een NFS-opslag doel maakt, moet u controleren of uw opslag systeem toegankelijk is vanuit de Azure HPC-cache en voldoet aan de machtigings vereisten. Het maken van een opslag doel mislukt als de cache geen toegang kan krijgen tot het opslag systeem. Lees de [NFS-opslag vereisten](hpc-cache-prerequisites.md#nfs-storage-requirements) en [los problemen met de NAS-configuratie en NFS-opslag doel](troubleshoot-nas.md) op voor meer informatie.
 
 ### <a name="choose-a-usage-model"></a>Kies een gebruiks model
-<!-- referenced from GUI - update aka.ms link if you change this heading -->
+<!-- referenced from GUI - update aka.ms link to point at new article when published -->
 
-Wanneer u een opslag doel maakt dat verwijst naar een NFS-opslag systeem, moet u het gebruiks model voor dat doel kiezen. Dit model bepaalt hoe de gegevens in de cache worden opgeslagen.
+Wanneer u een opslag doel maakt dat gebruikmaakt van NFS om het opslag systeem te bereiken, moet u een gebruiks model voor dat doel kiezen. Dit model bepaalt hoe de gegevens in de cache worden opgeslagen.
 
-Met de ingebouwde gebruiks modellen kunt u kiezen hoe u snel antwoord kunt verdelen met het risico dat verouderde gegevens worden opgehaald. Als u de snelheid van het lezen van bestanden wilt optimaliseren, kunt u er mogelijk niet voor zorgen dat de bestanden in de cache worden gecontroleerd op basis van de back-end-bestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regel matig wordt gecontroleerd.
+Lees [inzicht in gebruiks modellen](cache-usage-models.md) voor meer informatie over al deze instellingen.
 
-Er zijn drie opties:
+Met de ingebouwde gebruiks modellen kunt u kiezen hoe u snel antwoord kunt verdelen met het risico dat verouderde gegevens worden opgehaald. Als u de snelheid voor het lezen van bestanden wilt optimaliseren, kunt u er mogelijk niet voor zorgen dat de bestanden in de cache worden gecontroleerd op basis van de back-end-bestanden. Als u daarentegen wilt controleren of uw bestanden altijd up-to-date zijn met de externe opslag, kiest u een model dat regel matig wordt gecontroleerd.
 
-* **Lees zware, incidentele schrijf bewerkingen** : gebruik deze optie als u lees toegang tot bestanden wilt versnellen die statisch zijn of zelden worden gewijzigd.
+Deze drie opties beslaan de meeste situaties:
 
-  Met deze optie worden bestanden die door clients worden gelezen, in de cache opgeslagen, maar worden direct naar de back-end-opslag door gegeven. Bestanden die in de cache zijn opgeslagen, worden niet automatisch vergeleken met de bestanden op het NFS-opslag volume. (Lees de opmerking hieronder over back-end-verificatie voor meer informatie.)
+* **Zware, veelvuldige schrijf bewerkingen** : Hiermee wordt lees toegang tot bestanden die statisch of zelden zijn gewijzigd, versneld.
+
+  Met deze optie worden bestanden van client lees bewerkingen in de cache opgeslagen, maar worden de client onmiddellijk door gegeven aan de back-end-opslag. Bestanden die in de cache zijn opgeslagen, worden niet automatisch vergeleken met de bestanden op het NFS-opslag volume.
 
   Gebruik deze optie niet als er een risico bestaat dat een bestand rechtstreeks op het opslag systeem kan worden gewijzigd zonder het eerst naar de cache te schrijven. Als dat gebeurt, is de versie van het bestand in de cache niet synchroon met het back-end-bestand.
 
-* **Meer dan 15% schrijf bewerkingen** : deze optie versnelt de lees-en schrijf prestaties. Wanneer u deze optie gebruikt, moeten alle clients toegang hebben tot bestanden via de Azure HPC-cache in plaats van de back-end-opslag rechtstreeks te koppelen. De bestanden in de cache hebben recente wijzigingen die niet worden opgeslagen op de back-end.
+* **Meer dan 15% schrijf bewerkingen** : deze optie versnelt de lees-en schrijf prestaties.
 
-  In dit gebruiks model worden bestanden in de cache alleen gecontroleerd op basis van de bestanden in de back-end-opslag om de acht uur. Er wordt ervan uitgegaan dat de cache versie van het bestand meer actueel is. Een gewijzigd bestand in de cache wordt naar het back-end-opslag systeem geschreven nadat het een uur in de cache heeft bevinden zonder extra wijzigingen.
+  Client lees bewerkingen en client schrijf bewerkingen worden beide in de cache opgeslagen. Er wordt van uitgegaan dat bestanden in de cache nieuwer zijn dan bestanden op het back-end-opslag systeem. Bestanden in de cache worden alleen om de acht uur automatisch gecontroleerd op de bestanden in back-end-opslag. Gewijzigde bestanden in de cache worden naar het back-end-opslag systeem geschreven nadat ze gedurende 20 minuten zijn opgeslagen in de cache zonder extra wijzigingen.
 
-* **Clients schrijven naar het NFS-doel, waarbij de cache wordt omzeild** : Kies deze optie als clients in uw werk stroom gegevens rechtstreeks naar het opslag systeem schrijven zonder eerst naar de cache te schrijven of als u de consistentie van de gegevens wilt optimaliseren. Bestanden die door clients worden aangevraagd, worden in de cache opgeslagen, maar eventuele wijzigingen aan deze bestanden van de client worden onmiddellijk door gegeven aan het back-end-opslag systeem.
+  Gebruik deze optie niet als clients het back-end-opslag volume rechtstreeks koppelen, omdat er een risico is dat er verouderde bestanden zijn.
 
-  Met dit gebruiks model worden de bestanden in de cache vaak gecontroleerd op basis van de back-end-versies voor updates. Met deze verificatie kunnen bestanden buiten de cache worden gewijzigd terwijl de consistentie van gegevens wordt behouden.
+* **Clients schrijven naar het NFS-doel, waarbij de cache wordt omzeild** : Kies deze optie als clients in uw werk stroom gegevens rechtstreeks naar het opslag systeem schrijven zonder eerst naar de cache te schrijven of als u de consistentie van de gegevens wilt optimaliseren.
 
-Deze tabel bevat een overzicht van de verschillen in het gebruiks model:
+  Bestanden die door clients worden aangevraagd, worden in de cache opgeslagen, maar eventuele wijzigingen aan deze bestanden van de client worden direct door gegeven aan het back-end-opslag systeem. Bestanden in de cache worden vaak gecontroleerd op basis van de back-end-versies voor updates. Deze verificatie houdt gegevens consistentie bij wanneer bestanden rechtstreeks worden gewijzigd op het opslag systeem in plaats van via de cache.
 
-| Gebruiks model                   | Cache modus | Back-end-verificatie | Maximale vertraging voor terugschrijven |
-|-------------------------------|--------------|-----------------------|--------------------------|
-| Zware, incidentele schrijf bewerkingen lezen | Lezen         | Nooit                 | Geen                     |
-| Meer dan 15% schrijf bewerkingen       | Lezen/schrijven   | 8 uur               | 1 uur                   |
-| Clients slaan de cache over      | Lezen         | 30 seconden            | Geen                     |
+Meer informatie over de andere opties vindt u in [inzicht in gebruiks modellen](cache-usage-models.md).
+
+Deze tabel bevat een overzicht van de verschillen tussen alle gebruiks modellen:
+
+| Gebruiks model | Cache modus | Back-end-verificatie | Maximale vertraging voor terugschrijven |
+|--|--|--|--|
+| Zware, incidentele schrijf bewerkingen lezen | Lezen | Nooit | Geen |
+| Meer dan 15% schrijf bewerkingen | Lezen/schrijven | 8 uur | 20 minuten |
+| Clients slaan de cache over | Lezen | 30 seconden | Geen |
+| Meer dan 15% schrijf bewerkingen, frequente back-end-controle (30 seconden) | Lezen/schrijven | 30 seconden | 20 minuten |
+| Meer dan 15% schrijf bewerkingen, frequente back-end-controle (60 seconden) | Lezen/schrijven | 60 seconden | 20 minuten |
+| Meer dan 15% schrijf bewerkingen, regel matig terugschrijven | Lezen/schrijven | 30 seconden | 30 seconden |
+| Lees zo lang de back-upserver om de 3 uur wordt gecontroleerd | Lezen | 3 uur | Geen |
 
 > [!NOTE]
-> De waarde voor de **back-end-verificatie** geeft aan wanneer de cache bestanden automatisch vergelijkt met de bron bestanden in de externe opslag. U kunt de Azure HPC-cache echter dwingen om bestanden te vergelijken door een directory bewerking uit te voeren die een READDIRPLUS-aanvraag bevat. READDIRPLUS is een standaard-NFS-API (ook wel uitgebreide Lees bewerking genoemd) die directory-meta gegevens retourneert, waardoor de cache bestanden vergelijkt en bijwerkt.
+> De waarde voor de **back-end-verificatie** geeft aan wanneer de cache bestanden automatisch vergelijkt met de bron bestanden in de externe opslag. U kunt echter een vergelijking activeren door een client aanvraag te verzenden die een READDIRPLUS-bewerking op het back-end-opslag systeem bevat. READDIRPLUS is een standaard-NFS-API (ook wel uitgebreide Lees bewerking genoemd) die directory-meta gegevens retourneert, waardoor de cache bestanden vergelijkt en bijwerkt.
 
 ### <a name="create-an-nfs-storage-target"></a>Een NFS-opslag doel maken
 
@@ -291,6 +304,43 @@ Uitvoer:
 ```
 
 ---
+
+## <a name="add-a-new-adls-nfs-storage-target-preview"></a>Een nieuw ADLS-NFS-opslag doel toevoegen (PREVIEW)
+
+ADLS-NFS-opslag doelen gebruiken Azure Blob-containers die ondersteuning bieden voor het NFS-protocol (Network File System) 3,0.
+
+> [!NOTE]
+> Ondersteuning voor NFS 3,0-protocol voor Azure Blob Storage is in open bare preview. De beschik baarheid is beperkt en functies kunnen worden gewijzigd tussen nu en wanneer de functie algemeen beschikbaar wordt. Gebruik geen preview-technologie in productie systemen.
+>
+> Lees de [NFS 3,0-protocol ondersteuning](../storage/blobs/network-file-system-protocol-support.md) voor de meest recente informatie.
+
+ADLS-NFS-opslag doelen hebben een aantal overeenkomsten met Blob Storage-doelen en sommige met NFS-opslag doelen. Bijvoorbeeld:
+
+* Net als bij een Blob Storage-doel moet u de Azure HPC-cache toestemming geven om [toegang te krijgen tot uw opslag account](#add-the-access-control-roles-to-your-account).
+* Net als bij een NFS-opslag doel moet u een cache [gebruiks model](#choose-a-usage-model)instellen.
+* Omdat BLOB-containers die zijn ingeschakeld voor NFS een hiërarchische structuur hebben die compatibel is met NFS, hoeft u de cache niet te gebruiken om gegevens op te nemen en kunnen de containers door andere NFS-systemen worden gelezen. U kunt vooraf gegevens laden in een ADLS-NFS-container en deze vervolgens toevoegen aan een HPC-cache als opslag doel en vervolgens vanaf buiten een HPC-cache toegang tot de gegevens krijgen. Wanneer u een standaard-BLOB-container als een HPC-cache doel gebruikt, worden de gegevens geschreven in een eigen indeling en kunnen ze alleen worden geopend vanuit andere Azure HPC-compatibele en in de cache geschikte producten.
+
+Voordat u een ADLS-NFS-opslag doel kunt maken, moet u een opslag account voor NFS maken. Volg de tips in [vereisten voor Azure HPC-cache](hpc-cache-prerequisites.md#nfs-mounted-blob-adls-nfs-storage-requirements-preview) en de instructies in [Blob Storage koppelen met behulp van NFS](../storage/blobs/network-file-system-protocol-support-how-to.md). Nadat uw opslag account is ingesteld, kunt u een nieuwe container maken wanneer u het opslag doel maakt.
+
+Als u een ADLS-NFS-opslag doel wilt maken, opent u de pagina **opslag doel toevoegen** in de Azure Portal. (Aanvullende methoden zijn in ontwikkeling.)
+
+![Scherm afbeelding van de pagina opslag doel toevoegen met ADLS-NFS-doel gedefinieerd](media/add-adls-target.png)
+
+Voer deze informatie in.
+
+* **Naam van opslag doel** : Stel een naam in die dit opslag doel identificeert in de Azure HPC-cache.
+* **Doel type** : Kies **ADLS-NFS**.
+* **Opslag account** : Selecteer het account dat u wilt gebruiken. Als uw opslag account voor NFS niet wordt weer gegeven in de lijst, controleert u of het voldoet aan de vereisten en of de cache toegang heeft.
+
+  U moet het cache-exemplaar toestemming geven om toegang te krijgen tot het opslag account zoals beschreven in [de toegangs functies toevoegen](#add-the-access-control-roles-to-your-account).
+
+* **Opslag container** : Selecteer de voor NFS geschikte BLOB-container voor dit doel of klik op **nieuwe maken**.
+
+* **Gebruiks model** : Kies een van de profielen voor het opslaan van gegevens op basis van uw werk stroom, zoals wordt beschreven in [een gebruiks model selecteren](#choose-a-usage-model) hierboven.
+
+Wanneer u klaar bent, klikt u op **OK** om het opslag doel toe te voegen.
+
+<!-- **** -->
 
 ## <a name="view-storage-targets"></a>Opslag doelen weer geven
 

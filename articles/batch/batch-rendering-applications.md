@@ -1,22 +1,25 @@
 ---
 title: Rendering van toepassingen
 description: Het is mogelijk om alle rendering-toepassingen met Azure Batch te gebruiken. Azure Marketplace-VM-installatie kopieën zijn echter beschikbaar met vooraf geïnstalleerde toepassingen.
-ms.date: 02/12/2021
+ms.date: 03/12/2021
 ms.topic: how-to
-ms.openlocfilehash: 18fc142d2fa9c819b9872c64ef7aae4c73cc2428
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: c98e2e0a81051dad47c201de9eda9f89cc311cf2
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635333"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496640"
 ---
 # <a name="pre-installed-applications-on-batch-rendering-vm-images"></a>Vooraf geïnstalleerde toepassingen voor VM-installatie kopieën voor batch Rendering
 
 Het is mogelijk om alle rendering-toepassingen met Azure Batch te gebruiken. Azure Marketplace-VM-installatie kopieën zijn echter beschikbaar met vooraf geïnstalleerde toepassingen.
 
-Indien van toepassing is licenties voor betalen per gebruik beschikbaar voor de vooraf geïnstalleerde rendering-toepassingen. Wanneer een batch-pool wordt gemaakt, kunnen de vereiste toepassingen worden opgegeven en worden de kosten van de VM en de toepassingen per minuut in rekening gebracht. Toepassings prijzen worden vermeld op de [pagina met Azure batch prijzen](https://azure.microsoft.com/pricing/details/batch/#graphic-rendering).
+Indien van toepassing is licenties voor betalen voor gebruik beschikbaar voor de vooraf geïnstalleerde rendering-toepassingen. Wanneer een batch-pool wordt gemaakt, kunnen de vereiste toepassingen worden opgegeven en worden de kosten van de VM en de toepassingen per minuut in rekening gebracht. Toepassings prijzen worden vermeld op de [pagina met Azure batch prijzen](https://azure.microsoft.com/pricing/details/batch/#graphic-rendering).
 
 Sommige toepassingen bieden alleen ondersteuning voor Windows, maar de meeste worden ondersteund voor zowel Windows als Linux.
+
+> [!IMPORTANT]
+> De rendering van VM-installatie kopieën en licenties voor betalen voor gebruik zijn [afgeschaft en zullen op 29 februari 2024 worden ingetrokken](https://azure.microsoft.com/updates/azure-batch-rendering-vm-images-licensing-will-be-retired-on-29-february-2024/). Als u batch voor rendering wilt gebruiken, [moet u een aangepaste VM-installatie kopie en Standard-toepassings licentie gebruiken.](batch-rendering-functionality.md#batch-pools-using-custom-vm-images-and-standard-application-licensing)
 
 ## <a name="applications-on-latest-centos-7-rendering-image"></a>Toepassingen op de nieuwste CentOS 7-rendering-afbeelding
 

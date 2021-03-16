@@ -4,14 +4,14 @@ description: Client gerichte paden maken voor back-end-opslag met Azure HPC cach
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 12/22/2020
+ms.date: 03/11/2021
 ms.author: v-erkel
-ms.openlocfilehash: 5549670dbd1f302bdb17b8b94cbd1fb5c4c1a1d9
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: f45d5710f6feb8af2347ca298e07e8a4870d3d4f
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760529"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470456"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>De geaggregeerde naam ruimte instellen
 
@@ -57,7 +57,7 @@ Laad de pagina **naam ruimte** -instellingen vanuit het Azure Portal. Op deze pa
 
 * **Een pad naar een naam ruimte verwijderen:** Selecteer het selectie vakje links van het pad en klik op de knop **verwijderen** .
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
@@ -121,7 +121,7 @@ Vul deze waarden in voor elk pad naar de naam ruimte:
 
 ![scherm afbeelding van de pagina Portal naam ruimte met de pagina bewerken aan de rechter kant. Het bewerkings formulier bevat instellingen voor het pad van een NFS-opslag doel naam ruimte](media/namespace-edit-nfs.png)
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
@@ -132,6 +132,30 @@ Als u het pad naar de naam ruimte van het doel wilt bijwerken of extra paden wil
 De opties die voor de opdracht update worden gebruikt, zijn vergelijkbaar met de opdracht ' maken ', behalve dat u de gegevens van het opslag systeem (IP-adres of hostnaam) niet doorgeeft en het gebruiks model optioneel is. Lees [een nieuw NFS-opslag doel toevoegen](hpc-cache-add-storage.md?tabs=azure-cli#add-a-new-nfs-storage-target) voor meer informatie over de syntaxis van de ``--junction`` optie.
 
 ---
+
+### <a name="adls-nfs-namespace-paths-preview"></a>ADLS-NFS-naam ruimte paden (PREVIEW-versie)
+
+Net als bij een reguliere Blob Storage-doel heeft een ADLS-opslag doel slechts één export, zodat het slechts één naam ruimte-pad kan hebben.
+
+Volg de onderstaande instructies om het pad in te stellen of te wijzigen met behulp van de Azure Portal.
+
+Laad de pagina **naam ruimte** -instellingen.
+
+* **Een nieuw pad toevoegen:** Klik bovenaan op de knop **+ toevoegen** en vul de gegevens in het deel venster bewerken in.
+
+  ![Scherm afbeelding van de velden naam ruimte toevoegen bewerken met een ADLS-NFS-opslag doel geselecteerd. De export-en submap paden worden ingesteld op/en niet bewerkbaar.](media/namespace-add-adls.png)
+
+  * Voer het pad in dat clients gebruiken voor toegang tot dit opslag doel.
+
+  * Selecteer welk toegangs beleid moet worden gebruikt voor dit pad. Meer informatie over het aanpassen van client toegang in het [gebruik van beleids regels voor client toegang](access-policies.md).
+
+  * Selecteer het opslag doel in de vervolg keuzelijst. Als een ADLS-NFS-opslag doel al een pad naar de naam ruimte heeft, kan dit niet worden geselecteerd.
+
+  * Voor een ADLS-NFS-opslag doel worden de paden voor exporteren en mappen automatisch ingesteld op ``/`` .
+
+* **Een bestaand pad wijzigen:** Klik op het pad naar de naam ruimte. Het deel venster bewerken wordt geopend. U kunt het pad en toegangs beleid wijzigen, maar u kunt niet overschakelen naar een ander opslag doel.
+
+* **Een pad naar een naam ruimte verwijderen:** Selecteer het selectie vakje links van het pad en klik op de knop **verwijderen** .
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: zhshang
-ms.openlocfilehash: 9d0e94cf2318db777bb44c15037f73531cd969fa
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 3c4d28addac0ecfc9605678582562550a1c96b8d
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100593322"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491942"
 ---
 # <a name="messages-and-connections-in-azure-signalr-service"></a>Berichten en verbindingen in Azure SignalR Service
 
@@ -48,9 +48,16 @@ Als u drie clients en één toepassings server hebt. Vanaf één client wordt ee
 
 Er zijn server verbindingen en client verbindingen met de Azure signalerings service. Standaard begint elke toepassings server met vijf initiële verbindingen per hub, en elke client heeft één client verbinding.
 
-Het aantal verbindingen dat in de Azure-portal wordt weergegeven, betreft zowel server- als clientverbindingen.
-
 Stel dat u twee toepassings servers hebt en u vijf hubs in code definieert. Het aantal server verbindingen is 50:2 app-servers * 5 hubs * 5 verbindingen per hub.
+
+Het aantal verbindingen dat wordt weer gegeven in de Azure Portal omvat server verbindingen, client verbindingen, diagnostische verbindingen en Live Trace-verbindingen. De verbindings typen worden gedefinieerd in de volgende lijst:
+
+- **Server verbinding**: Hiermee wordt de Azure signalerings service en de app-server verbonden.
+- **Client verbinding**: verbindt de Azure signalerings service en de client-app.
+- **Diagnostische verbinding**: een speciaal soort client verbinding die een gedetailleerder logboek kan produceren. Dit kan van invloed zijn op de prestaties. Dit type client is ontworpen voor het oplossen van problemen.
+- **Live Trace Connection**: maakt verbinding met het Live Trace-eind punt en ontvangt Live traces van de Azure signalerings service. 
+ 
+Houd er rekening mee dat een Live Trace-verbinding niet wordt meegeteld als een client verbinding of als server verbinding. 
 
 ASP.NET SignalR berekent serververbindingen op een andere manier. Het bevat één standaardhub, naast de hubs die u definieert. Standaard moet elke toepassings server vijf extra initiële server verbindingen hebben. Het oorspronkelijke aantal verbindingen voor de standaard-hub blijft consistent met andere hubs.
 

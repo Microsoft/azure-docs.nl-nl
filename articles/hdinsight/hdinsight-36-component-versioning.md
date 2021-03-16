@@ -3,14 +3,15 @@ title: Apache Hadoop onderdelen en versies-Azure HDInsight 3,6
 description: Meer informatie over de Apache Hadoop onderdelen en versies in azure HDInsight 3,6.
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: deshriva
+author: deshriva
+ms.author: deshriva
 ms.date: 02/08/2021
-ms.openlocfilehash: ee4ae5e0b92fb0627143f2d2f998747f7e956b6d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0180f94109d01443390da363d9e09c5ad0b26d18
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101744606"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496113"
 ---
 # <a name="hdinsight-36-component-versions"></a>Versies van HDInsight 3,6-onderdelen
 

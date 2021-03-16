@@ -7,21 +7,21 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 03/04/2021
+ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: bcdc8c448a348bf067995bf92615ceab1ac19fb4
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 5374ce59d3a599e243684c168a8d84a6434059ee
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198435"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492010"
 ---
 # <a name="relyingparty"></a>RelyingParty
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Het element **RelyingParty** geeft aan dat de gebruikers traject moet worden afgedwongen voor de huidige aanvraag om Azure Active Directory B2C (Azure AD B2C). Ook wordt de lijst met claims opgegeven die de toepassing Relying Party (RP) nodig heeft als onderdeel van het gepubliceerde token. Een RP-toepassing, zoals een web-, mobiele of bureaublad toepassing, roept het RP-beleids bestand aan. Het RP-beleids bestand voert een specifieke taak uit, zoals het aanmelden, het opnieuw instellen van een wacht woord of het bewerken van een profiel. Meerdere toepassingen kunnen hetzelfde RP-beleid gebruiken en één toepassing kan meerdere beleids regels gebruiken. Alle RP-toepassingen ontvangen hetzelfde token met claims en de gebruiker verloopt over hetzelfde traject van de gebruiker.
+Het element **RelyingParty** geeft aan welke gebruikersbeleving moet worden afgedwongen voor de huidige aanvraag bij Azure Active Directory B2C (Azure AD B2C). Ook wordt de lijst met claims opgegeven die de op claims gebaseerde toepassing nodig heeft als onderdeel van het gepubliceerde token. Een RP-toepassing, zoals een web-, mobiele of bureaublad toepassing, roept het RP-beleids bestand aan. Het RP-beleids bestand voert een specifieke taak uit, zoals het aanmelden, het opnieuw instellen van een wacht woord of het bewerken van een profiel. Meerdere toepassingen kunnen hetzelfde RP-beleid gebruiken en één toepassing kan meerdere beleids regels gebruiken. Alle RP-toepassingen ontvangen hetzelfde token met claims en de gebruiker verloopt over hetzelfde traject van de gebruiker.
 
 In het volgende voor beeld ziet u een **RelyingParty** -element in het *B2C_1A_signup_signin* -beleids bestand:
 
@@ -145,10 +145,11 @@ Het **UserJourneyBehaviors** -element bevat de volgende elementen:
 | JourneyInsights | 0:1 | De Azure-toepassing Insights-instrumentatie sleutel die moet worden gebruikt. |
 | ContentDefinitionParameters | 0:1 | De lijst met sleutel waardeparen die moeten worden toegevoegd aan de laad-URI van de inhouds definitie. |
 |ScriptExecution| 0:1| De ondersteunde modi voor [Java script](javascript-and-page-layout.md) -uitvoering. Mogelijke waarden: `Allow` of `Disallow` (standaard).
+| JourneyFraming | 0:1| Hiermee kan de gebruikers interface van dit beleid worden geladen in een IFRAME. |
 
 ### <a name="singlesignon"></a>SingleSignOn
 
-Het element **SingleSignOn** bevat in het volgende kenmerk:
+Het **SingleSignOn** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
@@ -165,7 +166,7 @@ Het **JourneyInsights** -element bevat de volgende kenmerken:
 | --------- | -------- | ----------- |
 | TelemetryEngine | Ja | De waarde moet zijn `ApplicationInsights` . |
 | InstrumentationKey | Ja | De teken reeks die de instrumentatie sleutel voor het Application Insights-element bevat. |
-| DeveloperMode | Ja | Mogelijke waarden: `true` of `false` . Als `true` Application Insights de telemetrie versnellen door de verwerkings pijplijn. Deze instelling is geschikt voor ontwikkeling, maar is beperkt bij hoge volumes. De gedetailleerde activiteiten logboeken zijn alleen ontworpen om te helpen bij het ontwikkelen van aangepast beleid. Gebruik de ontwikkelings modus niet in productie. In Logboeken worden alle claims verzameld die worden verzonden naar en van de id-providers tijdens de ontwikkeling. Bij gebruik in productie neemt de ontwikkelaar de verantwoordelijkheid voor PII (privé Identificeer bare informatie) die is verzameld in het logboek van de app Insights waarvan ze eigenaar zijn. Deze gedetailleerde logboeken worden alleen verzameld wanneer deze waarde is ingesteld op `true` .|
+| DeveloperMode | Ja | Mogelijke waarden: `true` of `false` . Als `true` Application Insights de telemetrie versnellen door de verwerkings pijplijn. Deze instelling is geschikt voor ontwikkeling, maar is beperkt bij hoge volumes. De gedetailleerde activiteiten logboeken zijn alleen ontworpen om te helpen bij het ontwikkelen van aangepast beleid. Gebruik de ontwikkelings modus niet in productie. In Logboeken worden alle claims verzameld die worden verzonden naar en van de id-providers tijdens de ontwikkeling. Bij gebruik in productie neemt de ontwikkelaar verantwoordelijk voor persoons gegevens die zijn verzameld in het logboek van de app Insights waarvan ze eigenaar zijn. Deze gedetailleerde logboeken worden alleen verzameld wanneer deze waarde is ingesteld op `true` .|
 | ClientEnabled | Ja | Mogelijke waarden: `true` of `false` . Indien `true` , verzendt het Application Insights script aan de client zijde voor het bijhouden van de pagina weergave en fouten aan de client zijde. |
 | ServerEnabled | Ja | Mogelijke waarden: `true` of `false` . Als `true` de bestaande UserJourneyRecorder-JSON als aangepaste gebeurtenis wordt verzonden naar Application Insights. |
 | TelemetryVersion | Ja | De waarde moet zijn `1.0.0` . |
@@ -190,9 +191,18 @@ Het element **ContentDefinitionParameter** bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Name | Ja | De naam van het sleutel waarde-paar. |
+| Naam | Ja | De naam van het sleutel waarde-paar. |
 
 Zie [de gebruikers interface configureren met dynamische inhoud met behulp van aangepast beleid](customize-ui-with-html.md#configure-dynamic-custom-page-content-uri) voor meer informatie.
+
+### <a name="journeyframing"></a>JourneyFraming
+
+Het **JourneyFraming** -element bevat de volgende kenmerken:
+
+| Kenmerk | Vereist | Beschrijving |
+| --------- | -------- | ----------- |
+| Ingeschakeld | Ja | Hiermee kan dit beleid worden geladen binnen een IFRAME. Mogelijke waarden: `false` (standaard) of `true` . |
+| Bronnen | Ja | Bevat de domeinen die als host voor de iframe worden geladen. Zie [Azure B2C in een IFRAME laden](embedded-login.md)voor meer informatie. |
 
 ## <a name="technicalprofile"></a>TechnicalProfile
 
@@ -217,7 +227,7 @@ Het **protocol** element bevat het volgende kenmerk:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Name | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
+| Naam | Ja | De naam van een geldig protocol dat wordt ondersteund door Azure AD B2C dat wordt gebruikt als onderdeel van het technische profiel. Mogelijke waarden: `OpenIdConnect` of `SAML2` . De `OpenIdConnect` waarde vertegenwoordigt de OpenID Connect Connect 1,0-protocol norm als per OpenID Connect Foundation-specificatie. De `SAML2` vertegenwoordigt het SAML 2,0-protocol standaard als per Oasis-specificatie. |
 
 ### <a name="metadata"></a>Metagegevens
 

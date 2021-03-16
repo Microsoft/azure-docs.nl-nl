@@ -4,15 +4,15 @@ titleSuffix: An Azure Communication Services conceptual document
 description: Meer informatie over UI Framework-mogelijkheden
 author: ddematheu2
 ms.author: dademath
-ms.date: 11/16/2020
+ms.date: 03/10/2021
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 51caf1e73cdeda5862e033a05878f35ddb6ff8dc
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 5b1aab8b38614249d6b502044b5c4c8170f46b3c
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539856"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492214"
 ---
 # <a name="ui-framework-capabilities"></a>Mogelijkheden van UI-Framework
 
@@ -22,7 +22,7 @@ Met het gebruikers interface-Framework van Azure Communication Services kunt u c
 
 ## <a name="ui-framework-composite-components"></a>Samengestelde onderdelen UI Framework
 
-| Composite               | Description                                               | Web   | Android | iOS   |
+| Composite               | Beschrijving                                               | Web   | Android | iOS   |
 |-------------------------|-----------------------------------------------------------|-------|---------|-------|
 | Groep die samen stelling aanroept | Licht gewicht: spraak-en video-uitgaande oproep ervaring voor Azure Communication Services die wordt aangeroepen met behulp van Fluent-ontwerp assets van de gebruikers interface. Ondersteunt groeps aanroepen met de groeps-ID van Azure Communication Services. De samengestelde functie maakt het mogelijk een-op-een-aanroep te gebruiken door te verwijzen naar een Azure Communication Services-identiteit of een telefoon nummer voor PSTN met behulp van een telefoon nummer dat is aangeschaft via Azure.                                    | React |  |  |
 | Groeps-chat samen stelling    | Beleving van licht gewicht voor Azure Communication Services met behulp van Fluent-ontwerp assets van de gebruikers interface. Deze ervaring is gericht op het leveren van een eenvoudige chat-client die verbinding kan maken met Azure Communication Services-threads. Hiermee kunnen gebruikers berichten verzenden en ontvangen berichten met type-indica toren en lees bevestigingen bekijken. Er wordt geschaald van 1:1 om chat scenario's te groeperen. Ondersteunt één chat thread.                         | React |  |  |

@@ -4,12 +4,13 @@ description: Leer hoe u een Autodesk 3ds Max-scène kunt renderen met Arnold, me
 ms.topic: tutorial
 ms.date: 12/30/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3518e074589284e6d6cd7432dc77ba8bdd457045
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
-ms.translationtype: HT
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5165e5feb566a4b9081f40b681b92aafa143869f
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827526"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491738"
 ---
 # <a name="tutorial-render-a-scene-with-azure-batch"></a>Zelfstudie: Een scène renderen met Azure Batch
 

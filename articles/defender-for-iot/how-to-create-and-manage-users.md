@@ -4,15 +4,15 @@ description: Gebruikers van Sens oren en de on-premises beheer console maken en 
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 1/3/2021
+ms.date: 03/03/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: fd0c7b74bea979737644824f93b4dce7a2364b99
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: dff379c99fa7383c7f7844cf8d195a345e88a335
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522339"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466266"
 ---
 # <a name="about-defender-for-iot-console-users"></a>Over Defender voor IoT-console gebruikers
 
@@ -162,7 +162,7 @@ Er worden twee typen verificatie op basis van LDAP ondersteund:
 
 ### <a name="active-directory-and-defender-for-iot-permissions"></a>Active Directory en Defender voor IoT-machtigingen
 
-U kunt Active Directory groepen die hier zijn gedefinieerd, koppelen met specifieke machtigings niveaus. U kunt bijvoorbeeld een specifieke Active Directory groep configureren en RO-machtigingen toewijzen aan alle gebruikers in de groep. Zie [gebruikers maken en beheren](how-to-create-and-manage-users.md) voor meer informatie.
+U kunt Active Directory groepen die hier zijn gedefinieerd, koppelen met specifieke machtigings niveaus. U kunt bijvoorbeeld een specifieke Active Directory groep configureren en alleen-lezen machtigingen toewijzen aan alle gebruikers in de groep.
 
 Active Directory configureren:
 
@@ -170,11 +170,11 @@ Active Directory configureren:
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-system-settings-v2.png" alt-text="Bekijk de instellingen van uw Active Directory-systeem.":::
 
-1. Selecteer **Active Directory** in het deel venster **systeem instellingen** .
+2. Selecteer **Active Directory** in het deel venster **systeem instellingen** .
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-configurations-v2.png" alt-text="Bewerk uw Active Directory configuraties.":::
 
-1. Selecteer **Active Directory integratie ingeschakeld** opslaan in het dialoog venster **Active Directory configuratie bewerken**  >  . Het dialoog venster **Active Directory configuratie bewerken** wordt uitgevouwen en u kunt nu de para meters voor het configureren van Active Directory opgeven.
+3. Selecteer **Active Directory integratie ingeschakeld** opslaan in het dialoog venster **Active Directory configuratie bewerken**  >  . Het dialoog venster **Active Directory configuratie bewerken** wordt uitgevouwen en u kunt nu de para meters voor het configureren van Active Directory opgeven.
 
     :::image type="content" source="media/how-to-setup-active-directory/ad-integration-enabled-v2.png" alt-text="Voer de para meters in om Active Directory te configureren.":::
 
@@ -183,9 +183,9 @@ Active Directory configureren:
     > - Gebruik alleen kleine letters voor alle para meters Active Directory. Gebruik kleine letters, zelfs wanneer de configuraties in Active Directory hoofd letters gebruiken.
     > - U kunt niet zowel LDAP als LDAPS configureren voor hetzelfde domein. U kunt echter beide voor verschillende domeinen tegelijk gebruiken.
 
-1. Stel de Active Directory server-para meters als volgt in:
+4. Stel de Active Directory server-para meters als volgt in:
 
-   | Server parameter | Description |
+   | Server parameter | Beschrijving |
    |--|--|
    | FQDN van domein controller | Stel de Fully Qualified Domain Name (FQDN) precies zo in als deze op uw LDAP-server wordt weer gegeven. Voer bijvoorbeeld `host1.subdomain.domain.com` in. |
    | Domein controller poort | Definieer de poort waarop uw LDAP is geconfigureerd. |
@@ -193,11 +193,15 @@ Active Directory configureren:
    | Active Directory groepen | Geef de groeps namen op die zijn gedefinieerd in uw Active Directory configuratie op de LDAP-server. |
    | Vertrouwde domeinen | Als u een vertrouwd domein wilt toevoegen, voegt u de domein naam en het verbindings type van een vertrouwd domein toe. <br />U kunt alleen vertrouwde domeinen configureren voor gebruikers die zijn gedefinieerd onder gebruikers. |
 
+#### <a name="activedirectory-groups-for-the-on-premises-management-console"></a>Active Directory-groepen voor de on-premises beheer console
+
+Als u Active Directory groepen maakt voor gebruikers van on-premises beheer console, moet u een regel voor een toegangs groep maken voor elke Active Directory groep. De on-premises beheer console Active Directory referenties werken niet als er geen regel voor een toegangs groep bestaat voor de Active Directory gebruikers groep. Zie [globaal toegangs beheer definiëren](how-to-define-global-user-access-control.md).
+
 1. Selecteer **Opslaan**.
 
-1. Selecteer **server toevoegen** en een andere server configureren om een vertrouwde server toe te voegen.
+2. Selecteer **server toevoegen** en een andere server configureren om een vertrouwde server toe te voegen.
 
-## <a name="resetting-a-users-password-for-the-sensor-or-on-premises-management-console"></a>Het wacht woord van een gebruiker voor de sensor of on-premises beheer console opnieuw instellen
+## <a name="resetting-passwords"></a>Wacht woorden opnieuw instellen
 
 ### <a name="cyberx-or-support-user"></a>Gebruiker van cyberx of ondersteuning
 
@@ -265,7 +269,7 @@ Het wacht woord van een gebruiker opnieuw instellen op de on-premises beheer con
 
 1. Selecteer **Update**.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 [Uw sensor](how-to-activate-and-set-up-your-sensor.md) 
  activeren en instellen [Uw on-premises beheer console](how-to-activate-and-set-up-your-on-premises-management-console.md) 

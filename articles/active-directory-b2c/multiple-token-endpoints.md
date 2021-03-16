@@ -1,5 +1,5 @@
 ---
-title: OWIN-based web-Api's migreren naar b2clogin.com
+title: OWIN-based web-Api's migreren naar b2clogin.com of een aangepast domein
 titleSuffix: Azure AD B2C
 description: Meer informatie over het inschakelen van een .NET-Web-API voor het ondersteunen van tokens die zijn uitgegeven door meerdere token verleners terwijl u uw toepassingen migreert naar b2clogin.com.
 services: active-directory-b2c
@@ -8,26 +8,23 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/31/2019
+ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c362ce256259606c85af0a7e13ccde1715bb012b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 860f167913211ee7c511e515937f29ba5bf954cf
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953930"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491556"
 ---
-# <a name="migrate-an-owin-based-web-api-to-b2clogincom"></a>Een op OWIN gebaseerde web-API migreren naar b2clogin.com
+# <a name="migrate-an-owin-based-web-api-to-b2clogincom-or-a-custom-domain"></a>Een op OWIN gebaseerde web-API migreren naar b2clogin.com of een aangepast domein
 
-In dit artikel wordt een techniek beschreven voor het inschakelen van ondersteuning voor meerdere token verleners in Web-Api's die de [open web interface voor .net (OWIN)](http://owin.org/)implementeren. Het ondersteunen van meerdere token-eind punten is handig wanneer u Azure Active Directory B2C (Azure AD B2C) Api's en hun toepassingen migreert van *login.microsoftonline.com* naar *b2clogin.com*.
+In dit artikel wordt een techniek beschreven voor het inschakelen van ondersteuning voor meerdere token verleners in Web-Api's die de [open web interface voor .net (OWIN)](http://owin.org/)implementeren. Het ondersteunen van meerdere token-eind punten is handig wanneer u Azure Active Directory B2C-Api's (Azure AD B2C) en de bijbehorende toepassingen van het ene domein naar het andere migreert. Bijvoorbeeld van *login.microsoftonline.com* naar *b2clogin.com*, of naar een [aangepast domein](custom-domain.md).
 
-Door ondersteuning toe te voegen aan uw API voor het accepteren van tokens die zijn uitgegeven door zowel b2clogin.com als login.microsoftonline.com, kunt u uw webtoepassingen op een gefaseerde manier migreren voordat u ondersteuning voor login.microsoftonline.com-uitgegeven tokens uit de API verwijdert.
+Door ondersteuning toe te voegen aan uw API voor het accepteren van tokens die zijn uitgegeven door b2clogin.com, login.microsoftonline.com of een aangepast domein, kunt u uw webtoepassingen op een gefaseerde manier migreren voordat u ondersteuning voor login.microsoftonline.com-uitgegeven tokens uit de API verwijdert.
 
 De volgende secties bevatten een voor beeld van het inschakelen van meerdere verleners in een web-API die gebruikmaakt van de [micro soft OWIN][katana] middleware Components (Katana). Hoewel de code voorbeelden specifiek zijn voor de micro soft OWIN-middleware, moet de algemene techniek van toepassing zijn op andere OWIN-bibliotheken.
-
-> [!NOTE]
-> Dit artikel is bedoeld voor Azure AD B2C klanten met geïmplementeerde Api's en toepassingen die verwijzen naar `login.microsoftonline.com` en die naar het aanbevolen `b2clogin.com` eind punt willen migreren. Als u een nieuwe toepassing wilt instellen, gebruikt u [b2clogin.com](b2clogin.md) als gestuurde.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -88,7 +85,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 In deze sectie werkt u de code bij om aan te geven dat beide eind punten van de token Uitgever geldig zijn.
 
 1. Open de oplossing **B2C-WebAPI-dotnet. SLN** in Visual Studio
-1. Open in het project **TaskService** het bestand * TaskService \\ App_Start \\ **Startup.auth.cs** _ in uw editor
+1. Open in het project **TaskService** het bestand *TaskService \\ App_Start \\ * * Startup.auth.cs** * in uw editor
 1. Voeg de volgende `using` instructie toe aan het begin van het bestand:
 
     `using System.Collections.Generic;`
@@ -102,12 +99,13 @@ In deze sectie werkt u de code bij om aan te geven dat beide eind punten van de 
         AuthenticationType = Startup.DefaultPolicy,
         ValidIssuers = new List<string> {
             "https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/",
-            "https://{your-b2c-tenant}.b2clogin.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/"
+            "https://{your-b2c-tenant}.b2clogin.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/"//,
+            //"https://your-custom-domain/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/"
         }
     };
     ```
 
-`TokenValidationParameters` wordt verzorgd door MSAL.NET en wordt gebruikt door de OWIN-middleware in de volgende sectie van de code in _Startup. auth. cs *. Als er meerdere geldige verleners zijn opgegeven, wordt de OWIN-toepassings pijplijn op de hoogte gesteld dat beide token-eind punten geldige verleners zijn.
+`TokenValidationParameters` wordt verzorgd door MSAL.NET en wordt gebruikt door de OWIN-middleware in de volgende sectie van de code in *Startup.auth.cs*. Als er meerdere geldige verleners zijn opgegeven, wordt de OWIN-toepassings pijplijn op de hoogte gesteld dat beide token-eind punten geldige verleners zijn.
 
 ```csharp
 app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
@@ -142,6 +140,13 @@ Na (Vervang `{your-b2c-tenant}` door de naam van uw B2C-Tenant):
 ```
 
 Wanneer de eindpunt teken reeksen zijn gemaakt tijdens de uitvoering van de web-app, worden de b2clogin.com-eind punten gebruikt bij het aanvragen van tokens.
+
+Wanneer u een aangepast domein gebruikt:
+
+```xml
+<!-- Custom domain -->
+<add key="ida:AadInstance" value="https://custom-domain/{0}/{1}" />
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

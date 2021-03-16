@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 89ecf26778433a3f075f76905183f3fe866cb5db
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: e35e3dd0bacc0b1e3a44d9338f612a70ca4b52bf
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102447262"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496521"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Een beveiligings agent op uw IoT-apparaat selecteren en implementeren
 
@@ -51,7 +51,7 @@ De op C gebaseerde beveiligings agent heeft een lagere geheugen capaciteit en is
 | **[Verificatie](concept-security-agent-authentication-methods.md) voor IOT hub** | Ja | Ja |
 | **[Verzameling](how-to-agent-configuration.md#supported-security-events) van beveiligings gegevens** | Ja | Ja |
 | **Aggregatie van gebeurtenissen** | Ja | Ja |
-| **Externe configuratie via [beveiligings module dubbele](concept-security-module.md)** | Ja | Ja |
+| **Externe configuratie via [Defender-IOT-micro agent dubbele](concept-security-module.md)** | Ja | Ja |
 
 ## <a name="security-agent-installation-guidelines"></a>Richt lijnen voor installatie van beveiligings agent
 

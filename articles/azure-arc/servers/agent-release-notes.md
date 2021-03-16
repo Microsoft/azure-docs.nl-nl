@@ -2,13 +2,13 @@
 title: Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 description: Dit artikel bevat opmerkingen bij de release voor servers agent voor Azure Arc ingeschakeld. Voor veel van de samen vattingen vindt u koppelingen naar meer informatie.
 ms.topic: conceptual
-ms.date: 12/21/2020
-ms.openlocfilehash: 4b7fd97d5b7e1cddc1d78e0d24205890e74c45c1
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.date: 03/15/2021
+ms.openlocfilehash: acf606ed1ad0f54c983b14a0141d0dc11e2c45d9
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722518"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470503"
 ---
 # <a name="whats-new-with-azure-arc-enabled-servers-agent"></a>Wat is er nieuw in de agent voor servers met Azure Arc ingeschakeld
 
@@ -18,13 +18,27 @@ De Azure-servers die zijn verbonden met de computer agent, ontvangen voortdurend
 - Bekende problemen
 - Opgeloste fouten
 
+## <a name="march-2021"></a>2021 maart
+
+Versie 1,4
+
+## <a name="new-feature"></a>Nieuwe functie
+
+- Er is ondersteuning toegevoegd voor privé-eind punten.
+- Uitgebreide lijst met afsluit codes voor azcmagent.
+- Agent configuratie parameters kunnen nu worden gelezen uit een bestand met de para meter--config.
+
+## <a name="fixed"></a>Opgelost
+
+Controles van netwerk eindpunten zijn nu sneller.
+
 ## <a name="december-2020"></a>December 2020
 
 Versie: 1,3
 
 ### <a name="new-feature"></a>Nieuwe functie
 
-Ondersteuning toegevoegd voor Windows Server 2008 R2
+Er is ondersteuning toegevoegd voor Windows Server 2008 R2.
 
 ### <a name="fixed"></a>Opgelost
 
@@ -47,7 +61,7 @@ Versie: 1.1
 - Vast proxy script voor het afhandelen van een andere bestands locatie voor GC-daemon-eenheden.
 - Betrouw baarheid van GuestConfig-agent wordt gewijzigd.
 - Ondersteuning voor de GuestConfig-agent voor US Gov-Virginia regio.
-- Berichten van de extensie rapport van de GuestConfig-agent worden uitgebreid in geval van storingen.
+- Berichten van de extensie rapport van de GuestConfig-agent worden uitgebreid als er een fout optreedt.
 
 ## <a name="september-2020"></a>September 2020
 

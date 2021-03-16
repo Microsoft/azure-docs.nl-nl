@@ -4,12 +4,12 @@ description: Leer hoe u uw eerste serverloze Azure-functie kunt maken met behulp
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 8d394a6f71fc5d31bd72a67a876a24a500a7cf01
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6ca187181d68d7924f97ebfac08e81dec77251e9
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101732175"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492108"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
@@ -42,13 +42,11 @@ Maak vervolgens een functie in de nieuwe functie-app.
 
 1. Selecteer in het menu links van het venster **Functies** de optie **Functies** en selecteer vervolgens **Toevoegen** in het bovenste menu. 
  
-1. Selecteer **http-trigger** in het venster **nieuwe functie** .
+1. Selecteer in het venster **functie toevoegen** de sjabloon **http-trigger** .
 
     ![HTTP-triggerfunctie kiezen](./media/functions-create-first-azure-function/function-app-select-http-trigger.png)
 
-1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie** of voer een nieuwe naam in. 
-
-1. Kies **anoniem** in de vervolg keuzelijst **autorisatie niveau** en selecteer vervolgens **functie maken**.
+1. Kies  in `HttpExample` de vervolg keuzelijst **[autorisatie niveau](functions-bindings-http-webhook-trigger.md#authorization-keys)** de optie **anoniem** onder sjabloon Details gebruiken voor **nieuwe functie** en selecteer vervolgens **toevoegen**.
 
     Azure maakt de HTTP-activerings functie. U kunt de nieuwe functie nu uitvoeren door een HTTP-aanvraag te verzenden.
 

@@ -65,6 +65,8 @@
       href: configure-scaling.md
     - name: Certificaten
       href: certificates-and-key-vault.md
+    - name: ARM-sjabloon genereren met behulp van portal
+      href: generate-template-portal.md
 - name: Voorbeelden
   items:
     - name: Voorbeeld sjablonen

@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 09/16/2020
 ms.author: rogarana
-ms.openlocfilehash: 02b8d72ab88f9eca2e1fac4858c14826dae57dbe
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 698b4ebedfc9b41e8c5732a0a81226a971d65585
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629169"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470761"
 ---
 # <a name="part-three-configure-directory-and-file-level-permissions-over-smb"></a>Deel drie: machtigingen voor mappen en bestands niveau configureren via SMB 
 
@@ -93,9 +93,19 @@ Als de bestands share is gekoppeld aan de sleutel voor het opslag account, moet 
 
 Als u mappen of bestanden hebt in on-premises bestands servers met Windows-DACL'S die zijn geconfigureerd voor de AD DS identiteiten, kunt u deze kopiëren naar Azure Files persistentie van de Acl's met bestanden voor het traditionele Kopieer programma zoals Robocopy of [Azure AzCopy v 10.4 +](https://github.com/Azure/azure-storage-azcopy/releases). Als uw mappen en bestanden worden getierd tot Azure Files via Azure File Sync, worden uw Acl's overgenomen en bewaard in de oorspronkelijke indeling.
 
+### <a name="configure-windows-acls-with-icacls"></a>Windows-Acl's configureren met icacls
+
+Gebruik de volgende Windows-opdracht om volledige machtigingen te verlenen aan alle mappen en bestanden onder de bestands share, met inbegrip van de hoofdmap. Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden.
+
+```
+icacls <mounted-drive-letter>: /grant <user-email>:(f)
+```
+
+Zie voor meer informatie over het gebruik van icacls voor het instellen van Windows-Acl's en voor de verschillende typen ondersteunde machtigingen [de opdracht regel verwijzing voor icacls](/windows-server/administration/windows-commands/icacls).
+
 ### <a name="configure-windows-acls-with-windows-file-explorer"></a>Windows-Acl's configureren met Windows-bestanden Verkenner
 
-Gebruik Windows Verkenner om volledige machtigingen te verlenen aan alle mappen en bestanden onder de bestands share, met inbegrip van de hoofdmap.
+Gebruik Windows Verkenner om volledige machtigingen te verlenen aan alle mappen en bestanden onder de bestands share, met inbegrip van de hoofdmap. Als u de AD-domein gegevens niet correct in Windows Verkenner kunt laden, is dit waarschijnlijk het gevolg van een vertrouwens configuratie in uw on-premises AD-omgeving. De client computer kan de AD-domein controller die is geregistreerd voor Azure Files authenticatie niet bereiken. In dit geval gebruikt u icacls voor configurating Windows-Acl's.
 
 1. Open Windows Verkenner, klik met de rechter muisknop op het bestand of de map en selecteer **Eigenschappen**.
 1. Selecteer het tabblad **Beveiliging**.
@@ -106,15 +116,6 @@ Gebruik Windows Verkenner om volledige machtigingen te verlenen aan alle mappen 
 1.    Selecteer op het tabblad **beveiliging** alle machtigingen die u wilt toewijzen aan de nieuwe gebruiker.
 1.    Selecteer **Toepassen**.
 
-### <a name="configure-windows-acls-with-icacls"></a>Windows-Acl's configureren met icacls
-
-Gebruik de volgende Windows-opdracht om volledige machtigingen te verlenen aan alle mappen en bestanden onder de bestands share, met inbegrip van de hoofdmap. Vergeet niet om de waarden van de tijdelijke aanduidingen in het voor beeld te vervangen door uw eigen waarden.
-
-```
-icacls <mounted-drive-letter>: /grant <user-email>:(f)
-```
-
-Zie voor meer informatie over het gebruik van icacls voor het instellen van Windows-Acl's en voor de verschillende typen ondersteunde machtigingen [de opdracht regel verwijzing voor icacls](/windows-server/administration/windows-commands/icacls).
 
 ## <a name="next-steps"></a>Volgende stappen
 

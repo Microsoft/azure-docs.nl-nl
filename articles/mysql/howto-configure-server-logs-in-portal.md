@@ -1,17 +1,17 @@
 ---
 title: Toegang tot langzame query logboeken-Azure Portal-Azure Database for MySQL
 description: In dit artikel wordt beschreven hoe u de langzame Logboeken in Azure Database for MySQL kunt configureren en openen vanuit de Azure Portal.
-author: savjani
-ms.author: pariks
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: how-to
-ms.date: 4/13/2020
-ms.openlocfilehash: 5ad4ffa99a7af592e3e93e53673d254956807c40
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 3/15/2021
+ms.openlocfilehash: 91569780aa71861e07c7e96bec5eac879642760d
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541620"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496215"
 ---
 # <a name="configure-and-access-slow-query-logs-from-the-azure-portal"></a>Langzame query logboeken van de Azure Portal configureren en openen
 
@@ -23,7 +23,7 @@ Voor de stappen in dit artikel moet [Azure database for mysql server](quickstart
 ## <a name="configure-logging"></a>Logboek registratie configureren
 Configureer de toegang tot het MySQL-logboek voor langzame query's. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 2. Selecteer uw Azure Database for MySQL-server.
 
@@ -34,11 +34,13 @@ Configureer de toegang tot het MySQL-logboek voor langzame query's.
 
 5. Schakel **slow_query_log** in **op** aan.
 
-6. Selecteer waar u de logboeken wilt uitvoeren met **log_output**. Selecteer **bestand** om logboeken naar zowel lokale opslag als Azure monitor Diagnostische logboeken te verzenden. 
+6. Selecteer waar u de logboeken wilt uitvoeren met **log_output**. Selecteer **bestand** om logboeken naar zowel lokale opslag als Azure monitor Diagnostische logboeken te verzenden.
 
-7. Wijzig alle andere para meters die nodig zijn. 
+7. Overweeg om ' long_query_time ' in te stellen voor de query tijd drempelwaarde voor de query's die worden verzameld in het logboek bestand voor langzame query's. de minimum-en standaard waarden van long_query_time zijn respectievelijk 0 en 10.
 
-8. Selecteer **Opslaan**. 
+8. Andere para meters, zoals log_slow_admin_statements voor het registreren van administratieve instructies, aanpassen. Standaard worden administratieve instructies niet geregistreerd en ook geen query's die geen indexen voor zoek acties gebruiken. 
+
+9. Selecteer **Opslaan**. 
 
    :::image type="content" source="./media/howto-configure-server-logs-in-portal/3-save-discard.png" alt-text="Scherm opname van langzame query logboek parameters en opslaan.":::
 
@@ -70,17 +72,17 @@ Nadat de logboek registratie is gestart, kunt u een lijst met beschik bare langz
 
    :::image type="content" source="./media/howto-configure-server-logs-in-portal/add-diagnostic-setting.png" alt-text="Scherm opname van opties voor Diagnostische instellingen":::
 
-1. Geef een naam op voor de diagnostische instelling.
+2. Geef een naam op voor de diagnostische instelling.
 
-1. Geef op welke gegevens worden gesinkt om de langzame query Logboeken (opslag account, Event Hub of Log Analytics-werk ruimte) te verzenden.
+3. Geef op welke gegevens worden gesinkt om de langzame query Logboeken (opslag account, Event Hub of Log Analytics-werk ruimte) te verzenden.
 
-1. Selecteer **MySqlSlowLogs** als het logboek type.
+4. Selecteer **MySqlSlowLogs** als het logboek type.
 :::image type="content" source="./media/howto-configure-server-logs-in-portal/configure-diagnostic-setting.png" alt-text="Scherm opname van configuratie opties voor Diagnostische instellingen":::
 
-1. Nadat u de gegevens sinks hebt geconfigureerd om de langzame query logboeken te pipeen, selecteert u **Opslaan**.
+5. Nadat u de gegevens sinks hebt geconfigureerd om de langzame query logboeken te pipeen, selecteert u **Opslaan**.
 :::image type="content" source="./media/howto-configure-server-logs-in-portal/save-diagnostic-setting.png" alt-text="Scherm opname van configuratie opties voor Diagnostische instellingen, met de markering opgeslagen":::
 
-1. Open de logboeken voor trage query's door ze te verkennen in de gegevens-sinks die u hebt geconfigureerd. Het kan tot tien minuten duren voordat de logboeken worden weer gegeven.
+6. Open de logboeken voor trage query's door ze te verkennen in de gegevens-sinks die u hebt geconfigureerd. Het kan tot tien minuten duren voordat de logboeken worden weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Zie [langzame query Logboeken openen in cli](howto-configure-server-logs-in-cli.md) voor meer informatie over het downloaden van langzame query logboeken via een programma.

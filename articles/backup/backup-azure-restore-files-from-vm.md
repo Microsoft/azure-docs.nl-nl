@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het herstellen van bestanden
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: c5a027773a55347b71c1e6a66d24d7fdb99220d0
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 63714773d1b6f84b88bd2207aca4196fa16f1a94
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101725506"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493523"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
@@ -60,18 +60,18 @@ Als u bestanden of mappen van het herstel punt wilt herstellen, gaat u naar de v
 
 ## <a name="step-2-ensure-the-machine-meets-the-requirements-before-executing-the-script"></a>Stap 2: controleren of de computer voldoet aan de vereisten voordat u het script uitvoert
 
-Nadat het script is gedownload, controleert u of u de juiste computer hebt om dit script uit te voeren. De virtuele machine waar u het script wilt uitvoeren, mag geen van de volgende niet-ondersteunde configuraties hebben. Als dit het geval is, kiest u vervolgens een alternatieve machine, bij voor keur uit dezelfde regio die voldoet aan de vereisten.  
+Nadat het script is gedownload, controleert u of u de juiste computer hebt om dit script uit te voeren. De virtuele machine waar u het script wilt uitvoeren, mag geen van de volgende niet-ondersteunde configuraties hebben. **Als dit het geval is, kiest u vervolgens een alternatieve machine, bij voor keur uit dezelfde regio die voldoet aan de vereisten**.  
 
 ### <a name="dynamic-disks"></a>Dynamische schijven
 
-U kunt het uitvoer bare script niet uitvoeren op de virtuele machine met een van de volgende kenmerken:
+U kunt het uitvoer bare script niet uitvoeren op de VM met een van de volgende kenmerken: Kies een andere machine
 
 - Volumes die meerdere schijven omvatten (spanned en striped volumes).
 - Fout tolerante volumes (gespiegelde en RAID-5-volumes) op dynamische schijven.
 
 ### <a name="windows-storage-spaces"></a>Windows-opslagruimten
 
-U kunt het gedownloade uitvoer bare bestand niet uitvoeren op de virtuele machine die is geconfigureerd voor Windows-opslag ruimten.
+U kunt het gedownloade uitvoer bare bestand niet uitvoeren op dezelfde back-upvm als de back-up-VM Windows-opslag ruimten heeft. Kies een andere machine.
 
 ### <a name="virtual-machine-backups-having-large-disks"></a>Back-ups van virtuele machines met grote schijven
 

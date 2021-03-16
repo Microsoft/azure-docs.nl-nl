@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9feef9ec04bcc44bc09d55202b72ada4adc94cf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a9b1ffb2dbcbd6e81856277f4b672cf876cc75f1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89017053"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492367"
 ---
 # <a name="understand-azure-iot-edge-modules"></a>Informatie over Azure IoT Edge-modules
 
-Met Azure IoT Edge kunt u bedrijfs logica op de rand in de vorm van *modules*implementeren en beheren. Azure IoT Edge modules zijn de kleinste reken eenheid die wordt beheerd door IoT Edge en kunnen Azure-Services (zoals Azure Stream Analytics) of uw eigen oplossings code bevatten. Als u wilt weten hoe modules worden ontwikkeld, geïmplementeerd en onderhouden, moet u rekening houden met de vier conceptuele elementen van een module:
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
+
+Met Azure IoT Edge kunt u bedrijfs logica op de rand in de vorm van *modules* implementeren en beheren. Azure IoT Edge modules zijn de kleinste reken eenheid die wordt beheerd door IoT Edge en kunnen Azure-Services (zoals Azure Stream Analytics) of uw eigen oplossings code bevatten. Als u wilt weten hoe modules worden ontwikkeld, geïmplementeerd en onderhouden, moet u rekening houden met de vier conceptuele elementen van een module:
 
 * Een **module installatie kopie** is een pakket met de software die een module definieert.
 * Een **module-exemplaar** is de specifieke reken eenheid die de module installatie kopie uitvoert op een IOT edge apparaat. Het module-exemplaar wordt gestart door de IoT Edge runtime.

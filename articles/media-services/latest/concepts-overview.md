@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 2a1c0c0685ab5a908a89f4a43073f9f773cd58c3
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 2d388cf6c776e6d30a487ce9e14ba1601dce1d23
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102631996"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491602"
 ---
 # <a name="media-services-terminology-and-concepts"></a>Terminologie en concepten Media Services
 
@@ -47,7 +47,7 @@ De basis concepten die in deze onderwerpen worden beschreven, moeten worden geco
 |Inhoudsbeveiliging|Met Media Services kunt u uw Live en on-demand inhoud dynamisch versleutelen met Advanced Encryption Standard (AES-128) of/en een van de drie belangrijkste DRM-systemen: micro soft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties (PlayReady, Widevine en FairPlay) aan geautoriseerde klanten. <br/><br/>Als u versleutelings opties voor uw stroom opgeeft, maakt u het **beleid voor inhouds sleutels** en koppelt u dit aan uw **streaming-Locator**. Met het **beleid voor inhouds sleutels** kunt u configureren hoe de inhouds sleutel wordt bezorgd bij de eind clients.<br/><br/> Probeer het beleid opnieuw te gebruiken wanneer dezelfde opties nodig zijn.| [Beleid voor inhouds sleutels](content-key-policy-concept.md)<br/><br/>[Inhouds beveiliging](content-protection-overview.md)|
 |Live streamen|Met Media Services kunt u live gebeurtenissen aan uw klanten leveren via de Azure-Cloud. **Livegebeurtenissen** zijn verantwoordelijk voor het opnemen en verwerken van de live videofeeds. Wanneer u een **live gebeurtenis** maakt, wordt er een invoer eindpunt gemaakt dat u kunt gebruiken om een live signaal van een extern coderings programma te verzenden. Zodra u de stroom naar de **live gebeurtenis** hebt gestroomd, kunt u de streaming-gebeurtenis starten door een **Asset**, **Live output** en **streaming-Locator** te maken. **Live output** archiveert de stroom naar de **Asset** en maakt deze beschikbaar voor gebruikers via het **streaming-eind punt**. Een livegebeurtenis kan worden ingesteld op een *pass-through* (een on-premises live-encoder verzendt een stroom met meerdere bitsnelheden) of *live-codering* (een on-premises live-encoder verzendt een stream met één bitsnelheid). |[Overzicht van live streamen](live-streaming-overview.md)<br/><br/>[Livegebeurtenissen en live-uitvoer](live-events-outputs-concept.md)|
 |Controleren met Event Grid|Als u de voortgang van de taak wilt zien, gebruikt u **Event grid**. Media Services worden ook de live-gebeurtenis typen meeverzonden. Met Event Grid kunnen uw apps luisteren naar en reageren op gebeurtenissen uit vrijwel alle Azure-services, evenals aangepaste bronnen. |[Event Grid-gebeurtenissen verwerken](reacting-to-media-services-events.md)<br/><br/>[Schema's](media-services-event-schemas.md)|
-|Controleren met Azure Monitor|Bewaak metrische gegevens en Diagnostische logboeken die u helpen inzicht te krijgen in de prestaties van uw apps met Azure Monitor.|[Metrische gegevens en diagnostische logboeken](media-services-metrics-diagnostic-logs.md)<br/><br/>[Schema's van diagnostische logboeken](media-services-diagnostic-logs-schema.md)|
+|Controleren met Azure Monitor|Bewaak metrische gegevens en Diagnostische logboeken die u helpen inzicht te krijgen in de prestaties van uw apps met Azure Monitor.|[Metrische gegevens en diagnostische logboeken](monitoring/monitor-media-services-data-reference.md)<br/><br/>[Schema's van diagnostische logboeken](monitoring/monitor-media-services-data-reference.md)|
 |Afspeel-clients|U kunt Azure Media Player gebruiken om media-inhoud af te spelen die door Media Services wordt gestreamd op een groot aantal verschillende browsers en apparaten. Azure Media Player maakt gebruik van industriestandaarden zoals HTML5, MSE (Media Source Extensions) en EME (Encrypted Media Extensions) om een geavanceerde adaptieve streamingervaring te bieden. |[Overzicht van Azure Media Player](use-azure-media-player.md)|
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Vragen stellen, feedback geven, updates ophalen

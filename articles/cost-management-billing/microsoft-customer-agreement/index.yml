@@ -1,0 +1,74 @@
+### YamlMime:Landing
+title: Aan de slag met de klant overeenkomst van micro soft
+summary: Ga aan de slag met het beheren van uw facturering en abonnementen onder uw klant overeenkomst van micro soft. Meer informatie over het begrijpen en optimaliseren van uw kosten en het garanderen van beveiligde toegang tot uw facturerings omgeving.
+metadata:
+  title: Aan de slag met de klant overeenkomst van micro soft
+  description: Meer informatie over hoe u aan de slag kunt gaan met uw micro soft-klant overeenkomst.
+  ms.service: cost-management-billing
+  ms.subservice: billing
+  ms.topic: landing-page
+  ms.collection: collection
+  author: bandersmsft
+  ms.author: banders
+  ms.date: 03/01/2021
+  ms.openlocfilehash: f2dcb2687a5a765e674a3dce7ac9016e58056b81
+  ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103574699"
+landingContent:
+- title: Aan de slag
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is een micro soft-klant overeenkomst?
+      url: ../understand/mca-overview.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Van Credit Card naar factuur verplaatsen
+      url: ../manage/mca-request-billing-ownership.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Toegang tot abonnementen met domein-ID
+      url: ../manage/mca-setup-account.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Beheerder instellen om abonnements gebruikers te beheren
+      url: ../manage/add-change-subscription-administrator.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Nieuwe abonnementen maken
+      url: ../manage/create-subscription.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+- title: De facturering beheren
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Meer informatie over mijn facturerings cyclus
+      url: ../understand/mca-understand-your-invoice.md#billing-period
+  - linkListType: tutorial
+    links:
+    - text: Ontvang een factuur onder mijn overeenkomst
+      url: ../understand/review-customer-agreement-bill.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+  - linkListType: how-to-guide
+    links:
+    - text: Wat is een facturerings profiel en hoe beheer ik het?
+      url: ../manage/mca-section-invoice.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Facturering per factuur betalen
+      url: ../manage/pay-by-invoice.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Betalen per credit card of bankpas per cheque of overschrijving
+      url: ../understand/pay-bill.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Een beheerder instellen voor het beheren van facturering
+      url: ../manage/understand-mca-roles.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Facturering voor mijn overeenkomst starten
+      url: ../manage/mca-request-billing-ownership.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json
+    - text: Eigenaar van mijn abonnement zoeken
+      url: ../manage/add-change-subscription-administrator.md#assign-a-subscription-administrator
+  - linkListType: video
+    links:
+    - text: Kosten ordenen
+      url: https://www.youtube.com/watch?v=7RxTfShGHwU
+    - text: De toegang tot het facturerings account beheren
+      url: https://www.youtube.com/watch?v=9sqglBlKkho
+    - text: Meer informatie over uw factuur voor Microsoft Azure
+      url: https://www.youtube.com/watch?v=e2LGZZ7GubA
+- title: Abonnementen beheren
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Wat is Active Directory?
+      url: ../../active-directory/fundamentals/active-directory-whatis.md?toc=/azure/cost-management-billing/microsoft-customer-agreement/toc.json

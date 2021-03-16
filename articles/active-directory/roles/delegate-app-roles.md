@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fea9662b6f5890c6240e91b26cf641d6166d560a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: d1e8a0f1919da125a571429e1efff06589c7e85a
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102051188"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466708"
 ---
 # <a name="delegate-app-registration-permissions-in-azure-active-directory"></a>Machtigingen voor app-registratie in Azure Active Directory delegeren
 
@@ -30,7 +30,7 @@ In dit artikel wordt beschreven hoe u machtigingen kunt gebruiken die worden ver
 - [Wijs een ingebouwde](#assign-built-in-application-admin-roles) beheerdersrol toe die toegang verleent voor het beheren van configuratie in azure AD voor alle toepassingen. Dit is de aanbevolen manier om IT-experts toegang te geven tot het beheren van brede toepassings configuratie machtigingen zonder toegang te verlenen tot het beheren van andere delen van Azure AD die niet gerelateerd zijn aan de configuratie van de toepassing.
 - Het [maken van een aangepaste rol](#create-and-assign-a-custom-role-preview) om zeer specifieke machtigingen te definiëren en deze toe te wijzen aan iemand, hetzij aan het bereik van één toepassing als een beperkte eigenaar, of in het bereik van de directory (alle toepassingen) als beperkte beheerder.
 
-Het is belang rijk om de toegang te verlenen met behulp van een van de bovenstaande methoden om twee redenen. Eerst dedraagt het delegeren van de mogelijkheid om beheer taken uit te voeren, de overhead van de globale beheerder. Ten tweede verbetert het gebruik van beperkte machtigingen uw beveiligings postuur en vermindert de kans op onbevoegde toegang. Overdrachts problemen en algemene richt lijnen worden besproken in [gedelegeerd beheer in azure Active Directory](concept-delegation.md).
+Het is belang rijk om de toegang te verlenen met behulp van een van de bovenstaande methoden om twee redenen. Eerst dedraagt het delegeren van de mogelijkheid om beheer taken uit te voeren, de overhead van de globale beheerder. Ten tweede verbetert het gebruik van beperkte machtigingen uw beveiligings postuur en vermindert de kans op onbevoegde toegang. Zie voor meer informatie over de planning van de functie beveiliging [privileged Access beveiligen voor hybride en Cloud implementaties in azure AD](security-planning.md).
 
 ## <a name="restrict-who-can-create-applications"></a>Beperk wie toepassingen kunnen maken
 

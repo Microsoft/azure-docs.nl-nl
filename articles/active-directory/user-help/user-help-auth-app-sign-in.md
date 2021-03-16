@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 06/03/2020
+ms.date: 03/12/2021
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 3a9e4c8f3dd9e4cf291388bc102ae9a73d8de6dd
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 0fd0aa19d52adb4bf06c9d21d4182e27497a531b
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131561"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471771"
 ---
 # <a name="sign-in-to-your-accounts-using-the-microsoft-authenticator-app"></a>Meld u aan bij uw accounts met behulp van de app Microsoft Authenticator
 
@@ -51,9 +51,12 @@ Aanmelding via de telefoon is alleen beschikbaar op iOS-en Android-apparaten met
 
 Open de Microsoft Authenticator-app, ga naar uw werk-of school account en schakel aanmelding via de telefoon in.
 
-- **Wanneer u op de tegel account tikt** , wordt het account weer gegeven in volledig scherm. Als u **Aanmelden via telefoon is ingeschakeld** , betekent dit dat u volledig hebt ingesteld om u aan te melden zonder uw wacht woord. Als u **aanmelding via telefoon inschakelen** ziet, tikt u erop om aanmelding via de telefoon in te scha kelen.
-- **Als u de app al hebt gebruikt voor twee ledige verificatie** , kunt u op de tegel account tikken om een volledig scherm van het account weer te geven. Tik vervolgens op **Aanmelden via de telefoon** om aanmelding via de telefoon in te scha kelen.
+- **Wanneer u op de tegel account tikt**, wordt het account weer gegeven in volledig scherm. Als u **Aanmelden via telefoon is ingeschakeld** , betekent dit dat u volledig hebt ingesteld om u aan te melden zonder uw wacht woord. Als u **aanmelding via telefoon inschakelen** ziet, tikt u erop om aanmelding via de telefoon in te scha kelen.
+- **Als u de app al hebt gebruikt voor twee ledige verificatie**, kunt u op de tegel account tikken om een volledig scherm van het account weer te geven. Tik vervolgens op **Aanmelden via de telefoon** om aanmelding via de telefoon in te scha kelen.
 - **Als u uw werk-of school account niet kunt vinden** op het scherm **accounts** van de app, betekent dit dat u dit nog niet hebt toegevoegd aan de app. Voeg uw werk-of school account toe door de stappen in de [Help van uw werk-of school account toevoegen](user-help-auth-app-add-work-school-account.md)te volgen.
+
+> [!NOTE]
+> Micro soft biedt geen ondersteuning voor een combi natie van apparaatregistratie en authenticatie op basis van certificaten in verificator op iOS. In plaats daarvan moet de gebruiker het apparaat hand matig registreren via de instellingen van de verificator voordat u zich aanmeldt.
 
 Nadat u aanmelding via de telefoon hebt ingeschakeld, kunt u zich aanmelden met alleen de Microsoft Authenticator-app. U doet dit als volgt:
 
@@ -67,7 +70,7 @@ Nadat u aanmelding via de telefoon hebt ingeschakeld, kunt u zich aanmelden met 
 
     ![Aanmeld venster goed keuren op het apparaat](media/user-help-auth-app-sign-in/microsoft-auth-app-sign-in-numbers.png)
 
-3. Kies **Goedkeuren** als u de aanmeldingspoging herkent. Kies anders **Weigeren** .
+3. Kies **Goedkeuren** als u de aanmeldingspoging herkent. Kies anders **Weigeren**.
 
 4. Gebruik de pincode van uw telefoon of uw biometrische sleutel om de verificatie te volt ooien.
 
@@ -82,8 +85,8 @@ U kunt aanmelding via de telefoon inschakelen voor uw persoonlijke Microsoft-acc
 
 Open de Microsoft Authenticator-app, ga naar uw werk-of school account en schakel aanmelding via de telefoon in.
 
-- **Wanneer u op de tegel account tikt** , wordt het account weer gegeven in volledig scherm. Als u **Aanmelden via telefoon is ingeschakeld** , betekent dit dat u volledig hebt ingesteld om u aan te melden zonder uw wacht woord. Als u **aanmelding via telefoon inschakelen** ziet, tikt u erop om aanmelding via de telefoon in te scha kelen.
-- **Als u de app al gebruikt voor verificatie met twee factoren** , tikt u op de tegel account om een weer gave volledig scherm van het account weer te geven. Tik vervolgens op **Aanmelden via de telefoon** om aanmelding via de telefoon in te scha kelen.
+- **Wanneer u op de tegel account tikt**, wordt het account weer gegeven in volledig scherm. Als u **Aanmelden via telefoon is ingeschakeld** , betekent dit dat u volledig hebt ingesteld om u aan te melden zonder uw wacht woord. Als u **aanmelding via telefoon inschakelen** ziet, tikt u erop om aanmelding via de telefoon in te scha kelen.
+- **Als u de app al gebruikt voor verificatie met twee factoren**, tikt u op de tegel account om een weer gave volledig scherm van het account weer te geven. Tik vervolgens op **Aanmelden via de telefoon** om aanmelding via de telefoon in te scha kelen.
 - **Als u uw account niet kunt vinden** op het scherm **accounts** van de app, betekent dit dat u dit nog niet hebt toegevoegd aan de app. Voeg uw persoonlijke Microsoft-account toe door de stappen in het artikel [persoonlijke micro soft-accounts toevoegen](user-help-auth-app-add-personal-ms-account.md) te volgen.
 
 ### <a name="sign-in-to-your-account-using-phone-sign-in"></a>Meld u aan bij uw account via de aanmelding via de telefoon

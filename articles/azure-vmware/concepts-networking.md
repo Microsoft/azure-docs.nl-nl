@@ -3,12 +3,12 @@ title: Concepten-netwerk-interconnectiviteit
 description: Meer informatie over belang rijke aspecten en gebruiks voorbeelden van netwerken en interconnectiviteit in azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: cd62949c13b1f12e635d8d7bf07518a94c4e8d4b
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: 4c964151c49e2fea56031dd24bacf4655753a18d
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103462577"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491806"
 ---
 # <a name="azure-vmware-solution-networking-and-interconnectivity-concepts"></a>Azure VMware Solution-netwerken en interconnectiviteit-concepten
 
@@ -16,9 +16,9 @@ ms.locfileid: "103462577"
 
 Er zijn twee manieren om interconnectiviteit te maken in de privécloud van Azure VMware-oplossing:
 
-1. Met [**eenvoudige Azure-interconnectiviteit**](#azure-virtual-network-interconnectivity) kunt u uw privécloud beheren en gebruiken met slechts één virtueel netwerk in Azure. Deze implementatie is het meest geschikt voor evaluaties of implementaties van Azure VMware-oplossingen waarvoor geen toegang nodig is vanuit on-premises omgevingen.
+- Met [**eenvoudige Azure-interconnectiviteit**](#azure-virtual-network-interconnectivity) kunt u uw privécloud beheren en gebruiken met slechts één virtueel netwerk in Azure. Deze implementatie is het meest geschikt voor evaluaties of implementaties van Azure VMware-oplossingen waarvoor geen toegang nodig is vanuit on-premises omgevingen.
 
-1. [**Volledig on-premises naar privécloud interconnectiviteit**](#on-premises-interconnectivity) breidt de basis implementatie van alleen Azure uit met interconnectiviteit tussen on-premises en Azure VMware-oplossingen voor persoonlijke Clouds.
+- [**Volledig on-premises naar privécloud interconnectiviteit**](#on-premises-interconnectivity) breidt de basis implementatie van alleen Azure uit met interconnectiviteit tussen on-premises en Azure VMware-oplossingen voor persoonlijke Clouds.
  
 In dit artikel worden de belangrijkste concepten besproken waarmee netwerken en interconnectiviteit worden gemaakt, met inbegrip van vereisten en beperkingen. In dit artikel vindt u de informatie die u nodig hebt om uw netwerk te configureren voor gebruik met de Azure VMware-oplossing.
 

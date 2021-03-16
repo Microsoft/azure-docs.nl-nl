@@ -3,14 +3,15 @@ title: In azure HDInsight gedeactiveerde versies
 description: Meer informatie over de buiten gebruik gestelde versies in azure HDInsight.
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: deshriva
+author: deshriva
+ms.author: deshriva
 ms.date: 02/08/2021
-ms.openlocfilehash: a63be574f643ac6a3f8fb93f306fe632051be136
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c5c5a6699759e3abda05b7a0d85f4914a15f00e6
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101745354"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490242"
 ---
 # <a name="retired-hdinsight-versions"></a>Verouderde HDInsight-versies
 

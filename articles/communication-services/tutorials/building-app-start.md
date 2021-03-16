@@ -5,15 +5,15 @@ description: Meer informatie over het maken van een basislijn webtoepassing die 
 author: nmurav
 services: azure-communication-services
 ms.author: nmurav
-ms.date: 01/03/2012
+ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: adb9ddee3d1caaac4c7530755b5e49ac50ab3181
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 7cfc8fc24aea938b997fead4ca762ce7178e3386
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488865"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490616"
 ---
 # <a name="tutorial-prepare-a-web-app-for-azure-communication-services-nodejs"></a>Zelf studie: een web-app voorbereiden voor Azure Communication Services (Node.js)
 

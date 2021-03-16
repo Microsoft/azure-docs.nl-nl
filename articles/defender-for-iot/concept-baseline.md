@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2019
 ms.author: mlottner
-ms.openlocfilehash: 04fe87cd69efc4c064b8fbdc596a5f9e187abbb1
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: bced45474a3a851bc5785f662c0b2e50ae3a380c
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102237"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491075"
 ---
 # <a name="azure-defender-for-iot-baseline-and-custom-checks"></a>Azure Defender voor IoT-basis lijn en aangepaste controles
 
@@ -42,7 +42,7 @@ Met aangepaste basis controles wordt een aangepaste lijst met controles voor elk
 
 1. Upload het **aangepaste controle** bestand voor de basis lijn naar het apparaat.
 
-1. Voeg eigenschappen van basis lijn toe aan de beveiligings module en klik op **Opslaan**.
+1. Voeg basislijn eigenschappen toe aan de Defender-IoT-micro agent en klik op **Opslaan**.
 
 ### <a name="baseline-custom-check-file-example"></a>Voor beeld van aangepast controle bestand basis lijn
 
@@ -66,7 +66,7 @@ Aangepaste controles voor basis lijn configureren:
 
 ## <a name="baseline-custom-check-properties"></a>Aangepaste controle-eigenschappen van basis lijn
 
-| Naam| Status | Geldige waarden| Standaardwaarden| Description |
+| Naam| Status | Geldige waarden| Standaardwaarden| Beschrijving |
 |------|-----|------|-----|-----|
 |baselineCustomChecksEnabled|Vereist: True |Geldige waarden: **Booleaans** |Standaard waarde: **False** |Het maximale tijds interval voor berichten met een hoge prioriteit wordt verzonden.|
 |baselineCustomChecksFilePath |Vereist: True|Geldige waarden: **teken reeks**, **Null** |Standaard waarde: **Null** |Volledig pad van de XML-configuratie voor basis lijn|

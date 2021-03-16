@@ -11,33 +11,39 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/08/2021
+ms.date: 03/14/2021
 ms.author: shhazam
-ms.openlocfilehash: f15c4ed6bb7da5cd33eca96c171bfada68092b35
-ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
+ms.openlocfilehash: ef72be60b6294ad4e1fca2ce9c0e3c66b64ac687
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99820667"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493951"
 ---
 # <a name="whats-new-in-azure-defender-for-iot"></a>Wat is er nieuw in azure Defender voor IoT?
 
 In dit artikel vindt u een overzicht van nieuwe functies en functie verbeteringen voor Defender voor IoT.
 
 Genoteerde functies zijn een PREVIEW-versie. De [Aanvullende voorwaarden voor Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) omvatten aanvullende juridische voorwaarden die van toepassing zijn op Azure-functies die in bèta of preview zijn of die anders nog niet algemeen beschikbaar zijn.
-## <a name="february-2021"></a>Februari 2021
+## <a name="march-2021"></a>2021 maart
 
-### <a name="sensor---enhanced-custom-alert-rules"></a>Sensor-verbeterde aangepaste waarschuwings regels
+### <a name="sensor---enhanced-custom-alert-rules-public-preview"></a>Sensor-verbeterde aangepaste waarschuwings regels (open bare preview)
 
 U kunt nu aangepaste waarschuwings regels maken op basis van de dag, groep dagen en tijds periode netwerk activiteit is gedetecteerd.  Het werken met de regels voor de dag-en tijd regel is nuttig, bijvoorbeeld in gevallen waarbij de ernst van de waarschuwing wordt bepaald door het tijdstip waarop de waarschuwings gebeurtenis plaatsvindt. Maak bijvoorbeeld een aangepaste regel waarmee een waarschuwing met hoge ernst wordt geactiveerd wanneer netwerk activiteit wordt gedetecteerd in een weekend of 's avonds.
 
-Deze functie is beschikbaar op de sensor met de release van versie 10,1.
+Deze functie is beschikbaar op de sensor met de release van versie 10,2.
 
-### <a name="on-premises-management-console---export-alerts"></a>On-premises beheer console-waarschuwingen exporteren
+### <a name="on-premises-management-console---export-alerts-public-preview"></a>On-premises beheer console-waarschuwingen exporteren (open bare preview)
 
 Waarschuwings informatie kan nu worden geëxporteerd naar een CSV-bestand vanuit de on-premises beheer console. U kunt informatie over alle gedetecteerde waarschuwingen exporteren of informatie exporteren op basis van de gefilterde weer gave.
 
-Deze functie is beschikbaar op de on-premises beheer console met de release van versie 10,1.
+Deze functie is beschikbaar op de on-premises beheer console met de release van versie 10,2.
+
+### <a name="add-second-network-interface-to-on-premises-management-console-public-preview"></a>Een tweede netwerk interface toevoegen aan een on-premises beheer console (open bare preview)
+
+U kunt de beveiliging van uw implementatie nu verbeteren door een tweede netwerk interface toe te voegen aan uw on-premises beheer console. Met deze functie kan uw on-premises beheer zijn verbonden Sens oren op één beveiligd netwerk, terwijl uw gebruikers toegang hebben tot de on-premises beheer console via een tweede afzonderlijke netwerk interface.
+
+Deze functie is beschikbaar op de on-premises beheer console met de release van versie 10,2.
 ### <a name="device-builder---new-micro-agent-public-preview"></a>Apparaat Builder-nieuwe micro agent (open bare preview)
 
 Er is een nieuwe Device Builder-module beschikbaar. De module, die een micro agent wordt genoemd, biedt de volgende voor bereidingen:
@@ -48,7 +54,7 @@ Er is een nieuwe Device Builder-module beschikbaar. De module, die een micro age
 - **Security postuur Management** : de beveiligings-postuur van uw IOT-apparaten proactief controleren.
 - **Continue, realtime IOT/a-bedreigings detectie** : Detecteer bedreigingen zoals botnets, beveiligings pogingen, crypto-Miners en verdachte netwerk activiteit
 
-De afgeschafte documentatie over de beveiligings module wordt verplaatst naar de *op agents gebaseerde oplossing voor Device builders>klassieke* map.
+De afgeschafte documentatie voor Defender-IoT-micro-agent wordt verplaatst naar de *op agents gebaseerde oplossing voor apparaten bouwers>klassieke* map.
 
 Deze functieset is beschikbaar in de huidige open bare preview-Cloud versie.
 

@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: 77bd5e3b7a258ef83e5de4ec645ea70578fb9dfb
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 50fdab1fa8def1b4e3b9a9d59d3b2593e5526c65
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657088"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472037"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Een HPC-cache van Azure maken
 
@@ -59,7 +59,7 @@ Met Azure HPC cache kunt u beheren welke bestanden in de cache worden opgeslagen
 
 ## <a name="enable-azure-key-vault-encryption-optional"></a>Versleuteling van Azure Key Vault inschakelen (optioneel)
 
-Als uw cache deel uitmaakt van een regio die door de klant beheerde versleutelings sleutels ondersteunt, wordt de pagina **schijf versleutelings sleutels** weer gegeven tussen de tabbladen **cache** en **Tags** . Lees [regionale Beschik baarheid](hpc-cache-overview.md#region-availability) voor meer informatie over regio ondersteuning.
+De pagina **schijf versleutelings sleutels** wordt weer gegeven tussen de tabbladen **cache** en **Tags** .<!-- Read [Regional availability](hpc-cache-overview.md#region-availability) to learn more about region support. -->
 
 Als u de versleutelings sleutels wilt beheren die voor uw cache opslag worden gebruikt, geeft u uw Azure Key Vault informatie op de pagina **schijf versleutelings sleutels** . De sleutel kluis moet zich in dezelfde regio en in hetzelfde abonnement bevinden als de cache.
 
@@ -105,7 +105,7 @@ Wanneer het maken is voltooid, wordt er een melding weer gegeven met een koppeli
 [Azure cli instellen voor Azure HPC-cache](./az-cli-prerequisites.md).
 
 > [!NOTE]
-> De Azure CLI biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik de Azure Portal.
+> De Azure CLI biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik Azure Portal.
 
 Gebruik de opdracht [AZ HPC-cache Create](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-create) om een nieuwe Azure HPC-cache te maken.
 
@@ -208,7 +208,7 @@ Install-Module -Name Az.HPCCache
 ## <a name="create-the-cache-with-azure-powershell"></a>De cache maken met Azure PowerShell
 
 > [!NOTE]
-> Azure PowerShell biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik de Azure Portal.
+> Azure PowerShell biedt momenteel geen ondersteuning voor het maken van een cache met door de klant beheerde versleutelings sleutels. Gebruik Azure Portal.
 
 Gebruik de cmdlet [New-AzHpcCache](/powershell/module/az.hpccache/new-azhpccache) om een nieuwe Azure HPC-cache te maken.
 

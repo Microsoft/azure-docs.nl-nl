@@ -1,14 +1,14 @@
 ---
-title: Overzicht van de verbonden computer Windows-agent
+title: Overzicht van de verbonden machine agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 02/18/2021
+ms.date: 03/15/2021
 ms.topic: conceptual
-ms.openlocfilehash: ebd9412849b4a0b3081e892d7472e598ca6e8365
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 1fd863ccacc7768401e35254a98c7bb494b3d358
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101651090"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470486"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -90,9 +90,11 @@ De volgende versies van het Windows-en Linux-besturings systeem worden officieel
 
 ### <a name="required-permissions"></a>Vereiste machtigingen
 
-* Voor de onboarding van machines bent u lid van de rol **Azure Connected machine** .
+* Voor het onboarden van computers bent u lid van de rol **Azure Connected machine** of [Inzender](../../role-based-access-control/built-in-roles.md#contributor) in de resource groep.
 
-* Als u een machine wilt lezen, wijzigen en verwijderen, bent u lid van de **Azure Connected machine resource Administrator** -rol. 
+* Als u een machine wilt lezen, wijzigen en verwijderen, bent u lid van de rol **Azure Connected machine resource Administrator** in de resource groep.
+
+* Als u een resource groep in de vervolg keuzelijst wilt selecteren wanneer u de methode **script genereren** gebruikt, hebt u Mini maal lid van de rol [lezer](../../role-based-access-control/built-in-roles.md#reader) voor die resource groep.
 
 ### <a name="azure-subscription-and-service-limits"></a>Limieten voor het Azure-abonnement en de Azure-service
 
@@ -224,7 +226,7 @@ Na de installatie van de verbonden machine agent voor Windows, worden de volgend
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt.
 
-    |Name |Standaardwaarde |Beschrijving |
+    |Naam |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||
@@ -287,7 +289,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende w
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt. Deze variabelen worden ingesteld in `/lib/systemd/system.conf.d/azcmagent.conf` .
 
-    |Name |Standaardwaarde |Beschrijving |
+    |Naam |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||

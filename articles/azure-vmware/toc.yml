@@ -56,6 +56,8 @@
   items:
     - name: Host-quota aanvragen en Azure VMware-oplossing inschakelen
       href: enable-azure-vmware-solution.md
+    - name: EA-en CSP-abonnementen verplaatsen
+      href: move-ea-csp-subscriptions.md
     - name: Kosten besparen met een gereserveerde instantie
       href: reserved-instance.md
     - name: Migratie-evaluatie

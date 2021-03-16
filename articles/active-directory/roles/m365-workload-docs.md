@@ -14,16 +14,16 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 310dd82f9a5f7f98fbca720b48212b7963e25a63
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: f56f8ac42f0db3d2cd27453cd023a2e869b0cde0
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102551501"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466079"
 ---
 # <a name="roles-for-microsoft-365-services-in-azure-active-directory"></a>Rollen voor Microsoft 365 Services in Azure Active Directory
 
-Alle producten in Microsoft 365 kunnen worden beheerd met beheerders rollen in Azure Active Directory (Azure AD). Sommige producten bieden ook aanvullende rollen die specifiek zijn voor dat product. Zie de onderstaande tabel voor informatie over de rollen die door elk product worden ondersteund. Algemene discussies over overdrachts problemen zijn te vinden in het [plannen van rollen delegering in azure Active Directory](concept-delegation.md).
+Alle producten in Microsoft 365 kunnen worden beheerd met beheerders rollen in Azure Active Directory (Azure AD). Sommige producten bieden ook aanvullende rollen die specifiek zijn voor dat product. Zie de onderstaande tabel voor informatie over de rollen die door elk product worden ondersteund. Zie voor meer informatie over de planning van de functie beveiliging [privileged Access beveiligen voor hybride en Cloud implementaties in azure AD](security-planning.md).
 
 ## <a name="where-to-find-content"></a>Waar u inhoud kunt vinden
 

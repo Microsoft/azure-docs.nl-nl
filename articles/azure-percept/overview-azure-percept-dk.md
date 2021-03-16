@@ -7,16 +7,19 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: c93ecdc138e757f84e995a69a6c3d7f1b5460abe
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: ba960465ab0ca8d5124d5882e3578e61fee2cf14
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102179371"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490140"
 ---
 # <a name="azure-percept-dk-overview"></a>Overzicht van Azure percept DK
 
 Azure percept DK is een Edge AI en IoT Development Kit die is ontworpen voor het ontwikkelen van Vision-en audio AI-proef versies van concepten. In combi natie met [Azure percept Studio](./overview-azure-percept-studio.md) en [Azure percept-audio](./overview-azure-percept-audio.md)wordt het een krachtig maar eenvoudig te gebruiken platform voor het bouwen van Edge AI-oplossingen voor een breed scala aan Vision-of audio AI-toepassingen. Het is beschikbaar voor aankoop in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+
+> [!div class="nextstepaction"]
+> [Nu kopen](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
 
 :::image type="content" source="./media/overview-azure-percept-dk/dk-image.png" alt-text="Azure percept DK-apparaat.":::
 
@@ -52,4 +55,5 @@ Azure percept DK is een Edge AI en IoT Development Kit die is ontworpen voor het
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bestel een Azure percept DK in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+> [!div class="nextstepaction"]
+> [Een Azure percept DK kopen via de online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270)

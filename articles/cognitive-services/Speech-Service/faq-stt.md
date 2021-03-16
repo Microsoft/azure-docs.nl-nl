@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/01/2021
 ms.author: panosper
-ms.openlocfilehash: 1ebba3231a7b3a86b98bcc14d1257412d1557ff3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bcb4408df08f3854b067c8b805b78433a3d5075c
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101738188"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491245"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
@@ -57,7 +57,7 @@ De overige resultaten zijn waarschijnlijk erger en er zijn mogelijk geen volledi
 
 **V: Waarom zijn er verschillende basis modellen?**
 
-**A**: u kunt kiezen uit meer dan één basis model in de speech-service. Elke model naam bevat de datum waarop deze is toegevoegd. Wanneer u begint met het trainen van een aangepast model, kunt u het meest recente model gebruiken om de beste nauw keurigheid te bereiken. Oudere basis modellen zijn nog steeds beschikbaar wanneer een nieuw model beschikbaar wordt gemaakt. U kunt door gaan met het model dat u hebt gebruikt totdat het is buiten gebruik gesteld (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)). U wordt nog steeds geadviseerd om over te scha kelen naar het meest recente basis model voor betere nauw keurigheid.
+**A**: u kunt kiezen uit meer dan één basis model in de speech-service. Elke model naam bevat de datum waarop deze is toegevoegd. Wanneer u begint met het trainen van een aangepast model, kunt u het meest recente model gebruiken om de beste nauw keurigheid te bereiken. Oudere basis modellen zijn nog steeds beschikbaar wanneer een nieuw model beschikbaar wordt gemaakt. U kunt door gaan met het model dat u hebt gebruikt totdat het is buiten gebruik gesteld (Zie [model en levenscyclus van het eind punt](./how-to-custom-speech-model-and-endpoint-lifecycle.md)). U wordt nog steeds geadviseerd om over te scha kelen naar het meest recente basis model voor betere nauw keurigheid.
 
 **V: kan ik mijn bestaande model (model stacking) bijwerken?**
 
@@ -71,7 +71,7 @@ De oude gegevensset en de nieuwe gegevensset moeten worden gecombineerd in één
 
 Als u een model hebt aangepast en geïmplementeerd, blijft die implementatie. U kunt het geïmplementeerde model buiten gebruik stellen, opnieuw aanpassen met de nieuwere versie van het basis model en opnieuw implementeren voor een betere nauw keurigheid.
 
-Basis modellen en aangepaste modellen worden na enige tijd buiten gebruik gesteld (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)).
+Basis modellen en aangepaste modellen worden na enige tijd buiten gebruik gesteld (Zie [model en levenscyclus van het eind punt](./how-to-custom-speech-model-and-endpoint-lifecycle.md)).
 
 **V: kan ik mijn model downloaden en lokaal uitvoeren?**
 

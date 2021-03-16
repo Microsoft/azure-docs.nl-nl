@@ -1,6 +1,6 @@
 ---
-title: Beveiligings module voor Azure RTO'S configureren en aanpassen
-description: Meer informatie over het configureren en aanpassen van uw beveiligings module voor Azure RTO'S.
+title: Defender-IoT-micro agent voor Azure RTO'S configureren en aanpassen
+description: Meer informatie over het configureren en aanpassen van uw Defender-IoT-micro agent voor Azure RTO'S.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/07/2021
 ms.author: shhazam
-ms.openlocfilehash: 524286fa7a923485d0085fb63f3ef9669db1a4d5
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 874a783763882a28f2fe7078e3a264d09107808a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449812"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103495093"
 ---
-# <a name="configure-and-customize-defender-iot-micro-agent-for-azure-rtos-ga"></a>Defender-IoT-micro agent voor Azure RTO'S GA configureren en aanpassen
+# <a name="configure-and-customize-defender-iot-micro-agent-for-azure-rtos-preview"></a>Defender-IoT-micro agent voor Azure RTO'S (preview) configureren en aanpassen
 
 In dit artikel wordt beschreven hoe u de Defender-IoT-micro-agent voor uw Azure RTO'S-apparaat kunt configureren om te voldoen aan uw netwerk, band breedte en geheugen vereisten.
 
@@ -89,5 +89,6 @@ U kunt Log Analytics inschakelen en configureren om de gebeurtenissen en activit
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Beveiligings module voor Azure RTO'S- [beveiligings waarschuwingen en-aanbevelingen](concept-rtos-security-alerts-recommendations.md) controleren en aanpassen
-- Raadpleeg indien nodig de [beveiligings module voor de Azure rto's-API](azure-rtos-security-module-api.md) .
+
+- Defender-IoT-micro agent voor Azure RTO'S- [beveiligings waarschuwingen en-aanbevelingen](concept-rtos-security-alerts-recommendations.md) controleren en aanpassen
+- Raadpleeg indien nodig de [Defender-IOT-micro agent voor Azure rto's-API](azure-rtos-security-module-api.md) .

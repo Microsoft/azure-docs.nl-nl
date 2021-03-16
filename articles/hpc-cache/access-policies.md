@@ -4,26 +4,26 @@ description: Aangepaste toegangs beleid maken en Toep assen om de toegang van cl
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 12/28/2020
+ms.date: 03/11/2021
 ms.author: v-erkel
-ms.openlocfilehash: 795b194eb7cd31e633128c22ddffe808b32e07da
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: eb9e71cc8ec463077e3b12b8738203a4945a2eab
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802406"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471778"
 ---
-# <a name="use-client-access-policies"></a>Beleid voor client toegang gebruiken
+# <a name="control-client-access"></a>Client toegang beheren
 
 In dit artikel wordt uitgelegd hoe u aangepaste beleids regels voor client toegang maakt en toepast voor uw opslag doelen.
 
-Beleids regels voor client toegang bepalen hoe clients verbinding kunnen maken met de opslag doel-exports. U kunt items zoals hoofdmap-squash en lezen/schrijven-toegang op de client-host of het netwerk niveau beheren.
+Beleids regels voor client toegang bepalen hoe clients verbinding mogen maken met de opslag doel-exports. U kunt items zoals hoofdmap-squash en lezen/schrijven-toegang op de client-host of het netwerk niveau beheren.
 
 Toegangs beleid wordt toegepast op een pad naar een naam ruimte, wat betekent dat u verschillende toegangs beleid voor twee verschillende export bewerkingen kunt gebruiken op een NFS-opslag systeem.
 
 Deze functie is voor werk stromen waarvoor u wilt bepalen hoe verschillende groepen clients toegang hebben tot de opslag doelen.
 
-Als u geen nauw keurige controle over de toegang tot opslag doelen nodig hebt, kunt u het standaard beleid gebruiken of u kunt het standaard beleid aanpassen met extra regels.
+Als u geen nauw keurige controle over de toegang tot opslag doelen nodig hebt, kunt u het standaard beleid gebruiken of u kunt het standaard beleid aanpassen met extra regels. Als u bijvoorbeeld de basis-Squash wilt inschakelen voor alle clients die verbinding maken via de cache, kunt u het beleid met de naam **standaard** bewerken om de instelling basis Squash toe te voegen.
 
 ## <a name="create-a-client-access-policy"></a>Een beleid voor client toegang maken
 
@@ -81,15 +81,21 @@ Schakel dit selectie vakje in om de opgegeven clients toe te staan om de submapp
 
 Kies of u de hoofdmap Squash wilt instellen voor clients die overeenkomen met deze regel.
 
-Met deze waarde kunt u de basis-squash op het opslag niveau van de uitvoer toestaan. U kunt [de root-squash ook instellen op het niveau van de cache](configuration.md#configure-root-squash).
+Met deze instelling bepaalt u hoe Azure HPC cache aanvragen van de hoofd gebruiker op client computers verwerkt. Wanneer root Squash is ingeschakeld, worden hoofd gebruikers van een client automatisch toegewezen aan een niet-geautoriseerde gebruiker wanneer ze aanvragen verzenden via de Azure HPC-cache. Ook wordt voor komen dat client aanvragen gebruikmaken van Set-UID permissions-machtigingen.
 
-Als u root Squash inschakelt, moet u ook de waarde voor de anonieme ID-gebruiker instellen op een van de volgende opties:
+Als hoofdmap Squash is uitgeschakeld, wordt een aanvraag van de client root user (UID 0) door gegeven aan een back-end-NFS-opslag systeem als root. Deze configuratie kan ongepaste bestands toegang toestaan.
 
-* **-2** (niemand)
-* **65534** (niemand)
-* **-1** (geen toegang)
-* **65535** (geen toegang)
+Het instellen van de root-Squash voor client aanvragen kan helpen de vereiste instelling te compenseren ``no_root_squash`` op NAS-systemen die worden gebruikt als opslag doelen. (Lees meer over de [vereisten voor NFS-opslag doel](hpc-cache-prerequisites.md#nfs-storage-requirements).) Het kan ook de beveiliging verbeteren wanneer deze wordt gebruikt met Azure Blob Storage-doelen.
+
+Als u root Squash inschakelt, moet u ook de waarde voor de anonieme ID-gebruiker instellen. De portal accepteert gehele waarden tussen 0 en 4294967295. (De oude waarden-2 en-1 worden ondersteund voor compatibiliteit met eerdere versies, maar niet aanbevolen voor nieuwe configuraties.)
+
+Deze waarden worden toegewezen aan specifieke gebruikers waarden:
+
+* **-2** of **65534** (niemand)
+* **-1** of **65535** (geen toegang)
 * **0** (niet-gemachtigd hoofd niveau)
+
+Uw opslag systeem heeft mogelijk andere waarden met speciale betekenissen.
 
 ## <a name="update-access-policies"></a>Toegangs beleid bijwerken
 

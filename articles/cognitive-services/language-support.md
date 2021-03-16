@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 8d518d540e50d96486fa98eea3c3267685776668
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: c2c2b57ebf4e2a5cd96efce49da87cf42929e96c
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101706279"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472061"
 ---
 # <a name="natural-language-support-for-azure-cognitive-services"></a>Ondersteuning voor natuurlijke taal voor Azure Cognitive Services
 
@@ -48,16 +48,6 @@ Deze Cognitive Services zijn taal neutraal en hebben geen beperkingen op basis v
 * [Speech-Service: spraak naar tekst](./speech-service/language-support.md#speech-to-text)
 * [Speech-Service: tekst-naar-spraak](./speech-service/language-support.md#text-to-speech)
 * [Speech-Service: spraak omzetting](./speech-service/language-support.md#speech-translation)
-
-## <a name="search"></a>Search
-
-* [Bing Aangepaste zoekopdrachten](./bing-custom-search/language-support.md)
-* [Bing Afbeeldingen zoeken](./bing-image-search/language-support.md)
-* [Bing Nieuws zoeken](./bing-news-search/language-support.md)
-* [Bing Automatische suggesties](./bing-autosuggest/language-support.md)
-* [Bing Spellingcontrole](./bing-spell-check/language-support.md)
-* [Bing Visuele zoekopdrachten](./bing-visual-search/language-support.md)
-* [Bing Webzoekopdrachten](./bing-web-search/language-support.md)
 
 ## <a name="decision"></a>Besluit
 

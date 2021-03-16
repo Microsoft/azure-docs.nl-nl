@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 01/19/2021
 ms.author: ranku
-ms.openlocfilehash: 7518f5e2984029c087eec1e6697f3237410bda4b
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 2a34cfee57ecc1870c420c4c0f3c9261aa02f192
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103018320"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490922"
 ---
 # <a name="how-to-convert-data-to-fhir-preview"></a>Gegevens converteren naar FHIR (preview-versie)
 
@@ -125,6 +125,12 @@ Ken AcrPull-rol toe aan uw Azure-API voor FHIR service-exemplaar.
 
 ### <a name="register-the-acr-servers-in-azure-api-for-fhir"></a>De ACR-servers registreren in azure API voor FHIR
 
+U kunt de ACR-server registreren met behulp van de Azure Portal of met behulp van CLI.
+
+#### <a name="registering-the-acr-server-using-azure-portal"></a>De ACR-server registreren met behulp van Azure Portal
+Navigeer naar de Blade _artefacten_ onder _gegevens transformatie_ in uw Azure API voor FHIR-instantie. U ziet de lijst met momenteel geregistreerde ACR-servers. Klik op _toevoegen_ en selecteer de register server in de vervolg keuzelijst. U moet klikken op _Opslaan_ om de registratie van kracht te laten worden. Het kan een paar minuten duren om de wijziging toe te passen en uw exemplaar opnieuw op te starten.
+
+#### <a name="registering-the-acr-server-using-cli"></a>De ACR-server registreren met CLI
 U kunt Maxi maal twintig ACR-servers registreren in de Azure API voor FHIR.
 
 Installeer de healthcareapis CLI van Azure PowerShell indien nodig:
@@ -135,13 +141,13 @@ az extension add -n healthcareapis
 
 Registreer de ACR-servers voor de Azure-API voor FHIR volgens de onderstaande voor beelden:
 
-#### <a name="register-a-single-acr-server"></a>Eén ACR-server registreren
+##### <a name="register-a-single-acr-server"></a>Eén ACR-server registreren
 
 ```powershell
 az healthcareapis acr add --login-servers "fhiracr2021.azurecr.io" --resource-group fhir-test --resource-name fhirtest2021
 ```
 
-#### <a name="register-multiple-acr-servers"></a>Meerdere ACR-servers registreren
+##### <a name="register-multiple-acr-servers"></a>Meerdere ACR-servers registreren
 
 ```powershell
 az healthcareapis acr add --login-servers "fhiracr2021.azurecr.io fhiracr2020.azurecr.io" --resource-group fhir-test --resource-name fhirtest2021
@@ -152,8 +158,3 @@ az healthcareapis acr add --login-servers "fhiracr2021.azurecr.io fhiracr2020.az
 Ga naar de $convert-data-API die uw sjabloon verwijzing opgeeft in de para meter templateCollectionReference.
 
 `<RegistryServer>/<imageName>@<imageDigest>`
-
-## <a name="known-issues-and-workarounds"></a>Bekende problemen en tijdelijke oplossingen
-
-- Sommige standaard sjabloon bestanden bevatten UTF-8-stuk lijst. Als gevolg hiervan bevatten de gegenereerde ID-waarden een stuk lijst teken. Dit kan een probleem met de FHIR-server veroorzaken. De tijdelijke oplossing is om micro soft-sjablonen te halen met behulp van de VS code-extensie en deze te pushen naar uw eigen ACR nadat u de stuk lijst tekens hebt verwijderd van _ID/_procedure. liquide_, _ID/_bewezen._ liquide, en _ID/_Immunization. liquide_.
-

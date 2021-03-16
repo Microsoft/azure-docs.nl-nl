@@ -4,14 +4,14 @@ description: Doel doelen van de Azure HPC-cache bewerken
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 03/10/2021
 ms.author: v-erkel
-ms.openlocfilehash: f97ff1c20b7edbf24e5a2c58e22097f88883ae4f
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 78010ef2d93b23a12fc7f3e988a536b4993b4dd4
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102204028"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471858"
 ---
 # <a name="edit-storage-targets"></a>Opslagdoelen bewerken
 
@@ -19,13 +19,16 @@ U kunt opslag doelen verwijderen of wijzigen met de Azure Portal of door gebruik
 
 Afhankelijk van het type opslag kunt u deze opslag doel waarden wijzigen:
 
-* Voor Blob Storage-doelen kunt u het pad naar de naam ruimte wijzigen.
+* Voor Blob Storage-doelen kunt u het pad naar de naam ruimte en het toegangs beleid wijzigen.
 
 * Voor NFS-opslag doelen kunt u deze waarden wijzigen:
 
   * Naam ruimte paden
+  * Toegangsbeleid
   * De export-of export submap van de opslag die is gekoppeld aan een naam ruimte-pad
   * Gebruiks model
+
+* Voor ADLS-NFS-opslag doelen kunt u het pad naar de naam ruimte, het toegangs beleid en het gebruiks model wijzigen.
 
 U kunt de naam, het type of het back-end-opslag systeem (BLOB-container of NBS-hostnaam/IP-adres) van een opslag doel niet bewerken. Als u deze eigenschappen wilt wijzigen, verwijdert u het opslag doel en maakt u een vervanging met de nieuwe waarde.
 
@@ -94,10 +97,13 @@ Als u de naam ruimte van een Blob Storage-doel wilt wijzigen in de Azure CLI, ge
 
 Voor NFS-opslag doelen kunt u virtuele naam ruimte paden wijzigen of toevoegen, de NFS-export-of-submap waarden wijzigen waarnaar een naam ruimte verwijst en het gebruiks model wijzigen.
 
+Opslag doelen in caches met sommige typen aangepaste DNS-instellingen hebben ook een besturings element voor het vernieuwen van hun IP-adressen. (Dit soort configuratie is zeldzaam.)
+
 Meer informatie vindt u hieronder:
 
-* De waarden van de [geaggregeerde naam](#change-aggregated-namespace-values) ruimte (virtuele naam ruimte, export en export) wijzigen
+* De waarden van de [geaggregeerde naam](#change-aggregated-namespace-values) ruimte (virtuele naam ruimte, het toegangs beleid, de export en de export submap) wijzigen
 * [Het gebruiks model wijzigen](#change-the-usage-model)
+* [DNS vernieuwen](#update-ip-address-custom-dns-configurations-only)
 
 ### <a name="change-aggregated-namespace-values"></a>Samengevoegde waarden van naam ruimte wijzigen
 
@@ -112,7 +118,7 @@ Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache om naam ruimte waarden
 ![scherm afbeelding van de pagina Portal-naam ruimte met de pagina NFS-update openen aan de rechter kant](media/update-namespace-nfs.png)
 
 1. Klik op de naam van het pad dat u wilt wijzigen.
-1. Gebruik het bewerkings venster om nieuwe waarden voor het virtuele pad, de export of de subdirectory te typen.
+1. Gebruik het bewerkings venster om nieuwe waarden voor het virtuele pad, exporteren of submappen te typen, of om een ander toegangs beleid te selecteren.
 1. Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of op **Annuleren** om de wijzigingen te negeren.
 
 ### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
@@ -174,6 +180,37 @@ Als u de namen van de gebruiks modellen wilt controleren, gebruikt u de opdracht
 Als de cache is gestopt of niet in orde is, wordt de update toegepast nadat de cache in orde is.
 
 ---
+
+### <a name="update-ip-address-custom-dns-configurations-only"></a>IP-adres bijwerken (alleen aangepaste DNS-configuraties)
+
+Als uw cache een niet-standaard DNS-configuratie gebruikt, is het mogelijk dat het IP-adres van uw NFS-opslag doel wordt gewijzigd vanwege wijzigingen in de back-end-DNS. Als uw DNS-server het IP-adres van het back-end-opslag systeem wijzigt, kan de Azure HPC-cache de toegang tot het opslag systeem verliezen.
+
+In het ideale geval moet u samen werken met de Manager van het aangepaste DNS-systeem van uw cache voor het plannen van updates, omdat deze wijzigingen opslag niet beschikbaar maken.
+
+Als u het IP-adres van de DNS-naam van het opslag doel moet bijwerken, is er een knop in de lijst opslag doelen. Klik op **DNS vernieuwen** om een query op de aangepaste DNS-server uit te zoeken voor een nieuw IP-adres.
+
+![Scherm opname van de lijst met opslag doelen. Voor één opslag doel, de '... ' in de kolom uiterst rechts is geopend en er worden twee opties weer gegeven: verwijderen en DNS vernieuwen.](media/refresh-dns.png)
+
+Als de update is geslaagd, neemt deze minder dan twee minuten in beslag. U kunt slechts één opslag doel tegelijk vernieuwen. wacht tot de vorige bewerking is voltooid voordat u een andere uitvoert.
+
+## <a name="update-an-adls-nfs-storage-target-preview"></a>Een ADLS-NFS-opslag doel bijwerken (PREVIEW)
+
+Net als bij NFS-doelen kunt u het pad van de naam ruimte en het gebruiks model voor ADLS-NFS-opslag doelen wijzigen.
+
+### <a name="change-an-adls-nfs-namespace-path"></a>Een pad naar de ADLS-NFS-naam ruimte wijzigen
+
+Gebruik de **naam ruimte** pagina voor uw Azure HPC-cache om naam ruimte waarden bij te werken. Deze pagina wordt uitgebreid beschreven in het artikel [de geaggregeerde naam ruimte instellen](add-namespace-paths.md).
+
+![scherm afbeelding van de pagina Portal-naam ruimte met een pagina ADS-NFS-update openen aan de rechter kant](media/update-namespace-adls.png)
+
+1. Klik op de naam van het pad dat u wilt wijzigen.
+1. Gebruik het bewerkings venster om het nieuwe virtuele pad te typen of het toegangs beleid bij te werken.
+1. Nadat u wijzigingen hebt aangebracht, klikt u op **OK** om het opslag doel bij te werken of op **Annuleren** om de wijzigingen te negeren.
+
+### <a name="change-adls-nfs-usage-models"></a>ADLS-NFS-gebruiks modellen wijzigen
+
+De configuratie voor ADLS-NFS-gebruiks modellen is identiek aan de selectie van het NFS-gebruiks model. Lees de portal instructies in het [gebruiks model wijzigen](#change-the-usage-model) in de sectie NFS hierboven. Aanvullende hulpprogram ma's voor het bijwerken van ADLS-NFS-opslag doelen zijn in ontwikkeling.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

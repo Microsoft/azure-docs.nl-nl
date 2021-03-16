@@ -13,15 +13,15 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 07/24/2019
+ms.date: 03/15/2021
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 608401858c0119d281ab6ff46156fc7bdccd9d84
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a51f874d09aebfcb2c0b73e0b484f68042d1bb6d
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101675346"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496198"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-file-share-in-azure"></a>Een SAP ASCS/SCS-exemplaar op een Windows-failovercluster clusteren met behulp van een bestands share in azure
 
@@ -147,10 +147,14 @@ Als u een scale-out bestands share wilt gebruiken, moet uw systeem voldoen aan d
 
 ### <a name="configure-sap-ascsscs-instances-and-a-scale-out-file-share-in-two-clusters"></a>SAP-ASCS/SCS-instanties en een scale-out bestands share in twee clusters configureren
 
-U kunt SAP ASCS/SCS-exemplaren in één cluster implementeren met hun eigen SAP- \<SID\> cluster functie. In dit geval configureert u de scale-out bestands share op een ander cluster, met een andere cluster functie.
+U moet de SAP ASCS/SCS-exemplaren in een afzonderlijk cluster implementeren met hun eigen SAP- \<SID\> cluster functie. In dit geval configureert u de scale-out bestands share op een ander cluster, met een andere cluster functie.
+
 
 > [!IMPORTANT]
->In dit scenario is het SAP ASCS/SCS-exemplaar geconfigureerd voor toegang tot de SAP Global host met behulp van UNC Path \\ \\ &lt; SAP Global host &gt; \sapmnt \\ &lt; sid &gt; \SYS\.
+> Het installatie programma moet voldoen aan de volgende vereiste: de SAP ASCS/SCS-instanties en de SOFS-share moeten in afzonderlijke clusters worden geïmplementeerd.    
+>
+> [!IMPORTANT] 
+> In dit scenario is het SAP ASCS/SCS-exemplaar geconfigureerd voor toegang tot de SAP Global host met behulp van UNC Path \\ \\ &lt; SAP Global host &gt; \sapmnt \\ &lt; sid &gt; \SYS\.
 >
 
 ![Afbeelding 5: SAP ASCS/SCS instance en een scale-out bestands share geïmplementeerd in twee clusters][sap-ha-guide-figure-8007]

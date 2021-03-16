@@ -8,22 +8,22 @@ ms.author: shhazam
 ms.date: 1/21/2021
 ms.service: azure
 ms.topic: how-to
-ms.openlocfilehash: 2779a73d3a5f77e3a3b144309baf6d2788565443
-ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
+ms.openlocfilehash: a33e7ff230292d4ceb14610e3cf00935dc1a67a0
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99809773"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493166"
 ---
 # <a name="feature-support-and-retirement"></a>Functie ondersteuning en buiten gebruik stellen
 
 In dit artikel worden Azure Defender voor IoT-functies en ondersteuning voor verschillende mogelijkheden in Defender voor IoT beschreven.
 
-## <a name="defender-for-iot-c-c-and-edge-security-module-deprecation"></a>Defender voor IoT C, C# en Edge Security module afschaffing
+## <a name="defender-for-iot-c-c-and-edge-defender-iot-micro-agent-deprecation"></a>Defender voor IoT C, C# en Edge Defender-IoT-micro-agent-afschaffing
 
-De nieuwe micro soft agent vervangt de huidige Security module C, C# en Edge.  
+De nieuwe micro soft agent vervangt de huidige Defender-IoT-micro-agent van C, C# en Edge.  
 
-De nieuwe micro soft agent is gebaseerd op de kennis en ervaring die is verzameld door het afsluiten van de Security module ontwikkeling, klanten en partners feedback met vier belang rijke verbeteringen: 
+De nieuwe micro soft agent is gebaseerd op de kennis en ervaring die is verzameld door het afsluiten van Defender-IoT-micro agent-ontwikkeling, klanten en partners feedback met vier belang rijke verbeteringen: 
 
 - **Diepte beveiligings waarde**: de nieuwe agent wordt uitgevoerd op het niveau van de host, waardoor meer inzicht wordt geboden in de onderliggende bewerkingen van het apparaat en voor een betere beveiligings dekking.
 

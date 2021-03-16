@@ -132,6 +132,8 @@
       href: concepts/known-issues.md
 - name: Voorbeelden
   items:
+    - name: Overzicht
+      href: samples/overview.md
     - name: Hero-voorbeeld van groepsgesprek
       href: samples/calling-hero-sample.md
     - name: Hero-voorbeeld van groeps-chat

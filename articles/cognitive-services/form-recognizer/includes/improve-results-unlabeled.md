@@ -1,16 +1,16 @@
 ---
-author: PatrickFarley
+author: laujan
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/12/2019
-ms.author: pafarley
-ms.openlocfilehash: f0761847c3677b324ef16c5987eb9a1561dbcbe0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.author: lajanuar
+ms.openlocfilehash: 89b035397ea2050ae7e61f2a19310b6a7fb4192c
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "75379285"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467199"
 ---
 Controleer de `"confidence"`-waarden voor elk sleutel-/waarderesultaat onder het knooppunt `"pageResults"`. U moet ook de betrouwbaarheidsscores in het knooppunt `"readResults"` bekijken; deze komen overeen met de bewerking Tekst lezen. Het vertrouwen van de leesresultaten heeft geen invloed op het vertrouwen van de resultaten van de sleutel/waarde-extractie, dus u moet beide controleren.
 * Als de betrouwbaarheidsscores voor de leesbewerking laag zijn, probeert u de kwaliteit van uw invoerdocumenten te verbeteren (zie [Invoervereisten](../overview.md#input-requirements)).

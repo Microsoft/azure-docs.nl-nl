@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/09/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: d983369db3fbd03c41c248439a5c1aabec14ea55
-ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
+ms.openlocfilehash: f26cea9442aa3fbbe7f475cc5d16bea792b83fb3
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100535362"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493982"
 ---
 # <a name="defender-for-iot-glossary"></a>Defender for IoT-woordenlijst
 
@@ -61,7 +61,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 | **Inventaris van apparaten-sensor** | De apparaat-inventaris toont een uitgebreid scala aan kenmerken van apparaten, gedetecteerd door Defender voor IoT. Opties zijn beschikbaar voor:<br /><br />-Weer gegeven informatie filteren.<br /><br />-Deze gegevens exporteren naar een CSV-bestand.<br /><br />-Details van het Windows-REGI ster importeren. | **[Groep](#g)** <br /><br />**[Inventaris van apparaten: on-premises beheer console](#d)** |
 | **Inventaris van apparaten: on-premises beheer console** | Apparaatgegevens van verbonden Sens oren kunnen worden bekeken vanuit de on-premises beheer console in de inventaris van het apparaat. Dit geeft gebruikers van de on-premises beheer console een uitgebreid overzicht van alle netwerk gegevens. | **[Inventaris van apparaten-sensor](#d) <br /> <br /> [Apparaat-inventaris-gegevens integrator](#d)** |
 | **Apparaat-inventaris-gegevens integrator** | Met de mogelijkheden voor gegevens integratie van de on-premises beheer console kunt u de gegevens in de inventaris van het apparaat verbeteren met informatie van andere bedrijfs resources. Voor beelden van resources zijn CMDB, DNS, firewalls en Web-Api's. | **[Inventaris van apparaten: on-premises beheer console](#d)** |
-| **Apparaat apparaatdubbels**`(DB)` | Apparaatdubbels zijn JSON-documenten die status informatie van een apparaat opslaan, inclusief meta gegevens, configuraties en voor waarden. | [Module dubbele](#m) <br /> <br />[Beveiligings module dubbele](#s) |
+| **Apparaat apparaatdubbels**`(DB)` | Apparaatdubbels zijn JSON-documenten die status informatie van een apparaat opslaan, inclusief meta gegevens, configuraties en voor waarden. | [Module dubbele](#m) <br /> <br />[Defender-IoT-micro agent dubbele](#s) |
 
 ## <a name="e"></a>E
 
@@ -112,7 +112,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 | Termijn | Beschrijving | Lees meer |
 |--|--|--|
 | **Micro agent**`(DB)` | Biedt uitgebreide beveiligings mogelijkheden voor IoT-apparaten, waaronder beveiligings-postuur en detectie van bedreigingen. | |
-| **Module dubbele**`(DB)` | Moduledubbels zijn JSON-documenten waarin statusinformatie van een module wordt opgeslagen, zoals metagegevens, configuraties en voorwaarden. | [Dubbel apparaat](#d) <br /> <br />[Beveiligings module dubbele](#s) |
+| **Module dubbele**`(DB)` | Moduledubbels zijn JSON-documenten waarin statusinformatie van een module wordt opgeslagen, zoals metagegevens, configuraties en voorwaarden. | [Dubbel apparaat](#d) <br /> <br />[Defender-IoT-micro agent dubbele](#s) |
 | **Waarschuwings gebeurtenis dempen** | Geef Defender voor IoT de activiteit continu negeren met identieke apparaten en vergelijkbaar verkeer. | **[](#glossary-a) <br /> Waarschuwing <br /> [Uitsluitings regel](#e) <br /> <br /> [Waarschuwings gebeurtenis bevestigen](#glossary-a) <br /> <br /> [Waarschuwings gebeurtenis leren](#l)** |
 
 ## <a name="n"></a>N
@@ -148,7 +148,7 @@ Deze verklarende woorden lijst bevat een korte beschrijving van belang rijke ter
 | Termijn | Beschrijving | Lees meer |
 |--|--|--|
 | **Beveiligings waarschuwing** | Waarschuwingen die betrekking hebben op beveiligings problemen, zoals buitensporige SMB-aanmeldingen in pogingen of detecties van malware. | **[](#glossary-a) <br /> Waarschuwing <br /> [Operationele waarschuwing](#o)** |
-| **Beveiligings module dubbele**`(DB)` | De beveiligings module bevat alle informatie die relevant is voor de beveiliging van apparaten, voor elk specifiek apparaat in uw oplossing. | [Dubbel apparaat](#d) <br /> <br />[Module dubbele](#m)  |
+| **Defender-IOT-micro agent dubbele**`(DB)` | De Defender-IoT-micro agent is van toepassing op alle informatie die relevant is voor de beveiliging van apparaten, voor elk specifiek apparaat in uw oplossing. | [Dubbel apparaat](#d) <br /> <br />[Module dubbele](#m)  |
 | **Selectief zoeken** | Defender voor IoT bewaakt passief inspecteert dit en verkeer en detecteert relevante informatie over apparaten, hun kenmerken, hun gedrag en meer. In bepaalde gevallen is bepaalde informatie mogelijk niet zichtbaar in passieve netwerk analyses.<br /><br />Als dit gebeurt, kunt u de veilige, granulaire probing-hulpprogram ma's in Defender voor IoT gebruiken om belang rijke informatie te ontdekken over voorheen onbereikbare apparaten. | - |
 | **Sensoren** | De fysieke of virtuele machine waarop het Defender voor IoT-platform is geïnstalleerd. | **[On-premises beheer console](#o)** |
 | **Site** | Een locatie die een Factory of andere entiteit is. De site moet een zone of meerdere zones bevatten waarin een sensor is geïnstalleerd. | **[Zone](#z)** |

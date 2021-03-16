@@ -7,12 +7,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 09/10/2020
-ms.openlocfilehash: b601a3586cfa971b2e8337a914f4e10bb0178ba0
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: f62b4c354ffa90bf1a03651fccf8780074344e46
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014243"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466397"
 ---
 # <a name="use-azure-devops-to-create-a-cicd-pipeline-for-a-stream-analytics-job"></a>Azure DevOps gebruiken om een CI/CD-pijp lijn te maken voor een Stream Analytics-taak
 
@@ -55,6 +55,22 @@ In deze sectie leert u hoe u een build-pijp lijn maakt. U kunt dit voor beeld va
    ```
 
    :::image type="content" source="media/set-up-cicd-pipeline/npm-config.png" alt-text="Configuraties voor NPM-taak invoeren":::
+
+Gebruik de volgende stappen als u een gehoste Linux-agent moet gebruiken:
+1.  De **agent specificatie** selecteren
+   
+    :::image type="content" source="media/set-up-cicd-pipeline/select-linux-agent.png" alt-text="Scherm opname van het selecteren van de agent specificatie.":::
+
+2.  Selecteer op de pagina **taken** het plus teken naast **Agent taak 1**. Voer de *opdracht regel* in in de taak zoeken en selecteer **opdracht regel**.
+   
+    :::image type="content" source="media/set-up-cicd-pipeline/cmd-search.png" alt-text="Scherm opname van de opdracht regel voor zoeken. ":::
+
+3.  Geef de taak een **weergave naam**. Voer de volgende opdracht in het **script** in. Wijzig de overige standaard opties.
+
+      ```bash
+      sudo npm install -g azure-streamanalytics-cicd --unsafe-perm=true --allow-root
+      ```
+      :::image type="content" source="media/set-up-cicd-pipeline/cmd-scripts.png" alt-text="Scherm opname van het invoeren van een script voor de cmd-taak.":::
 
 ## <a name="add-a-build-task"></a>Een bouw taak toevoegen
 
@@ -169,7 +185,7 @@ Open een webbrowser en navigeer naar uw Azure Stream Analytics Visual Studio cod
    |Resourcegroep| Kies een naam voor de test resource groep die uw Stream Analytics-taak bevat.|
    |Locatie|Kies de locatie van de test resource groep.|
    |Sjabloonlocatie| Gekoppeld artefact|
-   |Template| $ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.jsop |
+   |Sjabloon| $ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.jsop |
    |Sjabloonparameters|$ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.parameters.jsop |
    |Sjabloonparameters overschrijven|-<arm_template_parameter> ' uw waarde '. U kunt de para meters definiëren met behulp van **variabelen**.|
    |Implementatie modus|Incrementeel|
@@ -186,7 +202,7 @@ Open een webbrowser en navigeer naar uw Azure Stream Analytics Visual Studio cod
    |Resourcegroep| Kies een naam voor de productie resource groep die uw Stream Analytics-taak bevat.|
    |Locatie|Kies de locatie van de productie resource groep.|
    |Sjabloonlocatie| *Gekoppeld artefact*|
-   |Template| $ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.jsop |
+   |Sjabloon| $ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.jsop |
    |Sjabloonparameters|$ (System. DefaultWorkingDirectory)/_azure-streamanalytics-cicd-demo-CI-implementeren/drop/myASAProject.JobTemplate.parameters.jsop |
    |Sjabloonparameters overschrijven|-<arm_template_parameter> ' uw waarde '|
    |Implementatie modus|Incrementeel|

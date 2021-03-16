@@ -1,5 +1,5 @@
 ---
-title: Container plaatsen & ASP.NET-toepassingen migreren naar Azure Kubernetes
+title: Azure-app container opslag ASP.NET; Container opslag en migratie van ASP.NET-toepassingen naar Azure Kubernetes.
 description: 'Zelf studie: container plaatsen & ASP.NET-toepassingen migreren naar Azure Kubernetes service.'
 services: ''
 author: rahugup
@@ -7,12 +7,12 @@ manager: bsiva
 ms.topic: tutorial
 ms.date: 3/2/2021
 ms.author: rahugup
-ms.openlocfilehash: 6be6db2048ac5e671d8ab988ac2e15c08e900193
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: 7c9b4032346e61eb3bfd21c0c4067e2364bc28af
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103233616"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466572"
 ---
 # <a name="containerize-aspnet-applications-and-migrate-to-azure-kubernetes-service"></a>Container plaatsen ASP.NET-toepassingen en migreren naar Azure Kubernetes service
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 2/26/2021
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 16425c1f15b78e2d0aaa7a8a1f55ff47a44d56dd
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: d155d0c4a18b254f66ff5fb58ea91dbee22d2c34
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103464665"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496606"
 ---
 # <a name="tutorial-create-an-azure-digital-twins-graph-using-the-azure-cli"></a>Zelf studie: een Azure Digital Apparaatdubbels-grafiek maken met behulp van de Azure CLI
 
@@ -64,7 +64,7 @@ U kunt beide waarden voor uw exemplaar ophalen in de uitvoer van de volgende Azu
 az dt show -n <ADT_instance_name>
 ```
 
-:::image type="content" source="media/tutorial-command-line/cli/instance-details.png" alt-text="Cloud Shell venster waarin de uitvoer van de opdracht AZ DT show wordt weer gegeven. Het veld hostnaam en abonnements-ID (onderdeel van het veld id) zijn gemarkeerd.":::
+:::image type="content" source="media/tutorial-command-line/cli/instance-details.png" alt-text="Scherm opname van Cloud Shell browser venster waarin de uitvoer van de opdracht AZ DT show wordt weer gegeven. Het veld hostnaam en abonnements-ID (onderdeel van het veld id) zijn gemarkeerd.":::
 
 ## <a name="model-a-physical-environment-with-dtdl"></a>Een fysieke omgeving modelleren met DTDL
 
@@ -87,7 +87,7 @@ Na het ontwerpen van modellen moet u deze uploaden naar uw Azure Digital Twins-i
 
 1. Als u modellen wilt toevoegen met behulp van Cloud Shell, moet u uw model bestanden uploaden naar de opslag van Cloud Shell, zodat de bestanden beschikbaar zijn wanneer u de Cloud Shell opdracht uitvoert die deze gebruikt. Als u dit wilt doen, selecteert u het pictogram bestanden uploaden/downloaden en kiest u uploaden.
 
-    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Cloud Shell venster met de selectie van het pictogram uploaden":::
+    :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Scherm opname van Cloud Shell browser venster waarin de selectie van het pictogram voor uploaden wordt weer gegeven.":::
     
     Navigeer naar het *Room.js* bestand op uw computer en selecteer openen. Herhaal deze stap vervolgens voor *Floor.jsop*.
 
@@ -111,7 +111,7 @@ Na het ontwerpen van modellen moet u deze uploaden naar uw Azure Digital Twins-i
     
     Bekijk het bewerkte *Room*-model in de resultaten:
     
-    :::image type="content" source="media/tutorial-command-line/cli/output-get-models.png" alt-text="Resultaten van de model lijst opdracht, met het bijgewerkte room-model" lightbox="media/tutorial-command-line/cli/output-get-models.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-get-models.png" alt-text="Scherm opname van Cloud Shell weer geven van het resultaat van de model lijst opdracht, inclusief het bijgewerkte room-model." lightbox="media/tutorial-command-line/cli/output-get-models.png":::
 
 ### <a name="errors"></a>Fouten
 
@@ -159,7 +159,7 @@ Als u een digitale dubbele wilt maken, gebruikt u de opdracht [**AZ DT dubbele m
     
     Zoek in de resultaten naar de *room0*-, *room1*-, *floor0*-en *floor1* -apparaatdubbels. Hier volgt een fragment dat een deel van het resultaat van deze query weergeeft.
     
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-all.png" alt-text="Gedeeltelijke resultaten van dubbele query's, met room0 en room1" lightbox="media/tutorial-command-line/cli/output-query-all.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-all.png" alt-text="Scherm afbeelding van Cloud Shell het gedeeltelijk resultaat van een dubbele query, waaronder room0 en room1, worden weer gegeven." lightbox="media/tutorial-command-line/cli/output-query-all.png":::
 
 ### <a name="modify-a-digital-twin"></a>Een digital twin wijzigen
 
@@ -181,7 +181,7 @@ U kunt de eigenschappen van een digitale dubbel die u hebt gemaakt, ook wijzigen
     
     Met de uitvoer van deze opdracht worden de huidige gegevens van de twee weer gegeven en ziet u de nieuwe waarde voor de `RoomName` in het resultaat.
 
-    :::image type="content" source="media/tutorial-command-line/cli/output-update-twin.png" alt-text="Resultaten van de update opdracht, met een kamershape van PresidentialSuite" lightbox="media/tutorial-command-line/cli/output-update-twin.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-update-twin.png" alt-text="Scherm opname van Cloud Shell weer geven van het resultaat van de update opdracht, met inbegrip van een kamershape van PresidentialSuite." lightbox="media/tutorial-command-line/cli/output-update-twin.png":::
 
 1. U kunt controleren of de update is geslaagd door de opdracht [**AZ DT dubbele weer geven**](/cli/azure/ext/azure-iot/dt/twin?view=azure-cli-latest&preserve-view=true#ext_azure_iot_az_dt_twin_show) uit te voeren om de informatie van *room0* weer te geven:
 
@@ -236,7 +236,7 @@ Als u een relatie wilt toevoegen, gebruikt u de opdracht [**AZ DT dubbele relati
 
 De tweelingen en relaties die u in deze zelfstudie hebt ingesteld vormen de volgende conceptuele grafiek:
 
-:::image type="content" source="media/tutorial-command-line/app/sample-graph.png" alt-text="Een grafiek die laat zien dat floor0 via relationship0 is verbonden met room0, en floor1 via relationship1 is verbonden met room1" border="false" lightbox="media/tutorial-command-line/app/sample-graph.png":::
+:::image type="content" source="media/tutorial-command-line/app/sample-graph.png" alt-text="Een diagram waarin een conceptuele grafiek wordt weer gegeven. floor0 is verbonden via relationship0 met room0 en floor1 is verbonden via relationship1 met room1." border="false" lightbox="media/tutorial-command-line/app/sample-graph.png":::
 
 ## <a name="query-the-twin-graph-to-answer-environment-questions"></a>Query uitvoeren op de tweelinggrafiek om vragen over de omgeving te beantwoorden
 
@@ -252,7 +252,7 @@ Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeel
 
     Hiermee kunt u in één oogopslag de balans opmaken van uw omgeving en ervoor zorgen dat alles binnen Azure Digital Twins wordt weergegeven zoals u het wilt. Het resultaat hiervan is een uitvoer die elke digitale tweeling met de gegevens ervan bevat. Hier volgt een fragment:
 
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-all.png" alt-text="Gedeeltelijke resultaten van dubbele query's, met room0 en room1" lightbox="media/tutorial-command-line/cli/output-query-all.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-all.png" alt-text="Scherm afbeelding van Cloud Shell het gedeeltelijk resultaat van een dubbele query, waaronder room0 en room1, worden weer gegeven." lightbox="media/tutorial-command-line/cli/output-query-all.png":::
 
     >[!TIP]
     >U kunt herkennen dat dit dezelfde opdracht is die u hebt gebruikt in de sectie [*Digital Apparaatdubbels maken*](#create-digital-twins) om alle Azure Digital apparaatdubbels in het exemplaar te vinden.
@@ -265,7 +265,7 @@ Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeel
 
     U kunt uw query beperken tot tweelingen van een bepaald type om meer specifieke informatie te verkrijgen over wat er wordt weergegeven. Het resultaat hiervan laat *room0* en *room1* zien, maar **niet** *floor0* of *floor1* (omdat dat verdiepingen zijn en geen ruimten).
     
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-model.png" alt-text="Resultaten van modelquery, alleen room0 en room1 weergegeven" lightbox="media/tutorial-command-line/cli/output-query-model.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-model.png" alt-text="Scherm opname van Cloud Shell die het resultaat van een model query weer geven, met inbegrip van alleen room0 en room1." lightbox="media/tutorial-command-line/cli/output-query-model.png":::
 
 1. **Wat zijn alle ruimten op *floor0*?** (query op relatie)
 
@@ -275,7 +275,7 @@ Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeel
 
     U kunt query's uitvoeren op basis van relaties in uw grafiek, om informatie te krijgen over de manier waarop tweelingen zijn verbonden of om uw query te beperken tot een bepaald gebied. Alleen *room0* bevindt zich op *floor0*, dus is dit de enige ruimte in het resultaat.
 
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-relationship.png" alt-text="Resultaten van relatiequery, met room0 weergegeven" lightbox="media/tutorial-command-line/cli/output-query-relationship.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-relationship.png" alt-text="Scherm opname van Cloud Shell met het resultaat van een relatie query, waaronder room0." lightbox="media/tutorial-command-line/cli/output-query-relationship.png":::
 
     > [!NOTE]
     > U ziet dat een dubbele ID (zoals *floor0* in de bovenstaande query) wordt opgevraagd met behulp van het veld meta gegevens `$dtId` . 
@@ -290,7 +290,7 @@ Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeel
 
     U kunt een query uitvoeren op de grafiek op basis van eigenschappen om allerlei vragen te beantwoorden, met inbegrip van uitschieters in uw omgeving die mogelijk aandacht vereisen. Andere vergelijkingsoperators ( *<* , *>* , *=* of *!=* ) worden ook ondersteund. *room1* wordt hier weergegeven in de resultaten, omdat deze een temperatuur van 80 °F heeft.
 
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-property.png" alt-text="Resultaten van eigenschapsquery, alleen room1 weergegeven" lightbox="media/tutorial-command-line/cli/output-query-property.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-property.png" alt-text="Scherm afbeelding van Cloud Shell weer gegeven resultaat van eigenschaps query, die alleen room1 bevat." lightbox="media/tutorial-command-line/cli/output-query-property.png":::
 
 1. **Wat zijn alle ruimten op *floor0* met een temperatuur van meer dan 75 °F?** (samengestelde query)
 
@@ -300,7 +300,7 @@ Voer de volgende query's uit in de Cloud Shell om enkele vragen over de voorbeel
 
     U kunt de eerdere query's ook combineren zoals u dat in SQL zou doen, met behulp van combinatie-operatoren zoals `AND`, `OR`, `NOT`. Deze query maakt gebruik van `AND` om de vorige query over tweelingtemperaturen specifieker te maken. Het resultaat bevat nu alleen ruimten met een temperatuur van meer dan 75 °F op *floor0*; in dit geval geen. De resultatenset is leeg.
 
-    :::image type="content" source="media/tutorial-command-line/cli/output-query-compound.png" alt-text="Resultaten van samengestelde query, met geen resultaten" lightbox="media/tutorial-command-line/cli/output-query-compound.png":::
+    :::image type="content" source="media/tutorial-command-line/cli/output-query-compound.png" alt-text="Scherm opname van Cloud Shell die het resultaat van een samengestelde query weer geven, die geen items bevat." lightbox="media/tutorial-command-line/cli/output-query-compound.png":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

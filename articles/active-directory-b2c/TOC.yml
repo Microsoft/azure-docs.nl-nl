@@ -209,6 +209,9 @@
           href: customize-ui-with-html.md
         - name: JavaScript en pagina-indelingen
           href: javascript-and-page-layout.md
+        - name: Inge sloten aanmelding met IFRAME
+          displayName: iframe
+          href: embedded-login.md
         - name: Taal aanpassen
           href: language-customization.md
           displayName: localization
@@ -420,11 +423,13 @@
           href: partner-whoiam.md
         - name: Zscaler
           href: partner-zscaler.md
-    - name: B2clogin.com gebruiken
+    - name: Domeinnaam
       items:
         - name: Overzicht van b2clogin.com
           href: b2clogin.md
-        - name: Web-API migreren naar b2clogin.com
+        - name: Een aangepast domein configureren
+          href: custom-domain.md
+        - name: Web-API-domeinen configureren
           href: multiple-token-endpoints.md
           displayName: 'migrate, b2clogin, owin'
     - name: Automation

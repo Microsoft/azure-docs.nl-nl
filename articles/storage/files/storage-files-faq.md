@@ -7,12 +7,12 @@ ms.date: 02/23/2020
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 2d4286cc8bc08eaf7d0b376a8b7789c8c8db183d
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 81cabe8dea178b2988039640065cb0eabc3287af
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102202634"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470891"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Lees de veelgestelde vragen (FAQ) over Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard [SMB-protocol (Server Message Block)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) en het [NFS-protocol (Network File System](https://en.wikipedia.org/wiki/Network_File_System) ) (preview). U kunt Azure-bestands shares gelijktijdig koppelen aan Cloud-of on-premises implementaties van Windows, Linux en macOS. U kunt ook Azure-bestands shares op Windows Server-computers in de cache opslaan met behulp van Azure File Sync voor snelle toegang, waarbij de gegevens worden gebruikt.
@@ -308,6 +308,18 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Files-functi
 **Zijn er REST-Api's ter ondersteuning van Get/set/Copy-Windows-Acl's voor mappen/bestanden?**
 
     Ja, we ondersteunen REST-Api's waarmee NTFS-Acl's voor mappen of bestanden worden opgehaald, ingesteld of gekopieerd wanneer de [2019-07-07](/rest/api/storageservices/versioning-for-the-azure-storage-services#version-2019-07-07) (of hoger) wordt gebruikt rest API. We bieden ook ondersteuning voor persistentie van Windows-Acl's in REST-hulpprogram ma's: [AzCopy v 10.4 +](https://github.com/Azure/azure-storage-azcopy/releases).
+
+* <a id="ad-support-rest-apis"></a>
+**Referenties in de cache verwijderen met de sleutel van het opslag account en bestaande SMB-verbindingen verwijderen voordat u een nieuwe verbinding met Azure AD of AD-referenties initialiseert**
+
+    U kunt de onderstaande twee stappen volgen om de opgeslagen referentie te verwijderen die is gekoppeld aan de sleutel van het opslag account en de SMB-verbinding te verwijderen: 
+    1. Voer de onderstaande cmdlet uit in Windows Cmd.exe om de referentie te verwijderen. Als u er geen kunt vinden, betekent dit dat u de referentie niet hebt behouden en deze stap kunt overs Laan.
+    
+       cmdkey/delete: domein: target = Storage-account-name.file.core.windows.net
+    
+    2. Verwijder de bestaande verbinding met de bestands share. U kunt het koppelingspad opgeven als de stationsletter van het gekoppelde station of het storage-account-name.file.core.windows.net-pad.
+    
+       net use <stationsletter/share-pad>/Delete
 
 ## <a name="network-file-system"></a>Netwerk bestandssysteem
 

@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: ce5e8cfda4a9f51a90c8f26133a710f4d1c258b6
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: dd87b58c604b0bb2141c29d3b2227e9a81668a75
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448265"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488819"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een LinkedIn-account met behulp van Azure Active Directory B2C
 
@@ -43,8 +43,8 @@ Als u aanmelden voor gebruikers met een LinkedIn-account in Azure Active Directo
 1. Voer de **app-naam**, de LinkedIn- **pagina**, de URL van het **Privacybeleid** en het **app-logo** in.
 1. Ga akkoord met de **gebruiks voorwaarden van** de LinkedIn API en klik op **app maken**.
 1. Selecteer het tabblad **auth** . Kopieer onder **verificatie sleutels** de waarden voor **client-id** en **client geheim**. U hebt beide nodig om LinkedIn te configureren als een id-provider in uw Tenant. **Client geheim** is een belang rijke beveiligings referentie.
-1. Selecteer het potlood bewerken naast **geautoriseerde omleidings-url's voor uw app** en selecteer vervolgens **omleidings-URL toevoegen**. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in en vervang door `your-tenant-name` de naam van uw Tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C. Selecteer **Update**.
-2. Uw LinkedIn-app is standaard niet goedgekeurd voor scopes die betrekking hebben op aanmelden. Als u een beoordeling wilt aanvragen, selecteert u het tabblad **producten** en selecteert u **Aanmelden met LinkedIn**. Wanneer de controle is voltooid, worden de vereiste bereiken toegevoegd aan uw toepassing.
+1. Selecteer het potlood bewerken naast **geautoriseerde omleidings-url's voor uw app** en selecteer vervolgens **omleidings-URL toevoegen**. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in. Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C. Selecteer **Update**.
+1. Uw LinkedIn-app is standaard niet goedgekeurd voor scopes die betrekking hebben op aanmelden. Als u een beoordeling wilt aanvragen, selecteert u het tabblad **producten** en selecteert u **Aanmelden met LinkedIn**. Wanneer de controle is voltooid, worden de vereiste bereiken toegevoegd aan uw toepassing.
    > [!NOTE]
    > U kunt de bereiken weer geven die momenteel zijn toegestaan voor uw app op het tabblad **auth** in het gedeelte **OAuth 2,0 scopes** .
 

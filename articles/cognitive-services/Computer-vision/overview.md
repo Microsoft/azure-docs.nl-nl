@@ -15,12 +15,12 @@ ms.custom:
 - cog-serv-seo-aug-2020
 - contperf-fy21q2
 keywords: computer vision, computer vision-toepassingen, computer vision-service
-ms.openlocfilehash: 69edbf558b4bd452c67478bac828bfde26be5a70
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 804dacc4351da9e04ac75b2484b4330901a69271
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99575937"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488479"
 ---
 # <a name="what-is-computer-vision"></a>Wat is Computer Vision?
 
@@ -29,6 +29,12 @@ ms.locfileid: "99575937"
 De Computer Vision-service van Azure geeft u toegang tot geavanceerde algoritmen waarmee afbeeldingen worden verwerkt en informatie wordt geretourneerd op basis van de visuele kenmerken waarin u geïnteresseerd bent. Met Computer Vision kunt u bijvoorbeeld bepalen of een afbeelding inhoud voor volwassenen bevat, specifieke merken of objecten zoeken, of gezichten van mensen zoeken.
 
 U kunt Computer Vision-toepassingen maken met behulp van een [clientbibliotheek-SDK](./quickstarts-sdk/client-library.md) of door de [REST API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) rechtstreeks aan te roepen. Deze pagina laat grosso modo zien wat u kunt doen met Computer Vision.
+
+Deze documentatie bevat de volgende typen artikelen:
+* In de [Quick](./quickstarts-sdk/client-library.md) starts vindt u stapsgewijze instructies voor het aanroepen van de service en het verkrijgen van resultaten in korte tijd. 
+* De [hand leidingen](./Vision-API-How-to-Topics/HowToCallVisionAPI.md) bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.
+* De [conceptuele artikelen](concept-recognizing-text.md) bevatten gedetailleerde uitleg over de functionaliteit en functies van de service.
+* De [zelf studies](./tutorials/storage-lab-tutorial.md) zijn meer gidsen die laten zien hoe u deze service kunt gebruiken als onderdeel in bredere zakelijke oplossingen.
 
 ## <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 

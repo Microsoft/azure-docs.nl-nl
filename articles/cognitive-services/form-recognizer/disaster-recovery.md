@@ -2,19 +2,19 @@
 title: Richt lijnen voor herstel na nood gevallen voor Azure Form Recognizer
 titleSuffix: Azure Cognitive Services
 description: Meer informatie over het gebruik van de copy model-API om een back-up te maken van uw formulieren Recognizer-resources.
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: how-to
-ms.date: 05/27/2020
-ms.author: pafarley
-ms.openlocfilehash: 0343402d92498bff56250027086cbf2ceb258f0f
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.date: 03/15/2021
+ms.author: lajanuar
+ms.openlocfilehash: b5eb776a7807f48ae6c1a0e3c5879da1f6823830
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102427161"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466912"
 ---
 # <a name="back-up-and-recover-your-form-recognizer-models"></a>Back-ups van uw formulieren Recognizer-modellen maken en herstellen
 
@@ -39,9 +39,6 @@ Het proces voor het kopiëren van een aangepast model bestaat uit de volgende st
 1. Eerst geeft u een Kopieer autorisatie aanvraag naar de doel bron &mdash; , de resource die het gekopieerde model zal ontvangen. U krijgt een back-up van de URL van het zojuist gemaakte doel model, waarin de gekopieerde gegevens worden ontvangen.
 1. Vervolgens verzendt u de Kopieer aanvraag naar de bron bron van &mdash; de resource die het model bevat dat moet worden gekopieerd. U krijgt een URL terug waarmee u een query kunt uitvoeren om de voortgang van de bewerking bij te houden.
 1. U gebruikt de referenties van uw bron bron voor het uitvoeren van een query op de voortgangs-URL totdat de bewerking is voltooid. U kunt ook een query uitvoeren op de nieuwe model-ID in de doel bron om de status van het nieuwe model op te halen.
-
-> [!CAUTION]
-> De copy API biedt momenteel geen ondersteuning voor model-Id's voor [bestaande aangepaste modellen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/Compose). Model opstellen is een preview-functie in v 2.1-Preview. 2 Preview. 
 
 ## <a name="generate-copy-authorization-request"></a>Kopieer autorisatie aanvraag genereren
 
@@ -165,4 +162,4 @@ curl -i GET "https://<SOURCE_FORM_RECOGNIZER_RESOURCE_ENDPOINT>/formrecognizer/v
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze hand leiding hebt u geleerd hoe u de copy API gebruikt om een back-up te maken van uw aangepaste modellen naar een secundaire resource voor de herkenner van het formulier. Bekijk vervolgens de naslag documenten voor de API om te zien wat u nog meer kunt doen met de formulier herkenner.
-* [REST API-referentiedocumentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm)
+* [REST API-referentiedocumentatie](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm)

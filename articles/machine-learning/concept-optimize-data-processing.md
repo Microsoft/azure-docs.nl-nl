@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/26/2020
 ms.custom: data4ml
-ms.openlocfilehash: 77edac14ef13901725eed656835e1a937d4f4ddf
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 5ab7bac635a0b670087800212727b0d2e2b96934
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360816"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472207"
 ---
 # <a name="optimize-data-processing-with-azure-machine-learning"></a>Gegevens verwerking optimaliseren met Azure Machine Learning
 
@@ -86,8 +86,6 @@ Als u bekend bent met `Pandas`| `Modin` of `Dask` Data frame
 Als u wilt `Spark` | `PySpark`
 Voor gegevens die kleiner zijn dan 1 GB | `Pandas` lokaal **of** een externe Azure machine learning reken instantie
 Voor gegevens die groter zijn dan 10 GB| Verplaatsen naar een cluster met `Ray` , `Dask` of `Spark`
-
-U kunt `Dask` clusters maken in azure ml Compute Cluster met het [dask-cloudprovider-](https://cloudprovider.dask.org/en/latest/#azure) pakket. U kunt ook `Dask` lokaal uitvoeren op een reken instantie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

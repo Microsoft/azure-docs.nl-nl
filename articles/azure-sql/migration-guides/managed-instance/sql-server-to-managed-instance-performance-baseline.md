@@ -1,8 +1,8 @@
 ---
 title: 'SQL Server naar een door SQL beheerd exemplaar: prestatie analyse'
 description: Meer informatie over het maken en vergelijken van een basis lijn voor prestaties bij het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
-ms.service: sql-database
-ms.subservice: migration
+ms.service: sql-managed-instance
+ms.subservice: migration-guide
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: mokabiru
 ms.date: 11/06/2020
-ms.openlocfilehash: 2b6f9bef445cc07a3aa00377b41010a536855935
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 28eedd3a22a0a5adc6e9a37c9e0f0fa0214a4e47
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358857"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564436"
 ---
 # <a name="migration-performance-sql-server-to-sql-managed-instance-performance-analysis"></a>Migratie prestaties: SQL Server van de prestatie analyse van SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]

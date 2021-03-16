@@ -4,12 +4,12 @@ description: Ziet u geen gegevens in Azure-toepassing Insights? Probeer het hier
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: e41b0a9ce1ff86bc6010e12fdf5d3320f303fd87
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 40fbe4d08676d7cc56478d3740424fccaa7addc0
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99092448"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562192"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Problemen met geen gegevens Application Insights voor .NET/.NET core oplossen
 
@@ -68,11 +68,11 @@ Wanneer u een upgrade uitvoert van Sdk's die ouder zijn dan (2,4), moet u ervoor
     </TelemetryModules>
     ```
 
-**_Fout bij het uitvoeren van een upgrade kan leiden tot onverwachte uitzonde ringen of telemetrie niet worden verzameld._* _
+***Fout bij het uitvoeren van een upgrade kan leiden tot onverwachte uitzonde ringen of telemetrie niet worden verzameld.***
 
 
 ## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Geen optie voor het toevoegen van Application Insights in Visual Studio
-_When ik met de rechter muisknop op een bestaand project in Solution Explorer, zie ik geen Application Insights opties. *
+*Wanneer ik met de rechter muisknop op een bestaand project in Solution Explorer, zie ik geen Application Insights opties.*
 
 * Niet alle typen .NET-projecten worden ondersteund door de hulpprogram ma's. Web-en WCF-projecten worden ondersteund. Voor andere project typen, zoals bureau blad-of service toepassingen, kunt u nog steeds [een Application INSIGHTS SDK hand matig toevoegen aan uw project](./windows-desktop.md).
 * Zorg ervoor dat u [Visual Studio 2013 update 3 of hoger](/visualstudio/releasenotes/vs2013-update3-rtm-vs)hebt. Dit is vooraf geïnstalleerd met Developer Analytics-hulpprogram ma's, die de Application Insights SDK bieden.
@@ -224,7 +224,7 @@ Volg deze instructies om logboeken voor het oplossen van problemen vast te legge
 
     ```xml
     <TelemetryModules>
-      <Add Type="Microsoft.ApplicationInsights.Extensibility.HostingStartup.FileDiagnosticsTelemetryModule, Microsoft.AspNet.ApplicationInsights.HostingStartup">
+      <Add Type="Microsoft.ApplicationInsights.Extensibility.Implementation.Tracing.FileDiagnosticsTelemetryModule, Microsoft.ApplicationInsights">
         <Severity>Verbose</Severity>
         <LogFileName>mylog.txt</LogFileName>
         <LogFilePath>C:\\SDKLOGS</LogFilePath>

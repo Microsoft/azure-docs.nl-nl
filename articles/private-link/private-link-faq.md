@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 10/05/2019
 ms.author: allensu
-ms.openlocfilehash: 4e81d8f88a7c01b6d302bcdaa88559159bed04ea
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: d06e90a691389b99d8f439364203b921f49b2305
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101709403"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496470"
 ---
 # <a name="azure-private-link-frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ) over Azure Private Link
 
@@ -54,6 +54,11 @@ Ja. Privé-eind punten kunnen verbinding maken met Azure PaaS-resources in azure
 
 ### <a name="can-i-modify-my-private-endpoint-network-interface-nic-"></a>Kan ik mijn netwerk interface voor het privé-eind punt (NIC) wijzigen?
 Wanneer een persoonlijk eind punt wordt gemaakt, wordt er een alleen-lezen NIC toegewezen. Dit kan niet worden gewijzigd en blijft voor de levens cyclus van het persoonlijke eind punt.
+
+### <a name="how-do-i-achieve-availability-while-using-private-endpoints-in-case-of-regional-failures-"></a>Hoe kan ik beschik baarheid tijdens het gebruik van privé-eind punten in het geval van regionale storingen?
+
+Privé-eind punten zijn Maxi maal beschik bare resources met een SLA van 99,99% [[sla voor Azure private link]](https://azure.microsoft.com/support/legal/sla/private-link/v1_0/). Omdat het echter regionale resources zijn, kan de beschik baarheid van de Azure-regio worden beïnvloed. Voor een Beschik baarheid in het geval van regionale storingen kan meerdere PEsen die zijn verbonden met dezelfde doel bron in verschillende regio's worden geïmplementeerd. Als één regio uitvalt, kunt u nog steeds het verkeer voor uw herstel scenario's door PE in een andere regio routeren om toegang te krijgen tot de doel resource. Raadpleeg de service documentatie over failover en Recovery voor informatie over hoe de regionale storingen worden afgehandeld op de doel service zijde. Privé koppelings verkeer volgt de Azure DNS resolutie voor het doel eindpunt. 
+
 
 ## <a name="private-link-service"></a>Private Link-service
  

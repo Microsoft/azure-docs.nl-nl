@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/19/2017
+ms.date: 02/17/2021
 ms.author: apimpm
-ms.openlocfilehash: 312a496a5acda05a6b04a0bb47abb101f4ffcc8e
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: e809efa9da32da5fe9ca296608c602e770f78265
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107586"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562345"
 ---
 # <a name="api-management-policies"></a>API Management-beleidsregels
 Deze sectie bevat een referentie voor het volgende API Management-beleid. Zie [beleid in API Management](api-management-howto-policies.md)voor meer informatie over het toevoegen en configureren van beleid.
@@ -81,10 +81,16 @@ Deze sectie bevat een referentie voor het volgende API Management-beleid. Zie [b
     - Een [aanvraag verzenden naar een service](api-management-dapr-policies.md#invoke) : Dapr-runtime wordt gebruikt om te zoeken en te communiceren met een Dapr-micro service.
     -  [Bericht verzenden naar pub/sub-onderwerp](api-management-dapr-policies.md#pubsub) : maakt gebruik van Dapr runtime om een bericht te publiceren naar het onderwerp publiceren/abonneren.
     -  [Trigger uitvoer binding](api-management-dapr-policies.md#bind) : maakt gebruik van Dapr runtime om een extern systeem via een uitvoer binding aan te roepen.
+- [Validatie beleid](validation-policies.md)
+    - [Inhoud valideren](validation-policies.md#validate-content) : valideert de grootte of het JSON-schema van een aanvraag of antwoord tekst ten opzichte van het API-schema.
+. 
+    - [Para meters valideren](validation-policies.md#validate-parameters) : valideert de aanvraag header, query of Path-para meters op basis van het API-schema.
+    - [Headers valideren](validation-policies.md#validate-headers) : valideert de antwoord headers op basis van het API-schema.
+    - [Status code valideren](validation-policies.md#validate-status-code) : valideert de HTTP-status codes in antwoorden op het API-schema.
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie voor meer informatie over het gebruik van beleid:
 
 + [Beleid in API Management](api-management-howto-policies.md)
 + [Api's transformeren](transform-api.md)
-+ [Voor beelden van beleid](./policy-reference.md)
++ [Voorbeelden van beleid](./policy-reference.md)

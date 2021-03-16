@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/09/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: cc385c3a7ceb0245e3a4acbedb037b1b28bde7b3
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 24377cf02b30a550043ee63267229039d680cd1c
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102518106"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489131"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-apple-id--using-azure-active-directory-b2c-preview"></a>Registratie instellen en aanmelden met een Apple-ID met behulp van Azure Active Directory B2C (preview-versie)
 
@@ -57,8 +57,8 @@ Als u aanmelden voor gebruikers met een Apple-ID in Azure Active Directory B2C (
 1. Selecteer vanuit **id's** de id die u hebt gemaakt.
 1. Selecteer **Aanmelden met Apple** en selecteer vervolgens **configureren**.
     1. Selecteer de **id van de primaire app** waarvoor u aanmelden met Apple wilt configureren.
-    1. Voer in **domeinen en subdomeinen** het in `your-tenant-name.b2clogin.com` . Vervang uw-Tenant naam door de naam van uw Tenant.
-    1. Voer in **retour-url's** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang uw-Tenant naam door de naam van uw Tenant.
+    1. Voer in **domeinen en subdomeinen** het in `your-tenant-name.b2clogin.com` . Vervang uw-Tenant naam door de naam van uw Tenant. Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name` .
+    1. Voer in **retour-url's** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein.
     1. Selecteer **volgende** en selecteer vervolgens **gereed**.
     1. Wanneer het pop-upvenster is gesloten, selecteert u **door gaan** en selecteert u **Opslaan**.
 

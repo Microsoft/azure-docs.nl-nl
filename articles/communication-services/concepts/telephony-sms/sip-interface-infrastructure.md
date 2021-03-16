@@ -5,15 +5,15 @@ author: boris-bazilevskiy
 manager: nmurav
 services: azure-communication-services
 ms.author: bobazile
-ms.date: 02/09/2021
+ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: a94aa0a0deea14cca2b558c602ff7e35ca0ba81f
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: ede650ae072ef53ed40a9372a292ab69fe8cc1af
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102487374"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492724"
 ---
 # <a name="sip-interface-infrastructure-requirements"></a>Vereisten voor de infra structuur van de SIP-interface 
 

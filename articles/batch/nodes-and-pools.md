@@ -3,12 +3,12 @@ title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
 ms.date: 03/11/2021
-ms.openlocfilehash: e1edcc805e0e8c59d189a4622e494101fb31bb6d
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 7d4c2d45849deb011498efe4c8a1ae91724b9acd
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103200228"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563892"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
@@ -208,3 +208,4 @@ Als u een certificaat toevoegt aan een bestaande pool, moet u de reken knooppunt
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [taken en taken](jobs-and-tasks.md).
+- Meer informatie over het [detecteren en voor komen van storingen in de groep en achtergrond bewerkingen op knoop punten ](batch-pool-node-error-checking.md).

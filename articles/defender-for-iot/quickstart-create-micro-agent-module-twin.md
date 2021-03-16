@@ -1,5 +1,5 @@
 ---
-title: Een Defender IoT micro Agent-module maken dubbele
+title: Een Defender IoT micro Agent-module maken (preview)
 titleSuffix: Azure Defender for IoT
 description: Meer informatie over het maken van een afzonderlijke DefenderIotMicroAgent-module apparaatdubbels voor nieuwe apparaten.
 author: shhazam-ms
@@ -8,14 +8,14 @@ ms.author: shhazam
 ms.date: 1/20/2021
 ms.topic: quickstart
 ms.service: azure
-ms.openlocfilehash: ea82fea89a9e81e66be6b3060aad067d3ceb8f5f
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: e1c2f4e79b9f0f0ba1ec0da0c5a2a29cdc8bc6d7
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102123000"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489876"
 ---
-# <a name="create-a-defender-iot-micro-agent-module-twin"></a>Een Defender IoT micro Agent-module maken dubbele 
+# <a name="create-a-defender-iot-micro-agent-module-twin-preview"></a>Een Defender IoT micro Agent-module maken (preview)
 
 U kunt afzonderlijke **DefenderIotMicroAgent** -module apparaatdubbels maken voor nieuwe apparaten. U kunt ook een batch maken voor de module apparaatdubbels voor alle apparaten in een IoT Hub. 
 
@@ -27,9 +27,9 @@ Defender voor IoT kan volledig worden geïntegreerd met uw bestaande IoT Device 
 
 Meer informatie over het concept van [device apparaatdubbels](../iot-hub/iot-hub-devguide-device-twins.md)   in azure IOT hub. 
 
-## <a name="security-module-twins"></a>Beveiligings module apparaatdubbels 
+## <a name="defender-iot-micro-agent-twins"></a>Defender-IoT-micro-agent apparaatdubbels 
 
-Defender voor IoT gebruikt een beveiligings module voor elk apparaat. De beveiligings module bevat alle informatie die relevant is voor de beveiliging van apparaten, voor elk specifiek apparaat in uw oplossing. Beveiligings eigenschappen van apparaten worden geconfigureerd via een speciale beveiligings module, met een eigen communicatie, om updates en onderhoud in te scha kelen waarvoor minder resources nodig zijn. 
+Defender voor IoT maakt gebruik van een Defender-IoT-micro agent voor elk apparaat. De Defender-IoT-micro agent is van toepassing op alle informatie die relevant is voor de beveiliging van apparaten, voor elk specifiek apparaat in uw oplossing. De beveiligings eigenschappen van het apparaat worden geconfigureerd via een speciale Defender-IoT-micro agent-twee voor veiliger communicatie, om updates in te scha kelen en onderhoud waarvoor minder resources zijn vereist. 
 
 ## <a name="understanding-defenderiotmicroagent-module-twins"></a>Informatie over DefenderIotMicroAgent-module apparaatdubbels 
 
@@ -39,9 +39,9 @@ Met Defender voor IoT beschikt u over de mogelijkheid om uw bestaande IoT Device
 
 Zie [IOT hub module apparaatdubbels](../iot-hub/iot-hub-devguide-module-twins.md)voor meer informatie over het algemene concept van module Apparaatdubbels in azure IOT hub.
 
-Defender voor IoT maakt gebruik van het module-dubbel mechanisme en houdt een beveiligings module toe met een dubbele naam `DefenderIotMicroAgent` voor elk van uw apparaten. 
+Defender voor IoT maakt gebruik van het module dubbele mechanisme en houdt een Defender-IoT-micro agent dubbele naam `DefenderIotMicroAgent` voor elk van uw apparaten bij. 
 
-Als u optimaal wilt profiteren van alle functies van Defender voor IoT, moet u de beveiligings module apparaatdubbels maken, configureren en gebruiken voor elk apparaat in de service. 
+Als u optimaal wilt profiteren van alle functies van Defender voor IoT, moet u de apparaatdubbels van Defender-IoT-micro agent maken, configureren en gebruiken voor elk apparaat in de service. 
 
 ## <a name="create-defenderiotmicroagent-module-twin"></a>DefenderIotMicroAgent-module maken dubbele 
 
@@ -49,7 +49,7 @@ Als u optimaal wilt profiteren van alle functies van Defender voor IoT, moet u d
 
 Hand matig een nieuwe **DefenderIotMicroAgent** -module maken, twee maal voor een apparaat: 
 
-1. Zoek in uw IoT Hub het apparaat waarop u een beveiligings module wilt maken en selecteer deze. 
+1. Zoek en selecteer in uw IoT Hub het apparaat waarop u een Defender-IoT-micro-agent dubbele wilt maken. 
 
 1. Selecteer **module-identiteit toevoegen**. 
 
@@ -59,7 +59,7 @@ Hand matig een nieuwe **DefenderIotMicroAgent** -module maken, twee maal voor 
 
 ## <a name="verify-the-creation-of-a-module-twin"></a>Het maken van een module verifiëren 
 
-Ga als volgt te werk om te controleren of er een moduledubbel bestaat voor een specifiek apparaat: 
+Controleren of er een Defender-IoT-micro agent-dubbele computer is voor een specifiek apparaat: 
 
 1. Selecteer in uw Azure IoT Hub **IOT-apparaten** in   het menu **Explorers**   . 
 

@@ -5,14 +5,14 @@ services: route-server
 author: duongau
 ms.service: route-server
 ms.topic: how-to
-ms.date: 03/02/2021
+ms.date: 03/15/2021
 ms.author: duau
-ms.openlocfilehash: 9fa0f73d06bda02d784628823ee70bc538b375e2
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 83f1e83653c5674988cadcb5b54d3c675ae0b8b8
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101695801"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489437"
 ---
 # <a name="troubleshooting-azure-route-server-issues"></a>Problemen met Azure route Server oplossen
 
@@ -31,7 +31,7 @@ Wanneer uw NVA de standaard route adverteert, stuurt Azure route server dit prog
 | 0.0.0.0/0 | Internet |
 
 
-### <a name="why-can-i-ping-from-my-nva-to-the-bgp-peer-ip-on-azure-route-server-but-after-i-set-up-the-bgp-peering-between-them-i-cant-ping-the-same-ip-anymore-why-does-the-bgp-peering-goes-down"></a>Waarom kan ik pingen van mijn NVA naar het IP-adres van de BGP-peer op de Azure-route server, maar nadat ik de BGP-peering heb ingesteld, kan ik niet meer hetzelfde IP-adres pingen? Waarom loopt de BGP-peering uit?
+### <a name="why-can-i-ping-from-my-nva-to-the-bgp-peer-ip-on-azure-route-server-but-after-i-set-up-the-bgp-peering-between-them-i-cant-ping-the-same-ip-anymore-why-does-the-bgp-peering-go-down"></a>Waarom kan ik pingen van mijn NVA naar het IP-adres van de BGP-peer op de Azure-route server, maar nadat ik de BGP-peering heb ingesteld, kan ik niet meer hetzelfde IP-adres pingen? Waarom gaat de BGP-peering omlaag?
 
 In sommige NVA moet u een statische route toevoegen voor het Azure route server-subnet. Als bijvoorbeeld Azure route server zich in 10.0.255.0/27 bevindt en uw NVA zich in 10.0.1.0/24 bevindt, moet u de volgende route toevoegen aan de routerings tabel in de NVA:
 

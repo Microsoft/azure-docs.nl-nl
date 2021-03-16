@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 04/15/2020
+ms.date: 03/14/2021
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 3d86f862dcf7973ef3e7c42b069d6734ac95274a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a8733723fdc59634609a4a79c3b12f12208ab63b
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784079"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470282"
 ---
 # <a name="authorizing-access-to-data-in-azure-storage"></a>Toegang tot gegevens in Azure Storage autoriseren
 
@@ -23,7 +23,7 @@ Telkens wanneer u toegang hebt tot gegevens in uw opslag account, stuurt uw clie
 
 In de volgende tabel worden de opties beschreven die Azure Storage biedt om toegang tot resources te verlenen:
 
-| Azure-artefact | Gedeelde sleutel (sleutel van het opslag account) | Shared Access Signature (SAS) | Azure Active Directory (Azure AD) | On-premises Active Directory Domain Services (preview-versie) | Anonieme open bare Lees toegang |
+| Azure-artefact | Gedeelde sleutel (sleutel van het opslag account) | Shared Access Signature (SAS) | Azure Active Directory (Azure AD) | On-premises Active Directory Domain Services | Anonieme open bare Lees toegang |
 | -------------- | -------------------------------- | ----------------------------- | --------------------------------- | ------------------------------------------------------ | ---------------------------- |
 |Azure-blobs     |[Ondersteund](/rest/api/storageservices/authorize-with-shared-key/)         |[Ondersteund](storage-sas-overview.md)         |[Ondersteund](storage-auth-aad.md)         |Niet ondersteund|[Ondersteund](../blobs/anonymous-read-access-configure.md)         |
 |Azure Files (SMB)     |[Ondersteund](/rest/api/storageservices/authorize-with-shared-key/)         |Niet ondersteund         |[Ondersteund, alleen met AAD Domain Services](../files/storage-files-active-directory-overview.md)         |[Ondersteund, referenties moeten worden gesynchroniseerd met Azure AD](../files/storage-files-active-directory-overview.md)|Niet ondersteund         |
@@ -37,7 +37,7 @@ Elke autorisatie optie wordt hieronder beschreven:
 
 - **Azure Active Directory Domain Services-verificatie (Azure AD DS)** voor Azure files. Azure Files ondersteunt autorisatie op basis van een identiteit via Server Message Block (SMB) via Azure AD DS. U kunt Azure RBAC gebruiken voor een nauw keurige controle over de toegang van een client tot Azure Files resources in een opslag account. Raadpleeg het [overzicht](../files/storage-files-active-directory-overview.md)voor meer informatie over het Azure files-verificatie met Domain Services.
 
-- **On-premises Active Directory Domain Services (AD DS, of on-premises AD DS)-verificatie (preview)** voor Azure files. Azure Files ondersteunt autorisatie op basis van een identiteit via SMB via AD DS. Uw AD DS omgeving kan worden gehost op on-premises machines of in azure-Vm's. SMB-toegang tot bestanden wordt ondersteund met behulp van AD DS referenties van computers die lid zijn van een domein, on-premises of in Azure. U kunt een combi natie van Azure RBAC gebruiken voor toegangs beheer op share niveau en NTFS-DACL'S voor het afdwingen van machtigingen op Directory-en bestands niveau. Raadpleeg het [overzicht](../files/storage-files-active-directory-overview.md)voor meer informatie over het Azure files-verificatie met Domain Services.
+- **Verificatie van on-premises Active Directory Domain Services (AD DS of on-premises AD DS)** voor Azure files. Azure Files ondersteunt autorisatie op basis van een identiteit via SMB via AD DS. Uw AD DS omgeving kan worden gehost op on-premises machines of in azure-Vm's. SMB-toegang tot bestanden wordt ondersteund met behulp van AD DS referenties van computers die lid zijn van een domein, on-premises of in Azure. U kunt een combi natie van Azure RBAC gebruiken voor toegangs beheer op share niveau en NTFS-DACL'S voor het afdwingen van machtigingen op Directory-en bestands niveau. Raadpleeg het [overzicht](../files/storage-files-active-directory-overview.md)voor meer informatie over het Azure files-verificatie met Domain Services.
 
 - **Gedeelde sleutel autorisatie** voor blobs, bestanden, wacht rijen en tabellen. Een client die een gedeelde sleutel gebruikt, geeft een header door elke aanvraag die is ondertekend met de toegangs sleutel voor het opslag account. Zie [autoriseren met gedeelde sleutel](/rest/api/storageservices/authorize-with-shared-key/)voor meer informatie.
 - **Shared Access signatures** voor blobs, bestanden, wacht rijen en tabellen. Shared Access signatures (SAS) bieden beperkte gedelegeerde toegang tot resources in een opslag account. Door beperkingen toe te voegen aan het tijds interval waarvoor de hand tekening geldig is of op machtigingen die door deze worden verleend, biedt het beheer van de toegang flexibiliteit. Zie [using Shared Access signatures (SAS) (Engelstalig)](storage-sas-overview.md)voor meer informatie.

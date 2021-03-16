@@ -5,15 +5,15 @@ description: Meer informatie over het ondertekenen en aanvragen van ACS met post
 author: ProbablePrime
 services: azure-communication-services
 ms.author: rifox
-ms.date: 03/08/2021
+ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 0d98ae1ef537b06858b8c03df65bbcdd27984c4f
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: c21d8696c0c4edd743aab6cbe7866d27ce46a314
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103022277"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492605"
 ---
 # <a name="tutorial-sign-and-make-requests-with-postman"></a>Zelf studie: ondertekenen en aanvragen indienen met de Postman
 In deze zelf studie wordt postman ingesteld en gebruikt om met behulp van HTTP een aanvraag uit te voeren voor services van Azure Communication Services (ACS). Aan het einde van deze zelf studie hebt u een SMS-bericht verzonden met behulp van ACS en postman. u kunt postman gebruiken om andere Api's binnen ACS te verkennen.

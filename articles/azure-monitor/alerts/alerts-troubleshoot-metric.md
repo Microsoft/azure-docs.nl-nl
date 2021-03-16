@@ -4,13 +4,13 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 01/21/2021
-ms.openlocfilehash: 2bd82d18d6647e47d9838702af45cff68f2bc6cd
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.date: 03/15/2021
+ms.openlocfilehash: f14142632f6ded9f598d6e94fd1e91ec17f6d0a7
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102037860"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466494"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -138,11 +138,9 @@ Als u wilt voor komen dat de implementatie mislukt wanneer u probeert de definit
 ## <a name="export-the-azure-resource-manager-template-of-a-metric-alert-rule-via-the-azure-portal"></a>De Azure Resource Manager sjabloon van een metrische waarschuwings regel exporteren via de Azure Portal
 
 Als u de Resource Manager-sjabloon van een metrische waarschuwings regel exporteert, kunt u de syntaxis en eigenschappen van de JSON begrijpen en gebruiken om toekomstige implementaties te automatiseren.
-1. Ga naar de sectie **resource groepen** in de portal en selecteer de resource groep met de regel.
-2. Schakel in de sectie Overzicht het selectie vakje **verborgen typen weer geven** in.
-3. Selecteer in het filter **type** *micro soft. Insights/metricalerts*.
-4. Selecteer de relevante waarschuwings regel om de details ervan weer te geven.
-5. Selecteer onder **instellingen** de optie **sjabloon exporteren**.
+1. Open in de Azure Portal de waarschuwings regel om de details ervan weer te geven.
+2. Klik op **Eigenschappen**.
+3. Selecteer onder **Automation** de optie **sjabloon exporteren**.
 
 ## <a name="metric-alert-rules-quota-too-small"></a>Het quotum voor de waarschuwings regels voor metrische gegevens is te klein
 

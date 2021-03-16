@@ -8,14 +8,16 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
-ms.openlocfilehash: d07a1d1ab0d3b1f4315c09f1c403126139b34612
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 0388520903e208b3225375d5cee81e8321740a1b
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043898"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103487731"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Modbus TCP-apparaten verbinden via een IoT Edge apparaat-gateway
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Als u IoT-apparaten wilt verbinden die gebruikmaken van Modbus TCP-of RTU-protocollen voor een Azure IoT-hub, kunt u een IoT Edge apparaat als gateway gebruiken. Het gatewayapparaat leest de gegevens van uw Modbus-apparaten en geeft deze gegevens met behulp van een ondersteund protocol door aan de cloud.
 
@@ -51,7 +53,7 @@ In deze sectie wordt uitgelegd hoe u de voor beeld-Modbus-module van micro soft 
 
    1. Klik op de vervolg keuzelijst **toevoegen** en selecteer **Marketplace-module**.
    2. Zoek `Modbus` en selecteer de **Modbus TCP-module** van micro soft.
-   3. De module wordt automatisch geconfigureerd voor uw IoT Hub en wordt weer gegeven in de lijst met IoT Edge modules. De routes worden ook automatisch geconfigureerd. Selecteer **Controleren en maken**.
+   3. De module wordt automatisch geconfigureerd voor uw IoT Hub en wordt weer gegeven in de lijst met IoT Edge modules. De routes worden ook automatisch geconfigureerd. Selecteer **Controleren + maken**.
    4. Controleer het implementatie manifest en selecteer **maken**.
 
 5. Selecteer de module Modbus, `ModbusTCPModule` in de lijst en selecteer het tabblad **module dubbele instellingen** . De vereiste JSON voor de module dubbele gewenste eigenschappen wordt automatisch ingevuld.

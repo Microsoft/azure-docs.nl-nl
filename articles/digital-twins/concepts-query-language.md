@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 9549e6ea30be0cd9eb1a8c200a5af4a4721793a6
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: fc9cd95063f84a9af7f989af9a65ce8f99852dc1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102034673"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490973"
 ---
 # <a name="about-the-query-language-for-azure-digital-twins"></a>Over de query taal voor Azure Digital Apparaatdubbels
 
@@ -85,7 +85,7 @@ In deze sectie worden de beperkingen van de query taal beschreven.
 * Er worden geen subquery's ondersteund in de `FROM` instructie.
 * `OUTER JOIN` semantische waarden worden niet ondersteund, wat betekent dat als de relatie een positie van nul heeft, de hele rij wordt verwijderd uit de uitvoer resultaatset.
 * De diepte van de grafiek Traversal is beperkt tot vijf `JOIN` niveaus per query.
-* De bron voor `JOIN` bewerkingen is beperkt: de query moet de apparaatdubbels declareren waar de query wordt gestart.
+* Relaties in azure Digital Apparaatdubbels kunnen niet worden opgevraagd als onafhankelijke entiteiten; u moet ook informatie opgeven over de bron, waarbij de relatie afkomstig is. Dit betekent dat er enkele beperkingen gelden voor de `JOIN` bewerking, die wordt gebruikt om relaties op te vragen, om ervoor te zorgen dat de query de dubbele (en) declareert waar de query wordt gestart. Zie voor voor beelden [*Query's uitvoeren op relatie*](how-to-query-graph.md#query-by-relationship) in het artikel *een dubbele grafiek opvragen* .
 
 ## <a name="next-steps"></a>Volgende stappen
 

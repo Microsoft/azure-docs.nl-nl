@@ -2,18 +2,18 @@
 title: Wat is Azure Private Link?
 description: Overzicht van Azure Private Link-functies, -architectuur en -implementatie. Meer informatie over hoe Azure privé-eindpunten en de Azure Private Link-service werken en hoe u deze kunt gebruiken.
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: overview
-ms.date: 01/28/2021
+ms.date: 03/15/2021
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: ee9b38343176eec82d8e227e86faa97814f5be13
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 6a85bfe7b3390b32fc220000b0c710b5a4e35067
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102616533"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496487"
 ---
 # <a name="what-is-azure-private-link"></a>Wat is Azure Private Link? 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners.
@@ -21,7 +21,7 @@ Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overvie
 Verkeer tussen uw virtuele netwerk en de service wordt via het Microsoft-backbonenetwerk verplaatst. U hoeft uw service niet langer bloot te stellen aan het openbare internet. U kunt een eigen [Private Link-service](private-link-service-overview.md) maken in uw virtuele netwerk en deze aanbieden bij klanten. Het instellen en gebruiken van Azure Private Link is consistent voor Azure PaaS-services, services die eigendom zijn van klanten en gedeelde partnerservices.
 
 > [!IMPORTANT]
-> Azure Private Link is nu algemeen beschikbaar. Zowel privé-eindpunten als de Private Link-service (service achter standaard load balancer) zijn algemeen beschikbaar. Met verschillende Azure PaaS wordt de Azure Private Link volgens verschillende planningen uitgevoerd. Raadpleeg het gedeelte [Beschikbaarheid](#availability) in dit artikel voor de juiste status van Azure PaaS op Private Link. Zie [Privé-eindpunt](private-endpoint-overview.md#limitations) en [Private Link-service](private-link-service-overview.md#limitations) voor bekende beperkingen. 
+> Azure Private Link is nu algemeen beschikbaar. Zowel privé-eindpunten als de Private Link-service (service achter standaard load balancer) zijn algemeen beschikbaar. Met verschillende Azure PaaS wordt de Azure Private Link volgens verschillende planningen uitgevoerd. Zie de [Beschik baarheid van persoonlijke koppelingen](availability.md) voor een nauw keurige status van Azure PaaS op een privé-koppeling. Zie [Privé-eindpunt](private-endpoint-overview.md#limitations) en [Private Link-service](private-link-service-overview.md#limitations) voor bekende beperkingen. 
 
 :::image type="content" source="./media/private-link-overview/private-link-center.png" alt-text="Azure Private Link-centrum in Azure Portal" border="false":::
 
@@ -38,44 +38,8 @@ Azure Private Link biedt de volgende voordelen:
 - **Breid uit naar uw eigen services**: Schakel dezelfde ervaring en functionaliteit in om uw service privé te maken voor consumenten in Azure. Als u uw service achter een standaard Azure Load Balancer plaatst, kunt u deze inschakelen voor Private Link. De gebruiker kan vervolgens rechtstreeks verbinding maken met uw service met behulp van een privé-eindpunt in zijn eigen virtuele netwerk. U kunt de verbindingsaanvragen beheren met een goedkeuringsaanroepstroom. Azure Private Link werkt voor consumenten en services die deel uitmaken van verschillende Azure Active Directory-tenants. 
 
 ## <a name="availability"></a>Beschikbaarheid 
- De volgende tabel bevat de Private Link-services en de regio's waarin ze beschikbaar zijn. 
 
-|Ondersteunde services  |Beschikbare regio's | Aanvullende overwegingen | Status  |
-|:-------------------|:-----------------|:----------------|:--------|
-|Private Link-services achter standaard Azure Load Balancer | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's  | Ondersteund op Standard Load Balancer | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een Private Link-service.](create-private-link-service-portal.md) |
-| Azure Blob Storage (inclusief Data Lake Storage Gen2)       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Blob Storage.](tutorial-private-endpoint-storage-portal.md)  |
-| Azure Files | Alle openbare regio's<br/> Alle Government-regio's      | |   Algemene beschikbaarheid <br/> [Meer informatie over het maken van Azure Files-netwerkeindpunten.](../storage/files/storage-files-networking-endpoints.md)   |
-| Azure File Sync | Alle openbare regio's      | |   Algemene beschikbaarheid <br/> [Meer informatie over het maken van Azure Files-netwerkeindpunten.](../storage/files/storage-sync-files-networking-endpoints.md)   |
-| Azure Queue Storage       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Queue Storage.](tutorial-private-endpoint-storage-portal.md) |
-| Azure Table Storage       |  Alle openbare regio's<br/> Alle Government-regio's       |  Ondersteund op Account Kind General Purpose V2 | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Table Storage.](tutorial-private-endpoint-storage-portal.md)  |
-|  Azure SQL Database         | Alle openbare regio's <br/> Alle Government-regio's<br/>Alle Chinese regio's      |  Ondersteund voor [proxy-verbindingsbeleid](../azure-sql/database/connectivity-architecture.md#connection-policy) | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure SQL](create-private-endpoint-portal.md)      |
-|Azure Synapse Analytics| Alle openbare regio's <br/> Alle Government-regio's |  Ondersteund voor [proxy-verbindingsbeleid](../azure-sql/database/connectivity-architecture.md#connection-policy) |Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Synapse Analytics.](../azure-sql/database/private-endpoint-overview.md)|
-|Azure Cosmos DB|  Alle openbare regio's<br/> Alle Government-regio's</br> Alle Chinese regio's | |Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Cosmos DB.](./tutorial-private-endpoint-cosmosdb-portal.md)|
-|  Azure Database for PostgreSQL - één server         | Alle openbare regio's <br/> Alle Government-regio's<br/>Alle Chinese regio's     | Prijscategorieën Ondersteund voor algemeen gebruik en Geoptimaliseerd voor geheugen | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Database for PostgreSQL.](../postgresql/concepts-data-access-and-security-private-link.md)      |
-|  Azure Database for MySQL         | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's      |  | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Database for MySQL.](../mysql/concepts-data-access-security-private-link.md)     |
-|  Azure Database for MariaDB         | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's     |  | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Database for MariaDB.](../mariadb/concepts-data-access-security-private-link.md)      |
-|  Azure Digital Twins         | Alle open bare regio's die worden ondersteund door Azure Digital Apparaatdubbels     |  | Preview <br/> [Meer informatie over het maken van een persoonlijk eind punt voor Azure Digital Apparaatdubbels.](../digital-twins/how-to-enable-private-link-portal.md)      |
-|  Azure Key Vault         | Alle openbare regio's<br/> Alle Government-regio's      |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Key Vault.](../key-vault/general/private-link-service.md)   |
-|Azure Kubernetes Service - Kubernetes API | Alle openbare regio's      |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Kubernetes Service.](../aks/private-clusters.md)   |
-|Azure Search | Alle openbare regio's <br/> Alle Government-regio's | Ondersteund met service in de privémodus | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Search.](../search/service-create-private-endpoint.md)    |
-|Azure Container Registry | Alle openbare regio's<br/> Alle Government-regio's    | Ondersteund met de Premium-laag van Container Registry. [Selecteren voor lagen](../container-registry/container-registry-skus.md)| Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Container Registry.](../container-registry/container-registry-private-link.md)   |
-|Azure App Configuration | Alle openbare regio's      |  | Preview  </br> [Meer informatie over het maken van een privé-eindpunt voor Azure App Configuration](../azure-app-configuration/concept-private-endpoint.md) |
-|Azure Backup | Alle openbare regio's<br/> Alle Government-regio's   |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Backup.](../backup/private-endpoints.md)   |
-|Azure Event Hub | Alle openbare regio's<br/>Alle Government-regio's      |   | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Event Hub.](../event-hubs/private-link-service.md)  |
-|Azure Service Bus | Alle openbare regio's<br/>Alle Government-regio's  | Ondersteund met de Premium-laag van Azure Service Bus. [Selecteren voor lagen](../service-bus-messaging/service-bus-premium-messaging.md) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Service Bus.](../service-bus-messaging/private-link-service.md)    |
-|Azure Relay | Alle openbare regio's      |  | Preview <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Relay.](../azure-relay/private-link-service.md)  |
-|Azure Event Grid| Alle openbare regio's<br/> Alle Government-regio's       |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Event Grid.](../event-grid/network-security.md) |
-|Azure Web Apps | Alle openbare regio's<br/> China-noord 2 & Oost 2    | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
-|Azure Machine Learning | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Machine Learning.](../machine-learning/how-to-configure-private-link.md)   |
-| Azure Automation  | Alle openbare regio's<br/> Alle Government-regio's |  | Preview </br> [Meer informatie over het maken van een privé-eindpunt voor Azure Automation.](../automation/how-to/private-link-security.md)| |
-| Azure IoT Hub | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure IoT Hub.](../iot-hub/virtual-network-support.md) |
-| Azure SignalR | VS - OOST, VS - ZUID-CENTRAAL,<br/>VS - WEST 2, alle Chinese regio's      |  | Preview   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure SignalR.](../azure-signalr/howto-private-endpoints.md)   |
-| Azure Monitor <br/>(Log Analytics en Application Insights) | Alle openbare regio's      |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Monitor.](../azure-monitor/logs/private-link-security.md)   | 
-| Azure Batch | Alle openbare regio's, behalve: Duitsland CENTRAAL, Duitsland NOORDOOST <br/> Alle Government-regio's  | | Algemene beschikbaarheid <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Batch.](../batch/private-connectivity.md) |
-|Azure Data Factory | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | Referenties moeten worden bewaard in een Azure-sleutelkluis| Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Data Factory.](../data-factory/data-factory-private-link.md)   |
-|Azure Managed Disks | Alle openbare regio's<br/> Alle Government-regio's<br/>Alle Chinese regio's    | [Klik hier voor bekende beperkingen](../virtual-machines/disks-enable-private-links-for-import-export-portal.md#limitations) | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Managed Disks.](../virtual-machines/disks-enable-private-links-for-import-export-portal.md)   |
-
-
+Zie [Beschik baarheid van persoonlijke Azure-koppelingen](availability.md)voor informatie over Azure-Services die persoonlijke koppelingen ondersteunen.
 
 Voor recente updates kijkt u op de pagina [Azure Private Link Updates](https://azure.microsoft.com/updates/?product=private-link) (Updates voor Azure Private Link).
 

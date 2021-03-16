@@ -13,15 +13,15 @@ ms.service: virtual-machines-sap
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/04/2020
+ms.date: 03/15/2021
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d5fa4cba67e279f66c090c8cb30eadf099f3c998
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: a3759bbe92a2de8515c7d812637acd88070f8d46
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101673561"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490905"
 ---
 # <a name="install-sap-netweaver-high-availability-on-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances-on-azure"></a>Een hoge Beschik baarheid van SAP NetWeaver installeren op een Windows-failovercluster en een bestands share voor SAP ASCS/SCS-exemplaren in azure
 
@@ -214,9 +214,11 @@ U hebt de volgende uitvoer bare bestanden en Dll's van SAP nodig:
 * SAP kernel 7,49 of hoger
 
 > [!IMPORTANT]
-> Het clusteren van SAP ASCS/SCS-instanties met behulp van een bestands share wordt ondersteund voor SAP NetWeaver 7,40 (en hoger) met SAP kernel 7,49 (en hoger).
+> Het clusteren van SAP ASCS/SCS-instanties met behulp van een bestands share wordt ondersteund voor SAP NetWeaver 7,40 (en hoger) met SAP kernel 7,49 (en hoger).  
+>   
+> [!IMPORTANT]
+> Het installatie programma moet voldoen aan de volgende vereiste: de SAP ASCS/SCS-instanties en de SOFS-share moeten in afzonderlijke clusters worden geïmplementeerd.    
 >
-
 
 De configuratie van het database beheersysteem (DBMS) wordt niet beschreven, omdat de instellingen variëren afhankelijk van het DBMS dat u gebruikt. We gaan echter ervan uit dat hoge Beschik baarheid met betrekking tot het DBMS is gericht op de functionaliteit die verschillende DBMS-leveranciers ondersteunen voor Azure. Deze functies omvatten AlwaysOn of database spiegeling voor SQL Server, en Oracle Data Guard voor Oracle-data bases. In het scenario dat we in dit artikel gebruiken, hebben we niet meer beveiliging aan het DBMS toegevoegd.
 

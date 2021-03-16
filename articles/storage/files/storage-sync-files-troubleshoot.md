@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 2/1/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: f54156ed8cc4c049e10bada77a66eee084f7c5fb
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 4439346a065f17f5b2136f51fd5e8b990fa1b914
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102453271"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491296"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Problemen met Azure Files Sync oplossen
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -113,7 +113,7 @@ Deze fout treedt op wanneer de Azure-bestandsshare al wordt gebruikt door een an
 Als u dit bericht ziet en de Azure-bestands share momenteel niet wordt gebruikt door een Cloud eindpunt, voert u de volgende stappen uit om de Azure File Sync meta gegevens op de Azure-bestands share te wissen:
 
 > [!Warning]  
-> Het verwijderen van de meta gegevens van een Azure-bestands share die momenteel wordt gebruikt door een Cloud-eind punt zorgt ervoor dat Azure File Sync bewerkingen mislukken. 
+> Het verwijderen van de meta gegevens van een Azure-bestands share die momenteel wordt gebruikt door een Cloud-eind punt zorgt ervoor dat Azure File Sync bewerkingen mislukken. Als u deze bestands share vervolgens gebruikt voor synchronisatie in een andere synchronisatie groep, is het gegevens verlies voor bestanden in de oude synchronisatie groep bijna zeker.
 
 1. Ga in het Azure Portal naar uw Azure-bestands share.  
 2. Klik met de rechter muisknop op de Azure-bestands share en selecteer vervolgens **meta gegevens bewerken**.

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 54f3004c190c104f2f869b2878b50f5b6c88856b
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: c18366fd4bc510f32ac0ef255b27709797a3b626
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103463809"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493698"
 ---
 # <a name="tutorial-create-an-azure-digital-twins-graph-using-a-sample-client-app"></a>Zelf studie: een Azure Digital Apparaatdubbels-grafiek maken met behulp van een voor beeld-client-app
 
@@ -37,18 +37,17 @@ In deze zelfstudie gaat u...
 
 Nu de app en verificatie zijn ingesteld, voert u het project uit met deze knop op de werk balk:
 
-:::image type="content" source="media/tutorial-command-line/app/start-button-sample.png" alt-text="De startknop van Visual Studio (project SampleClientApp)":::
+:::image type="content" source="media/tutorial-command-line/app/start-button-sample.png" alt-text="Scherm afbeelding van de knop Start van Visual Studio (SampleClientApp-project)." lightbox="media/tutorial-command-line/app/start-button-sample.png":::
 
 Er wordt een consolevenster geopend, de verificatie wordt uitgevoerd en er wordt gewacht op een opdracht. 
 * Verificatie wordt afgehandeld via de browser: uw standaardwebbrowser wordt geopend met een verificatieprompt. Gebruik deze prompt om u aan te melden met uw Azure-referenties. Vervolgens kunt u het browsertabblad of -venster sluiten.
 
 Dit is een schermopname van hoe de projectconsole eruitziet:
 
-:::image type="content" source="media/tutorial-command-line/app/command-line-app.png" alt-text="Welkomstbericht van de opdrachtregel-app":::
+:::image type="content" source="media/tutorial-command-line/app/command-line-app.png" alt-text="Scherm opname van het welkomst bericht van de opdracht regel-app." lightbox="media/tutorial-command-line/app/command-line-app.png":::
 
 > [!TIP]
 > Voer in de projectconsole `help` in en druk op Enter voor een lijst met alle mogelijke opdrachten die u bij dit project kunt gebruiken.
-> :::image type="content" source="media/tutorial-command-line/app/command-line-app-help.png" alt-text="Uitvoer van de help-opdracht":::
 
 Laat de projectconsole aan staan voor de rest van de stappen in deze zelfstudie.
 
@@ -83,7 +82,7 @@ Na het ontwerpen van modellen moet u deze uploaden naar uw Azure Digital Twins-i
 
 1. Controleer of de modellen zijn gemaakt door de opdracht `GetModels true` uit te voeren. Hierdoor wordt een query uitgevoerd op de Azure Digital Twins-instanties naar alle modellen die zijn geüpload, en worden alle gegevens ervan afgedrukt. Bekijk het bewerkte *Room*-model in de resultaten:
 
-    :::image type="content" source="media/tutorial-command-line/app/output-get-models.png" alt-text="Resultaten van GetModels waarin het bijgewerkte Room-model wordt weergegeven":::
+    :::image type="content" source="media/tutorial-command-line/app/output-get-models.png" alt-text="Scherm opname van het resultaat van GetModels, waarin het bijgewerkte room-model wordt weer gegeven." lightbox="media/tutorial-command-line/app/output-get-models.png":::
 
 ### <a name="errors"></a>Fouten
 
@@ -128,7 +127,7 @@ U gebruikt de opdracht `CreateDigitalTwin` om een digitale tweeling te maken. U 
 
     De uitvoer van deze opdrachten zou moeten aangeven dat de tweelingen met succes zijn gemaakt. 
     
-    :::image type="content" source="media/tutorial-command-line/app/output-create-digital-twin.png" alt-text="Fragment van de resultaten van CreateDigitalTwin-opdrachten, met floor0, floor1, room0, en room1":::
+    :::image type="content" source="media/tutorial-command-line/app/output-create-digital-twin.png" alt-text="Scherm opname van een uittreksel van het resultaat van de CreateDigitalTwin-opdrachten, waaronder floor0, floor1, room0 en room1." lightbox="media/tutorial-command-line/app/output-create-digital-twin.png":::
 
 1. U kunt controleren of de apparaatdubbels zijn gemaakt door de opdracht uit te voeren `Query` . Deze opdracht voert een query uit op uw Azure Digital Twins-instantie naar alle digitale tweelingen die deze bevat. Zoek in de resultaten naar de *room0*-, *room1*-, *floor0*-en *floor1* -apparaatdubbels.
 
@@ -180,7 +179,7 @@ Gebruik de opdracht `CreateRelationship` om een relatie toe te voegen. Geef het 
     
     De uitvoer van deze opdrachten bevestigt dat de relaties met succes zijn gemaakt:
     
-    :::image type="content" source="media/tutorial-command-line/app/output-create-relationship.png" alt-text="Fragment van de resultaten van CreateRelationship-opdrachten, met relationship0 en relationship1":::
+    :::image type="content" source="media/tutorial-command-line/app/output-create-relationship.png" alt-text="Scherm opname van een fragment van het resultaat van de CreateRelationship-opdrachten, waaronder relationship0 en relationship1." lightbox="media/tutorial-command-line/app/output-create-relationship.png":::
 
 1. U kunt de relaties controleren met een van de volgende opdrachten, die query's uitvoeren op de relaties in uw Azure Digital Apparaatdubbels-exemplaar.
     * Om alle relaties weer te geven die op elke verdieping worden weer gegeven (de relaties vanaf één zijde bekijken):
@@ -201,7 +200,7 @@ Gebruik de opdracht `CreateRelationship` om een relatie toe te voegen. Geef het 
 
 De tweelingen en relaties die u in deze zelfstudie hebt ingesteld vormen de volgende conceptuele grafiek:
 
-:::image type="content" source="media/tutorial-command-line/app/sample-graph.png" alt-text="Een grafiek die laat zien dat floor0 via relationship0 is verbonden met room0, en floor1 via relationship1 is verbonden met room1" border="false":::
+:::image type="content" source="media/tutorial-command-line/app/sample-graph.png" alt-text="Een diagram waarin een conceptuele grafiek wordt weer gegeven. floor0 is verbonden via relationship0 met room0 en floor1 is verbonden via relationship1 met room1." border="false" lightbox="media/tutorial-command-line/app/sample-graph.png":::
 
 ## <a name="query-the-twin-graph-to-answer-environment-questions"></a>Query uitvoeren op de tweelinggrafiek om vragen over de omgeving te beantwoorden
 
@@ -217,7 +216,7 @@ Voer de volgende opdrachten uit in de actieve project console om enkele vragen o
 
     Hiermee kunt u in één oogopslag de balans opmaken van uw omgeving en ervoor zorgen dat alles binnen Azure Digital Twins wordt weergegeven zoals u het wilt. Het resultaat hiervan is een uitvoer die elke digitale tweeling met de gegevens ervan bevat. Hier volgt een fragment:
 
-    :::image type="content" source="media/tutorial-command-line/app/output-query-all.png" alt-text="Gedeeltelijke resultaten van dubbelquery, met room0 en floor1":::
+    :::image type="content" source="media/tutorial-command-line/app/output-query-all.png" alt-text="Scherm opname met een gedeeltelijk resultaat van de dubbele query, waaronder room0 en floor1.":::
 
     >[!NOTE]
     >In het voorbeeldproject is de opdracht `Query` zonder aanvullende argumenten het equivalent van `Query SELECT * FROM DIGITALTWINS`. Gebruik de langere (volledige) query om alle apparaatdubbels in uw exemplaar op te vragen met behulp van de [query-API's](/rest/api/digital-twins/dataplane/query) of de [CLI-opdrachten](how-to-use-cli.md).
@@ -230,7 +229,7 @@ Voer de volgende opdrachten uit in de actieve project console om enkele vragen o
 
     U kunt uw query beperken tot tweelingen van een bepaald type om meer specifieke informatie te verkrijgen over wat er wordt weergegeven. Het resultaat hiervan laat *room0* en *room1* zien, maar **niet** *floor0* of *floor1* (omdat dat verdiepingen zijn en geen ruimten).
     
-    :::image type="content" source="media/tutorial-command-line/app/output-query-model.png" alt-text="Resultaten van modelquery, alleen room0 en room1 weergegeven":::
+    :::image type="content" source="media/tutorial-command-line/app/output-query-model.png" alt-text="Scherm opname van het resultaat van de model query, met alleen room0 en room1.":::
 
 1. **Wat zijn alle ruimten op *floor0*?** (query op relatie)
 
@@ -240,7 +239,7 @@ Voer de volgende opdrachten uit in de actieve project console om enkele vragen o
 
     U kunt query's uitvoeren op basis van relaties in uw grafiek, om informatie te krijgen over de manier waarop tweelingen zijn verbonden of om uw query te beperken tot een bepaald gebied. Alleen *room0* bevindt zich op *floor0*, dus is dit de enige ruimte in het resultaat.
 
-    :::image type="content" source="media/tutorial-command-line/app/output-query-relationship.png" alt-text="Resultaten van relatiequery, met room0 weergegeven":::
+    :::image type="content" source="media/tutorial-command-line/app/output-query-relationship.png" alt-text="Scherm opname van het resultaat van de relatie query, met room0.":::
 
 1. **Wat zijn de tweelingen in mijn omgeving met een temperatuur van meer dan 75 °F?** (query op eigenschap)
 
@@ -250,7 +249,7 @@ Voer de volgende opdrachten uit in de actieve project console om enkele vragen o
 
     U kunt een query uitvoeren op de grafiek op basis van eigenschappen om allerlei vragen te beantwoorden, met inbegrip van uitschieters in uw omgeving die mogelijk aandacht vereisen. Andere vergelijkingsoperators ( *<* , *>* , *=* of *!=* ) worden ook ondersteund. *room1* wordt hier weergegeven in de resultaten, omdat deze een temperatuur van 80 °F heeft.
 
-    :::image type="content" source="media/tutorial-command-line/app/output-query-property.png" alt-text="Resultaten van eigenschapsquery, alleen room1 weergegeven":::
+    :::image type="content" source="media/tutorial-command-line/app/output-query-property.png" alt-text="Scherm opname van het resultaat van de eigenschaps query, waarbij alleen room1 wordt weer gegeven.":::
 
 1. **Wat zijn alle ruimten op *floor0* met een temperatuur van meer dan 75 °F?** (samengestelde query)
 
@@ -260,7 +259,7 @@ Voer de volgende opdrachten uit in de actieve project console om enkele vragen o
 
     U kunt de eerdere query's ook combineren zoals u dat in SQL zou doen, met behulp van combinatie-operatoren zoals `AND`, `OR`, `NOT`. Deze query maakt gebruik van `AND` om de vorige query over tweelingtemperaturen specifieker te maken. Het resultaat bevat nu alleen ruimten met een temperatuur van meer dan 75 °F op *floor0*; in dit geval geen. De resultatenset is leeg.
 
-    :::image type="content" source="media/tutorial-command-line/app/output-query-compound.png" alt-text="Resultaten van samengestelde query, met geen resultaten":::
+    :::image type="content" source="media/tutorial-command-line/app/output-query-compound.png" alt-text="Scherm opname van het resultaat van de samengestelde query, waarbij geen resultaten worden weer gegeven." lightbox="media/tutorial-command-line/app/output-query-compound.png":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

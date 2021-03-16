@@ -3,14 +3,14 @@ title: Weergave mogelijkheden
 description: Standaard Azure Batch mogelijkheden worden gebruikt voor het uitvoeren van werk belastingen en apps voor rendering. Batch bevat specifieke functies voor het ondersteunen van rendering-workloads.
 author: mscurrell
 ms.author: markscu
-ms.date: 02/01/2021
+ms.date: 03/12/2021
 ms.topic: how-to
-ms.openlocfilehash: c748c51311a70cd3b4fc6d435e97a33d709467b9
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: a2e2cfb71999bd5ab83591448342d4bac1dabdd5
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99429799"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496334"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Mogelijkheden voor Azure Batch Rendering
 
@@ -27,6 +27,9 @@ De opdracht regel teken reeksen van de taak moeten verwijzen naar de toepassinge
 De meeste rendering-toepassingen vereisen licenties die zijn verkregen van een licentie server. Als er een bestaande on-premises licentie server is, moeten zowel de groep als de licentie server zich in hetzelfde [virtuele netwerk](../virtual-network/virtual-networks-overview.md)bevinden. Het is ook mogelijk om een licentie server op een virtuele Azure-machine uit te voeren, waarbij de batch-pool en de VM van de licentie server zich in hetzelfde virtueel netwerk bevindt.
 
 ## <a name="batch-pools-using-rendering-vm-images"></a>Batch-Pools met rendering van VM-installatie kopieën
+
+> [!IMPORTANT]
+> De rendering van VM-installatie kopieën en licenties voor betalen voor gebruik zijn [afgeschaft en zullen op 29 februari 2024 worden ingetrokken](https://azure.microsoft.com/updates/azure-batch-rendering-vm-images-licensing-will-be-retired-on-29-february-2024/). Als u batch voor rendering wilt gebruiken, [moet u een aangepaste VM-installatie kopie en Standard-toepassings licentie gebruiken.](batch-rendering-functionality.md#batch-pools-using-custom-vm-images-and-standard-application-licensing)
 
 ### <a name="rendering-application-installation"></a>De installatie van een toepassing weer geven
 

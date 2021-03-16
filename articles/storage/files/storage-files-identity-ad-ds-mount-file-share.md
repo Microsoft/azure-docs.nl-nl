@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: 9807563c768b82c823ff754aaa679ddc917bf62d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3aa7ab2fd3217377e9c56c8c71a1c1acc959bcd9
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87535056"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472283"
 ---
 # <a name="part-four-mount-a-file-share-from-a-domain-joined-vm"></a>Deel vier: een bestands share koppelen vanaf een virtuele machine die lid is van een domein
 
@@ -28,10 +28,10 @@ Meld u aan bij de client met behulp van de referenties waaraan u machtigingen he
 
 Voordat u de bestands share kunt koppelen, moet u ervoor zorgen dat u de volgende vereisten hebt door lopen:
 
-- Als u de bestands share koppelt van een client die eerder de bestands share heeft gekoppeld met behulp van de sleutel van uw opslag account, moet u ervoor zorgen dat u de verbinding met de share hebt verbroken, de permanente referenties van de sleutel van het opslag account hebt verwijderd en momenteel AD DS referenties gebruikt voor verificatie.
+- Als u de bestands share koppelt van een client die eerder de bestands share heeft gekoppeld met behulp van de sleutel van uw opslag account, moet u ervoor zorgen dat u de verbinding met de share hebt verbroken, de permanente referenties van de sleutel van het opslag account hebt verwijderd en momenteel AD DS referenties gebruikt voor verificatie. Raadpleeg de [pagina Veelgestelde vragen](https://docs.microsoft.com/azure/storage/files/storage-files-faq#ad-ds--azure-ad-ds-authentication)voor instructies voor het wissen van de gekoppelde share met de sleutel van het opslag account.
 - Uw-client moet een gezichts lijn hebben voor uw AD DS. Als uw computer of virtuele machine zich buiten het netwerk bevindt dat wordt beheerd door uw AD DS, moet u VPN inschakelen om AD DS voor verificatie te bereiken.
 
-Vervang de waarden van de tijdelijke aanduiding door uw eigen waarden en gebruik vervolgens de volgende opdracht om de Azure-bestands share te koppelen:
+Vervang de waarden van de tijdelijke aanduiding door uw eigen waarden en gebruik vervolgens de volgende opdracht om de Azure-bestands share te koppelen. U moet altijd koppelen met behulp van het hieronder weer gegeven pad. Het gebruik van CNAME voor bestands koppeling wordt niet ondersteund voor verificatie op basis van identiteiten (AD DS of Azure AD DS).
 
 ```PSH
 # Always mount your share using.file.core.windows.net, even if you setup a private endpoint for your share.

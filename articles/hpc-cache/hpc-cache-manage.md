@@ -4,14 +4,14 @@ description: De Azure HPC-cache beheren en bijwerken met behulp van de Azure Por
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 03/08/2021
 ms.author: v-erkel
-ms.openlocfilehash: 40d091782f37a32b75659cd274e49798dbe527cb
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: b34beb65bb8c4136887651d8365c937b17718572
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590782"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471904"
 ---
 # <a name="manage-your-cache"></a>Uw cache beheren
 
@@ -254,6 +254,20 @@ Op de overzichts pagina worden grafieken weer gegeven voor een aantal basis cach
 ![scherm afbeelding van drie lijn grafieken met de statistieken die hierboven worden vermeld voor een voorbeeld cache](media/hpc-cache-overview-stats.png)
 
 Deze grafieken maken deel uit van de ingebouwde hulpprogram ma's voor bewaking en analyse van Azure. Aanvullende hulp middelen en waarschuwingen zijn beschikbaar op de pagina's onder de kop **bewaking** in de zijbalk van de portal. Meer informatie vindt u in de sectie Portal van de [Azure monitoring-documentatie](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-in-the-azure-portal).
+
+## <a name="view-warnings"></a>Waarschuwingen weer geven
+
+Als de cache een slechte status heeft, controleert u de pagina **waarschuwingen** . Op deze pagina worden meldingen van de cache software weer gegeven die u kunnen helpen de status ervan te begrijpen.
+
+Deze meldingen worden niet weer gegeven in het activiteiten logboek, omdat ze niet worden beheerd door Azure Portal. Ze zijn vaak gekoppeld aan aangepaste instellingen die u mogelijk hebt gemaakt.
+
+Soorten waarschuwingen die u hier kunt zien, zijn onder andere:
+
+* De cache kan de NTP-server niet bereiken
+* De cache kan de gebruikers naam van de uitgebreide groepen niet downloaden
+* Aangepaste DNS-instellingen zijn gewijzigd op een opslag doel
+
+![scherm afbeelding van de pagina bewakings > waarschuwingen met een bericht dat de gebruikers namen van uitgebreide groepen niet kunnen worden gedownload](media/warnings-page.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

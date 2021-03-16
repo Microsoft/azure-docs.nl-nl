@@ -8,6 +8,8 @@
   items:
     - name: De geaggregeerde naamruimte plannen
       href: hpc-cache-namespace.md
+    - name: Informatie over de gebruiks modellen van de cache
+      href: cache-usage-models.md
     - name: Beveiliging
       items:
         - name: Beveiligingsbasislijn

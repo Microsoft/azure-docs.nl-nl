@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
-ms.date: 02/17/2021
+ms.date: 03/13/2021
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a0f50a7f84b89d7c048e57eadc85635df10f77
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.openlocfilehash: a2c327154e2f4eae735e7078be3b057b1d8cf1c5
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103467677"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490871"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
@@ -76,6 +76,7 @@ Als best practice wordt u aangeraden deze rol toe te wijzen aan minder dan vijf 
 > | [Insights-bedrijfsleider](#insights-business-leader) | Kan Dash boards en inzichten bekijken en delen via de M365 Insights-app. | 31e939ad-9672-4796-9c2e-873181342d2d |
 > | [InTune-beheerder](#intune-administrator) | Kan alle aspecten van het intune-product beheren. | 3a2c62db-5318-420d-8d74-23affee5d9d5 |
 > | [Kaizala-beheerder](#kaizala-administrator) | Kan instellingen voor micro soft Kaizala beheren. | 74ef975b-6605-40af-a5d2-b9539d836353 |
+> | [Kennis beheerder](#knowledge-administrator) | Kan kennis, leer en andere intelligente functies configureren. | b5a8dcf3-09d5-43a9-a639-8e29ef291470 |
 > | [Licentiebeheerder](#license-administrator) | Kan product licenties voor gebruikers en groepen beheren. | 4d6ac14f-3453-41d0-bef9-a3e0c569773a |
 > | [Berichtencentrum-privacylezer](#message-center-privacy-reader) | Kan alleen beveiligings berichten en updates in Office 365 Message Center lezen. | ac16e43d-7b2d-40e0-ac05-243ff356ab5b |
 > | [Berichtencentrum-lezer](#message-center-reader) | Kan berichten en updates voor hun organisatie alleen in het Office 365-berichten centrum lezen. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
@@ -401,7 +402,7 @@ Deze rol verleent ook de mogelijkheid om toestemming te geven voor gedelegeerde 
 > | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Synchronisatie-taken voor het inrichten van toepassingen starten, opnieuw opstarten en onderbreken |
 > | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Synchronisatie-taken en-schema's voor het inrichten van toepassingen maken en beheren |
 > | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Referenties voor eenmalige aanmelding voor de service-principals lezen |
-> | micro soft. Directory/servicePrincipals/managePermissionGrantsForAll. Microsoft-Application-admin | Toestemming geven voor toepassings machtigingen en gedelegeerde machtigingen namens een gebruiker of alle gebruikers, met uitzonde ring van toepassings machtigingen voor Microsoft Graph en Azure AD Graph  |
+> | micro soft. Directory/servicePrincipals/managePermissionGrantsForAll. Microsoft-Application-admin | Toestemming geven voor toepassings machtigingen en gedelegeerde machtigingen namens een gebruiker of alle gebruikers, met uitzonde ring van toepassings machtigingen voor Microsoft Graph en Azure AD Graph |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Principal-roltoewijzingen van service bijwerken |
 > | microsoft.directory/servicePrincipals/audience/update | Eigenschappen van de doel groep voor service-principals bijwerken |
 > | microsoft.directory/servicePrincipals/authentication/update | Verificatie-eigenschappen voor service-principals bijwerken |
@@ -730,7 +731,7 @@ Gebruikers met deze rol hebben algemene machtigingen in micro soft Exchange Onli
 > | micro soft. Directory/groepen. Unified/eigen aren/bijwerken | Eigen aren van Microsoft 365 groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
-> | micro soft. office365. Exchange/alallTasks | Alle aspecten van Exchange Online beheren |
+> | micro soft. office365. Exchange//basis/allTasks | Alle aspecten van Exchange Online beheren |
 > | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
 > | micro soft. office365. supportTickets/cons/allTasks | Microsoft 365 service aanvragen maken en beheren |
@@ -774,6 +775,7 @@ Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
+> | micro soft. Directory/accessReviews/allProperties/allTasks | Toegangs beoordelingen maken en verwijderen en alle eigenschappen van toegangs beoordelingen lezen en bijwerken in azure AD |
 > | micro soft. Directory/administrativeUnits/allProperties/allTasks | Beheer eenheden maken en beheren (inclusief leden) |
 > | micro soft. Directory/toepassingen/allProperties/allTasks | Toepassingen maken en verwijderen en alle eigenschappen lezen en bijwerken |
 > | microsoft.directory/applications/synchronization/standard/read | De inrichtingsinstellingen lezen die aan het toepassingsobject zijn gekoppeld |
@@ -801,9 +803,10 @@ Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active 
 > | micro soft. Directory/domeinen/allProperties/allTasks | Maak en verwijder domeinen en Lees alle eigenschappen en werk deze bij |
 > | micro soft. Directory/entitlementManagement/allProperties/allTasks | Resources maken en verwijderen en alle eigenschappen in azure AD-beheer voor rechten lezen en bijwerken |
 > | micro soft. Directory/groepen/allProperties/allTasks | Groepen maken en verwijderen en alle eigenschappen lezen en bijwerken |
-> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Update groepen waarvoor de eigenschap isAssignableToRole is ingesteld op waar |
-> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waarvan de eigenschap isAssignableToRole is ingesteld op waar |
-> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Groepen verwijderen waarvan de eigenschap isAssignableToRole is ingesteld op waar |
+> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waaraan rollen kunnen worden toegewezen |
+> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Te verwijderen rol: toewijs bare groepen |
+> | micro soft. Directory/groupsAssignableToRoles/Restore | Functie herstellen: toewijs bare groepen |
+> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Functie-toewijs bare groepen bijwerken |
 > | micro soft. Directory/groupSettings/allProperties/allTasks | Groeps instellingen maken en verwijderen, en alle eigenschappen lezen en bijwerken |
 > | micro soft. Directory/groupSettingTemplates/allProperties/allTasks | Groeps instellingen sjablonen maken en verwijderen, en alle eigenschappen lezen en bijwerken |
 > | micro soft. Directory/identityProtection/allProperties/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in Azure AD Identity Protection en werk deze bij. |
@@ -823,7 +826,7 @@ Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active 
 > | micro soft. Directory/serviceAction/getAvailableExtentionProperties | Kan de Getavailableextentionproperties-service actie uitvoeren |
 > | microsoft.directory/servicePrincipals/allProperties/allTasks | Service-principals maken en verwijderen en alle eigenschappen lezen en bijwerken |
 > | micro soft. Directory/servicePrincipals/managePermissionGrantsForAll. Microsoft-Company-Admin | Toestemming geven voor elke machtiging voor elke toepassing |
-> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep  |
+> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | De inrichtingsinstellingen lezen die aan uw service-principal zijn gekoppeld |
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. Directory/subscribedSkus/allProperties/allTasks | Abonnementen kopen en beheren en abonnementen verwijderen |
@@ -832,6 +835,10 @@ Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active 
 > | microsoft.directory/permissionGrantPolicies/delete | Machtigings beleid verwijderen |
 > | microsoft.directory/permissionGrantPolicies/standard/read | Standaard eigenschappen van machtigings beleid lezen |
 > | microsoft.directory/permissionGrantPolicies/basic/update | Basis eigenschappen van machtigings beleid voor machtigingen bijwerken |
+> | micro soft. map/servicePrincipalCreationPolicies/maken | Beleid voor het maken van service-principals maken |
+> | micro soft. Directory/servicePrincipalCreationPolicies/verwijderen | Beleid voor het maken van service-principals verwijderen |
+> | micro soft. map/servicePrincipalCreationPolicies/standaard/lezen | Standaard eigenschappen van het beleid voor het maken van service-principals lezen |
+> | micro soft. Directory/servicePrincipalCreationPolicies/Basic/update | Basis eigenschappen van het beleid voor het maken van service-principals bijwerken |
 > | micro soft. Azure. advancedThreatProtection/allTasks | Alle aspecten van Azure Advanced Threat Protection beheren |
 > | micro soft. Azure. informationProtection/allTasks | Alle aspecten van Azure Information Protection beheren |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
@@ -842,11 +849,12 @@ Gebruikers met deze rol hebben toegang tot alle beheer functies in Azure Active 
 > | micro soft. intune/toestemmingen/allTasks | Alle aspecten van Microsoft Intune beheren |
 > | micro soft. office365. complianceManager/cons/allTasks | Alle aspecten van Office 365-nalevings beheer beheren |
 > | micro soft. office365. desktopAnalytics/cons/allTasks | Alle aspecten van Desktop Analytics beheren |
-> | micro soft. office365. Exchange/alallTasks | Alle aspecten van Exchange Online beheren |
+> | micro soft. office365. Exchange//basis/allTasks | Alle aspecten van Exchange Online beheren |
 > | micro soft. office365. lockbox/cons/allTasks | Alle aspecten van Klanten-lockbox beheren |
 > | micro soft. office365. messageCenter/berichten/lezen | Berichten in het berichten centrum lezen in het Microsoft 365-beheer centrum, met uitzonde ring van beveiligings berichten |
 > | micro soft. office365. messageCenter/securityMessages/lezen | Lees beveiligings berichten in het berichten centrum in het Microsoft 365-beheer centrum |
-> | micro soft. office365. protectionCenter/cons/allProperties/allTasks | Alle aspecten van Office 365 Protection Center beheren |
+> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
+> | micro soft. office365. protectionCenter/cons/allProperties/allTasks | Alle aspecten van de beveiligings-en nalevings centra beheren |
 > | micro soft. office365. Search/content/Manage | Inhoud maken en verwijderen en alle eigenschappen in micro soft Search lezen en bijwerken |
 > | micro soft. office365. securityComplianceCenter/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in het Microsoft 365 Security and Compliance Center en werk deze bij. |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
@@ -902,11 +910,11 @@ Gebruikers met deze rol kunnen instellingen en beheer informatie lezen over Micr
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. map/gebruikers/strongAuthentication/lezen | De eigenschap voor sterke verificatie voor gebruikers lezen |
 > | micro soft. commerce. facturering/toerekeningen/lezen | Alle resources van Office 365-facturering lezen |
-> | micro soft. office365. Exchange//lezen | Alle resources van Exchange Online lezen |
+> | micro soft. office365. Exchange//standaard/lezen | Alle resources van Exchange Online lezen |
 > | micro soft. office365. messageCenter/berichten/lezen | Berichten in het berichten centrum lezen in het Microsoft 365-beheer centrum, met uitzonde ring van beveiligings berichten |
 > | micro soft. office365. messageCenter/securityMessages/lezen | Lees beveiligings berichten in het berichten centrum in het Microsoft 365-beheer centrum |
 > | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
-> | micro soft. office365. protectionCenter/cons/allProperties/lezen | Alle aspecten van Office 365 Protection Center lezen |
+> | micro soft. office365. protectionCenter/cons/allProperties/lezen | Alle eigenschappen lezen in de beveiligings-en nalevings centrums |
 > | micro soft. office365. securityComplianceCenter/de aflezingen/lezen | Lees de standaard eigenschappen in Microsoft 365 Security and Compliance Center |
 > | micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365 |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
@@ -933,7 +941,7 @@ Gebruikers met deze rol kunnen groepen en de bijbehorende instellingen maken/beh
 > | micro soft. Directory/groepen/eigen aren/bijwerken | Eigen aren van groepen bijwerken, met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen/instellingen/bijwerken | Instellingen van groepen bijwerken |
 > | micro soft. map/groepen/zicht baarheid/bijwerken | De zichtbaarheids eigenschap van groepen bijwerken |
-> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep  |
+> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
@@ -1092,7 +1100,6 @@ Deze rol kan alle beveiligings groepen maken en beheren. De intune-beheerder hee
 > | micro soft. Directory/groepen. beveiliging/basis/bijwerken | Basis eigenschappen van beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. beveiliging/classificatie/bijwerken | De classificatie-eigenschap van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groups. Security/dynamicMembershipRule/update | De eigenschap dynamicMembershipRule van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
-> | micro soft. Directory/groups. Security/groupType/update | Groeps type-eigenschap van de beveiligings groepen bijwerken met uitsluiting van door rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. beveiliging/leden/bijwerken | Leden van beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. beveiliging/eigen aren/bijwerken | Eigen aren van beveiligings groepen bijwerken met uitsluiting van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. beveiliging/zicht baarheid/bijwerken | De zichtbaarheids eigenschap van de beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
@@ -1111,6 +1118,26 @@ Gebruikers met deze rol hebben algemene machtigingen voor het beheren van instel
 > | Acties | Beschrijving |
 > | --- | --- |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
+> | micro soft. office365. supportTickets/cons/allTasks | Microsoft 365 service aanvragen maken en beheren |
+> | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
+
+## <a name="knowledge-administrator"></a>Kennis beheerder
+
+Gebruikers met deze rol hebben volledige toegang tot alle instellingen voor kennis, leren en intelligente functies in het Microsoft 365-beheer centrum. Ze hebben een algemeen inzicht in het pakket producten, licentie gegevens en zijn verantwoordelijk voor het beheren van de toegang. De kennis beheerder kan inhoud maken en beheren, zoals onderwerpen, acroniemen en trainings materialen. Daarnaast kunnen deze gebruikers inhouds centra maken, service status bewaken en service aanvragen maken.
+
+> [!div class="mx-tableFixed"]
+> | Acties | Beschrijving |
+> | --- | --- |
+> | micro soft. Directory/groepen. beveiliging/maken | Beveiligings groepen maken met uitzonde ring van op rollen toewijs bare groepen |
+> | micro soft. Directory/groups. Security/createAsOwner | Beveiligings groepen maken met uitzonde ring van op rollen toewijs bare groepen en Maker wordt toegevoegd als de eerste eigenaar |
+> | micro soft. Directory/groepen. beveiliging/verwijderen | Beveiligings groepen verwijderen met uitzonde ring van op rollen toewijs bare groepen |
+> | micro soft. Directory/groepen. beveiliging/basis/bijwerken | Basis eigenschappen van beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
+> | micro soft. Directory/groepen. beveiliging/leden/bijwerken | Leden van beveiligings groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
+> | micro soft. Directory/groepen. beveiliging/eigen aren/bijwerken | Eigen aren van beveiligings groepen bijwerken met uitsluiting van op rollen toewijs bare groepen |
+> | micro soft. office365. kennis/contentUnderstanding/allProperties/allTasks | Alle eigenschappen van inhoud met uitleg in Microsoft 365-beheer centrum lezen en bijwerken |
+> | micro soft. office365. kennis/knowledgeNetwork/allProperties/allTasks | Alle eigenschappen van het kennis netwerk lezen en bijwerken in Microsoft 365-beheer centrum |
+> | micro soft. office365. protectionCenter/sensitivityLabels/allProperties/lezen | Gevoelige labels lezen in de beveiligings-en nalevings centrums |
+> | micro soft. office365. share point/cons/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in share point en werk deze bij |
 > | micro soft. office365. supportTickets/cons/allTasks | Microsoft 365 service aanvragen maken en beheren |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
 
@@ -1415,9 +1442,10 @@ Gebruikers met deze rol kunnen roltoewijzingen in Azure Active Directory beheren
 > | micro soft. Directory/appRoleAssignments/allProperties/allTasks | AppRoleAssignments maken en verwijderen en alle eigenschappen lezen en bijwerken |
 > | micro soft. Directory/authorizationPolicy/allProperties/allTasks | Alle aspecten van autorisatie beleid beheren |
 > | micro soft. Directory/directoryRoles/allProperties/allTasks | Directory rollen maken en verwijderen en alle eigenschappen lezen en bijwerken |
-> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Update groepen waarvoor de eigenschap isAssignableToRole is ingesteld op waar |
-> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waarvan de eigenschap isAssignableToRole is ingesteld op waar |
-> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Groepen verwijderen waarvan de eigenschap isAssignableToRole is ingesteld op waar |
+> | micro soft. map/groupsAssignableToRoles/maken | Groepen maken waaraan rollen kunnen worden toegewezen |
+> | micro soft. Directory/groupsAssignableToRoles/verwijderen | Te verwijderen rol: toewijs bare groepen |
+> | micro soft. Directory/groupsAssignableToRoles/Restore | Functie herstellen: toewijs bare groepen |
+> | micro soft. Directory/groupsAssignableToRoles/allProperties/update | Functie-toewijs bare groepen bijwerken |
 > | micro soft. Directory/oAuth2PermissionGrants/allProperties/allTasks | OAuth 2,0-machtigings subsidies maken en verwijderen en alle eigenschappen lezen en bijwerken |
 > | micro soft. Directory/privilegedIdentityManagement/allProperties/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in Privileged Identity Management en werk deze bij. |
 > | micro soft. Directory/roleAssignments/allProperties/allTasks | Roltoewijzingen maken en verwijderen en alle roltoewijzings eigenschappen lezen en bijwerken |
@@ -1439,6 +1467,7 @@ Gebruikers met deze rol kunnen gegevens over gebruiks rapportage en het dash boa
 > | microsoft.directory/provisioningLogs/allProperties/read | Geef alle eigenschappen van inrichtingslogboeken weer |
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
+> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
 > | micro soft. office365. usageReports/cons/allProperties/lezen | Lees de gebruiks rapporten van Office 365 |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
@@ -1514,8 +1543,8 @@ Windows Defender ATP en EDR | Rollen toewijzen<br>Computer groepen beheren<br>De
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
-> | micro soft. office365. protectionCenter/geleenheden/standaard/lezen | Standaard eigenschappen van alle resources in Office 365 Protection Center lezen |
-> | micro soft. office365. protectionCenter/de beleeningen/basis/update | Basis eigenschappen van alle resources in Office 365 Protection Center bijwerken |
+> | micro soft. office365. protectionCenter/geleenheden/standaard/lezen | Lees de standaard eigenschappen van alle resources in de beveiligings-en nalevings centrums |
+> | micro soft. office365. protectionCenter/de beleeningen/basis/update | Basis eigenschappen van alle resources in de beveiligings-en nalevings centrums bijwerken |
 > | micro soft. office365. protectionCenter/attackSimulator/Payload/allProperties/allTasks | Payloads voor aanvallen maken en beheren in de aanvals Simulator |
 > | micro soft. office365. protectionCenter/attackSimulator/Reports/allProperties/lezen | Rapporten lezen over simulatie van aanvallen, reacties en bijbehorende trainingen |
 > | micro soft. office365. protectionCenter/attackSimulator/simulatie/allProperties/allTasks | Simulatie sjablonen voor aanvallen maken en beheren in de aanvals Simulator |
@@ -1545,6 +1574,7 @@ Windows Defender ATP en EDR | Alle machtigingen van de rol beveiligings lezer<br
 > | micro soft. Directory/cloudAppSecurity/allProperties/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in Microsoft Cloud App Security en werk deze bij. |
 > | micro soft. Directory/identityProtection/allProperties/allTasks | Maak en verwijder alle resources en lees de standaard eigenschappen in Azure AD Identity Protection en werk deze bij. |
 > | micro soft. map/privilegedIdentityManagement/allProperties/lezen | Alle resources in Privileged Identity Management lezen |
+> | microsoft.directory/provisioningLogs/allProperties/read | Geef alle eigenschappen van inrichtingslogboeken weer |
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. Azure. advancedThreatProtection/allTasks | Alle aspecten van Azure Advanced Threat Protection beheren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
@@ -1586,7 +1616,7 @@ Windows Defender ATP en EDR | Waarschuwingen weer geven en onderzoeken. Wanneer 
 > | microsoft.directory/provisioningLogs/allProperties/read | Geef alle eigenschappen van inrichtingslogboeken weer |
 > | microsoft.directory/signInReports/allProperties/read | Alle eigenschappen voor aanmeldings rapporten lezen, inclusief bevoorrechte eigenschappen |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
-> | micro soft. office365. protectionCenter/geleenheden/standaard/lezen | Standaard eigenschappen van alle resources in Office 365 Protection Center lezen |
+> | micro soft. office365. protectionCenter/geleenheden/standaard/lezen | Lees de standaard eigenschappen van alle resources in de beveiligings-en nalevings centrums |
 > | micro soft. office365. protectionCenter/attackSimulator/Payload/allProperties/lezen | Alle eigenschappen van beveiligings-nettoladingen in de aanvals Simulator lezen |
 > | micro soft. office365. protectionCenter/attackSimulator/Reports/allProperties/lezen | Rapporten lezen over simulatie van aanvallen, reacties en bijbehorende trainingen |
 > | micro soft. office365. protectionCenter/attackSimulator/simulatie/allProperties/lezen | Alle eigenschappen van simulatie sjablonen voor aanvallen in de aanvals Simulator lezen |
@@ -1605,6 +1635,7 @@ Gebruikers met deze rol kunnen ondersteunings aanvragen openen met micro soft vo
 > | --- | --- |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
+> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
 > | micro soft. office365. serviceHealth/cons/allTasks | Service Health in het Microsoft 365 beheer centrum lezen en configureren |
 > | micro soft. office365. supportTickets/cons/allTasks | Microsoft 365 service aanvragen maken en beheren |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
@@ -1669,7 +1700,7 @@ Gebruikers met deze rol kunnen alle aspecten van de werk belasting van micro sof
 > | micro soft. Directory/groepen. Unified/Basic/update | Basis eigenschappen van Microsoft 365 groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. Unified/members/update | Leden van Microsoft 365 groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
 > | micro soft. Directory/groepen. Unified/eigen aren/bijwerken | Eigen aren van Microsoft 365 groepen bijwerken met uitzonde ring van op rollen toewijs bare groepen |
-> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep  |
+> | micro soft. Directory/servicePrincipals/managePermissionGrantsForGroup. Microsoft-all-Application-permissions | Een Service Principal direct toegang verlenen tot gegevens van een groep |
 > | micro soft. Azure. serviceHealth/allTasks | Azure Service Health lezen en configureren |
 > | micro soft. Azure. supportTickets/allTasks | Azure-ondersteunings tickets maken en beheren |
 > | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
@@ -1741,6 +1772,7 @@ Gebruikers met deze rol hebben toegang tot geaggregeerde gegevens op Tenant nive
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
 > | --- | --- |
+> | micro soft. office365. netwerk/prestaties/allProperties/lezen | Alle eigenschappen van netwerk prestaties lezen in het Microsoft 365-beheer centrum |
 > | micro soft. office365. usageReports/geleenheden/standaard/lezen | Samengevoegde Office 365-gebruiks rapporten op Tenant niveau lezen |
 > | micro soft. office365. webportal/de beleen baarheid/standaard/lezen | Lees de basis eigenschappen van alle resources in het Microsoft 365-beheer centrum |
 
@@ -1748,7 +1780,7 @@ Gebruikers met deze rol hebben toegang tot geaggregeerde gegevens op Tenant nive
 
 Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers met enkele beperkingen beheren (Zie de tabel) en het verloop beleid voor wacht woorden kan bijwerken. Daarnaast kunnen gebruikers met deze rol alle groepen maken en beheren. Deze rol omvat ook de mogelijkheid om gebruikers weergaven te maken en beheren, ondersteunings tickets te beheren en de service status te controleren. Gebruikers beheerders hebben geen machtiging om bepaalde gebruikers eigenschappen voor gebruikers te beheren in de meeste beheerders rollen. Gebruiker met deze rol heeft geen machtigingen voor het beheren van MFA. De functies die uitzonde ringen op deze beperking zijn, worden weer gegeven in de volgende tabel.
 
-| Gebruikers beheerders machtigingen | Notities |
+| Gebruikers beheerders machtigingen | Opmerkingen |
 | --- | --- |
 | Gebruikers en groepen maken<br/>Gebruikersweergaven maken en beheren<br/>Office-ondersteunings tickets beheren<br/>Verloop beleid voor wacht woorden bijwerken |  |
 | Licenties beheren<br/>Alle gebruikers eigenschappen beheren, met uitzonde ring van Principal-naam van gebruiker | Is van toepassing op alle gebruikers, inclusief alle beheerders |
@@ -1826,7 +1858,7 @@ De volgende rollen mogen niet worden gebruikt. Ze zijn afgeschaft en worden in d
 
 Niet elke rol die wordt geretourneerd door Power shell of MS Graph API is zichtbaar in Azure Portal. In de volgende tabel worden deze verschillen ingedeeld.
 
-API-naam | Azure-portaalnaam | Notities
+API-naam | Azure-portaalnaam | Opmerkingen
 -------- | ------------------- | -------------
 Apparaat toevoegen | Afgeschaft | [Documentatie over afgeschafte functies](#deprecated-roles)
 Apparaatbeheer | Afgeschaft | [Documentatie over afgeschafte functies](#deprecated-roles)

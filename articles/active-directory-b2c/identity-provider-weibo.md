@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: eb97ed6e43f70db4cce6a6f8013c8669a6a62a78
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 272abef5adfbcceebe82ab703152e2a8fde86d9b
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448078"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488550"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een Weibo-account met behulp van Azure Active Directory B2C
 
@@ -52,7 +52,7 @@ Als u aanmelden wilt inschakelen voor gebruikers met een Weibo-account in Azure 
 1. Selecteer **保存以上信息** (opslaan).
 1. Selecteer **高级信息** (geavanceerde informatie).
 1. Selecteer **编辑** (bewerken) naast het veld voor OAuth 2.0 **授权设置** (omleidings-URL).
-1. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in voor OAuth 2.0- **授权设置** (omleidings-URL). Als uw Tenant naam bijvoorbeeld contoso is, stelt u de URL in op `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp` .
+1. Voer voor de OAuth 2.0- **授权设置** (omleidings-URL) in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein.
 1. Selecteer **提交** (verzenden).
 
 ::: zone pivot="b2c-user-flow"

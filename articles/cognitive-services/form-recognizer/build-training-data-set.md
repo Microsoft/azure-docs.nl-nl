@@ -2,23 +2,23 @@
 title: Een trainings gegevensverzameling maken voor een aangepaste herkenner van het model formulier
 titleSuffix: Azure Cognitive Services
 description: Meer informatie over hoe u ervoor kunt zorgen dat uw trainings gegevensverzameling is geoptimaliseerd voor het trainen van een model voor formulier herkenning.
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
-ms.author: pafarley
-ms.openlocfilehash: ee57ccb82e771ee8ab93b09e476a94df32278069
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.author: lajanuar
+ms.openlocfilehash: b33ac3cb710a2d2a9d92efadf14dc829cb5da6e8
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585106"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467490"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Een trainings gegevensverzameling voor een aangepast model bouwen
 
-Wanneer u het aangepaste model van de formulier Recognizer gebruikt, geeft u uw eigen trainings gegevens op voor de [aangepaste model](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) bewerking voor het trainen, zodat het model kan worden opgeleid voor uw branchespecifieke formulieren. Volg deze hand leiding voor informatie over het verzamelen en voorbereiden van gegevens om het model effectief te trainen.
+Wanneer u het aangepaste model van de formulier Recognizer gebruikt, geeft u uw eigen trainings gegevens op voor de [aangepaste model](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync) bewerking voor het trainen, zodat het model kan worden opgeleid voor uw branchespecifieke formulieren. Volg deze hand leiding voor informatie over het verzamelen en voorbereiden van gegevens om het model effectief te trainen.
 
 U moet ten minste vijf ingevulde formulieren van hetzelfde type hebben.
 
@@ -47,7 +47,7 @@ Als u hand matig gelabelde gegevens wilt gebruiken, moet u ook de *.labels.js* u
 
 ### <a name="organize-your-data-in-subfolders-optional"></a>Organiseer uw gegevens in submappen (optioneel)
 
-Standaard worden alleen formulier documenten gebruikt die zich [in de hoofdmap](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) van uw opslag container bevinden. U kunt echter met gegevens in submappen trainen als u deze in de API-aanroep opgeeft. Normaal gesp roken heeft de hoofd tekst van de [trein aangepaste model](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) aanroep de volgende indeling, waarbij `<SAS URL>` de URL van de gedeelde Access-hand tekening van de container is:
+Standaard worden alleen formulier documenten gebruikt die zich [in de hoofdmap](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync) van uw opslag container bevinden. U kunt echter met gegevens in submappen trainen als u deze in de API-aanroep opgeeft. Normaal gesp roken heeft de hoofd tekst van de [trein aangepaste model](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/TrainCustomModelAsync) aanroep de volgende indeling, waarbij `<SAS URL>` de URL van de gedeelde Access-hand tekening van de container is:
 
 ```json
 {

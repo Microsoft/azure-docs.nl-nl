@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 110da0a12336415d9d9c781e24684d7e2af8bc9d
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: d2159540c688a63082efb792fd4d261062ef65d9
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98741652"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466790"
 ---
 # <a name="enterprise-application-permissions-for-custom-roles-in-azure-active-directory"></a>Zakelijke app-toestemmingen voor aangepaste rollen in Azure Active Directory
 
@@ -169,4 +169,4 @@ microsoft.directory/provisioningLogs/allProperties/read | Geef alle eigenschappe
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Aangepaste roltoewijzingen maken met behulp van Azure Portal, Azure AD PowerShell en Graph API](custom-create.md)
-- [De toewijzingen voor een aangepaste rol bekijken](custom-view-assignments.md)
+- [Lijst met roltoewijzingen weergeven](view-assignments.md)

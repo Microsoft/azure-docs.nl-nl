@@ -6,12 +6,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
-ms.openlocfilehash: e3d8d6529eb943566118cc67eab549cb32891cd8
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: fee71f9ebfc69c19adc026fce5cd78b6a8b5240b
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102037231"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490284"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -63,6 +63,20 @@ In de grafiek worden standaard de meest recente 24 uur aan metrische gegevens we
 - Met **Splitsen** bepaalt u of in het diagram elke waarde van een dimensie wordt weergegeven op een afzonderlijke regel of dat de waarden worden geaggregeerd op één regel. U kunt bijvoorbeeld één regel weer geven voor een gemiddelde reactie tijd voor alle Server exemplaren, of afzonderlijke regels voor elke server weer geven. U moet splitsen Toep assen op de dimensie van het *Server exemplaar* om afzonderlijke regels te bekijken.
 
 Zie [voorbeelden van grafieken](../essentials/metric-chart-samples.md) waarin een filter of splitsing is toegepast. In het artikel worden de stappen beschreven die zijn gebruikt om de grafieken te configureren.
+
+## <a name="share-your-metric-chart"></a>Uw metrieke grafiek delen
+Er zijn momenteel twee manieren om uw metrische grafiek te delen. Hieronder vindt u instructies voor het delen van informatie uit uw metrische grafieken via Excel en een koppeling.
+ 
+### <a name="download-to-excel"></a>Downloaden naar Excel
+Klik op delen en selecteer downloaden naar Excel. Het downloaden moet onmiddellijk worden gestart.
+
+![scherm afbeelding voor het delen van metrische grafiek via Excel](./media/metrics-getting-started/share-excel.png)
+
+### <a name="share-a-link"></a>Een koppeling delen
+Klik op delen en selecteer Koppeling kopiëren. U ontvangt een melding dat de koppeling is gekopieerd.
+
+![scherm afbeelding voor het delen van metrische grafieken via een koppeling](./media/metrics-getting-started/share-link.png)
+
 
 ## <a name="advanced-chart-settings"></a>Geavanceerde instellingen voor grafieken
 

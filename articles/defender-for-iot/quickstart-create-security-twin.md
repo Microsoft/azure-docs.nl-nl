@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/21/2021
 ms.author: shhazam
-ms.openlocfilehash: 832c8e426b57e6b447ef805f2868a6d42abe3d9d
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: cfd5192a78c34caf5acbe4576f5a00ab314acb61
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449693"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489893"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Quickstart: Een azureiotsecurity-moduledubbel maken
 
@@ -39,9 +39,9 @@ Zie [IoT Hub-moduledubbels](../iot-hub/iot-hub-devguide-module-twins.md) voor me
 
 Defender for IoT maakt gebruik van het moduledubbelmechanisme en onderhoudt een beveiligingsmodule met de naam _azureiotsecurity_ voor al uw apparaten.
 
-De beveiligingsmoduledubbel bevat alle informatie die relevant is voor de beveiliging van elk apparaat.
+De Defender-IoT-micro agent bevat alle informatie die relevant is voor de beveiliging van apparaten voor elk apparaat.
 
-Als u volledig gebruik wilt maken van Defender voor IoT-functies, moet u deze beveiligings module apparaatdubbels maken, configureren en gebruiken voor elk apparaat in de service.
+Als u volledig gebruik wilt maken van Defender voor IoT-functies, moet u deze Defender-IoT-micro agent apparaatdubbels voor elk apparaat in de service maken, configureren en gebruiken.
 
 ## <a name="create-azureiotsecurity-module-twin"></a>Azureiotsecurity-moduledubbel maken
 

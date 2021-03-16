@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.author: allensu
-ms.openlocfilehash: 0218bfef66e779a31d999c8d58bc1ce2691f46d4
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: ac21e1f00dc2a5580b90a1a5eb43da05288e800a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102179218"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489420"
 ---
 # <a name="backend-pool-management"></a>Beheer van back-endpools
 De back-endpool is een essentieel onderdeel van de load balancer. Met de back-endpool wordt de groep resources gedefinieerd die het verkeer verwerken voor een bepaalde taakverdelingsregel.
@@ -250,7 +250,11 @@ JSON-aanvraagtekst:
 ```
 
 ### <a name="resource-manager-template"></a>Resource Manager-sjabloon
+
 Volg deze [quickstart voor Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-standard-create/) om een load balancer en virtuele machines te implementeren, en de virtuele machines toe te voegen aan de back-endpool via de netwerkinterface.
+
+Volg deze [Snelstartgids Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-ip-configured-backend-pool) om een Load Balancer en virtuele machines te implementeren en voeg de virtuele machines toe aan de back-end-groep via IP-adres.
+
 
 ## <a name="configure-backend-pool-by-ip-address-and-virtual-network"></a>De back-endpool configureren op basis van IP-adres en virtueel netwerk
 Gebruik het IP-adres en virtueel netwerk in scenario's met vooraf gevulde back-endpools.

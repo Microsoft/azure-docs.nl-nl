@@ -14,39 +14,24 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a65b91e3dff3ef412dad8bbe57383a9dbf8c7765
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: b7a0f50a7f84b89d7c048e57eadc85635df10f77
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032242"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467677"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
-Met Azure Active Directory (Azure AD) kunt u beperkte beheerders aanwijzen voor het beheren van identiteits taken in functies met minder bevoegdheden. Beheerders kunnen voor dergelijke doel einden worden toegewezen om gebruikers toe te voegen of te wijzigen, beheerders rollen toe te wijzen, gebruikers wachtwoorden opnieuw in te stellen, gebruikers licenties te beheren en domein namen te beheren. De [standaard gebruikers machtigingen](../fundamentals/users-default-permissions.md) kunnen alleen worden gewijzigd in gebruikers instellingen in azure AD.
+Als een andere beheerder of een niet-beheerder Azure AD-resources moet beheren in Azure Active Directory (Azure AD), wijst u deze toe aan een Azure AD-rol die de benodigde machtigingen biedt. U kunt bijvoorbeeld rollen toewijzen om gebruikers toe te staan om toe te voegen of te wijzigen, gebruikers wachtwoorden opnieuw in te stellen, gebruikers licenties te beheren of domein namen te beheren.
+
+Dit artikel bevat een overzicht van de ingebouwde Azure AD-rollen die u kunt toewijzen om beheer van Azure AD-resources toe te staan. Zie [Azure AD-rollen toewijzen aan gebruikers](manage-roles-portal.md)voor meer informatie over het toewijzen van rollen.
 
 ## <a name="limit-use-of-global-administrator"></a>Het gebruik van een globale beheerder beperken
 
 Gebruikers die zijn toegewezen aan de rol van globale beheerder kunnen elke beheer instelling in uw Azure AD-organisatie lezen en wijzigen. Wanneer een gebruiker zich aanmeldt voor een micro soft-Cloud service, wordt standaard een Azure AD-Tenant gemaakt en wordt de gebruiker lid van de rol globale beheerder gemaakt. Wanneer u een abonnement toevoegt aan een bestaande Tenant, bent u niet toegewezen aan de rol van globale beheerder. Alleen globale beheerders en bevoegde beheerdersrol kunnen beheerders rollen delegeren. Om het risico voor uw bedrijf te verminderen, wordt u aangeraden deze rol toe te wijzen aan de minste mogelijke personen in uw organisatie.
 
 Als best practice wordt u aangeraden deze rol toe te wijzen aan minder dan vijf personen in uw organisatie. Als er meer dan vijf beheerders zijn toegewezen aan de rol van globale beheerder in uw organisatie, zijn dit een aantal manieren om het gebruik te verminderen.
-
-### <a name="find-the-role-you-need"></a>Zoek de gewenste rol
-
-Als u de functie die u nodig hebt uit een lijst met veel rollen wilt vinden, kunt u in azure AD subsets van de rollen weer geven op basis van Rolgroepen. Bekijk het nieuwe **type** filter voor [Azure AD-rollen en-beheerders](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators) om alleen de rollen in het geselecteerde type weer te geven.
-
-### <a name="a-role-exists-now-that-didnt-exist-when-you-assigned-the-global-administrator-role"></a>Er bestaat nu een rol die niet bestaat tijdens het toewijzen van de rol globale beheerder
-
-Het is mogelijk dat een rol of rollen aan Azure AD zijn toegevoegd met meer gedetailleerde machtigingen die geen optie waren wanneer u een aantal gebruikers hebt uitgebreid naar de globale beheerder. Na verloop van tijd worden er extra rollen geïmplementeerd die taken uitvoeren die alleen de rol van globale beheerder kunnen uitvoeren. U kunt deze weer geven in de volgende [alle rollen](#all-roles).
-
-## <a name="assign-or-remove-administrator-roles"></a>Beheerders rollen toewijzen of verwijderen
-
-Zie [beheerders rollen weer geven en toewijzen in azure Active Directory](manage-roles-portal.md)voor meer informatie over het toewijzen van beheerders rollen aan een gebruiker in azure Active Directory.
-
-> [!Note]
-> Als u een Azure AD Premium P2-licentie hebt en u al een Privileged Identity Management (PIM)-gebruiker bent, worden alle beheer taken voor rollen uitgevoerd in privileged Identity Management en niet in azure AD.
->
-> ![Azure AD-rollen die worden beheerd in PIM voor gebruikers die PIM al gebruiken en een Premium P2-licentie hebben](./media/permissions-reference/pim-manages-roles-for-p2.png)
 
 ## <a name="all-roles"></a>Alle rollen
 
@@ -1879,6 +1864,6 @@ Lezer van gebruiks samenvattings rapporten | &nbsp; | :heavy_check_mark: | :heav
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [een gebruiker toewijzen als beheerder van een Azure-abonnement](../../role-based-access-control/role-assignments-portal-subscription-admin.md) voor meer informatie over het toewijzen van een gebruiker als beheerder van een Azure-account.
-* Zie [inzicht in de verschillende rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md) voor meer informatie over het beheren van toegang tot resources in Microsoft Azure.
-* Zie [een Azure-abonnement koppelen aan of toevoegen aan uw Azure Active Directory Tenant](../fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie over de relatie tussen abonnementen en een Azure AD-Tenant, of voor instructies om een abonnement te koppelen of toe te voegen.
+- [Azure AD-rollen toewijzen aan groepen](groups-assign-role.md)
+- [Inzicht in de verschillende rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md)
+- [Een gebruiker toewijzen als beheerder van een Azure-abonnement](../../role-based-access-control/role-assignments-portal-subscription-admin.md)

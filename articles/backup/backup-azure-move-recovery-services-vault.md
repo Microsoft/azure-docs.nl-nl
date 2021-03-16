@@ -4,12 +4,12 @@ description: Instructies voor het verplaatsen van een Recovery Services kluis ov
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.custom: references_regions
-ms.openlocfilehash: 12c276b861e7db8e93e60eea7e9cd7f3aba04860
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 4f75bec533181b29625fb0a10cc26d03f2875036
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325771"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466368"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Een Recovery Services kluis verplaatsen over Azure-abonnementen en-resource groepen
 
@@ -23,7 +23,7 @@ Alle open bare regio's en soevereine regio's worden ondersteund, met uitzonde ri
 
 - Tijdens het verplaatsen van de kluis over resource groepen worden de bron-en doel resource groepen vergrendeld, waardoor er geen schrijf-en verwijder bewerkingen kunnen worden uitgevoerd. Zie dit [artikel](../azure-resource-manager/management/move-resource-group-and-subscription.md) voor meer informatie.
 - Alleen beheerders abonnement heeft de machtigingen om een kluis te verplaatsen.
-- Voor het verplaatsen van kluizen tussen abonnementen moet het doel abonnement zich in dezelfde Tenant bevinden als het bron abonnement en moet de status zijn ingeschakeld.
+- Voor het verplaatsen van kluizen tussen abonnementen moet het doel abonnement zich in dezelfde Tenant bevinden als het bron abonnement en moet de status zijn ingeschakeld. Als u een kluis wilt verplaatsen naar een andere Azure AD-Directory, raadpleegt u het [abonnement overdragen naar een andere veelgestelde vragen over de Directory](../role-based-access-control/transfer-subscription.md) en [Recovery service-kluis](backup-azure-backup-faq.md#recovery-services-vault).
 - U moet gemachtigd zijn om schrijf bewerkingen uit te voeren op de doel resource groep.
 - Door de kluis te verplaatsen, wijzigt u alleen de resource groep. De Recovery Services kluis bevindt zich op dezelfde locatie en kan niet worden gewijzigd.
 - U kunt slechts één Recovery Services kluis per regio tegelijk verplaatsen.

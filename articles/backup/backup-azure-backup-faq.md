@@ -3,12 +3,12 @@ title: Antwoorden op veelgestelde vragen
 description: 'Antwoorden op veelgestelde vragen over de functies van Azure Backup, waaronder de Recovery Services-kluis, waarvan een back-up kan worden gemaakt, hoe het werkt, versleuteling en limieten. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: f819440001180a3c446f366e61e3ac0f983fa67f
-ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
+ms.openlocfilehash: ac58cee66aa2a89efb7194a051801b068628d3bc
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98806649"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467626"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - veelgestelde vragen
 
@@ -65,6 +65,13 @@ Het is niet mogelijk om gegevens rechtstreeks vanuit de Recovery Services kluis 
 ### <a name="what-is-the-difference-between-a-geo-redundant-storage-grs-vault-with-and-without-the-cross-region-restore-crr-capability-enabled"></a>Wat is het verschil tussen een GRS-kluis (geo-redundante opslag) met en zonder dat de functie voor CRR (cross-Region Restore) is ingeschakeld?
 
 In het geval van een [GRS](azure-backup-glossary.md#grs) -kluis zonder [CRR](azure-backup-glossary.md#cross-region-restore-crr) -functionaliteit is ingeschakeld, zijn de gegevens in de secundaire regio pas toegankelijk als Azure een nood geval in de primaire regio declareert. In een dergelijk scenario gebeurt het herstel van de secundaire regio. Als CRR is ingeschakeld, zelfs als de primaire regio actief is, kunt u een herstel bewerking activeren in de secundaire regio.
+
+### <a name="can-i-move-a-subscription-that-contains-a-vault-to-a-different-azure-active-directory"></a>Kan ik een abonnement met een kluis verplaatsen naar een andere Azure Active Directory?
+
+Ja. Als u een abonnement (dat een kluis bevat) wilt verplaatsen naar een andere Azure Active Directory (AD), raadpleegt u [abonnement overdragen naar een andere map](../role-based-access-control/transfer-subscription.md).
+
+>[!IMPORTANT]
+>Zorg ervoor dat u de volgende acties uitvoert nadat u het abonnement hebt verplaatst:<ul><li>Toegangs beheer op basis van rollen en aangepaste rollen kunnen niet worden overschreven. U moet de machtigingen en rollen opnieuw maken in de nieuwe Azure AD.</li><li>U moet de (MI) beheerde identiteit van de kluis opnieuw maken door deze opnieuw in te scha kelen en opnieuw in te scha kelen. U moet ook de MI-machtigingen evalueren en opnieuw maken.</li><li>Als de kluis gebruikmaakt van functies die gebruikmaken van MI, zoals [persoonlijke eind punten](private-endpoints.md#before-you-start) en door de [klant beheerde sleutels](encryption-at-rest-with-cmk.md#before-you-start), moet u de functies opnieuw configureren.</li></ul>
 
 ## <a name="azure-backup-agent"></a>Azure Backup-agent
 

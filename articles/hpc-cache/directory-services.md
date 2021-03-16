@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 12/22/2020
 ms.author: v-erkel
-ms.openlocfilehash: 28265861c98cceaedf7d2662f6526a9f62fe68de
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 4f1499c9a86999bac86fb7bf185f195e9ba5f690
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803762"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472065"
 ---
 # <a name="configure-directory-services"></a>Adreslijst Services configureren
 
@@ -75,7 +75,7 @@ De gegevens van de server en de basis-DN zijn de enige vereiste instellingen voo
 
 In de sectie **beveiligde toegang** kunt u versleuteling en certificaat validatie inschakelen voor de LDAP-verbinding. Nadat u op **Ja** hebt geklikt om versleuteling in te scha kelen, hebt u de volgende opties:
 
-* **Geldig certificaat vereisen** : wanneer dit is ingesteld, wordt het certificaat van de LDAP-server geverifieerd aan de hand van de certificerings instantie in het onderstaande URI-veld.
+* **Certificaat valideren** : wanneer dit is ingesteld, wordt het certificaat van de LDAP-server geverifieerd aan de hand van de certificerings instantie in het onderstaande URI-veld.
 
 * **CA-certificaat-URI** : Geef het pad op naar het gezaghebbende certificaat. Dit kan een koppeling zijn naar een CA-gevalideerd certificaat of een zelfondertekend certificaat. Dit veld is vereist voor het gebruik van de instelling voor extern gevalideerde certificaten.
 

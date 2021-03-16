@@ -3,12 +3,12 @@ title: Actie regels voor Azure Monitor waarschuwingen
 description: Meer informatie over actie regels in Azure Monitor zijn en hoe u deze kunt configureren en beheren.
 ms.topic: conceptual
 ms.date: 03/15/2021
-ms.openlocfilehash: 2ad87cce668555ece0eba6479bf9d21db312bfcf
-ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
+ms.openlocfilehash: f70d798270ad82193f7ae5935d34f8f418d35e05
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/15/2021
-ms.locfileid: "103466725"
+ms.locfileid: "103471677"
 ---
 # <a name="action-rules-preview"></a>Actie regels (preview-versie)
 
@@ -76,8 +76,8 @@ Deze regel is alleen van toepassing op waarschuwingen voor de geselecteerde reso
 Bijvoorbeeld, **resource type = "virtual machines"** betekent dat de regel alleen van toepassing is op waarschuwingen op virtuele machines.
 * **ID van waarschuwings regel**  
 Deze regel is alleen van toepassing op waarschuwingen die afkomstig zijn van een specifieke waarschuwings regel. De waarde moet de Resource Manager-ID van de waarschuwings regel zijn.  
-Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/Rg1/providers/Microsoft.Insights/metricalerts/API-latency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn van de WAARSCHUWINGS regel API-latentie.
-U kunt de juiste waarschuwings regel-ID verkrijgen door uw waarschuwings regels op te geven uit de CLI of door een specifieke waarschuwings regel te openen in de portal, op Eigenschappen te klikken en de waarde Resource-ID te kopiëren.
+Bijvoorbeeld: **waarschuwings regel-id = "/Subscriptions/SubId1/resourceGroups/Rg1/providers/Microsoft.Insights/metricalerts/API-latency"** betekent dat deze regel alleen van toepassing is op waarschuwingen die afkomstig zijn van de WAARSCHUWINGS regel API-latentie.  
+_Opmerking: u kunt de juiste waarschuwings regel-ID ophalen door uw waarschuwings regels van de CLI op te geven of door een specifieke waarschuwings regel te openen in de portal, op Eigenschappen te klikken en de waarde Resource-ID te kopiëren._
 * **Bewakings voorwaarde**  
 Deze regel is alleen van toepassing op waarschuwings gebeurtenissen met de opgegeven bewakings voorwaarde-ofwel **geactiveerd** of **opgelost**.
 * **Beschrijving**  
@@ -116,7 +116,7 @@ Als u in de wissel knop **actie groep** selecteert, moet u een bestaande actie g
 ### <a name="action-rule-details"></a>Details van de actie regel
 
 Configureer als laatste de volgende Details voor de actie regel:
-* Name
+* Naam
 * De resource groep waarin deze is opgeslagen
 * Beschrijving
 

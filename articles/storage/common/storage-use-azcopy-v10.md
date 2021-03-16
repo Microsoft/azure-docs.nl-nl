@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: a1651ef1b49ecedb8070f32c56e9d23a0f8fd0da
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 826effb152d3f069e0a7c5b8e169f7083117ed22
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103201575"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494492"
 ---
 # <a name="get-started-with-azcopy"></a>Aan de slag met AzCopy
 
@@ -110,7 +110,8 @@ Zie een van deze artikelen om voorbeeld opdrachten te vinden.
 |--------|-----------|
 |Azure Blob Storage |[Bestanden uploaden naar Azure Blob Storage](storage-use-azcopy-blobs-upload.md)<br><br>[Blobs downloaden van Azure Blob Storage](storage-use-azcopy-blobs-download.md)<br><br>[Blobs kopiëren tussen Azure-opslag accounts](storage-use-azcopy-blobs-copy.md)<br><br>[Synchroniseren met Azure Blob Storage](storage-use-azcopy-blobs-synchronize.md)|
 |Azure Files |[Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)|
-|Amazon S3|[Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)|
+|Amazon S3|[Gegevens van Amazon S3 naar Azure Storage kopiëren](storage-use-azcopy-s3.md)|
+|Google Cloud Storage|[Gegevens kopiëren van Google Cloud Storage naar Azure Storage (preview-versie)](storage-use-azcopy-google-cloud.md)|
 |Opslag Azure Stack|[Gegevens overdragen met AzCopy en Azure Stack Storage](/azure-stack/user/azure-stack-storage-transfer#azcopy)|
 
 ## <a name="use-in-a-script"></a>Gebruiken in een script

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/18/2021
-ms.openlocfilehash: 5cc3c4a07cc698f3592a2ff2fd76e9f4bbef441b
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 727e744c59d0a8d90cf320e1ee2e2a17e10ff847
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102036449"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471520"
 ---
 # <a name="connector-status-errors-in-the-itsmc-dashboard"></a>Connector status fouten in het ITSMC-dash board
 
@@ -88,3 +88,11 @@ In de volgende secties worden veelvoorkomende fouten beschreven die worden weer 
 
 * Wanneer een nieuw ITSMC-exemplaar wordt gemaakt, wordt de synchronisatie van gegevens van het ITSM-systeem gestart, zoals werk [SYNCHRONISEER ITSMC om een nieuw vernieuwings token te genereren](./itsmc-resync-servicenow.md).
 * [Controleer uw verbindings gegevens in ITSMC](./itsmc-connections-servicenow.md#create-a-connection) en controleer of de ITSMC kan worden [gesynchroniseerd](./itsmc-resync-servicenow.md).
+
+
+## <a name="ip-restrictions"></a>IP-beperkingen
+**Fout**: ' kan de ITSM-verbinding met de naam ' xxx ' niet toevoegen vanwege een ongeldige aanvraag. Fout: ongeldige aanvraag. Er zijn ongeldige para meters opgegeven voor de verbinding. Http-uitzonde ring: status code verboden. "
+
+**Oorzaak**: het IP-adres van de ITSM-toepassing staat ITSM-verbindingen van partners ITSM-hulpprogram ma's niet toe.
+
+**Oplossing**: als u de IP-adressen van de ITSM wilt weer geven om ITSM-verbindingen van partners ITSM-hulpprogram ma's toe te staan, raden we u aan om het volledige open bare IP-bereik van de Azure-regio weer te geven waarin hun LogAnalytics-werk ruimte deel uitmaakt. [meer informatie](https://www.microsoft.com/download/details.aspx?id=56519) Voor regio's EUS/WEU/EUS2/WUS2/VS Zuid-Centraal kan de klant alleen de ActionGroup-netwerk code vermelden.

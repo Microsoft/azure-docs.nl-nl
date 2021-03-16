@@ -1,7 +1,7 @@
 ---
 title: Een Cognitive Services resource maken met behulp van de Azure CLI
 titleSuffix: Azure Cognitive Services
-description: Ga aan de slag met Azure Cognitive Services door met de Azure-opdracht regel interface een abonnement te maken op een resource.
+description: Ga aan de slag met Azure Cognitive Services door het maken en abonneren van een resource met behulp van de Azure-opdracht regel interface.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,12 +10,12 @@ keywords: cognitieve services, cognitieve intelligentie, cognitieve oplossingen,
 ms.topic: quickstart
 ms.date: 09/14/2020
 ms.author: aahi
-ms.openlocfilehash: 95d74601ca912647eadd1bd4e1045108be6b2adb
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: c1e8b260f6c06d8f26f5ba99b4fb02edfa5e8656
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102050066"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472108"
 ---
 # <a name="quickstart-create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Snelstartgids: een Cognitive Services resource maken met behulp van de Azure Command-Line interface (CLI)
 
@@ -99,16 +99,6 @@ Wanneer u een nieuwe resource maakt, moet u weten wat de soort service is die u 
 | Form Recognizer            | `FormRecognizer`          |
 | Ink Recognizer             | `InkRecognizer`           |
 
-### <a name="search"></a>Search
-
-| Service            | Soort                  |
-|--------------------|-----------------------|
-| Bing Automatische suggesties   | `Bing.Autosuggest.v7` |
-| Bing Aangepaste zoekopdrachten | `Bing.CustomSearch`   |
-| Bing Entiteiten zoeken | `Bing.EntitySearch`   |
-| Bing Search        | `Bing.Search.v7`      |
-| Bing Spellingcontrole   | `Bing.SpellCheck.v7`  |
-
 ### <a name="speech"></a>Spraak
 
 | Service            | Soort                 |
@@ -181,7 +171,7 @@ Gebruik de opdracht [AZ cognitiveservices account Keys List](/cli/azure/cognitiv
 Prijscategorieën (en het bedrag dat in rekening wordt gebracht) zijn gebaseerd op het aantal transacties dat u verzendt met behulp van uw verificatiegegevens. Voor elke prijsklasse wordt het volgende gespecificeerd:
 * het maximumaantal toegestane transacties per seconde (TPS).
 * servicefuncties die zijn ingeschakeld binnen de prijscategorie.
-* De kosten voor een vooraf gedefinieerd bedrag aan trans acties. Boven deze hoeveelheid worden er extra kosten in rekening gebracht, zoals is opgegeven in de [prijs informatie](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) voor uw service.
+* De kosten voor een vooraf gedefinieerd aantal trans acties. Boven deze hoeveelheid worden er extra kosten in rekening gebracht, zoals is opgegeven in de [prijs informatie](https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/) voor uw service.
 
 ## <a name="get-current-quota-usage-for-your-resource"></a>Huidig quotum gebruik voor uw resource ophalen
 

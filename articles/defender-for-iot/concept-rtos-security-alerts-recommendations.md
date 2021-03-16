@@ -1,6 +1,6 @@
 ---
-title: Beveiligings module voor ingebouwde Azure RTO'S-& aanpas bare waarschuwingen en aanbevelingen
-description: Meer informatie over beveiligings waarschuwingen en aanbevolen herstel met behulp van de Azure IoT Security module-RTO'S.
+title: Defender-IoT-micro agent voor Azure RTO'S-ingebouwde & aanpas bare waarschuwingen en aanbevelingen
+description: Meer informatie over beveiligings waarschuwingen en aanbevolen herstel met behulp van de Azure IoT Defender-IoT-micro-agent-RTO'S.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,30 +13,30 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/07/2020
 ms.author: mlottner
-ms.openlocfilehash: cf4924f8a9b97487e64e12ab80df92f2b2a81de2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6dfeb01e174d71c926e9fcf7f5f1ee078524cf9
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936284"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494271"
 ---
-# <a name="security-module-for-azure-rtos-security-alerts-and-recommendations-preview"></a>Beveiligings module voor beveiligings waarschuwingen en aanbevelingen van Azure RTO'S (preview)
+# <a name="defender-iot-micro-agent-for-azure-rtos-security-alerts-and-recommendations-preview"></a>Defender-IoT-micro agent voor Azure RTO'S-beveiligings waarschuwingen en aanbevelingen (preview-versie)
 
-De beveiligings module voor Azure RTO'S analyseert voortdurend uw IoT-oplossing met behulp van geavanceerde analyses en bedreigings informatie om u te waarschuwen voor mogelijke schadelijke activiteiten en verdachte systeem aanpassingen. U kunt ook aangepaste waarschuwingen maken op basis van uw kennis van het verwachte apparaat gedrag en basis lijnen.
+Met Defender-IoT-micro agent voor Azure RTO'S wordt uw IoT-oplossing voortdurend geanalyseerd met behulp van geavanceerde analyse en bedreigings informatie om u te waarschuwen voor mogelijke schadelijke activiteiten en verdachte systeem aanpassingen. U kunt ook aangepaste waarschuwingen maken op basis van uw kennis van het verwachte apparaat gedrag en basis lijnen.
 
-Een beveiligings module voor Azure RTO'S-waarschuwing fungeert als een indicatie van mogelijke inbreuk en moet worden onderzocht en opgelost. Een beveiligings module voor Azure RTO'S-aanbeveling duidt op zwakke beveiligings postuur die moeten worden hersteld en bijgewerkt. 
+Een Defender-IoT-micro-agent voor Azure RTO'S-waarschuwing fungeert als een indicatie van mogelijke inbreuk en moet worden onderzocht en opgelost. Een Defender-IoT-micro agent for Azure RTO'S-aanbeveling duidt op zwakke beveiligings postuur die moeten worden doorgevoerd en bijgewerkt. 
 
 In dit artikel vindt u een lijst met ingebouwde waarschuwingen en aanbevelingen die worden geactiveerd op basis van de standaardbereiken en die u kunt aanpassen met uw eigen waarden, op basis van het verwachte of basislijn gedrag. 
 
-Zie [aanpas bare waarschuwingen](concept-customizable-security-alerts.md)voor meer informatie over de werking van het aanpassen van waarschuwingen in de Defender voor IOT-service. De specifieke waarschuwingen en aanbevelingen die beschikbaar zijn voor aanpassing wanneer u de beveiligings module voor Azure RTO'S gebruikt, worden in de volgende tabellen beschreven. 
+Zie [aanpas bare waarschuwingen](concept-customizable-security-alerts.md)voor meer informatie over de werking van het aanpassen van waarschuwingen in de Defender voor IOT-service. De specifieke waarschuwingen en aanbevelingen die beschikbaar zijn voor aanpassing wanneer u de Defender-IoT-micro agent voor Azure RTO'S gebruikt, worden in de volgende tabellen beschreven. 
 
-## <a name="security-module-for-azure-rtos-supported-security-alerts"></a>Beveiligings module voor door Azure RTO'S ondersteunde beveiligings waarschuwingen
+## <a name="defender-iot-micro-agent-for-azure-rtos-supported-security-alerts"></a>Defender-IoT-micro agent voor Azure RTO'S ondersteunde beveiligings waarschuwingen
 
 ### <a name="device-related-security-alerts"></a>Beveiligings waarschuwingen met betrekking tot apparaten
 
 |Activiteit van beveiligings waarschuwingen met betrekking tot apparaten  |Naam waarschuwing  |
 |---------|---------|
-|Het IP-adres| Communicatie met een verdacht IP-adres gedetecteerd|
+|IP-adres| Communicatie met een verdacht IP-adres gedetecteerd|
 |Vinger afdruk van het 509-apparaat|X. 509 apparaat certificaat vingerafdruk komt niet overeen|
 |X. 509-certificaat| X. 509-certificaat is verlopen|
 |SAS-token| Verlopen SAS-token|
@@ -53,7 +53,7 @@ Zie [aanpas bare waarschuwingen](concept-customizable-security-alerts.md)voor me
 |Verwijderd certificaat    | Gedetecteerde verwijdering van een certificaat van een IoT Hub        |
 |Nieuw certificaat     |  Het toevoegen van een nieuw certificaat aan een IoT Hub is gedetecteerd       |
 
-## <a name="security-module-for-azure-rtos-supported-customizable-alerts"></a>Beveiligings module voor door Azure RTO'S ondersteunde aanpas bare waarschuwingen
+## <a name="defender-iot-micro-agent-for-azure-rtos-supported-customizable-alerts"></a>Defender-IoT-micro agent voor Azure RTO'S ondersteunde aanpas bare waarschuwingen
 
 ### <a name="device-related-customizable-alerts"></a>Aan het apparaat gerelateerde aanpas bare waarschuwingen
 
@@ -75,7 +75,7 @@ Zie [aanpas bare waarschuwingen](concept-customizable-security-alerts.md)voor me
 |Updates voor dubbele modules     |  Aantal updates voor dubbele modules buiten het toegestane bereik       |
 |Niet-geautoriseerde bewerkingen    |  Aantal niet-geautoriseerde bewerkingen buiten het toegestane bereik       |
 
-## <a name="security-module-for-azure-rtos-supported-recommendations"></a>Beveiligings module voor door Azure RTO'S ondersteunde aanbevelingen
+## <a name="defender-iot-micro-agent-for-azure-rtos-supported-recommendations"></a>Defender-IoT-micro agent voor door Azure RTO'S ondersteunde aanbevelingen
 
 ### <a name="device-related-recommendations"></a>Aanbevelingen met betrekking tot apparaten
 
@@ -97,6 +97,6 @@ Zie voor een volledige lijst met alle waarschuwingen en aanbevelingen voor de se
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Snelstartgids: Security module voor Azure RTO'S](quickstart-azure-rtos-security-module.md)
-- [Beveiligings module voor Azure RTO'S configureren en aanpassen](how-to-azure-rtos-security-module.md)
-- Raadpleeg de [beveiligings module voor Azure rto's-API](azure-rtos-security-module-api.md)
+- [Snelstartgids: Defender-IoT-micro-agent voor Azure RTO'S](quickstart-azure-rtos-security-module.md)
+- [Defender-IoT-micro agent voor Azure RTO'S configureren en aanpassen](how-to-azure-rtos-security-module.md)
+- Raadpleeg de [Defender-IOT-micro-agent voor Azure rto's-API](azure-rtos-security-module-api.md)

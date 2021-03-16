@@ -10,12 +10,12 @@ ms.date: 03/12/2020
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 16d3d50d5ade298e2ca22f271466c70e74724381
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 67480786e963235d4d3c010bea72e551a8be7bbc
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102613558"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493795"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Privé-eind punten voor Azure Storage gebruiken
 
@@ -146,6 +146,12 @@ Deze beperking is het gevolg van de DNS-wijzigingen die zijn aangebracht wanneer
 ### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Regels voor netwerkbeveiligingsgroepen voor subnetten met privé-eindpunten
 
 Op dit moment kunt u geen NSG-regels ( [netwerk beveiligings groep](../../virtual-network/network-security-groups-overview.md) ) en door de gebruiker gedefinieerde routes configureren voor privé-eind punten. NSG-regels die worden toegepast op het subnet waarop het persoonlijke eind punt wordt gehost, worden niet toegepast op het persoonlijke eind punt. Ze worden alleen toegepast op andere eind punten (bijvoorbeeld: netwerk interface-controllers). Een beperkte tijdelijke oplossing voor dit probleem is het implementeren van uw toegangs regels voor privé-eind punten op de bron-subnetten, hoewel deze benadering mogelijk een hogere beheer overhead nodig heeft.
+
+### <a name="copying-blobs-between-storage-accounts"></a>Blobs kopiëren tussen opslag accounts
+
+U kunt blobs kopiëren tussen opslag accounts met behulp van privé-eind punten als u de Azure REST API gebruikt, of hulpprogram ma's die gebruikmaken van de REST API. Deze hulpprogram ma's zijn onder andere AzCopy, Storage Explorer, Azure PowerShell, Azure CLI en de Azure Blob Storage Sdk's. 
+
+Alleen persoonlijke eind punten die zijn gericht op de Blob Storage-Resource worden ondersteund. Privé-eind punten die het Data Lake Storage Gen2 doel hebben of de bestands resource, worden nog niet ondersteund. Ook wordt het kopiëren tussen opslag accounts met behulp van het NFS-protocol (Network File System) nog niet ondersteund. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

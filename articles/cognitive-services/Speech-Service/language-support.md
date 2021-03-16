@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/07/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: ebdb6a44a1f20ce0835fc5d7358d99c8224d3d77
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 43456655d057ee79ed347e4a94c008d825bfa639
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102044932"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470231"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -194,8 +194,8 @@ Neural stemmen kunnen worden gebruikt om interacties te maken met chat bots uitb
 | Engels (Verenigd Koninkrijk) | `en-GB` | Vrouw | `en-GB-MiaNeural` | Algemeen |
 | Engels (Verenigd Koninkrijk) | `en-GB` | Man | `en-GB-RyanNeural` | Algemeen |
 | Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-AriaNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles)  |
-| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-JennyNeural` | Algemeen |
-| Engels (Verenigde Staten) | `en-US` | Man | `en-US-GuyNeural` | Algemeen |
+| Engels (Verenigde Staten) | `en-US` | Vrouw | `en-US-JennyNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles)  |
+| Engels (Verenigde Staten) | `en-US` | Man | `en-US-GuyNeural` | Algemeen, meerdere spraak stijlen beschikbaar [via SSML](speech-synthesis-markup.md#adjust-speaking-styles)  |
 | Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-NooraNeural` | Algemeen |
 | Fins (Finland) | `fi-FI` | Vrouw | `fi-FI-SelmaNeural` <sup>Nieuw</sup> | Algemeen |
 | Fins (Finland) | `fi-FI` | Man | `fi-FI-HarriNeural` <sup>Nieuw</sup> | Algemeen |

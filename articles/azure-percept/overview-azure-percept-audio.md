@@ -7,16 +7,19 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/18/2021
 ms.custom: template-concept
-ms.openlocfilehash: 85eb4ed0832c9384fcd05154833bc21f83f4adf2
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 8f57c63868d6f70094cf040a92c0124b46477758
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102426345"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103490191"
 ---
 # <a name="introduction-to-azure-percept-audio"></a>Inleiding tot Azure percept-audio
 
 Azure percept-audio is een accessoire apparaat waarmee u spraak AI-mogelijkheden kunt toevoegen aan Azure percept DK. Het bevat een vooraf geconfigureerde geluids processor en een lineaire matrix met vier microfoons, waarmee u spraak opdrachten, trefwoord herkennen en far field speech kunt Toep assen op lokale luisterende apparaten met behulp van Azure Cognitive Services. Met Azure percept-audio kunnen apparaat-fabrikanten Azure percept DK uitbreiden tegen de visuele mogelijkheden tot nieuwe, slimme spraak geactiveerde apparaten. Het is volledig geïntegreerd met Azure percept DK, Azure percept Studio en andere Azure Edge-beheer Services. Het is beschikbaar voor aankoop in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+
+> [!div class="nextstepaction"]
+> [Nu kopen](https://go.microsoft.com/fwlink/p/?LinkId=2155270)
 
 :::image type="content" source="./media/overview-azure-percept-audio/percept-audio.png" alt-text="Azure percept-audio apparaat.":::
 
@@ -67,4 +70,5 @@ Bouw een [oplossing zonder code voor spraak](./tutorial-no-code-speech.md) in [A
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bestel een Azure percept-audio apparaat in de [online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270).
+> [!div class="nextstepaction"]
+> [Een Azure percept-audio apparaat kopen vanuit de online winkel van micro soft](https://go.microsoft.com/fwlink/p/?LinkId=2155270)

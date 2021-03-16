@@ -3,12 +3,12 @@ title: Problemen met de Azure Backup-Agent oplossen
 description: In dit artikel vindt u informatie over het oplossen van problemen met de installatie en registratie van de Azure Backup-Agent.
 ms.topic: troubleshooting
 ms.date: 07/15/2019
-ms.openlocfilehash: c08a146d91a128dc48fa4c379055b8c0efc1df0c
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 3203d5604f1bd5db9cf579af01b2ae6f34032d89
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986646"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467609"
 ---
 # <a name="troubleshoot-the-microsoft-azure-recovery-services-mars-agent"></a>Problemen met de Microsoft Azure Recovery Services-agent (MARS) oplossen
 
@@ -22,7 +22,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 - [Zorg ervoor dat u verbinding hebt met het netwerk tussen de Mars-agent en Azure](#the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup).
 - Zorg ervoor dat MARS wordt uitgevoerd (in de service console). Als dat het geval is, start u de bewerking opnieuw en probeert u het opnieuw.
 - [Zorg ervoor dat 5% tot 10% beschik bare volume ruimte beschikbaar is op de locatie van de Scratch map](./backup-azure-file-folder-backup-faq.md#whats-the-minimum-size-requirement-for-the-cache-folder).
-- [Controleer of een ander proces of antivirus software de Azure backup verstoort](./backup-azure-troubleshoot-slow-backup-performance-issue.md#cause-another-process-or-antivirus-software-interfering-with-azure-backup).
+- [Controleer of er geen ander proces of antivirussoftware conflicten veroorzaakt met Azure Backup](./backup-azure-troubleshoot-slow-backup-performance-issue.md#cause-another-process-or-antivirus-software-interfering-with-azure-backup).
 - Zie [back-uptaken voltooid met waarschuwing](#backup-jobs-completed-with-warning) als de back-uptaak is voltooid met waarschuwingen
 - Zie [back-ups worden niet volgens schema uitgevoerd](#backups-dont-run-according-to-schedule)als de geplande back-up mislukt, maar hand matige back-up werkt.
 - Zorg ervoor dat uw besturings systeem over de meest recente updates beschikt.
@@ -41,7 +41,7 @@ U wordt aangeraden het volgende te controleren voordat u begint met het oplossen
 
 | Oorzaak | Aanbevolen acties |
 | ---     | ---    |
-| **De kluis referenties zijn niet geldig** <br/> <br/> Kluis referentie bestanden zijn mogelijk beschadigd, zijn mogelijk verlopen of hebben een andere bestands extensie dan *. vaultCredentials*. (Het is bijvoorbeeld mogelijk dat ze meer dan 48 uur vóór de registratie tijd hebben gedownload.)| [Down load nieuwe referenties](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) van de Recovery Services kluis op de Azure Portal. Voer vervolgens de volgende stappen uit: <ul><li> Als u MARS al hebt geïnstalleerd en geregistreerd, opent u de MMC-console Microsoft Azure Backup Agent. Selecteer vervolgens **server registreren** in het deel venster **acties** om de registratie met de nieuwe referenties te volt ooien. <br/> <li> Als de nieuwe installatie mislukt, probeert u opnieuw te installeren met de nieuwe referenties.</ul> **Opmerking**: als er meerdere kluis referentie bestanden zijn gedownload, is alleen het meest recente bestand geldig voor de volgende 48 uur. U wordt aangeraden een nieuw kluis referentie bestand te downloaden.
+| **De kluis referenties zijn niet geldig** <br/> <br/> Kluis referentie bestanden zijn mogelijk beschadigd, zijn mogelijk verlopen of hebben een andere bestands extensie dan *. vaultCredentials*. (Het is bijvoorbeeld mogelijk dat ze meer dan tien dagen vóór de registratie tijd hebben gedownload.)| [Down load nieuwe referenties](backup-azure-file-folder-backup-faq.md#where-can-i-download-the-vault-credentials-file) van de Recovery Services kluis op de Azure Portal. Voer vervolgens de volgende stappen uit: <ul><li> Als u MARS al hebt geïnstalleerd en geregistreerd, opent u de MMC-console Microsoft Azure Backup Agent. Selecteer vervolgens **server registreren** in het deel venster **acties** om de registratie met de nieuwe referenties te volt ooien. <br/> <li> Als de nieuwe installatie mislukt, probeert u opnieuw te installeren met de nieuwe referenties.</ul> **Opmerking**: als er meerdere kluis referentie bestanden zijn gedownload, is alleen het meest recente bestand geldig voor de komende 10 dagen. U wordt aangeraden een nieuw kluis referentie bestand te downloaden.
 | **De registratie van Proxy Server/firewall is geblokkeerd** <br/>of <br/>**Geen Internet verbinding** <br/><br/> Als uw computer of proxy server beperkte internet connectiviteit heeft en u geen toegang hebt tot de benodigde Url's, mislukt de registratie.| Voer de volgende stappen uit:<br/> <ul><li> Werk samen met uw IT-team om te controleren of het systeem verbinding heeft met internet.<li> Als u geen proxy server hebt, moet u ervoor zorgen dat de proxy optie niet is geselecteerd bij het registreren van de agent. [Controleer de proxy-instellingen](#verifying-proxy-settings-for-windows).<li> Als u een firewall/proxy server hebt, moet u samen werken met uw netwerk team om ervoor te zorgen dat deze Url's en IP-adressen toegang hebben:<br/> <br> **URL's**<br> `www.msftncsi.com` <br> .Microsoft.com <br> .WindowsAzure.com <br> .microsoftonline.com <br> .windows.net <br>`www.msftconnecttest.com`<br><br>**IP-adressen**<br>  20.190.128.0/18 <br>  40.126.0.0/18<br> <br/></ul></ul>Probeer de registratie opnieuw uit te voeren nadat u de voor gaande stappen voor probleem oplossing hebt door lopen.<br></br> Als uw verbinding via Azure ExpressRoute is, controleert u of de instellingen zijn geconfigureerd zoals beschreven in [ondersteuning voor Azure ExpressRoute](backup-support-matrix-mars-agent.md#azure-expressroute-support).
 | **Registratie wordt geblokkeerd door antivirus software** | Als er antivirus software op de server is geïnstalleerd, voegt u de benodigde uitsluitings regels toe aan de antivirus scan voor deze bestanden en mappen: <br/><ul> <li> CBengine.exe <li> CSC.exe<li> De map Scratch. De standaard locatie is C:\Program Files\Microsoft Azure Recovery Services Agent\Scratch. <li> De bin-map in C:\Program Files\Microsoft Azure Recovery Services Agent\Bin.
 

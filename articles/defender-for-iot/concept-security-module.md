@@ -1,6 +1,6 @@
 ---
-title: Beveiligings module en apparaat apparaatdubbels
-description: Meer informatie over het concept van de Security module apparaatdubbels en hoe deze worden gebruikt in Defender voor IoT.
+title: Defender-IoT-micro agent en apparaatdubbels voor apparaten
+description: Meer informatie over het concept van Defender-IoT-micro agent apparaatdubbels en hoe deze worden gebruikt in Defender voor IoT.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/24/2019
 ms.author: mlottner
-ms.openlocfilehash: feb84a1261e37600c68d8e372162033d4021f564
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 552da329b90b102a13ef53158ec81be87684c1fc
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100522917"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493183"
 ---
-# <a name="security-module"></a>Beveiligingsmodule
+# <a name="defender-iot-micro-agent"></a>Defender-IoT-micro agent
 
 In dit artikel wordt uitgelegd hoe Defender voor IoT gebruikmaakt van apparaatdubbels en modules van het apparaat.
 
@@ -32,15 +32,15 @@ Defender for IoT biedt volledige integratie met uw bestaande IoT-beheerplatform,
 
 Meer informatie over het concept van [device apparaatdubbels](../iot-hub/iot-hub-devguide-device-twins.md) in azure IOT hub.
 
-## <a name="security-module-twins"></a>Beveiligings module apparaatdubbels
+## <a name="defender-iot-micro-agent-twins"></a>Defender-IoT-micro-agent apparaatdubbels
 
-Defender voor IoT onderhoudt een beveiligings module voor elk apparaat in de service.
-De beveiligings module bevat alle informatie die relevant is voor de beveiliging van apparaten voor elk specifiek apparaat in uw oplossing.
-Beveiligings eigenschappen van apparaten worden onderhouden in een speciale beveiligings module, met als gevolg dat er een veiliger communicatie is en voor het inschakelen van updates en onderhoud waarvoor minder resources nodig zijn.
+Defender voor IoT onderhoudt een Defender-IoT-micro agent voor elk apparaat in de service.
+De Defender-IoT-micro agent bevat alle informatie die relevant is voor de beveiliging van apparaten voor elk specifiek apparaat in uw oplossing.
+De beveiligings eigenschappen van het apparaat worden onderhouden in een specifieke Defender-IoT-micro agent-twee voor veiliger communicatie en voor het inschakelen van updates en onderhoud waarvoor minder resources nodig zijn.
 
-Zie [Security-module](quickstart-create-security-twin.md) configureren, en [Configureer beveiligings agenten](how-to-agent-configuration.md) voor meer informatie over het maken, aanpassen en configureren van de dubbele. Zie [Wat is module apparaatdubbels](../iot-hub/iot-hub-devguide-module-twins.md) ? voor meer informatie over het concept van module apparaatdubbels in IOT hub.
+Zie voor het maken van een dubbele [agent](quickstart-create-security-twin.md) en het [configureren van beveiligings agenten](how-to-agent-configuration.md) voor meer informatie over het maken, aanpassen en configureren van de dubbele. Zie [Wat is module apparaatdubbels](../iot-hub/iot-hub-devguide-module-twins.md) ? voor meer informatie over het concept van module apparaatdubbels in IOT hub.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 - [Overzicht van Defender voor IoT](overview.md)
 - [Beveiligingsagents implementeren](how-to-deploy-agent.md)

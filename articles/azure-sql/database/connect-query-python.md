@@ -12,14 +12,15 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/19/2020
-ms.openlocfilehash: 8fb6d319cacf85630b2c400cd18d14487725f925
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: f21e11e33d3ddf1489dba3419766a8adaa878d5f
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97703961"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491959"
 ---
 # <a name="quickstart-use-python-to-query-a-database"></a>Quickstart: Python gebruiken om een query uit te voeren op een database
+
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 In deze quickstart gebruikt u Python om verbinding te maken met Azure SQL Database, Azure SQL Managed Instance, of Synapse SQL Database, en gebruikt u Transact-SQL-instructies om een query uit te voeren op gegevens.
@@ -35,28 +36,16 @@ U hebt het volgende nodig om deze quickstart te voltooien:
   [!INCLUDE[create-configure-database](../includes/create-configure-database.md)]
 
 - [Python](https://python.org/downloads) 3 en gerelateerde software
+    
 
-  # <a name="macos"></a>[MacOS](#tab/macos)
+    |**Actie**|**MacOS**|**Ubuntu**|**Windows**|
+    |----------|-----------|------------|---------|
+    |Installeer het ODBC-stuur programma, SQLCMD en het python-stuur programma voor SQL Server|Gebruik de stappen **1,2**, **1,3** en **2,1** in [create python apps met behulp van SQL Server op macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/). Er wordt ook install homebrew en python geïnstalleerd.       |[Een omgeving configureren voor pyodbc python-ontwikkeling](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux)|[Configureer een omgeving voor de ontwikkeling van Pyodbc python](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows).|
+    |Python en andere vereiste pakketten installeren|    |Gebruik `sudo apt-get install python python-pip gcc g++ build-essential`.|    |
+    |Meer informatie|[Micro soft ODBC-stuur programma in macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server)  |[Micro soft ODBC-stuur programma op Linux](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server)|[Micro soft ODBC-stuur programma op Linux](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server)|
 
-  Als u Homebrew en Python, het ODBC-stuurprogramma en SQLCMD, en het Python-stuurprogramma voor SQL Server wilt installeren, gebruikt u de stappen **1.2**, **1.3** en **2.1** in [Python-apps maken met SQL Server op macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/).
 
-  Zie [ODBC-stuurprogramma van Microsoft op macOS](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) voor meer informatie.
 
-  # <a name="ubuntu"></a>[Ubuntu](#tab/ubuntu)
-
-  Gebruik `sudo apt-get install python python-pip gcc g++ build-essential` om Python en andere vereiste pakketten te installeren.
-
-  Zie [Een omgeving configureren voor pyodbc Python-ontwikkeling](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux) als u het ODBC-stuurprogramma, SQLCMD en het Python-stuurprogramma voor SQL Server wilt installeren.
-
-  Zie [ODBC-stuurprogramma van Microsoft op Linux](/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server) voor meer informatie.
-
-  # <a name="windows"></a>[Windows](#tab/windows)
-
-  Zie [Een omgeving configureren voor pyodbc Python-ontwikkeling](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows) als u Python, het ODBC-stuurprogramma en SQLCMD, en het Python-stuurprogramma voor SQL Server wilt installeren.
-
-  Zie [ODBC-stuurprogramma van Microsoft](/sql/connect/odbc/microsoft-odbc-driver-for-sql-server) voor meer informatie.
-
----
 Als u Python en de database in Azure SQL Database verder wilt verkennen, raadpleegt u [Azure SQL Database-bibliotheken voor Python](/python/api/overview/azure/sql), de [pyodbc-opslagplaats](https://github.com/mkleehammer/pyodbc/wiki/) en een [pyodbc-voorbeeld](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
 
 ## <a name="create-code-to-query-your-database"></a>Code maken om query's uit te voeren op uw database 

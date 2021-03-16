@@ -7,26 +7,26 @@ author: ChristopherHouser
 ms.author: chrishou
 ms.reviewer: valthom, estfan, logicappspm
 ms.topic: article
-ms.date: 05/14/2020
+ms.date: 03/10/2021
 tags: connectors
-ms.openlocfilehash: e9e554fdc092e49f5a87049de0e3dc3163105f58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a07eb6e592c68794f0e4038a7cf9a42bd396b47a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85609500"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103495229"
 ---
 # <a name="connect-to-an-ibm-mq-server-from-azure-logic-apps"></a>Verbinding maken met een IBM MQ-server vanaf Azure Logic Apps
 
-De IBM MQ-connector verzendt en haalt berichten op die zijn opgeslagen in een IBM MQ-server on-premises of in Azure. Deze connector bevat een micro soft MQ-client die communiceert met een externe IBM MQ-server via een TCP/IP-netwerk. Dit artikel bevat een Start handleiding voor het gebruik van de MQ-connector. U kunt beginnen door één bericht in een wachtrij te bladeren en vervolgens andere acties uit te proberen.
+De MQ-connector verzendt en haalt berichten op die zijn opgeslagen in een MQ-server on-premises of in Azure. Deze connector bevat een micro soft MQ-client die communiceert met een externe IBM MQ-server via een TCP/IP-netwerk. Dit artikel bevat een Start handleiding voor het gebruik van de MQ-connector. U kunt beginnen door één bericht in een wachtrij te bladeren en vervolgens andere acties uit te proberen.
 
-De IBM MQ-connector bevat deze acties, maar biedt geen triggers:
+De MQ-connector bevat deze acties, maar biedt geen triggers:
 
-- Blader door één bericht zonder het bericht van de IBM MQ-server te verwijderen.
-- Bladeren in een batch berichten zonder de berichten van de IBM MQ-server te verwijderen.
-- Ontvang één bericht en verwijder het bericht van de IBM MQ-server.
-- Ontvang een batch berichten en verwijder de berichten van de IBM MQ-server.
-- Eén bericht naar de IBM MQ-server verzenden.
+- Blader door één bericht zonder het bericht van de MQ-server te verwijderen.
+- Bladeren in een batch berichten zonder de berichten van de MQ-server te verwijderen.
+- Ontvang één bericht en verwijder het bericht van de MQ-server.
+- Ontvang een batch berichten en verwijder de berichten van de MQ-server.
+- Eén bericht naar de MQ-server verzenden.
 
 Dit zijn de officieel ondersteunde IBM WebSphere MQ-versies:
 
@@ -37,15 +37,20 @@ Dit zijn de officieel ondersteunde IBM WebSphere MQ-versies:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Als u een on-premises MQ-server gebruikt, [installeert u de on-premises gegevens gateway](../logic-apps/logic-apps-gateway-install.md) op een server in uw netwerk. Op de server waarop de on-premises gegevens gateway is geïnstalleerd moet ook .NET Framework 4,6 zijn geïnstalleerd om de MQ-connector te kunnen gebruiken.
+* Als u een on-premises MQ-server gebruikt, moet u [de on-premises gegevens gateway installeren](../logic-apps/logic-apps-gateway-install.md) op een server in uw netwerk.
 
-  Nadat u de gateway hebt geïnstalleerd, moet u ook een resource in azure maken voor de on-premises gegevens gateway. Zie [de data gateway-verbinding instellen](../logic-apps/logic-apps-gateway-connection.md)voor meer informatie.
+  > [!NOTE]
+  > Als uw MQ-server openbaar beschikbaar of beschikbaar is in azure, hoeft u de gegevens gateway niet te gebruiken.
 
-  Als uw MQ-server openbaar beschikbaar of beschikbaar is in azure, hoeft u de gegevens gateway niet te gebruiken.
+  * Voor een goede werking van de MQ-connector moet .NET Framework 4,6 zijn geïnstalleerd op de server waarop u de on-premises gegevens gateway installeert.
+  
+  * Nadat u de on-premises gegevens gateway hebt geïnstalleerd, moet u ook [een Azure gateway-resource maken voor de on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md) die de MQ-connector gebruikt om toegang te krijgen tot uw on-PREMISes MQ-server.
 
-* De logische app waaraan u de MQ-actie wilt toevoegen. Deze logische app moet dezelfde locatie gebruiken als uw on-premises gegevens gateway-verbinding en moet al een trigger hebben waarmee de werk stroom wordt gestart.
+* De logische app waarvoor u de MQ-connector wilt gebruiken. De MQ-connector heeft geen triggers, dus u moet eerst een trigger toevoegen aan uw logische app. U kunt bijvoorbeeld de [terugkeer patroon trigger](../connectors/connectors-native-recurrence.md)gebruiken. Als u geen ervaring hebt met Logic apps, kunt u deze [Snelstartgids proberen om uw eerste logische app te maken](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-  De MQ-connector heeft geen triggers, dus u moet eerst een trigger toevoegen aan uw logische app. U kunt bijvoorbeeld de terugkeer patroon trigger gebruiken. Als u geen ervaring hebt met Logic apps, kunt u deze [Snelstartgids proberen om uw eerste logische app te maken](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+## <a name="limitations"></a>Beperkingen
+
+De MQ-connector ondersteunt of gebruikt het **indelings** veld van het bericht niet en voert geen conversie van teken sets uit. De connector plaatst alleen de gegevens die worden weer gegeven in het bericht veld in een JSON-bericht en verzendt het bericht langs.
 
 <a name="create-connection"></a>
 
@@ -59,9 +64,9 @@ Als u nog geen MQ-verbinding hebt wanneer u een MQ-actie toevoegt, wordt u gevra
 
 1. Geef de verbindings gegevens voor uw MQ-server op.
 
-   * Voor de **Server**kunt u de naam van de MQ-server invoeren of het IP-adres invoeren, gevolgd door een dubbele punt en het poort nummer.
+   * Voor de **Server** kunt u de naam van de MQ-server invoeren of het IP-adres invoeren, gevolgd door een dubbele punt en het poort nummer.
 
-   * Als u Secure Sockets Layer (SSL) wilt gebruiken, selecteert u **SSL inschakelen?**.
+   * Als u Transport Layer Security (TLS) of Secure Sockets Layer (SSL) wilt gebruiken, selecteert u **SSL inschakelen?**.
 
      De MQ-connector biedt momenteel alleen ondersteuning voor Server verificatie, niet voor client verificatie. Zie [problemen met verbinding en verificatie](#connection-problems)voor meer informatie.
 
@@ -71,7 +76,7 @@ Als u nog geen MQ-verbinding hebt wanneer u een MQ-actie toevoegt, wordt u gevra
 
    1. Selecteer de Azure-gateway resource die u wilt gebruiken in de lijst met **gateways voor verbindingen** .
 
-1. Als u gereed bent, selecteert u **Maken**.
+1. Selecteer **Maken** als u klaar bent.
 
 <a name="connection-problems"></a>
 
@@ -100,7 +105,7 @@ Wanneer uw logische app verbinding probeert te maken met uw on-premises MQ-serve
 
 ## <a name="browse-single-message"></a>Door één bericht bladeren
 
-1. Selecteer **nieuwe stap**onder de trigger of een andere actie in uw logische app.
+1. Selecteer **nieuwe stap** onder de trigger of een andere actie in uw logische app.
 
 1. Typ in het zoekvak `mq` en selecteer de actie **bericht zoeken** .
 
@@ -112,8 +117,8 @@ Wanneer uw logische app verbinding probeert te maken met uw on-premises MQ-serve
 
    | Eigenschap | Beschrijving |
    |----------|-------------|
-   | **Queue** | Als dit afwijkt van de wachtrij die in de verbinding is opgegeven, geeft u die wachtrij op. |
-   | **MessageId**, **CorrelationId**, **GroupId**en andere eigenschappen | Bladeren naar een bericht dat is gebaseerd op de verschillende MQ-bericht eigenschappen |
+   | **Wachtrij** | Als dit afwijkt van de wachtrij die in de verbinding is opgegeven, geeft u die wachtrij op. |
+   | **MessageId**, **CorrelationId**, **GroupId** en andere eigenschappen | Bladeren naar een bericht dat is gebaseerd op de verschillende MQ-bericht eigenschappen |
    | **IncludeInfo** | Als u aanvullende bericht informatie in de uitvoer wilt toevoegen, selecteert u **waar**. Als u aanvullende bericht informatie in de uitvoer wilt weglaten, selecteert u **Onwaar**. |
    | **Out** | Voer een waarde in om te bepalen hoe lang moet worden gewacht tot een bericht in een lege wachtrij arriveert. Als niets wordt ingevoerd, wordt het eerste bericht in de wachtrij opgehaald en wordt er geen tijd besteed aan het wachten op het verschijnen van een bericht. |
    |||
@@ -122,7 +127,7 @@ Wanneer uw logische app verbinding probeert te maken met uw on-premises MQ-serve
 
    ![Eigenschappen voor de actie bericht zoeken](media/connectors-create-api-mq/browse-message-properties.png)
 
-1. Wanneer u klaar bent, selecteert u op de werk balk ontwerpen de optie **Opslaan**. Als u uw app wilt testen, selecteert u **uitvoeren**.
+1. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent. Als u uw app wilt testen, selecteert u **uitvoeren**.
 
    Nadat de uitvoering is voltooid, worden in de ontwerp functie de werk stroom stappen en hun status weer gegeven, zodat u de uitvoer kunt controleren.
 
@@ -156,11 +161,11 @@ De actie **Bladeren door berichten** bevat een **BatchSize** -optie om aan te ge
 
 ## <a name="receive-single-message"></a>Eén bericht ontvangen
 
-De actie **bericht ontvangen** heeft dezelfde invoer en uitvoer als de actie **bericht bladeren** . Wanneer u **bericht ontvangen**gebruikt, wordt het bericht uit de wachtrij verwijderd.
+De actie **bericht ontvangen** heeft dezelfde invoer en uitvoer als de actie **bericht bladeren** . Wanneer u **bericht ontvangen** gebruikt, wordt het bericht uit de wachtrij verwijderd.
 
 ## <a name="receive-multiple-messages"></a>Meerdere berichten ontvangen
 
-De actie **berichten ontvangen** heeft dezelfde invoer en uitvoer als de actie **berichten door bladeren** . Wanneer u **berichten ontvangen**gebruikt, worden de berichten uit de wachtrij verwijderd.
+De actie **berichten ontvangen** heeft dezelfde invoer en uitvoer als de actie **berichten door bladeren** . Wanneer u **berichten ontvangen** gebruikt, worden de berichten uit de wachtrij verwijderd.
 
 > [!NOTE]
 > Bij het uitvoeren van een Blader bewerking of een ontvangst actie voor een wachtrij die geen berichten bevat, mislukt de actie met deze uitvoer:
@@ -173,7 +178,7 @@ De actie **berichten ontvangen** heeft dezelfde invoer en uitvoer als de actie *
 
 1. Als u nog geen MQ-verbinding hebt gemaakt, wordt u gevraagd om [die verbinding te maken](#create-connection). Anders wordt de eerste eerder geconfigureerde verbinding standaard gebruikt. Als u een nieuwe verbinding wilt maken, selecteert u **verbinding wijzigen**. Of selecteer een andere verbinding.
 
-1. Geef de informatie op voor de actie. Selecteer voor **Message type**een geldig bericht type: **Data gram**, **beantwoorden**of **aanvraag**
+1. Geef de informatie op voor de actie. Selecteer voor **Message type** een geldig bericht type: **Data gram**, **beantwoorden** of **aanvraag**
 
    ![Eigenschappen voor de actie bericht verzenden](media/connectors-create-api-mq/send-message-properties.png)
 
@@ -185,7 +190,7 @@ De actie **berichten ontvangen** heeft dezelfde invoer en uitvoer als de actie *
 
 ## <a name="connector-reference"></a>Connector-verwijzing
 
-Raadpleeg de [referentie pagina](/connectors/mq/)van de connector voor technische informatie over acties en limieten die worden beschreven door de Swagger-beschrijving van de connector.
+Raadpleeg de [referentie pagina van de connector](/connectors/mq/)voor technische details, zoals acties en limieten, die worden beschreven in het Swagger-bestand van de connector.
 
 ## <a name="next-steps"></a>Volgende stappen
 

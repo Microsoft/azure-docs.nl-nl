@@ -3,15 +3,15 @@ title: Continue implementatie inschakelen
 description: Meer informatie over het inschakelen van CI/CD-Azure App Service van GitHub, BitBucket, Azure opslag plaatsen of een andere opslag plaatsen. Selecteer de build-pijp lijn die aan uw behoeften voldoet.
 ms.assetid: 6adb5c84-6cf3-424e-a336-c554f23b4000
 ms.topic: article
-ms.date: 03/03/2021
+ms.date: 03/12/2021
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 5af8294518759181326e7736ef755f0a83581014
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 52f0db739cff9614dc4e9f5ef71d582e926fc65a
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102564953"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470265"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Continue implementatie naar Azure App Service
 
@@ -116,6 +116,8 @@ U kunt de GitHub-service voor het maken van acties op de volgende manieren aanpa
 - In plaats van een publicatie profiel implementeert u met behulp van een [Service-Principal](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) in azure Active Directory.
 
 #### <a name="authenticate-with-a-service-principal"></a>Verifiëren met een Service-Principal
+
+Deze optionele configuratie vervangt de standaard verificatie met publicatie profielen in het gegenereerde werk stroom bestand.
 
 1. Genereer een service-principal met de opdracht [AZ AD SP create-for-RBAC](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) in de [Azure cli](/cli/azure/). Vervang in het volgende voor beeld *\<subscription-id>* , *\<group-name>* en door *\<app-name>* uw eigen waarden:
 

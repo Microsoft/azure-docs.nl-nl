@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: fc48c9b8a0a7510dd8792c959c1f63a0340f89ce
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 5a36b5c8b0c8f24d093d887ad788c4ce9857d355
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103011201"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492671"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -61,7 +61,7 @@ Versie 3 biedt:
 - ARM REST Api's, client-Sdk's voor .NET core, Node.js, Python, Java, Go en Ruby.
 - Door de klant beheerde sleutels, integratie van vertrouwde opslag, ondersteuning voor persoonlijke koppelingen en [meer](https://review.docs.microsoft.com/azure/media-services/latest/migrate-v-2-v-3-migration-benefits)
 
-#### <a name="action-required"></a>Actie vereist
+#### <a name="action-required"></a>Vereiste actie
 
 Als u de onderbreking van uw werk belastingen tot een minimum wilt beperken, raadpleegt u de [migratie handleiding](https://go.microsoft.com/fwlink/?linkid=2149150&clcid=0x409) om uw code over te stappen van versie 2 API en sdk's naar versie 3 API en SDK vóór 29 februari 2024.
 **Na 29 februari 2024** wordt door Azure Media Services geen verkeer meer geaccepteerd op de rest API van versie 2, de arm Account Management API-versie 2015-10-01 of van de sdk's van versie 2 .net client. Dit geldt ook voor open source client-SDK'S van derden die de API van versie 2 kunnen aanroepen.  
@@ -312,7 +312,7 @@ U kunt nu Azure Monitor gebruiken om telemetriegegevens weer te geven die zijn v
 * Gebruik de diagnostische logboeken van Azure Monitor om aanvragen te bewaken die worden verzonden door het Media Services key delivery-eind punt. 
 * Bewaak de metrische gegevens die worden verzonden door Media Services [streaming-eind punten](streaming-endpoint-concept.md).   
 
-Zie [Media Services metrische gegevens en Diagnostische logboeken bewaken](media-services-metrics-diagnostic-logs.md)voor meer informatie.
+Zie [Media Services metrische gegevens en Diagnostische logboeken bewaken](monitoring/monitor-media-services-data-reference.md)voor meer informatie.
 
 ### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Ondersteuning voor meerdere audio-tracks in dynamische pakketten 
 

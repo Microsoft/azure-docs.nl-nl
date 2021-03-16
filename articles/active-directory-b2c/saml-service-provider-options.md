@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/04/2021
+ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: adfe5318949ffa624ebe3548944b558bd0dda9e1
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: 09cfdd026105a34db976118f38b011e2c4578a24
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102198469"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470775"
 ---
 # <a name="options-for-registering-a-saml-application-in-azure-ad-b2c"></a>Opties voor het registreren van een SAML-toepassing in Azure AD B2C
 
@@ -278,6 +278,19 @@ Voorbeeld:
 ## <a name="session-management"></a>Sessiebeheer
 
 U kunt de sessie tussen Azure AD B2C en de SAML-Relying Party toepassing beheren met het `UseTechnicalProfileForSessionManagement` element en de [SamlSSOSessionProvider](custom-policy-reference-sso.md#samlssosessionprovider).
+
+## <a name="force-users-to-re-authenticate"></a>Gebruikers dwingen om zich opnieuw te verifiëren 
+
+Om gebruikers te dwingen om zich opnieuw te verifiëren, kan de toepassing het `ForceAuthn` kenmerk in de SAML-verificatie aanvraag opnemen. Het `ForceAuthn` kenmerk is een Booleaanse waarde. Als deze eigenschap is ingesteld op True, wordt de sessie van de gebruiker bij Azure AD B2C ongeldig en wordt de gebruiker opnieuw geverifieerd. De volgende SAML-verificatie aanvraag laat zien hoe u het `ForceAuthn` kenmerk instelt op True. 
+
+
+```xml
+<samlp:AuthnRequest 
+       Destination="https://contoso.b2clogin.com/contoso.onmicrosoft.com/B2C_1A_SAML2_signup_signin/samlp/sso/login"
+       ForceAuthn="true" ...>
+    ...
+</samlp:AuthnRequest>
+```
 
 ## <a name="debug-the-saml-protocol"></a>Fout opsporing voor het SAML-Protocol
 

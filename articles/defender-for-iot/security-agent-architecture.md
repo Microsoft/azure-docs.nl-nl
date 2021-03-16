@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: aceeaec63eb637002352f5c503f57890033b0381
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: de8c52372b2ef92dcf2abe357a40ef8947439a8a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449234"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493954"
 ---
 # <a name="quickstart-security-agent-reference-architecture"></a>Snelstartgids: referentie architectuur voor beveiligings agent
 
@@ -57,7 +57,7 @@ Defender voor IoT biedt verschillende installatie agenten voor 32 bits-en 64-bit
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een overzicht op hoog niveau over de architectuur van Defender voor IoT-beveiligings modules en de beschik bare installatie Programma's.
+In dit artikel hebt u een overzicht op hoog niveau over Defender voor de architectuur van IoT Defender-IoT-micro-agent en de beschik bare installatie Programma's.
 
 Als u aan de slag wilt gaan met Defender voor IoT-implementatie, gebruikt u de volgende artikelen:
 

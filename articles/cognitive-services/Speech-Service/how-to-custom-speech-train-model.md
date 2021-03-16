@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: trbye
-ms.openlocfilehash: 4da93503c32e380adb82028e7c5e11dddb247d6f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 166fb94f5a3aea505c0d20df861b8bc4de9ad8aa
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100373365"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491109"
 ---
 # <a name="train-and-deploy-a-custom-speech-model"></a>Een Custom Speech-model trainen en implementeren
 
@@ -61,7 +61,7 @@ In de tabel **training** wordt een nieuw item weer gegeven dat overeenkomt met h
 Bekijk de nauw keurigheid van het Custom Speech model te evalueren en [te](how-to-custom-speech-evaluate-data.md) verbeteren. Als u ervoor kiest om de nauw keurigheid te testen, is het belang rijk dat u een akoestische gegevensset selecteert die afwijkt van het model dat u hebt gebruikt bij uw modellen om een realistische indruk te krijgen van de prestaties van het model.
 
 > [!NOTE]
-> Zowel basis modellen als aangepaste modellen kunnen alleen tot een bepaalde datum worden gebruikt (Zie [levens cyclus van modellen](custom-speech-overview.md#model-lifecycle)). In speech Studio wordt deze datum weer gegeven in de kolom **verloop** voor elk model en eind punt. Na deze datum kan een eind punt of een batch-transcriptie mislukken of worden terugvallen op het basis model.
+> Zowel basis modellen als aangepaste modellen kunnen alleen tot een bepaalde datum worden gebruikt (Zie [model en levens cyclus van het eind punt](./how-to-custom-speech-model-and-endpoint-lifecycle.md)). In speech Studio wordt deze datum weer gegeven in de kolom **verloop** voor elk model en eind punt. Na deze datum kan een eind punt of een batch-transcriptie mislukken of worden terugvallen op het basis model.
 >
 > Train uw model opnieuw met het meest recente basis model om te profiteren van nauw keurigere verbeteringen en om te voor komen dat uw model verloopt.
 

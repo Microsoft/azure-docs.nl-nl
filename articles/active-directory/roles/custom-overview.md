@@ -13,12 +13,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b66b004a0371b76f82d525972feefab9c89efb2d
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 3fad2c683890776908afbfbf15ee91d46d564783
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742043"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466759"
 ---
 # <a name="overview-of-role-based-access-control-in-azure-active-directory"></a>Overzicht van op rollen gebaseerd toegangsbeheer in Azure Active Directory
 
@@ -60,7 +60,7 @@ Een roltoewijzing is een Azure AD-resource op basis waarvan een *roldefinitie* i
 - Roldefinitie
 - Resourcebereik
 
-U kunt [roltoewijzingen maken](custom-create.md) met behulp van Azure Portal, Azure AD PowerShell, of Graph API. U kunt ook [de toewijzingen voor een aangepaste rol bekijken](custom-view-assignments.md#view-the-assignments-of-a-role).
+U kunt [roltoewijzingen maken](custom-create.md) met behulp van Azure Portal, Azure AD PowerShell, of Graph API. U kunt ook [de roltoewijzingen weer geven](view-assignments.md).
 
 Het volgende diagram toont een voorbeeld van een roltoewijzing. In dit voorbeeld is aan Chris Green de aangepaste rol App-registratiebeheerder toegewezen voor het bereik van de Contoso Widget Builder-app-registratie. De toewijzing verleent Chris alleen voor deze specifieke app-registratie de machtigingen van de rol App-registratiebeheerder.
 
@@ -89,4 +89,4 @@ Het gebruik van ingebouwde rollen in Azure AD is gratis, terwijl voor aangepaste
 
 - [Inzicht in Azure AD-rollen](concept-understand-roles.md)
 - Aangepaste roltoewijzingen maken met behulp van [Azure Portal, Azure AD PowerShell, en Graph API](custom-create.md)
-- [De toewijzingen voor een aangepaste rol bekijken](custom-view-assignments.md)
+- [Lijst met roltoewijzingen weergeven](view-assignments.md)

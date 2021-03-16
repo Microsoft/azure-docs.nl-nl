@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 02/18/2021
-ms.openlocfilehash: 8c876a09c77a2ed5441a2f40acc2da508697febb
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 04ed2e76797474a65d5c7c669066926225c1c1f9
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102608679"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471754"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -26,7 +26,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
 ## <a name="2021-03-08"></a>2021-03-08
 
 ### <a name="azure-machine-learning-sdk-for-python-v1240"></a>Azure Machine Learning SDK voor python v-1.24.0
-+ **Nieuwe functies**
++ **Oplossingen en verbeteringen voor oplossingen**
   + **azureml-automl-core**
     + Achterwaarts compatibele Imports verwijderd uit `azureml.automl.core.shared` . Fouten van module niet gevonden in de `azureml.automl.core.shared` naam ruimte kunnen worden opgelost door te importeren uit `azureml.automl.runtime.shared` .
   + **azureml-contrib-automl-DNN-Vision**
@@ -75,7 +75,7 @@ __RSS-feed__: ontvang een melding wanneer deze pagina wordt bijgewerkt door de v
 ## <a name="2021-02-16"></a>2021-02-16
 
 ### <a name="azure-machine-learning-sdk-for-python-v1230"></a>Azure Machine Learning SDK voor python v-1.23.0
-+ **Nieuwe functies**
++ **Oplossingen en verbeteringen voor oplossingen**
   + **azureml-core**
     + [Experimentele functie] Voeg ondersteuning toe om Synapse-werk ruimte te koppelen aan AML als een gekoppelde service
     + [Experimentele functie] Voeg ondersteuning toe voor het koppelen van een Synapse Spark-pool in AML als reken kracht

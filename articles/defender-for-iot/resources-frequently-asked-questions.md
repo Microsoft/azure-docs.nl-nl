@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/07/2020
+ms.date: 03/02/2021
 ms.author: rkarlin
-ms.openlocfilehash: 678b50ffb2df2cd16312548109b93f6f1a7f08ff
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 89da9ed378118875f0c09d3c23799349a4d093b0
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247462"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467694"
 ---
 # <a name="azure-defender-for-iot-frequently-asked-questions"></a>Veelgestelde vragen over Azure Defender voor IoT
 
@@ -57,23 +57,17 @@ Bijvoorbeeld:
 
 ## <a name="how-does-defender-for-iot-compare-to-the-competition"></a>Hoe kan Defender voor IoT worden vergeleken met de competitie?
 
-Hoewel andere oplossingen een reeks mogelijkheden bieden waarmee klanten hun eigen oplossingen kunnen maken, biedt Defender voor IoT een unieke end-to-end IoT-beveiligings oplossing die een brede weer gave biedt over de beveiliging van al uw verwante Azure-resources. Azure maakt snelle implementatie en volledige integratie mogelijk met IoT Hub module apparaatdubbels voor eenvoudige integratie met bestaande hulpprogram ma's voor Apparaatbeheer.
+Azure Defender voor IoT biedt uitgebreide beveiliging in al uw IoT/OT-apparaten. Voor **organisaties van eind gebruikers** biedt Azure Defender voor IOT zonder agent, netwerk-laag beveiliging die snel wordt geïmplementeerd, werkt met diverse bedrijfs eigen en verouderde Windows-systemen en samenwerkt met Azure Sentinel en andere Soc-hulpprogram ma's. Het kan on-premises of in met Azure verbonden omgevingen worden geïmplementeerd. Voor **IOT-apparaats bouwers** biedt Azure Defender voor IOT licht gewicht agenten om beveiliging op apparaatniveau in te sluiten in nieuwe IOT/OT-initiatieven.
 
+## <a name="do-i-have-to-be-an-azure-customer"></a>Moet ik een Azure-klant zijn?
 
-## <a name="do-i-have-to-be-an-azure-iot-customer"></a>Moet ik een Azure IoT-klant zijn?
+Nee, u hoeft geen Azure-klant te zijn voor de agentloze versie van Azure Defender voor IoT. Als u echter waarschuwingen wilt verzenden naar Azure Sentinel; richt netwerk Sens oren in en bewaak hun status vanuit de Cloud; en profiteer van automatische updates van software-en bedreigings informatie, moet u de sensor verbinden met Azure via Azure IoT Hub.
 
-Ja. Voor implementaties in de Cloud is Azure Defender voor IoT afhankelijk van Azure IoT-connectiviteit en-infra structuur.
+Voor de op de agent gebaseerde versie van Azure Defender voor IoT moet u een Azure-klant zijn.
+
 ## <a name="can-i-create-my-own-alerts"></a>Kan ik mijn eigen waarschuwingen maken?
 
-Ja. U kunt een aangepaste waarschuwing instellen voor een vooraf vastgestelde set gedrag, zoals IP-adres en open poorten. Zie [aangepaste waarschuwingen maken](quickstart-create-custom-alerts.md) voor meer informatie over aangepaste waarschuwingen en hoe u deze kunt maken.
-
-## <a name="where-can-i-see-logs-can-i-customize-logs"></a>Waar kan ik logboeken zien? Kan ik logboeken aanpassen?
-
-- Waarschuwingen en aanbevelingen weer geven met behulp van uw verbonden Log Analytics-werk ruimte. Opslag grootte en duur in de werk ruimte configureren.
-
-- Onbewerkte gegevens van uw beveiligings agent kunnen ook worden opgeslagen in uw Log Analytics-account. Overweeg grootte, duur, opslag vereisten en gekoppelde kosten voordat u de configuratie van deze optie wijzigt.
-
-
+Ja, u kunt aangepaste waarschuwingen maken op basis van meerdere para meters, zoals IP/MAC-adres, protocol type, klasse, service, functie, opdracht, enzovoort, en waarden van aangepaste labels in de payloads.  Zie [aangepaste waarschuwingen maken](quickstart-create-custom-alerts.md) voor meer informatie over aangepaste waarschuwingen en hoe u deze kunt maken.
 
 ## <a name="what-happens-when-the-internet-connection-stops-working"></a>Wat gebeurt er als de Internet verbinding niet meer werkt?
 

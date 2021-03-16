@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: troubleshooting
 ms.date: 03/18/2020
 ms.author: v-erkel
-ms.openlocfilehash: efa163a2c10a7dc93bf5d26865a0e7eb43f11dea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2a5ffa337f789c4edc3a34b3be81285337473e2
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87082763"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471713"
 ---
 # <a name="troubleshoot-nas-configuration-and-nfs-storage-target-issues"></a>Problemen met de NAS-configuratie en NFS-opslag doelen oplossen
 
@@ -64,7 +64,7 @@ Verschillende opslag systemen gebruiken verschillende methoden om deze toegang i
 Als u regels voor exporteren gebruikt, moet u er rekening mee houden dat de cache meerdere verschillende IP-adressen van het cache-subnet kan gebruiken. Toegang vanaf het volledige bereik van mogelijke subnet-IP-adressen toestaan.
 
 > [!NOTE]
-> Standaard wordt de Azure HPC-cache squashes root Access. Lees [aanvullende cache-instellingen configureren](configuration.md#configure-root-squash) voor meer informatie.
+> Hoewel de cache hoofd toegang heeft tot het back-end-opslag systeem, kunt u de toegang beperken tot clients die verbinding maken via de cache. Lees de [client toegang](access-policies.md#root-squash) voor meer informatie.
 
 Werk samen met de leverancier van uw NAS-opslag om het juiste toegangs niveau voor de cache in te scha kelen.
 

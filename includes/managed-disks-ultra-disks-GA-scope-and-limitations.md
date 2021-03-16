@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: e94b14584f8eece3d772f67b680df4a2ffb8b5cd
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: aafeb7ebd939805ae18e29670f359660db12e2e1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102603338"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103555944"
 ---
 Voor nu hebben Ultra disks de volgende beperkingen:
 
@@ -65,11 +65,11 @@ De volgende tabel geeft een overzicht van de regio's Ultra disks zijn beschikbaa
     - [Mv2](../articles/virtual-machines/workloads/sap/hana-vm-operations-storage.md)
 - Niet elke VM-grootte is beschikbaar in elke ondersteunde regio met ultra disks.
 - Zijn alleen beschikbaar als gegevens schijven. 
-- Standaard de fysieke sector grootte van 4.000 ondersteunen. de 512E-sector grootte is beschikbaar als een algemeen beschik bare aanbieding (geen aanmelding vereist), maar is momenteel alleen beschikbaar via CLI of Power shell. De meeste toepassingen zijn compatibel met formaten van 4.000 sectoren, maar sommige sectoren vereisen een grootte van 512 bytes. Een voor beeld hiervan is Oracle Database, waarvoor release 12,2 of hoger is vereist om de onbestelbare schijven van 4.000 te ondersteunen. Voor oudere versies van Oracle DB is de sector grootte van 512 bytes vereist.
+- Standaard de fysieke sector grootte van 4.000 ondersteunen. de 512E-sector grootte is beschikbaar als een algemeen beschik bare aanbieding (geen aanmelding vereist). De meeste toepassingen zijn compatibel met formaten van 4.000 sectoren, maar sommige sectoren vereisen een grootte van 512 bytes. Een voor beeld hiervan is Oracle Database, waarvoor release 12,2 of hoger is vereist om de onbestelbare schijven van 4.000 te ondersteunen. Voor oudere versies van Oracle DB is de sector grootte van 512 bytes vereist.
 - Kan alleen worden gemaakt als lege schijven.
 - Biedt momenteel geen ondersteuning voor schijf momentopnamen, VM-installatie kopieën, beschikbaarheids sets, voor Azure toegewezen hosts of Azure Disk Encryption.
 - Biedt momenteel geen ondersteuning voor integratie met Azure Backup of Azure Site Recovery.
 - Ondersteunt alleen niet-opgeslagen Lees bewerkingen en schrijf bewerkingen in de cache.
 - De huidige maximum limiet voor IOPS op GA Vm's is 80.000.
 
-Azure Ultra disks biedt standaard Maxi maal 16 TiB per regio per abonnement, maar Ultra schijven ondersteunen hogere capaciteit op aanvraag. Neem contact op met de ondersteuning van Azure om een verhoging van de capaciteit aan te vragen.
+Azure Ultra disks biedt standaard Maxi maal 32 TiB per regio per abonnement, maar Ultra schijven ondersteunen hogere capaciteit op aanvraag. Vraag een quotum verhoging aan of neem contact op met de ondersteuning van Azure om een verhoging van de capaciteit aan te vragen.

@@ -4,14 +4,14 @@ description: Vereisten voor het gebruik van Azure HPC cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 03/11/2021
 ms.author: v-erkel
-ms.openlocfilehash: a31aee3f4548d3137fa1241aaa3a0f6171cf6895
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 7a91cf5f9341d2b42f1c8f242d288b4ee59b632d
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412507"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103471796"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Vereisten voor de Azure HPC-cache
 
@@ -91,14 +91,18 @@ Controleer deze aan de machtigingen gerelateerde vereisten voordat u begint met 
   Volg de instructies in [opslag doelen toevoegen](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account) om de rollen toe te voegen.
 
 ## <a name="storage-infrastructure"></a>Opslag infrastructuur
+<!-- heading is linked in create storage target GUI as aka.ms/hpc-cache-prereq#storage-infrastructure - make sure to fix that if you change the wording of this heading -->
 
-De cache ondersteunt Azure Blob-containers of NFS-hardware Storage-export. Voeg opslag doelen toe nadat u de cache hebt gemaakt.
+De cache ondersteunt Azure Blob-containers, NFS-hardware-opslag en NFS-gekoppelde ADLS BLOB-containers (momenteel als preview-versie). Voeg opslag doelen toe nadat u de cache hebt gemaakt.
 
 Elk opslag type heeft specifieke vereisten.
 
 ### <a name="blob-storage-requirements"></a>Vereisten voor Blob-opslag
 
 Als u Azure Blob Storage wilt gebruiken met uw cache, hebt u een compatibel opslag account nodig en een lege BLOB-container of een container die is gevuld met gegevens in de Azure HPC-cache, zoals wordt beschreven in [gegevens verplaatsen naar Azure Blob-opslag](hpc-cache-ingest.md).
+
+> [!NOTE]
+> Andere vereisten zijn van toepassing op met NFS gekoppelde Blob-opslag. Lees de [ADLS-opslag vereisten voor NFS](#nfs-mounted-blob-adls-nfs-storage-requirements-preview) voor meer informatie.
 
 Maak het account voordat u probeert een opslag doel toe te voegen. U kunt een nieuwe container maken wanneer u het doel toevoegt.
 
@@ -169,6 +173,37 @@ Meer informatie vindt u in het oplossen van problemen [met NAS-configuratie en N
   * Als uw opslag export bevat die submappen zijn van een andere export, controleert u of de cache hoofd toegang heeft tot het laagste segment van het pad. Lees de hoofdmap van de [Directory-paden](troubleshoot-nas.md#allow-root-access-on-directory-paths) in het artikel over het oplossen van problemen met de NFS-opslag doel voor meer informatie.
 
 * Opslag van NFS-back-end moet een compatibel hardware/software-platform zijn. Neem contact op met het team van HPC-cache voor meer informatie.
+
+### <a name="nfs-mounted-blob-adls-nfs-storage-requirements-preview"></a>Opslag vereisten voor NFS-gekoppelde BLOB (ADLS-NFS) (PREVIEW)
+
+Azure HPC cache kan ook een BLOB-container gebruiken die is gekoppeld met het NFS-protocol als een opslag doel.
+
+> [!NOTE]
+> Ondersteuning voor NFS 3,0-protocol voor Azure Blob Storage is in open bare preview. De beschik baarheid is beperkt en functies kunnen worden gewijzigd tussen nu en wanneer de functie algemeen beschikbaar wordt. Gebruik geen preview-technologie in productie systemen.
+>
+> Lees meer over deze preview-functie in de [NFS 3,0-protocol ondersteuning in Azure Blob-opslag](../storage/blobs/network-file-system-protocol-support.md).
+
+De vereisten voor het opslag account zijn verschillend voor een ADLS-NFS-Blob-opslag doel en voor een standaard-Blob-opslag doel. Volg de instructies in [Blob Storage koppelen door het NFS-protocol (Network File System 3,0)](../storage/blobs/network-file-system-protocol-support-how-to.md) zorgvuldig te gebruiken om het opslag account voor NFS te maken en te configureren.
+
+Dit is een algemeen overzicht van de stappen:
+
+1. Zorg ervoor dat de functies die u nodig hebt, beschikbaar zijn in de regio's waar u van plan bent te werken.
+
+1. Schakel de NFS-protocol functie in voor uw abonnement. Doe dit *voordat* u het opslag account maakt.
+
+1. Maak een beveiligd virtueel netwerk (VNet) voor het opslag account. Gebruik hetzelfde virtuele netwerk voor uw opslag account voor NFS en voor uw Azure HPC-cache.
+
+1. Maak het opslag account.
+
+   * In plaats van de instellingen voor het opslag account te gebruiken voor een standaard Blob Storage-account, volgt u de instructies in het [document How-to](../storage/blobs/network-file-system-protocol-support-how-to.md). Het type opslag account dat wordt ondersteund, kan variëren per Azure-regio.
+
+   * Kies in de sectie **netwerken** een persoonlijk eind punt in het beveiligde virtuele netwerk dat u hebt gemaakt (aanbevolen) of kies een openbaar eind punt met beperkte toegang vanaf het beveiligde VNet.
+
+   * Vergeet niet om de sectie **Geavanceerd** te volt ooien, waar u NFS-toegang inschakelt.
+
+   * Geef de cache toepassing toegang tot uw Azure Storage-account zoals vermeld in de [machtigingen](#permissions)hierboven. U kunt dit doen wanneer u voor het eerst een opslag doel maakt. Volg de procedure in [opslag doelen toevoegen](hpc-cache-add-storage.md#add-the-access-control-roles-to-your-account) om de vereiste toegangs rollen in de cache op te slaan.
+
+     Als u niet de eigenaar van het opslag account bent, laat u de eigenaar deze stap uitvoeren.
 
 ## <a name="set-up-azure-cli-access-optional"></a>Toegang tot Azure CLI instellen (optioneel)
 

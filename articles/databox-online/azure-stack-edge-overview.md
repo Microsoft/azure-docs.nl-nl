@@ -6,26 +6,28 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: overview
-ms.date: 09/09/2020
+ms.date: 03/15/2021
 ms.author: alkohli
-ms.openlocfilehash: 51469c23574f55c102f0c6fb98e5aa5178b59a4a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 3973235991a16d118b47d7289f3a1825621a9023
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455744"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574676"
 ---
 # <a name="what-is-azure-stack-edge-pro-with-fpga"></a>Wat is Azure Stack Edge Pro met FPGA?
 
-[!INCLUDE [data-box-edge-gateway-rename-note](../../includes/data-box-edge-gateway-rename-note.md)]
+[!INCLUDE [Azure Stack Edge Pro FPGA end-of-life](../../includes/azure-stack-edge-fpga-eol.md)]
 
-Azure Stack Edge Pro met FPGA is een Edge-rekenapparaat met AI dat mogelijkheden voor netwerkgegevensoverdracht biedt. Dit artikel geeft een overzicht van de Azure Stack Edge Pro met FPGA-oplossing, voordelen, belangrijkste mogelijkheden en de scenario’s waarin u dit apparaat kunt implementeren.
+Azure Stack Edge Pro met FPGA is een Edge-rekenapparaat met AI dat mogelijkheden voor netwerkgegevensoverdracht biedt. In dit artikel vindt u een overzicht van de Azure Stack Edge Pro met FPGA-oplossing, voor delen, de belangrijkste mogelijkheden en implementatie scenario's.
 
-Azure Stack Edge Pro met FPGA is een hardware-as-a-service-oplossing. Microsoft stuurt u een in de cloud beheerd apparaat met een ingebouwde Field Programmable Gate Array (FPGA) die versnelde AI-interferentie mogelijk maakt en alle mogelijkheden van een gateway voor netwerkopslag heeft. 
+Azure Stack Edge Pro met FPGA is een hardware-as-a-service-oplossing. Microsoft stuurt u een in de cloud beheerd apparaat met een ingebouwde Field Programmable Gate Array (FPGA) die versnelde AI-interferentie mogelijk maakt en alle mogelijkheden van een gateway voor netwerkopslag heeft.
+
+Azure Data Box Edge heeft onlangs de nieuwe naam Azure Stack Edge gekregen.
 
 ## <a name="use-cases"></a>Gebruiksvoorbeelden
 
-Hier volgen de verschillende scenario's waarbij Azure Stack Edge Pro kan worden gebruikt voor snelle machine learning (ML)-deductie aan de rand en het voorbewerken van gegevens voordat deze naar Azure worden verzonden.
+Hier volgen de verschillende scenario's waarbij Azure Stack Edge Pro kan worden gebruikt voor snelle machine learning-deductie aan de rand en het voorbewerken van gegevens voordat deze naar Azure worden verzonden.
 
 - **Deductie met Azure Machine Learning**: met Azure Stack Edge Pro kunt u ML-modellen uitvoeren om snel resultaten te verkrijgen op basis waarvan actie kan worden ondernomen voordat de gegevens naar de cloud worden verzonden. De volledige gegevensset kan desgewenst worden overgedragen om uw ML-modellen te blijven trainen en verbeteren. Zie [Hardware-versnelde Azure ML-modellen implementeren op Azure Stack Edge Pro](../machine-learning/how-to-deploy-fpga-web-service.md#deploy-to-a-local-edge-server) voor meer informatie over het gebruiken van de hardware-versnelde Azure ML-modellen op het Azure Stack Edge Pro-apparaat.
 
@@ -46,7 +48,7 @@ Azure Stack Edge Pro biedt de volgende mogelijkheden:
 |---------|---------|
 |Versnelde AI-deductie| Mogelijk gemaakt door de ingebouwde FPGA.|
 |Berekenen       |Gegevens kunnen worden geanalyseerd, verwerkt of gefilterd.|
-|Hoge prestaties | High Performance compute en gegevensoverdracht.|
+|Hoge prestaties | High-Performance Compute en gegevens overdracht.|
 |Toegang tot gegevens     | Rechtstreekse gegevenstoegang vanuit Azure Storage Blobs en Azure Files met behulp van cloud-API’s voor aanvullende gegevensverwerking in de cloud. Lokale cache op het apparaat wordt gebruikt voor snelle toegang tot laatst gebruikte bestanden.|
 |Beheerd via de cloud     |Het apparaat en de service worden beheerd via de Azure-portal.  |
 |Offline upload     | Modus zonder verbinding ondersteunt scenario’s voor offline uploaden.|
@@ -60,13 +62,15 @@ Azure Stack Edge Pro biedt de volgende mogelijkheden:
 
 De Azure Stack Edge Pro-oplossing bestaat uit een Azure Stack Edge-resource, een fysiek Azure Stack Edge Pro-apparaat en een lokale webinterface.
 
-* **Fysiek Azure Stack Edge Pro-apparaat**: een 1U-rackserver die door Microsoft wordt geleverd en die kan worden geconfigureerd om gegevens naar Azure te verzenden.
+* **Azure stack Edge Pro-fysiek apparaat**: een 1U-gekoppelde server die door micro soft is geleverd en die kan worden geconfigureerd om gegevens naar Azure te verzenden.
     
-* **Azure Stack Edge-resource**: een resource in de Azure Portal waarmee u een Azure Stack Edge Pro-apparaat kunt beheren via een webinterface waartoe u toegang hebt vanaf verschillende geografische locaties. Gebruik de Azure Stack Edge-resource om resources te maken en beheren, apparaten en waarschuwingen te bekijken en beheren, en shares te beheren.  
+* **Azure stack Edge-resource**: een resource in de Azure Portal waarmee u een Azure stack Edge Pro-apparaat kunt beheren vanuit een webinterface waartoe u toegang hebt vanaf verschillende geografische locaties. Gebruik de resource Azure Stack Edge om resources te maken en te beheren, shares te beheren en apparaten en waarschuwingen weer te geven en te beheren.
+  
+   <!--[The Azure Stack Edge service in Azure portal](media/data-box-overview/data-box-Edge-service1.png)-->
 
-    <!--![The Azure Stack Edge service in Azure portal](media/data-box-overview/data-box-Edge-service1.png)-->
+   Als Azure Stack Edge Pro het einde van de levens duur nadert, worden er geen bestellingen voor nieuwe Azure Stack Edge Pro-apparaten gevuld. Als u een nieuwe klant bent, raden we u aan om te verkennen met behulp van Azure Stack Edge Pro GPU-apparaten voor uw workloads. Ga voor meer informatie naar [Wat is Azure stack Edge Pro met GPU](azure-stack-edge-gpu-overview.md). Voor informatie over het best Ellen van een Azure Stack Edge Pro met GPU-apparaat, gaat u naar [een nieuwe resource maken voor Azure stack Edge Pro-GPU](azure-stack-edge-gpu-deploy-prep.md?tabs=azure-portal#create-a-new-resource).
 
-    Ga voor meer informatie naar [Uw Azure Stack Edge Pro-apparaat bestellen](azure-stack-edge-deploy-prep.md#create-a-new-resource).
+   Als u een bestaande klant bent, kunt u nog steeds een nieuwe Azure Stack Edge Pro-resource maken als u uw bestaande Azure Stack Edge Pro-apparaat moet vervangen of opnieuw wilt instellen. Ga voor instructies naar [een bestelling maken voor uw Azure stack Edge Pro-apparaat](azure-stack-edge-deploy-prep.md#create-new-resource-for-existing-device).
 
 * **Lokale Azure Stack Edge Pro-webinterface**: Gebruik de lokale webinterface om diagnoses uit te voeren, het Azure Stack Edge Pro-apparaat uit te schakelen of opnieuw op te starten, logboeken met kopieerbewerkingen te bekijken en contact op te nemen met Microsoft Ondersteuning om een serviceaanvraag in te dienen.
 
@@ -85,5 +89,5 @@ Het fysieke Azure Stack Edge Pro-apparaat, de Azure-resource en het doelopslagac
 ## <a name="next-steps"></a>Volgende stappen
 
 - De [Systeemvereisten voor Azure Stack Edge Pro](azure-stack-edge-system-requirements.md) lezen.
-- De [Limieten van Azure Stack Edge Pro](azure-stack-edge-limits.md) begrijpen.
-- [Azure Stack Edge Pro](azure-stack-edge-deploy-prep.md) in de Azure Portal implementeren.
+- De [Limieten voor Azure Stack Edge Pro](azure-stack-edge-limits.md) begrijpen.
+- [Azure Stack Edge Pro](azure-stack-edge-deploy-prep.md) in de Azure-portal implementeren.

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: c1c1b5f58aa0e760ff626af4607cf8e2d1e13910
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: feeb3e63375e918498e704add6dac672d6a46de3
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103232418"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574574"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-azure-digital-twins-explorer"></a>Quick Start: een voor beeld van een Azure Digital Apparaatdubbels-scenario verkennen met behulp van Azure Digital Apparaatdubbels Explorer
 
@@ -95,9 +95,8 @@ Open een consolevenster op de maplocatie **Azure_Digital_Twins__ADT__explorer/cl
 
 > [!TIP]
 > Als het foutbericht `SignalRService.subscribe` wordt weergegeven wanneer u verbinding maakt, moet u ervoor zorgen dat de URL van uw Azure Digital Twins begint met *https://* .
-
-> [!TIP]
-> Als er een verificatie fout wordt weer gegeven, kunt u de omgevings variabelen controleren om ervoor te zorgen dat de referenties die zijn opgenomen, geldig zijn voor Azure Digital Apparaatdubbels. De DefaultAzureCredential probeert te verifiëren aan de hand van de [referentie typen](/dotnet/api/overview/azure/identity-readme#defaultazurecredential) in een specifieke volg orde, en omgevings variabelen worden eerst geëvalueerd.
+>
+> Als er een verificatie fout wordt weer gegeven, kunt u de **omgevings variabelen** controleren om ervoor te zorgen dat de referenties die zijn opgenomen, geldig zijn voor Azure Digital apparaatdubbels. De `DefaultAzureCredential` pogingen om te verifiëren tegen referentie typen in een [specifieke volg orde](/dotnet/api/overview/azure/identity-readme#defaultazurecredential), en omgevings variabelen worden eerst geëvalueerd.
 
 Als u het pop-upvenster **Aangevraagde machtigingen** van Microsoft ziet, geeft u deze toepassing toestemming en accepteert u dit om door te gaan.
 

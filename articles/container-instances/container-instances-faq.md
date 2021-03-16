@@ -5,12 +5,12 @@ author: macolso
 ms.author: macolso
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: 5de1188ee018e796f918d7559c0e2c24c77834f4
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 2645c3f183e2217dff28a96c9c0d376eb82a6476
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186189"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573129"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Veelgestelde vragen over Azure Container Instances
 
@@ -45,7 +45,7 @@ Bekijk meer [gedetailleerde richt lijnen](container-instances-troubleshooting.md
 > [!NOTE]
 > Windows-installatie kopieën op basis van Semi-Annual kanaal release 1709 of 1803 worden niet ondersteund.
 
-#### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 en client basis installatie kopieën (preview-versie)
+#### <a name="windows-server-2019-and-client-base-images"></a>Windows Server 2019-en client basis installatie kopieën
 
 * [Nano server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809` `10.0.17763.1040` of nieuwer
 * [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019` , `1809` `10.0.17763.1040` of nieuwer
@@ -55,9 +55,12 @@ Bekijk meer [gedetailleerde richt lijnen](container-instances-troubleshooting.md
 
 Gebruik de kleinste afbeelding die voldoet aan uw vereisten. Voor Linux kunt u een installatie kopie voor *runtime-Alpine* .net core gebruiken, die wordt ondersteund sinds de release van .net Core 2,1. Als u voor Windows gebruikmaakt van de volledige .NET Framework, moet u een installatie kopie van Windows Server Core gebruiken (alleen runtime-installatie kopie, zoals  *4.7.2-windowsservercore-ltsc2016*). Installatie kopieën met alleen runtime zijn kleiner, maar ondersteunen geen workloads waarvoor de .NET SDK is vereist.
 
+> [!NOTE]
+> ACI kan geen installatie kopieën ophalen uit niet-OCI-compatibele registers.
+
 ### <a name="what-types-of-container-registries-are-compatible-with-aci"></a>Welke typen container registers zijn compatibel met ACI?
 
-ACI ondersteunt installatie kopieën van ACR en andere container registers van derden, zoals DockerHub. ACI biedt ook ondersteuning voor installatie kopieën uit on-premises registers zolang deze OCR-compatibel is en een eind punt hebben dat openbaar wordt blootgesteld aan Internet.
+ACI ondersteunt installatie kopieën van ACR en andere container registers van derden, zoals DockerHub. ACI biedt ondersteuning voor installatie kopieën uit ACR en andere OCI-compatibele container registers van derden, zoals DockerHub met een eind punt dat openbaar beschikbaar is op internet.
 
 ## <a name="availability-and-quotas"></a>Beschik baarheid en quota's
 

@@ -5,15 +5,15 @@ author: TheovanKraay
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 03/10/2021
 ms.author: thvankra
 ms.reviewer: thvankra
-ms.openlocfilehash: 3cbcb7eb3695e6f57daef741d4cd4b15577d8f58
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: caf9cbb0ca017ee00c5061d94e0d37703194943d
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493269"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573359"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-azure-databricks"></a>Gegevens migreren van Cassandra naar Azure Cosmos DB Cassandra-API-account met behulp van Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -42,20 +42,18 @@ Er zijn verschillende manieren om de data base-workloads van het ene platform na
 
 ## <a name="provision-an-azure-databricks-cluster"></a>Een Azure Databricks cluster inrichten
 
-U kunt instructies volgen om [een Azure Databricks cluster](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal)in te richten. Let echter op dat Apache Spark 3. x momenteel niet wordt ondersteund voor de Apache Cassandra-connector. U moet een Databricks-runtime inrichten met een ondersteunde versie van v2. x van Apache Spark. U kunt het beste een versie van de Databricks-runtime selecteren die de meest recente versie van Spark 2. x ondersteunt, met niet meer dan scala versie 2,11:
+U kunt instructies volgen om [een Azure Databricks cluster](/azure/databricks/scenarios/quickstart-create-databricks-workspace-portal)in te richten. U kunt het beste Databricks runtime versie 7,5, die ondersteuning biedt voor Spark 3,0:
 
 :::image type="content" source="./media/cassandra-migrate-cosmos-db-databricks/databricks-runtime.png" alt-text="Databricks-runtime":::
 
 
 ## <a name="add-dependencies"></a>Afhankelijkheden toevoegen
 
-U moet de Apache Spark Cassandra-connector bibliotheek toevoegen aan uw cluster om verbinding te maken met zowel systeem eigen als Cosmos DB Cassandra-eind punten. Selecteer in uw cluster tape wisselaars-> nieuwe > maven >-Zoek pakketten installeren:
+U moet de Apache Spark Cassandra-connector bibliotheek toevoegen aan uw cluster om verbinding te maken met zowel systeem eigen als Cosmos DB Cassandra-eind punten. Selecteer in uw cluster tape wisselaars-> nieuwe > maven installeren. Voeg `com.datastax.spark:spark-cassandra-connector-assembly_2.12:3.0.0` in maven-coördinaten toe:
 
 :::image type="content" source="./media/cassandra-migrate-cosmos-db-databricks/databricks-search-packages.png" alt-text="Databricks Zoek pakketten":::
 
-Typ `Cassandra` in het zoekvak en selecteer de meest recente `spark-cassandra-connector` maven-opslag plaats die beschikbaar is en selecteer vervolgens installeren:
-
-:::image type="content" source="./media/cassandra-migrate-cosmos-db-databricks/databricks-search-packages-2.png" alt-text="Databricks selecteren":::
+Selecteer installeren en zorg ervoor dat u het cluster opnieuw opstart wanneer de installatie is voltooid. 
 
 > [!NOTE]
 > Zorg ervoor dat u het Databricks-cluster opnieuw opstarten nadat de Cassandra-connector bibliotheek is geïnstalleerd.
@@ -91,7 +89,6 @@ val cosmosCassandra = Map(
     "table" -> "<TABLE>",
     //throughput related settings below - tweak these depending on data volumes. 
     "spark.cassandra.output.batch.size.rows"-> "1",
-    "spark.cassandra.connection.connections_per_executor_max" -> "10",
     "spark.cassandra.output.concurrent.writes" -> "1000",
     "spark.cassandra.concurrent.reads" -> "512",
     "spark.cassandra.output.batch.grouping.buffer.size" -> "1000",
@@ -110,11 +107,12 @@ DFfromNativeCassandra
   .write
   .format("org.apache.spark.sql.cassandra")
   .options(cosmosCassandra)
+  .mode(SaveMode.Append)
   .save
 ```
 
 > [!NOTE]
-> De `spark.cassandra.output.batch.size.rows` - `spark.cassandra.output.concurrent.writes` en- `connections_per_executor_max` configuraties zijn belang rijk om de [frequentie beperking](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/)te voor komen. dit gebeurt wanneer aanvragen om Azure Cosmos DB de ingerichte door voer te overschrijden/([aanvraag eenheden](./request-units.md)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
+> De waarden voor `spark.cassandra.output.batch.size.rows` en en `spark.cassandra.output.concurrent.writes` , evenals het aantal werk nemers in uw Spark-cluster, zijn belang rijke configuraties die moeten worden afgestemd om de [frequentie beperking](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/)te voor komen, wat gebeurt wanneer aanvragen om Azure Cosmos DB de ingerichte door voer te overschrijden/([aanvraag eenheden](./request-units.md)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
@@ -123,19 +121,8 @@ Mogelijk wordt de fout code 429 of `request rate is large` de fout tekst weer ge
 
 - **De door Voer die is toegewezen aan de tabel, is kleiner dan 6000 [aanvraag eenheden](./request-units.md)**. Zelfs op minimale instellingen kan Spark schrijf bewerkingen uitvoeren met een snelheid van ongeveer 6000 aanvraag eenheden of meer. Als u een tabel hebt ingericht in een spatie waarvoor gedeelde door Voer is ingericht, is het mogelijk dat deze tabel minder is dan 6000 RUs beschikbaar tijdens runtime. Zorg ervoor dat de tabel die u migreert, ten minste 6000 RUs beschikbaar heeft wanneer de migratie wordt uitgevoerd, en, indien nodig, toegewezen aanvraag eenheden aan de tabel toewijzen. 
 - **Buitensporige gegevens scheefheid met groot gegevens volume**. Als u een grote hoeveelheid gegevens (d.w.z. tabel rijen) hebt om te migreren naar een bepaalde tabel, maar een aanzienlijk scheefheid heeft in de gegevens (dat wil zeggen een groot aantal records dat wordt geschreven voor dezelfde partitie sleutel waarde), is het mogelijk dat de frequentie beperkt blijft, zelfs als u een grote hoeveelheid [aanvraag eenheden](./request-units.md) hebt die in de tabel zijn ingericht. Dit komt doordat de aanvraag eenheden gelijkmatig zijn verdeeld over fysieke partities, en een zware schei van gegevens kan leiden tot een knel punt van aanvragen naar één partitie, waardoor de frequentie wordt beperkt. In dit scenario wordt geadviseerd om de minimale doorvoer instellingen in Spark te verlagen om de frequentie beperking te voor komen en de migratie af te dwingen. Dit scenario kan vaker voor komen bij het migreren van referentie-of beheer tabellen, waarbij toegang minder frequent is, maar scheefheid kan hoog zijn. Als er echter een aanzienlijk scheefheid in een ander type tabel aanwezig is, kan het ook raadzaam zijn om uw gegevens model te controleren om problemen met de warme partitie voor uw werk belasting te voor komen tijdens een bewerking met constante status. 
-- **Kan het aantal voor de grote tabel niet ophalen**. Uitvoeren `select count(*) from table` wordt momenteel niet ondersteund voor grote tabellen. U kunt het aantal berekenen op basis van metrische gegevens in Azure Portal (Zie het [artikel over het oplossen van problemen](cassandra-troubleshoot.md)), maar als u het aantal van een grote tabel in de context van een Spark-taak moet bepalen, kunt u deze naar een tijdelijke tabel kopiëren en vervolgens Spark SQL gebruiken om het aantal op te halen, bijvoorbeeld hieronder (vervangen `<primary key>` door een veld uit de resulterende tijdelijke tabel).
 
-  ```scala
-  val ReadFromCosmosCassandra = sqlContext
-    .read
-    .format("org.apache.spark.sql.cassandra")
-    .options(cosmosCassandra)
-    .load
 
-  ReadFromCosmosCassandra.createOrReplaceTempView("CosmosCassandraResult")
-  %sql
-  select count(<primary key>) from CosmosCassandraResult
-  ```
 
 ## <a name="next-steps"></a>Volgende stappen
 

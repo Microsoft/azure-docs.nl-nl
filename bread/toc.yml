@@ -924,6 +924,9 @@
         - name: Reservations
           tocHref: /azure/cost-management-billing/reservations/
           topicHref: /azure/cost-management-billing/reservations/
+        - name: Microsoft-klantovereenkomst
+          tocHref: /azure/cost-management-billing/microsoft-customer-agreement/
+          topicHref: /azure/cost-management-billing/microsoft-customer-agreement/
     - name: Bevoegheid
       tocHref: /azure/purview/
       topicHref: /azure/purview/

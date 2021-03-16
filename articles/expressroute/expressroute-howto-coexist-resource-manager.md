@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 03/06/2021
 ms.author: duau
 ms.custom: seodec18
-ms.openlocfilehash: 15ec8417ba5e2858b45176f0a214f6126209f942
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 3b6ed39c11e3f90b986ef904ff3f8e9ff3158d0d
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449744"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574166"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>ExpressRoute-en site-naar-site-verbindingen configureren met Power shell
 > [!div class="op_single_selector"]
@@ -250,9 +250,9 @@ U kunt de onderstaande stappen volgen om punt-naar-site-configuratie toe te voeg
 
    ```azurepowershell-interactive
    $azureVpn = Get-AzVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
-   Set-AzVirtualNetworkGatewayVpnClientConfig -VirtualNetworkGateway $azureVpn -VpnClientAddressPool "10.251.251.0/24"
+   Set-AzVirtualNetworkGateway -VirtualNetworkGateway $azureVpn -VpnClientAddressPool "10.251.251.0/24"
    ```
-2. Upload het VPN-basiscertificaat voor uw VPN-gateway naar Azure. In dit voor beeld wordt ervan uitgegaan dat het basis certificaat is opgeslagen op de lokale computer waarop de volgende Power shell-cmdlets worden uitgevoerd en dat u Power shell lokaal uitvoert. U kunt het certificaat ook uploaden met behulp van de Azure Portal.
+2. Upload het VPN- [basis certificaat](../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md#Certificates) naar Azure voor uw VPN-gateway. In dit voor beeld wordt ervan uitgegaan dat het basis certificaat is opgeslagen op de lokale computer waarop de volgende Power shell-cmdlets worden uitgevoerd en dat u Power shell lokaal uitvoert. U kunt het certificaat ook uploaden met behulp van de Azure Portal.
 
    ```powershell
    $p2sCertFullName = "RootErVpnCoexP2S.cer" 

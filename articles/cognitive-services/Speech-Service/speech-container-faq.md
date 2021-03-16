@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/11/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 86c8943531171094600bc7d93b8694bdd1c6e051
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: 16158b4ecfb46ea9092fe9eeb31cc4dee259b1ab
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225746"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573741"
 ---
 # <a name="speech-service-containers-frequently-asked-questions-faq"></a>Veelgestelde vragen over Speech-Service containers
 
@@ -292,7 +292,7 @@ Helpt u bij het invullen van de volgende metrische test gegevens, waaronder welk
 
 | Eindpunt                                                | Functionele test                                                   | SDK | REST-API |
 |---------------------------------------------------------|-------------------------------------------------------------------|-----|----------|
-| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Ja      |
+| `/speech/synthesize/cognitiveservices/v1`               | Tekst van de synthesizer (tekst-naar-spraak)                                  |     | Yes      |
 | `/speech/recognition/dictation/cognitiveservices/v1`    | Cognitive Services on-premises dicteren v1 WebSocket-eind punt        | Ja | Nee       |
 | `/speech/recognition/interactive/cognitiveservices/v1`  | Het Cognitive Services on-premises interactieve v1 WebSocket-eind punt  |     |          |
 | `/speech/recognition/conversation/cognitiveservices/v1` | Het on-premises RIP-WebSocket-eind punt van de cognitieve Services |     |          |
@@ -344,20 +344,6 @@ Net duidelijk voor de interactieve, conversatie en dictering; Dit is een geavanc
 - Voor Mic geldt een periode van 1x. Het totale gebruik moet ongeveer 1 kern zijn voor één herkenning.
 
 Dit kan allemaal worden gecontroleerd vanuit de docker-Logboeken. We dumpen de regel met de statistieken voor de sessie en zinsdelen/utterance en bevatten de RTF-nummers.
-
-
-<br>
-</details>
-
-<details>
-<summary>
-<b>Is het gebruikelijk om audio bestanden te splitsen in chucks voor het gebruik van een spraak container?</b>
-</summary>
-
-Mijn huidige plan is om een bestaand audio bestand te maken en te splitsen in tien tweede segmenten en deze via de container te verzenden. Is dat een aanvaardbaar scenario?  Is er een betere manier om grotere audio bestanden met de container te verwerken?
-
-**Antwoord:** U hoeft alleen de spraak-SDK te gebruiken en het bestand te geven. Dit is het juiste effect. Waarom moet het bestand worden gesegmenteerd?
-
 
 <br>
 </details>

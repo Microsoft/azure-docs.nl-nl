@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 03/02/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperf-fy21q1
-ms.openlocfilehash: fcb678efe29178784c9233e79b307f705c40e3f7
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 1c3d9b286a8262efa126ba9c661c50dd88e78b64
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102518671"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573469"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -36,7 +36,6 @@ In dit artikel wordt ervan uitgegaan dat u bekend bent met de volgende onderwerp
 + [Azure Private Link](how-to-configure-private-link.md)
 + [Netwerk beveiligings groepen (NSG)](../virtual-network/network-security-groups-overview.md)
 + [Netwerk firewalls](../firewall/overview.md)
-
 ## <a name="example-scenario"></a>Voorbeeldscenario
 
 In deze sectie leert u hoe een gemeen schappelijk netwerk scenario is ingesteld om Azure Machine Learning communicatie met persoonlijke IP-adressen te beveiligen.
@@ -62,8 +61,8 @@ In de volgende vijf secties ziet u hoe u het netwerk scenario kunt beveiligen da
 1. Beveilig de [**trainings omgeving**](#secure-the-training-environment).
 1. Beveilig de [**omgeving**](#secure-the-inferencing-environment)voor het afwijzen van interferentie.
 1. Optioneel: [**Schakel de Studio-functionaliteit in**](#optional-enable-studio-functionality).
-1. [ **Firewall instellingen** configureren](#configure-firewall-settings)
-
+1. [**Firewall instellingen**](#configure-firewall-settings)configureren.
+1. Configureer [DNS-naam omzetting](#custom-dns).
 ## <a name="secure-the-workspace-and-associated-resources"></a>De werk ruimte en de bijbehorende resources beveiligen
 
 Gebruik de volgende stappen om uw werk ruimte en de bijbehorende resources te beveiligen. Met deze stappen kunnen uw services communiceren in het virtuele netwerk.
@@ -186,3 +185,5 @@ Dit artikel maakt deel uit van een virtuele netwerk reeks van vijf delen. Raadpl
 * [Deel 3: de trainings omgeving beveiligen](how-to-secure-training-vnet.md)
 * [Deel 4: de omgeving voor het afwijzen van interferentie beveiligen](how-to-secure-inferencing-vnet.md)
 * [Deel 5: de functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
+
+Zie ook het artikel over het gebruik van [aangepaste DNS](how-to-custom-dns.md) voor naam omzetting.

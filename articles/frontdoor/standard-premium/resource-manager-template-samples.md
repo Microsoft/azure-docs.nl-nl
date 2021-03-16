@@ -6,13 +6,13 @@ author: johndowns
 ms.author: jodowns
 ms.service: frontdoor
 ms.topic: sample
-ms.date: 03/05/2021
-ms.openlocfilehash: 393c15761c16dbf04d2af48fe13c0bc41b2e15b1
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.date: 03/16/2021
+ms.openlocfilehash: 241c4c713890af0db8fce74b0817b5bdcf9a1403
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102509542"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573792"
 ---
 # <a name="azure-resource-manager-templates-for-azure-front-door"></a>Azure Resource Manager sjablonen voor de voor deur van Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "102509542"
 
 De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor Azure front-deur, met referentie architecturen, waaronder andere Azure-Services.
 
-| App Service | Beschrijving |
+| App Service | Description |
 |-|-|
 | [App Service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-app-service-public) | Hiermee maakt u een App Service-app met een openbaar eind punt en een front deur profiel.  |
 | [App Service met persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-app-service-private-link) | Hiermee maakt u een App Service-app met een persoonlijk eind punt en een front deur profiel.  |
@@ -34,4 +34,8 @@ De volgende tabel bevat koppelingen naar Azure Resource Manager sjablonen voor A
 |**Storage**| **Beschrijving** |
 | [Statische opslag website](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-storage-static-website) | Hiermee maakt u een Azure Storage account en een statische website met een openbaar eind punt en een front deur profiel.  |
 | [Opslag-blobs met een persoonlijke koppeling](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-storage-blobs-private-link) | Hiermee maakt u een Azure Storage account en BLOB-container met een persoonlijk eind punt en een front deur profiel.  |
+|**Application Gateway**| **Beschrijving** |
+| [Application Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-standard-premium-application-gateway-public) | Hiermee maakt u een Application Gateway en een front deur profiel. |
+|**Virtuele machine**| **Beschrijving** |
+| [Virtuele machine met private link service](https://github.com/Azure/azure-quickstart-templates/tree/master/201-front-door-premium-vm-private-link) | Hiermee maakt u een virtuele machine en een persoonlijke koppelings service, en een front deur profiel. |
 | | |

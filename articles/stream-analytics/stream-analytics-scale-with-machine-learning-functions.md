@@ -5,13 +5,13 @@ author: jseb225
 ms.author: jeanb
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 03/16/2020
-ms.openlocfilehash: b9768bacf8d29b37f479ea080afddd494b506262
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.date: 01/15/2021
+ms.openlocfilehash: 1ee1411aba7724d76ed8626de9b8b038d02339dc
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013937"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574251"
 ---
 # <a name="scale-your-stream-analytics-job-with-azure-machine-learning-studio-classic-functions"></a>Uw Stream Analytics-taak schalen met de functies Azure Machine Learning Studio (klassiek)
 
@@ -24,7 +24,7 @@ In dit artikel wordt beschreven hoe u Azure Stream Analytics taken die gebruikma
 
 Een Machine Learning Studio (klassieke) functie in Stream Analytics kan worden gebruikt als een reguliere functie aanroep in de Stream Analytics query taal. Achter de schermen zijn deze functie aanroepen echter in werkelijkheid Studio-aanvragen van webservices.
 
-U kunt de door Voer van Studio-aanvragen (klassieke webservices) door meerdere rijen tegelijk te ' batcheren ' in dezelfde webservice-API-aanroep te zetten. Deze groepering wordt een mini-batch genoemd. Zie [Azure machine learning Studio (Classic) Web Services (Engelstalig)](../machine-learning/classic/consume-web-services.md)voor meer informatie. Ondersteuning voor Studio (klassiek) in Stream Analytics is in de preview-versie.
+U kunt de door Voer van Studio-aanvragen (klassieke webservices) door meerdere rijen tegelijk te ' batcheren ' in dezelfde webservice-API-aanroep te zetten. Deze groepering wordt een mini-batch genoemd. Zie [Azure machine learning Studio (Classic) Web Services (Engelstalig)](../machine-learning/classic/consume-web-services.md)voor meer informatie. Ondersteuning voor Studio (klassiek) in Stream Analytics.
 
 ## <a name="configure-a-stream-analytics-job-with-studio-classic-functions"></a>Een Stream Analytics-taak configureren met de functies Studio (klassiek)
 
@@ -51,7 +51,7 @@ Voor het verwerken van 200.000 gebeurtenissen per seconde, is voor de Stream Ana
 
 ![Stream Analytics schalen met Studio (klassiek) functions twee taak voorbeeld](./media/stream-analytics-scale-with-ml-functions/stream-analytics-scale-with-ml-functions-00.png "Stream Analytics schalen met Studio (klassiek) functions twee taak voorbeeld")
 
-In het algemeen geldt dat **_B_* _ voor Batch grootte, _*_L_*_ voor de latentie van de webservice bij Batch grootte B in milliseconden, de door Voer van een stream Analytics-taak met _*_N_*_ SUs:
+In het algemeen geldt dat ***B** _ voor Batch grootte, _*_L_*_ voor de latentie van de webservice bij Batch grootte B in milliseconden, de door Voer van een stream Analytics-taak met _ *_N_** SUs:
 
 ![De formule Stream Analytics schalen met Studio (klassiek)](./media/stream-analytics-scale-with-ml-functions/stream-analytics-scale-with-ml-functions-02.png "De formule Stream Analytics schalen met Studio (klassiek)")
 
@@ -62,7 +62,7 @@ Raadpleeg het artikel over het [schalen van de webservices voor machine learning
 ## <a name="example--sentiment-analysis"></a>Voor beeld – Sentimentanalyse
 Het volgende voor beeld bevat een Stream Analytics-taak met de functie sentiment Analysis Studio (Classic), zoals beschreven in de [zelf studie over de integratie van Stream Analytics machine learning Studio (klassiek)](stream-analytics-machine-learning-integration-tutorial.md).
 
-De query is een eenvoudige, volledig gepartitioneerde query, gevolgd door de functie _ *sentiment**, zoals wordt weer gegeven in het volgende voor beeld:
+De query is een eenvoudige, volledig gepartitioneerde query, gevolgd door de functie **sentiment** , zoals wordt weer gegeven in het volgende voor beeld:
 
 ```SQL
     WITH subquery AS (

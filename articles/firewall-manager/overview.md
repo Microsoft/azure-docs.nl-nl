@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 01/12/2021
+ms.date: 03/16/2021
 ms.author: victorh
-ms.openlocfilehash: 63e2aac4c12ecc5d832cb037fda91bd2c6ad0bf1
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 506799f94676be007cf94320e3958bd305ce85f0
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132440"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573452"
 ---
 # <a name="what-is-azure-firewall-manager"></a>Wat is Azure Firewall Manager?
 
@@ -88,7 +88,6 @@ Azure Firewall Manager heeft de volgende bekende problemen:
 |Het toevoegen van een bulk-IP-adres mislukt|De firewall van de beveiligde hub krijgt de status Mislukt als u meerdere openbare IP-adressen toevoegt.|Voeg de openbare IP-adressen in kleinere stappen toe. Voeg er bijvoorbeeld tien per keer toe.|
 |DDoS Protection Standard wordt niet ondersteund met beveiligde virtuele hubs|DDoS Protection Standard is niet geïntegreerd met vWAN's.|Wordt onderzocht|
 |Activiteitenlogboeken worden niet volledig ondersteund|Het firewallbeleid biedt momenteel geen ondersteuning voor activiteitenlogboeken.|Wordt onderzocht|
-|Privé IP-adresbereiken van SNAT configureren|[Instellingen voor privé IP-adresbereiken](../firewall/snat-private-range.md) worden genegeerd als Azure Firewall-beleid is geconfigureerd. Het standaard Azure Firewall-gedrag wordt gebruikt. SNAT-netwerkregels worden toegepast wanneer het doel-IP-adres zich in een privé IP-adresbereik bevindt per [IANA RFC 1918](https://tools.ietf.org/html/rfc1918).|Wordt onderzocht|
 |Sommige firewallinstellingen worden niet gemigreerd wanneer de firewall wordt gemigreerd om het Firewallbeleid te gebruiken|Beschikbaarheidszones en privé-SNAT-adressen worden niet gemigreerd wanneer u migreert naar Azure Firewall-beleid.|Wordt onderzocht| 
 
 ## <a name="next-steps"></a>Volgende stappen

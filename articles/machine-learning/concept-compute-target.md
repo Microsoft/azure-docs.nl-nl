@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 3b1e102385f43dd9a1ba6996e657f49d435038a2
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: b4422c664071087ccae73a5b6f642b53dcca74bf
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102503607"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574642"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Wat zijn compute-doelen in Azure Machine Learning?
 
@@ -98,30 +98,30 @@ Er zijn enkele uitzonde ringen en beperkingen voor het kiezen van een VM-grootte
 
 Raadpleeg de volgende tabel voor meer informatie over ondersteunde reeksen en beperkingen.
 
-| **Ondersteunde VM-serie**  | **Beperkingen** |
-|------------|------------|
-| D | Geen. |
-| DDSv4 | Geen. |
-| Dv2 | Geen. |  
-| Dv3 | Geen.|
-| DSv2 | Geen. | 
-| DSv3 | Geen.|
-| EAv4 | Geen. |
-| Ev3 | Geen. |
-| FSv2 | Geen. | 
-| H | Geen. |
-| HB | Goed keuring vereist. |
-| HBv2 | Goed keuring vereist. |  
-| HCS | Goed keuring vereist. |  
-| M | Goed keuring vereist. |
-| NC | Geen. |  
-| NC-aanbieding | Geen. |
-| NCsv2 | Goed keuring vereist. |
-| NCsv3 | Goed keuring vereist. |  
-| NDs | Goed keuring vereist. |
-| NDv2 | Goed keuring vereist. |
-| NV | Geen. |
-| NVv3 | Goed keuring vereist. | 
+| **Ondersteunde VM-serie**  | **Beperkingen** | **Categorie** | **Ondersteund door** |
+|------------|------------|------------|------------|
+| D | Geen. | Algemeen doel | Reken clusters en-exemplaren |
+| DDSv4 | Geen. | Algemeen doel | Reken clusters en-exemplaren |
+| Dv2 | Geen. | Algemeen doel | Reken clusters en-exemplaren |
+| Dv3 | Geen.| Algemeen doel | Reken clusters en-exemplaren |
+| DSv2 | Geen. | Algemeen doel | Reken clusters en-exemplaren |
+| DSv3 | Geen.| Algemeen doel | Reken clusters en-exemplaren |
+| EAv4 | Geen. | Geoptimaliseerd geheugen | Reken clusters en-exemplaren |
+| Ev3 | Geen. | Geoptimaliseerd geheugen | Reken clusters en-exemplaren |
+| FSv2 | Geen. | Geoptimaliseerde rekenkracht | Reken clusters en-exemplaren |
+| H | Geen. | Krachtig rekenvermogen | Reken clusters en-exemplaren |
+| HB | Goed keuring vereist. | Krachtig rekenvermogen | Reken clusters en-exemplaren |
+| HBv2 | Goed keuring vereist. |  Krachtig rekenvermogen | Reken clusters en-exemplaren |
+| HCS | Goed keuring vereist. |  Krachtig rekenvermogen | Reken clusters en-exemplaren |
+| M | Goed keuring vereist. | Geoptimaliseerd geheugen | Reken clusters en-exemplaren |
+| NC | Geen. |  GPU | Reken clusters en-exemplaren |
+| NC-aanbieding | Geen. | GPU | Reken clusters en-exemplaren |
+| NCsv2 | Goed keuring vereist. | GPU | Reken clusters en-exemplaren |
+| NCsv3 | Goed keuring vereist. | GPU | Reken clusters en-exemplaren |  
+| NDs | Goed keuring vereist. | GPU | Reken clusters en-exemplaren | 
+| NDv2 | Goed keuring vereist. | GPU | Reken clusters en-exemplaren | 
+| NV | Geen. | GPU | Reken clusters en-exemplaren | 
+| NVv3 | Goed keuring vereist. | GPU | Reken clusters en-exemplaren | 
 
 
 Hoewel Azure Machine Learning deze VM-serie ondersteunt, zijn ze mogelijk niet beschikbaar in alle Azure-regio's. Zie [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines)om te controleren of de VM-serie beschikbaar is.

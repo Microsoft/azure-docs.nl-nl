@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 960c00f516aac0c804718e439ae3ed9691759329
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: dbd4923dd2843ab2c043da69f1b72efd8e1eb701
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103010674"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573044"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Scenario: Web-app waarmee gebruikers worden aangemeld
 
@@ -55,7 +55,7 @@ Als u met python ontwikkelt, voert u de volgende Snelstartgids uit:
 
 U voegt verificatie toe aan uw web-app zodat gebruikers zich kunnen aanmelden. Door verificatie toe te voegen kan uw web-app toegang krijgen tot beperkte profiel gegevens om de gebruikers ervaring aan te passen.
 
-Web-apps verifiëren een gebruiker in een webbrowser. In dit scenario wordt de browser van de gebruiker door de web-app doorgestuurd om deze aan te melden bij Azure Active Directory (Azure AD). Azure AD retourneert een aanmeldings reactie via de browser van de gebruiker, die claims bevat over de gebruiker in een beveiligings token. Bij het aanmelden van gebruikers wordt gebruikgemaakt van het [Open-ID Connect-](./v2-protocols-oidc.md) standaard protocol, vereenvoudigd door het gebruik van middleware- [bibliotheken](scenario-web-app-sign-user-app-configuration.md#microsoft libraries supporting web apps).
+Web-apps verifiëren een gebruiker in een webbrowser. In dit scenario wordt de browser van de gebruiker door de web-app doorgestuurd om deze aan te melden bij Azure Active Directory (Azure AD). Azure AD retourneert een aanmeldings reactie via de browser van de gebruiker, die claims bevat over de gebruiker in een beveiligings token. Bij het aanmelden van gebruikers wordt gebruikgemaakt van het [Open-ID Connect-](./v2-protocols-oidc.md) standaard protocol, vereenvoudigd door het gebruik van middleware- [bibliotheken](scenario-web-app-sign-user-app-configuration.md#microsoft-libraries-supporting-web-apps).
 
 ![Web-app-ondertekening in gebruikers](./media/scenario-webapp/scenario-webapp-signs-in-users.svg)
 

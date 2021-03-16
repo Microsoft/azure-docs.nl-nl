@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van met AAD pod beheerde beheerde 
 services: container-service
 ms.topic: article
 ms.date: 3/12/2021
-ms.openlocfilehash: 8b94c859800c3757842ad56df6e20f215bb13a7d
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: f3d0db5b085fcdb9a24310cb2fe310d390b1790a
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103233493"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574370"
 ---
 # <a name="use-azure-active-directory-pod-managed-identities-in-azure-kubernetes-service-preview"></a>Azure Active Directory door Pod beheerde identiteiten gebruiken in azure Kubernetes service (preview)
 
@@ -53,13 +53,16 @@ az extension add --name aks-preview
 az extension update --name aks-preview
 ```
 
-## <a name="create-an-aks-cluster-with-managed-identities"></a>Een AKS-cluster maken met beheerde identiteiten
+## <a name="create-an-aks-cluster-with-azure-cni"></a>Een AKS-cluster maken met Azure CNI
 
-Maak een AKS-cluster met een beheerde identiteit en pod-beheerde identiteit ingeschakeld. De volgende opdrachten gebruiken [AZ Group Create][az-group-create] om een resource groep te maken met de naam *myResourceGroup* en de opdracht [AZ AKS Create][az-aks-create] om een AKS-cluster te maken met de naam *myAKSCluster* in de *myResourceGroup* -resource groep.
+> [!NOTE]
+> Dit is de aanbevolen standaard configuratie
+
+Maak een AKS-cluster met Azure CNI en pod-Managed Identity ingeschakeld. De volgende opdrachten gebruiken [AZ Group Create][az-group-create] om een resource groep te maken met de naam *myResourceGroup* en de opdracht [AZ AKS Create][az-aks-create] om een AKS-cluster te maken met de naam *myAKSCluster* in de *myResourceGroup* -resource groep.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
-az aks create -g myResourceGroup -n myAKSCluster --enable-managed-identity --enable-pod-identity --network-plugin azure
+az aks create -g myResourceGroup -n myAKSCluster --enable-pod-identity --network-plugin azure
 ```
 
 Gebruik [AZ AKS Get-referenties][az-aks-get-credentials] om u aan te melden bij uw AKS-cluster. Met deze opdracht wordt ook het `kubectl` client certificaat op uw ontwikkel computer gedownload en geconfigureerd.
@@ -67,6 +70,44 @@ Gebruik [AZ AKS Get-referenties][az-aks-get-credentials] om u aan te melden bij 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
+
+## <a name="update-an-existing-aks-cluster-with-azure-cni"></a>Een bestaand AKS-cluster bijwerken met Azure CNI
+
+Werk een bestaand AKS-cluster bij met Azure CNI om pod-beheerde identiteit op te neemt.
+
+```azurecli-interactive
+az aks update -g $MY_RESOURCE_GROUP -n $MY_CLUSTER --enable-pod-identity --network-plugin azure
+```
+## <a name="using-kubenet-network-plugin-with-azure-active-directory-pod-managed-identities"></a>De Kubenet-netwerk-invoeg toepassing met Azure Active Directory door Pod beheerde identiteiten gebruiken 
+
+> [!IMPORTANT]
+> Het uitvoeren van Aad-pod-Identity in een cluster met Kubenet is geen aanbevolen configuratie vanwege de beveiligings implicaties. Volg de stappen voor risico beperking en configureer beleid voordat u Aad-pod-Identity in een cluster met Kubenet inschakelt.
+
+## <a name="mitigation"></a>Oplossing
+
+Om het beveiligings probleem op het cluster niveau te beperken, kunt u OpenPolicyAgent Admission controller samen met gate keeper voor het valideren van webhooks gebruiken. Als er al een gate keeper is geïnstalleerd in uw cluster, voegt u de ConstraintTemplate van het type K8sPSPCapabilities toe:
+
+```
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper-library/master/library/pod-security-policy/capabilities/template.yaml
+```
+Voeg een sjabloon toe om het produceren van peulen te beperken met de NET_RAW mogelijkheid:
+
+```
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPCapabilities
+metadata:
+  name: prevent-net-raw
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    excludedNamespaces:
+      - "kube-system"
+  parameters:
+    requiredDropCapabilities: ["NET_RAW"]
+```
+
 ## <a name="create-an-aks-cluster-with-kubenet-network-plugin"></a>Een AKS-cluster maken met de Kubenet-netwerk-invoeg toepassing
 
 Een AKS-cluster maken met Kubenet-netwerk-invoeg toepassing en pod-beheerde identiteit ingeschakeld.

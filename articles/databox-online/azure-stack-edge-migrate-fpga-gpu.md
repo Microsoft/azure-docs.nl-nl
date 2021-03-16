@@ -6,36 +6,36 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 02/10/2021
+ms.date: 03/11/2021
 ms.author: alkohli
-ms.openlocfilehash: 5b68ab545e87035d138558ba1911294ef805af6d
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 24d6528a105d593d1cb4c9c66d981c8787f85633
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102630738"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573270"
 ---
 # <a name="migrate-workloads-from-an-azure-stack-edge-pro-fpga-to-an-azure-stack-edge-pro-gpu"></a>Werk belastingen migreren van een Azure Stack Edge Pro-FPGA naar een Azure Stack Edge Pro GPU
 
-In dit artikel wordt beschreven hoe u werk belastingen en gegevens migreert van een Azure Stack Edge Pro FPGA-apparaat naar een Azure Stack Edge Pro GPU-apparaat. De migratie procedure omvat een overzicht van de migratie, inclusief een vergelijking tussen de twee apparaten, migratie overwegingen, gedetailleerde stappen en verificatie, gevolgd door opschonen.
+In dit artikel wordt beschreven hoe u werk belastingen en gegevens migreert van een Azure Stack Edge Pro FPGA-apparaat naar een Azure Stack Edge Pro GPU-apparaat. Het migratie proces begint met een vergelijking van de twee apparaten, een migratie plan en een beoordeling van de overwegingen voor de migratie. De migratie procedure geeft gedetailleerde stappen die eindigen op verificatie en het opschonen van apparaten.
 
-<!--Azure Stack Edge Pro FPGA devices will reach end-of-life in February 2024. If you are considering new deployments, we recommend that you explore Azure Stack Edge Pro GPU devices for your workloads.-->
+[!INCLUDE [Azure Stack Edge Pro FPGA end-of-life](../../includes/azure-stack-edge-fpga-eol.md)]
 
 ## <a name="about-migration"></a>Info over migratie
 
 Migratie is het proces van het verplaatsen van werk belastingen en toepassings gegevens van de ene opslag locatie naar de andere. Dit houdt in dat u een exacte kopie van de huidige gegevens van een organisatie van het ene opslag apparaat naar een ander opslag apparaat kunt maken, bij voor keur zonder de actieve toepassingen te onderbreken of uit te scha kelen en vervolgens alle I/O-activiteit (invoer/uitvoer) naar het nieuwe apparaat om te leiden. 
 
-In deze migratie handleiding vindt u stapsgewijze instructies voor de stappen die nodig zijn om gegevens te migreren van een Azure Stack Edge Pro FPGA-apparaat naar een Azure Stack Edge Pro GPU-apparaat. Dit document is bedoeld voor IT-professionals en kennis werkers die verantwoordelijk zijn voor het besturings systeem, de implementatie en het beheer van Azure Stack edge-apparaten in het Data Center. 
+In deze migratie handleiding vindt u stapsgewijze instructies voor de stappen die nodig zijn om gegevens te migreren van een Azure Stack Edge Pro FPGA-apparaat naar een Azure Stack Edge Pro GPU-apparaat. Dit document is bedoeld voor IT-professionals en kennis werkers die verantwoordelijk zijn voor het besturings systeem, de implementatie en het beheer van Azure Stack edge-apparaten in het Data Center.
 
 In dit artikel wordt het apparaat van de Azure Stack Edge Pro FPGA aangeduid als het *bron* apparaat en is het apparaat van de Azure stack Edge Pro GPU het *doel* apparaat. 
 
 ## <a name="comparison-summary"></a>Vergelijkings overzicht
 
-In deze sectie vindt u een vergelijkend overzicht van de mogelijkheden van de Azure Stack Edge Pro GPU versus de Azure Stack Edge Pro FPGA-apparaten. De hardware in zowel de bron-als het doel apparaat is grotendeels identiek en verschilt alleen met betrekking tot de hardware acceleration Card en de opslag capaciteit. 
+In deze sectie vindt u een vergelijkend overzicht van de mogelijkheden van de Azure Stack Edge Pro GPU versus de Azure Stack Edge Pro FPGA-apparaten. De hardware in zowel de bron-als het doel apparaat is grotendeels identiek. alleen de hardware-versnellings kaart en de opslag capaciteit kunnen verschillen.<!--Please verify: These components MAY, but need not necessarily, differ?-->
 
 |    Mogelijkheid  | Azure Stack Edge Pro GPU (doel apparaat)  | Azure Stack Edge Pro FPGA (bron apparaat)|
 |----------------|-----------------------|------------------------|
-| Hardware       | Hardwareversnelling: 1 of 2 NVIDIA T4-Gpu's <br> Compute, geheugen, netwerk interface, energie-eenheid, specificaties voor stroom kabel zijn identiek aan het apparaat met FPGA.  | Hardwareversnelling: Intel Arria 10 FPGA <br> Compute, geheugen, netwerk interface, energie-eenheid, specificaties voor stroom kabel zijn identiek aan het apparaat met GPU.          |
+| Hardware       | Hardwareversnelling: 1 of 2 NVIDIA T4-Gpu's <br> De specificaties compute, geheugen, netwerk interface, voeding en stroom kabel zijn identiek aan het apparaat met FPGA.  | Hardwareversnelling: Intel Arria 10 FPGA <br> De specificaties compute, geheugen, netwerk interface, voeding en stroom kabel zijn identiek aan het apparaat met GPU.          |
 | Bruikbare opslag | 4,19 TB <br> Na het reserveren van ruimte voor pariteits tolerantie en intern gebruik | 12,5 TB <br> Na het reserveren van ruimte voor intern gebruik |
 | Beveiliging       | Certificaten |                                                     |
 | Workloads      | IoT Edge werk belastingen <br> VM-workloads <br> Kubernetes-werkbelastingen| IoT Edge werk belastingen |
@@ -55,11 +55,11 @@ Als u uw migratie plan wilt maken, moet u rekening houden met de volgende inform
 
 Voordat u verdergaat met de migratie, moet u rekening houden met de volgende informatie: 
 
-- Een Azure Stack Edge Pro GPU-apparaat kan niet worden geactiveerd op basis van een Azure Stack Edge Pro FPGA-resource. Er moet een nieuwe resource worden gemaakt voor het Azure Stack Edge Pro GPU-apparaat, zoals wordt beschreven in de [volg orde een Azure stack Edge Pro GPU maken](azure-stack-edge-gpu-deploy-prep.md#create-a-new-resource).
+- Een Azure Stack Edge Pro GPU-apparaat kan niet worden geactiveerd op basis van een Azure Stack Edge Pro FPGA-resource. U moet een nieuwe resource maken voor het Azure Stack Edge Pro GPU-apparaat, zoals wordt beschreven in [een Azure stack Edge Pro GPU-order maken](azure-stack-edge-gpu-deploy-prep.md#create-a-new-resource).
 - De Machine Learning modellen die zijn geïmplementeerd op het bron apparaat dat gebruik maakt van de FPGA, moeten worden gewijzigd voor het doel apparaat met GPU. Als u hulp nodig hebt bij de modellen, kunt u contact opnemen met Microsoft Ondersteuning. De aangepaste modellen die zijn geïmplementeerd op het bron apparaat dat geen gebruik maakt van de FPGA (alleen gebruikte CPU), moeten op het doel apparaat werken (met behulp van CPU).
-- De IoT Edge-modules die op het bron apparaat zijn geïmplementeerd, kunnen wijzigingen vereisen voordat deze kunnen worden geïmplementeerd op het doel apparaat. 
+- De IoT Edge-modules die op het bron apparaat zijn geïmplementeerd, kunnen wijzigingen vereisen voordat de modules op het doel apparaat kunnen worden geïmplementeerd. 
 - Het bron apparaat ondersteunt NFS 3,0-en 4,1-protocollen. Het doel apparaat ondersteunt alleen NFS 3,0-protocol.
-- Het bron apparaat ondersteunt SMB-en NFS-protocollen. Het doel apparaat ondersteunt opslag via REST-protocol met opslag accounts naast SMB-en NFS-protocollen voor shares.
+- Het bron apparaat ondersteunt SMB-en NFS-protocollen. Het doel apparaat ondersteunt opslag via het REST-protocol met opslag accounts naast de SMB-en NFS-protocollen voor shares.
 - De share toegang op het bron apparaat is via het IP-adres, terwijl de toegang tot de share op het doel apparaat via de apparaatnaam is.
 
 ## <a name="migration-steps-at-a-glance"></a>Migratie stappen in een oogopslag
@@ -99,15 +99,15 @@ Edge-Cloud deelt laag gegevens van uw apparaat naar Azure. Voer de volgende stap
 
 - Maak een lijst van alle Edge-Cloud shares en gebruikers die u hebt op het bron apparaat.
 - Maak een lijst van alle bandbreedte schema's die u hebt. U maakt deze bandbreedte schema's opnieuw op uw doel apparaat.
-- Afhankelijk van de beschik bare netwerk bandbreedte, configureert u bandbreedte schema's op het apparaat, zodat de gegevens die in de cloud worden gelaagd worden gemaximaliseerd. Hierdoor worden de lokale gegevens op het apparaat geminimaliseerd.
-- Zorg ervoor dat de shares volledig in de Cloud zijn gelaagd. Dit kan worden bevestigd door de status van de share te controleren in de Azure Portal.  
+- Afhankelijk van de beschik bare netwerk bandbreedte, configureert u bandbreedte schema's op uw apparaat om de gegevenslaagte gegevens in de cloud te maximaliseren. Hiermee worden de lokale gegevens op het apparaat geminimaliseerd.
+- Zorg ervoor dat de shares volledig in de Cloud zijn gelaagd. De lagen kunnen worden bevestigd door de status van de share te controleren in de Azure Portal.  
 
 #### <a name="data-in-edge-local-shares"></a>Gegevens in Edge-lokale shares
 
 Gegevens in Edge-rand blijven lokale shares op het apparaat. Voer de volgende stappen uit op het *bron* apparaat via de Azure Portal. 
 
-- Maak een lijst van de Edge-lokale shares die u op het apparaat hebt.
-- Gezien de eenmalige migratie van de gegevens, maakt u een kopie van de lokale Edge-share gegevens naar een andere on-premises server. U kunt Kopieer hulpprogramma's zoals `robocopy` (SMB) of `rsync` (NFS) gebruiken om de gegevens te kopiëren. U kunt eventueel al een oplossing voor gegevens beveiliging van derden hebben geïmplementeerd om een back-up te maken van de gegevens in uw lokale shares. De volgende oplossingen van derden worden ondersteund voor gebruik met Azure Stack Edge Pro FPGA-apparaten:
+- Maak een lijst van de Edge-lokale shares op het apparaat.
+- Omdat u een eenmalige migratie van de gegevens uitvoert, maakt u een kopie van de lokale Edge-share gegevens naar een andere on-premises server. U kunt Kopieer hulpprogramma's zoals `robocopy` (SMB) of `rsync` (NFS) gebruiken om de gegevens te kopiëren. U kunt eventueel al een oplossing voor gegevens beveiliging van derden hebben geïmplementeerd om een back-up te maken van de gegevens in uw lokale shares. De volgende oplossingen van derden worden ondersteund voor gebruik met Azure Stack Edge Pro FPGA-apparaten:
 
     | Software van derden           | Verwijzing naar de oplossing                               |
     |--------------------------------|---------------------------------------------------------|
@@ -157,10 +157,10 @@ U gaat nu gegevens van het bron apparaat kopiëren naar de Edge-Cloud shares en 
 
 Volg deze stappen om de gegevens op de Edge-Cloud shares op uw doel apparaat te synchroniseren:
 
-1. [Voeg shares toe](azure-stack-edge-gpu-manage-shares.md#add-a-share) die overeenkomen met de share namen die op het bron apparaat zijn gemaakt. Zorg ervoor dat bij het maken van shares de optie **BLOB-container** is ingesteld op gebruik van de **bestaande** opties en selecteer vervolgens de container die is gebruikt met het vorige apparaat.
-1. [Gebruikers toevoegen](azure-stack-edge-gpu-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
-1. [De share](azure-stack-edge-gpu-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Hiermee worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
-1. Maak de bandbreedte schema's opnieuw die moeten worden gekoppeld aan uw shares. Zie [een bandbreedte schema toevoegen](azure-stack-edge-gpu-manage-bandwidth-schedules.md#add-a-schedule) voor gedetailleerde stappen.
+1. [Voeg shares toe](azure-stack-edge-j-series-manage-shares.md#add-a-share) die overeenkomen met de share namen die op het bron apparaat zijn gemaakt. Wanneer u de shares maakt, moet u ervoor zorgen dat **BLOB-container selecteren** is ingesteld op het **gebruik van bestaande** en selecteert u vervolgens de container die is gebruikt met het vorige apparaat.
+1. [Gebruikers toevoegen](azure-stack-edge-j-series-manage-users.md#add-a-user) die toegang tot het vorige apparaat hadden.
+1. [De share](azure-stack-edge-j-series-manage-shares.md#refresh-shares) gegevens van Azure vernieuwen. Als de share wordt vernieuwd, worden alle Cloud gegevens van de bestaande container naar de shares opgehaald.
+1. Maak de bandbreedte schema's opnieuw die moeten worden gekoppeld aan uw shares. Zie [een bandbreedte schema toevoegen](azure-stack-edge-j-series-manage-bandwidth-schedules.md#add-a-schedule) voor gedetailleerde stappen.
 
 
 ### <a name="2-from-edge-local-shares"></a>2. lokale shares van Edge
@@ -175,9 +175,9 @@ Voer de volgende stappen uit om de gegevens te herstellen vanaf lokale shares:
 1. Voeg alle lokale shares op het doel apparaat toe. Zie de gedetailleerde stappen in [een lokale share toevoegen](azure-stack-edge-gpu-manage-shares.md#add-a-local-share).
 1. Als u de SMB-shares op het bron apparaat opent, worden de IP-adressen gebruikt die op het doel apparaat worden gebruikt. Zie [verbinding maken met een SMB-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-smb-share). Als u verbinding wilt maken met NFS-shares op het doel apparaat, moet u de nieuwe IP-adressen gebruiken die zijn gekoppeld aan het apparaat. Zie [verbinding maken met een NFS-share op Azure stack Edge Pro GPU](azure-stack-edge-j-series-deploy-add-shares.md#connect-to-an-nfs-share). 
 
-    Als u de gegevens van uw share over een tussenliggende server via SMB/NFS hebt gekopieerd, kunt u deze gegevens kopiëren naar shares op het doel apparaat. U kunt de gegevens ook rechtstreeks vanaf het bron apparaat kopiëren als zowel de bron als het doel apparaat *online* zijn.
+    Als u uw share gegevens hebt gekopieerd naar een tussenliggende server via SMB of NFS, kunt u de gegevens van de tussenliggende server kopiëren naar shares op het doel apparaat. Als zowel de bron als het doel apparaat *online* zijn, kunt u de gegevens ook rechtstreeks vanaf het bron apparaat kopiëren.
 
-    Als u een software van derden hebt gebruikt om een back-up te maken van de gegevens in de lokale shares, moet u de herstel procedure uitvoeren die wordt geboden door de keuze van de gegevens bescherming. Zie de verwijzingen in de volgende tabel.
+    Als u software van derden hebt gebruikt voor het maken van een back-up van de gegevens in de lokale shares, moet u de herstel procedure uitvoeren die wordt verstrekt door de keuze van de gegevens bescherming. Zie de verwijzingen in de volgende tabel.
 
     | Software van derden           | Verwijzing naar de oplossing                               |
     |--------------------------------|---------------------------------------------------------|

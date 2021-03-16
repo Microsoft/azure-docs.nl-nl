@@ -6,21 +6,21 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/22/2021
+ms.date: 03/16/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 07b526d443b5f1b41bc6f811b7cccc0fbc6165ee
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 9ceba84cb3bbe52dc5ba51d0f4945f5bad0a5034
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98761712"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573939"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro  
 
-Dit is de eerste zelfstudie in de reeks zelfstudies voor implementatie die noodzakelijk zijn voor het voltooien van de implementatie van Azure Stack Edge Pro. In deze zelfstudie wordt beschreven hoe u de Azure-portal voorbereidt voor de implementatie van een Azure Stack Edge-resource.
+Dit is de eerste zelfstudie in de reeks zelfstudies voor implementatie die noodzakelijk zijn voor het voltooien van de implementatie van Azure Stack Edge Pro. In deze zelfstudie wordt beschreven hoe u de Azure-portal voorbereidt voor de implementatie van een Azure Stack Edge-resource. 
 
-U hebt beheerdersbevoegdheden nodig om het installatie- en configuratieproces uit te voeren. Het voorbereiden van de portal duurt minder dan 10 minuten.
+U hebt beheerdersbevoegdheden nodig om het installatie- en configuratieproces uit te voeren. Het voorbereiden van de portal duurt minder dan 10 minuten.  
 
 In deze zelfstudie leert u het volgende:
 
@@ -53,7 +53,7 @@ Hier volgen de configuratievereisten voor uw Azure Stack Edge-resource, uw Azure
 
 Zorg voordat u begint voor het volgende:
 
-* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund.
+* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Betalen per gebruik-abonnementen worden niet ondersteund.
 
 * U hebt toegang als eigenaar of inzender op het niveau van de resourcegroep voor de Azure Stack Edge/Data Box Gateway, IoT Hub en Azure Storage-resources.
 
@@ -84,71 +84,67 @@ Zorg voordat u begint voor het volgende:
 
 * Voor normale bedrijfsomstandigheden van uw Azure Stack Edge Pro hebt u het volgende nodig:
 
-  * Minimaal 10 Mbps downloadbandbreedte om ervoor te zorgen dat het apparaat bijgewerkt blijft.
-  * Minimaal 20 Mbps toegewezen upload- en downloadbandbreedte voor het overdragen van bestanden.
+  * Mini maal 10 Mbps down load band breedte om ervoor te zorgen dat het apparaat bijgewerkt blijft.
+  * Mini maal 20 Mbps toegewezen upload-en download bandbreedte voor het overdragen van bestanden.
 
-## <a name="create-a-new-resource"></a>Een nieuwe resource maken
+## <a name="create-new-resource-for-existing-device"></a>Nieuwe resource maken voor bestaand apparaat
 
-Als u al een Azure Stack Edge-resource hebt voor het beheer van uw fysieke apparaat, kunt u deze stap overslaan en verdergaan met [Activeringscode ophalen](#get-the-activation-key).
+Als u een bestaande Azure Stack Edge Pro-klant bent, gebruikt u de volgende procedure om een nieuwe resource te maken als u uw bestaande apparaat moet vervangen of opnieuw wilt instellen.
 
-Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource te maken.
+Als u een nieuwe klant bent, raden we u aan om te verkennen met behulp van Azure Stack Edge Pro GPU-apparaten voor uw workloads. Ga voor meer informatie naar [Wat is Azure stack Edge Pro met GPU](azure-stack-edge-gpu-overview.md). Voor informatie over het best Ellen van een Azure Stack Edge Pro met GPU-apparaat, gaat u naar [een nieuwe resource maken voor Azure stack Edge Pro-GPU](azure-stack-edge-gpu-deploy-prep.md?tabs=azure-portal#create-a-new-resource).
 
-1. Gebruik uw Microsoft Azure-referenties om u aan te melden op 
+Als u een nieuwe Azure Stack Edge Pro-resource wilt maken voor een bestaand apparaat, voert u de volgende stappen uit in de Azure Portal.
+
+1. Gebruik uw Microsoft Azure-referenties om u aan te melden op:
 
     - Ga naar de Azure-portal op deze URL: [https://portal.azure.com](https://portal.azure.com).
     - Of de Azure Government Portal op deze URL: [https://portal.azure.us](https://portal.azure.us). Ga naar [Verbinding maken met Azure Government met behulp van de portal](../azure-government/documentation-government-get-started-connect-with-portal.md) voor meer informatie.
 
-2. Selecteer **En een resource maken** in het linkerdeelvenster. Zoek en selecteer **Azure Stack Edge / Data Box Gateway**. Selecteer **Maken**.
-3. Kies het abonnement dat u wilt gebruiken voor het Azure Stack Edge Pro-apparaat. Selecteer de regio waar u de Azure Stack Edge-resource wilt implementeren. Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is.
+1. Selecteer **+ Een resource maken**. Zoek en selecteer **Azure stack rand**. Selecteer vervolgens **Maken**.
 
-    Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren. In de regio worden alleen de metagegevens voor apparaatbeheer opgeslagen. De werkelijke gegevens kunnen worden opgeslagen in elk opslagaccount.
+1. Selecteer het abonnement voor de Azure Stack Edge Pro-apparaat en het land waarnaar het apparaat moet worden **verzonden.**
+
+   ![Het abonnement en het verzend land voor uw apparaat selecteren](media/azure-stack-edge-deploy-prep/create-fpga-existing-resource-01.png)
+
+
+1. Selecteer **Azure stack Edge Pro-FPGA** in de lijst met apparaattypen die worden weer gegeven. Kies dan de optie **Selecteren**. 
+
+   Het apparaat type **Azure stack Edge Pro-FPGA** wordt alleen weer gegeven als u een bestaand apparaat hebt. Als u een nieuw apparaat wilt best Ellen, gaat u naar [een nieuwe resource maken voor Azure stack Edge Pro-GPU](azure-stack-edge-gpu-deploy-prep.md?tabs=azure-portal#create-a-new-resource).
+
+   ![Azure Stack Edge-service zoeken](media/azure-stack-edge-deploy-prep/create-fpga-existing-resource-02.png)
+
+1. Op het tabblad **Basis**:
+
+   1. Voer de volgende **Projectdetails** in of selecteer deze.
     
-    Selecteer bij **Maken** bij de optie **Azure Stack Edge Pro**.
+       |Instelling  |Waarde  |
+       |---------|---------|
+       |Abonnement    |Deze waarde wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
+       |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/management/overview.md).     |
 
-    ![Azure Stack Edge-service zoeken](media/azure-stack-edge-deploy-prep/data-box-edge-sku.png)
+   1. Voer de volgende **exemplaardetails** in of selecteer deze.
 
-3. Voer op het tabblad **Basisinstellingen** de volgende **Projectdetails** in of selecteer deze.
-    
-    |Instelling  |Waarde  |
-    |---------|---------|
-    |Abonnement    |Dit wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
-    |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/management/overview.md).     |
+       |Instelling  |Waarde  |
+       |---------|---------|
+       |Naam   | Een beschrijvende naam om de resource aan te duiden.<br>De naam heeft een waarde van 2 tot 50 tekens, inclusief letters, cijfers en afbreek streepjes.<br> De naam begint en eindigt met een letter of cijfer.        |
+       |Regio     |Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is. Als Azure Government wordt gebruikt, zijn alle overheidsregio's beschikbaar, zoals wordt weergegeven in de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/).<br> Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren.|
 
-4. Voer de volgende **exemplaardetails** in of selecteer deze.
+   1. Selecteer **Controleren + maken**.
 
-    |Instelling  |Waarde  |
-    |---------|---------|
-    |Naam   | Een beschrijvende naam om de resource aan te duiden.<br>De naam heeft een waarde van 2 tot 50 tekens, inclusief letters, cijfers en afbreek streepjes.<br> De naam begint en eindigt met een letter of cijfer.        |
-    |Regio     |Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is. Als Azure Government wordt gebruikt, zijn alle overheidsregio's beschikbaar, zoals wordt weergegeven in de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/).<br> Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren.|
+    ![Details van het project en exemplaar](media/azure-stack-edge-deploy-prep/create-fpga-existing-resource-03.png)
 
-    ![Details van het project en exemplaar](media/azure-stack-edge-deploy-prep/data-box-edge-resource.png)
+1. Bekijk op het tabblad **controleren en maken** de **Gebruiksvoorwaarden**, **prijs informatie** en de details van uw resource. Selecteer vervolgens **Maken**.
 
-5. Selecteer **Volgende: Verzendadres**.
+    ![Details van de resource en de privacyverklaring van Azure Stack Edge controleren](media/azure-stack-edge-deploy-prep/create-fpga-existing-resource-04.png)
 
-    - Als u al een apparaat hebt, selecteert u de keuze lijst met invoervak voor **Ik heb een Azure stack edge-apparaat**.
-    - Als dit het nieuwe apparaat is dat u bestelt, voert u de naam van de contactpersoon, het bedrijf, het adres voor het verzenden van het apparaat en contactgegevens in.
+1. Het maken van de resource duurt enkele minuten. Nadat de resource succesvol is gemaakt en geïmplementeerd, wordt u daarvan op de hoogte gebracht. Selecteer **Ga naar resource**.
 
-    ![Verzendadres voor nieuw apparaat](media/azure-stack-edge-deploy-prep/data-box-edge-resource1.png)
+   ![Ga naar de Azure Stack Edge-resource](media/azure-stack-edge-deploy-prep/data-box-edge-resource-01.png)
 
-6. Selecteer **Volgende: Beoordelen en maken**.
+Nadat de bestelling is geplaatst, controleert micro soft de bestelling en maakt u via e-mail contact met de verzend gegevens.
 
-7. Bekijk op het tabblad **Controleren en maken** de **Prijsdetails**, **Gebruiksvoorwaarden** en de details van uw resource. Selecteer de keuzelijst met invoervak voor **Ik heb de privacyvoorwaarden gecontroleerd**.
+![Melding voor beoordeling van de volgorde van de Azure Stack Edge Pro](media/azure-stack-edge-deploy-prep/data-box-edge-resource-02.png)
 
-    ![Details van de resource en de privacyverklaring van Azure Stack Edge controleren](media/azure-stack-edge-deploy-prep/data-box-edge-resource2.png)
-
-8. Selecteer **Maken**.
-
-   Het maken van de resource duurt enkele minuten. Nadat de resource succesvol is gemaakt en geïmplementeerd, wordt u daarvan op de hoogte gebracht. Selecteer **Ga naar resource**.
-
-   ![Ga naar de Azure Stack Edge-resource](media/azure-stack-edge-deploy-prep/data-box-edge-resource3.png)
-
-Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt contact met u op (via e-mail) met verzendgegevens.
-
-![Melding voor beoordeling van de volgorde van de Azure Stack Edge Pro](media/azure-stack-edge-deploy-prep/data-box-edge-resource4.png)
-
-
-> [!NOTE]
-> Als u meerdere bestellingen tegelijk wilt doen of een bestaande bestelling wilt klonen, kunt u de [scripts in Azure Samples](https://github.com/Azure-Samples/azure-stack-edge-order) gebruiken. Zie het Leesmij-bestand voor meer informatie.
 
 ## <a name="get-the-activation-key"></a>De activeringssleutel ophalen
 
@@ -156,7 +152,7 @@ Nadat de Azure Stack Edge-resource is geactiveerd, hebt u de activeringssleutel 
 
 1. Ga naar de resource die u hebt gemaakt en selecteer **overzicht**. U ziet een melding over dat uw bestelling wordt verwerkt.
 
-    ![Selecteer Overzicht](media/azure-stack-edge-deploy-prep/data-box-edge-select-devicesetup.png)
+    ![Selecteer Overzicht](media/azure-stack-edge-deploy-prep/data-box-edge-select-device-setup.png)
 
 2. Nadat de bestelling is verwerkt en het apparaat onderweg is, wordt het **Overzicht** bijgewerkt. Accepteer de standaardwaarde voor **Azure Key Vault-naam** of voer een nieuwe naam in. Selecteer **Activeringssleutel genereren**. Selecteer het kopieerpictogram om de sleutel te kopiëren en op te slaan voor later gebruik.
 

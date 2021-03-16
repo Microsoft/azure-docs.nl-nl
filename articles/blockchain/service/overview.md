@@ -1,15 +1,15 @@
 ---
 title: Overzicht Azure Blockchain Service
 description: Overzicht van Azure Blockchain Service
-ms.date: 01/04/2021
+ms.date: 03/15/2021
 ms.topic: overview
-ms.reviewer: ravastra
-ms.openlocfilehash: 15d1126a98a4d3194a256ed07de3918cb066a4e2
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
-ms.translationtype: HT
+ms.reviewer: patricka
+ms.openlocfilehash: 035e2c1df5912f291ad241ade25361f9cc098b22
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97963875"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573622"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Wat is Azure Blockchain Service?
 
@@ -19,7 +19,7 @@ Azure Blockchain Service is een volledig beheerde grootboekservice waarmee gebru
 * Ingebouwd consortiumbeheer
 * Ontwikkel slimme contracten met vertrouwde ontwikkelprogramma's
 
-Azure Blockchain Service is ontworpen om meerdere grootboekprotocollen te ondersteunen. Momenteel biedt de service ondersteuning voor het Ethereum [Quorum](https://www.goquorum.com/)-grootboek met behulp van het consensusmechanisme [Istanbul Byzantine Fault Tolerance (IBFT)](https://github.com/jpmorganchase/quorum/wiki/Quorum-Consensus).
+Azure Blockchain Service is ontworpen om meerdere grootboekprotocollen te ondersteunen. Momenteel biedt de service ondersteuning voor het Ethereum [Quorum](https://www.goquorum.com/)-grootboek met behulp van het consensusmechanisme [Istanbul Byzantine Fault Tolerance (IBFT)](https://docs.goquorum.consensys.net/en/stable/Concepts/Consensus/IBFT/).
 
 Deze mogelijkheden vereisen nauwelijks beheer, en alles wordt zonder extra kosten geleverd. U kunt zich richten op het ontwikkelen van apps en bedrijfslogica in plaats van het toewijzen van tijd en resources voor het beheren van virtuele machines en infrastructuur. U kunt bovendien de opensource-programma's en het platform van uw keuze blijven gebruiken om uw toepassing verder te ontwikkelen om uw oplossingen te leveren zonder dat u nieuwe vaardigheden hoeft te leren.
 

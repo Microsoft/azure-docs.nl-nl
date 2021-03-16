@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 07/16/2020
 ms.custom: contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 2b264da06cf5088da07ec91cfa40c4babfde4c38
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 81a6a6aeb826ba4a61fd4f0a4abdb63fe3674bc4
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102219060"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573724"
 ---
 # <a name="secure-an-azure-machine-learning-training-environment-with-virtual-networks"></a>Een Azure Machine Learning-trainings omgeving beveiligen met virtuele netwerken
 
@@ -327,3 +327,5 @@ Dit artikel is deel drie van een virtuele netwerk reeks van vijf delen. Raadplee
 * [Deel 2: de resources van de werk ruimte beveiligen](how-to-secure-workspace-vnet.md)
 * [Deel 4: de omgeving voor het afwijzen van interferentie beveiligen](how-to-secure-inferencing-vnet.md)
 * [Deel 5: de functionaliteit van Studio inschakelen](how-to-enable-studio-virtual-network.md)
+
+Zie ook het artikel over het gebruik van [aangepaste DNS](how-to-custom-dns.md) voor naam omzetting.

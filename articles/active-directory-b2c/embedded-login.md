@@ -11,16 +11,18 @@ ms.topic: how-to
 ms.date: 03/16/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fd4724fc19814a5ffd35380c0b326e035a340ef2
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 9e248c10c15ba0318c6b23fcbf88be04dd9896a2
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103561512"
+ms.locfileid: "103573061"
 ---
 # <a name="embedded-sign-in-experience"></a>Inge sloten aanmeldings ervaring
 
 Voor een eenvoudigere aanmeld ervaring kunt u voor komen dat gebruikers worden omgeleid naar een afzonderlijke aanmeldings pagina of een pop-upvenster genereren. Met behulp van het inline frame `<iframe>` -element kunt u de Azure AD B2C aanmeldings gebruikers interface rechtstreeks insluiten in uw webtoepassing.
+
+[!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
 ## <a name="web-application-embedded-sign-in"></a>Aanmelding voor Inge sloten webtoepassing
 
@@ -32,7 +34,12 @@ Houd bij het gebruik van iframe rekening met het volgende:
 
 - Inge sloten aanmelding ondersteunt alleen lokale accounts. De meeste leveranciers van sociale identiteiten (bijvoorbeeld Google en Facebook) blok keren dat hun aanmeldings pagina's worden weer gegeven in inline frames.
 - Omdat Azure AD B2C sessie cookies binnen een IFRAME worden beschouwd als cookies van derden, blok keren of wissen van bepaalde browsers (bijvoorbeeld Safari of Chrome in Incognito-modus), worden deze cookies geblokkeerd, wat een ongewenste gebruikers ervaring oplevert. U kunt dit probleem voor komen door ervoor te zorgen dat de domein naam van uw toepassing en uw Azure AD B2C domein *dezelfde oorsprong* hebben. Als u dezelfde oorsprong wilt gebruiken, [schakelt u aangepaste domeinen](custom-domain.md) voor Azure AD B2C Tenant in en configureert u uw web-app met dezelfde oorsprong. Een toepassing die wordt gehost op https://app.contoso.com heeft bijvoorbeeld dezelfde oorsprong als Azure AD B2C uitgevoerd op https://login.contoso.com .
- 
+
+## <a name="perquisites"></a>Vereisten
+
+* Voer de stappen uit in het [Active Directory B2C aan de slag met aangepaste beleids regels](custom-policy-get-started.md).
+* [Schakel aangepaste domeinen in](custom-domain.md) voor uw beleid.
+
 ## <a name="configure-your-policy"></a>Uw beleid configureren
 
 Als u wilt toestaan dat uw Azure AD B2C-gebruikers interface wordt Inge sloten in een IFRAME, moeten een beveiligings beleid voor inhoud `Content-Security-Policy` en frame opties `X-Frame-Options` worden opgenomen in de Azure AD B2C http-antwoord headers. Met deze headers kan de Azure AD B2C gebruikers interface worden uitgevoerd onder de domein naam van uw toepassing.

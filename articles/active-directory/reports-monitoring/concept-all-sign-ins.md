@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 09/23/2020
+ms.date: 03/16/2021
 ms.author: markvi
 ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36e6642e230fa809630751e224ff9384ea8524d1
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 185638d683699403c304603d968cfe84e32a55b5
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319781"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574557"
 ---
 # <a name="azure-active-directory-sign-in-activity-reports---preview"></a>Rapporten over Azure Active Directory-aanmeld activiteiten-preview
 
@@ -125,7 +125,12 @@ Op elk tabblad van de Blade aanmeldingen worden de onderstaande standaard kolomm
 
 Interactieve gebruikers aanmeldingen zijn aanmeldingen wanneer een gebruiker een verificatie factor aan Azure AD biedt of rechtstreeks met Azure AD of een helper-app werkt, zoals de app Microsoft Authenticator. De factoren die gebruikers bevatten, zijn wacht woorden, reacties op MFA-uitdagingen, biometrische factoren of QR-codes die een gebruiker aan Azure AD of een helper-app biedt.
 
-Dit rapport bevat ook federatieve aanmeldingen van id-providers die federatieve zijn voor Azure AD.  
+> [!NOTE]
+> Dit rapport bevat ook federatieve aanmeldingen van id-providers die federatieve zijn voor Azure AD.  
+
+
+
+Opmerking: het rapport interactieve gebruikers aanmelding wordt gebruikt om niet-interactieve aanmeldingen van micro soft Exchange-clients te bevatten. Hoewel deze aanmeldingen niet interactief waren, zijn ze opgenomen in het rapport interactieve gebruikers aanmeldingen voor meer zicht baarheid. Zodra het rapport voor niet-interactieve gebruikers aanmeldingen in november 2020 een open bare preview heeft ingevoerd, zijn die niet-interactieve gebeurtenis logboeken naar het niet-interactieve gebruikers aanmeld rapport verplaatst voor een grotere nauw keurigheid. 
 
 
 **Rapport grootte:** klein <br> 
@@ -207,7 +212,7 @@ Om de samen vatting van de gegevens gemakkelijker te maken, worden niet-interact
 
 - Gebruiker
 
-- Het IP-adres
+- IP-adres
 
 - Status
 
@@ -249,7 +254,7 @@ Dit rapport bevat een standaard lijst weergave waarin het volgende wordt weer ge
 
 - Status
 
-- Het IP-adres
+- IP-adres
 
 - Resourcenaam
 
@@ -267,7 +272,7 @@ Voor het gemakkelijker maken van de samen vatting van de gegevens in de logboeke
 
 - Status
 
-- Het IP-adres
+- IP-adres
 
 - Resource naam of-ID
 
@@ -314,7 +319,7 @@ Voor het gemakkelijker maken van de samen vatting van de gegevens, beheerde iden
 
 - Status
 
-- Het IP-adres
+- IP-adres
 
 - Resource naam of-ID
 
@@ -336,7 +341,7 @@ Mogelijke waarden zijn:
 
 - Eenentwintig uur
 
-- Aangepast
+- Aangepast telefoonnummer
 
 ![Filter datum bereik](./media/concept-all-sign-ins/date-range-filter.png)
 

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/2/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 1e361ad14f79ea32d83e8cff9dd9bb8607b7c766
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: 175f006adbc18d21e0f0c5d859737aedb00bc457
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103470680"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574659"
 ---
 # <a name="defender-for-iot-installation"></a>Defender voor IoT-installatie
 
@@ -697,9 +697,9 @@ Installeren:
 
 1. Aanmeldings referenties worden automatisch gegenereerd en weer gegeven. Kopieer de gebruikers naam en het wacht woord op een veilige plaats, omdat deze zijn vereist voor aanmelding en beheer.
 
-    - **Ondersteuning**: de gebruiker met beheerders rechten voor gebruikers beheer.
+      - **Ondersteuning**: de gebruiker met beheerders rechten voor gebruikers beheer.
 
-    - **Cyberx**: het equivalent van de hoofdmap voor toegang tot het apparaat.
+      - **Cyberx**: het equivalent van de hoofdmap voor toegang tot het apparaat.
 
 1. Het apparaat wordt opnieuw opgestart.
 
@@ -851,9 +851,10 @@ De software installeren:
 
 1. Aanmeldings referenties worden automatisch gegenereerd en weer gegeven. Bewaar deze referenties op een veilige plaats, omdat deze zijn vereist voor aanmelding en beheer.
 
-  - **Ondersteuning**: de gebruiker met beheerders rechten voor gebruikers beheer.
-
-  - **Cyberx**: het equivalent van de hoofdmap voor toegang tot het apparaat.
+    | Gebruikersnaam | Description |
+    |--|--|
+    | Ondersteuning | De gebruiker met beheerders rechten voor gebruikers beheer. |
+    | Cyber-x | Het equivalent van de hoofdmap voor toegang tot het apparaat. |
 
 1. Het apparaat wordt opnieuw opgestart.
 

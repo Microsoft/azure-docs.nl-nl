@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/10/2021
 ms.author: duau
-ms.openlocfilehash: 5fedb9d09e61540d0ee8a1fe21fbd25f31390f5d
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0133d6cc54038a56847556a83242114c78e09321
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101742446"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574405"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute-connectiviteit
 
@@ -115,6 +115,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[GlobalConnect]()** | Ondersteund |Ondersteund | Oslo, Stavanger | 
 | **GTT** |Ondersteund |Ondersteund |London2 |
 | **[Global Cloud Xchange (GCX)](https://globalcloudxchange.com/cloud-platform/cloud-x-fusion/)** | Ondersteund| Ondersteund | Chennai, Mumbai |
+| **[iAdvantage](https://www.scx.sunevision.com/)** | Ondersteund | Ondersteund | Hongkong Kong2 |
 | **Intelsat** | Ondersteund | Ondersteund | Washington DC2 |
 | **[InterCloud](https://www.intercloud.com/)** |Ondersteund |Ondersteund |Amsterdam, Chicago, Frankfurt, Hongkong, Londen, New York, Parijs, silicium dal, Singapore, Washington DC, Zürich |
 | **[Internet2](https://internet2.edu/services/cloud-connect/#service-cloud-connect)** |Ondersteund |Ondersteund |Chicago, Amsterdam, silicium dal, Washington DC |

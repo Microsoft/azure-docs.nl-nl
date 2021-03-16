@@ -3,12 +3,12 @@ title: Een cluster dat wordt uitgevoerd op Windows beveiligen met behulp van Win
 description: Meer informatie over het configureren van knoop punt-naar-knoop punt en client-naar-knoop punt-beveiliging op een zelfstandig cluster waarop Windows wordt uitgevoerd met behulp van Windows-beveiliging.
 ms.topic: conceptual
 ms.date: 08/24/2017
-ms.openlocfilehash: e97a951f6dc0a97b1cfa8f960ed762084c82d2ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a34c7084a9faaf0d676d4f6c68da53b2bc84f01b
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839477"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103574608"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-windows-security"></a>Een zelfstandige cluster in Windows beveiligen met behulp van Windows-beveiliging
 Als u ongeoorloofde toegang tot een Service Fabric cluster wilt voor komen, moet u het cluster beveiligen. Beveiliging is vooral belang rijk wanneer het cluster productie werkbelastingen uitvoert. In dit artikel wordt beschreven hoe u de beveiliging van knoop punt-naar-knoop punt en client-naar-knoop punt configureert met behulp van Windows-beveiliging in de *ClusterConfig.JSvoor* het bestand.  Het proces komt overeen met de beveiligings stap configureren van [een zelfstandig cluster maken dat wordt uitgevoerd in Windows](service-fabric-cluster-creation-for-windows-server.md). Zie [cluster beveiligings scenario's](service-fabric-cluster-security.md)voor meer informatie over het gebruik van Windows-beveiliging met Service Fabric.
@@ -19,13 +19,13 @@ Als u ongeoorloofde toegang tot een Service Fabric cluster wilt voor komen, moet
 >
 
 ## <a name="configure-windows-security-using-gmsa"></a>Windows-beveiliging configureren met behulp van gMSA  
-De voorbeeld *ClusterConfig.gMSA.Windows.MultiMachine.JSvan* het configuratie bestand dat is gedownload met [micro soft. Azure. ServiceFabric. Windowsserver. \<version> . ](https://go.microsoft.com/fwlink/?LinkId=730690) het zelfstandige zip-cluster pakket bevat een sjabloon voor het configureren van Windows-beveiliging met behulp van door de [groep beheerde service accounts (gMSA)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11)):  
+gMSA is het voorkeurs beveiligings model. De voorbeeld *ClusterConfig.gMSA.Windows.MultiMachine.JSvan* het configuratie bestand dat is gedownload met [micro soft. Azure. ServiceFabric. Windowsserver. \<version> .](https://go.microsoft.com/fwlink/?LinkId=730690) het zelfstandige zip-cluster pakket bevat een sjabloon voor het configureren van Windows-beveiliging met behulp van door de [groep beheerde service accounts (gMSA)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11)):  
 
 ```
 "security": {
     "ClusterCredentialType": "Windows",
     "ServerCredentialType": "Windows",
-    "WindowsIdentities": {  
+    "WindowsIdentities": {  
         "ClustergMSAIdentity": "[gMSA Identity]",
         "ClusterSPN": "[Registered SPN for the gMSA account]",
         "ClientIdentities": [
@@ -40,7 +40,7 @@ De voorbeeld *ClusterConfig.gMSA.Windows.MultiMachine.JSvan* het configuratie be
 
 | **Configuratie-instelling** | **Beschrijving** |
 | --- | --- |
-| ClusterCredentialType |Stel deze optie in op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen knoop punten.  | 
+| ClusterCredentialType |Stel deze optie in op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen knoop punten.  | 
 | ServerCredentialType |Ingesteld op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen client en knoop punten. |
 | WindowsIdentities |Bevat het cluster en de client-id's. |
 | ClustergMSAIdentity |Hiermee configureert u de beveiliging tussen knoop punten. Een beheerd service account voor een groep. |
@@ -75,7 +75,7 @@ In het volgende voor beeld van een **beveiligings** sectie wordt Windows-beveili
 ```
   
 ## <a name="configure-windows-security-using-a-machine-group"></a>Windows-beveiliging configureren met behulp van een computer groep  
-Dit model wordt afgeschaft. De aanbeveling is om gMSA te gebruiken zoals hierboven wordt beschreven. De voorbeeld *ClusterConfig.Windows.MultiMachine.JSvan* het configuratie bestand dat is gedownload met [micro soft. Azure. ServiceFabric. Windowsserver. \<version> . ](https://go.microsoft.com/fwlink/?LinkId=730690) het zelfstandige zip-cluster pakket bevat een sjabloon voor het configureren van Windows-beveiliging.  Windows-beveiliging is geconfigureerd in de sectie **Eigenschappen** : 
+Zoals hierboven wordt de gMSA voor keur gebruikt, maar het wordt ook ondersteund voor het gebruik van dit beveiligings model. De voorbeeld *ClusterConfig.Windows.MultiMachine.JSvan* het configuratie bestand dat is gedownload met [micro soft. Azure. ServiceFabric. Windowsserver. \<version> .](https://go.microsoft.com/fwlink/?LinkId=730690) het zelfstandige zip-cluster pakket bevat een sjabloon voor het configureren van Windows-beveiliging.  Windows-beveiliging is geconfigureerd in de sectie **Eigenschappen** : 
 
 ```
 "security": {
@@ -93,7 +93,7 @@ Dit model wordt afgeschaft. De aanbeveling is om gMSA te gebruiken zoals hierbov
 
 | **Configuratie-instelling** | **Beschrijving** |
 | --- | --- |
-| ClusterCredentialType |Stel deze optie in op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen knoop punten.  |
+| ClusterCredentialType |Stel deze optie in op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen knoop punten.  |
 | ServerCredentialType |Ingesteld op *Windows* om Windows-beveiliging in te scha kelen voor communicatie tussen client en knoop punten. |
 | WindowsIdentities |Bevat het cluster en de client-id's. |
 | ClusterIdentity |Gebruik de naam van een computer groep, domain\machinegroup, om beveiliging tussen knoop punten te configureren. |

@@ -4,12 +4,12 @@ description: De Azure Container Instances-service is de snelste en eenvoudigste 
 ms.topic: overview
 ms.date: 08/10/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: bd68fab380754eca38eebf3fd52634508f282cf6
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 873f7cc51d1b369503a72501ae000000ff06f805
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88121660"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103573010"
 ---
 # <a name="what-is-azure-container-instances"></a>Wat is Azure Container Instances?
 
@@ -21,10 +21,7 @@ Azure Container Instances is een ideale oplossing voor elk scenario dat kan werk
 
 Containers bieden aanzienlijke opstartvoordelen ten opzichte van virtuele machines (VM’s). Met Azure Container Instances kunnen containers in Azure in enkele seconden worden gestart, zonder dat u VM’s hoeft in te richten en te beheren.
 
-U kunt Linux- of Windows-containerinstallatiekopieën halen uit Docker Hub, een privé [Azure-containerregister](../container-registry/index.yml), of een ander clouddockerregister. Azure Container Instances slaat verschillende veelgebruikte basisbesturingssysteeminstallatiekopieën op in het cachegeheugen, waardoor de implementatie van uw aangepaste app-installatiekopieën sneller verloopt.
-
-> [!NOTE]
-> Op dit moment kunt u een installatiekopie van een on-premises register niet implementeren in Azure Container Instances.
+U kunt Linux- of Windows-containerinstallatiekopieën halen uit Docker Hub, een privé [Azure-containerregister](../container-registry/index.yml), of een ander clouddockerregister. Ga naar de [Veelgestelde vragen](container-instances-faq.md) voor meer informatie over welke registers door ACI worden ondersteund. Azure Container Instances slaat verschillende veelgebruikte basisbesturingssysteeminstallatiekopieën op in het cachegeheugen, waardoor de implementatie van uw aangepaste app-installatiekopieën sneller verloopt.
 
 ## <a name="container-access"></a>Toegang tot container
 
@@ -43,7 +40,7 @@ In het verleden boden containers toepassingsafhankelijke isolatie en resourcebes
 
 ### <a name="customer-data"></a>Klantgegevens
 
-De ACI-service slaat de klantgegevens op die minimaal nodig zijn om ervoor te zorgen dat de containergroepen zoals verwacht worden uitgevoerd. Het opslaan van klantgegevens in één regio is momenteel alleen beschikbaar in de regio Azië - zuidoost (Singapore) van het geografisch gebied Azië en Stille Oceaan. Voor alle andere regio's worden klantgegevens opgeslagen in [Geo](https://azure.microsoft.com/global-infrastructure/geographies/). Neem contact op met de ondersteuning voor Azure voor meer informatie.
+De ACI-service slaat de klantgegevens op die minimaal nodig zijn om ervoor te zorgen dat de containergroepen zoals verwacht worden uitgevoerd. Het opslaan van klant gegevens in één regio is momenteel alleen beschikbaar in de regio Zuid-Azië (Singapore) van de Azië en Stille Oceaan geo-en Brazilië-zuid (Sao Paulo-staat) van Brazilië geo. Voor alle andere regio's worden klantgegevens opgeslagen in [Geo](https://azure.microsoft.com/global-infrastructure/geographies/). Neem contact op met de ondersteuning voor Azure voor meer informatie.
 
 ## <a name="custom-sizes"></a>Aangepaste grootten
 
@@ -68,9 +65,6 @@ Sommige functies zijn momenteel beperkt tot Linux-containers:
 * [GPU-resources](container-instances-gpu.md) (preview-versie)
 
 Gebruik voor implementaties van Windows-containers installatiekopieën op basis van algemene [Windows-installatiekopieën](container-instances-faq.md#what-windows-base-os-images-are-supported).
-
-> [!NOTE]
-> Het gebruik van installatiekopieën op basis van Windows Server 2019 in Azure Container Instances bevindt zich nog in de preview-fase.
 
 ## <a name="co-scheduled-groups"></a>Samen geplande groepen
 

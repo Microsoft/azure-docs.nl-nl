@@ -140,6 +140,20 @@
         - name: Galeriegegevens
           displayName: export
           href: ai-gallery-control-personal-data-dsr.md
+    - name: Migreren naar Azure Machine Learning
+      items:
+        - name: Migratieoverzicht
+          href: migrate-overview.md
+        - name: Gegevens sets migreren
+          href: migrate-register-dataset.md
+        - name: Experimenten opnieuw samen stellen
+          href: migrate-rebuild-experiment.md
+        - name: Webservices opnieuw samen stellen
+          href: migrate-rebuild-web-service.md
+        - name: Client toepassingen migreren
+          href: migrate-rebuild-integrate-with-client-app.md
+        - name: R-script modules voor uitvoering opnieuw bouwen
+          href: migrate-execute-r-script.md
 - name: Naslaginformatie
   items:
     - name: Naslaginformatie over algoritmen en modules

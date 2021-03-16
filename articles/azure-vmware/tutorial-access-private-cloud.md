@@ -3,12 +3,12 @@ title: 'Zelfstudie: Toegang tot uw privécloud'
 description: Meer informatie over het openen van een Azure VMware Solution-privécloud
 ms.topic: tutorial
 ms.date: 03/13/2021
-ms.openlocfilehash: f689a0c706b6427497c80dabb01579ace161d1e2
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: f2af1cffda08bf4b9c62e63f32d36cc9bbd7024a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103462240"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494390"
 ---
 # <a name="tutorial-access-an-azure-vmware-solution-private-cloud"></a>Zelfstudie: Toegang tot een privécloud van Azure VMware Solution
 
@@ -34,10 +34,7 @@ In deze zelfstudie leert u het volgende:
 
    De URL's en gebruikersreferenties voor vCenter en NSX-T-beheer van de privécloud worden weergegeven.
 
-   >[!TIP]
-   >Selecteer **een nieuw wacht woord genereren** om nieuwe vCenter-en NSX-T-wacht woorden te genereren.
-
-   :::image type="content" source="media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true" lightbox="media/tutorial-access-private-cloud/generate-vcenter-nsxt-passwords.png":::
+   :::image type="content" source="media/tutorial-access-private-cloud/ss4-display-identity.png" alt-text="URL's en referenties weergeven van vCenter en NSX-beheer van de privécloud." border="true" lightbox="media/tutorial-access-private-cloud/ss4-display-identity.png":::
 
 1. Ga naar de virtuele machine die u in de vorige stap hebt gemaakt en maak verbinding met de virtuele machine. 
 

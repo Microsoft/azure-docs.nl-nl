@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0aea468c64f70bd7f35dd25206faa9ea33459999
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 23c74a8a35255162c7c9ddee6c917d4d98d83b89
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101688906"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561648"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -169,6 +169,10 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 
 > [!NOTE]
 > Voor **apparaten die zijn toegevoegd aan Azure AD of Azure AD is geregistreerd multi-factor Authentication** instelling van toepassing op apparaten die zijn toegevoegd aan Azure AD (met enkele uitzonde ringen) of Azure AD is geregistreerd. Deze instelling is niet van toepassing op hybride Azure AD gekoppelde apparaten, [Azure AD gekoppelde virtuele machines in azure](./howto-vm-sign-in-azure-ad-windows.md#enabling-azure-ad-login-in-for-windows-vm-in-azure) en aan Azure AD gekoppelde apparaten met behulp van de [zelf-implementatie modus van Windows auto pilot](/mem/autopilot/self-deploying).
+
+> [!IMPORTANT]
+> - U kunt het beste de [gebruikers actie registreren of lid worden van apparaten](../conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in voorwaardelijke toegang voor het afdwingen van multi-factor Authentication voor het samen voegen of registreren van een apparaat. 
+> - U moet deze instelling instellen op **Nee** als u beleid voor voorwaardelijke toegang gebruikt om multi-factor authencation te vereisen. 
 
 - **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**.
 

@@ -6,15 +6,15 @@ author: chriswhilar
 manager: mariusu-msft
 services: azure-communication-services
 ms.author: mariusu
-ms.date: 10/15/2020
+ms.date: 03/10/2021
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: c3ceb866d9ca817299929b9a811915b82ccfbd48
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 824fd19e8acfed75ab3d64048a00f579b70286d2
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102614737"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496232"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
@@ -93,7 +93,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 ## <a name="additional-reading"></a>Meer artikelen
 
-- [Azure Communication GitHub](https://github.com/Azure/communication): u vindt meer voorbeelden en informatie op de officiële GitHub-pagina
+- Voor [beelden](./overview.md) : u vindt meer voor beelden op onze overzichts pagina voor beelden.
 - [Redux](https://redux.js.org/): statusbeheer op de client
 - [FluentUI](https://aka.ms/fluent-ui): door Microsoft ondersteunde bibliotheek voor de gebruikersinterface
 - [React](https://reactjs.org/): bibliotheek voor het ontwikkelen van gebruikersinterfaces

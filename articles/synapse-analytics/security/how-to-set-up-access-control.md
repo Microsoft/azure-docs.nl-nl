@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 12/03/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 513d23de3d7f823ec934af32e5f3776e876f02d8
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 97f9d0e0037090a8c058eb6e2393451d975e79c6
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368996"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103472253"
 ---
 # <a name="how-to-set-up-access-control-for-your-synapse-workspace"></a>Toegangs beheer instellen voor uw Synapse-werk ruimte 
 
@@ -43,7 +43,7 @@ Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het conf
 
 In dit document worden standaard namen gebruikt om de instructies te vereenvoudigen. Vervang ze door de namen van uw keuze.
 
-|Instelling | Standaard naam | Description |
+|Instelling | Standaard naam | Beschrijving |
 | :------ | :-------------- | :---------- |
 | **Synapse-werkruimte** | `workspace1` |  De naam die de Synapse-werk ruimte heeft. |
 | **ADLSGEN2-account** | `storage1` | Het ADLS-account dat moet worden gebruikt met uw werk ruimte. |
@@ -124,7 +124,7 @@ Voor het uitvoeren van pijp lijnen en het uitvoeren van systeem taken vereist Sy
 
 ## <a name="step-5-grant-synapse-administrators-the-azure-contributor-role-on-the-workspace"></a>STAP 5: Ken Synapse Administrators de rol Azure contributor toe aan de werk ruimte 
 
-Voor het maken van SQL-groepen, Apache Spark Pools en integratie-Runtimes moeten gebruikers ten minste toegang hebben tot de Azure-Inzender voor de werk ruimte. Met de rol Inzender kunnen deze gebruikers ook de resources beheren, met inbegrip van onderbreken en schalen.
+Voor het maken van SQL-groepen, Apache Spark Pools en integratie-runtimes, moeten gebruikers ten minste de rol Azure Inzender hebben in de werk ruimte. Met de rol Inzender kunnen deze gebruikers ook de resources beheren, met inbegrip van onderbreken en schalen. Als u Azure Portal of Synapse Studio gebruikt voor het maken van SQL-groepen, Apache Spark Pools en Integration runtimes, hebt u de rol Azure contributor nodig op het niveau van de resource groep. 
 
 - Open de Azure Portal
 - Zoek de werk ruimte, `workspace1`

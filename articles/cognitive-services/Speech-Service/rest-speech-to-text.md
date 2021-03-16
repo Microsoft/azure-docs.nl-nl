@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 24cc7773d281d98b6a0943f5e0a61b6f547991ee
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 90a4ad068f332b198696d96bddbb794c820f42f5
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032820"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564385"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -28,7 +28,7 @@ De REST-to-text-Api's zijn:
 
 ## <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
 
-Spraak-naar-tekst REST API v 3.0 wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). Als u via REST met de OnLine-transcriptie wilt communiceren, gebruikt u [spraak-naar-tekst rest API voor korte audio](#speech-to-text-rest-api-for-short-audio).
+Spraak-naar-tekst REST API v 3.0 wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). Als u via REST met de online-transcriptie wilt communiceren, gebruikt u [spraak-naar-tekst rest API voor korte audio](#speech-to-text-rest-api-for-short-audio).
 
 Gebruik REST API v 3.0 voor het volgende:
 - Modellen kopiëren naar andere abonnementen voor het geval u wilt dat collega's toegang hebben tot een model dat u hebt gemaakt, of in gevallen waarin u een model wilt implementeren in meer dan één regio

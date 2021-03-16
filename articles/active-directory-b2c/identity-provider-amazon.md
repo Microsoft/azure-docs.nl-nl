@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.custom: project-no-code
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 5880b6f44caec053aef292960cecbf64f25c6743
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 3e1eaf4f97b9b04ed02aeb3c6de65b90bf4947e1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448571"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103489148"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C
 
@@ -38,12 +38,17 @@ ms.locfileid: "102448571"
 
 Als u aanmelden voor gebruikers met een Amazon-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken in de [Amazon-ontwikkelaars Services en-technologieën](https://developer.amazon.com). Zie [registreren voor aanmelding bij Amazon](https://developer.amazon.com/docs/login-with-amazon/register-web.html)voor meer informatie. Als u nog geen Amazon-account hebt, kunt u zich aanmelden bij [https://www.amazon.com/](https://www.amazon.com/) .
 
-> [!NOTE]  
-> Gebruik de volgende Url's in **stap 8** hieronder, waarbij u vervangt `your-tenant-name` door de naam van uw Tenant. Gebruik bij het invoeren van de naam van uw Tenant alle kleine letters, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
-> - Voer voor **toegestane oorsprongen**`https://your-tenant-name.b2clogin.com` 
-> - Voer voor **toegestane retour-url's**`https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`
-
-[!INCLUDE [identity-provider-amazon-idp-register.md](../../includes/identity-provider-amazon-idp-register.md)]
+1. Meld u aan bij de [Amazon-ontwikkelaars console](https://developer.amazon.com/dashboard) met uw Amazon-account referenties.
+1. Als u dit nog niet hebt gedaan, selecteert u **registreren**, volgt u de registratie stappen voor de ontwikkelaar en gaat u akkoord met het beleid.
+1. Selecteer in het dash board **Aanmelden bij Amazon**.
+1. Selecteer **een nieuw beveiligings profiel maken**.
+1. Voer een **naam voor het beveiligings profiel**, de beschrijving van het **beveiligings profiel** en de URL voor de privacyverklaring van de **toestemming** in, bijvoorbeeld `https://www.contoso.com/privacy` de URL van de privacyverklaring is een pagina die u beheert en die privacy-informatie verstrekt aan gebruikers. Klik vervolgens op **Opslaan**.
+1. Selecteer in de sectie **Aanmelden met Amazon-configuraties** de **naam van het beveiligings profiel** dat u hebt gemaakt, selecteer het pictogram **beheren** en selecteer vervolgens **Webinstellingen**.
+1. Kopieer de waarden van de **client-id** in het gedeelte **Web Settings** . Selecteer **geheim weer geven** om het client geheim te ontvangen en kopieer het vervolgens. U hebt beide waarden nodig om een Amazon-account te configureren als een id-provider in uw Tenant. **Client geheim** is een belang rijke beveiligings referentie.
+1. Selecteer in de sectie **Webinstellingen** de optie **bewerken**. 
+    1. Voer in **toegestane oorsprongen** in `https://your-tenant-name.b2clogin.com` . Vervang `your-tenant-name` door de naam van uw tenant. Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name` .
+    1.  **Toegestane retour-url's** , invoeren `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` .  Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` .  Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein.
+1. Selecteer **Opslaan**.
 
 ::: zone pivot="b2c-user-flow"
 

@@ -6,13 +6,13 @@ author: kromerm
 ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 09/11/2020
-ms.openlocfilehash: f8a852a8c4197169061a9c7633f4f363ad057337
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.date: 03/15/2021
+ms.openlocfilehash: fe65a9528e35416d537f3aecd3a44f8b4e568afe
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102505797"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467728"
 ---
 # <a name="troubleshoot-mapping-data-flows-in-azure-data-factory"></a>Problemen met toewijzing van gegevens stromen in Azure Data Factory oplossen
 
@@ -165,36 +165,6 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Oorzaak**: onbepaald.
 - **Aanbeveling**: Controleer de toewijzing van de parameter waarde in de pijp lijn. Een parameter expressie kan ongeldige tekens bevatten.
 
-### <a name="error-code-df-excel-invalidconfiguration"></a>Fout code: DF-Excel-InvalidConfiguration
-- **Bericht**: er is een Excel-blad naam of-index vereist.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: Controleer de waarde van de para meter. Geef de naam van het werk blad of de index op voor het lezen van Excel-gegevens.
-
-- **Bericht**: er kan niet tegelijkertijd een Excel-blad naam en-index bestaan.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: Controleer de waarde van de para meter. Geef de naam van het werk blad of de index op voor het lezen van Excel-gegevens.
-
-- **Bericht**: er is een ongeldig bereik verstrekt.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: Controleer de waarde van de para meter. Geef een geldig bereik op als referentie. Zie [Excel-eigenschappen](./format-excel.md#dataset-properties)voor meer informatie.
-
-- **Bericht**: er is een ongeldig Excel-bestand ingevoerd terwijl alleen. XLSX en. xls worden ondersteund
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: Zorg ervoor dat de Excel-bestands extensie. XLSX of. xls is.
-
-
- ### <a name="error-code-df-excel-invaliddata"></a>Fout code: DF-Excel-InvalidData
-- **Bericht**: Excel-werk blad bestaat niet.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: Controleer de waarde van de para meter. Geef een geldige werk blad naam of index op voor het lezen van Excel-gegevens.
-
-- **Bericht**: het lezen van Excel-bestanden met een ander schema wordt nu niet ondersteund.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: gebruik een ondersteund Excel-bestand.
-
-- **Bericht**: gegevens type wordt niet ondersteund.
-- **Oorzaak**: onbepaald.
-- **Aanbeveling**: ondersteunde gegevens typen voor Excel-bestanden gebruiken.
 
 ### <a name="error-code-4502"></a>Fout code: 4502
 - **Bericht**: er zijn belang rijke gelijktijdige MappingDataflow-uitvoeringen die storingen veroorzaken vanwege het beperken van beperkingen onder Integration runtime.
@@ -211,6 +181,206 @@ In dit artikel worden algemene probleemoplossings methoden besproken voor het to
 - **Bericht**: de activiteit is uitgevoerd op Azure Integration runtime en het ontsleutelen van de referentie van de gegevens opslag of COMPUTE die is verbonden via een zelf-hosted Integration runtime is mislukt. Controleer de configuratie van gekoppelde services die zijn gekoppeld aan deze activiteit en zorg ervoor dat u het juiste type Integration runtime gebruikt.
 - **Oorzaak**: gegevens stroom biedt geen ondersteuning voor gekoppelde services op zelf-hostende Integration Runtimes.
 - **Aanbeveling**: gegevens stroom configureren om te worden uitgevoerd op een beheerde Virtual Network Integration runtime.
+
+### <a name="error-code-df-xml-invalidvalidationmode"></a>Fout code: DF-XML-InvalidValidationMode
+- **Bericht**: er is een ongeldige XML-validatie modus gegeven.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef de juiste validatie modus op.
+
+### <a name="error-code-df-xml-invaliddatafield"></a>Fout code: DF-XML-InvalidDataField
+- **Bericht**: het veld voor beschadigde records moet een teken reeks type en Null-waarden zijn.
+- **Aanbeveling**: Zorg ervoor dat de kolom `\"_corrupt_record\"` in het bron project een teken reeks gegevens type heeft.
+
+### <a name="error-code-df-xml-malformedfile"></a>Fout code: DF-XML-MalformedFile
+- **Bericht**: onjuist gevormd XML-bestand in FailFastMode.
+- **Aanbeveling**: werk de inhoud van het XML-bestand naar de juiste indeling.
+
+### <a name="error-code-df-xml-invaliddatatype"></a>Fout code: DF-XML-InvalidDataType
+- **Bericht**: XML-element heeft sub-elementen of kenmerken en kan niet worden geconverteerd.
+
+### <a name="error-code-df-xml-invalidreferenceresource"></a>Fout code: DF-XML-InvalidReferenceResource
+- **Bericht**: verwijzings bron in het XML-gegevens bestand kan niet worden omgezet.
+- **Aanbeveling**: Controleer de verwijzings bron in het XML-gegevens bestand.
+
+### <a name="error-code-df-xml-invalidschema"></a>Fout code: DF-XML-InvalidSchema
+- **Bericht**: schema validatie mislukt.
+
+### <a name="error-code-df-xml-unsupportedexternalreferenceresource"></a>Fout code: DF-XML-UnsupportedExternalReferenceResource
+- **Bericht**: externe verwijzings bron in XML-gegevens bestand wordt niet ondersteund.
+- **Aanbeveling**: werk de inhoud van het XML-bestand bij wanneer de externe referentie bron momenteel niet wordt ondersteund.
+
+### <a name="error-code-df-gen2-invalidaccountconfiguration"></a>Fout code: DF-GEN2-InvalidAccountConfiguration
+- **Bericht**: een van de account sleutel of Tenant/SpnId/SpnCredential/SpnCredentialType of MiServiceUri/miServiceToken moet worden opgegeven.
+- **Aanbeveling**: Configureer het juiste account in de gerelateerde GEN2 gekoppelde service.
+
+### <a name="error-code-df-gen2-invalidauthconfiguration"></a>Fout code: DF-GEN2-InvalidAuthConfiguration
+- **Bericht**: slechts een van de drie verificatie methoden (Key, SERVICEPRINCIPAL en mi) kan worden opgegeven. 
+- **Aanbeveling**: Kies het juiste verificatie type in de gerelateerde GEN2 gekoppelde service.
+
+### <a name="error-code-df-gen2-invalidserviceprincipalcredentialtype"></a>Fout code: DF-GEN2-InvalidServicePrincipalCredentialType
+- **Bericht**: ServicePrincipalCredentialType is ongeldig.
+
+### <a name="error-code-df-gen2-invaliddatatype"></a>Fout code: DF-GEN2-InvalidDataType
+- **Bericht**: het Cloud type is ongeldig.
+
+### <a name="error-code-df-blob-invalidaccountconfiguration"></a>Fout code: DF-BLOB-InvalidAccountConfiguration
+- **Bericht**: een van de account sleutel of sas_token moet worden opgegeven.
+
+### <a name="error-code-df-blob-invalidauthconfiguration"></a>Fout code: DF-BLOB-InvalidAuthConfiguration
+- **Bericht**: slechts een van de twee verificatie methoden (sleutel, sa's) kan worden opgegeven.
+
+### <a name="error-code-df-blob-invaliddatatype"></a>Fout code: DF-BLOB-InvalidDataType
+- **Bericht**: het Cloud type is ongeldig.
+
+### <a name="error-code-df-cosmos-partitionkeymissed"></a>Fout code: DF-Cosmos-PartitionKeyMissed
+- **Bericht**: pad voor partitie sleutel moet worden opgegeven voor bijwerk-en verwijder bewerkingen.
+- **Aanbeveling**: gebruik de sleutel voor het leveren van partities in Cosmos Sink-instellingen.
+
+### <a name="error-code-df-cosmos-invalidpartitionkey"></a>Fout code: DF-Cosmos-InvalidPartitionKey
+- **Bericht**: het pad van de partitie sleutel mag niet leeg zijn voor bijwerk-en verwijder bewerkingen.
+- **Aanbeveling**: gebruik de sleutel voor het leveren van partities in Cosmos Sink-instellingen.
+
+### <a name="error-code-df-cosmos-idpropertymissed"></a>Fout code: DF-Cosmos-IdPropertyMissed
+- **Bericht**: de id-eigenschap moet worden toegewezen voor Delete-en update-bewerkingen.
+- **Aanbeveling**: Zorg ervoor dat de invoer gegevens een `id` kolom in Cosmos Sink-instellingen bevat. Als dat niet het geval is, gebruikt u **trans formatie selecteren of afleiden** voor het genereren van deze kolom vóór sink.
+
+### <a name="error-code-df-cosmos-invalidpartitionkeycontent"></a>Fout code: DF-Cosmos-InvalidPartitionKeyContent
+- **Bericht**: de partitie sleutel moet beginnen met/.
+- **Aanbeveling**: Zorg ervoor dat de partitie sleutel begint met `/` in Cosmos Sink-instellingen, bijvoorbeeld: `/movieId` .
+
+### <a name="error-code-df-cosmos-invalidpartitionkey"></a>Fout code: DF-Cosmos-InvalidPartitionKey
+- **Bericht**: partitionKey niet toegewezen in Sink voor Delete-en update-bewerkingen.
+- **Aanbeveling**: gebruik in Cosmos Sink-instellingen de partitie sleutel die gelijk is aan de partitie sleutel van uw container.
+
+### <a name="error-code-df-cosmos-invalidconnectionmode"></a>Fout code: DF-Cosmos-InvalidConnectionMode
+- **Bericht**: ongeldige connectionMode.
+- **Aanbeveling**: Controleer of de ondersteunde modus **Gateway** en **DirectHttps** in Cosmos-instellingen is.
+
+### <a name="error-code-df-cosmos-invalidaccountconfiguration"></a>Fout code: DF-Cosmos-InvalidAccountConfiguration
+- **Bericht**: AccountName of accountEndpoint moet worden opgegeven.
+
+### <a name="error-code-df-github-writenotsupported"></a>Fout code: DF-github-WriteNotSupported
+- **Bericht**: github Store staat geen schrijf bewerkingen toe.
+
+### <a name="error-code-df-pgsql-invalidcredential"></a>Fout code: DF-PGSQL-InvalidCredential
+- **Bericht**: er moet een gebruiker/wacht woord worden opgegeven.
+- **Aanbeveling**: Zorg ervoor dat u de juiste referentie-instellingen hebt in de gerelateerde postgresql gekoppelde service.
+
+### <a name="error-code-df-snowflake-invalidstageconfiguration"></a>Fout code: DF-sneeuw-InvalidStageConfiguration
+- **Bericht**: alleen Blob-opslag type kan worden gebruikt als fase in de lees-en schrijf bewerking sneeuw vlokken.
+
+### <a name="error-code-df-snowflake-invalidstageconfiguration"></a>Fout code: DF-sneeuw-InvalidStageConfiguration
+- **Bericht**: eigenschappen van sneeuw-fase moeten worden opgegeven met Azure Blob + SAS-verificatie.
+
+### <a name="error-code-df-snowflake-invaliddatatype"></a>Fout code: DF-sneeuw-InvalidDataType
+- **Bericht**: het Spark-type wordt niet ondersteund in sneeuw.
+- **Aanbeveling**: gebruik de **afgeleide trans formatie** om de gerelateerde kolom met invoer gegevens te wijzigen in het teken reeks type vóór sneeuw sink. 
+
+### <a name="error-code-df-hive-invalidblobstagingconfiguration"></a>Fout code: DF-Hive-InvalidBlobStagingConfiguration
+- **Bericht**: er moeten eigenschappen voor de faserings opslag van blobs worden opgegeven.
+
+### <a name="error-code-df-hive-invalidgen2stagingconfiguration"></a>Fout code: DF-Hive-InvalidGen2StagingConfiguration
+- **Bericht**: ADLS Gen2 opslag faseert alleen de referentie van de Service-Principal-sleutel.
+- **Aanbeveling**: Controleer of u de referenties voor de Service-Principal-sleutel toepast in de ADLS Gen2 gekoppelde service die wordt gebruikt als fase ring.
+
+### <a name="error-code-df-hive-invalidgen2stagingconfiguration"></a>Fout code: DF-Hive-InvalidGen2StagingConfiguration
+- **Bericht**: er moeten ADLS Gen2 opslag voor de faserings eigenschappen worden opgegeven. Een van de sleutel of Tenant/spnId/spnKey of miServiceUri/miServiceToken is vereist.
+- **Aanbeveling**: pas de juiste referentie toe die wordt gebruikt als fase ring in de component in de gerelateerde ADLS Gen2 gekoppelde service. 
+
+### <a name="error-code-df-hive-invaliddatatype"></a>Fout code: DF-Hive-InvalidDataType
+- **Bericht**: niet-ondersteunde kolom (men).
+- **Aanbeveling**: werk de kolom met invoer gegevens bij zodat deze overeenkomt met het gegevens type dat door de Hive wordt ondersteund.
+
+### <a name="error-code-df-hive-invalidstoragetype"></a>Fout code: DF-Hive-InvalidStorageType
+- **Bericht**: het opslag type kan BLOB of Gen2 zijn.
+
+### <a name="error-code-df-delimited-invalidconfiguration"></a>Fout code: DF-Unlimited-InvalidConfiguration
+- **Bericht**: een van de lege regels of de aangepaste header moet worden opgegeven.
+- **Aanbeveling**: lege regels of aangepaste headers opgeven in CSV-instellingen.
+
+### <a name="error-code-df-delimited-columndelimitermissed"></a>Fout code: DF-Unlimited-ColumnDelimiterMissed
+- **Bericht**: kolom scheidings teken is vereist voor parseren.
+- **Aanbeveling**: Bevestig dat u het kolom scheidings teken in de CSV-instellingen hebt.
+
+### <a name="error-code-df-mssql-invalidcredential"></a>Fout code: DF-MSSQL-InvalidCredential
+- **Bericht**: er moet een gebruiker/PWD of Tenant/SpnId/SpnKey of MiServiceUri/miServiceToken worden opgegeven.
+- **Aanbeveling**: juiste referenties in de gerelateerde mssqlve gekoppelde service Toep assen.
+
+### <a name="error-code-df-mssql-invaliddatatype"></a>Fout code: DF-MSSQL-InvalidDataType
+- **Bericht**: niet-ondersteund veld (en).
+- **Aanbeveling**: Wijzig de invoer gegevens kolom zodat deze overeenkomt met het gegevens type dat door MSSQL wordt ondersteund.
+
+### <a name="error-code-df-mssql-invalidauthconfiguration"></a>Fout code: DF-MSSQL-InvalidAuthConfiguration
+- **Bericht**: slechts een van de drie verificatie methoden (Key, SERVICEPRINCIPAL en mi) kan worden opgegeven.
+- **Aanbeveling**: u kunt slechts een van de drie verificatie methoden (Key, SERVICEPRINCIPAL en mi) opgeven in de gerelateerde mssqlve gekoppelde service.
+
+### <a name="error-code-df-mssql-invalidcloudtype"></a>Fout code: DF-MSSQL-InvalidCloudType
+- **Bericht**: het Cloud type is ongeldig.
+- **Aanbeveling**: Controleer het type Cloud in de verwante gekoppelde service van MSSQL.
+
+### <a name="error-code-df-sqldw-invalidblobstagingconfiguration"></a>Fout code: DF-SQLDW-InvalidBlobStagingConfiguration
+- **Bericht**: er moeten eigenschappen voor de faserings opslag van blobs worden opgegeven.
+
+### <a name="error-code-df-sqldw-invalidstoragetype"></a>Fout code: DF-SQLDW-InvalidStorageType
+- **Bericht**: het opslag type kan BLOB of Gen2 zijn.
+
+### <a name="error-code-df-sqldw-invalidgen2stagingconfiguration"></a>Fout code: DF-SQLDW-InvalidGen2StagingConfiguration
+- **Bericht**: ADLS Gen2 opslag faseert alleen de referentie van de Service-Principal-sleutel.
+
+### <a name="error-code-df-sqldw-invalidconfiguration"></a>Fout code: DF-SQLDW-InvalidConfiguration
+- **Bericht**: er moeten ADLS Gen2 opslag voor de faserings eigenschappen worden opgegeven. Een van de sleutels of Tenant/spnId/spnCredential/spnCredentialType of miServiceUri/miServiceToken is vereist.
+
+### <a name="error-code-df-delta-invalidconfiguration"></a>Fout code: DF-DELTA-InvalidConfiguration
+- **Bericht**: tijds tempel en versie kunnen niet tegelijk worden ingesteld.
+
+### <a name="error-code-df-delta-keycolumnmissed"></a>Fout code: DF-DELTA-KeyColumnMissed
+- **Bericht**: er moeten sleutel kolom (men) worden opgegeven voor niet-invoeg bewerkingen.
+
+### <a name="error-code-df-delta-invalidtableoperationsettings"></a>Fout code: DF-DELTA-InvalidTableOperationSettings
+- **Bericht**: de opties voor opnieuw maken en afkappen kunnen niet beide worden opgegeven.
+
+### <a name="error-code-df-excel-worksheetconfigmissed"></a>Fout code: DF-Excel-WorksheetConfigMissed
+- **Bericht**: er is een Excel-blad naam of-index vereist.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef de blad naam of index op om de Excel-gegevens te lezen.
+
+### <a name="error-code-df-excel-invalidworksheetconfiguration"></a>Fout code: DF-Excel-InvalidWorksheetConfiguration
+- **Bericht**: er kan niet tegelijkertijd een Excel-blad naam en-index bestaan.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef de blad naam of index op om de Excel-gegevens te lezen.
+
+### <a name="error-code-df-excel-invalidrange"></a>Fout code: DF-Excel-InvalidRange
+- **Bericht**: er is een ongeldig bereik verstrekt.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef het geldige bereik op met behulp van de volgende verwijzing: [Excel-indeling in azure data Factory-Dataset-eigenschappen](https://docs.microsoft.com/azure/data-factory/format-excel#dataset-properties).
+
+### <a name="error-code-df-excel-worksheetnotexist"></a>Fout code: DF-Excel-WorksheetNotExist
+- **Bericht**: Excel-werk blad bestaat niet.
+- **Aanbeveling**: Controleer de waarde van de para meter en geef de geldige blad naam of index op om de Excel-gegevens te lezen.
+
+### <a name="error-code-df-excel-differentschemanotsupport"></a>Fout code: DF-Excel-DifferentSchemaNotSupport
+- **Bericht**: Excel-bestanden met een ander schema lezen wordt momenteel niet ondersteund.
+
+### <a name="error-code-df-excel-invaliddatatype"></a>Fout code: DF-Excel-InvalidDataType
+- **Bericht**: gegevens type wordt niet ondersteund.
+
+### <a name="error-code-df-excel-invalidfile"></a>Fout code: DF-Excel-InvalidFile
+- **Bericht**: er is een ongeldig Excel-bestand ingevoerd terwijl alleen. XLSX en. xls worden ondersteund.
+
+### <a name="error-code-df-adobeintegration-invalidmaptofilter"></a>Fout code: DF-AdobeIntegration-InvalidMapToFilter
+- **Bericht**: er kan slechts één sleutel/id aan het filter zijn toegewezen voor de aangepaste resource.
+
+### <a name="error-code-df-adobeintegration-invalidpartitionconfiguration"></a>Fout code: DF-AdobeIntegration-InvalidPartitionConfiguration
+- **Bericht**: er wordt slechts één partitie ondersteund. Het partitie schema kan RoundRobin of hash zijn.
+- **Aanbeveling**: in AdobeIntegration instellingen, bevestig dat u slechts één partitie hebt. Het partitie schema kan RoundRobin of hash zijn.
+
+### <a name="error-code-df-adobeintegration-keycolumnmissed"></a>Fout code: DF-AdobeIntegration-KeyColumnMissed
+- **Bericht**: sleutel moet worden opgegeven voor niet-invoeg bewerkingen.
+- **Aanbeveling**: Geef uw sleutel kolommen op in de AdobeIntegration-instellingen voor niet-invoeg bewerkingen.
+
+### <a name="error-code-df-adobeintegration-invalidpartitiontype"></a>Fout code: DF-AdobeIntegration-InvalidPartitionType
+- **Bericht**: partitie type moet roundRobin zijn.
+- **Aanbeveling**: Bevestig dat het partitie type RoundRobin in AdobeIntegration-instellingen is.
+
+### <a name="error-code-df-adobeintegration-invalidprivacyregulation"></a>Fout code: DF-AdobeIntegration-InvalidPrivacyRegulation
+- **Bericht**: er wordt momenteel alleen een privacybeleid ondersteund dat is AVG.
+- **Aanbeveling**: Bevestig dat de privacyverklaring in AdobeIntegration-instellingen is ingesteld op **' AVG '**.
 
 ## <a name="miscellaneous-troubleshooting-tips"></a>Diverse tips voor probleem oplossing
 - **Probleem**: er is een onverwachte uitzonde ring opgetreden en de uitvoering is mislukt.

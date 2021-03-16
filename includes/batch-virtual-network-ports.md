@@ -10,15 +10,15 @@ ms.service: batch
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
-ms.date: 01/13/2021
+ms.date: 02/16/2021
 ms.author: jenhayes
 ms.custom: include file
-ms.openlocfilehash: c625253585cc99c035852b8b9042f939284bad19
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: baf146bdd89d45c5d7e1ed359822a35d383b7b6c
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101750965"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561908"
 ---
 ### <a name="general-requirements"></a>Algemene vereisten
 
@@ -42,10 +42,10 @@ Aanvullende vereisten voor VNet verschillen, afhankelijk van of de Batch-pool zi
 
 **Machtigingen**: controleer of uw beveiligingsbeleid of de vergrendelingen die voor het VNet-abonnement of de resourcegroep gelden, een gebruikersmachtiging beperkt om het VNet te beheren.
 
-**Aanvullende netwerkresources**: Batch kent automatisch extra netwerkresources toe aan de resourcegroep met het VNet.
+**Aanvullende netwerk bronnen** : batch maakt automatisch extra netwerk bronnen in de resource groep met het VNet.
 
 > [!IMPORTANT]
-> Voor elke 100 toegewezen knooppunten of knooppunten met een lage prioriteit kent Batch het volgende toe: één netwerkbeveiligingsgroep, één openbaar IP-adres en één load balancer. De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../articles/azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Voor grote pools moet u mogelijk een verhoging van het quotum aanvragen voor een of meer van deze resources.
+> Voor elke knoop punt met 100 toegewezen of lage prioriteit maakt batch: één netwerk beveiligings groep (NSG), één openbaar IP-adres en één load balancer. De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../articles/azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Voor grote pools moet u mogelijk een verhoging van het quotum aanvragen voor een of meer van deze resources.
 
 #### <a name="network-security-groups-batch-default"></a>Netwerkbeveiligingsgroepen Batch-standaardinstelling
 

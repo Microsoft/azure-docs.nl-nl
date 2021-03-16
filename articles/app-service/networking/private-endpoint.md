@@ -9,12 +9,12 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 4534a315429a120af45dfd495df4a8c29b233de7
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 8d471b680a6ff97b4b96a9c5f90f5548488dd35f
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763024"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563608"
 ---
 # <a name="using-private-endpoints-for-azure-web-app"></a>Privé-eindpunten voor Azure Web App
 
@@ -121,6 +121,8 @@ U kunt Maxi maal 100 persoonlijke eind punten verbinden met een bepaalde web-app
 Sleuven kunnen geen persoonlijk eind punt gebruiken.
 
 De functionaliteit voor fout opsporing op afstand is niet beschikbaar wanneer het persoonlijke eind punt is ingeschakeld voor de web-app. De aanbeveling is om de code te implementeren in een sleuf en deze op afstand op te sporen.
+
+FTP-toegang wordt gegeven via het inkomende open bare IP-adres. Het persoonlijke eind punt biedt geen ondersteuning voor FTP-toegang tot de web-app.
 
 De functie voor persoonlijke koppelingen en het persoonlijke eind punt worden regel matig verbeterd. Raadpleeg [dit artikel][pllimitations] voor actuele informatie over beperkingen.
 

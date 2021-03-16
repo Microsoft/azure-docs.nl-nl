@@ -36,7 +36,7 @@
           href: connect-ios.md
         - name: Verbinding maken met de Microsoft Store-client
           href: connect-microsoft-store.md
-        - name: Verbinding maken met Linux-apparaten
+        - name: Verbinding maken met thin clients
           href: linux-overview.md
     - name: Apparaatomleidingen configureren
       href: configure-device-redirections.md

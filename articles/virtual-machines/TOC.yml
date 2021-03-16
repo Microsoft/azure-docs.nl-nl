@@ -49,6 +49,8 @@
           href: ./linux/tutorial-load-balancer.md
         - name: 8 - Netwerken beheren
           href: ./linux/tutorial-virtual-network.md
+        - name: 9-resources beheren
+          href: ./linux/tutorial-govern-resources.md
     - name: Windows
       items:
         - name: 1 - Een virtuele machine maken/beheren
@@ -67,6 +69,8 @@
           href: ./windows/tutorial-load-balancer.md
         - name: 8 - Netwerken beheren
           href: ./windows/tutorial-virtual-network.md
+        - name: 9-resources beheren
+          href: ./windows/tutorial-govern-resources.md
 - name: Workloads
   items:
     - name: Red Hat
@@ -313,99 +317,100 @@
           displayName: 'Azure Hybrid Benefit, Linux, AHB'
           href: ./linux/azure-hybrid-benefit-linux.md
         - name: Windows
-          items:
-            - name: Licentie voor Azure Hybrid Benefit gebruiken
-              displayName: 'Azure Hybrid Benefit, AHB'
-              href: ./windows/hybrid-use-benefit-licensing.md
-            - name: Multitenant Hosting-rechten voor Windows 10 gebruiken
-              displayName: 'MTHR, multi-tenant, multitenant, hosting, rights'
-              href: ./windows/windows-desktop-multitenant-hosting-deployment.md
+          displayName: 'Azure Hybrid Benefit, AHB'
+          href: ./windows/hybrid-use-benefit-licensing.md
     - name: Gereserveerde instanties
       items:
+        - name: Wat zijn Azure-reserveringen?
+          displayName: 'Reserved Instances, RI, prepay, flexibility'
+          href: ../cost-management-billing/reservations/save-compute-costs-reservations.md?context=/azure/virtual-machines/context/context
         - name: Vooruitbetalen voor VM's
           displayName: 'Reserved Instances, RI, prepay, flexibility'
           href: ./prepay-reserved-vm-instances.md
         - name: Vooruitbetalen voor toegewezen hosts
           displayName: 'Reserved Instances, RI, prepay, flexibility'
           href: prepay-dedicated-hosts-reserved-instances.md
-        - name: Wat zijn Azure-reserveringen?
-          displayName: 'Reserved Instances, RI, prepay, flexibility'
-          href: ../cost-management-billing/reservations/save-compute-costs-reservations.md?context=/azure/virtual-machines/context/context
         - name: Flexibiliteit van de VM-instantiegrootte
           displayName: 'Reserved Instances, RI, prepay'
           href: reserved-vm-instance-size-flexibility.md
-    - name: Virtuele Linux-machines maken
+    - name: Virtuele machines maken
       items:
-        - name: Goedgekeurde distributies
-          href: ./linux/endorsed-distros.md
-        - name: De CLI gebruiken
-          href: ./linux/create-cli-complete.md
-        - name: Een ARM-sjabloon gebruiken
-          displayName: Azure Resource Manager
-          href: ./linux/create-ssh-secured-vm-from-template.md
-        - name: REST API gebruiken
-          href: ./linux/create-vm-rest-api.md
-        - name: Een VM kopiëren met CLI
-          href: ./linux/copy-vm.md
-        - name: Bouwen met Jenkins
-          href: /azure/developer/jenkins/pipeline-with-github-and-docker
-        - name: Jenkins integreren met Azure DevOps
-          href: /azure/developer/jenkins/deploy-to-linux-vm-using-azure-devops-services
-        - name: Strategie voor Rolling implementatie configureren
-          href: ./linux/tutorial-devops-azure-pipelines-classic.md
-        - name: Strategie voor distributie op Canarische configureren
-          href: ./linux/tutorial-azure-devops-canary-strategy.md
-        - name: Strategie voor Blue-Green implementatie configureren
-          href: ./linux/tutorial-azure-devops-blue-green-strategy.md
-        - name: CI/CD met Azure pipelines (YAML)
-          href: ./linux/tutorial-build-deploy-azure-pipelines.md
-        - name: LAMP-stack maken
-          href: ./linux/tutorial-lamp-stack.md
-        - name: Een beveiligde webserver met TLS\SSL
+        - name: Linux
           items:
-            - name: Linux
+            - name: Goedgekeurde distributies
+              href: ./linux/endorsed-distros.md
+            - name: CLI
+              displayName: 'Create VM, Create'
+              href: ./linux/create-cli-complete.md
+            - name: ARM-sjabloon
+              displayName: 'Create VM, Create, ARM'
+              href: ./linux/create-ssh-secured-vm-from-template.md
+            - name: REST
+              displayName: 'Create VM, Create, REST'
+              href: ./linux/create-vm-rest-api.md
+            - name: LAMP-stack
+              href: ./linux/tutorial-lamp-stack.md
+            - name: Doorlopende levering
+              items:
+                - name: Strategie voor Rolling implementatie configureren
+                  href: ./linux/tutorial-devops-azure-pipelines-classic.md
+                - name: Strategie voor distributie op Canarische configureren
+                  href: ./linux/tutorial-azure-devops-canary-strategy.md
+                - name: Strategie voor Blue-Green implementatie configureren
+                  href: ./linux/tutorial-azure-devops-blue-green-strategy.md
+                - name: CI/CD met Azure pipelines (YAML)
+                  href: ./linux/tutorial-build-deploy-azure-pipelines.md
+            - name: Een beveiligde webserver met TLS\SSL
               href: ./linux/tutorial-secure-web-server.md
-            - name: Windows
-              href: ./windows/tutorial-secure-web-server.md
-          displayname: SSL TLS
-    - name: Verbinding maken met virtuele Linux-machines
-      items:
-        - name: SSH voor Linux Vm's
+        - name: Windows
           items:
-            - name: In Linux of macOS
-              href: ./linux/mac-create-ssh-keys.md
-            - name: In Windows
-              href: ./linux/ssh-from-windows.md
-            - name: In de portal
-              href: ssh-keys-portal.md
-            - name: Gedetailleerde stappen
-              href: ./linux/create-ssh-keys-detailed.md
-        - name: Extern bureaublad voor Linux
-          href: ./linux/use-remote-desktop.md
-    - name: Windows-Vm's maken
-      items:
-        - name: C# gebruiken
-          href: ../azure-resource-manager/templates/deploy-rest.md?context=/azure/virtual-machines/context/context
-        - name: Een gespecialiseerde schijf gebruiken
-          items:
-            - name: Portal
+            - name: Gespecialiseerde schijf-Portal
+              displayName: 'Create VM, Create'
               href: ./windows/create-vm-specialized-portal.md
-            - name: PowerShell
+            - name: Gespecialiseerde schijf-Power shell
+              displayName: 'Create VM, Create'
               href: ./windows/create-vm-specialized.md
-        - name: Een virtuele machine maken met Chef
-          href: /azure/developer/chef/windows-vm-configure
-        - name: Java gebruiken
-          href: ./windows/java.md
-        - name: Python
-          href: /samples/azure-samples/virtual-machines-python-manage/azure-virtual-machines-management-samples---python/?context=%2fazure%2fvirtual-machines%2fcontext%2fcontext
-        - name: ARM-sjabloon gebruiken
-          displayName: Azure Resource Manager template
-          href: ./windows/ps-template.md
-    - name: Verbinding maken met virtuele Windows-machines
-      href: ./windows/connect-logon.md
+            - name: ARM-sjabloon
+              displayName: 'Create VM, Create, ARM'
+              href: ./windows/ps-template.md
+            - name: Een beveiligde webserver met TLS\SSL
+              href: ./windows/tutorial-secure-web-server.md
+    - name: Verbinding maken met Virtual Machines
       items:
-        - name: WinRM
-          href: ./windows/winrm.md
+        - name: Linux
+          items:
+            - name: SSH-sleutels lokaal maken en beheren
+              href: ./linux/create-ssh-keys-detailed.md
+            - name: SSH-sleutels maken en beheren in de portal
+              href: ssh-keys-portal.md
+            - name: SSH in Linux of macOS
+              href: ./linux/mac-create-ssh-keys.md
+            - name: SSH op Windows
+              href: ./linux/ssh-from-windows.md
+            - name: Extern bureaublad voor Linux
+              href: ./linux/use-remote-desktop.md
+        - name: Windows
+          items:
+            - name: Extern bureaublad voor Windows
+              href: ./windows/connect-logon.md
+            - name: WinRM
+              href: ./windows/winrm.md
+    - name: Tijdsynchronisatie
+      items:
+        - name: Linux
+          displayName: Time sync
+          href: ./linux/time-sync.md
+        - name: Windows
+          displayName: Time sync
+          href: ./windows/time-sync.md
+    - name: Run-opdracht
+      items:
+        - name: Linux
+          displayName: Run command
+          href: ./linux/run-command.md
+        - name: Windows
+          displayName: Run command
+          href: ./windows/run-command.md
     - name: Uitbreidingen
       items:
         - name: Overzicht
@@ -554,6 +559,8 @@
           href: ./extensions/troubleshoot.md
         - name: Problemen met Linux-systemen met Python 3
           href: ./extensions/issues-using-vm-extensions-python-3.md
+    - name: Geneste virtualisatie
+      href: ./windows/nested-virtualization.md
     - name: Migreren naar Azure Resource Manager
       items:
         - name: Buiten gebruik gesteld vanaf 1 maart 2023
@@ -583,54 +590,6 @@
         - name: Veelgestelde vragen
           displayName: 'classic, migration, classic to ARM, CSES, Cloud Services'
           href: migration-classic-resource-manager-faq.md
-    - name: Basis principes van beheer
-      items:
-        - name: Resources beheren
-          items:
-            - name: Linux
-              href: ./linux/tutorial-govern-resources.md
-            - name: Windows
-              href: ./windows/tutorial-govern-resources.md
-        - name: Tijdsynchronisatie
-          items:
-            - name: Linux
-              href: ./linux/time-sync.md
-            - name: Windows
-              href: ./windows/time-sync.md
-        - name: Scripts uitvoeren op een virtuele machine
-          items:
-            - name: Aangepaste scriptextensie
-              items:
-                - name: Linux
-                  href: ./extensions/custom-script-linux.md
-                - name: Windows
-                  href: ./extensions/custom-script-windows.md
-            - name: Run-opdracht
-              items:
-                - name: Linux
-                  href: ./linux/run-command.md
-                - name: Windows
-                  href: ./windows/run-command.md
-            - name: Hybrid Runbook Worker
-              href: ../automation/automation-hybrid-runbook-worker.md
-            - name: Seriële console
-              items:
-                - name: Linux
-                  href: ./troubleshooting/serial-console-linux.md
-                - name: Windows
-                  href: ./troubleshooting/serial-console-windows.md
-        - name: Geneste virtualisatie inschakelen
-          href: ./windows/nested-virtualization.md
-        - name: File Storage
-          items:
-            - name: Linux-koppeling met SMB
-              href: ./linux/mount-azure-file-storage-on-linux-using-smb.md
-            - name: Bestanden kopiëren naar een virtuele Linux-machine
-              href: ./linux/copy-files-to-linux-vm-using-scp.md
-        - name: Updates en patches
-          items:
-            - name: Update-infrastructuur voor Red Hat
-              href: ./workloads/redhat/redhat-rhui.md
 - name: Installatiekopieën
   items:
     - name: Azure Marketplace-installatie kopieën zoeken
@@ -644,6 +603,9 @@
         - name: Windows-client installatie kopieën
           displayName: 'Images, imaging, marketplace, Windows, Client'
           href: ./windows/client-images.md
+        - name: Multi tenant-hosting rechten voor Windows 10
+          displayName: 'MTHR, multi-tenant, multitenant, hosting, rights'
+          href: ./windows/windows-desktop-multitenant-hosting-deployment.md
     - name: Aangepaste Linux-installatie kopieën
       items:
         - name: Overzicht
@@ -1205,6 +1167,8 @@
             - name: PowerShell
               displayName: Unmanaged VM to Managed Disks
               href: ./windows/convert-unmanaged-to-managed-disks.md
+        - name: Een VM kopiëren met CLI
+          href: ./linux/copy-vm.md
     - name: Een gegevens schijf toevoegen
       items:
         - name: Linux
@@ -1274,6 +1238,12 @@
           href: ./linux/azure-to-guest-disk-mapping.md
         - name: Beheerde schijf toewijzen aan gast schijf-Windows
           href: ./windows/azure-to-guest-disk-mapping.md
+        - name: File Storage
+          items:
+            - name: Linux-koppeling met SMB
+              href: ./linux/mount-azure-file-storage-on-linux-using-smb.md
+            - name: Bestanden kopiëren naar een virtuele Linux-machine
+              href: ./linux/copy-files-to-linux-vm-using-scp.md
         - name: Niet-gekoppelde schijven zoeken
           items:
             - name: CLI

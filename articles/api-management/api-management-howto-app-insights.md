@@ -3,22 +3,18 @@ title: Azure API Management integreren met Azure-toepassing inzichten
 titleSuffix: Azure API Management
 description: Meer informatie over het registreren en weer geven van gebeurtenissen vanuit Azure API Management in Azure-toepassing Insights.
 services: api-management
-documentationcenter: ''
 author: mikebudzynski
-manager: erikre
-editor: ''
 ms.service: api-management
-ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/20/2018
+ms.date: 02/25/2021
 ms.author: apimpm
-ms.openlocfilehash: adb221c12af436135b1e740fdef7c5c0a0a7f0cb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 97f4eb34b88b3454d65b65d236833e1256c98671
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096033"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564245"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Azure API Management integreren met Azure Application Insights
 
@@ -28,46 +24,38 @@ Azure API Management biedt eenvoudige integratie met Azure-toepassing Insights: 
 
 Als u deze hand leiding wilt volgen, moet u een Azure API Management-exemplaar hebben. Als u er nog geen hebt, voltooit u eerst de [zelf studie](get-started-create-service-instance.md) .
 
-## <a name="create-an-azure-application-insights-instance"></a>Een Azure-toepassing Insights-exemplaar maken
+## <a name="create-an-application-insights-instance"></a>Een Application Insights-exemplaar maken
 
-Voordat u Azure-toepassing Insights kunt gebruiken, moet u eerst een exemplaar van de service maken.
+Voordat u Application Insights kunt gebruiken, moet u eerst een exemplaar van de service maken. Zie [Application Insights resources op basis van werk ruimte](../azure-monitor/app/create-workspace-resource.md)voor stappen om een exemplaar te maken met behulp van de Azure Portal.
+## <a name="create-a-connection-between-application-insights-and-api-management"></a>Een verbinding maken tussen Application Insights en API Management
 
-1. Open de **Azure Portal** en navigeer naar **Application Insights** .  
-    ![Scherm afbeelding die laat zien hoe u naar Application Insights navigeert.](media/api-management-howto-app-insights/apim-app-insights-instance-1.png)  
-2. Klik op **+ Toevoegen** .  
-    ![App Insights maken](media/api-management-howto-app-insights/apim-app-insights-instance-2.png)  
-3. Vul het formulier in. Selecteer **Algemeen** als het **toepassings type** .
-4. Klik op **Create** .
-
-## <a name="create-a-connection-between-azure-application-insights-and-azure-api-management-service-instance"></a>Een verbinding maken tussen Azure-toepassing Insights-en Azure API Management service-exemplaar
-
-1. Navigeer naar uw **Azure API Management service-exemplaar** in de **Azure Portal** .
-2. Selecteer **Application Insights** in het menu aan de linkerkant.
-3. Klik op **+ Toevoegen** .  
-    ![Scherm afbeelding die laat zien waar een nieuwe verbinding moet worden toegevoegd.](media/api-management-howto-app-insights/apim-app-insights-logger-1.png)  
-4. Selecteer het eerder gemaakte **Application Insights** -exemplaar en geef een korte beschrijving op.
-5. Klik op **Create** .
-6. U hebt zojuist een Azure-toepassing Insights-logboek registratie gemaakt met een instrumentatie sleutel. Deze wordt nu weer gegeven in de lijst.  
-    ![Scherm afbeelding die laat zien waar de zojuist gemaakte Azure-toepassing Insights-logboeken met instrumentatie sleutel moeten worden weer gegeven.](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
+1. Navigeer naar uw **Azure API Management service-exemplaar** in de **Azure Portal**.
+1. Selecteer **Application Insights** in het menu aan de linkerkant.
+1. Klik op **+ Toevoegen**.  
+    :::image type="content" source="media/api-management-howto-app-insights/apim-app-insights-logger-1.png" alt-text="Scherm afbeelding die laat zien waar een nieuwe verbinding moet worden toegevoegd":::
+1. Selecteer het eerder gemaakte **Application Insights** -exemplaar en geef een korte beschrijving op.
+1. Klik op **Create**.
+1. U hebt zojuist een Application Insights logger gemaakt met een instrumentatie sleutel. Deze wordt nu weer gegeven in de lijst.  
+    :::image type="content" source="media/api-management-howto-app-insights/apim-app-insights-logger-2.png" alt-text="Scherm afbeelding die laat zien waar u de zojuist gemaakte Application Insights logger met instrumentatie sleutel wilt weer geven":::
 
 > [!NOTE]
 > Achter de scène wordt een [logger](/rest/api/apimanagement/2019-12-01/logger/createorupdate) -entiteit gemaakt in uw API Management-exemplaar met de instrumentatie sleutel van de Application Insights instantie.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Application Insights logboek registratie inschakelen voor uw API
 
-1. Navigeer naar uw **Azure API Management service-exemplaar** in de **Azure Portal** .
-2. Selecteer **API's** in het menu aan de linkerkant.
-3. Klik op uw API, in dit geval **demo** van de API van de vergadering.
-4. Ga naar het tabblad **instellingen** op de bovenste balk.
-5. Schuif omlaag naar de sectie **Diagnostische logboeken** .  
-    ![Logboek voor app Insights](media/api-management-howto-app-insights/apim-app-insights-api-1.png)  
-6. Schakel het **selectie vakje in** .
-7. Selecteer de bijgevoegde logboek registratie in de vervolg keuzelijst **bestemming** .
-8. Invoer **100** als **steek proef (%)** en tik op het selectie vakje **altijd logboek fouten** .
-9. Klik op **Opslaan** .
+1. Navigeer naar uw **Azure API Management service-exemplaar** in de **Azure Portal**.
+1. Selecteer **API's** in het menu aan de linkerkant.
+1. Klik op uw API, in dit geval **demo** van de API van de vergadering. Selecteer een versie als deze is geconfigureerd.
+1. Ga naar het tabblad **instellingen** op de bovenste balk.
+1. Schuif omlaag naar de sectie **Diagnostische logboeken** .  
+    :::image type="content" source="media/api-management-howto-app-insights/apim-app-insights-api-1.png" alt-text="Logboek voor app Insights":::
+1. Schakel het **selectie vakje in** .
+1. Selecteer de bijgevoegde logboek registratie in de vervolg keuzelijst **bestemming** .
+1. Invoer **100** als **steek proef (%)** en schakel het selectie vakje **altijd logboek fouten registreren** in.
+1. Selecteer **Opslaan**.
 
 > [!WARNING]
-> Het overschrijven van de standaard waarde **0** in de **eerste bytes van het veld hoofd tekst** kan de prestaties van uw api's aanzienlijk verminderen.
+> Als u de standaard waarde **0** in het **aantal Payload-bytes naar de logboek** instelling overschrijft, kunnen de prestaties van uw api's aanzienlijk afnemen.
 
 > [!NOTE]
 > Achter de scène wordt een [Diagnostische](/rest/api/apimanagement/2019-12-01/diagnostic/createorupdate) entiteit met de naam ' applicationinsights ' gemaakt op het API-niveau.
@@ -76,15 +64,17 @@ Voordat u Azure-toepassing Insights kunt gebruiken, moet u eerst een exemplaar v
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Inschakelen                              | booleaans                           | Hiermee wordt aangegeven of logboek registratie van deze API is ingeschakeld.                                                                                                                                                                                                                                                                                                |
 | Doel                         | Azure-toepassing Insights-logboek registratie | Hiermee wordt aangegeven Azure-toepassing Insights-logboeken moeten worden gebruikt                                                                                                                                                                                                                                                                                           |
-| Sampling (%)                        | decimal                           | Waarden van 0 tot 100 (procent). <br/> Hiermee geeft u op welk percentage van aanvragen wordt geregistreerd bij Azure-toepassing inzichten. met een steek proef van 0% worden er nul aanvragen geregistreerd, terwijl 100% de steek proef alle geregistreerde aanvragen houdt. <br/> Deze instelling wordt gebruikt voor het verminderen van de prestatie implicaties van logboek registratie aanvragen voor het Azure-toepassing van inzichten (Zie de sectie hieronder). |
-| Altijd fouten in logboek registreren                   | booleaans                           | Als deze instelling is geselecteerd, worden alle fouten geregistreerd in Azure-toepassing inzichten, ongeacht de **bemonsterings** instelling.                                                                                                                                                                                                                  |
-| Basis opties: kopteksten              | list                              | Hiermee geeft u de koppen op die worden vastgelegd Azure-toepassing inzichten op aanvragen en antwoorden.  Standaard: er worden geen headers vastgelegd.                                                                                                                                                                                                             |
-| Basis opties: eerste bytes van hoofd tekst  | geheel getal                           | Hiermee geeft u op hoeveel eerste bytes van de hoofd tekst worden vastgelegd in Azure-toepassing inzichten op aanvragen en antwoorden.  Standaard: de hoofd tekst is niet geregistreerd.                                                                                                                                                                                                    |
-| Geavanceerde opties: uitgebreid         |                                   | Hiermee geeft u het uitbreidings niveau op. Alleen aangepaste traceringen met een hoger Ernst niveau worden vastgelegd. Standaard: informatie.                                                                                                                                                                                                                               |
-| Geavanceerde opties: front-end-aanvraag  |                                   | Hiermee wordt aangegeven of en hoe de front- *End-aanvragen* worden geregistreerd bij Azure-toepassing Insights. De front- *End-aanvraag* is een aanvraag die binnenkomend is voor de Azure API Management-service.                                                                                                                                                                        |
-| Geavanceerde opties: frontend-antwoord |                                   | Hiermee wordt aangegeven of en hoe en hoe *frontend-antwoorden* worden vastgelegd in azure-toepassing Insights. *Frontend-antwoord* is een antwoord van de Azure API Management-service.                                                                                                                                                                   |
-| Geavanceerde opties: back-end-aanvraag   |                                   | Hiermee wordt aangegeven of en hoe *back-aanvragen* worden geregistreerd voor Azure-toepassing inzichten. *Back-end-aanvraag* is een uitgaande aanvraag van de Azure API Management-service.                                                                                                                                                                        |
-| Geavanceerde opties: reactie op back-end  |                                   | Hiermee geeft u op of en hoe *back-end-antwoorden* worden vastgelegd voor Azure-toepassing inzichten. *Back-end-respons* is een antwoord dat binnenkomt bij de Azure API Management-service.                                                                                                                                                                       |
+| Sampling (%)                        | decimal                           | Waarden van 0 tot 100 (procent). <br/> Hiermee geeft u het percentage aanvragen op dat wordt geregistreerd bij Application Insights. met een steek proef van 0% worden er nul aanvragen geregistreerd, terwijl 100% de steek proef alle geregistreerde aanvragen houdt. <br/> Gebruik deze instelling om het effect op de prestaties te beperken bij het registreren van aanvragen bij Application Insights. Bekijk [prestatie implicaties en logboek sampling](#performance-implications-and-log-sampling). |
+| Altijd fouten in logboek registreren                   | booleaans                           | Als deze instelling is geselecteerd, worden alle fouten geregistreerd in Application Insights, ongeacht de **bemonsterings** instelling.   
+| IP-adres van client registreren | |  Als deze instelling is geselecteerd, wordt het IP-adres van de client voor API-aanvragen geregistreerd in Application Insights.                                         |
+| Uitgebreidheid         |                                   | Hiermee geeft u het uitbreidings niveau op. Alleen aangepaste traceringen met een hoger Ernst niveau worden vastgelegd. Standaard: informatie.      | 
+| Correlatie Protocol |  |  Selecteer het protocol dat wordt gebruikt voor het correleren van telemetrie die door meerdere onderdelen worden verzonden. Standaard: verouderd <br/>Zie [correlatie tussen de telemetrie in Application Insights](../azure-monitor/app/correlation.md)voor meer informatie.  |
+| Basis opties: te registreren kopteksten              | list                              | Hiermee geeft u de koppen op die worden geregistreerd voor Application Insights voor aanvragen en antwoorden.  Standaard: er worden geen headers vastgelegd.                                                                                                                                                                                                             |
+| Basis opties: aantal Payload-bytes dat moet worden geregistreerd | geheel getal                           | Hiermee geeft u op hoeveel eerste bytes van de hoofd tekst moeten worden geregistreerd in Application Insights voor aanvragen en antwoorden.  Standaard waarde: 0.                                                                                                                                                                                                    |
+| Geavanceerde opties: front-end-aanvraag  |                                   | Hiermee wordt aangegeven of en hoe de front- *End-aanvragen* worden geregistreerd bij Application Insights. De front- *End-aanvraag* is een aanvraag die binnenkomend is voor de Azure API Management-service.                                                                                                                                                                        |
+| Geavanceerde opties: frontend-antwoord |                                   | Hiermee wordt aangegeven of en hoe de *frontend-antwoorden* bij Application Insights worden geregistreerd. *Frontend-antwoord* is een antwoord van de Azure API Management-service.                                                                                                                                                                   |
+| Geavanceerde opties: back-end-aanvraag   |                                   | Hiermee wordt aangegeven of en hoe *back-aanvragen* worden geregistreerd bij Application Insights. *Back-end-aanvraag* is een uitgaande aanvraag van de Azure API Management-service.                                                                                                                                                                        |
+| Geavanceerde opties: reactie op back-end  |                                   | Hiermee wordt aangegeven of en hoe *back-end-reacties* worden geregistreerd bij Application Insights. *Back-end-respons* is een antwoord dat binnenkomt bij de Azure API Management-service.                                                                                                                                                                       |
 
 > [!NOTE]
 > U kunt Logboeken opgeven op verschillende niveaus: enkelvoudige API-logboek registratie of een logger voor alle Api's.
@@ -93,28 +83,29 @@ Voordat u Azure-toepassing Insights kunt gebruiken, moet u eerst een exemplaar v
 > + Als ze verschillende logboeken zijn, worden beide gebruikt (multiplex Logboeken),
 > + Als ze dezelfde logboeken hebben, maar wel verschillende instellingen hebben, overschrijft het één voor één API (meer gedetailleerd niveau) de voor alle Api's.
 
-## <a name="what-data-is-added-to-azure-application-insights"></a>Welke gegevens worden toegevoegd aan Azure-toepassing Insights
+## <a name="what-data-is-added-to-application-insights"></a>Welke gegevens worden toegevoegd aan Application Insights
 
-Azure-toepassing Insights ontvangt:
+Application Insights ontvangt:
 
-+ Een telemetrie-item *aanvragen* voor elke inkomende aanvraag (front- *End-aanvraag* , *frontend-antwoord* )
-+ Telemetrie-item voor *afhankelijkheid* , voor elke aanvraag die wordt doorgestuurd naar een back-end-service (back-end- *aanvraag* , *back-end* )
-+ Telemetrie van *uitzonde ring* voor elke mislukte aanvraag.
++ Een telemetrie-item *aanvragen* voor elke inkomende aanvraag (front-*End-aanvraag*, *frontend-antwoord*)
++ Telemetrie-item voor *afhankelijkheid* , voor elke aanvraag die wordt doorgestuurd naar een back-end-service (back-end-*aanvraag*, *back-end*)
++ Telemetrie van *uitzonde ring* voor elke mislukte aanvraag:
+    + is mislukt vanwege een gesloten client verbinding
+    + Er is een *fout opgetreden bij* het API-beleid
+    + heeft een antwoord-HTTP-status code die overeenkomt met 4xx of 5xx.
++ Een telemetrie-item *traceren* als u een [tracerings](api-management-advanced-policies.md#Trace) beleid configureert. De `severity` instelling in het `trace` beleid moet gelijk zijn aan of groter zijn dan de `verbosity` instelling in de Application Insights logboek registratie.
 
-Een mislukte aanvraag is een aanvraag, die:
-
-+ is mislukt vanwege een gesloten client verbinding of
-+ Er is een *fout opgetreden in* de sectie van het API-beleid of
-+ heeft een antwoord-HTTP-status code die overeenkomt met 4xx of 5xx.
+> [!NOTE]
+> Zie [Application Insights limieten](../azure-monitor/service-limits.md#application-insights) voor informatie over de maximale grootte en het aantal metrische gegevens en gebeurtenissen per Application Insights exemplaar.
 
 ## <a name="performance-implications-and-log-sampling"></a>Prestatie implicaties en logboek steekproef
 
 > [!WARNING]
 > Het vastleggen van alle gebeurtenissen kan ernstige gevolgen hebben voor de prestaties, afhankelijk van het aantal binnenkomende aanvragen.
 
-Op basis van interne belasting tests heeft het inschakelen van deze functie een reductie van 40%-50% veroorzaakt wanneer de aanvraag snelheid de 1.000 aanvragen per seconde overschrijdt. Azure-toepassing Insights is ontworpen om statistische analyses te gebruiken voor het beoordelen van de prestaties van toepassingen. Het is niet bedoeld als controle systeem en is niet geschikt voor het vastleggen van elke afzonderlijke aanvraag voor high-volume-Api's.
+Op basis van interne belasting tests heeft het inschakelen van deze functie een reductie van 40%-50% veroorzaakt wanneer de aanvraag snelheid de 1.000 aanvragen per seconde overschrijdt. Application Insights is ontworpen om statistische analyses te gebruiken voor het beoordelen van de prestaties van toepassingen. Het is niet bedoeld als controle systeem en is niet geschikt voor het vastleggen van elke afzonderlijke aanvraag voor high-volume-Api's.
 
-U kunt het aantal aanvragen dat wordt geregistreerd, bewerken door de **sampling** -instelling aan te passen (Zie de bovenstaande stappen). Waarde 100% betekent dat alle aanvragen worden geregistreerd, terwijl 0% helemaal geen logboek registratie weerspiegelt. Door de **steek proef** wordt de hoeveelheid telemetrie verminderd, waardoor de prestaties aanzienlijk worden vermeden, terwijl de voor delen van logboek registratie nog steeds worden gereduceerd.
+U kunt het aantal aanvragen dat wordt geregistreerd, bewerken door de **sampling** -instelling aan te passen (Zie de voor gaande stappen). Een waarde van 100% betekent dat alle aanvragen worden geregistreerd, terwijl 0% geen logboek registratie weerspiegelt. Door de **steek proef** wordt de hoeveelheid telemetrie verminderd, waardoor de prestaties aanzienlijk worden verkleind, terwijl de voor delen van logboek registratie nog steeds worden verzorgd.
 
 Het overs laan van de logboek registratie van headers en hoofd tekst van aanvragen en antwoorden heeft ook een positieve invloed op het oplossen van prestatie problemen.
 

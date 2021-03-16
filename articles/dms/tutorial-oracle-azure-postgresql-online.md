@@ -8,21 +8,22 @@ ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
+ms.subservice: migration-guide
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/24/2020
-ms.openlocfilehash: 09bcc85c0640bf0061ec0c872161cbc9afe51da6
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 2be824c89ac1e6b900dc9b67e046e2be2c7f8919
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101742123"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562821"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Zelfstudie: Oracle online migreren naar Azure Database for PostgreSQL met DMS (preview)
 
 > [!IMPORTANT]
-> Het migratie scenario ' Oracle to Azure Database for PostgreSQL ' (momenteel in Preview) is niet meer beschikbaar na 1 mei 2021. We blijven ondersteuning bieden via alternatieve hulp middelen (zoals Ora2pg) en bieden de beste migratie-ervaring voor Oracle naar PostgreSQL-migraties. Zie voor aanbevolen procedures voor migratie [Oracle to Azure Database for PostgreSQL Migration Guide] ( https://aka.ms/OracletoPGguide) . 
+> **Oracle to Azure database for PostgreSQL** Migration scenario (momenteel in Preview) is na 1 mei 2021 niet meer beschikbaar. We blijven ondersteuning bieden via alternatieve hulp middelen (zoals Ora2pg) en bieden de beste migratie-ervaring voor Oracle naar PostgreSQL-migraties. Zie voor aanbevolen procedures voor het migreren van [Oracle naar Azure database for PostgreSQL-migratie handleiding](https://aka.ms/OracletoPGguide). 
 
 U kunt Azure Database Migration Service gebruiken om Oracle-databases die on-premises worden gehost of op virtuele machines met minimale downtime te migreren van een on-premises PostgreSQL-exemplaar naar [Azure Database for PostgreSql](../postgresql/index.yml). Met andere woorden, u kunt de migratie voltooien met minimale downtime voor de toepassing. In deze zelfstudie migreert u de voorbeelddatabase **HR** van een on-premises exemplaar of virtuele machine met Oracle 11g naar Azure Database for PostgreSQL met behulp van de online-migratieactiviteit in Azure Database Migration Service.
 

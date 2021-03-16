@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: 3767a16656ac4d11511c0928be8b2703c4e94c7c
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: eb19005019a6e4e878f6b0bd6a145048d4a2804c
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98680600"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563773"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen (preview-versie)
 Service Fabric knooppunt typen worden geleverd met inherente veronderstelling dat op een bepaald moment stateful Services kunnen worden geplaatst op de knoop punten. Stateless knooppunt typen versoepelen deze veronderstelling voor een knooppunt type, waardoor het knooppunt type ook andere functies kan gebruiken, zoals het snel uitbreiden van bewerkingen, ondersteuning voor automatische upgrades van besturings systemen op Bronze duurzaamheid en uitschalen naar meer dan 100 knoop punten in één virtuele-machine schaalset.
@@ -72,9 +72,13 @@ Als u een of meer knooppunt typen als stateless wilt instellen in een cluster br
 Als u stateless knooppunt typen wilt inschakelen, moet u de onderliggende resource van de virtuele-machine schaalset op de volgende manier configureren:
 
 * De waarde van de eigenschap  **singlePlacementGroup** , die moet worden ingesteld op **False** als u wilt schalen naar meer dan 100 vm's.
-* De **upgrade Policy** van de schaalset **moet worden** ingesteld op **Rolling**.
+* De **upgrade Policy** - **modus** van de schaalset moet worden ingesteld op **Rolling**.
 * Voor de modus voor rolling upgrades is een configuratie van een toepassings status of status controles vereist. Configureer de status test met de standaard configuratie voor stateless knooppunt typen, zoals hieronder wordt voorgesteld. Zodra toepassingen zijn geïmplementeerd naar het knooppunt type, kunnen de poorten voor status controle en status worden gewijzigd om de status van de toepassing te bewaken.
 
+>[!NOTE]
+> Het is vereist dat het aantal platform fout domeinen wordt bijgewerkt naar 5 wanneer een stateless knooppunt type wordt ondersteund door een schaalset voor virtuele machines die meerdere zones beslaat. Raadpleeg deze [sjabloon](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/15-VM-2-NodeTypes-Windows-Stateless-CrossAZ-Secure) voor meer informatie.
+> 
+> **platformFaultDomainCount: 5**
 ```json
 {
     "apiVersion": "2018-10-01",

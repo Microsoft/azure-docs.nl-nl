@@ -4,14 +4,15 @@ description: Hierin wordt beschreven hoe u een PostgreSQL-data base ophaalt in e
 author: sr-msft
 ms.author: srranga
 ms.service: postgresql
+ms.subservice: migration-guide
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 4fe15d1bd23f36b7289c54bedf575ae4760600e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 16166183b56b371fe8338894f83dbacf2e659c53
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91710801"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563552"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Uw PostgreSQL-database migreren met dumpen en herstel
 [!INCLUDE[applies-to-postgres-single-flexible-server](includes/applies-to-postgres-single-flexible-server.md)]

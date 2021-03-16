@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/12/2021
 ms.author: alkohli
-ms.openlocfilehash: 8be0a444dca4cae9b8f7a1e7c04be8a3046e56be
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 348ddff56ed61cd608d6b9f28417e7cd4c4e6b13
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102638102"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563960"
 ---
 # <a name="configure-and-run-a-module-on-gpu-on-azure-stack-edge-pro-device"></a>Een module op GPU op Azure Stack Edge Pro-apparaat configureren en uitvoeren
 
@@ -104,7 +104,7 @@ Als u een module wilt configureren voor het gebruik van de GPU op uw Azure Stack
        Voor meer informatie over omgevings variabelen die u met de NVIDIA GPU kunt gebruiken, gaat u naar [NVIDIA container runtime](https://github.com/NVIDIA/nvidia-container-runtime#environment-variables-oci-spec).
 
     > [!NOTE]
-    > Een GPU kan slechts worden toegewezen aan één module. Een module kan echter een van beide of geen Gpu's gebruiken.
+    > Een module kan één of geen Gpu's gebruiken.
 
 12. Voer een naam in voor uw module. Op dit moment kunt u de optie voor het maken van een container opgeven en de dubbele instellingen voor de module wijzigen of als u klaar bent, selecteert u **toevoegen**. 
 

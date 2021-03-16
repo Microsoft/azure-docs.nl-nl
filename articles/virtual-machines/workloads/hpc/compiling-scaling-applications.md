@@ -5,19 +5,47 @@ author: vermagit
 ms.service: virtual-machines
 ms.subservice: hpc
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 03/12/2021
 ms.author: amverma
 ms.reviewer: cynthn
-ms.openlocfilehash: d560b261e058d01040616f3c59ede60e5986c672
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 9185f502a7d9dd7ab00a149fb2f3365372b350cc
+ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101666973"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103470751"
 ---
 # <a name="scaling-hpc-applications"></a>HPC-toepassingen schalen
 
 Optimale schaal-en schaal prestaties van HPC-toepassingen op Azure vereist het afstemmen van prestaties en optimalisatie experimenten voor de specifieke werk belasting. Deze sectie en de VM-reeks-specifieke pagina's bieden algemene richt lijnen voor het schalen van uw toepassingen.
+
+## <a name="optimally-scaling-mpi"></a>Optimaal schalen van MPI 
+
+De volgende suggesties zijn van toepassing op optimale efficiëntie, prestaties en consistentie van toepassingen:
+
+- Voor taken met een kleinere schaal (< 256 KB-verbindingen) gebruikt u de optie:
+   ```bash
+   UCX_TLS=rc,sm
+   ```
+
+- Voor grotere taken (> 256 KB-verbindingen) gebruikt u de optie:
+   ```bash
+   UCX_TLS=dc,sm
+   ```
+
+- In de bovenstaande voor het berekenen van het aantal verbindingen voor uw MPI-taak gebruikt u:
+   ```bash
+   Max Connections = (processes per node) x (number of nodes per job) x (number of nodes per job) 
+   ```
+
+## <a name="process-pinning"></a>Proces vastmaken
+
+- U kunt processen aan kernen vastmaken met behulp van een sequentiële koppelings benadering (in plaats van een methode voor automatisch sluiten). 
+- Binding via Numa/core/HwThread is beter dan de standaard binding.
+- Gebruik voor hybride parallelle toepassingen (OpenMP + MPI) 4 threads en 1 MPI Rank per CCX op HB-en HBv2 VM-grootten.
+- Voor zuivere MPI-toepassingen kunt u experimenteren met 1-4 MPI Ranks per CCX voor optimale prestaties van HB-en HBv2 VM-grootten.
+- Sommige toepassingen met extreme gevoeligheid voor geheugen bandbreedte kunnen profiteren van een beperkt aantal kernen per CCX. Voor deze toepassingen kan het gebruik van 3 of 2 kernen per CCX ertoe leiden dat geheugen bandbreedte conflicten worden verminderd en hogere prestaties of een consistente schaal baarheid worden gerealiseerd. Met name MPI Allreduce kan profiteren van deze benadering.
+- Voor grote grotere schaal runs wordt aanbevolen UD-of Hybrid RC + UD-trans porten te gebruiken. Veel MPI-bibliotheken/runtime-bibliotheken doen dit intern (zoals UCX of MVAPICH2). Controleer uw transport configuraties voor grootschalige uitvoeringen.
 
 ## <a name="compiling-applications"></a>Toepassingen compileren
 
@@ -25,7 +53,7 @@ Hoewel het niet nodig is om toepassingen met de juiste optimalisatie vlaggen te 
 
 ### <a name="amd-optimizing-cc-compiler"></a>AMD-compiler voor het optimaliseren van C/C++
 
-Het AOCC-Compileer systeem (AMD Optimization C/C++ compiler) biedt een hoog niveau aan geavanceerde optimalisaties, multithreading en processor ondersteuning, waaronder globale optimalisatie, vectorization, Inter-procedureve analyses, lussen van trans formaties en het genereren van code. AOCC compiler binaire bestanden zijn geschikt voor Linux-systemen met de glibc-versie 2,17 (GNU C Library) en hoger. De compiler suite bestaat uit een C/C++-compiler (clang), een Fortran-compiler (FLANG) en een Fortran front-end naar clang (draak ei).
+Het AOCC-Compileer systeem (AMD Optimization C/C++ compiler) biedt een hoog niveau aan geavanceerde optimalisaties, multithreading en processor ondersteuning, waaronder globale optimalisatie, vectorization, Inter-procedureve analyses, lussen van trans formaties en het genereren van code. AOCC compiler binaire bestanden zijn geschikt voor Linux-systemen met de glibc-versie 2,17 (GNU C Library) en hoger. De compiler suite bestaat uit een C/C++-compiler (clang), een Fortran-compiler (FLANG) en een Fortran front-end-naar-clang (draak-eieren).
 
 ### <a name="clang"></a>Clang
 
@@ -68,17 +96,6 @@ Voor HPC adviseert AMD GCC compiler 7,3 of nieuwer. Oudere versies, zoals 4.8.5 
 ```bash
 gcc $(OPTIMIZATIONS) $(OMP) $(STACK) $(STREAM_PARAMETERS) stream.c -o stream.gcc
 ```
-
-## <a name="scaling-applications"></a>Toepassingen vergroten/verkleinen 
-
-De volgende suggesties zijn van toepassing op optimale efficiëntie, prestaties en consistentie van toepassingen:
-
-* Pincodes voor het vastmaken van processen aan kern geheugens van 0-59 (in plaats van een automatische balans benadering). 
-* Binding via Numa/core/HwThread is beter dan de standaard binding.
-* Gebruik voor hybride parallelle toepassingen (OpenMP + MPI) 4 threads en 1 MPI Rank per CCX.
-* Voor zuivere MPI-toepassingen kunt u experimenteren met 1-4 MPI Ranks per CCX voor optimale prestaties.
-* Sommige toepassingen met extreme gevoeligheid voor geheugen bandbreedte kunnen profiteren van een beperkt aantal kernen per CCX. Voor deze toepassingen kan het gebruik van 3 of 2 kernen per CCX ertoe leiden dat geheugen bandbreedte conflicten worden verminderd en hogere prestaties of een consistente schaal baarheid worden gerealiseerd. Met name MPI Allreduce kan van deze voor delen.
-* Voor grote grotere schaal runs wordt aanbevolen UD-of Hybrid RC + UD-trans porten te gebruiken. Veel MPI-bibliotheken/runtime-bibliotheken doen dit intern (zoals UCX of MVAPICH2). Controleer uw transport configuraties voor grootschalige uitvoeringen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2020
 ms.author: apimpm
-ms.openlocfilehash: 3a37cde79cef59eaf9c3ef130bfbae9cff958bd7
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 03529fd3c0231617c477f4f16773039a02386683
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919437"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562481"
 ---
 # <a name="api-management-advanced-policies"></a>API Management advanced policies (Geavanceerde beleidsregels API Management)
 
@@ -128,15 +128,15 @@ In dit voor beeld ziet u hoe u het filteren van inhoud uitvoert door gegevens el
 
 | Element   | Beschrijving                                                                                                                                                                                                                                                               | Vereist |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| desgewenst    | Hoofd element.                                                                                                                                                                                                                                                             | Yes      |
-| Als      | De voor waarde die moet worden gebruikt voor de `if` of `ifelse` delen van het `choose` beleid. Als het `choose` beleid meerdere `when` secties heeft, worden ze opeenvolgend geëvalueerd. Zodra de `condition` van een wanneer-element wordt geëvalueerd `true` , worden er geen verdere `when` voor waarden geëvalueerd. | Yes      |
-| tenzij | Bevat het beleids fragment dat moet worden gebruikt als aan geen van de `when` voor waarden wordt voldaan `true` .                                                                                                                                                                               | No       |
+| desgewenst    | Hoofd element.                                                                                                                                                                                                                                                             | Ja      |
+| Als      | De voor waarde die moet worden gebruikt voor de `if` of `ifelse` delen van het `choose` beleid. Als het `choose` beleid meerdere `when` secties heeft, worden ze opeenvolgend geëvalueerd. Zodra de `condition` van een wanneer-element wordt geëvalueerd `true` , worden er geen verdere `when` voor waarden geëvalueerd. | Ja      |
+| tenzij | Bevat het beleids fragment dat moet worden gebruikt als aan geen van de `when` voor waarden wordt voldaan `true` .                                                                                                                                                                               | Nee       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk                                              | Beschrijving                                                                                               | Vereist |
 | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- | -------- |
-| condition = "Boole-expressie &#124; Booleaanse constante" | De booleaanse expressie of-constante die moet worden geëvalueerd wanneer de insluitende `when` beleids instructie wordt geëvalueerd. | Yes      |
+| condition = "Boole-expressie &#124; Booleaanse constante" | De booleaanse expressie of-constante die moet worden geëvalueerd wanneer de insluitende `when` beleids instructie wordt geëvalueerd. | Ja      |
 
 ### <a name="usage"></a><a name="ChooseUsage"></a> Belasting
 
@@ -246,17 +246,17 @@ Dit beleid op bewerking niveau stuurt geen aanvragen door naar de back-end-servi
 
 | Element         | Beschrijving   | Vereist |
 | --------------- | ------------- | -------- |
-| door sturen-aanvraag | Hoofd element. | Yes      |
+| door sturen-aanvraag | Hoofd element. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk                                     | Beschrijving                                                                                                                                                                                                                                                                                                    | Vereist | Standaard |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| timeout = "geheel getal"                             | De hoeveelheid tijd in seconden die moet worden gewacht voordat de HTTP-antwoord headers worden geretourneerd door de back-end-service voordat een time-outfout optreedt. De minimum waarde is 0 seconden. Waarden die groter zijn dan 240 seconden, worden mogelijk niet geaccepteerd omdat de onderliggende netwerk infrastructuur na deze tijd niet-actieve verbindingen kan verwijderen. | No       | Geen    |
-| follow-redirects = "False &#124; True"          | Hiermee geeft u op of omleidingen van de back-end-service worden gevolgd door de gateway of worden geretourneerd naar de aanroeper.                                                                                                                                                                                                    | No       | onjuist   |
-| buffer-Request-Body = "False &#124; True"       | Wanneer de aanvraag is ingesteld op ' True ', wordt de buffer opgeslagen en wordt deze opnieuw gebruikt bij [opnieuw proberen](api-management-advanced-policies.md#Retry).                                                                                                                                                                                               | No       | onjuist   |
-| buffer-Response = "False &#124; True" | Beïnvloedt de verwerking van gesegmenteerde reacties. Als deze eigenschap is ingesteld op ' false ', wordt elk segment dat is ontvangen van de back-end onmiddellijk geretourneerd naar de aanroeper. Als deze eigenschap is ingesteld op ' True ', worden chunks gebufferd (8 KB, tenzij het einde van de stroom wordt gedetecteerd) en alleen geretourneerd naar de aanroeper. | No | true |
-| failover-on-error-status-code = "False &#124; True" | Als deze para graaf is ingesteld op ' True ' [, wordt er een fout melding](api-management-error-handling-policies.md) weer voor antwoord codes in het bereik van 400 tot 599.                                                                                                                                                                      | No       | onjuist   |
+| timeout = "geheel getal"                             | De hoeveelheid tijd in seconden die moet worden gewacht voordat de HTTP-antwoord headers worden geretourneerd door de back-end-service voordat een time-outfout optreedt. De minimum waarde is 0 seconden. Waarden die groter zijn dan 240 seconden, worden mogelijk niet geaccepteerd omdat de onderliggende netwerk infrastructuur na deze tijd niet-actieve verbindingen kan verwijderen. | Nee       | Geen    |
+| follow-redirects = "False &#124; True"          | Hiermee geeft u op of omleidingen van de back-end-service worden gevolgd door de gateway of worden geretourneerd naar de aanroeper.                                                                                                                                                                                                    | Nee       | onjuist   |
+| buffer-Request-Body = "False &#124; True"       | Wanneer de aanvraag is ingesteld op ' True ', wordt de buffer opgeslagen en wordt deze opnieuw gebruikt bij [opnieuw proberen](api-management-advanced-policies.md#Retry).                                                                                                                                                                                               | Nee       | onjuist   |
+| buffer-Response = "False &#124; True" | Beïnvloedt de verwerking van gesegmenteerde reacties. Als deze eigenschap is ingesteld op ' false ', wordt elk segment dat is ontvangen van de back-end onmiddellijk geretourneerd naar de aanroeper. Als deze eigenschap is ingesteld op ' True ', worden chunks gebufferd (8 KB, tenzij het einde van de stroom wordt gedetecteerd) en alleen geretourneerd naar de aanroeper. | Nee | true |
+| failover-on-error-status-code = "False &#124; True" | Als deze para graaf is ingesteld op ' True ' [, wordt er een fout melding](api-management-error-handling-policies.md) weer voor antwoord codes in het bereik van 400 tot 599.                                                                                                                                                                      | Nee       | onjuist   |
 
 ### <a name="usage"></a>Gebruik
 
@@ -299,14 +299,14 @@ In het volgende voor beeld ziet u hoe u het aantal aanvragen dat wordt doorgestu
 
 | Element           | Beschrijving   | Vereist |
 | ----------------- | ------------- | -------- |
-| limiet-gelijktijdigheid | Hoofd element. | Yes      |
+| limiet-gelijktijdigheid | Hoofd element. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk | Beschrijving                                                                                        | Vereist | Standaard |
 | --------- | -------------------------------------------------------------------------------------------------- | -------- | ------- |
-| sleutel       | Een teken reeks. Expressie toegestaan. Hiermee geeft u het gelijktijdigheids bereik op. Kan worden gedeeld door meerdere beleids regels. | Yes      | N.v.t.     |
-| maximum aantal | Een geheel getal. Hiermee geeft u een maximum aantal aanvragen op dat het beleid mag invoeren.           | Yes      | N.v.t.     |
+| sleutel       | Een teken reeks. Expressie toegestaan. Hiermee geeft u het gelijktijdigheids bereik op. Kan worden gedeeld door meerdere beleids regels. | Ja      | N.v.t.     |
+| maximum aantal | Een geheel getal. Hiermee geeft u een maximum aantal aanvragen op dat het beleid mag invoeren.           | Ja      | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -352,13 +352,13 @@ Een wille keurige teken reeks kan worden gebruikt als de waarde die moet worden 
 
 | Element         | Beschrijving                                                                     | Vereist |
 | --------------- | ------------------------------------------------------------------------------- | -------- |
-| aanmelden bij eventhub | Hoofd element. De waarde van dit element is de teken reeks die moet worden aangemeld bij uw Event Hub. | Yes      |
+| aanmelden bij eventhub | Hoofd element. De waarde van dit element is de teken reeks die moet worden aangemeld bij uw Event Hub. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk     | Beschrijving                                                               | Vereist                                                             |
 | ------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| logger-id     | De ID van de logboek registratie die is geregistreerd bij uw API Management service.         | Yes                                                                  |
+| logger-id     | De ID van de logboek registratie die is geregistreerd bij uw API Management service.         | Ja                                                                  |
 | partitie-id  | Hiermee geeft u de index op van de partitie waarnaar berichten worden verzonden.             | Optioneel. Dit kenmerk mag niet worden gebruikt als het `partition-key` wordt gebruikt. |
 | partitie sleutel | Hiermee geeft u de waarde op die wordt gebruikt voor partitie toewijzing wanneer berichten worden verzonden. | Optioneel. Dit kenmerk mag niet worden gebruikt als het `partition-id` wordt gebruikt.  |
 
@@ -397,14 +397,14 @@ status code and media type. If no example or schema found, the content is empty.
 
 | Element       | Beschrijving   | Vereist |
 | ------------- | ------------- | -------- |
-| model-reactie | Hoofd element. | Yes      |
+| model-reactie | Hoofd element. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk    | Beschrijving                                                                                           | Vereist | Standaard |
 | ------------ | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
-| status-code  | Hiermee geeft u de antwoord status code op en wordt gebruikt om het bijbehorende voor beeld of schema te selecteren.                 | No       | 200     |
-| inhouds type | Geeft de waarde van de `Content-Type` antwoord header aan en wordt gebruikt om een overeenkomend voor beeld of schema te selecteren. | No       | Geen    |
+| status-code  | Hiermee geeft u de antwoord status code op en wordt gebruikt om het bijbehorende voor beeld of schema te selecteren.                 | Nee       | 200     |
+| inhouds type | Geeft de waarde van de `Content-Type` antwoord header aan en wordt gebruikt om een overeenkomend voor beeld of schema te selecteren. | Nee       | Geen    |
 
 ### <a name="usage"></a>Gebruik
 
@@ -456,18 +456,18 @@ In het volgende voor beeld wordt het door sturen van aanvragen tot tien keer opn
 
 | Element | Beschrijving                                                         | Vereist |
 | ------- | ------------------------------------------------------------------- | -------- |
-| retry   | Hoofd element. Kan elk ander beleid als onderliggende elementen bevatten. | Yes      |
+| retry   | Hoofd element. Kan elk ander beleid als onderliggende elementen bevatten. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk        | Beschrijving                                                                                                                                           | Vereist | Standaard |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| regeling        | Een letterlijke Booleaanse waarde of [expressie](api-management-policy-expressions.md) die aangeeft of nieuwe pogingen moeten worden gestopt ( `false` ) of blijven ( `true` ).      | Yes      | N.v.t.     |
-| count            | Een positief getal dat het maximum aantal pogingen aangeeft dat moet worden geprobeerd.                                                                                | Yes      | N.v.t.     |
-| interval         | Een positief getal in seconden dat het wacht interval tussen nieuwe pogingen aangeeft.                                                                 | Yes      | N.v.t.     |
-| Max-interval     | Een positief getal in seconden voor het maximale wacht interval tussen nieuwe pogingen. Het wordt gebruikt voor het implementeren van een exponentieel nieuwe algoritme. | No       | N.v.t.     |
-| delta            | Een positief getal in seconden voor de toename van het wacht interval. Het wordt gebruikt om de algoritmen voor lineaire en exponentiële pogingen te implementeren.             | No       | N.v.t.     |
-| eerste snelle poging | Als `true` deze is ingesteld op, wordt de eerste nieuwe poging onmiddellijk uitgevoerd.                                                                                  | No       | `false` |
+| regeling        | Een letterlijke Booleaanse waarde of [expressie](api-management-policy-expressions.md) die aangeeft of nieuwe pogingen moeten worden gestopt ( `false` ) of blijven ( `true` ).      | Ja      | N.v.t.     |
+| count            | Een positief getal dat het maximum aantal pogingen aangeeft dat moet worden geprobeerd.                                                                                | Ja      | N.v.t.     |
+| interval         | Een positief getal in seconden dat het wacht interval tussen nieuwe pogingen aangeeft.                                                                 | Ja      | N.v.t.     |
+| Max-interval     | Een positief getal in seconden voor het maximale wacht interval tussen nieuwe pogingen. Het wordt gebruikt voor het implementeren van een exponentieel nieuwe algoritme. | Nee       | N.v.t.     |
+| delta            | Een positief getal in seconden voor de toename van het wacht interval. Het wordt gebruikt om de algoritmen voor lineaire en exponentiële pogingen te implementeren.             | Nee       | N.v.t.     |
+| eerste snelle poging | Als `true` deze is ingesteld op, wordt de eerste nieuwe poging onmiddellijk uitgevoerd.                                                                                  | Nee       | `false` |
 
 > [!NOTE]
 > Wanneer alleen de `interval` is opgegeven, worden er nieuwe pogingen tot een **vast** interval uitgevoerd.
@@ -513,10 +513,10 @@ Het `return-response` beleid breekt de uitvoering van de pijp lijn af en retourn
 
 | Element         | Beschrijving                                                                               | Vereist |
 | --------------- | ----------------------------------------------------------------------------------------- | -------- |
-| retour-antwoord | Hoofd element.                                                                             | Yes      |
-| set-header      | Een [ingestelde header-](api-management-transformation-policies.md#SetHTTPheader) beleids instructie. | No       |
-| set-Body        | Een instructie [set-Body-](api-management-transformation-policies.md#SetBody) beleid.         | No       |
-| set-status      | Een instructie van een [set-status](api-management-advanced-policies.md#SetStatus) beleid.           | No       |
+| retour-antwoord | Hoofd element.                                                                             | Ja      |
+| set-header      | Een [ingestelde header-](api-management-transformation-policies.md#SetHTTPheader) beleids instructie. | Nee       |
+| set-Body        | Een instructie [set-Body-](api-management-transformation-policies.md#SetBody) beleid.         | Nee       |
+| set-status      | Een instructie van een [set-status](api-management-advanced-policies.md#SetStatus) beleid.           | Nee       |
 
 ### <a name="attributes"></a>Kenmerken
 
@@ -583,20 +583,20 @@ In dit voorbeeld beleid ziet u een voor beeld van het gebruik van het `send-one-
 
 | Element                    | Beschrijving                                                                                                 | Vereist                        |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Send-eenrichtings aanvraag       | Hoofd element.                                                                                               | Yes                             |
-| URL                        | De URL van de aanvraag.                                                                                     | Geen if-modus = kopiëren; anders Ja. |
+| Send-eenrichtings aanvraag       | Hoofd element.                                                                                               | Ja                             |
+| url                        | De URL van de aanvraag.                                                                                     | Geen if-modus = kopiëren; anders Ja. |
 | method                     | De HTTP-methode voor de aanvraag.                                                                            | Geen if-modus = kopiëren; anders Ja. |
-| koptekst                     | Aanvraag header. Meerdere koptekst elementen gebruiken voor meerdere aanvraag headers.                                  | No                              |
-| body                       | De aanvraag tekst.                                                                                           | No                              |
-| verificatie-certificaat | [Certificaat dat moet worden gebruikt voor client verificatie](api-management-authentication-policies.md#ClientCertificate) | No                              |
+| koptekst                     | Aanvraag header. Meerdere koptekst elementen gebruiken voor meerdere aanvraag headers.                                  | Nee                              |
+| body                       | De aanvraag tekst.                                                                                           | Nee                              |
+| verificatie-certificaat | [Certificaat dat moet worden gebruikt voor client verificatie](api-management-authentication-policies.md#ClientCertificate) | Nee                              |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk     | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Vereist | Standaard  |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
-| mode = "teken reeks" | Hiermee wordt bepaald of dit een nieuwe aanvraag of een kopie van de huidige aanvraag is. In de modus uitgaand, wordt in modus = kopiëren de hoofd tekst van de aanvraag niet geïnitialiseerd.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | No       | Nieuw      |
-| naam          | Hiermee geeft u de naam van de in te stellen header op.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Yes      | N.v.t.      |
-| exists-actie | Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan. | No       | overschrijven |
+| mode = "teken reeks" | Hiermee wordt bepaald of dit een nieuwe aanvraag of een kopie van de huidige aanvraag is. In de modus uitgaand, wordt in modus = kopiëren de hoofd tekst van de aanvraag niet geïnitialiseerd.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Nee       | Nieuw      |
+| naam          | Hiermee geeft u de naam van de in te stellen header op.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Ja      | N.v.t.      |
+| exists-actie | Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan. | Nee       | overschrijven |
 
 ### <a name="usage"></a>Gebruik
 
@@ -667,23 +667,23 @@ In dit voor beeld ziet u één manier om een referentie token te verifiëren met
 
 | Element                    | Beschrijving                                                                                                 | Vereist                        |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| verzenden/aanvragen               | Hoofd element.                                                                                               | Yes                             |
-| URL                        | De URL van de aanvraag.                                                                                     | Geen if-modus = kopiëren; anders Ja. |
+| verzenden/aanvragen               | Hoofd element.                                                                                               | Ja                             |
+| url                        | De URL van de aanvraag.                                                                                     | Geen if-modus = kopiëren; anders Ja. |
 | method                     | De HTTP-methode voor de aanvraag.                                                                            | Geen if-modus = kopiëren; anders Ja. |
-| koptekst                     | Aanvraag header. Meerdere koptekst elementen gebruiken voor meerdere aanvraag headers.                                  | No                              |
-| body                       | De aanvraag tekst.                                                                                           | No                              |
-| verificatie-certificaat | [Certificaat dat moet worden gebruikt voor client verificatie](api-management-authentication-policies.md#ClientCertificate) | No                              |
+| koptekst                     | Aanvraag header. Meerdere koptekst elementen gebruiken voor meerdere aanvraag headers.                                  | Nee                              |
+| body                       | De aanvraag tekst.                                                                                           | Nee                              |
+| verificatie-certificaat | [Certificaat dat moet worden gebruikt voor client verificatie](api-management-authentication-policies.md#ClientCertificate) | Nee                              |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk                       | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Vereist | Standaard  |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
-| mode = "teken reeks"                   | Hiermee wordt bepaald of dit een nieuwe aanvraag of een kopie van de huidige aanvraag is. In de modus uitgaand, wordt in modus = kopiëren de hoofd tekst van de aanvraag niet geïnitialiseerd.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | No       | Nieuw      |
-| Response-variabele-name = "string" | De naam van de context variabele waarmee een antwoord object wordt ontvangen. Als de variabele niet bestaat, wordt deze gemaakt na een geslaagde uitvoering van het beleid en wordt deze toegankelijk via de [`context.Variable`](api-management-policy-expressions.md#ContextVariables) verzameling.                                                                                                                                                                                                                                                                                                                          | Yes      | N.v.t.      |
-| timeout = "geheel getal"               | Het time-outinterval in seconden voordat de aanroep van de URL mislukt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | No       | 60       |
-| negeren-fout                    | Indien waar en de aanvraag resulteert in een fout:<br /><br /> -Als de reactie variabele-name is opgegeven, bevat deze een null-waarde.<br />-Als Response-variabele-name niet is opgegeven, context. De aanvraag wordt niet bijgewerkt.                                                                                                                                                                                                                                                                                                                                                                                   | No       | onjuist    |
-| naam                            | Hiermee geeft u de naam van de in te stellen header op.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Yes      | N.v.t.      |
-| exists-actie                   | Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan. | No       | overschrijven |
+| mode = "teken reeks"                   | Hiermee wordt bepaald of dit een nieuwe aanvraag of een kopie van de huidige aanvraag is. In de modus uitgaand, wordt in modus = kopiëren de hoofd tekst van de aanvraag niet geïnitialiseerd.                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Nee       | Nieuw      |
+| Response-variabele-name = "string" | De naam van de context variabele waarmee een antwoord object wordt ontvangen. Als de variabele niet bestaat, wordt deze gemaakt na een geslaagde uitvoering van het beleid en wordt deze toegankelijk via de [`context.Variable`](api-management-policy-expressions.md#ContextVariables) verzameling.                                                                                                                                                                                                                                                                                                                          | Ja      | N.v.t.      |
+| timeout = "geheel getal"               | Het time-outinterval in seconden voordat de aanroep van de URL mislukt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Nee       | 60       |
+| negeren-fout                    | Indien waar en de aanvraag resulteert in een fout:<br /><br /> -Als de reactie variabele-name is opgegeven, bevat deze een null-waarde.<br />-Als Response-variabele-name niet is opgegeven, context. De aanvraag wordt niet bijgewerkt.                                                                                                                                                                                                                                                                                                                                                                                   | Nee       | onjuist    |
+| naam                            | Hiermee geeft u de naam van de in te stellen header op.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Ja      | N.v.t.      |
+| exists-actie                   | Hiermee geeft u op welke actie moet worden ondernomen wanneer de header al is opgegeven. Dit kenmerk moet een van de volgende waarden hebben.<br /><br /> -Override: vervangt de waarde van de bestaande header.<br />-Skip-vervangt niet de bestaande waarde van de header.<br />-append-de waarde wordt toegevoegd aan de bestaande waarde van de header.<br />-delete: verwijdert de header uit de aanvraag.<br /><br /> Als de instelling is ingesteld op het `override` Aanmelden van meerdere vermeldingen met dezelfde naam, wordt de header ingesteld op basis van alle vermeldingen (die meerdere keren worden vermeld). in het resultaat worden alleen waarden weer gegeven die in de lijst staan. | Nee       | overschrijven |
 
 ### <a name="usage"></a>Gebruik
 
@@ -717,15 +717,15 @@ Let op het gebruik van [Eigenschappen](api-management-howto-properties.md) als w
 
 | Element | Beschrijving  | Vereist |
 | ------- | ------------ | -------- |
-| proxy   | Hoofd element | Yes      |
+| proxy   | Hoofd element | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk         | Beschrijving                                            | Vereist | Standaard |
 | ----------------- | ------------------------------------------------------ | -------- | ------- |
-| URL = "teken reeks"      | Proxy-URL in de vorm van http://host:port .             | Yes      | N.v.t.     |
-| username = "teken reeks" | De gebruikers naam die moet worden gebruikt voor verificatie met de proxy. | No       | N.v.t.     |
-| Password = "teken reeks" | Het wacht woord dat moet worden gebruikt voor verificatie met de proxy. | No       | N.v.t.     |
+| URL = "teken reeks"      | Proxy-URL in de vorm van http://host:port .             | Ja      | N.v.t.     |
+| username = "teken reeks" | De gebruikers naam die moet worden gebruikt voor verificatie met de proxy. | Nee       | N.v.t.     |
+| Password = "teken reeks" | Het wacht woord dat moet worden gebruikt voor verificatie met de proxy. | Nee       | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -780,7 +780,7 @@ In dit voorbeeld beleid dat het `set-method` beleid gebruikt, ziet u een voor be
 
 | Element    | Beschrijving                                                       | Vereist |
 | ---------- | ----------------------------------------------------------------- | -------- |
-| set-methode | Hoofd element. De waarde van het element specificeert de HTTP-methode. | Yes      |
+| set-methode | Hoofd element. De waarde van het element specificeert de HTTP-methode. | Ja      |
 
 ### <a name="usage"></a>Gebruik
 
@@ -823,14 +823,14 @@ In dit voor beeld ziet u hoe u een respons van 401 retourneert als het autorisat
 
 | Element    | Beschrijving   | Vereist |
 | ---------- | ------------- | -------- |
-| set-status | Hoofd element. | Yes      |
+| set-status | Hoofd element. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk       | Beschrijving                                                | Vereist | Standaard |
 | --------------- | ---------------------------------------------------------- | -------- | ------- |
-| code = "geheel getal"  | De HTTP-status code die moet worden geretourneerd.                            | Yes      | N.v.t.     |
-| reden = "teken reeks" | Een beschrijving van de reden voor het retour neren van de status code. | Yes      | N.v.t.     |
+| code = "geheel getal"  | De HTTP-status code die moet worden geretourneerd.                            | Ja      | N.v.t.     |
+| reden = "teken reeks" | Een beschrijving van de reden voor het retour neren van de status code. | Ja      | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -861,14 +861,14 @@ In het volgende voor beeld ziet u een ingesteld variabelen beleid in de sectie b
 
 | Element      | Beschrijving   | Vereist |
 | ------------ | ------------- | -------- |
-| set-variabele | Hoofd element. | Yes      |
+| set-variabele | Hoofd element. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk | Beschrijving                                                              | Vereist |
 | --------- | ------------------------------------------------------------------------ | -------- |
-| naam      | De naam van de variabele.                                                | Yes      |
-| waarde     | De waarde van de variabele. Dit kan een expressie of een letterlijke waarde zijn. | Yes      |
+| naam      | De naam van de variabele.                                                | Ja      |
+| waarde     | De waarde van de variabele. Dit kan een expressie of een letterlijke waarde zijn. | Ja      |
 
 ### <a name="usage"></a>Gebruik
 
@@ -918,7 +918,7 @@ Expressies die in het beleid worden gebruikt, `set-variable` moeten een van de v
 Het `trace` beleid voegt een aangepaste tracering toe aan de API-Inspector-uitvoer, Application Insights-teleelementen en/of bron Logboeken.
 
 -   Het beleid voegt een aangepaste tracering toe aan de [API-Inspector](./api-management-howto-api-inspector.md) -uitvoer wanneer tracering wordt geactiveerd, d.w.z. `Ocp-Apim-Trace` aanvraag header is aanwezig en ingesteld op True en `Ocp-Apim-Subscription-Key` request header is aanwezig en bevat een geldige sleutel die tracering mogelijk maakt.
--   Het beleid maakt een telemetrie [traceren](../azure-monitor/app/data-model-trace-telemetry.md) in Application Insights, wanneer [Application Insights integratie](./api-management-howto-app-insights.md) is ingeschakeld en het `severity` niveau dat is opgegeven in het beleid, hoger is dan het `verbosity` niveau dat is opgegeven in de diagnostische instelling.
+-   Het beleid maakt een telemetrie [traceren](../azure-monitor/app/data-model-trace-telemetry.md) in Application Insights, wanneer [Application Insights integratie](./api-management-howto-app-insights.md) is ingeschakeld en de `severity` opgegeven in het beleid gelijk is aan of groter is dan het `verbosity` opgegeven in de diagnostische instelling.
 -   Het beleid voegt een eigenschap in de logboek vermelding toe wanneer [bron logboeken](./api-management-howto-use-azure-monitor.md#activity-logs) is ingeschakeld en het Ernst niveau dat is opgegeven in het beleid, hoger is dan het niveau dat is opgegeven in de diagnostische instelling.
 
 ### <a name="policy-statement"></a>Beleids verklaring
@@ -945,18 +945,18 @@ Het `trace` beleid voegt een aangepaste tracering toe aan de API-Inspector-uitvo
 
 | Element  | Beschrijving                                                                                                                                          | Vereist |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| tracering    | Hoofd element.                                                                                                                                        | Yes      |
-| message  | Een teken reeks of expressie die moet worden vastgelegd.                                                                                                                 | Yes      |
-| metagegevens | Hiermee voegt u een aangepaste eigenschap toe aan de Application Insights [Trace](../azure-monitor/app/data-model-trace-telemetry.md) telemetrie. | No       |
+| tracering    | Hoofd element.                                                                                                                                        | Ja      |
+| message  | Een teken reeks of expressie die moet worden vastgelegd.                                                                                                                 | Ja      |
+| metagegevens | Hiermee voegt u een aangepaste eigenschap toe aan de Application Insights [Trace](../azure-monitor/app/data-model-trace-telemetry.md) telemetrie. | Nee       |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk | Beschrijving                                                                                                               | Vereist | Standaard |
 | --------- | ------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| source    | Letterlijke teken reeks die betekenisvol is voor de traceer viewer en het opgeven van de bron van het bericht.                                   | Yes      | N.v.t.     |
-| ernst  | Hiermee geeft u het Ernst niveau van de tracering. Toegestane waarden zijn `verbose` , `information` , `error` (van laagste naar hoogste). | No       | Uitgebreid |
-| naam      | De naam van de eigenschap.                                                                                                     | Yes      | N.v.t.     |
-| waarde     | Waarde van de eigenschap.                                                                                                    | Yes      | N.v.t.     |
+| source    | Letterlijke teken reeks die betekenisvol is voor de traceer viewer en het opgeven van de bron van het bericht.                                   | Ja      | N.v.t.     |
+| ernst  | Hiermee geeft u het Ernst niveau van de tracering. Toegestane waarden zijn `verbose` , `information` , `error` (van laagste naar hoogste). | Nee       | Uitgebreid |
+| naam      | De naam van de eigenschap.                                                                                                     | Ja      | N.v.t.     |
+| waarde     | Waarde van de eigenschap.                                                                                                    | Ja      | N.v.t.     |
 
 ### <a name="usage"></a>Gebruik
 
@@ -1020,13 +1020,13 @@ In het volgende voor beeld zijn er twee `choose` beleids regels als direct onder
 
 | Element | Beschrijving                                                                                                   | Vereist |
 | ------- | ------------------------------------------------------------------------------------------------------------- | -------- |
-| Wacht    | Hoofd element. Mag alleen onderliggende elementen `send-request` , `cache-lookup-value` en `choose` beleid bevatten. | Yes      |
+| Wacht    | Hoofd element. Mag alleen onderliggende elementen `send-request` , `cache-lookup-value` en `choose` beleid bevatten. | Ja      |
 
 ### <a name="attributes"></a>Kenmerken
 
 | Kenmerk | Beschrijving                                                                                                                                                                                                                                                                                                                                                                                                            | Vereist | Standaard |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
-| voor       | Hiermee wordt bepaald of het `wait` beleid wacht totdat alle direct onderliggende beleids regels zijn voltooid of slechts één. Toegestane waarden zijn:<br /><br /> - `all` -wacht totdat alle direct onderliggende beleids regels zijn voltooid<br />-wille keurig-wacht tot het direct onderliggende beleid is voltooid. Zodra het eerste directe onderliggende beleid is voltooid, `wait` wordt het beleid voltooid en wordt de uitvoering van elk ander direct onderliggend beleid beëindigd. | No       | all     |
+| voor       | Hiermee wordt bepaald of het `wait` beleid wacht totdat alle direct onderliggende beleids regels zijn voltooid of slechts één. Toegestane waarden zijn:<br /><br /> - `all` -wacht totdat alle direct onderliggende beleids regels zijn voltooid<br />-wille keurig-wacht tot het direct onderliggende beleid is voltooid. Zodra het eerste directe onderliggende beleid is voltooid, `wait` wordt het beleid voltooid en wordt de uitvoering van elk ander direct onderliggend beleid beëindigd. | Nee       | all     |
 
 ### <a name="usage"></a>Gebruik
 

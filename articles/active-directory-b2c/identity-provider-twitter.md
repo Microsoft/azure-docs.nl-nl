@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 8cb31f57e5403e99e2ef9bfcc5d1042e33516d1d
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 397fff3fafad52b3b989049096fb2d3e1fa2cba1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448146"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488513"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Twitter-account met behulp van Azure Active Directory B2C
 
@@ -45,8 +45,12 @@ Als u aanmelden voor gebruikers met een Twitter-account in Azure AD B2C wilt ins
 1. Onder **verificatie-instellingen** selecteert u **bewerken**
     1. Schakel **het selectie vakje 3-legged OAuth inschakelen in** .
     1. Selecteer het selectie vakje **e-mail adres aanvragen bij gebruikers** .
-    1. Voer in voor de **call back-url's** `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` . Vervang door `your-tenant` de naam van uw Tenant naam en `your-user-flow-Id` met de id van uw gebruikers stroom. Bijvoorbeeld `b2c_1a_signup_signin_twitter`. Gebruik alleen kleine letters wanneer u uw Tenant naam en gebruikers stroom-ID invoert, zelfs als ze zijn gedefinieerd met hoofd letters in Azure AD B2C.
-    1. Voer in voor de URL van de **website** `https://your-tenant.b2clogin.com` . Vervang `your-tenant` door de naam van uw tenant. Bijvoorbeeld `https://contosob2c.b2clogin.com`.
+    1. Voer in voor de **call back-url's** `https://your-tenant.b2clogin.com/your-tenant-name.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` .  Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` . Gebruik alleen kleine letters wanneer u uw Tenant naam en gebruikers stroom-ID invoert, zelfs als ze zijn gedefinieerd met hoofd letters in Azure AD B2C. Vervang:
+        - `your-tenant-name` met de naam van uw Tenant naam.
+        - `your-domain-name` met uw aangepaste domein.
+        - `your-user-flow-Id` met de id van uw gebruikers stroom. Bijvoorbeeld `b2c_1a_signup_signin_twitter`. 
+    
+    1. Voer in voor de URL van de **website** `https://your-tenant.b2clogin.com` . Vervang `your-tenant` door de naam van uw tenant. Bijvoorbeeld `https://contosob2c.b2clogin.com`. Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name` .
     1. Voer bijvoorbeeld een URL in voor de **Service voorwaarden** `http://www.contoso.com/tos` . De beleids-URL is een pagina die u onderhoudt om voor waarden voor uw toepassing te bieden.
     1. Voer een URL in voor het **Privacybeleid**, bijvoorbeeld `http://www.contoso.com/privacy` . De beleids-URL is een pagina die u kunt onderhouden voor het verstrekken van privacy-informatie voor uw toepassing.
     1. Selecteer **Opslaan**.

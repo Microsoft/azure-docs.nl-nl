@@ -9,24 +9,38 @@ ms.author: mikben
 ms.date: 03/10/2021
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: b3cd0643a74ccadb8390ce906eb391420de15a29
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 83976ed9d6f80b6c785cb84e74a0755472f9579f
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103490786"
+ms.locfileid: "103561801"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Verifiëren bij Azure Communication Services
 
-Elke client interactie met Azure Communication Services moet worden geverifieerd. In een typische architectuur, Zie [client-en server architectuur](./client-and-server-architecture.md), *toegangs sleutels* of *beheerde identiteit* worden gebruikt in de service voor vertrouwde gebruikers toegang voor het maken van gebruikers en tokens voor uitgifte. Het *token voor gebruikers toegang* dat is uitgegeven door de service voor vertrouwde gebruikers toegang wordt gebruikt voor client toepassingen om toegang te krijgen tot andere communicatie Services, bijvoorbeeld chat of Call service.
+Elke client interactie met Azure Communication Services moet worden geverifieerd. In een typische architectuur, Zie [client-en server architectuur](./client-and-server-architecture.md), *toegangs sleutels* of *beheerde identiteiten* worden gebruikt voor verificatie.
 
-De SMS-service van Azure Communication Services accepteert ook *toegangs sleutels* of *beheerde identiteit* voor authenticatie. Dit gebeurt meestal in een service toepassing die wordt uitgevoerd in een vertrouwde service omgeving.
+Een ander type verificatie maakt gebruik van *tokens voor gebruikers toegang* voor het verifiëren van services die gebruikers deelname vereisen. Bijvoorbeeld: de chat-of oproep service maakt gebruik van *tokens voor gebruikers toegang* om gebruikers toe te voegen in een thread en met elkaar gesp rekken te laten lopen.
+
+## <a name="authentication-options"></a>Verificatie opties:
+
+De volgende tabel bevat de client bibliotheken van Azure Communication Services en de bijbehorende verificatie opties:
+
+| Client bibliotheek    | Verificatie optie                               |
+| ----------------- | ----------------------------------------------------|
+| Identiteit          | Toegangs sleutel of beheerde identiteit                      |
+| Sms               | Toegangs sleutel of beheerde identiteit                      |
+| Telefoon nummers     | Toegangs sleutel of beheerde identiteit                      |
+| Aanroepen           | Token voor gebruikers toegang                                   |
+| Chat              | Token voor gebruikers toegang                                   |
 
 Elke autorisatie optie wordt hieronder beschreven:
 
-- **Toegang tot sleutel** verificatie voor SMS-en identiteits bewerkingen. Toegangs sleutel verificatie is geschikt voor service toepassingen die worden uitgevoerd in een vertrouwde service omgeving. U vindt de toegangs sleutel in de Azure Communication Services-portal. Voor verificatie met een toegangs sleutel gebruikt een service toepassing de toegangs sleutel als referentie voor het initialiseren van overeenkomende SMS-of Identity client-bibliotheken. Zie [toegangs tokens maken en beheren](../quickstarts/access-tokens.md). Omdat de toegangs sleutel deel uitmaakt van de connection string van uw resource, raadpleegt u [bronnen voor communicatie Services maken en beheren](../quickstarts/create-communication-resource.md), de verificatie met Connection String is gelijk aan de verificatie met de toegangs sleutel.
-- **Beheerde identiteits** verificatie voor SMS-en identiteits bewerkingen. Beheerde identiteit, Zie [beheerde identiteit](../quickstarts/managed-identity.md), is geschikt voor service toepassingen die worden uitgevoerd in een vertrouwde service omgeving. Voor verificatie met een beheerde identiteit maakt een service toepassing een referentie met de ID en een geheim van de beheerde identiteit en initialiseert u vervolgens de bijbehorende SMS-of Identity client-bibliotheken. Zie [toegangs tokens maken en beheren](../quickstarts/access-tokens.md).
-- Verificatie van **gebruikers toegangs token** voor chat en aanroepen. Met tokens voor gebruikers toegang kunnen uw client toepassingen verifiëren tegen Azure Communication chat en services aanroepen. Deze tokens worden gegenereerd in een ' vertrouwde gebruikers toegangs service ' die u maakt. Ze worden vervolgens door gegeven aan client apparaten die het token gebruiken voor het initialiseren van de chat en het aanroepen van client bibliotheken. Zie voor meer informatie [Chat toevoegen aan uw app](../quickstarts/chat/get-started.md) .
+- **Toegangs sleutel** verificatie is geschikt voor service toepassingen die worden uitgevoerd in een vertrouwde service omgeving. De toegangs sleutel vindt u in de Azure Communication Services-portal en de service toepassing gebruikt deze als referentie voor het initialiseren van de bijbehorende client bibliotheken. Bekijk een voor beeld van hoe het wordt gebruikt in de [identiteits-client bibliotheek](../quickstarts/access-tokens.md). Omdat de toegangs sleutel deel uitmaakt van de connection string van uw resource, is verificatie met een connection string gelijk aan verificatie met een toegangs sleutel.
+
+- **Beheerde identiteits** verificatie biedt superieure beveiliging en gebruiks gemak over andere autorisatie opties. Met Azure AD kunt u bijvoorbeeld voor komen dat u uw account toegangs sleutel opslaat met uw code, zoals u dat wel doet met toegangs sleutel autorisatie. Hoewel u de toegangs sleutel verificatie met communicatie Services-toepassingen kunt blijven gebruiken, raadt micro soft u waar mogelijk naar Azure AD te verplaatsen. Als u een beheerde identiteit wilt instellen, [maakt u een geregistreerde toepassing vanuit de Azure cli](../quickstarts/managed-identity-from-cli.md). Het eind punt en de referenties kunnen vervolgens worden gebruikt voor het verifiëren van de client bibliotheken. Zie voor beelden van de manier waarop [beheerde identiteit](../quickstarts/managed-identity.md) wordt gebruikt.
+
+- **Tokens voor gebruikers toegang** worden gegenereerd met behulp van de identiteits-client bibliotheek en zijn gekoppeld aan gebruikers die zijn gemaakt in de identiteits-client bibliotheek. Bekijk een voor beeld van het [maken van gebruikers en het genereren van tokens](../quickstarts/access-tokens.md). Vervolgens worden gebruikers toegangs tokens gebruikt om deel nemers te verifiëren die zijn toegevoegd aan conversaties in de chat-of aanroepende SDK. Zie [Chat toevoegen aan uw app](../quickstarts/chat/get-started.md)voor meer informatie. Verificatie van tokens voor gebruikers toegang verschilt in vergelijking met toegangs sleutel en beheerde identiteits verificatie in dat wordt gebruikt voor de verificatie van een gebruiker in plaats van een beveiligde Azure-resource.
 
 ## <a name="next-steps"></a>Volgende stappen
 

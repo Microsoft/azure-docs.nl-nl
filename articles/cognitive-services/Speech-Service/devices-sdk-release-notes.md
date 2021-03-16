@@ -10,16 +10,23 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: af66f2ec56551a5177cd9323d216e9bf4b0c41be
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1b2418b248e995b0f64eec82ccb477b15583c81e
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021844"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562328"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Release opmerkingen: SDK voor spraak apparaten
 
 De volgende secties bevatten een lijst met wijzigingen in de meest recente releases.
+
+## <a name="speech-devices-sdk-1150"></a>Speech-apparaten SDK 1.15.0:
+
+- Geüpgraded naar nieuwe micro soft audio stack (MAS) met verbeterde beamforming en ruis reductie voor spraak.
+- De binaire grootte wordt met 70% verminderd, afhankelijk van het doel.
+- Ondersteuning voor [Azure percept-audio](https://docs.microsoft.com/azure/azure-percept/overview-azure-percept-audio) met [binaire versie](https://aka.ms/sdsdk-download-APAudio).
+- Het [Speech SDK](./speech-sdk.md) -onderdeel is bijgewerkt naar versie 1.15.0. Zie de [release opmerkingen](./releasenotes.md)voor meer informatie.
 
 ## <a name="speech-devices-sdk-1110"></a>Speech-apparaten SDK 1.11.0:
 

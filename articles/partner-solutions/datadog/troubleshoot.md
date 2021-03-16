@@ -6,16 +6,26 @@ ms.topic: conceptual
 ms.date: 02/19/2021
 author: tfitzmac
 ms.author: tomfitz
-ms.openlocfilehash: a8bb28892fe42215876b5cc8771ae73c7d2aab7f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0e3c82f711de4cd9710c9aafe798a986e3403ed4
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101746015"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563705"
 ---
-# <a name="troubleshooting-datadog-on-azure"></a>Problemen met Datadog oplossen in azure
+# <a name="troubleshooting-datadog-on-azure"></a>Problemen met Datadog oplossen in Azure
 
 Dit document bevat informatie over het oplossen van problemen met de oplossingen die gebruikmaken van Datadog.
+
+## <a name="purchase-errors"></a>Inkoop fouten
+
+* De aankoop mislukt omdat een geldige credit card niet is verbonden met het Azure-abonnement of omdat er geen betalings methode aan het abonnement is gekoppeld.
+
+  Gebruik een ander Azure-abonnement. Of Voeg de credit card of betalings methode voor het abonnement toe of werk deze bij. Zie [de credit-en betalings methode bijwerken](../../cost-management-billing/manage/change-credit-card.md)voor meer informatie.
+
+* Het EA-abonnement staat geen Marketplace-aankopen toe.
+
+  Gebruik een ander abonnement. U kunt ook controleren of uw EA-abonnement is ingeschakeld voor Marketplace-aankopen. Zie [Marketplace-aankopen inschakelen](../../cost-management-billing/manage/ea-azure-marketplace.md#enabling-azure-marketplace-purchases)voor meer informatie. Als deze opties het probleem niet oplossen, neemt u contact op met de [Datadog-ondersteuning](https://www.datadoghq.com/support).
 
 ## <a name="unable-to-create-datadog-resource"></a>Kan de Datadog-resource niet maken
 

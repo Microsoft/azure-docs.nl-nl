@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 731d94aa76146bf06a03842e8f3907d1762eeca3
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: afb396bc364a2fa2db923fbcbe6bfe1b7aedbc26
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225605"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467541"
 ---
 # <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
 
@@ -22,8 +22,7 @@ U kunt Ip's toevoegen aan de acceptatie lijst van de app service om de toegang t
 
 #### <a name="add-ips-to-app-service-allow-list"></a>Ip's toevoegen aan de lijst met toegestane App Service
 
-1. 
-alleen verkeer vanaf Cognitive Services IP-adressen. Deze zijn al opgenomen in de service tag `CognitiveServicesManagement` . Dit is vereist voor het ontwerpen van Api's (Create/update KB) om de app service te kunnen aanroepen en Azure Search-service dienovereenkomstig bij te werken. Bekijk [meer informatie over service tags.](../../../virtual-network/service-tags-overview.md)
+1. Alleen verkeer vanaf Cognitive Services IP-adressen toestaan. Deze zijn al opgenomen in de service tag `CognitiveServicesManagement` . Dit is vereist voor het ontwerpen van Api's (Create/update KB) om de app service te kunnen aanroepen en Azure Search-service dienovereenkomstig bij te werken. Bekijk [meer informatie over service tags.](../../../virtual-network/service-tags-overview.md)
 2. Zorg ervoor dat u ook andere toegangs punten, zoals Azure Bot Service, QnA Maker Portal enzovoort, toestaat voor de voor spelling van de API-toegang GenerateAnswer.
 3. Voer de volgende stappen uit om de IP-adresbereiken toe te voegen aan een acceptatie lijst:
 

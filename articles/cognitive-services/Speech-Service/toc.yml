@@ -61,6 +61,8 @@
           href: how-to-custom-speech-continuous-integration-continuous-deployment.md
         - name: door mensen gelabelde transcripties maken
           href: how-to-custom-speech-human-labeled-transcriptions.md
+        - name: Levens cyclus van modellen en eind punten
+          href: how-to-custom-speech-model-and-endpoint-lifecycle.md
     - name: Naslaginformatie
       items:
         - name: C++
@@ -529,6 +531,8 @@
           displayName: 'ACI,azure container instances,container instances,containers'
           maintainContext: true
           href: ../containers/azure-container-instance-recipe.md
+        - name: Veelgestelde vragen over containers
+          href: speech-container-faq.md
         - name: Documentatie voor Cognitive Services-containers
           href: ../containers/index.yml
 - name: Apparaten

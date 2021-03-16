@@ -1,6 +1,6 @@
 ---
-title: DB2 om te SQL Server op virtuele machines van Azure (migratie handleiding)
-description: Volg deze hand leiding voor het migreren van uw DB2-Server naar SQL Server op Azure-Vm's.
+title: 'DB2 naar SQL Server op virtuele machines van Azure: migratie handleiding'
+description: In deze hand leiding leert u hoe u uw DB2-Data Base kunt migreren naar SQL Server op virtuele Azure-machines met behulp van SQL Server Migration Assistant voor DB2.
 ms.custom: ''
 ms.service: virtual-machines-sql
 ms.subservice: migration-guide
@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: c3f3af6a1c114d6587992f79e95dcc0c1ccb41e6
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: aadfd2d96e2ed610ee1e3eaaec9276212e912b0d
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797476"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562226"
 ---
 # <a name="migration-guide-db2-to-sql-server-on-azure-vms"></a>Migratie handleiding: DB2 naar SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -144,8 +144,6 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
 1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
 
-   > [!NOTE]
-   > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
 
 ## <a name="migration-assets"></a>Migratie-assets 
 
@@ -169,5 +167,4 @@ Zie [Services en hulpprogram ma's voor gegevens migratie](../../../dms/dms-tools
 Zie [Data Base Migration](https://datamigration.microsoft.com/)(Engelstalig) voor andere migratie handleidingen. 
 
 Zie voor video-inhoud:
-- [De database migratie handleiding gebruiken](https://azure.microsoft.com/resources/videos/how-to-use-the-azure-database-migration-guide/)
 - [Overzicht van de migratie traject](https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/)

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: overview
-ms.date: 08/21/2019
+ms.date: 03/15/2021
 ms.author: alkohli
-ms.openlocfilehash: adb0e12b81701acbdb33018f055bfe8fda2efc52
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 2adbefff2a0154268157c7d1735d83e70aa92ee8
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98786636"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563586"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Wat is Azure Data Box Gateway?
 
@@ -87,7 +87,7 @@ De Data Box Gateway-oplossing bestaat uit een Data Box Gateway-resource, een vir
 
 ## <a name="region-availability"></a>Beschikbaarheid in regio’s
 
-Het fysieke Data Box Gateway-apparaat, de Azure-resource en het doelopslagaccount waarnaar u gegevens overdraagt, hoeven zich niet allemaal in dezelfde regio te bevinden.
+Data Box Gateway apparaat, Azure-resource en het doel-opslag account waarnaar u gegevens overbrengt, hoeven niet allemaal in dezelfde regio te zijn.
 
 - **Beschikbaarheid van resources**: ga voor een lijst van alle regio's waar de Azure Data Box Gateway-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Data Box Gateway kan ook in de Azure Government Cloud worden geïmplementeerd. Zie [Wat is Azure Government?](../azure-government/documentation-government-welcome.md) voor meer informatie.
 

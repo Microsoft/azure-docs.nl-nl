@@ -1,30 +1,33 @@
 ---
 title: Instellingen voor de Azure HPC-cache configureren
-description: In dit artikel wordt uitgelegd hoe u aanvullende instellingen voor de cache configureert, zoals MTU en no-root-Squash, en hoe u toegang krijgt tot de Express-moment opnamen van Azure Blob-opslag doelen.
+description: In dit artikel wordt uitgelegd hoe u aanvullende instellingen voor de cache kunt configureren, zoals MTU, aangepaste NTP-en DNS-configuratie en hoe u toegang krijgt tot de Express-moment opnamen vanuit Azure Blob-opslag doelen.
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 12/21/2020
+ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 02bf862cdc3b20ef3e5fdb024f474267efa0c70d
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: 06feefe3a934d1ee02793fab442852e5ef40899a
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760500"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563373"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Aanvullende instellingen voor de Azure HPC-cache configureren
 
-De **configuratie** pagina in de Azure Portal bevat opties voor het aanpassen van verschillende instellingen. De meeste gebruikers hoeven deze instellingen niet te wijzigen van hun standaard waarden.
+De pagina **netwerk** in de Azure Portal bevat opties voor het aanpassen van verschillende instellingen. De meeste gebruikers hoeven deze instellingen niet te wijzigen van hun standaard waarden.
 
 In dit artikel wordt ook beschreven hoe u de functie snap shot gebruikt voor Azure Blob Storage-doelen. De momentopname functie heeft geen Configureer bare instellingen.
 
-Als u de instellingen wilt zien, opent u de pagina **configuratie** van de cache in de Azure Portal.
+Als u de instellingen wilt zien, opent u de pagina **netwerk toegang** van de cache in de Azure Portal.
 
-![scherm afbeelding van de configuratie pagina in Azure Portal](media/configuration.png)
+![scherm afbeelding van de pagina netwerk in Azure Portal](media/networking-page.png)
 
-> [!TIP]
-> De [video](https://azure.microsoft.com/resources/videos/managing-hpc-cache/) voor het beheren van de HPC-cache van Azure bevat de configuratie pagina en de bijbehorende instellingen.
+> [!NOTE]
+> Een vorige versie van deze pagina bevatte een Squash-instelling op cache niveau, maar deze instelling is verplaatst naar het [beleid voor client toegang](access-policies.md).
+
+<!-- >> [!TIP]
+> The [Managing Azure HPC Cache video](https://azure.microsoft.com/resources/videos/managing-hpc-cache/) shows the networking page and its settings. -->
 
 ## <a name="adjust-mtu-value"></a>MTU-waarde aanpassen
 <!-- linked from troubleshoot-nas article -->
@@ -42,21 +45,39 @@ Als u de MTU-instellingen op andere systeem onderdelen niet wilt wijzigen, moet 
 
 Lees meer over MTU-instellingen in virtuele netwerken van Azure door het [afstemmen van TCP/IP-prestaties voor Azure-vm's](../virtual-network/virtual-network-tcpip-performance-tuning.md)te lezen.
 
-## <a name="configure-root-squash"></a>Basis-Squash configureren
-<!-- linked from troubleshoot and from access policies -->
+## <a name="customize-ntp"></a>NTP aanpassen
 
-De instelling **basis Squash inschakelen** bepaalt hoe Azure HPC cache aanvragen van de hoofd gebruiker op client computers verwerkt.
+Uw cache maakt standaard gebruik van de tijd server-time.microsoft.com op basis van Azure. Als u wilt dat uw cache een andere NTP-server gebruikt, geeft u deze op in de sectie **NTP-configuratie** . Gebruik een Fully Qualified Domain Name of een IP-adres.
 
-Wanneer root Squash is ingeschakeld, worden hoofd gebruikers van een client automatisch toegewezen aan de gebruiker ' niemand ' wanneer ze aanvragen verzenden via de Azure HPC-cache. Ook wordt voor komen dat client aanvragen gebruikmaken van Set-UID permissions-machtigingen.
+## <a name="set-a-custom-dns-configuration"></a>Een aangepaste DNS-configuratie instellen
 
-Als hoofdmap Squash is uitgeschakeld, wordt een aanvraag van de client root user (UID 0) door gegeven aan een back-end-NFS-opslag systeem als root. Deze configuratie kan ongepaste bestands toegang toestaan.
+> [!CAUTION]
+> Wijzig de DNS-configuratie van uw cache niet als u dit niet nodig hebt. Configuratie fouten kunnen ernstige gevolgen hebben. Als uw configuratie geen Azure-service namen kan omzetten, wordt het HPC-cache-exemplaar permanent onbereikbaar.
 
-Met het instellen van basis-squash in de cache kunt u de vereiste ``no_root_squash`` instelling compenseren op NAS-systemen die worden gebruikt als opslag doelen. (Lees meer over de [vereisten voor NFS-opslag doel](hpc-cache-prerequisites.md#nfs-storage-requirements).) Het kan ook de beveiliging verbeteren wanneer deze wordt gebruikt met Azure Blob Storage-doelen.
+De Azure HPC-cache wordt automatisch geconfigureerd voor het gebruik van het veilige en handige Azure DNS systeem. Voor een paar ongebruikelijke configuraties moet de cache echter gebruikmaken van een afzonderlijk, lokaal DNS-systeem in plaats van het Azure-systeem. De sectie **DNS-configuratie** van de pagina **netwerk** wordt gebruikt om dit type systeem op te geven.
 
-De standaard instelling is **Ja**. (Caches die vóór april 2020 zijn gemaakt, kunnen de standaard instelling **Nee** hebben.)
+Neem contact op met uw Azure-vertegenwoordigers of Raadpleeg de service en ondersteuning van micro soft om te bepalen of u een aangepaste cache-DNS-configuratie moet gebruiken.
 
-> [!TIP]
-> U kunt ook root Squash instellen voor specifieke opslag exports door de beleids regels voor [client toegang](access-policies.md#root-squash)aan te passen.
+Als u uw eigen on-premises DNS-systeem configureert voor gebruik in de Azure HPC-cache, moet u ervoor zorgen dat de configuratie Azure-eindpunt namen voor Azure-Services kan omzetten. U moet uw aangepaste DNS-omgeving configureren om bepaalde aanvragen voor naam omzetting door te sturen naar Azure DNS of naar een andere server als dat nodig is.
+
+Controleer of de DNS-configuratie deze items kan omzetten voordat u deze gebruikt voor een Azure HPC-cache:
+
+* ``*.core.windows.net``
+* Certificaat intrekkings lijst (CRL) downloaden en verificatie services voor OCSP (Online Certificate Status Protocol). Aan het einde van dit [Azure TLS-artikel](../security/fundamentals/tls-certificate-changes.md)is een gedeeltelijke lijst opgenomen in het [item firewall regels](../security/fundamentals/tls-certificate-changes.md#will-this-change-affect-me) , maar u moet een technische mede werker van micro soft raadplegen om alle vereisten te begrijpen.
+* De Fully Qualified Domain Name van uw NTP-server (time.microsoft.com of een aangepaste server)
+
+Als u een aangepaste DNS-server voor uw cache wilt instellen, gebruikt u de opgegeven velden:
+
+* **DNS-Zoek domein** (optioneel): Voer uw zoek domein in, bijvoorbeeld ``contoso.com`` . Er is één waarde toegestaan of u kunt deze leeg laten.
+* **DNS-server (s)** : Voer Maxi maal drie DNS-servers in. Geef ze op als IP-adres.
+
+<!-- 
+  > [!NOTE]
+  > The cache will use only the first DNS server it successfully finds. -->
+
+### <a name="refresh-storage-target-dns"></a>DNS voor opslag doel vernieuwen
+
+Als de DNS-server IP-adressen bijwerkt, worden de gekoppelde NFS-opslag doelen tijdelijk niet beschikbaar. Lees hoe u de IP-adressen van uw aangepaste DNS-systeem bijwerkt in [opslag doelen bewerken](hpc-cache-edit-storage.md#update-ip-address-custom-dns-configurations-only).
 
 ## <a name="view-snapshots-for-blob-storage-targets"></a>Moment opnamen voor Blob-opslag doelen weer geven
 

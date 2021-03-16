@@ -10,12 +10,12 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 8c834caa2285135b7d39c440489b42c366418042
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5833308f03d328d988ac818d83ff5ee618a4c79c
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186466"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563569"
 ---
 # <a name="convert-configurations-to-composite-resources"></a>Configuraties converteren naar samengestelde resources
 
@@ -49,7 +49,7 @@ De cmdlet laadt de inhoud van uw configuratie, haalt de lijst met para meters op
 
 Zodra u een module hebt gegenereerd, kunt u de versie verhogen en release opmerkingen toevoegen telkens wanneer u wijzigingen aanbrengt en deze naar uw eigen [PowerShellGet-opslag plaats](https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/?utm_source=blog&utm_medium=blog&utm_content=psscriptrepo)publiceert.
 
-Wanneer u een samengestelde resource module hebt gemaakt met uw configuratie (of meerdere configuraties), kunt u deze gebruiken in de [ontwerp ervaring](./compose-configurationwithcompositeresources.md) in azure, of deze toevoegen aan [DSC-configuratie scripts](/powershell/scripting/dsc/configurations/configurations) voor het genereren van MOF-bestanden en [het uploaden van de MOF-bestanden naar Azure Automation](./tutorial-configure-servers-desired-state.md#create-and-upload-a-configuration-to-azure-automation).
+Wanneer u een samengestelde resource module hebt gemaakt met uw configuratie (of meerdere configuraties), kunt u deze gebruiken in de [ontwerp ervaring](./compose-configurationwithcompositeresources.md) in azure, of deze toevoegen aan [DSC-configuratie scripts](/powershell/scripting/dsc/configurations/configurations) om MOF-bestanden te genereren en [de MOF-bestanden te uploaden naar Azure Automation](./tutorial-configure-servers-desired-state.md#create-and-upload-a-configuration-to-azure-automation).
 Registreer uw servers vervolgens [on-premises](./automation-dsc-onboarding.md#enable-physicalvirtual-linux-machines) of [in azure](./automation-dsc-onboarding.md#enable-azure-vms) om configuraties te halen.
 De meest recente update van het project heeft ook [runbooks](https://www.powershellgallery.com/packages?q=DscGallerySamples) gepubliceerd voor Azure Automation om het proces van het importeren van configuraties vanuit de PowerShell Gallery te automatiseren.
 

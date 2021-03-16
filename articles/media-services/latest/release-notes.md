@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: 5a36b5c8b0c8f24d093d887ad788c4ce9857d355
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: d7cfb4cf9b6b061f5fb53667e968cb0403f22bfc
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103492671"
+ms.locfileid: "103562549"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -29,7 +29,32 @@ Om u op de hoogte te houden van de nieuwste ontwikkelingen, biedt dit artikel u 
 * Opgeloste fouten
 * Afgeschafte functionaliteit
 
-## <a name="known-issues"></a>Bekende problemen
+## <a name="march-2021"></a>2021 maart
+
+### <a name="new-language-support-added-to-the-audioanalyzer-preset"></a>Nieuwe taal ondersteuning toegevoegd aan de AudioAnalyzer-voor instelling
+
+Aanvullende talen voor video transcriptie en Subtitling zijn nu beschikbaar in de vooraf ingestelde AudioAnalyzer (modus basis en standaard).
+
+* Engels (Australië), ' en-AU '
+* Frans (Canada), ' fr-CA '
+* Arabisch (Bahrein) modern Standard, ' ar-BH '
+* Arabisch (Egypte), ' ar-EG '
+* Arabisch (Irak), ' ar-IQ '
+* Arabisch (Israël), ' ar-IL '
+* Arabisch (Jordanië), ' ar-JO '
+* Arabisch (Koeweit), ' ar-KW '
+* Arabisch (Libanon), ' ar-LB '
+* Arabisch (Oman), ' ar-OM '
+* Arabisch (Qatar), ' ar-QA '
+* Arabisch (Saudi-Arabië), ' AR-SA '
+* Deens, da-DK
+* Noors, ' nb-NO '
+* Zweeds, ' sv-SE '
+* Fins, ' fi-FI '
+* Thais, th-do
+* Turks, tr-TR
+
+Zie de meest recente beschik bare talen in het [concept artikel video-en audio bestanden analyseren.](analyzing-video-audio-files-concept.md)
 
 ## <a name="february-2021"></a>Februari 2021
 

@@ -2,14 +2,14 @@
 title: Een pool inrichten in een virtueel netwerk
 description: Het maken van een batch-pool in een virtueel Azure-netwerk, zodat reken knooppunten veilig kunnen communiceren met andere virtuele machines in het netwerk, zoals een bestands server.
 ms.topic: how-to
-ms.date: 01/13/2021
+ms.date: 03/15/2021
 ms.custom: seodec18
-ms.openlocfilehash: bedb0cbd826e2891560320ed11c0ba28e07f8e88
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: d6e5de75164e098fc95f6c086d9f98a652dcee4a
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165753"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561907"
 ---
 # <a name="create-an-azure-batch-pool-in-a-virtual-network"></a>Een Azure Batch groep maken in een virtueel netwerk
 

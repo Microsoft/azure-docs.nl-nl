@@ -4,14 +4,14 @@ description: Hoe u opslag doelen definieert zodat uw Azure HPC-cache uw on-premi
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/11/2021
+ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 4e6c5b5ea69c55c09887528f1723414f53fcb0f9
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: bba6745a4cc0be30648e23501f9a9e2f0cc6c8db
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103471937"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563234"
 ---
 # <a name="add-storage-targets"></a>Opslagdoelen toevoegen
 
@@ -194,15 +194,17 @@ Meer informatie over de andere opties vindt u in [inzicht in gebruiks modellen](
 
 Deze tabel bevat een overzicht van de verschillen tussen alle gebruiks modellen:
 
-| Gebruiks model | Cache modus | Back-end-verificatie | Maximale vertraging voor terugschrijven |
+[!INCLUDE [usage-models-table.md](includes/usage-models-table.md)]
+
+<!-- | Usage model | Caching mode | Back-end verification | Maximum write-back delay |
 |--|--|--|--|
-| Zware, incidentele schrijf bewerkingen lezen | Lezen | Nooit | Geen |
-| Meer dan 15% schrijf bewerkingen | Lezen/schrijven | 8 uur | 20 minuten |
-| Clients slaan de cache over | Lezen | 30 seconden | Geen |
-| Meer dan 15% schrijf bewerkingen, frequente back-end-controle (30 seconden) | Lezen/schrijven | 30 seconden | 20 minuten |
-| Meer dan 15% schrijf bewerkingen, frequente back-end-controle (60 seconden) | Lezen/schrijven | 60 seconden | 20 minuten |
-| Meer dan 15% schrijf bewerkingen, regel matig terugschrijven | Lezen/schrijven | 30 seconden | 30 seconden |
-| Lees zo lang de back-upserver om de 3 uur wordt gecontroleerd | Lezen | 3 uur | Geen |
+| Read heavy, infrequent writes | Read | Never | None |
+| Greater than 15% writes | Read/write | 8 hours | 20 minutes |
+| Clients bypass the cache | Read | 30 seconds | None |
+| Greater than 15% writes, frequent back-end checking (30 seconds) | Read/write | 30 seconds | 20 minutes |
+| Greater than 15% writes, frequent back-end checking (60 seconds) | Read/write | 60 seconds | 20 minutes |
+| Greater than 15% writes, frequent write-back | Read/write | 30 seconds | 30 seconds |
+| Read heavy, checking the backing server every 3 hours | Read | 3 hours | None | -->
 
 > [!NOTE]
 > De waarde voor de **back-end-verificatie** geeft aan wanneer de cache bestanden automatisch vergelijkt met de bron bestanden in de externe opslag. U kunt echter een vergelijking activeren door een client aanvraag te verzenden die een READDIRPLUS-bewerking op het back-end-opslag systeem bevat. READDIRPLUS is een standaard-NFS-API (ook wel uitgebreide Lees bewerking genoemd) die directory-meta gegevens retourneert, waardoor de cache bestanden vergelijkt en bijwerkt.

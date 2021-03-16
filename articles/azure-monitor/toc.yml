@@ -966,8 +966,6 @@
           items:
             - name: F5-inzichten
               href: app/visual-studio.md
-            - name: Trends
-              href: app/visual-studio-trends.md
             - name: CodeLens
               href: app/visual-studio-codelens.md
         - name: Andere platforms
@@ -1038,6 +1036,8 @@
           href: vm/vminsights-workbooks.md
         - name: Bewaking uitschakelen
           href: vm/vminsights-optout.md
+        - name: Problemen oplossen
+          href: vm/vminsights-troubleshoot.md
     - name: Container inzichten
       items:
         - name: Overzicht

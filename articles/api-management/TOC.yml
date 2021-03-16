@@ -245,6 +245,8 @@
           href: api-management-transformation-policies.md
         - name: Integratiebeleid voor Gedistribueerde toepassingruntime (Dapr)
           href: api-management-dapr-policies.md
+        - name: Validatie beleid
+          href: validation-policies.md
     - name: Beheren tijdens productie
       items:
         - name: API's exporteren naar Power Platform

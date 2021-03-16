@@ -10,12 +10,12 @@ ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9814dc06e7e570a923ba3ea5b3b0df7ade99bb28
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 5ec7d2b243a5eadab2d22dea14ebeac8eabb1722
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100654097"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563161"
 ---
 # <a name="use-azure-cli-to-manage-acls-in-azure-data-lake-storage-gen2"></a>Azure CLI gebruiken voor het beheren van Acl's in Azure Data Lake Storage Gen2
 
@@ -31,7 +31,7 @@ ACL-overname is al beschikbaar voor nieuwe onderliggende items die zijn gemaakt 
 
 - Een opslag account waarvoor een hiërarchische naam ruimte is ingeschakeld. Volg [deze](create-data-lake-storage-account.md) instructies om er een te maken.
 
-- Azure CLI-versie `2.6.0` of hoger.
+- Azure CLI-versie `2.14.0` of hoger.
 
 - Een van de volgende beveiligings machtigingen:
 
@@ -137,6 +137,9 @@ In dit voor beeld wordt de toegangs beheer lijst voor een bestand ingesteld op d
 az storage fs access set --acl "user::rw-,group::rw-,other::-wx" -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
 ```
 
+> [!NOTE]
+> Als u de toegangs beheer lijst van een specifieke groep of gebruiker wilt instellen, gebruikt u de bijbehorende object-Id's. Bijvoorbeeld `group:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` of `user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
+
 In de volgende afbeelding ziet u de uitvoer na het instellen van de ACL van een bestand.
 
 ![ACL-uitvoer 2 ophalen](./media/data-lake-storage-directory-file-acl-cli/set-acl-file.png)
@@ -184,6 +187,9 @@ In dit voor beeld wordt de ACL van een **bestand** bijgewerkt.
 ```azurecli
 az storage fs access set --permissions rwxrwxrwx -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
 ```
+
+> [!NOTE]
+> Als u de ACL van een specifieke groep of gebruiker wilt bijwerken, gebruikt u de bijbehorende object-Id's. Bijvoorbeeld `group:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` of `user:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.
 
 U kunt ook de gebruiker en groep van een map of bestand eigenaar bijwerken door de `--owner` `group` para meters of in te stellen op de entiteit-id of UPN (User Principal Name) van een gebruiker.
 

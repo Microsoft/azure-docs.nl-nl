@@ -6,15 +6,15 @@ ms.author: maquaran
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: tutorial
-ms.date: 09/21/2020
+ms.date: 03/15/2021
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6cf0e77657175449b126eeca02a12c164478e568
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
-ms.translationtype: HT
+ms.openlocfilehash: 1c178f57a31e02b3dac712a5425db226720200c5
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548066"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563603"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Gegevens bulksgewijs importeren in Azure Cosmos DB SQL API-account met behulp van de .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -112,7 +112,7 @@ Laten we beginnen met het overschrijven van de standaardmethode `Main` en het de
         private const string AuthorizationKey = "<your-account-key>";
         private const string DatabaseName = "bulk-tutorial";
         private const string ContainerName = "items";
-        private const int ItemsToInsert = 300000;
+        private const int AmountToInsert = 300000;
 
         static async Task Main(string[] args)
         {
@@ -150,14 +150,11 @@ Maak vervolgens een Help-functie binnen de klasse `Program`. Met deze Help-funct
 
 [!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Bogus)]
 
-Lees de items en serialiseer deze in stroomexemplaren met behulp van de klasse `System.Text.Json`. Vanwege de aard van de automatisch gegenereerde gegevens, serialiseert u de gegevens als stromen. U kunt het itemexemplaar ook rechtstreeks gebruiken, maar door ze te converteren naar stromen kunt u gebruikmaken van de prestaties van stroom-API's in de CosmosClient. Normaal gesproken kunt u de gegevens rechtstreeks gebruiken zolang u de partitiesleutel kent. 
-
-
-Als u de gegevens wilt converteren naar stroomexemplaren, voegt u de volgende code toe in de methode `Main`, direct nadat u de container hebt gemaakt:
+Gebruik de Help-functie om een lijst met documenten te initialiseren waarmee u kunt werken:
 
 [!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=Operations)]
 
-Gebruik vervolgens de gegevensstromen om gelijktijdige taken te maken en de lijst met taken te vullen om de items in de container in te voegen. Als u deze bewerking wilt uitvoeren, voegt u de volgende code toe aan de klasse `Program`:
+Gebruik vervolgens de lijst met documenten om gelijktijdige taken te maken en de taken lijst in te vullen om de items in de container in te voegen. Als u deze bewerking wilt uitvoeren, voegt u de volgende code toe aan de klasse `Program`:
 
 [!code-csharp[Main](~/cosmos-dotnet-bulk-import/src/Program.cs?name=ConcurrentTasks)]
 

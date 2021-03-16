@@ -1,6 +1,6 @@
 ---
 title: 'DB2 naar SQL Database: migratie handleiding'
-description: Volg deze hand leiding om de DB2-data bases te migreren naar Azure SQL Database.
+description: In deze hand leiding leert u hoe u de DB2-data bases kunt migreren naar Azure SQL Database met behulp van SQL Server Migration Assistant voor DB2 (SSMA for DB2).
 ms.service: sql-database
 ms.subservice: migration-guide
 ms.custom: ''
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 3e216c4aeb8d1206011ff9cca2d80900c23b2399
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 917390b43a772cbb9374c560fc3a65cfa7278839
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356341"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563937"
 ---
 # <a name="migration-guide-db2-to-sql-database"></a>Migratie handleiding: DB2 naar SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqldb.md)]
@@ -102,7 +102,7 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . 
 
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen hebt opgelost, is de volgende stap het uitvoeren van het migratie proces.
 
@@ -143,9 +143,6 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
 1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
 
-   > [!NOTE]
-   > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
-
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 
@@ -158,7 +155,7 @@ Sommige SQL Server-functies zijn alleen beschikbaar als het [compatibiliteits ni
 
 Raadpleeg de volgende bronnen voor meer hulp, die zijn ontwikkeld ter ondersteuning van een werkelijke migratie project betrokkenheid:
 
-|Asset  |Description  |
+|Asset  |Beschrijving  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Detectie-en evaluatie pakket voor gegevens bronnen van DB2 zOS](https://github.com/Microsoft/DataMigrationTeam/tree/master/DB2%20zOS%20Data%20Assets%20Discovery%20and%20Assessment%20Package)|Nadat u het SQL-script op een Data Base hebt uitgevoerd, kunt u de resultaten exporteren naar een bestand op het bestands systeem. Verschillende bestands indelingen worden ondersteund, met inbegrip van *. CSV, zodat u de resultaten kunt vastleggen in externe hulpprogram ma's zoals werk bladen. Deze methode kan nuttig zijn als u eenvoudig resultaten wilt delen met teams waarop de workbench niet is geïnstalleerd.|

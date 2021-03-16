@@ -5,13 +5,13 @@ author: TheovanKraay
 ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
-ms.date: 03/02/2021
-ms.openlocfilehash: 6de2e0f1744b333a830fbe500e2df51e7eaca62d
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.date: 03/15/2021
+ms.openlocfilehash: 3890b06b2d085cea57b59cfe34d8b961918471c5
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103419069"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562379"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-using-azure-cli-preview"></a>Quick Start: een door Azure beheerd exemplaar maken voor Apache Cassandra-cluster met behulp van Azure CLI (preview)
 
@@ -31,7 +31,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 > [!IMPORTANT]
-> Voor dit artikel is de Azure CLI-versie 2.12.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+> Voor dit artikel is de Azure CLI-versie 2.17.1 of hoger vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-managed-instance-cluster"></a><a id="create-cluster"></a>Een beheerd exemplaar cluster maken
 
@@ -58,7 +58,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
    > [!NOTE]
    > De `assignee` `role` waarden en in de vorige opdracht zijn vaste waarden. Voer deze waarden precies zoals vermeld in de opdracht in. Als u dit niet doet, leidt dit tot fouten bij het maken van het cluster. Als er fouten optreden tijdens het uitvoeren van deze opdracht, bent u mogelijk niet gemachtigd om deze uit te voeren. Neem contact op met uw beheerder voor machtigingen.
 
-1. Maak vervolgens het cluster in uw nieuw gemaakte Virtual Network. Voer de volgende opdracht uit en zorg ervoor dat u de `Resource ID` waarde die in de vorige opdracht is opgehaald als de waarde van `delegatedManagementSubnetId` Variable gebruikt:
+1. Maak vervolgens het cluster in uw nieuw gemaakte Virtual Network met behulp van de opdracht [AZ Managed-Cassandra cluster create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_create) . Voer de volgende opdracht uit en zorg ervoor dat u de `Resource ID` waarde die in de vorige opdracht is opgehaald als de waarde van `delegatedManagementSubnetId` Variable gebruikt:
 
    ```azurecli-interactive
    resourceGroupName='<Resource_Group_Name>'
@@ -76,7 +76,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
       --debug
    ```
 
-1. Tot slot maakt u een Data Center voor het cluster met drie knoop punten:
+1. Maak ten slotte een Data Center voor het cluster met drie knoop punten met behulp van de opdracht [AZ Managed-Cassandra Data Center Create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_create) :
 
    ```azurecli-interactive
    dataCenterName='dc1'
@@ -92,7 +92,7 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
       --node-count 3 
    ```
 
-1. Als u het Data Center hebt gemaakt, kunt u de volgende opdracht uitvoeren als u omhoog wilt schalen of de knoop punten in het Data Center omlaag wilt schalen. Wijzig de waarde van `node-count` para meter in de gewenste waarde:
+1. Als het Data Center is gemaakt, kunt u, als u omhoog wilt schalen, of de knoop punten in het Data Center omlaag schalen door de opdracht [AZ Managed-Cassandra Data Center update](/cli/azure/ext/cosmosdb-preview/managed-cassandra/datacenter?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_datacenter_update) uit te voeren. Wijzig de waarde van `node-count` para meter in de gewenste waarde:
 
    ```azurecli-interactive
    resourceGroupName='<Resource_Group_Name>'

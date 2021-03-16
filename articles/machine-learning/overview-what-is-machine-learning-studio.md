@@ -9,12 +9,12 @@ author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
 adobe-target: true
-ms.openlocfilehash: 320840277483776dfc74b98ab70410503008df67
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 48c4b2a73628ab2105e23054d747e28acc105d01
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374232"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563182"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>What is Azure Machine Learning-studio?
 
@@ -76,31 +76,26 @@ Zelfs als u een ervaren ontwikkelaar bent, kunt u met de studio eenvoudiger bepa
 
 ## <a name="ml-studio-classic-vs-azure-machine-learning-studio"></a>ML Studio (classic) vs Azure Machine Learning studio
 
-**ML Studio (klassiek), uitgebracht in 2015,** was onze eerste machine learning-builder met fucntionaliteit voor slepen en neerzetten. Het is een zelfstandige service die alleen een visuele ervaring biedt. Studio (klassiek) werkt niet samen met Azure Machine Learning.
+**ML Studio (klassiek), uitgebracht in 2015,** was onze eerste machine learning-builder met fucntionaliteit voor slepen en neerzetten. 
 
-**Azure Machine Learning** is een afzonderlijke en moderne service die een volledig data science-platform biedt. Het ondersteunt zowel code-eerst als weinig-code ervaringen.
+**Ml Studio (klassiek)** is een zelfstandige service die alleen een visuele ervaring biedt. Studio (klassiek) werkt niet samen met Azure Machine Learning.
+
+**Azure machine learning** is een afzonderlijke en moderne service die een volledig data Science-platform biedt. Het ondersteunt zowel code-eerst als weinig-code ervaringen.
 
 **Azure Machine Learning Studio** is een webportal *in* Azure Machine Learning met opties voor weinig-code en geen-code voor het ontwerpen van projecten en het beheren van assets. 
 
-We raden nieuwe gebruikers aan om **Azure Machine Learning** te kiezen in plaats van ML Studio (klassiek), voor het meest recente aanbod van data science-hulpprogramma's.
+We raden nieuwe gebruikers aan om **Azure Machine Learning** te kiezen in plaats van ML Studio (klassiek), voor het meest recente aanbod van data science-hulpprogramma's. Als u een bestaande ML Studio (klassieke) gebruiker bent, kunt u overwegen [om naar Azure machine learning te migreren](classic/migrate-overview.md).
+
+Hier volgen enkele van de voor delen van het overschakelen naar Azure Machine Learning:
+
+- Schaal bare reken clusters voor grootschalige training.
+- Enter prise Security en governance.
+- Compatibel met populaire open-source hulpprogram ma's.
+- End-to-end-MLOps.
 
 ### <a name="feature-comparison"></a>Vergelijking van functies
 
-De volgende tabel bevat een overzicht van enkele van de belangrijkste verschillen tussen ML Studio (klassiek) en Azure Machine Learning.
-
-| Functie | ML Studio (klassiek) | Azure Machine Learning |
-|---| --- | --- |
-| Interface met slepen en neerzetten | Klassieke ervaring | Bijgewerkte ervaring - [Azure Machine Learning Designer](concept-designer.md)| 
-| Code-SDK's | Niet ondersteund | Volledig geïntegreerd met [Azure Machine Learning Python](/python/api/overview/azure/ml/) en [R](https://github.com/Azure/azureml-sdk-for-r) SDK's |
-| Experiment | Schaalbaar (max. 10 GB aan trainingsgegevens) | Schalen met rekendoel |
-| Rekendoelen voor training | Eigen rekendoel, alleen CPU-ondersteuning | Breed scala aan aanpasbare [rekendoelen voor training](concept-compute-target.md#train). Inclusief GPU- en CPU-ondersteuning | 
-| Rekendoelen voor implementatie | Bedrijfseigen webservice-indeling, niet aanpasbaar | Breed scala aan aanpasbare [rekendoelen voor implementatie](concept-compute-target.md#deploy). Inclusief GPU- en CPU-ondersteuning |
-| ML-pijplijn | Niet ondersteund | Bouw flexibele, modulaire [pijplijnen](concept-ml-pipelines.md) om werkstromen te automatiseren |
-| MLOps | Eenvoudig modellen beheren en implementeren; alleen voor CPU-implementaties | Versiebeheer voor entiteiten (model, gegevens, werkstromen), werkstroomautomatisering, integratie met CICD-hulpprogramma, CPU- en GPU-implementaties [en meer](concept-model-management-and-deployment.md) |
-| Modelindeling | Eigen indeling, alleen Studio (klassiek) | Meerdere ondersteunde indelingen, afhankelijk van het type trainingstaak |
-| Geautomatiseerde modeltraining en afstemming van hyperparameters |  Niet ondersteund | [Ondersteund](concept-automated-ml.md). Opties voor code-eerst en geen-code. | 
-| Gegevensdriftdetectie | Niet ondersteund | [Ondersteund](how-to-monitor-datasets.md) |
-| Projecten voor gegevenslabels | Niet ondersteund | [Ondersteund](how-to-create-labeling-projects.md) |
+[!INCLUDE [aml-compare-classic](../../includes/machine-learning-compare-classic-aml.md)]
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

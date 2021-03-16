@@ -12,12 +12,12 @@ ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: fa68db4bd166ebe1acd1ae85fca2d7e51236a4c4
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: ed397e9f8db721a6baa641fc958af0dda570ce57
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102522050"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561937"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
@@ -145,6 +145,7 @@ Als u meerdere bestanden wilt toevoegen aan de model registratie, stelt `-p` u h
 
     Zie de [AutoMLRun.register_model](/python/api/azureml-train-automl-client/azureml.train.automl.run.automlrun#register-model-model-name-none--description-none--tags-none--iteration-none--metric-none-) -documentatie voor meer informatie.
 
+    Als u een geregistreerd model van een wilt implementeren, kunt u `AutoMLRun` dit het beste doen via de [knop implementeren in azure machine learning Studio](how-to-use-automated-ml-for-ml-models.md#deploy-your-model). 
 ### <a name="register-a-model-from-a-local-file"></a>Een model registreren vanuit een lokaal bestand
 
 U kunt een model registreren door het lokale pad van het model op te geven. U kunt het pad naar een map of één bestand opgeven. U kunt deze methode gebruiken om modellen te registreren die zijn getraind met Azure Machine Learning en vervolgens te downloaden. U kunt deze methode ook gebruiken voor het registreren van modellen die buiten Azure Machine Learning worden getraind.
@@ -368,6 +369,7 @@ Zie de documentatie voor [webservice. Delete ()](/python/api/azureml-core/azurem
 * [Client toepassingen maken voor het gebruik van webservices](how-to-consume-web-service.md)
 * [Webservice bijwerken](how-to-deploy-update-web-service.md)
 * [Een model implementeren met behulp van een aangepaste docker-installatie kopie](how-to-deploy-custom-docker-image.md)
+* [Met één klik op implementatie voor automatische ML worden uitgevoerd in de Azure Machine Learning Studio](how-to-use-automated-ml-for-ml-models.md#deploy-your-model)
 * [TLS gebruiken om een webservice te beveiligen via Azure Machine Learning](how-to-secure-web-service.md)
 * [Uw Azure Machine Learning modellen bewaken met Application Insights](how-to-enable-app-insights.md)
 * [Gegevens verzamelen voor modellen in productie](how-to-enable-data-collection.md)

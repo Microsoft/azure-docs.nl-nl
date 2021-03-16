@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.custom: template-concept
-ms.openlocfilehash: cfef510646489e65f5cbc5d0d3e14c468301f48e
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 5ee38fa4b005cf053890c223dfec9244c637bd00
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103199958"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561818"
 ---
 # <a name="guide-for-running-functions-on-net-50-in-azure"></a>Hand leiding voor het uitvoeren van functies op .NET 5,0 in azure
 
@@ -122,7 +122,7 @@ Met .NET geïsoleerd wordt een object door gegeven `FunctionContext` aan uw func
 
 Bindingen worden gedefinieerd door gebruik te maken van kenmerken voor methoden, para meters en retour typen. Een functie methode is een methode met `Function` en een trigger kenmerk dat wordt toegepast op een invoer parameter, zoals wordt weer gegeven in het volgende voor beeld:
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/SampleApp/Queue/QueueFunction.cs" id="docsnippet_queue_trigger" :::
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Queue/QueueFunction.cs" id="docsnippet_queue_trigger" :::
 
 Het trigger kenmerk geeft het trigger type aan en bindt invoer gegevens aan een methode parameter. De vorige voorbeeld functie wordt geactiveerd door een wachtrij bericht en het wachtrij bericht wordt door gegeven aan de methode in de `myQueueItem` para meter.
 
@@ -140,7 +140,7 @@ Een functie kan nul of meer invoer bindingen bevatten die gegevens kunnen door g
 
 Als u naar een uitvoer binding wilt schrijven, moet u een uitvoer binding kenmerk Toep assen op de functie methode, die is gedefinieerd om te schrijven naar de gebonden service. De waarde die wordt geretourneerd door de methode, wordt naar de uitvoer binding geschreven. Het volgende voor beeld schrijft bijvoorbeeld een teken reeks waarde naar een berichten wachtrij met de naam met `functiontesting2` behulp van een uitvoer binding:
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/SampleApp/Queue/QueueFunction.cs" id="docsnippet_queue_output_binding" :::
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Queue/QueueFunction.cs" id="docsnippet_queue_output_binding" :::
 
 ### <a name="multiple-output-bindings"></a>Meerdere uitvoer bindingen
 
@@ -156,7 +156,7 @@ Op dezelfde manier retourneert de functie een `HttpReponseData` object, dat gege
 
 De volgende code is een HTTP-trigger 
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/SampleApp/Http/HttpFunction.cs" id="docsnippet_http_trigger" :::
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Http/HttpFunction.cs" id="docsnippet_http_trigger" :::
 
 ## <a name="logging"></a>Logboekregistratie
 
@@ -164,7 +164,7 @@ In .NET geïsoleerd kunt u naar Logboeken schrijven met behulp [`ILogger`](/dotn
 
 In het volgende voor beeld ziet u hoe u `ILogger` in een-functie Logboeken kunt ophalen en opslaan:
 
-:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/SampleApp/Http/HttpFunction.cs" id="docsnippet_logging" ::: 
+:::code language="csharp" source="~/azure-functions-dotnet-worker/samples/Extensions/Http/HttpFunction.cs" id="docsnippet_logging" ::: 
 
 Gebruik verschillende methoden `ILogger` om verschillende logboek niveaus te schrijven, zoals `LogWarning` of `LogError` . Zie het [artikel bewaking](functions-monitoring.md#log-levels-and-categories)voor meer informatie over logboek niveaus.
 

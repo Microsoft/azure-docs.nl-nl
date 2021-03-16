@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 02/24/2021
+ms.date: 03/15/2021
 ms.author: alexeyo
-ms.openlocfilehash: f6c7ec3f66d0ab9186645654adf3c062c241e5d0
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 78e40250710c133cbed53c05137971247663b0df
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449846"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564419"
 ---
 # <a name="speech-services-quotas-and-limits"></a>Quota en limieten voor Speech Services
 
@@ -27,6 +27,7 @@ Overschakelen naar de [quota en limieten voor tekst naar spraak](#text-to-speech
 In de onderstaande tabellen zijn para meters zonder ' instel bare ' rij **niet** aanpasbaar voor alle prijs categorieën.
 
 #### <a name="online-transcription"></a>Online transcriptie
+Voor gebruik met [spraak-SDK](speech-sdk.md) en/of [spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio).
 
 | Quota | Gratis (F0)<sup>1</sup> | Standard (S0) |
 |--|--|--|
@@ -74,7 +75,7 @@ In de onderstaande tabel zijn para meters zonder ' aanpas bare ' rij **niet** aa
 | **WebSocket-specifieke quota's** |  |  |
 |Maximale audio duur per beurt | 10 minuten | 10 minuten |
 |Maximale SSML bericht grootte per draaiing |64 kB |64 kB |
-| **REST API limiet** | 20 aanvragen per minuut | 25 aanvragen per 5 seconden |
+| **REST API limiet** | 20 aanvragen per minuut | 300 aanvragen per minuut |
 
 
 de prijs categorie <sup>3</sup> voor **gratis (F0)** Zie ook maandelijkse vergoedingen op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).<br/>

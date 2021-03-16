@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 12/10/2020
-ms.openlocfilehash: 01ee890fe77abebfdec8d3d643773b42cb54187e
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 1529d2d546227880fee71d1823482e040d2e57c1
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606178"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564317"
 ---
 # <a name="mapping-data-flows-in-azure-data-factory"></a>Gegevens stromen toewijzen in Azure Data Factory
 
-[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 ## <a name="what-are-mapping-data-flows"></a>Wat zijn toewijzingsgegevensstromen?
 
@@ -106,11 +106,11 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 |  Australië - centraal | |
 | Australië - centraal 2 | |
 | Australië - oost | ✓ |
-| Australia Southeast   | ✓ |
-| Brazil South  | ✓ |
+| Australië - zuidoost   | ✓ |
+| Brazilië - zuid  | ✓ |
 | Canada - midden | ✓ |
 | India - centraal | ✓ |
-| Central US    | ✓ |
+| VS - centraal    | ✓ |
 | China East |      |
 | China - oost 2  |   |
 | China niet-regionaal | |
@@ -118,7 +118,7 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 | China - noord 2 | |
 | Azië - oost | ✓ |
 | VS - oost   | ✓ |
-| US - oost 2 | ✓ |
+| VS - oost 2 | ✓ |
 | Frankrijk - centraal | ✓ |
 | Frankrijk - zuid  | |
 | Duitsland-centraal (soeverein) | |
@@ -126,7 +126,7 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 | Duitsland-noord (openbaar) | |
 | Duitsland-noordoost (soeverein) | |
 | Duitsland-west-centraal (openbaar) |  |
-| Japan East | ✓ |
+| Japan - oost | ✓ |
 | Japan - west |  |
 | Korea - centraal | ✓ |
 | Korea - zuid | |
@@ -136,7 +136,7 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 | Noorwegen - west | |
 | Zuid-Afrika - noord    | ✓ |
 | Zuid-Afrika - west |  |
-| South Central US  | |
+| VS - zuid-centraal  | |
 | India - zuid | |
 | Azië - zuidoost    | ✓ |
 | Zwitserland - noord |   |
@@ -155,7 +155,7 @@ Het Azure Data Factory-team heeft een [hulp programma voor het afstemmen van pre
 | Europa -west   | ✓ |
 | India - west | |
 | VS - west   | ✓ |
-| West US 2 | ✓ |
+| VS - west 2 | ✓ |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,13 +9,13 @@ ms.topic: how-to
 author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
-ms.date: 11/06/2020
-ms.openlocfilehash: 2d43eda404a5257c0ec28a884b6ebf182330ba51
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.date: 03/19/2021
+ms.openlocfilehash: 9205301cb77941e4ea7ca026710d44ba82f6a937
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488412"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563841"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Migratie handleiding: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -183,9 +183,6 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 1. **Test omgeving instellen**: de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
 1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
 1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
-
-   > [!NOTE]
-   > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
 
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 

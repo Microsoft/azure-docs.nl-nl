@@ -4,14 +4,14 @@ description: Vereisten voor het gebruik van Azure HPC cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 03/11/2021
+ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 7a91cf5f9341d2b42f1c8f242d288b4ee59b632d
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: 5ac0f0677be6b641d496a941c5a8e1343fd017bc
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103471796"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562555"
 ---
 # <a name="prerequisites-for-azure-hpc-cache"></a>Vereisten voor de Azure HPC-cache
 
@@ -61,7 +61,7 @@ De cache heeft DNS nodig om toegang te krijgen tot bronnen buiten het virtuele n
 * Als u toegang wilt krijgen tot Azure Blob Storage-eind punten en andere interne resources, hebt u de op Azure gebaseerde DNS-server nodig.
 * Voor toegang tot on-premises opslag moet u een aangepaste DNS-server configureren die uw opslag hostnamen kan omzetten. U moet dit doen **voordat** u de cache maakt.
 
-Als u alleen toegang tot de Blob-opslag nodig hebt, kunt u de standaard-DNS-server van Azure gebruiken voor uw cache. Als u echter toegang tot andere bronnen nodig hebt, moet u een aangepaste DNS-server maken en deze configureren voor het door sturen van aanvragen voor specifieke oplossingen van Azure naar de Azure DNS-server.
+Als u alleen Blob-opslag gebruikt, kunt u de standaard-DNS-server van Azure gebruiken voor uw cache. Als u echter toegang nodig hebt tot opslag of andere bronnen buiten Azure, moet u een aangepaste DNS-server maken en deze configureren voor het door sturen van eventuele aanvragen voor specifieke oplossingen van Azure naar de Azure DNS-server.
 
 Als u een aangepaste DNS-server wilt gebruiken, moet u deze installatie stappen uitvoeren voordat u de cache maakt:
 
@@ -185,13 +185,13 @@ Azure HPC cache kan ook een BLOB-container gebruiken die is gekoppeld met het NF
 
 De vereisten voor het opslag account zijn verschillend voor een ADLS-NFS-Blob-opslag doel en voor een standaard-Blob-opslag doel. Volg de instructies in [Blob Storage koppelen door het NFS-protocol (Network File System 3,0)](../storage/blobs/network-file-system-protocol-support-how-to.md) zorgvuldig te gebruiken om het opslag account voor NFS te maken en te configureren.
 
-Dit is een algemeen overzicht van de stappen:
+Dit is een algemeen overzicht van de stappen. Deze stappen kunnen veranderen, dus Raadpleeg altijd de [ADLS-NFS-instructies](../storage/blobs/network-file-system-protocol-support-how-to.md) voor actuele informatie.
 
 1. Zorg ervoor dat de functies die u nodig hebt, beschikbaar zijn in de regio's waar u van plan bent te werken.
 
 1. Schakel de NFS-protocol functie in voor uw abonnement. Doe dit *voordat* u het opslag account maakt.
 
-1. Maak een beveiligd virtueel netwerk (VNet) voor het opslag account. Gebruik hetzelfde virtuele netwerk voor uw opslag account voor NFS en voor uw Azure HPC-cache.
+1. Maak een beveiligd virtueel netwerk (VNet) voor het opslag account. Gebruik hetzelfde virtuele netwerk voor uw opslag account voor NFS en voor uw Azure HPC-cache. (Gebruik niet hetzelfde subnet als de cache.)
 
 1. Maak het opslag account.
 

@@ -6,13 +6,13 @@ author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 03/12/2021
-ms.openlocfilehash: 2f716fd7723f35fb5e7071afb15cfa8dab4ce5d2
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.date: 03/15/2021
+ms.openlocfilehash: d64b1413267a62daa46a112e706a4381189baf77
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225282"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564338"
 ---
 # <a name="copy-and-transform-data-in-azure-sql-database-by-using-azure-data-factory"></a>Gegevens in Azure SQL Database kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -643,7 +643,12 @@ Instellingen die specifiek zijn voor Azure SQL Database, zijn beschikbaar op het
 
 **Query**: als u in het invoer veld query selecteert, voert u een SQL-query in voor uw bron. Deze instelling overschrijft elke tabel die u in de gegevensset hebt gekozen. **Order by** -componenten worden hier niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL die een tabel retourneert. Met deze query wordt een bron tabel geproduceerd die u in uw gegevens stroom kunt gebruiken. Het gebruik van query's is ook een uitstekende manier om rijen te verminderen voor het testen of voor Zoek opdrachten.
 
+**Opgeslagen procedure**: Kies deze optie als u een projectie-en bron gegevens wilt genereren op basis van een opgeslagen procedure die vanuit de bron database wordt uitgevoerd. U kunt het schema, de naam van de procedure en de para meters typen of op Vernieuwen klikken om een ADF te stellen om de schema's en procedure namen te ontdekken. Vervolgens kunt u op importeren klikken om alle procedure parameters te importeren met behulp van het formulier ``@paraName`` .
+
+![Opgeslagen procedure](media/data-flow/stored-procedure-2.png "Opgeslagen procedure")
+
 - SQL-voor beeld: ```Select * from MyTable where customerId > 1000 and customerId < 2000```
+- SQL-voor beeld met para meters: ``"select * from {$tablename} where orderyear > {$year}"``
 
 **Batch grootte**: Voer een batch grootte in om grote hoeveel heden gegevens in Lees bewerkingen te segmenteren.
 

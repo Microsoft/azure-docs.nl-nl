@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: 55fa106f0515405dcad969f05d28e0bc7b975b40
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: c38e4681c76fb0dd52d77c7dc1438b87a9571a80
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922273"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562056"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Wat is SQL Data Sync voor Azure?
 
@@ -101,6 +101,9 @@ Met de nieuwe functie voor persoonlijke koppelingen (preview) kunt u een privé-
 - [Power shell gebruiken om te synchroniseren tussen meerdere data bases in Azure SQL Database](scripts/sql-data-sync-sync-data-between-sql-databases.md)
 - [Power shell gebruiken om te synchroniseren tussen een data base in Azure SQL Database en een data base in een SQL Server-exemplaar](scripts/sql-data-sync-sync-data-between-azure-onprem.md)
 
+### <a name="set-up-data-sync-with-rest-api"></a>Gegevens synchronisatie met REST API instellen
+- [REST API gebruiken om te synchroniseren tussen meerdere data bases in Azure SQL Database](scripts/sql-data-sync-sync-data-between-sql-databases-rest-api.md)
+
 ### <a name="review-the-best-practices-for-data-sync"></a>Bekijk de aanbevolen procedures voor gegevens synchronisatie
 
 - [Aanbevolen procedures voor Azure SQL Data Sync](sql-data-sync-best-practices.md)
@@ -165,7 +168,7 @@ Met gegevens synchronisatie kunnen alleen-lezen of door het systeem gegenereerde
 
 #### <a name="limitations-on-service-and-database-dimensions"></a>Beperkingen voor service-en database dimensies
 
-| **Afmetingen**                                                  | **Limiet**              | **Tijdelijke oplossing**              |
+| **Dimensies**                                                  | **Limiet**              | **Tijdelijke oplossing**              |
 |-----------------------------------------------------------------|------------------------|-----------------------------|
 | Het maximum aantal synchronisatie groepen waarvan elke Data Base deel kan uitmaken.       | 5                      |                             |
 | Maximum aantal eind punten in één synchronisatie groep              | 30                     |                             |
@@ -261,7 +264,7 @@ Moet u het schema van een data base in een synchronisatie groep bijwerken? Wijzi
 - [De replicatie van schema wijzigingen automatiseren met SQL Data Sync in azure](./sql-data-sync-update-sync-schema.md)
 - [PowerShell gebruiken voor het bijwerken van het synchronisatieschema in een bestaande synchronisatiegroep](scripts/update-sync-schema-in-sync-group.md)
 
-### <a name="monitor-and-troubleshoot"></a>Bewaken en problemen oplossen
+### <a name="monitor-and-troubleshoot"></a>Controleren en problemen oplossen
 
 Wordt SQL Data Sync als verwachting uitgevoerd? Raadpleeg de volgende artikelen voor informatie over het bewaken van activiteiten en het oplossen van problemen:
 

@@ -3,12 +3,12 @@ title: Aanbevolen procedures
 description: Leer de aanbevolen procedures en handige tips voor het ontwikkelen van uw Azure Batch oplossingen.
 ms.date: 03/11/2020
 ms.topic: conceptual
-ms.openlocfilehash: 15ff46ad74c4c48c6b5f320622bc364adf59d4cc
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: d1040762c171af486c7f5d66daca44ec65602aff
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496283"
+ms.locfileid: "103561835"
 ---
 # <a name="azure-batch-best-practices"></a>Aanbevolen procedures Azure Batch
 
@@ -238,6 +238,6 @@ De automatische opschoning voor de werkmap wordt geblokkeerd als u een service u
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Maak een Azure batch-account met behulp van de Azure Portal](batch-account-create-portal.md).
 - Meer informatie over de [Werkstroom van de batch-service en primaire resources](batch-service-workflow-features.md) als pools, knooppunten, jobs en taken.
 - Meer informatie over de [standaard Azure batch quota's, limieten en beperkingen en het aanvragen van quotum verhogingen](batch-quota-limit.md).
+- Meer informatie over het [detecteren en voor komen van storingen in de groep en achtergrond bewerkingen op knoop punten ](batch-pool-node-error-checking.md).

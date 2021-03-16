@@ -1,6 +1,6 @@
 ---
 title: 'SQL Server naar SQL Managed instance: migratie handleiding'
-description: Volg deze hand leiding voor het migreren van uw SQL Server-data bases naar Azure SQL Managed instance.
+description: In deze hand leiding leert u uw SQL Server-data bases migreren naar Azure SQL Managed instance.
 ms.service: sql-managed-instance
 ms.subservice: migration-guide
 ms.custom: ''
@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 67f5665225bc1297d0eb1b1e1da954fb47660dee
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 6dcbf4a570fb5cdb58c914ea5e4b1164ed6a76ca
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488950"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564487"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -197,10 +197,6 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 1. **Test omgeving instellen**: de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
 1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
 1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
-
-   > [!NOTE]
-   > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
-
 
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 5f82e8b7359b90d5127e2c20a2b89cc5ad739a56
-ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
+ms.openlocfilehash: de3738573bb9bb6f045a45d290c74ba9e6902a5e
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624756"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561954"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -125,6 +125,140 @@ Gebruik de [implementatie uitbreiding Synapse werk ruimte](https://marketplace.v
 Nadat u alle wijzigingen hebt opgeslagen, kunt u **release maken** selecteren om hand matig een release te maken. Zie [Azure DevOps release triggers](/azure/devops/pipelines/release/triggers) voor het automatiseren van het maken van releases
 
    ![Selecteer release maken](media/release-creation-manually.png)
+
+## <a name="use-custom-parameters-of-the-workspace-template"></a>Aangepaste para meters van de werkruimte sjabloon gebruiken 
+
+U gebruikt automatische CI/CD en u wilt enkele eigenschappen wijzigen tijdens de implementatie, maar de eigenschappen zijn niet standaard ingesteld op para meters. In dit geval kunt u de standaard parameter sjabloon onderdrukken.
+
+Als u de standaard parameter sjabloon wilt overschrijven, moet u een aangepaste parameter sjabloon maken, een bestand met de naam **template-parameters-definition.js** in de hoofdmap van uw Git-samenwerkings vertakking. U moet die exacte bestands naam gebruiken. Wanneer u publiceert vanuit de samenwerkings vertakking, wordt dit bestand door Synapse-werk ruimte gelezen en wordt de configuratie voor het genereren van de para meters gebruikt. Als er geen bestand wordt gevonden, wordt de standaard parameter sjabloon gebruikt.
+
+### <a name="custom-parameter-syntax"></a>Syntaxis van aangepaste para meter
+
+Hier volgen enkele richt lijnen voor het maken van het bestand met aangepaste para meters:
+
+* Voer het pad naar de eigenschap in onder het relevante entiteits type.
+* Als u een eigenschaps naam instelt `*` , geeft u aan dat u alle eigenschappen daaronder wilt para meters (alleen naar het eerste niveau, niet recursief). U kunt ook uitzonde ringen voor deze configuratie opgeven.
+* Als u de waarde van een eigenschap instelt als een teken reeks, geeft u aan dat u de eigenschap wilt para meters. Gebruik de indeling `<action>:<name>:<stype>`.
+   *  `<action>` Dit kan een van de volgende tekens zijn:
+      * `=` houdt in dat de huidige waarde wordt ingesteld als de standaard waarde voor de para meter.
+      * `-` houdt in dat de standaard waarde voor de para meter niet wordt bewaard.
+      * `|` is een speciaal geval voor geheimen van Azure Key Vault voor verbindings reeksen of sleutels.
+   * `<name>` is de naam van de para meter. Als deze leeg is, wordt de naam van de eigenschap gebruikt. Als de waarde begint met een `-` teken, wordt de naam Inge kort. Zo wordt bijvoorbeeld `AzureStorage1_properties_typeProperties_connectionString` Inge kort tot `AzureStorage1_connectionString` .
+   * `<stype>` is het type para meter. Als `<stype>` deze leeg is, is het standaard type `string` . Ondersteunde waarden: `string` , `securestring` , `int` , `bool` , `object` `secureobject` en `array` .
+* Het opgeven van een matrix in het bestand geeft aan dat de overeenkomende eigenschap in de sjabloon een matrix is. Synapse doorloopt alle objecten in de matrix met behulp van de definitie die is opgegeven. Het tweede object, een teken reeks, wordt de naam van de eigenschap, die wordt gebruikt als de naam voor de para meter voor elke iteratie.
+* Een definitie kan niet specifiek zijn voor een resource-exemplaar. Elke wille keurige definitie is van toepassing op alle resources van dat type.
+* Standaard zijn alle beveiligde teken reeksen, zoals Key Vault geheimen en beveiligde teken reeksen, zoals verbindings reeksen, sleutels en tokens, para meters.
+
+### <a name="parameter-template-definition-samples"></a>Voor beelden van parameter sjabloon definitie 
+
+Hier volgt een voor beeld van hoe een definitie van een parameter sjabloon eruitziet:
+
+```json
+{
+"Microsoft.Synapse/workspaces/notebooks": {
+        "properties":{
+            "bigDataPool":{
+                "referenceName": "="
+            }
+        }
+    },
+    "Microsoft.Synapse/workspaces/sqlscripts": {
+     "properties": {
+         "content":{
+             "currentConnection":{
+                    "*":"-"
+                 }
+            } 
+        }
+    },
+    "Microsoft.Synapse/workspaces/pipelines": {
+        "properties": {
+            "activities": [{
+                 "typeProperties": {
+                    "waitTimeInSeconds": "-::int",
+                    "headers": "=::object"
+                }
+            }]
+        }
+    },
+    "Microsoft.Synapse/workspaces/integrationRuntimes": {
+        "properties": {
+            "typeProperties": {
+                "*": "="
+            }
+        }
+    },
+    "Microsoft.Synapse/workspaces/triggers": {
+        "properties": {
+            "typeProperties": {
+                "recurrence": {
+                    "*": "=",
+                    "interval": "=:triggerSuffix:int",
+                    "frequency": "=:-freq"
+                },
+                "maxConcurrency": "="
+            }
+        }
+    },
+    "Microsoft.Synapse/workspaces/linkedServices": {
+        "*": {
+            "properties": {
+                "typeProperties": {
+                     "*": "="
+                }
+            }
+        },
+        "AzureDataLakeStore": {
+            "properties": {
+                "typeProperties": {
+                    "dataLakeStoreUri": "="
+                }
+            }
+        }
+    },
+    "Microsoft.Synapse/workspaces/datasets": {
+        "properties": {
+            "typeProperties": {
+                "*": "="
+            }
+        }
+    }
+}
+```
+Hier volgt een uitleg van de manier waarop de vorige sjabloon is samengesteld, onderverdeeld op resource type.
+
+#### <a name="notebooks"></a>Notebooks 
+
+* Een eigenschap in het pad `properties/bigDataPool/referenceName` is para meters met de standaard waarde. U kunt gekoppelde Spark-groep para meters voor elk notebook-bestand. 
+
+#### <a name="sql-scripts"></a>SQL-scripts 
+
+* Eigenschappen (poolnaam en databasenaam) in het pad `properties/content/currentConnection` zijn als teken reeksen in de vorm van para meters zonder de standaard waarden in de sjabloon. 
+
+#### <a name="pipelines"></a>Pipelines
+
+* Een eigenschap in het pad `activities/typeProperties/waitTimeInSeconds` is para meters. Alle activiteiten in een pijp lijn met de naam eigenschap `waitTimeInSeconds` (bijvoorbeeld de `Wait` activiteit) worden als een getal met een standaard naam vastgelegd. Maar heeft geen standaard waarde in de Resource Manager-sjabloon. Het is een verplichte invoer tijdens de implementatie van Resource Manager.
+* Een eigenschap met de naam `headers` (bijvoorbeeld in een `Web` activiteit) is een para meter van het type `object` (object). Het heeft een standaard waarde. Dit is dezelfde waarde als die van de bron-Factory.
+
+#### <a name="integrationruntimes"></a>IntegrationRuntimes
+
+* Alle eigenschappen onder het pad `typeProperties` zijn para meters met hun respectievelijke standaard waarden. Er zijn bijvoorbeeld twee eigenschappen onder type- `IntegrationRuntimes` Eigenschappen: `computeProperties` en `ssisProperties` . Beide eigenschaps typen worden gemaakt met hun respectievelijke standaard waarden en typen (object).
+
+#### <a name="triggers"></a>Triggers
+
+* Onder `typeProperties` zijn twee eigenschappen para meters. De eerste is `maxConcurrency` , die is opgegeven om een standaard waarde te hebben en van het type is `string` . Deze heeft de standaard parameter naam `<entityName>_properties_typeProperties_maxConcurrency` .
+* De `recurrence` eigenschap is ook para meters. Hieronder worden alle eigenschappen op dat niveau opgegeven om para meters te worden ingesteld als teken reeksen, met standaard waarden en parameter namen. Een uitzonde ring is de `interval` eigenschap, die als type wordt para meter `int` . De parameter naam is met een achtervoegsel `<entityName>_properties_typeProperties_recurrence_triggerSuffix` . Op dezelfde manier `freq` is de eigenschap een teken reeks en wordt de para meter als teken reeks. De `freq` eigenschap is echter para meters zonder standaard waarde. De naam is inge kort en achtervoegsel. Bijvoorbeeld `<entityName>_freq`.
+
+#### <a name="linkedservices"></a>LinkedServices
+
+* Gekoppelde services zijn uniek. Omdat gekoppelde services en gegevens sets een breed scala van typen hebben, kunt u type-specifieke aanpassing opgeven. In dit voor beeld wordt voor alle gekoppelde services van `AzureDataLakeStore` het type een specifieke sjabloon toegepast. Voor alle andere (via `*` ) wordt een andere sjabloon toegepast.
+* De `connectionString` eigenschap wordt als waarde para meters `securestring` . Er is geen standaard waarde. Er wordt een kortere parameter naam gebruikt die is gekoppeld aan `connectionString` .
+* De eigenschap `secretAccessKey` gebeurt als een `AzureKeyVaultSecret` (bijvoorbeeld in een gekoppelde service van Amazon S3). De para meter wordt automatisch ingesteld als een Azure Key Vault geheim en opgehaald uit de geconfigureerde sleutel kluis. U kunt ook de sleutel kluis zelf para meters.
+
+#### <a name="datasets"></a>Gegevenssets
+
+* Hoewel het type-specifieke aanpassing beschikbaar is voor gegevens sets, kunt u een configuratie opgeven zonder dat u expliciet een configuratie op een niveau hoeft te maken \* . In het vorige voor beeld zijn alle eigenschappen van de gegevensset onder `typeProperties` para meters.
+
 
 ## <a name="best-practices-for-cicd"></a>Aanbevolen procedures voor CI/CD
 

@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 12/20/2020
 ms.topic: conceptual
 ms.custom: how-to, automl
-ms.openlocfilehash: a91a4f3a2e686c8d502093dc41520df32b313209
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 2e06375441d6540d6630cfe9d4d8c3beec558879
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102520627"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562719"
 ---
 # <a name="create-review-and-deploy-automated-machine-learning-models-with-azure-machine-learning"></a>Automatische machine learning modellen maken, controleren en implementeren met Azure Machine Learning
 
@@ -37,7 +37,7 @@ Voor een end-to-end-voor beeld probeert [u de zelf studie voor het maken van een
 
 ## <a name="get-started"></a>Aan de slag
 
-1. Meld u aan bij Azure Machine Learning op https://ml.azure.com . 
+1. Meld u aan bij [Azure Machine Learning Studio](https://ml.azure.com). 
 
 1. Selecteer uw abonnement en werk ruimte. 
 
@@ -198,6 +198,11 @@ Om uitleg voor een bepaald model op te halen,
 ## <a name="deploy-your-model"></a>Uw model implementeren
 
 Zodra u het beste model hebt gevonden, is het tijd om dit te implementeren als een webservice, om nieuwe gegevens te voorspellen.
+
+>[!TIP]
+> Als u een model wilt implementeren dat via het `automl` pakket met de python-SDK is gegenereerd, moet u [uw model registreren](how-to-deploy-and-where.md?tabs=python#register-a-model-from-an-azure-ml-training-run-1) bij de werk ruimte. 
+>
+> Zodra u het model hebt geregistreerd, kunt u het vinden in de Studio door **modellen** te selecteren in het linkerdeel venster. Zodra u het model hebt geopend, kunt u de knop **implementeren** selecteren boven aan het scherm en de instructies volgen zoals beschreven in **stap 2** van de sectie **uw model implementeren** .
 
 Geautomatiseerde ML helpt u bij het implementeren van het model zonder code te schrijven:
 

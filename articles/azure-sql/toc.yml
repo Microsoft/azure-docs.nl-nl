@@ -345,8 +345,16 @@
               href: database/migrate-sqlite-db-to-azure-sql-serverless-offline-tutorial.md
     - name: Migratiehandleidingen
       items:
+        - name: Vanuit Access
+          href: migration-guides/database/access-to-sql-database-guide.md
         - name: Vanaf DB2
           href: migration-guides/database/db2-to-sql-database-guide.md
+        - name: Van Oracle
+          href: migration-guides/database/oracle-to-sql-database-guide.md
+        - name: Van MySQL
+          href: migration-guides/database/mysql-to-sql-database-guide.md
+        - name: Van SAP ASE
+          href: migration-guides/database/sap-ase-to-sql-database.md
         - name: Vanaf SQL Server
           items:
             - name: Overzicht
@@ -753,6 +761,8 @@
       items:
         - name: Vanaf DB2
           href: migration-guides/managed-instance/db2-to-managed-instance-guide.md
+        - name: Van Oracle
+          href: migration-guides/managed-instance/oracle-to-managed-instance-guide.md
         - name: Vanaf SQL Server
           items:
             - name: Overzicht
@@ -1252,10 +1262,12 @@
       items:
         - name: Overzicht
           href: migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-migration-overview.md
-        - name: Vanaf SQL Server
-          href: migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide.md
         - name: Vanaf DB2
           href: migration-guides/virtual-machines/db2-to-sql-on-azure-vm-guide.md
+        - name: Van Oracle
+          href: migration-guides/virtual-machines/oracle-to-sql-on-azure-vm-guide.md
+        - name: Vanaf SQL Server
+          href: migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide.md
 - name: Naslaginformatie
   items:
     - name: Naslaginformatie voor de taal T-SQL

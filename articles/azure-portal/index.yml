@@ -7,13 +7,13 @@ metadata:
   services: Azure portal
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 08/05/2020
-  ms.openlocfilehash: c1617f295a101ae645743d60fdbe82a09d936ea2
-  ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
-  ms.translationtype: HT
+  ms.date: 03/15/2021
+  ms.openlocfilehash: 7b7727d1fdf550b3ab3341bd0dc852f343b00791
+  ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96749008"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103563909"
 landingContent:
 - title: Over de Azure-portal
   linkLists:
@@ -21,18 +21,44 @@ landingContent:
     links:
     - text: Wat is Azure Portal?
       url: azure-portal-overview.md
+    - text: Onboarden met Azure Quickstart Center
+      url: azure-portal-quickstart-center.md
     - text: Ondersteunde browsers en apparaten
       url: azure-portal-supported-browsers-devices.md
-- title: De Azure-portal aanpassen
+- title: Aan de slag
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Een VM maken in de portal
+      url: ../virtual-machines/windows/quick-create-portal.md?toc=/azure/azure-portal/toc.json&bc=/azure/azure-portal/breadcrumb/toc.json
+    - text: Een dash board maken-Azure CLI
+      url: quickstart-portal-dashboard-azure-cli.md
+    - text: Een dash board maken-Azure PowerShell
+      url: quickstart-portal-dashboard-powershell.md
+    - text: Een dashboard maken - ARM-sjabloon
+      url: quick-create-template.md
+  - linkListType: how-to-guide
+    links:
+    - text: Videoserie met instructies voor de Azure-portal
+      url: azure-portal-video-series.md
+- title: Ondersteuningsaanvragen maken en beheren
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Uw voorkeuren voor de portal instellen
-      url: set-preferences.md
-    - text: Aangepaste dashboards maken en delen
-      url: azure-portal-dashboards.md
-    - text: Uw favorieten beheren
-      url: azure-portal-add-remove-sort-favorites.md
+    - text: Een Azure-ondersteuningsaanvraag maken
+      url: supportability/how-to-create-azure-support-request.md
+    - text: Een Azure-ondersteuningsaanvraag beheren
+      url: supportability/how-to-manage-azure-support-request.md
+- title: Toegankelijkheidsopties gebruiken
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Sneltoetsen
+      url: azure-portal-keyboard-shortcuts.md
+  - linkListType: how-to-guide
+    links:
+    - text: Hoog contrast inschakelen
+      url: set-preferences.md#choose-a-theme-or-enable-high-contrast
 - title: Toegang tot de Azure-portal beheren
   linkLists:
   - linkListType: reference
@@ -45,39 +71,17 @@ landingContent:
     links:
     - text: Resources beheren in Azure
       url: /learn/paths/manage-resources-in-azure/
-    - text: Uw Azure-resources beveiligen met op rollen gebaseerd toegangsbeheer in Azure (Azure RBAC)
-      url: /learn//modules/secure-azure-resources-with-rbac/
-- title: Aan de slag
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Onboarden met Azure Quickstart Center
-      url: azure-portal-quickstart-center.md
-  - linkListType: how-to-guide
-    links:
-    - text: Videoserie met instructies voor de Azure-portal
-      url: azure-portal-video-series.md
-  - linkListType: learn
-    links:
-    - text: Basisinformatie over Azure
-      url: /learn/paths/azure-fundamentals/
-    - text: Cloudconcepten - Beginselen van cloudcomputing
-      url: /learn/modules/principles-cloud-computing/
-- title: Toegankelijkheidsopties gebruiken
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Sneltoetsen
-      url: azure-portal-keyboard-shortcuts.md
-  - linkListType: how-to-guide
-    links:
-    - text: Hoog contrast inschakelen
-      url: set-preferences.md#choose-a-theme-or-enable-high-contrast
-- title: Ondersteuningsaanvragen maken en beheren
+    - text: Beveilig uw resources met Azure op rollen gebaseerd toegangs beheer (Azure RBAC)
+      url: /learn/modules/secure-azure-resources-with-rbac
+- title: De Azure-portal aanpassen
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Een Azure-ondersteuningsaanvraag maken
-      url: ../azure-portal/supportability/how-to-create-azure-support-request.md
-    - text: Abonnementsproblemen gerelateerd aan regio of SKU oplossen
-      url: ../azure-portal/supportability/sku-series-unavailable.md
+    - text: Azure-portalinstellingen en -voorkeuren beheren
+      url: set-preferences.md
+    - text: Resourcegegevens bekijken en filteren
+      url: manage-filter-resource-views.md
+    - text: Een dash board maken-Azure Portal gebruikers interface
+      url: azure-portal-dashboards.md
+    - text: Favorieten toevoegen, verwijderen en sorteren
+      url: azure-portal-add-remove-sort-favorites.md

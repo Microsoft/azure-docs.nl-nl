@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 01/29/2021
-ms.openlocfilehash: 01c448165e6d1f4d6103c61387298f2d9eb40254
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.date: 03/15/2021
+ms.openlocfilehash: dd5b857c274e757f70920f244786df61c2770085
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99222930"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561682"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -41,7 +41,7 @@ Bij het bewaken van de prestaties van de gegevens stroom zijn er vier mogelijke 
 * Transformatie tijd
 * Schrijven naar een Sink 
 
-![Bewaking van gegevens stromen](media/data-flow/monitoring-performance.png "Monitor voor gegevens stroom 3")
+![Gegevensstroom controleren](media/data-flow/monitoring-performance.png "Monitor voor gegevens stroom 3")
 
 De opstart tijd van het cluster is de tijd die nodig is om een Apache Spark cluster in te zetten. Deze waarde bevindt zich in de rechter bovenhoek van het scherm voor controle. Gegevens stromen worden uitgevoerd op een just-in-time-model, waarbij elke taak gebruikmaakt van een geïsoleerd cluster. Deze start tijd duurt doorgaans 3-5 minuten. Voor sequentiële taken kan dit worden verminderd door een TTL-waarde (time to Live) in te scha kelen. Zie [optimalisatie van de Azure Integration runtime](#ir)voor meer informatie.
 
@@ -115,7 +115,7 @@ Gegevens stromen distribueren de gegevens verwerking over verschillende knoop pu
 
 De standaard cluster grootte is vier Stuur knooppunten en vier werk knooppunten.  Bij het verwerken van meer gegevens worden grotere clusters aanbevolen. Hieronder ziet u de mogelijke opties voor de grootte:
 
-| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Notities |
+| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Opmerkingen |
 | ------------ | ------------ | ----------- | ----- |
 | 4 | 4 | 8 | Niet beschikbaar voor berekenings optimalisatie |
 | 8 | 8 | 16 | |
@@ -250,7 +250,7 @@ Wanneer u naar CosmosDB schrijft, kunt u de prestaties verbeteren door de door V
 
 **Budget voor schrijf doorvoer:** Gebruik een waarde die kleiner is dan het totaal van RUs per minuut. Als u een gegevens stroom hebt met een groot aantal Spark-partities, is het instellen van een budget doorvoer meer evenwicht over die partities.
 
-## <a name="optimizing-transformations"></a>Trans formaties optimaliseren
+## <a name="optimizing-transformations"></a>Transformaties optimaliseren
 
 ### <a name="optimizing-joins-exists-and-lookups"></a>Samen voegingen, bestaan en lookups optimaliseren
 
@@ -259,6 +259,8 @@ Wanneer u naar CosmosDB schrijft, kunt u de prestaties verbeteren door de door V
 In samen voegingen, zoek acties en bestaande trans formaties, als een of beide gegevens stromen klein genoeg zijn voor het geheugen van het worker-knoop punt, kunt u de prestaties optimaliseren door **broadcast** in te scha kelen. Broadcasten is wanneer u kleine gegevens frames naar alle knoop punten in het cluster verzendt. Hierdoor kan de Spark-engine een koppeling uitvoeren zonder dat de gegevens in de grote stream opnieuw worden gevolgd. Standaard wordt door de Spark-Engine automatisch bepaald of één zijde van een koppeling moet worden uitgezonden. Als u bekend bent met uw inkomende gegevens en weet dat de ene stroom aanzienlijk kleiner is dan de andere, kunt u een **vaste** uitzending selecteren. Met de vaste uitzending wordt Spark geforceerd de geselecteerde stroom uitgezonden. 
 
 Als de verzonden gegevens te groot zijn voor het Spark-knoop punt, wordt er mogelijk een geheugen fout weer gegeven. Gebruik **geoptimaliseerde geheugen** clusters om geheugen fouten te voor komen. Als u uitzend-time-outs ondervindt tijdens de uitvoering van gegevens stromen, kunt u de uitschakeling van de uitzending uitschakelen. Dit leidt er echter toe dat gegevens stromen langzamer worden uitgevoerd.
+
+Wanneer u werkt met gegevens bronnen die meer query's kunnen uitvoeren, zoals grote database query's, is het raadzaam om de broadcast uit te scha kelen voor samen voegen. Bron met lange query tijden kan Spark-time-outs veroorzaken wanneer het cluster naar reken knooppunten probeert te broadcasten. Een andere goede keus voor het uitschakelen van de uitzending is wanneer u een stroom in uw gegevens stroom hebt die waarden samenvoegt voor gebruik in een opzoek transformatie. Dit patroon kan de Spark-Optimizer verwarren en time-outs veroorzaken.
 
 ![Trans formatie optimaliseren](media/data-flow/joinoptimize.png "Deelname aan optimalisatie")
 

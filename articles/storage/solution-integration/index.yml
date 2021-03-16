@@ -1,54 +1,55 @@
 ### YamlMime:Landing
 title: Documentatie over gevalideerde partner oplossingen Azure Storage
-summary: Azure Storage gevalideerde partner oplossingen maken geavanceerde scenario's boven op het Azure Storage platform.
+summary: Met Azure Storage gevalideerde partner oplossingen kunnen geavanceerde scenario's boven op Azure Storage worden ingeschakeld.
 metadata:
   title: Azure Storage gevalideerde partner oplossingen
-  description: Azure Storage gevalideerde partner oplossingen maken geavanceerde scenario's boven op het Azure Storage platform.
+  description: Met Azure Storage gevalideerde partner oplossingen kunnen geavanceerde scenario's boven op Azure Storage worden ingeschakeld.
   services: storage
   ms.service: storage
+  ms.subservice: partner
   ms.topic: landing-page
   ms.collection: collection
   author: beber-msft
   ms.author: beber
-  ms.date: 12/08/2020
-  ms.openlocfilehash: 2e9a2ac1e8d33020a94c2c783d3d695a459fcea5
-  ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+  ms.date: 03/15/2021
+  ms.openlocfilehash: 5d2c7d767fd678867175481c0b837c1aa11ecf33
+  ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/03/2021
-  ms.locfileid: "101749104"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103562447"
 landingContent:
-- title: Azure Opslaganalyse-en Big Data-partners
+- title: Analytics-en big data-partners
   linkLists:
   - linkListType: overview
     links:
-    - text: Gevalideerde Azure Opslaganalyse partners
+    - text: Gevalideerde Analytics-partners
       url: .\validated-partners\analytics\partner-overview.md
-- title: Azure Storage-partners archiveren, back-ups maken en BCDR
+- title: Archief-, back-up-en BCDR-partners
   linkLists:
   - linkListType: overview
     links:
-    - text: Gevalideerde Azure Storage-archief-en BCDR-partners
+    - text: Gevalideerde archief-en BCDR-partners
       url: .\validated-partners\backup-archive-disaster-recovery\partner-overview.md
-  - linkListType: quickstart
+  - linkListType: get-started
     links:
-    - text: Hand leiding voor CommVault Snelstartgids
+    - text: Introductie handleiding voor CommVault
       url: .\validated-partners\backup-archive-disaster-recovery\commvault\commvault-solution-guide.md
-    - text: Gids voor Veeam Quick Start
+    - text: Hand leiding voor Veeam aan de slag
       url: .\validated-partners\backup-archive-disaster-recovery\veeam\veeam-solution-guide.md
-- title: Azure Storage container oplossings partners
+- title: Container oplossings partners
   linkLists:
   - linkListType: overview
     links:
-    - text: Gevalideerde Azure Storage container oplossings partners
+    - text: Gevalideerde container oplossings partners
       url: .\validated-partners\container-solutions\partner-overview.md
-- title: Gegevens beheer en migratie partners Azure Storage
+- title: Gegevens beheer en migratie partners
   linkLists:
   - linkListType: overview
     links:
-    - text: Gevalideerde Azure Storage gegevens beheer en migratie partners
+    - text: Gevalideerde gegevens beheer-en migratie partners
       url: .\validated-partners\data-management\partner-overview.md
-- title: Primaire en secundaire opslag partners Azure Storage
+- title: Primaire en secundaire opslag partners
   linkLists:
   - linkListType: overview
     links:

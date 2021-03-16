@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: alsin
-ms.openlocfilehash: df5133ad4bb3155afdc9d43e595591d9cfda4ea0
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 2bdf04143121e1286ffc7bfa86b4a9ee291ae6ef
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101644439"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103561856"
 ---
 # <a name="troubleshoot-common-automanage-onboarding-errors"></a>Veelvoorkomende fouten bij het onboarden van problemen oplossen
 Automatisch beheer kan een machine niet op de service voorbereiden. In dit document wordt uitgelegd hoe u implementatie fouten oplost, delen enkele veelvoorkomende oorzaken van het mislukken van implementaties en een beschrijving van mogelijke volgende stappen bij een oplossing.
@@ -21,7 +21,7 @@ Automatisch beheer kan een machine niet op de service voorbereiden. In dit docum
 ## <a name="troubleshooting-deployment-failures"></a>Implementatie fouten oplossen
 Als u een machine onboardt op automatisch beheer, wordt er een Azure Resource Manager implementatie gemaakt. Als onboarding mislukt, kan het nuttig zijn om de implementatie te raadplegen voor meer informatie over de oorzaak van de fout. Er zijn koppelingen naar de implementaties in de flyout fout detail, afbeelding hieronder.
 
-:::image type="content" source="media\automanage-common-errors\failure-flyout.png" alt-text="Flyout voor fout Details van automanage.":::
+:::image type="content" source="media\common-errors\failure-flyout.png" alt-text="Flyout voor fout Details van automanage.":::
 
 ### <a name="check-the-deployments-for-the-resource-group-containing-the-failed-vm"></a>Controleer de implementaties voor de resource groep met de mislukte VM
 De vervolg-flyout bevat een koppeling naar de implementaties binnen de resource groep die de computer bevat waarop de onboarding is mislukt en een naam voor het voor voegsel dat u kunt gebruiken voor het filteren van implementaties met. Als u op de koppeling klikt, wordt u naar de Blade implementaties geleid, waar u vervolgens de implementaties kunt filteren om automatisch beheerde implementaties op uw computer te zien. Als u in meerdere regio's implementeert, moet u ervoor zorgen dat u op de implementatie in de juiste regio klikt.
@@ -38,6 +38,7 @@ Fout |  Oplossing
 :-----|:-------------|
 Fout met onvoldoende machtigingen voor het account voor automanaged | Dit kan gebeuren als u onlangs een abonnement met een nieuwe account voor automanage hebt verplaatst naar een nieuwe Tenant. Stappen om dit op te lossen, vindt u [hier](./repair-automanage-account.md).
 Werkruimte regio komt niet overeen met vereisten voor de toewijzing van regio's | Automatisch beheer kan de computer niet vrijgeven, maar de Log Analytics werk ruimte waaraan de machine momenteel is gekoppeld, is niet toegewezen aan een ondersteunde automatiserings regio. Zorg ervoor dat uw bestaande Log Analytics-werk ruimte en het Automation-account zich in een [ondersteunde regio toewijzing](../automation/how-to/region-mappings.md)bevinden.
+De toegang is geweigerd vanwege het weigeren van de toewijzing met de naam die door de beheerde toepassing is gemaakt. | Er is een [denyAssignment](https://docs.microsoft.com/azure/role-based-access-control/deny-assignments) gemaakt in uw resource waardoor automanage geen toegang heeft tot uw resource. Dit kan zijn veroorzaakt door een [blauw druk](https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking) of een [beheerde toepassing](https://docs.microsoft.com/azure/azure-resource-manager/managed-applications/overview).
 De toewijzing is mislukt; Er is geen aanvullende informatie beschikbaar. | Open een aanvraag met Microsoft Azure ondersteuning.
 
 ## <a name="next-steps"></a>Volgende stappen

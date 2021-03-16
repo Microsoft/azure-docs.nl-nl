@@ -4,12 +4,12 @@ description: Analyse van web-app-prestaties en diagnostische gegevens tijdens fo
 ms.topic: conceptual
 ms.date: 03/17/2017
 ms.custom: vs-azure
-ms.openlocfilehash: d2de29d897c84496fd44d74d88d58decbc64b7f8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 2507dbf7bb8294c949f434d5fa96ccc0af9a7eb3
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532899"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563535"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Fouten opsporen in uw toepassingen met Azure-toepassing Insights in Visual Studio
 In Visual Studio (2015 en hoger) kunt u de prestaties analyseren en problemen in uw ASP.NET web-app identificeren tijdens de foutopsporing en algemeen gebruik. Dit gebeurt aan de hand van telemetrie uit [Azure Application Insights](./app-insights-overview.md).
@@ -65,17 +65,6 @@ In de lens regel van de code boven elke handler-methode ziet u het aantal aanvra
 >
 
 [Meer informatie over Application Insights in Code Lens](./visual-studio-codelens.md)
-
-## <a name="trends"></a>Trends
-Trends is een hulpprogramma waarmee u de werking van uw app gedurende een bepaalde periode kunt visualiseren. 
-
-Kies **Telemetrietrends verkennen** op de Application Insights-werkbalkknop of in het Application Insights-zoekvenster. Kies een van de vijf algemene query's om te beginnen. U kunt verschillende gegevenssets analyseren op basis van telemetrietypen, tijdsbereik en andere eigenschappen. 
-
-Als u wilt zoeken naar afwijkingen in uw gegevens, kiest u een van de afwijkingsopties onder de vervolgkeuzelijst Type weergave. Met de filteropties aan de onderkant van het venster kunt u eenvoudig specifieke subreeksen van uw telemetrie selecteren.
-
-![Trends](./media/visual-studio/51.png)
-
-[Meer informatie over Trends](./visual-studio-trends.md).
 
 ## <a name="local-monitoring"></a>Lokale bewaking
 (Uit Visual Studio 2015 update 2) Als u de SDK niet hebt geconfigureerd voor het verzenden van telemetrie naar de Application Insights Portal (zodat er geen instrumentatie sleutel in ApplicationInsights.config is), wordt in het venster diagnostische gegevens telemetrie van uw nieuwste foutopsporingssessie weer gegeven. 

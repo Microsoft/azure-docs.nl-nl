@@ -1,6 +1,6 @@
 ---
-title: SQL Server SQL Server op virtuele machines van Azure (migratie handleiding)
-description: Volg deze hand leiding voor het migreren van uw afzonderlijke SQL Server-data bases naar SQL Server op Azure Virtual Machines (Vm's).
+title: 'SQL Server SQL Server op virtuele machines van Azure: migratie handleiding'
+description: Deze hand leiding leert u uw afzonderlijke SQL Server-data bases te migreren naar SQL Server op virtuele machines van Azure.
 ms.custom: ''
 ms.service: virtual-machines-sql
 ms.subservice: migration-guide
@@ -9,13 +9,13 @@ ms.topic: how-to
 author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
-ms.date: 11/06/2020
-ms.openlocfilehash: d95da29b732e2d520b3413628c9b4a1c403abed6
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.date: 03/19/2021
+ms.openlocfilehash: 0e1b44667a5ff42978b22ab9450d6a8e9870960b
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488224"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563212"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -195,7 +195,7 @@ De test benadering voor database migratie bestaat uit het uitvoeren van de volge
 
 > [!TIP]
 > Gebruik de [database Experimentation Assistant (DEA)](/sql/dea/database-experimentation-assistant-overview) om te helpen bij het evalueren van de doel-SQL Server prestaties.
->
+
 
 ### <a name="optimize"></a>Optimaliseren
 

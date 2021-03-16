@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/25/2021
-ms.openlocfilehash: 3e12bef7569110084cd059b0dfde8562bd914823
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 5b906bdbd07d59d2acc88f6b30f0db6b6cbc961a
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102030763"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562243"
 ---
 # <a name="standard-columns-in-azure-monitor-logs"></a>Standaard kolommen in Azure Monitor-logboeken
 Gegevens in Azure Monitor logboeken worden [opgeslagen als een set records in een log Analytics werk ruimte of Application Insights toepassing](../logs/data-platform-logs.md), elk met een bepaald gegevens type met een unieke set kolommen. Veel gegevens typen hebben standaard kolommen die gemeen schappelijk zijn voor meerdere typen. In dit artikel worden deze kolommen beschreven en vindt u voor beelden van hoe u deze kunt gebruiken in query's.
@@ -132,7 +132,7 @@ Gebruik deze `union withsource = tt *` query's spaarzaam als scans over gegevens
 
 Het is altijd efficiënter om de SubscriptionId- \_ kolom te gebruiken dan extra heren door de kolom ResourceID te parseren \_ .
 
-## <a name="_substriptionid"></a>\_SubstriptionId
+## <a name="_subscriptionid"></a>\_Abonnements
 De kolom **\_ SubscriptionId** bevat de abonnements-id van de resource waaraan de record is gekoppeld. Dit geeft u een standaard kolom die wordt gebruikt om uw query te beperken tot records van een bepaald abonnement of om verschillende abonnementen te vergelijken.
 
 Voor Azure-resources is de waarde van **__SubscriptionId** het gedeelte van het abonnement van de URL van de [Azure-resource-id](../../azure-resource-manager/templates/template-functions-resource.md). De kolom is beperkt tot Azure-resources, waaronder [Azure-Arc](../../azure-arc/overview.md) -resources, of op aangepaste logboeken die de resource-id tijdens opname hebben aangegeven.

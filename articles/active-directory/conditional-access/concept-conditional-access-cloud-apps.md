@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1b3b4da4e21bca421b76f820c04ba68375be5ca0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2895588a5a82ec2b6c69d33ff6cea39bbe3a0372
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307779"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103491993"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Voorwaardelijke toegang: Cloud-apps of-acties
 
@@ -125,8 +125,14 @@ Naast de micro soft-apps kunnen beheerders een door Azure AD geregistreerde toep
 
 ## <a name="user-actions"></a>Gebruikersacties
 
-Gebruikers acties zijn taken die door een gebruiker kunnen worden uitgevoerd. De enige bewerking die momenteel wordt ondersteund, is het **registreren van beveiligings gegevens** , waardoor het beleid voor voorwaardelijke toegang kan worden afgedwongen wanneer gebruikers die zijn ingeschakeld voor gecombineerde registratie proberen hun beveiligings gegevens te registreren. Meer informatie vindt u in het artikel, [registratie van gecombineerde beveiligings gegevens](../authentication/concept-registration-mfa-sspr-combined.md).
+Gebruikers acties zijn taken die door een gebruiker kunnen worden uitgevoerd. Voorwaardelijke toegang ondersteunt momenteel twee gebruikers acties: 
 
+- **Beveiligings gegevens registreren**: met deze gebruikers actie kan beleid voor voorwaardelijke toegang worden afgedwongen wanneer gebruikers die zijn ingeschakeld voor de gecombineerde registratie poging hun beveiligings gegevens te registreren. Meer informatie vindt u in het artikel, [registratie van gecombineerde beveiligings gegevens](../authentication/concept-registration-mfa-sspr-combined.md).
+
+- **Apparaten registreren of toevoegen (preview)**: met deze gebruikers actie kunnen beheerders beleid voor voorwaardelijke toegang afdwingen wanneer gebruikers apparaten bij Azure AD [registreren](../devices/concept-azure-ad-register.md) of eraan [toevoegen](../devices/concept-azure-ad-join.md) . Er zijn twee belang rijke aandachtspunten met deze gebruikers actie: 
+   - `Require multi-factor authentication` is het enige toegangs beheer dat beschikbaar is voor deze gebruikers actie en alle andere zijn uitgeschakeld. Deze beperking voor komt conflicten met toegangs controles die afhankelijk zijn van de registratie van Azure AD-apparaten of niet van toepassing zijn op Azure AD-apparaatregistratie. 
+   - Wanneer een beleid voor voorwaardelijke toegang is ingeschakeld met deze gebruikers actie, moet u de apparaatinstellingen van **Azure Active Directory**  >  **apparaten** instellen  >    -  `Devices to be Azure AD joined or Azure AD registered require Multi-Factor Authentication` op **Nee**. Anders wordt het beleid voor voorwaardelijke toegang met deze gebruikers actie niet op de juiste wijze afgedwongen. Meer informatie over deze Apparaatinstellingen vindt [u in Apparaatinstellingen configureren](../device-management-azure-portal.md##configure-device-settings). Deze gebruikers actie biedt flexibiliteit om multi-factor Authentication te vereisen voor het registreren of samen voegen van apparaten voor specifieke gebruikers en groepen of voor waarden in plaats van een beleid op Tenant niveau te hebben in Apparaatinstellingen. 
+   
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Voorwaardelijke toegang: voor waarden](concept-conditional-access-conditions.md)

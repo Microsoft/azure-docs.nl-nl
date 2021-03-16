@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperf-fy21q1, automl
-ms.openlocfilehash: e8e904511178f494890b25764a84df8ca64a6b6c
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 24c0d57490ecd039039992310f93ca3e21c47b3b
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102498860"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563484"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -396,9 +396,29 @@ Zie [parametrisatie transparantie](how-to-configure-auto-features.md#featurizati
 > De algoritmen die automatisch worden geautomatiseerd, hebben een inherente wille keurigheid waardoor kleine afwijkingen in de Score van de uiteindelijke metrische gegevens van een aanbevolen model, zoals nauw keurigheid, kunnen ontstaan. Automatische ML voert ook bewerkingen uit op gegevens zoals de splitsing van Train-test, gesplitste validatie of Kruis validatie wanneer dat nodig is. Als u dus een experiment met dezelfde configuratie-instellingen en primaire gegevens meerdere keren uitvoert, zult u waarschijnlijk de variatie van elke eindmetrieke meet waarde van elke experimenten zien als gevolg van deze factoren. 
 
 ## <a name="register-and-deploy-models"></a>Modellen registreren en implementeren
+U kunt een model registreren, zodat u ernaar kunt terugkeren voor later gebruik. 
 
-Zie [hoe en wanneer u een model wilt implementeren](how-to-deploy-and-where.md)voor meer informatie over het downloaden of registreren van een model voor implementatie naar een webservice.
+Als u een model van een automatische ML-uitvoering wilt registreren, gebruikt u de- [`register_model()`](/python/api/azureml-train-automl-client/azureml.train.automl.run.automlrun#register-model-model-name-none--description-none--tags-none--iteration-none--metric-none-) methode. 
 
+```Python
+
+best_run, fitted_model = run.get_output()
+print(fitted_model.steps)
+
+model_name = best_run.properties['model_name']
+description = 'AutoML forecast example'
+tags = None
+
+model = remote_run.register_model(model_name = model_name, 
+                                  description = description, 
+                                  tags = tags)
+```
+
+
+Zie [hoe en wanneer u een model wilt implementeren](how-to-deploy-and-where.md?tabs=python#define-a-deployment-configuration)voor meer informatie over het maken van een implementatie configuratie en het implementeren van een geregistreerd model bij een webservice.
+
+> [!TIP]
+> Voor geregistreerde modellen is een implementatie met één klik beschikbaar via de [Azure machine learning Studio](https://ml.azure.com). Zie [geregistreerde modellen implementeren vanuit Studio](how-to-use-automated-ml-for-ml-models.md#deploy-your-model). 
 <a name="explain"></a>
 
 ## <a name="model-interpretability"></a>Interpreteerbaarheid van modellen

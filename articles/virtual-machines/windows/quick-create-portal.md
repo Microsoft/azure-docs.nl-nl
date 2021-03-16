@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.collection: windows
 ms.topic: quickstart
 ms.workload: infrastructure
-ms.date: 11/05/2019
+ms.date: 03/15/2021
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5e52fab081a94ad58e91c629f4092ae889d38e7a
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 0ba28d003f359af12de6242c6d2444fb8adab0d7
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102560919"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103562748"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-the-azure-portal"></a>Quickstart: Een virtuele Windows-machine maken in de Azure-portal
 
@@ -30,12 +30,12 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 1. Typ **virtuele machines** in de zoekopdracht.
 1. Selecteer **virtuele machines** onder **Services**.
-1. Selecteer **Toevoegen** op de pagina **virtuele machines**. 
+1. Selecteer op de pagina **virtuele machines** de optie **toevoegen** en vervolgens **virtuele machine**. 
 1. Zorg ervoor dat op het tabblad **Basics** onder **Projectgegevens** het juiste abonnement is geselecteerd, en kies **Nieuwe maken** om een nieuwe resourcegroep te maken. Typ *myResourceGroup* als de naam. 
 
     ![Schermopname van het gedeelte met projectgegevens waarin wordt aangegeven waar u het Azure-abonnement en de resourcegroep voor de virtuele machine selecteert](./media/quick-create-portal/project-details.png)
 
-1. Typ onder **Instantiegegevens** *myVM* bij **Naam van virtuele machine** en kies *East US* bij **Regio**. Kies daarna *Windows Server 2019 Datacenter* bij **Installatiekopie**. Houd voor de rest de standaardinstellingen aan.
+1. Typ onder **Exemplaardetails***myVM* als **Naam van de virtuele machine** en kies *VS - oost* als de **Regio**. Kies *Windows Server 2019 Data Center* voor de **installatie kopie** en *Standard_DS1_v2* voor de **grootte**. Houd voor de rest de standaardinstellingen aan.
 
     ![Schermopname van het gedeelte Instantiegegevens waarin u een naam voor de virtuele machine opgeeft en de bijbehorende regio, installatiekopie en grootte selecteert](./media/quick-create-portal/instance-details.png)
 
@@ -51,20 +51,25 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
     ![Schermopname met de knop Controleren en maken onderaan de pagina](./media/quick-create-portal/review-create.png)
 
+1. Nadat de validatie is uitgevoerd, selecteert u de knop **maken** onder aan de pagina.
+
+1. Nadat de implementatie is voltooid, selecteert **u naar resource**.
+
+    ![Scherm afbeelding met de volgende stap van het naar de resource gaan](./media/quick-create-portal/next-steps.png)
 
 ## <a name="connect-to-virtual-machine"></a>Verbinding maken met de virtuele machine
 
 Maak via een extern bureaublad verbinding met de virtuele machine. Deze instructies geven aan hoe u vanaf een Windows-computer verbinding maakt met uw VM. Op een Mac hebt u een RDP-client nodig, zoals deze [Extern-bureaubladclient](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) uit de Mac App Store.
 
-1. Selecteer de knop **Verbinden** op de overzichtspagina van uw virtuele machine. 
+1. Selecteer op de pagina overzicht voor uw virtuele machine de knop **verbinding maken** en selecteer vervolgens **RDP**. 
 
     ![Schermopname van de overzichtspagina van de virtuele machine met de locatie van de knop Verbinden](./media/quick-create-portal/portal-quick-start-9.png)
     
-2. Laat op de pagina **Verbinding maken met virtuele machine** de standaardopties staan om via een IP-adres verbinding te maken via poort 3389 en klik op **RDP-bestand downloaden**.
+2. Behoud op de pagina **verbinding maken met RDP** de standaard opties om verbinding te maken op basis van IP-adres, poort 3389 en klik op **RDP-bestand downloaden**.
 
 2. Open het gedownloade RDP-bestand en klik op **Verbinden** wanneer dit wordt gevraagd. 
 
-3. Selecteer in het venster **Windows-beveiliging** **Meer opties** en vervolgens **Een ander account gebruiken**. Typ de gebruikersnaam als **lokalehost**\\*gebruikersnaam*, voer het wachtwoord in dat u hebt gemaakt voor de virtuele machine, en klik vervolgens op **OK**.
+3. Selecteer in het venster **Windows-beveiliging** **Meer opties** en vervolgens **Een ander account gebruiken**. Typ de gebruikers naam als **localhost** \\ *gebruikers naam*, voer het wacht woord in dat u hebt gemaakt voor de virtuele machine en klik vervolgens op **OK**.
 
 4. Er wordt mogelijk een certificaatwaarschuwing weergegeven tijdens het aanmelden. Klik op **Ja** of **Doorgaan** om de verbinding te maken.
 
@@ -81,7 +86,7 @@ Wanneer u klaar bent, sluit u de externe-bureaubladverbinding met de virtuele ma
 
 ## <a name="view-the-iis-welcome-page"></a>De welkomstpagina van IIS weergeven
 
-Selecteer de VM in de portal en gebruik in het overzicht van de VM de knop **Klik om te kopiëren** rechts van het IP-adres om het adres te kopiëren. Plak het adres vervolgens in een tabblad van de browser. De standaardwelkomstpagina van IIS wordt geopend en deze ziet er als volgt uit:
+Selecteer in de Portal de virtuele machine en klik in het overzicht van de virtuele machine met de muis aanwijzer op het IP-adres om **naar het klem bord te kopiëren**. Kopieer het IP-adres en plak het in een browser tabblad. De standaard welkomst pagina van IIS wordt geopend en moet er als volgt uitzien:
 
 ![Schermopname van de standaardsite van IIS in een browser](./media/quick-create-powershell/default-iis-website.png)
 
@@ -89,11 +94,11 @@ Selecteer de VM in de portal en gebruik in het overzicht van de VM de knop **Kli
 
 Wanneer u de VM niet meer nodig hebt, kunt u de resourcegroep, de machine zelf én alle gerelateerde resources verwijderen. 
 
-Selecteer de resourcegroep voor de virtuele machine en klik op **Verwijderen**. Bevestig de naam van de resourcegroep om het verwijderen van de resources te voltooien.
+Ga naar de resource groep voor de virtuele machine en selecteer vervolgens **resource groep verwijderen**. Bevestig de naam van de resourcegroep om het verwijderen van de resources te voltooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstart hebt u een eenvoudige virtuele machine geïmplementeerd, een netwerkpoort geopend voor internetverkeer en een eenvoudige webserver geïnstalleerd. Voor meer informatie over virtuele machines in Azure, gaat u verder met de zelfstudie voor virtuele Windows-machines.
+In deze Quick Start hebt u een eenvoudige virtuele machine geïmplementeerd, een netwerk poort voor webverkeer geopend en een eenvoudige webserver geïnstalleerd. Voor meer informatie over virtuele machines in Azure, gaat u verder met de zelfstudie voor virtuele Windows-machines.
 
 > [!div class="nextstepaction"]
 > [Zelfstudies over virtuele Windows-machines](./tutorial-manage-vm.md)

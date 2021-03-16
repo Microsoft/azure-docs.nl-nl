@@ -4,14 +4,14 @@ description: Adreslijst Services configureren voor client toegang tot opslag doe
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 12/22/2020
+ms.date: 03/15/2021
 ms.author: v-erkel
-ms.openlocfilehash: 4f1499c9a86999bac86fb7bf185f195e9ba5f690
-ms.sourcegitcommit: 66ce33826d77416dc2e4ba5447eeb387705a6ae5
+ms.openlocfilehash: fd5dce0760953bf19c72e1a1062a9c03ffe861e7
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "103472065"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563366"
 ---
 # <a name="configure-directory-services"></a>Adreslijst Services configureren
 
@@ -81,7 +81,7 @@ In de sectie **beveiligde toegang** kunt u versleuteling en certificaat validati
 
 * **Certificaat automatisch downloaden** : Kies **Ja** als u een certificaat wilt downloaden zodra u deze instellingen verzendt.
 
-Vul de sectie **referenties** in als u statische referenties wilt gebruiken voor LDAP-beveiliging.
+Vul de sectie **referenties** in als u statische referenties wilt gebruiken voor LDAP-beveiliging. Deze informatie wordt versleuteld wanneer deze wordt opgeslagen en kan niet worden opgevraagd.
 
 * **Binding DN** : Geef de DN-naam op die moet worden gebruikt om de LDAP-server te verifiëren. (Gebruik DN-indeling.)
 * **Bindings wachtwoord** : Geef het wacht woord op voor de binding-DN.

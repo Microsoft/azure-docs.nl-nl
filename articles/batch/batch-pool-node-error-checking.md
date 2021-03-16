@@ -3,14 +3,14 @@ title: Controleren op groeps-en knooppunt fouten
 description: In dit artikel worden de achtergrond bewerkingen behandeld die zich kunnen voordoen, samen met fouten die moeten worden gecontroleerd en hoe u deze kunt voor komen bij het maken van Pools en knoop punten.
 author: mscurrell
 ms.author: markscu
-ms.date: 02/03/2020
+ms.date: 03/15/2021
 ms.topic: how-to
-ms.openlocfilehash: 2b67eada5dfa89f95e2c9ae045c6bbe3fa0bb1ce
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 4a0d3e017f36f580024b77fbd23145d7447f336d
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576309"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103564402"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Controleren op groeps-en knooppunt fouten
 
@@ -62,6 +62,13 @@ Wanneer u een pool verwijdert die knoop punten bevat, worden de knoop punten doo
 
 Batch stelt de [groeps status](/rest/api/batchservice/pool/get#poolstate) in die tijdens het verwijderings proces moet worden **verwijderd** . De aanroepende toepassing kan detecteren of het verwijderen van de groep te lang duurt door de eigenschappen **status** en **stateTransitionTime** te gebruiken.
 
+Als de groep langer duurt dan verwacht, wordt er regel matig een nieuwe poging gedaan tot de groep kan worden verwijderd. In sommige gevallen is de vertraging te wijten aan een onderbreking van de Azure-service of andere tijdelijke problemen. Andere factoren die kunnen voor komen dat een groep kan worden verwijderd, moeten mogelijk acties ondernemen om het probleem op te lossen. Deze factoren omvatten het volgende:
+
+- Resource vergrendelingen zijn geplaatst op batch-gemaakte resources of op netwerk bronnen die worden gebruikt door batch.
+- Resources die u hebt gemaakt, hebben een afhankelijkheid van een batch-gemaakte resource. Als u bijvoorbeeld [een pool in een virtueel netwerk maakt](batch-virtual-network.md), maakt batch een netwerk beveiligings groep (NSG), een openbaar IP-adres en een Load Balancer. Als u deze resources buiten de pool gebruikt, kan de groep niet worden verwijderd totdat deze afhankelijkheid wordt verwijderd.
+- De registratie van de resource provider Microsoft.BatCH is ongedaan gemaakt bij het abonnement dat uw groep bevat.
+- "Microsoft Azure Batch" heeft niet langer de [rol Inzender of eigenaar](batch-account-create-portal.md#allow-azure-batch-to-access-the-subscription-one-time-operation) voor het abonnement dat uw groep bevat (voor de batch-accounts van de modus gebruikers abonnement).
+
 ## <a name="node-errors"></a>Knooppunt fouten
 
 Zelfs wanneer de batch knoop punten in een groep heeft toegewezen, kunnen verschillende problemen ertoe leiden dat sommige van de knoop punten niet meer in orde zijn en taken niet kunnen uitvoeren. Voor deze knoop punten zijn nog steeds kosten in rekening gebracht. het is dus belang rijk om problemen op te sporen om te voor komen dat er geen knoop punten kunnen worden gebruikt. Naast algemene knooppunt fouten is de huidige [taak status](/rest/api/batchservice/job/get#jobstate) nuttig voor het oplossen van problemen.
@@ -105,15 +112,10 @@ Als batch de oorzaak kan bepalen, wordt deze door de eigenschap voor knooppunt [
 Aanvullende voor beelden van oorzaken voor niet- **bruikbare** knoop punten zijn:
 
 - Een aangepaste VM-installatie kopie is ongeldig. Bijvoorbeeld een installatie kopie die niet goed is voor bereid.
-
 - Een virtuele machine wordt verplaatst vanwege een infrastructuur fout of een upgrade op laag niveau. Batch herstelt het knoop punt.
-
 - Er is een VM-installatie kopie geïmplementeerd op hardware die deze niet ondersteunt. U kunt bijvoorbeeld proberen om een CentOS HPC-installatie kopie uit te voeren op een [Standard_D1_v2](../virtual-machines/dv2-dsv2-series.md) VM.
-
 - De virtuele machines bevinden zich in een [virtueel Azure-netwerk](batch-virtual-network.md)en het verkeer is geblokkeerd voor de sleutel poorten.
-
 - De virtuele machines bevinden zich in een virtueel netwerk, maar uitgaand verkeer naar Azure Storage wordt geblokkeerd.
-
 - De virtuele machines bevinden zich in een virtueel netwerk met een DNS-configuratie van de klant en de DNS-server kan Azure Storage niet omzetten.
 
 ### <a name="node-agent-log-files"></a>Logboek bestanden van de knooppunt agent

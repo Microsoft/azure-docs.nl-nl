@@ -2,14 +2,14 @@
 title: Overzicht van de Azure Portal
 description: De Azure Portal is een Graphical User Interface waarmee u Azure-services kunt beheren. Meer informatie over het navigeren en zoeken naar resources in de Azure Portal.
 keywords: portal
-ms.date: 12/20/2019
+ms.date: 03/12/2021
 ms.topic: overview
-ms.openlocfilehash: 1e9cf1a9609b9d4f30e51094f1d0542335ead0e2
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: 8f61934e6af150c18d1331c2b28e2686641967d1
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745924"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103563991"
 ---
 # <a name="azure-portal-overview"></a>Overzicht van de Azure Portal
 
@@ -35,7 +35,7 @@ Als u de modus gedokt voor het menu van de portal kiest, is deze altijd zichtbaa
 
 ## <a name="azure-home"></a>Startpagina van Azure
 
-Als nieuwe abonnee voor Azure-services is het eerste wat u ziet nadat u zich [bij de portal heeft aangemeld](https://portal.azure.com) **Azure Home**. Deze pagina bevat een overzicht van resources waarmee u optimaal kunt profiteren van uw Azure-abonnement. Hier vindt u links naar gratis online cursussen, documentatie, coreservices en nuttige sites om up-to-date te blijven en wijzigingen voor uw organisatie te beheren. Voor snelle en gemakkelijke toegang tot werkzaamheden die worden uitgevoerd tonen we ook een lijst met uw meest recent bezochte resources. Deze pagina kan niet worden aangepast, maar u kunt kiezen of u **Azure Home** of **Azure Dasboard** als standaardweergave wilt gebruiken. De eerste keer dat u zich aanmeldt, wordt aan de bovenkant van de pagina een prompt weergegeven waarin u uw voorkeur kunt opslaan.
+Als nieuwe abonnee voor Azure-services is het eerste wat u ziet nadat u zich [bij de portal heeft aangemeld](https://portal.azure.com) **Azure Home**. Deze pagina bevat een overzicht van resources waarmee u optimaal kunt profiteren van uw Azure-abonnement. Hier vindt u links naar gratis online cursussen, documentatie, coreservices en nuttige sites om up-to-date te blijven en wijzigingen voor uw organisatie te beheren. Voor snelle en gemakkelijke toegang tot werkzaamheden die worden uitgevoerd tonen we ook een lijst met uw meest recent bezochte resources. U kunt deze pagina niet aanpassen, maar u hebt de keuze om het **Azure Home** -of **Azure-dash board** als uw standaard weergave te bekijken. De eerste keer dat u zich aanmeldt, wordt aan de bovenkant van de pagina een prompt weer gegeven waar u uw voor keur kunt opslaan.
 
 ![Schermopname waarop u ziet waar u uw voorkeuren kunt opslaan.](./media/azure-portal-overview/azure-portal-default-view.png)
 
@@ -45,13 +45,13 @@ Zowel het menu van de Azure Portal als de standaardweergave van Azure kunnen wor
 
 ## <a name="azure-dashboard"></a>Azure-dashboard
 
-Dashboards bieden een overzicht van de belangrijkste resources in uw abonnement. We hebben een standaard dashboard voor u gemaakt om u op weg te helpen. U kunt dit dashboard aanpassen om de resources die u het vaakst gebruikt, in één weergave te zetten. Wijzigingen die u aanbrengt in de standaard weergave, zijn alleen van invloed op uw eigen ervaring. U kunt echter aanvullende dashboards maken voor eigen gebruik of uw aangepaste dashboards publiceren en delen met andere gebruikers in uw organisatie. Zie [Dashboards maken en delen in de Azure Portal](../azure-portal/azure-portal-dashboards.md) voor meer informatie.
+Dashboards bieden een overzicht van de belangrijkste resources in uw abonnement. We hebben u een standaard dashboard gegeven om aan de slag te gaan. U kunt dit dashboard aanpassen om de resources die u het vaakst gebruikt, in één weergave te zetten. Wijzigingen die u aanbrengt in de standaard weergave, zijn alleen van invloed op uw eigen ervaring. U kunt echter aanvullende dashboards maken voor eigen gebruik of uw aangepaste dashboards publiceren en delen met andere gebruikers in uw organisatie. Zie [Dashboards maken en delen in de Azure Portal](../azure-portal/azure-portal-dashboards.md) voor meer informatie.
 
 ## <a name="getting-around-the-portal"></a>De portal gebruiken
 
-Het is handig om inzicht te krijgen in de basisweergave van de portal en te begrijpen hoe u ermee kunt werken. Hier introduceren we de onderdelen van de gebruikersinterface en enkele van de terminologie die we gebruiken om instructies te geven. Zie de cursusles [Navigeren in de portal](/learn/modules/tour-azure-portal/3-navigate-the-portal) voor een gedetailleerde rondleiding door de portal.
+Het is handig om inzicht te krijgen in de indeling van de Basic-Portal en hoe u ermee kunt werken. Hier introduceren we de onderdelen van de gebruikers interface en enkele van de terminologie die we gebruiken om instructies te geven. Zie de cursusles [Navigeren in de portal](/learn/modules/tour-azure-portal/3-navigate-the-portal) voor een gedetailleerde rondleiding door de portal.
 
-Het menu en de paginaheader van de Azure Portal zijn algemene elementen die altijd aanwezig zijn. Deze permanente functies zijn de basis voor de gebruikersinterface die is gekoppeld aan elke afzonderlijke service of functie en de header biedt toegang tot algemene besturingselementen. De configuratiepagina (ook wel 'blade' genoemd) voor een resource kan ook een resourcemenu bevatten om u te helpen bij het schakelen tussen functies.
+Het menu en de paginaheader van de Azure Portal zijn algemene elementen die altijd aanwezig zijn. Deze permanente functies zijn de ' shell ' voor de gebruikers interface die is gekoppeld aan elke afzonderlijke service of functie en de header biedt toegang tot globale besturings elementen. De configuratie pagina (ook wel ' Blade ' genoemd) voor een resource kan ook een resource menu bevatten om u te helpen bij het scha kelen tussen functies.
 
 In de afbeelding hieronder staan de basiselementen van de Azure Portal, die allemaal worden beschreven in de volgende tabel.
 
@@ -75,7 +75,7 @@ In de afbeelding hieronder staan de basiselementen van de Azure Portal, die alle
 
 ## <a name="get-started-with-services"></a>Aan de slag met services
 
-Als u een nieuwe abonnee bent, moet u een resource maken voordat u iets kan beheren. Selecteer **+ Een resource maken** om de services weer te geven die beschikbaar zijn in de Azure Marketplace. U vindt hier toepassingen en services van honderden providers, allemaal gecertificeerd om te worden uitgevoerd op Azure.
+Als u een nieuwe abonnee bent, moet u een resource maken voordat u iets hoeft te beheren. Selecteer **+ Een resource maken** om de services weer te geven die beschikbaar zijn in de Azure Marketplace. U vindt hier honderden toepassingen en services van veel providers, allemaal gecertificeerd om te worden uitgevoerd op Azure.
 
 We hebben uw favorieten vooraf ingevuld in de zijbalk met koppelingen naar veelgebruikte services.  Als u alle beschikbare services wilt weergeven, selecteert u **Alle services** in de zijbalk.
 

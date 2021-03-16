@@ -14,25 +14,25 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3093d20fbe0a1ded68e34e816b7fc865a237ad92
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: e65ab1cdf08e51b3e2f9df49e39fdd921499f4a6
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100576320"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493812"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Diagnostische logboeken van Media Services controleren
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](media-services-metrics-diagnostic-logs.md)voor een gedetailleerde beschrijving van deze functie en om te zien waarom u Azure Media Services metrische gegevens en Diagnostische logboeken wilt gebruiken.
+Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitoring/monitor-media-services.md)voor een gedetailleerde beschrijving van deze functie en om te zien waarom u Azure Media Services metrische gegevens en Diagnostische logboeken wilt gebruiken.
 
 In dit artikel wordt beschreven hoe u gegevens naar het opslag account rondstuurt en vervolgens de gegevens bekijkt.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - [Een Azure Media Services-account maken](./create-account-howto.md).
-- Controleren  [Media Services metrische gegevens en Diagnostische logboeken](media-services-metrics-diagnostic-logs.md).
+- Controleer de  [Monitor Media Services](monitoring/monitor-media-services.md).
 
 ## <a name="route-data-to-the-storage-account-using-the-portal"></a>Gegevens naar het opslag account routeren met behulp van de portal
 

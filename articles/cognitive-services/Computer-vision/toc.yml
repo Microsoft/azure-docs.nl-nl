@@ -52,78 +52,76 @@
     - name: Upgraden van Read 2.x naar Read 3.x
       href: upgrade-api-versions.md
     - name: AAD-verificatie configureren
-      href: /azure/cognitive-services/authentication?tabs=powershell#authenticate-with-azure-active-directory?context=/azure/cognitive-services/computer-vision/context/context
+      href: /azure/cognitive-services/authentication?tabs=powershell?context=/azure/cognitive-services/computer-vision/context/context
     - name: Door de klant beheerde sleutels gebruiken
       href: /azure/cognitive-services/encryption/cognitive-services-encryption-keys-portal?context=/azure/cognitive-services/computer-vision/context/context
-- name: Computer Vision implementeren
-  items:
-    - name: Containers
+    - name: Computer Vision implementeren
       items:
-        - name: Documentatie voor Cognitive Services-containers
-          href: ../containers/index.yml
-        - name: API-container lezen
+        - name: Containers
           items:
-            - name: Containers installeren en uitvoeren
-              href: computer-vision-how-to-install-containers.md
-              displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, on-premises'
-            - name: Containers configureren
-              href: computer-vision-resource-container-config.md
-            - name: Migreren naar v3 vanuit een Read-container
-              href: read-container-migration-guide.md
-              displayName: 'docker, container, billing, apikey, pull, logging, on-premises'
-            - name: Gebruiken met Kubernetes en Helm
-              href: deploy-computer-vision-on-premises.md
-              displayName: 'kubectl, docker, helm, kubernetes, K8s, tiller, container, image, on-prem, on-premises'
-            - name: Containerinstanties gebruiken
-              maintainContext: true
-              href: ../containers/azure-container-instance-recipe.md
-              displayName: 'container instances, container, containers, images'
-        - name: Ruimtelijke analyse-container
-          items:
-            - name: Overzicht van ruimtelijke analyse
-              href: intro-to-spatial-analysis-public-preview.md
-            - name: De hostcomputer instellen en de container uitvoeren
-              href: spatial-analysis-container.md
-            - name: Bewerkingen configureren
-              href: spatial-analysis-operations.md
-            - name: Een web-app voor het tellen van personen implementeren
-              href: Spatial-analysis-web-app.md
-            - name: Logboekregistratie en problemen oplossen
-              href: spatial-analysis-logging.md
-            - name: Zone- en regelplaatsing
-              href: spatial-analysis-zone-line-placement.md
-            - name: Cameraplaatsing
-              href: spatial-analysis-camera-placement.md
+            - name: Documentatie voor Cognitive Services-containers
+              href: ../containers/index.yml
+            - name: API-container lezen
+              items:
+                - name: Containers installeren en uitvoeren
+                  href: computer-vision-how-to-install-containers.md
+                  displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, on-premises'
+                - name: Containers configureren
+                  href: computer-vision-resource-container-config.md
+                - name: Migreren naar v3 vanuit een Read-container
+                  href: read-container-migration-guide.md
+                  displayName: 'docker, container, billing, apikey, pull, logging, on-premises'
+                - name: Gebruiken met Kubernetes en Helm
+                  href: deploy-computer-vision-on-premises.md
+                  displayName: 'kubectl, docker, helm, kubernetes, K8s, tiller, container, image, on-prem, on-premises'
+                - name: Containerinstanties gebruiken
+                  maintainContext: true
+                  href: ../containers/azure-container-instance-recipe.md
+                  displayName: 'container instances, container, containers, images'
+            - name: Ruimtelijke analyse-container
+              items:
+                - name: Overzicht van ruimtelijke analyse
+                  href: intro-to-spatial-analysis-public-preview.md
+                - name: De hostcomputer instellen en de container uitvoeren
+                  href: spatial-analysis-container.md
+                - name: Bewerkingen configureren
+                  href: spatial-analysis-operations.md
+                - name: Een web-app voor het tellen van personen implementeren
+                  href: Spatial-analysis-web-app.md
+                - name: Logboekregistratie en problemen oplossen
+                  href: spatial-analysis-logging.md
+                - name: Zone- en regelplaatsing
+                  href: spatial-analysis-zone-line-placement.md
+                - name: Cameraplaatsing
+                  href: spatial-analysis-camera-placement.md
 - name: Concepten
   items:
-    - name: Vormen
-      items:
-        - name: Optische tekenherkenning (OCR)
-          href: concept-recognizing-text.md
-        - name: Objectdetectie
-          href: concept-object-detection.md
-        - name: Merkdetectie
-          href: concept-brand-detection.md
-        - name: Inhoudstags
-          href: concept-tagging-images.md
-        - name: Categorisatie van afbeeldingen
-          href: concept-categorizing-images.md
-        - name: Categorietaxonomie
-          href: Category-Taxonomy.md
-        - name: Beschrijvingen van afbeeldingen
-          href: concept-describing-images.md
-        - name: Gezichtsdetectie
-          href: concept-detecting-faces.md
-        - name: Detectie van afbeeldingstype
-          href: concept-detecting-image-types.md
-        - name: Domeinspecifieke inhoud
-          href: concept-detecting-domain-content.md
-        - name: Detectie van kleurenschema
-          href: concept-detecting-color-schemes.md
-        - name: Slim bijgesneden miniaturen
-          href: concept-generating-thumbnails.md
-        - name: Detectie van erotische inhoud
-          href: concept-detecting-adult-content.md
+    - name: Optische tekenherkenning (OCR)
+      href: concept-recognizing-text.md
+    - name: Objectdetectie
+      href: concept-object-detection.md
+    - name: Merkdetectie
+      href: concept-brand-detection.md
+    - name: Inhoudstags
+      href: concept-tagging-images.md
+    - name: Categorisatie van afbeeldingen
+      href: concept-categorizing-images.md
+    - name: Categorietaxonomie
+      href: Category-Taxonomy.md
+    - name: Beschrijvingen van afbeeldingen
+      href: concept-describing-images.md
+    - name: Gezichtsdetectie
+      href: concept-detecting-faces.md
+    - name: Detectie van afbeeldingstype
+      href: concept-detecting-image-types.md
+    - name: Domeinspecifieke inhoud
+      href: concept-detecting-domain-content.md
+    - name: Detectie van kleurenschema
+      href: concept-detecting-color-schemes.md
+    - name: Slim bijgesneden miniaturen
+      href: concept-generating-thumbnails.md
+    - name: Detectie van erotische inhoud
+      href: concept-detecting-adult-content.md
 - name: Zelfstudies
   items:
     - name: Metagegevens genereren voor afbeeldingen

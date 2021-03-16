@@ -2,21 +2,21 @@
 title: Wat is Form Recognizer?
 titleSuffix: Azure Cognitive Services
 description: Met de Azure Form Recognizer-service kunt u sleutel-waardeparen en tabelgegevens in uw formulierdocumenten identificeren en extraheren, en kunt u belangrijke gegevens extraheren uit verkoopbonnen en visitekaartjes.
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: overview
-ms.date: 11/23/2020
-ms.author: pafarley
+ms.date: 03/15/2021
+ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: 95bbc33035ca99a64242274570be5c9263029aef
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: fdd482a6b0d6ca53d99cd17076ccd9a3545f7879
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101094367"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467284"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -24,27 +24,32 @@ ms.locfileid: "101094367"
 
 Azure Form Recognizer is een cognitieve service waarmee u software voor geautomatiseerde gegevensverwerking kunt bouwen met behulp van machine learning-technologie. U kunt de service gebruiken om tekst, sleutel-waardeparen, servicemarkeringen, tabellen en structuur te identificeren in en te extraheren uit uw documenten&mdash;. De service retourneert gestructureerde gegevens, inclusief de relaties in het oorspronkelijke bestand, begrenzingsvak, betrouwbaarheid, en meer. U krijgt snel nauwkeurige resultaten die zijn afgestemd op uw specifieke inhoud zonder dat u veel handmatige ingrepen moet uitvoeren of heel deskundig moet zijn in de gegevenswetenschap. Gebruik Form Recognizer om gegevensvermelding in uw toepassingen te automatiseren, en documenten te verrijken met mogelijkheden voor zoeken.
 
-Form Recognizer bestaat uit aangepaste modellen voor documentverwerking, vooraf gebouwde modellen voor facturen, ontvangstbewijzen en visitekaartjes, en het indelingsmodel. U kunt Form Recognizer-modellen aanroepen met behulp van een REST API of clientbibliotheek-SDK’s om de complexiteit te reduceren en deze te integreren in uw werkstroom of toepassing.
+Formulier herkenning bestaat uit aangepaste modellen voor document verwerking, vooraf ontwikkelde modellen voor facturen, bevestigingen, Id's en visite kaartjes en het indelings model. U kunt Form Recognizer-modellen aanroepen met behulp van een REST API of clientbibliotheek-SDK’s om de complexiteit te reduceren en deze te integreren in uw werkstroom of toepassing.
 
 Form Recognizer bestaat uit de volgende services:
 
 * **[Indelings-API](#layout-api)** : tekst, selectiemarkeringen en tabelstructuren extraheren uit documenten, samen met de bijbehorende begrenzingsvakcoördinaten.
 * **[Aangepaste modellen](#custom-models)** : sleutel-waardeparen, selectiemarkeringen en tabelgegevens extraheren uit formulieren. Deze modellen worden getraind met uw eigen gegevens, zodat ze zijn afgestemd op uw formulieren.
-* **[Vooraf samengestelde modellen](#prebuilt-models)** : gegevens ophalen uit unieke formuliertypen met vooraf samengestelde modellen. Momenteel zijn de volgende vooraf gebouwde modellen beschikbaar
+
+* **[Preconstrueerde modellen](#prebuilt-models)** : Haal gegevens op uit unieke document typen met vooraf samengestelde modellen. Momenteel zijn de volgende vooraf gebouwde modellen beschikbaar
+
   * [Facturen](./concept-invoices.md)
   * [Ontvangstbewijzen](./concept-receipts.md)
   * [Visitekaartjes](./concept-business-cards.md)
+  * [ID-kaarten](./concept-identification-cards.md)
 
 ## <a name="try-it-out"></a>Probeer het eens
 
 Als u de Form Recognizer-service wilt uitproberen, gaat u online naar de gebruikersinterface van het voorbeeldhulpprogramma:
 <!-- markdownlint-disable MD025 -->
-# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+<!-- markdownlint-disable MD024 -->
+
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
 > [!div class="nextstepaction"]
 > [Form Recognizer proberen](https://fott-preview.azurewebsites.net/)
 
-# <a name="v20"></a>[v2.0](#tab/v2-0)
+### <a name="v20"></a>[v2.0](#tab/v2-0)
 
 > [!div class="nextstepaction"]
 > [Form Recognizer proberen](https://fott.azurewebsites.net/)
@@ -67,28 +72,27 @@ U hebt de volgende opties wanneer u aangepaste modellen traint: training met en 
 
 ### <a name="train-without-labels"></a>Trainen zonder labels
 
-Standaard gebruikt Form Recognizer leren zonder supervisie om informatie in te leren over de indeling en relaties tussen velden en items in uw formulieren. Wanneer u uw invoerformulieren verzendt, clustert het algoritme de formulieren op type, detecteert welke sleutels en tabellen aanwezig zijn en koppelt waarden aan sleutels en items aan tabellen. Hiervoor hoeft u niet handmatig gegevens te labelen, of intensief te coderen en onderhouden. U wordt aangeraden deze methode eerst te proberen.
+De formulier herkenning maakt gebruik van leren zonder toezicht om inzicht te krijgen in de indeling en relaties tussen velden en items in uw formulieren. Wanneer u uw invoerformulieren verzendt, clustert het algoritme de formulieren op type, detecteert welke sleutels en tabellen aanwezig zijn en koppelt waarden aan sleutels en items aan tabellen. Voor trainingen zonder labels is hand matige gegevens labelen of intensieve code ring en onderhoud niet vereist. u wordt aangeraden deze methode eerst te proberen.
 
 Zie [Een set trainingsgegevens bouwen](./build-training-data-set.md) voor tips over het verzamelen van uw trainingsdocumenten.
 
 ### <a name="train-with-labels"></a>Trainen met labels
 
-Wanneer u met gelabelde gegevens traint, leert het model onder supervisie om nuttige waarden te extraheren met behulp van de gelabelde formulieren die u opgeeft. Dit resulteert in betere presterende modellen en kan modellen produceren die met complexe formulieren of formulieren met waarden zonder sleutels kunnen werken.
+Wanneer u met gelabelde gegevens traint, gebruikt het model gecontroleerde lessen om belang rijke waarden te extra heren, met behulp van de gelabelde formulieren die u opgeeft. Gegevens met een label worden in betere modellen uitgevoerd en kunnen modellen produceren die met complexe formulieren of formulieren met waarden zonder sleutels werken.
 
-De Form Recognizer gebruikt de [indelings-API](#layout-api) voor meer informatie over de verwachte grootten en posities van gedrukte en handgeschreven tekstelementen. Vervolgens worden door de gebruiker opgegeven labels gebruikt voor het leren van de sleutel/waarde-koppelingen in de documenten. We raden u aan vijf handmatig gelabelde formulieren van hetzelfde type (dezelfde structuur) te gebruiken om aan de slag te gaan wanneer u een nieuw model traint, en zo nodig meer gelabelde gegevens toe te voegen om de nauwkeurigheid van het model te verbeteren.
+De [indelings-API](#layout-api) wordt gebruikt voor de lay-out van het formulier om de verwachte grootte en posities van gedrukte en handgeschreven tekst elementen en uitpak tabellen te ontdekken. Vervolgens worden door de gebruiker opgegeven labels gebruikt voor het leren van de sleutel/waarde-associaties en-tabellen in de documenten. We raden u aan vijf handmatig gelabelde formulieren van hetzelfde type (dezelfde structuur) te gebruiken om aan de slag te gaan wanneer u een nieuw model traint, en zo nodig meer gelabelde gegevens toe te voegen om de nauwkeurigheid van het model te verbeteren. Met de functie voor formulier herkenning kunt u een model trainen om sleutel waardeparen en tabellen te extra heren met behulp van de leer mogelijkheden onder toezicht. 
 
 [Aan de slag met de trainen met labels](./quickstarts/label-tool.md)
 
-
 > [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Azure-Form-Recognizer/player]
-
 
 ## <a name="prebuilt-models"></a>Vooraf gemaakte modellen
 
 Form Recognizer bevat ook vooraf ontwikkelde modellen voor geautomatiseerde gegevensverwerking van unieke formuliertypen.
 
 ### <a name="prebuilt-invoice-model"></a>Vooraf gebouwd factureringsmodel
-Met het vooraf gebouwde factureringsmodel worden gegevens uit facturen geëxtraheerd in verschillende indelingen, en geretourneerd als gestructureerde gegevens. Met dit model wordt belangrijke informatie geëxtraheerd, zoals factuur-id's, klantgegevens, gegevens van leveranciers, verzendadressen, factuuradressen, totalen, belastingen, en meer. Daarnaast wordt het vooraf gemaakte factuur model getraind om alle tekst en tabellen op de factuur te analyseren en te retour neren. Raadpleeg de conceptuele handleiding voor [Facturen](./concept-invoices.md) voor meer informatie.
+
+Het vooraf gemaakte factuur model haalt gegevens op uit facturen in verschillende indelingen en retourneert gestructureerde gegevens. Dit model extraheert belang rijke informatie zoals de factuur-ID, klant gegevens, Details van de leverancier, verzen ding, factuur, totaal, belasting, subtotaal, regel artikelen en meer. Daarnaast wordt het vooraf gemaakte factuur model getraind om alle tekst en tabellen op de factuur te analyseren en te retour neren. Raadpleeg de conceptuele handleiding voor [Facturen](./concept-invoices.md) voor meer informatie.
 
 :::image type="content" source="./media/overview-invoices.jpg" alt-text="voorbeeldfactuur" lightbox="./media/overview-invoices.jpg":::
 
@@ -98,32 +102,48 @@ Het vooraf samengesteld model voor aankoopbewijzen wordt in Australië, Canada, 
 
 :::image type="content" source="./media/overview-receipt.jpg" alt-text="voorbeeld van aankoopbewijs" lightbox="./media/overview-receipt.jpg":::
 
+### <a name="prebuilt-identification-id-cards-model"></a>Model met vooraf gemaakte identificatie (ID)-kaarten
+
+Met het identificatie model (ID) kunt u belang rijke informatie ophalen uit de wereld wijde paspoorten en stuur programma-licenties van ons. Er worden gegevens geëxtraheerd, zoals de document-ID, de verval datum, de verval datum, de naam, het land, de regio, de door de machine Lees bare zone en nog veel meer. Raadpleeg de conceptuele hand leiding [identificatie (id)](./concept-identification-cards.md) voor meer informatie.
+
+:::image type="content" source="./media/overview-id.jpg" alt-text="voor beeld-identificatie kaart" lightbox="./media/overview-id.jpg":::
+
 ### <a name="prebuilt-business-cards-model"></a>Vooraf samengesteld model voor visitekaartjes
 
 Het vooraf samengesteld model voor visitekaartjes haalt informatie, zoals naam, functie, adres, e-mail, bedrijf en telefoonnummers van de persoon op uit visitekaartjes in het Engels. Raadpleeg de conceptuele handleiding voor [Visitekaartjes](./concept-business-cards.md) voor meer informatie.
 
 :::image type="content" source="./media/overview-business-card.jpg" alt-text="voorbeeld van visitekaartje" lightbox="./media/overview-business-card.jpg":::
 
-
 ## <a name="get-started"></a>Aan de slag
 
-Gebruik het [voorbeeldhulpprogramma voor Form Recognizer](https://fott.azurewebsites.net/) of volg een quickstart om aan de slag te gaan met het extraheren van gegevens uit uw formulieren. U wordt aangeraden de gratis service te gebruiken wanneer u de technologie leert. Houd er rekening mee dat het aantal gratis pagina's beperkt is tot 500 per maand.
+Gebruik het hulp programma voor het Recognizer-voorbeeld formulier om de lay-out, vooraf ontwikkelde modellen en een aangepast model voor uw documenten te trainen:  
 
-* [Quickstart voor clientbibliotheek / REST API](./quickstarts/client-library.md) (alle talen, meerdere scenario's)
-* Quickstarts voor webinterface
-  * [Trainen met labels: voorbeeldhulpprogramma voor labelen](quickstarts/label-tool.md)
-* REST-voorbeelden (GitHub)
- * Tekst, selectiemarkeringen en tabelstructuur extraheren uit documenten
-    * [Indelingsgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-layout.md)
-  * Aangepaste modellen trainen en formuliergegevens extraheren
-    * [Trainen zonder labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-train-extract.md)
-    * [Trainen met labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md)
-  * Gegevens extraheren uit facturen
-    * [Factuurgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-invoices.md)
-  * Gegevens extraheren uit aankoopbewijzen
-    * [Ontvangstgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-receipts.md)
-  * Gegevens extraheren uit visitekaartjes
-    * [Gegevens extraheren uit visitekaartjes - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-business-cards.md)
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+
+> [!div class="nextstepaction"]
+> [Form Recognizer proberen](https://fott-preview.azurewebsites.net/)
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+> [!div class="nextstepaction"]
+> [Form Recognizer proberen](https://fott.azurewebsites.net/)
+
+---
+Volg de [rest API Snelstartgids](./quickstarts/client-library.md) van de client om aan de slag te gaan met het extra heren van gegevens uit uw documenten. U wordt aangeraden de gratis service te gebruiken wanneer u de technologie leert. Houd er rekening mee dat het aantal gratis pagina's beperkt is tot 500 per maand.
+
+U kunt ook de REST-voor beelden (GitHub) gebruiken om aan de slag te gaan. 
+
+* Tekst, selectie markeringen en tabel structuur extra heren uit documenten
+  * [Indelingsgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-layout.md)
+* Aangepaste modellen trainen en formuliergegevens extraheren
+  * [Trainen zonder labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-train-extract.md)
+  * [Trainen met labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md)
+* Gegevens extraheren uit facturen
+  * [Factuurgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-invoices.md)
+* Gegevens extraheren uit aankoopbewijzen
+  * [Ontvangstgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-receipts.md)
+* Gegevens extraheren uit visitekaartjes
+  * [Gegevens extraheren uit visitekaartjes - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-business-cards.md)
 
 ### <a name="review-the-rest-apis"></a>De REST API's bekijken
 
@@ -131,18 +151,21 @@ U gebruikt de volgende API's om modellen te trainen en gestructureerde gegevens 
 
 |Naam |Beschrijving |
 |---|---|
-| **Indeling analyseren** | Analyseer een document dat is doorgegeven als een stroom, om tekst, selectiemarkeringen, tabellen en structuur te extraheren uit het document |
+| **Indeling analyseren** | Een document dat is door gegeven als een stroom analyseren om tekst, selectie markeringen, tabellen en structuur uit het document te extra heren |
 | **Aangepast model trainen**| Train een nieuw model om uw formulieren te analyseren met behulp van vijf formulieren van hetzelfde type. Stel de parameter _useLabelFile_ in op `true` om met handmatig gelabelde gegevens te trainen. |
 | **Formulier analyseren** |Analyseer met uw aangepaste model een formulier dat is doorgegeven als een stroom, om tekst, sleutel-waardeparen en tabellen te extraheren uit het formulier.  |
-| **Factuur analyseren** | Analyseer een factuur om belangrijke informatie, tabellen en andere factuurtekst te extraheren.|
+| **Factuur analyseren** | Analyseer een factuur om belang rijke informatie, tabellen en andere factuur tekst te extra heren.|
 | **Ontvangstbewijs analyseren** | Analyseer een ontvangstbewijsdocument voor het extraheren van belangrijke informatie en andere ontvangstbewijstekst.|
+| **ID analyseren** | Analyseer een ID-kaart document voor het extra heren van belang rijke informatie en andere ID-kaart tekst.|
 | **Visitekaartjes analyseren** | Analyseer een visitekaartje om belangrijke informatie en tekst te extraheren.|
 
-# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
-Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
+### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-# <a name="v20"></a>[v2.0](#tab/v2-0)
-Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
+Lees het [naslagmateriaal bij de REST API](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
+
+### <a name="v20"></a>[v2.0](#tab/v2-0)
+
+Lees het [naslagmateriaal bij de REST API](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeWithCustomForm) voor meer informatie. Als u bekend bent met een eerdere versie van de API, raadpleegt u het artikel [Nieuwe functies](./whats-new.md) voor meer informatie over recente wijzigingen.
 
 ---
 
@@ -152,7 +175,7 @@ Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microso
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik Form Recognizer-containers (preview)](form-recognizer-container-howto.md) om API-functies on-premises te implementeren. Deze Docker-container stelt u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen. 
+[Gebruik Form Recognizer-containers (preview)](form-recognizer-container-howto.md) om API-functies on-premises te implementeren. Met deze docker-container kunt u de service dichter bij uw gegevens plaatsen voor naleving, beveiliging of andere operationele redenen.
 
 ## <a name="service-availability-and-redundancy"></a>Servicebeschikbaarheid en redundantie
 
@@ -164,11 +187,13 @@ Ja. De Form Recognizer-service is standaard zonetolerant.
 
 Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolerantie voor Form Recognizer-bronnen is standaard beschikbaar en wordt beheerd door de service zelf.
 
-
 ## <a name="data-privacy-and-security"></a>Gegevensprivacy en -beveiliging
 
 Zoals geldt voor alle services van Cognitive Services, dienen ontwikkelaars die de Form Recognizer-service gebruiken op de hoogte te zijn van het beleid van Microsoft inzake klantgegevens. Zie de [pagina Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) (Engelstalig) in het Microsoft Trust Center voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Maak een [Snelstartgids](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van formulieren met een formulier herkenner in de ontwikkelings taal van uw keuze.
+Probeer onze online tool en Quick start voor meer informatie over de formulier Recognizer-service.
+
+* [**Hulp programma voor formulier herkenning**](https://fott-preview.microsoft.com/)
+* [**Snelstartgids voor client bibliotheken en REST API**](quickstarts/client-library.md)

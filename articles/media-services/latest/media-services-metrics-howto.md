@@ -14,25 +14,25 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ab89c222648a66ad7451f9bb47e254c55b925630
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: ab5871749630b047f6498a2439f77693a999c798
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590760"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493918"
 ---
 # <a name="monitor-media-services-metrics"></a>Metrische gegevens voor Media Services controleren
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](media-services-metrics-diagnostic-logs.md)voor een gedetailleerde beschrijving van deze functie en om te begrijpen waarom u Azure Media Services metrische gegevens en Diagnostische logboeken moet gebruiken.
+Met [Azure monitor](../../azure-monitor/overview.md) kunt u metrische gegevens en Diagnostische logboeken bewaken die u helpen begrijpen hoe uw toepassingen worden uitgevoerd. Zie [Media Services metrische gegevens en Diagnostische logboeken controleren](monitoring/monitor-media-services-data-reference.md)voor een gedetailleerde beschrijving van deze functie en om te begrijpen waarom u Azure Media Services metrische gegevens en Diagnostische logboeken moet gebruiken.
 
 Azure Monitor biedt verschillende manieren om te communiceren met metrische gegevens, zoals het maken van grafieken in de portal, het openen ervan via de REST API of het opvragen van query's met behulp van Azure CLI. In dit artikel wordt uitgelegd hoe u metrische gegevens kunt controleren met behulp van de Azure Portal grafieken en Azure CLI.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - [Een Azure Media Services-account maken](./create-account-howto.md)
-- Controleren  [Media Services metrische gegevens en Diagnostische logboeken](media-services-metrics-diagnostic-logs.md)
+- Controleren  [Media Services metrische gegevens en Diagnostische logboeken](monitoring/monitor-media-services-data-reference.md)
 
 ## <a name="view-metrics-in-azure-portal"></a>Metrische gegevens weer geven in Azure Portal
 
@@ -46,7 +46,7 @@ Azure Monitor biedt verschillende manieren om te communiceren met metrische gege
     * &lt;Naam van Media Services account naam van &gt; / &lt; streaming-eind punt&gt;
     * &lt;naam van opslag account&gt;
 
-    Filter vervolgens de resource en druk op **Toep assen**. Zie [Media Services metrische gegevens controleren](media-services-metrics-diagnostic-logs.md)voor meer informatie over ondersteunde bronnen en metrische gegevens.
+    Filter vervolgens de resource en druk op **Toep assen**. Zie [Media Services metrische gegevens controleren](monitoring/monitor-media-services-data-reference.md)voor meer informatie over ondersteunde bronnen en metrische gegevens.
 
     > [!NOTE]
     > Als u wilt scha kelen tussen resources die u wilt bewaken, klikt u nogmaals op het vak **bron** en herhaalt u deze stap.

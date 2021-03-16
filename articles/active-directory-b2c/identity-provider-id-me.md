@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 39896d88aeab4c592c74ded2d6edddfb46d2d203
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 3c5df0c4112f07a465d38e789b1401132ed25931
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448282"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488802"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-idme-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een ID.me-account met behulp van Azure Active Directory B2C
 
@@ -45,7 +45,7 @@ Als u aanmelden wilt inschakelen voor gebruikers met een ID.me-account in Azure 
 1. Selecteer **mijn toepassingen weer geven** en selecteer **door gaan**.
 1. **Nieuw maken** selecteren
     1. Voer een **naam** en **weergave naam** in.
-    1. Voer in de **omleidings-URI** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang `your-tenant-name` door de naam van uw tenant. 
+    1. Voer in de **omleidings-URI** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein. 
 1. Klik op **Continue**.
 1. Kopieer de waarden van de **client-id** en het **client geheim**. U hebt beide nodig om de ID-provider toe te voegen aan uw Tenant.
 

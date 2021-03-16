@@ -1,5 +1,5 @@
 ---
-title: IoT Edge Security module implementeren
+title: IoT Edge Defender-IoT-micro-agent implementeren
 description: Meer informatie over het implementeren van een Defender voor IoT-beveiligings agent op IoT Edge.
 services: defender-for-iot
 ms.service: defender-for-iot
@@ -13,24 +13,24 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/30/2020
 ms.author: mlottner
-ms.openlocfilehash: cd79c928afdb3563b47374869cff577f9221d360
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: e4117c3c0f1016da616a88a36a1b8c926b790c62
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101705769"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103495110"
 ---
-# <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Een beveiligings module op uw IoT Edge-apparaat implementeren
+# <a name="deploy-a-defender-iot-micro-agent-on-your-iot-edge-device"></a>Een Defender-IoT-micro-agent op uw IoT Edge-apparaat implementeren
 
 De module **Defender voor IOT** biedt een uitgebreide beveiligings oplossing voor uw IOT edge-apparaten.
-De beveiligings module verzamelt, aggregeert en analyseert onbewerkte beveiligings gegevens van uw besturings systeem en container systeem in aanbevelingen voor beveiliging en waarschuwingen.
-Zie [beveiligings module voor IOT Edge voor](security-edge-architecture.md)meer informatie.
+Met de Defender-IoT-micro agent worden onbewerkte beveiligings gegevens van uw besturings systeem en container systeem verzameld, geaggregeerd en geanalyseerd in aanbevelingen voor beveiliging en waarschuwingen.
+Zie voor meer informatie [Defender-IOT-micro agent for IOT Edge](security-edge-architecture.md).
 
-In dit artikel leert u hoe u een beveiligings module implementeert op uw IoT Edge-apparaat.
+In dit artikel leert u hoe u een Defender-IoT-micro-agent op uw IoT Edge-apparaat kunt implementeren.
 
-## <a name="deploy-security-module"></a>Beveiligings module implementeren
+## <a name="deploy-defender-iot-micro-agent"></a>Defender-IoT-micro-agent implementeren
 
-Gebruik de volgende stappen om een Defender for IoT-beveiligings module voor IoT Edge te implementeren.
+Gebruik de volgende stappen voor het implementeren van een Defender voor IoT Defender-IoT-micro-agent voor IoT Edge.
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -169,7 +169,7 @@ Voltooi elke stap om uw IoT Edge-implementatie voor Defender voor IoT te volt oo
 
 ## <a name="diagnostic-steps"></a>Diagnostische stappen
 
-Als er een probleem optreedt, zijn container Logboeken de beste manier om meer te weten te komen over de status van een IoT Edge Security module-apparaat. Gebruik de opdrachten en hulpprogramma's in deze sectie om informatie te verzamelen.
+Als er een probleem optreedt, zijn container Logboeken de beste manier om meer te weten te komen over de status van een IoT Edge Defender-IoT-micro agent-apparaat. Gebruik de opdrachten en hulpprogramma's in deze sectie om informatie te verzamelen.
 
 ### <a name="verify-the-required-containers-are-installed-and-functioning-as-expected"></a>Controleer of de vereiste containers zijn geïnstalleerd en werken zoals verwacht
 
@@ -179,7 +179,7 @@ Als er een probleem optreedt, zijn container Logboeken de beste manier om meer t
 
 1. Controleer of de volgende containers worden uitgevoerd:
 
-   | Name | AFBEELDING |
+   | Naam | AFBEELDING |
    | --- | --- |
    | azureiotsecurity | mcr.microsoft.com/ascforiot/azureiotsecurity:1.0.2 |
    | edgeHub | mcr.microsoft.com/azureiotedge-hub:1.0.8.3 |

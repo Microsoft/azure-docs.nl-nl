@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 3ed5c2c1c95822717981f7d30b91edd244420c59
-ms.sourcegitcommit: eb546f78c31dfa65937b3a1be134fb5f153447d6
+ms.openlocfilehash: c7d06172abd696e386337e563fa29fdbd2d3cdae
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99427682"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493659"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Ondersteunde Kubernetes-versies in AKS (Azure Kubernetes Service)
 
@@ -151,7 +151,7 @@ Zie [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes#History)voor de eerder
 
 **Hoe vaak moet ik verwachten dat Kubernetes-versies worden bijgewerkt om ondersteuning te blijven bieden?**
 
-De open source-community met Kubernetes 1,19 biedt [uitgebreide ondersteuning voor één jaar](https://kubernetes.io/blog/2020/08/31/kubernetes-1-19-feature-one-year-support/). AKS door voeren om patches en ondersteuning in te scha kelen die overeenkomen met de upstream-toezeg gingen, ten minste. Dit betekent dat u met AKS-clusters op 1,19 een upgrade kunt uitvoeren van Mini maal één keer per jaar om op een ondersteunde versie te blijven. Voor versies op 1,18 of lager blijft het ondersteunings venster een periode van 9 maanden waarvoor een upgrade eenmaal per 9 maanden vereist is om op een ondersteunde versie te blijven. Het is raadzaam om regel matig nieuwe versies te testen en te upgraden naar nieuwere versies om de laatste stabiele verbeteringen in Kubernetes vast te leggen.
+Vanaf Kubernetes 1,19 [is de open source-community uitgebreide ondersteuning voor 1 jaar](https://kubernetes.io/blog/2020/08/31/kubernetes-1-19-feature-one-year-support/). AKS door voeren om patches en ondersteuning in te scha kelen die overeenkomen met de upstream-toezeg gingen, ten minste. Dit betekent dat u met AKS-clusters op 1,19 een upgrade kunt uitvoeren van Mini maal één keer per jaar om op een ondersteunde versie te blijven. Voor versies op 1,18 of lager blijft het ondersteunings venster een periode van 9 maanden waarvoor een upgrade eenmaal per 9 maanden vereist is om op een ondersteunde versie te blijven. Het is raadzaam om regel matig nieuwe versies te testen en te upgraden naar nieuwere versies om de laatste stabiele verbeteringen in Kubernetes vast te leggen.
 
 **Wat gebeurt er wanneer een gebruiker een Kubernetes-cluster upgradet met een secundaire versie die niet wordt ondersteund?**
 

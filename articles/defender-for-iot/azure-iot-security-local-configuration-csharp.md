@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: v-ekrieg
-ms.openlocfilehash: 13c16407481d4fa6f7d468a73051cc4945e6314e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14237894a38725ee07deca3b5f46cbe0ecfce4cd
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91851230"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493217"
 ---
 # <a name="understanding-the-local-configuration-file-c-agent"></a>Informatie over het lokale configuratie bestand (C#-agent)
 
@@ -84,7 +84,7 @@ Voor Windows:
 
 | Configuratie naam | Mogelijke waarden | Details |
 |:-----------|:---------------|:--------|
-| moduleName | tekenreeks | De naam van de identiteit van de beveiligings module. Deze naam moet overeenkomen met de naam van de module-id in het apparaat. |
+| moduleName | tekenreeks | De naam van de Defender-IoT-micro agent-identiteit. Deze naam moet overeenkomen met de naam van de module-id in het apparaat. |
 | deviceId | tekenreeks | ID van het apparaat (zoals geregistreerd in azure IoT Hub). |
 | schedulerInterval | Time span-teken reeks | Intern scheduler-interval. |
 | gatewayHostname | tekenreeks | De hostnaam van de Azure IOT hub. Doorgaans <mijn hub>. azure-devices.net |

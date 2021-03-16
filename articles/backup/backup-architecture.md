@@ -3,12 +3,12 @@ title: Overzicht van de architectuur
 description: Hierin wordt een overzicht gegeven van de architectuur, onderdelen en processen die door de Azure Backup-service worden gebruikt.
 ms.topic: conceptual
 ms.date: 02/19/2019
-ms.openlocfilehash: 288b073c20b93bf1802f34f5dcd17b12430bb279
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 1e5a61bd4e3287c1100ff1f54fda797c1add438b
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427731"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466408"
 ---
 # <a name="azure-backup-architecture-and-components"></a>Architectuur en onderdelen van Azure Backup
 
@@ -22,11 +22,11 @@ Azure Backup maakt een back-up van de gegevens, machine status en workloads die 
 
 U kunt met behulp van een aantal methoden back-ups maken van computers en gegevens:
 
-- **Back-ups van on-premises machines** :
+- **Back-ups van on-premises machines**:
   - U kunt rechtstreeks een back-up maken van on-premises Windows-machines naar Azure met behulp van de MARS-agent (Azure Backup Microsoft Azure Recovery Services). Linux-machines worden niet ondersteund.
   - U kunt back-ups van on-premises machines maken op een back-upserver: System Center Data Protection Manager (DPM) of Microsoft Azure Backup Server (MABS). U kunt vervolgens een back-up maken van de back-upserver naar een Recovery Services kluis in Azure.
 
-- **Back-ups maken van virtuele Azure-machines** :
+- **Back-ups maken van virtuele Azure-machines**:
   - U kunt rechtstreeks back-ups maken van Azure-Vm's. Azure Backup installeert een back-upextensie in de Azure VM-agent die wordt uitgevoerd op de VM. Deze uitbrei ding maakt een back-up van de volledige VM.
   - U kunt een back-up maken van specifieke bestanden en mappen op de virtuele Azure-machine door de MARS-agent uit te voeren.
   - U kunt back-ups maken van virtuele Azure-machines naar de MABS die worden uitgevoerd in azure, en u kunt vervolgens een back-up maken van de MABS naar een Recovery Services kluis.
@@ -43,9 +43,9 @@ Kluizen hebben de volgende kenmerken:
 - U kunt back-upitems bewaken in een kluis, waaronder Azure Vm's en on-premises machines.
 - U kunt de toegang tot de kluis beheren met [Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../role-based-access-control/role-assignments-portal.md).
 - U geeft op hoe gegevens in de kluis worden gerepliceerd voor redundantie:
-  - **Lokaal redundante opslag (LRS)** : als u wilt beveiligen tegen fouten in een Data Center, kunt u LRS gebruiken. LRS repliceert gegevens naar een opslag schaal eenheid. [Meer informatie](../storage/common/storage-redundancy.md#locally-redundant-storage).
-  - **Geografisch redundante opslag (GRS)** : als u wilt beveiligen tegen regionale storingen, kunt u GRS gebruiken. GRS repliceert uw gegevens naar een secundaire regio. [Meer informatie](../storage/common/storage-redundancy.md#geo-redundant-storage).
-  - **Zone-redundante opslag (ZRS)** : repliceert uw gegevens in [beschikbaarheids zones](../availability-zones/az-overview.md#availability-zones), waarbij de gegevens locatie en tolerantie in dezelfde regio worden gegarandeerd. [Meer informatie](../storage/common/storage-redundancy.md#zone-redundant-storage)
+  - **Lokaal redundante opslag (LRS)**: als u wilt beveiligen tegen fouten in een Data Center, kunt u LRS gebruiken. LRS repliceert gegevens naar een opslag schaal eenheid. [Meer informatie](../storage/common/storage-redundancy.md#locally-redundant-storage).
+  - **Geografisch redundante opslag (GRS)**: als u wilt beveiligen tegen regionale storingen, kunt u GRS gebruiken. GRS repliceert uw gegevens naar een secundaire regio. [Meer informatie](../storage/common/storage-redundancy.md#geo-redundant-storage).
+  - **Zone-redundante opslag (ZRS)**: repliceert uw gegevens in [beschikbaarheids zones](../availability-zones/az-overview.md#availability-zones), waarbij de gegevens locatie en tolerantie in dezelfde regio worden gegarandeerd. [Meer informatie](../storage/common/storage-redundancy.md#zone-redundant-storage)
   - Recovery Services kluizen gebruiken standaard GRS.
 
 Recovery Services kluizen hebben de volgende extra functies:
@@ -56,7 +56,7 @@ Recovery Services kluizen hebben de volgende extra functies:
 
 Azure Backup biedt verschillende back-upagenten, afhankelijk van het type computer waarvan een back-up wordt gemaakt:
 
-**Agent** | **Details**
+**Tussen** | **Details**
 --- | ---
 **MARS-agent** | <ul><li>Wordt uitgevoerd op afzonderlijke on-premises Windows Server-machines om een back-up te maken van bestanden, mappen en de systeem status.</li> <li>Wordt uitgevoerd op virtuele machines van Azure om een back-up te maken van bestanden, mappen en de systeem status.</li> <li>Wordt uitgevoerd op DPM-MABS-servers om een back-up te maken van de lokale opslag schijf DPM/MABS naar Azure.</li></ul>
 **VM-extensie van Azure** | Wordt uitgevoerd op virtuele Azure-machines om een back-up te maken naar een kluis.
@@ -99,8 +99,8 @@ De volgende tabel bevat een overzicht van de ondersteunde functies voor de versc
 **Functie** | **Directe back-ups van bestanden en mappen (met behulp van de MARS-agent)** | **Back-up van Azure VM** | **Computers of apps met DPM/MABS**
 --- | --- | --- | ---
 Back-up naar kluis maken | ![Ja][green] | ![Ja][green] | ![Ja][green]
-Back-up naar DPM/MABS-schijf en vervolgens naar Azure | | | ![Yes][green]
-Gegevens comprimeren die voor back-up zijn verzonden | ![Yes][green] | Er wordt geen compressie gebruikt bij de overdracht van gegevens. De opslag is enigszins geflateerd, maar het herstellen gaat sneller.  | ![Yes][green]
+Back-up naar DPM/MABS-schijf en vervolgens naar Azure | | | ![Ja][green]
+Gegevens comprimeren die voor back-up zijn verzonden | ![Ja][green] | Er wordt geen compressie gebruikt bij de overdracht van gegevens. De opslag is enigszins geflateerd, maar het herstellen gaat sneller.  | ![Ja][green]
 Incrementele back-up uitvoeren |![Ja][green] |![Ja][green] |![Ja][green]
 Back-ups maken van ontdubbelde schijven | | | ![Gedeeltelijk][yellow]<br/><br/> Voor DPM-MABS-servers die alleen on-premises worden geïmplementeerd.
 
@@ -167,7 +167,7 @@ U hoeft geen expliciete Internet connectiviteit toe te staan om een back-up te m
 1. De MARS-agent gebruikt VSS om een tijdgebonden moment opname te maken van de volumes die zijn geselecteerd voor back-up.
     - De MARS-agent gebruikt alleen de Windows-systeem schrijf bewerking voor het vastleggen van de moment opname.
     - Omdat de agent geen VSS-schrijvers van toepassingen gebruikt, worden er geen app-consistente moment opnamen vastgelegd.
-1. Na het maken van de moment opname met VSS, maakt de MARS-agent een virtuele harde schijf (VHD) in de cachemap die u hebt opgegeven tijdens het configureren van de back-up. De agent slaat ook de controle sommen voor elk gegevens blok op.
+1. Na het maken van de moment opname met VSS, maakt de MARS-agent een virtuele harde schijf (VHD) in de cachemap die u hebt opgegeven tijdens het configureren van de back-up. De agent slaat ook de controle sommen voor elk gegevens blok op. Deze worden later gebruikt voor het detecteren van gewijzigde blokken voor volgende incrementele back-ups.
 1. Incrementele back-ups worden uitgevoerd volgens het schema dat u opgeeft, tenzij u een back-up op aanvraag uitvoert.
 1. In incrementele back-ups worden gewijzigde bestanden geïdentificeerd en wordt een nieuwe VHD gemaakt. De VHD wordt gecomprimeerd en versleuteld en vervolgens naar de kluis verzonden.
 1. Nadat de incrementele back-up is voltooid, wordt de nieuwe VHD samengevoegd met de VHD die is gemaakt na de initiële replicatie. Deze samengevoegde VHD bevat de meest recente status om te vergelijken voor continue back-ups.

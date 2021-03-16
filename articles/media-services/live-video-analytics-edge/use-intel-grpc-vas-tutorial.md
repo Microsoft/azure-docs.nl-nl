@@ -6,12 +6,12 @@ ms.date: 02/04/2021
 ms.service: media-services
 ms.author: faneerde
 author: fvneerden
-ms.openlocfilehash: 282ab76c34405f19e7f81b2a8069c178b17ee0c1
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: 20a22d11973f5bb01e2c1345538d5d94ce311dc7
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124411"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103465756"
 ---
 # <a name="tutorial-analyze-live-video-by-using-intel-openvino-dl-streamer--edge-ai-extension"></a>Zelf studie: Live video analyseren door gebruik te maken van Intel™ DL streamer-Edge ai-extensie 
 
@@ -128,7 +128,7 @@ Als onderdeel van de vereisten hebt u de voorbeeldcode naar een map gedownload. 
     De *deployment.openvino.grpc.cpu.amd64.jsin* het manifest bestand wordt gemaakt in de map *src/Edge/config* .
 
 > [!NOTE]
-We hebben ook een *deployment.openvino.grpc.gpu.template.jsopgenomen in* een sjabloon waarmee GPU-ondersteuning wordt ingeschakeld voor de Intel open-wijn DL-uitbreidings module voor de AI-extensie. Deze sjablonen verwijzen naar de installatie kopie van de docker hub van Intel.
+> We hebben ook een *deployment.openvino.grpc.gpu.template.jsopgenomen in* een sjabloon waarmee GPU-ondersteuning wordt ingeschakeld voor de Intel open-wijn DL-uitbreidings module voor de AI-extensie. Deze sjablonen verwijzen naar de installatie kopie van de docker hub van Intel.
 
 De hierboven genoemde sjablonen verwijzen naar de Intel docker hub-installatie kopie. Als u liever een kopie op uw eigen Azure Container Registry wilt hosten, kunt u stap 1 en 2 hieronder volgen:
 1. SSH naar een apparaat waarop docker CLI-hulpprogram ma's zijn geïnstalleerd (dat wil zeggen uw edge-apparaat) en pull/tag/push de container met de volgende stappen:

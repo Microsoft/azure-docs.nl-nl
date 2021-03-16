@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/10/2021
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f6d014ced6e25f4c27e1d8ae7225069863e154b3
-ms.sourcegitcommit: 225e4b45844e845bc41d5c043587a61e6b6ce5ae
+ms.openlocfilehash: 10ff568ede601c57369f8c942ed61cb7a39ba703
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103015859"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103465705"
 ---
 # <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Media Services gebruiken om DRM-licenties of AES-sleutels te leveren
 
@@ -41,9 +41,6 @@ Media Services ondersteunt meerdere manieren om gebruikers te autoriseren die li
 In het volgende diagram ziet u de belangrijkste stappen die u moet nemen om te gebruiken Media Services voor het leveren van PlayReady-en/of Widevine-licenties, maar de rest met uw on-premises servers:
 
 ![Beveiligen met PlayReady](./media/media-services-deliver-keys-and-licenses/media-services-diagram1.png)
-
-## <a name="download-sample"></a>Voorbeeld downloaden
-Zie [Azure Media Services gebruiken om PlayReady-en/of Widevine-licenties te leveren met .net](https://github.com/Azure/media-services-dotnet-deliver-drm-licenses)voor het downloaden van het voor beeld dat in dit artikel wordt beschreven.
 
 ## <a name="create-and-configure-a-visual-studio-project"></a>Maak en configureer een Visual Studio-project.
 

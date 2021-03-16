@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 6d3f96ed60ca784402b6d24eea7234f37c4fb959
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: f7f6b28070600ae53242181934ea903a486c25b4
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449778"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494560"
 ---
 # <a name="deploy-defender-for-iot-c-based-security-agent-for-linux"></a>Defender implementeren voor IoT C-gebaseerde beveiligings agent voor Linux
 
@@ -35,7 +35,7 @@ Zie [de juiste beveiligings agent kiezen](how-to-deploy-agent.md)voor andere pla
 
 1. Voor het implementeren van de beveiligings agent zijn lokale beheerders rechten vereist op de computer waarop u wilt installeren (sudo).
 
-1. [Maak een beveiligings module](quickstart-create-security-twin.md) voor het apparaat.
+1. [Maak een Defender-IOT-micro-agent](quickstart-create-security-twin.md) voor het apparaat.
 
 ## <a name="installation"></a>Installatie
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: f91ff691948f2c55dd469ad121fab10d3a920eae
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: a01d5f48ca3b10f4c49ee621398ae87392dc34a6
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102548424"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493455"
 ---
 # <a name="azure-disk-encryption-scenarios-on-windows-vms"></a>Azure Disk Encryption-scenario's voor Windows-VM's
 
@@ -266,7 +266,6 @@ Azure Disk Encryption werkt niet voor de volgende scenario's, functies en techno
 - Vm's uit de M-serie met Write Accelerator-schijven.
 - ADE Toep assen op een virtuele machine met schijven die zijn versleuteld met versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md) (SSE + CMK). Het Toep assen van SSE en CMK op een gegevens schijf op een virtuele machine die is versleuteld met ADE, is ook een niet-ondersteund scenario.
 - Migratie van een VM die is versleuteld met ADE of **ooit** is versleuteld met ADE, voor versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md).
-- [Azure VM-grootten zonder lokale tijdelijke schijf](../azure-vms-no-temp-disk.md); met name Dv4, Dsv4, Ev4 en Esv4.
 - Vm's in failoverclusters versleutelen.
 
 ## <a name="next-steps"></a>Volgende stappen

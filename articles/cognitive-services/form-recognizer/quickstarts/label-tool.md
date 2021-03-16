@@ -7,16 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/29/2021
+ms.date: 03/15/2021
 ms.author: lajanuar
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: f07e3b6142ad99ba3b9e64e4733109a7e5ae04f9
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 89de0752b3015fb8132bfa50c7dbdce174061bcc
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102425732"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467261"
 ---
 <!-- markdownlint-disable MD001 -->
 <!-- markdownlint-disable MD024 -->
@@ -33,7 +33,7 @@ In deze quickstart gebruikt u de REST API van Form Recognizer met het voorbeeldh
 U hebt het volgende nodig om deze quickstart te voltooien:
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services)
-* Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken </a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
+* Wanneer u een Azure-abonnement hebt, kunt u <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer"  title="Een Form Recognizer-resource maken"  target="_blank">een Form Recognizer-resource maken </a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, selecteert u **Ga naar resource**.
   * U hebt de sleutel en het eindpunt nodig van de resource die u maakt, om de toepassing te verbinden met de Form Recognizer API. Later in de quickstart plakt u uw sleutel en eindpunt in de onderstaande code.
   * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 * Een set van minimaal zes formulieren van hetzelfde type. U gebruikt deze gegevens om het model te trainen en een formulier te testen. U kunt een [voorbeeldgegevensverzameling](https://go.microsoft.com/fwlink/?linkid=2090451) gebruiken voor deze quickstart (download en extraheer *sample_data.zip*). Upload de trainingsbestanden naar de hoofdmap van een Blob Storage-container in een Azure Storage-account met een standaardprestatielaag.
@@ -124,7 +124,7 @@ Zorg er eerst voor dat alle trainingsdocumenten dezelfde indeling hebben. Als u 
 
 ### <a name="configure-cross-domain-resource-sharing-cors"></a>Delen van resources voor meerdere domeinen (CORS) configureren
 
-Schakel CORS in voor uw opslagaccount. Selecteer uw opslagaccount in Azure Portal en klik in het linkerdeelvenster op het tabblad **CORS**. Vul in de onderste regel de volgende waarden in. Klik bovenaan op **Opslaan**.
+Schakel CORS in voor uw opslagaccount. Selecteer uw opslag account in de Azure Portal en kies vervolgens het tabblad **CORS** in het linkerdeel venster. Vul in de onderste regel de volgende waarden in. Selecteer bovenaan **Opslaan** .
 
 * Toegestane oorsprongen = *
 * Toegestane methoden = \[alles selecteren\]
@@ -137,11 +137,11 @@ Schakel CORS in voor uw opslagaccount. Selecteer uw opslagaccount in Azure Porta
 
 ## <a name="connect-to-the-sample-labeling-tool"></a>Verbinding maken met het voorbeeldhulpprogramma voor labelen
 
-Het voorbeeldhulpprogramma voor labelen maakt verbinding met een bron (die oorspronkelijke formulieren bevat) en een doel (waarnaar de gemaakte labels en uitvoergegevens worden geëxporteerd).
+ Het hulp programma voor het labelen van het voor beeld maakt verbinding met een bron (uw oorspronkelijke geüploade formulieren) en een doel (gemaakte labels en uitvoer gegevens).
 
 Verbindingen kunnen worden projectbreed worden ingesteld en gedeeld. Ze maken gebruik van een uitbreidbaar providermodel, zodat u eenvoudig nieuwe bron-/doelproviders kunt toevoegen.
 
-Als u een nieuwe verbinding wilt maken, klikt u in de linkernavigatiebalk op het (stekker)pictogram **Nieuwe verbindingen**.
+Als u een nieuwe verbinding wilt maken, selecteert u het pictogram **nieuwe verbindingen** (plug) in de linkernavigatiebalk.
 
 Vul de velden in met de volgende waarden:
 
@@ -153,13 +153,12 @@ Vul de velden in met de volgende waarden:
 
 :::image type="content" source="../media/label-tool/connections.png" alt-text="Verbindingsinstellingen van het voorbeeldhulpprogramma voor labelen.":::
 
-
 ## <a name="create-a-new-project"></a>Een nieuw project maken
 
 In het voorbeeldhulpprogramma voor labelen worden uw configuraties en instellingen opgeslagen in projecten. Maak een nieuw project en vul de velden in met de volgende waarden:
 
 * **Weergavenaam** : de weergavenaam van het project
-* **Beveiligingstoken** : sommige projectinstellingen kunnen gevoelige waarden bevatten, zoals API-sleutels of andere gedeelde geheimen. Elk project genereert een beveiligingstoken dat kan worden gebruikt voor het versleutelen/ontsleutelen van gevoelige projectinstellingen. U kunt beveiligingstokens vinden in de toepassingsinstellingen door op het tandwielpictogram onder aan de linkernavigatiebalk te klikken.
+* **Beveiligingstoken** : sommige projectinstellingen kunnen gevoelige waarden bevatten, zoals API-sleutels of andere gedeelde geheimen. Elk project genereert een beveiligingstoken dat kan worden gebruikt voor het versleutelen/ontsleutelen van gevoelige projectinstellingen. U kunt beveiligings tokens vinden in de toepassings instellingen door onder aan de linkernavigatiebalk het tandwiel pictogram te selecteren.
 * **Bronverbinding**: de Azure Blob Storage-verbinding die u in de vorige stap hebt gemaakt en die u voor dit project wilt gebruiken.
 * **Mappad**: optioneel: als uw bronformulieren zich in een map in de Blobcontainer bevinden, geeft u de naam van de map hier op
 * **URI van de Form Recognizer-service**: de eindpunt-URL van de Form Recognizer.
@@ -176,26 +175,28 @@ Wanneer u een project maakt of opent, wordt hoofdvenster van de tageditor geopen
 * Het hoofdvenster van de tageditor waarmee u labels kunt toepassen.
 * Het deelvenster van de tageditor waarmee gebruikers labels kunnen wijzigen, vergrendelen, opnieuw ordenen en verwijderen.
 
-### <a name="identify-text-elements"></a>Tekstelementen identificeren
+### <a name="identify-text-and-tables"></a>Tekst en tabellen identificeren 
 
-Klik in het linkerdeelvenster op **OCR uitvoeren op alle bestanden** om informatie over de tekstindeling voor een document op te halen. Er worden begrenzingsvakken rond elk tekstelement getekend.
+Selecteer **OCR uitvoeren op alle bestanden** in het linkerdeel venster om de tekst-en tabel indelings informatie voor elk document op te halen. Er worden begrenzingsvakken rond elk tekstelement getekend.
 
-Er wordt ook weergegeven welke tabellen automatisch zijn geëxtraheerd. Klik op het tabel-/rasterpictogram aan de linkerkant van het document om de geëxtraheerde tabel te zien. Omdat de tabelinhoud automatisch wordt geëxtraheerd, zullen we de tabelinhoud in deze quickstart niet labelen maar zullen we vertrouwen op de geautomatiseerde extractie.
+In het hulp programma labelen worden ook de tabellen weer gegeven die automatisch zijn geëxtraheerd. Selecteer het tabel/raster pictogram aan de linkerkant van het document om de geëxtraheerde tabel weer te geven. Omdat de tabelinhoud automatisch wordt geëxtraheerd, zullen we de tabelinhoud in deze quickstart niet labelen maar zullen we vertrouwen op de geautomatiseerde extractie.
 
 :::image type="content" source="../media/label-tool/table-extraction.png" alt-text="Tabelvisualisatie in voorbeeldhulpprogramma voor labelen.":::
+
+Als in uw trainings document in v 2.1 geen waarde is ingevuld, kunt u een vak tekenen waarin de waarde moet zijn. Gebruik **teken gebied** in de linkerbovenhoek van het venster om de regio taggable te maken.
 
 ### <a name="apply-labels-to-text"></a>Labels op tekst toepassen
 
 Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die door het model moeten worden geanalyseerd.
 
-### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+### <a name="v20"></a>[v2.0](#tab/v2-1)  
 
-1. Gebruik eerst het deel venster Tags editor om de labels te maken die u wilt identificeren:
-   * Klik op **+** om een nieuw label te maken.
-   * Voer de naam van het label in.
-   * Druk op Enter om het label op te slaan.
-1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _Preview-versie van de v 2.1_ -API kunt u ook _selectie markeringen_ selecteren, zoals keuze rondjes en selectie vakjes als sleutel waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
-1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
+1. Gebruik eerst het deelvenster van de tageditor om de labels te maken die u wilt identificeren.
+   1. Selecteer deze optie **+** om een nieuwe tag te maken.
+   1. Voer de naam van het label in.
+   1. Druk op Enter om het label op te slaan.
+1. Selecteer in de hoofd editor woorden uit de gemarkeerde tekst elementen of een regio die u hebt getekend.
+1. Selecteer het label dat u wilt Toep assen of druk op de bijbehorende toetsenbord toets. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
     > [!Tip]
     > Houd rekening met de volgende tips wanneer u een label maakt van uw formulieren:
     >
@@ -212,11 +213,11 @@ Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die do
 ### <a name="v20"></a>[v2.0](#tab/v2-0)
 
 1. Gebruik eerst het deelvenster van de tageditor om de labels te maken die u wilt identificeren.
-   1. Klik op **+** om een nieuw label te maken.
+   1. Selecteer deze optie **+** om een nieuwe tag te maken.
    1. Voer de naam van het label in.
    1. Druk op Enter om het label op te slaan.
-1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen.
-1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
+1. Selecteer in de hoofd editor woorden uit de gemarkeerde tekst elementen.
+1. Selecteer het label dat u wilt Toep assen of druk op de bijbehorende toetsenbord toets. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
     > [!Tip]
     > Houd rekening met de volgende tips wanneer u een label maakt van uw formulieren:
     >
@@ -231,6 +232,7 @@ Vervolgens maakt u tags (labels) en past u deze toe op de tekst elementen die do
 >
 
 ---
+---
 
 :::image type="content" source="../media/label-tool/main-editor-2-1.png" alt-text="Hoofdvenster van de editor van het voorbeeldhulpprogramma voor labelen.":::
 
@@ -238,7 +240,7 @@ Volg de bovenstaande stappen om ten minste vijf formulieren te labelen.
 
 ### <a name="specify-tag-value-types"></a>Typen labelwaarden opgeven
 
-U kunt desgewenst het verwachte gegevenstype voor elk label instellen. Open het contextmenu rechts van een label en selecteer een type in het menu. Met deze functie kunnen bepaalde aannames worden gedaan waarmee de nauwkeurigheid van de tekstdetectie wordt verbeterd. Het zorgt er ook voor dat de gedetecteerde waarden worden geretourneerd in een gestandaardiseerde indeling in de uiteindelijke JSON-uitvoer. Informatie over waardetypen wordt opgeslagen in het bestand *fields.json*, op hetzelfde pad als uw labelbestanden.
+U kunt het verwachte gegevens type instellen voor elk label. Open het contextmenu rechts van een label en selecteer een type in het menu. Met deze functie kan de detectie algoritme hypo Thesen worden gemaakt waarmee de nauw keurigheid van de tekst detectie wordt verbeterd. Het zorgt er ook voor dat de gedetecteerde waarden worden geretourneerd in een gestandaardiseerde indeling in de uiteindelijke JSON-uitvoer. Informatie over waardetypen wordt opgeslagen in het bestand **fields.json**, op hetzelfde pad als uw labelbestanden.
 
 > [!div class="mx-imgBorder"]
 > ![Selectie van waardetypen met het voorbeeldhulpprogramma voor labelen](../media/whats-new/value-type.png)
@@ -285,12 +287,22 @@ De volgende waardetypen en variaties worden momenteel ondersteund:
 > * 01jan2020
 > * 01 jan 2020
 
+### <a name="label-tables-v21-only"></a>Label tabellen (alleen v 2.1)
+
+Het kan voor komen dat uw gegevens worden aangeduid als een tabel in plaats van sleutel-waardeparen. In dit geval kunt u een tabel code maken door te klikken op een nieuwe tabel label toevoegen, opgeven of de tabel een vast aantal rijen of een variabel aantal rijen bevat, afhankelijk van het document en hoe u het schema definieert.
+
+:::image type="content" source="../media/label-tool/table-tag.png" alt-text="Een tabel code configureren.":::
+
+Wanneer u de tabel code hebt gedefinieerd, labelt u de celwaarden.
+
+:::image type="content" source="../media/table-labeling.png" alt-text="Een tabel labelen.":::
+
 ## <a name="train-a-custom-model"></a>Aangepast model trainen
 
-Klik in het linkerdeelvenster op het trainingspictogram om de pagina Training te openen. Klik vervolgens op de knop **Trainen** om het model te trainen. Zodra het trainingsproces is voltooid, krijgt u de volgende informatie te zien:
+Kies het trein pictogram in het linkerdeel venster om de pagina training te openen. Selecteer vervolgens de **trein** knop om het model te trainen. Zodra het trainingsproces is voltooid, krijgt u de volgende informatie te zien:
 
 * **Model-id**: de id van het model dat is gemaakt en getraind. Elke trainingsaanroep maakt een nieuw model met een eigen id. Kopieer deze tekenreeks naar een veilige locatie. U hebt deze nodig als u voorspellingsaanroepen wilt uitvoeren via de [REST API](./client-library.md?pivots=programming-language-rest-api) of [clientbibliotheek](./client-library.md).
-* **Gemiddelde nauwkeurigheid**: de gemiddelde nauwkeurigheid van het model. U kunt de nauwkeurigheid van het model verbeteren door extra formulieren te labelen en opnieuw een training uit te voeren om een nieuw model te maken. We raden u aan te beginnen met het labelen van vijf formulieren en indien nodig meer formulieren toe te voegen.
+* **Gemiddelde nauwkeurigheid**: de gemiddelde nauwkeurigheid van het model. U kunt de nauw keurigheid van het model verbeteren door extra formulieren te labelen en opnieuw te trainen om een nieuw model te maken. We raden u aan te beginnen met het labelen van vijf formulieren en indien nodig meer formulieren toe te voegen.
 * De lijst met labels en de geschatte nauwkeurigheid per label.
 
 
@@ -305,10 +317,10 @@ Nadat de training is voltooid, bekijkt u de waarde **Gemiddelde nauwkeurigheid**
 
 ### <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 
-Met Model samenstellen kunt u maximaal 100 modellen met één model-id samenstellen. Wanneer u Analyseren aanroept met deze samengestelde model-id, zal Form Recognizer het formulier dat u hebt ingediend eerst classificeren door het aan het best overeenkomende model te koppelen, en vervolgens resultaten voor dat model retourneren. Dit is handig wanneer binnenkomende formulieren mogelijk tot één van meerdere sjablonen behoren.
+Met Model samenstellen kunt u maximaal 100 modellen met één model-id samenstellen. Wanneer u analyseren met de opgebouwde aanroept `modelID` , wordt het formulier dat u hebt verzonden eerst geclassificeerd, het beste overeenkomende model gekozen en vervolgens resultaten voor dat model weer gegeven. Deze bewerking is handig wanneer binnenkomende formulieren kunnen deel uitmaken van een van de volgende sjablonen.
 
-Om modellen samen te stellen in het voorbeeldhulpprogramma voor labelen, klikt u aan de linkerkant op het pictogram Model samenstellen (samenvoegingspijlen). Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld.
-Klik op de knop Samenstellen. Geef in het pop-upvenster uw nieuwe model naam op en klik op opstellen. Wanneer de bewerking is voltooid, zou uw nieuwe samengestelde model in de lijst moeten worden weergegeven.
+Als u modellen wilt opstellen in het hulp programma voor het labelen van het voor beeld, selecteert u het pictogram model opstellen (samen voegen) aan de linkerkant. Selecteer links de modellen die u wilt samenstellen. Modellen met het pijlenpictogram zijn al samengesteld.
+Kies de **knop opstellen**. Geef in het pop-upvenster uw nieuwe model naam op en selecteer **opstellen**. Wanneer de bewerking is voltooid, moet uw zojuist opgebouwde model in de lijst worden weer gegeven.
 
 :::image type="content" source="../media/label-tool/model-compose.png" alt-text="UX-weergave van Model samenstellen.":::
 
@@ -320,16 +332,16 @@ Deze functie is momenteel beschikbaar in de preview van v2.1.
 
 ## <a name="analyze-a-form"></a>Een formulier analyseren
 
-Klik aan de linkerkant op het voorspellingspictogram (gloeilamp) om het model te testen. Upload een formulierdocument dat u niet in het trainingsproces hebt gebruikt. Klik vervolgens aan de rechterkant op de knop **Voorspellen** om voorspellingen voor sleutels of waarden voor het formulier op te halen. Er worden labels toegepast in begrenzingsvakken en de betrouwbaarheid van elk label wordt gerapporteerd.
+Selecteer het pictogram voor spel (gloei lampje) aan de linkerkant om het model te testen. Upload een formulierdocument dat u niet in het trainingsproces hebt gebruikt. Kies vervolgens de knop voors **pellen** aan de rechter kant om de voor spellingen van sleutel/waarde voor het formulier op te halen. Er worden labels toegepast in begrenzingsvakken en de betrouwbaarheid van elk label wordt gerapporteerd.
 
 > [!TIP]
 > U kunt de analyse-API ook met een REST-aanroep uitvoeren. Zie [Trainen met labels met behulp van Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md) voor meer informatie over hoe u dit doet.
 
 ## <a name="improve-results"></a>Resultaten verbeteren
 
-Afhankelijk van de gerapporteerde nauwkeurigheid kunt u meer trainingen uitvoeren om het model te verbeteren. Nadat u een voorspelling hebt uitgevoerd, kunt u de betrouwbaarheidswaarden voor elk toegepast label bekijken. Als de gemiddelde nauwkeurigheid van de training hoog was, maar de betrouwbaarheidsscores laag (of de resultaten zijn onjuist), moet u het bestand dat voor de voorspelling wordt gebruikt, toevoegen aan de trainingsset, het vervolgens labelen en opnieuw trainen.
+Afhankelijk van de gerapporteerde nauwkeurigheid kunt u meer trainingen uitvoeren om het model te verbeteren. Nadat u een voorspelling hebt uitgevoerd, kunt u de betrouwbaarheidswaarden voor elk toegepast label bekijken. Als de gemiddelde nauw keurigheid van de training hoog was, maar de betrouwbaarheids scores laag zijn (of de resultaten onjuist zijn), moet u het Voorspellings bestand toevoegen aan de Trainingsset, het label IT en de training opnieuw uitvoeren.
 
-De gerapporteerde gemiddelde nauwkeurigheid, de betrouwbaarheidsscores en werkelijke nauwkeurigheid kunnen inconsistent zijn wanneer de geanalyseerde documenten verschillen van die in de training. Vergeet niet dat sommige documenten er voor een persoon hetzelfde uit kunnen zien maar voor een AI-model kunnen verschillen. Stel u traint met een formuliertype dat twee variaties kent, terwijl de trainingsset uit 20% van variatie A en 80% van variatie B bestaat. Tijdens de voorspelling zijn de betrouwbaarheidsscores voor documenten van variatie A hoogstwaarschijnlijk lager.
+De gerapporteerde gemiddelde nauw keurigheid, betrouwbaarheids scores en werkelijke nauw keurigheid kunnen inconsistent zijn wanneer de geanalyseerde documenten verschillen van documenten die worden gebruikt in de training. Vergeet niet dat sommige documenten er voor een persoon hetzelfde uit kunnen zien maar voor een AI-model kunnen verschillen. Stel u traint met een formuliertype dat twee variaties kent, terwijl de trainingsset uit 20% van variatie A en 80% van variatie B bestaat. Tijdens de voorspelling zijn de betrouwbaarheidsscores voor documenten van variatie A hoogstwaarschijnlijk lager.
 
 ## <a name="save-a-project-and-resume-later"></a>Een project opslaan en later hervatten
 
@@ -341,11 +353,11 @@ Ga naar de pagina met projectinstellingen (schuifregelaar) en noteer de naam van
 
 ### <a name="restore-project-credentials"></a>Projectreferenties herstellen
 
-Als u uw project wilt hervatten, moet u eerst een verbinding maken met dezelfde Blob Storage-container. Herhaal de bovenstaande stappen om dit te doen. Ga vervolgens naar de pagina met toepassingsinstellingen (tandwielpictogram) en kijk of het beveiligingstoken van uw project aanwezig is. Als dat niet het geval is, voegt u een nieuw beveiligingstoken toe en kopieert u de naam en de sleutel van het token uit de vorige stap. Klik vervolgens op Instellingen opslaan.
+Als u uw project wilt hervatten, moet u eerst een verbinding maken met dezelfde Blob Storage-container. Als u dit wilt doen, herhaalt u de bovenstaande stappen. Ga vervolgens naar de pagina met toepassingsinstellingen (tandwielpictogram) en kijk of het beveiligingstoken van uw project aanwezig is. Als dat niet het geval is, voegt u een nieuw beveiligingstoken toe en kopieert u de naam en de sleutel van het token uit de vorige stap. Selecteer **Opslaan** om uw instellingen te behouden.
 
 ### <a name="resume-a-project"></a>Een project hervatten
 
-Ga ten slotte naar de hoofdpagina (huispictogram) en klik op Cloudproject openen. Selecteer vervolgens de Blob Storage-verbinding en selecteer het *.fott*-bestand van uw project. Alle projectinstellingen worden geladen omdat het beveiligingstoken aanwezig is.
+Ga ten slotte naar de hoofd pagina (huis pictogram) en selecteer **Cloud project openen**. Selecteer vervolgens de Blob Storage-verbinding en selecteer het **.fott**-bestand van uw project. Alle projectinstellingen worden geladen omdat het beveiligingstoken aanwezig is.
 
 ## <a name="next-steps"></a>Volgende stappen
 

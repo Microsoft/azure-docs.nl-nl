@@ -6,16 +6,16 @@ author: dademath
 manager: nimag
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
-ms.date: 07/28/2020
+ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: dademath
-ms.openlocfilehash: a084295aec2cafadd07d47e85a0116a89d37c985
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: HT
+ms.openlocfilehash: a118dfceb73aca0897ba0f116ce3c5462368f6c3
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94816729"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488300"
 ---
 Ga aan de slag met Azure Communication Services door de clientbibliotheek voor C#-sms van Communications Services te gebruiken om sms-berichten te verzenden.
 
@@ -28,8 +28,8 @@ Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
-- De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturings systeem.
-- Een actieve Communication Services-resource en verbindingsreeks. [Een communicatieresource maken](../../create-communication-resource.md).
+- De nieuwste versie van [.NET Core-clientbibliotheek](https://dotnet.microsoft.com/download/dotnet-core) voor uw besturingssysteem.
+- Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een telefoonnummer met sms-functionaliteit. [Een telefoonnummer aanvragen](../get-phone-number.md).
 
 ### <a name="prerequisite-check"></a>Controle van vereisten
@@ -47,7 +47,7 @@ Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotne
 dotnet new console -o SmsQuickstart
 ```
 
-Wijzig uw directory in de zojuist gemaakte app-map en gebruik de opdracht `dotnet build` om uw toepassing te compileren.
+Wijzig uw map in de zojuist gemaakte app-map en gebruik de opdracht `dotnet build` om uw toepassing te compileren.
 
 ```console
 cd SmsQuickstart

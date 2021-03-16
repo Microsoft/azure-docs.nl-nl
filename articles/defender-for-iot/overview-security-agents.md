@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/24/2021
 ms.author: shhazam
-ms.openlocfilehash: a40b64dd3b8f898c961863c1d78a2a56642c44b9
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 3b98013eab1ae8d21b9da7c1a4460551dc363c80
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100521608"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103487765"
 ---
 # <a name="get-started-with-azure-defender-for-iot-device-micro-agents"></a>Aan de slag met Azure Defender voor IoT Device micro agents
 
@@ -44,6 +44,7 @@ Gebruik de volgende werk stroom voor het implementeren en testen van uw Defender
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Uw [oplossing](quickstart-configure-your-solution.md)configureren 
- [beveiligings modules maken](quickstart-create-security-twin.md) [aangepaste waarschuwingen](quickstart-create-custom-alerts.md)configureren 
- [een beveiligings agent implementeren](how-to-deploy-agent.md)
+- Uw [oplossing](quickstart-configure-your-solution.md) configureren
+- [Defender-IoT-micro-agents maken](quickstart-create-security-twin.md)
+- [Aangepaste waarschuwingen](quickstart-create-custom-alerts.md) configureren
+- [Een beveiligingsagent implementeren](how-to-deploy-agent.md)

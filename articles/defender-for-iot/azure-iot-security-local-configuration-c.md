@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: v-ekrieg
-ms.openlocfilehash: d96a73c3ba996fecf24a4232e1391f0b814be868
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 161bc008076de2bba62cd65c6c9bb106f648aa47
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91851251"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493234"
 ---
 # <a name="understanding-the-localconfigurationjson-file---c-agent"></a>Meer informatie over het bestand LocalConfiguration.json - C-agent
 
@@ -39,7 +39,7 @@ Wijzigingen in het configuratie bestand worden uitgevoerd wanneer de agent opnie
 | TriggerdEventsInterval | ISO8601 teken reeks | Scheduler-interval voor de verzameling geactiveerde gebeurtenissen |
 | ConnectionTimeout | ISO8601 teken reeks | Er is een time-out opgetreden voor de verbinding met IoThub |
 | Verificatie | JsonObject | Verificatie configuratie. Dit object bevat alle informatie die nodig is voor verificatie op basis van IoTHub |
-| Identiteit | ' DPS ', ' SecurityModule ', ' apparaat ' | Verificatie-identiteit-DPS als verificatie wordt uitgevoerd via DPS, SecurityModule als verificatie wordt uitgevoerd via de beveiligings module referenties of het apparaat als verificatie wordt uitgevoerd met de referenties van het apparaat |
+| Identiteit | ' DPS ', ' SecurityModule ', ' apparaat ' | Verificatie-identiteit: DPS als verificatie wordt uitgevoerd via DPS, SecurityModule als verificatie wordt uitgevoerd via een Defender-IoT-micro-agentcredentials of-apparaat als verificatie wordt uitgevoerd met de referenties van het apparaat |
 | Authentic | "SasToken", "SelfSignedCertificate" | het gebruikers geheim voor authenticatie: Kies SasToken als het geheim gebruiken een symmetrische sleutel is, kies het zelfondertekende certificaat als het geheim een zelfondertekend certificaat is  |
 | Bestandspad | Pad naar bestand (teken reeks) | Pad naar het bestand dat het authenticatie geheim bevat |
 | HostName | tekenreeks | De hostnaam van de Azure IoT hub. doorgaans <mijn hub>. azure-devices.net |

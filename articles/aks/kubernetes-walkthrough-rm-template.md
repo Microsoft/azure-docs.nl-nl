@@ -3,18 +3,20 @@ title: 'Snelstart: een AKS-cluster (Azure Kubernetes Service) maken'
 description: Ontdek hoe u snel een Kubernetes-cluster kunt maken met behulp van een Azure Resource Manager-sjabloon en een toepassing kunt implementeren in Azure Kubernetes Service (AKS)
 services: container-service
 ms.topic: quickstart
-ms.date: 01/13/2021
+ms.date: 03/15/2021
 ms.custom: mvc,subject-armqs, devx-track-azurecli
-ms.openlocfilehash: f17e42915968f52aee8bd106b5cadd26457998ff
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: e88c56f050f2f6d1183eef23a844f5eaf1f671c2
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102501312"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103492928"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-arm-template"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met behulp van een ARM-sjabloon
 
-Azure Kubernetes Service (AKS) is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. In deze quickstart implementeert u een AKS-cluster met behulp van een Azure Resource Manager-sjabloon (ARM-sjabloon). In het cluster wordt een toepassing met meerdere containers uitgevoerd die bestaat uit een web-front-end en een Redis-exemplaar.
+Azure Kubernetes Service (AKS) is een beheerde Kubernetes-service waarmee u snel clusters kunt implementeren en beheren. In deze quickstart gaat u het volgende doen:
+* Implementeer een AKS-cluster met behulp van een Azure Resource Manager sjabloon. 
+* Voer een toepassing met meerdere containers uit met een web-front-end en een redis-exemplaar in het cluster. 
 
 ![Afbeelding van browsen naar Azure Vote](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
@@ -36,15 +38,15 @@ Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van A
 
 ### <a name="create-an-ssh-key-pair"></a>Een SSH-sleutelpaar maken
 
-Als u toegang wilt krijgen tot AKS-knooppunten, maakt u verbinding met een SSH-sleutelpaar. Gebruik de opdracht `ssh-keygen` om openbare en privé-SSH-sleutelbestanden te genereren. Deze bestanden worden standaard gemaakt in de map *~/.ssh*. Als er op de opgegeven locatie een SSH-sleutelpaar met dezelfde naam bestaat, worden deze bestanden overschreven.
+Als u toegang wilt krijgen tot AKS-knoop punten, maakt u verbinding met behulp van een SSH-sleutel paar (openbaar en privé) dat u met behulp van de `ssh-keygen` opdracht genereert. Deze bestanden worden standaard gemaakt in de map *~/.ssh*. Als u de `ssh-keygen` opdracht uitvoert, wordt elk SSH-sleutel paar met dezelfde naam die al op de opgegeven locatie aanwezig is, overschreven.
 
-Ga naar [https://shell.azure.com](https://shell.azure.com) om Cloud Shell in uw browser te openen.
+1. Ga naar [https://shell.azure.com](https://shell.azure.com) om Cloud Shell in uw browser te openen.
 
-Met de volgende opdracht wordt een SSH-sleutelpaar gemaakt met behulp van RSA-versleuteling en een bitlengte van 2048:
+1. Voer de opdracht `ssh-keygen` uit. In het volgende voor beeld wordt een SSH-sleutel paar gemaakt met RSA-versleuteling en een bitlengte van 2048:
 
-```console
-ssh-keygen -t rsa -b 2048
-```
+    ```console
+    ssh-keygen -t rsa -b 2048
+    ```
 
 Zie [SSH-sleutels maken en beheren voor verificatie in Azure][ssh-keys] voor meer informatie over het maken van SSH-sleutels.
 
@@ -58,7 +60,7 @@ Zie de site [AKS-quickstartsjablonen][aks-quickstart-templates] voor meer AKS-vo
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-1. Selecteer de volgende afbeelding om u aan te melden bij Azure en een sjabloon te openen.
+1. Selecteer de volgende knop om u aan te melden bij Azure en een sjabloon te openen.
 
     [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-aks%2Fazuredeploy.json)
 
@@ -84,160 +86,172 @@ Het duurt een paar minuten om het AKS-cluster te maken. Wacht totdat het cluster
 
 ### <a name="connect-to-the-cluster"></a>Verbinding maken met het cluster
 
-Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl][kubectl], de Kubernetes-opdrachtregelclient. Als u Azure Cloud Shell gebruikt, is `kubectl` al geïnstalleerd. Als u `kubectl` lokaal wilt installeren, gebruikt u de opdracht [az aks install-cli][az-aks-install-cli]:
+Als u een Kubernetes-cluster wilt beheren, gebruikt u de Kubernetes-opdracht regel-client, [kubectl][kubectl]. `kubectl` is al geïnstalleerd als u Azure Cloud Shell gebruikt. 
 
-```azurecli
-az aks install-cli
-```
+1. `kubectl`Lokaal installeren met behulp van de opdracht [AZ AKS install-cli][az-aks-install-cli] :
 
-Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
+    ```azurecli
+    az aks install-cli
+    ```
 
-```azurecli-interactive
-az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
-```
+2. Configureer `kubectl` om verbinding te maken met uw Kubernetes-cluster met behulp van de opdracht [AZ AKS Get-credentials][az-aks-get-credentials] . Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
-Als u de verbinding met uw cluster wilt controleren, gebruikt u de opdracht [kubectl get][kubectl-get] om een lijst met clusterknooppunten te retourneren.
+    ```azurecli-interactive
+    az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+    ```
 
-```console
-kubectl get nodes
-```
+3. Controleer de verbinding met uw cluster met behulp van de opdracht [kubectl Get][kubectl-get] . Met deze opdracht wordt een lijst van de cluster knooppunten geretourneerd.
 
-In de volgende voorbeelduitvoer ziet u de knooppunten die in de vorige stappen zijn gemaakt. Zorg ervoor dat de status van alle knooppunten *Ready* is:
+    ```console
+    kubectl get nodes
+    ```
 
-```output
-NAME                       STATUS   ROLES   AGE     VERSION
-aks-agentpool-41324942-0   Ready    agent   6m44s   v1.12.6
-aks-agentpool-41324942-1   Ready    agent   6m46s   v1.12.6
-aks-agentpool-41324942-2   Ready    agent   6m45s   v1.12.6
-```
+    In de uitvoer ziet u de knoop punten die zijn gemaakt in de vorige stappen. Zorg ervoor dat de status van alle knooppunten *Ready* is:
+
+    ```output
+    NAME                       STATUS   ROLES   AGE     VERSION
+    aks-agentpool-41324942-0   Ready    agent   6m44s   v1.12.6    
+    aks-agentpool-41324942-1   Ready    agent   6m46s   v1.12.6
+    aks-agentpool-41324942-2   Ready    agent   6m45s   v1.12.6
+    ```
 
 ### <a name="run-the-application"></a>De toepassing uitvoeren
 
-In een Kubernetes-manifestbestand wordt een gewenste status voor het cluster gedefinieerd, zoals welke containerinstallatiekopieën moeten worden uitgevoerd. In deze snelstart worden met behulp van een manifest alle objecten gemaakt die nodig zijn om de Azure Vote-toepassing uit te voeren. Dit manifest bevat twee [Kubernetes-implementaties][kubernetes-deployment], een voor de Azure Vote Python-voorbeeldtoepassingen en een voor een instantie van Redis. Er worden bovendien twee [Kubernetes-services][kubernetes-service] gemaakt: een interne service voor de Redis-instantie en een externe service voor toegang tot de Azure Vote-toepassing vanaf internet.
+In een [Kubernetes-manifest bestand][kubernetes-deployment] wordt de gewenste status van een cluster gedefinieerd, zoals welke container installatie kopieën moeten worden uitgevoerd. 
 
-Maak een bestand met de naam `azure-vote.yaml` en kopieer de volgende YAML-definitie naar het bestand. Als u Azure Cloud Shell gebruikt, kan dit bestand worden gemaakt met behulp van `vi` of `nano`, zoals bij een virtueel of fysiek systeem:
+In deze Snelstartgids gebruikt u een manifest om alle objecten te maken die nodig zijn om de [Azure stem-toepassing][azure-vote-app]uit te voeren. Dit manifest bevat twee [Kubernetes-implementaties][kubernetes-deployment]:
+* Het voor beeld van Azure stem python-toepassingen.
+* Een redis-exemplaar. 
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: azure-vote-back
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: azure-vote-back
-  template:
+Er worden ook twee [Kubernetes-Services][kubernetes-service] gemaakt:
+* Een interne service voor het redis-exemplaar.
+* Een externe service voor toegang tot de Azure stem-toepassing via internet.
+
+1. Maak een bestand met de naam `azure-vote.yaml`.
+    * Als u de Azure Cloud Shell gebruikt, kan dit bestand worden gemaakt met `vi` of `nano` alsof het werkt op een virtueel of fysiek systeem
+1. Kopiëren in de volgende YAML definitie:
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      labels:
+      name: azure-vote-back
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: azure-vote-back
+      template:
+        metadata:
+          labels:
+            app: azure-vote-back
+        spec:
+          nodeSelector:
+            "beta.kubernetes.io/os": linux
+          containers:
+          - name: azure-vote-back
+            image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
+            env:
+            - name: ALLOW_EMPTY_PASSWORD
+              value: "yes"
+            resources:
+              requests:
+                cpu: 100m
+                memory: 128Mi
+              limits:
+                cpu: 250m
+                memory: 256Mi
+            ports:
+            - containerPort: 6379
+              name: redis
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: azure-vote-back
+    spec:
+      ports:
+      - port: 6379
+      selector:
         app: azure-vote-back
-    spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
-      containers:
-      - name: azure-vote-back
-        image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
-        env:
-        - name: ALLOW_EMPTY_PASSWORD
-          value: "yes"
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 250m
-            memory: 256Mi
-        ports:
-        - containerPort: 6379
-          name: redis
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: azure-vote-back
-spec:
-  ports:
-  - port: 6379
-  selector:
-    app: azure-vote-back
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: azure-vote-front
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: azure-vote-front
-  template:
+    ---
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      labels:
-        app: azure-vote-front
+      name: azure-vote-front
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
-      containers:
-      - name: azure-vote-front
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 250m
-            memory: 256Mi
-        ports:
-        - containerPort: 80
-        env:
-        - name: REDIS
-          value: "azure-vote-back"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: azure-vote-front
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-  selector:
-    app: azure-vote-front
-```
+      replicas: 1
+      selector:
+        matchLabels:
+          app: azure-vote-front
+      template:
+        metadata:
+          labels:
+            app: azure-vote-front
+        spec:
+          nodeSelector:
+            "beta.kubernetes.io/os": linux
+          containers:
+          - name: azure-vote-front
+            image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+            resources:
+              requests:
+                cpu: 100m
+                memory: 128Mi
+              limits:
+                cpu: 250m
+                memory: 256Mi
+            ports:
+            - containerPort: 80
+            env:
+            - name: REDIS
+              value: "azure-vote-back"
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: azure-vote-front
+    spec:
+      type: LoadBalancer
+      ports:
+      - port: 80
+      selector:
+        app: azure-vote-front
+    ```
 
-Implementeer de toepassing met de opdracht [kubectl apply][kubectl-apply] en geef de naam op van uw YAML-manifest:
+1. Implementeer de toepassing met de opdracht [kubectl apply][kubectl-apply] en geef de naam op van uw YAML-manifest:
 
-```console
-kubectl apply -f azure-vote.yaml
-```
+    ```console
+    kubectl apply -f azure-vote.yaml
+    ```
 
-In de volgende voorbeelduitvoer ziet u dat je implementaties en services zijn gemaakt:
+    Uitvoer toont de geslaagde implementaties en services:
 
-```output
-deployment "azure-vote-back" created
-service "azure-vote-back" created
-deployment "azure-vote-front" created
-service "azure-vote-front" created
-```
+    ```output
+    deployment "azure-vote-back" created
+    service "azure-vote-back" created
+    deployment "azure-vote-front" created
+    service "azure-vote-front" created
+    ```
 
 ### <a name="test-the-application"></a>De toepassing testen
 
 Wanneer de toepassing wordt uitgevoerd, maakt een Kubernetes-service de front-end van de toepassing beschikbaar op internet. Dit proces kan enkele minuten duren.
 
-Gebruik de opdracht [kubectl get service][kubectl-get] met het argument `--watch` om de voortgang te controleren.
+Bewaak de voortgang met de opdracht [kubectl Get service][kubectl-get] met het `--watch` argument.
 
 ```console
 kubectl get service azure-vote-front --watch
 ```
 
-Eerst wordt het *EXTERNAL-IP*-adres voor de service *azure-vote-front* weergegeven als *in behandeling*.
+De **externe-IP** -uitvoer voor de `azure-vote-front` service wordt in eerste instantie weer gegeven als *in behandeling*.
 
 ```output
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
-Zodra het *EXTERNAL-IP*-adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
+Zodra het **externe IP** -adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt `CTRL-C` u om het `kubectl` controle proces te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
 
 ```output
 azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
@@ -249,24 +263,24 @@ Open een webbrowser naar het externe IP-adres van uw service om de Azure Vote-ap
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Gebruik de opdracht [az group delete][az-group-delete] om de resourcegroep, de containerservice en alle gerelateerde resources te verwijderen wanneer u het cluster niet meer nodig hebt.
+Opschonen van uw overbodige resources om Azure-kosten te voor komen. Gebruik de opdracht [az group delete][az-group-delete] om de resourcegroep, de containerservice en alle gerelateerde resources te verwijderen.
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
 > [!NOTE]
-> Wanneer u het cluster verwijdert, wordt de Azure Active Directory-service-principal die door het AKS-cluster wordt gebruikt niet verwijderd. Zie [Overwegingen voor en verwijdering van AKS service-principal][sp-delete] voor stappen voor het verwijderen van de service-principal. Als u een beheerde identiteit hebt gebruikt, wordt de identiteit beheerd door het platform en hoeft deze niet te worden verwijderd.
+> Wanneer u het cluster verwijdert, wordt de Azure Active Directory-service-principal die door het AKS-cluster wordt gebruikt niet verwijderd. Zie [Overwegingen voor en verwijdering van AKS service-principal][sp-delete] voor stappen voor het verwijderen van de service-principal.
+> 
+> Als u een beheerde identiteit hebt gebruikt, wordt de identiteit beheerd door het platform en hoeft deze niet te worden verwijderd.
 
 ## <a name="get-the-code"></a>Code ophalen
 
-In deze snelstartgids zijn vooraf gemaakte containerinstallatiekopieën gebruikt om een Kubernetes-implementatie te maken. De gerelateerde toepassingscode, Dockerfile en het Kubernetes-manifestbestand zijn beschikbaar op GitHub.
-
-[https://github.com/Azure-Samples/azure-voting-app-redis][azure-vote-app]
+Er zijn al bestaande container installatie kopieën gebruikt in deze Quick Start om een Kubernetes-implementatie te maken. Het manifest bestand gerelateerde toepassings code, Dockerfile en Kubernetes is [beschikbaar op github.][azure-vote-app]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze snelstart hebt u een Kubernetes-cluster geïmplementeerd en vervolgens een toepassing met meerdere containers geïmplementeerd. [Open het Kubernetes-webdashboard][kubernetes-dashboard] voor het cluster dat u hebt gemaakt.
+In deze Snelstartgids hebt u een Kubernetes-cluster geïmplementeerd en vervolgens een toepassing met meerdere containers geïmplementeerd. [Open het Kubernetes-webdashboard][kubernetes-dashboard] voor uw AKS-cluster.
 
 Voor meer informatie over AKS en een volledig stapsgewijs voorbeeld van code tot implementatie gaat u naar de zelfstudie over Kubernetes-clusters.
 

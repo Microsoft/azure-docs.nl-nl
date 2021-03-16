@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 357ea903ed4bbc87717dfefc1c542722f5bd40c0
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 9e47171fc20ba07823e73f71713307e3a0e37278
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448401"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488921"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-saml-identity-provider-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met SAML-ID-provider met behulp van Azure Active Directory B2C
 
@@ -205,9 +205,16 @@ In het volgende voor beeld ziet u een URL-adres voor de SAML-meta gegevens van e
 https://<your-tenant-name>.b2clogin.com/<your-tenant-name>.onmicrosoft.com/<your-policy>/samlp/metadata?idptp=<your-technical-profile>
 ```
 
+Wanneer u een [aangepast domein](custom-domain.md)gebruikt, gebruikt u de volgende indeling:
+
+```
+https://your-domain-name/<your-tenant-name>.onmicrosoft.com/<your-policy>/samlp/metadata?idptp=<your-technical-profile>
+```
+
 Vervang de volgende waarden:
 
-- **uw-Tenant** met de naam van uw Tenant, zoals your-Tenant.onmicrosoft.com.
+- **uw-Tenant naam** met de naam van uw Tenant, zoals your-Tenant.onmicrosoft.com.
+- **uw-domein naam** met uw aangepaste domein naam, zoals login.contoso.com.
 - **uw-beleid** met de naam van uw beleid. Bijvoorbeeld B2C_1A_signup_signin_adfs.
 - **uw technische profiel** met de naam van uw technische profiel voor de SAML-identiteits provider. Bijvoorbeeld contoso-SAML2.
 

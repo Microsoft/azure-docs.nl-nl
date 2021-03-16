@@ -8,14 +8,16 @@ ms.date: 01/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4064acd6d2857ebc00a38ea7f6ff5d5e30bbd699
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 517bcdab375db819b0942306df82e7285b9473b1
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041375"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103487697"
 ---
 # <a name="prepare-your-development-and-test-environment-for-iot-edge"></a>Bereid uw ontwikkel-en test omgeving voor op IoT Edge
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Azure IoT Edge verplaatst uw bestaande bedrijfs logica naar apparaten die aan de rand worden uitgevoerd. Als u uw toepassingen en werk belastingen wilt voorbereiden om te worden uitgevoerd als [IOT Edge modules](iot-edge-modules.md), moet u deze als containers bouwen. Dit artikel bevat richt lijnen over het configureren van uw ontwikkel omgeving, zodat u een IoT Edge oplossing kunt maken. Zodra u uw ontwikkel omgeving hebt ingesteld, kunt u leren hoe u [uw eigen IOT Edge-modules ontwikkelt](module-development.md).
 
@@ -74,7 +76,7 @@ Het hulp programma Azure IoT Edge dev vereenvoudigt IoT Edge ontwikkeling met op
 
 Zie [IOT Edge-wiki voor ontwikkel aars](https://github.com/Azure/iotedgedev/wiki)voor meer informatie en om aan de slag te gaan.
 
-## <a name="testing-tools"></a>Testhulpmiddelen
+## <a name="testing-tools"></a>Testhulpprogramma's
 
 Er zijn verschillende hulpprogram ma's voor testen waarmee u IoT Edge apparaten of modules voor fout opsporing efficiënter kunt simuleren. De volgende tabel bevat een vergelijking op hoog niveau tussen de hulpprogram ma's, en in de afzonderlijke secties wordt elk hulp programma specifiek beschreven.
 

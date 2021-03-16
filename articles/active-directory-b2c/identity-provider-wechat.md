@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: d2e2680f1d679a4bd1e967e32a409b59ad992c01
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: c7538cf052fcf51d03d1ac854d4da50db02004ea
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448095"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488553"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-wechat-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een WeChat-account met behulp van Azure Active Directory B2C
 
@@ -40,7 +40,7 @@ Als u aanmelden wilt inschakelen voor gebruikers met een WeChat-account in Azure
 1. Meld u aan [https://open.weixin.qq.com/](https://open.weixin.qq.com/) met uw WeChat-referenties.
 1. Selecteer **管理中心** (Management Center).
 1. Volg de stappen om een nieuwe toepassing te registreren.
-1. Voer `https://your-tenant_name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in **授权回调域** (call back-URL) in. Als uw Tenant naam bijvoorbeeld contoso is, stelt u de URL in op `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp` .
+1. Voer in voor de **授权回调域** (call back-URL) `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein.
 1. Kopieer de **App-ID** en **app-sleutel**. U hebt beide nodig om de ID-provider te configureren voor uw Tenant.
 
 ::: zone pivot="b2c-user-flow"

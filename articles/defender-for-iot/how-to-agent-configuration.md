@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: aa863ce556840903d16238d6afef32136ba2b80d
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: b59d9079b6d0fe0ab3fe61eacf43f3a99eb46686
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090842"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103495773"
 ---
 # <a name="tutorial-configure-security-agents"></a>Zelf studie: beveiligings agenten configureren
 
@@ -88,7 +88,7 @@ Als u een standaard waarde voor een eigenschap wilt gebruiken, verwijdert u de e
 
 1. Klik op **module-identiteit, twee**.
 
-1. Bewerk de eigenschappen die u wilt wijzigen in de beveiligings module.
+1. Bewerk de eigenschappen die u wilt wijzigen in de Defender-IoT-micro agent.
 
    Gebruik bijvoorbeeld de volgende configuratie om verbindings gebeurtenissen te configureren als hoge prioriteit en elke 7 minuten gebeurtenissen met een hoge prioriteit te verzamelen.
 
@@ -130,19 +130,19 @@ Standaard waarden zijn beschikbaar in het juiste schema in [github](https\://aka
 
 |Gebeurtenis naam| PropertyName | Standaardwaarde| Momentopname gebeurtenis| Status Details  |
 |----------|-|---------|----|----|
-|Diagnostische gebeurtenis|eventPriorityDiagnostic| Aan| False| Aan een agent gerelateerde diagnostische gebeurtenissen. Gebruik deze gebeurtenis voor uitgebreide logboek registratie.|
-|Configuratiefout |eventPriorityConfigurationError |Beperkt |False |Agent kan de configuratie niet parseren. Controleer de configuratie op basis van het schema.|
-|Statistieken voor verwijderde gebeurtenissen |eventPriorityDroppedEventsStatistics |Beperkt |True|Gerelateerde gebeurtenis statistieken voor de agent. |
-|Verbonden hardware|eventPriorityConnectedHardware |Beperkt |True |Moment opname van alle hardware die is aangesloten op het apparaat.|
-|Luisterende poorten|eventPriorityListeningPorts |Hoog |True |Moment opname van alle open luisterende poorten op het apparaat.|
-|Proces maken |eventPriorityProcessCreate |Beperkt |False |Het proces voor het maken van controles op het apparaat.|
-|Proces beëindigen|eventPriorityProcessTerminate |Beperkt |False |Controleert het proces op het apparaat.|
-|Systeemgegevens |eventPrioritySystemInformation |Beperkt |True |Een moment opname van systeem informatie (bijvoorbeeld: besturings systeem of CPU).|
-|Lokale gebruikers| eventPriorityLocalUsers |Hoog |True|Een moment opname van de geregistreerde lokale gebruikers in het systeem. |
-|Aanmelden|  eventPriorityLogin |Hoog|False|Controleer de aanmeldings gebeurtenissen op het apparaat (lokale en externe aanmeldingen).|
-|Verbinding maken |eventPriorityConnectionCreate|Beperkt|False|Controleert TCP-verbindingen die zijn gemaakt met en van het apparaat. |
-|Firewallconfiguratie| eventPriorityFirewallConfiguration|Beperkt|True|Moment opname van de firewall configuratie van het apparaat (firewall regels). |
-|Basis lijn van besturings systeem| eventPriorityOSBaseline| Beperkt|True|Moment opname van de basis controle van het besturings systeem van het apparaat.|
+|Diagnostische gebeurtenis|eventPriorityDiagnostic| Aan| Niet waar| Aan een agent gerelateerde diagnostische gebeurtenissen. Gebruik deze gebeurtenis voor uitgebreide logboek registratie.|
+|Configuratiefout |eventPriorityConfigurationError |Beperkt |Niet waar |Agent kan de configuratie niet parseren. Controleer de configuratie op basis van het schema.|
+|Statistieken voor verwijderde gebeurtenissen |eventPriorityDroppedEventsStatistics |Beperkt |Waar|Gerelateerde gebeurtenis statistieken voor de agent. |
+|Verbonden hardware|eventPriorityConnectedHardware |Beperkt |Waar |Moment opname van alle hardware die is aangesloten op het apparaat.|
+|Luisterende poorten|eventPriorityListeningPorts |Hoog |Waar |Moment opname van alle open luisterende poorten op het apparaat.|
+|Proces maken |eventPriorityProcessCreate |Beperkt |Niet waar |Het proces voor het maken van controles op het apparaat.|
+|Proces beëindigen|eventPriorityProcessTerminate |Beperkt |Niet waar |Controleert het proces op het apparaat.|
+|Systeemgegevens |eventPrioritySystemInformation |Beperkt |Waar |Een moment opname van systeem informatie (bijvoorbeeld: besturings systeem of CPU).|
+|Lokale gebruikers| eventPriorityLocalUsers |Hoog |Waar|Een moment opname van de geregistreerde lokale gebruikers in het systeem. |
+|Aanmelden|  eventPriorityLogin |Hoog|Niet waar|Controleer de aanmeldings gebeurtenissen op het apparaat (lokale en externe aanmeldingen).|
+|Verbinding maken |eventPriorityConnectionCreate|Beperkt|Niet waar|Controleert TCP-verbindingen die zijn gemaakt met en van het apparaat. |
+|Firewallconfiguratie| eventPriorityFirewallConfiguration|Beperkt|Waar|Moment opname van de firewall configuratie van het apparaat (firewall regels). |
+|Basis lijn van besturings systeem| eventPriorityOSBaseline| Beperkt|Waar|Moment opname van de basis controle van het besturings systeem van het apparaat.|
 |
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -4,16 +4,16 @@ description: In dit artikel vindt u Naslag informatie voor de azcopy-Kopieer opd
 author: normesta
 ms.service: storage
 ms.topic: reference
-ms.date: 12/11/2020
+ms.date: 03/08/2021
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: c4e85195ace0a24aa11d4a03b8f429f2714399b0
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: c676b92fd07c6e444aa22f25c48fdb1b1957ca7a
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879153"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493761"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -31,6 +31,7 @@ Kopieert de bron gegevens naar een doel locatie. De ondersteunde richtingen zijn
   - Azure Files (SAS)-> Azure Files (SAS)
   - Azure Files (SAS)-> Azure-Blob (SAS of OAuth-verificatie)
   - Amazon Web Services (AWS) S3 (toegangs sleutel)-> Azure Block BLOB (SAS of OAuth-verificatie)
+  - Google Cloud Storage (sleutel van service account)-> Azure Block BLOB (SAS of OAuth-verificatie) [Preview]
 
 Zie de sectie voor beelden in dit artikel voor meer informatie.
 
@@ -229,6 +230,36 @@ Bestanden en mappen overzetten naar Azure Storage-account en de opgegeven query-
 - Sleutels en waarden zijn URL-code ring en de sleutel-waardeparen worden gescheiden door een en-teken (' & ')
     
 - Tijdens het instellen van tags op de blobs zijn er in SAS extra machtigingen (niet voor Tags), zonder dat de service een autorisatie fout meer krijgt.
+
+Een enkel object kopiëren naar Blob Storage van Google Cloud Storage met behulp van een service account sleutel en een SAS-token. Stel eerst de omgevings variabele GOOGLE_APPLICATION_CREDENTIALS in voor Google Cloud Storage-bron.
+  
+```azcopy
+azcopy cp "https://storage.cloud.google.com/[bucket]/[object]" "https://[destaccount].blob.core.windows.net/[container]/[path/to/blob]?[SAS]"
+```
+
+Kopieer een volledige directory naar Blob Storage van Google Cloud Storage met behulp van een service account Key en een SAS-token. Stel eerst de omgevings variabele GOOGLE_APPLICATION_CREDENTIALS in voor Google Cloud Storage-bron.
+ 
+```azcopy
+  - azcopy cp "https://storage.cloud.google.com/[bucket]/[folder]" "https://[destaccount].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive=true
+```
+
+Kopieer een volledige Bucket naar Blob Storage van Google Cloud Storage met behulp van een service account Key en een SAS-token. Stel eerst de omgevings variabele GOOGLE_APPLICATION_CREDENTIALS in voor Google Cloud Storage-bron.
+
+```azcopy 
+azcopy cp "https://storage.cloud.google.com/[bucket]" "https://[destaccount].blob.core.windows.net/?[SAS]" --recursive=true
+```
+
+Kopieer alle buckets naar Blob Storage van Google Cloud Storage met behulp van een service account Key en een SAS-token. Stel eerst de omgevings variabelen GOOGLE_APPLICATION_CREDENTIALS en GOOGLE_CLOUD_PROJECT =<project-id> in voor de GCS-bron
+
+```azcopy
+  - azcopy cp "https://storage.cloud.google.com/" "https://[destaccount].blob.core.windows.net/?[SAS]" --recursive=true
+```
+
+Kopieer een subset van buckets met behulp van een Joker teken (*) in de Bucket naam van Google Cloud Storage met behulp van een service account sleutel en een SAS-token voor bestemming. Stel eerst de omgevings variabelen GOOGLE_APPLICATION_CREDENTIALS en GOOGLE_CLOUD_PROJECT =<project-id> in voor de Google Cloud Storage-bron.
+ 
+```azcopy
+azcopy cp "https://storage.cloud.google.com/[bucket*name]/" "https://[destaccount].blob.core.windows.net/?[SAS]" --recursive=true
+```
 
 ## <a name="options"></a>Opties
 

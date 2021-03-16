@@ -1,6 +1,6 @@
 ---
-title: Conceptuele uitleg van de basis principes van de beveiligings module voor Azure RTO'S
-description: Meer informatie over de basis beginselen van de beveiligings module voor Azure RTO'S-concepten en-werk stromen.
+title: Conceptuele uitleg van de basis principes van de Defender-IoT-micro agent voor Azure RTO'S
+description: Meer informatie over de basis beginselen van de Defender-IoT-micro-agent voor Azure RTO'S-concepten en-werk stroom.
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
@@ -13,22 +13,22 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 8f521bd593369509fd520831f90ce9c601227f09
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 04a499f1feae630d3436c75ae2081413789c0ca3
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340047"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494231"
 ---
-# <a name="security-module-for-azure-rtos-preview"></a>Beveiligings module voor Azure RTO'S (preview-versie)
+# <a name="defender-iot-micro-agent-for-azure-rtos-preview"></a>Defender-IoT-micro agent voor Azure RTO'S (preview)
 
-Gebruik dit artikel om een beter inzicht te krijgen in de beveiligings module voor Azure RTO'S, met inbegrip van functies en voor delen, evenals koppelingen naar relevante configuratie-en referentie bronnen. 
+Gebruik dit artikel om een beter inzicht te krijgen in de Defender-IoT-micro agent voor Azure RTO'S, inclusief functies en voor delen, evenals koppelingen naar relevante configuratie-en referentie bronnen. 
 
-## <a name="azure-rtos-iot-security-module"></a>Azure RTO'S IoT-beveiligings module
+## <a name="azure-rtos-iot-defender-iot-micro-agent"></a>Azure RTO'S IoT Defender-IoT-micro-agent
 
-De beveiligings module voor Azure RTO'S biedt een uitgebreide beveiligings oplossing voor Azure RTO'S-apparaten als onderdeel van de NetX Duo-aanbieding. Binnen de NetX Duo-aanbieding wordt Azure RTO'S geleverd met de ingebouwde Azure IoT-beveiligings module, en biedt dit een dekking van algemene bedreigingen op uw real-time besturingssysteem apparaten nadat deze is geactiveerd. 
+Defender-IoT-micro-agent voor Azure RTO'S biedt een uitgebreide beveiligings oplossing voor Azure RTO'S-apparaten als onderdeel van de NetX Duo-aanbieding. Binnen de NetX Duo-aanbieding wordt Azure RTO'S geleverd met de ingebouwde Azure IoT Defender-IoT-micro-agent, en biedt u een dekking voor veelvoorkomende bedreigingen op uw real-time besturingssysteem apparaten nadat deze is geactiveerd. 
 
-De beveiligings module voor Azure RTO'S wordt op de achtergrond uitgevoerd en biedt een naadloze gebruikers ervaring tijdens het verzenden van beveiligings berichten met de unieke verbindingen van elke klant naar hun IoT Hub. De beveiligings module voor Azure RTO'S is standaard ingeschakeld.  
+De Defender-IoT-micro-agent voor Azure RTO'S wordt op de achtergrond uitgevoerd en biedt een naadloze gebruikers ervaring, terwijl er beveiligings berichten worden verzonden met de unieke verbindingen van elke klant naar hun IoT Hub. De Defender-IoT-micro-agent voor Azure RTO'S is standaard ingeschakeld.  
 
 ## <a name="azure-rtos-netx-duo"></a>Azure RTOS NetX Duo
 
@@ -40,13 +40,13 @@ De module biedt de volgende functies:
 - **Gedrags basislijnen voor apparaten op basis van aangepaste waarschuwingen**
 - **Beveiligings hygiëne van het apparaat verbeteren**
 
-## <a name="security-module-for-azure-rtos-architecture"></a>Beveiligings module voor Azure RTO'S-architectuur
+## <a name="defender-iot-micro-agent-for-azure-rtos-architecture"></a>Defender-IoT-micro agent voor Azure RTO'S-architectuur
 
-De beveiligings module voor Azure RTO'S wordt geïnitialiseerd door het Azure IoT-middleware-platform en gebruikt IoT Hub-clients om beveiligings-telemetrie naar de hub te verzenden.
+De Defender-IoT-micro-agent voor Azure RTO'S wordt geïnitialiseerd door het Azure IoT-middleware-platform en gebruikt IoT Hub-clients om beveiligings-telemetrie naar de hub te verzenden.
 
-:::image type="content" source="media/architecture/security-module-state-diagram.png" alt-text="Status diagram en informatie stroom van Azure IoT Security module":::
+:::image type="content" source="media/architecture/security-module-state-diagram.png" alt-text="Azure IoT Defender-IoT-micro agent-status diagram en informatie stroom":::
 
-De beveiligings module voor Azure RTO'S bewaakt de volgende activiteit van het apparaat en informatie met behulp van drie Verzamel modules:
+De Defender-IoT-micro-agent voor Azure RTO'S bewaakt de volgende activiteit van het apparaat en informatie met behulp van drie Verzamel modules:
 - Netwerk activiteit van apparaat **TCP**, **UDP** en **ICM**
 - Systeem gegevens als **threadx** en **netx Duo** -versies
 - Heartbeat-gebeurtenissen
@@ -57,14 +57,14 @@ Elke tijds interval kan worden geconfigureerd en de IoT-Connectors kunnen worden
 
 ## <a name="supported-security-alerts-and-recommendations"></a>Ondersteunde beveiligings waarschuwingen en aanbevelingen
 
-De beveiligings module voor Azure RTO'S ondersteunt specifieke beveiligings waarschuwingen en aanbevelingen. Zorg ervoor dat u [de relevante waarschuwings-en aanbevelings waarden](concept-rtos-security-alerts-recommendations.md) voor uw service controleert en wijzigt nadat u de eerste configuratie hebt voltooid.
+De Defender-IoT-micro-agent voor Azure RTO'S ondersteunt specifieke beveiligings waarschuwingen en aanbevelingen. Zorg ervoor dat u [de relevante waarschuwings-en aanbevelings waarden](concept-rtos-security-alerts-recommendations.md) voor uw service controleert en wijzigt nadat u de eerste configuratie hebt voltooid.
 
 ## <a name="ready-to-begin"></a>Klaar om te beginnen?
 
-De beveiligings module voor Azure RTO'S is beschikbaar als gratis down load voor uw IoT-apparaten. De Defender voor IoT-Cloud service is beschikbaar met een proef versie van 30 dagen per Azure-abonnement. [Down load de Security module nu](https://github.com/azure-rtos/azure-iot-preview/releases) en we gaan aan de slag. 
+Defender-IoT-micro-agent voor Azure RTO'S is beschikbaar als gratis down load voor uw IoT-apparaten. De Defender voor IoT-Cloud service is beschikbaar met een proef versie van 30 dagen per Azure-abonnement. [Down load nu de Defender-IOT-micro-agent](https://github.com/azure-rtos/azure-iot-preview/releases) om aan de slag te gaan. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Aan de slag met de beveiligings module voor Azure RTO'S- [vereisten en-Setup](quickstart-azure-rtos-security-module.md).
-- Meer informatie over de beveiligings module voor Azure RTO'S- [beveiligings waarschuwingen en aanbevelingen](concept-rtos-security-alerts-recommendations.md). 
-- Gebruik de beveiligings module voor Azure RTO'S [Reference-API](azure-rtos-security-module-api.md).
+- Aan de slag met Defender-IoT-micro agent voor Azure RTO'S- [vereisten en Setup](quickstart-azure-rtos-security-module.md).
+- Meer informatie over Defender-IoT-micro agent voor Azure RTO'S- [beveiligings waarschuwingen en aanbevelings ondersteuning](concept-rtos-security-alerts-recommendations.md). 
+- Gebruik de Defender-IoT-micro agent voor Azure RTO'S [Reference-API](azure-rtos-security-module-api.md).

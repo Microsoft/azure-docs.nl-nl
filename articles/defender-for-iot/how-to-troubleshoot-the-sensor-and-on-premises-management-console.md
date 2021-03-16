@@ -4,15 +4,15 @@ description: Los problemen met uw sensor en on-premises beheer console op om eve
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 1/3/2021
+ms.date: 03/14/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 624f60441f56646c3633a2afa79d326c92ba1a37
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: ba68bc3eee94689236792f0270d779357dffde9f
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100523716"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103465773"
 ---
 # <a name="troubleshoot-the-sensor-and-on-premises-management-console"></a>Problemen met de sensor en on-premises beheerconsole oplossen
 
@@ -54,7 +54,7 @@ Uw wacht woord herstellen:
 1. Selecteer **volgende** en uw gebruiker, en het door het systeem gegenereerde wacht woord voor uw beheer console worden weer gegeven.
 
     > [!NOTE]
-    > Wanneer u zich voor de eerste keer aanmeldt bij een sensor of een on-premises beheer console, wordt deze gekoppeld aan het abonnement waarmee u de verbinding hebt gemaakt. Als u het wacht woord voor de gebruiker met Cyberx of ondersteuning opnieuw wilt instellen, moet u dat abonnement selecteren. Zie het wacht woord van [een gebruiker voor de sensor of on-premises beheer console opnieuw instellen](how-to-create-and-manage-users.md#resetting-a-users-password-for-the-sensor-or-on-premises-management-console) voor meer informatie over het herstellen van een gebruiker met een Cyber
+    > Wanneer u zich voor de eerste keer aanmeldt bij een sensor of een on-premises beheer console, wordt deze gekoppeld aan het abonnement waarmee u de verbinding hebt gemaakt. Als u het wacht woord voor de gebruiker met Cyberx of ondersteuning opnieuw wilt instellen, moet u dat abonnement selecteren. Zie [wacht woorden opnieuw instellen](how-to-create-and-manage-users.md#resetting-passwords)voor meer informatie over het herstellen van een Cyber user-of-support-gebruikers wachtwoord.
 
 ### <a name="investigate-a-lack-of-traffic"></a>Een gebrek aan verkeer onderzoeken
 
@@ -258,7 +258,7 @@ Logboeken exporteren:
 
 1. Selecteer de gegevens categorieën om te definiëren welke gegevens u wilt exporteren:  
 
-    | Categorie exporteren | Description |
+    | Categorie exporteren | Beschrijving |
     |--|--|
     | **Logboeken van het besturings systeem** | Selecteer deze optie om informatie over de status van het besturings systeem op te halen. |
     | **Installatie/upgrade-logboeken** | Selecteer deze optie voor het onderzoeken van de configuratie parameters voor de installatie en de upgrade. |
@@ -283,7 +283,7 @@ De geëxporteerde logboeken worden toegevoegd aan de lijst **gearchiveerde logbo
 
 De lijst met gearchiveerde logboeken kan Maxi maal vijf items bevatten. Als het aantal items in de lijst buiten dat aantal valt, wordt het oudste item verwijderd.
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="see-also"></a>Zie ook
 
 - [Waarschuwingen weergeven](how-to-view-alerts.md)
 

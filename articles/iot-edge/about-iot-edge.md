@@ -10,14 +10,16 @@ ms.topic: overview
 ms.date: 10/28/2019
 ms.author: kgremban
 ms.custom: mvc
-ms.openlocfilehash: 1ba133acda414d9779e2fb10150bbdd57285e9a5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: e6c8e83838240b989c8c782840d8c771a6f6b7db
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "76511209"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103487799"
 ---
 # <a name="what-is-azure-iot-edge"></a>Wat is Azure IoT Edge?
+
+[!INCLUDE [iot-edge-version-all-supported](../../includes/iot-edge-version-all-supported.md)]
 
 Azure IoT Edge verplaatst cloud-analyse en aangepaste bedrijfslogica naar apparaten, zodat uw organisatie zich kan richten op zakelijke inzichten in plaats van gegevensbeheer. U kunt uw IoT-oplossing uitbreiden door uw bedrijfslogica te verpakken in standaardcontainers. Vervolgens kunt u die containers implementeren op elk gewenst apparaat en alles bewaken vanuit de cloud.
 

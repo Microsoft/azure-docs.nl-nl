@@ -3,31 +3,29 @@ title: Ontvangsten-formulier herkenning
 titleSuffix: Azure Cognitive Services
 description: Leer concepten met betrekking tot de ontvangstbewijs analyse met de formulier Recognizer API-gebruik en limieten.
 services: cognitive-services
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 08/17/2019
-ms.author: pafarley
-ms.openlocfilehash: 565ba3f7cd02a5ca8a3a858dc29a8fa6c7df16c1
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.date: 03/15/2021
+ms.author: lajanuar
+ms.openlocfilehash: 81e8cd5cf4af8da76ae4eb09bed5a4ee0368da4b
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546003"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103467354"
 ---
 # <a name="form-recognizer-prebuilt-receipt-model"></a>Vooraf gegenereerde ontvangst model voor formulier herkenning
 
-Azure Form Recognizer kan gegevens van verkoop ontvangsten analyseren en extra heren met behulp van het vooraf gegenereerde ontvangst model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met behulp van uitgebreide leer modellen voor het extra heren van belang rijke informatie uit de bevestigingen in het Engels. De ontvangst-API extraheert belang rijke informatie uit verkoop ontvangsten in het Engels, zoals de naam van de verkoper, de transactie datum, het transactie totaal, de regel items en meer. 
+Azure Form Recognizer kan gegevens van verkoop ontvangsten analyseren en extra heren met behulp van het vooraf gegenereerde ontvangst model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met diepe leer modellen voor het uitpakken van belang rijke informatie uit in het Engels geschreven kwitanties.
 
-## <a name="understanding-receipts"></a>Over ontvangst bevestigingen 
+## <a name="understanding-receipts"></a>Over ontvangst bevestigingen
 
-Veel bedrijven en mede werkers vertrouwen nog steeds op hand matig gegevens uit hun verkoop ontvangsten te extra heren, hetzij voor onkosten rapporten, vergoedingen, controle, belasting doeleinden, budget tering, marketing of andere doel einden. Vaak zijn er in deze scenario's installatie kopieën van de fysieke ontvangst vereist voor validatie doeleinden.  
+Veel bedrijven en personen vertrouwen nog steeds op hand matig geëxtraheerde gegevens uit verkoop ontvangsten. Het automatisch extra heren van gegevens van deze ontvangstsen kan gecompliceerd zijn. Ontvangst bewijzen kunnen worden crumpled, moeilijk te lezen, hebben hand matige onderdelen en afbeeldingen van een smartphone met een lage kwaliteit. Bovendien kunnen ontvangst sjablonen en-velden aanzienlijk verschillen per markt, regio en handelaar. Deze gegevens extractie en detectie problemen voor het detecteren van een veld maken het een uniek probleem om de ontvangst te verwerken.  
 
-Het automatisch extra heren van gegevens van deze Ontvangstsen kan gecompliceerd zijn. Ontvangst bewijzen kunnen crumpled en moeilijk te lezen, gedrukte of handgeschreven onderdelen en smartphone installatie kopieën van kwitanties een lage kwaliteit hebben. Bovendien kunnen ontvangst sjablonen en-velden aanzienlijk verschillen per markt, regio en handelaar. Deze uitdagingen in zowel gegevens extractie als veld detectie maken ontvangst verwerking een uniek probleem.  
-
-Met behulp van optische teken herkenning (OCR) en ons vooraf gegenereerde ontvangst model kunnen de ontvangst-API deze scenario's voor ontvangst verwerking inschakelen en gegevens ophalen uit de bevestigingen, zoals de naam van de verkoper, de tip, het totaal, de regel items en nog veel meer. Bij deze API is het niet nodig om een model te trainen. u hoeft alleen maar de ontvangst kopie te verzenden naar de API voor het analyseren van de kwitantie en de gegevens worden geëxtraheerd.
+De kwitantie-API maakt gebruik van optische teken herkenning (OCR) en ons vooraf gebouwde model om scenario's voor het verwerken van grote hoeveel heden ontvangsten mogelijk te maken. Als u een kwitantie-API hebt, hoeft u geen model te trainen. De ontvangstbewijs afbeelding verzenden naar de API voor het analyseren van de kwitantie en de gegevens worden geëxtraheerd.
 
 ![voorbeeld van aankoopbewijs](./media/receipts-example.jpg)
 
@@ -38,7 +36,7 @@ De vooraf ontwikkelde service voor ontvangst behaalt de inhoud van de verkoop on
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | ReceiptType | tekenreeks | Type verkoop ontvangst | Gespecificeerd |  |
 | Adverteerder | tekenreeks | Naam van de handelaar die de ontvangst heeft uitgegeven | Contoso |  |
@@ -73,12 +71,12 @@ Als u de service voor de ontvangst van de formulier herkenning wilt uitproberen,
 
 ## <a name="input-requirements"></a>Vereisten voor invoer
 
-[!INCLUDE [input reqs](./includes/input-requirements-receipts.md)]
+[!INCLUDE [input requirements](./includes/input-requirements-receipts.md)]
 
 ## <a name="supported-locales"></a>Ondersteunde land instellingen 
 
 * **Vooraf gemaakte ontvangst versie 2.0** (ga) ondersteunt verkoop ontvangsten in de land instelling en-US
-* **Vooraf gemaakte bevestigingen v 2.1-Preview. 2** (open bare preview) voegt extra ondersteuning toe voor de volgende land instellingen en ontvangstbewijs: 
+* **Vooraf gemaakte bevestigingen v 2.1-Preview. 3** (open bare preview) voegt extra ondersteuning toe voor de volgende land instellingen en ontvangstbewijs: 
   * EN-AU 
   * EN-CA 
   * EN-GB 
@@ -87,12 +85,12 @@ Als u de service voor de ontvangst van de formulier herkenning wilt uitproberen,
   > [!NOTE]
   > Taalinvoer 
   >
-  > Vooraf ontwikkelde ontvangst versie 2.1-Preview. 2 heeft een optionele aanvraag parameter voor het opgeven van een land instelling voor de ontvangst van extra Engelse markten. Voor verkoop ontvangsten in het Engels vanuit Australië (EN-AU), Canada (EN-CA), Groot-Brittannië (en-GB) en India (EN-IN) kunt u de land instelling opgeven om de resultaten te verbeteren. Als er geen land instelling is opgegeven in v 2.1-Preview. 2, wordt het model standaard ingesteld op het model nl-nl.
+  > Vooraf ontwikkelde ontvangst v 2.1-Preview. 3 heeft een optionele aanvraag parameter om een land instelling voor de ontvangst van extra Engelse markten op te geven. Voor verkoop ontvangsten in het Engels vanuit Australië (EN-AU), Canada (EN-CA), Groot-Brittannië (en-GB) en India (EN-IN) kunt u de land instelling opgeven om de resultaten te verbeteren. Als er geen land instelling is opgegeven in v 2.1-Preview. 3, wordt het model standaard ingesteld op het model nl-nl.
 
 
 ## <a name="the-analyze-receipt-operation"></a>De bewerking toename analyseren
 
-De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeReceiptAsync) neemt een afbeelding of PDF van een ontvangst op als de invoer en extraheert de waarden van interest en text. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
+De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync) neemt een afbeelding of PDF van een ontvangst op als de invoer en extraheert de waarden van interest en text. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
@@ -100,16 +98,16 @@ De [analyse-ontvangst](https://westcentralus.dev.cognitive.microsoft.com/docs/se
 
 ## <a name="the-get-analyze-receipt-result-operation"></a>De bewerking resultaat van het analyseren van toename ophalen
 
-De tweede stap bestaat uit het aanroepen van de bewerking [resultaat analyse ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeReceiptResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een ontvangst. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
+De tweede stap bestaat uit het aanroepen van de bewerking [resultaat analyse ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetAnalyzeReceiptResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een ontvangst. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
 
 |Veld| Type | Mogelijke waarden |
 |:-----|:----:|:----|
-|status | tekenreeks | notStarted: de analyse bewerking is niet gestart. |
+|status | tekenreeks | notStarted: de bewerking is niet gestart. |
 | |  | uitvoeren: de analyse bewerking wordt uitgevoerd. |
 | |  | mislukt: de analyse bewerking is mislukt. |
 | |  | geslaagd: de analyse bewerking is voltooid. |
 
-Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoord de resultaten van de ontvangst en tekst herkenning. Het resultaat van de ontvangst bevestiging is ingedeeld als een woorden lijst met benoemde veld waarden, waarbij elke waarde de geëxtraheerde tekst, genormaliseerde waarde, het begrenzingsvak, betrouw baarheid en bijbehorende woord elementen bevat. Het resultaat van de tekst herkenning is ingedeeld als een hiërarchie van lijnen en woorden, met tekst, selectie kader en betrouwbaarheids informatie.
+Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoord de resultaten van de ontvangst en tekst herkenning. Het resultaat van de ontvangst overeenkomst is ingedeeld als een woorden lijst met benoemde veld waarden. Elke waarde bevat de geëxtraheerde tekst, genormaliseerde waarde, het begrenzingsvak, de betrouw baarheid en de bijbehorende woord elementen. Het resultaat van de tekst herkenning is ingedeeld als een hiërarchie van lijnen en woorden, met tekst, selectie kader en betrouwbaarheids informatie.
 
 ![voor beeld van ontvangst resultaten](./media/contoso-receipt-2-information.png)
 
@@ -447,18 +445,17 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie:
 }
 ```
 
-
 ## <a name="customer-scenarios"></a>Klant scenario's  
 
-De gegevens die zijn geëxtraheerd met de ontvangstbewijs-API kunnen worden gebruikt voor het uitvoeren van verschillende taken. Hier volgen enkele voor beelden van wat onze klanten hebben gedaan met behulp van de kwitantie-API. 
+De gegevens die zijn geëxtraheerd met de ontvangstbewijs-API kunnen worden gebruikt voor het uitvoeren van verschillende taken. Hieronder ziet u enkele voor beelden van wat klanten hebben gedaan met behulp van de kwitantie-API.
 
 ### <a name="business-expense-reporting"></a>Rapportage van zakelijke onkosten  
 
 Vaak worden bedrijfs kosten in mindering gebracht op basis van de uitgaven voor het hand matig invoeren van gegevens uit installatie kopieën van kwitanties. Met de kassabon-API kunt u de geëxtraheerde velden gebruiken om dit proces gedeeltelijk te automatiseren en uw ontvangsten snel te analyseren.  
 
-Omdat de bevestigings-API een eenvoudige JSON-uitvoer heeft, kunt u de geëxtraheerde veld waarden op verschillende manieren gebruiken. Integreer met interne onkosten toepassingen om onkosten rapporten vooraf in te vullen. Lees voor meer informatie over hoe Acumatica gebruikmaakt van de ontvangstbewijs-API om [onkosten rapportage een minder gemeld proces te maken](https://customers.microsoft.com/story/762684-acumatica-partner-professional-services-azure).  
+De ontvangstbewijs-API is een eenvoudige JSON-uitvoer waarmee u de geëxtraheerde veld waarden op verschillende manieren kunt gebruiken. Integreer met interne onkosten toepassingen om onkosten rapporten vooraf in te vullen. Lees voor meer informatie over hoe Acumatica gebruikmaakt van de ontvangstbewijs-API om [onkosten rapportage een minder gemeld proces te maken](https://customers.microsoft.com/story/762684-acumatica-partner-professional-services-azure).  
 
-### <a name="auditing-and-accounting"></a>Controle en accounting 
+### <a name="auditing-and-accounting"></a>Controle en accounting
 
 De ontvangst API-uitvoer kan ook worden gebruikt om analyses uit te voeren op verschillende punten in het onkosten rapportage-en vergoedings proces. U kunt ontvangst bewijzen verwerken om ze te sorteren voor hand matige controle of snelle goed keuringen.  
 
@@ -472,9 +469,13 @@ De kassabon-API voorziet ook in de [functie voor ontvangst verwerking van de AI 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voltooi de [Snelstartgids van een formulier herkenning](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een app voor het verwerken van een kwitantie met de formulier herkenner in de ontwikkel taal van uw keuze.
+ . Ga aan de slag met het schrijven van een app voor het verwerken van een kwitantie met de formulier herkenner in de ontwikkel taal van uw keuze.
+
+> [!div class="nextstepaction"]
+> [Quick start voor een formulier herkenning volt ooien](quickstarts/client-library.md)
 
 ## <a name="see-also"></a>Zie ook
 
-* [Wat is Form Recognizer?](./overview.md)
-* [REST API referentie documenten](./index.yml)
+* [Wat is Form Recognizer?](overview.md)
+* [API-referentie voor formulier herkenning](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeReceiptAsync)
+>

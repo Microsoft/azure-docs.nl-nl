@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 578a248de3ee6aacc0db7c5116b66031b404c9ae
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: d445a4e1d0fd39788c18f80b25ce02a7c5d0a243
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448163"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488683"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Sales Force-account met behulp van Azure Active Directory B2C
 
@@ -48,7 +48,7 @@ Als u aanmelden wilt inschakelen voor gebruikers met een Sales Force-account in 
     1. **API-naam** 
     1. **E-mail adres van contact persoon** : het e-mail adres voor Sales Force
 1. Selecteer onder **API (OAuth-instellingen inschakelen)** de optie **OAuth-instellingen inschakelen**
-    1. Voer in de **call back-URL** in `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang `your-tenant-name` door de naam van uw tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
+    1. Voer in voor de **call back-URL** `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-tenant-name` de naam van uw Tenant en `your-domain-name` met uw aangepaste domein. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
     1. Selecteer in de **geselecteerde OAuth-scopes** **toegang tot uw basis gegevens (id, profiel, e-mail, adres, telefoon)** en **sta toegang toe tot uw unieke id (OpenID Connect)**.
     1. Selecteer **geheim vereisen voor webserver stroom**.
 1. **ID-token configureren** selecteren 

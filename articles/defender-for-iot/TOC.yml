@@ -314,16 +314,16 @@
           href: references-work-with-defender-for-iot-cli-commands.md
         - name: Eigen protocollen beheren (Horizon)
           href: resources-manage-proprietary-protocols.md
+        - name: Veelgestelde vragen - service
+          displayName: 'FAQ, regulation, internet, connection, hardware, appliances, ports, logs'
+          href: resources-frequently-asked-questions.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
         - name: API voor beveiligingsmodule voor Azure RTOS
           displayNAme: 'prototype, disable'
           href: azure-rtos-security-module-api.md
-        - name: Veelgestelde vragen - service
-          displayName: 'regulation, internet, connection, hardware, appliances, ports, logs'
-          href: resources-frequently-asked-questions.md
         - name: Veelgestelde vragen - agent
-          displayName: 'embedded, dependencies, data, quota, internet,'
+          displayName: 'FAQ, embedded, dependencies, data, quota, internet,'
           href: resources-agent-frequently-asked-questions.md
         - name: Azure-roadmap
           href: 'https://azure.microsoft.com/roadmap/?category=security-identity'

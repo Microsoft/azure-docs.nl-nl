@@ -6,16 +6,16 @@ author: mikben
 manager: mikben
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
-ms.date: 9/1/2020
+ms.date: 03/10/2021
 ms.topic: include
 ms.custom: include file
 ms.author: mikben
-ms.openlocfilehash: d3586e03a3c6214390f4a8b72b1db5871d2d1900
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: f3da6fd75ac485a3e22a428934928795f1feae28
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102510610"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103487915"
 ---
 [!INCLUDE [Public Preview Notice](../../includes/public-preview-include.md)]
 
@@ -101,7 +101,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 ### <a name="additional-reading"></a>Meer artikelen
 
-- [Azure Communication GitHub](https://github.com/Azure/communication): u vindt meer voorbeelden en informatie op de officiële GitHub-pagina
+- Voor [beelden](./../overview.md) : u vindt meer voor beelden op onze overzichts pagina voor beelden.
 - [Redux](https://redux.js.org/): statusbeheer op de client
 - [FluentUI](https://aka.ms/fluent-ui): door Microsoft ondersteunde bibliotheek voor de gebruikersinterface
 - [React](https://reactjs.org/): bibliotheek voor het ontwikkelen van gebruikersinterfaces

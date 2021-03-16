@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/08/2021
+ms.date: 03/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: a3b0be062025681af2b03dfd2e57f1af2d99d701
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 433e44e9998376d0bea57264f3daeaff7499a3cf
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102448350"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103488836"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C
 
@@ -47,7 +47,9 @@ Als u aanmelden voor gebruikers met een Google-account in Azure Active Directory
 Voer een **Naam** in voor de toepassing. Voer *b2clogin.com* in het gedeelte **geautoriseerde domeinen** in en selecteer **Opslaan**.
 1. Selecteer **referenties** in het linkermenu en selecteer vervolgens   >  **OAuth-client-id** maken.
 1. Onder **toepassings type** selecteert u **Web Application**.
-1. Voer een **naam** in voor uw toepassing, Voer `https://your-tenant-name.b2clogin.com` in **geautoriseerde java script-oorsprong** in en `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in **geautoriseerde omleidings-uri's**. Vervang `your-tenant-name` door de naam van uw tenant. Gebruik alleen kleine letters wanneer u uw Tenant naam invoert, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
+    1. Voer een **Naam** in voor de toepassing.
+    1. Voer in voor de **geautoriseerde java script-oorsprong** `https://your-tenant-name.b2clogin.com` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name` .
+    1. Voer in voor de **geautoriseerde omleidings-uri's** `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Als u een [aangepast domein](custom-domain.md)gebruikt, voert u in `https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp` . Vervang door `your-domain-name` uw aangepaste domein en `your-tenant-name` met de naam van uw Tenant. Gebruik alleen kleine letters wanneer u uw Tenant naam invoert, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
 1. Klik op **Create**.
 1. Kopieer de waarden van de **client-id** en het **client geheim**. U hebt beide nodig om Google te configureren als een id-provider in uw Tenant. **Client geheim** is een belang rijke beveiligings referentie.
 

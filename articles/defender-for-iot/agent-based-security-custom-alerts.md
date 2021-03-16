@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/16/2021
 ms.author: shhazam
-ms.openlocfilehash: e885566dd067d70fd4800ca96b8729494464da85
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 5d0eeb046d7a4ba474a1ed4a2cfb07a07f1c3888
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100642408"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103493302"
 ---
 # <a name="defender-for-iot-devices-custom-security-alerts"></a>Aangepaste beveiligings waarschuwingen voor Defender voor IoT-apparaten
 
@@ -31,13 +31,13 @@ De volgende lijsten van de Defender voor IoT-waarschuwingen kunt u bepalen op ba
 
 ## <a name="agent-based-security-custom-alerts"></a>Aangepaste waarschuwingen op basis van agent beveiliging
 
-| Severity | Naam waarschuwing | Gegevensbron | Description | Voorgestelde herstel |
+| Severity | Naam waarschuwing | Gegevensbron | Beschrijving | Voorgestelde herstel |
 |--|--|--|--|--|
-| Beperkt | Aangepaste waarschuwing: het aantal actieve verbindingen valt buiten het toegestane bereik | Klassieke beveiligings module, Azure RTO'S | Het aantal actieve verbindingen binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane verbindingen. |
-| Beperkt | Aangepaste waarschuwing: de uitgaande verbinding die is gemaakt met een IP-adres dat niet is toegestaan | Klassieke beveiligings module, Azure RTO'S | Er is een uitgaande verbinding gemaakt met een IP-adres buiten de lijst met toegestane IP-adressen. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane IP-adressen. |
-| Beperkt | Aangepaste waarschuwing: het aantal mislukte lokale aanmeldingen ligt buiten het toegestane bereik | Klassieke beveiligings module, Azure RTO'S | Het aantal mislukte lokale aanmeldingen binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. |  |
-| Beperkt | Aangepaste waarschuwing: de aanmelding van een gebruiker die niet voor komt in de lijst met toegestane gebruikers | Klassieke beveiligings module, Azure RTO'S | Een lokale gebruiker buiten de lijst met toegestane gebruikers die is aangemeld bij het apparaat. | Als u onbewerkte gegevens opslaat, navigeert u naar uw log Analytics-account en gebruikt u de gegevens om het apparaat te onderzoeken, identificeert u de bron en verhelpt u de lijst met toegestane/geblokkeerde websites voor deze instellingen. Als u momenteel geen onbewerkte gegevens opslaat, gaat u naar het apparaat en herstelt u de lijst met toegestane en geblokkeerde websites. |
-| Beperkt | Aangepaste waarschuwing: er is een proces uitgevoerd dat niet is toegestaan | Klassieke beveiligings module, Azure RTO'S | Een proces dat niet is toegestaan, is uitgevoerd op het apparaat. | Als u onbewerkte gegevens opslaat, navigeert u naar uw log Analytics-account en gebruikt u de gegevens om het apparaat te onderzoeken, identificeert u de bron en verhelpt u de lijst met toegestane/geblokkeerde websites voor deze instellingen. Als u momenteel geen onbewerkte gegevens opslaat, gaat u naar het apparaat en herstelt u de lijst met toegestane en geblokkeerde websites. |
+| Beperkt | Aangepaste waarschuwing: het aantal actieve verbindingen valt buiten het toegestane bereik | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Het aantal actieve verbindingen binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane verbindingen. |
+| Beperkt | Aangepaste waarschuwing: de uitgaande verbinding die is gemaakt met een IP-adres dat niet is toegestaan | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Er is een uitgaande verbinding gemaakt met een IP-adres buiten de lijst met toegestane IP-adressen. | De logboeken van het apparaat onderzoeken. Ontdek waar de verbinding vandaan komt en bepaal of het goed is of kwaad aardig is. Als dat schadelijk is, verwijdert u mogelijke malware en begrijpt u de bron. Voeg, indien goed aardig, de bron toe aan de lijst met toegestane IP-adressen. |
+| Beperkt | Aangepaste waarschuwing: het aantal mislukte lokale aanmeldingen ligt buiten het toegestane bereik | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Het aantal mislukte lokale aanmeldingen binnen een bepaald tijd venster ligt buiten het huidige geconfigureerde en toegestane bereik. |  |
+| Beperkt | Aangepaste waarschuwing: de aanmelding van een gebruiker die niet voor komt in de lijst met toegestane gebruikers | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Een lokale gebruiker buiten de lijst met toegestane gebruikers die is aangemeld bij het apparaat. | Als u onbewerkte gegevens opslaat, navigeert u naar uw log Analytics-account en gebruikt u de gegevens om het apparaat te onderzoeken, identificeert u de bron en verhelpt u de lijst met toegestane/geblokkeerde websites voor deze instellingen. Als u momenteel geen onbewerkte gegevens opslaat, gaat u naar het apparaat en herstelt u de lijst met toegestane en geblokkeerde websites. |
+| Beperkt | Aangepaste waarschuwing: er is een proces uitgevoerd dat niet is toegestaan | Klassiek Defender-IoT-micro-agent, Azure RTO'S | Een proces dat niet is toegestaan, is uitgevoerd op het apparaat. | Als u onbewerkte gegevens opslaat, navigeert u naar uw log Analytics-account en gebruikt u de gegevens om het apparaat te onderzoeken, identificeert u de bron en verhelpt u de lijst met toegestane/geblokkeerde websites voor deze instellingen. Als u momenteel geen onbewerkte gegevens opslaat, gaat u naar het apparaat en herstelt u de lijst met toegestane en geblokkeerde websites. |
 |
 
 ## <a name="next-steps"></a>Volgende stappen

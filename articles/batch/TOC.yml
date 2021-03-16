@@ -31,15 +31,6 @@
     - name: Parallelle bestandsverwerking - Python
       displayName: 'tutorial, hpc, high-performance, large'
       href: tutorial-parallel-python.md
-    - name: Scènes weergeven met Arnold
-      displayName: tutorial
-      href: tutorial-rendering-cli.md
-    - name: Weergeven met Batch Explorer
-      displayName: tutorial
-      href: tutorial-rendering-batchexplorer-blender.md
-    - name: Parallelle R-simulatie
-      displayName: 'tutorial, doAzureParallel, rstudio'
-      href: tutorial-r-doazureparallel.md
     - name: OCR met Batch en Functions
       displayName: 'trigger, optical'
       href: tutorial-batch-functions.md

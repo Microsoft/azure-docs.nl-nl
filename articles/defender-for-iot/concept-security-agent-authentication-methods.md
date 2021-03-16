@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2021
 ms.author: shhazam
-ms.openlocfilehash: 85a5edc1485cb5a1eeb4428b201380ad9ca89422
-ms.sourcegitcommit: f6193c2c6ce3b4db379c3f474fdbb40c6585553b
+ms.openlocfilehash: 4aeaa703b5e3203eeb7bc355051e0e8f48f898ac
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102449166"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494118"
 ---
 # <a name="security-agent-authentication-methods"></a>Verificatie methoden voor beveiligings agenten
 
 In dit artikel worden de verschillende verificatie methoden beschreven die u met de AzureIoTSecurity-agent kunt gebruiken om te verifiëren met de IoT Hub.
 
-Voor elk apparaat dat in de IoT Hub op Defender voor IoT is geïnstalleerd, is een beveiligings module vereist. Om het apparaat te verifiëren, kan Defender voor IoT een van de volgende twee methoden gebruiken. Kies de methode die het beste werkt voor uw bestaande IoT-oplossing.
+Voor elk apparaat dat in het IoT Hub op Defender voor IoT is geïnstalleerd, is een Defender-IoT-micro-agent vereist. Om het apparaat te verifiëren, kan Defender voor IoT een van de volgende twee methoden gebruiken. Kies de methode die het beste werkt voor uw bestaande IoT-oplossing.
 
 - SecurityModule optie
 - Optie apparaat
@@ -33,12 +33,12 @@ Voor elk apparaat dat in de IoT Hub op Defender voor IoT is geïnstalleerd, is e
 
 De twee methoden voor de Defender voor IoT AzureIoTSecurity-agent om verificatie uit te voeren:
 
-- **SecurityModule** -verificatie modus<br>
-De agent wordt geverifieerd met behulp van de identiteit van de beveiligings module, onafhankelijk van de apparaat-id.
-Gebruik dit verificatie type als u wilt dat de beveiligings agent een specifieke verificatie methode gebruikt via de beveiligings module (alleen symmetrische sleutel).
+- **Defender-IOT-verificatie modus micro agent**<br>
+De agent wordt geverifieerd aan de hand van de identiteit van de Defender-IoT-micro agent onafhankelijk van de apparaat-id.
+Gebruik dit verificatie type als u wilt dat de beveiligings agent een specifieke verificatie methode gebruikt via de Defender-IoT-micro-agent (alleen symmetrische sleutel).
 
 - Verificatie modus **apparaat**<br>
-In deze methode verifieert de beveiligings agent eerst met de apparaat-id. Na de initiële verificatie voert de Defender voor IoT-agent een **rest** -aanroep naar de IOT hub met behulp van de rest API met de verificatie gegevens van het apparaat. De agent van de Defender voor IoT vraagt vervolgens de verificatie methode van de beveiligings module en de gegevens van de IoT Hub. In de laatste stap voert de Defender voor IoT-agent een verificatie uit op basis van de Defender voor IoT-module.
+In deze methode verifieert de beveiligings agent eerst met de apparaat-id. Na de initiële verificatie voert de Defender voor IoT-agent een **rest** -aanroep naar de IOT hub met behulp van de rest API met de verificatie gegevens van het apparaat. De Defender voor IoT-agent vraagt vervolgens de Defender-IoT-micro agent-verificatie methode en gegevens van de IoT Hub. In de laatste stap voert de Defender voor IoT-agent een verificatie uit op basis van de Defender voor IoT-module.
 
 Gebruik dit verificatie type als u wilt dat de beveiligings agent een bestaande verificatie methode voor apparaten (zelfondertekend certificaat of symmetrische sleutel) opnieuw gebruikt.
 
@@ -54,7 +54,7 @@ Zie [para meters voor de beveiligings agent installeren](#security-agent-install
 Wanneer u [een beveiligings agent implementeert](how-to-deploy-agent.md), moeten de verificatie gegevens als argumenten worden gegeven.
 Deze argumenten worden beschreven in de volgende tabel.
 
-|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Description|Opties|
+|Naam van Linux-para meter | Naam van Windows-para meter | Steno parameter |Beschrijving|Opties|
 |---------------------|---------------|---------|---------------|---------------|
 |verificatie-identiteit|AuthenticationIdentity|aui|Verificatie-identiteit| **SecurityModule** of **apparaat**|
 |verificatie-methode|Authentic|aum|Verificatiemethode|**SymmetricKey** of **SelfSignedCertificate**|

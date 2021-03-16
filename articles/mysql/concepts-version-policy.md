@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 9f34e1ff7134788d064a82ec7b646df915dbe24e
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: 8ad79f2f27864b4fbc78b7c104828230ff7f93bc
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103462555"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103465654"
 ---
 # <a name="azure-database-for-mysql-version-support-policy"></a>Ondersteunings beleid voor Azure Database for MySQL-versie
 
@@ -29,10 +29,11 @@ Azure Database for MySQL ondersteunt momenteel de volgende primaire en secundair
 
 | Versie | Enkele server <br/> Huidige secundaire versie |Flexibele server (preview) <br/> Huidige secundaire versie  |
 |:-------------------|:-------------------------------------------|:---------------------------------------------|
-|MySQL-versie 5,6 |  [5.6.47](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html) | Niet ondersteund|
+|MySQL-versie 5,6 |  [5.6.47](https://dev.mysql.com/doc/relnotes/mysql/5.6/en/news-5-6-47.html)(buiten gebruik gesteld) | Niet ondersteund|
 |MySQL-versie 5,7 | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html) | [5.7.29](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/news-5-7-29.html)|
 |MySQL-versie 8,0 | [8.0.15](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-15.html) | [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html)|
 
+Lees het versie-ondersteunings beleid voor buiten gebruik gestelde versies in de documentatie voor het [versie ondersteunings beleid.](concepts-version-policy.md#retired-mysql-engine-versions-not-supported-in-azure-database-for-mysql)
 
 ## <a name="major-version-support"></a>Ondersteuning voor primaire versie
 Elke primaire versie van MySQL wordt ondersteund door Azure Database for MySQL vanaf de datum waarop Azure de versie ondersteunt, totdat de versie wordt ingetrokken door de MySQL-Community, zoals is opgenomen in het [versie beleid](https://www.mysql.com/support/eol-notice.html).

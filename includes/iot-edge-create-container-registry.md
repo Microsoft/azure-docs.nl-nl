@@ -6,7 +6,7 @@ ms.date: 12/30/2019
 ms.author: kgremban
 ms.openlocfilehash: 8cae7ac2d3b961120cb9100f5072dc141769afff
 ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/24/2020
 ms.locfileid: "95557865"

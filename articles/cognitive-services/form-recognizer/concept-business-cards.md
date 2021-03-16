@@ -3,19 +3,19 @@ title: Visite kaartjes-formulier herkenning
 titleSuffix: Azure Cognitive Services
 description: Leer concepten met betrekking tot analyse van visite kaartjes met het formulier Recognizer API-gebruik en limieten.
 services: cognitive-services
-author: PatrickFarley
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: conceptual
-ms.date: 08/17/2019
-ms.author: pafarley
-ms.openlocfilehash: c2543f74b90205a36d3f5b4481beca35c779f77e
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.date: 03/15/2021
+ms.author: lajanuar
+ms.openlocfilehash: 5211c1263af599eb5fd09ad276545c725ce5c867
+ms.sourcegitcommit: 3ea12ce4f6c142c5a1a2f04d6e329e3456d2bda5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546020"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103466985"
 ---
 # <a name="form-recognizer-prebuilt-business-cards-model"></a>Model voor het maken van een webkaart met formulier herkenning 
 
@@ -31,7 +31,7 @@ De vooraf ontwikkelde Business Card-API extraheert belang rijke velden van visit
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden:
 
-|Naam| Type | Description | Tekst | 
+|Naam| Type | Beschrijving | Tekst | 
 |:-----|:----|:----|:----|
 | ContactNames | matrix van objecten | Naam van contact persoon geëxtraheerd uit visite kaartje | [{"FirstName": "John", "LastName": "Jansen"}] |
 | FirstName | tekenreeks | Eerste (gegeven) naam van contact persoon | Letterlijk | 
@@ -52,25 +52,25 @@ De API voor het visite kaartje kan ook alle herkende tekst van de visite kaart r
 
 ### <a name="input-requirements"></a>Invoer vereisten 
 
-[!INCLUDE [input reqs](./includes/input-requirements-receipts.md)]
+[!INCLUDE [input requirements](./includes/input-requirements-receipts.md)]
 
 ## <a name="the-analyze-business-card-operation"></a>De bewerking visite kaartje analyseren
 
-De [kaart](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync) voor het analyseren van een visite kaartje neemt een afbeelding of PDF van een visite kaartje als invoer en extraheert de gewenste waarden. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
+De [kaart](https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync) voor het analyseren van een visite kaartje neemt een afbeelding of PDF van een visite kaartje als invoer en extraheert de gewenste waarden. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
-|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.2/prebuilt/businessCard/analyzeResults/49a36324-fc4b-4387-aa06-090cfbf0064f` |
+|Operation-Location | `https://cognitiveservice/formrecognizer/v2.1-preview.3/prebuilt/businessCard/analyzeResults/49a36324-fc4b-4387-aa06-090cfbf0064f` |
 
 ## <a name="the-get-analyze-business-card-result-operation"></a>De resultaat bewerking voor het analyseren van bedrijfs kaarten ophalen
 
-De tweede stap bestaat uit het aanroepen van de [resultaat bewerking analyse van bedrijfs kaart ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeBusinessCardResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking visite kaartje analyseren. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
+De tweede stap bestaat uit het aanroepen van de [resultaat bewerking analyse van bedrijfs kaart ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/GetAnalyzeBusinessCardResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking visite kaartje analyseren. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
 
 |Veld| Type | Mogelijke waarden |
 |:-----|:----:|:----|
 |status | tekenreeks | notStarted: de analyse bewerking is niet gestart.<br /><br />uitvoeren: de analyse bewerking wordt uitgevoerd.<br /><br />mislukt: de analyse bewerking is mislukt.<br /><br />geslaagd: de analyse bewerking is voltooid.|
 
-Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoord de resultaten van de visite kaart en de optionele tekst herkenning, indien nodig. Het resultaat van het visite kaartje is ingedeeld als een woorden lijst met benoemde veld waarden, waarbij elke waarde de geëxtraheerde tekst, genormaliseerde waarde, het begrenzingsvak, betrouw baarheid en bijbehorende woord elementen bevat. Het resultaat van de tekst herkenning is ingedeeld als een hiërarchie van lijnen en woorden, met tekst, selectie kader en betrouwbaarheids informatie.
+Wanneer het veld **status** de waarde **geslaagd** heeft, bevat het JSON-antwoord de resultaten van de visite kaart en de optionele tekst herkenning, indien nodig. Het resultaat van het visite kaartje is ingedeeld als een woorden lijst met benoemde veld waarden, waarbij elke waarde de geëxtraheerde tekst, genormaliseerde waarde, begrenzingsvak, betrouw baarheid en bijbehorende woord elementen bevat. Het resultaat van de tekst herkenning is ingedeeld als een hiërarchie van lijnen en woorden, met tekst, selectie kader en betrouwbaarheids informatie.
 
 ![voorbeeld uitvoer van visite kaartjes](./media/business-card-results.png)
 
@@ -386,7 +386,7 @@ Volg de [Quick Start Snelstartgids om](./QuickStarts/client-library.md) gegevens
 
 ## <a name="customer-scenarios"></a>Klant Scenario's  
 
-De gegevens die zijn geëxtraheerd met de Business Card API kunnen worden gebruikt voor het uitvoeren van verschillende taken. Als u deze contact gegevens uitpakt, bespaart u automatisch tijd voor die in client gerichte rollen. Hier volgen enkele voor beelden van wat onze klanten hebben gedaan met de API van het visite kaartje:
+De gegevens die zijn geëxtraheerd met de Business Card API kunnen worden gebruikt voor het uitvoeren van verschillende taken. Als u deze contact gegevens uitpakt, bespaart u automatisch tijd voor gebruikers in client gerichte rollen. Hier volgen enkele voor beelden van wat onze klanten hebben gedaan met de API van het visite kaartje:
 
 * Haal contact gegevens op uit visite kaartjes en maak snel contact met uw telefoon. 
 * Integreer met CRM om automatisch contact te maken met installatie kopieën van visite kaartjes. 
@@ -402,4 +402,4 @@ De Business Card-API voorziet ook in de [verwerkings functie van de AI Builder-b
 ## <a name="see-also"></a>Zie ook
 
 * [Wat is Form Recognizer?](./overview.md)
-* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeBusinessCardAsync)
+* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-3/operations/AnalyzeBusinessCardAsync)

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: b94cb6d6302cd92816fe25f6e672b1ce3bb9398d
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 34f54bb30e959ecc2fa27fba5ab7392b9eddc68e
+ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791994"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103494509"
 ---
 # <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Gegevens van Amazon S3 naar Azure Storage kopiëren met behulp van AzCopy
 
@@ -70,7 +70,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 >
 > U kunt ook virtuele Url's voor gehoste stijlen gebruiken (bijvoorbeeld: `http://bucket.s3.amazonaws.com` ). 
 >
-> Zie [virtual host of buckets]] (voor meer informatie over virtuele hosting van buckets https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html) .
+> Zie [virtuele hosting van buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html)voor meer informatie over virtuele hosting van buckets.
 
 ### <a name="copy-a-directory"></a>Een map kopiëren
 
@@ -103,7 +103,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/<bucket-name>' 'https://<storage-account-name>.blob.core.windows.net/<container-name>' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
+| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer' --recursive=true` |
 
 ### <a name="copy-all-buckets-in-all-regions"></a>Alle buckets in alle regio's kopiëren
 
@@ -113,7 +113,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
+| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
 
 ### <a name="copy-all-buckets-in-a-specific-s3-region"></a>Alle buckets in een specifieke S3-regio kopiëren
 
@@ -123,7 +123,7 @@ Gebruik dezelfde URL-syntaxis ( `blob.core.windows.net` ) voor accounts die een 
 |--------|-----------|
 | **Syntaxis** | `azcopy copy 'https://s3-<region-name>.amazonaws.com/' 'https://<storage-account-name>.blob.core.windows.net' --recursive=true` |
 | **Voorbeeld** | `azcopy copy 'https://s3-rds.eu-north-1.amazonaws.com' 'https://mystorageaccount.blob.core.windows.net' --recursive=true` |
-| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket/mydirectory' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
+| **Voor beeld** (hiërarchische naam ruimte)| `azcopy copy 'https://s3.amazonaws.com/mybucket' 'https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory' --recursive=true` |
 
 ## <a name="handle-differences-in-object-naming-rules"></a>Verschillen in regels voor object naamgeving afhandelen
 
@@ -168,7 +168,5 @@ Meer voor beelden vindt u in een van deze artikelen:
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 
 - [Gegevens overdragen](storage-use-azcopy-v10.md#transfer-data)
-
-- [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
 
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

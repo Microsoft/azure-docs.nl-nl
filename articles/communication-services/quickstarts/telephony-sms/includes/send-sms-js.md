@@ -2,20 +2,20 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: dademath
-manager: nimag
+author: bertong
+manager: ankita
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
-ms.date: 03/10/2021
+ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
-ms.author: dademath
-ms.openlocfilehash: fc20396053dee32ac7976139a634b4592389ab5f
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.author: bertong
+ms.openlocfilehash: 0d142c477e1de2a2a34a8abfd948800cc0b607ee
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488297"
+ms.locfileid: "103622190"
 ---
 Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek in JavaScript van Communications Services te gebruiken om sms-berichten te verzenden.
 
@@ -72,8 +72,9 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
 | SmsClient | Deze klasse is vereist voor alle sms-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om sms-berichten te verzenden. |
-| SendSmsOptions | Deze interface biedt opties voor het configureren van leveringsrapporten. Als `enable_delivery_report` op `true` is ingesteld, wordt een gebeurtenis verzonden wanneer de levering is geslaagd. |
-| SendMessageRequest | Deze interface is het model voor het bouwen van de sms-aanvraag (bijvoorbeeld: configureer de telefoonnummers van de afzender en ontvanger en de sms-inhoud). |
+| SmsSendResult               | Deze klasse bevat het resultaat van de SMS-service.                                          |
+| SmsSendOptions | Deze interface biedt opties voor het configureren van leveringsrapporten. Als `enableDeliveryReport` is ingesteld op `true` , wordt een gebeurtenis verzonden wanneer de levering is geslaagd. |
+| SmsSendRequest | Deze interface is het model voor het bouwen van de sms-aanvraag (bijvoorbeeld: configureer de telefoonnummers van de afzender en ontvanger en de sms-inhoud). |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
@@ -92,27 +93,66 @@ const connectionString = process.env['COMMUNICATION_SERVICES_CONNECTION_STRING']
 const smsClient = new SmsClient(connectionString);
 ```
 
-## <a name="send-an-sms-message"></a>Een sms-bericht verzenden
+## <a name="send-a-1n-sms-message"></a>Een SMS-bericht van 1: N verzenden
 
-Een sms-bericht verzenden door de `send`-methode aan te roepen. Voeg deze code toe aan het einde van **send-sms.js**:
+Als u een SMS-bericht naar een lijst met ontvangers wilt verzenden, roept u de `send` functie aan vanuit de SmsClient met een lijst met telefoon nummers van ontvangers (als u een bericht wilt verzenden naar één ontvanger, neemt u slechts één nummer op in de lijst). Voeg deze code toe aan het einde van **send-sms.js**:
 
 ```javascript
 async function main() {
-  await smsClient.send({
-    from: "<leased-phone-number>",
-    to: ["<to-phone-number>"],
-    message: "Hello World 👋🏻 via Sms"
-  }, {
-    enableDeliveryReport: true //Optional parameter
+  const sendResults = await smsClient.send({
+    from: "<from-phone-number>",
+    to: ["<to-phone-number-1>", "<to-phone-number-2>"],
+    message: "Hello World 👋🏻 via SMS"
   });
+
+  // individual messages can encounter errors during sending
+  // use the "successful" property to verify
+  for (const sendResult of sendResults) {
+    if (sendResult.successful) {
+      console.log("Success: ", sendResult);
+    } else {
+      console.error("Something went wrong when trying to send this message: ", sendResult);
+    }
+  }
+}
+
+main();
+```
+U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw Communication Services-resources en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden.
+
+## <a name="send-a-1n-sms-message-with-options"></a>Een SMS-bericht van 1: N verzenden met opties
+
+U kunt ook een Options-object door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste labels moeten worden ingesteld.
+
+```javascript
+
+async function main() {
+  await smsClient.send({
+    from: "<from-phone-number>",
+    to: ["<to-phone-number-1>", "<to-phone-number-2>"],
+    message: "Weekly Promotion!"
+  }, {
+    //Optional parameter
+    enableDeliveryReport: true,
+    tag: "marketing"
+  });
+
+  // individual messages can encounter errors during sending
+  // use the "successful" property to verify
+  for (const sendResult of sendResults) {
+    if (sendResult.successful) {
+      console.log("Success: ", sendResult);
+    } else {
+      console.error("Something went wrong when trying to send this message: ", sendResult);
+    }
+  }
 }
 
 main();
 ```
 
-U moet `<leased-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw Communication Services-resources en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden.
-
 De parameter `enableDeliveryReport` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+`tag` is een optionele para meter die u kunt gebruiken om een label toe te passen op het leverings rapport.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 

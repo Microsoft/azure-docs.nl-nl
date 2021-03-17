@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 02/22/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 7164c3dd5c98544f3cb2944cb33cfd0e9703e36d
-ms.sourcegitcommit: 6e1124fc25c3ddb3053b482b0ed33900f46464b3
-ms.translationtype: HT
+ms.openlocfilehash: cec386b798b843a5badc9d52d9c71bd7df54b59a
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90563332"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601930"
 ---
 # <a name="azure-files-networking-considerations"></a>Aandachtspunten voor Azure Files-netwerken 
 U kunt op twee manieren verbinding maken met een Azure-bestandsshare:
@@ -25,6 +25,15 @@ In dit artikel wordt uitgelegd hoe u netwerken kunt configureren als het in uw u
 Een netwerkconfiguratie voor Azure-bestandsshares wordt uitgevoerd op het Azure-opslagaccount. Een opslagaccount is een beheerconstructie die een gedeelde opslaggroep vertegenwoordigt waarin u meerdere bestandsshares kunt implementeren, evenals andere opslagresources, zoals blob-containers of wachtrijen. Opslagaccounts stellen meerdere instellingen beschikbaar waarmee u netwerktoegang tot uw bestandsshares kunt beveiligen: netwerkeindpunten, firewallinstellingen voor opslagaccounts en versleuteling in transit. 
 
 U wordt aangeraden [Implementatie van Azure Files plannen](storage-files-planning.md) te lezen voordat u deze conceptuele handleiding leest.
+
+:::row:::
+    :::column:::
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jd49W33DxkQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    :::column-end:::
+    :::column:::
+        Deze video bevat een hand leiding en demo voor het veilig beschikbaar maken van Azure-bestands shares aan informatie medewerkers en apps in vijf eenvoudige stappen. In de volgende secties vindt u koppelingen en aanvullende context voor de documentatie waarnaar wordt verwezen in de video.
+   :::column-end:::
+:::row-end:::
 
 ## <a name="accessing-your-azure-file-shares"></a>Toegang tot uw Azure-bestandsshares
 Wanneer u een Azure-bestandsshare in een opslagaccount implementeert, is uw bestandsshare direct toegankelijk via het openbare eindpunt van het opslagaccount. Dit betekent dat geverifieerde aanvragen, zoals aanvragen die zijn geautoriseerd door de aanmeldingsidentiteit van een gebruiker, veilig kunnen zijn van binnen of buiten Azure. 

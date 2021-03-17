@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/21/2020
-ms.openlocfilehash: 0bd6300f4b9dbcf76b5447a0fb58502b7aebf311
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: c6b1129ca4a63e9adc8bb679dce53ff728456f42
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451422"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601828"
 ---
 # <a name="what-is-azure-sql-database"></a>Wat is Azure SQL Database?
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -32,6 +32,9 @@ SQL Database stelt u in staat eenvoudig prestaties te definiëren en te schalen 
 
 Als u geen ervaring hebt met Azure SQL Database, bekijk dan de video *Overzicht van Azure SQL Database* uit onze diepgaande [Azure SQL-videoserie](https://channel9.msdn.com/Series/Azure-SQL-for-Beginners?WT.mc_id=azuresql4beg_azuresql-ch9-niner):
 > [!VIDEO https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Database-Overview-7-of-61/player]
+
+> [!TIP]
+> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://aka.ms/AzureSQLSurvey).
 
 ## <a name="deployment-models"></a>Implementatiemodellen
 

@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 1/20/2021
 ms.author: baanders
-ms.openlocfilehash: 56cda6158b7eeabaf0ce9e71decd0a9aa9f0419c
-ms.sourcegitcommit: afb9e9d0b0c7e37166b9d1de6b71cd0e2fb9abf5
+ms.openlocfilehash: 43cc3dfc5b425df6d9dd5e2c2f35a792907ccdea
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/14/2021
-ms.locfileid: "103463768"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103621943"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -21,6 +21,9 @@ Als u geen abonnement op Azure hebt, **maakt u een [gratis account](https://azur
 ### <a name="get-required-resources"></a>Vereiste resources ophalen
 
 Als u deze zelf studie wilt volt ooien, **installeert u [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/), versie 16,5 of hoger** op uw ontwikkel computer. Als u al een oudere versie hebt geïnstalleerd, kunt u de app *Visual Studio Installer* op uw machine openen en de prompts volgen om uw installatie bij te werken.
+
+>[!NOTE]
+> Zorg ervoor dat uw installatie van Visual Studio 2019 de **[werk belasting Azure Development](/dotnet/azure/configure-visual-studio)** bevat. Met deze workload kan een toepassing Azure functions publiceren en andere Azure-ontwikkel taken uitvoeren.
 
 De zelfstudie is gebaseerd op een voorbeeldproject dat is geschreven in C#. Het voorbeeld is hier te vinden: [End-to-end-voorbeelden voor Azure Digital Twins](/samples/azure-samples/digital-twins-samples/digital-twins-samples). **Down load het voorbeeld project** op uw machine door te navigeren naar de voorbeeld koppeling en de knop *door de code bladeren* te selecteren onder de titel. Hiermee gaat u naar de GitHub-opslag plaats voor de voor beelden, die u als een kunt downloaden *. ZIP* door de *code* knop te selecteren en de *zip te downloaden*.
 

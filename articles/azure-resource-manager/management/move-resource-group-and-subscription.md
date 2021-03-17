@@ -4,12 +4,12 @@ description: Gebruik Azure Resource Manager om resources te verplaatsen naar een
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: aca1e5255c89e99a2c996e072e5106da8dc3eef9
-ms.sourcegitcommit: 97c48e630ec22edc12a0f8e4e592d1676323d7b0
+ms.openlocfilehash: 1218df618f7f5fa0787505cb4fcee67dd264ea76
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "101093631"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601386"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement
 
@@ -34,6 +34,7 @@ Voordat u een resource verplaatst, moeten er enkele belangrijke stappen worden u
    * [Richt lijnen voor netwerk verplaatsing](./move-limitations/networking-move-limitations.md)
    * [Hulp Recovery Services verplaatsen](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
    * [Hulp Virtual Machines verplaatsen](./move-limitations/virtual-machines-move-limitations.md)
+   * Zie [abonnementen verplaatsen](../../governance/management-groups/manage.md#move-subscriptions)voor informatie over het verplaatsen van een Azure-abonnement naar een nieuwe beheer groep.
 
 1. Als u een resource verplaatst waaraan een Azure-rol rechtstreeks is toegewezen aan de resource (of een onderliggende resource), wordt de roltoewijzing niet verplaatst en wordt deze zwevend. Nadat de verplaatsing is verplaatst, moet u de roltoewijzing opnieuw maken. Uiteindelijk wordt de zwevende roltoewijzing automatisch verwijderd, maar het is een best practice om de roltoewijzing te verwijderen voordat u de resource verplaatst.
 

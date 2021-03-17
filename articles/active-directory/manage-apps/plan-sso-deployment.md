@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 89f234ece2f7437e4a9d4092334e3dd3690e288d
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: a7949324cd4ad0459aa5ba111037b2f580da9cf8
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258096"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601709"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Een implementatie van eenmalige aanmelding plannen
 
@@ -291,17 +291,12 @@ De volgende koppelingen geven scenario's voor het oplossen van problemen. U kunt
 
 - [Probleem bij het aanmelden bij een micro soft-toepassing](./application-sign-in-problem-first-party-microsoft.md)
 
-#### <a name="sso-issues-for-applications-listed-in-the-azure-application-gallery"></a>Problemen met eenmalige aanmelding voor toepassingen die worden vermeld in de Azure-toepassing galerie
+#### <a name="sso-issues-for-applications"></a>SSO-problemen voor toepassingen
 
-- [Probleem met wacht woord-SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](./troubleshoot-password-based-sso.md) 
+- [Probleem met wacht woord-SSO voor toepassingen](./troubleshoot-password-based-sso.md) 
 
-- [Probleem met federatieve SSO voor toepassingen die worden vermeld in de Azure-toepassing galerie](./application-sign-in-problem-federated-sso-gallery.md)   
+- [Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML](/troubleshoot/azure/active-directory/troubleshoot-sign-in-saml-based-apps)   
 
-#### <a name="sso-issues-for-applications-not-listed-in-the-azure-application-gallery"></a>Problemen met eenmalige aanmelding voor toepassingen die niet worden vermeld in de Azure-toepassing galerie
-
-- [Probleem met wacht woord-SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](./troubleshoot-password-based-sso.md) 
-
-- [Probleem met federatieve SSO voor toepassingen die niet worden vermeld in de Azure-toepassing galerie](./application-sign-in-problem-federated-sso-gallery.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

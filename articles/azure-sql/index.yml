@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentatie voor Azure SQL
-summary: 'Vind documentatie over de Azure SQL-productfamilie van SQL Server-database-engine in de Cloud: Azure SQL Database, Azure SQL Managed Instance en SQL Server in Azure VM. '
+summary: 'Vind documentatie over de Azure SQL-productfamilie van SQL Server-database-engine in de Cloud: Azure SQL Database, Azure SQL Managed Instance en SQL Server in Azure VM.'
 metadata:
   title: Documentatie voor Azure SQL
   description: Azure SQL is een productfamilie van SQL Server-database-engines in de cloud, van een volledig beheerde database in Azure SQL Database en een volledig beheerd exemplaar in Azure SQL Managed Instance, tot SQL Server dat wordt geïnstalleerd in virtuele Azure-machines.
@@ -14,19 +14,23 @@ metadata:
   ms.author: sstein
   ms.reviewer: 
   ms.date: 10/30/2019
-  ms.openlocfilehash: 91221735001f55974f6aba4b6fcae39a92834da8
-  ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
-  ms.translationtype: HT
+  ms.openlocfilehash: 13fcc3b41777a6b198ad9a8b12d93877adae75ca
+  ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/13/2020
-  ms.locfileid: "94593889"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103601420"
 landingContent:
 - title: Azure SQL Database
   linkLists:
-  - linkListType: overview
+  - linkListType: whats-new
     links:
     - text: Wat is nieuw?
       url: database/doc-changes-updates-release-notes.md?tabs=single-database
+    - text: Feedback? Doe de enquête.
+      url: https://aka.ms/AzureSQLSurvey
+  - linkListType: overview
+    links:
     - text: Wat is SQL Database?
       url: database/sql-database-paas-overview.md
     - text: Wat zijn elastische pools?
@@ -55,6 +59,12 @@ landingContent:
       url: database/transact-sql-tsql-differences-sql-server.md
 - title: Azure SQL Managed Instance
   linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Wat is nieuw?
+      url: database/doc-changes-updates-release-notes.md?tabs=managed-instance
+    - text: Feedback? Doe de enquête.
+      url: https://aka.ms/AzureSQLSurvey
   - linkListType: overview
     links:
     - text: Wat is nieuw?

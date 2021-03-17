@@ -78,6 +78,8 @@
       href: create-ipsec-tunnel.md
     - name: Windows Server-failovercluster
       href: windows-server-failover-cluster.md
+    - name: VSphere-referenties opnieuw instellen
+      href: reset-vsphere-credentials.md
     - name: Systeemeigen Azure-integratie
       items:
         - name: API Management

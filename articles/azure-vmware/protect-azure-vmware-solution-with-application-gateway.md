@@ -3,12 +3,12 @@ title: Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op
 description: Configureer Azure-toepassing gateway zo dat uw web-apps die worden uitgevoerd op een Azure VMware-oplossing, veilig zichtbaar zijn.
 ms.topic: how-to
 ms.date: 02/10/2021
-ms.openlocfilehash: 1ad615efe0de86a49714914507227b7cc1dca4cb
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f92027ee46fdaae275939acaea10e144b6bde101
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733581"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601913"
 ---
 # <a name="use-azure-application-gateway-to-protect-your-web-apps-on-azure-vmware-solution"></a>Azure-toepassing gateway gebruiken voor het beveiligen van uw web-apps op de Azure VMware-oplossing
 
@@ -193,4 +193,4 @@ Nu u hebt gebruikgemaakt van Application Gateway voor het beveiligen van een web
 - [Azure-toepassing gateway configureren voor verschillende scenario's](../application-gateway/configuration-overview.md).
 - [Implementatie van Traffic Manager om werk belastingen van Azure VMware-oplossingen te verdelen](deploy-traffic-manager-balance-workloads.md).
 - [Integratie van Azure NetApp files met op Azure VMware-oplossingen gebaseerde workloads](netapp-files-with-azure-vmware-solution.md).
-- [Azure-resources in virtuele netwerken beveiligen](../ddos-protection/ddos-protection-overview.md)
+- [Azure-resources in virtuele netwerken beveiligen](../ddos-protection/ddos-protection-overview.md).

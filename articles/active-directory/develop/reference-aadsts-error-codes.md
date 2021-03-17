@@ -12,12 +12,12 @@ ms.date: 02/01/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: b82d3963ed12e0d5dc6acd75555a3a7e8f20eeb0
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 606704621a4904dd0fb7b6f55e753dbe77e39cb5
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175342"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601012"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -60,7 +60,7 @@ Hier volgt een voor beeld van een fout bericht:
 
 Het `error` veld heeft verschillende mogelijke waarden: Controleer de koppelingen van de protocol documentatie en de OAuth 2,0-specificaties voor meer informatie over specifieke fouten (bijvoorbeeld `authorization_pending` in de [code stroom](v2-oauth2-device-code.md)van het apparaat) en hoe u deze kunt reageren.  Hier vindt u enkele veelvoorkomende items:
 
-| Foutcode         | Beschrijving        | Client actie    |
+| Foutcode         | Description        | Client actie    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw.|
 | `invalid_grant`    | Sommige van de verificatie materiaal (auth-code, vernieuwings token, toegangs token, PKCE Challenge) is ongeldig, niet-geparseerd, ontbreekt of anderszins onbruikbaar | Probeer een nieuwe aanvraag naar het `/authorize` eind punt uit om een nieuwe autorisatie code op te halen.  Overweeg het gebruik van de protocollen te controleren en te valideren. |
@@ -96,13 +96,13 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50001 | InvalidResource: de resource is uitgeschakeld of bestaat niet. Controleer de code van de app om te controleren of u de exacte resource-URL hebt opgegeven voor de resource die u wilt openen.  |
 | AADSTS50002 | NotAllowedTenant-aanmelden is mislukt vanwege een beperkte proxy toegang op de Tenant. Als het uw eigen tenantbeleid is, kunt u de instellingen voor de beperkte tenant wijzigen om dit probleem op te lossen. |
 | AADSTS500021 | De toegang tot de Tenant {Tenant} is geweigerd. AADSTS500021 geeft aan dat de functie voor Tenant beperking is geconfigureerd en dat de gebruiker toegang probeert te krijgen tot een Tenant die niet voor komt in de lijst met toegestane tenants die in de header is opgegeven `Restrict-Access-To-Tenant` . Zie [Tenant beperkingen gebruiken voor het beheren van toegang tot SaaS-Cloud toepassingen](../manage-apps/tenant-restrictions.md)voor meer informatie.|
-| AADSTS50003 | MissingSigningKey-aanmelden is mislukt vanwege een ontbrekende handtekening sleutel of certificaat. Dit kan zijn omdat er geen handtekening sleutel is geconfigureerd in de app. Bekijk de oplossingen die worden beschreven op [.. /Manage-apps/Application-Sign-in-problem-Federated-SSO-Gallery.MD # certificaat-of-sleutel-niet geconfigureerd](../manage-apps/application-sign-in-problem-federated-sso-gallery.md#certificate-or-key-not-configured). Als u nog steeds problemen ziet, neemt u contact op met de eigenaar van de app of een app-beheerder. |
+| AADSTS50003 | MissingSigningKey-aanmelden is mislukt vanwege een ontbrekende handtekening sleutel of certificaat. Dit kan zijn omdat er geen handtekening sleutel is geconfigureerd in de app. Zie het artikel over probleem oplossing voor fout [AADSTS50003](/troubleshoot/azure/active-directory/error-code-aadsts50003-cert-or-key-not-configured)voor meer informatie. Als u nog steeds problemen ziet, neemt u contact op met de eigenaar van de app of een app-beheerder. |
 | AADSTS50005 | DevicePolicyError: gebruiker heeft geprobeerd zich aan te melden bij een apparaat vanaf een platform dat momenteel niet wordt ondersteund via het beleid voor voorwaardelijke toegang. |
 | AADSTS50006 | InvalidSignature-handtekening verificatie is mislukt vanwege een ongeldige hand tekening. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing-het partner versleutelings certificaat is niet gevonden voor deze app. [Open een ondersteunings ticket](../fundamentals/active-directory-troubleshooting-support-howto.md) bij micro soft om dit probleem te verhelpen. |
 | AADSTS50008 | InvalidSamlToken: de SAML-verklaring ontbreekt of is onjuist geconfigureerd in het token. Neem contact op met uw federatieprovider. |
 | AADSTS50010 | De validatie van de AudienceUriValidationFailed-doel groep voor de app is mislukt omdat er geen token doelgroepen zijn geconfigureerd. |
-| AADSTS50011 | InvalidReplyTo: het antwoord adres ontbreekt, is onjuist geconfigureerd of komt niet overeen met de antwoord adressen die voor de app zijn geconfigureerd.  Als oplossing zorgt u ervoor dat dit ontbrekende antwoord adres wordt toegevoegd aan de Azure Active Directory-toepassing of iemand met de machtigingen voor het beheren van uw toepassing in Active Directory dit voor u doen.|
+| AADSTS50011 | InvalidReplyTo: het antwoord adres ontbreekt, is onjuist geconfigureerd of komt niet overeen met de antwoord adressen die voor de app zijn geconfigureerd.  Als oplossing zorgt u ervoor dat dit ontbrekende antwoord adres wordt toegevoegd aan de Azure Active Directory-toepassing of iemand met de machtigingen voor het beheren van uw toepassing in Active Directory dit voor u doen. Zie het artikel over probleem oplossing voor fout [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch)voor meer informatie.|
 | AADSTS50012 | AuthenticationFailed-verificatie is om een van de volgende redenen mislukt:<ul><li>De onderwerpnaam van het handtekening certificaat is niet geautoriseerd</li><li>Er is geen overeenkomend beleid voor vertrouwde instanties gevonden voor de naam van de geautoriseerde houder</li><li>De certificaat keten is ongeldig</li><li>Het handtekening certificaat is niet geldig</li><li>Het beleid is niet geconfigureerd op de Tenant</li><li>Vinger afdruk van het handtekening certificaat is niet geautoriseerd</li><li>Client bevestiging bevat een ongeldige hand tekening</li></ul> |
 | AADSTS50013 | InvalidAssertion: de bevestiging is ongeldig vanwege verschillende redenen: de uitgever van het token komt niet overeen met de API-versie binnen het geldige tijds bereik-verlopen. het token voor het vernieuwen in de bevestiging is geen primair vernieuwings token. |
 | AADSTS50014 | GuestUserInPendingState: de inwisseling van de gebruiker heeft de status in behandeling. Het gast gebruikers account is nog niet volledig gemaakt. |
@@ -140,7 +140,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS50089 | Stroomtoken verlopen, verificatie is mislukt. Laat de gebruiker opnieuw proberen zich aan te melden met gebruikers naam en wacht woord. |
 | AADSTS50097 | DeviceAuthenticationRequired: de verificatie van het apparaat is vereist. |
 | AADSTS50099 | PKeyAuthInvalidJwtUnauthorized-de JWT-hand tekening is ongeldig. |
-| AADSTS50105 | EntitlementGrantsNotFound-de aangemelde gebruiker is niet toegewezen aan een rol voor de aangemelde app. Wijs de gebruiker toe aan de app. Meer informatie:[.. /Manage-apps/Application-Sign-in-problem-Federated-SSO-Gallery.MD # gebruiker-not-assigned-a-Role](../manage-apps/application-sign-in-problem-federated-sso-gallery.md#user-not-assigned-a-role). |
+| AADSTS50105 | EntitlementGrantsNotFound-de aangemelde gebruiker is niet toegewezen aan een rol voor de aangemelde app. Wijs de gebruiker toe aan de app. Zie het artikel over probleem oplossing voor fout [AADSTS50105](/troubleshoot/azure/active-directory/error-code-aadsts50105-user-not-assigned-role)voor meer informatie. |
 | AADSTS50107 | InvalidRealmUri-het aangevraagde Federatie realm-object bestaat niet. Neem contact op met de beheerder van de tenant. |
 | AADSTS50120 | ThresholdJwtInvalidJwtFormat: probleem met JWT-header. Neem contact op met de beheerder van de tenant. |
 | AADSTS50124 | De ClaimsTransformationInvalidInputParameter-claim transformatie bevat een ongeldige invoer parameter. Neem contact op met de tenantbeheerder om het beleid bij te werken. |
@@ -191,11 +191,11 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS54000 | MinorUserBlockedLegalAgeGroupRule |
 | AADSTS65001 | DelegationDoesNotExist-de gebruiker of beheerder heeft niet ingestemd met het gebruik van de toepassing met ID X. Verzend een interactieve autorisatie aanvraag voor deze gebruiker en resource. |
 | AADSTS65004 | UserDeclinedConsent: de gebruiker heeft geen toestemming gegeven om toegang te krijgen tot de app. Laat de gebruiker zich opnieuw aanmelden en toestemming geven voor de app|
-| AADSTS65005 | MisconfiguredApplication-de vereiste resource toegangs lijst van de app bevat geen apps die kunnen worden gedetecteerd door de resource of de client-app heeft toegang aangevraagd tot de resource, die niet is opgegeven in de vereiste resource toegangs lijst of de grafiek service heeft een ongeldige aanvraag of bron niet gevonden. Als de app SAML ondersteunt, is het mogelijk dat u de app met de verkeerde id (entiteit) hebt geconfigureerd. Probeer de oplossing die wordt vermeld voor SAML uit met behulp van de onderstaande koppeling: [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#no-resource-in-requiredresourceaccess-list](../manage-apps/application-sign-in-problem-federated-sso-gallery.md?/?WT.mc_id=DMC_AAD_Manage_Apps_Troubleshooting_Nav) |
+| AADSTS65005 | MisconfiguredApplication-de vereiste resource toegangs lijst van de app bevat geen apps die kunnen worden gedetecteerd door de resource of de client-app heeft toegang aangevraagd tot de resource, die niet is opgegeven in de vereiste resource toegangs lijst of de grafiek service heeft een ongeldige aanvraag of bron niet gevonden. Als de app SAML ondersteunt, is het mogelijk dat u de app met de verkeerde id (entiteit) hebt geconfigureerd. Zie het artikel over probleem oplossing voor fout [AADSTS650056](/troubleshoot/azure/active-directory/error-code-aadsts650056-misconfigured-app)voor meer informatie. |
 | AADSTS650052 | De app heeft toegang nodig tot een service `(\"{name}\")` waarvoor uw organisatie `\"{organization}\"` geen abonnement heeft of is ingeschakeld. Neem contact op met uw IT-beheerder om de configuratie van uw service abonnementen te controleren. |
 | AADSTS67003 | ActorNotValidServiceIdentity |
 | AADSTS70000 | InvalidGrant-verificatie is mislukt. Het vernieuwings token is niet geldig. De fout kan de volgende oorzaken hebben:<ul><li>De header voor token binding is leeg</li><li>Hash van token binding komt niet overeen</li></ul> |
-| AADSTS70001 | UnauthorizedClient-de toepassing is uitgeschakeld. |
+| AADSTS70001 | UnauthorizedClient-de toepassing is uitgeschakeld. Zie het artikel over probleem oplossing voor fout [AADSTS70001](/troubleshoot/azure/active-directory/error-code-aadsts70001-app-not-found-in-directory)voor meer informatie. |
 | AADSTS70002 | InvalidClient-fout bij het valideren van de referenties. De opgegeven client_secret komt niet overeen met de verwachte waarde voor deze client. Corrigeer de client_secret en probeer het opnieuw. Zie voor meer informatie [de autorisatie code gebruiken om een toegangs token aan te vragen](v2-oauth2-auth-code-flow.md#request-an-access-token). |
 | AADSTS70003 | UnsupportedGrantType-de app heeft een niet-ondersteund toekennings type geretourneerd. |
 | AADSTS70004 | InvalidRedirectUri: de app heeft een ongeldige omleidings-URI geretourneerd. Het omleidingsadres dat is gespecificeerd door de client komt niet overeen met een geconfigureerd adres of een adres op de OIDC-goedkeuringslijst. |
@@ -209,10 +209,11 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS70019 | CodeExpired-verificatie code verlopen. Laat de gebruiker de aanmelding opnieuw proberen. |
 | AADSTS75001 | BindingSerializationError: er is een fout opgetreden tijdens het binden van SAML-berichten. |
 | AADSTS75003 | UnsupportedBindingError: de app heeft een fout geretourneerd die is gerelateerd aan een niet-ondersteunde binding (SAML-protocol antwoord kan niet worden verzonden via bindingen die geen HTTP POST zijn). |
-| AADSTS75005 | Saml2MessageInvalid: Azure AD biedt geen ondersteuning voor de SAML-aanvraag die door de app voor SSO wordt verzonden. |
+| AADSTS75005 | Saml2MessageInvalid: Azure AD biedt geen ondersteuning voor de SAML-aanvraag die door de app voor SSO wordt verzonden. Zie het artikel over probleem oplossing voor fout [AADSTS75005](/troubleshoot/azure/active-directory/error-code-aadsts75005-not-a-valid-saml-request)voor meer informatie. |
 | AADSTS7500514 | Er is geen ondersteund type SAML-respons gevonden. De ondersteunde antwoord typen zijn ' Response ' (in XML-naam ruimte ' urn: Oasis: names: TC: SAML: 2.0: Protocol ') of ' Assertion ' (in XML-naam ruimte ' urn: Oasis: names: TC: SAML: ' bewering '). Toepassings fout: de ontwikkelaar zal deze fout afhandelen.|
+| AADSTS750054 | SAMLRequest of SAMLResponse moet aanwezig zijn als query reeks parameters in HTTP-aanvraag voor de binding van SAML-omleiding. Zie het artikel over probleem oplossing voor fout [AADSTS750054](/troubleshoot/azure/active-directory/error-code-aadsts750054-saml-request-not-present)voor meer informatie. |
 | AADSTS75008 | RequestDeniedError-de aanvraag van de app is geweigerd omdat de SAML-aanvraag een onverwachte bestemming heeft. |
-| AADSTS75011 | NoMatchedAuthnContextInOutputClaims: de verificatie methode waarmee de gebruiker die is geverifieerd met de service, niet overeenkomt met de aangevraagde verificatie methode. |
+| AADSTS75011 | NoMatchedAuthnContextInOutputClaims: de verificatie methode waarmee de gebruiker die is geverifieerd met de service, niet overeenkomt met de aangevraagde verificatie methode. Zie het artikel over probleem oplossing voor fout [AADSTS75011](/troubleshoot/azure/active-directory/error-code-aadsts75011-auth-method-mismatch)voor meer informatie. |
 | AADSTS75016 | De Saml2AuthenticationRequestInvalidNameIDPolicy-SAML2-verificatie aanvraag heeft een ongeldige NameIdPolicy. |
 | AADSTS80001 | OnPremiseStoreIsNotAvailable: de verificatie agent kan geen verbinding maken met Active Directory. Zorg ervoor dat de agent servers lid zijn van hetzelfde AD-forest als de gebruikers waarvan de wacht woorden moeten worden gevalideerd en dat ze verbinding kunnen maken met Active Directory. |
 | AADSTS80002 | Er is een time-out opgetreden voor de OnPremisePasswordValidatorRequestTimedout-wachtwoord validatie. Zorg ervoor dat Active Directory beschikbaar is en reageert op aanvragen van de agents. |

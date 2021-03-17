@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: virtual-machines-windows
 ms.collection: windows
 ms.subservice: imaging
-ms.openlocfilehash: a2c4e3c1079d488b9255fb1b9660ff5c4b0aad8f
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 01b253747791fc29abf4434bebfd85865099f9ee
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103422145"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103602015"
 ---
 # <a name="create-a-windows-virtual-desktop-image-using-azure-vm-image-builder-and-powershell"></a>Een virtueel-bureaublad installatie kopie van Windows maken met behulp van Azure VM Image Builder en Power shell
 
@@ -39,7 +39,7 @@ Dit artikel is bedoeld als Kopieer-en plak oefening.
 ## <a name="tips-for-building-windows-images"></a>Tips voor het bouwen van Windows-installatie kopieën 
 
 - VM-grootte: de standaard VM-grootte is een `Standard_D1_v2` , wat niet geschikt is voor Windows. Gebruik een `Standard_D2_v2` of meer.
-- In dit voor beeld worden de [Power shell-aanpassings scripts](../linux/image-builder-json.md)gebruikt. U moet deze instellingen gebruiken of de build loopt vast.
+- In dit voor beeld worden de [Power shell-aanpassings scripts](../linux/image-builder-json.md)gebruikt. U moet deze instellingen gebruiken of de build reageert niet meer.
 
     ```json
       "runElevated": true,

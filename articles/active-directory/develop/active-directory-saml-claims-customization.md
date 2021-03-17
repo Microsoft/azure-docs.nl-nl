@@ -13,12 +13,12 @@ ms.date: 12/09/2020
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 05447f41ca891adfe14533a74dfedf153e3c5773
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 0cccf45037320b476b1a44cafa8074bacadacbc8
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100102696"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103600946"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen
 
@@ -71,7 +71,7 @@ Selecteer de gewenste bron voor de `NameIdentifier` claim (of NameID). U kunt ki
 |------|-------------|
 | E-mail | Het e-mailadres van de gebruiker |
 | userprincipalName | UPN (User Principal Name) van de gebruiker |
-| onpremisessamaccount | SAM-account naam die is gesynchroniseerd vanuit on-premises Azure AD |
+| onpremisessamaccountname | SAM-account naam die is gesynchroniseerd vanuit on-premises Azure AD |
 | id | Objectid van de gebruiker in azure AD |
 | employeeid | Werk nemer-ID van de gebruiker |
 | Uitbreidingen van de directory | Directory-extensies [die zijn gesynchroniseerd vanuit on-premises Active Directory met behulp van Azure AD Connect-synchronisatie](../hybrid/how-to-connect-sync-feature-directory-extensions.md) |

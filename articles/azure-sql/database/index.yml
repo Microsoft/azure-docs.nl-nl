@@ -12,15 +12,21 @@ metadata:
   ms.author: sstein
   ms.reviewer: 
   ms.date: 01/25/2021
-  ms.openlocfilehash: 2baf4f9a2ac510ca53a6e7d2eb91c4d74088864c
-  ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+  ms.openlocfilehash: 849aab184c1e85e23d0d909e1e49eb10893d4731
+  ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 03/02/2021
-  ms.locfileid: "101660777"
+  ms.lasthandoff: 03/16/2021
+  ms.locfileid: "103601522"
 landingContent:
 - title: Azure SQL Database
   linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Wat is nieuw?
+      url: doc-changes-updates-release-notes.md?tabs=single-database
+    - text: Feedback? Doe de enquête.
+      url: https://aka.ms/AzureSQLSurvey
   - linkListType: quickstart
     links:
     - text: SQL-database maken
@@ -33,8 +39,6 @@ landingContent:
       url: https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Database-Overview-7-of-61
   - linkListType: concept
     links:
-    - text: Wat is nieuw?
-      url: doc-changes-updates-release-notes.md?tabs=single-database
     - text: Wat is SQL Database?
       url: sql-database-paas-overview.md
     - text: Aanschafmogelijkheden

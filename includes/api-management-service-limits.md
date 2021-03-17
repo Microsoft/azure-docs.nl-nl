@@ -6,15 +6,15 @@ author: vladvino
 ms.assetid: 1b813833-39c8-46be-8666-fd0960cfbf04
 ms.service: api-management
 ms.topic: include
-ms.date: 01/11/2021
+ms.date: 02/19/2021
 ms.author: vlvinogr
 ms.custom: include file
-ms.openlocfilehash: 78890c0596642b629482a6d24d17d83fb8ebc9a0
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
-ms.translationtype: HT
+ms.openlocfilehash: ebaca1f39b16e4a06b5dcaa4e5f1de07122c6c89
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98147700"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103622280"
 ---
 | Resource | Limiet |
 | ---------------------------------------------------------------------- | -------------------------- |
@@ -34,6 +34,8 @@ ms.locfileid: "98147700"
 | Maximumgrootte van de gebufferde nettolading<sup>8</sup> | 2 MiB |
 | Maximumgrootte aanvraag-URL<sup>9</sup> | 4096 bytes |
 | Maximumlengte van URL-padsegment<sup>10</sup> | 260 tekens |
+| Maximale grootte van het API-schema dat wordt gebruikt door het [validatie beleid](../articles/api-management/validation-policies.md)<sup>10</sup> | 4 MB |
+| Maximale grootte van aanvraag-of antwoord tekst in [Validate-content-beleid](../articles/api-management/validation-policies.md#validate-content) | 100 kB |
 | Maximum aantal zelf-hostende gateways<sup>11</sup> | 25 |
 
 <sup>1</sup>schaallimieten zijn afhankelijk van de prijscategorie. Zie [Prijzen voor API Management](https://azure.microsoft.com/pricing/details/api-management/)voor meer informatie over de prijscategorieën en hun schaallimieten.<br/>
@@ -45,5 +47,5 @@ ms.locfileid: "98147700"
 <sup>7</sup>CA-certificaten worden niet ondersteund in de Consumption-laag.<br/>
 <sup>8</sup>Deze limiet is alleen van toepassing op de Consumption-laag. Voor andere lagen zijn er geen limieten in deze categorieën.<br/>
 <sup>9</sup>Alleen van toepassing op de Consumption-laag. Inclusief een zoekstring van maximaal 2048 lang.<br/>
-<sup>10</sup> Neem contact op met de [ondersteuning](https://azure.microsoft.com/support/options/) als u deze limiet wilt verhogen.<br/>
+<sup>10</sup> als u deze limiet wilt verhogen, neemt u contact op met de [ondersteuning](https://azure.microsoft.com/support/options/).<br/>
 <sup>11</sup>Zelf-hostende gateways worden alleen ondersteund in de Developer- en Premium-laag. De limiet geldt voor het aantal [zelf-hostende gatewayresources](/rest/api/apimanagement/2019-12-01/gateway). Neem contact op met de [ondersteuning](https://azure.microsoft.com/support/options/)als u deze limiet wilt verhogen. Merk op dat het aantal knooppunten (of replica's) dat is gekoppeld aan een zelf-hostende gatewayresource onbeperkt is in de Premium-laag, en is beperkt is tot één knooppunt in de Developer-laag.

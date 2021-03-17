@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 12/02/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: c8221a15ddd92276c105f1e441c8da722655d576
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 914fe0bbf04fa8835cbe96e5bbb83604f0d07bc2
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102444595"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103622294"
 ---
 Gebruik de REST API voor Computer Vision voor:
 
@@ -40,17 +40,21 @@ Gebruik de REST API voor Computer Vision voor:
 Voer de volgende stappen uit om een afbeelding te analyseren voor diverse visuele functies:
 
 1. Kopieer de volgende opdracht naar een teksteditor.
+1. Ga naar Azure Portal. Als de Computer Vision-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt de abonnements sleutel en het eind punt op de pagina **sleutel en eind punt** van de resource, onder **resource beheer**.
 1. Breng waar nodig de volgende wijzigingen in de opdracht aan:
-    1. Vervang de waarde van `<subscriptionKey>` door uw abonnementssleutel.
-    1. Vervang het eerste deel van de aanvraag-URL (`westcentralus`) door de tekst in uw eigen eindpunt-URL.
+    1. Vervang de waarde van `PASTE_YOUR_COMPUTER_VISION_SUBSCRIPTION_KEY_HERE` door uw abonnementssleutel.
+    1. Vervang het eerste deel van de aanvraag-URL ( `PASTE_YOUR_COMPUTER_VISION_ENDPOINT_HERE` ) door uw eigen computer vision-eind punt. Het Computer Vision-eind punt heeft het formulier `https://<your_computer_vision_resource_name>.cognitiveservices.azure.com/` .
         [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
     1. Wijzig eventueel de afbeeldings-URL in de aanvraagtekst (`http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg\`) naar de URL van een andere afbeelding die u wilt analyseren.
 1. Open een opdrachtpromptvenster.
 1. Plak de opdracht van de teksteditor in het opdrachtpromptvenster en voer de opdracht uit.
 
 ```bash
-curl -H "Ocp-Apim-Subscription-Key: <subscriptionKey>" -H "Content-Type: application/json" "https://westcentralus.api.cognitive.microsoft.com/vision/v3.1/analyze?visualFeatures=Categories,Description&details=Landmarks" -d "{\"url\":\"http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg\"}"
+curl -H "Ocp-Apim-Subscription-Key: PASTE_YOUR_COMPUTER_VISION_SUBSCRIPTION_KEY_HERE" -H "Content-Type: application/json" "PASTE_YOUR_COMPUTER_VISION_ENDPOINT_HERE/vision/v3.1/analyze?visualFeatures=Categories,Description&details=Landmarks" -d "{\"url\":\"http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg\"}"
 ```
+
+> [!IMPORTANT]
+> Vergeet niet om de abonnements sleutel uit uw code te verwijderen wanneer u klaar bent en deze nooit openbaar te plaatsen. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Bijvoorbeeld [Azure Key Vault](../../../key-vault/general/overview.md).
 
 ### <a name="examine-the-response"></a>Het antwoord bekijken
 

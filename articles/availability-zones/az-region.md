@@ -8,12 +8,12 @@ ms.date: 03/16/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 7aff8320186ada53772fc4ff2232e8cf55585a77
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: 5152b0ecf6eebe87031a2165d5d8ba11d99209cf
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103573027"
+ms.locfileid: "103601182"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
@@ -136,7 +136,6 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | Azure SQL: virtuele machine                      |      : large_blue_diamond:  |
 | Azure Search                                    |      : large_blue_diamond:  |
 | Azure Web Application Firewall                  |      : large_blue_diamond:  |
-| Cognitive Services: Text Analytics              |      : large_blue_diamond:  |
 | Container Registry                              |      : large_blue_diamond:  |
 | Event Grid                                      |      : large_blue_diamond:  |
 | Network Watcher                                 |      : large_blue_diamond:  |

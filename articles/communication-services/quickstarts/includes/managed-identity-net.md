@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b552629c23991880a2f9cfc6f9e96376daecc1a0
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: c1b74b43c6ef884c68282dcaaae8dfc9a5541453
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103439329"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103622101"
 ---
 ## <a name="add-managed-identity-to-your-communication-services-solution-net"></a>Beheerde identiteit toevoegen aan uw oplossing voor communicatie Services (.NET)
 

@@ -6,12 +6,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 30be0343b7c3282e3ce4da165225ab8209d07f4a
-ms.sourcegitcommit: 6386854467e74d0745c281cc53621af3bb201920
+ms.openlocfilehash: 98f53ec1b6506a6d47146377e837576254f445e2
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/08/2021
-ms.locfileid: "102452404"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601063"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-solution"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-oplossing
 
@@ -90,7 +90,7 @@ Actie groepen bieden een modulaire en herbruikbare manier om acties voor uw Azur
 
 ## <a name="define-a-template"></a>Een sjabloon definiëren
 
-Bepaalde typen werk items kunnen sjablonen gebruiken die u in het ITSM-hulp programma definieert. Met behulp van sjablonen kunt u velden definiëren die automatisch worden ingevuld op basis van vaste waarden voor een actie groep. U kunt definiëren welke sjabloon u wilt gebruiken als onderdeel van de definitie van een actie groep.
+Bepaalde typen werk items kunnen sjablonen gebruiken die u in het ITSM-hulp programma definieert. Met behulp van sjablonen kunt u velden definiëren die automatisch worden ingevuld op basis van vaste waarden voor een actie groep. U kunt definiëren welke sjabloon u wilt gebruiken als onderdeel van de definitie van een actie groep. U vindt in ServiceNow docs-informatie over het maken van sjablonen (hier) [ https://docs.servicenow.com/bundle/paris-platform-administration/page/administer/form-administration/task/t_CreateATemplateUsingTheTmplForm.html ].
 
 Een actie groep maken:
 

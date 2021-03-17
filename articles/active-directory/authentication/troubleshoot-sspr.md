@@ -11,18 +11,20 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7099de23b825fa7af203dff9696bb53e23a099c8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a1dee21182349108c44f9d498417d3b760ac4913
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741113"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103600859"
 ---
 # <a name="troubleshoot-self-service-password-reset-in-azure-active-directory"></a>Problemen met self-service voor wachtwoord herstel in Azure Active Directory oplossen
 
 Met Azure Active Directory (Azure AD) self-service voor wachtwoord herstel (SSPR) kunnen gebruikers hun wacht woord opnieuw instellen in de Cloud.
 
-Als u problemen ondervindt met SSPR, kunnen de volgende probleemoplossings stappen en veelvoorkomende fouten van pas komen. Als u het antwoord op uw probleem niet kunt vinden, [zijn onze ondersteunings teams altijd beschikbaar](#contact-microsoft-support) om u verder te helpen.
+Als u problemen ondervindt met SSPR, kunnen de volgende probleemoplossings stappen en veelvoorkomende fouten van pas komen. U kunt deze korte video ook bekijken op de [manier waarop de zes meest voorkomende fout berichten van de SSPR-eind gebruiker worden opgelost](https://www.youtube.com/watch?v=9RPrNVLzT8I&list=PL3ZTgFEc7LyuS8615yo39LtXR7j1GCerW&index=1).
+
+Als u het antwoord op uw probleem niet kunt vinden, [zijn onze ondersteunings teams altijd beschikbaar](#contact-microsoft-support) om u verder te helpen.
 
 ## <a name="sspr-configuration-in-the-azure-portal"></a>SSPR-configuratie in de Azure Portal
 

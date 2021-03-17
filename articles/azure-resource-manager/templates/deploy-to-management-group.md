@@ -2,13 +2,13 @@
 title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 01/13/2021
-ms.openlocfilehash: a203dd2c52bdc889452a6755fb025c7ed5721a59
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.date: 03/16/2021
+ms.openlocfilehash: b14dc3622a6ad6519968bd2998aa354a850f2515
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99491626"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601590"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -219,6 +219,8 @@ In het volgende voor beeld wordt een nieuwe beheer groep gemaakt in de beheer gr
     }
 }
 ```
+
+Zie [abonnementen verplaatsen in arm-sjabloon](../../governance/management-groups/manage.md#move-subscriptions-in-arm-template) voor het implementeren van een sjabloon waarmee een bestaand Azure-abonnement naar een nieuwe beheer groep wordt verplaatst.
 
 ## <a name="azure-policy"></a>Azure Policy
 

@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 07/27/2020
-ms.openlocfilehash: 7f267b4909817e89444883403bef6662771332ad
-ms.sourcegitcommit: 5b926f173fe52f92fcd882d86707df8315b28667
+ms.openlocfilehash: 6961c0ffc0d5b9c6559d20b00bfb5510f7247adb
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99550875"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103600978"
 ---
 # <a name="what-is-azure-sql"></a>Wat is Azure SQL? 
 [!INCLUDE[appliesto-asf](includes/appliesto-asf.md)]
@@ -32,11 +32,11 @@ Azure SQL is gebaseerd op de vertrouwde SQL Server-engine, zodat u toepassingen 
 
 Ontdek hoe elk product in het Azure SQL-gegevensplatform van Microsoft past en zo de juiste optie voor uw zakelijke vereisten biedt. Of u nu kostenbesparingen of minimaal beheer het belangrijkst vindt, met dit artikel kunt u beslissen welke benadering dat biedt wat u het belangrijkst voor het bedrijf vindt.
 
-
 Als u geen ervaring hebt met Azure SQL, bekijk dan de video *Wat is Azure SQL* uit onze diepgaande [serie Azure SQL-video's](https://channel9.msdn.com/Series/Azure-SQL-for-Beginners?WT.mc_id=azuresql4beg_azuresql-ch9-niner):
 > [!VIDEO https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/What-is-Azure-SQL-3-of-61/player]
 
-
+> [!TIP]
+> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://aka.ms/AzureSQLSurvey).
 
 ## <a name="overview"></a>Overzicht
 

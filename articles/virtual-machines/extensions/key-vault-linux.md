@@ -10,25 +10,27 @@ ms.collection: linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a674f4a2a31fd217307ff373cba2b883a4d129f8
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 23a0d7cd45ceef8f97bb56d65f4807f8d60735dc
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102557060"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601046"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Extensie van de virtuele machine Key Vault voor Linux
 
-De Key Vault VM-extensie biedt automatisch vernieuwen van certificaten die zijn opgeslagen in een Azure-sleutel kluis. De uitbrei ding bewaakt met name een lijst van waargenomen certificaten die zijn opgeslagen in sleutel kluizen.  Bij het detecteren van een wijziging haalt de extensie de bijbehorende certificaten op en installeert deze. De extensie van de Key Vault-VM wordt gepubliceerd en ondersteund door micro soft, momenteel op Linux Vm's. In dit document vindt u informatie over de ondersteunde platforms, configuraties en implementatie opties voor de Key Vault VM-extensie voor Linux. 
+De Key Vault VM-extensie biedt automatisch vernieuwen van certificaten die zijn opgeslagen in een Azure-sleutel kluis. De uitbrei ding bewaakt met name een lijst van waargenomen certificaten die zijn opgeslagen in sleutel kluizen.  Bij het detecteren van een wijziging haalt de extensie de bijbehorende certificaten op en installeert deze. Met de uitbrei ding wordt de volledige certificaat keten geïnstalleerd op de VM. De extensie van de Key Vault-VM wordt gepubliceerd en ondersteund door micro soft, momenteel op Linux Vm's. In dit document vindt u informatie over de ondersteunde platforms, configuraties en implementatie opties voor de Key Vault VM-extensie voor Linux. 
 
 ### <a name="operating-system"></a>Besturingssysteem
 
 De Key Vault VM-extensie ondersteunt deze Linux-distributies:
 
-- Ubuntu-1604
 - Ubuntu-1804
-- Debian-9
 - SuSE-15 
+
+> [!NOTE]
+> Om uitgebreide beveiligings functies te verkrijgen, moet u de upgrade van Ubuntu-1604-en Debian-9-systemen uitvoeren, aangezien deze versies hun einde van de aangewezen ondersteunings periode bereiken.
+> 
 
 ### <a name="supported-certificate-content-types"></a>Ondersteunde inhouds typen voor certificaten
 

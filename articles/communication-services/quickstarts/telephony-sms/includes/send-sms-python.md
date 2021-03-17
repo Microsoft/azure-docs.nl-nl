@@ -2,20 +2,20 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: danieldoolabh
-manager: nimag
+author: lakshmans
+manager: ankita
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
-ms.date: 03/10/2021
+ms.date: 03/11/2021
 ms.topic: include
 ms.custom: include file
-ms.author: dadoolab
-ms.openlocfilehash: 442fff11c2ce95ca5cc665b016631cab9048ab50
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.author: lakshmans
+ms.openlocfilehash: e8424f6b5b7617b00de6dedbece3325f3c5513c8
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488298"
+ms.locfileid: "103622107"
 ---
 Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek voor Python van Communications Services te gebruiken om sms-berichten te verzenden.
 
@@ -51,8 +51,6 @@ Gebruik een tekst editor om een bestand te maken met de naam **send-sms.py** in 
 
 ```python
 import os
-from azure.communication.sms import PhoneNumber
-from azure.communication.sms import SendSmsOptions
 from azure.communication.sms import SmsClient
 
 try:
@@ -76,8 +74,8 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 | Naam                                  | Beschrijving                                                  |
 | ------------------------------------- | ------------------------------------------------------------ |
-| SmsClient | Deze klasse is vereist voor alle sms-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om sms-berichten te verzenden. |
-| SendSmsOptions | Deze klasse biedt opties voor het configureren van leveringsrapporten. Als enable_delivery_report is ingesteld op True, wordt een gebeurtenis verzonden wanneer de levering is geslaagd |
+| SmsClient | Deze klasse is vereist voor alle sms-functionaliteit. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om sms-berichten te verzenden.                                                                                                                 |
+| SmsSendResult               | Deze klasse bevat het resultaat van de SMS-service.                                          |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
@@ -92,24 +90,47 @@ connection_string = os.getenv('COMMUNICATION_SERVICES_CONNECTION_STRING')
 sms_client = SmsClient.from_connection_string(connection_string)
 ```
 
-## <a name="send-an-sms-message"></a>Een sms-bericht verzenden
+## <a name="send-a-11-sms-message"></a>Een SMS-bericht van 1:1 verzenden
 
-Een sms-bericht verzenden door de verzendmethode aan te roepen. Voeg deze code toe aan het einde van het `try`-block in **send-sms.py**:
+Als u een SMS-bericht naar één ontvanger wilt verzenden, roept u de ```send``` methode aan vanuit de **SmsClient** met één ontvanger-telefoon nummer. U kunt ook aanvullende para meters door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste tags moet worden ingesteld. Voeg deze code toe aan het einde van het `try`-block in **send-sms.py**:
 
 ```python
 
 # calling send() with sms values
-sms_response = sms_client.send(
-        from_phone_number=PhoneNumber("<leased-phone-number>"),
-        to_phone_numbers=[PhoneNumber("<to-phone-number>")],
-        message="Hello World via SMS",
-        send_sms_options=SendSmsOptions(enable_delivery_report=True)) # optional property
+sms_responses = sms_client.send(
+    from_="<from-phone-number>",
+    to="<to-phone-number>,
+    message="Hello World via SMS",
+    enable_delivery_report=True, # optional property
+    tag="custom-tag") # optional property
 
 ```
 
-U moet `<leased-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden. 
+U moet `<from-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw communicatieservice en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden. 
 
-De parameter `send_sms_options` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+## <a name="send-a-1n-sms-message"></a>Een SMS-bericht van 1: N verzenden
+
+Als u een SMS-bericht naar een lijst met ontvangers wilt verzenden, roept u de ```send``` methode aan vanuit de **SmsClient** met een lijst met telefoon nummers van de ontvanger. U kunt ook aanvullende para meters door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste tags moet worden ingesteld. Voeg deze code toe aan het einde van het `try`-block in **send-sms.py**:
+
+```python
+
+# calling send() with sms values
+sms_responses = sms_client.send(
+    from_="<from-phone-number>",
+    to=["<to-phone-number-1>", "<to-phone-number-2>"],
+    message="Hello World via SMS",
+    enable_delivery_report=True, # optional property
+    tag="custom-tag") # optional property
+
+```
+
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie service en `<to-phone-number-1>` en `<to-phone-number-2>` met de telefoon nummers waarnaar u een bericht wilt verzenden. 
+
+## <a name="optional-parameters"></a>Optionele parameters
+
+De parameter `enable_delivery_report` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+
+De `tag` para meter is een optionele para meter die u kunt gebruiken voor het configureren van aangepaste labels.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 

@@ -2,13 +2,13 @@
 title: Overzicht van functies-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over de functies en terminologie van Azure Event Hubs.
 ms.topic: article
-ms.date: 02/19/2021
-ms.openlocfilehash: 8bb63bfdbeb5b875b1e461fbd93fb48dcbb43054
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/15/2021
+ms.openlocfilehash: fbfc2a23a7cde50172b80769558c2dfd6fd5ec84
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101739072"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601301"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Functies en terminologie in azure Event Hubs
 
@@ -53,6 +53,13 @@ Gepubliceerde gebeurtenissen worden verwijderd uit een event hub op basis van ee
 - Voor Event Hubs **Standard** geldt een maximale Bewaar periode van **7 dagen**. 
 - Voor Event Hubs **toegewezen**, is de maximale bewaar periode **90 dagen**.
 - Als u de Bewaar periode wijzigt, is dit van toepassing op alle berichten, met inbegrip van berichten die al in de Event Hub staan. 
+
+Event Hubs bewaart gebeurtenissen voor een geconfigureerde bewaartijd die wordt toegepast op het niveau van alle partities. Gebeurtenissen worden automatisch verwijderd wanneer de retentieperiode is bereikt. Als u een retentieperiode van één dag opgeeft, wordt de gebeurtenis precies 24 uur nadat deze is geaccepteerd onbeschikbaar. U kunt gebeurtenissen niet expliciet verwijderen. 
+
+Als u gebeurtenissen wilt archiveren na de toegestane retentieperiode, kunt u deze [automatisch laten opslaan in Azure Storage of Azure Data Lake door de functie Event Hubs Capture in te schakelen](event-hubs-capture-overview.md). Als u dergelijke diepe archieven wilt doorzoeken of analyseren, kunt u ze [gemakkelijk importeren in Azure Synapse](store-captured-data-data-warehouse.md) of andere vergelijkbare opslagplaatsen en analyseplatforms. 
+
+De limiet op de retentieperiode voor Event Hubs is om te voorkomen dat grote hoeveelheden historische klantgegevens worden vastgelegd in een archief dat alleen wordt geïndexeerd per timestamp en alleen sequentiële toegang toestaat. De architectuurfilosofie is dat voor historische gegevens uitgebreidere indexering en directere toegang nodig is dan de real-time interface voor gebeurtenissen die Event Hubs of Kafka bieden. Engines voor gebeurtenissenstromen zijn niet geschikt om te fungeren als data lakes of als langetermijnarchieven voor gebeurtenisbronnen. 
+ 
 
 > [!NOTE]
 > Event Hubs is een real-time engine voor gebeurtenis stroom en is niet ontworpen om te worden gebruikt in plaats van een Data Base en/of als een permanente Store voor oneindige gebeurtenis stromen. 

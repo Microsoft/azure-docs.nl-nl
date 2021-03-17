@@ -148,6 +148,8 @@
               href: manage/understand-mca-roles.md
             - name: Partner-id koppelen
               href: manage/link-partner-id.md
+            - name: Partner-ID koppelen aan Power Apps-accounts
+              href: manage/link-partner-id-power-apps-accounts.md
         - name: Abonnementen beheren
           items:
             - name: Toegang tot gegevens van Cost Management beheren

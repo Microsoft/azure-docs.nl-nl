@@ -2,14 +2,14 @@
 title: Beschik baarheid en consistentie-Azure Event Hubs | Microsoft Docs
 description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met Azure Event Hubs met behulp van partities.
 ms.topic: article
-ms.date: 01/25/2021
+ms.date: 03/15/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 325cc80daba2a44dedbd5e09ac4858ae2815c1cd
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 62249357f8c6aa8521924dceef26a6f2c1e9e296
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102425920"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103600842"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
 Dit artikel bevat informatie over de beschik baarheid en consistentie die worden ondersteund door Azure Event Hubs. 
@@ -21,33 +21,28 @@ Als er een Event Hubs naam ruimte is gemaakt met [beschikbaarheids zones](../ava
 
 Wanneer een client toepassing gebeurtenissen naar een Event Hub verzendt zonder een partitie op te geven, worden gebeurtenissen automatisch gedistribueerd tussen partities in uw Event Hub. Als een partitie om een of andere reden niet beschikbaar is, worden gebeurtenissen verdeeld over de resterende partities. Dit gedrag zorgt voor de grootste hoeveelheid tijd. Voor use-cases waarvoor de maximale hoeveelheid tijd is vereist, is dit model in plaats van het verzenden van gebeurtenissen naar een specifieke partitie. 
 
-### <a name="availability-considerations-when-using-a-partition-id-or-key"></a>Beschik baarheid van overwegingen bij het gebruik van een partitie-ID of-sleutel
-Het gebruik van een partitie-ID of partitie sleutel is optioneel. Overweeg zorgvuldig of u er een moet gebruiken. Als u geen partitie-ID/sleutel opgeeft bij het publiceren van een gebeurtenis, Event Hubs balanceert de belasting tussen de partities. Wanneer u een partitie-ID/sleutel gebruikt, zijn voor deze partities Beschik baarheid op één knoop punt vereist en kunnen er storingen optreden in de loop van de tijd. Reken knooppunten moeten bijvoorbeeld mogelijk opnieuw worden opgestart of worden gerepareerd. Als u dus een partitie-ID/sleutel instelt en deze partitie om een of andere reden niet meer beschikbaar is, mislukt de poging om toegang te krijgen tot de gegevens in die partitie. Als hoge Beschik baarheid het belangrijkst is, geeft u geen partitie-ID/sleutel op. In dat geval worden gebeurtenissen via een intern taakverdelings algoritme verzonden naar partities. In dit scenario maakt u een expliciete keuze tussen Beschik baarheid (geen partitie-ID/sleutel) en consistentie (het vastmaken van gebeurtenissen aan een specifieke partitie). Door gebruik te maken van partitie-ID/sleutel, wordt de beschik baarheid van een Event Hub op partitie niveau gedowngraded. 
-
-### <a name="availability-considerations-when-handling-delays-in-processing-events"></a>Beschik baarheid van overwegingen bij het verwerken van vertragingen bij het verwerken van gebeurtenissen
-Een andere overweging is het afhandelen van een verwerking van consumenten toepassingen bij het verwerken van gebeurtenissen. In sommige gevallen kan het beter zijn voor de consumenten toepassing om gegevens te verwijderen en opnieuw te proberen, in plaats van te proberen de verwerking uit te voeren. Dit kan leiden tot verdere downstream verwerkings vertragingen. Met een aandelen tikker is het echter beter te wachten op de volledige actuele gegevens, maar in een live chat-of VOIP-scenario kunt u in plaats daarvan snel de gegevens gebruiken, zelfs als deze niet volledig zijn.
-
-Gezien deze beschikbaarheids overwegingen, in deze scenario's, kan de consumenten toepassing een van de volgende strategieën voor het afhandelen van fouten kiezen:
-
-- Stoppen (stoppen met het lezen van de Event Hub totdat de problemen zijn opgelost)
-- Drop (berichten zijn niet belang rijk, verwijder ze)
-- Probeer het opnieuw (probeer de berichten opnieuw uit te voeren zoals u ziet)
-
-
 ## <a name="consistency"></a>Consistentie
 In sommige scenario's kan de volg orde van gebeurtenissen belang rijk zijn. Het is bijvoorbeeld mogelijk dat u wilt dat uw back-end-systeem een update opdracht verwerkt vóór een opdracht verwijderen. In dit scenario verzendt een client toepassing gebeurtenissen naar een specifieke partitie, zodat de volg orde wordt behouden. Wanneer een consumenten toepassing deze gebeurtenissen van de partitie verbruikt, worden deze in volg orde gelezen. 
 
 Houd er bij deze configuratie rekening mee dat als de specifieke partitie waarnaar u wilt verzenden niet beschikbaar is, er een fout bericht wordt weer gegeven. Als u geen affiniteit hebt voor een enkele partitie, stuurt de Event Hubs-service uw gebeurtenis naar de volgende beschik bare partitie.
 
+Als hoge Beschik baarheid het belangrijkst is, hoeft u daarom niet te richten op een specifieke partitie (met behulp van partitie-ID/sleutel). Door gebruik te maken van partitie-ID/sleutel, wordt de beschik baarheid van een Event Hub op partitie niveau gedowngraded. In dit scenario maakt u een expliciete keuze tussen Beschik baarheid (geen partitie-ID/sleutel) en consistentie (het vastmaken van gebeurtenissen aan een specifieke partitie). Zie [partities](event-hubs-features.md#partitions)voor gedetailleerde informatie over partities in Event hubs.
 
 ## <a name="appendix"></a>Bijlage
 
+### <a name="send-events-without-specifying-a-partition"></a>Gebeurtenissen verzenden zonder een partitie op te geven
+We raden aan om gebeurtenissen te verzenden naar een Event Hub zonder partitie gegevens in te stellen, zodat de Event Hubs-service de belasting van alle partities kan verdelen. Zie de volgende Quick starts voor meer informatie over hoe u dit doet in verschillende programmeer talen. 
+
+- [Gebeurtenissen verzenden met .NET](event-hubs-dotnet-standard-getstarted-send.md)
+- [Gebeurtenissen verzenden met Java](event-hubs-java-get-started-send.md)
+- [Gebeurtenissen verzenden met Java script](event-hubs-python-get-started-send.md)
+- [Gebeurtenissen verzenden met behulp van Python](event-hubs-python-get-started-send.md)
+
+
 ### <a name="send-events-to-a-specific-partition"></a>Gebeurtenissen verzenden naar een specifieke partitie
-In deze sectie wordt beschreven hoe u gebeurtenissen naar een specifieke partitie verzendt met C#, Java, python en Java script. 
+In deze sectie leert u hoe u gebeurtenissen naar een specifieke partitie kunt verzenden met behulp van verschillende programmeer talen. 
 
 ### <a name="net"></a>[.NET](#tab/dotnet)
-Zie [gebeurtenissen verzenden naar en ontvangen van azure Event hubs-.net (Azure. Messa ging. Event hubs)](event-hubs-dotnet-standard-getstarted-send.md)voor de volledige voorbeeld code waarin wordt uitgelegd hoe u een gebeurtenis batch naar een event hub verzendt (zonder instelling van de partitie-id/-sleutel).
-
 Als u gebeurtenissen naar een specifieke partitie wilt verzenden, maakt u de batch met de methode [EventHubProducerClient. CreateBatchAsync](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient.createbatchasync#Azure_Messaging_EventHubs_Producer_EventHubProducerClient_CreateBatchAsync_Azure_Messaging_EventHubs_Producer_CreateBatchOptions_System_Threading_CancellationToken_) door de-of-CreateBatchOptions op te geven `PartitionId` `PartitionKey` . [](//dotnet/api/azure.messaging.eventhubs.producer.createbatchoptions) Met de volgende code wordt een batch gebeurtenissen naar een specifieke partitie verzonden door een partitie sleutel op te geven. 
 
 ```csharp
@@ -63,9 +58,8 @@ var sendEventOptions  = new SendEventOptions { PartitionKey = "cities" };
 producer.SendAsync(events, sendOptions)
 ```
 
-### <a name="java"></a>[Java](#tab/java)
-Zie [Java gebruiken om gebeurtenissen te verzenden naar of ontvangen van azure Event hubs (Azure-Messa ging-Event hubs)](event-hubs-java-get-started-send.md)voor de volledige voorbeeld code die laat zien hoe u een gebeurtenis batch naar een event hub verzendt (zonder instelling van partitie-id/sleutel).
 
+### <a name="java"></a>[Java](#tab/java)
 Als u gebeurtenissen naar een specifieke partitie wilt verzenden, maakt u de batch met behulp van de methode [createBatch](/java/api/com.azure.messaging.eventhubs.eventhubproducerclient.createbatch) door de **partitie-id** of de **partitie sleutel** op te geven in [createBatchOptions](/java/api/com.azure.messaging.eventhubs.models.createbatchoptions). Met de volgende code wordt een batch gebeurtenissen naar een specifieke partitie verzonden door een partitie sleutel op te geven. 
 
 ```java
@@ -82,9 +76,8 @@ sendOptions.setPartitionKey("cities");
 producer.send(events, sendOptions);
 ```
 
-### <a name="python"></a>[Python](#tab/python) 
-Zie [gebeurtenissen verzenden naar of ontvangen van Event hubs met behulp van python (Azure-eventhub)](event-hubs-python-get-started-send.md)voor de volledige voorbeeld code waarin wordt uitgelegd hoe u een gebeurtenis batch naar een event hub verzendt (zonder instelling van de partitie-id/-sleutel).
 
+### <a name="python"></a>[Python](#tab/python) 
 Als u gebeurtenissen wilt verzenden naar een specifieke partitie, [`EventHubProducerClient.create_batch`](/python/api/azure-eventhub/azure.eventhub.eventhubproducerclient#create-batch---kwargs-) geeft u de of de op wanneer u een batch maakt met behulp van de-methode `partition_id` `partition_key` . Gebruik vervolgens de- [`EventHubProducerClient.send_batch`](/python/api/azure-eventhub/azure.eventhub.aio.eventhubproducerclient#send-batch-event-data-batch--typing-union-azure-eventhub--common-eventdatabatch--typing-list-azure-eventhub-) methode om de batch te verzenden naar de partitie van de Event hub. 
 
 ```python
@@ -97,10 +90,7 @@ U kunt ook de methode [EventHubProducerClient.send_batch](/python/api/azure-even
 producer.send_batch(event_data_batch, partition_key="cities")
 ```
 
-
 ### <a name="javascript"></a>[JavaScript](#tab/javascript)
-Zie [gebeurtenissen verzenden naar of ontvangen van Event hubs met behulp van Java script (Azure/Event-hubs)](event-hubs-node-get-started-send.md)voor de volledige voorbeeld code die laat zien hoe u een gebeurtenis batch naar een event hub verzendt (zonder instelling van partitie-id/sleutel).
-
 Als u gebeurtenissen naar een specifieke partitie wilt verzenden, [maakt u een batch](/javascript/api/@azure/event-hubs/eventhubproducerclient#createBatch_CreateBatchOptions_) met het object [EventHubProducerClient. CreateBatchOptions](/javascript/api/@azure/event-hubs/eventhubproducerclient#createBatch_CreateBatchOptions_) door de te gebruiken `partitionId` `partitionKey` . Vervolgens verzendt u de batch naar het Event Hub met behulp van de methode [EventHubProducerClient. methode sendbatch](/javascript/api/@azure/event-hubs/eventhubproducerclient#sendBatch_EventDataBatch__OperationOptions_) . 
 
 Zie het volgende voorbeeld
@@ -121,8 +111,9 @@ producer.sendBatch(events, sendBatchOptions);
 ---
 
 
+
 ## <a name="next-steps"></a>Volgende stappen
 U kunt meer informatie over Event Hubs vinden via de volgende koppelingen:
 
-* [Overzicht van Event Hubs-service](./event-hubs-about.md)
-* [Een Event Hub maken](event-hubs-create.md)
+- [Overzicht van Event Hubs-service](./event-hubs-about.md)
+- [Event Hubs-terminologie](event-hubs-features.md)

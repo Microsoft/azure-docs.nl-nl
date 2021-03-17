@@ -3,13 +3,13 @@ author: v-dalc
 ms.service: databox
 ms.author: alkohli
 ms.topic: include
-ms.date: 02/05/2021
-ms.openlocfilehash: ad981264a99bd48e27f745a789ebe857b7f17d80
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/02/2021
+ms.openlocfilehash: 57415ec76a3e8d9fc3c160b47668d3419ff6ea5c
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101751145"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103622120"
 ---
 Gebruik de IoT Edge runtime-antwoorden van agent om problemen met betrekking tot berekeningen op te lossen. Hier volgt een lijst met mogelijke reacties:
 
@@ -22,7 +22,7 @@ Gebruik de IoT Edge runtime-antwoorden van agent om problemen met betrekking tot
 
 Zie [IOT Edge-agent](../articles/iot-edge/iot-edge-runtime.md?preserve-view=true&view=iotedge-2018-06#iot-edge-agent)voor meer informatie.
 
-De volgende fout is gerelateerd aan de IoT Edge-service op uw Azure Stack Edge Pro<!--/ Data Box Gateway--> apparaat.
+De volgende fout is gerelateerd aan de IoT Edge-service op uw Azure Stack Edge Pro-apparaat.
 
 ### <a name="compute-modules-have-unknown-status-and-cant-be-used"></a>Reken modules hebben een onbekende status en kunnen niet worden gebruikt
 
@@ -33,3 +33,36 @@ Alle modules op het apparaat tonen de onbekende status en kunnen niet worden geb
 #### <a name="suggested-solution"></a>Voorgestelde oplossing
 
 Verwijder de IoT Edge-service en implementeer de module (s) vervolgens opnieuw. Zie [Remove IOT Edge service](../articles/databox-online/azure-stack-edge-j-series-manage-compute.md#remove-iot-edge-service)(Engelstalig) voor meer informatie.
+
+
+### <a name="modules-show-as-running-but-are-not-working"></a>Modules worden weer gegeven als actief, maar werken niet
+
+#### <a name="error-description"></a>Foutbeschrijving
+
+De runtime status van de module wordt weer gegeven als actief, maar de verwachte resultaten worden niet weer gegeven. 
+
+Dit kan zijn vanwege een probleem met de configuratie van de module route die niet werkt of waarvoor `edgehub` geen berichten worden doorgestuurd zoals verwacht. U kunt de `edgehub` Logboeken controleren. Als u ziet dat er fouten zijn zoals het mislukken van verbinding met de IoT Hub-service, is de meest voorkomende reden voor de verbindings problemen. De verbindings problemen kunnen zich voordoen omdat de AMPQ-poort die als standaard poort wordt gebruikt door IoT Hub service voor communicatie wordt geblokkeerd of de webproxyserver deze berichten blokkeert.
+
+#### <a name="suggested-solution"></a>Voorgestelde oplossing
+
+Voer de volgende stappen uit:
+1. Als u de fout wilt oplossen, gaat u naar de IoT Hub-resource voor uw apparaat en selecteert u vervolgens uw edge-apparaat. 
+1. Ga naar **modules instellen > runtime-instellingen**. 
+1. Voeg de `Upstream protocol` omgevings variabele toe en wijs hieraan een waarde toe `AMQPWS` . De berichten die in dit geval worden geconfigureerd, worden via de websockets via poort 443 verzonden.
+
+### <a name="modules-show-as-running-but-do-not-have-an-ip-assigned"></a>Modules worden weer gegeven als actief, maar er is geen toegewezen IP-adres
+
+#### <a name="error-description"></a>Foutbeschrijving
+
+De runtime status van de module wordt weer gegeven als actief, maar er is geen IP-adres toegewezen aan de app met containers. 
+
+Dit komt doordat het bereik van IP-adressen die u hebt opgegeven voor Kubernetes External service Ip's niet voldoende is. U dient dit bereik uit te breiden om ervoor te zorgen dat elke container of VM die u hebt geïmplementeerd, wordt gedekt.
+
+#### <a name="suggested-solution"></a>Voorgestelde oplossing
+
+Voer de volgende stappen uit in de lokale web-UI van uw apparaat:
+1. Ga naar de **Compute** -pagina. Selecteer de poort waarvoor u het Compute-netwerk hebt ingeschakeld. 
+1. Voer een statisch, aaneengesloten bereik van IP-adressen in voor **Kubernetes externe service ip's**. U hebt 1 IP-adres nodig voor de `edgehub` service. Daarnaast hebt u één IP-adres nodig voor elke IoT Edge module en voor elke VM die u gaat implementeren. 
+1. Selecteer **Toepassen**. Het gewijzigde IP-bereik moet direct van kracht worden.
+
+Zie [externe service ip's voor containers wijzigen](../articles/databox-online/azure-stack-edge-j-series-manage-compute.md#change-external-service-ips-for-containers)voor meer informatie.

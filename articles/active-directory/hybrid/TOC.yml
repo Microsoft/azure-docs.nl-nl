@@ -40,6 +40,8 @@
           href: whatis-phs.md
         - name: Hoe synchronisatie van wachtwoord-hashes werkt
           href: how-to-connect-password-hash-synchronization.md
+        - name: Selectieve wachtwoord hash-synchronisatie
+          href: how-to-connect-selective-password-hash-synchronization.md
     - name: Pass-through-verificatie
       items:
         - name: Wat is pass-through-verificatie?

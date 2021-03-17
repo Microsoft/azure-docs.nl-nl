@@ -2,28 +2,24 @@
 title: bestand opnemen
 description: bestand opnemen
 services: azure-communication-services
-author: chrwhit
-manager: nimag
+author: pvicencio
+manager: ankita
 ms.service: azure-communication-services
 ms.subservice: azure-communication-services
-ms.date: 03/10/2021
+ms.date: 03/12/2021
 ms.topic: include
 ms.custom: include file
-ms.author: chrwhit
-ms.openlocfilehash: 313832c29eb3f3f175fb20a60ba712937fdede0a
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.author: pvicencio
+ms.openlocfilehash: 2739079b67d80f3e4a9f367aaa58f6dcbbb650ca
+ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488299"
+ms.locfileid: "103622194"
 ---
 Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek in Java van Communications Services te gebruiken om sms-berichten te verzenden.
 
 Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of minder in rekening gebracht bij uw Azure-account.
-
-<!--**TODO: update all these reference links as the resources go live**
-
-[API reference documentation](../../../references/overview.md) | [Library source code](https://github.com/Azure/azure-sdk-for-net-pr/tree/feature/communication/sdk/communication/Azure.Communication.Sms#todo-update-to-public) | [Artifact (Maven)](#todo-nuget) | [Samples](#todo-samples)-->
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -58,7 +54,7 @@ Open het bestand **pom.xml** in uw teksteditor. Voeg het volgende afhankelijkhei
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-sms</artifactId>
-    <version>1.0.0-beta.3</version>
+    <version>1.0.0-beta.4</version>
 </dependency>
 ```
 
@@ -70,7 +66,12 @@ Voeg de afhankelijkheid `azure-core-http-netty` toe aan uw bestand **pom.xml**.
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-core-http-netty</artifactId>
-    <version>1.3.0</version>
+    <version>1.8.0</version>
+</dependency>
+<dependency>
+    <groupId>com.azure</groupId>
+    <artifactId>azure-core</artifactId>
+    <version>1.13.0</version> <!-- {x-version-update;com.azure:azure-core;dependency} -->
 </dependency>
 ```
 
@@ -79,23 +80,17 @@ Open **/src/main/java/com/communication/quickstart/App.java** in een teksteditor
 ```java
 package com.communication.quickstart;
 
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.azure.communication.common.PhoneNumber;
-import com.azure.communication.sms.SmsClient;
-import com.azure.communication.sms.SmsClientBuilder;
-import com.azure.communication.sms.models.SendSmsOptions;
-import com.azure.communication.sms.models.SendSmsResponse;
+import com.azure.communication.sms.models.*;
+import com.azure.core.credential.AzureKeyCredential;
+import com.azure.communication.sms.*;
 import com.azure.core.http.HttpClient;
 import com.azure.core.http.netty.NettyAsyncHttpClientBuilder;
+import com.azure.core.util.Context;
+import java.util.Arrays;
 
 public class App
 {
-    public static void main( String[] args ) throws IOException, NoSuchAlgorithmException, InvalidKeyException
+    public static void main( String[] args )
     {
         // Quickstart code goes here
     }
@@ -111,71 +106,88 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | SmsClientBuilder              | Deze klasse maakt de SmsClient. U geeft een eindpunt, referentie en een HTTP-client op. |
 | SmsClient                    | Deze klasse is vereist voor alle sms-functionaliteit. U kunt deze gebruiken om sms-berichten te verzenden.                |
-| SendSmsResponse               | Deze klasse bevat de reactie van de sms-service.                                          |
-| PhoneNumber                   | Deze klasse bevat telefoonnummergegevens
+| SmsSendResult                | Deze klasse bevat het resultaat van de SMS-service.                                          |
+| SmsSendOptions               | Deze klasse bevat opties voor het toevoegen van aangepaste tags en het configureren van leverings rapporten. Als deliveryReportEnabled is ingesteld op True, wordt een gebeurtenis verzonden wanneer de levering is geslaagd|                           |
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-Breng een `SmsClient` tot stand met uw verbindingsreeks. Met de onderstaande code worden het eindpunt en de referentietekenreeksen voor de resource opgehaald uit de omgevingsvariabelen met de naam `COMMUNICATION_SERVICES_ENDPOINT_STRING` en `COMMUNICATION_SERVICES_CREDENTIAL_STRING` (referentie is de `Key` van de Azure Portal. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
+Breng een `SmsClient` tot stand met uw verbindingsreeks. (Referentie is de `Key` van de Azure Portal. Meer informatie over het [beheren van de verbindingsreeks van uw resource](../../create-communication-resource.md#store-your-connection-string).
 
 Voeg de volgende code aan de `main` methode toe:
 
 ```java
-// Your can find your endpoint and access key from your resource in the Azure Portal
-String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
-String accessKey = "SECRET";
+// You can find your endpoint and access key from your resource in the Azure Portal
+String endpoint = "https://<resource-name>.communication.azure.com/";
+AzureKeyCredential azureKeyCredential = new AzureKeyCredential("<access-key-credential>");
 
 // Create an HttpClient builder of your choice and customize it
 HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
 
-// Configure and build a new SmsClient
-SmsClient client = new SmsClientBuilder()
-    .endpoint(endpoint)
-    .accessKey(accessKey)
-    .httpClient(httpClient)
-    .buildClient();
+SmsClient smsClient = new SmsClientBuilder()
+                .endpoint(endpoint)
+                .credential(azureKeyCredential)
+                .httpClient(httpClient)
+                .buildClient();
 ```
 
 U kunt de client initialiseren met een aangepaste HTTP-client. Hiermee implementeert u de `com.azure.core.http.HttpClient`-interface. De bovenstaande code toont het gebruik van de [Azure Core Netty HTTP-client](/java/api/overview/azure/core-http-netty-readme) die wordt verschaft door `azure-core`.
 
 U kunt ook de volledige verbindingsreeks opgeven met behulp van de functie connectionString() in plaats van het eindpunt en de toegangssleutel op te geven. 
 ```java
-// Your can find your connection string from your resource in the Azure Portal
-String connectionString = "<connection_string>";
-SmsClient client = new SmsClientBuilder()
-    .connectionString(connectionString)
-    .httpClient(httpClient)
-    .buildClient();
+// You can find your connection string from your resource in the Azure Portal
+String connectionString = "https://<resource-name>.communication.azure.com/;<access-key>";
+
+// Create an HttpClient builder of your choice and customize it
+HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
+
+SmsClient smsClient = new SmsClientBuilder()
+            .connectionString(connectionString)
+            .httpClient(httpClient)
+            .buildClient();
 ```
 
-## <a name="send-an-sms-message"></a>Een sms-bericht verzenden
+## <a name="send-a-11-sms-message"></a>Een SMS-bericht van 1:1 verzenden
 
-Een sms-bericht verzenden door de sendMessage-methode aan te roepen. Voeg deze code toe aan het einde van de `main`-methode:
+Als u een SMS-bericht naar één ontvanger wilt verzenden, roept u de `send` methode aan vanuit de SmsClient met één ontvanger-telefoon nummer. U kunt ook aanvullende para meters door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste tags moet worden ingesteld.
 
 ```java
-List<PhoneNumber> to = new ArrayList<PhoneNumber>();
-to.add(new PhoneNumber("<to-phone-number>"));
+SmsSendResult sendResult = smsClient.send(
+                "<from-phone-number>",
+                "<to-phone-number>",
+                "Weekly Promotion");
 
-// SendSmsOptions is an optional field. It can be used
-// to enable a delivery report to the Azure Event Grid
-SendSmsOptions options = new SendSmsOptions();
-options.setEnableDeliveryReport(true);
+System.out.println("Message Id: " + sendResult.getMessageId());
+System.out.println("Recipient Number: " + sendResult.getTo());
+System.out.println("Send Result Successful:" + sendResult.isSuccessful());
+```
+## <a name="send-a-1n-sms-message-with-options"></a>Een SMS-bericht van 1: N verzenden met opties
+Als u een SMS-bericht naar een lijst met ontvangers wilt verzenden, roept u de- `send` methode aan met een lijst met telefoon nummers van de ontvanger. U kunt ook aanvullende para meters door geven om op te geven of het leverings rapport moet worden ingeschakeld en aangepaste tags moet worden ingesteld.
+```java
+SmsSendOptions options = new SmsSendOptions();
+options.setDeliveryReportEnabled(true);
+options.setTag("Marketing");
 
-// Send the message and check the response for a message id
-SendSmsResponse response = client.sendMessage(
-    new PhoneNumber("<leased-phone-number>"),
-    to,
-    "<message-text>",
-    options);
+Iterable<SmsSendResult> sendResults = smsClient.send(
+    "<from-phone-number>",
+    Arrays.asList("<to-phone-number1>", "<to-phone-number2>"),
+    "Weekly Promotion",
+    options /* Optional */,
+    Context.NONE);
 
-System.out.println("MessageId: " + response.getMessageId());
+for (SmsSendResult result : sendResults) {
+    System.out.println("Message Id: " + result.getMessageId());
+    System.out.println("Recipient Number: " + result.getTo());
+    System.out.println("Send Result Successful:" + result.isSuccessful());
+}
 ```
 
-U moet `<leased-phone-number>` vervangen door een telefoonnummer met sms-functionaliteit dat is gekoppeld aan uw Communication Services-resources en `<to-phone-number>` met het telefoonnummer waarnaar u een bericht wilt verzenden.
+Vervang door `<from-phone-number>` een SMS-telefoon nummer dat is gekoppeld aan uw communicatie Services-bron en `<to-phone-number>` met het telefoon nummer of een lijst met telefoon nummers waarnaar u een bericht wilt verzenden.
 
-De parameter `enableDeliveryReport` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+## <a name="optional-parameters"></a>Optionele parameters
 
-<!--todo: the signature of the `sendMessage` method changes when configuring delivery reporting. Need to confirm that this is how our client library is to be used.-->
+De parameter `deliveryReportEnabled` is een optionele parameter die u kunt gebruiken voor het configureren van leveringsrapporten. Dit is handig voor scenario's waarin u gebeurtenissen wilt verzenden wanneer sms-berichten worden bezorgd. Raadpleeg de quickstart [Sms-gebeurtenissen verwerken](../handle-sms-events.md) voor het configureren van leveringsrapporten voor uw sms-berichten.
+
+De `tag` para meter is een optionele para meter die u kunt gebruiken om een label toe te passen op het leverings rapport.
 
 ## <a name="run-the-code"></a>De code uitvoeren
 

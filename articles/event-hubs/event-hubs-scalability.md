@@ -2,13 +2,13 @@
 title: Schaal baarheid-Azure Event Hubs | Microsoft Docs
 description: Dit artikel bevat informatie over het schalen van Azure Event Hubs met behulp van partities en doorvoer eenheden.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 4dacb24ace2332f590db54959cbf1f06694b982b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/16/2021
+ms.openlocfilehash: f258ee2a3b4162dabf7a8e615db82b9b889d628b
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86521952"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601272"
 ---
 # <a name="scaling-with-event-hubs"></a>Schalen met Event Hubs
 
@@ -39,11 +39,7 @@ Zie [automatisch schalen door Voer eenheden](event-hubs-auto-inflate.md)voor mee
 ## <a name="partitions"></a>Partities
 [!INCLUDE [event-hubs-partitions](../../includes/event-hubs-partitions.md)]
 
-### <a name="partition-key"></a>Partitiesleutel
 
-U kunt een [partitie sleutel](event-hubs-programming-guide.md#partition-key) gebruiken om inkomende gebeurtenis gegevens toe te wijzen aan specifieke partities voor het doel van de gegevens organisatie. De partitiesleutel is een door de afzender opgegeven waarde die aan een Event Hub wordt doorgegeven. De partitiesleutel wordt verwerkt door een statische hash-functie, die zorgt voor de partitietoewijzing. Als u bij het publiceren van een gebeurtenis geen partitiesleutel opgeeft, wordt er gebruikgemaakt van round robin-toewijzing.
-
-De gebeurtenisuitgever is alleen op de hoogte van de partitiesleutel en niet van de partitie waarop de gebeurtenissen worden gepubliceerd. Deze ontkoppeling van sleutel en partitie schermt de afzender af, zodat deze niet te veel te weten hoeft te komen over de downstreamverwerking. Goede partitiesleutels zijn bijvoorbeeld een apparaatspecifieke of een gebruikersspecifieke identiteit, maar voor het groeperen van gerelateerde gebeurtenissen in dezelfde partitie kunnen ook andere kenmerken, zoals geografie, worden gebruikt.
 
 
 ## <a name="next-steps"></a>Volgende stappen

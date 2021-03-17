@@ -8,20 +8,20 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 08/31/2020
 ms.author: aahi
-ms.openlocfilehash: 7e5ea8dcddce31a414d983d14fba483eb388d5d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a29244745b154aa81997813fcf4e1457f599270
+ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334669"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103622060"
 ---
 De container bevat [op rest gebaseerde eind punt-api's](../rest-text-to-speech.md). Er zijn veel [voorbeeld broncode projecten](https://github.com/Azure-Samples/Cognitive-Speech-TTS) voor platform-, Framework-en taal variaties beschikbaar.
 
-Met de Standard-of Neural-tekst-naar-spraak-containers moet u vertrouwen op de land instelling en de stem van de afbeeldings code die u hebt gedownload. Als u bijvoorbeeld de tag hebt gedownload, `latest` is de standaard land instelling `en-US` en de `AriaRUS` stem. Het `{VOICE_NAME}` argument zou dan zijn [`en-US-AriaRUS`](../language-support.md#standard-voices) . Zie het onderstaande voor beeld SSML:
+Met de Standard-of Neural-tekst-naar-spraak-containers moet u vertrouwen op de land instelling en de stem van de afbeeldings code die u hebt gedownload. Als u bijvoorbeeld de tag hebt gedownload, `latest` is de standaard land instelling `en-US` en de `AriaNeural` stem. Het `{VOICE_NAME}` argument zou dan zijn [`en-US-AriaNeural`](../language-support.md#neural-voices) . Zie het onderstaande voor beeld SSML:
 
 ```xml
 <speak version="1.0" xml:lang="en-US">
-    <voice name="en-US-AriaRUS">
+    <voice name="en-US-AriaNeural">
         This text will get converted into synthesized speech.
     </voice>
 </speak>

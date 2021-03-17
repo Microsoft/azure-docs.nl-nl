@@ -3,20 +3,20 @@ title: Voorkeurs netwerk routering
 titleSuffix: Azure Storage
 description: Met voorkeurs instellingen voor netwerk routering kunt u opgeven hoe netwerk verkeer via internet wordt doorgestuurd naar uw account van clients.
 services: storage
-author: santoshc
+author: normesta
 ms.service: storage
 ms.topic: conceptual
 ms.date: 02/11/2021
-ms.author: santoshc
-ms.reviewer: normesta
+ms.author: normesta
+ms.reviewer: santoshc
 ms.subservice: common
 ms.custom: references_regions
-ms.openlocfilehash: 6b6c90259c552895360281b393e15773c6e101e3
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: bf2270fe6f71dfe5be31db8e82f6c44696f28074
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101726934"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103601488"
 ---
 # <a name="network-routing-preference-for-azure-storage"></a>Voor keur voor netwerk routering voor Azure Storage
 

@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Berekening onderbreken en hervatten in Synapse SQL-pool met Azure PowerShell'
-description: U kunt Azure PowerShell gebruiken om de Synapse SQL-pool (datawarehouse) te onderbreken en weer te hervatten. rekenresources.
+title: 'Snelstartgids: de berekening onderbreken en hervatten in de toegewezen SQL-groep (voorheen SQL DW) met Azure PowerShell'
+description: U kunt Azure PowerShell gebruiken om de toegewezen SQL-groep te onderbreken en hervatten (voorheen SQL DW). rekenresources.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 03/20/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse, devx-track-azurepowershell
-ms.openlocfilehash: 6022974b80a7f691edc9b9a11b972035b203187c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 0851bbf990e78e32a1b4330719ad82bd6a7d3703
+ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121036"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103600907"
 ---
-# <a name="quickstart-pause-and-resume-compute-in-synapse-sql-pool-with-azure-powershell"></a>Quickstart: Berekening onderbreken en hervatten in Synapse SQL-pool met Azure PowerShell
+# <a name="quickstart-pause-and-resume-compute-in-dedicated-sql-pool-formerly-sql-dw-with-azure-powershell"></a>Snelstartgids: de berekening onderbreken en hervatten in de toegewezen SQL-groep (voorheen SQL DW) met Azure PowerShell
 
-U kunt Azure PowerShell gebruiken om de rekenresources van Synapse SQL-pool (datawarehouse) te onderbreken en weer te hervatten.
+U kunt Azure PowerShell gebruiken om de toegewezen SQL-groep (voorheen SQL DW) reken resources te onderbreken en te hervatten.
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-In deze snelstart wordt ervan uitgegaan dat u al een SQL-pool hebt die u kunt onderbreken en hervatten. Als u er een wilt maken, gebruikt u [Maken en koppelen - portal](create-data-warehouse-portal.md) om een SQL-pool met de naam **mySampleDataWarehouse** te maken.
+In deze Quick Start wordt ervan uitgegaan dat u al een toegewezen SQL-groep hebt (voorheen SQL DW), die u kunt onderbreken en hervatten. Als u er een wilt maken, kunt u [maken en verbinden-Portal](create-data-warehouse-portal.md) gebruiken om een toegewezen SQL-groep (voorheen SQL DW) met de naam **mySampleDataWarehouse** te maken.
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 
@@ -49,11 +49,11 @@ Als u een ander abonnement dan het standaardabonnement wilt gebruiken, voert u [
 Set-AzContext -SubscriptionName "MySubscription"
 ```
 
-## <a name="look-up-sql-pool-information"></a>Gegevens van SQL-pool opzoeken
+## <a name="look-up-dedicated-sql-pool-formerly-sql-dw-information"></a>Informatie over de exclusieve SQL-groep (voorheen SQL DW) opzoeken
 
-Zoek de databasenaam, de servernaam en de resourcegroep op voor de SQL-pool die u wilt onderbreken en hervatten.
+Zoek de database naam, de server naam en de resource groep voor de toegewezen SQL-groep (voorheen SQL DW) die u wilt onderbreken en hervatten.
 
-Volg deze stappen om de locatiegegevens voor uw SQL-pool op te zoeken:
+Volg deze stappen om locatie gegevens te vinden voor uw toegewezen SQL-groep (voorheen SQL DW):
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 1. Klik op **Azure Synapse Analytics (voorheen SQL DW)** op de linkerpagina van de Azure Portal.
@@ -61,7 +61,7 @@ Volg deze stappen om de locatiegegevens voor uw SQL-pool op te zoeken:
 
     ![Servernaam en resourcegroep](./media/pause-and-resume-compute-powershell/locate-data-warehouse-information.png)
 
-1. Noteer de naam van de SQL-pool. Dit is de naam van de database. Noteer ook de naam van de server en de resourcegroep.
+1. Noteer de naam van de toegewezen SQL-groep (voorheen SQL DW). Dit is de naam van de data base. Noteer ook de naam van de server en de resourcegroep.
 1. Gebruik alleen het eerste deel van de servernaam in de PowerShell-cmdlets. In de voorgaande afbeelding is de volledige servernaam sqlpoolservername.database.windows.net. We gebruiken **sqlpoolservername** als de servernaam in de PowerShell-cmdlet.
 
 ## <a name="pause-compute"></a>Berekening onderbreken
@@ -75,7 +75,7 @@ Gebruik de cmdlet [Suspend-AzSqlDatabase](/powershell/module/az.sql/suspend-azsq
 
 ```Powershell
 Suspend-AzSqlDatabase –ResourceGroupName "myResourceGroup" `
-–ServerName "nsqlpoolservername" –DatabaseName "mySampleDataWarehouse"
+–ServerName "sqlpoolservername" –DatabaseName "mySampleDataWarehouse"
 ```
 
 In het volgende voorbeeld wordt de database opgehaald in het $database-object. Vervolgens wordt het object doorgesluisd naar [Suspend-AzSqlDatabase](/powershell/module/az.sql/suspend-azsqldatabase?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). De resultaten worden opgeslagen in het object resultDatabase. Met de laatste opdracht worden de resultaten weergegeven.
@@ -107,7 +107,7 @@ $resultDatabase
 
 ## <a name="check-status-of-your-sql-pool-operation"></a>De status van de SQL-pool controleren
 
-Gebruik de cmdlet [Get-AzSqlDatabaseActivity](/powershell/module/az.sql/Get-AzSqlDatabaseActivity?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) om de status van uw SQL-pool te controleren.
+Als u de status van uw toegewezen SQL-groep (voorheen SQL DW) wilt controleren, gebruikt u de cmdlet [Get-AzSqlDatabaseActivity](/powershell/module/az.sql/Get-AzSqlDatabaseActivity?toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
 ```Powershell
 Get-AzSqlDatabaseActivity -ResourceGroupName "myResourceGroup" -ServerName "sqlpoolservername" -DatabaseName "mySampleDataWarehouse"
@@ -115,7 +115,7 @@ Get-AzSqlDatabaseActivity -ResourceGroupName "myResourceGroup" -ServerName "sqlp
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw SQL-pool. Deze compute- en opslagresources worden apart in rekening gebracht.
+Er worden kosten in rekening gebracht voor Data Warehouse-eenheden en gegevens die zijn opgeslagen in uw toegewezen SQL-groep (voorheen SQL DW). Deze compute- en opslagresources worden apart in rekening gebracht.
 
 - Als u de gegevens in de opslag wilt houden, moet u het berekenen onderbreken.
 - Als u in de toekomst geen kosten meer wilt hebben, kunt u de SQL-pool verwijderen.
@@ -136,4 +136,4 @@ Volg deze stappen om de resources op te schonen zoals gewenst.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Ga voor meer informatie over SQL-pool naar het artikel [Gegevens in een SQL-pool laden](./load-data-from-azure-blob-storage-using-copy.md). Zie het artikel [Overzicht rekencapaciteit beheren](sql-data-warehouse-manage-compute-overview.md) voor meer informatie over het beheren van rekencapaciteit.
+Voor meer informatie over SQL-pool gaat u naar het artikel [gegevens laden in toegewezen SQL-groep (voorheen SQL DW)](./load-data-from-azure-blob-storage-using-copy.md) . Zie het artikel [Overzicht rekencapaciteit beheren](sql-data-warehouse-manage-compute-overview.md) voor meer informatie over het beheren van rekencapaciteit.

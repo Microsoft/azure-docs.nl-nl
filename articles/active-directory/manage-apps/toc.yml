@@ -258,8 +258,6 @@
               href: application-sign-in-problem-application-error.md
             - name: Probleem met aanmelden bij een Microsoft-app
               href: application-sign-in-problem-first-party-microsoft.md
-            - name: Probleem met eenmalige aanmelding
-              href: application-sign-in-problem-federated-sso-gallery.md
         - name: Problemen met on-premises apps oplossen
           items:
             - name: Probleemoplossing toepassingsproxy

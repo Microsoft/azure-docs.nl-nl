@@ -6,10 +6,10 @@ ms.topic: troubleshooting
 ms.date: 5/20/2019
 ms.author: pepogors
 ms.openlocfilehash: c30eedb6782e4172d677f16e27441f28c78cdd89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75614346"
 ---
 # <a name="use-visual-studio-to-create-and-publish-net-core-applications-targeting-a-remote-linux-service-fabric-cluster"></a>Visual Studio gebruiken om .net core-toepassingen te maken en te publiceren die gericht zijn op een extern Linux Service Fabric-cluster
@@ -31,9 +31,9 @@ Met Visual Studio-hulp middelen kunt u Service Fabric .net core-toepassingen ont
 ## <a name="deploy-to-a-remote-linux-cluster"></a>Implementeren in een extern Linux-cluster
 1. Klik in de Solution Explorer met de rechter muisknop op de toepassing en selecteer **Build**.
 ![Build-toepassing]
-2. Zodra het bouw proces voor de toepassing is voltooid, klikt u met de rechter muisknop op de service en selecteert u het **bestand csproj**bewerken.
+2. Zodra het bouw proces voor de toepassing is voltooid, klikt u met de rechter muisknop op de service en selecteert u het **bestand csproj** bewerken.
 ![Edit-csproj]
-3. Bewerk de eigenschap UpdateServiceFabricManifestEnabled van waar in **Onwaar** als de service een **actor-project type**is. Als uw toepassing geen actor service heeft, gaat u verder met stap 4.
+3. Bewerk de eigenschap UpdateServiceFabricManifestEnabled van waar in **Onwaar** als de service een **actor-project type** is. Als uw toepassing geen actor service heeft, gaat u verder met stap 4.
 ```xml
     <UpdateServiceFabricManifestEnabled>False</UpdateServiceFabricManifestEnabled>
 ```
@@ -54,7 +54,7 @@ Met Visual Studio-hulp middelen kunt u Service Fabric .net core-toepassingen ont
     </EntryPoint>
 ```
 6. Klik in Solution Explorer met de rechter muisknop op de toepassing en selecteer **publiceren**. Het dialoogvenster **Publiceren** wordt weergegeven.
-7. Selecteer in **verbindings eindpunt**het eind punt voor het externe service Fabric Linux-cluster dat u wilt instellen als doel.
+7. Selecteer in **verbindings eindpunt** het eind punt voor het externe service Fabric Linux-cluster dat u wilt instellen als doel.
 ![publiceren-toepassing]
 
 <!--Image references-->

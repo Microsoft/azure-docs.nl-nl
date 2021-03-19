@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
 ms.openlocfilehash: 82478f322e1df22bde50769b90f0424140920e9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87063596"
 ---
 # <a name="microsoftcomputeusernametextbox-ui-element"></a>Micro soft. compute. UserNameTextBox UI-element
@@ -48,7 +48,7 @@ Een besturings element tekstvak met ingebouwde validatie voor Windows-en Linux-g
 ## <a name="remarks"></a>Opmerkingen
 
 - Als `constraints.required` is ingesteld op **waar**, moet het tekstvak een waarde hebben om te kunnen valideren. De standaard waarde is **True**.
-- `osPlatform` moet worden opgegeven, en kan **Windows** of **Linux**zijn.
+- `osPlatform` moet worden opgegeven, en kan **Windows** of **Linux** zijn.
 - `constraints.regex` is een reguliere java script-expressie patroon. Indien opgegeven, moet de waarde van het tekstvak overeenkomen met het patroon om te valideren. De standaard waarde is **Null**.
 - `constraints.validationMessage` is een teken reeks die moet worden weer gegeven wanneer de waarde van het tekstvak niet voldoet aan de validatie die is opgegeven door `constraints.regex` . Als dat niet is opgegeven, worden de ingebouwde validatie berichten van het tekstvak gebruikt. De standaard waarde is **Null**.
 - Dit element heeft ingebouwde validatie die is gebaseerd op de waarde die is opgegeven voor `osPlatform` . De ingebouwde validatie kan worden gebruikt in combi natie met een aangepaste reguliere expressie. Als een waarde `constraints.regex` is opgegeven, worden de ingebouwde en aangepaste validaties geactiveerd.

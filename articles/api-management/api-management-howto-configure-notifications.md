@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: 786a9e26003a7afb98307e0bd7fae94c42a2f00d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84690299"
 ---
 # <a name="how-to-configure-notifications-and-email-templates-in-azure-api-management"></a>Meldingen en e-mailsjablonen configureren in Azure API Management
@@ -75,7 +75,7 @@ API Management biedt meldings sjablonen voor de e-mail berichten die worden verz
 
 Deze sjablonen kunnen naar wens worden gewijzigd.
 
-Klik op **meldingen sjablonen**om de e-mail sjablonen voor uw API Management-exemplaar weer te geven en te configureren.
+Klik op **meldingen sjablonen** om de e-mail sjablonen voor uw API Management-exemplaar weer te geven en te configureren.
 
 ![E-mail-sjablonen][api-management-email-templates]
 
@@ -88,7 +88,7 @@ De lijst met **para meters** bevat een lijst met para meters die worden ingevoeg
 > [!NOTE]
 > De para meters worden niet vervangen door werkelijke waarden bij het weer geven of verzenden van een test.
 
-Als u de wijzigingen in de e-mail sjabloon wilt opslaan, klikt u op **Opslaan**of annuleert u de wijzigingen door op **negeren**te klikken.
+Als u de wijzigingen in de e-mail sjabloon wilt opslaan, klikt u op **Opslaan** of annuleert u de wijzigingen door op **negeren** te klikken.
 
 [api-management-management-console]: ./media/api-management-howto-configure-notifications/api-management-management-console.png
 [api-management-publisher-notifications]: ./media/api-management-howto-configure-notifications/api-management-publisher-notifications.png

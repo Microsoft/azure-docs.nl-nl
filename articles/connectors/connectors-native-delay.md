@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/25/2019
 tags: connectors
 ms.openlocfilehash: 5348ade1ba6eec6cbd360849411b4520cb3c2b19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74787333"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Uitvoering van de volgende actie in Azure Logic Apps vertragen
@@ -52,7 +52,7 @@ Hier volgen enkele voor beelden van manieren om deze acties te gebruiken:
 
    | Eigenschap | JSON-naam | Vereist | Type | Beschrijving |
    |----------|-----------|----------|------|-------------|
-   | Aantal | count | Ja | Geheel getal | Het aantal tijds eenheden dat moet worden vertraagd |
+   | Count | count | Ja | Geheel getal | Het aantal tijds eenheden dat moet worden vertraagd |
    | Eenheid | eenheid | Ja | Tekenreeks | De tijds eenheid, bijvoorbeeld:,, `Second` `Minute` ,, `Hour` `Day` `Week` of `Month` |
    ||||||
 

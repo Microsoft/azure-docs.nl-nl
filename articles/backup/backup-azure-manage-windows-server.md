@@ -4,10 +4,10 @@ description: In dit artikel leert u hoe u het overzichts Dashboard van Recovery 
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.openlocfilehash: 74351d781287d863db8be0fc7d20517e0479106c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89002127"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Recovery Services-kluizen beheren en controleren
@@ -110,7 +110,7 @@ Standaard worden alle details, met uitzonde ring van de **laatste tijdstippen**,
 * Waarschuwing
 * Back-upitem
 * Beveiligde server
-* Ernst
+* Severity
 * Duur
 * Aanmaak tijd
 * Status
@@ -160,7 +160,7 @@ E-mail meldingen zijn standaard **ingeschakeld**. Selecteer **uit** om de e-mail
 
 Kies op het besturings element voor de **melding** de optie **per waarschuwing** als u niet wilt groeperen of geen veel items hebt die waarschuwingen kunnen genereren. Elke waarschuwing resulteert in één melding (de standaard instelling) en er wordt direct een oplossings-e-mail verzonden.
 
-Als u **per uur Digest**selecteert, wordt er een e-mail bericht verzonden naar de ontvangers met uitleg over de onopgeloste waarschuwingen die in het afgelopen uur zijn gegenereerd. Er wordt aan het einde van het uur een oplossings-e-mail verzonden.
+Als u **per uur Digest** selecteert, wordt er een e-mail bericht verzonden naar de ontvangers met uitleg over de onopgeloste waarschuwingen die in het afgelopen uur zijn gegenereerd. Er wordt aan het einde van het uur een oplossings-e-mail verzonden.
 
 Kies de ernst van de waarschuwing (kritiek of waarschuwing) die wordt gebruikt voor het genereren van e-mail. Er zijn momenteel geen informatie meldingen.
 
@@ -174,7 +174,7 @@ De lijst met back-upitems, geordend op het type back-upbeheer, wordt geopend.
 
 ![Lijst met back-upitems](./media/backup-azure-manage-windows-server/list-backup-items.png)
 
-Als u een specifiek type beveiligde instantie wilt verkennen, selecteert u het item in de kolom Type back-upbeheer. In de bovenstaande afbeelding zijn er bijvoorbeeld twee virtuele Azure-machines die in deze kluis worden beveiligd. Als u een **virtuele machine van Azure**selecteert, wordt de lijst met beveiligde virtuele machines in deze kluis geopend.
+Als u een specifiek type beveiligde instantie wilt verkennen, selecteert u het item in de kolom Type back-upbeheer. In de bovenstaande afbeelding zijn er bijvoorbeeld twee virtuele Azure-machines die in deze kluis worden beveiligd. Als u een **virtuele machine van Azure** selecteert, wordt de lijst met beveiligde virtuele machines in deze kluis geopend.
 
 ![Lijst met beveiligde virtuele machines](./media/backup-azure-manage-windows-server/list-of-protected-virtual-machines.png)
 
@@ -194,7 +194,7 @@ Als u meer informatie over de taken wilt weer geven, selecteert u **in voortgang
 
 Het menu **back-uptaken** bevat informatie over het item type, de werking, de status, de start tijd en de duur.  
 
-Als u het menu back-uptaken wilt openen, selecteert u **back-uptaken**in het hoofd menu van de kluis.
+Als u het menu back-uptaken wilt openen, selecteert u **back-uptaken** in het hoofd menu van de kluis.
 
 ![Back-uptaken selecteren](./media/backup-azure-manage-windows-server/backup-jobs-menu-item.png)
 
@@ -206,7 +206,7 @@ Het menu back-uptaken toont de status van alle bewerkingen op alle back-uptypen 
 
 De filters wijzigen:
 
-1. Selecteer **filter**in het menu kluis back-uptaken.
+1. Selecteer **filter** in het menu kluis back-uptaken.
 
    ![Filter selecteren voor back-uptaken](./media/backup-azure-manage-windows-server/vault-backup-job-menu-filter.png)
 
@@ -276,9 +276,9 @@ De tegel back-upopslag in het dash board toont de opslag die wordt gebruikt in A
 
 **Stappen voor probleem oplossing:** Het proces, ```OBRecoveryServicesManagementAgent``` , verzendt de taak-en waarschuwings gegevens naar de Azure backup-service. Dit proces kan af en toe worden vastgelopen of afgesloten.
 
-1. Als u wilt controleren of het proces niet wordt uitgevoerd, opent u **taak beheer**en voert u de opdracht uit ```OBRecoveryServicesManagementAgent``` .
+1. Als u wilt controleren of het proces niet wordt uitgevoerd, opent u **taak beheer** en voert u de opdracht uit ```OBRecoveryServicesManagementAgent``` .
 
-2. Als het proces niet wordt uitgevoerd, opent u het **configuratie scherm**en bladert u naar de lijst met Services. **Microsoft Azure Recovery Services beheer agent**te starten of opnieuw te starten.
+2. Als het proces niet wordt uitgevoerd, opent u het **configuratie scherm** en bladert u naar de lijst met Services. **Microsoft Azure Recovery Services beheer agent** te starten of opnieuw te starten.
 
     Ga voor meer informatie naar de logboeken in:<br/>
    `<AzureBackup_agent_install_folder>\Microsoft Azure Recovery Services Agent\Temp\GatewayProvider*` Bijvoorbeeld:<br/>

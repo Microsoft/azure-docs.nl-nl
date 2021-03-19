@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 67ba4f12aec9e987d79109b7197d03301bf40650
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89004779"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Verificatie door eind gebruikers met Azure Data Lake Storage Gen1 met behulp van .NET SDK
@@ -19,7 +19,7 @@ ms.locfileid: "89004779"
 > * [Java gebruiken](data-lake-store-end-user-authenticate-java-sdk.md)
 > * [.NET SDK gebruiken](data-lake-store-end-user-authenticate-net-sdk.md)
 > * [Python gebruiken](data-lake-store-end-user-authenticate-python.md)
-> * [REST API gebruiken](data-lake-store-end-user-authenticate-rest-api.md)
+> * [REST-API gebruiken](data-lake-store-end-user-authenticate-rest-api.md)
 > 
 >  
 
@@ -33,7 +33,7 @@ In dit artikel leert u hoe u de .NET SDK kunt gebruiken om verificatie door eind
 * **Maak een Azure Active Directory systeem eigen toepassing**. U moet de stappen in de [verificatie van eind gebruikers hebben voltooid met data Lake Storage gen1 met behulp van Azure Active Directory](data-lake-store-end-user-authenticate-using-active-directory.md).
 
 ## <a name="create-a-net-application"></a>Een .NET-toepassing maken
-1. Selecteer in Visual Studio het menu **bestand** , **Nieuw**en vervolgens **project**.
+1. Selecteer in Visual Studio het menu **bestand** , **Nieuw** en vervolgens **project**.
 2. Kies **console-app (.NET Framework)** en selecteer **volgende**.
 3. Voer in **project naam**, Enter `CreateADLApplication` en selecteer vervolgens **maken**.
 
@@ -49,7 +49,7 @@ In dit artikel leert u hoe u de .NET SDK kunt gebruiken om verificatie door eind
         ![Een NuGet-bron toevoegen](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Een nieuw Azure Data Lake-account maken")
    4. Sluit **NuGet package manager**.
 
-5. **Program.cs** openen
+5. **Programma openen. cs**
 6. Vervang de instructies using door de volgende regels:
 
     ```csharp

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 06/26/2019
 keywords: kinect, azure, sensor, SDK, coördinaten systeem, kalibratie, project, unproject, trans formatie, RGB-d, Point-Cloud
 ms.openlocfilehash: df7f2aa13c0e9c0241494e96e720b30f3ff1d8a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85277202"
 ---
 # <a name="use-azure-kinect-sensor-sdk-image-transformations"></a>Trans formaties van de Azure Kinect sensor SDK gebruiken

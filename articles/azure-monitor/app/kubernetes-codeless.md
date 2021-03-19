@@ -6,10 +6,10 @@ author: MS-jgol
 ms.author: jgol
 ms.date: 05/13/2020
 ms.openlocfilehash: 52bd6d2a98e5126ff2463de1ef99da03ca555567
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87075299"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes---azure-monitor-application-insights"></a>Bewaking van nul-toepassings controle voor Kubernetes-Azure Monitor Application Insights

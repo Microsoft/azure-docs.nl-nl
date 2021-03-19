@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 11/14/2018
 ms.custom: H1Hack27Feb2017, devx-track-csharp
 ms.openlocfilehash: 1a45eed421dd8d734fcef0dd452df1d4a65fd053
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88936959"
 ---
 # <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Taak-en taak gegevens persistent maken om te Azure Storage met de conventies bibliotheek voor batch bestanden voor .NET
@@ -47,7 +47,7 @@ Als u een andere taal dan .NET ontwikkelt, kunt u de bestands conventies zelf in
 Als u uitvoer gegevens wilt behouden voor Azure Storage met behulp van de bestands conventies bibliotheek, moet u eerst een Azure Storage account koppelen aan uw batch-account. Als u dit nog niet hebt gedaan, koppelt u een opslag account aan uw batch-account met behulp van de [Azure Portal](https://portal.azure.com):
 
 1. Ga in Azure Portal naar uw Batch-account.
-1. Selecteer **opslag account**onder **instellingen**.
+1. Selecteer **opslag account** onder **instellingen**.
 1. Als u nog geen opslag account hebt gekoppeld aan uw batch-account, klikt u op **opslag account (geen)**.
 1. Selecteer een opslag account in de lijst voor uw abonnement. Gebruik voor de beste prestaties een Azure Storage-account dat zich in dezelfde regio bevindt als het batch-account waarin uw taken worden uitgevoerd.
 
@@ -104,7 +104,7 @@ De `kind` para meter van de [TaskOutputStorage](/dotnet/api/microsoft.azure.batc
 Met deze uitvoer typen kunt u opgeven welk type uitvoer moet worden weer gegeven wanneer u later een query uitvoert op batch voor de persistente uitvoer van een bepaalde taak. Met andere woorden, als u de uitvoer van een taak vermeldt, kunt u de lijst filteren op een van de uitvoer typen. Bijvoorbeeld ' Geef mij de *Preview* -uitvoer voor taak *109*'. Meer informatie over het opnemen en ophalen van uitvoer wordt weer gegeven in de uitvoer ophalen verderop in het artikel.
 
 > [!TIP]
-> Het uitvoer type bepaalt ook waar in de Azure Portal een bepaald bestand wordt weer gegeven: *TaskOutput*gecategoriseerde bestanden worden weer gegeven onder taak **uitvoer bestanden**en *tasklog* -bestanden worden weer gegeven onder **taak logboeken**.
+> Het uitvoer type bepaalt ook waar in de Azure Portal een bepaald bestand wordt weer gegeven: *TaskOutput* gecategoriseerde bestanden worden weer gegeven onder taak **uitvoer bestanden** en *tasklog* -bestanden worden weer gegeven onder **taak logboeken**.
 
 ### <a name="store-job-outputs"></a>Taak uitvoer opslaan
 

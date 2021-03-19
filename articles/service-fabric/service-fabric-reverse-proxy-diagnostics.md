@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: kavyako
 ms.openlocfilehash: bbc1fe5a76ecb5720bc49e0a082d5e9151b403d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75645460"
 ---
 # <a name="monitor-and-diagnose-request-processing-at-the-reverse-proxy"></a>Verwerking van aanvragen bewaken en diagnoses uitvoeren bij de omgekeerde proxy
@@ -29,7 +29,7 @@ Hier volgen enkele voor beelden van het interpreteren van de veelvoorkomende fou
 
     De payload omvat:
 
-   * **traceId**: deze GUID kan worden gebruikt om alle gebeurtenissen te correleren die overeenkomen met één aanvraag. In de onderstaande twee gebeurtenissen is het traceId = **2f87b722-e254-4ac2-a802-fd315c1a0271**dat ze tot dezelfde aanvraag behoren.
+   * **traceId**: deze GUID kan worden gebruikt om alle gebeurtenissen te correleren die overeenkomen met één aanvraag. In de onderstaande twee gebeurtenissen is het traceId = **2f87b722-e254-4ac2-a802-fd315c1a0271** dat ze tot dezelfde aanvraag behoren.
    * **requestUrl**: de URL (reverse proxy-URL) waarnaar de aanvraag is verzonden.
    * **Verb**: HTTP-term.
    * **remoteAddress**: het adres van de client die de aanvraag verzendt.
@@ -77,7 +77,7 @@ Hier volgen enkele voor beelden van het interpreteren van de veelvoorkomende fou
     
     Hier volgt een voorbeeld gebeurtenis waarbij reverse proxy 404 retourneert omdat het overeenkomende service-eind punt niet is gevonden.
     De nettolading van de volgende belang rijke items zijn:
-   * **processRequestPhase**: geeft de fase aan tijdens de verwerking van aanvragen wanneer de fout is opgetreden, ***TryGetEndpoint*** dat wil zeggen tijdens een poging om het service-eind punt op te halen om door te gaan. 
+   * **processRequestPhase**: geeft de fase aan tijdens de verwerking van aanvragen wanneer de fout is opgetreden, **_TryGetEndpoint_** dat wil zeggen tijdens een poging om het service-eind punt op te halen om door te gaan. 
    * **Error Details**: geeft een lijst van de zoek criteria voor het eind punt. Hier kunt u zien dat de listenerName opgegeven = **FrontEndListener** , terwijl de lijst met replica-eind punten alleen een listener bevat met de naam **OldListener**.
     
      ```

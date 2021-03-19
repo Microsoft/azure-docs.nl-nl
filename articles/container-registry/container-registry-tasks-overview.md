@@ -3,12 +3,12 @@ title: Overzicht van ACR-taken
 description: Een inleiding tot ACR-taken, een reeks functies in Azure Container Registry die beveiligde, geautomatiseerde build van container installatie kopieën biedt, beheer en patches in de Cloud.
 ms.topic: article
 ms.date: 08/12/2020
-ms.openlocfilehash: b6df415bd55979ef00f6921321dbc254ef7a7e59
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1cf9faf934cebfb5abe0d2e1b26ffd7da2d6c549
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562851"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606783"
 ---
 # <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Bouw en onderhoud van container installatie kopieën automatiseren met ACR-taken
 
@@ -39,7 +39,7 @@ Het proces voor de duur van de binnenste cyclus, het iteratieproces voor het sch
 
 Voordat u uw eerste regel code doorvoert, kunt u met de [snelle taak](container-registry-tutorial-quick-task.md) functie van ACR-taken een geïntegreerde ontwikkel ervaring bieden door de build-installatie kopieën van de container te offloaden naar Azure. Met snelle taken kunt u uw geautomatiseerde build-definities controleren en mogelijke problemen ondervangen voordat u uw code doorvoert.
 
-Met de bekende `docker build` indeling wordt met de opdracht [AZ ACR build][az-acr-build] in de Azure cli een [context](#context-locations) (de set te bouwen bestanden) gemaakt, worden deze ACR-taken verzonden en wordt standaard de ingebouwde installatie kopie naar het REGI ster gepusht na voltooiing.
+Met de vertrouwde `docker build` indeling wordt met de opdracht [AZ ACR build][az-acr-build] in de Azure cli een [context](#context-locations) (de set van te bouwen bestanden) gemaakt, verzonden naar ACR-taken en wordt standaard de ingebouwde installatie kopie naar het REGI ster gepusht na voltooiing.
 
 Zie voor een inleiding de Snelstartgids voor het [maken en uitvoeren van een container installatie kopie](container-registry-quickstart-task-cli.md) in azure container Registry.  
 
@@ -58,8 +58,8 @@ ACR-taken bieden ondersteuning voor de volgende triggers wanneer u een Git-opsla
 
 | Trigger | Standaard ingeschakeld |
 | ------- | ------------------ |
-| Doorvoeren | Ja |
-| Pull-aanvraag | Nee |
+| Doorvoeren | Yes |
+| Pull-aanvraag | No |
 
 Als u een trigger voor het bijwerken van de bron code wilt configureren, moet u de taak een persoonlijk toegangs token (PAT) geven om de webhook in te stellen in de open bare of persoonlijke GitHub of Azure DevOps opslag plaats.
 

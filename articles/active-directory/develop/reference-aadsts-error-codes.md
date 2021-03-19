@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/01/2021
+ms.date: 03/17/2021
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 606704621a4904dd0fb7b6f55e753dbe77e39cb5
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 56ffa8c33c409e274318407a70f33edaabb5073d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601012"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578495"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -269,6 +269,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS90094 | AdminConsentRequired-toestemming van de beheerder is vereist. |
 | AADSTS900382 | De vertrouwelijke client wordt niet ondersteund in een cross-Cloud aanvraag. |
 | AADSTS90099 | De toepassing {appId} ({appName}) is niet geautoriseerd in de Tenant {Tenant}. Toepassingen moeten worden gemachtigd om toegang te krijgen tot de Tenant van de klant voordat de beheerder van de partner deze kan gebruiken. Geef vooraf toestemming of voer de juiste partner centrum-API uit om de toepassing te autoriseren. |
+| AADSTS900971| Er is geen antwoord adres gegeven.|
 | AADSTS90100 | InvalidRequestParameter-de para meter is leeg of ongeldig. |
 | AADSTS901002 | AADSTS901002: de aanvraag parameter ' resource ' wordt niet ondersteund. |
 | AADSTS90101 | InvalidEmailAddress: de opgegeven gegevens zijn geen geldig e-mail adres. Het e-mail adres moet de indeling hebben `someone@example.com` . |

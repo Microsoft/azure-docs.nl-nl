@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.openlocfilehash: e78f0d1e8d6d637dfebe1ff475ab8416ba49a263
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88935412"
 ---
 # <a name="how-to-add-a-custom-skill-to-an-azure-cognitive-search-enrichment-pipeline"></a>Een aangepaste vaardigheid toevoegen aan een Azure Cognitive Search-verrijkings pijplijn
@@ -91,7 +91,7 @@ In werkelijkheid kan uw service worden aangeroepen met honderden of duizenden re
 
 ### <a name="2-web-api-output-format"></a>2. Web API-uitvoer indeling
 
-De indeling van de uitvoer is een set records met een *RecordID*en een eigenschappen verzameling 
+De indeling van de uitvoer is een set records met een *RecordID* en een eigenschappen verzameling 
 
 ```json
 {

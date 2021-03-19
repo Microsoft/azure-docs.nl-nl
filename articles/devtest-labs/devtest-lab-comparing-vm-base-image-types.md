@@ -4,10 +4,10 @@ description: Meer informatie over de verschillen tussen aangepaste installatie k
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: df7a8e6209f8033eb5a29c65079e9c2f4cbbe544
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87287532"
 ---
 # <a name="comparing-custom-images-and-formulas-in-devtest-labs"></a>Aangepaste afbeeldingen en formules in DevTest Labs vergelijken
@@ -16,7 +16,7 @@ Zowel [aangepaste installatie kopieën](devtest-lab-create-template.md) als [for
 ## <a name="custom-image-pros-and-cons"></a>Voor beelden van aangepaste afbeeldingen en nadelen
 Aangepaste installatie kopieën bieden een statische, onveranderlijke manier om Vm's te maken op basis van een gewenste omgeving. 
 
-**-Professionals**
+**Voordelen**
 
 * Het inrichten van een virtuele machine vanuit een aangepaste installatie kopie is snel omdat er niets verandert nadat de virtuele machine van de installatie kopie is gemaakt. Met andere woorden, er zijn geen instellingen die kunnen worden toegepast als de aangepaste installatie kopie alleen een installatie kopie zonder instellingen is. 
 * Vm's die zijn gemaakt op basis van één aangepaste installatie kopie, zijn identiek.
@@ -28,7 +28,7 @@ Aangepaste installatie kopieën bieden een statische, onveranderlijke manier om 
 ## <a name="formula-pros-and-cons"></a>Voor-en nadelen van formules
 Formules bieden een dynamische manier om Vm's te maken op basis van de gewenste configuratie/instellingen.
 
-**-Professionals**
+**Voordelen**
 
 * Wijzigingen in de omgeving kunnen worden vastgelegd via artefacten. Als u bijvoorbeeld een VM wilt installeren met de meest recente bits van uw release pijplijn of als u de meest recente code van uw opslag plaats wilt inschrijven, kunt u gewoon een artefact opgeven dat de meest recente bits implementeert of de meest recente code in de formule aanmeldt samen met een doel basis installatie kopie. Wanneer deze formule wordt gebruikt voor het maken van Vm's, worden de meest recente bits/code geïmplementeerd/aangemeld bij de VM. 
 * Formules kunnen standaard instellingen definiëren die aangepaste installatie kopieën niet kunnen bieden, zoals VM-grootten en instellingen voor virtuele netwerken. 

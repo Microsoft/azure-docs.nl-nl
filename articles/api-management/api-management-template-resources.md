@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: c3b6123c63bf530463379a175745ef86baf2c5a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84689984"
 ---
 # <a name="azure-api-management-template-resources"></a>Resources van Azure API Management-sjabloon
@@ -135,7 +135,7 @@ De volgende lokalisatie opties worden ondersteund:
 |WebDevelopersAppNotSubmitted|Niet verzonden|  
 |WebDevelopersAppTableCategoryHeader|Categorie|  
 |WebDevelopersAppTableNameHeader|Name|  
-|WebDevelopersAppTableStateHeader|Status|  
+|WebDevelopersAppTableStateHeader|Staat|  
 |WebDevelopersEditLink|Bewerken|  
 |WebDevelopersRegisterAppLink|Toepassing registreren|  
 |WebDevelopersRemoveLink|Verwijderen|  
@@ -308,7 +308,7 @@ De volgende lokalisatie opties worden ondersteund:
 |WebDocumentation302Code|302 gevonden|  
 |WebDocumentation400Code|400 (ongeldige aanvraag)|  
 |OAuth2SendingMethod_AuthHeader|Autorisatie-header|  
-|OAuth2SendingMethod_QueryParam|Query parameter|  
+|OAuth2SendingMethod_QueryParam|Queryparameter|  
 |OAuth2AuthorizationServerGeneralException|Er is een fout opgetreden tijdens het autoriseren van de toegang via {0}|  
 |OAuth2AuthorizationServerCommunicationException|Er kan geen HTTP-verbinding tot stand worden gebracht met de autorisatie server of het bestand is onverwacht gesloten.|  
 |WebDocumentationOAuth2GeneralErrorMessage|Er is een onverwachte fout opgetreden.|  
@@ -544,7 +544,7 @@ De volgende lokalisatie opties worden ondersteund:
 |WebDevelopersSubscriptionRequested|Aangevraagd op {0}|  
 |WebDevelopersSubscriptionRequestedState|Aangevraagd|  
 |WebDevelopersSubscriptionTableNameHeader|Name|  
-|WebDevelopersSubscriptionTableStateHeader|Status|  
+|WebDevelopersSubscriptionTableStateHeader|Staat|  
 |WebDevelopersUsageStatisticsLink|Analyse rapporten|  
 |WebDevelopersYourSubscriptions|Uw abonnementen|  
 |SubscriptionPropertyLabelRequestedDate|Aangevraagd op|  

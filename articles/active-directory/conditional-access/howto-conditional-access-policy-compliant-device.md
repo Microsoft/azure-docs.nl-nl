@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c98269f9851272e8caa9b26ae0c57ed13e9a99f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89049125"
 ---
 # <a name="conditional-access-require-compliant-devices"></a>Voorwaardelijke toegang: compatibele apparaten vereisen
@@ -37,15 +37,15 @@ De volgende stappen helpen u bij het maken van een beleid voor voorwaardelijke t
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **insluiten**selecteert u **alle gebruikers**.
-   1. Onder **uitsluiten**selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **insluiten** selecteert u **alle gebruikers**.
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
    1. Selecteer **Gereed**.
-1. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **alle Cloud-apps**.
+1. Onder **Cloud-apps of acties**  >  , selecteert u **alle Cloud-apps**.
    1. Als u specifieke toepassingen van uw beleid moet uitsluiten, kunt u ze kiezen op het tabblad **uitsluiten** onder **Selecteer uitgesloten Cloud-apps** en kiest u **selecteren**.
    1. Selecteer **Gereed**.
-1. Selecteer onder **voor waarden**  >  **client-apps (preview-versie)**  >  **de client-apps waarop dit beleid van toepassing**is, geef alle geselecteerde standaard instellingen op en selecteer **gereed**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert **u apparaat vereisen dat moet worden gemarkeerd als compatibel**.
+1. Selecteer onder **voor waarden**  >  **client-apps (preview-versie)**  >  **de client-apps waarop dit beleid van toepassing** is, geef alle geselecteerde standaard instellingen op en selecteer **gereed**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert **u apparaat vereisen dat moet worden gemarkeerd als compatibel**.
    1. Kies **Selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid in te stellen.

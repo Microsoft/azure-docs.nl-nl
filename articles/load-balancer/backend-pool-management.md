@@ -8,12 +8,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.author: allensu
-ms.openlocfilehash: ac21e1f00dc2a5580b90a1a5eb43da05288e800a
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: c49a721a4db758965c9cf8d71f5d73b5754b6088
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103489420"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654472"
 ---
 # <a name="backend-pool-management"></a>Beheer van back-endpools
 De back-endpool is een essentieel onderdeel van de load balancer. Met de back-endpool wordt de groep resources gedefinieerd die het verkeer verwerken voor een bepaalde taakverdelingsregel.
@@ -156,99 +156,6 @@ az vm create \
 --generate-ssh-keys
 ```
 
-### <a name="rest-api"></a>REST-API
-Maak de back-endpool:
-
-```
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/loadBalancers/{load-balancer-name}/backendAddressPools/{backend-pool-name}?api-version=2020-05-01
-```
-
-Maak een netwerkinterface en voeg deze toe aan de back-endpool die u hebt gemaakt via de eigenschap IP-configuraties van de netwerkinterface:
-
-```
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/networkInterfaces/{nic-name}?api-version=2020-05-01
-```
-
-JSON-aanvraagtekst:
-```json
-{
-  "properties": {
-    "enableAcceleratedNetworking": true,
-    "ipConfigurations": [
-      {
-        "name": "ipconfig1",
-        "properties": {
-          "subnet": {
-            "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/virtualNetworks/{vnet-name}/subnets/{subnet-name}"
-          },
-          "loadBalancerBackendAddressPools": [
-            {
-              "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/loadBalancers/{load-balancer-name}/backendAddressPools/{backend-pool-name}"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  "location": "eastus"
-}
-```
-
-Haal de gegevens van de back-endpool op voor de load balancer om te bevestigen dat deze netwerkinterface is toegevoegd aan de back-endpool:
-
-```
-GET https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name/providers/Microsoft.Network/loadBalancers/{load-balancer-name/backendAddressPools/{backend-pool-name}?api-version=2020-05-01
-```
-
-Maak een VM en koppel de NIC die verwijst naar de back-endpool:
-
-```
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?api-version=2019-12-01
-```
-
-JSON-aanvraagtekst:
-```JSON
-{
-  "location": "easttus",
-  "properties": {
-    "hardwareProfile": {
-      "vmSize": "Standard_D1_v2"
-    },
-    "storageProfile": {
-      "imageReference": {
-        "sku": "2016-Datacenter",
-        "publisher": "MicrosoftWindowsServer",
-        "version": "latest",
-        "offer": "WindowsServer"
-      },
-      "osDisk": {
-        "caching": "ReadWrite",
-        "managedDisk": {
-          "storageAccountType": "Standard_LRS"
-        },
-        "name": "myVMosdisk",
-        "createOption": "FromImage"
-      }
-    },
-    "networkProfile": {
-      "networkInterfaces": [
-        {
-          "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/{nic-name}",
-          "properties": {
-            "primary": true
-          }
-        }
-      ]
-    },
-    "osProfile": {
-      "adminUsername": "{your-username}",
-      "computerName": "myVM",
-      "adminPassword": "{your-password}"
-    }
-  }
-}
-```
-
 ### <a name="resource-manager-template"></a>Resource Manager-sjabloon
 
 Volg deze [quickstart voor Resource Manager-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-load-balancer-standard-create/) om een load balancer en virtuele machines te implementeren, en de virtuele machines toe te voegen aan de back-endpool via de netwerkinterface.
@@ -260,17 +167,6 @@ Volg deze [Snelstartgids Resource Manager-sjabloon](https://github.com/Azure/azu
 Gebruik het IP-adres en virtueel netwerk in scenario's met vooraf gevulde back-endpools.
 
 Alle beheer van de back-endpool wordt rechtstreeks uitgevoerd in het back-endpoolobject, zoals gemarkeerd in de onderstaande voorbeelden.
-
-### <a name="limitations"></a>Beperkingen
-Een back-end-pool die is geconfigureerd door IP-adressen heeft de volgende beperkingen:
-  * Kan alleen worden gebruikt voor standaard load balancers
-  * Limiet van 100 IP-adressen in de back-endpool
-  * De back-endresources moeten zich in hetzelfde virtueel netwerk bevinden als de load balancer
-  * Een Load Balancer met een op IP gebaseerde back-end-pool kunnen niet functioneren als Private Link-service
-  * Deze functie wordt momenteel niet ondersteund in de Azure-portal
-  * ACI-containers worden momenteel niet ondersteund door deze functie
-  * Load balancers of services met load balancers aan de voorkant kunnen niet worden opgenomen in de back-endpool van de load balancer
-  * Inkomende NAT-regels kunnen niet per IP-adres worden opgegeven
 
 ### <a name="powershell"></a>PowerShell
 Maak een nieuwe back-endpool:
@@ -411,128 +307,21 @@ az vm create \
   --admin-username azureuser \
   --generate-ssh-keys
 ```
+ 
+### <a name="limitations"></a>Beperkingen
+Een back-end-pool die is geconfigureerd door IP-adressen heeft de volgende beperkingen:
+  * Kan alleen worden gebruikt voor standaard load balancers
+  * Limiet van 100 IP-adressen in de back-endpool
+  * De back-endresources moeten zich in hetzelfde virtueel netwerk bevinden als de load balancer
+  * Een Load Balancer met een op IP gebaseerde back-end-pool kunnen niet functioneren als Private Link-service
+  * Deze functie wordt momenteel niet ondersteund in de Azure-portal
+  * ACI-containers worden momenteel niet ondersteund door deze functie
+  * Load balancers of services zoals Application Gateway kunnen niet worden geplaatst in de back-end-groep van de load balancer
+  * Inkomende NAT-regels kunnen niet per IP-adres worden opgegeven
 
-### <a name="rest-api"></a>REST-API
-
-Maak de back-endpool en definieer de back-endadressen via een PUT-aanvraag voor de back-endpool. Configureer de back-endadressen in de JSON-hoofdtekst van de PUT-aanvraag op basis van:
-
-* Adresnaam
-* IP-adres
-* Id van het virtuele netwerk 
-
-```
-PUT https://management.azure.com/subscriptions/subid/resourceGroups/testrg/providers/Microsoft.Network/loadBalancers/lb/backendAddressPools/backend?api-version=2020-05-01
-```
-
-JSON-aanvraagtekst:
-```JSON
-{
-  "properties": {
-    "loadBalancerBackendAddresses": [
-      {
-        "name": "address1",
-        "properties": {
-          "virtualNetwork": {
-            "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/virtualNetworks/{vnet-name}"
-          },
-          "ipAddress": "10.0.0.4"
-        }
-      },
-      {
-        "name": "address2",
-        "properties": {
-          "virtualNetwork": {
-            "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/virtualNetworks/{vnet-name}"
-          },
-          "ipAddress": "10.0.0.5"
-        }
-      }
-    ]
-  }
-}
-```
-
-Haal de gegevens van de back-endpool op voor de load balancer om te bevestigen dat de back-endadressen zijn toegevoegd aan de back-endpool:
-```
-GET https://management.azure.com/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/loadBalancers/{load-balancer-name}/backendAddressPools/{backend-pool-name}?api-version=2020-05-01
-```
-
-Maak een netwerkinterface en voeg deze toe aan de back-endpool. Stel het IP-adres in op een van de back-endadressen:
-```
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/networkInterfaces/{nic-name}?api-version=2020-05-01
-```
-
-JSON-aanvraagtekst:
-```JSON
-{
-  "properties": {
-    "enableAcceleratedNetworking": true,
-    "ipConfigurations": [
-      {
-        "name": "ipconfig1",
-        "properties": {
-          "privateIPAddress": "10.0.0.4",
-          "subnet": {
-            "id": "/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/virtualNetworks/{vnet-name}/subnets/{subnet-name}"
-          }
-        }
-      }
-    ]
-  },
-  "location": "eastus"
-}
-```
-
-Maak een VM en koppel de NIC met een IP-adres in de back-endpool:
-
-```
-PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Compute/virtualMachines/{vm-name}?api-version=2019-12-01
-```
-
-JSON-aanvraagtekst:
-```JSON
-{
-  "location": "eastus",
-  "properties": {
-    "hardwareProfile": {
-      "vmSize": "Standard_D1_v2"
-    },
-    "storageProfile": {
-      "imageReference": {
-        "sku": "2016-Datacenter",
-        "publisher": "MicrosoftWindowsServer",
-        "version": "latest",
-        "offer": "WindowsServer"
-      },
-      "osDisk": {
-        "caching": "ReadWrite",
-        "managedDisk": {
-          "storageAccountType": "Standard_LRS"
-        },
-        "name": "myVMosdisk",
-        "createOption": "FromImage"
-      }
-    },
-    "networkProfile": {
-      "networkInterfaces": [
-        {
-          "id": "/subscriptions/{subscription-id}/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/{nic-name}",
-          "properties": {
-            "primary": true
-          }
-        }
-      ]
-    },
-    "osProfile": {
-      "adminUsername": "{your-username}",
-      "computerName": "myVM",
-      "adminPassword": "{your-password}"
-    }
-  }
-}
-```
-  
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel hebt u informatie gekregen over het beheer van back-endpools in Azure Load Balancer en over hoe u een back-endpool kunt configureren op basis van het IP-adres en virtuele netwerk.
 
 Meer informatie over [Azure Load Balancer](load-balancer-overview.md).
+
+Bekijk de [rest API](https://docs.microsoft.com/rest/api/load-balancer/loadbalancerbackendaddresspools/createorupdate) voor hosts-beheer op basis van IP.

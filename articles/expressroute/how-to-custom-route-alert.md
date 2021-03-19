@@ -1,22 +1,22 @@
 ---
 title: 'ExpressRoute: aangepaste waarschuwingen configureren voor aangekondigde routes'
-description: In dit artikel wordt beschreven hoe u Azure Automation en Logic Apps kunt gebruiken om het aantal routes te bewaken dat is geadverteerd van de ExpressRoute-gateway naar on-premises netwerken om te voor komen dat de limieten voor de 200-routes worden bereikt.
+description: In dit artikel wordt beschreven hoe u Azure Automation en Logic Apps kunt gebruiken om het aantal routes te bewaken dat is geadverteerd van de ExpressRoute-gateway naar on-premises netwerken om te voor komen dat de limieten voor de 1000-routes worden bereikt.
 services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: duau
-ms.openlocfilehash: fed7663e2342a708aee70b9a54e6e0a6b6f97e8c
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 2291d1fa7f890296c59661060f5a823d8eb194ba
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102504398"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654387"
 ---
 # <a name="configure-custom-alerts-to-monitor-advertised-routes"></a>Aangepaste waarschuwingen configureren voor het bewaken van aangekondigde routes
 
-Dit artikel helpt u bij het gebruik van Azure Automation en Logic Apps om voortdurend het aantal routes te bewaken dat is geadverteerd van de ExpressRoute-gateway naar on-premises netwerken. Bewaking kan helpen voor komen dat de [limiet van 200 routes wordt bereikt](expressroute-faqs.md#how-many-prefixes-can-be-advertised-from-a-vnet-to-on-premises-on-expressroute-private-peering).
+Dit artikel helpt u bij het gebruik van Azure Automation en Logic Apps om voortdurend het aantal routes te bewaken dat is geadverteerd van de ExpressRoute-gateway naar on-premises netwerken. Bewaking kan helpen voor komen dat de limiet van 1000 routes worden bereikt] (expressroute-faq's. MD # hoe-vele-voor voegsels-kunnen worden aangekondigd-van-a-vnet-naar-on-premises-on-expressroute-private-peering).
 
 Met **Azure Automation** kunt u de uitvoering van een aangepast Power shell-script automatiseren dat is opgeslagen in een *runbook*. Wanneer u de configuratie in dit artikel gebruikt, bevat het runbook een Power shell-script dat een of meer ExpressRoute-gateway query's doorzoekt. Er wordt een gegevensset verzameld met de resource groep, de ExpressRoute-gateway naam en het aantal netwerk voorvoegsels die on-premises zijn geadverteerd.
 
@@ -48,7 +48,7 @@ Controleer voordat u met de configuratie begint of u aan de volgende criteria he
 
 * De aangepaste waarschuwing die in dit artikel wordt besproken, is een invoeg toepassing voor een betere werking en controle. Het is geen vervanging voor de systeem eigen waarschuwingen in ExpressRoute.
 * Het verzamelen van gegevens voor ExpressRoute-gateways wordt op de achtergrond uitgevoerd. Runtime kan langer duren dan verwacht. Het terugkeer patroon van de werk stroom moet correct zijn ingesteld om taak Queuing te voor komen.
-* Implementaties op basis van scripts of ARM-sjablonen kunnen sneller plaatsvinden dan de aangepaste alarm trigger. Dit kan leiden tot een toename van het aantal netwerk voorvoegsels in de ExpressRoute-gateway boven de limiet van 200 routes.
+* Implementaties op basis van scripts of ARM-sjablonen kunnen sneller plaatsvinden dan de aangepaste alarm trigger. Dit kan leiden tot een toename van het aantal netwerk voorvoegsels in de ExpressRoute-gateway boven de limiet van 1000 routes.
 
 ## <a name="create-and-configure-accounts"></a><a name="accounts"></a>Accounts maken en configureren
 
@@ -409,7 +409,7 @@ Zodra de JSON is geparseerd, wordt de inhoud in *de uitvoer van de* **geparseerd
 
    :::image type="content" source="./media/custom-route-alert-portal/peer-2.png" alt-text="numRoutesPeer2":::
 
-9. De logische voor waarde is waar wanneer een van de twee dynamische variabelen, numRoute1 of numRoute2, groter is dan de drempel waarde. In dit voor beeld wordt de drempel waarde vastgesteld op 160 (80% van de maximum waarde van 200 routes). U kunt de drempel waarde aanpassen aan uw vereisten. Voor consistentie moet de waarde dezelfde waarde zijn die wordt gebruikt in het runbook Power shell-script.
+9. De logische voor waarde is waar wanneer een van de twee dynamische variabelen, numRoute1 of numRoute2, groter is dan de drempel waarde. In dit voor beeld wordt de drempel waarde vastgesteld op 800 (80% van de maximum waarde van 1000 routes). U kunt de drempel waarde aanpassen aan uw vereisten. Voor consistentie moet de waarde dezelfde waarde zijn die wordt gebruikt in het runbook Power shell-script.
 
    :::image type="content" source="./media/custom-route-alert-portal/logic-condition.png" alt-text="Logische voor waarde":::
 

@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0bfca096eb49ee9f1807935de1dac49151cc8ac3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84743759"
 ---
 # <a name="configure-security-alerts-for-azure-resource-roles-in-privileged-identity-management"></a>Beveiligings waarschuwingen configureren voor Azure-resource rollen in Privileged Identity Management
@@ -36,13 +36,13 @@ Selecteer een waarschuwing om een rapport weer te geven met een lijst met de geb
 
 ## <a name="alerts"></a>Waarschuwingen
 
-| Waarschuwing | Ernst | Trigger | Aanbeveling |
+| Waarschuwing | Severity | Trigger | Aanbeveling |
 | --- | --- | --- | --- |
 | **Te veel eigen aren toegewezen aan een resource** |Normaal |Te veel gebruikers hebben de rol van eigenaar. |Controleer de gebruikers in de lijst en wijs een aantal toe aan minder privilegede rollen. |
 | **Er zijn te veel permanente eigen aren toegewezen aan een resource** |Normaal |Te veel gebruikers zijn permanent toegewezen aan een rol. |Controleer de gebruikers in de lijst en wijs een aantal opnieuw toe om te activeren voor het gebruik van rollen. |
 | **Dubbele rol gemaakt** |Normaal |Meerdere rollen hebben hetzelfde criterium. |Gebruik slechts één van deze rollen. |
 
-### <a name="severity"></a>Ernst
+### <a name="severity"></a>Severity
 
 - **Hoog**: vereist direct actie vanwege een beleids schending. 
 - **Medium**: vereist geen onmiddellijke actie, maar signaleert een mogelijke beleids schending.

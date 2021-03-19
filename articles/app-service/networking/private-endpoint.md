@@ -4,17 +4,17 @@ description: Privé verbinden met een web-app met behulp van een persoonlijk Azu
 author: ericgre
 ms.assetid: 2dceac28-1ba6-4904-a15d-9e91d5ee162c
 ms.topic: article
-ms.date: 10/09/2020
+ms.date: 03/16/2021
 ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 8d471b680a6ff97b4b96a9c5f90f5548488dd35f
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: 4de405e07a9ae9d1efb33f2cee3630a1eefdef33
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103563608"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655900"
 ---
 # <a name="using-private-endpoints-for-azure-web-app"></a>Privé-eindpunten voor Azure Web App
 
@@ -117,8 +117,6 @@ Zie [prijzen van Azure Private Link][pricing] voor meer informatie over prijzen.
 Wanneer u de functie Azure gebruikt in een elastisch Premium-abonnement met een privé-eind punt, moet u directe toegang tot het netwerk hebben of u een HTTP 403-fout ontvangen om de functies in azure Web Portal uit te voeren of uit te voeren. Met andere woorden, uw browser moet het persoonlijke eind punt kunnen bereiken om de functie uit te voeren vanuit de Azure-webportal. 
 
 U kunt Maxi maal 100 persoonlijke eind punten verbinden met een bepaalde web-app.
-
-Sleuven kunnen geen persoonlijk eind punt gebruiken.
 
 De functionaliteit voor fout opsporing op afstand is niet beschikbaar wanneer het persoonlijke eind punt is ingeschakeld voor de web-app. De aanbeveling is om de code te implementeren in een sleuf en deze op afstand op te sporen.
 

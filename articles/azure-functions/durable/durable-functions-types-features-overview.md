@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 35ef9d8731e169e890f5985ce01215fec5d6e3de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84697704"
 ---
 # <a name="durable-functions-types-and-features"></a>Durable Functions typen en-functies
@@ -23,7 +23,7 @@ Er zijn momenteel vier duurzame functie typen in Azure Functions: Activity, orch
 Orchestrator-functies beschrijven hoe acties worden uitgevoerd en de volg orde waarin acties worden uitgevoerd. Met Orchestrator-functies wordt de indeling in code (C# of Java script) beschreven, zoals weer gegeven in [Durable functions toepassings patronen](durable-functions-overview.md#application-patterns). Een indeling kan een groot aantal verschillende typen acties hebben, waaronder [activiteiten functies](#activity-functions), [Sub-](durable-functions-orchestrations.md#sub-orchestrations)indelingen, [wacht op externe gebeurtenissen](durable-functions-orchestrations.md#external-events), [http](durable-functions-http-features.md)en [timers](durable-functions-orchestrations.md#durable-timers). Orchestrator-functies kunnen ook communiceren met [entiteits functies](#entity-functions).
 
 > [!NOTE]
-> Orchestrator-functies worden geschreven met behulp van normale code, maar er zijn strikte vereisten voor het schrijven van de code. Met name de functie code van Orchestrator moet *deterministisch*zijn. Het volgen van deze determinism-vereisten kan ertoe leiden dat Orchestrator-functies niet goed worden uitgevoerd. Gedetailleerde informatie over deze vereisten en hoe u deze kunt omzeilen, vindt u in het onderwerp [code beperkingen](durable-functions-code-constraints.md) .
+> Orchestrator-functies worden geschreven met behulp van normale code, maar er zijn strikte vereisten voor het schrijven van de code. Met name de functie code van Orchestrator moet *deterministisch* zijn. Het volgen van deze determinism-vereisten kan ertoe leiden dat Orchestrator-functies niet goed worden uitgevoerd. Gedetailleerde informatie over deze vereisten en hoe u deze kunt omzeilen, vindt u in het onderwerp [code beperkingen](durable-functions-code-constraints.md) .
 
 Zie het artikel over [duurzame Orchestrations](durable-functions-orchestrations.md) voor meer gedetailleerde informatie over Orchestrator-functies en de bijbehorende functies.
 
@@ -52,7 +52,7 @@ Zie het artikel [duurzame entities](durable-functions-entities.md) voor meer inf
 
 ## <a name="client-functions"></a>Client functies
 
-Orchestrator-functies worden geactiveerd door een binding van een [Orchestration-trigger](durable-functions-bindings.md#orchestration-trigger) en entiteits functies worden geactiveerd door een binding van een [entiteits trigger](durable-functions-bindings.md#entity-trigger). Beide triggers werken door te reageren op berichten die in een [taak hub](durable-functions-task-hubs.md)in de wachtrij worden geplaatst. De belangrijkste manier om deze berichten te leveren is door gebruik te maken van een [Orchestrator-client binding](durable-functions-bindings.md#orchestration-client) of een [entiteit-client binding](durable-functions-bindings.md#entity-client) vanuit een *client functie*. Een niet-Orchestrator-functie kan een *client functie*zijn. U kunt bijvoorbeeld de Orchestrator activeren vanuit een door HTTP geactiveerde functie, een door Azure Event hub geactiveerde functie, enzovoort. Wat een functie vormt een *client functie* is het gebruik van de duurzame client-uitvoer binding.
+Orchestrator-functies worden geactiveerd door een binding van een [Orchestration-trigger](durable-functions-bindings.md#orchestration-trigger) en entiteits functies worden geactiveerd door een binding van een [entiteits trigger](durable-functions-bindings.md#entity-trigger). Beide triggers werken door te reageren op berichten die in een [taak hub](durable-functions-task-hubs.md)in de wachtrij worden geplaatst. De belangrijkste manier om deze berichten te leveren is door gebruik te maken van een [Orchestrator-client binding](durable-functions-bindings.md#orchestration-client) of een [entiteit-client binding](durable-functions-bindings.md#entity-client) vanuit een *client functie*. Een niet-Orchestrator-functie kan een *client functie* zijn. U kunt bijvoorbeeld de Orchestrator activeren vanuit een door HTTP geactiveerde functie, een door Azure Event hub geactiveerde functie, enzovoort. Wat een functie vormt een *client functie* is het gebruik van de duurzame client-uitvoer binding.
 
 > [!NOTE]
 > In tegens telling tot andere functie typen kunnen Orchestrator-en entiteits functies niet rechtstreeks worden geactiveerd met behulp van de knoppen in azure Portal. Als u een functie van Orchestrator of entiteit wilt testen in azure Portal, moet u in plaats daarvan een *client functie* uitvoeren waarmee een Orchestrator-of entiteit functie wordt gestart als onderdeel van de implementatie. Voor de eenvoudigste test ervaring wordt een *hand matige activerings* functie aanbevolen.

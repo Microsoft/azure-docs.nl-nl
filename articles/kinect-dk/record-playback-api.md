@@ -8,10 +8,10 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 keywords: kinect, azure, sensor, SDK, depth, RGB, record, afspelen, Matroska, MKV
 ms.openlocfilehash: fe403f314c1df415537d090433f34627eb1249e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85277270"
 ---
 # <a name="the-azure-kinect-playback-api"></a>De Azure Kinect Play-API
@@ -134,7 +134,7 @@ Hieronder ziet u een lijst met alle standaard tags die in een opname bestand kun
 
 Als een tag niet bestaat, wordt ervan uitgegaan dat deze de standaard waarde heeft.
 
-| Tagnaam                     | Standaardwaarde      | [`k4a_record_configuration_t`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/structk4a__record__configuration__t.html) Aan | Opmerkingen     |
+| Tagnaam                     | Standaardwaarde      | [`k4a_record_configuration_t`](https://microsoft.github.io/Azure-Kinect-Sensor-SDK/master/structk4a__record__configuration__t.html) Aan | Notities     |
 |------------------------------|--------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | `K4A_COLOR_MODE`             | Office              | `color_format` / `color_resolution`  | Mogelijke waarden: ' OFF ', ' MJPG_1080P ', ' NV12_720P ', ' YUY2_720P ' enzovoort                                      |
 | `K4A_DEPTH_MODE`             | Office              | `depth_mode` / `depth_track_enabled` | Mogelijke waarden: "OFF," NFOV_UNBINNED "," PASSIVE_IR "enzovoort                                                |

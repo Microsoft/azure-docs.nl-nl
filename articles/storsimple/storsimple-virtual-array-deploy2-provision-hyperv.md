@@ -16,10 +16,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: d6dfc95820e911781ffa88e2207601703f165839
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87070597"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-hyper-v"></a>StorSimple Virtual array implementeren-inrichten in Hyper-V
@@ -193,7 +193,7 @@ Voer de volgende stappen uit om uw virtuele matrix te starten en er verbinding m
     `Set-HcsIpAddress –Name Ethernet –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1`
 
     ![Scherm afbeelding met een console venster met de uitvoer van de Get-Help Set-HcsIpAddress opdracht en het juiste gebruik van de Set-HcsIpAddress opdracht.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image30.png)
-9. Nadat de initiële installatie voltooid is en het apparaat is opgestart, ziet u de bannertekst van het apparaat. Noteer het IP-adres en de URL die wordt weergegeven in de bannertekst om het apparaat te beheren. Gebruik dit IP-adres om verbinding te maken met de Web-UI van uw virtuele matrix en de lokale installatie en registratie te volt ooien.
+9. Wanneer de initiële installatie is voltooid en het apparaat is opgestart, ziet u de bannertekst van het apparaat. Noteer het IP-adres en de URL die in de bannertekst worden weergegeven om het apparaat te beheren. Gebruik dit IP-adres om verbinding te maken met de Web-UI van uw virtuele matrix en de lokale installatie en registratie te volt ooien.
 
    ![Scherm opname van een console venster met de banner tekst van het apparaat. Deze tekst bevat het IP-adres en de URL van het apparaat.](./media/storsimple-virtual-array-deploy2-provision-hyperv/image31m.png)
 10. Beschrijving Voer deze stap alleen uit als u uw apparaat in de Government Cloud implementeert. U schakelt nu de FIPS-modus (Verenigde Staten Federal Information Processing Standard) op het apparaat in. De FIPS 140-standaard definieert cryptografische algoritmen die zijn goedgekeurd voor gebruik door Amerikaanse Federal Government-computer systemen voor de beveiliging van gevoelige gegevens.

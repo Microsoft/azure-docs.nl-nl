@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
 ms.openlocfilehash: a8172b63039d2d247f30fca4099254cb8fca068e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87073415"
 ---
 # <a name="microsoftstoragemultistorageaccountcombo-ui-element"></a>Micro soft. storage. MultiStorageAccountCombo UI-element
@@ -60,9 +60,9 @@ Een groep besturings elementen voor het maken van verschillende opslag accounts 
 
 ## <a name="remarks"></a>Opmerkingen
 
-- De waarde voor `defaultValue.prefix` wordt samengevoegd met een of meer gehele getallen om de volg orde van de namen van opslag accounts te genereren. Als bijvoorbeeld `defaultValue.prefix` **sa** is en `count` **2**is, worden de namen van opslag accounts **SA1** en **sa2** gegenereerd. De namen van gegenereerde opslag accounts worden automatisch voor uniekheid gevalideerd.
+- De waarde voor `defaultValue.prefix` wordt samengevoegd met een of meer gehele getallen om de volg orde van de namen van opslag accounts te genereren. Als bijvoorbeeld `defaultValue.prefix` **sa** is en `count` **2** is, worden de namen van opslag accounts **SA1** en **sa2** gegenereerd. De namen van gegenereerde opslag accounts worden automatisch voor uniekheid gevalideerd.
 - De namen van de opslag accounts worden gegenereerd lexicographically op basis van `count` . Als bijvoorbeeld `count` 10 is, wordt de naam van het opslag account end met gehele getallen van twee cijfers (01, 02, 03).
-- De standaard waarde voor `defaultValue.prefix` is **Null**en voor `defaultValue.type` is **Premium_LRS**.
+- De standaard waarde voor `defaultValue.prefix` is **Null** en voor `defaultValue.type` is **Premium_LRS**.
 - Elk type dat niet is opgegeven in `constraints.allowedTypes` , is verborgen en elk type dat niet is opgegeven in `constraints.excludedTypes` wordt weer gegeven. `constraints.allowedTypes` en `constraints.excludedTypes` zijn beide optioneel, maar kunnen niet tegelijkertijd worden gebruikt.
 - Naast het genereren van opslag accountnamen, `count` wordt gebruikt om de juiste vermenigvuldiger voor het element in te stellen. Het ondersteunt een statische waarde, zoals **2**, of een dynamische waarde van een ander element, zoals `[steps('step1').storageAccountCount]` . De standaard waarde is **1**.
 

@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/01/2019
 ms.openlocfilehash: c56c31bb6f56efb10808ce25b6b232089391e831
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84712442"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Voorbeelden van code voor het bewerken van gegevens voor Azure Logic Apps
@@ -23,7 +23,7 @@ Op basis van JavaScript Object Notation (JSON)-standaarden worden deze actie def
 
 ## <a name="compose"></a>Opstellen
 
-Als u het [voor beeld voor het **opstellen** ](../logic-apps/logic-apps-perform-data-operations.md#compose-action)van een actie wilt uitproberen, kunt u de volgende actie definities gebruiken:
+Als u het [voor beeld voor het **opstellen**](../logic-apps/logic-apps-perform-data-operations.md#compose-action)van een actie wilt uitproberen, kunt u de volgende actie definities gebruiken:
 
 ```json
 "actions": {
@@ -93,7 +93,7 @@ Als u het [voor beeld voor het **opstellen** ](../logic-apps/logic-apps-perform-
 
 ## <a name="create-csv-table"></a>CSV-tabel maken
 
-Als u het [ **Create CSV table** voor beeld](../logic-apps/logic-apps-perform-data-operations.md#create-csv-table-action)van een CSV-tabel wilt maken, kunt u de volgende actie definities gebruiken:
+Als u het [  voor beeld](../logic-apps/logic-apps-perform-data-operations.md#create-csv-table-action)van een CSV-tabel wilt maken, kunt u de volgende actie definities gebruiken:
 
 ```json
 "actions": {
@@ -138,7 +138,7 @@ Als u het [ **Create CSV table** voor beeld](../logic-apps/logic-apps-perform-da
 
 ## <a name="create-html-table"></a>HTML-tabel maken
 
-Als u het [voor beeld van een **HTML-tabel wilt maken** ](../logic-apps/logic-apps-perform-data-operations.md#create-html-table-action), kunt u de volgende actie definities gebruiken:
+Als u het [voor beeld van een **HTML-tabel wilt maken**](../logic-apps/logic-apps-perform-data-operations.md#create-html-table-action), kunt u de volgende actie definities gebruiken:
 
 ```json
 "actions": {
@@ -183,7 +183,7 @@ Als u het [voor beeld van een **HTML-tabel wilt maken** ](../logic-apps/logic-ap
 
 ## <a name="filter-array"></a>Matrix filteren
 
-Als u het [voor beeld van een matrix voor de **filter array** ](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action)wilt proberen, kunt u de volgende actie definities gebruiken:
+Als u het [voor beeld van een matrix voor de **filter array**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action)wilt proberen, kunt u de volgende actie definities gebruiken:
 
 ```json
 "actions": {
@@ -265,7 +265,7 @@ Als u het [voor beeld van de **deelname** actie](../logic-apps/logic-apps-perfor
 
 ## <a name="parse-json"></a>JSON parseren
 
-Als u het [voor beeld van JSON-actie **parseren** ](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action)wilt proberen, kunt u de volgende actie definities gebruiken:
+Als u het [voor beeld van JSON-actie **parseren**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action)wilt proberen, kunt u de volgende actie definities gebruiken:
 
 ```json
 "actions": {

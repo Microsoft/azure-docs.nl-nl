@@ -7,10 +7,10 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/26/2017
 ms.openlocfilehash: 3fe98160cc10eb3607b8309a9a263d63380dcfb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89073213"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Aangepaste Api's maken die u kunt aanroepen vanuit Azure Logic Apps
@@ -163,7 +163,7 @@ Een *polling trigger* fungeert zoals de [polling-actie](#async-pattern) die eerd
 
 Hier vindt u specifieke stappen voor een polling trigger, zoals beschreven in het perspectief van de API:
 
-| Hebt u nieuwe gegevens of gebeurtenissen gevonden?  | API-antwoord | 
+| Hebt u nieuwe gegevens of gebeurtenissen gevonden?  | API-reactie | 
 | ------------------------- | ------------ |
 | Gevonden | Een HTTP- `200 OK` status retour neren met de nettolading van het antwoord (invoer voor de volgende stap). <br/>Dit antwoord maakt een exemplaar van een logische app en start de werk stroom. | 
 | Niet gevonden | Een HTTP- `202 ACCEPTED` status retour neren met een `location` koptekst en een `retry-after` header. <br/>Voor triggers moet de `location` header ook een `triggerState` query parameter bevatten, die meestal een ' tijds tempel ' is. Uw API kan deze id gebruiken om de laatste keer dat de logische app werd geactiveerd, bij te houden. | 
@@ -171,13 +171,13 @@ Hier vindt u specifieke stappen voor een polling trigger, zoals beschreven in he
 
 Als u bijvoorbeeld uw service regel matig wilt controleren op nieuwe bestanden, kunt u een polling trigger maken die het volgende gedrag heeft:
 
-| Aanvraag bevat `triggerState` ? | API-antwoord | 
+| Aanvraag bevat `triggerState` ? | API-reactie | 
 | -------------------------------- | -------------| 
 | Nee | Retour neer een HTTP- `202 ACCEPTED` status plus een `location` header met `triggerState` ingesteld op de huidige tijd en het `retry-after` interval tot 15 seconden. | 
 | Ja | Controleer uw service op bestanden die worden toegevoegd na de `DateTime` for `triggerState` . | 
 ||| 
 
-| Aantal gevonden bestanden | API-antwoord | 
+| Aantal gevonden bestanden | API-reactie | 
 | --------------------- | -------------| 
 | Eén bestand | Retour neer een HTTP- `200 OK` status en de nettolading van de inhoud, werk de `triggerState` `DateTime` voor het geretourneerde bestand bij en stel het `retry-after` interval in op 15 seconden. | 
 | Meerdere bestanden | Retour neer één bestand per keer en een HTTP- `200 OK` status, update en `triggerState` Stel het `retry-after` interval in op 0 seconden. </br>Met deze stappen kan de engine weten dat er meer gegevens beschikbaar zijn en dat de engine onmiddellijk de gegevens van de URL in de header moet aanvragen `location` . | 

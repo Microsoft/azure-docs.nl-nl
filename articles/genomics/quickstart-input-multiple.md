@@ -10,15 +10,15 @@ ms.author: grhuynh
 ms.topic: conceptual
 ms.date: 02/05/2018
 ms.openlocfilehash: b426015906a8e17674123c0c3ad2fccb9c43798f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "72248572"
 ---
 # <a name="submit-a-workflow-using-multiple-inputs-from-the-same-sample"></a>Een werkstroom verzenden met behulp van meerdere invoergegevens uit hetzelfde voorbeeld
 
-In dit artikel wordt beschreven hoe u een werk stroom verzendt naar de Microsoft Genomics-service als uw invoer bestand meerdere FASTQ-of BAM-bestanden **uit hetzelfde voor beeld**bevat. Als u bijvoorbeeld **hetzelfde voorbeeld** in meerdere stroken op de sequencer uitvoert, produceert de sequencer mogelijk een FASTQ-bestandenpaar voor elke strook. In plaats van dat deze FASTQ-bestanden voorafgaand aan alignment en variant calling worden samengevoegd, kunt u al deze invoer rechtstreeks verzenden naar de `msgen`-client. De uitvoer van de `msgen`-client zou een **één enkele set** met bestanden moeten zijn, waaronder een .bam-, .bai- en .vcf-bestand. 
+In dit artikel wordt beschreven hoe u een werk stroom verzendt naar de Microsoft Genomics-service als uw invoer bestand meerdere FASTQ-of BAM-bestanden **uit hetzelfde voor beeld** bevat. Als u bijvoorbeeld **hetzelfde voorbeeld** in meerdere stroken op de sequencer uitvoert, produceert de sequencer mogelijk een FASTQ-bestandenpaar voor elke strook. In plaats van dat deze FASTQ-bestanden voorafgaand aan alignment en variant calling worden samengevoegd, kunt u al deze invoer rechtstreeks verzenden naar de `msgen`-client. De uitvoer van de `msgen`-client zou een **één enkele set** met bestanden moeten zijn, waaronder een .bam-, .bai- en .vcf-bestand. 
 
 Houd er echter rekening mee dat u FASTQ- en BAM-bestanden **niet** kunt combineren in dezelfde verzending. Bovendien is het **niet** mogelijk om meerdere FASTQ- of BAM-bestanden van meerdere personen te verzenden. 
 
@@ -28,7 +28,7 @@ In dit artikel wordt ervan uitgegaan dat u de `msgen`-client al hebt geïnstalle
 ## <a name="multiple-bam-files"></a>Meerdere BAM-bestanden
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Uw invoerbestanden uploaden naar Azure Storage
-Stel, u hebt meerdere BAM-bestanden als invoer, *reads.bam*, *additional_reads.bam* en *yet_more_reads.bam*, en u hebt deze geüpload naar uw opslagaccount *myaccount* in Azure. U hebt de URL van de API en uw toegangssleutel. U wilt de uitvoer in **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** hebben.
+Stel, u hebt meerdere BAM-bestanden als invoer, *reads.bam*, *additional_reads.bam* en *yet_more_reads.bam*, en u hebt deze geüpload naar uw opslagaccount *myaccount* in Azure. U hebt de URL van de API en uw toegangssleutel. U wilt de uitvoer in **https://<span></span>myaccount.blob.core <span></span>.windows <span></span>.net <span></span>/outputs <span></span>** hebben.
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>De taak naar de `msgen`-client verzenden 
@@ -91,7 +91,7 @@ Verzend het `config.txt`-bestand met deze aanroep: `msgen submit -f config.txt`
 ## <a name="multiple-paired-fastq-files"></a>Meerdere gekoppelde FASTQ-bestanden
 
 ### <a name="upload-your-input-files-to-azure-storage"></a>Uw invoerbestanden uploaden naar Azure Storage
-Stel, u hebt meerdere gekoppelde FASTQ-bestanden als invoer, *reads_1.fq.gz* en *reads_2.fq.gz*, *additional_reads_1.fq.gz* en *additional_ reads_2.fq.GZ*, en *yet_more_reads_1.fq.gz* en *yet_more_reads_2.fq.gz*. U hebt deze geüpload naar uw opslagaccount *myaccount* in Azure, en u hebt de URL van de API en uw toegangssleutel. U wilt de uitvoer in **https://<span></span>myaccount.blob.core<span></span>.windows<span></span>.net<span></span>/outputs<span></span>** hebben.
+Stel, u hebt meerdere gekoppelde FASTQ-bestanden als invoer, *reads_1.fq.gz* en *reads_2.fq.gz*, *additional_reads_1.fq.gz* en *additional_ reads_2.fq.GZ*, en *yet_more_reads_1.fq.gz* en *yet_more_reads_2.fq.gz*. U hebt deze geüpload naar uw opslagaccount *myaccount* in Azure, en u hebt de URL van de API en uw toegangssleutel. U wilt de uitvoer in **https://<span></span>myaccount.blob.core <span></span>.windows <span></span>.net <span></span>/outputs <span></span>** hebben.
 
 
 ### <a name="submit-your-job-to-the-msgen-client"></a>De taak naar de `msgen`-client verzenden 

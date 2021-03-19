@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 7cff009d5d1e187e8d0330fadca530b57b3e3d21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88935208"
 ---
 # <a name="import-data-wizard-for-azure-cognitive-search"></a>De wizard gegevens importeren voor Azure Cognitive Search
@@ -105,23 +105,23 @@ De wizard genereert een onvolledige index, die wordt gevuld met documenten die z
 
 1. Is het gegevens type dat geschikt is voor de inkomende gegevens? Azure Cognitive Search ondersteunt de [gegevens typen van de Entity Data Model (EDM)](/rest/api/searchservice/supported-data-types). Voor Azure SQL-gegevens is er een [toewijzings grafiek](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#TypeMapping) die gelijkwaardige waarden bevat. Zie [veld Toewijzingen en trans formaties](search-indexer-field-mappings.md)voor meer achtergrond informatie.
 
-1. Hebt u één veld dat kan dienen als de *sleutel*? Dit veld moet EDM. String zijn en moet een unieke identificatie vormen voor een document. Voor relationele gegevens kan deze worden toegewezen aan een primaire sleutel. Voor blobs is dit mogelijk de `metadata-storage-path` . Als veld waarden spaties of streepjes bevatten, moet u de optie **Base-64 Codeer sleutel** instellen in de stap **een Indexeer functie maken** onder **Geavanceerde opties**om de validatie controle voor deze tekens te onderdrukken.
+1. Hebt u één veld dat kan dienen als de *sleutel*? Dit veld moet EDM. String zijn en moet een unieke identificatie vormen voor een document. Voor relationele gegevens kan deze worden toegewezen aan een primaire sleutel. Voor blobs is dit mogelijk de `metadata-storage-path` . Als veld waarden spaties of streepjes bevatten, moet u de optie **Base-64 Codeer sleutel** instellen in de stap **een Indexeer functie maken** onder **Geavanceerde opties** om de validatie controle voor deze tekens te onderdrukken.
 
 1. Stel kenmerken in om te bepalen hoe dit veld wordt gebruikt in een index. 
 
    Neem even de tijd met deze stap omdat de kenmerken de fysieke expressie van velden in de index bepalen. Als u later de kenmerken wilt wijzigen, zelfs via een programma, moet u de index bijna altijd verwijderen en opnieuw bouwen. Kern kenmerken, zoals **doorzoekbaar** en **ophalen** , hebben een [Verwaarloos bare invloed op de opslag](search-what-is-an-index.md#index-size). Door filters in te scha kelen en Voorst Ellen te gebruiken, worden de opslag vereisten verhoogd. 
    
-   + **Doorzoekbaar** maakt zoeken in volledige tekst mogelijk. Elk veld dat wordt gebruikt in vrije-vorm query's of in query-expressies moet dit kenmerk hebben. Er worden omgekeerde indexen gemaakt voor elk veld dat u als **doorzoekbaar**markeert.
+   + **Doorzoekbaar** maakt zoeken in volledige tekst mogelijk. Elk veld dat wordt gebruikt in vrije-vorm query's of in query-expressies moet dit kenmerk hebben. Er worden omgekeerde indexen gemaakt voor elk veld dat u als **doorzoekbaar** markeert.
 
    + **Ophalenable** retourneert het veld in de zoek resultaten. Elk veld dat inhoud aan Zoek resultaten levert, moet dit kenmerk hebben. Het instellen van dit veld heeft geen aanzienlijke gevolgen voor de index grootte.
 
    + Met **filterable** kan worden verwezen naar het veld in filter expressies. Elk veld dat in een **$filter**  expressie wordt gebruikt, moet dit kenmerk hebben. Filter expressies zijn voor exacte overeenkomsten. Omdat tekst teken reeksen intact blijven, is extra opslag ruimte vereist voor de Verbatim-inhoud.
 
-   + **Facetable** schakelt het veld in voor facet navigatie. Alleen velden die ook als **filterbaar** zijn gemarkeerd, kunnen als **facetbaar**worden gemarkeerd.
+   + **Facetable** schakelt het veld in voor facet navigatie. Alleen velden die ook als **filterbaar** zijn gemarkeerd, kunnen als **facetbaar** worden gemarkeerd.
 
    + Met **sorteerbaar** kunt u het veld in een sortering gebruiken. Elk veld dat in een **$OrderBy** expressie wordt gebruikt, moet dit kenmerk hebben.
 
-1. Hebt u [lexicale analyse](search-lucene-query-architecture.md#stage-2-lexical-analysis)nodig? Voor EDM. String-velden die **doorzoekbaar**zijn, kunt u een **Analyzer** instellen als u de taal uitgebreid indexeren en query's wilt uitvoeren. 
+1. Hebt u [lexicale analyse](search-lucene-query-architecture.md#stage-2-lexical-analysis)nodig? Voor EDM. String-velden die **doorzoekbaar** zijn, kunt u een **Analyzer** instellen als u de taal uitgebreid indexeren en query's wilt uitvoeren. 
 
    De standaard waarde is *standaard lucene* , maar u kunt *micro soft English* kiezen als u de analyse functie van micro soft voor geavanceerde lexicale verwerking wilt gebruiken, zoals het oplossen van onregelmatige zelfstandig-en verbale formulieren. Alleen taal analyse functies kunnen worden opgegeven in de portal. Het gebruik van een aangepaste analyse functie of een niet-taal analyse zoals sleutel woord, patroon, enzovoort moet via een programma worden uitgevoerd. Zie voor meer informatie over analyse functies [taal analysen toevoegen](search-language-support.md).
 

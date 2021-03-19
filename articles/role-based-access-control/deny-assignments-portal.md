@@ -15,10 +15,10 @@ ms.date: 06/10/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 92046b3a944a747ce76d2426855eec7b6bc2cd70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84790243"
 ---
 # <a name="list-azure-deny-assignments-using-the-azure-portal"></a>Azure deny-toewijzingen weer geven met behulp van de Azure Portal
@@ -42,7 +42,7 @@ Volg deze stappen om toewijzingen weigeren te vermelden in het bereik van het ab
 
 1. Klik op de beheer groep of het abonnement dat u wilt weer geven.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op het tabblad **toewijzingen weigeren** (of klik op de knop **weer geven** op de tegel toewijzingen weigeren weer geven).
 
@@ -63,7 +63,7 @@ Volg deze stappen om toewijzingen weigeren te vermelden in het bereik van het ab
     | **Uitgesloten principals** | Of er beveiligings-principals zijn die zijn uitgesloten van de weigerings toewijzing. |
     | **Is niet van toepassing op onderliggende items** | Hiermee wordt aangegeven of de weigerings toewijzing wordt overgenomen door subbereiken. |
     | **Systeem beveiligd** | Hiermee wordt aangegeven of de weigerings toewijzing wordt beheerd door Azure. Op dit moment is altijd ja. |
-    | **Bereik** | Beheer groep, abonnement, resource groep of resource. |
+    | **Scope** | Beheer groep, abonnement, resource groep of resource. |
 
 1. Voeg een vinkje toe aan een van de ingeschakelde items en klik vervolgens op **OK** om de geselecteerde kolommen weer te geven.
 
@@ -86,7 +86,7 @@ Volg deze stappen om aanvullende informatie over een weiger toewijzing weer te g
 
     De door **het systeem gedefinieerde Principal** vertegenwoordigt alle gebruikers, groepen, service-principals en beheerde identiteiten in een Azure AD-adres lijst.
 
-1. Klik op **geweigerde machtigingen**om een lijst weer te geven met de machtigingen die worden geweigerd.
+1. Klik op **geweigerde machtigingen** om een lijst weer te geven met de machtigingen die worden geweigerd.
 
     ![Machtigingen voor geweigerde toewijzing weigeren](./media/deny-assignments-portal/deny-assignment-denied-permissions.png)
 
@@ -101,7 +101,7 @@ Volg deze stappen om aanvullende informatie over een weiger toewijzing weer te g
 
     - Alle opslag bewerkingen op het gegevens vlak worden geweigerd, behalve voor reken bewerkingen.
 
-1. Klik op **Eigenschappen**om de eigenschappen voor een weiger toewijzing weer te geven.
+1. Klik op **Eigenschappen** om de eigenschappen voor een weiger toewijzing weer te geven.
 
     ![Toewijzing weigeren-eigenschappen](./media/deny-assignments-portal/deny-assignment-properties.png)
 

@@ -9,10 +9,10 @@ ms.date: 08/07/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 4fdb891d668d99644d8a9ed9c15d158e65d53ba5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "72793139"
 ---
 Voor het beveiligen van een Internet of Things IoT-infra structuur is een strenge, diep gaande strategie vereist. Deze strategie vereist dat u gegevens in de Cloud beveiligt, gegevens integriteit beschermt tijdens de overdracht via het open bare Internet en apparaten veilig inricht. Elke laag bouwt over hogere beveiligings garanties in de algehele infra structuur.
@@ -47,7 +47,7 @@ Hier volgen de aanbevolen procedures voor IoT-hardwarefabrikanten en hardware in
 
 Hier volgen de aanbevolen procedures voor de ontwikkel aars van IoT-oplossingen:
 
-* **Volg de veilige methodologie**voor het ontwikkelen van software: het ontwikkelen van beveiligde software vereist dat u op de hoogte bent van de beveiliging, van het begin van het project tot de implementatie, testen en implementatie. De keuze van platformen, talen en hulpprogram ma's is van invloed op deze methodologie. De levens cyclus van micro soft voor beveiligings ontwikkeling biedt een stapsgewijze benadering van het bouwen van beveiligde software.
+* **Volg de veilige methodologie** voor het ontwikkelen van software: het ontwikkelen van beveiligde software vereist dat u op de hoogte bent van de beveiliging, van het begin van het project tot de implementatie, testen en implementatie. De keuze van platformen, talen en hulpprogram ma's is van invloed op deze methodologie. De levens cyclus van micro soft voor beveiligings ontwikkeling biedt een stapsgewijze benadering van het bouwen van beveiligde software.
 
 * **Kies open source software with Care**: open source software biedt u de mogelijkheid om snel oplossingen te ontwikkelen. Houd bij het kiezen van open-source software rekening met het activiteiten niveau van de community voor elk open source-onderdeel. Een actieve community zorgt ervoor dat de software wordt ondersteund en dat er problemen worden gedetecteerd en opgelost. Het is ook mogelijk dat een onzichtbaar en inactief open-source software project niet wordt ondersteund en dat er waarschijnlijk geen problemen worden gedetecteerd.
 

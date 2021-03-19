@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 62f4b6c76cafab5c6cc46a73851abce1e38551a1
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 11ce7b3da0d33fbe7f1229cbc00246da00858ec5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101677727"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598215"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen
 
@@ -158,6 +158,7 @@ Ga als volgt te werk op het scherm **Bronnen registreren (Azure SQL Database)** 
 
 > [!NOTE]
 > Als u uw scan verwijdert, worden uw assets niet verwijderd uit eerdere Azure SQL Database-scans.
+> De Asset wordt niet meer bijgewerkt met schema wijzigingen als de bron tabel wordt gewijzigd en u de bron tabel opnieuw scant nadat u de beschrijving op het tabblad schema van controle sfeer liggen hebt bewerkt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

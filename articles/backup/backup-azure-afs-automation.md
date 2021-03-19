@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het maken van een back-up va
 ms.topic: conceptual
 ms.date: 08/20/2019
 ms.openlocfilehash: 948931764769bc967b88e7942b7e8384b0f93dff
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87077000"
 ---
 # <a name="back-up-an-azure-file-share-by-using-powershell"></a>Een back-up van een Azure-bestands share maken met behulp van Power shell
@@ -129,7 +129,7 @@ Voor veel Azure Backup-cmdlets is het Recovery Services kluis-object vereist als
 
 De context van de kluis is het type gegevens dat in de kluis wordt beveiligd. Stel deze in met behulp van [set-AzRecoveryServicesVaultContext](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultcontext). Nadat de context is ingesteld, is deze van toepassing op alle volgende cmdlets.
 
-In het volgende voor beeld wordt de kluis context voor **testvault**ingesteld:
+In het volgende voor beeld wordt de kluis context voor **testvault** ingesteld:
 
 ```powershell
 Get-AzRecoveryServicesVault -Name "testvault" | Set-AzRecoveryServicesVaultContext
@@ -213,7 +213,7 @@ dailyafs             AzureFiles         AzureStorage         1/10/2018 12:30:00 
 
 #### <a name="retrieve-a-specific-policy"></a>Een specifiek beleid ophalen
 
-Met het volgende beleid wordt het back-upbeleid met de naam **dailyafs**opgehaald:
+Met het volgende beleid wordt het back-upbeleid met de naam **dailyafs** opgehaald:
 
 ```powershell
 $afsPol =  Get-AzRecoveryServicesBackupProtectionPolicy -Name "dailyafs"
@@ -223,7 +223,7 @@ $afsPol =  Get-AzRecoveryServicesBackupProtectionPolicy -Name "dailyafs"
 
 Schakel beveiliging in met [Enable-AzRecoveryServicesBackupProtection](/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection). Nadat het beleid is gekoppeld aan de kluis, worden back-ups geactiveerd volgens het beleids schema.
 
-In het volgende voor beeld wordt de beveiliging van de Azure-bestands share **testAzureFileShare** in het opslag account **testStorageAcct**ingeschakeld met het beleid **dailyafs**:
+In het volgende voor beeld wordt de beveiliging van de Azure-bestands share **testAzureFileShare** in het opslag account **testStorageAcct** ingeschakeld met het beleid **dailyafs**:
 
 ```powershell
 Enable-AzRecoveryServicesBackupProtection -StorageAccountName "testStorageAcct" -Name "testAzureFS" -Policy $afsPol

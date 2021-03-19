@@ -4,10 +4,10 @@ description: Verbeter de prestaties door Azure Service Bus berichten vooraf op t
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 05e23b0590f0c04171efda8fb561b4c2664ed096
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85341044"
 ---
 # <a name="prefetch-azure-service-bus-messages"></a>Azure Service Bus-berichten prefetch
@@ -18,7 +18,7 @@ Een enkele eerste [Receive](/dotnet/api/microsoft.servicebus.messaging.queueclie
 
 ## <a name="enable-prefetch"></a>Prefetch inschakelen
 
-Met .NET schakelt u de functie prefetch in door de eigenschap [PrefetchCount](/dotnet/api/microsoft.azure.servicebus.queueclient.prefetchcount#Microsoft_Azure_ServiceBus_QueueClient_PrefetchCount) van een **MessageReceiver**, **QueueClient**of **SubscriptionClient** in te stellen op een getal dat groter is dan nul. Als u de waarde instelt op nul, wordt prefetch uitgeschakeld.
+Met .NET schakelt u de functie prefetch in door de eigenschap [PrefetchCount](/dotnet/api/microsoft.azure.servicebus.queueclient.prefetchcount#Microsoft_Azure_ServiceBus_QueueClient_PrefetchCount) van een **MessageReceiver**, **QueueClient** of **SubscriptionClient** in te stellen op een getal dat groter is dan nul. Als u de waarde instelt op nul, wordt prefetch uitgeschakeld.
 
 U kunt deze instelling eenvoudig toevoegen aan de receive-zijde van de instellingen voor [QueuesGettingStarted](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/QueuesGettingStarted) of [ReceiveLoop](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/ReceiveLoop) samples om het effect in die contexten te bekijken.
 
@@ -30,7 +30,7 @@ Prefetch werkt ook op dezelfde manier met de [OnMessage](/dotnet/api/microsoft.s
 
 Prefetch versnelt de berichten stroom door een bericht direct beschikbaar te stellen voor lokaal ophalen wanneer en voordat de toepassing er een vraagt. Deze door Voer is het resultaat van een trans actie die de auteur van de toepassing expliciet moet maken:
 
-Met de [ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode) -ontvangst modus zijn alle berichten die zijn verkregen in de prefetch-buffer niet meer beschikbaar in de wachtrij en zich alleen in de buffer van de prefetch in het geheugen bevinden, totdat ze worden ontvangen in de toepassing via de OnMessageAsync-api's **Receive** / **ReceiveAsync** of **OnMessage** / **OnMessageAsync** . Als de toepassing wordt beëindigd voordat de berichten in de toepassing worden ontvangen, worden deze berichten permanent verloren gegaan.
+Met de [ReceiveAndDelete](/dotnet/api/microsoft.servicebus.messaging.receivemode) -ontvangst modus zijn alle berichten die zijn verkregen in de prefetch-buffer niet meer beschikbaar in de wachtrij en zich alleen in de buffer van de prefetch in het geheugen bevinden, totdat ze worden ontvangen in de toepassing via de OnMessageAsync-api's **Receive** / **ReceiveAsync** of **OnMessage** /  . Als de toepassing wordt beëindigd voordat de berichten in de toepassing worden ontvangen, worden deze berichten permanent verloren gegaan.
 
 In de [PeekLock](/dotnet/api/microsoft.servicebus.messaging.receivemode#Microsoft_ServiceBus_Messaging_ReceiveMode_PeekLock) -ontvangst modus worden berichten die in de prefetch-buffer worden opgehaald, in de buffer opgehaald in een vergrendelde status en hebben de time-out voor de vergren deling. Als de prefetch-buffer groot is en de verwerking zo lang duurt dat bericht vergrendelingen verlopen terwijl het aanwezig is in de prefetch-buffer, of zelfs terwijl de toepassing het bericht verwerkt, zijn er mogelijk verwarrende gebeurtenissen die de toepassing kan verwerken.
 

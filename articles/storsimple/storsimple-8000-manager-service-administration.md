@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/12/2017
+ms.date: 03/17/2021
 ms.author: alkohli
-ms.openlocfilehash: 69a36f38cc76693f596b45d4df6e232bc01584d5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0e25d41fbf6a9683f178cbfd1b07fde1b6796509
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967972"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104656818"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-device"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van uw StorSimple-apparaat
 
@@ -47,6 +47,8 @@ De StorSimple-Apparaatbeheer-service wordt uitgevoerd in Microsoft Azure en er w
 De volgende tabel bevat een samen vatting van alle algemene beheer taken en complexe werk stromen die kunnen worden uitgevoerd in de StorSimple-gebruikers interface van de Apparaatbeheer-service. Deze taken zijn ingedeeld op basis van de UI-Blades waarop ze worden gestart.
 
 Klik op de juiste procedure in de tabel voor meer informatie over elke werk stroom.
+
+[!INCLUDE [StorSimple software warning](../../includes/storsimple-update-software-warning.md)]
 
 #### <a name="storsimple-device-manager-workflows"></a>StorSimple Apparaatbeheer werk stromen
 

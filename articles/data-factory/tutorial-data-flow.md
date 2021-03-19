@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/11/2021
-ms.openlocfilehash: 5deaef04330e21c8d9c580bf2a16814d4e902f6a
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: 52509dbf529076eaa0af73ea48db9a7f3fd10241
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103199871"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584513"
 ---
 # <a name="transform-data-using-mapping-data-flows"></a>Gegevens transformeren met toewijzingsgegevensstromen
 
@@ -54,7 +54,7 @@ In deze stap maakt u een data factory en opent u de Data Factory UX om een pijp 
 
    De naam van de Azure-gegevensfactory moet *wereldwijd uniek* zijn. Als u een foutbericht ontvangt dat betrekking heeft op de waarde die bij de naam is ingevuld, voert u een andere naam in voor de data factory. (Gebruik dan bijvoorbeeld uwnaamADFTutorialDataFactory). Zie [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
-     ![Nieuwe data factory](./media/doc-common-process/name-not-available-error.png)
+    :::image type="content" source="./media/doc-common-process/name-not-available-error.png" alt-text="Nieuw data factory fout bericht voor dubbele naam.":::
 4. Selecteer het Azure-**abonnement** waarin u de data factory wilt maken.
 5. Voer een van de volgende stappen uit voor **Resourcegroep**:
 

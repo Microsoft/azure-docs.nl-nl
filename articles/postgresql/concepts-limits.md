@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6f48245983898c542197deb7e0b3cd53bd39be33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8fa6e108550b1417f736d1caff5cafd3e16f63a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707520"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595002"
 ---
 # <a name="limits-in-azure-database-for-postgresql---single-server"></a>Limieten in Azure Database for PostgreSQL-één server
 In de volgende secties worden de capaciteits-en functionele limieten in de database service beschreven. Zie het artikel over de [prijs categorieën](concepts-pricing-tiers.md) als u meer wilt weten over resource-lagen (compute, geheugen, opslag).
@@ -68,9 +68,12 @@ Een PostgreSQL-verbinding, zelfs inactief, kan ongeveer 10 MB aan geheugen in be
 - In sommige scenario's worden UTF-8-tekens niet volledig ondersteund in open-source PostgreSQL in Windows, wat van invloed is op Azure Database for PostgreSQL. Raadpleeg de thread on [Bug #15476 in de postgresql-Archive](https://www.postgresql-archive.org/BUG-15476-Problem-on-show-trgm-with-4-byte-UTF-8-characters-td6056677.html) voor meer informatie.
 
 ### <a name="gss-error"></a>GSS-fout
-Als er een fout wordt weer geven die betrekking heeft op **gss**, gebruikt u waarschijnlijk een nieuwere versie van het client/stuur programma die de Azure post gres-server nog niet volledig ondersteunt. Deze fout is bekend bij het beïnvloeden van de [versies 42.2.15 en 42.2.16 van het JDBC-stuur programma](https://github.com/pgjdbc/pgjdbc/issues/1868).
-   - We zijn van plan om de update te volt ooien aan het einde van november. Overweeg in de tussen tijd een werkende versie van het stuur programma te gebruiken.
-   - Of overweeg de GSS-aanvraag uit te scha kelen.  Gebruik een verbindings parameter zoals `gssEncMode=disable` .
+Als er een fout wordt weergegeven die betrekking heeft op **GSS**, gebruikt u waarschijnlijk een nieuwere versie van een client/stuurprogramma die nog niet volledig wordt ondersteund door Azure Postgres Single Server. Deze fout heeft betrekking op [JDBC-stuurprogrammaversies 42.2.15 en 42.2.16](https://github.com/pgjdbc/pgjdbc/issues/1868).
+   - De update wordt naar verwachting eind november voltooid. U kunt in de tussentijd een werkende versie van het stuurprogramma gebruiken.
+   - Of overweeg de GSS-aanvraag uit te scha kelen.  Gebruik een verbindingsparameter als `gssEncMode=disable`.
+
+### <a name="storage-size-reduction"></a>Reductie van opslag grootte
+De opslag grootte kan niet worden verminderd. U moet een nieuwe server maken met de gewenste opslag grootte, hand matige [dump uitvoeren en](./howto-migrate-using-dump-and-restore.md) uw data base (s) naar de nieuwe server migreren.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Meer informatie over wat er beschikbaar is in elke prijs categorie](concepts-pricing-tiers.md)

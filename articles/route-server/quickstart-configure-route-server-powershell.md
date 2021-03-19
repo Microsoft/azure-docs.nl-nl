@@ -7,12 +7,12 @@ ms.service: route-server
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.author: duau
-ms.openlocfilehash: e302cb9da410487dbea4ec5c5b256c4cb5dd186f
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: a3ab3a801872cc20b4e41bbff02ad6474c3bab8c
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102566376"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655203"
 ---
 # <a name="quickstart-create-and-configure-route-server-using-azure-powershell"></a>Snelstartgids: route server maken en configureren met behulp van Azure PowerShell
 
@@ -40,8 +40,8 @@ Dit artikel helpt u bij het configureren van Azure route server naar peer met ee
 Voordat u een Azure-route server kunt maken, hebt u een virtueel netwerk nodig om de implementatie te hosten. Gebruik de volgende opdracht om een resource groep en een virtueel netwerk te maken. Als u al een virtueel netwerk hebt, kunt u door gaan naar de volgende sectie.
 
 ```azurepowershell-interactive
-New-AzResourceGroup –Name “RouteServerRG” -Location “West US”
-New-AzVirtualNetwork –ResourceGroupName “RouteServerRG -Location “West US” -Name myVirtualNetwork –AddressPrefix 10.0.0.0/16
+New-AzResourceGroup –Name "RouteServerRG” -Location “West US"
+New-AzVirtualNetwork –ResourceGroupName "RouteServerRG" -Location "West US" -Name myVirtualNetwork –AddressPrefix 10.0.0.0/16
 ```
 
 ### <a name="add-a-subnet"></a>Een subnet toevoegen
@@ -49,15 +49,15 @@ New-AzVirtualNetwork –ResourceGroupName “RouteServerRG -Location “West US�
 1. Voeg een subnet met de naam *RouteServerSubnet* toe om de Azure route server in te implementeren. Dit subnet is alleen een specifiek subnet voor Azure route server. De RouteServerSubnet moet/27 of een kortere voor voegsel (zoals/26,/25) zijn of u ontvangt een fout bericht wanneer u de Azure route server toevoegt.
 
     ```azurepowershell-interactive
-    $vnet = Get-AzVirtualNetwork –Name “myVirtualNetwork” - ResourceGroupName “RouteServerRG”
-    Add-AzVirtualNetworkSubnetConfig –Name “RouteServerSubnet” -AddressPrefix 10.0.0.0/24 -VirtualNetwork $vnet
+    $vnet = Get-AzVirtualNetwork –Name "myVirtualNetwork" - ResourceGroupName "RouteServerRG"
+    Add-AzVirtualNetworkSubnetConfig –Name "RouteServerSubnet" -AddressPrefix 10.0.0.0/24 -VirtualNetwork $vnet
     $vnet | Set-AzVirtualNetwork
     ```
 
 1. Haal de RouteServerSubnet-ID op. Als u de resource-ID van alle subnetten in het virtuele netwerk wilt zien, gebruikt u deze opdracht:
 
     ```azurepowershell-interactive
-    $vnet = Get-AzVirtualNetwork –Name “vnet_name” -ResourceGroupName “
+    $vnet = Get-AzVirtualNetwork –Name "vnet_name" -ResourceGroupName "RouteServerRG"
     $vnet.Subnets
     ```
 
@@ -70,7 +70,7 @@ De RouteServerSubnet-ID ziet er als volgt uit:
 Maak de route server met de volgende opdracht:
 
 ```azurepowershell-interactive 
-New-AzRouteServer -RouteServerName myRouteServer -ResourceGroupName RouteServerRG -Location "West US” -HostedSubnet “RouteServerSubnet_ID”
+New-AzRouteServer -RouteServerName myRouteServer -ResourceGroupName RouteServerRG -Location "West US" -HostedSubnet "RouteServerSubnet_ID"
 ```
 
 De locatie moet overeenkomen met de locatie van het virtuele netwerk. De HostedSubnet is de RouteServerSubnet-ID die u hebt verkregen in de vorige sectie.
@@ -137,7 +137,7 @@ Als u de Azure route server niet meer nodig hebt, gebruikt u deze opdrachten om 
 1. Verwijder de BGP-peering tussen Azure route server en een NVA met deze opdracht:
 
 ```azurepowershell-interactive 
-Remove-AzRouteServerPeer -PeerName “nva_name” -RouteServerName myRouteServer -ResourceGroupName RouteServerRG 
+Remove-AzRouteServerPeer -PeerName "nva_name" -RouteServerName myRouteServer -ResourceGroupName RouteServerRG 
 ```
 
 2. Azure route server verwijderen met deze opdracht:

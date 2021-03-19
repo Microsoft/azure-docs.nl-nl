@@ -8,12 +8,12 @@ ms.date: 02/23/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 4adfb63ecab72eb42e188af472bb5387a0276a79
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: dad8661de55fc90c9f3d3782c402deb519d16536
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723772"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596005"
 ---
 # <a name="regions-and-availability-zones-in-azure"></a>Regio's en Beschikbaarheidszones in azure
 
@@ -82,7 +82,7 @@ Als een service aanbieding niet beschikbaar is in een specifieke regio, kunt u u
 | Aanbevolen | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | Op aanvraag gebaseerd | :heavy_check_mark: | :heavy_check_mark: |
 | Alternatief | :heavy_check_mark: | :heavy_check_mark: | Op aanvraag gebaseerd | Op aanvraag gebaseerd | N.v.t. | :heavy_check_mark: |
 
-### <a name="services-by-category-with-availability-zones"></a>Services per categorie met Beschikbaarheidszones
+### <a name="services-by-category"></a>Services per categorie
 
 Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, mainstream en gespecialiseerd. Service categorieën worden toegewezen aan de algemene Beschik baarheid. Vaak starten Services hun levens cyclus als een gespecialiseerde service en kunnen de benodigde verhogingen worden bevorderd tot mainstream of basis. De volgende tabel bevat de categorie voor services als Foundational, mainstream. Let op het volgende over de tabel:
 
@@ -101,7 +101,7 @@ Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, 
 > | Azure ExpressRoute                     | Azure Bastion                                     | 
 > | Openbaar Azure-IP                        | Azure Cache voor Redis                             | 
 > | Azure SQL Database                     | Azure Cognitive Search                            | 
-> | Azure SQL: beheerd exemplaar           | Azure Cognitive Services                          | 
+> | Azure SQL Managed Instance             | Azure Cognitive Services                          | 
 > | Disk Storage                           | Azure Cognitive Services: Computer Vision         | 
 > | Event Hubs                             | Azure-Cognitive Services: Content Moderator       | 
 > | Key Vault                              | Azure Cognitive Services: Face                    | 
@@ -172,7 +172,7 @@ Zoals eerder vermeld, classificeert Azure Services in drie categorieën: basis, 
 > | Azure Database Migration Service                     |
 > | Azure toegewezen HSM                                  |
 > | Azure Digital Twins                                  |
-> | Azure-status bot                                     |
+> | Azure Health Bot                                     |
 > | Azure HPC Cache                                      |
 > | Azure Lab-Services                                   |
 > | Azure NetApp Files                                   |

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/26/2021
 ms.author: jeedes
-ms.openlocfilehash: 4dca5c530546799bd9ed5d33f9ea9ea4b9340d0b
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 5cb8cf08c8549dcce7f868e0bb742c53f36036ec
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102055387"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585125"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-evergreen"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met groen druk
 
@@ -142,8 +142,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij het groen controleprogramma waarvoor u de SSO hebt ingesteld. 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Als u in de modus mijn apps op de groen blijvende tegel klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren. Als u deze hebt geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de in-en uitgaand verkeer waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Als u in de modus mijn apps op de groen blijvende tegel klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren. Als u deze hebt geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de in-en uitgaand verkeer waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u een blijvende configuratie hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u een blijvende configuratie hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

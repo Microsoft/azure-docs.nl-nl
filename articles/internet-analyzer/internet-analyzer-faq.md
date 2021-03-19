@@ -8,10 +8,10 @@ ms.topic: guide
 ms.date: 10/16/2019
 ms.author: mebeatty
 ms.openlocfilehash: a4a5b058666fab3e9048a7d92726dccd1360ff37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74184257"
 ---
 # <a name="azure-internet-analyzer-faq-preview"></a>Veelgestelde vragen over Azure Internet Analyzer (preview-versie)
@@ -22,7 +22,7 @@ Dit is de veelgestelde vragen voor Azure Internet Analyzer: als u meer vragen he
 
 De preview-versie is beschikbaar om klanten te selecteren. Ga als volgt te werk als u wilt deel nemen aan de preview-versie:
 
-1. Meld u aan bij de [Azure-portal](https://ms.portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://ms.portal.azure.com).
 2. Navigeer naar de pagina **abonnementen** .
 3. Klik op het Azure-abonnement dat u wilt gebruiken Internet Analyzer met.
 4. Ga naar de instellingen van de **resource providers** voor het abonnement.
@@ -41,20 +41,20 @@ Nee, Azure Internet Analyzer is gratis voor gebruik in de preview-versie. Er is 
 
 ## <a name="what-scenarios-is-internet-analyzer-designed-to-address"></a>Welke scenario's is Internet Analyzer ontworpen om te verhelpen?
 
-Internet Analyzer is ontworpen om u netwerk prestatie inzichten te geven op basis van uw gebruikers populatie. Internet Analyzer vergelijkt de prestaties van twee Internet-eind punten met behulp van uw afzonderlijke gebruikers populatie om de beste prestatie beslissingen te nemen voor uw gebruikers. Hoewel Internet Analyzer een breed scala aan vragen kan beantwoorden, zijn de meest voorkomende problemen:
+Internet Analyzer is ontworpen om u netwerk prestatie inzichten te geven op basis van uw gebruikers populatie. Internet Analyzer vergelijkt de prestaties van twee Internet-eind punten met behulp van uw afzonderlijke gebruikers populatie om de beste prestatie beslissingen te nemen voor uw gebruikers. Hoewel Internet Analyzer een groot aantal vragen kan beantwoorden, zijn enkele van de meest voorkomende:
 
-* Wat is de invloed van de prestaties van de migratie naar de Cloud? 
-    * *Aanbevolen test: aangepast (uw huidige on-premises infra structuur) versus Azure (elk vooraf geconfigureerd eind punt)*
-* Wat is de waarde van het plaatsen van mijn gegevens aan de rand versus in een Data Center? 
-    *  *Aanbevolen test: Azure versus Azure front-deur, Azure versus Azure CDN van micro soft*
-* Wat is het voor deel van de prestaties van Azure front-deur?
-    *  *Voorgestelde test: aangepast/Azure/CDN versus Azure front-deur*
-* Wat is het voor deel van de prestaties van Azure CDN van micro soft? 
-    *  *Aanbevolen test: Custom/Azure/AFD versus Azure CDN van micro soft*
-* Hoe werkt Azure CDN van micro soft? 
-    *  *Voorgestelde test: aangepast (ander CDN-eind punt) versus Azure CDN van micro soft*
-* Wat is de beste Cloud voor uw eindgebruikers populatie in elke regio? 
-    *  *Aanbevolen test: aangepast (andere Cloud service) versus Azure (elk vooraf geconfigureerd eind punt)*
+* Wat is de invloed op prestaties van migratie naar de cloud? 
+    * *Voorgestelde test: Aangepast (uw huidige on-premises infrastructuur) versus Azure (elk vooraf geconfigureerd eindpunt)*
+* Wat is de waarde van het plaatsen van mijn gegevens aan de rand versus in een datacentrum? 
+    *  *Voorgestelde test: Azure versus Azure Front Door, Azure versus Azure CDN van Microsoft*
+* Wat is het prestatievoordeel van Azure Front Door?
+    *  *Voorgestelde test: Aangepast/Azure/CDN versus Azure Front Door*
+* Wat is het prestatievoordeel van Azure CDN van Microsoft? 
+    *  *Voorgestelde test: Custom/ Azure/ AFD versus Azure CDN van Microsoft*
+* Hoe verloopt Azure CDN van Microsoft? 
+    *  *Voorgestelde test: Aangepast (ander CDN-eindpunt) versus Azure CDN van Microsoft*
+* Wat is de beste cloud voor uw populatie eindgebruikers in elke regio? 
+    *  *Voorgestelde test: Aangepast (andere cloudservice) versus Azure (elk vooraf geconfigureerd eindpunt)*
 
 ## <a name="which-tests-can-i-run-in-preview"></a>Welke tests kan ik uitvoeren in Preview?
 
@@ -79,21 +79,21 @@ De volgende vooraf geconfigureerde eind punten zijn beschikbaar tijdens de previ
     * Europa -west
     * VS - west
     * VS - west 2
-* **Meerdere Azure-regio combinaties**
-    * VS-Oost, Brazilië-zuid
-    * VS-Oost, Azië-oost
-    * Europa-west, Brazilië-zuid
-    * Europa-west, Zuidoost-Azië
-    * Europa-west, UAE-noord
-    * VS-West, VS-Oost
-    * VS-West, Europa-west
-    * VS-West, UAE-noord
-    * Europa-west, UAE-noord, Zuidoost-Azië
-    * VS-West, Europa-west, Azië-oost
-    * VS-West, Europa-noord, Zuidoost-Azië, UAE-noord, Zuid-Afrika-noord 
-* **Azure + Azure front-deur** -geïmplementeerd op een combi natie van één of meer Azure-regio's die hierboven wordt vermeld
-* **Azure + Azure CDN van micro soft** geïmplementeerd op een enkele combi natie van Azure-regio's die hierboven wordt vermeld
-* **Azure + azure Traffic Manager** -geïmplementeerd op een combi natie van meerdere Azure-regio's die hierboven wordt vermeld
+* **Meerdere combinaties van Azure-regio's**
+    * US - oost, Brazilië - zuid
+    * US - oost, Azië - oost
+    * Europa - west, Brazilië - zuid
+    * Europa - west, Azië - zuidoost
+    * Europa - west, AE - noord
+    * US - west, US - oost
+    * US - west, Europa - west
+    * US - west, AE - noord
+    * Europa - west, AE - noord, Azië - zuidoost
+    * US - west, Europa - west, Azië - oost
+    * US - west, Europa - noord, Azië - zuidoost, AE - noord, Zuid-Afrika - noord 
+* **Azure + Azure Front Door** - geïmplementeerd op een of meer combinaties van Azure-regio's die hierboven worden vermeld
+* **Azure + Azure CDN van Microsoft** - geïmplementeerd op één combinatie van Azure-regio's die hierboven worden vermeld
+* **Azure + Azure Traffic Manager** - geïmplementeerd op meerdere combinaties van Azure-regio's die hierboven worden vermeld
 
 ## <a name="how-is-internet-analyzer-different-from-other-monitoring-services-provided-by-azure"></a>Hoe wijkt Internet Analyzer af van andere bewakings services die door Azure worden ondersteund?
 

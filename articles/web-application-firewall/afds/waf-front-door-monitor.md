@@ -8,10 +8,10 @@ services: web-application-firewall
 ms.date: 06/09/2020
 ms.author: victorh
 ms.openlocfilehash: 596374d4f3f188e08a10bd25b36b178cc79a6e57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84808954"
 ---
 # <a name="azure-web-application-firewall-monitoring-and-logging"></a>Bewaking en logboek registratie van de firewall van Azure Web Application

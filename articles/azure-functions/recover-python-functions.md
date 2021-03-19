@@ -7,13 +7,13 @@ ms.date: 07/29/2020
 ms.author: hazeng
 ms.custom: devx-track-python
 ms.openlocfilehash: 9b9f5d389eda5d74e7e78cfcfa9a46fba7276cbd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87846034"
 ---
-# <a name="troubleshoot-python-errors-in-azure-functions"></a>Problemen met python-fouten in Azure Functions oplossen
+# <a name="troubleshoot-python-errors-in-azure-functions"></a>Problemen met Python-fouten oplossen in Azure Functions
 
 Hieronder vindt u een lijst met richt lijnen voor probleem oplossing voor veelvoorkomende problemen in Python-functies:
 
@@ -59,7 +59,7 @@ Zie [externe build inschakelen](#enable-remote-build) of [native afhankelijkhede
 
 #### <a name="the-package-isnt-resolved-with-proper-linux-wheel"></a>Het pakket is niet opgelost met het juiste Linux-wiel
 
-Ga naar `.python_packages/lib/python3.6/site-packages/<package-name>-<version>-dist-info` of `.python_packages/lib/site-packages/<package-name>-<version>-dist-info` . Gebruik uw favoriete tekst editor om het **wiel** bestand te openen en controleer de sectie **Tag:** . Als de waarde van de tag geen **Linux**bevat, kan dit het probleem zijn.
+Ga naar `.python_packages/lib/python3.6/site-packages/<package-name>-<version>-dist-info` of `.python_packages/lib/site-packages/<package-name>-<version>-dist-info` . Gebruik uw favoriete tekst editor om het **wiel** bestand te openen en controleer de sectie **Tag:** . Als de waarde van de tag geen **Linux** bevat, kan dit het probleem zijn.
 
 Python-functies worden alleen uitgevoerd op Linux in Azure: functions runtime v2. x wordt uitgevoerd op Debian stretch en de v3. x-runtime op Debian Buster. Het artefact moet naar verwachting de juiste binaire bestanden voor Linux bevatten. Door gebruik te maken `--build local` van vlag in kern hulpprogramma's, derden of verouderde hulpprogram ma's kunnen oudere binaire bestanden worden gebruikt.
 
@@ -69,7 +69,7 @@ Zie [externe build inschakelen](#enable-remote-build) of [native afhankelijkhede
 
 Ga naar `.python_packages/lib/python3.6/site-packages/<package-name>-<version>-dist-info` of `.python_packages/lib/site-packages/<package-name>-<version>-dist-info` . Open met een tekst editor het meta gegevensbestand en controleer de sectie **classificaties:** . Als de sectie geen `Python :: 3` ,, `Python :: 3.6` , of bevat, `Python :: 3.7` `Python :: 3.8` betekent dit dat de pakket versie te oud is of dat het pakket waarschijnlijk al buiten het onderhoud valt.
 
-U kunt de python-versie van uw functie-app controleren vanuit het [Azure Portal](https://portal.azure.com). Navigeer naar uw functie-app, kies **resource Verkenner**en selecteer **Go**.
+U kunt de python-versie van uw functie-app controleren vanuit het [Azure Portal](https://portal.azure.com). Navigeer naar uw functie-app, kies **resource Verkenner** en selecteer **Go**.
 
 :::image type="content" source="media/recover-module-not-found/resource-explorer.png" alt-text="Open Resource Explorer voor de functie-app in de portal":::
 

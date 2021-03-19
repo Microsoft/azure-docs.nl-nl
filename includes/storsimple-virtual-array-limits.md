@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 658fd9178495f14274c85eab2129c9dcd3be7693
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "67176066"
 ---
 | **Limiet-id** | **Limiet** | **Opmerkingen** |
@@ -24,8 +24,8 @@ ms.locfileid: "67176066"
 | Minimum grootte van lokaal vastgemaakt volume |50 GB | |
 | Maximale grootte van een lokaal vastgemaakte share |2 TB | |
 | Maximale grootte van lokaal vastgemaakt volume |200 GB | |
-| Maximum aantal iSCSI-verbindingen van initia tors |512 | |
-| Maximum aantal toegangs beheer records per apparaat |64 | |
+| Maximumaantal iSCSI-verbindingen van initiators |512 | |
+| Maximumaantal Access Control Records per apparaat |64 | |
 | Maximum aantal back-ups dat door het virtuele apparaat in wordt bewaard in de map *. backups* voor bestands server |5 |Dit omvat het meest recente geplande (gegenereerd door het standaard back-upbeleid) en hand matige back-ups. |
 | Maximum aantal geplande back-ups dat door het apparaat wordt bewaard |55 |30 dagelijkse back-ups<br>12 maandelijkse back-ups<br>13 jaar back-ups |
 | Maximum aantal hand matige back-ups dat door het apparaat wordt bewaard |45 | |

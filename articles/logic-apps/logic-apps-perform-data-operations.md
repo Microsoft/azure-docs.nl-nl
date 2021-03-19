@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 09/20/2019
 ms.openlocfilehash: baa6e5732221d120ff71217a3a86a942794c53f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84710368"
 ---
 # <a name="perform-data-operations-in-azure-logic-apps"></a>Gegevens bewerkingen uitvoeren in Azure Logic Apps
@@ -34,8 +34,8 @@ Deze acties helpen u bij het werken met gegevens in matrices.
 | [**CSV-tabel maken**](#create-csv-table-action) | Een tabel met door komma's gescheiden waarden (CSV) maken op basis van een matrix. |
 | [**HTML-tabel maken**](#create-html-table-action) | Een HTML-tabel maken op basis van een matrix. |
 | [**Matrix filteren**](#filter-array-action) | Maak een matrix subset van een matrix op basis van het opgegeven filter of voor waarde. |
-| [**Koppelen**](#join-action) | Maak een teken reeks van alle items in een matrix en scheid elk item met het opgegeven teken. |
-| [**Uitgeschakeld**](#select-action) | Een matrix maken op basis van de opgegeven eigenschappen voor alle items in een andere matrix. |
+| [**Jointypen**](#join-action) | Maak een teken reeks van alle items in een matrix en scheid elk item met het opgegeven teken. |
+| [**Selecteer**](#select-action) | Een matrix maken op basis van de opgegeven eigenschappen voor alle items in een andere matrix. |
 ||| 
 
 **JSON-acties**
@@ -44,7 +44,7 @@ Deze acties helpen u bij het werken met gegevens in de indeling van JavaScript O
 
 | Bewerking | Beschrijving |
 |--------|-------------|
-| [**Opstellen**](#compose-action) | Maak een bericht of teken reeks van meerdere invoer die verschillende gegevens typen kan hebben. U kunt deze teken reeks vervolgens als één invoer gebruiken, in plaats van dezelfde invoer herhaaldelijk in te voeren. U kunt bijvoorbeeld één JSON-bericht maken van verschillende invoer. |
+| [**Compose**](#compose-action) | Maak een bericht of teken reeks van meerdere invoer die verschillende gegevens typen kan hebben. U kunt deze teken reeks vervolgens als één invoer gebruiken, in plaats van dezelfde invoer herhaaldelijk in te voeren. U kunt bijvoorbeeld één JSON-bericht maken van verschillende invoer. |
 | [**JSON parseren**](#parse-json-action) | Maak gebruikers vriendelijke gegevens tokens voor eigenschappen in JSON-inhoud zodat u de eigenschappen in uw Logic apps gemakkelijker kunt gebruiken. |
 |||
 
@@ -86,7 +86,7 @@ Volg deze stappen met behulp van de ontwerp functie voor logische apps als u een
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de uitvoer wilt maken: 
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer nieuwe stap voor de actie opstellen](./media/logic-apps-perform-data-operations/add-compose-operation-action.png)
 
@@ -122,7 +122,7 @@ Als u wilt controleren of met de actie **opstellen** de verwachte resultaten wor
 
    ![Uitvoer velden voor de actie opstellen](./media/logic-apps-perform-data-operations/send-email-compose-action.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -144,7 +144,7 @@ Als u liever met de code weergave-editor werkt, kunt u het voor beeld voor het m
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de CSV-tabel wilt maken: 
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer nieuwe stap voor de actie CSV-tabel maken](./media/logic-apps-perform-data-operations/add-create-table-action.png)
 
@@ -192,7 +192,7 @@ Oranges,2
 
 In de actie moet u de kolom **koptekst** leeg laten. Op elke rij in de kolom **waarde** de verwijzing van elke matrix eigenschap die u wilt. Elke rij onder **waarde** retourneert alle waarden voor de opgegeven matrix eigenschap en wordt een kolom in de tabel.
 
-1. Klik onder **waarde**op elke gewenste rij, in het invoervak zodat de lijst met dynamische inhoud wordt weer gegeven.
+1. Klik onder **waarde** op elke gewenste rij, in het invoervak zodat de lijst met dynamische inhoud wordt weer gegeven.
 
 1. Selecteer in de lijst met dynamische inhoud de optie **Expressie**.
 
@@ -221,7 +221,7 @@ In de actie moet u de kolom **koptekst** leeg laten. Op elke rij in de kolom **w
 
 Stel in de JSON-definitie van de actie binnen de `columns` matrix de `header` eigenschap in op een lege teken reeks. Voor elke `value` eigenschap de verwijzing van elke matrix eigenschap die u wilt.
 
-1. Selecteer de **code weergave**op de werk balk van de ontwerp functie.
+1. Selecteer de **code weergave** op de werk balk van de ontwerp functie.
 
 1. Voeg in de code-editor in de matrix van de actie `columns` de `header` eigenschap Empty en deze `value` expressie toe voor elke kolom met matrix waarden die u wilt:
 
@@ -273,7 +273,7 @@ Als u wilt controleren of de actie **CSV-tabel maken** de verwachte resultaten m
 
    ![Uitvoer velden voor de actie CSV-tabel maken](./media/logic-apps-perform-data-operations/send-email-create-csv-table-action.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -295,7 +295,7 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u het voor beeld
 
 1. Voer een van de volgende stappen uit in uw logische app waar u een HTML-tabel wilt maken:
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer ' nieuwe stap ' voor de actie ' HTML-tabel maken '](./media/logic-apps-perform-data-operations/add-create-table-action.png)
 
@@ -343,7 +343,7 @@ Oranges,2
 
 In de actie moet u de kolom **koptekst** leeg laten. Op elke rij in de kolom **waarde** de verwijzing van elke matrix eigenschap die u wilt. Elke rij onder **waarde** retourneert alle waarden voor de opgegeven eigenschap en wordt een kolom in de tabel.
 
-1. Klik onder **waarde**op elke gewenste rij, in het invoervak zodat de lijst met dynamische inhoud wordt weer gegeven.
+1. Klik onder **waarde** op elke gewenste rij, in het invoervak zodat de lijst met dynamische inhoud wordt weer gegeven.
 
 1. Selecteer in de lijst met dynamische inhoud de optie **Expressie**.
 
@@ -372,7 +372,7 @@ In de actie moet u de kolom **koptekst** leeg laten. Op elke rij in de kolom **w
 
 Stel in de JSON-definitie van de actie binnen de `columns` matrix de `header` eigenschap in op een lege teken reeks. Voor elke `value` eigenschap de verwijzing van elke matrix eigenschap die u wilt.
 
-1. Selecteer de **code weergave**op de werk balk van de ontwerp functie.
+1. Selecteer de **code weergave** op de werk balk van de ontwerp functie.
 
 1. Voeg in de code-editor in de matrix van de actie `columns` de `header` eigenschap Empty en deze `value` expressie toe voor elke kolom met matrix waarden die u wilt:
 
@@ -427,7 +427,7 @@ Als u wilt controleren of de actie **HTML-tabel maken** de verwachte resultaten 
    > [!NOTE]
    > Wanneer u de HTML-tabel uitvoer in een e-mail actie opneemt, moet u ervoor zorgen dat u de eigenschap **HTML is** ingesteld op **Ja** in de geavanceerde opties voor de e-mail actie. Op die manier wordt de HTML-tabel op de juiste wijze door de e-mail actie opgemaakt.
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -460,7 +460,7 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u de voorbeeld *
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de gefilterde matrix wilt maken: 
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer ' nieuwe stap ' voor de actie ' filter matrix '](./media/logic-apps-perform-data-operations/add-filter-array-action.png)
 
@@ -500,7 +500,7 @@ Als u wilt controleren of met de actie **filter matrix** de verwachte resultaten
 
    ![Actie uitvoer van de actie filter matrix](./media/logic-apps-perform-data-operations/send-email-filter-array-action.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -522,7 +522,7 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u het voor beeld
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de teken reeks uit een matrix wilt maken:
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![SSelect ' nieuwe stap ' voor de actie ' samen voegen '](./media/logic-apps-perform-data-operations/new-step-add-join-action.png)
 
@@ -560,7 +560,7 @@ Als u wilt controleren of de actie **samen voegen** de verwachte resultaten heef
 
    ![Uitvoer velden voor de actie toevoegen](./media/logic-apps-perform-data-operations/send-email-join-action.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -582,7 +582,7 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u het voor beeld
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de JSON-inhoud wilt parseren:
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer nieuwe stap voor de actie JSON parseren](./media/logic-apps-perform-data-operations/add-parse-json-action.png)
 
@@ -608,7 +608,7 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u het voor beeld
    
    1. Selecteer in de actie **JSON parseren** **voorbeeld lading gebruiken om schema te genereren**.
 
-   1. Geef onder **een voor beeld van een JSON-nettolading op of plak hier**de JSON-inhoud op en selecteer vervolgens **gereed**.
+   1. Geef onder **een voor beeld van een JSON-nettolading op of plak hier** de JSON-inhoud op en selecteer vervolgens **gereed**.
 
       ![De JSON-inhoud invoeren voor het genereren van het schema](./media/logic-apps-perform-data-operations/generate-schema-parse-json-action.png)
 
@@ -624,7 +624,7 @@ Als u wilt controleren of met de actie **JSON parseren** de verwachte resultaten
 
 1. Klik in die actie op een wille keurige plaats waar u de resultaten wilt weer geven. Wanneer de lijst met dynamische inhoud wordt geopend, kunt u onder de actie **JSON parseren** nu de eigenschappen van de geparseerde JSON-inhoud selecteren.
 
-   In dit voor beeld wordt de actie Office 365 Outlook **een E-mail verzenden** gebruikt en zijn de velden **FirstName**, **LastName**en **email** opgenomen in de hoofd tekst van het e-mail bericht:
+   In dit voor beeld wordt de actie Office 365 Outlook **een E-mail verzenden** gebruikt en zijn de velden **FirstName**, **LastName** en **email** opgenomen in de hoofd tekst van het e-mail bericht:
 
    ![JSON-eigenschappen in de actie ' een e-mail verzenden '](./media/logic-apps-perform-data-operations/send-email-parse-json-action.png)
 
@@ -632,7 +632,7 @@ Als u wilt controleren of met de actie **JSON parseren** de verwachte resultaten
 
    ![Voltooid voor beeld voor e-mail actie](./media/logic-apps-perform-data-operations/send-email-parse-json-action-2.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie. 
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie. 
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 
@@ -657,13 +657,13 @@ Als u liever aan de slag gaat met de code weergave-editor, kunt u het voor beeld
 
 1. Voer een van de volgende stappen uit in uw logische app waar u de matrix wilt maken: 
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Selecteer ' nieuwe stap ' voor de actie ' selecteren '](./media/logic-apps-perform-data-operations/add-select-operation-action.png)
 
    * Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de verbindings pijl zodat het plus teken ( **+** ) wordt weer gegeven. Selecteer het plus teken en selecteer vervolgens **een actie toevoegen**.
 
-1. Selecteer onder **Kies een actie**de optie **Ingebouwd**. Voer in het zoekvak `select` als uw filter in. Selecteer in de lijst acties de actie **selecteren** .
+1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvak `select` als uw filter in. Selecteer in de lijst acties de actie **selecteren** .
 
    ![Selecteer de actie ' selecteren '](./media/logic-apps-perform-data-operations/select-select-action.png)
 
@@ -701,7 +701,7 @@ Als u wilt controleren of met de actie **Select** de verwachte resultaten worden
 
    ![Actie uitvoer van de actie ' selecteren '](./media/logic-apps-perform-data-operations/send-email-select-action.png)
 
-1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren**op de werk balk van de ontwerp functie.
+1. Voer nu de logische app hand matig uit. Selecteer **uitvoeren** op de werk balk van de ontwerp functie.
 
    Op basis van de e-mail connector die u hebt gebruikt, zijn dit de resultaten die u krijgt:
 

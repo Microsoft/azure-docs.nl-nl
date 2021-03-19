@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u Azure Relay toepassingen kunt migrere
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 3b793173270b0ddf25f0e971dbb2fed97cb10a55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87532863"
 ---
 # <a name="azure-relay---migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Azure Relay-migreren van Azure Active Directory Access Control Service naar Shared Access Signature autorisatie
@@ -30,7 +30,7 @@ De migratie scenario's vallen in drie categorieën:
 
 1.  **Standaard instellingen ongewijzigd**. Sommige klanten gebruiken een [SharedSecretTokenProvider](/dotnet/api/microsoft.servicebus.sharedsecrettokenprovider) -object, waarbij de automatisch gegenereerde **eigenaar** service-identiteit en de geheime sleutel voor de ACS-naam ruimte worden door gegeven, gekoppeld met de relay-naam ruimte en geen nieuwe regels toevoegen.
 
-2.  **Aangepaste service-identiteiten met eenvoudige regels**. Sommige klanten voegen nieuwe service-identiteiten toe en verlenen elke nieuwe service-id machtigingen voor **verzenden**, **belui Steren**en **beheren** voor één specifieke entiteit.
+2.  **Aangepaste service-identiteiten met eenvoudige regels**. Sommige klanten voegen nieuwe service-identiteiten toe en verlenen elke nieuwe service-id machtigingen voor **verzenden**, **belui Steren** en **beheren** voor één specifieke entiteit.
 
 3.  **Aangepaste service-identiteiten met complexe regels**. Zeer weinig klanten hebben complexe regel sets waarin extern uitgegeven tokens worden toegewezen aan rechten op relay of waarbij aan één service-identiteit gedifferentieerde rechten voor verschillende naam ruimte paden worden toegewezen via meerdere regels.
 

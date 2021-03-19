@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/1/2016
+ms.date: 03/17/2021
 ms.author: alkohli
-ms.openlocfilehash: 2395e3c6f2026bc1024de38122bc20959fdcf9b7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cb5b6b1a2d890fe49d78da17d549c5676557b971
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967088"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654239"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van de virtuele StorSimple-matrix
 ![proces stroom instellen](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
@@ -35,14 +35,12 @@ Nadat u dit artikel hebt gelezen, weet u hoe u het volgende kunt doen:
 
 > [!NOTE]
 > Als u de beschik bare beheer opties voor het StorSimple 8000-serie apparaat wilt weer geven, gaat u naar [de StorSimple Manager-service gebruiken om uw StorSimple-apparaat te beheren](./storsimple-8000-manager-service-administration.md).
-> 
-> 
 
 ## <a name="connect-to-the-storsimple-device-manager-service"></a>Verbinding maken met de StorSimple-Apparaatbeheer service
 De StorSimple-Apparaatbeheer-service wordt uitgevoerd in Microsoft Azure en er wordt verbinding gemaakt met meerdere virtuele StorSimple-matrices. U gebruikt een centrale Microsoft Azure-portal die in een browser wordt uitgevoerd om deze apparaten te beheren. Ga als volgt te werk om verbinding te maken met de StorSimple-Apparaatbeheer service.
 
 #### <a name="to-connect-to-the-service"></a>Verbinding maken met de service
-1. Ga naar [https://ms.portal.azure.com](https://ms.portal.azure.com).
+1. Ga naar [https://portal.azure.com](https://portal.azure.com).
 2. Meld u met uw Microsoft-account-referenties aan bij de Microsoft Azure-portal (in de rechter bovenhoek van het deel venster).
 3. Navigeer naar Browse-> ' filter ' op StorSimple Device Managers om al uw Apparaatbeheer in een bepaald abonnement weer te geven.
 
@@ -50,6 +48,8 @@ De StorSimple-Apparaatbeheer-service wordt uitgevoerd in Microsoft Azure en er w
 De volgende tabel bevat een samen vatting van alle algemene beheer taken en complexe werk stromen die kunnen worden uitgevoerd op de Blade StorSimple Apparaatbeheer service overzicht. Deze taken zijn ingedeeld op basis van de Blades waarop ze worden gestart.
 
 Klik op de juiste procedure in de tabel voor meer informatie over elke werk stroom.
+
+[!INCLUDE [StorSimple software warning](../../includes/storsimple-update-software-warning.md)]
 
 #### <a name="storsimple-device-manager-workflows"></a>StorSimple Apparaatbeheer werk stromen
 | Als u dit wilt doen... | Gebruik deze procedure |

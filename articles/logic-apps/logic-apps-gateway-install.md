@@ -4,18 +4,18 @@ description: U kunt de on-premises gegevens gateway downloaden en installeren vo
 services: logic-apps
 ms.suite: integration
 ms.reviewer: arthii, logicappspm
-ms.topic: article
-ms.date: 05/15/2020
-ms.openlocfilehash: 799e879b4d9fd54367d54c17b3d275acfc5f34c1
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.topic: how-to
+ms.date: 03/16/2021
+ms.openlocfilehash: 4b2559ad20036870c6df5c0662bb973f35155bfa
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99054768"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104576795"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>On-premises gegevensgateway installeren voor Azure Logic Apps
 
-Voordat u [verbinding kunt maken met on-premises gegevens bronnen vanuit Azure Logic apps](../logic-apps/logic-apps-gateway-connection.md), downloadt en installeert u de [on-premises gegevens gateway](https://aka.ms/on-premises-data-gateway-installer) op een lokale computer. De gateway werkt als een brug die snelle gegevensoverdracht en versleuteling mogelijk maakt tussen on-premises gegevensbronnen en uw logische apps. U kunt dezelfde Gateway-installatie gebruiken met andere Cloud Services, zoals Power BI, energie automatisering, Power apps en Azure Analysis Services. Zie de volgende artikelen voor meer informatie over het gebruik van de gateway met deze services:
+Voordat u [verbinding kunt maken met on-premises gegevens bronnen vanuit Azure Logic apps](../logic-apps/logic-apps-gateway-connection.md), downloadt en installeert u de [on-premises gegevens gateway](https://aka.ms/on-premises-data-gateway-installer) op een lokale computer. De gateway werkt als een brug die snelle gegevensoverdracht en versleuteling mogelijk maakt tussen on-premises gegevensbronnen en uw logische apps. U kunt dezelfde Gateway-installatie gebruiken met andere Cloud Services, zoals automatische energie automatisering, Power BI, Power apps en Azure Analysis Services. Zie de volgende artikelen voor meer informatie over het gebruik van de gateway met deze services:
 
 * [Micro soft power on-premises gegevens gateway automatiseren](/power-automate/gateway-reference)
 * [On-premises gegevens gateway van micro soft Power BI](/power-bi/service-gateway-onprem)
@@ -71,7 +71,12 @@ In dit artikel wordt beschreven hoe u uw on-premises gegevens gateway kunt downl
 
   * Als u van plan bent om Windows-verificatie te gebruiken, moet u ervoor zorgen dat u de gateway installeert op een computer die lid is van dezelfde Active Directory omgeving als uw gegevens bronnen.
 
-  * De regio die u voor de gateway-installatie selecteert, is dezelfde locatie die u moet selecteren wanneer u later de Azure-gateway resource voor uw logische app maakt. Deze regio is standaard dezelfde locatie als uw Azure AD-Tenant voor het beheren van uw Azure-account. U kunt de locatie echter wijzigen tijdens de installatie van de gateway.
+  * De regio die u voor de gateway-installatie selecteert, is dezelfde locatie die u moet selecteren wanneer u later de Azure-gateway resource voor uw logische app maakt. Deze regio is standaard dezelfde locatie als uw Azure AD-Tenant voor het beheren van uw Azure-gebruikers account. U kunt de locatie echter wijzigen tijdens de installatie van de gateway of later.
+
+    > [!IMPORTANT]
+    > Tijdens het installeren van de gateway is de opdracht **regio wijzigen** niet beschikbaar als u bent aangemeld met uw Azure Government-account, dat is gekoppeld aan een Azure Active Directory-Tenant (Azure AD) in de [Azure Government Cloud](../azure-government/compare-azure-government-global-azure.md). De gateway gebruikt automatisch dezelfde regio als de Azure AD-Tenant van uw gebruikers account.
+    > 
+    > Als u uw Azure Government-account wilt blijven gebruiken, maar de gateway wilt instellen voor gebruik in de globale multi-tenant Azure commerciële Cloud, moet u zich eerst aanmelden tijdens de installatie van de gateway met de `prod@microsoft.com` gebruikers naam. Met deze oplossing wordt de gateway gedwongen de wereld wijde Azure-Cloud voor meerdere tenants te gebruiken, maar kunt u nog steeds uw Azure Government-account blijven gebruiken.
 
   * Als u de installatie van de gateway bijwerkt, moet u eerst uw huidige gateway verwijderen voor een overzichtelijke ervaring.
 

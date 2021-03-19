@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 10/21/2019
 ms.openlocfilehash: ff21b059e712489c1914b2d12c6aa6a3d78d66d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74792165"
 ---
 # <a name="validate-xml-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>XML voor B2B Enterprise-integratie valideren in Azure Logic Apps met Enterprise Integration Pack
@@ -33,11 +33,11 @@ In het geval van B2B-scenario's moeten de handels partners in een overeenkomst e
 
 1. Als u een lege logische app hebt, voert u in de ontwerp functie voor logische apps in het zoekvak in `HTTP request` als uw filter en selecteert u de trigger **Wanneer een HTTP-aanvraag is ontvangen** . Anders gaat u verder met de volgende stap.
 
-1. Selecteer **nieuwe stap**onder de laatste stap in de werk stroom.
+1. Selecteer **nieuwe stap** onder de laatste stap in de werk stroom.
 
    Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de pijl die de stappen verbindt zodat het plus teken ( **+** ) wordt weer gegeven. Selecteer het plus teken en selecteer vervolgens **een actie toevoegen**.
 
-1. Selecteer onder **Kies een actie**de optie **Ingebouwd**. Voer in het zoekvak `xml validation` als uw filter in. Selecteer **XML-validatie**in de lijst acties.
+1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvak `xml validation` als uw filter in. Selecteer **XML-validatie** in de lijst acties.
 
    ![Zoek en selecteer de actie XML-validatie](./media/logic-apps-enterprise-integration-xml-validation/select-xml-validation-action.png)
 
@@ -45,7 +45,7 @@ In het geval van B2B-scenario's moeten de handels partners in een overeenkomst e
 
    ![Lijst met dynamische inhoud openen](./media/logic-apps-enterprise-integration-xml-validation/open-dynamic-content-list.png)
 
-   De lijst met dynamische inhoud bevat eigenschappen tokens die de uitvoer van de vorige stappen in de werk stroom vertegenwoordigen. Als in de lijst niet de verwachte eigenschap wordt weer gegeven, controleert u de kop van de trigger of actie, of u **meer weer geven**kunt selecteren.
+   De lijst met dynamische inhoud bevat eigenschappen tokens die de uitvoer van de vorige stappen in de werk stroom vertegenwoordigen. Als in de lijst niet de verwachte eigenschap wordt weer gegeven, controleert u de kop van de trigger of actie, of u **meer weer geven** kunt selecteren.
 
 1. Selecteer in de lijst met dynamische inhoud de eigenschap met de inhoud die u wilt valideren.
 

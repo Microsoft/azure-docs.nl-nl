@@ -8,10 +8,10 @@ ms.date: 07/20/2020
 ms.author: surmb
 ms.topic: conceptual
 ms.openlocfilehash: 53f6f37454de886934a483b40daad24204958baf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87474322"
 ---
 # <a name="application-gateway-multiple-site-hosting"></a>Meerdere sites in Application Gateway hosten
@@ -35,7 +35,7 @@ Application Gateway staat route ring op basis van een host met behulp van HTTP (
 
 Als u een Joker teken in de hostnaam gebruikt, kunt u meerdere hostnamen in één listener vinden. `*.contoso.com`Kan bijvoorbeeld overeenkomen met en `ecom.contoso.com` , enzovoort `b2b.contoso.com` `customer1.b2b.contoso.com` . Als u een matrix met hostnamen gebruikt, kunt u meer dan één hostnaam voor een listener configureren om aanvragen naar een back-end-groep te routeren. Een listener kan bijvoorbeeld bevatten `contoso.com, fabrikam.com` waarmee aanvragen voor beide hostnamen worden geaccepteerd.
 
-:::image type="content" source="./media/multiple-site-overview/wildcard-listener-diag.png" alt-text="Een toepassingsgateway voor meerdere sites maken":::
+:::image type="content" source="./media/multiple-site-overview/wildcard-listener-diag.png" alt-text="Joker-listener":::
 
 >[!NOTE]
 > Deze functie is in Preview en is alleen beschikbaar voor Standard_v2 en WAF_v2 SKU van Application Gateway. Zie hier voor meer informatie over het [gebruik van voor](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)beelden.

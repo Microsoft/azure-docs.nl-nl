@@ -5,10 +5,10 @@ ms.date: 08/17/2020
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.openlocfilehash: c32f833520a811d47129196ae4d67c92bad7e21f
-ms.sourcegitcommit: 3be3537ead3388a6810410dfbfe19fc210f89fec
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89651419"
 ---
 # <a name="quickstart-create-a-policy-assignment-to-identify-non-compliant-resources-by-using-an-arm-template"></a>Een beleidstoewijzing maken met behulp van een ARM-sjabloon om niet-compatibele resources te identificeren
@@ -72,7 +72,7 @@ Een aantal aanvullende bronnen:
 
 Selecteer **Naleving** links op de pagina. Zoek dan de beleidstoewijzing _Virtuele machines zonder beheerde schijven controleren_ die u hebt gemaakt.
 
-:::image type="content" source="./media/assign-policy-template/policy-compliance.png" alt-text="Knop om ARM-sjabloon te implementeren voor het toewijzen van Azure Policy aan Azure." border="false":::
+:::image type="content" source="./media/assign-policy-template/policy-compliance.png" alt-text="Schermopname van de compatibiliteitsdetails op de pagina Naleving van het beleid." border="false":::
 
 Als er bestaande resources zijn die niet conform deze nieuwe toewijzing zijn, worden deze weergegeven bij **Niet-conforme resources**.
 
@@ -86,7 +86,7 @@ Als u de gemaakte toewijzing wilt verwijderen, volgt u deze stappen:
 
 1. Klik met de rechtermuisknop op de beleidstoewijzing _Controleer virtuele machines die niet gebruikmaken van beheerde schijven_ en selecteer **Toewijzing verwijderen**.
 
-   :::image type="content" source="./media/assign-policy-template/delete-assignment.png" alt-text="Knop om ARM-sjabloon te implementeren voor het toewijzen van Azure Policy aan Azure." border="false":::
+   :::image type="content" source="./media/assign-policy-template/delete-assignment.png" alt-text="Schermopname van het gebruik van het contextmenu om een toewijzing te verwijderen van de pagina Naleving." border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

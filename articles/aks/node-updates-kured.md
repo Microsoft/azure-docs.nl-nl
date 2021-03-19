@@ -6,10 +6,10 @@ services: container-service
 ms.topic: article
 ms.date: 02/28/2019
 ms.openlocfilehash: 35c9e76c234e4b09fbb090eda363506ee3e11130
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88164237"
 ---
 # <a name="apply-security-and-kernel-updates-to-linux-nodes-in-azure-kubernetes-service-aks"></a>Beveiligings-en kernel-updates Toep assen op Linux-knoop punten in azure Kubernetes service (AKS)
@@ -27,7 +27,7 @@ Dit artikel laat u zien hoe u de open-source- [kured (KUbernetes REboot daemon)]
 
 In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluster. Als u een AKS-cluster nodig hebt, raadpleegt u de AKS Quick Start [met behulp van de Azure cli][aks-quickstart-cli] of [met behulp van de Azure Portal][aks-quickstart-portal].
 
-Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="understand-the-aks-node-update-experience"></a>Meer informatie over de update-ervaring van het AKS-knoop punt
 
@@ -35,7 +35,7 @@ In een AKS-cluster worden de Kubernetes-knoop punten uitgevoerd als Azure virtua
 
 ![AKS-knoop punt bijwerken en opnieuw opstarten met kured](media/node-updates-kured/node-reboot-process.png)
 
-Voor sommige beveiligings updates, zoals kernel-updates, moet een knoop punt opnieuw worden opgestart om het proces te volt ooien. Voor een Linux-knoop punt dat opnieuw moet worden opgestart, wordt een bestand met de naam */var/run/reboot-required*gemaakt. Het opnieuw opstarten wordt niet automatisch uitgevoerd.
+Voor sommige beveiligings updates, zoals kernel-updates, moet een knoop punt opnieuw worden opgestart om het proces te volt ooien. Voor een Linux-knoop punt dat opnieuw moet worden opgestart, wordt een bestand met de naam */var/run/reboot-required* gemaakt. Het opnieuw opstarten wordt niet automatisch uitgevoerd.
 
 U kunt uw eigen werk stromen en processen gebruiken om het opnieuw opstarten van knoop punten af te handelen of `kured` om het proces te organiseren. Met `kured` is een [daemonset][DaemonSet] geïmplementeerd waarbij een pod wordt uitgevoerd op elk Linux-knoop punt in het cluster. Deze peuling in de Daemonset-horloge voor aanwezigheid van het */var/run/reboot-required* -bestand en initieert vervolgens een proces om de knoop punten opnieuw op te starten.
 
@@ -78,7 +78,7 @@ Linux-knoop punten in AKS controleren standaard elke avond op updates. Als u nie
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
-Als er updates zijn toegepast waarvoor het opnieuw opstarten van een knoop punt is vereist, wordt een bestand naar */var/run/reboot-required*geschreven. `Kured` Hiermee wordt gecontroleerd op knoop punten die standaard elke 60 minuten opnieuw moeten worden opgestart.
+Als er updates zijn toegepast waarvoor het opnieuw opstarten van een knoop punt is vereist, wordt een bestand naar */var/run/reboot-required* geschreven. `Kured` Hiermee wordt gecontroleerd op knoop punten die standaard elke 60 minuten opnieuw moeten worden opgestart.
 
 ## <a name="monitor-and-review-reboot-process"></a>Het proces voor het opnieuw opstarten controleren en controleren
 

@@ -13,10 +13,10 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: 33ce2a496caa52609d8bdf8c92e29064ca4ae349
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85362037"
 ---
 # <a name="microsoft-security-code-analysis-releases-and-roadmap"></a>Release en route ring van micro soft security code Analysis
@@ -45,7 +45,7 @@ Het micro soft security code Analysis-Team in samen werking met Developer Suppor
    - Toegangs sleutel Power BI
    - Wachtwoord patroon van Azure Resource Manager sjabloon
 
-- **Uitvoer**
+- **Uitvoerwaarden**
 
    - Ondersteuning voor bestands indelingen voor SARIF 2,1 en CSV-uitvoer
 

@@ -7,22 +7,22 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/12/2021
-ms.openlocfilehash: 9ff98a2613143474afd6041ccf52d4eb509d646b
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.date: 03/18/2021
+ms.openlocfilehash: c33739124092a17acf0590f00b2f9c3c09bf894e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103418875"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654659"
 ---
-# <a name="create-a-semantic-query-in-cognitive-search"></a>Een semantische query maken in Cognitive Search
+# <a name="create-a-query-for-semantic-captions-in-cognitive-search"></a>Een query maken voor semantische bijschriften in Cognitive Search
 
 > [!IMPORTANT]
-> Semantisch query type bevindt zich in de open bare preview-versie, die beschikbaar is via de preview-REST API en Azure Portal. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
+> Semantische zoek opdracht bevindt zich in de open bare preview, die beschikbaar is via de preview-REST API en Azure Portal. Preview-functies worden onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)aangeboden. Deze functies zijn Factureerbaar. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
-In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt van semantische classificatie. De aanvraag retourneert semantische bijschriften en eventueel [semantische antwoorden](semantic-answers.md), met de nadruk op de meest relevante termen en zinsdelen.
+In dit artikel leert u hoe u een zoek opdracht kunt formuleren die gebruikmaakt van semantische classificatie en die semantische bijschriften (en eventueel [semantische antwoorden](semantic-answers.md)) retourneert, met de nadruk op de meest relevante termen en zinsdelen. Bijschriften en antwoorden worden geretourneerd in query's die zijn geformuleerd met behulp van het ' semantische-query type '.
 
-Zowel bijschriften als antwoorden worden uitgepakt Verbatim uit tekst in het zoek document. Het semantische subsysteem bepaalt welke inhoud de kenmerken van een bijschrift of een antwoord heeft, maar er worden geen nieuwe zinnen of zinsdelen samengesteld. Daarom werken inhoud met uitleg of definities het beste voor semantisch zoeken.
+Bijschriften en antwoorden worden Verbatim opgehaald uit tekst in het zoek document. Het semantische subsysteem bepaalt welk deel van uw inhoud de kenmerken van een bijschrift of antwoord bevat, maar er worden geen nieuwe zinnen of zinsdelen samengesteld. Daarom werken inhoud met uitleg of definities het beste voor semantisch zoeken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -30,11 +30,11 @@ Zowel bijschriften als antwoorden worden uitgepakt Verbatim uit tekst in het zoe
 
 + Toegang tot semantische Zoek voorbeeld: [registreren](https://aka.ms/SemanticSearchPreviewSignup)
 
-+ Een bestaande zoek index met Engelse inhoud
++ Een bestaande zoek index die Engelse inhoud bevat
 
 + Een Search-client voor het verzenden van query's
 
-  De Search-client moet de preview REST-Api's voor de query aanvraag ondersteunen. U kunt [postman](search-get-started-rest.md), [Visual Studio code](search-get-started-vs-code.md)of code gebruiken die u hebt gewijzigd om rest-aanroepen naar de preview-api's te maken. U kunt ook [Search Explorer](search-explorer.md) in azure Portal gebruiken om een semantische query in te dienen.
+  De Search-client moet de preview REST-Api's voor de query aanvraag ondersteunen. U kunt [postman](search-get-started-rest.md), [Visual Studio code](search-get-started-vs-code.md)of code gebruiken voor het aanroepen van de preview-api's. U kunt ook [Search Explorer](search-explorer.md) in azure Portal gebruiken om een semantische query in te dienen.
 
 + Een [query aanvraag](/rest/api/searchservice/preview-api/search-documents) moet de semantische optie en andere para meters bevatten die in dit artikel worden beschreven.
 
@@ -62,9 +62,13 @@ Alleen de Top 50 treffers van de oorspronkelijke resultaten kan semantisch worde
 
 ## <a name="query-with-search-explorer"></a>Query uitvoeren met Search Explorer
 
-[Search Explorer](search-explorer.md) is bijgewerkt met opties voor semantische query's. Deze opties worden weer gegeven in de portal nadat u toegang hebt tot de preview-versie. Met query opties kunnen semantische query's, searchFields en spelling correctie worden ingeschakeld.
+[Search Explorer](search-explorer.md) is bijgewerkt met opties voor semantische query's. Deze opties worden weer gegeven in de portal na het volt ooien van de volgende stappen:
 
-U kunt ook de vereiste query parameters in de query teken reeks plakken.
+1. [Registreren](https://aka.ms/SemanticSearchPreviewSignup) en Admittance van uw zoek service in het preview-programma
+
+1. Open de portal met de volgende syntaxis: `https://portal.azure.com/?feature.semanticSearch=true`
+
+Query opties bevatten switches voor het inschakelen van semantische query's, searchFields en spelling correctie. U kunt ook de vereiste query parameters in de query teken reeks plakken.
 
 :::image type="content" source="./media/semantic-search-overview/search-explorer-semantic-query-options.png" alt-text="Query opties in Search Explorer" border="true":::
 
@@ -98,7 +102,7 @@ De volgende tabel bevat een overzicht van de query parameters die in een semanti
 |-----------|-------|-------------|
 | Type | Tekenreeks | Geldige waarden zijn simple, Full en semantisch. De waarde ' semantisch ' is vereist voor semantische query's. |
 | queryLanguage | Tekenreeks | Vereist voor semantische query's. Momenteel wordt alleen "en-US" geïmplementeerd. |
-| searchFields | Tekenreeks | Een door komma's gescheiden lijst met Doorzoek bare velden. Optioneel, maar aanbevolen. Hiermee geeft u de velden op waarover de semantische classificatie plaatsvindt. </br></br>In tegens telling tot eenvoudige en volledige query typen, bepaalt de volg orde waarin velden worden weer gegeven voor rang. Zie [stap 2: set searchFields](#searchfields)voor meer gebruiks instructies. |
+| searchFields | Tekenreeks | Een door komma's gescheiden lijst met Doorzoek bare velden. Hiermee geeft u de velden op waarover de semantische rang schikking plaatsvindt, waaruit bijschriften en antwoorden worden geëxtraheerd. </br></br>In tegens telling tot eenvoudige en volledige query typen, bepaalt de volg orde waarin velden worden weer gegeven voor rang. Zie [stap 2: set searchFields](#searchfields)voor meer gebruiks instructies. |
 | speller | Tekenreeks | Optionele para meter, niet specifiek voor semantische query's, waarmee verkeerd gespelde termen worden gecorrigeerd voordat de zoek machine wordt bereikt. Zie [spelling correctie toevoegen aan query's](speller-how-to-add.md)voor meer informatie. |
 | beantwoordt |Tekenreeks | Optionele para meters die aangeven of semantische antwoorden worden opgenomen in het resultaat. Op dit moment wordt alleen ' extra heren ' geïmplementeerd. Antwoorden kunnen worden geconfigureerd om Maxi maal vijf te retour neren. De standaard waarde is één. Dit voor beeld toont een aantal van drie antwoorden: ' extractie \| count3 ' '. Zie voor meer informatie [semantische antwoorden retour neren](semantic-answers.md).|
 
@@ -125,13 +129,11 @@ Terwijl inhoud in een zoek index in meerdere talen kan worden samengesteld, is d
 
 #### <a name="step-2-set-searchfields"></a>Stap 2: searchFields instellen
 
-Deze para meter is optioneel omdat er geen fout is als u deze verlaat, maar een geordende lijst met velden wordt ten zeerste aanbevolen voor bijschriften en antwoorden.
-
 De para meter searchFields wordt gebruikt om de door gang te identificeren die moet worden geëvalueerd voor ' semantische gelijkenis ' met de query. Voor de preview-versie raden we u aan om searchFields leeg te laten, omdat het model een hint vereist om aan te geven welke velden het belangrijkst zijn voor het proces.
 
-De volg orde van de searchFields is kritiek. Als u searchFields al gebruikt in bestaande eenvoudige of volledige lucene-query's, moet u deze para meter opnieuw bezoeken om te controleren op veld volgorde wanneer u overschakelt naar een semantisch query type.
+De volg orde van de searchFields is kritiek. Als u searchFields al gebruikt in bestaande code voor eenvoudige of volledige lucene-query's, moet u deze para meter opnieuw bezoeken om te controleren of er een veld volgorde is wanneer u overschakelt naar een semantisch query type.
 
-Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of meer searchFields zijn opgegeven:
+Voor twee of meer searchFields:
 
 + Alleen teken reeks velden en teken reeks velden op het hoogste niveau in verzamelingen bevatten. Als u een niet-teken reeks velden of velden van het lagere niveau in een verzameling opneemt, is er geen fout, maar deze velden worden niet gebruikt in semantische volg orde.
 
@@ -141,7 +143,7 @@ Volg deze richt lijnen om te zorgen voor optimale resultaten wanneer er twee of 
 
 + Volg deze velden op beschrijvende velden waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document.
 
-Als er slechts één veld is opgegeven, gebruikt u een beschrijvende veld waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. Kies een veld dat voldoende inhoud bevat. Om ervoor te zorgen dat de verwerking tijdig verloopt, worden alleen de 8.000-tokens van de gezamenlijke inhoud van searchFields als semantische evaluatie en classificatie ondergaan.
+Als er slechts één veld is opgegeven, gebruikt u een beschrijvende veld waarin het antwoord op semantische query's kan worden gevonden, zoals de hoofd inhoud van een document. 
 
 #### <a name="step-3-remove-orderby-clauses"></a>Stap 3: orderBy-componenten verwijderen
 
@@ -191,7 +193,7 @@ Het antwoord voor de bovenstaande voorbeeld query retourneert de volgende overee
 Stel in dat semantische classificatie en reacties worden gebaseerd op een eerste resultatenset. Elke logica waarmee de kwaliteit van de oorspronkelijke resultaten wordt verbeterd, wordt getransporteerd naar semantisch zoeken. Als volgende stap bekijkt u de functies die bijdragen aan de oorspronkelijke resultaten, waaronder analyserende onderdelen die van invloed zijn op hoe teken reeksen worden getokend, Score profielen die resultaten kunnen afstemmen en het standaard relevantie algoritme.
 
 + [Analyse functies voor tekst verwerking](search-analyzers.md)
-+ [Gelijkenis en score in Cognitive Search](index-similarity-and-scoring.md)
-+ [Scoringprofielen toevoegen](index-add-scoring-profiles.md)
++ [Classificatie algoritme voor gelijkenis](index-similarity-and-scoring.md)
++ [Scoreprofielen](index-add-scoring-profiles.md)
 + [Overzicht van semantisch zoeken](semantic-search-overview.md)
-+ [Spelling controle toevoegen aan query termen](speller-how-to-add.md)
++ [Algoritme voor semantische classificatie](semantic-ranking.md)

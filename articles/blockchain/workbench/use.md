@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: tutorial
 ms.reviewer: brendal
 ms.openlocfilehash: 5761bf1294691c2d50e0e389fe69ec286df4a06c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74324048"
 ---
 # <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Zelfstudie: Toepassingen gebruiken in Azure Blockchain Workbench
@@ -36,7 +36,7 @@ U moet zich aanmelden als lid van Blockchain Workbench. Als er geen toepassingen
 
 ## <a name="create-new-contract"></a>Nieuw contract maken
 
-U kunt alleen een nieuw contract maken als u bent ingesteld als een contract**initiator**. Zie [Werkstromen in het configuratieoverzicht](configuration.md#workflows) voor informatie over het definiëren van toepassingsrollen en initiators voor het contract. Zie [Een lid toevoegen aan een toepassing](manage-users.md#add-member-to-application) voor informatie over het toewijzen van leden aan toepassingsrollen.
+U kunt alleen een nieuw contract maken als u bent ingesteld als een contract **initiator**. Zie [Werkstromen in het configuratieoverzicht](configuration.md#workflows) voor informatie over het definiëren van toepassingsrollen en initiators voor het contract. Zie [Een lid toevoegen aan een toepassing](manage-users.md#add-member-to-application) voor informatie over het toewijzen van leden aan toepassingsrollen.
 
 1. Selecteer in de sectie Blockchain Workbench-toepassing de toepassingstegel met het contract dat u wilt maken. U ziet een lijst met actieve contracten.
 

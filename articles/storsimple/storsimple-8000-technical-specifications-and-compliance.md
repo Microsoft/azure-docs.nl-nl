@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 061194422a8c1bc449dbef0c4f04bb8e1db10dea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "68965293"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>Technische specificaties en naleving voor het StorSimple-apparaat
@@ -38,7 +38,7 @@ De EBOD Enclosure maakt gebruik van een 580 W PCM en de primaire behuizing maakt
 | Specificatie | 580 W PCM (EBOD) | 764 W PCM (primair) |
 | --- | --- | --- |
 | Maximale uitvoer kracht |580 W |764 |
-| Frequency |50/60 Hz |50/60 Hz |
+| Frequentie |50/60 Hz |50/60 Hz |
 | Selectie van voltage bereik |Automatisch variërend: 90 – 264 V AC, 47/63 Hz |Automatisch variërend: 90-264 V AC, 47/63 Hz |
 | Maximum inactieve stroom |20 A |20 A |
 | Correctie van de energie factor |>95% nominale invoer spanning |>95% nominale invoer spanning |

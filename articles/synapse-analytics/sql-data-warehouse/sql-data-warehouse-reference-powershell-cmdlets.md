@@ -2,21 +2,21 @@
 title: Power shell-& REST-Api's voor toegewezen SQL-groep (voorheen SQL DW)
 description: Top Power shell-cmdlets voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics, inclusief het onderbreken en hervatten van een Data Base.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, devx-track-azurepowershell
-ms.openlocfilehash: bb26ac0071a50095f8e93ce0cc25da0055bdbac8
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 83e6082025f068e91a3d531f052b746870ffd57a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448226"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584105"
 ---
 # <a name="powershell--rest-apis-for-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Power shell-& REST-Api's voor voor exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics 
 

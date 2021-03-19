@@ -4,10 +4,10 @@ description: In dit artikel worden webhook-gebeurtenis bezorgings-en eindpunt va
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: e9a52d0cb3e4e880d91e1b748d97ef3041298930
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87461235"
 ---
 # <a name="webhook-event-delivery"></a>Overdracht van gebeurtenis van webhook
@@ -28,7 +28,7 @@ Als u een ander type eind punt gebruikt, zoals een op een HTTP-trigger gebaseerd
 
    Vanaf versie 2018-05-01-preview ondersteunt Event Grid een hand matige validatie-handshake. Als u een gebeurtenis abonnement met een SDK of een hulp programma maakt die gebruikmaakt van API versie 2018-05-01-preview of hoger, wordt Event Grid een `validationUrl` eigenschap verzonden in het gedeelte gegevens van de validatie gebeurtenis voor het abonnement. Als u de handshake wilt volt ooien, gaat u naar die URL in de gebeurtenis gegevens en voert u een GET-aanvraag naar deze. U kunt een REST-client of uw webbrowser gebruiken.
 
-   De beschik bare URL is **5 minuten**geldig. Gedurende die tijd is de inrichtings status van het gebeurtenis abonnement `AwaitingManualAction` . Als u de hand matige validatie niet binnen vijf minuten voltooit, wordt de inrichtings status ingesteld op `Failed` . U moet het gebeurtenis abonnement opnieuw maken voordat u de hand matige validatie start.
+   De beschik bare URL is **5 minuten** geldig. Gedurende die tijd is de inrichtings status van het gebeurtenis abonnement `AwaitingManualAction` . Als u de hand matige validatie niet binnen vijf minuten voltooit, wordt de inrichtings status ingesteld op `Failed` . U moet het gebeurtenis abonnement opnieuw maken voordat u de hand matige validatie start.
 
    Voor dit verificatie mechanisme moet ook het webhook-eind punt een HTTP-status code van 200 retour neren, zodat u weet dat het bericht voor de validatie gebeurtenis is geaccepteerd voordat het in de hand matige validatie modus kan worden geplaatst. Met andere woorden, als het eind punt 200 retourneert, maar niet synchroon een validatie antwoord terugkeert, wordt de modus overgezet naar de hand matige validatie modus. Als er binnen vijf minuten een GET op de validatie-URL is, wordt de validatie-Handshake als geslaagd beschouwd.
 

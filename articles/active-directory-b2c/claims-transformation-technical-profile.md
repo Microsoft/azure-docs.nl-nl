@@ -12,10 +12,10 @@ ms.date: 02/13/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 6553b9ec120ca0e1e479b400495b61bc68c88cf3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85201205"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor het transformeren van claims definiëren in een Azure Active Directory B2C aangepast beleid
@@ -104,11 +104,11 @@ Met het technische profiel voor claim transformatie kunt u een claim transformat
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false`   (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
+| IncludeClaimResolvingInClaimsHandling  | Nee | Voor invoer-en uitvoer claims geeft u op of [claim omzetting](claim-resolver-overview.md) in het technische profiel is opgenomen. Mogelijke waarden: `true` , of `false` (standaard). Als u een claim conflict Oplosser wilt gebruiken in het technische profiel, stelt u dit in op `true` . |
 
 ## <a name="use-a-validation-technical-profile"></a>Een technische validatie profiel gebruiken
 
-Een trans formatie van een technische profiel voor claims kan worden gebruikt om gegevens te valideren. In het volgende voor beeld vraagt het [zelf bevestigde technische profiel](self-asserted-technical-profile.md) met de naam **LocalAccountSignUpWithLogonEmail** de gebruiker twee keer het e-mail adres in te voeren. vervolgens wordt het [validatie technische profiel](validation-technical-profile.md) met de naam **Validate e-mail** aangeroepen om de e-mail berichten te valideren. Met het technische profiel **valideren-e-mail** wordt het **AssertEmailAreEqual** van de claims-trans formatie aangeroepen om de twee claims **-e-mail** en **emailRepeat**te vergelijken en een uitzonde ring te genereren als deze niet gelijk zijn aan de opgegeven vergelijking.
+Een trans formatie van een technische profiel voor claims kan worden gebruikt om gegevens te valideren. In het volgende voor beeld vraagt het [zelf bevestigde technische profiel](self-asserted-technical-profile.md) met de naam **LocalAccountSignUpWithLogonEmail** de gebruiker twee keer het e-mail adres in te voeren. vervolgens wordt het [validatie technische profiel](validation-technical-profile.md) met de naam **Validate e-mail** aangeroepen om de e-mail berichten te valideren. Met het technische profiel **valideren-e-mail** wordt het **AssertEmailAreEqual** van de claims-trans formatie aangeroepen om de twee claims **-e-mail** en **emailRepeat** te vergelijken en een uitzonde ring te genereren als deze niet gelijk zijn aan de opgegeven vergelijking.
 
 ```xml
 <ClaimsTransformations>

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7338fb480f76ed1a5edbf9502dc0946d08618a63
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 4545e92767a427b8cd89af07ed4d06053685977a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101644915"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578002"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Zelfstudie: Hybride Azure Active Directory-deelname configureren voor beheerde domeinen
 
@@ -58,6 +58,9 @@ Raak ermee vertrouwd met behulp van deze artikelen:
 > Azure AD biedt geen ondersteuning voor smartcards of certificaten in beheerde domeinen.
 
 Verifieer dat Azure AD Connect de computerobjecten heeft gesynchroniseerd van de apparaten die u hybride Azure AD-gekoppeld wilt maken. Als de computerobjecten bij specifieke organisatie-eenheden horen, moeten deze OE's worden geconfigureerd voor synchronisatie in Azure AD Connect. Zie [Organizational unit-based filtering](../hybrid/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) (Op organisatie-eenheden gebaseerde filters) voor meer informatie over het synchroniseren van computerobjecten met behulp van Azure AD Connect.
+
+> [!NOTE]
+> Als u de synchronisatie koppeling voor apparaatregistratie wilt ophalen, moet u als onderdeel van de configuratie van de apparaatregistratie de standaard kenmerken van het apparaat niet uitsluiten van de configuratie van de Azure AD Connect synchronisatie. Zie [kenmerken gesynchroniseerd door Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized#windows-10)voor meer informatie over standaard kenmerken van apparaten die zijn GESYNCHRONISEERD met Aad.
 
 Vanaf versie 1.1.819.0 bevat Azure AD Connect een wizard om een hybride Azure AD-koppeling te configureren. De wizard maakt het configuratieproces aanzienlijk eenvoudiger. De wizard configureert de serviceverbindingspunten (SCP's) voor apparaatregistratie
 

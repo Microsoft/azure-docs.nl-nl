@@ -4,10 +4,10 @@ description: Meer informatie over het definiëren van Lab-beleid, zoals VM-groot
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a7ada980b2a251b8164f2e1a20f65da54c89ba72
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90530349"
 ---
 # <a name="manage-all-policies-for-a-lab-in-azure-devtest-labs"></a>Alle beleids regels voor een lab in Azure DevTest Labs beheren
@@ -34,33 +34,33 @@ Het beleid voor het instellen van de toegestane VM-grootten helpt Lab-afval te m
 ## <a name="set-virtual-machines-per-user"></a>Virtuele machines per gebruiker instellen
 Met het beleid voor **virtuele machines per gebruiker** kunt u het aantal vm's opgeven dat door een afzonderlijke gebruiker kan worden gemaakt. Als een gebruiker probeert een virtuele machine te maken of te claimen wanneer aan de limiet van de gebruiker is voldaan, geeft een fout bericht aan dat de virtuele machine niet kan worden gemaakt/geclaimd. 
 
-1. Selecteer **virtuele machines per gebruiker**in het deel venster **configuratie en beleid** van de test omgeving.
+1. Selecteer **virtuele machines per gebruiker** in het deel venster **configuratie en beleid** van de test omgeving.
    
     ![Virtuele machines per gebruiker](./media/devtest-lab-set-lab-policy/max-vms-per-user.png)
 
-1. Selecteer **Ja** als u het aantal vm's per gebruiker wilt beperken. Als u het aantal Vm's per gebruiker niet wilt beperken, selecteert u **Nee**. Als u **Ja**selecteert, voert u een numerieke waarde in waarmee het aantal vm's wordt aangegeven dat door een gebruiker kan worden gemaakt of geclaimd. 
+1. Selecteer **Ja** als u het aantal vm's per gebruiker wilt beperken. Als u het aantal Vm's per gebruiker niet wilt beperken, selecteert u **Nee**. Als u **Ja** selecteert, voert u een numerieke waarde in waarmee het aantal vm's wordt aangegeven dat door een gebruiker kan worden gemaakt of geclaimd. 
 
-1. Selecteer **Ja** als u het aantal vm's wilt beperken dat SSD (Solid-State Disk) kan gebruiken. Als u het aantal Vm's dat SSD mag gebruiken niet wilt beperken, selecteert u **Nee**. Als u **Ja**selecteert, geeft u een waarde op waarmee het aantal vm's wordt aangegeven dat kan worden gemaakt met SSD. 
+1. Selecteer **Ja** als u het aantal vm's wilt beperken dat SSD (Solid-State Disk) kan gebruiken. Als u het aantal Vm's dat SSD mag gebruiken niet wilt beperken, selecteert u **Nee**. Als u **Ja** selecteert, geeft u een waarde op waarmee het aantal vm's wordt aangegeven dat kan worden gemaakt met SSD. 
 
 1. Selecteer **Opslaan**.
 
 ## <a name="set-virtual-machines-per-lab"></a>Virtuele machines per Lab instellen
 Met het beleid voor **virtuele machines per Lab** kunt u het aantal vm's opgeven dat voor het huidige Lab kan worden gemaakt. Als een gebruiker probeert een virtuele machine te maken wanneer de test limiet is bereikt, wordt in een fout bericht aangegeven dat de virtuele machine niet kan worden gemaakt. 
 
-1. Selecteer **virtuele machines per Lab**in het deel venster **configuratie en beleid** van de test omgeving.
+1. Selecteer **virtuele machines per Lab** in het deel venster **configuratie en beleid** van de test omgeving.
    
     ![Virtuele machines per Lab](./media/devtest-lab-set-lab-policy/max-vms-per-lab.png)
 
-1. Selecteer **Ja** om het aantal vm's per Lab te beperken. Als u het aantal Vm's per Lab niet wilt beperken, selecteert u **Nee**. Als u **Ja**selecteert, voert u een numerieke waarde in waarmee het aantal vm's wordt aangegeven dat door een gebruiker kan worden gemaakt of geclaimd. 
+1. Selecteer **Ja** om het aantal vm's per Lab te beperken. Als u het aantal Vm's per Lab niet wilt beperken, selecteert u **Nee**. Als u **Ja** selecteert, voert u een numerieke waarde in waarmee het aantal vm's wordt aangegeven dat door een gebruiker kan worden gemaakt of geclaimd. 
 
-1. Selecteer **Ja** als u het aantal vm's wilt beperken dat SSD (Solid-State Disk) kan gebruiken. Als u het aantal Vm's dat SSD mag gebruiken niet wilt beperken, selecteert u **Nee**. Als u **Ja**selecteert, geeft u een waarde op waarmee het aantal vm's wordt aangegeven dat kan worden gemaakt met SSD. 
+1. Selecteer **Ja** als u het aantal vm's wilt beperken dat SSD (Solid-State Disk) kan gebruiken. Als u het aantal Vm's dat SSD mag gebruiken niet wilt beperken, selecteert u **Nee**. Als u **Ja** selecteert, geeft u een waarde op waarmee het aantal vm's wordt aangegeven dat kan worden gemaakt met SSD. 
 
 1. Selecteer **Opslaan**.
 
 ## <a name="set-auto-shutdown"></a>Automatisch afsluiten instellen
 Het beleid voor automatisch afsluiten helpt Lab-afval te minimaliseren door de tijd op te geven waarop de Vm's van deze Lab worden afgesloten.
 
-1. Selecteer **automatisch afsluiten**in het deel venster **configuratie en beleid** van de test omgeving.
+1. Selecteer **automatisch afsluiten** in het deel venster **configuratie en beleid** van de test omgeving.
    
     ![Automatisch afsluiten](./media/devtest-lab-set-lab-policy/auto-shutdown.png)
 
@@ -68,7 +68,7 @@ Het beleid voor automatisch afsluiten helpt Lab-afval te minimaliseren door de t
 
 1. Als u dit beleid inschakelt, geeft u de tijd (en tijd zone) op om alle virtuele machines in het huidige Lab af te sluiten.
 
-1. Geef **Ja** of **Nee** op voor de optie voor het verzenden van een melding 15 minuten vóór de opgegeven tijd voor automatisch afsluiten. Als u **Ja**kiest, voert u het eind punt van de webhook-URL of een e-mail adres in om op te geven waar de melding moet worden gepost of verzonden. De gebruiker ontvangt een melding en krijgt de mogelijkheid om het afsluiten uit te stellen.
+1. Geef **Ja** of **Nee** op voor de optie voor het verzenden van een melding 15 minuten vóór de opgegeven tijd voor automatisch afsluiten. Als u **Ja** kiest, voert u het eind punt van de webhook-URL of een e-mail adres in om op te geven waar de melding moet worden gepost of verzonden. De gebruiker ontvangt een melding en krijgt de mogelijkheid om het afsluiten uit te stellen.
 
    Zie [een webhook of API Azure function maken](../azure-functions/functions-bindings-http-webhook.md)voor meer informatie over webhooks. 
 
@@ -116,7 +116,7 @@ Met het beleid voor automatisch starten kunt u opgeven wanneer de Vm's in het hu
 Als deze functie is ingeschakeld, wordt dit beleid niet automatisch toegepast op virtuele machines in het huidige lab. Als u deze instelling wilt Toep assen op een specifieke virtuele machine, opent u het deel venster beheer van de virtuele machine en wijzigt u de instelling voor **automatisch starten** .
 
 ## <a name="set-expiration-date"></a>Verval datum instellen
-U kunt een verval datum instellen wanneer u [de virtuele machine maakt](devtest-lab-add-vm.md). Kies in **Geavanceerde instellingen**het kalender pictogram om een datum op te geven waarop de virtuele machine automatisch wordt verwijderd. De virtuele machine verloopt standaard nooit.
+U kunt een verval datum instellen wanneer u [de virtuele machine maakt](devtest-lab-add-vm.md). Kies in **Geavanceerde instellingen** het kalender pictogram om een datum op te geven waarop de virtuele machine automatisch wordt verwijderd. De virtuele machine verloopt standaard nooit.
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 

@@ -9,18 +9,34 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
-ms.date: 12/31/2020
-ms.openlocfilehash: 54b650d598cf19e061465b3a4fa18d50808e7f29
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.date: 03/18/2020
+ms.openlocfilehash: f03fa84c02c4b3894efe069289b0ecbb9e90dfdb
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102426158"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654625"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Gegevens analyseren met toegewezen SQL-pools
 
-Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met behulp van een toegewezen SQL-pool. In deze zelfstudie gebruikt u de voorbeeldgegevens van NYC Taxi om de mogelijkheden van een toegewezen SQL-pool te verkennen.
+In deze zelfstudie gebruikt u de voorbeeldgegevens van NYC Taxi om de mogelijkheden van een toegewezen SQL-pool te verkennen.
 
+## <a name="create-a-dedicated-sql-pool"></a>Een toegewezen SQL-pool maken
+
+1. Selecteer in Synapse Studio in het linkerdeelvenster de optie **Beheren** > **SQL-pools**.
+1. Selecteer **Nieuw**
+1. Selecteer **SQLPOOL1** voor **Naam van SQL-pool**
+1. Kies **DW100C** voor **Prestatieniveau**
+1. Selecteer **Beoordelen en maken** > **Maken**. Uw toegewezen SQL-pool is binnen een paar minuten klaar. 
+
+Uw toegewezen SQL-groep is gekoppeld aan een SQL database dat ook wel **SQLPOOL1** wordt genoemd.
+1. Navigeer naar **Data**  >  **Workspace**.
+1. U ziet een Data Base met de naam **SQLPOOL1**. Als u dit niet ziet, klikt u op **vernieuwen**.
+
+Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uitgevoerd. U kunt de pool later onderbreken om de kosten te verlagen.
+
+> [!NOTE] 
+> Bij het maken van een nieuwe toegewezen SQL-pool (voorheen SQL DW) in uw werkruimte, wordt de pagina voor het inrichten van de toegewezen SQL-pool geopend. Het inrichten vindt plaats op de logische SQL-server.
 ## <a name="load-the-nyc-taxi-data-into-sqlpool1"></a>Laad de NYC Taxi-gegevens in SQLPOOL1
 
 1. Ga in Synapse Studio naar de **ontwikkelende** hub, klik op de **+** knop om een nieuwe resource toe te voegen en maak vervolgens een nieuw SQL-script.
@@ -77,7 +93,6 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
 ## <a name="explore-the-nyc-taxi-data-in-the-dedicated-sql-pool"></a>De NYC-taxigegevens in de toegewezen SQL-pool verkennen
 
 1. Ga in Synapse Studio naar de hub **Gegevens**.
-1. U ziet een Data Base met de naam **SQLPOOL1**. Als u dit niet ziet, klikt u op **vernieuwen**.
 1. Ga naar **SQLPOOL1** > **Tabellen**. 
 3. Klik met de rechtermuisknop op de tabel **dbo.Trip** en selecteer **Nieuw SQL-script** > **Eerste 100 rijen selecteren**.
 4. Wacht tot er een nieuw SQL-script wordt gemaakt en uitgevoerd.
@@ -103,4 +118,4 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Analyseren met behulp van Spark](get-started-analyze-spark.md)
+> [Gegevens in een Azure Storage-account analyseren](get-started-analyze-storage.md)

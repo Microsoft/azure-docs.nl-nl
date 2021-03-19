@@ -6,12 +6,12 @@ ms.service: data-factory
 ms.topic: quickstart
 ms.date: 12/14/2020
 ms.author: jingwang
-ms.openlocfilehash: e7d4770af38081353fc58eec9957f50e2b6a7348
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 8b33005b7f0d08e6da963457813b012199d89f5f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372787"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655030"
 ---
 # <a name="quickstart-create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Quickstart: Een gegevensfactory maken met de Azure Data Factory-UI 
 
@@ -39,7 +39,8 @@ Bekijk deze video voor een beter begrip van de Data Factory-UI:
 1. Selecteer **Een resource maken** in het menu van de Azure-portal.
 1. Selecteer **Integratie** en selecteer vervolgens **Data Factory**. 
    
-   ![Selectie van Data Factory in het deelvenster Nieuw](./media/doc-common-process/new-azure-data-factory-menu.png)
+   :::image type="content" source="./media/doc-common-process/new-azure-data-factory-menu.png" alt-text="Data Factory selectie in het nieuwe deel venster.":::
+
 1. Selecteer op de pagina **Data factory maken** op het tabblad **Basisbeginselen** het Azure-**abonnement** waarin u de data factory wilt maken.
 1. Voer een van de volgende stappen uit voor **Resourcegroep**:
 
@@ -55,8 +56,8 @@ Bekijk deze video voor een beter begrip van de Data Factory-UI:
  
 1. Voer **ADFTutorialDataFactory** in bij **Naam**.
    De naam van de Azure-gegevensfactory moet *wereldwijd uniek* zijn. Als u het volgende foutbericht ziet, wijzigt u de naam van de data factory (bijvoorbeeld **&lt;uwnaam&gt;ADFTutorialDataFactory**) en probeert u het opnieuw. Zie het artikel [Data factory - Naamgevingsregels](naming-rules.md) voor naamgevingsregels voor Data Factory-artefacten.
-  
-   ![Fout als de naam niet beschikbaar is](./media/doc-common-process/name-not-available-error.png)
+
+    :::image type="content" source="./media/doc-common-process/name-not-available-error.png" alt-text="Nieuw data factory fout bericht voor dubbele naam.":::
 
 1. Selecteer **V2** als **Versie**.
 
@@ -66,7 +67,7 @@ Bekijk deze video voor een beter begrip van de Data Factory-UI:
 
 1. Selecteer de tegel **Maken en controleren** om de UI (gebruikersinterface) van Azure Data Factory te openen op een afzonderlijk browsertabblad.
    
-   ![Startpagina van Data Factory, met de tegel Maken en controleren](./media/doc-common-process/data-factory-home-page.png)
+    :::image type="content" source="./media/doc-common-process/data-factory-home-page.png" alt-text="Start pagina voor de Azure Data Factory, met de tegel Author & monitor.":::
    
    > [!NOTE]
    > Als u ziet dat de webbrowser vastloopt bij Autoriseren, schakelt u het selectievakje **Cookies van derden en sitegegevens blokkeren**  uit. U kunt het selectievakje ook ingeschakeld laten, een uitzondering maken voor **login.microsoftonline.com** en de app opnieuw openen.
@@ -79,7 +80,7 @@ In deze procedure maakt u een gekoppelde service om uw Azure Storage-account te 
 
 1. Selecteer op de pagina Gekoppelde services **+Nieuw** om een nieuwe gekoppelde service te maken.
 
-   ![Nieuwe gekoppelde service](./media/doc-common-process/new-linked-service.png)
+   :::image type="content" source="./media/doc-common-process/new-linked-service.png" alt-text="Nieuwe gekoppelde service.":::
    
 1. Selecteer op de pagina **Nieuwe gekoppelde service** de optie **Azure Blob-opslag** en selecteer vervolgens **Doorgaan**. 
 
@@ -93,7 +94,7 @@ In deze procedure maakt u een gekoppelde service om uw Azure Storage-account te 
 
    d. Selecteer **Maken** om de gekoppelde service op te slaan. 
 
-      ![Gekoppelde service](./media/quickstart-create-data-factory-portal/linked-service.png)
+      :::image type="content" source="./media/quickstart-create-data-factory-portal/linked-service.png" alt-text="Gekoppelde service.":::
 
 
 ## <a name="create-datasets"></a>Gegevenssets maken
@@ -109,13 +110,13 @@ In de instellingen voor de gekoppelde service hebt u het Azure Storage-account o
 
 1. Selecteer de knop **+** (plus) en vervolgens **Gegevensset**.
 
-   ![Menu om een gegevensset te maken](./media/quickstart-create-data-factory-portal/new-dataset-menu.png)
+   :::image type="content" source="./media/quickstart-create-data-factory-portal/new-dataset-menu.png" alt-text="Menu voor het maken van een gegevensset.":::
 
 1. Selecteer op de pagina **Nieuwe gegevensset** de optie **Azure Blob-opslag** en selecteer **Doorgaan**. 
 
 1. Selecteer op de pagina **Indeling selecteren** het indelingstype van uw gegevens en selecteer **Doorgaan**. Selecteer in dit geval **Binair** wanneer u bestanden ongewijzigd kopieert zonder de inhoud te parseren.
 
-   ![Indeling selecteren](./media/quickstart-create-data-factory-portal/select-format.png)
+   :::image type="content" source="./media/quickstart-create-data-factory-portal/select-format.png" alt-text="Indeling selecteren.":::   
    
 1. Voer de volgende stappen uit op de pagina **Eigenschappen instellen**:
 
@@ -129,7 +130,8 @@ In de instellingen voor de gekoppelde service hebt u het Azure Storage-account o
     
     e. Selecteer **OK**.   
 
-    ![Eigenschappen instellen voor InputDataset](./media/quickstart-create-data-factory-portal/set-properties-for-inputdataset.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/set-properties-for-inputdataset.png" alt-text="Eigenschappen instellen voor input DataSet.":::
+
 1. Herhaal de stappen om de uitvoergegevensset te maken:  
 
     a. Selecteer de knop **+** (plus) en vervolgens **Gegevensset**.
@@ -144,7 +146,7 @@ In de instellingen voor de gekoppelde service hebt u het Azure Storage-account o
 
     f. Selecteer **OK**.   
 
-    ![Eigenschappen instellen voor OutputDataset](./media/quickstart-create-data-factory-portal/set-properties-for-outputdataset.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/set-properties-for-outputdataset.png" alt-text="Eigenschappen instellen voor output DataSet.":::    
 
 ## <a name="create-a-pipeline"></a>Een pijplijn maken 
 In deze procedure maakt en valideert u een pijplijn via een kopieeractiviteit die gebruikmaakt van de invoer- en uitvoergegevenssets. Met de kopieeractiviteit worden gegevens uit het bestand dat is opgegeven bij de instellingen voor de invoergegevensset gekopieerd naar het bestand dat is opgegeven in de instellingen voor de uitvoergegevensset. Als in de invoergegevensset alleen een map is opgegeven (en geen bestandsnaam), worden met de kopieeractiviteit alle bestanden in de bronmap gekopieerd naar de bestemming. 
@@ -155,7 +157,7 @@ In deze procedure maakt en valideert u een pijplijn via een kopieeractiviteit di
 
 1. Open de werkset **Activiteiten** en vouw **Verplaatsen en transformeren** uit. Sleep de activiteit **Gegevens kopiëren** vanuit de werkset **Activiteiten** naar het ontwerpoppervlak voor pijplijnen. U kunt ook zoeken naar activiteiten in de werkset **Activiteiten**. Geef **CopyFromBlobToBlob** op bij **Naam**.
 
-   ![Een activiteit voor gegevens kopiëren maken](./media/quickstart-create-data-factory-portal/copy-activity.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/copy-activity.png" alt-text="Een activiteit voor het kopiëren van gegevens maken.":::   
 
 1. Ga naar het tabblad **Bron** in de instellingen voor de kopieeractiviteit en selecteer **InputDataset** als de **brongegevensset**.
 
@@ -163,7 +165,7 @@ In deze procedure maakt en valideert u een pijplijn via een kopieeractiviteit di
 
 1. Klik in de pijplijnwerkbalk boven het canvas op **Valideren** om de instellingen voor de pijplijn te valideren. Controleer of de pijplijn is gevalideerd. Als u de validatie-uitvoer wilt sluiten, selecteert u in de rechterbovenhoek de knop Valideren. 
 
-   ![Een pijplijn valideren](./media/quickstart-create-data-factory-portal/pipeline-validate.png)
+   :::image type="content" source="./media/quickstart-create-data-factory-portal/pipeline-validate.png"   alt-text="Een pijp lijn valideren.":::
 
 ## <a name="debug-the-pipeline"></a>Fouten opsporen in de pijplijn
 In deze stap spoort u fouten op in de pijplijn voordat u deze implementeert in Data Factory. 
@@ -172,7 +174,7 @@ In deze stap spoort u fouten op in de pijplijn voordat u deze implementeert in D
     
 1. Controleer of de status van de pijplijnuitvoering onder aan het tabblad **Uitvoer** van de pijplijninstellingen wordt weergegeven. 
  
-    ![Uitvoer van pijplijnuitvoering](./media/quickstart-create-data-factory-portal/pipeline-output.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/pipeline-output.png" alt-text="Uitvoer van pijplijnuitvoering":::
 
 1. Controleer of een uitvoerbestand wordt weergegeven in de **uitvoermap** van de container **adftutorial**. Als de uitvoermap niet bestaat, wordt deze automatisch gemaakt in de Data Factory-service. 
 
@@ -181,7 +183,7 @@ In deze procedure implementeert u entiteiten (gekoppelde services, gegevenssets,
 
 1. Voordat u een pijplijn activeert, moet u eerst entiteiten publiceren in Data Factory. Als u wilt publiceren, selecteert u bovenaan de optie **Alles publiceren**. 
 
-    ![Alles publiceren](./media/quickstart-create-data-factory-portal/publish-all.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/publish-all.png" alt-text="Alles publiceren.":::    
 
 1. Als u de pijplijn handmatig wilt activeren, selecteert u de optie **Trigger toevoegen** op de pijplijnwerkbalk en selecteert u **Nu activeren**. Selecteer **OK** op de pagina **Pijplijnuitvoering**.
 
@@ -189,12 +191,12 @@ In deze procedure implementeert u entiteiten (gekoppelde services, gegevenssets,
 
 1. Ga naar het tabblad **Controleren** aan de linkerkant. Gebruik de knop **Vernieuwen** om de lijst te vernieuwen.
 
-   ![Tabblad voor het bewaken van pijplijnuitvoeringen](./media/quickstart-create-data-factory-portal/monitor-trigger-now-pipeline.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/monitor-trigger-now-pipeline.png" alt-text="Tabblad voor het bewaken van pijplijnuitvoeringen"::: 
 1. Selecteer de koppeling **CopyPipeline**. Op deze pagina ziet u de status van de uitvoering van de kopieeractiviteit. 
 
 1. Selecteer de koppeling **Details** (afbeelding van een bril) om details van de kopieerbewerking weer te geven. Zie [Overzicht van kopieeractiviteit](copy-activity-overview.md) voor meer informatie over de eigenschappen. 
 
-   ![Details van de kopieerbewerking](./media/quickstart-create-data-factory-portal/copy-operation-details.png)
+   :::image type="content" source="./media/quickstart-create-data-factory-portal/copy-operation-details.png" alt-text="Details van Kopieer bewerking.":::
 1. Controleer of een nieuw bestand wordt weergegeven in de **uitvoermap**. 
 1. Als u vanuit de weergave **Uitvoeringen van activiteit** wilt terugkeren naar de weergave **Pijplijnuitvoeringen**, selecteert u de koppeling **Alle pijplijnuitvoeringen**. 
 
@@ -213,7 +215,7 @@ Deze procedure is optioneel in deze zelfstudie. U kunt een *Scheduler-trigger* m
 
 1. Schakel op de pagina **Nieuwe trigger** het selectievakje **Geactiveerd** in en selecteer **OK**. 
 
-   ![Instelling Nieuwe trigger](./media/quickstart-create-data-factory-portal/trigger-settings-next.png)
+    :::image type="content" source="./media/quickstart-create-data-factory-portal/trigger-settings-next.png" alt-text="Nieuwe trigger instelling.":::   
 1. Lees het waarschuwingsbericht en selecteer **OK**.
 
 1. Selecteer **Alles publiceren** om wijzigingen te publiceren naar Data Factory. 

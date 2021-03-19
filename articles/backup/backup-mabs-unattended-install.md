@@ -4,10 +4,10 @@ description: Gebruik een Power shell-script om Azure Backup Server v2 op de acht
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.openlocfilehash: 1539089e713bcf8e959707c6ff4a608f062a7c00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74172245"
 ---
 # <a name="run-an-unattended-installation-of-azure-backup-server"></a>Een installatie zonder toezicht van Azure Backup Server uitvoeren
@@ -60,6 +60,6 @@ U kunt deze vlaggen gebruiken voor de installatie:</br>
 Nadat u de back-upserver installeert, leert u hoe u uw server voorbereidt of een werk belasting gaat beveiligen.
 
 - [Werk belastingen voor de back-upserver voorbereiden](backup-azure-microsoft-azure-backup.md)
-- [Back-upserver gebruiken om een back-up te maken van een VMware-Server](backup-azure-backup-server-vmware.md)
-- [Back-upserver gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)
-- [Modern Backup Storage toevoegen aan de back-upserver](backup-mabs-add-storage.md)
+- [Backup Server gebruiken om back-ups te maken van een VMware-server](backup-azure-backup-server-vmware.md)
+- [Backup Server gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)
+- [Modern Backup Storage toevoegen aan Backup Server](backup-mabs-add-storage.md)

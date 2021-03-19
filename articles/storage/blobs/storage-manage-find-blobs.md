@@ -9,12 +9,12 @@ ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: klaasl
 ms.custom: references_regions
-ms.openlocfilehash: bfaee493c25f882b8beeed565a155db93efd0083
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: be2ff9d6ed908bdc0645fc713717a08674354096
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102431751"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593217"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-tags-preview"></a>Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 
@@ -289,12 +289,7 @@ BLOB-index Tags zijn alleen beschikbaar voor Algemeen v2-accounts (GPv2) met een
 
 Index Tags worden niet ondersteund voor Premium Storage-accounts. Zie [overzicht van Azure Storage-account](../common/storage-account-overview.md)voor meer informatie over opslag accounts.
 
-In de open bare preview zijn BLOB index Tags alleen beschikbaar in de volgende regio's:
-
-- Canada - midden
-- Canada - oost
-- Frankrijk - centraal
-- Frankrijk - zuid
+BLOB index Tags zijn momenteel beschikbaar in alle open bare regio's.
 
 Zie [BLOB-index Tags gebruiken om gegevens te beheren en te zoeken](storage-blob-index-how-to.md)om aan de slag te gaan.
 

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: df9efef1000ab6a824c869e6684ab1424e8462f4
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: f01a1204aefbcaabe0ddac254b24bc014c3d5a64
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101708098"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654523"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Inzichten over uw DNS-infra structuur verzamelen met de preview-oplossing van DNS-analyse
 
@@ -54,7 +54,7 @@ De oplossing begint met het verzamelen van gegevens zonder dat er verdere config
 
 ### <a name="configure-the-solution"></a>De oplossing configureren
 
-Klik in het dash board van de oplossing op **configuratie** om de pagina DNS-analyse configuratie te openen. Er zijn twee typen configuratie wijzigingen die u kunt aanbrengen:
+Selecteer in de werk ruimte Log Analytics in de Azure Portal **werk ruimte samen vatting** en klik vervolgens op de tegel **DNS-analyse** . Klik in het dash board van de oplossing op **configuratie** om de pagina DNS-analyse configuratie te openen. Er zijn twee typen configuratie wijzigingen die u kunt aanbrengen:
 
 - **Domein namen Allowlisted**. De oplossing verwerkt niet alle opzoek query's. Het onderhoudt een allowlist van domein naam achtervoegsels. De opzoek query's die worden omgezet in de domein namen die overeenkomen met de domein naam achtervoegsels in deze allowlist, worden niet verwerkt door de oplossing. Geen verwerking van allowlisted-domein namen helpt bij het optimaliseren van de gegevens die naar Azure Monitor worden verzonden. De standaard allowlist bevat populaire open bare domein namen, zoals www.google.com en www.facebook.com. U kunt de volledige standaard lijst weer geven door te schuiven.
 

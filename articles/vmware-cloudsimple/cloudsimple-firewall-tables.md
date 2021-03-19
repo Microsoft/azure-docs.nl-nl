@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 8c44c39f66a0a0161eea8a7e9656bbe0e3d1015c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88140867"
 ---
 # <a name="firewall-tables-overview"></a>Overzicht van Firewall tabellen
@@ -53,7 +53,7 @@ Er zijn mogelijk extra regels vereist voor de verkeers stroom in de omgekeerde r
 
 In elke firewall tabel worden de volgende standaard regels gemaakt.
 
-|Prioriteit|Naam|Status bijhouden|Richting|Verkeers type|Protocol|Bron|Bronpoort|Doel|Doelpoort|Bewerking|
+|Prioriteit|Name|Status bijhouden|Richting|Verkeers type|Protocol|Bron|Bronpoort|Doel|Doelpoort|Bewerking|
 |--------|----|--------------|---------|------------|--------|------|-----------|-----------|----------------|------|
 |65000|alles-naar-Internet toestaan|Stateful|Uitgaand|Openbaar IP-of Internet verkeer|Alle|Alle|Alle|Alle|Alle|Toestaan|
 |65001|weigeren: alle van Internet|Stateful|Inkomend|Openbaar IP-of Internet verkeer|Alle|Alle|Alle|Alle|Alle|Weigeren|

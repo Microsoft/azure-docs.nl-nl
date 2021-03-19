@@ -2,16 +2,16 @@
 title: 'Zelf studie: uitvoer toevoegen aan Azure Resource Manager Bicep-bestand'
 description: Voeg uitvoer toe aan uw Bicep-bestand om de syntaxis te vereenvoudigen.
 author: mumian
-ms.date: 03/10/2021
+ms.date: 03/17/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: ce2d1044fb0e45a72ce34b14bb654974d29051dc
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: 4b7d7a1414091c516dba2c474e1681ba357b55a1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102636237"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594305"
 ---
 # <a name="tutorial-add-outputs-to-azure-resource-manager-bicep-file"></a>Zelf studie: uitvoer toevoegen aan Azure Resource Manager Bicep-bestand
 

@@ -4,14 +4,14 @@ description: In dit artikel wordt beschreven hoe u uw Lab in Azure DevTest Labs 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 2166eaab073e2abc24ca24494ae13eb876db1fcf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87533951"
 ---
 # <a name="scale-quotas-and-limits-in-devtest-labs"></a>Quota en limieten schalen in DevTest Labs
-Wanneer u in DevTest Labs werkt, merkt u misschien dat er bepaalde standaard limieten gelden voor sommige Azure-resources, die van invloed kunnen zijn op de service DevTest Labs. Deze limieten worden **quota's**genoemd.
+Wanneer u in DevTest Labs werkt, merkt u misschien dat er bepaalde standaard limieten gelden voor sommige Azure-resources, die van invloed kunnen zijn op de service DevTest Labs. Deze limieten worden **quota's** genoemd.
 
 > [!NOTE]
 > De DevTest Labs-service heeft geen quota opgelegd. Alle quota's die u kunt tegen komen, zijn standaard beperkingen van het hele Azure-abonnement.
@@ -26,7 +26,7 @@ Met de [limieten voor Azure-abonnementen en-services](../azure-resource-manager/
 In deze stappen ziet u hoe u de huidige quota's in uw abonnement kunt weer geven voor specifieke Azure-resources en kunt u zien welk percentage van elk quotum u hebt gebruikt.
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer **meer services**en selecteer vervolgens **facturering** in de lijst.
+1. Selecteer **meer services** en selecteer vervolgens **facturering** in de lijst.
 1. Selecteer een abonnement op de Blade facturering.
 4. Selecteer **gebruik en quota's**.
 
@@ -41,7 +41,7 @@ Als u een quotum limiet bereikt, kan de standaard limiet van een resource in een
 
 Deze stappen laten zien hoe u een quotum verhoging kunt aanvragen via de [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **meer services**, selecteer **facturering**en selecteer vervolgens **gebruik en quota's**.
+1. Selecteer **meer services**, selecteer **facturering** en selecteer vervolgens **gebruik en quota's**.
 1. Selecteer op de Blade gebruik en quota's de knop voor het **verg Roten van aanvragen** .
 
    ![Knop verhogen aanvragen](./media/devtest-lab-scale-lab/devtestlab-request-increase-new.png)

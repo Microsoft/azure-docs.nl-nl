@@ -5,10 +5,10 @@ ms.date: 11/22/2019
 ms.topic: how-to
 ms.reviewer: janders
 ms.openlocfilehash: 337d01abc51d310d06aeea3427b770132be4824c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85208770"
 ---
 # <a name="how-to-configure-azure-active-directory-access-for-azure-blockchain-service"></a>Azure Active Directory toegang configureren voor de Azure Block Chain-Service
@@ -29,8 +29,8 @@ U kunt zowel het lidniveau als het knooppunt niveau toegang verlenen. Het verlen
 
 Toegangs rechten verlenen op het niveau van de gebruiker.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Navigeer naar **toegangs beheer (IAM) > voeg > roltoewijzing**toe.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Navigeer naar **toegangs beheer (IAM) > voeg > roltoewijzing** toe.
 1. Selecteer de rol **toegang tot Block Chain (preview-node)** en voeg het Azure ad-id-object toe waaraan u toegang wilt verlenen. Het Azure AD-ID-object kan zijn:
 
     | Azure AD-object | Voorbeeld |

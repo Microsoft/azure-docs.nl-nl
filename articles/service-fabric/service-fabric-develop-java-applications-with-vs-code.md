@@ -7,10 +7,10 @@ ms.date: 06/29/2018
 ms.custom: devx-track-java
 ms.author: pepogors
 ms.openlocfilehash: cc65deb924a9f3367c2ea1d7c71544743ccf2697
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87327358"
 ---
 # <a name="develop-java-service-fabric-applications-with-visual-studio-code"></a>Ontwikkel Java Service Fabric-toepassingen met Visual Studio code
@@ -54,7 +54,7 @@ Nadat u de toepassing hebt gemaakt, kunt u deze implementeren in het lokale clus
 > [!IMPORTANT]
 > Het implementeren van Java-toepassingen voor het lokale cluster wordt niet ondersteund op Windows-computers.
 
-1. Selecteer in het **opdracht palet**de **opdracht service Fabric: Deploy toepassing (localhost)**. De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
+1. Selecteer in het **opdracht palet** de **opdracht service Fabric: Deploy toepassing (localhost)**. De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
 
    ![Opdracht toepassing implementeren in VS code](./media/service-fabric-develop-java-applications-with-vs-code/sf-deploy-application.png)
 
@@ -83,7 +83,7 @@ Voer een opmerking uit bij de opdracht op regel 6 (gebruik ' # ') en voeg de vol
    java -Xdebug -Xrunjdwp:transport=dt_socket,address=8001,server=y,suspend=n -Djava.library.path=$LD_LIBRARY_PATH -jar VotingDataService.jar
    ```
 
-2. Werk het *stem-VotingApplication/ApplicationManifest.xml- * bestand bij. Stel de **MinReplicaSetSize** -en **TargetReplicaSetSize** -kenmerken in op ' 1 ' in het element **StatefulService** :
+2. Werk het *stem-VotingApplication/ApplicationManifest.xml-* bestand bij. Stel de **MinReplicaSetSize** -en **TargetReplicaSetSize** -kenmerken in op ' 1 ' in het element **StatefulService** :
    
    ```xml
          <StatefulService MinReplicaSetSize="1" ServiceTypeName="VotingDataServiceType" TargetReplicaSetSize="1">

@@ -14,10 +14,10 @@ ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: 0435b99525c34eb72d7cc5315ccb4359859cd528
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90033044"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Uw persoonlijke apparaat registreren op het netwerk van uw organisatie
@@ -41,11 +41,11 @@ Wanneer u uw apparaat registreert op het netwerk van uw organisatie, zullen de v
 
 Volg deze stappen om uw persoonlijke apparaat te registreren in uw netwerk.
 
-1. Open **instellingen**en selecteer vervolgens **accounts**.
+1. Open **instellingen** en selecteer vervolgens **accounts**.
 
     ![Accounts op het scherm instellingen](./media/user-help-register-device-on-network/register-device-settings-accounts.png)
 
-2. Selecteer **toegang tot werk of school**en selecteer vervolgens **verbinding maken** in het scherm **toegang werk of school** .
+2. Selecteer **toegang tot werk of school** en selecteer vervolgens **verbinding maken** in het scherm **toegang werk of school** .
 
     ![Het scherm toegang tot werk of school met de optie verbinding maken gemarkeerd](./media/user-help-register-device-on-network/register-device-access-work-school-connect.png)
 
@@ -58,11 +58,11 @@ Volg deze stappen om uw persoonlijke apparaat te registreren in uw netwerk.
 ## <a name="to-verify-that-youre-registered"></a>Controleren of u bent geregistreerd
 U kunt ervoor zorgen dat u bent geregistreerd door te kijken naar uw instellingen.
 
-1. Open **instellingen**en selecteer vervolgens **accounts**.
+1. Open **instellingen** en selecteer vervolgens **accounts**.
 
     ![Accounts op het scherm instellingen](./media/user-help-register-device-on-network/register-device-settings-accounts.png)
 
-2. Selecteer **toegang tot werk of school**en zorg ervoor dat u uw werk-of school account ziet.
+2. Selecteer **toegang tot werk of school** en zorg ervoor dat u uw werk-of school account ziet.
 
     ![Het scherm werk of school openen met verbonden contoso-account](./media/user-help-register-device-on-network/register-device-setup-verify.png)
 

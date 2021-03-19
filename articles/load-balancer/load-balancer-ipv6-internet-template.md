@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
 ms.openlocfilehash: 415c95a441ac0cc6ed2dbf2d6a37f57d7a9e7341
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90562516"
 ---
 # <a name="deploy-an-internet-facing-load-balancer-solution-with-ipv6-using-a-template"></a>Een Internet gerichte Load Balancer-oplossing met IPv6 implementeren met behulp van een sjabloon
@@ -72,7 +72,7 @@ In dit artikel wordt verwezen naar een sjabloon die is gepubliceerd in de [Azure
 
     ![Scherm afbeelding toont de geactiveerde stap van een aangepaste implementatie. Dit is een bewerkings sjabloon.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step5.png)
 
-6. Klik op para meters bewerken. Geef op de Blade para meters de waarden op volgens de instructies in de sectie sjabloon parameters en klik vervolgens op Opslaan om de Blade para meters te sluiten. Selecteer in de Blade aangepaste implementatie uw abonnement, een bestaande resource groep of maak een. Als u een resource groep maakt, selecteert u een locatie voor de resource groep. Klik vervolgens op **juridische voor waarden**en vervolgens op **aanschaffen** voor de juridische voor waarden. De implementatie van de resources wordt gestart door Azure. Het duurt enkele minuten om alle resources te implementeren.
+6. Klik op para meters bewerken. Geef op de Blade para meters de waarden op volgens de instructies in de sectie sjabloon parameters en klik vervolgens op Opslaan om de Blade para meters te sluiten. Selecteer in de Blade aangepaste implementatie uw abonnement, een bestaande resource groep of maak een. Als u een resource groep maakt, selecteert u een locatie voor de resource groep. Klik vervolgens op **juridische voor waarden** en vervolgens op **aanschaffen** voor de juridische voor waarden. De implementatie van de resources wordt gestart door Azure. Het duurt enkele minuten om alle resources te implementeren.
 
     ![In de scherm afbeelding ziet u de stappen in de aangepaste implementatie, beginnend met het invoeren van de parameter waarden van de sjabloon.](./media/load-balancer-ipv6-internet-template/lb-ipv6-portal-step6.png)
 

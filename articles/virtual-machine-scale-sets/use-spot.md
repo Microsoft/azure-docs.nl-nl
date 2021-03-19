@@ -9,12 +9,12 @@ ms.subservice: spot
 ms.date: 02/26/2021
 ms.reviewer: cynthn
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: b20a5bd9c06c3948097389d5439defa219a7931b
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a176a30a1e21ec03c2da329785ab895ec67a4faf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101694985"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596413"
 ---
 # <a name="azure-spot-virtual-machines-for-virtual-machine-scale-sets"></a>Azure Spot Virtual Machines voor schaal sets voor virtuele machines 
 
@@ -46,7 +46,7 @@ De volgende [aanbiedings typen](https://azure.microsoft.com/support/legal/offer-
 -   Enterprise Agreement
 -   Betalen per gebruik-aanbieding code 003P
 -   Gesponsorde
-- Voor Cloud serviceprovider (CSP) raadpleegt u het [partner centrum](https://docs.microsoft.com/partner-center/azure-plan-get-started) of neemt u rechtstreeks contact op met uw partner.
+- Voor Cloud serviceprovider (CSP) raadpleegt u het [partner centrum](/partner-center/azure-plan-get-started) of neemt u rechtstreeks contact op met uw partner.
 
 ## <a name="eviction-policy"></a>Verwijderingsbeleid
 
@@ -202,7 +202,7 @@ Als u het exemplaar wilt verwijderen nadat het is verwijderd, wijzigt `evictionP
 
 ## <a name="simulate-an-eviction"></a>Een verwijdering simuleren
 
-U kunt een virtuele machine van Azure spot [simuleren](https://docs.microsoft.com/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering. 
+U kunt een virtuele machine van Azure spot [simuleren](/rest/api/compute/virtualmachines/simulateeviction) om te testen hoe goed uw toepassing reageert op een plotselinge verwijdering. 
 
 Vervang het volgende door uw gegevens: 
 

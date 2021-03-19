@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: how-to
 ms.reviewer: zeyadr
 ms.openlocfilehash: d40e55f177bda9edb40383b6e2c61c32633cd005
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85211337"
 ---
 # <a name="manage-consortium-members-in-azure-blockchain-service-using-powershell"></a>Consortium leden beheren in azure Block Chain service met Power shell
@@ -26,7 +26,7 @@ Azure Cloud Shell is een gratis interactieve shell waarmee u de stappen in dit a
 
 U kunt Cloud Shell ook openen in een afzonderlijk browser tabblad door naar [shell.Azure.com/powershell](https://shell.azure.com/powershell)te gaan. Selecteer **kopiëren** om de blokken code te kopiëren, plak deze in Cloud shell en selecteer **Enter** om het programma uit te voeren.
 
-## <a name="install-the-powershell-module"></a>De Power shell-module installeren
+## <a name="install-the-powershell-module"></a>De PowerShell-module installeren
 
 Installeer het Microsoft.AzureBlockchainService.ConsortiumManagement.PS-pakket van de PowerShell Gallery.
 
@@ -59,14 +59,14 @@ Vervang door *\<Member account password\>* het wacht woord van het gebruikers ac
 
 Zoek de andere waarden in de Azure Portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Ga naar de pagina **overzicht** van de standaard Block Chain-service.
 
     ![Leden overzicht](./media/manage-consortium-powershell/member-overview.png)
 
     Vervang *\<Member account\>* en door *\<RootContract address\>* de waarden uit de portal.
 
-1. Selecteer voor het eindpunt adres **transactie knooppunten**en selecteer vervolgens het **knoop punt standaard transactie**. Het standaard knooppunt heeft dezelfde naam als het block Chain-lid.
+1. Selecteer voor het eindpunt adres **transactie knooppunten** en selecteer vervolgens het **knoop punt standaard transactie**. Het standaard knooppunt heeft dezelfde naam als het block Chain-lid.
 1. Selecteer **Verbindingsreeksen**.
 
     ![Verbindingsreeksen](./media/manage-consortium-powershell/connection-strings.png)
@@ -139,7 +139,7 @@ Gebruik deze cmdlet om details van leden of lijst leden van het consortium op te
 
 | Parameter | Beschrijving | Vereist |
 |-----------|-------------|:--------:|
-| Naam | De naam van het service-lid van de Block Chain waarvoor u gegevens wilt ophalen. Wanneer een naam wordt ingevoerd, worden de details van het lid geretourneerd. Wanneer een naam wordt wegge laten, wordt een lijst met alle consortium leden geretourneerd. | Nee |
+| Name | De naam van het service-lid van de Block Chain waarvoor u gegevens wilt ophalen. Wanneer een naam wordt ingevoerd, worden de details van het lid geretourneerd. Wanneer een naam wordt wegge laten, wordt een lijst met alle consortium leden geretourneerd. | Nee |
 | Leden | Leden object verkregen van Import-ConsortiumManagementContracts | Ja |
 | Web3Client | Web3Client-object verkregen van New-Web3Connection | Ja |
 
@@ -151,7 +151,7 @@ Stel [een Web3-verbinding](#establish-a-web3-connection) in om de $ContractConne
 $ContractConnection | Get-BlockchainMember -Name <Member Name>
 ```
 
-#### <a name="example-output"></a>Voorbeeld uitvoer
+#### <a name="example-output"></a>Voorbeelduitvoer
 
 ```
 Name           : myblockchainmember
@@ -170,7 +170,7 @@ Gebruik deze cmdlet om een Block Chain-lid te verwijderen.
 
 | Parameter | Beschrijving | Vereist |
 |-----------|-------------|:--------:|
-| Naam | Te verwijderen lidnaam | Ja |
+| Name | Te verwijderen lidnaam | Ja |
 | Leden | Leden object verkregen van Import-ConsortiumManagementContracts | Ja |
 | Web3Account | Web3Account-object verkregen van Import-Web3Account | Ja |
 | Web3Client | Web3Client-object verkregen van New-Web3Connection | Ja |
@@ -196,7 +196,7 @@ Set-BlockchainMember -Name <String> [-DisplayName <String>] [-AccountAddress <St
 
 | Parameter | Beschrijving | Vereist |
 |-----------|-------------|:--------:|
-| Naam | Naam van het block Chain-lid | Ja |
+| Name | Naam van het block Chain-lid | Ja |
 | DisplayName | Nieuwe weergave naam | Nee |
 | AccountAddress | Account adres | Nee |
 | Leden | Leden object verkregen van Import-ConsortiumManagementContracts | Ja |
@@ -260,7 +260,7 @@ Stel [een Web3-verbinding](#establish-a-web3-connection) in om de $ContractConne
 $ContractConnection | Get-BlockchainMemberInvitation –SubscriptionId <Azure subscription ID>
 ```
 
-#### <a name="example-output"></a>Voorbeeld uitvoer
+#### <a name="example-output"></a>Voorbeelduitvoer
 
 ```
 SubscriptionId                       Role CorrelationId
@@ -304,7 +304,7 @@ Set-BlockchainMemberInvitation -SubscriptionId <String> -Role <String> -Members 
 | Parameter | Beschrijving | Vereist |
 |-----------|-------------|:--------:|
 | SubscriptionId | Azure-abonnements-ID van het lid dat moet worden uitgenodigd | Ja |
-| Rol | Nieuwe consortium functie voor uitnodiging. Waarden kunnen **gebruiker** of **beheerder**zijn. | Ja |
+| Rol | Nieuwe consortium functie voor uitnodiging. Waarden kunnen **gebruiker** of **beheerder** zijn. | Ja |
 | Leden |  Leden object verkregen van Import-ConsortiumManagementContracts | Ja |
 | Web3Account | Web3Account-object verkregen van Import-Web3Account | Ja |
 | Web3Client | Web3Client-object verkregen van New-Web3Connection | Ja |

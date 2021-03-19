@@ -9,21 +9,21 @@ ms.date: 11/06/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 7b022f71e197c5695876f2049ee376c3616afc6d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "70048997"
 ---
 <!-- put the ## header in the file that includes this file -->
 
 In deze sectie maakt u een apparaat-id in het identiteits register van uw IoT-hub. Een apparaat kan geen verbinding maken met een hub, tenzij het een vermelding bevat in het identiteits register. Zie de [IOT hub-ontwikkelaars handleiding](../articles/iot-hub/iot-hub-devguide-identity-registry.md#identity-registry-operations)voor meer informatie.
 
-1. In het navigatie menu van de IoT-hub opent u **IOT-apparaten**en selecteert u vervolgens **Nieuw** om een apparaat toe te voegen aan uw IOT-hub.
+1. In het navigatie menu van de IoT-hub opent u **IOT-apparaten** en selecteert u vervolgens **Nieuw** om een apparaat toe te voegen aan uw IOT-hub.
 
     ![Apparaat-id maken in de portal](./media/iot-hub-include-create-device/create-identity-portal-vs2019.png)
 
-1. In **een apparaat maken**geeft u een naam op voor het nieuwe apparaat, zoals **myDeviceId**, en selecteert u **Opslaan**. Met deze actie maakt u een apparaat-id voor uw IoT-hub.
+1. In **een apparaat maken** geeft u een naam op voor het nieuwe apparaat, zoals **myDeviceId**, en selecteert u **Opslaan**. Met deze actie maakt u een apparaat-id voor uw IoT-hub.
 
    ![Een nieuw apparaat toevoegen](./media/iot-hub-include-create-device/create-a-device-vs2019.png)
 

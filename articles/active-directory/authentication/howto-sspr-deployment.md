@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94187f2f94581b4ff48ddb0cd014dc26268fcf15
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: 55fc4c0b5f3e2bbf57c972ad4a7fd2c9bdd3810e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102500509"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579192"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
@@ -155,14 +155,14 @@ De volgende instellingen zijn vereist om SSPR samen met aanbevolen waarden in te
 | **SSPR-eigenschappen** | Self-service voor wacht woord opnieuw instellen is ingeschakeld | **Geselecteerde** groep voor pilot/ **all** voor productie |
 | **Verificatiemethoden** | Verificatie methoden die nodig zijn om te registreren | Altijd 1 meer dan vereist voor opnieuw instellen |
 |   | Verificatie methoden die nodig zijn om opnieuw in te stellen | Een of twee |
-| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Ja |
+| **Registratie** | Vereisen dat gebruiker zich bij aanmelding registreren | Yes |
 |   | Het aantal dagen waarna gebruikers wordt gevraagd om de verificatiegegevens opnieuw te bevestigen | 90 – 180 dagen |
-| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Ja |
-|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Ja |
-| **Aanpassing** | Help Desk-koppeling aanpassen | Ja |
+| **Meldingen** | Gebruikers een melding tonen over het opnieuw instellen van hun wachtwoord | Yes |
+|   | Alle beheerders waarschuwen wanneer andere beheerders hun wachtwoord opnieuw instellen | Yes |
+| **Aanpassing** | Help Desk-koppeling aanpassen | Yes |
 |   | Aangepaste e-mail adres of URL voor de Help Desk | Ondersteunings site of e-mail adres |
-| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Ja |
-|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Ja |
+| **On-premises integratie** | Wacht woorden terugschrijven naar on-premises AD | Yes |
+|   | Gebruikers toestaan om het account te ontgrendelen zonder het wacht woord opnieuw in te stellen | Yes |
 
 ### <a name="sspr-properties"></a>SSPR-eigenschappen
 
@@ -255,7 +255,7 @@ Hoewel SSPR doorgaans geen gebruikers problemen maakt, is het belang rijk om ond
 
 Om het succes van uw ondersteunings team in te scha kelen, kunt u een veelgestelde vragen maken op basis van vragen die u van uw gebruikers ontvangt. Enkele voorbeelden:
 
-| Scenario's| Beschrijving |
+| Scenario's| Description |
 | - | - |
 | De gebruiker heeft geen geregistreerde verificatie methoden beschikbaar| Een gebruiker probeert het wacht woord opnieuw in te stellen, maar heeft geen van de authenticatie methoden die ze beschikbaar hebben (voor beeld: ze hebben hun mobiele telefoon thuis verlaten en kunnen geen toegang krijgen tot e-mail) |
 | De gebruiker ontvangt geen tekst of gesprek op hun kantoor of mobiele telefoon| Een gebruiker probeert zijn identiteit te verifiëren via tekst of gesprek, maar ontvangt geen tekst/oproep. |
@@ -322,7 +322,7 @@ Audit logboeken voor registratie en het opnieuw instellen van wacht woorden zijn
 
 ### <a name="authentication-methods--usage-and-insights"></a>Verificatie methoden-gebruik en inzichten
 
-[Gebruik en inzichten](./howto-authentication-methods-usage-insights.md) bieden inzicht in hoe verificatie methoden voor functies zoals Azure AD MFA en SSPR in uw organisatie werken. Deze rapportage mogelijkheid voorziet uw organisatie van de middelen om inzicht te krijgen in de methoden die worden geregistreerd en hoe ze kunnen worden gebruikt.
+[Gebruik en inzichten](./howto-authentication-methods-activity.md) bieden inzicht in hoe verificatie methoden voor functies zoals Azure AD MFA en SSPR in uw organisatie werken. Deze rapportage mogelijkheid voorziet uw organisatie van de middelen om inzicht te krijgen in de methoden die worden geregistreerd en hoe ze kunnen worden gebruikt.
 
 ### <a name="troubleshoot"></a>Problemen oplossen
 

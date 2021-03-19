@@ -6,13 +6,14 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 author: vamahtan
 ms.author: vamahtan
-ms.date: 02/24/2021
-ms.openlocfilehash: 9c788109b014be244560fb652de830ba14a44d68
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.reviewer: stmummer
+ms.date: 03/17/2021
+ms.openlocfilehash: d45b46f69480f24f5b2724116984a903093ffc62
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225010"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593353"
 ---
 # <a name="verify-co-sell-status-of-a-commercial-marketplace-offer"></a>De verkoop status van een commerciële Marketplace-aanbieding verifiëren
 
@@ -33,7 +34,7 @@ In de volgende tabel worden alle mogelijke co-sell-statussen weer gegeven. Zie [
 | Klaar voor samen verkopen | Er is niet voldaan aan de minimum [vereisten voor de status gereed voor samen verkoop](co-sell-requirements.md#requirements-for-co-sell-ready-status) . |
 | Klaar voor samen verkopen | Er is voldaan aan alle [vereisten voor de status van de co-sell-gereedheid](co-sell-requirements.md#requirements-for-co-sell-ready-status) . |
 | Azure IP-gemotiveerd verkopen | In aanvulling op [deze aanvullende vereisten](co-sell-requirements.md#requirements-for-azure-ip-co-sell-incentivized-status)is voldaan aan de vereisten voor samen verkoop. |
-| Stimulans voor het stimuleren van de ISV Connect-apps  | Deze status is van toepassing op Dynamics 365 en Power Apps biedt en geeft aan dat aan alle [vereisten voor deze status](co-sell-requirements.md#requirements-for-biz-apps-isv-connect-premium-incentive-status) is voldaan. |
+| Business Applications gemotiveerd | Deze status is van toepassing op Dynamics 365-en Power apps-aanbiedingen in het [ISV Connect-programma](business-applications-isv-program.md) en geeft aan dat aan alle [vereisten voor deze status](co-sell-requirements.md#requirements-for-business-applications-co-sell-incentivized-status) is voldaan. |
 |||
 
 ## <a name="next-steps"></a>Volgende stappen

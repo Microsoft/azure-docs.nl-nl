@@ -5,16 +5,16 @@ services: storage
 author: normesta
 ms.service: storage
 ms.topic: how-to
-ms.date: 03/05/2021
+ms.date: 03/16/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 62f61549ffd6312b94589b9cabbc347edafd0ff2
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 3d71a7ad2507909dacf54e7f1c49b6e768033113
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601964"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600476"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
@@ -244,24 +244,31 @@ U kunt regels voor virtuele netwerken voor opslag accounts beheren via de Azure 
 
 ## <a name="grant-access-from-an-internet-ip-range"></a>Toegang verlenen vanuit een IP-bereik
 
-U kunt opslag accounts configureren om toegang toe te staan vanaf specifieke IP-adresbereiken voor het open bare Internet. Deze configuratie verleent toegang tot specifieke op internet gebaseerde services en on-premises netwerken en blokkeert algemeen Internet verkeer.
+U kunt IP-netwerk regels gebruiken om toegang vanaf specifieke IP-adresbereiken voor Internet toe te staan door IP-netwerk regels te maken. Elk opslag account ondersteunt Maxi maal 200 regels. Deze regels verlenen toegang tot specifieke op internet gebaseerde services en on-premises netwerken en blokkeert algemeen Internet verkeer.
 
-Geef toegestane Internet adresbereiken op met behulp van [CIDR-notatie](https://tools.ietf.org/html/rfc4632) in de vorm *16.17.18.0/24* of als afzonderlijke IP-adressen, zoals *16.17.18.19*.
+De volgende beperkingen zijn van toepassing op IP-adresbereiken.
 
-   > [!NOTE]
-   > Kleine adresbereiken die gebruikmaken van de grootte van het voor voegsel/31 of/32, worden niet ondersteund. Deze bereiken moeten worden geconfigureerd met behulp van afzonderlijke IP-adres regels.
+- IP-netwerk regels zijn alleen toegestaan voor **open bare Internet** -IP-adressen. 
 
-IP-netwerk regels zijn alleen toegestaan voor **open bare Internet** -IP-adressen. IP-adresbereiken die zijn gereserveerd voor particuliere netwerken (zoals gedefinieerd in [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) zijn niet toegestaan in IP-regels. Particuliere netwerken bevatten adressen die beginnen met _10. *_, _172,16. *_  -  _172,31. *_ en _192,168. *_.
+  IP-adresbereiken die zijn gereserveerd voor particuliere netwerken (zoals gedefinieerd in [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) zijn niet toegestaan in IP-regels. Particuliere netwerken bevatten adressen die beginnen met _10. *_, _172,16. *_  -  _172,31. *_ en _192,168. *_.
 
-   > [!NOTE]
-   > IP-netwerk regels hebben geen invloed op aanvragen die afkomstig zijn uit dezelfde Azure-regio als het opslag account. Gebruik [regels voor virtuele netwerken](#grant-access-from-a-virtual-network) om aanvragen van dezelfde regio toe te staan.
+- U moet toegestane Internet adresbereiken opgeven met behulp van [CIDR-notatie](https://tools.ietf.org/html/rfc4632) in de vorm *16.17.18.0/24* of als afzonderlijke IP-adressen, zoals *16.17.18.19*. 
 
-  > [!NOTE]
-  > Services die zijn geïmplementeerd in dezelfde regio als het opslag account, gebruiken persoonlijke Azure IP-adressen voor communicatie. U kunt de toegang tot specifieke Azure-Services dus niet beperken op basis van het open bare IP-adres bereik.
+- Kleine adresbereiken die gebruikmaken van de grootte van het voor voegsel/31 of/32, worden niet ondersteund. Deze bereiken moeten worden geconfigureerd met behulp van afzonderlijke IP-adres regels. 
 
-Alleen IPV4-adressen worden ondersteund voor de configuratie van firewall regels voor opslag.
+- Alleen IPV4-adressen worden ondersteund voor de configuratie van firewall regels voor opslag.
 
-Elk opslag account ondersteunt Maxi maal 200 IP-netwerk regels.
+IP-netwerk regels kunnen niet worden gebruikt in de volgende gevallen:
+
+- De toegang tot clients in dezelfde Azure-regio als het opslag account beperken.
+  
+  IP-netwerk regels hebben geen invloed op aanvragen die afkomstig zijn uit dezelfde Azure-regio als het opslag account. Gebruik [regels voor virtuele netwerken](#grant-access-from-a-virtual-network) om aanvragen van dezelfde regio toe te staan. 
+
+- De toegang tot clients in een [gekoppeld gebied](../../best-practices-availability-paired-regions.md) beperken die zich in een VNet bevinden dat een service-eind punt heeft.
+
+- De toegang beperken tot Azure-Services die zijn geïmplementeerd in dezelfde regio als het opslag account.
+
+  Services die zijn geïmplementeerd in dezelfde regio als het opslag account, gebruiken persoonlijke Azure IP-adressen voor communicatie. U kunt de toegang tot specifieke Azure-Services dus niet beperken op basis van het open bare IP-adres bereik.
 
 ### <a name="configuring-access-from-on-premises-networks"></a>Toegang vanaf on-premises netwerken configureren
 

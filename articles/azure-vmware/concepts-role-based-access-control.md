@@ -2,32 +2,32 @@
 title: Concepten-vSphere op rollen gebaseerd toegangs beheer (vSphere RBAC)
 description: Meer informatie over de belangrijkste mogelijkheden van toegangs beheer op basis van rollen voor Azure VMware-oplossing
 ms.topic: conceptual
-ms.date: 03/16/2021
-ms.openlocfilehash: 1e49f219fba8317040bfa56f6576a7c1f5b1ae22
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.date: 03/18/2021
+ms.openlocfilehash: c2d27531f7a0acd36b4047e98aac994668f64a09
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103573320"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586162"
 ---
 # <a name="vsphere-role-based-access-control-vsphere-rbac-for-azure-vmware-solution"></a>vSphere op rollen gebaseerd toegangs beheer (vSphere RBAC) voor Azure VMware-oplossing
 
 In de Azure VMware-oplossing heeft vCenter een ingebouwde lokale gebruiker met de naam cloudadmin en toegewezen aan de ingebouwde CloudAdmin-rol. De lokale cloudadmin-gebruiker wordt gebruikt om gebruikers in AD in te stellen. In het algemeen maakt en beheert de rol CloudAdmin werk belastingen in uw privécloud. In azure VMware-oplossing heeft de rol CloudAdmin vCenter-bevoegdheden die verschillen van andere VMware-cloud oplossingen.     
 
 > [!NOTE]
-> De Azure VMware-oplossing biedt aangepaste rollen op vCenter, maar biedt deze niet in de Azure VMware-oplossings Portal. Zie de sectie [aangepaste rollen maken in vCenter](#create-custom-roles-on-vcenter) verderop in dit artikel voor meer informatie. 
+> Met de Azure VMware-oplossing kunt u aangepaste rollen voor vCenter bieden die niet beschikbaar zijn op de Azure VMware-oplossings Portal. Zie de sectie [aangepaste rollen maken in vCenter](#create-custom-roles-on-vcenter) verderop in dit artikel voor meer informatie. 
 
 In een installatie van vCenter en ESXi on-premises heeft de beheerder toegang tot het vCenter- administrator@vsphere.local account. Er kunnen ook meer Active Directory (AD) gebruikers/groepen worden toegewezen. 
 
 In een implementatie van een Azure VMware-oplossing heeft de beheerder geen toegang tot het gebruikers account van de beheerder. Maar ze kunnen AD-gebruikers en-groepen toewijzen aan de CloudAdmin-rol in vCenter.  
 
-De gebruiker van de privécloud heeft geen toegang tot en kan geen specifieke beheer onderdelen configureren die door micro soft worden ondersteund en beheerd. Bijvoorbeeld clusters, hosts, gegevens opslag en gedistribueerde virtuele switches.
+De gebruiker van de privécloud heeft geen toegang en kan geen specifieke beheer onderdelen configureren die door micro soft worden ondersteund en beheerd. Bijvoorbeeld clusters, hosts, gegevens opslag en gedistribueerde virtuele switches.
 
 ## <a name="azure-vmware-solution-cloudadmin-role-on-vcenter"></a>Azure VMware-oplossing CloudAdmin Role in vCenter
 
 U kunt de bevoegdheden weer geven die zijn verleend aan de Azure VMware Solution CloudAdmin-rol in uw Azure VMware-oplossing privécloud-vCenter.
 
-1. Meld u aan bij de SDDC vSphere-client en ga naar **menu**  >  **beheer**.
+1. Meld u aan bij vCenter en ga naar **menu**  >  **beheer**.
 1. Onder **Access Control** selecteert u **rollen**.
 1. Selecteer **CloudAdmin** in de lijst met rollen en selecteer vervolgens **bevoegdheden**. 
 
@@ -62,7 +62,7 @@ De Azure VMware-oplossing ondersteunt het gebruik van aangepaste rollen met geli
 
 De rol CloudAdmin kan aangepaste rollen maken, wijzigen of verwijderen die bevoegdheden hebben die kleiner zijn dan of gelijk zijn aan de huidige rol. U kunt mogelijk rollen maken met meer bevoegdheden dan CloudAdmin, maar u kunt de rol niet toewijzen aan gebruikers of groepen of de rol verwijderen.
 
-Om te voor komen dat er rollen worden gemaakt die niet kunnen worden toegewezen of verwijderd, raadt Azure VMware-oplossing u aan om de CloudAdmin-functie te klonen als basis voor het maken van nieuwe aangepaste rollen.
+Om te voor komen dat er rollen worden gemaakt die niet kunnen worden toegewezen of verwijderd, wordt aanbevolen om de CloudAdmin-functie te klonen als basis voor het maken van nieuwe aangepaste rollen.
 
 ### <a name="create-a-custom-role"></a>Een aangepaste rol maken
 1. Meld u aan bij vCenter met cloudadmin \@ vSphere. local of een gebruiker met de rol cloudadmin.

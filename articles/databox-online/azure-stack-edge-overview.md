@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 03/15/2021
 ms.author: alkohli
-ms.openlocfilehash: 3973235991a16d118b47d7289f3a1825621a9023
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: e6cd1f8a1f7d1777e786ab91637b4065a2c5e850
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103574676"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585941"
 ---
 # <a name="what-is-azure-stack-edge-pro-with-fpga"></a>Wat is Azure Stack Edge Pro met FPGA?
 
@@ -85,6 +85,8 @@ Het fysieke Azure Stack Edge Pro-apparaat, de Azure-resource en het doelopslagac
 - **Beschikbaarheid van resources**: ga voor een lijst van alle regio's waarin de Azure Stack Edge-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). Azure Stack Edge Pro kan ook in de Azure Government Cloud worden geïmplementeerd. Zie [Wat is Azure Government?](../azure-government/documentation-government-welcome.md) voor meer informatie.
     
 - **Doelopslagaccounts**: De opslagaccounts waarin de gegevens worden opgeslagen, zijn beschikbaar in alle Azure-regio’s. De regio's waar de opslagaccounts Azure Stack Edge Pro-gegevens opslaan, moeten zich voor optimale prestaties dicht bij het apparaat bevinden. Een opslagaccount dat zich ver van het apparaat vandaan bevindt, resulteert in lange latenties en tragere prestaties.
+
+Azure Stack Edge-service is een niet-regionale service. Zie [regio's en Beschikbaarheidszones in azure](https://docs.microsoft.com/azure/availability-zones/az-overview)voor meer informatie. Azure Stack Edge-service heeft geen afhankelijkheid van een specifieke Azure-regio, waardoor deze robuust is voor de zone-ruime onderbrekingen en de regionale storingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

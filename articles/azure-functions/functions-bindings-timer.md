@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 11/18/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: dbcd6d55ee921c7fabd8e746e0fdcd6f1427733c
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: f99f9d240a0a9220d3b7f57cddd0a4f8ba6b6101
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102210703"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595987"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Timer trigger voor Azure Functions
 
@@ -365,6 +365,16 @@ De timer trigger gebruikt een opslag vergrendeling om ervoor te zorgen dat er sl
 ## <a name="retry-behavior"></a>Gedrag voor opnieuw proberen
 
 In tegens telling tot de wachtrij trigger, wordt de timer trigger niet meer geprobeerd nadat een functie is mislukt. Wanneer een functie mislukt, wordt deze niet opnieuw aangeroepen tot de volgende tijd op de planning.
+
+## <a name="manually-invoke-a-timer-trigger"></a>Een timer trigger hand matig aanroepen
+
+De timer trigger voor Azure Functions biedt een HTTP-webhook die kan worden aangeroepen om de functie hand matig te activeren. Dit kan bijzonder nuttig zijn in de volgende scenario's.
+
+* Integratie testen
+* Sleuf swaps als onderdeel van een rook test-of opwarm-activiteit
+* Eerste implementatie van een functie om direct een cache of opzoek tabel in een data base in te vullen
+
+Raadpleeg [hand matig een niet met http geactiveerde functie uitvoeren](./functions-manually-run-non-http.md) voor meer informatie over het hand matig aanroepen van een door een timer geactiveerde functie.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

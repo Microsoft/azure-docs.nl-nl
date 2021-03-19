@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 02/16/2021
+ms.date: 03/17/2021
 ms.author: memildin
-ms.openlocfilehash: 6d0e660ecce1d45dab4d6003cdba391ba2eb4ee9
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: eacca5573c672e9f4485c26b1b580ee4c982c5d2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102095592"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580744"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Kubernetes-workloads beveiligen
 
@@ -80,12 +80,12 @@ Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoe
 
     | Naam aanbeveling                                                         | Beveiligingsmaatregelen                         | Configuratie vereist |
     |-----------------------------------------------------------------------------|------------------------------------------|------------------------|
-    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | Nee                     |
-    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | Nee                     |
-    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | Nee                     |
-    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | Nee                     |
-    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | Nee                     |
-    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | Nee                     |
+    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | No                     |
+    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | No                     |
+    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | No                     |
+    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | No                     |
+    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | No                     |
+    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | No                     |
     | Er moeten mini maal bevoegde Linux-mogelijkheden worden afgedwongen voor containers       | Toegang en machtigingen beheren            | **Ja**                |
     | Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst    | Toegang en machtigingen beheren            | **Ja**                |
     | Containers mogen alleen op toegestane poorten luisteren                              | Onbevoegde netwerk toegang beperken     | **Ja**                |

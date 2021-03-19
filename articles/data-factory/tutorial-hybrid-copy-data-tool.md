@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 02/18/2021
-ms.openlocfilehash: aa6c7dd786a90abadb43a13eaa73a78a2a61bd0a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 43097b520297ff17350620faff3da884dcbd2073
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101719284"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606715"
 ---
 # <a name="copy-data-from-a-sql-server-database-to-azure-blob-storage-by-using-the-copy-data-tool"></a>Gegevens uit een SQL Server-database naar Azure Blob-opslag kopiëren met behulp van het hulpprogramma Copy Data
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -113,7 +113,7 @@ In deze sectie maakt u in uw Blob Storage een blobcontainer met de naam **adftut
 
    De naam van de data factory moet *wereldwijd uniek* zijn. Als het volgende foutbericht wordt weergegeven voor het naamveld, wijzigt u de naam van de data factory (bijvoorbeeld uwnaamADFTutorialDataFactory). Zie [Data Factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
-   ![Naam nieuwe data factory](./media/doc-common-process/name-not-available-error.png)
+    :::image type="content" source="./media/doc-common-process/name-not-available-error.png" alt-text="Nieuw data factory fout bericht voor dubbele naam.":::
 1. Selecteer het Azure-**abonnement** waarin u de data factory wilt maken.
 1. Voer een van de volgende stappen uit voor **Resourcegroep**:
 
@@ -128,7 +128,7 @@ In deze sectie maakt u in uw Blob Storage een blobcontainer met de naam **adftut
 
 1. Na het aanmaken ziet u de pagina **Data Factory** zoals weergegeven in de afbeelding.
 
-     ![Startpagina van de gegevensfactory](./media/doc-common-process/data-factory-home-page.png)
+    :::image type="content" source="./media/doc-common-process/data-factory-home-page.png" alt-text="Start pagina voor de Azure Data Factory, met de tegel Author & monitor.":::
 1. Selecteer **Maken en controleren** om de Data Factory-gebruikersinterface te openen op een afzonderlijk tabblad.
 
 ## <a name="use-the-copy-data-tool-to-create-a-pipeline"></a>Het hulpprogramma Copy Data gebruiken om een pijplijn te maken

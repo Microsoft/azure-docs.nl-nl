@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 01/22/2021
-ms.openlocfilehash: 7a95b32449da6dead1c35241ff09af127e0fae43
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: 6a0b63dc7fda25e3911ae713a0bea7ae7a0969f9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102210138"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104602295"
 ---
 # <a name="tutorial-monitor-apache-spark-application-level-metrics-with-prometheus-and-grafana"></a>Zelf studie: gegevens van Apache Spark op toepassings niveau controleren met Prometheus en Grafana
 
@@ -26,7 +26,7 @@ U kunt deze oplossing gebruiken voor het verzamelen en opvragen van de Apache Sp
 
 ## <a name="prerequisites"></a>Vereisten
 
-1.  [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+1.  [Azure CLI](/cli/azure/install-azure-cli)
 2.  [3.30 helm-client](https://github.com/helm/helm/releases)
 3.  [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 4.  [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/)

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurepowershell
 ms.date: 01/27/2021
 ms.author: mbaldwin
-ms.openlocfilehash: f3b770a5790d5e9554c7bf5d7d24f1eeccff7662
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 5e3b78dfb8f08f1a596ad12884ec088cd36c4a98
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99072216"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582444"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met PowerShell
 
@@ -57,7 +57,7 @@ Converteer eerst de waarde van **hVFkk965BuUv** naar een beveiligde tekenreeks d
 $secretvalue = ConvertTo-SecureString "hVFkk965BuUv" -AsPlainText -Force
 ```
 
-Typ vervolgens de onderstaande PowerShell-opdrachten om een geheim te maken in Key Vault met de naam **ExamplePassword** en de waarde **hVFkk965BuUv**:
+Gebruik vervolgens de Azure PowerShell [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet om een geheim te maken in **Key Vault met de** waarde **hVFkk965BuUv** :
 
 
 ```azurepowershell-interactive
@@ -96,5 +96,6 @@ Remove-AzResourceGroup -Name ContosoResourceGroup
 In deze quickstart hebt u een sleutelkluis gemaakt en daar een geheim in opgeslagen. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
+- Meer informatie over het [opslaan van meerregelige geheimen in Key Vault](multiline-secrets.md)
 - Zie de referentie voor de [Azure PowerShell Key Vault-cmdlets](/powershell/module/az.keyvault/#key_vault)
 - Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

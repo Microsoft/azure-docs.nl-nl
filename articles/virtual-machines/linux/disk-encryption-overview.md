@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: fb81960b573b5b7d28f44f7a7482c28b4ef284be
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 81c026893c3185c6c9f960cdb6acb2d0c2d49cc4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496453"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580348"
 ---
 # <a name="azure-disk-encryption-for-linux-vms"></a>Azure Disk Encryption voor Linux-VM's 
 
@@ -108,7 +108,7 @@ Linux-server distributies die niet zijn goedgekeurd door Azure, bieden geen onde
 
 Azure Disk Encryption vereist dat de DM-cryptografie-en vfat-modules aanwezig zijn op het systeem. Als u vfat uit de standaard installatie kopie verwijdert of uitschakelt, wordt het sleutel volume niet door het systeem gelezen en wordt de benodigde sleutel voor het ontgrendelen van de schijven bij de volgende keer opnieuw opstarten voor komen. De stappen voor het beveiligen van het systeem die de vfat-module van het systeem verwijderen of het uitvouwen van het besturings systeem mountpoints/mappen op gegevens stations zijn niet compatibel met Azure Disk Encryption. 
 
-Voordat u versleuteling inschakelt, moeten de gegevens schijven die moeten worden versleuteld, op de juiste manier worden weer gegeven in/etc/fstab. Gebruik de optie ' geen fout ' bij het maken van vermeldingen en kies een permanente blok apparaatnaam (als apparaatnamen in de indeling '/dev/sdX ' mag niet worden gekoppeld aan dezelfde schijf tijdens het opnieuw opstarten, met name na de versleuteling). Zie [problemen met de naam wijzigingen van Linux VM-apparaten oplossen](../troubleshooting/troubleshoot-device-names-problems.md)voor meer informatie over dit gedrag.
+Voordat u versleuteling inschakelt, moeten de gegevens schijven die moeten worden versleuteld, op de juiste manier worden weer gegeven in/etc/fstab. Gebruik de optie ' geen fout ' bij het maken van vermeldingen en kies een permanente blok apparaatnaam (als apparaatnamen in de indeling '/dev/sdX ' mag niet worden gekoppeld aan dezelfde schijf tijdens het opnieuw opstarten, met name na de versleuteling). Zie [problemen met de naam wijzigingen van Linux VM-apparaten oplossen](/troubleshoot/azure/virtual-machines/troubleshoot-device-names-problems)voor meer informatie over dit gedrag.
 
 Controleer of de bestand/etc/fstab-instellingen correct zijn geconfigureerd voor koppelen. Als u deze instellingen wilt configureren, voert u de koppeling-a-opdracht uit of start u de VM opnieuw op. vervolgens wordt de koppeling op die manier geactiveerd. Als dat is voltooid, controleert u de uitvoer van de lsblk-opdracht om te controleren of het station nog steeds is gekoppeld. 
 

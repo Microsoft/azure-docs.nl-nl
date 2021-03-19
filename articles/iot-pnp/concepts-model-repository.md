@@ -7,12 +7,12 @@ ms.date: 11/17/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 1a58a2f69b9c6c6742c4b9daf32dd0e13341aac1
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 33ff96b4e51dbf80bfdb924bc37786a344cdfdc6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101742140"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582643"
 ---
 # <a name="device-models-repository"></a>Opslag plaats voor apparaat modellen
 
@@ -47,38 +47,50 @@ Alle interfaces in de `dtmi` mappen zijn ook beschikbaar vanuit het open bare ei
 
 ### <a name="resolve-models"></a>Modellen oplossen
 
-Als u via een programma toegang wilt krijgen tot deze interfaces, moet u een DTMI converteren naar een relatief pad dat u kunt gebruiken voor het uitvoeren van een query op het open bare eind punt.
+Als u via een programma toegang wilt krijgen tot deze interfaces, kunt u de `ModelsRepositoryClient` Beschik baarheid gebruiken in het NuGet-pakket [Azure. IOT. ModelsRepository](https://www.nuget.org/packages/Azure.IoT.ModelsRepository). Deze client is standaard geconfigureerd voor het uitvoeren van een query op de open bare DMR die beschikbaar zijn op [devicemodels.Azure.com](https://devicemodels.azure.com/) en kan worden geconfigureerd voor elke aangepaste opslag plaats.
 
-Als u een DTMI naar een absoluut pad wilt converteren, gebruikt u de `DtmiToPath` functie met `IsValidDtmi` :
-
-```cs
-static string DtmiToPath(string dtmi)
-{
-    if (!IsValidDtmi(dtmi))
-    {
-        return null;
-    }
-    // dtmi:com:example:Thermostat;1 -> dtmi/com/example/thermostat-1.json
-    return $"/{dtmi.ToLowerInvariant().Replace(":", "/").Replace(";", "-")}.json";
-}
-
-static bool IsValidDtmi(string dtmi)
-{
-    // Regex defined at https://github.com/Azure/digital-twin-model-identifier#validation-regular-expressions
-    Regex rx = new Regex(@"^dtmi:[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?(?::[A-Za-z](?:[A-Za-z0-9_]*[A-Za-z0-9])?)*;[1-9][0-9]{0,8}$");
-    return rx.IsMatch(dtmi);
-}
-```
-
-Met het resulterende pad en de basis-URL voor de opslag plaats kunnen we de interface verkrijgen:
+De client accepteert een `DTMI` als-invoer en retourneert een woorden lijst met alle vereiste interfaces:
 
 ```cs
-const string _repositoryEndpoint = "https://devicemodels.azure.com";
+using Azure.IoT.ModelsRepository;
 
-string dtmiPath = DtmiToPath(dtmi.ToString());
-string fullyQualifiedPath = $"{_repositoryEndpoint}{dtmiPath}";
-string modelContent = await _httpClient.GetStringAsync(fullyQualifiedPath);
+var client = new ModelsRepositoryClient();
+IDictionary<string, string> models = client.GetModels("dtmi:com:example:TemperatureController;1");
+models.Keys.ToList().ForEach(k => Console.WriteLine(k));
 ```
+
+In de verwachte uitvoer moeten de drie interfaces worden weer gegeven die `DTMI` in de afhankelijkheids keten zijn gevonden:
+
+```txt
+dtmi:com:example:TemperatureController;1
+dtmi:com:example:Thermostat;1
+dtmi:azure:DeviceManagement:DeviceInformation;1
+```
+
+De `ModelsRepositoryClient` kan worden geconfigureerd voor het uitvoeren van een query op een aangepaste model opslagplaats die beschikbaar is via http (s), en geef de afhankelijkheids oplossing op met behulp van een van de volgende beschik bare `ModelDependencyResolution` :
+
+- Uitgeschakeld. Retourneert alleen de opgegeven interface, zonder enige afhankelijkheid.
+- Ingeschakeld. Retourneert alle interfaces in de afhankelijkheids keten
+- TryFromExpanded. Het `.expanded.json` bestand gebruiken om de vooraf berekende afhankelijkheden op te halen 
+
+> [!Tip] 
+> Het bestand wordt mogelijk niet door aangepaste opslag plaatsen weer gegeven `.expanded.json` wanneer de client niet beschikbaar is om elke afhankelijkheid lokaal te verwerken.
+
+De volgende voorbeeld code laat zien hoe u met `ModelsRepositoryClient` behulp van een aangepaste basis-URL voor de opslag plaats initialiseert, in dit geval met behulp `raw` van de url's van de GITHUB-API zonder het formulier te gebruiken `expanded` omdat deze niet beschikbaar is in het `raw` eind punt. De `AzureEventSourceListener` wordt geïnitialiseerd voor het controleren van de HTTP-aanvraag die door de client is uitgevoerd:
+
+```cs
+using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsoleLogger();
+
+var client = new ModelsRepositoryClient(
+    new Uri("https://raw.githubusercontent.com/Azure/iot-plugandplay-models/main"),
+    new ModelsRepositoryClientOptions(dependencyResolution: ModelDependencyResolution.Enabled));
+
+IDictionary<string, string> models = client.GetModels("dtmi:com:example:TemperatureController;1");
+
+models.Keys.ToList().ForEach(k => Console.WriteLine(k));
+```
+
+Er zijn meer voor beelden beschikbaar in de bron code in de Azure SDK GitHub-opslag plaats: [Azure. IOT. ModelsRepository/samples](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/modelsrepository/Azure.IoT.ModelsRepository/samples)
 
 ## <a name="publish-a-model"></a>Een model publiceren
 

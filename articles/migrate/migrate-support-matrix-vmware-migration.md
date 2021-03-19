@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: cbb1db15eed53af1d0e4590e1b228e5e47680560
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 40fcdae9a94b2b48eb4c665f4e0c9c3e58962f4b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102614918"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104576778"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Ondersteuningsmatrix voor VMware-migratie
 
@@ -27,14 +27,9 @@ U kunt virtuele VMware-machines op een aantal manieren migreren:
 
 Lees [dit artikel](server-migrate-overview.md) als u wilt weten welke methode u wilt gebruiken.
 
-## <a name="migration-limitations"></a>Migratiebeperkingen
-
-- U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie via de Azure Portal. Als u meer machines wilt migreren, repliceert u in groepen van 10. Er is geen limiet voor het aantal Vm's dat kan worden gerepliceerd via Power shell-cmdlets. Onze aanbeveling is niet meer dan 500 Vm's tegelijk te repliceren vanuit één vCenter via Power shell om optimale prestaties te garanderen.
-- Voor VMware-agentloze migratie kunt u vanaf elke vCenter Server Maxi maal 500 replicaties tegelijk uitvoeren.
-
 ## <a name="agentless-migration"></a>Migratie zonder agent 
 
-In deze sectie vindt u een overzicht van de vereisten voor migratie zonder agent.
+In deze sectie vindt u een overzicht van de vereisten voor VMware VM-migratie zonder agent naar Azure.
 
 ### <a name="vmware-requirements-agentless"></a>VMware-vereisten (zonder agent)
 
@@ -72,8 +67,11 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 **Team kaarten** | Wordt niet ondersteund.
 **IPv6** | Wordt niet ondersteund.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
-**Gelijktijdige replicatie** | 500 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 500.
+**Gelijktijdige replicatie** | Maxi maal 300 Vm's tegelijk repliceren per vCenter Server met 1 apparaat. Maxi maal 500 gelijktijdige Vm's repliceren per vCenter Server wanneer een extra [scale-out-apparaat](./how-to-scale-out-for-migration.md) wordt geïmplementeerd. 
 **Automatische installatie van de Azure VM-agent (Windows-en Linux-agent)** | Ondersteund voor Windows Server 2008 R2. <br/> Ondersteund voor RHEL6, RHEL7, CentOS7, Ubuntu 14,04, Ubuntu 16,04, Ubuntu 18.04. Bekijk de lijst met [vereiste pakketten](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux#requirements)) voor deze Linux-besturings systemen.
+
+> [!TIP]
+>  Met behulp van de Azure Portal kunt u Maxi maal tien Vm's tegelijk selecteren om de replicatie te configureren. Als u meer Vm's wilt repliceren, kunt u de portal gebruiken en de Vm's toevoegen die moeten worden gerepliceerd in meerdere batches van 10 Vm's, of de Azure Migrate Power shell-interface gebruiken om replicatie te configureren. Zorg ervoor dat u geen gelijktijdige replicatie op meer dan het Maxi maal ondersteunde aantal Vm's voor gelijktijdige replicaties configureert.
 
 ### <a name="appliance-requirements-agentless"></a>Vereisten voor apparaten (zonder agent)
 

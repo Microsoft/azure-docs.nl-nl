@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/15/2021
+ms.date: 03/17/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 49abd2cc62ff7a2eab3d95265f3db8f5c894ebb6
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 7e7a99daa169c994a0b9656786926f0715fa17a2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103488938"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580059"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Facebook-account met Azure Active Directory B2C
 
@@ -73,6 +73,8 @@ Als u het aanmelden voor gebruikers met een Facebook-account in Azure Active Dir
 1. Selecteer **Opslaan**.
 
 ## <a name="add-facebook-identity-provider-to-a-user-flow"></a>Facebook-ID-provider toevoegen aan een gebruikers stroom 
+
+Op dit moment is de Facebook-ID-provider ingesteld, maar deze is nog niet beschikbaar op de aanmeldings pagina's. De Facebook-ID-provider toevoegen aan een gebruikers stroom:
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
 1. Klik op de gebruikers stroom die u wilt toevoegen aan de Facebook-ID-provider.

@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 6c5922137b5d3ee14461adb88fba2e8b2cf41e16
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 842107245fe26155d53866bf95e11b08d7593ad1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102558964"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582150"
 ---
 # <a name="troubleshooting-vm-provisioning-with-cloud-init"></a>Problemen met VM-inrichting oplossen met Cloud-init
 
@@ -56,11 +56,11 @@ Wanneer de virtuele machine niet kan worden ingericht, wordt in azure de status 
 
 Terwijl de virtuele machine actief is, hebt u de logboeken van de virtuele machine nodig om te begrijpen waarom het inrichten is mislukt.  Als u wilt weten waarom het inrichten van de VM is mislukt, stopt u de virtuele machine niet. Zorg ervoor dat de VM wordt uitgevoerd. Als u logboeken wilt verzamelen, moet u de mislukte VM in een actieve status laten staan. Gebruik een van de volgende methoden om de logboeken te verzamelen:
 
-- [Seriële console](../troubleshooting/serial-console-grub-single-user-mode.md)
+- [Seriële console](/troubleshoot/azure/virtual-machines/serial-console-grub-single-user-mode)
 
 - [Schakel diagnostische gegevens over opstarten in](/previous-versions/azure/virtual-machines/linux/tutorial-monitor#enable-boot-diagnostics) voordat u de virtuele machine maakt en [weer geven](/previous-versions/azure/virtual-machines/linux/tutorial-monitor#view-boot-diagnostics) tijdens het opstarten.
 
-- [Voer AZ VM Repair uit](../troubleshooting/repair-linux-vm-using-azure-virtual-machine-repair-commands.md) om de besturingssysteem schijf te koppelen en koppelen, zodat u deze logboeken kunt verzamelen:
+- [Voer AZ VM Repair uit](/troubleshoot/azure/virtual-machines/repair-linux-vm-using-azure-virtual-machine-repair-commands) om de besturingssysteem schijf te koppelen en koppelen, zodat u deze logboeken kunt verzamelen:
 ```bash
 /var/log/cloud-init*
 /var/log/waagent*
@@ -108,7 +108,7 @@ Als u een fout of waarschuwing hebt gevonden, leest u achterwaarts in het Cloud-
 2019-10-10 04:51:24,010 - util.py[DEBUG]: Running command ['mount', '-o', 'ro,sync', '-t', 'auto', u'/dev/sr0', '/run/cloud-init/tmp/tmpXXXXX'] with allowed return codes [0] (shell=False, capture=True)
 ```
 
-Als u toegang hebt tot de [seriële console](../troubleshooting/serial-console-grub-single-user-mode.md), kunt u proberen om de opdracht uit te voeren die door Cloud-init werd uitgevoerd.
+Als u toegang hebt tot de [seriële console](/troubleshoot/azure/virtual-machines/serial-console-grub-single-user-mode), kunt u proberen om de opdracht uit te voeren die door Cloud-init werd uitgevoerd.
 
 De logboek registratie voor `/var/log/cloud-init.log` kan ook opnieuw worden geconfigureerd binnen/etc/cloud/cloud.cfg.d/05_logging. cfg. Raadpleeg de [Cloud-init-documentatie](https://cloudinit.readthedocs.io/en/latest/topics/logging.html)voor meer informatie over de Cloud-init-logboek registratie. 
 

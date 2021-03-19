@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/16/2020
+ms.date: 03/10/2021
 ms.author: b-juche
-ms.openlocfilehash: 412724a072bfc03a67bf1005173702f757c6fdf4
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 2a3c788ce50ccc1d537fd2903fe05acffd079b0b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95249934"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591007"
 ---
 # <a name="create-volume-replication-for-azure-netapp-files"></a>Volume replicatie voor Azure NetApp Files maken
 
@@ -63,11 +63,11 @@ U kunt ook een bestaand NetApp-account in een andere regio selecteren.
     ![Gegevens replicatie toevoegen](../media/azure-netapp-files/cross-region-replication-add-data-replication.png)
  
 5. Op de pagina een volume maken dat wordt weer gegeven, voert u de volgende velden in op het tabblad **basis beginselen** :
-    * Volume naam
+    * Volumenaam
     * Capaciteits pool
     * Volume quota
         > [!NOTE] 
-        > Het is raadzaam om de volume quotum grootte van het bron volume te spie gelen.
+        > De volume quota (grootte) voor het doel volume moet mirror zijn van het bron volume. Als u een grootte opgeeft die kleiner is dan het bron volume, wordt het doel volume automatisch aangepast aan de grootte van het bron volume. 
     * Virtueel netwerk 
     * Subnet
 
@@ -80,7 +80,7 @@ Zorg ervoor dat voor het NFS-protocol de export beleids regels voldoen aan de ve
 
 8. Plak onder het tabblad **replicatie** in de bron volume bron-id die u hebt verkregen in [Zoek de bron-id van het resource volume](#locate-the-source-volume-resource-id)en selecteer vervolgens het gewenste replicatie schema. Opties voor replicatie schema zijn: elke 10 minuten, elk uur, dagelijks, wekelijks en maandelijks.  
 
-    ![Volume replicatie maken](../media/azure-netapp-files/cross-region-replication-create-volume-replication.png)
+    ![Volumereplicatie maken](../media/azure-netapp-files/cross-region-replication-create-volume-replication.png)
 
 9. Klik op **controleren + maken** en klik vervolgens op **maken** om het volume voor gegevens replicatie te maken.   
 
@@ -113,6 +113,6 @@ Als u de replicatie wilt autoriseren, moet u de bron-ID van het replicatie doel 
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
-* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
+* [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met kruis regio's oplossen-replicatie](troubleshoot-cross-region-replication.md)
 

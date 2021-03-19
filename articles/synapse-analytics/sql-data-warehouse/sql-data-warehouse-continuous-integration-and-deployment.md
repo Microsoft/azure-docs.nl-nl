@@ -2,21 +2,21 @@
 title: Continue integratie en implementatie voor toegewezen SQL-groep
 description: Data base DevOps-ervaring op ondernemings niveau voor exclusieve SQL-groep in azure Synapse Analytics met ingebouwde ondersteuning voor continue integratie en implementatie met behulp van Azure-pijp lijnen.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: sql-dw
 ms.date: 02/04/2020
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: cb80f2d21246a75d41fc5753e72995d409d5c6b4
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: d43039c98e991cd23a8e5c4fb866a8e3dcab6fc2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119183"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585635"
 ---
 # <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Continue integratie en implementatie voor een toegewezen SQL-groep in azure Synapse Analytics
 

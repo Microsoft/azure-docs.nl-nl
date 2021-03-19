@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperf-fy21q1, contperf-fy21q2
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: c72ae2a2e6dbd2278bdd78f26c145386be22764e
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 413f0be32b54ee6da39934cf3f8753246fbce924
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102175427"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578801"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform
 
@@ -89,7 +89,7 @@ Als u toepassingsinstellingen wilt configureren op basis van het platform of app
     | **Toepassing met één pagina** | Voer een **omleidings-URI** in voor uw app. Deze URI is de locatie waar het micro soft-identiteits platform een client van een gebruiker omleidt en beveiligings tokens verzendt na verificatie.<br/><br/>Selecteer dit platform als u een web-app aan de client zijde bouwt met behulp van Java script of een framework zoals hoek, Vue.js, React.js of razendsnelle webassembly. |
     | **iOS / macOS** | Voer de app **-bundel-id** in. Zoek het in de **instellingen voor bouwen** of in Xcode in *info. plist*.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u een **bundel-id** opgeeft. |
     | **Android** | Voer de naam van het app- **pakket** in. Zoek het naar het *AndroidManifest.xml* -bestand. Genereer ook de **hand tekening-hash** en voer deze in.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u deze instellingen opgeeft. |
-    | **Mobiele toepassingen en desktoptoepassingen** | Selecteer een van de **voorgestelde omleidings-uri's**. Of geef een **aangepaste omleidings-URI** op.<br/><br/>Voor desktop toepassingen kunt u het beste<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>Selecteer dit platform voor mobiele toepassingen die niet gebruikmaken van de nieuwste micro soft Authentication Library (MSAL) of die geen Broker gebruikt. Selecteer dit platform ook voor desktoptoepassingen. |
+    | **Mobiele toepassingen en desktoptoepassingen** | Selecteer een van de **voorgestelde omleidings-uri's**. Of geef een **aangepaste omleidings-URI** op.<br/><br/>Voor desktop toepassingen die gebruikmaken van een Inge sloten browser, wordt aangeraden<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>Voor desktop toepassingen die gebruikmaken van systeem browser, wordt aangeraden<br/>`http://localhost`<br/><br/>Selecteer dit platform voor mobiele toepassingen die niet gebruikmaken van de nieuwste micro soft Authentication Library (MSAL) of die geen Broker gebruikt. Selecteer dit platform ook voor desktoptoepassingen. |
 1. Selecteer **Configureren** om de platformconfiguratie te voltooien.
 
 ### <a name="redirect-uri-restrictions"></a>URI-beperkingen omleiden

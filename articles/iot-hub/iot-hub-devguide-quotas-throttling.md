@@ -6,17 +6,17 @@ ms.author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 08/08/2019
+ms.date: 03/18/2021
 ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Operations'
 - 'Role: Technical Support'
-ms.openlocfilehash: 5a5b20efbf804c2ea1097f905da1cfd62727ff15
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3de9eccd001e421ef3255f83630716df12b7a2ee
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410688"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595257"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Referentie-IoT Hub quota's en beperking
 
@@ -43,7 +43,7 @@ De volgende tabel geeft de afgedwongen vertragingen weer. Waarden verwijzen naar
 | Vertragen | Gratis, B1 en S1 | B2 en S2 | B3 en S3 | 
 | -------- | ------- | ------- | ------- |
 | [Identiteits register bewerkingen](#identity-registry-operations-throttle) (maken, ophalen, weer geven, bijwerken, verwijderen) | 1.67 per seconde per eenheid (100 per minuut/eenheid) | 1.67 per seconde per eenheid (100 per minuut/eenheid) | 83.33 per seconde per eenheid (5000/min per eenheid) |
-| [Nieuwe verbindingen voor apparaten](#device-connections-throttle) (deze limiet geldt voor de frequentie van _nieuwe verbindingen_ , niet het totale aantal verbindingen) | Hoger van 100 per seconde of 12 per seconde per eenheid <br/> Zo zijn twee S1-eenheden 2 \* 12 = 24 nieuwe verbindingen per seconde, maar u hebt ten minste 100 nieuwe verbindingen per seconde over uw eenheden. Met negen S1-eenheden hebt u 108 nieuwe verbindingen per seconde (9 \* 12) in uw eenheden. | 120 nieuwe verbindingen per seconde per eenheid | 6.000 nieuwe verbindingen per seconde per eenheid |
+| [Nieuwe verbindingen voor apparaten](#device-connections-throttle) (deze limiet geldt voor de frequentie van _nieuwe verbindingen_, niet het totale aantal verbindingen) | Hoger van 100 per seconde of 12 per seconde per eenheid <br/> Zo zijn twee S1-eenheden 2 \* 12 = 24 nieuwe verbindingen per seconde, maar u hebt ten minste 100 nieuwe verbindingen per seconde over uw eenheden. Met negen S1-eenheden hebt u 108 nieuwe verbindingen per seconde (9 \* 12) in uw eenheden. | 120 nieuwe verbindingen per seconde per eenheid | 6.000 nieuwe verbindingen per seconde per eenheid |
 | Apparaat-naar-cloud verzendt | Meer dan 100 verzend bewerkingen per seconde of 12 verzend bewerkingen per seconde/eenheid <br/> Bijvoorbeeld: twee S1-eenheden zijn 2 \* 12 = 24 per seconde, maar u hebt ten minste 100 verzend bewerkingen per seconde over uw eenheden. Met negen S1-eenheden hebt u 108 verzend bewerkingen per seconde (9 \* 12) in uw eenheden. | 120 verzend bewerkingen per seconde per eenheid | 6.000 verzend bewerkingen per seconde per eenheid |
 | Verzenden van Cloud naar apparaat<sup>1</sup> | 1,67 verzend bewerkingen per seconde/eenheid (100 berichten/minuut/eenheid) | 1,67 verzend bewerkingen per seconde/eenheid (100 verzend bewerkingen per minuut/eenheid) | 83,33 verzend bewerkingen per seconde/eenheid (5.000 verzend bewerkingen per minuut/eenheid) |
 | Cloud-naar-apparaat ontvangt<sup>1</sup> <br/> (alleen wanneer het apparaat HTTPS gebruikt)| 16,67 receive-bewerkingen per seconde/eenheid (1.000-ontvangst bewerkingen/min/eenheid) | 16,67 receive-bewerkingen per seconde/eenheid (1.000-ontvangst bewerkingen/min/eenheid) | 833,33 receive-bewerkingen per seconde/eenheid (50.000-ontvangst bewerkingen/min/eenheid) |
@@ -86,6 +86,8 @@ U gebruikt bijvoorbeeld een gesimuleerd apparaat voor het verzenden van 200 appa
 ### <a name="identity-registry-operations-throttle"></a>Beperking van de identiteits register bewerkingen
 
 Register bewerkingen voor de apparaat-id zijn bedoeld voor gebruik in runtime in scenario's voor het beheren en inrichten van apparaten. Het lezen of bijwerken van een groot aantal apparaat-id's wordt ondersteund via [import-en export taken](iot-hub-devguide-identity-registry.md#import-and-export-device-identities).
+
+Bij het initiëren van identiteits bewerkingen via [bulk bewerkingen](iot-hub-bulk-identity-mgmt.md), gelden dezelfde beperkings limieten. Als u bijvoorbeeld een bulk bewerking wilt indienen om 50-apparaten te maken en u een S1-IoT Hub hebt met 1 eenheid, worden slechts twee van deze bulk aanvragen per minuut geaccepteerd. Dit omdat de identiteits bewerking voor een S1-IoT Hub met 1 eenheid 100/min per eenheid is. In dit geval zou een derde aanvraag (en later) in dezelfde minuut worden afgewezen, omdat de limiet al was bereikt. 
 
 ### <a name="device-connections-throttle"></a>Beperking van Apparaatinstellingen
 

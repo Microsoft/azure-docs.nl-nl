@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a764538ebc73927b1d274b2538e123ec90ce60e
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 5ad1b8318e261c7dfef7fc125716736087a84bdc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741555"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579175"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Reporting options for Azure AD password management (Rapportageopties voor Azure AD-wachtwoordbeheer)
 
@@ -171,7 +171,7 @@ In de volgende lijst vindt u meer informatie over deze activiteit:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [SSPR-en MFA-gebruik en inzichten rapportage](howto-authentication-methods-usage-insights.md)
+* [SSPR-en MFA-gebruik en inzichten rapportage](./howto-authentication-methods-activity.md)
 * [Hoe kan ik een geslaagde implementatie van SSPR voltooien?](howto-sspr-deployment.md)
 * [Uw wachtwoord opnieuw instellen of wijzigen](../user-help/active-directory-passwords-update-your-own-password.md).
 * [Registreer u voor selfservice voor wacht woord opnieuw instellen](../user-help/active-directory-passwords-reset-register.md).

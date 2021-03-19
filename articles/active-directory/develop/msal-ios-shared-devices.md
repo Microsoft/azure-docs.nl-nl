@@ -1,7 +1,7 @@
 ---
 title: Modus voor gedeeld apparaat voor iOS-apparaten
 titleSuffix: Microsoft identity platform | Azure
-description: Meer informatie over het inschakelen van de modus gedeeld apparaat zodat Firstline werk rollen een iOS-apparaat kunnen delen
+description: Meer informatie over het inschakelen van de modus gedeeld apparaat zodat Frontline werk rollen een iOS-apparaat kunnen delen
 services: active-directory
 author: brandwe
 manager: CelesteDG
@@ -13,19 +13,19 @@ ms.date: 03/31/2020
 ms.author: brandwe
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: a97e14bcb68629f5f175a4913146187949af08be
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: c67c5d7b46c04e7f1aea020127ee798878c43d60
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561060"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578784"
 ---
 # <a name="shared-device-mode-for-ios-devices"></a>Modus voor gedeeld apparaat voor iOS-apparaten
 
 >[!IMPORTANT]
 > Deze functie [!INCLUDE [PREVIEW BOILERPLATE](../../../includes/active-directory-develop-preview.md)]
 
-Firstline-werk rollen, zoals Retail Associates, leden van de vliegtuig bemanning en mede werkers van de Field service gebruiken vaak een gedeeld mobiel apparaat om hun werk uit te voeren. Deze gedeelde apparaten kunnen beveiligings Risico's opleveren als uw gebruikers hun wacht woord of pincode, opzettelijk of niet delen, om toegang te krijgen tot klant-en bedrijfs gegevens op het gedeelde apparaat.
+Frontline-werk rollen, zoals Retail Associates, leden van de vliegtuig bemanning en mede werkers van de Field service gebruiken vaak een gedeeld mobiel apparaat om hun werk uit te voeren. Deze gedeelde apparaten kunnen beveiligings Risico's opleveren als uw gebruikers hun wacht woord of pincode, opzettelijk of niet delen, om toegang te krijgen tot klant-en bedrijfs gegevens op het gedeelde apparaat.
 
 In de modus gedeeld apparaat kunt u een apparaat met iOS 13 of hoger configureren zodat het eenvoudiger en veilig kan worden gedeeld door werk nemers. Werk nemers kunnen zich snel aanmelden en klant gegevens benaderen. Wanneer ze zijn voltooid met hun verschuiving of taak, kunnen ze zich afmelden bij het apparaat en het direct klaar voor gebruik door de volgende werk nemer.
 
@@ -41,7 +41,7 @@ Als u een app voor gedeelde apparaten wilt maken, werken ontwikkel aars en behee
 
 1. **Beheerders** van apparaten bereiden het apparaat voor met het delen van een Mobile Device Management (MDM)-provider, zoals Microsoft intune voor het beheren van de apparaten in hun organisatie. Het MDM duwt de Microsoft Authenticator-app naar de apparaten en schakelt gedeelde modus voor elk apparaat in via een profiel update op het apparaat. Met deze instelling voor de gedeelde modus wordt het gedrag van de ondersteunde apps op het apparaat gewijzigd. Deze configuratie van de MDM-provider stelt de modus voor gedeelde apparaten voor het apparaat in en schakelt de [micro soft Enter PRISE SSO-invoeg toepassing in voor Apple-apparaten](apple-sso-plugin.md) die vereist zijn voor de modus gedeeld apparaat.
 
-1. [ **Vereist tijdens alleen open bare preview** ] Een gebruiker met de rol van beheerder van het [Cloud apparaat](../roles/permissions-reference.md#cloud-device-administrator) moet vervolgens de [app Microsoft Authenticator](../user-help/user-help-auth-app-overview.md) starten en hun apparaat toevoegen aan de organisatie.
+1. [**Vereist tijdens alleen open bare preview**] Een gebruiker met de rol van beheerder van het [Cloud apparaat](../roles/permissions-reference.md#cloud-device-administrator) moet vervolgens de [app Microsoft Authenticator](../user-help/user-help-auth-app-overview.md) starten en hun apparaat toevoegen aan de organisatie.
 
     Als u het lidmaatschap van uw organisatie rollen wilt configureren in de Azure portal: **Azure Active Directory**  >  **rollen en Administrators** van de  >  **Cloud apparaat-beheerder**
 
@@ -56,10 +56,10 @@ Het apparaat moet worden geconfigureerd voor de ondersteuning van de modus gedee
 
 1. Vertel in de intune-configuratie Portal het apparaat om de [micro soft Enter PRISE SSO-invoeg toepassing](apple-sso-plugin.md) in te scha kelen voor Apple-apparaten met de volgende configuratie:
 
-    - **Type** : omleiden
-    - **Extensie-id** : com. micro soft. azureauthenticator. ssoextension
-    - **Team-ID** : (dit veld is niet nodig voor IOS)
-    - **Url's** :   
+    - **Type**: omleiden
+    - **Extensie-id**: com. micro soft. azureauthenticator. ssoextension
+    - **Team-ID**: (dit veld is niet nodig voor IOS)
+    - **Url's**:   
         - `https://login.microsoftonline.com`
         - `https://login.microsoft.com`
         - `https://sts.windows.net`
@@ -69,7 +69,7 @@ Het apparaat moet worden geconfigureerd voor de ondersteuning van de modus gedee
         - `https://login.microsoftonline.us`
         - `https://login.usgovcloudapi.net`
         - `https://login-us.microsoftonline.com`
-    - **Aanvullende gegevens die moeten worden geconfigureerd** :
+    - **Aanvullende gegevens die moeten worden geconfigureerd**:
       - Sleutel: sharedDeviceMode
       - Type: Booleaans
       - Waarde: True
@@ -95,7 +95,7 @@ Bij wijziging van een gebruiker moet u ervoor zorgen dat de gegevens van de vori
 
 ### <a name="detect-shared-device-mode"></a>Modus gedeelde apparaten detecteren
 
-Het detecteren van de modus gedeeld apparaat is belang rijk voor uw toepassing. Veel toepassingen vereisen een wijziging in hun gebruikers ervaring (UX) wanneer de toepassing wordt gebruikt op een gedeeld apparaat. Uw toepassing kan bijvoorbeeld een functie voor het registreren hebben die niet geschikt is voor een Firstline-werk nemer omdat deze waarschijnlijk al een account heeft. Mogelijk wilt u ook extra beveiliging toevoegen aan de verwerking van gegevens van uw toepassing als deze wordt weer gegeven in de modus gedeeld apparaat.
+Het detecteren van de modus gedeeld apparaat is belang rijk voor uw toepassing. Veel toepassingen vereisen een wijziging in hun gebruikers ervaring (UX) wanneer de toepassing wordt gebruikt op een gedeeld apparaat. Uw toepassing kan bijvoorbeeld een functie voor het registreren hebben die niet geschikt is voor een Frontline-werk nemer omdat deze waarschijnlijk al een account heeft. Mogelijk wilt u ook extra beveiliging toevoegen aan de verwerking van gegevens van uw toepassing als deze wordt weer gegeven in de modus gedeeld apparaat.
 
 Gebruik de `getDeviceInformationWithParameters:completionBlock:` API in de `MSALPublicClientApplication` om te bepalen of een app wordt uitgevoerd op een apparaat in de modus gedeeld apparaat.
 
@@ -230,6 +230,6 @@ signoutParameters.signoutFromBrowser = YES; // Only needed for Public Preview.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u de modus gedeeld apparaat in actie wilt zien, bevat het volgende code voorbeeld in GitHub een voor beeld van het uitvoeren van een Firstline worker-app op een iOS-apparaat in de modus gedeeld apparaat:
+Als u de modus gedeeld apparaat in actie wilt zien, bevat het volgende code voorbeeld in GitHub een voor beeld van het uitvoeren van een Frontline worker-app op een iOS-apparaat in de modus gedeeld apparaat:
 
 [Voor beeld van MSAL iOS Swift Microsoft Graph-API](https://github.com/Azure-Samples/ms-identity-mobile-apple-swift-objc)

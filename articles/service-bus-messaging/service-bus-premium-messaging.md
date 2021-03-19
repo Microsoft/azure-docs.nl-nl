@@ -3,12 +3,12 @@ title: Azure Service Bus Premium-en Standard-lagen
 description: In dit artikel worden de standaard-en Premium-lagen van Azure Service Bus beschreven. Vergelijkt deze lagen en biedt technische verschillen.
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: 0385526560e6aafaab66d9212ff54caff2362ebd
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: aa08a99009ef3d20e831e214ae5811059817d13c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100636506"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607548"
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Prijscategorieën voor Service Bus Premium en Standard Messaging
 
@@ -26,7 +26,7 @@ In de volgende tabel worden enkele belangrijke verschillen uitgelicht.
 | Mogelijkheid om de workload omhoog en omlaag te schalen |N.v.t. |
 | Bericht grootte Maxi maal 1 MB. Deze limiet kan in de toekomst worden verhoogd. Zie [berichten over Azure blog](https://techcommunity.microsoft.com/t5/messaging-on-azure/bg-p/MessagingonAzureBlog)voor de meest recente belang rijke updates voor de service. |Berichtformaat tot maximaal 256 kB |
 
-**Service Bus Premium Messaging** biedt isolatie van resources op het niveau van de CPU en het geheugen, zodat elke workload van een klant geïsoleerd wordt uitgevoerd. Deze resource container wordt een *Messa ging-eenheid* genoemd. Aan elke Premium-naamruimte wordt ten minste één Messaging-eenheid toegewezen. U kunt 1, 2, 4 of 8 Messa ging-eenheden kopen voor elke Service Bus Premium-naam ruimte. Eén werk belasting of entiteit kan meerdere Messa ging-eenheden omvatten en het aantal Messa ging-eenheden kan worden gewijzigd in. Dit resulteert in voorspelbare en herhaalbare prestaties voor uw Service Bus-oplossing.
+**Service Bus Premium Messaging** biedt isolatie van resources op het niveau van de CPU en het geheugen, zodat elke workload van een klant geïsoleerd wordt uitgevoerd. Deze resource container wordt een *Messa ging-eenheid* genoemd. Aan elke Premium-naamruimte wordt ten minste één Messaging-eenheid toegewezen. U kunt 1, 2, 4, 8 of 16 Messa ging-eenheden kopen voor elke Service Bus Premium-naam ruimte. Eén werk belasting of entiteit kan meerdere Messa ging-eenheden omvatten en het aantal Messa ging-eenheden kan worden gewijzigd in. Dit resulteert in voorspelbare en herhaalbare prestaties voor uw Service Bus-oplossing.
 
 Niet alleen zijn de prestaties beter voorspelbaar en beschikbaar, ze zijn ook sneller. Met de Premium-laag zijn de piekprestaties veel sneller dan met de Standard-laag.
 

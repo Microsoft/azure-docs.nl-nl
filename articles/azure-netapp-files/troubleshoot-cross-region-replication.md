@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 11/18/2020
+ms.date: 03/10/2021
 ms.author: b-juche
-ms.openlocfilehash: b30ed0cca680013b85efe064d59fb7cb73d753d2
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: d3d944646689e9e6189b0343e8bf67c8fb0abcbd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95239547"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590922"
 ---
 # <a name="troubleshoot-cross-region-replication"></a>Problemen met replicatie tussen regio's oplossen
 
@@ -71,11 +71,18 @@ In dit artikel worden fout berichten en oplossingen beschreven die u kunnen help
 |     `Snapshot   cannot be deleted, parent volume is a Data Protection volume with a   replication object`    |     Controleer of de replicatie van het volume is verbroken als u deze moment opname wilt verwijderen.    |
 |     `Cannot delete   volume replication generated snapshot`    |     Het verwijderen van moment opnamen van de replicatie basislijn is niet toegestaan.    |
 
+## <a name="errors-resizing-volumes"></a>Fouten bij het wijzigen van de grootte van volumes
+
+|     Foutbericht    |     Oplossing    |
+|-|-|
+|   Het wijzigen van het formaat van het bron volume is mislukt met de fout `"PoolSizeTooSmall","message":"Pool size too small for total volume size."`  |  Zorg ervoor dat u voldoende ruimte hebt in de capaciteits groepen voor zowel de bron-als de doel volumes van replicatie tussen regio's. Wanneer u de grootte van het bron volume wijzigt, wordt het doel volume automatisch gewijzigd. Maar als de capaciteits pool die het doel volume host niet voldoende ruimte heeft, mislukt het wijzigen van de grootte van zowel de bron-als de doel volumes. Zie [het formaat wijzigen van een replicatie doel volume voor meerdere regio's](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume) voor meer informatie.   |
+
 ## <a name="next-steps"></a>Volgende stappen  
 
 * [Replicatie in meerdere regio's](cross-region-replication-introduction.md)
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
-* [Volume replicatie maken](cross-region-replication-create-peering.md)
+* [Volumereplicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
+* [Het formaat van een replicatie doel volume voor meerdere regio's wijzigen](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)

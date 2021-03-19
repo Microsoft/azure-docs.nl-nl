@@ -8,12 +8,12 @@ ms.subservice: sizes
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: 1937b8392ee3a73ed7c268897c532c643a9151eb
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: bd4dcbdc7ab13d18ef7f2d7102c56d1bd8d8758d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102565458"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582099"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Azure VM-grootten zonder lokale tijdelijke schijf 
 In dit artikel vindt u antwoorden op veelgestelde vragen over Azure VM-grootten die geen lokale tijdelijke schijf hebben (d.w.z. geen lokale tijdelijke schijf). Zie voor meer informatie over deze VM-grootten [specificaties voor Dv4-en Dsv4-Series (algemeen workloads)](dv4-dsv4-series.md) of [specificaties voor Ev4-en Esv4-serie (voor geheugen geoptimaliseerde workloads)](ev4-esv4-series.md).
@@ -56,7 +56,7 @@ U kunt migreren door de volgende stappen uit te voeren:
    > Volg de richt lijnen in de sectie "tijdelijk verplaatsen van pagefile.sys naar station C" van het station D: gebruiken als gegevens station op een Windows-VM om het wissel bestand van de lokale tijdelijke schijf (D: station) te verplaatsen naar C: station. **Afwijking van de stappen die worden beschreven, leidt tot het fout bericht: ' kan de grootte van de virtuele machine niet wijzigen omdat het wijzigen van de bron schijf naar niet-bron schijf VM-grootte en omgekeerd is niet toegestaan.**
 
 3. Maak een moment opname van de virtuele machine door de stappen te volgen die worden beschreven in [een moment opname maken met behulp van de portal of Azure cli](./linux/snapshot-copy-managed-disk.md). 
-4. Gebruik moment opname voor het maken van een nieuwe schijfloze VM (zoals Dv4, Dsv4, Ev4, Esv4 Series) door de stappen te volgen die worden beschreven in [een virtuele machine maken van een moment opname met CLI](./scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md). 
+4. Gebruik moment opname voor het maken van een nieuwe schijfloze VM (zoals Dv4, Dsv4, Ev4, Esv4 Series) door de stappen te volgen die worden beschreven in [een virtuele machine maken van een moment opname met CLI](/previous-versions/azure/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot). 
 
 ## <a name="do-these-vm-sizes-support-both-linux-and-windows-operating-systems-os"></a>Ondersteunen deze VM-grootten zowel Linux-als Windows-besturings systemen (OS)?
 Ja.

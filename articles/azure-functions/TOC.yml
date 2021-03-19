@@ -71,10 +71,15 @@
       href: /azure/python/tutorial-vs-code-serverless-python-01
     - name: OpenAPI-definitie voor serverloze API's
       href: functions-openapi-definition.md
-    - name: Verbinding maken met een virtueel netwerk
-      href: functions-create-vnet.md
-    - name: Toegang tot privésite mogelijk maken
-      href: functions-create-private-site-access.md
+    - name: Netwerken
+      items:
+        - name: Verbinding maken met een virtueel netwerk
+          href: functions-create-vnet.md
+          displayName: vnet
+        - name: Toegang tot privésite mogelijk maken
+          href: functions-create-private-site-access.md
+        - name: Een uitgaande NAT-gateway gebruiken
+          href: functions-how-to-use-nat-gateway.md
     - name: Het formaat van afbeeldingen wijzigen met Event Grid
       href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Een serverloze web-app maken
@@ -365,6 +370,8 @@
           href: set-runtime-version.md
         - name: Een functie uitschakelen
           href: disable-function.md
+        - name: Netwerken
+          href: configure-networking-how-to.md
         - name: Geo-noodherstel
           href: functions-geo-disaster-recovery.md
     - name: Controleren

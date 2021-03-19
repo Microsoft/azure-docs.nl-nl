@@ -2,19 +2,23 @@
 title: Bicep-taal voor Azure Resource Manager sjablonen
 description: Beschrijft de Bicep-taal voor het implementeren van de infra structuur naar Azure via Azure Resource Manager sjablonen.
 ms.topic: conceptual
-ms.date: 03/12/2021
-ms.openlocfilehash: 599cb378da51c5d13e7db3cf45cacf750c5843cc
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.date: 03/17/2021
+ms.openlocfilehash: 6f706081d04c5337bb3def8088fe97b08c814ea2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103419827"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594220"
 ---
 # <a name="what-is-bicep-preview"></a>Wat is Bicep (preview)?
 
 Bicep is een taal voor declaratieve implementatie van Azure-resources. U kunt Bicep gebruiken in plaats van JSON voor het ontwikkelen van uw Azure Resource Manager sjablonen (ARM-sjablonen). Bicep vereenvoudigt de ontwerp ervaring door een beknopte syntaxis te bieden, betere ondersteuning voor het hergebruik van code en verbeterde type beveiliging. Bicep is een domein-specifieke taal (DSL), wat betekent dat het is ontworpen voor een bepaald scenario of domein. Het is niet bedoeld als een algemene programmeer taal voor het schrijven van toepassingen.
 
 De JSON-syntaxis voor het maken van een sjabloon kan uitgebreid zijn en gecompliceerde expressies vereisen. Bicep verbetert de ervaring zonder dat de mogelijkheden van een JSON-sjabloon verloren gaan. Het is een transparante abstractie voor de JSON voor ARM-sjablonen. Elk Bicep-bestand wordt gecompileerd naar een standaard ARM-sjabloon. Resource typen, API-versies en eigenschappen die geldig zijn in een ARM-sjabloon zijn geldig in een Bicep-bestand. Er zijn enkele [bekende beperkingen](#known-limitations) in de huidige release.
+
+Zie de volgende video voor meer informatie over Bicep.
+
+> [!VIDEO https://mediusprodstatic.studios.ms/asset-cccfdaf2-cdbe-49dd-9c58-91a4fe5ff0fd/OD340_1920x1080_AACAudio_5429.mp4?sv=2018-03-28&sr=b&sig=N3DuBaTrK3nt5TGwIagTbCqjVrzgwiJ9at80MXQJFwg%3D&st=2021-03-02T01%3A22%3A57Z&se=2026-03-02T01%3A27%3A57Z&sp=r&rscd=filename%3DIGFY21Q3-OD340-Learn%2Beverything%2Babout%2Bthe%2Bnext%2Bgeneration%2Bof%2BARM.mp4]
 
 ## <a name="get-started"></a>Aan de slag
 

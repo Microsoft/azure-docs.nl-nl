@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/03/2021
+ms.date: 03/18/2021
 ms.author: justinha
 author: inbarckms
 manager: daveba
 ms.reviewer: inbarckms
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 101e3ee9279d3560c0b561f0ea7ea695387bee15
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 44b80b9c6847cfdc8402cb3b4983f15873e367d3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102096459"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579379"
 ---
 # <a name="configure-temporary-access-pass-in-azure-ad-to-register-passwordless-authentication-methods-preview"></a>Tijdelijke toegangs fase configureren in azure AD om verificatie methoden met een wacht woord (preview-versie) te registreren
 
@@ -127,7 +127,7 @@ Houd u aan de volgende beperkingen:
 - Een tijdelijke toegangs doorvoer kan niet worden gebruikt met de extensie Network Policy Server (NPS) en Active Directory Federation Services (AD FS).
 - Wanneer naadloze SSO is ingeschakeld op de Tenant, wordt de gebruiker gevraagd een wacht woord in te voeren. De koppeling **gebruik van uw tijdelijke toegang in plaats daarvan** is beschikbaar voor de gebruiker om u aan te melden met een tijdelijke toegangs fase.
 
-![Scherm opname van het gebruik van een tijdelijke Access-door Voer](./media/how-to-authentication-temporary-access-pass/alternative.png)
+  ![Scherm opname van het gebruik van een tijdelijke Access-door Voer](./media/how-to-authentication-temporary-access-pass/alternative.png)
 
 ## <a name="troubleshooting"></a>Problemen oplossen    
 

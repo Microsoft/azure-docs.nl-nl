@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/24/2020
+ms.date: 03/01/2021
 ms.author: jeedes
-ms.openlocfilehash: dbccf38bcb89a6e0715604567be021cc890f209b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 4ac5bf2756b82361388ab9f2866b80c63395f90d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514806"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591381"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-solarwinds-orion"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met SolarWinds Orion
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u SolarWinds Orion integreert met Azure Active Di
 * Bepalen in Azure AD wie toegang heeft tot SolarWinds Orion.
 * Ervoor zorgen dat uw gebruikers automatisch met hun Azure AD-account worden aangemeld bij SolarWinds Orion.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -39,26 +37,25 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* SolarWinds Orion ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
-* Zodra u SolarWinds Orion hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
+* SolarWinds Orion ondersteunt **SP en IDP** geïnitieerde SSO.
 
-## <a name="adding-solarwinds-orion-from-the-gallery"></a>SolarWinds Orion toevoegen uit de galerie
+## <a name="add-solarwinds-orion-from-the-gallery"></a>SolarWinds Orion toevoegen vanuit de galerie
 
 Om de integratie van SolarWinds Orion te configureren in Azure AD, moet u SolarWinds Orion vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **SolarWinds Orion** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **SolarWinds Orion**.
 1. Selecteer **SolarWinds Orion** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-solarwinds-orion"></a>Eenmalige aanmelding van Azure AD voor SolarWinds Orion configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met SolarWinds Orion met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SolarWinds Orion.
+Configureer en test eenmalige aanmelding van Azure AD met SolarWinds Orion met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SolarWinds Orion.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met SolarWinds Orion te configureren en te testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met SolarWinds Orion:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -71,9 +68,9 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met SolarWinds 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **SolarWinds Orion** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Zoek in de Azure Portal op de pagina **SolarWinds Orion** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -114,51 +111,45 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot SolarWinds Orion.
+In deze sectie schakelt u B. Simon in voor het gebruik van eenmalige aanmelding van Azure door toegang te verlenen aan groen druk.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Selecteer **SolarWinds Orion** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **groen** onder.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-solarwinds-orion-sso"></a>Eenmalige aanmelding met SolarWinds Orion configureren
 
-1. Meld u aan bij SolarWinds Orion en ga naar **Settings** -> **All Settings** .
+1. Meld u aan bij SolarWinds Orion en ga naar **Settings** -> **All Settings**.
 
     ![Schermopname waarop Alle instellingen in Instellingen is geselecteerd.](./media/solarwinds-orion-tutorial/settings.png)
 
-1. Selecteer **SAML Configuration** in de sectie **USER ACCOUNTS** .
+1. Selecteer **SAML Configuration** in de sectie **USER ACCOUNTS**.
 
     ![Schermopname waarop de SAML-configuratie in Gebruikersaccounts is geselecteerd.](./media/solarwinds-orion-tutorial/configure-user-accounts.png)
 
-1. Klik op **ADD IDENTITY PROVIDER** .
+1. Klik op **ADD IDENTITY PROVIDER**.
 
     ![Schermopname met de SAML-configuratie waar u ID-PROVIDER TOEVOEGEN kunt selecteren.](./media/solarwinds-orion-tutorial/configure-add-identity-provider.png)
 
-1. Voer de volgende stappen uit op de pagina **Add Identity Provider** :
+1. Voer de volgende stappen uit op de pagina **Add Identity Provider**:
 
     ![Schermopname van de pagina Id-provider toevoegen, waar u de beschreven waarden kunt invoeren.](./media/solarwinds-orion-tutorial/configure-solarwinds.png)
 
-    a. Ga naar het tabblad **Configure** .
+    a. Ga naar het tabblad **Configure**.
 
     b. Geef in het tekstvak **Identity Provider Name** een geldige naam voor de id-provider op, zoals `My SSO service`.
 
@@ -166,21 +157,21 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     d.  Plak in het tekstvak **Issuer URL** de **Azure AD-id** die u uit de Azure-portal hebt gekopieerd.
 
-    e. Open in de Azure-portal het gedownloade **Base64-certificaat** in Kladblok en plak de inhoud in het tekstvak **X.509-certificaat** .
+    e. Open in de Azure-portal het gedownloade **Base64-certificaat** in Kladblok en plak de inhoud in het tekstvak **X.509-certificaat**.
 
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 ### <a name="create-solarwinds-orion-test-user"></a>Een SolarWinds Orion-testgebruiker maken
 
-1. Meld u aan bij de website van SolarWinds Orion en ga naar **Settings** -> **All Settings** .
+1. Meld u aan bij de website van SolarWinds Orion en ga naar **Settings** -> **All Settings**.
 
     ![Schermopname waarop Alle instellingen in Instellingen is geselecteerd.](./media/solarwinds-orion-tutorial/settings.png)
 
-1. Selecteer **Manage Accounts** in de sectie **USER ACCOUNTS** .
+1. Selecteer **Manage Accounts** in de sectie **USER ACCOUNTS**.
 
     ![Schermopname waarop de SAML-configuratie is geselecteerd.](./media/solarwinds-orion-tutorial/user-accounts.png)
 
-1. Klik op het tabblad **INDIVIDUAL ACCOUNTS** op **ADD NEW ACCOUNT** .
+1. Klik op het tabblad **INDIVIDUAL ACCOUNTS** op **ADD NEW ACCOUNT**.
 
     ![Schermopname waarin NIEUW ACCOUNT TOEVOEGEN is geselecteerd in Accounts beheren.](./media/solarwinds-orion-tutorial/create-user.png)
 
@@ -196,20 +187,20 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel SolarWinds Orion klikt, wordt u automatisch aangemeld bij de instantie van SolarWinds Orion waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor de SolarWinds Orion-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* Ga rechtstreeks naar de URL voor SolarWinds Orion-aanmelding en start de aanmeldings stroom vanaf daar.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik op **test deze toepassing** in azure Portal en meld u automatisch aan bij de SolarWinds Orion waarvoor u de SSO hebt ingesteld. 
 
-- [SolarWinds Orion met Azure AD uitproberen](https://aad.portal.azure.com/)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel SolarWinds Orion in de map mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de modus IDP, dan moet u automatisch worden aangemeld bij de SolarWinds Orion waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
 
-- [SolarWinds Orion beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+Zodra u SolarWinds Orion hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

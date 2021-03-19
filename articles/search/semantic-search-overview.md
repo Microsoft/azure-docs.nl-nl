@@ -7,19 +7,19 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 ms.custom: references_regions
-ms.openlocfilehash: 634298952d990cd3639aa1c62592fde534b3e8b8
-ms.sourcegitcommit: ec39209c5cbef28ade0badfffe59665631611199
+ms.openlocfilehash: 443d6349aab68fd05edfe4c4007fd043c932f4f0
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103232665"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604267"
 ---
 # <a name="semantic-search-in-azure-cognitive-search"></a>Semantisch zoeken in azure Cognitive Search
 
 > [!IMPORTANT]
-> Semantische zoek functies bevinden zich in de open bare preview-versie, die alleen beschikbaar is via de preview-REST API. Preview-functies worden aangeboden als-is, onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)en zijn niet gegarandeerd dezelfde implementatie bij algemene Beschik baarheid. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
+> Semantische zoek opdracht bevindt zich in de open bare preview, die alleen beschikbaar is via de preview-REST API. Preview-functies worden aangeboden als-is, onder [aanvullende gebruiks voorwaarden](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)en zijn niet gegarandeerd dezelfde implementatie bij algemene Beschik baarheid. Deze functies zijn Factureerbaar. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie.
 
 Semantisch zoeken is een verzameling query-gerelateerde functies die een hogere, meer natuurlijke query-ervaring ondersteunen. 
 
@@ -73,3 +73,5 @@ Met een nieuw query type worden de rang schikking van de relevantie en de reacti
 + [Spelling controle toevoegen aan query termen](speller-how-to-add.md)
 + [Een semantisch antwoord retour neren](semantic-answers.md)
 + [Semantische classificatie](semantic-ranking.md)
++ [Kennis Making met semantisch zoeken (blog bericht)](https://techcommunity.microsoft.com/t5/azure-ai/introducing-semantic-search-bringing-more-meaningful-results-to/ba-p/2175636)
++ [Herken bare inzichten vinden met behulp van semantische mogelijkheden (AI show video)](https://channel9.msdn.com/Shows/AI-Show/Find-meaningful-insights-using-semantic-capabilities-in-Azure-Cognitive-Search)

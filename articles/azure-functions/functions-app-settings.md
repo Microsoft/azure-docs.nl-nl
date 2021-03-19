@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 6fa8e2d9fb2270d53d8c0419ac7b4d88d79f30fd
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: fb00f0fe16342bf603d534c34a860278dc21deac
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102425699"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595972"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -257,9 +257,17 @@ Wordt alleen gebruikt bij de implementatie in een Premium-abonnement of op een v
 
 Wanneer u een Azure Resource Manager gebruikt voor het maken van een functie-app tijdens de implementatie, neemt u WEBSITE_CONTENTSHARE niet op in de sjabloon. Deze toepassings instelling wordt gegenereerd tijdens de implementatie. Zie voor meer informatie [resource-implementatie automatiseren voor uw functie-app](functions-infrastructure-as-code.md#windows).   
 
+## <a name="website_dns_server"></a>\_DNS- \_ server van website
+
+Hiermee stelt u de DNS-server die wordt gebruikt door een app bij het omzetten van IP-adressen. Deze instelling is vaak vereist bij het gebruik van bepaalde netwerk functies, zoals [Azure DNS particuliere zones](functions-networking-options.md#azure-dns-private-zones) en [privé-eind punten](functions-networking-options.md#restrict-your-storage-account-to-a-virtual-network).   
+
+|Sleutel|Voorbeeldwaarde|
+|---|------------|
+|\_DNS- \_ server van website|168.63.129.16|
+
 ## <a name="website_max_dynamic_application_scale_out"></a>WEBSITE \_ maximum \_ aantal \_ uitschalen van dynamische toepassing \_ \_
 
-Het maximum aantal exemplaren waarmee de functie-app kan worden uitgeschaald. De standaard waarde is geen limiet.
+Het maximum aantal exemplaren dat door de app kan worden uitgeschaald naar. De standaard waarde is geen limiet.
 
 > [!IMPORTANT]
 > Deze instelling is beschikbaar als preview-versie.  Een [app-eigenschap voor de functie Max scale-out](./event-driven-scaling.md#limit-scale-out) is toegevoegd en is de aanbevolen manier om uitschalen te beperken.
@@ -297,6 +305,14 @@ Hiermee stelt u de tijd zone voor de functie-app in.
 |\_tijd \_ zone van website|Linux|America/New_York|
 
 [!INCLUDE [functions-timezone](../../includes/functions-timezone.md)]
+
+## <a name="website_vnet_route_all"></a>WEBSITE \_ VNET- \_ route \_ alle
+
+Hiermee wordt aangegeven of al het uitgaande verkeer van de app wordt doorgestuurd via het virtuele netwerk. Een instellings waarde `1` geeft aan dat al het verkeer wordt doorgestuurd via het virtuele netwerk. U moet deze instelling gebruiken wanneer u gebruikmaakt van functies van [regionale virtuele netwerk integratie](functions-networking-options.md#regional-virtual-network-integration). Het wordt ook gebruikt wanneer een [NAT-gateway van een virtueel netwerk wordt gebruikt voor het definiëren van een statisch uitgaand IP-adres](functions-how-to-use-nat-gateway.md). 
+
+|Sleutel|Voorbeeldwaarde|
+|---|------------|
+|WEBSITE \_ VNET- \_ route \_ alle|1|
 
 ## <a name="next-steps"></a>Volgende stappen
 

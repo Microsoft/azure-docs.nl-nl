@@ -2,36 +2,19 @@
 title: Azure Event Grid metrische gegevens weer geven en waarschuwingen instellen
 description: In dit artikel wordt beschreven hoe u de Azure Portal gebruikt om metrische gegevens weer te geven voor Azure Event Grid onderwerpen en abonnementen, en hierop waarschuwingen te maken.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 8f8d7e15475ce74dc1af55dc7f6116d5d8b79cc8
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.date: 03/17/2021
+ms.openlocfilehash: 6f6c119c16452246ec6eeb57ab392b29608938a2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100577405"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598555"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Bezorging van Event Grid bericht bewaken 
 In dit artikel wordt beschreven hoe u de portal kunt gebruiken om de metrische gegevens voor Event Grid-onderwerpen en-abonnementen te bekijken en om waarschuwingen te maken. 
 
-## <a name="metrics"></a>Metrische gegevens
-
-In de portal worden metrische gegevens weer gegeven voor de status van het leveren van gebeurtenis berichten.
-
-Hier volgen enkele metrische gegevens voor onderwerpen:
-
-* **Publiceren is voltooid**: de gebeurtenis is verzonden naar het onderwerp en verwerkt met een 2xx-antwoord.
-* **Publiceren is mislukt**: de gebeurtenis is verzonden naar het onderwerp, maar er is een fout code afgewezen.
-* Niet- **overeenkomende**: de gebeurtenis is gepubliceerd naar het onderwerp, maar is niet gekoppeld aan een gebeurtenis abonnement. De gebeurtenis is verwijderd.
-
-Hier volgen enkele metrische gegevens voor abonnementen:
-
-* De **levering is voltooid**: de gebeurtenis is bezorgd bij het eind punt van het abonnement en er is een 2xx-antwoord ontvangen.
-* De **Bezorging is mislukt**: elke keer dat de service probeert te leveren en de gebeurtenis-handler retourneert geen succes 2xx-code, wordt het prestatie meter item dat **kan worden bezorgd** verhoogd. Als we proberen dezelfde gebeurtenis meerdere keren te leveren en mislukken, wordt het **prestatie meter** item voor elke fout verhoogd.
-* **Verlopen gebeurtenissen**: de gebeurtenis is niet bezorgd en alle nieuwe pogingen zijn verzonden. De gebeurtenis is verwijderd.
-* **Overeenkomende gebeurtenissen**: de gebeurtenis in het onderwerp is afgestemd op het gebeurtenis abonnement.
-
-    > [!NOTE]
-    > Zie [metrische gegevens die worden ondersteund door Azure Event grid](metrics.md)voor een volledige lijst met metrische gegevens.
+> [!IMPORTANT]
+> Zie [metrische gegevens](metrics.md)voor een lijst met ondersteunde metrische gegevens Azure Event grid.
 
 ## <a name="view-custom-topic-metrics"></a>Metrische gegevens over aangepaste onderwerpen weer geven
 
@@ -48,15 +31,13 @@ Als u een aangepast onderwerp hebt gepubliceerd, kunt u de metrische gegevens we
 
     :::image type="content" source="./media/monitor-event-delivery/custom-topic-metrics.png" alt-text="Metrische gebeurtenis gegevens weer geven":::
 
-U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het tabblad **metrische gegevens** van de pagina met het **Event grid onderwerp** .
+    U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het tabblad **metrische gegevens** van de pagina met het **Event grid onderwerp** .
 
-:::image type="content" source="./media/monitor-event-delivery/topics-metrics-page.png" alt-text="Pagina met metrische gegevens over het onderwerp":::
+    :::image type="content" source="./media/monitor-event-delivery/topics-metrics-page.png" alt-text="Pagina met metrische gegevens over het onderwerp":::
 
-Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md) voor meer informatie over metrische gegevens.
+    Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens van **gepubliceerde gebeurtenissen** .
 
-Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens van **gepubliceerde gebeurtenissen** .
-
-:::image type="content" source="./media/monitor-event-delivery/custom-topic-metrics-example.png" alt-text="Metrische gegevens van gepubliceerde gebeurtenissen":::
+    :::image type="content" source="./media/monitor-event-delivery/custom-topic-metrics-example.png" alt-text="Metrische gegevens van gepubliceerde gebeurtenissen":::
 
 
 ## <a name="view-subscription-metrics"></a>Metrische gegevens van abonnement weer geven
@@ -70,7 +51,7 @@ Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens v
     :::image type="content" source="./media/monitor-event-delivery/event-subscriptions-page.png" alt-text="Selecteer een gebeurtenis abonnement op de pagina Event Grid abonnementen":::        
 
     Voor aangepaste onderwerpen selecteert u **Event grid onderwerpen** als **onderwerps type**. Selecteer voor systeem onderwerpen het type van de Azure-resource, bijvoorbeeld **opslag accounts (BLOB, GPv2)**. 
-3. Bekijk de metrische gegevens voor het abonnement op de start pagina van het abonnement in een grafiek. U kunt **algemene**, **fout**-, **latentie**-en **onbestelbare** metrische gegevens weer geven voor afgelopen 1 uur, 6 uur, 12 uur, 1 dag, 7 dagen of 30 dagen. 
+3. Bekijk de metrische gegevens voor het abonnement op de start pagina van het abonnement in een grafiek. U kunt **algemene**, **fout**-en **latentie** gegevens weer geven voor afgelopen 1 uur, 6 uur, 12 uur, 1 dag, 7 dagen of 30 dagen. 
 
     :::image type="content" source="./media/monitor-event-delivery/subscription-home-page-metrics.png" alt-text="Metrische gegevens op de start pagina van het abonnement":::    
 
@@ -87,12 +68,12 @@ Zie bijvoorbeeld het grafiek met metrische gegevens voor de metrische gegevens v
 
     :::image type="content" source="./media/monitor-event-delivery/system-topic-overview-metrics.png" alt-text="Metrische gegevens over het systeem onderwerp weer geven op de pagina overzicht":::
 
-U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het tabblad **metrische gegevens** van de pagina met het **Event grid onderwerp** .
+    U kunt grafieken met ondersteunde metrische gegevens maken met behulp van het tabblad **metrische gegevens** van de pagina met het **Event grid onderwerp** .
 
-:::image type="content" source="./media/monitor-event-delivery/system-topic-metrics-page.png" alt-text="Systeem onderwerp-metrische gegevens pagina":::
+    :::image type="content" source="./media/monitor-event-delivery/system-topic-metrics-page.png" alt-text="Systeem onderwerp-metrische gegevens pagina":::
 
-Zie [metrische gegevens in azure monitor](../azure-monitor/essentials/data-platform-metrics.md) voor meer informatie over metrische gegevens.
-
+    > [!IMPORTANT]
+    > Zie [metrische gegevens](metrics.md)voor een lijst met ondersteunde metrische gegevens Azure Event grid.
 
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen:

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/03/2021
-ms.openlocfilehash: 97b0a4ca3e4fb94a21cbd30a27a3037f45fed782
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: c088625528190ad116676fbb51cec9f8de4b1578
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102487114"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600799"
 ---
 # <a name="querying-in-azure-cognitive-search"></a>Query's uitvoeren in azure Cognitive Search
 
@@ -71,7 +71,7 @@ In Cognitive Search is zoeken in volledige tekst gebaseerd op de Apache Lucene-q
 
 Wanneer overeenkomende voor waarden worden gevonden, wordt in de query-engine een zoek document met de overeenkomst met de document sleutel of ID voor het verzamelen van veld waarden weer gegeven, worden de documenten gerangschikt op basis van relevantie en wordt de bovenste 50 (standaard) geretourneerd in het antwoord of een ander nummer als u hebt opgegeven **`top`** .
 
-Als u Zoek opdrachten in volledige tekst implementeert, kunt u zien hoe u met de tokens van uw inhoud fouten oplost bij het opsporen van problemen met query's. Query's over teken reeksen met afbreek streepjes of speciale tekens kunnen nood zakelijk een andere analysator dan de standaard-lucene gebruiken om ervoor te zorgen dat de index de juiste tokens bevat. U kunt de standaard instelling vervangen door [taal analysen](index-add-language-analyzers.md#language-analyzer-list) of [gespecialiseerde](index-add-custom-analyzers.md#AnalyzerTable) analyse functies waarmee de lexicale analyse wordt gewijzigd. Een voor beeld is een [tref woord](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) dat de volledige inhoud van een veld als één token behandelt. Dit is handig voor gegevens zoals post codes, Id's en sommige product namen. Zie voor meer informatie zoeken op de [gedeeltelijke term en patronen met speciale tekens](search-query-partial-matching.md).
+Als u Zoek opdrachten in volledige tekst implementeert, kunt u zien hoe u met de tokens van uw inhoud fouten oplost bij het opsporen van problemen met query's. Query's over teken reeksen met afbreek streepjes of speciale tekens kunnen nood zakelijk een andere analysator dan de standaard-lucene gebruiken om ervoor te zorgen dat de index de juiste tokens bevat. U kunt de standaard instelling vervangen door [taal analysen](index-add-language-analyzers.md#language-analyzer-list) of [gespecialiseerde](index-add-custom-analyzers.md#built-in-analyzers) analyse functies waarmee de lexicale analyse wordt gewijzigd. Een voor beeld is een [tref woord](https://lucene.apache.org/core/6_6_1/analyzers-common/org/apache/lucene/analysis/core/KeywordAnalyzer.html) dat de volledige inhoud van een veld als één token behandelt. Dit is handig voor gegevens zoals post codes, Id's en sommige product namen. Zie voor meer informatie zoeken op de [gedeeltelijke term en patronen met speciale tekens](search-query-partial-matching.md).
 
 Als u een intensief gebruik van Booleaanse Opera tors verwacht, wat waarschijnlijker is in indexen met grote tekst blokken (een inhouds veld of lange beschrijving), test u de query's met de **`searchMode=Any|All`** para meter om de impact van deze instelling te evalueren op Booleaanse Zoek opdrachten.
 
@@ -85,7 +85,7 @@ Filters worden veel gebruikt in apps die Cognitive Search bevatten. Op toepassin
 
 U hebt mogelijk ook filters nodig om een speciaal query formulier aan te roepen, zoals wordt beschreven in de volgende tabel. U kunt een filter gebruiken met een niet-opgegeven zoek opdracht ( **`search=*`** ) of met een query reeks die termen, zinsdelen, Opera tors en patronen bevat.
 
-| Filter scenario | Beschrijving |
+| Filter scenario | Description |
 |-----------------|-------------|
 | Bereik filters | In azure Cognitive Search worden bereik query's gemaakt met behulp van de filter parameter. Zie voor meer informatie en voor beelden [Range filter voor beeld](search-query-simple-examples.md#example-5-range-filters). |
 | Geolocatie zoeken | Als een doorzoekbaar veld van het [type EDM. GeographyPoint](/rest/api/searchservice/supported-data-types)is, kunt u een filter expressie maken voor de besturings elementen "dichtbij zoeken" of op basis van een kaart. Velden die geografische zoek acties hebben, bevatten coördinaten. Zie voor meer informatie en een voor beeld een voor beeld van [geo-zoeken](search-query-simple-examples.md#example-6-geo-search). |

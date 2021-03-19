@@ -4,14 +4,14 @@ description: Meer informatie over het configureren van op rollen gebaseerd toega
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 03/03/2021
+ms.date: 03/17/2021
 ms.author: thweiss
-ms.openlocfilehash: 7c5497615ce71d0be713ef9ae28ab1e0f85b7ddb
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: efde86eac3e0830b36eabfc9e80df09daeed9f6f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102177229"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586043"
 ---
 # <a name="configure-role-based-access-control-with-azure-active-directory-for-your-azure-cosmos-db-account-preview"></a>Op rollen gebaseerd toegangs beheer configureren met Azure Active Directory voor uw Azure Cosmos DB-account (preview-versie)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -325,13 +325,13 @@ De manier waarop u een `TokenCredential` exemplaar maakt, valt buiten het bereik
 
 - [in .NET](https://docs.microsoft.com/dotnet/api/overview/azure/identity-readme#credential-classes)
 - [in Java](https://docs.microsoft.com/java/api/overview/azure/identity-readme#credential-classes)
+- [in Java script](https://docs.microsoft.com/javascript/api/overview/azure/identity-readme#credential-classes)
 
 In de onderstaande voor beelden wordt een service-principal met een `ClientSecretCredential` exemplaar gebruikt.
 
 ### <a name="in-net"></a>In .NET
 
-> [!NOTE]
-> U moet de `preview` versie van de Azure Cosmos db .NET SDK gebruiken om toegang te krijgen tot deze functie.
+De Azure Cosmos DB RBAC wordt momenteel ondersteund in de `preview` versie van de [.NET SDK v3](sql-api-sdk-dotnet-standard.md).
 
 ```csharp
 TokenCredential servicePrincipal = new ClientSecretCredential(
@@ -342,6 +342,8 @@ CosmosClient client = new CosmosClient("<account-endpoint>", servicePrincipal);
 ```
 
 ### <a name="in-java"></a>In Java
+
+De Azure Cosmos DB RBAC wordt momenteel ondersteund in de [Java SDK v4](sql-api-sdk-java-v4.md).
 
 ```java
 TokenCredential ServicePrincipal = new ClientSecretCredentialBuilder()
@@ -354,6 +356,21 @@ CosmosAsyncClient Client = new CosmosClientBuilder()
     .endpoint("<account-endpoint>")
     .credential(ServicePrincipal)
     .build();
+```
+
+### <a name="in-javascript"></a>In Java script
+
+De Azure Cosmos DB RBAC wordt momenteel ondersteund in de [Java script SDK v3](sql-api-sdk-node.md).
+
+```javascript
+const servicePrincipal = new ClientSecretCredential(
+    "<azure-ad-tenant-id>",
+    "<client-application-id>",
+    "<client-application-secret>");
+const client = new CosmosClient({
+    "<account-endpoint>",
+    aadCredentials: servicePrincipal
+});
 ```
 
 ## <a name="auditing-data-requests"></a>Controle van gegevens aanvragen
@@ -374,23 +391,23 @@ Deze extra informatie loopt over in de logboek categorie **DataPlaneRequests** e
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
-### <a name="which-azure-cosmos-db-apis-are-supported-by-rbac"></a>Welke Azure Cosmos DB Api's worden ondersteund door RBAC?
+### <a name="which-azure-cosmos-db-apis-are-supported-by-rbac"></a>Welke API's van Azure Cosmos DB worden ondersteund door RBAC?
 
 Alleen de SQL-API wordt momenteel ondersteund.
 
-### <a name="is-it-possible-to-manage-role-definitions-and-role-assignments-from-the-azure-portal"></a>Is het mogelijk om roldefinities en roltoewijzingen van de Azure Portal te beheren?
+### <a name="is-it-possible-to-manage-role-definitions-and-role-assignments-from-the-azure-portal"></a>Is het mogelijk om roldefinities en roltoewijzingen te beheren vanuit de Azure Portal?
 
-Azure Portal ondersteuning voor functie beheer is nog niet beschikbaar.
+Dat is op dit moment nog niet mogelijk.
 
 ### <a name="which-sdks-in-azure-cosmos-db-sql-api-support-rbac"></a>Welke Sdk's in Azure Cosmos DB SQL API ondersteunen RBAC?
 
 De sdk's voor [.net v3](sql-api-sdk-dotnet-standard.md) en [Java v4](sql-api-sdk-java-v4.md) worden momenteel ondersteund.
 
-### <a name="is-the-azure-ad-token-automatically-refreshed-by-the-azure-cosmos-db-sdks-when-it-expires"></a>Wordt het Azure AD-token automatisch vernieuwd door de Azure Cosmos DB Sdk's wanneer het verloopt?
+### <a name="is-the-azure-ad-token-automatically-refreshed-by-the-azure-cosmos-db-sdks-when-it-expires"></a>Wordt het Azure AD-token automatisch vernieuwd door de Azure Cosmos DB-SDK's wanneer het verloopt?
 
 Ja.
 
-### <a name="is-it-possible-to-disable-the-usage-of-the-account-primary-key-when-using-rbac"></a>Is het mogelijk om het gebruik van de primaire sleutel van het account uit te scha kelen wanneer u RBAC gebruikt?
+### <a name="is-it-possible-to-disable-the-usage-of-the-account-primary-key-when-using-rbac"></a>Is het mogelijk om het gebruik van de primaire sleutel van het account uit te schakelen bij gebruik van RBAC?
 
 Het uitschakelen van de primaire sleutel van het account is momenteel niet mogelijk.
 

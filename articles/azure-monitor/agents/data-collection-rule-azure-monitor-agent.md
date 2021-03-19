@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u een regel voor het verzamelen van geg
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/19/2020
-ms.openlocfilehash: 93e244706d6d478155ac001d20fa3ce74fa6a887
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.date: 03/16/2021
+ms.openlocfilehash: 73f7ab83ea15d223b76b9f71fde2f8a6a37bdacf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101723636"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586366"
 ---
 # <a name="configure-data-collection-for-the-azure-monitor-agent-preview"></a>Gegevens verzameling configureren voor de Azure Monitor-agent (preview)
 
@@ -68,6 +68,32 @@ Klik op **gegevens bron toevoegen** en vervolgens op **+ maken** om de details t
 > [!NOTE]
 > Nadat de regels voor gegevens verzameling en-koppelingen zijn gemaakt, kan het tot vijf minuten duren voordat gegevens naar de doelen worden verzonden.
 
+## <a name="limit-data-collection-with-custom-xpath-queries"></a>Gegevens verzameling beperken met aangepaste XPath-query's
+Omdat er in rekening worden gebracht voor gegevens die zijn verzameld in een Log Analytics-werk ruimte, moet u alleen de gegevens verzamelen die u nodig hebt. Met behulp van de basis configuratie in de Azure Portal hebt u slechts beperkte mogelijkheid om gebeurtenissen te filteren die moeten worden verzameld. Voor toepassings-en systeem logboeken zijn dit alle logboeken met een bepaalde ernst. Voor beveiligings Logboeken is dit alle geslaagde controle slagen of Logboeken voor het controleren van fouten.
+
+Als u aanvullende filters wilt opgeven, moet u aangepaste configuratie gebruiken en een XPath opgeven dat de gebeurtenissen die u niet wilt filteren. XPath-vermeldingen worden in het formulier geschreven `LogName!XPathQuery` . U kunt bijvoorbeeld alleen gebeurtenissen uit het toepassings gebeurtenis logboek retour neren met de gebeurtenis-ID 1035. De XPathQuery voor deze gebeurtenissen zouden zijn `*[System[EventID=1035]]` . Aangezien u de gebeurtenissen uit het toepassings gebeurtenis logboek wilt ophalen, zou het XPath worden `Application!*[System[EventID=1035]]`
+
+> [!TIP]
+> Gebruik de Power shell-cmdlet `Get-WinEvent` met de `FilterXPath` para meter om de geldigheid van een XPathQuery te testen. Het volgende script toont een voor beeld.
+> 
+> ```powershell
+> $XPath = '*[System[EventID=1035]]'
+> Get-WinEvent -LogName 'Application' -FilterXPath $XPath
+> ```
+>
+> - Als er gebeurtenissen worden geretourneerd, is de query geldig.
+> - Als u het bericht ontvangt *dat er geen gebeurtenissen zijn gevonden die overeenkomen met de opgegeven selectie criteria*, kan de query geldig zijn, maar er zijn geen overeenkomende gebeurtenissen op de lokale computer.
+> - Als u het bericht ontvangt *dat de opgegeven query ongeldig is* , is de query syntaxis ongeldig. 
+
+De volgende tabel bevat voor beelden voor het filteren van gebeurtenissen met een aangepast XPath.
+
+| Description |  XPath |
+|:---|:---|
+| Alleen systeem gebeurtenissen verzamelen met gebeurtenis-ID = 4648 |  `System!*[System[EventID=4648]]`
+| Verzamel alleen systeem gebeurtenissen met gebeurtenis-ID = 4648 en een proces naam van consent.exe |  `System!*[System[(EventID=4648) and (EventData[@Name='ProcessName']='C:\Windows\System32\consent.exe')]]`
+| Alle gebeurtenissen met betrekking tot kritiek, fout, waarschuwing en informatie verzamelen in het gebeurtenis logboek van het systeem, met uitzonde ring van gebeurtenis-ID = 6 (stuur programma geladen) |  `System!*[System[(Level=1 or Level=2 or Level=3) and (EventID != 6)]]` |
+| Alle geslaagde en mislukte beveiligings gebeurtenissen verzamelen, behalve gebeurtenis-ID 4624 (geslaagde aanmelding) |  `Security!*[System[(band(Keywords,13510798882111488)) and (EventID != 4624)]]` |
+
 
 ## <a name="create-rule-and-association-using-rest-api"></a>Regel en koppeling maken met behulp van REST API
 
@@ -83,6 +109,8 @@ Volg de onderstaande stappen om een regel en koppelingen voor het verzamelen van
 ## <a name="create-association-using-resource-manager-template"></a>Koppeling maken met Resource Manager-sjabloon
 
 U kunt geen regel voor het verzamelen van gegevens maken met een resource manager-sjabloon, maar een koppeling tussen een Azure virtual machine of een Azure Arc-server maken met behulp van een resource manager-sjabloon. Zie voor [beelden van Resource Manager-sjablonen voor regels voor gegevens verzameling in azure monitor](./resource-manager-data-collection-rules.md) voor voorbeeld sjablonen.
+
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

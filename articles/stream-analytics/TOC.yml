@@ -44,7 +44,7 @@
 - name: Voorbeelden
   items:
     - name: Codevoorbeelden
-      href: 'https://docs.microsoft.com/en-us/samples/browse/?products=azure-stream-analytics'
+      href: /samples/browse/?products=azure-stream-analytics
 - name: Concepten
   items:
     - name: End-to-end-oplossingspatronen
@@ -316,13 +316,13 @@
               href: external-error-codes.md
             - name: Interne fouten
               href: internal-error-codes.md
-    - name: Integreren met machine learning
+    - name: Integreren met Machine Learning
       items:
         - name: Sentimentanalyse met ML-modellen
           href: stream-analytics-machine-learning-integration-tutorial.md
         - name: Afwijkingsdetectie
           href: stream-analytics-machine-learning-anomaly-detection.md
-        - name: REST-API's gebruiken
+        - name: ML REST-Api's gebruiken
           href: stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md
     - name: Fouten opsporen met behulp van een taakdiagram
       href: stream-analytics-job-diagram-with-metrics.md

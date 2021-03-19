@@ -4,12 +4,12 @@ ms.author: dobett
 ms.service: iot-pnp
 ms.topic: include
 ms.date: 11/19/2020
-ms.openlocfilehash: ea136069da73d88174d9d40fe9c60e84982909df
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 51f66a674f9e730670084a43bd7bf059a0742cc3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99616552"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582787"
 ---
 ## <a name="model-id-announcement"></a>Aankondiging van model-ID
 
@@ -41,7 +41,7 @@ Apparaten met behulp van de [Device Provisioning Service (DPS)](../articles/iot-
 
 ## <a name="implement-telemetry-properties-and-commands"></a>Telemetrie, eigenschappen en opdrachten implementeren
 
-Zoals beschreven in [inzicht in onderdelen in IoT Plug en Play-modellen](../articles/iot-pnp/concepts-components.md), moeten apparaten kunnen bepalen of ze onderdelen willen gebruiken om hun apparaten te beschrijven. Bij het gebruik van onderdelen moeten apparaten voldoen aan de regels die in deze sectie worden beschreven.
+Zoals beschreven in [inzicht in onderdelen in IoT Plug en Play-modellen](../articles/iot-pnp/concepts-modeling-guide.md), moeten apparaten kunnen bepalen of ze onderdelen willen gebruiken om hun apparaten te beschrijven. Bij het gebruik van onderdelen moeten apparaten voldoen aan de regels die in deze sectie worden beschreven.
 
 ### <a name="telemetry"></a>Telemetrie
 

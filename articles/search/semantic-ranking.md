@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: e3078c8f71f8862cacad552bb3176c08530e79bb
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 01c4d6475ec23b8a55d91e18f49cab27760aa907
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103418841"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604284"
 ---
 # <a name="semantic-ranking-in-azure-cognitive-search"></a>Semantische classificatie in azure Cognitive Search
 
@@ -28,25 +28,35 @@ De semantische classificatie is zowel resource als tijd intensief. Voor het volt
 
 Voor een semantische classificatie gebruikt het model zowel de Lees vaardigheid van de computer als het leren van de overdracht om de documenten opnieuw te scoren op basis van de bedoeling van de query.
 
-1. Voor elk document evalueert de semantische rangorde de velden in de para meter searchFields om de inhoud te consolideren in één grote teken reeks.
+### <a name="preparation-passage-extraction-phase"></a>Fase voor bereiding (door gang extractie)
 
-1. De teken reeks wordt vervolgens bijgesneden om ervoor te zorgen dat de totale lengte niet meer is dan 8.000 tokens. Als u zeer grote documenten hebt, met een inhouds veld of merged_content veld dat veel pagina's met inhoud bevat, wordt iets na de token limiet genegeerd.
+Voor elk document in de eerste resultaten is er sprake van een uitpakkende oefening die de sleutel door gang identificeert. Dit is een Overweeg-oefening die inhoud reduceert naar een hoeveelheid die snel kan worden verwerkt.
 
-1. Elk van de 50-documenten wordt nu vertegenwoordigd door één lange teken reeks. Deze teken reeks wordt naar het samenvattings model verzonden. Het samenvattings model produceert bijschriften (en antwoorden) met behulp van de Lees vaardigheid van de machine om gangen te identificeren die worden weer gegeven om de inhoud te samenvatten of de vraag te beantwoorden. De uitvoer van het samenvattings model is een verder verlaagde teken reeks met Maxi maal 128 tokens.
+1. Voor elk van de 50-documenten wordt elk veld in de para meter searchFields in opeenvolgende volg orde geëvalueerd. De inhoud van elk veld wordt samengevoegd tot één lange teken reeks. 
 
-1. De kleinere teken reeks wordt het bijschrift van het document. het vertegenwoordigt de meest relevante gangen die worden gevonden in de grotere teken reeks. De set met ondertiteling van 50 (of minder) wordt vervolgens gerangschikt op volg orde van relevantie. 
+1. De lange teken reeks wordt vervolgens bijgesneden om ervoor te zorgen dat de totale lengte niet meer is dan 8.000 tokens. Daarom is het raadzaam om beknopte velden eerst te positioneren zodat ze in de teken reeks zijn opgenomen. Als u zeer grote documenten met tekst-zware velden hebt, worden alle items na de token limiet genegeerd.
 
-De conceptuele en semantische relevantie wordt vastgesteld door middel van Vector weergave en term clusters. Terwijl een algoritme voor het vergelijken van tref woorden een gelijk gewicht van een wille keurige term in de query kan geven, is het semantische model getraind om de onderlinge afhankelijkheid en relaties tussen woorden te herkennen die anderszins niet gerelateerd zijn aan het Opper vlak. Als een query reeks termen uit hetzelfde cluster bevat, wordt er als gevolg hiervan een document met beide een hogere rang orde dan een.
+1. Elk document wordt nu vertegenwoordigd door één lange teken reeks die Maxi maal 8.000 tokens bevat. Deze teken reeksen worden naar het samenvattings model verzonden, waardoor de teken reeks verder wordt beperkt. Het samenvattings model evalueert de lange teken reeks op basis van belang rijke zinnen of geeft aan dat het document het beste samenvatten of de vraag beantwoordt.
 
-:::image type="content" source="media/semantic-search-overview/semantic-vector-representation.png" alt-text="Vector weergave voor context" border="true":::
+1. De uitvoer van deze fase is een bijschrift (en optioneel een antwoord). Het bijschrift heeft Maxi maal 128 tokens per document en wordt beschouwd als de meeste vertegenwoordiger van het document.
+
+### <a name="scoring-and-ranking-phases"></a>Fasen van scores en rang schikkingen
+
+In deze fase worden alle 50 bijschriften geëvalueerd om de relevantie te beoordelen.
+
+1. Scores worden bepaald door elk bijschrift te evalueren voor conceptuele en semantische relevantie, ten opzichte van de opgegeven query.
+
+   Het volgende diagram geeft een illustratie van wat ' semantische relevantie ' betekent. Houd rekening met het begrip "kapitaal", dat kan worden gebruikt in de context van Finance, Law, geografie of grammatica. Als een query termen uit dezelfde vector ruimte bevat (bijvoorbeeld ' kapitaal ' en ' investering '), krijgt een document dat ook tokens in hetzelfde cluster bevat, een Score van meer dan een die niet.
+
+   :::image type="content" source="media/semantic-search-overview/semantic-vector-representation.png" alt-text="Vector weergave voor context" border="true":::
+
+1. De uitvoer van deze fase is een @search.rerankerScore toegewezen aan elk document. Zodra alle documenten zijn gescoord, worden ze weer gegeven in aflopende volg orde en opgenomen in de query reactie payload.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Semantische classificatie wordt aangeboden voor de standaard lagen in bepaalde regio's. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie en om u aan te melden.
-
-Met een nieuw query type worden de rang schikking van de relevantie en de reactie structuren van semantisch zoeken ingeschakeld. [Maak een semantische query](semantic-how-to-query-request.md) om aan de slag te gaan.
+Semantische classificatie wordt aangeboden voor de standaard lagen in bepaalde regio's. Zie [Beschik baarheid en prijzen](semantic-search-overview.md#availability-and-pricing)voor meer informatie en om u aan te melden. Met een nieuw query type worden de rang schikking van de relevantie en de reactie structuren van semantisch zoeken ingeschakeld. [Maak een semantische query](semantic-how-to-query-request.md)om aan de slag te gaan.
 
 U kunt ook een van de volgende artikelen door nemen voor gerelateerde informatie.
 
-+ [Spelling controle toevoegen aan query termen](speller-how-to-add.md)
++ [Overzicht van semantisch zoeken](semantic-search-overview.md)
 + [Een semantisch antwoord retour neren](semantic-answers.md)

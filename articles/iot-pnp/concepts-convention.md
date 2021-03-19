@@ -7,12 +7,12 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 86c6ea9dded423e7bd513faf73adfd293f2bd38f
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: a8dfb3cacf798559273361ec75cab4570a8a5228
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302599"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582677"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Conventies voor IoT Plug en Play
 
@@ -20,12 +20,12 @@ IoT Plug en Play-apparaten moeten een aantal conventies volgen wanneer ze berich
 
 Apparaten kunnen [modules](../iot-hub/iot-hub-devguide-module-twins.md)bevatten of worden geïmplementeerd in een [IOT Edge module](../iot-edge/about-iot-edge.md) die wordt gehost door de IOT Edge-runtime.
 
-U beschrijft de telemetrie, eigenschappen en opdrachten die een IoT Plug en Play-apparaat implementeert met een [DTDL-model (Digital Apparaatdubbels Definition Language v2)](https://github.com/Azure/opendigitaltwins-dtdl) _model_. Er zijn twee typen model waarnaar wordt verwezen in dit artikel:
+U beschrijft de telemetrie, eigenschappen en opdrachten die een IoT Plug en Play-apparaat implementeert met een [DTDL-model (Digital Apparaatdubbels Definition Language v2)](https://github.com/Azure/opendigitaltwins-dtdl) . Er zijn twee typen model waarnaar wordt verwezen in dit artikel:
 
 - **Geen onderdeel** : een model zonder onderdelen. Het model declareert telemetrie, eigenschappen en opdrachten als eigenschappen op het hoogste niveau in de sectie inhoud van de hoofd interface. In het hulp programma Azure IoT Explorer wordt dit model weer gegeven als één _standaard onderdeel_.
 - **Meerdere onderdelen** : een model dat uit twee of meer interfaces bestaat. Een hoofd interface, die wordt weer gegeven als het _standaard onderdeel_, met telemetrie, eigenschappen en opdrachten. Een of meer interfaces die zijn gedeclareerd als onderdelen met aanvullende telemetrie, eigenschappen en opdrachten.
 
-Zie [IoT Plug en Play-onderdelen in modellen](concepts-components.md)voor meer informatie.
+Zie voor meer informatie [IoT Plug en Play Modeling Guide (Engelstalig](concepts-modeling-guide.md)).
 
 ## <a name="identify-the-model"></a>Het model identificeren
 
@@ -353,4 +353,4 @@ Nu u over Plug en Play conventies van IoT hebt geleerd, zijn hier enkele aanvull
 - [DTDL (Digital Twins Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl)
 - [Apparaat-SDK voor C](/azure/iot-hub/iot-c-sdk-ref/)
 - [IoT-REST API](/rest/api/iothub/device)
-- [Model onderdelen](./concepts-components.md)
+- [Model gids voor IoT Plug en Play](concepts-modeling-guide.md)

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: b99cbf91d7fc1c5d90753dfa1461a58eda055180
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: e467affd3ba1b839ce3323e3689d7f5134a0686f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103418892"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604301"
 ---
 # <a name="return-a-semantic-answer-in-azure-cognitive-search"></a>Een semantisch antwoord op Azure Cognitive Search retour neren
 
@@ -63,7 +63,7 @@ De para meter ' searchFields ' is essentieel voor het retour neren van een antwo
 
 + Een query reeks mag niet null zijn en moet worden geformuleerd als vraag. In deze preview-versie moet het ' query type ' en ' queryLanguage ' precies worden ingesteld zoals in het voor beeld wordt weer gegeven.
 
-+ De para meter ' searchFields ' bepaalt welke velden tokens aan het extractie model bieden. Zorg ervoor dat u deze para meter instelt. U moet ten minste één teken reeks veld hebben, maar een wille keurig teken reeks veld opnemen dat nuttig is voor het bieden van een antwoord. Er worden slechts 8.000-tokens per document door gegeven aan het model. De lijst met velden starten met beknopte velden en vervolgens voortgang naar velden met tekst opmaak. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld.
++ De para meter ' searchFields ' bepaalt welke velden tokens aan het extractie model bieden. Zorg ervoor dat u deze para meter instelt. U moet ten minste één teken reeks veld hebben, maar een wille keurig teken reeks veld opnemen dat nuttig is voor het bieden van een antwoord. Voor alle velden in searchFields worden alleen over 8.000-tokens per document door gegeven aan het model. De lijst met velden starten met beknopte velden en vervolgens voortgang naar velden met tekst opmaak. Zie [set searchFields](semantic-how-to-query-request.md#searchfields)voor nauw keurige richt lijnen voor het instellen van dit veld.
 
 + Voor "antwoorden" is de basis parameter constructie `"answers": "extractive"` , waarbij het standaard aantal geretourneerde antwoorden één is. U kunt het aantal antwoorden verhogen door een aantal toe te voegen tot een maximum van vijf.  Of u meer dan één antwoord nodig hebt, is afhankelijk van de gebruikers ervaring van uw app en hoe u de resultaten wilt weer geven.
 
@@ -115,15 +115,15 @@ Op basis van de query ' How do Clouds Form ', wordt het volgende antwoord gereto
 
 Voor de beste resultaten geeft u semantische antwoorden op een document verzameling met de volgende kenmerken:
 
-+ ' searchFields ' moet een of meer velden bevatten met voldoende tekst waarin een antwoord waarschijnlijk wordt gevonden.
-
-+ Semantische extractie en samen vatting hebben beperkingen ten aanzien van de hoeveelheid inhoud die tijdig kan worden geanalyseerd. Gezamenlijk worden alleen de eerste 20.000-tokens geanalyseerd. Iets anders dan wordt genegeerd. Als u grote documenten hebt die op honderden pagina's worden uitgevoerd, moet u in de praktijk eerst proberen om de inhoud te splitsen in beheer bare delen.
++ "searchFields" moet velden bevatten die voldoende tekst bieden waarin een antwoord waarschijnlijk wordt gevonden. Alleen Verbatim-tekst uit een document kan als antwoord worden weer gegeven.
 
 + query teken reeksen mogen niet Null (Search = `*` ) zijn en de teken reeks moet de kenmerken van een vraag hebben, in plaats van een zoek opdracht op tref woorden (een opeenvolgende lijst met wille keurige termen of woord groepen). Als de query reeks niet het antwoord lijkt, wordt de antwoord verwerking overgeslagen, zelfs als de aanvraag "antwoorden" als query parameter specificeert.
+
++ Semantische extractie en samen vatting hebben beperkingen ten opzichte van het aantal tokens per document dat tijdig kan worden geanalyseerd. Als u grote documenten hebt die op honderden pagina's worden uitgevoerd, moet u de inhoud eerst in kleinere documenten opdelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 + [Overzicht van semantisch zoeken](semantic-search-overview.md)
 + [Algoritme voor semantische classificatie](semantic-ranking.md)
-+ [Vergelijkbaarheidsalgoritme](index-ranking-similarity.md)
++ [Classificatie algoritme voor gelijkenis](index-ranking-similarity.md)
 + [Een semantische query maken](semantic-how-to-query-request.md)

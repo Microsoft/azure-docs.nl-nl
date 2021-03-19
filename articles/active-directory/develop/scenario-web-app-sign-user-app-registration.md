@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 96fbe676d4b929d2c1ee2efce0d10f3b5dc7c6ab
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: 920249aa252469c3db2be284fc010d775d04c921
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100103189"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578274"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Web-app die zich aanmeldt bij gebruikers: app-registratie
 
@@ -94,6 +94,21 @@ Het voor beeld maakt standaard gebruik van:
    1. Selecteer de sleutel duur **in 1 jaar**.
    1. Selecteer **Toevoegen**.
    1. Wanneer de sleutel waarde wordt weer gegeven, kopieert u deze voor later. Deze waarde wordt niet opnieuw weer gegeven of kan op een andere manier worden opgehaald.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
+   1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+   1. Wijzig **ondersteunde account typen** **in accounts in een organisatorische map en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)**.
+   1. Selecteer in de sectie de **omleidings-URI (optioneel)** **Web** in de keuze lijst met invoervak en voer de volgende omleidings-URI in: `http://localhost:3000/redirect` .
+   1. Selecteer **Registreren** om de toepassing te maken.
+1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze nodig voor het configureren van het configuratie bestand voor dit project.
+1. Selecteer onder **Beheren** de optie **Certificaten en geheimen**.
+1. Selecteer in de sectie **client geheimen** de optie **Nieuw client geheim** en voer vervolgens de volgende handelingen uit:
+   1. Voer een beschrijving van de sleutel in.
+   1. Selecteer een sleutelduur van **Over 1 jaar**.
+   1. Selecteer **Toevoegen**.
+   1. Wanneer de sleutel waarde wordt weer gegeven, kopieert u deze. U hebt deze later nodig.
 
 # <a name="python"></a>[Python](#tab/python)
 

@@ -2,21 +2,21 @@
 title: Retail-gegevens van Contoso laden in toegewezen SQL-groepen
 description: Gebruik poly base-en T-SQL-opdrachten om twee tabellen uit de Retail gegevens van Contoso te laden in toegewezen SQL-groepen.
 services: synapse-analytics
-author: kevinvngo
+author: gaursa
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 11/20/2020
-ms.author: kevin
+ms.author: gaursa
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: aac0d8b923dc87f8be59cb594b155aafcf25fd0e
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 13e78c707ca3bda338f9255c015c0e926fca90d8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677151"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104606137"
 ---
 # <a name="load-contoso-retail-data-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Retail-gegevens van Contoso in speciale SQL-groepen in azure Synapse Analytics laden
 

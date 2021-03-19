@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/22/2019
+ms.date: 3/16/2021
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d9fdc44681c8773d7b6f724174a74e76e57939e
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 310122177d4bd1603f5f498aa2a51620eeda4a20
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369757"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592741"
 ---
 # <a name="create-an-access-review-of-azure-ad-roles-in-privileged-identity-management"></a>Een toegangs beoordeling maken van Azure AD-rollen in Privileged Identity Management
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een of meer toegangs beoordelingen maakt v
 
 ## <a name="prerequisites"></a>Vereisten
 
-[Beheerder van geprivilegieerde rol](../roles/permissions-reference.md#privileged-role-administrator)
+[Beheerder voor bevoorrechte rollen](../roles/permissions-reference.md#privileged-role-administrator)
 
 ## <a name="open-access-reviews"></a>Toegangs beoordelingen openen
 
@@ -39,11 +39,79 @@ In dit artikel wordt beschreven hoe u een of meer toegangs beoordelingen maakt v
 
 1. Selecteer **Azure AD-rollen**.
 
-1. Selecteer onder beheren de optie **toegangs beoordelingen**en selecteer vervolgens **Nieuw**.
+1. Selecteer onder beheren de optie **toegangs beoordelingen** en selecteer vervolgens **Nieuw**.
 
     ![Azure AD-rollen: lijst met toegangs beoordelingen waarin de status van alle beoordelingen wordt weer gegeven](./media/pim-how-to-start-security-review/access-reviews.png)
 
-[!INCLUDE [Privileged Identity Management access reviews](../../../includes/active-directory-privileged-identity-management-access-reviews.md)]
+Klik op **Nieuw** om een nieuwe toegangs beoordeling te maken.
+
+1. Geef de toegangs beoordeling een naam. U kunt eventueel een beschrijving van de beoordeling opgeven. De naam en beschrijving worden weer gegeven aan de controleurs.
+
+    ![Een toegangs beoordeling maken-naam en beschrijving van de beoordeling](./media/pim-how-to-start-security-review/name-description.png)
+
+1. Stel de **begin datum** in. Een toegangs beoordeling vindt standaard plaats, start de tijd die wordt gemaakt en eindigt in één maand. U kunt de begin-en eind datum wijzigen zodat een toegangs beoordeling in de toekomst wordt gestart en het laatste aantal dagen dat u wilt.
+
+    ![Begin datum, frequentie, duur, einde, aantal keren en eind datum](./media/pim-how-to-start-security-review/start-end-dates.png)
+
+1. Als u de toegangs beoordeling wilt herhalen, wijzigt u de **frequentie** -instelling van **één keer** in **wekelijks**, **maandelijks**, **per kwar taal**, **jaarlijks** of per **jaar**. Gebruik de schuif regelaar **duur** of het tekstvak om te bepalen hoeveel dagen elke beoordeling van de terugkerende serie wordt geopend voor de invoer van revisors. De maximale duur die u voor een maandelijkse beoordeling kunt instellen is bijvoorbeeld 27 dagen, om overlappende beoordelingen te voor komen.
+
+1. Gebruik de **eind** instelling om op te geven hoe de terugkerende toegangs beoordelings reeks moet worden beëindigd. De reeks kan op drie manieren eindigen: de serie wordt continu uitgevoerd om te beginnen met beoordelingen, tot een bepaalde datum, of nadat een gedefinieerd aantal exemplaren is voltooid. U, een andere gebruikers beheerder of een andere globale beheerder kunnen de serie na het maken stoppen door de datum in de **instellingen** te wijzigen, zodat deze op die datum eindigt.
+
+1. Selecteer in de sectie **gebruikers** een of meer rollen waarvan u het lidmaatschap wilt controleren.
+
+    ![Gebruikers bereik voor revisie van rollidmaatschap van](./media/pim-how-to-start-security-review/users.png)
+
+    > [!NOTE]
+    > - Rollen die hier zijn geselecteerd [, zijn zowel permanente als in aanmerking komende rollen](../privileged-identity-management/pim-how-to-add-role-to-user.md).
+    > - Als u meerdere rollen selecteert, worden er meerdere toegangs beoordelingen gemaakt. Als u bijvoorbeeld vijf rollen selecteert, worden er vijf afzonderlijke toegangs beoordelingen gemaakt.
+    > - Voor rollen met groepen die aan hen zijn toegewezen, wordt de toegang van elke groep die is gekoppeld aan de rol onder controle beoordeeld als onderdeel van de toegangs beoordeling.
+    Als u een toegangs beoordeling van **Azure AD-rollen** maakt, ziet u een voor beeld van de lijst lidmaatschap controleren.
+
+    ![Bekijk het deel venster lidmaatschap van de Azure AD-rollen die u kunt selecteren](./media/pim-how-to-start-security-review/review-membership.png)
+
+    Als u een toegangs beoordeling van Azure- **resource rollen** maakt, ziet u in de volgende afbeelding een voor beeld van de lijst lidmaatschap controleren.
+
+    ![Deel venster lidmaatschap weer geven Azure-resource rollen bekijken die u kunt selecteren](./media/pim-how-to-start-security-review/review-membership-azure-resource-roles.png)
+
+1. Selecteer in de sectie **controleurs** een of meer personen om alle gebruikers te bekijken. Of u kunt ervoor kiezen om de leden hun eigen toegang te laten beoordelen.
+
+    ![Lijst met revisoren van geselecteerde gebruikers of leden (zelf)](./media/pim-how-to-start-security-review/reviewers.png)
+
+    - **Geselecteerde gebruikers** : gebruik deze optie als u niet weet wie er toegang moet hebben. Met deze optie kunt u de beoordeling toewijzen aan een resource-eigenaar of groeps Manager om te volt ooien.
+    - **Leden (zelf)** : gebruik deze optie om de gebruikers hun eigen roltoewijzingen te laten beoordelen. Groepen die zijn toegewezen aan de rol, maken geen deel uit van de beoordeling wanneer deze optie is geselecteerd.
+    - **Beheerder** : gebruik deze optie om ervoor te hebben dat de Manager van de gebruiker de roltoewijzing controleert. Wanneer u Manager selecteert, hebt u ook de optie om een terugval revisor op te geven. Terugval controleurs wordt gevraagd een gebruiker te controleren wanneer de gebruiker geen beheerder heeft opgegeven in de map. Groepen die aan de rol zijn toegewezen, worden door de terugval-revisor gecontroleerd als er een is geselecteerd. 
+
+### <a name="upon-completion-settings"></a>Bij voltooiings instellingen
+
+1. Als u wilt opgeven wat er gebeurt nadat een controle is voltooid, vouwt u de sectie **bij voltooiings instellingen** uit.
+
+    ![Bij voltooiing van instellingen voor automatisch Toep assen en niet reageren](./media/pim-how-to-start-security-review/upon-completion-settings.png)
+
+1. Als u automatisch de toegang wilt verwijderen voor gebruikers die zijn geweigerd, stelt u **automatisch Toep assen resultaten in op resource** om in te **scha kelen**. Als u de resultaten hand matig wilt Toep assen wanneer de controle is voltooid, stelt u de switch in op **uitschakelen**.
+
+1. Gebruik de lijst als **revisor niet reageert** om op te geven wat er gebeurt voor gebruikers die niet worden gecontroleerd door de revisor binnen de beoordelings periode. Deze instelling heeft geen invloed op gebruikers die hand matig door de controleurs zijn gecontroleerd. Als de laatste beslissing van de revisor weigert, wordt de toegang van de gebruiker verwijderd.
+
+    - **Geen wijziging** -gebruikers toegang ongewijzigd laten
+    - **Toegang verwijderen** -de toegang van de gebruiker verwijderen
+    - **Toegang goed keuren** : de toegang van de gebruiker goed keuren
+    - **Aanbevelingen doen** : de aanbeveling van het systeem voor het weigeren of goed keuren van de permanente toegang van de gebruiker
+
+### <a name="advanced-settings"></a>Geavanceerde instellingen
+
+1. Als u aanvullende instellingen wilt opgeven, vouwt u de sectie **Geavanceerde instellingen** uit.
+
+    ![Geavanceerde instellingen voor weer geven aanbevelingen, reden voor goed keuring, e-mail meldingen en herinneringen vereisen](./media/pim-how-to-start-security-review/advanced-settings.png)
+
+1. Stel **aanbevelingen weer geven** in om de controleurs **weer te geven** op basis van de toegangs gegevens van de gebruiker.
+
+1. Stel een **reden in voor de goed keuring vereisen** om te **zorgen** dat de revisor een reden voor goed keuring moet opgeven.
+
+1. Stel **e-mail meldingen** in om ervoor te **zorgen** dat Azure AD e-mail meldingen naar revisoren verzendt wanneer een toegangs beoordeling wordt gestart en aan beheerders wanneer een controle is voltooid.
+
+1. Stel **herinneringen** in om ervoor te **zorgen** dat Azure AD herinneringen voor toegangs beoordelingen verzendt naar revisoren die hun beoordeling nog niet hebben voltooid.
+1. De inhoud van het e-mail bericht dat naar revisoren wordt verzonden, wordt automatisch gegenereerd op basis van de details van de beoordeling, zoals de naam van de beoordeling, de resource naam, de verval datum, enzovoort. Als u aanvullende informatie wilt communiceren, zoals aanvullende instructies of contact gegevens, kunt u deze gegevens opgeven in de **aanvullende inhoud voor de e-mail van de revisor** , die wordt opgenomen in de uitnodiging en herinneringen die zijn verzonden aan toegewezen revisoren. Deze informatie wordt weer gegeven in de gemarkeerde sectie hieronder.
+
+    ![Inhoud van het e-mail bericht dat wordt verzonden naar revisoren met accenten](./media/pim-how-to-start-security-review/email-info.png)
 
 ## <a name="start-the-access-review"></a>De toegangs beoordeling starten
 
@@ -63,7 +131,7 @@ Als dit een eenmalige controle is, volgt u de stappen in een [toegangs beoordeli
 
 Als u een reeks toegangs beoordelingen wilt beheren, gaat u naar de toegangs beoordeling en gaat u naar de geplande Beoordelingen. vervolgens kunt u de eind datum bewerken of revisoren toevoegen/verwijderen dienovereenkomstig.
 
-Op basis van uw selecties tijdens de **voltooiings instellingen**wordt automatisch Toep assen na de eind datum van de beoordeling of wanneer u de controle hand matig stopt. De status van de beoordeling wordt gewijzigd van **voltooid** met behulp van tussenliggende statussen, zoals **Toep assen** en tot slot op de status **toegepast**. U wordt gewend om geweigerde gebruikers, indien van toepassing, te zien, indien aanwezig, die in een paar minuten worden verwijderd uit rollen.
+Op basis van uw selecties tijdens de **voltooiings instellingen** wordt automatisch Toep assen na de eind datum van de beoordeling of wanneer u de controle hand matig stopt. De status van de beoordeling wordt gewijzigd van **voltooid** met behulp van tussenliggende statussen, zoals **Toep assen** en tot slot op de status **toegepast**. U wordt gewend om geweigerde gebruikers, indien van toepassing, te zien, indien aanwezig, die in een paar minuten worden verwijderd uit rollen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

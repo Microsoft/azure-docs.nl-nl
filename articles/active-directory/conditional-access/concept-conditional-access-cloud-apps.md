@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2895588a5a82ec2b6c69d33ff6cea39bbe3a0372
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 8ff9fe969c90a2bb4aa9f954b984f511fb490ba3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103491993"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579141"
 ---
 # <a name="conditional-access-cloud-apps-or-actions"></a>Voorwaardelijke toegang: Cloud-apps of-acties
 
@@ -131,7 +131,7 @@ Gebruikers acties zijn taken die door een gebruiker kunnen worden uitgevoerd. Vo
 
 - **Apparaten registreren of toevoegen (preview)**: met deze gebruikers actie kunnen beheerders beleid voor voorwaardelijke toegang afdwingen wanneer gebruikers apparaten bij Azure AD [registreren](../devices/concept-azure-ad-register.md) of eraan [toevoegen](../devices/concept-azure-ad-join.md) . Er zijn twee belang rijke aandachtspunten met deze gebruikers actie: 
    - `Require multi-factor authentication` is het enige toegangs beheer dat beschikbaar is voor deze gebruikers actie en alle andere zijn uitgeschakeld. Deze beperking voor komt conflicten met toegangs controles die afhankelijk zijn van de registratie van Azure AD-apparaten of niet van toepassing zijn op Azure AD-apparaatregistratie. 
-   - Wanneer een beleid voor voorwaardelijke toegang is ingeschakeld met deze gebruikers actie, moet u de apparaatinstellingen van **Azure Active Directory**  >  **apparaten** instellen  >    -  `Devices to be Azure AD joined or Azure AD registered require Multi-Factor Authentication` op **Nee**. Anders wordt het beleid voor voorwaardelijke toegang met deze gebruikers actie niet op de juiste wijze afgedwongen. Meer informatie over deze Apparaatinstellingen vindt [u in Apparaatinstellingen configureren](../device-management-azure-portal.md##configure-device-settings). Deze gebruikers actie biedt flexibiliteit om multi-factor Authentication te vereisen voor het registreren of samen voegen van apparaten voor specifieke gebruikers en groepen of voor waarden in plaats van een beleid op Tenant niveau te hebben in Apparaatinstellingen. 
+   - Wanneer een beleid voor voorwaardelijke toegang is ingeschakeld met deze gebruikers actie, moet u de apparaatinstellingen van **Azure Active Directory**  >  **apparaten** instellen  >    -  `Devices to be Azure AD joined or Azure AD registered require Multi-Factor Authentication` op **Nee**. Anders wordt het beleid voor voorwaardelijke toegang met deze gebruikers actie niet op de juiste wijze afgedwongen. Meer informatie over deze Apparaatinstellingen vindt [u in Apparaatinstellingen configureren](../devices/device-management-azure-portal.md#configure-device-settings). Deze gebruikers actie biedt flexibiliteit om multi-factor Authentication te vereisen voor het registreren of samen voegen van apparaten voor specifieke gebruikers en groepen of voor waarden in plaats van een beleid op Tenant niveau te hebben in Apparaatinstellingen. 
    
 ## <a name="next-steps"></a>Volgende stappen
 

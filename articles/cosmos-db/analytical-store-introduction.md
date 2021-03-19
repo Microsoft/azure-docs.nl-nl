@@ -4,15 +4,15 @@ description: Meer informatie over Azure Cosmos DB transactionele (op rijen gebas
 author: Rodrigossz
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 03/16/2021
 ms.author: rosouz
 ms.custom: seo-nov-2020
-ms.openlocfilehash: 5dc233348188791404f826870b235d2bdfa4c202
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bca4eb7f5f266a639916c0f8e520f025d259c39b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452855"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577356"
 ---
 # <a name="what-is-azure-cosmos-db-analytical-store"></a>Wat is Azure Cosmos DB Analytical Store?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -65,32 +65,60 @@ Automatische synchronisatie verwijst naar de volledig beheerde mogelijkheid van 
 
 De functie voor automatische synchronisatie in combi natie met analytische opslag biedt de volgende belang rijke voor delen:
 
-#### <a name="scalability--elasticity"></a>Schaal baarheid & elasticiteit
+### <a name="scalability--elasticity"></a>Schaal baarheid & elasticiteit
 
 Door gebruik te maken van horizontale partitionering kan Azure Cosmos DB transactionele Store de opslag en door Voer op elastische wijze schalen zonder uitval tijd. Horizon taal partitioneren in het transactionele archief biedt schaal baarheid & elasticiteit in automatische synchronisatie om ervoor te zorgen dat gegevens in bijna realtime worden gesynchroniseerd met de analytische opslag. De gegevens synchronisatie vindt plaats ongeacht de door Voer van transactionele verkeer, of het nu 1000 bewerkingen per seconde of 1.000.000 bewerkingen per seconde is en heeft geen invloed op de ingerichte door Voer in het transactionele archief. 
 
-#### <a name="automatically-handle-schema-updates"></a><a id="analytical-schema"></a>Automatisch schema-updates verwerken
+### <a name="automatically-handle-schema-updates"></a><a id="analytical-schema"></a>Automatisch schema-updates verwerken
 
 Azure Cosmos DB transactionele Store is schema-neutraal en biedt u de mogelijkheid om uw transactionele toepassingen te herhalen zonder schema-of index beheer te hoeven afhandelen. Azure Cosmos DB Analytical Store daarentegen is geschematiseerde om te optimaliseren voor analytische query prestaties. Met de functie Automatische synchronisatie beheert Azure Cosmos DB het schema dezicht over de meest recente updates van het transactionele archief.  Het beheert ook de schema weergave in de analytische out-of-the-box, inclusief het verwerken van geneste gegevens typen.
 
 Naarmate uw schema wordt gegroeid en nieuwe eigenschappen worden toegevoegd na verloop van tijd, presenteert de analytische opslag automatisch een samenvoegings schema voor alle historische schema's in het transactionele archief.
 
-##### <a name="schema-constraints"></a>Schema beperkingen
+#### <a name="schema-constraints"></a>Schema beperkingen
 
 De volgende beperkingen zijn van toepassing op de operationele gegevens in Azure Cosmos DB wanneer u de analyse opslag inschakelt om het schema op de juiste wijze automatisch af te leiden en te representeren:
 
-* U kunt Maxi maal 200 eigenschappen hebben voor elk genest niveau in het schema en een maximale geneste diepte van 5.
+* U kunt Maxi maal 1000 eigenschappen hebben voor elk nest niveau in het schema en een maximale geneste diepte van 127.
+  * Alleen de eerste 1000 eigenschappen worden weer gegeven in de analytische opslag.
+  * Alleen de eerste 127 geneste niveaus worden weer gegeven in de analytische opslag.
+
+* Hoewel JSON-documenten (en Cosmos DB verzamelingen/containers) hoofdletter gevoelig zijn vanuit het oogpunt van uniekheid, is de analytische opslag niet.
+
+  * **In hetzelfde document:** Namen van eigenschappen op hetzelfde niveau moeten uniek zijn wanneer het hoofdletter gevoelig is. Het volgende JSON-document heeft bijvoorbeeld ' naam ' en ' naam ' op hetzelfde niveau. Hoewel het een geldig JSON-document is, voldoet het niet aan de beperking van uniekheid en wordt het daarom niet volledig weer gegeven in de analytische opslag. In dit voor beeld zijn ' naam ' en ' naam ' hetzelfde wanneer deze in een niet-hoofdletter gevoelige manier worden vergeleken. `"Name": "fred"`Wordt alleen weer gegeven in de analytische opslag, omdat dit de eerste instantie is. En `"name": "john"` worden helemaal niet weer gegeven.
   
-  * Een item met 201-eigenschappen op het hoogste niveau voldoet niet aan deze beperking en wordt dus niet weer gegeven in de analytische opslag.
-  * Een item met meer dan vijf geneste niveaus in het schema voldoet ook niet aan deze beperking en wordt dus niet weer gegeven in de analytische opslag. Het volgende item voldoet bijvoorbeeld niet aan de vereiste:
+  
+  ```json
+  {"id": 1, "Name": "fred", "name": "john"}
+  ```
+  
+  * **In verschillende documenten:** Eigenschappen op hetzelfde niveau en met dezelfde naam, maar in verschillende gevallen, worden weer gegeven in dezelfde kolom, met behulp van de naam notatie van het eerste exemplaar. De volgende JSON-documenten hebben bijvoorbeeld `"Name"` en `"name"` op hetzelfde niveau. Omdat de eerste document indeling is `"Name"` , is dit wat wordt gebruikt om de naam van de eigenschap in de analytische opslag weer te geven. Met andere woorden, de naam van de kolom in de analytische opslag is `"Name"` . Beide `"fred"` en worden `"john"` weer gegeven in de `"Name"` kolom.
 
-     `{"level1": {"level2":{"level3":{"level4":{"level5":{"too many":12}}}}}}`
 
-* Eigenschaps namen moeten uniek zijn wanneer het hoofdletter gevoelig is. De volgende items voldoen bijvoorbeeld niet aan deze beperking en worden dus niet weer gegeven in het analytische archief:
+  ```json
+  {"id": 1, "Name": "fred"}
+  {"id": 2, "name": "john"}
+  ```
 
-  `{"Name": "fred"} {"name": "john"}` – "Naam" en "naam" zijn hetzelfde als deze in een niet-hoofdletter gevoelige manier worden vergeleken.
 
-##### <a name="schema-representation"></a>Schema representatie
+* Het eerste document van de verzameling definieert het initiële analytische archief-schema.
+  * Eigenschappen in het eerste niveau van het document worden als kolommen weer gegeven.
+  * Documenten met meer eigenschappen dan het oorspronkelijke schema genereren nieuwe kolommen in de analytische opslag.
+  * Kolommen kunnen niet worden verwijderd.
+  * Bij het verwijderen van alle documenten in een verzameling wordt het analytische archief schema niet opnieuw ingesteld.
+  * Er is geen schema versie beheer. De laatste versie die is afgeleid van transactionele Store, is wat u ziet in de analytische opslag.
+
+* Op dit moment bieden we geen ondersteuning meer voor Azure Synapse Spark-Lees kolom namen die lege waarden bevatten (spaties).
+
+* Er wordt een ander gedrag met betrekking tot `NULL` waarden verwacht:
+  * In Spark-Pools in azure Synapse worden deze waarden als 0 (nul) gelezen.
+  * Met SQL serverloze Pools in azure Synapse worden deze waarden gelezen als `NULL` .
+
+* Er wordt een ander gedrag in rekening gehouden met ontbrekende kolommen:
+  * In Spark-Pools in azure Synapse worden deze kolommen weer gegeven als `undefined` .
+  * SQL serverloze Pools in azure Synapse vertegenwoordigen deze kolommen als `NULL` .
+
+#### <a name="schema-representation"></a>Schema representatie
 
 Er zijn twee modi voor schemarepresentatie in de analytische opslag. Deze modi maken een afweging tussen de eenvoud van een kolomweergave, het behandelen van de polymorfe schema's en eenvoud van de query-ervaring:
 
@@ -106,7 +134,7 @@ Met de goed gedefinieerde schema representatie maakt u een eenvoudige tabellaire
 
 * Een eigenschap heeft altijd hetzelfde type over meerdere items.
 
-  * `{"a":123} {"a": "str"}`Heeft bijvoorbeeld geen goed gedefinieerd schema, omdat dit `"a"` soms een teken reeks is en soms een getal. In dit geval registreert de analytische opslag het gegevens type van `“a”` als het gegevens type van `“a”` in het eerste item in de levens duur van de container. Items waarvan het gegevens type `“a”` verschilt, worden niet opgenomen in de analytische opslag.
+  * `{"a":123} {"a": "str"}`Heeft bijvoorbeeld geen goed gedefinieerd schema, omdat dit `"a"` soms een teken reeks is en soms een getal. In dit geval registreert de analytische opslag het gegevens type van `"a"` als het gegevens type van `“a”` in het eerste item in de levens duur van de container. Het document wordt nog steeds opgenomen in de analytische opslag, maar items waarvan het gegevens type `"a"` anders is dan niet.
   
     Deze voor waarde is niet van toepassing op null-eigenschappen. `{"a":123} {"a":null}`Is bijvoorbeeld nog steeds goed gedefinieerd.
 
@@ -150,12 +178,12 @@ Hier volgt een overzicht van alle eigenschaps gegevens typen en de bijbehorende 
 | Dubbel |  ".float64" |    24,99|
 | Matrix | ". matrix" |    ["a", "b"]|
 |Binair | '. binary ' |0|
-|Boolean    | ". BOOL"   |Waar|
+|Booleaans    | ". BOOL"   |Waar|
 |Int32  | ". Int32"  |123|
 |Int64  | ". int64"  |255486129307|
 |Null   | ". null"   | null|
 |Tekenreeks|    ". teken reeks" | "ABC"|
-|Timestamp |    '. time stamp ' |  Tijds tempel (0, 0)|
+|Tijdstempel |    '. time stamp ' |  Tijds tempel (0, 0)|
 |DateTime   |". datum"    | ISODate ("2020-08-21T07:43:07.375 Z")|
 |ObjectId   |'. objectId '    | ObjectId ("5f3f7b59330ec25c132623a2")|
 |Document   |'. object ' |    {"a": "a"}|
@@ -230,7 +258,7 @@ Zie [analytische TTL configureren voor een container](configure-synapse-link.md#
 
 Raadpleeg de volgende documenten voor meer informatie:
 
-* [Azure Synapse-koppeling voor Azure Cosmos DB](synapse-link.md)
+* [Azure Synapse Link voor Azure Cosmos DB](synapse-link.md)
 
 * [Aan de slag met Azure Synapse Link voor Azure Cosmos DB](configure-synapse-link.md)
 

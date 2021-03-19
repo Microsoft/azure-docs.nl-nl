@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/10/2021
+ms.date: 03/17/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fecf3f1a302a6734d92335bc15722df4d5288a56
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ab840b46503aed1a318e3b39a4e8fe3e4d11735c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362417"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579124"
 ---
 # <a name="conditional-access-conditions"></a>Voorwaardelijke toegang: voor waarden
 
@@ -174,11 +174,11 @@ Deze instelling heeft gevolgen voor toegangs pogingen van de volgende mobiele ap
 
 ### <a name="exchange-activesync-clients"></a>Exchange ActiveSync-clients
 
-- Organisaties kunnen alleen Exchange ActiveSync-clients selecteren wanneer ze beleid toewijzen aan gebruikers of groepen. Als u **alle gebruikers** selecteert, worden alle **gast-en externe gebruikers** of **Directory-rollen** door alle gebruikers geblokkeerd.
+- Organisaties kunnen alleen Exchange ActiveSync-clients selecteren wanneer ze beleid toewijzen aan gebruikers of groepen. Als u **alle gebruikers** selecteert, worden alle gebruikers of **gast-en externe gebruikers** of **Directory-rollen** in het beleid toegepast.
 - Bij het maken van een beleid dat is toegewezen aan Exchange ActiveSync-clients, moet **Exchange Online** de enige Cloud toepassing zijn die aan het beleid is toegewezen. 
 - Organisaties kunnen het bereik van dit beleid beperken tot specifieke platformen met behulp van de voor waarde **apparaat platforms** .
 
-Als voor het toegangs beheer dat aan het beleid **is toegewezen, goedgekeurde client-app is vereist**, wordt de gebruiker omgeleid om de Outlook Mobile client te installeren en te gebruiken. Als **multi-factor Authentication** is vereist, worden betrokken gebruikers geblokkeerd omdat basis verificatie geen ondersteuning biedt voor multi-factor Authentication.
+Als voor het toegangs beheer dat aan het beleid **is toegewezen, goedgekeurde client-app is vereist**, wordt de gebruiker omgeleid om de Outlook Mobile client te installeren en te gebruiken. Als **multi-factor Authentication**, **Gebruiksvoorwaarden** of **aangepaste besturings elementen** zijn vereist, worden betrokken gebruikers geblokkeerd, omdat basis verificatie deze besturings elementen niet ondersteunt.
 
 Raadpleeg voor meer informatie de volgende artikelen:
 

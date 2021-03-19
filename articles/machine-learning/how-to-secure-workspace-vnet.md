@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: larryfr
 ms.author: peterlu
 author: peterclu
-ms.date: 10/06/2020
+ms.date: 03/17/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, tracking-python, contperf-fy21q1
-ms.openlocfilehash: 5031d097b5d1bdef45dd4b653ae7cef06f5daca0
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: a923f65e5c6183d045f4b7455e0a01edda75d499
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103573656"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584331"
 ---
 # <a name="secure-an-azure-machine-learning-workspace-with-virtual-networks"></a>Een Azure Machine Learning-werk ruimte beveiligen met virtuele netwerken
 
@@ -56,16 +56,12 @@ Met de persoonlijke Azure-koppeling kunt u verbinding maken met uw werk ruimte m
 
 Zie [persoonlijke koppeling configureren](how-to-configure-private-link.md)voor meer informatie over het instellen van een persoonlijke koppelings werkruimte.
 
+> [!Warning]
+> Het beveiligen van een werk ruimte met privé-eind punten garandeert geen end-to-end beveiliging. U moet de stappen in de rest van dit artikel en de VNet-serie volgen om de afzonderlijke onderdelen van uw oplossing te beveiligen.
+
 ## <a name="secure-azure-storage-accounts-with-service-endpoints"></a>Azure Storage-accounts beveiligen met Service-eind punten
 
 Azure Machine Learning ondersteunt opslag accounts die zijn geconfigureerd voor het gebruik van service-eind punten of privé-eind punten. In deze sectie leert u hoe u een Azure-opslag account kunt beveiligen met behulp van service-eind punten. Zie de volgende sectie voor privé-eind punten.
-
-> [!IMPORTANT]
-> U kunt het _standaard opslag account_ voor Azure machine learning of _niet-standaard opslag accounts_ in een virtueel netwerk plaatsen.
->
-> Het standaard opslag account wordt automatisch ingericht wanneer u een werk ruimte maakt.
->
-> Voor niet-standaard opslag accounts `storage_account` kunt u met de para meter in de [ `Workspace.create()` functie](/python/api/azureml-core/azureml.core.workspace%28class%29#create-name--auth-none--subscription-id-none--resource-group-none--location-none--create-resource-group-true--sku--basic---friendly-name-none--storage-account-none--key-vault-none--app-insights-none--container-registry-none--cmk-keyvault-none--resource-cmk-uri-none--hbi-workspace-false--default-cpu-compute-target-none--default-gpu-compute-target-none--exist-ok-false--show-output-true-) een aangepast opslag account opgeven op basis van de Azure-resource-id.
 
 Als u een Azure-opslag account wilt gebruiken voor de werk ruimte in een virtueel netwerk, gebruikt u de volgende stappen:
 
@@ -73,18 +69,18 @@ Als u een Azure-opslag account wilt gebruiken voor de werk ruimte in een virtuee
 
    [![De opslag die is gekoppeld aan de Azure Machine Learning-werk ruimte](./media/how-to-enable-virtual-network/workspace-storage.png)](./media/how-to-enable-virtual-network/workspace-storage.png#lightbox)
 
-1. Selecteer op de pagina Storage-Service account de optie __firewalls en virtuele netwerken__.
+1. Selecteer op de pagina Storage-Service account de optie __netwerken__.
 
-   ![Het gebied firewalls en virtuele netwerken op de pagina Azure Storage in het Azure Portal](./media/how-to-enable-virtual-network/storage-firewalls-and-virtual-networks.png)
+   ![Het netwerk gebied op de pagina Azure Storage in het Azure Portal](./media/how-to-enable-virtual-network/storage-firewalls-and-virtual-networks.png)
 
-1. Voer op de pagina __firewalls en virtuele netwerken__ de volgende acties uit:
+1. Voer op het tabblad __firewalls en virtuele netwerken__ de volgende acties uit:
     1. Selecteer __Geselecteerde netwerken__.
     1. Selecteer onder __virtuele netwerken__ de koppeling __bestaande virtuele netwerk toevoegen__ . Met deze actie wordt het virtuele netwerk waar uw Compute zich bevindt, toegevoegd (zie stap 1).
 
         > [!IMPORTANT]
         > Het opslag account moet zich in hetzelfde virtuele netwerk en subnet bevinden als de reken instanties of clusters die worden gebruikt voor de training of de interferentie.
 
-    1. Schakel het selectie vakje __vertrouwde micro soft-Services toegang geven tot dit opslag account__ in. Dit geeft niet alle Azure-Services toegang tot uw opslag account.
+    1. Schakel het selectie vakje __vertrouwde micro soft-Services toegang geven tot dit opslag account__ in. Deze wijziging geeft niet alle Azure-Services toegang tot uw opslag account.
     
         * Resources van sommige services die **in uw abonnement zijn geregistreerd**, hebben toegang tot het opslag account **in hetzelfde abonnement** voor Select-bewerkingen. U kunt bijvoorbeeld Logboeken schrijven of back-ups maken.
         * Resources van sommige services kunnen expliciet toegang krijgen tot uw opslag account door __een Azure-rol__ toe te wijzen aan de door het systeem toegewezen beheerde identiteit.
@@ -102,11 +98,11 @@ Als u een Azure-opslag account wilt gebruiken voor de werk ruimte in een virtuee
 
 Azure Machine Learning ondersteunt opslag accounts die zijn geconfigureerd voor het gebruik van service-eind punten of privé-eind punten. Als het opslag account gebruikmaakt van privé-eind punten, moet u twee persoonlijke eind punten configureren voor uw standaard-opslag account:
 1. Een persoonlijk eind punt met een subresource voor een **BLOB** -doel.
-1. Een persoonlijk eind punt met een **Bestands** doel-sub-resource (file share).
+1. Een persoonlijk eind punt met een **Bestands** doel-subresource (file share).
 
 ![Scherm opname van pagina met persoonlijke eindpunt configuratie met Blob en bestands opties](./media/how-to-enable-studio-virtual-network/configure-storage-private-endpoint.png)
 
-Als u een persoonlijk eind punt wilt configureren voor een opslag account dat **niet** de standaard opslag is, selecteert u het **doel-subbron** type dat overeenkomt met het opslag account dat u wilt toevoegen.
+Als u een persoonlijk eind punt wilt configureren voor een opslag account dat **niet** de standaard opslag is, selecteert u het **doel bron** type dat overeenkomt met het opslag account dat u wilt toevoegen.
 
 Zie [privé-eind punten voor Azure Storage gebruiken](../storage/common/storage-private-endpoints.md) voor meer informatie
 
@@ -118,7 +114,7 @@ Voor toegang tot gegevens met behulp van de SDK moet u de verificatie methode ge
 
 ### <a name="disable-data-validation"></a>Gegevens validatie uitschakelen
 
-Azure Machine Learning voert standaard gegevens over geldigheid en referenties controles uit wanneer u gegevens probeert te openen met behulp van de SDK. Als de gegevens zich achter een virtueel netwerk bevindt, kan Azure Machine Learning deze controles niet volt ooien. Om dit te voor komen, moet u data stores en gegevens sets maken die validatie overs Laan.
+Azure Machine Learning voert standaard gegevens over geldigheid en referenties controles uit wanneer u gegevens probeert te openen met behulp van de SDK. Als de gegevens zich achter een virtueel netwerk bevindt, kan Azure Machine Learning deze controles niet volt ooien. Als u deze controle wilt overs Laan, moet u data stores en gegevens sets maken die validatie overs Laan.
 
 ### <a name="use-datastores"></a>Gegevens opslag gebruiken
 
@@ -179,7 +175,7 @@ Als u Azure Machine Learning experimenten wilt gebruiken met Azure Key Vault ach
 1. Voer op het tabblad __firewalls en virtuele netwerken__ de volgende acties uit:
     1. Selecteer onder __toegang toestaan vanuit__ de optie __persoonlijk eind punt en geselecteerde netwerken__.
     1. Selecteer onder __virtuele netwerken__ __bestaande virtuele netwerken toevoegen__ om het virtuele netwerk toe te voegen waarin uw experimenten worden berekend.
-    1. Onder __vertrouwde micro soft-services mogen deze firewall overs Laan?__ selecteren __Ja__.
+    1. Onder __vertrouwde micro soft-Services toestaan deze firewall te omzeilen__, selecteert u __Ja__.
 
    [![De sectie firewalls en virtuele netwerken in het deel venster Key Vault](./media/how-to-enable-virtual-network/key-vault-firewalls-and-virtual-networks-page.png)](./media/how-to-enable-virtual-network/key-vault-firewalls-and-virtual-networks-page.png#lightbox)
 
@@ -195,7 +191,13 @@ Als u Azure Container Registry binnen een virtueel netwerk wilt gebruiken, moet 
 
     Wanneer ACR zich achter een virtueel netwerk bevindt, kan Azure Machine Learning het niet gebruiken om docker-installatie kopieën rechtstreeks te bouwen. In plaats daarvan wordt het berekenings cluster gebruikt voor het bouwen van de installatie kopieën.
 
+    > [!IMPORTANT]
+    > Het reken cluster dat wordt gebruikt om docker-installatie kopieën te bouwen, moet toegang hebben tot de pakket opslagplaatsen die worden gebruikt voor het trainen en implementeren van uw modellen. Mogelijk moet u netwerk beveiligings regels toevoegen die toegang tot open bare opslag plaatsen toestaan, [persoonlijke Python-pakketten gebruiken](how-to-use-private-python-packages.md)of [aangepaste docker-installatie kopieën](how-to-train-with-custom-image.md) gebruiken die al de pakketten bevatten.
+
 Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Container Registry in te scha kelen.
+
+> [!TIP]
+> Als u geen bestaande Azure Container Registry hebt gebruikt bij het maken van de werk ruimte, bestaat er mogelijk niet. In de werk ruimte wordt standaard geen ACR-exemplaar gemaakt totdat dit is vereist. Als u het maken van een model wilt forceren, traint of implementeert u uw werk ruimte met behulp van de stappen in deze sectie.
 
 1. Zoek de naam van de Azure Container Registry voor uw werk ruimte met behulp van een van de volgende methoden:
 
@@ -217,6 +219,8 @@ Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Co
 
 1. Beperk de toegang tot uw virtuele netwerk met behulp van de stappen in [netwerk toegang configureren voor het REGI ster](../container-registry/container-registry-vnet.md#configure-network-access-for-registry). Wanneer u het virtuele netwerk toevoegt, selecteert u het virtuele netwerk en subnet voor uw Azure Machine Learning-resources.
 
+1. Configureer de ACR voor de werk ruimte om [toegang door vertrouwde services toe te staan](../container-registry/allow-access-trusted-services.md).
+
 1. Gebruik de Azure Machine Learning python-SDK om een berekenings cluster te configureren voor het bouwen van docker-installatie kopieën. In het volgende code fragment ziet u hoe u dit doet:
 
     ```python
@@ -225,6 +229,8 @@ Als aan deze vereisten wordt voldaan, gebruikt u de volgende stappen om Azure Co
     ws = Workspace.from_config()
     # Update the workspace to use an existing compute cluster
     ws.update(image_build_compute = 'mycomputecluster')
+    # To switch back to using ACR to build (if ACR is not in the VNet):
+    # ws.update(image_build_compute = None)
     ```
 
     > [!IMPORTANT]

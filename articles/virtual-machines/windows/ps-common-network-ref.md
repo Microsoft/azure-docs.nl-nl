@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 07/17/2017
 ms.author: cynthn
 ms.openlocfilehash: b4d6b20e63c42616aad0f8776fae159a0f2aa455
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87088373"
 ---
 # <a name="common-powershell-commands-for-azure-virtual-networks"></a>Algemene Power shell-opdrachten voor virtuele Azure-netwerken
@@ -29,8 +29,8 @@ Sommige variabelen kunnen nuttig zijn wanneer u meer dan een van de opdrachten i
 
 | Taak | Opdracht |
 | ---- | ------- |
-| Subnetconfiguraties maken |$subnet 1 = [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) -name "mySubnet1"-AddressPrefix xx. X. X. X/XX<BR>$subnet 2 = New-AzVirtualNetworkSubnetConfig naam mySubnet2-AddressPrefix XX. X. X. X/XX<BR><BR>Een typisch netwerk heeft mogelijk een subnet voor een [Internet gerichte Load Balancer](../../load-balancer/load-balancer-overview.md) en een afzonderlijk subnet voor een [interne Load Balancer](../../load-balancer/load-balancer-overview.md). |
-| Een virtueel netwerk maken |$vnet = [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) -name "myVNet"-ResourceGroupName $MyResourceGroup-location $location-AddressPrefix xx. X. X. X/XX-subnet $subnet 1, $subnet 2 |
+| Subnetconfiguraties maken |$subnet 1 = [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) -name "mySubnet1"-AddressPrefix xx. X. X. X/XX<BR>$subnet 2 = New-AzVirtualNetworkSubnetConfig-name "mySubnet2"-AddressPrefix XX. X. X. X/XX<BR><BR>Een typisch netwerk heeft mogelijk een subnet voor een [Internet gerichte Load Balancer](../../load-balancer/load-balancer-overview.md) en een afzonderlijk subnet voor een [interne Load Balancer](../../load-balancer/load-balancer-overview.md). |
+| Een virtueel netwerk maken |$vnet = [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork) -name "myVNet"-ResourceGroupName $MyResourceGroup-locatie $location-AddressPrefix xx. X. X. x/xx-subnet $subnet 1, $subnet 2 |
 | Testen op een unieke domein naam |[Test-AzDnsAvailability](/powershell/module/az.network/test-azdnsavailability) -domeinnaam label "myDNS"-locatie $location<BR><BR>U kunt een DNS-domein naam opgeven voor een [open bare IP-resource](../../virtual-network/public-ip-addresses.md), waarmee een toewijzing voor domainname.location.cloudapp.Azure.com wordt gemaakt aan het open bare IP-adres op de door Azure beheerde DNS-servers. De naam mag alleen letters, cijfers en afbreekstreepjes bevatten. Het eerste en laatste teken moeten een letter of cijfer zijn en de domein naam moet uniek zijn binnen de Azure-locatie. Als **waar** wordt geretourneerd, is de voorgestelde naam wereld wijd uniek. |
 | Een openbaar IP-adres maken |$pip = [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress) -name "myPublicIp"-ResourceGroupName $MyResourceGroup-domeinnaam label "myDNS"-location $location-AllocationMethod Dynamic<BR><BR>Het open bare IP-adres gebruikt de domein naam die u eerder hebt getest en wordt gebruikt door de front-end-configuratie van de load balancer. |
 | Een front-end-IP-configuratie maken |$frontendIP = [New-AzLoadBalancerFrontendIpConfig](/powershell/module/az.network/new-azloadbalancerfrontendipconfig) -name "myFrontendIP"-PublicIpAddress $PIP<BR><BR>De front-end-configuratie bevat het open bare IP-adres dat u eerder hebt gemaakt voor binnenkomend netwerk verkeer. |
@@ -39,7 +39,7 @@ Sommige variabelen kunnen nuttig zijn wanneer u meer dan een van de opdrachten i
 | Een taakverdelings regel maken |$lbRule = [New-AzLoadBalancerRuleConfig](/powershell/module/az.network/new-azloadbalancerruleconfig) -name http-FrontendIpConfiguration $FrontendIP-BackendAddressPool $BeAddressPool-probe $HealthProbe-protocol TCP-FrontendPort 80-BackendPort 80<BR><BR>Bevat regels die een open bare poort op de load balancer toewijzen aan een poort in de back-end-adres groep. |
 | Een binnenkomende NAT-regel maken |$inboundNATRule = [New-AzLoadBalancerInboundNatRuleConfig](/powershell/module/az.network/new-azloadbalancerinboundnatruleconfig) -name "myInboundRule1"-FrontendIpConfiguration $FrontendIP-protocol TCP-FrontendPort 3441-BackendPort 3389<BR><BR>Bevat regels die een open bare poort op de load balancer toewijzen aan een poort voor een specifieke virtuele machine in de back-end-adres groep. |
 | Een load balancer maken |$loadBalancer = [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer) -ResourceGroupName $MyResourceGroup-name "myLoadBalancer"-location $location-FrontendIpConfiguration $FrontendIP-InboundNatRule $InboundNATRule-LoadBalancingRule $LbRule-BackendAddressPool $BeAddressPool-probe $healthProbe |
-| Een netwerk interface maken |$nic 1 = [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) -ResourceGroupName $MyResourceGroup-name "myNIC"-location $location-PrivateIpAddress xx. X. X. X-subnet $subnet 2-LoadBalancerBackendAddressPool $loadBalancer. BackendAddressPools [0]-LoadBalancerInboundNatRule $loadBalancer. InboundNatRules [0]<BR><BR>Maak een netwerk interface met behulp van het open bare IP-adres en het subnet van het virtuele netwerk dat u eerder hebt gemaakt. |
+| Een netwerk interface maken |$nic 1 = [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) -ResourceGroupName $MyResourceGroup-name "myNIC"-location $location-PrivateIpAddress xx. X. X. x-subnet $subnet 2-LoadBalancerBackendAddressPool $LoadBalancer. BackendAddressPools [0]-LoadBalancerInboundNatRule $LoadBalancer. InboundNatRules [0]<BR><BR>Maak een netwerk interface met behulp van het open bare IP-adres en het subnet van het virtuele netwerk dat u eerder hebt gemaakt. |
 
 ## <a name="get-information-about-network-resources"></a>Informatie over netwerk bronnen ophalen
 
@@ -61,7 +61,7 @@ Sommige variabelen kunnen nuttig zijn wanneer u meer dan een van de opdrachten i
 | ---- | ------- |
 | Een subnet toevoegen aan een virtueel netwerk |[Add-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/add-azvirtualnetworksubnetconfig) -AddressPrefix xx. X. X. X/XX-name "mySubnet1"-VirtualNetwork $vnet<BR><BR>Hiermee voegt u een subnet toe aan een bestaand virtueel netwerk. De $vnet waarde vertegenwoordigt het object dat door Get-AzVirtualNetwork wordt geretourneerd. |
 | Een virtueel netwerk verwijderen |[Remove-AzVirtualNetwork](/powershell/module/az.network/remove-azvirtualnetwork) -name "myVNet"-ResourceGroupName $myResourceGroup<BR><BR>Hiermee verwijdert u het opgegeven virtuele netwerk uit de resource groep. |
-| Een netwerk interface verwijderen |[Remove-AzNetworkInterface](/powershell/module/az.network/remove-aznetworkinterface) -name "myNIC"-ResourceGroupName $myResourceGroup<BR><BR>Hiermee verwijdert u de opgegeven netwerk interface uit de resource groep. |
+| Een netwerkinterface verwijderen |[Remove-AzNetworkInterface](/powershell/module/az.network/remove-aznetworkinterface) -name "myNIC"-ResourceGroupName $myResourceGroup<BR><BR>Hiermee verwijdert u de opgegeven netwerk interface uit de resource groep. |
 | Een load balancer verwijderen |[Remove-AzLoadBalancer](/powershell/module/az.network/remove-azloadbalancer) -name "myLoadBalancer"-ResourceGroupName $myResourceGroup<BR><BR>Hiermee verwijdert u de opgegeven load balancer uit de resource groep. |
 | Een openbaar IP-adres verwijderen |[Remove-AzPublicIpAddress](/powershell/module/az.network/remove-azpublicipaddress)-name "myIPAddress"-ResourceGroupName $myResourceGroup<BR><BR>Hiermee verwijdert u het opgegeven open bare IP-adres uit de resource groep. |
 

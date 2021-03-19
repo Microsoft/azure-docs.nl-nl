@@ -11,10 +11,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: c01da4aed9e27296ea7b570420bb190b16749848
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90936380"
 ---
 # <a name="concepts-for-distributing-data-with-arc-enabled-postgresql-hyperscale-server-group"></a>Concepten voor het distribueren van gegevens met PostgreSQL grootschalige-Server groep met Arc-functionaliteit
@@ -46,7 +46,7 @@ Meer informatie vindt u op [knoop punten en tabellen in azure database for Postg
 ## <a name="determine-the-application-type"></a>Het toepassings type bepalen
 Het is belang rijk om het type toepassing dat u bouwt duidelijk te identificeren. Hoe komt dat? Omdat het uitvoeren van efficiënte query's voor een Azure-PostgreSQL grootschalige-Server groep vereist dat tabellen goed worden gedistribueerd over servers. De aanbevolen distributie is afhankelijk van het type toepassing en de bijbehorende query patronen. Er zijn in ruime mate twee soorten toepassingen die goed werken op Azure Arc enabled post gres grootschalige:
 - Multi tenant-toepassingen
-- Real-Time toepassingen
+- Realtime toepassingen
 
 De eerste stap bij het model leren van gegevens is om te identificeren welke van de toepassingen er beter uitziet dan uw toepassing.
 

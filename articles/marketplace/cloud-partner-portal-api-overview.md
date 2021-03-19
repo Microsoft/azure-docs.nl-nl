@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
 ms.openlocfilehash: 57d3d1c6bb14db3eb2ca499069934a628d2f7fea
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92425784"
 ---
 # <a name="cloud-partner-portal-api-reference"></a>Naslaginformatie over Cloud Partner-portal-API
@@ -50,7 +50,7 @@ Deze referentie Details Api's om de volgende algemene taken uit te voeren.
 - [Een aanbieding maken](./cloud-partner-portal-api-creating-offer.md)
 - [Een aanbieding publiceren](./cloud-partner-portal-api-publish-offer.md)
 
-### <a name="operations"></a>Bewerkingen
+### <a name="operations"></a>Operations
 
 - [Bewerkingen ophalen](./cloud-partner-portal-api-retrieve-operations.md)
 - [Bewerkingen annuleren](./cloud-partner-portal-api-cancel-operations.md)
@@ -63,6 +63,6 @@ Deze referentie Details Api's om de volgende algemene taken uit te voeren.
 
 - [Prijzen voor aanbiedingen van virtuele machines instellen](./cloud-partner-portal-api-setting-price.md)
 
-### <a name="troubleshooting"></a>Probleemoplossing
+### <a name="troubleshooting"></a>Problemen oplossen
 
 - [Problemen met verificatiefouten oplossen](./cloud-partner-portal-api-troubleshooting-authentication-errors.md)

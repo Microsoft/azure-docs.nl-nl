@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 4131f1d0ef36eb49641ac184cd3f72fb719ea90e
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92443392"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Zelfstudie: Azure Active Directory-integratie met Hornbill
@@ -45,7 +45,7 @@ Om Azure AD-integratie te configureren met Hornbill hebt u het volgende nodig:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Hornbill ondersteunt door **SP** geïnitieerde eenmalige aanmelding (SSO)
-* Hornbill biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Hornbill biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-hornbill-from-the-gallery"></a>Hornbill vanuit de galerie toevoegen
 
@@ -53,7 +53,7 @@ Voor het configureren van de integratie van Hornbill in Azure AD moet u Hornbill
 
 **Als u Hornbill vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -65,7 +65,7 @@ Voor het configureren van de integratie van Hornbill in Azure AD moet u Hornbill
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Hornbill** , selecteer **Hornbill** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Hornbill**, selecteer **Hornbill** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Hornbill in de lijst met resultaten](common/search-new-app.png)
 
@@ -158,7 +158,7 @@ Voor het configureren van eenmalige aanmelding bij Azure Active Directory met Ho
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -183,7 +183,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Hornbill.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Hornbill**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Hornbill**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

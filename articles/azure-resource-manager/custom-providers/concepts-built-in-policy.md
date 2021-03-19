@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: hich
 ms.openlocfilehash: 00cd1d39c0110aac9ea96f73127e83197976c95a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82190126"
 ---
 # <a name="deploy-associations-for-a-custom-provider-using-azure-policy"></a>Koppelingen voor een aangepaste provider implementeren met behulp van Azure Policy
@@ -43,7 +43,7 @@ Als u vragen hebt over het ontwikkelen van aangepaste Azure-resource providers, 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel vindt u informatie over het gebruik van ingebouwd beleid voor het implementeren van koppelingen. Raadpleeg de volgende artikelen voor meer informatie:
+In dit artikel vindt u informatie over het gebruik van ingebouwd beleid voor het implementeren van koppelingen. Zie voor meer informatie de volgende artikelen:
 
 - [Concepten: voor bereiding van resources in azure Custom providers](./concepts-resource-onboarding.md)
 - [Zelf studie: onboarding van resources met aangepaste providers](./tutorial-resource-onboarding.md)

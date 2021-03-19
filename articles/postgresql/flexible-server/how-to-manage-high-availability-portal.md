@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: fc1bca1265139a438fad86bfce770026866d9a2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90934908"
 ---
 # <a name="manage-zone-redundant-high-availability-in-flexible-server"></a>Zone redundante hoge Beschik baarheid beheren op flexibele server
@@ -30,29 +30,29 @@ Zone redundant hoge Beschik baarheid is alleen beschikbaar in regio's waar meerd
 
 Deze sectie bevat specifieke informatie over HA-gerelateerde velden. U kunt deze stappen volgen om hoge Beschik baarheid te implementeren tijdens het maken van uw flexibele server.
 
-1.  Kies in het [Azure Portal](https://portal.azure.com/)flexibele server en klik op maken.  Zie How-to-documentatie voor het maken van een server voor meer informatie over het invullen van details zoals **abonnement**, **resource groep**, **Server naam**, **regio**en andere velden.
+1.  Kies in het [Azure Portal](https://portal.azure.com/)flexibele server en klik op maken.  Zie How-to-documentatie voor het maken van een server voor meer informatie over het invullen van details zoals **abonnement**, **resource groep**, **Server naam**, **regio** en andere velden.
    
     :::image type="content" source="./media/how-to-manage-high-availability-portal/subscription-region.png" alt-text="Abonnement en regio weer geven":::
 
 2.  Kies uw **beschikbaarheids zone**. Dit is handig als u uw toepassing wilt termijnen in dezelfde beschikbaarheids zone als de data base om de latentie te verminderen. Kies **geen voor keur** als u wilt dat de flexibele server op elke beschikbaarheids zone wordt geïmplementeerd.
-    ![AZ selectie ]() :::image type="content" source="./media/how-to-manage-high-availability-portal/zone-selection.png" alt-text="Abonnement en regio weer geven":::  
+    ![AZ selectie ]() :::image type="content" source="./media/how-to-manage-high-availability-portal/zone-selection.png" alt-text="beschikbaarheids zone selecteren":::  
 
 3.  Klik op het selectie vakje voor de **zone redundant hoge Beschik baarheid** in de optie Beschik baarheid.
 
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-checkbox.png" alt-text="Abonnement en regio weer geven":::
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-checkbox.png" alt-text="Selectie vakje hoge Beschik baarheid":::
 
 4.  Als u de standaard Compute en opslag wilt wijzigen, klikt u op  **server configureren**.
  
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/configure-server.png" alt-text="Abonnement en regio weer geven":::  
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/configure-server.png" alt-text="Server Compute + Storage configureren":::  
 
 5.  Als de optie hoge Beschik baarheid is ingeschakeld, is de Burstable-laag niet beschikbaar om te kiezen. U kunt kiezen voor **algemeen gebruik** of op **geheugen geoptimaliseerde** reken lagen. Vervolgens kunt u de **reken grootte** voor uw keuze selecteren in de vervolg keuzelijst.
 
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/select-compute.png" alt-text="Abonnement en regio weer geven":::  
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/select-compute.png" alt-text="Selectie van Compute-laag":::  
 
 
 6.  Selecteer **opslag grootte** in GiB met behulp van de schuif balk en selecteer de **Bewaar periode voor back-ups** tussen 7 dagen en 35 dagen.
    
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/storage-backup.png" alt-text="Abonnement en regio weer geven"::: 
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/storage-backup.png" alt-text="Back-ups van opslag"::: 
 
 7. Klik op **Opslaan**. 
 
@@ -60,15 +60,15 @@ Deze sectie bevat specifieke informatie over HA-gerelateerde velden. U kunt deze
 
 Volg deze stappen om hoge Beschik baarheid in te scha kelen voor uw bestaande flexibele server.
 
-1.  Selecteer uw bestaande PostgreSQL-flexibele server in het [Azure Portal](https://portal.azure.com/).
+1.  Selecteer uw bestaande PostgreSQL-flexibele server in het [Azure Portal](https://portal.azure.com/).
 
-2.  Klik op de pagina flexibele server op **hoge Beschik baarheid** in het linkerdeel venster om de pagina hoge Beschik baarheid te openen.
+2.  Klik op de pagina flexibele server op **hoge Beschik baarheid** in het linkerdeel venster om de pagina hoge Beschik baarheid te openen.
    
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Abonnement en regio weer geven"::: 
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Links paneel selecteren"::: 
 
-3.  Klik op het selectie vakje **redundante maximale Beschik baarheid van zone** om de optie in te **scha kelen** en klik op **Opslaan**   om de wijziging op te slaan.
+3.  Klik op het selectie vakje **redundante maximale Beschik baarheid van zone** om de optie in te **scha kelen** en klik op **Opslaan** om de wijziging op te slaan.
 
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/enable-high-availability.png" alt-text="Abonnement en regio weer geven"::: 
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/enable-high-availability.png" alt-text="Hoge beschikbaarheid inschakelen"::: 
 
 4.  Er wordt een bevestigings dialoogvenster weer gegeven waarin staat dat door hoge Beschik baarheid in te scha kelen uw kosten toenemen vanwege extra server-en opslag implementatie.
 
@@ -80,15 +80,15 @@ Volg deze stappen om hoge Beschik baarheid in te scha kelen voor uw bestaande fl
 
 Volg deze stappen om maximale Beschik baarheid uit te scha kelen voor uw flexibele server die al is geconfigureerd met zone redundantie.
 
-1.  Selecteer uw bestaande Azure Database for PostgreSQL-flexibele server in de [Azure Portal](https://portal.azure.com/).
+1.  Selecteer uw bestaande Azure Database for PostgreSQL-flexibele server in de [Azure Portal](https://portal.azure.com/).
 
-2.  Klik op de pagina flexibele server op het voor paneel op **hoge Beschik baarheid** om de pagina hoge Beschik baarheid te openen.
+2.  Klik op de pagina flexibele server op het voor paneel op **hoge Beschik baarheid** om de pagina hoge Beschik baarheid te openen.
    
-    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Abonnement en regio weer geven"::: 
+    :::image type="content" source="./media/how-to-manage-high-availability-portal/high-availability-left-panel.png" alt-text="Links paneel selecteren"::: 
 
-3.  Klik op het selectie vakje **redundante maximale Beschik baarheid van zone** om de optie **uit te scha kelen** . Klik vervolgens op **Opslaan**   om de wijziging op te slaan.
+3.  Klik op het selectie vakje **redundante maximale Beschik baarheid van zone** om de optie **uit te scha kelen** . Klik vervolgens op **Opslaan** om de wijziging op te slaan.
 
-     :::image type="content" source="./media/how-to-manage-high-availability-portal/disable-high-availability.png" alt-text="Abonnement en regio weer geven"::: 
+     :::image type="content" source="./media/how-to-manage-high-availability-portal/disable-high-availability.png" alt-text="Hoge Beschik baarheid uitschakelen"::: 
 
 4.  Er wordt een bevestigings venster weer gegeven waarin u kunt bevestigen dat hoge Beschik baarheid wordt uitgeschakeld.
 
@@ -99,4 +99,4 @@ Volg deze stappen om maximale Beschik baarheid uit te scha kelen voor uw flexibe
 ## <a name="next-steps"></a>Volgende stappen
 
 -   Meer informatie over [bedrijfs continuïteit](./concepts-business-continuity.md)
--   Meer informatie over [zone redundante hoge Beschik baarheid](./concepts-high-availability.md)
+-   Meer informatie over [zone redundante hoge Beschik baarheid](./concepts-high-availability.md)

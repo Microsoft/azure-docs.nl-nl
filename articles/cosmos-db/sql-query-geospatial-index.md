@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: tisande
 ms.openlocfilehash: 47eedf1ddbb155180d364c42ec179b3e01279e44
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93336211"
 ---
 # <a name="index-geospatial-data-with-azure-cosmos-db"></a>Georuimtelijke gegevens indexeren met Azure Cosmos DB
@@ -111,10 +111,10 @@ Met het gegevens type **geometrie** , vergelijkbaar met het gegevens type geogra
 
 Het selectie kader bestaat uit de volgende eigenschappen:
 
-- **xmin** : de minimale geïndexeerde x-coördinaat
-- **ymin** : de minimale geïndexeerde y-coördinaat
-- **xmax** : het maximum aantal geïndexeerde x-coördinaten
-- **ymax** : het maximum aantal geïndexeerde y-coördinaten
+- **xmin**: de minimale geïndexeerde x-coördinaat
+- **ymin**: de minimale geïndexeerde y-coördinaat
+- **xmax**: het maximum aantal geïndexeerde x-coördinaten
+- **ymax**: het maximum aantal geïndexeerde y-coördinaten
 
 Een selectie kader is vereist omdat geometrische gegevens een vlieg tuig in beslag nemen dat oneindig kan zijn. Ruimtelijke indexen vereisen echter een eindige spatie. Voor het gegevens type **geografie** is de aarde de grens en hoeft u geen begrenzingsvak in te stellen.
 

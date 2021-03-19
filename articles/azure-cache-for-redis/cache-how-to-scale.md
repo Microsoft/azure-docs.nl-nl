@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: 2913869067ff138922ebb7ea1483a1132e360d29
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d91b62afacad31d78feb7d4743cd4050fcc1bd4e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100382392"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581640"
 ---
 # <a name="scale-an-azure-cache-for-redis-instance"></a>Een Azure-cache schalen voor redis-instantie
 Azure cache voor redis heeft verschillende cache aanbiedingen, die flexibiliteit bieden bij het kiezen van de cache grootte en-functies. Voor een Basic-, Standard-of Premium-cache kunt u de grootte en laag wijzigen nadat deze is gemaakt om de behoeften van uw toepassing te blijven gebruiken. Dit artikel laat u zien hoe u uw cache kunt schalen met behulp van de Azure Portal en hulpprogram ma's zoals Azure PowerShell en Azure CLI.
@@ -45,7 +45,7 @@ U kunt schalen naar een andere prijs categorie met de volgende beperkingen:
   * U kunt niet omlaag schalen vanuit een **standaard** cache naar een **Basic** -cache.
 * U kunt schalen van een **basis** cache naar een **standaard** cache, maar u kunt de grootte niet tegelijkertijd wijzigen. Als u een andere grootte nodig hebt, kunt u een volgende schaal bewerking uitvoeren voor de gewenste grootte.
 * U kunt niet rechtstreeks schalen van een **Basic** -cache naar een **Premium** -cache. Schaal eerst van **Basic** naar **Standard** in één schaal bewerking en vervolgens van **standaard** naar **Premium** bij een volgende schaal bewerking.
-* U kunt niet van een grotere grootte schalen naar de grootte van de **C0 (250 MB)** .
+* U kunt niet van een grotere grootte schalen naar de grootte van de **C0 (250 MB)** . U kunt echter omlaag schalen naar een andere grootte binnen dezelfde prijs categorie. U kunt bijvoorbeeld omlaag schalen van C5 Standard naar C1 Standard.
  
 Terwijl de cache wordt geschaald naar de nieuwe prijs categorie, wordt een **schaal** status weer gegeven in de Blade **Azure-cache voor redis** .
 

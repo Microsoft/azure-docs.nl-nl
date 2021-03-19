@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2b7cc0535549f2dbcdef4ab043ee506527fdbc5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90601449"
 ---
 # <a name="azure-ad-joined-devices"></a>Azure AD-gekoppelde apparaten
@@ -24,14 +24,14 @@ Deelname aan Azure AD is bedoeld voor organisaties die alleen in de Cloud of all
 
 | Azure AD-Join | Beschrijving |
 | --- | --- |
-| **Definitie** | Alleen opgenomen in azure AD waarvoor een organisatie account is vereist om zich aan te melden bij het apparaat |
+| **Definition** | Alleen opgenomen in azure AD waarvoor een organisatie account is vereist om zich aan te melden bij het apparaat |
 | **Primaire doel groep** | Alleen geschikt voor Cloud-en hybride organisaties. |
 |   | Van toepassing op alle gebruikers in een organisatie |
 | **Apparaateigendom** | Organisatie |
 | **Besturings systemen** | Alle Windows 10-apparaten behalve Windows 10 Home |
 |   | [Virtuele Windows Server 2019-machines die worden uitgevoerd in Azure](howto-vm-sign-in-azure-ad-windows.md) (serverkern wordt niet ondersteund) |
 | **Inrichten** | Self-service: Windows OOBE of instellingen |
-|   | Bulkregistratie |
+|   | Bulkinschrijving |
 |   | Windows Autopilot |
 | **Aanmeldings opties voor apparaten** | Organisatie accounts met: |
 |   | Wachtwoord |

@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 06/12/2020
-ms.openlocfilehash: ce713167272c9e97754fdf6f6d065519aaea3d15
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: d7dd7105ddb0d6503faefb996b84c0e53a62ce49
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421172"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104655373"
 ---
 # <a name="train-wide--deep-recommender"></a>Uitgebreide aanbevolen &er trainen
 In dit artikel wordt beschreven hoe u de module **train & diep aanbevolen** in azure machine learning Designer kunt gebruiken om een aanbevelings model te trainen. Deze module is gebaseerd op brede & diep gaande lessen, dat door Google wordt voorgesteld.
@@ -28,7 +28,7 @@ Het belangrijkste doel van een aanbevelings systeem is het aanbevelen van een of
 Er zijn twee belang rijke benaderingen voor aanbevolen systemen. 
 
 + De eerste is de **op inhoud gebaseerde** benadering, waarmee u functies voor zowel gebruikers als items kunt gebruiken. Gebruikers kunnen worden beschreven door eigenschappen zoals leeftijd en geslacht, en items kunnen worden beschreven door eigenschappen als auteur en fabrikant. Typische voor beelden van systemen met aanbeveling op basis van inhoud zijn te vinden op de sociale matchmaking-sites. 
-+ De tweede benadering is het **samen werken met filters** , waarbij alleen id's van de gebruikers en de items worden gebruikt en impliciete informatie over deze entiteiten wordt opgehaald uit een (sparse) matrix met beoordelingen van de gebruikers aan de items. We hebben meer informatie over een gebruiker van de items die ze hebben geclassificeerd en van andere gebruikers die dezelfde items hebben geclassificeerd.  
++ De tweede benadering is het **samen werken met filters**, waarbij alleen id's van de gebruikers en de items worden gebruikt en impliciete informatie over deze entiteiten wordt opgehaald uit een (sparse) matrix met beoordelingen van de gebruikers aan de items. We hebben meer informatie over een gebruiker van de items die ze hebben geclassificeerd en van andere gebruikers die dezelfde items hebben geclassificeerd.  
 
 De uitgebreidere & diep aanbevolen deze benaderingen te combi neren met behulp van gezamenlijke filtering met een op inhoud gebaseerde aanpak. Het wordt daarom als een **hybride aanbeveling** beschouwd. 
 
@@ -88,54 +88,58 @@ Een typische set met item functies kan er bijvoorbeeld als volgt uitzien:
   
 2. Als u een afzonderlijke gegevensset hebt van gebruikers onderdelen en/of de functies van het item, verbindt u deze met de module **Wide Train en diep aanbevolen** .  
   
-    - **Gegevensset voor gebruikers functies** : Verbind de gegevensset waarmee gebruikers worden beschreven in de tweede invoer.
-    - **Item functie gegevensset** : Verbind de gegevensset waarmee items worden beschreven in de derde invoer.  
+    - **Gegevensset voor gebruikers functies**: Verbind de gegevensset waarmee gebruikers worden beschreven in de tweede invoer.
+    - **Item functie gegevensset**: Verbind de gegevensset waarmee items worden beschreven in de derde invoer.  
     
-3.  **Epoches** : Geef aan hoe vaak het algoritme de volledige trainings gegevens moet verwerken. 
+3.  **Epoches**: Geef aan hoe vaak het algoritme de volledige trainings gegevens moet verwerken. 
 
     Hoe hoger dit nummer, hoe beter de training. de trainings kosten zijn echter meer tijd en kunnen leiden tot overmontage.
 
-4. **Batch grootte** : Typ het aantal trainings voorbeelden dat in één trainings stap wordt gebruikt. 
+4. **Batch grootte**: Typ het aantal trainings voorbeelden dat in één trainings stap wordt gebruikt. 
 
      Deze afstemming kan invloed hebben op de snelheid van de training. Een hogere Batch grootte leidt tot een minder tijdrovende kosten-epoche, maar kan de convergentie tijd verg Roten. En als batch te groot is voor GPU/CPU, treedt er een geheugen fout op.
 
-5.  **Wide Part Optimizer** : Selecteer één Optimizer om verlopen toe te passen op het brede deel van het model.
+5.  **Wide Part Optimizer**: Selecteer één Optimizer om verlopen toe te passen op het brede deel van het model.
 
-6.  **Breed optimalisatie leer tempo** : Voer een getal in tussen 0,0 en 2,0 dat het leer tempo van de Wide Part Optimizer definieert.
+6.  **Breed optimalisatie leer tempo**: Voer een getal in tussen 0,0 en 2,0 dat het leer tempo van de Wide Part Optimizer definieert.
 
     Deze afstemming bepaalt de grootte van de stap bij elke trainings stap, terwijl u naar een minimum van de verlies functie gaat. Een te groot leer tempo kan leiden tot meer informatie over de minima, terwijl een te klein leer tempo het convergentie probleem kan veroorzaken.
 
-7.  **Dimensie gekruiste functie** : Typ de dimensie door de gewenste gebruikers-id's en de onderdelen van de item-id in te voeren. 
+7.  **Dimensie gekruiste functie**: Typ de dimensie door de gewenste gebruikers-id's en de onderdelen van de item-id in te voeren. 
 
     Met de uitgebreide aanbevolen & diep gaande functie wordt de trans formatie op basis van gebruikers-id en item-id standaard uitgevoerd. Het gekruiste resultaat wordt gehasht op basis van dit aantal om ervoor te zorgen dat de dimensie.
 
-8.  **Optimizer van diepe onderdelen** : Selecteer één Optimizer om verlopen toe te passen op het diepe deel van het model.
+8.  **Optimizer van diepe onderdelen**: Selecteer één Optimizer om verlopen toe te passen op het diepe deel van het model.
 
-9.  **Diep optimalisatie-leer tempo** : Voer een getal in tussen 0,0 en 2,0 dat het leer tempo van het diepe deel Optimizer definieert.
+9.  **Diep optimalisatie-leer tempo**: Voer een getal in tussen 0,0 en 2,0 dat het leer tempo van het diepe deel Optimizer definieert.
 
 10.  **Dimensie** voor het insluiten van gebruikers: Typ een geheel getal om de dimensie van het insluiten van gebruikers-id's op te geven.
 
      De Wide & diepe aanbeveling maakt de gedeelde gebruikers-id-insluitingen en item-id-insluitingen voor zowel een breed deel als een diep rijk deel.
 
-11.  **Artikel insluitings dimensie** : Typ een geheel getal om de dimensie van het insluiten van item-id's op te geven.
+11.  **Artikel insluitings dimensie**: Typ een geheel getal om de dimensie van het insluiten van item-id's op te geven.
 
-12.  **Categorische-functies dimensie insluiten** : Voer een geheel getal in om de afmetingen van de categorische-functie insluitingen op te geven.
+12.  **Categorische-functies dimensie insluiten**: Voer een geheel getal in om de afmetingen van de categorische-functie insluitingen op te geven.
 
      In een diepe component van Wide & diep aanbevolen wordt een insluitings vector voor elke categorische-functie beschreven. En deze insluitings vectoren delen dezelfde dimensie.
 
-13.  **Verborgen eenheden** : Typ het aantal verborgen knoop punten van een diep onderdeel. Het knoop punt nummer in elke laag wordt gescheiden door komma's. Bijvoorbeeld: op type ' 1.000.500.100 ' geeft u op dat het diepe onderdeel drie lagen heeft, waarbij de eerste laag respectievelijk 1000 knoop punten, 500 knoop punten en 100 knoop punten heeft.
+13.  **Verborgen eenheden**: Typ het aantal verborgen knoop punten van een diep onderdeel. Het knoop punt nummer in elke laag wordt gescheiden door komma's. Bijvoorbeeld: op type ' 1.000.500.100 ' geeft u op dat het diepe onderdeel drie lagen heeft, waarbij de eerste laag respectievelijk 1000 knoop punten, 500 knoop punten en 100 knoop punten heeft.
 
-14.  **Activerings functie** : Selecteer één activerings functie die op elke laag wordt toegepast. de standaard waarde is ReLU.
+14.  **Activerings functie**: Selecteer één activerings functie die op elke laag wordt toegepast. de standaard waarde is ReLU.
 
-15.  **Dropout** : Voer een getal tussen 0,0 en 1,0 in om de kans te bepalen dat de uitvoer in elke laag tijdens de training wordt verwijderd.
+15.  **Dropout**: Voer een getal tussen 0,0 en 1,0 in om de kans te bepalen dat de uitvoer in elke laag tijdens de training wordt verwijderd.
 
      Dropout is een regularisatie-methode om te voor komen dat Neural-netwerken worden overpast. Een gemeen schappelijk besluit voor deze waarde is om te beginnen met 0,5, wat bijna goed lijkt voor een breed scala aan netwerken en taken.
 
-16.  **Batch normalisatie** : Selecteer deze optie om batch normalisatie na elke verborgen laag in het diepe onderdeel te gebruiken.
+16.  **Batch normalisatie**: Selecteer deze optie om batch normalisatie na elke verborgen laag in het diepe onderdeel te gebruiken.
 
      Batch normalisatie is een techniek voor het bestrijden van het interne covariate-verschuivings probleem tijdens netwerk training. Over het algemeen kan het helpen de snelheid, prestaties en stabiliteit van de netwerken te verbeteren. 
 
 17.  Voer de pijplijn uit.
+
+## <a name="results"></a>Resultaten
+
+Wanneer de uitvoering van de pijp lijn is voltooid, kunt u het model voor scores gebruiken door de [brede en diep gaande training](train-wide-and-deep-recommender.md) te verbinden met [Score breed en diep aanbevolen](score-wide-and-deep-recommender.md), om waarden te voors pellen voor nieuwe invoer voorbeelden.
 
 ##  <a name="technical-notes"></a>Technische opmerkingen
 

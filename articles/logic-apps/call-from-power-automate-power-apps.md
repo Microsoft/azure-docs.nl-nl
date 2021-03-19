@@ -7,10 +7,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.openlocfilehash: b402dab4c6e94a7634e11f0330b5379315e43abf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91762479"
 ---
 # <a name="call-logic-apps-from-power-automate-and-power-apps"></a>Logische apps aanroepen vanuit Power Automate en Power Apps
@@ -42,17 +42,17 @@ Voordat u uw logische app kunt aanroepen vanuit automatische energie of Power ap
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-1. Voer in het zoekvak van Azure Portal in `Logic Apps` . Selecteer in de resultaten onder **Services**de optie **Logic apps**.
+1. Voer in het zoekvak van Azure Portal in `Logic Apps` . Selecteer in de resultaten onder **Services** de optie **Logic apps**.
 
 1. Selecteer de logische app die u wilt exporteren.
 
-1. Selecteer **exporteren**in het menu van de logische app.
+1. Selecteer **exporteren** in het menu van de logische app.
 
     :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/export-logic-app.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
 
-1. Voer in het deel venster **exporteren** bij **naam**een naam in voor de aangepaste connector voor uw logische app. Selecteer in de lijst **omgeving** de omgeving energie automatisering of Power apps waarvan u de logische app wilt aanroepen. Wanneer u gereed bent, selecteert u **OK**.
+1. Voer in het deel venster **exporteren** bij **naam** een naam in voor de aangepaste connector voor uw logische app. Selecteer in de lijst **omgeving** de omgeving energie automatisering of Power apps waarvan u de logische app wilt aanroepen. Wanneer u gereed bent, selecteert u **OK**.
 
-    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/export-logic-app2.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
+    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/export-logic-app2.png" alt-text="Scherm afbeelding van het deel venster exporteren voor een logische app, met de vereiste velden voor de naam en omgeving van de aangepaste connector.":::
 
 1. Controleer het deel venster meldingen om te controleren of uw logische app is geëxporteerd.
 
@@ -70,17 +70,17 @@ Verbinding maken met de logische app die u hebt geëxporteerd met uw stroom voor
 
 1. Meld u aan bij [Power Automate](https://flow.microsoft.com).
 
-1. Selecteer **mijn stromen**in het menu Start pagina van **Power page automatiseren** .
+1. Selecteer **mijn stromen** in het menu Start pagina van **Power page automatiseren** .
 
 1. Selecteer op de pagina **stromen** de stroom die u wilt verbinden met uw logische app.
 
 1. Selecteer in het menu van de stroom pagina de optie **bewerken**.
 
-1. Selecteer **&#43; nieuwe stap**in de flow-editor.
+1. Selecteer **&#43; nieuwe stap** in de flow-editor.
 
 1. Onder **Kies een actie**, typt u in het zoekvak de naam van de logische app-connector. Als u wilt dat alleen de aangepaste connectors in uw omgeving worden weer gegeven, filtert u de resultaten door het **aangepaste** tabblad te selecteren.
 
-    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/power-automate-custom-connector-action.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
+    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/power-automate-custom-connector-action.png" alt-text="Scherm afbeelding van automatische stroom editor, met een nieuwe stap die wordt toegevoegd voor de aangepaste connector en beschik bare acties.":::
 
 1. Selecteer de actie die u wilt uitvoeren met de logische app-connector. 
 
@@ -102,9 +102,9 @@ Verbinding maken met de logische app die u hebt geëxporteerd met uw stroom voor
 
 1. Zoek uw aangepaste connector in de lijst en selecteer de knop met weglatings tekens (**...**) &gt; **verwijderen**.
 
-    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/delete-custom-connector.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
+    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/delete-custom-connector.png" alt-text="Scherm afbeelding van de pagina aangepaste connectors automatiseren, waarmee de aangepaste connector beheer knoppen van de logische app worden weer gegeven.":::
 
-1. Selecteer **OK**om de verwijdering te bevestigen.
+1. Selecteer **OK** om de verwijdering te bevestigen.
 
 ## <a name="connect-to-your-logic-app-from-power-apps"></a>Verbinding maken met uw logische app vanuit Power apps
 
@@ -122,7 +122,7 @@ Verbinding maken met de logische app die u hebt geëxporteerd met uw Power apps-
 
 1. Onder **Kies een actie** in de nieuwe stap, typt u de naam van de logische app-connector in het zoekvak. U kunt de resultaten ook filteren op het tabblad **aangepast** om alleen aangepaste connectors in uw omgeving weer te geven.
 
-    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/power-apps-custom-connector-action.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
+    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/power-apps-custom-connector-action.png" alt-text="Scherm afbeelding van de flow-editor van Power-apps, met een nieuwe stap die wordt toegevoegd voor de aangepaste connector en beschik bare acties.":::
 
 1. Selecteer de actie die u wilt uitvoeren met de connector. 
 
@@ -144,9 +144,9 @@ Verbinding maken met de logische app die u hebt geëxporteerd met uw Power apps-
 
 1. Zoek uw aangepaste connector in de lijst en selecteer de knop met weglatings tekens (**...**) &gt; **verwijderen**.
 
-    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/delete-custom-connector.png" alt-text="Scherm afbeelding van de pagina van de logische app in Azure Portal, waarin het menu met de knop export is geselecteerd.":::
+    :::image type="content" source="./media/call-logic-apps-from-power-automate-power-apps/delete-custom-connector.png" alt-text="Scherm afbeelding van de pagina aangepaste connectors van Power apps, met de aangepaste knop beheer knoppen van de logische app.":::
 
-1. Selecteer **OK**om de verwijdering te bevestigen.
+1. Selecteer **OK** om de verwijdering te bevestigen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

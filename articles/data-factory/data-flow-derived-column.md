@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/14/2020
 ms.openlocfilehash: 2e90a8779322cf8967ca9a194c6cc760f7c8b8f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90531979"
 ---
 # <a name="derived-column-transformation-in-mapping-data-flow"></a>Afgeleide kolom transformatie bij toewijzing van gegevens stroom
@@ -52,7 +52,7 @@ Zie [JSON handling in mapping data flow](format-json.md#mapping-data-flow-proper
 
 ### <a name="locals"></a>Locals
 
-Als u logica deelt over meerdere kolommen of als u uw logica wilt compartimenteren, kunt u een lokale maken binnen een afgeleide kolom transformatie. Een lokale is een set logica die niet aan de volgende trans formatie wordt door gegeven: downstream. Lokalen kunnen worden gemaakt in de opbouw functie voor expressies door naar **expressie-elementen** te gaan en **lokale**items te selecteren. Maak een nieuwe door **nieuwe maken**te selecteren.
+Als u logica deelt over meerdere kolommen of als u uw logica wilt compartimenteren, kunt u een lokale maken binnen een afgeleide kolom transformatie. Een lokale is een set logica die niet aan de volgende trans formatie wordt door gegeven: downstream. Lokalen kunnen worden gemaakt in de opbouw functie voor expressies door naar **expressie-elementen** te gaan en **lokale** items te selecteren. Maak een nieuwe door **nieuwe maken** te selecteren.
 
 ![Lokaal maken](media/data-flow/create-local.png "Lokaal maken")
 

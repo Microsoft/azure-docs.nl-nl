@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
 ms.openlocfilehash: 92e032eb104835788f515cc7800fe5dacfa8adaa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88566128"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Gebruikersaccounts in Azure API Management beheren
@@ -42,7 +42,7 @@ Volg de stappen in deze sectie om een nieuwe gebruiker toe te voegen:
 
     ![Een nieuwe gebruiker toevoegen](./media/api-management-howto-create-or-invite-developers/api-management-create-developer.png)
 
-Nieuw gemaakte ontwikkelaars accounts zijn standaard **actief**en zijn gekoppeld aan de groep **ontwikkel aars** . Ontwikkelaars accounts die zich in een **actieve** status bevinden, kunnen worden gebruikt voor toegang tot alle api's waarvoor ze abonnementen hebben. Zie [groepen koppelen aan ontwikkel aars][How to associate groups with developers]om de zojuist gemaakte ontwikkelaar te koppelen aan extra groepen.
+Nieuw gemaakte ontwikkelaars accounts zijn standaard **actief** en zijn gekoppeld aan de groep **ontwikkel aars** . Ontwikkelaars accounts die zich in een **actieve** status bevinden, kunnen worden gebruikt voor toegang tot alle api's waarvoor ze abonnementen hebben. Zie [groepen koppelen aan ontwikkel aars][How to associate groups with developers]om de zojuist gemaakte ontwikkelaar te koppelen aan extra groepen.
 
 ## <a name="invite-a-developer"></a><a name="invite-developer"> </a>Een ontwikkelaar uitnodigen
 Volg de stappen in deze sectie om een ontwikkelaar uit te nodigen:
@@ -56,7 +56,7 @@ Wanneer een ontwikkelaar wordt uitgenodigd, wordt een e-mail bericht naar de ont
 
 Zodra de uitnodiging is geaccepteerd, wordt het account actief.
 
-## <a name="deactivate-or-reactivate-a-developer-account"></a><a name="block-developer"> </a> Een ontwikkelaars account deactiveren of opnieuw activeren
+## <a name="deactivate-or-reactivate-a-developer-account"></a><a name="block-developer"></a> Een ontwikkelaars account deactiveren of opnieuw activeren
 
 Nieuw gemaakte of uitgenodigde ontwikkelaars accounts zijn standaard **actief**. Als u een ontwikkelaars account wilt deactiveren, klikt u op **blok keren**. Als u een geblokkeerd ontwikkelaars account opnieuw wilt activeren, klikt u op **activeren**. Een geblokkeerd ontwikkelaars account heeft geen toegang tot de ontwikkelaars portal of kan geen Api's aanroepen. Als u een gebruikers account wilt verwijderen, klikt u op **verwijderen**.
 

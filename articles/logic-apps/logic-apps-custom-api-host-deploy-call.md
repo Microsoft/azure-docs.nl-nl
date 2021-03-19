@@ -7,13 +7,13 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 05/13/2020
 ms.openlocfilehash: 7b4d00e8c0366d10fddafa66db699c1a59fd9ad7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83659783"
 ---
-# <a name="deploy-and-call-custom-apis-from-workflows-in-azure-logic-apps"></a>Aangepaste Api's implementeren en aanroepen vanuit werk stromen in Azure Logic Apps
+# <a name="deploy-and-call-custom-apis-from-workflows-in-azure-logic-apps"></a>Aangepaste API's implementeren en aanroepen vanuit werkstromen in Azure Logic Apps
 
 Nadat u [uw eigen api's hebt gemaakt](./logic-apps-create-api-app.md) voor gebruik in uw logische app-werk stromen, moet u die api's implementeren voordat u ze kunt aanroepen. U kunt uw Api's als [Web-apps](../app-service/overview.md)implementeren, maar u kunt ook uw Api's als [API-apps](../app-service/app-service-web-tutorial-rest-api.md)implementeren, waardoor uw taak eenvoudiger wordt wanneer u api's in de Cloud en on-premises bouwt, host en verbruikt. U hoeft geen code in uw Api's te wijzigen: implementeer gewoon uw code naar een API-app. U kunt uw Api's hosten op [Azure app service](../app-service/overview.md), een Paas-Aanbieding (platform-as-a-Service) die een uiterst schaal bare en eenvoudige API-hosting biedt.
 
@@ -25,13 +25,13 @@ Voordat u uw aangepaste API kunt aanroepen vanuit een logische app, implementeer
 
 1. Selecteer uw web-app of API-app in het [Azure Portal](https://portal.azure.com).
 
-2. Kies in het menu app dat wordt geopend, onder **API**de **API-definitie**. Stel de **locatie** van de API-definitie in op de URL voor uw swagger.jsin het bestand.
+2. Kies in het menu app dat wordt geopend, onder **API** de **API-definitie**. Stel de **locatie** van de API-definitie in op de URL voor uw swagger.jsin het bestand.
 
    Normaal gesp roken wordt de URL in de volgende indeling weer gegeven: `https://{name}.azurewebsites.net/swagger/docs/v1)`
 
    ![Koppeling naar Swagger-document voor uw aangepaste API](./media/logic-apps-custom-api-deploy-call/custom-api-swagger-url.png)
 
-3. Onder **API**kiest u **CORS**. Stel het CORS-beleid voor **toegestane oorsprongen** in op **' * '** (alles toestaan).
+3. Onder **API** kiest u **CORS**. Stel het CORS-beleid voor **toegestane oorsprongen** in op **' * '** (alles toestaan).
 
    Met deze instelling kunt u aanvragen van de ontwerp functie voor logische apps toestaan.
 

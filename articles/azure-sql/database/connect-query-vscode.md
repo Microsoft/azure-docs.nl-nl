@@ -14,10 +14,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
 ms.openlocfilehash: f823b6d04a217328fe2e825e64906460cd9cbae9
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92672480"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-and-query"></a>Quickstart: Visual Studio Code gebruiken om verbinding te maken en query's uit te voeren 
@@ -76,9 +76,9 @@ Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met de Az
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren** .
+2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren**.
 
-3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor SQL Database, of de volledig gekwalificeerde servernaam naast **Host** voor een met SQL beheerd exemplaar. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren** .
+3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor SQL Database, of de volledig gekwalificeerde servernaam naast **Host** voor een met SQL beheerd exemplaar. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren**.
 
 ## <a name="set-language-mode-to-sql"></a>Taalmodus instellen op SQL
 
@@ -86,11 +86,11 @@ Stel de taalmodus in Visual Studio Code in op **SQL** om mssql-opdrachten en T-S
 
 1. Open een nieuw Visual Studio Code venster.
 
-2. Druk op **Ctrl**+**N** . Hiermee wordt een nieuw bestand met tekst zonder opmaak geopend.
+2. Druk op **Ctrl**+**N**. Hiermee wordt een nieuw bestand met tekst zonder opmaak geopend.
 
 3. Selecteer **Tekst zonder opmaak** in de rechterbenedenhoek van de statusbalk.
 
-4. Selecteer in de vervolgkeuzelijst **Taalmodus selecteren** die wordt geopend de optie **SQL** .
+4. Selecteer in de vervolgkeuzelijst **Taalmodus selecteren** die wordt geopend de optie **SQL**.
 
 ## <a name="connect-to-your-database"></a>Verbinding maken met uw database
 
@@ -99,17 +99,17 @@ Gebruik Visual Studio Code om verbinding te maken met uw server.
 > [!IMPORTANT]
 > Zorg ervoor dat u de server- en aanmeldingsgegevens bij de hand hebt, voordat u verdergaat. Wanneer u de verbindingsprofielgegevens gaat invoeren, moet u ervoor zorgen dat de focus op Visual Studio Code blijft, omdat u anders opnieuw moet beginnen met het maken van het verbindingsprofiel.
 
-1. Druk in Visual Studio Code op **Ctrl+Shift+P** (of **F1** ) om het opdrachtenpalet te openen.
+1. Druk in Visual Studio Code op **Ctrl+Shift+P** (of **F1**) om het opdrachtenpalet te openen.
 
-2. Selecteer **MS SQL:Connect** en kies **Enter** .
+2. Selecteer **MS SQL:Connect** en kies **Enter**.
 
-3. Selecteer **Verbindingsprofiel maken** .
+3. Selecteer **Verbindingsprofiel maken**.
 
 4. Volg de aanwijzingen op om de verbindingseigenschappen voor het nieuwe profiel op te geven. Wanneer u een waarde hebt opgegeven, kiest u **Enter** om door te gaan.
 
    | Eigenschap       | Voorgestelde waarde | Beschrijving |
    | ------------ | ------------------ | ------------------------------------------------- |
-   | **Servernaam** | De volledig gekwalificeerde servernaam | Dit moet er ongeveer als volgt uitzien: **mijnnieuweserver20170313.database.windows.net** . |
+   | **Servernaam** | De volledig gekwalificeerde servernaam | Dit moet er ongeveer als volgt uitzien: **mijnnieuweserver20170313.database.windows.net**. |
    | **Databasenaam** | mySampleDatabase | De database waarmee verbinding moet worden gemaakt. |
    | **Verificatie** | SQL-aanmelding| In deze zelfstudie wordt gebruik gemaakt van SQL-verificatie. |
    | **Gebruikersnaam** | Gebruikersnaam | De gebruikersnaam van het serverbeheerdersaccount dat wordt gebruikt voor het maken van de server. |

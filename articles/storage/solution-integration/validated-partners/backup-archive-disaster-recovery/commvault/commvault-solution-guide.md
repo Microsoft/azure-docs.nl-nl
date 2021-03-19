@@ -8,12 +8,12 @@ ms.date: 03/15/2021
 ms.topic: conceptual
 ms.service: storage
 ms.subservice: partner
-ms.openlocfilehash: 29484bee685fcc15073ef255e65a780e05f1200d
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: ce321574ce2878f51864f55bf5618df2c96d1068
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103561665"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589885"
 ---
 # <a name="backup-to-azure-with-commvault"></a>Back-up naar Azure met CommVault
 
@@ -45,7 +45,7 @@ Met een kleine planning vooraf kunt u Azure gebruiken als een externe back-updoe
 
 ### <a name="get-started-with-azure"></a>Aan de slag met Azure
 
-Micro soft biedt een raam werk om aan de slag te gaan met Azure. Het [Cloud adoptie Framework](https://docs.microsoft.com/azure/architecture/cloud-adoption/) (CAF) is een gedetailleerde benadering van de digitale trans formatie van de onderneming en een uitgebreide gids voor het plannen van een productie-en Cloud acceptatie. De CAF bevat een stapsgewijze [hand leiding](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/azure-setup-guide/) voor het uitvoeren van een installatie van Azure, zodat u snel en veilig aan de slag kunt. U kunt een interactieve versie vinden in de [Azure Portal](https://portal.azure.com/?feature.quickstart=true#blade/Microsoft_Azure_Resources/QuickstartCenterBlade). Hier vindt u voor beelden van architecturen, specifieke aanbevolen procedures voor het implementeren van toepassingen en gratis trainings bronnen om u op het pad naar Azure-expertise te brengen.
+Micro soft biedt een raam werk om aan de slag te gaan met Azure. Het [Cloud adoptie Framework](/azure/architecture/cloud-adoption/) (CAF) is een gedetailleerde benadering van de digitale trans formatie van de onderneming en een uitgebreide gids voor het plannen van een productie-en Cloud acceptatie. De CAF bevat een stapsgewijze [hand leiding](/azure/cloud-adoption-framework/ready/azure-setup-guide/) voor het uitvoeren van een installatie van Azure, zodat u snel en veilig aan de slag kunt. U kunt een interactieve versie vinden in de [Azure Portal](https://portal.azure.com/?feature.quickstart=true#blade/Microsoft_Azure_Resources/QuickstartCenterBlade). Hier vindt u voor beelden van architecturen, specifieke aanbevolen procedures voor het implementeren van toepassingen en gratis trainings bronnen om u op het pad naar Azure-expertise te brengen.
 
 ### <a name="consider-the-network-between-your-location-and-azure"></a>Het netwerk tussen uw locatie en Azure overwegen
 
@@ -187,7 +187,7 @@ Het is raadzaam om uw Azure-resources te bewaken en de mogelijkheden van CommVau
 
 #### <a name="azure-portal"></a>Azure Portal
 
-Azure biedt een robuuste bewakings oplossing in de vorm van [Azure monitor](../../../../../azure-monitor/essentials/monitor-azure-resource.md). U kunt [Azure monitor configureren](../../../../common/monitor-storage.md) om Azure storage capaciteit, trans acties, Beschik baarheid, verificatie en meer bij te houden. U vindt hier de volledige referentie van de metrische gegevens die u [hier](../../../../blobs/monitor-blob-storage-reference.md)kunt verzamelen. Er zijn een aantal belang rijke metrische gegevens voor het volgen van BlobCapacity: om ervoor te zorgen dat u minder dan de maximale [opslag capaciteit](../../../../common/scalability-targets-standard-account.md), binnenkomend en uitgaand verkeer kunt volgen, zodat u kunt bijhouden van de hoeveelheid in uw Azure Storage-account geschreven en genoteerde informatie, en SuccessE2ELatency, om de retour tijd voor aanvragen van en naar Azure Storage en uw MediaAgent te volgen.
+Azure biedt een robuuste bewakings oplossing in de vorm van [Azure monitor](../../../../../azure-monitor/essentials/monitor-azure-resource.md). U kunt [Azure monitor configureren](../../../../blobs/monitor-blob-storage.md) om Azure storage capaciteit, trans acties, Beschik baarheid, verificatie en meer bij te houden. U vindt hier de volledige referentie van de metrische gegevens die u [hier](../../../../blobs/monitor-blob-storage-reference.md)kunt verzamelen. Er zijn een aantal belang rijke metrische gegevens voor het volgen van BlobCapacity: om ervoor te zorgen dat u minder dan de maximale [opslag capaciteit](../../../../common/scalability-targets-standard-account.md), binnenkomend en uitgaand verkeer kunt volgen, zodat u kunt bijhouden van de hoeveelheid in uw Azure Storage-account geschreven en genoteerde informatie, en SuccessE2ELatency, om de retour tijd voor aanvragen van en naar Azure Storage en uw MediaAgent te volgen.
 
 U kunt ook [waarschuwingen voor logboeken maken](../../../../../service-health/alerts-activity-log-service-notifications-portal.md) om Azure Storage service status bij te houden en het [Azure-status dashboard](https://status.azure.com/status) weer te geven op elk gewenst moment.
 

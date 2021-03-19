@@ -1,6 +1,6 @@
 ---
 title: 'Snelle Quantile regressie voor forests: module verwijzing'
-titleSuffix: Azure Machine Learning
+titleSuffix: Azure Machine Learning
 description: Meer informatie over hoe u de Quantile regressie module van het snelle forest kunt gebruiken om een regressie model te maken waarmee waarden voor een opgegeven aantal quantiles kunnen worden voor speld.
 services: machine-learning
 ms.service: machine-learning
@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 07/13/2020
 ms.openlocfilehash: 6d59d2fabb0b74ef12e33f55467b0ba68e0b7386
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90907958"
 ---
 # <a name="fast-forest-quantile-regression"></a>Regressie snelle forestkwantiel
@@ -43,7 +43,7 @@ Quantile regressie helpt u bij het begrijpen van de distributie van de voorspeld
   
 ## <a name="how-to-configure-fast-forest-quantile-regression"></a>Quantile regressie van Fast forest configureren
 
-1. Voeg de **Quantile regressie** module van het snelle forest toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-algoritmen**in de categorie **regressie** .
+1. Voeg de **Quantile regressie** module van het snelle forest toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-algoritmen** in de categorie **regressie** .
 
 2. Geef in het rechterdeel venster van de Quantile regressie-module van **Fast forest** op hoe u wilt dat het model wordt getraind door de optie voor het maken van de **trainer** in te stellen.  
   
@@ -55,7 +55,7 @@ Quantile regressie helpt u bij het begrijpen van de distributie van de voorspeld
 
 4. **Aantal bladeren**, typ het maximum aantal bladeren of Terminal knooppunten dat in een wille keurige boom structuur kan worden gemaakt.  
 
-5. **Mini maal aantal trainings instanties dat is vereist voor**het maken van een blad, geeft u het minimum aantal voor beelden op dat nodig is om een Terminal knooppunt (Leaf) in een boom structuur te creëren.  
+5. **Mini maal aantal trainings instanties dat is vereist voor** het maken van een blad, geeft u het minimum aantal voor beelden op dat nodig is om een Terminal knooppunt (Leaf) in een boom structuur te creëren.  
   
      Door deze waarde te verhogen, verhoogt u de drempel voor het maken van nieuwe regels. Met de standaard waarde 1 kan zelfs een enkele case ertoe leiden dat een nieuwe regel wordt gemaakt. Als u de waarde op 5 verhoogt, moeten de opleidings gegevens ten minste 5 gevallen bevatten die aan dezelfde voor waarden voldoen.
 

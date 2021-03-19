@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5b820b8b9606795709d03414fa14ec29a1b5c519
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92441552"
 ---
 # <a name="dynamic-groups-and-azure-active-directory-b2b-collaboration"></a>Dynamische groepen en Azure Active Directory B2B-samen werking
@@ -30,9 +30,9 @@ U kunt een groep met alle gebruikers binnen een Tenant maken met behulp van een 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met een account dat is toegewezen aan de rol van globale beheerder of gebruiker beheerder in de Tenant.
 1. Selecteer **Azure Active Directory**.
-2. Selecteer onder **beheren**de optie **groepen**en selecteer vervolgens **nieuwe groep**.
-1. Selecteer op de pagina **nieuwe groep** onder **groeps type**de optie **beveiliging**. Voer een **naam** en **beschrijving** in voor de nieuwe groep. 
-2. Selecteer onder **lidmaatschaps type**de optie **dynamische gebruiker**en selecteer vervolgens **dynamische query toevoegen**. 
+2. Selecteer onder **beheren** de optie **groepen** en selecteer vervolgens **nieuwe groep**.
+1. Selecteer op de pagina **nieuwe groep** onder **groeps type** de optie **beveiliging**. Voer een **naam** en **beschrijving** in voor de nieuwe groep. 
+2. Selecteer onder **lidmaatschaps type** de optie **dynamische gebruiker** en selecteer vervolgens **dynamische query toevoegen**. 
 4. Selecteer boven het tekstvak **syntaxis van regel** de optie **bewerken**. Typ op de pagina **syntaxis van regel bewerken** de volgende expressie in het tekstvak:
 
    ```

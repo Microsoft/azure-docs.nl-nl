@@ -7,15 +7,15 @@ ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 110fc658ffc3b72de91bbf1c9562f3efeecaf55b
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92342413"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Het vFXT-cluster implementeren
 
-Deze procedure begeleidt u bij het gebruik van de implementatie wizard die beschikbaar is via Azure Marketplace. De wizard implementeert automatisch het cluster met behulp van een Azure Resource Manager sjabloon. Nadat u de para meters in het formulier hebt ingevoerd en op **maken**hebt geklikt, worden deze taken automatisch door Azure voltooid:
+Deze procedure begeleidt u bij het gebruik van de implementatie wizard die beschikbaar is via Azure Marketplace. De wizard implementeert automatisch het cluster met behulp van een Azure Resource Manager sjabloon. Nadat u de para meters in het formulier hebt ingevoerd en op **maken** hebt geklikt, worden deze taken automatisch door Azure voltooid:
 
 * Maakt de cluster controller, een basis-VM die de software bevat die nodig is voor het implementeren en beheren van het cluster.
 * Hiermee stelt u de resource groep en de infra structuur van het virtuele netwerk in, inclusief het maken van nieuwe elementen.
@@ -147,7 +147,7 @@ De informatie zoeken:
 
 1. Ga naar de resource groep voor de cluster controller.
 
-1. Klik aan de linkerkant op **implementaties**en vervolgens op **micro soft-avere. vfxt-Temp late**.
+1. Klik aan de linkerkant op **implementaties** en vervolgens op **micro soft-avere. vfxt-Temp late**.
 
    ![De portal pagina van de resource groep met implementaties geselecteerd aan de linkerkant en micro soft-avere. vfxt: de sjabloon die wordt weer gegeven in een tabel onder implementatie naam](media/avere-vfxt-outputs-deployments.png)
 

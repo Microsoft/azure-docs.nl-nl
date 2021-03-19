@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: tomfitz
 ms.openlocfilehash: e4255f0d42e28a72ad55d9b7f81d0dc49b2950cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87040992"
 ---
 # <a name="createuidefinition-functions"></a>CreateUiDefinition-functies
@@ -46,10 +46,10 @@ Deze functies kunnen worden gebruikt in combi natie met verzamelingen, zoals JSO
 * [instantie](create-ui-definition-collection-functions.md#first)
 * [duren](create-ui-definition-collection-functions.md#last)
 * [length](create-ui-definition-collection-functions.md#length)
-* [map](create-ui-definition-collection-functions.md#map)
+* [diagram](create-ui-definition-collection-functions.md#map)
 * [verdergaan](create-ui-definition-collection-functions.md#skip)
 * [delen](create-ui-definition-collection-functions.md#split)
-* [take](create-ui-definition-collection-functions.md#take)
+* [Houd](create-ui-definition-collection-functions.md#take)
 
 ## <a name="conversion-functions"></a>Conversiefuncties
 
@@ -62,8 +62,8 @@ Deze functies kunnen worden gebruikt om waarden te converteren tussen JSON-gegev
 * [encodeUriComponent](create-ui-definition-conversion-functions.md#encodeuricomponent)
 * [float](create-ui-definition-conversion-functions.md#float)
 * [int](create-ui-definition-conversion-functions.md#int)
-* [parseren](create-ui-definition-conversion-functions.md#parse)
-* [tekenreeksexpressie](create-ui-definition-conversion-functions.md#string)
+* [parse](create-ui-definition-conversion-functions.md#parse)
+* [tekenreeks](create-ui-definition-conversion-functions.md#string)
 
 ## <a name="date-functions"></a>Datumfuncties
 
@@ -82,7 +82,7 @@ Deze functies kunnen worden gebruikt in voor waarden. Sommige functies bieden mo
 * [groter](create-ui-definition-logical-functions.md#greater)
 * [greaterOrEquals](create-ui-definition-logical-functions.md#greaterorequals)
 * [If](create-ui-definition-logical-functions.md#if)
-* [less](create-ui-definition-logical-functions.md#less)
+* [jonge](create-ui-definition-logical-functions.md#less)
 * [lessOrEquals](create-ui-definition-logical-functions.md#lessorequals)
 * [ten](create-ui-definition-logical-functions.md#not)
 * [or](create-ui-definition-logical-functions.md#or)

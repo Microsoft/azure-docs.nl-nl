@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2019
 ms.openlocfilehash: 04950f01c06bc3c8ed3bb11a790310c2319a0579
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90900310"
 ---
 # <a name="sysexternal_streams-transact-sql"></a>sys.external_streams (Transact-SQL)
@@ -31,11 +31,11 @@ Retourneert een rij voor elk extern Stream-object dat binnen het bereik van de d
 |**type_desc**|**nvarchar (60)**| Beschrijving van het object type. Voor Stream-objecten is het type altijd ' EXTERNAL_STREAM '|
 |**create_date**|**datum/tijd**| De datum waarop het object is gemaakt.|
 |**modify_date**|**datum/tijd**| De datum waarop het object voor het laatst is gewijzigd met behulp van een instructie ALTER.|
-|**is_ms_shipped**|**bit**| Object gemaakt door een intern onderdeel.|  
-|**is_published**|**bit**|Het object wordt gepubliceerd.|  
-|**is_schema_published**|**bit**|Alleen het schema van het object wordt gepubliceerd.|
-|**max_column_id_used**|**bit**| Deze kolom wordt gebruikt voor interne doel einden en wordt in de toekomst verwijderd|  
-|**uses_ansi_nulls**|**bit**| Stream-object is gemaakt met de optie SET ANSI_NULLS Data Base op|
+|**is_ms_shipped**|**bitmask**| Object gemaakt door een intern onderdeel.|  
+|**is_published**|**bitmask**|Het object wordt gepubliceerd.|  
+|**is_schema_published**|**bitmask**|Alleen het schema van het object wordt gepubliceerd.|
+|**max_column_id_used**|**bitmask**| Deze kolom wordt gebruikt voor interne doel einden en wordt in de toekomst verwijderd|  
+|**uses_ansi_nulls**|**bitmask**| Stream-object is gemaakt met de optie SET ANSI_NULLS Data Base op|
 |**data_source_id**|**int**| De object-ID voor de externe gegevens bron die wordt vertegenwoordigd door het Stream-object |  
 |**file_format_id**|**int**| De object-ID voor de externe bestands indeling die wordt gebruikt door het Stream-object. De externe bestands indeling is vereist om de werkelijke indeling op te geven van de gegevens waarnaar wordt verwezen door een externe stroom| 
 |**location**|**varchar (max)**| Het doel voor het externe Stream-object. Raadpleeg voor meer informatie [externe stroom maken](overview.md) |

@@ -14,10 +14,10 @@ ms.custom: it-pro, seodec18
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cbd7eecd80b528b1d20d016d51c985bc24d1301d
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92371797"
 ---
 # <a name="add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Een groep toevoegen aan of verwijderen uit een andere groep met behulp van Azure Active Directory
@@ -36,7 +36,7 @@ U kunt een bestaande beveiligings groep toevoegen aan een andere bestaande bevei
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met het account van een globale administrator voor de map.
 
-2. Selecteer **Azure Active Directory**en selecteer vervolgens **groepen**.
+2. Selecteer **Azure Active Directory** en selecteer vervolgens **groepen**.
 
 3. Op de pagina **groepen-alle groepen** zoekt en selecteert u de groep die lid moet worden van een andere groep. Voor deze oefening gebruiken we het **MDM-beleid-westelijke** groep.
 

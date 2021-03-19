@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b27055ce84bbb073045b69b942fd13f4fde4e3b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90563859"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-architecture"></a>Azure AD Connect synchronisatie: uitleg van de architectuur
@@ -32,7 +32,7 @@ De synchronisatie-engine maakt een geïntegreerde weer gave van objecten die zij
 ### <a name="connected-data-sources-and-connectors"></a>Verbonden gegevens bronnen en connectors
 De synchronisatie-engine verwerkt identiteits gegevens uit verschillende gegevens opslagplaatsen, zoals Active Directory of een SQL Server-Data Base. Elke gegevensopslag plaats waarmee gegevens worden ingedeeld in een Data Base-achtige indeling en die standaard methoden voor gegevens toegang biedt, is een potentiële gegevens bron kandidaat voor de synchronisatie-engine. De gegevens opslagplaatsen die door de synchronisatie-engine worden gesynchroniseerd, worden **verbonden gegevens bronnen** of **verbonden directory's** (cd) genoemd.
 
-De synchronisatie-engine encapsulateert interactie met een verbonden gegevens bron binnen een module die een **connector**wordt genoemd. Elk type verbonden gegevens bron heeft een specifieke connector. De connector zet een vereiste bewerking om in de indeling die de verbonden gegevens bron begrijpt.
+De synchronisatie-engine encapsulateert interactie met een verbonden gegevens bron binnen een module die een **connector** wordt genoemd. Elk type verbonden gegevens bron heeft een specifieke connector. De connector zet een vereiste bewerking om in de indeling die de verbonden gegevens bron begrijpt.
 
 Connectors maken API-aanroepen naar Exchange-identiteits gegevens (zowel lezen als schrijven) met een verbonden gegevens bron. Het is ook mogelijk om een aangepaste connector toe te voegen met behulp van het Extensible Connectivity Framework. In de volgende afbeelding ziet u hoe een connector een verbonden gegevens bron verbindt met de synchronisatie-engine.
 
@@ -173,7 +173,7 @@ Voor elk object dat in de connector is opgegeven, probeert de synchronisatie-eng
 Wanneer de synchronisatie-engine een staging-object vindt dat overeenkomt met de DN-naam, maar niet op basis van het anker, gebeurt het volgende speciale gedrag:
 
 * Als het object dat zich in de connector ruimte bevindt, geen anker heeft, wordt dit object door de synchronisatie-engine uit de ruimte van de connector verwijderd en wordt het omgekeerde object gemarkeerd als **opnieuw inrichten bij de volgende synchronisatie**. Vervolgens wordt het nieuwe import object gemaakt.
-* Als het object dat zich in de connector ruimte bevindt een anker heeft, wordt ervan uitgegaan dat dit object is hernoemd of verwijderd uit de verbonden Directory. Er wordt een tijdelijke, nieuwe DN-naam voor het object voor de connector ruimte toegewezen zodat het binnenkomende object kan worden gestage. Het oude object wordt vervolgens **tijdelijk**en er wordt gewacht tot de connector de naam wijzigen of verwijderen heeft geïmporteerd om de situatie op te lossen.
+* Als het object dat zich in de connector ruimte bevindt een anker heeft, wordt ervan uitgegaan dat dit object is hernoemd of verwijderd uit de verbonden Directory. Er wordt een tijdelijke, nieuwe DN-naam voor het object voor de connector ruimte toegewezen zodat het binnenkomende object kan worden gestage. Het oude object wordt vervolgens **tijdelijk** en er wordt gewacht tot de connector de naam wijzigen of verwijderen heeft geïmporteerd om de situatie op te lossen.
 
 Als de synchronisatie-engine een staging-object vindt dat overeenkomt met het object dat is opgegeven in de connector, wordt bepaald welke soort wijzigingen moeten worden toegepast. De synchronisatie-engine kan bijvoorbeeld de naam wijzigen of verwijderen van het object in de verbonden gegevens bron, of kan de kenmerk waarden van het object alleen bijwerken.
 
@@ -182,7 +182,7 @@ Tijdelijke objecten met bijgewerkte gegevens worden gemarkeerd als import in beh
 * **Geen**. Er zijn geen wijzigingen in de kenmerken van het staging-object beschikbaar. De synchronisatie-engine markeert dit type niet als import in behandeling.
 * **Toevoegen**. Het staging-object is een nieuw import object in de ruimte van de connector. De synchronisatie-engine markeert dit type als in behandeling zijnde invoer voor aanvullende verwerking in de tekst.
 * **Update**. De synchronisatie-engine vindt een overeenkomend staging-object in de connector ruimte en markeert dit type als import in behandeling, zodat de updates van de kenmerken kunnen worden verwerkt in de tekst. Updates zijn onder andere het wijzigen van object namen.
-* **Verwijderen**. De synchronisatie-engine vindt een bijbehorend staging-object in de connector ruimte en markeert dit type als in behandeling zijnde invoer zodat het gekoppelde object kan worden verwijderd.
+* **Delete**. De synchronisatie-engine vindt een bijbehorend staging-object in de connector ruimte en markeert dit type als in behandeling zijnde invoer zodat het gekoppelde object kan worden verwijderd.
 * **Verwijderen/toevoegen**. De synchronisatie-engine vindt een overeenkomend staging-object in de connector ruimte, maar de object typen komen niet overeen. In dit geval wordt een wijziging van het toevoegen van een verwijdering verwijderd. Een verwijderings wijziging toevoegen geeft aan de synchronisatie-engine aan dat een volledige hersynchronisatie van dit object moet plaatsvinden omdat verschillende sets regels van toepassing zijn op dit object wanneer het object type wordt gewijzigd.
 
 Door de import status in behandeling van een staging-object in te stellen, is het mogelijk om de hoeveelheid gegevens die tijdens de synchronisatie wordt verwerkt, aanzienlijk te verminderen, omdat het systeem hiermee alleen de objecten kan verwerken die bijgewerkte gegevens hebben.

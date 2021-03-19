@@ -4,10 +4,10 @@ description: Leer hoe u aangepaste tags maakt in Azure DevTest Labs en tags gebr
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a4d2b328626f0d0f096082fa88bb170894ccf3e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88270730"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Tags toevoegen aan een lab in Azure DevTest Labs
@@ -30,13 +30,13 @@ Elke tag bestaat uit een combi natie van een **naam** / **waarde** . U kunt bijv
 ## <a name="steps-to-manage-tags-in-an-existing-lab"></a>Stappen voor het beheren van tags in een bestaand Lab
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer indien nodig **alle services**en selecteer vervolgens **DevTest Labs** in de lijst. Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**.
+1. Selecteer indien nodig **alle services** en selecteer vervolgens **DevTest Labs** in de lijst. Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**.
 1. Selecteer in de lijst met Labs het lab waarin u labels wilt toevoegen of beheren.
 1. Selecteer in het gedeelte **overzicht** van het lab de optie **configuratie en beleid**.
 
     ![Knop configuratie en beleid](./media/devtest-lab-add-tag/devtestlab-config-and-policies.png)
 
-1. Selecteer aan de linkerkant onder **beheren**de optie **Tags**.
+1. Selecteer aan de linkerkant onder **beheren** de optie **Tags**.
 1. Als u een nieuwe tag voor dit Lab wilt maken, voert u een **naam** / **waarde** paar in en selecteert u **Opslaan**. U kunt ook een bestaande tag in de lijst selecteren om de resources die zijn gekoppeld aan deze tag te bekijken of te beheren.
 
     ![Tags beheren](./media/devtest-lab-add-tag/devtestlab-manage-tags.png)

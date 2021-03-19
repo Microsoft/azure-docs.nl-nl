@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 01/29/2021
-ms.openlocfilehash: 712a933276393890bf017a2517196031306233ad
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: bc1dea8121d7986b8394adf6545a0b2c30afb133
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100573007"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580178"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
@@ -46,7 +46,7 @@ In het volgende diagram ziet u de onderdelen die u configureert in uw Azure AD-e
 
 ![Projectie van resource groep](./media/azure-monitor/resource-group-projection.png)
 
-Tijdens deze implementatie configureert u uw Azure AD B2C Tenant en Azure AD-Tenant waar de Log Analytics-werk ruimte wordt gehost. Aan het account dat wordt gebruikt om de implementatie uit te voeren, moet de rol [globale beheerder](../active-directory/roles/permissions-reference.md#limit-use-of-global-administrator) zijn toegewezen in beide tenants. Het is ook belang rijk om ervoor te zorgen dat u bent aangemeld bij de juiste directory bij het volt ooien van elke stap zoals beschreven.
+Tijdens deze implementatie configureert u uw Azure AD B2C Tenant en Azure AD-Tenant waar de Log Analytics-werk ruimte wordt gehost. Aan het Azure AD B2C-account moet de rol van [globale beheerder](../active-directory/roles/permissions-reference.md#limit-use-of-global-administrator) zijn toegewezen op de Azure AD B2C Tenant. Aan het Azure AD-account dat wordt gebruikt om de implementatie uit te voeren, moet de rol [eigenaar](../role-based-access-control/built-in-roles.md#owner) worden toegewezen in het Azure AD-abonnement. Het is ook belang rijk om ervoor te zorgen dat u bent aangemeld bij de juiste directory bij het volt ooien van elke stap zoals beschreven.
 
 ## <a name="1-create-or-choose-resource-group"></a>1. Maak of kies een resource groep
 
@@ -97,7 +97,7 @@ Vervolgens maakt u een Azure Resource Manager sjabloon waarmee Azure AD B2C toeg
 2. Selecteer het pictogram voor het adres van de map en het **abonnement** op de werk balk van de portal en selecteer vervolgens de map die uw **Azure AD** -Tenant bevat.
 3. Gebruik de knop **implementeren naar Azure** om de Azure portal te openen en de sjabloon direct in de portal te implementeren. Zie [een Azure Resource Manager sjabloon maken](../lighthouse/how-to/onboard-customer.md#create-an-azure-resource-manager-template)voor meer informatie.
 
-   [![Implementeren in Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzure-Lighthouse-samples%2Fmaster%2Ftemplates%2Frg-delegated-resource-management%2FrgDelegatedResourceManagement.json)
+   [![Implementeren in Azure](https://aka.ms/deploytoazurebutton)](   https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure-ad-b2c%2Fsiem%2Fmaster%2Ftemplates%2FrgDelegatedResourceManagement.json)
 
 5. Voer op de pagina **aangepaste implementatie** de volgende gegevens in:
 

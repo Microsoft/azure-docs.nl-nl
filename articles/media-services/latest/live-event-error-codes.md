@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: error-reference
 ms.date: 02/12/2020
 ms.author: inhenkel
-ms.openlocfilehash: b3be465c488bdd3c5dbd62f757733939d1bee393
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5463f1d8376cbe1a6e81d17c1f95a84e67f3b418
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100393510"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581079"
 ---
 # <a name="media-services-live-event-error-codes"></a>Fout codes voor Live-gebeurtenissen Media Services
 
@@ -28,7 +28,7 @@ In de volgende tabellen worden de fout codes voor [Live-gebeurtenissen](live-eve
 
 ## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected
 
-Wanneer u zich abonneert op de [Event grid](../../event-grid/index.yml) gebeurtenissen voor een live gebeurtenis, ziet u mogelijk een van de volgende fouten van de [LiveEventConnectionRejected](media-services-event-schemas.md\#liveeventconnectionrejected) -gebeurtenis.
+Wanneer u zich abonneert op de [Event grid](../../event-grid/index.yml) gebeurtenissen voor een live gebeurtenis, ziet u mogelijk een van de volgende fouten van de [LiveEventConnectionRejected](monitoring/media-services-event-schemas.md\#liveeventconnectionrejected) -gebeurtenis.
 > [!div class="mx-tdCol2BreakAll"]
 >| Fout | Informatie |
 >|--|--|
@@ -68,7 +68,7 @@ Wanneer u zich abonneert op de [Event grid](../../event-grid/index.yml) gebeurte
 
 ## <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected
 
-Mogelijk wordt een van de volgende fouten weer geven in de [LiveEventEncoderDisconnected](media-services-event-schemas.md\#liveeventencoderdisconnected) -gebeurtenis.
+Mogelijk wordt een van de volgende fouten weer geven in de [LiveEventEncoderDisconnected](monitoring/media-services-event-schemas.md\#liveeventencoderdisconnected) -gebeurtenis.
 
 > [!div class="mx-tdCol2BreakAll"]
 >| Fout | Informatie |

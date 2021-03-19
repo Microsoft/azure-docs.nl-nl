@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 54b6ae227fc4b3b951717799660543c02874dda0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88919655"
 ---
 # <a name="odata-select-syntax-in-azure-cognitive-search"></a>OData-$select syntaxis in azure Cognitive Search
@@ -57,7 +57,7 @@ De para meter **$Select** is beschikbaar in twee vormen:
 
 Wanneer u het tweede formulier gebruikt, mag u alleen ophalen bare velden in de lijst opgeven.
 
-Als u een complex veld vermeldt zonder de subvelden expliciet op te geven, worden alle subvelden die kunnen worden opgehaald, opgenomen in de resultatenset van de query. Stel bijvoorbeeld dat uw index een veld bevat `Address` met `Street` , `City` en `Country` Subvelden die allemaal kunnen worden opgehaald. Als u `Address` in **$Select**opgeeft, worden in de query resultaten alle drie subvelden weer geven.
+Als u een complex veld vermeldt zonder de subvelden expliciet op te geven, worden alle subvelden die kunnen worden opgehaald, opgenomen in de resultatenset van de query. Stel bijvoorbeeld dat uw index een veld bevat `Address` met `Street` , `City` en `Country` Subvelden die allemaal kunnen worden opgehaald. Als u `Address` in **$Select** opgeeft, worden in de query resultaten alle drie subvelden weer geven.
 
 ## <a name="examples"></a>Voorbeelden
 

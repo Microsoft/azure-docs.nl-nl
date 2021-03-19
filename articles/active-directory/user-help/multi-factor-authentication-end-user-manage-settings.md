@@ -13,10 +13,10 @@ ms.topic: end-user-help
 ms.date: 07/06/2020
 ms.author: curtand
 ms.openlocfilehash: e0a6c566e8e0dfb77b5899f735020d0f1facf3d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88798377"
 ---
 # <a name="change-your-two-factor-verification-method-and-settings"></a>De twee ledige verificatie methode en-instellingen wijzigen
@@ -128,7 +128,7 @@ Afhankelijk van de instellingen van uw organisatie ziet u mogelijk een selectie 
 
 ### <a name="to-turn-two-factor-verification-prompts-back-on-for-your-devices"></a>Om twee ledige verificatie vragen weer in te scha kelen voor uw apparaten
 
-Selecteer op de [pagina **aanvullende beveiligings verificatie** ](#to-get-to-the-additional-security-verification-page)de optie **multi-factor Authentication herstellen op eerder vertrouwde apparaten**. De volgende keer dat u zich aanmeldt op een apparaat, wordt u gevraagd om twee ledige verificatie uit te voeren.
+Selecteer op de [pagina **aanvullende beveiligings verificatie**](#to-get-to-the-additional-security-verification-page)de optie **multi-factor Authentication herstellen op eerder vertrouwde apparaten**. De volgende keer dat u zich aanmeldt op een apparaat, wordt u gevraagd om twee ledige verificatie uit te voeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

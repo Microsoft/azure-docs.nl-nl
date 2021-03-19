@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 694d63dacedd8ffcd075e73bb91b5ab0a089b58c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91766499"
 ---
 # <a name="configure-chap-for-your-storsimple-device"></a>CHAP configureren voor uw StorSimple-apparaat
@@ -163,7 +163,7 @@ U kunt controleren of CHAP wordt gebruikt door de volgende stappen uit te voeren
 3. Klik op **Details**.
    
     ![eigenschappen favoriete doelen iSCSI-initiator](./media/storsimple-configure-chap/IC740951.png)
-4. In het dialoog venster **doel Details van favoriet** ziet u de vermelding in het veld **verificatie** . Als de configuratie is geslaagd, moet **CHAP**worden gedicteerd.
+4. In het dialoog venster **doel Details van favoriet** ziet u de vermelding in het veld **verificatie** . Als de configuratie is geslaagd, moet **CHAP** worden gedicteerd.
    
     ![Details van favoriet doel](./media/storsimple-configure-chap/IC740952.png)
 

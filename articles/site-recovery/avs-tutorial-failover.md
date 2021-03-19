@@ -9,10 +9,10 @@ ms.date: 09/30/2020
 ms.author: harshacs
 ms.custom: MVC
 ms.openlocfilehash: 60c268ba837540eda86a4cbaf6e0ab1c425d90b4
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91814190"
 ---
 # <a name="fail-over--azure-vmware-solution-vms"></a>Failover-overschakeling uitvoeren van Azure VMware Solution VM's
@@ -48,7 +48,7 @@ Voordat u een failover uitvoert, controleert u de eigenschappen van de VM om erv
 
 Controleer de eigenschappen als volgt:
 
-1. Selecteer in **Beveiligde items**de optie **Gerepliceerde items** en selecteer vervolgens de VM die u wilt controleren.
+1. Selecteer in **Beveiligde items** de optie **Gerepliceerde items** en selecteer vervolgens de VM die u wilt controleren.
 
 2. In het deelvenster **Gerepliceerd item** bevindt zich een overzicht van VM-informatie, status, en de laatste beschikbare herstelpunten. Selecteer **Eigenschappen** om meer details te bekijken.
 

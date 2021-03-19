@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
 ms.openlocfilehash: 5b7943b2026d640ae7e5d119e165bd752ae2fe7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898819"
 ---
 # <a name="clean-missing-data-module"></a>Ontbrekende gegevens module wissen
@@ -58,11 +58,11 @@ Telkens wanneer u de module  [clean Missing Data](./clean-missing-data.md) toepa
 
     1. Selecteer de module **clean Missing Data** en klik op **kolom bewerken** in het rechter paneel van de module.
 
-    3. Voor **opnemen**selecteert u **kolom typen** in de vervolg keuzelijst en selecteert u vervolgens **Numeriek**. 
+    3. Voor **opnemen** selecteert u **kolom typen** in de vervolg keuzelijst en selecteert u vervolgens **Numeriek**. 
   
     Elke opschonings-of vervangings methode die u kiest, moet van toepassing zijn op **alle** kolommen in de selectie. Als de gegevens in een kolom incompatibel zijn met de opgegeven bewerking, retourneert de module een fout en stopt de pijp lijn.
   
-3.  Geef voor de **minimale waarde**van de vereiste voor de ondergrens het minimale aantal ontbrekende waarden op dat vereist is voor de bewerking die moet worden uitgevoerd.  
+3.  Geef voor de **minimale waarde** van de vereiste voor de ondergrens het minimale aantal ontbrekende waarden op dat vereist is voor de bewerking die moet worden uitgevoerd.  
   
     U gebruikt deze optie in combi natie met de **Maxi maal ontbrekende waarde ratio** om de voor waarden te definiëren waaronder een reinigings bewerking wordt uitgevoerd op de gegevensset. Als er te veel of te weinig rijen zijn met ontbrekende waarden, kan de bewerking niet worden uitgevoerd. 
   
@@ -73,7 +73,7 @@ Telkens wanneer u de module  [clean Missing Data](./clean-missing-data.md) toepa
     > 
     > Als u twijfelt of ontbrekende waarden zijn gewijzigd, selecteert u de optie voor het **genereren van een ontbrekende waarde indicator kolom**. Er wordt een kolom toegevoegd aan de gegevensset om aan te geven of elke kolom voldoet aan de opgegeven criteria voor het minimum-en maximum aantal bereiken.  
   
-4. Geef voor de **maximale waarde**voor de ontbrekende hoeveelheid een maximum aantal ontbrekende waarden op dat aanwezig kan zijn voor de bewerking die moet worden uitgevoerd.   
+4. Geef voor de **maximale waarde** voor de ontbrekende hoeveelheid een maximum aantal ontbrekende waarden op dat aanwezig kan zijn voor de bewerking die moet worden uitgevoerd.   
   
     Het is bijvoorbeeld mogelijk dat u de vervanging van de waarde alleen wilt uitvoeren als 30% of minder van de rijen ontbrekende waarden bevat, maar laat de waarden ongewijzigd als er meer dan 30% rijen ontbrekende waarden bevatten.  
   
@@ -81,7 +81,7 @@ Telkens wanneer u de module  [clean Missing Data](./clean-missing-data.md) toepa
   
    
   
-5. Voor de **reinigings modus**selecteert u een van de volgende opties voor het vervangen of verwijderen van ontbrekende waarden:  
+5. Voor de **reinigings modus** selecteert u een van de volgende opties voor het vervangen of verwijderen van ontbrekende waarden:  
   
   
     + **Aangepaste vervangings waarde**: gebruik deze optie om een tijdelijke aanduiding voor waarden (zoals 0 of n.v.t.) op te geven die van toepassing is op alle ontbrekende waarde. De waarde die u opgeeft als vervanging moet compatibel zijn met het gegevens type van de kolom.
@@ -104,7 +104,7 @@ Telkens wanneer u de module  [clean Missing Data](./clean-missing-data.md) toepa
   
     
   
-6. De waarde voor het **vervangen** van de optie is beschikbaar als u de optie **aangepaste vervangings waarde**hebt geselecteerd. Typ een nieuwe waarde die moet worden gebruikt als de vervangings waarde voor alle ontbrekende waarden in de kolom.  
+6. De waarde voor het **vervangen** van de optie is beschikbaar als u de optie **aangepaste vervangings waarde** hebt geselecteerd. Typ een nieuwe waarde die moet worden gebruikt als de vervangings waarde voor alle ontbrekende waarden in de kolom.  
   
     Houd er rekening mee dat u deze optie alleen kunt gebruiken in kolommen met het gehele getal, de waarde double, Booleaans of teken reeks.
   

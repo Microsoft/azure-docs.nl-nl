@@ -4,10 +4,10 @@ description: Meer informatie over het herstellen van Key Vault sleutel en geheim
 ms.topic: conceptual
 ms.date: 08/28/2017
 ms.openlocfilehash: 456ce18f253ffa02cd6b13826a7839f18beecba7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88827083"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Key Vault-sleutel en -geheim voor versleutelde virtuele machines terugzetten met Azure Backup
@@ -60,7 +60,7 @@ Restore-AzureKeyVaultKey -VaultName '<target_key_vault_name>' -InputFile $keyDes
 
 ## <a name="restore-secret"></a>Geheim herstellen
 
-Gebruik het hierboven gegenereerde JSON-bestand om een geheime naam en waarde op te halen en de feed in te stellen voor het instellen van een geheime cmdlet om het geheim (BEK) terug te zetten in de sleutel kluis.Gebruik deze cmdlets als uw **virtuele machine is versleuteld met bek en Kek**.
+Gebruik het hierboven gegenereerde JSON-bestand om een geheime naam en waarde op te halen en de feed in te stellen voor het instellen van een geheime cmdlet om het geheim (BEK) terug te zetten in de sleutel kluis. Gebruik deze cmdlets als uw **virtuele machine is versleuteld met bek en Kek**.
 
 **Gebruik deze cmdlets als uw Windows-virtuele machine is versleuteld met BEK en KEK.**
 
@@ -82,7 +82,7 @@ $Tags = @{'DiskEncryptionKeyEncryptionAlgorithm' = 'RSA-OAEP';'DiskEncryptionKey
 Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -SecretValue $Secret -ContentType  'Wrapped BEK' -Tags $Tags
 ```
 
-Gebruik het hierboven gegenereerde JSON-bestand om een geheime naam en waarde op te halen en de feed in te stellen voor het instellen van een geheime cmdlet om het geheim (BEK) terug te zetten in de sleutel kluis.Gebruik deze cmdlets als uw **virtuele machine is versleuteld met alleen bek** .
+Gebruik het hierboven gegenereerde JSON-bestand om een geheime naam en waarde op te halen en de feed in te stellen voor het instellen van een geheime cmdlet om het geheim (BEK) terug te zetten in de sleutel kluis. Gebruik deze cmdlets als uw **virtuele machine is versleuteld met alleen bek** .
 
 ```powershell
 $secretDestination = 'C:\secret.blob'

@@ -5,10 +5,10 @@ author: ecfan
 ms.author: estfan
 ms.date: 07/21/2020
 ms.openlocfilehash: 06a503e800309d8689735417931820d9f16a6e75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87102601"
 ---
 ## <a name="prerequisites"></a>Vereisten
@@ -21,7 +21,7 @@ Voer de volgende stappen uit om Logic Apps om verbinding te maken met uw OneDriv
 
 1. Meld u aan bij Azure Portal. 
 
-1. Onder **Azure-Services**selecteert u **Logic apps**. Selecteer vervolgens de naam van uw logische app in de lijst.
+1. Onder **Azure-Services** selecteert u **Logic apps**. Selecteer vervolgens de naam van uw logische app in de lijst.
 
 1. Selecteer in het menu van de logische app de optie **Logic app-ontwerp** onder **ontwikkelingsprogram ma's**.
 

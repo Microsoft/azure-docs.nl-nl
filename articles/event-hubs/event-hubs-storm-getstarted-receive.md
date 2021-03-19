@@ -4,10 +4,10 @@ description: 'Quickstart: In dit artikel vindt u informatie over hoe u gebeurten
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.openlocfilehash: 099a3ff1ad57616de0d7929d787b82e9d55c9e00
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87087574"
 ---
 # <a name="quickstart-receive-events-from-event-hubs-using-apache-storm"></a>Quickstart: Gebeurtenissen ontvangen van Event Hubs met behulp van Apache Storm
@@ -36,7 +36,7 @@ In deze zelfstudie wordt gebruikgemaakt van een [HDInsight Storm][HDInsight Stor
 5. Selecteer **Standaardlocatie van werkruimte gebruiken** en klik vervolgens op **Volgende**
 6. Selecteer het archetype **maven-archetype-quickstart** en klik op **Volgende**
 7. Voeg een **GroupId** en **ArtifactId** in en klik op **Voltooien**
-8. Voeg in **pom.xml**de volgende afhankelijkheden toe aan het `<dependency>`-knooppunt.
+8. Voeg in **pom.xml** de volgende afhankelijkheden toe aan het `<dependency>`-knooppunt.
 
     ```xml  
     <dependency>

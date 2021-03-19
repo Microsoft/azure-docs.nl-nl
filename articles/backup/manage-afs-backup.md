@@ -4,10 +4,10 @@ description: In dit artikel worden algemene taken beschreven voor het beheren en
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: 784b22f11b57fb025f6d9401e10d527c83751898
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88757622"
 ---
 # <a name="manage-azure-file-share-backups"></a>Back-ups van Azure-bestandsshares beheren
@@ -24,7 +24,7 @@ De pagina **Back-uptaken** openen:
 
    ![Bewerkings sectie back-uptaken](./media/manage-afs-backup/backup-jobs.png)
 
-1. Nadat u **OK**hebt geselecteerd, wordt in het deel venster **back-uptaken** de status van alle taken weer gegeven. Selecteer de naam van de werk belasting die overeenkomt met de bestands share die u wilt bewaken.
+1. Nadat u **OK** hebt geselecteerd, wordt in het deel venster **back-uptaken** de status van alle taken weer gegeven. Selecteer de naam van de werk belasting die overeenkomt met de bestands share die u wilt bewaken.
 
    ![Werkbelasting naam](./media/manage-afs-backup/workload-name.png)
 
@@ -38,13 +38,13 @@ Het bestaande back-upbeleid weer geven:
 
    ![Alle back-upbeleid](./media/manage-afs-backup/all-backup-policies.png)
 
-1. Als u beleids regels die specifiek zijn voor **Azure-bestands share**wilt weer geven, selecteert u **Azure-bestands share** in de vervolg keuzelijst in de rechter bovenhoek.
+1. Als u beleids regels die specifiek zijn voor **Azure-bestands share** wilt weer geven, selecteert u **Azure-bestands share** in de vervolg keuzelijst in de rechter bovenhoek.
 
    ![Azure-bestands share selecteren](./media/manage-afs-backup/azure-file-share.png)
 
 Een nieuw back-upbeleid maken:
 
-1. Selecteer **+ toevoegen**in het deel venster **back-upbeleidsregels** .
+1. Selecteer **+ toevoegen** in het deel venster **back-upbeleidsregels** .
 
    ![Nieuw back-upbeleid](./media/manage-afs-backup/new-backup-policy.png)
 
@@ -158,7 +158,7 @@ De registratie van het opslag account ongedaan maken:
 
    ![Opslag accounts selecteren](./media/manage-afs-backup/storage-accounts.png)
 
-1. Nadat u **opslag accounts**hebt geselecteerd, wordt er een lijst weer gegeven met opslag accounts die zijn geregistreerd bij de kluis.
+1. Nadat u **opslag accounts** hebt geselecteerd, wordt er een lijst weer gegeven met opslag accounts die zijn geregistreerd bij de kluis.
 1. Klik met de rechter muisknop op het opslag account dat u wilt verwijderen en selecteer **registratie ongedaan maken**.
 
    ![Selecteer registratie ongedaan maken](./media/manage-afs-backup/select-unregister.png)

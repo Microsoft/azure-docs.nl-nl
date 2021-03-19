@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van de Azure Portal voor het maken
 ms.topic: conceptual
 ms.date: 01/20/2020
 ms.openlocfilehash: ca49f1ad48ab0534b27b91ad6a5a50b393cda782
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88890345"
 ---
 # <a name="back-up-azure-file-shares"></a>Een back-up maken van Azure-bestandsshares
@@ -51,7 +51,7 @@ In de volgende stappen wordt uitgelegd hoe u een back-up kunt configureren voor 
 
           ![Selecteer back-up om de Azure-bestands share te koppelen aan de kluis](./media/backup-afs/register-extension.png)
 
-1. Nadat u **back-up**hebt geselecteerd, wordt het deel venster **back-up** geopend. Als u het opslag account wilt selecteren dat als host fungeert voor de bestands share die u wilt beveiligen, selecteert u het **tekstvak koppelings** tekst onder het veld voor het **opslag account** selecteren.
+1. Nadat u **back-up** hebt geselecteerd, wordt het deel venster **back-up** geopend. Als u het opslag account wilt selecteren dat als host fungeert voor de bestands share die u wilt beveiligen, selecteert u het **tekstvak koppelings** tekst onder het veld voor het **opslag account** selecteren.
 
    ![Kies de koppeling selecteren](./media/backup-afs/choose-select-link.png)
 
@@ -74,7 +74,7 @@ In de volgende stappen wordt uitgelegd hoe u een back-up kunt configureren voor 
 1. Als u een back-upbeleid voor de bestands share wilt kiezen, hebt u drie opties:
 
    * Kies het standaard beleid.<br>
-   Met deze optie kunt u dagelijks een back-up inschakelen die 30 dagen wordt bewaard. Als u geen bestaand back-upbeleid in de kluis hebt, wordt het deel venster back-up geopend met de standaard beleids instellingen. Als u de standaard instellingen wilt kiezen, kunt u rechtstreeks **back-up inschakelen**selecteren.
+   Met deze optie kunt u dagelijks een back-up inschakelen die 30 dagen wordt bewaard. Als u geen bestaand back-upbeleid in de kluis hebt, wordt het deel venster back-up geopend met de standaard beleids instellingen. Als u de standaard instellingen wilt kiezen, kunt u rechtstreeks **back-up inschakelen** selecteren.
 
    * Een nieuw beleid maken <br>
 
@@ -174,7 +174,7 @@ In sommige gevallen wilt u mogelijk een back-upmomentopname of een herstel punt 
 
    ![Back-upitems selecteren](./media/backup-afs/backup-items.png)
 
-1. Nadat u **Back-upitems**hebt geselecteerd, wordt er een nieuw deel venster met alle **typen back-upbeheer** weer gegeven naast het deel venster **overzicht** .
+1. Nadat u **Back-upitems** hebt geselecteerd, wordt er een nieuw deel venster met alle **typen back-upbeheer** weer gegeven naast het deel venster **overzicht** .
 
    ![Lijst met typen back-upbeheer](./media/backup-afs/backup-management-types.png)
 
@@ -192,7 +192,7 @@ In sommige gevallen wilt u mogelijk een back-upmomentopname of een herstel punt 
 
 1. Selecteer **OK** om te bevestigen dat de back-uptaak op aanvraag wordt uitgevoerd.
 
-1. Controleer de portal meldingen om het volt ooien van de back-uptaak uit te voeren. U kunt de voortgang van de taak in het kluis dashboard bewaken. Selecteer de **back-uptaken**die worden  >  **uitgevoerd**.
+1. Controleer de portal meldingen om het volt ooien van de back-uptaak uit te voeren. U kunt de voortgang van de taak in het kluis dashboard bewaken. Selecteer de **back-uptaken** die worden  >  **uitgevoerd**.
 
 ### <a name="from-the-file-share-pane"></a>In het deel venster bestands share
 

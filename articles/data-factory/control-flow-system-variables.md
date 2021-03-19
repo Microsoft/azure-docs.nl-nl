@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 06/12/2018
-ms.openlocfilehash: 119ecb3ec9c208340f09f513bf10b3ad24312cb5
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: a5d2043c29db87876cc0d5ddb5b3708abad033c5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102201223"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591976"
 ---
 # <a name="system-variables-supported-by-azure-data-factory"></a>Systeem variabelen die door Azure Data Factory worden ondersteund
 
@@ -24,7 +24,7 @@ In dit artikel worden de systeem variabelen beschreven die door Azure Data Facto
 
 Naar deze systeem variabelen kan ergens worden verwezen in de JSON van de pijp lijn.
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @pipeline(). DataFactory |De naam van de data factory de pijplijn uitvoering wordt uitgevoerd in |
 | @pipeline(). Pijp lijn |Naam van de pijp lijn |
@@ -41,7 +41,7 @@ Naar deze systeem variabelen kan ergens worden verwezen in de JSON van de pijp l
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [ScheduleTrigger](concepts-pipeline-execution-triggers.md#schedule-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @trigger().scheduledTime |Tijdstip waarop de trigger is gepland voor het aanroepen van de pijplijn uitvoering. |
 | @trigger(). startTime |Tijdstip waarop de trigger **daad werkelijk** is gestart om de pijplijn uitvoering aan te roepen. Dit kan enigszins verschillen van de geplande tijd van de trigger. |
@@ -50,7 +50,7 @@ Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor 
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [TumblingWindowTrigger](concepts-pipeline-execution-triggers.md#tumbling-window-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @trigger(). outputs. windowStartTime |Begin van het venster dat is gekoppeld aan de uitvoering van de trigger. |
 | @trigger(). outputs. windowEndTime |Einde van het venster dat is gekoppeld aan de uitvoering van de trigger. |
@@ -61,11 +61,25 @@ Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor 
 
 Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [BlobEventsTrigger](concepts-pipeline-execution-triggers.md#event-based-trigger).
 
-| Naam variabele | Beschrijving |
+| Naam variabele | Description |
 | --- | --- |
 | @triggerBody(). fileName  |De naam van het bestand waarvan het maken of verwijderen heeft geleid tot het starten van de trigger.   |
 | @triggerBody(). mapnaam  |Pad naar de map die het bestand bevat dat is opgegeven door `@triggerBody().fileName` . Het eerste segment van het mappad is de naam van de Azure Blob Storage-container.  |
 | @trigger(). startTime |Tijdstip waarop de trigger is geactiveerd om de pijplijn uitvoering aan te roepen. |
+
+## <a name="custom-event-trigger-scope"></a>Bereik voor aangepaste gebeurtenis trigger
+
+Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [CustomEventsTrigger](concepts-pipeline-execution-triggers.md#event-based-trigger).
+
+>[!NOTE]
+>Azure Data Factory verwacht dat de aangepaste gebeurtenis wordt opgemaakt met [Azure Event grid-gebeurtenis schema](../event-grid/event-schema.md).
+
+| Naam variabele | Description
+| --- | --- |
+| @triggerBody(). Event. Event type | Type gebeurtenissen waarmee de aangepaste gebeurtenis trigger wordt uitgevoerd. Het gebeurtenis type is een door de klant gedefinieerd veld en neemt waarden van het teken reeks type op. |
+| @triggerBody(). Event. subject | Het onderwerp van de aangepaste gebeurtenis die de trigger heeft veroorzaakt. |
+| @triggerBody(). Event. data. _naam_ van de computer | Het gegevens veld in een aangepaste gebeurtenis is een gratis van JSON-blob, die door de klant kan worden gebruikt om berichten en gegevens te verzenden. Gebruik gegevens. de naam van de _klasse_ die u wilt verwijzen naar elk veld. Voor beeld: @triggerBody (). Event. data. call back retourneert de waarde voor het veld _call back_ dat onder _gegevens_ is opgeslagen. |
+| @trigger(). startTime | Tijdstip waarop de trigger is geactiveerd om de pijplijn uitvoering aan te roepen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

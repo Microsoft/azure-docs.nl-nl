@@ -3,18 +3,18 @@ title: Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 description: Meer informatie over het gebruik van BLOB-index Tags voor het categoriseren, beheren en opvragen van blob-objecten.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 03/05/2021
+ms.date: 03/18/2021
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
 ms.reviewer: klaasl
 ms.custom: references_regions
-ms.openlocfilehash: be2ff9d6ed908bdc0645fc713717a08674354096
-ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.openlocfilehash: 540f6ca165c80dd90f5004fb53e1577cdc35d770
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 03/19/2021
-ms.locfileid: "104593217"
+ms.locfileid: "104656036"
 ---
 # <a name="manage-and-find-azure-blob-data-with-blob-index-tags-preview"></a>Azure Blob-gegevens beheren en vinden met Blob index Tags (preview)
 
@@ -30,7 +30,7 @@ Met Blob index Tags kunt u het volgende doen:
 Houd rekening met een scenario waarin u miljoenen blobs in uw opslag account hebt, die toegankelijk zijn voor veel verschillende toepassingen. U wilt alle gerelateerde gegevens uit één project zoeken. U weet niet wat het bereik is omdat de gegevens kunnen worden verdeeld over meerdere containers met verschillende naam conventies. Uw toepassingen uploaden echter alle gegevens met tags op basis van het project. In plaats van miljoenen blobs te doorzoeken en namen en eigenschappen te vergelijken, kunt u gebruiken `Project = Contoso` als detectie criterium. Met Blob-index worden alle containers in het hele opslag account gefilterd, zodat u alleen de set van 50 blobs uit kunt vinden en retour neren `Project = Contoso` .
 
 > [!IMPORTANT]
-> BLOB index Tags zijn momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
+> Index Tags van blobs zijn momenteel beschikbaar als **Preview-versie** en kunnen in alle open bare regio's worden weer gegeven. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of nog niet beschikbaar zijn.
 
 Zie [BLOB-index Tags gebruiken om gegevens te beheren en te zoeken](storage-blob-index-how-to.md)om aan de slag te gaan met voor beelden van het gebruik van BLOB-index.
 

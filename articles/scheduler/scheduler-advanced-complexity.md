@@ -10,10 +10,10 @@ ms.suite: infrastructure-services
 ms.topic: article
 ms.date: 11/14/2018
 ms.openlocfilehash: 5a74240e3f116121c0aaddd11c186e6e674ea26a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92368176"
 ---
 # <a name="build-advanced-schedules-and-recurrences-for-jobs-in-azure-scheduler"></a>Geavanceerde schema's en herhalingen maken voor taken in azure scheduler
@@ -67,12 +67,12 @@ Deze tabel bevat een overzicht op hoog niveau voor de belangrijkste JSON-element
 | Element | Vereist | Beschrijving | 
 |---------|----------|-------------|
 | **startTime** | Nee | Een DateTime-teken reeks waarde in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601) die aangeeft wanneer de taak voor het eerst in een basis schema wordt gestart. <p>Voor complexe schema's wordt de taak niet eerder gestart dan **StartTime**. | 
-| **optreden** | Nee | De regels voor het terugkeer patroon voor wanneer de taak wordt uitgevoerd. Het object **recurrence** ondersteunt deze elementen: **frequentie**, **interval**, **planning**, **aantal**en **EndTime**. <p>Als u het element **recurrence** gebruikt, moet u ook het element **Frequency** gebruiken, terwijl andere **terugkeer** elementen optioneel zijn. |
+| **optreden** | Nee | De regels voor het terugkeer patroon voor wanneer de taak wordt uitgevoerd. Het object **recurrence** ondersteunt deze elementen: **frequentie**, **interval**, **planning**, **aantal** en **EndTime**. <p>Als u het element **recurrence** gebruikt, moet u ook het element **Frequency** gebruiken, terwijl andere **terugkeer** elementen optioneel zijn. |
 | **frequency** | Ja, wanneer u **terugkeer patroon** gebruikt | De tijds eenheid tussen exemplaren en ondersteunt deze waarden: ' minute ', ' hour ', ' Day ', ' week ', ' month ' en ' Year ' | 
 | **bereik** | Nee | Een positief geheel getal dat het aantal tijds eenheden tussen exemplaren bepaalt op basis van de **frequentie**. <p>Als **interval** bijvoorbeeld 10 is en de **frequentie** is ' week ', wordt de taak elke 10 weken herhaald. <p>Dit is het hoogste aantal intervallen voor elke frequentie: <p>-18 maanden <br>-78 weken <br>-548 dagen <br>-Voor uren en minuten is het bereik 1 <= <*interval*> <= 1000. | 
 | **planning** | Nee | Hiermee worden wijzigingen in het terugkeer patroon gedefinieerd op basis van de opgegeven minutes-tekens, uur-tekens, dagen van de week en dagen van de maand | 
-| **aantal** | Nee | Een positief geheel getal dat het aantal keren opgeeft dat de taak wordt uitgevoerd voordat wordt voltooid. <p>Als bijvoorbeeld een dagelijkse taak het **aantal** heeft ingesteld op 7 en de begin datum maandag is, wordt de taak uitgevoerd op zondag. Als de begin datum al is verstreken, wordt de eerste uitvoering berekend op basis van de aanmaak tijd. <p>Zonder **EndTime** of **Count**wordt de taak oneindig uitgevoerd. U kunt niet zowel **Count** als **EndTime** in dezelfde taak gebruiken, maar de regel die het eerst eindigt, wordt gehonoreerd. | 
-| **endTime** | Nee | Een datum-of DateTime-waarde in de [ISO 8601-notatie](https://en.wikipedia.org/wiki/ISO_8601) die aangeeft wanneer de uitvoering van de taak wordt gestopt. U kunt een waarde instellen voor **EndTime** die in het verleden ligt. <p>Zonder **EndTime** of **Count**wordt de taak oneindig uitgevoerd. U kunt niet zowel **Count** als **EndTime** in dezelfde taak gebruiken, maar de regel die het eerst eindigt, wordt gehonoreerd. |
+| **count** | Nee | Een positief geheel getal dat het aantal keren opgeeft dat de taak wordt uitgevoerd voordat wordt voltooid. <p>Als bijvoorbeeld een dagelijkse taak het **aantal** heeft ingesteld op 7 en de begin datum maandag is, wordt de taak uitgevoerd op zondag. Als de begin datum al is verstreken, wordt de eerste uitvoering berekend op basis van de aanmaak tijd. <p>Zonder **EndTime** of **Count** wordt de taak oneindig uitgevoerd. U kunt niet zowel **Count** als **EndTime** in dezelfde taak gebruiken, maar de regel die het eerst eindigt, wordt gehonoreerd. | 
+| **Tijd** | Nee | Een datum-of DateTime-waarde in de [ISO 8601-notatie](https://en.wikipedia.org/wiki/ISO_8601) die aangeeft wanneer de uitvoering van de taak wordt gestopt. U kunt een waarde instellen voor **EndTime** die in het verleden ligt. <p>Zonder **EndTime** of **Count** wordt de taak oneindig uitgevoerd. U kunt niet zowel **Count** als **EndTime** in dezelfde taak gebruiken, maar de regel die het eerst eindigt, wordt gehonoreerd. |
 |||| 
 
 Dit JSON-schema beschrijft bijvoorbeeld een basis schema en een terugkeer patroon voor een taak: 
@@ -182,7 +182,7 @@ Deze schema's nemen aan dat het **interval** is ingesteld op 1\. De voor beelden
 | `{"minutes":[15,45], "hours":[5,17]}` |Wordt elke dag om 05:15, 5:45, 17:15 en 17:45 uur uitgevoerd. |
 | `{"minutes":[0,15,30,45]}` |Wordt elke 15 minuten uitgevoerd. |
 | `{hours":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]}` |Wordt elk uur uitgevoerd.<br /><br />Deze taak wordt elk uur uitgevoerd. De minuut wordt bepaald door de waarde voor **StartTime**, als deze is opgegeven. Als er geen waarde voor **StartTime** is opgegeven, wordt de minuut bepaald door de aanmaak tijd. Als de begin tijd of aanmaak tijd (afhankelijk van wat van toepassing is) bijvoorbeeld 12:25 PM is, wordt de taak uitgevoerd op 00:25, 01:25, 02:25,..., 23:25.<br /><br />De planning is hetzelfde als een taak met de **frequentie** ' hour ', een **interval** van 1 en geen waarde voor het **schema** . Het verschil is dat u dit schema kunt gebruiken met andere **frequentie** -en **interval** waarden om andere taken te maken. Als de **frequentie** bijvoorbeeld ' maand ' is, wordt de planning slechts eenmaal per maand uitgevoerd in plaats van elke dag (als de **frequentie** ' dag ' is). |
-| `{minutes:[0]}` |Wordt elk uur op het hele uur uitgevoerd.<br /><br />Deze taak wordt ook elk uur uitgevoerd, maar op het uur (12 uur, 1 uur, 2 uur, enzovoort). Dit schema is hetzelfde als een taak met een **frequentie** van ' uur ', **een waarde van** nul minuten en geen **planning**als de frequentie ' dag ' is. Als de **frequentie** echter ' week ' of ' maand ' is, wordt het schema voor respectievelijk slechts één dag per week of één dag per maand uitgevoerd. |
+| `{minutes:[0]}` |Wordt elk uur op het hele uur uitgevoerd.<br /><br />Deze taak wordt ook elk uur uitgevoerd, maar op het uur (12 uur, 1 uur, 2 uur, enzovoort). Dit schema is hetzelfde als een taak met een **frequentie** van ' uur ', **een waarde van** nul minuten en geen **planning** als de frequentie ' dag ' is. Als de **frequentie** echter ' week ' of ' maand ' is, wordt het schema voor respectievelijk slechts één dag per week of één dag per maand uitgevoerd. |
 | `{"minutes":[15]}` |Wordt elk uur om de 15 minuten na het hele uur uitgevoerd.<br /><br />Wordt elk uur uitgevoerd, vanaf 00:15 uur, 1:15 uur, 2:15 uur, enzovoort. Deze eindigt om 11:15 uur. |
 | `{"hours":[17], "weekDays":["saturday"]}` |Wordt elke week om 5 uur op zaterdag uitgevoerd. |
 | `{hours":[17], "weekDays":["monday", "wednesday", "friday"]}` |Wordt elke week op maandag, woensdag en vrijdag uitgevoerd op 5 PM. |

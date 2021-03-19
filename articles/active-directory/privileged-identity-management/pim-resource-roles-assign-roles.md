@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 011b50449f0a02b128bc000535f93e1809fd9777
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92673886"
 ---
 # <a name="assign-azure-resource-roles-in-privileged-identity-management"></a>Azure-resource rollen toewijzen in Privileged Identity Management
@@ -43,9 +43,9 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure-r
 
     Voor informatie over het verlenen van een andere beheerder toegang tot het beheren van Privileged Identity Management raadpleegt u [toegang verlenen aan andere beheerders om privileged Identity Management te beheren](pim-how-to-give-access-to-pim.md).
 
-1. Open **Azure AD privileged Identity Management** .
+1. Open **Azure AD privileged Identity Management**.
 
-1. Selecteer **Azure-resources** .
+1. Selecteer **Azure-resources**.
 
 1. Gebruik het resource filter om de beheerde resources te vinden waarnaar u op zoek bent.
 
@@ -63,15 +63,15 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure-r
 
     ![Deel venster nieuwe toewijzing](./media/pim-resource-roles-assign-roles/resources-select-role.png)
 
-1. Selecteer een rol die u wilt toewijzen en klik vervolgens op **selecteren** .
+1. Selecteer een rol die u wilt toewijzen en klik vervolgens op **selecteren**.
 
     Het deel venster **een lid of groep selecteren** wordt geopend.
 
-1. Selecteer een lid of groep die u aan de rol wilt toewijzen en klik vervolgens op **selecteren** .
+1. Selecteer een lid of groep die u aan de rol wilt toewijzen en klik vervolgens op **selecteren**.
 
     ![Een lid of groeps deel venster selecteren](./media/pim-resource-roles-assign-roles/resources-select-member-or-group.png)
 
-1. Op het tabblad **instellingen** in de lijst **toewijzings type** selecteert u in **aanmerking komend** of **actief** .
+1. Op het tabblad **instellingen** in de lijst **toewijzings type** selecteert u in **aanmerking komend** of **actief**.
 
     ![Deel venster instellingen voor lidmaatschappen](./media/pim-resource-roles-assign-roles/resources-membership-settings-type.png)
 
@@ -83,7 +83,7 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure-r
 
 1. Als u een specifieke toewijzings duur wilt opgeven, wijzigt u de begin-en eind datum en-tijd.
 
-1. Wanneer u klaar bent, selecteert u **toewijzen** .
+1. Wanneer u klaar bent, selecteert u **toewijzen**.
 
 1. Nadat de nieuwe roltoewijzing is gemaakt, wordt er een status melding weer gegeven.
 
@@ -93,9 +93,9 @@ Volg deze stappen om een gebruiker in aanmerking te laten komen voor een Azure-r
 
 Volg deze stappen om een bestaande roltoewijzing bij te werken of te verwijderen.
 
-1. Open **Azure AD privileged Identity Management** .
+1. Open **Azure AD privileged Identity Management**.
 
-1. Selecteer **Azure-resources** .
+1. Selecteer **Azure-resources**.
 
 1. Selecteer de resource die u wilt beheren om de pagina overzicht te openen.
 

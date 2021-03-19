@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: d28cfd533caaef3fb80a63aea932e6418dff7e55
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 5943a65d61dee4fcf610b8cc45139674362995cb
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101724248"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600714"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Microsoft Azure Storage bewaken, problemen opsporen en oplossen
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -59,8 +59,8 @@ Als u dergelijke toepassingen wilt beheren, moet u ze proactief controleren en i
   * [Uw probleem doet zich voor bij het gebruik van de opslag emulator voor ontwikkelen of testen]
   * [U ondervindt problemen bij het installeren van de Azure SDK voor .NET]
   * [U hebt een ander probleem met een opslag service]
-  * [Problemen met Vhd's op virtuele Windows-machines oplossen](../../virtual-machines/troubleshooting/index.yml)   
-  * [Problemen met Vhd's op virtuele Linux-machines oplossen](../../virtual-machines/troubleshooting/index.yml)
+  * [Problemen met Vhd's op virtuele Windows-machines oplossen](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)   
+  * [Problemen met Vhd's op virtuele Linux-machines oplossen](/troubleshoot/azure/virtual-machines/welcome-virtual-machines)
   * [Problemen met Azure Files oplossen met Windows](../files/storage-troubleshoot-windows-file-connection-problems.md)   
   * [Problemen met Azure Files oplossen met Linux](../files/storage-troubleshoot-linux-file-connection-problems.md)
 * [Bijlagen]
@@ -69,7 +69,7 @@ Als u dergelijke toepassingen wilt beheren, moet u ze proactief controleren en i
   * [Bijlage 4: Excel gebruiken om metrische gegevens weer te geven en te registreren]
   * [Bijlage 5: bewaking met Application Insights voor Azure DevOps]
 
-## <a name="introduction"></a><a name="introduction"></a>Introductie
+## <a name="introduction"></a><a name="introduction"></a>Inleiding
 In deze hand leiding wordt beschreven hoe u functies zoals Azure Opslaganalyse, logboek registratie aan client zijde in de Azure Storage-client bibliotheek en andere hulpprogram ma's van derden kunt gebruiken voor het identificeren, vaststellen en oplossen van Azure Storage gerelateerde problemen.
 
 ![Diagram waarin de gegevens stroom tussen client toepassingen en Azure Storage-services wordt weer gegeven.][1]

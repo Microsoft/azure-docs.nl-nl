@@ -4,15 +4,15 @@ description: Meer informatie over het downloaden van elke versie van de Azure Ki
 author: qm13
 ms.author: quentinm
 ms.prod: kinect-dk
-ms.date: 06/26/2019
+ms.date: 03/18/2021
 ms.topic: conceptual
 keywords: Azure, kinect, SDK, update downloaden, nieuwste, beschikbaar, installeren, hoofd tekst, bijhouden
-ms.openlocfilehash: 0ac0598d893617f341b9e1fd4d45c0c3e3f3c619
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 60018df56433785f3cb723dd54cc96a8e5289b67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359592"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654489"
 ---
 # <a name="download-azure-kinect-body-tracking-sdk"></a>De Azure Kinect Body tracking-SDK downloaden
 
@@ -28,18 +28,13 @@ Dit document bevat koppelingen voor het installeren van elke versie van de Azure
 
 Versie       | Downloaden
 --------------|----------
+1.1.0 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=102901)
 1.0.1 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100942) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.1)
 1.0.0 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100848) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/1.0.0)
-0.9.5 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100636) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.5)
-0.9.4 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100415) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.4)
-0.9.3 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100307) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.3)
-0.9.2 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100128) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.2)
-0.9.1 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=100063) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.1)
-0.9.0 | [MSI](https://www.microsoft.com/en-us/download/details.aspx?id=58402) - [nuget](https://www.nuget.org/packages/Microsoft.Azure.Kinect.BodyTracking/0.9.0)
 
 ## <a name="linux-installation-instructions"></a>Linux-installatie-instructies
 
-Momenteel is de enige ondersteunde distributie Ubuntu 18,04. Zie [Deze pagina](https://aka.ms/azurekinectfeedback)als u ondersteuning voor andere distributies wilt aanvragen.
+Momenteel is de enige ondersteunde distributie Ubuntu 18,04 en 20,04. Zie [Deze pagina](https://aka.ms/azurekinectfeedback)als u ondersteuning voor andere distributies wilt aanvragen.
 
 Eerst moet u de [opslag plaats van micro soft-pakket](https://packages.microsoft.com/)configureren. Volg hiervoor de instructies [hier](/windows-server/administration/linux-package-repository-for-microsoft-software).
 
@@ -48,7 +43,7 @@ Het `libk4abt<major>.<minor>` pakket bevat de gedeelde objecten die nodig zijn v
 
 Voor de basis zelf studies is het `libk4abt<major>.<minor>-dev` pakket vereist. Voer uit om de installatie uit te voeren.
 
-`sudo apt install libk4abt1.0-dev`
+`sudo apt install libk4abt<major>.<minor>-dev`
 
 Als de opdracht is geslaagd, is de SDK klaar voor gebruik.
 
@@ -58,6 +53,18 @@ Als de opdracht is geslaagd, is de SDK klaar voor gebruik.
 
 ## <a name="change-log"></a>Wijzigingenlogboek
 
+### <a name="v110"></a>v 1.1.0
+* Hulp Voeg ondersteuning toe voor DirectML (alleen Windows) en TensorRT-uitvoering van een model voor het schatten van poses. Zie de veelgestelde vragen over nieuwe uitvoerings omgevingen.
+* Hulp Toevoegen `model_path` aan `k4abt_tracker_configuration_t` struct. Hiermee kunnen gebruikers de padnaam voor het model voor het schatten van poses opgeven. Het standaard `dnn_model_2_0_op11.onnx` model voor geraamde modellen bevindt zich in de huidige map.
+* Hulp Een `dnn_model_2_0_lite_op11.onnx` schattings model voor de Lite-pose toevoegen. Dit model handelt ~ 2x prestatie verhoging voor een nauw keurigheid van ~ 5%.
+* Hulp Geverifieerde voor beelden worden gecompileerd met Visual Studio 2019 en update-voor beelden om deze release te gebruiken.
+* [Laatste wijziging] Werk bij naar ONNX runtime 1,6 met ondersteuning voor CPU, CUDA 11,1, DirectML (alleen Windows) en TensorRT 7.2.1 execution environments. Vereist een NVIDIA-stuur programma-update voor R455 of hoger.
+* [Laatste wijziging] Geen NuGet-installatie.
+* [Fout oplossing] Ondersteuning toevoegen voor NVIDIA RTX 30xx Series Gpu's- [koppeling](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1481)
+* [Fout oplossing] Voeg ondersteuning toe voor de [koppeling](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1481) AMD en Intel Integrated gpu's (alleen Windows)
+* [Fout oplossing] Bijwerken naar CUDA 11,1- [koppeling](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1125)
+* [Fout oplossing] Update to sensor SDK 1.4.1 [link](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1248)
+
 ### <a name="v101"></a>v 1.0.1
 * [Fout oplossing] Probleem oplossen dat de SDK vastloopt bij het laden van onnxruntime.dll van pad op Windows Build 19025 of hoger: [link](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/932)
 
@@ -66,53 +73,6 @@ Als de opdracht is geslaagd, is de SDK klaar voor gebruik.
 * [Fout oplossing] Probleem oplossen dat de hoofd draaiing niet correct kan worden gedetecteerd: [koppeling](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/997)
 * [Fout oplossing] Probleem oplossen dat het CPU-gebruik tot 100% op Linux-machine aanloopt: [koppeling](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/issues/1007)
 * Voor beelden Voeg twee steek proeven toe aan het voor beeld-opslag plaats. Voor beeld 1 ziet u hoe u de resultaten van het bijhouden van hoofd tekst kunt transformeren van de diepte ruimte naar de [koppeling](https://github.com/microsoft/Azure-Kinect-Samples/tree/master/body-tracking-samples/camera_space_transform_sample)naar de kleur ruimte. voor beeld 2 ziet u hoe u een [koppeling](https://github.com/microsoft/Azure-Kinect-Samples/tree/master/body-tracking-samples/floor_detector_sample) naar het vloer vlak detecteert
-
-### <a name="v095"></a>v 0.9.5
-* Hulp C#-ondersteuning. C#-wrapper is verpakt in het nuget-pakket.
-* Hulp Ondersteuning voor meerdere tracker. Het maken van meerdere traceerers is toegestaan. De gebruiker kan nu meerdere traceerers maken om de hoofd tekst van de verschillende Azure Kinect-apparaten bij te houden.
-* Hulp Ondersteuning voor multi thread-verwerking voor de CPU-modus. Wanneer de CPU-modus wordt uitgevoerd, worden alle kern geheugens gebruikt om de snelheid te maximaliseren.
-* Hulp Toevoegen `gpu_device_id` aan `k4abt_tracker_configuration_t` struct. Gebruikers toestaan om het GPU-apparaat op te geven dat niet de standaard is voor het uitvoeren van het algoritme voor het bijhouden van de hoofd tekst.
-* [Wijziging/herstel van fouten] Corrigeer de type fout in een gezamenlijke naam. Wijzig de gezamenlijke naam van `K4ABT_JOINT_SPINE_NAVAL` in `K4ABT_JOINT_SPINE_NAVEL` .
-
-### <a name="v094"></a>v 0.9.4
-* Hulp Voeg ondersteuning voor hand gewrichten toe. De SDK bevat informatie voor drie extra gewrichten voor elke hand: HAND, HANDTIP, duim.
-* Hulp Voeg het betrouwbaarheids niveau voor voor spellingen voor elke gedetecteerde gewricht toe.
-* Hulp Ondersteuning voor CPU-modus toevoegen. `cpu_only_mode`Als u de waarde in wijzigt `k4abt_tracker_configuration_t` , kan de SDK worden uitgevoerd op de CPU-modus waarvoor de gebruiker geen krachtige grafische kaart nodig heeft.
-
-### <a name="v093"></a>v 0.9.3
-* Hulp Publiceer een nieuw DNN-model dnn_model_2_0. onnx, waarmee de stabiliteit van het bijhouden van de hoofd tekst grotendeels wordt verbeterd.
-* Hulp Schakel standaard tijdelijk effenen uit. De getraceerde gewrichten reageren sneller.
-* Hulp Verbeter de nauw keurigheid van de index toewijzing van de hoofd tekst.
-* [Fout oplossing] Los de fout op die de instelling voor de richting van de sensor niet effectief is.
-* [Fout oplossing] Wijzig het body_index_map type van K4A_IMAGE_FORMAT_CUSTOM in K4A_IMAGE_FORMAT_CUSTOM8.
-* [Bekend probleem] Twee close-instanties kunnen samen voegen tot een segment met één exemplaar.
-
-### <a name="v092"></a>v 0.9.2
-* [Laatste wijziging] Update die afhankelijk is van de nieuwste Azure Kinect sensor SDK 1.2.0.
-* [API-wijziging] `k4abt_tracker_create` de functie begint met het uitvoeren van een `k4abt_tracker_configuration_t` invoer. 
-* [API-wijziging] Wijzig `k4abt_frame_get_timestamp_usec` de API zodat `k4abt_frame_get_device_timestamp_usec` deze specifiek en consistent is met de sensor SDK 1.2.0.
-* Hulp Gebruikers toestaan om de richting van de sensor montage op te geven bij het maken van de tracker om nauw keurigere traceer resultaten te krijgen bij het koppelen aan verschillende hoeken.
-* Hulp Een nieuwe API bieden `k4abt_tracker_set_temporal_smoothing` om de hoeveelheid tijdelijke afvlakking te wijzigen die de gebruiker wil Toep assen.
-* Hulp C++ wrapper k4abt. hpp toevoegen.
-* Hulp De versie definitie-header k4abtversion. h toevoegen.
-* [Fout oplossing] Los de fout op die een extreem hoog CPU-gebruik heeft veroorzaakt.
-* [Fout oplossing] Fout bij het vastlopen van logboek registratie oplossen.
-
-### <a name="v091"></a>v 0.9.1 tot en
-* [Fout oplossing] Geheugenlek herstellen bij het vernietigen van tracker
-* [Fout oplossing] Betere fout berichten voor ontbrekende afhankelijkheden
-* [Fout oplossing] Mislukken zonder te zijn vastgelopen bij het maken van een tweede tracker-exemplaar
-* [Fout oplossing] De registratie van omgevings variabelen werkt nu correct
-* Linux Support
-
-### <a name="v090"></a>v 0.9.0
-
-* [Laatste wijziging] De SDK-afhankelijkheid is gedowngraded naar CUDA 10,0 (van CUDA 10,1). ONNX-runtime officieel ondersteunt alleen Maxi maal CUDA 10,0.
-* [Laatste wijziging] Wordt overgeschakeld naar ONNX runtime in plaats van tensor flow runtime. Hiermee worden de eerste start tijd en het geheugen gebruik van het frame verminderd. Het vermindert ook de binaire grootte van de SDK.
-* [API-wijziging] De naam is gewijzigd `k4abt_tracker_queue_capture()` in `k4abt_tracker_enqueue_capture()`
-* [API-wijziging] `k4abt_frame_get_body()` In twee afzonderlijke functies afgebroken `k4abt_frame_get_body_skeleton()` : en `k4abt_frame_get_body_id()` . U kunt nu een query uitvoeren op de code van de hoofd tekst zonder dat u altijd de volledige skelet structuur hoeft te kopiëren.
-* [API-wijziging]  `k4abt_frame_get_timestamp_usec()` De functie is toegevoegd om de stappen voor de gebruikers om de tijds tempel van het hoofd frame te controleren.
-* De nauw keurigheid van het bijhouden van de hoofd tekst is verbeterd en de betrouw baarheid bijhouden
 
 ## <a name="next-steps"></a>Volgende stappen
 

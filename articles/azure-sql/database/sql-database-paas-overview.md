@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/21/2020
-ms.openlocfilehash: c6b1129ca4a63e9adc8bb679dce53ff728456f42
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.openlocfilehash: 65710ae40a971d214068f0e2686f78fb994a967e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601828"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601378"
 ---
 # <a name="what-is-azure-sql-database"></a>Wat is Azure SQL Database?
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -34,7 +34,7 @@ Als u geen ervaring hebt met Azure SQL Database, bekijk dan de video *Overzicht 
 > [!VIDEO https://channel9.msdn.com/Series/Azure-SQL-for-Beginners/Azure-SQL-Database-Overview-7-of-61/player]
 
 > [!TIP]
-> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://aka.ms/AzureSQLSurvey).
+> Hoe kunnen we Azure SQL beter maken? [Doe de enquête](https://microsoft.qualtrics.com/jfe/form/SV_ePOznHhP4gDKfGu?channel=456).
 
 ## <a name="deployment-models"></a>Implementatiemodellen
 

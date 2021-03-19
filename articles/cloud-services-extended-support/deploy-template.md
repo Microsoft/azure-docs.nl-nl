@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: a606956483ddb7c7f3a4f3cef8728ade508ab461
-ms.sourcegitcommit: 87a6587e1a0e242c2cfbbc51103e19ec47b49910
+ms.openlocfilehash: b3fd8dcd5f2e73b798f6e9529b5811b9935bc393
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103574268"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104605763"
 ---
 # <a name="deploy-a-cloud-service-extended-support-using-arm-templates"></a>Een Cloud service (uitgebreide ondersteuning) implementeren met ARM-sjablonen
 
@@ -45,7 +45,7 @@ In deze zelf studie wordt uitgelegd hoe u een implementatie van een Cloud servic
 ## <a name="deploy-a-cloud-service-extended-support"></a>Een Cloud service implementeren (uitgebreide ondersteuning)
 
 > [!NOTE]
-> Een andere manier om uw Cloud service (uitgebreide ondersteuning) te implementeren, is via [Azure Portal](https://portal.azure.com). U kunt de gegenereerde ARM-sjabloon via de portal downloaden voor uw toekomstige implementaties
+> Een andere manier om uw Cloud service (uitgebreide ondersteuning) te implementeren, is via [Azure Portal](https://portal.azure.com). U kunt [de gegenereerde arm-sjabloon](generate-template-portal.md) via de portal downloaden voor uw toekomstige implementaties
  
 1. Virtueel netwerk maken. De naam van het virtuele netwerk moet overeenkomen met de verwijzingen in het service configuratie bestand (. cscfg). Als u een bestaand virtueel netwerk gebruikt, laat u deze sectie uit de ARM-sjabloon weg.
 

@@ -5,12 +5,12 @@ author: noakup
 ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
-ms.openlocfilehash: 65af5810152034fd7b6014041edd07835eebd194
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 76c6d7caf3c63779e12443304688192f7311720a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102101474"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594560"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -51,14 +51,16 @@ Sommige Azure Monitor Services gebruiken globale eind punten, wat betekent dat z
 Wanneer u een verbinding met een persoonlijke verbinding instelt, wordt uw DNS bijgewerkt om Azure Monitor-eind punten toe te wijzen aan privé-IP-adressen uit het IP-adres bereik van uw VNet. Deze wijziging overschrijft een eerdere toewijzing van deze eind punten, wat zinvolle implicaties kan hebben, zoals hieronder wordt besproken. 
 
 ### <a name="azure-monitor-private-link-applies-to-all-azure-monitor-resources---its-all-or-nothing"></a>Azure Monitor persoonlijke koppeling is van toepassing op alle Azure Monitor resources. het is allemaal of niets
-Omdat sommige Azure Monitor-eind punten globaal zijn, is het onmogelijk om een koppeling van een particuliere verbinding te maken voor een specifiek onderdeel of werk ruimte. In plaats daarvan worden uw DNS-records bijgewerkt voor **alle** Application Insights-onderdelen wanneer u een persoonlijke koppeling instelt op een enkel Application Insights onderdeel. Een poging om een onderdeel in te stellen of bij te werken, gaat via de privé koppeling en kan mogelijk mislukken. Op dezelfde manier zorgt het instellen van een persoonlijke koppeling naar één werk ruimte ervoor dat alle Log Analytics query's door lopen in het query-eind punt van de persoonlijke koppeling (maar geen opname aanvragen die werk ruimte-specifieke eind punten hebben).
+Omdat sommige Azure Monitor-eind punten globaal zijn, is het onmogelijk om een koppeling van een particuliere verbinding te maken voor een specifiek onderdeel of werk ruimte. In plaats daarvan worden uw DNS-records bijgewerkt voor **alle** Application Insights-onderdelen wanneer u een persoonlijke koppeling instelt op een enkele Application Insights onderdeel of log Analytics werk ruimte. Een poging om een onderdeel in te stellen of bij te werken, gaat via de privé koppeling en kan mogelijk mislukken. Met betrekking tot Log Analytics, opname-en configuratie-eind punten zijn werk ruimte-specifiek, wat betekent dat de instelling van de privé-koppeling alleen van toepassing is op de opgegeven werk ruimten. Opname en configuratie van andere werk ruimten wordt omgeleid naar de standaard open bare eind punten van Log Analytics.
 
 ![Diagram van DNS-onderdrukkingen in één VNet](./media/private-link-security/dns-overrides-single-vnet.png)
 
 Dat is niet alleen van toepassing op een specifiek VNet, maar voor alle VNets die dezelfde DNS-server delen (Zie [het probleem van DNS-onderdrukkingen](#the-issue-of-dns-overrides)). Bijvoorbeeld, de aanvraag voor het opnemen van logboeken naar een Application Insights onderdeel wordt altijd via de route van de persoonlijke koppeling verzonden. Onderdelen die niet aan de AMPLS zijn gekoppeld, zullen de validatie van de persoonlijke verbinding niet door lopen.
 
 > [!NOTE]
-> Sluiten: Zodra uw verbinding met een persoonlijke koppeling met één resource is ingesteld, is deze van toepassing op alle Azure Monitor resources in uw netwerk. Dit is allemaal of niets. Dit betekent dat u alle Azure Monitor resources in uw netwerk moet toevoegen aan uw AMPLS, of geen van beide.
+> Sluiten: zodra de verbinding met een persoonlijke koppeling met één resource is ingesteld, is deze van toepassing op Azure Monitor resources in uw netwerk. Voor Application Insights resources is dat alles of niets. Dit betekent dat u alle Application Insights resources in uw netwerk moet toevoegen aan uw AMPLS, of geen van beide.
+> 
+> Voor het afhandelen van gegevens exfiltration-Risico's is het aanbeveling om alle Application Insights en Log Analytics resources toe te voegen aan uw AMPLS en uw netwerken zo veel mogelijk uit te voeren.
 
 ### <a name="azure-monitor-private-link-applies-to-your-entire-network"></a>Azure Monitor persoonlijke koppeling is van toepassing op uw hele netwerk
 Sommige netwerken bestaan uit meerdere VNets. Als de VNets dezelfde DNS-server gebruikt, worden de DNS-toewijzingen van elkaar overschreven en wordt mogelijk ook de communicatie met Azure Monitor verbroken (Zie [het probleem van DNS-onderdrukkingen](#the-issue-of-dns-overrides)). Uiteindelijk kan alleen het laatste VNet communiceren met Azure Monitor, omdat de DNS Azure Monitor-eind punten toewijst aan privé Ip's uit dit VNets bereik (wat mogelijk niet bereikbaar is vanuit andere VNets).

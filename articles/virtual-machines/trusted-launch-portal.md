@@ -9,12 +9,12 @@ ms.subservice: trusted-launch
 ms.topic: how-to
 ms.date: 03/03/2021
 ms.custom: template-how-to
-ms.openlocfilehash: f5e361d32cf2ab436f92ce2ca86a054a6dd3337e
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: dec9c7581bbcf55196b04e0a76e9e61f81a27244
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102553745"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104582065"
 ---
 # <a name="deploy-a-vm-with-trusted-launch-enabled-preview"></a>Een VM implementeren met behulp van vertrouwde start ingeschakeld (preview-versie)
 
@@ -134,13 +134,13 @@ Selecteer de onderstaande knop om het beleid te implementeren voor uw abonnement
 
 De sjabloon moet slechts één keer per abonnement worden geïmplementeerd. De service installeert `GuestAttestation` en `AzureSecurity` uitbrei dingen automatisch op alle ondersteunde vm's. Probeer de sjabloon opnieuw te implementeren als u fouten krijgt.
 
-Zie [een aangepast initiatief toevoegen aan uw abonnement](https://docs.microsoft.com/azure/security-center/custom-security-policies#to-add-a-custom-initiative-to-your-subscription)om aanbevelingen voor vTPM en beveiligd opstarten op te halen voor vertrouwde vm's.
+Zie [een aangepast initiatief toevoegen aan uw abonnement](../security-center/custom-security-policies.md#to-add-a-custom-initiative-to-your-subscription)om aanbevelingen voor vTPM en beveiligd opstarten op te halen voor vertrouwde vm's.
  
 ## <a name="sign-things-for-secure-boot-on-linux"></a>Onderteken dingen voor beveiligd opstarten op Linux
 
 In sommige gevallen moet u mogelijk dingen ondertekenen voor UEFI Secure boot.  U moet bijvoorbeeld de [procedure volgen voor het afwijzen van beveiligd opstarten](https://ubuntu.com/blog/how-to-sign-things-for-secure-boot) voor Ubuntu. In dergelijke gevallen moet u de sleutels voor het registreren van het MOK-hulp programma voor uw virtuele machine invoeren. Hiervoor moet u de Azure Serial console gebruiken om toegang te krijgen tot het MOK-hulp programma.
 
-1. Schakel Azure Serial console in voor Linux. Zie voor meer informatie [seriële console voor Linux](https://docs.microsoft.com/troubleshoot/azure/virtual-machines/serial-console-linux).
+1. Schakel Azure Serial console in voor Linux. Zie voor meer informatie [seriële console voor Linux](/troubleshoot/azure/virtual-machines/serial-console-linux).
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek naar **virtuele machines** en selecteer uw virtuele machine in de lijst.
 1. Selecteer **seriële console** in het linkermenu onder **ondersteuning en probleem oplossing**. Er wordt een pagina aan de rechter kant geopend, met de seriële console.

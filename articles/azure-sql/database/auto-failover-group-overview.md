@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 12/26/2020
-ms.openlocfilehash: 91375f4460b55617ace0b18b60d59d961a762f4c
-ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
+ms.openlocfilehash: e0b9eea7be97b9b67e75c314c4a1d9e69322e5b5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/27/2020
-ms.locfileid: "97792497"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594254"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Gebruik groepen voor automatische failover om transparante en gecoördineerde failover van meerdere data bases mogelijk te maken
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,10 +33,10 @@ Daarnaast bieden automatische-failover-groepen alleen-lezen-en alleen-lezen list
 
 Wanneer u groepen voor automatische failover gebruikt met automatische failoverbeleid, wordt elke storing die invloed heeft op data bases op een server of een beheerd exemplaar, automatisch failover. U kunt de groep voor automatische failover beheren met:
 
-- [Azure Portal](geo-distributed-application-configure-tutorial.md)
+- [Azure-portal](geo-distributed-application-configure-tutorial.md)
 - [Azure CLI: failover-groep](scripts/add-database-to-failover-group-cli.md)
 - [Power shell: failover-groep](scripts/add-database-to-failover-group-powershell.md)
-- [Rest API: failovergroep](/rest/api/sql/failovergroups).
+- [REST API: Failovergroep](/rest/api/sql/failovergroups)
 
 Zorg er na een failover voor dat de verificatie vereisten voor uw data base en server, of dat het exemplaar is geconfigureerd op de nieuwe primaire. Zie [SQL database Security na nood herstel](active-geo-replication-security-configure.md)voor meer informatie.
 
@@ -115,7 +115,7 @@ Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie 
 
   - Herstel na nood gevallen (DR) in productie uitvoeren wanneer het gegevens verlies niet acceptabel is
   - De data bases naar een andere regio verplaatsen
-  - De data bases retour neren naar de primaire regio nadat de storing is verholpen (failback).
+  - De data bases retour neren naar de primaire regio nadat de storing is verholpen (failback)
 
 - **Niet-geplande failover**
 
@@ -127,7 +127,7 @@ Voor een echte bedrijfs continuïteit is het toevoegen van database redundantie 
 
 - **Respijt periode met gegevens verlies**
 
-  Omdat de primaire en secundaire data bases worden gesynchroniseerd met asynchrone replicatie, kan de failover leiden tot gegevens verlies. U kunt het beleid voor automatische failover aanpassen zodat de tolerantie van uw toepassing wordt aangepast aan gegevens verlies. Door te configureren `GracePeriodWithDataLossHours` kunt u bepalen hoe lang het systeem wacht voordat de failover wordt gestart die gegevens verlies waarschijnlijk zal veroorzaken.
+  Omdat de primaire en secundaire data bases worden gesynchroniseerd met asynchrone replicatie, kan de failover leiden tot gegevens verlies. U kunt het beleid voor automatische failover aanpassen zodat de tolerantie van uw toepassing wordt aangepast aan gegevens verlies. Door te configureren `GracePeriodWithDataLossHours` , kunt u bepalen hoe lang het systeem wacht voordat de failover wordt gestart die waarschijnlijk zal leiden tot verlies van gegevens.
 
 - **Meerdere failover-groepen**
 
@@ -176,7 +176,7 @@ Bij het uitvoeren van OLTP-bewerkingen gebruikt u `<fog-name>.database.windows.n
 
 ### <a name="using-read-only-listener-for-read-only-workload"></a>Alleen-lezen-listener gebruiken voor alleen-lezen werk belasting
 
-Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Gebruik voor alleen-lezen-sessies `<fog-name>.secondary.database.windows.net` als de server-URL en de verbinding wordt automatisch naar de secundaire omgeleid. U wordt ook aangeraden om in connection string Lees intentie op te geven met behulp van `ApplicationIntent=ReadOnly` .
+Als u een logisch geïsoleerde alleen-lezen werk belasting hebt die tolerant is voor bepaalde verouderde gegevens, kunt u de secundaire data base in de toepassing gebruiken. Gebruik voor alleen-lezen-sessies `<fog-name>.secondary.database.windows.net` als de server-URL en de verbinding wordt automatisch naar de secundaire omgeleid. Het wordt ook aanbevolen om in de connection string Lees intentie aan te geven met behulp van `ApplicationIntent=ReadOnly` .
 
 ### <a name="preparing-for-performance-degradation"></a>Prestatie vermindering voorbereiden
 
@@ -424,7 +424,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Switch-AzSqlDatabaseFailoverGroup](/powershell/module/az.sql/switch-azsqldatabasefailovergroup) | Hiermee wordt een failover van een failovergroep naar de secundaire server geactiveerd |
 | [Add-AzSqlDatabaseToFailoverGroup](/powershell/module/az.sql/add-azsqldatabasetofailovergroup)|Voegt een of meer data bases toe aan een failovergroep|
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |
@@ -462,7 +462,7 @@ Zoals eerder besproken, kunnen automatische failover-groepen en actieve geo-repl
 | [Remove-AzSqlDatabaseInstanceFailoverGroup](/powershell/module/az.sql/remove-azsqldatabaseinstancefailovergroup) | Hiermee verwijdert u een failovergroep|
 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 | Opdracht | Beschrijving |
 | --- | --- |

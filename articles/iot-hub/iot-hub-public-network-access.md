@@ -7,12 +7,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 03/12/2021
-ms.openlocfilehash: 539e420cb9085fad10ea3972ba0e9e5ffb9d0622
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: b225ad7e12a95b4dcbb8656f54f8a9e9562b2ee8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103419759"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604692"
 ---
 # <a name="managing-public-network-access-for-your-iot-hub"></a>Open bare netwerk toegang beheren voor uw IoT-hub
 
@@ -32,7 +32,7 @@ Als u open bare netwerk toegang wilt inschakelen, selecteert u **alle netwerken*
 
 ## <a name="accessing-the-iot-hub-after-disabling-public-network-access"></a>Toegang tot de IoT Hub na het uitschakelen van open bare netwerk toegang
 
-Nadat open bare netwerk toegang is uitgeschakeld, is de IoT Hub alleen toegankelijk via [het VNet-persoonlijke eind punt met behulp van een persoonlijke Azure-koppeling](virtual-network-support.md). Deze beperking omvat het openen via Azure Portal, omdat API-aanroepen naar de IoT Hub-service direct worden gemaakt met uw referenties via uw browser. 
+Nadat open bare netwerk toegang is uitgeschakeld, is de IoT Hub alleen toegankelijk via [het VNet-persoonlijke eind punt met behulp van een persoonlijke Azure-koppeling](virtual-network-support.md).
 
 ## <a name="iot-hub-endpoint-ip-address-and-ports-after-disabling-public-network-access"></a>IoT Hub-eind punt, IP-adres en poorten na het uitschakelen van de toegang tot het open bare netwerk
 

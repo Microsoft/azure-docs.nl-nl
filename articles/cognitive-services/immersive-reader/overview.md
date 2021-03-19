@@ -12,16 +12,21 @@ ms.date: 01/4/2020
 ms.author: metang
 ms.custom: cog-serv-seo-aug-2020
 keywords: lezers, personen die een taal willen leren, afbeeldingen weergeven, lezen verbeteren, inhoud lezen, vertalen
-ms.openlocfilehash: 0661bd5f917a2bf071f11393ad8ac9af53ddfe97
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.openlocfilehash: 6affc0a2b94c7ea950a8995981d63470722d981f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631236"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599524"
 ---
 # <a name="what-is-immersive-reader"></a>Wat is Insluitende lezer?
 
 [Insluitende lezer](https://www.onenote.com/learningtools) is een exclusief ontworpen hulpprogramma dat bewezen technieken implementeert om begrijpend lezen te verbeteren voor beginnende lezers, personen die een taal willen leren en mensen met leerproblemen, zoals dyslexie. Met de clientbibliotheek van Insluitende lezer kunt u gebruikmaken van dezelfde technologie die wordt gebruikt in Microsoft Word en Microsoft OneNote om uw webtoepassingen te verbeteren. 
+
+Deze documentatie bevat de volgende typen artikelen:  
+
+* **[Quick](quickstarts/client-libraries.md)** starts zijn stapsgewijze instructies waarmee u aanroepen naar de service kunt uitvoeren en resultaten kunt ophalen.
+* **[Hand leidingen](how-to-create-immersive-reader.md)** bevatten instructies voor het gebruik van de service op meer specifieke of aangepaste manieren.  
 
 ## <a name="use-immersive-reader-to-improve-reading-accessibility"></a>Insluitende lezer gebruiken om de leestoegang te verbeteren 
 
@@ -72,10 +77,3 @@ Insluitende lezer is een zelfstandige webtoepassing. Wanneer u de clientbiblioth
 De clientbibliotheek van Insluitende lezer is beschikbaar in C#, JavaScript, Java (Android), Kotlin (Android) en Swift (iOS). Ga aan de slag met:
 
 * [Quickstart: Gebruik de clientbibliotheek voor de Insluitende lezer](quickstarts/client-libraries.md)
-
-## <a name="next-steps"></a>Volgende stappen
-
-Aan de slag met Insluitende lezer:
-
-* Lees de [naslaginformatie over de clientbibliotheek van Insluitende lezer](./reference.md)
-* Maak kennis met de [clientbibliotheek voor Insluitende lezer op GitHub](https://github.com/microsoft/immersive-reader-sdk)

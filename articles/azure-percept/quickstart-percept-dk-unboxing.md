@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: quickstart
 ms.date: 02/16/2021
 ms.custom: template-quickstart
-ms.openlocfilehash: 40751401760d877fe3feab39f3fea1f2fbeee54b
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: efa255ba38f7e00785335bf458ecc0ed91da646b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101665413"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608177"
 ---
 # <a name="quickstart-unbox-and-assemble-your-azure-percept-dk-components"></a>Snelstartgids: Unbox en assemblage van uw Azure percept DK-onderdelen
 
@@ -32,7 +32,7 @@ Als u uw Azure percept DK hebt ontvangen, raadpleegt u deze hand leiding voor in
 1. Verbind de Devkit-onderdelen.
 
     > [!NOTE]
-    > De poort van de voedings adapter bevindt zich aan de rechter kant van het vervoerders bord. De resterende poorten (2x USB-A, 1x USB-C, 1x HDMI en 1x-Ethernet) en de knop opnieuw instellen bevinden zich aan de linkerkant van het vervoerders bord.
+    > De poort van de voedings adapter bevindt zich aan de rechter kant van het vervoerders bord. De overige poorten (2x USB-A, 1x USB-C en 1x-Ethernet) en de aan/uit-knop bevinden zich aan de linkerkant van het vervoerders bord.
 
     1. Hand schroef beide Wi-Fi antennes in het vervoerders bord.
 
@@ -44,11 +44,17 @@ Als u uw Azure percept DK hebt ontvangen, raadpleegt u deze hand leiding voor in
 
     1. Verbind de stroom adapter/kabel met de draag signaal kaart en een wand contactdoos. Als u de stekker van de stroom kabel volledig wilt beveiligen, gebruikt u een P7-draaier (niet opgenomen in de Devkit) om de schroef kracht van de connectors te verhogen.
 
-    1. Nadat u de stroom kabel hebt aangesloten op een wand contactdoos, wordt het apparaat automatisch ingeschakeld. De knop opnieuw instellen aan de linkerkant van het vervoerders bord is lichter. Wacht even totdat het apparaat is opgestart.
+    1. Nadat u de stroom kabel hebt aangesloten op een wand contactdoos, wordt het apparaat automatisch ingeschakeld. De aan/uit-knop aan de linkerkant van het draag signaal bord is lichter. Wacht even totdat het apparaat is opgestart.
 
         > [!NOTE]
-        > De knop opnieuw instellen is voor het uitschakelen of opnieuw instellen van het apparaat tijdens de verbinding met een stop contact. In het geval van een stroom storing wordt het apparaat automatisch opnieuw ingesteld en weer ingeschakeld.
+        > De aan/uit-knop is om het apparaat uit te scha kelen of opnieuw op te starten terwijl er verbinding is met een stop contact. In het geval van een stroom storing wordt het apparaat automatisch opnieuw opgestart.
+
+Voor een visuele demonstratie van de Devkit-assembly raadpleegt u 0:00 tot en met 0:50 van de volgende video:
+
+</br>
+
+> [!VIDEO https://www.youtube.com/embed/-dmcE2aQkDE]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu uw Devkit is aangesloten en ingeschakeld, raadpleegt u de installatie van de Azure percept DK-ervaring voor het volt ooien van de installatie van het apparaat. Met de Setup-ervaring kunt u uw Devkit verbinden met een Wi-Fi netwerk, een SSH-aanmelding instellen, een IoT Hub maken en uw Devkit inrichten voor uw Azure-account. Zodra u de installatie van het apparaat hebt voltooid, kunt u beginnen met het maken van prototypen.
+Nu uw Devkit is aangesloten en ingeschakeld, raadpleegt u de installatie van de [Azure PERCEPT DK-ervaring](./quickstart-percept-dk-set-up.md) voor het volt ooien van de installatie van het apparaat. Met de Setup-ervaring kunt u uw Devkit verbinden met een Wi-Fi netwerk, een SSH-aanmelding instellen, een IoT Hub maken en uw Devkit inrichten voor uw Azure-account. Zodra u de installatie van het apparaat hebt voltooid, kunt u beginnen met het maken van prototypen.

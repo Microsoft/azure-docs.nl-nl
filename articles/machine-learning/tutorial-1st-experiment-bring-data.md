@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 02/11/2021
 ms.custom: tracking-python
-ms.openlocfilehash: bbe28f4fda32ce7d55a437e4ac944dc206f436ee
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: ecabfde624ba6d3393bbf6d5480b83dbb5303c5e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102522356"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604553"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Zelfstudie: Uw eigen gegevens gebruiken (Deel 4 van 4)
 
@@ -39,7 +39,12 @@ In deze zelfstudie gaat u:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voltooiing van [Deel 3](tutorial-1st-experiment-sdk-train.md) van de serie.
+U hebt de gegevens en een bijgewerkte versie van de pytorch-omgeving nodig die u in de vorige zelf studie hebt gemaakt.  Zorg ervoor dat u de volgende stappen hebt uitgevoerd:
+
+1. [Het trainingsscript maken](tutorial-1st-experiment-sdk-train.md#create-training-scripts)
+1. [Een nieuwe python-omgeving maken](tutorial-1st-experiment-sdk-train.md#environment)
+1. [Lokaal testen](tutorial-1st-experiment-sdk-train.md#test-local)
+1. [Het Conda-omgevingsbestand bijwerken](tutorial-1st-experiment-sdk-train.md#update-the-conda-environment-file)
 
 ## <a name="adjust-the-training-script"></a>Het trainingsscript aanpassen
 
@@ -75,6 +80,7 @@ optimizer = optim.SGD(
     momentum=args.momentum,    # get momentum from command-line argument
 )
 ```
+
 > [!div class="nextstepaction"]
 > [Ik heb het trainingsscript aangepast](?success=adjust-training-script#test-locally) [Er is een probleem opgetreden](https://www.research.net/r/7C6W7BQ?issue=adjust-training-script)
 
@@ -84,28 +90,27 @@ Uw script accepteert nu _gegevenspad_ als een argument. U moet het als eerste lo
 
 :::image type="content" source="media/tutorial-1st-experiment-bring-data/directory-structure.png" alt-text="In de mapstructuur worden weer gegeven. azureml-, gegevens-en src-submappen":::
 
+1. Sluit de huidige omgeving af.
 
-Als u `train.py` niet lokaal hebt uitgevoerd in de vorige zelfstudie, hebt u de map `data/` niet. In dit geval voert u de `torchvision.datasets.CIFAR10`-methode lokaal uit met `download=True` in uw `train.py`-script.
+    ```bash
+    conda deactivate
 
-Zorg er ook voor dat u de zelf studie omgeving afsluit en de nieuwe Conda-omgeving activeert om lokaal uit te voeren.
+1. Now create and activate the new environment.  This will rebuild the pytorch-aml-env with the [updated environment file](tutorial-1st-experiment-sdk-train.md#update-the-conda-environment-file)
 
-```bash
-conda deactivate                # If you are still using the tutorial environment, exit it
-```
 
-```bash
-conda env create -f .azureml/pytorch-env.yml    # create the new conda environment with updated dependencies
-```
+    ```bash
+    conda env create -f .azureml/pytorch-env.yml    # create the new conda environment with updated dependencies
+    ```
 
-```bash
-conda activate pytorch-aml-env          # activate new conda environment
-```
+    ```bash
+    conda activate pytorch-aml-env          # activate new conda environment
+    ```
 
-Om het gewijzigde trainingsscript lokaal uit te voeren, roept u het volgende aan:
+1. Ten slotte voert u het gewijzigde trainings script lokaal uit.
 
-```bash
-python src/train.py --data_path ./data --learning_rate 0.003 --momentum 0.92
-```
+    ```bash
+    python src/train.py --data_path ./data --learning_rate 0.003 --momentum 0.92
+    ```
 
 U moet voorkomen dat u de CIFAR10-gegevensset downloadt door een lokaal pad naar de gegevens op te geven. U kunt ook experimenteren met verschillende waarden voor de hyperparameters voor _leersnelheid_ en _momentum_ zonder ze in het trainingsscript te hoeven coderen.
 

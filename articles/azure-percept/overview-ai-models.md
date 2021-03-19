@@ -7,12 +7,12 @@ ms.service: azure-percept
 ms.topic: conceptual
 ms.date: 02/16/2021
 ms.custom: template-concept
-ms.openlocfilehash: d0cdabb3b22d642a7903810181106b09c549e1a2
-ms.sourcegitcommit: f7eda3db606407f94c6dc6c3316e0651ee5ca37c
+ms.openlocfilehash: e31a696dfb443c20566f13f5a228eefac7af5ecc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102218159"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595920"
 ---
 # <a name="azure-percept-ai-models"></a>Azure percept AI-modellen
 
@@ -40,6 +40,10 @@ Er is ook een [referentie oplossing](https://github.com/microsoft/Azure-Percept-
 Met Azure percept Studio kunt u aangepaste [visie](./tutorial-nocode-vision.md) -en spraak oplossingen ontwikkelen, maar geen code ring vereist.
 
 Voor aangepaste Vision-oplossingen zijn zowel object detectie als classificatie AI-modellen beschikbaar. U kunt uw trainings afbeeldingen gewoon uploaden en labelen, die rechtstreeks kunnen worden gemaakt met het percept Vision-SoM van Azure percept DK, indien gewenst. Model training en evaluatie kunnen eenvoudig worden uitgevoerd in [Custom Vision](https://www.customvision.ai/), die deel uitmaakt van [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/#overview).
+
+</br>
+
+> [!VIDEO https://www.youtube.com/embed/9LvafyazlJM]
 
 Voor aangepaste spraak oplossingen zijn sjablonen voor spraak assistenten momenteel beschikbaar voor de volgende toepassingen:
 

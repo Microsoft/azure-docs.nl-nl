@@ -3,21 +3,21 @@ title: IP-adressen in Azure Functions
 description: Meer informatie over het vinden van binnenkomende en uitgaande IP-adressen voor functie-apps en wat ertoe leidt dat deze worden gewijzigd.
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.openlocfilehash: fcc92e61e180d25bc67d5ca3f9e2bff4af01fd3f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 2c248756899459e17082bcab863a4e857b594909
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98726728"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104608228"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-adressen in Azure Functions
 
-In dit artikel worden de volgende onderwerpen met betrekking tot IP-adressen van functie-apps beschreven:
+In dit artikel worden de volgende concepten beschreven met betrekking tot IP-adressen van functie-apps:
 
-* De IP-adressen vinden die momenteel worden gebruikt door een functie-app.
-* Hierdoor worden de IP-adressen van een functie-app gewijzigd.
+* Zoeken naar de IP-adressen die momenteel worden gebruikt door een functie-app.
+* Omstandigheden die ertoe leiden dat de IP-adressen van de functie-app worden gewijzigd.
 * Het beperken van de IP-adressen die toegang hebben tot een functie-app.
-* Specifieke IP-adressen voor een functie-app ophalen.
+* Specifieke IP-adressen definiëren voor een functie-app.
 
 IP-adressen zijn gekoppeld aan functie-apps, niet met afzonderlijke functies. Inkomende HTTP-aanvragen kunnen het inkomende IP-adres niet gebruiken voor het aanroepen van afzonderlijke functies. ze moeten de standaard domein naam (functionappname.azurewebsites.net) of een aangepaste domein naam gebruiken.
 
@@ -25,7 +25,7 @@ IP-adressen zijn gekoppeld aan functie-apps, niet met afzonderlijke functies. In
 
 Elke functie-app heeft één inkomend IP-adres. Het IP-adres zoeken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Navigeer naar de functie-app.
 3. Selecteer onder **Alle instellingen** de optie **Eigenschappen**. Het inkomende IP-adres wordt weer gegeven onder **virtueel IP-adres**.
 
@@ -54,9 +54,9 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 
 ## <a name="data-center-outbound-ip-addresses"></a>Uitgaande IP-adressen van data centers
 
-Als u de uitgaande IP-adressen die worden gebruikt door uw functie-Apps wilt toevoegen aan een acceptatie lijst, is een andere optie het toevoegen van de functie-apps Data Center (Azure Region) aan een acceptatie lijst. U kunt [een JSON-bestand downloaden met een lijst met IP-adressen voor alle Azure-data centers](https://www.microsoft.com/en-us/download/details.aspx?id=56519). Zoek vervolgens het JSON-fragment dat van toepassing is op de regio waarin uw functie-app wordt uitgevoerd.
+Als u de uitgaande IP-adressen wilt toevoegen die door uw functie-apps worden gebruikt voor een allowlist, is een andere optie het toevoegen van de functie-apps Data Center (Azure Region) aan een allowlist. U kunt [een JSON-bestand downloaden met een lijst met IP-adressen voor alle Azure-data centers](https://www.microsoft.com/en-us/download/details.aspx?id=56519). Zoek vervolgens het JSON-fragment dat van toepassing is op de regio waarin uw functie-app wordt uitgevoerd.
 
-Dit is bijvoorbeeld het JSON-fragment West-Europa dat er ongeveer als volgt uitziet:
+Zo kan het volgende JSON-fragment bijvoorbeeld het allowlist voor West-Europa zien:
 
 ```
 {
@@ -99,10 +99,12 @@ De set beschik bare uitgaande IP-adressen voor een functie-app kan veranderen wa
 
 Wanneer uw functie-app wordt uitgevoerd in een [verbruiks abonnement](consumption-plan.md) of in een [Premium-abonnement](functions-premium-plan.md), kan het uitgaande IP-adres ook worden gewijzigd, zelfs als u geen acties hebt uitgevoerd zoals [hierboven vermeld](#inbound-ip-address-changes).
 
-Als u de wijziging van een uitgaand IP-adres wilt forceren:
+Gebruik de volgende procedure om de wijziging van een uitgaand IP-adres opzettelijk af te dwingen:
 
 1. Schaal uw App Service plan omhoog of omlaag tussen de Standard-en Premium v2-prijs categorieën.
+
 2. Wacht tien minuten.
+
 3. Schaal terug naar de locatie waar u bent begonnen.
 
 ## <a name="ip-address-restrictions"></a>IP-adresbeperkingen
@@ -111,11 +113,19 @@ U kunt een lijst met IP-adressen die u wilt toestaan of weigeren van toegang tot
 
 ## <a name="dedicated-ip-addresses"></a>Toegewezen IP-adressen
 
-Als u statische, specifieke IP-adressen nodig hebt, raden wij u aan [app service omgevingen](../app-service/environment/intro.md) (de [geïsoleerde tier](https://azure.microsoft.com/pricing/details/app-service/) of app service-abonnementen). Zie [app service Environment IP-adressen](../app-service/environment/network-info.md#ase-ip-addresses) en informatie [over het beheren van inkomend verkeer naar een app service Environment](../app-service/environment/app-service-app-service-environment-control-inbound-traffic.md)voor meer informatie.
+Er zijn verschillende strategieën om te ontdekken wanneer uw functie-app statische, specifieke IP-adressen nodig heeft. 
+
+### <a name="virtual-network-nat-gateway-for-outbound-static-ip"></a>Virtuele netwerk gateway voor uitgaande vaste IP
+
+U kunt het IP-adres van het uitgaande verkeer van uw functies beheren door gebruik te maken van een NAT-gateway van het virtuele netwerk om verkeer via een statisch openbaar IP-adres te sturen. U kunt deze topologie gebruiken wanneer u in een [Premium-abonnement](functions-premium-plan.md)wordt uitgevoerd. Voor meer informatie, Zie [zelf studie: Control Azure Functionsing van het uitgaande IP-adres met een NAT-gateway van het virtuele netwerk van Azure](functions-how-to-use-nat-gateway.md).
+
+### <a name="app-service-environments"></a>App Service-omgevingen
+
+Voor volledige controle over de IP-adressen, zowel binnenkomend als uitgaand, raden we [app service omgevingen](../app-service/environment/intro.md) aan (de [geïsoleerde tier](https://azure.microsoft.com/pricing/details/app-service/) of app service-abonnementen). Zie [app service Environment IP-adressen](../app-service/environment/network-info.md#ase-ip-addresses) en informatie [over het beheren van inkomend verkeer naar een app service Environment](../app-service/environment/app-service-app-service-environment-control-inbound-traffic.md)voor meer informatie.
 
 Als u wilt weten of uw functie-app wordt uitgevoerd in een App Service Environment:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Navigeer naar de functie-app.
 3. Selecteer het tabblad **Overzicht**.
 4. De laag App Service plan wordt weer gegeven onder **app service plan/prijs categorie**. De prijs Categorie App Service Environment is **geïsoleerd**.

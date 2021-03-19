@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 03/8/2021
 ms.author: mimckitt
 ms.reviewer: cynthn
-ms.openlocfilehash: 0325dcf16c8e637a58365311a4ebd37a442d6b8c
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: c206cba3b23a0bf41ce32481980aa466e869bcde
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102522428"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596294"
 ---
 # <a name="states-and-billing-of-azure-virtual-machines"></a>Statussen en facturering van Azure Virtual Machines
 
@@ -41,7 +41,7 @@ De energie status vertegenwoordigt de laatste bekende status van de virtuele mac
 
 De volgende tabel bevat een beschrijving van elke instantie status en geeft aan of deze in rekening wordt gebracht voor het gebruik van exemplaren of niet.
 
-| Energie status | Beschrijving | Billing |  
+| Energie status | Description | Billing |  
 |---|---|---|
 | Starten| De virtuele machine wordt uitgeschakeld. |Niet gefactureerd * | 
 | Wordt uitgevoerd | De virtuele machine is volledig actief. Dit is de standaard werk status. | Gefactureerd | 
@@ -59,7 +59,7 @@ Een inrichtings status is de status van een door de gebruiker geïnitieerde, bes
 
 :::image type="content" source="./media/virtual-machines-common-states-lifecycle/vm-provisioning-states.png" alt-text="Afbeelding toont de inrichtings status die een virtuele machine kan passeren.":::
 
-| Inrichtings status | Beschrijving | Energie status | Billing | 
+| Inrichtings status | Description | Energie status | Billing | 
 |---|---|---|---|
 | Maken | Virtuele machine maken. | Starten | Niet gefactureerd * | 
 | Bijwerken | Hiermee werkt u het model voor een bestaande virtuele machine bij. Sommige niet-model wijzigingen voor een virtuele machine, zoals starten en opnieuw opstarten, vallen onder de update status. | Wordt uitgevoerd | Gefactureerd | 
@@ -73,7 +73,7 @@ De inrichtings status van besturings systemen gelden alleen voor virtuele machin
 
 :::image type="content" source="./media/virtual-machines-common-states-lifecycle/os-provisioning-states.png" alt-text="Afbeelding toont de inrichtings status van het besturings systeem die een virtuele machine kan passeren.":::
 
-| Inrichtings status van besturings systeem | Beschrijving | Energie status | Billing | 
+| Inrichtings status van besturings systeem | Description | Energie status | Billing | 
 |---|---|---|---|
 | OSProvisioningInProgress | De virtuele machine wordt uitgevoerd en de installatie van het gast besturingssysteem wordt uitgevoerd. | Wordt uitgevoerd | Gefactureerd | 
 | OSProvisioningComplete | Dit is een korte status. De virtuele machine verandert snel van deze status naar **geslaagd**. Als er nog extensies worden geïnstalleerd, blijft u deze status zien totdat ze zijn voltooid. | Wordt uitgevoerd | Gefactureerd | 
@@ -82,6 +82,6 @@ De inrichtings status van besturings systemen gelden alleen voor virtuele machin
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Raadpleeg de [documentatie over Azure Cost Management en facturering](https://docs.microsoft.com/azure/cost-management-billing/)
+- Raadpleeg de [documentatie over Azure Cost Management en facturering](../cost-management-billing/index.yml)
 - Gebruik de [prijs calculator van Azure](https://azure.microsoft.com/pricing/calculator/) om uw implementaties te plannen.
-- Zie [virtuele machines in azure controleren](../azure-monitor/insights/monitor-vm-azure.md)voor meer informatie over het bewaken van uw VM.
+- Zie [virtuele machines in azure controleren](../azure-monitor/vm/monitor-vm-azure.md)voor meer informatie over het bewaken van uw VM.

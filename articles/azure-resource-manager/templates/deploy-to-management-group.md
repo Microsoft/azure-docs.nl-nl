@@ -2,13 +2,13 @@
 title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 03/16/2021
-ms.openlocfilehash: b14dc3622a6ad6519968bd2998aa354a850f2515
-ms.sourcegitcommit: 27cd3e515fee7821807c03e64ce8ac2dd2dd82d2
+ms.date: 03/18/2021
+ms.openlocfilehash: 79020e8e24cb43697a44ac9accd4e777bffe959e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103601590"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594203"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -219,6 +219,14 @@ In het volgende voor beeld wordt een nieuwe beheer groep gemaakt in de beheer gr
     }
 }
 ```
+
+## <a name="subscriptions"></a>Abonnementen
+
+Zie voor het gebruik van een ARM-sjabloon voor het maken van een nieuw Azure-abonnement in een beheer groep:
+
+* [Programmatisch Azure Enterprise Overeenkomst-abonnementen maken](../../cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement.md)
+* [Programmatisch Azure-abonnementen maken voor een micro soft-klant overeenkomst](../../cost-management-billing/manage/programmatically-create-subscription-microsoft-customer-agreement.md)
+* [Programmatisch Azure-abonnementen maken voor een micro soft-partner overeenkomst](../../cost-management-billing/manage/programmatically-create-subscription-microsoft-partner-agreement.md)
 
 Zie [abonnementen verplaatsen in arm-sjabloon](../../governance/management-groups/manage.md#move-subscriptions-in-arm-template) voor het implementeren van een sjabloon waarmee een bestaand Azure-abonnement naar een nieuwe beheer groep wordt verplaatst.
 

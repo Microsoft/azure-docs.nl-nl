@@ -4,12 +4,12 @@ description: Antwoord op enkele van de meest voorkomende vragen en scenario's vo
 ms.topic: troubleshooting
 ms.date: 4/11/2019
 ms.reviewer: glenga
-ms.openlocfilehash: 3e8a992aac95b6c2688cb45aa980bf0b01883a53
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 24afeeee3207127bb9404156dc390433671dd5da
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578226"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592299"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Veelgestelde vragen over netwerken in Azure Functions
 
@@ -17,7 +17,9 @@ In dit artikel vindt u een lijst met veelgestelde vragen over netwerken in Azure
 
 ## <a name="how-do-i-set-a-static-ip-in-functions"></a>Hoe kan ik een statisch IP-adres instellen in functions?
 
-Het implementeren van een functie in een App Service Environment is momenteel de enige manier om een statisch inkomend en uitgaand IP-adres voor uw functie te gebruiken. Voor meer informatie over het gebruik van een App Service Environment begint u met het artikel [een interne Load Balancer met een app service Environment maken en gebruiken](../app-service/environment/create-ilb-ase.md).
+Het implementeren van een functie in een App Service Environment is de primaire manier om statische binnenkomende en uitgaande IP-adressen voor uw functies te gebruiken. Voor meer informatie over het gebruik van een App Service Environment begint u met het artikel [een interne Load Balancer met een app service Environment maken en gebruiken](../app-service/environment/create-ilb-ase.md).
+
+U kunt ook een NAT-gateway van het virtuele netwerk gebruiken om uitgaand verkeer te routeren via een openbaar IP-adres dat u beheert. Voor meer informatie, Zie [zelf studie: Control Azure Functionsing van het uitgaande IP-adres met een NAT-gateway van het virtuele netwerk van Azure](functions-how-to-use-nat-gateway.md). 
 
 ## <a name="how-do-i-restrict-internet-access-to-my-function"></a>Hoe kan ik Internet toegang tot mijn functie beperken?
 
@@ -33,7 +35,7 @@ Houd er wel voor dat de Azure Portal editor rechtstreekse toegang tot uw actieve
 
 U kunt **Inkomend** verkeer voor een functie-app beperken tot een virtueel netwerk met behulp van [service-eind punten](./functions-networking-options.md#use-service-endpoints). Met deze configuratie kan de functie-app nog steeds uitgaande aanroepen naar Internet maken.
 
-Als u een functie wilt beperken waarmee al het verkeer via een virtueel netwerk wordt doorlopen, kunt u een [privé-eind punt](./functions-networking-options.md#private-endpoint-connections) met uitgaande virtuele netwerk integratie of een app service Environment gebruiken.
+Als u een functie wilt beperken waarmee al het verkeer via een virtueel netwerk wordt doorlopen, kunt u een [privé-eind punt](./functions-networking-options.md#private-endpoint-connections) met uitgaande virtuele netwerk integratie of een app service Environment gebruiken. Zie [Azure functions integreren met een virtueel Azure-netwerk met behulp van privé-eind punten](functions-create-vnet.md)voor meer informatie.
 
 ## <a name="how-can-i-access-resources-in-a-virtual-network-from-a-function-app"></a>Hoe kan ik toegang krijgen tot resources in een virtueel netwerk vanuit een functie-app?
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: tutorial
-ms.date: 05/07/2020
+ms.date: 03/17/2021
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0f88b310bc00881e66ee8e8b5f2d40616d60315
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 01deae46c442fc95c6aead0f11de929f47163c3c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87906846"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586533"
 ---
 # <a name="tutorial-bulk-invite-azure-ad-b2b-collaboration-users"></a>Zelfstudie: Bulksgewijs gebruikers uitnodigen voor Microsoft Azure AD B2B-samenwerking
 
@@ -41,7 +41,7 @@ De rijen in een gedownloade CSV-sjabloon zijn als volgt:
 
 - **Versienummer**: De eerste rij met het versienummer moet worden opgenomen in het CSV-uploadbestand.
 - **Kolomkoppen**: De indeling van de kolomkoppen is &lt;*itemnaam*&gt; [eigenschapsnaam] &lt;*Required of leeg*&gt;. Bijvoorbeeld `Email address to invite [inviteeEmail] Required`. Sommige oudere versies van de sjabloon kunnen iets afwijken.
-- **Rij met voorbeelden**: We hebben in de sjabloon een rij met voorbeelden van acceptabele waarden voor elke kolom opgenomen. U moet de rij met voorbeelden verwijderen en vervangen door uw eigen invoerwaarden.
+- **Voor beelden van rij**: we hebben in de sjabloon een rij met voor beelden van waarden voor elke kolom opgenomen. U moet de rij met voorbeelden verwijderen en vervangen door uw eigen invoerwaarden.
 
 ### <a name="additional-guidance"></a>Aanvullende richtlijnen
 
@@ -56,18 +56,22 @@ U moet twee of meer test e-mailaccounts hebben waarnaar u uitnodigingen kunt ver
 
 ## <a name="invite-guest-users-in-bulk"></a>Gastgebruikers bulksgewijs uitnodigen
 
-1. Meld u bij Azure Portal aan met een account met beheerdersrechten in de organisatie.
+1. Meld u aan bij de Azure Portal met een account dat een globale beheerder in de organisatie is.
 2. Selecteer in het navigatiedeelvenster de service **Azure Active Directory**.
-3. Selecteer onder **Beheren** de optie **Gebruikers** > **Bulksgewijs uitnodigen**.
+3. Selecteer onder **beheren** **alle gebruikers**.
+4. Selecteer bulk-uitnodiging voor **bulk bewerking**  >  .
+
+    ![Knop voor bulksgewijs uitnodigen](media/tutorial-bulk-invite/bulk-invite-button.png)
+
 4. Selecteer op de pagina **Gebruikers bulksgewijs uitnodigen** de optie **Downloaden** om een geldige CSV-sjabloon met uitnodigingseigenschappen op te halen.
 
-    ![Knop Downloaden voor bulksgewijs uitnodigen](media/tutorial-bulk-invite/bulk-invite-button.png)
+     ![Het CSV-bestand downloaden](media/tutorial-bulk-invite/download-button.png)
 
-5. Open de CSV-sjabloon en voeg voor elke gastgebruiker een regel toe. Vereiste waarden zijn:
+1. Open de CSV-sjabloon en voeg voor elke gastgebruiker een regel toe. Vereiste waarden zijn:
 
    * **E-mailadres voor uitnodiging**: de gebruiker die een uitnodiging ontvangt
 
-   * **Omleidings-URL**: de URL waarnaar de uitgenodigde gebruiker wordt doorgestuurd na acceptatie van de uitnodiging
+   * **Omleidings-URL** : de URL waarnaar de uitgenodigde gebruiker is doorgestuurd nadat de uitnodiging is geaccepteerd. Als u de gebruiker wilt door sturen naar de pagina mijn apps, moet u deze waarde wijzigen in https://myapps.microsoft.com of https://myapplications.microsoft.com .
 
     ![Voorbeeld van een CSV-bestand met ingevoerde gastgebruikers](media/tutorial-bulk-invite/bulk-invite-csv.png)
 

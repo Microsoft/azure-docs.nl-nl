@@ -2,13 +2,13 @@
 title: Ontwikkel-en implementatie omgevingen van Bicep instellen
 description: Ontwikkel-en implementatie omgevingen van Bicep configureren
 ms.topic: conceptual
-ms.date: 03/09/2021
-ms.openlocfilehash: 0434c08a4427d2549a9adf4e4ab1e7e73a465ad8
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.date: 03/17/2021
+ms.openlocfilehash: d665a863affdec2009fc208f76b85a7f25de451d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102620051"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594390"
 ---
 # <a name="setup-bicep-development-and-deployment-environment"></a>Ontwikkel-en implementatie omgeving van Bicep instellen
 
@@ -18,7 +18,7 @@ Meer informatie over het instellen van Bicep-ontwikkel-en implementatie omgeving
 
 Voor de beste ervaring voor het ontwerpen van Bicep hebt u twee onderdelen nodig:
 
-- **Bicep-extensie voor Visual Studio code**. Als u Bicep-bestanden wilt maken, hebt u een goede Bicep-editor nodig. We raden [Visual Studio code](https://code.visualstudio.com/) aan met de [Bicep-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep). Deze hulpprogram ma's bieden taal ondersteuning en automatisch aanvullen van resources. Ze helpen u bij het maken en valideren van Bicep-bestanden. Zie [Quick Start: Bicep-bestanden maken met Visual Studio code](./quickstart-create-bicep-use-visual-studio-code.md)voor meer informatie.
+- **Bicep-extensie voor Visual Studio code**. Als u Bicep-bestanden wilt maken, hebt u een goede Bicep-editor nodig. We raden [Visual Studio code](https://code.visualstudio.com/) aan met de [Bicep-extensie](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep). Deze hulpprogram ma's bieden taal ondersteuning en automatisch aanvullen van resources. Ze helpen u bij het maken en valideren van Bicep-bestanden. Zie [Quick Start: Bicep-bestanden maken met Visual Studio code](./quickstart-create-bicep-use-visual-studio-code.md)voor meer informatie over het gebruik van Visual Studio code en de Bicep-extensie.
 - **BICEP cli**. Gebruik Bicep CLI voor het compileren van Bicep-bestanden voor ARM JSON-sjablonen en het decompileren van ARM JSON-sjablonen op Bicep-bestanden. Zie [install BICEP cli](#install-bicep-cli)(Engelstalig) voor meer informatie.
 
 ## <a name="deployment-environment"></a>Implementatieomgeving

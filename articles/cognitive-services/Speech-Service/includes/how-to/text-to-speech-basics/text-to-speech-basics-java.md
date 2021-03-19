@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 03/25/2020
 ms.custom: devx-track-java
 ms.author: trbye
-ms.openlocfilehash: bb2d9b04e6366b17cfb0ee4b8586359035be910d
-ms.sourcegitcommit: ba676927b1a8acd7c30708144e201f63ce89021d
+ms.openlocfilehash: 80384662789e9dad979566715672c15a8648ea9a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102428219"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104611892"
 ---
 In deze quickstart maakt u kennis met algemene ontwerppatronen voor het uitvoeren van een spraak-naar-tekstsynthese met behulp van de Speech-SDK. Eerst voert u een basisconfiguratie en -synthese uit en gaat u verder met geavanceerdere voorbeelden voor aangepaste toepassingsontwikkeling zoals:
 
@@ -67,7 +67,7 @@ Er zijn een paar manieren waarop u een [`SpeechConfig`](/java/api/com.microsoft.
 In dit voorbeeld maakt u een [`SpeechConfig`](/java/api/com.microsoft.cognitiveservices.speech.speechconfig) met behulp van een abonnementssleutel en regio. U kunt deze referenties ophalen door de stappen te volgen in [De Speech-service gratis uitproberen](../../../overview.md#try-the-speech-service-for-free). U schrijft ook wat eenvoudige standaardcode voor gebruik in de rest van dit artikel. U gaat de code voor verschillende aanpassingen wijzigen.
 
 ```java
-public class Program 
+public class Program
 {
     public static void main(String[] args) {
         SpeechConfig speechConfig = SpeechConfig.fromSubscription("YourSubscriptionKey", "YourServiceRegion");
@@ -124,7 +124,7 @@ Voor veel scenario's in het ontwikkelen van spraaktoepassingen hebt u waarschijn
 * Integreer het resultaat met andere API's of services.
 * Wijzig de audiogegevens, schrijf aangepaste `.wav`-headers, enzovoort.
 
-U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `null` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor. 
+U kunt deze wijziging eenvoudig met behulp van het voorgaande voorbeeld uitvoeren. Verwijder eerst het `AudioConfig`-blok, omdat u het uitvoergedrag vanaf dit punt handmatig gaat beheren voor een betere controle. Geef vervolgens `null` door voor de `AudioConfig` in de `SpeechSynthesizer`-constructor.
 
 > [!NOTE]
 > Als `null` voor de `AudioConfig` wordt doorgegeven in plaats van dat deze wordt weggelaten, zoals in het bovenstaande voorbeeld met de luidspreker, wordt de audio niet standaard afgespeeld op het huidige actieve uitvoerapparaat.
@@ -135,7 +135,7 @@ Deze keer slaat u het resultaat op in een [`SpeechSynthesisResult`](/java/api/co
 public static void main(String[] args) {
     SpeechConfig speechConfig = SpeechConfig.fromSubscription("YourSubscriptionKey", "YourServiceRegion");
     SpeechSynthesizer synthesizer = new SpeechSynthesizer(speechConfig, null);
-    
+
     SpeechSynthesisResult result = synthesizer.SpeakText("Getting the response as an in-memory stream.");
     AudioDataStream stream = AudioDataStream.fromResult(result);
     System.out.print(stream.getStatus());
@@ -254,3 +254,10 @@ Als u wilt overschakelen naar een neurale stem, wijzigt u de `name` in een van d
   </voice>
 </speak>
 ```
+
+## <a name="visemes"></a>Visemes
+
+Spraak wordt doorgaans behandeld als een goede manier om de animatie van gezichts uitdrukkingen te vertonen.
+Vaak worden [visemes](../../../how-to-speech-synthesis-viseme.md) gebruikt om de sleutel in waargenomen spraak weer te geven (dat wil zeggen de positie van de lippen, jaw en tong bij het produceren van een bepaalde foneem).
+U kunt de Viseme-gebeurtenis in Speech SDK abonneren om gelaat animatie gegevens te genereren. Vervolgens kunt u dergelijke gegevens Toep assen op een teken om te zien hoe de animatie wordt Vergezicht.
+Meer informatie [over het ophalen van viseme-uitvoer](../../../how-to-speech-synthesis-viseme.md#get-viseme-outputs-with-the-speech-sdk).

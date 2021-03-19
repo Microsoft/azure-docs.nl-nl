@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: include
 ms.custom: include file
 ms.date: 06/27/2019
-ms.openlocfilehash: a979cd0a4c2ee6466edebadf61e8a98b8f17c9f3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 0c21c576cbb99ccc96bf7edf733769a9b28b9344
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013350"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104612400"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -59,7 +59,8 @@ In deze sectie maakt u in Azure Blob Storage een blobcontainer met de naam **adf
 2. Selecteer in de werkbalk van de pagina *\<Account name>*  - **Containers** **Container**.
 3. Voer in het dialoogvenster **Nieuwe container** als naam **adftutorial** in en selecteer **OK**. De pagina *\<Account name>*  - **Containers** is bijgewerkt en bevat **adftutorial** in de lijst containers.
 
-   ![Lijst met containers](media/data-factory-quickstart-prerequisites/list-of-containers.png)
+   :::image type="content" source="media/data-factory-quickstart-prerequisites/list-of-containers.png" alt-text="Lijst met containers":::
+
 
 #### <a name="add-an-input-folder-and-file-for-the-blob-container"></a>Voeg een invoermap en -bestand toe aan de blobcontainer
 
@@ -82,7 +83,8 @@ Sla het bestand op in de map **c:\ADFv2QuickStartPSH**. (Maak de map als deze no
 3. Selecteer op de pagina **Blob uploaden** het venster **Bestanden** en blader vervolgens naar en selecteer het bestand **emp.txt**.
 4. Vouw de kop **Geavanceerd** uit. De pagina wordt nu als volgt weergegeven:
 
-   ![De koppeling Geavanceerd selecteren](media/data-factory-quickstart-prerequisites/upload-blob-advanced.png)
+   :::image type="content" source="media/data-factory-quickstart-prerequisites/upload-blob-advanced.png" alt-text="De koppeling Geavanceerd selecteren":::
+
 5. In het vak **Uploaden naar map** voert u **invoer** in.
 6. Selecteer de knop **Uploaden**. Als het goed is, ziet u in de lijst nu het bestand **emp.txt**, evenals de uploadstatus hiervan.
 7. Selecteer het pictogram **Sluiten** (**X**) om de pagina **Blob uploaden** te sluiten.

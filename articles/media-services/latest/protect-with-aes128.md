@@ -2,7 +2,7 @@
 Titel: video versleutelen met AES-128: beschrijving van Azure Media Services: meer informatie over het versleutelen van video met AES 128-bits versleuteling en het gebruik van de key delivery service in Azure Media Services.
 Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
 
-MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: na MS. topic: zelf studie MS. date: 08/31/2020 MS. Author: inhenkel
+MS. service: Media-Services MS. workload: medium ms.tgt_pltfrm: na MS. devlang: na MS. topic: zelf studie MS. date: 03/17/2021 MS. Author: inhenkel
 
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Zelfstudie: Video versleutelen met AES-128 en de sleutelleveringsservice gebruiken
@@ -89,7 +89,7 @@ In deze zelfstudie maakt u invoer voor de taak op basis van een bestand dat rech
 
 ## <a name="wait-for-the-job-to-complete"></a>Wacht tot de taak is voltooid
 
-Het duurt even voordat de taak is voltooid. Wanneer dit is gebeurd, wilt u daarover een melding ontvangen. In het onderstaande codevoorbeeld ziet u hoe de status van de [taak](/rest/api/media/jobs) kan worden opgevraagd in de service. Navragen is geen aanbevolen best practice voor productie-apps vanwege mogelijke latentie. Polling kan worden beperkt bij een te intensief gebruik op een account. Ontwikkelaars moeten in plaats daarvan Event Grid gebruiken. Zie [Gebeurtenissen routeren naar een aangepast webeindpunt](job-state-events-cli-how-to.md) voor meer informatie.
+Het duurt even voordat de taak is voltooid. Wanneer dit is gebeurd, wilt u daarover een melding ontvangen. In het onderstaande codevoorbeeld ziet u hoe de status van de [taak](/rest/api/media/jobs) kan worden opgevraagd in de service. Navragen is geen aanbevolen best practice voor productie-apps vanwege mogelijke latentie. Polling kan worden beperkt bij een te intensief gebruik op een account. Ontwikkelaars moeten in plaats daarvan Event Grid gebruiken. Zie [Gebeurtenissen routeren naar een aangepast webeindpunt](monitoring/job-state-events-cli-how-to.md) voor meer informatie.
 
 De **taak** doorloopt meestal de volgende statussen: **Gepland**, **In de wachtrij geplaatst**, **Verwerken**, **Voltooid** (de eindstatus). Als bij de taak een fout is opgetreden, krijgt u de status **Fout**. Als de taak momenteel wordt geannuleerd, krijgt u de meldingen **Wordt geannuleerd** en **Geannuleerd** wanneer het annuleren is voltooid.
 

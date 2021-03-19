@@ -11,12 +11,12 @@ ms.date: 04/19/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: 218803d0b7e1f5add2f033a7ce01e0a8f6ffc956
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 450a089c6cc1c77ac26cb0aa339277d5c49b41c8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101674099"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594781"
 ---
 # <a name="statistics-in-synapse-sql"></a>Statistieken in Synapse SQL
 
@@ -90,9 +90,9 @@ Statistieken voor een kolom land of regio in een tabel Klant hoeven nooit te wor
 
 Als uw data warehouse echter slechts één land of regio bevat en u gegevens uit een nieuw land of nieuwe regio haalt, moet u de statistieken bijwerken in de kolom land of regio.
 
-Hier volgen de aanbevelingen voor het bijwerken van statistieken:
+Hier volgen enkele aanbevelingen voor het bijwerken van statistieken:
 
-|||
+|Type|Aanbeveling|
 |-|-|
 | **Frequentie van updates voor statistieken**  | Conservatief: dagelijks </br> Nadat u uw gegevens hebt geladen of getransformeerd |
 | **Steekproeven** |  Minder dan 1.000.000.000 rijen, gebruik standaard steekproef (20 procent). </br> Gebruik meer dan 1.000.000.000 rijen om de steek proef van twee procent te gebruiken. |
@@ -443,7 +443,7 @@ Er zijn verschillende systeem weergaven en-functies die u kunt gebruiken om info
 
 Deze systeem weergaven bieden informatie over statistieken:
 
-| Catalogus weergave | Beschrijving |
+| Catalogus weergave | Description |
 |:--- |:--- |
 | [sys. Columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?view=azure-sqldw-latest&preserve-view=true) |Eén rij voor elke kolom. |
 | [sys. Objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?view=azure-sqldw-latest&preserve-view=true) |Eén rij voor elk object in de data base. |
@@ -457,7 +457,7 @@ Deze systeem weergaven bieden informatie over statistieken:
 
 Deze systeem functies zijn handig voor het werken met statistieken:
 
-| Systeem functie | Beschrijving |
+| Systeem functie | Description |
 |:--- |:--- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql?view=azure-sqldw-latest&preserve-view=true) |Datum waarop het statistieken object voor het laatst is bijgewerkt. |
 | [DBCC-SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=azure-sqldw-latest&preserve-view=true) |Overzichts niveau en gedetailleerde informatie over de distributie van waarden, zoals begrepen door het statistiek object. |
@@ -825,7 +825,7 @@ Er zijn verschillende systeem weergaven en-functies die u kunt gebruiken om info
 
 Deze systeem weergaven bieden informatie over statistieken:
 
-| Catalogus weergave                                                 | Beschrijving                                                  |
+| Catalogus weergave                                                 | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [sys. Columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?view=azure-sqldw-latest&preserve-view=true) | Eén rij voor elke kolom.                                     |
 | [sys. Objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?view=azure-sqldw-latest&preserve-view=true) | Eén rij voor elk object in de data base.                     |
@@ -839,7 +839,7 @@ Deze systeem weergaven bieden informatie over statistieken:
 
 Deze systeem functies zijn handig voor het werken met statistieken:
 
-| Systeem functie                                              | Beschrijving                                  |
+| Systeem functie                                              | Description                                  |
 | :----------------------------------------------------------- | :------------------------------------------- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql?view=azure-sqldw-latest&preserve-view=true) | Datum waarop het statistieken object voor het laatst is bijgewerkt. |
 
@@ -884,6 +884,6 @@ WHERE   st.[user_created] = 1
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [uw werk belasting](../sql-data-warehouse/sql-data-warehouse-manage-monitor.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) en [Aanbevolen procedures voor een toegewezen SQL-groep](best-practices-sql-pool.md#maintain-statistics)controleren voor meer informatie over het verbeteren van query prestaties voor een toegewezen SQL-groep.
+Zie [uw werk belasting](../sql-data-warehouse/sql-data-warehouse-manage-monitor.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) en [Aanbevolen procedures voor een toegewezen SQL-groep](best-practices-dedicated-sql-pool.md#maintain-statistics)controleren voor meer informatie over het verbeteren van query prestaties voor een toegewezen SQL-groep.
 
-Zie [Aanbevolen procedures voor serverloze SQL-groepen](best-practices-sql-on-demand.md) voor meer informatie over het verbeteren van de query prestaties voor een SERVERloze SQL-groep
+Zie [Aanbevolen procedures voor serverloze SQL-groepen](best-practices-serverless-sql-pool.md) voor meer informatie over het verbeteren van de query prestaties voor een SERVERloze SQL-groep

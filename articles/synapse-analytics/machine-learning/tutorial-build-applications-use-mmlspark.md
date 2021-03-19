@@ -9,20 +9,20 @@ ms.reviewer: ''
 ms.date: 03/08/2021
 author: ruxu
 ms.author: ruxu
-ms.openlocfilehash: ad6f0d5ad55716e19e4e0c571056d18641e23d21
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: a3899b83133b3f951547fae0b11c044bfa85a5fc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102620233"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589596"
 ---
 # <a name="tutorial-build-machine-learning-applications-using-microsoft-machine-learning-for-apache-spark-preview"></a>Zelf studie: machine learning-toepassingen maken met micro Soft Machine Learning voor Apache Spark (preview)
 
-In dit artikel leert u hoe u micro Soft Machine Learning voor Apache Spark ([MMLSpark](https://github.com/Azure/mmlspark)) kunt gebruiken om machine learning-toepassingen te maken. MMLSpark breidt de gedistribueerde machine learning oplossing van Apache Spark uit door een groot aantal diep gaande hulp middelen voor het leren en data Wetenschappen toe te voegen, zoals [Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/big-data/cognitive-services-for-big-data), [OpenCV](https://opencv.org/), [LightGBM](https://github.com/Microsoft/LightGBM) en meer.  Met MMLSpark kunt u krachtige en zeer schaal bare voorspellende en analytische modellen bouwen op basis van verschillende Spark-gegevens bronnen.
+In dit artikel leert u hoe u micro Soft Machine Learning voor Apache Spark ([MMLSpark](https://github.com/Azure/mmlspark)) kunt gebruiken om machine learning-toepassingen te maken. MMLSpark breidt de gedistribueerde machine learning oplossing van Apache Spark uit door een groot aantal diep gaande hulp middelen voor het leren en data Wetenschappen toe te voegen, zoals [Azure Cognitive Services](../../cognitive-services/big-data/cognitive-services-for-big-data.md), [OpenCV](https://opencv.org/), [LightGBM](https://github.com/Microsoft/LightGBM) en meer.  Met MMLSpark kunt u krachtige en zeer schaal bare voorspellende en analytische modellen bouwen op basis van verschillende Spark-gegevens bronnen.
 Synapse Spark biedt ingebouwde MMLSpark-Bibliotheken, waaronder:
 
 - [Vowpal Wabbit](https://github.com/VowpalWabbit/vowpal_wabbit) : bibliotheek Services voor machine learning om tekst analyse zoals sentiment analyse in tweets in te scha kelen.
-- [Cognitive Services op Spark](https://docs.microsoft.com/azure/cognitive-services/big-data/cognitive-services-for-big-data) : als u de functie van Azure Cognitive Services in SparkML-pijp lijnen wilt combi neren om oplossings ontwerp af te leiden voor cognitieve gegevens modellerings services zoals afwijkings detectie.
+- [Cognitive Services op Spark](../../cognitive-services/big-data/cognitive-services-for-big-data.md) : als u de functie van Azure Cognitive Services in SparkML-pijp lijnen wilt combi neren om oplossings ontwerp af te leiden voor cognitieve gegevens modellerings services zoals afwijkings detectie.
 - [LightBGM](https://github.com/Azure/mmlspark/blob/master/docs/lightgbm.md) : machine learning-model om het model te trainen voor voorspellende analyse, zoals detectie van gezichts-id's.
 - Voorwaardelijke KNN: schaal bare KNN-modellen met voorwaardelijke Query's.
 - [Http op Spark](https://github.com/Azure/mmlspark/blob/master/docs/http.md) : maakt gedistribueerde micro Services-indeling mogelijk in integratie van Spark en op http-protocol.
@@ -38,9 +38,9 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
 
 ## <a name="prerequisites"></a>Vereisten 
 
-- [Azure Synapse Analytics-werk ruimte](https://docs.microsoft.com/azure/synapse-analytics/get-started-create-workspace) met een Azure data Lake Storage Gen2 opslag account geconfigureerd als de standaard opslag. U moet de Inzender voor *gegevens* van de opslag-blob van het data Lake Storage Gen2 bestands systeem waarmee u samenwerkt.
-- Spark-pool in uw Azure Synapse Analytics-werkruimte. Zie [Een Spark-pool maken in Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-sql-pool-studio) voor meer informatie.
-- De stappen voorafgaand aan de configuratie die in de zelf studie worden beschreven, [configureren Cognitive Services in azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/machine-learning/tutorial-configure-cognitive-services-synapse).
+- [Azure Synapse Analytics-werk ruimte](../get-started-create-workspace.md) met een Azure data Lake Storage Gen2 opslag account geconfigureerd als de standaard opslag. U moet de Inzender voor *gegevens* van de opslag-blob van het data Lake Storage Gen2 bestands systeem waarmee u samenwerkt.
+- Spark-pool in uw Azure Synapse Analytics-werkruimte. Zie [Een Spark-pool maken in Azure Synapse](../quickstart-create-sql-pool-studio.md) voor meer informatie.
+- De stappen voorafgaand aan de configuratie die in de zelf studie worden beschreven, [configureren Cognitive Services in azure Synapse](./tutorial-configure-cognitive-services-synapse.md).
 
 
 ## <a name="get-started"></a>Aan de slag
@@ -69,7 +69,7 @@ anomalydetector_key = mssparkutils.credentials.getSecret("keyvaultForSynapse", a
 
 ## <a name="text-analytics-sample"></a>Voor beeld van tekst analyse
 
-De service [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) biedt verschillende algoritmen voor het extraheren van intelligente inzichten uit tekst. We kunnen bijvoorbeeld het gevoel van een bepaald stuk ingevoerde tekst vinden. De service retourneert een score tussen 0,0 en 1,0, waarbij een lage score een negatief gevoel aangeeft en een hoge score een positief gevoel. In dit voorbeeld worden drie eenvoudige zinnen gebruikt en wordt het gevoel van elk ervan geretourneerd.
+De service [Text Analytics](../../cognitive-services/text-analytics/index.yml) biedt verschillende algoritmen voor het extraheren van intelligente inzichten uit tekst. We kunnen bijvoorbeeld het gevoel van een bepaald stuk ingevoerde tekst vinden. De service retourneert een score tussen 0,0 en 1,0, waarbij een lage score een negatief gevoel aangeeft en een hoge score een positief gevoel. In dit voorbeeld worden drie eenvoudige zinnen gebruikt en wordt het gevoel van elk ervan geretourneerd.
 
 ```python
 from pyspark.sql.functions import col
@@ -104,7 +104,7 @@ display(sentiment.transform(df_sentences).select("text", col("sentiment")[0].get
 | I am so happy today, its sunny! (Ik ben zo blij vandaag, de zon schijnt!) | positief |
 
 ## <a name="computer-vision-sample"></a>Voor beeld van computer vision
-[Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) analyseert afbeeldingen om structuur (zoals gezichten), objecten en beschrijvingen in natuurlijke taal te herkennen. In dit voor beeld wordt de volgende afbeelding labelen. Tags zijn omschrijvingen van één woord van dingen in de afbeelding, zoals herkenbare voorwerpen, personen, taferelen en acties.
+[Computer Vision](../../cognitive-services/computer-vision/index.yml) analyseert afbeeldingen om structuur (zoals gezichten), objecten en beschrijvingen in natuurlijke taal te herkennen. In dit voor beeld wordt de volgende afbeelding labelen. Tags zijn omschrijvingen van één woord van dingen in de afbeelding, zoals herkenbare voorwerpen, personen, taferelen en acties.
 
 
 ![image](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/objects.jpg)
@@ -134,7 +134,7 @@ display(analysis.transform(df_images).select("image", "analysis_results.descript
 | `https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/objects.jpg` | [opritten, persoon, man, buiten, afzetten, sport, skateboard, Young, bord, shirt, lucht, Park, jongen, zijkant, springen, helling, slag, uitvoeren, in de vaart] |
 
 ## <a name="bing-image-search-sample"></a>Zoek voorbeeld van Bing image
-[Bing Image Search](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview) doorzoekt het web om afbeeldingen op te halen die zijn gerelateerd aan de query in natuurlijke taal van een gebruiker. In dit voorbeeld gebruiken we een tekstquery die naar afbeeldingen met citaten zoekt. Er wordt een lijst met afbeeldings-URL's geretourneerd die foto's bevatten waarop de query betrekking heeft.
+[Bing Image Search](../../cognitive-services/bing-image-search/overview.md) doorzoekt het web om afbeeldingen op te halen die zijn gerelateerd aan de query in natuurlijke taal van een gebruiker. In dit voorbeeld gebruiken we een tekstquery die naar afbeeldingen met citaten zoekt. Er wordt een lijst met afbeeldings-URL's geretourneerd die foto's bevatten waarop de query betrekking heeft.
 
 
 ```python
@@ -185,7 +185,7 @@ display(res_bingsearch.dropDuplicates())
 
 ## <a name="anomaly-detector-sample"></a>Afwijkend detector-voor beeld
 
-[Anomaly Detector](https://docs.microsoft.com/azure/cognitive-services/anomaly-detector/) is geschikt voor het detecteren van onregelmatigheden in uw tijdreeksen. In dit voorbeeld gebruiken we de service om afwijkingen in de gehele tijdreeks te zoeken.
+[Anomaly Detector](../../cognitive-services/anomaly-detector/index.yml) is geschikt voor het detecteren van onregelmatigheden in uw tijdreeksen. In dit voorbeeld gebruiken we de service om afwijkingen in de gehele tijdreeks te zoeken.
 
 ```python
 from pyspark.sql.functions import lit

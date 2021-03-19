@@ -3,12 +3,12 @@ title: Een toegewezen Event Hubs-cluster maken met behulp van de Azure-portal
 description: In deze quickstart leert u hoe u met de Azure-portal een Azure Event Hubs-cluster maakt.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 6ff4ee1f098407ba8b3cd2727410bdfc842db89a
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 596b07210d35f648af78e45b7472c620a4361e8a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102040087"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601020"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>Quickstart: Een toegewezen Event Hubs-cluster maken met behulp van de Azure-portal 
 Event Hubs-clusters bieden implementaties met één tenant voor klanten met de meest veeleisende streaming-behoeften. Deze aanbieding heeft een gegarandeerde SLA van 99,99% en is alleen beschikbaar voor de prijscategorie Dedicated. Een [Event Hubs-cluster](event-hubs-dedicated-overview.md) kan miljoenen gebeurtenissen per seconde opnemen met gegarandeerde capaciteit en latentie van minder dan een seconde. Naamruimten en Event Hubs die in een cluster worden gemaakt, omvatten alle functies van de aanbieding voor Standard en meer, en hebben geen opnamelimieten. De Dedicated-aanbieding omvat ook de populaire functie [Event Hubs Capture](event-hubs-capture-overview.md), die gratis beschikbaar is, voor automatische batchverwerking en vastlegging van gegevensstromen in [Azure Blob Storage](../storage/blobs/storage-blobs-introduction.md) of [Azure Data Lake Storage Gen 1](../data-lake-store/data-lake-store-overview.md).
@@ -109,6 +109,6 @@ In dit artikel hebt u een Event Hubs-cluster gemaakt. Voor stapsgewijze instruct
     - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
     - [Java](event-hubs-java-get-started-send.md)
     - [Python](event-hubs-python-get-started-send.md)
-    - [JavaScript](event-hubs-java-get-started-send.md)
+    - [JavaScript](event-hubs-node-get-started-send.md)
 - [De Azure-portal gebruiken om Event Hubs Capture in te schakelen](event-hubs-capture-enable-through-portal.md)
 - [Azure Event Hubs voor Apache Kafka gebruiken](event-hubs-for-kafka-ecosystem-overview.md)

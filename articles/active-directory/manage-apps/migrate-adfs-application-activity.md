@@ -13,18 +13,18 @@ ms.devlang: na
 ms.date: 01/14/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3665c5b82095004ddf7dc1f503b54f5164d49c7f
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 88a4d0f108d4e3c27ce17aaa83aafca38063c9ae
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99260059"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589460"
 ---
-# <a name="use-the-ad-fs-application-activity-report-preview-to-migrate-applications-to-azure-ad"></a>Het rapport AD FS toepassings activiteit (preview) gebruiken voor het migreren van toepassingen naar Azure AD
+# <a name="use-the-ad-fs-application-activity-report-to-migrate-applications-to-azure-ad"></a>Het rapport AD FS toepassings activiteit gebruiken om toepassingen te migreren naar Azure AD
 
 Veel organisaties gebruiken Active Directory Federation Services (AD FS) voor het bieden van eenmalige aanmelding bij Cloud toepassingen. Er zijn belang rijke voor delen om uw AD FS-toepassingen naar Azure AD te verplaatsen voor verificatie, met name op het gebied van kosten beheer, risico beheer, productiviteit, naleving en governance. Maar u begrijpt welke toepassingen compatibel zijn met Azure AD en het identificeren van specifieke migratie stappen kan tijdrovend zijn.
 
-Met het rapport AD FS toepassings activiteit (preview) in de Azure Portal kunt u snel zien welke van uw toepassingen kunnen worden gemigreerd naar Azure AD. Het evalueert alle AD FS-toepassingen voor compatibiliteit met Azure AD, controleert op eventuele problemen en biedt hulp bij het voorbereiden van afzonderlijke toepassingen voor migratie. Met het rapport AD FS toepassings activiteit kunt u het volgende doen:
+In het rapport AD FS toepassings activiteit in de Azure Portal kunt u snel zien welke van uw toepassingen kunnen worden gemigreerd naar Azure AD. Het evalueert alle AD FS-toepassingen voor compatibiliteit met Azure AD, controleert op eventuele problemen en biedt hulp bij het voorbereiden van afzonderlijke toepassingen voor migratie. Met het rapport AD FS toepassings activiteit kunt u het volgende doen:
 
 * **Ontdek AD FS toepassingen en bereik uw migratie.** In het rapport AD FS toepassings activiteit wordt een lijst weer gegeven met alle AD FS toepassingen in uw organisatie waarvoor een actieve gebruiker zich heeft aangemeld in de afgelopen 30 dagen. Het rapport geeft een gereedheid voor apps aan voor migratie naar Azure AD. In het rapport worden geen verwante relying party's van micro soft weer gegeven in AD FS zoals Office 365. Voor beelden van relying party's met de naam urn: Federation: MicrosoftOnline.
 
@@ -52,7 +52,7 @@ Het rapport AD FS toepassings activiteit is beschikbaar in de Azure Portal onder
 
 2. Selecteer **Azure Active Directory** en selecteer vervolgens **bedrijfs toepassingen**.
 
-3. Selecteer onder **activiteit** de optie **gebruik & Insights (preview)** en selecteer vervolgens **AD FS toepassings activiteit** om een lijst met alle AD FS toepassingen in uw organisatie te openen.
+3. Selecteer **gebruik & Insights** onder **activiteit** en selecteer vervolgens **AD FS toepassings activiteit** om een lijst met alle AD FS toepassingen in uw organisatie te openen.
 
    ![Toepassings activiteit AD FS](media/migrate-adfs-application-activity/adfs-application-activity.png)
 
@@ -78,7 +78,7 @@ Het rapport AD FS toepassings activiteit is beschikbaar in de Azure Portal onder
 
 De volgende tabel bevat alle configuratie tests die worden uitgevoerd op AD FS toepassingen.
 
-|Resultaat  |Geslaagd/waarschuwing/mislukt  |Beschrijving  |
+|Resultaat  |Geslaagd/waarschuwing/mislukt  |Description  |
 |---------|---------|---------|
 |Test-ADFSRPAdditionalAuthenticationRules <br> Er is ten minste één niet-migreerbaar regel gedetecteerd voor AdditionalAuthentication.       | Pass/Warning          | De Relying Party heeft regels om te vragen naar multi-factor Authentication (MFA). Als u wilt overstappen op Azure AD, moet u deze regels vertalen in beleid voor voorwaardelijke toegang. Als u een on-premises MFA gebruikt, raden wij u aan om over te stappen op Azure AD MFA. Meer [informatie over voorwaardelijke toegang](../authentication/concept-mfa-howitworks.md).        |
 |Test-ADFSRPAdditionalWSFedEndpoint <br> Relying Party heeft AdditionalWSFedEndpoint ingesteld op waar.       | Geslaagd/mislukt          | Met de Relying Party in AD FS kunt u meerdere WS-Fed Assertion-eind punten toestaan.Op dit moment ondersteunt Azure AD slechts één.Als u een scenario hebt waarbij dit resultaat de migratie blokkeert, [laat het ons dan weten](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695621-allow-multiple-ws-fed-assertion-endpoints).     |

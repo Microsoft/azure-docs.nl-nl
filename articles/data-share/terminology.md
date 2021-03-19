@@ -7,13 +7,13 @@ ms.author: joanpo
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.openlocfilehash: 33532380d8f98df44029eeea998130d1da5fdafd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "73468552"
 ---
-# <a name="azure-data-share-concepts"></a>Concepten van Azure data share 
+# <a name="azure-data-share-concepts"></a>Azure Data Share-concepten 
 
 Azure data share introduceert een aantal nieuwe terminologie met betrekking tot het delen van gegevens. In dit artikel worden enkele veelgebruikte termen beschreven die in de service kunnen worden gebruikt. 
 
@@ -27,11 +27,11 @@ Een gegevens consument is de organisatie die gegevens van een gegevens provider 
 
 ## <a name="data-share"></a>Data Share
 
-Een gegevens share is een groep data sets die worden gedeeld als één entiteit. Gegevens sets kunnen afkomstig zijn uit een aantal Azure-gegevens bronnen die worden ondersteund door de Azure-gegevens share. Op dit moment ondersteunt Azure data share Azure Blob Storage en Azure Data Lake Store. 
+Een gegevensshare is een groep gegevenssets die worden gedeeld als één entiteit. Gegevenssets kunnen afkomstig zijn uit een aantal Azure-gegevensbronnen die worden ondersteund door Azure Data Share. Op dit moment ondersteunt Azure Data Share Azure Blob Storage en Azure Data Lake Store. 
 
 ## <a name="share-subscription"></a>Abonnement delen 
 
-Er wordt een share abonnement gemaakt wanneer een gegevens verbruiker een uitnodiging voor gegevens delen van een gegevens provider accepteert. Gegevens providers kunnen actieve share-abonnementen weer geven door te navigeren naar **verzonden shares** in hun Azure-gegevens share-account en **abonnementen delen**te selecteren.
+Er wordt een share abonnement gemaakt wanneer een gegevens verbruiker een uitnodiging voor gegevens delen van een gegevens provider accepteert. Gegevens providers kunnen actieve share-abonnementen weer geven door te navigeren naar **verzonden shares** in hun Azure-gegevens share-account en **abonnementen delen** te selecteren.
 
 Een gegevens verbruiker kan controleren of ze een actief share-abonnement hebben door te navigeren naar **ontvangen shares** en de status van hun ontvangen shares te bekijken. 
 

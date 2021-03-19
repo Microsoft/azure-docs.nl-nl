@@ -3,12 +3,12 @@ title: 'Quickstart: QnA Maker-clientbibliotheek voor .NET'
 description: In deze quickstart ziet u hoe u aan de slag gaat met de QnA Maker-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen.  Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen.
 ms.topic: quickstart
 ms.date: 06/18/2020
-ms.openlocfilehash: 18d8dbc59d1c43961cd665a3ea98d1041516afb7
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 3b2bbf30fcd93bdd8e3d8bdefcbf863df30d9017
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99616673"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104583191"
 ---
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
 
@@ -65,18 +65,6 @@ Gebruik de QnA Maker-clientbibliotheek voor .NET voor het volgende:
 ---
 
 ## <a name="setting-up"></a>Instellen
-
-### <a name="visual-studio-ide"></a>Visual Studio IDE
-
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/version-1)
-
-Maak met behulp van Visual Studio een .NET Core-toepassing en installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te klikken in **Solution Explorer** en **NuGet-pakketten beheren** te selecteren. Selecteer in Package Manager dat wordt geopend de optie **Bladeren** en zoek naar `Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker`. Selecteer versie `2.0.1` en vervolgens **Installeren**.
-
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
-
-Maak met behulp van Visual Studio een .NET Core-toepassing en installeer de clientbibliotheek door met de rechtermuisknop op de oplossing te klikken in **Solution Explorer** en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Knowledge.QnAMaker`. Selecteer versie `3.0.0-preview.1` en vervolgens **Installeren**.
-
----
 
 ### <a name="cli"></a>CLI
 
@@ -153,11 +141,13 @@ Voeg in de methode `Main` van de toepassing variabelen en code toe, zoals wordt 
 > [!IMPORTANT]
 > Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 
-We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/azure-resources?tabs=v1#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
+We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](../concepts/azure-resources.md?tabs=v1#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
 
-- Maak omgevingsvariabelen met de namen QNA_MAKER_SUBSCRIPTION_KEY, QNA_MAKER_ENDPOINT, en QNA_MAKER_RUNTIME_ENDPOINT om deze waarden op te slaan.
 - De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
-- De waarde van QNA_MAKER_RUNTIME_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.azurewebsites.net`.
+- De waarde van QNA_MAKER_RUNTIME_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.azurewebsites.net`. Nadat u de Knowledge Base in de QnA Maker Portal hebt gepubliceerd, kunt u het runtime-eind punt vinden zoals hieronder wordt weer gegeven.
+  
+  ![QnA Maker runtime-eind punt](../media/endpoint.png)
+      
 - Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. [Azure Key Vault](../../../key-vault/general/overview.md) biedt bijvoorbeeld beveiligde sleutelopslag.
 
 [!code-csharp[Set the resource key and resource name](~/cognitive-services-quickstart-code/dotnet/QnAMaker/SDK-based-quickstart/Program.cs?name=Resourcevariables)]
@@ -167,9 +157,8 @@ We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg d
 > [!IMPORTANT]
 > Ga naar Azure Portal en zoek de sleutel en het eindpunt voor de QnA Maker-resource die u bij de vereisten hebt gemaakt. U vindt deze op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 
-We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/azure-resources?tabs=v2#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
+We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg de stappen [in QnA Maker](../concepts/azure-resources.md?tabs=v2#keys-in-qna-maker)voor meer informatie over het ontwerpen van sleutels.
 
-- Maak omgevingsvariabelen met de namen QNA_MAKER_SUBSCRIPTION_KEY en QNA_MAKER_ENDPOINT om deze waarden op te slaan.
 - De waarde van QNA_MAKER_ENDPOINT heeft de indeling `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`. 
 - Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. [Azure Key Vault](../../../key-vault/general/overview.md) biedt bijvoorbeeld beveiligde sleutelopslag.
 
@@ -184,7 +173,7 @@ We gebruiken de abonnements sleutel en de ontwerp sleutel zijn interlate. Volg d
 
 In [QnA Maker](/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker) worden twee verschillende objectmodellen gebruikt:
 * **[QnAMakerClient](#qnamakerclient-object-model)** is het object voor het maken, beheren, publiceren en downloaden van de Knowledge Base.
-* **[QnAMakerRuntime](#qnamakerruntimeclient-object-model)** is het object waarmee u een query op de Knowledge Base gaat uitvoeren met behulp van de GenerateAnswer-API en nieuwe voorgestelde vragen verzendt met behulp van de Train-API (als onderdeel van [actief leren](../concepts/active-learning-suggestions.md)).
+* **[QnAMakerRuntime](#qnamakerruntimeclient-object-model)** is het object waarmee u een query op de Knowledge Base gaat uitvoeren met behulp van de GenerateAnswer-API en nieuwe voorgestelde vragen verzendt met behulp van de Train-API (als onderdeel van [actief leren](../how-to/use-active-learning.md)).
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/version-2)
 

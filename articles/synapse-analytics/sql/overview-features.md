@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 769149d49d4d233c5c202f570ceb871365728c59
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: b22f2ed2704f752ff2ca7a5bc21e856b076f0f70
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101671230"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584088"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Transact-SQL-functies die worden ondersteund in Azure Synapse SQL
 
@@ -51,7 +51,7 @@ Querytalen die in Synapse SQL worden gebruikt, kunnen afhankelijk van het verbru
 
 |   | Toegewezen | Serverloos |
 | --- | --- | --- |
-| **SELECT-instructie** | Ja. De Transact-SQL-querycomponenten [FOR XML/FOR JSON](/sql/t-sql/queries/select-for-clause-transact-sql?view=azure-sqldw-latest&preserve-view=true) en [MATCH](/sql/t-sql/queries/match-sql-graph?view=azure-sqldw-latest&preserve-view=true) worden niet ondersteund. | Ja. Transact-SQL-querycomponenten [FOR XML](/sql/t-sql/queries/select-for-clause-transact-sql?view=azure-sqldw-latest&preserve-view=true), [MATCH](/sql/t-sql/queries/match-sql-graph?view=azure-sqldw-latest&preserve-view=true), [PREDICT](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true) en queryhints worden niet ondersteund. |
+| **SELECT-instructie** | Ja. Transact-SQL-query componenten [voor XML/voor json](/sql/t-sql/queries/select-for-clause-transact-sql?view=azure-sqldw-latest&preserve-view=true), [match](/sql/t-sql/queries/match-sql-graph?view=azure-sqldw-latest&preserve-view=true), offset/fetch worden niet ondersteund. | Ja. Transact-SQL-query componenten [voor XML](/sql/t-sql/queries/select-for-clause-transact-sql?view=azure-sqldw-latest&preserve-view=true), [matching](/sql/t-sql/queries/match-sql-graph?view=azure-sqldw-latest&preserve-view=true), voors [pellen](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true), GROUPNG sets en query hints worden niet ondersteund. |
 | **INSERT-instructie** | Ja | Nee |
 | **UPDATE-instructie** | Ja | Nee |
 | **DELETE-instructie** | Ja | Nee |
@@ -158,5 +158,5 @@ Geanalyseerde gegevens kunnen in verschillende bestandsindelingen worden opgesla
 ## <a name="next-steps"></a>Volgende stappen
 Aanvullende informatie over best practices voor toegewezen SQL-pools en serverloze SQL-pools vindt u in de volgende artikelen:
 
-- [Best practices voor toegewezen SQL-pools](best-practices-sql-pool.md)
-- [Best practices voor serverloze SQL-pools](best-practices-sql-on-demand.md)
+- [Best practices voor toegewezen SQL-pools](best-practices-dedicated-sql-pool.md)
+- [Best practices voor serverloze SQL-pools](best-practices-serverless-sql-pool.md)

@@ -1,23 +1,20 @@
 ---
-title: Azure Stream Analytics uitvoeren op Azure Stack (preview-versie)
+title: Azure Stream Analytics uitvoeren op Azure Stack
 description: Maak een Azure Stream Analytics Edge-taak en implementeer deze via de IoT Edge runtime op Azure Stack hub.
 ms.service: stream-analytics
 author: an-emma
 ms.author: raan
 ms.topic: how-to
-ms.date: 08/21/2020
+ms.date: 03/15/2021
 ms.custom: seodec18
-ms.openlocfilehash: 3463b3eae96c0a65206023ed0f21efe44294d4eb
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 315b2efa042721a19fa779794c4921f9ced1fc83
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020125"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589800"
 ---
-# <a name="run-azure-stream-analytics-on-azure-stack-preview"></a>Azure Stream Analytics uitvoeren op Azure Stack (preview-versie)
-
-> [!IMPORTANT]
-> Deze functionaliteit is beschikbaar als preview-versie en wordt niet aanbevolen voor gebruik in de productie omgeving.
+# <a name="run-azure-stream-analytics-on-azure-stack"></a>Azure Stream Analytics uitvoeren op Azure Stack 
 
 U kunt Azure Stream Analytics op Azure Stack hub uitvoeren als een IoT Edge-module. Er zijn configuratie-instellingen toegevoegd aan de IoT Edge-module, waardoor IT kan communiceren met Blob Storage, Event Hubs en IoT hubs die worden uitgevoerd in een Azure Stack hub-abonnement door aangepaste Url's te toestaan die in elke Azure Stack hub-werk nemer worden gevonden.
 
@@ -46,7 +43,7 @@ Naast netwerk toegang tot de Azure Stack hub-resources, moet het IoT Edge appara
 In de volgende hand leidingen ziet u hoe u de IoT Edge runtime op uw apparaat of virtuele machine instelt:
 
 * [De Azure IoT Edge-runtime op Windows installeren](../iot-edge/how-to-install-iot-edge.md)
-* [Installeer de Azure IoT Edge runtime op op Debian gebaseerde Linux-systemen](../iot-edge/how-to-install-iot-edge.md)
+* [De Azure IoT Edge-runtime op op Debian gebaseerde Linux-systemen installeren](../iot-edge/how-to-install-iot-edge.md)
 
 
 ## <a name="create-an-azure-stream-analytics-edge-job"></a>Een Azure Stream Analytics Edge-taak maken
@@ -104,7 +101,7 @@ Zodra uw Stream Analytics-taak is gemaakt in de Azure-portal, kunt u deze config
    | --- | --- |
    | Invoeralias | Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen. |
    | Service Bus naam ruimte | De naam ruimte is een container voor een set met bericht entiteiten. Wanneer u een nieuwe Event Hub maakt, maakt u ook de naam ruimte. (Voor beeld: *SB:// <Event Hub Name> . eventhub.Shanghai.azurestack.Corp.Microsoft.com*) |
-   | Event Hub-naam | De naam van de Event Hub die moet worden gebruikt als invoer. |
+   | Naam van de Event Hub | De naam van de Event Hub die moet worden gebruikt als invoer. |
    | Naam van het Event Hub-beleid | Het beleid voor gedeelde toegang dat toegang biedt tot de Event hub. Elk gedeeld toegangs beleid heeft een naam, machtigingen die u instelt en toegangs sleutels. Deze optie wordt automatisch ingevuld, tenzij u de optie selecteert om de Event hub-instellingen hand matig op te geven. |
    | Event hub-beleids sleutel | De gedeelde toegangs sleutel die wordt gebruikt om toegang te verlenen tot de Event hub. Deze optie wordt automatisch ingevuld tenzij u de optie selecteert om de Event hub-instellingen hand matig op te geven. U kunt deze vinden in de Event hub-instellingen. |
    | Event hub-consumenten groep (optioneel) | Het is raadzaam om voor elke Stream Analytics taak een afzonderlijke consumenten groep te gebruiken. Met deze teken reeks wordt de Consumer groep geïdentificeerd die moet worden gebruikt om gegevens op te nemen van de Event Hub. Als er geen consumenten groep is opgegeven, gebruikt de Stream Analytics-taak de $Default Consumer groep. |
@@ -138,7 +135,7 @@ Zodra uw Stream Analytics-taak is gemaakt in de Azure-portal, kunt u deze config
    | --- | --- |
    | Uitvoeralias | Een beschrijvende naam die wordt gebruikt in query's om de uitvoer van de query naar deze Event Hub te sturen. |
    | Service Bus naam ruimte | Een container voor een set met bericht entiteiten. Wanneer u een nieuwe Event Hub hebt gemaakt, hebt u ook een service bus-naam ruimte gemaakt. (Voor beeld: *SB:// <Event Hub Name> . eventhub.Shanghai.azurestack.Corp.Microsoft.com*) |
-   | Event Hub-naam | De naam van de Event Hub uitvoer. |
+   | Naam van de Event Hub | De naam van de Event Hub uitvoer. |
    | Naam van het Event Hub-beleid | Het beleid voor gedeelde toegang, dat u kunt maken op het tabblad configureren van de Event Hub. Elk gedeeld toegangs beleid heeft een naam, machtigingen die u instelt en toegangs sleutels. |
    | Event hub-beleids sleutel | De gedeelde toegangs sleutel die wordt gebruikt voor het verifiëren van toegang tot de naam ruimte Event Hub. |
 

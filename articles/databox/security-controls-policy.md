@@ -1,18 +1,18 @@
 ---
 title: Azure Policy regulerende nalevings controles voor Azure Data Box
 description: Een lijst met Azure Policy regulerende nalevings controles die beschikbaar zijn voor Azure Data Box. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 03/10/2021
+ms.date: 03/17/2021
 ms.topic: sample
 author: alkohli
 ms.author: alkohli
 ms.service: databox
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: b0f44cfdc6e7ecbb0a67eae0ceba0eeafbe470d2
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: f7ffc1018061c23f89f8f05639d4158a034b4465
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102635910"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104581543"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-data-box"></a>Azure Policy regulerende nalevings controles voor Azure Data Box
 

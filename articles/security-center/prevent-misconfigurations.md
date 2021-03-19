@@ -5,14 +5,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 02/04/2021
+ms.date: 03/17/2021
 ms.author: memildin
-ms.openlocfilehash: 5d172a73674195e7f64f5ef02322e2bd2d6314df
-ms.sourcegitcommit: 5bbc00673bd5b86b1ab2b7a31a4b4b066087e8ed
+ms.openlocfilehash: fabbd255f64e5614ae052c9d7c8d65fc35d45856
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/07/2021
-ms.locfileid: "102439524"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104600493"
 ---
 # <a name="prevent-misconfigurations-with-enforcedeny-recommendations"></a>Onjuiste configuraties voorkomen met afdwingen/weigeren
 
@@ -68,6 +68,7 @@ Deze aanbevelingen kunnen worden gebruikt in combi natie met de optie **afdwinge
 - Controle op SQL-servers moet zijn ingeschakeld
 - Azure Backup moet zijn ingeschakeld voor virtuele machines
 - Azure Defender voor SQL moet zijn ingeschakeld voor uw SQL-servers
+- De Azure Policy-invoegtoepassing voor Kubernetes moet op uw clusters zijn geïnstalleerd en ingeschakeld
 - Diagnostische logboeken in Azure Stream Analytics moeten zijn ingeschakeld
 - Diagnostische logboeken in Batch-accounts moeten worden ingeschakeld
 - Diagnostische logboeken in Data Lake Analytics moeten zijn ingeschakeld

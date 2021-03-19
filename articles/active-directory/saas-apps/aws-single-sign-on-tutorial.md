@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/18/2021
 ms.author: jeedes
-ms.openlocfilehash: 906c7e00cba1e0feb85289e8f2a46e74924dc0c3
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: e890ff1cb64961c7747b8865b68504ff0a266a3e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101664622"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599690"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-single-sign-on"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met eenmalige aanmelding van AWS
 
@@ -39,7 +39,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Eenmalige aanmelding voor AWS ondersteunt door **SP en IDP** GEÏNITIEERDe SSO
 
-* AWS eenmalige aanmelding ondersteunt [**geautomatiseerde gebruikers inrichting**](https://docs.microsoft.com/azure/active-directory/saas-apps/aws-single-sign-on-provisioning-tutorial).
+* AWS eenmalige aanmelding ondersteunt [**geautomatiseerde gebruikers inrichting**](./aws-single-sign-on-provisioning-tutorial.md).
 
 ## <a name="adding-aws-single-sign-on-from-the-gallery"></a>Eenmalige aanmelding voor AWS toevoegen vanuit de galerie
 
@@ -196,7 +196,7 @@ In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebru
 10. Kies **Voltooien**.
 
 > [!NOTE]
-> Eenmalige aanmelding van AWS biedt ook ondersteuning voor automatische gebruikers inrichting. u vindt [hier](https://docs.microsoft.com/azure/active-directory/saas-apps/aws-single-sign-on-provisioning-tutorial) meer informatie over het configureren van automatische gebruikers inrichting.
+> Eenmalige aanmelding van AWS biedt ook ondersteuning voor automatische gebruikers inrichting. u vindt [hier](./aws-single-sign-on-provisioning-tutorial.md) meer informatie over het configureren van automatische gebruikers inrichting.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
@@ -212,11 +212,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de eenmalige aanmelding van AWS waarvoor u de SSO hebt ingesteld 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel AWS single sign-on in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de eenmalige aanmelding van AWS waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel AWS single sign-on in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing voor het initiëren van de aanmeldings stroom en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de eenmalige aanmelding van AWS waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u eenmalige aanmelding voor AWS hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u eenmalige aanmelding voor AWS hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/08/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 722f3158c8eca4cec4dbf23658f9d8d4cb68c3ed
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: d84c5fff41a7f00405c29ab4b4921ed2e28bdfde
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102517987"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104580093"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -103,7 +103,7 @@ Nee, Azure AD Connect is niet ontworpen om te werken met Azure AD B2C. Overweeg 
 
 ### <a name="can-my-app-open-up-azure-ad-b2c-pages-within-an-iframe"></a>Kan mijn app Azure AD B2C pagina's in een iFrame openen?
 
-Nee, om beveiligings redenen kunnen Azure AD B2C pagina's niet worden geopend in een iFrame. Onze service communiceert met de browser om iFrames te verbieden. De beveiligings Community in het algemeen en de OAUTH2-specificatie wordt aanbevolen voor het gebruik van iFrames voor identiteits ervaringen vanwege het risico van klikken-Jack.
+Deze functie is beschikbaar voor openbare preview. Zie [Inge sloten aanmeldings ervaring](https://docs.microsoft.com/azure/active-directory-b2c/embedded-login)voor meer informatie.
 
 ### <a name="does-azure-ad-b2c-work-with-crm-systems-such-as-microsoft-dynamics"></a>Werkt Azure AD B2C met CRM-systemen zoals micro soft Dynamics?
 
@@ -131,7 +131,7 @@ Ja, Zie [taal aanpassing](language-customization.md). We bieden vertalingen voor
 
 ### <a name="can-i-use-my-own-urls-on-my-sign-up-and-sign-in-pages-that-are-served-by-azure-ad-b2c-for-instance-can-i-change-the-url-from-contosob2clogincom-to-logincontosocom"></a>Kan ik mijn eigen Url's gebruiken op mijn registratie-en aanmeldings pagina's die worden bediend door Azure AD B2C? Bijvoorbeeld, kan ik de URL wijzigen van contoso.b2clogin.com in login.contoso.com?
 
-Momenteel niet. Deze functie is op ons plan. Als u uw domein verifieert op het tabblad **domeinen** in de Azure Portal dit doel niet wordt bereikt. Met b2clogin.com bieden we echter een [neutraal domein op het hoogste niveau](b2clogin.md), waardoor de externe weer gave kan worden geïmplementeerd zonder de vermelding van micro soft.
+Deze functie is beschikbaar in de open bare preview-versie. Zie [Azure AD B2C Custom Domains](https://docs.microsoft.com/azure/active-directory-b2c/custom-domain?pivots=b2c-user-flow)(Engelstalig) voor meer informatie.
 
 ### <a name="how-do-i-delete-my-azure-ad-b2c-tenant"></a>Mijn Azure AD B2C Tenant Hoe kan ik verwijderen?
 

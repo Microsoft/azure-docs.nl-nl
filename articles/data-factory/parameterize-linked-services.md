@@ -3,15 +3,15 @@ title: Para meters gekoppelde services in Azure Data Factory
 description: Meer informatie over het para meters van gekoppelde services in Azure Data Factory en het door geven van dynamische waarden tijdens runtime.
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 01/15/2021
+ms.date: 03/18/2021
 author: dcstwh
 ms.author: weetok
-ms.openlocfilehash: fbb7cb6fd0041ab77e649b14712907d916eaa449
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: df26b77f37100ae41b26c013c57cccbfa0d7e205
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372923"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104595580"
 ---
 # <a name="parameterize-linked-services-in-azure-data-factory"></a>Para meters gekoppelde services in Azure Data Factory
 
@@ -38,18 +38,21 @@ Bij het ontwerpen van een gekoppelde service op de gebruikers interface biedt Da
 
 - Amazon Redshift
 - Amazon S3
+- Azure Blob Storage
 - Azure Cosmos DB (SQL-API)
+- Azure Data Lake Storage Gen2
 - Azure Database for MySQL
 - Azure Databricks
 - Azure Key Vault
 - Azure SQL Database
 - Azure SQL Managed Instance
 - Azure Synapse Analytics 
+- Azure-tabelopslag
+- Algemene HTTP
+- Algemene REST
 - MySQL
 - Oracle
 - SQL Server
-- Algemene HTTP
-- Algemene REST
 
 Voor andere gekoppelde service typen die zich niet in de bovenstaande lijst bevinden, kunt u de gekoppelde service para meters door de JSON te bewerken in de gebruikers interface:
 

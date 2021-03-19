@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.reviewer: sngun
 ms.openlocfilehash: d986106337eb1ede2f6d61303d8a4c487bbed276
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93088468"
 ---
 # <a name="understanding-the-differences-between-nosql-and-relational-databases"></a>Meer informatie over de verschillen tussen NoSQL en relationele data bases
@@ -40,7 +40,7 @@ Vandaag verg root de populariteit van document-Style data bases echter aanzienli
 
 Het ontstaan van [objectgeoriënteerd ontwerpen](https://en.wikipedia.org/wiki/Object-oriented_design)en de [impedantie](https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch) die zich voordoet bij het combi neren van relationele modellen, markeert ook een anti-patroon in relationele data bases voor bepaalde gebruiks situaties. Als gevolg hiervan kan een verborgen, maar vaak aanzienlijke onderhouds kosten optreden. Hoewel [ORM-benaderingen](https://en.wikipedia.org/wiki/Object-relational_mapping) worden verholpen om dit gedeeltelijk te beperken, kunnen document georiënteerde data bases echter nog meer worden samengestuurd met objectgeoriënteerd benaderingen. Met deze benadering worden ontwikkel aars niet gedwongen om te worden doorgevoerd in ORM-Stuur Programma's of bespokee taal specifieke [OO-data base-engines](https://en.wikipedia.org/wiki/Object_database). Als uw gegevens veel bovenliggende en onderliggende relaties en diepe hiërarchie niveaus bevatten, kunt u overwegen om een NoSQL-document database te gebruiken, zoals de [Azure Cosmos DB SQL-API](./introduction.md).
 
-:::image type="content" source="./media/relational-or-nosql/order-orderdetails.jpg" alt-text="Back-end":::
+:::image type="content" source="./media/relational-or-nosql/order-orderdetails.jpg" alt-text="OrderDetails":::
 
 ## <a name="complex-networks-and-relationships"></a>Complexe netwerken en relaties
 
@@ -50,7 +50,7 @@ Er zijn verschillende vormen van ' netwerk data bases ' opgedeeld tijdens de tij
 
 Als u een complex netwerk met relaties in uw Data Base wilt behouden, kunt u een grafiek database, zoals de [Azure Cosmos DB GREMLIN API](./graph-introduction.md) voor het beheren van deze gegevens, overwegen.
 
-:::image type="content" source="./media/relational-or-nosql/graph.png" alt-text="Back-end":::
+:::image type="content" source="./media/relational-or-nosql/graph.png" alt-text="In het database diagram worden verschillende werk nemers en afdelingen weer gegeven die met elkaar zijn verbonden.":::
 
 Azure Cosmos DB is een database service met meerdere modellen, waarmee een API-projectie voor alle belangrijkste NoSQL-model typen wordt geboden. Kolom-Family, document, grafiek en sleutel waarde. De [Gremlin (Graph)](./gremlin-support.md) en SQL (core) document API-lagen zijn volledig compatibel. Dit heeft voor delen voor het scha kelen tussen verschillende modellen op het niveau van de programmering. Graph-archieven kunnen worden opgevraagd in termen van zowel ingewikkelde netwerk verkeer als trans acties die zijn gemodelleerd als document records in dezelfde opslag.
 
@@ -77,7 +77,7 @@ Hoewel er duidelijke voor delen zijn bij het implementeren van NoSQL-data bases,
 
 De eerste uitdaging is dat de vuist regel in NoSQL-data bases doorgaans denormaliseren is, zoals eerder is geleend, waardoor efficiënter Lees bewerkingen in een gedistribueerd systeem worden gegenereerd. Er zijn echter enkele ontwerp problemen die in deze aanpak kunnen worden afgespeeld. We gaan een voor beeld bekijken van een product dat is gerelateerd aan een categorie en meerdere Tags:
 
-:::image type="content" source="./media/relational-or-nosql/many-joins.png" alt-text="Back-end":::
+:::image type="content" source="./media/relational-or-nosql/many-joins.png" alt-text="Samenvoegingen":::
 
 Een best practice benadering in een NoSQL-document database is dat de categorie naam en label namen rechtstreeks in een ' product document ' worden genormaliseerd. Om ervoor te zorgen dat categorieën, tags en producten synchroon blijven, zijn de ontwerp opties om dit te vergemakkelijken, de complexiteit van onderhoud toegevoegd, omdat de gegevens worden gedupliceerd over meerdere records in het product, in plaats van een eenvoudige update in een ' een-op-veel '-relatie en een koppeling om de gegevens op te halen. 
 

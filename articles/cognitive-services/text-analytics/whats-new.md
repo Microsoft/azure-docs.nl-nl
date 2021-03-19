@@ -8,19 +8,57 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/23/2021
+ms.date: 03/18/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 629b40567ad9a1126413f5a97d1dc6264b4b10ca
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: a2b001d34d265c8e7246b03875c32168f2c5c962
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736630"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598895"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
 De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u informatie over nieuwe releases en functies, zodat u op de hoogte blijft van recente ontwikkelingen.
+
+## <a name="march-2021"></a>2021 maart
+
+### <a name="general-api-updates"></a>Algemene API-updates
+* Release van de nieuwe API v 3.1-Preview. 4, inclusief 
+   * Wijzigingen in de hoofd tekst van het opinie analyse-antwoord: 
+      * `aspects` is nu `targets` en `opinions` is nu `assessments` . 
+   * Wijzigingen in de JSON-antwoord tekst van de gehoste Web-API van Text Analytics voor de status: 
+      * De `isNegated` Booleaanse naam van een gedetecteerd entiteits object voor negatie is afgeschaft en vervangen door de Bewerings detectie.
+      * Een nieuwe eigenschap `role` met de naam maakt nu deel uit van de geëxtraheerde relatie tussen een kenmerk en een entiteit, evenals de relatie tussen entiteiten.  Hiermee voegt u een specificiteit toe aan het gedetecteerde relatie type.
+   * Entiteit koppelen is nu beschikbaar als een asynchrone taak in het `/analyze` eind punt.
+   * Er `pii-categories` is nu een nieuwe para meter beschikbaar in het `/pii` eind punt.
+      * Met deze para meter kunt u PII-entiteiten selecteren, evenals de items die niet standaard worden ondersteund voor de invoer taal.
+* Bijgewerkte client Bibliotheken, waaronder asynchrone analyse en Text Analytics voor status bewerkingen. U kunt voor beelden vinden op GitHub:
+
+    * [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
+    * [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
+    * [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
+    * [JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/textanalytics/ai-text-analytics/samples/javascript)
+    
+> [!div class="nextstepaction"]
+> [Meer informatie over Text Analytics-API v 3.1-Preview. 4](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-4/operations/Languages)
+
+### <a name="text-analytics-for-health-updates"></a>Text Analytics voor status updates
+
+* Een nieuwe model versie `2021-03-01` voor het `/health` eind punt en de on-premises container die
+    * De naam van het `Gene` entiteits type moet worden gewijzigd in `GeneOrProtein` .
+    * Een nieuw `Date` entiteits type.
+    * Detectie van verklaringen die de detectie van negatie vervangen (alleen beschikbaar in API v 3.1-Preview. 4).
+    * Een nieuwe voorkeurs `name` eigenschap voor gekoppelde entiteiten die worden genormaliseerd vanuit verschillende Ontologies-en coderings systemen (alleen beschikbaar in API v 3.1-Preview. 4). 
+* Er is een nieuwe container installatie kopie met tag `3.0.015370001-onprem-amd64` en de nieuwe model versie `2021-03-01` vrijgegeven aan de container preview-opslag plaats. 
+* De Text Analytics voor de status container installatie kopie wordt de volgende maand verplaatst naar een nieuwe opslag plaats.  Bekijk een e-mail communicatie op de locatie van het nieuwe huis.
+> [!div class="nextstepaction"]
+> [Meer informatie over Text Analytics status](how-tos/text-analytics-for-health.md)
+>
+
+### <a name="text-analytics-resource-portal-update"></a>Update van Text Analytics resource Portal
+* **Verwerkte tekst records** is nu beschikbaar als een metrische waarde in het gedeelte **bewaking** voor uw Text Analytics-resource in de Azure Portal.  
 
 ## <a name="february-2021"></a>Februari 2021
 
@@ -46,7 +84,7 @@ Deze model versies zijn momenteel niet beschikbaar in de regio VS-Oost.
 
 ## <a name="december-2020"></a>December 2020
 
-* De prijs informatie voor de Text Analytics-API is [bijgewerkt](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)
+* De prijs informatie voor de Text Analytics-API is [bijgewerkt](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) .
 
 ## <a name="november-2020"></a>November 2020
 
@@ -59,8 +97,7 @@ Deze model versies zijn momenteel niet beschikbaar in de regio VS-Oost.
     * [C#](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics)
     * [Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/)
     * [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/textanalytics/azure-ai-textanalytics)
-
-
+    * 
 > [!div class="nextstepaction"]
 > [Meer informatie over Text Analytics-API v 3.1-Preview. 3](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Languages)
 

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: duau
-ms.openlocfilehash: eefc42fb8e66e66c6388599df65c59ff642a6b59
-ms.sourcegitcommit: dac05f662ac353c1c7c5294399fca2a99b4f89c8
+ms.openlocfilehash: c953668d6b2e364e6e703b1769317f1c520317ca
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102124105"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654370"
 ---
 # <a name="about-expressroute-fastpath"></a>Over ExpressRoute FastPath
 
@@ -42,7 +42,7 @@ Voor het configureren van FastPath moet de gateway van het virtuele netwerk een 
 
 Hoewel FastPath de meeste configuraties ondersteunt, biedt het geen ondersteuning voor de volgende functies:
 
-* UDR op het gateway-subnet: als u een UDR toepast op het gateway-subnet van het virtuele netwerk, wordt het netwerk verkeer van uw on-premises netwerk naar de gateway van het virtuele netwerk verzonden.
+* UDR op het gateway-subnet: deze UDR heeft geen invloed op het netwerk verkeer dat FastPath rechtstreeks van uw on-premises netwerk verzendt naar de virtuele machines in het virtuele Azure-netwerk. 
 
 * VNet-peering: als u andere virtuele netwerken hebt die zijn gekoppeld aan ExpressRoute, wordt het netwerk verkeer van uw on-premises netwerk naar de andere virtuele netwerken (d.w.z. de zogenaamde "spoke" VNets) naar de virtuele netwerk gateway verzonden. De tijdelijke oplossing is om alle virtuele netwerken rechtstreeks aan het ExpressRoute-circuit te koppelen.
 

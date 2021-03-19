@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: dc81849a13fdaef748c5fd631ee66ea5e3eb67c4
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: c04c63a5ec72f08807b1702f74db39e00662656f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335786"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597654"
 ---
 # <a name="datetimeadd-azure-cosmos-db"></a>DateTimeAdd (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -49,17 +49,17 @@ DateTimeAdd (<DateTimePart> , <numeric_expr> ,<DateTime>)
 *Datum/tijd*  
    UTC-datum en-tijd, ISO 8601-teken reeks waarde in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waarin:
   
-  |Indeling|Beschrijving|
-  |-|-|
-  |DD|jaar met vier cijfers|
-  |MM|maand van twee cijfers (01 = januari, etc.)|
-  |AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
-  |T|de aanzienlijke voor het begin van de tijd elementen|
-  |hh|twee cijfers per uur (00 tot en met 23)|
-  |mm|twee cijfers minuten (00 tot en met 59)|
-  |ss|seconden van twee cijfers (00 tot en met 59)|
-  |.fffffff|aantal seconden van zeven cijfers|
-  |Z|UTC (Coordinated Universal Time)||
+|Indeling|Beschrijving|
+|-|-|
+|DD|jaar met vier cijfers|
+|MM|maand van twee cijfers (01 = januari, etc.)|
+|AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
+|T|de aanzienlijke voor het begin van de tijd elementen|
+|hh|twee cijfers per uur (00 tot en met 23)|
+|mm|twee cijfers minuten (00 tot en met 59)|
+|ss|seconden van twee cijfers (00 tot en met 59)|
+|.fffffff|aantal seconden van zeven cijfers|
+|Z|UTC (Coordinated Universal Time)|
   
   Zie [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) voor meer informatie over de ISO 8601-indeling.
 
@@ -67,17 +67,17 @@ DateTimeAdd (<DateTimePart> , <numeric_expr> ,<DateTime>)
 
 Retourneert een UTC-datum en-8601 tijd teken reeks waarde in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waarin:
   
-  |Indeling|Beschrijving|
-  |-|-|
-  |DD|jaar met vier cijfers|
-  |MM|maand van twee cijfers (01 = januari, etc.)|
-  |AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
-  |T|de aanzienlijke voor het begin van de tijd elementen|
-  |hh|twee cijfers per uur (00 tot en met 23)|
-  |mm|twee cijfers minuten (00 tot en met 59)|
-  |ss|seconden van twee cijfers (00 tot en met 59)|
-  |.fffffff|aantal seconden van zeven cijfers|
-  |Z|UTC (Coordinated Universal Time)||
+|Indeling|Beschrijving|
+|-|-|
+|DD|jaar met vier cijfers|
+|MM|maand van twee cijfers (01 = januari, etc.)|
+|AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
+|T|de aanzienlijke voor het begin van de tijd elementen|
+|hh|twee cijfers per uur (00 tot en met 23)|
+|mm|twee cijfers minuten (00 tot en met 59)|
+|ss|seconden van twee cijfers (00 tot en met 59)|
+|.fffffff|aantal seconden van zeven cijfers|
+|Z|UTC (Coordinated Universal Time)|
 
 ## <a name="remarks"></a>Opmerkingen
 

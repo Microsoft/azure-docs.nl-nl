@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/15/2020
 ms.author: apimpm
 ms.openlocfilehash: 30487218fc95be75d22b5a9ea5a6dbc224ffd025
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93074794"
 ---
 # <a name="overview-of-the-developer-portal"></a>Overzicht van de ontwikkelaars Portal
@@ -62,7 +62,7 @@ Wanneer u de preview-versie van de ontwikkelaars portal voor het eerst hebt gest
 
 Als u uw portal sterk hebt aangepast op basis van de preview-versie van de inhoud, kunt u deze gewoon blijven gebruiken en nieuwe widgets hand matig op de pagina's van de portal plaatsen. Anders is het raadzaam om de inhoud van uw portal te vervangen door de nieuwe standaard inhoud.
 
-Als u de inhoud in een beheerde Portal opnieuw wilt instellen, selecteert u **inhoud opnieuw instellen** in de sectie **bewerkingen** menu. Met deze bewerking wordt de inhoud van de portal verwijderd en worden nieuwe standaard inhoud ingericht. Alle aanpassingen en wijzigingen van de ontwikkelaars portal gaan verloren. **U kunt deze actie niet ongedaan maken** .
+Als u de inhoud in een beheerde Portal opnieuw wilt instellen, selecteert u **inhoud opnieuw instellen** in de sectie **bewerkingen** menu. Met deze bewerking wordt de inhoud van de portal verwijderd en worden nieuwe standaard inhoud ingericht. Alle aanpassingen en wijzigingen van de ontwikkelaars portal gaan verloren. **U kunt deze actie niet ongedaan maken**.
 
 ![Portal-inhoud opnieuw instellen](media/api-management-howto-developer-portal/reset-content.png)
 

@@ -8,19 +8,19 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 02/22/2020
-ms.openlocfilehash: a5740e851fbd8f7ba82e179f7e5299d6c7090596
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 03/17/2021
+ms.openlocfilehash: 77407f253bb347160ea331bd7384d8085f21b040
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890235"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654455"
 ---
 # <a name="train-svd-recommender"></a>Aanbevelingsfunctie van SVD-training
 
 In dit artikel wordt beschreven hoe u de module Train SVD aanbevelen in Azure Machine Learning Designer gebruikt. Met deze module kunt u een aanbevelings model trainen op basis van het algoritme voor de ontleding van één waarde (SVD).  
 
-De Train SVD Aanbevelener-module leest een gegevensset van de beoordeling van de gebruikers items. Er wordt een getrainde SVD-aanbeveling geretourneerd. U kunt het getrainde model vervolgens gebruiken om beoordelingen te voors pellen of aanbevelingen te genereren met behulp van de module [Score SVD aanbevelen](score-svd-recommender.md) .  
+De Train SVD Aanbevelener-module leest een gegevensset van de beoordeling van de gebruikers items. Er wordt een getrainde SVD-aanbeveling geretourneerd. U kunt het getrainde model vervolgens gebruiken om beoordelingen te voors pellen of aanbevelingen te genereren door de module [Score SVD aanbevelen](score-svd-recommender.md) te verbinden.  
 
 
   
@@ -58,18 +58,21 @@ In dit voor beeld ziet u dat één gebruiker verschillende films heeft beoordeel
 
 1.  Voeg de module Train SVD Adviseering toe aan uw pijp lijn in de ontwerp functie en verbind deze met de trainings gegevens.  
    
-2.  Geef voor **aantal factoren**het aantal factoren op dat met de aanbevolen code moet worden gebruikt.  
+2.  Geef voor **aantal factoren** het aantal factoren op dat met de aanbevolen code moet worden gebruikt.  
     
     Elke factor meet de hoeveelheid van de gebruiker met betrekking tot het item. Het aantal factoren is ook de dimensionaliteit van de latente factor ruimte. Wanneer het aantal gebruikers en items toeneemt, is het beter om een groter aantal factoren in te stellen. Maar als het aantal te groot is, kunnen de prestaties verloren.
     
 3.  Het **aantal iteraties van aanbevelings algoritmen** geeft aan hoe vaak de invoer gegevens moeten worden verwerkt door de algoritme. Hoe hoger dit aantal, hoe nauw keuriger de voor spellingen zijn. Een hoger nummer betekent echter een tragere training. De standaardwaarde is 30.
 
-4.  Voer voor het **leer tempo**een getal in tussen 0,0 en 2,0 dat de stap grootte voor Learning definieert.
+4.  Voer voor het **leer tempo** een getal in tussen 0,0 en 2,0 dat de stap grootte voor Learning definieert.
 
     Het leer tempo bepaalt de grootte van de stap bij elke iteratie. Als de grootte van de stap te groot is, is het mogelijk dat u de optimale oplossing kunt overschrijden. Als de grootte van de stap te klein is, is de training langer nodig om de beste oplossing te vinden. 
   
 5.  Verzend de pijp lijn.  
 
+## <a name="results"></a>Resultaten
+
+Wanneer de uitvoering van de pijp lijn is voltooid en u het model voor scores wilt gebruiken, verbindt u de [training van Train SVD](train-svd-recommender.md) om de [SVDer](score-svd-recommender.md)aan te bevelen om waarden te voors pellen voor nieuwe invoer voorbeelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

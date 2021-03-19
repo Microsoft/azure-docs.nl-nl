@@ -9,10 +9,10 @@ ms.date: 05/20/2020
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: e01f9ac8966223e11ad218af7bf6fbb2462f28f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83714896"
 ---
 # <a name="azure-web-application-firewall-on-azure-application-gateway-bot-protection-overview"></a>Overzicht van Azure Web Application firewall op Azure-toepassing gateway-bot
@@ -26,7 +26,7 @@ U kunt een beheerde regelset voor bescherming tegen bots inschakelen voor uw WAF
 
 ## <a name="use-with-owasp-rulesets"></a>Gebruiken met OWASP-rules
 
-U kunt de regelset voor bescherming tegen bots gebruiken, naast een van de OWASP-regelsets (2.2.9, 3.0 en 3.1). Op elk gewenst moment kan slechts één OWASP-regelset worden gebruikt. De regelset voor bescherming tegen bots bevat een extra regel die wordt weergegeven in een aparte regelset. Het object heeft de titel **Microsoft_BotManagerRuleSet_0**1 en u kunt het in-of uitschakelen zoals de andere OWASP-regels.
+U kunt de regelset voor bescherming tegen bots gebruiken, naast een van de OWASP-regelsets (2.2.9, 3.0 en 3.1). Op elk gewenst moment kan slechts één OWASP-regelset worden gebruikt. De regelset voor bescherming tegen bots bevat een extra regel die wordt weergegeven in een aparte regelset. Het object heeft de titel **Microsoft_BotManagerRuleSet_0** 1 en u kunt het in-of uitschakelen zoals de andere OWASP-regels.
 
 ![Bot-ruleSet](../media/bot-protection-overview/bot-ruleset.png)
 

@@ -7,10 +7,10 @@ ms.date: 10/09/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: ec26f021ffa581b0713973904c97349df83a08ef
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91930268"
 ---
 # <a name="tutorial-manage-app-groups-with-the-azure-portal"></a>Zelfstudie: App-groepen beheren met het Azure-portal
@@ -101,7 +101,7 @@ Als u al een hostgroep en virtuele machines van de sessiehost heeft gemaakt met 
 
 16.  Als u de app-groep wilt registreren voor een werkruimte, selecteert u **Ja** voor **Toepassingsgroep registreren**. Als u de app-groep liever op een later tijdstip wilt registreren, selecteer dan **Nee**.
 
-17.  Als u **Ja**selecteert, dan kunt u een bestaande werkruimte selecteren om uw app-groep bij te registreren.
+17.  Als u **Ja** selecteert, dan kunt u een bestaande werkruimte selecteren om uw app-groep bij te registreren.
 
        >[!NOTE]
        >U kunt de app-groep enkel registreren bij werkruimten die zijn aangemaakt op dezelfde locatie als de hostgroep. Daarnaast: Als u eerder een andere app-groep van dezelfde hostgroep als uw nieuwe app-groep heeft geregistreerd bij een werkruimte, dan wordt deze geselecteerd en kunt u deze niet bewerken. Alle app-groepen uit een hostgroep moeten bij dezelfde werkruimte geregistreerd worden.

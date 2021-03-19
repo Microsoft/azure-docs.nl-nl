@@ -12,10 +12,10 @@ ms.reviewer: ''
 ms.author: sstein
 ms.date: 03/12/2019
 ms.openlocfilehash: bc6054292d1a4f73bd12d90b877fc639e81802fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87084990"
 ---
 # <a name="use-powershell-to-create-elastic-pools-and-move-a-database-between-them"></a>PowerShell gebruiken voor het maken van elastische pools en verplaatsen van databases tussen de elastische pools
@@ -36,7 +36,7 @@ Als u PowerShell lokaal wilt installeren en gebruiken, is voor deze zelfstudie A
 
 ## <a name="clean-up-deployment"></a>Opschonen van implementatie
 
-Gebruik de volgende opdracht om de resourcegroep en alle resources die eraan zijn gekoppeld te verwijderen.
+Gebruik de volgende opdracht om de resourcegroep en alle resources die er aan zijn gekoppeld te verwijderen.
 
 ```powershell
 Remove-AzResourceGroup -ResourceGroupName $resourcegroupname

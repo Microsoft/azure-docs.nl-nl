@@ -8,10 +8,10 @@ ms.custom: mvc
 ms.topic: quickstart
 ms.date: 9/21/2020
 ms.openlocfilehash: d604ca8c8979ec98b990f8002ce29d0df92ac2af
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90945070"
 ---
 # <a name="quickstart-use-mysql-workbench-to-connect-and-query-data-in-azure-database-for-mysql---flexible-server-preview"></a>Quickstart: MySQL Workbench gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for MySQL - Flexible Server (preview-versie)
@@ -26,11 +26,11 @@ In deze quickstart ziet u hoe u met behulp van een MySQL Workbench-toepassing ve
 
 In deze snelstartgids worden de resources die in een van deze handleidingen zijn gemaakt, als uitgangspunt gebruikt:
 
-- [Een Azure Database for MySQL Flexible Server maken met behulp van Azure Portal](./quickstart-create-server-portal.md)
-- [Een Azure Database for MySQL Flexible Server maken met behulp van de Azure CLI](./quickstart-create-server-cli.md)
+- [Een Azure Database for MySQL Flexible Server maken met behulp van de Azure-portal](./quickstart-create-server-portal.md)
+- [Een Azure Database for MySQL Flexible Server maken met behulp van Azure CLI](./quickstart-create-server-cli.md)
 
 ## <a name="preparing-your-client-workstation"></a>Uw clientwerkstation voorbereiden
-- Als u een flexibele server hebt gemaakt met *Private Access (VNet-integratie)* , moet u verbinding maken met uw server vanuit een resource binnen hetzelfde VNet als uw server. U kunt een virtuele machine maken en toevoegen aan het VNet dat is gemaakt met de flexibele server. Zie [Virtueel netwerk met Azure Database for MySQL Flexible Server maken en beheren met behulp van de Azure CLI](./how-to-manage-virtual-network-cli.md).
+- Als u een flexibele server hebt gemaakt met *Private Access (VNet-integratie)* , moet u verbinding maken met uw server vanuit een resource binnen hetzelfde VNet als uw server. U kunt een virtuele machine maken en toevoegen aan het VNet dat is gemaakt met de flexibele server. Zie [Virtueel netwerk met Azure Database for MySQL Flexible Server maken met behulp van Azure CLI](./how-to-manage-virtual-network-cli.md).
 - Als u uw flexibele server met *Openbare toegang (toegestane IP-adressen)* hebt gemaakt, kunt u uw lokale IP-adres toevoegen aan de lijst met firewallregels op uw server. Zie [Firewallregels voor Azure Database for MySQL Flexible Server maken en beheren met behulp van de Azure CLI](./how-to-manage-firewall-cli.md).
 
 - MySQL Workbench downloaden en installeren op de computer vanaf de [MySQL-website](https://dev.mysql.com/downloads/workbench/).
@@ -53,7 +53,7 @@ Ga als volgt te werk om verbinding te maken met Azure Database for MySQL Flexibl
 
 2. Voer in het dialoogvenster **Nieuwe verbinding instellen** de volgende gegevens in op het tabblad **Parameters**:
 
-    :::image type="content" source="./media/connect-workbench/2-setup-new-connection.png" alt-text="Azure Database for MySQL Flexible Server name":::
+    :::image type="content" source="./media/connect-workbench/2-setup-new-connection.png" alt-text="nieuwe verbinding instellen":::
 
     | **Parameters** | **Voorgestelde waarde** | **Beschrijving van veld** |
     |---|---|---|
@@ -108,7 +108,7 @@ Ga als volgt te werk om verbinding te maken met Azure Database for MySQL Flexibl
 
     In de schermopname wordt een voorbeeld getoond van SQL-code in SQL Workbench, alsmede de uitvoer nadat de code is uitgevoerd.
 
-    :::image type="content" source="./media/connect-workbench/3-workbench-sql-tab.png" alt-text="Azure Database for MySQL Flexible Server name":::
+    :::image type="content" source="./media/connect-workbench/3-workbench-sql-tab.png" alt-text="Tabblad MySQL Workbench voor het uitvoeren van SQL-code":::
 
 2. Als u de SQL-code wilt uitvoeren, klikt u op het bliksemstraalpictogram in de werkbalk van het tabblad **SQL File**.
 3. Let op de drie tabbladen met resultaten in de sectie **Result Grid** in het midden van de pagina.
@@ -119,5 +119,5 @@ U hebt nu verbinding gemaakt met Azure Database for MySQL Flexible Server met be
 ## <a name="next-steps"></a>Volgende stappen
 - [Versleutelde verbinding met behulp van Transport Layer Security (TLS 1.2) in Azure Database for MySQL - Flexible Server](./how-to-connect-tls-ssl.md).
 - Meer informatie over [Netwerken in Azure Database for MySQL - Flexible Server](./concepts-networking.md).
-- [Firewallregels voor Azure Database for MySQL Flexible Server maken met behulp van Azure Portal](./how-to-manage-firewall-portal.md).
-- [Virtueel netwerk voor Azure Database for MySQL Flexible Server maken met behulp van Azure Portal](./how-to-manage-virtual-network-portal.md).
+- [Firewallregels voor Azure Database for MySQL Flexible Server maken met behulp van de Azure-portal](./how-to-manage-firewall-portal.md).
+- [Virtueel netwerk met Azure Database for MySQL Flexible Server maken met behulp van de Azure-portal](./how-to-manage-virtual-network-portal.md).

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
 ms.openlocfilehash: 6454bc863cb5fd628d581fff380c5ab61354f762
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87053048"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Wijziging van het Smooth Streaming Protocol (MS-SSTR) voor HEVC 
@@ -50,7 +50,7 @@ De volgende termen zijn specifiek voor dit document:
 
 >   **HEVC:** Video codering met hoge efficiëntie, zoals gedefinieerd in [ISO/IEC 23008-2]
 > 
->   **manifest:** Meta gegevens over de **presentatie** waarmee een client aanvragen voor **Media**kan uitvoeren. **Media:** Gecomprimeerde audio-, video-en tekst gegevens die door de client worden gebruikt om een **presentatie**af te spelen. **Media-indeling:** Een goed gedefinieerde indeling voor het weer geven van audio of video als een gecomprimeerd voor **beeld**.
+>   **manifest:** Meta gegevens over de **presentatie** waarmee een client aanvragen voor **Media** kan uitvoeren. **Media:** Gecomprimeerde audio-, video-en tekst gegevens die door de client worden gebruikt om een **presentatie** af te spelen. **Media-indeling:** Een goed gedefinieerde indeling voor het weer geven van audio of video als een gecomprimeerd voor **beeld**.
 > 
 >   **presentatie:** De set van alle **streams** en gerelateerde meta gegevens die nodig zijn om één film af te spelen. **aanvraag:** Een HTTP-bericht dat van de client naar de server wordt verzonden, zoals gedefinieerd in [[RFC2616]](https://go.microsoft.com/fwlink/?LinkId=90372) **Response:** een HTTP-bericht dat van de server naar de client is verzonden, zoals gedefinieerd in [[RFC2616]](https://go.microsoft.com/fwlink/?LinkId=90372)
 > 
@@ -66,10 +66,10 @@ De volgende termen zijn specifiek voor dit document:
 
 >  [MS-SSTR] Smooth Streaming Protocol *v20140502*[https://msdn.microsoft.com/library/ff469518.aspx](/openspecs/windows_protocols/ms-sstr/8383f27f-7efe-4c60-832a-387274457251)
 > 
->   [ISO/IEC 14496-12] International Organization for Standardization, ' informatie technologie--code ring van audiovisuele objecten--deel 12: ISO-basis media bestands indeling ', ISO/IEC 14496-12:2014, Edition 4, plus corrigendum 1, wijzigingen 1 & 2.
+>   [ISO/IEC 14496-12] Internationale Organisatie voor Standaardisatie, ' informatie technologie--code ring van audiovisuele objecten--deel 12: ISO-basis media bestands indeling ', ISO/IEC 14496-12:2014, Edition 4, plus corrigendum 1, wijzigingen 1 & 2.
 >   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c061988_ISO_IEC_14496-12_2012.zip>
 > 
->   [ISO/IEC 14496-15] International Organization for Standardization, ' informatie technologie: code ring van audiovisuele objecten--deel 15: Trans Port van de NAL-video in de ISO-basis media bestands indeling ', ISO 14496-15:2015, editie 3.
+>   [ISO/IEC 14496-15] Internationale Organisatie voor Standaardisatie, ' informatie technologie: code ring van audiovisuele objecten--deel 15: Trans Port van de NAL-video in de ISO-basis media bestands indeling ', ISO 14496-15:2015, editie 3.
 >   <https://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=65216>
 > 
 >   [ISO/IEC 23008-2] Informatie technologie: hoge efficiëntie code ring en media levering in heterogene omgevingen--deel 2: video codering met hoge efficiëntie: 2013 of nieuwste versie   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c035424_ISO_IEC_23008-2_2013.zip>

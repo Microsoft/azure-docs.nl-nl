@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 05/09/2020
 ms.openlocfilehash: aebce8f284ed4bb21d99efffc8dd6d0c51b39533
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87001482"
 ---
 # <a name="encode-and-decode-flat-files-in-azure-logic-apps-by-using-the-enterprise-integration-pack"></a>Platte bestanden coderen en decoderen in Azure Logic Apps met behulp van de Enterprise Integration Pack
@@ -35,7 +35,7 @@ Voordat u XML-inhoud naar een zakelijke partner verzendt in een Business-to-busi
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
-1. Selecteer **nieuwe stap**  >  **een actie toevoegen**onder de trigger of actie in uw logische app. In dit voor beeld wordt de trigger voor aanvragen gebruikt, die wordt genoemd **Wanneer een HTTP-aanvraag wordt ontvangen**, en worden binnenkomende aanvragen van buiten de logische app afgehandeld.
+1. Selecteer **nieuwe stap**  >  **een actie toevoegen** onder de trigger of actie in uw logische app. In dit voor beeld wordt de trigger voor aanvragen gebruikt, die wordt genoemd **Wanneer een HTTP-aanvraag wordt ontvangen**, en worden binnenkomende aanvragen van buiten de logische app afgehandeld.
 
    > [!TIP]
    > Het opgeven van een JSON-schema is optioneel. Als u een voor beeld van een nettolading van de inkomende aanvraag hebt, selecteert u **voor beeld Payload gebruiken om een schema te genereren**, voert u de voor beeld-nettolading in en selecteert u **gereed**. Het schema wordt weer gegeven in het vak **JSON-schema van aanvraag tekst** .
@@ -67,7 +67,7 @@ U bent nu klaar met het instellen van de actie voor het coderen van platte besta
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
-1. Selecteer **nieuwe stap**  >  **een actie toevoegen**onder de trigger of actie in uw logische app. In dit voor beeld wordt de trigger voor aanvragen gebruikt, die wordt genoemd **Wanneer een HTTP-aanvraag wordt ontvangen**, en worden binnenkomende aanvragen van buiten de logische app afgehandeld.
+1. Selecteer **nieuwe stap**  >  **een actie toevoegen** onder de trigger of actie in uw logische app. In dit voor beeld wordt de trigger voor aanvragen gebruikt, die wordt genoemd **Wanneer een HTTP-aanvraag wordt ontvangen**, en worden binnenkomende aanvragen van buiten de logische app afgehandeld.
 
    > [!TIP]
    > Het opgeven van een JSON-schema is optioneel. Als u een voor beeld van een nettolading van de inkomende aanvraag hebt, selecteert u **voor beeld Payload gebruiken om een schema te genereren**, voert u de voor beeld-nettolading in en selecteert u **gereed**. Het schema wordt weer gegeven in het vak **JSON-schema van aanvraag tekst** .

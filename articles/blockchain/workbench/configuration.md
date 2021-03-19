@@ -5,10 +5,10 @@ ms.date: 12/09/2019
 ms.topic: article
 ms.reviewer: brendal
 ms.openlocfilehash: f0ba19bf1d7fdf05014ac199fae9392b5c3249d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87073076"
 ---
 # <a name="azure-blockchain-workbench-configuration-reference"></a>Configuratie referentie voor Azure Block Chain workbench
@@ -56,7 +56,7 @@ De bedrijfs logica van een toepassing kan worden gemodelleerd als een status mac
 | StartState | De naam van de begin status van de werk stroom. | Ja | |
 | Eigenschappen | Verzameling [id's](#identifiers). Hiermee worden gegevens weer gegeven die kunnen worden gelezen uit een keten of visualiseren in een hulp programma voor gebruikers ervaring. | Ja | |
 | Constructor | Definieert de invoer parameters voor het maken van een exemplaar van de werk stroom. | Ja | |
-| Functies | Een verzameling [functies](#functions) die in de werk stroom kunnen worden uitgevoerd. | Ja | |
+| Functions | Een verzameling [functies](#functions) die in de werk stroom kunnen worden uitgevoerd. | Ja | |
 | Staten | Een verzameling werk stroom [statussen](#states). | Ja | |
 
 Zie het voor beeld van een [configuratie bestand](#configuration-file-example)voor een voor beeld.
@@ -197,7 +197,7 @@ Definieert de invoer parameters voor een exemplaar van een werk stroom.
 }
 ```
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 Definieert functies die kunnen worden uitgevoerd in de werk stroom.
 
@@ -418,7 +418,7 @@ Id's vertegenwoordigen een verzameling gegevens die wordt gebruikt voor het besc
 
 ## <a name="configuration-file-example"></a>Voor beeld van configuratie bestand
 
-Asset overboeking is een slim contract scenario voor het kopen en verkopen van hoogwaardige assets, waarvoor een inspecteur en beoordeling nodig zijn. Verkopers kunnen hun activa vermelden door een Smart-contract voor Asset-overdracht te instantiëren. Kopers kunnen aanbiedingen maken door een actie uit te voeren op het slimme contract en andere partijen kunnen acties ondernemen om de activa te controleren of te beoordelen. Zodra de Asset is gemarkeerd en geoordeeld, wordt de verkoop door de koper en de verkoper opnieuw bevestigd voordat het contract is ingesteld op voltooid. Op elk moment in het proces hebben alle deel nemers inzicht in de status van het contract wanneer het wordt bijgewerkt. 
+Asset overboeking is een slim contract scenario voor het kopen en verkopen van hoogwaardige assets, waarvoor een inspecteur en beoordeling nodig zijn. Verkopers kunnen hun activa vermelden door een Smart-contract voor Asset-overdracht te instantiëren. Kopers kunnen aanbiedingen maken door een actie uit te voeren op het slimme contract en andere partijen kunnen acties ondernemen om de activa te controleren of te beoordelen. Zodra de Asset is gemarkeerd en geoordeeld, wordt de verkoop door de koper en de verkoper opnieuw bevestigd voordat het contract is ingesteld op voltooid. Op elk moment in het proces hebben alle deel nemers inzicht in de status van het contract wanneer het wordt bijgewerkt. 
 
 Zie voor [beeld van Asset-overdracht voor Azure Block Chain Workbench](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/application-and-smart-contract-samples/asset-transfer) voor meer informatie, waaronder de code bestanden
 

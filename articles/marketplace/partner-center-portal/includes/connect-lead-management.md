@@ -10,10 +10,10 @@ ms.custom: include file
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: 7709f26b30d41b932569227b8b6f05b5725dc98f
-ms.sourcegitcommit: d39f2cd3e0b917b351046112ef1b8dc240a47a4f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88815658"
 ---
 Wanneer u uw aanbieding publiceert naar de commerciële Marketplace via het partner centrum, moet u uw aanbieding koppelen aan uw CRM-systeem. Op deze manier kunt u contact gegevens van klanten direct ontvangen nadat een klant rente heeft ingedrukt of uw product implementeert.

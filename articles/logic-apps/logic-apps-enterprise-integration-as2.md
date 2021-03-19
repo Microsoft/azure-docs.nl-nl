@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 10/08/2020
 ms.openlocfilehash: 1845de8332287f85e96b4e29c40caa66cb8704d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91856667"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>AS2-berichten voor B2B Enterprise-integratie in Azure Logic Apps uitwisselen met Enterprise Integration Pack
@@ -63,7 +63,7 @@ In dit artikel wordt uitgelegd hoe u de AS2-code ring en decodeer acties kunt to
 
 * Als u [Azure Key Vault](../key-vault/general/overview.md) gebruikt voor certificaat beheer, controleert u of uw kluis sleutels de bewerkingen voor **versleuteling** en **ontsleuteling** toestaan. Anders mislukken de coderings-en decodeer acties.
 
-  Ga in het Azure Portal naar de sleutel in uw sleutel kluis, Controleer de **toegestane bewerkingen**van uw sleutel en bevestig dat de bewerkingen voor **versleutelen** en **ontsleutelen** zijn geselecteerd, bijvoorbeeld:
+  Ga in het Azure Portal naar de sleutel in uw sleutel kluis, Controleer de **toegestane bewerkingen** van uw sleutel en bevestig dat de bewerkingen voor **versleutelen** en **ontsleutelen** zijn geselecteerd, bijvoorbeeld:
 
   ![Controleer de bewerkingen van de kluis sleutel](media/logic-apps-enterprise-integration-as2/key-vault-permitted-operations.png)
 

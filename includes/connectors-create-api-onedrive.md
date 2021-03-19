@@ -5,10 +5,10 @@ author: ecfan
 ms.author: estfan
 ms.date: 07/21/2020
 ms.openlocfilehash: 27df83552b450b7657c0595d1d419001df98148c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87040232"
 ---
 ## <a name="prerequisites"></a>Vereisten
@@ -21,7 +21,7 @@ Voer de volgende stappen uit om Logic Apps om verbinding te maken met uw OneDriv
 
 1. Meld u aan bij Azure Portal. 
 
-1. Onder **Azure-Services**selecteert u **Logic apps**. Selecteer vervolgens de naam van uw logische app in de lijst.
+1. Onder **Azure-Services** selecteert u **Logic apps**. Selecteer vervolgens de naam van uw logische app in de lijst.
 
 1. Selecteer in het menu van de logische app de optie **Logic app-ontwerp** onder **ontwikkelingsprogram ma's**.
 
@@ -33,7 +33,7 @@ Voer de volgende stappen uit om Logic Apps om verbinding te maken met uw OneDriv
 
    ![Scherm opname van Logic Apps Designer, waarin de aanmeldings prompt voor de OneDrive API wordt weer gegeven.](./media/connectors-create-api-onedrive/onedrive-2.png)
 
-3. Selecteer **Aanmelden**en voer uw gebruikers naam en wacht woord in. Selecteer **Aanmelden**: 
+3. Selecteer **Aanmelden** en voer uw gebruikers naam en wacht woord in. Selecteer **Aanmelden**: 
 
    ![Scherm afbeelding van Microsoft-account aanmeldings pagina voor de OneDrive API-autorisatie.](./media/connectors-create-api-onedrive/onedrive-3.png)   
 

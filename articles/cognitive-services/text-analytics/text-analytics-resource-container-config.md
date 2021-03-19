@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: f6a1bc652125990a7daf3414895f34b95c544912
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83590551"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Text Analytics docker-containers configureren
@@ -43,7 +43,7 @@ Deze instelling bevindt zich op de volgende locatie:
 
 ## <a name="billing-configuration-setting"></a>Instelling facturerings configuratie
 
-Met deze `Billing` instelling geeft u de eindpunt-URI op van de _Text Analytics_ resource op Azure die wordt gebruikt om de facturerings gegevens voor de container te meten. U moet een waarde opgeven voor deze configuratie-instelling en de waarde moet een geldige eindpunt-URI zijn voor een __Text Analytics_ resource in Azure. De container rapporteert het gebruik ongeveer elke 10 tot 15 minuten.
+Met deze `Billing` instelling geeft u de eindpunt-URI op van de _Text Analytics_ resource op Azure die wordt gebruikt om de facturerings gegevens voor de container te meten. U moet een waarde opgeven voor deze configuratie-instelling en de waarde moet een geldige eindpunt-URI zijn voor een _ _Text Analytics_ resource in Azure. De container rapporteert het gebruik ongeveer elke 10 tot 15 minuten.
 
 Deze instelling bevindt zich op de volgende locatie:
 

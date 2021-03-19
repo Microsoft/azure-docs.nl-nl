@@ -5,10 +5,10 @@ ms.reviewer: dcurwin
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.openlocfilehash: a50b9ee05be48113221f2a12f968540bd3a00b3b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88824409"
 ---
 # <a name="monitor-your-backups-with-backup-explorer"></a>Uw back-ups controleren met backup Explorer
@@ -19,7 +19,7 @@ Backup Explorer is een ingebouwde Azure Monitor werkmap waarmee Azure Backup kla
 
 * **Op schaal**: krijg een geaggregeerde weer gave van de back-upitems, taken, waarschuwingen, beleids regels en resources die nog niet zijn geconfigureerd voor back-up in het hele erfgoed.
 * **Analyse van inzoomen**: gedetailleerde informatie over elk van uw taken, waarschuwingen, beleids regels en back-upitems op één plek weer geven.
-* **Interfaces waarvoor actie**kan worden uitgevoerd: nadat u een probleem hebt geïdentificeerd, kunt u dit oplossen door probleemloos naar het relevante back-upitem of de Azure-resource te gaan.
+* **Interfaces waarvoor actie** kan worden uitgevoerd: nadat u een probleem hebt geïdentificeerd, kunt u dit oplossen door probleemloos naar het relevante back-upitem of de Azure-resource te gaan.
 
 Deze mogelijkheden worden out-of-Box door systeem eigen integratie geboden met Azure resource Graph en Azure Monitor werkmappen.
 
@@ -54,19 +54,19 @@ Het tabblad **samen vatting** bevat een kort overzicht van de algemene voor waar
 
 ### <a name="the-backup-items-tab"></a>Het tabblad Back-upitems
 
-U kunt elk van uw back-upitems filteren en weer geven op basis van het abonnement, de kluis en andere kenmerken. Als u de naam van een back-upitem selecteert, kunt u het deel venster Azure voor dat item openen. U kunt bijvoorbeeld zien dat de laatste back-up is mislukt voor item *X*in de tabel. Als u *X*selecteert, kunt u het deel venster **back-up** van het item openen, waar u een back-upbewerking op aanvraag kunt activeren.
+U kunt elk van uw back-upitems filteren en weer geven op basis van het abonnement, de kluis en andere kenmerken. Als u de naam van een back-upitem selecteert, kunt u het deel venster Azure voor dat item openen. U kunt bijvoorbeeld zien dat de laatste back-up is mislukt voor item *X* in de tabel. Als u *X* selecteert, kunt u het deel venster **back-up** van het item openen, waar u een back-upbewerking op aanvraag kunt activeren.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4nQYc]
 
 ### <a name="the-jobs-tab"></a>Het tabblad taken
 
-Selecteer het tabblad **taken** om de details weer te geven van alle taken die in de afgelopen zeven dagen zijn geactiveerd. Hier kunt u filteren op *taak bewerking*, *taak status*en *fout code* (voor mislukte taken).
+Selecteer het tabblad **taken** om de details weer te geven van alle taken die in de afgelopen zeven dagen zijn geactiveerd. Hier kunt u filteren op *taak bewerking*, *taak status* en *fout code* (voor mislukte taken).
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4nOrh]
 
 ### <a name="the-alerts-tab"></a>Het tabblad waarschuwingen
 
-Selecteer het tabblad **waarschuwingen** om details weer te geven van alle waarschuwingen die in de afgelopen 7 dagen zijn gegenereerd voor uw kluizen. U kunt waarschuwingen filteren op type (*back-upfout* of *herstel fout*), huidige status (*actief* of *opgelost*) en Ernst (*kritiek*, *waarschuwing*of *informatie*). U kunt ook een koppeling selecteren om de virtuele Azure-machine te bezoeken en alle benodigde actie ondernemen.
+Selecteer het tabblad **waarschuwingen** om details weer te geven van alle waarschuwingen die in de afgelopen 7 dagen zijn gegenereerd voor uw kluizen. U kunt waarschuwingen filteren op type (*back-upfout* of *herstel fout*), huidige status (*actief* of *opgelost*) en Ernst (*kritiek*, *waarschuwing* of *informatie*). U kunt ook een koppeling selecteren om de virtuele Azure-machine te bezoeken en alle benodigde actie ondernemen.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4nTxe]
 

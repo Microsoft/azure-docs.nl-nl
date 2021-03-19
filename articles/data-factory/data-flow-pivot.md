@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/17/2020
 ms.openlocfilehash: e098182c000cbe05df533434a41c55b797ef876f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87086656"
 ---
 # <a name="pivot-transformation-in-mapping-data-flow"></a>Draai transformatie in toewijzings gegevens stroom
@@ -41,7 +41,7 @@ Deze sectie is optioneel. Als er geen kolommen voor groeperen op zijn geselectee
 
 De draai tabel is de kolom waarvan de rijwaarden in nieuwe kolommen worden weer geven. Standaard maakt de draai transformatie een nieuwe kolom voor elke unieke Rijwaarde.
 
-In de sectie met de label **waarde**kunt u specifieke rijgegevens opgeven die moeten worden gedraaid. Alleen de rijwaarden die in deze sectie worden ingevoerd, worden gedraaid. Als u een **Null-waarde** inschakelt, wordt er een gedraaide kolom gemaakt voor de Null-waarden in de kolom.
+In de sectie met de label **waarde** kunt u specifieke rijgegevens opgeven die moeten worden gedraaid. Alleen de rijwaarden die in deze sectie worden ingevoerd, worden gedraaid. Als u een **Null-waarde** inschakelt, wordt er een gedraaide kolom gemaakt voor de Null-waarden in de kolom.
 
 ### <a name="pivoted-columns"></a>Gedraaide kolommen
 
@@ -71,7 +71,7 @@ Als er specifieke waarden van de draai tabel worden ingesteld, worden de gedraai
 
 Met Pivot worden nieuwe kolom namen dynamisch gegenereerd op basis van rijwaarden. U kunt deze nieuwe kolommen toevoegen aan de meta gegevens waarnaar later in uw gegevens stroom kan worden verwezen. U doet dit door de snelle actie [toewijzen](concepts-data-flow-schema-drift.md#map-drifted-columns-quick-action) in de voorbeeld gegevens te gebruiken. 
 
-![Kolommen draaien](media/data-flow/newpivot1.png "Geplaatste draai kolommen toewijzen")
+![Draaikolommen](media/data-flow/newpivot1.png "Geplaatste draai kolommen toewijzen")
 
 ### <a name="sinking-pivoted-columns"></a>Zinkt gedraaide kolommen
 

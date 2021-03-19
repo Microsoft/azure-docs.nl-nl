@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
 ms.openlocfilehash: 73b9533fa00c783e1cfb85270198f5c00c66afd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86540380"
 ---
 # <a name="install-the-azure-functions-runtime-preview-2"></a>De Azure Functions-runtime Preview 2 installeren
@@ -47,7 +47,7 @@ Het Azure Functions-runtime preview-installatie programma begeleidt u bij de ins
     ![Installatie programma voor Azure Functions-runtime preview][1]
 
 1. Klik op **Volgende**.
-1. Wanneer u de voor waarden van de **gebruiksrecht overeenkomst**hebt gelezen, **schakelt u het selectie vakje** in om de voor waarden te accepteren en klikt u op **volgende** om door te gaan.
+1. Wanneer u de voor waarden van de **gebruiksrecht overeenkomst** hebt gelezen, **schakelt u het selectie vakje** in om de voor waarden te accepteren en klikt u op **volgende** om door te gaan.
 1. Selecteer de functies die u wilt installeren op deze computer **functions Role** en/of **functions worker** en klik op **volgende**.
 
     ![Preview-versie van Azure Functions-runtime-installatie programma-rol selecteren][3]
@@ -75,11 +75,11 @@ U moet de configuratie volt ooien om de Azure Functions-runtime-installatie te v
 
     ![Voorbeeld database configuratie Azure Functions-runtime][8]
 
-1. Klik op het tabblad **referenties** .  Hier moet u twee nieuwe referenties maken voor gebruik met een bestands share voor het hosten van al uw functie-apps.  Geef combi Naties van **gebruikers naam** en **wacht woord** op voor de **Bestands share-eigenaar** en de **Bestands share gebruiker**en klik vervolgens op **Toep assen**.
+1. Klik op het tabblad **referenties** .  Hier moet u twee nieuwe referenties maken voor gebruik met een bestands share voor het hosten van al uw functie-apps.  Geef combi Naties van **gebruikers naam** en **wacht woord** op voor de **Bestands share-eigenaar** en de **Bestands share gebruiker** en klik vervolgens op **Toep assen**.
 
     ![Preview-referenties Azure Functions-runtime][9]
 
-1. Klik op het tabblad **Bestands share** .  Hier moet u de details van de bestands share locatie opgeven.  U kunt de bestands share voor u maken, maar u kunt ook een bestaande bestands share gebruiken en op **Toep assen**klikken.  Als u een nieuwe locatie voor de bestands share selecteert, moet u een map opgeven die door de Azure Functions-runtime wordt gebruikt.
+1. Klik op het tabblad **Bestands share** .  Hier moet u de details van de bestands share locatie opgeven.  U kunt de bestands share voor u maken, maar u kunt ook een bestaande bestands share gebruiken en op **Toep assen** klikken.  Als u een nieuwe locatie voor de bestands share selecteert, moet u een map opgeven die door de Azure Functions-runtime wordt gebruikt.
 
     ![Preview-bestands share Azure Functions-runtime][10]
 
@@ -101,7 +101,7 @@ Uw eerste functie maken in Azure Functions-runtime preview
 
 1. Blader bijvoorbeeld naar de **Azure functions-runtime Portal** `https://<machinename>.<domain>` `https://mycomputer.mydomain.com` .
 
-1. U wordt gevraagd om u aan te **melden**als de implementatie in een domein gebruikmaakt van uw gebruikers naam en wacht woord voor het domein account. anders gebruikt u de gebruikers naam en het wacht woord van uw lokale account om u aan te melden bij de portal.
+1. U wordt gevraagd om u aan te **melden** als de implementatie in een domein gebruikmaakt van uw gebruikers naam en wacht woord voor het domein account. anders gebruikt u de gebruikers naam en het wacht woord van uw lokale account om u aan te melden bij de portal.
 
     ![Azure Functions-runtime preview-Portal aanmelden][14]
 

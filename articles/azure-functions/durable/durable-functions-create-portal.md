@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/10/2020
 ms.reviewer: azfuncdf
 ms.openlocfilehash: b029fa246977dfe4210f6e8df242415f7e4103f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87081913"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Durable Functions maken met behulp van de Azure Portal
@@ -38,14 +38,21 @@ Als u Java script-Durable Functions maakt, moet u het NPM- [ `durable-functions`
 
 2. Selecteer op de pagina **geavanceerde hulp middelen** de optie **Go**.
 
-3. Selecteer in de kudu-console **fout opsporing console**en klik vervolgens op **cmd**.
+3. Selecteer in de kudu-console **fout opsporing console** en klik vervolgens op **cmd**.
 
-   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Functies platform functies kiezen kudu"
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Console voor fout opsporing kudu":::
+
+3. De structuur van de bestands directory van de functie-app moet worden weer gegeven. Navigeer naar de map `site/wwwroot`. Van daaruit kunt u een bestand uploaden `package.json` door het te slepen en neer te zetten in het venster van de bestands directory. Hieronder ziet u een voor beeld `package.json` :
+
+    ```json
+    {
+      "dependencies": {
+        "durable-functions": "^1.3.1"
       }
     }
     ```
 
-   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Functies platform functies kiezen kudu":::
+   :::image type="content" source="./media/durable-functions-create-portal/kudu-choose-debug-console.png" alt-text="Kudu-upload package.jsop":::
 
 4. Nadat uw `package.json` is geüpload, voert u de `npm install` opdracht uit vanuit de kudu-console voor externe uitvoering.
 
@@ -57,7 +64,7 @@ Als u Java script-Durable Functions maakt, moet u het NPM- [ `durable-functions`
 
 1. Voer in het zoek veld van de pagina **nieuwe functie** in `durable` en kies vervolgens de sjabloon **Durable functions http-starter** .
 
-   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Functies platform functies kiezen kudu":::
+   :::image type="content" source="./media/durable-functions-create-portal/durable-functions-http-starter-template.png" alt-text="Durable Functions HTTP-starter selecteren":::
 
 1. Voer voor de **nieuwe functie** naam in `HttpStart` en selecteer vervolgens **functie maken**.
 
@@ -69,7 +76,7 @@ Als u Java script-Durable Functions maakt, moet u het NPM- [ `durable-functions`
 
 ## <a name="test-the-durable-function-orchestration"></a>De functie voor de integratie van duurzame functies testen
 
-1. Ga terug naar de functie **HttpStart** , kies **functie-URL ophalen**en selecteer het pictogram **kopiëren naar klem bord** om de URL te kopiëren. U gebruikt deze URL om de functie **HelloSequence** te starten.
+1. Ga terug naar de functie **HttpStart** , kies **functie-URL ophalen** en selecteer het pictogram **kopiëren naar klem bord** om de URL te kopiëren. U gebruikt deze URL om de functie **HelloSequence** te starten.
 
 1. Gebruik een HTTP-hulp programma zoals postman of krul om een POST-aanvraag te verzenden naar de URL die u hebt gekopieerd. Het volgende voor beeld is een krul opdracht waarmee een POST-aanvraag wordt verzonden naar de functie duurzame:
 
@@ -101,7 +108,7 @@ Als u Java script-Durable Functions maakt, moet u het NPM- [ `durable-functions`
         }
     ```
 
-1. Ga door met het aanroepen van het `statusQueryGetUri` eind punt totdat de status is gewijzigd in **voltooid**en er een antwoord wordt weer geven, zoals in het volgende voor beeld:
+1. Ga door met het aanroepen van het `statusQueryGetUri` eind punt totdat de status is gewijzigd in **voltooid** en er een antwoord wordt weer geven, zoals in het volgende voor beeld:
 
     ```json
     {

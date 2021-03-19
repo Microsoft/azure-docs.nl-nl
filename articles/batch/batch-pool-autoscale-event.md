@@ -4,13 +4,13 @@ description: Verwijzing voor de gebeurtenis auto scale van batch-pool, die wordt
 ms.topic: reference
 ms.date: 10/08/2020
 ms.openlocfilehash: e548ed484e5f683a8f79434ce4095ac66900f01a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91852134"
 ---
-# <a name="pool-autoscale-event"></a>De gebeurtenis groep automatisch schalen
+# <a name="pool-autoscale-event"></a>Gebeurtenis voor pool maken voor automatisch schalen
 
  Deze gebeurtenis wordt verzonden zodra een pool automatisch wordt geschaald. Met de inhoud van het logboek worden automatisch geschaalde formules en evaluatie resultaten voor de groep weer gegeven.
 
@@ -34,7 +34,7 @@ ms.locfileid: "91852134"
 }
 ```
 
-|Element|Type|Notities|
+|Element|Type|Opmerkingen|
 |-------------|----------|-----------|
 |`id`|Tekenreeks|De ID van de pool.|
 |`timestamp`|DateTime|De tijds tempel wanneer automatisch schalen wordt uitgevoerd.|
@@ -44,7 +44,7 @@ ms.locfileid: "91852134"
 
 ###  <a name="error"></a><a name="error"></a> optreedt
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`code`|Tekenreeks|Een id voor de fout bij automatisch schalen. Codes zijn niet-variabel en zijn bedoeld om programmatisch te worden verbruikt.|
 |`message`|Tekenreeks|Een bericht met een beschrijving van de fout automatisch schalen, bedoeld om te worden weer gegeven in een gebruikers interface.|

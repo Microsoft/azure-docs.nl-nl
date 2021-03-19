@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/29/2018
 ms.author: tomfitz
 ms.openlocfilehash: 47c88e08e5d2eac09fbcd5b60a8ccd73b46c9616
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87063758"
 ---
 # <a name="microsoftcomputecredentialscombo-ui-element"></a>Micro soft. compute. CredentialsCombo UI-element
@@ -58,7 +58,7 @@ Gebruik voor Windows het volgende schema:
 }
 ```
 
-Gebruik voor **Linux**het volgende schema:
+Gebruik voor **Linux** het volgende schema:
 
 ```json
 {
@@ -111,7 +111,7 @@ Als `osPlatform` is **Linux** en de gebruiker een open bare SSH-sleutel heeft ge
 
 ## <a name="remarks"></a>Opmerkingen
 
-- `osPlatform` moet worden opgegeven, en kan **Windows** of **Linux**zijn.
+- `osPlatform` moet worden opgegeven, en kan **Windows** of **Linux** zijn.
 - Als `constraints.required` is ingesteld op **True**, moeten de tekst vakken voor het wacht woord of de open bare SSH-sleutel waarden bevatten om te kunnen valideren. De standaard waarde is **True**.
 - Als `options.hideConfirmation` is ingesteld op **True**, wordt het tweede tekstvak voor het bevestigen van het wacht woord van de gebruiker verborgen. De standaardwaarde is **onwaar**.
 - Als `options.hidePassword` is ingesteld op **True**, is de optie voor het gebruik van wachtwoord verificatie verborgen. Het kan alleen worden gebruikt als `osPlatform` **Linux**. De standaardwaarde is **onwaar**.

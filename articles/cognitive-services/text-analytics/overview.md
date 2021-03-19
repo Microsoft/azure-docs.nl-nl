@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 02/09/2021
+ms.date: 03/09/2021
 ms.author: aahi
 keywords: tekstanalyse, sentimentanalyse, tekst analytics
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: cb7bdeb379ee753424d9c975a8c030b0f7890552
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 7fcc030e3c63c24fa255e578c2d8aaf1b466e99c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101722276"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598963"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Wat is Text Analytics-API?
 
@@ -33,7 +33,7 @@ Gebruik [sentimentanalyse](how-tos/text-analytics-how-to-sentiment-analysis.md) 
 
 De functie biedt sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') op basis van de hoogste betrouwbaarheidsscore die door de service op zin- het documentniveau is gevonden. Met deze functie worden ook betrouwbaarheidsscores geretourneerd tussen 0 en 1 voor elk document en voor alle zinnen in dat document, voor positief, neutraal en negatief sentiment. U kunt de service ook on-premises uitvoeren [met behulp van een container](how-tos/text-analytics-how-to-install-containers.md).
 
-Vanaf v.3.1-preview is meninganalyse een functie van Sentimentanalyse. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
+Vanaf v.3.1-preview is meninganalyse een functie van Sentimentanalyse. Deze functie bevat ook gedetailleerde informatie over het op aspect gebaseerde Sentimentanalyse in natuurlijke taal verwerking (NLP). Dit is een gedetailleerdere beschrijving van de adviezen met betrekking tot woorden (zoals de kenmerken van producten of Services) in de tekst.
 
 ## <a name="key-phrase-extraction"></a>Sleuteltermextractie
 

@@ -1,14 +1,14 @@
 ---
 title: Programmatisch beleid maken
 description: Dit artikel helpt u bij het programmatisch maken en beheren van beleids regels voor Azure Policy met Azure CLI, Azure PowerShell en REST API.
-ms.date: 08/17/2020
+ms.date: 03/16/2021
 ms.topic: how-to
-ms.openlocfilehash: 4c3a503e8d48573441093879511490608437b1e1
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: b4f15241799469da2e479cb758f648ec3131a149
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033860"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598487"
 ---
 # <a name="programmatically-create-policies"></a>Programmatisch beleid maken
 
@@ -244,5 +244,5 @@ Raadpleeg de volgende artikelen voor meer informatie over de opdrachten en query
 - [Azure REST API-resources](/rest/api/resources/)
 - [Azure PowerShell modules](/powershell/module/az.resources/#policy)
 - [Azure CLI-beleids opdrachten](/cli/azure/policy)
-- [Naslag informatie over REST API van Azure Policy Insights-resource provider](/rest/api/policy-insights)
+- [Referentie REST API resource provider Azure Policy](/rest/api/policy)
 - [Uw resources organiseren met Azure-beheergroepen](../../management-groups/overview.md).

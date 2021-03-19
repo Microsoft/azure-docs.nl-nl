@@ -1,19 +1,19 @@
 ---
 title: Een werk ruimte maken waarop data exfiltration Protection is ingeschakeld
 description: In dit artikel wordt uitgelegd hoe u een werk ruimte maakt met data exfiltration-beveiliging in azure Synapse Analytics
-author: NanditaV
+author: nanditavalsan
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: security
 ms.date: 12/01/2020
 ms.author: NanditaV
 ms.reviewer: jrasnick
-ms.openlocfilehash: a3dc0b9e83af5a29172189f75e5a2174dc4d393d
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.openlocfilehash: 59c2f5e5738b29aa11e9227b157f8b11d53f2b25
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102096119"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598079"
 ---
 # <a name="create-a-workspace-with-data-exfiltration-protection-enabled"></a>Een werk ruimte maken waarop data exfiltration Protection is ingeschakeld
 In dit artikel wordt beschreven hoe u een werk ruimte maakt waarop data exfiltration Protection is ingeschakeld en hoe u de goedgekeurde Azure AD-tenants voor deze werk ruimte beheert.

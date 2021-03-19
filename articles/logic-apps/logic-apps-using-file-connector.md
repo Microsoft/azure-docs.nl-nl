@@ -7,13 +7,13 @@ author: derek1ee
 ms.author: deli
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
-ms.date: 01/13/2019
-ms.openlocfilehash: 65b6b1f783dbabc9ad2e1a4bf79008240d1b2726
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 10/08/2020
+ms.openlocfilehash: 4715d7173dd959d12350229e457717c908a83756
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89659923"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "91873231"
 ---
 # <a name="connect-to-on-premises-file-systems-with-azure-logic-apps"></a>Verbinding maken met on-premises bestandssystemen met Azure Logic Apps
 
@@ -22,6 +22,9 @@ Met Azure Logic Apps en de File System-connector kunt u geautomatiseerde taken e
 - Bestanden maken, ophalen, toevoegen, bijwerken en verwijderen.
 - Bestanden in mappen of hoofd mappen weer geven.
 - Bestands inhoud en meta gegevens ophalen.
+
+  > [!IMPORTANT]
+  > De bestandssysteem connector ondersteunt momenteel alleen Windows-bestands systemen op Windows-besturings systemen.  
 
 In dit artikel wordt uitgelegd hoe u verbinding kunt maken met een on-premises bestands systeem, zoals wordt beschreven in dit voorbeeld scenario: Kopieer een bestand dat is geüpload naar Dropbox naar een bestands share en verzend vervolgens een e-mail bericht. Logic apps gebruiken de [on-premises gegevens gateway](../logic-apps/logic-apps-gateway-connection.md)om veilig verbinding te maken en toegang te krijgen tot on-premises systemen. Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?](../logic-apps/logic-apps-overview.md). Zie Naslag informatie over de [File System-connector](/connectors/filesystem/)voor connector-specifieke technische gegevens.
 
@@ -60,7 +63,7 @@ In dit artikel wordt uitgelegd hoe u verbinding kunt maken met een on-premises b
 
 ## <a name="add-actions"></a>Acties toevoegen
 
-1. Kies **volgende stap**onder de trigger. Voer in het zoekvak ' bestands systeem ' in als uw filter. Selecteer in de lijst acties deze actie: **bestand maken**
+1. Kies **volgende stap** onder de trigger. Voer in het zoekvak ' bestands systeem ' in als uw filter. Selecteer in de lijst acties deze actie: **bestand maken**
 
    ![Bestandssysteem connector zoeken](media/logic-apps-using-file-connector/find-file-system-action.png)
 
@@ -73,7 +76,7 @@ In dit artikel wordt uitgelegd hoe u verbinding kunt maken met een on-premises b
    | **Verbindingsnaam** | Ja | <*verbindings naam*> | De naam die u voor de verbinding wilt hebben |
    | **Hoofdmap** | Ja | <*root-mapnaam*> | De hoofdmap voor uw bestands systeem, bijvoorbeeld als u de on-premises gegevens gateway hebt geïnstalleerd, zoals een lokale map op de computer waarop de on-premises gegevens gateway is geïnstalleerd, of de map voor een netwerk share waartoe de computer toegang heeft. <p>Bijvoorbeeld: `\\PublicShare\\DropboxFiles` <p>De hoofdmap is de bovenliggende map, die wordt gebruikt voor relatieve paden voor alle bestand-gerelateerde acties. |
    | **Verificatie type** | Nee | <*verificatie-type*> | Het type verificatie dat door het bestands systeem wordt gebruikt: **Windows** |
-   | **Gebruikersnaam** | Ja | <*domain* > \\ domein < *gebruikers naam*> <p>-of- <p><*lokale* > \\ computer < *gebruikers naam*> | De gebruikers naam voor de computer waarop u de map van het bestands systeem hebt. <p>Als uw bestandssysteem map zich op dezelfde computer bevindt als de on-premises gegevens gateway, kunt u <gebruikers naam van de *lokale computer*gebruiken > \\ < *username*>. |
+   | **Gebruikersnaam** | Ja | < > \\ domein < *gebruikers naam*> <p>-of- <p><*lokale* > \\ computer < *gebruikers naam*> | De gebruikers naam voor de computer waarop u de map van het bestands systeem hebt. <p>Als uw bestandssysteem map zich op dezelfde computer bevindt als de on-premises gegevens gateway, kunt u <gebruikers naam van de *lokale computer* gebruiken > \\ < >. |
    | **Wachtwoord** | Ja | <*uw-wacht woord*> | Het wacht woord voor de computer waarop u het bestands systeem hebt |
    | **#b0** | Ja | <*geïnstalleerd-gateway naam*> | De naam voor de eerder geïnstalleerde gateway |
    |||||

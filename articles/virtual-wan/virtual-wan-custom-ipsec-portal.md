@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 10/14/2019
 ms.author: cherylmc
 ms.openlocfilehash: 07eae453441ea8bff81d7cdb60f9c46c08a22829
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91851167"
 ---
 # <a name="configure-a-custom-ipsec-policy-for-virtual-wan-using-the-portal"></a>Een aangepast IPsec-beleid voor virtuele WAN configureren met behulp van de portal
@@ -28,7 +28,7 @@ U kunt een aangepast IPsec-beleid configureren voor een virtuele WAN-verbinding 
 2. **Selecteer de VPN-site**. Klik op de pagina overzicht van de hub op **VPN (site naar site)** en selecteer de VPN-site waarvoor u een aangepast IPSec-beleid wilt instellen.
 
    ![Selecteer](./media/virtual-wan-custom-ipsec-portal/locate.png)
-3. **Bewerk de VPN-verbinding**. Selecteer in het **context menu** **...** de optie **VPN-verbinding bewerken**.
+3. **Bewerk de VPN-verbinding**. Selecteer in het **context menu** de optie **VPN-verbinding bewerken**.
 
    ![bewerken](./media/virtual-wan-custom-ipsec-portal/contextmenu.png)
 4. **Configureer de instellingen**. Op de pagina **VPN-verbinding bewerken** wijzigt u de IPSec-instelling van standaard in aangepast en past u het IPSec-beleid aan. Selecteer **Opslaan** om uw instellingen op te slaan.

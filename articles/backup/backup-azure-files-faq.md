@@ -4,10 +4,10 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over het b
 ms.date: 04/22/2020
 ms.topic: conceptual
 ms.openlocfilehash: e2b6afb25e189ee2848f25c0ba59d843baf37090
-ms.sourcegitcommit: 541bb46e38ce21829a056da880c1619954678586
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91940832"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Vragen over het maken back-ups van Azure-bestanden
@@ -123,7 +123,7 @@ Hier volgt een voor beeld van hoe dit werkt:
 | Dagelijks          | Elke dag om 9 uur              | 50 dagen   |
 | Wekelijks         | Op zondag om 9 uur              | 3 weken   |
 | Maandelijks        | Op de afgelopen maandag om 9 uur         | 1 maand   |
-| Jaarlijks         | In Jan op de derde zondag om 9 uur | 4 jaar   |
+| Jaar         | In Jan op de derde zondag om 9 uur | 4 jaar   |
 
 #### <a name="impact"></a>Impact
 

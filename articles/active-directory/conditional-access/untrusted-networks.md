@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e4c020a9be7683bf045dbcc747dad3cb45058dd7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93077673"
 ---
 # <a name="how-to-require-mfa-for-access-from-untrusted-networks-with-conditional-access"></a>Procedure: MFA vereisen voor toegang vanaf niet-vertrouwde netwerken met voorwaardelijke toegang   
@@ -58,7 +58,7 @@ In plaats van te bepalen welke locaties niet worden vertrouwd, kunt u het volgen
 
 - Alle vertrouwde locaties uitsluiten 
 
-   :::image type="content" source="./media/untrusted-networks/01.png" alt-text="Scherm opname van het deel venster met een D-locatie van Azure, waarvoor configureren is ingesteld op Ja, het tabblad includes en de optie alle locaties geselecteerd en gemarkeerd." border="false":::
+   :::image type="content" source="./media/untrusted-networks/01.png" alt-text="Scherm opname van het deel venster van Azure A D-locaties, met configureren ingesteld op Ja, het tabblad uitsluiten zichtbaar en de optie alle vertrouwde locaties geselecteerd." border="false":::
 
 ## <a name="policy-deployment"></a>Implementatie van beleid
 

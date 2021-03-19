@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.date: 10/01/2018
 ms.custom: mvc, cc996988-fb4f-47
 ms.openlocfilehash: bf6865d2756579f457dded90b247326d2eec137c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83122975"
 ---
 # <a name="create-a-function-in-azure-thats-triggered-by-blob-storage"></a>Een functie in azure maken die wordt geactiveerd door Blob Storage
@@ -34,25 +34,25 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
 
 ## <a name="create-an-azure-blob-storage-triggered-function"></a>Een door Azure Blob Storage geactiveerde functie maken
 
-1. Selecteer **functies**en selecteer vervolgens **+ toevoegen** om een nieuwe functie toe te voegen.
+1. Selecteer **functies** en selecteer vervolgens **+ toevoegen** om een nieuwe functie toe te voegen.
 
-   :::image type="content" source="./media/functions-create-storage-blob-triggered-function/function-app-quickstart-choose-template.png" alt-text="De functie-app is gemaakt." border="true":::
+   :::image type="content" source="./media/functions-create-storage-blob-triggered-function/function-app-quickstart-choose-template.png" alt-text="Kies een functie sjabloon in de Azure Portal." border="true":::
 
 1. Kies de **Azure Blob Storage trigger** -sjabloon.
 
 1. Gebruik de instellingen zoals opgegeven in de tabel onder de afbeelding.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-create-blob-storage-trigger-portal-2.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-create-blob-storage-trigger-portal-2.png" alt-text="Naam en configureer de door Blob Storage geactiveerde functie." border="true":::
 
     | Instelling | Voorgestelde waarde | Beschrijving |
     |---|---|---|
     | **Nieuwe functie** | Uniek in uw functie-app | Naam van deze door Blob geactiveerde functie. |
-    | **Pad**   | voorbeeldwerkitems/{naam}    | Locatie in Blob Storage die wordt bewaakt. De bestandsnaam van de blob wordt doorgegeven in de binding als de _naam_-parameter.  |
+    | **Pad**   | samples-workitems/{name}    | Locatie in Blob Storage die wordt bewaakt. De bestandsnaam van de blob wordt doorgegeven in de binding als de _naam_-parameter.  |
     | **Opslagaccountverbinding** | AzureWebJobsStorage | U kunt de opslagaccountverbinding gebruiken die al door de functie-app wordt gebruikt of u kunt een nieuwe maken.  |
 
 1. Selecteer **functie maken** om de functie te maken.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-create-blob-storage-trigger-portal-3.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-create-blob-storage-trigger-portal-3.png" alt-text="Maak de door Blob Storage geactiveerde functie." border="true":::
 
 Maak vervolgens de container **samples-werk items** .
 
@@ -60,19 +60,19 @@ Maak vervolgens de container **samples-werk items** .
 
 1. Selecteer in uw functie op de pagina **overzicht** de resource groep.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-resource-group.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-resource-group.png" alt-text="Selecteer uw Azure Portal resource groep." border="true":::
 
 1. Zoek en selecteer het opslag account van uw resource groep.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-account-access.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-account-access.png" alt-text="Toegang tot het opslag account." border="true":::
 
-1. Kies **containers**en kies vervolgens **+ container**. 
+1. Kies **containers** en kies vervolgens **+ container**. 
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-add-container.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-add-container.png" alt-text="Voeg een container toe aan uw opslag account in de Azure Portal." border="true":::
 
 1. Typ in het veld **naam** `samples-workitems` en selecteer vervolgens **maken**.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-name-blob-container.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-name-blob-container.png" alt-text="Geef de opslag container een naam." border="true":::
 
 U hebt nu een blob-container en u kunt de functie testen door een bestand naar de container te uploaden.
 
@@ -80,23 +80,23 @@ U hebt nu een blob-container en u kunt de functie testen door een bestand naar d
 
 1. Blader in Azure Portal naar de functie, vouw de **Logboeken** onderaan de pagina uit en zorg ervoor dat logboekstreaming niet wordt onderbroken.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-log-expander.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-log-expander.png" alt-text="Vouw het logboek in de Azure Portal uit." border="true":::
 
 1. Ga in een afzonderlijk browser venster naar uw resource groep in de Azure Portal en selecteer het opslag account.
 
-1. Selecteer **containers**en selecteer vervolgens de container **samples-werk items** .
+1. Selecteer **containers** en selecteer vervolgens de container **samples-werk items** .
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-container.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-container.png" alt-text="Ga naar uw voor beelden-werk items-container in de Azure Portal." border="true":::
 
-1. Selecteer **uploaden**en selecteer vervolgens het mappictogram om een bestand te kiezen dat u wilt uploaden.
+1. Selecteer **uploaden** en selecteer vervolgens het mappictogram om een bestand te kiezen dat u wilt uploaden.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-manager-upload-file-blob.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/functions-storage-manager-upload-file-blob.png" alt-text="Upload een bestand naar de blob-container." border="true":::
 
 1. Blader naar een bestand op uw lokale computer, zoals een afbeeldings bestand, kiest u het bestand. Selecteer **openen** en vervolgens **uploaden**.
 
 1. Ga terug naar de functielogboeken en controleer of de blob is gelezen.
 
-    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/function-app-in-portal-editor.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-storage-blob-triggered-function/function-app-in-portal-editor.png" alt-text="Bekijk het bericht in de logboeken." border="true":::
 
     >[!NOTE]
     > Wanneer uw functie-app in het standaardverbruiksabonnement wordt uitgevoerd, kan er een vertraging van maximaal een aantal minuten zitten tussen de blob die wordt toegevoegd of bijgewerkt en de functie die wordt geactiveerd. Overweeg om uw functie-app in een App Service-plan uit te voeren, als u lage latentie in uw door blob geactiveerde functies nodig hebt.

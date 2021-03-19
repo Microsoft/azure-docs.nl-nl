@@ -8,10 +8,10 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 08/17/2017
 ms.openlocfilehash: 65a88f309602462e77336181316c0d5bf19a8a1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90980681"
 ---
 # <a name="threat-modeling-tool-feature-overview"></a>Overzicht van Threat Modeling Tool-functies
@@ -120,7 +120,7 @@ Beweeg de muis aanwijzer over **Open een model** om twee opties weer te geven: *
 
 ### <a name="feedback-suggestions-and-issues"></a>Feedback, suggesties en problemen
 
-Wanneer u **feedback, suggesties en problemen**selecteert, gaat u naar het MSDN-forum voor sdl-hulpprogram ma's. U kunt lezen wat andere mensen zeggen over het hulp programma, met inbegrip van tijdelijke oplossingen en nieuwe ideeën.
+Wanneer u **feedback, suggesties en problemen** selecteert, gaat u naar het MSDN-forum voor sdl-hulpprogram ma's. U kunt lezen wat andere mensen zeggen over het hulp programma, met inbegrip van tijdelijke oplossingen en nieuwe ideeën.
 
 ![In de scherm afbeelding ziet u een knop met de tekst feedback, suggesties en problemen.](./media/threat-modeling-tool-feature-overview/feedback.png)
 
@@ -133,7 +133,7 @@ Wanneer u een nieuw model opent of maakt, wordt de **ontwerp** weergave geopend.
 U kunt op twee manieren elementen toevoegen aan het raster:
 
 - **Slepen en neerzetten**: Sleep het gewenste element naar het raster. Gebruik vervolgens de element eigenschappen om aanvullende informatie te geven.
-- **Klik**met de rechter muisknop op: Klik met de rechter muisknop ergens in het raster en selecteer items in de vervolg keuzelijst. Een algemene weer gave van het element dat u selecteert, wordt weer gegeven op het scherm.
+- **Klik** met de rechter muisknop op: Klik met de rechter muisknop ergens in het raster en selecteer items in de vervolg keuzelijst. Een algemene weer gave van het element dat u selecteert, wordt weer gegeven op het scherm.
 
 ### <a name="connect-elements"></a>Elementen verbinden
 

@@ -8,10 +8,10 @@ ms.date: 03/03/2018
 ms.author: stefsch
 ms.custom: mvc, seodec18
 ms.openlocfilehash: 354568fa3ab3816b643a8f08305ab55868a9b0b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90973702"
 ---
 # <a name="configuring-a-web-application-firewall-waf-for-app-service-environment"></a>Een Web Application Firewall (WAF) voor App Service Environment configureren
@@ -80,7 +80,7 @@ Als uw toepassing beschikbaar in meerdere regio's, kunt u het best zorgen voor g
 
 ![Traffic Manager-eindpunt][TrafficManagerEndpoint]
 
-Als voor uw toepassing verificatie is vereist, zorg er dan voor dat u een resource hebt die geen verificatie voor Traffic Manager vereist om te pingen voor de beschikbaarheid van uw toepassing. U kunt de URL configureren op de **Configuratie**pagina in de [Azure Portal](https://portal.azure.com), zoals wordt weergegeven in de volgende afbeelding:
+Als voor uw toepassing verificatie is vereist, zorg er dan voor dat u een resource hebt die geen verificatie voor Traffic Manager vereist om te pingen voor de beschikbaarheid van uw toepassing. U kunt de URL configureren op de **Configuratie** pagina in de [Azure Portal](https://portal.azure.com), zoals wordt weergegeven in de volgende afbeelding:
 
 ![Traffic Manager configureren][ConfigureTrafficManager]
 

@@ -7,10 +7,10 @@ ms.reviewer: apseth, divswa, logicappspm
 ms.topic: conceptual
 ms.date: 05/29/2020
 ms.openlocfilehash: 8c00d2e4f622bcfad7b2468013336f0d936e318c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87048665"
 ---
 # <a name="send-related-messages-in-order-by-using-a-sequential-convoy-in-azure-logic-apps-with-azure-service-bus"></a>Verzend gerelateerde berichten in de juiste volg orde door gebruik te maken van een opeenvolgende verwerkings in Azure Logic Apps met Azure Service Bus
@@ -49,26 +49,26 @@ Als u niet zeker weet of uw logische app machtigingen heeft voor toegang tot uw 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com). Zoek en selecteer uw Service Bus *naam ruimte*.
 
-1. Selecteer in het menu naam ruimte onder **instellingen**de optie **beleid voor gedeelde toegang**. Onder **claims**controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
+1. Selecteer in het menu naam ruimte onder **instellingen** de optie **beleid voor gedeelde toegang**. Onder **claims** controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
 
    ![Machtigingen voor Service Bus naam ruimte beheren](./media/send-related-messages-sequential-convoy/check-service-bus-permissions.png)
 
 1. Down load nu de connection string voor uw Service Bus naam ruimte. U kunt deze teken reeks later gebruiken wanneer u een verbinding met de naam ruimte maakt vanuit uw logische app.
 
-   1. Selecteer in het deel venster **Shared Access policies** onder **Policy**de optie **RootManageSharedAccessKey**.
+   1. Selecteer in het deel venster **Shared Access policies** onder **Policy** de optie **RootManageSharedAccessKey**.
    
    1. Selecteer de knop kopiëren naast uw primaire connection string. Sla de connection string op voor later gebruik.
 
       ![Service Bus naam ruimte connection string kopiëren](./media/send-related-messages-sequential-convoy/copy-service-bus-connection-string.png)
 
    > [!TIP]
-   > Als u wilt controleren of uw connection string is gekoppeld aan uw Service Bus naam ruimte of een bericht entiteit, zoals een wachtrij, zoekt u de connection string voor de `EntityPath`   para meter. Als u deze para meter vindt, is de connection string voor een specifieke entiteit en is de juiste teken reeks niet geschikt voor gebruik met uw logische app.
+   > Als u wilt controleren of uw connection string is gekoppeld aan uw Service Bus naam ruimte of een bericht entiteit, zoals een wachtrij, zoekt u de connection string voor de `EntityPath` para meter. Als u deze para meter vindt, is de connection string voor een specifieke entiteit en is de juiste teken reeks niet geschikt voor gebruik met uw logische app.
 
 ## <a name="create-logic-app"></a>Logische app maken
 
 In deze sectie maakt u een logische app met behulp van de sjabloon voor de **gecorreleerde volg orde met Service Bus-sessies** . Dit omvat de trigger en acties voor het implementeren van dit werk stroom patroon. U maakt ook een verbinding met uw Service Bus naam ruimte en geeft de naam op voor de Service Bus wachtrij die u wilt gebruiken.
 
-1. Maak in de [Azure Portal](https://portal.azure.com)een lege logische app. Selecteer op de start pagina van Azure **een resource**  >  **Integration**  >  **Logic-app**maken.
+1. Maak in de [Azure Portal](https://portal.azure.com)een lege logische app. Selecteer op de start pagina van Azure **een resource**  >  **Integration**  >  **Logic-app** maken.
 
 1. Nadat de sjabloon galerie wordt weer gegeven, schuift u voorbij de secties video en algemene triggers. Selecteer in de sectie **sjablonen** de sjabloon, **met behulp van service bus-sessies, gecorreleerde in-volg orde**.
 
@@ -76,7 +76,7 @@ In deze sectie maakt u een logische app met behulp van de sjabloon voor de **gec
 
 1. Wanneer het bevestigings venster wordt weer gegeven, selecteert **u deze sjabloon gebruiken**.
 
-1. Selecteer in de ontwerp functie voor logische apps **Service Bus** in de vorm service bus **door gaan**en selecteer vervolgens het plus teken ( **+** ) dat wordt weer gegeven in de vorm.
+1. Selecteer in de ontwerp functie voor logische apps  in de vorm service bus **door gaan** en selecteer vervolgens het plus teken ( **+** ) dat wordt weer gegeven in de vorm.
 
    ![Selecteer door gaan om verbinding te maken met Azure Service Bus](./media/send-related-messages-sequential-convoy/connect-to-service-bus.png)
 
@@ -86,7 +86,7 @@ In deze sectie maakt u een logische app met behulp van de sjabloon voor de **gec
 
      1. Selecteer **hand matig verbindings gegevens invoeren**.
 
-     1. Voor de **verbindings naam**geeft u een naam op voor de verbinding. Plak uw naam ruimte in de **verbindings reeks**Connection String en selecteer **maken**, bijvoorbeeld:
+     1. Voor de **verbindings naam** geeft u een naam op voor de verbinding. Plak uw naam ruimte in de **verbindings reeks** Connection String en selecteer **maken**, bijvoorbeeld:
 
         ![Voer de verbindings naam en het Service Bus in connection string](./media/send-related-messages-sequential-convoy/provide-service-bus-connection-string.png)
 
@@ -95,7 +95,7 @@ In deze sectie maakt u een logische app met behulp van de sjabloon voor de **gec
 
    * Voer de volgende stappen uit om een Service Bus naam ruimte te selecteren in het huidige Azure-abonnement:
 
-     1. Voor de **verbindings naam**geeft u een naam op voor de verbinding. Voor **Service Bus naam ruimte**selecteert u uw service bus naam ruimte, bijvoorbeeld:
+     1. Voor de **verbindings naam** geeft u een naam op voor de verbinding. Voor **Service Bus naam ruimte** selecteert u uw service bus naam ruimte, bijvoorbeeld:
 
         ![Voer de verbindings naam in en selecteer Service Bus naam ruimte](./media/send-related-messages-sequential-convoy/create-service-bus-connection.png)
 
@@ -120,7 +120,7 @@ Dit is de werk stroom op het hoogste niveau in de **gecorreleerde in-volg orde w
 | Naam | Beschrijving |
 |------|-------------|
 | **`When a message is received in a queue (peek-lock)`** | Op basis van het opgegeven terugkeer patroon controleert deze Service Bus trigger de opgegeven Service Bus wachtrij op berichten. Als er een bericht in de wachtrij staat, wordt de trigger geactiveerd, waarmee een werk stroom exemplaar wordt gemaakt en uitgevoerd. <p><p>De term *Peek-Lock* betekent dat de trigger een aanvraag verzendt om een bericht uit de wachtrij op te halen. Als er een bericht bestaat, wordt het bericht door de trigger opgehaald en vergrendeld zodat er geen andere verwerking op dat bericht plaatsvindt totdat de vergrendelings periode is verstreken. [Initialiseer de sessie](#initialize-session)voor meer informatie. |
-| **`Init isDone`** | Deze [actie voor **het initialiseren van variabelen** ](../logic-apps/logic-apps-create-variables-store-values.md#initialize-variable) maakt een Booleaanse variabele die is ingesteld op `false` en geeft aan wanneer aan de volgende voor waarden wordt voldaan: <p><p>-Er zijn niet meer berichten in de sessie beschikbaar om te lezen. <br>-De sessie vergrendeling hoeft niet meer te worden vernieuwd zodat het huidige workflowexemplaar kan worden voltooid. <p><p>Zie [de sessie initialiseren](#initialize-session)voor meer informatie. |
+| **`Init isDone`** | Deze [actie voor **het initialiseren van variabelen**](../logic-apps/logic-apps-create-variables-store-values.md#initialize-variable) maakt een Booleaanse variabele die is ingesteld op `false` en geeft aan wanneer aan de volgende voor waarden wordt voldaan: <p><p>-Er zijn niet meer berichten in de sessie beschikbaar om te lezen. <br>-De sessie vergrendeling hoeft niet meer te worden vernieuwd zodat het huidige workflowexemplaar kan worden voltooid. <p><p>Zie [de sessie initialiseren](#initialize-session)voor meer informatie. |
 | **`Try`** | Deze [ **bereik** actie](../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md) bevat de acties die worden uitgevoerd om een bericht te verwerken. Als er een probleem in het `Try` bereik optreedt, wordt dat probleem door de volgende `Catch` **bereik** actie afgehandeld. Zie voor meer informatie het [bereik ' Try '](#try-scope). |
 | **`Catch`**| Deze [ **bereik** actie](../logic-apps/logic-apps-control-flow-run-steps-group-scopes.md) bevat de acties die worden uitgevoerd als er een probleem optreedt in het voor gaande `Try` bereik. Zie [' catch ' scope](#catch-scope)voor meer informatie. |
 |||
@@ -147,8 +147,8 @@ Dit is de stroom op het hoogste niveau in de `Try` [bereik actie](../logic-apps/
 | Naam | Beschrijving |
 |------|-------------|
 | `Complete initial message in queue` | Met deze Service Bus actie wordt het ophalen van een bericht als voltooid gemarkeerd en wordt het bericht uit de wachtrij verwijderd om te voor komen dat de bewerking opnieuw wordt uitgevoerd. Zie [het eerste bericht afhandelen](#handle-initial-message)voor meer informatie. |
-| `While there are more messages for the session in the queue` | De [lus wordt **pas** ](../logic-apps/logic-apps-control-flow-loops.md#until-loop) uitgevoerd als er berichten worden ontvangen terwijl er berichten bestaan of totdat het één uur duurt. Zie voor meer informatie over de acties in deze lus, [terwijl er meer berichten zijn voor de sessie in de wachtrij](#while-more-messages-for-session). |
-| **`Set isDone = true`** | Als er geen berichten meer bestaan, wordt met deze [actie **set variable** ](../logic-apps/logic-apps-create-variables-store-values.md#set-variable) ingesteld `isDone` op `true` . |
+| `While there are more messages for the session in the queue` | De [lus wordt **pas**](../logic-apps/logic-apps-control-flow-loops.md#until-loop) uitgevoerd als er berichten worden ontvangen terwijl er berichten bestaan of totdat het één uur duurt. Zie voor meer informatie over de acties in deze lus, [terwijl er meer berichten zijn voor de sessie in de wachtrij](#while-more-messages-for-session). |
+| **`Set isDone = true`** | Als er geen berichten meer bestaan, wordt met deze [actie **set variable**](../logic-apps/logic-apps-create-variables-store-values.md#set-variable) ingesteld `isDone` op `true` . |
 | **`Renew session lock until cancelled`** | Dit [ **tot** een lus](../logic-apps/logic-apps-control-flow-loops.md#until-loop) zorgt ervoor dat de sessie vergrendeling wordt gehouden door deze logische app wanneer er berichten bestaan of totdat een uur wordt door gegeven. Voor meer informatie over de acties in deze lus raadpleegt u [sessie vergrendeling vernieuwen tot](#renew-session-while-messages-exist)u bent geannuleerd. |
 |||
 
@@ -171,9 +171,9 @@ Dit is de stroom op het hoogste niveau in de `Catch` bereik actie wanneer de det
 | Naam | Beschrijving |
 |------|-------------|
 | **`Close a session in a queue and fail`** | Met deze Service Bus actie wordt de sessie in de wachtrij gesloten, zodat de sessie vergrendeling niet actief blijft. Zie [een sessie in een wachtrij sluiten](#close-session-fail)voor meer informatie. |
-| **`Find failure msg from 'Try' block`** | Met deze actie voor de [ **filter matrix** ](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action) wordt een matrix gemaakt op basis van de invoer en uitvoer van alle acties binnen het `Try` bereik op basis van de opgegeven criteria. In dit geval retourneert deze actie de uitvoer van de acties die de status hebben veroorzaakt `Failed` . Zie [fout bericht in try-blok zoeken](#find-failure-message)voor meer informatie. |
-| **`Select error details`** | Met deze [actie **Select** ](../logic-apps/logic-apps-perform-data-operations.md#select-action) wordt een matrix gemaakt die JSON-objecten bevat op basis van de opgegeven criteria. Deze JSON-objecten worden samengesteld op basis van de waarden in de matrix die is gemaakt door de vorige actie, `Find failure msg from 'Try' block` . In dit geval retourneert deze actie een matrix die een JSON-object bevat dat is gemaakt op basis van de fout details die zijn geretourneerd door de vorige actie. Zie [Fout Details selecteren](#select-error-details)voor meer informatie. |
-| **`Terminate`** | Deze [actie **beëindigen** ](../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action) stopt de uitvoering van de werk stroom, annuleert acties die worden uitgevoerd, slaat alle resterende acties over en retourneert de opgegeven status, de sessie-id en het fout resultaat van de `Select error details` actie. Zie [Logic app beëindigen](#terminate-logic-app)voor meer informatie. |
+| **`Find failure msg from 'Try' block`** | Met deze actie voor de [ **filter matrix**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action) wordt een matrix gemaakt op basis van de invoer en uitvoer van alle acties binnen het `Try` bereik op basis van de opgegeven criteria. In dit geval retourneert deze actie de uitvoer van de acties die de status hebben veroorzaakt `Failed` . Zie [fout bericht in try-blok zoeken](#find-failure-message)voor meer informatie. |
+| **`Select error details`** | Met deze [actie **Select**](../logic-apps/logic-apps-perform-data-operations.md#select-action) wordt een matrix gemaakt die JSON-objecten bevat op basis van de opgegeven criteria. Deze JSON-objecten worden samengesteld op basis van de waarden in de matrix die is gemaakt door de vorige actie, `Find failure msg from 'Try' block` . In dit geval retourneert deze actie een matrix die een JSON-object bevat dat is gemaakt op basis van de fout details die zijn geretourneerd door de vorige actie. Zie [Fout Details selecteren](#select-error-details)voor meer informatie. |
+| **`Terminate`** | Deze [actie **beëindigen**](../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action) stopt de uitvoering van de werk stroom, annuleert acties die worden uitgevoerd, slaat alle resterende acties over en retourneert de opgegeven status, de sessie-id en het fout resultaat van de `Select error details` actie. Zie [Logic app beëindigen](#terminate-logic-app)voor meer informatie. |
 |||
 
 <a name="complete-template"></a>
@@ -199,7 +199,7 @@ Ga als volgt te werk om de waarden op te geven voor de trigger en acties in de *
   | **Wachtrij type** | Ja | **Hoofd** | Uw primaire Service Bus wachtrij |
   | **Sessie-id** | Ja | **Volgende beschikbaar** | Met deze optie wordt een sessie opgehaald voor elke trigger die wordt uitgevoerd op basis van de sessie-ID van het bericht in de Service Bus wachtrij. De sessie wordt ook vergrendeld, zodat er geen andere logische app of andere client berichten kan verwerken die aan deze sessie zijn gerelateerd. Met de volgende acties van de werk stroom worden alle berichten verwerkt die aan die sessie zijn gekoppeld, zoals verderop in dit artikel wordt beschreven. <p><p>Hier vindt u meer informatie over de andere **sessie-id-** opties: <p>- **Geen**: de standaard optie, waardoor er geen sessies zijn en kunnen niet worden gebruikt voor het implementeren van het sequentiële verwerkings-patroon. <p>- **Aangepaste waarde invoeren**: gebruik deze optie wanneer u de sessie-id kent die u wilt gebruiken, en u de trigger altijd wilt uitvoeren voor die sessie-id. <p>**Opmerking**: de service bus-connector kan een beperkt aantal unieke sessies per keer opslaan van Azure service bus naar de connector cache. Als het aantal sessies groter is dan deze limiet, worden oude sessies verwijderd uit de cache. Zie [Exchange-berichten in de Cloud met Azure Logic apps en Azure service bus](../connectors/connectors-create-api-servicebus.md#connector-reference)voor meer informatie. |
   | **Interval** | Ja | <*aantal intervallen*> | Het aantal tijds eenheden tussen herhalingen voordat op een bericht wordt gecontroleerd. |
-  | **Frequentie** | Ja | **Seconde**, **minuut**, **uur**, **dag**, **week**of **maand** | De tijds eenheid voor het terugkeer patroon dat moet worden gebruikt bij het controleren op een bericht. <p>**Tip**: als u een **tijd zone** of **begin tijd**wilt toevoegen, selecteert u deze eigenschappen in de lijst **nieuwe para meters toevoegen** . |
+  | **Frequentie** | Ja | **Seconde**, **minuut**, **uur**, **dag**, **week** of **maand** | De tijds eenheid voor het terugkeer patroon dat moet worden gebruikt bij het controleren op een bericht. <p>**Tip**: als u een **tijd zone** of **begin tijd** wilt toevoegen, selecteert u deze eigenschappen in de lijst **nieuwe para meters toevoegen** . |
   |||||
 
   Zie [service bus-wanneer een bericht wordt ontvangen in een wachtrij (Peek-Lock)](/connectors/servicebus/#when-a-message-is-received-in-a-queue-(peek-lock))voor meer informatie over triggers. De trigger voert een [ServiceBusMessage](/connectors/servicebus/#servicebusmessage)uit.
@@ -238,7 +238,7 @@ Vervolgens geeft u de vereiste gegevens op voor de acties die volgen op het **ee
 
 ### <a name="while-there-are-more-messages-for-the-session-in-the-queue"></a>Terwijl er meer berichten zijn voor de sessie in de wachtrij
 
-Deze actie wordt [ **pas** ](../logic-apps/logic-apps-control-flow-loops.md#until-loop) uitgevoerd wanneer er berichten in de wachtrij staan of totdat een uur wordt door gegeven. Als u de tijds limiet van de lus wilt wijzigen, bewerkt u de waarde van de **time-** outeigenschap van de lus.
+Deze actie wordt [ **pas**](../logic-apps/logic-apps-control-flow-loops.md#until-loop) uitgevoerd wanneer er berichten in de wachtrij staan of totdat een uur wordt door gegeven. Als u de tijds limiet van de lus wilt wijzigen, bewerkt u de waarde van de **time-** outeigenschap van de lus.
 
 * Extra berichten uit de wachtrij ophalen wanneer er berichten bestaan.
 
@@ -246,7 +246,7 @@ Deze actie wordt [ **pas** ](../logic-apps/logic-apps-control-flow-loops.md#unti
 
 ![Until-berichten verwerken in een wachtrij](./media/send-related-messages-sequential-convoy/while-more-messages-for-session-in-queue.png)
 
-1. Ga in de Service Bus actie naar **extra berichten van de sessie**en geef de naam op voor uw service bus wachtrij. Als dat niet het geval is, moet u alle andere standaard eigenschaps waarden in de actie houden.
+1. Ga in de Service Bus actie naar **extra berichten van de sessie** en geef de naam op voor uw service bus wachtrij. Als dat niet het geval is, moet u alle andere standaard eigenschaps waarden in de actie houden.
 
    > [!NOTE]
    > Het maximum aantal berichten is standaard ingesteld op `175` , maar deze limiet wordt beïnvloed door de eigenschap bericht grootte en maximale bericht grootte in service bus. Zie [bericht grootte voor een wachtrij](../service-bus-messaging/service-bus-quotas.md)voor meer informatie.
@@ -261,11 +261,11 @@ Deze actie wordt [ **pas** ](../logic-apps/logic-apps-control-flow-loops.md#unti
 
    ![Voorwaarde: berichten indien aanwezig verwerken](./media/send-related-messages-sequential-convoy/process-messages-if-any.png)
 
-   In de sectie **indien onwaar** wordt **elke lus elk** bericht in First-in, first-out order (FIFO) verwerkt. In de **instellingen**van de lus is de instelling **gelijktijdigheids beheer** ingesteld op `1` , zodat er slechts één bericht tegelijk wordt verwerkt.
+   In de sectie **indien onwaar** wordt **elke lus elk** bericht in First-in, first-out order (FIFO) verwerkt. In de **instellingen** van de lus is de instelling **gelijktijdigheids beheer** ingesteld op `1` , zodat er slechts één bericht tegelijk wordt verwerkt.
 
    ![' Voor elke ' lus: elk bericht een voor een per keer verwerken](./media/send-related-messages-sequential-convoy/for-each-additional-message.png)
 
-1. Voor de Service Bus acties **voltooit u het bericht in een wachtrij** en **verlaat u het bericht in een wachtrij**en geeft u de naam op voor uw service bus wachtrij.
+1. Voor de Service Bus acties **voltooit u het bericht in een wachtrij** en **verlaat u het bericht in een wachtrij** en geeft u de naam op voor uw service bus wachtrij.
 
    ![Acties Service Bus: ' het bericht in een wachtrij volt ooien ' en ' het bericht in een wachtrij afbreken '](./media/send-related-messages-sequential-convoy/abandon-or-complete-message-in-queue.png)
 
@@ -297,11 +297,11 @@ Dit [ **tot** een lus](../logic-apps/logic-apps-control-flow-loops.md#until-loop
 
 Met deze Service Bus actie wordt de vergren deling van de sessie in de wachtrij vernieuwd terwijl de werk stroom nog bezig is met het verwerken van berichten.
 
-* Vernieuw in de Service Bus actie **vergrendeling van de sessie in een wachtrij**en geef de naam op voor uw service bus wachtrij.
+* Vernieuw in de Service Bus actie **vergrendeling van de sessie in een wachtrij** en geef de naam op voor uw service bus wachtrij.
 
   ![Service Bus actie: de vergren deling voor de sessie in de wachtrij vernieuwen](./media/send-related-messages-sequential-convoy/renew-lock-on-session-in-queue.png)
 
-Vervolgens geeft u de benodigde informatie op voor de Service Bus actie, **sluit u een sessie in een wachtrij en slaagt**u.
+Vervolgens geeft u de benodigde informatie op voor de Service Bus actie, **sluit u een sessie in een wachtrij en slaagt** u.
 
 <a name="close-session-succeed"></a>
 
@@ -309,7 +309,7 @@ Vervolgens geeft u de benodigde informatie op voor de Service Bus actie, **sluit
 
 Met deze Service Bus actie wordt de sessie in de wachtrij gesloten nadat de werk stroom klaar is met het verwerken van alle beschik bare berichten in de wachtrij of de werk stroom het eerste bericht verlaat.
 
-* In de actie Service Bus, **sluit u een sessie in een wachtrij en**geeft u de naam voor uw service bus wachtrij.
+* In de actie Service Bus, **sluit u een sessie in een wachtrij en** geeft u de naam voor uw service bus wachtrij.
 
   ![Service Bus actie: een sessie in een wachtrij sluiten en slaagt](./media/send-related-messages-sequential-convoy/close-session-in-queue-succeed.png)
 
@@ -321,7 +321,7 @@ In de volgende secties worden de acties in de `Catch` sectie beschreven, die fou
 
 Deze Service Bus actie wordt altijd uitgevoerd als de eerste actie in het `Catch` bereik en sluit de sessie in de wachtrij.
 
-* In de actie Service Bus, **sluit u een sessie in een wachtrij en voert u een fout uit en**geeft u de naam op voor uw service bus wachtrij.
+* In de actie Service Bus, **sluit u een sessie in een wachtrij en voert u een fout uit en** geeft u de naam op voor uw service bus wachtrij.
 
   ![Service Bus actie: ' een sessie in een wachtrij sluiten en de fout niet uitvoeren '](./media/send-related-messages-sequential-convoy/close-session-in-queue-fail.png)
 
@@ -331,7 +331,7 @@ Vervolgens maakt de werk stroom een matrix met de invoer en uitvoer van alle act
 
 ### <a name="find-failure-msg-from-try-block"></a>Fout bericht van try-blok zoeken
 
-Met deze actie voor de [ **filter matrix** ](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action) wordt een matrix gemaakt met de invoer en uitvoer van alle acties binnen het `Try` bereik op basis van de opgegeven criteria met behulp van de [ `result()` functie](../logic-apps/workflow-definition-language-functions-reference.md#result). In dit geval retourneert deze actie de uitvoer van de acties die `Failed` de status hebben met behulp van de [ `equals()` functie](../logic-apps/workflow-definition-language-functions-reference.md#equals) en [ `item()` functie](../logic-apps/workflow-definition-language-functions-reference.md#item).
+Met deze actie voor de [ **filter matrix**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action) wordt een matrix gemaakt met de invoer en uitvoer van alle acties binnen het `Try` bereik op basis van de opgegeven criteria met behulp van de [ `result()` functie](../logic-apps/workflow-definition-language-functions-reference.md#result). In dit geval retourneert deze actie de uitvoer van de acties die `Failed` de status hebben met behulp van de [ `equals()` functie](../logic-apps/workflow-definition-language-functions-reference.md#equals) en [ `item()` functie](../logic-apps/workflow-definition-language-functions-reference.md#item).
 
 ![Actie filter matrix-' fout bericht zoeken van ' try-blok '](./media/send-related-messages-sequential-convoy/find-failure-message.png)
 
@@ -358,7 +358,7 @@ Vervolgens maakt de werk stroom een matrix met een JSON-object dat de fout infor
 
 ### <a name="select-error-details"></a>Fout Details selecteren
 
-Met deze [actie **Select** ](../logic-apps/logic-apps-perform-data-operations.md#select-action) wordt een matrix gemaakt die JSON-objecten bevat op basis van de invoer matrix die de uitvoer van de vorige actie heeft, `Find failure msg from 'Try' block` . Deze actie retourneert met name een matrix met alleen de opgegeven eigenschappen voor elk object in de matrix. In dit geval bevat de matrix de naam van de actie en de eigenschappen van het fout resultaat.
+Met deze [actie **Select**](../logic-apps/logic-apps-perform-data-operations.md#select-action) wordt een matrix gemaakt die JSON-objecten bevat op basis van de invoer matrix die de uitvoer van de vorige actie heeft, `Find failure msg from 'Try' block` . Deze actie retourneert met name een matrix met alleen de opgegeven eigenschappen voor elk object in de matrix. In dit geval bevat de matrix de naam van de actie en de eigenschappen van het fout resultaat.
 
 ![Actie selecteren-"Selecteer fout Details"](./media/send-related-messages-sequential-convoy/select-error-details.png)
 
@@ -388,7 +388,7 @@ Vervolgens stopt de werk stroom de uitvoering van de logische app en wordt de ui
 
 ### <a name="terminate-logic-app-run"></a>Uitvoering van logische app beëindigen
 
-Met deze [actie **beëindigen** ](../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action) wordt de uitvoering van de logische app gestopt en wordt geretourneerd `Failed` als de status van de uitvoering van de logische app, samen met de sessie-id en het fout resultaat van de `Select error details` actie.
+Met deze [actie **beëindigen**](../logic-apps/logic-apps-workflow-actions-triggers.md#terminate-action) wordt de uitvoering van de logische app gestopt en wordt geretourneerd `Failed` als de status van de uitvoering van de logische app, samen met de sessie-id en het fout resultaat van de `Select error details` actie.
 
 ![Actie beëindigen om uitvoering van logische app te stoppen](./media/send-related-messages-sequential-convoy/terminate-logic-app-run.png)
 

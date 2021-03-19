@@ -4,10 +4,10 @@ description: Meer informatie over het inschakelen van een Bewaar beleid in uw Az
 ms.topic: article
 ms.date: 10/02/2019
 ms.openlocfilehash: 5dda85934bb10cf16fd90381539b892df4f5445c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83683453"
 ---
 # <a name="set-a-retention-policy-for-untagged-manifests"></a>Een Bewaar beleid voor niet-gecodeerde manifesten instellen
@@ -86,7 +86,7 @@ U kunt ook het Bewaar beleid van een REGI ster instellen in de [Azure Portal](ht
 
 ### <a name="enable-a-retention-policy"></a>Een Bewaar beleid inschakelen
 
-1. Navigeer naar uw Azure container Registry. Onder **beleids regels**selecteert u **bewaren** (preview-versie).
+1. Navigeer naar uw Azure container Registry. Onder **beleids regels** selecteert u **bewaren** (preview-versie).
 1. Selecteer in **status** **ingeschakeld**.
 1. Selecteer een aantal dagen tussen 0 en 365 om de niet-gecodeerde manifesten te bewaren. Selecteer **Opslaan**.
 
@@ -94,8 +94,8 @@ U kunt ook het Bewaar beleid van een REGI ster instellen in de [Azure Portal](ht
 
 ### <a name="disable-a-retention-policy"></a>Een Bewaar beleid uitschakelen
 
-1. Navigeer naar uw Azure container Registry. Onder **beleids regels**selecteert u **bewaren** (preview-versie).
-1. Selecteer in **status**de optie **uitgeschakeld**. Selecteer **Opslaan**.
+1. Navigeer naar uw Azure container Registry. Onder **beleids regels** selecteert u **bewaren** (preview-versie).
+1. Selecteer in **status** de optie **uitgeschakeld**. Selecteer **Opslaan**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: 6fe5a45dda6632c56b3c6714827950e25e7d26af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "73953186"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Cloud Explorer gebruiken voor Visual Studio voor Azure IoT Hub Apparaatbeheer
@@ -59,7 +59,7 @@ Het onderdeel Cloud Explorer van Visual Studio Installer voor Visual Studio 2017
 
 ## <a name="sign-in-to-access-your-hub"></a>Meld u aan om toegang te krijgen tot uw hub
 
-1. Selecteer in Visual Studio **View**  >  **Cloud Explorer** weer geven om Cloud Explorer te openen.
+1. Selecteer in Visual Studio   >  **Cloud Explorer** weer geven om Cloud Explorer te openen.
 
 1. Selecteer het pictogram account beheer om uw abonnementen weer te geven.
 
@@ -69,7 +69,7 @@ Het onderdeel Cloud Explorer van Visual Studio Installer voor Visual Studio 2017
 
 1. Selecteer de Azure-abonnementen die u wilt gebruiken en klik **op Toep assen**.
 
-1. Breid uw abonnement uit en vouw **IOT-hubs**uit.  Onder elke hub kunt u uw apparaten weer geven voor die hub. Klik met de rechter muisknop op een apparaat voor toegang tot de beheer opties.
+1. Breid uw abonnement uit en vouw **IOT-hubs** uit.  Onder elke hub kunt u uw apparaten weer geven voor die hub. Klik met de rechter muisknop op een apparaat voor toegang tot de beheer opties.
 
     ![Beheer opties](media/iot-hub-device-management-visual-studio/management-options-vs2019.png)
 
@@ -79,7 +79,7 @@ Als u directe methoden wilt gebruiken, voert u de volgende stappen uit:
 
 1. Klik met de rechter muisknop op het apparaat en selecteer **directe methode van apparaat aanroepen**.
 
-1. Voer de methode naam en payload in bij **directe methode Invoke**en selecteer vervolgens **OK**.
+1. Voer de methode naam en payload in bij **directe methode Invoke** en selecteer vervolgens **OK**.
 
     Resultaten worden weer gegeven in de **uitvoer**.
 

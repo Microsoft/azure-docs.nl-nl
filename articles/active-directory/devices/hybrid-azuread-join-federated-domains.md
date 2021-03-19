@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2a455e1ee6f8f714cf50ebdf6a59dab568489ca
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 221b7bdbb8ab5d0121e9c8032be8f18d8ae60d1e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101646296"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578053"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Zelfstudie: Hybride Azure Active Directory-deelname configureren voor federatieve domeinen
 
@@ -85,6 +85,9 @@ Voor hybride Azure AD-koppeling moeten apparaten toegang tot de volgende Microso
 > Als uw organisatie proxyservers gebruikt die SSL-verkeer onderscheppen voor scenario's zoals preventie van gegevensverlies of beperkingen voor Azure AD-tenants, moet u ervoor zorgen dat verkeer naar 'https://device.login.microsoftonline.com ' wordt uitgesloten van TLS break-and-inspect. Als u 'https://device.login.microsoftonline.com ' niet uitsluit, kan dit problemen geven met de verificatie van clientcertificaten, die op hun beurt weer problemen veroorzaken met apparaatregistratie en voorwaardelijke toegang op basis van apparaten.
 
 Vanaf Windows 10 1803 is het zo dat als de directe hybride Azure AD-koppeling mislukt voor federatieve omgeving met gebruik van AD FS, we vertrouwen op Azure AD Connect om het computerobject in Azure AD te synchroniseren dat vervolgens wordt gebruikt om de apparaatregistratie voor hybride Azure AD-koppeling te voltooien. Verifieer dat Azure AD Connect de computerobjecten heeft gesynchroniseerd van de apparaten die u hybride Azure AD-gekoppeld wilt maken. Als de computerobjecten bij specifieke organisatie-eenheden horen, moet u ook deze OE's worden configureren voor synchronisatie in Azure AD Connect. Zie [Filteren configureren door Azure AD Connect te gebruiken](../hybrid/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) (Op organisatie-eenheden gebaseerde filters) voor meer informatie over het synchroniseren van computerobjecten met behulp van Azure AD Connect.
+
+> [!NOTE]
+> Als u de synchronisatie koppeling voor apparaatregistratie wilt ophalen, moet u als onderdeel van de configuratie van de apparaatregistratie de standaard kenmerken van het apparaat niet uitsluiten van de configuratie van de Azure AD Connect synchronisatie. Zie [kenmerken gesynchroniseerd door Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized#windows-10)voor meer informatie over standaard kenmerken van apparaten die zijn GESYNCHRONISEERD met Aad.
 
 Als uw organisatie toegang tot internet via een uitgaande proxy vereist, raadt Microsoft u aan [WPAD (Web Proxy Auto-Discovery) te implementeren](/previous-versions/tn-archive/cc995261(v%3dtechnet.10)) om Windows 10-computers in staat te stellen apparaten te registreren met Azure AD. Zie [Troubleshooting automatic detection](/previous-versions/tn-archive/cc302643(v=technet.10)) (Problemen met automatische detectie oplossen) als u problemen ondervindt met het configureren en beheren van WPAD. 
 

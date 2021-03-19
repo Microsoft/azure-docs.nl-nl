@@ -3,14 +3,14 @@ title: Virtuele knoop punten maken met behulp van de portal in azure Kubernetes 
 description: Meer informatie over het gebruik van de Azure Portal om een AKS-cluster (Azure Kubernetes Services) te maken dat virtuele knoop punten gebruikt voor het uitvoeren van een Peul.
 services: container-service
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 03/15/2021
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 06a3e7263b2e03cfc37f7ba3c733e07536b5d473
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: c1ecaa88dd5329d86818565983a6ba891a6d8424
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102501801"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577819"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-in-the-azure-portal"></a>Een AKS-cluster (Azure Kubernetes Services) maken en configureren voor het gebruik van virtuele knoop punten in de Azure Portal
 
@@ -54,15 +54,15 @@ Selecteer in de linkerbovenhoek van de Azure Portal **een resource**  >  **Kuber
 Configureer op de pagina **Basisprincipes** de volgende opties:
 
 - *Project Details*: Selecteer een Azure-abonnement en selecteer of maak een Azure-resource groep, zoals *myResourceGroup*. Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*.
-- *CLUSTERDETAILS*: selecteer een regio, Kubernetes-versie en DNS-naamvoorvoegsel voor het AKS-cluster.
+- *Cluster Details*: Selecteer een regio en Kubernetes-versie voor het AKS-cluster.
 - *Primaire knooppunt groep*: Selecteer een VM-grootte voor de AKS-knoop punten. De VM-grootte kan **niet** meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
      - Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Voor dit artikel stelt u het **aantal knoop punten** in op *1*. Het aantal knooppunten kan nog **wel** worden gewijzigd als het cluster is geïmplementeerd.
 
-Klik op **volgende: schalen**.
+Klik op **volgende: knooppunt groepen**.
 
-Selecteer op de pagina **schalen** de optie *ingeschakeld* onder **virtuele knoop punten**.
+Selecteer op de pagina **knooppunt groepen** de optie *virtuele knoop punten inschakelen*.
 
-![AKS-cluster maken en de virtuele knoop punten inschakelen](media/virtual-nodes-portal/enable-virtual-nodes.png)
+:::image type="content" source="media/virtual-nodes-portal/enable-virtual-nodes.png" alt-text="In een browser wordt een cluster gemaakt waarop virtuele knoop punten zijn ingeschakeld op de Azure Portal. De optie virtuele knoop punten inschakelen is gemarkeerd.":::
 
 Standaard wordt er een cluster identiteit gemaakt. Deze cluster-id wordt gebruikt voor cluster communicatie en integratie met andere Azure-Services. Deze cluster identiteit is standaard een beheerde identiteit. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie. U kunt ook een Service-Principal als uw cluster-id gebruiken.
 
@@ -158,7 +158,7 @@ Aan de Pod wordt een intern IP-adres toegewezen vanuit het subnet van het virtue
 Als u de pod die op het virtuele knoop punt wordt uitgevoerd wilt testen, bladert u naar de demo toepassing met een webclient. Als aan de pod een intern IP-adres is toegewezen, kunt u deze verbinding snel testen vanaf een andere pod op het AKS-cluster. Een test pod maken en een terminal sessie hieraan koppelen:
 
 ```console
-kubectl run -it --rm virtual-node-test --image=debian
+kubectl run -it --rm virtual-node-test --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11
 ```
 
 Installeer `curl` in de Pod met `apt-get` :

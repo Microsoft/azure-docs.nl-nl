@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.openlocfilehash: 92333857177d33307d6997bfcbdf79787d3ab127
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90895954"
 ---
 # <a name="determining-application-type"></a>Toepassings type bepalen
@@ -22,12 +22,12 @@ Er zijn brede twee soorten toepassingen die goed werken op grootschalige (Citus)
 
 ## <a name="at-a-glance"></a>In één oogopslag
 
-| Multi tenant-toepassingen                                 | Real-Time toepassingen                                |
+| Multi tenant-toepassingen                                 | Realtime toepassingen                                |
 |-----------------------------------------------------------|-------------------------------------------------------|
-| Soms tien tallen of honderden tabellen in schema          | Klein aantal tabellen                                |
-| Query's met betrekking tot één Tenant (bedrijf/archief) per keer | Relatief eenvoudige analyse query's met aggregaties |
-| OLTP-workloads voor het leveren van webclients                    | Hoog opname volume van meestal onveranderbare gegevens           |
-| OLAP-workloads die worden uitgevoerd op de analytische query's per Tenant   | Vaak gecentreerd rond grote gebeurtenissen in de tabel            |
+| Soms wel tientallen of honderden tabellen in schema          | Klein aantal tabellen                                |
+| Query's met betrekking tot één Tenant (bedrijf/archief) per keer | Relatief eenvoudige analysequery's met aggregaties |
+| OLTP-workloads voor het leveren van webclients                    | Hoog opnamevolume van vooral onveranderbare gegevens           |
+| OLAP-workloads die analytische query's per tenant uitvoeren   | Vaak gecentreerd rondom een grote tabel met gebeurtenissen            |
 
 ## <a name="examples-and-characteristics"></a>Voor beelden en kenmerken
 

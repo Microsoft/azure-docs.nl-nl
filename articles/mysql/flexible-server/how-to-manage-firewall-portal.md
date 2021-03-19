@@ -7,16 +7,16 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 9/21/2020
 ms.openlocfilehash: 132319575147c2ff1075881b1f1faec8bc5029f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90936632"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-mysql---flexible-server-using-the-azure-portal"></a>Maak en beheer firewall regels voor Azure Database for MySQL-flexibele server met behulp van de Azure Portal
 
 > [!IMPORTANT]
-> Azure Database for MySQL flexibele server bevindt zich momenteel in de open bare preview.
+> Azure Database for MySQL Flexible Server is momenteel beschikbaar als openbare preview.
 
 Azure Database for MySQL Flexibele server ondersteunt twee typen elkaar wederzijds uitsluitende netwerkverbindingsmethoden om verbinding te maken met uw flexibele server. De twee opties zijn:
 
@@ -32,7 +32,7 @@ In dit artikel wordt de nadruk gelegd op het maken van MySQL-server met **open b
 3. Selecteer **Flexibele server** als implementatieoptie.
 4. Vul het formulier **basis principes** in.
 5. Ga naar het tabblad **netwerken** om te configureren hoe u verbinding wilt maken met uw server.
-6. Selecteer in de **verbindings methode** *open bare toegang (toegestane IP-adressen)*. Als u de **firewall regels**wilt maken, geeft u de naam van de firewall regel en één IP-adres of een bereik van adressen op. Als u de regel tot één IP-adres wilt beperken, typt u hetzelfde adres in het veld voor eerste IP-adres en laatste IP-adres. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot alle data bases op de MySQL-server waarvoor ze geldige referenties hebben.
+6. Selecteer in de **verbindings methode** *open bare toegang (toegestane IP-adressen)*. Als u de **firewall regels** wilt maken, geeft u de naam van de firewall regel en één IP-adres of een bereik van adressen op. Als u de regel tot één IP-adres wilt beperken, typt u hetzelfde adres in het veld voor eerste IP-adres en laatste IP-adres. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot alle data bases op de MySQL-server waarvoor ze geldige referenties hebben.
    > [!Note]
    > Azure Database for MySQL flexibele server maakt een firewall op server niveau. De firewall voorkomt dat externe toepassingen en hulpprogramma's verbinding maken met de server of databases op de server, tenzij u een firewallregel maakt om de firewall te openen voor specifieke IP-adressen.
 
@@ -48,27 +48,27 @@ In dit artikel wordt de nadruk gelegd op het maken van MySQL-server met **open b
 
 3. Klik op **huidige client-IP-adres toevoegen** in de firewall regels. Hiermee wordt automatisch een firewall regel gemaakt met het open bare IP-adres van uw computer, zoals wordt waargenomen door het Azure-systeem.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/2-add-my-ip.png" alt-text="Azure portal - click Connection Security":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/2-add-my-ip.png" alt-text="Azure portal - click Add My IP":::-->
 
 4. Controleer uw IP-adres voordat u de configuratie opslaat. In sommige gevallen wijkt het IP-adres van Azure Portal af van het IP-adres dat wordt gebruikt voor toegang tot het internet en Azure-servers. Daarom moet u mogelijk het IP-begin adres en het laatste IP-adres wijzigen om de regel te laten werken zoals verwacht.
 
    U kunt een zoek machine of een ander online programma gebruiken om uw eigen IP-adres te controleren. Zoek bijvoorbeeld naar ' wat is mijn IP '.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/3-what-is-my-ip.png" alt-text="Azure portal - click Connection Security":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/3-what-is-my-ip.png" alt-text="Bing search for What is my IP":::-->
 
 5. Voeg extra adresbereiken toe. In de firewall regels voor de Azure Database for MySQL flexibele server kunt u één IP-adres of een bereik van adressen opgeven. Als u de regel tot één IP-adres wilt beperken, typt u hetzelfde adres in het veld voor eerste IP-adres en laatste IP-adres. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot alle data bases op de MySQL-server waarvoor ze geldige referenties hebben.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/4-specify-addresses.png" alt-text="Azure portal - click Connection Security":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/4-specify-addresses.png" alt-text="Azure portal - firewall rules":::-->
 
 6. Klik op **Opslaan** op de werk balk om deze firewall regel op te slaan. Wacht tot de bevestiging is geslaagd voor de update van de firewall regels.
 
-   <!--:::image type="content" source="./media/howto-manage-firewall-portal/5-save-firewall-rule.png" alt-text="Azure portal - click Connection Security":::-->
+   <!--:::image type="content" source="./media/howto-manage-firewall-portal/5-save-firewall-rule.png" alt-text="Azure portal - click Save":::-->
 
 ## <a name="connect-from-azure"></a>Verbinding maken vanuit Azure
 
 Mogelijk wilt u resources of toepassingen die zijn geïmplementeerd in azure inschakelen om verbinding te maken met uw flexibele server. Dit omvat webtoepassingen die worden gehost in Azure App Service, die worden uitgevoerd op een virtuele machine van Azure, een Azure Data Factory Data Management Gateway en nog veel meer.
 
-Wanneer een toepassing in azure probeert verbinding te maken met uw server, controleert de firewall of Azure-verbindingen zijn toegestaan. U kunt deze instelling inschakelen door de optie **open bare toegang vanaf Azure-Services en-resources in azure toestaan** in de portal op het tabblad **netwerken** te selecteren en op **Opslaan**te drukken.
+Wanneer een toepassing in azure probeert verbinding te maken met uw server, controleert de firewall of Azure-verbindingen zijn toegestaan. U kunt deze instelling inschakelen door de optie **open bare toegang vanaf Azure-Services en-resources in azure toestaan** in de portal op het tabblad **netwerken** te selecteren en op **Opslaan** te drukken.
 
 De resources hoeven zich niet in hetzelfde virtuele netwerk (VNet) of resource groep voor de firewall regel te bevinden om deze verbindingen in te scha kelen. Als de verbindings poging niet is toegestaan, bereikt de aanvraag niet de Azure Database for MySQL flexibele server.
 

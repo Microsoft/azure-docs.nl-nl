@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/07/2020
 ms.author: cherylmc
 ms.openlocfilehash: 0b9b8ba555cddd56c49c750709e69ec180291c95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91827254"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Over point-to-site-VPN-routering
@@ -56,7 +56,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Clients die Windows gebruiken, hebben toegang tot rechtstreeks peered VNets, maar de VPN-client moet opnieuw worden gedownload als er wijzigingen zijn aangebracht in VNet-peering of de netwerk topologie. Niet-Windows-clients hebben toegang tot rechtstreeks peered VNets. Toegang is niet transitief en is beperkt tot alleen rechtstreeks peered VNets.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple.jpg" alt-text="Meerdere peered VNets" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple.jpg":::
 
 ### <a name="address-space"></a>Adres ruimte:
 
@@ -86,7 +86,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Clients die gebruikmaken van Windows of een ander ondersteund besturings systeem, hebben alleen toegang tot VNet1. Om toegang te krijgen tot extra VNets moet BGP worden gebruikt.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple-s2s.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple-s2s.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple-s2s.jpg" alt-text="Meerdere VNets en S2S" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple-s2s.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 
@@ -114,7 +114,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Clients die gebruikmaken van Windows of een ander ondersteund besturings systeem, hebben toegang tot alle VNets die zijn verbonden met een site-naar-site-VPN-verbinding, maar routes naar verbonden VNets moeten hand matig worden toegevoegd aan de Windows-clients.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple-bgp.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple-bgp.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multiple-bgp.jpg" alt-text="Meerdere VNets en S2S (BGP)" lightbox="./media/vpn-gateway-about-point-to-site-routing/multiple-bgp.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 
@@ -142,7 +142,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Windows-en niet-Windows-clients hebben alleen toegang tot VNet1.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/branch-office.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/branch-office.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/branch-office.jpg" alt-text="Route ring met een VNet en een filiaal" lightbox="./media/vpn-gateway-about-point-to-site-routing/branch-office.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 
@@ -168,7 +168,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Windows-clients hebben toegang tot het VNet en het filiaal (site1), maar de routes naar site1 moeten hand matig worden toegevoegd aan de client. Niet-Windows-clients hebben toegang tot het VNet en de on-premises filialen.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/branch-bgp.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/branch-bgp.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/branch-bgp.jpg" alt-text="Route ring met een VNet en een filiaal-BGP" lightbox="./media/vpn-gateway-about-point-to-site-routing/branch-bgp.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 
@@ -195,7 +195,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Alle clients hebben alleen toegang tot VNet1.
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multi-branch.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/multi-branch.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multi-branch.jpg" alt-text="Diagram waarin een multi-VNet S2S en een filiaal worden weer gegeven" lightbox="./media/vpn-gateway-about-point-to-site-routing/multi-branch.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 
@@ -225,7 +225,7 @@ In dit voor beeld is de punt-naar-site-VPN-gateway verbinding voor VNet1. VNet1 
 
 Clients die Windows gebruiken, hebben toegang tot VNets en sites die zijn verbonden met een site-naar-site-VPN-verbinding, maar de routes naar VNet2, VNet3 en site1 moeten hand matig worden toegevoegd aan de client. Niet-Windows-clients hebben toegang tot VNets en sites die zijn verbonden met een site-naar-site-VPN-verbinding zonder hand matige tussen komst. De toegang is transitief en clients hebben toegang tot bronnen in alle verbonden VNets en sites (on-premises).
 
-:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multi-branch-bgp.jpg" alt-text="Geïsoleerd VNet-route ring" lightbox="./media/vpn-gateway-about-point-to-site-routing/multi-branch-bgp.jpg":::
+:::image type="content" source="./media/vpn-gateway-about-point-to-site-routing/multi-branch-bgp.jpg" alt-text="Multi-VNet S2S en filialen" lightbox="./media/vpn-gateway-about-point-to-site-routing/multi-branch-bgp.jpg":::
 
 ### <a name="address-space"></a>Adresruimte
 

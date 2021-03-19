@@ -9,10 +9,10 @@ ms.date: 08/07/2019
 ms.author: menchi
 ms.custom: include file
 ms.openlocfilehash: a5c1ddd085ae65b9920d73f50f993f4646785a69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "68883752"
 ---
 ## <a name="create-a-module-identity"></a>Een module-id maken
@@ -25,7 +25,7 @@ Als u deze consoletoepassing uitvoert, worden er een unieke id en een unieke sle
 
 1. Selecteer **console-app (.NET Framework)** in **een nieuw project maken**.
 
-1. Selecteer **volgende** om **het nieuwe project configureren**te openen. Geef het project de naam *CreateIdentities* en geef de oplossing de naam *IoTHubGetStarted*. Zorg ervoor dat de versie van .NET Framework minimaal 4.6.1 is.
+1. Selecteer **volgende** om **het nieuwe project configureren** te openen. Geef het project de naam *CreateIdentities* en geef de oplossing de naam *IoTHubGetStarted*. Zorg ervoor dat de versie van .NET Framework minimaal 4.6.1 is.
 
     ![Voer de naam en het framework in voor uw Visual Studio-oplossing](./media/iot-hub-get-started-create-module-identity-csharp/configure-createidentities-project.png)
 

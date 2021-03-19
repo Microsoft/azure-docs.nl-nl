@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/03/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 87cbb94dbab241630dc7585bdf4314d858d5b4da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74232763"
 ---
 # <a name="versioning-in-durable-functions-azure-functions"></a>Versie beheer in Durable Functions (Azure Functions)
@@ -87,7 +87,7 @@ public static Task Run([OrchestrationTrigger] IDurableOrchestrationContext conte
 > [!NOTE]
 > De vorige C#-voor beelden target Durable Functions 2. x. Voor Durable Functions 1. x moet u `DurableOrchestrationContext` in plaats van gebruiken `IDurableOrchestrationContext` . Zie het artikel [Durable functions versies](durable-functions-versions.md) voor meer informatie over de verschillen tussen versies.
 
-Met deze wijziging wordt een nieuwe functie aanroepen naar **SendNotification** tussen **Foo** en **Bar**. Er zijn geen wijzigingen in de hand tekening. Het probleem doet zich voor wanneer een bestaand exemplaar wordt hervat vanaf de aanroep naar de **Bar**. Als de oorspronkelijke aanroep van **Foo** wordt geretourneerd tijdens het opnieuw afspelen, `true` wordt de Orchestrator replay aangeroepen in **SendNotification**, die zich niet in de uitvoerings geschiedenis bevindt. Als gevolg hiervan mislukt het duurzame taak raamwerk met een `NonDeterministicOrchestrationException` omdat er een aanroep van **SendNotification** is aangetroffen wanneer de aanroep naar de **balk**werd verwacht. Hetzelfde type probleem kan optreden bij het toevoegen van alle aanroepen naar ' duurzame ' Api's, waaronder `CreateTimer` , `WaitForExternalEvent` enzovoort.
+Met deze wijziging wordt een nieuwe functie aanroepen naar **SendNotification** tussen **Foo** en **Bar**. Er zijn geen wijzigingen in de hand tekening. Het probleem doet zich voor wanneer een bestaand exemplaar wordt hervat vanaf de aanroep naar de **Bar**. Als de oorspronkelijke aanroep van **Foo** wordt geretourneerd tijdens het opnieuw afspelen, `true` wordt de Orchestrator replay aangeroepen in **SendNotification**, die zich niet in de uitvoerings geschiedenis bevindt. Als gevolg hiervan mislukt het duurzame taak raamwerk met een `NonDeterministicOrchestrationException` omdat er een aanroep van **SendNotification** is aangetroffen wanneer de aanroep naar de **balk** werd verwacht. Hetzelfde type probleem kan optreden bij het toevoegen van alle aanroepen naar ' duurzame ' Api's, waaronder `CreateTimer` , `WaitForExternalEvent` enzovoort.
 
 ## <a name="mitigation-strategies"></a>Strategieën voor risico beperking
 

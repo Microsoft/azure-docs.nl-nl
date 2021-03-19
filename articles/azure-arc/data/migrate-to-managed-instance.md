@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 86563b0a44bade2cedaf76af3c247821756111fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90936329"
 ---
 # <a name="migrate-sql-server-to-azure-arc-enabled-sql-managed-instance"></a>Migreren: SQL Server naar Azure Arc enabled SQL Managed instance
@@ -82,7 +82,7 @@ In deze stap maakt u verbinding met de bron SQL Server en maakt u het back-upbes
 ### <a name="step-4-restore-the-database-from-azure-blob-storage-to-sql-managed-instance---azure-arc"></a>Stap 4: de data base terugzetten van Azure Blob-opslag naar een SQL-beheerd exemplaar-Azure-boog
 
 1. Meld u aan bij Azure Data Studio en maak verbinding met het SQL Managed instance-Azure Arc.
-1. Vouw de **systeem databases**uit, klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query**.
+1. Vouw de **systeem databases** uit, klik met de rechter muisknop op de **hoofd** database en selecteer **nieuwe query**.
 1. Bereid en voer in het venster query-editor dezelfde query uit de vorige stap uit om de referenties te maken.
 
    ```sql

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/19/2021
-ms.openlocfilehash: a0c5e9f89b983871224e79c2fc4f518a15d42a6f
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: a52d6dca423565e7b5e4b6ac059bcf21b637c87c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102039611"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586332"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Regels voor het verzamelen van gegevens in Azure Monitor (preview-versie)
 Met regels voor gegevens verzameling (DCR) worden gegevens in Azure Monitor gedefinieerd en wordt aangegeven waar de gegevens moeten worden verzonden of opgeslagen. Dit artikel bevat een overzicht van regels voor het verzamelen van gegevens, inclusief de inhoud en structuur en hoe u deze kunt maken en gebruiken.
@@ -39,7 +39,7 @@ In het volgende diagram ziet u de onderdelen van een gegevens verzamelings regel
 ### <a name="data-source-types"></a>Typen gegevensbronnen
 Elke gegevens bron heeft een gegevens bron type. Elk type definieert een unieke set eigenschappen die voor elke gegevens bron moet worden opgegeven. De gegevens bron typen die momenteel beschikbaar zijn, worden weer gegeven in de volgende tabel.
 
-| Gegevens bron type | Beschrijving | 
+| Gegevens bron type | Description | 
 |:---|:---|
 | switch | Gegevens bron op basis van VM-extensie |
 | Performance Counters | Prestatie meter items voor Windows en Linux |
@@ -81,6 +81,10 @@ De onderstaande regel voor het verzamelen van gegevens is voor virtuele machines
   - Hiermee worden waarschuwings-, kritieke en nood gebeurtenissen van syslog-faciliteit verzameld.
 - Bestemmingen
   - Hiermee worden alle gegevens verzonden naar een Log Analytics werk ruimte met de naam centralWorkspace.
+
+> [!NOTE]
+> Zie het [verzamelen van gegevens beperken met aangepaste XPath-query's](data-collection-rule-azure-monitor-agent.md#limit-data-collection-with-custom-xpath-queries) voor een uitleg van xpaths die worden gebruikt voor het opgeven van gebeurtenis verzameling in regels voor gegevens verzameling.
+
 
 ```json
 {

@@ -5,12 +5,12 @@ author: ofirmanor
 ms.author: ofmanor
 ms.topic: reference
 ms.date: 03/16/2020
-ms.openlocfilehash: d65fa03a183c15022535debee6476844192ec6bf
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 08ac23fbb29829bf2a7a46e41f9a7f646ad97915
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102037843"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104586315"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-alerts"></a>Problemen met Azure Monitor waarschuwingen oplossen
 
@@ -21,7 +21,7 @@ Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang ri
 Raadpleeg de onderstaande artikelen als u een probleem ondervindt met het activeren van een waarschuwing of het niet starten van de verwachte. U kunt ' geactiveerde ' waarschuwingen weer geven in de Azure Portal.
 
 - [Problemen met Azure Monitor metrische waarschuwingen in Microsoft Azure oplossen](alerts-troubleshoot-metric.md)  
-- [Problemen met Azure Monitor logboek waarschuwingen in Microsoft Azure oplossen](alerts-troubleshoot-metric.md)
+- [Problemen met Azure Monitor logboek waarschuwingen in Microsoft Azure oplossen](alerts-troubleshoot-log.md)
 
 Als de waarschuwing wordt geactiveerd volgens de Azure Portal maar de juiste meldingen niet worden uitgevoerd, gebruikt u de informatie in de rest van dit artikel om het probleem op te lossen.
 

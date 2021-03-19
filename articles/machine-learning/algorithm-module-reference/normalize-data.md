@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
 ms.openlocfilehash: de0a23ca9dea210d91fe259b06622226549ba3b2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90890444"
 ---
 # <a name="normalize-data-module"></a>Gegevens module normaliseren
@@ -39,7 +39,7 @@ Deze module biedt verschillende opties voor het transformeren van numerieke gege
 
 ##  <a name="configure-normalize-data"></a>Normaliseren van gegevens configureren
 
-U kunt per keer slechts één normalisatie methode Toep assen met behulp van deze module. Daarom wordt dezelfde normalisatie methode toegepast op alle kolommen die u selecteert. Als u verschillende normalisatie methoden wilt gebruiken, moet u een tweede exemplaar van **normaliseren gegevens**gebruiken.
+U kunt per keer slechts één normalisatie methode Toep assen met behulp van deze module. Daarom wordt dezelfde normalisatie methode toegepast op alle kolommen die u selecteert. Als u verschillende normalisatie methoden wilt gebruiken, moet u een tweede exemplaar van **normaliseren gegevens** gebruiken.
 
 1. Voeg de module **Normal data-gegevens** toe aan de pijp lijn. U kunt de module vinden in Azure Machine Learning, onder **gegevens transformatie**, in de categorie **schalen en verminderen** .
 
@@ -54,7 +54,7 @@ U kunt per keer slechts één normalisatie methode Toep assen met behulp van dez
     > [!TIP]
     > Om ervoor te zorgen dat kolommen van een specifiek type als invoer worden opgegeven, probeert u de module [select columns in dataset uit](./select-columns-in-dataset.md) te voeren voordat u **gegevens normaliseert**.
 
-4. **0 voor constante kolommen gebruiken wanneer dit selectie**vakje is ingeschakeld: Selecteer deze optie als een wille keurige numerieke kolom één ongewijzigde waarde bevat. Dit zorgt ervoor dat dergelijke kolommen niet worden gebruikt in normalisatie bewerkingen.
+4. **0 voor constante kolommen gebruiken wanneer dit selectie** vakje is ingeschakeld: Selecteer deze optie als een wille keurige numerieke kolom één ongewijzigde waarde bevat. Dit zorgt ervoor dat dergelijke kolommen niet worden gebruikt in normalisatie bewerkingen.
 
 5. Kies in de vervolg keuzelijst **transformatie methode** één wiskundige functie die u wilt Toep assen op alle geselecteerde kolommen. 
   

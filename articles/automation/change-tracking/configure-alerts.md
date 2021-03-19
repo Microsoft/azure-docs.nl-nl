@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 10/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4faa7837a75bab6dfab651862754cd92394c5137
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 91be2f8641a061d009962cdcd03a8d56048594da
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100585903"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104594496"
 ---
 # <a name="how-to-create-alerts-for-change-tracking-and-inventory"></a>Waarschuwingen voor Wijzigingen bijhouden en inventaris maken
 
@@ -50,11 +50,11 @@ Zodra u uw waarschuwingen hebt geconfigureerd, kunt u een actie groep instellen.
 
 3. Voer onder **acties** een naam in waarmee de actie wordt opgegeven, bijvoorbeeld **e-mail melding**.
 
-4. Voor **actie type** selecteert u het juiste type, bijvoorbeeld **e-mail/SMS/push/Voice**.
+4. Voor **actie type** selecteert u het juiste type, bijvoorbeeld **e-mail/SMS-bericht/push/stem**.
 
-5. Selecteer **Details bewerken**.
+5. Selecteer het potlood pictogram om de actie details te bewerken.
 
-6. Vul het deel venster in voor uw actie type. Als u bijvoorbeeld **e-mail/SMS/push/Voice** gebruikt, voert u een actie naam in, selecteert u het selectie vakje **e-mail** , voert u een geldig e-mail adres in en selecteert u **OK**.
+6. Vul het deel venster in voor uw actie type. Als u bijvoorbeeld **e-mail/SMS-bericht/push/Voice** wilt gebruiken om een e-mail te verzenden, voert u een actie naam in, selecteert u het selectie vakje **e-mail** , voert u een geldig e-mail adres in en selecteert u **OK**.
 
     ![Een e-mailactiegroep configureren](./media/configure-alerts/configure-email-action-group.png)
 

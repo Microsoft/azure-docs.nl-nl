@@ -5,12 +5,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/01/2021
 ms.custom: template-concept
-ms.openlocfilehash: 5ee38fa4b005cf053890c223dfec9244c637bd00
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: b4cf3699243e990b5e7b7478ba643067ac456020
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103561818"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104584700"
 ---
 # <a name="guide-for-running-functions-on-net-50-in-azure"></a>Hand leiding voor het uitvoeren van functies op .NET 5,0 in azure
 
@@ -47,7 +47,7 @@ Een .NET geïsoleerd function-project is in principe een .NET-console-app-projec
 + [host.jsop](functions-host-json.md) bestand.
 + [local.settings.jsop](functions-run-local.md#local-settings-file) bestand.
 + C#-project bestand (. csproj) dat het project en de afhankelijkheden definieert.
-+ Program.cs-bestand dat het toegangs punt voor de app is.
++ Het bestand Program. cs dat het toegangs punt voor de app is.
 
 ## <a name="package-references"></a>Pakket verwijzingen
 
@@ -68,7 +68,7 @@ U vindt deze extensie pakketten onder [micro soft. Azure. functions. Worker. Ext
 
 ## <a name="start-up-and-configuration"></a>Opstarten en configureren 
 
-Wanneer u met behulp van .NET geïsoleerde functies hebt, hebt u toegang tot het starten van uw functie-app, meestal in Program.cs. U bent zelf verantwoordelijk voor het maken en starten van uw eigen exemplaar van de host. Als zodanig hebt u ook directe toegang tot de configuratie pijplijn voor uw app. U kunt veel gemakkelijker afhankelijkheden injecteren en middleware uitvoeren wanneer u out-of-process uitvoert. 
+Wanneer u met behulp van .NET geïsoleerde functies hebt, hebt u toegang tot het starten van uw functie-app, meestal in Program. cs. U bent zelf verantwoordelijk voor het maken en starten van uw eigen exemplaar van de host. Als zodanig hebt u ook directe toegang tot de configuratie pijplijn voor uw app. U kunt veel gemakkelijker afhankelijkheden injecteren en middleware uitvoeren wanneer u out-of-process uitvoert. 
 
 De volgende code toont een voor beeld van een `HostBuilder` pijp lijn:
 

@@ -11,10 +11,10 @@ ms.topic: how-to
 ms.date: 07/15/2020
 ms.author: alkohli
 ms.openlocfilehash: 5ebb7f1d9440bc7a8b75afe64403762532213c1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91767575"
 ---
 # <a name="use-the-storsimple-device-manager-service-in-azure-portal-to-clone-a-volume"></a>StorSimple Device Manager-service in Azure-portal gebruiken om een volume te klonen
@@ -66,7 +66,7 @@ Voer de volgende stappen uit om een kloon van uw volume te maken uit de back-upc
    
       ![Lijst met back-upsets 2](./media/storsimple-8000-clone-volume-u2/bucatalog.png)
      
-3. Vouw de back-upset uit om het bijbehorende volume weer te geven en selecteer een volume in een back-upset. Klik met de rechter muisknop en selecteer vervolgens **klonen**in het context menu.
+3. Vouw de back-upset uit om het bijbehorende volume weer te geven en selecteer een volume in een back-upset. Klik met de rechter muisknop en selecteer vervolgens **klonen** in het context menu.
 
    ![Lijst met back-upsets 3](./media/storsimple-8000-clone-volume-u2/clonevol3b.png) 
 
@@ -82,7 +82,7 @@ Voer de volgende stappen uit om een kloon van uw volume te maken uit de back-upc
        > [!NOTE]
        > Het veld **kloon volume als** wordt **getierd** , zelfs als u een lokaal vastgemaakt volume kloont. U kunt deze instelling niet wijzigen. Als u echter wilt dat het gekloonde volume ook lokaal is vastgemaakt, kunt u de kloon converteren naar een lokaal vastgemaakt volume nadat u de kloon hebt gemaakt. Voor informatie over het converteren van een gelaagd volume naar een lokaal vastgemaakt volume, gaat u naar [het volume type wijzigen](storsimple-8000-manage-volumes-u2.md#change-the-volume-type).
           
-   3. Geef onder **verbonden hosts**een Access Control record op (ACR) voor de kloon. U kunt een nieuwe ACR toevoegen of uit de bestaande lijst kiezen. De ACR bepaalt welke hosts toegang tot deze kloon hebben.
+   3. Geef onder **verbonden hosts** een Access Control record op (ACR) voor de kloon. U kunt een nieuwe ACR toevoegen of uit de bestaande lijst kiezen. De ACR bepaalt welke hosts toegang tot deze kloon hebben.
       
        ![Lijst met back-upsets 4](./media/storsimple-8000-clone-volume-u2/clonevol3a.png) 
 

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 06/10/2020
 ms.openlocfilehash: e279a7c9f6810ece482b043284f0be0719a3dafe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90908043"
 ---
 # <a name="edit-metadata-module"></a>Meta gegevens module bewerken
@@ -46,7 +46,7 @@ Veelvoorkomende meta gegevens wijzigingen kunnen het volgende omvatten:
   
 1. Selecteer de optie **gegevens type** als u een ander gegevens type aan de geselecteerde kolommen wilt toewijzen. Mogelijk moet u het gegevens type voor bepaalde bewerkingen wijzigen. Als uw bron-gegevensset bijvoorbeeld getallen heeft verwerkt als tekst, moet u deze wijzigen in een numeriek gegevens type voordat u wiskundige bewerkingen kunt gebruiken.
 
-    + De ondersteunde gegevens typen zijn **teken reeks**, **geheel getal**, **dubbel**, **Booleaans**en **datum/tijd**.
+    + De ondersteunde gegevens typen zijn **teken reeks**, **geheel getal**, **dubbel**, **Booleaans** en **datum/tijd**.
 
     + Als u meerdere kolommen selecteert, moet u de meta gegevens wijzigingen Toep assen op *alle* geselecteerde kolommen. Stel bijvoorbeeld dat u twee of drie numerieke kolommen kiest. U kunt deze allemaal wijzigen in een teken reeks gegevens type en ze in één bewerking een andere naam geven. U kunt echter niet één kolom wijzigen in een teken reeks gegevens type en een andere kolom van een float-waarde tot een geheel getal.
   
@@ -87,7 +87,7 @@ Veelvoorkomende meta gegevens wijzigingen kunnen het volgende omvatten:
   
          U kunt een kolom momenteel niet expliciet markeren als een score in Azure Machine Learning. Een aantal bewerkingen resulteert echter in een kolom die intern als score wordt gemarkeerd. Een aangepaste R-module kan ook Score waarden uitvoeren.
 
-1. Voer voor **nieuwe kolom namen**de nieuwe naam van de geselecteerde kolom of kolommen in.  
+1. Voer voor **nieuwe kolom namen** de nieuwe naam van de geselecteerde kolom of kolommen in.  
   
     + Kolom namen kunnen alleen tekens gebruiken die worden ondersteund door UTF-8-code ring. Lege teken reeksen, null-waarden of namen die uitsluitend uit spaties bestaan, zijn niet toegestaan.  
   

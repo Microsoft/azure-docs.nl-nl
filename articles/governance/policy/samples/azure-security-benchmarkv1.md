@@ -1,15 +1,15 @@
 ---
 title: Details van de naleving van de regelgeving voor Azure Security Bench Mark v1
 description: Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 03/10/2021
+ms.date: 03/17/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 628cd91ffdda4c17e60e53a2fe205b84ed000bb3
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: e8409cb7675e77648aa307ff8b1ecc3e8d8fc2a2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102634716"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104604811"
 ---
 # <a name="details-of-the-azure-security-benchmark-v1-regulatory-compliance-built-in-initiative"></a>Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief
 
@@ -332,7 +332,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [Azure Se
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Systeemupdates op virtuele-machineschaalsets moeten worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fc3f317a7-a95c-4547-b7e7-11017ebdf2fe) |Controleren of er systeembeveiligingsupdates of essentiële updates ontbreken die moeten worden geïnstalleerd om ervoor te zorgen dat uw virtuele-machineschaalsets voor Windows en Linux veilig zijn. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VmssMissingSystemUpdates_Audit.json) |
-|[Systeemupdates moeten op uw computers worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F86b3d65f-7626-441e-b690-81a8b71cff60) |Ontbrekende beveiligingssysteemupdates op uw servers worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingSystemUpdates_Audit.json) |
+|[Systeemupdates moeten op uw computers worden geïnstalleerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F86b3d65f-7626-441e-b690-81a8b71cff60) |Ontbrekende beveiligingssysteemupdates op uw servers worden als aanbevelingen bewaakt door Azure Security Center |AuditIfNotExists, uitgeschakeld |[4.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_MissingSystemUpdates_Audit.json) |
 
 ### <a name="deploy-automated-third-party-software-patch-management-solution"></a>Geautomatiseerde oplossing implementeren voor patchbeheer van software van derden
 

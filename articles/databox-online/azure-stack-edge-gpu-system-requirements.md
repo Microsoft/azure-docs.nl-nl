@@ -6,18 +6,19 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 02/05/2021
+ms.date: 03/17/2021
 ms.author: alkohli
-ms.openlocfilehash: e72ad50b495dec7e3a647bb7bcbdeafd53f5de7b
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 67de5cce3bd5a4ca2b383e2809eb237a6e753bf5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102636620"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577088"
 ---
 # <a name="system-requirements-for-azure-stack-edge-pro-with-gpu"></a>Systeem vereisten voor Azure Stack Edge Pro met GPU 
 
-In dit artikel worden de belangrijkste systeem vereisten beschreven voor uw Microsoft Azure Stack Edge Pro-oplossing en voor de clients die verbinding maken met Azure Stack Edge Pro. We raden u aan de informatie zorgvuldig te bekijken voordat u uw Azure Stack Edge Pro implementeert. U kunt deze informatie naar behoefte terugsturen tijdens de implementatie en de volgende bewerking.
+In dit artikel worden de belangrijkste systeem vereisten beschreven voor uw Microsoft Azure Stack Edge Pro GPU-oplossing en voor de clients die verbinding maken met Azure Stack Edge Pro. We raden u aan de informatie zorgvuldig te bekijken voordat u uw Azure Stack Edge Pro implementeert. U kunt deze informatie naar behoefte terugsturen tijdens de implementatie en de volgende bewerking.
 
 De systeem vereisten voor de Azure Stack Edge Pro zijn onder andere:
 
@@ -81,7 +82,7 @@ Gebruik de volgende tabel voor poort configuratie voor de servers die als host f
 
 | Poort nummer | In of uit | Poort bereik | Vereist | Hulp |
 |----------|-----------|------------|----------|----------|
-| TCP 443 (HTTPS)| Uit       | WAN        | Ja      | Uitgaand openen voor IoT Edge inrichting. Deze configuratie is vereist wanneer u hand matige scripts of een Azure IoT Device Provisioning Service (DPS) gebruikt.|
+| TCP 443 (HTTPS)| Uit       | WAN        | Yes      | Uitgaand openen voor IoT Edge inrichting. Deze configuratie is vereist wanneer u hand matige scripts of een Azure IoT Device Provisioning Service (DPS) gebruikt.|
 
 Voor volledige informatie gaat u naar de [firewall-en poort configuratie regels voor IOT Edge-implementatie](../iot-edge/troubleshoot.md).
 

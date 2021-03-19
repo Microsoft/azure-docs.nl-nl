@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
 ms.openlocfilehash: f9c400b55b0da47495db4f1ff4ceb86aa39fe2cc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90885834"
 ---
-# <a name="remove-azure-sentinel-from-your-workspace"></a>Azure-Sentinel uit uw werk ruimte verwijderen
+# <a name="remove-azure-sentinel-from-your-workspace"></a>Azure Sentinel verwijderen uit uw werkruimte
 
 Als u Azure Sentinel niet meer wilt gebruiken, wordt in dit artikel uitgelegd hoe u het kunt verwijderen uit uw werk ruimte.
 
@@ -29,7 +29,7 @@ Als u Azure Sentinel niet meer wilt gebruiken, wordt in dit artikel uitgelegd ho
 
 Volg deze procedure om de Azure-Sentinel te verwijderen uit uw werk ruimte:
 
-1. Ga naar de **Azure-Sentinel**, gevolgd door **instellingen**en selecteer het tabblad **Azure-Sentinel verwijderen**.
+1. Ga naar de **Azure-Sentinel**, gevolgd door **instellingen** en selecteer het tabblad **Azure-Sentinel verwijderen**.
 
 1. Voordat u Azure Sentinel verwijdert, moet u de selectie vakjes gebruiken om ons te laten weten waarom u deze verwijdert.
 
@@ -66,12 +66,12 @@ Binnen de eerste 48 uur zijn de gegevens-en analytische regels (inclusief realti
 
 -   Bladwijzers
 
-Uw playbooks, opgeslagen werkmappen, opgeslagen jacht-query's en notitie blokken worden niet verwijderd. **Sommige kunnen worden verbroken vanwege de verwijderde gegevens. U kunt deze hand matig verwijderen.**
+Uw playbooks, opgeslagen werkmappen, opgeslagen opsporingsquery's en notebooks worden niet verwijderd. **Sommige kunnen worden verbroken vanwege de verwijderde gegevens. U kunt deze hand matig verwijderen.**
 
 Nadat u de service hebt verwijderd, is er een respijt periode van 30 dagen waarin u de oplossing opnieuw kunt inschakelen. uw gegevens en analytische regels worden hersteld, maar de geconfigureerde connectors die zijn losgekoppeld, moeten opnieuw worden verbonden.
 
 > [!NOTE]
-> Als u de oplossing verwijdert, wordt uw abonnement nog steeds geregistreerd bij de Azure Sentinel resource provider. **U kunt deze hand matig verwijderen.**
+> Als u de oplossing verwijdert, is uw abonnement nog steeds geregistreerd bij de Azure Sentinel-resourceprovider. **U kunt het abonnement handmatig verwijderen.**
 
 
 

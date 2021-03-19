@@ -4,10 +4,10 @@ description: Meer informatie over hoe Azure Resource Health u helpt bij het vast
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 25425eadfaf54ba56cde3b377a44cd85c2b68959
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90967869"
 ---
 # <a name="resource-health-overview"></a>Overzicht van Resource Health
@@ -70,7 +70,7 @@ Verschillende resources hebben hun eigen criteria voor wanneer ze rapporteren da
 
 ## <a name="reporting-an-incorrect-status"></a>Rapportage van een onjuiste status
 
-Als u denkt dat de huidige status onjuist is, kunt u ons vertellen door de **onjuiste status**van het rapport te selecteren. In gevallen waarin een Azure-probleem van invloed is op u, raden we u aan om contact op te nemen met de ondersteuning van Resource Health.
+Als u denkt dat de huidige status onjuist is, kunt u ons vertellen door de **onjuiste status** van het rapport te selecteren. In gevallen waarin een Azure-probleem van invloed is op u, raden we u aan om contact op te nemen met de ondersteuning van Resource Health.
 
 ![Formulier voor het verzenden van informatie over een onjuiste status](./media/resource-health-overview/incorrect-status.png)
 

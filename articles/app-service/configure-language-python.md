@@ -2,15 +2,15 @@
 title: Linux Python-apps configureren
 description: Meer informatie over het configureren van de Python-container waarin web-apps worden uitgevoerd, met behulp van de Azure-portal en de Azure CLI.
 ms.topic: quickstart
-ms.date: 02/01/2021
+ms.date: 03/16/2021
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: cfbbb7064fcadc06714b237066bb6a009246baac
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 11b9ab8e954827cfcc73e440bee1023504e14057
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101709084"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577609"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -373,6 +373,7 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 - [De app wordt niet weergegeven - bericht 'Service niet beschikbaar'](#service-unavailable)
 - [Kan setup.py of requirements.txt niet vinden](#could-not-find-setuppy-or-requirementstxt)
 - [ModuleNotFoundError bij opstarten](#modulenotfounderror-when-app-starts)
+- [De data base is vergrendeld](#database-is-locked)
 - [Wachtwoorden worden niet weergegeven in SSH-sessies wanneer deze worden getypt](#other-issues)
 - [Opdrachten in de SSH-sessie worden afgekapt weergegeven](#other-issues)
 - [Statische assets worden niet weergegeven in een Django-app](#other-issues)
@@ -409,6 +410,14 @@ In de volgende secties vindt u aanvullende richtlijnen voor specifieke problemen
 #### <a name="modulenotfounderror-when-app-starts"></a>ModuleNotFoundError wanneer de app wordt gestart
 
 Als er een fout melding wordt weer geven `ModuleNotFoundError: No module named 'example'` , betekent dit dat python een of meer van de modules niet kan vinden toen de toepassing werd gestart. Dit gebeurt meestal wanneer u uw virtuele omgeving met uw code implementeert. Virtuele omgevingen zijn niet draagbaar, zodat een virtuele omgeving niet met de code van uw toepassing kan worden geïmplementeerd. In plaats daarvan kunt u Oryx een virtuele omgeving maken en uw pakketten op de web-app installeren door een app-instelling te maken `SCM_DO_BUILD_DURING_DEPLOYMENT` en in te stellen op `1` . Dit dwingt Oryx uw pakketten te installeren wanneer u deze implementeert in App Service. Raadpleeg [dit artikel over de draag baarheid van de virtuele omgeving](https://azure.github.io/AppService/2020/12/11/cicd-for-python-apps.html)voor meer informatie.
+
+### <a name="database-is-locked"></a>De data base is vergrendeld
+
+Wanneer u probeert database migraties uit te voeren met een Django-app, ziet u mogelijk ' sqlite3. OperationalError: Data Base is vergrendeld. De fout geeft aan dat uw toepassing gebruikmaakt van een SQLite-data base waarvoor Django standaard is geconfigureerd, in plaats van een Cloud database zoals PostgreSQL voor Azure te gebruiken.
+
+Controleer de `DATABASES` variabele in het *Settings.py* -bestand van de app om er zeker van te zijn dat uw app gebruikmaakt van een Cloud database in plaats van sqlite.
+
+Als u deze fout ondervindt met het voor beeld in de [zelf studie: een Django-web-app implementeren met postgresql](tutorial-python-postgresql-app.md), Controleer of u de stappen in [omgevings variabelen configureren hebt uitgevoerd om verbinding te maken met de data base](tutorial-python-postgresql-app.md#42-configure-environment-variables-to-connect-the-database).
 
 #### <a name="other-issues"></a>Overige problemen
 

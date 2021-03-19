@@ -1,25 +1,37 @@
-- name: Documentatie voor Translator
+- name: Documentatie over Translator-service
   href: index.yml
-- name: Vertaler
+- name: Overzicht
   items:
     - name: Wat is Translator?
       href: translator-info-overview.md
-    - name: Snelstart
-      href: quickstart-translator.md
     - name: Taalondersteuning
       href: language-support.md
-    - name: Zelfstudies
+    - name: Prijzen en beperkingen
+      href: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator'
+    - name: Veelgestelde vragen over vertalen
+      href: 'https://www.microsoft.com/translator/faq.aspx'
+- name: Tekstomzetting
+  items:
+    - name: Snelstart
+      href: quickstart-translator.md
+    - name: Voorbeelden
       items:
-        - name: 'Een WPF-app maken voor Translator, C#'
-          href: tutorial-wpf-translation-csharp.md
-        - name: 'Een Flask-app voor vertaling maken, Python'
-          href: tutorial-build-flask-app-translation-synthesis.md
-    - name: Concepten
-      items:
-        - name: Tekstvertaling aanpassen en verbeteren
-          href: customization.md
-        - name: Hoe tekens door de API worden geteld
-          href: character-counts.md
+        - name: Voorbeeld pagina voor code
+          href: /samples/browse/?terms=microsoft%20translator
+        - name: C#
+          href: /samples/microsofttranslator/text-translation-api-v3-c-sharp/translator-c-sharp-v3/
+        - name: Java
+          href: /samples/microsofttranslator/text-translation-api-v3-java/translator-java-v3/
+        - name: Python
+          href: /samples/microsofttranslator/text-translation-api-v3-python/translator-python-v3/
+        - name: Node.js
+          href: /samples/microsofttranslator/text-translation-api-v3-nodejs/translator-javascript-v3/
+        - name: Aan de slag
+          href: /samples/microsofttranslator/text-translation-api-v3-go/translator-go-v3/
+        - name: PHP
+          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP'
+        - name: Ruby
+          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Ruby'
     - name: Instructiegidsen
       items:
         - name: Een Translator-resource maken
@@ -36,28 +48,26 @@
           href: dynamic-dictionary.md
         - name: Vertalen achter firewalls
           href: firewalls.md
-    - name: Voorbeelden
+    - name: Concepten
       items:
-        - name: C#
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp'
-        - name: Java
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Java'
-        - name: Python
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Python'
-        - name: Node.js
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-NodeJS'
-        - name: Aan de slag
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Go'
-        - name: PHP
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP'
-        - name: Ruby
-          href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Ruby'
+        - name: Hoe tekens door de API worden geteld
+          href: character-counts.md
+    - name: Zelfstudies
+      items:
+        - name: 'Een WPF-app maken voor Translator, C#'
+          href: tutorial-wpf-translation-csharp.md
+        - name: 'Een Flask-app voor vertaling maken, Python'
+          href: tutorial-build-flask-app-translation-synthesis.md
     - name: Naslaginformatie
       items:
         - name: v3 Translator-naslaginformatie
           href: reference/v3-0-reference.md
         - name: Talen
           href: reference/v3-0-languages.md
+        - name: Regionale beschikbaarheid
+          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+        - name: Aanvraaglimieten
+          href: request-limits.md
         - name: Vertalen
           href: reference/v3-0-translate.md
         - name: Transcriberen
@@ -70,66 +80,14 @@
           href: reference/v3-0-dictionary-lookup.md
         - name: Voorbeelden in woordenlijst
           href: reference/v3-0-dictionary-examples.md
-        - name: Aanvraaglimieten
-          href: request-limits.md
-    - name: Resources
-      items:
-        - name: Opties voor ondersteuning en hulp
-          href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context
-        - name: Codevoorbeelden op GitHub
-          href: 'https://aka.ms/TranslatorGitHub'
-        - name: Veelgestelde vragen
-          href: 'https://www.microsoft.com/translator/faq.aspx'
-        - name: Prijzen
-          href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
-        - name: Regionale beschikbaarheid
-          href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-        - name: Naleving
-          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-- name: Document vertaling
+- name: Aangepaste vertaling
   items:
-    - name: Overzicht
-      items:
-        - name: Wat is document vertalingen?
-          href: document-translation/overview.md
-    - name: Instructiegidsen
-      items:
-        - name: Aan de slag met document vertalingen
-          href: document-translation/get-started-with-document-translation.md
-        - name: SAS-tokens maken
-          href: document-translation/create-sas-tokens.md
-    - name: Referentie
-      items:
-        - name: Naslag informatie over document vertalingen API
-          href: /rest/api/cognitiveservices/translator/documenttranslation
-- name: Custom Translator
-  items:
-    - name: Overzicht
-      items:
-        - name: Wat is Custom Translator?
-          href: custom-translator/overview.md
-    - name: Snelstartgidsen
-      items:
-        - name: Een aangepast model bouwen
-          href: custom-translator/quickstart-build-deploy-custom-model.md
-    - name: Concepten
-      items:
-        - name: Werkruimten en projecten
-          href: custom-translator/workspace-and-project.md
-        - name: Parallelle documenten
-          href: custom-translator/what-are-parallel-documents.md
-        - name: Woordenlijst
-          href: custom-translator/what-is-dictionary.md
-        - name: De opmaak van documenten
-          href: custom-translator/document-formats-naming-convention.md
-        - name: Uitlijning van zinnen
-          href: custom-translator/sentence-alignment.md
-        - name: Gegevens filteren
-          href: custom-translator/data-filtering.md
-        - name: Training en modellen
-          href: custom-translator/training-and-model.md
-        - name: BLEU-score
-          href: custom-translator/what-is-bleu-score.md
+    - name: Wat is Custom Translator?
+      href: custom-translator/overview.md
+    - name: Snelstart
+      href: custom-translator/quickstart-build-deploy-custom-model.md
+    - name: Veelgestelde vragen
+      href: custom-translator/faq.md
     - name: Instructiegidsen
       items:
         - name: Een project maken
@@ -152,17 +110,49 @@
           href: custom-translator/how-to-migrate.md
         - name: Implementaties in niet-ondersteunde talen
           href: custom-translator/unsupported-language-deployments.md
-    - name: Resources
+    - name: Concepten
       items:
-        - name: Opties voor ondersteuning en hulp
-          href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context
+        - name: Terminologie
+          href: custom-translator/terminology.md
+        - name: Tekstvertaling aanpassen en verbeteren
+          href: customization.md
+        - name: Werkruimten en projecten
+          href: custom-translator/workspace-and-project.md
+        - name: Parallelle documenten
+          href: custom-translator/what-are-parallel-documents.md
         - name: Woordenlijst
-          href: custom-translator/glossary.md
-        - name: Veelgestelde vragen
-          href: custom-translator/faq.md
-        - name: Prijzen
-          href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
-        - name: Naleving
-          href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+          href: custom-translator/what-is-dictionary.md
+        - name: De opmaak van documenten
+          href: custom-translator/document-formats-naming-convention.md
+        - name: Uitlijning van zinnen
+          href: custom-translator/sentence-alignment.md
+        - name: Gegevens filteren
+          href: custom-translator/data-filtering.md
+        - name: Training en modellen
+          href: custom-translator/training-and-model.md
+        - name: BLEU-score
+          href: custom-translator/what-is-bleu-score.md
         - name: Versleuteling
           href: encrypt-data-at-rest.md
+- name: Document vertaling
+  items:
+    - name: Wat is document vertalingen?
+      href: document-translation/overview.md
+    - name: Snelstart
+      href: document-translation/get-started-with-document-translation.md
+    - name: Instructiegidsen
+      items:
+        - name: SAS-tokens maken voor document vertalingen
+          href: document-translation/create-sas-tokens.md
+    - name: Referentie
+      items:
+        - name: REST API van document vertalingen
+          href: /rest/api/cognitiveservices/translator/translation
+- name: Vertaal bronnen
+  items:
+    - name: Opties voor ondersteuning en hulp
+      href: ../cognitive-services-support-options.md?context=/azure/cognitive-services/translator/context/context
+    - name: Naleving
+      href: 'https://azure.microsoft.com/en-us/support/legal/cognitive-services-compliance-and-privacy'
+    - name: Codevoorbeelden op GitHub
+      href: 'https://aka.ms/TranslatorGitHub'

@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/04/2021
+ms.date: 03/17/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f316b17096e1241fe23cbf2c965122fd8966522
-ms.sourcegitcommit: b572ce40f979ebfb75e1039b95cea7fce1a83452
+ms.openlocfilehash: b878abbead68b3268891e1f35087e5942969730c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102630874"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579056"
 ---
 # <a name="conditional-access-users-and-groups"></a>Voorwaardelijke toegang: gebruikers en groepen
 
-Een beleid voor voorwaardelijke toegang moet een gebruikers toewijzing bevatten als een van de signalen in het besluit proces. Gebruikers kunnen worden opgenomen in of uitgesloten van het beleid voor voorwaardelijke toegang. Azure Active Directory evalueert alle beleids regels en zorgt ervoor dat aan alle vereisten wordt voldaan voordat toegang wordt verleend aan de gebruiker. Naast dit artikel hebben we een video over [het opnemen of uitsluiten van gebruikers met beleids regels voor voorwaardelijke toegang](https://www.youtube.com/watch?v=5DsW1hB3Jqs) die u door het hieronder beschreven proces door lopen. 
+Een beleid voor voorwaardelijke toegang moet een gebruikers toewijzing bevatten als een van de signalen in het besluit proces. Gebruikers kunnen worden opgenomen in of uitgesloten van het beleid voor voorwaardelijke toegang. Azure Active Directory evalueert alle beleids regels en zorgt ervoor dat aan alle vereisten wordt voldaan voordat toegang wordt verleend aan de gebruiker. 
 
-![Gebruiker als signaal in de beslissingen van voorwaardelijke toegang](./media/concept-conditional-access-users-groups/conditional-access-users-and-groups.png)
+> [!VIDEO https://www.youtube.com/embed/5DsW1hB3Jqs]
 
 ## <a name="include-users"></a>Gebruikers toevoegen
 
@@ -77,7 +77,7 @@ Het beleid biedt standaard een optie om de huidige gebruiker uit te sluiten van 
 
 ![Waarschuwing, niet zelf vergren delen.](./media/concept-conditional-access-users-groups/conditional-access-users-and-groups-lockout-warning.png)
 
-[Wat moet ik doen als ik de Azure Portal vergrendeld?](troubleshoot-conditional-access.md#what-to-do-if-you-are-locked-out-of-the-azure-portal)
+Als u de Azure Portal hebt vergrendeld, kunt u zien wat u moet[doen als u bent vergrendeld?](troubleshoot-conditional-access.md#what-to-do-if-you-are-locked-out-of-the-azure-portal)
 
 ## <a name="next-steps"></a>Volgende stappen
 

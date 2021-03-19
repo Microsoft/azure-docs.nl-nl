@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 08/10/2020
 ms.openlocfilehash: bf62fa995724b8e1fff757e89945cc39db3d9842
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90893702"
 ---
 # <a name="score-svd-recommender"></a>Aanbevelingsfunctie voor SVD-score
@@ -45,9 +45,9 @@ Wanneer u de classificaties voor spelt, wordt in het model berekend hoe een gebr
 
 1. Voeg een getraind aanbevelings model aan uw pijp lijn toe en verbind het met de **getrainde SVD-aanbeveling**. U moet het model maken met de module [Train SVD aanbevelen](train-SVD-recommender.md) .
 
-2. Voor **Voorspellings type voor aanbevolen**functies selecteert u **beoordelings voorspelling**. Er zijn geen andere para meters vereist.
+2. Voor **Voorspellings type voor aanbevolen** functies selecteert u **beoordelings voorspelling**. Er zijn geen andere para meters vereist.
 
-3. Voeg de gegevens toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om**deze te beoordelen.
+3. Voeg de gegevens toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om** deze te beoordelen.
 
    Voor het model om beoordelingen te voors pellen, moet de invoer gegevensset gebruikers paren bevatten.
 
@@ -69,15 +69,15 @@ Als u items wilt aanbevelen voor gebruikers, geeft u een lijst met gebruikers en
 
 3. Geef aan of u de Score module in productie of voor model evaluatie gebruikt voor de **Aanbevolen selectie van items**. Kies een van deze waarden:
 
-    - **Van alle items**: Selecteer deze optie als u een pijp lijn hebt ingesteld die u wilt gebruiken in een webservice of in de productie omgeving.  Met deze optie schakelt u de *productie modus*in. De module maakt aanbevelingen van alle items die tijdens de training worden weer gegeven.
+    - **Van alle items**: Selecteer deze optie als u een pijp lijn hebt ingesteld die u wilt gebruiken in een webservice of in de productie omgeving.  Met deze optie schakelt u de *productie modus* in. De module maakt aanbevelingen van alle items die tijdens de training worden weer gegeven.
 
-    - **Van geclassificeerde items (voor model evaluatie)**: Selecteer deze optie als u een model ontwikkelt of test. Met deze optie wordt de *evaluatie modus*ingeschakeld. In de module worden alleen aanbevelingen gedaan van de items in de ingevoerde gegevensset die zijn geclassificeerd.
+    - **Van geclassificeerde items (voor model evaluatie)**: Selecteer deze optie als u een model ontwikkelt of test. Met deze optie wordt de *evaluatie modus* ingeschakeld. In de module worden alleen aanbevelingen gedaan van de items in de ingevoerde gegevensset die zijn geclassificeerd.
     
     - **Van niet-geclassificeerde items (om nieuwe items voor te stellen voor gebruikers)**: Selecteer deze optie als u wilt dat de module alleen aanbevelingen van de items in de trainings gegevensset bevat die niet zijn geclassificeerd. 
 
-4. Voeg de gegevensset toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om**deze te beoordelen.
+4. Voeg de gegevensset toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om** deze te beoordelen.
 
-    - Voor **van alle items**moet de invoer gegevensset bestaan uit één kolom. Het bevat de id's van gebruikers voor wie aanbevelingen moeten worden gedaan.
+    - Voor **van alle items** moet de invoer gegevensset bestaan uit één kolom. Het bevat de id's van gebruikers voor wie aanbevelingen moeten worden gedaan.
 
       De gegevensset kan een extra twee kolommen met item-id's en classificaties bevatten, maar deze twee kolommen worden genegeerd. 
 
@@ -106,7 +106,7 @@ Als u items wilt aanbevelen voor gebruikers, geeft u een lijst met gebruikers en
 De gescoorde gegevensset die door Score SVD wordt geretourneerd, vermeldt de aanbevolen items voor elke gebruiker:
 
 - De eerste kolom bevat de gebruikers-id's.
-- Er worden een aantal extra kolommen gegenereerd, afhankelijk van de waarde die u hebt ingesteld voor het **maximum aantal items dat aan een gebruiker**moet worden aanbevolen. Elke kolom bevat een aanbevolen item (per id). De aanbevelingen worden geordend op basis van de gebruikers affiniteit. Het item met de hoogste affiniteit wordt in kolom **item 1**geplaatst.
+- Er worden een aantal extra kolommen gegenereerd, afhankelijk van de waarde die u hebt ingesteld voor het **maximum aantal items dat aan een gebruiker** moet worden aanbevolen. Elke kolom bevat een aanbevolen item (per id). De aanbevelingen worden geordend op basis van de gebruikers affiniteit. Het item met de hoogste affiniteit wordt in kolom **item 1** geplaatst.
 
 
 ##  <a name="technical-notes"></a>Technische opmerkingen

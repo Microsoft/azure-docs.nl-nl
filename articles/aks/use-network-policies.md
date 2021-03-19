@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Meer informatie over het beveiligen van verkeer dat in en uit het meren aantal stromen met behulp van Kubernetes-netwerk beleid in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 05/06/2019
-ms.openlocfilehash: 4b72c5551d6ed33deb4df40a60215aed8071141d
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.date: 03/16/2021
+ms.openlocfilehash: 17e14859ecdfe11872d5b0526d755d01bc1b034a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102178895"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577849"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Verkeer beveiligen tussen een Peul netwerk beleid dat wordt gebruikt in azure Kubernetes service (AKS)
 
@@ -181,9 +181,13 @@ Er is momenteel een preview-versie van Calico-netwerk beleid met Windows-knoop p
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
-```azurecli
-PASSWORD_WIN="P@ssw0rd1234"
+Maak een gebruikers naam om te gebruiken als beheerders referenties voor uw Windows Server-containers in uw cluster. Met de volgende opdrachten wordt u naar een gebruikers naam gevraagd en deze WINDOWS_USERNAME instellen voor gebruik in een latere opdracht (Houd er rekening mee dat de opdrachten in dit artikel worden ingevoerd in een BASH-shell).
 
+```azurecli-interactive
+echo "Please enter the username to use as administrator credentials for Windows Server containers on your cluster: " && read WINDOWS_USERNAME
+```
+
+```azurecli
 az aks create \
     --resource-group $RESOURCE_GROUP_NAME \
     --name $CLUSTER_NAME \
@@ -195,8 +199,7 @@ az aks create \
     --vnet-subnet-id $SUBNET_ID \
     --service-principal $SP_ID \
     --client-secret $SP_PASSWORD \
-    --windows-admin-password $PASSWORD_WIN \
-    --windows-admin-username azureuser \
+    --windows-admin-username $WINDOWS_USERNAME \
     --vm-set-type VirtualMachineScaleSets \
     --kubernetes-version 1.20.2 \
     --network-plugin azure \
@@ -222,7 +225,7 @@ az aks get-credentials --resource-group $RESOURCE_GROUP_NAME --name $CLUSTER_NAM
 
 ## <a name="deny-all-inbound-traffic-to-a-pod"></a>Alle binnenkomend verkeer naar een pod weigeren
 
-Voordat u regels definieert om specifiek netwerk verkeer toe te staan, moet u eerst een netwerk beleid maken om al het verkeer te weigeren. Dit beleid geeft u een start punt om te beginnen met het maken van een acceptatie lijst voor alleen het gewenste verkeer. U kunt ook duidelijk zien dat verkeer wordt verwijderd wanneer het netwerk beleid wordt toegepast.
+Voordat u regels definieert om specifiek netwerk verkeer toe te staan, moet u eerst een netwerk beleid maken om al het verkeer te weigeren. Dit beleid geeft u een start punt om te beginnen met het maken van een allowlist voor alleen het gewenste verkeer. U kunt ook duidelijk zien dat verkeer wordt verwijderd wanneer het netwerk beleid wordt toegepast.
 
 Voor de voor beelden van toepassings omgeving en verkeers regels maakt u eerst een naam ruimte met de naam *ontwikkeling* om het voor beeld uit te voeren:
 
@@ -234,13 +237,13 @@ kubectl label namespace/development purpose=development
 Maak een voor beeld van een back-end-pod die NGINX uitvoert. Deze back-end pod kan worden gebruikt voor het simuleren van een voor beeld van een back-end-webtoepassing. Maak deze pod in de *ontwikkelings* naam ruimte en open poort *80* voor webverkeer. Voorzie de Pod met *app = webapp, Role = back-end* zodat we deze in de volgende sectie met een netwerk beleid kunnen richten:
 
 ```console
-kubectl run backend --image=nginx --labels app=webapp,role=backend --namespace development --expose --port 80
+kubectl run backend --image=mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine --labels app=webapp,role=backend --namespace development --expose --port 80
 ```
 
 Maak een andere pod en koppel een terminal sessie om te testen of u de standaard NGINX-webpagina kunt bereiken:
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development
+kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
 Gebruik bij de shell-prompt `wget` om te bevestigen dat u toegang hebt tot de standaard NGINX-webpagina:
@@ -296,7 +299,7 @@ kubectl apply -f backend-policy.yaml
 Laten we eens kijken of u de NGINX-webpagina op de back-end-pod opnieuw kunt gebruiken. Een andere test pod maken en een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development
+kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
 In de shell-prompt kunt u gebruiken `wget` om te zien of u toegang hebt tot de standaard NGINX-webpagina. Stel deze keer een time-outwaarde in op *2* seconden. Het netwerk beleid blokkeert nu al het inkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weer gegeven in het volgende voor beeld:
@@ -353,7 +356,7 @@ kubectl apply -f backend-policy.yaml
 Een pod plannen die als *app = webapp, Role = frontend* wordt aangeduid en een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development
+kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace development
 ```
 
 In de shell-prompt kunt u gebruiken `wget` om te controleren of u toegang hebt tot de standaard NGINX-webpagina:
@@ -383,7 +386,7 @@ exit
 Het netwerk beleid staat verkeer toe van een Peul gelabelde *app: webapp, Role:* front-end, maar moet al het andere verkeer weigeren. Laten we eens kijken of een andere pod zonder die labels toegang hebben tot de back-end NGINX pod. Een andere test pod maken en een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development
+kubectl run --rm -it --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 network-policy --namespace development
 ```
 
 In de shell-prompt kunt u gebruiken `wget` om te zien of u toegang hebt tot de standaard NGINX-webpagina. Het netwerk beleid blokkeert het inkomende verkeer, zodat de pagina niet kan worden geladen, zoals wordt weer gegeven in het volgende voor beeld:
@@ -416,7 +419,7 @@ kubectl label namespace/production purpose=production
 Een test pod plannen in de *productie* naam ruimte die is gelabeld als *app = webapp, Role = frontend*. Een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production
+kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace production
 ```
 
 Gebruik bij de shell-prompt `wget` om te bevestigen dat u toegang hebt tot de standaard NGINX-webpagina:
@@ -480,7 +483,7 @@ kubectl apply -f backend-policy.yaml
 Een andere pod plannen in de *productie* naam ruimte en een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production
+kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace production
 ```
 
 Gebruik bij de shell-prompt `wget` om te zien dat het netwerk beleid nu verkeer weigert:
@@ -502,7 +505,7 @@ exit
 Wanneer het verkeer is geweigerd vanuit de *productie* naam ruimte, moet u een test pod weer plannen in de *ontwikkelings* naam ruimte en een terminal sessie koppelen:
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development
+kubectl run --rm -it frontend --image=mcr.microsoft.com/aks/fundamental/base-ubuntu:v0.0.11 --labels app=webapp,role=frontend --namespace development
 ```
 
 Gebruik bij de shell-prompt `wget` om te zien dat het netwerk beleid het verkeer toestaat:

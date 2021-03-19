@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8a1a2d7f5272def78cd162da1f6ac0265d4fb30b
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 66f11b7a5124f0b9b834b79368d57443ab33e850
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102517733"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578342"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Bureau blad-app voor het aanroepen van web-Api's: app-registratie
 
@@ -40,10 +40,14 @@ Als uw bureaublad toepassing interactieve verificatie gebruikt, kunt u gebruiker
 
 De omleidings-Uri's voor gebruik in een bureaublad toepassing is afhankelijk van de stroom die u wilt gebruiken.
 
-- Als u interactieve verificatie of de code stroom van het apparaat gebruikt, gebruikt u `https://login.microsoftonline.com/common/oauth2/nativeclient` . Als u deze configuratie wilt behaalt, selecteert u de bijbehorende URL in het gedeelte **verificatie** voor uw toepassing.
+Geef de omleidings-URI voor uw app op door [de platform instellingen](quickstart-register-app.md#add-a-redirect-uri) voor de app in **app-registraties** te configureren in de Azure Portal.
+
+- Voor apps die interactieve verificatie gebruiken:
+  - Apps die gebruikmaken van Inge sloten browsers: `https://login.microsoftonline.com/common/oauth2/nativeclient`
+  - Apps die gebruikmaken van systeem browsers: `http://localhost`
 
   > [!IMPORTANT]
-  > Het gebruik van `https://login.microsoftonline.com/common/oauth2/nativeclient` als de omleidings-URI wordt aanbevolen als een beveiligings best practice.  Als er geen omleidings-URI is opgegeven, wordt MSAL.NET `urn:ietf:wg:oauth:2.0:oob` standaard gebruikt. dit wordt niet aanbevolen.  Deze standaard instelling wordt bijgewerkt als gevolg van een wijziging in de volgende belang rijke release.
+  > Als beveiligings best practice wordt u aangeraden expliciet in te stellen `https://login.microsoftonline.com/common/oauth2/nativeclient` of `http://localhost` als de omleidings-URI. Sommige verificatie bibliotheken zoals MSAL.NET gebruiken een standaard waarde van `urn:ietf:wg:oauth:2.0:oob` wanneer er geen andere omleidings-URI is opgegeven. dit wordt niet aanbevolen. Deze standaard instelling wordt bijgewerkt als gevolg van een wijziging in de volgende belang rijke release.
 
 - Als u een systeem eigen doel-C of SWIFT-app voor macOS bouwt, moet u de omleidings-URI registreren op basis van de bundel-id van uw toepassing in de volgende indeling: `msauth.<your.app.bundle.id>://auth` . Vervang door `<your.app.bundle.id>` de bundel-id van uw toepassing.
 - Als uw app alleen geïntegreerde Windows-verificatie of een gebruikers naam en wacht woord gebruikt, hoeft u geen omleidings-URI voor uw toepassing te registreren. Deze stromen maken een retour afronding naar het micro soft Identity platform v 2.0-eind punt. Uw toepassing wordt niet terugaangeroepen op een specifieke URI.

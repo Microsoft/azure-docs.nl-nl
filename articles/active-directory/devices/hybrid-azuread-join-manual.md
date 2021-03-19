@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f346b997b5e0c785d066ce3a1edaab8cbea10212
-ms.sourcegitcommit: b4647f06c0953435af3cb24baaf6d15a5a761a9c
+ms.openlocfilehash: 28cc8a858d1779e17c893d64eda5f907bb4c808e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/02/2021
-ms.locfileid: "101644116"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577985"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Zelfstudie: Hybride Azure Active Directory-gekoppelde apparaten handmatig configureren
 
@@ -74,6 +74,9 @@ Als uw organisatie beheerde (niet-federatieve) installatie met on-premises Activ
 Voor Windows 10-apparaten met versie 1703 of eerder: als uw organisatie toegang tot internet via een uitgaande proxy vereist, moet u WPAD (Web Proxy Auto-Discovery) implementeren om Windows 10-computers in staat te stellen apparaten te registreren bij Azure AD.
 
 Vanaf Windows 10 1803 probeert een apparaat het koppelen van de hybride Azure AD te voltooien via de gesynchroniseerde computer of het gesynchroniseerde apparaat, zelfs als het via AD FS koppelen van de hybride Azure AD wordt uitgevoerd vanaf een apparaat in een federatief domein mislukt en Azure AD Connect is geconfigureerd om de computer-/apparaatobjecten te synchroniseren met Azure AD.
+
+> [!NOTE]
+> Als u de synchronisatie koppeling voor apparaatregistratie wilt ophalen, moet u als onderdeel van de configuratie van de apparaatregistratie de standaard kenmerken van het apparaat niet uitsluiten van de configuratie van de Azure AD Connect synchronisatie. Zie [kenmerken gesynchroniseerd door Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized#windows-10)voor meer informatie over standaard kenmerken van apparaten die zijn gesynchroniseerd met Azure AD.
 
 Om te controleren of het apparaat toegang heeft tot de bovenstaande Microsoft-resources onder het systeemaccount, kunt u het script [Test Device Registration Connectivity](/samples/azure-samples/testdeviceregconnectivity/testdeviceregconnectivity/) gebruiken.
 

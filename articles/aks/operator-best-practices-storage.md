@@ -6,10 +6,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 722fe393ad7637be20360463a4c3b6234224a036
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88653967"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor opslag en back-ups in azure Kubernetes service (AKS)
@@ -61,7 +61,7 @@ Als uw toepassingen Azure-schijven vereisen als opslag oplossing, moet u een ges
 
 | Type en grootte van knoop punt | vCPU | Geheugen (GiB) | Max. aantal gegevensschijven | Maxi maal aantal IOPS niet in cache geplaatste schijven | Maxi maal aantal door Voer (MBps) niet in cache |
 |--------------------|------|--------------|----------------|------------------------|--------------------------------|
-| Standard_B2ms      | 2    | 8            | 4              | 1.920                  | 22,5                           |
+| Standard_B2ms      | 2    | 8            | 4              | 1.920                  | 22.5                           |
 | Standard_DS2_v2    | 2    | 7            | 8              | 6.400                  | 96                             |
 
 Hier kan de *Standard_DS2_v2* dubbel het aantal gekoppelde schijven toestaan en drie tot vier keer de hoeveelheid IOPS en schijf doorvoer. Als u alleen de kern Compute-resources en de vergeleken kosten hebt bekeken, kunt u de *Standard_B2ms* VM-grootte kiezen en de prestaties en beperkingen van de opslag verslechteren. Werk samen met uw Application Development-team om inzicht te krijgen in hun opslag capaciteit en prestatie behoeften. Kies de juiste VM-grootte voor de AKS-knoop punten om te voldoen aan de prestatie vereisten of deze te overschrijden. Basislijn toepassingen regel matig om de VM-grootte naar behoefte aan te passen.
@@ -82,7 +82,7 @@ Zie voor de concepten over het dynamisch maken en gebruiken van volumes de [clai
 
 Zie voor het weer geven van deze volumes in actie dynamisch een permanent volume maken en gebruiken met [Azure-schijven][dynamic-disks] of [Azure files][dynamic-files].
 
-Stel, als onderdeel van de definities van uw opslag klassen, de juiste *reclaimPolicy*in. Deze reclaimPolicy bepaalt het gedrag van de onderliggende Azure Storage-Resource wanneer de Pod wordt verwijderd en het permanente volume mogelijk niet meer nodig is. De onderliggende opslag resource kan worden verwijderd of blijvend worden gebruikt met een toekomstige pod. De reclaimPolicy kan worden ingesteld om te worden *behouden* of *verwijderd*. Inzicht in de behoeften van uw toepassing en regel matige controles uitvoeren op opslag die wordt bewaard om de hoeveelheid ongebruikte opslag ruimte te beperken die wordt gebruikt en gefactureerd.
+Stel, als onderdeel van de definities van uw opslag klassen, de juiste *reclaimPolicy* in. Deze reclaimPolicy bepaalt het gedrag van de onderliggende Azure Storage-Resource wanneer de Pod wordt verwijderd en het permanente volume mogelijk niet meer nodig is. De onderliggende opslag resource kan worden verwijderd of blijvend worden gebruikt met een toekomstige pod. De reclaimPolicy kan worden ingesteld om te worden *behouden* of *verwijderd*. Inzicht in de behoeften van uw toepassing en regel matige controles uitvoeren op opslag die wordt bewaard om de hoeveelheid ongebruikte opslag ruimte te beperken die wordt gebruikt en gefactureerd.
 
 Zie [opslag beleid][reclaim-policy]voor meer informatie over opties voor opslag klassen.
 

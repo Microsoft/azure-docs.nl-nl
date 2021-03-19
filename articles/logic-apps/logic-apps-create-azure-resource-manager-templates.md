@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
 ms.openlocfilehash: 4535e6bf11f8c2abf20b1b323925c3fc3299d362
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90971783"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Azure Resource Manager-sjablonen maken voor het automatiseren van de implementatie voor Azure Logic Apps
@@ -34,7 +34,7 @@ Zie de volgende onderwerpen voor meer informatie over Azure Resource Manager sja
 
 Voor de eenvoudigste manier om geldige sjablonen voor logische apps met para meters te maken die in de meeste gevallen gereed zijn voor implementatie, gebruikt u Visual Studio (gratis Community Edition of hoger) en de Azure Logic Apps-Hulpprogram Ma's voor Visual Studio. U kunt vervolgens [uw logische app maken in Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md) of [een bestaande logische app zoeken en downloaden van de Azure Portal naar Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md).
 
-Door uw logische app te downloaden, krijgt u een sjabloon die de definities voor uw logische app en andere resources, zoals verbindingen, bevat. De sjabloon bevat ook *parameterizes*of definieert para meters voor de waarden die worden gebruikt voor het implementeren van uw logische app en andere resources. U kunt de waarden voor deze para meters opgeven in een afzonderlijk parameter bestand. Op die manier kunt u deze waarden gemakkelijker wijzigen op basis van uw implementatie behoeften. Raadpleeg de volgende onderwerpen voor meer informatie:
+Door uw logische app te downloaden, krijgt u een sjabloon die de definities voor uw logische app en andere resources, zoals verbindingen, bevat. De sjabloon bevat ook *parameterizes* of definieert para meters voor de waarden die worden gebruikt voor het implementeren van uw logische app en andere resources. U kunt de waarden voor deze para meters opgeven in een afzonderlijk parameter bestand. Op die manier kunt u deze waarden gemakkelijker wijzigen op basis van uw implementatie behoeften. Raadpleeg de volgende onderwerpen voor meer informatie:
 
 * [Logische apps maken met Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
 * [Logische apps beheren met Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md)

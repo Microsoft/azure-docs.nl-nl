@@ -11,10 +11,10 @@ ms.topic: reference
 ms.date: 05/29/2019
 ms.author: pafarley
 ms.openlocfilehash: 7fc46d06b68dca074da060b4866186a6242ffad2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "72757380"
 ---
 # <a name="content-moderator-api-reference"></a>Naslag informatie over Content Moderator-API
@@ -28,7 +28,7 @@ U kunt op de volgende manieren aan de slag met Azure Content Moderator-Api's:
 
 U kunt de volgende Content Moderator-Api's gebruiken voor het instellen van uw werk stromen na toezicht.
 
-| Beschrijving | Naslaginformatie |
+| Description | Referentie |
 | -------------------- |-------------|
 | **Afbeeldingstoezicht-API**<br /><br />Scan afbeeldingen en Detecteer potentiële inhoud voor volwassenen en ongepaste met behulp van tags, betrouwbaarheids scores en andere geëxtraheerde informatie. <br /><br />Gebruik deze informatie om de inhoud in uw werk stroom na toezicht te publiceren, af te wijzen of te controleren. <br /><br />| [API-verwijzing voor afbeeldings toezicht](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c "API-verwijzing voor afbeeldings toezicht")   |
 | **Teksttoezicht-API**<br /><br />Tekst inhoud scannen. Voor waarden voor scheld woorden en persoonlijke gegevens worden geretourneerd. <br /><br />Gebruik deze informatie om de inhoud in uw werk stroom na toezicht te publiceren, af te wijzen of te controleren.<br /><br /> | [Naslag informatie voor de API voor tekst toezicht](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f "Naslag informatie voor de API voor tekst toezicht")   |
@@ -39,7 +39,7 @@ U kunt de volgende Content Moderator-Api's gebruiken voor het instellen van uw w
 
 De beoordelings-Api's hebben de volgende onderdelen:
 
-| Beschrijving | Naslaginformatie |
+| Description | Referentie |
 | -------------------- |-------------|
 | **Taken**<br /><br /> Scan-en revisie werk stromen initiëren voor zowel afbeeldings-als tekst inhoud. Een moderator taak scant uw inhoud met behulp van de afbeeldings toezicht-API en de tekst toezicht-API. Toezicht taken maken gebruik van de gedefinieerde en standaard werk stromen om beoordelingen te genereren. <br /><br />Nadat een Human toezicht houder de automatisch toegewezen tags en Voorspellings gegevens heeft gecontroleerd en een beslissing voor inhouds toezicht heeft ingediend, verzendt de beoordelings-API alle informatie naar uw API-eind punt.<br /><br /> | [Taak verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c5 "Taak verwijzing")   |
 | **Reviews**<br /><br />Gebruik het hulp programma voor controle om rechtstreeks afbeeldings-of tekst beoordelingen te maken voor menselijke moderators.<br /><br /> Nadat een Human toezicht houder de automatisch toegewezen tags en Voorspellings gegevens heeft gecontroleerd en een beslissing voor inhouds toezicht heeft ingediend, verzendt de beoordelings-API alle informatie naar uw API-eind punt.<br /><br /> | [Verwijzing controleren](https://westus.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c4 "Verwijzing controleren")   |

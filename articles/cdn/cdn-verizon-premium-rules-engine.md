@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 05/31/2019
 ms.author: allensu
 ms.openlocfilehash: a49912bc2275e478d657f06587c4ddc830210d3a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87040204"
 ---
 # <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>HTTP-gedrag negeren met behulp van de Azure CDN van de Verizon Premium-regel engine
@@ -73,14 +73,14 @@ Voor toegang tot de regel engine moet u eerst **beheren** selecteren vanaf de bo
    >
    >
 
-5. Als u een nieuwe functie wilt toevoegen, selecteert u de **+** knop naast **functies**.  Selecteer in de vervolg keuzelijst aan de linkerkant de optie **interne Max. leeftijd forceren**.  Typ **300**in het tekstvak dat wordt weer gegeven. Wijzig de resterende standaard waarden niet.
+5. Als u een nieuwe functie wilt toevoegen, selecteert u de **+** knop naast **functies**.  Selecteer in de vervolg keuzelijst aan de linkerkant de optie **interne Max. leeftijd forceren**.  Typ **300** in het tekstvak dat wordt weer gegeven. Wijzig de resterende standaard waarden niet.
    
    ![CDN-regel functie](./media/cdn-rules-engine/cdn-new-feature.png)
    
    > [!NOTE]
    > Er zijn meerdere functies beschikbaar in de vervolg keuzelijst. Voor informatie over de momenteel geselecteerde functie selecteert u het blauwe informatie pictogram aan de linkerkant.
    >
-   > Voor een **afdwinging van de interne maximale leeftijd**worden de activa `Cache-Control` en `Expires` kopteksten overschreven om te bepalen wanneer de Asset door het CDN Edge-knoop punt van de oorsprong wordt vernieuwd. In dit voor beeld slaat het element van de CDN-rand het activum gedurende 300 seconden of 5 minuten op in de cache voordat het het activum van de oorsprong vernieuwt.
+   > Voor een **afdwinging van de interne maximale leeftijd** worden de activa `Cache-Control` en `Expires` kopteksten overschreven om te bepalen wanneer de Asset door het CDN Edge-knoop punt van de oorsprong wordt vernieuwd. In dit voor beeld slaat het element van de CDN-rand het activum gedurende 300 seconden of 5 minuten op in de cache voordat het het activum van de oorsprong vernieuwt.
    >
    > Zie [regels engine-functies](cdn-verizon-premium-rules-engine-reference-features.md)voor een gedetailleerde lijst met functies.
    >
@@ -97,7 +97,7 @@ Voor toegang tot de regel engine moet u eerst **beheren** selecteren vanaf de bo
 
 - [Overzicht van Azure CDN](cdn-overview.md)
 - [Referentie voor regels-engine](cdn-verizon-premium-rules-engine-reference.md)
-- [Overeenkomende voor waarden voor regel engine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Criteria voor overeenkomst in de regelengine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
 - [Voorwaardelijke expressies in de regelengine](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
 - [Functies van de regelengine](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Azure vrijdag: de krachtige nieuwe Premium-functies van Azure CDN](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (video)

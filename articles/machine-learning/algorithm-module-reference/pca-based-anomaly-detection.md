@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
 ms.openlocfilehash: fa90fcb9ebc17be9a658b08873234eada98b0fba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898464"
 ---
 # <a name="pca-based-anomaly-detection-module"></a>Module voor afwijkings detectie PCA-Based
@@ -28,7 +28,7 @@ Als u bijvoorbeeld frauduleuze trans acties wilt detecteren, hebt u vaak niet vo
 
 PCA is een vastgelegde techniek in machine learning. Het wordt vaak gebruikt in de verkennende analyse van gegevens omdat hiermee de binnenste structuur van de gegevens wordt onthuld en de variantie in de gegevens wordt uitgelegd.
 
-PCA werkt met het analyseren van gegevens die meerdere variabelen bevatten. Er wordt gezocht naar correlaties tussen de variabelen en bepaalt de combi natie van waarden die de beste verschillen in resultaten vastleggen. Deze gecombineerde functie waarden worden gebruikt voor het maken van een compactere functie ruimte die de *belangrijkste onderdelen*wordt genoemd.
+PCA werkt met het analyseren van gegevens die meerdere variabelen bevatten. Er wordt gezocht naar correlaties tussen de variabelen en bepaalt de combi natie van waarden die de beste verschillen in resultaten vastleggen. Deze gecombineerde functie waarden worden gebruikt voor het maken van een compactere functie ruimte die de *belangrijkste onderdelen* wordt genoemd.
 
 Voor een afwijkings detectie wordt elke nieuwe invoer geanalyseerd. Het algoritme voor anomalie detectie berekent de projectie op de eigenvectors, samen met een genormaliseerde reconstructie fout. De genormaliseerde fout wordt gebruikt als afwijkings Score. Hoe hoger de fout, hoe meer afwijkend het exemplaar is.
 
@@ -54,7 +54,7 @@ Raadpleeg de volgende artikelen voor meer informatie over hoe PCA werkt en over 
 
 4. Geef op hoeveel oversteek proeven moeten worden uitgevoerd tijdens wille keurige PCA-trainingen. In het geval van anomalie detectie problemen is het moeilijk om standaard PCA-technieken toe te passen. Als u een aantal oversteek proeven opgeeft, kunt u het aantal doel instanties verhogen.
 
-    Als u **1**opgeeft, wordt er geen oversteek proef uitgevoerd. Als u een waarde opgeeft die hoger is dan **1**, worden extra voor beelden gegenereerd voor het maken van het model.
+    Als u **1** opgeeft, wordt er geen oversteek proef uitgevoerd. Als u een waarde opgeeft die hoger is dan **1**, worden extra voor beelden gegenereerd voor het maken van het model.
 
     Er zijn twee opties, afhankelijk van of u een para meter-sweep gebruikt of niet:
 
@@ -87,7 +87,7 @@ De resultaten van een model voor anomalie detectie evalueren:
 
     Soms worden de meta gegevens die zijn gekoppeld aan de kolom Label, verwijderd in de pipeline-grafiek. Als dit het geval is, kunt u, wanneer u de module [Evaluate model](evaluate-model.md) gebruiken om de resultaten van twee anomalie detectie modellen te vergelijken, de fout melding krijgen dat er geen label kolom is in de Score van de gescoorde gegevensset. Het is ook mogelijk dat er een fout melding wordt weer geven dat er geen label kolom is in de Score van de gescoorde gegevensset om te vergelijken.
 
-    U kunt deze fouten vermijden door de module [meta gegevens bewerken](edit-metadata.md) voor de module [Evaluate model](evaluate-model.md) toe te voegen. Gebruik de kolom kiezer om de kolom klasse te kiezen en selecteer **Label**in de lijst **velden** .
+    U kunt deze fouten vermijden door de module [meta gegevens bewerken](edit-metadata.md) voor de module [Evaluate model](evaluate-model.md) toe te voegen. Gebruik de kolom kiezer om de kolom klasse te kiezen en selecteer **Label** in de lijst **velden** .
 
 3. Gebruik de [script module python uitvoeren](execute-python-script.md) om Label kolom Categorieën aan te passen als **1 (positief, normaal)** en **0 (negatief, abnormaal)**.
 

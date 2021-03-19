@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: areddish
 ms.openlocfilehash: c134f30b124113a23df0e73cd1bbc8209e335183
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "73647503"
 ---
 # <a name="update-to-the-30-api"></a>Bijwerken naar de 3,0-API
@@ -49,7 +49,7 @@ Zodra een iteratie is getraind, kunt u deze beschikbaar stellen voor voor spelli
 ![De pagina met de Custom Vision website-instellingen met de Voorspellings Resource-ID wordt beschreven.](./media/update-application-to-3.0-sdk/prediction-id.png)
 
 > [!TIP]
-> U kunt deze informatie ook ophalen via de [Azure-Portal](https://portal.azure.com) door naar de Custom Vision Voorspellings bron te gaan en **Eigenschappen**te selecteren.
+> U kunt deze informatie ook ophalen via de [Azure-Portal](https://portal.azure.com) door naar de Custom Vision Voorspellings bron te gaan en **Eigenschappen** te selecteren.
 
 Zodra de herhaling is gepubliceerd, kunnen apps deze gebruiken voor voor spelling door de naam op te geven in de API-aanroep voor de voor spelling. Als u een iteratie niet beschikbaar wilt maken voor Voorspellings aanroepen, gebruikt u de **[UnpublishIteration](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b81a)** -API.
 

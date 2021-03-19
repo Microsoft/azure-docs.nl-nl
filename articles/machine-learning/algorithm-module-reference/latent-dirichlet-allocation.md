@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 06/05/2020
 ms.openlocfilehash: f9f239ea69aaf71e591a447feb300c13a45ba1a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90907849"
 ---
 # <a name="latent-dirichlet-allocation-module"></a>Dirichlet-toewijzings module
@@ -30,7 +30,7 @@ Deze module haalt een tekst kolom op en genereert de volgende uitvoer:
 
 + Een trans formatie, die u kunt opslaan en opnieuw Toep assen op nieuwe tekst die als invoer wordt gebruikt
 
-Deze module maakt gebruik van de scikit-Learn-bibliotheek. Zie de [github-opslag plaats](https://github.com/scikit-learn/scikit-learn)met zelf studies en een uitleg van het algoritme voor meer informatie over scikit-informatie.
+Deze module maakt gebruik van de scikit-Learn-bibliotheek. Zie de [github-opslag plaats](https://github.com/scikit-learn/scikit-learn)met zelf studies en een uitleg van het algoritme voor meer informatie over scikit-informatie.
 
 ## <a name="more-about-latent-dirichlet-allocation"></a>Meer informatie over de toewijzing van latente Dirichlet
 
@@ -52,7 +52,7 @@ Deze module vereist een gegevensset die een kolom met tekst bevat, hetzij RAW of
 
 2. Geef als invoer voor de module een gegevensset op die een of meer tekst kolommen bevat.
 
-3. Kies voor **doel kolommen**een of meer kolommen die te analyseren tekst bevatten.
+3. Kies voor **doel kolommen** een of meer kolommen die te analyseren tekst bevatten.
 
     U kunt meerdere kolommen kiezen, maar deze moeten van het **teken reeks** gegevens type zijn.
 
@@ -62,7 +62,7 @@ Deze module vereist een gegevensset die een kolom met tekst bevat, hetzij RAW of
 
     Standaard worden er vijf onderwerpen gemaakt.
 
-5. Voor **n-gram**geeft u de maximale lengte van n-gram op die tijdens hashing wordt gegenereerd.
+5. Voor **n-gram** geeft u de maximale lengte van n-gram op die tijdens hashing wordt gegenereerd.
 
     De standaard waarde is 2, wat betekent dat zowel bigrams als unigrams worden gegenereerd.
 
@@ -77,7 +77,7 @@ Deze module vereist een gegevensset die een kolom met tekst bevat, hetzij RAW of
     > [!NOTE] 
     > In Azure Machine Learning Designer biedt de bibliotheek scikit-Learn geen ondersteuning meer voor ongebruikelijke *doc_topic_distr* uitvoer van versie 0,19. In deze module kan de para meter **normaliseren** alleen worden toegepast op de matrix uitvoer van het *functie onderwerp* . De uitvoer van de *getransformeerde gegevensset* is altijd genormaliseerd.
 
-7. Selecteer de optie **alle opties weer geven**en stel deze in op **waar** als u de volgende geavanceerde para meters wilt instellen.
+7. Selecteer de optie **alle opties weer geven** en stel deze in op **waar** als u de volgende geavanceerde para meters wilt instellen.
 
     Deze para meters zijn specifiek voor de scikit-leer implementatie van LDA. Er zijn een aantal goede zelf studies over LDA in scikit-informatie, evenals het officiële [scikit-document](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html).
 
@@ -99,7 +99,7 @@ Deze module vereist een gegevensset die een kolom met tekst bevat, hetzij RAW of
 
     Als u de eerste woorden lijst vooraf maakt, kunt u later de woorden lijst gebruiken bij het controleren van het model. Het is over het algemeen eenvoudiger om resultaten toe te wijzen aan tekst in plaats van numerieke indexen. Het opslaan van de woorden lijst duurt echter langer en het gebruik van extra opslag ruimte.
 
-9. Voer voor **maximale grootte van ngram-woorden lijst**het totale aantal rijen in dat kan worden gemaakt in de n-gram-woorden lijst.
+9. Voer voor **maximale grootte van ngram-woorden lijst** het totale aantal rijen in dat kan worden gemaakt in de n-gram-woorden lijst.
 
     Deze optie is handig voor het beheren van de grootte van de woorden lijst. Maar als het aantal ngrams in de invoer groter is dan deze grootte, kunnen er conflicten optreden.
 
@@ -156,7 +156,7 @@ In de ontwerp functie kunt u ook R-of python-bibliotheken gebruiken voor tekst v
 
 Deze sectie bevat implementatie details, tips en antwoorden op veelgestelde vragen.
 
-### <a name="implementation-details"></a>Implementatie Details
+### <a name="implementation-details"></a>Implementatiegegevens
 
 Standaard worden de distributies van uitvoer voor een getransformeerde gegevensset en functie-topic genormaliseerd als kansen:
 
@@ -187,7 +187,7 @@ Nadat de termen van de term zijn berekend, vergelijkt een op afstand gebaseerde 
 |Aantal te model lerene onderwerpen|Geheel getal|[1; 1000]|Vereist|5|Model de document distributie met N onderwerpen.|  
 |N-gram|Geheel getal|[1; 10]|Vereist|2|De volg orde van N-gram die tijdens de hash-bewerking is gegenereerd.|  
 |Normaliseren|Booleaans|Waar of onwaar|Vereist|true|Normaliseer uitvoer naar kansen.  De getransformeerde gegevensset is P (onderwerp&#124;document) en de matrix van het functie onderwerp is P (woord&#124;onderwerp).|  
-|Alle opties weer geven|Booleaans|Waar of onwaar|Vereist|False|Geeft aanvullende para meters die specifiek zijn voor scikit-Learn Online LDA.|  
+|Alle opties weer geven|Booleaans|Waar of onwaar|Vereist|Niet waar|Geeft aanvullende para meters die specifiek zijn voor scikit-Learn Online LDA.|  
 |Rho-para meter|Float|[0.00001; 1.0]|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|0,01|Voorafgaande distributie van onderwerps woord.|  
 |Alpha-para meter|Float|[0.00001; 1.0]|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|0,01|Document onderwerp voorafgaande distributie.|  
 |Geschat aantal documenten|Geheel getal|[1; int. MaxValue|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|1000|Het geschatte aantal documenten. Komt overeen met de `total_samples` para meter.|  
@@ -195,10 +195,10 @@ Nadat de termen van de term zijn berekend, vergelijkt een op afstand gebaseerde 
 |Aanvankelijke waarde van herhaling die wordt gebruikt voor de update planning voor het trainings tempo|Geheel getal|[0; int. MaxValue|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|0|Aanvankelijke waarde voor downweights Learning rate voor vroege iteraties. Komt overeen met de `learning_offset` para meter.|  
 |Kracht toegepast op de herhaling tijdens updates|Float|[0,0; 1.0]|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|0,5|Kracht toegepast op het aantal iteraties om het leer tempo te beheren. Komt overeen met de `learning_decay` para meter. |  
 |Aantal opleidings herhalingen|Geheel getal|[1; 1024]|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|25|Aantal opleidings herhalingen.|  
-|Woorden lijst van ngrams bouwen|Booleaans|Waar of onwaar|Van toepassing wanneer het selectie vakje **alle opties weer geven** *is uitgeschakeld*|True|Bouwt een woorden lijst van ngrams vóór de Computing LDA. Nuttig voor het controleren van modellen en interpretaties.|  
+|Woorden lijst van ngrams bouwen|Booleaans|Waar of onwaar|Van toepassing wanneer het selectie vakje **alle opties weer geven** *is uitgeschakeld*|Waar|Bouwt een woorden lijst van ngrams vóór de Computing LDA. Nuttig voor het controleren van modellen en interpretaties.|  
 |Maximale grootte van ngram-woorden lijst|Geheel getal|[1; int. MaxValue|Van toepassing wanneer de keuze **lijst Dictionary van Ngrams** **waar** is|20.000|Maximale grootte van de ngrams-woorden lijst. Als het aantal tokens in de invoer groter is dan deze grootte, kunnen er conflicten optreden.|  
 |Het aantal bits dat moet worden gebruikt voor functie-hashing.|Geheel getal|[1; 31]|Van toepassing wanneer het selectie vakje **alle opties weer geven** *niet* is ingeschakeld en het **bouwen van de woorden lijst ngrams** is ingesteld op **False**|12|Het aantal bits dat moet worden gebruikt voor functie-hashing.| 
-|Build Dictionary van ngrams vóór LDA|Booleaans|Waar of onwaar|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|True|Hiermee maakt u een woorden lijst met ngrams vóór LDA. Nuttig voor het controleren van modellen en interpretaties.|  
+|Build Dictionary van ngrams vóór LDA|Booleaans|Waar of onwaar|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld|Waar|Hiermee maakt u een woorden lijst met ngrams vóór LDA. Nuttig voor het controleren van modellen en interpretaties.|  
 |Maximum aantal ngrams in woorden lijst|Geheel getal|[1; int. MaxValue|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld en de optie **woorden lijst van ngrams** is ingesteld op **True**|20.000|Maximum grootte van de woorden lijst. Als het aantal tokens in de invoer groter is dan deze grootte, kunnen er conflicten optreden.|  
 |Aantal hash-bits|Geheel getal|[1; 31]|Van toepassing wanneer het selectie vakje **alle opties weer geven** is ingeschakeld en de optie **woorden lijst van ngrams** is ingesteld op **False**|12|Aantal bits dat moet worden gebruikt tijdens het hashen van functies.|   
 

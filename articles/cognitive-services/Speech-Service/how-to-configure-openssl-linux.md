@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 01/16/2020
 ms.author: jhakulin
-ms.openlocfilehash: 42960c25c4124203b64646fdc5cbca833b246e21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+zone_pivot_groups: programming-languages-set-two
+ms.openlocfilehash: a6225fec30a87ca0bbe57e414733bc21489f87ad
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81683170"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577441"
 ---
 # <a name="configure-openssl-for-linux"></a>OpenSSL voor Linux configureren
 
@@ -50,6 +51,97 @@ Stel de omgevings variabele `SSL_CERT_FILE` zodanig in dat deze naar dat bestand
 ```bash
 export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
 ```
+
+## <a name="certificate-revocation-checks"></a>Intrekkings controles voor certificaten
+Wanneer u verbinding maakt met de spraak service, controleert de Speech SDK of het TLS-certificaat dat wordt gebruikt door de speech-service niet is ingetrokken. Om deze controle uit te voeren, moet de spraak-SDK toegang hebben tot de CRL-distributie punten voor certificerings instanties die door Azure worden gebruikt. In [dit document](https://docs.microsoft.com/azure/security/fundamentals/tls-certificate-changes)vindt u een lijst met mogelijke locaties voor het downloaden van de CRL. Als een certificaat is ingetrokken of de CRL niet kan worden gedownload, breekt de spraak-SDK de verbinding af en wordt de geannuleerde gebeurtenis verhoogd.
+
+In het geval dat het netwerk waarvan de spraak-SDK wordt gebruikt, is geconfigureerd op een manier die geen toegang tot de locaties voor het downloaden van de CRL toestaat, kan de CRL-controle worden uitgeschakeld of ingesteld op niet mislukt als de CRL niet kan worden opgehaald. Deze configuratie wordt uitgevoerd via het configuratie object dat wordt gebruikt voor het maken van een Recognizer-object.
+
+Als u wilt door gaan met de verbinding wanneer een CRL niet kan worden opgehaald, stelt u de eigenschap in OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE.
+
+::: zone pivot="programming-language-csharp"
+
+```csharp
+config.SetProperty("OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-cpp"
+
+```C++
+config->SetProperty("OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-java"
+
+```java
+config.setProperty("OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-python"
+
+```Python
+speech_config.set_property_by_name("OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE", "true")?
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-more"
+
+```ObjectiveC
+[config setPropertyTo:@"true" byName:"OPENSSL_CONTINUE_ON_CRL_DOWNLOAD_FAILURE"];
+```
+
+::: zone-end
+Wanneer deze optie is ingesteld op ' True ', wordt een poging gedaan om de CRL op te halen. als het ophalen is geslaagd, wordt het certificaat gecontroleerd op intrekking als het ophalen mislukt, kan de verbinding worden voortgezet.
+
+Als u de controle van certificaat intrekking volledig wilt uitschakelen, stelt u de eigenschap OPENSSL_DISABLE_CRL_CHECK in op ' True '.
+::: zone pivot="programming-language-csharp"
+
+```csharp
+config.SetProperty("OPENSSL_DISABLE_CRL_CHECK", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-cpp"
+
+```C++
+config->SetProperty("OPENSSL_DISABLE_CRL_CHECK", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-java"
+
+```java
+config.setProperty("OPENSSL_DISABLE_CRL_CHECK", "true");
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-python"
+
+```Python
+speech_config.set_property_by_name("OPENSSL_DISABLE_CRL_CHECK", "true")?
+```
+
+::: zone-end
+
+::: zone pivot="programming-language-more"
+
+```ObjectiveC
+[config setPropertyTo:@"true" byName:"OPENSSL_DISABLE_CRL_CHECK"];
+```
+
+::: zone-end
+
+
 > [!NOTE]
 > Het is ook een goed idee dat er voor sommige distributies van Linux geen omgevings variabele TMP of TMPDIR is gedefinieerd. Dit zorgt ervoor dat de spraak-SDK elke keer de certificaatintrekkingslijst (CRL) downloadt, in plaats van de CRL in de cache te plaatsen op de schijf voor hergebruik totdat deze verloopt. Als u de initiële verbindings prestaties wilt verbeteren, kunt u [een omgevings variabele met de naam tmpdir maken en deze instellen op het pad van de gekozen tijdelijke map.](https://help.ubuntu.com/community/EnvironmentVariables)
 

@@ -8,14 +8,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 03/09/2021
+ms.date: 03/17/2021
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 82445ce7c1ebfc365459bbeba7e04d660221eaf2
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 8513127f4a79c9c94323140462ad2d2648a0130d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102551584"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577639"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -26,7 +26,7 @@ De controlefunctie biedt ook deze mogelijkheden:
 
 - Naleving van wet- en regelgeving, inzicht in activiteiten in de database en in de afwijkingen en discrepanties die kunnen wijzen op problemen voor het bedrijf of vermoedelijke schendingen van de beveiliging.
 
-- Mogelijk maken en faciliteren van nalevingsstandaarden, hoewel dit geen garantie biedt voor naleving. Voor meer informatie over Azure-Program ma's die naleving van standaarden ondersteunen, raadpleegt u de [Vertrouwenscentrum van Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) waarin u de meest recente lijst met Azure SQL-compatibiliteits certificeringen kunt vinden.
+- Mogelijk maken en faciliteren van nalevingsstandaarden, hoewel dit geen garantie biedt voor naleving. Zie het [Vertrouwenscentrum van Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), waar u de meest recente lijst met nalevingscertificeringen van Azure SQL kunt vinden, voor meer informatie over Azure-programma's die nalevingsstandaarden ondersteunen.
 
 > [!NOTE]
 > Zie het volgende artikel aan de [slag met controle van SQL Managed instance](../managed-instance/auditing-configure.md)voor meer informatie over het controleren van Azure SQL Managed instances.
@@ -99,7 +99,7 @@ Azure SQL Database-en Azure Synapse audit slaat 4000 tekens aan gegevens op voor
 In de volgende sectie wordt de configuratie van de controle met behulp van de Azure Portal beschreven.
 
   > [!NOTE]
-  > - Het is niet mogelijk om controle in te scha kelen op een onderbroken toegewezen SQL-groep. Als u de controle wilt inschakelen, moet u de exclusieve SQL-groep verwijderen. Meer informatie over een [toegewezen SQL-groep](../..//synapse-analytics/sql/best-practices-sql-pool.md).
+  > - Het is niet mogelijk om controle in te scha kelen op een onderbroken toegewezen SQL-groep. Als u de controle wilt inschakelen, moet u de exclusieve SQL-groep verwijderen. Meer informatie over een [toegewezen SQL-groep](../..//synapse-analytics/sql/best-practices-dedicated-sql-pool.md).
   > - Als controle is geconfigureerd voor een Log Analytics-werk ruimte of een even hub-doel via de Azure Portal-of Power shell-cmdlet, wordt een [Diagnostische instelling](../../azure-monitor/essentials/diagnostic-settings.md) gemaakt met de categorie ' SQLSecurityAuditEvents ' ingeschakeld.
 
 1. Ga naar de [Azure Portal](https://portal.azure.com).
@@ -134,16 +134,16 @@ AzureDiagnostics
 
 ### <a name="audit-to-storage-destination"></a><a id="audit-storage-destination"></a>Controleren op opslag bestemming
 
-Als u het schrijven van audit logboeken naar een opslag account wilt configureren, selecteert u **opslag** en opent u **opslag Details**. Selecteer het Azure-opslag account waarin de logboeken worden opgeslagen en selecteer vervolgens de Bewaar periode. Klik vervolgens op **OK**. Logboeken die ouder zijn dan de Bewaar periode, worden verwijderd.
+Als u het schrijven van audit logboeken naar een opslag account wilt configureren, selecteert u **opslag** wanneer u naar de sectie **controle** gaat. Selecteer het Azure-opslag account waarin de logboeken worden opgeslagen en selecteer vervolgens de Bewaar periode door **Geavanceerde eigenschappen** te openen. Klik vervolgens op **Opslaan**. Logboeken die ouder zijn dan de Bewaar periode, worden verwijderd.
 
-- De standaard waarde voor de Bewaar periode is 0 (onbeperkte retentie). U kunt deze waarde wijzigen door de schuif regelaar voor **bewaren (dagen)** in **opslag instellingen** te verplaatsen bij het configureren van het opslag account voor controle.
+- De standaard waarde voor de Bewaar periode is 0 (onbeperkte retentie). U kunt deze waarde wijzigen door de schuif regelaar **bewaren (dagen)** in **Geavanceerde eigenschappen** te verplaatsen bij het configureren van het opslag account voor controle.
   - Als u de retentieperiode van 0 (onbeperkte retentie) wijzigt in een andere waarde, moet u er rekening mee houden dat retentie alleen van toepassing is op logboeken die zijn geschreven nadat de waarde is gewijzigd, (logboeken die zijn geschreven tijdens de periode waarin de retentie was ingesteld op onbeperkt, blijven behouden, zelfs nadat retentie is ingeschakeld).
 
   ![opslagaccount](./media/auditing-overview/auditing_select_storage.png)
 
 ### <a name="audit-to-log-analytics-destination"></a><a id="audit-log-analytics-destination"></a>Controleren op Log Analytics bestemming
   
-Als u het schrijven van audit logboeken naar een Log Analytics-werk ruimte wilt configureren, selecteert u **log Analytics** en opent u **log Analytics Details**. Selecteer of maak de Log Analytics-werk ruimte waar de logboeken worden geschreven en klik vervolgens op **OK**.
+Als u het schrijven van audit logboeken naar een Log Analytics-werk ruimte wilt configureren, selecteert u **log Analytics** en opent u **log Analytics Details**. Selecteer de Log Analytics werk ruimte waar de logboeken worden geschreven en klik vervolgens op **OK**. Als u geen Log Analytics-werk ruimte hebt gemaakt, raadpleegt u [een log Analytics-werk ruimte maken in de Azure Portal](../../azure-monitor/logs/quick-create-workspace.md).
 
    ![LogAnalyticsworkspace](./media/auditing-overview/auditing_select_oms.png)
 
@@ -151,7 +151,7 @@ Zie [de implementatie van uw Azure monitor-logboeken ontwerpen](../../azure-moni
    
 ### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Controleren op Event hub-doel
 
-Als u audit logboeken wilt configureren voor een Event Hub, selecteert u **Event hub** en opent u **Details van Event hub**. Selecteer de Event Hub waar de logboeken worden geschreven en klik vervolgens op **OK**. Zorg ervoor dat de Event Hub zich in dezelfde regio bevindt als de-data base en-server.
+Selecteer **Event hub** om het schrijven van audit logboeken naar een event hub te configureren. Selecteer de Event Hub waar de logboeken worden geschreven en klik vervolgens op **Opslaan**. Zorg ervoor dat de Event Hub zich in dezelfde regio bevindt als de-data base en-server.
 
    ![Eventhub](./media/auditing-overview/auditing_select_event_hub.png)
 
@@ -191,13 +191,12 @@ Als u ervoor hebt gekozen om audit logboeken naar een Azure Storage-account te s
 
 - Gebruik [Azure Portal](https://portal.azure.com).  Open de relevante database. Klik boven aan de **controle** pagina van de Data Base op **audit logboeken weer geven**.
 
-    ![Scherm opname van de knop controle logboeken weer geven die is gemarkeerd op de pagina voor het controleren van de data base.](./media/auditing-overview/7_auditing_get_started_blob_view_audit_logs.png)
+    ![audit logboeken weer geven](./media/auditing-overview/auditing-view-audit-logs.png)
 
     **Controle records** worden geopend, waaruit u de logboeken kunt weer geven.
 
   - U kunt specifieke datums weer geven door boven aan de pagina **controle records** op **filter** te klikken.
   - U kunt scha kelen tussen controle records die zijn gemaakt door het *Server controlebeleid* en het *database controlebeleid* door te scha kelen op **controle bron**.
-  - U kunt alleen controle records met betrekking tot SQL-injectie weer geven door  **alleen controle records voor SQL-injecties weer geven** in te scha kelen.
 
        ![Scherm afbeelding met de opties voor het weer geven van de controle records.]( ./media/auditing-overview/8_auditing_get_started_blob_audit_records.png)
 
@@ -242,7 +241,7 @@ Bij geo-gerepliceerde data bases, wanneer u controle inschakelt voor de hoofd da
 
 In productie zult u uw opslag sleutels waarschijnlijk periodiek vernieuwen. Wanneer u audit logboeken naar Azure Storage schrijft, moet u uw controle beleid opnieuw opslaan bij het vernieuwen van uw sleutels. Het proces verloopt als volgt:
 
-1. **Opslag Details** openen. Selecteer in het vak **toegangs sleutel voor opslag** de optie **secundair** en klik op **OK**. Klik vervolgens boven aan de pagina controle configuratie op **Opslaan** .
+1. Open **Geavanceerde eigenschappen** onder **opslag**. Selecteer **secundair** in het vak **toegangs sleutel voor opslag** . Klik vervolgens boven aan de pagina controle configuratie op **Opslaan** .
 
     ![Scherm opname van het proces voor het selecteren van een secundaire toegangs sleutel voor opslag.](./media/auditing-overview/5_auditing_get_started_storage_key_regeneration.png)
 2. Ga naar de pagina opslag configuratie en Genereer de primaire toegangs sleutel opnieuw.

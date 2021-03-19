@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/05/2021
 ms.author: jeedes
-ms.openlocfilehash: f217a13ce68b42d3f9ee2dec4bfae47a0b64b0ca
-ms.sourcegitcommit: 5f32f03eeb892bf0d023b23bd709e642d1812696
+ms.openlocfilehash: e390eb62f64c9ec55605525828790f15633e5f14
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103200039"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104589511"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-single-account-access"></a>Zelf studie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met AWS Single-Account toegang
 
@@ -31,11 +31,11 @@ Gebruik de onderstaande informatie om een beslissing te nemen tussen het gebruik
 
 **AWS eenmalige aanmelding**
 
-[AWS eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/aws-single-sign-on-tutorial) is toegevoegd aan de Azure AD-toepassings galerie in februari 2021. Zo kunt u eenvoudig toegang centraal beheren met meerdere AWS-accounts en AWS-toepassingen, waarbij u zich aanmeldt via Microsoft Azure AD. Microsoft Azure AD eenmaal met AWS SSO en gebruik AWS SSO om machtigingen voor al uw AWS-accounts van één locatie te beheren. AWS SSO voorziet automatisch in machtigingen en houdt deze actueel wanneer u beleids regels en toegangs toewijzingen bijwerkt. Eind gebruikers kunnen zich verifiëren met hun Azure AD-referenties voor toegang tot de AWS-console, de opdracht regel interface en geïntegreerde SSO-toepassingen met AWS.
+[AWS eenmalige aanmelding](./aws-single-sign-on-tutorial.md) is toegevoegd aan de Azure AD-toepassings galerie in februari 2021. Zo kunt u eenvoudig toegang centraal beheren met meerdere AWS-accounts en AWS-toepassingen, waarbij u zich aanmeldt via Microsoft Azure AD. Microsoft Azure AD eenmaal met AWS SSO en gebruik AWS SSO om machtigingen voor al uw AWS-accounts van één locatie te beheren. AWS SSO voorziet automatisch in machtigingen en houdt deze actueel wanneer u beleids regels en toegangs toewijzingen bijwerkt. Eind gebruikers kunnen zich verifiëren met hun Azure AD-referenties voor toegang tot de AWS-console, de opdracht regel interface en geïntegreerde SSO-toepassingen met AWS.
 
 **AWS-toegang Single-Account**
 
-[AWS Single-Account Access](https://docs.microsoft.com/azure/active-directory/saas-apps/amazon-web-service-tutorial) is in de afgelopen jaren door klanten gebruikt en maakt het u mogelijk om Azure ad te deactiveren naar één AWS-account en Azure ad te gebruiken om de toegang tot AWS iam-rollen te beheren. AWS IAM-beheerders definiëren rollen en beleids regels in elk AWS-account. Voor elk AWS-account kunnen Azure AD-beheerders AWS IAM, gebruikers of groepen toewijzen aan het account en Azure AD configureren voor het verzenden van bevestigingen die de toegang van rollen toestaan.  
+[AWS Single-Account Access]() is in de afgelopen jaren door klanten gebruikt en maakt het u mogelijk om Azure ad te deactiveren naar één AWS-account en Azure ad te gebruiken om de toegang tot AWS iam-rollen te beheren. AWS IAM-beheerders definiëren rollen en beleids regels in elk AWS-account. Voor elk AWS-account kunnen Azure AD-beheerders AWS IAM, gebruikers of groepen toewijzen aan het account en Azure AD configureren voor het verzenden van bevestigingen die de toegang van rollen toestaan.  
 
 | Functie | AWS enkele Sign-On | AWS-toegang Single-Account |
 |:--- |:---:|:---:|

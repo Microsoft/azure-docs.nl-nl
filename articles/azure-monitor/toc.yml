@@ -718,12 +718,16 @@
                       href: app/java-in-process-agent.md
                     - name: Configuratie-opties
                       href: app/java-standalone-config.md
-                    - name: Telemetrieverwerkers
+                    - name: Geavanceerd configuratie
                       items:
-                        - name: Overzicht
-                          href: app/java-standalone-telemetry-processors.md
-                        - name: Voorbeelden
-                          href: app/java-standalone-telemetry-processors-examples.md
+                        - name: Metrische gegevens van JMX
+                          href: app/java-jmx-metrics-configuration.md
+                        - name: Telemetrieverwerkers
+                          items:
+                            - name: Overzicht
+                              href: app/java-standalone-telemetry-processors.md
+                            - name: Voorbeelden
+                              href: app/java-standalone-telemetry-processors-examples.md
                     - name: Configuratie van JVM-argumenten
                       href: app/java-standalone-arguments.md
                     - name: Upgraden van SDK 2.x
@@ -1126,6 +1130,18 @@
           href: insights/network-insights-overview.md
         - name: Key Vault
           href: insights/key-vault-insights-overview.md
+        - name: SQL Insights (preview-versie)
+          items:
+            - name: Overzicht
+              href: insights/sql-insights-overview.md
+            - name: Veelgestelde vragen
+              href: faq.md#sql-insights-preview
+            - name: Inschakelen
+              href: insights/sql-insights-enable.md
+            - name: Waarschuwingen
+              href: insights/sql-insights-alerts.md
+            - name: Problemen oplossen
+              href: insights/sql-insights-troubleshoot.md
         - name: Storage
           displayname: 'storage, monitor, insights, storage accounts, azure storage'
           href: insights/storage-insights-overview.md

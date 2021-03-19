@@ -20,14 +20,14 @@
     - name: 1 Een Synapse-werkruimte maken
       href: get-started-create-workspace.md
       displayName: 'get, started'
-    - name: 2 Analyseren met een toegewezen SQL-pool
-      href: get-started-analyze-sql-pool.md
+    - name: 2 analyseren met serverloze SQL-groep
+      href: get-started-analyze-sql-on-demand.md
       displayName: 'get, started'
     - name: 3 Analyseren met Spark
       href: get-started-analyze-spark.md
       displayName: 'get, started'
-    - name: 4 Analyseren met serverloze SQL-pool
-      href: get-started-analyze-sql-on-demand.md
+    - name: 4 analyseren met behulp van een toegewezen SQL-groep
+      href: get-started-analyze-sql-pool.md
       displayName: 'get, started'
     - name: 5 Gegevens analyseren in een opslagaccount
       href: get-started-analyze-storage.md
@@ -187,6 +187,10 @@
               href: troubleshoot/workspaces-created-by-sdk.md
             - name: Problemen oplossen met UTF-8-tekst uitlezen
               href: troubleshoot/reading-utf8-text.md
+- name: Migratiehandleidingen
+  items:
+    - name: Migreren naar een toegewezen SQL-groep
+      href: migration-guides/migrate-to-synapse-analytics-guide.md
 - name: Synapse SQL
   items:
     - name: Overzicht
@@ -211,9 +215,9 @@
         - name: Kostenbeheer voor serverloze SQL-pool
           href: sql/data-processed.md
         - name: Best practices voor serverloze SQL-pools
-          href: sql/best-practices-sql-on-demand.md
+          href: sql/best-practices-serverless-sql-pool.md
         - name: Best practices voor toegewezen SQL-pools
-          href: sql/best-practices-sql-pool.md
+          href: sql/best-practices-dedicated-sql-pool.md
     - name: Snelstartgidsen
       items:
         - name: Serverloze SQL-pools gebruiken

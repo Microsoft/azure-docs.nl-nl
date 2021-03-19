@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/18/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 46f117b13909c2d9624b88e9f5d9a62c4c646e51
-ms.sourcegitcommit: 15d27661c1c03bf84d3974a675c7bd11a0e086e6
+ms.openlocfilehash: c2aceedd57bcc7cd88c4e822c7b696e36b28bd8f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102500289"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579787"
 ---
 # <a name="tutorial-configure-arkose-labs-with-azure-active-directory-b2c"></a>Zelf studie: arkose Labs configureren met Azure Active Directory B2C
 
@@ -81,13 +81,13 @@ Voer de volgende stappen uit om een aangepast kenmerk te maken:
 
 5. Selecteer **Maken**
 
-Meer informatie over [aangepaste kenmerken](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-custom-attributes?pivots=b2c-user-flow).
+Meer informatie over [aangepaste kenmerken](./user-flow-custom-attributes.md?pivots=b2c-user-flow).
 
 ### <a name="part-2---create-a-user-flow"></a>Deel 2: een gebruikers stroom maken
 
 De gebruikers stroom kan **zich aanmelden** en **Aanmelden** **of u kunt zich aanmelden.** De arkose Labs-gebruikers stroom wordt alleen weer gegeven tijdens het aanmelden.
 
-1. Zie de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows) voor het maken van een gebruikers stroom. Als u een bestaande gebruikers stroom gebruikt, moet dit het versie type van het **Aanbevolen (volgende generatie preview)** zijn.
+1. Zie de [instructies](./tutorial-create-user-flows.md) voor het maken van een gebruikers stroom. Als u een bestaande gebruikers stroom gebruikt, moet dit het versie type van het **Aanbevolen (volgende generatie preview)** zijn.
 
 2. Ga in de instellingen van de gebruikers stroom naar **gebruikers kenmerken** en selecteer de claim **ArkoseSessionToken** .
 
@@ -109,7 +109,7 @@ Volg de stappen die worden beschreven om de aangepaste HTML en Java script te ge
 
 1. Wijzig [selfAsserted.html](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose/blob/main/Assets/selfAsserted.html) -bestand zodat dit `<ARKOSE_PUBLIC_KEY>` overeenkomt met de waarde die u hebt gegenereerd voor de validatie aan de client zijde en gebruikt om het arkose Labs-script voor uw account te laden.
 
-2. Host de HTML-pagina op een webeindpunt waarvoor cross-Origin Resource Sharing (CORS) is ingeschakeld. [Maak een Azure Blob-opslag account](https://docs.microsoft.com/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-portal) en [Configureer CORS](https://docs.microsoft.com/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services).
+2. Host de HTML-pagina op een webeindpunt waarvoor cross-Origin Resource Sharing (CORS) is ingeschakeld. [Maak een Azure Blob-opslag account](../storage/common/storage-account-create.md?tabs=azure-portal&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) en [Configureer CORS](/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services).
 
   >[!NOTE]
   >Als u uw eigen aangepaste HTML hebt, kopieert en plakt u de `<script>` elementen op uw HTML-pagina.
@@ -132,7 +132,7 @@ Volg de stappen die worden beschreven om de aangepaste HTML en Java script te ge
 
    ![afbeelding met pagina-indelingen](media/partner-arkose-labs/page-layouts.png)
 
-4. Ga vanuit uw gebruikers stroom naar **Eigenschappen** en selecteer pagina-indeling voor het afdwingen van **Java script inschakelen** (preview). Raadpleeg dit [artikel](https://docs.microsoft.com/azure/active-directory-b2c/javascript-and-page-layout?pivots=b2c-user-flow) voor meer informatie.
+4. Ga vanuit uw gebruikers stroom naar **Eigenschappen** en selecteer pagina-indeling voor het afdwingen van **Java script inschakelen** (preview). Raadpleeg dit [artikel](./javascript-and-page-layout.md?pivots=b2c-user-flow) voor meer informatie.
 
 ### <a name="part-4---create-and-deploy-your-api"></a>Deel 4: uw API maken en implementeren
 
@@ -157,7 +157,7 @@ Herhaal de stappen 1 tot en met 4 als u het lokale exemplaar tijdens het testen 
 
 Dit voor beeld beschermt het web API-eind punt met behulp van [http-basis verificatie](https://tools.ietf.org/html/rfc7617).
 
-Gebruikers naam en wacht woord worden opgeslagen als omgevings variabelen en niet als onderdeel van de opslag plaats. Zie [local.settings.jsin](https://docs.microsoft.com/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#local-settings-file) het bestand voor meer informatie.
+Gebruikers naam en wacht woord worden opgeslagen als omgevings variabelen en niet als onderdeel van de opslag plaats. Zie [local.settings.jsin](../azure-functions/functions-run-local.md?tabs=macos%2ccsharp%2cbash#local-settings-file) het bestand voor meer informatie.
 
 1. Een local.settings.jsmaken voor het bestand in de hoofdmap
 
@@ -186,15 +186,15 @@ De `<B2C_EXTENSIONS_APP_ID>` is de toepassings-id van de app die door Azure AD B
 
 #### <a name="deploy-the-application-to-the-web"></a>De toepassing implementeren op het web
 
-1. Volg de stappen in [deze](https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-04) hand leiding om uw Azure-functie in de cloud te implementeren. Kopieer de web-URL van het eind punt van uw Azure-functie.
+1. Volg de stappen in [deze](/azure/javascript/tutorial-vscode-serverless-node-04) hand leiding om uw Azure-functie in de cloud te implementeren. Kopieer de web-URL van het eind punt van uw Azure-functie.
 
-2. Zodra de implementatie is geïmplementeerd, selecteert u de optie **Upload instellingen** . De omgevings variabelen worden geüpload naar de [Toepassings instellingen](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code?tabs=csharp#application-settings-in-azure) van de app service. Deze toepassings instellingen kunnen ook worden geconfigureerd of [beheerd via de Azure Portal.](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings)
+2. Zodra de implementatie is geïmplementeerd, selecteert u de optie **Upload instellingen** . De omgevings variabelen worden geüpload naar de [Toepassings instellingen](../azure-functions/functions-develop-vs-code.md?tabs=csharp#application-settings-in-azure) van de app service. Deze toepassings instellingen kunnen ook worden geconfigureerd of [beheerd via de Azure Portal.](../azure-functions/functions-how-to-use-azure-function-app-settings.md)
 
-Raadpleeg [dit artikel](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code?tabs=csharp#republish-project-files) voor meer informatie over Visual Studio code development voor Azure functions.
+Raadpleeg [dit artikel](../azure-functions/functions-develop-vs-code.md?tabs=csharp#republish-project-files) voor meer informatie over Visual Studio code development voor Azure functions.
 
 #### <a name="configure-and-enable-the-api-connector"></a>De API-connector configureren en inschakelen
 
-[Maak een API-connector](https://docs.microsoft.com/azure/active-directory-b2c/add-api-connector) en schakel deze in voor uw gebruikers stroom. De configuratie van de API-connector moet er als volgt uitzien:
+[Maak een API-connector](./add-api-connector.md) en schakel deze in voor uw gebruikers stroom. De configuratie van de API-connector moet er als volgt uitzien:
 
 ![Afbeelding laat zien hoe u API-connector kunt configureren](media/partner-arkose-labs/configure-api-connector.png)
 
@@ -232,6 +232,6 @@ Als u de API-connector wilt inschakelen, selecteert u in de **API-connector** in
 
 - [Voorbeeld codes](https://github.com/Azure-Samples/active-directory-b2c-node-sign-up-user-flow-arkose) voor Azure AD B2Cs stroom voor het registreren van gebruikers
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

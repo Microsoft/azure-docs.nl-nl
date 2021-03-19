@@ -53,11 +53,11 @@
         - name: Collectieve verkoop met Microsoft
           items:
             - name: Overzicht van samen verkopen
-              href: marketplace-co-sell.md
+              href: co-sell-overview.md
             - name: Vereisten voor co-sell
               href: co-sell-requirements.md
             - name: Co-sell configureren
-              href: commercial-marketplace-co-sell.md
+              href: co-sell-configure.md
             - name: Co-sell-status verifiëren
               href: co-sell-status.md
             - name: Co-celoplossingen migreren van OCP GTM

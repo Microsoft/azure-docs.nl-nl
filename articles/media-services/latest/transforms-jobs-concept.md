@@ -3,7 +3,7 @@
 Titel: trans formaties en taken in Media Services: Azure Media Services beschrijving: informatie over het maken van een trans formatie om de regels voor het verwerken van uw Video's in Azure Media Services te beschrijven.
 Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
 
-MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 08/19/2019 MS. Author: inhenkel
+MS. service: Media-Services MS. workload: MS. topic: conceptuele MS. date: 03/17/2021 MS. Author: inhenkel
 ---
 
 # <a name="transforms-and-jobs-in-media-services"></a>Trans formaties en taken in Media Services
@@ -77,7 +77,7 @@ Gebruik [activa als taak invoer](job-input-from-local-file-how-to.md) als de inv
 
 ### <a name="checking-job-progress"></a>De voortgang van de taak controleren
 
-De voortgang en de status van taken kunnen worden verkregen door gebeurtenissen met Event Grid te bewaken. Zie [gebeurtenissen bewaken met EventGrid](job-state-events-cli-how-to.md)voor meer informatie.
+De voortgang en de status van taken kunnen worden verkregen door gebeurtenissen met Event Grid te bewaken. Zie [gebeurtenissen bewaken met EventGrid](monitoring/job-state-events-cli-how-to.md)voor meer informatie.
 
 ### <a name="updating-jobs"></a>Taken bijwerken
 

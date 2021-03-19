@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: f8fa5532a5664741c9ddb9b78b35d5eed8e2e4e0
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 10ddee404de21c5bc04672fdb6dd32c30f481ba3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937852"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578240"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Web-app die gebruikers aanmeldt: aanmelden en afmelden
 
@@ -95,6 +95,16 @@ In onze Java Quick Start bevindt de aanmeldings knop zich in het bestand [main/r
 </html>
 ```
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+In de Node.js Quick start is er geen knop aanmelden. De code-behind vraagt de gebruiker automatisch om zich aan te melden wanneer de hoofdmap van de web-app wordt bereikt.
+
+```javascript
+app.get('/', (req, res) => {
+    // authentication logic
+});
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 In de Quick Start van python is er geen knop aanmelden. De code-behind vraagt de gebruiker automatisch om zich aan te melden wanneer de hoofdmap van de web-app wordt bereikt. Zie [app. py # l14-L18](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/0.1.0/app.py#L14-L18).
@@ -113,7 +123,7 @@ def index():
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-In ASP.NET wordt de  `SignIn` actie op de controller geactiveerd wanneer u de knop aanmelden in de web-app selecteert `AccountController` . In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) voor meer informatie.
+In ASP.NET wordt de  `SignIn` actie op de controller geactiveerd wanneer u de knop aanmelden in de web-app selecteert `AccountController` . In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController. cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) (Engelstalig) voor meer informatie.
 
 Deze controller verwerkt ook de Azure AD B2C toepassingen.
 
@@ -158,6 +168,43 @@ public class AuthPageController {
     }
 
     // More code omitted for simplicity
+```
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+In tegens telling tot andere platforms zorgt het MSAL-knoop punt ervoor dat de gebruiker zich aanmeldt vanaf de aanmeldings pagina.
+
+```javascript
+
+// 1st leg of auth code flow: acquire a code
+app.get('/', (req, res) => {
+    const authCodeUrlParameters = {
+        scopes: ["user.read"],
+        redirectUri: REDIRECT_URI,
+    };
+
+    // get url to sign user in and consent to scopes needed for application
+    pca.getAuthCodeUrl(authCodeUrlParameters).then((response) => {
+        res.redirect(response);
+    }).catch((error) => console.log(JSON.stringify(error)));
+});
+
+// 2nd leg of auth code flow: exchange code for token
+app.get('/redirect', (req, res) => {
+    const tokenRequest = {
+        code: req.query.code,
+        scopes: ["user.read"],
+        redirectUri: REDIRECT_URI,
+    };
+
+    pca.acquireTokenByCode(tokenRequest).then((response) => {
+        console.log("\nResponse: \n:", response);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error);
+        res.status(500).send(error);
+    });
+});
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -229,6 +276,10 @@ Tijdens de registratie van de toepassing registreert u een URL voor de afmelding
 Tijdens de registratie van de toepassing hoeft u geen extra URL voor het afmelden van het voor kanaal te registreren. De app wordt teruggebeld op de hoofd-URL. 
 
 # <a name="java"></a>[Java](#tab/java)
+
+Er is geen afmeldings-URL voor front-Channel vereist in de registratie van de toepassing.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 Er is geen afmeldings-URL voor front-Channel vereist in de registratie van de toepassing.
 
@@ -305,6 +356,10 @@ In de Java-Snelstartgids bevindt de afmeldings knop zich in het bestand main/res
 ...
 ```
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Deze voorbeeld toepassing implementeert de afmelding niet.
+
 # <a name="python"></a>[Python](#tab/python)
 
 In de Quick Start van python bevindt de afmeldings knop zich in het bestand [Templates/index.html # L10](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/templates/index.html#L10) .
@@ -330,13 +385,13 @@ In de Quick Start van python bevindt de afmeldings knop zich in het bestand [Tem
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) voor meer informatie.
+In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController. cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) (Engelstalig) voor meer informatie.
 
 - Hiermee stelt u een omleidings-URI voor OpenID Connect in `/Account/SignedOut` zodat de controller weer wordt aangeroepen wanneer Azure AD de afmelding heeft voltooid.
 - Aanroepen `Signout()` , waarmee de OpenID Connect Connect-verbinding kan maken met het micro soft Identity platform- `logout` eind punt. Het eind punt vervolgens:
 
   - Hiermee wordt de sessie cookie uit de browser gewist.
-  - Roept de omleidings-URI na afmelding terug. De omleidings-URI na afmelding geeft standaard de afgemelde pagina [SignedOut.cshtml.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs)weer. Deze pagina wordt ook meegeleverd als onderdeel van micro soft. Identity. Web.
+  - Roept de omleidings-URI na afmelding terug. Standaard geeft de omleidings-URI na afmelding de afgemelde weergave pagina [SignedOut. cshtml. cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Pages/Account/SignedOut.cshtml.cs)weer. Deze pagina wordt ook meegeleverd als onderdeel van micro soft. Identity. Web.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -376,6 +431,10 @@ In Java wordt afmelden verwerkt door rechtstreeks het micro soft Identity platfo
                 URLEncoder.encode(redirectUrl, "UTF-8"));
     }
 ```
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Deze voorbeeld toepassing implementeert de afmelding niet.
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -420,6 +479,10 @@ public class AccountController : Controller
 # <a name="java"></a>[Java](#tab/java)
 
 De omleidings-URI van de post-afmelding wordt in de Java Quick Start alleen de pagina index.html weer gegeven.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Deze voorbeeld toepassing implementeert de afmelding niet.
 
 # <a name="python"></a>[Python](#tab/python)
 

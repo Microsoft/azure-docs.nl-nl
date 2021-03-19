@@ -9,12 +9,12 @@ ms.subservice: extensions
 ms.date: 02/12/2021
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: d1290b1dcc1e97d63dd41d5be8ca19b81e32f838
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: cc862759ce28c4d23dbc2197f63311e29ba82709
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225027"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104607499"
 ---
 # <a name="preview-orchestration-modes-for-virtual-machine-scale-sets-in-azure"></a>Voor beeld: Orchestration-modi voor virtuele-machine schaal sets in azure 
 
@@ -85,7 +85,7 @@ Gebruik de standaard-VM-opdrachten om exemplaren te starten, te stoppen, opnieuw
 Met de functie voor status controle van toepassingen kan uw toepassing Azure voorzien van een heartbeat om te bepalen of uw toepassing in orde of beschadigd is. Azure kan automatisch de VM-instanties vervangen die niet in orde zijn. Voor flexibele instanties van schaal sets moet u de toepassings status extensie op de virtuele machine installeren en configureren. Voor instanties van een uniforme schaalset kunt u de uitbrei ding voor de toepassings status gebruiken of de status meten met een Azure Load Balancer aangepaste status test. 
 
 ### <a name="list-scale-sets-vm-api-changes"></a>Wijzigingen in VM-API'S voor lijst schaal sets 
-Met Virtual Machine Scale Sets kunt u de exemplaren weer geven die deel uitmaken van de schaalset. Met flexibele indeling biedt de lijst Virtual Machine Scale Sets VM-opdracht een lijst met VM-Id's van schaal sets. Vervolgens roept u de opdrachten GET Virtual Machine Scale Sets VM aan om meer informatie te krijgen over de manier waarop de schaalset werkt met het VM-exemplaar. Als u de volledige details van de virtuele machine wilt weer geven, gebruikt u de Standard-opdracht GET VM of [Azure resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/overview). 
+Met Virtual Machine Scale Sets kunt u de exemplaren weer geven die deel uitmaken van de schaalset. Met flexibele indeling biedt de lijst Virtual Machine Scale Sets VM-opdracht een lijst met VM-Id's van schaal sets. Vervolgens roept u de opdrachten GET Virtual Machine Scale Sets VM aan om meer informatie te krijgen over de manier waarop de schaalset werkt met het VM-exemplaar. Als u de volledige details van de virtuele machine wilt weer geven, gebruikt u de Standard-opdracht GET VM of [Azure resource Graph](../governance/resource-graph/overview.md). 
 
 ### <a name="retrieve-boot-diagnostics-data"></a>Diagnostische gegevens over opstarten ophalen 
 Gebruik de standaard VM-Api's en-opdrachten om de diagnostische gegevens en scherm afbeeldingen voor het opstarten van de instantie op te halen. De Virtual Machine Scale Sets-Api's en-opdrachten voor het opstarten van de VM worden niet gebruikt met flexibele instanties voor de indelings modus.
@@ -102,11 +102,11 @@ De volgende tabel vergelijkt de flexibele Orchestration-modus, uniforme indeling
 |         Type virtuele machine  | Standard Azure IaaS VM (micro soft. Compute/virtualmachines)  | Schaal sets specifieke Vm's (micro soft. Compute/virtualmachinescalesets/virtualmachines)  | Standard Azure IaaS VM (micro soft. Compute/virtualmachines)  |
 |         SKU's ondersteund  |            D-serie, E-reeks, F-serie, A-serie, B-serie, Intel, AMD  |            Alle Sku's  |            Alle Sku's  |
 |         Beschikbaarheidszones  |            Geef eventueel alle exemplaren van het land op in één beschikbaarheids zone |            Geef exemplaren van het land over 1, 2 of 3 Beschikbaarheids zones op  |            Niet ondersteund  |
-|         Volledige controle over VM, Nic's, schijven  |            Ja  |            Beperkte controle met virtuele-machine schaal sets VM API  |            Ja  |
+|         Volledige controle over VM, Nic's, schijven  |            Yes  |            Beperkte controle met virtuele-machine schaal sets VM API  |            Yes  |
 |         Automatisch schalen  |            Nee  |            Ja  |            Nee  |
 |         Virtuele machine aan een specifiek fout domein toewijzen  |            Ja  |             Nee   |            Nee  |
 |         Nic's en schijven verwijderen bij het verwijderen van VM-exemplaren  |            Nee  |            Ja  |            Nee  |
-|         Upgrade beleid (VM-schaal sets) |            Nee  |            Automatisch, Rolling, hand matig  |            N.v.t.  |
+|         Upgrade beleid (VM-schaal sets) |            No  |            Automatisch, Rolling, hand matig  |            N.v.t.  |
 |         Automatische updates van het besturings systeem (VM-schaal sets) |            Nee  |            Ja  |            N.v.t.  |
 |         In gast beveiligings patches  |            Ja  |            Nee  |            Ja  |
 |         Meldingen beëindigen (VM-schaal sets) |            Nee  |            Ja  |            N.v.t.  |
@@ -115,8 +115,8 @@ De volgende tabel vergelijkt de flexibele Orchestration-modus, uniforme indeling
 |         Steun instanties en prijzen   |            Ja, u kunt exemplaren met een positie en normale prioriteit hebben  |            Ja, instanties moeten al een plaats of gewoon zijn  |            Nee, alleen reguliere prioriteits instanties  |
 |         Besturings systemen combi neren  |            Ja, Linux en Windows kunnen zich in dezelfde flexibele schaalset bevinden |            Nee, exemplaren zijn hetzelfde besturings systeem  |               Ja, Linux en Windows kunnen zich in dezelfde flexibele schaalset bevinden |
 |         Toepassings status bewaken  |            Toepassings status uitbreiding  |            Status extensie van de toepassing of Azure Load Balancer-test  |            Toepassings status uitbreiding  |
-|         UltraSSD-schijven   |            Ja  |            Ja, alleen voor zonegebonden-implementaties  |            Nee  |
-|         InfiniBand   |            Nee  |            Ja, alleen één plaatsings groep  |            Ja  |
+|         UltraSSD-schijven   |            Yes  |            Ja, alleen voor zonegebonden-implementaties  |            No  |
+|         InfiniBand   |            No  |            Ja, alleen één plaatsings groep  |            Yes  |
 |         Write Accelerator   |            Nee  |            Ja  |            Ja  |
 |         Proximity-plaatsings groepen   |            Ja  |            Ja  |            Ja  |
 |         Met Azure toegewezen hosts   |            Nee  |            Ja  |            Ja  |
@@ -269,7 +269,7 @@ zones = ["1"]
 
 2. Voeg virtuele machines toe aan de schaalset.
     1. Wijs de `virtualMachineScaleSet` eigenschap toe aan de schaalset die u eerder hebt gemaakt. U moet de `virtualMachineScaleSet` eigenschap opgeven op het moment dat de VM wordt gemaakt. 
-    1. U kunt de functie **Copy () Azure Resource Manager-** sjabloon gebruiken om meerdere vm's tegelijk te maken. Zie [resource herhaling](https://docs.microsoft.com/azure/azure-resource-manager/templates/copy-resources#iteration-for-a-child-resource) in azure Resource Manager sjablonen. 
+    1. U kunt de functie **Copy () Azure Resource Manager-** sjabloon gebruiken om meerdere vm's tegelijk te maken. Zie [resource herhaling](../azure-resource-manager/templates/copy-resources.md#iteration-for-a-child-resource) in azure Resource Manager sjablonen. 
 
     ```json
     {

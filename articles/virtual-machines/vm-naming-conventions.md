@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 7/22/2020
 ms.author: mimckitt
 ms.custom: sttsinar
-ms.openlocfilehash: 98d35821c884ba25a109f929556087ff6ecba0ca
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: 2fa362a56eb1246381fcc944e82ea85d31ff3d39
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102551011"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599898"
 ---
 # <a name="azure-virtual-machine-sizes-naming-conventions"></a>Grootte conventies voor virtuele machines van Azure
 
@@ -28,7 +28,7 @@ Deze pagina geeft een overzicht van de naamgevings conventies die worden gebruik
 | Familie | Hiermee wordt de serie van de VM-serie aangegeven| 
 | * Subfamilie | Wordt alleen gebruikt voor gespecialiseerde VM-differentiaties|
 | aantal Vcpu's| Hiermee wordt het aantal Vcpu's van de virtuele machine aangeduid |
-| * Beperkte Vcpu's| Alleen voor bepaalde VM-grootten gebruikt. Hiermee wordt het aantal Vcpu's voor de [beperkte grootte van vCPU-ondersteuning](https://docs.microsoft.com/azure/virtual-machines/constrained-vcpu) aangegeven |
+| * Beperkte Vcpu's| Alleen voor bepaalde VM-grootten gebruikt. Hiermee wordt het aantal Vcpu's voor de [beperkte grootte van vCPU-ondersteuning](./constrained-vcpu.md) aangegeven |
 | Additieve functies | Een of meer kleine letters die additieve functies aanduiden, zoals: <br> a = AMD-gebaseerde processor <br> d = schijf (lokale tijdelijke schijf is aanwezig); Dit geldt voor nieuwere Azure-Vm's, Zie [Ddv4 en Ddsv4-Series](./ddv4-ddsv4-series.md) <br> h = slaap stand mogelijk <br> i = geïsoleerd formaat <br> l = weinig geheugen; een lagere hoeveelheid geheugen dan de geheugenintensieve grootte <br> m = geheugen intensief; de meeste hoeveelheid geheugen in een bepaalde grootte <br> t = klein geheugen; de kleinste hoeveelheid geheugen in een bepaalde grootte <br> r = RDMA-compatibel <br> s = Premium Storage mogelijk, met inbegrip van het mogelijke gebruik van [Ultra-SSD](./disks-types.md#ultra-disk) (Opmerking: sommige nieuwere grootten zonder het kenmerk s kunnen nog steeds ondersteuning bieden voor Premium Storage, bijvoorbeeld M128, M64, enzovoort).<br> |
 | * Type Accelerator | Hiermee wordt het type hardware-Accelerator aangegeven in de gespecialiseerde/GPU-Sku's. Alleen de nieuwe gespecialiseerde/GPU Sku's die worden gestart vanuit Q3 2020, hebben de hardware-accelerator in de naam. |
 | Versie | Hiermee wordt de versie van de serie van de VM-familie aangeduid |
@@ -79,4 +79,4 @@ Deze pagina geeft een overzicht van de naamgevings conventies die worden gebruik
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over beschik bare [VM-grootten](./sizes.md) in Azure. 
+Meer informatie over beschik bare [VM-grootten](./sizes.md) in Azure.

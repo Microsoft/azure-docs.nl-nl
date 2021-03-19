@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: 11e0150089fd979cbf840d3b117c0d796ecc68f3
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 3b1cbd88b4cd6576b2c31fbeb2f3db86309c5ebf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335718"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597620"
 ---
 # <a name="datetimetotimestamp-azure-cosmos-db"></a>DateTimeToTimestamp (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -31,17 +31,17 @@ DateTimeToTimestamp (<DateTime>)
 *Datum/tijd*  
    UTC-datum en-tijd, ISO 8601-teken reeks waarde in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waarin:
   
-  |Indeling|Beschrijving|
-  |-|-|
-  |DD|jaar met vier cijfers|
-  |MM|maand van twee cijfers (01 = januari, etc.)|
-  |AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
-  |T|de aanzienlijke voor het begin van de tijd elementen|
-  |hh|twee cijfers per uur (00 tot en met 23)|
-  |mm|twee cijfers minuten (00 tot en met 59)|
-  |ss|seconden van twee cijfers (00 tot en met 59)|
-  |.fffffff|aantal seconden van zeven cijfers|
-  |Z|UTC (Coordinated Universal Time)||
+|Indeling|Beschrijving|
+|-|-|
+|DD|jaar met vier cijfers|
+|MM|maand van twee cijfers (01 = januari, etc.)|
+|AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
+|T|de aanzienlijke voor het begin van de tijd elementen|
+|hh|twee cijfers per uur (00 tot en met 23)|
+|mm|twee cijfers minuten (00 tot en met 59)|
+|ss|seconden van twee cijfers (00 tot en met 59)|
+|.fffffff|aantal seconden van zeven cijfers|
+|Z|UTC (Coordinated Universal Time)|
   
   Zie [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) voor meer informatie over de ISO 8601-indeling.
 

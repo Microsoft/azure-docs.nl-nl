@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/12/2021
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: 22ee920c38a8cacaf37a1e3a6cfc5165dfa0bb44
-ms.sourcegitcommit: df1930c9fa3d8f6592f812c42ec611043e817b3b
+ms.openlocfilehash: 4a8efff7ef53753e15a47e87a2bb82d0124ae997
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "103419946"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590446"
 ---
 # <a name="azure-firewall-premium-preview-features"></a>Preview-functies Azure Firewall Premium
 
@@ -157,8 +157,7 @@ Niet-vertrouwde door de klant ondertekende certificaten|Door de klant onderteken
 |Doorgifte van certificaten|Nadat een CA-certificaat is toegepast op de firewall, kan het tussen 5-10 minuten duren voordat het certificaat van kracht wordt.|Reparatie gepland voor GA.|
 |ID bypass|ID bypass werkt niet voor beëindigde TLS-verkeer, en het IP-adres van de bron en IP-bron groepen worden niet ondersteund.|Reparatie gepland voor GA.|
 |TLS 1,3-ondersteuning|TLS 1,3 wordt gedeeltelijk ondersteund. De TLS-tunnel van de client naar de firewall is gebaseerd op TLS 1,2 en van de firewall op de externe webserver is gebaseerd op TLS 1,3.|Updates worden onderzocht.|
-
-
+|Persoonlijk eind punt voor de sleutel kluis|De sleutel kluis ondersteunt toegang tot het privé-eind punt om de bloot stelling aan het netwerk te beperken. Vertrouwde Azure-Services kunnen deze beperking overs Laan als er een uitzonde ring is geconfigureerd zoals beschreven in de [documentatie over](../key-vault/general/overview-vnet-service-endpoints.md#trusted-services)de sleutel kluis. Azure Firewall wordt momenteel niet vermeld als een vertrouwde service en heeft geen toegang tot de Key Vault.|Reparatie gepland voor GA.|
 
 
 ## <a name="next-steps"></a>Volgende stappen

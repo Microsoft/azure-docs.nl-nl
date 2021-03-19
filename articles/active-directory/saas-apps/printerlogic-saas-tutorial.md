@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met PrinterLogic SaaS | Microsoft Docs'
-description: Ontdek hoe u eenmalige aanmelding configureert tussen Azure Active Directory en PrinterLogic SaaS.
+title: 'Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met PrinterLogic | Microsoft Docs'
+description: Meer informatie over het configureren van eenmalige aanmelding tussen Azure Active Directory en PrinterLogic.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -9,21 +9,21 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/25/2021
+ms.date: 03/18/2021
 ms.author: jeedes
-ms.openlocfilehash: 23b534f1ccbd51b028beeee173e5c3e0accd47a3
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: f4537ae1ba79a8885706496967bee2fdff5d4fe4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102486128"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104591517"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-printerlogic-saas"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met PrinterLogic SaaS
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-printerlogic"></a>Zelf studie: Azure Active Directory de integratie van eenmalige aanmelding (SSO) met PrinterLogic
 
-In deze zelfstudie leert u hoe u PrinterLogic SaaS integreert met Azure Active Directory (Azure AD). Wanneer u PrinterLogic SaaS integreert met Azure AD, kunt u het volgende doen:
+In deze zelf studie leert u hoe u PrinterLogic integreert met Azure Active Directory (Azure AD). Wanneer u PrinterLogic integreert met Azure AD, kunt u het volgende doen:
 
-* In Azure AD regelen wie toegang tot PrinterLogic SaaS heeft.
-* Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij PrinterLogic SaaS.
+* Controle in azure AD die toegang heeft tot PrinterLogic.
+* Zorg ervoor dat uw gebruikers automatisch worden aangemeld bij PrinterLogic met hun Azure AD-accounts.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -31,44 +31,44 @@ In deze zelfstudie leert u hoe u PrinterLogic SaaS integreert met Azure Active D
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een abonnement PrinterLogic SaaS waarvoor eenmalige aanmelding is ingeschakeld.
+* PrinterLogic-abonnement dat is ingeschakeld voor eenmalige aanmelding (SSO).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* PrinterLogic SaaS ondersteunt door **SP en IDP** geïnitieerde SSO.
-* PrinterLogic SaaS ondersteunt **just-in-time** -gebruikers inrichting.
+* PrinterLogic ondersteunt door **SP en IDP** geïnitieerde SSO.
+* PrinterLogic ondersteunt **just-in-time** -gebruikers inrichting.
 
-## <a name="add-printerlogic-saas-from-the-gallery"></a>PrinterLogic SaaS toevoegen vanuit de galerie
+## <a name="add-printerlogic-from-the-gallery"></a>PrinterLogic toevoegen vanuit de galerie
 
-Als u de integratie van PrinterLogic SaaS met Azure AD wilt configureren, voegt u PrinterLogic SaaS vanuit de galerie toe aan uw lijst met beheerde SaaS-apps.
+Als u de integratie van PrinterLogic in azure AD wilt configureren, moet u PrinterLogic uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **PrinterLogic SaaS** in het zoekvak in de sectie **Toevoegen uit de galerie**.
-1. Selecteer **PrinterLogic SaaS** in het venster met resultaten en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
+1. Typ in de sectie **toevoegen vanuit de galerie** **PrinterLogic** in het zoekvak.
+1. Selecteer **PrinterLogic** uit het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-sso-for-printerlogic-saas"></a>Eenmalige aanmelding van Azure AD configureren en testen voor PrinterLogic SaaS
+## <a name="configure-and-test-azure-ad-sso-for-printerlogic"></a>Azure AD SSO voor PrinterLogic configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met PrinterLogic SaaS met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in PrinterLogic SaaS.
+Azure AD SSO met PrinterLogic configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in PrinterLogic.
 
-Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren en te testen voor PrinterLogic SaaS:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met PrinterLogic:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Eenmalige aanmelding bij PrinterLogic SaaS configureren](#configure-printerlogic-saas-sso)** : als u de instellingen voor eenmalige aanmelding voor de toepassing wilt configureren.
-    1. **[Testgebruiker voor PrinterLogic SaaS maken](#create-printerlogic-saas-test-user)** : als u een tegenhanger van B.Simon in PrinterLogic SaaS wilt maken die is gekoppeld aan de Microsoft Azure Active Directory-weergave van de gebruiker.
+1. **[PRINTERLOGIC SSO configureren](#configure-printerlogic-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak een PrinterLogic-test gebruiker](#create-printerlogic-test-user)** -om een equivalent van B. Simon in PrinterLogic te hebben dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in Azure Portal, op de integratiepagina van de toepassing **PrinterLogic SaaS**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in het Azure Portal op de pagina Toepassings integratie van **PrinterLogic** de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -85,13 +85,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://www.<my_instance>printercloud.com`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van PrinterLogic SaaS](mailto:support@printerlogic.com) voor deze waarden. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteunings team van PrinterLogic-clients](mailto:support@printerlogic.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. De PrinterLogic SaaS-toepassing verwacht de SAML-asserties in een specifieke indeling. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
+1. De PrinterLogic-toepassing verwacht de SAML-beweringen in een specifieke indeling. hiervoor moet u aangepaste kenmerk toewijzingen toevoegen aan de configuratie van uw SAML-token kenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
     ![image](common/edit-attribute.png)
 
-1. Bovendien verwacht de PrinterLogic SaaS-toepassing nog enkele kenmerken die als SAML-antwoord moeten worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
+1. Daarnaast verwacht PrinterLogic toepassing nog maar weinig kenmerken die worden door gegeven in de SAML-respons die hieronder worden weer gegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
 
     | Naam | Bronkenmerk |
     | ---------| ------------ |
@@ -104,7 +104,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
-1. In de sectie **PrinterLogic SaaS instellen** kopieert u de juiste URL('s) op basis van uw behoeften.
+1. Op de sectie **PrinterLogic instellen** kopieert u de gewenste URL ('s) op basis van uw vereiste.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
@@ -122,23 +122,23 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot PrinterLogic SaaS.
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan PrinterLogic.
 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
-1. Selecteer **PrinterLogic SaaS** in de lijst met toepassingen.
+1. Selecteer in de lijst toepassingen de optie **PrinterLogic**.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-printerlogic-saas-sso"></a>Eenmalige aanmelding voor PrinterLogic SaaS configureren
+## <a name="configure-printerlogic-sso"></a>PrinterLogic SSO configureren
 
-Als u eenmalige aanmelding wilt configureren in **PrinterLogic SaaS**, moet u het gedownloade **Certificaat (Base64)** en de juiste gekopieerde URL’s uit de Azure-portal verzenden naar het [ondersteuningsteam van PrinterLogic SaaS](mailto:support@printerlogic.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren op **PrinterLogic** , moet u het gedownloade **certificaat (base64)** en de juiste gekopieerde url's verzenden van Azure Portal naar [PrinterLogic ondersteunings team](mailto:support@printerlogic.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
-### <a name="create-printerlogic-saas-test-user"></a>Een testgebruiker voor PrinterLogic SaaS maken
+### <a name="create-printerlogic-test-user"></a>PrinterLogic-test gebruiker maken
 
-In deze sectie wordt een gebruiker met de naam Britta Simon gemaakt in PrinterLogic SaaS. PrinterLogic SaaS biedt ondersteuning voor Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als er nog geen gebruiker in PrinterLogic SaaS bestaat, wordt er een nieuwe gemaakt na verificatie.
+In deze sectie wordt een gebruiker met de naam Julia Simon gemaakt in PrinterLogic. PrinterLogic biedt ondersteuning voor Just-in-time-gebruikers inrichting, die standaard is ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in PrinterLogic, wordt er een nieuwe gemaakt na verificatie.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
@@ -146,16 +146,16 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL van de PrinterLogic SaaS-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor PrinterLogic-aanmelding, waar u de aanmeldings stroom kunt initiëren.  
 
-* Ga rechtstreeks naar de URL van de PrinterLogic SaaS-aanmeld en start de aanmeldings stroom vanaf daar.
+* Ga rechtstreeks naar de URL voor PrinterLogic-aanmelding en start de aanmeldings stroom vanaf daar.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-* Klik op **test deze toepassing** in azure Portal en meld u automatisch aan bij de PrinterLogic SaaS waarvoor u de SSO hebt ingesteld. 
+* Klik op **test deze toepassing** in azure Portal en u moet automatisch worden aangemeld bij de PrinterLogic waarvoor u de SSO hebt ingesteld. 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de PrinterLogic SaaS-tegel in de mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze is geconfigureerd in de IDP-modus, moet u automatisch worden aangemeld bij de PrinterLogic SaaS waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u op de tegel PrinterLogic in de app mijn apps klikt, wordt u omgeleid naar de aanmeldings pagina van de toepassing om de aanmeldings stroom te initiëren en als deze in de IDP-modus is geconfigureerd, moet u automatisch worden aangemeld bij de PrinterLogic waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u PrinterLogic SaaS hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Nadat u PrinterLogic hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

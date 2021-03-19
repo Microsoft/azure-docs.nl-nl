@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/16/2020
 ms.author: sefriend
 manager: clarkn
-ms.openlocfilehash: 325502255e84e38a39ca5b90ee4126354c0d425b
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: ecc4a5a17186eddd4223715462b14399bdf702df
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601237"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601887"
 ---
 # <a name="get-started-with-the-windows-virtual-desktop-agent"></a>Aan de slag met de virtueel-bureaublad agent van Windows
 
@@ -32,7 +32,10 @@ De virtuele Windows-bureau blad-agent wordt in eerste instantie op een van de vo
 
 ## <a name="agent-update-process"></a>Update proces van agent
 
-De Windows Virtual Desktop-service werkt de agent automatisch bij wanneer een update beschikbaar wordt. Agent updates kunnen nieuwe functionaliteit bevatten of eerdere problemen oplossen. Zodra de eerste versie van de virtuele bureau blad-agent van Windows is geïnstalleerd, vraagt de agent regel matig de virtueel-bureaublad service van Windows op om te bepalen of er een nieuwere versie van de agent en de bijbehorende onderdelen beschikbaar zijn. Als er een nieuwe versie is, downloadt de bootloader van de agent automatisch de nieuwste versie van de agent, de side-by-side stack en de bewakings agent van Genève.
+De Windows Virtual Desktop-service werkt de agent bij wanneer een update beschikbaar wordt. Agent updates kunnen nieuwe functionaliteit of oplossingen voor eerdere problemen bevatten. Zodra de eerste versie van de virtuele bureau blad-agent van Windows is geïnstalleerd, vraagt de agent regel matig de virtueel-bureaublad service van Windows op om te bepalen of er een nieuwere versie van het onderdeel agent, stack of bewaking beschikbaar is. Als er al een nieuwere versie van een van de onderdelen is geïmplementeerd, wordt het bijgewerkte onderdeel automatisch geïnstalleerd.
+
+Nieuwe versies van de agent worden met regel matige intervallen geïmplementeerd in weeklong Peri Oden naar alle Azure-abonnementen. Deze update-Peri Oden worden "vluchten" genoemd. Wanneer er een vlucht optreedt, kunnen de virtuele machines in uw hostgroep de agent update op verschillende tijdstippen ontvangen. Alle VM-agents in alle abonnementen worden bijgewerkt aan het einde van de implementatie periode. Het Windows virtueel bureau blad-vlucht systeem verbetert de betrouw baarheid van de service door de stabiliteit en kwaliteit van de update van de agent te garanderen.
+
 
 >[!NOTE]
 >- Wanneer de agent van Genève de laatste versie bijwerkt, wordt de oude GenevaTask-taak gevonden en uitgeschakeld voordat een nieuwe taak voor de nieuwe bewakings agent wordt gemaakt. De eerdere versie van de bewakings agent wordt niet verwijderd als er een probleem is met de meest recente versie van de bewakings agent, waardoor de eerdere versie moet worden hersteld. Als er een probleem is met de nieuwste versie, wordt de oude bewakings agent opnieuw ingeschakeld om bewakings gegevens te blijven leveren. Alle versies van de monitor die ouder zijn dan de laatste die u vóór de update hebt geïnstalleerd, worden verwijderd uit de virtuele machine.

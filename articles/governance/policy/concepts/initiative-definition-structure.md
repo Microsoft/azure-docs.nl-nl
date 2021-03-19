@@ -1,14 +1,14 @@
 ---
 title: Details van de definitie structuur van het initiatief
 description: Hierin wordt beschreven hoe beleids initiatieven worden gebruikt voor het groeperen van beleids definities voor implementatie naar Azure-resources in uw organisatie.
-ms.date: 10/07/2020
+ms.date: 03/16/2021
 ms.topic: conceptual
-ms.openlocfilehash: 8f9c6146e1dde5b5a7f6595c61638319de60a82d
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: edd3f25dd528d1a718c9287c9f30988b87fb73e2
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876172"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587216"
 ---
 # <a name="azure-policy-initiative-definition-structure"></a>Definitie structuur van Azure Policy initiatief
 
@@ -17,7 +17,7 @@ Met initiatieven kunt u verschillende gerelateerde beleids definities groeperen 
 U gebruikt JSON om een beleids initiatief definitie te maken. De beleids initiatief definitie bevat elementen voor:
 
 - weergave naam
-- description
+- beschrijving
 - metagegevens
 - parameters
 - beleids definities
@@ -113,9 +113,9 @@ Klanten kunnen alle eigenschappen en waarden definiëren die van toepassing zijn
 - `category` (teken reeks): bepaalt onder welke categorie in Azure Portal de beleids definitie wordt weer gegeven.
 
   > [!NOTE]
-  > Voor een [regelgevings nalevings](./regulatory-compliance.md) initiatief moet de naleving van de `category` **regelgeving**worden vastgesteld.
+  > Voor een [regelgevings nalevings](./regulatory-compliance.md) initiatief moet de naleving van de `category` **regelgeving** worden vastgesteld.
 
-- `preview` (Booleaans): de vlag True of False voor als de beleids initiatief definitie _Preview_is.
+- `preview` (Booleaans): de vlag True of False voor als de beleids initiatief definitie _Preview_ is.
 - `deprecated` (Booleaans): de vlag True of False voor als de beleids initiatief definitie is gemarkeerd als _afgeschaft_.
 
 > [!NOTE]
@@ -134,7 +134,7 @@ Para meters werken op dezelfde manier als bij het bouwen van beleids initiatieve
 Een para meter heeft de volgende eigenschappen die worden gebruikt in de beleids initiatief definitie:
 
 - `name`: De naam van de para meter. Wordt gebruikt door de `parameters` implementatie functie binnen de beleids regel. Zie [een parameter waarde gebruiken](#passing-a-parameter-value-to-a-policy-definition)voor meer informatie.
-- `type`: Bepaalt of de para meter een **teken reeks**, een **matrix**, een **object**, een **Booleaanse waarde**, een **geheel getal**, een **float**of een **datum/tijd**is.
+- `type`: Bepaalt of de para meter een **teken reeks**, een **matrix**, een **object**, een **Booleaanse waarde**, een **geheel getal**, een **float** of een **datum/tijd** is.
 - `metadata`: Definieert subeigenschappen die voornamelijk worden gebruikt door de Azure Portal om gebruikers vriendelijke informatie weer te geven:
   - `description`: De uitleg van het gebruik van de para meter voor. Kan worden gebruikt om voor beelden te bieden van acceptabele waarden.
   - `displayName`: De beschrijvende naam die wordt weer gegeven in de portal voor de para meter.
@@ -282,7 +282,7 @@ Door micro soft gemaakte invoeg toepassingen met reglementaire naleving hebben e
 Deze informatie is:
 
 - Wordt weer gegeven in de Azure Portal op het overzicht van een **besturings element** op een regelgevings nalevings initiatief.
-- Beschikbaar via REST API. Bekijk de `Microsoft.PolicyInsights` resource provider en de [policyMetadata-bewerkings groep](/rest/api/policy-insights/policymetadata/getresource).
+- Beschikbaar via REST API. Bekijk de `Microsoft.PolicyInsights` resource provider en de [policyMetadata-bewerkings groep](/rest/api/policy/policymetadata/getresource).
 - Beschikbaar via Azure CLI. Zie de opdracht [AZ Policy meta data](/cli/azure/policy/metadata) .
 
 > [!IMPORTANT]

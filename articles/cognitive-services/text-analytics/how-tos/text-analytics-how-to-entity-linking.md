@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 02/17/2021
+ms.date: 03/15/2021
 ms.author: aahi
-ms.openlocfilehash: 3fd3695490331a1f599db71bf5cafb25e957bf08
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0876dd00933203c943417d87978567cf555a3e4f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101710342"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598997"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Benoemde entiteits herkenning gebruiken in Text Analytics
 
@@ -35,7 +35,7 @@ De PII-functie maakt deel uit van NER en kan gevoelige entiteiten identificeren 
 
 ## <a name="named-entity-recognition-features-and-versions"></a>Functies en versies van de benoemde entiteit herkenning
 
-| Functie                                                         | NER v 3.0 | NER v 3.1-Preview. 3 |
+| Functie                                                         | NER v 3.0 | NER v 3.1-Preview. 4 |
 |-----------------------------------------------------------------|--------|----------|
 | Methoden voor afzonderlijke aanvragen en batchaanvragen                          | X      | X        |
 | Uitbrei ding van entiteits herkenning over verschillende categorieën           | X      | X        |
@@ -47,8 +47,8 @@ Zie [taal ondersteuning](../language-support.md) voor meer informatie.
 
 Named entity Recognition V3 biedt uitgebreide detectie over meerdere typen. Op dit moment kan NER v 3.0 entiteiten herkennen in de [categorie algemene entiteit](../named-entity-types.md).
 
-Named entity Recognition v 3.1-Preview. 3 bevat de detectie mogelijkheden van v 3.0 en: 
-* De mogelijkheid om persoonlijke gegevens () te detecteren `PII` met behulp van het `v3.1-preview.3/entities/recognition/pii` eind punt. 
+Named entity Recognition v 3.1-Preview. 4 bevat de detectie mogelijkheden van v 3.0 en: 
+* De mogelijkheid om persoonlijke gegevens () te detecteren `PII` met behulp van het `v3.1-preview.4/entities/recognition/pii` eind punt. 
 * Een optionele `domain=phi` para meter voor het detecteren van vertrouwelijke status informatie ( `PHI` ).
 * [Asynchrone bewerking](text-analytics-how-to-call-api.md) met behulp van het `/analyze` eind punt.
 
@@ -72,36 +72,40 @@ Maak een POST-aanvraag. U kunt [postman](text-analytics-how-to-call-api.md) of d
 
 ### <a name="request-endpoints"></a>Eindpunten voor aanvragen
 
-#### <a name="version-31-preview3"></a>[Versie 3.1-preview.3](#tab/version-3-preview)
+#### <a name="version-31-preview"></a>[Versie 3.1-preview](#tab/version-3-preview)
 
-Herkenning van benoemde entiteiten `v3.1-preview.3` maakt gebruik van afzonderlijke eind punten voor ner, PII en aanvragen voor het koppelen van entiteiten. Gebruik een URL-indeling hieronder op basis van uw aanvraag.
+Herkenning van benoemde entiteiten `v3.1-preview.4` maakt gebruik van afzonderlijke eind punten voor ner, PII en aanvragen voor het koppelen van entiteiten. Gebruik een URL-indeling hieronder op basis van uw aanvraag.
 
 **Entiteiten koppelen**
-* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/linking`
+* `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/linking`
 
-[Named entity Recognition versie 3,1-Preview-verwijzing voor `Linking`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesLinking)
+[Named entity Recognition versie 3,1-Preview-verwijzing voor `Linking`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-4/operations/EntitiesLinking)
 
 **Herkenning van benoemde entiteiten**
-* Algemene entiteiten- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/general`
+* Algemene entiteiten- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/recognition/general`
 
-[Named entity Recognition versie 3,1-Preview-verwijzing voor `General`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionGeneral)
+[Named entity Recognition versie 3,1-Preview-verwijzing voor `General`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-4/operations/EntitiesRecognitionGeneral)
 
 **Persoonlijk identificeer bare informatie (PII)**
-* Persoonlijke `PII` gegevens ()- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/pii`
+* Persoonlijke `PII` gegevens ()- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/recognition/pii`
 
 U kunt ook de optionele `domain=phi` para meter gebruiken om informatie over de status ( `PHI` ) in de tekst te detecteren. 
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/recognition/pii?domain=phi`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/recognition/pii?domain=phi`
 
-Vanaf `v3.1-preview.3` is het JSON-antwoord een `redactedText` eigenschap die de gewijzigde invoer tekst bevat waarin de GEDETECTEERDe PII-entiteiten worden vervangen door een `*` voor elk teken in de entiteiten.
+Vanaf `v3.1-preview.4` is het JSON-antwoord een `redactedText` eigenschap die de gewijzigde invoer tekst bevat waarin de GEDETECTEERDe PII-entiteiten worden vervangen door een `*` voor elk teken in de entiteiten.
 
-[Named entity Recognition versie 3,1-Preview-verwijzing voor `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-3/operations/EntitiesRecognitionPii)
+[Named entity Recognition versie 3,1-Preview-verwijzing voor `PII`](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-Preview-4/operations/EntitiesRecognitionPii)
+
+De API zal proberen om de [vermelde entiteits categorieën](../named-entity-types.md?tabs=personal) voor een bepaalde document taal te detecteren. Als u wilt opgeven welke entiteiten worden gedetecteerd en geretourneerd, gebruikt u de optionele para meter PII-categorieën met de juiste entiteits categorieën. Met deze para meter kunt u ook entiteiten detecteren die niet standaard zijn ingeschakeld voor uw document taal. Bijvoorbeeld een Frans-rijbewijs nummer dat kan voor komen in Engelse tekst.
+
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/recognition/pii?piiCategories=[FRDriversLicenseNumber]`
 
 **Asynchrone bewerking**
 
-Vanaf `v3.1-preview.3` kunt u ner aanvragen asynchroon verzenden met behulp van het `/analyze` eind punt.
+Vanaf `v3.1-preview.4` kunt u aanvragen asynchroon verzenden met behulp van het `/analyze` eind punt.
 
-* Asynchrone bewerking- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/analyze`
+* Asynchrone bewerking- `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/analyze`
 
 Zie [de Text Analytics-API aanroepen](text-analytics-how-to-call-api.md) voor informatie over het verzenden van asynchrone aanvragen.
 

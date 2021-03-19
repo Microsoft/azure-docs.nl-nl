@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: aa24989103cca5bb7031a21ca106b93ada0c3904
-ms.sourcegitcommit: 6776f0a27e2000fb1acb34a8dddc67af01ac14ac
+ms.openlocfilehash: 0ecfbb9053fde4ff332cbbcb6e14a84a5bbeb99a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "103149457"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593149"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Schaalbaarheids- en prestatiedoelen in Azure Files
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via de protocollen van het SMB-en NFS-bestands systeem. In dit artikel worden de schaalbaarheids-en prestatie doelen voor Azure Files en Azure File Sync beschreven.
@@ -134,7 +134,7 @@ De snelheid van de prestaties is 20 objecten per seconde. Klanten kunnen een sch
 
 **Initiële synchronisatie van gegevens van Windows Server naar Azure-bestands share**: veel Azure file sync implementaties beginnen met een lege Azure-bestands share, omdat alle gegevens zich op de Windows-Server bevindt. In dergelijke gevallen is de oorspronkelijke inventarisatie wijziging snel en het meren deel van de tijd wordt besteed aan het synchroniseren van wijzigingen van de Windows-Server in de Azure-bestands share (s). 
 
-Terwijl synchronisatie gegevens uploadt naar de Azure-bestands share, is er geen uitval tijd op de lokale bestands server, en kunnen beheerders [netwerk limieten instellen](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-registration#set-azure-file-sync-network-limits) om de hoeveelheid band breedte te beperken die wordt gebruikt voor het uploaden van gegevens op de achtergrond.
+Terwijl synchronisatie gegevens uploadt naar de Azure-bestands share, is er geen uitval tijd op de lokale bestands server, en kunnen beheerders [netwerk limieten instellen](./storage-sync-files-server-registration.md#set-azure-file-sync-network-limits) om de hoeveelheid band breedte te beperken die wordt gebruikt voor het uploaden van gegevens op de achtergrond.
 
 Initiële synchronisatie wordt doorgaans beperkt door de initiële upload frequentie van 20 bestanden per seconde per synchronisatie groep. Klanten kunnen een schatting maken van de tijd voor het uploaden van alle gegevens naar Azure, met behulp van de volgende formule om tijd in dagen te krijgen:  
 

@@ -7,27 +7,29 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/18/2020
+ms.date: 03/17/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: bbda4268ca00d1c12f851517e2b35add7fba7f9b
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: d40dd0b91f9dcfb7bf5b6e8f084f25ee4f90d780
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694298"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104596549"
 ---
 # <a name="analyzers-for-text-processing-in-azure-cognitive-search"></a>Analyse functies voor tekst verwerking in azure Cognitive Search
 
-Een *analyse* maakt deel uit van de [engine voor zoekopdrachten in volledige tekst](search-lucene-query-architecture.md) en is verantwoordelijk voor het verwerken van tekst in queryreeksen en geïndexeerde documenten. Tekst verwerking (ook wel lexicale analyse genoemd) is Transformatieve en wijzigt een teken reeks via acties, zoals:
+Een *analyse* programma is een onderdeel van [Zoeken in volledige tekst](search-lucene-query-architecture.md) dat verantwoordelijk is voor het verwerken van tekst in query reeksen en geïndexeerde documenten. Tekst verwerking (ook wel lexicale analyse genoemd) is Transformatieve, waardoor een query reeks wordt gewijzigd via acties zoals deze:
 
 + Verwijder niet-essentiële woorden (stopwords) en interpunctie
 + Zinsdelen en afgebroken woorden in onderdeel delen splitsen
 + Kleine letters in hoofd letters
 + Verminder het aantal woorden in primitieve hoofd formulieren voor efficiëntie van de opslag, zodat treffers kunnen worden gevonden ongeacht het aantal tien tallen
 
-De analyse is van toepassing op `Edm.String` velden die zijn gemarkeerd als zoekbaar, waarmee Zoek opdrachten in volledige tekst worden aangeduid. Voor velden met deze configuratie treedt tijdens het indexeren een analyse op wanneer er tokens worden gemaakt en vervolgens tijdens het uitvoeren van de query wanneer query's worden geparseerd en de engine scant op overeenkomende tokens. Een overeenkomst wordt waarschijnlijk vaker weer gegeven wanneer dezelfde analyse functie wordt gebruikt voor indexering en query's, maar u kunt de Analyzer voor elke werk belasting afzonderlijk instellen, afhankelijk van uw vereisten.
+De analyse is van toepassing op `Edm.String` velden die zijn gemarkeerd als zoekbaar, waarmee Zoek opdrachten in volledige tekst worden aangeduid. 
 
-Query typen die niet in volledige tekst zoeken, zoals reguliere expressie of fuzzy zoek opdracht, worden niet door de analyse fase aan de query zijde door lopen. In plaats daarvan verzendt de parser deze teken reeksen rechtstreeks naar de zoek machine, met behulp van het patroon dat u opgeeft als basis voor de overeenkomst. Deze query formulieren vereisen doorgaans tokens met hele teken reeksen om het gebruik van patronen te laten overeenkomen. Als u hele tokens wilt ophalen tijdens het indexeren, hebt u mogelijk [aangepaste analyse](index-add-custom-analyzers.md)functies nodig. Zie [Zoeken in volledige tekst in Azure Cognitive Search](search-lucene-query-architecture.md)voor meer informatie over wanneer en waarom query termen worden geanalyseerd.
+Voor velden met deze configuratie treedt tijdens het indexeren een analyse op wanneer er tokens worden gemaakt en vervolgens tijdens het uitvoeren van de query wanneer query's worden geparseerd en de engine scant op overeenkomende tokens. Een overeenkomst wordt waarschijnlijk vaker weer gegeven wanneer dezelfde analyse functie wordt gebruikt voor indexering en query's, maar u kunt de Analyzer voor elke werk belasting afzonderlijk instellen, afhankelijk van uw vereisten.
+
+Query typen die *niet* in volledige tekst zoeken, zoals filters of fuzzy zoek acties, worden niet door de analyse fase aan de query zijde door lopen. In plaats daarvan verzendt de parser deze teken reeksen rechtstreeks naar de zoek machine, met behulp van het patroon dat u opgeeft als basis voor de overeenkomst. Deze query formulieren vereisen doorgaans tokens met hele teken reeksen om het gebruik van patronen te laten overeenkomen. U hebt [aangepaste analyse](index-add-custom-analyzers.md)functies nodig om ervoor te zorgen dat de tokens van de hele term tijdens het indexeren worden uitgevoerd. Zie [Zoeken in volledige tekst in Azure Cognitive Search](search-lucene-query-architecture.md)voor meer informatie over wanneer en waarom query termen worden geanalyseerd.
 
 Voor meer achtergrond informatie over lexicale analyse, luistert u naar de volgende video clip voor een korte uitleg.
 
@@ -39,7 +41,7 @@ In azure Cognitive Search query's wordt een analyse programma automatisch aanger
 
 Azure Cognitive Search maakt standaard gebruik van de [Apache Lucene Standard Analyzer (standaard-lucene)](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html), die tekst in elementen afbreekt volgens de regels voor [Unicode-tekst segmentatie](https://unicode.org/reports/tr29/) . Daarnaast worden alle tekens in de vorm van een kleine letters door de standaard-Analyzer geconverteerd. Zowel geïndexeerde documenten als zoek termen voeren de analyse uit tijdens het indexeren en verwerken van query's.  
 
-U kunt de standaard waarde voor een veld per veld overschrijven. Alternatieve analyse functies kunnen een [taal analyse](index-add-language-analyzers.md) zijn voor linguïstische verwerking, een [aangepaste analyse functie](index-add-custom-analyzers.md)of een vooraf gedefinieerde analyse van de [lijst met beschik bare analyse](index-add-custom-analyzers.md#AnalyzerTable)functies.
+U kunt de standaard waarde voor een veld per veld overschrijven. Alternatieve analyse functies kunnen een [taal analyse](index-add-language-analyzers.md) zijn voor de taal kundige verwerking, een [aangepaste analyse functie](index-add-custom-analyzers.md)of een ingebouwde analyse functie uit de [lijst met beschik bare analyse](index-add-custom-analyzers.md#built-in-analyzers)functies.
 
 ## <a name="types-of-analyzers"></a>Typen analyse functies
 
@@ -48,16 +50,16 @@ In de volgende lijst wordt beschreven welke analyse functies beschikbaar zijn in
 | Categorie | Beschrijving |
 |----------|-------------|
 | [Standard-lucene Analyzer](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/analysis/standard/StandardAnalyzer.html) | Standaard. Er is geen specificatie of configuratie vereist. Deze General-Purpose Analyzer werkt goed voor veel talen en scenario's.|
-| Vooraf gedefinieerde analyse functies | Wordt aangeboden als een voltooid product dat is bedoeld om te worden gebruikt als-is. <br/>Er zijn twee typen: speciaal en taal. Wat maakt het ' vooraf gedefinieerd ' dat u naar de naam verwijst, zonder configuratie of aanpassing. <br/><br/>[Gespecialiseerde analyse functies (taal-neutraal)](index-add-custom-analyzers.md#AnalyzerTable) worden gebruikt wanneer tekst invoer gespecialiseerde verwerking of minimale verwerking vereist. Vooraf gedefinieerde analyse functies zonder taal zijn **Asciifolding**, **tref woord**, **patroon**, **eenvoudig**, **Stop**, **spatie**.<br/><br/>[Taal analysen](index-add-language-analyzers.md) worden gebruikt wanneer u ondersteuning voor uitgebreide taal functionaliteit voor afzonderlijke talen nodig hebt. Azure Cognitive Search biedt ondersteuning voor taal analyses van 35 en 50 micro soft voor de verwerking van natuurlijke taal. |
+| Ingebouwde analyse functies | Wordt gebruikt als-is en waarnaar wordt verwezen met de naam. Er zijn twee typen: taal en taal-neutraal. </br></br>[Gespecialiseerde analyse functies (taal-neutraal)](index-add-custom-analyzers.md#built-in-analyzers) worden gebruikt wanneer tekst invoer gespecialiseerde verwerking of minimale verwerking vereist. Voor beelden van analyse functies in deze categorie zijn **Asciifolding**, **tref woord**, **patroon**, **eenvoudig**, **Stop**, **spatie**. </br></br>[Taal analysen](index-add-language-analyzers.md) worden gebruikt wanneer u ondersteuning voor uitgebreide taal functionaliteit voor afzonderlijke talen nodig hebt. Azure Cognitive Search biedt ondersteuning voor taal analyses van 35 en 50 micro soft voor de verwerking van natuurlijke taal. |
 |[Analysevoorzieningen aanpassen](/rest/api/searchservice/Custom-analyzers-in-Azure-Search) | Verwijst naar een door de gebruiker gedefinieerde configuratie van een combi natie van bestaande elementen, die bestaat uit één tokenizer (vereist) en optionele filters (char of Token).|
 
-Een paar vooraf gedefinieerde analyse functies, zoals **patroon** of **Stop**, ondersteunen een beperkte set configuratie opties. Als u deze opties wilt instellen, maakt u effectief een aangepaste analyse functie die bestaat uit de vooraf gedefinieerde analyse functie en een van de alternatieve opties die worden beschreven in de [vooraf gedefinieerde analyse verwijzing](index-add-custom-analyzers.md#AnalyzerTable). Net als bij elke aangepaste configuratie geeft u de nieuwe configuratie op met een naam, zoals *myPatternAnalyzer* om deze te onderscheiden van de Lucene-patroon analyse.
+Een paar ingebouwde analyse functies, zoals **patroon** of **Stop**, ondersteunen een beperkte set configuratie opties. Als u deze opties wilt instellen, maakt u een aangepaste analyse functie die bestaat uit de ingebouwde analyse functie en een van de alternatieve opties die zijn gedocumenteerd in [ingebouwde analyse](index-add-custom-analyzers.md#built-in-analyzers)functies. Net als bij elke aangepaste configuratie geeft u de nieuwe configuratie op met een naam, zoals *myPatternAnalyzer* om deze te onderscheiden van de Lucene-patroon analyse.
 
 ## <a name="how-to-specify-analyzers"></a>Analyse functies opgeven
 
 Het instellen van een Analyzer is optioneel. In het algemeen kunt u de standaard standaard-lucene Analyzer eerst gebruiken om te zien hoe deze werkt. Als query's niet de verwachte resultaten retour neren, is het vaak de juiste oplossing om over te scha kelen naar een andere analyse functie.
 
-1. Wanneer u een definitie van een veld in de [index](/rest/api/searchservice/create-index)maakt, stelt u de eigenschap  **Analyzer** in op een van de volgende opties: een [vooraf gedefinieerde analysator](index-add-custom-analyzers.md#AnalyzerTable) `keyword` , zoals een [taal analyse](index-add-language-analyzers.md) `en.microsoft` , zoals of een aangepaste analyse functie (gedefinieerd in hetzelfde index schema).  
+1. Wanneer u een definitie van een veld in de [index](/rest/api/searchservice/create-index)maakt, stelt u de eigenschap ' Analyzer ' in op een van de volgende opties: een [ingebouwd analyse](index-add-custom-analyzers.md#built-in-analyzers) programma zoals een **sleutel woord**, een [taal analyse](index-add-language-analyzers.md) , zoals `en.microsoft` of een aangepaste analyse functie (gedefinieerd in hetzelfde index schema).  
  
    ```json
      "fields": [
@@ -72,20 +74,20 @@ Het instellen van een Analyzer is optioneel. In het algemeen kunt u de standaard
     },
    ```
 
-   Als u een [taal analyse](index-add-language-analyzers.md)gebruikt, moet u de eigenschap **Analyzer** gebruiken om deze op te geven. De eigenschappen **searchAnalyzer** en **indexAnalyzer** ondersteunen geen taal analyse functies.
+   Als u een [taal analyse](index-add-language-analyzers.md)gebruikt, moet u de eigenschap ' Analyzer ' gebruiken om deze op te geven. De eigenschappen ' searchAnalyzer ' en ' indexAnalyzer ' zijn niet van toepassing op taal analysen.
 
-1. U kunt ook **indexAnalyzer** en **searchAnalyzer** instellen om de Analyzer voor elke werk belasting te variëren. Deze eigenschappen worden samen ingesteld en vervangen de eigenschap **Analyzer** , die Null moet zijn. U kunt verschillende analyse functies gebruiken om gegevens voor te bereiden en op te halen als een van deze activiteiten vereist dat een specifieke trans formatie niet nodig is voor de andere.
+1. U kunt ook ' indexAnalyzer ' en ' searchAnalyzer ' instellen om het analyseprogramma voor elke werk belasting te variëren. Deze eigenschappen worden samen ingesteld en vervangen de eigenschap ' Analyzer ', die Null moet zijn. U kunt verschillende analyse functies voor indexering en query's gebruiken als een van deze activiteiten vereist dat een specifieke trans formatie niet nodig is voor de andere.
 
    ```json
      "fields": [
     {
-      "name": "Description",
+      "name": "ProductGroup",
       "type": "Edm.String",
       "retrievable": true,
       "searchable": true,
       "analyzer": null,
       "indexAnalyzer": "keyword",
-      "searchAnalyzer": "whitespace"
+      "searchAnalyzer": "standard"
     },
    ```
 
@@ -95,13 +97,13 @@ Het instellen van een Analyzer is optioneel. In het algemeen kunt u de standaard
 
 De beste manier om analyseers toe te voegen en toe te wijzen, is tijdens de actieve ontwikkeling, wanneer het verwijderen en opnieuw maken van indexen de routine is.
 
-Omdat analyse functies worden gebruikt voor Tokenize-voor waarden, moet u een analyse functie toewijzen wanneer het veld wordt gemaakt. Het toewijzen van **analyse** -of **indexAnalyzer** aan een veld dat al fysiek is gemaakt is niet toegestaan (hoewel u de eigenschap **searchAnalyzer** echter op elk gewenst moment kunt wijzigen zonder dat dit van invloed is op de index).
+Omdat analyse functies worden gebruikt voor Tokenize-voor waarden, moet u een analyse functie toewijzen wanneer het veld wordt gemaakt. Het is in feite niet toegestaan om een analyse-of indexAnalyzer toe te wijzen aan een veld dat al fysiek is gemaakt (hoewel u de eigenschap searchAnalyzer echter op elk gewenst moment kunt wijzigen zonder dat dit van invloed is op de index).
 
 Als u de Analysator van een bestaand veld wilt wijzigen, moet u [de index volledig opnieuw samen stellen](search-howto-reindex.md) (u kunt geen afzonderlijke velden opnieuw samen stellen). Voor indexen in productie kunt u een nieuwe build uitstellen door een nieuw veld te maken met de nieuwe analyse toewijzing en deze te gebruiken in plaats van de oude. Gebruik [update-index](/rest/api/searchservice/update-index) om het nieuwe veld en [mergeOrUpload](/rest/api/searchservice/addupdate-or-delete-documents) op te nemen. Later kunt u als onderdeel van de geplande index onderhoud de index opschonen om verouderde velden te verwijderen.
 
 Als u een nieuw veld wilt toevoegen aan een bestaande index, roept u [update index](/rest/api/searchservice/update-index) aan om het veld toe te voegen en [mergeOrUpload](/rest/api/searchservice/addupdate-or-delete-documents) te vullen.
 
-Als u een aangepaste analyse functie wilt toevoegen aan een bestaande index, geeft u de **allowIndexDowntime** -vlag door in [update index](/rest/api/searchservice/update-index) als u deze fout wilt voor komen:
+Als u een aangepaste analyse functie wilt toevoegen aan een bestaande index, geeft u de vlag ' allowIndexDowntime ' door in [update index](/rest/api/searchservice/update-index) als u deze fout wilt voor komen:
 
 *De index update is niet toegestaan omdat deze downtime zou veroorzaken. Als u nieuwe analyse functies, tokenizers, token filters of teken filters wilt toevoegen aan een bestaande index, stelt u de query parameter ' allowIndexDowntime ' in op ' True ' in de aanvraag voor het bijwerken van de index. Houd er rekening mee dat met deze bewerking de index ten minste enkele seconden offline wordt gezet, waardoor uw indexerings-en query aanvragen mislukken. De prestaties en schrijf Beschik baarheid van de index kunnen enkele minuten na de index worden bijgewerkt, of langer voor zeer grote indexen. "*
 
@@ -111,7 +113,7 @@ In deze sectie vindt u advies over het werken met analyse functies.
 
 ### <a name="one-analyzer-for-read-write-unless-you-have-specific-requirements"></a>Eén analyse functie voor lezen/schrijven, tenzij u specifieke vereisten hebt
 
-Met Azure Cognitive Search kunt u verschillende analyse functies opgeven voor indexering en zoek acties via aanvullende veld eigenschappen **indexAnalyzer** en **searchAnalyzer** . Als u geen waarde opgeeft, wordt de analyseset met de eigenschap **Analyzer** gebruikt voor het indexeren en zoeken. Als **Analyzer** niet is opgegeven, wordt de standaard standaard-lucene Analyzer gebruikt.
+Met Azure Cognitive Search kunt u verschillende analyse functies opgeven voor indexering en zoek acties via aanvullende veld eigenschappen indexAnalyzer en searchAnalyzer. Als u geen waarde opgeeft, wordt de analyseset met de eigenschap Analyzer gebruikt voor het indexeren en zoeken. Als de Analyzer niet is opgegeven, wordt de standaard standaard-lucene Analyzer gebruikt.
 
 Een algemene regel is het gebruik van dezelfde analyse functie voor indexering en query's, tenzij specifieke vereisten anders worden bepaald. Zorg ervoor dat u zorgvuldig test. Wanneer tekst verwerking afwijkt van de zoek-en indexerings tijd, loopt u het risico dat de query termen en geïndexeerde voor waarden niet overeenkomen wanneer de zoek-en indexerings analyse configuraties niet zijn uitgelijnd.
 
@@ -142,10 +144,13 @@ In dit voor beeld ziet u een analyse definitie met aangepaste opties. Aangepaste
 
 Dit voor beeld door lopen:
 
-* Analyse functies zijn een eigenschap van de veld klasse voor een doorzoekbaar veld.
-* Een aangepaste analyse functie maakt deel uit van een index definitie. Het kan licht worden aangepast (u kunt bijvoorbeeld één optie in één filter aanpassen) of op meerdere locaties aangepast.
-* In dit geval is de aangepaste Analyzer "my_analyzer", die op zijn beurt gebruikmaakt van een aangepaste standaard tokenizer "my_standard_tokenizer" en twee token filters: kleine en aangepaste asciifolding-filter "my_asciifolding".
-* Ook worden er 2 aangepaste teken filters map_dash en remove_whitespace gedefinieerd. De eerste Hiermee vervangt u alle streepjes door onderstrepings tekens, terwijl de tweede een spatie verwijdert. Spaties moeten UTF-8-code ring zijn in de toewijzings regels. De teken filters worden vóór het tokenen toegepast en beïnvloeden de resulterende tokens (de standaard-tokenizer pauzes op een streepje en spaties, maar niet op een onderstrepings teken).
++ Analyse functies zijn een eigenschap van de veld klasse voor een doorzoekbaar veld.
+
++ Een aangepaste analyse functie maakt deel uit van een index definitie. Het kan licht worden aangepast (u kunt bijvoorbeeld één optie in één filter aanpassen) of op meerdere locaties aangepast.
+
++ In dit geval is de aangepaste Analyzer "my_analyzer", die op zijn beurt gebruikmaakt van een aangepaste standaard tokenizer "my_standard_tokenizer" en twee token filters: kleine en aangepaste asciifolding-filter "my_asciifolding".
+
++ Ook worden er 2 aangepaste teken filters map_dash en remove_whitespace gedefinieerd. De eerste Hiermee vervangt u alle streepjes door onderstrepings tekens, terwijl de tweede een spatie verwijdert. Spaties moeten UTF-8-code ring zijn in de toewijzings regels. De teken filters worden vóór het tokenen toegepast en beïnvloeden de resulterende tokens (de standaard-tokenizer pauzes op een streepje en spaties, maar niet op een onderstrepings teken).
 
 ```json
   {
@@ -245,7 +250,7 @@ Het element ' Analyzer ' overschrijft de standaard analyse functie op basis van 
 
 ### <a name="mixing-analyzers-for-indexing-and-search-operations"></a>Analyse functies combi neren voor indexerings-en zoek bewerkingen
 
-De Api's bevatten aanvullende index kenmerken voor het opgeven van verschillende analyse functies voor indexering en zoek opdrachten. De kenmerken **searchAnalyzer** en **indexAnalyzer** moeten worden opgegeven als een paar, waarbij het één **analyse** kenmerk wordt vervangen.
+De Api's bevatten aanvullende index kenmerken voor het opgeven van verschillende analyse functies voor indexering en zoek opdrachten. De kenmerken searchAnalyzer en indexAnalyzer moeten worden opgegeven als een paar, waarbij het één analyse kenmerk wordt vervangen.
 
 
 ```json
@@ -369,27 +374,15 @@ private static void CreateIndex(string indexName, SearchIndexClient adminClient)
 }
 ```
 
-Zie [CustomAnalyzerTests.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs)voor meer voor beelden.
+Zie [CustomAnalyzerTests. cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Microsoft.Azure.Search/tests/Tests/CustomAnalyzerTests.cs)voor meer voor beelden.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-+ Bekijk onze uitgebreide uitleg [over de manier waarop zoeken in volledige tekst werkt in Azure Cognitive Search](search-lucene-query-architecture.md). In dit artikel worden voor beelden gebruikt om gedrag te verklaren dat op het Opper vlak kan lijken op het licht.
+Een gedetailleerde beschrijving van het uitvoeren van query's vindt u in [volledige tekst zoeken in Azure Cognitive Search](search-lucene-query-architecture.md). In het artikel worden voor beelden gebruikt voor het uitleggen van gedrag dat kan lijken op het Opper vlak.
 
-+ Probeer extra query syntaxis uit de sectie voor beeld van [Zoeken in documenten](/rest/api/searchservice/search-documents#bkmk_examples) of van een [eenvoudige query syntaxis](query-simple-syntax.md) in Search Explorer in de portal.
+Raadpleeg de volgende artikelen voor meer informatie over analyse functies:
 
-+ Meer informatie over het Toep assen van [taalspecifieke lexicale analyse](index-add-language-analyzers.md)functies.
-
-+ [Aangepaste analyse functies configureren](index-add-custom-analyzers.md) voor een minimale verwerking of gespecialiseerde verwerking op afzonderlijke velden.
-
-## <a name="see-also"></a>Zie tevens
-
- [REST API voor documenten zoeken](/rest/api/searchservice/search-documents) 
-
- [Vereenvoudigde querysyntaxis](query-simple-syntax.md) 
-
- [Volledige Lucene-querysyntaxis](query-lucene-syntax.md) 
- 
- [Zoekresultaten verwerken](search-pagination-page-layout.md)
-
-<!--Image references-->
-[1]: ./media/search-lucene-query-architecture/architecture-diagram2.png
++ [Taalanalyse](index-add-language-analyzers.md)
++ [Analysevoorzieningen aanpassen](index-add-custom-analyzers.md)
++ [Een zoekindex maken](search-what-is-an-index.md)
++ [Een index voor meerdere talen maken](search-language-support.md)

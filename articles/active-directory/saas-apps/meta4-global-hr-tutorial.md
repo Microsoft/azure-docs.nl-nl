@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/09/2019
 ms.author: jeedes
 ms.openlocfilehash: c2875afe597bd111f091ee1e4a53265154ca66b3
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92516806"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-meta4-global-hr"></a>Zelfstudie: Azure Active Directory-integratie met Meta4 Global HR
@@ -65,7 +65,7 @@ Om de integratie van Meta4 Global HR in Azure AD te configureren, moet u Meta4 G
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Meta4 Global HR** , selecteer **Meta4 Global HR** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Meta4 Global HR**, selecteer **Meta4 Global HR** in het resultatenvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Meta4 Global HR in de resultatenlijst](common/search-new-app.png)
 
@@ -132,13 +132,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Meta4 Glob
 
 ### <a name="configure-meta4-global-hr-single-sign-on"></a>Eenmalige aanmelding voor Meta4 Global HR configureren
 
-Als u eenmalige aanmelding wilt configureren in **Meta4 Global HR** , moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Meta4 Global HR](mailto:victors@meta4.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **Meta4 Global HR**, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's naar het [ondersteuningsteam van Meta4 Global HR](mailto:victors@meta4.com) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -162,7 +162,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Meta4 Global HR.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Meta4 Global HR**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Meta4 Global HR**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

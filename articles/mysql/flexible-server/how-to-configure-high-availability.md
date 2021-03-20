@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/21/2020
 ms.custom: references_regions
 ms.openlocfilehash: d65b074385311e74444929ef74901e402e29ec03
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93241732"
 ---
 # <a name="manage-zone-redundant-high-availability-in-azure-database-for-mysql-flexible-server-preview"></a>Zone redundante hoge Beschik baarheid beheren in Azure Database for MySQL flexibele server (preview-versie)
@@ -32,18 +32,18 @@ Deze pagina bevat richt lijnen voor het in-of uitschakelen van hoge Beschik baar
 
 Deze sectie bevat specifieke informatie over HA-gerelateerde velden. U kunt deze stappen volgen om hoge Beschik baarheid te implementeren tijdens het maken van uw flexibele server.
 
-1.  Kies in het [Azure Portal](https://portal.azure.com/)flexibele server en klik op **maken** .  Zie How-to-documentatie voor het maken van een server voor meer informatie over het invullen van details zoals **abonnement** , **resource groep** , **Server naam** , **regio** en andere velden.
+1.  Kies in het [Azure Portal](https://portal.azure.com/)flexibele server en klik op **maken**.  Zie How-to-documentatie voor het maken van een server voor meer informatie over het invullen van details zoals **abonnement**, **resource groep**, **Server naam**, **regio** en andere velden.
 
 2.  Klik op het selectie vakje voor de **zone redundant hoge Beschik baarheid** in de optie Beschik baarheid.
 
-3.  Als u de standaard Compute en opslag wilt wijzigen, klikt u op  **server configureren** .
+3.  Als u de standaard Compute en opslag wilt wijzigen, klikt u op  **server configureren**.
 
 4.  Als de optie hoge Beschik baarheid is ingeschakeld, is de Burstable-laag niet beschikbaar om te kiezen. U kunt kiezen voor **algemeen gebruik** of op **geheugen geoptimaliseerde** reken lagen.
 
     > [!IMPORTANT]
-    > We bieden alleen ondersteuning voor zone redundante hoge Beschik baarheid voor de prijs categorie voor *_algemeen gebruik_* en _*_geoptimaliseerd voor geheugen_*_ .
+    > We ondersteunen alleen zone redundante hoge Beschik baarheid voor de prijs categorie ***algemeen gebruik** _ en _ *_geoptimaliseerd voor geheugen_*.
 
-5.  Selecteer in de vervolg keuzelijst de _ *reken grootte* * voor uw keuze.
+5.  Selecteer de **reken grootte** voor uw keuze in de vervolg keuzelijst.
 
 6.  Selecteer **opslag grootte** in GiB met behulp van de schuif balk en selecteer de **Bewaar periode voor back-ups** tussen 7 dagen en 35 dagen.   
 

@@ -12,10 +12,10 @@ ms.date: 10/24/2019
 ms.author: pafarley
 ms.custom: devx-track-csharp
 ms.openlocfilehash: d9f80de5a18e27de4a9f8e85613e3c2eee6c111c
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96853472"
 ---
 # <a name="create-video-reviews-using-net"></a>Video beoordelingen maken met .NET
@@ -542,7 +542,7 @@ Press any key to close the application.
 
 ## <a name="check-out-your-video-review"></a>Bekijk uw video-beoordeling
 
-Ten slotte ziet u de video-beoordeling in uw content moderator controle programma-account **Review** op het > scherm **video** bekijken.
+Ten slotte ziet u de video-beoordeling in uw content moderator controle programma-account op het > scherm **video** bekijken.
 
 ![Video beoordeling voor menselijke moderators](images/ams-video-review.PNG)
 

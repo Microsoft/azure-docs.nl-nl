@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, devx-track-python, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: b638cb2b33f24220e7ceb852402862c707cc7bc6
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93315998"
 ---
 # <a name="the-team-data-science-process-in-action-using-azure-synapse-analytics"></a>Het proces van de team data Science in actie: Azure Synapse Analytics gebruiken
@@ -63,7 +63,7 @@ De **unieke sleutel** die wordt gebruikt voor het koppelen \_ van reis gegevens 
 ## <a name="address-three-types-of-prediction-tasks"></a><a name="mltasks"></a>Drie typen Voorspellings taken adresseren
 We formuleren drie Voorspellings problemen op basis van het *fooien \_ aantal* om drie soorten model taken te illustreren:
 
-1. **Binaire classificatie** : als u wilt voors pellen of er voor een reis een tip is betaald, dat wil zeggen, is een *fooiwaarde \_* van meer dan $0 een positief voor beeld, terwijl een *Tip- \_ bedrag* van $0 een negatief voor beeld is.
+1. **Binaire classificatie**: als u wilt voors pellen of er voor een reis een tip is betaald, dat wil zeggen, is een *fooiwaarde \_* van meer dan $0 een positief voor beeld, terwijl een *Tip- \_ bedrag* van $0 een negatief voor beeld is.
 2. **Classificatie** met verschillende klassen: om het bereik van fooien voor de reis te voors pellen. We delen het *fooien \_ bedrag* in vijf bakken of klassen:
 
 `Class 0 : tip_amount = $0`
@@ -76,14 +76,14 @@ We formuleren drie Voorspellings problemen op basis van het *fooien \_ aantal* o
 
 `Class 4 : tip_amount > $20`
 
-3. **Regressie taak** : voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
+3. **Regressie taak**: voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
 
 ## <a name="set-up-the-azure-data-science-environment-for-advanced-analytics"></a><a name="setup"></a>De Azure data Science-omgeving instellen voor geavanceerde analyse
 Voer de volgende stappen uit om uw Azure data Science-omgeving in te stellen.
 
 **Uw eigen Azure Blob-opslag account maken**
 
-* Wanneer u uw eigen Azure Blob-opslag inricht, kiest u een geografische locatie voor uw Azure Blob-opslag in of zo dicht mogelijk bij **Zuid-Centraal VS** , waar de NYCe taxi gegevens worden opgeslagen. De gegevens worden gekopieerd met AzCopy uit de open bare Blob-opslag container naar een container in uw eigen opslag account. Hoe dichter uw Azure Blob-opslag is naar Zuid-Centraal, hoe sneller deze taak (stap 4) wordt voltooid.
+* Wanneer u uw eigen Azure Blob-opslag inricht, kiest u een geografische locatie voor uw Azure Blob-opslag in of zo dicht mogelijk bij **Zuid-Centraal VS**, waar de NYCe taxi gegevens worden opgeslagen. De gegevens worden gekopieerd met AzCopy uit de open bare Blob-opslag container naar een container in uw eigen opslag account. Hoe dichter uw Azure Blob-opslag is naar Zuid-Centraal, hoe sneller deze taak (stap 4) wordt voltooid.
 * Als u uw eigen Azure Storage-account wilt maken, volgt u de stappen die worden beschreven in [over Azure Storage-accounts](../../storage/common/storage-account-create.md). Zorg ervoor dat u notities maakt voor de waarden van de volgende referenties voor het opslag account, omdat deze later in dit overzicht nodig zijn.
 
   * **Naam van opslag account**
@@ -93,7 +93,7 @@ Voer de volgende stappen uit om uw Azure data Science-omgeving in te stellen.
 **Richt uw Azure Synapse Analytics-exemplaar in.**
 Volg de documentatie op [een Azure Synapse Analytics maken en query's uitvoeren in de Azure Portal](../../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md) om een Azure Synapse Analytics-exemplaar in te richten. Zorg ervoor dat u een notatie maakt voor de volgende Azure Synapse Analytics-referenties die in latere stappen zullen worden gebruikt.
 
-* **Server naam** : \<server Name> . database.Windows.net
+* **Server naam**: \<server Name> . database.Windows.net
 * **SQLDW-naam (data base)**
 * **Gebruikersnaam**
 * **Wachtwoord**
@@ -609,7 +609,7 @@ AND pickup_longitude != '0' AND dropoff_longitude != '0'
 | 3 |40,761456 |-73,999886 |40,766544 |-73,988228 |0.7037227967 |
 
 ### <a name="prepare-data-for-model-building"></a>Gegevens voorbereiden voor het maken van modellen
-Met de volgende query wordt de **nyctaxi- \_ reis** -en **nyctaxi- \_ ritbedrag** tabellen toegevoegd, wordt een binaire classificatie label met een classificatie **\_ klasse** met meerdere klassen **gekanteld** , en wordt een voor beeld geëxtraheerd uit de volledig gekoppelde gegevensset. De steek proef wordt uitgevoerd door een subset van de trips op te halen op basis van de ophaal tijd.  Deze query kan worden gekopieerd en vervolgens rechtstreeks in de module [Azure machine learning Studio (klassiek)](https://studio.azureml.net) [import gegevens][importeren voor] directe gegevens opname van het SQL database-exemplaar in Azure worden geplakt. De query sluit records met onjuiste (0, 0) coördinaten toe.
+Met de volgende query wordt de **nyctaxi- \_ reis** -en **nyctaxi- \_ ritbedrag** tabellen toegevoegd, wordt een binaire classificatie label met een classificatie **\_ klasse** met meerdere klassen **gekanteld**, en wordt een voor beeld geëxtraheerd uit de volledig gekoppelde gegevensset. De steek proef wordt uitgevoerd door een subset van de trips op te halen op basis van de ophaal tijd.  Deze query kan worden gekopieerd en vervolgens rechtstreeks in de module [Azure machine learning Studio (klassiek)](https://studio.azureml.net) [import gegevens][importeren voor] directe gegevens opname van het SQL database-exemplaar in Azure worden geplakt. De query sluit records met onjuiste (0, 0) coördinaten toe.
 
 ```sql
 SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount,     f.total_amount, f.tip_amount,
@@ -937,9 +937,9 @@ pd.read_sql(query,conn)
 ## <a name="build-models-in-azure-machine-learning"></a><a name="mlmodel"></a>Modellen maken in Azure Machine Learning
 U kunt nu door gaan met het model leren van het bouwen en model implementeren in [Azure machine learning](https://studio.azureml.net). De gegevens zijn gereed voor gebruik in een van de eerder genoemde Voorspellings problemen, namelijk:
 
-1. **Binaire classificatie** : om te voors pellen of er al dan niet een tip voor een reis is betaald.
+1. **Binaire classificatie**: om te voors pellen of er al dan niet een tip voor een reis is betaald.
 2. **Classificatie** met verschillende klassen: om het bereik aan betaalde fooien te voors pellen volgens de eerder gedefinieerde klassen.
-3. **Regressie taak** : voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
+3. **Regressie taak**: voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
 
 Meld u aan bij uw **Azure machine learning (klassieke)** werk ruimte om de modellerings oefening te starten. Als u nog geen machine learning-werk ruimte hebt gemaakt, raadpleegt u [een werk ruimte Azure machine learning Studio (klassiek) maken](../classic/create-workspace.md).
 
@@ -962,7 +962,7 @@ Een typisch Oefen experiment bestaat uit de volgende stappen:
 
 In deze oefening hebben we de gegevens in azure Synapse Analytics al bekeken en ontworpen, en besloten over de grootte van de steek proef tot opname in Azure Machine Learning Studio (klassiek). Hier volgt de procedure voor het maken van een of meer van de Voorspellings modellen:
 
-1. De gegevens ophalen in Azure Machine Learning Studio (klassiek) met behulp van de module [import data][import-data] , die beschikbaar is in de sectie **gegevens invoer en-uitvoer** . Zie de referentie pagina gegevens importeren [Import Data][-gegevens] module importeren voor meer informatie.
+1. De gegevens ophalen in Azure Machine Learning Studio (klassiek) met behulp van de module [import data][import-data] , die beschikbaar is in de sectie **gegevens invoer en-uitvoer** . Zie de referentie pagina gegevens importeren [][-gegevens] module importeren voor meer informatie.
 
     ![Gegevens importeren in azure ML][17]
 2. Selecteer **Azure SQL database** als **gegevens bron** in het deel venster **Eigenschappen** .
@@ -976,7 +976,7 @@ Een voor beeld van een experiment met binaire classificatie voor het lezen van g
 ![Azure ML-trein][10]
 
 > [!IMPORTANT]
-> In de voor beelden van model gegevens extractie en bemonsterings query's in de vorige secties **zijn alle labels voor de drie model oefeningen opgenomen in de query**. Een belang rijke (vereiste) stap in elk van de modellerings oefeningen is het **uitsluiten** van de overbodige labels voor de andere twee problemen en eventuele andere **doel lekkages**. Als u bijvoorbeeld een binaire classificatie gebruikt, gebruikt u het **label en** sluit u de velden **Tip- \_ klasse** , **foois \_ hoeveelheid** en **totaal \_ bedrag** uit. Deze laatste zijn doelwit lekkages, omdat ze de fooi hebben betaald.
+> In de voor beelden van model gegevens extractie en bemonsterings query's in de vorige secties **zijn alle labels voor de drie model oefeningen opgenomen in de query**. Een belang rijke (vereiste) stap in elk van de modellerings oefeningen is het **uitsluiten** van de overbodige labels voor de andere twee problemen en eventuele andere **doel lekkages**. Als u bijvoorbeeld een binaire classificatie gebruikt, gebruikt u het **label en** sluit u de velden **Tip- \_ klasse**, **foois \_ hoeveelheid** en **totaal \_ bedrag** uit. Deze laatste zijn doelwit lekkages, omdat ze de fooi hebben betaald.
 >
 > Als u overbodige kolommen of doel lekkages wilt uitsluiten, kunt u de module [kolommen selecteren in gegevensset][select-columns] of de [meta gegevens bewerken][edit-metadata]gebruiken. Zie [kolommen selecteren in gegevensset][select-columns] en referentie pagina's voor [meta gegevens bewerken][edit-metadata] voor meer informatie.
 >
@@ -1012,7 +1012,7 @@ Om te samen vatting wat we in deze walkthrough zelf studie hebben gedaan, hebt u
 ### <a name="license-information"></a>Licentie gegevens
 Deze voorbeeld walkthrough en de bijbehorende scripts en IPython-Notebook (s) worden door micro soft gedeeld onder de MIT-licentie. Controleer het LICENSE.txt-bestand in de map van de voorbeeld code op GitHub voor meer informatie.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 - [Download pagina voor Andrés Monroy NYCe taxi](https://www.andresmh.com/nyctaxitrips/)
 - [De taxi-reis gegevens van NYC door Chris Whong te folie](https://chriswhong.com/open-data/foil_nyc_taxi/)
 - [Onderzoek en statistieken voor NYCe taxi en limousine-Commissie](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)

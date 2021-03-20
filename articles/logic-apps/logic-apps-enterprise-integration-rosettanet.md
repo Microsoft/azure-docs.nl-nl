@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: f02cbdc7ca8822c5fcc91b106856d7f8f547536b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91565102"
 ---
 # <a name="exchange-rosettanet-messages-for-b2b-enterprise-integration-in-azure-logic-apps"></a>Exchange RosettaNet-berichten voor B2B Enter prise integration in Azure Logic Apps
@@ -75,7 +75,7 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
    ![Tegel RosettaNet kiezen](media/logic-apps-enterprise-integration-rosettanet/select-rosettanet-tile.png)
 
-1. Klik onder **ROSETTANET PIP**op **toevoegen**. Geef uw PIP-Details op.
+1. Klik onder **ROSETTANET PIP** op **toevoegen**. Geef uw PIP-Details op.
 
    ![Details van RosettaNet-PIP toevoegen](media/logic-apps-enterprise-integration-rosettanet/add-rosettanet-pip.png)
 
@@ -88,7 +88,7 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
    Ga naar de [website van RosettaNet](https://resources.gs1us.org/RosettaNet-Standards/Standards-Library/PIP-Directory#1043208-pipsreg)voor meer informatie over deze PIP-eigenschappen.
 
-1. Wanneer u klaar bent, kiest u **OK**om de PIP-configuratie te maken.
+1. Wanneer u klaar bent, kiest u **OK** om de PIP-configuratie te maken.
 
 1. Als u de proces configuratie wilt weer geven of bewerken, selecteert u het PIP en kiest u **bewerken als JSON**.
 
@@ -106,7 +106,7 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
    ![De tegel overeenkomsten kiezen](media/logic-apps-enterprise-integration-rosettanet/select-agreement-tile.png)
 
-1. Klik onder **overeenkomsten**op **toevoegen**. Geef de details van uw overeenkomst op.
+1. Klik onder **overeenkomsten** op **toevoegen**. Geef de details van uw overeenkomst op.
 
    ![Details van overeenkomst toevoegen](media/logic-apps-enterprise-integration-rosettanet/add-agreement-details.png)
 
@@ -127,7 +127,7 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
    ![Instellingen voor ontvangen](media/logic-apps-enterprise-integration-rosettanet/add-agreement-receive-details.png)
 
-   1. Als u het ondertekenen of versleutelen voor inkomende berichten wilt inschakelen, selecteert u in **berichten**het selectie vakje **bericht moet zijn ondertekend** of **moet het bericht respectievelijk worden versleuteld** .
+   1. Als u het ondertekenen of versleutelen voor inkomende berichten wilt inschakelen, selecteert u in **berichten** het selectie vakje **bericht moet zijn ondertekend** of **moet het bericht respectievelijk worden versleuteld** .
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
@@ -139,11 +139,11 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
 
    1. Selecteer onder elke selectie het respectieve [certificaat](./logic-apps-enterprise-integration-certificates.md), dat u eerder hebt toegevoegd aan uw integratie account, dat u kunt gebruiken voor ondertekening of versleuteling.
 
-1. Selecteer **instellingen verzenden**om uw overeenkomst voor het verzenden van berichten naar de gast partner in te stellen.
+1. Selecteer **instellingen verzenden** om uw overeenkomst voor het verzenden van berichten naar de gast partner in te stellen.
 
    ![Instellingen verzenden](media/logic-apps-enterprise-integration-rosettanet/add-agreement-send-details.png)
 
-   1. Als u het ondertekenen of versleutelen voor uitgaande berichten wilt inschakelen, selecteert u in **berichten**de optie **bericht ondertekening inschakelen** of respectievelijk **bericht versleuteling** inschakelen. Selecteer onder elke selectie het respectievelijke algoritme en [certificaat](./logic-apps-enterprise-integration-certificates.md), dat u eerder hebt toegevoegd aan uw integratie account, dat u kunt gebruiken voor ondertekening of versleuteling.
+   1. Als u het ondertekenen of versleutelen voor uitgaande berichten wilt inschakelen, selecteert u in **berichten** de optie **bericht ondertekening inschakelen** of respectievelijk **bericht versleuteling** inschakelen. Selecteer onder elke selectie het respectievelijke algoritme en [certificaat](./logic-apps-enterprise-integration-certificates.md), dat u eerder hebt toegevoegd aan uw integratie account, dat u kunt gebruiken voor ondertekening of versleuteling.
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
@@ -155,7 +155,7 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
       | **Certificaat** | Ja, als versleuteling is ingeschakeld | Het certificaat dat voor versleuteling moet worden gebruikt |
       ||||
 
-   1. Geef onder **eind punten**de vereiste url's op die moeten worden gebruikt voor het verzenden van actie berichten en bevestigingen.
+   1. Geef onder **eind punten** de vereiste url's op die moeten worden gebruikt voor het verzenden van actie berichten en bevestigingen.
 
       | Eigenschap | Vereist | Beschrijving |
       |----------|----------|-------------|
@@ -163,11 +163,11 @@ Voer de volgende stappen uit om een PIP-proces configuratie toe te voegen aan uw
       | **Bevestigings-URL** | Ja | De URL die moet worden gebruikt voor het verzenden van bevestigings berichten. De URL is een verplicht veld voor asynchrone berichten. |
       ||||
 
-1. Als u uw overeenkomst met de RosettaNet PIP-verwijzingen voor partners wilt instellen, selecteert u **ROSETTANET PIP-verwijzingen**. Selecteer onder **PIP-naam**de naam voor het eerder gemaakte PIP.
+1. Als u uw overeenkomst met de RosettaNet PIP-verwijzingen voor partners wilt instellen, selecteert u **ROSETTANET PIP-verwijzingen**. Selecteer onder **PIP-naam** de naam voor het eerder gemaakte PIP.
 
    ![PIP-verwijzingen](media/logic-apps-enterprise-integration-rosettanet/add-agreement-pip-details.png)
 
-   De overige eigenschappen worden door de selectie gevuld, op basis van de PIP die u hebt ingesteld in uw integratie account. Als dat nodig is, kunt u de **rol PIP**wijzigen.
+   De overige eigenschappen worden door de selectie gevuld, op basis van de PIP die u hebt ingesteld in uw integratie account. Als dat nodig is, kunt u de **rol PIP** wijzigen.
 
    ![Geselecteerde PIP](media/logic-apps-enterprise-integration-rosettanet/add-agreement-selected-pip.png)
 
@@ -202,7 +202,7 @@ Voor het versnellen van de ontwikkeling en het aanbevelen van integratie patrone
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
    | **Bericht** | Ja | Het RosettaNet-bericht dat moet worden gedecodeerd  |
-   | **Headers** | Ja | De HTTP-headers die de waarden opgeven voor de versie, die de RNIF-versie is, en het antwoord type, waarmee het communicatie type tussen de partners wordt aangegeven en synchroon of asynchroon kan zijn |
+   | **Kopteksten** | Ja | De HTTP-headers die de waarden opgeven voor de versie, die de RNIF-versie is, en het antwoord type, waarmee het communicatie type tussen de partners wordt aangegeven en synchroon of asynchroon kan zijn |
    | **Role** | Ja | De rol van de host-partner in het PIP- |
    ||||
 

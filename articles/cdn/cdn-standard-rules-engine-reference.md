@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/04/2020
 ms.author: allensu
 ms.openlocfilehash: 1a0f4456f38939632026645500dd48acbf7dbc88
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93242205"
 ---
 # <a name="standard-rules-engine-reference-for-azure-cdn"></a>Naslaginformatie over standaardregelengine voor Azure CDN
@@ -20,7 +20,7 @@ In de [standaard regels-engine](cdn-standard-rules-engine.md) voor Azure Content
 
 De regel engine is ontworpen als de definitieve instantie van hoe specifieke typen aanvragen worden verwerkt door de standaard Azure CDN.
 
-**Veelvoorkomende toepassingen voor de regels** :
+**Veelvoorkomende toepassingen voor de regels**:
 
 - Een aangepast cache beleid overschrijft of definieert.
 - Aanvragen omleiden.
@@ -34,7 +34,7 @@ Als u een regel in de regel Engine wilt definiëren, stelt u de voor waarden en 
 
 Elke regel kan Maxi maal tien match voorwaarden en vijf acties hebben. Elk Azure CDN-eind punt kan Maxi maal 25 regels bevatten. 
 
-Inbegrepen in deze limiet is een standaard *globale regel* . De algemene regel heeft geen overeenkomende voor waarden; acties die in een globale regel zijn gedefinieerd, worden altijd geactiveerd.
+Inbegrepen in deze limiet is een standaard *globale regel*. De algemene regel heeft geen overeenkomende voor waarden; acties die in een globale regel zijn gedefinieerd, worden altijd geactiveerd.
 
    > [!IMPORTANT]
    > De volg orde waarin meerdere regels worden weer gegeven, is van invloed op hoe regels worden verwerkt. De acties die zijn opgegeven in een regel, kunnen worden overschreven door een volgende regel.

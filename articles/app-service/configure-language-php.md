@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/02/2020
 zone_pivot_groups: app-service-platform-windows-linux
 ms.openlocfilehash: afac8273b5729bcf5470be471145214426dc7dab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90055296"
 ---
 # <a name="configure-a-php-app-for-azure-app-service"></a>Een PHP-app configureren voor Azure App Service
@@ -332,7 +332,7 @@ php_value upload_max_filesize 10M
 
 Implementeer uw app opnieuw met de wijzigingen en start deze opnieuw. Als u het implementeert met kudu (bijvoorbeeld met [Git](deploy-local-git.md)), wordt het automatisch opnieuw opgestart na de implementatie.
 
-Als alternatief voor het gebruik van *. htaccess*kunt u [ini_set ()](https://www.php.net/manual/function.ini-set.php) in uw app gebruiken om deze niet-PHP_INI_SYSTEM-instructies aan te passen.
+Als alternatief voor het gebruik van *. htaccess* kunt u [ini_set ()](https://www.php.net/manual/function.ini-set.php) in uw app gebruiken om deze niet-PHP_INI_SYSTEM-instructies aan te passen.
 
 ::: zone-end
 
@@ -470,7 +470,7 @@ Wanneer een werkende PHP-app zich op een andere manier gedraagt in App Service o
 
 - [Open de logboekstream](#access-diagnostic-logs).
 - Test de app lokaal in de productie modus. App Service wordt uw app in productie modus uitgevoerd. u moet er dus voor zorgen dat uw project in de productie modus lokaal werkt zoals verwacht. Bijvoorbeeld:
-    - Afhankelijk van uw *composer.jsop*kunnen verschillende pakketten worden geïnstalleerd voor de productie modus ( `require` VS. `require-dev` ).
+    - Afhankelijk van uw *composer.jsop* kunnen verschillende pakketten worden geïnstalleerd voor de productie modus ( `require` VS. `require-dev` ).
     - Bepaalde web Frameworks kunnen statische bestanden in de productie modus anders implementeren.
     - Bepaalde web Frameworks kunnen aangepaste opstart scripts gebruiken wanneer ze in de productie modus worden uitgevoerd.
 - Voer uw app uit in App Service in de foutopsporingsmodus. In [Laravel](https://meanjs.org/)kunt u bijvoorbeeld uw app configureren voor het uitvoeren van debug-berichten in de productie door [de `APP_DEBUG` app-instelling `true` in te stellen op ](configure-common.md#configure-app-settings).

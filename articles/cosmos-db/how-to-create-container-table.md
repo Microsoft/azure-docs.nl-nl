@@ -9,10 +9,10 @@ ms.date: 10/16/2020
 ms.author: mjbrown
 ms.custom: devx-track-azurecli, devx-track-csharp
 ms.openlocfilehash: fde3145e7bd7f4e53ae7a0c44f02e066c28ec785
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93101575"
 ---
 # <a name="create-a-container-in-azure-cosmos-db-table-api"></a>Een container maken in Azure Cosmos DB Table-API
@@ -31,11 +31,11 @@ In dit artikel worden de verschillende manieren beschreven voor het maken van ee
 
 1. [Maak een nieuw Azure Cosmos-account](create-table-dotnet.md#create-a-database-account)of selecteer een bestaand account.
 
-1. Open het deel venster **Data Explorer** en selecteer **nieuwe tabel** . Geef de volgende gegevens op:
+1. Open het deel venster **Data Explorer** en selecteer **nieuwe tabel**. Geef de volgende gegevens op:
 
    * Voer een tabel-ID in.
    * Geef een door Voer op die moet worden ingericht (bijvoorbeeld 1000 RUs).
-   * Selecteer **OK** .
+   * Selecteer **OK**.
 
     :::image type="content" source="./media/how-to-create-container/partitioned-collection-create-table.png" alt-text="Schermopname van Table-API, dialoogvenster Grafiek toevoegen":::
 

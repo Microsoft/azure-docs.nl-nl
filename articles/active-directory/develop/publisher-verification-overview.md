@@ -13,10 +13,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
 ms.openlocfilehash: 1e913e3a5356ad7f49d8b3066f5bd3da7eddd2c2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93308768"
 ---
 # <a name="publisher-verification"></a>Verificatie van uitgever
@@ -33,11 +33,11 @@ Deze functie is voornamelijk bedoeld voor ontwikkel aars die multi tenant-apps b
 
 ## <a name="benefits"></a>Voordelen
 Verificatie van de uitgever biedt de volgende voor delen:
-- **Grotere transparantie en risico verlaging voor klanten** : met deze mogelijkheid kunnen klanten begrijpen welke apps in hun organisaties worden gebruikt, gepubliceerd door ontwikkel aars die ze vertrouwen. 
+- **Grotere transparantie en risico verlaging voor klanten**: met deze mogelijkheid kunnen klanten begrijpen welke apps in hun organisaties worden gebruikt, gepubliceerd door ontwikkel aars die ze vertrouwen. 
 
-- **Verbeterde huis stijl** : een ' geverifieerde ' badge wordt weer gegeven op de Azure AD- [opdracht prompt voor toestemming](application-consent-experience.md), de pagina voor zakelijke apps en extra UX-Opper vlakken die worden gebruikt door eind gebruikers en beheerders. 
+- **Verbeterde huis stijl**: een ' geverifieerde ' badge wordt weer gegeven op de Azure AD- [opdracht prompt voor toestemming](application-consent-experience.md), de pagina voor zakelijke apps en extra UX-Opper vlakken die worden gebruikt door eind gebruikers en beheerders. 
 
-- **Vloeiendere ondernemings acceptatie** : beheerders kunnen het beleid voor de [gebruikers toestemming](../manage-apps/configure-user-consent.md)configureren met de verificatie status van de uitgever als een van de primaire beleids criteria.
+- **Vloeiendere ondernemings acceptatie**: beheerders kunnen het beleid voor de [gebruikers toestemming](../manage-apps/configure-user-consent.md)configureren met de verificatie status van de uitgever als een van de primaire beleids criteria.
 
 > [!NOTE]
 > Vanaf november 2020 kunnen eind gebruikers geen toestemming meer geven aan de meeste nieuw geregistreerde multi tenant-apps zonder geverifieerde uitgevers. Dit is van toepassing op apps die zijn geregistreerd na november 2020, OAuth 2.0 gebruiken om machtigingen aan te vragen buiten het basis aanmeld-en lees gebruikers profiel en toestemming vragen aan gebruikers in verschillende tenants dan de app die is geregistreerd in. Er wordt een waarschuwing weer gegeven op het scherm voor toestemming waarmee gebruikers worden geïnformeerd dat deze apps riskant zijn en afkomstig zijn van niet-geverifieerde uitgevers.    

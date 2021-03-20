@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 13f05005529d3983e042398f5274fd7f981b8c8c
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92516586"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-questetra-bpm-suite"></a>Zelfstudie: Azure Active Directory-integratie met Questetra BPM Suite
@@ -49,11 +49,11 @@ Als u de integratie van Questetra BPM Suite in Azure AD wilt configureren, moet 
 
 **Voer de volgende stappen uit om Questetra BPM Suite toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,7 +67,7 @@ Als u de integratie van Questetra BPM Suite in Azure AD wilt configureren, moet 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Questetra BPM Suite op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Questetra BPM Suite op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tot stand is gebracht tussen een Azure AD-gebruiker en de gerelateerde gebruiker in Questetra BPM Suite.
 
 Als u eenmalige aanmelding van Azure AD bij Questetra BPM Suite wilt configureren en testen, voert u de volgende stappen uit:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Als u eenmalige aanmelding van Azure AD met Questetra BPM Suite wilt configureren, voert u de volgende stappen uit:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de **Questetra BPM Suite** -toepassing, de optie **Eenmalige aanmelding** .
+1. Selecteer in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de **Questetra BPM Suite**-toepassing, de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -106,7 +106,7 @@ Als u eenmalige aanmelding van Azure AD met Questetra BPM Suite wilt configurere
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://<subdomain>.questetra.net/`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de daadwerkelijke aanmeldings-URL en id. U kunt deze waarden ophalen in de sectie **SP-informatie** op uw **Questetra BPM Suite** -bedrijfssite. Dit wordt later uitgelegd in de zelfstudie, of neem contact op met het [klantondersteuningsteam van Questetra BPM Suite](https://www.questetra.com/contact/). U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de daadwerkelijke aanmeldings-URL en id. U kunt deze waarden ophalen in de sectie **SP-informatie** op uw **Questetra BPM Suite**-bedrijfssite. Dit wordt later uitgelegd in de zelfstudie, of neem contact op met het [klantondersteuningsteam van Questetra BPM Suite](https://www.questetra.com/contact/). U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -124,9 +124,9 @@ Als u eenmalige aanmelding van Azure AD met Questetra BPM Suite wilt configurere
 
 ### <a name="configure-questetra-bpm-suite-single-sign-on"></a>Eenmalige aanmelding van Questetra BPM Suite configureren
 
-1. Meld u in een ander browservenster als beheerder aan bij uw **Questetra BPM Suite** -bedrijfssite.
+1. Meld u in een ander browservenster als beheerder aan bij uw **Questetra BPM Suite**-bedrijfssite.
 
-2. Klik in het menu bovenaan op **Systeeminstellingen** . 
+2. Klik in het menu bovenaan op **Systeeminstellingen**. 
    
     ![Schermopname van Systeeminstellingen geselecteerd in uw Questetra BPM Suite-bedrijfssite.][10]
 
@@ -134,13 +134,13 @@ Als u eenmalige aanmelding van Azure AD met Questetra BPM Suite wilt configurere
    
     ![Schermopname met S S O (SAML) geselecteerd.][11]
 
-4. Voer op uw **Questetra BPM Suite** -bedrijfssite in de sectie **SP-informatie** de volgende stappen uit:
+4. Voer op uw **Questetra BPM Suite**-bedrijfssite in de sectie **SP-informatie** de volgende stappen uit:
 
     a. Kopieer de **ACS-URL** en plak deze in het vak **Aanmeldings-URL** in de sectie **Basis-SAML-configuratie** in Azure Portal.
     
     b. Kopieer de **Entiteits-id** en plak deze in het tekstvak **Id** in de sectie **SAML-basisconfiguratie** in Azure Portal.
 
-5. Voer op uw **Questetra BPM Suite** -bedrijfssite de volgende stappen uit: 
+5. Voer op uw **Questetra BPM Suite**-bedrijfssite de volgende stappen uit: 
    
     ![Eenmalige aanmelding configureren][15]
    
@@ -152,17 +152,17 @@ Als u eenmalige aanmelding van Azure AD met Questetra BPM Suite wilt configurere
     
     d. Plak in het tekstvak **Afmeldingspagina-URL** de waarde van **Afmeldings-URL** die u hebt gekopieerd uit Azure Portal.
     
-    e. Typ `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` in het tekstvak **NameID-indeling** .
+    e. Typ `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` in het tekstvak **NameID-indeling**.
 
-    f. Open in Kladblok het met **Base 64** gecodeerde certificaat dat u hebt gedownload uit Azure Portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **Validatiecertificaat** . 
+    f. Open in Kladblok het met **Base 64** gecodeerde certificaat dat u hebt gedownload uit Azure Portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **Validatiecertificaat**. 
 
-    g. Klik op **Opslaan** .
+    g. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -180,13 +180,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure door haar toegang te geven tot Questetra BPM Suite.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Questetra BPM Suite** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Questetra BPM Suite**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -194,11 +194,11 @@ In deze sectie geeft u Britta Simon toestemming voor gebruik van eenmalige aanme
 
     ![De koppeling Questetra BPM Suite in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -206,7 +206,7 @@ In deze sectie geeft u Britta Simon toestemming voor gebruik van eenmalige aanme
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-questetra-bpm-suite-test-user"></a>Een Questetra BPM Suite-testgebruiker maken
 
@@ -216,7 +216,7 @@ Het doel van deze sectie is om een gebruiker met de naam Britta Simon te maken i
 
 1. Meld u als beheerder aan bij uw Questetra BPM Suite-bedrijfssite.
 
-2. Ga naar **Systeeminstellingen > Gebruikerslijst > Nieuwe gebruiker** .
+2. Ga naar **Systeeminstellingen > Gebruikerslijst > Nieuwe gebruiker**.
  
 3. Voer de volgende stappen uit in het dialoogvenster Nieuwe gebruiker: 
    
@@ -228,7 +228,7 @@ Het doel van deze sectie is om een gebruiker met de naam Britta Simon te maken i
    
     c. Typ in het tekstvak **Wachtwoord** een **wachtwoord** van de gebruiker.
     
-    d. Klik op **Nieuwe gebruiker toevoegen** .
+    d. Klik op **Nieuwe gebruiker toevoegen**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

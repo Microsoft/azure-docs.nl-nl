@@ -6,10 +6,10 @@ ms.date: 03/04/2020
 ms.topic: conceptual
 ms.custom: mvc
 ms.openlocfilehash: 76063c479950d12985d5f3f52393f9bb0d5ecd8d
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92222216"
 ---
 # <a name="limit-update-management-deployment-scope"></a>Updatebeheer implementatie bereik beperken
@@ -32,9 +32,9 @@ Het bereik voor uw Updatebeheer-implementatie beperken:
 
 4. Selecteer het beletsel teken rechts van de  `MicrosoftDefaultScopeConfig-Updates` Scope configuratie en selecteer **bewerken**.
 
-5. Vouw in het deel venster voor bewerken de **optie computer groepen selecteren**uit. In het deel venster computer groepen worden de opgeslagen Zoek opdrachten weer gegeven die worden gebruikt voor het maken van de scope configuratie. De opgeslagen zoek opdracht die door Updatebeheer wordt gebruikt, is:
+5. Vouw in het deel venster voor bewerken de **optie computer groepen selecteren** uit. In het deel venster computer groepen worden de opgeslagen Zoek opdrachten weer gegeven die worden gebruikt voor het maken van de scope configuratie. De opgeslagen zoek opdracht die door Updatebeheer wordt gebruikt, is:
 
-    |Naam     |Categorie  |Alias  |
+    |Name     |Categorie  |Alias  |
     |---------|---------|---------|
     |MicrosoftDefaultComputerGroup     | Updates        | Updates__MicrosoftDefaultComputerGroup         |
 

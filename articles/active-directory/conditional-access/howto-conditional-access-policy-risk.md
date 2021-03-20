@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a09c4513206bea3462577ecba49b5d77b655b0e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91628261"
 ---
 # <a name="conditional-access-sign-in-risk-based-conditional-access"></a>Voorwaardelijke toegang: op Risico's gebaseerde voorwaardelijke toegang op basis van een aanmelding
@@ -33,29 +33,29 @@ Er zijn twee locaties waar dit beleid kan worden toegewezen. Organisaties moeten
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
 1. Onder **Toewijzingen** selecteert u **Gebruikers en groepen**.
-   1. Onder **insluiten**selecteert u **alle gebruikers**.
-   1. Onder **uitsluiten**selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
+   1. Onder **insluiten** selecteert u **alle gebruikers**.
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
    1. Selecteer **Gereed**.
-1. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **alle Cloud-apps**.
+1. Onder **Cloud-apps of acties**  >  , selecteert u **alle Cloud-apps**.
 1. Stel onder **voor waarden**  >  **aanmeldings risico** **configureren** in op **Ja**. Onder **Selecteer het risico niveau voor aanmelden wordt dit beleid van toepassing op** 
    1. Selecteer **hoog** en **gemiddeld**.
    1. Selecteer **Gereed**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **multi-factor Authentication vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **multi-factor Authentication vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid in te stellen.
 
 ## <a name="enable-through-identity-protection"></a>Identiteits beveiliging inschakelen
 
 1. Meld u aan bij **Azure Portal**.
-1. Selecteer **alle services**en blader naar **Azure AD Identity Protection**.
+1. Selecteer **alle services** en blader naar **Azure AD Identity Protection**.
 1. Selecteer **beleid voor aanmeldings Risico's**.
-1. Onder **toewijzingen**selecteert u **gebruikers**.
-   1. Onder **insluiten**selecteert u **alle gebruikers**.
-   1. Onder **uitsluiten**selecteert u **uitgesloten gebruikers selecteren**, kiest u de accounts voor nood toegang of het account van uw organisatie en selecteert u **selecteren**.
+1. Onder **toewijzingen** selecteert u **gebruikers**.
+   1. Onder **insluiten** selecteert u **alle gebruikers**.
+   1. Onder **uitsluiten** selecteert u **uitgesloten gebruikers selecteren**, kiest u de accounts voor nood toegang of het account van uw organisatie en selecteert u **selecteren**.
    1. Selecteer **Gereed**.
-1. Selecteer onder **voor waarden** **aanmeldings risico**en kies vervolgens **medium en hoger**.
-   1. Selecteer **selecteren**en vervolgens **gereed**.
-1. Kies onder **Controls**  >  **Access**de optie **toegang toestaan**en selecteer vervolgens **multi-factor Authentication vereisen**.
+1. Selecteer onder **voor waarden** **aanmeldings risico** en kies vervolgens **medium en hoger**.
+   1. Selecteer **selecteren** en vervolgens **gereed**.
+1. Kies onder **Controls**  >  **Access** de optie **toegang toestaan** en selecteer vervolgens **multi-factor Authentication vereisen**.
    1. Kies **Selecteren**.
 1. Stel **beleid afdwingen** in **op aan**.
 1. Selecteer **Opslaan**.

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 757782e8842fbcaca9c8d95ec8086dd5791a817b
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93240610"
 ---
 # <a name="data-encryption-for-azure-database-for-postgresql-single-server-by-using-the-azure-cli"></a>Gegevens versleuteling voor Azure Database for PostgreSQL Eén server met behulp van de Azure CLI
@@ -47,9 +47,9 @@ Meer informatie over het gebruik van de Azure CLI voor het instellen en beheren 
       ```
 
 * De sleutel moet de volgende kenmerken hebben om te kunnen worden gebruikt als een door de klant beheerde sleutel:
-  * Geen verval datum
+  * Geen vervaldatum
   * Niet uitgeschakeld
-  * **Get** -, **Terugloop** -en **Unwrap** -bewerkingen uitvoeren
+  * **Get**-, **Terugloop** -en **Unwrap** -bewerkingen uitvoeren
 
 ## <a name="set-the-right-permissions-for-key-operations"></a>De juiste machtigingen voor sleutel bewerkingen instellen
 
@@ -67,7 +67,7 @@ Meer informatie over het gebruik van de Azure CLI voor het instellen en beheren 
     az postgres server update --resource-group <resource_group> --name <server_name> --assign-identity
     ```
 
-2. Stel de **sleutel machtigingen** ( **Get** , **wrap** , **dewrap** ) in voor de **Principal** . Dit is de naam van de postgresql één server server.
+2. Stel de **sleutel machtigingen** (**Get**, **wrap**, **dewrap**) in voor de **Principal**. Dit is de naam van de postgresql één server server.
 
     ```azurecli-interactive
     az keyvault set-policy --name -g <resource_group> --key-permissions get unwrapKey wrapKey --object-id <principal id of the server>

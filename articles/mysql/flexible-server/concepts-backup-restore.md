@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 09/21/2020
 ms.openlocfilehash: 2d69427f9f11a47cedeccb4b1da38b770952f029
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93240763"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql-flexible-server-preview"></a>Back-up en herstel in Azure Database for MySQL flexibele server (preview-versie)
@@ -18,7 +18,7 @@ ms.locfileid: "93240763"
 > [!IMPORTANT] 
 > Azure Database for MySQL - Flexible Server is momenteel beschikbaar als openbare preview.
 
-Azure Database for MySQL flexibele server maakt automatisch server back-ups en slaat deze veilig op in lokale redundante opslag binnen de regio. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Backup en Restore zijn een essentieel onderdeel van een strategie voor bedrijfs continuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
+Azure Database for MySQL flexibele server maakt automatisch server back-ups en slaat deze veilig op in lokale redundante opslag binnen de regio. Back-ups kunnen worden gebruikt om de status van de server naar een bepaald tijdstip te herstellen. Back-ups maken en herstellen zijn essentiële onderdelen van een strategie voor bedrijfscontinuïteit omdat ze uw gegevens beschermen tegen onbedoelde beschadiging of verwijdering.
 
 ## <a name="backup-overview"></a>Overzicht van Backup
 
@@ -68,8 +68,8 @@ Herstel naar een bepaald tijdstip is handig in meerdere scenario's. Enkele van d
 
 U kunt kiezen tussen een laatste herstel punt en een aangepast herstel punt via [Azure Portal](how-to-restore-server-portal.md).
 
--   **Meest recente herstel punt** : het meest recente herstel punt helpt u bij het herstellen van de server naar de laatste back-up die is uitgevoerd op de bron server. De tijds tempel voor het terugzetten wordt ook weer gegeven op de portal. Deze optie is handig om snel de meest recente status van de server te herstellen.
--   **Aangepast herstel punt** : Hiermee kunt u een wille keurig tijdstip kiezen binnen de retentie periode die voor deze flexibele server is gedefinieerd. Deze optie is handig voor het herstellen van de server op het precieze tijdstip om een gebruikers fout te herstellen.
+-   **Meest recente herstel punt**: het meest recente herstel punt helpt u bij het herstellen van de server naar de laatste back-up die is uitgevoerd op de bron server. De tijds tempel voor het terugzetten wordt ook weer gegeven op de portal. Deze optie is handig om snel de meest recente status van de server te herstellen.
+-   **Aangepast herstel punt**: Hiermee kunt u een wille keurig tijdstip kiezen binnen de retentie periode die voor deze flexibele server is gedefinieerd. Deze optie is handig voor het herstellen van de server op het precieze tijdstip om een gebruikers fout te herstellen.
 
 De geschatte duur van de herstel bewerking is afhankelijk van verschillende factoren, zoals de grootte van de data base, de back-up van het transactie logboek, de reken grootte van de SKU en de tijd van de herstel bewerking. Het herstellen van het transactie logboek is de meest tijdrovende toepassing van het herstel proces. Als de herstel tijd dichter bij het volledige of het back-upschema van de differentiële moment opname is gekozen, zijn de herstelde bestanden sneller sinds de transactie logboek toepassing mini maal is. Om de nauw keurige herstel tijd voor uw server te schatten, raden we u ten zeerste aan om deze in uw omgeving te testen, omdat deze te veel omgevings-specifieke variabelen heeft.
 

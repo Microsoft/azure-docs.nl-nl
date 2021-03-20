@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
 ms.openlocfilehash: 5f7afe044ab4f782f2028598c2c56e75edf95860
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92317382"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Veelvoorkomende scenario's, voor beelden, zelf studies en scenario's voor Azure Logic Apps
@@ -31,7 +31,7 @@ Hier volgen enkele voor beelden van veelgebruikte triggers:
 
 * *Polling* triggers:
 
-  * Met de trigger voor [ **terugkeer patroon** ](../connectors/connectors-native-recurrence.md) kunt u de begin datum en-tijd en het terugkeer patroon instellen voor het activeren van uw logische app. U kunt bijvoorbeeld de dagen van de week en tijdstippen van de dag selecteren voor het activeren van uw logische app. Raadpleeg de volgende onderwerpen voor meer informatie:<p>
+  * Met de trigger voor [ **terugkeer patroon**](../connectors/connectors-native-recurrence.md) kunt u de begin datum en-tijd en het terugkeer patroon instellen voor het activeren van uw logische app. U kunt bijvoorbeeld de dagen van de week en tijdstippen van de dag selecteren voor het activeren van uw logische app. Raadpleeg de volgende onderwerpen voor meer informatie:<p>
 
     * [Terugkerende en geautomatiseerde taken, processen en werkstromen plannen en uitvoeren met Azure Logic Apps](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)
     * [Zelf studie: automatische, op planning gebaseerde terugkerende werk stromen maken met behulp van Azure Logic Apps](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md)
@@ -50,7 +50,7 @@ Hier volgen enkele voor beelden van veelgebruikte triggers:
 
 * *Push* triggers:
 
-  * De [trigger voor **aanvragen** ](../connectors/connectors-native-reqres.md) kan binnenkomende HTTPS-aanvragen ontvangen.
+  * De [trigger voor **aanvragen**](../connectors/connectors-native-reqres.md) kan binnenkomende HTTPS-aanvragen ontvangen.
 
   * De [ **http-webhook** trigger](../connectors/connectors-native-webhook.md) meldt zich aan bij een service-eind punt door een *call back-URL* bij die service te registreren. Op die manier kan de service alleen een melding sturen wanneer de opgegeven gebeurtenis plaatsvindt, zodat de trigger de service niet hoeft te pollen.
 
@@ -117,7 +117,7 @@ U kunt Logic apps volledig ontwikkelen en implementeren met Visual Studio, Azure
 * [Integratie accounts voor B2B-ondernemings integraties maken en beheren](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
 * [Integration service Environment (ISE) beheren in Azure Logic Apps](../logic-apps/ise-manage-integration-service-environment.md)
 
-### <a name="monitor"></a>Controleren
+### <a name="monitor"></a>Monitor
 
 * [Uitvoeringsstatus bewaken, triggergeschiedenis controleren, en waarschuwingen instellen voor Azure Logic Apps](../logic-apps/monitor-logic-apps.md)
 * [Azure Monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic Apps](../logic-apps/monitor-logic-apps-log-analytics.md)

@@ -12,10 +12,10 @@ ms.date: 04/24/2020
 ms.author: sudbalas
 Customer intent: As a key vault administrator, I want to move my vault to another region.
 ms.openlocfilehash: 54a1894c88d12cfac1a2d8062425de9549c4292e
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93285198"
 ---
 # <a name="move-an-azure-key-vault-across-regions"></a>Een Azure-sleutel kluis verplaatsen tussen regio's
@@ -28,7 +28,7 @@ Als u een sleutel kluis naar een andere regio wilt verplaatsen, maakt u een sleu
 
 Houd rekening met de volgende concepten voordat u begint:
 
-* De namen van sleutel kluizen zijn wereld wijd uniek. U kunt een kluis naam niet opnieuw gebruiken.
+* Namen van sleutelkluizen zijn globaal uniek. U kunt een kluis naam niet opnieuw gebruiken.
 * U moet uw toegangs beleid en netwerk configuratie-instellingen opnieuw configureren in de nieuwe sleutel kluis.
 * U moet zacht verwijderen opnieuw configureren en beveiliging opschonen in de nieuwe sleutel kluis.
 * Met de back-up-en herstel bewerking blijven uw instellingen voor het door draaien van gegevens niet behouden. Mogelijk moet u de instellingen opnieuw configureren.

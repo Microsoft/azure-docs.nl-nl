@@ -6,10 +6,10 @@ ms.date: 07/28/2020
 ms.topic: conceptual
 ms.custom: mvc
 ms.openlocfilehash: 1d83f859fce33b9499d01c4b58e69f56fdbbb293
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92222240"
 ---
 # <a name="remove-update-management-from-automation-account"></a>Updatebeheer verwijderen uit Automation-account
@@ -18,7 +18,7 @@ Nadat u het beheer van updates op uw virtuele machines hebt ingeschakeld met beh
 
 ## <a name="sign-into-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij de [Azure-portal](https://portal.azure.com).
+Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 ## <a name="remove-management-of-vms"></a>Beheer van Vm's verwijderen
 
@@ -28,7 +28,7 @@ Voordat u Updatebeheer verwijdert, moet u eerst stoppen met het beheren van uw V
 
 Voordat u het Automation-account kunt ontkoppelen van de werk ruimte, moet u deze stappen volgen om Updatebeheer volledig te verwijderen. U verwijdert de **Update** -oplossing uit de werk ruimte.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer in de Azure-portal de optie **Alle services**. Typ in de lijst met resources **Log Analytics**. Wanneer u begint te typen, worden in de lijst suggesties weer geven op basis van uw invoer. Selecteer **Log Analytics**.
 
@@ -36,7 +36,7 @@ Voordat u het Automation-account kunt ontkoppelen van de werk ruimte, moet u dez
 
 4. Selecteer aan de linkerkant **oplossingen**.  
 
-5. Selecteer in de lijst met oplossingen **updates (werkruimte naam)**. Selecteer op de pagina **overzicht** voor de oplossing **verwijderen**. Selecteer **Ja**als u wordt gevraagd om te bevestigen.
+5. Selecteer in de lijst met oplossingen **updates (werkruimte naam)**. Selecteer op de pagina **overzicht** voor de oplossing **verwijderen**. Selecteer **Ja** als u wordt gevraagd om te bevestigen.
 
 ## <a name="unlink-workspace-from-automation-account"></a>De werkruimte ontkoppelen van het Automation-account
 

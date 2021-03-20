@@ -6,10 +6,10 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/05/2016
 ms.openlocfilehash: 11efdb727bacadb674fb49374ef1c70fcc788ecc
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92219986"
 ---
 # <a name="develop-u-sql-user-defined-operators-udos"></a>Door de gebruiker gedefinieerde U-SQL-Opera tors ontwikkelen (Udo's)
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u door de gebruiker gedefinieerde Opera tors
 
 1. Selecteer in Visual Studio **File > New > project > U-SQL project**.
 2. Klik op **OK**. Visual Studio maakt een oplossing met een script. usql-bestand.
-3. Vouw in **Solution Explorer**script. usql uit en dubbel klik vervolgens op **script.usql.cs**.
+3. Vouw in **Solution Explorer** script. usql uit en dubbel klik vervolgens op **script. usql. cs**.
 4. Plak de volgende code in het bestand:
 
    ```usql
@@ -77,7 +77,7 @@ In dit artikel wordt beschreven hoe u door de gebruiker gedefinieerde Opera tors
    }
    ```
 
-5. Open **script. usql**en plak het volgende U-SQL-script:
+5. Open **script. usql** en plak het volgende U-SQL-script:
 
    ```usql
    @drivers =
@@ -118,7 +118,7 @@ In dit artikel wordt beschreven hoe u door de gebruiker gedefinieerde Opera tors
 
 ### <a name="to-see-the-output"></a>Als u de uitvoer wilt bekijken
 
-1. Vouw in **Server Explorer** **Azure**uit, vouw **Data Lake Analytics**uit, vouw uw data Lake Analytics account uit, vouw **opslag accounts**uit, klik met de rechter muisknop op de standaard opslag en klik vervolgens op **Explorer**.
+1. Vouw in **Server Explorer** **Azure** uit, vouw **Data Lake Analytics** uit, vouw uw data Lake Analytics account uit, vouw **opslag accounts** uit, klik met de rechter muisknop op de standaard opslag en klik vervolgens op **Explorer**.
 
 2. Vouw voor beelden uit, vouw uitvoer uit en dubbel klik vervolgens op **Drivers.csv**.
 

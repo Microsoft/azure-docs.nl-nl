@@ -8,10 +8,10 @@ ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: 39a0830806d2d9c7358d175cae703e9c81c45b02
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93130014"
 ---
 # <a name="register-a-saas-application"></a>Een SaaS-toepassing registreren
@@ -28,22 +28,22 @@ Elke toepassing die de mogelijkheden van Azure Active Directory wil gebruiken, m
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Als uw account u toegang geeft tot meer dan één, klikt u in de rechter bovenhoek op uw account en stelt u uw portal sessie in op de gewenste Azure AD-Tenant.
-3. Klik in het navigatie deel venster aan de linkerkant op de **Azure Active Directory** -service, klik op **app-registraties** en klik vervolgens op **nieuwe toepassing registreren** .
+3. Klik in het navigatie deel venster aan de linkerkant op de **Azure Active Directory** -service, klik op **app-registraties** en klik vervolgens op **nieuwe toepassing registreren**.
 
     ![SaaS AD-App-registraties](./media/saas-offer-app-registration-v1.png)
 
 4. Voer op de pagina maken de registratie gegevens voor uw toepassing in \' :
-    -   **Naam** : Voer een beschrijvende naam voor de toepassing in
-    -   **Toepassings type** :  
+    -   **Naam**: Voer een beschrijvende naam voor de toepassing in
+    -   **Toepassings type**:  
         
         Selecteer **Web-app/API** voor [client toepassingen](../../active-directory/develop/developer-glossary.md#client-application)) en [resource/API-toepassingen](../../active-directory/develop/developer-glossary.md#resource-server)die zijn geïnstalleerd op een beveiligde server. Deze instelling wordt gebruikt voor OAuth-vertrouwelijke [webclients](../../active-directory/develop/developer-glossary.md#web-client)en open bare [gebruiker op agent-gebaseerde clients](../../active-directory/develop/developer-glossary.md#user-agent-based-client)).
         Dezelfde toepassing kan zowel een client als resource/API beschikbaar maken.
 
         Voor specifieke voor beelden van webtoepassingen raadpleegt u de Quick Start-setups die beschikbaar zijn in de sectie [aan de slag](../../active-directory/develop/quickstart-create-new-tenant.md) van de [hand leiding voor ontwikkel AARS van Azure AD](../../active-directory/develop/index.yml).
 
-5. Wanneer u klaar bent, klikt u op **registreren** .  Azure AD wijst een unieke *toepassings-id* toe aan uw nieuwe toepassing. U kunt het beste één app registreren die alleen toegang heeft tot de API, en als één Tenant.
+5. Wanneer u klaar bent, klikt u op **registreren**.  Azure AD wijst een unieke *toepassings-id* toe aan uw nieuwe toepassing. U kunt het beste één app registreren die alleen toegang heeft tot de API, en als één Tenant.
 
-6. Als u client geheim wilt maken, navigeert u naar de **pagina certificaten & geheimen** en klikt u op **+ Nieuw client geheim** .  Zorg ervoor dat u de geheime waarde kopieert om deze in uw code te gebruiken.
+6. Als u client geheim wilt maken, navigeert u naar de **pagina certificaten & geheimen** en klikt u op **+ Nieuw client geheim**.  Zorg ervoor dat u de geheime waarde kopieert om deze in uw code te gebruiken.
 
 De **Azure AD-App-ID** is gekoppeld aan uw uitgevers-id, dus zorg ervoor dat dezelfde *App-ID* wordt gebruikt in al uw aanbiedingen.
 

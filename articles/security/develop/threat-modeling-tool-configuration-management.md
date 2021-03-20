@@ -18,10 +18,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 8cbe6b39bda0815c4981c497c07750136bcc9dba
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94517481"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Beveiligings frame: configuratie beheer | Oplossingen 
@@ -42,7 +42,7 @@ ms.locfileid: "94517481"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Een inleiding tot het beveiligings beleid voor](https://www.html5rocks.com/en/tutorials/security/content-security-policy/)inhoud, [referentie voor inhouds beveiligings beleid](https://content-security-policy.com/), [beveiligings functies](https://developer.microsoft.com/microsoft-edge/platform/documentation/dev-guide/security/), [Inleiding tot het BEVEILIGINGS beleid voor inhoud](https://github.com/webplatform/webplatform.github.io/tree/master/docs/tutorials/content-security-policy), [kan ik CSP gebruiken?](https://caniuse.com/#feat=contentsecuritypolicy) |
@@ -74,7 +74,7 @@ Example: var str="alert(1)"; eval(str);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [XSS-beveiligings filter](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html) |
@@ -85,7 +85,7 @@ Example: var str="alert(1)"; eval(str);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | Overzicht van [ASP.net-fout opsporing](/previous-versions/ms227556(v=vs.140)), [overzicht van ASP.net tracering](/previous-versions/bb386420(v=vs.140)), [procedures: tracering inschakelen voor een ASP.NET-toepassing](/previous-versions/0x5wc973(v=vs.140)), [How to: fout opsporing voor ASP.NET-toepassingen inschakelen](https://msdn.microsoft.com/library/e8z01xdh(VS.80).aspx) |
@@ -96,7 +96,7 @@ Example: var str="alert(1)"; eval(str);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -107,7 +107,7 @@ Example: var str="alert(1)"; eval(str);
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [OWASP Klik-Jack Cheat-werk blad](https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html), de [interne beveiliging van IE-gevechten Klik-Jack, met X-frame-opties](/archive/blogs/ieinternals/combating-clickjacking-with-x-frame-options) |
@@ -142,7 +142,7 @@ Web.config code voor sites die alleen op pagina's in hetzelfde domein moeten wor
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren, MVC5 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -173,7 +173,7 @@ Het is belang rijk om ervoor te zorgen dat de lijst met oorsprongen in het kenme
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren, MVC5 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Validatie aanvragen-script aanvallen voor komen](https://www.asp.net/whitepapers/request-validation) |
@@ -199,7 +199,7 @@ De functie voor het valideren van aanvragen wordt niet ondersteund en maakt geen
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -210,7 +210,7 @@ De functie voor het valideren van aanvragen wordt niet ondersteund en maakt geen
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Beveiligings deel van IE8 V: uitgebreide beveiliging](/archive/blogs/ie/ie8-security-part-v-comprehensive-protection), [MIME-type](https://en.wikipedia.org/wiki/Mime_type) |
@@ -275,7 +275,7 @@ this.Response.Headers["X-Content-Type-Options"] = "nosniff";
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | EnvironmentType-Azure |
 | **Referenties**              | [Standaard server headers op Windows Azure websites verwijderen](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) |
@@ -286,7 +286,7 @@ this.Response.Headers["X-Content-Type-Options"] = "nosniff";
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Database | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | SQL Azure, premises |
 | **Kenmerken**              | N.v.t., SQL-versie-V12 |
 | **Referenties**              | [Een Azure SQL database firewall configureren](../../azure-sql/database/firewall-configure.md), [een Windows Firewall configureren voor toegang tot de data base-engine](/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) |
@@ -297,7 +297,7 @@ this.Response.Headers["X-Content-Type-Options"] = "nosniff";
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC 5 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | Het [inschakelen van cross-Origin-aanvragen in ASP.net Web API 2](https://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api), [ASP.net Web API-CORS-ondersteuning in ASP.net Web API 2](/archive/msdn-magazine/2013/december/asp-net-web-api-cors-support-in-asp-net-web-api-2) |
@@ -393,7 +393,7 @@ public class ResourcesController : ApiController
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC 6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Het inschakelen van cross-Origin-aanvragen (CORS) in ASP.NET Core 1,0](https://docs.asp.net/en/latest/security/cors.html) |
@@ -507,7 +507,7 @@ Als u CORS wilt uitschakelen voor een controller of actie, gebruikt u het kenmer
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-apparaat | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Het inschakelen van veilige opstart-en BitLocker-Apparaatversleuteling in Windows 10 IoT core](/windows/iot-core/secure-your-device/securebootandbitlocker) |
@@ -518,7 +518,7 @@ Als u CORS wilt uitschakelen voor een controller of actie, gebruikt u het kenmer
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-apparaat | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -562,7 +562,7 @@ Als u CORS wilt uitschakelen voor een controller of actie, gebruikt u het kenmer
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-Cloud gateway | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | Gateway keuze-Azure IoT Hub |
 | **Referenties**              | [Overzicht van IOT hub Apparaatbeheer](../../iot-hub/iot-hub-device-management-overview.md), [het bijwerken](../../iot-hub/tutorial-firmware-update.md) van de firmware van een apparaat |
@@ -595,7 +595,7 @@ Als u CORS wilt uitschakelen voor een controller of actie, gebruikt u het kenmer
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure Storage | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [CORS-ondersteuning voor Azure Storage Services](/rest/api/storageservices/Cross-Origin-Resource-Sharing--CORS--Support-for-the-Azure-Storage-Services) |
@@ -606,7 +606,7 @@ Als u CORS wilt uitschakelen voor een controller of actie, gebruikt u het kenmer
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | .NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com) |
@@ -629,7 +629,7 @@ Hier volgt een voor beeld van een configuratie met beperking ingeschakeld:
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | WCF | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | .NET Framework 3 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [MSDN](/previous-versions/msp-n-p/ff648500(v=pandp.10)), [Fortify Konink rijk](https://vulncat.fortify.com) |

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 0cdad245981ad02d3cdaefba447d131c775e242f
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93145766"
 ---
 # <a name="customize-the-style-of-the-developer-portal-pages"></a>De stijl van de pagina's van de ontwikkelaarsportal aanpassen
@@ -45,8 +45,8 @@ In dit artikel leert u hoe u de stijl aanpast van de elementen op pagina's van d
 
 ## <a name="customize-the-developer-portal"></a>De ontwikkelaarsportal aanpassen
 
-1. Selecteer **Overzicht** .
-2. Klik op de knop **Ontwikkelaarsportal (verouderd)** boven aan het venster **Overzicht** .
+1. Selecteer **Overzicht**.
+2. Klik op de knop **Ontwikkelaarsportal (verouderd)** boven aan het venster **Overzicht**.
 3. In de linkerbovenhoek van het scherm ziet u een pictogram dat bestaat uit twee schilderkwasten. Beweeg de muisaanwijzer over dit pictogram om het menu Portalaanpassing te openen.
 
     ![Schermopname met het pictogram met twee kwasten gemarkeerd.](./media/modify-developer-portal-style/modify-developer-portal-style01.png)
@@ -59,7 +59,7 @@ In dit artikel leert u hoe u de stijl aanpast van de elementen op pagina's van d
 
     ![stijl aanpassen](./media/modify-developer-portal-style/modify-developer-portal-style02.png)
     
-6. Klik op het veld voor de variabele **\@headings-color** . 
+6. Klik op het veld voor de variabele **\@headings-color**. 
     
     De vervolgkeuzelijst Kleurenkiezer wordt geopend.
 7. Selecteer een nieuwe kleur uit de vervolgkeuzelijst Kleurenkiezer.

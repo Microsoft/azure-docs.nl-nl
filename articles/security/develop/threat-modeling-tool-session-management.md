@@ -17,10 +17,10 @@ ms.date: 02/07/2017
 ms.author: jegeib
 ms.custom: has-adal-ref, devx-track-js, devx-track-csharp
 ms.openlocfilehash: a1f4d4a3bb78da82753d651e1a73cf244096d5df
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94518098"
 ---
 # <a name="security-frame-session-management"></a>Beveiligings kader: sessie beheer
@@ -39,7 +39,7 @@ ms.locfileid: "94518098"
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure AD | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -74,7 +74,7 @@ Ook moet de gebruikers sessie worden vernietigd door de methode Session. Abandon
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | IoT-apparaat | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -85,7 +85,7 @@ Ook moet de gebruikers sessie worden vernietigd door de methode Session. Abandon
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Azure document DB | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -96,7 +96,7 @@ Ook moet de gebruikers sessie worden vernietigd door de methode Session. Abandon
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | ADFS | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -145,7 +145,7 @@ Ook moet de gebruikers sessie worden vernietigd door de methode Session. Abandon
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Identiteits server | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [IdentityServer3-federatieve afmelden](https://identityserver.github.io/Documentation/docsv2/advanced/federated-signout.html) |
@@ -156,7 +156,7 @@ Ook moet de gebruikers sessie worden vernietigd door de methode Session. Abandon
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | EnvironmentType-premises |
 | **Referenties**              | [httpCookies-element (ASP.net-instellingen schema)](/previous-versions/dotnet/netframework-4.0/ms228262(v=vs.100)), [HttpCookie. Secure, eigenschap](/dotnet/api/system.web.httpcookie.secure) |
@@ -175,7 +175,7 @@ De instelling wordt afgedwongen, zelfs als HTTP wordt gebruikt voor toegang tot 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren, MVC5 |
 | **Kenmerken**              | EnvironmentType-premises |
 | **Referenties**              | N.v.t.  |
@@ -197,7 +197,7 @@ De instelling wordt afgedwongen, zelfs als HTTP wordt gebruikt voor toegang tot 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Kenmerk van beveiligde cookie](https://en.wikipedia.org/wiki/HTTP_cookie#Secure_cookie) |
@@ -218,7 +218,7 @@ Alle HTTP-toepassingen die gebruikmaken van cookies, moeten HttpOnly opgeven in 
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Eigenschap FormsAuthentication. RequireSSL](/dotnet/api/system.web.security.formsauthentication.requiressl) |
@@ -235,7 +235,7 @@ In het volgende code voorbeeld wordt het kenmerk requireSSL in het Web.config-be
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC5 |
 | **Kenmerken**              | EnvironmentType-premises |
 | **Referenties**              | [Configuratie van Windows Identity Foundation (WIF) – deel II](/archive/blogs/alikl/windows-identity-foundation-wif-configuration-part-ii-cookiehandler-chunkedcookiehandler-customcookiehandler) |
@@ -260,7 +260,7 @@ De volgende configuratie toont de juiste configuratie:
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -269,7 +269,7 @@ De volgende configuratie toont de juiste configuratie:
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC5, MVC6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [XSRF/CSRF voor komen in ASP.NET MVC en webpagina's](https://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) |
@@ -355,7 +355,7 @@ void ValidateRequestHeader(HttpRequestMessage request)
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Profiteer van ASP.NET ingebouwde functies om webaanvalen uit te Fend](/previous-versions/dotnet/articles/ms972969(v=msdn.10)#securitybarriers_topic2) |
@@ -375,7 +375,7 @@ void Page_Init (object sender, EventArgs e) {
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Eigenschap HttpSessionState. timeout](/dotnet/api/system.web.sessionstate.httpsessionstate.timeout) |
@@ -395,7 +395,7 @@ void Page_Init (object sender, EventArgs e) {
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [Formulier element voor verificatie (ASP.NET-instellingen schema)](/previous-versions/dotnet/netframework-4.0/1d3t3c61(v=vs.100)) |
@@ -410,7 +410,7 @@ void Page_Init (object sender, EventArgs e) {
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Webformulieren, MVC5 |
 | **Kenmerken**              | EnvironmentType-premises |
 | **Referenties**              | [asdeqa](https://skf.azurewebsites.net/Mitigations/Details/wefr) |
@@ -445,7 +445,7 @@ Set-ADFSRelyingPartyTrust -TargetName "<RelyingPartyWebApp>" -ClaimsProviderName
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Webtoepassing | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -456,7 +456,7 @@ Set-ADFSRelyingPartyTrust -TargetName "<RelyingPartyWebApp>" -ClaimsProviderName
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | Algemeen |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | N.v.t.  |
@@ -465,7 +465,7 @@ Set-ADFSRelyingPartyTrust -TargetName "<RelyingPartyWebApp>" -ClaimsProviderName
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC5, MVC6 |
 | **Kenmerken**              | N.v.t.  |
 | **Referenties**              | [CSRF-aanvallen (cross-site request vervalsing) in ASP.NET-Web-API voor komen](https://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) |
@@ -552,7 +552,7 @@ Autorisatie filter waarmee wordt gecontroleerd of:
 | Titel                   | Details      |
 | ----------------------- | ------------ |
 | **Onderdeel**               | Web-API | 
-| **SDL-fase**               | Ontwikkelen |  
+| **SDL-fase**               | Build |  
 | **Toepasselijke technologieën** | MVC5, MVC6 |
 | **Kenmerken**              | ID-provider-ADFS, ID-provider-Azure AD |
 | **Referenties**              | [Een web-API beveiligen met afzonderlijke accounts en lokale aanmelding in ASP.NET Web API 2,2](https://www.asp.net/web-api/overview/security/individual-accounts-in-web-api) |

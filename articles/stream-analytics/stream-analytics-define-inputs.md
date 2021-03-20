@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2020
 ms.openlocfilehash: 5f10fed66475cda8fd700a4737727101e2465870
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019360"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Gegevens streamen als invoer in Stream Analytics
@@ -49,16 +49,16 @@ In de volgende tabel wordt elke eigenschap in de **nieuwe invoer** pagina in het
 
 | Eigenschap | Beschrijving |
 | --- | --- |
-| **Invoeralias** |Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen. |
+| **Invoer alias** |Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen. |
 | **Abonnement** | Kies het abonnement waarin de Event hub-bron zich bevindt. | 
 | **Event hub-naam ruimte** | De Event hub-naam ruimte is een container voor een set met bericht entiteiten. Wanneer u een nieuwe Event Hub maakt, maakt u ook de naam ruimte. |
-| **Event Hub-naam** | De naam van de Event Hub die moet worden gebruikt als invoer. |
+| **Naam van de Event Hub** | De naam van de Event Hub die moet worden gebruikt als invoer. |
 | **Naam van het Event Hub-beleid** | Het beleid voor gedeelde toegang dat toegang biedt tot de Event hub. Elk gedeeld toegangs beleid heeft een naam, machtigingen die u instelt en toegangs sleutels. Deze optie wordt automatisch ingevuld, tenzij u de optie selecteert om de Event hub-instellingen hand matig op te geven.|
 | **Event hub-consumenten groep** (aanbevolen) | Het is raadzaam om voor elke Stream Analytics taak een afzonderlijke consumenten groep te gebruiken. Met deze teken reeks wordt de Consumer groep geïdentificeerd die moet worden gebruikt om gegevens op te nemen van de Event Hub. Als er geen consumenten groep is opgegeven, gebruikt de Stream Analytics-taak de $Default Consumer groep.  |
 | **Partitiesleutel** | Dit is een optioneel veld dat alleen beschikbaar is als uw taak is geconfigureerd voor het gebruik van [compatibiliteits niveau](./stream-analytics-compatibility-level.md) 1,2 of hoger. Als uw invoer is gepartitioneerd door een eigenschap, kunt u hier de naam van deze eigenschap toevoegen. Dit wordt gebruikt voor het verbeteren van de prestaties van uw query als deze de component PARTITION BY of GROUP BY bevat voor deze eigenschap. Als deze taak gebruikmaakt van het compatibiliteits niveau 1,2 of hoger, wordt in dit veld standaard de waarde ' PartitionId ' gebruikt. |
 | **Serialisatie-indeling voor gebeurtenissen** | De serialisatie-indeling (JSON, CSV, AVRO of [Other (protobuf, XML, bedrijfs gegevens...)](custom-deserializer.md)) van de binnenkomende gegevens stroom.  Zorg ervoor dat de JSON-indeling wordt uitgelijnd met de specificatie en geen voorloop 0 voor decimale getallen bevat. |
 | **Codering** | UTF-8 is momenteel de enige coderings indeling die wordt ondersteund. |
-| **Gebeurteniscompressietype** | Het compressie type dat wordt gebruikt voor het lezen van de binnenkomende gegevens stroom, zoals geen (standaard), GZip of Deflate. |
+| **Type gebeurtenis compressie** | Het compressie type dat wordt gebruikt voor het lezen van de binnenkomende gegevens stroom, zoals geen (standaard), GZip of Deflate. |
 
 Als uw gegevens afkomstig zijn van een event hub-stroom invoer, hebt u toegang tot de volgende meta gegevens velden in uw Stream Analytics query:
 
@@ -98,7 +98,7 @@ In de volgende tabel wordt elke eigenschap in de **nieuwe invoer** pagina in het
 
 | Eigenschap | Beschrijving |
 | --- | --- |
-| **Invoeralias** | Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen.|
+| **Invoer alias** | Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen.|
 | **Abonnement** | Kies het abonnement waarin de IoT Hub resource bestaat. | 
 | **IoT Hub** | De naam van de IoT Hub die moet worden gebruikt als invoer. |
 | **Eindpunt** | Het eind punt voor de IoT Hub.|
@@ -108,7 +108,7 @@ In de volgende tabel wordt elke eigenschap in de **nieuwe invoer** pagina in het
 | **Partitiesleutel** | Dit is een optioneel veld dat alleen beschikbaar is als uw taak is geconfigureerd voor het gebruik van [compatibiliteits niveau](./stream-analytics-compatibility-level.md) 1,2 of hoger. Als uw invoer is gepartitioneerd door een eigenschap, kunt u hier de naam van deze eigenschap toevoegen. Dit wordt gebruikt voor het verbeteren van de prestaties van uw query als deze de component PARTITION BY of GROUP BY bevat voor deze eigenschap. Als deze taak gebruikmaakt van het compatibiliteits niveau 1,2 of hoger, wordt in dit veld standaard de waarde ' PartitionId ' gebruikt. |
 | **Serialisatie-indeling voor gebeurtenissen** | De serialisatie-indeling (JSON, CSV, AVRO of [Other (protobuf, XML, bedrijfs gegevens...)](custom-deserializer.md)) van de binnenkomende gegevens stroom.  Zorg ervoor dat de JSON-indeling wordt uitgelijnd met de specificatie en geen voorloop 0 voor decimale getallen bevat. |
 | **Codering** | UTF-8 is momenteel de enige coderings indeling die wordt ondersteund. |
-| **Gebeurteniscompressietype** | Het compressie type dat wordt gebruikt voor het lezen van de binnenkomende gegevens stroom, zoals geen (standaard), GZip of Deflate. |
+| **Type gebeurtenis compressie** | Het compressie type dat wordt gebruikt voor het lezen van de binnenkomende gegevens stroom, zoals geen (standaard), GZip of Deflate. |
 
 
 Wanneer u gegevens van streams van een IoT Hub gebruikt, hebt u toegang tot de volgende meta gegevens velden in uw Stream Analytics query:
@@ -151,7 +151,7 @@ In de volgende tabel wordt elke eigenschap in de **nieuwe invoer** pagina in de 
 
 | Eigenschap | Beschrijving |
 | --- | --- |
-| **Invoeralias** | Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen. |
+| **Invoer alias** | Een beschrijvende naam die u in de query van de taak gebruikt om naar deze invoer te verwijzen. |
 | **Abonnement** | Kies het abonnement waarin de opslag resource zich bevindt. | 
 | **Opslagaccount** | De naam van het opslag account waarin de BLOB-bestanden zich bevinden. |
 | **Sleutel van het opslag account** | De geheime sleutel die is gekoppeld aan het opslag account. Deze optie wordt automatisch ingevuld tenzij u de optie selecteert om de instellingen hand matig op te geven. |

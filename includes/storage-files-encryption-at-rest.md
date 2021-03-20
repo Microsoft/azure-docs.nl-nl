@@ -9,10 +9,10 @@ ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 814bf085ca910ef07a13df779eef25e0e6510e57
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96011735"
 ---
 Alle gegevens die zijn opgeslagen in Azure Files worden inactief versleuteld met behulp van Azure Storage Service Encryption (SSE). Versleuteling van de opslagservice werkt op dezelfde manier als BitLocker op Windows: gegevens worden versleuteld onder het bestandssysteemniveau. Omdat gegevens worden versleuteld onder het bestandssysteem van de Azure-bestandsshare (vanwege codering naar de schijf) hoeft u geen toegang te hebben tot de onderliggende sleutel op de client om naar de Azure-bestandsshare te kunnen lezen of schrijven. Inactieve versleuteling geldt voor zowel SMB- als NFS-protocollen.

@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 9ae4549fe343422bbf60275a97768ca407f2dc7c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93321366"
 ---
 # <a name="data-science-using-scala-and-spark-on-azure"></a>Gegevenswetenschap met Scala en Spark op Azure
@@ -257,7 +257,7 @@ sqlResultsDF.show(3)
 
 | fare_amount | passenger_count | tip_amount | gekanteld |
 | --- | --- | --- | --- |
-|        13,5 |1.0 |2.9 |1.0 |
+|        13.5 |1.0 |2.9 |1.0 |
 |        16,0 |2,0 |3.4 |1.0 |
 |        10.5 |2,0 |1.0 |1.0 |
 
@@ -922,7 +922,7 @@ In deze sectie gebruikt u machine learning-hulpprogram ma's die ontwikkel aars v
 * Optimaliseer het model met behulp van kruis validatie en Hyper-para meter sweep met behulp van de CrossValidator-functie van Spark ML (binaire classificatie)
 * Optimaliseer het model met behulp van aangepaste code voor kruis validatie en het opruimen van para meters voor het gebruik van een machine learning functie en parameter set (lineaire regressie)
 
-**Kruis validatie** is een techniek waarmee wordt beoordeeld hoe goed een model dat is getraind op een bekende set gegevens, wordt gegeneraliseerd om de functies te voors pellen van gegevens sets waarvoor het niet is getraind. Het algemene idee achter deze techniek is dat een model wordt getraind op basis van een gegevens reeks van bekende gegevens en vervolgens de nauw keurigheid van de voor spellingen wordt getest op een onafhankelijke gegevensset. Een veelvoorkomende implementatie is het opsplitsen van een gegevensset in *k* -vouwen en het model vervolgens op een Round-Robin op alle, maar een van de vouwen te trainen.
+**Kruis validatie** is een techniek waarmee wordt beoordeeld hoe goed een model dat is getraind op een bekende set gegevens, wordt gegeneraliseerd om de functies te voors pellen van gegevens sets waarvoor het niet is getraind. Het algemene idee achter deze techniek is dat een model wordt getraind op basis van een gegevens reeks van bekende gegevens en vervolgens de nauw keurigheid van de voor spellingen wordt getest op een onafhankelijke gegevensset. Een veelvoorkomende implementatie is het opsplitsen van een gegevensset in *k*-vouwen en het model vervolgens op een Round-Robin op alle, maar een van de vouwen te trainen.
 
 **Optimalisatie van Hyper-para meters** is het probleem bij het kiezen van een set Hyper-para meters voor een leer algoritme, meestal met het doel om een meting van de prestaties van het algoritme op een onafhankelijke gegevensset te optimaliseren. Een Hyper-para meter is een waarde die u buiten de model trainings procedure moet opgeven. Veronderstellingen over waarden voor Hyper-para meters kunnen van invloed zijn op de flexibiliteit en nauw keurigheid van het model. Beslissings structuren hebben Hyper-para meters, bijvoorbeeld zoals de gewenste diepte en het aantal bladeren in de boom structuur. U moet een niet-geclassificeerde sanctie term instellen voor een ondersteunings vector machine (SVM).
 

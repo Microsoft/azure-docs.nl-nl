@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/04/2020
 ms.author: jeedes
 ms.openlocfilehash: b6dda20487caf6fe3ba49578cfdc0b65434a8dfa
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92520554"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-splashtop"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Splashtop
@@ -48,16 +48,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van Splashtop met Microsoft Azure Active Directory moet u Splashtop vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **Splashtop** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **Splashtop**.
 1. Selecteer **Splashtop** in het resultatenvenster en voeg de toepassing vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-splashtop"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Splashtop
 
-Configureer en test eenmalige aanmelding van Azure AD met Splashtop met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Splashtop.
+Configureer en test eenmalige aanmelding van Azure AD met Splashtop met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Splashtop.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Splashtop te configureren en te testen:
 
@@ -72,8 +72,8 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Splashtop t
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Splashtop** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Splashtop**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -82,7 +82,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     In het tekstvak **Aanmeldings-URL** typt u de URL: `https://my.splashtop.com/login/sso`
 
-1. In de Splashtop-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. Op de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname** . In de Splashtop-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail** . Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
+1. In de Splashtop-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. Op de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de Splashtop-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail**. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
 
     ![Schermopname die Gebruikerskenmerken toont met het pictogram Bewerken geselecteerd.](common/edit-attribute.png)
 
@@ -98,36 +98,36 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Splashtop.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Splashtop** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-splashtop-sso"></a>Eenmalige aanmelding configureren voor Splashtop
 
 In dit gedeelte moet u een aanvraag indienen voor een nieuwe methode voor eenmalige aanmelding via de [Splashtop-webportal](https://my.splashtop.com/login).
-1. Ga in de Splashtop-webportal naar het tabblad **Account info** / **Team** en schuif omlaag naar het gedeelte **Single Sign On** . Klik vervolgens op **Apply for new SSO method** .
+1. Ga in de Splashtop-webportal naar het tabblad **Account info** / **Team** en schuif omlaag naar het gedeelte **Single Sign On**. Klik vervolgens op **Apply for new SSO method**.
 
     ![Schermopname met de pagina Eenmalige aanmelding waar u Toevoegen kunt selecteren voor een nieuwe methode voor eenmalige aanmelding.](media/splashtop-tutorial/apply-for-new-SSO-method.png)
 
@@ -141,11 +141,11 @@ In dit gedeelte moet u een aanvraag indienen voor een nieuwe methode voor eenmal
     ![Schermopname met de inhoud van het certificaatbestand.](media/splashtop-tutorial/cert-2.png)
     ![Schermopname met het tekstvak Certificaat downloaden.](media/splashtop-tutorial/azure-sso-2.png)
 
-1. Dat is alles. Klik op **Save** . Het Splashtop-team voor validatie van eenmalige aanmelding neemt contact met u op voor de verificatiegegevens en activeert vervolgens de methode voor eenmalige aanmelding.
+1. Dat is alles. Klik op **Save**. Het Splashtop-team voor validatie van eenmalige aanmelding neemt contact met u op voor de verificatiegegevens en activeert vervolgens de methode voor eenmalige aanmelding.
 
 ### <a name="create-splashtop-test-user"></a>Splashtop-testgebruiker maken
 
-1. Nadat de methode voor eenmalige aanmelding is geactiveerd, controleert u de zojuist gemaakte methode voor eenmalige aanmelding om deze in te schakelen in het gedeelte **Single Sign On** .
+1. Nadat de methode voor eenmalige aanmelding is geactiveerd, controleert u de zojuist gemaakte methode voor eenmalige aanmelding om deze in te schakelen in het gedeelte **Single Sign On**.
 
     ![Schermopname van de pagina Eenmalige aanmelding, waar u de nieuwe methode kunt inschakelen.](media/splashtop-tutorial/enable.png)
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 30fd3843b50ac6b075d33e961986b94ee2496fef
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92518514"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-on24-virtual-environment-saml-connection"></a>Zelfstudie: Integratie van Azure Active Directory met ON24 Virtual Environment SAML Connection
@@ -49,7 +49,7 @@ Om de integratie van ON24 Virtual Environment SAML Connection in Azure AD te con
 
 **Voer de volgende stappen uit om ON24 Virtual Environment SAML Connection toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Om de integratie van ON24 Virtual Environment SAML Connection in Azure AD te con
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **ON24 Virtual Environment SAML Connection** , selecteer **ON24 Virtual Environment SAML Connection** in het resultatenpaneel en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **ON24 Virtual Environment SAML Connection**, selecteer **ON24 Virtual Environment SAML Connection** in het resultatenpaneel en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![ON24 Virtual Environment SAML Connection in de resultatenlijst](common/search-new-app.png)
 
@@ -119,7 +119,7 @@ Voer de volgende stappen uit om eenmalige aanmelding via Azure AD met ON24 Virtu
 
     `SAMLQA-EliteAudience.on24.com`
 
-    b. Typ een URL in het tekstvak **Antwoord-URL** :
+    b. Typ een URL in het tekstvak **Antwoord-URL**:
 
      **URL van de productieomgeving**
     
@@ -176,7 +176,7 @@ Als u eenmalige aanmelding aan de zijde van **ON24 Virtual Environment SAML Conn
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -201,7 +201,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie zorgt u ervoor dat Britta Simon eenmalige aanmelding met Azure kan gebruiken door haar toegang te verlenen tot ON24 Virtual Environment SAML Connection.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **ON24 Virtual Environment SAML Connection**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **ON24 Virtual Environment SAML Connection**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

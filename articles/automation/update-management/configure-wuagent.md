@@ -1,18 +1,18 @@
 ---
-title: Windows Update instellingen voor Azure Automation configureren Updatebeheer
+title: Instellingen van Windows Update configureren voor Updatebeheer van Azure Automation
 description: In dit artikel leest u hoe u Windows Update instellingen configureert om te werken met Azure Automation Updatebeheer.
 services: automation
 ms.subservice: update-management
 ms.date: 05/04/2020
 ms.topic: conceptual
 ms.openlocfilehash: a1f95ca856223628974a9519b7c4811bde43965e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92222159"
 ---
-# <a name="configure-windows-update-settings-for-azure-automation-update-management"></a>Windows Update instellingen voor Azure Automation configureren Updatebeheer
+# <a name="configure-windows-update-settings-for-azure-automation-update-management"></a>Instellingen van Windows Update configureren voor Updatebeheer van Azure Automation
 
 Azure Automation Updatebeheer is afhankelijk van de [Windows Update-client](/windows/deployment/update/windows-update-overview) om Windows-updates te downloaden en te installeren. Er zijn specifieke instellingen die worden gebruikt door de Windows Update-client wanneer er verbinding wordt gemaakt met Windows Server Update Services (WSUS) of Windows Update. Veel van deze instellingen kunnen worden beheerd met:
 

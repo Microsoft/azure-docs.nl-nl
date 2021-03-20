@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: aahi
 ms.openlocfilehash: e65bb7c7d8fc04baec6b50a53519e689e748fbe1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96012166"
 ---
 # <a name="configure-speech-service-containers"></a>Spraak service containers configureren
@@ -153,7 +153,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="custom-speech-to-text"></a>[Custom Speech-naar-tekst](#tab/cstt)
+## <a name="custom-speech-to-text"></a>[Aangepaste spraak-naar-tekst](#tab/cstt)
 
 ### <a name="basic-example-for-custom-speech-to-text"></a>Eenvoudig voor beeld voor Custom Speech-naar-tekst
 
@@ -230,7 +230,7 @@ ApiKey={API_KEY} \
 Logging:Console:LogLevel:Default=Information
 ```
 
-## <a name="neural-text-to-speech"></a>[Tekst-naar-spraak Neural](#tab/ntts)
+## <a name="neural-text-to-speech"></a>[Neurale tekst-naar-spraak](#tab/ntts)
 
 ### <a name="basic-example-for-neural-text-to-speech"></a>Eenvoudig voor beeld voor het Neural van tekst naar spraak
 

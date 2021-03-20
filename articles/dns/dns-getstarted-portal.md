@@ -9,10 +9,10 @@ ms.topic: quickstart
 ms.date: 10/20/2020
 ms.author: rohink
 ms.openlocfilehash: be76a7902c2747c7a8dc1bfc21d58ae88f3ff343
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92282147"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-the-azure-portal"></a>Quickstart: Een Azure DNS-zone en -record maken met de Azure-portal
@@ -65,7 +65,7 @@ DNS-vermeldingen of -records voor het domein maakt u binnen de DNS-zone. Maak ee
 
 **Een A-record maken:**
 
-1. Open in de Azure-portal onder **Alle resources** de DNS-zone **contoso.xyz** in de resourcegroep **MyResourceGroup**. U kunt *contoso.xyz* invoeren in het vak **Filteren op naam ** om deze eenvoudiger te vinden.
+1. Open in de Azure-portal onder **Alle resources** de DNS-zone **contoso.xyz** in de resourcegroep **MyResourceGroup**. U kunt *contoso.xyz* invoeren in het vak **Filteren op naam** om deze eenvoudiger te vinden.
 
 1. Selecteer boven aan de pagina **DNS-zone** de optie **+ Recordset**.
 
@@ -85,7 +85,7 @@ Nu u een testzone hebt met daarin een DNS-record, kunt u de naamomzetting testen
 
 **DNS-naamomzetting testen:**
 
-1. Open in de Azure-portal onder **Alle resources** de DNS-zone **contoso.xyz** in de resourcegroep **MyResourceGroup**. U kunt *contoso.xyz* invoeren in het vak **Filteren op naam ** om deze eenvoudiger te vinden.
+1. Open in de Azure-portal onder **Alle resources** de DNS-zone **contoso.xyz** in de resourcegroep **MyResourceGroup**. U kunt *contoso.xyz* invoeren in het vak **Filteren op naam** om deze eenvoudiger te vinden.
 
 1. Kopieer een van de namen van de naamservers uit de lijst op de pagina **Overzicht**. 
 

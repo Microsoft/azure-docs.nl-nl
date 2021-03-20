@@ -12,10 +12,10 @@ ms.author: bonova
 ms.reviewer: sstein
 ms.date: 06/26/2019
 ms.openlocfilehash: ea037d12417c8fad9d80b77df69285ed2c8df31b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91618655"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database-and-azure-sql-managed-instance"></a>Aan de slag met tijdelijke tabellen in Azure SQL Database en Azure SQL Managed instance
@@ -27,7 +27,7 @@ Tijdelijke tabellen zijn een Programmeer bare functie van Azure SQL Database en 
 
 In dit artikel worden de stappen beschreven voor het gebruik van tijdelijke tabellen in een toepassings scenario. Stel dat u gebruikers activiteiten wilt bijhouden op een nieuwe website die geheel of op een bestaande website wordt ontwikkeld die u wilt uitbreiden met de analyse van gebruikers activiteit. In dit vereenvoudigde voor beeld gaan we ervan uit dat het aantal bezochte webpagina's gedurende een bepaalde periode een indicator is die moet worden vastgelegd en bewaakt in de website database die wordt gehost op Azure SQL Database of Azure SQL Managed instance. Het doel van de historische analyse van gebruikers activiteit is het ophalen van invoer voor het opnieuw ontwerpen van de website en de betere ervaring voor de bezoekers.
 
-Het database model voor dit scenario is zeer eenvoudig: de metrische gegevens van de activiteit van de gebruiker worden weer gegeven met één veld met een geheel getal, **PageVisited**en wordt vastgelegd samen met basis informatie over het gebruikers profiel. Voor op tijd gebaseerde analyse houdt u bovendien een reeks rijen voor elke gebruiker, waarbij elke rij het aantal pagina's vertegenwoordigt dat een bepaalde gebruiker binnen een bepaalde periode heeft bezocht.
+Het database model voor dit scenario is zeer eenvoudig: de metrische gegevens van de activiteit van de gebruiker worden weer gegeven met één veld met een geheel getal, **PageVisited** en wordt vastgelegd samen met basis informatie over het gebruikers profiel. Voor op tijd gebaseerde analyse houdt u bovendien een reeks rijen voor elke gebruiker, waarbij elke rij het aantal pagina's vertegenwoordigt dat een bepaalde gebruiker binnen een bepaalde periode heeft bezocht.
 
 ![Schema](./media/temporal-tables/AzureTemporal1.png)
 

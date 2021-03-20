@@ -10,10 +10,10 @@ ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
 ms.openlocfilehash: 0f94823b958ae5f95789dd4ef9a62057bdf764a8
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94517458"
 ---
 # <a name="tutorial-create-and-manage-a-virtual-machine-scale-set-with-the-azure-cli"></a>Zelfstudie: Een virtuele-machineschaalset maken en beheren met Azure CLI
@@ -44,7 +44,7 @@ De naam van de resourcegroep moet worden opgegeven als u ergens in deze zelfstud
 
 
 ## <a name="create-a-scale-set"></a>Een schaalset maken
-U maakt een schaalset voor virtuele machines met [az vmss create](/cli/azure/vmss). Het volgende voorbeeld wordt een schaalset gemaakt met de naam *myScaleSet* , en worden SSH-sleutels gegenereerd als deze nog niet bestaan:
+U maakt een schaalset voor virtuele machines met [az vmss create](/cli/azure/vmss). Het volgende voorbeeld wordt een schaalset gemaakt met de naam *myScaleSet*, en worden SSH-sleutels gegenereerd als deze nog niet bestaan:
 
 ```azurecli-interactive
 az vmss create \
@@ -78,7 +78,7 @@ In de volgende voorbeelduitvoer ziet u dat de schaalset twee VM-exemplaren bevat
 ```
 
 
-De eerste kolom in de uitvoer bevat een *InstanceId*. Als u extra informatie wilt weergeven over een bepaald VM-exemplaar, voegt u de parameter `--instance-id` toe aan [az vmss get-instance-view](/cli/azure/vmss). In het volgende voorbeeld wordt informatie opgevraagd over het VM-exemplaar *1* :
+De eerste kolom in de uitvoer bevat een *InstanceId*. Als u extra informatie wilt weergeven over een bepaald VM-exemplaar, voegt u de parameter `--instance-id` toe aan [az vmss get-instance-view](/cli/azure/vmss). In het volgende voorbeeld wordt informatie opgevraagd over het VM-exemplaar *1*:
 
 ```azurecli-interactive
 az vmss get-instance-view \
@@ -146,7 +146,7 @@ WindowsServer  MicrosoftWindowsServer  2012-Datacenter     MicrosoftWindowsServe
 WindowsServer  MicrosoftWindowsServer  2008-R2-SP1         MicrosoftWindowsServer:WindowsServer:2008-R2-SP1:latest         Win2008R2SP1         latest
 ```
 
-Als u een volledige lijst wilt weergeven, voegt u het argument `--all` toe. De lijst met installatiekopieën kan ook worden gefilterd door `--publisher` of `–-offer`. In het volgende voorbeeld wordt de lijst gefilterd op alle installatiekopieën met een aanbieding die overeenkomt met *CentOS* :
+Als u een volledige lijst wilt weergeven, voegt u het argument `--all` toe. De lijst met installatiekopieën kan ook worden gefilterd door `--publisher` of `–-offer`. In het volgende voorbeeld wordt de lijst gefilterd op alle installatiekopieën met een aanbieding die overeenkomt met *CentOS*:
 
 ```azurecli-interactive
 az vm image list --offer CentOS --all --output table
@@ -183,7 +183,7 @@ az vmss create \
 
 
 ## <a name="understand-vm-instance-sizes"></a>VM-exemplaargrootten begrijpen
-De grootte van een VM-exemplaar, of *SKU* , bepaalt de hoeveelheid rekenresources, zoals CPU, GPU en geheugen die beschikbaar worden gesteld aan het VM-exemplaar. VM-exemplaren in een schaalset moeten de juiste grootte krijgen voor de verwachte werkbelasting.
+De grootte van een VM-exemplaar, of *SKU*, bepaalt de hoeveelheid rekenresources, zoals CPU, GPU en geheugen die beschikbaar worden gesteld aan het VM-exemplaar. VM-exemplaren in een schaalset moeten de juiste grootte krijgen voor de verwachte werkbelasting.
 
 ### <a name="vm-instance-sizes"></a>VM-exemplaargrootten
 In de volgende tabel worden enkele veelgebruikte VM-grootten gecategoriseerd naar gebruikssituatie.
@@ -239,7 +239,7 @@ az vmss create \
 ## <a name="change-the-capacity-of-a-scale-set"></a>De capaciteit van een schaalset wijzigen
 Toen u aan het begin van de zelfstudie een schaalset hebt gemaakt, zijn er standaard twee VM-exemplaren geïmplementeerd. U kunt de parameter `--instance-count` opgeven met [az vmss create](/cli/azure/vmss) om het aantal exemplaren te wijzigen dat wordt gemaakt met een schaalset. Als u het aantal VM-exemplaren in een bestaande schaalset wilt vergroten of verkleinen, kunt u de capaciteit handmatig wijzigen. De grootte van de schaalset wordt dan aangepast, waarna de load balancer wordt geconfigureerd voor het verdelen van het verkeer.
 
-Als u het aantal VM-exemplaren in de schaalset handmatig wilt vergroten of verkleinen, gebruikt u [az vmss scale](/cli/azure/vmss). In het volgende voorbeeld wordt het aantal VM-exemplaren in de schaalset ingesteld op *3* :
+Als u het aantal VM-exemplaren in de schaalset handmatig wilt vergroten of verkleinen, gebruikt u [az vmss scale](/cli/azure/vmss). In het volgende voorbeeld wordt het aantal VM-exemplaren in de schaalset ingesteld op *3*:
 
 ```azurecli-interactive
 az vmss scale \
@@ -248,7 +248,7 @@ az vmss scale \
     --new-capacity 3
 ```
 
-Het duurt een paar minuten om de capaciteit van de schaalset bij te werken. Als u het aantal instanties wilt weergeven dat zich momenteel in een schaalset bevindt, gebruikt u [az vmss show](/cli/azure/vmss) en voert u een query uit op *sku.capacity* :
+Het duurt een paar minuten om de capaciteit van de schaalset bij te werken. Als u het aantal instanties wilt weergeven dat zich momenteel in een schaalset bevindt, gebruikt u [az vmss show](/cli/azure/vmss) en voert u een query uit op *sku.capacity*:
 
 ```azurecli-interactive
 az vmss show \

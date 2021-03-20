@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
 ms.openlocfilehash: 428ed96c3223e644b0c78712723231a5fabbdc77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91578577"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-portal"></a>Aan de slag met Azure Data Lake Storage Gen1 met behulp van de Azure Portal
@@ -47,7 +47,7 @@ Voordat u met deze zelfstudie begint, moet u beschikken over de volgende items:
    * **Versleutelingsinstellingen**. Er zijn drie opties:
 
      * **Geen versleuteling inschakelen**.
-     * **Gebruik sleutels die worden beheerd door data Lake Storage gen1**als u wilt dat data Lake Storage gen1 uw versleutelings sleutels beheert.
+     * **Gebruik sleutels die worden beheerd door data Lake Storage gen1** als u wilt dat data Lake Storage gen1 uw versleutelings sleutels beheert.
      * **Sleutels gebruiken uit uw eigen Key Vault**. U kunt een bestaande Azure Key Vault selecteren of een nieuwe Key Vault maken. Als u de sleutels van een Key Vault wilt gebruiken, moet u machtigingen voor het Data Lake Storage Gen1-account toewijzen voor toegang tot de Azure Key Vault. Zie [Machtigingen toewijzen aan Azure Key Vault](#assign-permissions-to-azure-key-vault) voor instructies.
 
         ![Scherm opname van de Blade nieuw Data Lake Storage gen 1 en het tabblad versleutelings instellingen.](./media/data-lake-store-get-started-portal/adls-encryption-2.png "Versleuteling Data Lake Storage Gen1")
@@ -56,7 +56,7 @@ Voordat u met deze zelfstudie begint, moet u beschikken over de volgende items:
 
         Zie [versleuteling van gegevens in azure data Lake Storage gen1](./data-lake-store-encryption.md)voor meer informatie.
 
-4. Klik op **Maken**. Als u ervoor hebt gekozen om het account vast te maken aan het dash board, gaat u terug naar het dash board en ziet u de voortgang van het inrichten van uw Data Lake Storage Gen1-account. Zodra het Data Lake Storage Gen1-account is ingericht, wordt de Blade account weer gegeven.
+4. Klik op **Create**. Als u ervoor hebt gekozen om het account vast te maken aan het dash board, gaat u terug naar het dash board en ziet u de voortgang van het inrichten van uw Data Lake Storage Gen1-account. Zodra het Data Lake Storage Gen1-account is ingericht, wordt de Blade account weer gegeven.
 
 ## <a name="assign-permissions-to-azure-key-vault"></a><a name="assign-permissions-to-azure-key-vault"></a>Machtigingen toewijzen aan Azure Key Vault
 
@@ -84,7 +84,7 @@ Als u sleutels van een Azure Key Vault hebt gebruikt om versleuteling voor het D
 
 U kunt mappen maken onder uw Data Lake Storage Gen1-account om gegevens te beheren en op te slaan.
 
-1. Open het Data Lake Storage Gen1-account dat u hebt gemaakt. Klik in het linkerdeel venster op **alle resources**en klik vervolgens op de Blade **alle resources** op de account naam waaronder u mappen wilt maken. Als u het account hebt vastgemaakt aan het startboard, klikt u op de tegel voor dat account.
+1. Open het Data Lake Storage Gen1-account dat u hebt gemaakt. Klik in het linkerdeel venster op **alle resources** en klik vervolgens op de Blade **alle resources** op de account naam waaronder u mappen wilt maken. Als u het account hebt vastgemaakt aan het startboard, klikt u op de tegel voor dat account.
 2. Klik op de Blade Data Lake Storage Gen1 account op **Data Explorer**.
 
     ![Scherm opname van de Blade Data Lake Storage gen 1 met de optie Data Explorer aangeroepen.](./media/data-lake-store-get-started-portal/ADL.Create.Folder.png "Mappen maken in een Data Lake Storage Gen1-account")

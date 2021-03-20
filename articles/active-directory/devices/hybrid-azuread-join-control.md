@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 38754b9e349e27afcff58dac27a616e3e4fb5319
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96860929"
 ---
 # <a name="controlled-validation-of-hybrid-azure-ad-join"></a>Gecontroleerde validatie van hybride Azure AD-deelname
@@ -55,7 +55,7 @@ Gebruik het volgende voor beeld om een groepsbeleid-object (GPO) te maken om een
 
 1. Open een groepsbeleid-beheer console en maak een nieuw groepsbeleid-object in uw domein.
    1. Geef een naam op voor het nieuwe groeps beleidsobject dat u hebt gemaakt (bijvoorbeeld ClientSideSCP).
-1. Bewerk het groeps beleidsobject en zoek het volgende pad: **computer configuratie**  >  **voor keuren**  >  **Windows Settings**  >  **REGI ster** Windows-instellingen
+1. Bewerk het groeps beleidsobject en zoek het volgende pad: **computer configuratie**  >  **voor keuren**  >    >  **REGI ster** Windows-instellingen
 1. Klik met de rechter muisknop op het REGI ster en selecteer **Nieuw**  >  **register item**
    1. Configureer op het tabblad **Algemeen** de volgende instellingen:
       1. Actie: **bijwerken**

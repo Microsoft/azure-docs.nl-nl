@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 08/20/2018
 ms.author: apimpm
 ms.openlocfilehash: 124bc053aa2c6e59e205bb6f33a9a96190799499
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93102034"
 ---
 # <a name="how-to-add-a-custom-ca-certificate-in-azure-api-management"></a>Een aangepast CA-certificaat toevoegen in azure API Management
@@ -39,7 +39,7 @@ Volg de onderstaande stappen om een nieuw CA-certificaat te uploaden. Als u nog 
 
 2. Selecteer **CA-certificaten** in het menu.
 
-3. Klik op de knop **+ Toevoegen** .  
+3. Klik op de knop **+ Toevoegen**.  
 
     ![Scherm opname van de knop + toevoegen voor het toevoegen van een CA-certificaat.](media/api-management-howto-ca-certificates/01.png)  
 
@@ -47,7 +47,7 @@ Volg de onderstaande stappen om een nieuw CA-certificaat te uploaden. Als u nog 
 
     ![Scherm afbeelding die laat zien hoe u naar het certificaat bladert.](media/api-management-howto-ca-certificates/02.png)  
 
-5. Klik op **Opslaan** . Deze bewerking kan enkele minuten duren.
+5. Klik op **Opslaan**. Deze bewerking kan enkele minuten duren.
 
     ![Scherm afbeelding die laat zien hoe het certificaat moet worden opgeslagen.](media/api-management-howto-ca-certificates/03.png)  
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
 ms.openlocfilehash: 4a22602dd9638b981cfe3d8bae9b5cdaacbf90dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91652037"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Aan de slag met de Azure WebJobs SDK voor gebeurtenisgestuurde verwerking op de achtergrond
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe u webjobs kunt implementeren als een .NET Co
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Installeer Visual Studio 2019](/visualstudio/install/) met de werk belasting van **Azure Development** . Als u Visual Studio al hebt, maar deze werk belasting niet hebt, voegt u de werk belasting toe door **extra > Hulpprogram ma's en functies ophalen**te selecteren.
+* [Installeer Visual Studio 2019](/visualstudio/install/) met de werk belasting van **Azure Development** . Als u Visual Studio al hebt, maar deze werk belasting niet hebt, voegt u de werk belasting toe door **extra > Hulpprogram ma's en functies ophalen** te selecteren.
 
 * U moet [een Azure-account](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) hebben om uw WEBjobs SDK-project te publiceren naar Azure.
 
@@ -32,7 +32,7 @@ In dit artikel wordt beschreven hoe u webjobs kunt implementeren als een .NET Co
 
 2. Selecteer **console-app (.net core)**.
 
-3. Geef het project de naam *WebJobsSDKSample*en selecteer vervolgens **maken**.
+3. Geef het project de naam *WebJobsSDKSample* en selecteer vervolgens **maken**.
 
    ![Het dialoogvenster Nieuw project](./media/webjobs-sdk-get-started/new-project.png)
 
@@ -52,7 +52,7 @@ In dit artikel wordt beschreven hoe u webjobs kunt implementeren als een .NET Co
 
 De host is de runtime container voor functies die Luis teren naar triggers en aanroepen-functies. Met de volgende stappen maakt u een host die [`IHost`](/dotnet/api/microsoft.extensions.hosting.ihost) de algemene host in ASP.net core implementeert.
 
-1. Voeg in *Program.cs*de volgende `using` instructies toe:
+1. Voeg deze instructies toe aan *programma. cs* `using` :
 
     ```cs
     using System.Threading.Tasks;
@@ -92,7 +92,7 @@ In deze sectie stelt u de console logboek registratie in die gebruikmaakt van he
    ```
    Vervang in deze opdracht door `<3_X_VERSION>` een ondersteunde 3. x-versie van het pakket.
 
-1. Voeg in *Program.cs*een `using` instructie toe:
+1. Voeg in *Program. cs* een `using` instructie toe:
 
    ```cs
    using Microsoft.Extensions.Logging;
@@ -162,9 +162,9 @@ Vanaf versie 3. x moet u de opslag bindings extensie expliciet installeren die i
 
 ## <a name="create-a-function"></a>Een functie maken
 
-1. Klik met de rechter muisknop op het **Add**project, selecteer  >  **Nieuw item toevoegen...**, kies **klasse**, noem de nieuwe C#-klasse file *functions.cs*en selecteer **toevoegen**.
+1. Klik met de rechter muisknop op het project, selecteer  >  **Nieuw item toevoegen...**, kies **klasse**, noem de nieuwe C#-klasse bestands *functies. cs* en selecteer **toevoegen**.
 
-1. Vervang in Functions.cs de gegenereerde sjabloon door de volgende code:
+1. Vervang in functions. cs de gegenereerde sjabloon door de volgende code:
     
     ```cs
     using Microsoft.Azure.WebJobs;
@@ -186,7 +186,7 @@ Vanaf versie 3. x moet u de opslag bindings extensie expliciet installeren die i
 
    De `message` para meter moet geen teken reeks zijn. U kunt ook binden aan een JSON-object, een byte matrix of een [CloudQueueMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage) -object. [Zie het gebruik van wachtrij Triggers](../azure-functions/functions-bindings-storage-queue-trigger.md?tabs=csharp#usage). Elk bindings type (zoals wacht rijen, blobs of tabellen) heeft een andere set parameter typen waarmee u verbinding kunt maken.
 
-## <a name="create-a-storage-account"></a>Create a storage account
+## <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 De Azure Storage-emulator die lokaal wordt uitgevoerd, beschikt niet over alle functies die nodig zijn voor de webjobs SDK. In dit gedeelte maakt u een opslag account in Azure en configureert u het project om het te gebruiken. Als u al een opslag account hebt, gaat u verder met stap 6.
 
@@ -194,7 +194,7 @@ De Azure Storage-emulator die lokaal wordt uitgevoerd, beschikt niet over alle f
 
    ![Aanmelden bij Azure](./media/webjobs-sdk-get-started/sign-in.png)
 
-1. Klik onder het **Azure** -knoop punt in **Server Explorer**met de rechter muisknop op **opslag**en selecteer vervolgens **opslag account maken**.
+1. Klik onder het **Azure** -knoop punt in **Server Explorer** met de rechter muisknop op **opslag** en selecteer vervolgens **opslag account maken**.
 
    ![Menu opslag account maken](./media/webjobs-sdk-get-started/create-storage-account-menu.png)
 
@@ -218,7 +218,7 @@ De Azure Storage-emulator die lokaal wordt uitgevoerd, beschikt niet over alle f
 
 De webjobs SDK zoekt naar de opslag connection string in de toepassings instellingen in Azure. Wanneer u lokaal uitvoert, zoekt het naar deze waarde in het lokale configuratie bestand of in omgevings variabelen.
 
-1. Klik met de rechter muisknop op het **Add**project, selecteer  >  **Nieuw item toevoegen...**, kies het **JSON-configuratie bestand van Java script**, geef het nieuwe bestand de naam *appsettings.jsop* bestand en selecteer **toevoegen**. 
+1. Klik met de rechter muisknop op het project, selecteer  >  **Nieuw item toevoegen...**, kies het **JSON-configuratie bestand van Java script**, geef het nieuwe bestand de naam *appsettings.jsop* bestand en selecteer **toevoegen**. 
 
 1. Voeg in het nieuwe bestand een `AzureWebJobsStorage` veld toe, zoals in het volgende voor beeld:
 
@@ -230,7 +230,7 @@ De webjobs SDK zoekt naar de opslag connection string in de toepassings instelli
 
 1. Vervang *{storage Connection String}* door de Connection String die u eerder hebt gekopieerd.
 
-1. Selecteer de *appsettings.js* in het Solution Explorer en stel in het venster **Eigenschappen** de optie **kopiëren naar uitvoer Directory** in op **kopiëren als u nieuwer**wilt.
+1. Selecteer de *appsettings.js* in het Solution Explorer en stel in het venster **Eigenschappen** de optie **kopiëren naar uitvoer Directory** in op **kopiëren als u nieuwer** wilt.
 
 Later voegt u dezelfde connection string app-instelling in uw app toe in Azure App Service.
 
@@ -272,7 +272,7 @@ In deze sectie maakt en voert u het project lokaal uit en wordt de functie geact
 
    ![Scherm afbeelding die het pictogram bericht toevoegen markeert.](./media/webjobs-sdk-get-started/create-queue-message.png)
 
-1. Voer in het dialoog venster **bericht toevoegen** *Hallo wereld in.* Als de **tekst**van het bericht en selecteer vervolgens **OK**. Er bevindt zich nu een bericht in de wachtrij.
+1. Voer in het dialoog venster **bericht toevoegen** *Hallo wereld in.* Als de **tekst** van het bericht en selecteer vervolgens **OK**. Er bevindt zich nu een bericht in de wachtrij.
 
    ![Wachtrij maken](./media/webjobs-sdk-get-started/hello-world-text.png)
 
@@ -313,13 +313,13 @@ In deze sectie voert u de volgende taken uit om Application Insights logboek reg
 
 1. Als u nog geen app hebt App Service die u kunt gebruiken, maakt u er [een](quickstart-dotnet-framework.md). Wanneer u uw app maakt, kunt u ook een verbonden Application Insights-resource maken. Wanneer u dit doet, `APPINSIGHTS_INSTRUMENTATIONKEY` wordt de in uw app ingesteld voor u.
 
-1. Als u nog geen Application Insights resource hebt die u kunt gebruiken, maakt u er [een](../azure-monitor/app/create-new-resource.md ). Stel het **toepassings type** in op **Algemeen**en sla de secties die volgen **de instrumentatie sleutel kopiëren**op.
+1. Als u nog geen Application Insights resource hebt die u kunt gebruiken, maakt u er [een](../azure-monitor/app/create-new-resource.md ). Stel het **toepassings type** in op **Algemeen** en sla de secties die volgen **de instrumentatie sleutel kopiëren** op.
 
 1. Als u al een Application Insights resource hebt die u wilt gebruiken, [kopieert u de instrumentatie sleutel](../azure-monitor/app/create-new-resource.md#copy-the-instrumentation-key).
 
 ### <a name="configure-app-settings"></a>App-instellingen configureren 
 
-1. In **Server Explorer** in Visual Studio, vouwt u het knoop punt **app service** onder **Azure**uit.
+1. In **Server Explorer** in Visual Studio, vouwt u het knoop punt **app service** onder **Azure** uit.
 
 1. Vouw de resource groep uit waarop uw App Service-app zich bevindt en klik met de rechter muisknop op uw App Service-app.
 
@@ -327,13 +327,13 @@ In deze sectie voert u de volgende taken uit om Application Insights logboek reg
 
 1. Voeg in het vak **verbindings reeksen** de volgende vermelding toe.
 
-   |Naam  |verbindings reeks  |Database type|
+   |Name  |verbindings reeks  |Database type|
    |---------|---------|------|
-   |AzureWebJobsStorage | {de opslag connection string die u eerder hebt gekopieerd}|Aangepast|
+   |AzureWebJobsStorage | {de opslag connection string die u eerder hebt gekopieerd}|Aangepast telefoonnummer|
 
 1. Als het vak **Toepassings instellingen** geen Application Insights instrumentatie sleutel heeft, voegt u het toe dat u eerder hebt gekopieerd. (De instrumentatie sleutel is mogelijk al aanwezig, afhankelijk van hoe u de App Service-app hebt gemaakt.)
 
-   |Naam  |Waarde  |
+   |Name  |Waarde  |
    |---------|---------|
    |APPINSIGHTS_INSTRUMENTATIONKEY | {instrumentatie sleutel} |
 
@@ -370,7 +370,7 @@ Als u wilt profiteren van [Application Insights](../azure-monitor/app/app-insigh
    ```
     Vervang in deze opdracht door `<3_X_VERSION>` een ondersteunde versie van het pakket.
 
-1. Open *Program.cs* en vervang de code in de- `Main` methode door de volgende code:
+1. Open *programma. cs* en vervang de code in de- `Main` methode door de volgende code:
 
     ```cs
     static async Task Main()
@@ -460,7 +460,7 @@ Tijdens de implementatie maakt u een app service-exemplaar waarin u uw functies 
 
 Invoer bindingen vereenvoudigen code waarmee gegevens worden gelezen. In dit voor beeld is het wachtrij bericht een BLOB-naam en gebruikt u de naam van de blob om een BLOB in Azure Storage te zoeken en te lezen.
 
-1. Vervang in *functions.cs*de- `ProcessQueueMessage` methode door de volgende code:
+1. Vervang in *functions. cs* de- `ProcessQueueMessage` methode door de volgende code:
 
    ```cs
    public static void ProcessQueueMessage(
@@ -482,23 +482,23 @@ Invoer bindingen vereenvoudigen code waarmee gegevens worden gelezen. In dit voo
 
 1. Maak een BLOB-container in uw opslag account.
 
-   a. Vouw in **Server Explorer** in Visual Studio het knoop punt voor uw opslag account uit, klik met de rechter muisknop op **blobs**en selecteer vervolgens **BLOB-container maken**.
+   a. Vouw in **Server Explorer** in Visual Studio het knoop punt voor uw opslag account uit, klik met de rechter muisknop op **blobs** en selecteer vervolgens **BLOB-container maken**.
 
    b. Voer in het dialoog venster **BLOB-container maken** *container* in als container naam en klik vervolgens op **OK**.
 
-1. Upload het *Program.cs* -bestand naar de BLOB-container. (Dit bestand wordt hier als voor beeld gebruikt; u kunt elk tekst bestand uploaden en een wachtrij bericht met de naam van het bestand maken.)
+1. Upload het bestand *Program. cs* naar de BLOB-container. (Dit bestand wordt hier als voor beeld gebruikt; u kunt elk tekst bestand uploaden en een wachtrij bericht met de naam van het bestand maken.)
 
-   a. Dubbel klik in **Server Explorer**op het knoop punt voor de container die u hebt gemaakt.
+   a. Dubbel klik in **Server Explorer** op het knoop punt voor de container die u hebt gemaakt.
 
    b. Selecteer de knop **uploaden** in het **container** venster.
 
    ![Knop voor het uploaden van blobs](./media/webjobs-sdk-get-started/blob-upload-button.png)
 
-   c. Zoek en selecteer *Program.cs*en selecteer vervolgens **OK**.
+   c. Zoek en selecteer *Program. cs* en selecteer vervolgens **OK**.
 
-1. Maak een wachtrij bericht in de wachtrij die u eerder hebt gemaakt, met *Program.cs* als de tekst van het bericht.
+1. Maak een wachtrij bericht in de wachtrij die u eerder hebt gemaakt met *Program. cs* als tekst van het bericht.
 
-   ![Wachtrij bericht Program.cs](./media/webjobs-sdk-get-started/queue-msg-program-cs.png)
+   ![Wachtrij berichten programma. cs](./media/webjobs-sdk-get-started/queue-msg-program-cs.png)
 
 1. Voer het project lokaal uit.
 
@@ -532,11 +532,11 @@ Uitvoer bindingen vereenvoudigen code waarmee gegevens worden geschreven. In dit
    }
    ```
 
-1. Maak nog een wachtrij bericht met *Program.cs* als tekst van het bericht.
+1. Maak nog een wachtrij bericht met *programma. cs* als tekst van het bericht.
 
 1. Voer het project lokaal uit.
 
-   In het wachtrij bericht wordt de functie geactiveerd, waarna de BLOB wordt gelezen, de lengte ervan wordt geregistreerd en een nieuwe BLOB wordt gemaakt. De uitvoer van de console is hetzelfde, maar wanneer u naar het venster BLOB container gaat en vervolgens **vernieuwen**selecteert, ziet u een nieuwe blob met de naam *copy-Program.cs.*
+   In het wachtrij bericht wordt de functie geactiveerd, waarna de BLOB wordt gelezen, de lengte ervan wordt geregistreerd en een nieuwe BLOB wordt gemaakt. De uitvoer van de console is hetzelfde, maar wanneer u naar het venster BLOB container gaat en vervolgens **vernieuwen** selecteert, ziet u een nieuwe blob met de naam *copy-Program. cs.*
 
 ## <a name="republish-the-updates-to-azure"></a>De updates opnieuw publiceren naar Azure
 

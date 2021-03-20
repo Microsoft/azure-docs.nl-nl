@@ -14,10 +14,10 @@ ms.author: shoatman
 ms.custom: aaddev
 ms.reviewer: shoatman
 ms.openlocfilehash: aa0ce6a5f909e67f0551c8667bb7e5c5e6d7eb04
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92275611"
 ---
 # <a name="android-microsoft-authentication-library-configuration-file"></a>Configuratie bestand voor micro soft-verificatie bibliotheek voor Android
@@ -30,7 +30,7 @@ In dit artikel vindt u meer informatie over de verschillende instellingen in het
 
 ### <a name="general-settings"></a>Algemene instellingen
 
-| Eigenschap | Gegevenstype | Vereist | Opmerkingen |
+| Eigenschap | Gegevenstype | Vereist | Notities |
 |-----------|------------|-------------|-------|
 | `client_id` | Tekenreeks | Ja | De client-ID van uw app op de [pagina Toepassings registratie](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
 | `redirect_uri`   | Tekenreeks | Ja | De omleidings-URI van uw app op de [pagina Toepassings registratie](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) |
@@ -91,7 +91,7 @@ De lijst met instanties die bekend zijn en worden vertrouwd door u. Naast de ins
 
 #### <a name="map-aad-authority--audience-to-microsoft-identity-platform-endpoints"></a>AAD Authority & doel groep toewijzen aan micro soft Identity platform-eind punten
 
-| Type | Doelgroep | Tenant-id | Authority_Url | Resulterende eind punt | Opmerkingen |
+| Type | Doelgroep | Tenant-id | Authority_Url | Resulterende eind punt | Notities |
 |------|------------|------------|----------------|----------------------|---------|
 | AAD | AzureADandPersonalMicrosoftAccount | | | `https://login.microsoftonline.com/common` | `common` is een Tenant alias voor waar het account zich bevindt. Zoals een specifieke Azure Active Directory Tenant of het Microsoft-account systeem. |
 | AAD | AzureADMyOrg | contoso.com | | `https://login.microsoftonline.com/contoso.com` | Alleen accounts die aanwezig zijn in contoso.com kunnen een token verkrijgen. Elk geverifieerd domein of de Tenant-GUID kan worden gebruikt als Tenant-ID. |
@@ -107,7 +107,7 @@ De lijst met instanties die bekend zijn en worden vertrouwd door u. Naast de ins
 
 #### <a name="authority-properties"></a>Instantie-eigenschappen
 
-| Eigenschap | Gegevenstype  | Vereist | Opmerkingen |
+| Eigenschap | Gegevenstype  | Vereist | Notities |
 |-----------|-------------|-----------|--------|
 | `type` | Tekenreeks | Ja | Komt overeen met de doel groep of het account type van uw app-doelen. Mogelijke waarden: `AAD` , `B2C` |
 | `audience` | Object | Nee | Alleen van toepassing als type = `AAD` . Hiermee geeft u de identiteit op van uw app-doelen. De waarde van de app-registratie gebruiken |
@@ -116,7 +116,7 @@ De lijst met instanties die bekend zijn en worden vertrouwd door u. Naast de ins
 
 #### <a name="audience-properties"></a>Eigenschappen van doel groep
 
-| Eigenschap | Gegevenstype  | Vereist | Opmerkingen |
+| Eigenschap | Gegevenstype  | Vereist | Notities |
 |-----------|-------------|------------|-------|
 | `type` | Tekenreeks | Ja | Hiermee geeft u de doel groep op die uw app wil richten. Mogelijke waarden: `AzureADandPersonalMicrosoftAccount` , `PersonalMicrosoftAccount` , `AzureADMultipleOrgs` , `AzureADMyOrg` |
 | `tenant_id` | Tekenreeks | Ja | Alleen vereist wanneer `"type":"AzureADMyOrg"` . Optioneel voor andere `type` waarden. Dit kan een Tenant domein `contoso.com` , zoals of een Tenant-id, zoals `72f988bf-86f1-41af-91ab-2d7cd011db46` ) |
@@ -144,7 +144,7 @@ Als u de AAD-instantie met de doel groep hebt ingesteld op `"MicrosoftPersonalAc
 
 Algemene instellingen voor HTTP-time-outs configureren, zoals:
 
-| Eigenschap | Gegevenstype | Vereist | Opmerkingen |
+| Eigenschap | Gegevenstype | Vereist | Notities |
 | ---------|-----------|------------|--------|
 | `connect_timeout` | int | Nee | Tijd in milliseconden |
 | `read_timeout` | int | Nee | Tijd in milliseconden |
@@ -153,7 +153,7 @@ Algemene instellingen voor HTTP-time-outs configureren, zoals:
 
 De volgende algemene instellingen zijn voor logboek registratie:
 
-| Eigenschap | Gegevenstype  | Vereist | Opmerkingen |
+| Eigenschap | Gegevenstype  | Vereist | Notities |
 | ----------|-------------|-----------|---------|
 | `pii_enabled`  | booleaans | Nee | Of persoons gegevens moeten worden geverzendd |
 | `log_level`   | tekenreeks | No | De logboek berichten die moeten worden uitgevoerd. De ondersteunde logboek niveaus zijn onder andere `ERROR` , `WARNING` , en `INFO` `VERBOSE` . |

@@ -12,11 +12,11 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: duau
-ms.openlocfilehash: 17677ea89b04659de66b9bda35975b96ff33473a
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 6c6d33a36c4a0b71932e8c19c8f6dd105c33817c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101740780"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Zelfstudie: HTTPS configureren in een aangepast Front Door-domein
@@ -133,7 +133,12 @@ Geef Azure Front Door toegang tot de certificaten in uw Azure Key Vault-account.
     Azure Front Door geeft de volgende gegevens weer: 
     - De sleutelkluis-accounts voor uw abonnement-ID. 
     - De certificaten (geheimen) onder de geselecteerde sleutelkluis. 
-    - De beschikbare certificaatversies.
+    - De beschikbare certificaatversies. 
+
+> [!NOTE]
+> Als u de certificaatversie leeg laat, zou dit ertoe leiden dat:
+> - De meest recente versie van het certificaat wordt geselecteerd.
+> - Certificaten automatisch worden geroteerd naar de nieuwste versie wanneer er een nieuwere versie van het certificaat beschikbaar is in uw Key Vault.
  
 5. Wanneer u uw eigen certificaat gebruikt, is domeinvalidatie niet nodig. Ga verder met [Wachten op doorgifte](#wait-for-propagation).
 
@@ -273,9 +278,9 @@ In deze zelfstudie heeft u het volgende geleerd:
 
 * Een certificaat uploaden naar Key Vault.
 * Een domein valideren.
-* Schakel HTTPS in voor uw aangepaste domein.
+* HTTPS inschakelen voor uw aangepaste domein.
 
-Ga verder met de volgende zelf studie voor meer informatie over het instellen van een beleid voor geografische filtering voor uw voor deur.
+Ga door met de volgende zelfstudie om te leren hoe u een geofilteringsbeleid kunt instellen voor uw Front Door.
 
 > [!div class="nextstepaction"]
 > [Een geofilteringsbeleid instellen](front-door-geo-filtering.md)

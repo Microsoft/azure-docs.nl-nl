@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 7e0b17c30985617791c1ce55a02f6a60253b43db
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92318939"
 ---
 # <a name="tutorial-integrate-airstack-with-azure-active-directory"></a>Zelfstudie: Airstack integreren met Azure Active Directory
@@ -128,7 +128,7 @@ In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmeldin
 
 ### <a name="create-airstack-test-user"></a>Airstack-testgebruiker maken
 
-In dit gedeelte maakt u in Airstack een gebruiker met de naam B.Simon. Neem contact op met het  [ondersteuningsteam van Airstack](mailto:jsinger@lenovo.com) om gebruikers toe te voegen aan het Airstack-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In dit gedeelte maakt u in Airstack een gebruiker met de naam B.Simon. Werk samen met het team voor de [ondersteuning van staven](mailto:jsinger@lenovo.com) om de gebruikers toe te voegen aan het luchtstack-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-sso"></a>Eenmalige aanmelding testen
 

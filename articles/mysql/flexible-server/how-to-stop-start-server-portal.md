@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 09/29/2020
 ms.openlocfilehash: 15b08ea67afe0d307470b5a4fb0f7d26e0f4ea82
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93241919"
 ---
 # <a name="stopstart-an-azure-database-for-mysql---flexible-server-preview"></a>Een Azure Database for MySQL-flexibele server stoppen/starten (preview-versie)
@@ -36,7 +36,7 @@ U hebt het volgende nodig om deze hand leiding te volt ooien:
 
 3.  Klik op **Ja** om het stoppen van de server te bevestigen.
 
-    :::image type="content" source="media/how-to-stop-start-server-portal/confirm-stop.png" alt-text="Flexibele server stoppen."::: 
+    :::image type="content" source="media/how-to-stop-start-server-portal/confirm-stop.png" alt-text="Stoppen van de flexibele server bevestigen."::: 
 
 > [!NOTE]
 > Zodra de server is gestopt, zijn de andere beheer bewerkingen niet beschikbaar voor de flexibele server.
@@ -47,7 +47,7 @@ U hebt het volgende nodig om deze hand leiding te volt ooien:
 
 2.  Klik op de pagina **overzicht** op de knop **Start** op de werk balk.
 
-    :::image type="content" source="media/how-to-stop-start-server-portal/start-server.png" alt-text="Flexibele server stoppen.":::  
+    :::image type="content" source="media/how-to-stop-start-server-portal/start-server.png" alt-text="De flexibele server starten.":::  
 
 > [!NOTE]
 > Zodra de server is gestart, zijn alle beheer bewerkingen nu beschikbaar voor de flexibele server.

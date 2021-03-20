@@ -10,10 +10,10 @@ ms.date: 08/10/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 13891f9614e658be39adbb69fed1503a0c66d5e4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93309223"
 ---
 # <a name="copy-data-from-azure-cosmos-db-into-a-dedicated-sql-pool-using-apache-spark"></a>Azure Cosmos DB-gegevens kopiëren naar een toegewezen SQL-pool, met behulp van Apache Spark
@@ -50,7 +50,7 @@ In dit voorbeeld wordt een HTAP-container met de naam **RetailSales** gebruikt. 
 * weekStarting: long (nullable = true)
 * _etag: string (nullable = true)
 
-U gaat de verkoop ( *quantity* , *revenue* (price x quantity)) aggregeren met *productCode* en *weekStarting* voor rapportagedoeleinden. Ten slotte exporteert u deze gegevens naar een toegewezen SQL-pooltabel met de naam **dbo.productsales**.
+U gaat de verkoop (*quantity*, *revenue* (price x quantity)) aggregeren met *productCode* en *weekStarting* voor rapportagedoeleinden. Ten slotte exporteert u deze gegevens naar een toegewezen SQL-pooltabel met de naam **dbo.productsales**.
 
 ## <a name="configure-a-spark-notebook"></a>Een Apache Spark-notebook configureren
 Maak een Apache Spark-notebook met Scala as Spark (Scala) als hoofdtaal. U gebruikt de standaardinstelling van de notebook voor deze sessie.

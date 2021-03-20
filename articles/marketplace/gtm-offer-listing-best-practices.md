@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 07/06/2020
 ms.openlocfilehash: 3ea6a0035a9f9354be5c14699936c6a07dea1150
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94492086"
 ---
 # <a name="offer-listing-best-practices"></a>Best practices voor aanbiedingsvermeldingen
@@ -130,8 +130,8 @@ Tref woorden kunnen klanten helpen bij het zoeken naar uw aanbieding. Bepaal de 
 ## <a name="link-to-your-offer-page-from-your-website"></a>Koppeling naar uw aanbiedings pagina van uw website
 
 Wanneer u een koppeling maakt van de AppSource of Azure Marketplace-badge op uw site naar uw vermelding in de commerciële Marketplace, kunt u een sterke analyse en rapportage ondersteunen door de volgende query parameters aan het einde van de URL op te nemen:
-* **src** : Neem de bron op van waaruit het verkeer wordt doorgestuurd naar AppSource (bijvoorbeeld website, LinkedIn of Facebook).
-* **mktcmpid** : uw marketing campagne-id, die Maxi maal 16 tekens kan bevatten in een combi natie van letters, cijfers, onderstrepings teken en afbreek streepjes (bijvoorbeeld *blogpost_12* ).
+* **src**: Neem de bron op van waaruit het verkeer wordt doorgestuurd naar AppSource (bijvoorbeeld website, LinkedIn of Facebook).
+* **mktcmpid**: uw marketing campagne-id, die Maxi maal 16 tekens kan bevatten in een combi natie van letters, cijfers, onderstrepings teken en afbreek streepjes (bijvoorbeeld *blogpost_12*).
 
 De volgende voor beeld-URL bevat beide van de voor gaande query parameters: `https://appsource.microsoft.com/product/dynamics-365/mscrm.04931187-431c-415d-8777-f7f482ba8095?src=website&mktcmpid=blogpost_12`
 

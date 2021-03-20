@@ -11,10 +11,10 @@ ms.date: 08/12/2019
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: cb7e047d998342125a52af5ea3ae1e88fe88d313
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93289891"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Key Vault beheren met behulp van de Azure CLI 
@@ -120,7 +120,7 @@ az provider register -n Microsoft.KeyVault
 
 Gebruik de opdracht `az keyvault create` om een sleutelkluis te maken. Het script heeft drie verplichte parameters: een resourcegroepnaam, een sleutelkluisnaam, en de geografische locatie.
 
-Als u een nieuwe kluis wilt maken met de naam **ContosoKeyVault** in de resourcegroep **ContosoResourceGroup** , met als locatie **Azië - oost** , typt u: 
+Als u een nieuwe kluis wilt maken met de naam **ContosoKeyVault** in de resourcegroep **ContosoResourceGroup**, met als locatie **Azië - oost**, typt u: 
 
 ```azurecli
 az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --location "East Asia"
@@ -128,8 +128,8 @@ az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGro
 
 In de uitvoer van deze opdracht worden de eigenschappen weergegeven van de sleutelkluis die u hebt gemaakt. De twee belangrijkste eigenschappen zijn:
 
-* **name** : In het voorbeeld is de naam ContosoKeyVault. U gebruikt deze naam voor andere Key Vault-opdrachten.
-* **vaultUri** : in het voorbeeld is de URI https://contosokeyvault.vault.azure.net. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
+* **name**: In het voorbeeld is de naam ContosoKeyVault. U gebruikt deze naam voor andere Key Vault-opdrachten.
+* **vaultUri**: in het voorbeeld is de URI https://contosokeyvault.vault.azure.net. Toepassingen die via de REST API gebruikmaken van uw kluis, moeten deze URI gebruiken.
 
 Uw Azure-account is nu gemachtigd om alle bewerkingen op deze sleutelkluis uit te voeren. Op dit moment is nog niemand anders gemachtigd.
 

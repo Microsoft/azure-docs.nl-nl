@@ -10,10 +10,10 @@ author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
 ms.openlocfilehash: 2d0c8433fff58854cb77a4e806058eae1937e71b
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93101116"
 ---
 # <a name="how-to-use-azure-table-storage-and-the-azure-cosmos-db-table-api-with-ruby"></a>Azure Table Storage en de Azure Cosmos DB Table-API gebruiken met Ruby
@@ -76,7 +76,7 @@ U verkrijgt deze waarden als volgt van een klassiek of Resource Manager-opslagac
 
 ### <a name="add-an-azure-cosmos-db-connection"></a>Een Azure Cosmos DB-verbinding toevoegen
 
-Wanneer u verbinding wilt maken met Azure Cosmos DB, kopieert u de primaire verbindingsreeks vanuit de Azure Portal en maakt u een **Client** -object met de gekopieerde verbindingsreeks. U kunt het **Client** -object doorgeven bij het maken van een **TableService** -object:
+Wanneer u verbinding wilt maken met Azure Cosmos DB, kopieert u de primaire verbindingsreeks vanuit de Azure Portal en maakt u een **Client**-object met de gekopieerde verbindingsreeks. U kunt het **Client**-object doorgeven bij het maken van een **TableService**-object:
 
 ```ruby
 common_client = Azure::Storage::Common::Client.create(storage_account_name:'myaccount', storage_access_key:'mykey', storage_table_host:'mycosmosdb_endpoint')
@@ -127,7 +127,7 @@ Voor **update_entity()** en **merge_entity()** geldt dat als de entiteit die u w
 
 ## <a name="work-with-groups-of-entities"></a>Werken met groepen entiteiten
 
-Soms is het zinvol om meerdere bewerkingen samen in een batch te verzenden om te zorgen dat ze atomisch worden verwerkt door de server. Om dat te realiseren, maakt u eerst een **Batch** -object en gebruikt u vervolgens de **execute_batch()** -methode op **TableService**. In het volgende voorbeeld ziet u hoe u twee entiteiten met RowKey 2 en 3 in een batch kunt verzenden. Dit werkt alleen voor entiteiten met dezelfde PartitionKey.
+Soms is het zinvol om meerdere bewerkingen samen in een batch te verzenden om te zorgen dat ze atomisch worden verwerkt door de server. Om dat te realiseren, maakt u eerst een **Batch**-object en gebruikt u vervolgens de **execute_batch()** -methode op **TableService**. In het volgende voorbeeld ziet u hoe u twee entiteiten met RowKey 2 en 3 in een batch kunt verzenden. Dit werkt alleen voor entiteiten met dezelfde PartitionKey.
 
 ```ruby
 azure_table_service = Azure::TableService.new
@@ -150,7 +150,7 @@ result = azure_table_service.get_entity("testtable", "test-partition-key",
 
 ## <a name="query-a-set-of-entities"></a>Een query uitvoeren voor een aantal entiteiten
 
-Wanneer u een query wilt uitvoeren voor een aantal entiteiten in een tabel, maakt u een query-hash-object en gebruikt u de **query_entities()** -methode. Het volgende voorbeeld ziet u hoe u alle entiteiten kunt ophalen met dezelfde **PartitionKey** :
+Wanneer u een query wilt uitvoeren voor een aantal entiteiten in een tabel, maakt u een query-hash-object en gebruikt u de **query_entities()** -methode. Het volgende voorbeeld ziet u hoe u alle entiteiten kunt ophalen met dezelfde **PartitionKey**:
 
 ```ruby
 query = { :filter => "PartitionKey eq 'test-partition-key'" }

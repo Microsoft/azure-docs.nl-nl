@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 03/30/2020
 ms.openlocfilehash: cbd12481312d310add15bf3d41e21e9c416f1c39
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94491072"
 ---
 # <a name="use-marketo-to-manage-commercial-marketplace-leads"></a>Marketo gebruiken om leads voor commerciële Marketplace te beheren
@@ -79,7 +79,7 @@ Wanneer u klaar bent om de informatie over het beheer van leads voor uw aanbiedi
 
     ![Kies een doel voor een potentiële klant](./media/commercial-marketplace-lead-management-instructions-marketo/choose-lead-destination.png)
 
-1. Geef de **Server-id** , de **Munchkin-account-id** en de **formulier-id** op.
+1. Geef de **Server-id**, de **Munchkin-account-id** en de **formulier-id** op.
 
     > [!NOTE]
     > U moet de configuratie van de rest van de aanbieding volt ooien en publiceren voordat u leads voor de aanbieding kunt ontvangen. 

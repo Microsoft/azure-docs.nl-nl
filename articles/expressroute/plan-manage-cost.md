@@ -8,10 +8,10 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.openlocfilehash: de8405477611d62b8a46e8b6b645887cc4d30099
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98784238"
 ---
 # <a name="plan-and-manage-costs-for-azure-expressroute"></a>Kosten voor Azure ExpressRoute plannen en beheren
@@ -88,7 +88,7 @@ Wanneer u kosten analyse gebruikt, bekijkt u de kosten voor ExpressRoute-circuit
 
 Kosten voor ExpressRoute weer geven in kosten analyse:
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 
 1. Ga naar **abonnementen**, selecteer een abonnement in de lijst en selecteer vervolgens  **kosten analyse** in het menu. Selecteer **bereik** om over te scha kelen naar een ander bereik in cost analysis. Kosten voor services worden standaard weer gegeven in de eerste cirkel diagram.
 

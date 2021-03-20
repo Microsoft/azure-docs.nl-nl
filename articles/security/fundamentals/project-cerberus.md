@@ -9,10 +9,10 @@ ms.author: terrylan
 manager: rkarlin
 ms.date: 11/10/2020
 ms.openlocfilehash: f085858a9d550623704efd4f051ed525e55a37e0
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94557667"
 ---
 # <a name="project-cerberus"></a>Project Cerberus
@@ -44,8 +44,8 @@ In combi natie met de Cerberus-mogelijkheden van de host wordt een zeer veilige 
 ## <a name="next-steps"></a>Volgende stappen
 Zie voor meer informatie over de mogelijkheden van platform integriteit en-beveiliging:
 
-- [Firmware beveiliging](firmware.md)
+- [Firmware-beveiliging](firmware.md)
 - [Beveiligd opstarten](secure-boot.md)
 - [Gemeten opstarten en host-Attestation](measured-boot-host-attestation.md)
 - [Versleuteling 'at rest'](encryption-atrest.md)
-- [Hyper Visor beveiliging](hypervisor.md)
+- [Hypervisor-beveiliging](hypervisor.md)

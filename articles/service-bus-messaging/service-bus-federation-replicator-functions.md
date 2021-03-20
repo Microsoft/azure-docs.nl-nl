@@ -4,13 +4,13 @@ description: Dit artikel bevat een overzicht van het maken van berichten replica
 ms.topic: article
 ms.date: 12/12/2020
 ms.openlocfilehash: 4db151f54a2ad236ba937b005ba6a1fd3edd5967
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97657407"
 ---
-# <a name="message-replication-tasks-and-applications"></a>Bericht replicatie taken en-toepassingen
+# <a name="message-replication-tasks-and-applications"></a>Berichtreplicatietaken en -toepassingen
 
 Zoals beschreven in het artikel [replicatie en interregionale Federatie](service-bus-federation-overview.md) , worden de replicatie van bericht reeksen tussen de paren van service bus entiteiten en tussen service bus en andere bericht bronnen en-doelen in het algemeen op Azure functions gelean.
 

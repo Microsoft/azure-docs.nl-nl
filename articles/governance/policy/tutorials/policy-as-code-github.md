@@ -4,10 +4,10 @@ description: In deze zelfstudie implementeert u een Azure Policy als Codewerkstr
 ms.date: 10/20/2020
 ms.topic: tutorial
 ms.openlocfilehash: 76a46adc3fc8efab4f7a2d6e656e83c2537dd037
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92325849"
 ---
 # <a name="tutorial-implement-azure-policy-as-code-with-github"></a>Zelfstudie: Azure Policy implementeren als code met GitHub
@@ -34,16 +34,16 @@ Voer de volgende stappen uit om een beleidsdefinitie te exporteren uit Azure Por
 
 1. Selecteer **Definities** aan de linkerkant van de Azure Policy-pagina.
 
-1. Gebruik de knop **Definities exporteren** of selecteer het beletselteken in de rij van een beleidsdefinitie en selecteer vervolgens **Definitie exporteren** .
+1. Gebruik de knop **Definities exporteren** of selecteer het beletselteken in de rij van een beleidsdefinitie en selecteer vervolgens **Definitie exporteren**.
 
-1. Selecteer de knop **Aanmelden bij GitHub** . Als u nog niet hebt geverifieerd met GitHub om Azure Policy te autoriseren voor het exporteren van de resource, bekijkt u de toegang tot de [GitHub-actie](https://github.com/features/actions) in het nieuwe venster dat wordt geopend en selecteert u **AzureGitHubActions autoriseren** om door te gaan met het exportproces. Zodra dit is voltooid, wordt het nieuwe venster automatisch gesloten.
+1. Selecteer de knop **Aanmelden bij GitHub**. Als u nog niet hebt geverifieerd met GitHub om Azure Policy te autoriseren voor het exporteren van de resource, bekijkt u de toegang tot de [GitHub-actie](https://github.com/features/actions) in het nieuwe venster dat wordt geopend en selecteert u **AzureGitHubActions autoriseren** om door te gaan met het exportproces. Zodra dit is voltooid, wordt het nieuwe venster automatisch gesloten.
 
 1. Stel op het tabblad **Basisprincipes** de volgende opties in en selecteer vervolgens het tabblad **Beleid** of de knop **Volgende: Beleid** onderaan de pagina.
 
-   - **Filter voor opslagplaats** : Ingesteld op _Mijn opslagplaatsen_ om alleen opslagplaatsen weer te geven waarvan u de eigenaar bent, of _Alle opslagplaatsen_ om alles weer te geven waaraan u de GitHub-actie toegang hebt verleend.
-   - **Opslagplaats** : Stel in op de opslagplaats waarnaar u de Azure Policy-resources wilt exporteren.
-   - **Vertakking** : Stel de vertakking in de opslagplaats in. Het gebruik van een andere vertakking dan de standaard is een goede manier om uw updates te valideren voordat u de broncode verder samenvoegt.
-   - **Map** : De _map op het hoofdniveau_ om de Azure Policy-resources naar te exporteren. Submappen onder deze map worden gemaakt op basis van de resources die worden geëxporteerd.
+   - **Filter voor opslagplaats**: Ingesteld op _Mijn opslagplaatsen_ om alleen opslagplaatsen weer te geven waarvan u de eigenaar bent, of _Alle opslagplaatsen_ om alles weer te geven waaraan u de GitHub-actie toegang hebt verleend.
+   - **Opslagplaats**: Stel in op de opslagplaats waarnaar u de Azure Policy-resources wilt exporteren.
+   - **Vertakking**: Stel de vertakking in de opslagplaats in. Het gebruik van een andere vertakking dan de standaard is een goede manier om uw updates te valideren voordat u de broncode verder samenvoegt.
+   - **Map**: De _map op het hoofdniveau_ om de Azure Policy-resources naar te exporteren. Submappen onder deze map worden gemaakt op basis van de resources die worden geëxporteerd.
 
 1. Stel op het tabblad **Beleid** het bereik in op zoeken door het beletselteken te selecteren en een combinatie van beheergroepen, abonnementen of resourcegroepen te kiezen.
    
@@ -58,7 +58,7 @@ Voer de volgende stappen uit om een beleidsdefinitie te exporteren uit Azure Por
 
 1. Controleer uw GitHub-opslagplaats, vertakking en _map op het hoofdniveau_ om te zien of de geselecteerde resources nu zijn geëxporteerd naar uw broncodebeheer.
 
-De Azure Policy-resources worden geëxporteerd naar de volgende structuur in de geselecteerde GitHub-opslagplaats en _map op het hoofdniveau_ :
+De Azure Policy-resources worden geëxporteerd naar de volgende structuur in de geselecteerde GitHub-opslagplaats en _map op het hoofdniveau_:
 
 ```text
 |
@@ -79,7 +79,7 @@ De Azure Policy-resources worden geëxporteerd naar de volgende structuur in de 
 
 1. Dit werkstroombestand maakt gebruik van de actie [Azure Policy beheren](https://github.com/marketplace/actions/manage-azure-policy) om wijzigingen aan de geëxporteerde beleidsobjecten in de GitHub-opslagplaats terug te pushen naar Azure Policy. De actie beschouwt en synchroniseert standaard alleen de bestanden die verschillen van die van de bestaande bestanden in Azure. U kunt ook de parameter `assignments` gebruiken in de actie om alleen wijzigingen te synchroniseren die zijn uitgevoerd op specifieke toewijzingsbestanden. Deze parameter kan worden gebruikt om beleidstoewijzingen alleen voor een specifieke omgeving toe te passen. Zie voor meer informatie de [Leesmij van Azure Policy-opslagplaats beheren](https://github.com/Azure/manage-azure-policy).
 
-1. Standaard moet de werkstroom handmatig worden geactiveerd. Als u dit wilt doen, gebruikt u de **Acties** in GitHub, selecteert u de werkstroom `manage-azure-policy-<randomLetters>`, selecteert u **Werkstroom uitvoeren** en vervolgens nogmaals **Werkstroom uitvoeren** .
+1. Standaard moet de werkstroom handmatig worden geactiveerd. Als u dit wilt doen, gebruikt u de **Acties** in GitHub, selecteert u de werkstroom `manage-azure-policy-<randomLetters>`, selecteert u **Werkstroom uitvoeren** en vervolgens nogmaals **Werkstroom uitvoeren**.
 
    :::image type="content" source="../media/policy-as-code-github/manually-trigger-workflow.png" alt-text="Schermopname van het tabblad Actie, werkstroom en Werkstroomknoppen uitvoeren in de GitHub-web-interface.":::
 
@@ -88,11 +88,11 @@ De Azure Policy-resources worden geëxporteerd naar de volgende structuur in de 
 
 1. De werkstroom synchroniseert de wijzigingen die zijn aangebracht aan beleidsobjecten met Azure en geeft u de status in de logboeken.
 
-   :::image type="content" source="../media/policy-as-code-github/workflow-logging.png" alt-text="Schermopname van het tabblad Actie, werkstroom en Werkstroomknoppen uitvoeren in de GitHub-web-interface.":::
+   :::image type="content" source="../media/policy-as-code-github/workflow-logging.png" alt-text="Schermopname van de werkstroom in actie en aan logboek toegevoegde gegevens in de logboeken.":::
 
 1. De werkstroom voegt ook details toe aan Azure Policy-objecten `properties.metadata` die u kunt bijhouden.
 
-   :::image type="content" source="../media/policy-as-code-github/updated-definition-metadata.png" alt-text="Schermopname van het tabblad Actie, werkstroom en Werkstroomknoppen uitvoeren in de GitHub-web-interface.":::
+   :::image type="content" source="../media/policy-as-code-github/updated-definition-metadata.png" alt-text="Schermopname van de Azure Policy-definitie in Azure Portal bijgewerkt met metagegevens die specifiek zijn voor de GitHub-actie.":::
 
 ### <a name="trigger-compliance-scans-using-github-action"></a>Nalevingsscans activeren met behulp van GitHub-actie
 

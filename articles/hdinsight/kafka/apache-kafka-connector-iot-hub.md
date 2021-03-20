@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/26/2019
 ms.openlocfilehash: 7980003dd63e5e51d87f85542029a1f25e7223df
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98932872"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Apache Kafka op HDInsight gebruiken met Azure IoT Hub
@@ -154,7 +154,7 @@ Voer de volgende stappen uit om IoT hub-gegevens op te halen die worden gebruikt
 
          * __Event hub-compatibele naam__
          * __Event hub-compatibel eind punt__
-         * __Partities__
+         * __Partition__
 
         > [!IMPORTANT]  
         > De eindpunt waarde van de portal kan extra tekst bevatten die niet nodig is in dit voor beeld. Extraheer de tekst die overeenkomt met dit patroon `sb://<randomnamespace>.servicebus.windows.net/` .

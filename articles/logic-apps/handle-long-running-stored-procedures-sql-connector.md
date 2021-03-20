@@ -7,10 +7,10 @@ ms.reviewer: camerost, logicappspm
 ms.topic: conceptual
 ms.date: 10/27/2020
 ms.openlocfilehash: f5b04c563dc81497f591788dc4890d379c0f898f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93102968"
 ---
 # <a name="handle-stored-procedure-timeouts-in-the-sql-connector-for-azure-logic-apps"></a>Time-outs voor opgeslagen procedures in de SQL-connector voor Azure Logic Apps verwerken
@@ -37,7 +37,7 @@ BEGIN
 END
 ```
 
-In plaats van de opgeslagen procedure rechtstreeks aan te roepen, kunt u de procedure op de achtergrond asynchroon uitvoeren met behulp van een *taak agent* . U kunt de invoer en uitvoer opslaan in een status tabel die u vervolgens kunt gebruiken via uw logische app. Als u de invoer en uitvoer niet nodig hebt, of als u de resultaten al naar een tabel in de opgeslagen procedure schrijft, kunt u deze aanpak vereenvoudigen.
+In plaats van de opgeslagen procedure rechtstreeks aan te roepen, kunt u de procedure op de achtergrond asynchroon uitvoeren met behulp van een *taak agent*. U kunt de invoer en uitvoer opslaan in een status tabel die u vervolgens kunt gebruiken via uw logische app. Als u de invoer en uitvoer niet nodig hebt, of als u de resultaten al naar een tabel in de opgeslagen procedure schrijft, kunt u deze aanpak vereenvoudigen.
 
 > [!IMPORTANT]
 > Zorg ervoor dat de opgeslagen procedure en alle taken *idempotent* zijn, wat betekent dat ze meerdere keren kunnen worden uitgevoerd zonder dat dit van invloed is op de resultaten. Als de asynchrone verwerking mislukt of als er een time-out optreedt, kan de taak agent de stap opnieuw uitvoeren, en dus ook uw opgeslagen procedure, meerdere keren. Lees deze [Aanbevolen procedures en benaderingen](../azure-sql/database/elastic-jobs-overview.md#idempotent-scripts)om te voor komen dat uitvoer wordt gedupliceerd voordat u objecten maakt.
@@ -48,7 +48,7 @@ In de volgende sectie wordt beschreven hoe u de Azure elastische taak agent kunt
 
 ## <a name="job-agent-for-azure-sql-database"></a>Taak agent voor Azure SQL Database
 
-Als u een taak wilt maken waarmee de opgeslagen procedure voor [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md)kan worden uitgevoerd, gebruikt u de [Azure elastische taak agent](../azure-sql/database/elastic-jobs-overview.md). Maak uw taak agent in het Azure Portal. Met deze methode worden verschillende opgeslagen procedures toegevoegd aan de data base die wordt gebruikt door de agent, ook wel bekend als de *agent database* . U kunt vervolgens een taak maken waarmee de opgeslagen procedure in de doel database wordt uitgevoerd en de uitvoer wordt vastgelegd wanneer deze is voltooid.
+Als u een taak wilt maken waarmee de opgeslagen procedure voor [Azure SQL database](../azure-sql/database/sql-database-paas-overview.md)kan worden uitgevoerd, gebruikt u de [Azure elastische taak agent](../azure-sql/database/elastic-jobs-overview.md). Maak uw taak agent in het Azure Portal. Met deze methode worden verschillende opgeslagen procedures toegevoegd aan de data base die wordt gebruikt door de agent, ook wel bekend als de *agent database*. U kunt vervolgens een taak maken waarmee de opgeslagen procedure in de doel database wordt uitgevoerd en de uitvoer wordt vastgelegd wanneer deze is voltooid.
 
 Voordat u de taak kunt maken, moet u machtigingen, groepen en doelen instellen, zoals wordt beschreven in de [volledige documentatie voor de Azure elastische taak agent](../azure-sql/database/elastic-jobs-overview.md). U moet ook een ondersteunende tabel maken in de doel database, zoals wordt beschreven in de volgende secties.
 

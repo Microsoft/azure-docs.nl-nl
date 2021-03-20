@@ -9,10 +9,10 @@ ms.author: terrylan
 manager: rkarlin
 ms.date: 11/10/2020
 ms.openlocfilehash: 4755bc19a645d196487f0b8e0f4d1ef2120723ca
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94557732"
 ---
 # <a name="platform-integrity-and-security-overview"></a>Overzicht van platform integriteit en beveiliging
@@ -21,12 +21,12 @@ De Azure-vloot bestaat uit miljoenen servers (hosts) met duizenden extra informa
 ## <a name="securing-azure-hardware-and-firmware"></a>Azure hardware en firmware beveiligen
 In deze reeks artikelen wordt beschreven hoe micro soft de integriteit en beveiliging van hosts garandeert via verschillende fasen in hun levens cyclus, van productie tot Zons ondergang. Het artikel adres:
  
-- [Firmware beveiliging](firmware.md)
+- [Firmware-beveiliging](firmware.md)
 - [UEFI Secure boot](secure-boot.md)
 - [Gemeten opstarten en host-Attestation](measured-boot-host-attestation.md)
 - [Project Cerberus](project-cerberus.md)
 - [Versleuteling 'at rest'](encryption-atrest.md)
-- [Hyper Visor beveiliging](hypervisor.md)
+- [Hypervisor-beveiliging](hypervisor.md)
  
 ## <a name="next-steps"></a>Volgende stappen
 

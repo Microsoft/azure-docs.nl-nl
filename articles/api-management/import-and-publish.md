@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 09/30/2020
 ms.author: apimpm
 ms.openlocfilehash: 9ff64f57e61002101b4e2c560bdcd91863cc461e
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91626947"
 ---
 # <a name="tutorial-import-and-publish-your-first-api"></a>Zelfstudie: Uw eerste API importeren en publiceren
@@ -48,7 +48,7 @@ In deze sectie ziet u hoe u een back-end-API met OpenAPI-specificatie kunt impor
 
    U kunt API-waarden instellen tijdens het maken of later door naar het tabblad **Instellingen** te gaan.
 
-   :::image type="content" source="media/import-and-publish/create-api.png" alt-text="Nieuwe API in API beheren":::
+   :::image type="content" source="media/import-and-publish/create-api.png" alt-text="Een API maken":::
 
 
    |Instelling|Waarde|Beschrijving|
@@ -79,7 +79,7 @@ U kunt API-bewerkingen rechtstreeks vanuit de Azure-portal aanroepen. Dit is een
 1. Selecteer het tabblad **Test** en selecteer vervolgens **GetSpeakers**. De pagina bevat **queryparameters** en **kopteksten**, indien van toepassing. De **OCP-APIM-Subscription-Key** wordt automatisch ingevuld voor de abonnementssleutel die is gekoppeld aan deze API.
 1. Selecteer **Verzenden**.
 
-   :::image type="content" source="media/import-and-publish/01-import-first-api-01.png" alt-text="Nieuwe API in API beheren":::
+   :::image type="content" source="media/import-and-publish/01-import-first-api-01.png" alt-text="API testen in Azure Portal":::
 
    De back-end reageert met **200 OK** en enkele gegevens.
 

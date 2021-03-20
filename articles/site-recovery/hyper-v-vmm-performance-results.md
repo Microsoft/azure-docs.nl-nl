@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: sutalasi
 ms.openlocfilehash: 6c8219214e7053dcf6b119f6cd5dc97daaa355f7
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92327634"
 ---
 # <a name="test-results-for-hyper-v-replication-to-a-secondary-site"></a>Test resultaten voor Hyper-V-replicatie naar een secundaire site
@@ -106,7 +106,7 @@ De resultaten laten duidelijk zien dat Site Recovery, gekoppeld aan Hyper-V repl
 
 ![Primaire hardwarevereisten](./media/hyper-v-vmm-performance-results/IC744922.png)
 
-| Server | RAM | Modelleren | Processor | Aantal processors | NIC | Software |
+| Server | RAM | Model | Processor | Aantal processors | NIC | Software |
 | --- | --- | --- | --- | --- | --- | --- |
 | Hyper-V-servers in het cluster: <br />ESTLAB-HOST11<br />ESTLAB-HOST12<br />ESTLAB-HOST13<br />ESTLAB-HOST14<br />ESTLAB-HOST25 |128<br />ESTLAB-HOST25 heeft 256 |Dell™ PowerEdge™ R820 |Intel (R) Xeon (R) CPU E5-4620 0 \@ 2.20 GHz |4 |I Gbps x 4 |Windows Server Data Center 2012 R2 (x64) + Hyper-V-rol |
 | VMM-server |2 | | |2 |1 Gbps |Windows Server-Data Base 2012 R2 (x64) + VMM 2012 R2 |
@@ -118,7 +118,7 @@ De resultaten laten duidelijk zien dat Site Recovery, gekoppeld aan Hyper-V repl
 
 ![Primaire hardware-specificatie](./media/hyper-v-vmm-performance-results/IC744923.png)
 
-| Server | RAM | Modelleren | Processor | Aantal processors | NIC | Software |
+| Server | RAM | Model | Processor | Aantal processors | NIC | Software |
 | --- | --- | --- | --- | --- | --- | --- |
 | Hyper-V-servers in het cluster: <br />ESTLAB-HOST07<br />ESTLAB-HOST08<br />ESTLAB-HOST09<br />ESTLAB-HOST10 |96 |Dell™ PowerEdge™ R720 |Intel (R) Xeon (R) CPU E5-2630 0 \@ 2.30 GHz |2 |I Gbps x 4 |Windows Server Data Center 2012 R2 (x64) + Hyper-V-rol |
 | ESTLAB-HOST17 |128 |Dell™ PowerEdge™ R820 |Intel (R) Xeon (R) CPU E5-4620 0 \@ 2.20 GHz |4 | |Windows Server Data Center 2012 R2 (x64) + Hyper-V-rol |
@@ -170,7 +170,7 @@ De resultaten laten duidelijk zien dat Site Recovery, gekoppeld aan Hyper-V repl
 
 De tabel bevat een overzicht van de prestatie gegevens en prestatie meter items die in de implementatie zijn gemeten.
 
-| Gegevens | Prestatiemeteritem |
+| Metrisch | Prestatiemeteritem |
 | --- | --- |
 | CPU |\Processor(_Total)\% Processor Time |
 | Beschikbaar geheugen |\Memory\Available mega bytes |

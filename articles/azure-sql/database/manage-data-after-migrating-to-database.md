@@ -13,10 +13,10 @@ ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
 ms.openlocfilehash: b34ac24cb26bf5db4a49a5ad5b531deb252f4695
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96446119"
 ---
 # <a name="new-dba-in-the-cloud--managing-azure-sql-database-after-migration"></a>Nieuwe DBA in de Cloud: Azure SQL Database na migratie beheren
@@ -169,7 +169,7 @@ Versleuteling biedt een sterk mechanisme om uw gevoelige gegevens van indringers
 In SQL Database zijn uw gegevens in de gegevens en logboek bestanden op het opslag subsysteem standaard volledig en altijd versleuteld via [transparent Data Encryption [TDe]](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql). Uw back-ups worden ook versleuteld. Bij TDE zijn er geen wijzigingen vereist voor uw toepassings zijde die toegang tot deze gegevens heeft. De versleuteling en ontsleuteling gebeurt transparant; Daarom is dit de naam.
 Voor het beveiligen van uw gevoelige gegevens in-Flight en op rest, SQL Database een functie met de naam [Always encrypted (AE)](/sql/relational-databases/security/encryption/always-encrypted-database-engine)biedt. AE is een vorm van versleuteling aan de client zijde waarmee gevoelige kolommen in uw data base worden versleuteld (zodat ze in een gecodeerde tekst worden omgezet naar database beheerders en niet-gemachtigde gebruikers). De server ontvangt de versleutelde gegevens om te beginnen met. De sleutel voor Always Encrypted wordt ook opgeslagen aan de client zijde, zodat alleen geautoriseerde clients de gevoelige kolommen kunnen ontsleutelen. De server-en gegevens beheerders kunnen de gevoelige gegevens niet zien omdat de versleutelings sleutels zijn opgeslagen op de client. Met AE worden gevoelige kolommen in de tabel end-to-end versleuteld, van niet-geautoriseerde clients naar de fysieke schijf. AE ondersteunt vandaag nog gelijkheids vergelijkingen, zodat Dba's de versleutelde kolommen kan doorzoeken als onderdeel van hun SQL-opdrachten. Always Encrypted kan worden gebruikt met diverse opties voor sleutel opslag, zoals [Azure Key Vault](always-encrypted-azure-key-vault-configure.md), Windows-certificaat archief en lokale hardware security modules.
 
-|**Kenmerken**|**Altijd versleuteld**|**Transparent Data Encryption**|
+|**Kenmerken**|**Altijd versleuteld**|**Transparante gegevensversleuteling**|
 |---|---|---|
 |**Versleutelings bereik**|End-to-end|At-rest-gegevens|
 |**De server kan toegang krijgen tot gevoelige gegevens**|Nee|Ja, omdat versleuteling voor de Data-at-rest is|
@@ -305,7 +305,7 @@ SQL Database biedt diverse service lagen Basic, Standard en Premium. Elke servic
 |---|---|
 |**Basic**|Toepassingen met een gekente gebruiker en een Data Base die geen hoge gelijktijdigheids-, schaal-en prestatie vereisten hebben. |
 |**Standard**|Toepassingen met een aanzienlijke gelijktijdigheids-, schaal-en prestatie vereisten in combi natie met lage tot gemiddelde i/o-aanvragen. |
-|**Ultieme**|Toepassingen met veel gelijktijdige gebruikers, hoge CPU/geheugen en hoge IO-vereisten. Met hoge gelijktijdigheid, hoge door Voer en latentie gevoelige apps kunt u gebruikmaken van het Premium-niveau. |
+|**Premium**|Toepassingen met veel gelijktijdige gebruikers, hoge CPU/geheugen en hoge IO-vereisten. Met hoge gelijktijdigheid, hoge door Voer en latentie gevoelige apps kunt u gebruikmaken van het Premium-niveau. |
 |||
 
 Om ervoor te zorgen dat u zich op de juiste reken grootte bevindt, kunt u uw query-en database Resource verbruik bewaken via een van de hierboven genoemde manieren in Hoe kan ik de prestaties en het resource gebruik in SQL Database bewaken. Als u merkt dat uw query's/data bases op consistente wijze worden uitgevoerd op CPU/geheugen, enzovoort, kunt u overwegen om omhoog te schalen naar een hogere reken grootte. Op dezelfde manier kunt u, als u weet dat zelfs tijdens uw piek uren, de resources niet zo veel gebruiken. u kunt overwegen om van de huidige reken grootte omlaag te schalen.

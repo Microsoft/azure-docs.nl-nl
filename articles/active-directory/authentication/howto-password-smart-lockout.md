@@ -12,15 +12,15 @@ manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a5f501c19da3c2ddc06ad89fe5649789477af7ec
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/02/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "99255370"
 ---
-# <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Gebruikers accounts beveiligen tegen aanvallen met Azure Active Directory slimme vergren deling
+# <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Gebruikersaccounts beveiligen tegen aanvallen met Smart Lockout van Azure Active Directory
 
-Slimme vergren deling helpt bij het vergren delen van ongeldige actors waarmee de wacht woorden van gebruikers worden geraden of methoden voor het afdwingen van brute kracht worden gebruikt om in te komen. Slimme vergren delingen kunnen aanmeldingen herkennen die afkomstig zijn van geldige gebruikers en ze anders behandelen dan gebruikers van aanvallers en andere onbekende bronnen. Aanvallers worden vergrendeld, terwijl uw gebruikers hun accounts blijven gebruiken en productief kunnen zijn.
+Smart Lockout helpt bij het vergrendelen van kwaadwillende actoren die de wachtwoorden van gebruikers proberen te raden of die brute-forcemethoden gebruiken om binnen te komen. Smart Lockout kan aanmeldingen herkennen die afkomstig zijn van geldige gebruikers. Deze worden anders behandelt dan die van aanvallers en andere onbekende bronnen. Aanvallers worden buitengesloten, terwijl uw gebruikers hun accounts kunnen blijven gebruiken en productief kunnen zijn.
 
 ## <a name="how-smart-lockout-works"></a>Hoe slim vergren delen werkt
 

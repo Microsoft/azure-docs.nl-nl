@@ -16,10 +16,10 @@ ms.topic: how-to
 ms.date: 02/15/2018
 ms.author: allensu
 ms.openlocfilehash: d8eb450d2010bf2a525a26f1c5ff48f59732ce43
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93240967"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Verlooptijd van webinhoud in Azure CDN beheren
@@ -42,13 +42,13 @@ U kunt ook de cache-instellingen van de Azure Portal beheren door de [regels voo
 De voorkeurs methode voor het instellen van de koptekst van een webserver `Cache-Control` is het gebruik van cache regels in de Azure Portal. Zie [beheer van Azure CDN caching met cache regels](cdn-caching-rules.md)voor meer informatie over de regels voor CDN-caching.
 
 > [!NOTE] 
-> Regels voorcaching zijn alleen beschikbaar voor de profielen **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai** . Voor **Azure CDN Premium van Verizon** -profielen moet u de [engine Azure CDN Rules](./cdn-verizon-premium-rules-engine.md) in de portal **beheren** gebruiken voor vergelijk bare functionaliteit.
+> Regels voorcaching zijn alleen beschikbaar voor de profielen **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai**. Voor **Azure CDN Premium van Verizon** -profielen moet u de [engine Azure CDN Rules](./cdn-verizon-premium-rules-engine.md) in de portal **beheren** gebruiken voor vergelijk bare functionaliteit.
 
-**Ga naar de pagina regels voor CDN-caching** :
+**Ga naar de pagina regels voor CDN-caching**:
 
 1. Selecteer in de Azure Portal een CDN-profiel en selecteer vervolgens het eind punt voor de webserver.
 
-1. Selecteer in het linkerdeelvenster onder Instellingen de optie **Regels voor opslaan in cache** .
+1. Selecteer in het linkerdeelvenster onder Instellingen de optie **Regels voor opslaan in cache**.
 
    ![Knop regels voor CDN-caching](./media/cdn-manage-expiration-of-cloud-service-content/cdn-caching-rules-btn.png)
 
@@ -59,7 +59,7 @@ De voorkeurs methode voor het instellen van de koptekst van een webserver `Cache
 
 **De Cache-Control headers van een webserver instellen met behulp van algemene regels voor opslaan in cache:**
 
-1. Stel onder **algemene regels voor caching** het **in cache geheugen opslaan van de query reeks** in op het negeren van **query reeksen** en instellen dat **cache gedrag** wordt **overschreven** .
+1. Stel onder **algemene regels voor caching** het **in cache geheugen opslaan van de query reeks** in op het negeren van **query reeksen** en instellen dat **cache gedrag** wordt **overschreven**.
       
 1. Voer 3600 in het vak **seconden** of 1 in het vak **uren** in voor de **verloop tijd** van de cache. 
 
@@ -67,21 +67,21 @@ De voorkeurs methode voor het instellen van de koptekst van een webserver `Cache
 
    Met deze algemene regel voor opslaan in cache wordt een cache duur van één uur ingesteld en is dit van invloed op alle aanvragen voor het eind punt. Het onderdrukt de `Cache-Control` of `Expires` http-headers die worden verzonden door de oorspronkelijke server die door het eind punt is opgegeven.   
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 **De Cache-Control teksten van een webserver bestand instellen met behulp van aangepaste regels voor opslaan in cache:**
 
 1. Maak onder **regels voor aangepaste caching** twee match-voor waarden:
 
-     a. Voor de eerste match-voor waarde stelt u de voor **waarde match** in op **Path** en voert u in `/webfolder1/*` voor de **waarde match** . Stel **caching-gedrag** in op **overschrijven** en voer 4 in het vak **dagen** in.
+     a. Voor de eerste match-voor waarde stelt u de voor **waarde match** in op **Path** en voert u in `/webfolder1/*` voor de **waarde match**. Stel **caching-gedrag** in op **overschrijven** en voer 4 in het vak **dagen** in.
 
-     b. Voor de tweede voor waarde match stelt u de voor waarde **match** in op **Path** en voert u in `/webfolder1/file1.txt` voor de **waarde match** . Stel **caching-gedrag** in op **overschrijven** en voer 2 in het vak **dagen** in.
+     b. Voor de tweede voor waarde match stelt u de voor waarde **match** in op **Path** en voert u in `/webfolder1/file1.txt` voor de **waarde match**. Stel **caching-gedrag** in op **overschrijven** en voer 2 in het vak **dagen** in.
 
     ![Voor beeld van regels voor aangepaste CDN-caching](./media/cdn-manage-expiration-of-cloud-service-content/cdn-custom-caching-rules-example.png)
 
     Met de eerste aangepaste regel voor opslaan in cache wordt een cache duur van vier uur ingesteld voor bestanden in de `/webfolder1` map op de oorspronkelijke server die is opgegeven door het eind punt. Met de tweede regel wordt alleen de eerste regel voor het `file1.txt` bestand overschreven en wordt er een cache duur van twee uur voor ingesteld.
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 
 ## <a name="setting-cache-control-headers-by-using-configuration-files"></a>Cache-Control headers instellen met behulp van configuratie bestanden
@@ -129,7 +129,7 @@ Response.Cache.SetLastModified(DateTime.Now);
 ```
 
 ## <a name="testing-the-cache-control-header"></a>De Cache-Control-header testen
-U kunt de TTL-instellingen van uw webinhoud eenvoudig controleren. Controleer in de [ontwikkel hulpprogramma's](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/)van uw browser of uw webinhoud de `Cache-Control` reactie header bevat. U kunt ook een hulp programma zoals **wget** , [postman](https://www.getpostman.com/)of [Fiddler](https://www.telerik.com/fiddler) gebruiken om de antwoord headers te onderzoeken.
+U kunt de TTL-instellingen van uw webinhoud eenvoudig controleren. Controleer in de [ontwikkel hulpprogramma's](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/)van uw browser of uw webinhoud de `Cache-Control` reactie header bevat. U kunt ook een hulp programma zoals **wget**, [postman](https://www.getpostman.com/)of [Fiddler](https://www.telerik.com/fiddler) gebruiken om de antwoord headers te onderzoeken.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Meer informatie over het **clientCache** -element](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache)

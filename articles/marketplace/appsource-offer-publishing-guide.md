@@ -8,17 +8,17 @@ author: trkeya
 ms.author: trkeya
 ms.date: 09/04/2020
 ms.openlocfilehash: 8b500a87613dee094c63e71fc76fb751d72aa049
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94491151"
 ---
 # <a name="offer-publishing-guide-for-microsoft-365-dynamics-365-power-apps-and-power-bi"></a>Bied de publicatie handleiding voor Microsoft 365, Dynamics 365, Power apps en Power BI
 
 Microsoft AppSource omvat aanbiedingen die Microsoft 365, Dynamics 365, Power apps en Power BI bouwen of uitbreiden. Elk van deze producten heeft specifieke documentatie om u te helpen bij het publicatie proces. 
 
-AppSource heeft betaalde, lijst en proef abonnementen, met de aanbiedings opties *nu downloaden* , *Neem contact met mij op* en *Probeer het nu*.
+AppSource heeft betaalde, lijst en proef abonnementen, met de aanbiedings opties *nu downloaden*, *Neem contact met mij op* en *Probeer het nu*.
 
 ## <a name="product-specific-guides"></a>Productspecifieke hand leidingen
 

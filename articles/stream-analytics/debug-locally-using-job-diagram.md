@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.openlocfilehash: d0e94fda1fb21be1a01516f4cecf657426ae867e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98019445"
 ---
 # <a name="debug-azure-stream-analytics-queries-locally-using-job-diagram-in-visual-studio"></a>Fouten opsporen Azure Stream Analytics query's lokaal met behulp van taak diagram in Visual Studio
@@ -51,7 +51,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 
 ![Taak diagram Live-invoer bronnen](./media/debug-locally-using-job-diagram/live-input.png)
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |-|-|
 |**TaxiRide**| De naam van de invoer.|
 |**Event Hub** | Invoer bron type.|
@@ -67,7 +67,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 
 ![Taak diagram lokale invoer bronnen](./media/debug-locally-using-job-diagram/local-input.png)
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |-|-|
 |**TaxiRide**| De naam van de invoer.|
 |**Aantal rijen**| Het aantal rijen dat is gegenereerd op basis van de stap.|
@@ -78,7 +78,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 
 ![Query stap taak diagram](./media/debug-locally-using-job-diagram/query-step.png)
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |-|-|
 |**Trip data**|De naam van de tijdelijke resultatenset.|
 |**Aantal rijen**| Het aantal rijen dat is gegenereerd op basis van de stap.|
@@ -88,7 +88,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 
 ![Taak diagram waarin de lokale uitvoer-sinks worden weer gegeven.](./media/debug-locally-using-job-diagram/live-output.png)
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |-|-|
 |**regionaggEH**|De naam van de uitvoer.|
 |**Gebeurtenissen**|Het aantal gebeurtenissen uitvoer naar Sinks.|
@@ -97,7 +97,7 @@ In deze sectie bekijkt u de metrische gegevens die beschikbaar zijn voor elk dee
 
 ![Taak diagram lokale uitvoer-sinks](./media/debug-locally-using-job-diagram/local-output.png)
 
-|Gegevens|Beschrijving|
+|Metrisch|Beschrijving|
 |-|-|
 |**regionaggEH**|De naam van de uitvoer.|
 |**Lokale uitvoer**| Uitvoer van resultaten naar een lokaal bestand.|

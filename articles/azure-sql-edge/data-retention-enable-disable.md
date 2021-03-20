@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/04/2020
 ms.openlocfilehash: 5b8dd911952a63ba8775f27a6128ff61e849e823
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96861422"
 ---
 # <a name="enable-and-disable-data-retention-policies"></a>Het Bewaar beleid voor gegevens in-en uitschakelen
@@ -56,7 +56,7 @@ Het `WITH (DATA_DELETION = ON ( FILTER_COLUMN = [dbdatetime2], RETENTION_PERIOD 
 
 - DATA_DELETION-geeft aan of het bewaren van gegevens is in-of uitgeschakeld.
 - FILTER_COLUMN naam van de kolom in de tabel, die wordt gebruikt om te bepalen of de rijen verouderd zijn of niet. De filter kolom kan alleen een kolom met de volgende gegevens typen zijn 
-    - Date
+    - Datum
     - SmallDateTime
     - DateTime
     - DateTime2

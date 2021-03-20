@@ -6,10 +6,10 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 06/23/2017
 ms.openlocfilehash: 5920f2b5823e568d56d13107200eb0025a654db0
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92219918"
 ---
 # <a name="get-started-with-u-sql-in-azure-data-lake-analytics"></a>Aan de slag met U-SQL in Azure Data Lake Analytics
@@ -20,7 +20,7 @@ U-SQL is een taal die declaratieve SQL combineert met dwingende C#, zodat u gege
 
 * De [u-SQL-zelf studie](https://aka.ms/usqltutorial) biedt een begeleide walkthrough van de meeste u-SQL-taal. Dit document wordt aanbevolen om te lezen voor alle ontwikkel aars die U-SQL willen leren kennen.
 * Zie de naslag informatie voor de [u-SQL](/u-sql/)-taal voor gedetailleerde gegevens over de **u-SQL-taal syntaxis**.
-* Zie voor meer informatie over de **u-SQL-ontwerp filosofie**de Visual Studio blog post [Inleiding U-SQL – een taal die het verwerken van Big data eenvoudig maakt](https://blogs.msdn.microsoft.com/visualstudio/2015/09/28/introducing-u-sql-a-language-that-makes-big-data-processing-easy/).
+* Zie voor meer informatie over de **u-SQL-ontwerp filosofie** de Visual Studio blog post [Inleiding U-SQL – een taal die het verwerken van Big data eenvoudig maakt](https://blogs.msdn.microsoft.com/visualstudio/2015/09/28/introducing-u-sql-a-language-that-makes-big-data-processing-easy/).
 
 ## <a name="prerequisites"></a>Vereisten
 

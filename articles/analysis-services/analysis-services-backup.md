@@ -9,10 +9,10 @@ ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
 ms.openlocfilehash: af1850f77c1d13c761bfc2a143074b5067b349b4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96013000"
 ---
 # <a name="analysis-services-database-backup-and-restore"></a>Back-up en herstel van Analysis Services-Data Base
@@ -59,7 +59,7 @@ Voordat u een back-up maakt, moet u de opslag instellingen voor uw server config
 
 1. Klik in SSMS met de rechter muisknop op een Data Base > **Maak een back-up**.
 
-2. Klik in back- **updatabasebestand**  >  **Backup file** op **Bladeren**.
+2. Klik in back- **updatabasebestand**  >  op **Bladeren**.
 
 3. Controleer in het dialoog venster **bestand opslaan als** het mappad en typ een naam voor het back-upbestand. 
 

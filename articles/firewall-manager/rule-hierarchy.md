@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 08/26/2020
 ms.author: victorh
 ms.openlocfilehash: 1ba683e3d616f52854f1055dab9b9fe2d389116a
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92331733"
 ---
 # <a name="use-azure-firewall-policy-to-define-a-rule-hierarchy"></a>Azure Firewall-beleid gebruiken om een regel hiërarchie te definiëren
@@ -48,7 +48,7 @@ Beleids regels maken voor elk van de toepassings teams:
 - Een database firewall beleid. Het firewall beleid van de data base neemt het basis firewall beleid over.
 - Een engineering firewall-beleid. Het beleid van de technische firewall neemt ook het basis beleid voor firewalls over.
 
-:::image type="content" source="media/rule-hierarchy/policy-hierarchy.png" alt-text="Teams en vereisten" border="false":::
+:::image type="content" source="media/rule-hierarchy/policy-hierarchy.png" alt-text="Beleids hiërarchie" border="false":::
 
 ### <a name="create-custom-roles-to-access-the-rule-collection-groups"></a>Aangepaste rollen maken voor toegang tot de regel verzamelings groepen 
 
@@ -91,13 +91,13 @@ Gebruik de volgende procedure op hoog niveau om aangepaste rollen te definiëren
    `*/read", "Microsoft.Network/*/read", "Microsoft.Network/firewallPolicies/ruleCollectionGroups/write` 
 
    bewerking naar de eigenschap **Actions**   . Vergeet niet om een komma toe te voegen na de read-bewerking. Met deze actie kan de gebruiker regel verzamelings groepen maken en bijwerken.
-6. Voeg in **AssignableScopes**uw abonnements-id toe met de volgende indeling: 
+6. Voeg in **AssignableScopes** uw abonnements-id toe met de volgende indeling: 
 
    `/subscriptions/xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxx`
 
    U moet expliciete abonnement-id's toevoegen, anders is het niet mogelijk om de rol in uw abonnement te importeren.
 7. Verwijder de regel voor de **id-**   eigenschap en wijzig de eigenschap **IsCustom**   in True.
-8. Wijzig de **Name**   Eigenschappen van de naam en **Beschrijving**in de   AZFM- *regel verzamelings groep Auteur* en *gebruikers met deze rol kunnen Firewall beleids regel verzamelings groepen bewerken*
+8. Wijzig de  ****   Eigenschappen van de naam en  **Beschrijving** in de   AZFM- *regel verzamelings groep Auteur* en *gebruikers met deze rol kunnen Firewall beleids regel verzamelings groepen bewerken*
 
 Het JSON-bestand moet er ongeveer uitzien als in het volgende voor beeld:
 
@@ -134,9 +134,9 @@ U kunt de Get-AzRoleDefinition opdracht gebruiken om alle aangepaste rollen weer
 
 U kunt ook de aangepaste rollen bekijken in de Azure Portal. Ga naar uw abonnement en selecteer **toegangs beheer (IAM)**, **rollen**.
 
-:::image type="content" source="media/rule-hierarchy/sales-app-policy.png" alt-text="Teams en vereisten":::
+:::image type="content" source="media/rule-hierarchy/sales-app-policy.png" alt-text="SalesAppPolicy":::
 
-:::image type="content" source="media/rule-hierarchy/sales-app-policy-read.png" alt-text="Teams en vereisten":::
+:::image type="content" source="media/rule-hierarchy/sales-app-policy-read.png" alt-text="Lees machtiging SalesAppPolicy":::
 
 Zie [zelf studie: een aangepaste Azure-rol maken met Azure PowerShell](../role-based-access-control/tutorial-custom-role-powershell.md)voor meer informatie.
 

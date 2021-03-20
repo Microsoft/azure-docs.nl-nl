@@ -4,10 +4,10 @@ description: Protocol gids voor expressies en beschrijving van AMQP 1,0 in Azure
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: 2154221ebfe69b659ff83100ed614133e178ccdb
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98624486"
 ---
 # <a name="amqp-10-in-azure-service-bus-and-event-hubs-protocol-guide"></a>AMQP 1,0 in Azure Service Bus en Event Hubs protocol gids
@@ -359,9 +359,9 @@ Het aanvraag bericht heeft de volgende toepassings eigenschappen:
 
 | Sleutel | Optioneel | Waardetype | Inhoud van waarde |
 | --- | --- | --- | --- |
-| bewerking |No |tekenreeks |**put-token** |
-| type |No |tekenreeks |Het type van het token dat wordt geplaatst. |
-| naam |No |tekenreeks |De "doel groep" waarop het token van toepassing is. |
+| bewerking |Nee |tekenreeks |**put-token** |
+| type |Nee |tekenreeks |Het type van het token dat wordt geplaatst. |
+| naam |Nee |tekenreeks |De "doel groep" waarop het token van toepassing is. |
 | verval |Ja |tijdstempel |De verloop tijd van het token. |
 
 De eigenschap *name* identificeert de entiteit waaraan het token moet worden gekoppeld. In Service Bus is het het pad naar de wachtrij, of onderwerp/abonnement. De eigenschap *type* geeft het token type aan:
@@ -378,8 +378,8 @@ Het antwoord bericht heeft de volgende *eigenschaps* waarden van de toepassing:
 
 | Sleutel | Optioneel | Waardetype | Inhoud van waarde |
 | --- | --- | --- | --- |
-| status-code |No |int |HTTP-antwoord code **[RFC2616]**. |
-| status-beschrijving |Yes |tekenreeks |De beschrijving van de status. |
+| status-code |Nee |int |HTTP-antwoord code **[RFC2616]**. |
+| status-beschrijving |Ja |tekenreeks |De beschrijving van de status. |
 
 De client kan *put-token* herhaaldelijk aanroepen en voor elke entiteit in de infra structuur voor berichten. De tokens zijn toegewezen aan de huidige client en verankerd op de huidige verbinding, wat betekent dat de server behouden tokens verwijdert wanneer de verbinding wordt verbroken.
 

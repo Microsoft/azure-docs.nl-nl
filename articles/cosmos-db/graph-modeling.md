@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 12/02/2019
 ms.author: chrande
 ms.openlocfilehash: d99e2e2ffd63b050e7373c98084fed3fb14727bf
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93357042"
 ---
 # <a name="graph-data-modeling-for-azure-cosmos-db-gremlin-api"></a>Graph data modellering voor Azure Cosmos DB Gremlin-API
@@ -36,7 +36,7 @@ Een grafiek database oplossing kan optimaal worden toegepast als de entiteiten e
 * Er zijn **veel-op-veel-relaties** tussen entiteiten.
 * Er zijn **Schrijf-en lees vereisten voor zowel entiteiten als relaties**. 
 
-Als aan de bovenstaande criteria is voldaan, is het waarschijnlijk dat een grafiek database benadering voor delen biedt voor de **complexiteit van query's** , **schaal baarheid van gegevens modellen** en de **prestaties van query's**.
+Als aan de bovenstaande criteria is voldaan, is het waarschijnlijk dat een grafiek database benadering voor delen biedt voor de **complexiteit van query's**, **schaal baarheid van gegevens modellen** en de **prestaties van query's**.
 
 De volgende stap is om te bepalen of de grafiek wordt gebruikt voor analyse-of transactionele doel einden. Als de grafiek moet worden gebruikt voor zware werk belastingen voor reken kracht en gegevens verwerking, is het waard om de [Cosmos DB Spark-connector](./spark-connector.md) en het gebruik van de [graphx-bibliotheek](https://spark.apache.org/graphx/)te verkennen. 
 
@@ -46,7 +46,7 @@ De [Apache Tinkerpop-eigenschap Graph Standard](https://tinkerpop.apache.org/doc
 
 Hieronder volgen de aanbevolen procedures voor de eigenschappen in de grafiek objecten:
 
-| Object | Eigenschap | Type | Notities |
+| Object | Eigenschap | Type | Opmerkingen |
 | --- | --- | --- |  --- |
 | Shad | Id | Tekenreeks | Uniek afgedwongen per partitie. Als er bij het invoegen geen waarde wordt opgegeven, wordt een automatisch gegenereerde GUID opgeslagen. |
 | Shad | label | Tekenreeks | Deze eigenschap wordt gebruikt om het type entiteit te definiëren dat door het hoek punt wordt vertegenwoordigd. Als er geen waarde wordt opgegeven, wordt er een standaard waarde ' vertex ' gebruikt. |
@@ -72,11 +72,11 @@ De eerste stap voor een grafiek gegevens model is het toewijzen van elke geïden
 
 Een algemene Pitfall is het toewijzen van eigenschappen van één entiteit als afzonderlijke hoek punten. Bekijk het voor beeld hieronder, waarbij dezelfde entiteit op twee verschillende manieren wordt weer gegeven:
 
-* **Eigenschappen op basis van vertex** : in deze benadering gebruikt de entiteit drie afzonderlijke hoek punten en twee randen om de eigenschappen ervan te beschrijven. Hoewel deze aanpak de redundantie kan verminderen, wordt de model complexiteit verbeterd. Een toename van de model complexiteit kan leiden tot extra latentie, query complexiteit en reken kosten. Dit model kan ook uitdagingen opleveren voor partitioneren.
+* **Eigenschappen op basis van vertex**: in deze benadering gebruikt de entiteit drie afzonderlijke hoek punten en twee randen om de eigenschappen ervan te beschrijven. Hoewel deze aanpak de redundantie kan verminderen, wordt de model complexiteit verbeterd. Een toename van de model complexiteit kan leiden tot extra latentie, query complexiteit en reken kosten. Dit model kan ook uitdagingen opleveren voor partitioneren.
 
 :::image type="content" source="./media/graph-modeling/graph-modeling-1.png" alt-text="Entiteits model met hoek punten voor eigenschappen." border="false":::
 
-* Met **Eigenschappen Inge sloten hoek punten** : deze benadering maakt gebruik van de lijst met sleutel waarden om alle eigenschappen van de entiteit binnen een hoek punt weer te geven. Deze benadering biedt een gereduceerde model complexiteit, die leidt tot eenvoudigere query's en rendabelere trans acties.
+* Met **Eigenschappen Inge sloten hoek punten**: deze benadering maakt gebruik van de lijst met sleutel waarden om alle eigenschappen van de entiteit binnen een hoek punt weer te geven. Deze benadering biedt een gereduceerde model complexiteit, die leidt tot eenvoudigere query's en rendabelere trans acties.
 
 :::image type="content" source="./media/graph-modeling/graph-modeling-2.png" alt-text="Diagram toont het hoek punt Luis uit het vorige diagram met i d, label en eigenschappen." border="false":::
 

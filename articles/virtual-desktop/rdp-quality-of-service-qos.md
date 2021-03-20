@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
 ms.openlocfilehash: b61faf74d96e2571e91f7bf9d10eac88cdbf8345
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94639252"
 ---
 # <a name="implement-quality-of-service-qos-for-windows-virtual-desktop-preview"></a>Quality of Service (QoS) voor virtuele Windows-Desktop (preview-versie) implementeren
@@ -87,7 +87,7 @@ U kunt op beleid gebaseerde Quality of Service (QoS) in groepsbeleid gebruiken o
 
 Als u een QoS-beleid wilt maken voor hosts die lid zijn van een domein, meldt u zich eerst aan bij een computer waarop groepsbeleid-beheer is geïnstalleerd. Open groepsbeleid beheer (Selecteer Start, wijs systeem beheer aan en selecteer vervolgens groepsbeleid beheer) en voer vervolgens de volgende stappen uit:
 
-1. Zoek in groepsbeleid beheer de container waar het nieuwe beleid moet worden gemaakt. Als bijvoorbeeld alle sessies worden gehost op computers bevinden zich in een organisatie-eenheid met de naam **' sessiehost '** , moet het nieuwe beleid worden gemaakt in de sessie host van de organisatie-eenheid.
+1. Zoek in groepsbeleid beheer de container waar het nieuwe beleid moet worden gemaakt. Als bijvoorbeeld alle sessies worden gehost op computers bevinden zich in een organisatie-eenheid met de naam **' sessiehost '**, moet het nieuwe beleid worden gemaakt in de sessie host van de organisatie-eenheid.
 
 2. Klik met de rechter muisknop op de juiste container en selecteer vervolgens **een groeps beleidsobject in dit domein maken en hier een koppeling**.
 
@@ -109,7 +109,7 @@ Als u een QoS-beleid wilt maken voor hosts die lid zijn van een domein, meldt u 
 
 Het nieuwe beleid dat u hebt gemaakt, wordt pas van kracht nadat groepsbeleid is vernieuwd op uw Session Host-computers. Hoewel groepsbeleid regel matig vernieuwt, kunt u een onmiddellijke vernieuwing afdwingen door de volgende stappen uit te voeren:
 
-1. Open een opdracht prompt als beheerder (als *administrator uitvoeren* ) op elke sessiehost waarvoor u Groepsbeleid wilt vernieuwen.
+1. Open een opdracht prompt als beheerder (als *administrator uitvoeren*) op elke sessiehost waarvoor u Groepsbeleid wilt vernieuwen.
 
 1. Voer bij de opdracht prompt
 

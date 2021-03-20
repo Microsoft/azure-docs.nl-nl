@@ -6,10 +6,10 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/10/2020
 ms.openlocfilehash: fee454073c50b9542e140576ef0629a39b8f4294
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100573454"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis"></a>Azure Monitor voor Azure cache verkennen voor redis
@@ -23,7 +23,7 @@ Azure Monitor voor Azure cache voor redis-resources voor al uw Azure cache voor 
 
 Dit artikel helpt u bij het begrijpen van de voor delen van deze nieuwe bewakings ervaring. Ook wordt uitgelegd hoe u de ervaring kunt aanpassen en aanpassen aan de unieke behoeften van uw organisatie.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Voordat u met de ervaring begint, moet u weten hoe Azure Monitor voor Azure cache voor redis visueel informatie weergeeft.
 

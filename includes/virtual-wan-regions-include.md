@@ -9,10 +9,10 @@ ms.date: 03/19/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: e978a5e7e76c8ddc9b7e6b80ec7170c45baa2cae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82784109"
 ---
 ### <a name="azure-regions-within-a-geopolitical-region"></a>Azure-regio's binnen een geopolitieke regio
@@ -29,7 +29,7 @@ Virtual WAN is beschikbaar voor de volgende regio's:
 | Japan  | Japan - west, Japan - oost |
 | Oceanië | Australië - zuidoost, Australië - oost |
 | Zuid-Afrika | Zuid-Afrika-noord, Zuid-Afrika-west |
-| Zuid-Amerika |Brazil South |
+| Zuid-Amerika |Brazilië - zuid |
 | Zuid-Korea | Korea - centraal, Korea - zuid |
 | VAE | UAE-noord, UAE-centraal |
 

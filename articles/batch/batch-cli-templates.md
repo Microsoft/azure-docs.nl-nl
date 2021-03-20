@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: seodec18, devx-track-azurecli
 ms.openlocfilehash: 845a32c2feda5a5a3b8d44d237c62db94cae1779
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91848718"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Azure Batch CLI-sjablonen en-bestands overdracht gebruiken
@@ -152,7 +152,7 @@ De CLI vraagt u om waarden op te geven voor de `poolId` `nodeCount` para meters 
 }
 ```
 
-Als het JSON-bestand van de para meters de naam *pool-parameters.js*heeft, roept u de sjabloon als volgt aan:
+Als het JSON-bestand van de para meters de naam *pool-parameters.js* heeft, roept u de sjabloon als volgt aan:
 
 ```azurecli
 az batch pool create --template pool-ffmpeg.json --parameters pool-parameters.json
@@ -260,7 +260,7 @@ Een sjabloon uploaden:
 
 2. Selecteer een lokale groep of een taak sjabloon of sleep en zet deze neer.
 
-3. Selecteer **deze sjabloon gebruiken**en volg de aanwijzingen op het scherm.
+3. Selecteer **deze sjabloon gebruiken** en volg de aanwijzingen op het scherm.
 
 ## <a name="file-groups-and-file-transfer"></a>Bestands groepen en bestands overdracht
 

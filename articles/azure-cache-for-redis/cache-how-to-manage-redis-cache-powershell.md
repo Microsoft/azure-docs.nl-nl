@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: 88e433dbfa87d8ea483789b1fd838c62a6a481c0
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92536756"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Azure-cache beheren voor redis met Azure PowerShell
@@ -141,14 +141,14 @@ De volgende tabel bevat eigenschappen en beschrijvingen voor veelgebruikte para 
 
 | Parameter | Beschrijving | Standaard |
 | --- | --- | --- |
-| Naam |Naam van de cache | |
+| Name |Naam van de cache | |
 | Locatie |Locatie van de cache | |
 | ResourceGroupName |Naam van de resource groep waarin de cache moet worden gemaakt | |
 | Grootte |De grootte van de cache. Geldige waarden zijn: P1, P2, P3, P4, C0, C1, C2, C3, C4, C5, C6, 250MB, 1GB, 2,5 GB, 6GB, 13GB, 26GB, 53GB |1 GB |
 | ShardCount |Het aantal Shards dat moet worden gemaakt bij het maken van een Premium-cache met clustering ingeschakeld. Geldige waarden zijn: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | |
 | SKU |Hiermee geeft u de SKU van de cache op. Geldige waarden zijn: Basic, Standard, Premium |Standard |
 | RedisConfiguration |Hiermee geeft u de redis-configuratie-instellingen. Zie de volgende tabel met [RedisConfiguration-eigenschappen](#redisconfiguration-properties) voor meer informatie over elke instelling. | |
-| EnableNonSslPort |Hiermee wordt aangegeven of de niet-SSL-poort is ingeschakeld. |False |
+| EnableNonSslPort |Hiermee wordt aangegeven of de niet-SSL-poort is ingeschakeld. |Niet waar |
 | MaxMemoryPolicy |Deze para meter is afgeschaft: gebruik in plaats daarvan RedisConfiguration. | |
 | StaticIP |Bij het hosten van uw cache in een VNET, geeft u een uniek IP-adres op in het subnet voor de cache. Indien niet opgegeven, wordt er een gekozen uit het subnet. | |
 | Subnet |Wanneer u uw cache host in een VNET, geeft u de naam op van het subnet waarin de cache moet worden geïmplementeerd. | |

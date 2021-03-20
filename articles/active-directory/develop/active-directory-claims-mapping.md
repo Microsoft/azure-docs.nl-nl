@@ -14,10 +14,10 @@ ms.date: 08/25/2020
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.openlocfilehash: 2d65889a841655fe27994d3855f30f7a7e20e1ed
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94647593"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Procedure: claims aanpassen die worden verzonden in tokens voor een specifieke app in een Tenant (preview-versie)
@@ -324,7 +324,7 @@ Het ID-element identificeert welke eigenschap van de bron de waarde voor de clai
 | Gebruiker | othermail | Andere E-mail |
 | Gebruiker | country | Land/regio |
 | Gebruiker | city | Plaats |
-| Gebruiker | staat | Status |
+| Gebruiker | staat | Staat |
 | Gebruiker | jobtitle | Functie |
 | Gebruiker | employeeid | Werknemers-id |
 | Gebruiker | facsimiletelephonenumber | Telefoon nummer Fax |
@@ -366,7 +366,7 @@ Op basis van de gekozen methode wordt een set invoer en uitvoer verwacht. Defini
 
 |TransformationMethod|Verwachte invoer|Verwachte uitvoer|Beschrijving|
 |-----|-----|-----|-----|
-|Koppelen|tekenreeks1, tekenreeks2, scheidings teken|Output claim|Voegt invoer teken reeksen samen met behulp van een scheidings teken tussen. Bijvoorbeeld: tekenreeks1: " foo@bar.com ", tekenreeks2: "sandbox", scheidings teken: "." resulteert in output claim: " foo@bar.com.sandbox "|
+|Deelnemen|tekenreeks1, tekenreeks2, scheidings teken|Output claim|Voegt invoer teken reeksen samen met behulp van een scheidings teken tussen. Bijvoorbeeld: tekenreeks1: " foo@bar.com ", tekenreeks2: "sandbox", scheidings teken: "." resulteert in output claim: " foo@bar.com.sandbox "|
 |ExtractMailPrefix|E-mail of UPN|geëxtraheerde teken reeks|ExtensionAttributes 1-15 of andere schema-uitbrei dingen die een UPN-of e-mailadres waarde voor de gebruiker opslaan, bijvoorbeeld johndoe@contoso.com . Extraheert het lokale deel van een e-mail adres. Bijvoorbeeld: mail: " foo@bar.com " resulteert in output claim: "foo". Als er geen \@ teken aanwezig is, wordt de oorspronkelijke invoer teken reeks geretourneerd als is.|
 
 **InputClaims:** Gebruik een InputClaims-element om de gegevens van een claim schema vermelding door te geven aan een trans formatie. Het heeft twee kenmerken: **ClaimTypeReferenceId** en **TransformationClaimType**.
@@ -417,7 +417,7 @@ Op basis van de gekozen methode wordt een set invoer en uitvoer verwacht. Defini
 | TransformationMethod | Beperkingen |
 | ----- | ----- |
 | ExtractMailPrefix | Geen |
-| Koppelen | Het achtervoegsel dat wordt gekoppeld, moet een geverifieerd domein zijn van de resource Tenant. |
+| Deelnemen | Het achtervoegsel dat wordt gekoppeld, moet een geverifieerd domein zijn van de resource Tenant. |
 
 ### <a name="custom-signing-key"></a>Aangepaste handtekening sleutel
 

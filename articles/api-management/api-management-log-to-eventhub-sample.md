@@ -17,10 +17,10 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
 ms.openlocfilehash: abb9cbb73f8957cec2cb3240bbf186623b9b2ef9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88205504"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Bewaak uw Api's met Azure API Management, Event Hubs en Moesif
@@ -295,7 +295,7 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 }
 ```
 
-De voor `MoesifHttpMessageProcessor` delen van een [C# API library voor Moesif](https://www.moesif.com/docs/api?csharp#events) , waarmee u eenvoudig http-gebeurtenis gegevens in hun service kunt pushen. Als u HTTP-gegevens wilt verzenden naar de Moesif Collector-API, hebt u een account en een toepassings-id nodig. U krijgt een Moesif-toepassings-id door een account te maken op de [website van Moesif](https://www.moesif.com) en vervolgens naar de _meest rechter menu_-  ->  _app-installatie_te gaan.
+De voor `MoesifHttpMessageProcessor` delen van een [C# API library voor Moesif](https://www.moesif.com/docs/api?csharp#events) , waarmee u eenvoudig http-gebeurtenis gegevens in hun service kunt pushen. Als u HTTP-gegevens wilt verzenden naar de Moesif Collector-API, hebt u een account en een toepassings-id nodig. U krijgt een Moesif-toepassings-id door een account te maken op de [website van Moesif](https://www.moesif.com) en vervolgens naar de _meest rechter menu_-  ->  _app-installatie_ te gaan.
 
 ## <a name="complete-sample"></a>Voor beeld volt ooien
 De [bron code](https://github.com/dgilling/ApimEventProcessor) en tests voor het voor beeld bevinden zich op github. U hebt een [API Management-service](get-started-create-service-instance.md), [een verbonden Event hub](api-management-howto-log-event-hubs.md)en een [opslag account](../storage/common/storage-account-create.md) nodig om het voor beeld voor uzelf uit te voeren.   

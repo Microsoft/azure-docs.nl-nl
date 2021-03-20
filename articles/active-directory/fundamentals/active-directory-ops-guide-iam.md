@@ -12,10 +12,10 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: 66bce573be5a31641bdff809b8e9a79b617a703a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92370998"
 ---
 # <a name="azure-active-directory-identity-and-access-management-operations-reference-guide"></a>Naslag Gids voor identiteits-en toegangs beheer van Azure Active Directory
@@ -167,10 +167,10 @@ Als u momenteel een hulp programma gebruikt, zoals [Microsoft Identity Manager](
 
 ### <a name="assignment-of-apps-with-all-users-group"></a>Toewijzing van apps met de groep alle gebruikers
 
-Resource-eigen aren kunnen van mening zijn dat de groep **alle gebruikers** alleen **werk nemers** van het bedrijf bevat wanneer ze mogelijk zowel **zakelijke mede werkers** als **gasten**bevatten. Als gevolg hiervan moet u bijzondere aandacht best denken wanneer u de groep **alle gebruikers** gebruikt voor het toewijzen van toepassingen en het verlenen van toegang tot resources, zoals share point-inhoud of-toepassingen.
+Resource-eigen aren kunnen van mening zijn dat de groep **alle gebruikers** alleen **werk nemers** van het bedrijf bevat wanneer ze mogelijk zowel **zakelijke mede werkers** als **gasten** bevatten. Als gevolg hiervan moet u bijzondere aandacht best denken wanneer u de groep **alle gebruikers** gebruikt voor het toewijzen van toepassingen en het verlenen van toegang tot resources, zoals share point-inhoud of-toepassingen.
 
 > [!IMPORTANT]
-> Als de groep **alle gebruikers** is ingeschakeld en wordt gebruikt voor beleid voor voorwaardelijke toegang, app of resource toewijzing, moet u [de groep beveiligen](../external-identities/use-dynamic-groups.md) als u geen gast gebruikers wilt toevoegen. Bovendien moet u uw licentie toewijzingen oplossen door te maken en toe te wijzen aan groepen die alleen **werk nemers** van een onderneming bevatten. Als u daarentegen ziet dat de groep **alle gebruikers** is ingeschakeld, maar niet wordt gebruikt om toegang te verlenen tot resources, moet u ervoor zorgen dat de operationele richt lijnen van uw organisatie opzettelijk gebruikmaken van die groep (die zowel **zakelijke mede werkers** als **gasten**bevat).
+> Als de groep **alle gebruikers** is ingeschakeld en wordt gebruikt voor beleid voor voorwaardelijke toegang, app of resource toewijzing, moet u [de groep beveiligen](../external-identities/use-dynamic-groups.md) als u geen gast gebruikers wilt toevoegen. Bovendien moet u uw licentie toewijzingen oplossen door te maken en toe te wijzen aan groepen die alleen **werk nemers** van een onderneming bevatten. Als u daarentegen ziet dat de groep **alle gebruikers** is ingeschakeld, maar niet wordt gebruikt om toegang te verlenen tot resources, moet u ervoor zorgen dat de operationele richt lijnen van uw organisatie opzettelijk gebruikmaken van die groep (die zowel **zakelijke mede werkers** als **gasten** bevat).
 
 ### <a name="automated-user-provisioning-to-apps"></a>Automatische gebruikers inrichting voor apps
 

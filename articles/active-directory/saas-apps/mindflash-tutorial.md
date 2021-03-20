@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 4fbc79723dd484148ddf2f8836848aa9bc333341
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92522582"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Zelfstudie: Azure Active Directory-integratie met Mindflash
@@ -49,11 +49,11 @@ Als u de integratie van Mindflash in Azure AD wilt configureren, moet u Mindflas
 
 **Als u Mindflash wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Als u de integratie van Mindflash in Azure AD wilt configureren, moet u Mindflas
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Mindflash** , selecteer **Mindflash** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Mindflash**, selecteer **Mindflash** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Mindflash in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Mindflash op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Mindflash op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerd gebruiker in Mindflash tot stand is gebracht.
 
 U moet de volgende bouwstenen voltooien om eenmalige aanmelding voor Azure AD met Mindflash te configureren en te testen:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding voor Azure Ad met Mindflash te configureren:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Mindflash** .
+1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Mindflash**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -124,13 +124,13 @@ Voer de volgende stappen uit om eenmalige aanmelding voor Azure Ad met Mindflash
 
 ### <a name="configure-mindflash-single-sign-on"></a>Eenmalige aanmelding voor Mindflash configureren
 
-Als u eenmalige aanmelding aan de **Mindflash** -zijde wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de correcte uit Azure Portal gekopieerde URL's verzenden naar het [Mindflash-ondersteuningsteam](https://www.mindflash.com/contact/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Mindflash**-zijde wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de correcte uit Azure Portal gekopieerde URL's verzenden naar het [Mindflash-ondersteuningsteam](https://www.mindflash.com/contact/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -149,13 +149,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Mindflash.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Mindflash** .
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Mindflash**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -163,11 +163,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![Het koppeling naar Mindflash in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -175,7 +175,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-mindflash-test-user"></a>Een Mindflash-testgebruiker maken
 
@@ -183,25 +183,25 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
 
 ### <a name="to-provision-a-user-accounts-perform-the-following-steps"></a>Ga als volgt te werk om een gebruikersaccount in te richten:
 
-1. Meld u als beheerder aan bij de bedrijfssite van **Mindflash** .
+1. Meld u als beheerder aan bij de bedrijfssite van **Mindflash**.
 
-1. Ga naar **Gebruikers beheren** .
+1. Ga naar **Gebruikers beheren**.
    
     ![Gebruikers beheren](./media/mindflash-tutorial/ic787140.png "Gebruikers beheren")
 
-1. Klik op **Gebruikers toevoegen** en klik vervolgens op **Nieuw** .
+1. Klik op **Gebruikers toevoegen** en klik vervolgens op **Nieuw**.
 
 1. Voer in de sectie **Nieuwe gebruikers toevoegen** de volgende stappen uit voor een geldig Azure AD-account dat u wilt inrichten:
    
     ![Nieuwe gebruikers toevoegen](./media/mindflash-tutorial/ic787141.png "Nieuwe gebruikers toevoegen")
    
-    a. Typ in het tekstvak **Voornaam** de **voornaam** van de gebruiker, in dit geval **Britta** .
+    a. Typ in het tekstvak **Voornaam** de **voornaam** van de gebruiker, in dit geval **Britta**.
 
-    b. Typ in het tekstvak **Achternaam** de **achternaam** van de gebruiker, in dit geval **Simon** .
+    b. Typ in het tekstvak **Achternaam** de **achternaam** van de gebruiker, in dit geval **Simon**.
     
-    c. Typ in het tekstvak **E-mail** het **e-mailadres** van de gebruiker, bijvoorbeeld **BrittaSimon\@contoso.com** .
+    c. Typ in het tekstvak **E-mail** het **e-mailadres** van de gebruiker, bijvoorbeeld **BrittaSimon\@contoso.com**.
 
-    b. Klik op **Add** .
+    b. Klik op **Add**.
 
 >[!NOTE]
 >U kunt ook alle andere hulpprogramma's voor het maken van gebruikersaccounts of API's van Mindflash gebruiken om Microsoft Azure Active Directory-gebruikersaccounts in te richten. 

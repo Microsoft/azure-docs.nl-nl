@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: 468b4f7ca7b0af4abc32df5d9ef64a74154d3de1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91569415"
 ---
 # <a name="configuring-retention-in-azure-time-series-insights-gen1"></a>Bewaar periode in Azure Time Series Insights gen1 configureren
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u de **Bewaar tijd voor gegevens** en de **o
 
 Elke Azure Time Series Insights omgeving heeft een instelling voor het configureren van **gegevens retentie tijd**. De waarde ligt tussen 1 en 400 dagen. De gegevens worden verwijderd op basis van de opslag capaciteit van de omgeving of de Bewaar periode (1-400), afhankelijk van wat het eerste komt.
 
-Voor elke Azure Time Series Insights omgeving is een extra **opslag limiet**ingesteld. Met deze instelling bepaalt u het gedrag van ingang en leegmaken wanneer de maximale capaciteit van een omgeving wordt bereikt. Er zijn twee manieren om te kiezen:
+Voor elke Azure Time Series Insights omgeving is een extra **opslag limiet** ingesteld. Met deze instelling bepaalt u het gedrag van ingang en leegmaken wanneer de maximale capaciteit van een omgeving wordt bereikt. Er zijn twee manieren om te kiezen:
 
 - **Oude gegevens opschonen** (standaard)
 - **Ingangs onderbrekingen**

@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 10/01/2020
 ms.custom: devx-track-csharp, mvc
 ms.openlocfilehash: 5bc3895cb219338acde492b871dce806db70622b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91661156"
 ---
 # <a name="store-unstructured-data-using-azure-functions-and-azure-cosmos-db"></a>Ongestructureerde gegevens opslaan met behulp van Azure Functions en Azure Cosmos DB
@@ -42,11 +42,11 @@ U moet een Azure Cosmos DB-account hebben dat gebruikmaakt van de SQL-API voorda
 
 1. Selecteer **Integratie** en **+ Uitvoer toevoegen**.
 
-     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-add-output-binding.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-add-output-binding.png" alt-text="Een Cosmos DB-uitvoerbinding toevoegen" border="true":::
 
 1. Gebruik de **Uitvoer maken**-instellingen zoals opgegeven in de tabel:
 
-     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-configure-cosmosdb-binding.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+     :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-configure-cosmosdb-binding.png" alt-text="Azure Cosmos DB-uitvoerbinding configureren" border="true":::
 
     | Instelling      | Voorgestelde waarde  | Beschrijving                                |
     | ------------ | ---------------- | ------------------------------------------ |
@@ -138,23 +138,23 @@ In dit codevoorbeeld worden de queryreeksen van de HTTP-aanvraag gelezen en toeg
     + `task`
     + `duedate`
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function.png" alt-text="Test de functie." border="true":::
 
 
 1. Selecteer **Uitvoeren** en controleer of een 200-status wordt geretourneerd.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function-output.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-test-function-output.png" alt-text="Schermopname toont de status van de HTTP-antwoordcode 200 gemarkeerd na het selecteren van Uitvoeren." border="true":::
 
 
 1. Zoek en selecteer **Azure Cosmos DB** in de Azure-portal.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-search-cosmos-db.png" alt-text="Zoeken naar de Cosmos DB-service" border="true":::
 
 1. Kies uw Azure Cosmos DB-account en selecteer **Data Explorer**.
 
 1. Vouw de **TaskCollection**-knooppunten uit, selecteer het nieuwe document en controleer of het document uw querytekenreekswaarden, samen met enkele aanvullende metagegevens, bevat.
 
-    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-data-explorer-check-document.png" alt-text="Selecteer uw HTTP-functie in de Azure-portal." border="true":::
+    :::image type="content" source="./media/functions-integrate-store-unstructured-data-cosmosdb/functions-data-explorer-check-document.png" alt-text="Controleer de tekenreekswaarden in uw document." border="true":::
 
 U hebt een binding toegevoegd aan de HTTP-trigger waarmee niet-gestructureerde gegevens worden opgeslagen in een Azure Cosmos DB.
 

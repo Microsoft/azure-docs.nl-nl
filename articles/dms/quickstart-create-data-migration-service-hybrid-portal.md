@@ -13,10 +13,10 @@ ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 03/13/2020
 ms.openlocfilehash: 39f893e9375970ff4bb6e3cfa2c93ceea48ec896
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92331801"
 ---
 # <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Quickstart: Een hybride modus-exemplaar maken met de Azure-portal en Azure Database Migration Service
@@ -51,11 +51,11 @@ De standaardweergave is uw service-dashboard.
 
 Registreer de Microsoft.DataMigration-resourceprovider voordat u uw eerste Azure Database Migration Service-exemplaar maakt.
 
-1. Selecteer in de Azure-portal **Abonnementen** , selecteer het abonnement waarin u het exemplaar van Azure Database Migration Service wilt maken en selecteer vervolgens **Resourceproviders** .
+1. Selecteer in de Azure-portal **Abonnementen**, selecteer het abonnement waarin u het exemplaar van Azure Database Migration Service wilt maken en selecteer vervolgens **Resourceproviders**.
 
     ![Resourceprovider zoeken](media/quickstart-create-data-migration-service-hybrid-portal/dms-portal-search-resource-provider.png)
 
-2. Zoek naar migratie en selecteer rechts van **Microsoft.DataMigration** de optie **Registreren** .
+2. Zoek naar migratie en selecteer rechts van **Microsoft.DataMigration** de optie **Registreren**.
 
     ![Resourceprovider registreren](media/quickstart-create-data-migration-service-hybrid-portal/dms-portal-register-resource-provider.png)
 
@@ -63,21 +63,21 @@ Registreer de Microsoft.DataMigration-resourceprovider voordat u uw eerste Azure
 
 1. Selecteer **+Een resource maken** om een exemplaar te maken van Azure Database Migration Service.
 
-2. Zoek in Marketplace naar 'migration', selecteer **Azure Database Migration Service** en selecteer vervolgens in het scherm **Azure Database Migration Service**  de optie **Maken** .
+2. Zoek in Marketplace naar 'migration', selecteer **Azure Database Migration Service** en selecteer vervolgens in het scherm **Azure Database Migration Service**  de optie **Maken**.
 
 3. Ga in het scherm **Migratieservice maken** als volgt te werk:
 
-    - Kies een unieke en gemakkelijk te onthouden **Servicenaam** voor uw Azure Database Migration Service-exemplaar.
-    - Selecteer het Azure- **abonnement** waarin u het exemplaar wilt maken.
+    - Kies een unieke en gemakkelijk te onthouden **Servicenaam** om uw Azure Database Migration Service-exemplaar te identificeren.
+    - Selecteer het Azure-**abonnement** waarin u het exemplaar wilt maken.
     - Selecteer een bestaande **Resourcegroep** of maak een nieuwe.
     - Kies de **locatie** die zich het dichtst bij uw bron- of doelserver bevindt.
-    - Selecteer **Hybride (preview)** bij **Servicemodus** .
+    - Selecteer **Hybride (preview)** bij **Servicemodus**.
 
          ![Migratieservice maken - grondbeginselen](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-basics.png)
 
-4. Selecteer **Controleren + maken** .
+4. Selecteer **Controleren + maken**.
 
-5. Bekijk op het tabblad **Beoordelen en maken** de voorwaarden, controleer de andere gegevens en selecteer **Maken** .
+5. Bekijk op het tabblad **Beoordelen en maken** de voorwaarden, controleer de andere gegevens en selecteer **Maken**.
 
     ![Migratieservice maken - Beoordelen en maken](media/quickstart-create-data-migration-service-hybrid-portal/dms-create-service-review-and-create.png)
 
@@ -85,7 +85,7 @@ Registreer de Microsoft.DataMigration-resourceprovider voordat u uw eerste Azure
 
     ![Hybride modus-exemplaar van Azure Database Migration Service](media/quickstart-create-data-migration-service-hybrid-portal/dms-instance-hybrid-mode.png)
 
-6. Nadat de service is gemaakt, selecteert u **Eigenschappen** en kopieert u de waarde die wordt weergegeven in het vak **Resource-id** . Deze waarde gebruikt u voor het installeren van de hybride werkrol van Azure Database Migration Service.
+6. Nadat de service is gemaakt, selecteert u **Eigenschappen** en kopieert u de waarde die wordt weergegeven in het vak **Resource-id**. Deze waarde gebruikt u voor het installeren van de hybride werkrol van Azure Database Migration Service.
 
     ![Hybride modus van Azure Database Migration Service - eigenschappen](media/quickstart-create-data-migration-service-hybrid-portal/dms-copy-resource-id.png)
 
@@ -93,12 +93,12 @@ Registreer de Microsoft.DataMigration-resourceprovider voordat u uw eerste Azure
 
 U moet een registratie-id voor de Azure-app maken die de on-premises hybride werkrol kan gebruiken om te communiceren met Azure Database Migration Service in de cloud.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Azure Active Directory** , **App-registraties** en **Nieuwe registratie** .
+1. Selecteer in de Azure-portal achtereenvolgens **Azure Active Directory**, **App-registraties** en **Nieuwe registratie**.
 2. Geef een naam op voor de toepassing en selecteer onder **Ondersteunde accounttypen** het type accounts dat moet worden ondersteund om op te geven wie de toepassing kan gebruiken.
 
     ![Hybride modus van Azure Database Migration Service - toepassing registreren](media/quickstart-create-data-migration-service-hybrid-portal/dms-register-application.png)
 
-3. Gebruik de standaardwaarden voor de velden **Omleidings-URI (optioneel)** en selecteer **Registreren** .
+3. Gebruik de standaardwaarden voor de velden **Omleidings-URI (optioneel)** en selecteer **Registreren**.
 
 4. Nadat de registratie van de app-id is voltooid, noteert u de **Toepassings-id (client)** , die u gebruikt tijdens de installatie van de hybride werkrol.
 
@@ -139,7 +139,7 @@ U moet een registratie-id voor de Azure-app maken die de on-premises hybride wer
 
     ![Azure Database Migration Service - certificaat van hybride werkrol](media/quickstart-create-data-migration-service-hybrid-portal/dms-certificate.png)
 
-6. Navigeer in de Azure-portal naar de app-id onder **Beheren** , selecteer **Certificaten en geheimen** en selecteer vervolgens **Certificaat uploaden** om het openbare certificaat te selecteren dat u hebt gegenereerd.
+6. Navigeer in de Azure-portal naar de app-id onder **Beheren**, selecteer **Certificaten en geheimen** en selecteer vervolgens **Certificaat uploaden** om het openbare certificaat te selecteren dat u hebt gegenereerd.
 
     ![Azure Database Migration Service - certificaat van hybride werkrol uploaden](media/quickstart-create-data-migration-service-hybrid-portal/dms-app-upload-certificate.png)
 
@@ -152,7 +152,7 @@ U moet een registratie-id voor de Azure-app maken die de on-premises hybride wer
     > [!NOTE]
     > Wanneer u de installatieopdracht uitvoert, kunt u ook de volgende parameters gebruiken:
     >
-    > - **-TelemetryOptOut** : hiermee stopt u het verzenden van telemetrie door de werkrol, maar wordt de lokale logboekregistratie beperkt voortgezet.  Het installatieprogramma verzendt nog wel telemetrie.
+    > - **-TelemetryOptOut**: hiermee stopt u het verzenden van telemetrie door de werkrol, maar wordt de lokale logboekregistratie beperkt voortgezet.  Het installatieprogramma verzendt nog wel telemetrie.
     > - **-p {InstallLocation}** . Hiermee schakelt u het wijzigen van het installatiepad in, dat standaard C:\Program Files\DatabaseMigrationServiceHybrid is.
 
 8. Als het installatieprogramma zonder fouten wordt uitgevoerd, wordt de status Online weergegeven in Azure Database Migration Service en kunt u de databases gaan migreren.

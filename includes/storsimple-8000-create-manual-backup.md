@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 89f7be31514f0b78c3bfb3efd6e6aca14658d5cd
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93375986"
 ---
 #### <a name="to-create-a-manual-backup"></a>Een handmatige back-up maken
@@ -19,7 +19,7 @@ ms.locfileid: "93375986"
 
     ![Handmatige back-up maken](./media/storsimple-8000-create-manual-backup/createmanualbu1.png)
 
-3. Voer de volgende stappen uit op de blade **Nu back-up uitvoeren** :
+3. Voer de volgende stappen uit op de blade **Nu back-up uitvoeren**:
 
     1. Kies het juiste **Type momentopname** in de vervolgkeuzelijst: **Lokale momentopname** of **Cloud-momentopname**. Selecteer Lokale momentopname voor snelle back-ups of herstelacties en Cloud-momentopname voor tolerantie van gegevens.
 
@@ -29,7 +29,7 @@ ms.locfileid: "93375986"
 
         ![Hand matige back-up maken 3](./media/storsimple-8000-create-manual-backup/createmanualbu4.png)
 
-    3. Klik op de melding om de taak te controleren. U gaat nu naar de blade **Taken** , waar u de voortgang van de taak kunt bekijken.
+    3. Klik op de melding om de taak te controleren. U gaat nu naar de blade **Taken**, waar u de voortgang van de taak kunt bekijken.
 
 
 5. Nadat de back-uptaak is voltooid, gaat u naar het tabblad **Back-upcatalogus**.

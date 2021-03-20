@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: sharrai
 ms.openlocfilehash: 5860928d71c0e7431190908d5df5d7496e8ffb17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89426313"
 ---
 # <a name="deprecation-of-site-recovery-data-encryption-feature"></a>Afschaffing van Site Recovery-functie voor gegevens versleuteling
@@ -22,14 +22,14 @@ In dit document worden de details van de afschaffing en de herstel actie beschre
 ## <a name="deprecation-information"></a>Gegevens van afschaffing
 
 
-De functie voor gegevens versleuteling van Site Recovery is beschikbaar voor klanten die virtuele Hyper-V-machines beveiligen om ervoor te zorgen dat de gerepliceerde gegevens worden beschermd tegen beveiligings Risico's. deze functie wordt op **30 April 2022**afgeschaft. Het wordt vervangen door de geavanceerde functie [versleuteling op rest](https://azure.microsoft.com/blog/azure-site-recovery-encryption-at-rest/) , die gebruikmaakt van [Storage service Encryption](../storage/common/storage-service-encryption.md) (SSE). Met SSE worden gegevens versleuteld voordat ze persistent worden gemaakt en ontsleuteld op het moment dat ze worden opgehaald. bij een failover naar Azure worden uw Vm's uitgevoerd vanaf de versleutelde opslag accounts, waardoor een verbeterde herstel tijd (RTO) mogelijk is.
+De functie voor gegevens versleuteling van Site Recovery is beschikbaar voor klanten die virtuele Hyper-V-machines beveiligen om ervoor te zorgen dat de gerepliceerde gegevens worden beschermd tegen beveiligings Risico's. deze functie wordt op **30 April 2022** afgeschaft. Het wordt vervangen door de geavanceerde functie [versleuteling op rest](https://azure.microsoft.com/blog/azure-site-recovery-encryption-at-rest/) , die gebruikmaakt van [Storage service Encryption](../storage/common/storage-service-encryption.md) (SSE). Met SSE worden gegevens versleuteld voordat ze persistent worden gemaakt en ontsleuteld op het moment dat ze worden opgehaald. bij een failover naar Azure worden uw Vm's uitgevoerd vanaf de versleutelde opslag accounts, waardoor een verbeterde herstel tijd (RTO) mogelijk is.
 
 Als u een bestaande klant bent die gebruikmaakt van deze functie, hebt u communicatie ontvangen met de details van de afschaffing en de herstels tappen. 
 
 
 ## <a name="what-are-the-implications"></a>Wat zijn de gevolgen?
 
-Na **30 April 2022**kunnen vm's die nog steeds gebruikmaken van de buiten gebruik gestelde versleutelings functie, geen failover uitvoeren. 
+Na **30 April 2022** kunnen vm's die nog steeds gebruikmaken van de buiten gebruik gestelde versleutelings functie, geen failover uitvoeren. 
 
 ## <a name="required-action"></a>Vereiste actie
 Voer de volgende stappen uit om geslaagde failover-bewerkingen voort te zetten:

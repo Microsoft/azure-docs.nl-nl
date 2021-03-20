@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/05/2019
 ms.openlocfilehash: aa4be5852b4f8af00346a3ea9a86b13a85f99824
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93358453"
 ---
 # <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Herhalingen maken waarmee werkstroomacties worden herhaald of matrices worden verwerkt in Azure Logic Apps
@@ -124,7 +124,7 @@ Als u werkt in de code weergave voor uw logische app, kunt u in `Foreach` plaats
 
 Standaard worden cycli parallel uitgevoerd in een ' foreach '-lus. Als u elke cyclus opeenvolgend wilt uitvoeren, stelt u de **opeenvolgende** optie van de lus in. "Foreach"-lussen moeten sequentieel worden uitgevoerd als u geneste lussen of variabelen in lussen wilt waar u voorspel bare resultaten verwacht. 
 
-1. Kies in de rechter bovenhoek van de lus **weglatings** tekens ( **...** ) > **instellingen**.
+1. Kies in de rechter bovenhoek van de lus **weglatings** tekens (**...**) > **instellingen**.
 
    ![Kies op de lus ' foreach ' de optie '... ' > ' instellingen '](media/logic-apps-control-flow-loops/for-each-loop-settings.png)
 
@@ -215,7 +215,7 @@ Vanaf 8:00 uur elke dag wordt in dit voor beeld van de logische app een variabel
 
    ![Actie toevoegen voor oplopende variabele](./media/logic-apps-control-flow-loops/do-until-loop-increment-variable.png)
 
-1. Selecteer bij **naam** de **limiet** variabele. Voer voor **waarde** ' 1 ' in. 
+1. Selecteer bij **naam** de **limiet** variabele. Voer voor **waarde**' 1 ' in. 
 
      ![' Limiet ' verhogen door 1](./media/logic-apps-control-flow-loops/do-until-loop-increment-variable-settings.png)
 
@@ -251,9 +251,9 @@ Vanaf 8:00 uur elke dag wordt in dit voor beeld van de logische app een variabel
 
 De lus until stopt de uitvoering op basis van deze eigenschappen. Zorg er dus voor dat u de waarden dienovereenkomstig instelt:
 
-* **Aantal** : deze waarde is het hoogste aantal lussen dat wordt uitgevoerd voordat de lus wordt afgesloten. Zie voor de standaard-en maximum limieten voor het aantal ' until ' dat een logische app wordt uitgevoerd, [gelijktijdigheid, lussen en het debatchren van limieten](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits).
+* **Aantal**: deze waarde is het hoogste aantal lussen dat wordt uitgevoerd voordat de lus wordt afgesloten. Zie voor de standaard-en maximum limieten voor het aantal ' until ' dat een logische app wordt uitgevoerd, [gelijktijdigheid, lussen en het debatchren van limieten](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits).
 
-* **Time-out** : deze waarde is de meeste tijd die de lus uitvoert voordat deze wordt afgesloten en is opgegeven in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Zie voor de standaard-en maximum limieten voor de **time-outwaarde** de [limieten voor gelijktijdigheid, lussen en](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits)het afrekenen van batches.
+* **Time-out**: deze waarde is de meeste tijd die de lus uitvoert voordat deze wordt afgesloten en is opgegeven in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Zie voor de standaard-en maximum limieten voor de **time-outwaarde** de [limieten voor gelijktijdigheid, lussen en](../logic-apps/logic-apps-limits-and-config.md#looping-debatching-limits)het afrekenen van batches.
 
   De time-outwaarde wordt geëvalueerd voor elke lus-cyclus. Als een actie in de lus langer duurt dan de time-outlimiet, wordt de huidige cyclus niet gestopt. De volgende cyclus wordt echter niet gestart omdat niet wordt voldaan aan de limiet voorwaarde.
 

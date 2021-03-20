@@ -7,10 +7,10 @@ ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 0d3074d58560df5cb5bd6bdc2c0437a4be828918
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86499389"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Profileer productie toepassingen in azure met Application Insights
@@ -30,9 +30,9 @@ Raadpleeg de [hand leiding](profiler-troubleshooting.md?toc=/azure/azure-monitor
 
 ## <a name="view-profiler-data"></a>Profiler gegevens weer geven
 
-Voor Profiler voor het uploaden van traceringen moet uw toepassing actief aanvragen verwerken. Als u een experiment uitvoert, kunt u aanvragen genereren voor uw web-app met behulp van [Application Insights prestatie testen](/vsts/load-test/app-service-web-app-performance-test). Als u Profiler hebt ingeschakeld, kunt u een korte belasting test uitvoeren. Terwijl de belasting test wordt uitgevoerd, selecteert u de knop **profiel nu** in het [deel venster **instellingen van Profiler** ](profiler-settings.md). Wanneer Profiler wordt uitgevoerd, worden de profielen op wille keurige tijdstippen per uur en gedurende een periode van twee minuten. Als uw toepassing een stabiele stroom van aanvragen afhandelt, wordt elk uur traceringen door Profiler geüpload.
+Voor Profiler voor het uploaden van traceringen moet uw toepassing actief aanvragen verwerken. Als u een experiment uitvoert, kunt u aanvragen genereren voor uw web-app met behulp van [Application Insights prestatie testen](/vsts/load-test/app-service-web-app-performance-test). Als u Profiler hebt ingeschakeld, kunt u een korte belasting test uitvoeren. Terwijl de belasting test wordt uitgevoerd, selecteert u de knop **profiel nu** in het [deel venster **instellingen van Profiler**](profiler-settings.md). Wanneer Profiler wordt uitgevoerd, worden de profielen op wille keurige tijdstippen per uur en gedurende een periode van twee minuten. Als uw toepassing een stabiele stroom van aanvragen afhandelt, wordt elk uur traceringen door Profiler geüpload.
 
-Nadat uw toepassing een aantal verkeer heeft ontvangen en de Profiler tijd heeft gehad om de traceringen te uploaden, moet u traceringen hebben om weer te geven. Dit proces kan 5 tot 10 minuten duren. Als u traceringen wilt weer geven, selecteert u in het deel venster **prestaties** de optie **acties ondernemen**en selecteert u de knop **traceringen Profiler** .
+Nadat uw toepassing een aantal verkeer heeft ontvangen en de Profiler tijd heeft gehad om de traceringen te uploaden, moet u traceringen hebben om weer te geven. Dit proces kan 5 tot 10 minuten duren. Als u traceringen wilt weer geven, selecteert u in het deel venster **prestaties** de optie **acties ondernemen** en selecteert u de knop **traceringen Profiler** .
 
 ![Voor beeld van profilerings logboeken van Application Insights performance ster][performance-blade]
 
@@ -83,7 +83,7 @@ Methoden als **SqlCommand.Exeschattige** geven aan dat de code wacht tot de data
 
 ### <a name="waiting-await_time"></a><a id="await"></a>Wachten (tijd in afwachting \_ )
 
-**AWAIT \_ TIJD** geeft aan dat de code wacht tot een andere taak is voltooid. Deze vertraging treedt meestal op met de C#-instructie **AWAIT** . Wanneer de code van een C# in **afwachting**is, wordt door de thread de besturing van de thread groep ontslagen en geretourneerd. er is geen thread die wacht **totdat de bewerking** is voltooid. De thread die de **wacht** tijd ' geblokkeerd ' had, is echter in afwachting van het volt ooien van de bewerking. De instructie **AWAIT \_ time** -out geeft de geblokkeerde tijd aan die wacht totdat de taak is voltooid.
+**AWAIT \_ TIJD** geeft aan dat de code wacht tot een andere taak is voltooid. Deze vertraging treedt meestal op met de C#-instructie **AWAIT** . Wanneer de code van een C# in **afwachting** is, wordt door de thread de besturing van de thread groep ontslagen en geretourneerd. er is geen thread die wacht **totdat de bewerking** is voltooid. De thread die de **wacht** tijd ' geblokkeerd ' had, is echter in afwachting van het volt ooien van de bewerking. De instructie **AWAIT \_ time** -out geeft de geblokkeerde tijd aan die wacht totdat de taak is voltooid.
 
 ### <a name="blocked-time"></a><a id="block"></a>Geblokkeerde tijd
 

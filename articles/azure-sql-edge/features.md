@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 09/03/2020
 ms.openlocfilehash: 19dcbbf102a1d8d21f1b14780ea33816a1677c55
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93392024"
 ---
 # <a name="supported-features-of-azure-sql-edge"></a>Ondersteunde functies van Azure SQL Edge 
@@ -74,7 +74,7 @@ De volgende lijst bevat de SQL Server 2019 in Linux-functies die momenteel niet 
 | &nbsp; | Data base automatisch verkleinen. De eigenschap automatisch verkleinen voor een Data Base kan worden ingesteld met behulp van de `ALTER DATABASE <database_name> SET AUTO_SHRINK ON` opdracht, maar deze wijziging heeft geen effect. De automatische verkleinings taak wordt niet uitgevoerd voor de data base. Gebruikers kunnen de database bestanden nog steeds verkleinen met behulp van de opdracht ' DBCC '. |
 | &nbsp; | Database momentopnamen. |
 | &nbsp; | Ondersteuning voor permanent geheugen. |
-| &nbsp; | Micro soft Distributed Transaction Coordinator. |
+| &nbsp; | Micro soft gedistribueerde transactie. |
 | &nbsp; | Resource regeling en i/o-resource beheer. |
 | &nbsp; | Extensie van de buffer groep. |
 | &nbsp; | Gedistribueerde query's met verbindingen van derden. |

@@ -8,10 +8,10 @@ ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 10e4bedae5b7c429152a3503fff2cb2769d66eb5
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100377173"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Fout tolerantie in Kopieer activiteit toevoegen door incompatibele rijen over te slaan
@@ -67,10 +67,10 @@ In het volgende voor beeld wordt een JSON-definitie geboden voor het overs laan 
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| **enableSkipIncompatibleRow** | Het overs laan van incompatibele rijen tijdens het kopiëren inschakelen of niet. | Waar<br/>False (standaard) | No |
-| **redirectIncompatibleRowSettings** | Een groep eigenschappen die kan worden opgegeven wanneer u de niet-compatibele rijen wilt vastleggen. | &nbsp; | No |
-| **linkedServiceName** | De gekoppelde service van Azure Storage om het logboek op te slaan dat de overgeslagen rijen bevat. | De naam van een gekoppelde [opslag](data-factory-azure-blob-connector.md#azure-storage-linked-service) -of [azurestoragesas zijn](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service) -service, die verwijst naar het opslag exemplaar dat u wilt gebruiken om het logboek bestand op te slaan. | No |
-| **path** | Het pad naar het logboek bestand dat de overgeslagen rijen bevat. | Geef het pad op naar de Blob-opslag die u wilt gebruiken om de niet-compatibele gegevens te registreren. Als u geen pad opgeeft, maakt de service een container voor u. | No |
+| **enableSkipIncompatibleRow** | Het overs laan van incompatibele rijen tijdens het kopiëren inschakelen of niet. | Waar<br/>False (standaard) | Nee |
+| **redirectIncompatibleRowSettings** | Een groep eigenschappen die kan worden opgegeven wanneer u de niet-compatibele rijen wilt vastleggen. | &nbsp; | Nee |
+| **linkedServiceName** | De gekoppelde service van Azure Storage om het logboek op te slaan dat de overgeslagen rijen bevat. | De naam van een gekoppelde [opslag](data-factory-azure-blob-connector.md#azure-storage-linked-service) -of [azurestoragesas zijn](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service) -service, die verwijst naar het opslag exemplaar dat u wilt gebruiken om het logboek bestand op te slaan. | Nee |
+| **path** | Het pad naar het logboek bestand dat de overgeslagen rijen bevat. | Geef het pad op naar de Blob-opslag die u wilt gebruiken om de niet-compatibele gegevens te registreren. Als u geen pad opgeeft, maakt de service een container voor u. | Nee |
 
 ## <a name="monitoring"></a>Bewaking
 Nadat het uitvoeren van de Kopieer activiteit is voltooid, kunt u het aantal overgeslagen rijen bekijken in de sectie bewaking:

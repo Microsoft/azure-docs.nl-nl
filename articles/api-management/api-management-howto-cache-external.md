@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: 6288a10e111e42629abf5e09b84a6a7791dcfe95
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96018219"
 ---
 # <a name="use-an-external-redis-compatible-cache-in-azure-api-management"></a>Een extern met redis compatibele cache gebruiken in azure API Management
@@ -46,13 +46,13 @@ Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 + [Een Azure API Management-exemplaar maken](get-started-create-service-instance.md)
 + Inzicht in [Aangepast opslaan in cache in Azure API Management](api-management-howto-cache.md)
 
-## <a name="create-azure-cache-for-redis"></a><a name="create-cache"> </a> Azure-cache maken voor redis
+## <a name="create-azure-cache-for-redis"></a><a name="create-cache"></a> Azure-cache maken voor redis
 
 In dit gedeelte wordt uitgelegd hoe u een Azure-cache voor Redis maakt in Azure. Als u al een Azure-cache voor Redis hebt, binnen of buiten Azure, kunt u <a href="#add-external-cache">doorgaan</a> naar het volgende gedeelte.
 
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
-## <a name="deploy-redis-cache-to-kubernetes"></a><a name="create-cache"> </a> Redis-cache implementeren op Kubernetes
+## <a name="deploy-redis-cache-to-kubernetes"></a><a name="create-cache"></a> Redis-cache implementeren op Kubernetes
 
 Voor het opslaan in de cache zijn zelf-hostende gateways uitsluitend afhankelijk van externe caches. Voor het opslaan in cache als effectief zelf-hostende gateways en de cache waarvan ze afhankelijk zijn, moeten zich dicht bij elkaar bevinden om de zoek-en opslag latentie te minimaliseren. Het implementeren van een redis-cache in hetzelfde Kubernetes-cluster of in een afzonderlijk cluster in de buurt zijn de beste opties. Volg deze [koppeling](https://github.com/kubernetes/examples/tree/master/guestbook) voor meer informatie over het implementeren van redis-cache naar een Kubernetes-cluster.
 

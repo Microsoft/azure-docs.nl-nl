@@ -12,10 +12,10 @@ ms.reviewer: artek
 ms.subservice: common
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 242700c05053aa9d07e3a561a21986c8451a46c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91612441"
 ---
 # <a name="check-the-last-sync-time-property-for-a-storage-account"></a>De eigenschap van de laatste synchronisatie tijd voor een opslag account controleren
@@ -48,7 +48,7 @@ $lastSyncTime = $(Get-AzStorageAccount -ResourceGroupName <resource-group> `
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-Als u de laatste synchronisatie tijd voor het opslag account met Azure CLI wilt ophalen, controleert u de eigenschap **geoReplicationStats. lastSyncTime** van het opslag account. Gebruik de `--expand` para meter om waarden te retour neren voor de eigenschappen die onder **geoReplicationStats**zijn genest. Vergeet niet om de waarden van de tijdelijke aanduidingen te vervangen door uw eigen waarden:
+Als u de laatste synchronisatie tijd voor het opslag account met Azure CLI wilt ophalen, controleert u de eigenschap **geoReplicationStats. lastSyncTime** van het opslag account. Gebruik de `--expand` para meter om waarden te retour neren voor de eigenschappen die onder **geoReplicationStats** zijn genest. Vergeet niet om de waarden van de tijdelijke aanduidingen te vervangen door uw eigen waarden:
 
 ```azurecli-interactive
 $lastSyncTime=$(az storage account show \
@@ -63,6 +63,6 @@ $lastSyncTime=$(az storage account show \
 
 ## <a name="see-also"></a>Zie ook
 
-- [Azure Storage redundantie](storage-redundancy.md)
+- [Azure Storage-redundantie](storage-redundancy.md)
 - [De redundantie optie voor een opslag account wijzigen](redundancy-migration.md)
 - [Geo-redundantie gebruiken om Maxi maal beschik bare toepassingen te ontwerpen](geo-redundant-design.md)

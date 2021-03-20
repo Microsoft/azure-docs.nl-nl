@@ -10,10 +10,10 @@ ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
 ms.openlocfilehash: e112060db4a44884d3094a939b03ff106ba72e65
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96492196"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Ontwikkelen voor Azure Files met .NET
@@ -54,7 +54,7 @@ Maak in Visual Studio een nieuwe Windows-consoletoepassing. In de volgende stapp
 1. Kies in **een nieuw project maken de** optie **console-app (.NET Framework)** voor C# en selecteer vervolgens **volgende**.
 1. In **uw nieuwe project configureren** voert u een naam in voor de app en selecteert u **maken**.
 
-Voeg alle code voorbeelden in dit artikel toe aan de `Program` klasse in het *Program.cs* -bestand.
+Voeg alle code voorbeelden in dit artikel toe aan de `Program` klasse in het bestand *Program. cs* .
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>NuGet gebruiken om de vereiste pakketten te installeren
 
@@ -135,7 +135,7 @@ Vervang door `myaccount` de naam van uw opslag account en `StorageAccountKeyEndi
 
 ## <a name="add-using-directives"></a>Using-instructies toevoegen
 
-Open in **Solution Explorer** het *Program.cs* -bestand en voeg de volgende instructies toe aan het begin van het bestand.
+Open in **Solution Explorer** het bestand *Program. cs* en voeg de volgende instructies toe aan het begin van het bestand.
 
 # <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
 
@@ -156,7 +156,7 @@ using Microsoft.Azure.Storage.File; // Namespace for Azure Files
 
 ## <a name="access-the-file-share-programmatically"></a>Via een programma toegang krijgen tot de bestandsshare
 
-Voeg in het *Program.cs* -bestand de volgende code toe om via een programma toegang te krijgen tot de bestands share.
+Voeg in het bestand *Program. cs* de volgende code toe om via een programma toegang te krijgen tot de bestands share.
 
 # <a name="net-v12"></a>[\.NET v12](#tab/dotnet)
 
@@ -559,7 +559,7 @@ In het volgende code voorbeeld ziet u hoe u de .NET-client bibliotheek gebruikt 
 
 # <a name="net-v11"></a>[\.NET v11](#tab/dotnetv11)
 
-Voeg eerst de volgende `using` instructies toe aan uw *Program.cs* -bestand, samen met de regels die u hierboven hebt toegevoegd:
+Voeg eerst de volgende- `using` instructies toe aan het bestand *Program. cs* , samen met de regels die u hierboven hebt toegevoegd:
 
 ```csharp
 using Microsoft.Azure.Storage.File.Protocol;

@@ -4,10 +4,10 @@ description: Dit Azure Policy-patroon biedt een voorbeeld van het implementeren 
 ms.date: 08/17/2020
 ms.topic: sample
 ms.openlocfilehash: 0a9eec54954b8963f38b3f19a0d0cabffe1092e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89649974"
 ---
 # <a name="azure-policy-pattern-deploy-resources"></a>Azure Policy-patroon: resources implementeren
@@ -32,11 +32,11 @@ Het blok **properties.policyRule.then.details** geeft aan waar met Azure Policy 
 
 :::code language="json" source="~/policy-templates/patterns/pattern-deploy-resources.json" range="24-26":::
 
-De _matrix_eigenschap **roleDefinitionIds** in het blok **properties.policyRule.then.details** geeft aan de beleidsdefinitie door welke rechten de beheerde identiteit nodig heeft om de opgenomen Resource Manager-sjabloon te implementeren. Deze eigenschap moet zijn ingesteld om rollen te omvatten die machtigingen hebben die nodig zijn voor de sjabloonimplementatie, maar moet gebruikmaken van het concept ‘principe van minste machtigingen’, en mag alleen de benodigde bewerkingen hebben en niets meer.
+De _matrix_ eigenschap **roleDefinitionIds** in het blok **properties.policyRule.then.details** geeft aan de beleidsdefinitie door welke rechten de beheerde identiteit nodig heeft om de opgenomen Resource Manager-sjabloon te implementeren. Deze eigenschap moet zijn ingesteld om rollen te omvatten die machtigingen hebben die nodig zijn voor de sjabloonimplementatie, maar moet gebruikmaken van het concept ‘principe van minste machtigingen’, en mag alleen de benodigde bewerkingen hebben en niets meer.
 
 #### <a name="deployment-template"></a>Implementatiesjabloon
 
-Het **implementatie**gedeelte van de beleidsdefinitie heeft een blok **eigenschappen** waarmee drie kernonderdelen worden gedefinieerd:
+Het **implementatie** gedeelte van de beleidsdefinitie heeft een blok **eigenschappen** waarmee drie kernonderdelen worden gedefinieerd:
 
 - **modus**: met deze eigenschap wordt de [implementatiemodus](../../../azure-resource-manager/templates/deployment-modes.md) van de sjabloon ingesteld.
 

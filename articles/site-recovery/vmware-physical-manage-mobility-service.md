@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: d921bddf90c415cb244e2cc9ad98354392a537ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90530145"
 ---
 # <a name="manage-the-mobility-agent"></a>De Mobility-agent beheren 
@@ -27,12 +27,12 @@ U kunt Mobility agent op uw server instellen wanneer u Azure Site Recovery gebru
 
 1. Voordat u begint, moet u ervoor zorgen dat de configuratie server, scale-out proces servers en alle Master doel servers die deel uitmaken van uw implementatie, worden bijgewerkt voordat u de Mobility-service op beveiligde computers bijwerkt.
     1. Vanaf 9,36-versie gaat u voor SUSE Linux Enterprise Server 11 SP3, RHEL 5, CentOS 5, Debian 7 controleren of het meest recente installatie programma [beschikbaar is op de configuratie server en de scale-out proces server](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server).
-1. Open de kluis > **gerepliceerde items**in de portal.
+1. Open de kluis > **gerepliceerde items** in de portal.
 1. Als de configuratie server de meest recente versie is, wordt er een melding weer gegeven dat de nieuwe site Recovery-agent update beschikbaar is. Klik om te installeren. "
 
      ![Venster gerepliceerde items](./media/vmware-azure-install-mobility-service/replicated-item-notif.png)
 
-4. Klik op de melding en selecteer bij **agent update**de computers waarop u de Mobility-service wilt bijwerken. Klik vervolgens op **OK**.
+4. Klik op de melding en selecteer bij **agent update** de computers waarop u de Mobility-service wilt bijwerken. Klik vervolgens op **OK**.
 
      ![VM-lijst van gerepliceerde items](./media/vmware-azure-install-mobility-service/update-okpng.png)
 

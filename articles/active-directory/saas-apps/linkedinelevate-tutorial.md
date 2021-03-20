@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/21/2019
 ms.author: jeedes
 ms.openlocfilehash: d4410a39cc9b04565d7b753b7821e11c8ece2593
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458537"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-linkedin-elevate"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met LinkedIn Elevate
@@ -42,7 +42,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 
 * LinkedIn Elevate ondersteunt door **SP en IDP** geïnitieerde eenmalige aanmelding
-* LinkedIn Elevate ondersteunt **Just-In-Time** -gebruikersinrichting
+* LinkedIn Elevate ondersteunt **Just-In-Time**-gebruikersinrichting
 * LinkedIn Elevate biedt ondersteuning voor het [**automatisch inrichten** van gebruikers](linkedinelevate-provisioning-tutorial.md)
 
 ## <a name="adding-linkedin-elevate-from-the-gallery"></a>LinkedIn Elevate vanuit de galerie toevoegen
@@ -50,16 +50,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van LinkedIn Elevate met Azure AD wilt configureren, moet u LinkedIn Elevate vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **LinkedIn Elevate** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **LinkedIn Elevate**.
 1. Selecteer **LinkedIn Elevate** in het resultatenvenster en voeg de toepassing toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-linkedin-elevate"></a>Eenmalige aanmelding van Azure AD configureren en testen voor LinkedIn Elevate
 
-Configureer en test eenmalige aanmelding van Azure AD met LinkedIn Elevate met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in LinkedIn Elevate.
+Configureer en test eenmalige aanmelding van Azure AD met LinkedIn Elevate met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in LinkedIn Elevate.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met LinkedIn Elevate te configureren en te testen:
 
@@ -74,15 +74,15 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met LinkedIn El
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **LinkedIn Elevate** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **LinkedIn Elevate** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    a. Voer in het tekstvak **Id** de waarde van de **entiteits-ID** in. U kopieert de entiteits-id uit de LinkedIn-portal, wat verderop in deze zelfstudie wordt uitgelegd.
+    a. Voer in het tekstvak **ID** de waarde van de **entiteits-ID** in. U kopieert de entiteits-id uit de LinkedIn-portal, wat verderop in deze zelfstudie wordt uitgelegd.
 
     b. Typ in het tekstvak **Antwoord-URL** de waarde van de **URL voor Assertion Consumer Service** in. U kopieert de waarde voor de URL voor de Assertion Consumer Servicewaarde uit de LinkedIn-portal, wat verderop in deze zelfstudie wordt uitgelegd.
 
@@ -90,7 +90,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://www.linkedin.com/checkpoint/enterprise/login/<AccountId>?application=elevate&applicationInstanceId=<InstanceId>`
 
-1. In de LinkedIn Elevate-toepassing worden de SAML-beweringen in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname** . In de toepassing LinkedIn Elevate wordt verwacht dat nameidentifier is toegewezen met **user.mail** . Daarom moet u de toewijzing van het kenmerk bewerken door op het pictogram Bewerken te klikken en de toewijzing van het kenmerk te wijzigen.
+1. In de LinkedIn Elevate-toepassing worden de SAML-beweringen in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van de SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de toepassing LinkedIn Elevate wordt verwacht dat nameidentifier is toegewezen met **user.mail**. Daarom moet u de toewijzing van het kenmerk bewerken door op het pictogram Bewerken te klikken en de toewijzing van het kenmerk te wijzigen.
 
     ![image](common/edit-attribute.png)
 
@@ -112,37 +112,37 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot LinkedIn Elevate.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **LinkedIn Elevate** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-linkedin-elevate-sso"></a>Eenmalige aanmelding voor LinkedIn Elevate configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij uw LinkedIn Elevate-tenant.
 
-1. Klik in **Accountcentrum** onder **Instellingen** op **Algemene instellingen** . Selecteer ook **Elevate - Elevate AAD Test** in de vervolgkeuzelijst.
+1. Klik in **Accountcentrum** onder **Instellingen** op **Algemene instellingen**. Selecteer ook **Elevate - Elevate AAD Test** in de vervolgkeuzelijst.
 
     ![Schermopname van de Algemene instellingen waar u Elevate AAD Test kunt selecteren.](./media/linkedinelevate-tutorial/tutorial_linkedin_admin_01.png)
 
@@ -152,9 +152,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     a. Kopieer de waarde van de **entiteits-ID** en plak deze in het tekstvak **Id** in **Standaard SAML-configuratie** in Azure Portal.
 
-    b. Kopieer de waarde van de **URL voor Assertion Consumer Access (ACS)** en plak deze in het tekstvak **Antwoord-URL** in de **Standaard SAML-configuratie** in Azure Portal.
+    b. Kopieer de waarde van de **URL voor Assertion Consumer Access (ACS)** en plak deze in het tekstvak **Antwoord-URL** in de **Standaard SAML-configuratie** in de Azure-portal.
 
-1. Ga naar het gedeelte **met beheerdersinstellingen voor LinkedIn** . Upload het XML-bestand dat u hebt gedownload uit Azure Portal door op de optie XML-bestand uploaden te klikken.
+1. Ga naar het gedeelte **met beheerdersinstellingen voor LinkedIn**. Upload het XML-bestand dat u hebt gedownload uit Azure Portal door op de optie XML-bestand uploaden te klikken.
 
     ![Schermopname van het configureren van de instellingen voor eenmalige aanmelding voor de LinkedIn-serviceprovider waar u een XML-bestand kunt uploaden.](./media/linkedinelevate-tutorial/tutorial_linkedin_metadata_03.png)
 

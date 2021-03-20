@@ -8,10 +8,10 @@ ms.author: abnarain
 ms.custom: seo-lt-2019
 ms.date: 11/27/2018
 ms.openlocfilehash: b9ba2f9de82522d4348fa341ad0b41d43c3eebcc
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100375643"
 ---
 # <a name="transform-data-by-using-the-sql-server-stored-procedure-activity-in-azure-data-factory"></a>Gegevens transformeren met behulp van de SQL Server opgeslagen procedure activiteit in Azure Data Factory
@@ -66,12 +66,12 @@ In de volgende tabel worden deze JSON-eigenschappen beschreven:
 
 | Eigenschap                  | Beschrijving                              | Vereist |
 | ------------------------- | ---------------------------------------- | -------- |
-| naam                      | Naam van de activiteit                     | Yes      |
-| beschrijving               | Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt | No       |
-| type                      | Voor de opgeslagen procedure activiteit is het type activiteit **SqlServerStoredProcedure** | Yes      |
-| linkedServiceName         | Verwijzing naar de **Azure SQL database** of **Azure Synapse Analytics** of **SQL Server** geregistreerd als een gekoppelde service in Data Factory. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service. | Yes      |
-| storedProcedureName       | Geef de naam op van de opgeslagen procedure die moet worden aangeroepen. | Yes      |
-| storedProcedureParameters | Geef de waarden op voor opgeslagen procedure parameters. Gebruiken `"param1": { "value": "param1Value","type":"param1Type" }` voor het door geven van parameter waarden en het type ervan dat door de gegevens bron wordt ondersteund. Als u null wilt door geven voor een para meter, gebruikt u `"param1": { "value": null }` (alle kleine letters). | No       |
+| naam                      | Naam van de activiteit                     | Ja      |
+| beschrijving               | Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt | Nee       |
+| type                      | Voor de opgeslagen procedure activiteit is het type activiteit **SqlServerStoredProcedure** | Ja      |
+| linkedServiceName         | Verwijzing naar de **Azure SQL database** of **Azure Synapse Analytics** of **SQL Server** geregistreerd als een gekoppelde service in Data Factory. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service. | Ja      |
+| storedProcedureName       | Geef de naam op van de opgeslagen procedure die moet worden aangeroepen. | Ja      |
+| storedProcedureParameters | Geef de waarden op voor opgeslagen procedure parameters. Gebruiken `"param1": { "value": "param1Value","type":"param1Type" }` voor het door geven van parameter waarden en het type ervan dat door de gegevens bron wordt ondersteund. Als u null wilt door geven voor een para meter, gebruikt u `"param1": { "value": null }` (alle kleine letters). | Nee       |
 
 ## <a name="parameter-data-type-mapping"></a>Toewijzing van parameter gegevens type
 Het gegevens type dat u opgeeft voor de para meter is het Azure Data Factory type dat wordt toegewezen aan het gegevens type in de gegevens bron die u gebruikt. U kunt de gegevens type toewijzingen voor uw gegevens bron vinden in het gebied connectors. Enkele voor beelden zijn

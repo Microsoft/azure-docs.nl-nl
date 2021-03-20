@@ -10,10 +10,10 @@ ms.date: 11/18/2020
 ms.author: procha
 ms.reviewer: jrasnick
 ms.openlocfilehash: a1031656eaa5125d07ae078773379270b26625e7
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98121376"
 ---
 # <a name="compatibility-issues-with-third-party-applications-and-azure-synapse-analytics"></a>Compatibiliteits problemen met toepassingen van derden en Azure Synapse Analytics
@@ -53,7 +53,7 @@ In het onderstaande voor beeld ziet u een tableau TDC-bestand waarin de para met
 ```
 Neem contact op met de ondersteuning van tableau voor meer informatie over het gebruik van TDC-bestanden. 
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [T-SQL-taal elementen voor een toegewezen SQL-groep in azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-language-elements.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
 * [T-SQL-instructies die worden ondersteund voor een toegewezen SQL-groep in azure Synapse Analytics.](./sql-data-warehouse-reference-tsql-statements.md)

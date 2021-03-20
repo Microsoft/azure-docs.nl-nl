@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: tisande
 ms.openlocfilehash: 1f3c4ef56feb77e9b01375b8b5dbdb567f5bfadb
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102179966"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Tref woorden in Azure Cosmos DB

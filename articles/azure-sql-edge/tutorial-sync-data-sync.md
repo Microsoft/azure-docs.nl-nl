@@ -10,15 +10,15 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
 ms.openlocfilehash: 5659ce5fa6f99463f58a33662563d768248fd8cb
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93394897"
 ---
 # <a name="tutorial-sync-data-from-sql-edge-to-azure-sql-database-by-using-sql-data-sync"></a>Zelfstudie: Gegevens synchroniseren vanuit Azure SQL Edge naar Azure SQL Database met behulp van SQL Data Sync
 
-In deze zelfstudie leert u hoe u een Azure SQL Data Sync- *synchronisatiegroep* kunt gebruiken om gegevens van de Azure SQL Edge incrementeel te synchroniseren naar Azure SQL Database. SQL Data Sync is een service die is gebouwd op een Azure SQL Database waarmee u de gegevens die u selecteert in twee richtingen kunt synchroniseren over meerdere Microsoft Azure SQL-databases en SQL server-exemplaren. Zie [Azure SQL Data Sync](../azure-sql/database/sql-data-sync-data-sql-server-sql-database.md) voor meer informatie over SQL Data Sync.
+In deze zelfstudie leert u hoe u een Azure SQL Data Sync-*synchronisatiegroep* kunt gebruiken om gegevens van de Azure SQL Edge incrementeel te synchroniseren naar Azure SQL Database. SQL Data Sync is een service die is gebouwd op een Azure SQL Database waarmee u de gegevens die u selecteert in twee richtingen kunt synchroniseren over meerdere Microsoft Azure SQL-databases en SQL server-exemplaren. Zie [Azure SQL Data Sync](../azure-sql/database/sql-data-sync-data-sql-server-sql-database.md) voor meer informatie over SQL Data Sync.
 
 Omdat SQL Edge is gebaseerd op de nieuwste versies van de [SQL Server Database-engine](/sql/sql-server/sql-server-technical-documentation/), kunnen alle gegevenssynchronisatiemechanismen die van toepassing zijn op een SQL Server-exemplaar ook worden gebruikt voor het synchroniseren van gegevens van of naar een SQL Edge-exemplaar dat wordt uitgevoerd op een edge-apparaat.
 
@@ -41,7 +41,7 @@ Bij deze zelfstudie is een Windows-computer vereist die is geconfigureerd met de
 Het instellen van synchronisatie tussen een database in Azure SQL Database en een SQL Edge-exemplaar met behulp van SQL Data Sync omvat drie belangrijke stappen:  
 
 
-1. Gebruik de Azure-portal om een synchronisatiegroep te maken. Zie [Een synchronisatiegroep maken](../azure-sql/database/sql-data-sync-sql-server-configure.md#create-sync-group) voor meer informatie. U kunt één *hub* -database gebruiken om meerdere synchronisatiegroepen te maken om gegevens van verschillende SQL Edge-exemplaren te synchroniseren met een of meer databases in Microsoft Azure SQL Database. 
+1. Gebruik de Azure-portal om een synchronisatiegroep te maken. Zie [Een synchronisatiegroep maken](../azure-sql/database/sql-data-sync-sql-server-configure.md#create-sync-group) voor meer informatie. U kunt één *hub*-database gebruiken om meerdere synchronisatiegroepen te maken om gegevens van verschillende SQL Edge-exemplaren te synchroniseren met een of meer databases in Microsoft Azure SQL Database. 
 
 2. Voeg synchronisatieleden toe aan de synchronisatiegroep. Zie [Synchronisatieleden toevoegen](../azure-sql/database/sql-data-sync-sql-server-configure.md#add-sync-members) voor meer informatie.
 

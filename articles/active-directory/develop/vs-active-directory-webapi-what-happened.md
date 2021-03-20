@@ -11,10 +11,10 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: devx-track-csharp, aaddev, vs-azure
 ms.openlocfilehash: a070bee7a9fa836eeac7c739cf2757295533ad7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88165359"
 ---
 # <a name="what-happened-to-my-webapi-project-visual-studio-azure-active-directory-connected-service"></a>Wat is er gebeurd met mijn WebAPI-project (Visual Studio Azure Active Directory Connected service)
@@ -31,7 +31,7 @@ Zie [aan](vs-active-directory-webapi-getting-started.md)de slag voor meer inform
 
 Van invloed op het project bestand *. NET references) en `packages.config` (NuGet references).
 
-| Type | Naslaginformatie |
+| Type | Referentie |
 | --- | --- |
 | NET NuGet | Micro soft. Owin |
 | NET NuGet | Microsoft.Owin.Host.SystemWeb |
@@ -44,7 +44,7 @@ Van invloed op het project bestand *. NET references) en `packages.config` (NuGe
 
 Aanvullende verwijzingen als u de optie **Directory gegevens lezen** hebt geselecteerd:
 
-| Type | Naslaginformatie |
+| Type | Referentie |
 | --- | --- |
 | NET NuGet | EntityFramework |
 | .NET        | EntityFramework. SqlServer (alleen Visual Studio 2015) |
@@ -58,7 +58,7 @@ Aanvullende verwijzingen als u de optie **Directory gegevens lezen** hebt gesele
 
 De volgende verwijzingen worden verwijderd (ASP.NET 4 projecten, net als in Visual Studio 2015):
 
-| Type | Naslaginformatie |
+| Type | Referentie |
 | --- | --- |
 | NET NuGet | Micro soft. AspNet. Identity. core |
 | NET NuGet | Micro soft. AspNet. Identity. EntityFramework |

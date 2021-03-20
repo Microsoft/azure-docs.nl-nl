@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/23/2019
 ms.openlocfilehash: a141177846def9c94216684c1083d0d336eeda1e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93333236"
 ---
 # <a name="data-modeling-in-azure-cosmos-db"></a>Gegevens modellering in Azure Cosmos DB
@@ -118,7 +118,7 @@ Neem dit JSON-fragment op.
 }
 ```
 
-Dit kan zijn dat een post-entiteit met Inge sloten opmerkingen eruit zou zien als we een typische blog of CMS-systeem zouden model leren. Het probleem met dit voor beeld is dat de opmerkingen matrix niet is **gebonden** , wat inhoudt dat er geen (praktische) limiet is voor het aantal opmerkingen dat één post kan hebben. Dit kan een probleem zijn omdat de grootte van het item oneindig groot kan worden uitgebreid.
+Dit kan zijn dat een post-entiteit met Inge sloten opmerkingen eruit zou zien als we een typische blog of CMS-systeem zouden model leren. Het probleem met dit voor beeld is dat de opmerkingen matrix niet is **gebonden**, wat inhoudt dat er geen (praktische) limiet is voor het aantal opmerkingen dat één post kan hebben. Dit kan een probleem zijn omdat de grootte van het item oneindig groot kan worden uitgebreid.
 
 Naarmate de grootte van het item groeit, is de mogelijkheid om gegevens over de kabel te verzenden en om het item op de juiste schaal te lezen en bij te werken, van invloed.
 

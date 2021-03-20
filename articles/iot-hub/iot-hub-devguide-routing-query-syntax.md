@@ -11,10 +11,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 ms.openlocfilehash: 83c290adea02915db1dc52bd359b4d3165611522
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92547704"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Querysyntaxis voor IoT Hub-berichtroutering
@@ -53,7 +53,7 @@ Met de IoT Hub definieert u een [algemene indeling](iot-hub-devguide-messages-co
 
 Systeem eigenschappen helpen de inhoud en bron van de berichten te identificeren. 
 
-| Eigenschap | Type | Description |
+| Eigenschap | Type | Beschrijving |
 | -------- | ---- | ----------- |
 | Invoer | tekenreeks | De gebruiker geeft het inhouds type van het bericht op. Als u een query wilt toestaan voor de hoofd tekst van het bericht, moet u de waarde Application/JSON instellen. |
 | contentEncoding | tekenreeks | De gebruiker geeft het type code ring van het bericht op. Toegestane waarden zijn UTF-8, UTF-16, UTF-32 als het content type is ingesteld op Application/JSON. |
@@ -62,7 +62,7 @@ Systeem eigenschappen helpen de inhoud en bron van de berichten te identificeren
 | DT-dataschema | tekenreeks |  Deze waarde wordt ingesteld door IoT hub op apparaat-naar-Cloud-berichten. Het bevat de apparaat model-ID die is ingesteld in de apparaat-verbinding. Gebruik voor query's `$dt-dataschema` . |
 | DT-onderwerp | tekenreeks | De naam van het onderdeel dat de apparaat-naar-Cloud-berichten verzendt. Gebruik voor query's `$dt-subject` . |
 
-Zoals beschreven in de [IOT hub berichten](iot-hub-devguide-messages-construct.md), zijn er aanvullende systeem eigenschappen in een bericht. Naast de bovenstaande eigenschappen in de vorige tabel kunt u ook een query uitvoeren op **connectionDeviceId** , **connectionModuleId** .
+Zoals beschreven in de [IOT hub berichten](iot-hub-devguide-messages-construct.md), zijn er aanvullende systeem eigenschappen in een bericht. Naast de bovenstaande eigenschappen in de vorige tabel kunt u ook een query uitvoeren op **connectionDeviceId**, **connectionModuleId**.
 
 ### <a name="application-properties"></a>Toepassingseigenschappen
 
@@ -146,7 +146,7 @@ deviceClient.sendEvent(message, (err, res) => {
 ```
 
 > [!NOTE] 
-> Hier ziet u hoe u de code ring van de hoofd tekst in Java script kunt afhandelen. Als u een voor beeld in C# wilt zien, downloadt u de [Azure IOT C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip)-voor beelden. Pak het bestand master.zip uit. Het Program.cs-bestand van de Visual Studio Solution *SimulatedDevice* laat zien hoe u berichten kunt coderen en verzenden naar een IOT hub. Dit is hetzelfde voor beeld dat wordt gebruikt voor het testen van de bericht routering, zoals wordt uitgelegd in de [zelf studie over bericht routering](tutorial-routing.md). Onder aan Program.cs is er ook een methode voor het lezen van een van de versleutelde bestanden, het decoderen en het wegschrijven van het bestand als ASCII, zodat u het kunt lezen. 
+> Hier ziet u hoe u de code ring van de hoofd tekst in Java script kunt afhandelen. Als u een voor beeld in C# wilt zien, downloadt u de [Azure IOT C#](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip)-voor beelden. Pak het bestand master.zip uit. Het bestand Program. CS van Visual Studio Solution *SimulatedDevice* laat zien hoe u berichten kunt coderen en verzenden naar een IOT hub. Dit is hetzelfde voor beeld dat wordt gebruikt voor het testen van de bericht routering, zoals wordt uitgelegd in de [zelf studie over bericht routering](tutorial-routing.md). Onder aan programma. cs beschikt u ook over een methode voor het lezen van een van de gecodeerde bestanden, het decoderen ervan en het wegschrijven van de back-up als ASCII, zodat u deze kunt lezen. 
 
 
 ### <a name="query-expressions"></a>Query-expressies

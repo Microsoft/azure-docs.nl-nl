@@ -13,17 +13,17 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
 ms.openlocfilehash: 2b658cdc58777274bb14f9e8069cef2facdb0479
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92363450"
 ---
 # <a name="mark-your-app-as-publisher-verified"></a>Uw app markeren als Uitgever geverifieerd
 
 Wanneer een app-registratie een geverifieerde uitgever heeft, betekent dit dat de uitgever van de app de identiteit heeft [gecontroleerd](/partner-center/verification-responses) met behulp van hun Microsoft Partner Network-account (MPN) en dat deze MPN-account is gekoppeld aan de app-registratie. In dit artikel wordt beschreven hoe u het verificatie proces van de [Uitgever](publisher-verification-overview.md) kunt volt ooien.
 
-## <a name="quickstart"></a>Snelstartgids
+## <a name="quickstart"></a>Snelstart
 Als u al bent Inge schreven in de Microsoft Partner Network (MPN) en u aan de [vereisten](publisher-verification-overview.md#requirements)hebt voldaan, kunt u meteen aan de slag gaan: 
 
 1. Meld u aan bij de [Portal voor app-registratie](https://aka.ms/PublisherVerificationPreview) met [multi-factor Authentication](../fundamentals/concept-fundamentals-mfa-get-started.md)
@@ -56,7 +56,7 @@ Zorg ervoor dat u aan de [vereisten](publisher-verification-overview.md#requirem
 
 1. Klik op **MPN-id toevoegen om de uitgever** aan de onderkant van de pagina te controleren. 
 
-1. Voer uw **MPN-id**in. Deze MPN-ID moet gelden voor: 
+1. Voer uw **MPN-id** in. Deze MPN-ID moet gelden voor: 
 
     - Een geldig Microsoft Partner Network account dat het verificatie proces heeft voltooid.  
 
@@ -66,7 +66,7 @@ Zorg ervoor dat u aan de [vereisten](publisher-verification-overview.md#requirem
 
 1. Wacht totdat de aanvraag is verwerkt. Dit kan enkele minuten duren. 
 
-1. Als de verificatie is geslaagd, wordt het verificatie venster van de uitgever gesloten, waarna u terugkeert naar de Blade huis stijl. Er wordt een blauwe geverifieerde badge weer gegeven naast de **weergave naam**van uw geverifieerde Uitgever. 
+1. Als de verificatie is geslaagd, wordt het verificatie venster van de uitgever gesloten, waarna u terugkeert naar de Blade huis stijl. Er wordt een blauwe geverifieerde badge weer gegeven naast de **weergave naam** van uw geverifieerde Uitgever. 
 
 1. Gebruikers die wordt gevraagd om toestemming te geven voor uw app, zien het badge bericht snel nadat u het proces hebt door lopen, hoewel het enige tijd kan duren voordat dit wordt gerepliceerd in het hele systeem. 
 

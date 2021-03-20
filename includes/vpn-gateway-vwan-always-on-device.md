@@ -9,10 +9,10 @@ ms.date: 03/12/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 34e841a5f17d589c4fbef54a4a8674a99ac6c640
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96027371"
 ---
 Aan de volgende vereisten moet worden voldaan om een apparaat tunnel te kunnen instellen:
@@ -28,7 +28,7 @@ Aan de volgende vereisten moet worden voldaan om een apparaat tunnel te kunnen i
 
 Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaat in het archief van de lokale computer op de Windows 10-client hebt geïnstalleerd, gebruikt u de volgende voor beelden om een tunnel voor client apparaten te configureren:
 
-1. Kopieer de volgende tekst en sla deze op als ***devicecert.ps1** _.
+1. Kopieer de volgende tekst en sla deze op als ***devicecert.ps1***.
 
    ```
    Param(
@@ -80,7 +80,7 @@ Nadat u de virtuele netwerk gateway hebt geconfigureerd en het client certificaa
    $Message = "Complete."
    Write-Host "$Message"
    ```
-1. Kopieer de volgende tekst en sla deze op als _*_VPNProfile.xml_*_ in dezelfde map als _ * devicecert.ps1 * *. Bewerk de volgende tekst zodat deze overeenkomt met uw omgeving.
+1. Kopieer de volgende tekst en sla deze op als ***VPNProfile.xml** _ in dezelfde map als _ * devicecert.ps1 * *. Bewerk de volgende tekst zodat deze overeenkomt met uw omgeving.
 
    * `<Servers>azuregateway-1234-56-78dc.cloudapp.net</Servers> <= Can be found in the VpnSettings.xml in the downloaded profile zip file`
    * `<Address>192.168.3.5</Address> <= IP of resource in the vnet or the vnet address space`

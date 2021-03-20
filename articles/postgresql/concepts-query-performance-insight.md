@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 08/21/2019
 ms.openlocfilehash: babf2c8208732a194184549dfa5ed3228b376d0f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91710257"
 ---
 # <a name="query-performance-insight"></a>Inzicht in queryprestaties 
@@ -40,7 +40,7 @@ De tabel onder de grafiek bevat meer informatie over de langlopende query's in d
 
 Selecteer het tabblad **Wachtstatistieken** om de bijbehorende visualisaties voor wachttijden in de server weer te geven.
 
-:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Langlopende query's Query Performance Insight":::
+:::image type="content" source="./media/concepts-query-performance-insight/query-performance-insight-wait-statistics.png" alt-text="Query Performance Insight wacht op statistieken":::
 
 ## <a name="considerations"></a>Overwegingen
 * Query Performance Insight is niet beschikbaar voor het [lezen van replica's](concepts-read-replicas.md).

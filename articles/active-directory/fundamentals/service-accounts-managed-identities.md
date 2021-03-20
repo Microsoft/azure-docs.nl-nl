@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88a7600239d6e960fa2e635c9e7d9049a7c02db3
-ms.sourcegitcommit: f3ec73fb5f8de72fe483995bd4bbad9b74a9cc9f
+ms.openlocfilehash: 4584b0a605bd63c1f71082014d3c0622ca7d2c37
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102032349"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587828"
 ---
 # <a name="securing-managed-identities"></a>Beheerde identiteiten beveiligen
 
@@ -50,11 +50,11 @@ Azure heeft een besturings vlak en een gegevens vlak. In het vlak van het bestur
 
 Zodra het doel systeem het token voor authenticatie heeft geaccepteerd, kunnen er verschillende mechanismen voor autorisatie worden ondersteund voor het besturings vlak en het gegevens vlak van de toepassing.
 
-Alle bewerkingen van het beheer vlak van Azure worden beheerd door [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) en maken gebruik [van Azure Role Access Control](https://docs.microsoft.com/azure/role-based-access-control/overview). In het vlak van gegevens heeft elk doel systeem een eigen autorisatie mechanisme. Azure Storage ondersteunt Azure RBAC op het vlak van de gegevens. Toepassingen die gebruikmaken van Azure-app Services kunnen bijvoorbeeld gegevens lezen van Azure Storage en toepassingen die gebruikmaken van de Azure Kubernetes-service kunnen geheimen lezen die zijn opgeslagen in Azure Key Vault.
+Alle bewerkingen van het beheer vlak van Azure worden beheerd door [Azure Resource Manager](../../azure-resource-manager/management/overview.md) en maken gebruik [van Azure Role Access Control](../../role-based-access-control/overview.md). In het vlak van gegevens heeft elk doel systeem een eigen autorisatie mechanisme. Azure Storage ondersteunt Azure RBAC op het vlak van de gegevens. Toepassingen die gebruikmaken van Azure-app Services kunnen bijvoorbeeld gegevens lezen van Azure Storage en toepassingen die gebruikmaken van de Azure Kubernetes-service kunnen geheimen lezen die zijn opgeslagen in Azure Key Vault.
 
-Zie voor meer informatie over besturings-en gegevens abonnementen [Control vlak en data vlak Operations-Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/control-plane-and-data-plane).
+Zie voor meer informatie over besturings-en gegevens abonnementen [Control vlak en data vlak Operations-Azure Resource Manager](../../azure-resource-manager/management/control-plane-and-data-plane.md).
 
-Alle Azure-Services ondersteunen uiteindelijk beheerde identiteiten. Zie [Services die beheerde identiteiten voor Azure-resources ondersteunen](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)voor meer informatie.
+Alle Azure-Services ondersteunen uiteindelijk beheerde identiteiten. Zie [Services die beheerde identiteiten voor Azure-resources ondersteunen](../managed-identities-azure-resources/services-support-managed-identities.md)voor meer informatie.
 
 ##  
 
@@ -116,7 +116,7 @@ U kunt dit doen door de leden van uw groepen met hoge bevoegdheden te inventaris
 
    `Get-AzureADGroupMember -ObjectId <String> [-All <Boolean>] [-Top <Int32>] [<CommonParameters>]`
 
-* [Zorg ervoor dat u weet in welke bronnen de beheerde identiteit wordt geopend](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-powershell).
+* [Zorg ervoor dat u weet in welke bronnen de beheerde identiteit wordt geopend](../../role-based-access-control/role-assignments-list-powershell.md).
 
 ## <a name="move-to-managed-identities"></a>Verplaatsen naar beheerde identiteiten
 
@@ -126,11 +126,11 @@ Als u een service-principal of een Azure AD-gebruikers account gebruikt, evaluee
 
 **Zie voor meer informatie over het maken van beheerde identiteiten:** 
 
-[Maak een door de gebruiker toegewezen beheerde identiteit](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal). 
+[Maak een door de gebruiker toegewezen beheerde identiteit](../managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). 
 
-[Een door het systeem toegewezen beheerde identiteit inschakelen tijdens het maken van resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+[Een door het systeem toegewezen beheerde identiteit inschakelen tijdens het maken van resources](../managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
-[Door het systeem toegewezen beheerde identiteit inschakelen voor een bestaande resource](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
+[Door het systeem toegewezen beheerde identiteit inschakelen voor een bestaande resource](../managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
 **Zie voor meer informatie over service accounts:**
 
@@ -146,4 +146,3 @@ Als u een service-principal of een Azure AD-gebruikers account gebruikt, evaluee
 
  
 
- 

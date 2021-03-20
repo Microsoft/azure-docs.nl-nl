@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: 341d3c6f0a2d84c2b7b725959db9f7e5dd80d3ff
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92542961"
 ---
 # <a name="overview-of-business-continuity-with-azure-database-for-postgresql---flexible-server"></a>Overzicht van bedrijfs continuïteit met Azure Database for PostgreSQL-flexibele server
@@ -50,7 +50,7 @@ Hieronder vindt u enkele geplande onderhouds scenario's. Deze gebeurtenissen heb
 | <b>Nieuwe software-implementatie (door Azure gestart) | Nieuwe functies implementatie-of fout oplossingen worden automatisch uitgevoerd als onderdeel van het geplande onderhoud van de service, en u kunt plannen wanneer deze activiteiten plaatsvinden. Controleer uw [Portal](https://aka.ms/servicehealthpm)voor meer informatie. | 
 | <b>Secundaire versie-upgrades (door Azure gestart) | Azure Database for PostgreSQL worden database servers automatisch aan de secundaire versie door Azure door berekend. Deze treedt op als onderdeel van het geplande onderhoud van de service. De database server wordt automatisch opnieuw opgestart met de nieuwe secundaire versie. Zie de [documentatie](../concepts-monitoring.md#planned-maintenance-notification)voor meer informatie. U kunt ook uw [Portal](https://aka.ms/servicehealthpm)controleren.| 
 
- Wanneer de flexibele server is geconfigureerd met een **zone redundant hoge Beschik baarheid** , voert de flexibele server eerst de schaal en de onderhouds bewerkingen op de stand-by-server uit. Zie [concepten-hoge Beschik baarheid](./concepts-high-availability.md)voor meer informatie.
+ Wanneer de flexibele server is geconfigureerd met een **zone redundant hoge Beschik baarheid**, voert de flexibele server eerst de schaal en de onderhouds bewerkingen op de stand-by-server uit. Zie [concepten-hoge Beschik baarheid](./concepts-high-availability.md)voor meer informatie.
 
 ##  <a name="unplanned-downtime-mitigation"></a>Ongeplande downtime-beperking
 

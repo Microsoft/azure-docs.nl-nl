@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: alkohli
 ms.openlocfilehash: 19c92deb58ac51aa882e7123b9a90aa3eae627d0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90894109"
 ---
 # <a name="enable-compute-network-on-your-azure-stack-edge-pro"></a>Berekenings netwerk op uw Azure Stack Edge Pro inschakelen
@@ -58,12 +58,12 @@ Voer de volgende stappen uit op uw lokale webinterface om reken instellingen te 
 Voer de volgende stappen uit om een module webserver-app op uw Azure Stack Edge Pro-apparaat toe te voegen.
 
 1. Ga naar de IoT Hub bron die is gekoppeld aan uw Azure Stack Edge Pro-apparaat en selecteer vervolgens **IOT edge apparaat**.
-2. Selecteer het IoT Edge apparaat dat is gekoppeld aan uw Azure Stack Edge Pro-apparaat. Selecteer **modules instellen**op de details van het **apparaat**. Selecteer **+ toevoegen** in **modules toevoegen**en selecteer vervolgens **IOT Edge module**.
+2. Selecteer het IoT Edge apparaat dat is gekoppeld aan uw Azure Stack Edge Pro-apparaat. Selecteer **modules instellen** op de details van het **apparaat**. Selecteer **+ toevoegen** in **modules toevoegen** en selecteer vervolgens **IOT Edge module**.
 3. Op de Blade **aangepaste modules IOT Edge** :
 
     1. Geef een **naam** op voor de module webserver-app die u wilt implementeren.
     2. Geef een **afbeeldings-URI** voor de module installatie kopie op. Er wordt een module opgehaald die overeenkomt met de gegeven naam en tags. In dit geval `nginx:stable` wordt een stabiele nginx-installatie kopie (gelabeld als stabiel) opgehaald uit de open bare [docker-opslag plaats](https://hub.docker.com/_/nginx/).
-    3. Plak in de opties voor het maken van de **container**de volgende voorbeeld code:  
+    3. Plak in de opties voor het maken van de **container** de volgende voorbeeld code:  
 
         ```
         {

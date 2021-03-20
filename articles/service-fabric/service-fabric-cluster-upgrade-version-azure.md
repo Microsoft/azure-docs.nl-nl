@@ -4,10 +4,10 @@ description: Voer een upgrade uit voor de Service Fabric code en/of configuratie
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.openlocfilehash: 01fe916f0ee78c8481ac6b17b8f7409b47c852ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90564284"
 ---
 # <a name="upgrade-the-service-fabric-version-of-a-cluster"></a>Upgrade uitvoeren voor de Service Fabric-versie van een cluster

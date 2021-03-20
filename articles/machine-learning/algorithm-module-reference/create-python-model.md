@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 06/18/2020
 ms.openlocfilehash: 03f80ebeb7b30d8c0fe14060335541d77b7523b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898619"
 ---
 # <a name="create-python-model-module"></a>Python-model module maken
@@ -42,7 +42,7 @@ In dit artikel wordt beschreven hoe u een **python-model maakt** met een eenvoud
 
 ![Diagram van het python-model maken](./media/module/create-python-model.png)
 
-1. Selecteer **python-model maken**en bewerk het script om uw model-of gegevens beheer proces te implementeren. U kunt het model baseren op alle informatie die is opgenomen in een python-pakket in de Azure Machine Learning omgeving.
+1. Selecteer **python-model maken** en bewerk het script om uw model-of gegevens beheer proces te implementeren. U kunt het model baseren op alle informatie die is opgenomen in een python-pakket in de Azure Machine Learning omgeving.
 
 > [!NOTE]
 > Betaal extra aandacht voor de opmerkingen in voorbeeld code van het script en zorg ervoor dat uw script de vereiste moet volgen, met inbegrip van de naam van de klasse, methoden en hand tekening van de methode. Schending leidt tot uitzonde ringen. 
@@ -88,7 +88,7 @@ In dit artikel wordt beschreven hoe u een **python-model maakt** met een eenvoud
 
    ```
 
-2. Verbind de module **python-model maken** die u zojuist hebt gemaakt om **model** -en **score model**te trainen.
+2. Verbind de module **python-model maken** die u zojuist hebt gemaakt om **model** -en **score model** te trainen.
 
 3. Als u het model wilt evalueren, voegt u een [script](execute-python-script.md) module voor het uitvoeren van een python uit en bewerkt u het python-script.
 

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 05/26/2020
 ms.openlocfilehash: a64d5cebfd8e70e2f54a66193a7041c47887c54a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898905"
 ---
 # <a name="apply-image-transformation"></a>Afbeeldingstransformatie toepassen 
@@ -34,11 +34,11 @@ U moet een init- [installatie kopie transformatie](init-image-transformation.md)
 
 3. Verbind de map met de installatie kopie die u wilt transformeren.
 
-4. Voor de **modus**geeft u op voor welk doel u invoer transformatie gebruikt: ' for training ' of ' for deinterferentie '. 
+4. Voor de **modus** geeft u op voor welk doel u invoer transformatie gebruikt: ' for training ' of ' for deinterferentie '. 
 
-   Als u **voor training**selecteert, wordt alle trans formatie toegepast die u opgeeft in de trans formatie van init image.
+   Als u **voor training** selecteert, wordt alle trans formatie toegepast die u opgeeft in de trans formatie van init image.
 
-   Als u kiest **voor**inschakeling, wordt trans formatie, zoals het wille keurig maken van nieuwe steek proeven, uitgesloten voordat ze worden toegepast. Dit komt omdat transformatie bewerkingen om nieuwe steek proeven wille keurig als ' wille keurige horizon taal spie gelen ' te maken, worden gebruikt voor de uitbrei ding van gegevens in de training, die moet worden verwijderd in afleiding, omdat er voor een nauw keurige voor spelling en evaluatie van inactiviteit steek proeven moeten worden verholpen.
+   Als u kiest **voor** inschakeling, wordt trans formatie, zoals het wille keurig maken van nieuwe steek proeven, uitgesloten voordat ze worden toegepast. Dit komt omdat transformatie bewerkingen om nieuwe steek proeven wille keurig als ' wille keurige horizon taal spie gelen ' te maken, worden gebruikt voor de uitbrei ding van gegevens in de training, die moet worden verwijderd in afleiding, omdat er voor een nauw keurige voor spelling en evaluatie van inactiviteit steek proeven moeten worden verholpen.
 
    > [!NOTE]
    > Trans formaties die worden uitgesloten in de modus **voor deinterferentie** zijn: wille keurig aangepast gewas, wille keurige bijsnijden, wille keurige horizontale spie gelen, wille keurige verticale spiegel, wille keurige weer gave, wille keurige affiniteit, wille keurige grijs waarde, wille keurig verwijderen.
@@ -47,7 +47,7 @@ U moet een init- [installatie kopie transformatie](init-image-transformation.md)
 
 ### <a name="module-parameters"></a>Module parameters
 
-| Naam | Bereik | Type | Standaard                   | Beschrijving                              |
+| Name | Bereik | Type | Standaard                   | Beschrijving                              |
 | ---- | ----- | ---- | ------------------------- | ---------------------------------------- |
 | Modus | Alle   | Modus | (Verplicht te geven gebruiker) | Voor welk doel gebruikt u invoer transformatie. U moet wille keurige transformatie bewerkingen uitsluiten, maar ze in de training houden |
 

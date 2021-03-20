@@ -8,13 +8,13 @@ author: mksuni
 ms.author: sumuth
 ms.date: 09/21/2020
 ms.openlocfilehash: 413f5fc1f6579102b62042c1470816470c2e1449
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92546548"
 ---
-# <a name="connect-and-query-overview-for-azure-database-for-postgresql--single-server"></a>Verbinding maken en query's uitvoeren op een overzicht van Azure data base for PostgreSQL-één server
+# <a name="connect-and-query-overview-for-azure-database-for-postgresql--single-server"></a>Overzicht van verbinding maken met en query's uitvoeren op Azure Database for PostgreSQL - Enkele server
 
 Het volgende document bevat koppelingen naar voor beelden waarin wordt getoond hoe u verbinding maakt met Azure Database for PostgreSQL één server. Deze hand leiding bevat ook de TLS-aanbevelingen en uitbrei dingen die u kunt gebruiken om verbinding te maken met de server in ondersteunde talen hieronder.
 

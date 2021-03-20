@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e02df83d4b7874a1d158aae45f1619eb543e0aec
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92362447"
 ---
 # <a name="what-is-azure-ad-identity-governance"></a>Wat is Azure AD Identity Governance?
@@ -42,7 +42,7 @@ Het is met name bedoeld om organisaties te helpen bij het oplossen van deze vier
 
 ## <a name="identity-lifecycle"></a>Identiteitslevenscyclus
 
-Met Identity Governance kunnen organisaties een balans vinden tussen *productiviteit* : hoe snel kunnen personen toegang krijgen tot de resources die ze nodig hebben, bijvoorbeeld wanneer ze deel uit gaan maken van mijn organisatie? En *veiligheid* : hoe moet de toegang in de loop van de tijd worden aangepast, bijvoorbeeld als gevolg van wijzigingen in de werknemersstatus van die persoon?  Het beheer van identiteitslevenscycli vormt de basis voor Identity Governance en voor een effectief beheer op schaal moet de infrastructuur voor het identiteitslevenscyclusbeheer voor toepassingen worden gemoderniseerd.
+Met Identity Governance kunnen organisaties een balans vinden tussen *productiviteit*: hoe snel kunnen personen toegang krijgen tot de resources die ze nodig hebben, bijvoorbeeld wanneer ze deel uit gaan maken van mijn organisatie? En *veiligheid*: hoe moet de toegang in de loop van de tijd worden aangepast, bijvoorbeeld als gevolg van wijzigingen in de werknemersstatus van die persoon?  Het beheer van identiteitslevenscycli vormt de basis voor Identity Governance en voor een effectief beheer op schaal moet de infrastructuur voor het identiteitslevenscyclusbeheer voor toepassingen worden gemoderniseerd.
 
 ![Identiteitslevenscyclus](./media/identity-governance-overview/identity-lifecycle.png)
 

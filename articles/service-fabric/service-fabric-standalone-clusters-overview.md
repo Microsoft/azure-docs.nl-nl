@@ -4,10 +4,10 @@ description: Service Fabric-clusters worden uitgevoerd op Windows Server en Linu
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.openlocfilehash: a3162a3d02510ce8efab6c5bcac0f1fdd2b2539b
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94683995"
 ---
 # <a name="overview-of-service-fabric-standalone-clusters"></a>Overzicht van Service Fabric zelfstandige clusters
@@ -54,7 +54,7 @@ Toepassings vereisten veranderen in de loop van de tijd. Mogelijk moet u cluster
 
 Lees de [schaal van zelfstandige clusters](service-fabric-cluster-scaling-standalone.md)voor meer informatie.
 
-## <a name="upgrading"></a>Abonnement
+## <a name="upgrading"></a>Upgrade uitvoeren
 
 Een zelfstandig cluster is een bron die u volledig bezit. U bent zelf verantwoordelijk voor het patchen van het onderliggende besturings systeem en het initiëren van infrastructuur upgrades. U kunt uw cluster zo instellen dat automatische runtime-upgrades worden ontvangen, wanneer micro soft een nieuwe versie uitgeeft of een door u gewenste ondersteunde runtime versie selecteert. Naast infrastructuur upgrades kunt u ook het besturings systeem patchen en de cluster configuratie bijwerken, zoals certificaten of toepassings poorten. 
 

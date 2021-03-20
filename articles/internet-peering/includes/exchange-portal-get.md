@@ -9,10 +9,10 @@ ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: e139954e6550e33edb75d01ab9dbec0bba543ea6
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92548138"
 ---
 Nadat de **peering** -resource is geïmplementeerd, kunt u deze bekijken door de volgende stappen uit te voeren.
@@ -37,14 +37,14 @@ Nadat de **peering** -resource is geïmplementeerd, kunt u deze bekijken door de
     > [!div class="mx-imgBorder"]
     > ![ASN-gegevens van peering-bron](../media/setup-direct-get-asninfo.png)
 
-1. Selecteer aan de linkerkant **verbindingen** . Boven aan het scherm ziet u een samen vatting van peering-verbindingen tussen uw ASN en micro soft, tussen verschillende faciliteiten binnen de metro. U kunt het overzicht van verbindingen ook openen op de pagina **overzicht** door **verbindingen** te selecteren in het middelste deel venster, zoals wordt weer gegeven.
+1. Selecteer aan de linkerkant **verbindingen**. Boven aan het scherm ziet u een samen vatting van peering-verbindingen tussen uw ASN en micro soft, tussen verschillende faciliteiten binnen de metro. U kunt het overzicht van verbindingen ook openen op de pagina **overzicht** door **verbindingen** te selecteren in het middelste deel venster, zoals wordt weer gegeven.
 
     > [!div class="mx-imgBorder"]
     > ![Peering-bron verbindingen](../media/setup-exchange-get-connectionssummary.png)
 
     * De **verbindings status** komt overeen met de status van de instelling voor de peering-verbinding. De status diagram die in dit veld wordt weer gegeven, is te zien in het [overzicht van Exchange-peering](../walkthrough-exchange-all.md).
     * De status van de **IPv4-sessie** en de **IPv6-sessie** komen respectievelijk overeen met de IPv4-en IPv6 BGP-sessie status.  
-    * Wanneer u een rij boven aan het scherm selecteert, toont de sectie **verbinding** onderaan de details van elke verbinding. Selecteer de pijlen om de **configuratie** , het **IPv4-adres** en het **IPv6-adres** uit te vouwen.
+    * Wanneer u een rij boven aan het scherm selecteert, toont de sectie **verbinding** onderaan de details van elke verbinding. Selecteer de pijlen om de **configuratie**, het **IPv4-adres** en het **IPv6-adres** uit te vouwen.
 
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding die een pijl markeert die een sectie uitbreidt.](../media/setup-exchange-get-connectionsipv4.png)

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 08/12/2020
 ms.openlocfilehash: 9a1a3892e6a47aabd9b5129ca551900494616bc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90905172"
 ---
 # <a name="score-wide-and-deep-recommender"></a>Aanbevelingsfunctie voor wide en deep learning-scores
@@ -27,7 +27,7 @@ Met de brede en diepe aanbeveling kunt u twee verschillende soorten voor spellin
 - [Het aanbevelen van items aan een bepaalde gebruiker](#recommend-items)
 
 
-Wanneer u het laatste type voor spellingen maakt, kunt u in de *productie modus* of de *evaluatie modus*uitvoeren.
+Wanneer u het laatste type voor spellingen maakt, kunt u in de *productie modus* of de *evaluatie modus* uitvoeren.
 
 - De **productie modus** houdt rekening met alle gebruikers of items en wordt doorgaans gebruikt in een webservice. U kunt scores maken voor nieuwe gebruikers, niet alleen voor gebruikers die tijdens de training zijn gezien. 
 
@@ -60,7 +60,7 @@ Wanneer u de classificaties voor spelt, wordt in het model berekend hoe een bepa
 
     De gegevensset van gebruikers functies moet de gebruikers-id in de eerste kolom bevatten. De overige kolommen moeten waarden bevatten die de gebruikers kenmerken, zoals geslacht, voor keuren, locatie, enzovoort.
   
-    Functies van gebruikers die items hebben geclassificeerd in de trainings gegevensset, worden genegeerd door een **Score breed en diep aanbevolen**, omdat ze tijdens de training al zijn geleerd. Filter daarom uw gegevensset vooraf om alleen gebruikers met een *koude start*te gebruiken of gebruikers die geen items hebben geclassificeerd.
+    Functies van gebruikers die items hebben geclassificeerd in de trainings gegevensset, worden genegeerd door een **Score breed en diep aanbevolen**, omdat ze tijdens de training al zijn geleerd. Filter daarom uw gegevensset vooraf om alleen gebruikers met een *koude start* te gebruiken of gebruikers die geen items hebben geclassificeerd.
 
     > [!WARNING]
     > Als het model is getraind zonder gebruikers functies te gebruiken, kunt u geen gebruikers functies introduceren tijdens het scoren.
@@ -69,7 +69,7 @@ Wanneer u de classificaties voor spelt, wordt in het model berekend hoe een bepa
 
     De gegevensset van het item bevat een item-id in de eerste kolom. De overige kolommen moeten waarden bevatten die de items kenmerken.
 
-    Functies van geclassificeerde items in de trainings gegevensset worden genegeerd door de **Score breed en de diep gaande aanbeveling** , omdat deze al zijn geleerd tijdens de training. Beperk daarom uw score gegevensset voor *koude start items*of items die door geen enkele gebruiker zijn geclassificeerd.
+    Functies van geclassificeerde items in de trainings gegevensset worden genegeerd door de **Score breed en de diep gaande aanbeveling** , omdat deze al zijn geleerd tijdens de training. Beperk daarom uw score gegevensset voor *koude start items* of items die door geen enkele gebruiker zijn geclassificeerd.
 
     > [!WARNING]
     > Als het model is getraind zonder gebruik te maken van de functie onderdelen, kunt u geen artikel functies introduceren tijdens het scoren.
@@ -95,10 +95,10 @@ Als u items wilt aanbevelen voor gebruikers, geeft u een lijst met gebruikers en
 
 3. **Aanbevolen item selecteren**: Geef aan of u de Score module in productie of voor model evaluatie gebruikt door een van deze waarden te kiezen:
 
-    - **Van geclassificeerde items (voor model evaluatie)**: Selecteer deze optie als u een model ontwikkelt of test. Met deze optie wordt de **evaluatie modus**ingeschakeld. in de module worden alleen aanbevelingen gedaan van die items in de ingevoerde gegevensset die zijn geclassificeerd.
-    - **Van alle items**: Selecteer deze optie als u een experiment wilt instellen voor gebruik in een webservice of productie omgeving.  Met deze optie schakelt u de **productie modus**in. de module maakt aanbevelingen van alle items die tijdens de training worden weer gegeven.
+    - **Van geclassificeerde items (voor model evaluatie)**: Selecteer deze optie als u een model ontwikkelt of test. Met deze optie wordt de **evaluatie modus** ingeschakeld. in de module worden alleen aanbevelingen gedaan van die items in de ingevoerde gegevensset die zijn geclassificeerd.
+    - **Van alle items**: Selecteer deze optie als u een experiment wilt instellen voor gebruik in een webservice of productie omgeving.  Met deze optie schakelt u de **productie modus** in. de module maakt aanbevelingen van alle items die tijdens de training worden weer gegeven.
     - **Van niet-geclassificeerde items (om nieuwe items voor te stellen voor gebruikers)**: Selecteer deze optie als u wilt dat de module alleen aanbevelingen van de items in de trainings gegevensset bevat die niet zijn geclassificeerd. 
-4. Voeg de gegevensset toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om**deze te beoordelen.
+4. Voeg de gegevensset toe waarvoor u voor spellingen wilt maken en verbind deze met de **gegevensset om** deze te beoordelen.
 
     - Als u kiest voor de optie **van alle items**, moet de invoer gegevensset bestaan uit één en slechts één kolom die de id's van gebruikers bevat waarvoor aanbevelingen moeten worden gedaan.
 
@@ -112,25 +112,25 @@ Als u items wilt aanbevelen voor gebruikers, geeft u een lijst met gebruikers en
 
         De gegevensset kan een derde kolom van classificaties van gebruikers items bevatten, maar deze kolom wordt genegeerd.
 
-5. (Optioneel). Als u een gegevensset van **gebruikers functies**hebt, verbindt u deze met **gebruikers functies**.
+5. (Optioneel). Als u een gegevensset van **gebruikers functies** hebt, verbindt u deze met **gebruikers functies**.
 
     De eerste kolom in de gegevensset voor gebruikers functies moet de gebruikers-id bevatten. De overige kolommen moeten waarden bevatten die de gebruiker kenmerken, zoals geslacht, voor keuren, locatie, enzovoort.
 
-    Functies van gebruikers die geclassificeerde items hebben, worden genegeerd door de **Score breed en diep aanbevolen**, omdat deze functies tijdens de training al zijn geleerd. Daarom kunt u uw gegevensset vooraf filteren om alleen *koude gebruikers*toe te voegen of gebruikers die geen items hebben geclassificeerd.
+    Functies van gebruikers die geclassificeerde items hebben, worden genegeerd door de **Score breed en diep aanbevolen**, omdat deze functies tijdens de training al zijn geleerd. Daarom kunt u uw gegevensset vooraf filteren om alleen *koude gebruikers* toe te voegen of gebruikers die geen items hebben geclassificeerd.
 
     > [!WARNING]
     >  Als het model is getraind zonder gebruikers functies te gebruiken, kunt u geen onderdelen Toep assen gebruiken tijdens de score.
 
-6. Beschrijving Als u een gegevensset van **item functies**hebt, kunt u deze verbinden met **item functies**.
+6. Beschrijving Als u een gegevensset van **item functies** hebt, kunt u deze verbinden met **item functies**.
 
     De eerste kolom in de gegevensset item functies moet de item-id bevatten. De overige kolommen moeten waarden bevatten die de items kenmerken.
 
-    Functies van geclassificeerde items worden genegeerd door de **Score breed en diep aanbevolen**, omdat deze functies tijdens de training al zijn geleerd. Daarom kunt u uw score gegevensset beperken tot *koude start items*of items die niet door gebruikers zijn geclassificeerd.
+    Functies van geclassificeerde items worden genegeerd door de **Score breed en diep aanbevolen**, omdat deze functies tijdens de training al zijn geleerd. Daarom kunt u uw score gegevensset beperken tot *koude start items* of items die niet door gebruikers zijn geclassificeerd.
 
     > [!WARNING]
     >  Als het model is getraind zonder de onderdelen van het item te gebruiken, mag u geen item functies gebruiken als u een score gebruikt.  
 
-7. **Maximum aantal items dat aan een gebruiker**kan worden aanbevolen: Typ het aantal items dat voor elke gebruiker moet worden geretourneerd. Standaard worden 5 items aanbevolen.
+7. **Maximum aantal items dat aan een gebruiker** kan worden aanbevolen: Typ het aantal items dat voor elke gebruiker moet worden geretourneerd. Standaard worden 5 items aanbevolen.
 
 8. **Minimum grootte van de aanbevelings groep per gebruiker**: Typ een waarde die aangeeft hoeveel eerdere aanbevelingen zijn vereist.  Deze para meter is standaard ingesteld op 2, wat betekent dat het item moet worden aanbevolen door ten minste twee andere gebruikers.
 
@@ -146,7 +146,7 @@ Als u items wilt aanbevelen voor gebruikers, geeft u een lijst met gebruikers en
 De gescoorde gegevensset die wordt geretourneerd door de **Score breed en de diep gaande aanbeveling** geeft een lijst van de aanbevolen items voor elke gebruiker.
 
 - De eerste kolom bevat de gebruikers-id's.
-- Er worden een aantal extra kolommen gegenereerd, afhankelijk van de waarde die u hebt ingesteld voor het **maximum aantal items dat aan een gebruiker**moet worden aanbevolen. Elke kolom bevat een aanbevolen item (per id). De aanbevelingen worden geordend op basis van de gebruikers-item affiniteit, waarbij het item met de hoogste affiniteit in kolom, **item 1**, is geplaatst.
+- Er worden een aantal extra kolommen gegenereerd, afhankelijk van de waarde die u hebt ingesteld voor het **maximum aantal items dat aan een gebruiker** moet worden aanbevolen. Elke kolom bevat een aanbevolen item (per id). De aanbevelingen worden geordend op basis van de gebruikers-item affiniteit, waarbij het item met de hoogste affiniteit in kolom, **item 1**, is geplaatst.
 
 ##  <a name="technical-notes"></a>Technische opmerkingen
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: e9a5427f7c3a057f291067ac83d3d9032d7e693d
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: b71e5b1a8ba5f3ee8f883c71a7221e01d4af4fb6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102559355"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104597705"
 ---
 # <a name="startstop-vms-during-off-hours-overview"></a>Overzicht van VM's buiten bedrijfsuren starten/stoppen
 
@@ -91,7 +91,8 @@ U kunt Vm's voor de VM's buiten bedrijfsuren starten/stoppen-functie inschakelen
 | Micro soft. Authorization/permissions/Read |Abonnement|
 | Micro soft. Authorization/roleAssignments/lezen | Abonnement |
 | Microsoft.Authorization/roleAssignments/write | Abonnement |
-| Micro soft. Authorization/roleAssignments/verwijderen | Abonnement || Micro soft. Automation/automationAccounts/Connections/Read | Resourcegroep |
+| Micro soft. Authorization/roleAssignments/verwijderen | Abonnement |
+| Micro soft. Automation/automationAccounts/Connections/Read | Resourcegroep |
 | Micro soft. Automation/automationAccounts/certificaten/lezen | Resourcegroep |
 | Micro soft. Automation/automationAccounts/schrijven | Resourcegroep |
 | Micro soft. OperationalInsights/werk ruimten/schrijven | Resourcegroep |
@@ -109,7 +110,7 @@ De volgende tabel geeft een lijst van de runbooks die de functie implementeert v
 
 Alle bovenliggende runbooks bevatten de `WhatIf` para meter. Als deze eigenschap is ingesteld op True, wordt de para meter gebruikt om het exacte gedrag te bepalen dat het runbook uitvoert wanneer het wordt uitgevoerd zonder de para meter en wordt gevalideerd of de juiste Vm's zijn gericht. Een runbook voert alleen de gedefinieerde acties uit wanneer de `WhatIf` para meter is ingesteld op ONWAAR.
 
-|Runbook | Parameters | Beschrijving|
+|Runbook | Parameters | Description|
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Aangeroepen vanuit het bovenliggende runbook. Dit runbook maakt waarschuwingen per resource voor het scenario voor automatisch stoppen.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: True of False  | Hiermee worden Azure-waarschuwings regels gemaakt of bijgewerkt op Vm's in het doel abonnement of resource groepen. <br> `VMList` is een door komma's gescheiden lijst met virtuele machines (zonder spaties), bijvoorbeeld `vm1,vm2,vm3` .<br> `WhatIf` Hiermee wordt de validatie van de runbook-logica mogelijk zonder dat deze wordt uitgevoerd.|
@@ -161,13 +162,13 @@ De volgende tabel bevat een overzicht van de standaard schema's die zijn gemaakt
 
 Schakel niet alle schema's in, omdat dit mogelijk overlappende plannings acties kan maken. U kunt het beste bepalen welke optimalisaties u wilt uitvoeren en ze dienovereenkomstig aanpassen. Zie de voorbeeld scenario's in de sectie Overzicht voor meer informatie.
 
-|Schema naam | Frequentie | Beschrijving|
+|Schema naam | Frequentie | Description|
 |--- | --- | ---|
 |Schedule_AutoStop_CreateAlert_Parent | Om de 8 uur | Voert het **AutoStop_CreateAlert_Parent** runbook uit om de 8 uur, waardoor de op virtuele machines gebaseerde waarden in `External_Start_ResourceGroupNames` , `External_Stop_ResourceGroupNames` en variabelen op zijn beurt worden gestopt `External_ExcludeVMNames` . U kunt ook een door komma's gescheiden lijst met Vm's opgeven met behulp van de `VMList` para meter.|
 |Scheduled_StopVM | Door de gebruiker gedefinieerd, dagelijks | Voert het **ScheduledStopStart_Parent** runbook uit met een para meter van `Stop` elke dag op de opgegeven tijd. Stopt automatisch alle virtuele machines die voldoen aan de regels die zijn gedefinieerd door variabele assets. Schakel de planning **StartVM**.|
 |Scheduled_StartVM | Door de gebruiker gedefinieerd, dagelijks | Voert het **ScheduledStopStart_Parent** runbook uit met een parameter waarde van `Start` elke dag op de opgegeven tijd. Alle Vm's die voldoen aan de regels die zijn gedefinieerd door variabele assets, worden automatisch gestart. Schakel de planning **StopVM**.|
 |Sequenced-StopVM | 1:00 uur (UTC), elke vrijdag | Voert het **Sequenced_StopStop_Parent** runbook uit met een parameter waarde van `Stop` elke vrijdag op de opgegeven tijd. Opeenvolgend (oplopend) stopt alle virtuele machines met een tag van **SequenceStop** die zijn gedefinieerd door de juiste variabelen. Zie [Runbooks](#runbooks)voor meer informatie over label waarden en activa variabelen. Schakel het gerelateerde schema in, **Sequenced-StartVM**.|
-|Sequenced-StartVM | 1:00 uur (UTC), elke maandag | Voert het **SequencedStopStart_Parent** runbook uit met een parameter waarde van `Start` elke maandag op de opgegeven tijd. Na elkaar (aflopend) worden alle virtuele machines gestart met een tag van **SequenceStart** dat is gedefinieerd door de juiste variabelen. Zie [Runbooks](#runbooks)voor meer informatie over label waarden en variabele assets. Schakel het gerelateerde schema in, **Sequenced-StopVM**.
+|Sequenced-StartVM | 1:00 uur (UTC), elke maandag | Voert het **SequencedStopStart_Parent** runbook uit met een parameter waarde van `Start` elke maandag op de opgegeven tijd. Na elkaar (aflopend) worden alle virtuele machines gestart met een tag van **SequenceStart** dat is gedefinieerd door de juiste variabelen. Zie [Runbooks](#runbooks)voor meer informatie over label waarden en variabele assets. Schakel het gerelateerde schema in, **Sequenced-StopVM**.|
 
 ## <a name="use-the-feature-with-classic-vms"></a>De functie gebruiken met klassieke Vm's
 

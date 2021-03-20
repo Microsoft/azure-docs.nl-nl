@@ -4,10 +4,10 @@ description: Configureren welke Azure Marketplace-installatie kopieën kunnen wo
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: a5158ed33bf253db1dbe0eb3232bc43d27ce15e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86512432"
 ---
 # <a name="configure-azure-marketplace-image-settings-in-azure-devtest-labs"></a>Installatie kopie-instellingen voor Azure Marketplace configureren in Azure DevTest Labs
@@ -17,11 +17,11 @@ DevTest Labs biedt ondersteuning voor het maken van Vm's op basis van installati
 Volg deze stappen om op te geven welke installatie kopieën van Azure Marketplace zijn toegestaan bij het maken van een virtuele machine. 
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs uw Lab. 
 4. Op de start pagina van de pagina Lab selecteert u **configuratie en beleid**.
-5. Selecteer op de pagina **configuratie en beleid** van Lab onder basis van **Virtual Machine bases**de optie **Marketplace-installatie kopieën**.
-6. Geef op of u wilt dat alle gekwalificeerde Azure Marketplace-installatie kopieën beschikbaar zijn voor gebruik als basis van een nieuwe virtuele machine. Als u **Ja**selecteert, zijn alle Azure Marketplace-installatie kopieën die voldoen aan de volgende criteria, toegestaan in het Lab:
+5. Selecteer op de pagina **configuratie en beleid** van Lab onder basis van **Virtual Machine bases** de optie **Marketplace-installatie kopieën**.
+6. Geef op of u wilt dat alle gekwalificeerde Azure Marketplace-installatie kopieën beschikbaar zijn voor gebruik als basis van een nieuwe virtuele machine. Als u **Ja** selecteert, zijn alle Azure Marketplace-installatie kopieën die voldoen aan de volgende criteria, toegestaan in het Lab:
    
    * De installatie kopie maakt één virtuele machine **en**
    * De installatie kopie gebruikt Azure Resource Manager voor het inrichten van Vm's **en**

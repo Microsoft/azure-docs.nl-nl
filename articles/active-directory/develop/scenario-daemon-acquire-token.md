@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 295897be03a7dd8e397e8202ff1cf10e6d59cdfb
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 19ead7fe063992e95588641f7fd739081cf54a2f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753863"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578410"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Daemon-app die web-Api's aanroept-een Token ophalen
 
@@ -33,6 +33,20 @@ ResourceId = "someAppIDURI";
 var scopes = new [] {  ResourceId+"/.default"};
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+```Java
+final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
+```
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+```JavaScript
+const tokenRequest = {
+    scopes: [process.env.GRAPH_ENDPOINT + '.default'], // e.g. 'https://graph.microsoft.com/.default'
+};
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 In MSAL python ziet het configuratie bestand eruit als het volgende code fragment:
@@ -41,12 +55,6 @@ In MSAL python ziet het configuratie bestand eruit als het volgende code fragmen
 {
     "scope": ["https://graph.microsoft.com/.default"],
 }
-```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```Java
-final static String GRAPH_DEFAULT_SCOPE = "https://graph.microsoft.com/.default";
 ```
 
 ---
@@ -95,30 +103,6 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 ### <a name="acquiretokenforclient-uses-the-application-token-cache"></a>AcquireTokenForClient maakt gebruik van de toepassings token cache
 
 In MSAL.NET `AcquireTokenForClient` wordt de toepassings token cache gebruikt. (Alle andere AcquireToken *xx* -methoden gebruiken de token cache van de gebruiker.) Roep niet `AcquireTokenSilent` aan voordat u belt `AcquireTokenForClient` , omdat `AcquireTokenSilent` de cache van de *gebruikers* token wordt gebruikt. `AcquireTokenForClient` Hiermee wordt de cache van het *toepassings* token zelf gecontroleerd en bijgewerkt.
-
-# <a name="python"></a>[Python](#tab/python)
-
-```Python
-# The pattern to acquire a token looks like this.
-result = None
-
-# First, the code looks up a token from the cache.
-# Because we're looking for a token for the current app, not for a user,
-# use None for the account parameter.
-result = app.acquire_token_silent(config["scope"], account=None)
-
-if not result:
-    logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
-    result = app.acquire_token_for_client(scopes=config["scope"])
-
-if "access_token" in result:
-    # Call a protected API with the access token.
-    print(result["token_type"])
-else:
-    print(result.get("error"))
-    print(result.get("error_description"))
-    print(result.get("correlation_id"))  # You might need this when reporting a bug.
-```
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -169,6 +153,43 @@ private static IAuthenticationResult acquireToken() throws Exception {
  }
 ```
 
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Het onderstaande code fragment illustreert het verkrijgen van tokens in een client toepassing met een MSAL-knoop punt:
+
+```JavaScript
+try {
+    const authResponse = await cca.acquireTokenByClientCredential(tokenRequest);
+    console.log(authResponse.accessToken) // display access token
+} catch (error) {
+    console.log(error);
+}
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+```Python
+# The pattern to acquire a token looks like this.
+result = None
+
+# First, the code looks up a token from the cache.
+# Because we're looking for a token for the current app, not for a user,
+# use None for the account parameter.
+result = app.acquire_token_silent(config["scope"], account=None)
+
+if not result:
+    logging.info("No suitable token exists in cache. Let's get a new one from AAD.")
+    result = app.acquire_token_for_client(scopes=config["scope"])
+
+if "access_token" in result:
+    # Call a protected API with the access token.
+    print(result["token_type"])
+else:
+    print(result.get("error"))
+    print(result.get("error_description"))
+    print(result.get("correlation_id"))  # You might need this when reporting a bug.
+```
+
 ---
 
 ### <a name="protocol"></a>Protocol
@@ -204,7 +225,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 Zie de documentatie over het [micro soft-identiteits platform en de OAuth 2,0-client referenties stroom](v2-oauth2-client-creds-grant-flow.md)voor meer informatie.
 
-## <a name="troubleshooting"></a>Probleemoplossing
+## <a name="troubleshooting"></a>Problemen oplossen
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Hebt u het resource/.-standaard bereik gebruikt?
 
@@ -241,12 +262,16 @@ Zie voor meer informatie [toepassings machtigingen (app-rollen)](scenario-protec
 
 Ga naar het volgende artikel in dit scenario om [een web-API](./scenario-daemon-call-api.md?tabs=dotnet)aan te roepen.
 
-# <a name="python"></a>[Python](#tab/python)
-
-Ga naar het volgende artikel in dit scenario om [een web-API](./scenario-daemon-call-api.md?tabs=python)aan te roepen.
-
 # <a name="java"></a>[Java](#tab/java)
 
 Ga naar het volgende artikel in dit scenario om [een web-API](./scenario-daemon-call-api.md?tabs=java)aan te roepen.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Ga naar het volgende artikel in dit scenario om [een web-API](./scenario-daemon-call-api.md?tabs=nodejs)aan te roepen.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Ga naar het volgende artikel in dit scenario om [een web-API](./scenario-daemon-call-api.md?tabs=python)aan te roepen.
 
 ---

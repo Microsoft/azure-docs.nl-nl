@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/19/2020
 ms.author: mjbrown
 ms.openlocfilehash: 55d58a6c4724bd01325db029ed75d77ccc96d0f8
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93333576"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-with-a-web-app-from-github-using-an-azure-resource-manager-template"></a>Azure Cosmos DB en Azure App Service met een web-app implementeren vanuit GitHub met behulp van een Azure Resource Manager-sjabloon
@@ -78,7 +78,7 @@ Open vervolgens het Azure Cosmos-account in de portal. De volgende scherm afbeel
 
 Ga vervolgens naar de Azure App Service in de resource groep. Klik op het tabblad Configuratie om de toepassings instellingen voor de App Service weer te geven. De toepassings instellingen bevatten het Cosmos DB account en de primaire sleutel waarden die nodig zijn om verbinding te maken met Cosmos DB, evenals de naam van de data base en de container die in de sjabloon implementatie zijn door gegeven.
 
-:::image type="content" source="./media/create-website/application-settings.png" alt-text="Toepassings instellingen":::
+:::image type="content" source="./media/create-website/application-settings.png" alt-text="Toepassingsinstellingen":::
 
 ### <a name="view-web-app-in-deployment-center"></a>Web-app weer geven in implementatie centrum
 

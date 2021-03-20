@@ -13,16 +13,16 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f92625131a35dc91c860923ec6523c189830f65
-ms.sourcegitcommit: 7edadd4bf8f354abca0b253b3af98836212edd93
+ms.openlocfilehash: bab8e8c6dfb944e496c636d53217e63175be9fbc
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102552147"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587845"
 ---
 # <a name="securing-service-principals"></a>Service-principals beveiligen
 
-Een [Service-Principal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) voor Azure Active Directory (Azure AD) is de lokale weer gave van een toepassings object in één Tenant of directory.  De functie fungeert als de identiteit van het toepassings exemplaar. Met Service-principals definieert u wie toegang heeft tot de toepassing en welke bronnen de toepassing kan openen. Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke toepassings object. De Tenant beveiligt de aanmelding van de Service-Principal en de toegang tot resources.  
+Een [Service-Principal](../develop/app-objects-and-service-principals.md) voor Azure Active Directory (Azure AD) is de lokale weer gave van een toepassings object in één Tenant of directory.  De functie fungeert als de identiteit van het toepassings exemplaar. Met Service-principals definieert u wie toegang heeft tot de toepassing en welke bronnen de toepassing kan openen. Een service-principal wordt gemaakt in elke Tenant waar de toepassing wordt gebruikt en verwijst naar het wereld wijde unieke toepassings object. De Tenant beveiligt de aanmelding van de Service-Principal en de toegang tot resources.  
 
 ### <a name="tenant-service-principal-relationships"></a>Pachter-Service-Principal-relaties
 Een toepassing met één Tenant heeft slechts één service-principal in de thuis Tenant. Voor een webtoepassing met meerdere tenants of een API is een Service-Principal vereist in elke Tenant. Een service-principal wordt gemaakt wanneer een gebruiker van die Tenant toestemming heeft gegeven voor het gebruik van de toepassing of de API. Deze toestemming maakt een een-op-veel-relatie tussen de multi tenant-toepassing en de bijbehorende service-principals.
@@ -39,7 +39,7 @@ Een gegeven toepassings exemplaar heeft twee verschillende eigenschappen: de App
 
 De ApplicationID vertegenwoordigt de globale toepassing en is hetzelfde voor alle toepassings exemplaren tussen tenants. De ObjectID is een unieke waarde voor een toepassings object en vertegenwoordigt de Service-Principal. Net als bij gebruikers, groepen en andere resources, kan de ObjectID een exemplaar van een toepassing in azure AD identificeren.
 
-Zie [toepassing en Service-Principal Relationship](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)(Engelstalig) voor meer informatie over dit onderwerp.
+Zie [toepassing en Service-Principal Relationship](../develop/app-objects-and-service-principals.md)(Engelstalig) voor meer informatie over dit onderwerp.
 
 U kunt ook een toepassing en de bijbehorende service principal object (ObjectID) in een Tenant maken met behulp van Azure PowerShell, Azure CLI, Microsoft Graph, de Azure Portal en andere hulpprogram ma's. 
 
@@ -63,7 +63,7 @@ Certificaten zijn veiliger: gebruik client certificaten, indien mogelijk. In teg
 
 * appwachtwoorden 
 
-Voor meer informatie over Azure Key Vault en hoe u deze kunt gebruiken voor certificaat-en geheim beheer raadpleegt u [over Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/overview) en [wijst u een Key Vault toegangs beleid toe met behulp van de Azure Portal](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal). 
+Voor meer informatie over Azure Key Vault en hoe u deze kunt gebruiken voor certificaat-en geheim beheer raadpleegt u [over Azure Key Vault](../../key-vault/general/overview.md) en [wijst u een Key Vault toegangs beleid toe met behulp van de Azure Portal](../../key-vault/general/assign-access-policy-portal.md). 
 
  ### <a name="challenges-and-mitigations"></a>Uitdagingen en oplossingen
 De volgende tabel bevat oplossingen voor problemen die kunnen optreden bij het gebruik van service-principals.
@@ -89,7 +89,7 @@ PowerShell gebruiken
 `Get-AzureADServicePrincipal -All:$true` 
 
 
-Zie [Get-azureadserviceprincipal namelijk niet](https://docs.microsoft.com/powershell/module/azuread/get-azureadserviceprincipal) voor meer informatie
+Zie [Get-azureadserviceprincipal namelijk niet](/powershell/module/azuread/get-azureadserviceprincipal) voor meer informatie
 
 ## <a name="assess-service-principal-security"></a>Service-Principal-beveiliging beoordelen
 
@@ -105,7 +105,7 @@ Kan aanmelden met een Service-Principal niet beheren met voorwaardelijke toegang
 | De standaard Azure RBAC-rol is Inzender. |Evalueer de behoeften en pas de rol toe met de mini maal mogelijke machtigingen om te voldoen aan die behoefte.|
 
 ## <a name="move-from-a-user-account-to-a-service-principal"></a>Van een gebruikers account naar een Service-Principal verplaatsen  
-Als u een Azure-gebruikers account als Service-Principal gebruikt, evalueer dan of u kunt overstappen naar een [beheerde identiteit](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet) of een service-principal. Als u geen beheerde identiteit kunt gebruiken, moet u een Service-Principal inrichten die net voldoende machtigingen en bereik heeft om de vereiste taken uit te voeren. U kunt een service-principal maken door [een toepassing te registreren](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)of met [Power shell](https://docs.microsoft.com/azure/active-directory/develop/howto-authenticate-service-principal-powershell).
+Als u een Azure-gebruikers account als Service-Principal gebruikt, evalueer dan of u kunt overstappen naar een [beheerde identiteit](../../app-service/overview-managed-identity.md?tabs=dotnet) of een service-principal. Als u geen beheerde identiteit kunt gebruiken, moet u een Service-Principal inrichten die net voldoende machtigingen en bereik heeft om de vereiste taken uit te voeren. U kunt een service-principal maken door [een toepassing te registreren](../develop/howto-create-service-principal-portal.md)of met [Power shell](../develop/howto-authenticate-service-principal-powershell.md).
 
 Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifieke API, [zoals in dit voor beeld](/powershell/azure/create-azure-service-principal-azureps), en zorgt u ervoor dat het machtigings type voor de toepassing wordt weer gegeven als ondersteund.
 
@@ -115,7 +115,7 @@ Wanneer u Microsoft Graph gebruikt, raadpleegt u de documentatie van de specifie
 
 [Een service-principal maken](../develop/howto-create-service-principal-portal.md)
 
- [Service-Principal-aanmeldingen bewaken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-sign-ins#sign-ins-report)
+ [Service-Principal-aanmeldingen bewaken](../reports-monitoring/concept-sign-ins.md#sign-ins-report)
 
 **Meer informatie over het beveiligen van service accounts:**
 

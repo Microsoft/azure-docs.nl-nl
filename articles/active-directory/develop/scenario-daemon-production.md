@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 8dc9bff86a07f3d4a0ec6fd224de6d5633165a6d
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: d903f04055d1607ee782bd502d99a8fd9cde87ca
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99582838"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578444"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Daemon-app voor het aanroepen van web-Api's-verplaatsen naar productie
 
@@ -54,18 +54,43 @@ U moet uitleggen wat uw klanten zijn om deze bewerkingen uit te voeren. Zie [toe
 
     ![topologie](media/scenario-daemon-app/damon-app-sample-web.svg)
 
+# <a name="java"></a>[Java](#tab/java)
+
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een Java-Console-app met behulp van de identiteit van de app](quickstart-v2-java-daemon.md).
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+- Zie voor meer informatie:
+  - Informatie over [configuratie](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/configuration.md)
+  - [ConfidentialClientApplication](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/initialize-confidential-client-application.md) instantiëren
+  - [Veelgestelde vragen](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/docs/faq.md)
+- Andere voor beelden/zelf studies:
+  - [Voor beeld van MSAL-knoop punt console-daemon](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-console)
+
+# <a name="python"></a>[Python](#tab/python)
+
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een python-console-app met behulp van de identiteit van de app](quickstart-v2-python-daemon.md).
+
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Hier volgen enkele koppelingen om meer te weten te komen over:
 
-# <a name="python"></a>[Python](#tab/python)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
-Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een python-console-app met behulp van de identiteit van de app](./quickstart-v2-python-daemon.md).
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een .net Core-Console-app met behulp van de identiteit van de app](quickstart-v2-netcore-daemon.md).
 
 # <a name="java"></a>[Java](#tab/java)
 
-Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een Java-Console-app met behulp van de identiteit van de app](./quickstart-v2-java-daemon.md).
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een Java-Console-app met behulp van de identiteit van de app](quickstart-v2-java-daemon.md).
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
+
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een Node.js console-app met behulp van de identiteit van de app](quickstart-v2-nodejs-console.md).
+
+# <a name="python"></a>[Python](#tab/python)
+
+Probeer de Snelstartgids [een token te verkrijgen en Microsoft Graph-API aan te roepen vanuit een python-console-app met behulp van de identiteit van de app](quickstart-v2-python-daemon.md).
 
 ---

@@ -4,10 +4,10 @@ description: Gebruik Azure Resource Manager om App Service resources te verplaat
 ms.topic: conceptual
 ms.date: 08/10/2020
 ms.openlocfilehash: 27555a4616befca41c7e970e947afa1cd1ff7248
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90531369"
 ---
 # <a name="move-guidance-for-app-service-resources"></a>Richt lijnen voor App Service resources verplaatsen
@@ -20,7 +20,7 @@ Bij het verplaatsen van een web-app tussen abonnementen, gelden de volgende rich
 
 - De doel resource groep mag geen bestaande App Service resources hebben. App Service resources zijn onder andere:
     - Web Apps
-    - App Service-abonnementen
+    - App Service-plannen
     - Geüploade of geïmporteerde TLS/SSL-certificaten
     - App Service-omgevingen
 - Alle App Service resources in de resource groep moeten samen worden verplaatst.
@@ -28,7 +28,7 @@ Bij het verplaatsen van een web-app tussen abonnementen, gelden de volgende rich
 - U kunt een certificaat dat is gebonden aan een web verplaatsen zonder de TLS-bindingen te verwijderen, zolang het certificaat met alle andere resources in de resource groep is verplaatst.
 - App Service resources kunnen alleen worden verplaatst van de resource groep waarin ze oorspronkelijk zijn gemaakt. Als een App Service resource niet langer in de oorspronkelijke resource groep staat, zet u deze terug naar de oorspronkelijke resource groep. Verplaats vervolgens de resource over abonnementen.
 
-Als u de oorspronkelijke resource groep niet meer weet, kunt u deze vinden via diagnostische gegevens. Selecteer voor uw web-app **diagnose en los problemen**op. Selecteer vervolgens **configuratie en beheer**.
+Als u de oorspronkelijke resource groep niet meer weet, kunt u deze vinden via diagnostische gegevens. Selecteer voor uw web-app **diagnose en los problemen** op. Selecteer vervolgens **configuratie en beheer**.
 
 ![Diagnostische gegevens selecteren](./media/app-service-move-limitations/select-diagnostics.png)
 

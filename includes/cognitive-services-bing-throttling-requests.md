@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: nitinme
 ms.openlocfilehash: 1d8340054ace25a0cdc36eef9c3d5b4238a6f99b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "67176319"
 ---
 De service en uw abonnementtype bepalen hoeveel query’s u per seconde kunt uitvoeren (QPS). Zorg dat uw toepassing logica bevat die zorgt dat u binnen uw quotum blijft. Als de QPS-limiet is bereikt of overschreden, mislukt de aanvraag en wordt er een HTTP 429-statuscode geretourneerd. Het antwoord bevat de header `Retry-After`, waarin wordt aangegeven hoe lang u moet wachten voordat u een nieuwe aanvraag kunt verzenden.

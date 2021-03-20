@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 8c107b88f964d8e657d6833fc3a2e8425d9053ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90934866"
 ---
 # <a name="create-and-manage-firewall-rules-for-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Maak en beheer firewall regels voor Azure Database for PostgreSQL-flexibele server met behulp van de Azure Portal
@@ -32,7 +32,7 @@ In dit artikel wordt de nadruk gelegd op het maken van een PostgreSQL **-server 
 3. Selecteer **Flexibele server** als implementatieoptie.
 4. Vul het formulier **basis principes** in.
 5. Ga naar het tabblad **netwerken** om te configureren hoe u verbinding wilt maken met uw server.
-6. Selecteer in de **verbindings methode** *open bare toegang (toegestane IP-adressen)*. Als u de **firewall regels**wilt maken, geeft u de naam van de firewall regel en één IP-adres of een bereik van adressen op. Als u de regel tot één IP-adres wilt beperken, typt u hetzelfde adres in het veld voor eerste IP-adres en laatste IP-adres. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot alle data bases op de PostgreSQL-server waarvoor ze geldige referenties hebben.
+6. Selecteer in de **verbindings methode** *open bare toegang (toegestane IP-adressen)*. Als u de **firewall regels** wilt maken, geeft u de naam van de firewall regel en één IP-adres of een bereik van adressen op. Als u de regel tot één IP-adres wilt beperken, typt u hetzelfde adres in het veld voor eerste IP-adres en laatste IP-adres. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot alle data bases op de PostgreSQL-server waarvoor ze geldige referenties hebben.
    > [!Note]
    > Azure Database for PostgreSQL-flexibele server maakt een firewall op server niveau. De firewall voorkomt dat externe toepassingen en hulpprogramma's verbinding maken met de server of databases op de server, tenzij u een firewallregel maakt om de firewall te openen voor specifieke IP-adressen.
 7. Selecteer **Beoordelen + maken** om uw flexibele serverconfiguratie te controleren.
@@ -67,7 +67,7 @@ In dit artikel wordt de nadruk gelegd op het maken van een PostgreSQL **-server 
 
 Mogelijk wilt u resources of toepassingen die zijn geïmplementeerd in azure inschakelen om verbinding te maken met uw flexibele server. Dit omvat webtoepassingen die worden gehost in Azure App Service, die worden uitgevoerd op een virtuele machine van Azure, een Azure Data Factory Data Management Gateway en nog veel meer. 
 
-Wanneer een toepassing in azure probeert verbinding te maken met uw server, controleert de firewall of Azure-verbindingen zijn toegestaan. U kunt deze instelling inschakelen door de optie **open bare toegang vanaf Azure-Services en-resources in azure toestaan** in de portal op het tabblad **netwerken** te selecteren en op **Opslaan**te drukken.
+Wanneer een toepassing in azure probeert verbinding te maken met uw server, controleert de firewall of Azure-verbindingen zijn toegestaan. U kunt deze instelling inschakelen door de optie **open bare toegang vanaf Azure-Services en-resources in azure toestaan** in de portal op het tabblad **netwerken** te selecteren en op **Opslaan** te drukken.
 
 De resources hoeven zich niet in hetzelfde virtuele netwerk (VNet) of resource groep voor de firewall regel te bevinden om deze verbindingen in te scha kelen. Als de verbindings poging niet is toegestaan, bereikt de aanvraag de Azure Database for PostgreSQL-flexibele server niet.
 

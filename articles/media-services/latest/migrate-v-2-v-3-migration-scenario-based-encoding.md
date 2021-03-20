@@ -7,14 +7,14 @@ manager: femila
 ms.service: media-services
 ms.topic: conceptual
 ms.workload: media
-ms.date: 1/14/2020
+ms.date: 03/17/2021
 ms.author: inhenkel
-ms.openlocfilehash: e093e22e2f1db3b432fdf328a077e56a8e56d92b
-ms.sourcegitcommit: d135e9a267fe26fbb5be98d2b5fd4327d355fe97
+ms.openlocfilehash: 915fdcb059d9e7bf9e1853040b90b82a0457652e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102612491"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598402"
 ---
 # <a name="encoding-scenario-based-migration-guidance"></a>Richt lijnen voor migratie op basis van een code ring
 
@@ -76,7 +76,7 @@ Klik op de onderstaande afbeelding om een grotere versie te zien.
         - Uitvoer activa (s)
         - Een resourcegroep
         - AMS-account naam  
-1. Gebruik [Event grid](monitor-events-portal-how-to.md) voor het bewaken van uw taak.
+1. Gebruik [Event grid](monitoring/monitor-events-portal-how-to.md) voor het bewaken van uw taak.
 1. Verzend de taak.
 
 ## <a name="custom-presets-from-v2-to-v3-encoding"></a>Aangepaste voor instellingen van v2 tot v3-code ring

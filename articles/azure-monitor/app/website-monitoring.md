@@ -2,14 +2,14 @@
 title: 'Quickstart: Websites bewaken met Azure Monitor Application Insights'
 description: In deze quickstart krijgt u informatie over het instellen van client/browser-functies voor het controleren van websites met Azure Monitor Application Insights.
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 03/19/2021
 ms.custom: mvc
-ms.openlocfilehash: 1773ebb9c490420451a119c8343fb613ff50f029
-ms.sourcegitcommit: 8d1b97c3777684bd98f2cfbc9d440b1299a02e8f
+ms.openlocfilehash: 0e10db39c8dbbf81087d696cfbb5b2ded1ae79ac
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102488576"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654895"
 ---
 # <a name="quickstart-start-monitoring-your-website-with-azure-monitor-application-insights"></a>Quickstart: Uw website bewaken met Azure Monitor Application Insights
 
@@ -60,9 +60,9 @@ Met Application Insights kunnen telemetriegegevens worden verzameld vanuit elke 
 
 ## <a name="configure-application-insights-sdk"></a>Application Insights-SDK configureren
 
-1. Selecteer **Overzicht** > **Essentials** en kopieer de **Instrumentatiesleutel** van uw toepassing.
+1. Selecteer **overzicht** en kopieer de **verbindings reeks** van uw toepassing. Voor dit voor beeld is alleen het instrumentatie sleutel onderdeel van de connection string vereist `InstrumentationKey=00000000-0000-0000-0000-000000000000;` .
 
-   ![Nieuw Application Insights-resourceformulier](media/website-monitoring/instrumentation-key-001.png)
+    :::image type="content" source="media/website-monitoring/keys.png" alt-text="Scherm afbeelding van overzichts pagina met instrumentatie sleutel en connection string.":::
 
 1. Voeg het volgende script toe aan het ``hello_world.html``-bestand vóór de afsluitende ``</head>``-code:
 
@@ -76,7 +76,7 @@ Met Application Insights kunnen telemetriegegevens worden verzameld vanuit elke 
     crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
     // onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DO NOT ADD anything to the sdk.queue -- As they won't get called)
     cfg: { // Application Insights Configuration
-        instrumentationKey: "YOUR_INSTRUMENTATION_KEY_GOES_HERE"
+        connectionString:"InstrumentationKey=YOUR_INSTRUMENTATION_KEY_GOES_HERE;" 
         /* ...Other Configuration Options... */
     }});
     </script>
@@ -84,7 +84,7 @@ Met Application Insights kunnen telemetriegegevens worden verzameld vanuit elke 
 
     > [!NOTE]
     > Het huidige fragment (zie hierboven) is versie 5. de versie wordt in het fragment gecodeerd als SV: "#" en de [huidige versie en configuratie details zijn beschikbaar op github](https://go.microsoft.com/fwlink/?linkid=2156318).
-   
+
 1. Bewerk ``hello_world.html`` en voeg de instrumentatiesleutel toe.
 
 1. Open ``hello_world.html`` in een lokale browsersessie. Met deze actie maakt u één paginaweergave. U kunt uw browser vernieuwen voor het genereren van meerdere testpaginaweergaven.
@@ -95,7 +95,7 @@ Met Application Insights kunnen telemetriegegevens worden verzameld vanuit elke 
 
    De vier standaardgrafieken op de overzichtspagina hebben betrekking op toepassingsgegevens op de server. Omdat we de interacties van de browser/client instrumenteren met de JavaScript SDK, is deze specifieke weergave niet van toepassing tenzij er ook een SDK op de server is geïnstalleerd.
 
-1. Selecteer **Analytics** ![pictogram van toepassingsoverzicht](media/website-monitoring/006.png).  Door deze actie wordt **Analytics** geopend. Dit biedt een uitgebreide querytaal voor het analyseren van alle gegevens die zijn verzameld met Application Insights. Als u gegevens wilt weergeven die betrekking hebben op de browseraanvragen van de client, moet u de volgende query uitvoeren:
+1. Selecteer **Logboeken**.  Met deze actie opent u **Logboeken**, die een uitgebreide query taal biedt voor het analyseren van alle gegevens die zijn verzameld door Application Insights. Als u gegevens wilt weergeven die betrekking hebben op de browseraanvragen van de client, moet u de volgende query uitvoeren:
 
     ```kusto
     // average pageView duration by name
@@ -112,19 +112,15 @@ Met Application Insights kunnen telemetriegegevens worden verzameld vanuit elke 
     | render timechart
     ```
 
-   ![Analytics-grafiek met gebruikersaanvragen gedurende een tijdsperiode](./media/website-monitoring/analytics-query.png)
+   :::image type="content" source="media/website-monitoring/log-query.png" alt-text="Scherm opname van de log Analytics-grafiek van gebruikers aanvragen gedurende een bepaalde tijd.":::
 
-1. Ga terug naar de **overzichtspagina**. Selecteer onder de header **Onderzoeken** de optie **Browser** en selecteer vervolgens **Prestaties**.  Er worden metrische gegevens met betrekking tot de prestaties van uw website weergegeven. Er is een overeenkomstige weergave waarmee u fouten en uitzonderingen op uw website kunt analyseren. U kunt **Voorbeelden** selecteren voor toegang tot de [volledige transactiedetails](./transaction-diagnostics.md).
+1. Ga terug naar de **overzichtspagina**. Selecteer in de kop **onderzoek** de optie **prestaties** en selecteer vervolgens het tabblad **browser** .  De metrische gegevens met betrekking tot de prestaties van uw website worden weer gegeven. Er is een overeenkomstige weergave waarmee u fouten en uitzonderingen op uw website kunt analyseren. U kunt **Voorbeelden** selecteren voor toegang tot de [volledige transactiedetails](./transaction-diagnostics.md).
 
-   ![Grafiek voor metrische servergegevens](./media/website-monitoring/browser-performance.png)
+     :::image type="content" source="media/website-monitoring/performance.png" alt-text="Scherm afbeelding van het tabblad prestaties met de grafiek metrische gegevens van de browser.":::
 
-1. Selecteer in het hoofdmenu van Application Insights, onder de header **Gebruik** de optie [**Gebruikers**](./usage-segmentation.md) om aan de slag te gaan met het verkennen van de [hulpprogramma's voor analyse van het gedrag van gebruikers](./usage-overview.md). Omdat we vanaf één computer testen, zien we alleen gegevens voor één gebruiker. Voor een live website kan de verdeling van gebruikers er als volgt uitzien:
-
-     ![Gebruikersgrafiek](./media/website-monitoring/usage-users.png)
+1. Selecteer in het hoofdmenu van Application Insights, onder de header **Gebruik** de optie [**Gebruikers**](./usage-segmentation.md) om aan de slag te gaan met het verkennen van de [hulpprogramma's voor analyse van het gedrag van gebruikers](./usage-overview.md). Omdat we vanaf één computer testen, zien we alleen gegevens voor één gebruiker.
 
 1. Voor een complexere website met meerdere pagina's kunt u het hulpprogramma [**User Flows**](./usage-flows.md) gebruiken om de routes die bezoekers door de verschillende onderdelen van uw website bij te houden.
-
-   ![Gebruikersstromen visualiseren](./media/website-monitoring/user-flows.png)
 
 Zie de [naslagdocumentatie over de JavaScript SDK API](./javascript.md) als u meer wilt weten over geavanceerdere configuraties voor het controleren van websites.
 

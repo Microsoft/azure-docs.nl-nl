@@ -12,15 +12,15 @@ ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 07/16/2019
 ms.openlocfilehash: f196db537ef0a64d14930ed6bc67696ee4614c23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86528897"
 ---
 # <a name="use-cli-to-add-an-azure-sql-managed-instance-to-a-failover-group"></a>CLI gebruiken om een Azure SQL Managed Instance toe te voegen aan een failovergroep
 
-Dit Azure CLI-voorbeeldscript maakt twee beheerde exemplaren, voegt ze toe aan een failovergroep en test de failover van het primaire beheerde exemplaar naar het secundaire beheerde exemplaar.
+Dit Azure CLI-voorbeeldscript maakt twee beheerde exemplaren, voegt ze toe aan een failover-groep en test de failover van het primaire beheerde exemplaar naar het secundaire beheerde exemplaar.
 
 Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor dit artikel gebruikmaken van Azure CLI versie 2.0 of hoger. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli).
 
@@ -36,7 +36,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor 
 
 ### <a name="clean-up-deployment"></a>Opschonen van implementatie
 
-Gebruik de volgende opdracht om de resourcegroep en alle resources die er aan zijn gekoppeld te verwijderen. U moet de resourcegroep twee keer verwijderen. Als u de resourcegroep de eerste keer verwijdert, worden het beheerde exemplaar en de virtuele clusters verwijderd, maar daarna wordt het foutbericht `az group delete : Long running operation failed with status 'Conflict'.` weergegeven. Voer de opdracht az group delete een tweede keer uit om eventuele resterende resources en de resourcegroep te verwijderen.
+Gebruik de volgende opdracht om de resourcegroep en alle resources die eraan zijn gekoppeld te verwijderen. U moet de resourcegroep twee keer verwijderen. Als u de resourcegroep de eerste keer verwijdert, worden het beheerde exemplaar en de virtuele clusters verwijderd, maar daarna wordt het foutbericht `az group delete : Long running operation failed with status 'Conflict'.` weergegeven. Voer de opdracht az group delete een tweede keer uit om eventuele resterende resources en de resourcegroep te verwijderen.
 
 ```azurecli-interactive
 az group delete --name $resource

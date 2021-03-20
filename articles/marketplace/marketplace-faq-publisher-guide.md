@@ -8,10 +8,10 @@ author: trkeya
 ms.author: trkeya
 ms.date: 09/11/2020
 ms.openlocfilehash: 584e1e943f215aa4a69368fb71cb3053b1444a01
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94660216"
 ---
 # <a name="common-questions-about-the-microsoft-commercial-marketplace"></a>Veelgestelde vragen over de micro soft Commercial Marketplace
@@ -40,7 +40,7 @@ De commerciële Marketplace is een uitgangs punt voor Go-to-Market-samen werking
 
 De commerciële Marketplace is beschikbaar in 141 regio's, per abonnement. 
 
-We beheren de BTW-betaling in veel landen/regio's en bieden toegang tot ons wereld wijde kanaal netwerk van wederverkopers. U kunt de micro soft-klant overeenkomst van een klant of Enterprise Agreement gebruiken om te verkopen aan organisaties zonder dat u een nieuwe aanschaf relatie hoeft te maken.
+We beheren de BTW-betaling in veel landen/regio's en bieden toegang tot ons wereld wijde kanaal netwerk van wederverkopers. U kunt de micro soft-klant overeenkomst van een klant of Enterprise Overeenkomst gebruiken om te verkopen aan organisaties zonder dat u een nieuwe aanschaf relatie hoeft te maken.
 
 Zie de [micro soft Commercial Marketplace hub](https://aka.ms/commercialmarketplacehub)voor meer informatie.
 
@@ -81,7 +81,7 @@ We bieden rapportage over uw aanbiedingen binnen de commerciële Marketplace. Al
 
 ### <a name="what-is-microsofts-relationship-with-my-customers"></a>Wat is de relatie van micro soft met mijn klanten?
 
-De commerciële Marketplace werkt met behulp van een agentuur model. De klant ondertekent een aankoop overeenkomst met ons, via hun Microsoft Cloud overeenkomst of Enterprise Agreement (EA). We zijn verantwoordelijk voor facturering, incasso's, BTW-betaling in toepasselijke regio's en uitbetaling van uitgevers. Als uitgever kunt u de prijs instellen, de gebruiks voorwaarden instellen en technische ondersteuning bieden.
+De commerciële Marketplace werkt met behulp van een agentuur model. De klant ondertekent een aankoop overeenkomst met ons, via hun Microsoft Cloud overeenkomst of Enterprise Overeenkomst (EA). We zijn verantwoordelijk voor facturering, incasso's, BTW-betaling in toepasselijke regio's en uitbetaling van uitgevers. Als uitgever kunt u de prijs instellen, de gebruiks voorwaarden instellen en technische ondersteuning bieden.
 
 ### <a name="what-terms-of-use-options-are-available-with-the-commercial-marketplace"></a>Welke gebruiks voorwaarden zijn beschikbaar voor de commerciële Marketplace?
 
@@ -276,7 +276,7 @@ Klanten worden meestal maandelijks gefactureerd voor aankopen in de vorige factu
 
 Uitbetalingen gebeuren maandelijks. Zie voor meer informatie over betalings schema's uw aanstaande uitbetalingen in partner centrum en de manier waarop de klant niet-betalingen doen, de [Details van het uitbetalings beleid](/partner-center/payout-policy-details?context=/azure/marketplace/context/context).
 
-- Voor trans acties waarbij de klant een Enterprise Agreement heeft gebruikt, worden uitbetalingen in de volgende uitbetalings cyclus in 30 dagen na de klant factuur uitgegeven. 
+- Voor trans acties waarbij de klant een Enterprise Overeenkomst heeft gebruikt, worden uitbetalingen in de volgende uitbetalings cyclus in 30 dagen na de klant factuur uitgegeven. 
 - Voor trans acties waarbij de klant een credit card heeft gebruikt, is er een extra periode van 30 dagen nadat we een betaling hebben ontvangen om de middelen duidelijk te maken en zijn er geen terugstortingen of verdachte fraude.
 
 Uitbetalingen worden alleen verleend wanneer de verkoop een minimale gecombineerde waarde van $50,00 heeft bereikt.

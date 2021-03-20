@@ -8,10 +8,10 @@ ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
 ms.openlocfilehash: b0f8c5806ba22708db6dc537d391c1f1b1a183ec
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92543811"
 ---
 # <a name="azure-database-for-mysql-single-server"></a>Azure Database for MySQL Single Server
@@ -79,9 +79,9 @@ De service voor één server is uitgerust met ingebouwde functies voor prestatie
 
 De service voert de communityversie van MySQL uit. Dit biedt volledige toepassingscompatibiliteit en vereist minimale herstructureringskosten voor het migreren van bestaande toepassingen die zijn ontwikkeld op de MySQL-engine naar een service met één server. De migratie naar de enkele server kan worden uitgevoerd met behulp van een van de volgende opties:
 
-- **Dumpen en herstellen** : voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kan dumpen en herstellen met behulp van communityhulpprogramma's, zoals mysqldump/mydumper, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dumpen en herstellen](concepts-migrate-dump-restore.md) voor meer informatie. 
-- **Azure Database Migration Service** : voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan [Azure Database Migration Service](../dms/tutorial-mysql-azure-mysql-online.md) worden gebruikt. 
-- **Replicatie van binnenkomende gegevens** : voor minimale downtime-migraties kan ook de replicatie van binnenkomende gegevens, die afhankelijk is van replicatie op basis van binlog, worden gebruikt. Replicatie van binnenkomende gegevens heeft de voorkeur voor minimale downtime-migraties van praktijkgerichte experts die meer controle over de migratie willen. Zie [replicatie van binnenkomende gegevens](concepts-data-in-replication.md) voor meer informatie.
+- **Dumpen en herstellen**: voor offline migraties, waarbij gebruikers zich enige downtime kunnen veroorloven, kan dumpen en herstellen met behulp van communityhulpprogramma's, zoals mysqldump/mydumper, de snelste manier zijn voor migratie. Zie [Migreren met behulp van dumpen en herstellen](concepts-migrate-dump-restore.md) voor meer informatie. 
+- **Azure Database Migration Service**: voor naadloze en vereenvoudigde migraties naar één server met minimale downtime kan [Azure Database Migration Service](../dms/tutorial-mysql-azure-mysql-online.md) worden gebruikt. 
+- **Replicatie van binnenkomende gegevens**: voor minimale downtime-migraties kan ook de replicatie van binnenkomende gegevens, die afhankelijk is van replicatie op basis van binlog, worden gebruikt. Replicatie van binnenkomende gegevens heeft de voorkeur voor minimale downtime-migraties van praktijkgerichte experts die meer controle over de migratie willen. Zie [replicatie van binnenkomende gegevens](concepts-data-in-replication.md) voor meer informatie.
 
 ## <a name="contacts"></a>Contactpersonen
 Voor eventuele vragen of suggesties over het werken met Azure Database for MySQL stuurt u een e-mailbericht naar het Azure Database for MySQL-team ([@AskAzure DB for MySQL](mailto:AskAzureDBforMySQL@service.microsoft.com)). Dit e-mailadres is geen alias voor technische ondersteuning.

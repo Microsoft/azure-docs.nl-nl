@@ -10,10 +10,10 @@ ms.topic: quickstart
 ms.date: 09/15/2020
 ms.author: ambapat
 ms.openlocfilehash: 86d0a336a7d3f5d12ed8e53de802616f839f9eba
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91756811"
 ---
 # <a name="quickstart-provision-and-activate-a-managed-hsm-using-azure-cli"></a>Quickstart: Een beheerde HSM inrichten en activeren met behulp van Azure CLI
@@ -75,8 +75,8 @@ az keyvault create --hsm-name "ContosoMHSM" --resource-group "ContosoResourceGro
 
 In de uitvoer van deze opdracht worden de eigenschappen weergegeven van de beheerde HSM die u hebt gemaakt. De twee belangrijkste eigenschappen zijn:
 
-* **name**: In het voorbeeld is de naam ContosoMHSM. U gebruikt deze naam voor andere Key Vault-opdrachten.
-* **hsmUri**: In het voorbeeld is de URI https://contosohsm.managedhsm.azure.net. Apps die via de REST API gebruikmaken van uw HSM moeten deze URI gebruiken.
+* **name**: In het voorbeeld is ContosoMHSM de naam. U gebruikt deze naam voor andere Key Vault-opdrachten.
+* **hsmUri**: In het voorbeeld is de URI https://contosohsm.managedhsm.azure.net. Toepassingen die via de REST API gebruikmaken van uw HSM, moeten deze URI gebruiken.
 
 Uw Azure-account is nu gemachtigd om alle bewerkingen op deze beheerde HSM uit te voeren. Op dit moment is nog niemand anders gemachtigd.
 

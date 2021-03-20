@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 01/14/2021
 ms.author: juliako
-ms.openlocfilehash: fe6be5778997f0ef4a3f53ae45d17352eca60d8e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 35d01fd60d0549a528a45013add48bd203b86d6e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101727257"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104654676"
 ---
 # <a name="create-a-video-indexer-account"></a>Een Video Indexer-account maken
 
@@ -203,7 +203,7 @@ Om het maken van het account te automatiseren, is een proces van twee stappen:
 
 -   Een Azure-abonnement in [Azure Government](../../azure-government/index.yml).
 - Een Azure AD-account in Azure Government.
-- Alle vooraf-vereisten van machtigingen en bronnen zoals hierboven beschreven in [vereisten voor het maken van verbinding met Azure](#prerequisites-for-connecting-to-azure).
+- Alle vooraf-vereisten van machtigingen en bronnen zoals hierboven beschreven in [vereisten voor het maken van verbinding met Azure](#prerequisites-for-connecting-to-azure). Controleer de [aanvullende vereisten voor automatische stroom](#additional-prerequisites-for-automatic-flow) en [aanvullende vereisten voor hand matige stroom](#additional-prerequisites-for-manual-flow).
 
 ### <a name="create-new-account-via-the-azure-government-portal"></a>Nieuw account maken via de Azure Government Portal
 

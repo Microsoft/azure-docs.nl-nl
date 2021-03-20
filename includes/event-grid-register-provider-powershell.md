@@ -9,10 +9,10 @@ ms.date: 07/05/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: 68a208af1a9aa9e73f2af99021d195f264fb21f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "67176651"
 ---
 ## <a name="enable-event-grid-resource-provider"></a>Event Grid-resourceprovicer inschakelen

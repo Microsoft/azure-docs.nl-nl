@@ -9,10 +9,10 @@ ms.date: 06/10/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: b0c03c2f5313605fbdf288a9262df0852e066efd
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93333474"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Consistentieniveaus in Azure Cosmos DB beheren
@@ -67,7 +67,7 @@ Clients kunnen het standaardconsistentieniveau dat is ingesteld door de service 
 > [!TIP]
 > Consistentie kan alleen op aanvraag niveau worden **versoepeld** . Werk de standaard consistentie voor het Cosmos-account bij om door te gaan naar een sterkere consistentie.
 
-### <a name="net-sdk"></a><a id="override-default-consistency-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="override-default-consistency-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -168,7 +168,7 @@ Een van de consistentie niveaus in Azure Cosmos DB is *sessie* consistentie. Dit
 
 Als u sessietokens handmatig wilt beheren, haalt u het sessietoken op uit het antwoord en stelt u het in per aanvraag. Als u sessietokens niet handmatig hoeft te beheren, hoeft u deze voorbeelden niet te gebruiken. De SDK houdt sessietokens automatisch bij. Als u het sessietoken niet handmatig instelt, gebruikt de SDK standaard het meest recente sessietoken.
 
-### <a name="net-sdk"></a><a id="utilize-session-tokens-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="utilize-session-tokens-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 

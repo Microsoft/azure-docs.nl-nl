@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
 ms.openlocfilehash: 6724d8eb8df29ccfb033f5951ec56b7770e3c413
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90903576"
 ---
 # <a name="api-support-in-azure-static-web-apps-preview-with-azure-functions"></a>API-ondersteuning in de preview-versie van statische Web Apps van Azure met Azure Functions
@@ -31,7 +31,7 @@ API-eind punten zijn beschikbaar voor de web-app via de _API_ -route. Terwijl de
 
 Azure static Web Apps biedt een API via Azure Functions. De mogelijkheden van Azure Functions zijn gericht op een specifieke set functies waarmee u een API voor een web-app kunt maken en de web-app in staat wilt stellen om op een veilige manier een API te gebruiken. Deze functies worden geleverd met enkele beperkingen, waaronder:
 
-- Het voor voegsel van de API-route moet _API_zijn.
+- Het voor voegsel van de API-route moet _API_ zijn.
 - De API moet een Java script-, C#-of python-Azure Functions-app zijn.
 - Routerings regels voor API-functies bieden alleen ondersteuning voor het [omleiden](routes.md#redirects) en [beveiligen van routes met rollen](routes.md#securing-routes-with-roles).
 - Triggers zijn beperkt tot [http](../azure-functions/functions-bindings-http-webhook.md).

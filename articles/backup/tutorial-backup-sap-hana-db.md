@@ -3,12 +3,12 @@ title: 'Zelfstudie: back-ups maken van SAP HANA-databases in virtuele Azure-mach
 description: In deze zelfstudie ontdekt u hoe u een back-up naar een Azure Backup Recovery Services-kluis maakt van SAP HANA-databases die op een virtuele Azure-machine worden uitgevoerd.
 ms.topic: tutorial
 ms.date: 02/24/2020
-ms.openlocfilehash: 5548717b25ea3ec027ba5f588e5e28faafbb5d6f
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 00109de349c1fdfdbaff9de30d18f64d8b986a59
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101703678"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104587641"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm"></a>Zelfstudie: Een back-up maken van SAP HANA-databases in een Azure-VM
 
@@ -167,6 +167,18 @@ In de uitvoer van de opdracht moet de sleutel {SID}{DBNAME} worden weergegeven e
 
 >[!NOTE]
 > Controleer of u over een unieke set SSFS-bestanden beschikt onder `/usr/sap/{SID}/home/.hdb/`. Als het goed is, bevat dit pad maar één map.
+
+Hier volgt een overzicht van de stappen die nodig zijn voor het volt ooien van de uitvoering van het script dat vooraf wordt geregistreerd.
+
+|Kopers  |Van  |Wat u moet uitvoeren  |Opmerkingen  |
+|---------|---------|---------|---------|
+|```<sid>```adm (OS)     |  HANA-BESTURINGS SYSTEEM       |   Lees de zelf studie en down load het script dat vooraf wordt geregistreerd      |   Lees de [bovenstaande vereisten hierboven](#prerequisites) voor het [downloaden van het](https://aka.ms/scriptforpermsonhana) script voor vooraf registratie  |
+|```<sid>```adm (OS) en systeem gebruiker (HANA)    |      HANA-BESTURINGS SYSTEEM   |   Opdracht hdbuserstore set uitvoeren      |   bijvoorbeeld hdbuserstore set SYSTEM hostname>:3 ```<Instance#>``` 13 systeem ```<password>``` **Opmerking:**  zorg ervoor dat u hostname gebruikt in plaats van IP-adres of FQDN      |
+|```<sid>```adm (OS)    |   HANA-BESTURINGS SYSTEEM      |  Opdracht hdbuserstore List uitvoeren       |   Controleer of het resultaat het standaard archief bevat, zoals hieronder wordt beschreven: ```KEY SYSTEM  ENV : <hostname>:3<Instance#>13  USER: SYSTEM```      |
+|Hoofdmap (OS)     |   HANA-BESTURINGS SYSTEEM        |    Azure Backup HANA vooraf-registratie script uitvoeren      |    ```./msawb-plugin-config-com-sap-hana.sh -a --sid <SID> -n <Instance#> --system-key SYSTEM```     |
+|```<sid>```adm (OS)    |  HANA-BESTURINGS SYSTEEM       |   Opdracht hdbuserstore List uitvoeren      |    Controleer of het resultaat nieuwe regels bevat, zoals hieronder:  ```KEY AZUREWLBACKUPHANAUSER  ENV : localhost: 3<Instance#>13   USER: AZUREWLBACKUPHANAUSER```     |
+
+Nadat het script voor de voorafgaande registratie is uitgevoerd en geverifieerd, kunt u [de connectiviteits vereisten](#set-up-network-connectivity) vervolgens controleren en vervolgens een [back-up](#discover-the-databases) van de Recovery Services-kluis configureren
 
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 

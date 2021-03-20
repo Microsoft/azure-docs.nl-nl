@@ -4,10 +4,10 @@ description: Met service status meldingen kunt u service status berichten weer g
 ms.topic: conceptual
 ms.date: 4/12/2018
 ms.openlocfilehash: 4f2b4a0779d775ed5be5bfa28831cccc68c33caf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86529009"
 ---
 # <a name="use-the-azure-portal-to-view-service-health-notifications"></a>De Azure Portal gebruiken om service status meldingen weer te geven
@@ -37,18 +37,18 @@ subStatus | Doorgaans de HTTP-status code van de bijbehorende REST-aanroep, maar
 eventTimestamp | Tijds tempel wanneer de gebeurtenis is gegenereerd door de Azure-service voor het verwerken van de aanvraag die overeenkomt met de gebeurtenis.
 submissionTimestamp | Tijds tempel wanneer de gebeurtenis beschikbaar werd voor het uitvoeren van query's.
 subscriptionId | Het Azure-abonnement waarin deze gebeurtenis is vastgelegd.
-status | De teken reeks die de status van de bewerking beschrijft. Enkele veelvoorkomende waarden zijn: **gestart**, **in uitvoering**, **geslaagd**, **mislukt**, **actief**en **opgelost**.
+status | De teken reeks die de status van de bewerking beschrijft. Enkele veelvoorkomende waarden zijn: **gestart**, **in uitvoering**, **geslaagd**, **mislukt**, **actief** en **opgelost**.
 operationName | De naam van de bewerking.
 category | Deze eigenschap is altijd **ServiceHealth**.
 resourceId | De resource-ID van de betrokken resource.
 Eigenschappen. title | De gelokaliseerde titel voor deze communicatie. Engels is de standaard instelling.
 Eigenschappen. communicatie | De gelokaliseerde Details van de communicatie met HTML-opmaak. Engels is de standaard instelling.
-Eigenschappen. incidentType | Een van de volgende waarden: **handeling vereist**, **informatief**, **incident**, **onderhoud**of **beveiliging**.
+Eigenschappen. incidentType | Een van de volgende waarden: **handeling vereist**, **informatief**, **incident**, **onderhoud** of **beveiliging**.
 Eigenschappen. trackingId | Het incident waaraan deze gebeurtenis is gekoppeld. Gebruik deze om de gebeurtenissen met betrekking tot een incident te correleren.
-Eigenschappen. impactedServices | Een JSON-blob met escape-teken waarmee de services en regio's worden beschreven die worden beïnvloed door het incident. De eigenschap bevat een lijst met Services, elk met een **ServiceName**en een lijst met beïnvloede regio's, die elk een **regio**naam hebben.
+Eigenschappen. impactedServices | Een JSON-blob met escape-teken waarmee de services en regio's worden beschreven die worden beïnvloed door het incident. De eigenschap bevat een lijst met Services, elk met een **ServiceName** en een lijst met beïnvloede regio's, die elk een **regio** naam hebben.
 Eigenschappen. defaultLanguageTitle | De communicatie in het Engels.
 Eigenschappen. defaultLanguageContent | De communicatie in het Engels als HTML-opmaak of tekst zonder opmaak.
-Eigenschappen. fase | De mogelijke waarden voor **incidenten**en de **beveiliging** zijn **actief,** **opgelost** of **RCA**. Voor **handeling vereist** of **informatieve** is de enige waarde **actief.** Voor **onderhoud** zijn dit: **actief**, **gepland**, **InProgress**, **geannuleerd**, **opnieuw gepland**, **opgelost**of **voltooid**.
+Eigenschappen. fase | De mogelijke waarden voor **incidenten** en de **beveiliging** zijn **actief,** **opgelost** of **RCA**. Voor **handeling vereist** of **informatieve** is de enige waarde **actief.** Voor **onderhoud** zijn dit: **actief**, **gepland**, **InProgress**, **geannuleerd**, **opnieuw gepland**, **opgelost** of **voltooid**.
 Eigenschappen. communicationId | De communicatie waaraan deze gebeurtenis is gekoppeld.
 
 ### <a name="details-on-service-health-level-information"></a>Details van informatie over het service status niveau

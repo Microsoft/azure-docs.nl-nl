@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 4f945c2c7fffb143bdb8324a330775fb072b25c1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90935870"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-postgresql---flexible-server-via-the-azure-portal"></a>Configureer Server parameters in Azure Database for PostgreSQL-flexibele server via de Azure Portal 
@@ -24,7 +24,7 @@ Als u deze hand leiding wilt door lopen, hebt u het volgende nodig:
 
 ## <a name="viewing-and-editing-parameters"></a>Para meters weer geven en bewerken
 
-1. Open [Azure Portal](https://portal.azure.com).
+1. Open de [Azure Portal](https://portal.azure.com).
 
 2. Selecteer uw flexibele server.
 
@@ -40,10 +40,10 @@ Als u deze hand leiding wilt door lopen, hebt u het volgende nodig:
 6. Gebruik, indien nodig, het **zoekvak** om te beperken tot een specifieke para meter. De zoek opdracht bevindt zich op de naam en beschrijving van de para meters.
 ![Zoekresultaten](./media/howto-configure-server-parameters-in-portal/5-search.png)
 
-7. Wijzig de parameter waarden die u wilt aanpassen. Alle wijzigingen die u aanbrengt in een sessie, worden in paars gemarkeerd. Wanneer u de waarden hebt gewijzigd, kunt u **Opslaan**selecteren. Of u kunt uw wijzigingen **negeren** .
+7. Wijzig de parameter waarden die u wilt aanpassen. Alle wijzigingen die u aanbrengt in een sessie, worden in paars gemarkeerd. Wanneer u de waarden hebt gewijzigd, kunt u **Opslaan** selecteren. Of u kunt uw wijzigingen **negeren** .
 ![Wijzigingen opslaan of negeren](./media/howto-configure-server-parameters-in-portal/6-save-and-discard-buttons.png)
 
-8. Als u nieuwe waarden voor de para meters hebt opgeslagen, kunt u altijd terugkeren naar de standaard waarden door **alles opnieuw instellen op de standaard**waarde te selecteren.
+8. Als u nieuwe waarden voor de para meters hebt opgeslagen, kunt u altijd terugkeren naar de standaard waarden door **alles opnieuw instellen op de standaard** waarde te selecteren.
 ![Alles opnieuw instellen op standaard waarden](./media/howto-configure-server-parameters-in-portal/7-reset-to-default-button.png)
 
 ## <a name="next-steps"></a>Volgende stappen

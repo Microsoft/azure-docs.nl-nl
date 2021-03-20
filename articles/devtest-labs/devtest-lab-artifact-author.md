@@ -4,10 +4,10 @@ description: Meer informatie over het maken van artefacten voor gebruik met Azur
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 85acfcc3811e671e58fadab08a23951778e1323d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88270679"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Aangepaste artefacten maken voor uw virtuele machine van DevTest Labs
@@ -48,7 +48,7 @@ In het volgende voor beeld ziet u de secties waaruit de basis structuur van een 
 | --- | --- | --- |
 | $schema |Nee |Locatie van het JSON-schema bestand. Het JSON-schema bestand kan u helpen de geldigheid van het definitie bestand te testen. |
 | titel |Ja |De naam van het artefact dat wordt weer gegeven in het lab. |
-| description |Ja |Beschrijving van het artefact dat wordt weer gegeven in het lab. |
+| beschrijving |Ja |Beschrijving van het artefact dat wordt weer gegeven in het lab. |
 | iconUri |Nee |De URI van het pictogram dat wordt weer gegeven in het lab. |
 | targetOsType |Ja |Het besturings systeem van de virtuele machine waarop het artefact is geïnstalleerd. Ondersteunde opties zijn Windows en Linux. |
 | parameters |Nee |Waarden die worden gegeven wanneer de opdracht voor artefact installatie wordt uitgevoerd op een computer. Zo kunt u uw artefact aanpassen. |
@@ -73,7 +73,7 @@ Gebruik de volgende structuur om para meters te definiëren:
 | --- | --- | --- |
 | type |Ja |Type parameter waarde. Zie de volgende lijst voor de toegestane typen. |
 | displayName |Ja |De naam van de para meter die wordt weer gegeven voor een gebruiker in het lab. |
-| description |Ja |Beschrijving van de para meter die wordt weer gegeven in het lab. |
+| beschrijving |Ja |Beschrijving van de para meter die wordt weer gegeven in het lab. |
 
 Toegestane typen zijn:
 

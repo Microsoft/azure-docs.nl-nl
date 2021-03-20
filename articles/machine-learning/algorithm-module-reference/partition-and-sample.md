@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
 ms.openlocfilehash: a1f0a0dff4eb8a1aad0cd5e142959a636827a541
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898484"
 ---
 # <a name="partition-and-sample-module"></a>Partitie en voorbeeld module
@@ -85,7 +85,7 @@ Deze optie ondersteunt eenvoudige wille keurige steek proeven of stratified will
 
 1. **Stratified splitsen voor steek proeven**: Selecteer deze optie als het belang rijk is dat de rijen in de gegevensset gelijkmatig zijn verdeeld over een bepaalde sleutel kolom vóór de steek proef.
 
-   Voor een **stratificatie sleutel kolom voor steek proeven**selecteert u één *Strata kolom* die moet worden gebruikt bij het delen van de gegevensset. De rijen in de gegevensset worden vervolgens als volgt onderverdeeld:
+   Voor een **stratificatie sleutel kolom voor steek proeven** selecteert u één *Strata kolom* die moet worden gebruikt bij het delen van de gegevensset. De rijen in de gegevensset worden vervolgens als volgt onderverdeeld:
 
    1. Alle invoer rijen worden gegroepeerd (stratified) door de waarden in de opgegeven kolom Strata.
 
@@ -104,7 +104,7 @@ Gebruik deze optie als u de gegevensset wilt verdelen over subsets van de gegeve
 
 1. Voeg de **partitie-en voorbeeld** module toe aan uw pijp lijn en verbind de gegevensset.
 
-1. Voor **partitie of voorbeeld modus**selecteert **u toewijzen aan vouwen**.
+1. Voor **partitie of voorbeeld modus** selecteert **u toewijzen aan vouwen**.
 
 1. **Vervanging gebruiken in partitioneren**: Selecteer deze optie als u wilt dat de geplaatste rij wordt weer gegeven in de pool met rijen voor een mogelijke hergebruik. Als gevolg hiervan kan dezelfde rij worden toegewezen aan verschillende vouwen.
 
@@ -116,7 +116,7 @@ Gebruik deze optie als u de gegevensset wilt verdelen over subsets van de gegeve
 
 1. **Wille keurig zaad**: Voer eventueel een geheel getal in dat moet worden gebruikt als seed-waarde. Deze optie is belang rijk als u wilt dat de rijen op dezelfde manier worden gedeeld als elke keer. Anders is de standaard waarde **0** betekent dat een wille keurige begin Seed wordt gebruikt.
 
-1. **Geef de partitioner-methode**op: Geef aan hoe u wilt dat gegevens worden verdeeld over elke partitie, met behulp van de volgende opties:
+1. **Geef de partitioner-methode** op: Geef aan hoe u wilt dat gegevens worden verdeeld over elke partitie, met behulp van de volgende opties:
 
    - **Gelijkmatige partitie**: gebruik deze optie om een gelijk aantal rijen in elke partitie te plaatsen. Als u het aantal uitvoer partities wilt opgeven, geeft u een geheel getal op in het vak **Geef het aantal gevouwen vouwingen op dat gelijkmatig moet worden gesplitst** .
 
@@ -126,9 +126,9 @@ Gebruik deze optie als u de gegevensset wilt verdelen over subsets van de gegeve
 
      De som van alle partitie grootten moet precies 1 zijn.
 
-     Als u getallen opgeeft die Maxi maal *1*zijn, wordt er een extra partitie gemaakt om de resterende rijen te bewaren. Als u bijvoorbeeld de waarden **.2** en **.3**opgeeft, wordt er een derde partitie gemaakt om het resterende 50 procent van alle rijen te bewaren.
+     Als u getallen opgeeft die Maxi maal *1* zijn, wordt er een extra partitie gemaakt om de resterende rijen te bewaren. Als u bijvoorbeeld de waarden **.2** en **.3** opgeeft, wordt er een derde partitie gemaakt om het resterende 50 procent van alle rijen te bewaren.
      
-     Als u getallen opgeeft die Maxi maal *1*zijn, treedt er een fout op wanneer u de pijp lijn uitvoert.
+     Als u getallen opgeeft die Maxi maal *1* zijn, treedt er een fout op wanneer u de pijp lijn uitvoert.
 
 1. **Stratified splitsen**: Selecteer deze optie als u wilt dat de rijen worden stratified wanneer deze worden gesplitst en kies vervolgens de _kolom Strata_.
 
@@ -142,7 +142,7 @@ Gebruik deze optie wanneer u een gegevensset hebt onderverdeeld in meerdere part
 
 1. Voeg de **partitie en de voorbeeld** module toe aan de pijp lijn.
 
-1. Koppel de module aan de uitvoer van een eerder exemplaar van de **partitie en**het voor beeld. Dat exemplaar moet de optie **toewijzen aan vouwen** hebben gebruikt om een aantal partities te genereren.
+1. Koppel de module aan de uitvoer van een eerder exemplaar van de **partitie en** het voor beeld. Dat exemplaar moet de optie **toewijzen aan vouwen** hebben gebruikt om een aantal partities te genereren.
 
 1. **Partitie of voorbeeld modus**: Selecteer **vouw vouwen**.
 
@@ -154,7 +154,7 @@ Gebruik deze optie wanneer u een gegevensset hebt onderverdeeld in meerdere part
 
 1. Als u met meerdere partities werkt, moet u meer exemplaren van de **partitie en voorbeeld** module toevoegen voor het afhandelen van elke partitie.
 
-   Bijvoorbeeld, de **partitie en de voorbeeld** module in de tweede rij zijn ingesteld om **te worden toegewezen aan de vouwen**en de module in de derde rij is ingesteld op **vouw vouwen**.   
+   Bijvoorbeeld, de **partitie en de voorbeeld** module in de tweede rij zijn ingesteld om **te worden toegewezen aan de vouwen** en de module in de derde rij is ingesteld op **vouw vouwen**.   
 
    ![Partitie en voor beeld](./media/module/partition-and-sample.png)
 

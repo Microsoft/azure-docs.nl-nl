@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: fb3e09cefa7f87fe2eb1e5013854c7965ea9330e
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: b6d51e05598f60de0e9c8fb85472b7c14bba990e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101698838"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598385"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3
 
@@ -58,8 +58,8 @@ Er zijn belang rijke verbeteringen aangebracht in Media Services met v3.
 |**Inhouds beveiliging** ||
 | [Inhouds beveiliging](content-key-policy-concept.md)   ondersteunt functies met meerdere sleutels. | Klanten kunnen nu meerdere inhouds versleutelings sleutels gebruiken op hun streaming-Locators. |
 | **Controle** | |
-| Ondersteuning voor [Azure EventGrid](reacting-to-media-services-events.md) -meldingen | EventGrid-meldingen zijn uitgebreidere functies. Er zijn meer typen meldingen, bredere SDK-ondersteuning voor het ontvangen van meldingen in uw eigen toepassing en meer bestaande Azure-Services die als gebeurtenis-handlers kunnen fungeren. |
-| [Azure Monitor ondersteuning en integratie in het Azure Portal](monitor-events-portal-how-to.md) | Hierdoor kunnen klanten Media Services account quotum gebruik, realtime statistieken van streaming-eind punten en opname-en archief statistieken voor Live-gebeurtenissen visualiseren. Klanten kunnen nu waarschuwingen instellen en de benodigde acties uitvoeren op basis van real-time metrische gegevens. |
+| Ondersteuning voor [Azure EventGrid](monitoring/reacting-to-media-services-events.md) -meldingen | EventGrid-meldingen zijn uitgebreidere functies. Er zijn meer typen meldingen, bredere SDK-ondersteuning voor het ontvangen van meldingen in uw eigen toepassing en meer bestaande Azure-Services die als gebeurtenis-handlers kunnen fungeren. |
+| [Azure Monitor ondersteuning en integratie in het Azure Portal](monitoring/monitor-events-portal-how-to.md) | Hierdoor kunnen klanten Media Services account quotum gebruik, realtime statistieken van streaming-eind punten en opname-en archief statistieken voor Live-gebeurtenissen visualiseren. Klanten kunnen nu waarschuwingen instellen en de benodigde acties uitvoeren op basis van real-time metrische gegevens. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

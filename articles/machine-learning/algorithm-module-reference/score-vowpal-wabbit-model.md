@@ -9,10 +9,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 07/02/2020
 ms.openlocfilehash: 23dfee7b78f2606c54525391e1260af69a9b0779
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90898405"
 ---
 # <a name="score-vowpal-wabbit-model"></a>Vowpal Wabbit-model scoren
@@ -42,11 +42,11 @@ Deze module biedt de nieuwste versie van het Vowpal Wabbit Framework, versie 8.8
    - **VW** vertegenwoordigt de interne indeling die wordt gebruikt door Vowpal Wabbit. Zie de [pagina met Vowpal Wabbit-wiki](https://github.com/JohnLangford/vowpal_wabbit/wiki/Input-format) voor meer informatie. 
    - **SVMLight** is een indeling die wordt gebruikt door andere machine learning-hulpprogram ma's. 
 
-7. Selecteer de optie, **Voeg een extra kolom met labels**toe als u labels samen met de scores wilt uitvoeren.  
+7. Selecteer de optie, **Voeg een extra kolom met labels** toe als u labels samen met de scores wilt uitvoeren.  
 
    In het geval van het afhandelen van tekst gegevens is er meestal geen labels vereist voor Vowpal Wabbit en worden alleen de scores voor elke rij gegevens geretourneerd.  
 
-8. Selecteer de optie, **Voeg een extra kolom met onbewerkte scores**toe als u onbewerkte scores wilt uitvoeren met de resultaten.  
+8. Selecteer de optie, **Voeg een extra kolom met onbewerkte scores** toe als u onbewerkte scores wilt uitvoeren met de resultaten.  
 
 9. Verzend de pijp lijn.
 

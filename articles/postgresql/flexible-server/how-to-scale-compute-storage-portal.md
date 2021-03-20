@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 1542bba53b51ffdf2129953a81e5d13975ade434
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90936122"
 ---
 # <a name="scale-operations-in-flexible-server"></a>Schaal bewerkingen op een flexibele server
@@ -35,7 +35,7 @@ U hebt het volgende nodig om deze hand leiding te volt ooien:
 
 Volg deze stappen om de compute-laag te kiezen.
  
-1.  Kies in het [Azure Portal](https://portal.azure.com/)de flexibele server waarvan u de back-up wilt terugzetten.
+1.  Kies in het [Azure Portal](https://portal.azure.com/)de flexibele server waarvan u de back-up wilt terugzetten.
 
 2.  Klik op **Compute + Storage**.
 
@@ -43,18 +43,18 @@ Volg deze stappen om de compute-laag te kiezen.
  :::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="berekenings-en opslag weergave":::
 
 4.  U kunt de compute-klasse kiezen tussen de laagst bebreekbaar, algemeen gebruik en geoptimaliseerd voor geheugen.
-   :::image type="content" source="./media/how-to-scale-compute-storage-portal/list-compute-tiers.png" alt-text="berekenings-en opslag weergave":::
+   :::image type="content" source="./media/how-to-scale-compute-storage-portal/list-compute-tiers.png" alt-text="Reken lagen weer geven":::
 
 
 5.  Als u goed met de standaard vCores en-geheugen grootten werkt, kunt u de volgende stap overs Laan.
 
 6.  Als u het aantal vCores wilt wijzigen, klikt u op de vervolg keuzelijst van de **berekenings grootte** en klikt u op het gewenste aantal VCores/geheugen in de lijst.
     
-    - Burstable Compute-laag: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-burstable-dropdown.png" alt-text="berekenings-en opslag weergave":::
+    - Burstable Compute-laag: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-burstable-dropdown.png" alt-text="Burstable Compute":::
 
-    - Compute-laag voor algemeen gebruik: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-general-purpose-dropdown.png" alt-text="berekenings-en opslag weergave"::: gebruik
+    - Compute-laag voor algemeen gebruik: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-general-purpose-dropdown.png" alt-text="Compute voor algemeen"::: gebruik
 
-    - Compute-laag geoptimaliseerd voor geheugen: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-memory-optimized-dropdown.png" alt-text="berekenings-en opslag weergave":::
+    - Compute-laag geoptimaliseerd voor geheugen: :::image type="content" source="./media/how-to-scale-compute-storage-portal/compute-memory-optimized-dropdown.png" alt-text="reken kracht geoptimaliseerd voor geheugen":::
 
 7.  Klik op **Opslaan**. 
 8.  Er wordt een bevestigings bericht weer gegeven. Klik op **OK** als u wilt door gaan. 
@@ -65,17 +65,17 @@ Volg deze stappen om de compute-laag te kiezen.
 
 Volg deze stappen om uw opslag grootte te verg Roten.
 
-1.  Kies in het [Azure Portal](https://portal.azure.com/)de flexibele server waarvoor u de opslag ruimte wilt verg Roten.
+1.  Kies in het [Azure Portal](https://portal.azure.com/)de flexibele server waarvoor u de opslag ruimte wilt verg Roten.
 2.  Klik op **Compute + Storage**.
 
 3.  Er wordt een pagina met de huidige instellingen weer gegeven.
    
-:::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="berekenings-en opslag weergave":::
+:::image type="content" source="./media/how-to-scale-compute-storage-portal/click-compute-storage.png" alt-text="Klik op Compute + Storage":::
 4.  De **grootte van het veld opslag in GiB** met een schuif balk wordt weer gegeven met de huidige grootte.
 
 5.  Schuif de balk naar de gewenste grootte. Het bijbehorende IOPS-nummer wordt weer gegeven. De IOPS is afhankelijk van de compute-laag en de grootte. De gegevens over de kosten worden ook weer gegeven. 
 
- :::image type="content" source="./media/how-to-scale-compute-storage-portal/storage-scaleup.png" alt-text="berekenings-en opslag weergave":::
+ :::image type="content" source="./media/how-to-scale-compute-storage-portal/storage-scaleup.png" alt-text="opslag omhoog schalen":::
 
 6.  Als u goed bent met de opslag grootte, klikt u op **Opslaan**. 
 7.  Er wordt een bevestigings bericht weer gegeven. Klik op **OK** als u wilt door gaan. 

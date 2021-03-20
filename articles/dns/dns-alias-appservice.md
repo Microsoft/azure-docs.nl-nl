@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 08/10/2019
 ms.author: rohink
 ms.openlocfilehash: 72adb2732eb0832589cbc25fb7e4288eb1899214
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94954508"
 ---
 # <a name="host-load-balanced-azure-web-apps-at-the-zone-apex"></a>Host load balanced Azure web apps op de zone Apex
@@ -46,7 +46,7 @@ Maak twee Web App Service-abonnementen in uw resource groep met behulp van de vo
 |Name  |Besturingssysteem  |Locatie  |Prijscategorie  |
 |---------|---------|---------|---------|
 |ASP-01     |Windows|VS - oost|Dev/test-D1-Shared|
-|ASP-02     |Windows|Central US|Dev/test-D1-Shared|
+|ASP-02     |Windows|VS - centraal|Dev/test-D1-Shared|
 
 ## <a name="create-app-services"></a>App Services maken
 
@@ -58,10 +58,10 @@ Maak twee web-apps, één in elk App Service-abonnement.
 4. Selecteer **Maken**.
 5. Accepteer de standaard waarden en gebruik de volgende tabel om de twee web-apps te configureren:
 
-   |Name<br>(moet uniek zijn binnen. azurewebsites.net)|Resourcegroep |Runtimestack|Regio|Abonnement/locatie App Service
+   |Name<br>(moet uniek zijn binnen. azurewebsites.net)|Resourcegroep |Runtimestack|Region|Abonnement/locatie App Service
    |---------|---------|-|-|-------|
    |App-01|Bestaande gebruiken<br>Uw resourcegroep selecteren|.NET Core 2.2|VS - oost|ASP-01 (D1)|
-   |App-02|Bestaande gebruiken<br>Uw resourcegroep selecteren|.NET Core 2.2|Central US|ASP-02 (D1)|
+   |App-02|Bestaande gebruiken<br>Uw resourcegroep selecteren|.NET Core 2.2|VS - centraal|ASP-02 (D1)|
 
 ### <a name="gather-some-details"></a>Enkele details verzamelen
 
@@ -90,7 +90,7 @@ U kunt nu de eind punten voor de twee web-apps maken.
    |Type  |Naam  |Doel  |Locatie  |Aangepaste headerinstellingen|
    |---------|---------|---------|---------|---------|
    |Extern eind punt     |End-01|IP-adres dat u hebt genoteerd voor app-01|VS - oost|hostsite\<the URL you recorded for App-01\><br>Voor beeld: **host: app-01.azurewebsites.net**|
-   |Extern eind punt     |End-02|IP-adres dat u hebt vastgelegd voor app-02|Central US|hostsite\<the URL you recorded for App-02\><br>Voor beeld: **host: app-02.azurewebsites.net**
+   |Extern eind punt     |End-02|IP-adres dat u hebt vastgelegd voor app-02|VS - centraal|hostsite\<the URL you recorded for App-02\><br>Voor beeld: **host: app-02.azurewebsites.net**
 
 ## <a name="create-dns-zone"></a>DNS-zone maken
 

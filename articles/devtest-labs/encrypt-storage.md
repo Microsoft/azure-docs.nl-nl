@@ -4,10 +4,10 @@ description: Meer informatie over het configureren van versleuteling van een Azu
 ms.topic: how-to
 ms.date: 07/29/2020
 ms.openlocfilehash: dcede89fb23c532742e41121688bcb51a5a73833
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92149309"
 ---
 # <a name="encrypt-azure-storage-used-by-a-lab-in-azure-devtest-labs"></a>Azure-opslag die wordt gebruikt door een lab in Azure DevTest Labs versleutelen
@@ -28,10 +28,10 @@ Elk lab dat is gemaakt in Azure DevTest Labs wordt gemaakt met een gekoppeld Azu
     :::image type="content" source="./media/encrypt-storage/overview-resource-group-link.png" alt-text="Resource groep selecteren op de pagina overzicht":::
 1. Selecteer het Azure-opslag account van het lab. De naam Conventie voor het lab-opslag account is: `a<labNameWithoutInvalidCharacters><4-digit number>` . Als de naam van het lab bijvoorbeeld is `contosolab` , kan de naam van het opslag account zijn `acontosolab7576` . 
 
-    :::image type="content" source="./media/encrypt-storage/select-storage-account.png" alt-text="Resource groep selecteren op de pagina overzicht":::
+    :::image type="content" source="./media/encrypt-storage/select-storage-account.png" alt-text="Selecteer een opslag account in de resource groep van het lab":::
 3. Selecteer op de pagina **opslag account** de optie **Storage Explorer (preview)** in het linkermenu en selecteer vervolgens **BLOB-containers** om relevante inhoud te zoeken die betrekking heeft op het lab. 
 
-   :::image type="content" source="./media/encrypt-storage/storage-explorer.png" alt-text="Resource groep selecteren op de pagina overzicht" lightbox="./media/encrypt-storage/storage-explorer.png":::
+   :::image type="content" source="./media/encrypt-storage/storage-explorer.png" alt-text="Opslagverkenner (preview)" lightbox="./media/encrypt-storage/storage-explorer.png":::
 
 ## <a name="encrypt-the-lab-storage-account"></a>Het opslag account Lab versleutelen
 Met Azure Storage worden uw gegevens automatisch versleuteld wanneer deze in de cloud worden bewaard. Azure Storage versleuteling beschermt uw gegevens en helpt u om te voldoen aan de beveiligings-en nalevings verplichtingen van uw organisatie. Zie [Azure Storage versleuteling voor Data-at-rest](../storage/common/storage-service-encryption.md)voor meer informatie.

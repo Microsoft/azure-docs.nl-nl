@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u back-ups inschakelt wanneer u een Azu
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.openlocfilehash: ad81300545686d61f42cdd8684e502c937b4fd43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89377332"
 ---
 # <a name="enable-backup-when-you-create-an-azure-vm"></a>Back-up inschakelen wanneer u een Azure-VM maakt
@@ -28,11 +28,11 @@ Als u nog niet bent aangemeld bij uw account, meldt u zich aan bij de [Azure Por
 
 1. Selecteer in de Azure Portal **een resource maken**.
 
-2. Selecteer **Compute**in azure Marketplace en selecteer vervolgens een VM-installatie kopie.
+2. Selecteer **Compute** in azure Marketplace en selecteer vervolgens een VM-installatie kopie.
 
 3. Stel de virtuele machine in volgens de instructies voor [Windows](../virtual-machines/windows/quick-create-portal.md) of [Linux](../virtual-machines/linux/quick-create-portal.md) .
 
-4. Selecteer **op**het tabblad **beheer** in **back-up inschakelen**.
+4. Selecteer **op** het tabblad **beheer** in **back-up inschakelen**.
 5. Azure Backup back-ups naar een Recovery Services kluis. Selecteer **nieuwe maken** als u geen bestaande kluis hebt.
 6. Accepteer de naam van de voorgestelde kluis of geef uw eigen op.
 7. Geef op of maak een resource groep waarin de kluis zich bevindt. De kluis van de resource groep kan afwijken van de resource groep van de virtuele machine.
@@ -76,7 +76,7 @@ De back-up van de virtuele machine wordt uitgevoerd in overeenstemming met uw ba
 
 Nadat de VM is gemaakt, gaat u als volgt te werk:
 
-1. Selecteer **back-up**in de eigenschappen van de virtuele machine. Voor de VM-status is de eerste back-up in behandeling totdat de eerste back-up wordt uitgevoerd.
+1. Selecteer **back-up** in de eigenschappen van de virtuele machine. Voor de VM-status is de eerste back-up in behandeling totdat de eerste back-up wordt uitgevoerd.
 2. Selecteer **Nu back** -up maken om back-ups op aanvraag uit te voeren.
 
     ![Een on-demand back-up uitvoeren](./media/backup-during-vm-creation/run-backup.png)

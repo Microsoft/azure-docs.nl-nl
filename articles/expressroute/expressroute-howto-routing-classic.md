@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 12/06/2019
 ms.author: duau
 ms.openlocfilehash: a4a3bad1e868fa0e75611630ffb5db5ba13126b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89395550"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-classic"></a>Peering maken en wijzigen voor een ExpressRoute-circuit (klassiek)
@@ -19,9 +19,9 @@ ms.locfileid: "89395550"
 > * [Azure-portal](expressroute-howto-routing-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-routing-arm.md)
 > * [Azure-CLI](howto-routing-cli.md)
-> * [Video-persoonlijke peering](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
+> * [Video - Persoonlijke peering](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-private-peering-for-your-expressroute-circuit)
 > * [Video-open bare peering](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-azure-public-peering-for-your-expressroute-circuit)
-> * [Video-micro soft-peering](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
+> * [Video - Microsoft-peering](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-set-up-microsoft-peering-for-your-expressroute-circuit)
 > * [PowerShell (klassiek)](expressroute-howto-routing-classic.md)
 > 
 
@@ -44,7 +44,7 @@ Deze instructies zijn alleen van toepassing op circuits die zijn gemaakt met ser
 
 [!INCLUDE [classic powershell install instructions](../../includes/expressroute-poweshell-classic-install-include.md)]
 
-## <a name="azure-private-peering"></a>Persoonlijke Azure-peering
+## <a name="azure-private-peering"></a>Azure privépeering
 
 In deze sectie vindt u instructies voor het maken, verkrijgen, bijwerken en verwijderen van de configuratie voor een persoonlijke Azure-peering voor een ExpressRoute-circuit. 
 
@@ -249,7 +249,7 @@ Set-AzureBGPPeering -AccessType Public -ServiceKey "****************************
 Controleer of het circuit wordt weer gegeven als ingericht en ingeschakeld. 
 ### <a name="to-delete-azure-public-peering"></a>Openbare Azure-peering verwijderen
 
-U kunt de peering-configuratie verwijderen door de volgende cmdlet uit te voeren:
+U kunt een peeringconfiguratie verwijderen door de volgende cmdlet uit te voeren:
 
 ```powershell
 Remove-AzureBGPPeering -AccessType Public -ServiceKey "*********************************"
@@ -302,7 +302,7 @@ In deze sectie vindt u instructies voor het maken, verkrijgen, bijwerken en verw
    * Geadverteerde voorvoegsels: u moet een lijst verstrekken van alle voorvoegsels die u via de BGP-sessie wilt adverteren. Alleen openbare IP-adresvoorvoegsels worden geaccepteerd. U kunt een door komma's gescheiden lijst verzenden als u van plan bent om een set voor voegsels te verzenden. Deze voorvoegsels moeten voor u zijn geregistreerd in een RIR/IRR.
    * Klant-ASN: als u voorvoegsels adverteert die niet zijn geregistreerd op het AS-nummer van de peering, kunt u het AS-nummer opgeven waarop ze zijn geregistreerd. **Optioneel**.
    * Naam van routeringsregister: u kunt het RIR/IRR opgeven waarbij het AS-nummer en de voorvoegsels zijn geregistreerd.
-   * Een MD5-hash, als u er een wilt gebruiken. **Beschrijving.**
+   * Een MD5-hash, als u er een wilt gebruiken. **Optioneel.**
      
    Voer de volgende cmdlet uit om micro soft-peering voor uw circuit te configureren:
  
@@ -344,7 +344,7 @@ Set-AzureBGPPeering -AccessType Microsoft -ServiceKey "*************************
 
 ### <a name="to-delete-microsoft-peering"></a>Microsoft-peering verwijderen
 
-U kunt de peering-configuratie verwijderen door de volgende cmdlet uit te voeren:
+U kunt een peeringconfiguratie verwijderen door de volgende cmdlet uit te voeren:
 
 ```powershell
 Remove-AzureBGPPeering -AccessType Microsoft -ServiceKey "*********************************"

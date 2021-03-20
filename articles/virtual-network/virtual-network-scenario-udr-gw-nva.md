@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2016
 ms.author: kumud
 ms.openlocfilehash: 1d2dde4e77a39b114f721cd6d2be250141984e7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86231706"
 ---
 # <a name="virtual-appliance-scenario"></a>Scenario voor virtueel apparaat
@@ -57,7 +57,7 @@ In dit voor beeld is er een abonnement met het volgende:
 * Een VNet met de naam **onpremvnet** gebruikt voor het simuleren van een on-premises Data Center, gesegmenteerd zoals hieronder wordt weer gegeven.
   * **onpremsn1**. Subnet met een virtuele machine (VM) met Ubuntu voor het simuleren van een on-premises server.
   * **onpremsn2**. Subnet met een virtuele machine met Ubuntu voor het nabootsen van een on-premises computer die wordt gebruikt door een beheerder.
-* Er is één virtueel firewall-apparaat met de naam **OPFW** op **onpremvnet** gebruikt om een tunnel naar **azurevnet**te onderhouden.
+* Er is één virtueel firewall-apparaat met de naam **OPFW** op **onpremvnet** gebruikt om een tunnel naar **azurevnet** te onderhouden.
 * Een VNet met de naam **azurevnet** , gesegmenteerd zoals hieronder wordt weer gegeven.
   * **azsn1**. Subnet met externe firewall gebruikt uitsluitend voor de externe firewall. Al het Internet verkeer wordt via dit subnet geleverd. Dit subnet bevat alleen een NIC die is gekoppeld aan de externe firewall.
   * **azsn2**. Front-end-subnet als host voor een VM die wordt uitgevoerd als een webserver die toegankelijk is via internet.
@@ -75,7 +75,7 @@ Elk subnet in azure kan worden gekoppeld aan een UDR-tabel die wordt gebruikt om
 Om ervoor te zorgen dat de communicatie wordt uitgevoerd via het juiste firewall apparaat, op basis van de bovenstaande vereisten, moet u de volgende route tabel maken met Udr's in **azurevnet**.
 
 ### <a name="azgwudr"></a>azgwudr
-In dit scenario wordt het enige verkeer dat van on-premises naar Azure stroomt, gebruikt om de firewalls te beheren door verbinding te maken met **AZF3**en dat verkeer via de interne firewall, **AZF2**. Daarom is er slechts één route nodig in de **GatewaySubnet** , zoals hieronder wordt weer gegeven.
+In dit scenario wordt het enige verkeer dat van on-premises naar Azure stroomt, gebruikt om de firewalls te beheren door verbinding te maken met **AZF3** en dat verkeer via de interne firewall, **AZF2**. Daarom is er slechts één route nodig in de **GatewaySubnet** , zoals hieronder wordt weer gegeven.
 
 | Doel | Volgende hop | Uitleg |
 | --- | --- | --- |
@@ -119,13 +119,13 @@ Stel dat u de volgende installatie in een Azure-vnet hebt:
 * Een virtueel apparaat met de naam **OPFW** is verbonden met **onpremsn1** en **onpremsn2**.
 * Een door de gebruiker gedefinieerde route die is gekoppeld aan **onpremsn1** geeft aan dat alle verkeer naar **onpremsn2** moet worden verzonden naar **OPFW**.
 
-Als **onpremvm1** probeert een verbinding met **onpremvm2**tot stand te brengen, wordt het UDR gebruikt en wordt het verkeer naar **OPFW** verzonden als de volgende hop. Houd er rekening mee dat de daad werkelijke pakket bestemming niet wordt gewijzigd, de melding **onpremvm2** is de bestemming. 
+Als **onpremvm1** probeert een verbinding met **onpremvm2** tot stand te brengen, wordt het UDR gebruikt en wordt het verkeer naar **OPFW** verzonden als de volgende hop. Houd er rekening mee dat de daad werkelijke pakket bestemming niet wordt gewijzigd, de melding **onpremvm2** is de bestemming. 
 
 Als door sturen via IP is ingeschakeld voor **OPFW**, worden de pakketten verwijderd door de logica van het virtuele Azure-netwerk, omdat alleen pakketten kunnen worden verzonden naar een virtuele machine als het IP-adres van de virtuele machine het doel is voor het pakket.
 
 Met door sturen via IP worden de pakketten door de logica van het virtuele Azure-netwerk doorgestuurd naar OPFW, zonder dat het oorspronkelijke doel adres wordt gewijzigd. **OPFW** moet de pakketten afhandelen en bepalen wat er ermee moet worden gedaan.
 
-Voor het bovenstaande scenario moet u door sturen via IP inschakelen op de Nic's voor **OPFW**, **AZF1**, **AZF2**en **AZF3** die worden gebruikt voor route ring (alle nic's behalve de netwerk interface kaarten die zijn gekoppeld aan het subnet van het beheer). 
+Voor het bovenstaande scenario moet u door sturen via IP inschakelen op de Nic's voor **OPFW**, **AZF1**, **AZF2** en **AZF3** die worden gebruikt voor route ring (alle nic's behalve de netwerk interface kaarten die zijn gekoppeld aan het subnet van het beheer). 
 
 ## <a name="firewall-rules"></a>Firewallregels
 Zoals hierboven beschreven, wordt door sturen via IP alleen gegarandeerd dat pakketten worden verzonden naar de virtuele apparaten. Uw apparaat moet nog bepalen wat u met deze pakketten moet doen. In het bovenstaande scenario moet u de volgende regels maken in uw apparaten:
@@ -134,18 +134,18 @@ Zoals hierboven beschreven, wordt door sturen via IP alleen gegarandeerd dat pak
 OPFW vertegenwoordigt een on-premises apparaat dat de volgende regels bevat:
 
 * **Route**: alle verkeer naar 10.0.0.0/16 (**azurevnet**) moet worden verzonden via tunnel **ONPREMAZURE**.
-* **Beleid**: alle bidirectionele verkeer tussen **port2** en **ONPREMAZURE**toestaan.
+* **Beleid**: alle bidirectionele verkeer tussen **port2** en **ONPREMAZURE** toestaan.
 
 ### <a name="azf1"></a>AZF1
 AZF1 vertegenwoordigt een virtueel Azure-apparaat dat de volgende regels bevat:
 
-* **Beleid**: alle bidirectionele verkeer tussen **port1** en **port2**toestaan.
+* **Beleid**: alle bidirectionele verkeer tussen **port1** en **port2** toestaan.
 
 ### <a name="azf2"></a>AZF2
 AZF2 vertegenwoordigt een virtueel Azure-apparaat dat de volgende regels bevat:
 
 * **Route**: alle verkeer naar 10.0.0.0/16 (**onpremvnet**) moet worden verzonden naar het IP-adres van de Azure-gateway (bijvoorbeeld 10.0.0.1) via **port1**.
-* **Beleid**: alle bidirectionele verkeer tussen **port1** en **port2**toestaan.
+* **Beleid**: alle bidirectionele verkeer tussen **port1** en **port2** toestaan.
 
 ## <a name="network-security-groups-nsgs"></a>Netwerkbeveiligingsgroepen (NSG's)
 In dit scenario worden Nsg's niet gebruikt. U kunt echter Nsg's Toep assen op elk subnet om inkomend en uitgaand verkeer te beperken. U kunt bijvoorbeeld de volgende NSG-regels Toep assen op het externe FW-subnet.
@@ -166,5 +166,5 @@ Als u dit scenario wilt implementeren, volgt u de stappen op hoog niveau hierond
 2. Als u een VNet wilt implementeren om het on-premises netwerk te simuleren, richt u de resources in die deel uitmaken van **ONPREMRG**.
 3. Richt de resources in die deel uitmaken van **AZURERG**.
 4. Richt de tunnel in van **onpremvnet** naar **azurevnet**.
-5. Wanneer alle resources zijn ingericht, meldt u zich aan bij **onpremvm2** en ping 10.0.3.101 om de connectiviteit tussen **onpremsn2** en **azsn3**te testen.
+5. Wanneer alle resources zijn ingericht, meldt u zich aan bij **onpremvm2** en ping 10.0.3.101 om de connectiviteit tussen **onpremsn2** en **azsn3** te testen.
 

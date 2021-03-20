@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 05/27/2020
 ms.openlocfilehash: 9bdf907ede2c09f7e314df619cd81059956f17dc
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98567752"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vms"></a>Overzicht van server evaluatie (migreren naar Azure Vm's)
@@ -131,7 +131,7 @@ Dit is what's opgenomen in een Azure VM-evaluatie in Server evaluatie:
 **Korting (%)** | Alle abonnements kortingen die u boven op de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
 **VM tijd actief** | De duur in dagen per maand en uur per dag voor virtuele Azure-machines die niet continu worden uitgevoerd. Kosten ramingen zijn gebaseerd op die duur.<br/><br/> De standaard waarden zijn 31 dagen per maand en 24 uur per dag.
 **Azure Hybrid Benefit** | Hiermee geeft u op of u Software Assurance hebt en in aanmerking komt voor [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-use-benefit/). Als de instelling de standaard waarde Ja heeft, worden de Azure-prijzen voor andere besturings systemen dan Windows in aanmerking genomen voor Windows-Vm's.
-**EA-abonnement** | Hiermee geeft u op dat een Enterprise Agreement (EA)-abonnement wordt gebruikt voor de schatting van de kosten. Houdt rekening met de korting die van toepassing is op het abonnement. <br/><br/> Wijzig de instellingen voor gereserveerde instanties, discount (%) en VM-uptime-eigenschappen met de standaard instellingen.
+**EA-abonnement** | Hiermee geeft u op dat een Enterprise Overeenkomst (EA)-abonnement wordt gebruikt voor de schatting van de kosten. Houdt rekening met de korting die van toepassing is op het abonnement. <br/><br/> Wijzig de instellingen voor gereserveerde instanties, discount (%) en VM-uptime-eigenschappen met de standaard instellingen.
 
 
 [Bekijk de aanbevolen procedures voor het](best-practices-assessment.md) maken van een evaluatie met server evaluatie.

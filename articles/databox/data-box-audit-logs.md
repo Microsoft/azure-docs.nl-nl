@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.openlocfilehash: 50dbe9ab649a708fb36b1c9e4fe89bccadc7ea90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86209683"
 ---
 # <a name="audit-logs-for-your-azure-data-box-and-azure-data-box-heavy"></a>Controle logboeken voor uw Azure Data Box en Azure Data Box Heavy
@@ -65,9 +65,9 @@ De volgende beveiligings logboek gebeurtenis-Id's worden verzameld als beveiligi
 
 De volgende toepassings logboek gebeurtenis-Id's worden verzameld als onderdeel van controle logboeken voor pakketten op uw Data Box.     
 
-- **Micro soft-Azure-DataBox-OOBE-audit** -bevat de gebeurtenissen die in de lokale gebruikers interface optreden. 
+- **Micro soft-Azure-DataBox-OOBE-audit** -bevat de gebeurtenissen die in de lokale gebruikers interface optreden. 
 - **Micro soft-Azure-DataBox-Revision-audit** -bevat gebeurtenissen met betrekking tot het opnieuw inrichten van het data Box apparaat. Het opnieuw inrichten van de Data Box vindt plaats wanneer het apparaat opnieuw wordt ingesteld via de lokale gebruikers interface. U kiest deze optie als u de gegevens die u hebt gekopieerd, wilt wissen door de bestaande shares te verwijderen en de shares opnieuw te maken als onderdeel van het opnieuw inrichten of het opnieuw instellen van het apparaat.
-- **Micro soft-Azure-DataBox-HcsMgmt-audit** -bevat alleen gebeurtenissen die zijn gerelateerd aan de stap **voor het voorbereiden van verzenden** voordat het apparaat wordt teruggestuurd naar het Azure-Data Center. 
+- **Micro soft-Azure-DataBox-HcsMgmt-audit** -bevat alleen gebeurtenissen die zijn gerelateerd aan de stap **voor het voorbereiden van verzenden** voordat het apparaat wordt teruggestuurd naar het Azure-Data Center. 
 - **Micro soft-Azure-DataBox-IfxAudit** -bevat de berichten die zijn geregistreerd door verschillende entiteiten van het product over de taken, logboeken die aangeven dat er meer informatie over wat er gebeurt in een aantal stromen.
 
 Hier volgt een tabel met een overzicht van de verschillende gebeurtenis providers en de bijbehorende gebeurtenis-Id's die in elk geval worden verzameld.

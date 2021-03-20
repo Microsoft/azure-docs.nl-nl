@@ -4,10 +4,10 @@ description: Meer informatie over het koppelen of ontkoppelen van een gegevens s
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 8eebfbda421233bcec780d441a4020acce740618
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91328510"
 ---
 # <a name="attach-or-detach-a-data-disk-to-a-virtual-machine-in-azure-devtest-labs"></a>Een gegevens schijf koppelen aan of loskoppelen van een virtuele machine in Azure DevTest Labs
@@ -25,9 +25,9 @@ Lees de volgende tips voordat u een gegevens schijf aan een virtuele machine kop
 Volg deze stappen om een nieuwe beheerde gegevens schijf te maken en te koppelen aan een virtuele machine in Azure DevTest Labs.
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 1. Selecteer in de lijst met Labs het gewenste Lab. 
-1. Selecteer in de lijst met **mijn virtuele machines**een actieve virtuele machine.
+1. Selecteer in de lijst met **mijn virtuele machines** een actieve virtuele machine.
 1. Selecteer in het menu aan de linkerkant de optie **schijven**.
 1. Kies **Nieuw toevoegen** om een nieuwe gegevens schijf te maken en deze te koppelen aan de virtuele machine.
 
@@ -62,7 +62,7 @@ Als u de bestaande gegevens op de schijf opnieuw wilt gebruiken, kunt u deze opn
 ### <a name="detach-from-the-vms-management-pane"></a>Loskoppelen van het beheer deel venster van de virtuele machine
 1. Selecteer in de lijst met virtuele machines een virtuele machine waaraan een gegevens schijf is gekoppeld.
 1. Selecteer in het menu aan de linkerkant de optie **schijven**.
-1. Selecteer in de lijst met **gegevens schijven**de gegevens schijf die u wilt loskoppelen.
+1. Selecteer in de lijst met **gegevens schijven** de gegevens schijf die u wilt loskoppelen.
 
     ![Gegevens schijven voor een virtuele machine selecteren](./media/devtest-lab-attach-detach-data-disk/devtest-lab-detach-button.png) 
 1. Selecteer **loskoppelen** boven in het detail venster van de schijf.
@@ -72,14 +72,14 @@ Als u de bestaande gegevens op de schijf opnieuw wilt gebruiken, kunt u deze opn
 
 De schijf is losgekoppeld en is beschikbaar om aan een andere virtuele machine te koppelen. 
 ### <a name="detach-from-the-labs-main-pane"></a>Loskoppelen van het hoofd venster van het lab
-1. Selecteer **mijn gegevens schijven**in het hoofd venster van uw Lab.
+1. Selecteer **mijn gegevens schijven** in het hoofd venster van uw Lab.
 1. Klik met de rechter muisknop op de gegevens schijf die u wilt loskoppelen: of selecteer het weglatings teken (**...**), en kies **loskoppelen**.
 
     ![Een gegevensschijf ontkoppelen](./media/devtest-lab-attach-detach-data-disk/devtest-lab-detach-data-disk.png)
 1. Selecteer **Ja** om te bevestigen dat u de koppeling wilt verbreken.
 
    > [!NOTE]
-   > Als een gegevens schijf al is losgekoppeld, kunt u ervoor kiezen om deze te verwijderen uit de lijst met beschik bare gegevens schijven door **verwijderen**te selecteren.
+   > Als een gegevens schijf al is losgekoppeld, kunt u ervoor kiezen om deze te verwijderen uit de lijst met beschik bare gegevens schijven door **verwijderen** te selecteren.
    >
    >
 

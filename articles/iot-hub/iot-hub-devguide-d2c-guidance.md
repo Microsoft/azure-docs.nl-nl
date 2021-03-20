@@ -14,10 +14,10 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: dd4f4ad7f84ebc1f5e254843e7afa4aa0f3f224f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87319130"
 ---
 # <a name="device-to-cloud-communications-guidance"></a>Communicatie richtlijnen voor apparaat-naar-Cloud
@@ -39,7 +39,7 @@ Hier volgt een gedetailleerde vergelijking van de verschillende opties voor appa
 | Scenario | Telemetrische time series en waarschuwingen. Bijvoorbeeld: 256-KB-sensor gegevens batches die elke vijf minuten worden verzonden. | Beschik bare mogelijkheden en voor waarden. Bijvoorbeeld de huidige connectiviteits modus voor apparaten, zoals mobiel of WiFi. Het synchroniseren van langlopende werk stromen, zoals configuratie-en software-updates. | Media bestanden. Grote (meestal gecomprimeerde) telemetrie-batches. |
 | Opslag en ophalen | Tijdelijk opgeslagen door IoT Hub, Maxi maal 7 dagen. Alleen sequentiële Lees bewerkingen. | Opgeslagen door IoT Hub op het dubbele apparaat. Kan worden opgehaald met behulp van de [IOT hub-query taal](iot-hub-devguide-query-language.md). | Opgeslagen in Azure Storage account van de gebruiker. |
 | Grootte | Maxi maal 256 KB-berichten. | De maximale grootte van de gerapporteerde eigenschappen is 32 KB. | Maximale bestands grootte die wordt ondersteund door Azure Blob Storage. |
-| Frequency | Hoog. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. | Gemiddeld. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. | Laag. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. |
+| Frequentie | Hoog. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. | Gemiddeld. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. | Laag. Zie [IOT hub limieten](iot-hub-devguide-quotas-throttling.md)voor meer informatie. |
 | Protocol | Beschikbaar op alle protocollen. | Beschikbaar via MQTT of AMQP. | Beschikbaar wanneer u een protocol gebruikt, maar HTTPS vereist op het apparaat. |
 
 Een toepassing moet mogelijk gegevens verzenden als een telemetrie-tijd reeks of-waarschuwing en deze beschikbaar maken op het apparaat dubbele. In dit scenario kunt u een van de volgende opties kiezen:

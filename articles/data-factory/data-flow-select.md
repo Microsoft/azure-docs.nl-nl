@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 06/02/2020
 ms.openlocfilehash: 2d8c4d1915e22ccabf193f1b34c5fc4797ead549
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93040236"
 ---
 # <a name="select-transformation-in-mapping-data-flow"></a>Trans formatie selecteren in gegevens stroom toewijzen
@@ -44,7 +44,7 @@ Vaste toewijzingen kunnen worden gebruikt om een subkolom van een hiërarchische
 
 Als u veel kolommen tegelijk wilt toewijzen of geplaatste kolommen downstream wilt gebruiken, gebruikt u toewijzing op basis van regels om uw toewijzingen te definiëren met behulp van kolom patronen. Overeenkomst op basis van `name` de `type` kolommen,, en `stream` `position` . U kunt een combi natie van vaste en op regels gebaseerde toewijzingen hebben. Standaard worden alle projecties met meer dan 50 kolommen standaard ingesteld op een op een regel gebaseerde toewijzing die overeenkomt met elke kolom en de naam die is gegenereerd, wordt uitgevoerd. 
 
-Als u een op een regel gebaseerde toewijzing wilt toevoegen, klikt u op **toewijzing toevoegen** en selecteert u **toewijzing op basis van een regel** .
+Als u een op een regel gebaseerde toewijzing wilt toevoegen, klikt u op **toewijzing toevoegen** en selecteert u **toewijzing op basis van een regel**.
 
 ![Scherm afbeelding toont toewijzing op basis van een regel die is geselecteerd vanuit toewijzing toevoegen.](media/data-flow/rule2.png "Toewijzing op basis van een regel")
 

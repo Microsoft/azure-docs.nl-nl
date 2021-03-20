@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/19/2020
 ms.author: jeedes
 ms.openlocfilehash: 717696053a742abae6756655a15416ac81221144
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92459744"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-iprova"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met iProva
@@ -48,15 +48,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Om de integratie van iProva in Azure AD te configureren, moet u iProva vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **iProva** in het zoekvak in het gedeelte **Toevoegen uit de galerie** .
+1. Typ **iProva** in het zoekvak in het gedeelte **Toevoegen uit de galerie**.
 1. Selecteer **iProva** in de resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-iprova"></a>Eenmalige aanmelding van Azure AD configureren en testen voor iProva
 
-Configureer en test eenmalige aanmelding van Azure AD met iProva met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in iProva.
+Configureer en test eenmalige aanmelding van Azure AD met iProva met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in iProva.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met iProva te configureren en te testen:
 
@@ -87,19 +87,19 @@ In dit gedeelte gaat u gegevens ophalen uit iProva om eenmalige aanmelding van A
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Iprova** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Iprova** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
 
-    a. Vul in het vak **Aanmeldings-URL** de waarde in die wordt weergegeven achter het label **Sign-on URL** op de **SAML2-infopagina van iProva** . Deze pagina is nog steeds geopend op het andere tabblad van de browser.
+    a. Vul in het vak **Aanmeldings-URL** de waarde in die wordt weergegeven achter het label **Sign-on URL** op de **SAML2-infopagina van iProva**. Deze pagina is nog steeds geopend op het andere tabblad van de browser.
 
-    b. Vul in het vak **Id** de waarde in die wordt weergegeven achter het label **EntityID** op de **SAML2-infopagina van iProva** . Deze pagina is nog steeds geopend op het andere tabblad van de browser.
+    b. Vul in het vak **Id** de waarde in die wordt weergegeven achter het label **EntityID** op de **SAML2-infopagina van iProva**. Deze pagina is nog steeds geopend op het andere tabblad van de browser.
 
-    c. Vul in het vak **Antwoord-URL** de waarde in die wordt weergegeven achter het label **Reply URL** op de **SAML2-infopagina van iProva** . Deze pagina is nog steeds geopend op het andere tabblad van de browser.
+    c. Vul in het vak **Antwoord-URL** de waarde in die wordt weergegeven achter het label **Reply URL** op de **SAML2-infopagina van iProva**. Deze pagina is nog steeds geopend op het andere tabblad van de browser.
 
 1. In uw iProva-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -119,77 +119,77 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ## <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot iProvaa.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **iProva** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="create-iprova-test-user"></a>Testgebruiker voor iProva maken
 
-1. Meld u aan bij iProva met uw **beheerdersaccount** .
+1. Meld u aan bij iProva met uw **beheerdersaccount**.
 
-2. Open het menu **Go to** .
+2. Open het menu **Go to**.
 
-3. Selecteer **Application management** .
+3. Selecteer **Application management**.
 
-4. Selecteer **Users** in het deelvenster **Users and user groups** .
+4. Selecteer **Users** in het deelvenster **Users and user groups**.
 
-5. Selecteer **Toevoegen** .
+5. Selecteer **Toevoegen**.
 
 6. Voer in het vak **Gebruikersnaam** de gebruikersnaam van een gebruiker zoals `B.Simon@contoso.com`.
 
-7. Voer in het vak **Volledige naam** de volledige naam in, zoals **B.Simon** .
+7. Voer in het vak **Volledige naam** de volledige naam in, zoals **B.Simon**.
 
 8. Selecteer de optie **No password (use single sign-on)** .
 
 9. Voer in het vak **E-mailadres** het e-mailadres van de gebruiker in, zoals `B.Simon@contoso.com`.
 
-10. Scrol omlaag naar het einde van de pagina en selecteer **Finish** .
+10. Scrol omlaag naar het einde van de pagina en selecteer **Finish**.
 
 ## <a name="configure-iprova-sso"></a>Eenmalige aanmelding bij iProva configureren
 
-1. Meld u aan bij iProva met uw **beheerdersaccount** .
+1. Meld u aan bij iProva met uw **beheerdersaccount**.
 
-2. Open het menu **Go to** .
+2. Open het menu **Go to**.
 
-3. Selecteer **Application management** .
+3. Selecteer **Application management**.
 
-4. Selecteer **General** in het deelvenster **System settings** .
+4. Selecteer **General** in het deelvenster **System settings**.
 
-5. Selecteer **Bewerken** .
+5. Selecteer **Bewerken**.
 
-6. Scrol omlaag naar **Access control** .
+6. Scrol omlaag naar **Access control**.
 
     ![Instellingen voor toegangsbeheer van iProva](media/iprova-tutorial/iprova-accesscontrol.png)
 
-7. Zoek de instelling **Users are automatically logged on with their network accounts** en wijzig deze in **Yes, authentication via SAML** . Er worden nu aanvullende opties weergegeven.
+7. Zoek de instelling **Users are automatically logged on with their network accounts** en wijzig deze in **Yes, authentication via SAML**. Er worden nu aanvullende opties weergegeven.
 
-8. Selecteer **Set up** .
+8. Selecteer **Set up**.
 
-9. Selecteer **Next** .
+9. Selecteer **Next**.
 
-10. Er wordt nu gevraagd of u federatiegegevens wilt downloaden via een URL of wilt uploaden uit een bestand. Selecteer de optie **From URL** .
+10. Er wordt nu gevraagd of u federatiegegevens wilt downloaden via een URL of wilt uploaden uit een bestand. Selecteer de optie **From URL**.
 
     ![Azure AD-metagegevens downloaden](media/iprova-tutorial/iprova-download-metadata.png)
 
@@ -199,15 +199,15 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 13. Wanneer het downloaden is voltooid **,** wordt er een bevestigingsberichtweergegeven.
 
-14. Selecteer **Next** .
+14. Selecteer **Next**.
 
-15. Sla de optie **Test login** maar even over en klik op de knop **Next** .
+15. Sla de optie **Test login** maar even over en klik op de knop **Next**.
 
-16. Selecteer **windowsaccountname** in de vervolgkeuzelijst **Claim to use** .
+16. Selecteer **windowsaccountname** in de vervolgkeuzelijst **Claim to use**.
 
-17. Selecteer **Finish** .
+17. Selecteer **Finish**.
 
-18. U keert nu terug naar het scherm **Edit general settings** . Scrol omlaag naar de onderkant van de pagina en selecteer **OK** om de configuratie op te slaan.
+18. U keert nu terug naar het scherm **Edit general settings**. Scrol omlaag naar de onderkant van de pagina en selecteer **OK** om de configuratie op te slaan.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 

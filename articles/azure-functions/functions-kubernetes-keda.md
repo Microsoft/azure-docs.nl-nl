@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: jehollan
 ms.openlocfilehash: 525635ef40437fe308c52e2d5aba2c97ed8f20e7
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92927529"
 ---
 # <a name="azure-functions-on-kubernetes-with-keda"></a>Azure Functions op Kubernetes met KEDA
@@ -80,7 +80,7 @@ De stappen voor het verwijderen van KEDA zijn gedocumenteerd [op de KEDA-site](h
 KEDA biedt ondersteuning voor de volgende Azure-functie triggers:
 
 * [Azure Storage-wachtrijen](functions-bindings-storage-queue.md)
-* [Azure Service Bus wachtrijen](functions-bindings-service-bus.md)
+* [Azure Service Bus-wachtrijen](functions-bindings-service-bus.md)
 * [Azure Event/IoT hubs](functions-bindings-event-hubs.md)
 * [Apache Kafka](https://github.com/azure/azure-functions-kafka-extension)
 * [RabbitMQ-wachtrij](https://github.com/azure/azure-functions-rabbitmq-extension)

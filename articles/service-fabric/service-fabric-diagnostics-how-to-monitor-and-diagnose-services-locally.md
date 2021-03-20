@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
 ms.openlocfilehash: 58319b47c78a85b4f06c2c834db20f6c42cc1939
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86247418"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-machine-development-setup"></a>Services controleren en diagnosticeren in een ontwikkelomgeving met lokale machines
@@ -43,13 +43,13 @@ De Service Fabric Visual Studio-project sjablonen bevatten voorbeeld code. De co
 Voor projecten die zijn gemaakt op basis van de **service Sjablonen** (stateless of stateful), zoekt u alleen naar de `RunAsync` implementatie:
 
 1. De aanroep van `ServiceEventSource.Current.ServiceMessage` in de- `RunAsync` methode toont een voor beeld van een aangepaste etw-tracering van de toepassings code.
-2. In het **ServiceEventSource.cs** -bestand ziet u een overbelasting voor de `ServiceEventSource.ServiceMessage` methode die moet worden gebruikt voor gebeurtenissen met hoge frequentie als gevolg van de oorzaak van de prestaties.
+2. In het bestand **ServiceEventSource. cs** vindt u een overbelasting voor de `ServiceEventSource.ServiceMessage` methode die moet worden gebruikt voor gebeurtenissen met hoge frequentie als gevolg van de oorzaak van de prestaties.
 
 Voor projecten die zijn gemaakt op basis van de **actor sjablonen** (stateless of stateful):
 
 1. Open het bestand **' ProjectName". cs '** , waarbij *ProjectName* de naam is die u hebt gekozen voor uw Visual Studio-project.  
 2. Zoek de code `ActorEventSource.Current.ActorMessage(this, "Doing Work");` in de methode *DoWorkAsync* .  Dit is een voor beeld van een aangepaste ETW-tracering die is geschreven vanuit toepassings code.  
-3. In bestand **ActorEventSource.cs**vindt u een overbelasting voor de `ActorEventSource.ActorMessage` methode die moet worden gebruikt voor gebeurtenissen met hoge frequentie als gevolg van de oorzaak van de prestaties.
+3. In het bestand **ActorEventSource. cs** vindt u een overbelasting voor de `ActorEventSource.ActorMessage` methode die moet worden gebruikt voor gebeurtenissen met hoge frequentie als gevolg van de oorzaak van de prestaties.
 
 Nadat u aangepaste ETW-tracering aan uw service code hebt toegevoegd, kunt u de toepassing opnieuw bouwen, implementeren en uitvoeren om uw gebeurtenis (sen) in de viewer voor diagnostische gegevens weer te geven. Als u fouten opspoort in de toepassing met **F5**, wordt de viewer voor diagnostische gebeurtenissen automatisch geopend.
 

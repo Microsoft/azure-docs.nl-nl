@@ -6,10 +6,10 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 02/09/2018
 ms.openlocfilehash: d04f108b45070b27c4ff9ed833e8fb77b74cd597
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96754657"
 ---
 # <a name="accessing-resources-with-azure-data-lake-tools"></a>Toegang tot resources met Azure Data Lake-Hulpprogram Ma's
@@ -22,7 +22,7 @@ U hebt toegang tot Azure Data Lake Analytics resources om accounts weer te geven
 
 ### <a name="to-list-the-azure-data-lake-analytics-accounts-under-your-azure-subscription"></a>De Azure Data Lake Analytics accounts onder uw Azure-abonnement weer geven
 
-1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
+1. Selecteer CTRL + SHIFT + P om het opdracht palet te openen.
 2. Voer **ADL in: List accounts**. De accounts worden weer gegeven in het deel venster **uitvoer** .
 
 ### <a name="to-access-azure-data-lake-analytics-metadata"></a>Toegang tot Azure Data Lake Analytics meta gegevens
@@ -98,7 +98,7 @@ Een andere manier om bestanden te uploaden naar de opslag ruimte is via het snel
 
 U kunt [de upload status bewaken](#check-storage-tasks-status).
 
-### <a name="download-a-file"></a>Bestand downloaden
+### <a name="download-a-file"></a>Een bestand downloaden
 
 U kunt een bestand downloaden met behulp van de opdracht **ADL: down load file** of **ADL: down load file (Advanced)**.
 
@@ -193,7 +193,7 @@ Bladeren naar Blob Storage:
 
 ## <a name="open-the-data-lake-explorer-in-the-portal"></a>Open de Data Lake Verkenner in de portal
 
-1. Selecteer Ctrl+Shift+P om het opdrachtenpalet te openen.
+1. Selecteer CTRL + SHIFT + P om het opdracht palet te openen.
 2. Voer **open web Azure Storage Explorer** in of klik met de rechter muisknop op een relatief pad of het volledige pad in de script editor en selecteer vervolgens **Web openen Azure Storage Explorer**.
 3. Selecteer een Data Lake Analytics-account.
 

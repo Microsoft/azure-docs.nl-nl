@@ -4,10 +4,10 @@ description: Azure Resource Manager sjabloon voorbeelden zoeken om Azure Contain
 ms.topic: article
 ms.date: 03/07/2019
 ms.openlocfilehash: 6c487087b39244178643fd81364150ceb3ac4a63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86169643"
 ---
 # <a name="azure-resource-manager-templates-for-azure-container-instances"></a>Azure Resource Manager sjablonen voor Azure Container Instances
@@ -23,10 +23,10 @@ Zie de sectie [implementatie](#deployment) voor implementatie opties. Als u uw e
 | **Toepassingen** ||
 | [WordPress][app-wp] | Hiermee maakt u een WordPress-website en de MySQL-data base in een container groep. De WordPress site-inhoud en MySQL-data base worden opgeslagen in een Azure Files share. Maakt ook een toepassings gateway om open bare netwerk toegang tot WordPress beschikbaar te maken. |
 | [MS NAV met SQL Server en IIS][app-nav] | Hiermee implementeert u één Windows-container met een volledig functionele, op zichzelf staande Dynamics NAV/Dynamics 365 Business Central-omgeving. |
-| **Omvang** ||
+| **Volumes** ||
 | [emptyDir][vol-emptydir] | Hiermee worden twee Linux-containers geïmplementeerd die een emptyDir-volume delen. |
 | [gitRepo][vol-gitrepo] | Hiermee wordt een Linux-container geïmplementeerd waarmee een GitHub-opslag plaats wordt gekloond en gekoppeld als een volume. |
-| [gescheiden][vol-secret] | Hiermee implementeert u een Linux-container met een PFX-certificaat dat is gekoppeld als een geheim volume. |
+| [geheim][vol-secret] | Hiermee implementeert u een Linux-container met een PFX-certificaat dat is gekoppeld als een geheim volume. |
 | **Netwerken** ||
 | [UDP-weer gegeven container][net-udp] | Hiermee wordt een Windows-of Linux-container geïmplementeerd die een UDP-poort beschikbaar maakt. |
 | [Linux-container met openbaar IP-adres][net-publicip] | Implementeert één Linux-container die toegankelijk is via een openbaar IP-adres. |

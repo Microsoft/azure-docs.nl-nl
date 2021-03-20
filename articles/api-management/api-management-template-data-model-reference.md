@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 868ad3d1c6e7e7ef2cf32dcf675bc471a614f3ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86243151"
 ---
 # <a name="azure-api-management-template-data-model-reference"></a>Naslag informatie over Azure API Management-sjabloon gegevens model
@@ -33,19 +33,19 @@ In dit onderwerp worden de entiteits-en type representaties beschreven voor alge
 
 -   [API](#API)  
 -   [API-samen vatting](#APISummary)  
--   [App](#Application)  
+-   [Toepassing](#Application)  
 -   [Bijlage](#Attachment)  
 -   [Codevoorbeeld](#Sample)  
 -   [Opmerking](#Comment)  
 -   [Filteren](#Filtering)  
--   [Journaalkop](#Header)  
+-   [Header](#Header)  
 -   [HTTP-aanvraag](#HTTPRequest)  
 -   [HTTP-antwoord](#HTTPResponse)  
--   [Probleem](#Issue)  
+-   [Name](#Issue)  
 -   [Bewerking](#Operation)  
 -   [Menu bewerking](#Menu)  
 -   [Menu opdracht bewerking](#MenuItem)  
--   [Zoekresultaten oproepen](#Paging)  
+-   [Haalt](#Paging)  
 -   [Parameter](#Parameter)  
 -   [Product](#Product)  
 -   [Provider](#Provider)  

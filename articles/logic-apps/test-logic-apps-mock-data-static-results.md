@@ -9,10 +9,10 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/13/2019
 ms.openlocfilehash: 711d753203aeaeba50cea692053a37fcab2e9c7b
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93027700"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Logische Apps testen met gegevens modeleren door statische resultaten in te stellen
@@ -37,11 +37,11 @@ Als u bijvoorbeeld statische resultaten voor de e-mail actie Outlook 365-verzen 
 
 1. Voer de volgende stappen uit op de actie waar u statische resultaten wilt instellen: 
 
-   1. Klik in de rechter bovenhoek van de actie op de knop met weglatings tekens ( *...* ) en selecteer **statisch resultaat** , bijvoorbeeld:
+   1. Klik in de rechter bovenhoek van de actie op de knop met weglatings tekens (*...*) en selecteer **statisch resultaat**, bijvoorbeeld:
 
       ![Selecteer statisch resultaat > ' statisch resultaat inschakelen '](./media/test-logic-apps-mock-data-static-results/select-static-result.png)
 
-   1. Kies **statisch resultaat inschakelen** . Geef voor de vereiste eigenschappen (*) de uitvoer waarden van de model op die u wilt retour neren voor de reactie van de actie.
+   1. Kies **statisch resultaat inschakelen**. Geef voor de vereiste eigenschappen (*) de uitvoer waarden van de model op die u wilt retour neren voor de reactie van de actie.
 
       Dit zijn bijvoorbeeld de vereiste eigenschappen voor de HTTP-actie:
 
@@ -60,7 +60,7 @@ Als u bijvoorbeeld statische resultaten voor de e-mail actie Outlook 365-verzen 
 
       ![Optionele eigenschappen selecteren](./media/test-logic-apps-mock-data-static-results/optional-properties.png)
 
-1. Wanneer u klaar bent om op te slaan, kiest u **gereed** .
+1. Wanneer u klaar bent om op te slaan, kiest u **gereed**.
 
    In de rechter bovenhoek van de actie toont de titel balk nu een pictogram voor een test beker glas ( ![ pictogram voor statische resultaten ](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png) ). Dit geeft aan dat u statische resultaten hebt ingeschakeld.
 
@@ -102,7 +102,7 @@ Als uw logische app een vorige uitvoering heeft met uitvoer die u kunt hergebrui
 
    ![JSON-modus](./media/test-logic-apps-mock-data-static-results/json-editing-mode.png)
 
-1. Wanneer u klaar bent, kiest u **Gereed** . Als u wilt terugkeren naar de ontwerp functie, kiest u **modus switch editor** ( ![ Kies de modus switch editor ](./media/test-logic-apps-mock-data-static-results/switch-editor-mode-button.png) ).
+1. Wanneer u klaar bent, kiest u **Gereed**. Als u wilt terugkeren naar de ontwerp functie, kiest u **modus switch editor** ( ![ Kies de modus switch editor ](./media/test-logic-apps-mock-data-static-results/switch-editor-mode-button.png) ).
 
 <a name="find-runs-mock-data"></a>
 
@@ -114,11 +114,11 @@ De uitvoerings geschiedenis van de logische app identificeert de uitvoeringen wa
 
 1. Zoek in het rechterdeel venster onder **uitvoerings geschiedenis** de kolom **statische resultaten** . 
 
-   Voor elke uitvoering die acties met resultaten bevat, is de kolom **statische resultaten** ingesteld op **ingeschakeld** , bijvoorbeeld:
+   Voor elke uitvoering die acties met resultaten bevat, is de kolom **statische resultaten** ingesteld op **ingeschakeld**, bijvoorbeeld:
 
    ![Uitvoerings geschiedenis-kolom met statische resultaten](./media/test-logic-apps-mock-data-static-results/run-history.png)
 
-1. Als u acties wilt weer geven die statische resultaten gebruiken, selecteert u de gewenste uitvoeren waar de kolom **statische resultaten** is ingesteld op **ingeschakeld** .
+1. Als u acties wilt weer geven die statische resultaten gebruiken, selecteert u de gewenste uitvoeren waar de kolom **statische resultaten** is ingesteld op **ingeschakeld**.
 
    Acties die statische resultaten gebruiken, tonen het pictogram test bekers ( ![ pictogram voor statische resultaten ](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png) ), bijvoorbeeld:
 
@@ -132,7 +132,7 @@ Als u statische resultaten uitschakelt, worden de waarden niet uit de laatste in
 
    ![In de scherm afbeelding wordt een H T T P-actie weer gegeven, waar u het pictogram voor het test beker glas kunt selecteren.](./media/test-logic-apps-mock-data-static-results/disable-static-results.png)
 
-1. Kies **uitschakelen statisch resultaat**  >  **gereed** .
+1. Kies **uitschakelen statisch resultaat**  >  **gereed**.
 
    ![Scherm afbeelding toont de optie statisch resultaat uitschakelen die u kunt selecteren.](./media/test-logic-apps-mock-data-static-results/disable-static-results-button.png)
 

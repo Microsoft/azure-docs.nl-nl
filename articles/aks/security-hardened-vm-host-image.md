@@ -8,10 +8,10 @@ ms.date: 09/11/2019
 ms.author: mlearned
 ms.custom: mvc
 ms.openlocfilehash: 84b826ce33b5395db5bd38e883b3a0fb3425725b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86244035"
 ---
 # <a name="security-hardening-for-aks-agent-node-host-os"></a>Beveiligings beveiliging voor AKS-agent knooppunt host-besturings systeem
@@ -73,7 +73,7 @@ Het doel van het besturings systeem voor de beveiliging van beveiligde hosts is 
 |5.4.1.1 |Controleren of het wacht woord verloopt 90 dagen of minder |
 |5.4.1.4 |Controleren of inactieve wachtwoord vergrendeling 30 dagen of minder is |
 |5.4.4 |Zorg ervoor dat de umask van de standaard gebruiker 027 of meer beperkend is |
-|5,6 |Controleren of de toegang tot de su-opdracht is beperkt|
+|5.6 |Controleren of de toegang tot de su-opdracht is beperkt|
 
 ## <a name="additional-notes"></a>Aanvullende opmerkingen
  

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 11/14/2018
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4ebe0b6d57225eff9f3f1251d5e491c95e9b7ffc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85965107"
 ---
 # <a name="persist-job-and-task-output"></a>Taken persistent maken
@@ -73,7 +73,7 @@ Bij het ontwerpen van uw batch-oplossing moet u rekening houden met de volgende 
 
 - **Uitvoer ophalen**: u kunt taak uitvoer rechtstreeks ophalen van de reken knooppunten in uw pool of van Azure Storage of een ander gegevens archief als u permanente taak uitvoer hebt. Als u de uitvoer van een taak rechtstreeks vanuit een reken knooppunt wilt ophalen, moet u de bestands naam en de uitvoer locatie ervan op het knoop punt hebben. Als u de uitvoer van de taak naar Azure Storage persistent wilt maken, hebt u het volledige pad naar het bestand in Azure Storage nodig om de uitvoer bestanden te downloaden met de SDK van Azure Storage.
 
-- **Uitvoer weer geven**: wanneer u navigeert naar een batch-taak in het Azure Portal en **bestanden op het knoop punt**selecteert, worden alle bestanden die zijn gekoppeld aan de taak weer gegeven, niet alleen de uitvoer bestanden waarin u bent geïnteresseerd. De bestanden op Compute-knoop punten zijn alleen beschikbaar wanneer het knoop punt bestaat en alleen binnen de Bewaar tijd van het bestand dat u voor de taak hebt ingesteld. Als u de taak uitvoer wilt weer geven die u hebt behouden Azure Storage, kunt u de Azure Portal of een Azure Storage-client toepassing gebruiken, zoals de [Azure Storage Explorer][storage_explorer]. Als u de uitvoer gegevens in Azure Storage wilt weer geven met de portal of een ander hulp programma, moet u de locatie van het bestand weten en rechtstreeks naar de site navigeren.
+- **Uitvoer weer geven**: wanneer u navigeert naar een batch-taak in het Azure Portal en **bestanden op het knoop punt** selecteert, worden alle bestanden die zijn gekoppeld aan de taak weer gegeven, niet alleen de uitvoer bestanden waarin u bent geïnteresseerd. De bestanden op Compute-knoop punten zijn alleen beschikbaar wanneer het knoop punt bestaat en alleen binnen de Bewaar tijd van het bestand dat u voor de taak hebt ingesteld. Als u de taak uitvoer wilt weer geven die u hebt behouden Azure Storage, kunt u de Azure Portal of een Azure Storage-client toepassing gebruiken, zoals de [Azure Storage Explorer][storage_explorer]. Als u de uitvoer gegevens in Azure Storage wilt weer geven met de portal of een ander hulp programma, moet u de locatie van het bestand weten en rechtstreeks naar de site navigeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

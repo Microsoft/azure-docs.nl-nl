@@ -10,10 +10,10 @@ ms.date: 04/09/2019
 ms.author: wesmc
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 024dbf6518748a4048873de4eb54a53f9d9a6362
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94954321"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Toegang tot Azure IoT Hub Device Provisioning Service beheren
@@ -178,7 +178,7 @@ In de volgende onderwerpen vindt u meer informatie over het beheren van de toega
 
 De volgende tabel geeft een lijst van de machtigingen die u kunt gebruiken voor het beheren van de toegang tot uw IoT Device Provisioning-Service.
 
-| Machtiging | Opmerkingen |
+| Machtiging | Notities |
 | --- | --- |
 | **ServiceConfig** |Hiermee wordt toegang verleend om de service configuraties te wijzigen. <br/>Deze machtiging wordt gebruikt door de back-end-Cloud Services. |
 | **EnrollmentRead** |Hiermee wordt lees toegang verleend aan de registraties en inschrijvings groepen van het apparaat. <br/>Deze machtiging wordt gebruikt door de back-end-Cloud Services. |

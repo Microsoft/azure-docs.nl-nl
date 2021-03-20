@@ -4,10 +4,10 @@ description: Dit artikel gaat over het oplossen van problemen die optreden bij h
 ms.date: 02/10/2020
 ms.topic: troubleshooting
 ms.openlocfilehash: 4908b8ed97bad43d9d24427660a8691ee43d7eaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89376975"
 ---
 # <a name="troubleshoot-problems-while-backing-up-azure-file-shares"></a>Problemen oplossen bij het maken van back-ups van Azure-bestands shares
@@ -51,7 +51,7 @@ Voer de registratie opnieuw uit. Neem contact op met de ondersteuning als het pr
 
 ### <a name="unable-to-delete-the-recovery-services-vault-after-unprotecting-a-file-share"></a>Kan de Recovery Services kluis niet verwijderen na het ongedaan maken van de beveiliging van een bestands share
 
-Open in de Azure Portal uw **Vault**  >  opslag accounts voor**back-upinfrastructuur**van de kluis  >  **Storage accounts**. Selecteer **registratie ongedaan maken** om de opslag accounts te verwijderen uit de Recovery Services kluis.
+Open in de Azure Portal uw   >  opslag accounts voor **back-upinfrastructuur** van de kluis  >  . Selecteer **registratie ongedaan maken** om de opslag accounts te verwijderen uit de Recovery Services kluis.
 
 >[!NOTE]
 >Een Recovery Services kluis kan alleen worden verwijderd na het ongedaan maken van de registratie van alle opslag accounts die zijn geregistreerd bij de kluis.
@@ -115,7 +115,7 @@ Fout code: UserErrorResourceGroupNotFound
 
 Fout bericht: de resource groep bestaat niet
 
-Selecteer een bestaande resource groep of maak een nieuwe resource groep.
+Selecteer een bestaande resourcegroep of maak een nieuwe.
 
 ### <a name="parallelsnapshotrequest--a-backup-job-is-already-in-progress-for-this-file-share"></a>ParallelSnapshotRequest: er wordt al een back-uptaak uitgevoerd voor deze bestands share
 
@@ -261,7 +261,7 @@ Fout code: UserErrorAnotherRestoreInProgressOnSameTarget
 
 Fout bericht: er wordt een andere herstel taak uitgevoerd op dezelfde doel bestands share
 
-Gebruik een andere doel bestands share. U kunt ook annuleren of wachten tot de andere herstel bewerking is voltooid.
+Gebruik een andere doel bestands share. U kunt de bewerking ook annuleren of wachten tot de andere herstelbewerking is voltooid.
 
 ## <a name="common-modify-policy-errors"></a>Veelvoorkomende beleids fouten voor wijzigingen
 

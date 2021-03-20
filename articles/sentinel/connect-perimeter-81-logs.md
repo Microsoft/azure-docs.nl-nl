@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/21/2020
 ms.author: yelevin
 ms.openlocfilehash: e70bfd12b018e785e7b3b91e098c99fea1101c04
-ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/10/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100093094"
 ---
 # <a name="connect-your-perimeter-81-activity-logs-to-azure-sentinel"></a>De activiteiten logboeken van uw perimeter 81 verbinden met Azure Sentinel

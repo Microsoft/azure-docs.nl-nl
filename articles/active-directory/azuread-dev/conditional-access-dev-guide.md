@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.workload: identity
 ROBOTS: NOINDEX
 ms.openlocfilehash: b08b07ebcd6e45e95e23dff8686148889e9d4b39
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96173916"
 ---
 # <a name="developer-guidance-for-the-azure-active-directory-conditional-access-feature"></a>Richt lijnen voor ontwikkel aars voor de functie voor voorwaardelijke toegang van Azure Active Directory
@@ -29,7 +29,7 @@ ms.locfileid: "96173916"
 
 De functie voor voorwaardelijke toegang in Azure Active Directory (Azure AD) biedt een van de volgende manieren om uw app te beveiligen en een service te beveiligen. Met voorwaardelijke toegang kunnen ontwikkel aars en zakelijke klanten services op talrijke manieren beveiligen, waaronder:
 
-* Multi-Factor Authentication
+* Meervoudige verificatie
 * Alleen intune-geregistreerde apparaten toegang verlenen tot specifieke services
 * Gebruikers locaties en IP-bereiken beperken
 

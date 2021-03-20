@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 12/11/2020
 ms.custom: devx-track-csharp, seodec18
 ms.openlocfilehash: 6ceeb3d31652c04eb9a69c1c8bb4b114e6f38d52
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97347716"
 ---
 # <a name="configure-tls-mutual-authentication-for-azure-app-service"></a>Wederzijdse TLS-verificatie voor Azure App Service configureren
@@ -17,7 +17,7 @@ ms.locfileid: "97347716"
 U kunt de toegang tot uw Azure App Service-app beperken door verschillende verificatie typen in te scha kelen. Een manier om dit te doen is door een client certificaat aan te vragen wanneer de client aanvraag over TLS/SSL gaat en het certificaat te valideren. Dit mechanisme heet TLS wederzijdse verificatie of verificatie van client certificaten. In dit artikel wordt beschreven hoe u uw app instelt voor gebruik van verificatie van client certificaten.
 
 > [!NOTE]
-> Als u toegang tot uw site hebt via HTTP en niet HTTPS, ontvangt u geen client certificaat. Als voor uw toepassing client certificaten zijn vereist, moet u dus geen aanvragen voor uw toepassing via HTTP toestaan.
+> Als u toegang tot uw site hebt via HTTP en niet HTTPS, ontvangt u geen clientcertificaat. Als voor uw toepassing clientcertificaten zijn vereist, moet u dus geen aanvragen voor uw toepassing via HTTP toestaan.
 >
 
 [!INCLUDE [Prepare your web app](../../includes/app-service-ssl-prepare-app.md)]

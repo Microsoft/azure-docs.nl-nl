@@ -4,10 +4,10 @@ description: DevTest Labs biedt informatie die u kunt gebruiken om een artefact 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 440ce6a537ac8d6a21ae8010bfbb3c38a82bf01e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85480810"
 ---
 # <a name="diagnose-artifact-failures-in-the-lab"></a>Storingen in artefacten in het lab diagnosticeren 
@@ -23,7 +23,7 @@ Nadat u een artefact hebt gemaakt, kunt u controleren of deze is geslaagd of mis
 
 1. Selecteer uw Lab in de Azure Portal in de lijst met resources.
 2. Kies de Windows-VM die het artefact bevat dat u wilt onderzoeken.
-3. Selecteer **artefacten**onder **Algemeen**in het linkerdeel venster. Er wordt een lijst weer gegeven met artefacten die zijn gekoppeld aan die VM. De naam van het artefact en de artefact status worden aangegeven.
+3. Selecteer **artefacten** onder **Algemeen** in het linkerdeel venster. Er wordt een lijst weer gegeven met artefacten die zijn gekoppeld aan die VM. De naam van het artefact en de artefact status worden aangegeven.
 
    ![Artefactstatus](./media/devtest-lab-troubleshoot-artifact-failure/devtest-lab-artifacts-failure-new.png)
 

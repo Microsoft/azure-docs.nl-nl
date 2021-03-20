@@ -8,10 +8,10 @@ author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/29/2020
 ms.openlocfilehash: dba47073a6676b17c091af048f583ca3e7712999
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87420223"
 ---
 # <a name="create-or-modify-an-offer"></a>Een aanbieding toevoegen of veranderen
@@ -29,10 +29,10 @@ Met deze oproep wordt een specifieke aanbieding binnen de naam ruimte van de uit
 |  --------         |  ----------------                     |  -------------  |
 | publisherId       |  Uitgevers-id, bijvoorbeeld `contoso` |   Tekenreeks |
 | offerId           |  Aanbiedings-id                     |   Tekenreeks        |
-| api-versie       |  Nieuwste versie van de API            |   Date           |
+| api-versie       |  Nieuwste versie van de API            |   Datum           |
 |  |  |  |
 
-## <a name="header"></a>Koptekst
+## <a name="header"></a>Header
 
 |  **Naam**        |  **Waarde**               |
 |  ---------       |  ----------              | 
@@ -287,15 +287,15 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op Azure-apps,
 
 | Categorie | SaaS-sleutels | Azure-app sleutels | Virtuele machine, containers, container-apps, IoT Edge module, sleutels van de kern virtuele machine |
 | --- | --- | --- | --- |
-| ***Analyse*** | ***analyse*** | ***Analytics-Azure-apps*** | ***analyse-amp*** |
+| ***Analyse** _ | _*_analyse_*_ | _*_Analytics-Azure-apps_*_ | _ *_Analytics-amp_** |
 | Gegevens inzichten | gegevens-inzichten | gegevens-inzichten | gegevens-inzichten |
 | Data Analytics | gegevens analyse | gegevens analyse | gegevens analyse |
 | Big data | Big Data | bigData | Big Data |
 | Predictive analytics | voorspellende analyse | voorspellende analyse | voorspellende analyse |
 | Analyse in realtime/streamen | Realtime-Streaming-analyses | Realtime-Streaming-analyses | Realtime-Streaming-analyses |
 | Anders | other | overige-analyses | other |
-| ***AI en Machine Learning*** | ***ArtificialIntelligence*** | ***AI-plus-machine-learning*** | ***AI-plus-machine-learning*** |
-| Bot-Services | bot-Services | bot-Services | bot-Services |
+| ***AI + machine learning** _ | _*_ArtificialIntelligence_*_ | _*_AI-plus-machine-learning_*_ | _ *_AI-plus-machine-learning_** |
+| Bot Services | bot-Services | bot-Services | bot-Services |
 | Cognitive Services | cognitieve Services | cognitieve Services | cognitieve Services |
 | ML-service | ml-service | ml-service | ml-service |
 | Geautomatiseerde machine learning | automatische ml | automatische ml | automatische ml |
@@ -305,83 +305,83 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op Azure-apps,
 | Kennis analyse | kennis-analyse | kennis-analyse | kennis-analyse |
 | ML-bewerkingen | ml-bewerkingen | ml-bewerkingen | ml-bewerkingen |
 | Anders | overige-AI-plus-machine-learning | other | other |
-| ***Blockchain*** | ***Block Chain*** | ***Block Chain*** | ***Block Chain*** |
+| ***Block Chain** _ | _*_Block Chain_*_ | _*_Block Chain_*_ | _ *_Block Chain_** |
 | App-Accelerators | app-Accelerators | app-Accelerators | app-Accelerators |
 | Groot boek met één knoop punt | Eén knoop punt-groot boek | Eén knoop punt-groot boek | Eén knoop punt-groot boek |
 | Meerdere knoop punten in het groot boek | meerdere knoop punten-groot boek | meerdere knoop punten-groot boek | meerdere knoop punten-groot boek |
 | Hulpprogramma's | tools | tools | tools |
 | Anders | other | other | other |
-| ***Compute*** | ***compute-SaaS*** | ***compute-Azure-apps*** | ***bepalen*** |
+| ***Compute** _ | _*_compute-SaaS_*_ | _*_compute-Azure-apps_*_ | _ *_Compute_** |
 | Toepassings infrastructuur | appInfra | appInfrastructure | toepassings infrastructuur |
 | Besturingssystemen | clientOS | clientOS | besturings systemen |
 | Cache | cache | cache | cache |
 | Anders | andere compute | andere compute | other |
-| ***Containers*** | ***containers*** | ***containers*** | ***containers*** |
+| ***Containers** _ | _*_containers_*_ | _*_containers_*_ | _ *_containers_** |
 | Container-apps | container-apps | container-apps | container-apps |
 | Container installatie kopieën | container-installatie kopieën | container-installatie kopieën | container-installatie kopieën |
 | Aan de slag met containers | Get-Started-with-containers | Get-Started-with-containers | Get-Started-with-containers |
 | Anders | other | other | other |
-| ***Databases*** | ***data bases-SaaS*** | ***enddatabase*** | ***vinden*** |
+| ***Data bases** _ | _*_data bases-SaaS_*_ | _*_enddatabase_*_ | _ *_data bases_** |
 | NoSQL-data bases | nosql-data bases | nosql-data bases | nosql-data bases |
 | Relationele databases | relationele data bases | relationele data bases | relationele data bases |
 | Groot boek-Block chain data bases | groot boek-Block chain-data bases | groot boek-Block chain-data bases | groot boek-Block chain-data bases |
 | Data meren | Data-meren | Data-meren | Data-meren |
 | Data Warehouse | Data Warehouse | Data Warehouse | Data Warehouse |
 | Anders | andere-data bases | andere-data bases | other |
-| ***Hulpprogramma's voor ontwikkelaars*** | ***Ontwikkel aars-hulp middelen-SaaS*** | ***Ontwikkel aars-hulpprogram ma's-Azure-apps*** | ***Ontwikkel aars-hulpprogram ma's*** |
+| ***Ontwikkelhulpprogramma's** _ | _*_Ontwikkel aars-hulp middelen-SaaS_*_ | _*_Ontwikkel aars-hulpprogram ma's-Azure-apps_*_ | _ *_ontwikkel hulpprogramma's_** |
 | Hulpprogramma's | hulpprogram ma's-hulpprogram ma's voor ontwikkel aars | hulpprogram ma's-hulpprogram ma's voor ontwikkel aars | hulpprogram ma's-hulpprogram ma's voor ontwikkel aars |
 | Scripts | scriptmap | scriptmap | scriptmap |
 | Ontwikkelaars service | devService | devService | Developer-Service |
 | Anders | overige-ontwikkel hulpprogramma's | overige-ontwikkel hulpprogramma's | other |
-| ***DevOps*** | ***devops*** | ***devops*** | ***devops*** |
+| ***DevOps** _ | _*_devops_*_ | _*_devops_*_ | _ *_devops_** |
 | Anders | other | other | other |
-| ***Identiteit*** | ***identity*** | ***identity*** | ***identity*** |
+| ***Identiteit** _ | _*_persoon_*_ | _*_persoon_*_ | _ *_identiteit_** |
 | Toegangsbeheer | Toegangs beheer | Toegangs beheer | Toegangs beheer |
 | Anders | other | other | other |
-| ***Integratie*** | ***opneming*** | ***opneming*** | ***opneming*** |
+| ***Integratie** _ | _*_opneming_*_ | _*_opneming_*_ | _ *_integratie_** |
 | Berichten | mede | mede | mede |
 | Anders | other | other | other |
-| ***Internet of Things*** | ***IoT*** | ***Internet-der-dingen-Azure-apps*** | ***Internet-der-dingen*** |
+| ***Internet of Things** _ | _*_IoT_*_ | _*_Internet-der-dingen-Azure-apps_*_ | _ *_Internet-der-dingen_** |
 | IoT-kern Services | N.v.t. | IOT-Core-Services | IOT-Core-Services |
 | IoT Edge modules | N.v.t. | IOT-Edge-modules | IOT-Edge-modules |
 | IoT-oplossingen | IOT-oplossingen | IOT-oplossingen | IOT-oplossingen |
 | Visualisatie van gegevens analyse & | gegevens analyse-en-visualisatie | gegevens analyse-en-visualisatie | gegevens analyse-en-visualisatie |
 | IoT-connectiviteit | IOT-connectiviteit | IOT-connectiviteit | IOT-connectiviteit |
 | Anders | overige-Internet-van-dingen | overige-Internet-van-dingen | other |
-| ***&-beheer Hulpprogramma's*** | ***ITandAdministration*** | ***IT-en-management-tools-Azure-apps*** | ***IT-en-beheer-hulpprogram ma's*** |
+| ***IT &-beheer hulpprogramma's** _ | _*_ITandAdministration_*_ | _*_IT-en-management-tools-Azure-apps_*_ | _ *_it-en-beheer-hulpprogram ma's_** |
 | Beheeroplossingen | beheer-oplossingen | beheer-oplossingen | beheer-oplossingen |
 | Zakelijke toepassingen | businessApplication | businessApplication | zakelijke toepassingen |
 | Anders | andere hulpprogram ma's voor IT-beheer | andere hulpprogram ma's voor IT-beheer | other |
-| ***& diagnostische gegevens controleren*** | ***bewaking en diagnostische gegevens*** | ***bewaking en diagnostische gegevens*** | ***bewaking en diagnostische gegevens*** |
+| ***Bewaking & diagnostische gegevens** _ | _*_bewaking en diagnostische gegevens_*_ | _*_bewaking en diagnostische gegevens_*_ | _ *_bewaking en diagnostische gegevens_** |
 | Anders | other | other | other |
-| ***Media*** | ***tussenliggend*** | ***tussenliggend*** | ***tussenliggend*** |
+| ***Media** _ | _*_tussenliggend_*_ | _*_tussenliggend_*_ | _ *_Media_** |
 | Media Services | media-services | media-services | media-services |
 | Inhoudsbeveiliging | beveiliging van inhoud | beveiliging van inhoud | beveiliging van inhoud |
 | Live & on-demand streaming | Live-and-on-demand-streaming | Live-and-on-demand-streaming | Live-and-on-demand-streaming |
 | Anders | other | other | other |
-| ***Migratie*** | ***virtuelemachinemigratie*** | ***virtuelemachinemigratie*** | ***virtuelemachinemigratie*** |
+| ***Migratie** _ | _*_virtuelemachinemigratie_*_ | _*_virtuelemachinemigratie_*_ | _ *_migratie_** |
 | Gegevensmigratie | gegevens migratie | gegevens migratie | gegevens migratie |
 | Anders | other | other | other |
-| ***Mixed Reality*** | ***Mixed-Reality*** | ***Mixed-Reality*** | ***Mixed-Reality*** |
+| ***Mixed Reality** _ | _*_Mixed-Reality_*_ | _*_Mixed-Reality_*_ | _ *_Mixed-Reality_** |
 | Anders | other | other | other |
-| ***Netwerken*** | ***inbel*** | ***inbel*** | ***inbel*** |
+| ***Netwerken** _ | _*_inbel_*_ | _*_inbel_*_ | _ *_netwerken_** |
 | Toestel beheerders | apparaat-managers | apparaat-managers | apparaat-managers |
 | Connectiviteit | connectiviteit | connectiviteit | connectiviteit |
 | Firewalls | brand | brand | brand |
 | Load balancers | load balancers | load balancers | load balancers |
 | Anders | other | other | other |
-| ***Beveiliging*** | ***beveiligingsprincipal*** | ***beveiligingsprincipal*** | ***beveiligingsprincipal*** |
+| ***Beveiliging** _ | _*_beveiligingsprincipal_*_ | _*_beveiligingsprincipal_*_ | _ *_beveiliging_** |
 | Toegangs beheer voor identiteits & | identiteits-en toegangs beheer | identiteits-en toegangs beheer | identiteits-en toegangs beheer |
 | Bedreigingsbeveiliging | bedreiging beveiliging | bedreiging beveiliging | bedreiging beveiliging |
 | Information Protection | gegevens beveiliging | gegevens beveiliging | gegevens beveiliging |
 | Anders | other | other | other |
-| ***Storage*** | ***opslag-SaaS*** | ***opslag-Azure-apps*** | ***opslagpad*** |
+| ***Opslag** _ | _*_opslag-SaaS_*_ | _*_opslag-Azure-apps_*_ | _ *_opslag_** |
 | Back-up & herstellen | Back-up | Back-up | back-up en herstel |
 | Hybride opslag voor ondernemingen | Enter prise-Hybrid-Storage | Enter prise-Hybrid-Storage | Enter prise-Hybrid-Storage |
 | Bestanden delen | bestanden delen | bestanden delen | bestanden delen |
 | Beheer van gegevens levenscyclus | gegevens levenscyclus beheer | gegevens levenscyclus beheer | gegevens levenscyclus beheer |
 | Anders | andere opslag | andere opslag | other |
-| ***Web*** | ***instellingen*** | ***instellingen*** | ***instellingen*** |
+| ***Web** _ | _*_instellingen_*_ | _*_instellingen_*_ | _ *_Web_** |
 | Blogs & CMSs | blogs-en-CMSS | blogs-en-CMSS | blogs-en-CMSS |
 | Starter Web Apps | Starter-web-apps | Starter-web-apps | Starter-web-apps |
 | Commerce | Commerce | Commerce | Commerce |
@@ -396,48 +396,48 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 
 | Categorie | SaaS-sleutels | Dynamics 365 Business Central, Dynamics 365 voor klant betrokkenheid, Dynamics 365 voor bewerkings sleutels | Power bi-app-sleutels |
 | --- | --- | --- | --- |
-| ***Analyse*** | ***analyse*** | ***Analyse*** | ***Analyse*** |
+| ***Analyse** _ | _*_analyse_*_ | _*_Analyse_*_ | _ *_Analytics_** |
 | Geavanceerde analyse | Geavanceerd-analyse | Geavanceerd-analyse | Geavanceerd-analyse |
 | Visualisatie & rapportage | visualisatie-rapportage | visualisatie-rapportage | visualisatie-rapportage |
 | Anders | other | overige-analyses | overige-analyses |
-| ***AI en Machine Learning*** | ***ArtificialIntelligence*** | ***AI-plus-machine learning-Dynamics*** | ***AI-plus-machine learning-appsource*** |
+| ***AI + machine learning** _ | _*_ArtificialIntelligence_*_ | _*_AI-plus-machine learning-Dynamics_*_ | _ *_AI-plus-machine learning-appsource_** |
 | AI voor bedrijven | AI-for-Business | AI-for-Business | AI-for-Business |
 | Bot-apps | bot-apps | bot-apps | bot-apps |
 | Anders | overige-AI-plus-machine-learning | overige-AI-plus-machine-learning | overige-AI-plus-machine-learning |
-| ***Samenwerking*** | ***Samenwerking*** | ***Samenwerking*** | ***werking*** |
+| ***Samenwerking** _ | _*_Werking_*_ | _*_Werking_*_ | _ *_samen werking_** |
 | Contact opnemen met & personen | contact persoon-personen | contact persoon-personen | contact persoon-en-personen |
 | Beheer van vergaderingen | vergadering-beheer | vergadering-beheer | vergadering-beheer |
 | Beheer van site ontwerp & | site-ontwerp-beheer | site-ontwerp-beheer | site-ontwerp-en-beheer |
 | Taak & project beheer | taak-Project-beheer | taak-Project-beheer | taak-en project beheer |
 | Video vergaderingen met spraak & | spraak-video vergaderingen | spraak-video vergaderingen | spraak-en video vergaderingen |
 | Anders | overige samen werking | overige samen werking | other |
-| ***Naleving & juridisch*** | ***acht*** | ***acht*** | ***naleving-en-juridisch*** |
+| ***Naleving & Legal** _ | _*_acht_*_ | _*_acht_*_ | _ *_naleving-en-juridisch_** |
 | Controle van belasting & | belasting controle | belasting controle | belasting en controle |
 | Juridisch | Juridisch | Juridisch | rechtmatig |
 | Gegevens, het governance & privacy | Data-Governance-privacy | Data-Governance-privacy | Data-Governance-en-privacy |
 | Gezondheids & veiligheid | gezondheids veiligheid | gezondheids veiligheid | status en veiligheid |
 | Anders | overige-naleving-juridisch | overige-naleving-juridisch | other |
-| ***Customer Service*** | ***CustomerService*** | ***CustomerService*** | ***klant-service*** |
+| ***Klanten service** _ | _*_CustomerService_*_ | _*_CustomerService_*_ | _ *_klanten service_** |
 | Contact centrum | contact persoon-centrum | contact persoon-centrum | contact persoon-centrum |
 | Gezicht to face-service | face-to-face-service | face-to-face-service | face-to-face-service |
 | Back-up van Office & werknemers service | Back-Office-werk nemer-service | Back-Office-werk nemer-service | Back-Office-and-employee-service |
 | Case beheer kennis & | kennis-Case-beheer | kennis-Case-beheer | kennis-en case beheer |
 | Omnichannel-betrokkenheid van sociale media & | sociale media-omnichannel-engagement | sociale media-omnichannel-engagement | sociale media-en-omnichannel-betrokkenheid |
 | Anders | overige-klanten service | overige-klanten service | other |
-| ***Financieel*** | ***Financieel*** | ***Financieel*** | ***projectfinancierings*** |
+| ***Financiën** _ | _*_Finance_*_ | _*_Finance_*_ | _ *_Financiën_** |
 | Boekhouding | boekhouder | boekhouder | boekhouder |
 | Asset-management | Asset-Management | Asset-Management | Asset-Management |
 | Analyse, consolidatie & rapportage | Analytics-consolidatie-rapportage | Analytics-consolidatie-rapportage | analyse-consolidatie en rapportage |
 | Tegoed & verzamelingen | Credit verzamelingen | Credit verzamelingen | tegoeden en verzamelingen |
 | Nalevings & risico beheer | naleving-risico beheer | naleving-risico beheer | naleving en risico beheer |
 | Anders | overige Financiën | overige Financiën | other |
-| ***Human Resources*** | ***Human*** | ***Human*** | ***Human resources*** |
+| ***Human Resources** _ | _*_Human_*_ | _*_Human_*_ | _ *_Human Resources_** |
 | Verwerving van talen | talen aan de verwerving | talen aan de verwerving | talen aan de verwerving |
 | Talen beheer | talen beheer | talen beheer | talen beheer |
 | HR-bewerkingen | HR-bewerkingen | HR-bewerkingen | HR-bewerkingen |
 | Personeel planning & Analytics | personeel-planning-Analytics | personeel-planning-Analytics | personeel-planning en analyse |
 | Anders | overige-human resources | overige-human resources | other |
-| ***Internet of Things*** | ***IoT*** | ***Internet-van-dingen-Dynamics*** | ***Internet-der-dingen-appsource*** |
+| ***Internet of Things** _ | _*_IoT_*_ | _*_Internet-van-dingen-Dynamics_*_ | _ *_Internet-van-dingen-appsource_** |
 | & bewerkingen voor beheer van bedrijfs middelen | Asset-Management-Operations | Asset-Management-Operations | Asset-Management-and-Operations |
 | Verbonden producten | verbonden-producten | verbonden-producten | verbonden-producten |
 | Intelligente toeleverings keten | Intelligent-supply-keten | Intelligent-supply-keten | Intelligent-supply-keten |
@@ -447,11 +447,11 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 | Slimme infrastructuur resources & | slimme infra structuur-bronnen | slimme infra structuur-bronnen | slimme infra structuur en bronnen |
 | Mobiele & mobiliteit | Voer tuigen-mobiliteit | Voer tuigen-mobiliteit | Voer tuigen en mobiliteit |
 | Anders | overige-Internet-van-dingen | overige-Internet-van-dingen | other |
-| ***&-beheer Hulpprogramma's*** | ***ITandAdministration*** | ***ITandAdministration*** | ***IT-en-beheer-hulpprogram ma's*** |
+| ***IT &-beheer hulpprogramma's** _ | _*_ITandAdministration_*_ | _*_ITandAdministration_*_ | _ *_it-en-beheer-hulpprogram ma's_** |
 | Beheeroplossingen | beheer-oplossingen | beheer-oplossingen | beheer-oplossingen |
 | Zakelijke toepassingen | businessApplication | businessApplication | zakelijke toepassingen |
 | Anders | andere hulpprogram ma's voor IT-beheer | andere hulpprogram ma's voor IT-beheer | other |
-| ***Marketing*** | ***Marketing*** | ***Marketing*** | ***Marketing*** |
+| ***Marketing** _ | _*_Marketing_*_ | _*_Marketing_*_ | _ *_marketing_** |
 | Bekendmaking | bekendmaking | bekendmaking | bekendmaking |
 | Analyse | analyse-marketing | analyse-marketing | analyse-marketing |
 | & automatisering van campagne beheer | campagne-beheer-automatisering | campagne-beheer-automatisering | campagne-beheer-en-automatisering |
@@ -460,7 +460,7 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 | Onderzoek & analyse | onderzoek-analyse | onderzoek-analyse | onderzoek-en-analyse |
 | Sociale media | sociale media | sociale media | sociale media |
 | Anders | overige marketing | overige marketing | other |
-| ***Toeleverings keten van operations-&*** | ***OperationsSupplyChain*** | ***OperationsSupplyChain*** | ***Operations-and-supply-keten*** |
+| ***Operations &-toeleverings keten** _ | _*_OperationsSupplyChain_*_ | _*_OperationsSupplyChain_*_ | _ *_Operations-and-supply-keten_** |
 | Activum & productie beheer | activa-productie-beheer | activa-productie-beheer | activa en productie-beheer |
 | Vraagprognose | vraag-prognose | vraag-prognose | vraag-prognose |
 | & connectiviteit voor informatie beheer | informatie-beheer-connectiviteit | informatie-beheer-connectiviteit | informatie-beheer en connectiviteit |
@@ -469,7 +469,7 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 | Order beheer voor verkoop & | verkoop order-beheer | verkoop order-beheer | verkoop-en bestel beheer |
 | Trans Port-& magazijn beheer | Trans Port-Warehouse-Management | Trans Port-Warehouse-Management | Trans Port-en-Warehouse-beheer |
 | Anders | overige-bewerkingen-toeleverings keten | overige-bewerkingen-toeleverings keten | other |
-| ***Productiviteit*** | ***Productiviteit*** | ***Productiviteit*** | ***productiviteit*** |
+| ***Productiviteit** _ | _*_Productiviteit_*_ | _*_Productiviteit_*_ | _ *_productiviteit_** |
 | & beheer voor het maken van inhoud | content-Creating-Management | content-Creating-Management | inhoud maken en beheren |
 | Vertaling van taal & | taal omzetting | taal omzetting | taal en vertaling |
 | Documentbeheer | document beheer | document beheer | document beheer |
@@ -477,7 +477,7 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 | Naslag informatie over & zoeken | Zoek verwijzing | Zoek verwijzing | zoeken en naslag informatie |
 | Anders | overige-productiviteit | overige-productiviteit | other |
 | Gamificatie | Gamificatie | Gamificatie | gamificatietoepassing |
-| ***Sales*** | ***Sales*** | ***Sales*** | ***Sales*** |
+| ***Verkoop** _ | _*_Sales_*_ | _*_Sales_*_ | _ *_Verkoop_** |
 | Televerkoop | televerkoop | televerkoop | televerkoop |
 | Configure, Price, quote (CPQ) | configureren-prijs opgave | configureren-prijs opgave | configureren-prijs opgave |
 | Contractbeheer | contract-beheer | contract-beheer | contract-beheer |
@@ -486,7 +486,7 @@ Deze categorieën en de bijbehorende sleutels zijn van toepassing op SaaS-, Powe
 | Verrijking van zakelijke gegevens | Business-Data-verrijking | Business-Data-verrijking | Business-Data-verrijking |
 | Verkoop activering | verkoop-activering | verkoop-activering | verkoop-activering |
 | Anders | overige-verkoop | overige-verkoop | overige-verkoop |
-| ***Geolocatie*** | ***geolocatie*** | ***geolocatie*** | ***geolocatie*** |
+| ***Geolocatie** _ | _*_geolocatie_*_ | _*_geolocatie_*_ | _ *_geolocatie_** |
 | Maps | maps | maps | maps |
 | Nieuws & weer | Nieuws-en-weer | Nieuws-en-weer | Nieuws-en-weer |
 | Anders | andere geolocatie | andere geolocatie | andere geolocatie |
@@ -498,50 +498,50 @@ Deze branches en hun respectieve sleutels zijn van toepassing op SaaS-, Power bi
 
 | Branche | SaaS, Dynamics 365 Business Central, Dynamics 365 voor klant betrokkenheid, Dynamics 365 voor bewerkings sleutels | Power bi-apps-sleutels |
 | --- | --- | --- |
-| ***Auto's*** | ***Auto's*** | ***Motor*** |
+| ***Automobiel** _ | _*_Auto's_*_ | _ *_automobiel_** |
 | Auto's | AutomotiveL2 | AutomotiveL2 |
-| ***Landbouw*** | ***Landbouw*** | ***landbouw*** |
+| ***Land bouw** _ | _*_Landbouw_*_ | _ *_land bouw_** |
 | Overige-niet-gesegmenteerd | OtherUnsegmented land bouw \_ | overige-niet-gesegmenteerd |
-| ***Distributie*** | ***Distributie*** | ***deel*** |
+| ***Distributie** _ | _*_Distributie_*_ | _ *_distributie_** |
 | Handels | Handels | handels |
 | Pakket verzending van Parcel & | ParcelAndPackageShipping | pakje-en-package-Shipping |
-| ***Onderwijs*** | ***Onderwijs*** | ***personeel*** |
+| ***Onderwijs** _ | _*_Onderwijs_*_ | _ *_onderwijs_** |
 | Hoger onderwijs | HigherEducation | hoger onderwijs |
 | Primair & secundair onderwijs/K-12 | PrimaryAndSecondaryEducationK12 | primair en secundair onderwijs |
 | Bibliotheken & musea | LibrariesAndMuseums | bibliotheken-en-musea |
-| ***Financiële diensten*** | ***FinancialServices*** | ***Financial-Services*** |
+| ***Financiële diensten** _ | _*_FinancialServices_*_ | _ *_financiële services_** |
 | Bank & kapitaal markten | BankingAndCapitalMarkets | Bank-en kapitaal markten |
 | Polis | Polis | polis |
-| ***Overheid*** | ***Overheid*** | ***Government*** |
+| ***Government** _ | _*_Overheid_*_ | _ *_overheid_** |
 | Verdediging & Intelligence | DefenseAndIntelligence | verdediging en intelligentie |
 | Open bare veiligheid & Justitie | PublicSafetyAndJustice | openbaar-veiligheid-en rechtvaardigheid |
 | Burger overheid | CivilianGovernment | burger-Government |
-| ***Gezondheidszorg*** | ***HealthCareandLifeSciences*** | ***gezondheids zorg*** |
+| ***Gezondheids zorg** _ | _*_HealthCareandLifeSciences_*_ | _ *_gezondheids zorg_** |
 | Status betaler | HealthPayor | status-betaler |
 | Health-provider | HealthProvider | Health-provider |
 | Pharmaceuticals | Pharmaceuticals | Pharmaceuticals |
-| ***Resources voor productie &*** | ***Productie*** | ***productie-en-resources*** |
+| ***Productie & resources** _ | _*_Productie_*_ | _ *_productie en resources_** |
 | Chemische & Agrochemical | ChemicalAndAgrochemical | chemisch en Agrochemical |
 | Discrete productie | DiscreteManufacturing | discrete productie |
 | Energie | Energie | energy |
-| ***Retail & consumenten goederen*** | ***RetailandConsumerGoods*** | ***Retail-en consumenten goederen*** |
+| ***Retail & consumenten goederen** _ | _*_RetailandConsumerGoods_*_ | _ *_handels-en consumenten artikelen_** |
 | Consumenten goederen | ConsumerGoods | consumenten goederen |
 | Handelaren | Handelaren | handelaren |
-| ***Media & communicatie*** | ***MediaAndCommunications*** | ***media-en-communicatie*** |
+| ***Media & Communications** _ | _*_MediaAndCommunications_*_ | _ *_media-en communicatie_** |
 | Media & entertainment | MediaandEntertainment | media-en entertainment |
 | Telecommunicatie | Telecommunicatie | Telecom |
-| ***Professionele services*** | ***ProfessionalServices*** | ***professionele services*** |
+| ***Professional Services** _ | _*_ProfessionalServices_*_ | _ *_professionele services_** |
 | Juridisch | Juridisch | rechtmatig |
 | Partner Professional-Services | PartnerProfessionalServices | partner-Professional-Services |
-| ***Architectuur & constructie*** | ***ArchitectureAndConstruction*** | ***architectuur-en-constructie*** |
+| ***Architectuur & constructie** _ | _*_ArchitectureAndConstruction_*_ | _ *_architectuur en constructie_** |
 | Overige-niet-gesegmenteerd | ArchitectureAndConstruction \_ OtherUnsegmented | overige-niet-gesegmenteerd |
-| ***Horeca & reizen*** | ***HospitalityandTravel*** | ***horeca*** |
+| ***Horeca & reizen** _ | _*_HospitalityandTravel_*_ | _ *_horeca_** |
 |    Hotels & vrije tijd | HotelsAndLeisure | Hotels-en-vrije tijd |
 | Reis & vervoer | TravelAndTransportation | reizen en transport |
 | Restaurants & voedsel Services | RestaurantsAndFoodServices | restaurants en voedsel Services |
-| ***Andere branches uit de open bare sector*** | ***OtherPublicSectorIndustries*** | ***overige-open bare sector-branches*** |
+| ***Andere branches uit de publieke sector** _ | _*_OtherPublicSectorIndustries_*_ | _ *_Overige-open bare sector-branches_** |
 | Bosbouw & visserij | ForestryAndFishing | bos en visserij |
 | Profit organisaties | Profit organisaties | profit organisaties |
-| ***Onroerend goed*** | ***RealEstate*** | ***onroerend goed*** |
+| ***Onroerend goed _** | _*_RealEstate_*_ | _ *_onroerend_ goed** |
 | Overige-niet-gesegmenteerd | RealEstate \_ OtherUnsegmented | overige-niet-gesegmenteerd |
 |||

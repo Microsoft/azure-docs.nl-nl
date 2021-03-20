@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 10/26/2020
 ms.author: allensu
 ms.openlocfilehash: 8a6be588544883b77c3ff115c9dba5e6ecd5fbd7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92747214"
 ---
 # <a name="configure-tcp-reset-and-idle-timeout-for-azure-load-balancer"></a>TCP-opnieuw instellen en time-out voor inactiviteit voor Azure Load Balancer configureren
@@ -37,27 +37,27 @@ In de volgende secties wordt beschreven hoe u de instellingen voor time-out voor
 
 Als u de time-out voor inactiviteit en TCP-Reset voor een load balancer wilt instellen, bewerkt u de regel met gelijke taak verdeling. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer **resource groepen** in het menu aan de linkerkant.
 
-3. Selecteer de resource groep voor uw load balancer. In dit voor beeld heeft de resource groep de naam **myResourceGroup** .
+3. Selecteer de resource groep voor uw load balancer. In dit voor beeld heeft de resource groep de naam **myResourceGroup**.
 
-4. Selecteer uw load balancer. In dit voor beeld heeft de load balancer de naam **myLoadBalancer** .
+4. Selecteer uw load balancer. In dit voor beeld heeft de load balancer de naam **myLoadBalancer**.
 
-5. Selecteer bij **instellingen** de optie **taakverdelings regels** .
+5. Selecteer bij **instellingen** de optie **taakverdelings regels**.
 
      :::image type="content" source="./media/load-balancer-tcp-idle-timeout/portal-lb-rules.png" alt-text="Load balancer regels bewerken." border="true":::
 
-6. Selecteer de taakverdelings regel. In dit voor beeld heeft de taakverdelings regel de naam **myLBrule** .
+6. Selecteer de taakverdelings regel. In dit voor beeld heeft de taakverdelings regel de naam **myLBrule**.
 
 7. In de taakverdelings regel verplaatst u de schuif regelaar in **time-out voor inactiviteit (minuten)** naar uw time-outwaarde.  
 
-8. Onder **TCP Reset** selecteert u **ingeschakeld** .
+8. Onder **TCP Reset** selecteert u **ingeschakeld**.
 
-   :::image type="content" source="./media/load-balancer-tcp-idle-timeout/portal-lb-rules-tcp-reset.png" alt-text="Load balancer regels bewerken." border="true":::
+   :::image type="content" source="./media/load-balancer-tcp-idle-timeout/portal-lb-rules-tcp-reset.png" alt-text="Time-out voor inactiviteit en TCP Reset instellen." border="true":::
 
-9. Selecteer **Opslaan** .
+9. Selecteer **Opslaan**.
 
 # <a name="powershell"></a>[**PowerShell**](#tab/tcp-reset-idle-powershell)
 

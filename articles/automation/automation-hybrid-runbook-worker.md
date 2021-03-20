@@ -6,10 +6,10 @@ ms.subservice: process-automation
 ms.date: 01/22/2021
 ms.topic: conceptual
 ms.openlocfilehash: c95ccb5ea1a23e8173d58bd3a18490e9b8e630e4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100581260"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Overzicht van Hybrid Runbook Worker
@@ -20,7 +20,7 @@ Runbooks in Azure Automation hebben mogelijk geen toegang tot resources in ander
 
 Er zijn twee soorten Runbook-werk nemers: systeem en gebruiker. In de volgende tabel wordt het verschil tussen de tabellen beschreven.
 
-|Type | Description |
+|Type | Beschrijving |
 |-----|-------------|
 |**Systeem** |Ondersteunt een set verborgen runbooks die worden gebruikt door de Updatebeheer-functie die is ontworpen om door de gebruiker opgegeven updates te installeren op Windows-en Linux-computers.<br> Dit type Hybrid Runbook Worker is geen lid van een Hybrid Runbook Worker groep en voert daarom geen runbooks uit die zijn gericht op een Runbook worker-groep. |
 |**Gebruiker** |Ondersteunt door de gebruiker gedefinieerde runbooks die rechtstreeks worden uitgevoerd op de Windows-en Linux-computer die lid zijn van een of meer Runbook worker-groepen. |

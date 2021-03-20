@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 09/23/2020
 ms.author: Zhchia
 ms.openlocfilehash: ffae286437a476d5ebe08c3ee442d0d52af84eb7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96179335"
 ---
 # <a name="tutorial-configure-code42-for-automatic-user-provisioning"></a>Zelfstudie: Code42 configureren voor automatische gebruikersinrichting

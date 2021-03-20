@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/09/2020
 ms.openlocfilehash: a480c8f2dfdda0ce7a1eb879554fb79c96adbe1e
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97347809"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Consistentieniveaus in Azure Cosmos DB
@@ -24,7 +24,7 @@ De meeste in de handel Verkrijg bare, gedistribueerde NoSQL-data bases die tegen
 - *Gebonden veroudering*
 - *Sessie*
 - *Consistent voor voegsel*
-- *Uiteindelijke*
+- *Uiteindelijk*
 
 Elk niveau biedt Beschik baarheid en prestatie afwegingen. In de volgende afbeelding ziet u de verschillende consistentie niveaus als een spectrum.
 
@@ -148,8 +148,8 @@ De exacte RTT-latentie is een functie van de snelheid van de afstand en de Azure
 |**Sterk**|Lokale minderheid|Wereld wijde meerderheid|
 |**Gebonden veroudering**|Lokale minderheid|Lokale meerderheid|
 |**Sessie**|Enkele replica (met sessie token)|Lokale meerderheid|
-|**Consistent voor voegsel**|Enkele replica|Lokale meerderheid|
-|**Uiteindelijke**|Enkele replica|Lokale meerderheid|
+|**Consistent voorvoegsel**|Enkele replica|Lokale meerderheid|
+|**Uiteindelijk**|Enkele replica|Lokale meerderheid|
 
 > [!NOTE]
 > De kosten voor het lezen van de RU/s voor lokale minderheids Lees bewerkingen zijn twee keer zoveel consistentie niveaus, omdat Lees bewerkingen worden uitgevoerd van twee replica's om consistentie garanties te bieden voor sterke en gebonden veroudering.

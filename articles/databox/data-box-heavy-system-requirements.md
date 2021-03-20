@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/03/2019
 ms.author: alkohli
 ms.openlocfilehash: 6097dba9193fce4c8158137b488080107881994a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84707749"
 ---
 # <a name="azure-data-box-heavy-system-requirements"></a>Systeem vereisten voor Azure Data Box Heavy
@@ -48,7 +48,7 @@ De software vereisten omvatten de informatie over de ondersteunde besturings sys
 
 [!INCLUDE [data-box-supported-web-browsers](../../includes/data-box-supported-web-browsers.md)]
 
-## <a name="networking-requirements"></a>Netwerk vereisten
+## <a name="networking-requirements"></a>Netwerkvereisten
 
 Uw datacenter moet een netwerk met hoge snelheid hebben. Voor de snelste Kopieer snelheden kunnen 2 40 GbE-verbindingen parallel worden gebruikt (één per knoop punt). Als u 40-GbE niet hebt, kunt u het beste ten minste 2 10 GbE-verbindingen (één per knoop punt) hebben.
 

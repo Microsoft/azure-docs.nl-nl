@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
 ms.openlocfilehash: b720f7e49fc0679de5c3f430122bab05d5b706f8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92455749"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cloudpassage"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met CloudPassage
@@ -49,8 +49,8 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Om de integratie van CloudPassage in Azure AD te configureren, moet u CloudPassage vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Ga naar de sectie **Toevoegen uit de galerie** en typ **CloudPassage** in het zoekvak.
 1. Selecteer **CloudPassage** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
@@ -58,7 +58,7 @@ Om de integratie van CloudPassage in Azure AD te configureren, moet u CloudPassa
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-cloudpassage"></a>Eenmalige aanmelding van Azure AD configureren en testen voor CloudPassage
 
-Configureer en test eenmalige aanmelding van Azure AD met CloudPassage met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in CloudPassage.
+Configureer en test eenmalige aanmelding van Azure AD met CloudPassage met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in CloudPassage.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met CloudPassage te configureren en te testen:
 
@@ -73,8 +73,8 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met CloudPassag
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de toepassingsintegratiepagina van **CloudPassage** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de toepassingsintegratiepagina van **CloudPassage** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -114,59 +114,59 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot CloudPassage.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **CloudPassage** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-cloudpassage-sso"></a>Eenmalige aanmelding van CloudPassage configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van CloudPassage.
 
-1. Klik in de menubalk bovenaan op **Settings** en klik vervolgens op **Site Administration** . 
+1. Klik in de menubalk bovenaan op **Settings** en klik vervolgens op **Site Administration**. 
    
     ![Schermopname toont de CloudPassage-site waarop Sitebeheer is geselecteerd.][12]
 
-1. Klik op het tabblad **Authentication Settings** . 
+1. Klik op het tabblad **Authentication Settings**. 
    
     ![Schermopname toont de CloudPassage-site waarop Verificatie-instellingen is geselecteerd.][13]
 
-1. Voer de volgende stappen uit in het gedeelte **Single Sign-on Settings** : 
+1. Voer de volgende stappen uit in het gedeelte **Single Sign-on Settings**: 
    
     ![Schermopname toont de sectie 'Instellingen voor eenmalige aanmelding', waarin u de informatie kunt invoeren die in deze stap is beschreven.][14]
 
     a. Schakel het selectievakje **Enable Single Sign-on (SSO) (SSO Setup Documentation)** in.
     
-    b. Plak de **Azure AD-id** in het tekstvak **URL van SAML-verlener** .
+    b. Plak de **Azure AD-id** in het tekstvak **URL van SAML-verlener**.
   
-    c. Plak de **aanmeldings-URL** in het tekstvak **SAML endpoint URL** .
+    c. Plak de **aanmeldings-URL** in het tekstvak **SAML endpoint URL**.
   
-    d. Plak de **afmeldings-URL** in het tekstvak **Logout landing page** .
+    d. Plak de **afmeldings-URL** in het tekstvak **Logout landing page**.
   
-    e. Open het gedownloade certificaat in Kladblok, kopieer de inhoud van het certificaat naar het Klembord en plak de inhoud vervolgens in het tekstvak **x.509 certificate** .
+    e. Open het gedownloade certificaat in Kladblok, kopieer de inhoud van het certificaat naar het Klembord en plak de inhoud vervolgens in het tekstvak **x.509 certificate**.
   
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 ### <a name="create-cloudpassage-test-user"></a>Een testgebruiker voor CloudPassage maken
 
@@ -174,13 +174,13 @@ Het doel van deze sectie is het maken van een gebruiker met de naam B.Simon in C
 
 **Voer de volgende stappen uit om in CloudPassage een gebruiker met de naam B.Simon te maken:**
 
-1. Meld u als beheerder aan bij de bedrijfssite van **CloudPassage** . 
+1. Meld u als beheerder aan bij de bedrijfssite van **CloudPassage**. 
 
-1. Klik in de werkbalk bovenaan op **Settings** en klik vervolgens op **Site Administration** . 
+1. Klik in de werkbalk bovenaan op **Settings** en klik vervolgens op **Site Administration**. 
    
     ![Schermopname toont CloudPassage waarop Sitebeheer is geselecteerd.][22] 
 
-1. Klik op het tabblad **Users** en klik vervolgens op **Add New User** . 
+1. Klik op het tabblad **Users** en klik vervolgens op **Add New User**. 
    
     ![Schermopname toont CloudPassage Sitebeheer met het tabblad Gebruikers geselecteerd. Hier is de optie om nieuwe gebruiker toe te voegen te zien.][23]
 
@@ -188,15 +188,15 @@ Het doel van deze sectie is het maken van een gebruiker met de naam B.Simon in C
    
     ![Schermopname toont de sectie 'Nieuwe gebruikers toevoegen' waarin u gebruikersgegevens kunt invoeren.][24]
     
-    a. Typ Britta in het tekstvak **First Name** . 
+    a. Typ Britta in het tekstvak **First Name**. 
   
-    b. Typ Simon in het tekstvak **Last Name** .
+    b. Typ Simon in het tekstvak **Last Name**.
   
-    c. Typ in de tekstvakken **Username** , **Email** en **Retype Email** de gebruikersnaam van Britta uit Azure AD.
+    c. Typ in de tekstvakken **Username**, **Email** en **Retype Email** de gebruikersnaam van Britta uit Azure AD.
   
-    d. Selecteer **Enable Halo Portal Access** bij **Access Type** .
+    d. Selecteer **Enable Halo Portal Access** bij **Access Type**.
   
-    e. Klik op **Add** .
+    e. Klik op **Add**.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 

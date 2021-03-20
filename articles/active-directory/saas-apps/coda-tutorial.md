@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/23/2020
 ms.author: jeedes
 ms.openlocfilehash: c78744538991e337b226e49a053807ef8174d507
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92455728"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-coda"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Coda
@@ -41,7 +41,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Coda ondersteunt eenmalige aanmelding via **IDP**
 
-* Coda biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Coda biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 * Wanneer u Coda hebt geconfigureerd, kunt u sessiebeheer afdwingen. Dit biedt realtime bescherming tegen de exfiltratie en infiltratie van gevoelige bedrijfsgegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
@@ -50,16 +50,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van Coda met Azure AD wilt configureren, voegt u Coda vanuit de galerie toe aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **Coda** in het zoekvak in de sectie **Toevoegen uit de galerie** .
+1. Typ **Coda** in het zoekvak in de sectie **Toevoegen uit de galerie**.
 1. Selecteer **Coda** in het venster met resultaten en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-coda"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Coda
 
-Configureer en test eenmalige aanmelding van Azure AD met Coda met behulp van een testgebruiker met de naam **B. Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Coda.
+Configureer en test eenmalige aanmelding van Azure AD met Coda met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Coda.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Coda te configureren en te testen:
 
@@ -75,7 +75,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Coda te con
 
 Volg deze stappen in Coda om aan de slag te gaan.
 
-1. Open in Coda het venster **Organisatie-instellingen** .
+1. Open in Coda het venster **Organisatie-instellingen**.
 
    ![Organisatie-instellingen openen](media/coda-tutorial/org-settings.png)
 
@@ -83,11 +83,11 @@ Volg deze stappen in Coda om aan de slag te gaan.
 
    ![GDrive is uitgeschakeld](media/coda-tutorial/gdrive-off.png)
 
-1. Selecteer onder **Verificatie met eenmalige aanmelding (SAML)** de optie **SAML configureren** .
+1. Selecteer onder **Verificatie met eenmalige aanmelding (SAML)** de optie **SAML configureren**.
 
    ![SAML-instellingen](media/coda-tutorial/saml-settings-link.png)
 
-1. Noteer de waarden voor **Entiteits-id** en **URL SAML-antwoord** . U hebt deze in de volgende stappen nodig.
+1. Noteer de waarden voor **Entiteits-id** en **URL SAML-antwoord**. U hebt deze in de volgende stappen nodig.
 
    ![Entiteits-id en URL van SAML-antwoord voor gebruik in Azure](media/coda-tutorial/azure-settings.png)
 
@@ -95,8 +95,8 @@ Volg deze stappen in Coda om aan de slag te gaan.
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Coda** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Coda** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -122,43 +122,43 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Coda.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Coda** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-coda-sso"></a>Eenmalige aanmelding bij Coda configureren
 
 Als u de installatie wilt voltooien, voert u in het venster **SAML configureren** van Coda waarden in van Azure Active Directory.
 
-1. Open in Coda het venster **Organisatie-instellingen** .
-1. Selecteer onder **Verificatie met eenmalige aanmelding (SAML)** de optie **SAML configureren** .
-1. Stel **SAML-provider** in bij **Azure Active Directory** .
+1. Open in Coda het venster **Organisatie-instellingen**.
+1. Selecteer onder **Verificatie met eenmalige aanmelding (SAML)** de optie **SAML configureren**.
+1. Stel **SAML-provider** in bij **Azure Active Directory**.
 1. Plak in **Aanmeldings-URL identiteitsprovider** de **aanmeldings-URL** vanuit de Azure-console.
 1. Plak in **Verlener identiteitsprovider** de **Azure AD-id** vanuit de Azure-console.
 1. In **Openbaar certificaat identiteitsprovider** selecteert u de optie **Certificaat uploaden** en selecteert u het certificaatbestand dat u eerder hebt gedownload.
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 U bent nu klaar met het instellen van de SAML-verbinding voor eenmalige aanmelding.
 

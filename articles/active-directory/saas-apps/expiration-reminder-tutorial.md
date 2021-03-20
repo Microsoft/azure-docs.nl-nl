@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.openlocfilehash: a8e6d92545756e185697b1fb827d7b5f25dcfdd2
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453736"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-expiration-reminder"></a>Zelfstudie: Integratie van Azure Active Directory met Vervaldatumherinnering
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van vervaldatumherinnering in Azure AD m
 
 **Als u Vervaldatumherinnering uit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van vervaldatumherinnering in Azure AD m
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Vervaldatumherinnering** , selecteer **Vervaldatumherinnering** in het deelvenster met resultaten en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Vervaldatumherinnering**, selecteer **Vervaldatumherinnering** in het deelvenster met resultaten en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Vervaldatumherinnering in de lijst met resultaten](common/search-new-app.png)
 
@@ -73,7 +73,7 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met Vervaldatumherinnering, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Vervaldatumherinnering-eenmalige aanmelding configureren](#configure-expiration-reminder-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Vervaldatumherinnering-eenmalige aanmelding configureren](#configure-expiration-reminder-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 5. **[Testgebruiker voor Vervaldatumherinnering maken](#create-expiration-reminder-test-user)** : als u een equivalent van Britta Simon in Vervaldatumherinnering wilt die is gekoppeld aan de Azure AD-weergave van de gebruiker.
@@ -119,13 +119,13 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Vervaldatumherinneri
 
 ### <a name="configure-expiration-reminder-single-sign-on"></a>Vervaldatumherinnering eenmalige aanmelding configureren
 
-Als u eenmalige aanmelding aan de **Vervaldatumherinnering** -zijde wilt configureren, moet u het gedownloade **certificaat (onbewerkt)** en de correcte, van Azure Portal gekopieerde URL's naar het [Vervaldatumherinnering-ondersteuningsteam](mailto:support@expirationreminder.net) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Vervaldatumherinnering**-zijde wilt configureren, moet u het gedownloade **certificaat (onbewerkt)** en de correcte, van Azure Portal gekopieerde URL's naar het [Vervaldatumherinnering-ondersteuningsteam](mailto:support@expirationreminder.net) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -150,7 +150,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie hebt u Britta Simon in staat gesteld gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Vervaldatumherinnering.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Vervaldatumherinnering**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Vervaldatumherinnering**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

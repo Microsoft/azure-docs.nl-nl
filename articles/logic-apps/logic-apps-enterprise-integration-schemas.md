@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/06/2019
 ms.openlocfilehash: ade29318fdd1510d03ddd208534258a30b256e98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75979382"
 ---
 # <a name="validate-xml-with-schemas-in-azure-logic-apps-with-enterprise-integration-pack"></a>XML valideren met schema's in Azure Logic Apps met Enterprise Integration Pack
@@ -60,7 +60,7 @@ U hebt geen logische app nodig bij het maken en toevoegen van schema's. Voor het
 
    ![Integratie account selecteren](./media/logic-apps-enterprise-integration-schemas/select-integration-account.png)
 
-1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen**de tegel **schema's** .
+1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen** de tegel **schema's** .
 
    ![Selecteer ' Schema's '](./media/logic-apps-enterprise-integration-schemas/select-schemas.png)
 
@@ -74,7 +74,7 @@ Volg de stappen voor het uploaden van een schema dat [Maxi maal 2 MB](#smaller-s
 
 ### <a name="add-schemas-up-to-2-mb"></a>Schema's toevoegen tot 2 MB
 
-1. Voer onder **schema toevoegen**een naam in voor het schema. 
+1. Voer onder **schema toevoegen** een naam in voor het schema. 
    **Klein bestand** selecteren. Klik naast het vak **schema** op het mappictogram. Zoek en selecteer het schema dat u wilt uploaden, bijvoorbeeld:
 
    ![Kleiner schema uploaden](./media/logic-apps-enterprise-integration-schemas/upload-smaller-schema-file.png)
@@ -97,11 +97,11 @@ Als u grotere schema's wilt toevoegen, kunt u uw schema uploaden naar een Azure-
 
 1. Selecteer in het snelmenu van de BLOB-container het optie **openbaar toegangs niveau instellen**.
 
-   * Als uw BLOB-container ten minste open bare toegang heeft, kiest u **Annuleren**en volgt u deze stappen verderop op deze pagina: [uploaden naar containers met open bare toegang](#public-access)
+   * Als uw BLOB-container ten minste open bare toegang heeft, kiest u **Annuleren** en volgt u deze stappen verderop op deze pagina: [uploaden naar containers met open bare toegang](#public-access)
 
      ![Openbare toegang](media/logic-apps-enterprise-integration-schemas/azure-blob-container-public-access.png)
 
-   * Als uw BLOB-container geen open bare toegang heeft, kiest u **Annuleren**en volgt u deze stappen verderop op deze pagina: [uploaden naar containers zonder open bare toegang](#public-access)
+   * Als uw BLOB-container geen open bare toegang heeft, kiest u **Annuleren** en volgt u deze stappen verderop op deze pagina: [uploaden naar containers zonder open bare toegang](#public-access)
 
      ![Geen open bare toegang](media/logic-apps-enterprise-integration-schemas/azure-blob-container-no-public-access.png)
 
@@ -110,7 +110,7 @@ Als u grotere schema's wilt toevoegen, kunt u uw schema uploaden naar een Azure-
 #### <a name="upload-to-containers-with-public-access"></a>Uploaden naar containers met open bare toegang
 
 1. Upload het schema naar uw opslag account. 
-   Kies **uploaden**in het rechterdeel venster.
+   Kies **uploaden** in het rechterdeel venster.
 
 1. Nadat u klaar bent met uploaden, selecteert u het geüploade schema. Kies op de werk balk **URL kopiëren** zodat u de URL van het schema kopieert.
 
@@ -130,12 +130,12 @@ Nadat het schema is geüpload, wordt het schema weer gegeven in de lijst **schem
 #### <a name="upload-to-containers-without-public-access"></a>Uploaden naar containers zonder open bare toegang
 
 1. Upload het schema naar uw opslag account. 
-   Kies **uploaden**in het rechterdeel venster.
+   Kies **uploaden** in het rechterdeel venster.
 
 1. Genereer een Shared Access Signature (SAS) voor uw schema nadat u klaar bent met het uploaden. 
    Selecteer in het snelmenu van het schema de optie **Shared Access Signature ophalen**.
 
-1. Selecteer in het deel venster **Shared Access Signature** de optie URI maken voor **Shared Access-hand tekening op container niveau genereren**  >  **Create**. 
+1. Selecteer in het deel venster **Shared Access Signature** de optie URI maken voor **Shared Access-hand tekening op container niveau genereren**  >  . 
    Wanneer de SAS-URL wordt gegenereerd, klikt u naast het vak **URL** op **kopiëren**.
 
 1. Ga terug naar de Azure Portal waar het deel venster **schema toevoegen** is geopend. Kies een **groot bestand**.
@@ -158,10 +158,10 @@ Als u een bestaand schema wilt bijwerken, moet u een nieuw schema bestand upload
 
 1. Selecteer het integratie account waar u het schema wilt bijwerken.
 
-1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen**de tegel **schema's** .
+1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen** de tegel **schema's** .
 
 1. Nadat de pagina **schema's** is geopend, selecteert u uw schema. 
-   Als u het schema eerst wilt downloaden en bewerken, kiest u **downloaden**en slaat u het schema op.
+   Als u het schema eerst wilt downloaden en bewerken, kiest u **downloaden** en slaat u het schema op.
 
 1. Wanneer u klaar bent om het bijgewerkte schema te uploaden, selecteert u op de pagina **schema's** het schema dat u wilt bijwerken en kiest u **bijwerken**.
 
@@ -178,11 +178,11 @@ Als u een bestaand schema wilt bijwerken, moet u een nieuw schema bestand upload
 
 1. Selecteer het integratie account waar u het schema wilt verwijderen.
 
-1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen**de tegel **schema's** .
+1. Selecteer op de pagina **overzicht** van uw integratie account onder **onderdelen** de tegel **schema's** .
 
 1. Nadat de pagina **schema's** is geopend, selecteert u uw schema en kiest u **verwijderen**.
 
-1. Kies **Ja**om te bevestigen dat u het schema wilt verwijderen.
+1. Kies **Ja** om te bevestigen dat u het schema wilt verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,10 +4,10 @@ description: In dit artikel leest u hoe u een Lab verwijdert of een virtuele mac
 ms.topic: article
 ms.date: 01/24/2020
 ms.openlocfilehash: 495fb98f3da41a47d316dd64554ba616ede0af47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85481218"
 ---
 # <a name="delete-a-lab-or-vm-in-a-lab-in-azure-devtest-labs"></a>Een Lab of virtuele machine in een lab in Azure DevTest Labs verwijderen
@@ -53,7 +53,7 @@ Als u een virtuele machine in een Lab wilt verwijderen, voert u de volgende hand
 3. Selecteren **... (weglatings tekens)** voor de virtuele machine in de lijst met virtuele machines en selecteer **verwijderen**. 
 
     ![Virtuele machine in menu verwijderen](media/devtest-lab-delete-lab-vm/delete-vm-menu-in-list.png)
-4. Selecteer **OK**in het **bevestigings** venster. 
+4. Selecteer **OK** in het **bevestigings** venster. 
 5. Als u de status van de bewerking wilt weer geven, selecteert u **meldingen** pictogram (Bel). 
 
 Als u een VM wilt verwijderen van de **pagina virtuele machine**, selecteert u **verwijderen** in de werk balk, zoals wordt weer gegeven in de volgende afbeelding:

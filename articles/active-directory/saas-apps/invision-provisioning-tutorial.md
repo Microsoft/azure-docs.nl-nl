@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 06/25/2020
 ms.author: Zhchia
 ms.openlocfilehash: 75da1e2b2f1954b0126b08232046fe09b1c2b6e7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96177936"
 ---
 # <a name="tutorial-configure-invision-for-automatic-user-provisioning"></a>Zelfstudie: InVision configureren voor automatische gebruikersinrichting

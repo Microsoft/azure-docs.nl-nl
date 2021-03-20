@@ -5,10 +5,10 @@ ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.openlocfilehash: ee89af311619922fa6ca585381d70ca66955f36a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91271644"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Met System Center 2012 R2 DPM een back-up maken van een Exchange-server in Azure Backup
@@ -43,8 +43,8 @@ Voer de volgende stappen uit om de DPM-beveiligings agent te installeren op de E
 
 ## <a name="create-a-protection-group-for-the-exchange-server"></a>Een beveiligings groep maken voor de Exchange-Server
 
-1. Selecteer in het DPM Administrator-console de optie **beveiliging**en selecteer vervolgens **Nieuw** op het lint met hulp middelen om de wizard **nieuwe beveiligings groep maken** te openen.
-2. Selecteer **volgende**in het **welkomst** scherm van de wizard.
+1. Selecteer in het DPM Administrator-console de optie **beveiliging** en selecteer vervolgens **Nieuw** op het lint met hulp middelen om de wizard **nieuwe beveiligings groep maken** te openen.
+2. Selecteer **volgende** in het **welkomst** scherm van de wizard.
 3. Selecteer op het scherm **type beveiligings groep selecteren** de optie **servers** en selecteer **volgende**.
 4. Selecteer de Exchange Server-Data Base die u wilt beveiligen en selecteer **volgende**.
 
@@ -73,20 +73,20 @@ Voer de volgende stappen uit om de DPM-beveiligings agent te installeren op de E
    >
    >
 8. Selecteer **Next**.
-9. Selecteer de Data Base voor **back-up kopiëren**en selecteer vervolgens **volgende**.
+9. Selecteer de Data Base voor **back-up kopiëren** en selecteer vervolgens **volgende**.
 
    > [!NOTE]
    > Als u geen volledige back-up voor ten minste één DAG kopie van een Data Base selecteert, worden de logboeken niet afgekapt.
    >
    >
-10. Configureer de doel stellingen voor **back-up op korte termijn**en selecteer **volgende**.
+10. Configureer de doel stellingen voor **back-up op korte termijn** en selecteer **volgende**.
 11. Controleer de beschik bare schijf ruimte en selecteer **volgende**.
 12. Selecteer het tijdstip waarop de DPM-server de initiële replicatie maakt, en selecteer vervolgens **volgende**.
 13. Selecteer de opties voor consistentie controle en selecteer **volgende**.
 14. Kies de data base waarvan u een back-up wilt maken naar Azure en selecteer **volgende**. Bijvoorbeeld:
 
     ![Gegevens voor online beveiliging opgeven](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Definieer het schema voor **Azure backup**en selecteer vervolgens **volgende**. Bijvoorbeeld:
+15. Definieer het schema voor **Azure backup** en selecteer vervolgens **volgende**. Bijvoorbeeld:
 
     ![Online back-upschema opgeven](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -94,7 +94,7 @@ Voer de volgende stappen uit om de DPM-beveiligings agent te installeren op de E
     > Houd er rekening mee dat online herstel punten zijn gebaseerd op snelle volledige herstel punten. Daarom moet u het online herstel punt plannen na het tijdstip dat is opgegeven voor het snelle volledige herstel punt.
     >
     >
-16. Configureer het Bewaar beleid voor **Azure backup**en selecteer vervolgens **volgende**.
+16. Configureer het Bewaar beleid voor **Azure backup** en selecteer vervolgens **volgende**.
 17. Kies een optie voor online replicatie en selecteer **volgende**.
 
     Als u een grote data base hebt, kan het enige tijd duren voordat de eerste back-up via het netwerk is gemaakt. Als u dit probleem wilt voor komen, kunt u een offline back-up maken.  
@@ -108,7 +108,7 @@ Voer de volgende stappen uit om de DPM-beveiligings agent te installeren op de E
 1. Als u een Exchange-Data Base wilt herstellen, selecteert u **herstel** in het DPM Administrator-console.
 2. Zoek de Exchange-data base die u wilt herstellen.
 3. Selecteer een online herstel punt in de vervolg keuzelijst *herstel tijd* .
-4. Selecteer **herstellen** om de **wizard herstellen**te starten.
+4. Selecteer **herstellen** om de **wizard herstellen** te starten.
 
 Voor online herstel punten zijn er vijf herstel typen:
 

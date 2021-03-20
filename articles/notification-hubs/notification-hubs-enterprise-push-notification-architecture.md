@@ -18,10 +18,10 @@ ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 018315b7ed468e24fb922337848d14703ffdcd4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89003623"
 ---
 # <a name="enterprise-push-architectural-guidance"></a>Hulp voor architectuur via pushmeldingen van het bedrijf
@@ -227,7 +227,7 @@ De volledige voorbeeld code is beschikbaar op [Notification hub]-voor beelden. H
     }
     ```
 
-    e. Als u deze app als **Webtaak**wilt publiceren, klikt u met de rechter muisknop op de oplossing in Visual Studio en selecteert u **publiceren als Webtaak**
+    e. Als u deze app als **Webtaak** wilt publiceren, klikt u met de rechter muisknop op de oplossing in Visual Studio en selecteert u **publiceren als Webtaak**
 
     ![Scherm opname van de opties die met de rechter muisknop worden weer gegeven met publiceren als Azure-Webtaak die in het rood wordt beschreven.][2]
 
@@ -270,7 +270,7 @@ De volledige voorbeeld code is beschikbaar op [Notification hub]-voor beelden. H
 ### <a name="running-the-sample"></a>Het voorbeeld uitvoeren
 
 1. Zorg ervoor dat de Webtaak wordt uitgevoerd en is gepland om continu te worden uitgevoerd.
-2. Voer de **EnterprisePushMobileApp**uit, waarmee de Windows Store-app wordt gestart.
+2. Voer de **EnterprisePushMobileApp** uit, waarmee de Windows Store-app wordt gestart.
 3. Voer de **EnterprisePushBackendSystem** -console toepassing uit die de LOB-back-end simuleert en begint met het verzenden van berichten. de pop-upmeldingen worden weer gegeven zoals in de volgende afbeelding:
 
     ![Scherm opname van een console waarop de Enter prise push back-end-systeem-app wordt uitgevoerd en het bericht dat wordt verzonden door de app.][5]

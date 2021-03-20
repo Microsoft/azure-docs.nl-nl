@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 05/16/2019
 ms.author: jeedes
 ms.openlocfilehash: d6b752b2c562944748d21aa1a28a177163a95aee
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92455286"
 ---
 # <a name="tutorial-integrate-continuity-control-with-azure-active-directory"></a>Zelfstudie: Continuity Control integreren met Azure Active Directory
@@ -100,9 +100,9 @@ Als u eenmalige aanmelding aan de zijde van **Control** wilt configureren, moet 
 
 In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`Britta Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `BrittaSimon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -128,7 +128,7 @@ In deze sectie geeft u Britta Simon toestemming om eenmalige aanmelding van Azur
 
 ### <a name="create-control-test-user"></a>Testgebruiker voor Control maken
 
-In deze sectie maakt u in Control een gebruiker met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van Control](mailto:help@continuity.net) om de gebruikers toe te voegen in het Control-platform. Gebruik de Azure AD- **gebruikersnaam** van Britta Simon om haar **gebruikers-id voor de identiteitsprovider** in Control in te vullen. Voordat gebruikers eenmalige aanmelding kunnen gebruiken, moeten ze worden gemaakt en moet hun **gebruikers-id voor de identiteitsprovider** worden ingesteld in Control.
+In deze sectie maakt u in Control een gebruiker met de naam Britta Simon. Neem contact op met het [ondersteuningsteam van Control](mailto:help@continuity.net) om de gebruikers toe te voegen in het Control-platform. Gebruik de Azure AD-**gebruikersnaam** van Britta Simon om haar **gebruikers-id voor de identiteitsprovider** in Control in te vullen. Voordat gebruikers eenmalige aanmelding kunnen gebruiken, moeten ze worden gemaakt en moet hun **gebruikers-id voor de identiteitsprovider** worden ingesteld in Control.
 
 ### <a name="test-sso"></a>Eenmalige aanmelding testen
 

@@ -8,10 +8,10 @@ ms.date: 06/30/2020
 ms.service: azure-education
 ms.subservice: education-hub
 ms.openlocfilehash: 0b797e2416b4d8849da19e4e75127f86a6f17322
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87101054"
 ---
 # <a name="quickstart-set-up-a-course-and-create-a-classroom"></a>Quickstart: Een cursus opzetten en een leslokaal maken
@@ -45,17 +45,17 @@ Volg deze stappen om een cursus en leslokaal te maken met behulp van twee versch
 
 1. Selecteer het pictogram **+ Toevoegen** in de linkerbovenhoek van de tabel om de werkstroom voor het maken van een cursus of leslokaal te starten.
 
-    :::image type="content" source="media/set-up-course-classroom/courses-add.png" alt-text="De pagina Cursussen in Azure Education Hub" border="false":::
+    :::image type="content" source="media/set-up-course-classroom/courses-add.png" alt-text="Een cursus toevoegen aan Azure Education Hub" border="false":::
 
 1. U kunt een cursusrooster maken met behulp van twee methoden: door een rooster te uploaden of door een uitnodigingscode te gebruiken.
     - **Rooster**: Als u al beschikt over de namen en aanmeldingen van alle studenten, kunt u een roosterbestand invullen en uploaden. Als u een voorbeeldbestand wilt downloaden van het.csv-bestand dat nodig is voor het uploaden van het rooster, selecteert u in de rechterbovenhoek de koppeling **Voorbeeldbestand downloaden**.
     - **Uitnodigingscode**: Als u ervoor kiest om een uitnodigingscode te gebruiken, moet u bepalen hoeveel codes er kunnen worden ingewisseld en wanneer ze verlopen. U stuurt uw studenten de volgende koppeling om de code te inwisselen: https://aka.ms/joinedu.
 
-      :::image type="content" source="media/set-up-course-classroom/enter-invitation-code.png" alt-text="De pagina Cursussen in Azure Education Hub" border="false":::
+      :::image type="content" source="media/set-up-course-classroom/enter-invitation-code.png" alt-text="Uitnodigingscode invoeren in Azure Education Hub" border="false":::
 
 1. Selecteer in de rechterbenedenhoek **Leslokaal maken**. Deze bewerking kan even duren.
 
-   :::image type="content" source="media/set-up-course-classroom/create-classroom.png" alt-text="De pagina Cursussen in Azure Education Hub" border="false":::
+   :::image type="content" source="media/set-up-course-classroom/create-classroom.png" alt-text="Een leslokaal maken in Azure Education Hub" border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

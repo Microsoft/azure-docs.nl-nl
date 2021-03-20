@@ -13,10 +13,10 @@ ms.date: 01/13/2020
 ms.author: joscot
 ms.custom: fasttrack-new
 ms.openlocfilehash: 8249cc543c6334841c8e5152d5d1ceb84d4097dc
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92076110"
 ---
 # <a name="filter-on-request-ip-address-when-using-an-application-gateway"></a>Filteren op IP-adres van aanvraag bij het gebruik van een Application Gateway
@@ -34,4 +34,4 @@ Plak de code in het **binnenkomende** blok.
 Meer informatie over APIM-beleid:
 
 + [Beleid voor toegangs beperkingen](../api-management-access-restriction-policies.md)
-+ [Voor beelden van beleid](../policy-reference.md)
++ [Voorbeelden van beleid](../policy-reference.md)

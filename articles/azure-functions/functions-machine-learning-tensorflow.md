@@ -7,10 +7,10 @@ ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc, devx-track-python, devx-track-azurepowershell
 ms.openlocfilehash: ca9ce27583168dfee1a597fce559afad38a3a8c7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95994601"
 ---
 # <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Zelfstudie: Machine learning-modellen toepassen in Azure Functions met Python en TensorFlow
@@ -30,7 +30,7 @@ In dit artikel leert y hoe u Python, TensorFlow en Azure Functions gebruikt met 
 - De [Azure Functions Core Tools](functions-run-local.md#install-the-azure-functions-core-tools)
 - Een code-editor zoals [Visual Studio Code](https://code.visualstudio.com/)
 
-### <a name="prerequisite-check"></a>Controle op vereisten
+### <a name="prerequisite-check"></a>Controle van vereisten
 
 1. Voer in een terminal- of opdrachtvenster `func --version` uit om te controleren of de Azure Functions Core Tools versie 2.7.1846 of hoger zijn.
 1. Voer `python --version` (Linux/MacOS) of `py --version` (Windows) uit om uw Python-versierapporten 3.7.x te controleren.

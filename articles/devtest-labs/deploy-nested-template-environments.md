@@ -4,10 +4,10 @@ description: Meer informatie over het implementeren van geneste Azure Resource M
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 39002e286fafd4f813333a14ed86256a517897e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85481337"
 ---
 # <a name="deploy-nested-azure-resource-manager-templates-for-testing-environments"></a>Geneste Azure Resource Manager sjablonen implementeren voor test omgevingen
@@ -57,7 +57,7 @@ Hier volgt een eenvoudig voor beeld van een geneste implementatie:
 "outputs": {}
 ```
 
-De map in de opslag plaats met deze sjabloon bevat een submap `nestedtemplates` met de bestanden **NestOne.jsop** en **NestOne.parameters.jsop**. In de **azuredeploy.jsop**wordt URI voor de sjabloon gebouwd op basis van de locatie van de artefacten, de geneste sjabloon, de geneste sjabloon bestands naam. Op dezelfde manier wordt URI voor de para meters gebouwd met behulp van de artefacten locatie, geneste sjabloon en het parameter bestand voor de geneste sjabloon. 
+De map in de opslag plaats met deze sjabloon bevat een submap `nestedtemplates` met de bestanden **NestOne.jsop** en **NestOne.parameters.jsop**. In de **azuredeploy.jsop** wordt URI voor de sjabloon gebouwd op basis van de locatie van de artefacten, de geneste sjabloon, de geneste sjabloon bestands naam. Op dezelfde manier wordt URI voor de para meters gebouwd met behulp van de artefacten locatie, geneste sjabloon en het parameter bestand voor de geneste sjabloon. 
 
 Dit is de afbeelding van dezelfde project structuur in Visual Studio: 
 

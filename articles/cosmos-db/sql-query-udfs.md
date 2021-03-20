@@ -9,10 +9,10 @@ ms.date: 04/09/2020
 ms.author: tisande
 ms.custom: devx-track-js
 ms.openlocfilehash: 98698264f0beb25a8b4f74861f1150ae889d7115
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96546332"
 ---
 # <a name="user-defined-functions-udfs-in-azure-cosmos-db"></a>Door de gebruiker gedefinieerde functies (Udf's) in Azure Cosmos DB

@@ -9,10 +9,10 @@ ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 ms.openlocfilehash: 1fcfc7a9e632e5db1fb809dba7a938c8641c9ddc
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92048097"
 ---
 # <a name="what-is-the-azure-certified-device-program"></a>Wat is het Azure Certified Device-programma?
@@ -60,7 +60,7 @@ _Certificering van Azure Certified-apparaten_ valideert dat een apparaat verbind
 - Zie de [certificerings vereisten](https://aka.ms/acdrequirements)voor meer informatie.
 - Zie [overzicht van apparaten inrichten](../iot-dps/about-iot-dps.md)voor meer informatie over het gebruik van DPS om uw apparaat te verbinden met Azure IOT hub.
 
-### <a name="iot-plug-and-play"></a>IoT Plug en Play
+### <a name="iot-plug-and-play"></a>IoT Plug and Play
 
 _IoT Plug en Play-certificering_, een incrementele certificering aan de certificering van het Azure Certified-apparaat, vereenvoudigt het proces van het bouwen van apparaten zonder aangepaste apparaatcode. Met IoT Plug en Play kunnen hardware-partners apparaten bouwen die eenvoudig kunnen worden geïntegreerd met cloud oplossingen op basis van Azure IoT Central en oplossingen van derden.
 

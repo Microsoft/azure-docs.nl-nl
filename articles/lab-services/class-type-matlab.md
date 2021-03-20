@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
 ms.openlocfilehash: 137959f51b08dceee150962f77110ee2ac1dc193
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85444995"
 ---
 # <a name="setup-a-lab-to-teach-matlab"></a>Een Lab instellen om MATLAB te leren
@@ -65,7 +65,7 @@ U moet een licentie beheerder zijn om de installatie bestanden te downloaden en 
 7. Voer uw MathWorks-account in op de pagina **Aanmelden bij uw MathWorks-account** .
 8. Accepteer de voor waarden op de pagina **gebruiksrecht overeenkomst** van de MathWorks en klik op de knop **volgende** .
 9. Klik op de vervolg keuzelijst **Geavanceerde opties** en kies **Ik wil downloaden zonder te installeren**.
-10. Klik op **volgende**in de **doelmap selecteren**.
+10. Klik op **volgende** in de **doelmap selecteren**.
 11. Selecteer **Windows** als het platform van de computer waarop u MATLAB wilt installeren.
 12. Zorg ervoor dat op de pagina **product selecteren de optie** MATLAB is geselecteerd samen met alle andere MathWorks-producten die u wilt installeren.
 13. Klik op de pagina **selecties bevestigen en downloaden** op **downloaden**.  

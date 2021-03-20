@@ -4,10 +4,10 @@ description: Een overzicht van back-upkluizen.
 ms.topic: conceptual
 ms.date: 08/17/2020
 ms.openlocfilehash: c189997ecc4814917182246b35003649d317ac77
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92091284"
 ---
 # <a name="backup-vaults-overview"></a>Overzicht van back-upkluizen
@@ -48,12 +48,12 @@ Meld u aan bij Azure Portal op <https://portal.azure.com>.
 
 1. Typ **back-upkluizen** in het zoekvak.
 1. Selecteer bij **Services** **back-upkluizen**.
-1. Selecteer **toevoegen**op de pagina **back-upkluizen** .
-1. Controleer op het **tabblad basis beginselen**onder **Project Details**of het juiste abonnement is geselecteerd en kies nieuwe resource groep **maken** . Typ *myResourceGroup* als de naam.
+1. Selecteer **toevoegen** op de pagina **back-upkluizen** .
+1. Controleer op het **tabblad basis beginselen** onder **Project Details** of het juiste abonnement is geselecteerd en kies nieuwe resource groep **maken** . Typ *myResourceGroup* als de naam.
 
   ![Nieuwe resource groep maken](./media/backup-vault-overview/new-resource-group.png)
 
-1. Typ *myVault* voor de naam van de **back-upkluis** onder Details van het **exemplaar**en kies uw keuze gebied, in dit geval *VS-Oost* voor uw **regio**.
+1. Typ *myVault* voor de naam van de **back-upkluis** onder Details van het **exemplaar** en kies uw keuze gebied, in dit geval *VS-Oost* voor uw **regio**.
 1. Kies nu uw **opslag redundantie**. Opslag redundantie kan niet worden gewijzigd na het beveiligen van items in de kluis.
 1. Als u Azure als een primair eind punt voor back-upopslag gebruikt, wordt u aangeraden de standaard **geo-redundante** instelling te gebruiken.
 1. Als Azure niet uw primaire eindpunt is voor back-upopslag, kiest u **Lokaal redundant**, zodat u de kosten voor Azure-opslag verlaagt.

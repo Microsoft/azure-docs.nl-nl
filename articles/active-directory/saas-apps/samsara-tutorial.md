@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: jeedes
 ms.openlocfilehash: 9512287f656c6c64399cb8749b7451a5a780bba8
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92677639"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-samsara"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Samsara
@@ -38,18 +38,18 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Samsara ondersteunt door **SP** en **IDP** geïnitieerde eenmalige aanmelding
-* Samsara biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Samsara biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-samsara-from-the-gallery"></a>Samsara toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Samsara met Azure AD moet u Samsara uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
     
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -57,7 +57,7 @@ Voor het configureren van de integratie van Samsara met Azure AD moet u Samsara 
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **Samsara** .
+1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **Samsara**.
 
      ![OneTrust Privacy Management Software in de resultatenlijst](common/search-new-app.png)
 
@@ -66,7 +66,7 @@ Voor het configureren van de integratie van Samsara met Azure AD moet u Samsara 
 
 ## <a name="configure-and-test-azure-ad-sso-for-samsara"></a>Eenmalige aanmelding van Azure AD voor Samsara configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met Samsara met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Samsara.
+Configureer en test eenmalige aanmelding van Azure AD met Samsara met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Samsara.
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory bij Samsara te configureren en te testen:
 
@@ -81,11 +81,11 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de Azure-portal, op de integratiepagina van de toepassing **Samsara** , naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
+1. Ga in de Azure-portal, op de integratiepagina van de toepassing **Samsara**, naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 
     ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
 
@@ -108,7 +108,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![De link om het certificaat te downloaden](common/certificatebase64.png)
 
-1. Kopieer in de sectie **Samsara instellen** de **Aanmeldings-URL** .
+1. Kopieer in de sectie **Samsara instellen** de **Aanmeldings-URL**.
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
     
@@ -116,25 +116,25 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie stelt u B.Simon in staat om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Samsara.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Samsara** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol** . Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-samsara-sso"></a>Eenmalige aanmelding voor Samsara configureren
 
@@ -148,7 +148,7 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in Samsara. Samsa
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen** . U wordt omgeleid naar de aanmeldings-URL van Samsara, waar u de aanmeldingsstroom kunt initiëren. 
+1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Samsara, waar u de aanmeldingsstroom kunt initiëren. 
 
 2. Ga rechtstreeks naar de aanmeldings-URL van Samsara en initieer de aanmeldingsstroom daar.
 

@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 02/27/2020
 ms.author: mimart
 ms.openlocfilehash: f4944881e6eff3e9a56a74bc997c280f9fff6be8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "78186986"
 ---
 ## <a name="ropc-flow-notes"></a>ROPC-stroom notities
@@ -21,7 +21,7 @@ In Azure Active Directory B2C (Azure AD B2C) worden de volgende opties ondersteu
 
 De volgende stromen worden niet ondersteund:
 
-- **Server-naar-server: voor**het systeem voor identiteits beveiliging is een betrouw bare IP-adres nodig dat door de aanroeper (de systeem eigen client) is verzameld als onderdeel van de interactie. In een API-aanroep aan de server zijde wordt alleen het IP-adres van de server gebruikt. Als een dynamische drempel van mislukte authenticaties wordt overschreden, kan het identiteits beschermings systeem een herhaald IP-adres identificeren als een aanvaller.
+- **Server-naar-server: voor** het systeem voor identiteits beveiliging is een betrouw bare IP-adres nodig dat door de aanroeper (de systeem eigen client) is verzameld als onderdeel van de interactie. In een API-aanroep aan de server zijde wordt alleen het IP-adres van de server gebruikt. Als een dynamische drempel van mislukte authenticaties wordt overschreden, kan het identiteits beschermings systeem een herhaald IP-adres identificeren als een aanvaller.
 - **Vertrouwelijke client stroom**: de client-id van de toepassing wordt gevalideerd, maar het toepassings geheim wordt niet gevalideerd.
 
 Wanneer u de ROPC-stroom gebruikt, moet u rekening houden met het volgende:

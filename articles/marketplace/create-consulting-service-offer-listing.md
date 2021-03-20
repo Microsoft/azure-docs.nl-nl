@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.openlocfilehash: 2476d60cacc9690c24d7d3d2f7e21f04c6811500
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92754406"
 ---
 # <a name="how-to-configure-your-consulting-service-offer-listing-details"></a>Details van de aanbieding voor advies service configureren
@@ -29,7 +29,7 @@ Op de **aanbiedings** pagina geeft u de gegevens op die hieronder worden beschre
 1.  Het vak **naam** is vooraf ingevuld met de naam die u eerder hebt opgegeven in het dialoog venster **nieuwe aanbieding** , maar u kunt deze op elk gewenst moment wijzigen. Deze naam wordt weer gegeven als de titel van uw aanbieding in de online winkel.
 
     > [!IMPORTANT]
-    > De naam van de aanbieding moet de volgende indelings *naam hebben: duration + type* . Zie Details aanbiedings [vermelding](./plan-consulting-service-offer.md#offer-listing-details)voor meer informatie.
+    > De naam van de aanbieding moet de volgende indelings *naam hebben: duration + type*. Zie Details aanbiedings [vermelding](./plan-consulting-service-offer.md#offer-listing-details)voor meer informatie.
 
 2. In het vak **samen vatting van zoek resultaten** wordt het doel of doel van uw aanbieding beschreven in 200 tekens of minder.
 3. Geef in het veld **Beschrijving** uw advies service-aanbod een beschrijving. U kunt HTML-tags gebruiken om uw beschrijving op te maken. U kunt tot 2.000 tekens tekst in dit vak invoeren, inclusief HTML-tags en spaties. Zie [HTML-tags die worden ondersteund in de beschrijving van de aanbieding](./supported-html-tags.md)voor meer informatie over HTML-opmaak.
@@ -76,8 +76,8 @@ U kunt koppelingen toevoegen aan YouTube-of Vimeo-Video's die uw aanbieding aant
 3.  Slepen en neerzetten. PNG-bestand (1280 x 720 pixels) naar het grijze vak voor de miniatuur.
 4.  Herhaal de stappen 1 tot en met 3 om nog een video toe te voegen.
 
-Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad: **prijzen en beschik baarheid** .
+Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad: **prijzen en beschik baarheid**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Prijzen en beschik baarheid configureren](create-consulting-service-pricing-availability.md)
+* [Prijzen en beschikbaarheid configureren](create-consulting-service-pricing-availability.md)

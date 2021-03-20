@@ -4,10 +4,10 @@ description: Meer informatie over het wijzigen van de grootte van een virtuele m
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 592be0862bc33ead86fe43d37753fb72fde120c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85482017"
 ---
 # <a name="resize-a-vm-in-a-lab-in-azure-devtest-labs"></a>Het formaat van een virtuele machine in een lab in Azure DevTest Labs wijzigen
@@ -21,7 +21,7 @@ Voer de volgende stappen uit om de grootte van een virtuele machine in een lab i
 > Als u verbinding hebt met de virtuele machine via een extern bureau blad-sessie (RDP), slaat u uw werk op en verbreekt u de verbinding met de virtuele machine voordat u het formaat ervan wijzigt.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het lab dat de virtuele machine bevat waarvan u de grootte wilt wijzigen.  
 4. Selecteer in het linkerdeel venster **mijn virtual machines**. 
 5. Selecteer een virtuele machine in de lijst met Vm's.

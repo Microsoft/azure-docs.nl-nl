@@ -7,10 +7,10 @@ ms.author: pharring
 ms.date: 03/28/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 6991db6055ca8556adff67f194bac0f4aa04cb06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77671389"
 ---
 # <a name="upgrading-the-snapshot-debugger"></a>De Snapshot Debugger bijwerken
@@ -46,11 +46,11 @@ Als u het fout opsporingsprogramma voor moment opnamen met de site-uitbrei ding 
  
    ![Scherm afbeelding van de eerste ervaring voor de Application Insights Blade met de knop Application Insights inschakelen gemarkeerd](./media/snapshot-debugger-upgrade/turn-on-application-insights.png)
 
-7. De huidige Application Insights-instellingen worden weer gegeven. Tenzij u de kans wilt maken om uw instellingen te wijzigen, kunt u ze ongewijzigd laten. De knop **Toep assen** aan de onderkant van de Blade is niet standaard ingeschakeld en u moet een van de instellingen in-of uitschakelen om de knop te activeren. U hoeft geen echte instellingen te wijzigen. in plaats daarvan kunt u de instelling wijzigen en direct weer wijzigen. Het is raadzaam om de instelling van de Profiler in te scha kelen en vervolgens **Toep assen**te selecteren.
+7. De huidige Application Insights-instellingen worden weer gegeven. Tenzij u de kans wilt maken om uw instellingen te wijzigen, kunt u ze ongewijzigd laten. De knop **Toep assen** aan de onderkant van de Blade is niet standaard ingeschakeld en u moet een van de instellingen in-of uitschakelen om de knop te activeren. U hoeft geen echte instellingen te wijzigen. in plaats daarvan kunt u de instelling wijzigen en direct weer wijzigen. Het is raadzaam om de instelling van de Profiler in te scha kelen en vervolgens **Toep assen** te selecteren.
 
    ![Scherm afbeelding van de pagina configuratie van Application Insights App Service met de knop Toep assen rood gemarkeerd](./media/snapshot-debugger-upgrade/view-application-insights-data.png)
 
-8. Zodra u op **Toep assen**klikt, wordt u gevraagd om de wijzigingen te bevestigen.
+8. Zodra u op **Toep assen** klikt, wordt u gevraagd om de wijzigingen te bevestigen.
 
     > [!NOTE]
     > De site wordt opnieuw opgestart als onderdeel van het upgrade proces.

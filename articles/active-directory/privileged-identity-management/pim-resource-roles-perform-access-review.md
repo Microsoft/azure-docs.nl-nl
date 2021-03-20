@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8091890d174ae68f012a6ec24685a0e705100f8b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84743674"
 ---
 # <a name="review-access-to-azure-resource-roles-in-privileged-identity-management"></a>Toegang tot Azure-resource rollen controleren in Privileged Identity Management
@@ -44,7 +44,7 @@ Volg deze stappen om de toegangs beoordeling te vinden en te volt ooien:
    ![Scherm opname van Privileged Identity Management toepassing, met de Blade toegang controleren geselecteerd](media/pim-resource-roles-perform-access-review/rbac-access-review-complete.png)
 
 1. Selecteer de beoordeling die u wilt volt ooien.
-1. Kies **goed keuren** of **weigeren**. Voer in het **vak een reden opgeven**een zakelijke rechtvaardiging voor uw beslissing in, indien nodig.
+1. Kies **goed keuren** of **weigeren**. Voer in het **vak een reden opgeven** een zakelijke rechtvaardiging voor uw beslissing in, indien nodig.
 
    ![Scherm afbeelding van de pagina met details van de beoordeling](media/pim-resource-roles-perform-access-review/rbac-access-review-choice.png)
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/25/2018
 tags: connectors
 ms.openlocfilehash: c72330792e508361830c1bf391f85eefe78bdd1e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87283976"
 ---
 # <a name="monitor-and-manage-sharepoint-resources-with-azure-logic-apps"></a>SharePoint-resources bewaken en beheren met Azure Logic Apps
@@ -68,7 +68,7 @@ Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps?]
    Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. 
    Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer vervolgens **een actie toevoegen**.
 
-1. Wanneer u wordt gevraagd om u aan te melden, geeft u de benodigde verbindings gegevens op. Als u share Point server gebruikt, zorg er dan voor dat u **verbinding maken via een on-premises gegevens gateway**selecteert. Wanneer u klaar bent, kiest u **Maken**.
+1. Wanneer u wordt gevraagd om u aan te melden, geeft u de benodigde verbindings gegevens op. Als u share Point server gebruikt, zorg er dan voor dat u **verbinding maken via een on-premises gegevens gateway** selecteert. Wanneer u klaar bent, kiest u **Maken**.
 
 1. Geef de benodigde gegevens op voor de geselecteerde trigger of actie en ga door met het bouwen van de werk stroom van uw logische app.
 

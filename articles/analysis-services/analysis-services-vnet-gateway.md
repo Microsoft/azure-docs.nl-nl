@@ -8,10 +8,10 @@ ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 912dab16cd854ae940b7bbdfe88a8da7adf1c5e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84197201"
 ---
 # <a name="use-gateway-for-data-sources-on-an-azure-virtual-network-vnet"></a>Gateway gebruiken voor gegevensbronnen in een virtueel Azure-netwerk (VNet)
@@ -30,7 +30,7 @@ Gegevens bronnen van Azure SQL Managed instance worden uitgevoerd in azure VNet 
 ## <a name="configure-alwaysusegateway-property"></a>Eigenschap AlwaysUseGateway configureren
 
 1. Selecteer in SSMS > server > **Eigenschappen**  >  **Algemeen** **de optie Geavanceerde eigenschappen (alle) weer geven**.
-2. Selecteer **waar**in de **ASPaaS\AlwaysUseGateway**.
+2. Selecteer **waar** in de **ASPaaS\AlwaysUseGateway**.
 
     ![Altijd gateway-eigenschap gebruiken](media/analysis-services-vnet-gateway/aas-ssms-always-property.png)
 

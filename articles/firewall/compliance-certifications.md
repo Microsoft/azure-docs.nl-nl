@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: fa61046ee87c1cac3c8a8bb93ed97b577019e016
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94628438"
 ---
 # <a name="azure-firewall-certifications"></a>Azure Firewall-certificeringen
 
-Azure Firewall is Payment Card Industry (PCI), service organisatie Controls (SOC), International Organization for Standardization (ISO), ICSA Labs en HITRUST-compatibel.
+Azure Firewall is Payment Card Industry (PCI), service organisatie Controls (SOC), Internationale Organisatie voor Standaardisatie (ISO), ICSA Labs en HITRUST-compatibel.
 
 De volgende certificeringen zijn voor wereld wijd Azure en Azure Government.
 

@@ -17,10 +17,10 @@ ms.date: 08/10/2020
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7653f850edc910fc78b14a628b87dcb22aeb903
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89279411"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Versiegeschiedenis van status Azure AD Connect
@@ -149,7 +149,7 @@ Azure AD Connect Health voor synchronisatie is geïntegreerd met Azure AD Connec
   1. Verbeteringen van agent beschikbaarheid 
   2. Oplossingen voor fouten en algemene verbeteringen
 
-## <a name="december-2017"></a>december 2017
+## <a name="december-2017"></a>December 2017
 **Agent update:**
 
 * Azure AD Connect Health Agent voor AD DS (versie 3.0.145.0)

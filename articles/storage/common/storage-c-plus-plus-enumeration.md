@@ -9,10 +9,10 @@ ms.subservice: common
 ms.topic: how-to
 ms.reviewer: dineshm
 ms.openlocfilehash: 8c8e2d2ddf6899e62bc95bc1e52c84eccdc3a91e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92784095"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Azure Storage-resources in C++ weergeven
@@ -59,8 +59,8 @@ Daarom is het niet praktisch om alle objecten in één antwoord weer te geven. I
 
 De reactie voor een gesegmenteerde vermelding omvat het volgende:
 
-* *_segment* , dat de set resultaten bevat die voor één aanroep naar de listing-API wordt geretourneerd.
-* *continuation_token* , dat wordt door gegeven aan de volgende aanroep om de volgende pagina met resultaten op te halen. Wanneer er geen resultaten meer zijn om te retour neren, is het vervolg token null.
+* *_segment*, dat de set resultaten bevat die voor één aanroep naar de listing-API wordt geretourneerd.
+* *continuation_token*, dat wordt door gegeven aan de volgende aanroep om de volgende pagina met resultaten op te halen. Wanneer er geen resultaten meer zijn om te retour neren, is het vervolg token null.
 
 Zo kan een typische aanroep voor het weer geven van een lijst met alle blobs in een container eruitzien zoals in het volgende code fragment. De code is beschikbaar in onze voor [beelden](https://github.com/Azure/azure-storage-cpp/blob/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted.cpp):
 

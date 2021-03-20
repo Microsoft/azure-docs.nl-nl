@@ -9,10 +9,10 @@ ms.date: 07/30/2020
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
 ms.openlocfilehash: de10903be86b52b3415b57a53be81e7fd1661f63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89226026"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio"></a>Webjobs ontwikkelen en implementeren met behulp van Visual Studio
@@ -71,7 +71,7 @@ U hebt hiervoor twee opties:
 
 #### <a name="enable-automatic-webjobs-deployment-with-a-web-project"></a><a id="convertlink"></a> Automatische implementatie van webjobs met een webproject inschakelen
 
-1. Klik met de rechter muisknop op het webproject in **Solution Explorer**en **Add**Selecteer vervolgens  >  **bestaand project als Azure-Webtaak**toevoegen.
+1. Klik met de rechter muisknop op het webproject in **Solution Explorer** en Selecteer vervolgens  >  **bestaand project als Azure-Webtaak** toevoegen.
    
     ![Bestaand project als Azure-Webtaak](./media/webjobs-dotnet-deploy-vs/eawj.png)
    
@@ -82,7 +82,7 @@ U hebt hiervoor twee opties:
 3. Voltooi het dialoog venster [Azure-Webtaak toevoegen](#configure) en selecteer vervolgens **OK**. 
 
 #### <a name="enable-webjobs-deployment-without-a-web-project"></a><a id="convertnolink"></a> De implementatie van webjobs zonder een webproject inschakelen
-1. Klik met de rechter muisknop op het console-app-project in **Solution Explorer**en selecteer vervolgens **publiceren als Azure-Webtaak**. 
+1. Klik met de rechter muisknop op het console-app-project in **Solution Explorer** en selecteer vervolgens **publiceren als Azure-Webtaak**. 
    
     ![Publiceren als Azure-Webtaak](./media/webjobs-dotnet-deploy-vs/paw.png)
    
@@ -102,7 +102,7 @@ Als u een nieuw project met webjobs wilt maken, gebruikt u de sjabloon console-a
     Een project maken dat is geconfigureerd om automatisch te worden geïmplementeerd als Webtaak wanneer u een webproject implementeert in dezelfde oplossing. Gebruik deze optie wanneer u uw Webtaak wilt uitvoeren in dezelfde Web-app waarin u de gerelateerde webtoepassing uitvoert.
 
 > [!NOTE]
-> De webjobs New-Project-sjabloon installeert automatisch NuGet-pakketten en bevat code in *Program.cs* voor de [webjobs SDK](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Als u de webjobs SDK niet wilt gebruiken, verwijdert u de `host.RunAndBlock` instructie in *Program.cs*of wijzigt u deze.
+> De sjabloon webjobs New-Project installeert automatisch NuGet-pakketten en bevat code in *programma. cs* voor de [webjobs SDK](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Als u de webjobs SDK niet wilt gebruiken, verwijdert of wijzigt u de `host.RunAndBlock` instructie in *Program. cs*.
 > 
 > 
 
@@ -112,7 +112,7 @@ Als u een nieuw project met webjobs wilt maken, gebruikt u de sjabloon console-a
 2. Volg de vorige instructies om [de console-app project een onafhankelijk Webjobs-project te maken](#convertnolink).
 
 #### <a name="use-the-webjobs-new-project-template-for-a-webjob-linked-to-a-web-project"></a><a id="createlink"></a> De sjabloon webjobs New-Project gebruiken voor een Webtaak die is gekoppeld aan een webproject
-1. Klik met de rechter muisknop op het webproject in **Solution Explorer**en **Add**Selecteer vervolgens  >  **Nieuw Azure-project voor Webtaak**toevoegen.
+1. Klik met de rechter muisknop op het webproject in **Solution Explorer** en Selecteer vervolgens  >  **Nieuw Azure-project voor Webtaak** toevoegen.
    
     ![Nieuw menu-item van Azure Webtaak-project](./media/webjobs-dotnet-deploy-vs/nawj.png)
    
@@ -157,7 +157,7 @@ Wanneer u een project met webjobs koppelt aan een webproject, slaat Visual Studi
 U kunt dit bestand rechtstreeks in Visual Studio bewerken met IntelliSense. Het bestands schema wordt opgeslagen op [https://schemastore.org](http://schemastore.org/schemas/json/webjobs-list.json) .
 
 ### <a name="deploy-a-webjobs-project"></a><a id="deploy"></a>Een webjobs-project implementeren
-Een webjobs-project dat u hebt gekoppeld aan een webproject, wordt automatisch geïmplementeerd met het webproject. Zie **procedures**voor  >  **het implementeren van de app** in de linkernavigatiebalk voor meer informatie over de implementatie van webprojecten.
+Een webjobs-project dat u hebt gekoppeld aan een webproject, wordt automatisch geïmplementeerd met het webproject. Zie **procedures** voor  >  **het implementeren van de app** in de linkernavigatiebalk voor meer informatie over de implementatie van webprojecten.
 
 Als u een webjobs-project zelf wilt implementeren, klikt u met de rechter muisknop op het project in **Solution Explorer** en selecteert u **publiceren als Azure-Webtaak**. 
 
@@ -182,7 +182,7 @@ Implementatie gegevens van Webtaak:
 
 ## <a name="webjob-types"></a>Webtaak typen
 
-Het type van een Webtaak kan worden *geactiveerd* of *doorlopend*zijn:
+Het type van een Webtaak kan worden *geactiveerd* of *doorlopend* zijn:
 
 - Geactiveerd (standaard): een geactiveerde Webtaak wordt gestart op basis van een bindings gebeurtenis, volgens een [planning](#scheduling-a-triggered-webjob)of wanneer u deze hand matig (op aanvraag) aanstuurt. Het wordt uitgevoerd op één exemplaar waarop de web-app wordt uitgevoerd.
 
@@ -233,7 +233,7 @@ Als u AlwaysOn **in azure inschakelt** , kunt u Visual Studio gebruiken om de We
 
 1. Kies op het tabblad **publiceren** de optie **bewerken**. 
 
-1. Kies in het dialoog venster **Profiel instellingen** **doorlopend** voor **type Webtaak**en kies vervolgens **Opslaan**.
+1. Kies in het dialoog venster **Profiel instellingen** **doorlopend** voor **type Webtaak** en kies vervolgens **Opslaan**.
 
     ![Het dialoog venster publicatie-instellingen voor een Webtaak](./media/webjobs-dotnet-deploy-vs/publish-settings.png)
 

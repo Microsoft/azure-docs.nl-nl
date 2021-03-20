@@ -9,10 +9,10 @@ ms.date: 10/10/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 0fc6a62a94f31617209bcc60bfaa95bc8927551a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86050515"
 ---
 ## <a name="deploy-event-grid-iot-edge-module"></a>Event Grid IoT Edge-module implementeren
@@ -28,14 +28,14 @@ Er zijn verschillende manieren om modules op een IoT Edge apparaat te implemente
 ### <a name="select-your-iot-edge-device"></a>Uw IoT Edge-apparaat selecteren
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com)
-1. Navigeer naar uw IoT Hub.
+1. Ga naar uw IoT Hub.
 1. Selecteer **IOT Edge** in het menu van het gedeelte **Automatic Device Management** . 
 1. Klik op de ID van het doel apparaat in de lijst met apparaten
 1. Selecteer **modules instellen**. Laat de pagina geopend. U gaat verder met de stappen in de volgende sectie.
 
 ### <a name="configure-a-deployment-manifest"></a>Een implementatie manifest configureren
 
-Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven**en de **implementatie controleren**.
+Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal bevat een wizard die u helpt bij het maken van een implementatie manifest, in plaats van het JSON-document hand matig te bouwen.  Er zijn drie stappen: **modules toevoegen**, **routes opgeven** en de **implementatie controleren**.
 
 ### <a name="add-modules"></a>Modules toevoegen
 
@@ -47,7 +47,7 @@ Een implementatie manifest is een JSON-document waarin wordt beschreven welke mo
 
    * **Naam**: eventgridmodule
    * **Afbeeldings-URI**: `mcr.microsoft.com/azure-event-grid/iotedge:latest`
-   * **Opties**voor het maken van containers:
+   * **Opties** voor het maken van containers:
 
 ```json
     {

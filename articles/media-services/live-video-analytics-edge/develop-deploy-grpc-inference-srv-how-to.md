@@ -4,10 +4,10 @@ description: Dit artikel bevat richt lijnen voor het ontwikkelen en implementere
 ms.topic: how-to
 ms.date: 12/02/2020
 ms.openlocfilehash: 6184a369e73c26d3a8a716f9daf1c0420a5239fe
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98881649"
 ---
 # <a name="how-to-guide--develop-and-deploy-a-grpc-inference-server"></a>Instructies voor het ontwikkelen en implementeren van een gRPC-Afleidings server
@@ -148,7 +148,7 @@ Voor meer informatie over hoe gRPC-server is ontwikkeld, gaan we het code voorbe
 1. Start VSCode en navigeer naar de map/src/edge/modules/grpcExtension.
 1. Laten we een korte beschrijving van de bestanden doen:
 
-    1. **Program.cs**: dit is het toegangs punt van de toepassing. Het is verantwoordelijk voor het initialiseren en beheren van de gRPC-server, die als host fungeert. In ons voor beeld is de poort voor het Luis teren naar binnenkomende gRPC-berichten van een gRPC-client (zoals live video Analytics) op is opgegeven door het grpcBindings-configuratie-element in de AppConfig.jsop.
+    1. **Program. cs**: dit is het toegangs punt van de toepassing. Het is verantwoordelijk voor het initialiseren en beheren van de gRPC-server, die als host fungeert. In ons voor beeld is de poort voor het Luis teren naar binnenkomende gRPC-berichten van een gRPC-client (zoals live video Analytics) op is opgegeven door het grpcBindings-configuratie-element in de AppConfig.jsop.
     
         ```json    
         {
@@ -191,7 +191,7 @@ Nu we de poort verbindingen van de gRPC-server hebben geconfigureerd en geïniti
               }
             }
             ```
-        * Afhankelijk van de waarde van batchSize in de Appconfig.jsop, zal onze server de berichten blijven ontvangen en de video frames in een lijst opslaan. Zodra de limiet voor batchSize is bereikt, wordt de functie aangeroepen of het bestand waarmee de installatie kopie wordt verwerkt. In ons geval roept de methode een bestand met de naam BatchImageProcessor.cs aan
+        * Afhankelijk van de waarde van batchSize in de Appconfig.jsop, zal onze server de berichten blijven ontvangen en de video frames in een lijst opslaan. Zodra de limiet voor batchSize is bereikt, wordt de functie aangeroepen of het bestand waarmee de installatie kopie wordt verwerkt. In ons geval roept de methode een bestand met de naam BatchImageProcessor. cs.
     1. **Processors\BatchImageProcessor.cs**: deze klasse is verantwoordelijk voor het verwerken van de afbeelding (en). In dit voor beeld hebben we een afbeeldings classificatie model gebruikt. Voor elke installatie kopie die wordt verwerkt, wordt het volgende algoritme gebruikt:
 
         1. Converteer de afbeelding in een byte matrix voor verwerking. Zie methode: `GetBytes(Bitmap image)`
@@ -207,7 +207,7 @@ Nu we de poort verbindingen van de gRPC-server hebben geconfigureerd en geïniti
     IEnumerable<Inference> ProcessImage(List<Image> images) 
     ```
 
-    Wanneer u de nieuwe klasse hebt toegevoegd, moet u de MediaGraphExtensionService.cs bijwerken zodat deze uw klasse start en de ProcessImage-methode erop aanroept om uw verwerkings logica uit te voeren. 
+    Zodra u de nieuwe klasse hebt toegevoegd, moet u de MediaGraphExtensionService. cs bijwerken zodat deze uw klasse start en de ProcessImage-methode erop aanroept om uw verwerkings logica uit te voeren. 
 
 ## <a name="connect-with-live-video-analytics-module"></a>Verbinding maken met de module live video Analytics
 

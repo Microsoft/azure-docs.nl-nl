@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.date: 07/10/2020
 ms.author: chrande
 ms.openlocfilehash: 20cb4cea52317022aea8a5b9e4b8280f8b88ff85
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93361508"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Quickstart: Gebruik de Gremlin-console om een Azure Cosmos DB-grafiekdatabase te maken, er query’s op uit te voeren en erdoorheen te gaan
@@ -57,18 +57,18 @@ U moet ook de [Gremlin-console](https://tinkerpop.apache.org/downloads.html) ins
 
     Instelling|Voorgestelde waarde|Beschrijving
     ---|---|---
-    hosts|[ *account-name*. **gremlin**.cosmos.azure.com]|Zie de volgende schermafbeelding. Dit is de **Gremlin URI** -waarde op de pagina Overzicht van Azure Portal tussen vierkante haken, waarbij de afsluitende :443/ is verwijderd. Opmerking: Zorg ervoor dat u de Gremlin-waarde gebruikt en **niet** de URI die eindigt op [ *account-name*.documents.azure.com], wat waarschijnlijk zou resulteren in de uitzondering Host reageerde niet tijdig wanneer u later probeert Gremlin-query's uit te voeren. 
+    hosts|[*account-name*.**gremlin**.cosmos.azure.com]|Zie de volgende schermafbeelding. Dit is de **Gremlin URI**-waarde op de pagina Overzicht van Azure Portal tussen vierkante haken, waarbij de afsluitende :443/ is verwijderd. Opmerking: Zorg ervoor dat u de Gremlin-waarde gebruikt en **niet** de URI die eindigt op [*account-name*.documents.azure.com], wat waarschijnlijk zou resulteren in de uitzondering Host reageerde niet tijdig wanneer u later probeert Gremlin-query's uit te voeren. 
     poort|443|Ingesteld op 443.
     gebruikersnaam|*Uw gebruikersnaam*|De bron van het formulier `/dbs/<db>/colls/<coll>` waar `<db>` de naam van uw database is en `<coll>` de naam van uw verzameling is.
     wachtwoord|*Uw primaire sleutel*| Zie de tweede onderstaande schermafbeelding. Dit is uw primaire sleutel, die u kunt ophalen van de pagina Sleutels in Azure Portal, in het vak Primaire sleutel. Gebruik de kopieerknop aan de linkerkant van het vak om de waarde te kopiëren.
     connectionPool|{enableSsl: true}|De instelling van uw verbindingsgroep voor TLS.
     serializer|{ className: org.apache.tinkerpop.gremlin.<br>driver.ser.GraphSONMessageSerializerV2d0,<br> config: { serializeResultToString: true }}|Instellen op deze waarden en eventuele `\n`-regeleinden verwijderen bij het plakken in de waarde.
 
-   Kopieer voor de waarde voor hosts de **Gremlin-URI** op de pagina **Overzicht** :
+   Kopieer voor de waarde voor hosts de **Gremlin-URI** op de pagina **Overzicht**:
 
    :::image type="content" source="./media/create-graph-gremlin-console/gremlin-uri.png" alt-text="De Gremlin-URI op de pagina Overzicht in Azure Portal bekijken en kopiëren":::
 
-   Kopieer voor het wachtwoord de **primaire sleutel** op de pagina **Sleutels** :
+   Kopieer voor het wachtwoord de **primaire sleutel** op de pagina **Sleutels**:
 
    :::image type="content" source="./media/create-graph-gremlin-console/keys.png" alt-text="De primaire sleutel bekijken en kopiëren op de pagina Sleutels in Azure Portal":::
 
@@ -109,7 +109,7 @@ g.V().count()
 
 ## <a name="create-vertices-and-edges"></a>Hoekpunten en randen maken
 
-Laten we beginnen met het toevoegen van vijf hoekpunten voor de personen *Thomas* , *Marije* , *Robin* , *Ben* en *Jack*.
+Laten we beginnen met het toevoegen van vijf hoekpunten voor de personen *Thomas*, *Marije*, *Robin*, *Ben* en *Jack*.
 
 Invoer (Thomas):
 

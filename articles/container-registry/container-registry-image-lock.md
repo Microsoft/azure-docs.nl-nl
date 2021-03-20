@@ -4,10 +4,10 @@ description: Stel kenmerken in voor een container installatie kopie of opslag pl
 ms.topic: article
 ms.date: 09/30/2019
 ms.openlocfilehash: da84767523bb6d948b71b1c1ad2ddaffb628354a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "77659693"
 ---
 # <a name="lock-a-container-image-in-an-azure-container-registry"></a>Een container installatie kopie in een Azure container Registry vergren delen
@@ -59,7 +59,7 @@ az acr repository show \
 
 ### <a name="lock-an-image-by-tag"></a>Een afbeelding vergren delen op label
 
-Als u de *myrepo/myimage: tag-* afbeelding in *myregistry*wilt vergren delen, voert u de volgende opdracht [AZ ACR repository update][az-acr-repository-update] uit:
+Als u de *myrepo/myimage: tag-* afbeelding in *myregistry* wilt vergren delen, voert u de volgende opdracht [AZ ACR repository update][az-acr-repository-update] uit:
 
 ```azurecli
 az acr repository update \

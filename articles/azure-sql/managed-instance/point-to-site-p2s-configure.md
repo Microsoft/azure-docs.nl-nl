@@ -13,10 +13,10 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova, jovanpop
 ms.date: 03/13/2019
 ms.openlocfilehash: 3baf2d7ed7c326895ae40948fc2d0a4cc03021f9
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92788363"
 ---
 # <a name="quickstart-configure-a-point-to-site-connection-to-azure-sql-managed-instance-from-on-premises"></a>Quickstart: Een punt-naar-site-verbinding naar Azure SQL Managed Instance configureren vanuit on-premises
@@ -67,12 +67,12 @@ Voor deze snelstartgids geldt het volgende:
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Open de resourcegroep waarin u de virtuele netwerkgateway hebt gemaakt, en open de virtuele netwerkgateway.
-3. Selecteer **Punt-naar-site-configuratie** en selecteer vervolgens **VPN-client downloaden** .
+3. Selecteer **Punt-naar-site-configuratie** en selecteer vervolgens **VPN-client downloaden**.
 
     ![VPN-client downloaden](./media/point-to-site-p2s-configure/download-vpn-client.png)  
 4. Pak de bestanden uit het ZIP-bestand uit op de on-premises clientcomputer, en open de map met de uitgepakte bestanden.
-5. Open de map **WindowsAmd64** en open het bestand **VpnClientSetupAmd64.exe** .
-6. Als u het bericht **Uw pc wordt beschermd** ontvangt, klikt u op **Meer info** en klikt u vervolgens op **Toch uitvoeren** .
+5. Open de map **WindowsAmd64** en open het bestand **VpnClientSetupAmd64.exe**.
+6. Als u het bericht **Uw pc wordt beschermd** ontvangt, klikt u op **Meer info** en klikt u vervolgens op **Toch uitvoeren**.
 
     ![VPN-client installeren](./media/point-to-site-p2s-configure/vpn-client-defender.png)
 7. Klik in het dialoogvenster Gebruikersaccountbeheer op **Ja** om door te gaan.
@@ -83,11 +83,11 @@ Voor deze snelstartgids geldt het volgende:
 1. Ga naar **VPN** in **Netwerk en internet** op uw on-premises clientcomputer, en selecteer uw virtuele netwerk van SQL Managed Instance om een verbinding tot stand te brengen met dit VNet. In de volgende afbeelding is **MyNewVNet** de naam van het VNet.
 
     ![VPN-verbinding](./media/point-to-site-p2s-configure/vpn-connection.png)  
-2. Selecteer **Verbinding maken** .
+2. Selecteer **Verbinding maken**.
 3. Selecteer **Verbinding maken** in het dialoogvenster.
 
     ![Schermopname met de knop Verbinding maken gemarkeerd.](./media/point-to-site-p2s-configure/vpn-connection2.png)  
-4. Als u een melding ontvangt dat Verbindingsbeheer verhoogde bevoegdheden nodig heeft om de routeringstabel bij te werken, kiest u **Doorgaan** .
+4. Als u een melding ontvangt dat Verbindingsbeheer verhoogde bevoegdheden nodig heeft om de routeringstabel bij te werken, kiest u **Doorgaan**.
 5. Selecteer **Ja** in het dialoogvenster Gebruikersaccountbeheer om door te gaan.
 
    U hebt een VPN-verbinding met uw VNet van SQL Managed Instance tot stand gebracht.
@@ -98,7 +98,7 @@ Voor deze snelstartgids geldt het volgende:
 
 1. Open SQL Server Management Studio op de on-premises clientcomputer.
 2. Voer in het dialoogvenster **Verbinding maken met de server** in het vak **Servernaam** de volledig gekwalificeerde **hostnaam** in voor uw beheerde instantie.
-3. Selecteer **SQL Server-verificatie** , geef uw gebruikersnaam en wachtwoord op, en selecteer vervolgens **Verbinding maken** .
+3. Selecteer **SQL Server-verificatie**, geef uw gebruikersnaam en wachtwoord op, en selecteer vervolgens **Verbinding maken**.
 
     ![SSMS verbinden](./media/point-to-site-p2s-configure/ssms-connect.png)  
 

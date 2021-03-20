@@ -5,10 +5,10 @@ ms.custom: references_regions
 ms.topic: conceptual
 ms.date: 1/4/2021
 ms.openlocfilehash: eb4dc129719dc410f7101598e3d72e68f17809c1
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97860977"
 ---
 #  <a name="what-is-baremetal-infrastructure-preview-on-azure"></a>Wat is een BareMetal-infra structuur in azure?
@@ -22,7 +22,7 @@ De BareMetal-infra structuur voor gespecialiseerde en algemene werk belastingen 
 - Europa -west
 - Europa - noord
 - VS - oost 2
-- South Central US
+- VS - zuid-centraal
 
 >[!NOTE]
 >**Rev 4,2** is de meest recente BareMetal-infra structuur met een eigenlijke rebranding en maakt gebruik van de bestaande Rev 4-architectuur.  Rev 4 biedt dichter nabijheid van de Azure virtual machine-hosts (VM). Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen Azure Vm's en BareMetal exemplaar eenheden die zijn geïmplementeerd in Rev 4-stem pels of-rijen.  U kunt uw BareMetal-instanties openen en beheren via de Azure Portal. 
@@ -71,7 +71,7 @@ De beschik bare versies van het Linux-besturings systeem zijn:
    - SLES 12 SP5
    - SLES 15 SP1
 
-## <a name="storage"></a>Opslag
+## <a name="storage"></a>Storage
 BareMetal-exemplaren op basis van een specifiek SKU-type worden geleverd met vooraf gedefinieerde NFS-opslag voor het specifieke type werk belasting. Wanneer u BareMetal inricht, kunt u meer opslag ruimte inrichten op basis van uw geschatte groei door een ondersteunings aanvraag in te dienen. Alle opslag wordt geleverd met een all-flash-schijf in Revision 4,2 met ondersteuning voor NFSv3 en NFSv4. De nieuwere versie van de revisies 4,5 NVMe-SSD is beschikbaar. Zie de sectie [BareMetal workload type](../../../virtual-machines/workloads/sap/get-started.md) voor meer informatie over opslag grootte.
 
 >[!NOTE]

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 02/20/2020
 ms.custom: seodec18
 ms.openlocfilehash: 7da3c78e00f5d7e41a5396603cf4885a50cb6e5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89146348"
 ---
 # <a name="schedule-jobs-for-efficiency"></a>Taken plannen voor efficiëntie
@@ -25,7 +25,7 @@ Het voor deel van het plannen van taken is dat u een planning kunt opgeven voor 
 
    2. Selecteer het batch-account waarin u taken wilt plannen.
 
-   3. Selecteer **toevoegen** om een nieuwe taak planning te maken en het **basis formulier**te volt ooien.
+   3. Selecteer **toevoegen** om een nieuwe taak planning te maken en het **basis formulier** te volt ooien.
 
 
 
@@ -43,7 +43,7 @@ Het voor deel van het plannen van taken is dat u een planning kunt opgeven voor 
 
 **Start venster**: Hier geeft u het tijds interval op, beginnend bij het tijdstip waarop de planning aangeeft dat een taak moet worden gemaakt, totdat deze is voltooid. Als de huidige taak niet is voltooid tijdens het venster, wordt de volgende taak niet gestart.
 
-Onder aan het basis formulier geeft u de pool op waarop u de taak wilt uitvoeren. Selecteer **Update**om de gegevens van uw groeps-id te vinden. 
+Onder aan het basis formulier geeft u de pool op waarop u de taak wilt uitvoeren. Selecteer **Update** om de gegevens van uw groeps-id te vinden. 
 
 ![Groep opgeven][2]
 
@@ -54,15 +54,15 @@ Taak taak **configuratie**: Selecteer **bijwerken** om de taak taak beheer een n
 
 **Prioriteit**: Geef de taak een prioriteit.
 
-**Maximale klok tijd**van de wand: Stel de maximale hoeveelheid tijd in waarop de taak kan worden uitgevoerd. Als deze niet binnen het tijds bestek wordt voltooid, wordt de taak door batch beëindigd. Als u dit niet instelt, is er geen tijds limiet voor de taak.
+**Maximale klok tijd** van de wand: Stel de maximale hoeveelheid tijd in waarop de taak kan worden uitgevoerd. Als deze niet binnen het tijds bestek wordt voltooid, wordt de taak door batch beëindigd. Als u dit niet instelt, is er geen tijds limiet voor de taak.
 
-**Maximum aantal nieuwe pogingen**voor de taak: Geef op hoe vaak een taak Maxi maal vier keer kan worden uitgevoerd. Dit is niet hetzelfde als het aantal nieuwe pogingen dat een API-aanroep kan hebben.
+**Maximum aantal nieuwe pogingen** voor de taak: Geef op hoe vaak een taak Maxi maal vier keer kan worden uitgevoerd. Dit is niet hetzelfde als het aantal nieuwe pogingen dat een API-aanroep kan hebben.
 
 **Wanneer alle taken zijn voltooid**: de standaard waarde is geen actie.
 
 **Wanneer een taak mislukt**: de standaard waarde is geen actie. Een taak mislukt als het aantal nieuwe pogingen is uitgeput of als er een fout is opgetreden bij het starten van de taak. 
 
-Nadat u **Opslaan**hebt geselecteerd en u in de linkernavigatiebalk naar **taak planningen** gaat, kunt u de uitvoering van de taak volgen door **uitvoerings gegevens**te selecteren.
+Nadat u **Opslaan** hebt geselecteerd en u in de linkernavigatiebalk naar **taak planningen** gaat, kunt u de uitvoering van de taak volgen door **uitvoerings gegevens** te selecteren.
 
 
 ## <a name="for-more-information"></a>Voor meer informatie

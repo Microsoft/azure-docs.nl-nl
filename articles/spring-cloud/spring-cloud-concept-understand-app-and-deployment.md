@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 07/23/2020
 ms.custom: devx-track-java
 ms.openlocfilehash: c053a7830e02eb7c460bd030ca3c6a10c00ea78a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91323634"
 ---
 # <a name="understand-app-and-deployment-in-azure-spring-cloud"></a>Meer informatie over app en implementatie in azure lente Cloud
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
-**App** en **implementatie** zijn de twee belang rijke concepten in het resource model van Azure lente Cloud. In azure lente Cloud is een *app* een abstractie van één zakelijke app of een micro service.  Een versie van code of binair wordt geïmplementeerd als de *app* wordt uitgevoerd in een *implementatie*.  Apps worden uitgevoerd in een *Azure lente-Cloud service-exemplaar*of gewoon *service-exemplaar*, zoals hieronder wordt weer gegeven.
+**App** en **implementatie** zijn de twee belang rijke concepten in het resource model van Azure lente Cloud. In azure lente Cloud is een *app* een abstractie van één zakelijke app of een micro service.  Een versie van code of binair wordt geïmplementeerd als de *app* wordt uitgevoerd in een *implementatie*.  Apps worden uitgevoerd in een *Azure lente-Cloud service-exemplaar* of gewoon *service-exemplaar*, zoals hieronder wordt weer gegeven.
 
  ![Apps en implementaties](./media/spring-cloud-app-and-deployment/app-deployment-rev.png)
 
@@ -32,7 +32,7 @@ De volgende functies/eigenschappen worden gedefinieerd op app-niveau.
 | Functies | Beschrijving |
 |:--|:----------------|
 | Openbaar</br>Eindpunt | De URL voor toegang tot de app |
-| Aangepast</br>Domain | CNAME-record dat het aangepaste domein beveiligt |
+| Aangepast telefoonnummer</br>Domain | CNAME-record dat het aangepaste domein beveiligt |
 | Service</br>Binding | Out-of-Box-verbinding met andere Azure-Services |
 | Beheerd</br>Identiteit | Met beheerde identiteit door Azure Active Directory kan uw app eenvoudig toegang krijgen tot andere met Azure AD beveiligde resources, zoals Azure Key Vault |
 | Permanent</br>Storage | Instelling die ervoor zorgt dat gegevens behouden blijven na het opnieuw opstarten van de app |
@@ -45,7 +45,7 @@ De volgende functies/eigenschappen worden gedefinieerd op implementatie niveau e
 |:--|:----------------|
 | CPU | Aantal vcores per app-exemplaar |
 | Geheugen | GB aan geheugen per app-exemplaar|
-| Exemplaar</br>Aantal | Het aantal app-exemplaren, hand matig of automatisch instellen |
+| Exemplaar</br>Count | Het aantal app-exemplaren, hand matig of automatisch instellen |
 | Automatisch schalen | Aantal exemplaren automatisch schalen op basis van vooraf gedefinieerde regels en schema's |
 | JVM</br>Opties | Opties voor JVM instellen  |
 | Omgeving</br>Variabelen | Omgevings variabelen instellen |

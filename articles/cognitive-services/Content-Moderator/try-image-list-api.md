@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
 ms.openlocfilehash: 0035d367017c92bd151c27e14d744ef41eace069
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85800145"
 ---
 # <a name="moderate-with-custom-image-lists-in-the-api-console"></a>Gemiddeld met aangepaste installatie kopie lijsten in de API-console
@@ -42,11 +42,11 @@ Voordat u de API in de online console kunt testen, moet u uw abonnements sleutel
 
 Nadat u wijzigingen in een lijst met installatie kopieën hebt aangebracht, moet u de index vernieuwen zodat wijzigingen worden opgenomen in toekomstige scans. Deze stap is vergelijkbaar met de manier waarop een zoek machine op het bureau blad (indien ingeschakeld) of een zoek machine op Internet de index doorlopend vernieuwt om nieuwe bestanden of pagina's te bevatten.
 
-1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **afbeeldings lijsten**en selecteer vervolgens **zoek index vernieuwen**.
+1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **afbeeldings lijsten** en selecteer vervolgens **zoek index vernieuwen**.
 
    De **lijst met installatie kopieën-zoek index pagina vernieuwen** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
  
     ![Lijst met installatie kopieën-pagina regio selectie voor zoek index vernieuwen](images/test-drive-region.png)
 
@@ -63,7 +63,7 @@ Nadat u wijzigingen in een lijst met installatie kopieën hebt aangebracht, moet
 
    De **lijst met installatie kopieën-pagina maken** wordt geopend. 
 
-3. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft.
+3. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft.
 
    ![Lijst met installatie kopieën-pagina regio selectie maken](images/test-drive-region.png)
 
@@ -95,11 +95,11 @@ Nadat u wijzigingen in een lijst met installatie kopieën hebt aangebracht, moet
 
    ![Lijst met installatie kopieën-inhouds vakje voor het maken van een console-antwoord](images/try-terms-list-create-2.png)
  
-8. Voeg vervolgens installatie kopieën toe aan MyList. Selecteer in het menu links de optie **afbeelding**en selecteer vervolgens **afbeelding toevoegen**.
+8. Voeg vervolgens installatie kopieën toe aan MyList. Selecteer in het menu links de optie **afbeelding** en selecteer vervolgens **afbeelding toevoegen**.
 
    De pagina installatie kopie **toevoegen** wordt geopend. 
 
-9. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft.
+9. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft.
 
    ![Afbeelding: selectie van pagina regio voor installatie kopie toevoegen](images/test-drive-region.png)
 
@@ -107,7 +107,7 @@ Nadat u wijzigingen in een lijst met installatie kopieën hebt aangebracht, moet
  
 10. Voer in het vak **listId** de lijst-ID in die u hebt gegenereerd en voer de URL in van de afbeelding die u wilt toevoegen. Voer uw abonnements sleutel in en selecteer vervolgens **verzenden**.
 
-11. Als u wilt controleren of de afbeelding is toegevoegd aan de lijst, selecteert u in het menu links de optie **afbeelding**en selecteert u vervolgens **alle afbeeldings-id's ophalen**.
+11. Als u wilt controleren of de afbeelding is toegevoegd aan de lijst, selecteert u in het menu links de optie **afbeelding** en selecteert u vervolgens **alle afbeeldings-id's ophalen**.
 
     De **afbeelding: alle afbeeldings-Id's ophalen API-** console wordt geopend.
   
@@ -127,11 +127,11 @@ Het is eenvoudig om een afbeelding of lijst te verwijderen. U kunt de API gebrui
 
 In dit voor beeld wordt één installatie kopie verwijderd:
 
-1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **Afbeelding**en selecteer vervolgens **verwijderen**. 
+1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **Afbeelding** en selecteer vervolgens **verwijderen**. 
 
    De pagina **afbeelding verwijderen** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Afbeelding: selectie van pagina regio verwijderen](images/test-drive-region.png)
  
@@ -149,11 +149,11 @@ In ons voor beeld is de lijst-ID **58953**, de waarde voor **ContentSource**. De
 
 U kunt de naam en beschrijving van een lijst bewerken en meta gegevens items toevoegen.
 
-1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **afbeeldings lijsten**en selecteer vervolgens **Details bijwerken**. 
+1. Selecteer in de [installatie kopie lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f672)in het menu links de optie **afbeeldings lijsten** en selecteer vervolgens **Details bijwerken**. 
 
    De **lijst met installatie kopieën-pagina Details bijwerken** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft.  
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft.  
 
     ![Lijst met installatie kopieën-pagina regio voor update Details](images/test-drive-region.png)
 

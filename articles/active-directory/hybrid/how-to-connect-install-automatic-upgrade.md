@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c8dcc8766b21551f3cd62289805fe735ef0f333
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91317613"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: automatische upgrade
@@ -37,13 +37,13 @@ Automatische upgrade is standaard ingeschakeld voor het volgende:
 
 De huidige status van automatische upgrade kan worden weer gegeven met de Power shell-cmdlet `Get-ADSyncAutoUpgrade` . Het heeft de volgende statussen:
 
-| Status | Opmerking |
+| Staat | Opmerking |
 | --- | --- |
 | Ingeschakeld |Automatische upgrade is ingeschakeld. |
 | Onderbroken |Alleen ingesteld door het systeem. Het systeem komt **momenteel niet** in aanmerking voor automatische upgrades. |
 | Uitgeschakeld |Automatische upgrade is uitgeschakeld. |
 
-U kunt scha kelen tussen **ingeschakeld** en **uitgeschakeld** met `Set-ADSyncAutoUpgrade` . Alleen het systeem moet de status **opgeschort**instellen.  Voordat de Set-ADSyncAutoUpgrade cmdlet wordt ge1.1.750.0d, wordt de functie voor automatisch upgraden geblokkeerd als de status van de automatische upgrade is ingesteld op opgeschort. Deze functionaliteit is nu gewijzigd, zodat de functie voor het bijwerken van de naam niet wordt geblokkeerd.
+U kunt scha kelen tussen **ingeschakeld** en **uitgeschakeld** met `Set-ADSyncAutoUpgrade` . Alleen het systeem moet de status **opgeschort** instellen.  Voordat de Set-ADSyncAutoUpgrade cmdlet wordt ge1.1.750.0d, wordt de functie voor automatisch upgraden geblokkeerd als de status van de automatische upgrade is ingesteld op opgeschort. Deze functionaliteit is nu gewijzigd, zodat de functie voor het bijwerken van de naam niet wordt geblokkeerd.
 
 Automatische upgrade maakt gebruik van Azure AD Connect Health voor de upgrade-infra structuur. Zorg ervoor dat u de Url's in uw proxy server voor **Azure AD Connect Health** hebt geopend, zoals beschreven in [Office 365-url's en IP-](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)adresbereiken voor een automatische upgrade.
 

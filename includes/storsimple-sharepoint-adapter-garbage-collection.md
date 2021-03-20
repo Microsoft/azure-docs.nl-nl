@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 9c734ff03b1cf277c7e0967d8b76b1941434f414
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86050497"
 ---
 In deze procedure gaat u als volgt te werk:
@@ -20,7 +20,7 @@ In deze procedure gaat u als volgt te werk:
 
 #### <a name="to-prepare-to-run-the-maintainer"></a>Voorbereiden om de onderhouds programma uit te voeren
 1. Open de share point 2013-beheer shell op de front-endwebserver van de web-server als beheerder.
-2. Ga naar het *opstart station*van de map: \Program Files\Microsoft SQL Remote Blob Storage 10,50 \ maintainer\.
+2. Ga naar het *opstart station* van de map: \Program Files\Microsoft SQL Remote Blob Storage 10,50 \ maintainer\.
 3. Wijzig de naam van **Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config** in **web.config**.
 4. Gebruiken `aspnet_regiis -pdf connectionStrings` om het web.config-bestand te ontsleutelen.
 5. Voeg in het gedecodeerde web.config-bestand onder het `connectionStrings` knoop punt de Connection String voor uw SQL Server-exemplaar en de naam van de inhouds database toe. Zie het volgende voorbeeld
@@ -62,5 +62,5 @@ In deze procedure gaat u als volgt te werk:
       `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’days 30’`
    
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
-2. Bewerk op de front-end-webserver in **Centraal beheer**de **algemene instellingen voor de webtoepassing** voor de gewenste inhouds database om de Prullenbak weer in te scha kelen. Hiertoe klikt u op **Centraal beheer**  ->  **toepassings beheer**  ->  **webtoepassingen (webtoepassingen beheren)**  ->  **share point-80**  ->  **algemene toepassings instellingen**. Stel de status van de Prullenbak **in op aan**.
+2. Bewerk op de front-end-webserver in **Centraal beheer** de **algemene instellingen voor de webtoepassing** voor de gewenste inhouds database om de Prullenbak weer in te scha kelen. Hiertoe klikt u op **Centraal beheer**  ->  **toepassings beheer**  ->  **webtoepassingen (webtoepassingen beheren)**  ->  **share point-80**  ->  **algemene toepassings instellingen**. Stel de status van de Prullenbak **in op aan**.
 

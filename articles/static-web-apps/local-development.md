@@ -9,10 +9,10 @@ ms.date: 05/08/2020
 ms.author: buhollan
 ms.custom: devx-track-js
 ms.openlocfilehash: 4d6dae8a4f4ed83af3103e95e711bacdb62cf522
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91326164"
 ---
 # <a name="set-up-local-development-for-azure-static-web-apps-preview"></a>Lokale ontwikkeling voor Azure static Web Apps-Preview instellen
@@ -75,7 +75,7 @@ De live server-extensie voor Visual Studio code biedt een lokale ontwikkel webse
 
 1. Typ **Clone** in het zoekvak en selecteer **git: Clone**.
 
-    :::image type="content" source="media/local-development/command-palette-git-clone.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/command-palette-git-clone.png" alt-text="Git-kloon optie in Visual Studio code":::
 
 1. Voer de volgende waarde in voor de URL van de **opslag plaats**.
 
@@ -85,9 +85,9 @@ De live server-extensie voor Visual Studio code biedt een lokale ontwikkel webse
 
 1. Selecteer een maplocatie voor het nieuwe project.
 
-1. Wanneer u wordt gevraagd om de gekloonde opslag plaats te openen, selecteert u **openen**.
+1. Wanneer u wordt gevraagd de gekloonde opslagplaats te openen, selecteert u **Openen**.
 
-    :::image type="content" source="media/local-development/open-new-window.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/open-new-window.png" alt-text="In nieuw venster openen":::
 
 Visual Studio code opent het gekloonde project in de editor.
 
@@ -99,7 +99,7 @@ Visual Studio code opent het gekloonde project in de editor.
 
     Er wordt een browser tabblad geopend om de toepassing weer te geven.
 
-    :::image type="content" source="media/local-development/vanilla-api-site.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/vanilla-api-site.png" alt-text="Eenvoudige statische site die in de browser wordt uitgevoerd":::
 
     Met deze toepassing wordt een HTTP-aanvraag voor het `api/message` eind punt. De aanvraag is nu mislukt omdat het API-gedeelte van deze toepassing moet worden gestart.
 
@@ -113,13 +113,13 @@ Als onderdeel van het proces voor het maken van de API wordt een start configura
 
 1. Er wordt een nieuw terminal exemplaar geopend waarin de uitvoer van het API-buildproces wordt weer gegeven.
 
-    :::image type="content" source="media/local-development/terminal-api-debug.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/terminal-api-debug.png" alt-text="API die wordt uitgevoerd in Visual Studio code Terminal":::
 
    De status balk in Visual Studio code is nu oranje. Deze kleur geeft aan dat de API nu wordt uitgevoerd en dat het fout opsporingsprogramma is gekoppeld.
 
 1. Druk vervolgens op **Ctrl/Cmd** en klik op de URL in de terminal om een browser venster te openen dat de API aanroept.
 
-    :::image type="content" source="media/local-development/hello-from-api-endpoint.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/hello-from-api-endpoint.png" alt-text="Browser weergave resultaat van API-aanroep":::
 
 ### <a name="debugging-the-api"></a>Fout opsporing van de API
 
@@ -127,19 +127,19 @@ Als onderdeel van het proces voor het maken van de API wordt een start configura
 
 1. Klik in de linkermarge op regel 2 om een onderbrekings punt in te stellen. Er wordt een rode stip weer gegeven die aangeeft dat het onderbrekings punt is ingesteld.
 
-    :::image type="content" source="media/local-development/breakpoint-set.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/breakpoint-set.png" alt-text="Onderbrekings punt in Visual Studio code":::
 
 1. Vernieuw de pagina die wordt uitgevoerd in de browser <http://127.0.0.1:7071/api/message> .
 
 1. Het onderbrekings punt wordt in Visual Studio code en de uitvoering van Program ma's gepauzeerd.
 
-   :::image type="content" source="media/local-development/breakpoint-hit.png" alt-text="GitHub nieuw opslag plaats-venster":::
+   :::image type="content" source="media/local-development/breakpoint-hit.png" alt-text="Onderbrekings punt in Visual Studio code":::
 
    [In Visual Studio code](https://code.visualstudio.com/Docs/editor/debugging) voor uw API is een complete ervaring voor het opsporen van fouten beschikbaar.
 
 1. Druk op de knop **door gaan** in de fout balk om de uitvoering voort te zetten.
 
-    :::image type="content" source="media/local-development/continue-button.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/continue-button.png" alt-text="Knop door gaan in Visual Studio code":::
 
 ### <a name="calling-the-api-from-the-application"></a>De API aanroepen vanuit de toepassing
 
@@ -192,7 +192,7 @@ Zie de volgende artikelen voor meer informatie over het configureren van omgevin
 
 1. Typ **Live server** en selecteer **Live server: stop Live server**.
 
-    :::image type="content" source="media/local-development/stop-live-server.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/stop-live-server.png" alt-text="De live server-opdracht stoppen in het Visual Studio-opdracht palet":::
 
 1. Druk op **F1** om het opdrachtenpalet te openen.
 
@@ -200,7 +200,7 @@ Zie de volgende artikelen voor meer informatie over het configureren van omgevin
 
 1. Vernieuw de toepassing die wordt uitgevoerd op `http://locahost:3000` . Het bericht dat wordt geretourneerd door de API wordt nu weer gegeven in de browser.
 
-    :::image type="content" source="media/local-development/hello-from-api.png" alt-text="GitHub nieuw opslag plaats-venster":::
+    :::image type="content" source="media/local-development/hello-from-api.png" alt-text="Hello van de API die in de browser wordt weer gegeven":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

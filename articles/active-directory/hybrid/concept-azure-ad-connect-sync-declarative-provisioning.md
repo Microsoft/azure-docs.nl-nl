@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 59dc94e37dfa1ef8b0b079bf5d78d0504e0cb8c7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91313617"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning"></a>Azure AD Connect Sync: uitleg over declaratieve inrichting
@@ -92,7 +92,7 @@ Een omgekeerd object blijft zolang er één synchronisatie regel is in het berei
 Wanneer een omgekeerd object wordt verwijderd, worden alle objecten die zijn gekoppeld aan een uitgaande synchronisatie regel gemarkeerd voor **inrichten** , gemarkeerd voor verwijdering.
 
 ## <a name="transformations"></a>Transformaties
-De trans formaties worden gebruikt om te definiëren hoe kenmerken van de bron naar het doel moeten stromen. De stromen kunnen een van de volgende **stroom typen**hebben: direct, constant of expressie. Een directe stroom, geeft een kenmerk waarde als-is zonder aanvullende trans formaties. Een constante waarde stelt de opgegeven waarde in. Een expressie maakt gebruik van de declaratieve inrichtings expressie taal om te zien hoe de trans formatie moet zijn. De Details voor de expressie taal vindt u in het onderwerp [uitleg over declaratieve inrichtings expressie](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md) .
+De trans formaties worden gebruikt om te definiëren hoe kenmerken van de bron naar het doel moeten stromen. De stromen kunnen een van de volgende **stroom typen** hebben: direct, constant of expressie. Een directe stroom, geeft een kenmerk waarde als-is zonder aanvullende trans formaties. Een constante waarde stelt de opgegeven waarde in. Een expressie maakt gebruik van de declaratieve inrichtings expressie taal om te zien hoe de trans formatie moet zijn. De Details voor de expressie taal vindt u in het onderwerp [uitleg over declaratieve inrichtings expressie](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md) .
 
 ![Inrichten of lid worden](./media/concept-azure-ad-connect-sync-declarative-provisioning/transformations1.png)  
 
@@ -105,7 +105,7 @@ In de kenmerk stromen is er een instelling om te bepalen of kenmerken met meerde
 
 Er is ook **samen voegen** en **MergeCaseInsensitive**. Met deze opties kunt u waarden uit verschillende bronnen samen voegen. Het kan bijvoorbeeld worden gebruikt om het kenmerk lid of proxyAddresses uit verschillende forests samen te voegen. Wanneer u deze optie gebruikt, moeten alle synchronisatie regels in het bereik voor een object hetzelfde type samen voegen gebruiken. U kunt de **Update** niet definiëren vanuit de ene connector en **samen voegen** van een andere. Als u probeert, treedt er een fout op.
 
-Het verschil tussen **Merge** en **MergeCaseInsensitive** is het verwerken van dubbele kenmerk waarden. De synchronisatie-engine zorgt ervoor dat er geen dubbele waarden worden ingevoegd in het doel kenmerk. Met **MergeCaseInsensitive**zijn dubbele waarden met alleen een verschil in het geval niet aanwezig. U zou bijvoorbeeld niet zowel " SMTP:bob@contoso.com " als " smtp:bob@contoso.com in het doel kenmerk moeten zien. **Samen voegen** heeft alleen betrekking op de exacte waarden en meerdere waarden, waarbij er alleen een verschil is in het geval kan aanwezig zijn.
+Het verschil tussen **Merge** en **MergeCaseInsensitive** is het verwerken van dubbele kenmerk waarden. De synchronisatie-engine zorgt ervoor dat er geen dubbele waarden worden ingevoegd in het doel kenmerk. Met **MergeCaseInsensitive** zijn dubbele waarden met alleen een verschil in het geval niet aanwezig. U zou bijvoorbeeld niet zowel " SMTP:bob@contoso.com " als " smtp:bob@contoso.com in het doel kenmerk moeten zien. **Samen voegen** heeft alleen betrekking op de exacte waarden en meerdere waarden, waarbij er alleen een verschil is in het geval kan aanwezig zijn.
 
 De optie **vervangen** is hetzelfde als **Update**, maar wordt niet gebruikt.
 
@@ -118,7 +118,7 @@ Voor inkomende synchronisatie regels kan de letterlijke waarde **Null** worden g
 
 De letterlijke **AuthoritativeNull** is vergelijkbaar met **Null** , maar met het verschil dat er geen lagere prioriteits regels kunnen bijdragen aan een waarde.
 
-Een kenmerk stroom kan ook **IgnoreThisFlow**gebruiken. Het is vergelijkbaar met NULL in de zin dat het aangeeft dat er niets kan bijdragen. Het verschil is dat er geen bestaande waarde in het doel wordt verwijderd. Het lijkt erop dat de kenmerk stroom nog nooit is geweest.
+Een kenmerk stroom kan ook **IgnoreThisFlow** gebruiken. Het is vergelijkbaar met NULL in de zin dat het aangeeft dat er niets kan bijdragen. Het verschil is dat er geen bestaande waarde in het doel wordt verwijderd. Het lijkt erop dat de kenmerk stroom nog nooit is geweest.
 
 Hier volgt een voorbeeld:
 
@@ -159,7 +159,7 @@ Voor dit scenario moet u het bereik van de synchronisatie regels wijzigen zodat 
 
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)
 
 **Onderwerpen met naslaginformatie**

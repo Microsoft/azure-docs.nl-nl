@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u naar bron eigenschappen zoekt.
 ms.topic: conceptual
 ms.date: 06/10/2020
 ms.openlocfilehash: c8bbe0dcb1bc9dc9751a1dc0d0b98a6368473546
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91327745"
 ---
 # <a name="discover-resource-properties"></a>Eigenschappen van de bron ontdekken
@@ -41,7 +41,7 @@ De uitbrei ding biedt ook een lijst met opties voor de configuratie-eigenschappe
 De verwijzing naar de Azure Resource Manager-sjabloon is de meest uitgebreide bron voor sjabloon schema. U kunt API-versies, sjabloon indeling en eigenschaps informatie vinden.
 
 1. Blader naar [Azure Resource Manager sjabloon verwijzing](/azure/templates/).
-1. Selecteer in de linkernavigatiebalk **opslag**en selecteer vervolgens **alle resources**. Op de pagina alle resources vindt u een overzicht van de resource typen en de versies.
+1. Selecteer in de linkernavigatiebalk **opslag** en selecteer vervolgens **alle resources**. Op de pagina alle resources vindt u een overzicht van de resource typen en de versies.
 
     ![Bron versies van de sjabloon verwijzing](./media/view-resources/resource-manager-template-reference-resource-versions.png)
 
@@ -72,16 +72,16 @@ Resource Explorer is inge sloten in de Azure Portal. Voordat u deze methode gebr
 [![Implementeren in Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-storage-account-create%2fazuredeploy.json)
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Voer in het zoekvak **resource Explorer**in en selecteer vervolgens **resource Explorer**.
+1. Voer in het zoekvak **resource Explorer** in en selecteer vervolgens **resource Explorer**.
 
     ![Scherm afbeelding toont het zoeken naar resource Explorer in de Azure Portal.](./media/view-resources/azure-portal-resource-explorer.png)
 
-1. Vouw aan de linkerkant **abonnementen**uit en vouw vervolgens uw Azure-abonnement uit. U kunt het opslag account vinden onder **providers** of **ResourceGroups**.
+1. Vouw aan de linkerkant **abonnementen** uit en vouw vervolgens uw Azure-abonnement uit. U kunt het opslag account vinden onder **providers** of **ResourceGroups**.
 
     ![Azure Portal resource Verkenner](./media/view-resources/azure-portal-resource-explorer-home.png)
 
-    - **Providers**: Vouw **providers**  ->  **micro soft. Storage**  ->  **Storage accounts**uit en selecteer vervolgens uw opslag account.
-    - **ResourceGroups**: Selecteer de resource groep die het opslag account bevat, selecteer **resources**en selecteer vervolgens het opslag account.
+    - **Providers**: Vouw **providers**  ->  **micro soft. Storage**  ->  **Storage accounts** uit en selecteer vervolgens uw opslag account.
+    - **ResourceGroups**: Selecteer de resource groep die het opslag account bevat, selecteer **resources** en selecteer vervolgens het opslag account.
 
     Aan de rechter kant ziet u de SKU-configuratie voor het bestaande opslag account, vergelijkbaar met:
 
@@ -105,9 +105,9 @@ U hebt een opslag account nodig om te laten zien hoe u schema-informatie kunt op
     ![resource.azure.com API-toewijzing](./media/view-resources/resources-azure-com-api-mapping.png)
 
     Het knoop punt aan de linkerkant komt overeen met de API-aanroep aan de rechter kant. U kunt de API-aanroep maken door de knop **ophalen** te selecteren.
-1. Vouw aan de linkerkant **abonnementen**uit en vouw vervolgens uw Azure-abonnement uit. U kunt het opslag account vinden onder **providers** of **ResourceGroups**.
+1. Vouw aan de linkerkant **abonnementen** uit en vouw vervolgens uw Azure-abonnement uit. U kunt het opslag account vinden onder **providers** of **ResourceGroups**.
 
-    - **Providers**: Vouw **providers**  ->  **micro soft. Storage**  ->  **Storage accounts**uit en blader vervolgens naar het opslag account.
+    - **Providers**: Vouw **providers**  ->  **micro soft. Storage**  ->  **Storage accounts** uit en blader vervolgens naar het opslag account.
     - **ResourceGroups**: Selecteer de resource groep die het opslag account bevat en selecteer vervolgens **resources**.
 
     Aan de rechter kant ziet u de SKU-configuratie voor het bestaande opslag account, vergelijkbaar met:

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jingwang
 ms.openlocfilehash: 974682aa9e9bebd6e2d17237decd8389174ff28d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100383667"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Gegevens kopiëren van concur met behulp van Azure Data Factory (preview-versie)
@@ -46,19 +46,19 @@ De volgende eigenschappen worden ondersteund voor concur gekoppelde service:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op: **concur** | Yes |
-| connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met concur. | Yes |
+| type | De eigenschap type moet worden ingesteld op: **concur** | Ja |
+| connectionProperties | Een groep eigenschappen die definieert hoe verbinding moet worden gemaakt met concur. | Ja |
 | ***Onder `connectionProperties` :*** | | |
-| authenticationType | Toegestane waarden zijn `OAuth_2.0_Bearer` en `OAuth_2.0` (verouderd). De OAuth 2,0-verificatie optie werkt met de oude concur-API die sinds februari 2017 is afgeschaft. | Yes |
-| host | Het eind punt van de concur-server, bijvoorbeeld `implementation.concursolutions.com` .  | Yes |
+| authenticationType | Toegestane waarden zijn `OAuth_2.0_Bearer` en `OAuth_2.0` (verouderd). De OAuth 2,0-verificatie optie werkt met de oude concur-API die sinds februari 2017 is afgeschaft. | Ja |
+| host | Het eind punt van de concur-server, bijvoorbeeld `implementation.concursolutions.com` .  | Ja |
 | baseUrl | De basis-URL van de autorisatie-URL van uw concur. | Ja voor `OAuth_2.0_Bearer` verificatie |
-| clientId | De client-ID van de toepassing die is geleverd door concur-app-beheer.  | Yes |
+| clientId | De client-ID van de toepassing die is geleverd door concur-app-beheer.  | Ja |
 | clientSecret | Het client geheim dat overeenkomt met de client-ID. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja voor `OAuth_2.0_Bearer` verificatie |
-| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de concur-service. | Yes |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | No |
-| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | No |
-| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | No |
+| gebruikersnaam | De gebruikers naam die u gebruikt voor toegang tot de concur-service. | Ja |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam die u hebt opgegeven in het veld gebruikers naam. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
+| useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
+| usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
 
 **Voorbeeld:**
 
@@ -120,7 +120,7 @@ Als u gegevens van concur wilt kopiëren, stelt u de eigenschap type van de gege
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ConcurObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ConcurObject** | Ja |
 | tableName | De naam van de tabel. | Nee (als "query" in activiteit bron is opgegeven) |
 
 
@@ -151,7 +151,7 @@ Als u gegevens wilt kopiëren uit concur, stelt u het bron type in de Kopieer ac
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ConcurSource** | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op: **ConcurSource** | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Bijvoorbeeld: `"SELECT * FROM Opportunities where Id = xxx "`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

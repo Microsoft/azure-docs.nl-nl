@@ -8,10 +8,10 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/19/2020
 ms.openlocfilehash: 281553782774c31ec8cfaf614542fd739c4d3dd9
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94629526"
 ---
 # <a name="how-to-configure-virtual-machine-offer-properties"></a>Eigenschappen van de aanbieding van virtuele machines configureren
@@ -61,7 +61,7 @@ Voer in de voor **waarden voor universele wijzigingen in het standaard contract 
 
 ##### <a name="add-one-or-more-custom-amendments"></a>Een of meer aangepaste wijzigingen toevoegen
 
-1. Onder aanpassingen **aan het standaard contract voor de commerciële Marketplace van micro soft** , selecteert u de koppeling **aangepaste wijzigings termijn toevoegen (max. 10)** .
+1. Onder aanpassingen **aan het standaard contract voor de commerciële Marketplace van micro soft**, selecteert u de koppeling **aangepaste wijzigings termijn toevoegen (max. 10)** .
 2. Voer uw **aangepaste wijzigings voorwaarden** in het vak in.
 3. Voer de **Tenant-id** in het vak in. Alleen klanten die zijn gekoppeld aan de Tenant-Id's die u voor deze aangepaste voor waarden opgeeft, worden weer gegeven in de inkoop stroom van de aanbieding in de Azure Portal.
 

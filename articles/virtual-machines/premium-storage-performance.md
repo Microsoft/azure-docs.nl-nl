@@ -8,10 +8,10 @@ ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 7e93c659ad58db8d82e68380ab6a0855af27e1bf
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98882379"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Azure Premium-opslag: ontwerpen voor hoge prestaties
@@ -155,7 +155,7 @@ Zie [grootten voor virtuele machines in azure](sizes.md)voor meer informatie ove
 | **Schijf grootte** |Gebruik een schijf grootte met IOPS die groter is dan de vereiste van uw toepassing. |Gebruik een schijf grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een schijf grootte die hoger is dan de vereiste voor uw toepassing. |
 | **Schaal limieten voor VM'S en schijven** |De limiet voor IOPS van de gekozen VM-grootte moet groter zijn dan het totale aantal IOPS dat wordt aangestuurd door de opslag schijven die eraan zijn gekoppeld. |De doorvoer limiet van de gekozen VM-grootte moet groter zijn dan de totale door Voer die wordt aangestuurd door de Premium-opslag schijven die eraan zijn gekoppeld. |De schaal limieten van de gekozen VM-grootte moeten groter zijn dan de totale schaal limieten van gekoppelde Premium Storage-schijven. |
 | **Schijf cache** |Schakel alleen-lezen cache op Premium-opslag schijven in met zware bewerkingen om meer Lees-IOPS te krijgen. | &nbsp; |Schakel alleen-lezen cache op Premium-opslag schijven met kant-en-klare bewerkingen uit om zeer weinig lees latentie te verkrijgen. |
-| **Schijf striping** |Gebruik meerdere schijven en strip deze samen om een gecombineerde hogere IOPS en doorvoer limiet te verkrijgen. De gecombineerde limiet per VM moet hoger zijn dan de gecombineerde limieten van gekoppelde Premium-schijven. | &nbsp; | &nbsp; |
+| **Schijf-striping** |Gebruik meerdere schijven en strip deze samen om een gecombineerde hogere IOPS en doorvoer limiet te verkrijgen. De gecombineerde limiet per VM moet hoger zijn dan de gecombineerde limieten van gekoppelde Premium-schijven. | &nbsp; | &nbsp; |
 | **Streepgrootte** |Kleinere Stripe-grootte voor wille keurig klein i/o-patroon dat wordt weer gegeven in OLTP-toepassingen. Gebruik bijvoorbeeld Stripe-grootte van 64 KB voor SQL Server OLTP-toepassing. |Grotere Stripe-grootte voor het sequentiële grote i/o-patroon dat wordt weer gegeven in Data Warehouse-toepassingen. Gebruik bijvoorbeeld 256 KB-Stripe-grootte voor SQL Server Data Warehouse-toepassing. | &nbsp; |
 | **Multithreading** |Gebruik multi-threading om een hoger aantal aanvragen te pushen naar Premium Storage dat leidt tot hogere IOPS en door voer. U kunt bijvoorbeeld op SQL Server een hoge MAXDOP-waarde instellen om meer Cpu's toe te wijzen aan SQL Server. | &nbsp; | &nbsp; |
 | **Wachtrij diepte** |Grotere wachtrij diepte levert hogere IOPS op. |Grotere wachtrij diepte levert een hogere door voer. |Een kleinere wachtrij diepte levert lagere latenties. |

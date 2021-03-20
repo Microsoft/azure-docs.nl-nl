@@ -17,10 +17,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0cfbb0be22dee4550050d6af10314f3a3bb1f583
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87505989"
 ---
 # <a name="extend-or-renew-privileged-access-group-assignments-preview-in-privileged-identity-management"></a>Uitgebreide toegangs groeps toewijzingen uitbreiden of vernieuwen (preview) in Privileged Identity Management
@@ -72,7 +72,7 @@ Naast het gebruik van de koppeling van e-mail kunnen beheerders aanvragen goed k
 
 ![Privileged Access Group Assignments-aanvragen goed keuren pagina lijst aanvragen en koppelingen om goed te keuren of te weigeren](media/groups-renew-extend/group-assignment-extend-admin-approve.png)
 
-Wanneer een beheerder **goed keuren** of **weigeren**selecteert, worden de details van de aanvraag weer gegeven, samen met een veld om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
+Wanneer een beheerder **goed keuren** of **weigeren** selecteert, worden de details van de aanvraag weer gegeven, samen met een veld om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
 
 ![Aanvraag voor groeps toewijzing goed keuren met de reden van de aanvrager, toewijzings type, begin tijd, eind tijd en reden](media/groups-renew-extend/group-assignment-extend-admin-approve-reason.png)
 
@@ -96,7 +96,7 @@ Gebruikers die geen toegang meer hebben tot resources, hebben Maxi maal 30 dagen
 
 ![Pagina mijn rollen-tabblad verlopen toewijzingen](media/groups-renew-extend/groups-renew-from-my-roles.png)
 
-De lijst met toewijzingen die standaard in **aanmerking komende toewijzingen**worden weer gegeven. Gebruik de vervolg keuzelijst om te scha kelen tussen de in aanmerking komende en actieve toewijzingen.
+De lijst met toewijzingen die standaard in **aanmerking komende toewijzingen** worden weer gegeven. Gebruik de vervolg keuzelijst om te scha kelen tussen de in aanmerking komende en actieve toewijzingen.
 
 Als u verlenging wilt aanvragen voor een van de groeps toewijzingen in de lijst, selecteert u de actie **vernieuwen** . Geef vervolgens een reden op voor de aanvraag. Het is handig om een duur te bieden naast eventuele aanvullende context of een zakelijke rechtvaardiging die de resource beheerder kan helpen om goed te keuren of te weigeren.
 
@@ -108,7 +108,7 @@ Nadat de aanvraag is verzonden, worden resource beheerders op de hoogte gesteld 
 
 Resource beheerders hebben toegang tot de vernieuwings aanvraag via de koppeling in de e-mail melding of door Privileged Identity Management te openen via de Azure Portal en **aanvragen goed keuren** te selecteren in het linkerdeel venster.
 
-Wanneer een beheerder **goed keuren** of **weigeren**selecteert, worden de details van de aanvraag samen met een veld weer gegeven om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
+Wanneer een beheerder **goed keuren** of **weigeren** selecteert, worden de details van de aanvraag samen met een veld weer gegeven om een zakelijke rechtvaardiging voor de audit logboeken te bieden.
 
 Bij het goed keuren van een aanvraag voor het vernieuwen van een groeps toewijzing, moeten resource beheerders een nieuwe begin datum, eind datum en toewijzings type opgeven.
 

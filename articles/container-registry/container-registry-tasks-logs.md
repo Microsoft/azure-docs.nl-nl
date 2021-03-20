@@ -4,10 +4,10 @@ description: Uitvoerings logboeken weer geven en beheren die door ACR-taken word
 ms.topic: article
 ms.date: 03/09/2020
 ms.openlocfilehash: b2a10d4a3a2746acf38445673af994c6317c77de
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93027173"
 ---
 # <a name="view-and-manage-task-run-logs"></a>Taak uitvoer logboeken weer geven en beheren
@@ -65,14 +65,14 @@ Als een taak automatisch wordt geactiveerd, bijvoorbeeld door het bijwerken van 
 Uitvoerings logboeken weer geven in de portal:
 
 1. Navigeer naar het container register.
-1. In **Services** selecteert u **taken** worden  >  **uitgevoerd** .
+1. In **Services** selecteert u **taken** worden  >  **uitgevoerd**.
 1. Selecteer een **Run-id** om de uitvoerings status te bekijken en Logboeken uit te voeren. Het logboek bevat dezelfde informatie als een gestreamd logboek als er een wordt gegenereerd.
 
 ![Aanmeldings portal voor taak uitvoering weer geven](./media/container-registry-tasks-logs/portal-task-run-logs.png)
 
 Als u een logboek wilt weer geven met behulp van de Azure CLI, voert u [AZ ACR-taak logboeken](/cli/azure/acr/task#az-acr-task-logs) uit en geeft u een run-id, een taak naam of een specifieke installatie kopie op die wordt gemaakt door een build-taak. Als er een taak naam wordt opgegeven, wordt in de opdracht het logboek voor de laatst gemaakte uitvoering weer gegeven.
 
-In het volgende voor beeld wordt het logboek uitgevoerd voor de run with ID *cf4* :
+In het volgende voor beeld wordt het logboek uitgevoerd voor de run with ID *cf4*:
 
 ```azurecli
 az acr task logs --registry mycontainerregistry1220 \

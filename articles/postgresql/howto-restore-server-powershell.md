@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 06/08/2020
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 63fffb5998b0b6a245db3f1c8fcf16f2d576936e
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92489758"
 ---
 # <a name="how-to-back-up-and-restore-an-azure-database-for-postgresql-server-using-powershell"></a>Een back-up van Azure Database for PostgreSQL-server maken en deze terugzetten met behulp van PowerShell
@@ -78,7 +78,7 @@ De para meters set **PointInTimeRestore** van de `Restore-AzPostgreSqlServer` cm
 | Instelling | Voorgestelde waarde | Beschrijving  |
 | --- | --- | --- |
 | ResourceGroupName |  myResourceGroup |  De resource groep waar de bron server zich bevindt.  |
-| Naam | mydemoserver-restored | De naam van de nieuwe server die door de opdracht restore is gemaakt. |
+| Name | mydemoserver-restored | De naam van de nieuwe server die door de opdracht restore is gemaakt. |
 | RestorePointInTime | 2020-03-13T13:59:00Z | Selecteer een punt in de tijd om te herstellen. Deze datum en tijd moet binnen de back-upretentieperiode van de bronserver vallen. Gebruik de ISO8601 datum-en tijd notatie. U kunt bijvoorbeeld uw eigen lokale tijd zone gebruiken, zoals **2020-03-13T05:59:00-08:00**. U kunt ook de UTC Zulu-indeling gebruiken, bijvoorbeeld **2018-03-13T13:59:00Z**. |
 | UsePointInTimeRestore | `<SwitchParameter>` | Gebruik de punt-in-time-modus om te herstellen. |
 
@@ -120,7 +120,7 @@ Voor de para meters set **Restore** van de `Restore-AzPostgreSqlServer` cmdlet z
 | Instelling | Voorgestelde waarde | Beschrijving  |
 | --- | --- | --- |
 |ResourceGroupName | myResourceGroup | De naam van de resource groep waartoe de nieuwe server behoort.|
-|Naam | mydemoserver-geoterugzet bewerking | De naam van de nieuwe server. |
+|Name | mydemoserver-geoterugzet bewerking | De naam van de nieuwe server. |
 |Locatie | eastus | De locatie van de nieuwe server. |
 |UseGeoRestore | `<SwitchParameter>` | Gebruik de geo-modus om te herstellen. |
 

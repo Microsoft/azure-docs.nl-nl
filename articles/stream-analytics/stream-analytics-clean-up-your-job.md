@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 06/21/2019
 ms.custom: seodec18
 ms.openlocfilehash: 31812ac805bd3465b1b735842b45adb372286d66
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98016062"
 ---
 # <a name="stop-or-delete-your-azure-stream-analytics-job"></a>Uw Azure Stream Analytics-taak stoppen of verwijderen
@@ -25,7 +25,7 @@ Azure Stream Analytics-taken kunnen eenvoudig worden gestopt of verwijderd via d
 
 Wanneer u een taak stopt, wordt de inrichting van de resources ongedaan gemaakt en stopt het verwerken van gebeurtenissen. Kosten die betrekking hebben op deze taak worden ook gestopt. Al uw configuratie wordt echter opgeslagen en u kunt de taak later opnieuw starten 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
 2. Zoek uw actieve Stream Analytics-taak en selecteer deze.
 

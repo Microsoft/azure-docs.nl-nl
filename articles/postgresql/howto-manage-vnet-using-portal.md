@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: 377f8eba179253ca6187b10a22970d0eadcda2f6
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92489826"
 ---
 # <a name="create-and-manage-vnet-service-endpoints-and-vnet-rules-in-azure-database-for-postgresql---single-server-by-using-the-azure-portal"></a>VNet-service-eind punten en VNet-regels maken en beheren in Azure Database for PostgreSQL-één server met behulp van de Azure Portal
@@ -36,7 +36,7 @@ Virtual Network-Services (VNet)-eind punten en-regels breiden de privé-adres ru
 
 4. Voer een naam in voor de VNet-regel, selecteer de naam van het abonnement, het virtuele netwerk en het subnet en klik vervolgens op **inschakelen**. Hiermee worden de VNet-service-eind punten in het subnet automatisch ingeschakeld met behulp van het label **micro soft. SQL** -service.
 
-   :::image type="content" source="./media/howto-manage-vnet-using-portal/2-configure-vnet.png" alt-text="Azure Portal-Klik op verbindings beveiliging":::
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/2-configure-vnet.png" alt-text="Azure Portal-VNet configureren":::
 
     Het account moet beschikken over de benodigde machtigingen voor het maken van een virtueel netwerk en een service-eindpunt.
 
@@ -54,7 +54,7 @@ Virtual Network-Services (VNet)-eind punten en-regels breiden de privé-adres ru
 
 5. Als deze functie is ingeschakeld, klikt u op **OK** . u ziet dat de vnet-service-eind punten zijn ingeschakeld in combi natie met een VNet-regel.
 
-   :::image type="content" source="./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png" alt-text="Azure Portal-Klik op verbindings beveiliging":::
+   :::image type="content" source="./media/howto-manage-vnet-using-portal/3-vnet-service-endpoints-enabled-vnet-rule-created.png" alt-text="De VNet-service-eind punten zijn ingeschakeld en de VNet-regel is gemaakt":::
 
 ## <a name="next-steps"></a>Volgende stappen
 - Op dezelfde manier kunt u scripts [gebruiken om vnet-service-eind punten in te scha kelen en een VNet-regel voor Azure database for PostgreSQL te maken met behulp van Azure cli](howto-manage-vnet-using-cli.md).

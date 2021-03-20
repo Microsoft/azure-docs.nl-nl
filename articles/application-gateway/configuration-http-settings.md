@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
 ms.openlocfilehash: c0c939a6a8323dfdfafddb46ccdb7d7ef3dd2f2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89652880"
 ---
 # <a name="application-gateway-http-settings-configuration"></a>Configuratie van HTTP-instellingen Application Gateway
@@ -76,7 +76,7 @@ Met deze instelling kunt u een optioneel aangepast doorstuur traject configurere
 
 ## <a name="use-for-app-service"></a>Gebruiken voor app service
 
-Dit is een snelkoppeling naar een gebruikers interface die de twee vereiste instellingen voor de Azure App Service back-end selecteert. Hiermee kunt u de **hostnaam van het back-end-adres kiezen**en wordt er een nieuwe aangepaste test gemaakt als u er nog geen hebt. (Zie de sectie [hostnaam selecteren uit het back-end-adres in](#pick-host-name-from-back-end-address)dit artikel voor meer informatie.) Er wordt een nieuwe test gemaakt en de test header wordt opgehaald uit het adres van het back-end-lid.
+Dit is een snelkoppeling naar een gebruikers interface die de twee vereiste instellingen voor de Azure App Service back-end selecteert. Hiermee kunt u de **hostnaam van het back-end-adres kiezen** en wordt er een nieuwe aangepaste test gemaakt als u er nog geen hebt. (Zie de sectie [hostnaam selecteren uit het back-end-adres in](#pick-host-name-from-back-end-address)dit artikel voor meer informatie.) Er wordt een nieuwe test gemaakt en de test header wordt opgehaald uit het adres van het back-end-lid.
 
 ## <a name="use-custom-probe"></a>Aangepaste test gebruiken
 

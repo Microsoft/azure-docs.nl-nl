@@ -11,10 +11,10 @@ ms.reviewer: wielriac
 ms.subservice: blobs
 ms.custom: devx-track-csharp
 ms.openlocfilehash: aada418b4f74c38a2a35c793deb85b94b703fb89
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97629354"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Overzicht van Azure-pagina-blobs
@@ -55,13 +55,13 @@ In het volgende diagram worden de algemene relaties tussen accounts, containers 
 
 #### <a name="creating-an-empty-page-blob-of-a-specified-size"></a>Een lege pagina-Blob maken van een opgegeven grootte
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Eerst moet u een verwijzing naar een container ophalen. Als u een pagina-BLOB wilt maken, roept u de methode GetPageBlobClient aan en roept u de methode [PageBlobClient. Create](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.create) aan. Geef de maximale grootte door om de BLOB te maken. De grootte moet een meervoud van 512 bytes zijn.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_CreatePageBlob":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u een pagina-BLOB wilt maken, maakt u eerst een **CloudBlobClient** -object met de basis-URI voor toegang tot de Blob-opslag voor uw opslag account (*pbaccount* in afbeelding 1) samen met het object **StorageCredentialsAccountAndKey** , zoals wordt weer gegeven in het volgende voor beeld. In het voor beeld wordt vervolgens een verwijzing naar een **CloudBlobContainer** -object gemaakt en vervolgens de container (*testvhds*) gemaakt als deze nog niet bestaat. Maak vervolgens met behulp van het object **CloudBlobContainer** een verwijzing naar een **CloudPageBlob** -object door de naam van de pagina-BLOB (OS4. VHD) op te geven die u wilt openen. Als u de pagina-BLOB wilt maken, roept u [CloudPageBlob. Create](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create)aan en geeft u de maximale grootte voor de BLOB op die moet worden gemaakt. De *blobSize* moet een meervoud van 512 bytes zijn.
 
@@ -92,13 +92,13 @@ pageBlob.Create(16 * OneGigabyteAsBytes);
 
 #### <a name="resizing-a-page-blob"></a>Het formaat van een pagina-BLOB wijzigen
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Als u na het maken het formaat van een pagina-BLOB wilt wijzigen, gebruikt u de methode [formaat wijzigen](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.resize) . De aangevraagde grootte moet een meervoud van 512 bytes zijn.
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ResizePageBlob":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u na het maken het formaat van een pagina-BLOB wilt wijzigen, gebruikt u de methode [formaat wijzigen](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.resize) . De aangevraagde grootte moet een meervoud van 512 bytes zijn.
 
@@ -110,13 +110,13 @@ pageBlob.Resize(32 * OneGigabyteAsBytes);
 
 #### <a name="writing-pages-to-a-page-blob"></a>Pagina's naar een pagina-BLOB schrijven
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Als u pagina's wilt schrijven, gebruikt u de methode [PageBlobClient. UploadPages](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.uploadpages) .  
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_WriteToPageBlob":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u pagina's wilt schrijven, gebruikt u de methode [CloudPageBlob. WritePages](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.beginwritepages) .  
 
@@ -139,13 +139,13 @@ In het onderstaande diagram ziet u twee afzonderlijke schrijf bewerkingen:
 
 #### <a name="reading-pages-from-a-page-blob"></a>Pagina's lezen van een pagina-BLOB
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Als u pagina's wilt lezen, gebruikt u de methode [PageBlobClient. down load](/dotnet/api/azure.storage.blobs.specialized.blobbaseclient.download) om een bereik aan bytes te lezen van de pagina-blob. 
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ReadFromPageBlob":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als u pagina's wilt lezen, gebruikt u de methode [CloudPageBlob. DownloadRangeToByteArray](/dotnet/api/microsoft.azure.storage.blob.icloudblob.downloadrangetobytearray) om een bereik aan bytes te lezen van de pagina-blob. 
 
@@ -164,13 +164,13 @@ In de volgende afbeelding ziet u een lees bewerking met een offset van 256 en ee
 
 Als u een met sparse gevulde BLOB hebt, wilt u misschien alleen de geldige pagina regio's downloaden om te voor komen dat u betaalt voor egressing van nul bytes en om de latentie van de down load te verminderen.  
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 Gebruik [PageBlobClient. GetPageRanges](/dotnet/api/azure.storage.blobs.specialized.pageblobclient.getpageranges)om te bepalen voor welke pagina's een back-up van gegevens wordt gemaakt. U kunt vervolgens de geretourneerde bereiken opsommen en de gegevens in elk bereik downloaden. 
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/CRUD.cs" id="Snippet_ReadValidPageRegionsFromPageBlob":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Gebruik [CloudPageBlob. GetPageRanges](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.getpageranges)om te bepalen voor welke pagina's een back-up van gegevens wordt gemaakt. U kunt vervolgens de geretourneerde bereiken opsommen en de gegevens in elk bereik downloaden. 
 

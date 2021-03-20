@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: c035a7fbafe9b3a42fbd16e3f8377014010ddd49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88003544"
 ---
 # <a name="create-a-host-pool-in-windows-virtual-desktop-classic-with-powershell"></a>Een hostgroep in virtueel bureau blad van Windows (klassiek) maken met Power shell
@@ -82,7 +82,7 @@ Ga als volgt te werk op elke virtuele machine voor een geslaagde domein koppelin
 
 1. [Maak verbinding met de virtuele machine](../../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) met de referenties die u hebt ingevoerd tijdens het maken van de virtuele machine.
 2. Start **configuratie scherm** op de virtuele machine en selecteer **systeem**.
-3. Selecteer **computer naam**, selecteer **instellingen wijzigen**en selecteer vervolgens **wijzigen...**
+3. Selecteer **computer naam**, selecteer **instellingen wijzigen** en selecteer vervolgens **wijzigen...**
 4. Selecteer **domein** en voer vervolgens het Active Directory domein in op het virtuele netwerk.
 5. Verifieer met een domein account dat bevoegdheden heeft voor computers die lid zijn van een domein.
 
@@ -98,11 +98,11 @@ Ga als volgt te werk op elke virtuele machine om de virtuele bureau blad-agents 
 1. [Maak verbinding met de virtuele machine](../../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) met de referenties die u hebt ingevoerd tijdens het maken van de virtuele machine.
 2. Down load en installeer de virtuele bureau blad-agent van Windows.
    - Down load de [Windows Virtual Desktop agent](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrmXv).
-   - Klik met de rechter muisknop op het gedownloade installatie programma, selecteer **Eigenschappen**, **blok kering opheffen**en selecteer **OK**. Hiermee kan het installatie programma worden vertrouwd door uw systeem.
+   - Klik met de rechter muisknop op het gedownloade installatie programma, selecteer **Eigenschappen**, **blok kering opheffen** en selecteer **OK**. Hiermee kan het installatie programma worden vertrouwd door uw systeem.
    - Voer het installatieprogramma uit. Wanneer het installatie programma u vraagt om het registratie token, voert u de waarde in die u hebt ontvangen van de cmdlet **export-RdsRegistrationInfo** .
 3. Down load en installeer de bootloader voor het virtuele bureau blad-agent van Windows.
    - Down load de bootloader voor de [virtuele Windows-bureau blad-agent](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWrxrH).
-   - Klik met de rechter muisknop op het gedownloade installatie programma, selecteer **Eigenschappen**, **blok kering opheffen**en selecteer **OK**. Hiermee kan het installatie programma worden vertrouwd door uw systeem.
+   - Klik met de rechter muisknop op het gedownloade installatie programma, selecteer **Eigenschappen**, **blok kering opheffen** en selecteer **OK**. Hiermee kan het installatie programma worden vertrouwd door uw systeem.
    - Voer het installatieprogramma uit.
 
 >[!IMPORTANT]

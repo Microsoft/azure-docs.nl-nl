@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: 92333c2528303a6fa53fa30f47def33c33235d39
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86171479"
 ---
 # <a name="persist-state-in-linux"></a>Status persistent in Linux
@@ -40,7 +40,7 @@ Dit artikel bevat de stappen voor het implementeren van de Event Grid module met
 ```
 
 >[!IMPORTANT]
->Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie binnen de module. Voor de module Event Grid op Linux moet het **/app/metadataDb**zijn.
+>Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie binnen de module. Voor de module Event Grid op Linux moet het **/app/metadataDb** zijn.
 
 De volgende configuratie resulteert bijvoorbeeld in het maken van het volume **egmetadataDbVol** , waar de meta gegevens blijven bestaan.
 

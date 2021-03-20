@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 7184456d91def51215970daf17f0d741d538b576
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460302"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-imagineer-webvision"></a>Zelfstudie: Azure Active Directory-integratie met Imagineer WebVision
@@ -49,7 +49,7 @@ Als u de integratie van Imagineer WebVision in Azure AD wilt configureren, moet 
 
 **Voer de volgende stappen uit om Imagineer WebVision toe te voegen uit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -120,7 +120,7 @@ Als u eenmalige aanmelding aan de zijde van **Imagineer WebVision** wilt configu
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -144,7 +144,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding van Azure door toegang te verlenen tot Imagineer WebVision.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Imagineer WebVision**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Imagineer WebVision**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

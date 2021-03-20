@@ -4,10 +4,10 @@ description: Inzicht in het proces dat moet worden gevolgd wanneer een nieuwe be
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: cf52d25aa846388bc387430913a733d5206df82e
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100590805"
 ---
 # <a name="evaluate-the-impact-of-a-new-azure-policy-definition"></a>De impact van een nieuwe Azure Policy definitie evalueren

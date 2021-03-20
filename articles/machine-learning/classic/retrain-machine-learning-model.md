@@ -10,10 +10,10 @@ ms.author: keli19
 ms.custom: seodec18, devx-track-csharp
 ms.date: 02/14/2019
 ms.openlocfilehash: a4fe9e54e5e03a8dbf2a727b22f784c36d6c65f9
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100517583"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Een machine learning model opnieuw trainen en implementeren
@@ -66,7 +66,7 @@ Gebruik de volgende stappen voor het aanroepen van de Api's voor retraining:
 1. Klik op de webservice waarmee u wilt werken.
 1. Klik op **verbruik**.
 1. Klik onder aan de pagina **verbruik** in het gedeelte **voorbeeld code** op **batch**.
-1. Kopieer de C#-voorbeeld code voor batch uitvoering en plak deze in het Program.cs-bestand. Zorg ervoor dat de naam ruimte intact blijft.
+1. Kopieer de C#-voorbeeld code voor batch uitvoering en plak deze in het bestand Program. cs. Zorg ervoor dat de naam ruimte intact blijft.
 
 Voeg het NuGet-pakket micro soft. AspNet. WebApi. client toe, zoals is opgegeven in de opmerkingen. Als u de verwijzing naar Microsoft.WindowsAzure.Storage.dll wilt toevoegen, moet u mogelijk de [client bibliotheek voor Azure Storage-services](https://www.nuget.org/packages/WindowsAzure.Storage)installeren.
 

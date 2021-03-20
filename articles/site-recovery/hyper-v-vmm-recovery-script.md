@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: sharrai
 ms.openlocfilehash: 3217c30737a133c1c1092fc4a8a8caaa0338e980
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89425871"
 ---
 # <a name="add-a-vmm-script-to-a-recovery-plan"></a>Een VMM-script toevoegen aan een herstel plan
@@ -45,13 +45,13 @@ U kunt Power shell-scripts gebruiken in uw herstel plannen. Als u vanuit het her
   
   1. Open de REGI ster-editor en ga naar **HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\Azure Site Recovery\Registration**.
 
-  1. Wijzig de waarde voor **ScriptLibraryPath** in ** \\ \libserver2.contoso.com\share \\ **. Geef de volledige FQDN op. Machtigingen voor de share locatie opgeven. Dit is het hoofd knooppunt van de share. Als u wilt controleren op het hoofd knooppunt, gaat u in VMM naar het hoofd knooppunt in de bibliotheek. Het pad dat wordt geopend, is de hoofdmap van het pad. Dit is het pad dat u moet gebruiken in de variabele.
+  1. Wijzig de waarde voor **ScriptLibraryPath** in **\\ \libserver2.contoso.com\share \\**. Geef de volledige FQDN op. Machtigingen voor de share locatie opgeven. Dit is het hoofd knooppunt van de share. Als u wilt controleren op het hoofd knooppunt, gaat u in VMM naar het hoofd knooppunt in de bibliotheek. Het pad dat wordt geopend, is de hoofdmap van het pad. Dit is het pad dat u moet gebruiken in de variabele.
 
   1. Test het script met behulp van een gebruikers account dat hetzelfde niveau van gebruikers rechten heeft als het VMM-service account. Met deze gebruikers rechten wordt gecontroleerd of zelfstandige, geteste scripts op dezelfde manier worden uitgevoerd als in herstel plannen. Stel op de VMM-server het uitvoerings beleid als volgt in op bypass:
 
      a. Open de **64-bits Windows Power shell-** console als beheerder.
      
-     b. Geef **Set-ExecutionPolicy bypass**op. Zie [using the Set-ExecutionPolicy cmdlet](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10))(Engelstalig) voor meer informatie.
+     b. Geef **Set-ExecutionPolicy bypass** op. Zie [using the Set-ExecutionPolicy cmdlet](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176961(v=technet.10))(Engelstalig) voor meer informatie.
 
      > [!IMPORTANT]
      > Stel **Set-ExecutionPolicy bypass** alleen in de 64-bits Power shell-console in. Als u deze instelt voor de 32-bits Power shell-console, worden de scripts niet uitgevoerd.
@@ -71,7 +71,7 @@ Nadat u Vm's of replicatie groepen hebt toegevoegd aan een herstel plan en het p
 1. Open het herstel plan.
 1. Selecteer een item in de **stap** lijst. Selecteer vervolgens **script** of **hand matige actie**.
 1. Geef op of het script of de actie vóór of na het geselecteerde item moet worden toegevoegd. Als u de positie van het script omhoog of omlaag wilt verplaatsen, selecteert u de knoppen **omhoog** en **omlaag** .
-1. Als u een VMM-script toevoegt, selecteert u **failover naar VMM-script**. In het pad naar het **script**voert u het relatieve pad naar de share in. Voer bijvoorbeeld **\RPScripts\RPScript.PS1**in.
+1. Als u een VMM-script toevoegt, selecteert u **failover naar VMM-script**. In het pad naar het **script** voert u het relatieve pad naar de share in. Voer bijvoorbeeld **\RPScripts\RPScript.PS1** in.
 1. Als u een Azure Automation runbook toevoegt, geeft u het Automation-account op waarin het runbook zich bevindt. Selecteer vervolgens het Azure runbook-script dat u wilt gebruiken.
 1. Voer een testfailover van het herstel plan uit om ervoor te zorgen dat het script werkt zoals verwacht.
 

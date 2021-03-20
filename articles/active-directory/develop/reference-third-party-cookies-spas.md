@@ -14,10 +14,10 @@ ms.author: hirsin
 ms.reviewer: kkrishna
 ms.custom: aaddev
 ms.openlocfilehash: eed4e919684575bb2c63170d91517b661fac4acf
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98753974"
 ---
 # <a name="handle-itp-in-safari-and-other-browsers-where-third-party-cookies-are-blocked"></a>ITP in Safari en andere browsers waar cookies van derden worden geblokkeerd, afhandelen

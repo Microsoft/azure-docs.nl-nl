@@ -5,10 +5,10 @@ ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 07/22/2019
 ms.openlocfilehash: 7c8e68da1c5da7b25d1385a82bf7dcc2f876306d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89376278"
 ---
 # <a name="troubleshoot-system-state-backup"></a>Problemen met de systeem status back-up oplossen
@@ -22,7 +22,7 @@ U wordt aangeraden de volgende validatie stappen uit te voeren voordat u begint 
 - [Controleren of de MARS-agent (Microsoft Azure Recovery Services) up-to-date is](https://go.microsoft.com/fwlink/?linkid=229525&clcid=0x409)
 - [Zorg ervoor dat er een netwerk verbinding is tussen MARS-agent en Azure](./backup-azure-mars-troubleshoot.md#the-microsoft-azure-recovery-service-agent-was-unable-to-connect-to-microsoft-azure-backup)
 - Controleer of Microsoft Azure Recovery Services wordt uitgevoerd (in Service-console). Start indien nodig opnieuw op en voer de bewerking opnieuw uit
-- [Zorg ervoor dat er 5-10% ruimte vrij is op de locatie van de scratch-map](./backup-azure-file-folder-backup-faq.md#whats-the-minimum-size-requirement-for-the-cache-folder)
+- [Zorg ervoor dat er meer dan 5-10% vrije volume ruimte beschikbaar is op de locatie van de Scratch map](./backup-azure-file-folder-backup-faq.md#whats-the-minimum-size-requirement-for-the-cache-folder)
 - [Controleer of er geen ander proces of antivirussoftware conflicten veroorzaakt met Azure Backup](./backup-azure-troubleshoot-slow-backup-performance-issue.md#cause-another-process-or-antivirus-software-interfering-with-azure-backup)
 - [Geplande back-up mislukt, maar handmatige back-up werkt](./backup-azure-mars-troubleshoot.md#backups-dont-run-according-to-schedule)
 - Zorg ervoor dat uw besturingssysteem helemaal is bijgewerkt
@@ -52,7 +52,7 @@ Zorg ervoor dat Windows Server Back-up is geïnstalleerd en is ingeschakeld op d
 Get-WindowsFeature Windows-Server-Backup
  ```
 
-Als voor de uitvoer de **installatie status** **beschikbaar**wordt weer gegeven, betekent dit dat Windows Server back-upfunctie beschikbaar is voor de installatie, maar niet is geïnstalleerd op de server. Als Windows Server Back-up echter niet is geïnstalleerd, gebruikt u een van de onderstaande methoden om het te installeren.
+Als voor de uitvoer de **installatie status** **beschikbaar** wordt weer gegeven, betekent dit dat Windows Server back-upfunctie beschikbaar is voor de installatie, maar niet is geïnstalleerd op de server. Als Windows Server Back-up echter niet is geïnstalleerd, gebruikt u een van de onderstaande methoden om het te installeren.
 
 #### <a name="method-1-install-windows-server-backup-using-powershell"></a>Methode 1: Windows Server Back-up installeren met behulp van Power shell
 
@@ -66,7 +66,7 @@ Als u Windows Server Back-up wilt installeren met behulp van Power shell, voert 
 
 Als u Windows Server Back-up wilt installeren met behulp van Serverbeheer, voert u de volgende stappen uit:
 
-1. Selecteer in **Server**beheer de optie **functies en onderdelen toevoegen**. De **wizard functies en onderdelen toevoegen** wordt weer gegeven.
+1. Selecteer in **Server** beheer de optie **functies en onderdelen toevoegen**. De **wizard functies en onderdelen toevoegen** wordt weer gegeven.
 
     ![Dashboard](./media/backup-azure-system-state-troubleshoot/server_management.jpg)
 

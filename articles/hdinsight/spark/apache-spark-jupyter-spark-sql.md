@@ -6,10 +6,10 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
 ms.openlocfilehash: 1bbf3cbffe2ab51f10e86dc3b9fe4ea6040a7911
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98930281"
 ---
 # <a name="quickstart-create-apache-spark-cluster-in-azure-hdinsight-using-arm-template"></a>Quickstart: Een Apache Spark-cluster maken in Azure HDInsight met een ARM-sjabloon

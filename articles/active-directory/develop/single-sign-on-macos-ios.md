@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: ''
 ms.custom: aaddev
 ms.openlocfilehash: 25389348476552298ddb947ccb59acb8b3d5bc57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80881245"
 ---
 # <a name="how-to-configure-sso-on-macos-and-ios"></a>Procedure: SSO configureren in macOS en iOS
@@ -65,7 +65,7 @@ Als u SSO in uw toepassingen wilt inschakelen, moet u de volgende stappen uitvoe
 
 Voor het micro soft Identity-platform om te weten welke toepassingen tokens kunnen delen, moeten die toepassingen dezelfde client-ID of toepassings-ID delen. Dit is de unieke id die aan u is gegeven tijdens het registreren van uw eerste toepassing in de portal.
 
-De manier waarop het micro soft Identity-platform voor apps die gebruikmaken van dezelfde toepassings-ID, wordt door de **omleidings-uri's**verteld. Voor elke toepassing kunnen meerdere omleidings-Uri's zijn geregistreerd in de onboarding-Portal. Elke app in uw suite krijgt een andere omleidings-URI. Bijvoorbeeld:
+De manier waarop het micro soft Identity-platform voor apps die gebruikmaken van dezelfde toepassings-ID, wordt door de **omleidings-uri's** verteld. Voor elke toepassing kunnen meerdere omleidings-Uri's zijn geregistreerd in de onboarding-Portal. Elke app in uw suite krijgt een andere omleidings-URI. Bijvoorbeeld:
 
 App1 omleidings-URI: `msauth.com.contoso.mytestapp1://auth`  
 App2 omleidings-URI: `msauth.com.contoso.mytestapp2://auth`  

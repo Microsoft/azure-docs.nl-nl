@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
 ms.openlocfilehash: 2ad3ab8c39d9f9a29e74bd139fb5ddd1e5faeff9
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98755150"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Uw AWS-accounts verbinden met Azure Security Center

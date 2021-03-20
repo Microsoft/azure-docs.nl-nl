@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 06/29/2020
 ms.openlocfilehash: d237d5709f8d2bb47de3e89b0b7103b195376e11
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92489741"
 ---
 # <a name="move-an-azure-database-for-azure-database-for-postgresql---single-server-to-another-region-by-using-the-azure-portal"></a>Een Azure-Data Base voor Azure Database for PostgreSQL-één server naar een andere regio verplaatsen met behulp van de Azure Portal
@@ -37,7 +37,7 @@ Gebruik de volgende stappen om de bron server voor te bereiden voor replicatie m
 1. Selecteer de bestaande Azure Database for PostgreSQL-server die u wilt gebruiken als de bron server. Met deze actie wordt de pagina **overzicht** geopend.
 1. Selecteer in het menu van de server de optie **replicatie**. Als ondersteuning voor Azure-replicatie is ingesteld op ten minste een **replica**, kunt u lees replica's maken. 
 1. Als Azure-replicatie ondersteuning niet is ingesteld op ten minste een **replica**, stelt u deze in. Selecteer **Opslaan**.
-1. Start de server opnieuw op om de wijziging toe te passen door **Ja**te selecteren.
+1. Start de server opnieuw op om de wijziging toe te passen door **Ja** te selecteren.
 1. Zodra de bewerking is voltooid, ontvangt u twee meldingen over Azure Portal. Er is één melding voor het bijwerken van de server parameter. Er is een andere melding voor de herstart van de server die onmiddellijk volgt.
 1. Vernieuw de Azure Portal pagina om de werk balk replicatie bij te werken. U kunt nu lees replica's maken voor deze server.
 
@@ -65,7 +65,7 @@ Voer de volgende stappen uit om de replicatie naar de replica vanuit het Azure P
 1. Selecteer **replicatie** in het menu onder **instellingen**.
 1. Selecteer de replica server.
 1. Selecteer **Replicatie stoppen**.
-1. Bevestig dat u de replicatie wilt stoppen door op **OK**te klikken.
+1. Bevestig dat u de replicatie wilt stoppen door op **OK** te klikken.
 
 ## <a name="clean-up-source-server"></a>Bron server opschonen
 

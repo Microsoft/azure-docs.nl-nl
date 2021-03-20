@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.custom: amqp, devx-track-csharp
 ms.openlocfilehash: 0d16d7a6dbf903ae790015c12e3d34e4a2a553d3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92139355"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Aan de slag met IoT Hub-module-id's en moduledubbels met behulp van de portal en .NET
@@ -55,7 +55,7 @@ Binnen één apparaat-id kunt u 20 module-entiteiten maken. Voer de volgende sta
 
 1. Voor het apparaat dat u in de vorige sectie hebt gemaakt, kiest u **module-identiteit toevoegen** om uw eerste module-ID te maken.
 
-1. Voer de naam *myFirstModule*in. Sla de module-id op.
+1. Voer de naam *myFirstModule* in. Sla de module-id op.
 
     ![Module-identiteit toevoegen](./media/iot-hub-portal-csharp-module-twin-getstarted/add-module-identity.png)
 
@@ -63,7 +63,7 @@ Binnen één apparaat-id kunt u 20 module-entiteiten maken. Voer de volgende sta
 
     ![Details van module-identiteit weer geven](./media/iot-hub-portal-csharp-module-twin-getstarted/module-identity-details.png)
 
-Sla de **verbindings reeks-primaire sleutel**op. U gebruikt deze in de volgende sectie voor het instellen van uw module op het apparaat.
+Sla de **verbindings reeks-primaire sleutel** op. U gebruikt deze in de volgende sectie voor het instellen van uw module op het apparaat.
 
 ## <a name="update-the-module-twin-using-net-device-sdk"></a>De moduledubbel bijwerken met de SDK voor .NET-apparaten
 
@@ -73,9 +73,9 @@ U hebt nu de module-id in uw IoT Hub gemaakt. Laten we met de cloud proberen te 
 
 Voer de volgende stappen uit om een app te maken die de door de module dubbele gerapporteerde eigenschappen bijwerkt:
 
-1. Selecteer in Visual Studio **een nieuw project maken**en kies vervolgens **console-app (.NET Framework)** en selecteer **volgende**.
+1. Selecteer in Visual Studio **een nieuw project maken** en kies vervolgens **console-app (.NET Framework)** en selecteer **volgende**.
 
-1. In **uw nieuwe project configureren**voert u *UpdateModuleTwinReportedProperties* in als de **project naam**. Selecteer **Maken** om door te gaan.
+1. In **uw nieuwe project configureren** voert u *UpdateModuleTwinReportedProperties* in als de **project naam**. Selecteer **Maken** om door te gaan.
 
     ![Configureer een Visual Studio-project](./media/iot-hub-portal-csharp-module-twin-getstarted/configure-twins-project.png)
 
@@ -85,7 +85,7 @@ Module-identiteit en module dubbele is beschikbaar als open bare preview. Het is
 
 1. Open in Visual Studio **tools**  >  **NuGet package manager**  >  **NuGet-pakketten beheren voor oplossing**.
 
-1. Selecteer **Bladeren**en selecteer vervolgens op **include Prerelease**. Zoek naar *micro soft. Azure. devices. client*. Selecteer de nieuwste versie en installeer deze.
+1. Selecteer **Bladeren** en selecteer vervolgens op **include Prerelease**. Zoek naar *micro soft. Azure. devices. client*. Selecteer de nieuwste versie en installeer deze.
 
     ![De preview-versie van Azure IoT Hub .NET Service SDK installeren](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-sdk.png)
 

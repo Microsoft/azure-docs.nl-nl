@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 08/06/2020
 ms.openlocfilehash: f7ec6f32b48a93a29210311c7ba6747eb2e2d066
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98014292"
 ---
 # <a name="configuring-event-ordering-policies-for-azure-stream-analytics"></a>Beleid voor het best Ellen van gebeurtenissen voor Azure Stream Analytics configureren
@@ -39,7 +39,7 @@ Laat ons een voor beeld zien van deze beleids regels in actie.
 <br> **Beleid voor late aankomst:** 15 seconden
 <br> **Out-of-order beleid:** 8 seconden
 
-| Gebeurtenis nummer | Tijdstip van gebeurtenis | Aankomst tijd | System.Timestamp | Uitleg |
+| Gebeurtenis nummer | Tijd van gebeurtenis | Aankomst tijd | System.Timestamp | Uitleg |
 | --- | --- | --- | --- | --- |
 | **1** | 00:10:00  | 00:10:40  | 00:10:25  | De gebeurtenis heeft het tolerantie niveau achterstallig en buiten. Hiermee wordt de tijd van de gebeurtenis aangepast naar de maximale aankomst tolerantie.  |
 | **2** | 00:10:30 | 00:10:41  | 00:10:30  | De gebeurtenis is te laat gearriveerd, maar binnen het tolerantie niveau. De tijd van de gebeurtenis wordt dus niet aangepast.  |

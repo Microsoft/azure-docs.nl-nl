@@ -9,17 +9,17 @@ ms.date: 06/26/2020
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: e208b52c67f173bd0d289715b63562df656b1ec9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88009750"
 ---
 1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**.
 
-1. Selecteer in het dialoog venster **publiceren** de optie **Azure** voor **doel**en selecteer vervolgens **volgende**. 
+1. Selecteer in het dialoog venster **publiceren** de optie **Azure** voor **doel** en selecteer vervolgens **volgende**. 
 
-1. Selecteer **Azure WebJobs** voor een **specifiek doel**en selecteer vervolgens **volgende**.
+1. Selecteer **Azure WebJobs** voor een **specifiek doel** en selecteer vervolgens **volgende**.
 
 1. Selecteer **een nieuwe Azure-Webtaak maken**.
 

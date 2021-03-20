@@ -8,10 +8,10 @@ ms.custom: devx-track-csharp
 ms.date: 03/27/2019
 ms.author: zhshang
 ms.openlocfilehash: fd6ac8c4d4fc4c3fec4f549f8ef4f955e2b1c637
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89439211"
 ---
 # <a name="how-to-scale-signalr-service-with-multiple-instances"></a>Hoe kan de signaal service met meerdere exemplaren schalen?
@@ -220,13 +220,13 @@ Het `ServiceEndpoint` object heeft een `EndpointType` eigenschap met waarde `pri
 
 `primary` eind punten zijn voorkeurs eindpunten voor het ontvangen van client verkeer en worden beschouwd als een betrouwbaardere netwerk verbinding. `secondary` eind punten worden beschouwd als een minder betrouw bare netwerk verbinding en worden alleen gebruikt voor het maken van de server naar client verkeer, bijvoorbeeld het uitzenden van berichten, niet voor het nemen van client-naar-server verkeer.
 
-In verschillende regio's kan het netwerk Insta Biel zijn. Voor één app-server die zich in *VS-Oost*bevindt, kan het eind punt van de seingevings service die zich in dezelfde regio *VS-Oost* bevindt, worden geconfigureerd als `primary` en eind punten in andere regio's die als zijn gemarkeerd `secondary` . In deze configuratie kunnen service-eind punten in andere regio's berichten **ontvangen** van deze *VS* -server voor Amerikaanse apps, maar er zijn geen clients voor **meerdere regio's** die naar deze app-server worden doorgestuurd. De architectuur wordt weer gegeven in het onderstaande diagram:
+In verschillende regio's kan het netwerk Insta Biel zijn. Voor één app-server die zich in *VS-Oost* bevindt, kan het eind punt van de seingevings service die zich in dezelfde regio *VS-Oost* bevindt, worden geconfigureerd als `primary` en eind punten in andere regio's die als zijn gemarkeerd `secondary` . In deze configuratie kunnen service-eind punten in andere regio's berichten **ontvangen** van deze *VS* -server voor Amerikaanse apps, maar er zijn geen clients voor **meerdere regio's** die naar deze app-server worden doorgestuurd. De architectuur wordt weer gegeven in het onderstaande diagram:
 
 ![Kruis geografische infra](./media/signalr-howto-scale-multi-instances/cross_geo_infra.png)
 
 Wanneer een client `/negotiate` met de app-server probeert, met de standaard router, **selecteert** SDK één eind punt uit de set beschik bare `primary` eind punten. Wanneer het primaire eind punt niet beschikbaar is, **selecteert SDK wille keurig** uit alle beschik bare `secondary` eind punten. Het eind punt is gemarkeerd als **beschikbaar** wanneer de verbinding tussen de server en het service-eind punt actief is.
 
-Wanneer een client `/negotiate` met de app-server in *VS-Oost*wordt gehost, wordt het `primary` eind punt dat zich in dezelfde regio bevindt, standaard altijd in het scenario voor meerdere regio's weer gegeven. Wanneer alle *VS-Oost* -eind punten niet beschikbaar zijn, wordt de client omgeleid naar eind punten in andere regio's. In het gedeelte failover over wordt het scenario in detail beschreven.
+Wanneer een client `/negotiate` met de app-server in *VS-Oost* wordt gehost, wordt het `primary` eind punt dat zich in dezelfde regio bevindt, standaard altijd in het scenario voor meerdere regio's weer gegeven. Wanneer alle *VS-Oost* -eind punten niet beschikbaar zijn, wordt de client omgeleid naar eind punten in andere regio's. In het gedeelte failover over wordt het scenario in detail beschreven.
 
 ![Normaal onderhandelen](./media/signalr-howto-scale-multi-instances/normal_negotiate.png)
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: db4b676e65d36a9476fd72b66cc8ccfa38af4d85
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92144496"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-net"></a>Een IoT-hub maken met Azure Resource Manager-sjabloon (.NET)
@@ -28,7 +28,7 @@ U kunt Azure Resource Manager gebruiken om via een programma een Azure IoT hubs 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-U hebt het volgende nodig om deze zelfstudie af te ronden:
+Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * Visual Studio.
 * Een actief Azure-account. <br/>Als u geen account hebt, kunt u in slechts een paar minuten een [gratis account][lnk-free-trial] maken.
@@ -43,11 +43,11 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
 
 2. Klik in Solution Explorer met de rechter muisknop op uw project en vervolgens op **NuGet-pakketten beheren**.
 
-3. Controleer in NuGet package manager de optie **Prerelease toevoegen**en op de pagina **Bladeren** zoeken naar **micro soft. Azure. Management. Resource Manager**. Selecteer het pakket, klik op **installeren**, klik in **wijzigingen controleren** op **OK**en klik vervolgens op **Ik ga akkoord** om de licenties te accepteren.
+3. Controleer in NuGet package manager de optie **Prerelease toevoegen** en op de pagina **Bladeren** zoeken naar **micro soft. Azure. Management. Resource Manager**. Selecteer het pakket, klik op **installeren**, klik in **wijzigingen controleren** op **OK** en klik vervolgens op **Ik ga akkoord** om de licenties te accepteren.
 
-4. Zoek in NuGet package manager naar **micro soft. Identity model. clients. ActiveDirectory**.  Klik op **installeren**, in **wijzigingen controleren** , klik op **OK**en klik vervolgens op **Ik ga akkoord** om de licentie te accepteren.
+4. Zoek in NuGet package manager naar **micro soft. Identity model. clients. ActiveDirectory**.  Klik op **installeren**, in **wijzigingen controleren** , klik op **OK** en klik vervolgens op **Ik ga akkoord** om de licentie te accepteren.
 
-5. Vervang in Program.cs de bestaande **using** -instructies door de volgende code:
+5. Vervang in Program. cs de bestaande **using** -instructies door de volgende code:
 
     ```csharp
     using System;
@@ -57,7 +57,7 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
     using Microsoft.Rest;
     ```
 
-6. Voeg in Program.cs de volgende statische variabelen toe om de waarden van de tijdelijke aanduidingen te vervangen. U hebt eerder in deze zelf studie de volgende opmerking gemaakt: **ApplicationId**, **SubscriptionId**, **TenantId**en **wacht woord** . De **naam van uw Azure Storage-account** is de naam van het Azure Storage account waar u de Azure Resource Manager sjabloon bestanden opslaat. De naam van de **resource groep** is de naam van de resource groep die u gebruikt bij het maken van de IOT-hub. De naam kan bestaan uit een bestaande of nieuwe resource groep. De naam van de **implementatie** is een naam voor de implementatie, zoals **Deployment_01**.
+6. Voeg in Program. cs de volgende statische variabelen toe om de waarden van de tijdelijke aanduidingen te vervangen. U hebt eerder in deze zelf studie de volgende opmerking gemaakt: **ApplicationId**, **SubscriptionId**, **TenantId** en **wacht woord** . De **naam van uw Azure Storage-account** is de naam van het Azure Storage account waar u de Azure Resource Manager sjabloon bestanden opslaat. De naam van de **resource groep** is de naam van de resource groep die u gebruikt bij het maken van de IOT-hub. De naam kan bestaan uit een bestaande of nieuwe resource groep. De naam van de **implementatie** is een naam voor de implementatie, zoals **Deployment_01**.
 
     ```csharp
     static string applicationId = "{Your ApplicationId}";
@@ -75,7 +75,7 @@ U hebt het volgende nodig om deze zelfstudie af te ronden:
 
 Gebruik een JSON-sjabloon en een parameter bestand om een IoT-hub in uw resource groep te maken. U kunt ook een Azure Resource Manager sjabloon gebruiken om wijzigingen aan te brengen in een bestaande IoT-hub.
 
-1. Klik in Solution Explorer met de rechter muisknop op uw project, klikt u op **toevoegen**en klik vervolgens op **Nieuw item**. Voeg een JSON-bestand met de naam **template.js** toe aan uw project.
+1. Klik in Solution Explorer met de rechter muisknop op uw project, klikt u op **toevoegen** en klik vervolgens op **Nieuw item**. Voeg een JSON-bestand met de naam **template.js** toe aan uw project.
 
 2. Als u een standaard IoT-hub wilt toevoegen aan de regio **VS-Oost** , vervangt u de inhoud van **template.js** door met de volgende resource definitie. Voor de huidige lijst met regio's die ondersteuning bieden voor IoT Hub raadpleegt u de [Azure-status][lnk-status]:
 
@@ -113,7 +113,7 @@ Gebruik een JSON-sjabloon en een parameter bestand om een IoT-hub in uw resource
     }
     ```
 
-3. Klik in Solution Explorer met de rechter muisknop op uw project, klikt u op **toevoegen**en klik vervolgens op **Nieuw item**. Voeg een JSON-bestand met de naam **parameters.js** toe aan uw project.
+3. Klik in Solution Explorer met de rechter muisknop op uw project, klikt u op **toevoegen** en klik vervolgens op **Nieuw item**. Voeg een JSON-bestand met de naam **parameters.js** toe aan uw project.
 
 4. Vervang de inhoud van **parameters.js** door met de volgende parameter informatie waarmee een naam voor de nieuwe IOT-hub wordt ingesteld, zoals **{uw initialen} mynewiothub**. De naam van de IoT-hub moet globaal uniek zijn en moet uw naam of initialen bevatten:
 
@@ -128,15 +128,15 @@ Gebruik een JSON-sjabloon en een parameter bestand om een IoT-hub in uw resource
     ```
    [!INCLUDE [iot-hub-pii-note-naming-hub](../../includes/iot-hub-pii-note-naming-hub.md)]
 
-5. In **Server Explorer**maakt u verbinding met uw Azure-abonnement en een container met de naam **sjablonen**in uw Azure Storage-account. Stel in het deel venster **Eigenschappen** de **open bare machtiging Lees toegang** voor de **sjablonen** container in op **BLOB**.
+5. In **Server Explorer** maakt u verbinding met uw Azure-abonnement en een container met de naam **sjablonen** in uw Azure Storage-account. Stel in het deel venster **Eigenschappen** de **open bare machtiging Lees toegang** voor de **sjablonen** container in op **BLOB**.
 
-6. Klik in **Server Explorer**met de rechter muisknop op de **sjablonen** container en vervolgens op **BLOB-container weer geven**. Klik op de knop **BLOB uploaden** , selecteer de twee bestanden **parameters.jsop** en **templates.jsop**en klik vervolgens op **openen** om de json-bestanden te uploaden naar de container **sjablonen** . De Url's van de blobs met de JSON-gegevens zijn:
+6. Klik in **Server Explorer** met de rechter muisknop op de **sjablonen** container en vervolgens op **BLOB-container weer geven**. Klik op de knop **BLOB uploaden** , selecteer de twee bestanden **parameters.jsop** en **templates.jsop** en klik vervolgens op **openen** om de json-bestanden te uploaden naar de container **sjablonen** . De Url's van de blobs met de JSON-gegevens zijn:
 
     ```csharp
     https://{Your storage account name}.blob.core.windows.net/templates/parameters.json
     https://{Your storage account name}.blob.core.windows.net/templates/template.json
     ```
-7. Voeg de volgende methode toe aan Program.cs:
+7. Voeg de volgende methode toe aan Program. CS:
 
     ```csharp
     static void CreateIoTHub(ResourceManagementClient client)
@@ -192,7 +192,7 @@ U kunt de toepassing nu volt ooien door de **CreateIoTHub** -methode aan te roep
     Console.ReadLine();
     ```
 
-2. Klik op **Build** en **bouw**vervolgens de oplossing. Corrigeer eventuele fouten.
+2. Klik op **Build** en **bouw** vervolgens de oplossing. Corrigeer eventuele fouten.
 
 3. Klik op **fouten opsporen** en **Start de fout opsporing** om de toepassing uit te voeren. Het kan enkele minuten duren voordat de implementatie is uitgevoerd.
 

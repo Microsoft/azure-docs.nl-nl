@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: yushwang
 ms.openlocfilehash: 2a85204fef026940394a19934bef1c631a8e2d21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89418872"
 ---
 # <a name="connect-azure-vpn-gateways-to-multiple-on-premises-policy-based-vpn-devices-using-powershell"></a>Azure VPN-gateways verbinden met meerdere on-premises op beleid gebaseerde VPN-apparaten met behulp van Power shell
@@ -112,7 +112,7 @@ In deze sectie wordt beschreven hoe u op beleid gebaseerde verkeers selectie vak
 
 #### <a name="create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Het virtuele netwerk, de VPN-gateway en de lokale netwerk gateway maken
 
-1. Maak een resourcegroep.
+1. Een resourcegroep maken.
 
    ```azurepowershell-interactive
    New-AzResourceGroup -Name $RG1 -Location $Location1

@@ -4,10 +4,10 @@ description: Meer informatie over hoe u Azure Data Box kunt gebruiken om grote i
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: e789b6c9f4ff2e8cd168e6b5c138d423911d4743
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96752580"
 ---
 # <a name="azure-backup-offline-backup-by-using-azure-data-box"></a>Offline back-up Azure Backup met behulp van Azure Data Box
@@ -292,7 +292,7 @@ Als voor geen enkele andere server offline seeding is geconfigureerd en er geen 
 
 Voer de volgende acties uit vanaf de-server die u wilt configureren voor offline back-ups.
 
-1. Ga naar het tabblad **computer certificaat toepassing beheren**  >  **Personal** en zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
+1. Ga naar het tabblad **computer certificaat toepassing beheren**  >   en zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
 
 2. Selecteer het certificaat, klik met de rechter muisknop op **alle taken** en selecteer **exporteren** zonder persoonlijke sleutel in de. CER-indeling.
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: jeedes
 ms.openlocfilehash: dc9be41cd7975610f2779da09b94066c70a91652
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460526"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-iamip-patent-platform"></a>Zelfstudie: Eenmalige aanmelding (SSO) van Azure Active Directory integreren met IamIP Patent Platform
@@ -50,7 +50,7 @@ Om de integratie van IamIP Patent Platform te configureren in Azure AD, moet u I
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer de knop **Azure Active Directory** in het linkerdeelvenster.
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. In de sectie **Toevoegen uit de galerie** typt u **IamIP Patent Platform** in het zoekvak.
 1. Selecteer **IamIP Patent Platform** in het resultatenvenster en voeg de toepassing toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
@@ -74,23 +74,23 @@ Volg deze algemene stappen om eenmalige aanmelding van Azure AD met IamIP Patent
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **IamIP Patent Platform** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **IamIP Patent Platform** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken:
 
    ![Potloodpictogram voor Standaard-SAML-configuratie](common/edit-urls.png)
 
 1. Voer in de sectie **Standaard SAML-configuratie** de volgende stappen uit als u een Service Provider-metagegevensbestand hebt en eenmalige aanmelding in de door IDP geïnitieerde modus wilt configureren:
 
-    a. Selecteer **Metagegevensbestand uploaden** :
+    a. Selecteer **Metagegevensbestand uploaden**:
 
     ![Metagegevensbestand uploaden](common/upload-metadata.png)
 
-    b. Selecteer de knop Map, selecteer het metagegevensbestand en selecteer vervolgens **Uploaden** :
+    b. Selecteer de knop Map, selecteer het metagegevensbestand en selecteer vervolgens **Uploaden**:
 
     ![De knoppen Map en Uploaden](common/browse-upload-metadata.png)
 
-    c. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **id** en **antwoord-URL** automatisch ingevuld in de sectie **Standaard SAML-configuratie** :
+    c. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **id** en **antwoord-URL** automatisch ingevuld in de sectie **Standaard SAML-configuratie**:
 
     ![Waarden voor id en antwoord-URL](common/idp-intiated.png)
 
@@ -99,7 +99,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
 1. Selecteer **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door SP geïnitieerde modus wilt configureren:
 
-    Voer in het vak **Aanmeldings-URL** het volgende in: **https:\//patents.iamip.com/login-user** .
+    Voer in het vak **Aanmeldings-URL** het volgende in: **https:\//patents.iamip.com/login-user**.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** naar de sectie **SAML-handtekeningcertificaat** en selecteer de koppeling **Downloaden** voor **Certificaat (Raw)** om het certificaat te downloaden en op te slaan op de computer:
 
@@ -113,31 +113,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** . Selecteer **Gebruikers** en daarna **Alle gebruikers** .
+1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory**. Selecteer **Gebruikers** en daarna **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Ga als volgt te werk in het venster dat  verschijnt:
+1. Ga als volgt te werk in het venster dat verschijnt:
    1. Voer in het vak **Naam** de naam **B.Simon** in.  
    1. Voer in het vak **Gebruikersnaam** \<username>@\<companydomain> in.\<extension>. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="grant-access-to-the-test-user"></a>De testgebruiker toegang geven
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door die gebruiker toegang te verlenen tot IamIP Patent Platform.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen**.
 1. Selecteer **IamIP Patent Platform** in de lijst met toepassingen.
-1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen** :
+1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen**:
 
    ![Gebruikers en groepen selecteren](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** :
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**:
 
     ![Gebruiker toevoegen selecteren](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst **Gebruikers** en selecteer vervolgens de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Selecteer in het dialoogvenster **Toewijzing toevoegen** de knop **Toewijzen** .
+1. Selecteer in het dialoogvenster **Toewijzing toevoegen** de knop **Toewijzen**.
 
 ## <a name="configure-iamip-patent-platform-sso"></a>Eenmalige aanmelding voor IamIP Patent Platform configureren
 

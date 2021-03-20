@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 1cd781358a8dea740a7e89203c61b7112acb9efd
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460055"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Zelfstudie: Azure Active Directory-integratie met Insignia SAML SSO
@@ -49,7 +49,7 @@ Voor de configuratie van de integratie van Insignia SAML SSO in Azure Active Dir
 
 **Voer de volgende stappen uit om Insignia SAML SSO toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor de configuratie van de integratie van Insignia SAML SSO in Azure Active Dir
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Insignia SAML SSO** , selecteer **Insignia SAML SSO** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Insignia SAML SSO**, selecteer **Insignia SAML SSO** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Insignia SAML SSO in de resultatenlijst](common/search-new-app.png)
 
@@ -136,7 +136,7 @@ Als u eenmalige aanmelding aan de zijde van **Insignia SAML SSO** wilt configure
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -161,7 +161,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie maakt u het mogelijk voor Britta Simon om eenmalige aanmelding voor Azure te gebruiken door haar toegangsrechten voor Insignia SAML SSO te verlenen.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Insignia SAML SSO**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Insignia SAML SSO**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

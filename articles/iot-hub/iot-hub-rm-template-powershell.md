@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: 1fedadfa7e5b4ec3d7de30d0ad3ef1b1bfa0e0ec
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92144403"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-powershell"></a>Een IoT-hub maken met Azure Resource Manager-sjabloon (Power shell)
@@ -23,7 +23,7 @@ Meer informatie over het gebruik van een Azure Resource Manager sjabloon voor he
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 De Resource Manager-sjabloon die in deze Quick Start wordt gebruikt, is van [Azure Quick](https://azure.microsoft.com/resources/templates/101-iothub-with-consumergroup-create/)start-sjablonen. Hier volgt een kopie van de sjabloon:
 

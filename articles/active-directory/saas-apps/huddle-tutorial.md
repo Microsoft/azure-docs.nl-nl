@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 481b11305ff99661487b83c7588b184ef502d7ad
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460713"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-huddle"></a>Zelfstudie: Azure Active Directory-integratie met Huddle
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Huddle met Microsoft Azure Active Di
 
 **Voer de volgende stappen uit om Huddle toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Voor het configureren van de integratie van Huddle met Microsoft Azure Active Di
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Huddle** , selecteer **Huddle** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Huddle**, selecteer **Huddle** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Huddle in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u eenmalige aanmelding van Microsoft Azure Active Directory met Huddle configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u eenmalige aanmelding van Microsoft Azure Active Directory met Huddle configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Microsoft Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in Huddle tot stand is gebracht.
 
 Als u eenmalige aanmelding van Microsoft Azure Active Directory met Huddle wilt configureren, moet u de volgende bouwstenen voltooien:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Active Directory met Huddle wilt configureren:
 
-1. In de [Microsoft Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Huddle** .
+1. In de [Microsoft Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Huddle**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -111,7 +111,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
     https://login.huddle.com
     ```
 
-    b. Typ een URL in het tekstvak **Antwoord-URL** :
+    b. Typ een URL in het tekstvak **Antwoord-URL**:
 
     ```http
     https://login.huddle.net/saml/browser-sso

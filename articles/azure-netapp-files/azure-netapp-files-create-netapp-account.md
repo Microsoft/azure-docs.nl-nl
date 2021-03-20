@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 03/28/2018
 ms.author: b-juche
 ms.openlocfilehash: e5e0c43aa8c4fbf0db89065e0fab93ee174a4ede
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96006590"
 ---
 # <a name="create-a-netapp-account"></a>Een NetApp-account maken
@@ -31,7 +31,7 @@ U moet uw abonnement ook hebben geregistreerd voor het gebruik van de NetApp-res
 
 ## <a name="steps"></a>Stappen 
 
-1. Meld u aan bij de Azure-portal. 
+1. Meld u aan bij Azure Portal. 
 2. Verkrijg toegang tot de Azure NetApp Files-blade via een van de volgende methoden:  
    * Zoek naar **Azure NetApp Files** in het zoekvak van de Azure-portal.  
    * Klik in de navigatie op **Alle services** en filter vervolgens op Azure NetApp Files.  

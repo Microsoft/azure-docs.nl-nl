@@ -8,10 +8,10 @@ ms.date: 02/01/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 4c5629f80c37c9f79dc9a39c4d8304acbee9679d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92489571"
 ---
 # <a name="quickstart-create-and-manage-azure-files-share-with-windows-virtual-machines"></a>Quickstart: Een Azure-bestandsshare maken en beheren met virtuele Windows-machines
@@ -63,13 +63,13 @@ U hebt nu een Azure-opslagaccount gemaakt en een bestandsshare met één bestand
 ### <a name="deploy-a-vm"></a>Een virtuele machine implementeren
 
 1. Vouw vervolgens het menu aan de linkerkant van de portal uit en kies **Een resource maken** in linkerbovenhoek van de Azure-portal.
-1. Zoek via het zoekvak boven de lijst met **Azure Marketplace** -resources naar **Windows Server 2016 Datacenter** , selecteer dit en kies **Maken**.
-1. Selecteer op het tabblad **Basis** , onder **Projectdetails** , de resourcegroep die u voor deze quickstart hebt gemaakt.
+1. Zoek via het zoekvak boven de lijst met **Azure Marketplace**-resources naar **Windows Server 2016 Datacenter**, selecteer dit en kies **Maken**.
+1. Selecteer op het tabblad **Basis**, onder **Projectdetails**, de resourcegroep die u voor deze quickstart hebt gemaakt.
 
    ![Voer basisinformatie over uw virtuele machine in op de portalblade](./media/storage-files-quick-create-use-windows/vm-resource-group-and-subscription.png)
 
 1. Geef onder **exemplaar details** de naam *qsVM* op voor de VM.
-1. Behoud de standaardinstellingen voor **Regio** , **Beschikbaarheidsopties** , **Installatiekopie** en **Grootte**.
+1. Behoud de standaardinstellingen voor **Regio**, **Beschikbaarheidsopties**, **Installatiekopie** en **Grootte**.
 1. Voeg onder **Administrator-account***VMadmin* toe als de **gebruikersnaam** en voer een **wachtwoord** in voor de VM.
 1. Onder **Regels voor binnenkomende poort** kiest u **​​Geselecteerde poorten toestaan** en selecteert u **RDP (3389)** en **HTTP** in de vervolgkeuzelijst.
 1. Selecteer **Controleren en maken**.
@@ -87,7 +87,7 @@ U hebt nu een nieuwe virtuele machine gemaakt en een gegevensschijf gekoppeld. U
 
 1. Laat op de pagina **Verbinding maken met virtuele machine** de standaardopties staan om via **IP-adres** verbinding te maken via **poortnummer** *3389* en selecteer **RDP-bestand downloaden**.
 1. Open het gedownloade RDP-bestand en selecteer **Verbinden** wanneer dit wordt gevraagd.
-1. Selecteer in het venster **Windows-beveiliging** **Meer opties** en vervolgens **Een ander account gebruiken**. Typ de gebruikersnaam als *localhost\gebruikersnaam* , waarbij u &lt;gebruikersnaam&gt; vervangt door de gebruikersnaam van de VM-beheerder die u voor de virtuele machine hebt gemaakt. Voer het wachtwoord in dat u hebt gemaakt voor de virtuele machine en selecteer vervolgens **OK**.
+1. Selecteer in het venster **Windows-beveiliging** **Meer opties** en vervolgens **Een ander account gebruiken**. Typ de gebruikersnaam als *localhost\gebruikersnaam*, waarbij u &lt;gebruikersnaam&gt; vervangt door de gebruikersnaam van de VM-beheerder die u voor de virtuele machine hebt gemaakt. Voer het wachtwoord in dat u hebt gemaakt voor de virtuele machine en selecteer vervolgens **OK**.
 
    ![Meer keuzes](./media/storage-files-quick-create-use-windows/local-host2.png)
 
@@ -108,7 +108,7 @@ U hebt nu een nieuwe virtuele machine gemaakt en een gegevensschijf gekoppeld. U
    ![Een schermafbeelding van het dialoogvenster 'Netwerkverbinding maken'](./media/storage-files-quick-create-use-windows/mountonwindows10.png)
 
 1. Selecteer **Finish**.
-1. Ga als volgt te werk in het dialoogvenster **Windows-beveiliging** :
+1. Ga als volgt te werk in het dialoogvenster **Windows-beveiliging**:
 
    - Kopieer vanuit Kladblok de naam van het opslagaccount voorafgegaan door AZURE\ en plak deze in het dialoogvenster **Windows-beveiliging** als de gebruikersnaam. Als u de suggesties voor naamgeving in deze quickstart hebt gevolgd, kopieert u *AZURE\qsstorageacct*.
    - Kopieer vanuit Kladblok de sleutel van het opslagaccount en plak deze in het dialoogvenster **Windows-beveiliging** als het wachtwoord.
@@ -159,7 +159,7 @@ Net als met on-premises VSS-momentopnamen kunt u de momentopnamen van de gekoppe
 
    ![Gekoppelde share in Windows Verkenner](./media/storage-files-quick-create-use-windows/snapshot-windows-mount.png)
 
-1. Selecteer **qsTestFile.txt** , klik met de rechtermuisknop op het bestand en selecteer *Eigenschappen* in het menu.
+1. Selecteer **qsTestFile.txt**, klik met de rechtermuisknop op het bestand en selecteer *Eigenschappen* in het menu.
 
    ![Snelmenu voor een geselecteerde map](./media/storage-files-quick-create-use-windows/snapshot-windows-previous-versions.png)
 

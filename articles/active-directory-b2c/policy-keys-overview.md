@@ -11,10 +11,10 @@ ms.date: 09/08/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 30348d7ca12ded2d1f4b0522a7cabeadf0553a07
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94953352"
 ---
 # <a name="overview-of-policy-keys-in-azure-active-directory-b2c"></a>Overzicht van beleids sleutels in Azure Active Directory B2C

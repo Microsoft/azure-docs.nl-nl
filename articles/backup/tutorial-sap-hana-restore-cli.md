@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 12/4/2019
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 0e524bfe090f0d67b76c13e876f44e83986aeb9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91334800"
 ---
 # <a name="tutorial-restore-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Zelfstudie: SAP HANA-databases op een virtuele Azure-machine herstellen met behulp van Azure CLI
@@ -88,7 +88,7 @@ In deze zelfstudie gaat u naar een eerder herstelpunt herstellen. [Bekijk de lij
 
 Met de bovenstaande herstelpuntnaam en de herstelmodus kunt u het herstelconfiguratieobject maken met behulp van de cmdlet [az backup recoveryconfig show](/cli/azure/backup/recoveryconfig#az-backup-recoveryconfig-show). Laten we eens kijken wat de betekenis is van de overige parameters in deze cmdlet:
 
-* **--target-item-name**: dit is de naam die wordt gebruikt door de herstelde database. In dit geval hebben we de naam *restored_database*gebruikt.
+* **--target-item-name**: dit is de naam die wordt gebruikt door de herstelde database. In dit geval hebben we de naam *restored_database* gebruikt.
 * **--target-server-name**: dit is de naam van een SAP HANA-server die is geregistreerd bij een Recovery Services-kluis en zich in dezelfde regio bevindt als de database die moet worden hersteld. Voor deze zelfstudie herstelt u de database op dezelfde SAP HANA-server die we hebben beveiligd, met de naam *hxehost*.
 * **--target-server-type**: voor het terugzetten van SAP HANA-databases, moet **HanaInstance** worden gebruikt.
 

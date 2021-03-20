@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/01/2020
 ms.author: glenga
 ms.openlocfilehash: 2ccff72be66a88b9bf0a5e9eb9c29ade8397804b
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96356190"
 ---
 Fouten die zijn opgetreden in een Azure Functions kunnen afkomstig zijn van een van de volgende oorsprongen:
@@ -321,7 +321,7 @@ Als u bijvoorbeeld de standaard Service Bus leverings aantallen van 10 hebt gebr
 Met de volgende triggers worden nieuwe pogingen voor de trigger bron ondersteund:
 
 * [Azure Blob Storage](../articles/azure-functions/functions-bindings-storage-blob.md)
-* [Azure-wachtrij opslag](../articles/azure-functions/functions-bindings-storage-queue.md)
+* [Azure Queue Storage](../articles/azure-functions/functions-bindings-storage-queue.md)
 * [Azure Service Bus (wachtrij/onderwerp)](../articles/azure-functions/functions-bindings-service-bus.md)
 
 De meeste pogingen van triggers worden standaard Maxi maal vijf keer aangevraagd. Na de vijfde nieuwe poging wordt door de Azure Queue-opslag een bericht naar een [verontreinigde wachtrij](../articles/azure-functions/functions-bindings-storage-queue-trigger.md#poison-messages)geschreven.  Met de standaard Service Bus wachtrij en onderwerpbeleid wordt een bericht naar een [wachtrij met onbestelbare](../articles/service-bus-messaging/service-bus-dead-letter-queues.md) berichten geschreven na 10 pogingen.

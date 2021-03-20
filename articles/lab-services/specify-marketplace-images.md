@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u de Marketplace-installatie ko
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 5c81c8d7a15d67055729a29e98f5b7e30f3d0764
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96434733"
 ---
 # <a name="specify-marketplace-images-available-to-lab-creators"></a>Microsoft Azure Marketplace-installatiekopieën opgeven die beschikbaar zijn voor labmakers

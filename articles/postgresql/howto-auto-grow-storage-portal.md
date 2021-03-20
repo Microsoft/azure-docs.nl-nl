@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/29/2019
 ms.openlocfilehash: d49047e9b3a65da90f4a5ac9e4b3cb1e32bd59a7
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92489979"
 ---
 # <a name="auto-grow-storage-using-the-azure-portal-in-azure-database-for-postgresql---single-server"></a>Opslag automatisch uitbreiden met de Azure Portal in Azure Database for PostgreSQL-enkele server
@@ -28,7 +28,7 @@ Voer de volgende stappen uit om PostgreSQL-Server opslag automatisch uitbreiden 
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)uw bestaande Azure database for postgresql-server.
 
-2. Klik op de pagina PostgreSQL-server onder **instellingen**op **prijs categorie** om de pagina prijs categorie te openen.
+2. Klik op de pagina PostgreSQL-server onder **instellingen** op **prijs categorie** om de pagina prijs categorie te openen.
 
 3. In de sectie **automatische groei** selecteert u **Ja** om automatische groei van opslag in te scha kelen.
 
@@ -38,7 +38,7 @@ Voer de volgende stappen uit om PostgreSQL-Server opslag automatisch uitbreiden 
 
 5. Bij een melding wordt bevestigd dat automatisch uitbreiden is ingeschakeld.
 
-    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png" alt-text="Azure Database for PostgreSQL-Settings_Pricing_tier-automatische groei":::
+    :::image type="content" source="./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png" alt-text="Azure Database for PostgreSQL-automatisch groei geslaagd":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

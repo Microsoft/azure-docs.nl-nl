@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1b3d7c47ff0a2c533bf12a67958a913b22915f75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87908684"
 ---
 # <a name="example-direct-federation-with-active-directory-federation-services-ad-fs-preview"></a>Voor beeld: directe Federatie met Active Directory Federation Services (AD FS) (preview)
@@ -58,7 +58,7 @@ Voordat u met deze procedure begint, moet u al een AD FS-server instellen en erm
 ### <a name="add-the-claim-description"></a>De claim beschrijving toevoegen
 
 1. Selecteer op uw AD FS-server **extra**  >  **AD FS beheer**.
-2. Selecteer **service**  >  **claim beschrijvingen**in het navigatie deel venster.
+2. Selecteer **service**  >  **claim beschrijvingen** in het navigatie deel venster.
 3. Onder **acties**, selecteert u **claim beschrijving toevoegen**.
 4. Geef in het venster **een beschrijving van de claim toevoegen** de volgende waarden op:
 
@@ -72,12 +72,12 @@ Voordat u met deze procedure begint, moet u al een AD FS-server instellen en erm
 ### <a name="add-the-relying-party-trust-and-claim-rules"></a>De regels voor de Relying Party-vertrouwens relatie en de claim toevoegen
 
 1. Ga op de AD FS-server naar **hulpprogram ma's**  >  **AD FS beheer**.
-2. Selecteer **vertrouwens relaties**  >  **Relying Party trusts**in het navigatie deel venster.
+2. Selecteer **vertrouwens relaties**  >  **Relying Party trusts** in het navigatie deel venster.
 3. Onder **acties**, selecteert u **vertrouwens relatie van Relying Party toevoegen**. 
-4. Gebruik in de wizard Relying Party vertrouwens relatie toevoegen voor **gegevens bron selecteren**de optie **gegevens importeren over de Relying Party die online of op een lokaal netwerk zijn gepubliceerd**. Geef deze URL voor federatieve meta gegevens op https://nexus.microsoftonline-p.com/federationmetadata/saml20/federationmetadata.xml . Andere standaard selecties behouden. Selecteer **Sluiten**.
+4. Gebruik in de wizard Relying Party vertrouwens relatie toevoegen voor **gegevens bron selecteren** de optie **gegevens importeren over de Relying Party die online of op een lokaal netwerk zijn gepubliceerd**. Geef deze URL voor federatieve meta gegevens op https://nexus.microsoftonline-p.com/federationmetadata/saml20/federationmetadata.xml . Andere standaard selecties behouden. Selecteer **Sluiten**.
 5. De wizard **claim regels bewerken** wordt geopend.
-6. Selecteer in de wizard **claim regels bewerken** de optie **regel toevoegen**. Selecteer in **regel type kiezen**de optie **LDAP-kenmerken als claims verzenden**. Selecteer **Next**.
-7. Geef in **claim regel configureren**de volgende waarden op: 
+6. Selecteer in de wizard **claim regels bewerken** de optie **regel toevoegen**. Selecteer in **regel type kiezen** de optie **LDAP-kenmerken als claims verzenden**. Selecteer **Next**.
+7. Geef in **claim regel configureren** de volgende waarden op: 
 
    - **Claim regel naam**: claim regel voor e-mail 
    - **Kenmerk opslag**: Active Directory 
@@ -90,7 +90,7 @@ Voordat u met deze procedure begint, moet u al een AD FS-server instellen en erm
 
 ### <a name="create-an-email-transform-rule"></a>Een regel voor een e-mail transformatie maken
 1. Ga naar **claim regels bewerken** en klik op **regel toevoegen**. Selecteer bij **regel type kiezen** **de optie een binnenkomende claim transformeren** en klik op **volgende**. 
-2. Geef in **claim regel configureren**de volgende waarden op: 
+2. Geef in **claim regel configureren** de volgende waarden op: 
 
    - **Claim regel naam**: regel voor transformeren van e-mail 
    - **Binnenkomend claim type**: e-mail adres 
@@ -128,20 +128,20 @@ Voordat u met deze procedure begint, moet u al een AD FS-server instellen en erm
 
 ### <a name="add-the-relying-party-trust-and-claim-rules"></a>De regels voor de Relying Party-vertrouwens relatie en de claim toevoegen 
 1. Ga op de AD FS-server naar **hulpprogram ma's**  >  **AD FS beheer**. 
-1. Selecteer **vertrouwens relaties**  >  **Relying Party trusts**in het navigatie deel venster. 
+1. Selecteer **vertrouwens relaties**  >  **Relying Party trusts** in het navigatie deel venster. 
 1. Onder **acties**, selecteert u **vertrouwens relatie van Relying Party toevoegen**.  
-1. Gebruik in de wizard Relying Party vertrouwens relatie toevoegen voor **gegevens bron selecteren**de optie **gegevens importeren over de Relying Party die online of op een lokaal netwerk zijn gepubliceerd**. Geef de URL voor de federatieve meta gegevens op: `https://nexus.microsoftonline-p.com/federationmetadata/2007-06/federationmetadata.xml` .  Andere standaard selecties behouden. Selecteer **Sluiten**.
+1. Gebruik in de wizard Relying Party vertrouwens relatie toevoegen voor **gegevens bron selecteren** de optie **gegevens importeren over de Relying Party die online of op een lokaal netwerk zijn gepubliceerd**. Geef de URL voor de federatieve meta gegevens op: `https://nexus.microsoftonline-p.com/federationmetadata/2007-06/federationmetadata.xml` .  Andere standaard selecties behouden. Selecteer **Sluiten**.
 1. De wizard **claim regels bewerken** wordt geopend. 
 1. Selecteer in de wizard **claim regels bewerken** de optie **regel toevoegen**. Selecteer bij **regel type kiezen** **de optie claims verzenden met een aangepaste regel**. Selecteer *Next*. 
-1. Geef in **claim regel configureren**de volgende waarden op:
+1. Geef in **claim regel configureren** de volgende waarden op:
 
    - **Claim regel naam**: probleem onveranderbare id  
    - **Aangepaste regel**: `c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] => issue(store = "Active Directory", types = ("http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID"), query = "samAccountName={0};objectGUID;{1}", param = regexreplace(c.Value, "(?<domain>[^\\]+)\\(?<user>.+)", "${user}"), param = c.Value);`
 
 1. Selecteer **Finish**. 
 1. In het venster **claim regels bewerken** wordt de nieuwe regel weer gegeven. Klik op **Toepassen**.  
-1. Selecteer in dezelfde wizard **claim regels bewerken** de optie **regel toevoegen**. In het **regel type coslang**selecteert u **LDAP-kenmerken als claims verzenden**. Selecteer **Next**.
-1. Geef in **claim regel configureren**de volgende waarden op: 
+1. Selecteer in dezelfde wizard **claim regels bewerken** de optie **regel toevoegen**. In het **regel type coslang** selecteert u **LDAP-kenmerken als claims verzenden**. Selecteer **Next**.
+1. Geef in **claim regel configureren** de volgende waarden op: 
 
    - **Claim regel naam**: claim regel voor e-mail  
    - **Kenmerk opslag**: Active Directory  

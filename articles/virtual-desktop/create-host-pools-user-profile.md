@@ -7,10 +7,10 @@ ms.date: 08/20/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 35b692033cc16f276b48bc6d973b27d994c1082a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88002573"
 ---
 # <a name="create-a-profile-container-for-a-host-pool-using-a-file-share"></a>Een profielcontainer maken voor een hostpool met behulp van een bestandsshare
@@ -34,7 +34,7 @@ Nadat u de virtuele machine hebt gemaakt, voegt u deze toe aan het domein door d
 
 1. [Maak verbinding met de virtuele machine](../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) met de referenties die u hebt ingevoerd tijdens het maken van de virtuele machine.
 2. Start **configuratie scherm** op de virtuele machine en selecteer **systeem**.
-3. Selecteer **computer naam**, selecteer **instellingen wijzigen**en selecteer vervolgens **wijzigen...**
+3. Selecteer **computer naam**, selecteer **instellingen wijzigen** en selecteer vervolgens **wijzigen...**
 4. Selecteer **domein** en voer vervolgens het Active Directory domein in op het virtuele netwerk.
 5. Verifieer met een domein account dat bevoegdheden heeft voor computers die lid zijn van een domein.
 
@@ -45,10 +45,10 @@ Hieronder vindt u algemene instructies voor het voorbereiden van een virtuele ma
 1. Voeg het virtuele bureau blad van Windows Active Directory gebruikers toe aan een [Active Directory beveiligings groep](/windows/security/identity-protection/access-control/active-directory-security-groups/). Deze beveiligings groep wordt gebruikt om de virtuele Windows-bureaublad gebruikers te verifiëren op de bestands share-virtuele machine die u zojuist hebt gemaakt.
 2. [Maak verbinding met de virtuele machine van de bestands share](../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine).
 3. Op de bestands share-virtuele machine maakt u een map op **station C** die wordt gebruikt als de profiel share.
-4. Klik met de rechter muisknop op de nieuwe map, selecteer **Eigenschappen**, **delen**en selecteer vervolgens **Geavanceerd delen...**.
+4. Klik met de rechter muisknop op de nieuwe map, selecteer **Eigenschappen**, **delen** en selecteer vervolgens **Geavanceerd delen...**.
 5. Selecteer **deze map delen**, selecteer **machtigingen..**. en selecteer vervolgens **toevoegen...**.
-6. Zoek naar de beveiligings groep waaraan u de Windows-gebruikers van het virtuele bureau blad hebt toegevoegd en zorg ervoor dat de groep **volledig beheer**heeft.
-7. Nadat u de beveiligings groep hebt toegevoegd, klikt u met de rechter muisknop op de map, selecteert u **Eigenschappen**, **delen**selecteren en kopieert u het **netwerkpad dat u wilt gebruiken voor later** gebruik.
+6. Zoek naar de beveiligings groep waaraan u de Windows-gebruikers van het virtuele bureau blad hebt toegevoegd en zorg ervoor dat de groep **volledig beheer** heeft.
+7. Nadat u de beveiligings groep hebt toegevoegd, klikt u met de rechter muisknop op de map, selecteert u **Eigenschappen**, **delen** selecteren en kopieert u het **netwerkpad dat u wilt gebruiken voor later** gebruik.
 
 Zie de [FSLogix-documentatie](/fslogix/fslogix-storage-config-ht/)voor meer informatie over machtigingen.
 

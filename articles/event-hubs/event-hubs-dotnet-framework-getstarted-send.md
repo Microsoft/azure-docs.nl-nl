@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: ea3ad7e90a947269833a03a4cacf3d4fe76a6620
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91334273"
 ---
 # <a name="quickstart-send-events-to-or-receive-events-from-azure-event-hubs-using-net-framework"></a>Quickstart: Gebeurtenissen verzenden naar of ontvangen van Azure Event Hubs met behulp van .NET Framework
@@ -27,7 +27,7 @@ In dit gedeelte wordt uitgelegd hoe u een .NET Framework-consoletoepassing maakt
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
 
-Maak in Visual Studio een nieuw Visual C# bureaublad-app-project met behulp van de projectsjabloon**Consoletoepassing**. Noem het project **Afzender**.
+Maak in Visual Studio een nieuw Visual C# bureaublad-app-project met behulp van de projectsjabloon **Consoletoepassing**. Noem het project **Afzender**.
    
 ![Schermopname met het venster 'Nieuw project' met 'Console-app (.NET Framework)' geselecteerd en de knop projectnaam 'Afzender' en 'OK' gemarkeerd.](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp1.png)
 
@@ -98,7 +98,7 @@ In dit gedeelte schrijft u een .NET Framework-consoletoepassing die berichten on
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
 
-Maak in Visual Studio een nieuw Visual C# bureaublad-app-project met behulp van de projectsjabloon**Consoletoepassing**. Noem het project **Ontvanger**.
+Maak in Visual Studio een nieuw Visual C# bureaublad-app-project met behulp van de projectsjabloon **Consoletoepassing**. Noem het project **Ontvanger**.
    
 ![Consoletoepassing maken](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-receiver-csharp1.png)
 

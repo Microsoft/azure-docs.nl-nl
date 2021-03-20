@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: d08046c8f29901dd9650a1edc886efa2ff226e00
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93086774"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Uw ontwikkelomgeving instellen in Mac OS X
@@ -41,7 +41,7 @@ Als u een lokale Docker-container wilt instellen en daarop een Service Fabric-cl
         "fixed-cidr-v6": "fd00::/64"
     }
     ```
-    U kunt deze instellingen rechtstreeks in het bestand daemon.json in uw Docker-installatiepad bijwerken. U kunt de configuratie-instellingen van de daemon rechtstreeks wijzigen in docker. Selecteer de **Docker-pictogram** , en selecteer vervolgens **voorkeuren** > **Daemon** > **Geavanceerd** .
+    U kunt deze instellingen rechtstreeks in het bestand daemon.json in uw Docker-installatiepad bijwerken. U kunt de configuratie-instellingen van de daemon rechtstreeks wijzigen in docker. Selecteer de **Docker-pictogram**, en selecteer vervolgens **voorkeuren** > **Daemon** > **Geavanceerd**.
     
     >[!NOTE]
     >

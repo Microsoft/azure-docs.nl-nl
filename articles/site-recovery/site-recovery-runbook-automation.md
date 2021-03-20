@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: ramamill
 ms.openlocfilehash: a141280338632fdad7053cbbe76c8bdf2797443d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89424868"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Azure Automation-runbooks aan herstelplannen toevoegen
@@ -115,14 +115,14 @@ De Aman-blog van Sharma in de [oogst van Clouds](http://harvestingclouds.com) is
 ## <a name="customize-the-recovery-plan"></a>Het herstel plan aanpassen
 
 1. Selecteer in de kluis **herstel plannen (site Recovery)**
-2. Klik op **+ herstel plan**om een herstel plan te maken. [Meer informatie](site-recovery-create-recovery-plans.md). Als u al een herstel plan hebt, selecteert u om het te openen.
+2. Klik op **+ herstel plan** om een herstel plan te maken. [Meer informatie](site-recovery-create-recovery-plans.md). Als u al een herstel plan hebt, selecteert u om het te openen.
 3. Klik op de pagina herstel plan op **aanpassen**.
 
     ![Klik op de knop aanpassen](media/site-recovery-runbook-automation-new/custom-rp.png)
 
-2. Klik op de weglatings tekens (...) naast **groep 1:** de  >  **actie post toevoegen**starten.
-3. Controleer in **actie invoegen**of **script** is geselecteerd en geef een naam op voor het script (**Hallo wereld**).
-4. Geef een Automation-account op en selecteer een runbook. Klik op **OK**om het script op te slaan. Het script wordt toegevoegd aan **groep 1: post-stappen**.
+2. Klik op de weglatings tekens (...) naast **groep 1:** de  >  **actie post toevoegen** starten.
+3. Controleer in **actie invoegen** of **script** is geselecteerd en geef een naam op voor het script (**Hallo wereld**).
+4. Geef een Automation-account op en selecteer een runbook. Klik op **OK** om het script op te slaan. Het script wordt toegevoegd aan **groep 1: post-stappen**.
 
 
 ## <a name="reuse-a-runbook-script"></a>Een runbook-script opnieuw gebruiken

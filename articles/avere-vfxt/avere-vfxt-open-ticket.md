@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 8159d83624cdd474d91030d5376a3db447beffe1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96008426"
 ---
 # <a name="get-help-with-your-system"></a>Hulp vragen bij uw systeem
@@ -43,7 +43,7 @@ Volg deze stappen om ervoor te zorgen dat uw ondersteunings ticket is gelabeld m
 
     ![scherm opname van een nieuw venster voor ondersteunings aanvraag in de Azure Portal. Het tabblad basis beginselen is geselecteerd. Scherm items zijn onder meer probleem type, abonnement, service, samen vatting en probleem type.](media/ticket-basics.png)
 
-   Klik op **Volgende** om door te gaan.
+   Klik op **Volgende** om verder te gaan.
 
 1. De tweede pagina van het formulier ondersteuning bevat suggesties voor het oplossen van het probleem op basis van de beschrijving van uw samen vatting. Klik op de knop **volgende** onderaan als u nog steeds een ondersteunings ticket moet maken.
 

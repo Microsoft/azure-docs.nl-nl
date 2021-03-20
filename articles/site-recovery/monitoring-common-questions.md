@@ -9,10 +9,10 @@ ms.date: 07/31/2019
 ms.topic: conceptual
 ms.author: raynew
 ms.openlocfilehash: 66ce267581d4748ea51a3dcbd7caa61907115cc1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82131148"
 ---
 # <a name="common-questions-about-site-recovery-monitoring"></a>Veelgestelde vragen over Site Recovery bewaking
@@ -62,7 +62,7 @@ Alleen machines waarvoor de initiële replicatie is voltooid, worden opgenomen i
 
 ### <a name="how-long-is-data-kept-in-azure-monitor-logs"></a>Hoe lang worden gegevens opgeslagen in Azure Monitor logboeken? 
 
-Bewaar periode is standaard 31 dagen. U kunt de periode verhogen in het gedeelte **gebruik en geschatte kosten** in de werk ruimte log Analytics. Klik op **gegevens retentie**en kies het bereik.
+Bewaar periode is standaard 31 dagen. U kunt de periode verhogen in het gedeelte **gebruik en geschatte kosten** in de werk ruimte log Analytics. Klik op **gegevens retentie** en kies het bereik.
 
 ### <a name="whats-the-size-of-the-resource-logs"></a>Wat is de grootte van de bron logboeken? 
 

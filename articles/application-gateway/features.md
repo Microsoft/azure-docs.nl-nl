@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: victorh
 ms.openlocfilehash: ba9f42bc932a37e1052f17db2ae00413e0769d59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91355734"
 ---
 # <a name="azure-application-gateway-features"></a>Azure-toepassing gateway functies
@@ -149,7 +149,7 @@ Zie [HTTP-headers en URL herschrijven](rewrite-http-headers-url.md)voor meer inf
 
 Application Gateway Standard_v2 kan worden geconfigureerd voor implementaties met automatisch schalen of vaste grootte. De v2-SKU biedt geen verschillende grootte van het exemplaar. Zie voor meer informatie over de prestaties en prijzen van v2 v2 en de [prijzen](understanding-pricing.md) [aanpassen](application-gateway-autoscaling-zone-redundant.md) .
 
-De Application Gateway Standard (v1) wordt aangeboden in drie grootten: **klein**, **gemiddeld**en **groot**. Kleine exemplaargrootten zijn bedoeld voor het ontwikkelen en testen van scenario's.
+De Application Gateway Standard (v1) wordt aangeboden in drie grootten: **klein**, **gemiddeld** en **groot**. Kleine exemplaargrootten zijn bedoeld voor het ontwikkelen en testen van scenario's.
 
 Zie [Servicelimieten voor Application Gateway](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fapplication-gateway%2ftoc.json#application-gateway-limits) voor een volledige lijst van toepassingsgateway-limieten.
 

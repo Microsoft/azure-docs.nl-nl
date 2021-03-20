@@ -14,10 +14,10 @@ ms.custom:
 - seo-python-october2019
 - devx-track-python
 ms.openlocfilehash: c74da5e612609ce6a0525b24e5868059f06da179
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93078778"
 ---
 # <a name="quickstart-build-a-python-application-using-an-azure-cosmos-db-sql-api-account"></a>Quickstart: Een Python-app maken met behulp van een SQL API-account van Azure Cosmos DB
@@ -122,7 +122,7 @@ Ga nu terug naar Azure Portal om de verbindingsreeksinformatie op te halen en ko
 
 2. Open het bestand *cosmos_get_started.py* in *\git-samples\azure-cosmos-db-python-getting-started* in Visual Studio Code.
 
-3. Kopieer uw **URI** -waarde via de portal (met de kopieerknop) en geef deze als waarde aan de **eindpunt** variabele in *cosmos_get_started.py*. 
+3. Kopieer uw **URI**-waarde via de portal (met de kopieerknop) en geef deze als waarde aan de **eindpunt** variabele in *cosmos_get_started.py*. 
 
     `endpoint = 'https://FILLME.documents.azure.com',`
 

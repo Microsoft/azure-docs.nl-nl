@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 10/10/2019
 ms.openlocfilehash: 586dad7439cc57ed2c863ee5f6692e12f7a78c50
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92781223"
 ---
 # <a name="report-across-scaled-out-cloud-databases-preview"></a>Rapport over uitgeschaalde Cloud databases (preview-versie)
@@ -37,7 +37,7 @@ Hier maakt u een Shard-toewijzings beheer samen met verschillende Shards, gevolg
 1. Bouw en voer de voorbeeld toepassing aan de slag **met Elastic database-hulpprogram ma's** uit door de stappen in de sectie artikel te volgen om [de voor beeld-app te downloaden en uit te voeren](elastic-scale-get-started.md#download-and-run-the-sample-app-1). Nadat u alle stappen hebt voltooid, wordt de volgende opdracht prompt weer gegeven:
 
     ![opdracht prompt][1]
-2. Typ ' 1 ' in het opdracht venster en druk op **Enter** . Hiermee wordt het Shard-toewijzings beheer gemaakt en worden twee Shards toegevoegd aan de server. Typ "3" en druk op **Enter** ; Herhaal de actie vier keer. Hiermee worden de rijen met voorbeeld gegevens in uw Shards ingevoegd.
+2. Typ ' 1 ' in het opdracht venster en druk op **Enter**. Hiermee wordt het Shard-toewijzings beheer gemaakt en worden twee Shards toegevoegd aan de server. Typ "3" en druk op **Enter**; Herhaal de actie vier keer. Hiermee worden de rijen met voorbeeld gegevens in uw Shards ingevoegd.
 3. De [Azure Portal](https://portal.azure.com) moet drie nieuwe data bases in uw server weer geven:
 
    ![Visual Studio-bevestiging][2]
@@ -121,13 +121,13 @@ U ziet dat de query de resultaten van alle Shards samenvoegt en de volgende uitv
 
 1. Start Excel 2013.
 2. Navigeer naar het **gegevens** lint.
-3. Klik **in andere bronnen** op en klik op **van SQL Server** .
+3. Klik **in andere bronnen** op en klik op **van SQL Server**.
 
    ![Excel importeren uit andere bronnen][5]
-4. Typ in de **wizard gegevens verbinding** de server naam en aanmeldings referenties. Klik op **Volgende** .
+4. Typ in de **wizard gegevens verbinding** de server naam en aanmeldings referenties. Klik op **Volgende**.
 5. **Selecteer de data base die de gewenste gegevens bevat** in het dialoog venster, selecteer de **ElasticDBQuery** -data base.
-6. Selecteer de tabel **klanten** in de lijst weergave en klik op **volgende** . Klik vervolgens op **Voltooien** .
-7. Selecteer in het formulier **gegevens importeren** onder **Selecteer hoe u deze gegevens wilt weer geven in uw werkmap** **tabel** en klik vervolgens op **OK** .
+6. Selecteer de tabel **klanten** in de lijst weergave en klik op **volgende**. Klik vervolgens op **Voltooien**.
+7. Selecteer in het formulier **gegevens importeren** onder **Selecteer hoe u deze gegevens wilt weer geven in uw werkmap** **tabel** en klik vervolgens op **OK**.
 
 Alle rijen uit de tabel **klanten** , die zijn opgeslagen in verschillende Shards, vullen het Excel-werk blad.
 

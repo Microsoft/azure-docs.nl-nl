@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 7227813f607ca18ee50f503a30b290414f333e21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91310166"
 ---
 # <a name="supported-data-format-details"></a>Details van ondersteunde gegevensindeling
@@ -391,7 +391,7 @@ De eerste rij met gegevens wordt gescand op teken reeksen in Well-Known tekst in
 
 Bij het scannen van de rij met koppen, worden alle typen gegevens die in de kolom naam staan, geëxtraheerd en gebruikt om de cellen in die kolom te casten. Hier volgt een voor beeld van een kolom naam die een type waarde heeft: ' columnName (typeName) '. De volgende niet-hoofdletter gevoelige type namen worden ondersteund:
 
-#### <a name="numbers"></a>Nummers
+#### <a name="numbers"></a>Getallen
 
 - EDM. int64
 - int
@@ -401,7 +401,7 @@ Bij het scannen van de rij met koppen, worden alle typen gegevens die in de kolo
 - double
 - getal
 
-#### <a name="booleans"></a>Booleaanse waarden
+#### <a name="booleans"></a>Booleaans
 
 - EDM. Boolean
 - booleaans

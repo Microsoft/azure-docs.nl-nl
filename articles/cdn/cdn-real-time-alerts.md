@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 6811a06eb3483fd53b6e566033935c3b2e00ceca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84887251"
 ---
 # <a name="real-time-alerts-in-microsoft-azure-cdn"></a>Real-time waarschuwingen in Microsoft Azure CDN
@@ -53,26 +53,26 @@ In dit document worden real-time waarschuwingen in Microsoft Azure CDN uitgelegd
     Er wordt een formulier voor het maken van een nieuwe waarschuwing weer gegeven.
    
     ![Nieuw waarschuwings formulier](./media/cdn-real-time-alerts/cdn-new-alert.png)
-5. Als u wilt dat deze waarschuwing actief is wanneer u op **Opslaan**klikt, schakelt u het selectie vakje **waarschuwing ingeschakeld** in.
+5. Als u wilt dat deze waarschuwing actief is wanneer u op **Opslaan** klikt, schakelt u het selectie vakje **waarschuwing ingeschakeld** in.
 6. Voer in het veld **naam** een beschrijvende naam in voor de waarschuwing.
 7. Selecteer in de vervolg keuzelijst **media type** de optie **http-large object**.
    
     ![Media type waarvoor HTTP-Large Object geselecteerd](./media/cdn-real-time-alerts/cdn-http-large.png)
    
    > [!IMPORTANT]
-   > U moet **http-large object** als het **media type**selecteren.  De andere opties worden niet gebruikt door **Azure CDN van Verizon**.  Als u **http-large object** niet selecteert, wordt uw waarschuwing nooit geactiveerd.
+   > U moet **http-large object** als het **media type** selecteren.  De andere opties worden niet gebruikt door **Azure CDN van Verizon**.  Als u **http-large object** niet selecteert, wordt uw waarschuwing nooit geactiveerd.
    > 
    > 
-8. Maak een **expressie** om te bewaken door een **metriek**, **operator**en **trigger waarde**te selecteren.
+8. Maak een **expressie** om te bewaken door een **metriek**, **operator** en **trigger waarde** te selecteren.
    
-   * Selecteer bij **metriek**het type voor waarde dat u wilt controleren.  **Bandbreedte Mbps** is de hoeveelheid bandbreedte gebruik in megabits per seconde.  **Totale verbindingen** is het aantal gelijktijdige http-verbindingen met onze edge-servers.  Zie [Azure CDN cache status codes](/previous-versions/azure/mt759237(v=azure.100)) en [Azure CDN HTTP-status](/previous-versions/azure/mt759238(v=azure.100)) codes voor definities van de verschillende cache statussen en status codes.
+   * Selecteer bij **metriek** het type voor waarde dat u wilt controleren.  **Bandbreedte Mbps** is de hoeveelheid bandbreedte gebruik in megabits per seconde.  **Totale verbindingen** is het aantal gelijktijdige http-verbindingen met onze edge-servers.  Zie [Azure CDN cache status codes](/previous-versions/azure/mt759237(v=azure.100)) en [Azure CDN HTTP-status](/previous-versions/azure/mt759238(v=azure.100)) codes voor definities van de verschillende cache statussen en status codes.
    * **Operator** is de reken kundige operator die de relatie tussen de metriek en de trigger waarde tot stand brengt.
    * **Trigger waarde** is de drempel waarde waaraan moet worden voldaan voordat een melding wordt verzonden.
      
      In het volgende voor beeld geeft de gemaakte expressie aan dat er een melding wordt verzonden wanneer het aantal status codes van 404 groter is dan 25.
      
      ![Voorbeeld expressie in realtime-waarschuwing](./media/cdn-real-time-alerts/cdn-expression.png)
-9. Geef bij **interval**op hoe vaak u wilt dat de expressie wordt geëvalueerd.
+9. Geef bij **interval** op hoe vaak u wilt dat de expressie wordt geëvalueerd.
 10. Selecteer in de vervolg keuzelijst **aanmelden op** wanneer u een melding wilt ontvangen wanneer de expressie waar is.
     
     * **Begin van voor waarde** geeft aan dat er een melding wordt verzonden wanneer de opgegeven voor waarde voor het eerst wordt gedetecteerd.
@@ -83,7 +83,7 @@ In dit document worden real-time waarschuwingen in Microsoft Azure CDN uitgelegd
     
     ![E-mail formulier per E-mail verzenden](./media/cdn-real-time-alerts/cdn-notify-email.png)
     
-    Voer in het veld **aan** het e-mail adres in waar u de meldingen wilt verzenden. Voor het **onderwerp** en de **hoofd tekst**kunt u de standaard instelling verlaten of u kunt het bericht aanpassen met behulp van de lijst met **beschik bare tref woorden** om waarschuwings gegevens dynamisch in te voegen wanneer het bericht wordt verzonden.
+    Voer in het veld **aan** het e-mail adres in waar u de meldingen wilt verzenden. Voor het **onderwerp** en de **hoofd tekst** kunt u de standaard instelling verlaten of u kunt het bericht aanpassen met behulp van de lijst met **beschik bare tref woorden** om waarschuwings gegevens dynamisch in te voegen wanneer het bericht wordt verzonden.
     
     > [!NOTE]
     > U kunt de e-mail melding testen door te klikken op de knop **melding testen** , maar pas nadat de configuratie van de waarschuwing is opgeslagen.
@@ -93,7 +93,7 @@ In dit document worden real-time waarschuwingen in Microsoft Azure CDN uitgelegd
     
     ![Melding via HTTP post-formulier](./media/cdn-real-time-alerts/cdn-notify-http.png)
     
-    Voer in het veld **URL** de URL in van de locatie waar het HTTP-bericht moet worden geplaatst. Voer in het tekstvak **headers** de HTTP-headers in die moeten worden verzonden in de aanvraag.  Voor de **hoofd tekst**kunt u het bericht aanpassen met behulp van de lijst met **beschik bare tref woorden** om waarschuwings gegevens dynamisch in te voegen wanneer het bericht wordt verzonden.  **Kopteksten** en **hoofd tekst** worden standaard ingesteld op een XML-nettolading zoals in het volgende voor beeld:
+    Voer in het veld **URL** de URL in van de locatie waar het HTTP-bericht moet worden geplaatst. Voer in het tekstvak **headers** de HTTP-headers in die moeten worden verzonden in de aanvraag.  Voor de **hoofd tekst** kunt u het bericht aanpassen met behulp van de lijst met **beschik bare tref woorden** om waarschuwings gegevens dynamisch in te voegen wanneer het bericht wordt verzonden.  **Kopteksten** en **hoofd tekst** worden standaard ingesteld op een XML-nettolading zoals in het volgende voor beeld:
     
     ```
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">

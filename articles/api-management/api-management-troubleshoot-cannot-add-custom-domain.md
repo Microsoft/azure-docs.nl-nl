@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/19/2019
 ms.author: tehnoonr
 ms.openlocfilehash: a09c15466a4a9f62b2696b087cb7ab23cc767379
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75430581"
 ---
 # <a name="failed-to-update-api-management-service-hostnames"></a>Kan de hostnamen van de API Management-service niet bijwerken
@@ -41,9 +41,9 @@ Volg deze stappen om dit probleem op te lossen:
 1. Ga naar de [Azure Portal](Https://portal.azure.com), selecteer uw API Management exemplaar en selecteer vervolgens **beheerde identiteiten**. Zorg ervoor dat de optie **registreren met Azure Active Directory** is ingesteld op **Ja**. 
     ![Registreren bij Azure Active Director](./media/api-management-troubleshoot-cannot-add-custom-domain/register-with-aad.png)
 1. Open in de Azure Portal de service **sleutel kluizen** en selecteer de sleutel kluis die u wilt gebruiken voor het aangepaste domein.
-1. Selecteer **toegangs beleid**en controleer of er een Service-Principal is die overeenkomt met de naam van het API Management service-exemplaar. Als dat het geval is, selecteert u de Service-Principal en zorgt u ervoor dat de machtiging ' **Get** ' wordt weer gegeven onder **geheime machtigingen**.  
+1. Selecteer **toegangs beleid** en controleer of er een Service-Principal is die overeenkomt met de naam van het API Management service-exemplaar. Als dat het geval is, selecteert u de Service-Principal en zorgt u ervoor dat de machtiging ' **Get** ' wordt weer gegeven onder **geheime machtigingen**.  
     ![Toegangs beleid voor Service-Principal toevoegen](./media/api-management-troubleshoot-cannot-add-custom-domain/access-policy.png)
-1. Als de API Management-service zich niet in de lijst bevindt, selecteert u **toegangs beleid toevoegen**en maakt u vervolgens het volgende toegangs beleid:
+1. Als de API Management-service zich niet in de lijst bevindt, selecteert u **toegangs beleid toevoegen** en maakt u vervolgens het volgende toegangs beleid:
     - **Configureren van sjabloon**: geen
     - **Selecteer Principal**: Zoek de naam van de API Management-service en selecteer deze in de lijst
     - **Sleutel machtigingen**: geen

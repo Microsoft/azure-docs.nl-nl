@@ -11,13 +11,13 @@ ms.topic: how-to
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
-ms.date: 1/14/2021
-ms.openlocfilehash: b87d0a2446eb2b65c20ae0bef408320686cb5165
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.date: 03/15/2021
+ms.openlocfilehash: 5c0de2c1589bfa495ab6ad287b998c403041674c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219127"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592146"
 ---
 # <a name="monitoring-microsoft-azure-sql-database-and-azure-sql-managed-instance-performance-using-dynamic-management-views"></a>Prestaties van Microsoft Azure SQL Database en Azure SQL Managed Instance bewaken met dynamische beheerweergaven
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -31,6 +31,10 @@ Microsoft Azure SQL Database en Azure SQL Managed instance ondersteunen gedeelte
 - Dynamische beheer weergaven die betrekking hebben op trans acties.
 
 Zie [dynamische beheer weergaven en-functies (Transact-SQL)](/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views)voor gedetailleerde informatie over dynamische beheer weergaven.
+
+## <a name="monitor-with-sql-insights"></a>Bewaken met SQL Insights
+
+[Azure monitor SQL Insights](../../azure-monitor/insights/sql-insights-overview.md) is een hulp programma voor het bewaken van Azure SQL Managed instances, Azure SQL data bases en SQL Server instances in Azure SQL vm's. Deze service maakt gebruik van een externe agent voor het vastleggen van gegevens uit dynamische beheer weergaven (Dmv's) en stuurt de gegevens naar Azure Log Analytics, waar deze kunnen worden bewaakt en geanalyseerd. U kunt deze gegevens weer geven van [Azure monitor](../../azure-monitor/overview.md) in de beschik bare weer gaven of de logboek gegevens rechtstreeks openen om query's uit te voeren en trends te analyseren. Zie [SQL Insights inschakelen](../../azure-monitor/insights/sql-insights-enable.md)om te beginnen met het gebruik van Azure monitor SQL Insights.
 
 ## <a name="permissions"></a>Machtigingen
 

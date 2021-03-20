@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 09/16/2020
 ms.author: duau
 ms.openlocfilehash: 4846438f8479fe622570aa515a4d8b40cccc57b8
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91252269"
 ---
 # <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application"></a>Snelstart: een Front Door maken voor een webtoepassing met hoge beschikbaarheid
@@ -58,7 +58,7 @@ Als u nog geen web-app hebt, voert u de volgende stappen uit om voorbeelden van 
 
 1. Selecteer **Controleren en maken**, controleer **Samenvatting** en selecteer vervolgens **Maken**. Het kan enkele minuten duren voordat de implementatie is voltooid.
 
-    :::image type="content" source="media/quickstart-create-front-door/create-web-app.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/create-web-app.png" alt-text="De samenvatting voor de web-app controleren":::
 
 Nadat uw implementatie is voltooid, maakt u een tweede web-app. Gebruik dezelfde procedure met dezelfde waarden, met uitzondering van de volgende waarden:
 
@@ -87,15 +87,15 @@ Configureer Azure Front Door zodat gebruikersverkeer wordt doorgestuurd op basis
 
 1. Voer als **Hostnaam** een wereldwijd unieke hostnaam in. In dit voorbeeld wordt *contoso-front-end* gebruikt. Selecteer **Toevoegen**.
 
-    :::image type="content" source="media/quickstart-create-front-door/add-frontend-host-azure-front-door.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/add-frontend-host-azure-front-door.png" alt-text="Een front-end-host toevoegen voor Azure Front Door":::
 
 Maak hierna een back-endpool met daarin uw twee web-apps.
 
 1. Blijf bij **Een Front Door maken** en selecteer bij **Back-endpools** de optie **+** om **Een back-endpool toevoegen** te openen.
 
-1. Voer *myBackendPool*in bij **Naam** en selecteer vervolgens **Een back-end toevoegen**.
+1. Voer *myBackendPool* in bij **Naam** en selecteer vervolgens **Een back-end toevoegen**.
 
-    :::image type="content" source="media/quickstart-create-front-door/front-door-add-backend-pool.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/front-door-add-backend-pool.png" alt-text="Een back-endpool toevoegen":::
 
 1. Selecteer in de Blade **Een back-end toevoegen** de volgende informatie en selecteer **Toevoegen**.
 
@@ -107,7 +107,7 @@ Maak hierna een back-endpool met daarin uw twee web-apps.
 
     **Laat alle andere velden ongewijzigd.*
 
-    :::image type="content" source="media/quickstart-create-front-door/front-door-add-a-backend.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/front-door-add-a-backend.png" alt-text="Een back-endhost toevoegen aan uw Front Door":::
 
 1. Selecteer opnieuw **Een back-end toevoegen**. Selecteer de volgende gegevens en selecteer **Toevoegen**.
 
@@ -121,7 +121,7 @@ Maak hierna een back-endpool met daarin uw twee web-apps.
 
 1. Selecteer **Toevoegen** in de blade **Een back-endpool toevoegen** om de configuratie van de back-endpool te voltooien.
 
-    :::image type="content" source="media/quickstart-create-front-door/front-door-add-backend-pool-complete.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/front-door-add-backend-pool-complete.png" alt-text="Een back-endpool toevoegen voor Azure Front Door":::
 
 Voeg als laatste een regel voor doorsturen toe. Met een regel voor doorsturen wordt uw front-endhost toegewezen aan de back-endpool. De regel stuurt een aanvraag voor `contoso-frontend.azurefd.net` door naar **myBackendPool**.
 
@@ -129,14 +129,14 @@ Voeg als laatste een regel voor doorsturen toe. Met een regel voor doorsturen wo
 
 1. Voer bij **Een regel toevoegen** als **Naam** *LocationRule* in. Accepteer alle standaardwaarden en selecteer vervolgens **Toevoegen** om de regel voor doorsturen toe te voegen.
 
-    :::image type="content" source="media/quickstart-create-front-door/front-door-add-a-rule.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/front-door-add-a-rule.png" alt-text="Een regel toevoegen aan Front Door":::
 
    >[!WARNING]
    > U **moet** ervoor zorgen dat elk van de front-endhosts in de Front Door is geconfigureerd met een regel voor doorsturen waaraan een standaardpad (`\*`) is gekoppeld. Er moet dus in al uw regels voor doorsturen minimaal een routeringsregel voor al uw front-endhosts op het standaardpad (`\*`) zijn gedefinieerd. Als dit niet het geval is, kan dit tot gevolg hebben dat het verkeer van uw eindgebruikers niet goed wordt gerouteerd.
 
 1. Selecteer **Controleren en maken** en vervolgens **Maken**.
 
-    :::image type="content" source="media/quickstart-create-front-door/configuration-azure-front-door.png" alt-text="Een web-app maken in de Azure-portal":::
+    :::image type="content" source="media/quickstart-create-front-door/configuration-azure-front-door.png" alt-text="Geconfigureerde Azure Front Door":::
 
 ## <a name="view-azure-front-door-in-action"></a>Azure Front Door in actie zien
 
@@ -161,7 +161,7 @@ Voer de volgende stappen uit om de directe wereldwijde failover in actie te test
 
 1. Vernieuw de browser. Als het goed is, ziet u nu een foutbericht.
 
-   :::image type="content" source="media/quickstart-create-front-door/web-app-stopped-message.png" alt-text="Een web-app maken in de Azure-portal":::
+   :::image type="content" source="media/quickstart-create-front-door/web-app-stopped-message.png" alt-text="Beide instanties van de web-app zijn gestopt":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

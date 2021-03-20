@@ -7,10 +7,10 @@ ms.topic: troubleshooting
 ms.date: 08/18/2020
 ms.author: yunjchoi
 ms.openlocfilehash: a409ac944c51d893fc344f82ae83d97559e055ef
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92070653"
 ---
 # <a name="check-for-resource-health-events-impacting-your-aks-cluster-preview"></a>Controleren op Resource Health gebeurtenissen die van invloed zijn op uw AKS-cluster (preview-versie)
@@ -39,13 +39,13 @@ Wanneer u uw container werkbelastingen uitvoert op AKS, wilt u er zeker van zijn
 
 Azure Resource Health helpt u bij het vaststellen en verkrijgen van ondersteuning voor service problemen die van invloed zijn op uw Azure-resources. Resource Health rapporten over de huidige en eerdere status van uw resources en helpt u te bepalen of het probleem wordt veroorzaakt door een door de gebruiker gestarte actie of een platform gebeurtenis.
 
-Resource Health ontvangt signalen voor uw beheerde cluster om de status van het cluster te bepalen. Hiermee wordt de status van uw AKS-cluster onderzocht en worden de actie rapporten voor elk status signaal vereist. Deze signalen variëren van het automatisch oplossen van problemen, geplande updates, niet-geplande status gebeurtenissen en niet-beschik baarheid, veroorzaakt door door de gebruiker geïnitieerde acties. Deze signalen worden geclassificeerd met behulp van de status van de Azure Resource Health: *beschikbaar, niet* *beschikbaar*, *onbekend*en *gedegradeerd*.
+Resource Health ontvangt signalen voor uw beheerde cluster om de status van het cluster te bepalen. Hiermee wordt de status van uw AKS-cluster onderzocht en worden de actie rapporten voor elk status signaal vereist. Deze signalen variëren van het automatisch oplossen van problemen, geplande updates, niet-geplande status gebeurtenissen en niet-beschik baarheid, veroorzaakt door door de gebruiker geïnitieerde acties. Deze signalen worden geclassificeerd met behulp van de status van de Azure Resource Health: *beschikbaar, niet* *beschikbaar*, *onbekend* en *gedegradeerd*.
 
-- **Beschikbaar**: wanneer er geen bekende problemen zijn die van invloed zijn op de status van uw cluster, worden resource Health uw cluster als *beschikbaar*gerapporteerd.
+- **Beschikbaar**: wanneer er geen bekende problemen zijn die van invloed zijn op de status van uw cluster, worden resource Health uw cluster als *beschikbaar* gerapporteerd.
 
 - **Niet beschikbaar**: wanneer er sprake is van een platform of een niet-platform gebeurtenis die van invloed is op de status van uw cluster, resource Health rapporteert u uw cluster als niet *beschikbaar*.
 
-- **Onbekend**: wanneer er sprake is van een tijdelijke verbinding met de status waarden van uw cluster, resource Health het cluster als *onbekend*meldt.
+- **Onbekend**: wanneer er sprake is van een tijdelijke verbinding met de status waarden van uw cluster, resource Health het cluster als *onbekend* meldt.
 
 - **Gedegradeerd**: wanneer er een probleem is met de status die uw actie vereist, resource Health rapporteert het cluster als *gedegradeerd*.
 

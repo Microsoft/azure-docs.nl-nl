@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 5fbd523a38b3c4860316e45b8b7c03a17de19499
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92678328"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>C#-Service Fabric toepassingen ontwikkelen met Visual Studio code
@@ -34,7 +34,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-st
 ## <a name="open-the-application-in-vs-code"></a>Open de toepassing in VS code
 
 ### <a name="windows"></a>Windows
-Klik met de rechter muisknop op het VS-code pictogram in het menu Start en kies **als administrator uitvoeren** . Als u het fout opsporingsprogramma wilt koppelen aan uw services, moet u VS code uitvoeren als beheerder.
+Klik met de rechter muisknop op het VS-code pictogram in het menu Start en kies **als administrator uitvoeren**. Als u het fout opsporingsprogramma wilt koppelen aan uw services, moet u VS code uitvoeren als beheerder.
 
 ### <a name="linux"></a>Linux
 Ga met behulp van de terminal naar het pad/service-fabric-dotnet-core-getting-started/Services/CounterService van de Directory waarnaar de toepassing lokaal is gekloond.
@@ -57,7 +57,7 @@ De toepassing moet nu worden weer gegeven in de VS code-werk ruimte.
 ## <a name="deploy-the-application-to-the-local-cluster"></a>De toepassing implementeren in het lokale cluster
 Nadat u de toepassing hebt gemaakt, kunt u deze implementeren in het lokale cluster. 
 
-1. Selecteer in het **opdracht palet** de **opdracht service Fabric: Deploy toepassing (localhost)** . De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
+1. Selecteer in het **opdracht palet** de **opdracht service Fabric: Deploy toepassing (localhost)**. De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
 
    ![Opdracht toepassing implementeren in VS code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
@@ -74,7 +74,7 @@ Naast het implementeren van de toepassing naar het lokale cluster, kunt u de toe
 
 1. Zorg ervoor dat u uw toepassing hebt gemaakt met behulp van de bovenstaande instructies. Werk het gegenereerde configuratie bestand `Cloud.json` bij met de details van het externe cluster waarnaar u wilt publiceren.
 
-2. Selecteer in het **opdracht palet** de **service Fabric: opdracht toepassing publiceren** . De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
+2. Selecteer in het **opdracht palet** de **service Fabric: opdracht toepassing publiceren**. De uitvoer van het installatie proces wordt verzonden naar de geïntegreerde Terminal.
 
    ![Opdracht toepassing publiceren in VS code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-publish-application.png)
 
@@ -101,7 +101,7 @@ Voer de volgende stappen uit om een onderbrekings punt en fout opsporing in te s
 
    ![Primair proces](./media/service-fabric-develop-csharp-applications-with-vs-code/select-process.png)
 
-5. Het onderbrekings punt in het *CounterService.cs* -bestand wordt zeer snel bereikt. Vervolgens kunt u de waarden van de lokale variabelen verkennen. Gebruik de werk balk fout opsporing boven aan de code om door te gaan met de uitvoering, stap over lijnen, Step Into methoden of stap uit te voeren van de huidige methode. 
+5. Het onderbrekings punt in het bestand *CounterService. cs* wordt zeer snel bereikt. Vervolgens kunt u de waarden van de lokale variabelen verkennen. Gebruik de werk balk fout opsporing boven aan de code om door te gaan met de uitvoering, stap over lijnen, Step Into methoden of stap uit te voeren van de huidige methode. 
 
    ![Debug-waarden](./media/service-fabric-develop-csharp-applications-with-vs-code/breakpoint-hit.png)
 

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/09/2020
 ms.openlocfilehash: d7734fde529c24e8113ea3b019d343b7223f0122
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91929639"
 ---
 # <a name="upgrade-to-the-latest-rest-api-in-azure-cognitive-search"></a>Voer een upgrade uit naar de nieuwste REST API in azure Cognitive Search
@@ -26,7 +26,7 @@ Versie 2020-06-30 bevat een belang rijke nieuwe functie ([Knowledge Store](knowl
 
 <a name="UpgradeSteps"></a>
 
-## <a name="how-to-upgrade"></a>Een upgrade uitvoeren
+## <a name="how-to-upgrade"></a>Upgrade uitvoeren
 
 Wanneer u een upgrade naar een nieuwe versie uitvoert, hoeft u waarschijnlijk niet veel wijzigingen aan te brengen in uw code, behalve om het versie nummer te wijzigen. De enige situaties waarin u mogelijk code moet wijzigen, zijn als:
 

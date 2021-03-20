@@ -11,10 +11,10 @@ ms.date: 10/12/2020
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 409b51682700a8b13b2840f171642bdcbee6f6d2
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93340223"
 ---
 # <a name="change-feed-processor-in-azure-cosmos-db"></a>Processor voor wijzigingenfeed in Azure Cosmos DB
@@ -84,7 +84,7 @@ U kunt bijvoorbeeld één implementatie-eenheid hebben die een externe API activ
 
 Zoals eerder vermeld, binnen een implementatie-eenheid, kunt u een of meer exemplaren hebben. Om te profiteren van de reken distributie binnen de implementatie-eenheid, zijn de enige vereisten voor de sleutel:
 
-1. Alle exemplaren moeten dezelfde configuratie voor de lease container hebben.
+1. Alle instanties moeten dezelfde configuratie voor de leasecontainer hebben.
 1. Alle exemplaren moeten hetzelfde hebben `processorName` .
 1. Elk exemplaar moet een andere naam hebben (`WithInstanceName`).
 
@@ -106,7 +106,7 @@ Wanneer een wijzigings verwerkings processor de eerste keer wordt gestart, wordt
 
 ### <a name="reading-from-a-previous-date-and-time"></a>Lezen van een vorige datum en tijd
 
-Het is mogelijk om de Change feed-processor te initialiseren om wijzigingen te lezen die beginnen op een **specifieke datum en tijd** , door een exemplaar van een `DateTime` te geven aan de `WithStartTime` uitbrei ding van de opbouw functie:
+Het is mogelijk om de Change feed-processor te initialiseren om wijzigingen te lezen die beginnen op een **specifieke datum en tijd**, door een exemplaar van een `DateTime` te geven aan de `WithStartTime` uitbrei ding van de opbouw functie:
 
 [!code-csharp[Main](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed/Program.cs?name=TimeInitialization)]
 
@@ -134,7 +134,7 @@ De Change feed-processor kan worden gehost in elk platform dat ondersteuning bie
 
 Hoewel de feed-processor in korte Bewaar omgevingen kan worden uitgevoerd, omdat de lease container de status behoudt, zal de opstart cyclus van deze omgevingen vertraging oplopen om de meldingen te ontvangen (als gevolg van de overhead van het starten van de processor telkens wanneer de omgeving wordt gestart).
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 * [Azure Cosmos DB SDK](sql-api-sdk-dotnet.md)
 * [De voorbeeld toepassing op GitHub volt ooien](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)

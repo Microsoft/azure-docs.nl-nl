@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/13/2020
 ms.openlocfilehash: 92ef5b372113d0d226335b8ec464a75a5a684bc3
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94592903"
 ---
 # <a name="one-vs-one-multiclass"></a>Een-VS-één-klasse
@@ -42,7 +42,7 @@ U verbindt het binaire model met de multi klassen module. Vervolgens traint u de
 
 Wanneer u de modellen combineert, worden met één VS-één klasse meerdere binaire classificatie modellen gemaakt, wordt het algoritme voor elke klasse geoptimaliseerd en worden de modellen vervolgens samengevoegd. De module voert deze taken uit, ook al heeft de gegevensset van de training mogelijk meerdere klassen waarden.
 
-1. Voeg de module met één VS en één Multi klasse toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-Initialize** , in de categorie **classificatie** .
+1. Voeg de module met één VS en één Multi klasse toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning-Initialize**, in de categorie **classificatie** .
 
    De één-VS-één classificatie met meerdere klassen heeft geen eigen para meters. Aanpassingen moeten worden uitgevoerd in het binaire classificatie model dat wordt opgegeven als invoer.
 

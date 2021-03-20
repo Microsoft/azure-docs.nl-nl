@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/09/2020
 ms.author: tisande
 ms.custom: query-reference
-ms.openlocfilehash: da992715b5cf624592db72cacefd35c9513ac43f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b0e7996b71e68db371201da1f0f5c93486ae4e29
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93335769"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592088"
 ---
 # <a name="datetimefromparts-azure-cosmos-db"></a>DateTimeFromParts (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -48,17 +48,17 @@ DateTimeFromParts(<numberYear>, <numberMonth>, <numberDay> [, numberHour]  [, nu
 
 Retourneert een UTC-datum en-8601 tijd teken reeks waarde in de notatie `YYYY-MM-DDThh:mm:ss.fffffffZ` waarin:
   
-  |Indeling|Beschrijving|
-  |-|-|
-  |DD|jaar met vier cijfers|
-  |MM|maand van twee cijfers (01 = januari, etc.)|
-  |AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
-  |T|de aanzienlijke voor het begin van de tijd elementen|
-  |hh|twee cijfers per uur (00 tot en met 23)|
-  |mm|twee cijfers minuten (00 tot en met 59)|
-  |ss|seconden van twee cijfers (00 tot en met 59)|
-  |.fffffff|aantal seconden van zeven cijfers|
-  |Z|UTC (Coordinated Universal Time)||
+|Indeling|Beschrijving|
+|-|-|
+|DD|jaar met vier cijfers|
+|MM|maand van twee cijfers (01 = januari, etc.)|
+|AFSCHRIJVING|2-cijferige dag van de maand (01 tot en met 31)|
+|T|de aanzienlijke voor het begin van de tijd elementen|
+|hh|twee cijfers per uur (00 tot en met 23)|
+|mm|twee cijfers minuten (00 tot en met 59)|
+|ss|seconden van twee cijfers (00 tot en met 59)|
+|.fffffff|aantal seconden van zeven cijfers|
+|Z|UTC (Coordinated Universal Time)|
   
  Zie [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) voor meer informatie over de ISO 8601-indeling.
 

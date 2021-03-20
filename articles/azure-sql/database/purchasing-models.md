@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/28/2020
 ms.openlocfilehash: 8883263d6ddb2fb8ddc809f464288fcd282531bd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92788822"
 ---
 # <a name="choose-between-the-vcore-and-dtu-purchasing-models---azure-sql-database-and-sql-managed-instance"></a>Kiezen tussen de vCore-en DTU-aankoop modellen-Azure SQL Database en SQL Managed instance
@@ -162,11 +162,11 @@ Klanten met werk belastingen die gevoelig zijn voor wijzigingen in de hardware o
 
 ### <a name="do-i-need-to-take-my-application-offline-to-convert-from-a-dtu-based-service-tier-to-a-vcore-based-service-tier"></a>Moet ik mijn toepassing offline zetten om een service tier op basis van DTU te converteren naar een vCore-service tier?
 
-Nee. U hoeft de toepassing niet offline te zetten. De nieuwe service lagen bieden een eenvoudige online conversie methode die vergelijkbaar is met het bestaande proces van het bijwerken van data bases van de standaard naar de Premium-servicelaag en de andere manier. U kunt deze conversie starten met behulp van de Azure Portal, Power shell, de Azure CLI, T-SQL of de REST API. Zie voor het [beheren van afzonderlijke data bases](single-database-scale.md) en het [beheren van elastische Pools](elastic-pool-overview.md).
+Nee. U hoeft de toepassing niet offline te zetten. De nieuwe service lagen bieden een eenvoudige online conversie methode die vergelijkbaar is met het bestaande proces van het bijwerken van data bases van de standaard naar de Premium-servicelaag en de andere manier. U kunt deze conversie starten met behulp van de Azure Portal, Power shell, de Azure CLI, T-SQL of de REST API. Zie voor meer informatie [Individuele databases beheren](single-database-scale.md) en [Elastische pools beheren](elastic-pool-overview.md).
 
 ### <a name="can-i-convert-a-database-from-a-service-tier-in-the-vcore-based-purchasing-model-to-a-service-tier-in-the-dtu-based-purchasing-model"></a>Kan ik een Data Base van een servicelaag in het op vCore gebaseerde aankoop model converteren naar een servicelaag in het op DTU gebaseerde aankoop model?
 
-Ja, u kunt uw data base eenvoudig converteren naar een ondersteunde prestatie doelstelling door gebruik te maken van de Azure Portal, Power shell, de Azure CLI, T-SQL of de REST API. Zie voor het [beheren van afzonderlijke data bases](single-database-scale.md) en het [beheren van elastische Pools](elastic-pool-overview.md).
+Ja, u kunt uw data base eenvoudig converteren naar een ondersteunde prestatie doelstelling door gebruik te maken van de Azure Portal, Power shell, de Azure CLI, T-SQL of de REST API. Zie voor meer informatie [Individuele databases beheren](single-database-scale.md) en [Elastische pools beheren](elastic-pool-overview.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

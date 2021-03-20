@@ -8,10 +8,10 @@ ms.date: 3/16/2020
 ms.topic: conceptual
 ms.service: digital-twins
 ms.openlocfilehash: 118b02ab694d27dbe4e13cbfa1a617a56b052772
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92043065"
 ---
 # <a name="integrate-azure-digital-twins-with-other-services"></a>Azure Digital Apparaatdubbels integreren met andere services
@@ -39,9 +39,9 @@ Azure Digital Apparaatdubbels kan gegevens verzenden naar verbonden **eind punte
 * [Event Grid](../event-grid/overview.md)
 * [Service Bus](../service-bus-messaging/service-bus-messaging-overview.md)
 
-Eind punten worden aan Azure Digital Apparaatdubbels gekoppeld met behulp van beheer-Api's of de Azure Portal. Meer informatie over het koppelen van een eind punt aan Azure Digital Apparaatdubbels in [*procedures: eind punten en routes beheren*](how-to-manage-routes-apis-cli.md).
+Eindpunten worden aan Azure Digital Twins gekoppeld met behulp van beheer-API's of Azure Portal. Meer informatie over het koppelen van een eind punt aan Azure Digital Apparaatdubbels in [*procedures: eind punten en routes beheren*](how-to-manage-routes-apis-cli.md).
 
-Er zijn veel andere services waar u uw gegevens uiteindelijk wilt door sturen, zoals [Azure Storage](../storage/common/storage-introduction.md), [Azure Maps](../azure-maps/about-azure-maps.md)of [Time Series Insights](../time-series-insights/overview-what-is-tsi.md). Als u uw gegevens naar Services wilt verzenden, koppelt u de doel service aan een eind punt.
+Er zijn veel andere services waarheen u uiteindelijk misschien uw gegevens wilt verzenden, zoals [Azure Storage](../storage/common/storage-introduction.md), [Azure Maps](../azure-maps/about-azure-maps.md)of [Time Series Insights](../time-series-insights/overview-what-is-tsi.md). Als u uw gegevens naar Services wilt verzenden, koppelt u de doel service aan een eind punt.
 
 Als u bijvoorbeeld ook Azure Maps gebruikt en de locatie wilt correleren met uw Apparaatdubbels [dubbele grafiek](concepts-twins-graph.md)van Azure, kunt u Azure Functions met Event grid gebruiken om communicatie tussen alle services in uw implementatie tot stand te brengen. Meer informatie hierover vindt u in [ *How to: Azure Digital apparaatdubbels gebruiken om een Azure Maps binnenste kaart bij te werken*](how-to-integrate-maps.md)
 

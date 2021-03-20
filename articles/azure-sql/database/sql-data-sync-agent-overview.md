@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/20/2018
 ms.openlocfilehash: ed8d51adf5a93b470f287383a4d3eeb866b15236
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92791457"
 ---
 # <a name="data-sync-agent-for-sql-data-sync"></a>Data Sync-agent voor SQL Data Sync
@@ -34,11 +34,11 @@ Als u de Data Sync-agent wilt downloaden, gaat u naar [SQL Data Sync-agent](http
 
 Als u de Data Sync-agent op de achtergrond wilt installeren vanaf de opdracht prompt, voert u een opdracht in die vergelijkbaar is met het volgende voor beeld. Controleer de bestands naam van het gedownloade MSI-bestand en geef uw eigen waarden op voor de argumenten **TARGETDIR** en **SERVICEACCOUNT** .
 
-- Als u geen waarde opgeeft voor **TARGETDIR** , is de standaard waarde `C:\Program Files (x86)\Microsoft SQL Data Sync 2.0` .
+- Als u geen waarde opgeeft voor **TARGETDIR**, is de standaard waarde `C:\Program Files (x86)\Microsoft SQL Data Sync 2.0` .
 
 - Als u `LocalSystem` de waarde **SERVICEACCOUNT** opgeeft, gebruikt u SQL Server-verificatie wanneer u de agent configureert om verbinding te maken met SQL Server.
 
-- Als u een domein gebruikers account of een lokale gebruikers account opgeeft als waarde voor **SERVICEACCOUNT** , moet u het wacht woord ook opgeven met het argument **SERVICEPASSWORD** . Bijvoorbeeld `SERVICEACCOUNT="<domain>\<user>"  SERVICEPASSWORD="<password>"`.
+- Als u een domein gebruikers account of een lokale gebruikers account opgeeft als waarde voor **SERVICEACCOUNT**, moet u het wacht woord ook opgeven met het argument **SERVICEPASSWORD** . Bijvoorbeeld `SERVICEACCOUNT="<domain>\<user>"  SERVICEPASSWORD="<password>"`.
 
 ```cmd
 msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\Microsoft SQL Data Sync 2.0" SERVICEACCOUNT="LocalSystem" /qn
@@ -98,9 +98,9 @@ Ga als volgt te werk als u de lokale agent vanaf een andere computer wilt uitvoe
 
 ### <a name="the-client-agent-install-uninstall-or-repair-fails"></a><a name="agent-install"></a> De client agent installeren, verwijderen of herstellen mislukt
 
-- **Oorzaak** . Veel scenario's kunnen deze fout veroorzaken. Bekijk de logboeken om de specifieke oorzaak van deze fout te bepalen.
+- **Oorzaak**. Veel scenario's kunnen deze fout veroorzaken. Bekijk de logboeken om de specifieke oorzaak van deze fout te bepalen.
 
-- **Oplossing** . Als u de specifieke oorzaak van de fout wilt achterhalen, genereert en bekijkt u de Windows Installer-Logboeken. U kunt logboek registratie inschakelen vanaf een opdracht prompt. Bijvoorbeeld, als het gedownloade installatie bestand is `SQLDataSyncAgent-2.0-x86-ENU.msi` , Genereer en onderzoek logboek bestanden met behulp van de volgende opdracht regels:
+- **Oplossing**. Als u de specifieke oorzaak van de fout wilt achterhalen, genereert en bekijkt u de Windows Installer-Logboeken. U kunt logboek registratie inschakelen vanaf een opdracht prompt. Bijvoorbeeld, als het gedownloade installatie bestand is `SQLDataSyncAgent-2.0-x86-ENU.msi` , Genereer en onderzoek logboek bestanden met behulp van de volgende opdracht regels:
 
   - Voor installaties: `msiexec.exe /i SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
   - Voor installatie: `msiexec.exe /x SQLDataSyncAgent-2.0-x86-ENU.msi /l*v LocalAgentSetup.Log`
@@ -111,9 +111,9 @@ Ga als volgt te werk als u de lokale agent vanaf een andere computer wilt uitvoe
 
 De client agent werkt niet, zelfs nadat u de verwijdering ervan hebt geannuleerd.
 
-- **Oorzaak** . Dit probleem treedt op omdat de SQL Data Sync client agent geen referenties opslaat.
+- **Oorzaak**. Dit probleem treedt op omdat de SQL Data Sync client agent geen referenties opslaat.
 
-- **Oplossing** . U kunt deze twee oplossingen proberen:
+- **Oplossing**. U kunt deze twee oplossingen proberen:
 
     -   Gebruik Services. msc om de referenties voor de client agent opnieuw in te voeren.
     -   Verwijder deze client agent en installeer vervolgens een nieuwe. Down load en installeer de nieuwste client agent vanuit het [Download centrum](https://www.microsoft.com/download/details.aspx?id=27693).
@@ -124,16 +124,16 @@ Wanneer u een bestaande SQL Server-Data Base aan een synchronisatie groep probee
 
 Dit probleem kan de volgende oorzaken hebben:
 
-- **Oorzaak** . De client agent en de synchronisatie groep bevinden zich in verschillende data centers.
+- **Oorzaak**. De client agent en de synchronisatie groep bevinden zich in verschillende data centers.
 
-- **Oplossing** . De client agent en de synchronisatie groep moeten zich in hetzelfde Data Center bedienen. Als u dit wilt instellen, hebt u twee opties:
+- **Oplossing**. De client agent en de synchronisatie groep moeten zich in hetzelfde Data Center bedienen. Als u dit wilt instellen, hebt u twee opties:
 
     -   Maak een nieuwe agent in het Data Center waar de synchronisatie groep zich bevindt. Registreer vervolgens de data base bij die agent.
     -   De huidige synchronisatie groep verwijderen. Vervolgens moet u de synchronisatie groep opnieuw maken in het Data Center waarin de agent zich bevindt.
 
-- **Oorzaak** . De lijst met data bases van de client agent is niet actueel.
+- **Oorzaak**. De lijst met data bases van de client agent is niet actueel.
 
-- **Oplossing** . Stop de client agent-service en start deze opnieuw.
+- **Oplossing**. Stop de client agent-service en start deze opnieuw.
 
     De lokale agent downloadt de lijst met gekoppelde data bases alleen bij de eerste verzen ding van de agent sleutel. De lijst met gekoppelde data bases wordt niet gedownload voor volgende agent sleutel inzendingen. Data bases die zijn geregistreerd tijdens het verplaatsen van een agent, worden niet weer gegeven in het oorspronkelijke exemplaar van de agent.
 
@@ -143,22 +143,22 @@ U ontdekt dat de agent niet wordt uitgevoerd op een computer die als host fungee
 
 ![Het dialoog venster gegevens synchronisatie fout 1069](./media/sql-data-sync-agent-overview/sync-error-1069.png)
 
-- **Oorzaak** . Een waarschijnlijke oorzaak van deze fout is dat het wacht woord op de lokale server is gewijzigd sinds u de agent en het wacht woord van de agent hebt gemaakt.
+- **Oorzaak**. Een waarschijnlijke oorzaak van deze fout is dat het wacht woord op de lokale server is gewijzigd sinds u de agent en het wacht woord van de agent hebt gemaakt.
 
-- **Oplossing** . Werk het wacht woord van de agent bij naar uw huidige server wachtwoord:
+- **Oplossing**. Werk het wacht woord van de agent bij naar uw huidige server wachtwoord:
 
   1. Zoek de service voor de SQL Data Sync-client agent.  
-    a. Selecteer **Starten** .  
+    a. Selecteer **Starten**.  
     b. Typ **Services. msc** in het zoekvak.  
-    c. Selecteer in de zoek resultaten **Services** .  
-    d. Schuif in het venster **Services** naar de vermelding voor **SQL Data Sync agent** .  
-  1. Klik met de rechter muisknop op **SQL Data Sync agent** en selecteer vervolgens **stoppen** .
-  1. Klik met de rechter muisknop op **SQL Data Sync agent** en selecteer vervolgens **Eigenschappen** .
+    c. Selecteer in de zoek resultaten **Services**.  
+    d. Schuif in het venster **Services** naar de vermelding voor **SQL Data Sync agent**.  
+  1. Klik met de rechter muisknop op **SQL Data Sync agent** en selecteer vervolgens **stoppen**.
+  1. Klik met de rechter muisknop op **SQL Data Sync agent** en selecteer vervolgens **Eigenschappen**.
   1. Selecteer op **SQL Data Sync eigenschappen van agent** het tabblad **Aanmelden** .
   1. Voer uw wacht woord in het vak **wacht woord** in.
   1. Voer in het vak **wacht woord bevestigen** het wacht woord opnieuw in.
-  1. Selecteer **Apply** en vervolgens **OK** .
-  1. Klik in het venster **Services** met de rechter muisknop op de service **SQL Data Sync agent** en klik vervolgens op **starten** .
+  1. Selecteer **Apply** en vervolgens **OK**.
+  1. Klik in het venster **Services** met de rechter muisknop op de service **SQL Data Sync agent** en klik vervolgens op **starten**.
   1. Sluit het venster **Services** .
 
 ### <a name="i-cant-submit-the-agent-key"></a><a name="agent-key"></a> Ik kan de agent sleutel niet verzenden
@@ -167,7 +167,7 @@ Nadat u een sleutel voor een agent hebt gemaakt of opnieuw hebt gemaakt, probeer
 
 ![Dialoog venster synchronisatie fout-kan de agent sleutel niet verzenden](./media/sql-data-sync-agent-overview/sync-error-cant-submit-agent-key.png)
 
-- **Vereisten** . Voordat u doorgaat, controleert u de volgende vereisten:
+- **Vereisten**. Voordat u doorgaat, controleert u de volgende vereisten:
 
   - De SQL Data Sync Windows-service wordt uitgevoerd.
 
@@ -177,12 +177,12 @@ Nadat u een sleutel voor een agent hebt gemaakt of opnieuw hebt gemaakt, probeer
 
   - Het lokale IP-adres wordt toegevoegd aan de server-of database firewall regel voor de meta gegevens database.
 
-- **Oorzaak** . De agent sleutel is een unieke identificatie van elke lokale agent. De sleutel moet voldoen aan twee voor waarden:
+- **Oorzaak**. De agent sleutel is een unieke identificatie van elke lokale agent. De sleutel moet voldoen aan twee voor waarden:
 
   -   De client agent sleutel op de SQL Data Sync-server en de lokale computer moet identiek zijn.
   -   De sleutel van de client agent kan slechts één keer worden gebruikt.
 
-- **Oplossing** . Als uw agent niet werkt, komt dit omdat er niet aan een van deze voor waarden wordt voldaan. Om uw agent opnieuw te laten werken:
+- **Oplossing**. Als uw agent niet werkt, komt dit omdat er niet aan een van deze voor waarden wordt voldaan. Om uw agent opnieuw te laten werken:
 
   1. Genereer een nieuwe sleutel.
   1. Pas de nieuwe sleutel toe op de agent.
@@ -192,30 +192,30 @@ Nadat u een sleutel voor een agent hebt gemaakt of opnieuw hebt gemaakt, probeer
   1. Ga in Verkenner naar de installatiemap van uw agent. De standaard installatie directory is C: \\ Program Files (x86) \\ micro soft SQL Data Sync.
   1. Dubbel klik op de submap van de opslag locatie.
   1. Open de toepassing SqlAzureDataSyncAgent.
-  1. Selecteer **agent sleutel verzenden** .
+  1. Selecteer **agent sleutel verzenden**.
   1. Plak de sleutel van het klem bord in de beschik bare ruimte.
-  1. Selecteer **OK** .
+  1. Selecteer **OK**.
   1. Sluit het programma.
 
 ### <a name="the-client-agent-cant-be-deleted-from-the-portal-if-its-associated-on-premises-database-is-unreachable"></a><a name="agent-delete"></a> De client agent kan niet worden verwijderd uit de portal als de gekoppelde on-premises data base onbereikbaar is
 
 Als een lokaal eind punt (dat wil zeggen, een Data Base) die is geregistreerd bij een SQL Data Sync client agent onbereikbaar wordt, kan de client agent niet worden verwijderd.
 
-- **Oorzaak** . De lokale agent kan niet worden verwijderd omdat de data base die niet kan worden bereikt, nog steeds is geregistreerd bij de agent. Wanneer u probeert de agent te verwijderen, probeert het verwijderings proces de data base te bereiken, wat mislukt.
+- **Oorzaak**. De lokale agent kan niet worden verwijderd omdat de data base die niet kan worden bereikt, nog steeds is geregistreerd bij de agent. Wanneer u probeert de agent te verwijderen, probeert het verwijderings proces de data base te bereiken, wat mislukt.
 
-- **Oplossing** . Gebruik Force Delete om de onbereikbare data base te verwijderen.
+- **Oplossing**. Gebruik Force Delete om de onbereikbare data base te verwijderen.
 
 > [!NOTE]
 > Als de synchronisatie van meta gegevens tabellen behouden blijft na een geforceerd verwijderen, gebruikt `deprovisioningutil.exe` u om deze op te schonen.
 
 ### <a name="local-sync-agent-app-cant-connect-to-the-local-sync-service"></a><a name="agent-connect"></a> Lokale synchronisatie agent-app kan geen verbinding maken met de lokale synchronisatie service
 
-- **Oplossing** . Voer de volgende stappen uit:
+- **Oplossing**. Voer de volgende stappen uit:
 
   1. Sluit de app.  
   1. Open het deel venster Component Services.  
     a. Typ **Services. msc** in het zoekvak op de taak balk.  
-    b. Dubbel klik in de zoek resultaten op **Services** .  
+    b. Dubbel klik in de zoek resultaten op **Services**.  
   1. Stop de **SQL Data Sync** -service.
   1. Start de **SQL Data Sync** -service opnieuw.  
   1. de app opnieuw openen.

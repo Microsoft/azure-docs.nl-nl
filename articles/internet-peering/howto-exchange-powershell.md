@@ -10,10 +10,10 @@ ms.date: 11/27/2019
 ms.author: prmitiki
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: 59d098f1ff0f78e37601544619c603b776e0cf22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89071751"
 ---
 # <a name="create-or-modify-an-exchange-peering-by-using-powershell"></a>Een Exchange-peering maken of wijzigen met behulp van Power shell
@@ -31,7 +31,7 @@ Als u wilt, kunt u deze hand leiding volt ooien met behulp van Azure [Portal](ho
 
 ## <a name="create-and-provision-an-exchange-peering"></a>Een Exchange-peering maken en inrichten
 
-### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Meld u aan bij uw Azure-account en selecteer uw abonnement
+### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Aanmelden bij uw Azure-account en uw abonnement selecteren
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
 ### <a name="get-the-list-of-supported-peering-locations-for-exchange-peering"></a><a name=exchange-location></a>De lijst met ondersteunde peering locaties voor uitwisseling van peering ophalen
@@ -56,7 +56,7 @@ Als u wilt, kunt u deze hand leiding volt ooien met behulp van Azure [Portal](ho
 * [Een verouderde directe peering naar een Azure-resource converteren met behulp van Power shell](howto-legacy-direct-powershell.md)
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
-U kunt gedetailleerde beschrijvingen van alle para meters verkrijgen door de volgende opdracht uit te voeren:
+U kunt gedetailleerde beschrijvingen van alle parameters opvragen door de volgende opdracht uit te voeren:
 
 ```powershell
 Get-Help Get-AzPeering -detailed

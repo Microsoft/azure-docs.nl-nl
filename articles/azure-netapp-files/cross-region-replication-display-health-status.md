@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/16/2020
+ms.date: 03/11/2021
 ms.author: b-juche
-ms.openlocfilehash: a14656bc1abc42fdc3e948fdae1ca07469681d21
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 2819ee3bc76c0b9ff0f35d442e52149096ddc9f7
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95249849"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590973"
 ---
 # <a name="display-health-status-of-replication-relationship"></a>Status van replicatierelatie weergeven 
 
@@ -57,7 +57,8 @@ U kunt de replicatie status weer geven op het bron volume of het doel volume.
 
 * [Replicatie in meerdere regio's](cross-region-replication-introduction.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
+* [Het formaat van een replicatie doel volume voor meerdere regio's wijzigen](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
-* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
+* [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 

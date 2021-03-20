@@ -1,5 +1,5 @@
 ---
-title: Reageren op waarschuwingen over Azure Defender voor Key Vault
+title: Reageren op Azure Defender voor Key Vault-waarschuwingen
 description: Meer informatie over de stappen die nodig zijn voor het reageren op waarschuwingen van Azure Defender voor Key Vault.
 author: memildin
 ms.author: memildin
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
 ms.openlocfilehash: 67c556e44f07240b1ad1bcde61f40042da46def8
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96122202"
 ---
 # <a name="respond-to-azure-defender-for-key-vault-alerts"></a>Reageren op Azure Defender voor Key Vault-waarschuwingen
-Wanneer u een waarschuwing ontvangt van Azure Defender voor Key Vault, raden we u aan de waarschuwing te onderzoeken en erop te reageren, zoals hieronder wordt beschreven. Azure Defender voor Key Vault beveiligt toepassingen en referenties, zelfs als u bekend bent met de toepassing of gebruiker die de waarschuwing heeft geactiveerd, is het belang rijk om de situatie rondom elke waarschuwing te controleren.  
+Wanneer u een waarschuwing ontvangt van Azure Defender voor Key Vault, raden we u aan de waarschuwing te onderzoeken en erop te reageren, zoals hieronder wordt beschreven. Azure Defender voor Key Vault beveiligt toepassingen en referenties, dus zelfs als u vertrouwd bent met de toepassing of gebruiker die de waarschuwing heeft geactiveerd, is het belangrijk dat u de situatie rondom elke waarschuwing controleert.  
 
 Elke waarschuwing van Azure Defender voor Key Vault bevat de volgende elementen:
 
@@ -23,7 +23,7 @@ Elke waarschuwing van Azure Defender voor Key Vault bevat de volgende elementen:
 - User Principal name of IP-adres van de verdachte resource
 
 > [!TIP]
-> Op basis van het *type* toegang dat is opgetreden, zijn sommige velden mogelijk niet beschikbaar. Als uw sleutel kluis bijvoorbeeld door een toepassing is geopend, ziet u geen bijbehorende Principal-naam van de gebruiker. Als het verkeer afkomstig is van buiten Azure, ziet u geen object-ID.
+> Op basis van het *type* toegang dat is opgetreden, zijn sommige velden mogelijk niet beschikbaar. Als uw sleutelkluis bijvoorbeeld door een toepassing is geopend, ziet u geen bijbehorende user principal name van de gebruiker. Als het verkeer afkomstig is van buiten Azure, ziet u geen object-id.
 
 ## <a name="step-1-contact"></a>Stap 1. Contactpersoon
 

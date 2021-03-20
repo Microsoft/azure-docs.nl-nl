@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/14/2019
 ms.author: raynew
 ms.openlocfilehash: 6b68b4c943ec96620427978c2309f27e1fb1f217
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74082562"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Netwerk toewijzing voorbereiden voor herstel na nood geval voor Hyper-V-VM naar Azure
@@ -60,7 +60,7 @@ New York | VMM-NewYork| VMNetwork1-NewYork | Toegewezen aan VMNetwork1-Chicago
 Chicago | VMM-Chicago| VMNetwork1-Chicago | Toegewezen aan VMNetwork1-NewYork
  | | VMNetwork2-Chicago | Niet toegewezen
 
-In dit voorbeeld geldt het volgende:
+In dit voorbeeld:
 
 - Wanneer een replica-VM wordt gemaakt voor een virtuele machine die is verbonden met VMNetwork1-NewYork, wordt deze verbonden met VMNetwork1-Chicago.
 - Wanneer een replica-VM wordt gemaakt voor VMNetwork2-NewYork of VMNetwork2-Chicago, wordt deze niet verbonden met een netwerk.

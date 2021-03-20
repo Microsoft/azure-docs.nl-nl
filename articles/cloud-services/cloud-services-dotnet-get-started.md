@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: ae7fd5a7c9bc858cb18473374e7bd5589717eac6
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98742077"
 ---
 # <a name="get-started-with-azure-cloud-services-classic-and-aspnet"></a>Aan de slag met Azure Cloud Services (klassiek) en ASP.NET
@@ -407,7 +407,7 @@ Als u bestanden wilt toevoegen aan een project of een map, klikt u met de rechte
 1. Verwijder in het project ContosoAdsCommon het bestand *Class1.cs* en voeg in plaats hiervan de bestanden *Ad.cs* en *ContosoAdscontext.cs* uit het gedownloade project toe.
 2. Voeg in het project ContosoAdsWeb de volgende bestanden uit het gedownloade project toe.
 
-   * *Global.asax.cs*.  
+   * *Global. asax. cs*.  
    * In de map *Views\Shared*: *\_Layout.cshtml*.
    * In de map *Views\Home*: *Index.cshtml*.
    * In de map *Controllers*: *AdController.cs*.
@@ -532,7 +532,7 @@ Het bestand *Views\Home\Index.cshtml* geeft categoriekoppelingen weer op de star
 ```
 
 ### <a name="contosoadsweb---adcontrollercs"></a>ContosoAdsWeb - AdController.cs
-De constructor roept in het *AdController.cs* -bestand de `InitializeStorage` methode aan om Azure Storage-client bibliotheek objecten te maken die een API bieden voor het werken met blobs en wacht rijen.
+In het bestand *AdController. cs* roept de constructor de `InitializeStorage` methode aan om Azure Storage-client bibliotheek objecten te maken die een API bieden voor het werken met blobs en wacht rijen.
 
 Vervolgens haalt de code een verwijzing op naar de blobcontainer met *afbeeldingen*, zoals u eerder hebt gezien in *Global.asax.cs*. Tijdens het uitvoeren hiervan wordt standaard [beleid voor opnieuw proberen](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling) ingesteld dat geschikt is voor een web-app. Het standaard beleid voor opnieuw proberen van exponentiële uitstel kan ertoe leiden dat de web-app langer dan een minuut niet meer reageert bij herhaalde pogingen voor een tijdelijke fout. Het beleid dat hier is opgegeven, schrijft voor dat er na elke poging drie seconden wordt gewacht en dat het aantal pogingen maximaal drie bedraagt.
 

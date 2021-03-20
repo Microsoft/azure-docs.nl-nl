@@ -12,10 +12,10 @@ ms.date: 09/26/2019
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: e5184698cab1874f327173fb30cf527feee48cad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85384971"
 ---
 # <a name="manage-threats-to-resources-and-data-in-azure-active-directory-b2c"></a>Bedreigingen voor resources en gegevens in Azure Active Directory B2C beheren
@@ -45,11 +45,11 @@ Instellingen voor wachtwoord beveiliging beheren, met inbegrip van de drempel wa
 1. Voer de gewenste instellingen voor wachtwoord beveiliging in en selecteer vervolgens **Opslaan**.
 
     ![Azure Portal pagina wachtwoord beveiliging in azure AD-instellingen](./media/threat-management/portal-02-password-protection.png)
-    <br />*De drempel waarde voor vergren deling in te stellen op 5 in instellingen voor **wachtwoord beveiliging** *.
+    <br />*De drempel waarde voor vergren deling in te stellen op 5 in instellingen voor **wachtwoord beveiliging***.
 
 ## <a name="view-locked-out-accounts"></a>Vergrendelde accounts weer geven
 
-Als u informatie wilt ophalen over vergrendelde accounts, kunt u het [rapport Active Directory-aanmeld activiteit](../active-directory/reports-monitoring/reference-sign-ins-error-codes.md)controleren. Selecteer onder **status**de optie **fout**. Mislukte aanmeldings pogingen met een **fout code voor aanmelding** die `50053` een vergrendeld account aangeven:
+Als u informatie wilt ophalen over vergrendelde accounts, kunt u het [rapport Active Directory-aanmeld activiteit](../active-directory/reports-monitoring/reference-sign-ins-error-codes.md)controleren. Selecteer onder **status** de optie **fout**. Mislukte aanmeldings pogingen met een **fout code voor aanmelding** die `50053` een vergrendeld account aangeven:
 
 ![Sectie van het aanmeldings rapport van Azure AD met het account vergrendeld](./media/threat-management/portal-01-locked-account.png)
 

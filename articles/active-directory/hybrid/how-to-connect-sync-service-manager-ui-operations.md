@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 64ab5901ad54e37fc05d7da757ce7f31d42fe3b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85357100"
 ---
 # <a name="using-the-sync-service-manager-operations-tab"></a>Het tabblad Synchronisatie Service Manager bewerkingen gebruiken
@@ -43,7 +43,7 @@ De kolom **status** is de belangrijkste informatie en toont het ernstigste probl
 | voltooid- \* -waarschuwingen |De uitvoering is voltooid, maar sommige gegevens hebben niet de verwachte status. Als er fouten zijn, is dit bericht meestal alleen een symptoom. Als u fouten hebt opgelost, moet u geen waarschuwingen onderzoeken. |
 | voltooid |Geen problemen. |
 
-Wanneer u een rij selecteert, worden de onderste updates weer gegeven met de details van die uitvoering. Helemaal links van de onderkant hebt u mogelijk een lijst met de melding **stap #**. Deze lijst wordt alleen weer gegeven als u meerdere domeinen in uw forest hebt waarin elk domein door een stap wordt vertegenwoordigd. De domein naam kan worden gevonden onder de koptekst **partitie**. Onder **synchronisatie statistieken**vindt u meer informatie over het aantal wijzigingen dat is verwerkt. U kunt op de koppelingen klikken om een lijst met gewijzigde objecten op te halen. Als u objecten met fouten hebt, worden deze fouten weer gegeven onder **synchronisatie fouten**.
+Wanneer u een rij selecteert, worden de onderste updates weer gegeven met de details van die uitvoering. Helemaal links van de onderkant hebt u mogelijk een lijst met de melding **stap #**. Deze lijst wordt alleen weer gegeven als u meerdere domeinen in uw forest hebt waarin elk domein door een stap wordt vertegenwoordigd. De domein naam kan worden gevonden onder de koptekst **partitie**. Onder **synchronisatie statistieken** vindt u meer informatie over het aantal wijzigingen dat is verwerkt. U kunt op de koppelingen klikken om een lijst met gewijzigde objecten op te halen. Als u objecten met fouten hebt, worden deze fouten weer gegeven onder **synchronisatie fouten**.
 
 Zie [problemen oplossen met een object dat niet wordt gesynchroniseerd](tshoot-connect-object-not-syncing.md) voor meer informatie
 

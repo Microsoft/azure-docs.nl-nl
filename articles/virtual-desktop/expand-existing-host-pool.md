@@ -7,10 +7,10 @@ ms.date: 10/09/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: b65560a3b10d04887040c4da1e137912810b3095
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91929588"
 ---
 # <a name="expand-an-existing-host-pool-with-new-session-hosts"></a>Een bestaande hostgroep uitbreiden met nieuwe sessie-hosts
@@ -43,7 +43,7 @@ U kunt als volgt uw hostgroep uitbreiden door virtuele machines toe te voegen:
 
 2. Zoek en selecteer **Windows Virtual Desktop**.
 
-3. Selecteer in het menu aan de linkerkant van het scherm de optie **hostgroepen**en selecteer vervolgens de naam van de hostgroep waaraan u virtuele machines wilt toevoegen.
+3. Selecteer in het menu aan de linkerkant van het scherm de optie **hostgroepen** en selecteer vervolgens de naam van de hostgroep waaraan u virtuele machines wilt toevoegen.
 
 4. Selecteer **sessie-hosts** in het menu aan de linkerkant van het scherm.
 
@@ -53,21 +53,21 @@ U kunt als volgt uw hostgroep uitbreiden door virtuele machines toe te voegen:
 
 7. Selecteer de resource groep waarvoor u de virtuele machines wilt maken en selecteer vervolgens de regio. U kunt kiezen welke huidige regio u gebruikt of een nieuwe regio.
 
-8. Voer het aantal sessie-hosts in dat u wilt toevoegen aan uw hostgroep in **aantal vm's**. Als u uw hostgroep bijvoorbeeld met vijf hosts wilt uitbreiden, voert u **5**in.
+8. Voer het aantal sessie-hosts in dat u wilt toevoegen aan uw hostgroep in **aantal vm's**. Als u uw hostgroep bijvoorbeeld met vijf hosts wilt uitbreiden, voert u **5** in.
 
     >[!NOTE]
     >Hoewel het mogelijk is om de installatie kopie en het voor voegsel van de Vm's te bewerken, wordt het niet aanbevolen deze te bewerken als u virtuele machines met verschillende installatie kopieën in dezelfde hostgroep hebt. Bewerk de installatie kopie en het voor voegsel alleen als u virtuele machines met oudere installatie kopieën uit de betrokken hostgroep wilt verwijderen.
 
-9. Selecteer voor de gegevens van het **virtuele netwerk**het virtuele netwerk en het subnet waaraan u de virtuele machines wilt koppelen. U kunt hetzelfde virtuele netwerk selecteren als de bestaande machines die momenteel worden gebruikt, of een andere naam kiezen die geschikter is voor de regio die u in stap 7 hebt geselecteerd.
+9. Selecteer voor de gegevens van het **virtuele netwerk** het virtuele netwerk en het subnet waaraan u de virtuele machines wilt koppelen. U kunt hetzelfde virtuele netwerk selecteren als de bestaande machines die momenteel worden gebruikt, of een andere naam kiezen die geschikter is voor de regio die u in stap 7 hebt geselecteerd.
 
-10. Voer voor het **beheerders account**de Active Directory domein gebruikers naam en het wacht woord in die zijn gekoppeld aan het virtuele netwerk dat u hebt geselecteerd. Deze referenties worden gebruikt om de virtuele machines lid te maken van het virtuele netwerk.
+10. Voer voor het **beheerders account** de Active Directory domein gebruikers naam en het wacht woord in die zijn gekoppeld aan het virtuele netwerk dat u hebt geselecteerd. Deze referenties worden gebruikt om de virtuele machines lid te maken van het virtuele netwerk.
 
       >[!NOTE]
       >Zorg ervoor dat de namen van uw beheerders overeenkomen met de informatie die hier wordt gegeven. En dat er geen MFA is ingeschakeld voor het account.
 
 11. Selecteer het tabblad **tag** als u labels hebt waarop u de virtuele machines wilt groeperen. Als dat niet het geval is, slaat u dit tabblad over.
 
-12. Selecteer het tabblad **controleren + maken** . Controleer uw keuzes en selecteer **maken**als alles er goed uitziet.
+12. Selecteer het tabblad **controleren + maken** . Controleer uw keuzes en selecteer **maken** als alles er goed uitziet.
 
 ## <a name="next-steps"></a>Volgende stappen
 

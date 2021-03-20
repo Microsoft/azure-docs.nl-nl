@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/10/2018
 ms.openlocfilehash: 3514ce966e1de9af1741de6b966964aca2599610
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91269230"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Parallelle vertakkingen maken of koppelen aan werk stroom acties in Azure Logic Apps
@@ -18,7 +18,7 @@ ms.locfileid: "91269230"
 Uw acties in logische app-werk stromen worden standaard sequentieel uitgevoerd. Als u onafhankelijke acties tegelijk wilt uitvoeren, kunt u [parallelle vertakkingen](#parallel-branches)maken en deze vertakkingen later in uw stroom [samen voegen](#join-branches) . 
 
 > [!TIP] 
-> Als u een trigger hebt die een matrix ontvangt en een werk stroom voor elk matrix item wilt uitvoeren, kunt u die matrix *debatchren* met de [trigger eigenschap **SplitOn** ](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch).
+> Als u een trigger hebt die een matrix ontvangt en een werk stroom voor elk matrix item wilt uitvoeren, kunt u die matrix *debatchren* met de [trigger eigenschap **SplitOn**](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -117,7 +117,7 @@ Als u parallelle vertakkingen samen wilt samen voegen, voegt u een stap onderaan
 
 1. Zoek in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps en open deze. 
 
-1. Kies **nieuwe stap**onder de parallelle vertakkingen die u wilt toevoegen. 
+1. Kies **nieuwe stap** onder de parallelle vertakkingen die u wilt toevoegen. 
 
    ![Stap toevoegen om samen te voegen](media/logic-apps-control-flow-branches/add-join-step.png)
 

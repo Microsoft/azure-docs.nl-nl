@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 04/02/2020
 ms.author: baanders
 ms.openlocfilehash: 3550ac294988e72f0cdda4fac91eb0ed7d3436a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85362817"
 ---
-| Type melding | Naam routerings bron | Gegenereerd door...  |
+| Type melding | Naam routeringsbron | Gegenereerd uit...  |
 | --- | --- | --- |
-| Bericht over digitale dubbele wijziging | Bericht over digitale dubbele wijziging    | een digitale dubbele eigenschaps wijziging |
-| Digitale dubbele levenscyclus melding | Digitale dubbele levenscyclus melding    | een digitale dubbele bewerking voor dubbel maken of verwijderen |
-| Wijzigings melding digitale dubbele relatie    | Wijzigings melding digitale dubbele relatie    | wijziging van een digitale dubbele relatie |
-| Digitale dubbele telemetriegegevens van berichten|     Telemetrie-berichten | een telemetrie-bericht |
+| Wijzigingsmelding van digitale dubbels | Wijzigingsmelding van digitale dubbels    | een digitale dubbele eigenschaps wijziging |
+| Levenscyclusmelding van digitale dubbels | Levenscyclusmelding van digitale dubbels    | een digitale dubbele bewerking voor dubbel maken of verwijderen |
+| Melding met betrekking tot relatiewijzigingen van digitale dubbels    | Melding met betrekking tot relatiewijzigingen van digitale dubbels    | wijziging van een digitale dubbele relatie |
+| Telemetrieberichten van digitale dubbels|     Telemetrieberichten | een telemetrie-bericht |

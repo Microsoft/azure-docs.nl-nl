@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: f8e787b8a94987e7d68e12a0e4e69f4c63e21e19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87320575"
 ---
 # <a name="metric-telemetry-application-insights-data-model"></a>Metrische telemetrie: Application Insights gegevens model
@@ -41,15 +41,15 @@ De naam van de metrische gegevens die u wilt weer geven in Application Insights 
 
 Eén waarde voor meting. Som van afzonderlijke metingen voor de aggregatie.
 
-## <a name="count"></a>Aantal
+## <a name="count"></a>Count
 
 Metrieke gewicht van de cumulatieve metriek. Mag niet worden ingesteld voor een meting.
 
-## <a name="min"></a>Min.
+## <a name="min"></a>Min
 
 Minimum waarde van de cumulatieve metriek. Mag niet worden ingesteld voor een meting.
 
-## <a name="max"></a>Max.
+## <a name="max"></a>Max
 
 De maximum waarde van de cumulatieve metriek. Mag niet worden ingesteld voor een meting.
 

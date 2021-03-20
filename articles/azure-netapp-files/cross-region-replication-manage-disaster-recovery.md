@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/16/2020
+ms.date: 03/10/2021
 ms.author: b-juche
-ms.openlocfilehash: eab55f881c250c2e07717604d4ba00587a8b6031
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 5b1c1a5216b7a1ad5b23167e776f2b0bbb0a578f
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95243202"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590990"
 ---
 # <a name="manage-disaster-recovery-using-cross-region-replication"></a>Herstel na nood gevallen met replicatie tussen regio's beheren 
 
@@ -38,10 +38,10 @@ Wanneer u het doel volume moet activeren (bijvoorbeeld wanneer u een failover na
 1. Selecteer het doel volume om replicatie peering te verstoren. Klik op **replicatie** onder Storage-service.  
 
 2.  Controleer de volgende velden voordat u doorgaat:  
-    * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
-        Probeer replicatie peering niet te verstoren als de spiegel status _Uninitialized * bevat.
-    * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
-        Probeer replicatie peering niet te verstoren als de relatie status _Transferring * bevat.   
+    * Zorg ervoor dat ***gespiegelde*** statussen worden weer gegeven.   
+        Probeer replicatie peering niet te verstoren als de status van de mirror niet- *geïnitialiseerd* blijkt.
+    * Zorg ervoor dat de relatie status ***niet-actief*** wordt weer gegeven.   
+        Probeer replicatie peering niet te verstoren als de relatie status de *overdracht* toont.   
 
     Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
 
@@ -80,10 +80,10 @@ Nadat de hersynchronisatie-bewerking van de doel-naar-bron is voltooid, moet u r
 1. De replicatie-peering verbreekt:  
     a. Selecteer het *doel* volume. Klik op **replicatie** onder Storage-service.  
     b. Controleer de volgende velden voordat u doorgaat:   
-    * Zorg ervoor dat in de spiegel status ***gespiegelde** _ worden weer gegeven.   
-    Probeer replicatie peering niet te verstoren als de spiegel status _uninitialized * bevat.  
-    * Zorg ervoor dat de relatie status wordt weer gegeven ***niet-actieve** _.   
-    Probeer replicatie peering niet te verstoren als de relatie status _transferring * bevat.    
+    * Zorg ervoor dat ***gespiegelde*** statussen worden weer gegeven.   
+    Probeer replicatie peering niet te verstoren als de status van de mirror niet- *geïnitialiseerd* blijkt.  
+    * Zorg ervoor dat de relatie status ***niet-actief*** wordt weer gegeven.   
+    Probeer replicatie peering niet te verstoren als de relatie status de *overdracht* toont.    
 
         Zie de status [van de replicatie relatie weer geven](cross-region-replication-display-health-status.md). 
 
@@ -102,7 +102,8 @@ Nadat de hersynchronisatie-bewerking van de doel-naar-bron is voltooid, moet u r
 * [Replicatie in meerdere regio's](cross-region-replication-introduction.md)
 * [Vereisten en overwegingen voor het gebruik van replicatie tussen regio's](cross-region-replication-requirements-considerations.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
+* [Het formaat van een replicatie doel volume voor meerdere regio's wijzigen](azure-netapp-files-resize-capacity-pools-or-volumes.md#resize-a-cross-region-replication-destination-volume)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
-* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
+* [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 

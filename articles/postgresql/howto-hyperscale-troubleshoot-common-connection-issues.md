@@ -9,10 +9,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 10/8/2019
 ms.openlocfilehash: e1c6825820ae943d10157279dfe93922a7521b75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91295614"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---hyperscale-citus"></a>Verbindings problemen met Azure Database for PostgreSQL-grootschalige (Citus) oplossen
@@ -45,13 +45,13 @@ Het inschakelen van grootschalige-knoop punten (Citus) met hoge Beschik baarheid
 3. Omdat de Server groep de resource limieten nadert, kunnen fouten lijken op problemen met de tijdelijke verbinding. Het verg Roten van het RAM-geheugen of het toevoegen van werk knooppunten en herverdelings gegevens kan helpen.
 4. Als verbindings problemen blijven bestaan of langer dan 60 seconden of vaker dan één keer per dag optreden, moet u een Azure-ondersteunings aanvraag indienen door **ondersteuning** te selecteren op de [ondersteunings](https://azure.microsoft.com/support/options) site van Azure.
 
-## <a name="troubleshoot-persistent-errors"></a>Problemen met persistente fouten oplossen
+## <a name="troubleshoot-persistent-errors"></a>Problemen met permanente fouten oplossen
 
 Als de toepassing permanent geen verbinding kan maken met grootschalige (Citus), zijn de meest voorkomende oorzaken voor een onjuiste firewall configuratie of een gebruikers fout.
 
 * Firewall configuratie van coördinator knooppunt: Controleer of de grootschalige-Server firewall (Citus) is geconfigureerd voor het toestaan van verbindingen van uw client, inclusief proxy servers en gateways.
 * Firewall configuratie van de client: de firewall op uw client moet verbindingen met uw database server toestaan. Sommige firewalls vereisen niet alleen toepassing op naam, maar kunnen de IP-adressen en poorten van de server toestaan.
-* Gebruikers fout: dubbel Controleer de connection string. Mogelijk hebt u niet-getypte para meters zoals de server naam. U kunt verbindings reeksen vinden voor verschillende taal frameworks en psql in de Azure Portal. Ga naar de pagina **verbindings reeksen** in de Server groep grootschalige (Citus). Houd er ook wel voor dat grootschalige-clusters (Citus) slechts één data base hebben en dat de vooraf gedefinieerde naam **Citus**is.
+* Gebruikers fout: dubbel Controleer de connection string. Mogelijk hebt u niet-getypte para meters zoals de server naam. U kunt verbindings reeksen vinden voor verschillende taal frameworks en psql in de Azure Portal. Ga naar de pagina **verbindings reeksen** in de Server groep grootschalige (Citus). Houd er ook wel voor dat grootschalige-clusters (Citus) slechts één data base hebben en dat de vooraf gedefinieerde naam **Citus** is.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Stappen voor het oplossen van problemen met de permanente verbinding
 

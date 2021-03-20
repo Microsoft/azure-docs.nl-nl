@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u herstel na nood gevallen van 
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.openlocfilehash: 688d91bc181e1479f5090a10af4b3b262d7ddb7f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92779608"
 ---
 # <a name="complete-disaster-recovery-of-virtual-machines-using-azure-vmware-solution"></a>Herstel na nood geval voor virtuele machines met behulp van de Azure VMware-oplossing volt ooien
@@ -38,17 +38,17 @@ Deze hand leiding heeft betrekking op de volgende replicatie scenario's:
 
 ## <a name="protect-vms"></a>Virtuele machines beschermen
 
-1. Meld u aan bij de **vSphere-client** op de bron site en de toegang tot **HCX-invoeg toepassing** .
+1. Meld u aan bij de **vSphere-client** op de bron site en de toegang tot **HCX-invoeg toepassing**.
 
    :::image type="content" source="./media/disaster-recovery-virtual-machines/hcx-vsphere.png" alt-text="De optie HCX in vSphere" border="true":::
 
-1. Voer het gebied voor **nood herstel** in en selecteer **vm's beveiligen** .
+1. Voer het gebied voor **nood herstel** in en selecteer **vm's beveiligen**.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machine.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-virtual-machine.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machine.png" alt-text="Selecteer vm's beveiligen" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-virtual-machine.png":::
 
 1. Selecteer de bron en de externe sites. De externe site in dit geval moet de privécloud van Azure VMware-oplossing zijn.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machines.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machines.png" alt-text="venster Vm's beveiligen" border="true":::
 
 1. Selecteer, indien nodig, de standaard opties voor **replicatie** :
 
@@ -68,21 +68,21 @@ Deze hand leiding heeft betrekking op de volgende replicatie scenario's:
 
    - **Aantal moment opnamen:** Het totale aantal moment opnamen binnen het geconfigureerde interval voor moment opnamen.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machine-options.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-virtual-machine-options.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-virtual-machine-options.png" alt-text="Vm's opties beveiligen" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-virtual-machine-options.png":::
 
 1. Selecteer een of meer virtuele machines in de lijst en configureer de replicatie opties naar wens.
 
    De virtuele machines nemen standaard het beleid voor globale instellingen over dat is geconfigureerd in de standaard-replicatie opties. Configureer voor elke netwerk interface in de geselecteerde virtuele machine de externe **netwerk poort groep** en selecteer **volt ooien** om het beveiligings proces te starten.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/network-interface-options.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/network-interface-options.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/network-interface-options.png" alt-text="opties voor netwerk interface" border="true" lightbox="./media/disaster-recovery-virtual-machines/network-interface-options.png":::
 
 1. Bewaak het proces voor elk van de geselecteerde Vm's in hetzelfde nood herstel gebied.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-monitor-progress.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-monitor-progress.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/protect-monitor-progress.png" alt-text="de voortgang van de beveiliging bewaken" border="true" lightbox="./media/disaster-recovery-virtual-machines/protect-monitor-progress.png":::
 
 1. Nadat de virtuele machine is beveiligd, kunt u de verschillende moment opnamen weer geven op het tabblad **moment opnamen** .
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/list-of-snapshots.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/list-of-snapshots.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/list-of-snapshots.png" alt-text="lijst met moment opnamen" border="true" lightbox="./media/disaster-recovery-virtual-machines/list-of-snapshots.png":::
 
    De gele drie hoek betekent dat de moment opnamen en de virtuele machines niet zijn getest in een test herstel bewerking.
 
@@ -91,55 +91,55 @@ Deze hand leiding heeft betrekking op de volgende replicatie scenario's:
 ## <a name="complete-a-test-recover-of-vms"></a>Een test herstel van Vm's volt ooien
 
 1. Meld u aan bij de **vSphere-client** op de externe site. Dit is de privécloud van de Azure VMware-oplossing. 
-1. Selecteer in de **HCX-invoeg toepassing** in het gebied nood herstel de verticale ellipsen op een wille keurige virtuele machine om het menu bewerkingen weer te geven en selecteer vervolgens **herstel-VM testen** .
+1. Selecteer in de **HCX-invoeg toepassing** in het gebied nood herstel de verticale ellipsen op een wille keurige virtuele machine om het menu bewerkingen weer te geven en selecteer vervolgens **herstel-VM testen**.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/test-recover-virtual-machine.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/test-recover-virtual-machine.png" alt-text="Selecteer VM herstellen testen" border="true":::
 
 1. Selecteer de opties voor de test en de moment opname die u wilt gebruiken om verschillende statussen van de virtuele machine te testen.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/choose-snapshot.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/choose-snapshot.png" alt-text="Kies een moment opname en selecteer testen" border="true":::
 
 1. Nadat de **test** is geselecteerd, wordt de herstel bewerking gestart.
 
 1. Als u klaar bent, kunt u de nieuwe VM controleren in de Azure VMware-oplossing Private Cloud vCenter.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/verify-test-recovery.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/verify-test-recovery.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/verify-test-recovery.png" alt-text="herstel bewerking controleren" border="true" lightbox="./media/disaster-recovery-virtual-machines/verify-test-recovery.png":::
 
 1. Nadat de tests zijn uitgevoerd op de virtuele machine of een toepassing die erop wordt uitgevoerd, voert u een schone bewerking uit om het test exemplaar te verwijderen.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/cleanup-test-instance.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/cleanup-test-instance.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/cleanup-test-instance.png" alt-text="test exemplaar opschonen" border="true" lightbox="./media/disaster-recovery-virtual-machines/cleanup-test-instance.png":::
 
 ## <a name="recover-vms"></a>Vm's herstellen
 
-1. Meld u aan bij de **vSphere-client** op de externe site, de Azure VMware-oplossing privécloud en open de **HCX-invoeg toepassing** .
+1. Meld u aan bij de **vSphere-client** op de externe site, de Azure VMware-oplossing privécloud en open de **HCX-invoeg toepassing**.
 
    Voor het herstel scenario wordt een groep virtuele machines die worden gebruikt voor dit voor beeld.
 
-1. Selecteer de virtuele machine die u wilt herstellen in de lijst, open het menu **acties** en selecteer **vm's herstellen** .
+1. Selecteer de virtuele machine die u wilt herstellen in de lijst, open het menu **acties** en selecteer **vm's herstellen**.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/recover-virtual-machines.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/recover-virtual-machines.png" alt-text="Vm's herstellen" border="true":::
 
 1. Configureer de herstel opties voor elk exemplaar en selecteer **herstellen** om de herstel bewerking te starten.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/recover-virtual-machines-confirm.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/recover-virtual-machines-confirm.png" alt-text="VM-bevestiging herstellen" border="true":::
 
 1. Nadat de herstel bewerking is voltooid, worden de nieuwe virtuele machines weer gegeven in de inventarisatie van de externe vCenter Server.
 
 ## <a name="complete-a-reverse-replication-on-vms"></a>Een omgekeerde replicatie op Vm's volt ooien
 
-1. Meld u aan bij de **vSphere-client** op uw Azure VMware-oplossing privécloud en open de **HCX-invoeg toepassing** .
+1. Meld u aan bij de **vSphere-client** op uw Azure VMware-oplossing privécloud en open de **HCX-invoeg toepassing**.
    
    >[!NOTE]
    > Zorg ervoor dat de oorspronkelijke Vm's op de bron site zijn uitgeschakeld voordat u de omgekeerde replicatie start. De bewerking mislukt als de virtuele machines niet zijn uitgeschakeld.
 
-1. Selecteer in de lijst de virtuele machines die u wilt repliceren naar de bron site, open het menu **acties** en selecteer **omgekeerd** . 
+1. Selecteer in de lijst de virtuele machines die u wilt repliceren naar de bron site, open het menu **acties** en selecteer **omgekeerd**. 
 1. Selecteer **omgekeerde** om de replicatie te starten.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/reverse-operation-virtual-machines.png" alt-text="De optie HCX in vSphere" border="true":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/reverse-operation-virtual-machines.png" alt-text="Selecteer omgekeerde actie onder beveiligde bewerkingen" border="true":::
 
 1. Controleer de sectie Details van elke virtuele machine.
 
-   :::image type="content" source="./media/disaster-recovery-virtual-machines/review-reverse-operation.png" alt-text="De optie HCX in vSphere" border="true" lightbox="./media/disaster-recovery-virtual-machines/review-reverse-operation.png":::
+   :::image type="content" source="./media/disaster-recovery-virtual-machines/review-reverse-operation.png" alt-text="de resultaten van omgekeerde actie controleren" border="true" lightbox="./media/disaster-recovery-virtual-machines/review-reverse-operation.png":::
 
 ## <a name="disaster-recovery-plan-automation"></a>Automation plan voor herstel na nood gevallen
 
@@ -147,7 +147,7 @@ VMware HCX heeft momenteel geen ingebouwd mechanisme voor het maken en automatis
 
 Deze Api's hebben betrekking op de volgende bewerkingen in nood herstel.
 
-- Beschermen
+- Beveiligen
 
 - Herstellen
 
@@ -157,7 +157,7 @@ Deze Api's hebben betrekking op de volgende bewerkingen in nood herstel.
 
 - Reverse
 
-- Query’s uitvoeren
+- Query
 
 - Opschonen testen
 

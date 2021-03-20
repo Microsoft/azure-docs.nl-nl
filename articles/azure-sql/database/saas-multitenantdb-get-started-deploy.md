@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/16/2018
 ms.openlocfilehash: 4de7e428bff0feaafdec00b0c0014bbaf6acb917
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92790964"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Een shard-toepassing met meerdere tenants implementeren en verkennen
@@ -29,7 +29,7 @@ Met dit databasepatroon kunt u een of meer tenants in elke shard of database ops
 
 ## <a name="app-deploys-quickly"></a>Snel apps implementeren
 
-De app wordt uitgevoerd in de Azure-cloud en maakt gebruik van Azure SQL Database. In de implementatiesectie die volgt, ziet u de blauwe knop **Implementeren naar Azure** . Wanneer u op de knop drukt, wordt de app binnen vijf minuten volledig in uw Azure-abonnement geïmplementeerd. U hebt volledige toegang om met de afzonderlijke app-onderdelen te werken.
+De app wordt uitgevoerd in de Azure-cloud en maakt gebruik van Azure SQL Database. In de implementatiesectie die volgt, ziet u de blauwe knop **Implementeren naar Azure**. Wanneer u op de knop drukt, wordt de app binnen vijf minuten volledig in uw Azure-abonnement geïmplementeerd. U hebt volledige toegang om met de afzonderlijke app-onderdelen te werken.
 
 De toepassing wordt geïmplementeerd met gegevens voor drie voorbeeldtenants. De tenants worden samen in één database voor meerdere tenants opgeslagen.
 
@@ -57,7 +57,7 @@ U kunt deze zelfstudie alleen voltooien als aan de volgende vereisten wordt vold
 
 ### <a name="plan-the-names"></a>De namen plannen
 
-In de stappen van deze sectie geeft u waarde aan een *gebruiker* . Deze waarde wordt gebruikt om te controleren of resourcenamen globaal uniek zijn. U geeft ook een naam aan de *resourcegroep* die alle resources bevat die tijdens een implementatie van de app zijn gemaakt. Voor een persoon met de naam *Fenna Plant* wordt het volgende voorgesteld:
+In de stappen van deze sectie geeft u waarde aan een *gebruiker*. Deze waarde wordt gebruikt om te controleren of resourcenamen globaal uniek zijn. U geeft ook een naam aan de *resourcegroep* die alle resources bevat die tijdens een implementatie van de app zijn gemaakt. Voor een persoon met de naam *Fenna Plant* wordt het volgende voorgesteld:
 - *Gebruiker:* **fp1**  *(De initialen plus een cijfer. Gebruik een andere waarde (bijvoorbeeld fp2) als u de app een tweede keer implementeert.)*
 - *Resourcegroep:* **wingtip-mt-af1** *(wingtip-mt geeft aan dat dit de shard-app voor meerdere tenants is. Het toevoegen van de gebruikersnaam fp1 correleert de naam van de resourcegroep met de namen van de resources die deze bevat.)*
 
@@ -65,7 +65,7 @@ Kies uw namen nu en noteer ze.
 
 ### <a name="steps"></a>Stappen
 
-1. Klik op de volgende blauwe knop: **Implementeren in Azure** .
+1. Klik op de volgende blauwe knop: **Implementeren in Azure**.
    - U komt terecht in Azure Portal met de Wingtip Ticket SaaS-implementatiesjabloon.
 
      [![Knop voor implementeren in Azure.][image-deploy-to-azure-blue-48d]][link-aka-ms-deploywtp-mtapp-52k]
@@ -73,17 +73,17 @@ Kies uw namen nu en noteer ze.
 1. Voer de vereiste parameterwaarden voor de implementatie in.
 
     > [!IMPORTANT]
-    > Voor deze demonstratie mag u geen reeds bestaande resourcegroepen, servers of pools gebruiken. Kies in plaats daarvan **Een nieuwe resourcegroep maken** . Verwijder deze resourcegroep wanneer u klaar bent om gerelateerde facturering te stoppen.
+    > Voor deze demonstratie mag u geen reeds bestaande resourcegroepen, servers of pools gebruiken. Kies in plaats daarvan **Een nieuwe resourcegroep maken**. Verwijder deze resourcegroep wanneer u klaar bent om gerelateerde facturering te stoppen.
     > Gebruik deze app of de resources die hiermee worden gemaakt, niet in een productieomgeving. Sommige aspecten van de verificatie alsmede de firewallinstellingen voor de server zijn opzettelijk onveilig in de app om de demonstratie te vergemakkelijken.
 
     - Selecteer voor **Resourcegroep** de optie **Nieuwe maken** en geef een **naam** in kleine letters voor de resourcegroep op (hoofdlettergevoelig).
         - Selecteer een **locatie** in de vervolgkeuzelijst.
-    - Voor  te gebruiken.
+    - Voor **Gebruiker** wordt u aangeraden een korte waarde te gebruiken.
 
-1. **Implementeer de toepassing** .
+1. **Implementeer de toepassing**.
 
     - Klik om akkoord te gaan met de voorwaarden.
-    - Klik op **Kopen** .
+    - Klik op **Kopen**.
 
 1. Controleer de voortgang van de implementatie door op **Meldingen** te klikken (het belpictogram rechts van het zoekvak). Het implementeren van de Wingtip-app duurt ongeveer vijf minuten.
 
@@ -97,20 +97,20 @@ Terwijl de toepassing wordt geïmplementeerd, downloadt u de broncode en beheers
 > Uitvoerbare inhoud (scripts, DLL's) wordt mogelijk door Windows geblokkeerd wanneer zip-bestanden vanaf een externe bron worden gedownload en uitgepakt. Wanneer u de scripts uit een zip-bestand uitpakt, gebruikt u de volgende stappen om het zip-bestand te deblokkeren voordat u het uitpakt. Als u het zip-bestand deblokkeert, kunnen de scripts worden uitgevoerd.
 
 1. Ga naar de opslagplaats voor [ WingtipTicketsSaaS-MultiTenantDb GitHub](https://github.com/Microsoft/WingtipTicketsSaaS-MultiTenantDb).
-2. Klik **Klonen of downloaden** .
+2. Klik **Klonen of downloaden**.
 3. Klik op **Zip-bestand downloaden** en sla het bestand op.
-4. Klik met de rechtermuisknop op het bestand **WingtipTicketsSaaS-MultiTenantDb-master.zip** en selecteer **Eigenschappen** .
-5. Op het tabblad **Algemeen** selecteert u **Deblokkeren** en klikt u op **Toepassen** .
-6. Klik op **OK** .
+4. Klik met de rechtermuisknop op het bestand **WingtipTicketsSaaS-MultiTenantDb-master.zip** en selecteer **Eigenschappen**.
+5. Op het tabblad **Algemeen** selecteert u **Deblokkeren** en klikt u op **Toepassen**.
+6. Klik op **OK**.
 7. Pak de bestanden uit.
 
 De scripts bevinden zich in de map *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Learning Modules\\* .
 
 ## <a name="update-the-configuration-file-for-this-deployment"></a>Het configuratiebestand voor deze implementatie bijwerken
 
-Voordat u scripts gaat uitvoeren, stelt u de waarden voor *resourcegroup* en *user* in op **UserConfig.psm1** . Stel deze variabelen in op dezelfde waarden die u tijdens de implementatie hebt ingesteld.
+Voordat u scripts gaat uitvoeren, stelt u de waarden voor *resourcegroup* en *user* in op **UserConfig.psm1**. Stel deze variabelen in op dezelfde waarden die u tijdens de implementatie hebt ingesteld.
 
-1. Open ...\\Learning Modules\\*UserConfig.psm1* in *PowerShell ISE* .
+1. Open ...\\Learning Modules\\*UserConfig.psm1* in *PowerShell ISE*.
 2. Werk *ResourceGroupName* en *Name* bij met de specifieke waarden voor uw implementatie (alleen in regels 10 en 11).
 3. Sla de wijzigingen op.
 
@@ -122,14 +122,14 @@ In de Wingtip-app zijn de tenants locaties. Een locatie kan een concertzaal, een
 
 Elke locatie krijgt een gepersonaliseerde web-app waarop de evenementen voor die locatie worden vermeld en kaartjes worden verkocht. Elke web-app is onafhankelijk en geïsoleerd van andere tenants. In Azure SQL Database worden de gegevens voor elke tenant intern opgeslagen in een shard-database voor meerdere tenants. Alle gegevens worden getagd met de tenant-id.
 
-Een centrale **Events Hub** -webpagina bevat een lijst met koppelingen naar de tenants in uw specifieke implementatie. Gebruik de volgende stappen om kennis te maken met de **Events Hub** -webpagina en een afzonderlijke web-app:
+Een centrale **Events Hub**-webpagina bevat een lijst met koppelingen naar de tenants in uw specifieke implementatie. Gebruik de volgende stappen om kennis te maken met de **Events Hub**-webpagina en een afzonderlijke web-app:
 
 1. Open **Events Hub** in uw webbrowser:
    - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Vervang &lt; user&gt; door uw gebruikerswaarde van de implementatie.)*
 
      ![events hub](./media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
-2. Klik in de **Events Hub** op **Fabrikam Jazz Club** .
+2. Klik in de **Events Hub** op **Fabrikam Jazz Club**.
 
    ![Gebeurtenissen](./media/saas-multitenantdb-get-started-deploy/fabrikam.png)
 
@@ -137,7 +137,7 @@ Een centrale **Events Hub** -webpagina bevat een lijst met koppelingen naar de t
 
 De Wingtip-app maakt gebruik van [Azure Traffic Manager](../../traffic-manager/traffic-manager-overview.md) om de distributie van inkomende aanvragen te regelen. De pagina met evenementen voor elke tenant bevat de tenantnaam in de desbetreffende URL. Elke URL bevat ook uw specifieke gebruikerswaarde. Elke URL voldoet aan de weergegeven indeling door de volgende stappen te volgen:
 
-- http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net/ *fabrikamjazzclub*
+- http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net/*fabrikamjazzclub*
 
 1. De evenementen-app parseert de tenantnaam van de URL. In de voorgaande voorbeeld-URL is *fabrikamjazzclub* de naam van de tenant.
 2. De app past een hashfunctie toe op de tenantnaam om een sleutel te maken en via [Shard-toewijzingsbeheer](elastic-scale-shard-map-management.md) toegang te krijgen tot een catalogus.
@@ -155,7 +155,7 @@ In een productieomgeving wordt er meestal een CNAME DNS-record gemaakt om [het i
 
 Nu de app is geïmplementeerd, kunt u ermee aan de slag. Met het PowerShell-script *Demo-LoadGenerator* wordt een workload voor elke tenant gestart. De werkelijke belasting voor veel SaaS-apps is doorgaans sporadisch en onvoorspelbaar. Om dit type belasting te simuleren, produceert de generator een belasting die over alle tenants wordt verdeeld. De belasting bevat willekeurige bursts op elke tenant die zich met willekeurige intervallen voordoen. Het duurt enkele minuten voordat het laadpatroon wordt weergegeven. U kunt de generator het beste gedurende ten minste drie of vier minuten uitvoeren voordat u de belasting gaat bewaken.
 
-1. In *PowerShell ISE* opent u het script ...\\Learning Modules\\Utilities\\*Demo-LoadGenerator.ps1* .
+1. In *PowerShell ISE* opent u het script ...\\Learning Modules\\Utilities\\*Demo-LoadGenerator.ps1*.
 2. Druk op **F5** om het script uit te voeren en de load-generator te starten (gebruik voorlopig de standaardwaarden van het script).
 
 Met het script *Demo-LoadGenerator.ps1* wordt een nieuwe PowerShell-sessie geopend waarin de generator wordt uitgevoerd. De generator wordt in deze sessie als een voorgrondtaak uitgevoerd die voor elke tenant op de achtergrond een belasting genereert.
@@ -168,19 +168,19 @@ Als u andere parameterwaarden wilt gebruiken, kunt u de sessie met de belastingg
 
 ## <a name="provision-a-new-tenant-into-the-sharded-database"></a>Een nieuwe tenant inrichten in de shard-database
 
-De initiële implementatie bevat drie voorbeelden van tenants in de database *Tenants1* . U gaat een andere tenant maken en kijken wat de gevolgen ervan zijn voor de geïmplementeerde toepassing. In deze stap drukt u op één knop om een nieuwe tenant te maken:
+De initiële implementatie bevat drie voorbeelden van tenants in de database *Tenants1*. U gaat een andere tenant maken en kijken wat de gevolgen ervan zijn voor de geïmplementeerde toepassing. In deze stap drukt u op één knop om een nieuwe tenant te maken:
 
-1. Open ...\\Learning Modules\\Provision and Catalog\\*Demo-ProvisionTenants.ps1* in *PowerShell ISE* .
-2. Druk op **F5** (niet op **F8** ) om het script uit te voeren (laat de standaardwaarden voorlopig staan).
+1. Open ...\\Learning Modules\\Provision and Catalog\\*Demo-ProvisionTenants.ps1* in *PowerShell ISE*.
+2. Druk op **F5** (niet op **F8**) om het script uit te voeren (laat de standaardwaarden voorlopig staan).
 
    > [!NOTE]
-   > U moet de PowerShell-scripts alleen uitvoeren met toets **F5** , niet met toets **F8** als u een bepaald deel van het script wilt uitvoeren. Het probleem met **F8** is dat de variabele *$PSScriptRoot* niet wordt geëvalueerd. Deze variabele is voor veel scripts nodig om door mappen te navigeren, andere scripts aan te roepen of modules te importeren.
+   > U moet de PowerShell-scripts alleen uitvoeren met toets **F5**, niet met toets **F8** als u een bepaald deel van het script wilt uitvoeren. Het probleem met **F8** is dat de variabele *$PSScriptRoot* niet wordt geëvalueerd. Deze variabele is voor veel scripts nodig om door mappen te navigeren, andere scripts aan te roepen of modules te importeren.
 
-De nieuwe Red Maple Racing-tenant wordt toegevoegd aan de database *Tenants1* en in de catalogus geregistreerd. De nieuwe site voor de ticketverkoop van de tenant, **Evenementen** , wordt in de browser geopend:
+De nieuwe Red Maple Racing-tenant wordt toegevoegd aan de database *Tenants1* en in de catalogus geregistreerd. De nieuwe site voor de ticketverkoop van de tenant, **Evenementen**, wordt in de browser geopend:
 
 ![Nieuwe tenant](./media/saas-multitenantdb-get-started-deploy/red-maple-racing.png)
 
-Vernieuw **Events Hub** . De nieuwe tenant wordt nu in de lijst weergegeven.
+Vernieuw **Events Hub**. De nieuwe tenant wordt nu in de lijst weergegeven.
 
 ## <a name="provision-a-new-tenant-in-its-own-database"></a>Een nieuwe tenant in de eigen database inrichten
 
@@ -193,7 +193,7 @@ U kunt ervoor kiezen om klanten met een gratis proefversie of een goedkope versi
 
 Vervolgens gaat u een andere tenant inrichten, deze keer in een eigen database:
 
-1. In ...\\Learning Modules\\Provision and Catalog\\*Demo-ProvisionTenants.ps1* wijzigt u *$TenantName* in **Salix Salsa** ,  *$VenueType* in **dance** en *$Scenario* in **2** .
+1. In ...\\Learning Modules\\Provision and Catalog\\*Demo-ProvisionTenants.ps1* wijzigt u *$TenantName* in **Salix Salsa**,  *$VenueType* in **dance** en *$Scenario* in **2**.
 
 2. Druk op **F5** om het script nogmaals uit te voeren.
     - Met **F5** wordt de nieuwe tenant in een afzonderlijke database ingericht. De database en de tenant worden in de catalogus geregistreerd. Vervolgens wordt de browser geopend op de evenementenpagina van de tenant.
@@ -202,7 +202,7 @@ Vervolgens gaat u een andere tenant inrichten, deze keer in een eigen database:
 
    - Scrol naar de onderkant van de pagina. In de banner ziet u de naam van de database waarin de tenantgegevens zijn opgeslagen.
 
-3. Vernieuw **Events Hub** . De twee nieuwe tenants worden nu in de lijst weergegeven.
+3. Vernieuw **Events Hub**. De twee nieuwe tenants worden nu in de lijst weergegeven.
 
 ## <a name="explore-the-servers-and-tenant-databases"></a>De servers en tenantdatabases verkennen
 
@@ -212,11 +212,11 @@ U gaat nu enkele resources bekijken die zijn geïmplementeerd:
 
    ![resourcegroep](./media/saas-multitenantdb-get-started-deploy/resource-group.png)
 
-2. Klik op de server **catalog-mt&lt;user&gt;** . De catalogusserver bevat twee databases: *tenantcatalog* en *basetenantdb* . Database *basetenantdb* is een lege sjabloondatabase. Deze wordt gekopieerd om een nieuwe tenantdatabase te maken, ongeacht of deze voor veel tenants of slechts een wordt gebruikt.
+2. Klik op de server **catalog-mt&lt;user&gt;** . De catalogusserver bevat twee databases: *tenantcatalog* en *basetenantdb*. Database *basetenantdb* is een lege sjabloondatabase. Deze wordt gekopieerd om een nieuwe tenantdatabase te maken, ongeacht of deze voor veel tenants of slechts een wordt gebruikt.
 
    ![catalogusserver](./media/saas-multitenantdb-get-started-deploy/catalog-server.png)
 
-3. Ga terug naar de resourcegroep en selecteer server *tenants1-mt* , die de tenantdatabases bevat.
+3. Ga terug naar de resourcegroep en selecteer server *tenants1-mt*, die de tenantdatabases bevat.
     - Database tenants1 is een database voor meerdere tenants, waarin de oorspronkelijke drie tenants, plus de eerste tenant die u hebt toegevoegd, zijn opgeslagen. De database is geconfigureerd als een standaarddatabase van 50 DTU's.
     - Database **salixsalsa** bevat danslocatie Salix Salsa als enige tenant. Deze is geconfigureerd als een Standard Edition-database van 50 DTU's.
 
@@ -232,11 +232,11 @@ Als de belastinggenerator enkele minuten actief is, moeten er voldoende telemetr
 
    De grafiek met het gebruik in DTU's laat zien hoe een database voor meerdere tenants een onvoorspelbare workload voor veel tenants kan verdragen. In dit geval legt de belastinggenerator sporadisch een belasting op van ongeveer 30 DTU's per tenant. Deze belasting komt overeen met een database van 50 DTU's die voor 60% wordt gebruikt. Pieken die de 60% overschrijden, zijn het gevolg van het feit dat de belasting op hetzelfde moment op meer dan één tenant wordt toegepast.
 
-2. Ga naar de server **tenants1-mt&lt;user&gt;** en klik op de **salixsalsa** -database. U kunt het resourcegebruik van deze database zien die slechts één tenant bevat.
+2. Ga naar de server **tenants1-mt&lt;user&gt;** en klik op de **salixsalsa**-database. U kunt het resourcegebruik van deze database zien die slechts één tenant bevat.
 
    ![database salixsalsa](./media/saas-multitenantdb-get-started-deploy/monitor-salix.png)
 
-De belastinggenerator past een soortgelijke belasting toe op elke tenant, ongeacht in welke database de tenants zich bevinden. Nu de **salixsalsa** -database slechts één tenant bevat, ziet u dat de database een veel hogere belasting kan verdragen dan de database met meerdere tenants. 
+De belastinggenerator past een soortgelijke belasting toe op elke tenant, ongeacht in welke database de tenants zich bevinden. Nu de **salixsalsa**-database slechts één tenant bevat, ziet u dat de database een veel hogere belasting kan verdragen dan de database met meerdere tenants. 
 
 ### <a name="resource-allocations-vary-by-workload"></a>Resourcetoewijzingen variëren per workload
 

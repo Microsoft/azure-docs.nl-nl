@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 5755e14e53d359fd8b322939bf1325d21536d593
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89020181"
 ---
 # <a name="example-create-a-custom-skill-using-the-bing-entity-search-api"></a>Voor beeld: een aangepaste vaardigheid maken met behulp van de Bing Entiteiten zoeken-API
@@ -36,13 +36,13 @@ Hoewel in dit voor beeld een Azure-functie wordt gebruikt om een web-API te host
 
 1. Selecteer **Nieuw** > **Project** in het menu Bestand in Visual Studio.
 
-1. Selecteer in het dialoog venster Nieuw project **geïnstalleerd**, vouw **Visual C#**  >  **Cloud**uit, selecteer **Azure functions**, typ een naam voor uw project en selecteer **OK**. De naam van de functie-app moet geldig zijn als C#-naam ruimte, dus geen onderstrepings tekens, afbreek streepjes of andere niet-alfanumerieke karakters gebruiken.
+1. Selecteer in het dialoog venster Nieuw project **geïnstalleerd**, vouw **Visual C#**  >  **Cloud** uit, selecteer **Azure functions**, typ een naam voor uw project en selecteer **OK**. De naam van de functie-app moet geldig zijn als C#-naam ruimte, dus geen onderstrepings tekens, afbreek streepjes of andere niet-alfanumerieke karakters gebruiken.
 
 1. Selecteer **Azure functions v2 (.net core)**. U kunt dit ook doen met versie 1, maar de hieronder geschreven code is gebaseerd op de v2-sjabloon.
 
 1. Selecteer het type dat **http-trigger** moet worden
 
-1. Voor Storage-account kunt u **geen**selecteren, omdat u geen opslag voor deze functie nodig hebt.
+1. Voor Storage-account kunt u **geen** selecteren, omdat u geen opslag voor deze functie nodig hebt.
 
 1. Selecteer **OK** om het functie project en de door http geactiveerde functie te maken.
 
@@ -50,7 +50,7 @@ Hoewel in dit voor beeld een Azure-functie wordt gebruikt om een web-API te host
 
 Visual Studio maakt een project met daarin een klasse die standaardcode voor het gekozen functietype bevat. Met het kenmerk *FunctionName* in de methode wordt de naam van de functie ingesteld. Met het kenmerk *HttpTrigger* wordt aangegeven dat de functie wordt geactiveerd door een HTTP-aanvraag.
 
-Vervang nu alle inhoud van het bestand *Function1.cs* door de volgende code:
+Vervang nu alle inhoud van het bestand *Function1. cs* door de volgende code:
 
 ```csharp
 using System;
@@ -376,7 +376,7 @@ Er wordt een antwoord weer gegeven dat vergelijkbaar is met het volgende voor be
 
 Wanneer u tevreden bent met het functie gedrag, kunt u het publiceren.
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**. Kies **nieuwe**  >  **publicatie**maken.
+1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**. Kies **nieuwe**  >  **publicatie** maken.
 
 1. Als u Visual Studio nog niet hebt verbonden met uw Azure-account, selecteert u **een account toevoegen....**
 

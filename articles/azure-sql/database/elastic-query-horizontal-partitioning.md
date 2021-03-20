@@ -12,10 +12,10 @@ ms.author: mlandzic
 ms.reviewer: sstein
 ms.date: 01/03/2019
 ms.openlocfilehash: 148c4828309738a18dbda5fd35ea634e8384bfde
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792103"
 ---
 # <a name="reporting-across-scaled-out-cloud-databases-preview"></a>Rapportage over uitgeschaalde Cloud databases (preview-versie)
@@ -163,7 +163,7 @@ De distributie component geeft de gegevens distributie op die voor deze tabel wo
 2. **Gerepliceerd** betekent dat identieke kopieën van de tabel aanwezig zijn op elke Data Base. Het is uw verantwoordelijkheid om ervoor te zorgen dat de replica's identiek zijn in de data bases.
 3. **Ronde \_ ROBIN** betekent dat de tabel horizon taal is gepartitioneerd met behulp van een toepassings afhankelijke distributie methode.
 
-**Referentie gegevenslaag** : de externe tabel verwijst DDL naar een externe gegevens bron. De externe gegevens bron geeft een Shard-toewijzing op waarmee de externe tabel wordt voorzien van de informatie die nodig is om alle data bases in uw gegevenslaag te vinden.
+**Referentie gegevenslaag**: de externe tabel verwijst DDL naar een externe gegevens bron. De externe gegevens bron geeft een Shard-toewijzing op waarmee de externe tabel wordt voorzien van de informatie die nodig is om alle data bases in uw gegevenslaag te vinden.
 
 ### <a name="security-considerations"></a>Beveiligingsoverwegingen
 

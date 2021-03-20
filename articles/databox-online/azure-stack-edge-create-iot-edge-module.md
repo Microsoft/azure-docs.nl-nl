@@ -10,10 +10,10 @@ ms.date: 08/06/2019
 ms.author: alkohli
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 96a6692524eca3a2845d648ab3df2932d00ce823
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91951142"
 ---
 # <a name="develop-a-c-iot-edge-module-to-move-files-with-azure-stack-edge-pro"></a>Een C# IoT Edge-module ontwikkelen om bestanden met Azure Stack Edge Pro te verplaatsen
@@ -70,7 +70,7 @@ Een Azure-containerregister is een persoonlijk Docker-register in Azure waar u u
 
    1. Een unieke **register naam** in azure die 5 tot 50 alfanumerieke tekens bevat.
    2. Kies een **abonnement**.
-   3. Nieuwe maken of een bestaande **resource groep**kiezen.
+   3. Nieuwe maken of een bestaande **resource groep** kiezen.
    4. Selecteer een **locatie**. We raden u aan deze locatie hetzelfde te zijn als die van de Azure Stack Edge-resource.
    5. Stel de **Gebruiker met beheerdersrechten** in op **Inschakelen**.
    6. Stel de SKU in op **Basic**.
@@ -125,8 +125,8 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
 
 ### <a name="update-the-module-with-custom-code"></a>De module bijwerken met aangepaste code
 
-1. Open in de VS code Explorer **modules > FileCopyModule > Program.cs**.
-2. Voeg boven aan de **naam ruimte FileCopyModule**de volgende using-instructies toe voor typen die later worden gebruikt. **Micro soft. Azure. devices. client. Trans Port. Mqtt** is een protocol voor het verzenden van berichten naar IOT Edge hub.
+1. Open **modules > FileCopyModule > Program. cs** in de VS code Explorer.
+2. Voeg boven aan de **naam ruimte FileCopyModule** de volgende using-instructies toe voor typen die later worden gebruikt. **Micro soft. Azure. devices. client. Trans Port. Mqtt** is een protocol voor het verzenden van berichten naar IOT Edge hub.
 
     ```
     namespace FileCopyModule
@@ -160,7 +160,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     }
     ```
 
-5. In de **init-methode**maakt en configureert de code een **ModuleClient** -object. Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. Met de code wordt een FileCopy-call back geregistreerd voor het ontvangen van berichten van een IoT Edge hub via het **input1** -eind punt. Vervang de **init-methode** door de volgende code.
+5. In de **init-methode** maakt en configureert de code een **ModuleClient** -object. Met dit object kan de module verbinding maken met de lokale Azure IoT Edge runtime met behulp van het MQTT-protocol om berichten te verzenden en te ontvangen. De verbindingsreeks die in de methode Init wordt gebruikt, wordt door de IoT Edge-runtime aan de module geleverd. Met de code wordt een FileCopy-call back geregistreerd voor het ontvangen van berichten van een IoT Edge hub via het **input1** -eind punt. Vervang de **init-methode** door de volgende code.
 
     ```
     /// <summary>
@@ -240,7 +240,7 @@ Maak een C#-oplossingssjabloon die u met uw eigen code kunt aanpassen.
     ```
 
 7. Sla dit bestand op.
-8. U kunt ook [een bestaand code voorbeeld](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) voor dit project downloaden. U kunt vervolgens het bestand dat u hebt opgeslagen in het **Program.cs** -bestand valideren in dit voor beeld.
+8. U kunt ook [een bestaand code voorbeeld](https://azure.microsoft.com/resources/samples/data-box-edge-csharp-modules/?cdn=disable) voor dit project downloaden. U kunt vervolgens het bestand dat u hebt opgeslagen, valideren op basis van het bestand **Program. cs** in dit voor beeld.
 
 ## <a name="build-your-iot-edge-solution"></a>Uw eigen IoT Edge-oplossing bouwen
 

@@ -13,10 +13,10 @@ ms.author: sasapopo
 ms.reviewer: sstein, bonova
 ms.date: 10/08/2020
 ms.openlocfilehash: f9d5528746a85668677ab122d98e954bd39cd163
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92790726"
 ---
 # <a name="use-server-trust-groups-to-set-up-and-manage-trust-between-sql-managed-instances"></a>Vertrouwens groepen voor servers gebruiken voor het instellen en beheren van vertrouwen tussen door SQL beheerde instanties
@@ -32,7 +32,7 @@ Server vertrouwens groep is een concept dat wordt gebruikt voor het beheren van 
 
 In de volgende sectie wordt het instellen van de server vertrouwens groep beschreven.
 
-1. Ga naar [Azure Portal](https://portal.azure.com/).
+1. Ga naar de [Azure Portal](https://portal.azure.com/).
 
 2. Ga naar Azure SQL Managed instance dat u wilt toevoegen aan een nieuwe server vertrouwensrelatie groep.
 
@@ -42,13 +42,13 @@ In de volgende sectie wordt het instellen van de server vertrouwens groep beschr
 
 4. Selecteer op de pagina configuratie van server vertrouwens groep het pictogram **nieuwe groep** .
 
-   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-create-new-group.png" alt-text="Serververtrouwensgropen":::
+   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-create-new-group.png" alt-text="Nieuwe groep":::
 
-5. Stel op de Blade **SQL-vertrouwens groep** maken de **groeps naam** in. Het moet uniek zijn in alle regio's waar de groeps leden zich bevinden. Met het **vertrouwens bereik** wordt het type scenario met meerdere exemplaren gedefinieerd dat is ingeschakeld met de vertrouwens groep van de server. In het voor beeld wordt het enige vertrouwde bereik **gedistribueerde trans acties** , dus is het vooraf geselecteerd en kan het niet worden gewijzigd. Alle **groeps leden** moeten deel uitmaken van hetzelfde **abonnement** , maar kunnen zich onder verschillende resource groepen bevindt. Selecteer de **resource groep** en **SQL Server/instantie** om het door Azure SQL beheerde exemplaar te kiezen dat lid moet zijn van de groep.
+5. Stel op de Blade **SQL-vertrouwens groep** maken de **groeps naam** in. Het moet uniek zijn in alle regio's waar de groeps leden zich bevinden. Met het **vertrouwens bereik** wordt het type scenario met meerdere exemplaren gedefinieerd dat is ingeschakeld met de vertrouwens groep van de server. In het voor beeld wordt het enige vertrouwde bereik **gedistribueerde trans acties**, dus is het vooraf geselecteerd en kan het niet worden gewijzigd. Alle **groeps leden** moeten deel uitmaken van hetzelfde **abonnement** , maar kunnen zich onder verschillende resource groepen bevindt. Selecteer de **resource groep** en **SQL Server/instantie** om het door Azure SQL beheerde exemplaar te kiezen dat lid moet zijn van de groep.
 
-   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-create-blade.png" alt-text="Serververtrouwensgropen":::
+   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-create-blade.png" alt-text="Blade Server vertrouwens groep maken":::
 
-6. Nadat alle vereiste velden zijn ingevuld, klikt u op **Opslaan** .
+6. Nadat alle vereiste velden zijn ingevuld, klikt u op **Opslaan**.
 
 ## <a name="server-trust-group-maintenance-and-deletion"></a>Onderhoud en verwijdering van vertrouwens groep voor Server
 
@@ -59,11 +59,11 @@ In de volgende sectie wordt het verwijderings proces voor de server vertrouwens 
 2. Navigeer naar een beheerd exemplaar dat bij de vertrouwens groep hoort.
 3. Selecteer op de pagina **beveiligings** instellingen het tabblad **SQL-vertrouwens groepen** .
 4. Selecteer de vertrouwens groep die u wilt verwijderen.
-   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-select.png" alt-text="Serververtrouwensgropen":::
-5. Klik op **groep verwijderen** .
-   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-delete.png" alt-text="Serververtrouwensgropen":::
-6. Typ de naam van de server vertrouwens groep om de verwijdering te bevestigen en klik op **verwijderen** .
-   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-delete-confirm.png" alt-text="Serververtrouwensgropen":::
+   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-select.png" alt-text="Server vertrouwensrelatie groep selecteren":::
+5. Klik op **groep verwijderen**.
+   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-delete.png" alt-text="Server vertrouwens groep verwijderen":::
+6. Typ de naam van de server vertrouwens groep om de verwijdering te bevestigen en klik op **verwijderen**.
+   :::image type="content" source="./media/server-trust-group-overview/server-trust-group-manage-delete-confirm.png" alt-text="Verwijderen van vertrouwens groep van Server bevestigen":::
 
 > [!NOTE]
 > Als u de vertrouwens groep van de server verwijdert, wordt de vertrouwens relatie tussen de twee beheerde exemplaren mogelijk niet onmiddellijk verwijderd. Het verwijderen van vertrouwens relaties kan worden afgedwongen door het aanroepen van een [failover](/powershell/module/az.sql/Invoke-AzSqlInstanceFailover) van beheerde exemplaren. Controleer de [bekende problemen](../database/doc-changes-updates-release-notes.md?tabs=managed-instance#known-issues) voor de meest recente updates.

@@ -6,10 +6,10 @@ ms.date: 06/18/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-azurecli
 ms.openlocfilehash: 038d62573b491325adc60647debf17fa87e06cfe
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92743683"
 ---
 # <a name="configure-a-linux-ruby-app-for-azure-app-service"></a>Een Linux Ruby-app voor Azure App Service configureren
@@ -96,8 +96,8 @@ Standaard start de Ruby-container de Rails-server in de volgende volgorde (Zie v
 
 1. Genereer de waarde [secret_key_base](https://edgeguides.rubyonrails.org/security.html#environmental-security), als er nog geen bestaat. Deze waarde is vereist voor het uitvoeren van de app in productiemodus.
 1. Stel de omgevingsvariabele `RAILS_ENV` in op `production`.
-1. Verwijder het *.PID* -bestand in de map *tmp/pids* dat daar is geplaatst door een eerder uitgevoerde Rails-server.
-1. Controleer of alle afhankelijkheden zijn geïnstalleerd. Als dat niet het geval is, installeert u gems vanuit de lokale map *vendor/cache* .
+1. Verwijder het *.PID*-bestand in de map *tmp/pids* dat daar is geplaatst door een eerder uitgevoerde Rails-server.
+1. Controleer of alle afhankelijkheden zijn geïnstalleerd. Als dat niet het geval is, installeert u gems vanuit de lokale map *vendor/cache*.
 1. Voer `rails server -e $RAILS_ENV` uit.
 
 U kunt het opstartproces op de volgende manieren aanpassen:
@@ -111,7 +111,7 @@ U kunt het opstartproces op de volgende manieren aanpassen:
 De Rails-server in de Ruby-container wordt standaard uitgevoerd in productiemodus en [er wordt van uitgegaan dat assets vooraf zijn gecompileerd en worden geleverd door de webserver](https://guides.rubyonrails.org/asset_pipeline.html#in-production). Als u statische assets van de Rails-server wilt leveren, moet u twee acties uitvoeren:
 
 - **Compileer de assets vooraf** - [Compileer de statische assets eerst lokaal](https://guides.rubyonrails.org/asset_pipeline.html#local-precompilation) en implementeer ze handmatig. U kunt dit ook laten uitvoeren door de implementatie-engine (zie [Assets vooraf compileren](#precompile-assets)).
-- **Schakel het leveren van statische bestanden in** : voor het leveren van statische assets vanuit de Ruby-container [stelt u de app-instelling `RAILS_SERVE_STATIC_FILES`](configure-common.md#configure-app-settings) in op `true`. Bijvoorbeeld:
+- **Schakel het leveren van statische bestanden in**: voor het leveren van statische assets vanuit de Ruby-container [stelt u de app-instelling `RAILS_SERVE_STATIC_FILES`](configure-common.md#configure-app-settings) in op `true`. Bijvoorbeeld:
 
     ```azurecli-interactive
     az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_SERVE_STATIC_FILES=true

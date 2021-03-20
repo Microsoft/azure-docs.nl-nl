@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/05/2018
-ms.openlocfilehash: bd36b589424a0d890fc5e1bbab3f234e9b3264c6
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2dba9e4f727b56e5093171c2ea59382075563f31
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374776"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592050"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Pijplijnen uitvoeren en triggers in Azure Data Factory
 
@@ -323,13 +323,8 @@ Tumblingvenstertriggers zijn triggers die vanaf een opgegeven begintijd worden g
 
 Zie [trigger voor het maken van een tumblingvenstertriggers-venster](how-to-create-tumbling-window-trigger.md)voor meer informatie over tumblingvenstertriggers-venster triggers en voor beelden.
 
-## <a name="event-based-trigger"></a>Trigger op basis van gebeurtenissen
-
-Een trigger op basis van een gebeurtenis voert pijp lijnen uit als reactie op een gebeurtenis, zoals de ontvangst van een bestand of het verwijderen van een bestand, in Azure Blob Storage.
-
-Zie [Een trigger maken die een pijplijn uitvoert in reactie op een gebeurtenis](how-to-create-event-trigger.md) voor meer informatie over triggers op basis van gebeurtenissen.
-
 ## <a name="examples-of-trigger-recurrence-schedules"></a>Voorbeelden van schema's voor uitvoeringen van triggers
+
 Dit gedeelte bevat voorbeelden van schema's met terugkeerpatronen. Dit artikel gaat over het **schedule**-object en de bijbehorende elementen.
 
 In de voor beelden wordt ervan uitgegaan dat de waarde voor **interval** 1 is en dat de waarde van de **frequentie** juist is volgens de definitie van de planning. De waarde voor **frequency** kan bijvoorbeeld niet tegelijkertijd 'day' zijn én een wijziging **monthDays** in het **schedule**-object hebben. Dit soort beperkingen wordt beschreven in de tabel in het vorige gedeelte.
@@ -364,6 +359,7 @@ In de voor beelden wordt ervan uitgegaan dat de waarde voor **interval** 1 is en
 | `{"minutes":[15,45], "hours":[5,17], "monthlyOccurrences":[{"day":"wednesday", "occurrence":3}]}` | Wordt elke maand op de derde woensdag om 5:15, 5:45, 17:15 en 17:45 uur uitgevoerd. |
 
 ## <a name="trigger-type-comparison"></a>Vergelijkingen tussen triggertypen
+
 Tumblingvenstertriggers en de schematrigger werken beide volgens tijdschema's. Hoe verschillen ze van elkaar?
 
 > [!NOTE]
@@ -380,9 +376,19 @@ In de volgende tabel wordt een vergelijking weergegeven tussen de tumblingvenste
 | **Systeemvariabelen** | In combi natie met @trigger (). scheduledTime en @trigger (). StartTime, wordt ook het gebruik van de systeem variabelen **WindowStart** en **WindowEnd** ondersteund. Gebruikers kunnen voor de triggerdefinitie gebruikmaken van `trigger().outputs.windowStartTime` en `trigger().outputs.windowEndTime` als systeemvariabelen in de trigger. De waarden worden respectievelijk als de begin- en eindtijd van het tijdvenster gebruikt. Voor bijvoorbeeld een tumblingvenstertrigger die elk uur wordt uitgevoerd in het tijdvenster 1:00 uur tot 2:00 uur, is de definitie `trigger().outputs.windowStartTime = 2017-09-01T01:00:00Z` en `trigger().outputs.windowEndTime = 2017-09-01T02:00:00Z`. | Ondersteunt alleen default @trigger (). scheduledTime en @trigger (). StartTime-variabelen. |
 | **Pipeline-trigger-relatie** | Ondersteunt een een-op-een-relatie. Slechts één pijplijn kan worden geactiveerd. | Ondersteunt veel-op-veel-relaties. Meerdere triggers kunnen één pijplijn activeren. Eén trigger kan meerdere pijplijnen activeren. |
 
+## <a name="event-based-trigger"></a>Trigger op basis van gebeurtenissen
+
+Een trigger op basis van een gebeurtenis voert pijp lijnen uit als reactie op een gebeurtenis. Er zijn twee soorten triggers op basis van gebeurtenissen.
+
+* _Opslag gebeurtenis trigger_ voert een pijp lijn uit op basis van gebeurtenissen die zich in een opslag account voordoen, zoals de ontvangst van een bestand of het verwijderen van een bestand in Azure Blob Storage-account.
+* _Aangepaste gebeurtenis trigger_ processen en verwerkt [aangepaste onderwerpen](../event-grid/custom-topics.md) in Event grid
+
+Zie [opslag gebeurtenis trigger](how-to-create-event-trigger.md) en [aangepaste gebeurtenis trigger](how-to-create-custom-event-trigger.md)voor meer informatie over triggers op basis van gebeurtenissen.
+
 ## <a name="next-steps"></a>Volgende stappen
+
 Zie de volgende zelfstudies:
 
 - [Snelstart: Een data factory en pijplijn maken met behulp van .NET SDK](quickstart-create-data-factory-dot-net.md)
-- [Een planningstrigger maken](how-to-create-schedule-trigger.md)
+- [Een schema trigger maken](how-to-create-schedule-trigger.md)
 - [Een tumblingvenstertrigger maken](how-to-create-tumbling-window-trigger.md)

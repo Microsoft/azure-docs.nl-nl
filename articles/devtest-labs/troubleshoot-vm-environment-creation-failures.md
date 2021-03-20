@@ -4,10 +4,10 @@ description: Meer informatie over het oplossen van problemen met de virtuele mac
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: b7d3f3ad34d8a5bb48607816623c67121d21d78c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85476475"
 ---
 # <a name="troubleshoot-virtual-machine-vm-and-environment-creation-failures-in-azure-devtest-labs"></a>Problemen met de virtuele machine (VM) en het maken van een omgeving oplossen in Azure DevTest Labs
@@ -19,7 +19,7 @@ Als u de Azure Portal gebruikt, is de eerste plaats om te kijken naar het **deel
 ![Azure Portal-melding](./media/troubleshoot-vm-environment-creation-failures/portal-notification.png)
 
 ### <a name="vm-in-corruption-state"></a>Virtuele machine in beschadigde status
-Als u de status van uw virtuele machine in het Lab als **beschadigd**ziet, is de onderliggende VM mogelijk verwijderd van de pagina met **virtuele machines** waarnaar de gebruiker kan navigeren vanuit de **virtual machines** pagina (niet van de pagina DevTest Labs). Ruim uw Lab op in DevTest Labs door de virtuele machine uit het lab te verwijderen. Maak vervolgens de virtuele machine opnieuw in het lab. 
+Als u de status van uw virtuele machine in het Lab als **beschadigd** ziet, is de onderliggende VM mogelijk verwijderd van de pagina met **virtuele machines** waarnaar de gebruiker kan navigeren vanuit de **virtual machines** pagina (niet van de pagina DevTest Labs). Ruim uw Lab op in DevTest Labs door de virtuele machine uit het lab te verwijderen. Maak vervolgens de virtuele machine opnieuw in het lab. 
 
 ![VM met beschadigde status](./media/troubleshoot-vm-environment-creation-failures/vm-corrupted-state.png)
 

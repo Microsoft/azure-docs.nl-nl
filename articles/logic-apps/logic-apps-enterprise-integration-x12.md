@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/29/2020
 ms.openlocfilehash: 61f3f2af61bc24f76d061de672a3eaacd54f7f0e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96015193"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Exchange X12-berichten voor B2B Enter prise integration in Azure Logic Apps met Enterprise Integration Pack
@@ -316,7 +316,7 @@ Wanneer u werkt met HIPAA-schema's en de 277-of 837-bericht typen, moet u een pa
 
 Deze tabel bevat de betrokken bericht typen, varianten en de document versie nummers die zijn toegewezen aan deze bericht typen:
 
-| Bericht type of-variant |  Description | Document versie nummer (GS8) |
+| Bericht type of-variant |  Beschrijving | Document versie nummer (GS8) |
 |-------------------------|--------------|-------------------------------|
 | 277 | Melding van status van informatie over gezondheids zorg | 005010X212 |
 | 837_I | Gezondheids zorg claim institutionele | 004010X096A1 <br>005010X223A1 <br>005010X223A2 |

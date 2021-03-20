@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 49dff636e7ffb9889219abfae80a4bd8b1c0da1f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92516406"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Zelfstudie: Azure Active Directory-integratie met TimeLive
@@ -43,7 +43,7 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * TimeLive biedt ondersteuning voor door **SP** geïnitieerde eenmalige aanmelding
 
-* TimeLive biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* TimeLive biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-timelive-from-the-gallery"></a>TimeLive toevoegen vanuit de galerie
 
@@ -51,7 +51,7 @@ Voor het configureren van de integratie van TimeLive in Azure AD moet u TimeLive
 
 **Voer de volgende stappen uit om TimeLive vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -63,7 +63,7 @@ Voor het configureren van de integratie van TimeLive in Azure AD moet u TimeLive
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **TimeLive** , selecteer **TimeLive** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **TimeLive**, selecteer **TimeLive** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
 
      ![TimeLive in de resultatenlijst](common/search-new-app.png)
 
@@ -154,7 +154,7 @@ Voer de volgende stappen uit om eenmalige aanmelding in Azure AD te configureren
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -178,7 +178,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding via Azure door haar toegang te geven tot TimeLive.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **TimeLive**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **TimeLive**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

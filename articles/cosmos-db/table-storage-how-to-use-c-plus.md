@@ -9,10 +9,10 @@ ms.date: 10/07/2019
 author: sakash279
 ms.author: akshanka
 ms.openlocfilehash: 79b58b76954cf15289e85dbf763b7a399897635d
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94489876"
 ---
 # <a name="how-to-use-azure-table-storage-and-azure-cosmos-db-table-api-with-c"></a>Azure-tabelopslag en Azure Cosmos DB Table-API gebruiken met C++
@@ -500,7 +500,7 @@ else
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
-Voor Visual Studio Community Edition: als er opbouwfouten voor uw project ontstaan vanwege de insluitbestanden *storage_account.h* en *table.h* , moet u de **/permissive-** -compileerschakelaar verwijderen:
+Voor Visual Studio Community Edition: als er opbouwfouten voor uw project ontstaan vanwege de insluitbestanden *storage_account.h* en *table.h*, moet u de **/permissive-** -compileerschakelaar verwijderen:
 
 1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Properties**.
 1. Vouw in het dialoogvenster **Eigenschappenpagina’s** de optie **Configuratie-eigenschappen** en vervolgens **C/C++** uit en selecteer **Taal**.

@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/18/2020
 ms.openlocfilehash: 81ec7e6f822f24f2b9e6ca4298e9668358c78149
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94540753"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mysql"></a>UITLEGGEN hoe u de prestaties van query's in Azure Database for MySQL kunt bepalen
@@ -75,7 +75,7 @@ possible_keys: NULL
         Extra: Using where; Using temporary; Using filesort
 ```
 
-Zoals in de uitvoer kan worden weer gegeven, gebruikt MySQL geen indexen omdat er geen geschikte indexen beschikbaar zijn. Er wordt ook *gebruikgemaakt van tijdelijke; Het gebruik van bestanden sorteren* , wat betekent dat MySQL een tijdelijke tabel maakt om te voldoen aan de component **Group by** .
+Zoals in de uitvoer kan worden weer gegeven, gebruikt MySQL geen indexen omdat er geen geschikte indexen beschikbaar zijn. Er wordt ook *gebruikgemaakt van tijdelijke; Het gebruik van bestanden sorteren*, wat betekent dat MySQL een tijdelijke tabel maakt om te voldoen aan de component **Group by** .
  
 Het maken van een index op kolom **C2** is alleen geen verschil en MySQL moet nog steeds een tijdelijke tabel maken:
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/07/2020
 ms.author: jeedes
 ms.openlocfilehash: 32c1dd06186f3485fe48b2831516661fb5f05ef3
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92517834"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Syxsense
@@ -61,7 +61,7 @@ Configureer en test eenmalige aanmelding van Azure AD met Syxsense met behulp va
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Syxsense te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B. Simon.
+    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
     * **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** : zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
 1. **[Eenmalige aanmelding bij Syxsense configureren](#configure-syxsense-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
     * **[Een syxsense-testgebruiker maken](#create-syxsense-test-user)** : als u een equivalent van B.Simon in Syxsense wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
@@ -71,7 +71,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Syxsense te
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Syxsense** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **Syxsense**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -81,7 +81,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
     a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2`
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon: `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2/Acs`
+    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2/Acs`
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke-id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [Syxsense-ondersteuningsteam](mailto:DevTeam@syxsense.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -102,11 +102,11 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -127,7 +127,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-syxsense-sso"></a>SSO voor Syxsense configureren

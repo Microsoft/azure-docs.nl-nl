@@ -6,10 +6,10 @@ ms.subservice: update-management
 ms.date: 09/17/2020
 ms.topic: conceptual
 ms.openlocfilehash: 39df5888a330a92ae043e34c3043da5b1f566345
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92222210"
 ---
 # <a name="view-update-assessments-in-update-management"></a>Update-evaluaties weer geven in Updatebeheer
@@ -22,7 +22,7 @@ Meld u aan bij [Azure Portal](https://portal.azure.com)
 
 ## <a name="view-update-assessment"></a>Update-evaluatie bekijken
 
-Als u de update-evaluatie van een Azure-VM wilt bekijken, gaat u naar **virtual machines** en selecteert u uw virtuele machine in de lijst. Selecteer in het menu links **gast en host updates**en selecteer vervolgens **Ga naar updatebeheer** op de pagina **gast en host-updates** .
+Als u de update-evaluatie van een Azure-VM wilt bekijken, gaat u naar **virtual machines** en selecteert u uw virtuele machine in de lijst. Selecteer in het menu links **gast en host updates** en selecteer vervolgens **Ga naar updatebeheer** op de pagina **gast en host-updates** .
 
 In Updatebeheer kunt u informatie weer geven over uw computer, ontbrekende updates, update-implementaties en geplande update-implementaties.
 
@@ -42,7 +42,7 @@ De updates voor uw omgeving worden vermeld op de pagina **Update beheer** . Als 
 
 Onder de kolom **compatibiliteit** ziet u de laatste keer dat de computer is geëvalueerd. In de **gereedheids** kolom van de Update-Agent kunt u de status van de Update Agent bekijken. Als er een probleem is, selecteert u de koppeling om naar probleemoplossings documentatie te gaan waarmee u het probleem kunt verhelpen.
 
-Selecteer onder **informatie koppeling**de koppeling voor een update om het ondersteunings artikel te openen waarmee u belang rijke informatie over de update krijgt.
+Selecteer onder **informatie koppeling** de koppeling voor een update om het ondersteunings artikel te openen waarmee u belang rijke informatie over de update krijgt.
 
 [![Update status weer geven](./media/view-update-assessments/missing-updates.png)](./media/view-update-assessments/missing-updates-expanded.png#lightbox)
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/17/2019
 ms.author: jeedes
 ms.openlocfilehash: 9af00fef9c15ada44a5475bb419387b32b06d139
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92313368"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-achieve3000"></a>Zelfstudie: Eenmalige aanmelding via Azure Active Directory integreren met Achieve3000
@@ -141,7 +141,7 @@ Als u eenmalige aanmelding aan de zijde van **Achieve3000** wilt configureren, m
 
 ### <a name="create-achieve3000-test-user"></a>Testgebruiker maken voor Achieve3000
 
-In deze sectie gaat u in Achieve3000 een gebruiker maken met de naam B.Simon. Werk samen met het  [ondersteuningsteam van Achieve3000](https://www.achieve3000.com/contact-us/) om de gebruikers aan het Achieve3000-platform toe te voegen. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie gaat u in Achieve3000 een gebruiker maken met de naam B.Simon. Werk samen met [Achieve3000-ondersteunings team](https://www.achieve3000.com/contact-us/) om de gebruikers toe te voegen in het Achieve3000-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 

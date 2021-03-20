@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 06/18/2018
 ms.custom: devx-track-java
 ms.openlocfilehash: 7d87b72437f86d7dc1ca4e3cf9f3d67609691c70
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97655948"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Uw eerste betrouwbare Service Fabric Java-actortoepassing maken in Linux
@@ -32,7 +32,7 @@ Service Fabric biedt hulpprogramma's waarmee u vanuit de terminal een Service Fa
   npm install -g generator-azuresfjava
   ```
 
-## <a name="basic-concepts"></a>Basisconcepten
+## <a name="basic-concepts"></a>Basisbegrippen
 Om aan de slag te gaan met Reliable Actors hoeft u slechts enkele basisbegrippen te kennen:
 
 * **Actor-service**. Reliable Actors zijn verpakt in Reliable Services die in de Service Fabric-infrastructuur kunnen worden geïmplementeerd. Actor-exemplaren worden geactiveerd in een benoemd service-exemplaar.

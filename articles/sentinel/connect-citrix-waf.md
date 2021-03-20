@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/25/2020
 ms.author: yelevin
 ms.openlocfilehash: 475e04ad3dd8c7cc51d6345b4b51dd68cff5b597
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93102977"
 ---
 # <a name="connect-your-citrix-waf-to-azure-sentinel"></a>Verbind uw Citrix WAF met Azure Sentinel
@@ -44,7 +44,7 @@ Citrix WAF verzendt syslog-berichten in CEF-indeling naar een op Linux gebaseerd
 
 ## <a name="find-your-data"></a>Uw gegevens zoeken
 
-Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken** , onder de sectie voor het **Sentinel van Azure** in de tabel *CommonSecurityLog* .
+Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken**, onder de sectie voor het **Sentinel van Azure** in de tabel *CommonSecurityLog* .
 
 Als u een query wilt uitvoeren op de Citrix WAF-Logboeken in Log Analytics, voert u `CommonSecurityLog` boven in het query venster.
 

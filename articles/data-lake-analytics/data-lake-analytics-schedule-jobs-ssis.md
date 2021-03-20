@@ -6,10 +6,10 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 07/17/2018
 ms.openlocfilehash: b080b433f5af49e970faba02003fb68e21a08365
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92221448"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>U-SQL-taken plannen met behulp van SQL Server Integration Services (SSIS)
@@ -35,7 +35,7 @@ U kunt het U-SQL-script van verschillende locaties verkrijgen door de ingebouwde
 
 ## <a name="scenario-1-use-inline-script-call-tvfs-and-stored-procs"></a>Scenario 1: inline-script aanroep tvfs en opgeslagen procs gebruiken
 
-Configureer in Azure Data Lake Analytics taak editor **Source type** als **DirectInput**en plaats de U-SQL-instructies in **USQLStatement**.
+Configureer in Azure Data Lake Analytics taak editor **Source type** als **DirectInput** en plaats de U-SQL-instructies in **USQLStatement**.
 
 Als u eenvoudig onderhoud en code beheer wilt, plaatst u alleen een kort U-SQL-script als inline-scripts. u kunt bestaande functies voor tabel waarden en opgeslagen procedures in uw U-SQL-data bases aanroepen. 
 
@@ -58,8 +58,8 @@ Voeg in de ontwerp weergave SSIS-pakket een **Azure data Lake Store-bestandsbehe
 ### <a name="configure-azure-data-lake-store-file-system-task"></a>Azure Data Lake Store-bestandsbeheer taak configureren
 
 1. Stel de **bewerking** in op **CopyFromADLS**.
-2. **AzureDataLakeConnection**instellen, meer informatie over [Azure data Lake Store verbindings beheer](/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
-3. Stel **AzureDataLakeDirectory**in. Ga naar de map waarin U uw U-SQL-scripts opslaat. Gebruik relatief pad dat relatief is ten opzichte van de hoofdmap van het Azure Data Lake Store-account.
+2. **AzureDataLakeConnection** instellen, meer informatie over [Azure data Lake Store verbindings beheer](/sql/integration-services/connection-manager/azure-data-lake-store-connection-manager).
+3. Stel **AzureDataLakeDirectory** in. Ga naar de map waarin U uw U-SQL-scripts opslaat. Gebruik relatief pad dat relatief is ten opzichte van de hoofdmap van het Azure Data Lake Store-account.
 4. Stel **doel** in op een map die de gedownloade U-SQL-scripts in de cache opslaat. Dit mappad wordt gebruikt in de foreach-lus-container voor U-SQL-taak verzending. 
 
 ![Azure Data Lake Store-bestandsbeheer taak configureren](./media/data-lake-analytics-schedule-jobs-ssis/configure-azure-data-lake-store-file-system-task.png)
@@ -89,13 +89,13 @@ Voeg in de ontwerp weergave SSIS-pakket een **Azure data Lake Store-bestandsbehe
     Deze bestands verbinding maken:
 
    1. Kies de **\<New Connection...>** instelling in FileConnection.
-   2. Stel het **gebruiks type** in op het **bestaande bestand**en stel het **bestand** in op het bestandspad van een bestaand bestand.
+   2. Stel het **gebruiks type** in op het **bestaande bestand** en stel het **bestand** in op het bestandspad van een bestaand bestand.
 
        ![Scherm opname van de editor voor bestands verbindings beheer met het ' bestaande bestand ' dat is geselecteerd voor het type gebruik.](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
 
    3. Klik in de weer gave **verbindings beheer** met de rechter muisknop op de bestands verbinding die nu zojuist is gemaakt en kies **Eigenschappen**.
 
-   4. Vouw in het venster **Eigenschappen** de optie **expressies**uit en stel **Connections Tring** in op de variabele die is gedefinieerd in de foreach-lus-container, bijvoorbeeld `@[User::FileName]` .
+   4. Vouw in het venster **Eigenschappen** de optie **expressies** uit en stel **Connections Tring** in op de variabele die is gedefinieerd in de foreach-lus-container, bijvoorbeeld `@[User::FileName]` .
 
        ![Foreach-lus-container configureren](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-property-for-foreach-loop-container.png)
 
@@ -105,7 +105,7 @@ Voeg in de ontwerp weergave SSIS-pakket een **Azure data Lake Store-bestandsbehe
 
 5. **Expressies** gebruiken om u-SQL-taak naam dynamisch in te stellen:
 
-    1. Voeg op de pagina **expressies** een nieuw expressie sleutel-waardepaar voor **JobName**toe.
+    1. Voeg op de pagina **expressies** een nieuw expressie sleutel-waardepaar voor **JobName** toe.
     2. Stel de waarde voor JobName in op de variabele die is gedefinieerd in de foreach-lus-container, bijvoorbeeld `@[User::FileName]` .
     
         ![SSIS-expressie configureren voor de U-SQL-taak naam](./media/data-lake-analytics-schedule-jobs-ssis/configure-expression-for-u-sql-job-name.png)
@@ -128,7 +128,7 @@ Naast het gebruik van U-SQL-bestanden die zijn opgeslagen in de Cloud, kunt u oo
 
 2. Selecteer **Bestands** type en klik op **toevoegen...**.
 
-3. Stel het **gebruiks type** in op het **bestaande bestand**en stel het **bestand** in op het bestand op de lokale computer.
+3. Stel het **gebruiks type** in op het **bestaande bestand** en stel het **bestand** in op het bestand op de lokale computer.
 
     ![Bestands verbinding toevoegen aan het lokale bestand](./media/data-lake-analytics-schedule-jobs-ssis/configure-file-connection-for-foreach-loop-container.png)
 

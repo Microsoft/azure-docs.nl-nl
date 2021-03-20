@@ -10,10 +10,10 @@ ms.date: 04/20/2020
 ms.author: dech
 ms.custom: devx-track-js
 ms.openlocfilehash: 1115d7bb0d6857aa39f246743df54a6cf3fd3676
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93098653"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Zelfstudie: Een Node.js-console-app bouwen met de JavaScript SDK voor het beheren van gegevens in Azure Cosmos DB SQL API
@@ -94,7 +94,7 @@ Nu uw app bestaat, moet u controleren of deze kan communiceren met Azure Cosmos 
 
    :::image type="content" source="media/sql-api-nodejs-get-started/node-js-tutorial-keys.png" alt-text="Schermopname van het ophalen sleutels uit de Azure-portal":::
 
-De JavaScript SDK maakt gebruik van de algemene termen *container* en *item*. Een container kan een verzameling, een graaf of een tabel zijn. Een item kan een document, rand/hoekpunt of rij zijn en is de inhoud binnen een container. In het vorige codefragment wordt de `module.exports = config;`-code gebruikt om het configuratieobject te exporteren, zodat u ernaar kunt verwijzen binnen het *app.js* -bestand.
+De JavaScript SDK maakt gebruik van de algemene termen *container* en *item*. Een container kan een verzameling, een graaf of een tabel zijn. Een item kan een document, rand/hoekpunt of rij zijn en is de inhoud binnen een container. In het vorige codefragment wordt de `module.exports = config;`-code gebruikt om het configuratieobject te exporteren, zodat u ernaar kunt verwijzen binnen het *app.js*-bestand.
 
 ## <a name="create-a-database-and-a-container"></a>Een database en een container maken
 
@@ -124,7 +124,7 @@ Kopieer en plak de volgende code in het bestand *app. js* om het eerder opgeslag
 :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="CreateClientObjectDatabaseContainer":::
 
 > [!Note]
-> Schakel TLS-verificatie voor uw knooppuntproces uit als u verbinding wilt maken met de **Cosmos DB Emulator** :
+> Schakel TLS-verificatie voor uw knooppuntproces uit als u verbinding wilt maken met de **Cosmos DB Emulator**:
 >   ```javascript
 >   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 >   const client = new CosmosClient({ endpoint, key });
@@ -158,7 +158,7 @@ Azure Cosmos DB biedt ondersteuning voor het vervangen van de inhoud van items. 
 
 ## <a name="delete-an-item"></a><a id="DeleteItem"></a>Een item verwijderen
 
-Azure Cosmos DB biedt ondersteuning voor het verwijderen van JSON-items. De volgende code laat zien hoe u een item kunt ophalen op basis van de ID en hoe u het item kunt verwijderen. Kopieer en plak de volgende code in het bestand *app.js* :
+Azure Cosmos DB biedt ondersteuning voor het verwijderen van JSON-items. De volgende code laat zien hoe u een item kunt ophalen op basis van de ID en hoe u het item kunt verwijderen. Kopieer en plak de volgende code in het bestand *app.js*:
 
 :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="DeleteItem":::
 

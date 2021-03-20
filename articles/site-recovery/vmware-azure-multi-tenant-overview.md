@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: 64e40341ec56a2e1c561b2bcbb5e584830c14015
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93145579"
 ---
 # <a name="overview-of-multi-tenant-support-for-vmware-disaster-recovery-to-azure-with-csp"></a>Overzicht van ondersteuning voor meerdere tenants voor VMware-nood herstel naar Azure met CSP
@@ -24,11 +24,11 @@ Dit artikel bevat een overzicht van het implementeren en beheren van multi tenan
 
 Er zijn drie belang rijke multi tenant-modellen:
 
-* **Shared Hosting Services provider (HSP)** : de partner is eigenaar van de fysieke infra structuur en maakt gebruik van gedeelde bronnen (vCenter, data centers, fysieke opslag, enzovoort) om meerdere Tenant-vm's te hosten op dezelfde infra structuur. De partner kan herstel na nood gevallen bieden als een beheerde service, of de Tenant kan eigenaar zijn van herstel na nood gevallen als self-service oplossing.
+* **Shared Hosting Services provider (HSP)**: de partner is eigenaar van de fysieke infra structuur en maakt gebruik van gedeelde bronnen (vCenter, data centers, fysieke opslag, enzovoort) om meerdere Tenant-vm's te hosten op dezelfde infra structuur. De partner kan herstel na nood gevallen bieden als een beheerde service, of de Tenant kan eigenaar zijn van herstel na nood gevallen als self-service oplossing.
 
-* **Toegewezen hosting services-provider** : de partner is eigenaar van de fysieke infra structuur, maar gebruikt toegewezen resources (meerdere vCenter, fysieke gegevens opslag, enzovoort) om de vm's van elke Tenant op een afzonderlijke infra structuur te hosten. De partner kan beheer voor herstel na nood geval bieden als een beheerde service, of de Tenant kan eigenaar zijn van het bedrijf als self-service oplossing.
+* **Toegewezen hosting services-provider**: de partner is eigenaar van de fysieke infra structuur, maar gebruikt toegewezen resources (meerdere vCenter, fysieke gegevens opslag, enzovoort) om de vm's van elke Tenant op een afzonderlijke infra structuur te hosten. De partner kan beheer voor herstel na nood geval bieden als een beheerde service, of de Tenant kan eigenaar zijn van het bedrijf als self-service oplossing.
 
-* **MSP (Managed Services provider)** : de klant is eigenaar van de fysieke infra structuur die als host fungeert voor de vm's en de partner biedt ondersteuning voor herstel na nood gevallen en beheer.
+* **MSP (Managed Services provider)**: de klant is eigenaar van de fysieke infra structuur die als host fungeert voor de vm's en de partner biedt ondersteuning voor herstel na nood gevallen en beheer.
 
 ## <a name="shared-hosting-services-provider-hsp"></a>Shared-Hosting Services provider (HSP)
 
@@ -56,9 +56,9 @@ Een afzonderlijke scale-out proces server staat ook onder het besturings element
 
 Elke configuratie server in het scenario met meerdere tenants maakt gebruik van twee accounts:
 
-- **vCenter-toegangs account** : dit account wordt gebruikt om Tenant-vm's te detecteren. Hieraan zijn vCenter-toegangs machtigingen toegewezen. Om toegangs lekken te voor komen, raden we u aan deze referenties zelf in het configuratie programma in te voeren.
+- **vCenter-toegangs account**: dit account wordt gebruikt om Tenant-vm's te detecteren. Hieraan zijn vCenter-toegangs machtigingen toegewezen. Om toegangs lekken te voor komen, raden we u aan deze referenties zelf in het configuratie programma in te voeren.
 
-- **Toegangs account voor de virtuele machine** : dit account wordt gebruikt om de Mobility Service-agent te installeren op Tenant-vm's, met een automatische push. Normaal gesp roken is het een domein account dat een Tenant kan leveren aan een partner of een account dat door de partner rechtstreeks kan worden beheerd. Als een Tenant de gegevens niet rechtstreeks met de partner wil delen, kunnen ze de referenties invoeren via beperkte toegang tot de configuratie server. Of, met hulp van de partner, kunnen ze de Mobility Service-agent hand matig installeren.
+- **Toegangs account voor de virtuele machine**: dit account wordt gebruikt om de Mobility Service-agent te installeren op Tenant-vm's, met een automatische push. Normaal gesp roken is het een domein account dat een Tenant kan leveren aan een partner of een account dat door de partner rechtstreeks kan worden beheerd. Als een Tenant de gegevens niet rechtstreeks met de partner wil delen, kunnen ze de referenties invoeren via beperkte toegang tot de configuratie server. Of, met hulp van de partner, kunnen ze de Mobility Service-agent hand matig installeren.
 
 ## <a name="vcenter-account-requirements"></a>vereisten voor vCenter-account
 
@@ -75,11 +75,11 @@ Configureer de configuratie server met een account waaraan een speciale rol is t
 1. Maak een nieuwe rol door de vooraf gedefinieerde *alleen-lezen* rol te klonen en geef deze vervolgens een handige naam (zoals Azure_Site_Recovery, zoals wordt weer gegeven in dit voor beeld).
 2. Wijs de volgende machtigingen toe aan deze rol:
 
-   * **Data Store** : ruimte toewijzen, bladeren in gegevens opslag, Bestands bewerkingen op laag niveau, bestand verwijderen, bestanden van virtuele machines bijwerken
-   * **Netwerk** : netwerk toewijzen
-   * **Resource** : een virtuele machine toewijzen aan een resource groep, een uitgeschakelde VM migreren, ingeschakelde VM migreren
-   * **Taken** : taak maken, taak bijwerken
-   * **VM-configuratie** : alle
+   * **Data Store**: ruimte toewijzen, bladeren in gegevens opslag, Bestands bewerkingen op laag niveau, bestand verwijderen, bestanden van virtuele machines bijwerken
+   * **Netwerk**: netwerk toewijzen
+   * **Resource**: een virtuele machine toewijzen aan een resource groep, een uitgeschakelde VM migreren, ingeschakelde VM migreren
+   * **Taken**: taak maken, taak bijwerken
+   * **VM-configuratie**: alle
    * **VM-interactie** > antwoord vraag, apparaat-verbinding, CD-media configureren, diskette media configureren, uitschakelen, inschakelen, VMware-hulpprogram ma's installeren
    * **Vm-inventaris** > maken op basis van bestaande, nieuwe maken, registreren, registratie opheffen
    * **VM-inrichting > het** downloaden van virtuele machines toestaan, het uploaden van bestanden van virtuele machines toestaan
@@ -92,7 +92,7 @@ Configureer de configuratie server met een account waaraan een speciale rol is t
 >| Object | Rol | Opmerkingen |
 >| --- | --- | --- |
 >| vCenter | Read-Only | Alleen vereist voor het toestaan van toegang tot vCenter voor het beheren van verschillende objecten. U kunt deze machtiging verwijderen als het account nooit aan een Tenant wordt door gegeven of wordt gebruikt voor beheer bewerkingen in de vCenter. |
->| Datacentrum | Azure_Site_Recovery |  |
+>| Datacenter | Azure_Site_Recovery |  |
 >| Host-en hostcluster | Azure_Site_Recovery | Zorg ervoor dat de toegang zich op het niveau van het object bevindt, zodat alleen toegankelijke hosts Tenant-Vm's hebben vóór failover en na failback. |
 >| Data Store-en Data Store-cluster | Azure_Site_Recovery | Hetzelfde als voor gaande. |
 >| Netwerk | Azure_Site_Recovery |  |
@@ -120,7 +120,7 @@ Als u herstel bewerkingen voor nood gevallen wilt beperken tot alleen failover (
 
 1. In de Azure Portal, in de kluis die u eerder hebt gemaakt, registreert u de vCenter-Server bij de configuratie server met behulp van het vCenter-account dat u hebt gemaakt.
 2. Voltooi het proces voor het voorbereiden van de infra structuur voor Site Recovery volgens het gebruikelijke proces.
-3. De virtuele machines zijn nu klaar om te worden gerepliceerd. Controleer of alleen de vm's van de Tenant worden weer gegeven bij **repliceren**  >  **selecteren virtuele machines** .
+3. De virtuele machines zijn nu klaar om te worden gerepliceerd. Controleer of alleen de vm's van de Tenant worden weer gegeven bij **repliceren**  >  **selecteren virtuele machines**.
 
 ## <a name="dedicated-hosting-solution"></a>Toegewezen hosting oplossing
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: f4ddb41528357d2f1b5c9e671ec2dd1308f9bf11
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92516824"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Zelfstudie: Azure Active Directory-integratie met moconavi
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van moconavi met Microsoft Azure Active 
 
 **Als u moconavi wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -132,7 +132,7 @@ Als u eenmalige aanmelding aan de zijde van **moconavi** wilt configureren, moet
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -157,7 +157,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot moconavi.
 
-1. Selecteer in de Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **moconavi**.
+1. Selecteer in de Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **moconavi**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -201,9 +201,9 @@ In deze sectie gaat u in moconavi een gebruiker maken met de naam Britta Simon. 
 
     ![Schermopname van de moconavi-pagina waarin u de beschreven waarden kunt invoeren.](./media/moconavi-tutorial/testing3.png)
 
-    a. Voer **Invoerverificatiesleutel** :`azureAD` in bij het tekstvak **Invoerverificatiesleutel**.
+    a. Voer **Invoerverificatiesleutel**:`azureAD` in bij het tekstvak **Invoerverificatiesleutel**.
 
-    b. Voer **Gebruikers-id voor invoer** : `your ad account` in bij het tekstvak **Gebruikers-id voor invoer**.
+    b. Voer **Gebruikers-id voor invoer**: `your ad account` in bij het tekstvak **Gebruikers-id voor invoer**.
 
     c. Klik op **AANMELDEN**.
 

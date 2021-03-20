@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 10/01/2020
 ms.custom: seodec18
 ms.openlocfilehash: 6e5de3cdec7a9c503f4b7bf7056bd62f1ddf682d
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100594015"
 ---
 # <a name="azure-app-service-plan-overview"></a>Overzicht van Azure App Service-plan
@@ -61,7 +61,7 @@ Zie [aantal exemplaren hand matig of automatisch schalen](../azure-monitor/autos
 
 <a name="cost"></a>
 
-## <a name="how-much-does-my-app-service-plan-cost"></a>Wat kost mijn App Service?
+## <a name="how-much-does-my-app-service-plan-cost"></a>Hoeveel kost mijn App Service-plan?
 
 In deze sectie wordt beschreven hoe App Service-apps worden gefactureerd. Zie [app service prijzen](https://azure.microsoft.com/pricing/details/app-service/)voor gedetailleerde, specifieke prijs informatie.
 

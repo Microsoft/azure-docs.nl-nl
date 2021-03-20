@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 11/11/2020
 ms.author: cherylmc
 ms.openlocfilehash: c7b186aa1a6f63b1bc3e9dbefa5001faac967762
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94556097"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Configuratie bestanden voor de VPN-client maken en installeren voor P2S-configuraties voor systeemeigen Azure-certificaatverificatie
@@ -34,8 +34,8 @@ Voordat u begint, moet u ervoor zorgen dat alle gebruikers met een verbinding ee
 
 U kunt client configuratie bestanden genereren met behulp van Power shell of met behulp van de Azure Portal. Beide methoden retour neren hetzelfde zip-bestand. Pak het bestand uit om de volgende mappen weer te geven:
 
-* **WindowsAmd64** en **WindowsX86** , die respectievelijk de Windows 32-bits en 64-bits installatie pakketten bevatten. Het **WindowsAmd64** Installer-pakket is voor alle ondersteunde 64-bits Windows-clients, niet alleen AMD.
-* **Algemeen** , dat algemene informatie bevat die wordt gebruikt voor het maken van uw eigen VPN-client configuratie. De algemene map wordt opgegeven als IKEv2 of SSTP + IKEv2 is geconfigureerd op de gateway. Als alleen SSTP is geconfigureerd, is de generieke map niet aanwezig.
+* **WindowsAmd64** en **WindowsX86**, die respectievelijk de Windows 32-bits en 64-bits installatie pakketten bevatten. Het **WindowsAmd64** Installer-pakket is voor alle ondersteunde 64-bits Windows-clients, niet alleen AMD.
+* **Algemeen**, dat algemene informatie bevat die wordt gebruikt voor het maken van uw eigen VPN-client configuratie. De algemene map wordt opgegeven als IKEv2 of SSTP + IKEv2 is geconfigureerd op de gateway. Als alleen SSTP is geconfigureerd, is de generieke map niet aanwezig.
 
 ### <a name="generate-files-using-the-azure-portal"></a><a name="zipportal"></a>Bestanden genereren met behulp van de Azure Portal
 
@@ -66,8 +66,8 @@ U kunt client configuratie bestanden genereren met behulp van Power shell of met
 
  U moet de systeemeigen IKEv2 VPN-client handmatig configureren op elke Mac die verbinding met Azure zal maken. Azure biedt geen mobileconfig-bestand voor verificatie van systeemeigen Azure-certificaten. De **algemene** bevat alle informatie die u nodig hebt voor configuratie. Als u de map Generic niet ziet in uw download, is IKEv2 waarschijnlijk niet geselecteerd als tunneltype. Houd er rekening mee dat de basis-SKU VPN gateway geen ondersteuning biedt voor IKEv2. Genereer het zip-bestand opnieuw om de map Generic te verkrijgen nadat IKEv2 is geselecteerd.<br>De map Generic bevat de volgende bestanden:
 
-* **VpnSettings.xml** , dat belang rijke instellingen bevat, zoals het server adres en het tunnel type. 
-* **VpnServerRoot. CER** , dat het basis certificaat bevat dat is vereist voor het valideren van de Azure VPN gateway tijdens de configuratie van de P2S-verbinding.
+* **VpnSettings.xml**, dat belang rijke instellingen bevat, zoals het server adres en het tunnel type. 
+* **VpnServerRoot. CER**, dat het basis certificaat bevat dat is vereist voor het valideren van de Azure VPN gateway tijdens de configuratie van de P2S-verbinding.
 
 Voer de volgende stappen uit om de systeem eigen VPN-client te configureren voor verificatie via een certificaat. U moet deze stappen uitvoeren op elke Mac die verbinding maakt met Azure:
 

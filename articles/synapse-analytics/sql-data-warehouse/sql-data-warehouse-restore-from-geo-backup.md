@@ -12,10 +12,10 @@ ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 ms.openlocfilehash: 4683bd84873506483209f4a0eb3751a1b163ed48
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96449894"
 ---
 # <a name="geo-restore-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Geo-herstel een toegewezen SQL-groep in azure Synapse Analytics

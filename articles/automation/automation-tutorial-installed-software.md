@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.subservice: change-inventory-management
 ms.custom: mvc
 ms.openlocfilehash: 8451067ae86e95269c0c2f22554e1654ac64c1e4
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "100593785"
 ---
 # <a name="discover-what-software-is-installed-on-your-vms"></a>Uitvinden welke software is geïnstalleerd op uw VM's
@@ -62,7 +62,7 @@ Voor deze zelfstudie moet u eerst Wijzigingen bijhouden en Inventaris inschakele
 
 Tijdens de installatie wordt de virtuele machine ingericht met de Log Analytics-agent voor Windows en een [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md). Schakel Wijzigingen bijhouden en Inventaris in. Dit kan maximaal 15 minuten duren. Gedurende deze tijd mag u het browservenster niet sluiten.
 
-Nadat de functie is ingeschakeld, wordt informatie over geïnstalleerde software en wijzigingen in de VM-stromen naar Azure Monitor-logboeken verzonden. Het duurt tussen 30 minuten en 6 uur voordat de gegevens beschikbaar zijn voor analyse.
+Nadat de functie is ingeschakeld, wordt informatie over geïnstalleerde software en wijzigingen aan de VM-stromen naar Azure Monitor-logboeken verzonden. Het duurt tussen 30 minuten en 6 uur voordat de gegevens beschikbaar zijn voor analyse.
 
 ## <a name="add-an-azure-vm-to-change-tracking-and-inventory"></a>Een virtuele Azure-machine toevoegen voor Wijzigingen bijhouden en Inventaris
 

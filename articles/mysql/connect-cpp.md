@@ -9,10 +9,10 @@ ms.devlang: cpp
 ms.topic: quickstart
 ms.date: 5/26/2020
 ms.openlocfilehash: e8b2842300e43a9de88cc0b9b3ae9ce6cd754612
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94535840"
 ---
 # <a name="quickstart-use-connectorc-to-connect-and-query-data-in-azure-database-for-mysql"></a>Quickstart: Connector/C++ gebruiken om verbinding te maken en gegevens op te vragen in Azure Database for MySQL

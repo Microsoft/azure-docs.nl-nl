@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/25/2021
 ms.openlocfilehash: ec4ea645e325ef48d4cb5951cd39fd4e9cbe1617
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "101738052"
 ---
 # <a name="copy-and-transform-data-in-azure-database-for-postgresql-by-using-azure-data-factory"></a>Gegevens in Azure Database for PostgreSQL kopiëren en transformeren met behulp van Azure Data Factory
@@ -222,7 +222,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de gegevensset. | Nee | - |*(alleen voor inline-gegevensset)*<br>tableName |
-| Query’s uitvoeren | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `select * from mytable where customerId > 1000 and customerId < 2000` or `select * from "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld.| Nee | Tekenreeks | query |
+| Query | Als u query als invoer selecteert, geeft u een SQL-query op om gegevens op te halen uit de bron, waardoor elke tabel die u in dataset opgeeft, wordt overschreven. Het gebruik van query's is een uitstekende manier om rijen te verminderen voor testen of lookups.<br><br>**Order by** -component wordt niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL waarmee een tabel wordt geretourneerd die u in de gegevens stroom kunt gebruiken.<br>Query voorbeeld: `select * from mytable where customerId > 1000 and customerId < 2000` or `select * from "MyTable"` . Opmerking in PostgreSQL wordt de naam van de entiteit beschouwd als niet-hoofdletter gevoelig als deze niet in een aanhalings teken wordt vermeld.| Nee | Tekenreeks | query |
 | Batchgrootte | Geef een batch grootte op om grote hoeveel heden gegevens naar batches te segmenteren. | Nee | Geheel getal | batchSize |
 | Isolatie niveau | Kies een van de volgende isolatie niveaus:<br>-Doorgevoerde lezen<br>-Niet-doorgevoerde lezen (standaard)<br>-Herhaal bare Lees bewerking<br>-Serialiseerbaar<br>-Geen (isolatie niveau negeren) | Nee | <small>READ_COMMITTED<br/>READ_UNCOMMITTED<br/>REPEATABLE_READ<br/>SERIALIZABLE<br/>GEEN</small> |isolationLevel |
 

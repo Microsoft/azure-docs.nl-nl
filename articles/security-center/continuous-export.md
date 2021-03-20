@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
 ms.openlocfilehash: fc3774a01665b88ccae2e25ae8382497f8010c35
-ms.sourcegitcommit: 4b7a53cca4197db8166874831b9f93f716e38e30
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/04/2021
+ms.lasthandoff: 03/20/2021
 ms.locfileid: "102096969"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren

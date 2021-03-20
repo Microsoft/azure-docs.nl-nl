@@ -10,10 +10,10 @@ ms.date: 10/20/2020
 ms.author: rohink
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: f2563c33d02490732f73fcf9d1a78f548ec2d3e2
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92282224"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-powershell"></a>Snelstart: Een Azure DNS-zone en -record maken met behulp van Azure PowerShell

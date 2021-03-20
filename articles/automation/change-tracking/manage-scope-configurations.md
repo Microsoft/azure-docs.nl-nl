@@ -6,10 +6,10 @@ ms.subservice: change-inventory-management
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.openlocfilehash: 6eb9a20920f0a340491459f0875fc85b90dfa193
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92209679"
 ---
 # <a name="limit-change-tracking-and-inventory-deployment-scope"></a>Het implementatie bereik voor Wijzigingen bijhouden en inventarisatie beperken
@@ -24,7 +24,7 @@ Een scope configuratie is een groep van een of meer opgeslagen Zoek opdrachten (
 
 Het bereik voor uw Wijzigingen bijhouden-en inventaris implementatie beperken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer in de Azure-portal de optie **Alle services**. Typ in de lijst met resources **Automation**. Wanneer u begint te typen, worden in de lijst suggesties weer geven op basis van uw invoer. Selecteer **Automation-accounts**.
 
@@ -40,7 +40,7 @@ Het bereik voor uw Wijzigingen bijhouden-en inventaris implementatie beperken:
 
 8. Selecteer in het deel venster bewerken de optie **computer groepen selecteren**. In het deel venster computer groepen worden de opgeslagen Zoek opdrachten weer gegeven die worden gebruikt voor het maken van de scope configuratie. De opgeslagen zoek opdracht die wordt gebruikt door Wijzigingen bijhouden en inventaris is:
 
-    |Naam     |Categorie  |Alias  |
+    |Name     |Categorie  |Alias  |
     |---------|---------|---------|
     |MicrosoftDefaultComputerGroup     |  Change tracking       | ChangeTracking__MicrosoftDefaultComputerGroup        |
 

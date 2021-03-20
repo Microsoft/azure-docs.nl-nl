@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/04/2020
 ms.openlocfilehash: 674f267d3d99dd22c1ae06b6d32587761d5983ce
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93124914"
 ---
 # <a name="azure-ad-and-transactable-saas-offers-in-the-commercial-marketplace"></a>Azure AD en transactable SaaS-aanbiedingen in de commerciële Marketplace
@@ -35,7 +35,7 @@ Azure AD maakt naadloze aankoop, uitvoering en beheer van oplossingen voor comme
 
 Zoals wordt weer gegeven in afbeelding 1 en een koper uw aanbieding selecteert, gaan ze een keten van werk stromen met aankoop, abonnementen en gebruikers beheer. Binnen deze keten is de uitgever verantwoordelijk voor bepaalde vereisten, waarbij micro soft ondersteuning biedt op basis van belang rijke punten.
 
-**_Afbeelding 1: Azure AD gebruiken voor SaaS-aanbiedingen in de commerciële Marketplace_* _
+***Afbeelding 1: Azure AD gebruiken voor SaaS-aanbiedingen in de commerciële Marketplace***
 
 :::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow.png" alt-text="Illustreert het aankoop beheer, abonnements beheer en de stappen voor het uitvoeren van een optioneel gebruikers beheer.":::
 
@@ -45,14 +45,14 @@ De volgende secties bevatten informatie over de vereisten voor elke proces stap.
 
 In deze afbeelding ziet u de vier proces stappen voor het beheer van aankopen.
 
-:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-1-4.png" alt-text="Illustreert het aankoop beheer, abonnements beheer en de stappen voor het uitvoeren van een optioneel gebruikers beheer.":::
+:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-1-4.png" alt-text="Illustreert de vier proces stappen voor aankoop beheer.":::
 
 Deze tabel bevat details over de stappen voor het aankoop beheer proces.
 
 | Proces stap | Publisher-actie | Aanbevolen of vereist voor uitgevers |
 | ------------ | ------------- | ------------- |
 | 1. de koper meldt zich aan bij de commerciële Marketplace met hun Azure ID-identiteit en selecteert een SaaS-aanbieding. | Er is geen uitgever actie vereist. | Niet van toepassing |
-| 2. na de aankoop selecteert de koper _ *account configureren* in azure Marketplace of **nu configureren** in AppSource, die de koper naar de landings pagina van de uitgever stuurt voor deze aanbieding. De koper moet zich kunnen aanmelden bij de SaaS-toepassing van de uitgever met Azure AD SSO en mag alleen worden gevraagd om minimale toestemming waarvoor Azure AD-beheerder geen goed keuring vereist. | Ontwerp een [landings pagina](azure-ad-transactable-saas-landing-page.md) voor de aanbieding zodat deze een gebruiker ontvangt met hun Azure AD-of Microsoft-account (MSA)-identiteit en de aanvullende inrichting of installatie die vereist is, vergemakkelijkt. | Vereist |
+| 2. na de aankoop selecteert de koper **account configureren** in azure Marketplace of **nu configureren** in AppSource, waarmee de koper naar de landings pagina van de uitgever voor deze aanbieding wordt geleid. De koper moet zich kunnen aanmelden bij de SaaS-toepassing van de uitgever met Azure AD SSO en mag alleen worden gevraagd om minimale toestemming waarvoor Azure AD-beheerder geen goed keuring vereist. | Ontwerp een [landings pagina](azure-ad-transactable-saas-landing-page.md) voor de aanbieding zodat deze een gebruiker ontvangt met hun Azure AD-of Microsoft-account (MSA)-identiteit en de aanvullende inrichting of installatie die vereist is, vergemakkelijkt. | Vereist |
 | 3. de uitgever vraagt om details van de SaaS fulfillment API. | Met behulp van een [toegangs token](./partner-center-portal/pc-saas-registration.md) dat is gegenereerd op basis van de toepassings-id van de landings pagina [roept u het eind punt voor omzetten](./partner-center-portal/pc-saas-fulfillment-api-v2.md#resolve-a-purchased-subscription) op om details over de aankoop op te halen. | Vereist |
 | 4. via Azure AD en de Microsoft Graph-API verzamelt de uitgever de bedrijfs-en gebruikers gegevens die nodig zijn om de koper in te richten in de SaaS-toepassing van de uitgever.  | Het Azure AD-gebruikers token afbreken om naam en e-mail adres te vinden, of [de Microsoft Graph-API aanroepen](/graph/use-the-api) en gedelegeerde machtigingen gebruiken om informatie op te [halen](/graph/api/user-get) over de gebruiker die is aangemeld. | Vereist |
 ||||
@@ -61,7 +61,7 @@ Deze tabel bevat details over de stappen voor het aankoop beheer proces.
 
 In deze afbeelding ziet u de twee proces stappen voor het beheer van abonnementen.
 
-:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-5-6.png" alt-text="Illustreert het aankoop beheer, abonnements beheer en de stappen voor het uitvoeren van een optioneel gebruikers beheer.":::
+:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-5-6.png" alt-text="Illustreert de twee proces stappen voor het beheer van abonnementen.":::
 
 In deze tabel worden de details van de proces stappen voor het abonnements beheer beschreven.
 
@@ -75,7 +75,7 @@ In deze tabel worden de details van de proces stappen voor het abonnements behee
 
 In deze afbeelding ziet u de drie proces stappen voor gebruikers beheer.
 
-:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-7-9.png" alt-text="Illustreert het aankoop beheer, abonnements beheer en de stappen voor het uitvoeren van een optioneel gebruikers beheer.":::
+:::image type="content" source="./media/azure-ad-saas/azure-ad-saas-flow-7-9.png" alt-text="Illustreert de drie optionele proces stappen voor gebruikers beheer.":::
 
 Proces stappen 7 t/m 9 zijn optionele proces stappen voor gebruikers beheer. Ze bieden extra voor delen voor uitgevers die ondersteuning bieden voor eenmalige aanmelding (SSO) van Azure AD. In deze tabel worden de details van de proces stappen voor gebruikers beheer beschreven.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/16/2020
 ms.author: alkohli
 ms.openlocfilehash: 18de1f445990f167041c755aa5e7d909819319b1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96446466"
 ---
 # <a name="azure-stack-edge-pro-power-cord-specifications"></a>Specificaties van Azure Stack Edge Pro-stroom kabel
@@ -23,7 +23,7 @@ Uw Azure Stack Edge Pro-apparaat heeft een stroom kabel nodig dat afhankelijk is
 
 U kunt de volgende tabel gebruiken om de juiste koord specificaties te vinden voor uw regio:
 
-| Land    | Nominale spanning (V)| Huidige waardering (A)| Kabel standaard |Invoer connector|Uitvoer connector| Lengte mm |  
+| Land/regio    | Nominale spanning (V)| Huidige waardering (A)| Kabel standaard |Invoer connector|Uitvoer connector| Lengte mm |  
 |------------|---------------|------------|----|--|----|--|--|--|
 |Albanië|250|10|H05Z1Z1 3x 0,75|CEE 7|C13|1830|
 |Algerije|250|10|H05Z1Z1 3x 0,75|CEE 7|C13|1830|
@@ -76,7 +76,7 @@ U kunt de volgende tabel gebruiken om de juiste koord specificaties te vinden vo
 |India|250|10|IS694 3x 0,75|IS 1293|C13|1830|
 |Indonesië|250|10|H05Z1Z1 3x 0,75|CEE 7|C13|1830|
 |Ierland|250|5|H05VV-F 3x 0,75|BS 1363/SS145/A|C13|1800|
-|Israël|250|2.5|H05VV-F 3x 1,00|SI 32|C13|2000|
+|Israël|250|2,5|H05VV-F 3x 1,00|SI 32|C13|2000|
 |Italië|250|10|H05VV-F 3x 0,75|CEI 23-50|C13|1800|
 |Jamaica|125|10|SVE 18/3|NEMA 5-15P|C13|1830|
 |Japan|125|15|VCTF 3x 2.00|JIS C 8303|C13|2300|

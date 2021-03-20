@@ -9,13 +9,13 @@ ms.author: terrylan
 manager: rkarlin
 ms.date: 11/10/2020
 ms.openlocfilehash: 8233cc714d977083f4d55716d35c0b7094a069ea
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94557720"
 ---
-# <a name="firmware-security"></a>Firmware beveiliging
+# <a name="firmware-security"></a>Firmware-beveiliging
 In dit artikel wordt beschreven hoe micro soft de hardware ecosysteem en toeleverings ketens van de Cloud beveiligt.
 
 ## <a name="securing-the-cloud-hardware-ecosystem"></a>Het hardware-ecosysteem voor de Cloud beveiligen
@@ -54,4 +54,4 @@ Zie voor meer informatie over de mogelijkheden van platform integriteit en-bevei
 - [Gemeten opstarten en host-Attestation](measured-boot-host-attestation.md)
 - [Project Cerberus](project-cerberus.md)
 - [Versleuteling 'at rest'](encryption-atrest.md)
-- [Hyper Visor beveiliging](hypervisor.md)
+- [Hypervisor-beveiliging](hypervisor.md)

@@ -10,10 +10,10 @@ ms.date: 10/09/2020
 ms.author: anfeldma
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 91e89eaf215468f171974e5f3fd383691fdd6ebe
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93096971"
 ---
 # <a name="quickstart-build-a-todo-app-with-xamarin-using-azure-cosmos-db-sql-api-account"></a>Quickstart: een taken-app maken met Xamarin met behulp van een SQL API-account van Azure Cosmos DB
@@ -39,7 +39,7 @@ Deze snelstart laat zien hoe u een SQL API-account van Azure Cosmos DB, een docu
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u Windows gebruikt en Visual Studio 2019 nog niet hebt geïnstalleerd, kunt u het downloaden en de **gratis** [Community Edition van Visual Studio 2019](https://www.visualstudio.com/downloads/) gebruiken. Zorg ervoor dat u **Azure-ontwikkeling** en **Mobile Development met .NET** -workloads inschakelt tijdens de installatie van Visual Studio.
+Als u Windows gebruikt en Visual Studio 2019 nog niet hebt geïnstalleerd, kunt u het downloaden en de **gratis** [Community Edition van Visual Studio 2019](https://www.visualstudio.com/downloads/) gebruiken. Zorg ervoor dat u **Azure-ontwikkeling** en **Mobile Development met .NET**-workloads inschakelt tijdens de installatie van Visual Studio.
 
 Als u een Mac gebruikt, kunt u **gratis** [Visual Studio voor Mac](https://www.visualstudio.com/vs/mac/) downloaden.
 
@@ -96,7 +96,7 @@ Ga terug naar Azure Portal om de API-sleutelgegevens op te halen en deze in de a
 
 2. Open in Visual Studio **ToDoItems.Core/Helpers/APIKeys.cs**.
 
-3. Gebruik in Azure Portal de kopieerknop om de **URI** -waarde te kopiëren, en maak deze de waarde van de variabele `CosmosEndpointUrl` in APIKeys.cs.
+3. Gebruik in Azure Portal de kopieerknop om de **URI**-waarde te kopiëren, en maak deze de waarde van de variabele `CosmosEndpointUrl` in APIKeys.cs.
 
     ```csharp
     //#error Enter the URL of your Azure Cosmos DB endpoint here

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 801197a171b5be2cfe46c249398381e1b25857ff
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515352"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Zelfstudie: Azure Active Directory-integratie met Predictix Price Reporting
@@ -49,11 +49,11 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van Predictix Price Reporting in Azure AD wilt instellen, moet u Predictix Price Reporting vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. In de [Azure-portal](https://portal.azure.com), selecteert u in het linkerdeelvenster **Azure Active Directory** :
+1. In de [Azure-portal](https://portal.azure.com), selecteert u in het linkerdeelvenster **Azure Active Directory**:
 
     ![Selecteer Azure Active Directory](common/select-azuread.png)
 
-2. Ga naar **Bedrijfstoepassingen** > **Alle toepassingen** :
+2. Ga naar **Bedrijfstoepassingen** > **Alle toepassingen**:
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,7 +61,7 @@ Als u de integratie van Predictix Price Reporting in Azure AD wilt instellen, mo
 
     ![Selecteer Nieuwe toepassing](common/add-new-app.png)
 
-4. Voer in het zoekvak **Predictix Price Reporting** in. Selecteer **Predictix Price Reporting** in de zoekresultaten en selecteer vervolgens **Toevoegen** .
+4. Voer in het zoekvak **Predictix Price Reporting** in. Selecteer **Predictix Price Reporting** in de zoekresultaten en selecteer vervolgens **Toevoegen**.
 
      ![Zoekresultaten](common/search-new-app.png)
 
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Als u eenmalige aanmelding voor Azure AD met Predictix Price Reporting wilt configureren, moet u deze stappen voltooien:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Predictix Price Reporting** -toepassing de optie **Eenmalige aanmelding** :
+1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Predictix Price Reporting**-toepassing de optie **Eenmalige aanmelding**:
 
     ![Selecteer Eenmalige aanmelding](common/select-sso.png)
 
@@ -115,7 +115,7 @@ Als u eenmalige aanmelding voor Azure AD met Predictix Price Reporting wilt conf
     > [!NOTE]
     > Deze waarden zijn tijdelijke aanduidingen. Hiervoor moet u de werkelijke aanmeldings-URL en id gebruiken. Neem contact op met het [ondersteuningsteam van Predictix Price Reporting](https://www.infor.com/company/customer-center/) om de waarden op te halen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in het dialoogvenster **Standaard SAML-configuratie** in de Azure-portal.
 
-5. Op de pagina **Eenmalige aanmelding met SAML instellen** , in de sectie **SAML-handtekeningcertificaat** , selecteert u de koppeling **Downloaden** naast **Certificaat (Base64)** overeenkomstig uw behoeften, en slaat u het certificaat op uw computer op:
+5. Op de pagina **Eenmalige aanmelding met SAML instellen**, in de sectie **SAML-handtekeningcertificaat**, selecteert u de koppeling **Downloaden** naast **Certificaat (Base64)** overeenkomstig uw behoeften, en slaat u het certificaat op uw computer op:
 
     ![De koppeling om het certificaat te downloaden](common/certificatebase64.png)
 
@@ -123,11 +123,11 @@ Als u eenmalige aanmelding voor Azure AD met Predictix Price Reporting wilt conf
 
     ![De configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    1. **Aanmeldings-URL** .
+    1. **Aanmeldings-URL**.
 
-    1. **Azure AD-id** .
+    1. **Azure AD-id**.
 
-    1. **Afmeldings-URL** .
+    1. **Afmeldings-URL**.
 
 ### <a name="configure-predictix-price-reporting-single-sign-on"></a>Configureer Predictix Price Reporting voor eenmalige aanmelding
 
@@ -137,7 +137,7 @@ Als u eenmalige aanmelding wilt configureren voor Predictix Price Reporting, moe
 
 In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** :
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**:
 
     ![Selecteer Alle gebruikers](common/users.png)
 
@@ -155,37 +155,37 @@ In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in de Azu
 
     1. Selecteer **Wachtwoord weergeven** en noteer de waarde die in het vak **Wachtwoord** wordt getoond.
 
-    1. Selecteer **Maken** .
+    1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon instellen voor gebruik van eenmalige aanmelding voor Azure AD door haar toegang te geven tot Predictix Price Reporting.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Predictix Price Reporting** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Predictix Price Reporting**.
 
     ![Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst met toepassingen **Predictix Price Reporting** .
+2. Selecteer in de lijst met toepassingen **Predictix Price Reporting**.
 
     ![Lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het linkerdeelvenster **Gebruikers en groepen** :
+3. Selecteer in het linkerdeelvenster **Gebruikers en groepen**:
 
     ![Gebruikers en groepen selecteren](common/users-groups-blade.png)
 
-4. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Gebruiker toevoegen selecteren](common/add-assign-user.png)
 
 5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de gebruikerslijst en selecteer vervolgens de knop **Selecteren** onderaan het scherm.
 
-6. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Klik onder aan het scherm op de knop **Selecteren** .
+6. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Klik onder aan het scherm op de knop **Selecteren**.
 
-7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ### <a name="create-a-predictix-price-reporting-test-user"></a>Een Predictix Price Reporting-testgebruiker maken
 
-Vervolgens moet u een gebruiker met de naam Britta Simon maken in Predictix Price Reporting. Werk samen met het [ondersteuningsteam van Predictix Price Reporting](https://www.infor.com/company/customer-center/) om gebruikers toe te voegen. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken
+Vervolgens moet u een gebruiker met de naam Britta Simon maken in Predictix Price Reporting. Werk samen met het [ondersteuningsteam van Predictix Price Reporting](https://www.infor.com/company/customer-center/) om gebruikers toe te voegen. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

@@ -9,10 +9,10 @@ ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
 ms.openlocfilehash: 548bda36ed2b167c159d32a575b63ecbf10b16dd
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397566"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Problemen met de Azure-toepassing gateway sessie affiniteit oplossen
@@ -52,7 +52,7 @@ Soms kunnen er problemen optreden met de sessie affiniteit wanneer u vergeet de 
 
 
 
-U kunt ook controleren of de waarde ' **CookieBasedAffinity** ' is ingesteld op *ingeschakeld* onder ' **backendHttpSettingsCollection** ' door een van de volgende methoden te gebruiken:
+U kunt ook controleren of de waarde '**CookieBasedAffinity**' is ingesteld op *ingeschakeld* onder '**backendHttpSettingsCollection**' door een van de volgende methoden te gebruiken:
 
 - [Get-AzApplicationGatewayBackendHttpSetting](/powershell/module/az.network/get-azapplicationgatewaybackendhttpsetting) uitvoeren in Power shell
 - Bekijk het JSON-bestand met behulp van de sjabloon Azure Resource Manager
@@ -80,9 +80,9 @@ U hebt de instelling voor affiniteit op basis van cookies ingeschakeld, wanneer 
 Volg de instructies om dit probleem te identificeren:
 
 1. Neem een webdebugger tracering op de client, die verbinding maakt met de toepassing achter de Application Gateway (we gebruiken Fiddler in dit voor beeld).
-    **Tip** Als u niet weet hoe u de Fiddler moet gebruiken, schakelt u de optie ' **Ik wil netwerk verkeer verzamelen en analyseren met Web debugger** ' onderaan.
+    **Tip** Als u niet weet hoe u de Fiddler moet gebruiken, schakelt u de optie '**Ik wil netwerk verkeer verzamelen en analyseren met Web debugger**' onderaan.
 
-2. Controleer en analyseer de sessie Logboeken om te bepalen of de cookies van de client de ARRAffinity-details hebben. Als u de details van de ARRAffinity, zoals " **ARRAffinity =** *ARRAffinityValue* " niet in de cookieset vindt, betekent dit dat de client niet antwoordt op de ARRA cookie, die wordt opgegeven door de Application Gateway.
+2. Controleer en analyseer de sessie Logboeken om te bepalen of de cookies van de client de ARRAffinity-details hebben. Als u de details van de ARRAffinity, zoals "**ARRAffinity =** *ARRAffinityValue*" niet in de cookieset vindt, betekent dit dat de client niet antwoordt op de ARRA cookie, die wordt opgegeven door de Application Gateway.
     Bijvoorbeeld:
 
     ![Scherm afbeelding toont een sessie logboek waarin één vermelding is gemarkeerd.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
@@ -131,7 +131,7 @@ Logboekregistratie inschakelen via de Azure-portal
 
    ![Scherm afbeelding toont bewaking met Diagnostische logboeken geselecteerd.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-8.png)
 
-2. Klik aan de rechter kant op ' **ApplicationGatewayAccessLog** ' in de vervolg keuzelijst onder **logboek categorieën.**  
+2. Klik aan de rechter kant op '**ApplicationGatewayAccessLog**' in de vervolg keuzelijst onder **logboek categorieën.**  
 
    ![Scherm afbeelding toont de vervolg keuzelijst met logboek categorieën waarvoor ApplicationGatewayAccessLog is geselecteerd.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-9.png)
 
@@ -141,19 +141,19 @@ Logboekregistratie inschakelen via de Azure-portal
 
 5. Controleer de volgende gegevens:
 
-- **Client** : dit is het IP-adres van de client van de client die verbinding maakt.
+- **Client**: dit is het IP-adres van de client van de client die verbinding maakt.
 - **ClientPort** : dit is de bron poort van de client die verbinding maakt voor de aanvraag.
 - **RequestQuery** : Dit geeft de doel server aan waarop de aanvraag is ontvangen.
-- **Server-gerouteerd** : exemplaar van back-end-pool dat de aanvraag is ontvangen.
-- **X-AzureApplicationGateway-log-id** : correlatie-id die voor de aanvraag wordt gebruikt. Het kan worden gebruikt om problemen met verkeer op de back-endservers op te lossen. Bijvoorbeeld: X-AzureApplicationGateway-CACHE-HIT = 0&SERVER ROUTEed = 10.0.2.4.
+- **Server-gerouteerd**: exemplaar van back-end-pool dat de aanvraag is ontvangen.
+- **X-AzureApplicationGateway-log-id**: correlatie-id die voor de aanvraag wordt gebruikt. Het kan worden gebruikt om problemen met verkeer op de back-endservers op te lossen. Bijvoorbeeld: X-AzureApplicationGateway-CACHE-HIT = 0&SERVER ROUTEed = 10.0.2.4.
 
-  - **Server-status** : http-antwoord code die Application Gateway ontvangen van de back-end.
+  - **Server-status**: http-antwoord code die Application Gateway ontvangen van de back-end.
 
   ![Scherm afbeelding toont de server status als tekst zonder opmaak, vooral verborgen, met clientPort en door de SERVER omgeleide markering.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-11.png)
 
 Als u ziet dat er twee items afkomstig zijn uit dezelfde client en client poort en worden deze naar dezelfde back-endserver verzonden, betekent dit dat de Application Gateway correct is geconfigureerd.
 
-Als u ziet dat er twee items afkomstig zijn uit dezelfde client-en client poort, en ze worden verzonden naar de verschillende back-endservers, betekent dit dat de aanvraag wordt gestuiterd tussen back-endservers, de optie **toepassing maakt gebruik van op cookies gebaseerde affiniteit, maar aanvragen die nog steeds tussen back-endservers worden gestuiterd** , onderaan om de problemen op te lossen.
+Als u ziet dat er twee items afkomstig zijn uit dezelfde client-en client poort, en ze worden verzonden naar de verschillende back-endservers, betekent dit dat de aanvraag wordt gestuiterd tussen back-endservers, de optie **toepassing maakt gebruik van op cookies gebaseerde affiniteit, maar aanvragen die nog steeds tussen back-endservers worden gestuiterd**, onderaan om de problemen op te lossen.
 
 ### <a name="use-web-debugger-to-capture-and-analyze-the-http-or-https-traffics"></a>Webdebugger gebruiken om de HTTP-of HTTPS-verkeer vast te leggen en te analyseren
 
@@ -182,7 +182,7 @@ Gebruik de webdebugger van uw keuze. In dit voor beeld gebruiken we Fiddler om h
 
     ![Scherm afbeelding toont het X-pictogram dat is geselecteerd, waarin de optie Alles verwijderen wordt weer gegeven.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
 
-6. Wanneer u het probleem hebt opgelost, slaat u het bestand voor controle op door **bestand**  >  **Save**  >  **alle sessies** opslaan te selecteren... 
+6. Wanneer u het probleem hebt opgelost, slaat u het bestand voor controle op door **bestand**  >    >  **alle sessies** opslaan te selecteren... 
 
     ![Scherm afbeelding toont de geselecteerde optie voor het opslaan van alle sessies van het bestand.](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
 
@@ -190,7 +190,7 @@ Gebruik de webdebugger van uw keuze. In dit voor beeld gebruiken we Fiddler om h
 
     Voorbeelden:
 
-- **Voor beeld A:** U vindt een sessie logboek dat de aanvraag van de client wordt verzonden en gaat naar het open bare IP-adres van de Application Gateway, klikt u op dit logboek om de details weer te geven.  Aan de rechter kant ziet u de gegevens in het onderste vak wat het Application Gateway naar de client retourneert. Selecteer het tabblad RAW en bepaal of de client een ' **set-cookie: ARRAffinity =** *ARRAffinityValue* ' ontvangt. Als er geen cookie is, wordt sessie affiniteit niet ingesteld, of wordt de Application Gateway geen cookie opnieuw op de client toegepast.
+- **Voor beeld A:** U vindt een sessie logboek dat de aanvraag van de client wordt verzonden en gaat naar het open bare IP-adres van de Application Gateway, klikt u op dit logboek om de details weer te geven.  Aan de rechter kant ziet u de gegevens in het onderste vak wat het Application Gateway naar de client retourneert. Selecteer het tabblad RAW en bepaal of de client een '**set-cookie: ARRAffinity =** *ARRAffinityValue*' ontvangt. Als er geen cookie is, wordt sessie affiniteit niet ingesteld, of wordt de Application Gateway geen cookie opnieuw op de client toegepast.
 
    > [!NOTE]
    > Deze ARRAffinity waarde is de cookie-id, die de Application Gateway stelt dat de client naar een bepaalde back-endserver moet worden verzonden.

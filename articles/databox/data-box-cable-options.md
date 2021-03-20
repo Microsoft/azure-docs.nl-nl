@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/24/2018
 ms.author: alkohli
 ms.openlocfilehash: a2c4cce492c48ebe6e09ad142f97bc6377a8a5e1
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94334598"
 ---
 # <a name="cabling-options-for-your-azure-data-box"></a>Bekabelingsopties voor uw Azure Data Box
@@ -78,8 +78,8 @@ Voer de volgende stappen uit om uw apparaat te bekabelen.
 2. Gebruik een RJ45-kabel voor DATA 3 of SFP+-kabels om DATA 1 of DATA 2 te verbinden met de server. U wordt aangeraden om 10 GbE voor DATA 1- of DATA 2-poorten te gebruiken voor goede prestaties. De gegevenspoorten zijn verbonden via een 10 GbE-switch op de server met gegevens.
 3. Configureer de Ethernet-adapter op de laptop waarmee u verbinding maakt met het apparaat:
 
-   - **IP-adres** : 192.168.100.5
-   - **Subnet** : 255.255.255.0.
+   - **IP-adres**: 192.168.100.5
+   - **Subnet**: 255.255.255.0.
   
    ![Twee poorten instellen met een switch](media/data-box-cable-options/cabling-with-static-ip.png)
 
@@ -102,8 +102,8 @@ Voer de volgende stappen uit om uw apparaat te bekabelen.
 2. Gebruik een RJ45-kabel voor DATA 3 of SFP+-kabels om DATA 1 of DATA 2 te verbinden met de server. U wordt aangeraden om 10 GbE voor DATA 1- of DATA 2-poorten te gebruiken voor goede prestaties.
 3. Configureer de Ethernet-adapter op de laptop waarmee u verbinding maakt met het apparaat:
 
-   - **IP-adres** : 192.168.100.5
-   - **Subnet** : 255.255.255.0.
+   - **IP-adres**: 192.168.100.5
+   - **Subnet**: 255.255.255.0.
 
      ![Twee poorten instellen met een switch 2](media/data-box-cable-options/cabling-with-switch-static-ip.png)
 

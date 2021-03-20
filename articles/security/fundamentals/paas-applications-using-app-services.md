@@ -17,10 +17,10 @@ ms.workload: na
 ms.date: 07/18/2019
 ms.author: terrylan
 ms.openlocfilehash: 849743dd756eff27ec0670cc39d2419c60538183
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94701011"
 ---
 # <a name="best-practices-for-securing-paas-web-and-mobile-applications-using-azure-app-service"></a>Aanbevolen procedures voor het beveiligen van PaaS web-en mobiele toepassingen met Azure App Service
@@ -30,7 +30,7 @@ In dit artikel bespreken we een verzameling [Azure app service](../../app-servic
 Azure App Service is een PaaS-aanbieding (platform-as-a-Service) waarmee u web-en mobiele apps voor elk platform of apparaat kunt maken en overal en op locatie verbinding kunt maken met gegevens. App Service bevat de web-en mobiele mogelijkheden die eerder afzonderlijk zijn geleverd als Azure-websites en Azure Mobile Services. Deze service bevat ook nieuwe mogelijkheden voor het automatiseren van bedrijfsprocessen en het hosten van cloud-API's. Als één geïntegreerde service biedt App Service een uitgebreide set mogelijkheden voor web-, mobiele en integratie scenario's.
 
 ## <a name="authenticate-through-azure-active-directory-ad"></a>Verifiëren via Azure Active Directory (AD)
-App Service biedt een OAuth 2,0-Service voor uw ID-provider. OAuth 2,0 richt zich op de vereenvoudiging van client ontwikkelaars en biedt specifieke autorisatie stromen voor webtoepassingen, desktop toepassingen en mobiele telefoons. Azure AD maakt gebruik van OAuth 2,0 zodat u toegang tot mobiele en webtoepassingen kunt autoriseren. Zie [verificatie en autorisatie in azure app service](../../app-service/overview-authentication-authorization.md)voor meer informatie.
+App Service biedt een OAuth 2,0-Service voor uw ID-provider. OAuth 2,0 richt zich op de vereenvoudiging van client ontwikkelaars en biedt specifieke autorisatie stromen voor webtoepassingen, desktop toepassingen en mobiele telefoons. Azure AD maakt gebruik van OAuth 2,0 zodat u toegang tot mobiele en webtoepassingen kunt autoriseren. Zie [Verificatie en autorisatie in Azure App Service](../../app-service/overview-authentication-authorization.md) voor meer informatie.
 
 ## <a name="restrict-access-based-on-role"></a>Toegang beperken op basis van rol
 Het beperken van de toegang is van cruciaal belang voor organisaties die beveiligings beleid voor gegevens toegang willen afdwingen. U kunt Azure RBAC (op rollen gebaseerd toegangs beheer) gebruiken om machtigingen toe te wijzen aan gebruikers, groepen en toepassingen bij een bepaald bereik, zoals de beveiligings principes van de nood zaak om te kennen en te voldoen aan bevoegdheden. Zie [Wat is Azure Role-based Access Control (Azure RBAC)](../../role-based-access-control/overview.md)voor meer informatie over het verlenen van gebruikers toegang tot toepassingen.

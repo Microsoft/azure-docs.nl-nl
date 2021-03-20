@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/28/2020
 ms.author: jeedes
 ms.openlocfilehash: 649a26e474c7c4d6b4f51a035b3f8f9da35b9dd1
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92511151"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-raketa"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) via Azure Active Directory met Raketa
@@ -66,7 +66,7 @@ Voor het configureren van de integratie van Raketa met Microsoft Azure Active Di
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-raketa"></a>Eenmalige aanmelding via Azure AD configureren en testen voor Raketa
 
-Configureer en test eenmalige aanmelding van Azure AD met Raketa met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Raketa.
+Configureer en test eenmalige aanmelding van Azure AD met Raketa met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Raketa.
 
 Voltooi de volgende stappen om eenmalige aanmelding bij Raketa met Azure AD te configureren en te testen:
 
@@ -125,7 +125,7 @@ In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Porta
 
     ![rkt_8](./media/raketa-tutorial/new-user.png)
 
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
 
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** [22] in. Bijvoorbeeld `B.Simon@contoso.com`.
 
@@ -152,7 +152,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![rkt_11](./media/raketa-tutorial/users-groups.png)
 
-1. Selecteer **Gebruiker toevoegen** [29] en selecteer vervolgens **Gebruikers en groepen** [30] in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** [29] en selecteer vervolgens **Gebruikers en groepen** [30] in het dialoogvenster **Toewijzing toevoegen**.
 
     ![rkt_12](./media/raketa-tutorial/add-user-raketa.png)
 

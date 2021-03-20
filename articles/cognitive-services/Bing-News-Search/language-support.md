@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 1/10/2019
 ms.author: aahi
 ms.openlocfilehash: 9c7fd03c2239cea05dc79ad4dd1965fe253a2ce9
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96341594"
 ---
 # <a name="language-and-region-support-for-the-bing-news-search-api"></a>Ondersteuning van talen en regio's voor de Bing Nieuws zoeken-API
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
 > Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
@@ -52,7 +52,7 @@ Voor een lijst met land-of regio codes die u in de `cc` query parameter kunt opg
 |Nieuw-Zeeland|Engels|en-NZ|
 |Republiek der Filippijnen|Engels|en-PH|
 |Singapore|Engels|en-AG|
-|Verenigde Staten|Engels|nl-NL|
+|Verenigde Staten|Engels|en-US|
 |Engels|algemeen|en-WW|
 |Engels|algemeen|en-XA|
 |Zuid-Afrika|Engels|en-ZA|
@@ -91,7 +91,7 @@ Voor een lijst met land-of regio codes die u in de `cc` query parameter kunt opg
 |Duitsland|Duits|de-DE|
 |Australië|Engels|en-AU|
 |Verenigd Koninkrijk|Engels|en-GB|
-|Verenigde Staten|Engels|nl-NL|
+|Verenigde Staten|Engels|en-US|
 |Engels|algemeen|en-WW|
 |Chili|Spaans|es-LC|
 |Mexico|Spaans|es-MX|
@@ -113,7 +113,7 @@ Voor een lijst met land-of regio codes die u in de `cc` query parameter kunt opg
 |Duitsland|Duits|de-DE|
 |Australië|Engels|en-AU|
 |Verenigd Koninkrijk|Engels|en-GB|
-|Verenigde Staten|Engels|nl-NL|
+|Verenigde Staten|Engels|en-US|
 |Canada|Engels|en-CA|
 |India|Engels|en-IN|
 |Frankrijk|Frans|fr-FR|
@@ -134,7 +134,7 @@ Hier volgen de land/regio codes die u in de `cc` query parameter kunt opgeven. D
 |Oostenrijk|AT|  
 |België|BE|  
 |Brazilië|BR|  
-|Canada|CA|  
+|Canada|CA (consistentie en beschikbaarheid)|  
 |Chili|CL|  
 |Denemarken|DK|  
 |Finland|FI|  

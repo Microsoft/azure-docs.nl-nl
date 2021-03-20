@@ -6,10 +6,10 @@ ms.subservice: change-inventory-management
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2e3e5abdfbb2bf2e9d7a12a677422adc67336775
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92209817"
 ---
 # <a name="remove-change-tracking-and-inventory-from-automation-account"></a>Wijzigingen bijhouden en inventaris van het Automation-account verwijderen
@@ -18,7 +18,7 @@ Nadat u het beheer van uw virtuele machines met behulp van Azure Automation Wijz
 
 ## <a name="sign-into-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij de [Azure-portal](https://portal.azure.com).
+Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 ## <a name="remove-management-of-vms"></a>Beheer van Vm's verwijderen
 
@@ -34,7 +34,7 @@ Voordat u het Automation-account kunt ontkoppelen van de werk ruimte, moet u dez
 
 3. Selecteer aan de linkerkant **oplossingen**.  
 
-4. Selecteer **change tracking (werkruimte naam)** in de lijst met oplossingen. Selecteer op de pagina **overzicht** voor de oplossing **verwijderen**. Selecteer **Ja**als u wordt gevraagd om te bevestigen.
+4. Selecteer **change tracking (werkruimte naam)** in de lijst met oplossingen. Selecteer op de pagina **overzicht** voor de oplossing **verwijderen**. Selecteer **Ja** als u wordt gevraagd om te bevestigen.
 
 ## <a name="unlink-workspace-from-automation-account"></a>De werkruimte ontkoppelen van het Automation-account
 

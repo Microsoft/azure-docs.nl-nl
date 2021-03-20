@@ -13,19 +13,19 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: 06253b571fd71623501c27fd5b0d9d4013727fc2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94840187"
 ---
-# <a name="user-flows-in-azure-active-directory-b2c"></a>Gebruikers stromen in Azure Active Directory B2C
+# <a name="user-flows-in-azure-active-directory-b2c"></a>Gebruikersstromen in Azure Active Directory B2C
 
-Om u te helpen bij het instellen van de meest voorkomende identiteits taken voor uw toepassingen, bevat de Azure AD B2C Portal vooraf gedefinieerde, Configureer bare beleids regels met de naam **gebruikers stromen**. Met een gebruikers stroom kunt u bepalen hoe gebruikers met uw toepassing communiceren wanneer ze zich aanmelden, registreren, een profiel bewerken of een wacht woord opnieuw instellen. Met gebruikers stromen kunt u de volgende mogelijkheden bepalen:
+Om u te helpen de meest voorkomende identiteitstaken in te stellen voor uw toepassingen, bevat de Azure AD B2C-portal vooraf gedefinieerde, configureerbare beleidsregels, genaamd **gebruikersstromen**. Met een gebruikers stroom kunt u bepalen hoe gebruikers met uw toepassing communiceren wanneer ze zich aanmelden, registreren, een profiel bewerken of een wacht woord opnieuw instellen. Met gebruikers stromen kunt u de volgende mogelijkheden bepalen:
 
 - Account typen die worden gebruikt voor aanmelding, zoals sociale accounts zoals een Facebook-of lokale account
 - Kenmerken die moeten worden verzameld van de consument, zoals de voor naam, de post code en de grootte van de schoenen
-- Azure AD-Multi-Factor Authentication
+- Azure AD Multi-Factor Authentication
 - Aanpassing van de gebruikersinterface
 - Informatie die de toepassing ontvangt als claims in een token
 

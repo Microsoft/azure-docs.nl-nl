@@ -7,10 +7,10 @@ ms.service: iot-develop
 ms.topic: conceptual
 ms.date: 01/11/2021
 ms.openlocfilehash: aa99594fe3de98635e37d15beebf015f15dc4f64
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100654157"
 ---
 # <a name="overview-of-azure-iot-device-types"></a>Overzicht van de typen Azure IoT-apparaten
@@ -47,5 +47,5 @@ Hieronder ziet u een tabel met een aantal van de verschillen tussen een MCU en e
 |**Moeilijk te ontwikkelen**| Harde |  Simpele |
 |**Energie verbruik**| Lager | Hoger |
 |**Kosten**| Lager | Hoger |
-|**Deterministische**| Yes | Nee-met uitzonde ringen|
+|**Deterministische**| Ja | Nee-met uitzonde ringen|
 |**Grootte van apparaat**| Formaat | Neemt |

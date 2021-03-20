@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 1ffbd760ae75605d75652b29d379420d6946aa8f
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96326451"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Java-ontwikkelaarshandleiding voor Azure Functions
@@ -19,7 +19,7 @@ Als Java-ontwikkelaar, als u geen ervaring hebt met Azure Functions, kunt u eers
 
 | Aan de slag | Concepten| 
 | -- | -- |  
-| <ul><li>[Java-functie met Visual Studio code](./create-first-function-vs-code-java.md)</li><li>[Java/maven-functie met Terminal/opdracht prompt](./create-first-function-cli-java.md)</li><li>[Java-functie met Gradle](functions-create-first-java-gradle.md)</li><li>[Java-functie met eclips](functions-create-maven-eclipse.md)</li><li>[Een Java-functie met IntelliJ-idee](functions-create-maven-intellij.md)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> |
+| <ul><li>[Java-functie met Visual Studio code](./create-first-function-vs-code-java.md)</li><li>[Java/Maven-functie met Terminal/opdrachtprompt](./create-first-function-cli-java.md)</li><li>[Java-functie met Gradle](functions-create-first-java-gradle.md)</li><li>[Java-functie met eclips](functions-create-maven-eclipse.md)</li><li>[Een Java-functie met IntelliJ-idee](functions-create-maven-intellij.md)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> |
 
 ## <a name="java-function-basics"></a>Basis beginselen van Java-functies
 

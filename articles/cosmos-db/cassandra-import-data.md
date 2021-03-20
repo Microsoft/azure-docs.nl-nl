@@ -10,10 +10,10 @@ ms.topic: tutorial
 ms.date: 12/03/2018
 ms.custom: seodec18
 ms.openlocfilehash: bd2d27addb6860e49ac12eb36d8b625b8bf92001
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93100402"
 ---
 # <a name="tutorial-migrate-your-data-to-cassandra-api-account-in-azure-cosmos-db"></a>Zelfstudie: Gegevens migreren naar een Cassandra-API-account in Azure Cosmos DB
@@ -65,7 +65,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 * **Tabellen maken in het Cassandra API-account:** voordat u gegevens gaat migreren, maakt u vooraf alle tabellen vanuit de Azure-portal of met cqlsh. Als u migreert naar een Azure Cosmos-account dat doorvoer op databaseniveau heeft, moet u een partitiesleutel opgeven bij het maken van de Azure Cosmos-containers.
 
-* **Doorvoer verhogen** : de duur van de gegevensmigratie is afhankelijk van de hoeveelheid doorvoer die u voor de tabellen hebt ingericht in Azure Cosmos DB. Verhoog de doorvoer voor de duur van de migratie. Met een hogere doorvoer voorkomt u frequentielimieten en kost migreren minder tijd. Nadat u de migratie hebt voltooid, verlaagt u de doorvoer om kosten te besparen. Het is ook raadzaam om het Azure Cosmos-account in dezelfde regio te plaatsen als uw brondatabase. 
+* **Doorvoer verhogen**: de duur van de gegevensmigratie is afhankelijk van de hoeveelheid doorvoer die u voor de tabellen hebt ingericht in Azure Cosmos DB. Verhoog de doorvoer voor de duur van de migratie. Met een hogere doorvoer voorkomt u frequentielimieten en kost migreren minder tijd. Nadat u de migratie hebt voltooid, verlaagt u de doorvoer om kosten te besparen. Het is ook raadzaam om het Azure Cosmos-account in dezelfde regio te plaatsen als uw brondatabase. 
 
 * **TLS inschakelen:** Voor Azure Cosmos DB gelden strenge beveiligingsvereisten en -normen. Schakel TLS in wanneer u uw account gebruikt. Wanneer u CQL gebruikt met SSH, hebt u een optie om TLS-gegevens op te geven.
 
@@ -84,7 +84,7 @@ De [opdracht CQL COPY](https://cassandra.apache.org/doc/latest/tools/cqlsh.html#
 
    * Meld u aan bij de [Azure-portal](https://portal.azure.com) en ga naar uw Azure Cosmos-account.
 
-   * Open het deelvenster **Verbindingsreeks** , met daarin alle gegevens die u nodig hebt om met behulp van cqlsh verbinding te maken met uw Cassandra API-account.
+   * Open het deelvenster **Verbindingsreeks**, met daarin alle gegevens die u nodig hebt om met behulp van cqlsh verbinding te maken met uw Cassandra API-account.
 
 2. Meld u aan bij cqhsh met de verbindingsgegevens uit de portal.
 

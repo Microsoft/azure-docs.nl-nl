@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: alkohli
 ms.openlocfilehash: ca060e75e50a3e2327fc0516c3cfc9550afbf90f
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96582185"
 ---
 1. [Verbinding maken met de Power shell-interface](#connect-to-the-powershell-interface).
@@ -49,7 +49,7 @@ ms.locfileid: "96582185"
     |-----------|-------------|
     | FriendlyName                   | De beschrijvende naam van het apparaat zoals geconfigureerd via de lokale web-UI tijdens de implementatie van het apparaat. De standaard beschrijvende naam is het serie nummer van het apparaat.  |
     | SerialNumber                   | Het serie nummer van het apparaat is een uniek nummer dat is toegewezen aan de Factory.                                                                             |
-    | Modelleren                          | Het model voor uw apparaat. Het model is virtueel voor Data Box Gateway.                   |
+    | Model                          | Het model voor uw apparaat. Het model is virtueel voor Data Box Gateway.                   |
     | FriendlySoftwareVersion        | De beschrijvende teken reeks die overeenkomt met de versie van de apparaatsoftware. Voor een systeem met Preview wordt de beschrijvende software versie Data Box Edge 1902. |
     | HcsVersion                     | De versie van de HCS-software die op uw apparaat wordt uitgevoerd. De HCS-software versie die overeenkomt met Data Box Edge 1902 is bijvoorbeeld 1.4.771.324.            |
     | LocalCapacityInMb              | De totale lokale capaciteit van het apparaat in megabits.                                                                                                        |

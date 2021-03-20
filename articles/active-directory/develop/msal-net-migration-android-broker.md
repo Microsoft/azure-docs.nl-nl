@@ -13,10 +13,10 @@ ms.author: aiwang
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 01af0e620ecb100839f7b1101e5ff9fcfc874eea
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92206666"
 ---
 # <a name="migrate-android-applications-that-use-a-broker-from-adalnet-to-msalnet"></a>Android-toepassingen migreren die een Broker gebruiken van ADAL.NET naar MSAL.NET
@@ -115,13 +115,13 @@ In MSAL.NET voert u twee dingen uit om de activiteit in te stellen voor Android:
 
 **Bijvoorbeeld:**
 
-In *app.cs*:
+In *app. cs*:
 
 ```CSharp
    public static object RootViewController { get; set; }
 ```
 
-In *MainActivity.cs*:
+In *MainActivity. cs*:
 
 ```CSharp
    LoadApplication(new App());

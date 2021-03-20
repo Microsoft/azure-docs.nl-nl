@@ -12,10 +12,10 @@ ms.date: 02/10/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 93a3adf00203e317be912e3e72de7a3f7ca666c6
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96001087"
 ---
 # <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Intenties herkennen vanuit spraak met de Speech SDK voor C #
@@ -86,7 +86,7 @@ Ga als volgt te werk op de pagina **Keys and Endpoints settings**:
 
 Vervolgens voegt u code toe aan het project.
 
-1. Open het bestand **Program.cs** van **Solution Explorer**.
+1. Open vanuit **Solution Explorer** het bestand **Program. cs**.
 
 1. Vervang het blok met `using` instructies aan het begin van het bestand door de volgende declaraties:
 

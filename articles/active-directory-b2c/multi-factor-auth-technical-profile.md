@@ -12,17 +12,17 @@ ms.date: 03/26/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: e81ac35555e6653cecb602e5af2f19aa3e2f05e9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94840590"
 ---
 # <a name="define-an-azure-ad-mfa-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Een Azure AD MFA-technische profiel definiëren in een Azure AD B2C aangepast beleid
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C) biedt ondersteuning voor het verifiëren van een telefoon nummer met behulp van Azure AD Multi-Factor Authentication (MFA). Gebruik dit technische profiel om een code te genereren en te verzenden naar een telefoon nummer en controleer vervolgens de code. Het technische profiel van Azure AD MFA kan ook een fout bericht retour neren.  Het validatie-technische profiel valideert de door de gebruiker verschafte gegevens voordat de gebruikers traject doorgaat. Met het technische profiel voor validatie wordt een fout bericht weer gegeven op een zelf-bevestigingen pagina.
+Azure AD B2C (Azure Active Directory B2C) biedt ondersteuning voor het verifiëren van een telefoonnummer met behulp van MFA (meervoudige verificatie) van Azure AD. Gebruik dit technische profiel om een code te genereren en naar een telefoonnummer te verzenden, en verifieer de code vervolgens. Het technische profiel van Azure AD MFA kan ook een fout bericht retour neren.  Het validatie-technische profiel valideert de door de gebruiker verschafte gegevens voordat de gebruikers traject doorgaat. Met het technische profiel voor validatie wordt een fout bericht weer gegeven op een zelf-bevestigingen pagina.
 
 Dit technische profiel:
 
@@ -59,8 +59,8 @@ Het **InputClaims** -element bevat een lijst met claims die moeten worden verzon
 
 | ClaimReferenceId | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| userPrincipalName | Yes | De id voor de gebruiker die eigenaar is van het telefoon nummer. |
-| phoneNumber | Yes | Het telefoon nummer waarnaar een SMS-code moet worden verzonden. |
+| userPrincipalName | Ja | De id voor de gebruiker die eigenaar is van het telefoon nummer. |
+| phoneNumber | Ja | Het telefoon nummer waarnaar een SMS-code moet worden verzonden. |
 | companyName | Nee |De bedrijfs naam in het SMS. Als u dit niet opgeeft, wordt de naam van uw toepassing gebruikt. |
 | landinstelling | Nee | De land instelling van het SMS. Als dat niet is vermeld, wordt de land instelling van de gebruiker gebruikt. |
 
@@ -76,7 +76,7 @@ Het **OutputClaimsTransformations** -element kan een verzameling **OutputClaimsT
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Bewerking | Yes | Moet **OneWaySMS** zijn.  |
+| Bewerking | Ja | Moet **OneWaySMS** zijn.  |
 
 #### <a name="ui-elements"></a>UI-elementen
 
@@ -121,8 +121,8 @@ Het **InputClaims** -element bevat een lijst met claims die moeten worden verzon
 
 | ClaimReferenceId | Vereist | Beschrijving |
 | --------- | -------- | ----------- | ----------- |
-| phoneNumber| Yes | Hetzelfde telefoon nummer als eerder gebruikt om een code te verzenden. Het wordt ook gebruikt om een sessie voor telefoon verificatie te vinden. |
-| verificationCode  | Yes | De verificatie code van de gebruiker die moet worden geverifieerd |
+| phoneNumber| Ja | Hetzelfde telefoon nummer als eerder gebruikt om een code te verzenden. Het wordt ook gebruikt om een sessie voor telefoon verificatie te vinden. |
+| verificationCode  | Ja | De verificatie code van de gebruiker die moet worden geverifieerd |
 
 Het **InputClaimsTransformations** -element kan een verzameling **InputClaimsTransformation** -elementen bevatten die worden gebruikt om de invoer claims te wijzigen of nieuwe te genereren voordat de Azure AD MFA-service wordt aangeroepen.
 
@@ -136,7 +136,7 @@ Het **OutputClaimsTransformations** -element kan een verzameling **OutputClaimsT
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| Bewerking | Yes | Moet worden **gecontroleerd** |
+| Bewerking | Ja | Moet worden **gecontroleerd** |
 
 #### <a name="ui-elements"></a>UI-elementen
 

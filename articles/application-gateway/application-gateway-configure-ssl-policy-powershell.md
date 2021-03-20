@@ -9,13 +9,13 @@ ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: cb0f9ef64cb8032c02f2ccd4b42028103b6d3ec6
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397889"
 ---
-# <a name="configure-tls-policy-versions-and-cipher-suites-on-application-gateway"></a>TLS-beleids versies en coderings suites op Application Gateway configureren
+# <a name="configure-tls-policy-versions-and-cipher-suites-on-application-gateway"></a>TLS-beleidsversies en suites met coderingsmethoden configureren in Application Gateway
 
 Meer informatie over het configureren van TLS/SSL-beleids versies en coderings suites op Application Gateway. U kunt een keuze uit een lijst met vooraf gedefinieerde beleids regels selecteren die verschillende configuraties van TLS-beleids versies en coderings suites bevatten. U hebt ook de mogelijkheid om een [aangepast TLS-beleid](#configure-a-custom-tls-policy) te definiëren op basis van uw vereisten.
 
@@ -191,7 +191,7 @@ $appgw = New-AzApplicationGateway -Name appgwtest -ResourceGroupName $rg.Resourc
 
 ## <a name="update-an-existing-application-gateway-with-a-pre-defined-tls-policy"></a>Een bestaande toepassings gateway bijwerken met een vooraf gedefinieerd TLS-beleid
 
-Als u een aangepast TLS-beleid wilt instellen, geeft u de volgende para meters door: **Policy type** , **MinProtocolVersion** , **CipherSuite** en **toepassings gateway**. Als u een vooraf gedefinieerd TLS-beleid wilt instellen, geeft u de volgende para meters door: **Policy type** , **beleidsregel** en **toepassings gateway**. Als u probeert andere para meters door te geven, krijgt u een fout melding bij het maken of bijwerken van de Application Gateway.
+Als u een aangepast TLS-beleid wilt instellen, geeft u de volgende para meters door: **Policy type**, **MinProtocolVersion**, **CipherSuite** en **toepassings gateway**. Als u een vooraf gedefinieerd TLS-beleid wilt instellen, geeft u de volgende para meters door: **Policy type**, **beleidsregel** en **toepassings gateway**. Als u probeert andere para meters door te geven, krijgt u een fout melding bij het maken of bijwerken van de Application Gateway.
 
 In het volgende voor beeld zijn er code voorbeelden voor zowel het aangepaste beleid als het vooraf gedefinieerde beleid. Verwijder de opmerking over het beleid dat u wilt gebruiken.
 

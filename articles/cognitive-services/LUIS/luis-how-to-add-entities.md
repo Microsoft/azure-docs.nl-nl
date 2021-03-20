@@ -9,10 +9,10 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
 ms.openlocfilehash: c5c6836c2d68036bf2b9c5abe191943537349b8d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91540962"
 ---
 # <a name="add-entities-to-extract-data"></a>Entiteiten toevoegen om gegevens op te halen
@@ -62,7 +62,7 @@ Dit proces werkt voor door machines gewerkte entiteiten, lijst entiteiten en reg
 1. Meld u aan bij de [LUIS-portal](https://www.luis.ai) en selecteer uw **abonnement** en **Ontwerpresource** om de apps weer te geven die aan die ontwerpresource zijn toegewezen.
 1. Open uw app door de naam ervan op **mijn apps** -pagina te selecteren.
 1. Selecteer de pagina **entiteiten** .
-1. Selecteer **+ maken**en selecteer vervolgens het entiteits type.
+1. Selecteer **+ maken** en selecteer vervolgens het entiteits type.
 1. Ga verder met het configureren van de entiteit en selecteer **maken** wanneer u klaar bent.
 
 ## <a name="create-a-machine-learned-entity"></a>Een door een machine geleerde entiteit maken
@@ -75,7 +75,7 @@ Dit proces werkt voor door machines gewerkte entiteiten, lijst entiteiten en reg
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding van het maken van een door de machine geleerde entiteit.](media/add-entities/machine-learned-entity-with-structure.png)
 
-1. Voeg een subentiteit toe door in **subentiteiten toevoegen**de **+** rij bovenliggende entiteit te selecteren.
+1. Voeg een subentiteit toe door in **subentiteiten toevoegen** de **+** rij bovenliggende entiteit te selecteren.
 
     > [!div class="mx-imgBorder"]
     > ![Scherm opname van het toevoegen van subentiteiten.](media/add-entities/machine-learned-entity-with-subentities.png)
@@ -94,7 +94,7 @@ Dit proces werkt voor door machines gewerkte entiteiten, lijst entiteiten en reg
     > [!div class="mx-imgBorder"]
     > ![Scherm opname van het toevoegen van een functie aan entiteit.](media/add-entities/machine-learned-entity-schema-with-features.png)
 
-## <a name="create-a-regular-expression-entity"></a>Een reguliere expressie-entiteit maken
+## <a name="create-a-regular-expression-entity"></a>Een entiteit in de vorm van een reguliere expressie maken
 
 1. Meld u aan bij de [LUIS-portal](https://www.luis.ai) en selecteer uw **abonnement** en **Ontwerpresource** om de apps weer te geven die aan die ontwerpresource zijn toegewezen.
 1. Open uw app door de naam ervan op **mijn apps** -pagina te selecteren.
@@ -116,7 +116,7 @@ In de volgende lijst ziet u de canonieke naam en de synoniemen.
 
 |Kleur-lijst item naam|Kleur-synoniemen|
 |--|--|
-|Rood|Crimson, bloed, Apple, brand engine|
+|Red|Crimson, bloed, Apple, brand engine|
 |Blue|lucht, kobalt|
 |Green|Kelly, licht groen|
 
@@ -125,7 +125,7 @@ Gebruik de procedure om een lijst entiteit te maken. Zodra de lijst entiteit is 
 1. Open uw app door de naam ervan op **mijn apps** -pagina te selecteren.
 1. Selecteer in de sectie **Build** de optie **entiteiten** in het linkerdeel venster en selecteer **+ maken**.
 
-1. In het dialoog venster **een entiteits type maken** voert u de naam van de entiteit in, zoals `Colors` en **lijst**selecteren.
+1. In het dialoog venster **een entiteits type maken** voert u de naam van de entiteit in, zoals `Colors` en **lijst** selecteren.
 1. Voer in het dialoog venster **een lijst entiteit maken** in de lijst **nieuwe sublijst toevoegen....** de naam van het item in, bijvoorbeeld `Green` , en voeg synoniemen toe.
 
     > [!div class="mx-imgBorder"]
@@ -158,7 +158,7 @@ In deze procedure voegt `origin` `destination` u rollen toe aan een vooraf samen
     Als u merkt dat het patroon, wanneer dit een Pattern.any bevat, entiteiten onjuist extraheert, gebruikt u een [expliciete lijst](reference-pattern-syntax.md#explicit-lists) om dit probleem te verhelpen.
 
 1. Selecteer de zojuist toegevoegde, vooraf gemaakte geographyV2-entiteit uit de pagina lijst **entiteiten** van entiteiten.
-1. Als u een nieuwe rol wilt toevoegen, selecteert u **+** volgende om **geen rollen**toe te voegen.
+1. Als u een nieuwe rol wilt toevoegen, selecteert u **+** volgende om **geen rollen** toe te voegen.
 1. Voer in het tekstvak **type Role...** de naam van de rol in `Origin` en voer vervolgens in. Voeg een tweede rolnaam toe van `Destination` vervolgens ENTER.
 
     > [!div class="mx-imgBorder"]

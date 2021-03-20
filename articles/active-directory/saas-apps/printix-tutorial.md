@@ -11,10 +11,10 @@ ms.topic: tutorial
 ms.date: 06/29/2017
 ms.author: jeedes
 ms.openlocfilehash: dfde9bbbeb7f6b349ecbdc4c2da605d39a0708da
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94357875"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-printix"></a>Zelfstudie: Azure Active Directory-integratie met Printix
@@ -155,7 +155,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 ![Een Azure AD-gebruiker maken][100]
 
-**Als u een testgebruiker in Azure AD wilt maken, voert u de volgende stappen uit:**
+**Voer de volgende stappen uit om een testgebruiker in Azure AD te maken:**
 
 1. Klik in het linker navigatiemenu in de **Azure Portal** op het **Azure Active Directory**-pictogram.
 
@@ -173,11 +173,11 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
  
     ![Schermopname met het dialoogvenster Gebruiker, waar u de beschreven waarden kunt invoeren.](./media/printix-tutorial/create_aaduser_04.png) 
 
-    a. Typ in het tekstvak **Naam** **BrittaSimon**.
+    a. Typ, in het veld **Naam**, **Britta Simon**.
 
-    b. In het tekstvak **Gebruikersnaam** voert u het **e-mailadres** van BrittaSimon in.
+    b. In het tekstvak **Gebruikersnaam** voert u het **e-mailadres** van Britta Simon in.
 
-    c. Selecteer **Wachtwoord weergeven** en noteer de weergegeven waarde van **Wachtwoord**.
+    c. Selecteer **Wachtwoord weergeven** en noteer de weergegeven waarde van het **Wachtwoord**.
 
     d. Klik op **Create**.
  

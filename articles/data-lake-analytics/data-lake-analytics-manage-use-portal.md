@@ -6,10 +6,10 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 12/05/2016
 ms.openlocfilehash: c1057478d9ae7d63bef9477a0b1297fa2c507ffa
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92218422"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Azure Data Lake Analytics beheren met de Azure-portal
@@ -25,15 +25,15 @@ In dit artikel wordt beschreven hoe u Azure Data Lake Analytics accounts, gegeve
 
 ### <a name="create-an-account"></a>Een account maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Klik op **een resource**  >  **Intelligence + Analytics**-  >  **Data Lake Analytics**maken.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+2. Klik op **een resource**  >  **Intelligence + Analytics**-  >  **Data Lake Analytics** maken.
 3. Selecteer waarden voor de volgende items: 
    1. **Naam**: de naam van het data Lake Analytics-account.
    2. **Abonnement**: het Azure-abonnement dat wordt gebruikt voor het account.
    3. **Resource groep**: de Azure-resource groep waarin het account moet worden gemaakt. 
    4. **Locatie**: het Azure-data centrum voor het data Lake Analytics-account. 
    5. **Data Lake Store**: het standaard archief dat moet worden gebruikt voor het data Lake Analytics-account. Het Azure data Lake Store-account en het data Lake Analytics-account moeten zich op dezelfde locatie bestaan.
-4. Klik op **Maken**. 
+4. Klik op **Create**. 
 
 ### <a name="delete-a-data-lake-analytics-account"></a>Een Data Lake Analytics account verwijderen
 
@@ -81,7 +81,7 @@ Als andere Azure-Services, zoals Azure Data Factory of Vm's, verbinding maken me
 U kunt de **wizard gebruiker toevoegen** gebruiken om eenvoudig nieuwe data Lake gebruikers in te richten.
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
-2. Klik aan de linkerkant, onder **aan**de slag, op **wizard gebruiker toevoegen**.
+2. Klik aan de linkerkant, onder **aan** de slag, op **wizard gebruiker toevoegen**.
 3. Selecteer een gebruiker en klik vervolgens op **selecteren**.
 4. Selecteer een rol en klik vervolgens op **selecteren**. Als u een nieuwe ontwikkelaar wilt instellen om Azure Data Lake te gebruiken, selecteert u de rol **Data Lake Analytics ontwikkelaar** .
 5. Selecteer de toegangs beheer lijsten (Acl's) voor de U-SQL-data bases. Wanneer u tevreden bent met uw keuzes, klikt u op **selecteren**.
@@ -137,7 +137,7 @@ Gebruik de rol Data Lake Analytics ontwikkelaar om U-SQL-ontwikkel aars in staat
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
 2. Klik op **alle taken weer geven**. Er wordt een lijst weer gegeven met alle actieve en recent voltooide taken in het account.
-3. Klik desgewenst op **filter** om u te helpen de taken te vinden op **tijds bereik**, **taak naam**en waarden voor **Auteur** . 
+3. Klik desgewenst op **filter** om u te helpen de taken te vinden op **tijds bereik**, **taak naam** en waarden voor **Auteur** . 
 
 ### <a name="monitoring-pipeline-jobs"></a>Pijplijn taken bewaken
 Taken die deel uitmaken van een pijp lijn werken samen, meestal opeenvolgend, om een specifiek scenario te bereiken. U kunt bijvoorbeeld een pijp lijn hebben die het opschonen, uitpakken, transformeren, het gebruik van klant inzichten samenvoegt. Pijplijn taken worden geïdentificeerd met behulp van de eigenschap pijp lijn wanneer de taak is verzonden. Voor taken die zijn gepland met ADF v2, wordt deze eigenschap automatisch ingevuld. 

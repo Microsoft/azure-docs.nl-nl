@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 25c87971455ed3c5f59c92748794720d61e599e3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96339605"
 ---
 # <a name="add-autocomplete-and-suggestions-to-client-apps-using-azure-cognitive-search"></a>Automatisch aanvullen en suggesties toevoegen aan client-apps met behulp van Azure Cognitive Search
@@ -117,7 +117,7 @@ $(function () {
 });
 ```
 
-Hiermee wordt de `source` functie automatisch aanvullen van de jQuery-gebruikers interface aangegeven, waar de lijst met items wordt weer gegeven onder het zoekvak. Aangezien dit project een MVC-project is, wordt de functie **suggereren** aangeroepen in **HomeController.cs** die de logica bevat voor het retour neren van query suggesties. Deze functie geeft ook enkele para meters door aan het beheren van hooglichten, fuzzy matching en term. Door de JavaScript-API voor automatisch aanvullen wordt de parameter 'term' toegevoegd.
+Hiermee wordt de `source` functie automatisch aanvullen van de jQuery-gebruikers interface aangegeven, waar de lijst met items wordt weer gegeven onder het zoekvak. Aangezien dit project een MVC-project is, wordt de functie **suggereren** aangeroepen in **HomeController. cs** die de logica bevat voor het retour neren van query suggesties. Deze functie geeft ook enkele para meters door aan het beheren van hooglichten, fuzzy matching en term. Door de JavaScript-API voor automatisch aanvullen wordt de parameter 'term' toegevoegd.
 
 Hiermee `minLength: 3` wordt gegarandeerd dat aanbevelingen alleen worden weer gegeven wanneer het zoekvak ten minste drie tekens bevat.
 
@@ -139,7 +139,7 @@ source: "/home/suggest?highlights=true&fuzzy=true&",
 
 ### <a name="suggest-function"></a>Functie Voorst Ellen
 
-Als u gebruikmaakt van C# en een MVC-toepassing, kunt u in het **HomeController.cs** -bestand onder de map controllers een klasse maken voor de voorgestelde resultaten. In .NET is een functie Voorst Ellen gebaseerd op de [methode SuggestAsync](/dotnet/api/azure.search.documents.searchclient.suggestasync). Zie [Azure Cognitive Search gebruiken vanuit een .NET-toepassing](search-howto-dotnet-sdk.md)voor meer informatie over de .NET SDK.
+Als u gebruikmaakt van C# en een MVC-toepassing, **HomeController. cs** -bestand onder de map controllers, kunt u een klasse maken voor de voorgestelde resultaten. In .NET is een functie Voorst Ellen gebaseerd op de [methode SuggestAsync](/dotnet/api/azure.search.documents.searchclient.suggestasync). Zie [Azure Cognitive Search gebruiken vanuit een .NET-toepassing](search-howto-dotnet-sdk.md)voor meer informatie over de .NET SDK.
 
 `InitSearch`Met de-methode wordt een geverifieerde HTTP-index client naar de Azure Cognitive Search-service gemaakt. De eigenschappen van de [SuggestOptions](/dotnet/api/azure.search.documents.suggestoptions) -klasse bepalen welke velden worden doorzocht en geretourneerd in de resultaten, het aantal overeenkomsten en of fuzzy matching wordt gebruikt. 
 
@@ -218,7 +218,7 @@ $(function () {
 
 ### <a name="autocomplete-function"></a>Functie automatisch aanvullen
 
-Automatisch aanvullen is gebaseerd op de [methode AutocompleteAsync](/dotnet/api/azure.search.documents.searchclient.autocompleteasync). Net als bij suggesties gaat dit code blok in het **HomeController.cs** -bestand.
+Automatisch aanvullen is gebaseerd op de [methode AutocompleteAsync](/dotnet/api/azure.search.documents.searchclient.autocompleteasync). Net als bij suggesties gaat dit code blok in het bestand **HomeController. cs** .
 
 ```csharp
 public async Task<ActionResult> AutoCompleteAsync(string term)

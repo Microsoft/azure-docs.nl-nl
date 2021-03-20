@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: jeedes
 ms.openlocfilehash: 4ff8196ff4e30aa6ed036cabe00a72bfa8a5c51f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92515318"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-prezi"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Prezi
@@ -51,9 +51,9 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Voor het configureren van de integratie van Prezi in Azure AD moet u Prezi vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het meest linkse deelvenster **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
+1. Selecteer in het meest linkse deelvenster **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Ga in het gedeelte **Toevoegen uit de galerie** naar het zoekvak en voer **Prezi** in.
 1. Selecteer **Prezi** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
@@ -74,8 +74,8 @@ Als u eenmalige aanmelding van Azure AD wilt configureren en testen met Prezi, g
 
 Eenmalige aanmelding van Azure AD inschakelen in Azure Portal:
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Prezi** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Prezi** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** op het pictogram **Bewerken** om de instellingen voor **Standaard SAML-configuratie** te bewerken.
 
    ![Eenvoudige SAML-configuratie bewerken](common/edit-urls.png)
@@ -86,7 +86,7 @@ Eenmalige aanmelding van Azure AD inschakelen in Azure Portal:
 
     Voer in het vak **Aanmeldings-URL** de URL `https://prezi.com/login/sso/` in.
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 1. In de Prezi-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -111,37 +111,37 @@ Eenmalige aanmelding van Azure AD inschakelen in Azure Portal:
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het meest linkse deelvenster in Azure Portal de optie **Azure Active Directory** . Ga naar **Gebruikers** en selecteer **Alle gebruikers** .
+1. Selecteer in het meest linkse deelvenster in Azure Portal de optie **Azure Active Directory**. Ga naar **Gebruikers** en selecteer **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
 1. Voer in de gebruikerseigenschappen de volgende stappen uit:
    1. Voer in het vak **Naam** de naam **B.Simon** in.
    1. Voer in het vak **Gebruikersnaam** `username@companydomain.extension` in, bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weer gegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weer gegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte geeft u B.Simon toestemming voor het gebruik eenmalige aanmelding van Azure door toegang te geven tot Prezi.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
 1. Selecteer **Prezi** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
-1. Selecteer in de lijst met gebruikers in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** en klik onderaan het scherm vervolgens op de knop **Selecteren** .
+1. Selecteer in de lijst met gebruikers in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** en klik onderaan het scherm vervolgens op de knop **Selecteren**.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-prezi-sso"></a>Prezi SSO configureren
 
 1. Meld u in een ander browservenster aan bij Prezi met uw team account en ga naar de [Beheerconsole](https://prezi.com/organizations/manage).
 
-1. Selecteer in de **Beheerconsole** het tabblad **Instellingen** .
+1. Selecteer in de **Beheerconsole** het tabblad **Instellingen**.
 
     ![Tabblad Instellingen](./media/prezi-tutorial/settings-image.png)
 
@@ -159,7 +159,7 @@ In dit gedeelte geeft u B.Simon toestemming voor het gebruik eenmalige aanmeldin
 
     1. Open het **certificaat (Base64)** dat u vanuit Azure Portal hebt gedownload, in Kladblok. Kopieer de inhoud van het certificaat en plak de inhoud in het vak **Certificaat (X. 509)** .
 
-    1. Selecteer **Opslaan** .
+    1. Selecteer **Opslaan**.
 
 ### <a name="create-a-prezi-test-user"></a>Een Prezi-testgebruiker maken
 

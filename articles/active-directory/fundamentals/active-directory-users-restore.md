@@ -14,10 +14,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bd4d42e1cafa58aaf6a47188c9e86c24ac175047
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92514386"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Een onlangs verwijderde gebruiker herstellen of verwijderen met Azure Active Directory
@@ -33,9 +33,9 @@ U moet een van de volgende rollen hebben om gebruikers te herstellen en permanen
 
 - Globale beheerder
 
-- Ondersteuning voor partner Tier1
+- Laag1-ondersteuning voor partner
 
-- Ondersteuning voor partner Tier2
+- Laag2-ondersteuning voor partner
 
 - Gebruikersbeheerder
 
@@ -45,7 +45,7 @@ U kunt alle gebruikers zien die minder dan 30 dagen geleden zijn verwijderd. Dez
 ### <a name="to-view-your-restorable-users"></a>Uw herstorbare gebruikers weer geven
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) met een algemeen beheerders account voor de organisatie.
 
-2. Selecteer **Azure Active Directory**, selecteer **gebruikers**en selecteer vervolgens **Verwijderde gebruikers**.
+2. Selecteer **Azure Active Directory**, selecteer **gebruikers** en selecteer vervolgens **Verwijderde gebruikers**.
 
     Bekijk de lijst met gebruikers die beschikbaar zijn voor herstel.
 

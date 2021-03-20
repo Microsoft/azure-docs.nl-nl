@@ -5,10 +5,10 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 08/12/2020
 ms.openlocfilehash: 3bc5c659d9871cb8f1d49d2a3bfde2ce03faea86
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/17/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100571896"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>De beschik baarheid van een cluster bewaken met Azure Monitor-Logboeken in HDInsight
@@ -37,7 +37,7 @@ Als de integratie van Azure Monitor logboek is ingeschakeld (dit kan enkele minu
 
 In Logboeken worden een aantal voorbeeld query's weer geven, zoals:
 
-| Querynaam                      | Description                                                               |
+| Querynaam                      | Beschrijving                                                               |
 |---------------------------------|---------------------------------------------------------------------------|
 | Computers Beschik baarheid vandaag    | Grafiek het aantal computers dat Logboeken verzendt, elk uur                     |
 | Heartbeats weer geven                 | Alle Heartbeats van de computer in het afgelopen uur weer geven                           |

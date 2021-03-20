@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.openlocfilehash: 694f501efc565ed498c1c8d8e2e38326277e8605
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96621413"
 ---
 # <a name="plan-an-azure-managed-application-for-an-azure-application-offer"></a>Een door Azure beheerde toepassing plannen voor een Azure-toepassings aanbieding
@@ -92,7 +92,7 @@ Met JIT-toegang kunt u verhoogde toegang tot de resources van een beheerde toepa
 > [!NOTE]
 > Zorg ervoor dat u het bestand bijwerkt `createUiDefinition.json` om deze functie te kunnen ondersteunen.
 
-## <a name="deployment-mode"></a>Implementatie modus
+## <a name="deployment-mode"></a>Implementatiemodus
 
 U kunt een beheerd toepassings plan configureren om de **volledige** of **incrementele** implementatie modus te gebruiken. In de volledige modus leidt een herimplementatie van de toepassing door de klant tot het verwijderen van resources in de beheerde resource groep als de resources niet zijn gedefinieerd in de [mainTemplate.jsop](../azure-resource-manager/managed-applications/publish-service-catalog-app.md?tabs=azure-powershell#create-the-arm-template). In de incrementele modus blijven bestaande resources ongewijzigd wanneer de toepassing opnieuw wordt geïmplementeerd. Zie [Azure Resource Manager implementatie modi](../azure-resource-manager/templates/deployment-modes.md)voor meer informatie.
 

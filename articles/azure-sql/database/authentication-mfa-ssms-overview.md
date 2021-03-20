@@ -14,10 +14,10 @@ ms.reviewer: vanto
 ms.date: 09/28/2020
 tags: azure-synapse
 ms.openlocfilehash: 9afad44bcf67478a81e75c17d0ff8ffc6d8c65aa
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94841125"
 ---
 # <a name="using-multi-factor-azure-active-directory-authentication"></a>Multi-factor Azure Active Directory-verificatie gebruiken
@@ -45,10 +45,10 @@ De interactieve methode die ook Azure AD Multi-Factor Authentication (MFA) onder
 
 - `Azure Active Directory - Universal with MFA`
 
-Azure AD MFA helpt de toegang tot gegevens en toepassingen te beschermen terwijl de vraag naar gebruikers wordt gevergaderd voor een eenvoudig aanmeldings proces. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
+Azure AD MFA helpt bij het bewaken van de toegang tot uw gegevens en toepassingen en komt tegemoet aan de wensen van gebruikers die een eenvoudige aanmeldprocedure willen. Azure MFA biedt krachtige verificatie met een scala aan gebruikersvriendelijke verificatieopties (zoals telefoonoproepen, sms-berichten, smartcards met pincode of melding in mobiele app), zodat gebruikers de gewenste methode kunnen kiezen. Bij interactieve MFA met Azure AD kunnen er pop-upvensters worden weergegeven voor validatie.
 
 Zie [multi-factor Authentication](../../active-directory/authentication/concept-mfa-howitworks.md)voor een beschrijving van Azure AD multi-factor Authentication.
-Zie [Azure SQL database multi-factor Authentication configureren voor SQL Server Management Studio](authentication-mfa-ssms-configure.md)voor configuratie stappen.
+Raadpleeg [Meervoudige verificatie van Azure SQL Database configureren voor SQL Server Management Studio](authentication-mfa-ssms-configure.md) voor de configuratiestappen.
 
 ### <a name="azure-ad-domain-name-or-tenant-id-parameter"></a>Azure AD-domeinnaam of tenant-id als parameter
 
@@ -90,7 +90,7 @@ Nadat de database gebruiker is gemaakt, kan de gebruiker `steve@gmail.com` zich 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Azure SQL database multi-factor Authentication configureren voor SQL Server Management Studio](authentication-mfa-ssms-configure.md)voor configuratie stappen.
+- Raadpleeg [Meervoudige verificatie van Azure SQL Database configureren voor SQL Server Management Studio](authentication-mfa-ssms-configure.md) voor de configuratiestappen.
 - Anderen toegang verlenen tot uw Data Base: [SQL database-verificatie en-autorisatie: toegang verlenen](logins-create-manage.md)  
 - Zorg ervoor dat anderen verbinding kunnen maken via de firewall: [Configureer een firewall regel op server niveau met behulp van de Azure Portal](firewall-configure.md)  
 - [Azure Active Directory-verificatie configureren en beheren met SQL Database of Azure Synapse](authentication-aad-configure.md)

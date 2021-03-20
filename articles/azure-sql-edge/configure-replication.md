@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
 ms.openlocfilehash: 3b424ece9207328d87068160f78ebc78a3bd1a8d
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93395220"
 ---
 # <a name="configure-replication-to-azure-sql-edge"></a>Replicatie naar Azure SQL Edge configureren 
@@ -83,7 +83,7 @@ De volgende opties worden niet ondersteund voor Azure SQL Edge-abonnementen:
 Maak een publicatie en een push-abonnement. Zie voor meer informatie:
   
 - [Een publicatie maken](/sql/relational-databases/replication/publish/create-a-publication)
-- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription/) met behulp van de naam en het IP-adres van de Azure SQL Edge-Server (bijvoorbeeld **myEdgeinstance, 1433** ) en een database naam op het exemplaar van de Azure SQL-Edge als de doel database (bijvoorbeeld **AdventureWorks** ).  
+- [Maak een push-abonnement](/sql/relational-databases/replication/create-a-push-subscription/) met behulp van de naam en het IP-adres van de Azure SQL Edge-Server (bijvoorbeeld **myEdgeinstance, 1433**) en een database naam op het exemplaar van de Azure SQL-Edge als de doel database (bijvoorbeeld **AdventureWorks**).  
 
 ## <a name="next-steps"></a>Volgende stappen  
 

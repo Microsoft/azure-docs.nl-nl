@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 50a1656fcb92d9777d4a9476ef2a4c1fd2f2efc6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96002745"
 ---
 # <a name="full-text-search-in-azure-cognitive-search"></a>Zoeken in volledige tekst in azure Cognitive Search
@@ -397,9 +397,9 @@ In dit artikel wordt gezocht in volledige tekst in de context van Azure Cognitiv
 
 [REST API voor documenten zoeken](/rest/api/searchservice/search-documents) 
 
-[Eenvoudige query syntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search) 
+[Vereenvoudigde querysyntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search) 
 
-[Volledige lucene-query syntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
+[Volledige Lucene-querysyntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
 
 [Zoekresultaten verwerken](./search-pagination-page-layout.md)
 

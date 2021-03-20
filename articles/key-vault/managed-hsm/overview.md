@@ -11,10 +11,10 @@ ms.date: 09/15/2020
 ms.author: mbaldwin
 author: msmbaldwin
 ms.openlocfilehash: 95feeebf009cae22cf3952df80596c12e75cbe4b
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94357569"
 ---
 # <a name="what-is-azure-key-vault-managed-hsm-preview"></a>Wat is Azure Key Vault Managed HSM (preview)?
@@ -25,17 +25,17 @@ Azure Key Vault Managed HSM is een cloudservice van hoge beschikbaarheid en éé
 
 ### <a name="fully-managed-highly-available-single-tenant-hsm-as-a-service"></a>Volledig beheerde,maximaal beschikbare HSM met één tenant als een service
 
-- **Volledig beheerd** : Het inrichten, configureren, toepassen van patches en onderhouden worden door de service verwerkt. 
+- **Volledig beheerd**: Het inrichten, configureren, toepassen van patches en onderhouden worden door de service verwerkt. 
 - **Maximaal beschikbare en zone-tolerant** (met ondersteuning van beschikbaarheidszones): Elk HSM-cluster bestaat uit meerdere HSM-partities die ten minste twee beschikbaarheidszones bereiken. Als er een storing optreedt in de hardware, worden de lidpartities voor uw HSM-cluster automatisch naar knooppunten met een goede status gemigreerd.
-- **Eén tenant** : Elk beheerd HSM-exemplaar wordt toegewezen aan één klant en bestaat uit een cluster met meerdere HSM-partities. Elk HSM-cluster maakt gebruik van een afzonderlijk, klantspecifiek beveiligingsdomein dat het HSM-cluster van elke klant cryptografisch isoleert.
+- **Eén tenant**: Elk beheerd HSM-exemplaar wordt toegewezen aan één klant en bestaat uit een cluster met meerdere HSM-partities. Elk HSM-cluster maakt gebruik van een afzonderlijk, klantspecifiek beveiligingsdomein dat het HSM-cluster van elke klant cryptografisch isoleert.
 
 
 ### <a name="access-control-enhanced-data-protection--compliance"></a>Toegangsbeheer, uitgebreide gegevensbescherming en compliance
 
-- **Gecentraliseerd sleutelbeheer** : U kunt essentiële, hoogwaardige sleutels binnen uw organisatie op één plek beheren. Met gedetailleerde machtigingen per sleutel beheert u de toegang tot elke sleutel op basis van het principe 'minst bevoegde toegang'.
-- **Geïsoleerd toegangsbeheer** : Met toegangsbeheer op basis van lokale RBAC van beheerde HSM kunnen toegewezen HSM-clusterbeheerders volledige controle hebben over de HSM's, die zelfs beheerders van beheergroepen, abonnementen of resourcegroepen niet kunnen overschrijven.
-- **Met FIPS 140-2 Level 3 gevalideerde HSM's** : Uw gegevens worden beschermd en er wordt voldaan aan de nalevingsvereisten met HSM's die zijn gevalideerd met FIPS (Federal Information Protection Standard) 140-2 Level 3. Beheerde HSM's maken gebruik van de Marvell LiquidSecurity HSM-adapters.
-- **Bewaken en controleren** : volledig geïntegreerd met Azure Monitor. U kunt volledige logboeken van alle activiteiten ophalen via Azure Monitor. Gebruik Azure Log Analytics voor analyse en waarschuwingen.
+- **Gecentraliseerd sleutelbeheer**: U kunt essentiële, hoogwaardige sleutels binnen uw organisatie op één plek beheren. Met gedetailleerde machtigingen per sleutel beheert u de toegang tot elke sleutel op basis van het principe 'minst bevoegde toegang'.
+- **Geïsoleerd toegangsbeheer**: Met toegangsbeheer op basis van lokale RBAC van beheerde HSM kunnen toegewezen HSM-clusterbeheerders volledige controle hebben over de HSM's, die zelfs beheerders van beheergroepen, abonnementen of resourcegroepen niet kunnen overschrijven.
+- **Met FIPS 140-2 Level 3 gevalideerde HSM's**: Uw gegevens worden beschermd en er wordt voldaan aan de nalevingsvereisten met HSM's die zijn gevalideerd met FIPS (Federal Information Protection Standard) 140-2 Level 3. Beheerde HSM's maken gebruik van de Marvell LiquidSecurity HSM-adapters.
+- **Bewaken en controleren**: volledig geïntegreerd met Azure Monitor. U kunt volledige logboeken van alle activiteiten ophalen via Azure Monitor. Gebruik Azure Log Analytics voor analyse en waarschuwingen.
 
 ### <a name="integrated-with-azure-and-microsoft-paassaas-services"></a>Geïntegreerd met PaaS-/SaaS-services van Azure en Microsoft 
 

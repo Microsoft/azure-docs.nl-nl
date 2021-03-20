@@ -10,10 +10,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.openlocfilehash: 753d214b520affb59722bc29dbabc50c6e5968f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91538718"
 ---
 # <a name="iterative-app-design-for-luis"></a>Iteratief app-ontwerp voor LUIS
@@ -33,7 +33,7 @@ Een Language Understanding-app (LUIS) leert en werkt het meest efficiënt met it
 
 ## <a name="building-a-luis-schema"></a>Een LUIS-schema bouwen
 
-In het schema van een app wordt gedefinieerd wat de gebruiker vraagt ( _intention_ de bedoeling _of het doel)_ en welke delen van de intentie details bevatten ( _entiteiten_genoemd) die worden gebruikt om te helpen bij het bepalen van het antwoord.
+In het schema van een app wordt gedefinieerd wat de gebruiker vraagt (  de bedoeling _of het doel)_ en welke delen van de intentie details bevatten ( _entiteiten_ genoemd) die worden gebruikt om te helpen bij het bepalen van het antwoord.
 
 Het app-schema moet specifiek zijn voor de app-domeinen om te bepalen welke woorden en zinsdelen relevant zijn, en om een standaard woord volgorde te bepalen.
 
@@ -61,7 +61,7 @@ Het meest krachtige en rijpste schema is een intentie schema met een volledig sc
 
 ## <a name="add-example-utterances-to-intents"></a>Voor beeld van uitingen aan intenties toevoegen
 
-LUIS heeft een aantal voor beelden van uitingen in elk **doel**nodig. Het voor beeld uitingen vereist voldoende variatie van woord keuze en woord volgorde om te kunnen bepalen met welke intentie de utterance bedoeld is.
+LUIS heeft een aantal voor beelden van uitingen in elk **doel** nodig. Het voor beeld uitingen vereist voldoende variatie van woord keuze en woord volgorde om te kunnen bepalen met welke intentie de utterance bedoeld is.
 
 > [!CAUTION]
 > Voeg geen voor beeld-uitingen toe. Begin met 15 tot 30 specifieke en verschillende voor beelden.

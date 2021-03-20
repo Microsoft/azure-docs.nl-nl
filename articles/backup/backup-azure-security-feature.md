@@ -5,10 +5,10 @@ ms.reviewer: utraghuv
 ms.topic: conceptual
 ms.date: 06/08/2017
 ms.openlocfilehash: 8c671b1b54b937f518f7179bb6940f31a28a78d4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94841015"
 ---
 # <a name="security-features-to-help-protect-hybrid-backups-that-use-azure-backup"></a>Beveiligings functies voor het beveiligen van hybride back-ups die gebruikmaken van Azure Backup
@@ -89,7 +89,7 @@ Als onderdeel van het toevoegen van een extra beveiligingslaag voor kritieke bew
 Deze pincode ontvangen:
 
 1. Meld u aan bij Azure Portal.
-2. Blader naar **Recovery Services** eigenschappen van de kluis  >  **instellingen**  >  **Properties**.
+2. Blader naar **Recovery Services** eigenschappen van de kluis  >  **instellingen**  >  .
 3. Onder **BEVEILIGINGS pincode** selecteert u **genereren**. Hiermee opent u een deel venster dat de pincode bevat die moet worden ingevoerd in de gebruikers interface van de Azure Recovery Services-agent.
     Deze pincode is slechts vijf minuten geldig en wordt na die periode automatisch gegenereerd.
 

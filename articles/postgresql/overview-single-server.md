@@ -8,10 +8,10 @@ ms.service: postgresql
 ms.topic: overview
 ms.date: 09/21/2020
 ms.openlocfilehash: 18d944cd2b3bfde1a0ee5fc53e83e4016b11b01f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100379213"
 ---
 # <a name="azure-database-for-postgresql-single-server"></a>Azure Database for PostgreSQL Single Server
@@ -32,7 +32,7 @@ Eén server is het meest geschikt voor cloudtoepassingen die zijn ontworpen voor
 
 ## <a name="high-availability"></a>Hoge beschikbaarheid
 
-Het implementatiemodel voor één server is geoptimaliseerd voor ingebouwde hoge beschikbaarheid en flexibiliteit tegen lagere kosten. In de architectuur zijn rekenkracht en opslag van elkaar gescheiden. De database-engine wordt uitgevoerd in een eigen rekencontainer, en gegevensbestanden bevinden zich in Azure Storage. In de opslag worden drie lokaal redundante synchrone kopieën van de databasebestanden onderhouden, zodat duurzaamheid van gegevens wordt gegarandeerd.
+Het implementatiemodel voor één server is geoptimaliseerd voor ingebouwde hoge beschikbaarheid en flexibiliteit tegen lagere kosten. In de architectuur zijn rekenkracht en opslag van elkaar gescheiden. De database-engine wordt uitgevoerd in een eigen rekencontainer, terwijl gegevensbestanden zich in Azure Storage bevinden. In de opslag worden drie lokaal redundante synchrone kopieën van de databasebestanden onderhouden, zodat duurzaamheid van gegevens behouden blijft.
 
 Tijdens geplande of niet-geplande gebeurtenissen, als de server uitvalt, behoudt de service hoge beschikbaarheid van de servers met behulp van de volgende geautomatiseerde procedure:
 
@@ -43,7 +43,7 @@ Tijdens geplande of niet-geplande gebeurtenissen, als de server uitvalt, behoudt
    
  :::image type="content" source="./media/overview/overview-azure-postgres-single-server.png" alt-text="Azure Database for PostgreSQL Single Server":::
 
-Een failover duurt meestal tussen de 60 en 120 seconden. Het systeemeigen cloudontwerp van de cloud van de Single Server-service biedt ondersteuning voor een beschikbaarheid van 99,99%, waardoor de kosten voor de passieve dynamische stand-by worden vermeden.
+Een failover duurt meestal tussen de 60 en 120 seconden. Het systeemeigen cloudontwerp van de cloud van de service voor één server biedt ondersteuning voor een beschikbaarheid van 99,99%, waardoor de kosten voor passieve dynamische stand-by worden vermeden.
 
 De toonaangevende serviceovereenkomst (SLA) van Azure met 99,99% beschikbaarheid dankzij een wereldwijd netwerk van door Microsoft beheerde datacenters, zorgt ervoor dat uw toepassingen continu (24 uur per dag, 7 dagen per week) beschikbaar blijven.
 
@@ -57,11 +57,11 @@ Met de service voor één server worden automatisch serverback-ups gemaakt en op
 
 ## <a name="adjust-performance-and-scale-within-seconds"></a>Binnen een paar seconden prestaties en schaal aanpassen
 
-De service voor één server is beschikbaar in drie SKU-lagen: Basic, Algemeen gebruik en Geoptimaliseerd voor geheugen. De Basic-laag is het meest geschikt voor goedkope ontwikkeling en workloads met weinig gelijktijdigheid. Algemeen gebruik en Geoptimaliseerd voor geheugen zijn beter geschikt voor productieworkloads waarvoor hoge gelijktijdigheid, schaalbaarheid en voorspelbare prestaties nodig zijn. U kunt uw eerste app op een kleine database bouwen voor een paar euro met maand en vervolgens de schaal ervan aanpassen om aan de vereisten van uw oplossing te voldoen. De opslagschaal is online en ondersteunt automatische groei van opslag. Doordat de schaalbaarheid dynamisch is, kan uw database op een transparante manier reageren op snel veranderende resourcevereisten. U betaalt alleen voor de resources die u gebruikt. Zie [Prijscategorieën]() voor meer details.
+De service voor één server is beschikbaar in drie SKU-lagen: Basic, Algemeen gebruik en Geoptimaliseerd voor geheugen. De Basis-laag is het meest geschikt voor low-budget ontwikkeling en workloads met weinig gelijktijdigheid. Algemeen gebruik en Geoptimaliseerd voor geheugen zijn beter geschikt voor productieworkloads waarvoor hoge gelijktijdigheid, schaalbaarheid en voorspelbare prestaties nodig zijn. U kunt uw eerste app op een kleine database bouwen voor een paar euro met maand en vervolgens de schaal ervan aanpassen om aan de vereisten van uw oplossing te voldoen. De opslagschaal is online en ondersteunt automatische groei van opslag. Doordat de schaalbaarheid dynamisch is, kan uw database op een transparante manier reageren op snel veranderende resourcevereisten. U betaalt alleen voor de resources die u gebruikt. Zie [Prijscategorieën]() voor meer details.
 
 ## <a name="enterprise-grade-security-compliance-and-governance"></a>Beveiliging, naleving en beheer van zakelijk niveau
 
-De service voor één server maakt gebruik van de door FIPS 140-2 gevalideerde cryptografische module voor opslagversleuteling van niet-actieve gegevens. Gegevens, inclusief back-ups en tijdelijke bestanden die worden gemaakt tijdens het uitvoeren van query's, worden versleuteld. De service maakt gebruikt van de AES 256-bits versleuteling die deel uitmaakt van Azure Storage-versleuteling. De sleutels kunnen door het systeem worden beheerd (standaardinstelling) of door de [klant worden beheerd](). De service versleutelt actieve gegevens met SSL/TLS (Transport Layer Security) dat standaard wordt afgedwongen. De service ondersteunt TLS-versies 1.2, 1.1 en 1.0 en biedt de mogelijkheid om een [minimale TLS-versie]() af te dwingen.
+De service voor één server maakt gebruik van de door FIPS 140-2 gevalideerde cryptografische module voor opslagversleuteling van niet-actieve gegevens. Gegevens, inclusief back-ups en tijdelijke bestanden die worden gemaakt tijdens het uitvoeren van query's, worden versleuteld. De service maakt gebruikt van de AES 256-bits versleuteling die deel uitmaakt van Azure-opslagversleuteling. De sleutels kunnen door het systeem worden beheerd (standaardinstelling) of door de [klant worden beheerd](). De service versleutelt actieve gegevens met SSL/TLS (Transport Layer Security) dat standaard wordt afgedwongen. De service ondersteunt TLS-versies 1.2, 1.1 en 1.0 en biedt de mogelijkheid om een [minimale TLS-versie]() af te dwingen.
 
 De service staat persoonlijke toegang tot de servers toe met behulp van Private Link en biedt een geavanceerde functie voor beveiliging tegen bedreigingen. Advanced Threat Protection detecteert vreemde activiteiten die duiden op ongebruikelijke en mogelijk schadelijke pogingen om toegang te verkrijgen tot of aanvallen op databases.
 
@@ -75,7 +75,7 @@ Zie het [beveiligingsoverzicht]() voor meer informatie over de beveiligingsfunct
 
 ## <a name="monitoring-and-alerting"></a>Bewaking en waarschuwingen
 
-De service voor één server is uitgerust met ingebouwde functies voor prestatiebewaking en waarschuwingen. Alle metrische gegevens van Azure hebben een frequentie van één minuut, en elke metriek bevat een geschiedenis van 30 dagen. U kunt waarschuwingen configureren voor de metrische gegevens. De service staat het configureren van logboeken voor langzame query's toe en wordt geleverd met een gedifferentieerde [Query Store](./concepts-query-store.md)-functie. Query Store vereenvoudigt het oplossen van problemen met prestaties, omdat u snel de langste en meest tijdrovende query's kunt vinden. Met deze hulpprogramma's kunt u uw workloads snel optimaliseren en uw server configureren voor de beste prestaties. Zie [Bewaking](./concepts-monitoring.md) voor meer informatie.
+De service voor één server is uitgerust met ingebouwde functies voor prestatiebewaking en waarschuwingen. Alle metrische gegevens van Azure hebben een frequentie van één minuut, en elke metriek bevat een geschiedenis van 30 dagen. U kunt waarschuwingen configureren voor de metrische gegevens. De service staat het configureren van logboeken voor langzame query's toe en wordt geleverd met een gedifferentieerde [Query Store](./concepts-query-store.md)-functie. Query Store vereenvoudigt het oplossen van problemen met prestaties, omdat u snel de langstlopende en meest tijdrovende query's kunt vinden. Met deze hulpprogramma's kunt u uw workloads snel optimaliseren en uw server configureren voor de beste prestaties. Zie [Bewaking](./concepts-monitoring.md) voor meer informatie.
 
 ## <a name="migration"></a>Migratie
 

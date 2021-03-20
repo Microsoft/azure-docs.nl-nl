@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 02/27/2019
 ms.author: aahi
 ms.openlocfilehash: 197d28b2ac3d94b6639a6611b2919bdeb2b182e2
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93359898"
 ---
 # <a name="extract-information-in-excel-using-text-analytics-and-power-automate"></a>Informatie extraheren in Excel met behulp van Text Analytics en Power Automate 
@@ -170,7 +170,7 @@ In de voor waarde **Ja** , typt u in Excel en selecteert u vervolgens **een rij 
 > [!div class="mx-imgBorder"] 
 > :::image type="content" source="../media/tutorials/excel/yes-column-action.png" alt-text="Voeg Text Analytics referenties toe aan uw stroom. 6,5":::
 
-Voer de Excel-info in en werk de velden **sleutel kolom** , **sleutel waarde** en **persoons** naam bij. Hiermee wordt de naam die is gedetecteerd door de API toegevoegd aan het Excel-werk blad. 
+Voer de Excel-info in en werk de velden **sleutel kolom**, **sleutel waarde** en **persoons** naam bij. Hiermee wordt de naam die is gedetecteerd door de API toegevoegd aan het Excel-werk blad. 
 
 > [!div class="mx-imgBorder"] 
 > :::image type="content" source="../media/tutorials/excel/yes-column-action-options.png" alt-text="Voeg Text Analytics referenties toe aan uw stroom. 7":::
@@ -218,7 +218,7 @@ In de voor waarde **als Nee** klikt u op **een actie toevoegen** en selecteert u
 
 ## <a name="test-the-workflow"></a>De werkstroom testen
 
-Klik in de rechter bovenhoek van het scherm op **Opslaan** en vervolgens op **testen**. Selecteer  **Ik voer de trigger actie uit**. Klik op **opslaan & test** , **Voer flow uit** en klik vervolgens op **gereed**.
+Klik in de rechter bovenhoek van het scherm op **Opslaan** en vervolgens op **testen**. Selecteer  **Ik voer de trigger actie uit**. Klik op **opslaan & test**, **Voer flow uit** en klik vervolgens op **gereed**.
 
 Het Excel-bestand wordt bijgewerkt in uw OneDrive-account. Dit ziet er als volgt uit.
 

@@ -6,10 +6,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/04/2020
 ms.openlocfilehash: cd787e1c846bfe4728577cbbce069385ce064a10
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98943396"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>HDInsight verbinden met uw on-premises netwerk
@@ -75,7 +75,7 @@ In deze stappen wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.
     |Abonnement |Selecteer het juiste abonnement.|
     |Resourcegroep |Selecteer de resource groep met het virtuele netwerk dat u eerder hebt gemaakt.|
     |Naam van de virtuele machine | Voer een beschrijvende naam in waarmee deze virtuele machine wordt geïdentificeerd. In dit voor beeld wordt **DNSProxy** gebruikt.|
-    |Regio | Selecteer dezelfde regio als het virtuele netwerk dat u eerder hebt gemaakt.  Niet alle VM-grootten zijn in alle regio's beschikbaar.  |
+    |Region | Selecteer dezelfde regio als het virtuele netwerk dat u eerder hebt gemaakt.  Niet alle VM-grootten zijn in alle regio's beschikbaar.  |
     |Beschikbaarheidsopties |  Selecteer het gewenste niveau van Beschik baarheid.  Azure biedt verschillende opties voor het beheren van de beschik baarheid en tolerantie voor uw toepassingen.  Ontwikkel uw oplossing voor het gebruik van gerepliceerde Vm's in Beschikbaarheidszones-of beschikbaarheids sets om uw apps en gegevens te beschermen tegen Data Center-storingen en onderhouds gebeurtenissen. In dit voor beeld wordt **geen infra structuur-redundantie vereist**. |
     |Installatiekopie | Verlaat **Ubuntu Server 18,04 LTS**. |
     |Verificatietype | __Open bare__ __wacht woord__ of SSH-sleutel: de verificatie methode voor het SSH-account. We raden u aan open bare sleutels te gebruiken, omdat ze veiliger zijn. In dit voor beeld wordt **wacht woord** gebruikt.  Zie het document [SSH-sleutels voor Linux-Vm's maken en gebruiken](../virtual-machines/linux/mac-create-ssh-keys.md) voor meer informatie.|

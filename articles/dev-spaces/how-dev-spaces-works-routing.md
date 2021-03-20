@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Hierin worden de processen beschreven die Power Azure dev Spaces en hoe route ring werkt
 keywords: Azure dev Spaces, dev Spaces, docker, Kubernetes, azure, AKS, Azure Kubernetes service, containers
 ms.openlocfilehash: 2d2c6f336222b4ae0907d6579289a8cad8d73aa6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91977966"
 ---
 # <a name="how-routing-works-with-azure-dev-spaces"></a>Hoe route ring werkt met Azure dev Spaces
@@ -62,7 +62,7 @@ Bijvoorbeeld:
 * De *azureuser* voor de ontwikkelings ruimte wordt afgeleid van de *standaard waarde*.
 * Er is een bijgewerkte versie van *servicea* geïmplementeerd op *azureuser*.
 
-Wanneer *azureuser*wordt gebruikt, worden alle aanvragen naar *servicea* doorgestuurd naar de bijgewerkte versie in *azureuser*. Er wordt eerst een aanvraag naar *serviceB* verzonden naar de *azureuser* -versie van *serviceB*. Omdat deze niet bestaat, wordt deze doorgestuurd naar de *standaard* versie van *serviceB*. Als de *azureuser* -versie van *servicea* wordt verwijderd *, worden alle aanvragen van servicea* teruggestuurd naar het gebruik van de *standaard* versie van *servicea*.
+Wanneer *azureuser* wordt gebruikt, worden alle aanvragen naar *servicea* doorgestuurd naar de bijgewerkte versie in *azureuser*. Er wordt eerst een aanvraag naar *serviceB* verzonden naar de *azureuser* -versie van *serviceB*. Omdat deze niet bestaat, wordt deze doorgestuurd naar de *standaard* versie van *serviceB*. Als de *azureuser* -versie van *servicea* wordt verwijderd *, worden alle aanvragen van servicea* teruggestuurd naar het gebruik van de *standaard* versie van *servicea*.
 
 ## <a name="next-steps"></a>Volgende stappen
 

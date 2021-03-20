@@ -8,24 +8,24 @@ ms.date: 04/10/2020
 ms.author: brendm
 ms.custom: devx-track-java
 ms.openlocfilehash: ec87c5523d6f608363ca615037f20365705609df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90892856"
 ---
 # <a name="understanding-app-status-in-azure-spring-cloud"></a>Informatie over appstatus in Azure Spring Cloud
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
-De Azure veer Cloud-gebruikers interface levert informatie over de status van actieve toepassingen.  Er is een optie voor **apps** voor elke resource groep in een abonnement dat algemene status van toepassings typen weergeeft.  Voor elk toepassings type worden **toepassings exemplaren**weer gegeven.
+De Azure veer Cloud-gebruikers interface levert informatie over de status van actieve toepassingen.  Er is een optie voor **apps** voor elke resource groep in een abonnement dat algemene status van toepassings typen weergeeft.  Voor elk toepassings type worden **toepassings exemplaren** weer gegeven.
 
 ## <a name="apps-status"></a>Status van apps
 Als u de algemene status van een toepassings type wilt weer geven, selecteert u **apps** in het navigatie deel venster links van een resource groep. Met het resultaat wordt de status van de geïmplementeerde app weer gegeven:
 
 * Bij de **inrichtings status** wordt de inrichtings status van de implementatie weer gegeven
-* **Met het actieve exemplaar** wordt weer gegeven hoeveel app-exemplaren worden uitgevoerd/hoeveel app-exemplaren gewenst zijn. Als de app moet worden gestopt, wordt de kolom *gestopt*weer gegeven.
-* In het **geregistreerde exemplaar** wordt weer gegeven hoeveel app-exemplaren zijn geregistreerd bij Eureka/hoeveel app-exemplaar gewenst zijn. Als de app moet worden gestopt, wordt de kolom *gestopt*weer gegeven.
+* **Met het actieve exemplaar** wordt weer gegeven hoeveel app-exemplaren worden uitgevoerd/hoeveel app-exemplaren gewenst zijn. Als de app moet worden gestopt, wordt de kolom *gestopt* weer gegeven.
+* In het **geregistreerde exemplaar** wordt weer gegeven hoeveel app-exemplaren zijn geregistreerd bij Eureka/hoeveel app-exemplaar gewenst zijn. Als de app moet worden gestopt, wordt de kolom *gestopt* weer gegeven.
 
 
  ![Status van apps](media/spring-cloud-concept-app-status/apps-ui-status.png)

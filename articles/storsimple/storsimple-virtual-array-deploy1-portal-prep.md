@@ -9,10 +9,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: c1a3d0b05f04ad8c182d428843479160666b96ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87070316"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>StorSimple Virtual array implementeren: de Azure Portal voorbereiden
@@ -116,7 +116,7 @@ Voer de volgende stappen uit in [Azure Portal](https://portal.azure.com/).
 
 ## <a name="step-3-download-the-virtual-array-image"></a>Stap 3: de installatie kopie van de virtuele matrix downloaden
 
-Nadat u de service registratie sleutel hebt, moet u de juiste installatie kopie van de virtuele matrix downloaden om een virtuele matrix op uw hostsysteem in te richten. De installatie kopieën van de virtuele array zijn specifiek voor het besturings systeem en kunnen worden gedownload van de Quick Start pagina in de Azure Portal.
+Nadat u de service registratie sleutel hebt, moet u de juiste installatie kopie van de virtuele matrix downloaden om een virtuele matrix op uw hostsysteem in te richten. De installatie kopieën van de virtuele array zijn specifiek voor het besturings systeem en kunnen worden gedownload van de Snel starten pagina in de Azure Portal.
 
 > [!IMPORTANT]
 > De software die wordt uitgevoerd op de virtuele StorSimple-matrix mag alleen worden gebruikt met de StorSimple-Apparaatbeheer service.
@@ -127,9 +127,9 @@ Voer de volgende stappen uit in [Azure Portal](https://portal.azure.com/).
 
 #### <a name="to-get-the-virtual-array-image"></a>De installatie kopie van de virtuele matrix ophalen
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/). 
 2. Klik in het Azure Portal op **bladeren > StorSimple Device Managers**.
-3. Selecteer een bestaande StorSimple-Apparaatbeheer service. Klik in de Blade **StorSimple Apparaatbeheer** op **Quick Start**. 
+3. Selecteer een bestaande StorSimple-Apparaatbeheer service. Klik in de Blade **StorSimple Apparaatbeheer** op **snel starten**. 
 4. Klik op de koppeling die overeenkomt met de afbeelding die u wilt downloaden van het micro soft Download centrum. De installatiekopieën zijn ongeveer 4,8 GB.
    
    * VHDX voor Hyper-V op Windows Server 2012 en hoger
@@ -152,7 +152,7 @@ Voer de volgende stappen uit in de [Azure Portal](https://ms.portal.azure.com/) 
 3. Klik op **Add**.
 4. Ga als volgt te werk op de Blade **een opslag account toevoegen** :
    
-   1. Selecteer bij **abonnement**de optie **actueel**.
+   1. Selecteer bij **abonnement** de optie **actueel**.
    
    2. Geef de naam van uw Azure Storage-account op.
    

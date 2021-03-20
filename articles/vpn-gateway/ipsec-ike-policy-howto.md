@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/18/2020
 ms.author: yushwang
 ms.openlocfilehash: 2b298185866d16da02fe8d3b3fdb41f0b0b1f726
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98878541"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections-azure-portal"></a>IPsec/IKE-beleid configureren voor S2S VPN-of VNet-naar-VNet-verbindingen: Azure Portal
@@ -28,8 +28,10 @@ Dit artikel bevat instructies voor het maken en configureren van een IPsec/IKE-b
 ### <a name="considerations"></a>Overwegingen
 
 * IPsec/IKE-beleid werkt alleen op de volgende gateway-Sku's:
-  * ***VpnGw1 ~ 5 en VpnGw1AZ ~ 5AZ** _ _ ***standaard** _ en _*_High Performance_*_ _ u kunt slechts **één** _ beleids combinatie voor een bepaalde verbinding opgeven.
-  _ U moet alle algoritmen en para meters opgeven voor zowel IKE (hoofd modus) als IPsec (snelle modus). Gedeeltelijke beleidsspecificatie is niet toegestaan.
+  * ***VpnGw1 ~ 5 en VpnGw1AZ ~ 5AZ***
+  * ***Standaard** _ en _ *_High Performance_**
+* U kunt maar ***één*** beleidscombinatie opgeven voor een bepaalde verbinding.
+* U moet alle algoritmen en para meters opgeven voor zowel IKE (hoofd modus) als IPsec (snelle modus). Gedeeltelijke beleidsspecificatie is niet toegestaan.
 * Neem contact op met de specificaties van de leverancier van uw VPN-apparaat om ervoor te zorgen dat het beleid wordt ondersteund op uw on-premises VPN-apparaten. S2S-of VNet-naar-VNet-verbindingen kunnen niet bepalen of het beleid niet compatibel is.
 
 ## <a name="workflow"></a><a name ="workflow"></a>Werkstroom

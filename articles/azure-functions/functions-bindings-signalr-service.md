@@ -6,17 +6,17 @@ ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
 ms.openlocfilehash: 9e60fd9a20720d75f96a0b78ee783bd5509a8f90
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97763486"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>SignalR-servicebindingen voor Azure Functions
 
 In deze reeks artikelen wordt uitgelegd hoe u real-time berichten verifieert en verzendt naar clients die zijn verbonden met de [Azure signalerings service](https://azure.microsoft.com/services/signalr-service/) door gebruik te maken van de service bindingen van de signalering in azure functions. Azure Functions ondersteunt invoer- en uitvoerbindingen voor SignalR Service.
 
-| Actie | Type |
+| Bewerking | Type |
 |---------|---------|
 | Berichten van de seingevings service verwerken | [Binding activeren](./functions-bindings-signalr-service-trigger.md) |
 | De URL en het toegangs token van het service-eind punt retour neren | [Invoer binding](./functions-bindings-signalr-service-input.md) |

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 66244bd8e24ff62be41df72f7a39c0ce0ed13135
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93360673"
 ---
 # <a name="deploy-the-storsimple-device-manager-service-for-storsimple-8000-series-devices"></a>De StorSimple Apparaatbeheer-service voor StorSimple 8000 Series-apparaten implementeren
@@ -39,11 +39,11 @@ In deze zelf studie worden de stappen beschreven die nodig zijn voor het maken, 
 ## <a name="create-a-service"></a>Een service maken
 Als u een StorSimple Apparaatbeheer-service wilt maken, moet u het volgende hebben:
 
-* Een abonnement met een Enterprise Agreement
+* Een abonnement met een Enterprise Overeenkomst
 * Een actief Microsoft Azure Storage-account
 * De facturerings gegevens die worden gebruikt voor toegangs beheer
 
-Alleen de abonnementen met een Enterprise Agreement zijn toegestaan. U kunt er ook voor kiezen om een standaard-opslag account te genereren wanneer u de service maakt.
+Alleen de abonnementen met een Enterprise Overeenkomst zijn toegestaan. U kunt er ook voor kiezen om een standaard-opslag account te genereren wanneer u de service maakt.
 
 Eén service kan meerdere apparaten beheren. Een apparaat kan echter niet meerdere services omvatten. Een grote onderneming kan meerdere service-exemplaren gebruiken om te werken met verschillende abonnementen, organisaties of zelfs implementatie locaties. 
 
@@ -58,7 +58,7 @@ Voer de volgende stappen uit om een service te maken.
 Voor elke StorSimple-Apparaatbeheer service bestaan de volgende kenmerken:
 
 * **Naam** : de naam die is toegewezen aan uw StorSimple-Apparaatbeheer service toen deze werd gemaakt. **De service naam kan niet worden gewijzigd nadat de service is gemaakt. Dit geldt ook voor andere entiteiten, zoals apparaten, volumes, volume containers en back-upbeleiden waarvan de naam niet kan worden gewijzigd in de Azure Portal.**
-* **Status** : de status van de service, die **actief** , **maken** of **online** kan zijn.
+* **Status** : de status van de service, die **actief**, **maken** of **online** kan zijn.
 * **Locatie** : de geografische locatie waar het StorSimple-apparaat wordt geïmplementeerd.
 * **Abonnement** : het facturerings abonnement dat is gekoppeld aan uw service.
 

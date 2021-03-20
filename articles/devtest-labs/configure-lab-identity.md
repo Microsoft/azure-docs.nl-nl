@@ -4,10 +4,10 @@ description: Meer informatie over het configureren van een Lab-identiteit in azu
 ms.topic: article
 ms.date: 08/20/2020
 ms.openlocfilehash: a652eb5751f9b723911a1c1baaaaf9860febc5b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88719642"
 ---
 # <a name="configure-a-lab-identity"></a>Een Lab-identiteit configureren
@@ -46,7 +46,7 @@ In deze sectie ziet u hoe u het identiteits beleid van Lab kunt configureren.
 > [!div class="mx-imgBorder"]
 > ![Identiteit configureren](./media/configure-lab-identity/configure-identity.png)
 
-## <a name="user-assigned-managed-identity"></a>Door een gebruiker toegewezen beheerde identiteit  
+## <a name="user-assigned-managed-identity"></a>Door de gebruiker toegewezen beheerde identiteit  
 
 Een door de gebruiker toegewezen beheerde identiteit wordt gemaakt als een zelfstandige Azure-resource. Via een productieproces maakt Azure een identiteit in de Azure AD-tenant, die wordt vertrouwd door het gebruikte abonnement. Nadat de identiteit is gemaakt, kan deze worden toegewezen aan een of meer Azure-service-exemplaren. De levenscyclus van een door de gebruiker toegewezen identiteit wordt afzonderlijk beheerd van de levenscyclus van de Azure Service-exemplaren waaraan de identiteit is toegewezen. 
 

@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: a96be6d4da3d292b2e9881652aad28f318ccee8a
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92107569"
 ---
 # <a name="azure-data-studio-dashboards"></a>Azure Data Studio Dash boards
@@ -62,13 +62,13 @@ https://52.154.152.24:30080
 
 Noteer uw IP-adres zoals u dit in de volgende stap gaat gebruiken.
 
-### <a name="connect"></a>Verbinden
+### <a name="connect"></a>Verbinding maken
 
 1. Azure Data Studio openen
 
 1. Selecteer het tabblad **verbindingen** aan de linkerkant
 
-Vouw het deel venster met de naam **Azure Arc-controllers**naar beneden uit.
+Vouw het deel venster met de naam **Azure Arc-controllers** naar beneden uit.
 
 Klik op het pictogram + om een nieuwe gegevens controller verbinding toe te voegen.
 

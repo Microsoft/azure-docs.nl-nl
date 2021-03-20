@@ -10,10 +10,10 @@ ms.date: 09/09/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.openlocfilehash: 2db281f1b3278e37deca8486971a7f7a83f85ccf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86503078"
 ---
 # <a name="how-to-create-a-virtual-machine-scale-set-with-visual-studio"></a>Een Schaalset voor virtuele machines maken met Visual Studio
@@ -38,9 +38,9 @@ U hebt de volgende vereisten nodig om aan de slag te gaan met de implementatie v
 
 1. Open Visual Studio en selecteer **Een nieuw project maken**.
 
-1. Kies in **een nieuw project maken de**optie **Azure-resource groep** voor C# en selecteer vervolgens **volgende**.
+1. Kies in **een nieuw project maken de** optie **Azure-resource groep** voor C# en selecteer vervolgens **volgende**.
 
-1. Voer in **uw nieuwe project configureren**een naam in en selecteer **maken**.
+1. Voer in **uw nieuwe project configureren** een naam in en selecteer **maken**.
 
     ![Een naam en een project maken](media/virtual-machine-scale-sets-vs-create/configure-azure-resource-group.png)
 
@@ -56,7 +56,7 @@ Nu kunt u de sjabloon bewerken om deze aan te passen aan de behoeften van uw toe
 
 Met de load balancer kunt u verbinding maken met de virtuele-machine-instanties met SSH (Linux) of RDP (Windows). Het poort bereik van de front-end begint bij 50000. Als u voor Linux SSH naar poort 50000, stuurt taak verdeling u naar poort 22 van de eerste virtuele machine in de Schaalset. Verbinding maken met poort 50001 wordt doorgestuurd naar poort 22 van de tweede virtuele machine, enzovoort.
 
- Een goede manier om uw sjablonen te bewerken met Visual Studio is door de **JSON-overzicht**te gebruiken. U kunt de para meters, variabelen en resources ordenen. Met een goed idee van het schema kan Visual Studio fouten in uw sjabloon verwijzen voordat u deze implementeert.
+ Een goede manier om uw sjablonen te bewerken met Visual Studio is door de **JSON-overzicht** te gebruiken. U kunt de para meters, variabelen en resources ordenen. Met een goed idee van het schema kan Visual Studio fouten in uw sjabloon verwijzen voordat u deze implementeert.
 
 ![JSON-Verkenner](media/virtual-machine-scale-sets-vs-create/json-explorer.png)
 
@@ -64,11 +64,11 @@ Met de load balancer kunt u verbinding maken met de virtuele-machine-instanties 
 
 Implementeer de Azure Resource Manager sjabloon om de resource voor de Schaalset voor virtuele machines te maken:
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project **Deploy**en kies  >  **nieuwe**implementeren.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project en kies  >  **nieuwe** implementeren.
 
     ![Uw project implementeren](media/virtual-machine-scale-sets-vs-create/deploy-new-project.png)
 
-1. Kies in de **resource groep implementeren**de optie welk abonnement u wilt gebruiken en selecteer een resource groep. U kunt, indien nodig, een resource groep maken.
+1. Kies in de **resource groep implementeren** de optie welk abonnement u wilt gebruiken en selecteer een resource groep. U kunt, indien nodig, een resource groep maken.
 
 1. Selecteer vervolgens **para meters bewerken** om para meters in te voeren die worden door gegeven aan uw sjabloon.
 
@@ -78,13 +78,13 @@ Implementeer de Azure Resource Manager sjabloon om de resource voor de Schaalset
 
     ![Implementatie parameters bewerken](media/virtual-machine-scale-sets-vs-create/edit-deployment-parameters.png)
 
-1. Selecteer **implementeren**in **resource groep implementeren**. De actie voert het **Deploy-AzureResourceGroup.ps1** script uit. In het **uitvoer** venster wordt de voortgang van de implementatie weer gegeven.
+1. Selecteer **implementeren** in **resource groep implementeren**. De actie voert het **Deploy-AzureResourceGroup.ps1** script uit. In het **uitvoer** venster wordt de voortgang van de implementatie weer gegeven.
 
    ![Uitvoer toont resultaten](media/virtual-machine-scale-sets-vs-create/deployment-output.png)
 
 ## <a name="explore-your-virtual-machine-scale-set"></a>Uw Schaalset voor virtuele machines verkennen <a name="exploring-your-virtual-machine-scale-set"></a>
 
-Selecteer **View**  >  **Cloud Verkenner** weer geven om de nieuwe schaalset voor virtuele machines weer te geven. Gebruik **Alles vernieuwen**, indien nodig.
+Selecteer   >  **Cloud Verkenner** weer geven om de nieuwe schaalset voor virtuele machines weer te geven. Gebruik **Alles vernieuwen**, indien nodig.
 
 ![Cloud Explorer](media/virtual-machine-scale-sets-vs-create/cloud-explorer.png)
 

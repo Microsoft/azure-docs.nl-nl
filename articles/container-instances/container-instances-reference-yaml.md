@@ -4,10 +4,10 @@ description: Verwijzing voor het YAML-bestand dat wordt ondersteund door Azure C
 ms.topic: article
 ms.date: 07/06/2020
 ms.openlocfilehash: d0ec8d13eebba1c60f5a52f8c43bdd8b90eeb913
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87084757"
 ---
 # <a name="yaml-reference-azure-container-instances"></a>YAML-verwijzing: Azure Container Instances
@@ -330,7 +330,7 @@ De volgende tabellen bevatten een beschrijving van de waarden die u moet instell
 |  Naam | Type | Vereist | Waarde |
 |  ---- | ---- | ---- | ---- |
 |  map | tekenreeks | No | Naam van de doel directory. Mag niet bevatten of beginnen met...  Als '. ' is opgegeven, wordt de map van het volume de Git-opslag plaats.  Als dat niet het geval is, bevat het volume de Git-opslag plaats in de submap met de opgegeven naam. |
-|  opslag plaats | tekenreeks | Ja | URL van opslag plaats |
+|  repository | tekenreeks | Ja | URL van opslag plaats |
 |  revision | tekenreeks | No | Hash voor de opgegeven revisie door voeren. |
 
 

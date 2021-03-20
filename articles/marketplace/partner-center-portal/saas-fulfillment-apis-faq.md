@@ -8,10 +8,10 @@ ms.date: 07/11/2019
 author: mingshen-ms
 ms.author: mingshen
 ms.openlocfilehash: 4c5d8b438764fa9aa3838b2225c63d412afc519b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88606802"
 ---
 # <a name="common-questions-about-saas-fulfillment-apis"></a>Veelgestelde vragen over Api's voor SaaS-uitvoering
@@ -38,9 +38,9 @@ Tijdens het abonneren op de SaaS-aanbieding heeft de gebruiker besloten om te be
 
 ### <a name="how-are-you-notified-when-a-user-subscribes-to-your-saas-offer"></a>Hoe wordt u gewaarschuwd wanneer een gebruiker zich abonneert op uw SaaS-aanbieding?
 
-Nadat u zich hebt geabonneerd op een aanbieding, kan de Azure-gebruiker al hun aanbiedingen in azure detecteren en beheren. Standaard wordt de status van een nieuw geabonneerde SaaS-aanbieding weer gegeven als **inrichting, in afwachting**van de uitvoering. In deze status wordt de Azure-gebruiker gevraagd om het **account te configureren**, om te bladeren naar de beheer ervaring van het SaaS-abonnement in de Azure Portal.
+Nadat u zich hebt geabonneerd op een aanbieding, kan de Azure-gebruiker al hun aanbiedingen in azure detecteren en beheren. Standaard wordt de status van een nieuw geabonneerde SaaS-aanbieding weer gegeven als **inrichting, in afwachting** van de uitvoering. In deze status wordt de Azure-gebruiker gevraagd om het **account te configureren**, om te bladeren naar de beheer ervaring van het SaaS-abonnement in de Azure Portal.
 
-Wanneer de gebruiker **account configureren**selecteert, wordt deze omgeleid naar de website van de SaaS-service. De uitgever heeft de URL geconfigureerd op het moment van publicatie van de aanbieding. Deze pagina wordt de landings pagina van de uitgever genoemd. Azure-gebruikers melden zich aan bij de SaaS-landings pagina op basis van hun bestaande AAD-referenties in Azure.
+Wanneer de gebruiker **account configureren** selecteert, wordt deze omgeleid naar de website van de SaaS-service. De uitgever heeft de URL geconfigureerd op het moment van publicatie van de aanbieding. Deze pagina wordt de landings pagina van de uitgever genoemd. Azure-gebruikers melden zich aan bij de SaaS-landings pagina op basis van hun bestaande AAD-referenties in Azure.
 
 Wanneer de Azure-gebruiker wordt omgeleid naar de landings pagina, wordt een token toegevoegd aan de query-URL. Dit token is korte tijd en geldig voor een tijds duur van 24 uur. U kunt vervolgens de aanwezigheid van dit token detecteren en de API van micro soft aanroepen om meer context te verkrijgen die aan het token is gekoppeld.
 

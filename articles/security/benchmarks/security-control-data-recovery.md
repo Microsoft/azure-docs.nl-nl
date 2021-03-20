@@ -8,10 +8,10 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 835e4f681d514bb6b92caa5ee076e3794ed59236
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94698815"
 ---
 # <a name="security-control-data-recovery"></a>Beveiligings beheer: gegevens herstellen
@@ -44,7 +44,7 @@ Schakel Azure Backup en doel-VM ('s) in, evenals de gewenste frequentie en reten
 
 | Azure-ID | CIS-Id's | Onder |
 |--|--|--|
-| 9.3 | 10,3 | Klant |
+| 9.3 | 10.3 | Klant |
 
 Zorg ervoor dat het gegevens herstel van inhoud in Azure Backup regel matig wordt uitgevoerd. Herstel van back-ups van door de klant beheerde sleutels testen.
 

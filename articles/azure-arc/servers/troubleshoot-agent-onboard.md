@@ -4,10 +4,10 @@ description: In dit artikel leest u hoe u problemen met de verbonden machine age
 ms.date: 09/02/2020
 ms.topic: conceptual
 ms.openlocfilehash: 36feb6a65ec52d99dfd664ae54cb099ea6a7e239
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90900684"
 ---
 # <a name="troubleshoot-the-connected-machine-agent-connection-issues"></a>Problemen met de verbindings problemen van de verbonden computer agent oplossen
@@ -44,7 +44,7 @@ Hier volgt een voor beeld van de opdracht om uitgebreide logboek registratie in 
 Hier volgt een voor beeld van de opdracht om uitgebreide logboek registratie in te scha kelen met de verbonden machine agent voor Linux wanneer een interactieve installatie wordt uitgevoerd.
 
 >[!NOTE]
->U moet toegangs machtigingen voor het *hoofd* hebben op Linux-machines om **azcmagent**uit te voeren.
+>U moet toegangs machtigingen voor het *hoofd* hebben op Linux-machines om **azcmagent** uit te voeren.
 
 ```bash
 azcmagent connect --resource-group "resourceGroupName" --tenant-id "tenantID" --location "regionName" --subscription-id "subscriptionID" --verbose

@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Hierin wordt beschreven hoe u uw project voorbereidt met Azure dev Spaces werkt
 keywords: azds. yaml, Azure dev Spaces, dev Spaces, docker, Kubernetes, azure, AKS, Azure Kubernetes service, containers
 ms.openlocfilehash: d2da69dd8a8c2683ff584dfd0ffc61cb023f2ece
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91968154"
 ---
 # <a name="how-preparing-a-project-for-azure-dev-spaces-works"></a>Hoe u een project voorbereidt voor Azure dev Spaces werkt
@@ -36,7 +36,7 @@ De `prep` opdracht gaat naar de bestanden in uw project en probeert de Dockerfil
 
 U *moet* de `prep` opdracht uitvoeren vanuit een map met de bron code. Door de `prep` opdracht uit te voeren vanuit de juiste map, kan het programma aan de client zijde de taal identificeren en een geschikte Dockerfile maken om uw toepassing te container plaatsen. U kunt de opdracht ook uitvoeren `prep` vanuit een map die een *pom.xml* bestand bevat voor Java-projecten.
 
-Als u de `prep` opdracht uitvoert vanuit een map die geen bron code bevat, wordt door het hulp programma aan de client zijde geen Dockerfile gegenereerd. Er wordt ook een fout weer gegeven met de melding: *Dockerfile kan niet worden gegenereerd als gevolg*van een niet-ondersteunde taal. Deze fout treedt ook op als het project type niet wordt herkend door het programma aan de client zijde.
+Als u de `prep` opdracht uitvoert vanuit een map die geen bron code bevat, wordt door het hulp programma aan de client zijde geen Dockerfile gegenereerd. Er wordt ook een fout weer gegeven met de melding: *Dockerfile kan niet worden gegenereerd als gevolg* van een niet-ondersteunde taal. Deze fout treedt ook op als het project type niet wordt herkend door het programma aan de client zijde.
 
 Wanneer u de `prep` opdracht uitvoert, hebt u de optie om de vlag op te geven `--enable-ingress` . Met deze markering wordt aan de controller aangegeven dat er een eind punt voor Internet toegang moet worden gemaakt voor deze service. Als u deze vlag niet opgeeft, is de service alleen toegankelijk vanuit het cluster of met behulp van de localhost-tunnel die is gemaakt door het programma aan de client zijde. U kunt dit gedrag in-of uitschakelen nadat de `prep` opdracht is uitgevoerd door de gegenereerde helm-grafiek bij te werken.
 

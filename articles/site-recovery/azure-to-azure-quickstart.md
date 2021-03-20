@@ -5,10 +5,10 @@ ms.topic: quickstart
 ms.date: 03/27/2020
 ms.custom: mvc
 ms.openlocfilehash: 8681ccaac30402927005e5e8802d7da2bddc2c5c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86135698"
 ---
 # <a name="quickstart-set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Quickstart: Herstel na noodgeval instellen naar een secundaire Azure-regio voor een Azure-VM
@@ -48,7 +48,7 @@ Nadat de replicatietaak is voltooid, kunt u de replicatiestatus controleren, de 
 1. Selecteer in **Bewerkingen** de optie **Herstel na noodgeval**.
 1. Als u de replicatiedetails wilt weer geven in het **Overzicht**, selecteer dan **Essentials**. Er wordt meer informatie weergegeven bij de toewijzing **Integriteit en status**, **Failover-gereedheid** en **Infrastructuurweergave**.
 
-   :::image type="content" source="media/azure-to-azure-quickstart/replication-status.png" alt-text="Schakel replicatie in.":::
+   :::image type="content" source="media/azure-to-azure-quickstart/replication-status.png" alt-text="Replicatiestatus.":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -65,7 +65,7 @@ Als u replicatie wilt uitschakelen, voert u de volgende stappen uit:
 1. Selecteer in het **Overzicht** de optie **Replicatie uitschakelen**.
 1. Om de Site Recovery-extensie te verwijderen, gaat u naar de **Instellingen** > **Extensies** van de VM.
 
-   :::image type="content" source="media/azure-to-azure-quickstart/disable2-replication.png" alt-text="Schakel replicatie in.":::
+   :::image type="content" source="media/azure-to-azure-quickstart/disable2-replication.png" alt-text="Schakel replicatie uit.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

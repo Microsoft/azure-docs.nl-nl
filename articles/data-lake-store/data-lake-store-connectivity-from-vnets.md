@@ -13,10 +13,10 @@ ms.topic: how-to
 ms.date: 01/31/2018
 ms.author: elsung
 ms.openlocfilehash: e319cf9dfc01546607e20572c5bf4930fd974c75
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92104033"
 ---
 # <a name="access-azure-data-lake-storage-gen1-from-vms-within-an-azure-vnet"></a>Toegang tot Azure Data Lake Storage Gen1 van Vm's binnen een Azure-VNET
@@ -29,7 +29,7 @@ Azure Data Lake Storage Gen1 is een PaaS-service die wordt uitgevoerd op open ba
 In dit artikel wordt uitgelegd hoe u toegang tot Azure Data Lake Storage Gen1 kunt inschakelen vanuit Azure-Vm's, die zijn beperkt tot toegang tot resources met een van de drie eerder beschreven methoden.
 
 ## <a name="enabling-connectivity-to-azure-data-lake-storage-gen1-from-vms-with-restricted-connectivity"></a>Connectiviteit met Azure Data Lake Storage Gen1 van Vm's met beperkte connectiviteit inschakelen
-Om toegang te krijgen tot Azure Data Lake Storage Gen1 van dergelijke Vm's, moet u ze configureren voor toegang tot het IP-adres voor de regio waar het Azure Data Lake Storage Gen1-account beschikbaar is. U kunt de IP-adressen voor uw Data Lake Storage Gen1-account regio's identificeren door de DNS-namen van uw accounts () te herleiden `<account>.azuredatalakestore.net` . Als u DNS-namen van uw accounts wilt omzetten, kunt u hulpprogram ma's zoals **nslookup**gebruiken. Open een opdracht prompt op de computer en voer de volgende opdracht uit:
+Om toegang te krijgen tot Azure Data Lake Storage Gen1 van dergelijke Vm's, moet u ze configureren voor toegang tot het IP-adres voor de regio waar het Azure Data Lake Storage Gen1-account beschikbaar is. U kunt de IP-adressen voor uw Data Lake Storage Gen1-account regio's identificeren door de DNS-namen van uw accounts () te herleiden `<account>.azuredatalakestore.net` . Als u DNS-namen van uw accounts wilt omzetten, kunt u hulpprogram ma's zoals **nslookup** gebruiken. Open een opdracht prompt op de computer en voer de volgende opdracht uit:
 
 ```console
 nslookup mydatastore.azuredatalakestore.net

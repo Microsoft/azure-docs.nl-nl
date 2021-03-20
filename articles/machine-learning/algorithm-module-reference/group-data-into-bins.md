@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/13/2020
 ms.openlocfilehash: 392cb9b4c2ded1b98b79ce8dcd780ac59e96b78a
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91998476"
 ---
 # <a name="group-data-into-bins-module"></a>Gegevens groeperen in module opslag locaties
@@ -23,12 +23,12 @@ In dit artikel wordt beschreven hoe u de groeps gegevens in de module opslag loc
 De module gegevens groeperen in opslag locaties ondersteunt meerdere opties voor binning-gegevens. U kunt aanpassen hoe de randen van de opslag locatie worden ingesteld en hoe waarden worden verdeeld in de opslag locaties. U kunt bijvoorbeeld het volgende doen:  
 
 + Voer hand matig een reeks waarden in die moeten fungeren als de grenzen van de opslag locatie.  
-+ Waarden toewijzen aan opslag locaties met behulp van *quantiles*of percentiel posities.  
++ Waarden toewijzen aan opslag locaties met behulp van *quantiles* of percentiel posities.  
 + Een gelijkmatige verdeling van waarden in de opslag locaties afdwingen.  
 
 ## <a name="more-about-binning-and-grouping"></a>Meer informatie over binning en groeperen
 
-*Binning* -of groepeer gegevens (ook wel *kwantisatiefouten*genoemd) is een belang rijk hulp middel bij het voorbereiden van numerieke gegevens voor machine learning. Het is handig in scenario's als deze:
+*Binning* -of groepeer gegevens (ook wel *kwantisatiefouten* genoemd) is een belang rijk hulp middel bij het voorbereiden van numerieke gegevens voor machine learning. Het is handig in scenario's als deze:
 
 + Een kolom met doorlopende getallen heeft te veel unieke waarden om effectief te kunnen model leren. Zodat u de waarden automatisch of hand matig toewijst aan groepen, om een kleinere set discrete bereiken te maken.
 
@@ -70,16 +70,16 @@ Omdat er zoveel manieren zijn om gegevens te groeperen, is het raadzaam om te ex
     > [!Note]
     > De modus *ENTROPIE MDL* is gedefinieerd in Studio (klassiek) en er is geen bijbehorend open-source pakket dat kan worden gebruikt voor ondersteuning in Designer.        
 
-4. Als u de **Quantiles** -en binning-modus met **gelijke breedte** gebruikt, gebruikt u de optie **aantal bakken** om op te geven hoeveel bakken of *Quantiles*u wilt maken.
+4. Als u de **Quantiles** -en binning-modus met **gelijke breedte** gebruikt, gebruikt u de optie **aantal bakken** om op te geven hoeveel bakken of *Quantiles* u wilt maken.
 
-5. Gebruik voor **kolommen naar bin**de kolom kiezer om de kolommen te kiezen met de waarden die u wilt gebruiken voor de opslag locatie. Kolommen moeten een numeriek gegevens type zijn.
+5. Gebruik voor **kolommen naar bin** de kolom kiezer om de kolommen te kiezen met de waarden die u wilt gebruiken voor de opslag locatie. Kolommen moeten een numeriek gegevens type zijn.
 
     Dezelfde binning-regel wordt toegepast op alle toepasselijke kolommen die u kiest. Als u bepaalde kolommen met een andere methode wilt opdelen, gebruikt u een afzonderlijk exemplaar van de groeps gegevens in de module opslag locaties voor elke set kolommen.
 
     > [!WARNING]
     > Als u een kolom kiest die geen toegestaan type is, wordt er een runtime-fout gegenereerd. De module retourneert een fout zodra een kolom van een niet-toegestaan type wordt gevonden. Als er een fout optreedt, controleert u alle geselecteerde kolommen. In de fout worden niet alle ongeldige kolommen weer geven.
 
-6. Geef voor **uitvoer modus**op hoe u de waarden voor de afgemelde waarde wilt uitvoeren:
+6. Geef voor **uitvoer modus** op hoe u de waarden voor de afgemelde waarde wilt uitvoeren:
 
     + **Toevoegen**: maakt een nieuwe kolom met de binning-waarden en voegt deze toe aan de invoer tabel.
 
@@ -111,7 +111,7 @@ Omdat er zoveel manieren zijn om gegevens te groeperen, is het raadzaam om te ex
 
 De module gegevens groeperen in opslag locaties retourneert een gegevensset waarin elk element is binning volgens de opgegeven modus. 
 
-Er wordt ook een *binning-trans formatie*geretourneerd. Deze functie kan worden door gegeven aan de module [trans formatie Toep assen](apply-transformation.md) op nieuwe voor beelden van gegevens met behulp van dezelfde binning-modus en-para meters.  
+Er wordt ook een *binning-trans formatie* geretourneerd. Deze functie kan worden door gegeven aan de module [trans formatie Toep assen](apply-transformation.md) op nieuwe voor beelden van gegevens met behulp van dezelfde binning-modus en-para meters.  
 
 > [!TIP]
 > Als u binning gebruikt voor uw trainings gegevens, moet u dezelfde binning-methode gebruiken voor gegevens die u gebruikt voor testen en voor spellingen. U moet ook dezelfde opslaglocatie locaties en bin-breedten gebruiken. 

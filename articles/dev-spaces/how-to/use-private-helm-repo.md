@@ -9,10 +9,10 @@ description: Gebruik een persoonlijke helm-opslag plaats in een Azure dev-ruimte
 keywords: Docker, Kubernetes, azure, AKS, Azure Container Service, containers, helm
 manager: gwallace
 ms.openlocfilehash: 7c5f28595df2e552fd48033b44e4e1f0ea4ec306
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91960334"
 ---
 # <a name="use-a-private-helm-repository-in-azure-dev-spaces"></a>Een persoonlijke helm-opslag plaats gebruiken in azure dev Spaces
@@ -41,7 +41,7 @@ azds prep --enable-ingress
 > [!TIP]
 > Met de opdracht `prep` wordt geprobeerd [een Dockerfile en Helm-grafiek](../how-dev-spaces-works-prep.md#prepare-your-code) voor uw project te genereren. Azure Dev Spaces maakt gebruik van deze bestanden om uw code te compileren en uit te voeren, maar u kunt deze bestanden wijzigen als u de opzet en uitvoering van het project wilt wijzigen.
 
-Maak een [yaml][helm-requirements] -bestand met vereisten voor uw grafiek in de map grafieken van uw toepassing. Als uw toepassing bijvoorbeeld *app1*heet, maakt u *grafieken/app1/vereisten. yaml*.
+Maak een [yaml][helm-requirements] -bestand met vereisten voor uw grafiek in de map grafieken van uw toepassing. Als uw toepassing bijvoorbeeld *app1* heet, maakt u *grafieken/app1/vereisten. yaml*.
 
 ```yaml
 dependencies:

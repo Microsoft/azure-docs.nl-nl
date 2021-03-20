@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: syclebsc
 ms.openlocfilehash: f9b7b92fd21e12f1d86c5d5878e48c6ec6b0e748
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87088016"
 ---
 # <a name="azure-functions-f-developer-reference"></a>Azure Functions F # referentie voor ontwikkel aars
@@ -285,7 +285,7 @@ Paden naar de `#load` instructie zijn relatief ten opzichte van de locatie van h
 De `#load` instructie werkt alleen met `.fsx` (F # script) bestanden en niet met `.fs` bestanden.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de volgende bronnen voor meer informatie:
+Zie de volgende resources voor meer informatie:
 
 * [F# Guide](/dotnet/articles/fsharp/index)
 * [Aanbevolen procedures voor Azure Functions](functions-best-practices.md)

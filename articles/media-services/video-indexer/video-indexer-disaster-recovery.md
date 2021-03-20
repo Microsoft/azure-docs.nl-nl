@@ -15,17 +15,17 @@ ms.custom: ''
 ms.date: 07/29/2019
 ms.author: juliako
 ms.openlocfilehash: eab376c44065979de86e5c70b796be952fccffaa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87065405"
 ---
 # <a name="video-indexer-failover-and-disaster-recovery"></a>Failover en herstel na noodgeval in Video Indexer
 
 Azure Media Services Video Indexer biedt geen onmiddellijke failover van de service als er sprake is van een storing of fout in het regionale datacentrum. In dit artikel wordt uitgelegd hoe u uw omgeving kunt configureren voor een failover om optimale Beschik baarheid voor apps en een geminimaliseerd herstel tijdstip te garanderen als er sprake is van een nood geval.
 
-We raden u aan om BCDR (bedrijfscontinuïteit en herstel na noodgevallen) te configureren voor regionale paren, om te profiteren van het beleid voor isolatie en beschikbaarheid in Azure. Zie [gekoppelde Azure-regio's](../../best-practices-availability-paired-regions.md)voor meer informatie.
+We raden u aan om BCDR (bedrijfscontinuïteit en herstel na noodgevallen) te configureren voor regionale paren, om te profiteren van het beleid voor isolatie en beschikbaarheid in Azure. Zie [Gekoppelde Azure-regio's](../../best-practices-availability-paired-regions.md) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 

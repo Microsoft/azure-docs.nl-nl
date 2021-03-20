@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 06/23/2020
 ms.custom: subject-moving-resources
 ms.openlocfilehash: 573ea96437cf6cb76854ffa417fd3ad3fb86138b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88860894"
 ---
 # <a name="move-an-azure-service-bus-namespace-to-another-region"></a>Een Azure Service Bus naam ruimte naar een andere regio verplaatsen
@@ -48,61 +48,61 @@ Implementeer de sjabloon om een Service Bus naam ruimte te maken in de doel regi
 1. Selecteer in de Azure Portal **een resource maken**.
 2. In **de Marketplace zoeken**, type **sjabloon implementatie** voor de zoek tekst, selecteer **Sjabloonimlementatie (implementeren met aangepaste sjablonen)** en druk vervolgens op **Enter**.
 
-    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/new-template-deployment.png" alt-text="Nieuwe sjabloon implementatie":::    
 1. Selecteer op de pagina **Sjabloonimlementatie** **maken**.
 
-    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Resource Manager-sjabloon downloaden":::        
+    :::image type="content" source="./media/move-across-regions/template-deployment-create-button.png" alt-text="Nieuwe sjabloon implementatie-knop maken":::        
 1. Selecteer op de pagina **aangepaste implementatie** de optie **uw eigen sjabloon bouwen in de editor**.
 
-    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Resource Manager-sjabloon downloaden":::            
-1. Selecteer op de pagina **sjabloon bewerken** de optie **bestand laden** op de werk balk en volg de instructies om detemplate.jste laden ** in** het bestand dat u in de laatste sectie hebt gedownload.
+    :::image type="content" source="./media/move-across-regions/build-template-link.png" alt-text="Uw eigen sjabloon bouwen in de editor-koppeling":::            
+1. Selecteer op de pagina **sjabloon bewerken** de optie **bestand laden** op de werk balk en volg de instructies om detemplate.jste laden **in** het bestand dat u in de laatste sectie hebt gedownload.
 
-    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Resource Manager-sjabloon downloaden":::                
+    :::image type="content" source="./media/move-across-regions/select-template.png" alt-text="Sjabloon selecteren":::                
 1. Selecteer **Opslaan** om de sjabloon op te slaan. 
 
-    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Resource Manager-sjabloon downloaden":::                    
+    :::image type="content" source="./media/move-across-regions/save-template.png" alt-text="Sjabloon opslaan":::                    
 1. Voer op de pagina **aangepaste implementatie** de volgende stappen uit: 
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     2. Selecteer een bestaande **resource groep** of maak een. 
     3. Selecteer de doel **locatie** of-regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
     4. Voer een nieuwe **naam in voor de naam ruimte**.
     1. Selecteer **Controleren + maken**. 
 
-        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon downloaden":::
+        :::image type="content" source="./media/move-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon implementeren":::
     1. Selecteer op de pagina **controleren en maken** onder aan de pagina **maken** . 
     
 ## <a name="verify"></a>Verifiëren
 1. Nadat de implementatie is voltooid, selecteert **u Ga naar resource groep**.
 
-    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/resource-group-navigation-link.png" alt-text="Ga naar de koppeling naar de resource groep":::    
 1. Selecteer op de pagina **resource groep** de service bus naam ruimte. 
 
-    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Resource Manager-sjabloon downloaden":::    
+    :::image type="content" source="./media/move-across-regions/select-namespace.png" alt-text="Service Bus naam ruimte selecteren":::    
 1. Controleer op de pagina **Service Bus naam ruimte** of u de wacht rijen, onderwerpen en abonnementen van de bron regio ziet. 
     1. U ziet **wacht rijen** in de naam ruimte aan de onderkant van het rechterdeel venster.         
     
-        :::image type="content" source="./media/move-across-regions/queue-namespace.png" alt-text="Resource Manager-sjabloon downloaden":::
+        :::image type="content" source="./media/move-across-regions/queue-namespace.png" alt-text="Wacht rijen in de naam ruimte":::
     2. Ga naar het tabblad **onderwerpen** om de onderwerpen in de naam ruimte te bekijken
     
-        :::image type="content" source="./media/move-across-regions/topics-namespace.png" alt-text="Resource Manager-sjabloon downloaden":::
+        :::image type="content" source="./media/move-across-regions/topics-namespace.png" alt-text="Onderwerpen in de naam ruimte":::
     3. Selecteer het onderwerp om te controleren of abonnementen zijn gemaakt. 
 
-        :::image type="content" source="./media/move-across-regions/topic-subscriptions.png" alt-text="Resource Manager-sjabloon downloaden":::      
+        :::image type="content" source="./media/move-across-regions/topic-subscriptions.png" alt-text="Onderwerp abonnementen":::      
     
     
 
 ## <a name="discard-or-clean-up"></a>Verwijderen of opschonen
-Als u na de implementatie wilt beginnen, kunt u de naam ruimte van het **doel service bus**verwijderen en herhaalt u de stappen die worden beschreven in de secties [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
+Als u na de implementatie wilt beginnen, kunt u de naam ruimte van het **doel service bus** verwijderen en herhaalt u de stappen die worden beschreven in de secties [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
 
 Als u de wijzigingen wilt door voeren en het verplaatsen van een Service Bus naam ruimte wilt volt ooien, verwijdert u de **bron service bus naam ruimte**. Zorg ervoor dat u alle berichten verwerkt voordat u de naam ruimte verwijdert. 
 
 Een Service Bus naam ruimte (bron of doel) verwijderen met behulp van de Azure Portal:
 
-1. Typ **Service Bus**in het venster zoeken aan de bovenkant van Azure Portal en selecteer **Service Bus** in de zoek resultaten. U ziet de Service Bus naam ruimten in een lijst.
+1. Typ **Service Bus** in het venster zoeken aan de bovenkant van Azure Portal en selecteer **Service Bus** in de zoek resultaten. U ziet de Service Bus naam ruimten in een lijst.
 2. Selecteer de doel naam ruimte die u wilt verwijderen en selecteer **verwijderen** op de werk balk. 
 
     ![Naam ruimte verwijderen-knop](./media/move-across-regions/delete-namespace-button.png)
-3. Controleer op de pagina **resources verwijderen** de geselecteerde resources en bevestig de verwijdering door **Ja**te typen en vervolgens **verwijderen**te selecteren. 
+3. Controleer op de pagina **resources verwijderen** de geselecteerde resources en bevestig de verwijdering door **Ja** te typen en vervolgens **verwijderen** te selecteren. 
 
     U kunt ook de resource groep met de naam ruimte Service Bus verwijderen. Selecteer op de pagina **resource groep** de optie **resource groep verwijderen** op de werk balk en bevestig de verwijdering. 
 

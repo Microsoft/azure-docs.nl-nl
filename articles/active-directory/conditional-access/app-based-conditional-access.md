@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: spunukol, rosssmi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 122cc6a2be17cb35e77b638a60fc5fa4f035c0d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91266136"
 ---
 # <a name="how-to-require-approved-client-apps-for-cloud-app-access-with-conditional-access"></a>Procedure: goedgekeurde client-apps vereisen voor toegang tot Cloud app met voorwaardelijke toegang
@@ -44,17 +44,17 @@ Organisaties moeten de volgende drie stappen uitvoeren om het gebruik van een go
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **opnemen**selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **opnemen** selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
    1. Selecteer **Gereed**.
-1. Onder **Cloud-apps of acties**  >  **Include**, selecteert u **Office 365**.
-1. Onder **voor waarden**selecteert u **apparaat platforms**.
+1. Onder **Cloud-apps of acties**  >  , selecteert u **Office 365**.
+1. Onder **voor waarden** selecteert u **apparaat platforms**.
    1. Stel **configureren** in op **Ja**.
-   1. Voeg **Android** en **IOS**toe.
-1. Onder **voor waarden**selecteert u **client-apps (preview-versie)**.
+   1. Voeg **Android** en **IOS** toe.
+1. Onder **voor waarden** selecteert u **client-apps (preview-versie)**.
    1. Stel **configureren** in op **Ja**.
    1. Selecteer **Mobiele apps en bureaubladclients** en **Clients met moderne verificatie**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid te maken en in te scha kelen.
 
@@ -63,15 +63,15 @@ Organisaties moeten de volgende drie stappen uitvoeren om het gebruik van een go
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **opnemen**selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **opnemen** selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
    1. Selecteer **Gereed**.
-1. **Cloud apps or actions**  >  **Include**Selecteer **Office 365 Exchange Online**onder Cloud-apps of-acties.
+1.   >  Selecteer **Office 365 Exchange Online** onder Cloud-apps of-acties.
 1. Onder **voor waarden**:
    1. **Client-apps (preview-versie)**:
       1. Stel **configureren** in op **Ja**.
       1. Selecteer **mobiele apps en desktop-clients** en **Exchange ActiveSync-clients**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid te maken en in te scha kelen.
 
@@ -91,17 +91,17 @@ Organisaties moeten de volgende drie stappen uitvoeren om het gebruik van een go
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **opnemen**selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **opnemen** selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
    1. Selecteer **Gereed**.
-1. Onder **Cloud-apps of-acties**  >  **gaat**u naar **Office 365 Exchange Online** en **Office 365 share point online**.
-1. Onder **voor waarden**selecteert u **apparaat platforms**.
+1. Onder **Cloud-apps of-acties**  >  **gaat** u naar **Office 365 Exchange Online** en **Office 365 share point online**.
+1. Onder **voor waarden** selecteert u **apparaat platforms**.
    1. Stel **configureren** in op **Ja**.
-   1. Voeg **Android** en **IOS**toe.
-1. Onder **voor waarden**selecteert u **client-apps (preview-versie)**.
+   1. Voeg **Android** en **IOS** toe.
+1. Onder **voor waarden** selecteert u **client-apps (preview-versie)**.
    1. Stel **configureren** in op **Ja**.
    1. Selecteer **Mobiele apps en bureaubladclients** en **Clients met moderne verificatie**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid te maken en in te scha kelen.
 
@@ -110,15 +110,15 @@ Organisaties moeten de volgende drie stappen uitvoeren om het gebruik van een go
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
 1. Geef uw beleid een naam. Het is raadzaam dat organisaties een zinvolle norm maken voor de namen van hun beleid.
-1. Onder **toewijzingen**selecteert u **gebruikers en groepen**
-   1. Onder **opnemen**selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
+1. Onder **toewijzingen** selecteert u **gebruikers en groepen**
+   1. Onder **opnemen** selecteert u **alle gebruikers** of de specifieke **gebruikers en groepen** waarop u dit beleid wilt Toep assen. 
    1. Selecteer **Gereed**.
-1. **Cloud apps or actions**  >  **Include**Selecteer **Office 365 Exchange Online**onder Cloud-apps of-acties.
+1.   >  Selecteer **Office 365 Exchange Online** onder Cloud-apps of-acties.
 1. Onder **voor waarden**:
    1. **Client-apps (preview-versie)**:
       1. Stel **configureren** in op **Ja**.
       1. Selecteer **mobiele apps en desktop-clients** en **Exchange ActiveSync-clients**.
-1. Onder **toegangs beheer**  >  **toekennen**selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen**en selecteert u **selecteren**.
+1. Onder **toegangs beheer**  >  **toekennen** selecteert u **toegang verlenen**, **goedgekeurde client-app vereisen** en selecteert u **selecteren**.
 1. Bevestig de instellingen en stel **beleid inschakelen** in **op aan**.
 1. Selecteer **maken** om uw beleid te maken en in te scha kelen.
 

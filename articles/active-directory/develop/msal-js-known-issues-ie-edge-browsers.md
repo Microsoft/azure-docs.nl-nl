@@ -14,10 +14,10 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 2a471504b88791b5bfb6ce6cc7c81d60bfbe5028
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83772077"
 ---
 # <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Bekende problemen met Internet Explorer en micro soft Edge-browsers (MSAL.js)
@@ -65,7 +65,7 @@ Opmerking: Hiermee wordt het probleem voor InPrivate-Browsing niet opgelost omda
 
 Er zijn gevallen waarin pop-ups worden geblokkeerd in IE of micro soft Edge, bijvoorbeeld wanneer een tweede pop-up wordt weer gegeven tijdens [multi-factor Authentication](../authentication/concept-mfa-howitworks.md). U ontvangt een waarschuwing in de browser om de pop-up één keer of altijd toe te staan. Als u ervoor kiest om toe te staan, wordt het pop-upvenster automatisch geopend en wordt er een ingang voor de browser geretourneerd `null` . Als gevolg hiervan heeft de bibliotheek geen ingang voor het venster en is er geen manier om het pop-upvenster te sluiten. Hetzelfde probleem treedt niet op in Chrome wanneer u wordt gevraagd popups toe te staan omdat er niet automatisch een pop-upvenster wordt geopend.
 
-Als **tijdelijke oplossing**moeten ontwikkel aars pop-ups in Internet Explorer en micro soft Edge toestaan voordat ze hun app gaan gebruiken om dit probleem te voor komen.
+Als **tijdelijke oplossing** moeten ontwikkel aars pop-ups in Internet Explorer en micro soft Edge toestaan voordat ze hun app gaan gebruiken om dit probleem te voor komen.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over het [gebruik van MSAL.js in Internet Explorer](msal-js-use-ie-browser.md).

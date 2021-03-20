@@ -12,10 +12,10 @@ ms.date: 10/26/2020
 ms.author: gasinh
 ms.subservice: B2C
 ms.openlocfilehash: 337275cef0f2159cb5fac40ac0435408baf3bbef
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96170919"
 ---
 # <a name="tutorial-for-configuring-theaccesshub-admin-tool-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van TheAccessHub-beheer hulpprogramma met Azure Active Directory B2C
@@ -194,7 +194,7 @@ Machtigingen voor het beheren van de klant en CSR/helpdesk gebruikers in het hul
 
 1. Meld u aan bij TheAccessHub-beheer hulpprogramma met de referenties die u hebt gekregen door N8-identiteit
 
-2. Navigeren naar **Manager Tools** de  >  **structuur weergave** van de Manager-hulpprogram ma's
+2. Navigeren naar de  >  **structuur weergave** van de Manager-hulpprogram ma's
 
 3. In deze representatie kunt u visualiseren welke collega's en groepen kunnen beheren welke organisaties.
 
@@ -228,7 +228,7 @@ Met het hulp programma TheAccessHub-beheer kunt u gegevens importeren uit versch
 
 1. Meld u aan bij TheAccessHub-beheer hulpprogramma met de referenties die u hebt gekregen door N8-identiteit
 
-2. Navigeren naar **System Admin**  >  **gegevens bronnen** van systeem beheerder
+2. Navigeren naar   >  **gegevens bronnen** van systeem beheerder
 
 3. Selecteer **gegevens bron toevoegen**
 
@@ -378,7 +378,7 @@ Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beper
 
 1. Meld u aan bij TheAccessHub-beheer hulpprogramma met de referenties die u hebt gekregen door N8-identiteit
 
-2. Ga naar beheer hulpprogramma's voor **systeem beheerders**  >  **Admin Tools**  >  **Azure B2C-beleid**
+2. Ga naar beheer hulpprogramma's voor **systeem beheerders**  >    >  **Azure B2C-beleid**
 
 3. Geef uw Azure AD B2C Tenant domein en de twee identiteits experience Framework-Id's op uit uw Framework-configuratie voor identiteits ervaring
 

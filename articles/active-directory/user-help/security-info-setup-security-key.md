@@ -12,10 +12,10 @@ ms.topic: end-user-help
 ms.date: 07/18/2019
 ms.author: curtand
 ms.openlocfilehash: c056e439deac71417ff14dcfc3f2c3c95db41946
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88797663"
 ---
 # <a name="set-up-a-security-key-as-your-verification-method"></a>Stel een beveiligings sleutel in als uw verificatie methode
@@ -65,24 +65,24 @@ U moet uw beveiligings sleutel maken en deze een unieke pincode geven voordat u 
 
 1. Ga naar de pagina **Mijn profiel** op https://myaccount.microsoft.com en meld u aan als u dat nog niet hebt gedaan.
 
-2. Selecteer **beveiligings gegevens**, selecteer **methode toevoegen**en selecteer vervolgens **beveiligings sleutel** in de vervolg keuzelijst **een methode toevoegen** .
+2. Selecteer **beveiligings gegevens**, selecteer **methode toevoegen** en selecteer vervolgens **beveiligings sleutel** in de vervolg keuzelijst **een methode toevoegen** .
 
     ![Het vak methode toevoegen, waarbij de beveiligings sleutel is geselecteerd](media/security-info/security-info-security-key-add-method.png)
 
-3. Selecteer **toevoegen**en selecteer vervolgens het type van de beveiligings sleutel die u hebt, hetzij **USB-apparaat** of **NFC-apparaat**.
+3. Selecteer **toevoegen** en selecteer vervolgens het type van de beveiligings sleutel die u hebt, hetzij **USB-apparaat** of **NFC-apparaat**.
 
     ![Kies of u een USB-of NFC-type van de beveiligings sleutel hebt](media/security-info/security-info-security-key-choose-type.png)
 
     > [!Note]
     > Als u niet zeker weet welk type beveiligings sleutel u hebt, raadpleegt u de documentatie van de fabrikant. Als u niet zeker weet wat de fabrikant is, neemt u contact op met de Help Desk van uw organisatie.
 
-4. Laat uw beveiligings sleutel fysiek beschikbaar en selecteer **volgende**in het vak **beveiligings sleutel** .
+4. Laat uw beveiligings sleutel fysiek beschikbaar en selecteer **volgende** in het vak **beveiligings sleutel** .
 
     ![Vak registratie van beveiligings sleutel starten](media/security-info/security-info-security-key-start-setup.png)
 
     Er wordt een nieuw vak weer gegeven om u te helpen bij het instellen van uw nieuwe aanmeldings methode.
 
-5. Selecteer in het vak **uw nieuwe aanmeldings methode instellen** de optie **volgende**en klik vervolgens op:
+5. Selecteer in het vak **uw nieuwe aanmeldings methode instellen** de optie **volgende** en klik vervolgens op:
 
     - Als uw beveiligings sleutel een USB-apparaat is, plaatst u de beveiligings sleutel in de USB-poort van uw apparaat.
 
@@ -134,7 +134,7 @@ Als u alle account gegevens wilt verwijderen die zijn opgeslagen in uw fysieke b
 
 #### <a name="to-reset-your-security-key"></a>Uw beveiligings sleutel opnieuw instellen
 
-1. Open de Windows-instellingen-app, selecteer **accounts**, selecteer **aanmeldings opties**, selecteer **beveiligings sleutel**en selecteer vervolgens **beheren**.
+1. Open de Windows-instellingen-app, selecteer **accounts**, selecteer **aanmeldings opties**, selecteer **beveiligings sleutel** en selecteer vervolgens **beheren**.
 
 2. Plaats uw beveiligings sleutel in de USB-poort of tik op uw NFC-lezer om uw identiteit te verifiëren.
 
@@ -148,7 +148,7 @@ U kunt een nieuwe pincode voor de beveiligings sleutel maken voor uw beveiliging
 
 #### <a name="to-create-a-new-security-key-pin"></a>Een nieuwe pincode voor de beveiligings sleutel maken
 
-1. Open de Windows-instellingen-app, selecteer **accounts**, selecteer **aanmeldings opties**, selecteer **beveiligings sleutel**en selecteer vervolgens **beheren**.
+1. Open de Windows-instellingen-app, selecteer **accounts**, selecteer **aanmeldings opties**, selecteer **beveiligings sleutel** en selecteer vervolgens **beheren**.
 
 2. Plaats uw beveiligings sleutel in de USB-poort of tik op uw NFC-lezer om uw identiteit te verifiëren.
 3. Selecteer **toevoegen** in het gebied **pincode van beveiligings sleutel** , typ en bevestig uw nieuwe pincode voor de beveiligings sleutel en selecteer vervolgens **OK**.

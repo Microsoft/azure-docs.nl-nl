@@ -9,10 +9,10 @@ ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
 ms.openlocfilehash: 136853182e353ad5cd71981db5935fc3babe162e
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93339591"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-sql-api-account-using-striim"></a>Gegevens migreren naar Azure Cosmos DB SQL-API-account met behulp van Realtimeplatform
@@ -30,13 +30,13 @@ In dit artikel wordt beschreven hoe u Realtimeplatform kunt gebruiken om gegeven
 
 ## <a name="deploy-the-striim-marketplace-solution"></a>De Realtimeplatform Marketplace-oplossing implementeren
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer **een resource maken** en zoek naar **realtimeplatform** in azure Marketplace. Selecteer de eerste optie en **Maak** deze.
 
    :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-azure-marketplace.png" alt-text="Realtimeplatform Marketplace-item zoeken":::
 
-1. Voer vervolgens de configuratie-eigenschappen van de Realtimeplatform-instantie in. De Realtimeplatform-omgeving wordt geïmplementeerd op een virtuele machine. Voer in het deel venster **basis beginselen** de **VM-gebruikers naam** , het **VM-wacht woord** in (dit wacht woord wordt gebruikt voor SSH naar de virtuele machine). Selecteer uw **abonnement** , **resource groep** en **locatie gegevens** waar u realtimeplatform wilt implementeren. Wanneer u klaar bent, selecteert u **OK**.
+1. Voer vervolgens de configuratie-eigenschappen van de Realtimeplatform-instantie in. De Realtimeplatform-omgeving wordt geïmplementeerd op een virtuele machine. Voer in het deel venster **basis beginselen** de **VM-gebruikers naam**, het **VM-wacht woord** in (dit wacht woord wordt gebruikt voor SSH naar de virtuele machine). Selecteer uw **abonnement**, **resource groep** en **locatie gegevens** waar u realtimeplatform wilt implementeren. Wanneer u klaar bent, selecteert u **OK**.
 
    :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-configure-basic-settings.png" alt-text="Basis instellingen voor Realtimeplatform configureren":::
 
@@ -50,7 +50,7 @@ In dit artikel wordt beschreven hoe u Realtimeplatform kunt gebruiken om gegeven
 
    Nadat u het formulier hebt ingevuld, selecteert u **OK** om door te gaan.
 
-1. Configureer in het deel venster **realtimeplatform toegangs instellingen** het **open bare IP-adres** (Kies de standaard waarden), de **domein naam voor realtimeplatform** , het **beheerders wachtwoord** dat u wilt gebruiken om u aan te melden bij de realtimeplatform-gebruikers interface. Een VNET en subnet configureren (Kies de standaard waarden). Nadat u de details hebt ingevuld, selecteert u **OK** om door te gaan.
+1. Configureer in het deel venster **realtimeplatform toegangs instellingen** het **open bare IP-adres** (Kies de standaard waarden), de **domein naam voor realtimeplatform**, het **beheerders wachtwoord** dat u wilt gebruiken om u aan te melden bij de realtimeplatform-gebruikers interface. Een VNET en subnet configureren (Kies de standaard waarden). Nadat u de details hebt ingevuld, selecteert u **OK** om door te gaan.
 
    :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-access-settings.png" alt-text="Realtimeplatform-toegangs instellingen":::
 
@@ -130,7 +130,7 @@ In deze sectie configureert u de Azure Cosmos DB SQL-API-account als doel voor h
 
    :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-login-ui.png" alt-text="Aanmelden bij Realtimeplatform":::
 
-1. U ontvangt nu de start pagina van Realtimeplatform. Er zijn drie verschillende deel Vensters: **Dash boards** , **apps** en **SourcePreview**. In het deel venster Dash boards kunt u gegevens in realtime verplaatsen en visualiseren. Het deel venster apps bevat uw gegevens pijplijnen voor streamen of gegevens stromen. Aan de rechter kant van de pagina is SourcePreview waar u een voor beeld van uw gegevens kunt bekijken voordat u deze verplaatst.
+1. U ontvangt nu de start pagina van Realtimeplatform. Er zijn drie verschillende deel Vensters: **Dash boards**, **apps** en **SourcePreview**. In het deel venster Dash boards kunt u gegevens in realtime verplaatsen en visualiseren. Het deel venster apps bevat uw gegevens pijplijnen voor streamen of gegevens stromen. Aan de rechter kant van de pagina is SourcePreview waar u een voor beeld van uw gegevens kunt bekijken voordat u deze verplaatst.
 
 1. Het deel venster **apps** selecteren. we richten zich nu op dit deel venster. Er zijn diverse voor beeld-apps die u kunt gebruiken om meer te weten te komen over Realtimeplatform, maar in dit artikel maakt u zelf een eigen sjabloon. Selecteer de knop **app toevoegen** in de rechter bovenhoek.
 
@@ -146,7 +146,7 @@ In deze sectie configureert u de Azure Cosmos DB SQL-API-account als doel voor h
 
 1. Geef op de volgende pagina de naam van uw toepassing. U kunt een naam opgeven zoals **oraToCosmosDB** en vervolgens **Opslaan** selecteren.
 
-1. Voer vervolgens de bron configuratie van de Oracle-bron instantie in. Voer een waarde in voor de **bron naam**. De bron naam is slechts een naamgevings Conventie voor de Realtimeplatform-toepassing, u kunt iets als **src_onPremOracle** gebruiken. Voer waarden in voor de rest van de bron parameters **URL** , **gebruikers naam** , **wacht woord** , kies **LogMiner** als de lezer om gegevens van Oracle te lezen. Selecteer **Volgende** om door te gaan.
+1. Voer vervolgens de bron configuratie van de Oracle-bron instantie in. Voer een waarde in voor de **bron naam**. De bron naam is slechts een naamgevings Conventie voor de Realtimeplatform-toepassing, u kunt iets als **src_onPremOracle** gebruiken. Voer waarden in voor de rest van de bron parameters **URL**, **gebruikers naam**, **wacht woord**, kies **LogMiner** als de lezer om gegevens van Oracle te lezen. Selecteer **Volgende** om door te gaan.
 
    :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/configure-source-parameters.png" alt-text="Bron parameters configureren":::
 
@@ -164,7 +164,7 @@ In deze sectie configureert u de Azure Cosmos DB SQL-API-account als doel voor h
 
    * **Doel naam** : Geef een beschrijvende naam op voor het doel. 
    * **Invoer van** -van-uit de vervolg keuzelijst selecteert u de invoer stroom van de die u hebt gemaakt in de Oracle-bron configuratie. 
-   * **Verzamelingen** : Voer de doel-Azure Cosmos DB configuratie-eigenschappen in. De syntaxis van de verzamelingen is **SourceSchema. SourceTable, TargetDatabase. TargetContainer**. In dit voor beeld is de waarde ' SYSTEM. ORDERS, StriimDemo. orders. 
+   * **Verzamelingen**: Voer de doel-Azure Cosmos DB configuratie-eigenschappen in. De syntaxis van de verzamelingen is **SourceSchema. SourceTable, TargetDatabase. TargetContainer**. In dit voor beeld is de waarde ' SYSTEM. ORDERS, StriimDemo. orders. 
    * **AccessKey** -de PrimaryKey van uw Azure Cosmos-account.
    * **ServiceEndpoint** : de URI van uw Azure Cosmos-account, die u kunt vinden in de sectie **sleutels** van de Azure Portal. 
 

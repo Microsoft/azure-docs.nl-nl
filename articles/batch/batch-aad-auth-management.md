@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.date: 04/27/2017
 ms.custom: has-adal-ref, devx-track-csharp
 ms.openlocfilehash: ff49d5e88df7c56ed4dee0685f09e45eb372aa5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88930210"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Oplossingen voor Batch Management verifiëren met Active Directory
@@ -39,15 +39,15 @@ Vervolgens moet u de toegang tot uw toepassing delegeren naar de Azure Resource 
 
 Volg deze stappen in Azure Portal:
 
-1. Kies in het navigatie deel venster aan de linkerkant van de Azure Portal **alle services**, klik op **app-registraties**en klik op **toevoegen**.
+1. Kies in het navigatie deel venster aan de linkerkant van de Azure Portal **alle services**, klik op **app-registraties** en klik op **toevoegen**.
 2. Zoek de naam van uw toepassing in de lijst met app-registraties:
 
     ![Zoek naar de naam van uw toepassing](./media/batch-aad-auth-management/search-app-registration.png)
 
 3. De Blade **instellingen** weer geven. Selecteer in de sectie **API-toegang** de optie **vereiste machtigingen**.
 4. Klik op **toevoegen** om een nieuwe vereiste machtiging toe te voegen.
-5. Voer in stap 1 **Windows Azure Service Management-API**in, selecteer de API in de lijst met resultaten en klik op de knop **selecteren** .
-6. Schakel in stap 2 het selectie vakje naast **toegang tot het klassieke Azure-implementatie model in als organisatie gebruikers**en klik op de knop **selecteren** .
+5. Voer in stap 1 **Windows Azure Service Management-API** in, selecteer de API in de lijst met resultaten en klik op de knop **selecteren** .
+6. Schakel in stap 2 het selectie vakje naast **toegang tot het klassieke Azure-implementatie model in als organisatie gebruikers** en klik op de knop **selecteren** .
 7. Klik op de knop **gereed** .
 
 Op de Blade **vereiste machtigingen** ziet u nu dat machtigingen voor uw toepassing worden verleend aan zowel de ADAL-als de Resource Manager-api's. Er worden standaard machtigingen verleend aan ADAL wanneer u uw app voor het eerst registreert bij Azure AD.

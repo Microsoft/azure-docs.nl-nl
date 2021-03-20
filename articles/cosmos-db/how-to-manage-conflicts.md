@@ -9,10 +9,10 @@ ms.date: 06/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 8f98c2201159350f5774f4d2b05102384f31f3af
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93339339"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Conflictoplossingsbeleid beheren in Azure Cosmos DB
@@ -24,7 +24,7 @@ Als er meerdere regio's worden geschreven, kunnen er conflicten optreden wanneer
 
 Deze voorbeelden laten zien hoe u een container kunt instellen met het conflictoplossingsbeleid 'last writer wins'. Het standaardpad voor de laatste schrijver: WINS is het tijds tempel veld of de `_ts` eigenschap. Voor SQL-API kan dit ook worden ingesteld op een door de gebruiker gedefinieerd pad met een numeriek type. Bij een conflict wordt de hoogste waarde wint. Als het pad niet is ingesteld of ongeldig is, wordt standaard ingesteld op `_ts` . Conflicten die met dit beleid zijn opgelost, worden niet weer gegeven in de feed conflict. Dit beleid kan door alle Api's worden gebruikt.
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -136,10 +136,10 @@ Deze voorbeelden laten zien hoe u een container kunt instellen met aangepast con
 
 Opgeslagen procedures voor het oplossen van aangepaste conflicten moeten worden geïmplementeerd met behulp van de functie handtekening die hieronder wordt weer gegeven. De functie naam hoeft niet overeen te komen met de naam die wordt gebruikt bij het registreren van de opgeslagen procedure bij de container, maar dit vereenvoudigt de naam. Hier volgt een beschrijving van de para meters die voor deze opgeslagen procedure moeten worden geïmplementeerd.
 
-- **incomingItem** : het item dat wordt ingevoegd of bijgewerkt tijdens de door voering waardoor de conflicten worden gegenereerd. Is null voor Delete-bewerkingen.
-- **existingItem** : het momenteel doorgevoerde item. Deze waarde is niet-null in een update en Null voor een INSERT of DELETE.
-- **isTombstone** : Boolean die aangeeft of de incomingItem een conflict veroorzaakt met een eerder verwijderd item. Indien true, is existingItem ook null.
-- **conflictingItems** : de matrix van de doorgevoerde versie van alle items in de container die conflicteren met INCOMINGITEM op id of andere eigenschappen van een unieke index.
+- **incomingItem**: het item dat wordt ingevoegd of bijgewerkt tijdens de door voering waardoor de conflicten worden gegenereerd. Is null voor Delete-bewerkingen.
+- **existingItem**: het momenteel doorgevoerde item. Deze waarde is niet-null in een update en Null voor een INSERT of DELETE.
+- **isTombstone**: Boolean die aangeeft of de incomingItem een conflict veroorzaakt met een eerder verwijderd item. Indien true, is existingItem ook null.
+- **conflictingItems**: de matrix van de doorgevoerde versie van alle items in de container die conflicteren met INCOMINGITEM op id of andere eigenschappen van een unieke index.
 
 > [!IMPORTANT]
 > Net als bij elke opgeslagen procedure heeft een aangepaste procedure voor het oplossen van conflicten toegang tot alle gegevens met dezelfde partitie sleutel en kan een invoeg-, update-of verwijder bewerking worden uitgevoerd om conflicten op te lossen.
@@ -200,7 +200,7 @@ function resolver(incomingItem, existingItem, isTombstone, conflictingItems) {
 }
 ```
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-stored-proc-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -329,7 +329,7 @@ Nadat de container is gemaakt, moet u de opgeslagen procedure `resolver` maken.
 
 Deze voorbeelden laten zien hoe u een container kunt instellen met aangepast conflictoplossingsbeleid. Deze conflicten worden weergegeven in de conflictfeed.
 
-### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="create-custom-conflict-resolution-policy-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 
@@ -433,7 +433,7 @@ manual_collection = client.CreateContainer(database['_self'], collection)
 
 Deze voorbeelden laten zien hoe u kunt lezen uit de conflictfeed van een container. Conflicten worden alleen weer gegeven in de conflict toevoer als deze niet automatisch zijn opgelost of als er een aangepast conflict beleid wordt gebruikt.
 
-### <a name="net-sdk"></a><a id="read-from-conflict-feed-dotnet"></a>.NET SDK
+### <a name="net-sdk"></a><a id="read-from-conflict-feed-dotnet"></a>.NET-SDK
 
 # <a name="net-sdk-v2"></a>[.NET SDK V2](#tab/dotnetv2)
 

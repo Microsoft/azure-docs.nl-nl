@@ -9,10 +9,10 @@ ms.date: 09/25/2019
 ms.author: mjbrown
 ms.custom: devx-track-csharp
 ms.openlocfilehash: edb6114406922d55c439ae7426a2be933bba4aee
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93334084"
 ---
 # <a name="migrate-non-partitioned-containers-to-partitioned-containers"></a>Niet-gepartitioneerde containers migreren naar gepartitioneerde containers
@@ -20,7 +20,7 @@ ms.locfileid: "93334084"
 
 Azure Cosmos DB ondersteunt het maken van containers zonder een partitie sleutel. Op dit moment kunt u niet-gepartitioneerde containers maken met behulp van Azure CLI en Azure Cosmos DB Sdk's (.net, Java, NodeJs) die een versie hebben die kleiner is dan of gelijk is aan 2. x. U kunt geen niet-gepartitioneerde containers maken met behulp van de Azure Portal. Dergelijke niet-gepartitioneerde containers zijn echter niet elastisch en hebben een vaste opslag capaciteit van 20 GB en doorvoer limiet van 10.000 RU/s.
 
-De niet-gepartitioneerde containers zijn verouderd en u moet uw bestaande niet-gepartitioneerde containers naar gepartitioneerde containers migreren om de opslag en door voer te schalen. Azure Cosmos DB biedt een systeem gedefinieerd mechanisme voor het migreren van niet-gepartitioneerde containers naar gepartitioneerde containers. In dit document wordt uitgelegd hoe alle bestaande niet-gepartitioneerde containers automatisch in gepartitioneerde containers worden gemigreerd. U kunt alleen profiteren van de functie voor automatisch migreren als u de V3-versie van Sdk's in alle talen gebruikt.
+De niet-gepartitioneerde containers zijn verouderd en u moet uw bestaande niet-gepartitioneerde containers migreren naar gepartitioneerde containers om de opslag en doorvoer te schalen. Azure Cosmos DB biedt een door het systeem gedefinieerd mechanisme voor het migreren van niet-gepartitioneerde containers naar gepartitioneerde containers. In dit document wordt uitgelegd hoe alle bestaande niet-gepartitioneerde containers automatisch worden gemigreerd naar gepartitioneerde containers. U kunt de functie voor automatisch migreren alleen gebruiken als u de V3-versie van SDK's in alle talen gebruikt.
 
 > [!NOTE]
 > Op dit moment kunt u de MongoDB-en Gremlin-API-accounts niet Azure Cosmos DB migreren met behulp van de stappen die in dit document worden beschreven.

@@ -8,10 +8,10 @@ ms.subservice: education-hub
 ms.topic: overview
 ms.date: 06/30/2020
 ms.openlocfilehash: cb283380487310165c646c8615d10a545d1a923b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92675696"
 ---
 # <a name="frequently-asked-questions-about-the-education-hub"></a>Veelgestelde vragen over de Education Hub
@@ -252,10 +252,10 @@ Als u zich nog steeds niet kunt aanmelden, neemt u contact op met de beheerder v
 
 ### <a name="how-do-i-find-my-subscriber-id"></a>Hoe kan ik mijn abonnee-id vinden?
 
-- **Wanneer u zich voor het eerst inschrijft bij het programma** : Uw abonnement-id staat in de welkomstmail die u voor het abonnement hebt ontvangen.
-- **Als u uw abonnement hebt vernieuwd** : Uw abonnement-id staat in de e-mail met de bevestiging die de abonnementsbeheerder heeft ontvangen.
+- **Wanneer u zich voor het eerst inschrijft bij het programma**: Uw abonnement-id staat in de welkomstmail die u voor het abonnement hebt ontvangen.
+- **Als u uw abonnement hebt vernieuwd**: Uw abonnement-id staat in de e-mail met de bevestiging die de abonnementsbeheerder heeft ontvangen.
 
-Uw abonnement-id kunt u ook vinden in de Visual Studio Subscription-portal. Nadat u zich hebt aangemeld, kijkt u onder **Mijn abonnement** op de pagina **Mijn account** .
+Uw abonnement-id kunt u ook vinden in de Visual Studio Subscription-portal. Nadat u zich hebt aangemeld, kijkt u onder **Mijn abonnement** op de pagina **Mijn account**.
 
 [Neem contact met ons op](https://azureforeducation.microsoft.com/institutions/Contact) als u hulp nodig hebt bij het vinden van uw abonnee-id.
 
@@ -282,7 +282,7 @@ Als u deze e-mails niet krijgt en u bang bent dat uw abonnement binnenkort afloo
 
 U kunt ook naar de [pagina van Azure Dev Tools for Teaching gaan waar u het abonnement kunt verlengen](https://portal.azureforeducation.microsoft.com/) en de benodigde stappen doorlopen.
 
-Als u de vervaldatum van uw abonnement wilt controleren, gaat u naar de [beheerportal van Azure Dev Tools for Teaching](https://azureforeducation.microsoft.com/account/Subscriptions) en kijkt u onder **Abonnementen** .
+Als u de vervaldatum van uw abonnement wilt controleren, gaat u naar de [beheerportal van Azure Dev Tools for Teaching](https://azureforeducation.microsoft.com/account/Subscriptions) en kijkt u onder **Abonnementen**.
 
 ### <a name="what-if-i-need-more-help"></a>Wat moet ik doen als ik meer hulp nodig heb?
 

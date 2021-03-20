@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 02/03/2021
+ms.date: 03/11/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: f7ba6363ec3a38d37ea3df0f76409289069638e8
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 80a943d235783852f57832363b5af8048f010575
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99537793"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599426"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Procedure: Text Analytics gebruiken voor de status (preview)
 
@@ -44,7 +44,7 @@ Herkenning met de naam entiteit detecteert woorden en zinsdelen die in ongestruc
 
 ### <a name="relation-extraction"></a>[Relatie-extractie](#tab/relation-extraction)
 
-Met relatie-extractie worden betekenis volle verbindingen van concepten aangegeven die worden vermeld in de tekst. Zo wordt een relatie ' tijd van voor waarde ' gevonden door een voorwaarde naam te koppelen aan een tijd. 
+Met relatie-extractie worden betekenis volle verbindingen van concepten aangegeven die worden vermeld in de tekst. Bijvoorbeeld, een relatie ' tijd van voor waarde ' wordt gevonden door een naam van een voor waarde te koppelen aan een tijd of tussen een afkorting en een volledige beschrijving.  
 
 > [!div class="mx-imgBorder"]
 > ![Status RE](../media/ta-for-health/health-relation-extraction.png)
@@ -52,19 +52,23 @@ Met relatie-extractie worden betekenis volle verbindingen van concepten aangegev
 
 ### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
-Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten die worden vermeld in tekst te koppelen aan concepten die zijn gevonden in een vooraf gedefinieerde data base met concepten. Bijvoorbeeld het Unified medisch taal systeem (UMLS).
+Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten die worden vermeld in tekst te koppelen aan concepten die zijn gevonden in een vooraf gedefinieerde data base met concepten, waaronder het Unified medisch language-systeem (UMLS). Medische concepten worden ook als voorkeurs benaming toegewezen, als een extra vorm van normalisatie.
 
 > [!div class="mx-imgBorder"]
 > ![Health EL](../media/ta-for-health/health-entity-linking.png)
 
 Text Analytics status ondersteunt de koppeling naar de Health-en biomedische woorden lijst in de[UMLS](https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html)-kennis bron (Unified medisch language System).
 
-### <a name="negation-detection"></a>[Detectie van negatie](#tab/negation-detection) 
+### <a name="assertion-detection"></a>[Bevestigings detectie](#tab/assertion-detection) 
 
-De betekenis van medische inhoud wordt sterk beïnvloed door para meters zoals negatie, wat kritieke implicatie kan hebben als er een probleem is vastgesteld. Text Analytics voor de status ondersteunt de detectie van negatie voor de verschillende entiteiten die in de tekst worden genoemd. 
+De betekenis van medische inhoud wordt sterk beïnvloed door aanpassings functies, zoals negatieve of voorwaardelijke beweringen die kritieke implicaties kunnen hebben als dat niet het geval is. Text Analytics voor de status ondersteunt drie categorieën bevestigings detectie voor entiteiten in de tekst: 
+
+* zekerheid
+* waarden
+* verband
 
 > [!div class="mx-imgBorder"]
-> ![Status NEG](../media/ta-for-health/health-negation.png)
+> ![Status NEG](../media/ta-for-health/assertions.png)
 
 ---
 
@@ -137,20 +141,20 @@ example.json
 
 Omdat deze POST-aanvraag wordt gebruikt voor het verzenden van een taak voor de asynchrone bewerking, is er geen tekst in het antwoord object.  U hebt echter de waarde van de bewerkings locatie sleutel in de antwoord headers nodig om een GET-aanvraag te maken om de status van de taak en de uitvoer te controleren.  Hieronder ziet u een voor beeld van de waarde van de bewerkings locatie in de antwoord header van de POST-aanvraag:
 
-`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/entities/health/jobs/<jobID>`
+`https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/entities/health/jobs/<jobID>`
 
 Als u de taak status wilt controleren, maakt u een GET-aanvraag naar de URL in de waarde van de sleutel header van de bewerkings locatie van het POST-antwoord.  De volgende statussen worden gebruikt om de status van een taak weer te geven: `NotStarted` , `running` , `succeeded` ,,, en `failed` `rejected` `cancelling` `cancelled` .  
 
 U kunt een taak met een `NotStarted` of `running` -status annuleren met een delete http-aanroep naar dezelfde URL als de GET-aanvraag.  Meer informatie over het verwijderen van de aanroep vindt u in de [Text Analytics voor status gehoste API-referentie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/CancelHealthJob).
 
-Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekening mee dat de uitvoer beschikbaar is voor ophalen totdat de `expirationDateTime` (24 uur vanaf het tijdstip waarop de taak is gemaakt) is verstreken waarna de uitvoer wordt verwijderd.
+Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  De uitvoer is beschikbaar voor ophalen totdat de `expirationDateTime` (24 uur vanaf het tijdstip waarop de taak is gemaakt) is verstreken waarna de uitvoer wordt verwijderd.
 
 ```json
 {
-    "jobId": "b672c6f5-7c0d-4783-ba8c-4d0c47213454",
-    "lastUpdateDateTime": "2020-11-18T01:45:00Z",
-    "createdDateTime": "2020-11-18T01:44:55Z",
-    "expirationDateTime": "2020-11-19T01:44:55Z",
+    "jobId": "be437134-a76b-4e45-829e-9b37dcd209bf",
+    "lastUpdateDateTime": "2021-03-11T05:43:37Z",
+    "createdDateTime": "2021-03-11T05:42:32Z",
+    "expirationDateTime": "2021-03-12T05:42:32Z",
     "status": "succeeded",
     "errors": [],
     "results": {
@@ -163,8 +167,7 @@ Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekeni
                         "length": 5,
                         "text": "100mg",
                         "category": "Dosage",
-                        "confidenceScore": 1.0,
-                        "isNegated": false
+                        "confidenceScore": 1.0
                     },
                     {
                         "offset": 31,
@@ -172,15 +175,35 @@ Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekeni
                         "text": "remdesivir",
                         "category": "MedicationName",
                         "confidenceScore": 1.0,
-                        "isNegated": false,
+                        "name": "remdesivir",
                         "links": [
                             {
                                 "dataSource": "UMLS",
                                 "id": "C4726677"
                             },
                             {
+                                "dataSource": "DRUGBANK",
+                                "id": "DB14761"
+                            },
+                            {
+                                "dataSource": "GS",
+                                "id": "6192"
+                            },
+                            {
+                                "dataSource": "MEDCIN",
+                                "id": "398132"
+                            },
+                            {
+                                "dataSource": "MMSL",
+                                "id": "d09540"
+                            },
+                            {
                                 "dataSource": "MSH",
                                 "id": "C000606551"
+                            },
+                            {
+                                "dataSource": "MTHSPL",
+                                "id": "3QKI37EEHE"
                             },
                             {
                                 "dataSource": "NCI",
@@ -189,6 +212,22 @@ Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekeni
                             {
                                 "dataSource": "NCI_FDA",
                                 "id": "3QKI37EEHE"
+                            },
+                            {
+                                "dataSource": "NDDF",
+                                "id": "018308"
+                            },
+                            {
+                                "dataSource": "RXNORM",
+                                "id": "2284718"
+                            },
+                            {
+                                "dataSource": "SNOMEDCT_US",
+                                "id": "870592005"
+                            },
+                            {
+                                "dataSource": "VANDF",
+                                "id": "4039395"
                             }
                         ]
                     },
@@ -197,57 +236,62 @@ Hier volgt een voor beeld van het antwoord van een GET-aanvraag.  Houd er rekeni
                         "length": 13,
                         "text": "intravenously",
                         "category": "MedicationRoute",
-                        "confidenceScore": 1.0,
-                        "isNegated": false
-                    },
-                    {
-                        "offset": 56,
-                        "length": 4,
-                        "text": "over",
-                        "category": "Time",
-                        "confidenceScore": 0.87,
-                        "isNegated": false
+                        "confidenceScore": 1.0
                     },
                     {
                         "offset": 73,
                         "length": 7,
                         "text": "120 min",
                         "category": "Time",
-                        "confidenceScore": 0.99,
-                        "isNegated": false
+                        "confidenceScore": 0.94
                     }
                 ],
                 "relations": [
                     {
                         "relationType": "DosageOfMedication",
-                        "bidirectional": false,
-                        "source": "#/results/documents/0/entities/0",
-                        "target": "#/results/documents/0/entities/1"
+                        "entities": [
+                            {
+                                "ref": "#/results/documents/0/entities/0",
+                                "role": "Dosage"
+                            },
+                            {
+                                "ref": "#/results/documents/0/entities/1",
+                                "role": "Medication"
+                            }
+                        ]
                     },
                     {
                         "relationType": "RouteOfMedication",
-                        "bidirectional": false,
-                        "source": "#/results/documents/0/entities/2",
-                        "target": "#/results/documents/0/entities/1"
+                        "entities": [
+                            {
+                                "ref": "#/results/documents/0/entities/1",
+                                "role": "Medication"
+                            },
+                            {
+                                "ref": "#/results/documents/0/entities/2",
+                                "role": "Route"
+                            }
+                        ]
                     },
                     {
                         "relationType": "TimeOfMedication",
-                        "bidirectional": false,
-                        "source": "#/results/documents/0/entities/3",
-                        "target": "#/results/documents/0/entities/1"
-                    },
-                    {
-                        "relationType": "TimeOfMedication",
-                        "bidirectional": false,
-                        "source": "#/results/documents/0/entities/4",
-                        "target": "#/results/documents/0/entities/1"
+                        "entities": [
+                            {
+                                "ref": "#/results/documents/0/entities/1",
+                                "role": "Medication"
+                            },
+                            {
+                                "ref": "#/results/documents/0/entities/3",
+                                "role": "Time"
+                            }
+                        ]
                     }
                 ],
                 "warnings": []
             }
         ],
         "errors": [],
-        "modelVersion": "2020-09-03"
+        "modelVersion": "2021-03-01"
     }
 }
 ```
@@ -294,30 +338,47 @@ De volgende JSON is een voor beeld van de Text Analytics voor de status-API-antw
             "id": "1",
             "entities": [
                 {
-                    "id": "0",
                     "offset": 25,
                     "length": 5,
                     "text": "100mg",
                     "category": "Dosage",
-                    "confidenceScore": 1.0,
-                    "isNegated": false
+                    "confidenceScore": 1.0
                 },
                 {
-                    "id": "1",
                     "offset": 31,
                     "length": 10,
                     "text": "remdesivir",
                     "category": "MedicationName",
                     "confidenceScore": 1.0,
-                    "isNegated": false,
+                    "name": "remdesivir",
                     "links": [
                         {
                             "dataSource": "UMLS",
                             "id": "C4726677"
                         },
                         {
+                            "dataSource": "DRUGBANK",
+                            "id": "DB14761"
+                        },
+                        {
+                            "dataSource": "GS",
+                            "id": "6192"
+                        },
+                        {
+                            "dataSource": "MEDCIN",
+                            "id": "398132"
+                        },
+                        {
+                            "dataSource": "MMSL",
+                            "id": "d09540"
+                        },
+                        {
                             "dataSource": "MSH",
                             "id": "C000606551"
+                        },
+                        {
+                            "dataSource": "MTHSPL",
+                            "id": "3QKI37EEHE"
                         },
                         {
                             "dataSource": "NCI",
@@ -326,115 +387,215 @@ De volgende JSON is een voor beeld van de Text Analytics voor de status-API-antw
                         {
                             "dataSource": "NCI_FDA",
                             "id": "3QKI37EEHE"
+                        },
+                        {
+                            "dataSource": "NDDF",
+                            "id": "018308"
+                        },
+                        {
+                            "dataSource": "RXNORM",
+                            "id": "2284718"
+                        },
+                        {
+                            "dataSource": "SNOMEDCT_US",
+                            "id": "870592005"
+                        },
+                        {
+                            "dataSource": "VANDF",
+                            "id": "4039395"
                         }
                     ]
                 },
                 {
-                    "id": "2",
                     "offset": 42,
                     "length": 13,
                     "text": "intravenously",
                     "category": "MedicationRoute",
-                    "confidenceScore": 1.0,
-                    "isNegated": false
+                    "confidenceScore": 1.0
                 },
                 {
-                    "id": "3",
-                    "offset": 56,
-                    "length": 4,
-                    "text": "over",
-                    "category": "Time",
-                    "confidenceScore": 0.87,
-                    "isNegated": false
-                },
-                {
-                    "id": "4",
                     "offset": 73,
                     "length": 7,
                     "text": "120 min",
                     "category": "Time",
-                    "confidenceScore": 0.99,
-                    "isNegated": false
+                    "confidenceScore": 0.94
                 }
             ],
             "relations": [
                 {
                     "relationType": "DosageOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/0/entities/0",
-                    "target": "#/documents/0/entities/1"
+                    "entities": [
+                        {
+                            "ref": "#/documents/0/entities/0",
+                            "role": "Dosage"
+                        },
+                        {
+                            "ref": "#/documents/0/entities/1",
+                            "role": "Medication"
+                        }
+                    ]
                 },
                 {
                     "relationType": "RouteOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/0/entities/2",
-                    "target": "#/documents/0/entities/1"
+                    "entities": [
+                        {
+                            "ref": "#/documents/0/entities/1",
+                            "role": "Medication"
+                        },
+                        {
+                            "ref": "#/documents/0/entities/2",
+                            "role": "Route"
+                        }
+                    ]
                 },
                 {
                     "relationType": "TimeOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/0/entities/3",
-                    "target": "#/documents/0/entities/1"
-                },
-                {
-                    "relationType": "TimeOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/0/entities/4",
-                    "target": "#/documents/0/entities/1"
+                    "entities": [
+                        {
+                            "ref": "#/documents/0/entities/1",
+                            "role": "Medication"
+                        },
+                        {
+                            "ref": "#/documents/0/entities/3",
+                            "role": "Time"
+                        }
+                    ]
                 }
-            ]
+            ],
+            "warnings": []
         }
     ],
     "errors": [],
-    "modelVersion": "2020-09-03"
+    "modelVersion": "2021-03-01"
 }
 ```
 
-### <a name="negation-detection-output"></a>Uitvoer van negatie detectie
+### <a name="assertion-output"></a>Bevestigings uitvoer
 
-Wanneer u de detectie van negatie gebruikt, kan één negatie term in sommige gevallen meerdere voor waarden tegelijk aanpakken. De ontkenning van een herkende entiteit wordt weer gegeven in de JSON-uitvoer door de Booleaanse waarde van de `isNegated` vlag, bijvoorbeeld:
+Text Analytics voor de status retour neren bevestigings parameters, die informatieve kenmerken zijn die zijn toegewezen aan medische concepten die dieper inzicht hebben in de context van de concepten in de tekst. Deze wijzigings functies zijn onderverdeeld in drie categorieën, die allemaal gericht zijn op een ander aspect en die een set van elkaar uitsluitende waarden bevatten. Er wordt slechts één waarde per categorie toegewezen aan elke entiteit. De meest voorkomende waarde voor elke categorie is de standaard waarde. Het uitvoer antwoord van de service bevat alleen bevestigings parameters die afwijken van de standaard waarde.
+
+**Zekerheid**  : geeft informatie over de aanwezigheid (aanwezig versus afwezig) van het concept en hoe duidelijk de tekst betrekking heeft op de aanwezigheid (afdoende versus mogelijk).
+*   **Positief** [standaard]: het concept bestaat of is gebeurd.
+* **Negatief**: het concept bestaat nu niet of is nog nooit gebeurd.
+* **Positive_Possible**: mogelijk bestaat het concept, maar er is enige onzekerheid.
+* **Negative_Possible**: het bestaan van het concept is onwaarschijnlijk, maar er is enige onzekerheid.
+* **Neutral_Possible**: het concept kan al dan niet bestaan zonder dat er aan beide zijden een tendens is.
+
+**Voorwaardelijkheid** : geeft informatie over of het bestaan van een concept afhankelijk is van bepaalde voor waarden. 
+*   **Geen** [standaard]: het concept is een feit dat geen hypothetische en niet afhankelijk is van bepaalde voor waarden.
+*   **Hypothetisch**: het concept kan in de toekomst worden ontwikkeld of uitgevoerd.
+*   **Voorwaardelijk**: het concept bestaat of treedt alleen op onder bepaalde voor waarden.
+
+**Koppeling** : beschrijft of het concept is gekoppeld aan het onderwerp van de tekst of iemand anders.
+*   **Onderwerp** [standaard]: het concept is gekoppeld aan het onderwerp van de tekst, meestal de patiënt.
+*   **Someone_Else**: het concept is gekoppeld aan iemand die niet het onderwerp van de tekst is.
+
+
+In de bevestigings detectie worden ontkennende entiteiten aangeduid als een negatieve waarde voor de categorie zekerheid, bijvoorbeeld:
 
 ```json
 {
-  "id": "2",
-  "offset": 90,
-  "length": 10,
-  "text": "chest pain",
-  "category": "SymptomOrSign",
-  "score": 0.9972,
-  "isNegated": true,
-  "links": [
-    {
-      "dataSource": "UMLS",
-      "id": "C0008031"
-    },
-    {
-      "dataSource": "CHV",
-      "id": "0000023593"
-    },
+                        "offset": 381,
+                        "length": 3,
+                        "text": "SOB",
+                        "category": "SymptomOrSign",
+                        "confidenceScore": 0.98,
+                        "assertion": {
+                            "certainty": "negative"
+                        },
+                        "name": "Dyspnea",
+                        "links": [
+                            {
+                                "dataSource": "UMLS",
+                                "id": "C0013404"
+                            },
+                            {
+                                "dataSource": "AOD",
+                                "id": "0000005442"
+                            },
     ...
 ```
 
 ### <a name="relation-extraction-output"></a>Uitvoer van relatie-extractie
 
-Uitvoer van relatie-extractie bevat URI-verwijzingen naar de *bron* van de relatie en het *doel* ervan. Entiteiten met een relatie rol van `ENTITY` worden toegewezen aan het `target` veld. Entiteiten met een relatie rol van `ATTRIBUTE` worden toegewezen aan het `source` veld. Afkortings relaties bevatten bidirectionele `source` en `target` velden en worden `bidirectional` ingesteld op `true` . 
+Text Analytics voor de status herkent relaties tussen verschillende concepten, inclusief relaties tussen het kenmerk en de entiteit (bijvoorbeeld de richting van de hoofd structuur, de dosering van de medicijnen) en tussen entiteiten (bijvoorbeeld afkortings detectie).
+
+**VEELGEBRUIKT**
+
+**DIRECTION_OF_BODY_STRUCTURE**
+
+**DIRECTION_OF_CONDITION**
+
+**DIRECTION_OF_EXAMINATION**
+
+**DIRECTION_OF_TREATMENT**
+
+**DOSAGE_OF_MEDICATION**
+
+**FORM_OF_MEDICATION**
+
+**FREQUENCY_OF_MEDICATION**
+
+**FREQUENCY_OF_TREATMENT**
+
+**QUALIFIER_OF_CONDITION**
+
+**RELATION_OF_EXAMINATION**
+
+**ROUTE_OF_MEDICATION** 
+
+**TIME_OF_CONDITION**
+
+**TIME_OF_EVENT**
+
+**TIME_OF_EXAMINATION**
+
+**TIME_OF_MEDICATION**
+
+**TIME_OF_TREATMENT**
+
+**UNIT_OF_CONDITION**
+
+**UNIT_OF_EXAMINATION**
+
+**VALUE_OF_CONDITION**  
+
+**VALUE_OF_EXAMINATION**
+
+> [!NOTE]
+> * Relaties die naar voor waarde verwijzen, kunnen verwijzen naar het type van de controle-entiteit of het entiteits type SYMPTOM_OR_SIGN.
+> * Relaties die betrekking hebben op medicijnen, kunnen verwijzen naar het type MEDICATION_NAME entiteit of het entiteits type MEDICATION_CLASS.
+> * Relaties die naar tijd verwijzen, kunnen verwijzen naar het type tijd entiteit of het type datum entiteit.
+
+Uitvoer van relatie-extractie bevat URI-verwijzingen en toegewezen rollen van de entiteiten van het relatie type. Bijvoorbeeld:
 
 ```json
-"relations": [
-                {
-                    "relationType": "DosageOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/1/entities/0",
-                    "target": "#/documents/1/entities/1"
-                },
-                {
-                    "relationType": "FrequencyOfMedication",
-                    "bidirectional": false,
-                    "source": "#/documents/1/entities/2",
-                    "target": "#/documents/1/entities/1"
-                }
-            ]
-  },
+                "relations": [
+                    {
+                        "relationType": "DosageOfMedication",
+                        "entities": [
+                            {
+                                "ref": "#/results/documents/0/entities/0",
+                                "role": "Dosage"
+                            },
+                            {
+                                "ref": "#/results/documents/0/entities/1",
+                                "role": "Medication"
+                            }
+                        ]
+                    },
+                    {
+                        "relationType": "RouteOfMedication",
+                        "entities": [
+                            {
+                                "ref": "#/results/documents/0/entities/1",
+                                "role": "Medication"
+                            },
+                            {
+                                "ref": "#/results/documents/0/entities/2",
+                                "role": "Route"
+                            }
+                        ]
 ...
 ]
 ```

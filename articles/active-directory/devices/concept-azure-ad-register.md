@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 72c40b7962090492f8b4b85e555a947130c3628d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91256435"
 ---
 # <a name="azure-ad-registered-devices"></a>Azure AD-geregistreerde apparaten
@@ -24,15 +24,15 @@ Het doel van geregistreerde Azure AD-apparaten is om uw gebruikers ondersteuning
 
 | Geregistreerde Azure AD | Beschrijving |
 | --- | --- |
-| **Definitie** | Geregistreerd bij Azure AD zonder organisatie account om u aan te melden bij het apparaat |
+| **Definition** | Geregistreerd bij Azure AD zonder organisatie account om u aan te melden bij het apparaat |
 | **Primaire doel groep** | Van toepassing op alle gebruikers met de volgende criteria: |
 |   | BYOD (Bring Your Own Device) |
 |   | Mobiele apparaten |
 | **Apparaateigendom** | Gebruiker of organisatie |
 | **Besturings systemen** | Windows 10, iOS, Android en MacOS |
 | **Inrichten** | Windows 10 – instellingen |
-|   | iOS/Android – Bedrijfsportal-of Microsoft Authenticator-app |
-|   | MacOS-Bedrijfsportal |
+|   | iOS/Android – bedrijfsportal-of Microsoft Authenticator-app |
+|   | MacOS-bedrijfsportal |
 | **Aanmeldings opties voor apparaten** | Lokale referenties voor eind gebruikers |
 |   | Wachtwoord |
 |   | Windows Hello |

@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
 ms.openlocfilehash: 70e1823b30814d7dc29fef69215fcb53a2a2ab96
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98730867"
 ---
 # <a name="disaster-recovery-using-azure-application-consistent-snapshot-tool-preview"></a>Herstel na nood geval met Azure-toepassing consistent momentopname programma (preview-versie)
@@ -28,7 +28,7 @@ In dit artikel wordt uitgelegd hoe u herstel na nood gevallen uitvoert wanneer u
 > [!IMPORTANT]
 > Deze bewerking is alleen van toepassing op een **grote Azure-instantie** .
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Het platform voor grote exemplaren van Azure kan ook een nood herstel site hebben die is geconfigureerd voor het repliceren van moment opnamen van opslag volumes naar.  Als moment opnamen correct zijn geconfigureerd met een dergelijke installatie, is het mogelijk om op deze site een herstel na nood geval uit te voeren.  Dit document is bedoeld als richt lijn voor het uitvoeren van herstel na nood gevallen voor deze installatie.
 

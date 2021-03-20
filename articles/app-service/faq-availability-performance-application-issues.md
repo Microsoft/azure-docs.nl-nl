@@ -10,10 +10,10 @@ ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
 ms.openlocfilehash: dfaeee6a6e2a9728d7e63fb5681c487fbbd6139e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88958994"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over toepassings prestaties voor Web Apps in azure
@@ -32,11 +32,11 @@ Meerdere factoren kunnen bijdragen aan het vertragen van de app-prestaties. Zie 
 
 ## <a name="how-do-i-troubleshoot-a-high-cpu-consumption-scenario"></a>Hoe kan ik problemen met een hoog CPU-verbruiks scenario oplossen?
 
-In sommige scenario's met een hoge CPU-verbruik is het mogelijk dat uw app echt meer computer bronnen nodig heeft.In dat geval kunt u het beste schalen naar een hogere servicelaag, zodat de toepassing alle benodigde resources krijgt. Andere tijden, een hoog CPU-verbruik wordt mogelijk veroorzaakt door een ongeldige lus of door een coderings praktijk. Het verkrijgen van inzicht in wat er wordt geactiveerd, is een proces dat uit twee delen bestaat. Maak eerst een proces dump en analyseer vervolgens de proces dump. Zie [een dump bestand vastleggen en analyseren voor een hoog CPU-verbruik voor web apps](/archive/blogs/asiatech/how-to-capture-dump-when-intermittent-high-cpu-happens-on-azure-web-app)voor meer informatie.
+In sommige scenario's met een hoge CPU-verbruik is het mogelijk dat uw app echt meer computer bronnen nodig heeft. In dat geval kunt u het beste schalen naar een hogere servicelaag, zodat de toepassing alle benodigde resources krijgt. Andere tijden, een hoog CPU-verbruik wordt mogelijk veroorzaakt door een ongeldige lus of door een coderings praktijk. Het verkrijgen van inzicht in wat er wordt geactiveerd, is een proces dat uit twee delen bestaat. Maak eerst een proces dump en analyseer vervolgens de proces dump. Zie [een dump bestand vastleggen en analyseren voor een hoog CPU-verbruik voor web apps](/archive/blogs/asiatech/how-to-capture-dump-when-intermittent-high-cpu-happens-on-azure-web-app)voor meer informatie.
 
 ## <a name="how-do-i-troubleshoot-a-high-memory-consumption-scenario"></a>Hoe kan ik een scenario met hoog geheugen gebruik oplossen?
 
-In sommige scenario's met een hoog geheugen gebruik is het mogelijk dat uw app echt meer computer bronnen nodig heeft.In dat geval kunt u het beste schalen naar een hogere servicelaag, zodat de toepassing alle benodigde resources krijgt. Andere keren kan een fout in de code leiden tot een geheugenlek. Een coderings praktijk kan ook het geheugen gebruik verg Roten.Het verkrijgen van inzicht in wat is het activeren van hoog geheugen, is een proces dat uit twee delen bestaat. Maak eerst een proces dump en analyseer vervolgens de proces dump. Crash diagnose van de Azure site extension Gallery kan deze stappen efficiënt uitvoeren. Zie voor meer informatie [een dump bestand vastleggen en analyseren voor onregelmatig hoge geheugen voor web apps](/archive/blogs/asiatech/how-to-capture-and-analyze-dump-for-intermittent-high-memory-on-azure-web-app).
+In sommige scenario's met een hoog geheugen gebruik is het mogelijk dat uw app echt meer computer bronnen nodig heeft. In dat geval kunt u het beste schalen naar een hogere servicelaag, zodat de toepassing alle benodigde resources krijgt. Andere keren kan een fout in de code leiden tot een geheugenlek. Een coderings praktijk kan ook het geheugen gebruik verg Roten. Het verkrijgen van inzicht in wat is het activeren van hoog geheugen, is een proces dat uit twee delen bestaat. Maak eerst een proces dump en analyseer vervolgens de proces dump. Crash diagnose van de Azure site extension Gallery kan deze stappen efficiënt uitvoeren. Zie voor meer informatie [een dump bestand vastleggen en analyseren voor onregelmatig hoge geheugen voor web apps](/archive/blogs/asiatech/how-to-capture-and-analyze-dump-for-intermittent-high-memory-on-azure-web-app).
 
 ## <a name="how-do-i-automate-app-service-web-apps-by-using-powershell"></a>Hoe kan ik App Service web-apps automatisch met behulp van Power shell?
 
@@ -59,7 +59,7 @@ Een gebruikers modus geheugen dump van uw web-app vastleggen:
 1. Meld u aan bij uw **kudu-website** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
 2. Selecteer het menu van het **proces Verkenner** .
 3. Klik met de rechter muisknop op het **w3wp.exe** proces of uw webprocesproces.
-4. Selecteer **Download Memory Dump**  >  **volledige dump**voor het downloaden van geheugen.
+4. Selecteer   >  **volledige dump** voor het downloaden van geheugen.
 
 ## <a name="how-do-i-view-process-level-info-for-my-web-app"></a>Hoe kan ik gegevens op proces niveau voor mijn web-app weer geven?
 
@@ -94,7 +94,7 @@ Web-apps worden standaard uit het geheugen verwijderd als ze gedurende een bepaa
 1. Ga in het Azure Portal naar uw web-app.
 2. **Configuratie** selecteren
 3. Selecteer **algemene instellingen**.
-4. Selecteer **aan**voor **Always on**.
+4. Selecteer **aan** voor **Always on**.
 
 ## <a name="how-do-i-turn-on-failed-request-tracing"></a>Hoe kan ik tracering van mislukte aanvragen inschakelen?
 
@@ -102,7 +102,7 @@ Tracering van mislukte aanvragen inschakelen:
 
 1. Ga in het Azure Portal naar uw web-app.
 3. Selecteer **alle instellingen**  >  **Diagnostische logboeken**.
-4. Selecteer **aan**voor **tracering van mislukte aanvragen**.
+4. Selecteer **aan** voor **tracering van mislukte aanvragen**.
 5. Selecteer **Opslaan**.
 6. Selecteer op de Blade Web-App de optie **extra**.
 7. Selecteer **Visual Studio online**.

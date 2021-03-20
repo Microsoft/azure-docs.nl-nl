@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.custom: seodec18
 ms.openlocfilehash: 2be4bc92dde278b054bd04f412f937440027ece7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74671668"
 ---
 # <a name="how-to-prepare-for-an-outbound-ip-address-change"></a>Voor bereiding voor een wijziging van een uitgaand IP-adres
@@ -27,9 +27,9 @@ Als u een melding hebt ontvangen dat de uitgaande IP-adressen van uw Azure App S
 
 De nieuwe uitgaande IP-adressen worden in de portal weer gegeven voordat ze van kracht worden. Wanneer Azure begint met het gebruik van de nieuwe, worden de oude bestanden niet meer gebruikt. Er wordt slechts één set tegelijk gebruikt, dus vermeldingen in insluitings lijsten moeten zowel oude als nieuwe IP-adressen bevatten om te voor komen dat er een storing optreedt wanneer de switch plaatsvindt. 
 
-1.  Open [Azure Portal](https://portal.azure.com).
+1.  Open de [Azure Portal](https://portal.azure.com).
 
-2.  Selecteer **app Services**in het navigatie menu aan de linkerkant.
+2.  Selecteer **app Services** in het navigatie menu aan de linkerkant.
 
 3.  Selecteer uw App Service-app in de lijst.
 

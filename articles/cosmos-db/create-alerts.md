@@ -8,10 +8,10 @@ ms.devlang: dotnet
 ms.topic: how-to
 ms.date: 07/16/2020
 ms.openlocfilehash: e29db7e31438bc7f6ac609384d0d9b92c275e813
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93339535"
 ---
 # <a name="create-alerts-for-azure-cosmos-db-using-azure-monitor"></a>Waarschuwingen maken voor Azure Cosmos DB met behulp van Azure Monitor
@@ -65,7 +65,7 @@ In deze sectie wordt beschreven hoe u een waarschuwing maakt wanneer u een HTTP-
 
    * Stel in de logica van de **waarschuwing** de **drempel waarde** in op **statisch**. De statische drempel waarde gebruikt een door de gebruiker gedefinieerde drempelwaarde voor het evalueren van de regel, terwijl de dynamische drempel waarden gebruikmaken van ingebouwde machine learning algoritmen om voortdurend het meet patroon voor metrische gegevens te ontdekken en de drempel waarden automatisch te berekenen.
 
-   * Stel de **operator** in **op groter dan** , **het aggregatie type** in **totaal** en de **drempel waarde** op **100**. Als uw client meer dan 100 aanvragen met een 429-status code heeft gezien, wordt de waarschuwing geactiveerd. U kunt ook het aggregatie type, de granulariteit van aggregatie en de frequentie van de evaluatie op basis van uw vereiste configureren.
+   * Stel de **operator** in **op groter dan**, **het aggregatie type** in **totaal** en de **drempel waarde** op **100**. Als uw client meer dan 100 aanvragen met een 429-status code heeft gezien, wordt de waarschuwing geactiveerd. U kunt ook het aggregatie type, de granulariteit van aggregatie en de frequentie van de evaluatie op basis van uw vereiste configureren.
 
    * Nadat u het formulier hebt ingevuld, selecteert u **gereed**. Op de volgende scherm afbeelding ziet u de details van de waarschuwings logica:
 

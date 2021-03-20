@@ -8,10 +8,10 @@ ms.date: 10/18/2019
 ms.author: jennile
 ms.custom: seodec18
 ms.openlocfilehash: d58341979b0bbe0699a5ca293b20394c43cde1d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88962805"
 ---
 # <a name="azure-app-service-diagnostics-overview"></a>Overzicht van Azure App Service diagnostische gegevens
@@ -26,7 +26,7 @@ App Service diagnostische gegevens werken alleen voor uw app in Windows, maar oo
 
 Om toegang te krijgen tot App Service diagnostische gegevens, gaat u naar uw App Service web-app of App Service Environment in de [Azure Portal](https://portal.azure.com). Klik in de linkernavigatiebalk op **problemen vaststellen en oplossen**.
 
-Voor Azure Functions gaat u naar de functie-app en klikt u in de bovenste navigatie balk op **platform functies**en selecteert u **problemen vaststellen en oplossen** van het **resource beheer** gedeelte.
+Voor Azure Functions gaat u naar de functie-app en klikt u in de bovenste navigatie balk op **platform functies** en selecteert u **problemen vaststellen en oplossen** van het **resource beheer** gedeelte.
 
 Op de start pagina van App Service diagnostische gegevens kunt u de categorie kiezen die het probleem met uw app het beste beschrijft met behulp van de tref woorden in elke start pagina tegel. Op deze pagina vindt u ook **Diagnostische Hulpprogram ma's** voor Windows-apps. Zie [Diagnostische hulpprogram ma's (alleen voor Windows-apps)](#diagnostic-tools-only-for-windows-app).
 

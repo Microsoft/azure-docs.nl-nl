@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: jeedes
 ms.openlocfilehash: 26618382223a87f779f95452000a39126f37efbb
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92675423"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Azure AD SAML Toolkit
@@ -47,15 +47,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Om de integratie van Azure AD SAML Toolkit in Azure AD te configureren, moet u Azure AD SAML Toolkit vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **Azure AD SAML Toolkit** .
+1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak **Azure AD SAML Toolkit**.
 1. Selecteer **Azure AD SAML Toolkit** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-sso-for-azure-ad-saml-toolkit"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Azure AD SAML Toolkit
 
-Configureer en test eenmalige aanmelding van Azure AD met Azure AD SAML Toolkit met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Azure AD SAML Toolkit.
+Configureer en test eenmalige aanmelding van Azure AD met Azure AD SAML Toolkit met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Azure AD SAML Toolkit.
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Azure AD SAML Toolkit te configureren en testen:
 
@@ -70,8 +70,8 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Azure AD S
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in Azure Portal op de integratiepagina van de toepassing **Azure AD SAML Toolkit** naar de sectie **Beheren** en selecteer **eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Ga in Azure Portal op de integratiepagina van de toepassing **Azure AD SAML Toolkit** naar de sectie **Beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -94,41 +94,41 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Azure AD SAML Toolkit.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Azure AD SAML Toolkit** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol** . Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-azure-ad-saml-toolkit-sso"></a>Eenmalige aanmelding voor Azure AD SAML Toolkit configureren
 
-1. Open een nieuw webbrowservenster. Als u zich nog niet hebt geregistreerd op de website van Azure AD SAML Toolkit, moet u zich eerst registreren door te klikken op **Registreren** . Als u zich al hebt geregistreerd, meldt u zich bij uw bedrijfssite van Azure AD SAML Toolkit aan met de geregistreerde aanmeldingsreferenties.
+1. Open een nieuw webbrowservenster. Als u zich nog niet hebt geregistreerd op de website van Azure AD SAML Toolkit, moet u zich eerst registreren door te klikken op **Registreren**. Als u zich al hebt geregistreerd, meldt u zich bij uw bedrijfssite van Azure AD SAML Toolkit aan met de geregistreerde aanmeldingsreferenties.
 
     ![Registreren voor Azure AD SAML Toolkit](./media/saml-toolkit-tutorial/register.png)
 
-1. Klik op **SAML Configuration** .
+1. Klik op **SAML Configuration**.
 
     ![Configuratie van Azure AD SAML Toolkit](./media/saml-toolkit-tutorial/saml-configure.png)
 
-1. Klik op **Create** .
+1. Klik op **Create**.
 
     ![Azure AD-SAML-toolkit](./media/saml-toolkit-tutorial/createsso.png)
 
-1. Voer de volgende stappen uit op de pagina **SAML Configuration** :
+1. Voer de volgende stappen uit op de pagina **SAML Configuration**:
 
     ![Configuratie van eenmalige aanmelding voor Azure AD SAML Toolkit](./media/saml-toolkit-tutorial/fill-details.png)
 
@@ -140,7 +140,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     1. Klik op **Choose File** en upload het **certificaat (Raw)** dat u hebt gedownload vanuit Azure Portal.
 
-    1. Klik op **Create** .
+    1. Klik op **Create**.
 
     1. Kopieer de waarden voor de aanmeldings-URL, id en ACS-URL op de configuratiepagina van de SAML Toolkit SSO en plak deze in de juiste tekstvakken in de sectie **Standaard SAML-configuratie** in Azure Portal.
 
@@ -152,7 +152,7 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in Azure AD SAML 
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen** . U wordt omgeleid naar de aanmeldings-URL van SAML Toolkit, waar u de aanmeldingsstroom kunt initiëren. 
+1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van SAML Toolkit, waar u de aanmeldingsstroom kunt initiëren. 
 
 2. Ga rechtstreeks naar de aanmeldings-URL van SAML Toolkit en initieer de aanmeldingsstroom daar.
 

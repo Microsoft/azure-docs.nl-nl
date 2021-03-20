@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 02/09/2021
 ms.author: aahi
-ms.openlocfilehash: 8444ae08aa2c25c20723b2f8c571422af3b24bc8
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 47feddb88fd7ddae1f8be54709019b4c339d177d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101736675"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599167"
 ---
 # <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Zelfstudie: Power BI Desktop integreren met de Text Analytics Cognitive service
 
@@ -190,7 +190,7 @@ Nu gebruikt u deze kolom gebruiken om een woordwolk te genereren. Om aan de slag
 > [!NOTE]
 > Waarom zou u geëxtraheerde belangrijke woordgroepen gebruiken om een woordwolk te genereren, in plaats van de volledige tekst van elke opmerking? De belangrijke woordgroepen bieden ons de *belangrijke* woorden uit onze klantopmerkingen, niet alleen de *meest voorkomende* woorden. Bovendien is de woordgrootte in de resulterende wolk niet vertekend door het veelvuldig gebruik van een woord in een relatief klein aantal opmerkingen.
 
-Als de aangepaste visual Word Cloud nog niet is geïnstalleerd, installeer deze dan. Klik in het deelvenster Visualisaties rechts van de werkruimte op de drie puntjes ( **...** ) en kies **Importeren vanuit Marketplace**. Zoek vervolgens naar ‘cloud’ en klik op de knop **Toevoegen** naast de Word Cloud-visual. Power BI installeert de Word Cloud-visual en laat u weten dat deze succesvol is geïnstalleerd.
+Als de aangepaste visual Word Cloud nog niet is geïnstalleerd, installeer deze dan. Klik in het deel venster visualisaties rechts van de werk ruimte op de drie puntjes (**...**) en kies **importeren uit de markt**. Als het woord "Cloud" zich niet bevindt in de weer gegeven visualisatie hulpprogramma's in de lijst, kunt u zoeken naar "Cloud" en op de knop **toevoegen** klikken naast het visuele element in de cloud van Word. Power BI installeert de Word Cloud-visual en laat u weten dat deze succesvol is geïnstalleerd.
 
 ![[een aangepaste visual toevoegen]](../media/tutorials/power-bi/add-custom-visuals.png)<br><br>
 
@@ -200,7 +200,7 @@ Klik eerst op het Word Cloud-pictogram in het deelvenster Visualisaties.
 
 Er verschijnt een nieuw rapport in de werkruimte. Sleep het veld `keyphrases` in het deelvenster Velden naar het veld Categorie in het deelvenster Visualisaties. De woordwolk verschijnt in het rapport.
 
-Ga nu naar de pagina Opmaak van het deelvenster Visualisaties. Schakel **Standaard stopwoorden** in de categorie Stopwoorden in om korte, algemene woorden zoals ’van’ uit de cloud te elimineren. 
+Ga nu naar de pagina Opmaak van het deelvenster Visualisaties. Schakel **Standaard stopwoorden** in de categorie Stopwoorden in om korte, algemene woorden zoals ’van’ uit de cloud te elimineren. Omdat we echter sleutel zinnen visualiseren, bevatten ze mogelijk geen stop woorden.
 
 ![[standaard stopwoorden activeren]](../media/tutorials/power-bi/default-stop-words.png)
 
@@ -232,8 +232,7 @@ De functie Sentimentanalyse hieronder retourneert een score die aangeeft hoe pos
     headers     = [#"Ocp-Apim-Subscription-Key" = apikey],
     bytesresp   = Web.Contents(endpoint, [Headers=headers, Content=bytesbody]),
     jsonresp    = Json.Document(bytesresp),
-    sentiment   = jsonresp[documents]{0}[confidenceScores]
-in  sentiment
+    sentiment   = jsonresp[documents]{0}[detectedLanguage][confidenceScore] in  sentiment
 ```
 
 Hier zijn twee versies van een taaldetectiefunctie. De eerste retourneert de ISO-taalcode (bijvoorbeeld `en` voor het Engels), terwijl de tweede de ‘vriendelijke’ naam (bijvoorbeeld `English`) retourneert. U merkt wellicht dat alleen de laatste regel van de hoofdtekst verschilt tussen de twee versies.
@@ -249,8 +248,7 @@ Hier zijn twee versies van een taaldetectiefunctie. De eerste retourneert de ISO
     headers     = [#"Ocp-Apim-Subscription-Key" = apikey],
     bytesresp   = Web.Contents(endpoint, [Headers=headers, Content=bytesbody]),
     jsonresp    = Json.Document(bytesresp),
-    language    = jsonresp[documents]{0}[detectedLanguages]{0}[iso6391Name]
-in  language
+    language    = jsonresp [documents]{0}[detectedLanguage] [iso6391Name] in language 
 ```
 ```fsharp
 // Returns the name (for example, 'English') of the language in which the text is written
@@ -263,8 +261,7 @@ in  language
     headers     = [#"Ocp-Apim-Subscription-Key" = apikey],
     bytesresp   = Web.Contents(endpoint, [Headers=headers, Content=bytesbody]),
     jsonresp    = Json.Document(bytesresp),
-    language    = jsonresp[documents]{0}[detectedLanguages]{0}[name]
-in  language
+    language    jsonresp [documents]{0}[detectedLanguage] [iso6391Name] in language 
 ```
 
 Tot slot is hier een variant van de Key Phrases-functie die we al hebben laten zien, die de woordgroepen retourneert als een lijstobject in plaats van als één tekenreeks met door komma’s gescheiden woordgroepen. 

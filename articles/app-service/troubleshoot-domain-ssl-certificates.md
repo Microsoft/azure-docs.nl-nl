@@ -9,10 +9,10 @@ ms.date: 03/01/2019
 ms.author: genli
 ms.custom: seodec18
 ms.openlocfilehash: 691cbd79e82432c8e919dcbb51642a76000296dc
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97607606"
 ---
 # <a name="troubleshoot-domain-and-tlsssl-certificate-problems-in-azure-app-service"></a>Problemen met domein-en TLS/SSL-certificaten in Azure App Service oplossen
@@ -87,7 +87,7 @@ Dit probleem kan om de volgende redenen optreden:
 
     **Oplossing**: als het certificaat is gemarkeerd als fraude en na 24 uur niet is opgelost, voert u de volgende stappen uit:
 
-    1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+    1. Meld u aan bij [Azure Portal](https://portal.azure.com).
     2. Ga naar **app service certificaten** en selecteer het certificaat.
     3. Selecteer **certificaat configuratie**  >  **stap 2: Controleer** de verificatie van het  >  **domein**. Met deze stap verzendt u een e-mail bericht naar de Azure-certificaat provider om het probleem op te lossen.
 
@@ -189,7 +189,7 @@ App Service synchroniseert uw certificaat automatisch binnen 48 uur. Wanneer u e
 
 U kunt de synchronisatie van het certificaat forceren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **app service certificaten** en selecteer vervolgens het certificaat.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Selecteer **app service certificaten** en selecteer vervolgens het certificaat.
 2. Selecteer opnieuw **genereren en synchroniseren** en selecteer vervolgens **synchroniseren**. Het kan enige tijd duren voordat de synchronisatie is voltooid. 
 3. Wanneer de synchronisatie is voltooid, ziet u de volgende melding: alle resources zijn bijgewerkt met het nieuwste certificaat.
 
@@ -201,8 +201,8 @@ Het App Service certificaat vereist domein verificatie voordat het certificaat g
 #### <a name="solution"></a>Oplossing
 Bevestig uw domein hand matig door een TXT-record toe te voegen:
 
-1. Ga naar de Domain Name Service (DNS)-provider die als host fungeert voor uw domein naam.
-1. Voeg een TXT-record voor uw domein toe die gebruikmaakt van de waarde van het domein token dat wordt weer gegeven in de Azure Portal. 
+1. Ga naar de Domain Name Service (DNS)-provider die als host fungeert voor uw domeinnaam.
+1. Voeg een TXT-record voor uw domein toe die gebruikmaakt van de waarde van het domeintoken dat wordt weergegeven in de Azure Portal. 
 
 Wacht enkele minuten totdat de DNS-doorgifte is uitgevoerd en selecteer vervolgens de knop **vernieuwen** om de verificatie te activeren. 
 

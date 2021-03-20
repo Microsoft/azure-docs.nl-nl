@@ -4,10 +4,10 @@ description: Maak toepassings consistente back-ups van uw virtuele Linux-machine
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: 22053004026a2dd8976027359f11d50a5663b334
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88999237"
 ---
 # <a name="application-consistent-backup-of-azure-linux-vms"></a>Toepassingsconsistente back-up van Azure Linux-VM’s
@@ -80,8 +80,8 @@ Zorg ervoor dat u de juiste logboek registratie toevoegt tijdens het schrijven v
 | IncorrectJSONConfigFile | De **VMSnapshotScriptPluginConfig.jsin** het bestand is onjuist, dus het script kan niet worden uitgevoerd en het script is niet consistent. | Down load het exemplaar van [github](https://github.com/MicrosoftAzureBackup/VMSnapshotPluginConfig) en configureer het opnieuw. |
 | InsufficientPermissionforPre-Script | Voor het uitvoeren van scripts moet de hoofd gebruiker de eigenaar van het bestand zijn en moet het bestand ' 700 ' machtigingen hebben (dat wil zeggen dat alleen ' eigenaar ' de machtigingen lezen, schrijven en uitvoeren heeft). | Zorg ervoor dat ' root ' gebruiker de ' eigenaar ' van het script bestand is en dat alleen ' eigenaar ' de machtigingen lezen, schrijven en uitvoeren heeft. |
 | InsufficientPermissionforPost-Script | Voor het uitvoeren van scripts moet de hoofd gebruiker de eigenaar van het bestand zijn en moet het bestand ' 700 ' machtigingen hebben (dat wil zeggen dat alleen ' eigenaar ' de machtigingen lezen, schrijven en uitvoeren heeft). | Zorg ervoor dat ' root ' gebruiker de ' eigenaar ' van het script bestand is en dat alleen ' eigenaar ' de machtigingen lezen, schrijven en uitvoeren heeft. |
-| Pre-ScriptTimeout | Er is een time-out opgetreden tijdens het uitvoeren van de toepassings consistente back-up. | Controleer het script en verhoog de time-out in de **VMSnapshotScriptPluginConfig.jsop** het bestand dat zich op **/etc/Azure**bevindt. |
-| Post-ScriptTimeout | Er is een time-out opgetreden tijdens het uitvoeren van de toepassings consistente back-up. | Controleer het script en verhoog de time-out in de **VMSnapshotScriptPluginConfig.jsop** het bestand dat zich op **/etc/Azure**bevindt. |
+| Pre-ScriptTimeout | Er is een time-out opgetreden tijdens het uitvoeren van de toepassings consistente back-up. | Controleer het script en verhoog de time-out in de **VMSnapshotScriptPluginConfig.jsop** het bestand dat zich op **/etc/Azure** bevindt. |
+| Post-ScriptTimeout | Er is een time-out opgetreden tijdens het uitvoeren van de toepassings consistente back-up. | Controleer het script en verhoog de time-out in de **VMSnapshotScriptPluginConfig.jsop** het bestand dat zich op **/etc/Azure** bevindt. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

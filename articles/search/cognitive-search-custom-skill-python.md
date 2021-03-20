@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: devx-track-python
 ms.openlocfilehash: 40e20ad4bab0275b44cd868521c7dc70dec52567
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88936126"
 ---
 # <a name="example-create-a-custom-skill-using-python"></a>Voor beeld: een aangepaste vaardigheid maken met behulp van python
@@ -196,7 +196,7 @@ Wanneer u tevreden bent met het functie gedrag, kunt u het publiceren.
 
 Op dit moment worden de benodigde resources in uw Azure-abonnement gemaakt om de nieuwe Azure-functie in azure te hosten. Wacht totdat de installatie is voltooid. In het uitvoer venster ziet u de status van het implementatie proces.
 
-1. Ga in het [Azure Portal](https://portal.azure.com)naar **alle resources** en zoek naar de functie die u hebt gepubliceerd met behulp van de naam. Als u IT- **samen voeging**heet, selecteert u de resource.
+1. Ga in het [Azure Portal](https://portal.azure.com)naar **alle resources** en zoek naar de functie die u hebt gepubliceerd met behulp van de naam. Als u IT- **samen voeging** heet, selecteert u de resource.
 
 1. Klik op de knop **</> functie-URL ophalen** . Zo kunt u de URL kopiëren om de functie aan te roepen.
 

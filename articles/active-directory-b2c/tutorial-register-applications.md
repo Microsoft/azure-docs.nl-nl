@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/27/2021
+ms.date: 03/18/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a39230cc65db6ef12b6fa4364454aeb434efddf6
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: 2ec67669edeb52af1044c97c984eb6ba36fd1a0b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98918209"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104579634"
 ---
 # <a name="tutorial-register-a-web-application-in-azure-active-directory-b2c"></a>Zelfstudie: Een webtoepassing registreren in Azure Active Directory B2C
 
@@ -80,7 +80,7 @@ Als u een webtoepassing wilt registreren in de Azure AD B2C-tenant, kunt u de ni
 
 ## <a name="create-a-client-secret"></a>Een clientgeheim maken
 
-Voor een webtoepassing moet u een toepassingsgeheim maken. Dit geheim wordt door uw toepassing gebruikt voor het uitwisselen van een autorisatiecode tegen een toegangstoken.
+Voor een webtoepassing moet u een toepassingsgeheim maken. Het client geheim wordt ook wel een *toepassings wachtwoord* genoemd. Het geheim wordt door uw toepassing gebruikt voor het uitwisselen van een autorisatie code voor een toegangs token.
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
@@ -89,7 +89,7 @@ Voor een webtoepassing moet u een toepassingsgeheim maken. Dit geheim wordt door
 1. Selecteer **Nieuw clientgeheim**.
 1. Voer een beschrijving voor het clientgeheim in het vak **Beschrijving** in. Bijvoorbeeld *clientsecret1*.
 1. Selecteer onder **Verloopt** een duur waarvoor het geheim geldig is en selecteer vervolgens **Toevoegen**.
-1. Noteer de **Waarde** van het geheim. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
+1. Noteer de **waarde** van het geheim voor gebruik in de code van uw client toepassing. Deze geheime waarde wordt nooit weer gegeven nadat u deze pagina verlaat. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
 
 #### <a name="applications-legacy"></a>[Toepassingen (verouderd)](#tab/applications-legacy/)
 
@@ -98,6 +98,9 @@ Voor een webtoepassing moet u een toepassingsgeheim maken. Dit geheim wordt door
 1. Selecteer **Opslaan** om de sleutel weer te geven. Noteer de waarde van **App-sleutel**. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
 
 * * *
+
+> [!NOTE]
+> Uit veiligheids overwegingen kunt u het toepassings geheim regel matig of onmiddellijk in het geval van nood inrollen. Elke toepassing die met Azure AD B2C integreert, moet worden voor bereid op het verwerken van een geheime rollover gebeurtenis, ongeacht hoe vaak deze kan optreden. U kunt twee toepassings geheimen instellen, zodat uw toepassing het oude geheim blijft gebruiken tijdens een rotatie gebeurtenis voor een toepassings geheim. Herhaal de stappen in deze sectie om een ander client geheim toe te voegen. 
 
 ## <a name="enable-id-token-implicit-grant"></a>Impliciete toekenning van ID-token inschakelen
 

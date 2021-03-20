@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/31/2019
 ms.author: tisande
 ms.openlocfilehash: b0973dca980b65b85ac66cc1b3c9ed45f0f9c779
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93339196"
 ---
 # <a name="azure-cosmos-db-sql-query-constants"></a>Azure Cosmos DB SQL-query constanten  
@@ -25,7 +25,7 @@ ms.locfileid: "93339196"
 |-|-|  
 |**Undefined**|Enkele waarde: niet **gedefinieerd**|  
 |**Null**|Enkele waarde: **Null**|  
-|**Booleaans**|Waarden: **False** , **True**.|  
+|**Booleaans**|Waarden: **False**, **True**.|  
 |**Number**|Een drijvende-komma getal met dubbele precisie, IEEE 754-standaard.|  
 |**Tekenreeks**|Een reeks van nul of meer Unicode-tekens. Teken reeksen moeten tussen enkele of dubbele aanhalings tekens worden geplaatst.|  
 |**Array**|Een reeks van nul of meer elementen. Elk element kan een waarde van elk scalair gegevens type zijn, behalve niet **gedefinieerd**.|  
@@ -115,7 +115,7 @@ ms.locfileid: "93339196"
 |\f|formulier feed|U + 000C|  
 |\n|regel invoer|U + 000A|  
 |\r| regelterugloop|U + 000D|  
-|\| tabblad|U + 0009|  
+|\|tabbesturingselement|U + 0009|  
 |\uXXXX|Een Unicode-teken dat is gedefinieerd door 4 hexadecimale cijfers.|U + XXXX|  
 
 ## <a name="next-steps"></a>Volgende stappen

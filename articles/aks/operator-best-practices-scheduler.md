@@ -5,10 +5,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.openlocfilehash: 087c1d2efc93b8460a3683a4e66916d73fd4e885
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87015677"
 ---
 # <a name="best-practices-for-basic-scheduler-features-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor Basic scheduler-functies in azure Kubernetes service (AKS)
@@ -28,7 +28,7 @@ Dit artikel Best practices is gericht op de basis functies voor Kubernetes plann
 
 Resource aanvragen en-limieten worden geplaatst in de pod-specificatie. Deze limieten worden tijdens de implementatie door de Kubernetes-planner gebruikt om een beschikbaar knoop punt in het cluster te vinden. Deze limieten en aanvragen werken op het niveau van de afzonderlijke pod. Zie [pod resource-aanvragen en-limieten definiëren][resource-limits] voor meer informatie over het definiëren van deze waarden.
 
-Als u een manier wilt bieden om resources te reserveren en te beperken in een ontwikkelings team of project, moet u *resource quota*gebruiken. Deze quota's worden gedefinieerd in een naam ruimte en kunnen worden gebruikt voor het instellen van quota's op basis van het volgende:
+Als u een manier wilt bieden om resources te reserveren en te beperken in een ontwikkelings team of project, moet u *resource quota* gebruiken. Deze quota's worden gedefinieerd in een naam ruimte en kunnen worden gebruikt voor het instellen van quota's op basis van het volgende:
 
 * **Reken bronnen**, zoals CPU en geheugen, of gpu's.
 * **Opslag resources**, inclusief het totale aantal volumes of de hoeveelheid schijf ruimte voor een bepaalde opslag klasse.

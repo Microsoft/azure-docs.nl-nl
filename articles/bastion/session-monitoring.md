@@ -8,15 +8,15 @@ ms.topic: how-to
 ms.date: 05/21/2020
 ms.author: charwen
 ms.openlocfilehash: beb4f8fc5b9e22bc3e2bdd4732c8321dfcd70780
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90980727"
 ---
 # <a name="session-monitoring-and-management-for-azure-bastion"></a>Sessie bewaking en-beheer voor Azure Bastion
 
-Zodra de Bastion-service is ingericht en geïmplementeerd in uw virtuele netwerk, kunt u deze gebruiken om naadloos verbinding te maken met elke virtuele machine in dit virtuele netwerk. Wanneer gebruikers verbinding maken met werk belastingen, kan Azure Bastion worden gebruikt om de externe sessies te controleren en snelle beheer acties uit te voeren. Met de Azure Bastion-sessie bewaking kunt u zien welke gebruikers zijn verbonden met welke Vm's. Hier wordt het IP-adres weer gegeven waarmee de gebruiker verbinding maakt, hoe lang ze zijn verbonden en wanneer ze zijn verbonden. Met de sessie beheer ervaring kunt u een actieve sessie selecteren en geforceerd afbreken of een sessie verwijderen om de verbinding van de gebruiker met de actieve sessie te verbreken.
+Zodra de Bastion-service is ingericht en geïmplementeerd in uw virtuele netwerk, kunt u deze gebruiken om naadloos verbinding te maken met elke virtuele machine in dit virtuele netwerk. Wanneer gebruikers verbinding maken met werk belastingen, kan Azure Bastion worden gebruikt om de externe sessies te controleren en snelle beheer acties uit te voeren. Met Azure Bastion-sessiebewaking kunt u zien welke gebruikers zijn verbonden met welke VM's. Hier wordt het IP-adres weer gegeven waarmee de gebruiker verbinding maakt, hoe lang ze zijn verbonden en wanneer ze zijn verbonden. Met de sessie beheer ervaring kunt u een actieve sessie selecteren en geforceerd afbreken of een sessie verwijderen om de verbinding van de gebruiker met de actieve sessie te verbreken.
 
 ## <a name="monitor-remote-sessions"></a><a name="monitor"></a>Externe sessies bewaken
 

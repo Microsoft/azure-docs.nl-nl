@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 1/4/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9ca8df21e0221d364f75eaeb26f0b2961d7e0b08
-ms.sourcegitcommit: dda0d51d3d0e34d07faf231033d744ca4f2bbf4a
+ms.openlocfilehash: dcd58e966da7ca596a14ca1b2839cbeb6399a855
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102204376"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104576455"
 ---
 # <a name="cloud-tiering-overview"></a>Overzicht van Cloud lagen
 Cloud lagen, een optionele functie van Azure File Sync, vermindert de hoeveelheid lokale opslag die nodig is om de prestaties van een on-premises Bestands server te behouden.
@@ -39,7 +39,7 @@ Met het **datum beleid** worden coole bestanden naar de Cloud gelaagd als ze nie
 Zie Azure File Sync-beleid voor [Cloud lagen kiezen](storage-sync-choose-cloud-tiering-policies.md)voor meer voor beelden van de manier waarop het beleid voor datum beleid en volume beschik bare ruimte samen werken.
 
 ### <a name="windows-server-data-deduplication"></a>Windows Server-gegevensontdubbeling
-Gegevensontdubbeling wordt ondersteund op volumes waarop Cloud Tiering is ingeschakeld vanaf Windows Server 2016. Zie [planning voor een Azure file sync-implementatie](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning#data-deduplication)voor meer informatie.
+Gegevensontdubbeling wordt ondersteund op volumes waarop Cloud Tiering is ingeschakeld vanaf Windows Server 2016. Zie [planning voor een Azure file sync-implementatie](./storage-sync-files-planning.md#data-deduplication)voor meer informatie.
 
 ### <a name="cloud-tiering-heatmap"></a>Heatmap Cloud lagen
 Azure File Sync bewaakt bestands toegang (lees-en schrijf bewerkingen) in de loop van de tijd en, op basis van hoe vaak en recente toegang is, wijst aan elk bestand een hitte Score toe. Deze scores worden gebruikt om een "heatmap" van uw naam ruimte op elk server eindpunt te maken. Deze heatmap is een lijst met alle synchronisatie bestanden op een locatie waarvoor Cloud lagen zijn ingeschakeld, geordend op basis van hun hitte Score. Veelgebruikte bestanden die onlangs zijn geopend, worden beschouwd als hot, terwijl bestanden die nauwelijks werden gerakend en gedurende enige tijd niet toegankelijk zijn, als koud worden beschouwd. 
@@ -109,4 +109,3 @@ Het is ook mogelijk dat een bestand gedeeltelijk wordt gelaagd (of gedeeltelijk 
 ## <a name="next-steps"></a>Volgende stappen
 * [Kies Azure File Sync beleid voor Cloud lagen](storage-sync-choose-cloud-tiering-policies.md)
 * [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-

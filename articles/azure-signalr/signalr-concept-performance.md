@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
 ms.openlocfilehash: 68cad32be177fa20794399157fca89e87c2f8f59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74157663"
 ---
 # <a name="performance-guide-for-azure-signalr-service"></a>Prestatierichtlijnen voor Azure SignalR Service
@@ -43,7 +43,7 @@ De Azure signalerings service definieert zeven standaard lagen voor verschillend
 
 -   Welk type app-server (VM-grootte) is geschikt voor mij? Hoeveel ervan moet ik implementeren?
 
-Deze hand leiding geeft eerst uitleg over de factoren die van invloed zijn op de prestaties om deze vragen te beantwoorden. Vervolgens ziet u het maximum aantal binnenkomende en uitgaande berichten voor elke laag voor typische gebruiks voorbeelden: **echo**, **broadcast**, **verzenden naar groep**en **verzenden naar verbinding** (peer-to-peer-chat).
+Deze hand leiding geeft eerst uitleg over de factoren die van invloed zijn op de prestaties om deze vragen te beantwoorden. Vervolgens ziet u het maximum aantal binnenkomende en uitgaande berichten voor elke laag voor typische gebruiks voorbeelden: **echo**, **broadcast**, **verzenden naar groep** en **verzenden naar verbinding** (peer-to-peer-chat).
 
 Deze hand leiding heeft geen betrekking op alle scenario's (en verschillende gebruiks voorbeelden, bericht grootten, bericht verzendings patronen, enzovoort). Maar het biedt een aantal methoden om u te helpen:
 
@@ -58,7 +58,7 @@ In deze sectie worden de evaluatie methoden voor prestaties beschreven en worden
 
 De *door Voer* en *latentie* zijn twee typische aspecten van het controleren van de prestaties. Voor de Azure signalerings service heeft elke SKU-laag een eigen doorvoer beperkings beleid. Het beleid definieert *de Maxi maal toegestane door Voer (binnenkomende en uitgaande band breedte)* als de Maxi maal behaalde door Voer als maxi maal 99 procent van de berichten een latentie van minder dan 1 seconde heeft.
 
-Latentie is de tijds duur van de verbinding die het bericht verzendt om het antwoord bericht van de Azure signalerings service te ontvangen. Laten we een voor beeld van **echo's** maken. Elke client verbinding voegt een tijds tempel in het bericht toe. De hub van de app-server stuurt het oorspronkelijke bericht terug naar de client. De vertraging van de doorgifte kan dus eenvoudig worden berekend door elke client verbinding. De tijds tempel wordt gekoppeld voor elk bericht in **broadcasten**, **verzenden naar groep**en **verzenden naar verbinding**.
+Latentie is de tijds duur van de verbinding die het bericht verzendt om het antwoord bericht van de Azure signalerings service te ontvangen. Laten we een voor beeld van **echo's** maken. Elke client verbinding voegt een tijds tempel in het bericht toe. De hub van de app-server stuurt het oorspronkelijke bericht terug naar de client. De vertraging van de doorgifte kan dus eenvoudig worden berekend door elke client verbinding. De tijds tempel wordt gekoppeld voor elk bericht in **broadcasten**, **verzenden naar groep** en **verzenden naar verbinding**.
 
 Voor het simuleren van duizenden gelijktijdige client verbindingen worden meerdere Vm's gemaakt in een virtueel particulier netwerk in Azure. Al deze Vm's maken verbinding met hetzelfde exemplaar van de Azure signalerings service.
 
@@ -74,7 +74,7 @@ WebSocket is een bidirectionele en full-duplex communicatie protocol via één T
 
 De kosten voor bericht routering beperken ook de prestaties. De Azure signalerings service speelt een rol af als een Message router, waarmee het bericht wordt gerouteerd van een set clients of servers naar andere clients of servers. Een ander scenario of API vereist een ander routerings beleid. 
 
-Bij **echo**verzendt de client een bericht naar zichzelf en is het routerings doel ook zelf. Dit patroon heeft de laagste routerings kosten. Maar voor **broadcasten**, **verzenden naar groep**en **verzenden naar verbinding**, moet de Azure signalerings service de doel verbindingen opzoeken via de interne gedistribueerde gegevens structuur. Deze extra verwerking maakt gebruik van meer CPU-, geheugen-en netwerk bandbreedte. Als gevolg hiervan zijn de prestaties langzamer.
+Bij **echo** verzendt de client een bericht naar zichzelf en is het routerings doel ook zelf. Dit patroon heeft de laagste routerings kosten. Maar voor **broadcasten**, **verzenden naar groep** en **verzenden naar verbinding**, moet de Azure signalerings service de doel verbindingen opzoeken via de interne gedistribueerde gegevens structuur. Deze extra verwerking maakt gebruik van meer CPU-, geheugen-en netwerk bandbreedte. Als gevolg hiervan zijn de prestaties langzamer.
 
 In de standaard modus kan de app-server ook een knel punt vormen voor bepaalde scenario's. De Azure Signalr SDK moet de hub aanroepen, terwijl een live-verbinding wordt bijgehouden met elke client via heartbeat-signalen.
 
@@ -172,7 +172,7 @@ Voor Unit100 is de maximale uitgaande band breedte 400 MB van de vorige tabel. V
 
 ##### <a name="mixed-use-cases"></a>Gemengde use cases
 
-In het praktijk voorbeeld worden de vier basis cases samen met elkaar gecombineerd: **echo**, **broadcast**, **verzenden naar groep**en **verzenden naar verbinding**. De methode die u gebruikt om de capaciteit te evalueren, is:
+In het praktijk voorbeeld worden de vier basis cases samen met elkaar gecombineerd: **echo**, **broadcast**, **verzenden naar groep** en **verzenden naar verbinding**. De methode die u gebruikt om de capaciteit te evalueren, is:
 
 1. Deel de cases voor gemengde gebruik in vier elementaire use cases.
 1. De maximale band breedte voor inkomend en uitgaand verkeer berekenen door de voor gaande formules afzonderlijk te gebruiken.
@@ -187,7 +187,7 @@ Zorg ervoor dat de app-server *niet* het knel punt is voor het gebruik van het v
 
 ## <a name="case-study"></a>Casestudy
 
-In de volgende secties worden vier typische gebruiks voorbeelden voor WebSocket-Trans Port beschreven: **echo**, **broadcast**, **verzenden naar groep**en **verzenden naar verbinding**. Voor elk scenario bevat de sectie de huidige binnenkomende en uitgaande capaciteit voor de Azure signalerings service. Ook worden de belangrijkste factoren beschreven die van invloed zijn op de prestaties.
+In de volgende secties worden vier typische gebruiks voorbeelden voor WebSocket-Trans Port beschreven: **echo**, **broadcast**, **verzenden naar groep** en **verzenden naar verbinding**. Voor elk scenario bevat de sectie de huidige binnenkomende en uitgaande capaciteit voor de Azure signalerings service. Ook worden de belangrijkste factoren beschreven die van invloed zijn op de prestaties.
 
 In de standaard modus maakt de app server vijf server verbindingen met de Azure signalerings service. De app server maakt standaard gebruik van de Azure signalerings Service-SDK. In de volgende resultaten van de prestatie test worden server verbindingen verhoogd tot 15 (of meer voor het uitzenden en verzenden van een bericht naar een grote groep).
 
@@ -239,7 +239,7 @@ Zelfs voor deze eenvoudige hub is de verkeers druk op de app-server prominent, o
 
 #### <a name="broadcast"></a>Uitzenden
 
-Wanneer de **Web-app**het bericht ontvangt, wordt deze verzonden naar alle clients. Hoe meer clients er worden uitgezonden, des te meer berichten verkeer naar alle clients. Zie het volgende diagram.
+Wanneer de **Web-app** het bericht ontvangt, wordt deze verzonden naar alle clients. Hoe meer clients er worden uitgezonden, des te meer berichten verkeer naar alle clients. Zie het volgende diagram.
 
 ![Verkeer voor de use-case van de uitzending](./media/signalr-concept-performance/broadcast.png)
 
@@ -290,7 +290,7 @@ De bewerkings kosten zijn belang rijk voor het verzenden van berichten naar een 
 | Verbindingen               | 1000 | 2.000 | 5\.000  | 10.000 | 20.000 | 50,000 | 100.000
 | Groepslid aantal leden        | 10    | 10    | 10     | 10     | 10     | 10     | 10 
 | Aantal groepen               | 100   | 200   | 500    | 1000  | 2.000  | 5\.000  | 10.000 
-| Inkomende berichten per seconde  | 200   | 400   | 1000  | 2500  | 4000  | 7.000  | 7.000   |
+| Inkomende berichten per seconde  | 200   | 400   | 1000  | 2500  | 4000  | 7\.000  | 7\.000   |
 | Inkomende band breedte  | 400 KBps  | 800 KBps  | 2 Mbps     | 5 Mbps     | 8 MBps     | 14 MBps    | 14 MBps     |
 | Uitgaande berichten per seconde | 2.000 | 4000 | 10.000 | 25,000 | 40,000 | 70.000 | 70.000  |
 | Uitgaande band breedte | 4 Mbps    | 8 MBps    | 20 MBps    | 50 MBps     | 80 MBps    | 140 MBps   | 140 MBps    |
@@ -307,7 +307,7 @@ Veel client verbindingen bellen de hub, waardoor het nummer van de app-server oo
 
 ##### <a name="big-group"></a>Big-groep
 
-Voor de **groep verzenden naar Big**wordt de uitgaande band breedte het knel punt voordat de kosten limiet van de route ring wordt bereikt. De volgende tabel bevat de maximale uitgaande band breedte, die bijna hetzelfde is als voor **broadcasten**.
+Voor de **groep verzenden naar Big** wordt de uitgaande band breedte het knel punt voordat de kosten limiet van de route ring wordt bereikt. De volgende tabel bevat de maximale uitgaande band breedte, die bijna hetzelfde is als voor **broadcasten**.
 
 |    Naar grote groep verzenden      | Unit1 | Unit2 | Unit5  | Unit10 | Unit20 | Unit50  | Unit100 |
 |---------------------------|-------|-------|--------|--------|--------|---------|---------|

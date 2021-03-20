@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8481c562ecbab1f26e877e55a5a9454695ddf4c0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92370828"
 ---
 # <a name="view-audit-history-for-azure-ad-roles-in-privileged-identity-management"></a>De controle geschiedenis voor Azure AD-rollen in Privileged Identity Management weer geven
@@ -91,14 +91,14 @@ Volg deze stappen om de controle geschiedenis voor Azure AD-rollen weer te geven
     | Kolom | Beschrijving |
     | --- | --- |
     | Tijd | Wanneer de actie is uitgevoerd. |
-    | Requestor | Gebruiker die de functie activeert of wijzigt. Als de waarde **Azure System**is, controleert u de controle geschiedenis van Azure voor meer informatie. |
+    | Requestor | Gebruiker die de functie activeert of wijzigt. Als de waarde **Azure System** is, controleert u de controle geschiedenis van Azure voor meer informatie. |
     | Bewerking | Acties die door de aanvrager worden uitgevoerd. Acties kunnen toewijzen, intrekken, activeren, deactiveren of AddedOutsidePIM bevatten. |
     | Lid | Gebruiker die een rol activeert of toewijst. |
     | Rol | De rol die is toegewezen of geactiveerd door de gebruiker. |
     | Redenen geven | Tekst die tijdens de activering is ingevoerd in het veld reden. |
     | Verloopdatum | Wanneer een geactiveerde rol verloopt. Is alleen van toepassing op in aanmerking komende roltoewijzingen. |
 
-1. Als u de controle geschiedenis wilt sorteren, klikt u op de knoppen **tijd**, **actie**en **rol** .
+1. Als u de controle geschiedenis wilt sorteren, klikt u op de knoppen **tijd**, **actie** en **rol** .
 
 ## <a name="filter-audit-history"></a>Controle geschiedenis filteren
 
@@ -108,7 +108,7 @@ Volg deze stappen om de controle geschiedenis voor Azure AD-rollen weer te geven
 
 1. Selecteer een tijds bereik in **tijds bereik**.
 
-1. In **rollen**selecteert u de selectie vakjes om de rollen aan te geven die u wilt weer geven.
+1. In **rollen** selecteert u de selectie vakjes om de rollen aan te geven die u wilt weer geven.
 
     ![Deel venster grafiek parameters bijwerken](media/pim-how-to-use-audit-log/update-chart-parameters.png)
 

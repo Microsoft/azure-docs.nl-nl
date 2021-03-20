@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: trbye
-ms.openlocfilehash: 45f4ca6349c14f21ce48a1fcf34b7fc8998dd278
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 99af0ee46e2827ac8a5749d58bb19cf85f96aa46
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101733513"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104577458"
 ---
 # <a name="get-started-with-custom-voice"></a>Aan de slag met Custom Voice
 
@@ -69,7 +69,9 @@ Als u uw eerste project wilt maken, selecteert u het tabblad **tekst naar spraak
 
 ## <a name="how-to-migrate-to-custom-neural-voice"></a>Migreren naar Custom Neural Voice
 
-Als u de niet-Neural (of standaard) aangepaste Voice gebruikt, kunt u het beste de migratie naar aangepaste Neural-stem uitvoeren, direct na de volgende stappen. Als u overstapt op aangepaste neurale Voice, kunt u realistischere stemmen ontwikkelen voor nog meer natuurlijke conversatie-interfaces en kunnen uw klanten en eind gebruikers profiteren van de nieuwste tekst-naar-spraak-technologie, op een verantwoordelijke manier. 
+De standaardlaag/niet-Neural (adaptief, statistisch parametrische, concacenative) van aangepaste spraak wordt afgeschaft. De aankondiging is verzonden naar alle bestaande spraak abonnementen vóór 2/28/2021. Tijdens de afschaffing (3/1/2021-2/29/2024) kunnen gebruikers van bestaande standaard lagen hun niet-Neural modellen blijven gebruiken. Alle nieuwe gebruikers/nieuwe spraak bronnen moeten worden verplaatst naar de Neural-laag/aangepaste Neural-stem. Na 2/29/2024 worden alle aangepaste stemmen (standaard/niet Neural) niet meer ondersteund. 
+
+Als u gebruikmaakt van niet-Neural/standaard aangepaste spraak, migreert u direct naar Custom Neural Voice en volgt u de onderstaande stappen. Als u overstapt op aangepaste neurale Voice, kunt u realistischere stemmen ontwikkelen voor nog meer natuurlijke conversatie-interfaces en kunnen uw klanten en eind gebruikers profiteren van de nieuwste tekst-naar-spraak-technologie, op een verantwoordelijke manier. 
 
 1. Lees hier meer over ons [beleid over het beperken van toegang en de](/legal/cognitive-services/speech-service/custom-neural-voice/limited-access-custom-neural-voice?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) [toepassing](https://aka.ms/customneural). Houd er rekening mee dat de toegang tot de aangepaste Neural Voice-service is onderhevig aan de enige keuze van micro soft op basis van onze geschiktheids criteria. Klanten kunnen pas toegang krijgen tot de technologie nadat hun toepassing is [gecontroleerd en ze](https://microsoft.com/ai/responsible-ai) hebben doorgegaan met het gebruik van deze in overeenstemming met onze nalevings voorwaarden en de [gedrags code](/legal/cognitive-services/speech-service/tts-code-of-conduct?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext). 
 2. Zodra uw toepassing is goedgekeurd, ontvangt u de toegang tot de training ' Neural '. Zorg ervoor dat u zich bij de [aangepaste Voice Portal](https://speech.microsoft.com/customvoice) aanmeldt met hetzelfde Azure-abonnement dat u in uw toepassing hebt verstrekt. 

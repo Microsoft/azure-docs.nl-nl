@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.openlocfilehash: b6689220873aaeb65337ba480e346e5d2c8020ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91707860"
 ---
 # <a name="logical-replication-and-logical-decoding-in-azure-database-for-postgresql---flexible-server"></a>Logische replicatie en logische decodering in Azure Database for PostgreSQL-flexibele server
@@ -53,8 +53,8 @@ Logische decodering
 
 ### <a name="logical-replication"></a>Logische replicatie
 Logische replicatie maakt gebruik van de termen ' Publisher ' en ' Subscriber '. 
-* De uitgever is de PostgreSQL-Data Base **waaruit**u gegevens verzendt. 
-* De abonnee is de PostgreSQL-Data Base **waarnaar**u gegevens verzendt.
+* De uitgever is de PostgreSQL-Data Base **waaruit** u gegevens verzendt. 
+* De abonnee is de PostgreSQL-Data Base **waarnaar** u gegevens verzendt.
 
 Hier volgt een voor beeld van een code die u kunt gebruiken om logische replicatie uit te proberen.
 

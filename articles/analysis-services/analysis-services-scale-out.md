@@ -8,10 +8,10 @@ ms.date: 09/10/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 24ee31b941d836d296c30927cfb9636f3023fa89
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92019427"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Uitschalen van Azure Analysis Services
@@ -85,9 +85,9 @@ Een andere goede metrische waarde om te kijken, is gemiddelde QPU door ServerRes
 **QPU configureren met ServerResourceType**
 
 1. In een lijn diagram met metrische gegevens klikt u op **metrische gegevens toevoegen**. 
-2. Selecteer uw server in **resource**, Selecteer in **metrische naam ruimte**de optie **Analysis Services standaard metrieken**en selecteer vervolgens in **metrische gegevens** **QPU**, en selecteer vervolgens bij **aggregatie**de optie **Gem**. 
+2. Selecteer uw server in **resource**, Selecteer in **metrische naam ruimte** de optie **Analysis Services standaard metrieken** en selecteer vervolgens in **metrische gegevens** **QPU**, en selecteer vervolgens bij **aggregatie** de optie **Gem**. 
 3. Klik op **splitsing Toep assen**. 
-4. In **waarden**selecteert u **ServerResourceType**.  
+4. In **waarden** selecteert u **ServerResourceType**.  
 
 ### <a name="detailed-diagnostic-logging"></a>Gedetailleerde logboek registratie voor diagnostische gegevens
 
@@ -100,7 +100,7 @@ Gebruik Azure Monitor logboeken voor meer gedetailleerde diagnostische gegevens 
 
 1. Klik in de portal op **uitschalen**. Gebruik de schuif regelaar om het aantal query replica servers te selecteren. Het aantal replica's dat u kiest, is naast uw bestaande server.  
 
-2. Selecteer op **de verwerkings server scheiden van de query groep**Ja om de verwerkings server van de query servers uit te sluiten. Client [verbindingen](#connections) die gebruikmaken van de standaard Connection String (zonder `:rw` ) worden omgeleid naar replica's in de query groep. 
+2. Selecteer op **de verwerkings server scheiden van de query groep** Ja om de verwerkings server van de query servers uit te sluiten. Client [verbindingen](#connections) die gebruikmaken van de standaard Connection String (zonder `:rw` ) worden omgeleid naar replica's in de query groep. 
 
    ![Schuif regelaar voor uitschalen](media/analysis-services-scale-out/aas-scale-out-slider.png)
 

@@ -6,10 +6,10 @@ services: container-service
 ms.topic: conceptual
 ms.date: 04/09/2019
 ms.openlocfilehash: 9592b03f5bd9e9436db5665e040b4afd3b68b764
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87562732"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Quota’s, groottebeperkingen voor virtuele machines, en beschikbaarheid in regio’s in Azure Kubernetes Service (AKS)
@@ -31,7 +31,7 @@ Alle andere beperkingen voor netwerk, berekening en opslag zijn van toepassing o
 
 ## <a name="restricted-vm-sizes"></a>Beperkte VM-grootten
 
-Elk knoop punt in een AKS-cluster bevat een vaste hoeveelheid reken resources, zoals vCPU en geheugen. Als een AKS-knoop punt onvoldoende Compute-bronnen bevat, kan het samen werken mogelijk niet op de juiste wijze worden uitgevoerd. **Gebruik niet de volgende VM-sku's in AKS**om ervoor te zorgen dat het vereiste *uitvoeren-systeem* en uw toepassingen betrouwbaar kunnen worden gepland:
+Elk knoop punt in een AKS-cluster bevat een vaste hoeveelheid reken resources, zoals vCPU en geheugen. Als een AKS-knoop punt onvoldoende Compute-bronnen bevat, kan het samen werken mogelijk niet op de juiste wijze worden uitgevoerd. **Gebruik niet de volgende VM-sku's in AKS** om ervoor te zorgen dat het vereiste *uitvoeren-systeem* en uw toepassingen betrouwbaar kunnen worden gepland:
 
 - Standard_A0
 - Standard_A1

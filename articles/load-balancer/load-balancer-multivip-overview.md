@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
 ms.openlocfilehash: 5c2072d13cab9839a276c0437747d7075918e78a
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94696877"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Meerdere frontends voor Azure Load Balancer
@@ -29,7 +29,7 @@ Wanneer u een Azure Load Balancer definieert, zijn een front-end-en een back-end
 
 De volgende tabel bevat enkele voor beelden van frontend-configuraties:
 
-| Front-end | Het IP-adres | protocol | poort |
+| Front-end | IP-adres | protocol | poort |
 | --- | --- | --- | --- |
 | 1 |65.52.0.1 |TCP |80 |
 | 2 |65.52.0.1 |TCP |*8080* |
@@ -53,7 +53,7 @@ We verkennen deze scenario's nog verder door te beginnen met het standaard gedra
 
 In dit scenario worden de front-ends als volgt geconfigureerd:
 
-| Front-end | Het IP-adres | protocol | poort |
+| Front-end | IP-adres | protocol | poort |
 | --- | --- | --- | --- |
 | ![groen front-end](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |
 | ![paarse front-end](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |*65.52.0.2* |TCP |80 |
@@ -134,7 +134,7 @@ netsh interface ipv4 set interface “interfacename” weakhostsend=enabled
 
 Laten we uitgaan van dezelfde frontend-configuratie als in het vorige scenario:
 
-| Front-end | Het IP-adres | protocol | poort |
+| Front-end | IP-adres | protocol | poort |
 | --- | --- | --- | --- |
 | ![groen front-end](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |
 | ![paarse front-end](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |*65.52.0.2* |TCP |80 |

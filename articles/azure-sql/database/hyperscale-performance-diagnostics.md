@@ -11,10 +11,10 @@ ms.author: denzilr
 ms.reviewer: sstein
 ms.date: 10/18/2019
 ms.openlocfilehash: ed31ff5d77b258d141a77fc174c2d5452adf7d01
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92791712"
 ---
 # <a name="sql-hyperscale-performance-troubleshooting-diagnostics"></a>Diagnostische gegevens voor het oplossen van problemen met SQL grootschalige-prestaties
@@ -97,7 +97,7 @@ Een verhouding van Lees bewerkingen die worden uitgevoerd op RBPEX naar geaggreg
 
 ## <a name="data-io-in-resource-utilization-statistics"></a>Gegevens-IO in statistieken van resource gebruik
 
-In een niet-grootschalige-Data Base worden de gecombineerde Lees-en schrijf-IOPS voor gegevens bestanden, ten opzichte van de limiet van de [resource governance](./resource-limits-logical-server.md#resource-governance) -gegevens IOPS, gerapporteerd in [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) en [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) weer gaven in de `avg_data_io_percent` kolom. Dezelfde waarde wordt in het Azure Portal gerapporteerd als een _gegevens-io-percentage_ .
+In een niet-grootschalige-Data Base worden de gecombineerde Lees-en schrijf-IOPS voor gegevens bestanden, ten opzichte van de limiet van de [resource governance](./resource-limits-logical-server.md#resource-governance) -gegevens IOPS, gerapporteerd in [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) en [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) weer gaven in de `avg_data_io_percent` kolom. Dezelfde waarde wordt in het Azure Portal gerapporteerd als een _gegevens-io-percentage_.
 
 In een grootschalige-data base wordt in deze kolom gerapporteerde over gegevensiops-gebruik ten opzichte van de limiet voor lokale opslag op alleen Compute replica, met name IO tegen RBPEX en `tempdb` . Een waarde van 100% in deze kolom geeft aan dat resource governance de IOPS van lokale opslag beperkt. Als dit is gekoppeld aan een prestatie probleem, stemt u de werk belasting af om minder IO te genereren of breidt u de database service doelstelling uit om de maximale [limiet](resource-limits-vcore-single-databases.md)voor _gegevens IOPS_ van de resource governance te verhogen. Voor resource governance van RBPEX Lees-en schrijf bewerkingen telt het systeem afzonderlijke IOs-KB op in plaats van een groter IOs dat kan worden uitgegeven door de SQL Server data base-engine.
 

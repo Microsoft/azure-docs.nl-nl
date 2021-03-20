@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: c7efedadbba196223db2ad5700035e27d37fb414
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88008454"
 ---
 # <a name="connect-to-windows-virtual-desktop-classic-with-the-ios-client"></a>Verbinding maken met het virtuele bureau blad van Windows (klassiek) met de iOS-client
@@ -38,8 +38,8 @@ Abonneren op een feed:
    - Als u e-mail wilt gebruiken, voert u uw e-mail adres in. Dit geeft de client de opdracht om te zoeken naar een URL die is gekoppeld aan uw e-mail adres als uw beheerder de server op die manier heeft geconfigureerd.
 3. Tik op **Volgende**.
 4. Voer uw referenties in wanneer hierom wordt gevraagd.
-   - Geef voor de **gebruikers naam**de gebruikers naam op met machtigingen voor toegang tot resources.
-   - Geef bij **wacht woord**het wacht woord op dat is gekoppeld aan de gebruikers naam.
+   - Geef voor de **gebruikers naam** de gebruikers naam op met machtigingen voor toegang tot resources.
+   - Geef bij **wacht woord** het wacht woord op dat is gekoppeld aan de gebruikers naam.
    - U wordt mogelijk ook gevraagd extra factoren op te geven als uw beheerder de verificatie op die manier heeft geconfigureerd.
 5. Tik op **Opslaan**.
 

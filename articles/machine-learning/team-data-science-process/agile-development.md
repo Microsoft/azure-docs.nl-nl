@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 113c11b749b42bbaf9e5e40cdf63623288997a92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89440283"
 ---
 # <a name="agile-development-of-data-science-projects"></a>Flexibele ontwikkeling van data Science-projecten
@@ -35,7 +35,7 @@ In de volgende afbeelding ziet u een typische werk stroom voor Sprint planning,-
 
 ##  <a name="work-item-types"></a><a name='Terminology-1'></a>Typen werk items
 
-In het TDSP Sprint planning Framework zijn vier veelgebruikte typen *werk items* : *functies*, *gebruikers verhalen*, *taken*en *fouten*. De achterstand voor alle werk items is op project niveau, niet op het niveau van de Git-opslag plaats. 
+In het TDSP Sprint planning Framework zijn vier veelgebruikte typen *werk items* : *functies*, *gebruikers verhalen*, *taken* en *fouten*. De achterstand voor alle werk items is op project niveau, niet op het niveau van de Git-opslag plaats. 
 
 Hier vindt u de definities voor de typen werk items:
 
@@ -72,7 +72,7 @@ Zie [achterstallig artikelen toewijzen aan een sprint](/azure/devops/boards/spri
 
 Nadat u uw project-en project code opslagplaats hebt gemaakt, kunt u een functie toevoegen aan de achterstand om het werk voor uw project weer te geven.
 
-1. Op de pagina project selecteert u achterstanden voor **kaarten**  >  **Backlogs** in de linkernavigatiebalk. 
+1. Op de pagina project selecteert u achterstanden voor **kaarten**  >   in de linkernavigatiebalk. 
    
 1. Als op het tabblad **achterstand** het type werk item in de bovenste balk de tekst **verhalen**, vervolg keuzelijst en selecteer **functies**. Selecteer vervolgens **nieuw werk item.**
    
@@ -130,42 +130,42 @@ Gegevens wetenschappers kunnen meer vertrouwd zijn met een flexibel sjabloon waa
 
 1. Selecteer in de hoofd pagina van de Azure DevOps-organisatie **organisatie-instellingen** in het linkernavigatievenster. 
    
-1. Selecteer in de **organisatie-instellingen** links onder **boards**de optie **proces**. 
+1. Selecteer in de **organisatie-instellingen** links onder **boards** de optie **proces**. 
    
-1. Selecteer in het deel venster **alle processen** de **..** . naast **Agile**en selecteer **overgenomen proces maken**.
+1. Selecteer in het deel venster **alle processen** de **..** . naast **Agile** en selecteer **overgenomen proces maken**.
    
    ![Overgenomen proces van Agile maken](./media/agile-development/10-settings.png) 
    
-1. In het dialoog venster **overgenomen proces van Agile maken** voert u de naam *AgileDataScienceProcess*in en selecteert u **proces maken**.
+1. In het dialoog venster **overgenomen proces van Agile maken** voert u de naam *AgileDataScienceProcess* in en selecteert u **proces maken**.
    
    ![AgileDataScienceProcess-proces maken](./media/agile-development/11-agileds.png)
    
-1. In **alle processen**selecteert u de nieuwe **AgileDataScienceProcess**. 
+1. In **alle processen** selecteert u de nieuwe **AgileDataScienceProcess**. 
    
-1. Schakel op het tabblad **typen werk items** de optie **epische**, **functie**, **gebruikers verhaal**en **taak** uit door de **..** . naast elk item te selecteren en vervolgens **uitschakelen**te selecteren. 
+1. Schakel op het tabblad **typen werk items** de optie **epische**, **functie**, **gebruikers verhaal** en **taak** uit door de **..** . naast elk item te selecteren en vervolgens **uitschakelen** te selecteren. 
    
    ![Typen werk items uitschakelen](./media/agile-development/12-disable.png)
    
-1. Selecteer in **alle processen**het tabblad **achterstand niveaus** . Onder **portefeuilles achterstand**selecteert u de **..** . naast **epische (uitgeschakeld)** en selecteert u **bewerken/naam wijzigen**. 
+1. Selecteer in **alle processen** het tabblad **achterstand niveaus** . Onder **portefeuilles achterstand** selecteert u de **..** . naast **epische (uitgeschakeld)** en selecteert u **bewerken/naam wijzigen**. 
    
 1. In het dialoog venster **achterstallig niveau bewerken** :
    1. Vervang onder **naam** **epische** met *TDSP-projecten*. 
-   1. Onder **typen werk items op dit achterstallig niveau**selecteert u **nieuw type werk item**, voert u *TDSP-project*in en selecteert u **toevoegen**. 
+   1. Onder **typen werk items op dit achterstallig niveau** selecteert u **nieuw type werk item**, voert u *TDSP-project* in en selecteert u **toevoegen**. 
    1. Onder **standaard type werk items**, vervolg keuzelijst en selecteer **TDSP-project**. 
    1. Selecteer **Opslaan**.
    
    ![Niveau van de portefeuille achterstand instellen](./media/agile-development/13-rename.png)  
    
-1. Volg dezelfde stappen om de namen van **functies** te wijzigen in *TDSP-fasen*en voeg de volgende nieuwe typen werk items toe:
+1. Volg dezelfde stappen om de namen van **functies** te wijzigen in *TDSP-fasen* en voeg de volgende nieuwe typen werk items toe:
    
    - *Inzicht in het bedrijf*
    - *Gegevens ophalen*
    - *Modelleren*
    - *Implementatie*
    
-1. Onder **achterstand**voor de behoefte wijzigt u de naam van **artikelen** in *subfases van TDSP*, voegt u het nieuwe werk item type *TDSP subfase*toe en stelt u het type standaard werk item in op **TDSP subfase**.
+1. Onder **achterstand** voor de behoefte wijzigt u de naam van **artikelen** in *subfases van TDSP*, voegt u het nieuwe werk item type *TDSP subfase* toe en stelt u het type standaard werk item in op **TDSP subfase**.
    
-1. Voeg onder **iteratie achterstand**een nieuwe *TDSP-taak*type werk item toe en stel deze in op het standaard type werk item. 
+1. Voeg onder **iteratie achterstand** een nieuwe *TDSP-taak* type werk item toe en stel deze in op het standaard type werk item. 
    
 Nadat u de stappen hebt voltooid, moeten de achterstands niveaus er als volgt uitzien:
    
@@ -175,7 +175,7 @@ Nadat u de stappen hebt voltooid, moeten de achterstands niveaus er als volgt ui
 
 U kunt de data Science-proces sjabloon gebruiken voor het maken van TDSP-projecten en het bijhouden van werk items die overeenkomen met de TDSP levenscyclus fasen.
 
-1. Selecteer **Nieuw project**op de hoofd pagina van de Azure DevOps-organisatie. 
+1. Selecteer **Nieuw project** op de hoofd pagina van de Azure DevOps-organisatie. 
    
 1. Geef in het dialoog venster **Nieuw project maken** een naam op voor het project en selecteer vervolgens **Geavanceerd**. 
    
@@ -183,7 +183,7 @@ U kunt de data Science-proces sjabloon gebruiken voor het maken van TDSP-project
    
    ![Een TDSP-project maken](./media/agile-development/15-newproject.png)
    
-1. In het zojuist gemaakte project selecteert u achterstanden **boards**  >  **Backlogs** in de linkernavigatiebalk.
+1. In het zojuist gemaakte project selecteert u achterstanden **boards**  >   in de linkernavigatiebalk.
    
 1. Als u TDSP-projecten zichtbaar wilt maken, selecteert u het pictogram **team instellingen configureren** . Schakel in het scherm **instellingen** het selectie vakje **projecten TDSP** in en selecteer vervolgens **opslaan en sluiten**.
    

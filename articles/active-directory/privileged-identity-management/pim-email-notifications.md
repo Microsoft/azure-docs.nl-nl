@@ -17,10 +17,10 @@ ms.reviewer: hanki
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fe57a44a5a6fa9a631604d92419fd8f5ebcce50a
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93394727"
 ---
 # <a name="email-notifications-in-pim"></a>E-mail meldingen in PIM
@@ -50,9 +50,9 @@ Wie deze e-mails voor Azure AD-rollen ontvangt, is afhankelijk van uw rol, de ge
 
 | Gebruiker | Activering van rol is in behandeling | De activerings aanvraag voor de rol is voltooid | PIM is ingeschakeld |
 | --- | --- | --- | --- |
-| Beheerder van geprivilegieerde rol</br>(Geactiveerd/in aanmerking komend) | Yes</br>(alleen als er geen expliciete goed keurders zijn opgegeven) | Ja* | Yes |
-| Beveiligingsbeheer</br>(Geactiveerd/in aanmerking komend) | No | Ja* | Yes |
-| Hoofdbeheerder</br>(Geactiveerd/in aanmerking komend) | No | Ja* | Yes |
+| Beheerder voor bevoorrechte rollen</br>(Geactiveerd/in aanmerking komend) | Ja</br>(alleen als er geen expliciete goed keurders zijn opgegeven) | Ja* | Ja |
+| Beveiligingsbeheer</br>(Geactiveerd/in aanmerking komend) | Nee | Ja* | Ja |
+| Hoofdbeheerder</br>(Geactiveerd/in aanmerking komend) | Nee | Ja* | Ja |
 
 \*Als de [instelling **meldingen**](pim-how-to-change-default-settings.md#notifications) is ingesteld op **inschakelen**.
 

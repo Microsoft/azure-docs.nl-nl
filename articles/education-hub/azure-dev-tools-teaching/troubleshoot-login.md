@@ -8,10 +8,10 @@ ms.service: azure-education
 ms.subservice: education-hub
 ms.date: 06/30/2020
 ms.openlocfilehash: 276ab2cc1d79235c00ce1bb50ff9b648bb1de6ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87096651"
 ---
 # <a name="troubleshooting-student-login-issues"></a>Problemen met aanmelding bij studenten oplossen
@@ -39,16 +39,16 @@ Als een student een bestaande Microsoft-account heeft (bijvoorbeeld Xbox), kunne
 
 1. Klik op **beheren hoe u zich aanmeldt bij micro soft**. U wordt gevraagd om uw identiteit te verifiëren. U ontvangt een e-mail met een beveiligings code.
 
-    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in.png" alt-text="Foutbericht bij aanmelden." border="false":::
+    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in.png" alt-text="Aanmelden beheren." border="false":::
 
 1. Voer de beveiligings code per e-mail in.
 
-    :::image type="content" source="media/troubleshoot-accounts/sign-in-enter-code.png" alt-text="Foutbericht bij aanmelden." border="false":::!
+    :::image type="content" source="media/troubleshoot-accounts/sign-in-enter-code.png" alt-text="Aanmeldings code invoeren." border="false":::!
 
 1. Klik op **E-mail toevoegen** aan uw account en voer uw e-mail adres van uw universiteit in.
 De volgende keer dat u zich aanmeldt, kunt u uw e-mail adres van de University gebruiken om toegang te krijgen tot uw Azure dev tools voor onderwijs.
 
-    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in-add-email.png" alt-text="Foutbericht bij aanmelden." border="false":::
+    :::image type="content" source="media/troubleshoot-accounts/manage-sign-in-add-email.png" alt-text="Beheer hoe u zich aanmeldt bij micro soft." border="false":::
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Veelgestelde vragen](program-faq.md)

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 4b57b3fbb338774eb8d66fc4d3c0c817e19aff4c
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458197"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-maxient-conduct-manager-software"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Maxient Conduct Manager Software
@@ -50,8 +50,8 @@ In deze zelfstudie gaat u Azure AD configureren voor gebruik met Maxient Conduct
 Voor het configureren van de integratie van Maxient Conduct Manager Software met Azure Active Directory moet u Maxient Conduct Manager Software uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **Maxient Conduct Manager Software** in het zoekvak.
 1. Selecteer **Maxient Conduct Manager Software** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
@@ -71,8 +71,8 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Maxient Con
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal.
 
-1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Maxient Conduct Manager Software** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Maxient Conduct Manager Software** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -92,15 +92,15 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
 
 ### <a name="assign-all-users-to-be-able-to-authenticate-for-the-maxient-conduct-manager-software"></a>Alle gebruikers toewijzen om kunnen te verifiëren voor Maxient Conduct Manager Software
 
-In deze sectie verleent u alle accounts toegang voor verificatie met behulp van het Azure-systeem voor Maxient Conduct Manager Software.  Deze stap is **vereist** voor een goede werking van Maxient.  Maxient maakt gebruik van uw Azure AD-systeem om gebruikers te *verifiëren* . De *autorisatie* van gebruikers wordt uitgevoerd in het Maxient-systeem voor de specifieke functie die ze willen uitvoeren. Maxient gebruikt geen kenmerken uit uw map om deze beslissingen te nemen.
+In deze sectie verleent u alle accounts toegang voor verificatie met behulp van het Azure-systeem voor Maxient Conduct Manager Software.  Deze stap is **vereist** voor een goede werking van Maxient.  Maxient maakt gebruik van uw Azure AD-systeem om gebruikers te *verifiëren*. De *autorisatie* van gebruikers wordt uitgevoerd in het Maxient-systeem voor de specifieke functie die ze willen uitvoeren. Maxient gebruikt geen kenmerken uit uw map om deze beslissingen te nemen.
 
-1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Maxient Conduct Manager Software** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 

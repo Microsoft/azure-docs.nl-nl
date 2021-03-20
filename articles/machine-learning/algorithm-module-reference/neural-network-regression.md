@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 403576454615effeb53651b51679681422b08e9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90890368"
 ---
 # <a name="neural-network-regression-module"></a>Neural-module voor netwerk regressie
@@ -30,7 +30,7 @@ Gebruik deze module om een regressie model te maken met behulp van een aanpasbaa
   
  Hoewel Neural-netwerken algemeen bekend zijn voor gebruik in diep gaande lessen en het model leren van complexe problemen, zoals afbeeldings herkenning, kunnen ze eenvoudig worden aangepast aan regressie problemen. Een klasse van statistische modellen kan een Neural-netwerk worden genoemd als ze adaptieve gewichten gebruiken en niet-lineaire functies van hun invoer kunnen benaderen. Daarom is Neural netwerk regressie geschikt voor problemen waarbij een meer traditioneel regressie model niet aan een oplossing kan voldoen.
   
- Neural Network regressie is een *gemarkeerde*leer methode en vereist daarom een gecodeerde gegevensset, die een kolom Label bevat. Omdat een regressie model een numerieke waarde voor spelt, moet de kolom Label een numeriek gegevens type zijn.  
+ Neural Network regressie is een *gemarkeerde* leer methode en vereist daarom een gecodeerde gegevensset, die een kolom Label bevat. Omdat een regressie model een numerieke waarde voor spelt, moet de kolom Label een numeriek gegevens type zijn.  
   
  U kunt het model trainen door het model en de gecodeerde gegevensset op te geven als invoer voor het [trainen van modellen](./train-model.md). Het getrainde model kan vervolgens worden gebruikt om waarden te voors pellen voor de nieuwe invoer voorbeelden.  
   
@@ -60,7 +60,7 @@ Neural-netwerken kunnen uitgebreid worden aangepast. In deze sectie wordt beschr
 
     -   **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.   
 
-3.  In **specificatie van verborgen laag**selecteert u **volledig verbonden Case**. Met deze optie wordt een model gemaakt met behulp van de standaard Neural-netwerk architectuur, die voor een Neural netwerk regressie model deze kenmerken heeft:  
+3.  In **specificatie van verborgen laag** selecteert u **volledig verbonden Case**. Met deze optie wordt een model gemaakt met behulp van de standaard Neural-netwerk architectuur, die voor een Neural netwerk regressie model deze kenmerken heeft:  
   
     + Het netwerk heeft precies één verborgen laag.
     + De uitvoer laag is volledig verbonden met de verborgen laag en de verborgen laag is volledig verbonden met de invoer laag.
@@ -68,18 +68,18 @@ Neural-netwerken kunnen uitgebreid worden aangepast. In deze sectie wordt beschr
   
     Omdat het aantal knoop punten in de invoer laag wordt bepaald door het aantal functies in de trainings gegevens, kan er in een regressie model slechts één knoop punt in de uitvoer laag zijn.  
   
-4. Voor het **aantal verborgen knoop punten**typt u het aantal verborgen knoop punten. De standaard waarde is één verborgen laag met 100 knoop punten. (Deze optie is niet beschikbaar als u een aangepaste architectuur definieert met behulp van net #.)
+4. Voor het **aantal verborgen knoop punten** typt u het aantal verborgen knoop punten. De standaard waarde is één verborgen laag met 100 knoop punten. (Deze optie is niet beschikbaar als u een aangepaste architectuur definieert met behulp van net #.)
   
-5.  Voor het **leer tempo**typt u een waarde die de stap definieert die bij elke herhaling moet worden uitgevoerd, vóór correctie. Een hogere waarde voor het leer tempo kan ertoe leiden dat het model sneller wordt geconvergeerd, maar dat het lokale minima kan overschrijden.
+5.  Voor het **leer tempo** typt u een waarde die de stap definieert die bij elke herhaling moet worden uitgevoerd, vóór correctie. Een hogere waarde voor het leer tempo kan ertoe leiden dat het model sneller wordt geconvergeerd, maar dat het lokale minima kan overschrijden.
 
-6.  Geef voor **aantal Learning-iteraties**het maximum aantal keren op dat het algoritme de trainings cases verwerkt.
+6.  Geef voor **aantal Learning-iteraties** het maximum aantal keren op dat het algoritme de trainings cases verwerkt.
 
 
-8.  Voor **de impuls**typt u een waarde die tijdens het leren moet worden toegepast als gewicht op knoop punten uit eerdere iteraties.
+8.  Voor **de impuls** typt u een waarde die tijdens het leren moet worden toegepast als gewicht op knoop punten uit eerdere iteraties.
 
-10. Selecteer de optie, **wille keurige voor beelden**om de volg orde van de aanvragen tussen herhalingen te wijzigen. Als u deze optie uitschakelt, worden cases in precies dezelfde volg orde verwerkt telkens wanneer u de pijp lijn uitvoert.
+10. Selecteer de optie, **wille keurige voor beelden** om de volg orde van de aanvragen tussen herhalingen te wijzigen. Als u deze optie uitschakelt, worden cases in precies dezelfde volg orde verwerkt telkens wanneer u de pijp lijn uitvoert.
   
-11. Voor **wille keurig getal zaad**kunt u eventueel een waarde invoeren die als seed moet worden gebruikt. Het opgeven van een Seed-waarde is handig als u de Herhaal baarheid wilt garanderen voor uitvoeringen van dezelfde pijp lijn.
+11. Voor **wille keurig getal zaad** kunt u eventueel een waarde invoeren die als seed moet worden gebruikt. Het opgeven van een Seed-waarde is handig als u de Herhaal baarheid wilt garanderen voor uitvoeringen van dezelfde pijp lijn.
   
 13. Verbind een trainings gegevensset en Train het model:
 

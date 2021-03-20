@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 7de4b5faa997d909089daedab7e48e5d5a6de2e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88140833"
 ---
 # <a name="cloudsimple-nodes-overview"></a>Overzicht van CloudSimple-knoop punten
@@ -38,7 +38,7 @@ De volgende typen knoop punten zijn beschikbaar voor inrichting of reserve ring.
 
 | SKU           | CS28-knoop punt                 | CS36-knoop punt                 | CS36m-knoop punt                |
 |---------------|-----------------------------|-----------------------------|-----------------------------|
-| Regio        | VS-Oost, VS-West            | VS-Oost, VS-West            | Europa -west                 |
+| Region        | VS-Oost, VS-West            | VS-Oost, VS-West            | Europa -west                 |
 | CPU           | 2x 2,2 GHz, 28 kernen (56 HT) | 2x 2,3 GHz, 36 kern geheugens (72 HT) | 2x 2,3 GHz, 36 kern geheugens (72 HT) |
 | RAM           | 256 GB                      | 512 GB                      | 576 GB                      |
 | Cache schijf    | 1,6-TB NVMe                 | 3,2-TB NVMe                 | 3,2-TB NVMe                 |

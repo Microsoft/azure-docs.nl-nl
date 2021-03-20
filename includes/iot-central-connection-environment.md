@@ -9,10 +9,10 @@ ms.date: 11/03/2020
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: a3c85a7c76115ff72e5042788ad83fd31f601c9c
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96122680"
 ---
 Stel de omgevingsvariabelen in om het voorbeeld te configureren. Het volgende codefragment laat zien hoe u de omgevingsvariabelen instelt vanaf de Windows-opdrachtprompt. Als u een **bash**-shell gebruikt, vervangt u de `set`-opdrachten door `export`-opdrachten:

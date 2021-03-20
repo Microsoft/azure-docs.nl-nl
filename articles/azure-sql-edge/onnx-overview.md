@@ -10,10 +10,10 @@ author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
 ms.openlocfilehash: 5dc3d44ac4396897fd43831d51ee628bb06048cb
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93392058"
 ---
 # <a name="machine-learning-and-ai-with-onnx-in-sql-edge"></a>Machine learning en AI met ONNX in SQL Edge
@@ -28,7 +28,7 @@ Als u machine learning modellen wilt afleiden in Azure SQL Edge, moet u eerst ee
 
 Een model ophalen in de ONNX-indeling:
 
-- **Model buil ding Services** : services zoals de [functie voor automatische machine learning in Azure Machine Learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) en [Azure Custom Vision service](../cognitive-services/custom-vision-service/getting-started-build-a-classifier.md) ondersteunen het getrainde model rechtstreeks in de ONNX-indeling te exporteren.
+- **Model buil ding Services**: services zoals de [functie voor automatische machine learning in Azure Machine Learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) en [Azure Custom Vision service](../cognitive-services/custom-vision-service/getting-started-build-a-classifier.md) ondersteunen het getrainde model rechtstreeks in de ONNX-indeling te exporteren.
 
 - [**Bestaande modellen converteren en/of exporteren**](https://github.com/onnx/tutorials#converting-to-onnx-format): verschillende trainings Frameworks (zoals [PyTorch](https://pytorch.org/docs/stable/onnx.html), Chainer en Caffe2) ondersteunen systeem eigen export functionaliteit naar ONNX, waarmee u uw getrainde model kunt opslaan in een specifieke versie van de ONNX-indeling. Voor frameworks die systeem eigen export niet ondersteunen, zijn er zelfstandige ONNX-Converter Installeer bare pakketten waarmee u modellen kunt converteren die zijn getraind van verschillende machine learning Frameworks naar de ONNX-indeling.
 
@@ -43,7 +43,7 @@ Een model ophalen in de ONNX-indeling:
 
 ## <a name="limitations"></a>Beperkingen
 
-Momenteel worden niet alle ONNX-modellen ondersteund door Azure SQL Edge. De ondersteuning is beperkt tot modellen met **numerieke gegevens typen** :
+Momenteel worden niet alle ONNX-modellen ondersteund door Azure SQL Edge. De ondersteuning is beperkt tot modellen met **numerieke gegevens typen**:
 
 - [int en bigint](/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql)
 - [werkelijk en vlotter](/sql/t-sql/data-types/float-and-real-transact-sql).

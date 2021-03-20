@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
 ms.openlocfilehash: bf35d08128aa8a3e8f545ed7184866694219f2cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90905214"
 ---
 # <a name="remove-duplicate-rows-module"></a>Module dubbele rijen verwijderen
@@ -42,7 +42,7 @@ Het is duidelijk dat dit voor beeld meerdere kolommen bevat met mogelijk dubbele
 
 + U kunt er ook voor kiezen om dubbele waarden toe te staan in het veld ID en een andere combi natie van bestanden te gebruiken om unieke records te zoeken, zoals de voor naam, achternaam, leeftijd en geslacht.  
 
-Als u de criteria wilt instellen voor of een rij dubbel of niet is, geeft u één kolom of een set kolommen op die moet worden gebruikt als **sleutel**. Twee rijen worden alleen als dubbele waarden beschouwd als **alle** sleutel kolommen gelijk zijn. Als een rij de waarde voor **sleutels**mist, worden deze niet als dubbele rijen beschouwd. Als geslacht en leeftijd bijvoorbeeld zijn ingesteld als sleutels in de bovenstaande tabel, zijn rij 6 en 7 geen dubbele rijen, aangezien de waarde voor de leeftijd ontbreekt.
+Als u de criteria wilt instellen voor of een rij dubbel of niet is, geeft u één kolom of een set kolommen op die moet worden gebruikt als **sleutel**. Twee rijen worden alleen als dubbele waarden beschouwd als **alle** sleutel kolommen gelijk zijn. Als een rij de waarde voor **sleutels** mist, worden deze niet als dubbele rijen beschouwd. Als geslacht en leeftijd bijvoorbeeld zijn ingesteld als sleutels in de bovenstaande tabel, zijn rij 6 en 7 geen dubbele rijen, aangezien de waarde voor de leeftijd ontbreekt.
 
 Wanneer u de module uitvoert, wordt er een gegevensset voor kandidaten gemaakt en wordt een set rijen geretourneerd die geen duplicaten bevat in de opgegeven set kolommen.
 
@@ -55,7 +55,7 @@ Wanneer u de module uitvoert, wordt er een gegevensset voor kandidaten gemaakt e
 
 2. Verbind de gegevensset die u wilt controleren op dubbele rijen.
 
-3. Klik in het deel venster **Eigenschappen** onder **filter expressie voor sleutel kolommen** **selecteren op kolom kiezer starten**om kolommen te kiezen die u wilt gebruiken bij het identificeren van duplicaten.
+3. Klik in het deel venster **Eigenschappen** onder **filter expressie voor sleutel kolommen** **selecteren op kolom kiezer starten** om kolommen te kiezen die u wilt gebruiken bij het identificeren van duplicaten.
 
     In deze context betekent de **sleutel** geen unieke id. Alle kolommen die u selecteert met behulp van de kolom kiezer, worden aangeduid als **sleutel kolommen**. Alle niet-geselecteerde kolommen worden beschouwd als niet-sleutel kolommen. De combi natie van kolommen die u als sleutels selecteert, bepaalt de unieke aanduiding van de records. (Dit kan worden beschouwd als een SQL-instructie die gebruikmaakt van meerdere equals-samen voegingen.)
 

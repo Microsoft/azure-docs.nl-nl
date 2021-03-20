@@ -4,10 +4,10 @@ description: Naslag voor het definiëren van taken in YAML voor ACR-taken, waaro
 ms.topic: article
 ms.date: 07/08/2020
 ms.openlocfilehash: 042310d29f5561c2cd77b0b9cccfc587ca4aa767
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88067580"
 ---
 # <a name="acr-tasks-reference-yaml"></a>Naslag informatie over ACR-taken: YAML
@@ -20,7 +20,7 @@ Dit artikel bevat informatie over het maken van YAML-bestanden met meerdere stap
 
 ACR-taken bieden ondersteuning voor een taak declaratie met meerdere stappen in de standaard YAML-syntaxis. U definieert de stappen van een taak in een YAML-bestand. U kunt de taak vervolgens hand matig uitvoeren door het bestand door te geven aan de opdracht [AZ ACR run][az-acr-run] . U kunt ook het bestand gebruiken om een taak te maken met [AZ ACR Task Create][az-acr-task-create] die automatisch wordt geactiveerd tijdens een Git-door Voer, een update van een basis installatie kopie of een schema. Hoewel in dit artikel wordt verwezen naar `acr-task.yaml` het bestand dat de stappen bevat, ondersteunt ACR-taken een geldige bestands naam met een [ondersteunde extensie](#supported-task-filename-extensions).
 
-`acr-task.yaml`Primitieven op het hoogste niveau zijn **taak eigenschappen**, **typen stappen**en **stap-eigenschappen**:
+`acr-task.yaml`Primitieven op het hoogste niveau zijn **taak eigenschappen**, **typen stappen** en **stap-eigenschappen**:
 
 * [Taak eigenschappen](#task-properties) zijn van toepassing op alle stappen in de taak uitvoering. Er zijn verschillende algemene taak eigenschappen, waaronder:
   * `version`

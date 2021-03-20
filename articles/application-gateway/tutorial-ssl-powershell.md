@@ -10,13 +10,13 @@ ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc, devx-track-azurepowershell
 ms.openlocfilehash: 2bd57344f0bd7f3b97c523f9378a5820c1a90a84
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93396563"
 ---
-# <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Een toepassings gateway met TLS-beëindiging maken met behulp van Azure PowerShell
+# <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Een toepassingsgateway maken met TLS-beëindiging met behulp van Azure PowerShell
 
 U kunt Azure PowerShell gebruiken om een [toepassings gateway](overview.md) te maken met een certificaat voor het [beëindigen van TLS/SSL](ssl-overview.md) dat gebruikmaakt van een [schaalset voor virtuele machines](../virtual-machine-scale-sets/overview.md) voor back-endservers. In dit voorbeeld bevat de schaalset twee virtuele-machine-instanties die zijn toegevoegd aan de standaard back-endgroep van de toepassingsgateway. 
 

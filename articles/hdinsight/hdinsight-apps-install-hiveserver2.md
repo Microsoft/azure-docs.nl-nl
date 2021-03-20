@@ -9,10 +9,10 @@ ms.author: kecheung
 author: kcheeeung
 ms.date: 08/12/2020
 ms.openlocfilehash: d0a0df4791492c1c9f0d600630d723024c46c1b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88227192"
 ---
 # <a name="scale-hiveserver2-on-azure-hdinsight-clusters-for-high-availability"></a>HiveServer2 schalen op Azure HDInsight-clusters voor hoge Beschik baarheid
@@ -37,13 +37,13 @@ In deze sectie installeert u een extra HiveServer2 op de doel-hosts.
 
 2. Klik op de knop toevoegen en klik op HiveServer2
 
-:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-b.png" alt-text="Het menu hosts van Ambari.":::
+:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-b.png" alt-text="HiveServer2 paneel van host toevoegen.":::
 
 3. Bevestig dat het proces wordt uitgevoerd. Herhaal 1-3 voor alle gewenste hosts.
 
 4. Wanneer u klaar bent met installeren, start u alle services opnieuw met verlopen configuraties en start u HiveServer2.
 
-:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-c.png" alt-text="Het menu hosts van Ambari.":::
+:::image type="content" source="media/hdinsight-apps-install-hiveserver2/hdinsight-install-hiveserver2-c.png" alt-text="Start het deel venster HiveServer2.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

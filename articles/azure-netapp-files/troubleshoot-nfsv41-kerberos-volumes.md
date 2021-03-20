@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 01/12/2021
 ms.author: b-juche
 ms.openlocfilehash: 638607da02b1db4842cdc04f86a4fed1860c243f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98134310"
 ---
 # <a name="troubleshoot-nfsv41-kerberos-volume-issues"></a>Problemen met NFSv 4.1 Kerberos volume oplossen 
@@ -40,4 +40,4 @@ In dit artikel worden oplossingen beschreven voor fout situaties die u mogelijk 
 
 ## <a name="next-steps"></a>Volgende stappen  
 
-* [NFSv 4.1 Kerberos-versleuteling voor Azure NetApp Files configureren](configure-kerberos-encryption.md)
+* [NFSv4.1 Kerberos-versleuteling configureren voor Azure NetApp Files](configure-kerberos-encryption.md)

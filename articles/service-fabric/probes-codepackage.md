@@ -6,10 +6,10 @@ author: tugup
 ms.author: tugup
 ms.date: 3/12/2020
 ms.openlocfilehash: 07a1b836ca7ea79244e303f54654dfcaa6e5fcb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82137583"
 ---
 # <a name="liveness-probe"></a>Test voor de duur van de liveiteit
@@ -40,10 +40,10 @@ Daarnaast genereren Service Fabric de volgende test [status rapporten][health-in
 
 * `OK`: De test slaagt voor de waarde die is ingesteld in **successThreshold**.
 
-* `Error`: De test **failureCount**  ==   **failureThreshold**voordat de container opnieuw wordt opgestart.
+* `Error`: De test **failureCount**  ==   **failureThreshold** voordat de container opnieuw wordt opgestart.
 
 * `Warning`: 
-    * De test is mislukt en **failureCount**  <  **failureThreshold**. Dit status rapport blijft totdat **failureCount** de waarde die is ingesteld in **failureThreshold** of **successThreshold**bereikt.
+    * De test is mislukt en **failureCount**  <  **failureThreshold**. Dit status rapport blijft totdat **failureCount** de waarde die is ingesteld in **failureThreshold** of **successThreshold** bereikt.
     * Als de fout is opgetreden, blijft de waarschuwing aanwezig, maar worden opeenvolgende geslaagde successen bijgewerkt.
 
 ## <a name="specifying-a-liveness-probe"></a>Een test voor een liveiteit opgeven

@@ -12,16 +12,16 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
 ms.openlocfilehash: eddb0c8339069025f0742e9bcbc371efbef094ee
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793327"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Nieuwe tenants inrichten en catalogiseren in een SaaS-toepassing met behulp van een shard-multitenant-Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-In dit artikel vindt u informatie over het inrichten en catalogiseren van nieuwe tenants in een *multitenant-shard-database* -model of -patroon.
+In dit artikel vindt u informatie over het inrichten en catalogiseren van nieuwe tenants in een *multitenant-shard-database*-model of -patroon.
 
 Dit artikel heeft twee belangrijke onderdelen:
 
@@ -70,7 +70,7 @@ De catalogus kan ook worden gebruikt om cross-tenant-rapportage, schemabeheer en
 
 ### <a name="elastic-database-client-library"></a>Clientbibliotheek voor Elastische database
 
-In Wingtip wordt de catalogus geïmplementeerd in de database *tenantcatalog* . De *tenantcatalog* wordt gemaakt met behulp van de Shard-beheerfuncties van de [Clientbibliotheek voor Elastische database (EDCL)](elastic-database-client-library.md). Met de bibliotheek kan een toepassing een *shard-toewijzing* maken, beheren en gebruiken die wordt opgeslagen in een database. Een shard-toewijzing vormt een kruisverwijzing naar de tenantsleutel met de shard, namelijk die shard-database.
+In Wingtip wordt de catalogus geïmplementeerd in de database *tenantcatalog*. De *tenantcatalog* wordt gemaakt met behulp van de Shard-beheerfuncties van de [Clientbibliotheek voor Elastische database (EDCL)](elastic-database-client-library.md). Met de bibliotheek kan een toepassing een *shard-toewijzing* maken, beheren en gebruiken die wordt opgeslagen in een database. Een shard-toewijzing vormt een kruisverwijzing naar de tenantsleutel met de shard, namelijk die shard-database.
 
 Tijdens het inrichten van de tenant kunnen EDCL-functies worden gebruikt vanuit toepassingen of PowerShell-scripts om de vermeldingen in de shard-toewijzing te maken. Later kunt u de EDCL-functies gebruiken om verbinding te maken met de juiste database. De EDCL slaat de verbindingsgegevens op in de cache om het verkeer in de catalogusdatabase zo klein mogelijk te maken en het verbindingsproces te versnellen.
 
@@ -109,7 +109,7 @@ De scripts voor het inrichten van tenants in deze zelfstudie ondersteunen de vol
 - Het inrichten van een tenant in een bestaande database die wordt gedeeld met andere tenants.
 - Een tenant inrichten in een eigen database.
 
-Tenantgegevens worden vervolgens geïnitialiseerd en geregistreerd in de catalogus-shard-toewijzing. In de voorbeeld-app krijgen databases die meerdere tenants bevatten een algemene naam, zoals *tenants1* of *tenants2* . Databases die één tenant bevatten, krijgen de naam van de tenant. De specifieke naamgevingsregels die in het voorbeeld worden gebruikt, zijn geen essentieel onderdeel van het patroon. Als u een catalogus gebruikt, kan elke naam worden toegewezen aan de database.
+Tenantgegevens worden vervolgens geïnitialiseerd en geregistreerd in de catalogus-shard-toewijzing. In de voorbeeld-app krijgen databases die meerdere tenants bevatten een algemene naam, zoals *tenants1* of *tenants2*. Databases die één tenant bevatten, krijgen de naam van de tenant. De specifieke naamgevingsregels die in het voorbeeld worden gebruikt, zijn geen essentieel onderdeel van het patroon. Als u een catalogus gebruikt, kan elke naam worden toegewezen aan de database.
 
 <a name="goto_1_tutorial"></a>
 
@@ -143,12 +143,12 @@ In deze sectie ziet u een lijst met de belangrijkste acties voor het inrichten d
 
 Hieronder ziet u de belangrijkste elementen van de werkstroom voor het inrichten:
 
-- **De nieuwe tenantsleutel berekenen** : Er wordt een hash-functie gebruikt om de tenant-sleutel te maken op basis van de naam van de tenant.
-- **Controleren of de tenantsleutel al bestaat** : De catalogus wordt gecontroleerd om na te gaan of de sleutel nog niet is geregistreerd.
-- **Tenant in de standaard-tenantdatabase initialiseren** : De tenantdatabase wordt bijgewerkt, zodat de nieuwe tenantgegevens kunnen worden toegevoegd.
-- **Tenant registreren in de catalogus** : De toewijzing tussen de nieuwe tenantsleutel en de bestaande tenants1-database wordt toegevoegd aan de catalogus.
-- **Voeg de naam van de tenant toe aan een tabel met catalogusuitbreidingen** : De naam van de locatie wordt toegevoegd aan de tabel met tenants in de catalogus.  In deze aanvulling ziet u hoe de Catalogusdatabase kan worden uitgebreid om aanvullende toepassingsspecifieke gegevens te ondersteunen.
-- **Open Events-pagina voor de nieuwe tenant** : De evenementenpagina *Bushwillow Blues* wordt geopend in de browser.
+- **De nieuwe tenantsleutel berekenen**: Er wordt een hash-functie gebruikt om de tenant-sleutel te maken op basis van de naam van de tenant.
+- **Controleren of de tenantsleutel al bestaat**: De catalogus wordt gecontroleerd om na te gaan of de sleutel nog niet is geregistreerd.
+- **Tenant in de standaard-tenantdatabase initialiseren**: De tenantdatabase wordt bijgewerkt, zodat de nieuwe tenantgegevens kunnen worden toegevoegd.
+- **Tenant registreren in de catalogus**: De toewijzing tussen de nieuwe tenantsleutel en de bestaande tenants1-database wordt toegevoegd aan de catalogus.
+- **Voeg de naam van de tenant toe aan een tabel met catalogusuitbreidingen**: De naam van de locatie wordt toegevoegd aan de tabel met tenants in de catalogus.  In deze aanvulling ziet u hoe de Catalogusdatabase kan worden uitgebreid om aanvullende toepassingsspecifieke gegevens te ondersteunen.
+- **Open Events-pagina voor de nieuwe tenant**: De evenementenpagina *Bushwillow Blues* wordt geopend in de browser.
 
    ![Schermopname van de pagina Gebeurtenissen voor een nieuwe tenant.](./media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
 
@@ -157,11 +157,11 @@ Hieronder ziet u de belangrijkste elementen van de werkstroom voor het inrichten
 Als u wilt weten hoe de Wingtip-app nieuwe tenant-inrichtingen implementeert in een gedeelde database, voegt u een onderbrekingspunt toe en voert u de volgende stappen uit:
 
 1. Open in *PowerShell ISE* ...\\Learning Modules\\ProvisionTenants\\*Demo-ProvisionTenants.ps1* en stel de volgende parameters in:
-   - **$TenantName** = **Bushwillow Blues** , de naam van een nieuwe locatie.
-   - **$VenueType** = **blues** , een van de vooraf gedefinieerde typen venues: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (kleine letters, geen spaties).
+   - **$TenantName** = **Bushwillow Blues**, de naam van een nieuwe locatie.
+   - **$VenueType** = **blues**, een van de vooraf gedefinieerde typen venues: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (kleine letters, geen spaties).
    - **$DemoScenario** = **1** om een tenant in een gedeelde database in te richten met andere tenants.
 
-2. Voeg een onderbrekingspunt toe door de cursor ergens op regel 38 te plaatsen, dat is de regel met de volgende tekst: *New-Tenant `* en druk vervolgens op **F9** .
+2. Voeg een onderbrekingspunt toe door de cursor ergens op regel 38 te plaatsen, dat is de regel met de volgende tekst: *New-Tenant `* en druk vervolgens op **F9**.
 
    ![Schermopname van de regel die de nieuwe tenant bevat.](./media/saas-multitenantdb-provision-and-catalog/breakpoint.png)
 
@@ -171,7 +171,7 @@ Als u wilt weten hoe de Wingtip-app nieuwe tenant-inrichtingen implementeert in 
 
    ![Schermopname met de Windows PowerShell ISE met het menu Fouten opsporen geopend en Step Into geselecteerd.](./media/saas-multitenantdb-provision-and-catalog/debug.png)
 
-5. Bekijk de uitvoering van het script via de opties van het menu **Fouten opsporen** , **F10** en **F11** , om aangeroepen functies over te slaan of weer te geven.
+5. Bekijk de uitvoering van het script via de opties van het menu **Fouten opsporen**, **F10** en **F11**, om aangeroepen functies over te slaan of weer te geven.
 
 Zie [Tips voor het werken met en opsporen van fouten in PowerShell-scripts](/powershell/scripting/components/ise/how-to-debug-scripts-in-windows-powershell-ise) voor meer informatie over foutopsporing in PowerShell-scripts.
 
@@ -181,14 +181,14 @@ Zie [Tips voor het werken met en opsporen van fouten in PowerShell-scripts](/pow
 
 Hieronder vindt u sleutelelementen van de werkstroom die u moet doorlopen tijdens het traceren van het script:
 
-- **De nieuwe tenantsleutel berekenen** : Er wordt een hash-functie gebruikt om de tenant-sleutel te maken op basis van de naam van de tenant.
-- **Controleren of de tenantsleutel al bestaat** : De catalogus wordt gecontroleerd om na te gaan of de sleutel nog niet is geregistreerd.
-- **Maak een nieuwe tenantdatabase** : De database wordt gemaakt door de *basetenantdb* -database te kopiëren met behulp van een Resource Manager-sjabloon.  De naam van de nieuwe database is gebaseerd op de naam van de tenant.
-- **Database toevoegen aan catalogus** : De nieuwe tenantdatabase is als een shard geregistreerd in de catalogus.
-- **Tenant in de standaard-tenantdatabase initialiseren** : De tenantdatabase wordt bijgewerkt, zodat de nieuwe tenantgegevens kunnen worden toegevoegd.
-- **Tenant registreren in de catalogus** : De toewijzing tussen de nieuwe tenantsleutel en de *sequoiasoccer* -database wordt toegevoegd aan de catalogus.
-- **De tenantnaam wordt toegevoegd aan de catalogus** : De naam van de locatie wordt toegevoegd aan de tabel met tenantuitbreidingen in de catalogus.
-- **Open Events-pagina voor de nieuwe tenant** : De Events-pagina *Sequoia Soccer* wordt geopend in de browser.
+- **De nieuwe tenantsleutel berekenen**: Er wordt een hash-functie gebruikt om de tenant-sleutel te maken op basis van de naam van de tenant.
+- **Controleren of de tenantsleutel al bestaat**: De catalogus wordt gecontroleerd om na te gaan of de sleutel nog niet is geregistreerd.
+- **Maak een nieuwe tenantdatabase**: De database wordt gemaakt door de *basetenantdb*-database te kopiëren met behulp van een Resource Manager-sjabloon.  De naam van de nieuwe database is gebaseerd op de naam van de tenant.
+- **Database toevoegen aan catalogus**: De nieuwe tenantdatabase is als een shard geregistreerd in de catalogus.
+- **Tenant in de standaard-tenantdatabase initialiseren**: De tenantdatabase wordt bijgewerkt, zodat de nieuwe tenantgegevens kunnen worden toegevoegd.
+- **Tenant registreren in de catalogus**: De toewijzing tussen de nieuwe tenantsleutel en de *sequoiasoccer*-database wordt toegevoegd aan de catalogus.
+- **De tenantnaam wordt toegevoegd aan de catalogus**: De naam van de locatie wordt toegevoegd aan de tabel met tenantuitbreidingen in de catalogus.
+- **Open Events-pagina voor de nieuwe tenant**: De Events-pagina *Sequoia Soccer* wordt geopend in de browser.
 
    ![events](./media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
 
@@ -196,12 +196,12 @@ Hieronder vindt u sleutelelementen van de werkstroom die u moet doorlopen tijden
 
 Doorloop nu het scriptproces bij het maken van een tenant in een eigen database:
 
-1. U bevindt zich nog steeds in ...\\Learning Modules\\ProvisionTenants\\*Demo-ProvisionTenants.ps1* . Stel daar de volgende parameters in:
-   - **$TenantName** = **Sequoia Soccer** , de naam van een nieuwe locatie.
-   - **$VenueType** = **soccer** , een van de vooraf gedefinieerde typen venues: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (kleine letters, geen spaties).
+1. U bevindt zich nog steeds in ...\\Learning Modules\\ProvisionTenants\\*Demo-ProvisionTenants.ps1*. Stel daar de volgende parameters in:
+   - **$TenantName** = **Sequoia Soccer**, de naam van een nieuwe locatie.
+   - **$VenueType** = **soccer**, een van de vooraf gedefinieerde typen venues: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (kleine letters, geen spaties).
    - **$DemoScenario** = **2** om een tenant in te richten in een eigen database.
 
-2. Voeg een nieuwe onderbrekingspunt toe door de cursor ergens op regel 57 te plaatsen, dat is de regel met de volgende tekst: *&&nbsp;$PSScriptRoot \New-TenantAndDatabase `* en druk op **F9** .
+2. Voeg een nieuwe onderbrekingspunt toe door de cursor ergens op regel 57 te plaatsen, dat is de regel met de volgende tekst: *&&nbsp;$PSScriptRoot \New-TenantAndDatabase `* en druk op **F9**.
 
    ![onderbrekingspunt](./media/saas-multitenantdb-provision-and-catalog/breakpoint2.png)
 
@@ -237,13 +237,13 @@ De volledige lijst met tenants en de bijbehorende database voor elke tenant is b
 - De naam van de tenant wordt opgeslagen in de tabel met tenants.
 - De naam van de database wordt opgeslagen in de Shard Management-tabellen.
 
-1. In SQL Server Management Studio (SSMS) maakt u verbinding met de server van de tenant op **catalogus-mt.\<USER\>.database.windows.net** , met Login = **developer** en wachtwoord = **P\@ssword1**
+1. In SQL Server Management Studio (SSMS) maakt u verbinding met de server van de tenant op **catalogus-mt.\<USER\>.database.windows.net**, met Login = **developer** en wachtwoord = **P\@ssword1**
 
     ![Dialoogvenster voor SSMS-verbinding](./media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 
-2. In de SSMS Objectverkenner bladert u naar de weergaven in de database *tenantcatalog* .
+2. In de SSMS Objectverkenner bladert u naar de weergaven in de database *tenantcatalog*.
 
-3. Klik met de rechtermuisknop op de weergave *TenantsExtended* en kies **Bovenste 1000 rijen selecteren** . Let op de toewijzing tussen de naam van de tenant en de database voor de verschillende tenants.
+3. Klik met de rechtermuisknop op de weergave *TenantsExtended* en kies **Bovenste 1000 rijen selecteren**. Let op de toewijzing tussen de naam van de tenant en de database voor de verschillende tenants.
 
     ![Weergave ExtendedTenants in SSMS](./media/saas-multitenantdb-provision-and-catalog/extendedtenantsview.png)
 

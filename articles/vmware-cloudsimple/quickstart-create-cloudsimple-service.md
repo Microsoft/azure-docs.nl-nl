@@ -10,10 +10,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 14df0f131aaef8a4c24e2d1eb242a9b440e7c7b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86507587"
 ---
 # <a name="quickstart---create-azure-vmware-solution-by-cloudsimple-service"></a>Quick Start: een Azure VMware-oplossing maken op basis van de CloudSimple-service
@@ -49,7 +49,7 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
     ![CloudSimple-service toevoegen](media/create-cloudsimple-service-add.png)
 
 5. Selecteer het abonnement waar u de CloudSimple-service wilt maken.
-6. Selecteer de resource groep voor de service. Klik op **nieuwe maken**om een nieuwe resource groep toe te voegen.
+6. Selecteer de resource groep voor de service. Klik op **nieuwe maken** om een nieuwe resource groep toe te voegen.
 7. Voer een naam in om de service te identificeren.
 8. Voer de CIDR in voor de service gateway. Geef een/28-subnet op dat niet overlapt met een van uw on-premises subnetten, Azure-subnetten of geplande CloudSimple-subnetten. U kunt de CIDR niet wijzigen nadat de service is gemaakt.
 
@@ -74,7 +74,7 @@ Als u betalen naar gebruik-capaciteit wilt instellen voor een CloudSimple Privé
     ![CloudSimple-knoop punten toevoegen](media/create-cloudsimple-node-add.png)
 
 5. Selecteer het abonnement waar u de CloudSimple-knoop punten wilt inrichten.
-6. Selecteer de resource groep voor de knoop punten. Klik op **nieuwe maken**om een nieuwe resource groep toe te voegen.
+6. Selecteer de resource groep voor de knoop punten. Klik op **nieuwe maken** om een nieuwe resource groep toe te voegen.
 7. Voer het voor voegsel in om de knoop punten te identificeren.
 8. Selecteer de locatie voor de knooppunt resources.
 9. Selecteer de toegewezen locatie om de knooppunt resources te hosten.

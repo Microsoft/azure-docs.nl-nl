@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.openlocfilehash: 46b842994cbcf7efe66d5992c79246d77626e268
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90907401"
 ---
 # <a name="configure-hyperscale-citus-high-availability"></a>Hoge Beschik baarheid van grootschalige (Citus) configureren
@@ -29,7 +29,7 @@ Klik op de knop **Opslaan** om uw selectie toe te passen. Het inschakelen van HA
 
 Op het tabblad Overzicht voor de Server groep worden alle knoop punten en de bijbehorende stand-by weer **gegeven** , samen met een kolom met **hoge Beschik baarheid** , die aangeeft of ha voor elk knoop punt is ingeschakeld.
 
-:::image type="content" source="./media/howto-hyperscale-high-availability/02-ha-column.png" alt-text="ha-schuif regelaar":::
+:::image type="content" source="./media/howto-hyperscale-high-availability/02-ha-column.png" alt-text="de kolom ha in het overzicht van de Server groep":::
 
 ### <a name="next-steps"></a>Volgende stappen
 

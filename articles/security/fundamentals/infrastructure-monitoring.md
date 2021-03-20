@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 7b75c9dc874a41d4221c55a8b00dd12d943e80fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87542939"
 ---
 # <a name="azure-infrastructure-monitoring"></a>Bewaking van Azure-infra structuur   
@@ -32,7 +32,7 @@ De basislijn configuraties die vereist zijn voor services op basis van Azure wor
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 Met beveiligings update beheer kunt u systemen beveiligen tegen bekende beveiligings problemen. Azure gebruikt geïntegreerde implementatie systemen voor het beheren van de distributie en installatie van beveiligings updates voor micro soft-software. Azure kan ook op de resources van het micro soft Security Response Center (MSRC) tekenen. Het MSRC identificeert, bewaakt, reageert op en verhelpt beveiligings incidenten en Cloud lekken rondom de klok, elke dag van het jaar.
 
-## <a name="vulnerability-scanning"></a>Scannen van beveiligings problemen
+## <a name="vulnerability-scanning"></a>Scannen op beveiligingsproblemen
 Het scannen van beveiligings problemen wordt uitgevoerd op Server besturingssystemen, data bases en netwerk apparaten. Het beveiligings probleem wordt gescand op elk kwar taal op basis van het minimum. Azure-contracten met onafhankelijke beoordelaars voor het uitvoeren van indringings tests van de Azure-grens. Er worden ook dagelijkse team oefeningen uitgevoerd en de resultaten worden gebruikt om beveiligings verbeteringen aan te brengen.
 
 ## <a name="protective-monitoring"></a>Beschermende bewaking

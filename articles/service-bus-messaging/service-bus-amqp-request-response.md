@@ -4,10 +4,10 @@ description: In dit artikel wordt de lijst met AMQP bewerkingen op aanvraag/antw
 ms.topic: article
 ms.date: 06/23/2020
 ms.openlocfilehash: b845f4086ee1ac4fe868571c1754caf6d29b9021
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88064411"
 ---
 # <a name="amqp-10-in-microsoft-azure-service-bus-request-response-based-operations"></a>AMQP 1,0 in Microsoft Azure Service Bus: bewerkingen op basis van aanvraag-respons
@@ -474,7 +474,7 @@ De SQL-filter toewijzing moet de volgende vermeldingen bevatten:
   
 |Sleutel|Waardetype|Vereist|Inhoud van waarde|  
 |---------|----------------|--------------|--------------------|  
-|expression|tekenreeks|Ja|Expressie voor SQL-filter.|  
+|expressie|tekenreeks|Ja|Expressie voor SQL-filter.|  
   
 De **correlatie filter** toewijzing moet ten minste één van de volgende vermeldingen bevatten:  
   
@@ -482,7 +482,7 @@ De **correlatie filter** toewijzing moet ten minste één van de volgende vermel
 |---------|----------------|--------------|--------------------|  
 |correlation-id|tekenreeks|No||  
 |bericht-id|tekenreeks|No||  
-|in op|tekenreeks|No||  
+|tot|tekenreeks|No||  
 |beantwoorden|tekenreeks|No||  
 |label|tekenreeks|No||  
 |sessie-id|tekenreeks|No||  
@@ -494,7 +494,7 @@ De toewijzing **SQL-regel-Action** moet de volgende vermeldingen bevatten:
   
 |Sleutel|Waardetype|Vereist|Inhoud van waarde|  
 |---------|----------------|--------------|--------------------|  
-|expression|tekenreeks|Ja|SQL-actie-expressie.|  
+|expressie|tekenreeks|Ja|SQL-actie-expressie.|  
   
 #### <a name="response"></a>Antwoord  
 
@@ -671,7 +671,7 @@ De hoofd tekst van het aanvraag bericht moet bestaan uit een **AMQP** sectie met
   
 |Sleutel|Waardetype|Vereist|Inhoud van waarde|  
 |---------|----------------|--------------|--------------------|  
-|toestand: status|tekenreeks|Ja|gevuld<br /><br /> geannuleerd<br /><br /> gebroken|  
+|toestand: status|tekenreeks|Ja|gevuld<br /><br /> geannuleerd<br /><br /> onderbroken|  
 |Lock-tokens|matrix van uuid|Ja|Tokens voor bericht vergrendeling om de status van de toestand bij te werken.|  
 |deadletter-reden|tekenreeks|No|Kan worden ingesteld als de status van de bestemming is ingesteld op **opgeschort**.|  
 |deadletter-beschrijving|tekenreeks|No|Kan worden ingesteld als de status van de bestemming is ingesteld op **opgeschort**.|  

@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/10/2020
 ms.author: terrylan
 ms.openlocfilehash: 14589e4efe22d89468b069bf6ff7e3d9babcc714
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87543789"
 ---
 # <a name="azure-customer-data-protection"></a>Azure-klant gegevens beveiliging   
@@ -36,7 +36,7 @@ Alle toegangs pogingen worden gecontroleerd en kunnen worden weer gegeven via ee
 ## <a name="data-protection"></a>Gegevensbeveiliging
 Azure biedt klanten krachtige gegevens beveiliging, zowel standaard als klant opties.
 
-**Gegevens**scheiding: Azure is een service met meerdere tenants, wat betekent dat meerdere klant implementaties en virtuele machines op dezelfde fysieke hardware zijn opgeslagen. Azure gebruikt logische isolatie om de gegevens van elke klant te scheiden van de gegevens van anderen. Schei ding biedt de schaal en de economische voor delen van multi tenant Services, terwijl klanten de gegevens van elkaar niet kunnen openen.
+**Gegevens** scheiding: Azure is een service met meerdere tenants, wat betekent dat meerdere klant implementaties en virtuele machines op dezelfde fysieke hardware zijn opgeslagen. Azure gebruikt logische isolatie om de gegevens van elke klant te scheiden van de gegevens van anderen. Schei ding biedt de schaal en de economische voor delen van multi tenant Services, terwijl klanten de gegevens van elkaar niet kunnen openen.
 
 **At-rest-gegevens beveiliging**: klanten moeten ervoor zorgen dat gegevens die zijn opgeslagen in azure, worden versleuteld volgens hun normen. Azure biedt een breed scala aan versleutelings mogelijkheden en geeft klanten de flexibiliteit om de oplossing te kiezen die het beste voldoet aan hun behoeften. Azure Key Vault helpt klanten om de controle over de sleutels die door Cloud toepassingen en-services worden gebruikt, gemakkelijk te beheren om gegevens te versleutelen. Met Azure Disk Encryption kunnen klanten virtuele machines versleutelen. Azure Storage service versleuteling maakt het mogelijk om alle gegevens te versleutelen die in het opslag account van een klant worden geplaatst.
 

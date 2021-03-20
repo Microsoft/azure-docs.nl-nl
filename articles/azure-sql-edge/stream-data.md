@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
 ms.openlocfilehash: f63ab040e750c0c642c9656a5482529b926e9295
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93392109"
 ---
 # <a name="data-streaming-in-azure-sql-edge"></a>Gegevens stromen in Azure SQL Edge
@@ -35,7 +35,7 @@ T-SQL-streaming werkt op exact dezelfde manier als [Azure stream Analytics](../s
 
 Een stream Analytics-taak bestaat uit:
 
-- **Stroom invoer** : Hiermee worden de verbindingen met een gegevens bron gedefinieerd waaruit de gegevens stroom moet worden gelezen. Azure SQL Edge ondersteunt momenteel de volgende invoer typen voor streams:
+- **Stroom invoer**: Hiermee worden de verbindingen met een gegevens bron gedefinieerd waaruit de gegevens stroom moet worden gelezen. Azure SQL Edge ondersteunt momenteel de volgende invoer typen voor streams:
     - Edge hub
     - Kafka (ondersteuning voor Kafka-invoer is momenteel alleen beschikbaar voor Intel/AMD64-versies van Azure SQL Edge.)
 
@@ -43,7 +43,7 @@ Een stream Analytics-taak bestaat uit:
     - Edge hub
     - SQL (de SQL-uitvoer kan een lokale Data Base zijn in het exemplaar van Azure SQL Edge of een externe SQL Server of Azure SQL Database.) 
 
-- **Stroom query** : Hiermee definieert u de trans formatie, aggregaties, filters, sorteren en samen voegingen die moeten worden toegepast op de invoer stroom voordat deze wordt geschreven naar de uitvoer van de stroom. De stroom query is gebaseerd op de query taal die wordt gebruikt door Stream Analytics. Zie [Stream Analytics query language (Engelstalig](/stream-analytics-query/stream-analytics-query-language-reference)) voor meer informatie.
+- **Stroom query**: Hiermee definieert u de trans formatie, aggregaties, filters, sorteren en samen voegingen die moeten worden toegepast op de invoer stroom voordat deze wordt geschreven naar de uitvoer van de stroom. De stroom query is gebaseerd op de query taal die wordt gebruikt door Stream Analytics. Zie [Stream Analytics query language (Engelstalig](/stream-analytics-query/stream-analytics-query-language-reference)) voor meer informatie.
 
 > [!IMPORTANT]
 > T-SQL-streaming, in tegens telling tot Stream Analytics, biedt momenteel geen ondersteuning [voor het gebruik van referentie gegevens voor Zoek opdrachten](../stream-analytics/stream-analytics-use-reference-data.md) of het [gebruik van UDF en UDA in een stroom taak](../stream-analytics/streaming-technologies.md#you-want-to-write-udfs-udas-and-custom-deserializers-in-a-language-other-than-javascript-or-c).

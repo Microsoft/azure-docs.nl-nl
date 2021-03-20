@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 05/19/2020
 ms.openlocfilehash: 5fad3e4862b0c40c9edd00a5b9d47b245e529396
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91536729"
 ---
 # <a name="convert-word-to-vector-module"></a>Woord naar vector module converteren
@@ -51,37 +51,37 @@ Deze module vereist een gegevensset die een tekst kolom bevat. Voor verwerkte te
 
 2. Geef als invoer voor de module een gegevensset op die een of meer tekst kolommen bevat.
 
-3. Kies bij **doel kolom**slechts één kolom die de tekst bevat die moet worden verwerkt.
+3. Kies bij **doel kolom** slechts één kolom die de tekst bevat die moet worden verwerkt.
 
     Omdat deze module een vocabulaire van tekst maakt, verschilt de inhoud van de kolommen, wat leidt tot een andere woordenlijst inhoud. Daarom accepteert de module slechts één doel kolom.
 
-4. Voor  **Word2Vec-strategie**kiest u **uit ondersteunt pretraind English model**, **Gensim Word2Vec**en **Gensim FastText**.
+4. Voor  **Word2Vec-strategie** kiest u **uit ondersteunt pretraind English model**, **Gensim Word2Vec** en **Gensim FastText**.
 
-5. Als de **Word2Vec-strategie** **Gensim Word2Vec** of **Gensim FastText**is:
+5. Als de **Word2Vec-strategie** **Gensim Word2Vec** of **Gensim FastText** is:
 
-    + Kies uit **Skip_gram** en **CBOW**voor **Word2Vec-trainings algoritme**. Het verschil wordt geïntroduceerd in het [oorspronkelijke papier (PDF)](https://arxiv.org/pdf/1301.3781.pdf).
+    + Kies uit **Skip_gram** en **CBOW** voor **Word2Vec-trainings algoritme**. Het verschil wordt geïntroduceerd in het [oorspronkelijke papier (PDF)](https://arxiv.org/pdf/1301.3781.pdf).
 
         De standaard methode is **Skip_gram**.
 
-    + Voor de **lengte van het insluiten van woorden**geeft u de dimensionaliteit van de woord vectoren op. Deze instelling komt overeen met de `size` para meter in Gensim.
+    + Voor de **lengte van het insluiten van woorden** geeft u de dimensionaliteit van de woord vectoren op. Deze instelling komt overeen met de `size` para meter in Gensim.
 
         De standaard insluit grootte is 100.
 
-    + Voor de grootte van het **context venster**geeft u de maximale afstand op tussen het woord dat wordt voorspeld en het huidige woord. Deze instelling komt overeen met de `window` para meter in Gensim.
+    + Voor de grootte van het **context venster** geeft u de maximale afstand op tussen het woord dat wordt voorspeld en het huidige woord. Deze instelling komt overeen met de `window` para meter in Gensim.
 
         De standaard venster grootte is 5.
 
-    + Voor het **aantal epoches**geeft u het aantal epoches (iteraties) op voor de verzameling. Komt overeen met de `iter` para meter in Gensim.
+    + Voor het **aantal epoches** geeft u het aantal epoches (iteraties) op voor de verzameling. Komt overeen met de `iter` para meter in Gensim.
 
         Het nummer van de standaard-epoche is 5.
 
-6. Voor **maximale woordenlijst grootte**geeft u het maximum aantal woorden in de gegenereerde vocabulaire op.
+6. Voor **maximale woordenlijst grootte** geeft u het maximum aantal woorden in de gegenereerde vocabulaire op.
 
     Als er meer unieke woorden zijn dan de maximale grootte, haalt u de voor vallen weg.
 
     De standaard woordenlijst grootte is 10.000.
 
-7. Geef voor het **minimum aantal woorden**een minimum aantal woorden op. Alle woorden met een frequentie die lager is dan deze waarde, worden door de module genegeerd.
+7. Geef voor het **minimum aantal woorden** een minimum aantal woorden op. Alle woorden met een frequentie die lager is dan deze waarde, worden door de module genegeerd.
 
     De standaard waarde is 5.
 
@@ -126,7 +126,7 @@ Campus|-0,281835|0,29312|0,106966|-0,031385|0,100777|-0,061452|...|0,05978
 onbeperkt|-0,263074|0,245753|0,07058|-0,164666|0,162857|-0,027345|...|-0,0525
 lus|-0,391421|0,52366|0,141503|-0,105423|0,084503|-0,018424|...|-0,0521
 
-In dit voor beeld hebben we de standaard **Gensim-Word2Vec** voor **Word2Vec-strategie**gebruikt en is het **trainings algoritme** **Skip-gram**. De **lengte van het insluiten van woorden** is 100, dus hebben we 100 kolommen moeten insluiten.
+In dit voor beeld hebben we de standaard **Gensim-Word2Vec** voor **Word2Vec-strategie** gebruikt en is het **trainings algoritme** **Skip-gram**. De **lengte van het insluiten van woorden** is 100, dus hebben we 100 kolommen moeten insluiten.
 
 ## <a name="technical-notes"></a>Technische opmerkingen
 

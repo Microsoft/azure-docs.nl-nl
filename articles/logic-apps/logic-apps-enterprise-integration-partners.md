@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 06/22/2019
 ms.openlocfilehash: 8e3805fae5bf6cc5ad8cf759d3ba75220c6ddbd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91565068"
 ---
 # <a name="add-trading-partners-to-integration-accounts-for-azure-logic-apps"></a>Handelspartners toevoegen aan integratieaccounts voor Azure Logic Apps
@@ -41,7 +41,7 @@ In een overeenkomst geeft u de details op voor het verwerken van binnenkomende e
 
    ![Selecteer integratie accounts](./media/logic-apps-enterprise-integration-partners/find-integration-accounts.png)
 
-1. Onder **integratie accounts**selecteert u het integratie account waaraan u uw partners wilt toevoegen.
+1. Onder **integratie accounts** selecteert u het integratie account waaraan u uw partners wilt toevoegen.
 
    ![Integratie account selecteren](./media/logic-apps-enterprise-integration-partners/select-integration-account.png)
 
@@ -49,7 +49,7 @@ In een overeenkomst geeft u de details op voor het verwerken van binnenkomende e
 
    ![Scherm afbeelding waarin de tegel partners wordt weer gegeven.](./media/logic-apps-enterprise-integration-partners/choose-partners.png)
 
-1. Klik onder **partners**op **toevoegen**. Onder **partner toevoegen**geeft u de details van de partner op, zoals wordt beschreven in de onderstaande tabel.
+1. Klik onder **partners** op **toevoegen**. Onder **partner toevoegen** geeft u de details van de partner op, zoals wordt beschreven in de onderstaande tabel.
 
    ![Kies toevoegen en geef de partner gegevens op](./media/logic-apps-enterprise-integration-partners/add-partners.png)
 
@@ -78,11 +78,11 @@ Kies de tegel **partners** .
 
    ![De tegel partners kiezen](./media/logic-apps-enterprise-integration-partners/edit.png)
 
-1. Onder **partners**selecteert u de partner die u wilt bewerken en kiest u **bewerken**. Breng onder **bewerken**de gewenste wijzigingen aan.
+1. Onder **partners** selecteert u de partner die u wilt bewerken en kiest u **bewerken**. Breng onder **bewerken** de gewenste wijzigingen aan.
 
    ![Uw wijzigingen aanbrengen en opslaan](./media/logic-apps-enterprise-integration-partners/edit-partner.png)
 
-   Voor RosettaNet kunt u onder **RosettaNet-partner eigenschappen**de volgende aanvullende gegevens opgeven:
+   Voor RosettaNet kunt u onder **RosettaNet-partner eigenschappen** de volgende aanvullende gegevens opgeven:
 
    | Eigenschap | Vereist | Beschrijving |
    |----------|----------|-------------|
@@ -102,7 +102,7 @@ Kies de tegel **partners** .
 
    ![Scherm opname van de weer gave partners die u selecteert wanneer u een partner wilt verwijderen.](./media/logic-apps-enterprise-integration-partners/choose-partners-to-delete.png)
 
-1. Selecteer onder **partners**de partner die u wilt verwijderen. Kies **Verwijderen**.
+1. Selecteer onder **partners** de partner die u wilt verwijderen. Kies **Verwijderen**.
 
    ![Partner verwijderen](./media/logic-apps-enterprise-integration-partners/delete-partner.png)
 

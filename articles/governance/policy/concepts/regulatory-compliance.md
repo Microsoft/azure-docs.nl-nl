@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u een initiatief definitie gebruikt om 
 ms.date: 08/17/2020
 ms.topic: conceptual
 ms.openlocfilehash: 15b03b5a40cba1290859b02883df70e3df54c5cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89645531"
 ---
 # <a name="regulatory-compliance-in-azure-policy"></a>Naleving van regelgeving in Azure Policy
@@ -31,20 +31,20 @@ Zie voor het koppelen van een aangepast regelgevings initiatief voor naleving aa
 
 Wanneer een initiatief definitie is gemaakt met [groepen](./initiative-definition-structure.md#policy-definition-groups), bevat de pagina **nalevings** Details in de portal voor dat initiatief aanvullende informatie. 
 
-Een nieuw tabblad, **besturings elementen** worden toegevoegd aan de pagina. Filteren is beschikbaar op **nalevings domein** en beleids definities worden gegroepeerd op het `title` veld van het **policyMetadata** -object. Elke rij vertegenwoordigt een **besturings element** met de nalevings status, het **nalevings domein** waarvan het deel uitmaakt, de verantwoordelijkheids gegevens en het aantal niet-compatibele en compatibele beleids definities die het **beheer**vormen.
+Een nieuw tabblad, **besturings elementen** worden toegevoegd aan de pagina. Filteren is beschikbaar op **nalevings domein** en beleids definities worden gegroepeerd op het `title` veld van het **policyMetadata** -object. Elke rij vertegenwoordigt een **besturings element** met de nalevings status, het **nalevings domein** waarvan het deel uitmaakt, de verantwoordelijkheids gegevens en het aantal niet-compatibele en compatibele beleids definities die het **beheer** vormen.
 
 :::image type="content" source="../media/regulatory-compliance/regulatory-compliance-overview.png" alt-text="Scherm afbeelding van het overzicht van reglementaire naleving voor de ingebouwde definitie van het NIST SP 800-53 R4 met compatibele en niet-compatibele besturings elementen.":::
 
-Als u een **besturings element** selecteert, wordt er een pagina met details over dat besturings element geopend. Het **overzicht** bevat de gegevens van `description` en `requirements` . Op het tabblad **beleid** vindt u alle afzonderlijke beleids definities in het initiatief die bijdragen aan dit **besturings element**. Het tabblad **resource compatibiliteit** biedt een gedetailleerd overzicht van elke resource die wordt geëvalueerd door een beleid voor leden van het **besturings element**dat momenteel wordt weer gegeven.
+Als u een **besturings element** selecteert, wordt er een pagina met details over dat besturings element geopend. Het **overzicht** bevat de gegevens van `description` en `requirements` . Op het tabblad **beleid** vindt u alle afzonderlijke beleids definities in het initiatief die bijdragen aan dit **besturings element**. Het tabblad **resource compatibiliteit** biedt een gedetailleerd overzicht van elke resource die wordt geëvalueerd door een beleid voor leden van het **besturings element** dat momenteel wordt weer gegeven.
 
 > [!NOTE]
 > Een evaluatie type van door **micro soft beheerd** is voor een [statische](./definition-structure.md#type) beleids definitie `type` .
 
-:::image type="content" source="../media/regulatory-compliance/regulatory-compliance-policies.png" alt-text="Scherm afbeelding van het overzicht van reglementaire naleving voor de ingebouwde definitie van het NIST SP 800-53 R4 met compatibele en niet-compatibele besturings elementen.":::
+:::image type="content" source="../media/regulatory-compliance/regulatory-compliance-policies.png" alt-text="Scherm afbeelding van de nalevings Details van de regelgeving voor het grens beveiligings beheer van de ingebouwde definitie van het NIST SP 800-53 R4.":::
 
-Op dezelfde **besturings** pagina kunt u de beleids definities van dit **besturings element**weer geven door te wijzigen in het tabblad **resource naleving** . Er zijn filters beschikbaar voor naam of ID, compatibiliteits status, resource type en locatie.
+Op dezelfde **besturings** pagina kunt u de beleids definities van dit **besturings element** weer geven door te wijzigen in het tabblad **resource naleving** . Er zijn filters beschikbaar voor naam of ID, compatibiliteits status, resource type en locatie.
 
-:::image type="content" source="../media/regulatory-compliance/regulatory-compliance-resources.png" alt-text="Scherm afbeelding van het overzicht van reglementaire naleving voor de ingebouwde definitie van het NIST SP 800-53 R4 met compatibele en niet-compatibele besturings elementen.":::
+:::image type="content" source="../media/regulatory-compliance/regulatory-compliance-resources.png" alt-text="Scherm afbeelding van de bron compatibiliteit met het grens beveiligings beheer van de ingebouwde definitie van het NIST SP 800-53 R4.":::
 
 ## <a name="regulatory-compliance-in-sdk"></a>Naleving van regelgeving in SDK
 

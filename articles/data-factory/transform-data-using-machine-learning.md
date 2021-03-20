@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 07/16/2020
 ms.openlocfilehash: 37a31891c3c1d812b396548036c4b59cc6523c2d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100375660"
 ---
 # <a name="create-a-predictive-pipeline-using-azure-machine-learning-studio-classic-and-azure-data-factory"></a>Maak een voorspellende pijp lijn met behulp van Azure Machine Learning Studio (klassiek) en Azure Data Factory
@@ -125,13 +125,13 @@ In het volgende JSON-code fragment wordt een Azure Machine Learning Studio (klas
 
 | Eigenschap          | Beschrijving                              | Vereist |
 | :---------------- | :--------------------------------------- | :------- |
-| naam              | Naam van de activiteit in de pijp lijn     | Yes      |
-| beschrijving       | Tekst die beschrijft wat de activiteit doet.  | No       |
-| type              | Voor Data Lake Analytics U-SQL-activiteit is het type activiteit **AzureMLBatchExecution**. | Yes      |
-| linkedServiceName | Gekoppelde services aan de gekoppelde Azure Machine Learning Studio-Service (klassiek). Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service. | Yes      |
-| webServiceInputs  | Sleutel-, waardeparen, de namen van de webservices voor Azure Machine Learning Studio (klassiek) toewijzen. De sleutel moet overeenkomen met de invoer parameters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. Waarde is een Azure Storage gekoppelde services en eigenschappen paar voor het opgeven van de invoer-BLOB-locaties. | No       |
-| webServiceOutputs | Sleutel-, waardeparen, de namen van de uitvoer van de webservice van Azure Machine Learning Studio (klassiek) toewijzen. De sleutel moet overeenkomen met de uitvoer parameters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. Waarde is een Azure Storage gekoppelde services en eigenschappen paar van het bestandspad die de uitvoer BLOB-locaties opgeven. | No       |
-| globalParameters  | Sleutel-, waardeparen die moeten worden door gegeven aan het Azure Machine Learning Studio (klassiek) batch-uitvoerings service-eind punt. Sleutels moeten overeenkomen met de namen van de webservice-para meters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. De waarden worden door gegeven in de eigenschap GlobalParameters van de batch-uitvoerings aanvraag van Azure Machine Learning Studio (klassiek) | No       |
+| naam              | Naam van de activiteit in de pijp lijn     | Ja      |
+| beschrijving       | Tekst die beschrijft wat de activiteit doet.  | Nee       |
+| type              | Voor Data Lake Analytics U-SQL-activiteit is het type activiteit **AzureMLBatchExecution**. | Ja      |
+| linkedServiceName | Gekoppelde services aan de gekoppelde Azure Machine Learning Studio-Service (klassiek). Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service. | Ja      |
+| webServiceInputs  | Sleutel-, waardeparen, de namen van de webservices voor Azure Machine Learning Studio (klassiek) toewijzen. De sleutel moet overeenkomen met de invoer parameters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. Waarde is een Azure Storage gekoppelde services en eigenschappen paar voor het opgeven van de invoer-BLOB-locaties. | Nee       |
+| webServiceOutputs | Sleutel-, waardeparen, de namen van de uitvoer van de webservice van Azure Machine Learning Studio (klassiek) toewijzen. De sleutel moet overeenkomen met de uitvoer parameters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. Waarde is een Azure Storage gekoppelde services en eigenschappen paar van het bestandspad die de uitvoer BLOB-locaties opgeven. | Nee       |
+| globalParameters  | Sleutel-, waardeparen die moeten worden door gegeven aan het Azure Machine Learning Studio (klassiek) batch-uitvoerings service-eind punt. Sleutels moeten overeenkomen met de namen van de webservice-para meters die zijn gedefinieerd in de gepubliceerde Azure Machine Learning Studio (klassieke) webservice. De waarden worden door gegeven in de eigenschap GlobalParameters van de batch-uitvoerings aanvraag van Azure Machine Learning Studio (klassiek) | Nee       |
 
 ### <a name="scenario-1-experiments-using-web-service-inputsoutputs-that-refer-to-data-in-azure-blob-storage"></a>Scenario 1: experimenten met behulp van invoer/uitvoer van web service die verwijst naar gegevens in Azure Blob Storage
 

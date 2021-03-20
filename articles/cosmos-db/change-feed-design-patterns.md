@@ -8,10 +8,10 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 04/08/2020
 ms.openlocfilehash: 443d00e61e593daacca04a4451b90bb78cc7d854
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93334579"
 ---
 # <a name="change-feed-design-patterns-in-azure-cosmos-db"></a>Ontwerp patronen voor feeds wijzigen in Azure Cosmos DB
@@ -44,7 +44,7 @@ U kunt bijvoorbeeld gebeurtenis gegevens van apparaten, Sens oren, infra structu
 
 In veel gevallen ontvangen implementaties voor stroom verwerking eerst een groot aantal inkomende gegevens in een tijdelijke berichten wachtrij, zoals Azure Event hub of Apache Kafka. De wijzigings feed is een uitstekend alternatief als gevolg van de mogelijkheden van Azure Cosmos DB om een aanhoudende hoge frequentie van gegevens opname te ondersteunen met gegarandeerde lage lees-en schrijf latentie. De voor delen van de Azure Cosmos DB wijzigings feed voor een berichten wachtrij zijn onder andere:
 
-### <a name="data-persistence"></a>Gegevens persistentie
+### <a name="data-persistence"></a>Gegevenspersistentie
 
 Gegevens die naar Azure Cosmos DB zijn geschreven, worden weer gegeven in de wijzigings feed en blijven bewaard totdat ze worden verwijderd. Berichten wachtrijen hebben doorgaans een maximale Bewaar periode. [Azure Event hub](https://azure.microsoft.com/services/event-hubs/) biedt bijvoorbeeld een maximale gegevens retentie van 90 dagen.
 

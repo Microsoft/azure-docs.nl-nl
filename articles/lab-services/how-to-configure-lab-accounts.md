@@ -4,16 +4,16 @@ description: In dit artikel wordt beschreven hoe u automatisch afsluiten van Vm'
 ms.topic: article
 ms.date: 08/17/2020
 ms.openlocfilehash: c0a147a81aaed88313a1b9aa4b0754d9a3badcb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91650031"
 ---
 # <a name="configure-automatic-shutdown-of-vms-for-a-lab-account"></a>Automatisch afsluiten van Vm's voor een Lab-account configureren
 
 U kunt verschillende functies voor het automatisch afsluiten van kosten beheer inschakelen om extra kosten te voor komen wanneer de virtuele machines niet actief worden gebruikt. De combi natie van de volgende drie functies voor automatisch afsluiten en verbreken van de meeste gevallen, waarbij gebruikers per ongeluk hun virtuele machines verlaten:
- 
+ 
 - Automatisch de verbinding van gebruikers met virtuele machines die het besturings systeem inactief bewaart.
 - Virtuele machines automatisch uitschakelen wanneer gebruikers de verbinding verbreken.
 - Virtuele machines die zijn gestart automatisch afsluiten, maar gebruikers maken geen verbinding.

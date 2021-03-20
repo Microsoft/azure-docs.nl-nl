@@ -7,10 +7,10 @@ ms.date: 08/28/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 760e0212d2d863e6b869c23c2e523a0e056a28ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90033027"
 ---
 # <a name="how-to-resolve-azure-advisor-recommendations"></a>Azure Advisor aanbevelingen oplossen
@@ -34,7 +34,7 @@ Een validatie omgeving inschakelen:
 
 2. Selecteer vervolgens de hostgroep die u wilt wijzigen van een productie omgeving naar een validatie omgeving.
 
-3. Selecteer **Eigenschappen** in de linkerkolom van de hostgroep. Schuif vervolgens omlaag totdat u "validatie omgeving" ziet. Selecteer **Ja**en selecteer vervolgens **Toep assen**.
+3. Selecteer **Eigenschappen** in de linkerkolom van de hostgroep. Schuif vervolgens omlaag totdat u "validatie omgeving" ziet. Selecteer **Ja** en selecteer vervolgens **Toep assen**.
 
 >[!div class="mx-imgBorder"]
 >![Een scherm opname van het eigenschappen menu. "Validatie omgeving" is rood gemarkeerd en de "ja" bellen is geselecteerd.](media/validation-yes.png)
@@ -58,7 +58,7 @@ U kunt deze waarschuwing als volgt oplossen:
 
 2. Selecteer de hostgroepen die u wilt wijzigen van validatie naar productie.
 
-3. Selecteer in uw hostgroep het tabblad **Eigenschappen** in de kolom aan de rechter kant van het scherm. Schuif vervolgens omlaag totdat u "validatie omgeving" ziet. Selecteer **Nee**en selecteer vervolgens **Toep assen**.
+3. Selecteer in uw hostgroep het tabblad **Eigenschappen** in de kolom aan de rechter kant van het scherm. Schuif vervolgens omlaag totdat u "validatie omgeving" ziet. Selecteer **Nee** en selecteer vervolgens **Toep assen**.
 
 >[!div class="mx-imgBorder"]
 >![Een scherm opname van het eigenschappen menu. "Validatie omgeving" is gemarkeerd in rood en de bellen "nee" is geselecteerd.](media/validation-no.png)

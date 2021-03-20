@@ -11,10 +11,10 @@ ms.service: machine-learning
 ms.subservice: core
 ms.custom: how-to, automl
 ms.openlocfilehash: 4fb147dc5c57c3a98607a025f566fa583bf87460
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93358810"
 ---
 # <a name="make-predictions-with-an-automl-onnx-model-in-net"></a>Voor spellingen doen met een AutoML ONNX-model in .NET
@@ -50,7 +50,7 @@ In dit voor beeld gebruikt u de .NET Core SLI om uw toepassing te bouwen, maar u
 
 ## <a name="add-software-packages"></a>Software pakketten toevoegen
 
-1. Installeer de **Microsoft.ml** -, **micro soft. ml. OnnxRuntime** -en **micro soft. ml. OnnxTransformer** NuGet-pakketten met behulp van de .net core SLI.
+1. Installeer de **Microsoft.ml**-, **micro soft. ml. OnnxRuntime**-en **micro soft. ml. OnnxTransformer** NuGet-pakketten met behulp van de .net core SLI.
 
     ```dotnetcli
     dotnet add package Microsoft.ML
@@ -60,7 +60,7 @@ In dit voor beeld gebruikt u de .NET Core SLI om uw toepassing te bouwen, maar u
 
     Deze pakketten bevatten de afhankelijkheden die nodig zijn voor het gebruik van een ONNX-model in een .NET-toepassing. ML.NET biedt een API die gebruikmaakt van de [ONNX-runtime](https://github.com/Microsoft/onnxruntime) voor voor spellingen.
 
-1. Open het *Program.cs* -bestand en voeg aan het begin de volgende `using` instructies toe om naar de juiste pakketten te verwijzen.
+1. Open het bestand *Program. cs* en voeg `using` aan het begin de volgende instructies toe om naar de juiste pakketten te verwijzen.
 
     ```csharp
     using System.Linq;
@@ -88,7 +88,7 @@ Een verwijzing naar het ONNX-model bestand in uw toepassing toevoegen
 
     In dit geval is de naam van het ONNX-model bestand *automl-model. ONNX*.
 
-1. Open het *Program.cs* -bestand en voeg de volgende regel toe aan de `Program` klasse.
+1. Open het bestand *Program. cs* en voeg de volgende regel toe aan de `Program` klasse.
 
     ```csharp
     static string ONNX_MODEL_PATH = "automl-model.onnx";
@@ -112,9 +112,9 @@ In het model dat in dit voor beeld wordt gebruikt, worden gegevens uit de NYC TL
 
 |vendor_id|rate_code|passenger_count|trip_time_in_secs|trip_distance|payment_type|fare_amount|
 |---|---|---|---|---|---|---|
-|VTS|1|1|1140|3,75|CRD|15,5|
-|VTS|1|1|480|2,72|CRD|10,0|
-|VTS|1|1|1680|7,8|CSH|26,5|
+|VTS|1|1|1140|3,75|CRD|15.5|
+|VTS|1|1|480|2,72|CRD|10.0|
+|VTS|1|1|1680|7,8|CSH|26.5|
 
 ### <a name="inspect-the-onnx-model-optional"></a>Het ONNX-model controleren (optioneel)
 
@@ -130,7 +130,7 @@ Gebruik een hulp programma zoals Netron om de invoer en uitvoer van uw model te 
 
 ### <a name="define-model-input-schema"></a>Model invoer schema definiëren
 
-Maak een nieuwe klasse `OnnxInput` met de naam met de volgende eigenschappen in het *Program.cs* -bestand.
+Maak een nieuwe klasse `OnnxInput` met de naam met de volgende eigenschappen in het bestand *Program. cs* .
 
 ```csharp
 public class OnnxInput
@@ -165,7 +165,7 @@ Zie voor meer informatie over gegevens kenmerken de [hand leiding](/dotnet/machi
 
 ### <a name="define-model-output-schema"></a>Model-uitvoer schema definiëren
 
-Zodra de gegevens zijn verwerkt, wordt een uitvoer van een bepaalde indeling gegenereerd. Definieer het schema voor gegevens uitvoer. Maak een nieuwe klasse `OnnxOutput` met de naam met de volgende eigenschappen in het *Program.cs* -bestand.
+Zodra de gegevens zijn verwerkt, wordt een uitvoer van een bepaalde indeling gegenereerd. Definieer het schema voor gegevens uitvoer. Maak een nieuwe klasse `OnnxOutput` met de naam met de volgende eigenschappen in het bestand *Program. cs* .
 
 ```csharp
 public class OnnxOutput

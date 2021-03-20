@@ -12,10 +12,10 @@ ms.date: 06/03/2020
 ms.author: curtand
 ms.reviewer: olhaun
 ms.openlocfilehash: e7608196c962a6918a90b91457f856f3e11b04f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91530898"
 ---
 # <a name="back-up-and-recover-account-credentials-using-the-microsoft-authenticator-app"></a>Back-up en herstel van account referenties met behulp van de app Microsoft Authenticator
@@ -43,7 +43,7 @@ Voordat u een back-up van uw referenties kunt maken, hebt u het volgende nodig:
 
 ### <a name="to-turn-on-cloud-backup-for-ios-devices"></a>Cloud back-up inschakelen voor iOS-apparaten
 
-- Selecteer op uw iOS-apparaat **instellingen**, selecteer **back-up**en schakel vervolgens **iCloud-back-up**in.
+- Selecteer op uw iOS-apparaat **instellingen**, selecteer **back-up** en schakel vervolgens **iCloud-back-up** in.
 
     Er wordt een back-up van uw account referenties gemaakt op uw iCloud-account.
 
@@ -51,7 +51,7 @@ Voordat u een back-up van uw referenties kunt maken, hebt u het volgende nodig:
 
 ### <a name="to-turn-on-cloud-backup-for-android-devices"></a>Cloud back-up inschakelen voor Android-apparaten
 
-- Selecteer op uw Android-apparaat **instellingen**, selecteer **back-up**en schakel vervolgens **Cloud back-up**in.
+- Selecteer op uw Android-apparaat **instellingen**, selecteer **back-up** en schakel vervolgens **Cloud back-up** in.
 
     Er wordt een back-up van uw account referenties gemaakt op uw Cloud account.
 
@@ -87,17 +87,17 @@ Voor persoonlijke micro soft-accounts kunt u uw identiteit bewijzen door uw wach
 
 1. Tik op de tegel voor het account dat u wilt herstellen en tik vervolgens op de optie om u aan te melden om te herstellen. Voer uw wacht woord in en bevestig uw e-mail adres of telefoon nummer als aanvullende verificatie.
 
-    :::image type="content" source="media/user-help-auth-app-backup-recovery/backup-and-recovery-codes.png" alt-text="Scherm opname van de Microsoft Authenticator-app met de beschik bare account tegels." border="true":::
+    :::image type="content" source="media/user-help-auth-app-backup-recovery/backup-and-recovery-codes.png" alt-text="Scherm opname waarin de Microsoft Authenticator eenmalige wachtwoord code wordt weer gegeven." border="true":::
 
 ### <a name="to-provide-more-verification-for-work-or-school-accounts"></a>Meer verificatie voor werk-of school accounts
 
 1. Tik in het scherm **accounts** van de Microsoft Authenticator-app op het account dat u wilt herstellen om de weer gave volledig scherm van het account te openen.
 
-    :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-arrow.png" alt-text="Scherm opname van de Microsoft Authenticator-app met de beschik bare account tegels." border="true":::
+    :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-arrow.png" alt-text="Microsoft Authenticator-app, waarin de beschik bare account tegels worden weer gegeven" border="true":::
 
 1. Tik in de weer gave volledig scherm op de optie om een QR-code te scannen om deze volledig te herstellen.
 
-    :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-qr-code.png" alt-text="Scherm opname van de Microsoft Authenticator-app met de beschik bare account tegels." border="true":::
+    :::image type="content" source="media/user-help-auth-app-backup-recovery/work-or-school-recovery-qr-code.png" alt-text="Verificator presenteert een eenmalig wacht woord als een verificatie code" border="true":::
 
 >[!NOTE]
 >Voor meer informatie over QR-codes en hoe u er een kunt krijgen, raadpleegt u aan [de slag met de Microsoft Authenticator-app](./user-help-auth-app-download-install.md) of [beveiligings gegevens instellen voor het gebruik van een verificator-app](./security-info-setup-auth-app.md), op basis van het feit of uw beheerder beveiligings gegevens heeft ingeschakeld.

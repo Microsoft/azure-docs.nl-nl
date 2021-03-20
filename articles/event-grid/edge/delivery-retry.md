@@ -8,10 +8,10 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: aa0b3a05fb26f6be951b697145d7b22e03b7792d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86171615"
 ---
 # <a name="delivery-and-retry"></a>Leveren en opnieuw proberen
@@ -52,7 +52,7 @@ Er wordt een gebeurtenis verwijderd als een van de limieten van het beleid voor 
 
 Er zijn twee eigenschappen: `brokers__defaultMaxDeliveryAttempts` en `broker__defaultEventTimeToLiveInSeconds` die kunnen worden geconfigureerd als onderdeel van de Event grid-implementatie, waarmee de standaard instellingen voor het beleid voor opnieuw proberen voor alle abonnees worden beheerd.
 
-| Naam van eigenschap | Beschrijving |
+| Eigenschapsnaam | Beschrijving |
 | ---------------- | ------------ |
 | `broker__defaultMaxDeliveryAttempts` | Het maximum aantal pogingen om een gebeurtenis te leveren. Standaard waarde: 30.
 | `broker__defaultEventTimeToLiveInSeconds` | Gebeurtenis-TTL in seconden waarna een gebeurtenis wordt verwijderd als deze niet wordt bezorgd. Standaard waarde: **7200** seconden

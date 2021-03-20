@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: abjork
 ms.openlocfilehash: 8f329b6377915a3df6e3f3e212cbd8d41f9ed80d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90017657"
 ---
 # <a name="how-to-use-analytics-to-analyze-device-data"></a>Informatie over het gebruik van Analytics voor het analyseren van apparaatgegevens
@@ -35,7 +35,7 @@ De gebruikers interface van Analytics bestaat uit drie hoofd onderdelen:
 
 ## <a name="querying-your-data"></a>Query's uitvoeren op uw gegevens
 
-U moet beginnen met het kiezen van een **apparaatgroep**en de telemetrie die u wilt analyseren. Wanneer u klaar bent, selecteert u **analyseren** om uw gegevens te visualiseren.
+U moet beginnen met het kiezen van een **apparaatgroep** en de telemetrie die u wilt analyseren. Wanneer u klaar bent, selecteert u **analyseren** om uw gegevens te visualiseren.
 
 - **Apparaatgroep:** Een [apparaatgroep](tutorial-use-device-groups.md) is een door de gebruiker gedefinieerde groep van uw apparaten. Bijvoorbeeld alle koel kasten in Oakland of alle versie 2,0-wind turbines.
 
@@ -59,7 +59,7 @@ Zodra u een query op uw gegevens hebt uitgevoerd, kunt u beginnen met visualiser
    
     - **Besturings element voor schuif regelaar voor datum bereik**: gebruik de besturings elementen voor het eind punt om het buitenste datum bereik te selecteren. Dit is beschikbaar voor het besturings element binnen het bereik van datums.
 
-    - **Knoppen voor het datum bereik verg Roten**of verkleinen: u kunt uw tijds periode verg Roten of verkleinen door een van de knoppen voor het gewenste interval te selecteren.
+    - **Knoppen voor het datum bereik verg Roten** of verkleinen: u kunt uw tijds periode verg Roten of verkleinen door een van de knoppen voor het gewenste interval te selecteren.
 
     - **Schuif regelaar voor interval grootte**: met deze knop kunt u op dezelfde tijds Panne in-en uitzoomen. Deze actie biedt meer nauw keurige controle over de verplaatsing tussen grote segmenten. U kunt deze gebruiken om gedetailleerde, weer gaven van uw gegevens met hoge resolutie weer te geven, zelfs omlaag tot milliseconden. Het standaard start punt van de schuif regelaar is ingesteld als de meest optimale weer gave van de gegevens uit uw selectie, waarmee de resolutie, de query snelheid en de granulatie worden gebalanceerd.
     

@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 08/25/2020
 ms.custom: seodec18
 ms.openlocfilehash: e1b50675bef0f883ff617b3098a742d3491b3c13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89484292"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Een actieve DNS-naam migreren naar Azure App Service
@@ -109,7 +109,7 @@ Voor het `contoso.com` voor beeld van het hoofd domein wijst u de A-of CNAME-rec
 | www \. -contoso.com (sub) | CNAME | `www` | _&lt;appName>. azurewebsites.net_ |
 | \*. contoso.com (Joker teken) | CNAME | _\*_ | _&lt;appName>. azurewebsites.net_ |
 
-Sla uw instellingen op.
+Sla uw wijzigingen op.
 
 DNS-query's moeten meteen beginnen met het oplossen van problemen met de App Service-app nadat de DNS-doorgifte is uitgevoerd.
 

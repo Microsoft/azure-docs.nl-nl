@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 3/18/2019
 ms.author: mjbrown
 ms.openlocfilehash: 0f08ca84597b08b9a236b7bfb0fc9c849423a752
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93335888"
 ---
 # <a name="query-an-azure-cosmos-container"></a>Query’s uitvoeren op een Azure Cosmos-container
@@ -59,9 +59,9 @@ De Cosmos DB-SDK's 1.9.0 en hoger bieden ondersteuning voor opties voor parallel
 
 U kunt parallelle queryuitvoering beheren door de volgende parameters af te stemmen:
 
-- **MaxConcurrency** : Hiermee stelt u het maximum aantal gelijktijdige netwerk verbindingen met de partitie van de container in. Als u deze eigenschap instelt op `-1` , wordt de mate van parallelle uitvoering beheerd door de SDK. Als de  `MaxConcurrency` instelling is ingesteld op `0` , is er één netwerk verbinding met de partities van de container.
+- **MaxConcurrency**: Hiermee stelt u het maximum aantal gelijktijdige netwerk verbindingen met de partitie van de container in. Als u deze eigenschap instelt op `-1` , wordt de mate van parallelle uitvoering beheerd door de SDK. Als de  `MaxConcurrency` instelling is ingesteld op `0` , is er één netwerk verbinding met de partities van de container.
 
-- **MaxBufferedItemCount** : hiermee wordt de latentie van de query ingewisseld voor het geheugengebruik aan de clientzijde. Als deze optie wordt weggelaten of ingesteld op -1, wordt het aantal items dat in de buffer opgeslagen tijdens parallelle query-uitvoering, beheerd door de SDK.
+- **MaxBufferedItemCount**: hiermee wordt de latentie van de query ingewisseld voor het geheugengebruik aan de clientzijde. Als deze optie wordt weggelaten of ingesteld op -1, wordt het aantal items dat in de buffer opgeslagen tijdens parallelle query-uitvoering, beheerd door de SDK.
 
 Dankzij de mogelijkheden van de Azure Cosmos DB om Kruis partitie query's te parallelliseren, wordt query latentie doorgaans goed geschaald als het systeem [fysieke partities](partitioning-overview.md#physical-partitions)toevoegt. De RU-kosten worden echter aanzienlijk verhoogd naarmate het totale aantal fysieke partities toeneemt.
 

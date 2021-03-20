@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0498ee1c57cfa661884fe3209d4e089b54996fae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89231058"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Azure Active Directory reporting latencies (Rapportagevertraging in Azure Active Directory)
@@ -54,12 +54,12 @@ Als u al activiteiten gegevens met uw gratis licentie hebt, kunt u deze direct n
 
 Er zijn twee typen beveiligingsrapporten:
 
-- [Riskante aanmeldingen](../identity-protection/overview-identity-protection.md) - Een riskante aanmelding is een indicator van een aanmeldingspoging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikersaccount is. 
-- [Gebruikers voor wie wordt aangegeven dat ze risico lopen](../identity-protection/overview-identity-protection.md) - Een riskante gebruiker is een indicator van een gebruikersaccount dat mogelijk is aangetast. 
+- [Risk ante aanmeldingen](../identity-protection/overview-identity-protection.md) : een Risk ante aanmelding is een indicator voor een aanmeldings poging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikers account is. 
+- [Gebruikers die zijn gemarkeerd voor risico](../identity-protection/overview-identity-protection.md) : een Risk ante gebruiker is een indicator voor een gebruikers account dat mogelijk is aangetast. 
 
 De volgende tabel bevat de latentie-informatie voor beveiligings rapporten.
 
-| Rapport | Minimum | Average | Maximum |
+| Rapport | Minimum | Gemiddeld | Maximum |
 | :-- | --- | --- | --- |
 | Gebruikers die risico lopen          | 5 minuten   | 15 minuten  | 2 uur  |
 | Riskante aanmeldingen         | 5 minuten   | 15 minuten  | 2 uur  |
@@ -70,7 +70,7 @@ Azure AD gebruikt adaptieve machine learning algoritmen en heuristiek om verdach
 
 De volgende tabel bevat de latentie-informatie voor risico detectie.
 
-| Rapport | Minimum | Average | Maximum |
+| Rapport | Minimum | Gemiddeld | Maximum |
 | :-- | --- | --- | --- |
 | Aanmeldingen vanaf anonieme IP-adressen |5 minuten |15 minuten |2 uur |
 | Aanmeldingen vanaf onbekende locaties |5 minuten |15 minuten |2 uur |

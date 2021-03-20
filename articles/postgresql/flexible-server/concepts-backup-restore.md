@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.openlocfilehash: d0e79e42c7c004638336ada23de663bbe74b7e48
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92532642"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---flexible-server"></a>Back-ups maken en herstellen in Azure Database for PostgreSQL-flexibele server
@@ -71,9 +71,9 @@ Herstel naar een bepaald tijdstip is handig in meerdere scenario's. Wanneer een 
 
 U kunt kiezen tussen een vroeg herstel punt en een aangepast herstel punt.
 
--   **Oudste herstel punt** : afhankelijk van de Bewaar periode is dit de eerste keer dat u kunt herstellen. De oudste back-uptijd wordt automatisch geselecteerd en wordt weer gegeven in de portal. Dit is handig als u wilt onderzoeken of testen vanaf dat moment.
+-   **Oudste herstel punt**: afhankelijk van de Bewaar periode is dit de eerste keer dat u kunt herstellen. De oudste back-uptijd wordt automatisch geselecteerd en wordt weer gegeven in de portal. Dit is handig als u wilt onderzoeken of testen vanaf dat moment.
 
--   **Aangepast herstel punt** : met deze optie kunt u een wille keurig tijdstip kiezen binnen de retentie periode die voor deze flexibele server is gedefinieerd. Standaard is de meest recente tijd in UTC automatisch geselecteerd en nuttig als u wilt herstellen naar de laatste vastgelegde trans actie voor uw test doeleinden. U kunt eventueel ook andere dagen en tijd kiezen. 
+-   **Aangepast herstel punt**: met deze optie kunt u een wille keurig tijdstip kiezen binnen de retentie periode die voor deze flexibele server is gedefinieerd. Standaard is de meest recente tijd in UTC automatisch geselecteerd en nuttig als u wilt herstellen naar de laatste vastgelegde trans actie voor uw test doeleinden. U kunt eventueel ook andere dagen en tijd kiezen. 
 
 De geschatte tijd voor het herstellen is afhankelijk van verschillende factoren, zoals de grootte van de data base, het volume van de transactie logboeken die moeten worden verwerkt, de netwerk bandbreedte en het totale aantal data bases dat op hetzelfde moment wordt hersteld in dezelfde regio. De totale herstel tijd duurt doorgaans slechts enkele minuten tot enkele uren.
 

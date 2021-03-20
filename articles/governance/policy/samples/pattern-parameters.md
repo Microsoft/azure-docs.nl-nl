@@ -4,10 +4,10 @@ description: Dit Azure Policy-patroon geeft een voorbeeld van het gebruiken van 
 ms.date: 08/17/2020
 ms.topic: sample
 ms.openlocfilehash: 7bb991c43a1deee39dd047aa7d814c124712fe69
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89649954"
 ---
 # <a name="azure-policy-pattern-parameters"></a>Azure Policy-patroon: parameters
@@ -43,7 +43,7 @@ In deze beleidsdefinitie wordt één parameter gebruikt, **listOfBandwidthinMbps
 
 :::code language="json" source="~/policy-templates/patterns/pattern-parameters-2.json" range="6-12":::
 
-In dit gedeelte van de beleidsdefinitie wordt de parameter **listOfBandwidthinMbps** gedefinieerd als een _array_ (matrix), met inbegrip van een beschrijving voor het gebruik van de parameter. Als een _array_zijn er meerdere waarden die moeten overeenkomen.
+In dit gedeelte van de beleidsdefinitie wordt de parameter **listOfBandwidthinMbps** gedefinieerd als een _array_ (matrix), met inbegrip van een beschrijving voor het gebruik van de parameter. Als een _array_ zijn er meerdere waarden die moeten overeenkomen.
 
 De parameter wordt vervolgens gebruikt in het blok **policyRule.if**. Als een _array_-parameter, moet de 
 [voorwaarde](../concepts/definition-structure.md#conditions) **in** of **notIn** van _array_ worden gebruikt.

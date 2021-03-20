@@ -9,10 +9,10 @@ ms.date: 09/17/2020
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 649c5805c600b6282be6d05fefb59cecaf249f4f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92526076"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>Wordt BGP ondersteund op alle Azure VPN-gateway SKU’s?
@@ -45,9 +45,9 @@ Deze ASN's zijn niet gereserveerd voor gebruik door IANA of Azure en kunnen daar
 
 ### <a name="what-address-does-vpn-gateway-use-for-bgp-peer-ip"></a>Welk adres gebruikt VPN Gateway voor BGP-peer-IP?
 
-Standaard wijst VPN Gateway één IP-adres uit het *GatewaySubnet* -bereik toe voor active-standby VPN-gateways, of twee IP-adressen voor active-active VPN-gateways. Deze adressen worden automatisch toegewezen wanneer u de VPN-gateway maakt. U kunt het werkelijke BGP IP-adres dat is toegewezen ophalen met PowerShell of door het te zoeken in de Azure Portal. Gebruik in PowerShell **Get-AzVirtualNetworkGateway** en zoek naar de eigenschap **bgpPeeringAddress** . Ga in Azure Portal naar de pagina **Gatewayconfiguratie** en zoek naar de eigenschap **BGP ASN configureren** .
+Standaard wijst VPN Gateway één IP-adres uit het *GatewaySubnet*-bereik toe voor active-standby VPN-gateways, of twee IP-adressen voor active-active VPN-gateways. Deze adressen worden automatisch toegewezen wanneer u de VPN-gateway maakt. U kunt het werkelijke BGP IP-adres dat is toegewezen ophalen met PowerShell of door het te zoeken in de Azure Portal. Gebruik in PowerShell **Get-AzVirtualNetworkGateway** en zoek naar de eigenschap **bgpPeeringAddress**. Ga in Azure Portal naar de pagina **Gatewayconfiguratie** en zoek naar de eigenschap **BGP ASN configureren**.
 
-Als uw on-premises VPN-routers **APIPA** -IP-adressen gebruiken (169.254.x.x) als het BGP-IP-adres, moet u een aanvullend **Azure APIPA BGP-IP-adres** opgeven in uw Azure VPN-gateway. Azure VPN-gateway selecteert het APIPA-adres dat moet worden gebruikt met de on-premises APIPA BGP-peer die is opgegeven in de lokale netwerkgateway of het privé-IP-adres voor een niet-APIPA on-premises BGP-peer. Raadpleeg [BGP configureren](../articles/vpn-gateway/bgp-howto.md) voor meer informatie.
+Als uw on-premises VPN-routers **APIPA**-IP-adressen gebruiken (169.254.x.x) als het BGP-IP-adres, moet u een aanvullend **Azure APIPA BGP-IP-adres** opgeven in uw Azure VPN-gateway. Azure VPN-gateway selecteert het APIPA-adres dat moet worden gebruikt met de on-premises APIPA BGP-peer die is opgegeven in de lokale netwerkgateway of het privé-IP-adres voor een niet-APIPA on-premises BGP-peer. Raadpleeg [BGP configureren](../articles/vpn-gateway/bgp-howto.md) voor meer informatie.
 
 ### <a name="what-are-the-requirements-for-the-bgp-peer-ip-addresses-on-my-vpn-device"></a>Wat zijn de vereisten voor de BGP-peer-IP-adressen op mijn VPN-apparaat?
 Het adres van uw on-premises BGP-peer mag niet gelijk zijn aan het openbare IP-adres van uw VPN-apparaat of de virtuele netwerkadresruimte van de VPN-gateway. Gebruik een ander IP-adres op het VPN-apparaat voor uw BGP-peer-IP. Het kan een adres zijn dat is toegewezen aan de loopback-interface op het apparaat (zowel een normaal IP-adres of een APIPA-adres). Als uw apparaat een APIPA-adres gebruikt voor BGP, moet u een APIP BGP-IP-adres opgeven in uw Azure VPN-gateway, zoals is beschreven in [BGP configureren](../articles/vpn-gateway/bgp-howto.md). Specificeer dit adres in de bijbehorende lokale netwerkgateway die de locatie vertegenwoordigt.
@@ -56,7 +56,7 @@ Het adres van uw on-premises BGP-peer mag niet gelijk zijn aan het openbare IP-a
 
 > [!IMPORTANT]
 >
->Dit is een wijziging van een eerder vastgelegde vereiste. Als u BGP gebruikt voor een verbinding, moet u het veld **Adresruimte** leeg houden voor de corresponderende lokale netwerkgateway-resource. Azure VPN-gateway voegt een hostroute intern toe aan het IP-adres van de on-premises BGP-peer via de IPsec-tunnel. Voeg de route /32 niet toe in het veld **Adresruimte** . Het is overbodig en als u een APIPA-adres gebruikt als het BGP-IP-adres van het on-premises VPN-apparaat, kan het niet aan het veld worden toegevoegd. Als u andere voorvoegsels toevoegt aan het veld Adresruimte, worden ze toegevoegd als **statische routes** in de Azure VPN-gateway, in aanvulling op de routes die via BGP zijn aangeleerd.
+>Dit is een wijziging van een eerder vastgelegde vereiste. Als u BGP gebruikt voor een verbinding, moet u het veld **Adresruimte** leeg houden voor de corresponderende lokale netwerkgateway-resource. Azure VPN-gateway voegt een hostroute intern toe aan het IP-adres van de on-premises BGP-peer via de IPsec-tunnel. Voeg de route /32 niet toe in het veld **Adresruimte**. Het is overbodig en als u een APIPA-adres gebruikt als het BGP-IP-adres van het on-premises VPN-apparaat, kan het niet aan het veld worden toegevoegd. Als u andere voorvoegsels toevoegt aan het veld Adresruimte, worden ze toegevoegd als **statische routes** in de Azure VPN-gateway, in aanvulling op de routes die via BGP zijn aangeleerd.
 >
 
 ### <a name="can-i-use-the-same-asn-for-both-on-premises-vpn-networks-and-azure-virtual-networks"></a>Kan ik hetzelfde ASN gebruiken voor on-premises VPN-netwerken en virtuele Azure-netwerken?

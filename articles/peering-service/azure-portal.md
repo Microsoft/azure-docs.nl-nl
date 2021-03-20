@@ -11,10 +11,10 @@ ms.workload: Infrastructure-services
 ms.date: 05/18/2020
 ms.author: derekol
 ms.openlocfilehash: 62210105ba4ba84cff4b246c5b7cf8cc794fb5e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91534944"
 ---
 # <a name="register-peering-service-by-using-the-azure-portal"></a>De peering-service registreren met behulp van de Azure Portal
@@ -72,14 +72,14 @@ Ga in een browser naar de Azure Portal en meld u aan met uw Azure-account.
 1. Selecteer **Nieuw voorvoegsel maken** onderaan de sectie **Voorvoegsels**. Er worden nu tekstvakken weergegeven. Voer nu de naam in van de voorvoegselresource en van de voorvoegsels die zijn gekoppeld aan de serviceprovider.
 
 1. Selecteer **Voorvoegselsleutel** en voeg de voorvoegselsleutel toe die u hebt ontvangen van uw provider (ISP of IXP). Met deze sleutel kan MS het voorvoegsel en de provider valideren die uw IP-voorvoegsel hebben toegewezen.
-   > ![Scherm afbeelding toont het tabblad Configuratie van de pagina verbinding maken van een peering-service, waar u de voorvoegsel sleutel kunt invoeren.](./media/peering-service-portal/peering-serviceconfiguration.png)
+   > ![Schermopname van het tabblad Configuratie van de pagina Een Peering Service-verbinding maken waar u de voorvoegselsleutel kunt invoeren.](./media/peering-service-portal/peering-serviceconfiguration.png)
 
 1. Selecteer linksonder op de pagina de knop **Beoordelen en maken**. De pagina **Beoordelen en maken** wordt weergegeven en de configuratie wordt gevalideerd in Azure.
     
 
 1. Als u het bericht **Validatie geslaagd** ziet zoals weergegeven, selecteert u **Maken**.
 
-   > ![Scherm afbeelding toont het tabblad controleren + maken van de pagina verbinding maken van een peering-service.](./media/peering-service-portal/peering-service-prefix.png)
+   > ![Schermopname van het tabblad Beoordelen en maken van de pagina Een Peering Service-verbinding maken.](./media/peering-service-portal/peering-service-prefix.png)
 
 
 1. Nadat u een Peering Service-verbinding hebt geregistreerd, wordt aanvullende validatie uitgevoerd voor de meegeleverde voorvoegsels. U kunt de validatiestatus bekijken in de sectie **Voorvoegsels** van de resourcenaam. Als de validatie mislukt, wordt een van de volgende foutberichten weergegeven:

@@ -5,10 +5,10 @@ ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
 ms.openlocfilehash: 007c19a10db5e000770c8c80189453d4a80edec2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82204511"
 ---
 De volgende tabel bevat de limieten die aan de verschillende servicelagen (S1, S2, S3 en F1) zijn gekoppeld. Voor informatie over de kosten van elke *eenheid* in elke laag raadpleegt u [Prijzen van Azure IoT Hub](https://azure.microsoft.com/pricing/details/iot-hub/).

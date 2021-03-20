@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 02/25/2016
 ms.custom: seodec18
 ms.openlocfilehash: 040f84288c66f4506919e775b9ea41324b617cfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80437901"
 ---
 # <a name="controlling-azure-app-service-traffic-with-azure-traffic-manager"></a>Azure App Service verkeer beheren met Azure Traffic Manager
@@ -24,10 +24,10 @@ U kunt Azure Traffic Manager gebruiken om te bepalen hoe aanvragen van web-clien
 ## <a name="routing-methods"></a>Routeringsmethoden
 In azure Traffic Manager worden vier verschillende routerings methoden gebruikt. Deze methoden worden beschreven in de volgende lijst die van toepassing zijn op Azure App Service.
 
-* ** [Prioriteit](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method):** gebruik een primaire app voor al het verkeer en geef back-ups op als de primaire of de back-upapps niet beschikbaar zijn.
-* ** [Gewogen](../traffic-manager/traffic-manager-routing-methods.md#weighted):** verkeer distribueren over een set apps, hetzij gelijkmatig als op basis van gewichten, dat u definieert.
-* ** [Prestaties](../traffic-manager/traffic-manager-routing-methods.md#performance):** wanneer u apps op verschillende geografische locaties hebt, moet u de ' dichtstbijzijnde ' app gebruiken in termen van de laagste netwerk latentie.
-* ** [Geografisch](../traffic-manager/traffic-manager-routing-methods.md#geographic):** directe gebruikers naar specifieke apps op basis van welke geografische locatie hun DNS-query afkomstig is. 
+* **[Prioriteit](../traffic-manager/traffic-manager-routing-methods.md#priority-traffic-routing-method):** gebruik een primaire app voor al het verkeer en geef back-ups op als de primaire of de back-upapps niet beschikbaar zijn.
+* **[Gewogen](../traffic-manager/traffic-manager-routing-methods.md#weighted):** verkeer distribueren over een set apps, hetzij gelijkmatig als op basis van gewichten, dat u definieert.
+* **[Prestaties](../traffic-manager/traffic-manager-routing-methods.md#performance):** wanneer u apps op verschillende geografische locaties hebt, moet u de ' dichtstbijzijnde ' app gebruiken in termen van de laagste netwerk latentie.
+* **[Geografisch](../traffic-manager/traffic-manager-routing-methods.md#geographic):** directe gebruikers naar specifieke apps op basis van welke geografische locatie hun DNS-query afkomstig is. 
 
 Zie [Traffic Manager routerings methoden](../traffic-manager/traffic-manager-routing-methods.md)voor meer informatie.
 

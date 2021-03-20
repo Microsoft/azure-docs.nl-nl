@@ -9,10 +9,10 @@ ms.date: 02/25/2019
 ms.author: duau
 ms.custom: seodec18
 ms.openlocfilehash: 366f27a0e2a22e9aa10dda20e105bf644255bdd4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89393136"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Een site-naar-site-VPN configureren via ExpressRoute micro soft-peering
@@ -71,9 +71,9 @@ Via een routefilter kunt u services identificeren die u wilt gebruiken via Micro
 
 ![route filter](./media/site-to-site-vpn-over-microsoft-peering/route-filter.png)
 
-In dit voor beeld is de implementatie alleen in de regio *Azure West US 2* . Er wordt een regel voor route filter toegevoegd zodat alleen de advertentie van de regionale voor voegsels van Azure West 2 regionaal wordt toegestaan. deze heeft de BGP Community-waarde *12076:51026*. U geeft de regionale voor voegsels op die u wilt toestaan door **regel beheren**te selecteren.
+In dit voor beeld is de implementatie alleen in de regio *Azure West US 2* . Er wordt een regel voor route filter toegevoegd zodat alleen de advertentie van de regionale voor voegsels van Azure West 2 regionaal wordt toegestaan. deze heeft de BGP Community-waarde *12076:51026*. U geeft de regionale voor voegsels op die u wilt toestaan door **regel beheren** te selecteren.
 
-Binnen het route filter moet u ook de ExpressRoute-circuits kiezen waarvoor het route filter van toepassing is. U kunt de ExpressRoute-circuits kiezen door **circuit toevoegen**te selecteren. In de vorige afbeelding is het route filter gekoppeld aan het voor beeld-ExpressRoute-circuit.
+Binnen het route filter moet u ook de ExpressRoute-circuits kiezen waarvoor het route filter van toepassing is. U kunt de ExpressRoute-circuits kiezen door **circuit toevoegen** te selecteren. In de vorige afbeelding is het route filter gekoppeld aan het voor beeld-ExpressRoute-circuit.
 
 ### <a name="21-configure-the-route-filter"></a><a name="configfilter"></a>2,1 het route filter configureren
 

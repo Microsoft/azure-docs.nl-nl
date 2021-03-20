@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.openlocfilehash: f6030e209b06dc7ae9acd8a13e6dcdf22b58f8c5
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92318881"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-allbound-sso"></a>Zelfstudie: Azure Active Directory-integratie met Allbound SSO | Microsoft Docs
@@ -174,7 +174,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -189,7 +189,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 In dit gedeelte wordt een gebruiker met de naam Britta Simon gemaakt in Allbound SSO. Allbound SSO ondersteunt Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als een gebruiker nog niet bestaat in Allbound SSO, wordt er na verificatie een nieuwe gemaakt.
 
 > [!Note]
-> Als u handmatig een gebruiker wilt maken, neem dan contact op met het [Allbound SSO-ondersteuningsteam](mailto:engineering@allbound.com).
+> Als u hand matig een gebruiker moet maken, neemt u contact op met het [ondersteunings team van ALLBOUND SSO](mailto:engineering@allbound.com).
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

@@ -12,13 +12,13 @@ ms.topic: end-user-help
 ms.date: 02/13/2018
 ms.author: curtand
 ms.openlocfilehash: 84588130788e9be8d3be52a8ea0f3988dce7b952
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91537001"
 ---
-# <a name="create-app-passwords-from-the-security-info-preview-page"></a>App-wacht woorden maken op de pagina beveiligings gegevens (preview)
+# <a name="create-app-passwords-from-the-security-info-preview-page"></a>App-wachtwoorden maken op de pagina Beveiligingsgegevens (preview)
 
 Bepaalde apps, zoals Outlook 2010, bieden geen ondersteuning voor verificatie in twee stappen. Dit gebrek aan ondersteuning betekent dat als u in uw organisatie verificatie in twee stappen gebruikt, de app niet werkt. Om dit probleem op te lossen, kunt u een automatisch gegenereerd wacht woord maken voor gebruik met elke niet-browser-app, gescheiden van uw normale wacht woord.
 
@@ -80,7 +80,7 @@ Als u een app die een app-wacht woord vereist, niet meer nodig hebt, kunt u het 
 
     ![Koppeling om de app-wachtwoord methode uit de beveiligings gegevens te verwijderen](media/security-info/securityinfo-myprofile-password-appdelete.png)
 
-2. Selecteer **Ja** in het bevestigings venster om het **app-wacht woord**te verwijderen. Nadat het app-wacht woord is verwijderd, wordt het verwijderd uit de beveiligings gegevens en verdwijnt het van de pagina met **beveiligings gegevens** .
+2. Selecteer **Ja** in het bevestigings venster om het **app-wacht woord** te verwijderen. Nadat het app-wacht woord is verwijderd, wordt het verwijderd uit de beveiligings gegevens en verdwijnt het van de pagina met **beveiligings gegevens** .
 
 ## <a name="for-more-information"></a>Voor meer informatie
 

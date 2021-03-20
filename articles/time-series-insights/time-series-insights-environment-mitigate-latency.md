@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 09/29/2020
 ms.custom: seodec18
 ms.openlocfilehash: e89189b22b144d9e92ee8315bc6fd9aabe699eec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91531646"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights-gen1"></a>Beperking controleren en beperken om de latentie in Azure Time Series Insights gen1 te verminderen
@@ -59,15 +59,15 @@ Waarschuwingen kunnen u helpen bij het vaststellen en oplossen van latentie prob
 
    Hier kunt u waarschuwingen configureren aan de hand van een van de volgende voor waarden:
 
-   |Gegevens  |Beschrijving  |
+   |Metrisch  |Beschrijving  |
    |---------|---------|
    |**Ontvangen bytes van binnenkomend verkeer**     | Aantal onbewerkte bytes dat uit gebeurtenis bronnen is gelezen. Aantal onbewerkte items bevat doorgaans de naam en waarde van de eigenschap.  |  
    |**Ongeldige berichten ontvangen**     | Aantal ongeldige berichten dat is gelezen uit alle Azure Event Hubs-of Azure IoT Hub-gebeurtenis bronnen.      |
    |**Ontvangen berichten met ingang**   | Aantal berichten dat is gelezen uit alle gebeurtenis bronnen van Event Hubs of IoT hubs.        |
    |**In ingangs opgeslagen bytes**     | De totale grootte van de opgeslagen en beschik bare gebeurtenissen voor de query. Grootte wordt alleen berekend op de waarde van de eigenschap.        |
-   |**Opgeslagen gebeurtenissen in ingangs**    |   Aantal samengevoegde gebeurtenissen dat is opgeslagen en beschikbaar is voor query's.      |
-   |**Tijds vertraging van ontvangen berichten**   |  Verschil in seconden tussen het tijdstip waarop het bericht in de bron van de gebeurtenis in de wachtrij is geplaatst en de tijd die wordt verwerkt in binnenkomend verkeer.      |
-   |**Vertraging van ontvangen berichten aantal aangekomen items**   |  Het verschil tussen het Volg nummer van de laatste bericht in de bron partitie en het Volg nummer van het bericht dat wordt verwerkt in ingress.      |
+   |**Opgeslagen gebeurtenissen in ingangs**     |   Aantal samengevoegde gebeurtenissen dat is opgeslagen en beschikbaar is voor query's.      |
+   |**Tijds vertraging van ontvangen berichten**    |  Verschil in seconden tussen het tijdstip waarop het bericht in de bron van de gebeurtenis in de wachtrij is geplaatst en de tijd die wordt verwerkt in binnenkomend verkeer.      |
+   |**Vertraging van ontvangen berichten aantal aangekomen items**    |  Het verschil tussen het Volg nummer van de laatste bericht in de bron partitie en het Volg nummer van het bericht dat wordt verwerkt in ingress.      |
 
    Selecteer **Gereed**.
 

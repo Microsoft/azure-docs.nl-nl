@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 5/19/2020
 ms.author: derekol
 ms.openlocfilehash: 7e10cd91eadd338217845b1504e8e9160bccfc98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91537188"
 ---
 # <a name="create-or-modify-an-exchange-peering-with-route-server-in-azure-portal"></a>Een Exchange-peering maken of wijzigen met route server in Azure Portal
@@ -66,12 +66,12 @@ Als Internet Exchange-provider kunt u een uitwisselings aanvraag maken door [een
  
     * Voor peering-type selecteert u **direct**
     * Selecteer voor micro soft-netwerk **AS8075 met Exchange route server**. 
-    * Selecteer SKU als **gratis basis**versie. Selecteer Premium gratis omdat deze is gereserveerd voor speciale toepassingen.
+    * Selecteer SKU als **gratis basis** versie. Selecteer Premium gratis omdat deze is gereserveerd voor speciale toepassingen.
     * Selecteer de **metro** locatie waar u peering wilt instellen.
 
-1. Onder **peering verbindingen**selecteert u **nieuwe maken**
+1. Onder **peering verbindingen** selecteert u **nieuwe maken**
 
-1.  Vul onder **directe peering verbinding**de volgende BGP-sessie gegevens in:
+1.  Vul onder **directe peering verbinding** de volgende BGP-sessie gegevens in:
 
     > [!div class="mx-imgBorder"]
     > ![Scherm afbeelding toont het deel venster directe peering-verbinding met details toegevoegd.](./media/setup-exchange-conf-tab-direct-route.png)

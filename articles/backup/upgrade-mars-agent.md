@@ -4,10 +4,10 @@ description: Meer informatie over het upgraden van de Microsoft Azure Recovery S
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.openlocfilehash: a1ee26db962781643e9599069282647658301bac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89181473"
 ---
 # <a name="upgrade-the-microsoft-azure-recovery-services-mars-agent"></a>De Microsoft Azure Recovery Services-agent (MARS) upgraden
@@ -27,7 +27,7 @@ Voor installaties van Azure Backup Agent en Azure Backup Server:
 
     ![Lijst met MARS-agents die zijn geïnstalleerd als onderdeel van Azure Backup Server-installaties](./media/upgrade-mars-agent/backup-management-servers.png)
 
-1. Ga naar **beveiligde servers** onder **beheerser**vers om de installatie van agents voor Microsoft Azure Recovery Services (MARS) of de Azure backup agent te controleren. Selecteer vervolgens **Azure backup agent** onder type back-upbeheer. Hiermee worden de servers weer geven die Azure Backup Agent-installaties hebben en het versie nummer van de installatie.
+1. Ga naar **beveiligde servers** onder **beheerser** vers om de installatie van agents voor Microsoft Azure Recovery Services (MARS) of de Azure backup agent te controleren. Selecteer vervolgens **Azure backup agent** onder type back-upbeheer. Hiermee worden de servers weer geven die Azure Backup Agent-installaties hebben en het versie nummer van de installatie.
 
     ![Lijst met servers waarop de MARS-agent is geïnstalleerd](./media/upgrade-mars-agent/protected-servers.png)
 
@@ -73,7 +73,7 @@ Zodra u hebt vastgesteld welke servers een Azure Backup Agent update nodig hebbe
 
 1. Selecteer **Next**.
 
-1. Selecteer **upgrade**.
+1. Selecteer **Upgraden**.
 
     ![Installatie van de Microsoft Azure Recovery Services-agent](./media/upgrade-mars-agent/upgrade-installation.png)
 

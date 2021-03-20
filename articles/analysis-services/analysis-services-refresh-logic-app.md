@@ -8,10 +8,10 @@ ms.date: 10/30/2019
 ms.author: chlound
 ms.custom: references_regions
 ms.openlocfilehash: 8a8d434fca7cab4432f38fc64093cf1fe060bd5f
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92019083"
 ---
 # <a name="refresh-with-logic-apps"></a>Vernieuwen met Logic Apps
@@ -67,10 +67,10 @@ Configureer de HTTP-activiteit als volgt:
 |---------|---------|
 |**Methode**     |POST         |
 |**URI**     | https://*uw server regio*/servers/*aas server name*/Models/*your data base name*/refreshes <br /> <br /> Bijvoorbeeld: https: \/ /westus.asazure.Windows.net/servers/MyServer/models/AdventureWorks/refreshes|
-|**Headers**     |   Content-type, Application/JSON <br /> <br />  ![Headers](./media/analysis-services-async-refresh-logic-app/6.png)    |
+|**Kopteksten**     |   Content-type, Application/JSON <br /> <br />  ![Kopteksten](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Hoofdtekst**     |   Zie voor meer informatie over het maken van de aanvraag tekst [asynchroon vernieuwen met de rest API-post/refreshes](analysis-services-async-refresh.md#post-refreshes). |
 |**Verificatie**     |Active Directory OAuth         |
-|**Tenant**     |Vul uw Azure Active Directory TenantId in         |
+|**Bouw**     |Vul uw Azure Active Directory TenantId in         |
 |**Doelgroep**     |https://*. asazure. Windows. net         |
 |**Client ID**     |Voer uw service principal name ClientID in         |
 |**Referentie type**     |Geheim         |
@@ -102,7 +102,7 @@ Gebruik het bovenstaande voor beeld om de eerste activiteit te verwijderen en te
 
 ![Scherm opname van de pagina "triggers".](./media/analysis-services-async-refresh-logic-app/13.png)
 
-In dit voor beeld wordt **terugkeer patroon**gebruikt.
+In dit voor beeld wordt **terugkeer patroon** gebruikt.
 
 Nadat de activiteit is toegevoegd, configureert u het interval en de frequentie, voegt u een nieuwe para meter toe en kiest u **deze uren**.
 

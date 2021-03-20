@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 08a73c2b1be4b17136ba19e7efb71c2b21359fdf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89280142"
 ---
 # <a name="azure-active-directory-pass-through-authentication-security-deep-dive"></a>Uitgebreide kennis van Pass-Through-verificatie Azure Active Directory
@@ -72,7 +72,7 @@ In de volgende secties worden deze fasen uitvoerig besproken.
 
 ### <a name="authentication-agent-installation"></a>Verificatie agent installeren
 
-Alleen globale beheerders kunnen een verificatie agent (met behulp van Azure AD Connect of zelfstandig) installeren op een on-premises server. De installatie voegt twee nieuwe vermeldingen toe **Control Panel**aan de  >  lijst**Program**ma's  >  **en onderdelen** van het configuratie scherm:
+Alleen globale beheerders kunnen een verificatie agent (met behulp van Azure AD Connect of zelfstandig) installeren op een on-premises server. De installatie voegt twee nieuwe vermeldingen toe aan de  >  lijst **Program** ma's  >  **en onderdelen** van het configuratie scherm:
 - De verificatie agent-toepassing zelf. Deze toepassing wordt uitgevoerd met [netwerk](/windows/win32/services/networkservice-account) toegangs rechten.
 - De updater-toepassing die wordt gebruikt om de verificatie agent automatisch bij te werken. Deze toepassing wordt uitgevoerd met [LocalSystem](/windows/win32/services/localsystem-account) -bevoegdheden.
 

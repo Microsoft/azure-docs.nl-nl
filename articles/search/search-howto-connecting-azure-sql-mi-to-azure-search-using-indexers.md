@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 9e8625724f67caac99ae799674f9db9399e11ad8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89294251"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-managed-instance"></a>Een verbinding van een Azure Cognitive Search Indexeer functie configureren in een door SQL beheerd exemplaar
@@ -25,7 +25,7 @@ Maak een SQL-beheerd exemplaar met de optie **openbaar eind punt inschakelen** g
    ![Openbaar eind punt inschakelen](media/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers/enable-public-endpoint.png "Openbaar eind punt inschakelen")
 
 ## <a name="enable-azure-sql-managed-instance-public-endpoint"></a>Open bare eind punt van Azure SQL Managed instance inschakelen
-U kunt ook open bare eind punten inschakelen op een bestaand exemplaar van **Security**SQL Managed in het  >  **Virtual network**  >  **open bare endpoint**voor beveiliging van het virtuele netwerk  >  **Enable**.
+U kunt ook open bare eind punten inschakelen op een bestaand exemplaar van SQL Managed in het  >    >  **open bare endpoint** voor beveiliging van het virtuele netwerk  >  .
 
    ![Openbaar eind punt inschakelen met behulp van VNET van beheerd exemplaar](media/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers/mi-vnet.png "Openbaar eind punt inschakelen")
 
@@ -38,7 +38,7 @@ Controleer of de netwerk beveiligings groep de juiste **regels voor binnenkomend
 > Indexeer functies vereisen nog steeds dat het beheerde exemplaar van SQL wordt geconfigureerd met een openbaar eind punt om gegevens te kunnen lezen.
 > U kunt echter ervoor kiezen de inkomende toegang tot dat open bare eind punt te beperken door de huidige regel () te vervangen door `public_endpoint_inbound` de volgende twee regels:
 >
-> * Het toestaan van inkomende toegang via de servicetag `AzureCognitiveSearch` [service tag](../virtual-network/service-tags-overview.md#available-service-tags) (source "= `AzureCognitiveSearch` ," name "= `cognitive_search_inbound` )
+> * Het toestaan van inkomende toegang via de servicetag `AzureCognitiveSearch` [](../virtual-network/service-tags-overview.md#available-service-tags) (source "= `AzureCognitiveSearch` ," name "= `cognitive_search_inbound` )
 >
 > * Het toestaan van binnenkomende toegang vanaf het IP-adres van de zoek service, die kan worden verkregen door de Fully Qualified Domain Name te pingen (bijvoorbeeld, `<your-search-service-name>.search.windows.net` ). (' Bron ' = `IP address` , ' naam ' = `search_service_inbound` )
 >

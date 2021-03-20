@@ -10,10 +10,10 @@ ms.date: 03/17/2020
 ms.author: robinsh
 ms.custom: devx-track-python
 ms.openlocfilehash: 733e3be21a1a1305b5c7947de1ae54ddce5e0d2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87876679"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Taken plannen en uitzenden (python)
@@ -38,7 +38,7 @@ Meer informatie over elk van deze mogelijkheden vindt u in de volgende artikelen
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Maak een met python gesimuleerde apparaat-app die een directe methode heeft, waardoor **lockDoor**kan worden aangeroepen door de back-end van de oplossing.
+* Maak een met python gesimuleerde apparaat-app die een directe methode heeft, waardoor **lockDoor** kan worden aangeroepen door de back-end van de oplossing.
 
 * Maak een python-console-app die de directe methode **lockDoor** aanroept in de gesimuleerde apparaat-app met behulp van een taak en de gewenste eigenschappen bijwerkt met behulp van een apparaat taak.
 
@@ -58,7 +58,7 @@ Aan het einde van deze zelf studie hebt u twee python-apps:
 
 [!INCLUDE [iot-hub-include-python-v2-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -157,19 +157,19 @@ In dit artikel maakt u een back-end-service die een directe methode aanroept op 
 
 Ga als volgt te werk om een gedeeld toegangs beleid te maken dat **service Connect**-, **register Lees**-en **Schrijf** machtigingen voor het REGI ster heeft, en om een Connection String voor dit beleid te verkrijgen:
 
-1. Open uw IoT-hub in de [Azure Portal](https://portal.azure.com). De eenvoudigste manier om uw IoT-hub te bereiken, is door **resource groepen**te selecteren, de resource groep te selecteren waar uw IOT-hub zich bevindt en vervolgens uw IOT-hub te selecteren in de lijst met resources.
+1. Open uw IoT-hub in de [Azure Portal](https://portal.azure.com). De eenvoudigste manier om uw IoT-hub te bereiken, is door **resource groepen** te selecteren, de resource groep te selecteren waar uw IOT-hub zich bevindt en vervolgens uw IOT-hub te selecteren in de lijst met resources.
 
 2. Selecteer in het linkerdeel venster van uw IoT-hub het **beleid voor gedeelde toegang**.
 
 3. Selecteer in het bovenste menu boven de lijst met beleids regels **toevoegen**.
 
-4. Voer in het deel venster **een gedeeld toegangs beleid toevoegen** een beschrijvende naam in voor uw beleid. bijvoorbeeld: *serviceAndRegistryReadWrite*. Selecteer onder **machtigingen** **service verbinding** en **REGI ster schrijven** (**REGI ster lezen** wordt automatisch geselecteerd wanneer u **register schrijven**selecteert). Selecteer vervolgens **Maken**.
+4. Voer in het deel venster **een gedeeld toegangs beleid toevoegen** een beschrijvende naam in voor uw beleid. bijvoorbeeld: *serviceAndRegistryReadWrite*. Selecteer onder **machtigingen** **service verbinding** en **REGI ster schrijven** (**REGI ster lezen** wordt automatisch geselecteerd wanneer u **register schrijven** selecteert). Selecteer vervolgens **Maken**.
 
     ![Weer geven hoe een nieuw beleid voor gedeelde toegang moet worden toegevoegd](./media/iot-hub-python-python-schedule-jobs/add-policy.png)
 
 5. Selecteer in het deel venster **Shared Access policies** uw nieuwe beleid in de lijst met beleids regels.
 
-6. Onder **gedeelde toegangs sleutels**selecteert u het Kopieer pictogram voor de **verbindings reeks--primaire sleutel** en slaat u de waarde op.
+6. Onder **gedeelde toegangs sleutels** selecteert u het Kopieer pictogram voor de **verbindings reeks--primaire sleutel** en slaat u de waarde op.
 
     ![Het ophalen van de verbindingsreeks](./media/iot-hub-python-python-schedule-jobs/get-connection-string.png)
 

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/27/2019
 ms.openlocfilehash: cdbc44158de2f24d7d33d68311979c3b8bdda85d
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94593974"
 ---
 # <a name="tutorial-add-an-azure-sql-database-elastic-pool-to-a-failover-group"></a>Zelfstudie: Een elastische pool van Azure SQL Database toevoegen aan een failovergroep
@@ -55,14 +55,14 @@ Maak uw elastische pool met behulp van de Azure-portal.
     ![Elastische pool selecteren](./media/failover-group-add-elastic-pool-tutorial/select-azure-sql-elastic-pool.png)
 
 1. Configureer uw elastische pool met de volgende waarden:
-   - **Naam** : Geef een unieke naam op voor uw elastische pool, zoals `myElasticPool`.
-   - **Abonnement** : Selecteer uw abonnement in de vervolgkeuzelijst.
-   - **ResourceGroup** : Selecteer in de vervolgkeuzelijst `myResourceGroup`, de resourcegroep die u in gedeelte 1 hebt gemaakt.
-   - **Server** : Selecteer in de vervolgkeuzelijst de server die u in gedeelte 1 hebt gemaakt.  
+   - **Naam**: Geef een unieke naam op voor uw elastische pool, zoals `myElasticPool`.
+   - **Abonnement**: Selecteer uw abonnement in de vervolgkeuzelijst.
+   - **ResourceGroup**: Selecteer in de vervolgkeuzelijst `myResourceGroup`, de resourcegroep die u in gedeelte 1 hebt gemaakt.
+   - **Server**: Selecteer in de vervolgkeuzelijst de server die u in gedeelte 1 hebt gemaakt.  
 
        ![Nieuwe server voor elastische pool maken](./media/failover-group-add-elastic-pool-tutorial/use-existing-server-for-elastic-pool.png)
 
-   - **Compute en opslag** : Selecteer **Elastische pool configureren** om uw compute en opslag te configureren en om uw individuele database aan uw elastische pool toe te voegen. In het tabblad **Poolinstellingen** laat u de standaardwaarde Gen5 staan en kiest u voor 2 vCores en 32 GB.
+   - **Compute en opslag**: Selecteer **Elastische pool configureren** om uw compute en opslag te configureren en om uw individuele database aan uw elastische pool toe te voegen. In het tabblad **Poolinstellingen** laat u de standaardwaarde Gen5 staan en kiest u voor 2 vCores en 32 GB.
 
 1. Op de pagina **Configureren** selecteert u het tabblad **Databases** en kiest u vervolgens **Database toevoegen**. Kies de database die u in gedeelte 1 hebt gemaakt en selecteer vervolgens **Toepassen** om deze aan uw elastische pool toe te voegen. Selecteer opnieuw **Toepassen** om de instellingen voor de elastische pool toe te passen en sluit de pagina **Configureren**.
 
@@ -141,15 +141,15 @@ Maak uw failovergroep met behulp van de Azure-portal.
 
 1. Selecteer **Failovergroepen** onder het deelvenster **Instellingen** en selecteer vervolgens **Groep toevoegen** om een nieuwe failovergroep te maken.
 
-    ![Nieuwe failovergroep maken](./media/failover-group-add-elastic-pool-tutorial/elastic-pool-failover-group.png)
+    ![Nieuwe failovergroep toevoegen](./media/failover-group-add-elastic-pool-tutorial/elastic-pool-failover-group.png)
 
-1. Op de pagina **Failovergroep** moet u de volgende waarden invoeren of selecteren en vervolgens **Maken** selecteren:
-    - **Naam van failovergroep** : Typ een unieke naam voor de failovergroep, zoals `failovergrouptutorial`.
-    - **Secundaire server** : Selecteer de optie *Vereiste instellingen configureren* en kies vervolgens **Een nieuwe server maken**. U kunt ook een reeds bestaande server als secundaire server kiezen. Nadat u de volgende waarden voor de nieuwe secundaire server hebt ingevoerd, selecteert u **Selecteren**.
-        - **Servernaam** : Typ een unieke naam voor de secundaire server, zoals `mysqlsecondary`.
-        - **Aanmeldgegevens van serverbeheerder** : Type `azureuser`
-        - **Wachtwoord** : Typ een complex wachtwoord dat voldoet aan de wachtwoordvereisten.
-        - **Locatie** : Kies een locatie uit de vervolgkeuzelijst, zoals `East US`. Deze locatie moet anders zijn dan de locatie van de primaire server.
+1. Voer op de pagina **Failovergroep maken** de volgende waarden in en selecteer **Maken**:
+    - **Naam van failovergroep**: Typ een unieke naam voor de failovergroep, zoals `failovergrouptutorial`.
+    - **Secundaire server**: Selecteer de optie *Vereiste instellingen configureren* en kies vervolgens **Een nieuwe server maken**. U kunt ook een reeds bestaande server als secundaire server kiezen. Nadat u de volgende waarden voor de nieuwe secundaire server hebt ingevoerd, selecteert u **Selecteren**.
+        - **Servernaam**: Typ een unieke naam voor de secundaire server, zoals `mysqlsecondary`.
+        - **Aanmeldgegevens van serverbeheerder**: Type `azureuser`
+        - **Wachtwoord**: Typ een complex wachtwoord dat voldoet aan de wachtwoordvereisten.
+        - **Locatie**: Kies een locatie uit de vervolgkeuzelijst, zoals `East US`. Deze locatie moet anders zijn dan de locatie van de primaire server.
 
        > [!NOTE]
        > De aanmeldings- en firewallinstellingen van de server moeten overeenkomen met die van de primaire server.

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: fdc7360911e37babdb830b7d67ad7224ea84c774
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92038595"
 ---
 Wanneer u de mediagraaf uitvoert, worden de resultaten van het HTTP-extensieprocessor-knooppunt via het IoT Hub-sink-knooppunt naar de IoT-hub doorgevoerd. De berichten die u ziet in het **UITVOER**-venster bevatten een sectie body en een sectie applicationProperties. Zie [IoT Hub-berichten maken en lezen](../../../../../iot-hub/iot-hub-devguide-messages-construct.md) voor meer informatie.

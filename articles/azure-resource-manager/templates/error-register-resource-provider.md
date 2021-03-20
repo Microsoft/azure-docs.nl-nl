@@ -5,10 +5,10 @@ ms.topic: troubleshooting
 ms.date: 02/15/2019
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: 143cf03a33739f43a29af94fc2f8a336fb3aef8f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89076664"
 ---
 # <a name="resolve-errors-for-resource-provider-registration"></a>Fouten oplossen voor de registratie van de resourceprovider
@@ -114,7 +114,7 @@ U kunt de registratie status bekijken en een resource provider-naam ruimte regis
 
    ![Selecteer een abonnement om de resource provider te registreren](./media/error-register-resource-provider/select-subscription-to-register.png)
 
-1. Selecteer **resource providers**voor uw abonnement.
+1. Selecteer **Resourceproviders** voor uw abonnement.
 
    ![Resource providers selecteren](./media/error-register-resource-provider/select-resource-provider.png)
 

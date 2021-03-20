@@ -15,10 +15,10 @@ ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 41add54ce767413982ab0503f7263c58aed4d4e2
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359282"
 ---
 # <a name="automated-backup-for-sql-server-2014-virtual-machines-resource-manager"></a>Automatische back-up voor virtuele SQL Server 2014-machines (Resource Manager)
@@ -58,7 +58,7 @@ Als u automatische back-ups wilt gebruiken, moet u rekening houden met de volgen
 
 In de volgende tabel worden de opties beschreven die kunnen worden geconfigureerd voor automatische back-ups. De werkelijke configuratie stappen variëren, afhankelijk van of u de Azure Portal-of Azure Windows Power shell-opdrachten gebruikt.
 
-| Instelling | Bereik (standaard) | Description |
+| Instelling | Bereik (standaard) | Beschrijving |
 | --- | --- | --- |
 | **Automatische back-up** | Inschakelen/uitschakelen (uitgeschakeld) | Hiermee wordt automatische back-ups voor een Azure-VM met SQL Server 2014 Standard of ENTER prise in-of uitgeschakeld. |
 | **Bewaar periode** | 1-30 dagen (30 dagen) | Het aantal dagen dat een back-up moet worden bewaard. |

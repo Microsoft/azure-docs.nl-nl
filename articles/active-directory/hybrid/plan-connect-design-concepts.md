@@ -18,17 +18,17 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: baa03499cc11bda24ead986dd64621572484cbb1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89279649"
 ---
 # <a name="azure-ad-connect-design-concepts"></a>Azure AD Connect: ontwerp concepten
 Het doel van dit document is het beschrijven van gebieden die tijdens het implementatie ontwerp van Azure AD Connect moeten worden beschouwd. Dit document is een grondige kennis van bepaalde gebieden en deze concepten worden ook kort beschreven in andere documenten.
 
 ## <a name="sourceanchor"></a>Source anchor
-Het kenmerk source anchor wordt gedefinieerd als *een kenmerk dat tijdens de levens duur van een object onveranderbaar*is. Het identificeert een object op unieke wijze als hetzelfde object op locatie en in azure AD. Het kenmerk wordt ook wel **immutableId** genoemd en de twee namen worden uitgewisseld gebruikt.
+Het kenmerk source anchor wordt gedefinieerd als *een kenmerk dat tijdens de levens duur van een object onveranderbaar* is. Het identificeert een object op unieke wijze als hetzelfde object op locatie en in azure AD. Het kenmerk wordt ook wel **immutableId** genoemd en de twee namen worden uitgewisseld gebruikt.
 
 Het woord onveranderbaar, dat wil zeggen ' kan niet worden gewijzigd ', is belang rijk voor dit document. Omdat de waarde van dit kenmerk niet kan worden gewijzigd nadat deze is ingesteld, is het belang rijk dat u een ontwerp kiest dat uw scenario ondersteunt.
 
@@ -62,7 +62,7 @@ Als u meerdere forests hebt en gebruikers niet tussen forests en domeinen verpla
 
 Als u gebruikers tussen forests en domeinen verplaatst, moet u een kenmerk vinden dat niet verandert of kan worden verplaatst met de gebruikers tijdens de verplaatsing. Een aanbevolen benadering is het introduceren van een synthetisch kenmerk. Een kenmerk dat iets zou kunnen bevatten dat lijkt op een GUID, zou geschikt zijn. Tijdens het maken van het object wordt een nieuwe GUID gemaakt en gestempeld op de gebruiker. Een aangepaste synchronisatie regel kan worden gemaakt op de server van de synchronisatie-engine om deze waarde te maken op basis van de **ObjectGUID** en het geselecteerde kenmerk in toevoegen bij te werken. Wanneer u het object verplaatst, moet u ook de inhoud van deze waarde kopiëren.
 
-Een andere oplossing is het kiezen van een bestaand kenmerk dat u niet wijzigt. Veelgebruikte kenmerken zijn onder andere werk **nemers**. Als u overweegt een kenmerk dat letters bevat, moet u ervoor zorgen dat er geen kans is (hoofd letters en kleine letters) kan worden gewijzigd voor de waarde van het kenmerk. Ongeldige kenmerken die niet moeten worden gebruikt, zijn onder andere die kenmerken met de naam van de gebruiker. In een huwelijk of echtheid wordt de naam naar verwachting gewijzigd. Dit is niet toegestaan voor dit kenmerk. Dit is ook een van de redenen waarom kenmerken zoals **userPrincipalName**, **mail**en **targetAddress** niet zelfs kunnen worden geselecteerd in de installatie wizard van Azure AD Connect. Deze kenmerken bevatten ook het \@ teken ' ', wat niet is toegestaan in de source Anchor.
+Een andere oplossing is het kiezen van een bestaand kenmerk dat u niet wijzigt. Veelgebruikte kenmerken zijn onder andere werk **nemers**. Als u overweegt een kenmerk dat letters bevat, moet u ervoor zorgen dat er geen kans is (hoofd letters en kleine letters) kan worden gewijzigd voor de waarde van het kenmerk. Ongeldige kenmerken die niet moeten worden gebruikt, zijn onder andere die kenmerken met de naam van de gebruiker. In een huwelijk of echtheid wordt de naam naar verwachting gewijzigd. Dit is niet toegestaan voor dit kenmerk. Dit is ook een van de redenen waarom kenmerken zoals **userPrincipalName**, **mail** en **targetAddress** niet zelfs kunnen worden geselecteerd in de installatie wizard van Azure AD Connect. Deze kenmerken bevatten ook het \@ teken ' ', wat niet is toegestaan in de source Anchor.
 
 ### <a name="changing-the-sourceanchor-attribute"></a>Het kenmerk source Anchor wijzigen
 De waarde van het kenmerk source Anchor kan niet worden gewijzigd nadat het object is gemaakt in azure AD en de identiteit is gesynchroniseerd.
@@ -140,7 +140,7 @@ Overschakelen van objectGUID naar ConsistencyGuid als het kenmerk bron anker:
 
 3. Voer uw Azure AD-beheerders referenties in en klik op **volgende**.
 
-4. Azure AD Connect wizard analyseert de status van het kenmerk MS-DS-ConsistencyGuid in uw on-premises Active Directory. Als het kenmerk niet is geconfigureerd voor een object in de map, wordt door Azure AD Connect afgesloten dat er momenteel geen andere toepassing is die het kenmerk gebruikt en veilig is om het te gebruiken als bron anker kenmerk. Klik op **Volgende** om door te gaan.
+4. Azure AD Connect wizard analyseert de status van het kenmerk MS-DS-ConsistencyGuid in uw on-premises Active Directory. Als het kenmerk niet is geconfigureerd voor een object in de map, wordt door Azure AD Connect afgesloten dat er momenteel geen andere toepassing is die het kenmerk gebruikt en veilig is om het te gebruiken als bron anker kenmerk. Klik op **Volgende** om verder te gaan.
 
    ![ConsistencyGuid inschakelen voor bestaande implementatie-stap 4](./media/plan-connect-design-concepts/consistencyguidexistingdeployment02.png)
 
@@ -183,7 +183,7 @@ Wanneer u het kenmerk selecteert voor het opgeven van de waarde van UPN die moet
 * De kenmerk waarden voldoen aan de UPN-syntaxis (RFC 822), dat wil zeggen, het moet het domein notatie username zijn \@
 * Het achtervoegsel in de waarden komt overeen met een van de geverifieerde aangepaste domeinen in azure AD
 
-In snelle instellingen is de aangenomen keuze voor het kenmerk userPrincipalName. Als het kenmerk userPrincipalName niet de waarde bevat waarmee gebruikers zich moeten aanmelden bij Azure, moet u **aangepaste installatie**kiezen.
+In snelle instellingen is de aangenomen keuze voor het kenmerk userPrincipalName. Als het kenmerk userPrincipalName niet de waarde bevat waarmee gebruikers zich moeten aanmelden bij Azure, moet u **aangepaste installatie** kiezen.
 
 ### <a name="custom-domain-state-and-upn"></a>Aangepaste domein status en UPN
 Het is belang rijk om ervoor te zorgen dat er een geverifieerd domein is voor het UPN-achtervoegsel.

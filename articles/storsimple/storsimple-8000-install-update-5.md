@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 11/13/2017
 ms.author: alkohli
 ms.openlocfilehash: bbac6eade634ffcfdc47ae3d22b32e0bd429b7c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85513178"
 ---
 # <a name="install-update-5-on-your-storsimple-device"></a>Update 5 op uw StorSimple-apparaat installeren
@@ -76,19 +76,19 @@ De hotfix-methode omvat de volgende drie stappen:
 
 U moet de volgende hotfixes downloaden en installeren in de voorgeschreven volg orde en de voorgestelde mappen:
 
-| Bestellen | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
+| Volgorde | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 1. |KB4037264 |Software-update<br> Down load zowel _HcsSoftwareUpdate.exe_ als _CisMSDAgent.exe_ |Regelmatig <br></br>Niet-verstorend |~ 25 minuten |FirstOrderUpdate|
 
 Bij het bijwerken van een apparaat met update 4 hoeft u alleen de cumulatieve updates van het besturings systeem te installeren als tweede order updates.
 
-| Bestellen | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
+| Volgorde | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 2. |KB4025336 |Pakket met cumulatieve updates voor het besturings systeem <br> Windows Server 2012 R2-versie downloaden |Regelmatig <br></br>Niet-verstorend |- |SecondOrderUpdate|
 
 Als u een installatie uitvoert vanaf een apparaat met update 3 of eerder, installeert u het volgende naast de cumulatieve updates.
 
-| Bestellen | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
+| Volgorde | KB | Beschrijving | Updatetype | Installatietijd |Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 2b. |KB4011841 <br> KB4011842 |Stuur programma-en firmware-updates voor LSI <br> EIGENSCHAPPEN van firmware-update (versie 3,38) |Regelmatig <br></br>Niet-verstorend |~ 3 uur <br> (inclusief 2A. + 2B. + 2C.)|SecondOrderUpdate|
 | 2C. |KB3139398 <br> KB3142030 <br> KB3108381 <br> KB3153704 <br> KB3174644 <br> KB3139914   |Pakket met beveiligings updates voor besturings systeem <br> Windows Server 2012 R2-versie downloaden |Regelmatig <br></br>Niet-verstorend |- |SecondOrderUpdate|
@@ -97,7 +97,7 @@ Als u een installatie uitvoert vanaf een apparaat met update 3 of eerder, instal
 
 Mogelijk moet u ook updates voor de schijf firmware installeren boven op alle updates die in de voor gaande tabellen worden weer gegeven. U kunt controleren of u de firmware-updates van de schijf nodig hebt door de cmdlet uit te voeren `Get-HcsFirmwareVersion` . Als u deze firmware versies uitvoert:,,,,,, `XMGJ` `XGEG` `KZ50` `F6C2` `VR08` `N003` `0107` , hoeft u deze updates niet te installeren.
 
-| Bestellen | KB | Beschrijving | Updatetype | Installatietijd | Installeren in map|
+| Volgorde | KB | Beschrijving | Updatetype | Installatietijd | Installeren in map|
 | --- | --- | --- | --- | --- | --- |
 | 3. |KB4037263 |Schijf firmware |Onderhoud <br></br>Verstorende |~ 30 minuten | ThirdOrderUpdate |
 

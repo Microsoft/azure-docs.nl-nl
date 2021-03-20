@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 02490839a9e35695ae2e8b3f750e139ad7413aa4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89280210"
 ---
 # <a name="azure-ad-connect-sync-understanding-declarative-provisioning-expressions"></a>Azure AD Connect Sync: uitleg over declaratieve inrichtings expressies
@@ -41,7 +41,7 @@ De kenmerken zijn sterk getypeerd. Een functie accepteert alleen kenmerken van h
 * Booleaanse waarden worden uitgedrukt met constanten: True, false.
 * Ingebouwde constanten en letterlijke waarden worden alleen met hun naam weer gegeven: NULL, CRLF, IgnoreThisFlow
 
-### <a name="functions"></a>Functies
+### <a name="functions"></a>Functions
 In declaratieve inrichting wordt gebruikgemaakt van een groot aantal functies waarmee u kenmerk waarden kunt transformeren. Deze functies kunnen worden genest, zodat het resultaat van de ene functie wordt door gegeven aan een andere functie.
 
 `Function1(Function2(Function3()))`
@@ -94,7 +94,7 @@ Bijvoorbeeld:
 
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)
 
 **Onderwerpen met naslaginformatie**

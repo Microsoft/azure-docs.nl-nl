@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 012eefe9140703a62d7bb1074ab763191a0976cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87798508"
 ---
 # <a name="create-an-access-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Een toegangs beoordeling maken van een toegangs pakket in het beheer van rechten van Azure AD
@@ -53,7 +53,7 @@ Met deze instelling bepaalt u hoe vaak toegangs beoordelingen worden uitgevoerd.
 
 1. Stel de **duur** in om op te geven hoeveel dagen elke beoordeling van de terugkerende serie voor invoer van revisors is geopend. U kunt bijvoorbeeld een jaarlijks beoordeling plannen die begint op 1 januari en gedurende 30 dagen is geopend, zodat de revisoren tot het einde van de maand kunnen reageren.
 
-1. Selecteer in het veld **revisoren**de optie **zelf beoordeling** als u wilt dat gebruikers hun eigen toegangs beoordeling uitvoeren of **specifieke revisor (en)** selecteren als u een revisor wilt aanwijzen.
+1. Selecteer in het veld **revisoren** de optie **zelf beoordeling** als u wilt dat gebruikers hun eigen toegangs beoordeling uitvoeren of **specifieke revisor (en)** selecteren als u een revisor wilt aanwijzen.
 
     ![Revisoren toevoegen selecteren](./media/entitlement-management-access-reviews/access-reviews-add-reviewer.png)
 
@@ -70,7 +70,7 @@ Met deze instelling bepaalt u hoe vaak toegangs beoordelingen worden uitgevoerd.
 
 Na de begin datum wordt een toegangs beoordeling weer gegeven in de sectie **toegangs beoordelingen** . Volg deze stappen om de status van een toegangs beoordeling weer te geven:
 
-1. In **Identity governance**klikt u op **toegangs pakketten** en selecteert u vervolgens het toegangs pakket met de status van de toegangs beoordeling die u wilt controleren.   
+1. In **Identity governance** klikt u op **toegangs pakketten** en selecteert u vervolgens het toegangs pakket met de status van de toegangs beoordeling die u wilt controleren.   
 
 1. Klik op **toegangs beoordelingen** in het linkermenu zodra u het overzicht van het toegangs pakket hebt geopend.
     

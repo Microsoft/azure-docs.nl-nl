@@ -4,10 +4,10 @@ description: In deze zelfstudie maakt u een aangepaste beleidsdefinitie voor Azu
 ms.date: 10/05/2020
 ms.topic: tutorial
 ms.openlocfilehash: 817e6f494b024b9a789f39a4101236f64d8fa0cd
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97882888"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Zelfstudie: Een aangepaste beleidsdefinitie maken

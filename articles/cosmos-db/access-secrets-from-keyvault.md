@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.reviewer: sngun
 ms.openlocfilehash: a9bea0664f99a21ac734de666c802e9875ff00b5
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359316"
 ---
 # <a name="secure-azure-cosmos-keys-using-azure-key-vault"></a>Azure Cosmos-sleutels beveiligen met Azure Key Vault 
@@ -61,7 +61,7 @@ De volgende stappen zijn vereist om Azure Cosmos DB toegangs sleutels op te slaa
 
 1. Een Azure-webtoepassing maken of u kunt de app downloaden vanuit de [github-opslag plaats](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/Demo/keyvaultdemo). Het is een eenvoudige MVC-toepassing.  
 
-2. Pak de gedownloade toepassing uit en open het **HomeController.cs** -bestand. Werk de geheime ID in op de volgende regel:
+2. Pak de gedownloade toepassing uit en open het bestand **HomeController. cs** . Werk de geheime ID in op de volgende regel:
 
    `var secret = await keyVaultClient.GetSecretAsync("<Your Key Vault’s secret identifier>")`
 

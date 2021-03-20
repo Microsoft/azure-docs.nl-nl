@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: d8119c56c26ed32db136064d93775d21a71f238f
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92778658"
 ---
 # <a name="analyze-edge-node-performance-in-microsoft-azure-cdn"></a>Prestaties van edge nod analyseren in Microsoft Azure CDN
@@ -55,7 +55,7 @@ Dit dash board bestaat uit:
     ![De knop Blade van het CDN-profiel beheren](./media/cdn-edge-performance/cdn-manage-btn.png)
    
     De CDN-beheer portal wordt geopend.
-2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de analyse-flyout voor de **rand prestaties** .  Klik op **dash board** .
+2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de analyse-flyout voor de **rand prestaties** .  Klik op **dash board**.
    
     Het dash board met het Edge-knoop punt analyse wordt weer gegeven.
 
@@ -143,7 +143,7 @@ Elk rapport in deze module bevat een diagram en statistieken over band breedte e
     ![De knop Blade van het CDN-profiel beheren](./media/cdn-edge-performance/cdn-manage-btn.png)
    
     De CDN-beheer portal wordt geopend.
-2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de analyse-flyout voor de **rand prestaties** .  Klik op **http-large object** .
+2. Beweeg de muis aanwijzer over het tabblad **Analytics** en Beweeg vervolgens de muis aanwijzer over de analyse-flyout voor de **rand prestaties** .  Klik op **http-large object**.
    
     Het scherm voor analyse rapporten van het rand knooppunt wordt weer gegeven.
 

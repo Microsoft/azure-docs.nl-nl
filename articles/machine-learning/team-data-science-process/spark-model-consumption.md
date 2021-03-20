@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: bb38a76de41885b6f39a1c6dce7c44bcb52a4d60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86027440"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Met operationeel maken Spark ontwikkelde machine learning modellen
@@ -545,7 +545,7 @@ BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.
 Spark biedt een mechanisme voor het extern indienen van batch taken of interactieve query's via een REST-interface met een onderdeel genaamd livy. Livy is standaard ingeschakeld voor uw HDInsight Spark-cluster. Zie voor meer informatie over livy: [Spark-taken extern verzenden met behulp van livy](../../hdinsight/spark/apache-spark-livy-rest-interface.md). 
 
 U kunt livy gebruiken om op afstand een taak te verzenden die batch een bestand vergeeft dat is opgeslagen in een Azure-Blob en de resultaten vervolgens naar een andere blob schrijft. Hiervoor uploadt u het python-script uit  
-[Github](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) naar de blob van het Spark-cluster. U kunt een hulp programma als **Microsoft Azure Storage Explorer** of **AzCopy** gebruiken om het script naar de cluster-BLOB te kopiëren. In ons geval hebben we het script geüpload naar ***wasb:///example/python/ConsumeGBNYCReg.py***.   
+[Github](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) naar de blob van het Spark-cluster. U kunt een hulp programma als **Microsoft Azure Storage Explorer** of **AzCopy** gebruiken om het script naar de cluster-BLOB te kopiëren. In ons geval hebben we het script geüpload naar **_wasb:///example/python/ConsumeGBNYCReg.py_**.   
 
 > [!NOTE]
 > De toegangs sleutels die u nodig hebt, kunt u vinden in de portal voor het opslag account dat is gekoppeld aan het Spark-cluster. 
@@ -601,8 +601,8 @@ U kunt deze python-code ook toevoegen aan [Azure functions](https://azure.micros
 
 Als u de voor keur geeft aan een gratis client ervaring, gebruikt u de [Azure Logic apps](https://azure.microsoft.com/documentation/services/app-service/logic/) om de Spark batch score te roepen door een http-actie te definiëren op de **Logic apps Designer** en de para meters in te stellen. 
 
-* Maak vanuit Azure Portal een nieuwe logische app door **+ nieuwe**  ->  **Web en mobiel**  ->  **Logic-app**te selecteren. 
-* Als u de **Logic apps Designer**wilt weer geven, voert u de naam van de logische app in en app service plan.
+* Maak vanuit Azure Portal een nieuwe logische app door **+ nieuwe**  ->  **Web en mobiel**  ->  **Logic-app** te selecteren. 
+* Als u de **Logic apps Designer** wilt weer geven, voert u de naam van de logische app in en app service plan.
 * Selecteer een HTTP-actie en voer de para meters in die worden weer gegeven in de volgende afbeelding:
 
 ![Logic Apps Designer](./media/spark-model-consumption/spark-logica-app-client.png)

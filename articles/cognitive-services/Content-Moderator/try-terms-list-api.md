@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
 ms.openlocfilehash: f1dfe88741a304da92901d3997c746654336ef54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85800037"
 ---
 # <a name="moderate-with-custom-term-lists-in-the-api-console"></a>Gemiddeld met aangepaste termen lijsten in de API-console
@@ -44,11 +44,11 @@ Voordat u de API in de online console kunt testen, moet u uw abonnements sleutel
 
 Nadat u wijzigingen in een lijst met termen hebt aangebracht, moet u de index vernieuwen zodat wijzigingen worden opgenomen in toekomstige scans. Deze stap is vergelijkbaar met de manier waarop een zoek machine op het bureau blad (indien ingeschakeld) of een zoek machine op Internet de index doorlopend vernieuwt om nieuwe bestanden of pagina's te bevatten.
 
-1. Selecteer in de [termen lijst beheer API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het menu links de optie **termen lijsten**en selecteer vervolgens **zoek index vernieuwen**. 
+1. Selecteer in de [termen lijst beheer API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het menu links de optie **termen lijsten** en selecteer vervolgens **zoek index vernieuwen**. 
 
    De **lijst met termen-pagina zoek index vernieuwen** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Termen lijsten-zoek index pagina regio selectie vernieuwen](images/test-drive-region.png)
 
@@ -63,7 +63,7 @@ Nadat u wijzigingen in een lijst met termen hebt aangebracht, moet u de index ve
 
    De pagina **termen lijst-maken** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Termen lijsten-selectie van pagina regio maken](images/test-drive-region.png)
 
@@ -95,11 +95,11 @@ Nadat u wijzigingen in een lijst met termen hebt aangebracht, moet u de index ve
 
    ![Termen lijsten-inhouds vakje voor het maken van een console-antwoord bevat de lijst-ID](images/try-terms-list-create-2.png)
  
-7. Termen toevoegen aan MyList. Selecteer in het linkermenu onder **term**de optie **term toevoegen**. 
+7. Termen toevoegen aan MyList. Selecteer in het linkermenu onder **term** de optie **term toevoegen**. 
 
    De pagina term **-toevoegen** wordt geopend. 
 
-8. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+8. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Term-selectie voor term pagina regio toevoegen](images/test-drive-region.png)
 
@@ -109,7 +109,7 @@ Nadat u wijzigingen in een lijst met termen hebt aangebracht, moet u de index ve
 
    ![Term-query parameters voor term console toevoegen](images/try-terms-list-create-3.png)
  
-10. Als u wilt controleren of de term is toegevoegd aan de lijst, selecteert u in het linkermenu **term**en selecteert u **alle voor waarden ophalen**. 
+10. Als u wilt controleren of de term is toegevoegd aan de lijst, selecteert u in het linkermenu **term** en selecteert u **alle voor waarden ophalen**. 
 
     De **term-API-console alle termen ophalen** wordt geopend.
 
@@ -131,11 +131,11 @@ U kunt eenvoudig term of lijsten verwijderen. U gebruikt de API om de volgende t
 
 In dit voor beeld wordt één term verwijderd.
 
-1. Selecteer in de [termen lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het linkermenu **term**en selecteer vervolgens **verwijderen**. 
+1. Selecteer in de [termen lijst beheer-API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het linkermenu **term** en selecteer vervolgens **verwijderen**. 
 
    De **term-verwijderen** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Term-pagina regio selectie verwijderen](images/test-drive-region.png)
 
@@ -155,11 +155,11 @@ In dit voor beeld wordt één term verwijderd.
 
 U kunt de naam en beschrijving van een lijst bewerken en meta gegevens items toevoegen.
 
-1. Selecteer in de [termen lijst beheer API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het menu links de optie **termen lijsten**en selecteer vervolgens **Details bijwerken**. 
+1. Selecteer in de [termen lijst beheer API-verwijzing](https://westus.dev.cognitive.microsoft.com/docs/services/57cf755e3f9b070c105bd2c2/operations/57cf755e3f9b070868a1f67f)in het menu links de optie **termen lijsten** en selecteer vervolgens **Details bijwerken**. 
 
    De **lijst met termen-pagina Details bijwerken** wordt geopend.
 
-2. Voor **open API-test console**selecteert u de regio die uw locatie het meest beschrijft. 
+2. Voor **open API-test console** selecteert u de regio die uw locatie het meest beschrijft. 
 
    ![Termen lijsten-pagina regio Details bijwerken](images/test-drive-region.png)
 

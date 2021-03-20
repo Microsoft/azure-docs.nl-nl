@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: 91e75b60f5324288c9f1adac59e31b9c1a1b0e9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89289168"
 ---
 # <a name="connect-a-knowledge-store-with-power-bi"></a>Verbinding maken met een kennis archief met Power BI
@@ -43,30 +43,30 @@ Klik op **Power bi sjabloon ophalen** op de pagina **cognitieve vaardig heden to
 
 1. Start Power BI Desktop en klik op **gegevens ophalen**.
 
-1. Selecteer in het venster **gegevens ophalen** de optie **Azure**en selecteer vervolgens **Azure Table Storage**.
+1. Selecteer in het venster **gegevens ophalen** de optie **Azure** en selecteer vervolgens **Azure Table Storage**.
 
-1. Klik op **Verbinding maken**.
+1. Klik op **Verbinden**.
 
-1. Voer bij **account naam of-URL**de naam in van uw Azure Storage account (de volledige URL wordt voor u gemaakt).
+1. Voer bij **account naam of-URL** de naam in van uw Azure Storage account (de volledige URL wordt voor u gemaakt).
 
 1. Als u hierom wordt gevraagd, voert u de sleutel voor het opslag account in.
 
 1. Selecteer de tabellen die het Hotel bevatten beoordelingen gegevens die zijn gemaakt door de vorige scenario's. 
 
-   + Voor de portal-walkthrough zijn tabel namen *hotelReviewsSsDocument*, *hotelReviewsSsEntities*, *hotelReviewsSsKeyPhrases*en *hotelReviewsSsPages*. 
+   + Voor de portal-walkthrough zijn tabel namen *hotelReviewsSsDocument*, *hotelReviewsSsEntities*, *hotelReviewsSsKeyPhrases* en *hotelReviewsSsPages*. 
    
-   + Voor de REST-instructies zijn tabel namen *hotelReviewsDocument*, *hotelReviewsPages*, *hotelReviewsKeyPhrases*en *hotelReviewsSentiment*.
+   + Voor de REST-instructies zijn tabel namen *hotelReviewsDocument*, *hotelReviewsPages*, *hotelReviewsKeyPhrases* en *hotelReviewsSentiment*.
 
 1. Klik op **laden**.
 
-1. Klik op het bovenste lint op **Query's bewerken** om de **Power query editor**te openen.
+1. Klik op het bovenste lint op **Query's bewerken** om de **Power query editor** te openen.
 
    ![Power Query openen](media/knowledge-store-connect-power-bi/powerbi-edit-queries.png "Power Query openen")
 
-1. Selecteer *hotelReviewsSsDocument*en verwijder vervolgens de kolommen *PartitionKey*, *RowKey*en *Time Stamp* . 
+1. Selecteer *hotelReviewsSsDocument* en verwijder vervolgens de kolommen *PartitionKey*, *RowKey* en *Time Stamp* . 
    ![Tabellen bewerken](media/knowledge-store-connect-power-bi/powerbi-edit-table.png "Tabellen bewerken")
 
-1. Klik op het pictogram met tegengestelde pijlen aan de rechter kant van de tabel om de *inhoud*uit te vouwen. Wanneer de lijst met kolommen wordt weer gegeven, selecteert u alle kolommen en vervolgens selecteert u de kolommen die beginnen met ' meta data '. Klik op **OK** om de geselecteerde kolommen weer te geven.
+1. Klik op het pictogram met tegengestelde pijlen aan de rechter kant van de tabel om de *inhoud* uit te vouwen. Wanneer de lijst met kolommen wordt weer gegeven, selecteert u alle kolommen en vervolgens selecteert u de kolommen die beginnen met ' meta data '. Klik op **OK** om de geselecteerde kolommen weer te geven.
 
    ![Inhoud uitvouwen](media/knowledge-store-connect-power-bi/powerbi-expand-content-table.png "Inhoud uitvouwen")
 
@@ -77,9 +77,9 @@ Klik op **Power bi sjabloon ophalen** op de pagina **cognitieve vaardig heden to
 
    ![Gegevens typen wijzigen](media/knowledge-store-connect-power-bi/powerbi-change-type.png "Gegevens typen wijzigen")
 
-1. Selecteer *hotelReviewsSsPages*en herhaal stap 9 en 10 om de kolommen te verwijderen en de *inhoud*uit te vouwen.
+1. Selecteer *hotelReviewsSsPages* en herhaal stap 9 en 10 om de kolommen te verwijderen en de *inhoud* uit te vouwen.
 1. Wijzig het gegevens type voor *content. SentimentScore* naar een **decimaal getal**.
-1. Selecteer *hotelReviewsSsKeyPhrases* en herhaal stap 9 en 10 om de kolommen te verwijderen en de *inhoud*uit te vouwen. Er zijn geen wijzigingen in het gegevens type voor deze tabel.
+1. Selecteer *hotelReviewsSsKeyPhrases* en herhaal stap 9 en 10 om de kolommen te verwijderen en de *inhoud* uit te vouwen. Er zijn geen wijzigingen in het gegevens type voor deze tabel.
 
 1. Klik op de opdracht balk op **sluiten en Toep assen**.
 

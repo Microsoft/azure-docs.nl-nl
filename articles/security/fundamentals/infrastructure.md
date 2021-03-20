@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 10/18/2019
 ms.author: terrylan
 ms.openlocfilehash: 2a9e61ec850d20ab9b630036cd265fbb7f3801ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87543925"
 ---
 # <a name="azure-infrastructure-security"></a>Azure-infrastructuur beveiliging
@@ -37,7 +37,7 @@ In deze reeks artikelen vindt u informatie over wat micro soft doet bij het beve
 - [Bewerkingen](infrastructure-operations.md)
 - [Controle](infrastructure-monitoring.md)
 - [Integriteit](infrastructure-integrity.md)
-- [Gegevensbeveiliging](protection-customer-data.md)
+- [Gegevens bescherming](protection-customer-data.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

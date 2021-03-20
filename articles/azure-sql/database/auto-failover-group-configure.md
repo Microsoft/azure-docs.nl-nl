@@ -13,10 +13,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/14/2019
 ms.openlocfilehash: 09bb7cb2344e3e708a64842916e6e483136da3bb
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94594280"
 ---
 # <a name="configure-a-failover-group-for-azure-sql-database"></a>Een failovergroep voor Azure SQL Database configureren
@@ -52,7 +52,7 @@ Maak uw failovergroep en voeg uw afzonderlijke data base toe met behulp van de A
 
 1. Voer op de pagina **failover-groep** de vereiste waarden in of Selecteer deze en selecteer vervolgens **maken**.
 
-   - **Data bases in de groep** : Kies de data base die u aan de failovergroep wilt toevoegen. Door de database aan de failovergroep toe te voegen, wordt het proces voor geo-replicatie automatisch gestart.
+   - **Data bases in de groep**: Kies de data base die u aan de failovergroep wilt toevoegen. Door de database aan de failovergroep toe te voegen, wordt het proces voor geo-replicatie automatisch gestart.
 
    ![SQL Database aan failovergroep toevoegen](./media/auto-failover-group-configure/add-sqldb-to-failover-group.png)
 
@@ -371,7 +371,7 @@ Als u [ExpressRoute](../../expressroute/expressroute-howto-circuit-portal-resour
 Maak de primaire virtuele netwerk gateway met behulp van de Azure Portal.
 
 1. Ga in de [Azure-portal](https://portal.azure.com) naar uw resourcegroep en selecteer de resource **Virtueel netwerk** voor uw primaire beheerde exemplaar.
-1. Selecteer **Subnetten** onder **Instellingen** , en selecteer vervolgens om een nieuw **Gatewaysubnet** te maken. Laat de standaardwaarden staan.
+1. Selecteer **Subnetten** onder **Instellingen**, en selecteer vervolgens om een nieuw **Gatewaysubnet** te maken. Laat de standaardwaarden staan.
 
    ![Gateway toevoegen voor primair beheerd exemplaar](./media/auto-failover-group-configure/add-subnet-gateway-primary-vnet.png)
 
@@ -507,16 +507,16 @@ De gedeelde sleutel die voor beide verbindingen wordt gebruikt, moet hetzelfde z
 Maak verbindingen tussen de twee gateways met behulp van de Azure Portal.
 
 1. Selecteer **Een resource maken** in de [Azure-portal](https://portal.azure.com).
-1. Typ `connection` in het zoekvak, en druk vervolgens op Enter om te zoeken. Dit brengt u naar de resource **Verbinding** , gepubliceerd door Microsoft.
+1. Typ `connection` in het zoekvak, en druk vervolgens op Enter om te zoeken. Dit brengt u naar de resource **Verbinding**, gepubliceerd door Microsoft.
 1. Selecteer **Maken** om de verbinding te maken.
 1. Selecteer op het tabblad **basis beginselen** de volgende waarden en selecteer vervolgens **OK**.
     1. Selecteer `VNet-to-VNet` voor **Verbindingstype**.
     1. Selecteer uw abonnement in de vervolgkeuzelijst.
     1. Selecteer de resource groep voor uw beheerde instantie in de vervolg keuzelijst.
     1. Selecteer de locatie van uw primaire beheerde instantie in de vervolgkeuzelijst.
-1. Op het tabblad **instellingen** selecteert of voert u de volgende waarden in en selecteert u **OK** :
-    1. Kies de primaire netwerkgateway voor de **Eerste virtuele netwerkgateway** , zoals `Primary-Gateway`.  
-    1. Kies de secundaire netwerkgateway voor de **Tweede virtuele netwerkgateway** , zoals `Secondary-Gateway`.
+1. Op het tabblad **instellingen** selecteert of voert u de volgende waarden in en selecteert u **OK**:
+    1. Kies de primaire netwerkgateway voor de **Eerste virtuele netwerkgateway**, zoals `Primary-Gateway`.  
+    1. Kies de secundaire netwerkgateway voor de **Tweede virtuele netwerkgateway**, zoals `Secondary-Gateway`.
     1. Schakel het selectievakje in naast **Connectiviteit in twee richtingen tot stand brengen**.
     1. Laat de standaardnaam voor de primaire verbinding staan, of kies een nieuwe naam naar keuze.
     1. Geef een **Gedeelde sleutel (PSK)** op voor de verbinding, zoals `mi1m2psk`.

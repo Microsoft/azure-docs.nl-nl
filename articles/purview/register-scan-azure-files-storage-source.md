@@ -8,10 +8,10 @@ ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/01/2020
 ms.openlocfilehash: a0bd7a4cd8afafc16f05b4a37cd5723304ad931e
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96553121"
 ---
 # <a name="register-and-scan-azure-files"></a>Azure Files registreren en scannen
@@ -35,17 +35,17 @@ Ga als volgt te werk om een nieuw Azure Files-account in uw Data Catalog te regi
 1. Selecteer **+ Nieuw**.
 1. Selecteer **Azure files** bij **bron registreren**. Selecteer **Doorgaan**.
 
-:::image type="content" source="media/register-scan-azure-files/register-new-data-source.png" alt-text="nieuwe gegevens bron registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-files/register-new-data-source.png" alt-text="nieuwe gegevensbron registreren" border="true":::
 
 Ga als volgt te werk op het scherm **bronnen registreren (Azure files)** :
 
-1. Voer een **naam** in die voor de gegevens bron wordt weer gegeven in de catalogus.
-1. Kies hoe u wilt verwijzen naar het gewenste opslag account:
+1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
+1. Kies hoe u wilt verwijzen naar het gewenste opslagaccount:
    1. Selecteer een **Azure-abonnement**, selecteer het juiste abonnement in de vervolg keuzelijst van het Azure- **abonnement** en het betreffende opslag account in de vervolg keuzelijst **opslag account naam** .
    1. U kunt **ook hand matig invoeren** selecteren en een service-eind punt (URL) invoeren.
-1. **Volt ooien** om de gegevens bron te registreren.
+1. **Voltooi** om de gegevensbron te registreren.
 
-:::image type="content" source="media/register-scan-azure-files/register-sources.png" alt-text="bronnen opties registreren" border="true":::
+:::image type="content" source="media/register-scan-azure-files/register-sources.png" alt-text="opties voor bronnen registreren" border="true":::
 
 ## <a name="set-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
@@ -61,5 +61,5 @@ Ga als volgt te werk om verificatie in te stellen voor Azure Files opslag met be
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

@@ -16,10 +16,10 @@ ms.date: 06/21/2018
 ms.author: allensu
 ms.custom: ''
 ms.openlocfilehash: e58c1177fb3c4d241a3efe1759b3900abbd04ca1
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92778392"
 ---
 # <a name="migrate-an-azure-cdn-profile-from-standard-verizon-to-premium-verizon"></a>Een Azure CDN profiel migreren van Standard Verizon naar Premium Verizon
@@ -46,7 +46,7 @@ Neem contact op met [Microsoft ondersteuning](https://azure.microsoft.com/suppor
 - Geavanceerde analyse Programma's:
    - [Gedetailleerde HTTP-analyse](cdn-advanced-http-reports.md)
    - [Edge Performance Analytics](cdn-edge-performance.md)
-   - [Real-time analyse](cdn-real-time-alerts.md)
+   - [Realtime analyses](cdn-real-time-alerts.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

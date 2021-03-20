@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: cbc7c82803115f71db233be94d62a857ba050b63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86050504"
 ---
 #### <a name="to-download-hotfixes"></a>Hotfixes downloaden
@@ -180,7 +180,7 @@ Volg onderstaande instructies om de updates van de schijffirmware te installeren
     ```
 
 3. Bewaak de installatievoortgang met de opdracht `Get-HcsUpdateStatus`. De update is voltooid als de `RunInProgress` verandert in `False`.
-4. Wanneer de installatie is voltooid, wordt de controller waarop de hotfix van de onderhoudsmodus is geïnstalleerd, opnieuw opstart. Meld u aan als optie 1, **Meld u aan met volledige toegang**en controleer de versie van de schijf firmware. Type:
+4. Wanneer de installatie is voltooid, wordt de controller waarop de hotfix van de onderhoudsmodus is geïnstalleerd, opnieuw opstart. Meld u aan als optie 1, **Meld u aan met volledige toegang** en controleer de versie van de schijf firmware. Type:
    
    `Get-HcsFirmwareVersion`
    

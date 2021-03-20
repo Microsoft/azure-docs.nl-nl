@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.openlocfilehash: bb5561ced93c3f5a899c6e48fdab0f14e52914bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89291546"
 ---
 # <a name="filters"></a>Filters
@@ -43,7 +43,7 @@ Er zijn twee soorten filters:
 * [Account filters](/rest/api/media/accountfilters) (globaal): kan worden toegepast op alle activa in het Azure Media Services account, een levens duur van het account hebben.
 * [Asset filters](/rest/api/media/assetfilters) (lokaal): kan alleen worden toegepast op een Asset waaraan het filter is gekoppeld bij het maken, een levens duur van de Asset heeft. 
 
-De typen **account filters** en **activa filters** hebben precies dezelfde eigenschappen voor het definiëren/beschrijven van het filter. Behalve wanneer u het **activa filter**maakt, moet u de naam van het activum opgeven waaraan u het filter wilt koppelen.
+De typen **account filters** en **activa filters** hebben precies dezelfde eigenschappen voor het definiëren/beschrijven van het filter. Behalve wanneer u het **activa filter** maakt, moet u de naam van het activum opgeven waaraan u het filter wilt koppelen.
 
 Afhankelijk van uw scenario, bepaalt u welk type filter het meest geschikt is (Asset filter of account filter). Account filters zijn geschikt voor apparaatprofielen (filters weer gave filteren) waarbij Asset filters kunnen worden gebruikt om een specifiek activum te bijsnijden.
 

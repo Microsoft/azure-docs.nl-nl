@@ -1,6 +1,6 @@
 ---
-title: Include-bestand
-description: Include-bestand
+title: bestand opnemen
+description: bestand opnemen
 services: iot-hub
 author: dominicbetts
 ms.service: iot-hub
@@ -9,10 +9,10 @@ ms.date: 09/07/2018
 ms.author: dobett
 ms.custom: include file, devx-track-azurecli
 ms.openlocfilehash: b1a863498603006e37ab98b838ffd426b962d788
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92755320"
 ---
 In deze sectie gebruikt u de Azure CLI om een apparaat-id voor dit artikel te maken. Apparaat-id's zijn hoofdlettergevoelig.

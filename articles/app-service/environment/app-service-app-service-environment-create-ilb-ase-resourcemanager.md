@@ -8,10 +8,10 @@ ms.date: 07/11/2017
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 2a03b791f37868010e107214ddcb7cf42174e4e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85833550"
 ---
 # <a name="how-to-create-an-ilb-ase-using-azure-resource-manager-templates"></a>Een ILB ASE maken met behulp van Azure Resource Manager-sjablonen
@@ -52,12 +52,12 @@ New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-
 Nadat de Azure Resource Manager-sjabloon is ingediend, duurt het enkele uren voordat de ILB ASE is gemaakt.  Zodra het maken is voltooid, wordt de ILB ASE weer gegeven in de portal UX in de lijst met App Service omgevingen voor het abonnement dat de implementatie heeft geactiveerd.
 
 ## <a name="uploading-and-configuring-the-default-tlsssl-certificate"></a>Het ' standaard ' TLS/SSL-certificaat uploaden en configureren
-Zodra de ILB-ASE is gemaakt, moet er een TLS/SSL-certificaat aan de ASE worden gekoppeld als het ' standaard ' TLS/SSL-certificaat dat wordt gebruikt voor het tot stand brengen van TLS/SSL-verbindingen met apps.  Als u doorgaat met het voor beeld van een hypothetische Contoso Corporation, als het standaard-DNS-achtervoegsel van de ASE *Internal-contoso.com*is, dan is een verbinding *`https://some-random-app.internal-contoso.com`* vereist voor een TLS/SSL-certificaat dat geldig is voor **. Internal-contoso.com*. 
+Zodra de ILB-ASE is gemaakt, moet er een TLS/SSL-certificaat aan de ASE worden gekoppeld als het ' standaard ' TLS/SSL-certificaat dat wordt gebruikt voor het tot stand brengen van TLS/SSL-verbindingen met apps.  Als u doorgaat met het voor beeld van een hypothetische Contoso Corporation, als het standaard-DNS-achtervoegsel van de ASE *Internal-contoso.com* is, dan is een verbinding *`https://some-random-app.internal-contoso.com`* vereist voor een TLS/SSL-certificaat dat geldig is voor **. Internal-contoso.com*. 
 
 Er zijn verschillende manieren om een geldig TLS/SSL-certificaat met inbegrip van interne Ca's te verkrijgen, een certificaat van een externe verlener te kopen en een zelfondertekend certificaat te gebruiken.  Ongeacht de bron van het TLS/SSL-certificaat moeten de volgende certificaat kenmerken correct worden geconfigureerd:
 
 * *Onderwerp*: dit kenmerk moet worden ingesteld op **. Your-Root-Domain-here.com*
-* *Alternatieve naam voor onderwerp*: dit kenmerk moet zowel **. Your-Root-Domain-here.com*als **. scm.Your-Root-Domain-here.com*bevatten.  De reden voor de tweede vermelding is dat er TLS-verbindingen met de SCM/kudu-site die aan elke app zijn gekoppeld, worden gemaakt met behulp van een adres van de notatie *your-app-name.scm.Your-Root-Domain-here.com*.
+* *Alternatieve naam voor onderwerp*: dit kenmerk moet zowel **. Your-Root-Domain-here.com* als **. scm.Your-Root-Domain-here.com* bevatten.  De reden voor de tweede vermelding is dat er TLS-verbindingen met de SCM/kudu-site die aan elke app zijn gekoppeld, worden gemaakt met behulp van een adres van de notatie *your-app-name.scm.Your-Root-Domain-here.com*.
 
 Als er een geldig TLS/SSL-certificaat beschikbaar is, zijn er twee extra voorbereidende stappen nodig.  Het TLS/SSL-certificaat moet worden geconverteerd/opgeslagen als een. pfx-bestand.  Houd er rekening mee dat het pfx-bestand alle tussenliggende en basis certificaten moet bevatten en moet worden beveiligd met een wacht woord.
 

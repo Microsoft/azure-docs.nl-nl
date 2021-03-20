@@ -10,10 +10,10 @@ ms.date: 04/09/2020
 ms.author: robinsh
 ms.custom: mqtt, devx-track-python
 ms.openlocfilehash: ad6399a4713520ca0550d143cf3f19f87d55337c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87876798"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-python"></a>Cloud-naar-apparaat-berichten verzenden met IoT Hub (python)
@@ -56,7 +56,7 @@ In deze sectie maakt u een python-console-app voor het simuleren van het apparaa
     pip install azure-iot-device
     ```
 
-1. Maak een bestand met de naam **SimulatedDevice.py**met behulp van een tekst editor.
+1. Maak een bestand met de naam **SimulatedDevice.py** met behulp van een tekst editor.
 
 1. Voeg de volgende `import` instructies en variabelen toe aan het begin van het **SimulatedDevice.py** -bestand:
 
@@ -138,7 +138,7 @@ In deze sectie maakt u een python-console-app die Cloud-naar-apparaat-berichten 
    pip install azure-iot-hub
    ```
 
-1. Maak een bestand met de naam **SendCloudToDeviceMessage.py**met behulp van een tekst editor.
+1. Maak een bestand met de naam **SendCloudToDeviceMessage.py** met behulp van een tekst editor.
 
 1. Voeg de volgende `import` instructies en variabelen toe aan het begin van het **SendCloudToDeviceMessage.py** -bestand:
 
@@ -219,7 +219,7 @@ U kunt nu de toepassingen gaan uitvoeren.
     python SimulatedDevice.py
     ```
 
-    ![De app gesimuleerde apparaten uitvoeren](./media/iot-hub-python-python-c2d/device-1.png)
+    ![De app voor een gesimuleerd apparaat uitvoeren](./media/iot-hub-python-python-c2d/device-1.png)
 
 1. Open een nieuwe opdracht prompt in de werkmap en voer de volgende opdracht uit om Cloud-naar-apparaat-berichten te verzenden:
 

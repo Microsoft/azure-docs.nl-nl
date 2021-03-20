@@ -1,5 +1,5 @@
 ---
-title: Gebruikers registratie en product abonnement delegeren
+title: Gebruikersregistratie en productabonnement delegeren
 description: Meer informatie over het delegeren van gebruikers registratie en product abonnementen aan derden in azure API Management.
 services: api-management
 documentationcenter: ''
@@ -14,13 +14,13 @@ ms.topic: article
 ms.date: 10/15/2020
 ms.author: apimpm
 ms.openlocfilehash: 54193c9333c75fd8b973ebe33470fca3617e2f2d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93341838"
 ---
-# <a name="how-to-delegate-user-registration-and-product-subscription"></a>Gebruikers registratie en product abonnement delegeren
+# <a name="how-to-delegate-user-registration-and-product-subscription"></a>Gebruikersregistratie en productabonnement delegeren
 
 Met delegering kunt u uw bestaande website gebruiken voor het afhandelen van ontwikkel aars die zich aanmelden/registreren en abonneren op producten, in tegens telling tot het gebruik van de ingebouwde functionaliteit in de ontwikkelaars Portal. Hiermee kan uw website eigenaar worden van de gebruikers gegevens en kan de validatie van deze stappen op een aangepaste manier worden uitgevoerd.
 
@@ -52,18 +52,18 @@ U moet nu het **eind punt voor delegering** maken. Het moet een aantal acties ui
    
     Query parameters voor de case voor aanmelden/registreren:
    
-   * **bewerking** : identificeert het type overdrachts aanvraag. het kan alleen **Aanmelden** in dit geval
-   * **returnUrl** : de URL van de pagina waarop de gebruiker heeft geklikt op een koppeling voor aanmelden of registreren
-   * **Salt** : een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
-   * **sig** : een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
+   * **bewerking**: identificeert het type overdrachts aanvraag. het kan alleen **Aanmelden** in dit geval
+   * **returnUrl**: de URL van de pagina waarop de gebruiker heeft geklikt op een koppeling voor aanmelden of registreren
+   * **Salt**: een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
+   * **sig**: een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
 2. Controleer of de aanvraag afkomstig is van Azure API Management (optioneel, maar wordt nadrukkelijk aanbevolen voor beveiliging)
    
-   * Een HMAC-SHA512 gebruikt-hash van een teken reeks berekenen op basis van de **returnUrl** -en **Salt** -query parameters ( [voorbeeld code hieronder]):
+   * Een HMAC-SHA512 gebruikt-hash van een teken reeks berekenen op basis van de **returnUrl** -en **Salt** -query parameters ([voorbeeld code hieronder]):
      
-     > HMAC ( **Salt** + ' \n ' + **returnUrl** )
+     > HMAC (**Salt** + ' \n ' + **returnUrl**)
 
    * Vergelijk de bovenstaande berekende hash met de waarde van de para meter **sig** -query. Als de twee hashes overeenkomen, gaat u verder met de volgende stap en weigert u de aanvraag.
-3. Controleer of u een aanvraag voor aanmelden/aanmelden ontvangt: de **bewerking** query parameter wordt ingesteld op ' **Aanmelden** '.
+3. Controleer of u een aanvraag voor aanmelden/aanmelden ontvangt: de **bewerking** query parameter wordt ingesteld op '**Aanmelden**'.
 4. De gebruiker met de gebruikers interface weer geven om zich aan te melden of zich aan te melden
 5. Als de gebruiker zich aanmeldt, moet u in API Management een bijbehorend account maken. [Maak een gebruiker] met de API Management rest API. Als u dit doet, moet u ervoor zorgen dat u de gebruikers-ID instelt op dezelfde waarde als in uw gebruikers archief of op een ID die u kunt bijhouden.
 6. Als de gebruiker is geverifieerd:
@@ -84,10 +84,10 @@ Naast de **aanmeldings** bewerking kunt u ook account beheer uitvoeren door de v
 
 U moet de volgende query parameters door geven voor account beheer bewerkingen.
 
-* **bewerking** : identificeert welk type overdrachts aanvraag is (ChangePassword, ChangeProfile of CloseAccount)
-* **GebruikersID** : de gebruikers-id van het account dat u wilt beheren
-* **Salt** : een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
-* **sig** : een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
+* **bewerking**: identificeert welk type overdrachts aanvraag is (ChangePassword, ChangeProfile of CloseAccount)
+* **GebruikersID**: de gebruikers-id van het account dat u wilt beheren
+* **Salt**: een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
+* **sig**: een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
 
 ## <a name="delegating-product-subscription"></a><a name="delegate-product-subscription"> </a>Product abonnement delegeren
 
@@ -108,28 +108,28 @@ Zorg er vervolgens voor dat het eind punt voor delegering de volgende acties uit
    
     Query parameters voor het case-product abonnement:
    
-   * **bewerking** : identificeert welk type overdrachts aanvraag. Voor aanvragen voor product abonnementen zijn de volgende geldige opties:
+   * **bewerking**: identificeert welk type overdrachts aanvraag. Voor aanvragen voor product abonnementen zijn de volgende geldige opties:
      * "Abonneren": een aanvraag om de gebruiker te abonneren op een bepaald product met de opgegeven ID (zie hieronder)
      * ' Abonnement opzeggen ': een aanvraag voor het afmelden van een gebruiker bij een product
      * "Renew": een aanvraag om een abonnement te vernieuwen (bijvoorbeeld dat mogelijk verloopt)
-   * **ProductID** : bij het *Abonneren* -de id van het product waarvoor de gebruiker zich heeft gevraagd om zich te abonneren
-   * **subscriptionId** : on *unsubscribe* and *renew* -de id van het product abonnement
-   * **gebruikers** -id: bij het *Aanmelden* -de gebruikers naam van de gebruiker voor wie de aanvraag is ingediend
-   * **Salt** : een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
-   * **sig** : een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
+   * **ProductID**: bij het *Abonneren* -de id van het product waarvoor de gebruiker zich heeft gevraagd om zich te abonneren
+   * **subscriptionId**: on *unsubscribe* and *renew* -de id van het product abonnement
+   * **gebruikers**-id: bij het *Aanmelden* -de gebruikers naam van de gebruiker voor wie de aanvraag is ingediend
+   * **Salt**: een speciale Salt-teken reeks die wordt gebruikt voor het berekenen van een beveiligings-hash
+   * **sig**: een berekende beveiligings-hash die moet worden gebruikt voor de vergelijking met uw eigen berekende hash
 
 2. Controleer of de aanvraag afkomstig is van Azure API Management (optioneel, maar wordt nadrukkelijk aanbevolen voor beveiliging)
    
-   * Een HMAC-SHA512 gebruikt van een teken reeks berekenen op basis van de query parameters **ProductID** , **userId** en **Salt** :
+   * Een HMAC-SHA512 gebruikt van een teken reeks berekenen op basis van de query parameters **ProductID**, **userId** en **Salt** :
      
-     > HMAC ( **Salt** + ' \n ' + **ProductID** + ' \n ' + **GebruikersID** )
+     > HMAC (**Salt** + ' \n ' + **ProductID** + ' \n ' + **GebruikersID**)
      > 
      > 
    * Vergelijk de bovenstaande berekende hash met de waarde van de para meter **sig** -query. Als de twee hashes overeenkomen, gaat u verder met de volgende stap en weigert u de aanvraag.
 3. Product abonnement verwerken op basis van het type bewerking dat in **bewerking** is aangevraagd, bijvoorbeeld facturering, verdere vragen, enzovoort.
 4. Als u de gebruiker aan het product wilt abonneren, moet u zich abonneren op het API Management product door [de rest API aan te roepen voor abonnementen].
 
-## <a name="example-code"></a><a name="delegate-example-code"> </a> Voorbeeld code
+## <a name="example-code"></a><a name="delegate-example-code"></a> Voorbeeld code
 
 Deze code voorbeelden laten zien hoe u:
 

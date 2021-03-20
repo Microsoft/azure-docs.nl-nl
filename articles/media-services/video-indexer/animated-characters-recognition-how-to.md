@@ -12,10 +12,10 @@ ms.topic: how-to
 ms.date: 12/07/2020
 ms.author: juliako
 ms.openlocfilehash: 29dbdb896d1a6063fec277afa33327c84cb2f0cd
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98880924"
 ---
 # <a name="use-the-animated-character-detection-preview-with-portal-and-api"></a>De functie voor het detecteren van een animatie (preview) gebruiken met de portal en API 

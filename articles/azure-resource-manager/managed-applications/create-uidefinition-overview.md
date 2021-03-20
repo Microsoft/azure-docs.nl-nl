@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: tomfitz
 ms.openlocfilehash: 327fa1d7eb73d8e65bb4f81c1dff0fe2bec2913b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89319561"
 ---
 # <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>CreateUiDefinition. json voor het maken van beheerde Azure-toepassingen
@@ -105,7 +105,7 @@ De `config` eigenschap is optioneel. Gebruik deze optie om het standaard gedrag 
 
 ### <a name="wizard"></a>Wizard
 
-Met de `isWizard` eigenschap kunt u een geslaagde validatie van elke stap vereisen voordat u verdergaat met de volgende stap. Als de `isWizard` eigenschap niet is opgegeven, is de standaard waarde **False**en is de stap-voor-stap validatie niet vereist.
+Met de `isWizard` eigenschap kunt u een geslaagde validatie van elke stap vereisen voordat u verdergaat met de volgende stap. Als de `isWizard` eigenschap niet is opgegeven, is de standaard waarde **False** en is de stap-voor-stap validatie niet vereist.
 
 Als `isWizard` is ingeschakeld, ingesteld op **True**, het tabblad **basissen** is beschikbaar en alle andere tabbladen zijn uitgeschakeld. Wanneer de knop **volgende** is geselecteerd, wordt het pictogram van het tabblad aangegeven als de validatie van een tabblad is geslaagd of mislukt. Nadat de vereiste velden van een tabblad zijn voltooid en gevalideerd, kunt u met de knop **volgende** naar het volgende tabblad navigeren. Wanneer alle tabbladen validatie geven, gaat u naar de pagina **controleren en maken** en selecteert u de knop **maken** om de implementatie te starten.
 
@@ -119,7 +119,7 @@ Met de basis principes van configuratie kunt u de stappen in de basis beginselen
 
 `subscription`Met de `resourceGroup` elementen en kunt u aanvullende validaties opgeven. De syntaxis voor het opgeven van validaties is identiek aan de aangepaste validatie voor het [tekstvak](microsoft-common-textbox.md). U kunt ook `permission` validaties opgeven voor het abonnement of de resource groep.  
 
-Het besturings element voor abonnementen accepteert een lijst met naam ruimten van de resource provider. U kunt bijvoorbeeld **micro soft. Compute**opgeven. Er wordt een fout bericht weer gegeven wanneer de gebruiker een abonnement selecteert dat geen ondersteuning biedt voor de resource provider. De fout treedt op wanneer de resource provider niet is geregistreerd bij dat abonnement en de gebruiker geen machtiging heeft om de resource provider te registreren.  
+Het besturings element voor abonnementen accepteert een lijst met naam ruimten van de resource provider. U kunt bijvoorbeeld **micro soft. Compute** opgeven. Er wordt een fout bericht weer gegeven wanneer de gebruiker een abonnement selecteert dat geen ondersteuning biedt voor de resource provider. De fout treedt op wanneer de resource provider niet is geregistreerd bij dat abonnement en de gebruiker geen machtiging heeft om de resource provider te registreren.  
 
 Voor het besturings element voor de resource groep is een optie voor `allowExisting` . Wanneer `true` kunnen de gebruikers resource groepen selecteren die al resources hebben. Deze vlag is het meest van toepassing op oplossings sjablonen, waarbij gebruikers standaard gedrag verplichten om een nieuwe of lege resource groep te selecteren. In de meeste andere scenario's is het niet nodig om deze eigenschap op te geven.  
 
@@ -129,7 +129,7 @@ Geef voor de `location` Eigenschappen op voor het locatie besturings element dat
 
 De stap **basis beginselen** is de eerste stap die wordt gegenereerd wanneer de Azure Portal het bestand parseert. Met de stappen in de basis beginselen kunnen gebruikers standaard het abonnement, de resource groep en de locatie voor de implementatie kiezen.
 
-:::image type="content" source="./media/create-uidefinition-overview/basics.png" alt-text="Wizard tabblad":::
+:::image type="content" source="./media/create-uidefinition-overview/basics.png" alt-text="Basis principes standaard":::
 
 U kunt in deze sectie meer elementen toevoegen. Voeg, indien mogelijk, elementen toe die para meters voor implementatie query's uitvoeren, zoals de naam van een cluster-of beheerders referenties.
 
@@ -195,7 +195,7 @@ Als u de beschik bare locaties wilt filteren op alleen de locaties die ondersteu
           ...
 ```  
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 CreateUiDefinition biedt [functies](create-uidefinition-functions.md) voor het werken met de invoer en uitvoer van elementen en functies, zoals voor waarden. Deze functies zijn vergelijkbaar in zowel de syntaxis als de functionaliteit voor het Azure Resource Manager van sjabloon functies.
 

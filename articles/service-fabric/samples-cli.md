@@ -5,10 +5,10 @@ ms.topic: sample
 ms.date: 04/09/2018
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 12a48c525d1458b2d920f6a25d91d67e58749a96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87502423"
 ---
 # <a name="azure-cli-az-and-azure-service-fabric-cli-sfctl-samples"></a>Voorbeelden van Azure CLI (az) en Azure Service Fabric CLI (sfctl)

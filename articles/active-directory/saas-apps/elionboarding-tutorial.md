@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/06/2019
 ms.author: jeedes
 ms.openlocfilehash: e180f042d07768a432a59d2c9280f3de73d5ea2f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92454137"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-eli-onboarding"></a>Zelfstudie: Integratie van Azure Active Directory met Eli Onboarding
@@ -49,7 +49,7 @@ Als u de integratie van Eli Onboarding wilt configureren in Azure AD, dient u El
 
 **Als u Eli Onboarding wilt toevoegen vanuit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met Eli Onboarding, dient u de volgende bouwstenen te voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Eli Onboarding configureren](#configure-eli-onboarding-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
+2. **[Eenmalige aanmelding voor Eli Onboarding configureren](#configure-eli-onboarding-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Eli Onboarding maken](#create-eli-onboarding-test-user)** : als u een tegenhanger van Britta Simon in Eli Onboarding wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Eli Onboarding maken](#create-eli-onboarding-test-user)**: als u een tegenhanger van Britta Simon in Eli Onboarding wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -124,13 +124,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 ### <a name="configure-eli-onboarding-single-sign-on"></a>Eenmalige aanmelding van Eli Onboarding configureren
 
-Als u eenmalige aanmelding aan de **Eli Onboarding** -zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [Eli Onboarding-ondersteuningsteam](mailto:support@geteli.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Eli Onboarding**-zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure Portal gekopieerde URL's verzenden naar het [Eli Onboarding-ondersteuningsteam](mailto:support@geteli.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

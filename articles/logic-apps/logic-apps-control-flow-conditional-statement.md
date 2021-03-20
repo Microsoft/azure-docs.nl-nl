@@ -7,15 +7,15 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/09/2018
 ms.openlocfilehash: 19f42270e37c42cf56bbde04f73c01027a56ff63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89657384"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Voorwaardelijke instructies maken waarmee werk stroom acties in Azure Logic Apps worden beheerd
 
-Als u specifieke acties in uw logische app pas wilt uitvoeren nadat u een opgegeven voor waarde hebt door gegeven, voegt u een *voorwaardelijke instructie*toe. Met dit beheermechanisme vergelijkt u de gegevens in uw werkstroom met specifieke waarden of velden. U kunt vervolgens verschillende acties opgeven die worden uitgevoerd op basis van het feit of de gegevens voldoen aan de voor waarde. U kunt voor waarden in elkaar nesten.
+Als u specifieke acties in uw logische app pas wilt uitvoeren nadat u een opgegeven voor waarde hebt door gegeven, voegt u een *voorwaardelijke instructie* toe. Met dit beheermechanisme vergelijkt u de gegevens in uw werkstroom met specifieke waarden of velden. U kunt vervolgens verschillende acties opgeven die worden uitgevoerd op basis van het feit of de gegevens voldoen aan de voor waarde. U kunt voor waarden in elkaar nesten.
 
 Stel dat u een logische app hebt die te veel e-mail berichten verzendt wanneer nieuwe items worden weer gegeven op de RSS-feed van een website. U kunt een voorwaardelijke instructie toevoegen om een e-mail te verzenden wanneer het nieuwe item een specifieke teken reeks bevat. 
 
@@ -40,7 +40,7 @@ Stel dat u een logische app hebt die te veel e-mail berichten verzendt wanneer n
 
    ![Actie tussen stappen toevoegen](./media/logic-apps-control-flow-conditional-statement/add-action.png)
 
-   Wanneer u aan het einde van uw werk stroom een voor waarde wilt toevoegen, kiest u  **nieuwe stap** > **een actie toevoegen**onder aan uw logische app.
+   Wanneer u aan het einde van uw werk stroom een voor waarde wilt toevoegen, kiest u  **nieuwe stap** > **een actie toevoegen** onder aan uw logische app.
 
 1. Voer in het zoekvak voorwaarde in als uw filter. Selecteer deze actie: **voor waarde controle**
 
@@ -65,8 +65,8 @@ Stel dat u een logische app hebt die te veel e-mail berichten verzendt wanneer n
 
    ![Voltooide voorwaarde](./media/logic-apps-control-flow-conditional-statement/edit-condition-2.png)
 
-   Als u een andere rij wilt toevoegen aan uw voor waarde **, kiest u**  >  **rij toevoegen**toevoegen. 
-   **Kies toevoegen groep toevoegen om**een groep met subvoorwaarden toe te voegen  >  **Add group**. 
+   Als u een andere rij wilt toevoegen aan uw voor waarde **, kiest u**  >  **rij toevoegen** toevoegen. 
+   **Kies toevoegen groep toevoegen om** een groep met subvoorwaarden toe te voegen  >  . 
    Als u bestaande rijen wilt groeperen, selecteert u de selectie vakjes voor die rijen, kiest u de knop met weglatings tekens (...) voor elke rij en kiest **u groep maken**.
 
 1. Voeg onder **if True** en **indien onwaar**, de stappen toe die moeten worden uitgevoerd op basis van het feit of aan de voor waarde wordt voldaan. Bijvoorbeeld:

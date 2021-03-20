@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/03/2019
 ms.openlocfilehash: efab0234d428a8283845946289cdd1e8a17ded26
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792052"
 ---
 # <a name="adding-a-shard-using-elastic-database-tools"></a>Een Shard toevoegen met behulp van Elastic Database-hulpprogram ma's
@@ -79,6 +79,6 @@ upd.Shard = shard2;
 sm.MarkMappingOnline(sm.UpdateMapping(sm.GetMappingForKey(25), upd));
 ```
 
-**Belang rijk** : gebruik deze techniek alleen als u zeker weet dat het bereik voor de bijgewerkte toewijzing leeg is.  Met de voor gaande methoden worden geen gegevens gecontroleerd voor het bereik dat wordt verplaatst, zodat het het beste is om cheques in uw code op te neemt.  Als er rijen bestaan in het bereik dat wordt verplaatst, komt de werkelijke gegevens distributie niet overeen met de bijgewerkte Shard-toewijzing. Gebruik het [hulp programma voor splitsen en samen voegen](elastic-scale-overview-split-and-merge.md) om in plaats daarvan de bewerking uit te voeren.  
+**Belang rijk**: gebruik deze techniek alleen als u zeker weet dat het bereik voor de bijgewerkte toewijzing leeg is.  Met de voor gaande methoden worden geen gegevens gecontroleerd voor het bereik dat wordt verplaatst, zodat het het beste is om cheques in uw code op te neemt.  Als er rijen bestaan in het bereik dat wordt verplaatst, komt de werkelijke gegevens distributie niet overeen met de bijgewerkte Shard-toewijzing. Gebruik het [hulp programma voor splitsen en samen voegen](elastic-scale-overview-split-and-merge.md) om in plaats daarvan de bewerking uit te voeren.  
 
 [!INCLUDE [elastic-scale-include](../../../includes/elastic-scale-include.md)]

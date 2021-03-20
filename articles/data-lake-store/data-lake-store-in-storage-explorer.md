@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 02/05/2018
 ms.author: jejiang
 ms.openlocfilehash: 7f251e6ba2d94c0fcede3387ac12461951de40f1
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92108742"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Azure Data Lake Storage Gen1-resources beheren met Storage Explorer

@@ -9,10 +9,10 @@ ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 39b6a5452c4bc0cba1e1153c266b83e87f6209ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90059216"
 ---
 # <a name="overview-of-the-azure-security-benchmark-v1"></a>Overzicht van de Azure Security Bench Mark (v1)
@@ -28,14 +28,14 @@ De volgende besturings elementen worden gebruikt in de beveiligings benchmark va
 
 - [Netwerkbeveiliging](security-control-network-security.md)
 - [Logboekregistratie en controle](security-control-logging-monitoring.md)
-- [Identiteits- en toegangsbeheer](security-control-identity-access-control.md)
-- [Gegevensbeveiliging](security-control-data-protection.md)
-- [Beheer van beveiligingsproblemen](security-control-vulnerability-management.md)
-- [Inventarisatie en asset-management](security-control-inventory-asset-management.md)
+- [Identiteits-en toegangs beheer](security-control-identity-access-control.md)
+- [Gegevens bescherming](security-control-data-protection.md)
+- [Beveiligings beheer](security-control-vulnerability-management.md)
+- [Inventarisatie en het beheer van middelen](security-control-inventory-asset-management.md)
 - [Veilige configuratie](security-control-secure-configuration.md)
-- [Beveiliging tegen malware](security-control-malware-defense.md)
-- [Gegevensherstel](security-control-data-recovery.md)
-- [Reageren op incidenten](security-control-incident-response.md)
+- [Bescherming tegen malware](security-control-malware-defense.md)
+- [Gegevens herstellen](security-control-data-recovery.md)
+- [Reactie op incident](security-control-incident-response.md)
 - [Penetratietests en Red Team-oefeningen](security-control-penetration-tests-red-team-exercises.md)
 
 U kunt ook het [Azure Security Bench Mark v1 Excel-werk blad](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/spreadsheets)downloaden.

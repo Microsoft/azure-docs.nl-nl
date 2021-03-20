@@ -4,10 +4,10 @@ description: Meer informatie over het inpakken van een bestaande toepassing als 
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.openlocfilehash: 72fde75e16341164106bb952d0bb66b83be744e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86259263"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Een bestaand uitvoerbaar bestand inpakken en implementeren in Service Fabric
@@ -22,7 +22,7 @@ Als u een bestaand uitvoerbaar bestand inpakt als [uitvoerbaar gast bestand](ser
 
 Visual Studio biedt een Service Fabric service sjabloon waarmee u een uitvoerbaar gast bestand kunt implementeren in een Service Fabric-cluster.
 
-1. Kies **bestand**  >  **Nieuw project**en maak een service Fabric-toepassing.
+1. Kies **bestand**  >  **Nieuw project** en maak een service Fabric-toepassing.
 2. Kies **uitvoer bare gast** als service sjabloon.
 3. Klik op **Bladeren** om de map met het uitvoer bare bestand te selecteren en vul de overige para meters in om de service te maken.
    * *Gedrag van code pakket*. Kan zo worden ingesteld dat alle inhoud van uw map naar het Visual Studio-project wordt gekopieerd. Dit is handig als het uitvoer bare bestand niet wordt gewijzigd. Als u verwacht dat het uitvoer bare bestand wordt gewijzigd en u de mogelijkheid wilt bieden om nieuwe builds dynamisch op te halen, kunt u in plaats daarvan een koppeling naar de map maken. U kunt gekoppelde mappen gebruiken bij het maken van het toepassings project in Visual Studio. Dit is een koppeling naar de bron locatie vanuit het project, zodat u het uitvoer bare gast bestand kunt bijwerken in de bron bestemming. Deze updates worden onderdeel van het toepassings pakket bij het bouwen.

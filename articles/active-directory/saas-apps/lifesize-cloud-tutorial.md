@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
 ms.openlocfilehash: 483377d0376a5a98d822392af1fa2d84ad8498e0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92458588"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Zelfstudie: Azure Active Directory-integratie met Lifesize Cloud
@@ -54,11 +54,11 @@ Om de integratie van Lifesize Cloud te configureren in Azure AD, moet u Lifesize
 
 **Voer de volgende stappen uit om Lifesize Cloud vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -72,7 +72,7 @@ Om de integratie van Lifesize Cloud te configureren in Azure AD, moet u Lifesize
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Lifesize Cloud op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Lifesize Cloud op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Lifesize Cloud tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure AD met Lifesize Cloud te configureren en testen, moet u de volgende procedures voltooien:
@@ -90,7 +90,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren met Lifesize Cloud:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de overzichtspagina van de integratie voor **Lifesize Cloud** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de overzichtspagina van de integratie voor **Lifesize Cloud** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -110,7 +110,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     b. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://login.lifesizecloud.com/<companyname>`
 
-    c. Klik op **Extra URL's instellen** .
+    c. Klik op **Extra URL's instellen**.
 
     d. In het tekstvak **Relaystatus** typt u een URL met de volgende notatie: `https://webapp.lifesizecloud.com/?ent=<identifier>`
 
@@ -135,11 +135,11 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 1. Om eenmalige aanmelding te configureren voor uw toepassing, meldt u zich als beheerder aan bij de Lifesize Cloud-toepassing.
 
-2. Klik op uw naam in de rechterbovenhoek en klik vervolgens op **Advanced Settings** .
+2. Klik op uw naam in de rechterbovenhoek en klik vervolgens op **Advanced Settings**.
 
     ![Schermopname met de menuopdracht Geavanceerde instellingen.](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_06.png)
 
-3. Klik op de koppeling **SSO Configuration** . De pagina voor configuratie van eenmalige aanmelding voor uw exemplaar wordt geopend.
+3. Klik op de koppeling **SSO Configuration**. De pagina voor configuratie van eenmalige aanmelding voor uw exemplaar wordt geopend.
 
     ![Schermopname van Geavanceerde instellingen, waar u SSO-configuratie kunt selecteren.](./media/lifesize-cloud-tutorial/tutorial_lifesizecloud_07.png)
 
@@ -151,7 +151,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     b.  Plak in het tekstvak **Login URL** de waarde van **Aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
 
-    c. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate** .
+    c. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate**.
   
     d. Ga naar de sectie SAML Attribute Mappings en voer in het tekstvak First Name deze waarde in: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
 
@@ -159,20 +159,20 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     f. Ga naar de sectie SAML Attribute Mappings en voer in het tekstvak **Email** deze waarde in: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
 
-5. Als u de configuratie wilt controleren, klikt u op de knop **Test** .
+5. Als u de configuratie wilt controleren, klikt u op de knop **Test**.
 
     >[!NOTE]
     >Hiervoor moet u wel eerst de configuratiewizard voltooien in Azure AD en er moeten gebruikers of groepen beschikbaar zijn die de test kunnen uitvoeren.
 
 6. Schakel eenmalige aanmelding in door de optie **Enable SSO** te selecteren.
 
-7. Klik nu op de knop **Update** zodat alle instellingen worden opgeslagen. Hierdoor wordt de RelayState-waarde gegenereerd. Kopieer de RelayState-waarde, die wordt gegenereerd in het tekstvak, en plak deze in het tekstvak **Relay State** onder de sectie **Lifesize Cloud Domain and URLs** .
+7. Klik nu op de knop **Update** zodat alle instellingen worden opgeslagen. Hierdoor wordt de RelayState-waarde gegenereerd. Kopieer de RelayState-waarde, die wordt gegenereerd in het tekstvak, en plak deze in het tekstvak **Relay State** onder de sectie **Lifesize Cloud Domain and URLs**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -191,13 +191,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Lifesize Cloud.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Lifesize Cloud** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Lifesize Cloud**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -205,11 +205,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling naar Lifesize Cloud in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -217,7 +217,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-lifesize-cloud-test-user"></a>Testgebruiker voor Lifesize Cloud maken
 

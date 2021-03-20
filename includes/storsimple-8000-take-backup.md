@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 5e923fdf560692c645c8a69e7e26d13f69d6920c
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93376021"
 ---
 ### <a name="to-take-a-backup"></a>Een back-up maken
@@ -27,7 +27,7 @@ ms.locfileid: "93376021"
 
     ![Add-backup-policy 3](./media/storsimple-8000-take-backup/step8takebu4.png)
 
-5. Op de blade **Eerste schema toevoegen** :
+5. Op de blade **Eerste schema toevoegen**:
 
     1. Selecteer het type back-up. Selecteer **Lokale momentopname** voor sneller herstellen. Selecteer **Cloudmomentopname** voor gegevenstolerantie.
     2. Geef de back-upfrequentie op in minuten, uren, dagen of weken.

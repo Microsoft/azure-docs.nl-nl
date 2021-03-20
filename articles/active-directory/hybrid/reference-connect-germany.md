@@ -1,6 +1,6 @@
 ---
 title: Azure AD Connect in Microsoft Cloud Duitsland
-description: Azure AD Connect integreert uw on-premises directory's met Azure Active Directory. Zo kunt u een algemene identiteit bieden voor Microsoft 365-, Azure-en SaaS-toepassingen die zijn geïntegreerd met Azure AD.
+description: Azure AD Connect integreert uw on-premises adreslijsten met Azure Active Directory. Zo kunt u een algemene identiteit bieden voor Microsoft 365-, Azure-en SaaS-toepassingen die zijn geïntegreerd met Azure AD.
 keywords: inleiding tot Azure AD Connect, overzicht Azure AD Connect, wat is Azure AD Connect, Active Directory installeren, Duitsland, Zwarte Woud
 services: active-directory
 documentationcenter: ''
@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 246f8326f7112825de98ee824cf4bab7952a7878
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90014584"
 ---
 # <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Azure AD Connect in Microsoft Cloud Duitsland - Openbare preview

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/07/2020
 ms.author: allensu
 ms.openlocfilehash: ee264a22de5ce094e8a4c1335ace77cbbba49270
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94694990"
 ---
 # <a name="outbound-only-load-balancer-configuration"></a>Load balancer-configuratie voor alleen uitgaand verkeer
@@ -74,7 +74,7 @@ Maak een virtuele machine in het nieuwe virtuele netwerk.
     | Resourcegroep   | Selecteer **Nieuw maken**. </br> Voer **myResourceGroupLB** in. </br> Selecteer **OK**. |
     | **Exemplaardetails** |                                                                 |
     | Naam             | Voer **myVNet** in                                    |
-    | Regio           | Selecteer **VS Oost 2** |
+    | Regio           | Selecteer **US - oost 2** |
 
 3. Selecteer het tabblad **IP-adressen** of klik op de knop **Volgende: IP-adressen** onderaan de pagina.
 
@@ -123,7 +123,7 @@ Maak een virtuele machine in het nieuwe virtuele netwerk.
     | Resourcegroep | Selecteer **myResourceGroupLB** |
     | **Exemplaardetails** |  |
     | Naam van de virtuele machine | Open **myVM** |
-    | Region | Selecteer **VS Oost 2** |
+    | Region | Selecteer **US - oost 2** |
     | Beschikbaarheidsopties | Selecteer **Geen infrastructuurredundantie vereist** |
     | Installatiekopie | Selecteer **Windows Server 2019 Datacenter** |
     | Azure Spot-exemplaar | Selecteer **Nee** |

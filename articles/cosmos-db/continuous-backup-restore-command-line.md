@@ -8,10 +8,10 @@ ms.date: 02/01/2021
 ms.author: govindk
 ms.reviewer: sngun
 ms.openlocfilehash: 9ea71dae746ac423e7b17b6235b4d5cd3e143cd7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100377326"
 ---
 # <a name="configure-and-manage-continuous-backup-and-point-in-time-restore-preview---using-azure-cli"></a>Continue back-ups en herstel tijdstippen configureren en beheren (preview)-Azure CLI gebruiken

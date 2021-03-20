@@ -10,10 +10,10 @@ ms.topic: article
 ms.author: apimpm
 ms.date: 04/23/2020
 ms.openlocfilehash: 023c2c89b90d6ddc71abc95db325dcdeb7684a2d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89500127"
 ---
 # <a name="deploy-a-self-hosted-gateway-to-kubernetes"></a>Een zelf-hostende gateway implementeren op Kubernetes
@@ -35,7 +35,7 @@ In dit artikel worden de stappen beschreven voor het implementeren van het zelf-
 3. Selecteer **implementatie**.
 4. Er is automatisch een toegangs token in het tekstvak **token** voor u gegenereerd, op basis van de standaard waarden voor de **verval datum** en de **geheime sleutel** . Als dat nodig is, kiest u waarden in een van beide of beide besturings elementen om een nieuw token te genereren.
 5. Selecteer het tabblad **Kubernetes** onder **implementatie scripts**.
-6. Selecteer de koppeling van het ** \<gateway-name\> . yml** -bestand en down load het yaml-bestand.
+6. Selecteer de koppeling van het **\<gateway-name\> . yml** -bestand en down load het yaml-bestand.
 7. Selecteer het pictogram **kopiëren** in de rechter benedenhoek van het tekstvak **implementeren** om de `kubectl` opdrachten op het klem bord op te slaan.
 8. Plak opdrachten in het venster Terminal (of Command). Met de eerste opdracht maakt u een Kubernetes-geheim dat het toegangs token bevat dat in stap 4 is gegenereerd. Met de tweede opdracht wordt het configuratie bestand dat in stap 6 is gedownload, toegepast op het Kubernetes-cluster en wordt verwacht dat het bestand zich in de huidige map bedient.
 9. Voer de opdrachten uit om de benodigde Kubernetes-objecten in de [standaard naam ruimte](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) te maken en zelf-hostende gateways te starten vanaf de [container installatie kopie](https://aka.ms/apim/sputnik/dhub) die is gedownload van de micro soft-container Registry.
@@ -112,7 +112,7 @@ Het YAML-bestand dat in het `externalTrafficPolicy` veld Azure Portal op het [se
 
 ### <a name="custom-domain-names-and-ssl-certificates"></a>Aangepaste domein namen en SSL-certificaten
 
-Als u aangepaste domein namen voor de API Management-eind punten gebruikt, met name als u een aangepaste domein naam gebruikt voor het beheer eindpunt, moet u mogelijk de waarde van `config.service.endpoint` in het ** \<gateway-name\> . yaml** -bestand bijwerken om de standaard domeinnaam te vervangen door de aangepaste domein naam. Zorg ervoor dat het beheer eindpunt toegankelijk is vanaf de pod van de zelf-hostende gateway in het Kubernetes-cluster.
+Als u aangepaste domein namen voor de API Management-eind punten gebruikt, met name als u een aangepaste domein naam gebruikt voor het beheer eindpunt, moet u mogelijk de waarde van `config.service.endpoint` in het **\<gateway-name\> . yaml** -bestand bijwerken om de standaard domeinnaam te vervangen door de aangepaste domein naam. Zorg ervoor dat het beheer eindpunt toegankelijk is vanaf de pod van de zelf-hostende gateway in het Kubernetes-cluster.
 
 Als het SSL-certificaat dat wordt gebruikt door het beheer eindpunt niet is ondertekend door een bekend CA-certificaat, moet u ervoor zorgen dat het CA-certificaat wordt vertrouwd door de pod van de zelf-hostende gateway.
 

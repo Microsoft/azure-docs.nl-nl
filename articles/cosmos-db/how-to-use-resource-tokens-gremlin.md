@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 09/06/2019
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 22c048b748806404ccfa580e660552a1744f3781
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93361690"
 ---
 # <a name="use-azure-cosmos-db-resource-tokens-with-the-gremlin-sdk"></a>Azure Cosmos DB-bron tokens gebruiken met de Gremlin-SDK
@@ -101,7 +101,7 @@ Met één Gremlin-account kunt u een onbeperkt aantal tokens uitgeven. U kunt ec
 
 ## <a name="permission"></a>Machtiging
 
-Een veelvoorkomende fout die toepassingen tegen komen tijdens het gebruik van resource tokens is ' onvoldoende machtigingen in de autorisatie-header voor de bijbehorende aanvraag. Probeer het opnieuw met een andere autorisatie-header. Deze fout wordt geretourneerd wanneer een Gremlin-passage een rand of een hoek punt probeert te schrijven, maar het bron token alleen *Lees* machtigingen verleent. Inspecteer uw passage om te zien of het een van de volgende stappen bevat: *. addV ()* , *. addE ()* , *. drop ()* of *. eigenschap ()*.
+Een veelvoorkomende fout die toepassingen tegen komen tijdens het gebruik van resource tokens is ' onvoldoende machtigingen in de autorisatie-header voor de bijbehorende aanvraag. Probeer het opnieuw met een andere autorisatie-header. Deze fout wordt geretourneerd wanneer een Gremlin-passage een rand of een hoek punt probeert te schrijven, maar het bron token alleen *Lees* machtigingen verleent. Inspecteer uw passage om te zien of het een van de volgende stappen bevat: *. addV ()*, *. addE ()*, *. drop ()* of *. eigenschap ()*.
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Op rollen gebaseerd toegangs beheer van Azure (Azure RBAC)](role-based-access-control.md) in azure Cosmos db

@@ -8,10 +8,10 @@ ms.date: 05/29/2018
 ms.author: twooley
 ms.custom: has-adal-ref
 ms.openlocfilehash: a5272f7d580a3f8a68afda9150a1e95c1807eba6
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92103778"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-azure-active-directory"></a>Verificatie door eind gebruikers met Azure Data Lake Storage Gen1 met behulp van Azure Active Directory
@@ -37,7 +37,7 @@ In dit artikel wordt uitgelegd hoe u een **systeem eigen Azure AD-toepassing maa
 
     ![Abonnements-ID ophalen](./media/data-lake-store-end-user-authenticate-using-active-directory/get-subscription-id.png)
 
-* De naam van uw Azure AD-domein. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. In de onderstaande scherm afbeelding is de domein naam **contoso.onmicrosoft.com**en de GUID tussen haakjes is de Tenant-id.
+* De naam van uw Azure AD-domein. U kunt deze ophalen door de muis in de rechter bovenhoek van de Azure Portal aan te wijzen. In de onderstaande scherm afbeelding is de domein naam **contoso.onmicrosoft.com** en de GUID tussen haakjes is de Tenant-id.
 
     ![AAD-domein ophalen](./media/data-lake-store-end-user-authenticate-using-active-directory/get-aad-domain.png)
 
@@ -82,7 +82,7 @@ Zie [de toepassings-id ophalen](../active-directory/develop/howto-create-service
 
 Voer de volgende stappen uit om de omleidings-URI op te halen.
 
-1. Selecteer **Azure Active Directory**in het Azure Portal, klik op **app-registraties**en zoek en klik vervolgens op de systeem eigen Azure AD-toepassing die u hebt gemaakt.
+1. Selecteer **Azure Active Directory** in het Azure Portal, klik op **app-registraties** en zoek en klik vervolgens op de systeem eigen Azure AD-toepassing die u hebt gemaakt.
 
 2. Klik op de Blade **instellingen** voor de toepassing op **omleidings-uri's**.
 
@@ -93,17 +93,17 @@ Voer de volgende stappen uit om de omleidings-URI op te halen.
 
 ## <a name="step-3-set-permissions"></a>Stap 3: machtigingen instellen
 
-1. Selecteer **Azure Active Directory**in het Azure Portal, klik op **app-registraties**en zoek en klik vervolgens op de systeem eigen Azure AD-toepassing die u hebt gemaakt.
+1. Selecteer **Azure Active Directory** in het Azure Portal, klik op **app-registraties** en zoek en klik vervolgens op de systeem eigen Azure AD-toepassing die u hebt gemaakt.
 
-2. Klik op de Blade **instellingen** voor de toepassing op **vereiste machtigingen**en klik vervolgens op **toevoegen**.
+2. Klik op de Blade **instellingen** voor de toepassing op **vereiste machtigingen** en klik vervolgens op **toevoegen**.
 
     ![Scherm afbeelding van de Blade instellingen met de optie U R I omleiden en de Blade omleiden U R I met de daad werkelijke U R.](./media/data-lake-store-end-user-authenticate-using-active-directory/aad-end-user-auth-set-permission-1.png)
 
-3. Klik op de Blade **API-toegang toevoegen** op **een API selecteren**, klik op **Azure data Lake**en klik vervolgens op **selecteren**.
+3. Klik op de Blade **API-toegang toevoegen** op **een API selecteren**, klik op **Azure data Lake** en klik vervolgens op **selecteren**.
 
     ![Scherm opname van de Blade API-toegang toevoegen met de optie een API selecteren en de Blade een API selecteren met de optie Azure Data Lake en de optie selecteren.](./media/data-lake-store-end-user-authenticate-using-active-directory/aad-end-user-auth-set-permission-2.png)
 
-4.  Klik op de Blade **API-toegang toevoegen** op **machtigingen selecteren**, schakel het selectie vakje in als u **volledige toegang tot data Lake Store wilt**geven en klik vervolgens op **selecteren**.
+4.  Klik op de Blade **API-toegang toevoegen** op **machtigingen selecteren**, schakel het selectie vakje in als u **volledige toegang tot data Lake Store wilt** geven en klik vervolgens op **selecteren**.
 
     ![Scherm opname van de Blade API-toegang toevoegen met de optie machtigingen selecteren en de Blade toegang inschakelen met de optie volledige toegang tot de Azure Data Lake-service en de optie selecteren.](./media/data-lake-store-end-user-authenticate-using-active-directory/aad-end-user-auth-set-permission-3.png)
 

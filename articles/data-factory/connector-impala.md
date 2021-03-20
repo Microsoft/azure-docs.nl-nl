@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: jingwang
 ms.openlocfilehash: 810ee757b70550c9dbeea708266b3fec48669571
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100378567"
 ---
 # <a name="copy-data-from-impala-by-using-azure-data-factory"></a>Gegevens kopiëren van Impala met behulp van Azure Data Factory
@@ -46,18 +46,18 @@ De volgende eigenschappen worden ondersteund voor Impala gekoppelde service.
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op **Impala**. | Yes |
-| host | Het IP-adres of de hostnaam van de Impala-server (192.168.222.160).  | Yes |
-| poort | De TCP-poort die de Impala-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 21050.  | No |
-| authenticationType | Het verificatie type dat moet worden gebruikt. <br/>Toegestane waarden zijn **anoniem**, **SASLUsername** en **UsernameAndPassword**. | Yes |
-| gebruikersnaam | De gebruikers naam die wordt gebruikt voor toegang tot de Impala-server. De standaard waarde is anoniem wanneer u SASLUsername gebruikt.  | No |
-| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam wanneer u UsernameAndPassword gebruikt. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | No |
-| enableSsl | Hiermee geeft u op of de verbindingen met de server moeten worden versleuteld met behulp van TLS. De standaardwaarde is **onwaar**.  | No |
-| trustedCertPath | Het volledige pad van het. pem-bestand dat vertrouwde CA-certificaten bevat die worden gebruikt om de server te controleren wanneer u verbinding maakt via TLS. Deze eigenschap kan alleen worden ingesteld wanneer u gebruikmaakt van TLS op zelf-hostende Integration Runtime. De standaard waarde is het cacerts. pem-bestand dat is geïnstalleerd met de Integration runtime.  | No |
-| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is **onwaar**.  | No |
-| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server wanneer u verbinding maakt via TLS. De standaardwaarde is **onwaar**.  | No |
-| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is **onwaar**.  | No |
-| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |No |
+| type | De eigenschap type moet worden ingesteld op **Impala**. | Ja |
+| host | Het IP-adres of de hostnaam van de Impala-server (192.168.222.160).  | Ja |
+| poort | De TCP-poort die de Impala-server gebruikt om te Luis teren naar client verbindingen. De standaard waarde is 21050.  | Nee |
+| authenticationType | Het verificatie type dat moet worden gebruikt. <br/>Toegestane waarden zijn **anoniem**, **SASLUsername** en **UsernameAndPassword**. | Ja |
+| gebruikersnaam | De gebruikers naam die wordt gebruikt voor toegang tot de Impala-server. De standaard waarde is anoniem wanneer u SASLUsername gebruikt.  | Nee |
+| wachtwoord | Het wacht woord dat overeenkomt met de gebruikers naam wanneer u UsernameAndPassword gebruikt. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Nee |
+| enableSsl | Hiermee geeft u op of de verbindingen met de server moeten worden versleuteld met behulp van TLS. De standaardwaarde is **onwaar**.  | Nee |
+| trustedCertPath | Het volledige pad van het. pem-bestand dat vertrouwde CA-certificaten bevat die worden gebruikt om de server te controleren wanneer u verbinding maakt via TLS. Deze eigenschap kan alleen worden ingesteld wanneer u gebruikmaakt van TLS op zelf-hostende Integration Runtime. De standaard waarde is het cacerts. pem-bestand dat is geïnstalleerd met de Integration runtime.  | Nee |
+| useSystemTrustStore | Hiermee geeft u op of u een CA-certificaat wilt gebruiken uit de systeem vertrouwens archief of vanuit een opgegeven PEM-bestand. De standaardwaarde is **onwaar**.  | Nee |
+| allowHostNameCNMismatch | Hiermee geeft u op of een door de certificerings instantie uitgegeven TLS/SSL-certificaat naam moet overeenkomen met de hostnaam van de server wanneer u verbinding maakt via TLS. De standaardwaarde is **onwaar**.  | Nee |
+| allowSelfSignedServerCert | Hiermee geeft u op of zelfondertekende certificaten van de server mogen worden toegestaan. De standaardwaarde is **onwaar**.  | Nee |
+| connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. Meer informatie vindt u in de sectie [vereisten](#prerequisites) . Als u niets opgeeft, wordt de standaard Azure Integration Runtime gebruikt. |Nee |
 
 **Voorbeeld:**
 
@@ -92,7 +92,7 @@ Als u gegevens van Impala wilt kopiëren, stelt u de eigenschap type van de gege
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ImpalaObject** | Yes |
+| type | De eigenschap type van de gegevensset moet worden ingesteld op: **ImpalaObject** | Ja |
 | schema | De naam van het schema. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tabel | De naam van de tabel. |Nee (als "query" in activiteit bron is opgegeven)  |
 | tableName | De naam van de tabel met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik `schema` en `table` voor nieuwe werk belasting. | Nee (als "query" in activiteit bron is opgegeven) |
@@ -124,7 +124,7 @@ Als u gegevens wilt kopiëren uit Impala, stelt u het bron type in de Kopieer ac
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **ImpalaSource**. | Yes |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **ImpalaSource**. | Ja |
 | query | Gebruik de aangepaste SQL-query om gegevens te lezen. Een voorbeeld is `"SELECT * FROM MyTable"`. | Nee (als ' Tablename ' in gegevensset is opgegeven) |
 
 **Voorbeeld:**

@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u fouten met ongeldige sjablonen oplost
 ms.topic: troubleshooting
 ms.date: 05/22/2020
 ms.openlocfilehash: ba19d3c4e72a765e2aaff7393915b77a80daf2ba
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96185790"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Fouten met een ongeldige sjabloon oplossen

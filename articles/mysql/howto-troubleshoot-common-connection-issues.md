@@ -8,10 +8,10 @@ ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 3/18/2020
 ms.openlocfilehash: da500087aeb4ad5e2bf516c3d0ce3cceaf8396af
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96000280"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mysql"></a>Verbindingsproblemen met Azure Databases for MySQL oplossen
@@ -42,7 +42,7 @@ Er treden tijdelijke fouten op wanneer onderhoud wordt uitgevoerd. het systeem d
 3. Wanneer een server de resource limieten nadert, kunnen fouten een probleem met de tijdelijke verbinding zijn. Zie de [beperkingen in azure database for MySQL](concepts-limits.md).
 4. Als er verbindings problemen blijven bestaan of als de duur waarvoor uw toepassing de fout ondervindt, groter is dan 60 seconden of als er meerdere exemplaren van de fout in een bepaalde dag worden weer gegeven, kunt u een Azure-ondersteunings aanvraag indienen door **ondersteuning** te selecteren op de [ondersteunings](https://azure.microsoft.com/support/options) site van Azure.
 
-## <a name="troubleshoot-persistent-errors"></a>Problemen met persistente fouten oplossen
+## <a name="troubleshoot-persistent-errors"></a>Problemen met permanente fouten oplossen
 
 Als de toepassing permanent geen verbinding kan maken met Azure Database for MySQL, duidt dit meestal op een probleem met een van de volgende:
 

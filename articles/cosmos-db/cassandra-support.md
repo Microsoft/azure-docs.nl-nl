@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
 ms.openlocfilehash: f48935edd5746b0f3f3440e249024cbe2901317b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100374368"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Door Azure Cosmos DB Cassandra API ondersteunde Apache Cassandra-functies 
@@ -186,12 +186,12 @@ Azure Cosmos DB ondersteunt de volgende databaseopdrachten op Cassandra-API-acco
 
 | Onderdeel  |Ondersteund |
 |---------|---------|
-| VERWIJDEREN INDIEN AANWEZIG | Yes |
-| Voor waarden verwijderen | No |
-| INVOEGEN INDIEN NIET AANWEZIG | Yes |
-| UPDATE INDIEN AANWEZIG | Yes |
-| UPDATE INDIEN NIET AANWEZIG | Yes |
-| UPDATE voorwaarden | No |
+| VERWIJDEREN INDIEN AANWEZIG | Ja |
+| Voor waarden verwijderen | Nee |
+| INVOEGEN INDIEN NIET AANWEZIG | Ja |
+| UPDATE INDIEN AANWEZIG | Ja |
+| UPDATE INDIEN NIET AANWEZIG | Ja |
+| UPDATE voorwaarden | Nee |
 
 ## <a name="cql-shell-commands"></a>CQL Shell-opdrachten
 
@@ -210,7 +210,7 @@ Azure Cosmos DB ondersteunt de volgende databaseopdrachten op Cassandra-API-acco
 | PAGING | Yes |
 | SERIAL CONSISTENCY * | N.v.t. |
 | SHOW | Yes |
-| BRON | Ja |
+| BRON | Yes |
 | TRACING | N.v.t. (DE Cassandra-API wordt ondersteund door Azure Cosmos DB: gebruik [diagnostische logboekregistratie](cosmosdb-monitor-resource-logs.md) voor probleemoplossing) |
 
 > [!NOTE] 

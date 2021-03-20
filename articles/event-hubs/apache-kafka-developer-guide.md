@@ -4,10 +4,10 @@ description: Dit artikel bevat koppelingen naar artikelen waarin wordt beschreve
 ms.date: 06/23/2020
 ms.topic: article
 ms.openlocfilehash: 757db4faf2a933e366bc818d5cf6aab04d0b08ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90061730"
 ---
 # <a name="apache-kafka-developer-guide-for-azure-event-hubs"></a>Apache Kafka ontwikkelaars handleiding voor Azure Event Hubs
@@ -16,7 +16,7 @@ Dit artikel bevat koppelingen naar artikelen waarin wordt beschreven hoe u uw Ap
 ## <a name="overview"></a>Overzicht
 Event Hubs biedt een Kafka-eind punt dat door uw bestaande op Kafka gebaseerde toepassingen kan worden gebruikt als alternatief voor het uitvoeren van uw eigen Kafka-cluster. Event Hubs werkt met veel van uw bestaande Kafka-toepassingen. Zie [Event hubs voor Apache Kafka voor](event-hubs-for-kafka-ecosystem-overview.md) meer informatie.
 
-## <a name="quickstarts"></a>Snelstartgidsen
+## <a name="quickstarts"></a>Quickstarts
 U vindt Quick starts in GitHub en in deze inhoudsset waarmee u snel op Event Hubs kunt komen voor Kafka.
 
 ### <a name="quickstarts-in-github"></a>Quick starts in GitHub

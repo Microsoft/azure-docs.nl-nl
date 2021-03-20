@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.openlocfilehash: 6463f30bc79d937bd5a51a5c8c78fbdd72954b1e
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97364575"
 ---
 # <a name="best-practices-for-building-an-application-with-azure-database-for-postgresql"></a>Aanbevolen procedures voor het bouwen van een toepassing met Azure Database for PostgreSQL
@@ -49,7 +49,7 @@ Uw toepassing kan tijdelijke fouten ondervinden waarbij verbindingen met de data
 U kunt [replicatie van inkomende gegevens](./concepts-read-replicas.md) gebruiken voor failover-scenario's. Wanneer u Replicas lezen gebruikt, vindt er geen automatische failover tussen bron-en replica servers plaats. U ziet een vertraging tussen de bron en de replica, omdat de replicatie asynchroon is. Netwerk vertraging kan worden beïnvloed door veel factoren, zoals de grootte van de werk belasting die wordt uitgevoerd op de bron server en de latentie tussen data centers. In de meeste gevallen ligt de replica vertraging van een paar seconden naar een paar minuten.
 
 
-## <a name="database-deployment"></a>Data base-implementatie
+## <a name="database-deployment"></a>Database-implementatie
 
 ### <a name="configure-cicd-deployment-pipeline"></a>Pijp lijn voor CI/CD-implementatie configureren
 Af en toe moet u wijzigingen in uw data base implementeren. In dergelijke gevallen kunt u doorlopende integratie (CI) via [github-acties](https://github.com/Azure/postgresql/blob/master/README.md) voor uw postgresql-server gebruiken om de data base bij te werken door er een aangepast script op uit te voeren.

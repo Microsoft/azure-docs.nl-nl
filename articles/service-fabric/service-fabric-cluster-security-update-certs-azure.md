@@ -4,10 +4,10 @@ description: Hierin wordt beschreven hoe u nieuwe certificaten, rollover certifi
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.openlocfilehash: 6dd4440d76bed9d110c13baab9f4e67b3a5c64c0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94660896"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Certificaten voor een Service Fabric-cluster in Azure toevoegen of verwijderen
@@ -104,7 +104,7 @@ Om het volgende te vergemakkelijken, bevat de voorbeeld 5-VM-1-NodeTypes-Secure_
          }
     ``` 
 
-4. Breng wijzigingen aan **all** in alle **micro soft. Compute/virtualMachineScaleSets** resource definities-Zoek de resource definitie micro soft. Compute/virtualMachineScaleSets. Ga naar ' Publisher ': ' micro soft. Azure. ServiceFabric ', onder ' virtualMachineProfile '.
+4. Breng wijzigingen aan  in alle **micro soft. Compute/virtualMachineScaleSets** resource definities-Zoek de resource definitie micro soft. Compute/virtualMachineScaleSets. Ga naar ' Publisher ': ' micro soft. Azure. ServiceFabric ', onder ' virtualMachineProfile '.
 
     In de instellingen voor de Service Fabric uitgever ziet u iets als in.
     
@@ -142,7 +142,7 @@ Om het volgende te vergemakkelijken, bevat de voorbeeld 5-VM-1-NodeTypes-Secure_
     De eigenschappen moeten er nu als volgt uitzien    
     ![Json_Pub_Setting3][Json_Pub_Setting3]
 
-5. Breng wijzigingen aan **all** in alle **micro soft. Compute/virtualMachineScaleSets** resource definities-Zoek de resource definitie micro soft. Compute/virtualMachineScaleSets. Ga naar ' vaultCertificates ':, onder ' OSProfile '. Dit ziet er ongeveer als volgt uit.
+5. Breng wijzigingen aan  in alle **micro soft. Compute/virtualMachineScaleSets** resource definities-Zoek de resource definitie micro soft. Compute/virtualMachineScaleSets. Ga naar ' vaultCertificates ':, onder ' OSProfile '. Dit ziet er ongeveer als volgt uit.
 
     ![Json_Pub_Setting4][Json_Pub_Setting4]
     

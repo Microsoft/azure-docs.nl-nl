@@ -7,10 +7,10 @@ ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: allensu
 ms.openlocfilehash: f83ff3d1d03354daef3466c1f48eaa505e378634
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94693746"
 ---
 # <a name="move-an-external-load-balancer-to-another-region-by-using-the-azure-portal"></a>Een externe load balancer naar een andere regio verplaatsen met behulp van de Azure Portal
@@ -143,9 +143,9 @@ De volgende procedures laten zien hoe u de externe load balancer voor de verplaa
 
 14. Selecteer **basis**  >  **abonnement** om het abonnement te kiezen waarin het open bare doel-IP-adres wordt geïmplementeerd.
 
-15. Selecteer **BASICS**  >  de **resource groep** basis beginselen om de resource groep te kiezen waarin het open bare doel-IP-adres wordt geïmplementeerd. U kunt **nieuwe maken** selecteren om een nieuwe resource groep te maken voor het open bare doel-IP-adres. Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande open bare bron-IP.
+15. Selecteer   >  de **resource groep** basis beginselen om de resource groep te kiezen waarin het open bare doel-IP-adres wordt geïmplementeerd. U kunt **nieuwe maken** selecteren om een nieuwe resource groep te maken voor het open bare doel-IP-adres. Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande open bare bron-IP.
 
-16. Controleer of de locatie van de **basis beginselen**  >  **Location** is ingesteld op de doel locatie waar u het open bare IP-adres wilt implementeren.
+16. Controleer of de locatie van de **basis beginselen**  >   is ingesteld op de doel locatie waar u het open bare IP-adres wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u eerder hebt ingevoerd in de para meters-editor.
 
@@ -391,9 +391,9 @@ De volgende procedures laten zien hoe u de externe load balancer voor de verplaa
 
 13. Selecteer **basis**  >  **abonnement** om het abonnement te kiezen waarin de externe Load Balancer worden geïmplementeerd.
 
-15. Selecteer **BASICS**  >  de **resource groep** basis beginselen om de resource groep te kiezen waarin de doel-Load Balancer worden geïmplementeerd. U kunt **nieuwe maken** selecteren om een nieuwe resource groep te maken voor de externe Load Balancer doel. U kunt ook de bestaande resource groep kiezen die u eerder hebt gemaakt voor het open bare IP-adres. Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande externe bron load balancer.
+15. Selecteer   >  de **resource groep** basis beginselen om de resource groep te kiezen waarin de doel-Load Balancer worden geïmplementeerd. U kunt **nieuwe maken** selecteren om een nieuwe resource groep te maken voor de externe Load Balancer doel. U kunt ook de bestaande resource groep kiezen die u eerder hebt gemaakt voor het open bare IP-adres. Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande externe bron load balancer.
 
-16. Controleer of de locatie van de **basis beginselen**  >  **Location** is ingesteld op de doel locatie waar u de externe Load Balancer wilt implementeren.
+16. Controleer of de locatie van de **basis beginselen**  >   is ingesteld op de doel locatie waar u de externe Load Balancer wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u eerder hebt ingevoerd in de para meters-editor. Controleer of de resource-Id's zijn ingevuld voor open bare Ip's in de configuratie.
 

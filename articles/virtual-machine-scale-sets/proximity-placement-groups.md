@@ -10,10 +10,10 @@ ms.date: 07/01/2019
 ms.reviewer: zivr
 ms.custom: mimckitt
 ms.openlocfilehash: a3a7b50c82b3deffa7526bfcfe799972c3b02762
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98877863"
 ---
 # <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Voor beeld: proximity-plaatsings groepen maken en gebruiken met Power shell

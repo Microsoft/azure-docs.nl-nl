@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 05/01/2018
 ms.author: allensu
 ms.openlocfilehash: c3ab722f182e32cf2f3aca6bb2f3d5a9598264af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88192601"
 ---
 # <a name="media-streaming-optimization-with-azure-cdn"></a>Optimalisatie van mediastreaming met Azure CDN 
@@ -71,7 +71,7 @@ U kunt het CDN-eind punt (Content Delivery Network) configureren om de levering 
   
     ![Nieuw eind punt](./media/cdn-media-streaming-optimization/cdn-new-akamai-endpoint.png)
 
-2. Selecteer in de vervolg keuzelijst **geoptimaliseerd voor** de optie **video op aanvraag** mediastreaming voor video-on-demand-assets. Als u een combi natie van Live en video-on-demand streaming hebt, selecteert u **algemene**mediastreaming.
+2. Selecteer in de vervolg keuzelijst **geoptimaliseerd voor** de optie **video op aanvraag** mediastreaming voor video-on-demand-assets. Als u een combi natie van Live en video-on-demand streaming hebt, selecteert u **algemene** mediastreaming.
 
     ![Streaming geselecteerd](./media/cdn-media-streaming-optimization/02_Creating.png) 
  

@@ -9,10 +9,10 @@ ms.date: 07/19/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: 7e410218117aa0d21167b6d615a3835aeec470e7
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397107"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-azure-powershell"></a>Webverkeer met een toepassingsgateway beheren met behulp van Azure PowerShell
@@ -75,9 +75,9 @@ $pip = New-AzPublicIpAddress `
 
 In deze sectie kunt u resources maken die ondersteuning bieden voor de toepassingsgateway. Ten slotte maakt u deze. De resources die u maakt, zijn onder andere:
 
-- *IP-configuraties en front-endpoort* : hiermee koppelt u het subnet dat u eerder hebt gemaakt aan de toepassingsgateway en wijst u een poort toe die u gebruikt om de gateway te openen.
-- *Standaardpool* : alle toepassingsgateways moeten ten minste één back-endpool met servers hebben.
-- *Standaard-listener en regel* : de standaard-listener luistert naar verkeer op de poort die is toegewezen en de standaardregel verzendt verkeer naar de standaardpool.
+- *IP-configuraties en front-endpoort*: hiermee koppelt u het subnet dat u eerder hebt gemaakt aan de toepassingsgateway en wijst u een poort toe die u gebruikt om de gateway te openen.
+- *Standaardpool*: alle toepassingsgateways moeten ten minste één back-endpool met servers hebben.
+- *Standaard-listener en regel*: de standaard-listener luistert naar verkeer op de poort die is toegewezen en de standaardregel verzendt verkeer naar de standaardpool.
 
 ### <a name="create-the-ip-configurations-and-frontend-port"></a>IP-configuraties en front-endpoort maken
 

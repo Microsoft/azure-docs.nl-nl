@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/15/2019
 tags: connectors
 ms.openlocfilehash: f4cad2b658547d56d00efdd5e1496110f8e4a5e6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95999571"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>FTP-bestanden bewaken, maken en beheren met behulp van Azure Logic Apps
@@ -43,7 +43,7 @@ U kunt triggers gebruiken die reacties ontvangen van uw FTP-server en de uitvoer
 
 FTP-triggers worden uitgevoerd door het FTP-bestands systeem te pollen en te zoeken naar een bestand dat sinds de laatste poll is gewijzigd. Met sommige hulpprogram ma's kunt u de tijds tempel behouden wanneer de bestanden worden gewijzigd. In deze gevallen moet u deze functie uitschakelen zodat de trigger kan werken. Hier volgen enkele algemene instellingen:
 
-| SFTP-client | Actie |
+| SFTP-client | Bewerking |
 |-------------|--------|
 | WinSCP | Ga naar **Opties**  >  **voor keuren**  >  **overdracht**  >  **bewerken**  >  **behouden tijds tempel**  >  **uitschakelen** |
 | FileZilla | Ga naar de **overdrachts**  >  **tijds tempels van overgebrachte bestanden**  >  **uitschakelen** |

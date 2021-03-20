@@ -10,10 +10,10 @@ ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 07/25/2020
 ms.openlocfilehash: b56b65261950e9cf534a3755d214229ef7d5bb1e
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93395203"
 ---
 # <a name="connect-and-query-azure-sql-edge"></a>Verbinding maken en query's uitvoeren op Azure SQL Edge
@@ -36,8 +36,8 @@ U kunt verbinding maken met een exemplaar van de Azure SQL Edge-instantie vanuit
 
 Als u verbinding wilt maken met een Azure SQL Edge data base-engine vanaf een netwerk computer, hebt u het volgende nodig:
 
-- **IP-adres of netwerk naam van de hostmachine** : dit is de hostmachine waarop de Azure SQL Edge-container wordt uitgevoerd.
-- **Poort toewijzing van Azure SQL Edge-container** : dit is de toewijzing voor de docker-container poort aan een poort op de host. Binnen de container wordt Azure SQL Edge altijd toegewezen aan poort 1433. U kunt deze desgewenst wijzigen. Als u het poort nummer wilt wijzigen, moet u de opties voor het maken van de **container** bijwerken voor de Azure SQL Edge-module in azure IOT Edge. In het volgende voor beeld wordt poort 1433 op de container toegewezen aan poort 1600 op de host.
+- **IP-adres of netwerk naam van de hostmachine**: dit is de hostmachine waarop de Azure SQL Edge-container wordt uitgevoerd.
+- **Poort toewijzing van Azure SQL Edge-container**: dit is de toewijzing voor de docker-container poort aan een poort op de host. Binnen de container wordt Azure SQL Edge altijd toegewezen aan poort 1433. U kunt deze desgewenst wijzigen. Als u het poort nummer wilt wijzigen, moet u de opties voor het maken van de **container** bijwerken voor de Azure SQL Edge-module in azure IOT Edge. In het volgende voor beeld wordt poort 1433 op de container toegewezen aan poort 1600 op de host.
 
     ```JSON
     {
@@ -51,7 +51,7 @@ Als u verbinding wilt maken met een Azure SQL Edge data base-engine vanaf een ne
     }
     ```
 
-- **Sa-wacht woord voor het exemplaar van de Azure SQL Edge** : dit is de waarde die is opgegeven voor de `SA_PASSWORD` omgevings variabele tijdens de implementatie van de Azure SQL-rand.
+- **Sa-wacht woord voor het exemplaar van de Azure SQL Edge**: dit is de waarde die is opgegeven voor de `SA_PASSWORD` omgevings variabele tijdens de implementatie van de Azure SQL-rand.
 
 ## <a name="connect-to-the-database-engine-from-within-the-container"></a>Verbinding maken met de data base-engine vanuit de container
 

@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
 ms.openlocfilehash: 047ce9b33836e2c23a37b1383942323d7c382485
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397532"
 ---
 # <a name="application-gateway-request-routing-rules"></a>Routerings regels voor Application Gateway aanvragen
 
-Wanneer u een toepassings gateway maakt met behulp van de Azure Portal, maakt u een standaard regel ( *firewallregel1* ). Deze regel koppelt de standaard-listener ( *appGatewayHttpListener* ) aan de standaard back-end-pool ( *appGatewayBackendPool* ) en de standaard back-end-http-instellingen ( *appGatewayBackendHttpSettings* ). Nadat u de gateway hebt gemaakt, kunt u de instellingen van de standaard regel bewerken of nieuwe regels maken.
+Wanneer u een toepassings gateway maakt met behulp van de Azure Portal, maakt u een standaard regel (*firewallregel1*). Deze regel koppelt de standaard-listener (*appGatewayHttpListener*) aan de standaard back-end-pool (*appGatewayBackendPool*) en de standaard back-end-http-instellingen (*appGatewayBackendHttpSettings*). Nadat u de gateway hebt gemaakt, kunt u de instellingen van de standaard regel bewerken of nieuwe regels maken.
 
 ## <a name="rule-type"></a>Regel type
 
@@ -57,7 +57,7 @@ Zie [Application Gateway omleidings overzicht](redirect-overview.md)voor meer in
 
 ### <a name="redirection-type"></a>Type omleiding
 
-Kies het type omleiding vereist: *permanent (301)* , *tijdelijk (307* ), *gevonden (302)* of *Zie other (303)*.
+Kies het type omleiding vereist: *permanent (301)*, *tijdelijk (307*), *gevonden (302)* of *Zie other (303)*.
 
 ### <a name="redirection-target"></a>Doel van omleiding
 

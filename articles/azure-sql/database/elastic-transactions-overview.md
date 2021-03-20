@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
 ms.openlocfilehash: 5504b9bc87f78682ff584006255d4e75e5e69fa7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793344"
 ---
 # <a name="distributed-transactions-across-cloud-databases-preview"></a>Over clouddatabases gedistribueerde transacties (preview)
@@ -24,7 +24,7 @@ ms.locfileid: "92793344"
 Met Elastic data base-trans acties voor Azure SQL Database en Azure SQL Managed Instance kunt u trans acties uitvoeren die meerdere data bases omvatten. Elastic data base-trans acties zijn beschikbaar voor .NET-toepassingen die gebruikmaken van ADO.NET en kunnen worden geïntegreerd met de bekende programmeer ervaring met behulp van de [System. Trans Action](/dotnet/api/system.transactions) -klassen. Zie [.NET Framework 4.6.1 (web installer)](https://www.microsoft.com/download/details.aspx?id=49981)om de tape wisselaar op te halen.
 Daarnaast zijn voor beheerde instantie gedistribueerde trans acties beschikbaar in [Transact-SQL](/sql/t-sql/language-elements/begin-distributed-transaction-transact-sql).
 
-In een on-premises-scenario moet micro soft Distributed Transaction Coordinator (MSDTC) meestal worden uitgevoerd. Omdat MSDTC niet beschikbaar is voor platform-as-a-service-toepassingen in azure, is de mogelijkheid om gedistribueerde trans acties te coördineren, nu rechtstreeks geïntegreerd in SQL Database of een beheerd exemplaar. Toepassingen kunnen verbinding maken met elke Data Base om gedistribueerde trans acties te starten. een van de data bases of servers zal de gedistribueerde trans actie transparant coördineren, zoals wordt weer gegeven in de volgende afbeelding.
+In een on-premises-scenario moet micro soft gedistribueerde transactie (MSDTC) meestal worden uitgevoerd. Omdat MSDTC niet beschikbaar is voor platform-as-a-service-toepassingen in azure, is de mogelijkheid om gedistribueerde trans acties te coördineren, nu rechtstreeks geïntegreerd in SQL Database of een beheerd exemplaar. Toepassingen kunnen verbinding maken met elke Data Base om gedistribueerde trans acties te starten. een van de data bases of servers zal de gedistribueerde trans actie transparant coördineren, zoals wordt weer gegeven in de volgende afbeelding.
 
 In dit document worden "gedistribueerde trans acties" en "Elastic data base trans actions" beschouwd als synoniemen en worden ze door elkaar gebruikt.
 
@@ -238,9 +238,9 @@ Elastische-database transacties worden ondersteund op verschillende servers in A
 
 Gebruik de volgende Power shell-cmdlets voor het beheren van communicatie relaties tussen servers voor Elastic data base-trans acties:
 
-* **New-AzSqlServerCommunicationLink** : gebruik deze cmdlet om een nieuwe communicatie relatie te maken tussen twee servers in Azure SQL database. De relatie is symmetrisch, wat betekent dat beide servers trans acties kunnen initiëren met de andere server.
-* **Get-AzSqlServerCommunicationLink** : gebruik deze cmdlet om bestaande communicatie relaties en hun eigenschappen op te halen.
-* **Remove-AzSqlServerCommunicationLink** : gebruik deze cmdlet om een bestaande communicatie relatie te verwijderen.
+* **New-AzSqlServerCommunicationLink**: gebruik deze cmdlet om een nieuwe communicatie relatie te maken tussen twee servers in Azure SQL database. De relatie is symmetrisch, wat betekent dat beide servers trans acties kunnen initiëren met de andere server.
+* **Get-AzSqlServerCommunicationLink**: gebruik deze cmdlet om bestaande communicatie relaties en hun eigenschappen op te halen.
+* **Remove-AzSqlServerCommunicationLink**: gebruik deze cmdlet om een bestaande communicatie relatie te verwijderen.
 
 ## <a name="transactions-across-multiple-servers-for-azure-sql-managed-instance"></a>Trans acties op meerdere servers voor Azure SQL Managed instance
 
@@ -258,9 +258,9 @@ Gebruik dynamische beheer weergaven (Dmv's) om de status en voortgang van uw lop
 
 Deze Dmv's zijn bijzonder nuttig:
 
-* **sys.DM \_ Tran \_ actieve \_ trans acties** : een lijst met momenteel actieve trans acties en hun status. De kolom UOW (eenheid van werk) kan de verschillende onderliggende trans acties identificeren die deel uitmaken van dezelfde gedistribueerde trans actie. Alle trans acties binnen dezelfde gedistribueerde trans actie hebben dezelfde UOW-waarde. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-active-transactions-transact-sql)voor meer informatie.
-* **sys.DM \_ Tran- \_ database \_ transacties** : biedt aanvullende informatie over trans acties, zoals plaatsing van de trans actie in het logboek. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql)voor meer informatie.
-* **sys.DM \_ Tran- \_ vergren delingen** : bevat informatie over de vergren delingen die momenteel worden bewaard door lopende trans acties. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql)voor meer informatie.
+* **sys.DM \_ Tran \_ actieve \_ trans acties**: een lijst met momenteel actieve trans acties en hun status. De kolom UOW (eenheid van werk) kan de verschillende onderliggende trans acties identificeren die deel uitmaken van dezelfde gedistribueerde trans actie. Alle trans acties binnen dezelfde gedistribueerde trans actie hebben dezelfde UOW-waarde. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-active-transactions-transact-sql)voor meer informatie.
+* **sys.DM \_ Tran- \_ database \_ transacties**: biedt aanvullende informatie over trans acties, zoals plaatsing van de trans actie in het logboek. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql)voor meer informatie.
+* **sys.DM \_ Tran- \_ vergren delingen**: bevat informatie over de vergren delingen die momenteel worden bewaard door lopende trans acties. Zie de [dmv-documentatie](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql)voor meer informatie.
 
 ## <a name="limitations"></a>Beperkingen
 

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: genemi
 ms.date: 01/25/2019
 ms.openlocfilehash: 07334d62cee94be8b5b8dd6188c1d6354c4d584b
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792596"
 ---
 # <a name="how-to-use-batching-to-improve-azure-sql-database-and-azure-sql-managed-instance-application-performance"></a>Batch verwerking gebruiken om de prestaties van Azure SQL Database en Azure SQL Managed instance-toepassingen te verbeteren
@@ -97,18 +97,18 @@ Trans acties worden feitelijk gebruikt in beide voor beelden. In het eerste voor
 
 In de volgende tabel ziet u enkele ad hoc test resultaten. De tests hebben dezelfde sequentiële toevoegingen met en zonder trans acties uitgevoerd. Voor meer perspectief is de eerste set testen op afstand uitgevoerd vanaf een laptop naar de data base in Microsoft Azure. De tweede set tests is uitgevoerd vanuit een Cloud service en data base die zich in hetzelfde Microsoft Azure Data Center (VS-West) bevindt. De volgende tabel toont de duur in milliseconden van opeenvolgende toevoegingen met en zonder trans acties.
 
-**On-premises naar Azure** :
+**On-premises naar Azure**:
 
-| Bewerkingen | Geen trans actie (MS) | Trans actie (MS) |
+| Operations | Geen trans actie (MS) | Trans actie (MS) |
 | --- | --- | --- |
 | 1 |130 |402 |
 | 10 |1208 |1226 |
 | 100 |12662 |10395 |
 | 1000 |128852 |102917 |
 
-**Azure naar Azure (hetzelfde Data Center)** :
+**Azure naar Azure (hetzelfde Data Center)**:
 
-| Bewerkingen | Geen trans actie (MS) | Trans actie (MS) |
+| Operations | Geen trans actie (MS) | Trans actie (MS) |
 | --- | --- | --- |
 | 1 |21 |26 |
 | 10 |220 |56 |
@@ -128,7 +128,7 @@ Zie [lokale trans acties in ADO.net](/dotnet/framework/data/adonet/local-transac
 
 ### <a name="table-valued-parameters"></a>Tabelwaardeparameters
 
-Para meters voor tabel waarden ondersteunen door de gebruiker gedefinieerde tabel typen als para meters in Transact-SQL-instructies, opgeslagen procedures en functies. Met deze batch techniek voor client zijde kunt u meerdere rijen met gegevens binnen de tabelwaardeparameter verzenden. Als u para meters met tabel waarden wilt gebruiken, moet u eerst een tabel type definiëren. Met de volgende Transact-SQL-instructie maakt u een tabel type met de naam **MyTableType** .
+Para meters voor tabel waarden ondersteunen door de gebruiker gedefinieerde tabel typen als para meters in Transact-SQL-instructies, opgeslagen procedures en functies. Met deze batch techniek voor client zijde kunt u meerdere rijen met gegevens binnen de tabelwaardeparameter verzenden. Als u para meters met tabel waarden wilt gebruiken, moet u eerst een tabel type definiëren. Met de volgende Transact-SQL-instructie maakt u een tabel type met de naam **MyTableType**.
 
 ```sql
     CREATE TYPE MyTableType AS TABLE
@@ -169,7 +169,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 }
 ```
 
-In het vorige voor beeld voegt het **SqlCommand** -object rijen uit een tabelwaardeparameter, **\@ TestTvp** . Het eerder gemaakte **DataTable** -object wordt toegewezen aan deze para meter met de methode **SqlCommand. para meters. add** . Als u de invoeging in één gesprek inschakelt, neemt de prestaties aanzienlijk toe tijdens opeenvolgende invoegingen.
+In het vorige voor beeld voegt het **SqlCommand** -object rijen uit een tabelwaardeparameter, **\@ TestTvp**. Het eerder gemaakte **DataTable** -object wordt toegewezen aan deze para meter met de methode **SqlCommand. para meters. add** . Als u de invoeging in één gesprek inschakelt, neemt de prestaties aanzienlijk toe tijdens opeenvolgende invoegingen.
 
 Als u het vorige voor beeld verder wilt verbeteren, gebruikt u een opgeslagen procedure in plaats van een op tekst gebaseerde opdracht. Met de volgende Transact-SQL-opdracht maakt u een opgeslagen procedure die de **SimpleTestTableType** -para meter voor de tabel waarde gebruikt.
 
@@ -195,7 +195,7 @@ In de meeste gevallen hebben para meters met een tabel waarde dezelfde of betere
 
 In de volgende tabel ziet u de resultaten van ad hoc tests voor het gebruik van para meters met tabel waarden in milliseconden.
 
-| Bewerkingen | On-premises naar Azure (MS) | Azure hetzelfde Data Center (MS) |
+| Operations | On-premises naar Azure (MS) | Azure hetzelfde Data Center (MS) |
 | --- | --- | --- |
 | 1 |124 |32 |
 | 10 |131 |25 |
@@ -212,7 +212,7 @@ Zie [para meters voor tabel waarden](/sql/relational-databases/tables/use-table-
 
 ### <a name="sql-bulk-copy"></a>Bulksgewijs kopiëren van SQL
 
-SQL bulksgewijze kopie is een andere manier om grote hoeveel heden gegevens in te voegen in een doel database. .NET-toepassingen kunnen de klasse **SqlBulkCopy** gebruiken om bulksgewijze Insert-bewerkingen uit te voeren. **SqlBulkCopy** is vergelijkbaar met de functie voor het opdracht regel programma, **Bcp.exe** of de Transact-SQL-instructie **Bulk Insert** . In het volgende code voorbeeld ziet u hoe u de rijen in de bron- **DataTable** , tabel, in bulk kunt kopiëren naar de doel tabel mytable.
+SQL bulksgewijze kopie is een andere manier om grote hoeveel heden gegevens in te voegen in een doel database. .NET-toepassingen kunnen de klasse **SqlBulkCopy** gebruiken om bulksgewijze Insert-bewerkingen uit te voeren. **SqlBulkCopy** is vergelijkbaar met de functie voor het opdracht regel programma, **Bcp.exe** of de Transact-SQL-instructie **Bulk Insert**. In het volgende code voorbeeld ziet u hoe u de rijen in de bron- **DataTable**, tabel, in bulk kunt kopiëren naar de doel tabel mytable.
 
 ```csharp
 using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.GetSetting("Sql.ConnectionString")))
@@ -233,7 +233,7 @@ Er zijn enkele gevallen waarin bulksgewijs kopiëren de voor keur geeft aan de p
 
 De volgende ad hoc test resultaten tonen de prestaties van batching met **SqlBulkCopy** in milliseconden.
 
-| Bewerkingen | On-premises naar Azure (MS) | Azure hetzelfde Data Center (MS) |
+| Operations | On-premises naar Azure (MS) | Azure hetzelfde Data Center (MS) |
 | --- | --- | --- |
 | 1 |433 |57 |
 | 10 |441 |32 |
@@ -276,7 +276,7 @@ Dit voor beeld is bedoeld om het basis concept weer te geven. In een realistisch
 
 De volgende resultaten van ad hoc tests geven de prestaties van dit type instructie INSERT in milliseconden weer.
 
-| Bewerkingen | Tabelwaardeparameter (MS) | INSERT met één instructie (MS) |
+| Operations | Tabelwaardeparameter (MS) | INSERT met één instructie (MS) |
 | --- | --- | --- |
 | 1 |32 |20 |
 | 10 |30 |25 |

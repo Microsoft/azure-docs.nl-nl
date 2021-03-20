@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: tomfitz
 ms.openlocfilehash: b9b27a432776635290c7e8e796e84d8c1e0e8675
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92168338"
 ---
 # <a name="microsoftcommondropdown-ui-element"></a>Micro soft. common. vervolg keuzelijst UI-element
@@ -26,19 +26,19 @@ Als er slechts één item is toegestaan voor selectie, wordt het besturings elem
 
 Wanneer beschrijvingen zijn opgenomen, wordt het besturings element weer gegeven als:
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-2.png" alt-text="Micro soft. common. DropDown, enkelvoudige selectie":::
+:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-2.png" alt-text="Micro soft. common. vervolg keuzelijst met één selectie met beschrijvingen":::
 
 Als meervoudige selectie is ingeschakeld, voegt het besturings element de optie **alle selecteren** en selectie vakjes toe voor het selecteren van meer dan één item:
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-3.png" alt-text="Micro soft. common. DropDown, enkelvoudige selectie":::
+:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-3.png" alt-text="Micro soft. common. DropDown multi-select":::
 
 Beschrijvingen kunnen worden opgenomen in meervoudige selectie ingeschakeld.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-4.png" alt-text="Micro soft. common. DropDown, enkelvoudige selectie":::
+:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-4.png" alt-text="Scherm afbeelding die laat zien hoe beschrijvingen kunnen worden opgenomen in meervoudige selectie ingeschakeld":::
 
 Wanneer filteren is ingeschakeld, bevat het besturings element een tekstvak voor het toevoegen van de filter waarde.
 
-:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-5.png" alt-text="Micro soft. common. DropDown, enkelvoudige selectie":::
+:::image type="content" source="./media/managed-application-elements/microsoft-common-dropdown-5.png" alt-text="Micro soft. common. DropDown multi-select met beschrijvingen":::
 
 ## <a name="schema"></a>Schema
 

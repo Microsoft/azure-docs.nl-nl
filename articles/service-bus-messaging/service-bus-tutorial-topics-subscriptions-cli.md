@@ -6,10 +6,10 @@ ms.topic: quickstart
 author: spelluru
 ms.author: spelluru
 ms.openlocfilehash: 080b089efa276779420f6d9bc8e76272f1e65788
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90069693"
 ---
 # <a name="use-azure-cli-to-create-a-service-bus-topic-and-subscriptions-to-the-topic"></a>De Azure CLI gebruiken om een Service Bus-onderwerp en abonnementen te maken voor het onderwerp
@@ -27,7 +27,7 @@ Met Service Bus-onderwerpen en -abonnementen kunt u opschalen naar het verwerken
 ## <a name="prerequisites"></a>Vereisten
 Als u nog geen abonnement op Azure hebt, kunt u een [gratis account][free account] maken voordat u begint.
 
-In deze quickstart gebruikt u Azure Cloud Shell dat u kunt starten nadat u zich hebt aangemeld bij de Azure-portal. Zie [Overzicht van Azure Cloud Shell](../cloud-shell/overview.md) voor meer informatie over Azure Cloud Shell. U kunt Azure PowerShell ook op uw computer [installeren](/cli/azure/install-azure-cli) en gebruiken. 
+In deze quickstart gebruikt u Azure Cloud Shell dat u kunt starten nadat u zich hebt aangemeld bij Azure Portal. Zie [Overzicht van Azure Cloud Shell](../cloud-shell/overview.md) voor meer informatie over Azure Cloud Shell. U kunt Azure PowerShell ook op uw computer [installeren](/cli/azure/install-azure-cli) en gebruiken. 
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Een Service Bus-onderwerp en abonnementen maken
 Elk [abonnement op een onderwerp](service-bus-messaging-overview.md#topics) kan een kopie van elk bericht ontvangen. Onderwerpen zijn qua protocol en semantiek volledig compatibel met Service Bus-wachtrijen. Service Bus-onderwerpen ondersteunen een breed scala aan selectieregels met filtervoorwaarden, met optionele acties waarmee berichteigenschappen worden ingesteld of gewijzigd. Telkens wanneer een regel overeenkomt, wordt er een bericht gegenereerd. Volg deze [koppeling](topic-filters.md) voor meer informatie over regels, filters en acties.

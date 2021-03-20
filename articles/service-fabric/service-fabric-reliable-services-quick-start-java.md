@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-javai
 ms.openlocfilehash: f67957d711958febdb01dfad0b3c44a92cb0bcfa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91535233"
 ---
 # <a name="get-started-with-reliable-services-in-java"></a>Aan de slag met Reliable Services in Java
@@ -29,7 +29,7 @@ Om aan de slag te gaan met Reliable Services hoeft u slechts enkele basis concep
 
 * **Service type**: dit is de service-implementatie. Het wordt gedefinieerd door de klasse die u schrijft `StatelessService` , en alle andere code of afhankelijkheden die erin worden gebruikt, samen met een naam en versie nummer.
 * **Benoemd service-exemplaar**: als u uw service wilt uitvoeren, maakt u benoemde instanties van uw service type, net zoals u object instanties van een klassetype maakt. Service-exemplaren bevinden zich in feite object instanties van uw service klasse die u schrijft.
-* **Servicehost: de**benoemde service-exemplaren die u maakt, moeten binnen een host worden uitgevoerd. De servicehost is slechts een proces waarbij exemplaren van uw service kunnen worden uitgevoerd.
+* **Servicehost: de** benoemde service-exemplaren die u maakt, moeten binnen een host worden uitgevoerd. De servicehost is slechts een proces waarbij exemplaren van uw service kunnen worden uitgevoerd.
 * **Service registratie**: registratie brengt alles samen. Het Service type moet worden geregistreerd bij de Service Fabric runtime in een servicehost om Service Fabric toe te staan dat er exemplaren van worden gemaakt om te worden uitgevoerd.  
 
 ## <a name="create-a-stateless-service"></a>Een stateless service maken
@@ -193,7 +193,7 @@ ReliableHashMap<String,Long> map = this.stateManager.<String, Long>getOrAddRelia
 
 In betrouw bare verzamelingen kan elk Java-type worden opgeslagen, inclusief uw aangepaste typen, met een aantal voor behoud:
 
-* Service Fabric maakt uw status Maxi maal beschikbaar door de status van de knoop punten te *repliceren* en betrouw bare HashMap worden uw gegevens opgeslagen op de lokale schijf van elke replica. Dit betekent dat alles dat is opgeslagen in betrouw bare HashMaps *serialiseerbaar*moet zijn. 
+* Service Fabric maakt uw status Maxi maal beschikbaar door de status van de knoop punten te *repliceren* en betrouw bare HashMap worden uw gegevens opgeslagen op de lokale schijf van elke replica. Dit betekent dat alles dat is opgeslagen in betrouw bare HashMaps *serialiseerbaar* moet zijn. 
 * Objecten worden gerepliceerd voor hoge Beschik baarheid wanneer u trans acties doorvoert op betrouw bare HashMaps. Objecten die zijn opgeslagen in betrouw bare HashMaps, worden in het lokale geheugen in uw service bewaard. Dit betekent dat u een lokale verwijzing naar het object hebt.
   
    Het is belang rijk dat u geen lokale exemplaren van deze objecten mutate zonder een update-bewerking uit te voeren op de betrouw bare verzameling in een trans actie. Dit komt doordat wijzigingen in lokale exemplaren van objecten niet automatisch worden gerepliceerd. U moet het object opnieuw invoegen in de woorden lijst of een van de *Update* methoden gebruiken in de woorden lijst.

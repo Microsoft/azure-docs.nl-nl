@@ -10,10 +10,10 @@ ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 52e993a22a512a94c8b5b8b050205db0c4ce0b1b
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100650317"
 ---
 # <a name="use-net-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>.NET gebruiken voor het beheren van mappen en bestanden in Azure Data Lake Storage Gen2

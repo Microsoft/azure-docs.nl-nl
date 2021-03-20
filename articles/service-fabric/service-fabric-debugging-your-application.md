@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 0b7d08d610c883240abedc66c55abba64a74c8e3
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96576312"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Foutopsporing uitvoeren in uw Service Fabric-toepassing met behulp van Visual Studio
@@ -39,7 +39,7 @@ U kunt tijd en geld besparen door uw Azure Service Fabric-toepassing te implemen
     ![Het venster diagnostische gebeurtenissen openen][viewdiagnosticevents]
    
     Als u uw traceringen wilt filteren op een bepaalde service of toepassing, schakelt u streaming traceringen in op die specifieke service of toepassing.
-6. De diagnostische gebeurtenissen kunnen worden weer gegeven in het automatisch gegenereerde **ServiceEventSource.cs** -bestand en worden aangeroepen vanuit toepassings code.
+6. De diagnostische gebeurtenissen kunnen worden weer gegeven in het automatisch gegenereerde bestand **ServiceEventSource. cs** en worden aangeroepen vanuit toepassings code.
    
     ```csharp
     ServiceEventSource.Current.ServiceMessage(this, "My ServiceMessage with a parameter {0}", result.Value.ToString());

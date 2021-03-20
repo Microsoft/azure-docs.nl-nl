@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 01/12/2021
 ms.openlocfilehash: d07b52d8abeab34d565ebde4bac58eec66780dce
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98179262"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-cognitive-skillset-in-the-azure-portal"></a>Quickstart: Een cognitieve vaardighedenset van Azure Cognitive Search maken in de Azure-portal
@@ -23,7 +23,7 @@ In deze quickstart combineert u services en gegevens in de Azure-cloud om de vaa
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u begint, moet u beschikken over het volgende:
+Voordat u begint, moet u beschikken over de volgende vereisten:
 
 + Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/)
 

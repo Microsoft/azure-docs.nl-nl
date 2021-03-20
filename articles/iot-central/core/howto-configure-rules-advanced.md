@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: 257855b4f7b1fae56ed8d6a063acfb0588da9b6a
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92123317"
 ---
 # <a name="use-workflows-to-integrate-your-azure-iot-central-application-with-other-cloud-services"></a>Werk stromen gebruiken om uw Azure IoT Central-toepassing te integreren met andere Cloud Services
@@ -40,16 +40,16 @@ Voordat u een werk stroom in Power Automatiseer of Azure Logic Apps kunt activer
 
 De **Azure IOT Central v3-preview-** connector toevoegen als een trigger in automatische stroom:
 
-1. Selecteer **+ maken**in automatische stroom, selecteer het tabblad **aangepast** .
-1. Zoek naar *IOT Central*en selecteer de connector **Azure IOT Central v3-preview** .
+1. Selecteer **+ maken** in automatische stroom, selecteer het tabblad **aangepast** .
+1. Zoek naar *IOT Central* en selecteer de connector **Azure IOT Central v3-preview** .
 1. Selecteer in de lijst met triggers **Wanneer een regel wordt geactiveerd (preview)**.
 1. Selecteer in de stap **Wanneer een regel wordt gestart** de IOT Central toepassing en de regel die u gebruikt.
 
 De **Azure IOT Central v3-preview-** connector toevoegen als een trigger in azure Logic apps:
 
-1. Selecteer in **Logic apps Designer**de sjabloon voor de **lege logische app** .
+1. Selecteer in **Logic apps Designer** de sjabloon voor de **lege logische app** .
 1. Selecteer in de ontwerp functie het tabblad **aangepast** .
-1. Zoek naar *IOT Central*en selecteer de connector **Azure IOT Central v3-preview** .
+1. Zoek naar *IOT Central* en selecteer de connector **Azure IOT Central v3-preview** .
 1. Selecteer in de lijst met triggers **Wanneer een regel wordt geactiveerd (preview)**.
 1. Selecteer in de stap **Wanneer een regel wordt gestart** de IOT Central toepassing en de regel die u gebruikt.
 
@@ -70,12 +70,12 @@ Als u de **Azure IOT Central v3-preview-** connector als actie wilt toevoegen in
 
 De **Azure IOT Central v3-preview-** connector toevoegen als actie in azure Logic apps:
 
-1. Selecteer in **Logic apps Designer**in het deel venster **een actie kiezen** het tabblad **aangepast** .
-1. Zoek naar *IOT Central*en selecteer de connector **Azure IOT Central v3-preview** .
+1. Selecteer in **Logic apps Designer** in het deel venster **een actie kiezen** het tabblad **aangepast** .
+1. Zoek naar *IOT Central* en selecteer de connector **Azure IOT Central v3-preview** .
 1. Selecteer in de lijst met acties de IoT Central actie die u wilt gebruiken.
 1. Voer in de stap actie de configuratie uit voor de actie die u hebt gekozen. Selecteer vervolgens **Opslaan**.
 
-:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Zoek de Azure IoT Central-preview-connector en kies de trigger":::
+:::image type="content" source="./media/howto-configure-rules-advanced/actions.png" alt-text="Zoek de Azure IoT Central v3-connector en kies een actie":::
 
 ## <a name="list-of-actions"></a>Lijst met acties
 
@@ -129,7 +129,7 @@ Gebruik deze actie om de details van het apparaat op te halen.
 | Toepassing | Kies uit de lijst met IoT Central toepassingen. |
 | Apparaat | De unieke ID van het apparaat dat moet worden verwijderd. |
 
-U kunt de geretourneerde Details in de dynamische expressies in andere acties gebruiken. De details van het apparaat zijn als volgt: **goedgekeurd**, **hoofd tekst** **, apparaatbeschrijving,** apparaatnaam, **apparaatprofiel** **,** **ingericht**en **gesimuleerd**.
+U kunt de geretourneerde Details in de dynamische expressies in andere acties gebruiken. De details van het apparaat zijn als volgt: **goedgekeurd**, **hoofd tekst** **, apparaatbeschrijving,** apparaatnaam, **apparaatprofiel** **,** **ingericht** en **gesimuleerd**.
 
 ### <a name="get-device-cloud-properties"></a>Eigenschappen van de apparaat-Cloud ophalen
 

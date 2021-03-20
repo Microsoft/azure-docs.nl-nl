@@ -4,10 +4,10 @@ description: Configureer IP-regels voor toegang tot een Azure container Registry
 ms.topic: article
 ms.date: 08/17/2020
 ms.openlocfilehash: 4e4ee817e2534bcca09cba89daafd379ff3f03f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89488759"
 ---
 # <a name="configure-public-ip-network-rules"></a>Open bare IP-netwerk regels configureren
@@ -46,9 +46,9 @@ az acr network-rule add \
 ## <a name="access-from-selected-public-network---portal"></a>Toegang vanuit geselecteerd openbaar netwerk-Portal
 
 1. Navigeer in de portal naar het container register.
-1. Selecteer onder **instellingen**de optie **netwerken**.
-1. Schakel op het tabblad **open bare toegang** het selectie vakje open bare toegang tot **geselecteerde netwerken**toe.
-1. Voer onder **firewall**een openbaar IP-adres in, zoals het open bare IP-adres van een virtuele machine in een virtueel netwerk. Of voer een adres bereik in de CIDR-notatie in die het IP-adres van de virtuele machine bevat.
+1. Selecteer onder **instellingen** de optie **netwerken**.
+1. Schakel op het tabblad **open bare toegang** het selectie vakje open bare toegang tot **geselecteerde netwerken** toe.
+1. Voer onder **firewall** een openbaar IP-adres in, zoals het open bare IP-adres van een virtuele machine in een virtueel netwerk. Of voer een adres bereik in de CIDR-notatie in die het IP-adres van de virtuele machine bevat.
 1. Selecteer **Opslaan**.
 
 ![Firewall regel voor container register configureren][acr-access-selected-networks]
@@ -77,7 +77,7 @@ az acr update --name myContainerRegistry --public-network-enabled false
 ### <a name="disable-public-access---portal"></a>Open bare toegang uitschakelen-Portal
 
 1. Ga in de portal naar het container register en selecteer **instellingen > netwerk**.
-1. Selecteer op het tabblad **open bare toegang** in **open bare netwerk toegang toestaan**de optie **uitgeschakeld**. Selecteer vervolgens **Opslaan**.
+1. Selecteer op het tabblad **open bare toegang** in **open bare netwerk toegang toestaan** de optie **uitgeschakeld**. Selecteer vervolgens **Opslaan**.
 
 ![Open bare toegang uitschakelen][acr-access-disabled]
 

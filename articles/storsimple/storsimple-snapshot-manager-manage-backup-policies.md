@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 745aeb9844f1abad075d34b34735563200ea618b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90054939"
 ---
 # <a name="use-storsimple-snapshot-manager-to-create-and-manage-backup-policies"></a>StorSimple-Snapshot Manager gebruiken voor het maken en beheren van back-upbeleid
@@ -36,7 +36,7 @@ Gebruik de volgende procedure om een nieuw back-upbeleid te maken.
 
 #### <a name="to-create-a-backup-policy"></a>Een back-upbeleid maken
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
-2. Klik in het deel venster **bereik** met de rechter muisknop op **back-upbeleid**en klik op **back-upbeleid maken**.
+2. Klik in het deel venster **bereik** met de rechter muisknop op **back-upbeleid** en klik op **back-upbeleid maken**.
 
     ![Maak een back-upbeleid](./media/storsimple-snapshot-manager-manage-backup-policies/HCS_SSM_Create_BU_policy.png)
 
@@ -48,16 +48,16 @@ Gebruik de volgende procedure om een nieuw back-upbeleid te maken.
    1. Typ in het tekstvak **naam** een naam voor het beleid.
    2. Typ in het tekstvak **volume groep** de naam van de volume groep die is gekoppeld aan het beleid.
    3. Selecteer een **lokale moment opname** of een **Cloud momentopname**.
-   4. Selecteer het aantal moment opnamen dat u wilt behouden. Als u **alle**selecteert, worden de 64-moment opnamen bewaard (het maximum).
+   4. Selecteer het aantal moment opnamen dat u wilt behouden. Als u **alle** selecteert, worden de 64-moment opnamen bewaard (het maximum).
 4. Klik op de **schema** tabblad.
 
     ![Een tabblad beleid maken](./media/storsimple-snapshot-manager-manage-backup-policies/HCS_SSM_Create_policy_schedule.png)
 5. Op het tabblad **planning** voert u de volgende gegevens in:
 
    1. Klik op het selectie vakje **inschakelen** om de volgende back-up te plannen.
-   2. Onder **instellingen**selecteert u **eenmalig**, **dagelijks**, **wekelijks**of **maandelijks**.
+   2. Onder **instellingen** selecteert u **eenmalig**, **dagelijks**, **wekelijks** of **maandelijks**.
    3. Klik in het tekstvak **Start** op het kalender pictogram en selecteer een begin datum.
-   4. Onder **Geavanceerde instellingen**kunt u optionele herhalings schema's en een eind datum instellen.
+   4. Onder **Geavanceerde instellingen** kunt u optionele herhalings schema's en een eind datum instellen.
    5. Klik op **OK**.
 
 Nadat u een back-upbeleid hebt gemaakt, wordt de volgende informatie weer gegeven in het **resultaten** venster:

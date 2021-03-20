@@ -10,13 +10,13 @@ ms.date: 11/14/2019
 ms.author: absha
 ms.custom: mvc
 ms.openlocfilehash: 6e2d1828acefacb03cc2f42193b8cd8897578b6f
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397498"
 ---
-# <a name="configure-end-to-end-tls-by-using-application-gateway-with-the-portal"></a>End-to-end TLS configureren met behulp van Application Gateway met de portal
+# <a name="configure-end-to-end-tls-by-using-application-gateway-with-the-portal"></a>End-to-end-TLS configureren met Application Gateway met behulp van de portal
 
 In dit artikel wordt beschreven hoe u met behulp van de Azure Portal end-to-end-Transport Layer Security (TLS)-versleuteling, voorheen bekend als Secure Sockets Layer (SSL)-code ring, kunt configureren via Azure-toepassing gateway v1 SKU.
 
@@ -45,7 +45,7 @@ Zie [TLS-beëindiging inschakelen tijdens het maken van een nieuwe toepassings g
 
 1. Selecteer **Alle resources** en vervolgens **myAppGateway**.
 
-2. Selecteer **http-instellingen** in het menu aan de linkerkant. Azure heeft automatisch een standaard HTTP-instelling, **appGatewayBackendHttpSettings** , gemaakt wanneer u de toepassings gateway hebt gemaakt. 
+2. Selecteer **http-instellingen** in het menu aan de linkerkant. Azure heeft automatisch een standaard HTTP-instelling, **appGatewayBackendHttpSettings**, gemaakt wanneer u de toepassings gateway hebt gemaakt. 
 
 3. Selecteer **appGatewayBackendHttpSettings**.
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/14/2020
 ms.openlocfilehash: 78395873457f9fe53d45dfbfd94aa9ccdccd614d
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92485457"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>PostgreSQL-extensies in Azure Database for PostgreSQL - individuele server
@@ -26,7 +26,7 @@ Azure Database for PostgreSQL ondersteunt een subset van de sleutel uitbreidinge
 De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL servers die post gres-versie 11 hebben. 
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer**| **Versie van de extensie** | **Deschription** (Beschrijving) |
+> | **Toestelnummer**| **Versie van de extensie** | **Beschrijving** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Wordt gebruikt om een adres te parseren in onderdeel elementen. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Adres van voor beeld van een gegevensset voor de standaardiserer|
@@ -71,7 +71,7 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL servers die post gres versie 10 hebben.
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer**| **Versie van de extensie** | **Deschription** (Beschrijving) |
+> | **Toestelnummer**| **Versie van de extensie** | **Beschrijving** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Wordt gebruikt om een adres te parseren in onderdeel elementen. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Adres van voor beeld van een gegevensset voor de standaardiserer|
@@ -117,7 +117,7 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL servers met post gres-versie 9,6.
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer**| **Versie van de extensie** | **Deschription** (Beschrijving) |
+> | **Toestelnummer**| **Versie van de extensie** | **Beschrijving** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.3.2           | Wordt gebruikt om een adres te parseren in onderdeel elementen. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.3.2           | Adres van voor beeld van een gegevensset voor de standaardiserer|
@@ -163,7 +163,7 @@ De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL ser
 De volgende uitbrei dingen zijn beschikbaar op Azure Database for PostgreSQL servers met post gres-versie 9,5.
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer**| **Versie van de extensie** | **Deschription** (Beschrijving) |
+> | **Toestelnummer**| **Versie van de extensie** | **Beschrijving** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.3.0           | Wordt gebruikt om een adres te parseren in onderdeel elementen. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.3.0           | Adres van voor beeld van een gegevensset voor de standaardiserer|

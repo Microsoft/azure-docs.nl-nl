@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 4a1680eab345cd78f13860249d6cc0f97c52e56e
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92460010"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Zelfstudie: Azure Active Directory-integratie met Insperity ExpensAble
@@ -49,7 +49,7 @@ Als u de integratie van Insperity ExpensAble met Azure AD wilt configureren, die
 
 **Voer de volgende stappen uit als u Insperity ExpensAble vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Als u de integratie van Insperity ExpensAble met Azure AD wilt configureren, die
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Insperity ExpensAble** , selecteer **Insperity ExpensAble** in het deelvenster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Insperity ExpensAble**, selecteer **Insperity ExpensAble** in het deelvenster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Insperity ExpensAble in de resultatenlijst](common/search-new-app.png)
 
@@ -122,13 +122,13 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Azure AD met Insperi
 
 ### <a name="configure-insperity-expensable-single-sign-on"></a>Eenmalige aanmelding van Insperity ExpensAble configureren
 
-Als u eenmalige aanmelding aan de **Insperity ExpensAble** -zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Microsoft Azure-portal gekopieerde URL's naar het [Insperity ExpensAble-ondersteuningsteam](https://www.insperity.com/products/expense-management/support/express/) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Insperity ExpensAble**-zijde wilt configureren, moet u het gedownloade **Certificaat (Base64)** en de correct van de Microsoft Azure-portal gekopieerde URL's naar het [Insperity ExpensAble-ondersteuningsteam](https://www.insperity.com/products/expense-management/support/express/) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -153,7 +153,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte maakt u het mogelijk voor Britta Simon om eenmalige aanmelding voor Azure te gebruiken door haar toegangsrechten voor Insperity ExpensAble te verlenen.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Insperity ExpensAble**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Insperity ExpensAble**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

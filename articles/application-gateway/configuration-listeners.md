@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
 ms.openlocfilehash: 15f68e8cbca65e7b970944f7ca5ef1952140cc6b
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93397635"
 ---
 # <a name="application-gateway-listener-configuration"></a>Configuratie van Application Gateway listener
@@ -20,7 +20,7 @@ ms.locfileid: "93397635"
 
 Een listener is een logische entiteit die controleert op binnenkomende verbindings aanvragen met behulp van de poort, het Protocol, de host en het IP-adres. Wanneer u de listener configureert, moet u waarden opgeven voor deze die overeenkomen met de overeenkomende waarden in de inkomende aanvraag op de gateway.
 
-Wanneer u een toepassings gateway maakt met behulp van de Azure Portal, maakt u ook een standaard-listener door het protocol en de poort voor de listener te kiezen. U kunt kiezen of u ondersteuning voor HTTP2 wilt inschakelen voor de listener. Nadat u de toepassings gateway hebt gemaakt, kunt u de instellingen van de standaard-listener ( *appGatewayHttpListener* ) bewerken of nieuwe listeners maken.
+Wanneer u een toepassings gateway maakt met behulp van de Azure Portal, maakt u ook een standaard-listener door het protocol en de poort voor de listener te kiezen. U kunt kiezen of u ondersteuning voor HTTP2 wilt inschakelen voor de listener. Nadat u de toepassings gateway hebt gemaakt, kunt u de instellingen van de standaard-listener (*appGatewayHttpListener*) bewerken of nieuwe listeners maken.
 
 ## <a name="listener-type"></a>Type listener
 
@@ -87,7 +87,7 @@ Als u een algemene aangepaste fout pagina wilt configureren, raadpleegt u [Azure
 
 ## <a name="tls-policy"></a>TLS-beleid
 
-U kunt TLS/SSL-certificaat beheer centraliseren en de overhead voor het ontsleutelen van versleuteling voor een back-endserver verlagen. Met gecentraliseerde TLS-verwerking kunt u ook een centraal TLS-beleid opgeven dat geschikt is voor uw beveiligings vereisten. U kunt *standaard* , *vooraf gedefinieerd* of *aangepast* TLS-beleid kiezen.
+U kunt TLS/SSL-certificaat beheer centraliseren en de overhead voor het ontsleutelen van versleuteling voor een back-endserver verlagen. Met gecentraliseerde TLS-verwerking kunt u ook een centraal TLS-beleid opgeven dat geschikt is voor uw beveiligings vereisten. U kunt *standaard*, *vooraf gedefinieerd* of *aangepast* TLS-beleid kiezen.
 
 U configureert TLS-beleid voor het beheren van TLS-protocol versies. U kunt een toepassings gateway configureren voor het gebruik van een minimale Protocol versie voor TLS-Handshakes van TLS 1.0, TLS 1.1 en TLS 1.2. SSL 2,0 en 3,0 zijn standaard uitgeschakeld en kunnen niet worden geconfigureerd. Zie [Application Gateway TLS-beleids overzicht](./application-gateway-ssl-policy-overview.md)voor meer informatie.
 

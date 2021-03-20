@@ -4,10 +4,10 @@ description: Meer informatie over het bijwerken van de configuratie waarmee een 
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.openlocfilehash: 692dc2162159ab61a3ac527e12dac43438084a60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91842713"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>De configuratie van een cluster in azure upgraden 
@@ -25,7 +25,7 @@ In dit artikel wordt beschreven hoe u de verschillende infrastructuur instelling
 Azure-clusters kunnen worden geconfigureerd via de JSON Resource Manager-sjabloon. Zie [configuratie-instellingen voor clusters](service-fabric-cluster-fabric-settings.md)voor meer informatie over de verschillende instellingen. De volgende stappen laten zien hoe u een nieuwe instelling *MaxDiskQuotaInMB* kunt toevoegen aan de sectie *Diagnostische gegevens* met behulp van Azure resource Explorer.
 
 1. Ga naar https://resources.azure.com
-2. Navigeer naar uw abonnement door **abonnementen**van de  ->  **\<Your Subscription>**  ->  **resourceGroups**-  ->  **\<Your Resource Group>**  ->  **providers**  ->  **micro soft. ServiceFabric**-  ->  **clusters** uit te vouwen -> **\<Your Cluster Name>**
+2. Navigeer naar uw abonnement door **abonnementen** van de  ->  **\<Your Subscription>**  ->  **resourceGroups**-  ->  **\<Your Resource Group>**  ->  **providers**  ->  **micro soft. ServiceFabric**-  ->  **clusters** uit te vouwen -> **\<Your Cluster Name>**
 3. Selecteer in de rechter bovenhoek de optie **lezen/schrijven.**
 4. Selecteer **bewerken** en werk het `fabricSettings` JSON-element bij en voeg een nieuw element toe:
 

@@ -5,16 +5,16 @@ author: enkrumah
 ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 04/08/2019
+ms.date: 03/16/2021
 ms.custom: seodec18
-ms.openlocfilehash: d7e9b1ecef9cfda804b89f0ba1beeb54d7d48b98
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: d5b406d260b1c6518d9227c51d84ab7eb3754329
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020346"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598147"
 ---
-# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities-preview"></a>Stream Analytics verifiëren voor het Azure Data Lake Storage Gen1 met behulp van beheerde identiteiten (preview-versie)
+# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Stream Analytics verifiëren voor het Azure Data Lake Storage Gen1 met behulp van beheerde identiteiten
 
 Azure Stream Analytics ondersteunt beheerde identiteits verificatie met de gen1-uitvoer van Azure Data Lake Storage (ADLS). De identiteit is een beheerde toepassing die is geregistreerd in Azure Active Directory die een bepaalde Stream Analytics taak vertegenwoordigt, en kan worden gebruikt om te verifiëren bij een doel resource. Beheerde identiteiten elimineren de beperkingen van verificatie methoden op basis van gebruikers, zoals het opnieuw verifiëren als gevolg van wachtwoord wijzigingen of gebruikers token verloop die elke 90 dagen worden uitgevoerd. Daarnaast helpen beheerde identiteiten bij de automatisering van Stream Analytics taak implementaties die naar Azure Data Lake Storage Gen1 worden uitgevoerd.
 
@@ -36,7 +36,7 @@ In dit artikel ziet u drie manieren om beheerde identiteit in te scha kelen voor
  
    De service-principal heeft dezelfde naam als de Stream Analytics taak. Als de naam van uw taak bijvoorbeeld **MyASAJob** is, is de naam van de service-principal die is gemaakt ook **MyASAJob**.
 
-3. Klik in het venster uitvoer eigenschappen van de ADLS Gen1 uitvoer Sink op de vervolg keuzelijst verificatie modus en selecteer * * beheerde identiteit * *.
+3. Klik in het venster uitvoer eigenschappen van de ADLS Gen1 uitvoer Sink op de vervolg keuzelijst verificatie modus en selecteer **beheerde identiteit**.
 
 4. Vul de rest van de eigenschappen in. Zie [een Data Lake Store-uitvoer maken met Stream Analytics](../data-lake-store/data-lake-store-stream-analytics.md)voor meer informatie over het maken van een ADLS-uitvoer. Klik op **Opslaan** als u klaar bent.
 
@@ -70,7 +70,7 @@ In dit artikel ziet u drie manieren om beheerde identiteit in te scha kelen voor
 
    ![Beheerde identiteiten voor taak configuratie Stream Analytics](./media/stream-analytics-managed-identities-adls/adls-mi-jobconfig-vs.png)
 
-2. Klik in het venster uitvoer eigenschappen van de ADLS Gen1 uitvoer Sink op de vervolg keuzelijst verificatie modus en selecteer * * beheerde identiteit * *.
+2. Klik in het venster uitvoer eigenschappen van de ADLS Gen1 uitvoer Sink op de vervolg keuzelijst verificatie modus en selecteer **beheerde identiteit**.
 
    ![Beheerde identiteiten voor ADLS-uitvoer](./media/stream-analytics-managed-identities-adls/adls-mi-output-vs.png)
 

@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.date: 05/11/2018
 ms.custom: mvc
 ms.openlocfilehash: c7a18b0dcdc04bdf66ac4b36ce7376ee018eb238
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91842900"
 ---
 # <a name="tutorial-create-aws-infrastructure-to-host-a-service-fabric-cluster"></a>Zelfstudie: AWS-infrastructuur maken voor het hosten van een Service Fabric-cluster
@@ -39,7 +39,7 @@ Selecteer **Launch Instance** en kies in het volgende scherm **Select** naast Mi
 
 ![EC2-exemplaar selecteren][aws-ec2instance]
 
-Selecteer **t2.medium**, selecteer **Next: Configure Instance Details**, wijzig op het volgende scherm het aantal exemplaren in `3` en selecteer **Advanced Details**om die sectie uit te vouwen.
+Selecteer **t2.medium**, selecteer **Next: Configure Instance Details**, wijzig op het volgende scherm het aantal exemplaren in `3` en selecteer **Advanced Details** om die sectie uit te vouwen.
 
 Om uw virtuele machines te verbinden in Service Fabric, moeten de VM's die uw infrastructuur hosten dezelfde referenties hebben.  Er zijn twee manieren om consistente referenties te hanteren: alle machines toevoegen aan hetzelfde domein of op elke VM hetzelfde beheerderswachtwoord instellen.  Voor deze zelfstudie gebruikt u een script met gebruikersgegevens om voor alle EC2-exemplaren hetzelfde wachtwoord in te stellen.  In een productieomgeving is het veiliger om de hosts lid te maken van een Windows-domein.
 

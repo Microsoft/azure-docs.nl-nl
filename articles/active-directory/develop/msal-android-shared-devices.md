@@ -1,7 +1,7 @@
 ---
 title: Modus voor gedeeld apparaat voor Android-apparaten
 titleSuffix: Microsoft identity platform | Azure
-description: Meer informatie over het inschakelen van de modus gedeeld apparaat zodat Firstline werk rollen een Android-apparaat kunnen delen
+description: Meer informatie over het inschakelen van de modus gedeeld apparaat zodat Frontline werk rollen een Android-apparaat kunnen delen
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 03/31/2020
 ms.author: marsma
 ms.reviewer: hahamil
 ms.custom: aaddev, identitypla | Azuretformtop40
-ms.openlocfilehash: a67e0d851ab544f737097eff9a884752cff9f5fc
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: bafd6dade626376f216a271c7b3cadc9b429989a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103491537"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104578818"
 ---
 # <a name="shared-device-mode-for-android-devices"></a>Modus voor gedeeld apparaat voor Android-apparaten
 
-Firstline-werk rollen, zoals Retail Associates, leden van de vliegtuig bemanning en mede werkers van de Field service gebruiken vaak een gedeeld mobiel apparaat om hun werk uit te voeren. Dit wordt problematisch wanneer ze beginnen met het delen van wacht woorden of pincodes om toegang te krijgen tot klant-en bedrijfs gegevens op het gedeelde apparaat.
+Frontline-werk rollen, zoals Retail Associates, leden van de vliegtuig bemanning en mede werkers van de Field service gebruiken vaak een gedeeld mobiel apparaat om hun werk uit te voeren. Dit wordt problematisch wanneer ze beginnen met het delen van wacht woorden of pincodes om toegang te krijgen tot klant-en bedrijfs gegevens op het gedeelde apparaat.
 
 In de modus gedeeld apparaat kunt u een Android-apparaat configureren zodat het eenvoudig kan worden gedeeld door meerdere werk nemers. Werk nemers kunnen zich snel aanmelden en klant gegevens benaderen. Wanneer de taken zijn voltooid met hun verschuiving of taak, kunnen ze zich afmelden bij het apparaat en zal het direct klaar zijn voor de volgende werk nemer.
 
@@ -85,7 +85,7 @@ De volgende verschillen zijn van toepassing, afhankelijk van het feit of uw app 
 
 ## <a name="why-you-may-want-to-only-support-single-account-mode"></a>Waarom u alleen één-account modus wilt ondersteunen
 
-Als u een app schrijft die alleen wordt gebruikt voor firstline-werk nemers met behulp van een gedeeld apparaat, wordt u aangeraden uw toepassing te schrijven zodat deze alleen ondersteuning biedt voor de modus met één account. Dit omvat de meeste toepassingen die zijn gericht op taken, zoals apps voor medische dossiers of voor facturen, en de meeste Line-Of-Business-apps. De ondersteuning voor de modus voor één account vereenvoudigt de ontwikkeling omdat u de aanvullende functies die deel uitmaken van apps met meerdere accounts niet hoeft te implementeren.
+Als u een app schrijft die alleen wordt gebruikt voor Frontline-werk nemers met behulp van een gedeeld apparaat, wordt u aangeraden uw toepassing te schrijven zodat deze alleen ondersteuning biedt voor de modus met één account. Dit omvat de meeste toepassingen die zijn gericht op taken, zoals apps voor medische dossiers of voor facturen, en de meeste Line-Of-Business-apps. De ondersteuning voor de modus voor één account vereenvoudigt de ontwikkeling omdat u de aanvullende functies die deel uitmaken van apps met meerdere accounts niet hoeft te implementeren.
 
 ## <a name="what-happens-when-the-device-mode-changes"></a>Wat er gebeurt wanneer de modus van het apparaat wordt gewijzigd
 
@@ -103,4 +103,4 @@ In het volgende diagram ziet u de algemene levens cyclus van de app en algemene 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Probeer de [modus gedeeld apparaat gebruiken in de zelf studie voor Android-toepassingen](tutorial-v2-shared-device-mode.md) om te zien hoe u een firstline worker-app uitvoert op een Android-apparaat in de gedeelde modus.
+Probeer de [modus gedeeld apparaat gebruiken in de zelf studie voor Android-toepassingen](tutorial-v2-shared-device-mode.md) om te zien hoe u een Frontline worker-app uitvoert op een Android-apparaat in de gedeelde modus.

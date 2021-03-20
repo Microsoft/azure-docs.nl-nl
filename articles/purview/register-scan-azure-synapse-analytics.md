@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: 62ca32ab4e348e1488fbb87672e582436b91d05d
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 3111b3a102abd923169cf655f1d71e79b19f7d5d
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875006"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104598130"
 ---
 # <a name="register-and-scan-azure-synapse-analytics"></a>Azure Synapse Analytics registreren en controleren
 
@@ -127,7 +127,7 @@ Ga als volgt te werk om een nieuwe Azure Synapse Analytics-server te registreren
 Ga als volgt te werk op het scherm **bronnen registreren (Azure Synapse Analytics)** :
 
 1. Voer een **Naam** in waarvan de gegevensbron wordt vermeld in de catalogus.
-1. Kies hoe u wilt verwijzen naar het gewenste opslagaccount:
+1. Kies hoe u wilt verwijzen naar de gewenste logische SQL Server:
    1. Selecteer een **Azure-abonnement**, selecteer het juiste abonnement in de vervolg keuzelijst van het Azure- **abonnement** en de juiste server in de vervolg keuzelijst **Server naam** .
    1. U kunt ook **Handmatig invoeren** selecteren en een **Servernaam** invoeren.
 1. **Voltooi** om de gegevensbron te registreren.

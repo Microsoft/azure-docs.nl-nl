@@ -4,10 +4,10 @@ description: Voer een upgrade uit voor de Azure Service Fabric-code die een zelf
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.openlocfilehash: 5831fcffe718e4966c3444a29d35c5bbd55e5f57
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91842934"
 ---
 # <a name="upgrade-the-service-fabric-version-that-runs-on-your-cluster"></a>Een upgrade uitvoeren van de Service Fabric versie die wordt uitgevoerd op uw cluster 
@@ -24,7 +24,7 @@ U kunt uw cluster alleen upgraden naar de nieuwe versie als u een configuratie v
 Met twee afzonderlijke werk stromen kan uw cluster worden bijgewerkt naar de nieuwste versie of een ondersteunde Service Fabric versie. Een werk stroom is voor clusters die verbinding hebben om de nieuwste versie automatisch te downloaden. De andere werk stroom is voor clusters die geen verbinding hebben om de nieuwste Service Fabric-versie te downloaden.
 
 ## <a name="enable-auto-upgrade-of-the-service-fabric-version-of-your-cluster"></a>Automatisch bijwerken inschakelen van de Service Fabric versie van uw cluster
-Stel de `fabricClusterAutoupgradeEnabled` cluster configuratie in op *waar*om het cluster zo in te stellen dat updates van service Fabric worden gedownload wanneer micro soft een nieuwe versie loslaat. Als u hand matig een ondersteunde versie van Service Fabric wilt selecteren waarvan u het cluster wilt maken, stelt u de `fabricClusterAutoupgradeEnabled` cluster configuratie in op *Onwaar*.
+Stel de `fabricClusterAutoupgradeEnabled` cluster configuratie in op *waar* om het cluster zo in te stellen dat updates van service Fabric worden gedownload wanneer micro soft een nieuwe versie loslaat. Als u hand matig een ondersteunde versie van Service Fabric wilt selecteren waarvan u het cluster wilt maken, stelt u de `fabricClusterAutoupgradeEnabled` cluster configuratie in op *Onwaar*.
 
 ## <a name="upgrade-clusters-that-have-connectivity-to-download-the-latest-code-and-configuration"></a>Clusters bijwerken die verbinding hebben om de nieuwste code en configuratie te downloaden
 Gebruik deze stappen om uw cluster bij te werken naar een ondersteunde versie als uw cluster knooppunten een Internet verbinding met het [micro soft Download centrum](https://download.microsoft.com)hebben.

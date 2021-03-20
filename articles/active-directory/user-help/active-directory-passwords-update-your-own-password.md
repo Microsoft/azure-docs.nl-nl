@@ -12,10 +12,10 @@ ms.topic: end-user-help
 ms.date: 09/10/2020
 ms.author: curtand
 ms.openlocfilehash: c47d573dab3e72a956f6f0b9d09a1dafadf0225c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91827762"
 ---
 # <a name="reset-your-work-or-school-password-using-security-info"></a>Uw werk-of school wachtwoord opnieuw instellen met behulp van beveiligings gegevens
@@ -37,9 +37,9 @@ Als u geen toegang hebt tot uw Azure Active Directory-account (Azure AD), kan di
 
 ### <a name="to-reset-your-password-and-get-back-into-your-account"></a>Uw wacht woord opnieuw instellen en teruggaan naar uw account
 
-1. Selecteer **mijn wacht woord verg eten**in het scherm **wacht woord invoeren** .
+1. Selecteer **mijn wacht woord verg eten** in het scherm **wacht woord invoeren** .
 
-2. Typ in het scherm **terug naar uw account** uw werk-of school **gebruikers-id** (bijvoorbeeld uw e-mail adres), bewijs dat u geen robot bent door de tekens die u op het scherm ziet, in te voeren en vervolgens **volgende**te selecteren.
+2. Typ in het scherm **terug naar uw account** uw werk-of school **gebruikers-id** (bijvoorbeeld uw e-mail adres), bewijs dat u geen robot bent door de tekens die u op het scherm ziet, in te voeren en vervolgens **volgende** te selecteren.
 
    ![Ga terug naar uw account scherm](media/security-info/security-info-back-into-acct.png)
 
@@ -55,7 +55,7 @@ Als u geen toegang hebt tot uw Azure Active Directory-account (Azure AD), kan di
 
 - **Stel uw wacht woord opnieuw in met behulp van een e-mail adres.** Hiermee wordt een e-mail bericht verzonden naar het e-mail adres dat u eerder hebt ingesteld in verificatie-of beveiligings gegevens in twee stappen. Als uw beheerder de beveiligings informatie heeft ingeschakeld, kunt u meer informatie over het instellen van een e-mail adres vinden in het artikel [beveiligings gegevens instellen voor het gebruik van e-mail (preview-versie)](security-info-setup-email.md) . Als u nog geen beveiligings gegevens gebruikt, kunt u meer informatie vinden over het instellen van een e-mail adres in het artikel [Stel mijn account in voor verificatie in twee stappen](multi-factor-authentication-end-user-first-time.md) . 
 
-    1. Selecteer **e-mail naar mijn alternatieve e-mail**adres en selecteer vervolgens **e-mail**.
+    1. Selecteer **e-mail naar mijn alternatieve e-mail** adres en selecteer vervolgens **e-mail**.
 
     2. Typ de verificatie code van het e-mail adres in het vak en selecteer **volgende**.
 
@@ -85,7 +85,7 @@ Als u geen toegang hebt tot uw Azure Active Directory-account (Azure AD), kan di
 
 - **Stel uw wacht woord opnieuw in met een melding van uw verificator-app.** Hiermee verzendt u een goedkeurings bericht naar de verificator-app. Als uw beheerder de beveiligings informatie heeft ingeschakeld, kunt u meer informatie vinden over het instellen van een verificator-app voor het verzenden van een melding in het artikel [beveiligings gegevens instellen voor het gebruik van een verificatie-app (preview-versie)](security-info-setup-auth-app.md) . Als u nog geen beveiligings gegevens gebruikt, kunt u meer informatie vinden over het instellen van een verificator-app om een melding te verzenden in het artikel [Stel mijn account in voor verificatie in twee stappen](multi-factor-authentication-end-user-first-time.md) .
 
-    1. Selecteer **een melding goed keuren in mijn verificator-app**en selecteer vervolgens **melding verzenden**.
+    1. Selecteer **een melding goed keuren in mijn verificator-app** en selecteer vervolgens **melding verzenden**.
 
     2. De aanmelding goed keuren vanuit uw verificator-app.
 
@@ -93,7 +93,7 @@ Als u geen toegang hebt tot uw Azure Active Directory-account (Azure AD), kan di
 
 - **Stel uw wacht woord opnieuw in met een code uit uw verificator-app.** Hiermee accepteert u een wille keurige code die door uw verificatie-app wordt verschaft. Als uw beheerder de beveiligings informatie heeft ingeschakeld, kunt u meer informatie vinden over het instellen van een verificator-app voor het opgeven van een code in het artikel [beveiligings gegevens instellen voor het gebruik van een verificatie-app (preview-versie)](security-info-setup-auth-app.md) . Als u nog geen beveiligings gegevens gebruikt, vindt u meer informatie over het instellen van een verificator-app voor het opgeven van een code in het artikel [Mijn account instellen voor verificatie in twee stappen](multi-factor-authentication-end-user-first-time.md) .
 
-  1. Selecteer **een code invoeren uit mijn verificator-app**en selecteer vervolgens **melding verzenden**.
+  1. Selecteer **een code invoeren uit mijn verificator-app** en selecteer vervolgens **melding verzenden**.
 
   2. Open uw verificator-app, typ de verificatie code voor uw account in het vak en selecteer vervolgens **volgende**.
 
@@ -147,7 +147,7 @@ Als uw beheerder de functionaliteit heeft ingeschakeld, kunt u een koppeling zie
 
     Sterke wacht woorden hebben doorgaans 8 tot 16 tekens, inclusief hoofd-en kleine letters, ten minste één cijfer en ten minste één speciaal teken.
 
-5. Nadat u het bericht hebt ontvangen dat uw wacht woord opnieuw is ingesteld, kunt u **volt ooien**selecteren.
+5. Nadat u het bericht hebt ontvangen dat uw wacht woord opnieuw is ingesteld, kunt u **volt ooien** selecteren.
 
     Als u nog steeds geen toegang hebt tot uw account, neemt u contact op met de beheerder van uw organisatie voor meer hulp.
 

@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: sunasing
 ms.openlocfilehash: 292374bcce90da042dc6bd672feaad3750759aa9
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92674503"
 ---
 # <a name="azure-farmbeats-apis"></a>Azure FarmBeats-Api's
@@ -68,7 +68,7 @@ headers = {"Authorization": "Bearer " + **access_token**}
 Hier volgen de meest voorkomende aanvraag headers die u moet opgeven wanneer u een API-aanroep maakt naar Azure FarmBeats Datahub.
 
 
-**Journaalkop** | **Beschrijving en voor beeld**
+**Header** | **Beschrijving en voor beeld**
 --- | ---
 Content-Type  | De aanvraag indeling (content-type: Application/ <format> ). Voor Azure FarmBeats Datahub-Api's is de indeling JSON. Content-type: Application/JSON
 Autorisatie  | Hiermee geeft u het toegangs token op dat vereist is om een API-aanroep te maken. Autorisatie: Bearer <Access-Token>
@@ -143,23 +143,23 @@ In dit voor beeld, wanneer een farm is gemaakt, is het verplichte veld ' naam ' 
 
 Azure FarmBeats-Api's kunnen worden gebruikt door een gebruiker of een app-registratie in Azure Active Directory. Voer de volgende stappen uit om een app-registratie te maken in Azure Active Directory:
 
-1. Ga naar de [Azure Portal](https://portal.azure.com)en selecteer **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie** . U kunt ook een bestaand account gebruiken.
+1. Ga naar de [Azure Portal](https://portal.azure.com)en selecteer **Azure Active Directory**  >  **app-registraties**  >  **nieuwe registratie**. U kunt ook een bestaand account gebruiken.
 2. Ga als volgt te werk voor een nieuw account:
 
     - Voer een naam in.
-    - Selecteer **accounts in deze organisatie-Directory alleen (één Tenant)** .
+    - Selecteer **accounts in deze organisatie-Directory alleen (één Tenant)**.
     - Gebruik de standaard waarden in de rest van de velden.
-    - Selecteer **Registreren** .
+    - Selecteer **Registreren**.
 
 3. Ga als volgt te werk in het deel venster Nieuw en bestaand app-registratie **overzicht** :
 
     - Leg de **client-id** en **Tenant-id** vast.
     - Ga naar **certificaten en geheimen** om een nieuw client geheim te genereren en het **client geheim** vast te leggen.
-    - Ga terug naar **overzicht** en selecteer de koppeling naast **toepassing beheren in de lokale map** .
+    - Ga terug naar **overzicht** en selecteer de koppeling naast **toepassing beheren in de lokale map**.
     - Ga naar **Eigenschappen** om de **object-id** vast te leggen.
 
 4. Ga naar uw Datahub Swagger (https:// <yourdatahub> . azurewebsites.net/swagger/index.html) en voer de volgende handelingen uit:
-    - Ga naar de **RoleAssignment-API** .
+    - Ga naar de **RoleAssignment-API**.
     - Voer een bericht uit om een **RoleAssignment** -object te maken voor de **object-id** die u zojuist hebt gemaakt.
  
 ```json

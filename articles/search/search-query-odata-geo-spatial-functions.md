@@ -20,17 +20,17 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 376cece922ca424ec78011224852b1fa5499da16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88934834"
 ---
 # <a name="odata-geo-spatial-functions-in-azure-cognitive-search---geodistance-and-geointersects"></a>Geo-ruimtelijke functies van OData in azure Cognitive Search- `geo.distance` en `geo.intersects`
 
 Azure Cognitive Search ondersteunt geo-ruimtelijke query's in [OData-filter expressies](query-odata-filter-orderby-syntax.md) via `geo.distance` de `geo.intersects` functies en. De `geo.distance` functie retourneert de afstand in kilo meters tussen twee punten, een veld of bereik variabele en een constante die wordt door gegeven als onderdeel van het filter. De `geo.intersects` functie retourneert `true` of een bepaald punt zich in een bepaalde veelhoek bevindt, waarbij het punt een veld-of bereik variabele is en de veelhoek is opgegeven als een constante die als onderdeel van het filter wordt door gegeven.
 
-De `geo.distance` functie kan ook worden gebruikt in de [para meter **$OrderBy** ](search-query-odata-orderby.md) om Zoek resultaten te sorteren op afstand van een bepaald punt. De syntaxis voor `geo.distance` in **$OrderBy** is hetzelfde als in **$filter**. Wanneer u `geo.distance` in **$OrderBy**gebruikt, moet het veld waarop het van toepassing is, van het type zijn `Edm.GeographyPoint` en moet het ook **sorteerbaar**zijn.
+De `geo.distance` functie kan ook worden gebruikt in de [para meter **$OrderBy**](search-query-odata-orderby.md) om Zoek resultaten te sorteren op afstand van een bepaald punt. De syntaxis voor `geo.distance` in **$OrderBy** is hetzelfde als in **$filter**. Wanneer u `geo.distance` in **$OrderBy** gebruikt, moet het veld waarop het van toepassing is, van het type zijn `Edm.GeographyPoint` en moet het ook **sorteerbaar** zijn.
 
 > [!NOTE]
 > Wanneer `geo.distance` u gebruikt in de para meter **$OrderBy** , mag het veld dat u aan de functie doorgeeft slechts één geo-Point bevatten. Met andere woorden, deze moeten van het type `Edm.GeographyPoint` en niet `Collection(Edm.GeographyPoint)` . Het is niet mogelijk om te sorteren op verzamelings velden in azure Cognitive Search.

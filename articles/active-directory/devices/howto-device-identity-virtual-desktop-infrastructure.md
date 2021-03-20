@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c30ad26f079e6353dc4763b9ae968c33882d8ab6
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96029344"
 ---
 # <a name="device-identity-and-desktop-virtualization"></a>Apparaat-id en desktop-virtualisatie
@@ -48,16 +48,16 @@ Voordat u apparaat-id's configureert in azure AD voor uw VDI-omgeving, moet u ve
 
 | Type apparaat-id | Id-infrastructuur | Windows-apparaten | VDI-platform versie | Ondersteund |
 | --- | --- | --- | --- | --- |
-| Hybride Azure AD-deelname | Federatief<sup>3</sup> | Windows huidige en Windows down level | Permanent | Yes |
+| Hybride Azure AD-deelname | Federatief<sup>3</sup> | Windows huidige en Windows down level | Permanent | Ja |
 |   |   | Windows actueel | Niet-persistent | Ja<sup>5</sup> |
 |   |   | Downlevel Windows | Niet-persistent | Ja<sup>6</sup> |
-|   | Beheerd<sup>4</sup> | Windows huidige en Windows down level | Permanent | Yes |
-|   |   | Windows actueel | Niet-persistent | No |
+|   | Beheerd<sup>4</sup> | Windows huidige en Windows down level | Permanent | Ja |
+|   |   | Windows actueel | Niet-persistent | Nee |
 |   |   | Downlevel Windows | Niet-persistent | Ja<sup>6</sup> |
-| Azure AD-deelname | Federatief | Windows actueel | Permanent | No |
-|   |   |   | Niet-persistent | No |
-|   | Beheerd | Windows actueel | Permanent | No |
-|   |   |   | Niet-persistent | No |
+| Azure AD-deelname | Federatief | Windows actueel | Permanent | Nee |
+|   |   |   | Niet-persistent | Nee |
+|   | Beheerd | Windows actueel | Permanent | Nee |
+|   |   |   | Niet-persistent | Nee |
 | Azure AD-geregistreerd | Federatief/beheerd | Windows-huidige/Windows-down level | Persistent/niet-persistent | Niet van toepassing |
 
 <sup>1</sup> **Windows-huidige** apparaten vertegenwoordigen Windows 10, Windows Server 2016 V1803 of hoger en Windows Server 2019.

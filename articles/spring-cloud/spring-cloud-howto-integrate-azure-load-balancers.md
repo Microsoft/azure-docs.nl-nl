@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: cd0b9d1369fb1c0e662de83b7056da0ff7c83bd1
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 50b09fd82461221ae6cd008f6918ac2f3a26fd94
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090825"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588377"
 ---
 # <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Azure Spring Cloud integreren met Azure-oplossingen voor taakverdeling
 
@@ -39,7 +39,7 @@ Als u Azure lente-Cloud wilt integreren met Traffic Manager, voegt u de open bar
 
 ### <a name="add-endpoint-in-traffic-manager"></a>Eind punt toevoegen in Traffic Manager
 Eind punten toevoegen in Traffic Manager:
-1.  Geef het **type** op dat het *externe eind punt*moet worden.
+1.  Geef het **type** op dat het *externe eind punt* moet worden.
 1.  Invoer Fully Qualified Domain Name (FQDN) van elk openbaar eind punt in de cloud van Azure lente.
 1. Klik op **OK**.
 
@@ -72,10 +72,21 @@ Als u wilt integreren met Azure lente-Cloud service, voert u de volgende configu
 ### <a name="configure-http-setting"></a>Http-instelling configureren
 1.  Selecteer **http-instellingen** en **Voeg** vervolgens een http-instelling toe.
 1.  **Overschrijven door nieuwe hostnaam:** Selecteer *Ja*.
-1.  **Hostnaam negeren**: Selecteer de **hostnaam in het back-end-doel**selecteren.
+1.  **Hostnaam negeren**: Selecteer de **hostnaam in het back-end-doel** selecteren.
 1.  **Aangepaste test gebruiken**: Selecteer *Ja* en kies de aangepaste test die hierboven is gemaakt.
 
     ![App-gateway 3](media/spring-cloud-load-balancers/app-gateway-3.png)
+
+### <a name="configure-rewrite-set"></a>Set voor herschrijven configureren
+1.  Selecteer opnieuw **schrijven** en vervolgens **opnieuw schrijven om** een set opnieuw schrijven toe te voegen.
+1.  Selecteer de routerings regels die aanvragen naar Azure lente-open bare eind punten van de Cloud routeren.
+1.  Op het tabblad **regel configuratie opnieuw schrijven** selecteert u **regel voor herschrijven toevoegen**.
+1.  **Herschrijf type**: **aanvraag header** selecteren
+1.  **Actie type**: Selecteer **verwijderen**
+1.  **Header naam**: Selecteer **algemene koptekst**
+1.  **Common header**: Selecteer **X-doorgestuurd-proto**
+
+    ![App-Gateway 4](media/spring-cloud-load-balancers/app-gateway-4.png)
 
 ## <a name="integrate-azure-spring-cloud-with-azure-front-door"></a>Azure lente-Cloud integreren met Azure front-deur
 

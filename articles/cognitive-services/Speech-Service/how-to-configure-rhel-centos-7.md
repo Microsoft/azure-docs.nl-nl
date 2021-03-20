@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/02/2020
 ms.author: pankopon
 ms.openlocfilehash: ba531164e024f96d3bdd23912f3f6e90275edda4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83589734"
 ---
 # <a name="configure-rhelcentos-7-for-speech-sdk"></a>RHEL/CentOS 7 voor Speech SDK configureren
@@ -65,10 +65,10 @@ CXXABI_1.3.7
 ...
 ```
 
-Voor de Speech SDK zijn **CXXABI_1.3.9** en **GLIBCXX_3.4.21**vereist. U kunt deze informatie vinden door uit te voeren `ldd libMicrosoft.CognitiveServices.Speech.core.so` op de Speech SDK-bibliotheken vanuit het Linux-pakket.
+Voor de Speech SDK zijn **CXXABI_1.3.9** en **GLIBCXX_3.4.21** vereist. U kunt deze informatie vinden door uit te voeren `ldd libMicrosoft.CognitiveServices.Speech.core.so` op de Speech SDK-bibliotheken vanuit het Linux-pakket.
 
 > [!NOTE]
-> Het is raadzaam de versie van GCC die op het systeem is geïnstalleerd, ten minste **5.4.0**te hebben, met overeenkomende runtime-bibliotheken.
+> Het is raadzaam de versie van GCC die op het systeem is geïnstalleerd, ten minste **5.4.0** te hebben, met overeenkomende runtime-bibliotheken.
 
 ## <a name="example"></a>Voorbeeld
 

@@ -1,5 +1,5 @@
 ---
-title: Application Gateway-onderdelen
+title: Onderdelen van Application Gateway
 description: Dit artikel bevat informatie over de verschillende onderdelen in een toepassings gateway
 services: application-gateway
 author: surajmb
@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 08/21/2020
 ms.author: surmb
 ms.openlocfilehash: ebd06b0b78ee511dce535ff4220df03087fb6906
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88723313"
 ---
-# <a name="application-gateway-components"></a>Application Gateway-onderdelen
+# <a name="application-gateway-components"></a>Onderdelen van Application Gateway
 
  Een toepassings gateway fungeert als één aanspreek punt voor clients. Het distribueert het binnenkomende toepassings verkeer over meerdere back-end-Pools, waaronder Azure-Vm's, schaal sets voor virtuele machines, Azure App Service en on-premises/externe servers. Voor het distribueren van verkeer gebruikt een toepassings gateway verschillende onderdelen die in dit artikel worden beschreven.
 

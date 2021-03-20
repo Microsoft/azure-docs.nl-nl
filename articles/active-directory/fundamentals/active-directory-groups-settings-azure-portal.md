@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c346877d29c5fef03b45c895cbf8d462f90d0979
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92369128"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Uw groeps gegevens bewerken met behulp van Azure Active Directory
@@ -27,7 +27,7 @@ Met Azure Active Directory (Azure AD) kunt u de instellingen van een groep bewer
 ## <a name="to-edit-your-group-settings"></a>De groeps instellingen bewerken
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met het account van een globale administrator voor de map.
 
-2. Selecteer **Azure Active Directory**en selecteer vervolgens **groepen**.
+2. Selecteer **Azure Active Directory** en selecteer vervolgens **groepen**.
 
     De pagina **groepen-alle groepen** wordt weer gegeven, met al uw actieve groepen.
 
@@ -37,7 +37,7 @@ Met Azure Active Directory (Azure AD) kunt u de instellingen van een groep bewer
 
     ![Pagina alle groepen, met Zoek tekst in het zoekvak](media/active-directory-groups-settings-azure-portal/search-for-specific-group.png)
 
-4. Selecteer de groep **MDM-beleid-West**en selecteer vervolgens **Eigenschappen** in het gebied **beheren** .
+4. Selecteer de groep **MDM-beleid-West** en selecteer vervolgens **Eigenschappen** in het gebied **beheren** .
 
     ![De pagina overzicht van groepen, met de optie en de gemarkeerde informatie](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
 
@@ -49,7 +49,7 @@ Met Azure Active Directory (Azure AD) kunt u de instellingen van een groep bewer
     
     - **Groeps beschrijving.** Bewerk de beschrijving van de bestaande groep.
 
-    - **Groeps type.** U kunt het type van de groep niet wijzigen nadat deze is gemaakt. Als u het **groeps type**wilt wijzigen, moet u de groep verwijderen en een nieuwe maken.
+    - **Groeps type.** U kunt het type van de groep niet wijzigen nadat deze is gemaakt. Als u het **groeps type** wilt wijzigen, moet u de groep verwijderen en een nieuwe maken.
     
     - **Type lidmaatschap.** Wijzig het lidmaatschaps type. Zie [procedure: een basis groep maken en leden toevoegen met behulp van de Azure Active Directory Portal](active-directory-groups-create-azure-portal.md)voor meer informatie over de verschillende beschik bare typen lidmaatschappen.
     

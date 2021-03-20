@@ -8,10 +8,10 @@ ms.date: 4/9/2019
 ms.topic: conceptual
 ms.author: ramamill
 ms.openlocfilehash: 4b86d0c189bcf0687a703f2338188df2090feaf0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92368023"
 ---
 # <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-azure"></a>Capaciteit en schaling plannen voor nood herstel van VMware naar Azure
@@ -126,13 +126,13 @@ Als u uw implementatie met meer dan 200 bron machines uitschaalt of als u een to
 
 ### <a name="migrate-machines-to-use-the-new-process-server"></a>Machines migreren voor het gebruik van de nieuwe proces server
 
-1. Selecteer **instellingen**  >  **site Recovery servers**. Selecteer de configuratie server en vouw vervolgens **proces servers**uit.
+1. Selecteer **instellingen**  >  **site Recovery servers**. Selecteer de configuratie server en vouw vervolgens **proces servers** uit.
 
     ![Scherm afbeelding van het dialoog venster proces server](./media/site-recovery-vmware-to-azure/migrate-ps2.png)
 2. Klik met de rechter muisknop op de proces server die momenteel in gebruik is en selecteer **Switch**.
 
     ![Scherm afbeelding van het dialoog venster Configuratie server](./media/site-recovery-vmware-to-azure/migrate-ps3.png)
-3. Selecteer in **doel proces server selecteren**de nieuwe proces server die u wilt gebruiken. Selecteer vervolgens de virtuele machines die door de server worden verwerkt. Als u informatie over de server wilt ophalen, selecteert u het informatie pictogram. Om u te helpen bij het nemen van load beslissingen, wordt de gemiddelde ruimte die nodig is voor het repliceren van elke geselecteerde virtuele machine naar de nieuwe proces server weer gegeven. Schakel het selectie vakje in om te beginnen met repliceren naar de nieuwe proces server.
+3. Selecteer in **doel proces server selecteren** de nieuwe proces server die u wilt gebruiken. Selecteer vervolgens de virtuele machines die door de server worden verwerkt. Als u informatie over de server wilt ophalen, selecteert u het informatie pictogram. Om u te helpen bij het nemen van load beslissingen, wordt de gemiddelde ruimte die nodig is voor het repliceren van elke geselecteerde virtuele machine naar de nieuwe proces server weer gegeven. Schakel het selectie vakje in om te beginnen met repliceren naar de nieuwe proces server.
 
 ## <a name="deploy-additional-master-target-servers"></a>Aanvullende Master doel servers implementeren
 
@@ -151,13 +151,13 @@ Een hoofddoel server voor een op Windows gebaseerde virtuele machine toevoegen:
 
     ![Scherm opname van de knop Master doel server toevoegen](media/site-recovery-plan-capacity-vmware/add-master-target-server.png)
 3. Down load het Unified Setup-bestand en voer het bestand op de virtuele machine uit om de hoofddoel server in te stellen.
-4. Selecteer **volgende hoofd doel installeren**  >  **Next**.
+4. Selecteer **volgende hoofd doel installeren**  >  .
 
     ![Scherm afbeelding van de optie voor het installeren van een hoofddoel doel](media/site-recovery-plan-capacity-vmware/choose-MT.PNG)
 5. Selecteer de standaard installatie locatie en selecteer **installeren**.
 
      ![Scherm opname van de standaard installatie locatie](media/site-recovery-plan-capacity-vmware/MT-installation.PNG)
-6. Selecteer **door gaan naar configuratie**om het hoofd doel bij de configuratie server te registreren.
+6. Selecteer **door gaan naar configuratie** om het hoofd doel bij de configuratie server te registreren.
 
     ![Scherm opname van de knop door gaan naar configuratie](media/site-recovery-plan-capacity-vmware/MT-proceed-configuration.PNG)
 7. Voer het IP-adres van de configuratie server in en voer vervolgens de wachtwoordzin in. Zie [een wachtwoordzin voor een configuratie server genereren](vmware-azure-manage-configuration-server.md#generate-configuration-server-passphrase)voor meer informatie over het genereren van een wachtwoordzin. 
@@ -165,7 +165,7 @@ Een hoofddoel server voor een op Windows gebaseerde virtuele machine toevoegen:
     ![Scherm opname van de locatie waar het IP-adres en de wachtwoordzin voor de configuratie server moeten worden ingevoerd](media/site-recovery-plan-capacity-vmware/cs-ip-passphrase.PNG)
 8. Selecteer **Registreren**. Wanneer de registratie is voltooid, selecteert u **volt ooien**.
 
-Wanneer de registratie is voltooid, wordt de server weer gegeven in het Azure Portal op **Recovery Services kluis**  >  configuratie servers voor**infra structuur site Recovery**  >  **Configuration servers**in de hoofddoel servers van de configuratie server.
+Wanneer de registratie is voltooid, wordt de server weer gegeven in het Azure Portal op **Recovery Services kluis**  >  configuratie servers voor **infra structuur site Recovery**  >  in de hoofddoel servers van de configuratie server.
 
  > [!NOTE]
  > Down load de meest recente versie van het [Unified Setup-bestand van de Master doel server voor Windows](https://aka.ms/latestmobsvc).

@@ -10,10 +10,10 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 ms.openlocfilehash: 6e7f2e445c3e4e8df7420c0587e156968f3a2c92
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94542674"
 ---
 # <a name="sizing-guidance"></a>Richt lijnen voor grootte
@@ -124,9 +124,9 @@ Hier volgt een voor beeld van een berekenings grootte.
 
 Vereisten:
 
-- **"SQL1"** : 1 SQL Managed instance met 16 GB RAM, 4 kern geheugens
-- **"SQL2"** : 1 SQL Managed instance met 256 GB RAM, 16 kernen
-- **"Postgres1"** : 1 postgresql grootschalige-Server groep met vier werk nemers van 12 GB aan RAM-geheugen, 4 kernen
+- **"SQL1"**: 1 SQL Managed instance met 16 GB RAM, 4 kern geheugens
+- **"SQL2"**: 1 SQL Managed instance met 256 GB RAM, 16 kernen
+- **"Postgres1"**: 1 postgresql grootschalige-Server groep met vier werk nemers van 12 GB aan RAM-geheugen, 4 kernen
 
 Grootte berekeningen:
 

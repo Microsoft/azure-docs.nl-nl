@@ -12,10 +12,10 @@ ms.date: 04/02/2019
 ms.author: pafarley
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 7f1939536e033d2cf964dd2f4ee562e4ee20061b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88934749"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Uw model gebruiken met de Voorspellings-API
@@ -39,7 +39,7 @@ Zodra uw model is gepubliceerd, wordt het label "gepubliceerd" weer gegeven naas
 
 ## <a name="get-the-url-and-prediction-key"></a>De URL en voorspellingssleutel ophalen
 
-Zodra uw model is gepubliceerd, kunt u de vereiste gegevens ophalen door de URL voor de voor __Spelling__te selecteren. Hiermee opent u een dialoog venster met informatie over het gebruik van de Voorspellings-API, met inbegrip van de __Voorspellings-URL__ en de __Voorspellings sleutel__.
+Zodra uw model is gepubliceerd, kunt u de vereiste gegevens ophalen door de URL voor de voor __Spelling__ te selecteren. Hiermee opent u een dialoog venster met informatie over het gebruik van de Voorspellings-API, met inbegrip van de __Voorspellings-URL__ en de __Voorspellings sleutel__.
 
 ![Het tabblad prestaties wordt weer gegeven met een rode rechthoek rondom de knop voor de Voorspellings-URL.](./media/use-prediction-api/published-iteration-prediction-url.png)
 

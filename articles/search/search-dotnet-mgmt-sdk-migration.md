@@ -10,10 +10,10 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 07/08/2020
 ms.openlocfilehash: 8648347eb48081389cf360fa949b31bbd0b8c71e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88936704"
 ---
 # <a name="upgrading-versions-of-the-azure-search-net-management-sdk"></a>Versies van de Azure Search .NET Management SDK bijwerken
@@ -27,10 +27,10 @@ Management-Sdk's richten zich op een specifieke versie van de beheer REST API. Z
 | SDK-versie | Overeenkomende REST API versie | Wijziging van de functie of het gedrag |
 |-------------|--------------------------------|-------------------------------------|
 | [3,0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/3.0.0) | API-Version = 2020-30-20 | Endpoint Security toevoegen (IP-firewalls en integratie met [persoonlijke Azure-koppeling](../private-link/private-endpoint-overview.md)) |
-| [2.0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/2.0.0) | API-Version = 2019-10-01 | Verbeteringen in het gebruik. De wijziging van de [lijst query sleutels](/rest/api/searchmanagement/querykeys/listbysearchservice) opsplitsen (Get wordt stopgezet). |
+| [2,0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/2.0.0) | API-Version = 2019-10-01 | Verbeteringen in het gebruik. De wijziging van de [lijst query sleutels](/rest/api/searchmanagement/querykeys/listbysearchservice) opsplitsen (Get wordt stopgezet). |
 | [1,0](https://www.nuget.org/packages/Microsoft.Azure.Management.Search/1.0.1) | API-Version = 2015-08-19  | Eerste versie |
 
-## <a name="how-to-upgrade"></a>Een upgrade uitvoeren
+## <a name="how-to-upgrade"></a>Upgrade uitvoeren
 
 1. Werk uw NuGet-verwijzing bij voor `Microsoft.Azure.Management.Search` het gebruik van de NuGet Package Manager-console of klik met de rechter muisknop op uw project verwijzingen en selecteer vervolgens NuGet-pakketten beheren... in Visual Studio.
 
@@ -60,7 +60,7 @@ U kunt de aanvraag voor het ophalen van een [lijst met zoek sleutels](/rest/api/
 
 ## <a name="upgrade-to-20"></a>Voer een upgrade uit naar 2,0
 
-Versie 2 van de Azure Search .NET Management SDK is een kleine upgrade, zodat het wijzigen van uw code slechts minimale inspanning vereist. De wijzigingen in de SDK zijn strikt aan de client zijde gewijzigd om de bruikbaarheid van de SDK zelf te verbeteren. Deze wijzigingen omvatten het volgende:
+Versie 2 van de Azure Search .NET Management SDK is een kleine upgrade, zodat het wijzigen van uw code slechts minimale inspanning vereist. De wijzigingen in de SDK zijn strikt aan de client zijde gewijzigd om de bruikbaarheid van de SDK zelf te verbeteren. Deze veranderingen houden onder meer het volgende in:
 
 * `Services.CreateOrUpdate` en de bijbehorende asynchrone versies worden nu automatisch door gegeven aan de inrichting `SearchService` en worden niet teruggestuurd totdat het inrichten van de service is voltooid. Zo hoeft u niet zelf een dergelijke polling code te schrijven.
 

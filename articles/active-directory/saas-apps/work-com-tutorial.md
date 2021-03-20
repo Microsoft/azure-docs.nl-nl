@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.openlocfilehash: a77b6472ea91a6ba4b6e31d1b7739aae236a1783
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92636150"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workcom"></a>Zelfstudie: Integratie van Azure Active Directory met Work.com
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Work.com met Azure AD moet u Work.co
 
 **Voer de volgende stappen uit als u Work.com vanuit de galerie wilt toevoegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -135,7 +135,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Work.com moet u de v
    
     ![Schermopname met My Domain geselecteerd voor Domain Management in het deelvenster Administer.](./media/work-com-tutorial/ic767825.png "Mijn domein")
 
-4. Om te controleren dat uw domein correct is ingesteld, moet u ervoor zorgen dat het ' **Stap 4 geïmplementeerd voor gebruikers** ' is en uw ' **Mijn domeininstellingen** ' controleren.
+4. Om te controleren dat uw domein correct is ingesteld, moet u ervoor zorgen dat het '**Stap 4 geïmplementeerd voor gebruikers**' is en uw '**Mijn domeininstellingen**' controleren.
    
     ![Domein geïmplementeerd voor gebruiker](./media/work-com-tutorial/ic784377.png "Domein geïmplementeerd voor gebruiker")
 
@@ -157,7 +157,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Work.com moet u de v
     
     b. Klik op **Nieuw**.
 
-9. Voer de volgende stappen uit in het gedeelte **Instellingen voor op SAML gebaseerde eenmalige aanmelding** :
+9. Voer de volgende stappen uit in het gedeelte **Instellingen voor op SAML gebaseerde eenmalige aanmelding**:
     
     ![Instellingen voor op SAML gebaseerde eenmalige aanmelding](./media/work-com-tutorial/ic794114.png "Instellingen voor op SAML gebaseerde eenmalige aanmelding")
     
@@ -200,7 +200,7 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Work.com moet u de v
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -278,11 +278,11 @@ Voordat Azure Active Directory-gebruikers zich kunnen aanmelden, moeten ze worde
     
     d. Typ in het tekstvak **Email** het **e-mailadres** van de gebruiker Brittasimon@contoso.com.
     
-    e. Typ een gebruikersnaam van een gebruiker in het tekstvak **Gebruikersnaam** , bijvoorbeeld Brittasimon@contoso.com.
+    e. Typ een gebruikersnaam van een gebruiker in het tekstvak **Gebruikersnaam**, bijvoorbeeld Brittasimon@contoso.com.
     
     f. Typ in het tekstvak **Bijnaam** een **bijnaam** van de gebruiker **Simon**.
     
-    g. Selecteer **Rol** , **Gebruikerslicentie** en **Profiel**.
+    g. Selecteer **Rol**, **Gebruikerslicentie** en **Profiel**.
     
     h. Klik op **Opslaan**.  
       

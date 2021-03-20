@@ -7,36 +7,33 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 10/02/2020
+ms.date: 03/11/2021
 ms.author: aahi
-ms.openlocfilehash: 614d0fe69cee88791559758d5e08dda66672669b
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 805c726d33f2050f6f2797c0689069aa5ec4ee71
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097258"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599299"
 ---
-In [Text Analytics status](../../how-tos/text-analytics-for-health.md) worden medische concepten in de volgende categorieën gedetecteerd.  (Alleen Engelse tekst wordt ondersteund in deze container preview en er wordt slechts één model versie in elke container installatie kopie gegeven.)
+[Text Analytics voor status](../../how-tos/text-analytics-for-health.md) processen en extraheer inzichten uit ongestructureerde medische gegevens. Met de service worden medische concepten gedetecteerd en geoppereerd, worden bevestigingen aan concepten toegewezen, worden er semantische relaties tussen concepten afgedaan en worden ze gekoppeld aan algemene medische Ontologies.
 
+In Text Analytics status worden medische concepten in de volgende categorieën gedetecteerd. Alleen Engelse tekst wordt ondersteund in deze preview en er is slechts één model versie beschikbaar.
 
 | Categorie  | Beschrijving  |
 |---------|---------|
 | [STRUCTUUR](#anatomy) | concepten die informatie vastleggen over hoofd-en Anatomic-systemen,-sites,-locaties of-regio's. |
  | [DEMOGRAFISCHE gegevens](#demographics) | concepten die informatie over geslacht en leeftijd vastleggen. |
  | [BESTUDEREN](#examinations) | concepten die informatie vastleggen over diagnostische procedures en tests. |
+ | [ALGEMENE KENMERKEN](#general-attributes) | concepten die meer informatie geven over andere concepten uit de bovenstaande categorieën. |
  | [GENOMICS](#genomics) | concepten die informatie over genen en varianten vastleggen. |
- | [GEZONDHEIDS zorg](#healthcare) | concepten die informatie vastleggen over administratieve gebeurtenissen, careische omgevingen en gezondheids zorg. |
+ | [GEZONDHEIDS zorg](#healthcare) | concepten die informatie vastleggen over beheer gebeurtenissen, careische omgevingen en beroeps beoefenaars in de gezondheids zorg. |
  | [MEDISCHE VOOR WAARDE](#medical-condition) | concepten die informatie vastleggen over diagnoses, symptomen of symptomen. |
- | [GENEES](#medication) | concepten die informatie over medicijnen vastleggen, waaronder medicijnen namen, klassen, dosering en route van beheer. |
+ | [GENEES](#medication) | concepten voor het vastleggen van informatie over medicijnen, waaronder medicijnen namen, klassen, dosering en route van beheer. |
  | [BURGER](#social) | concepten die informatie vastleggen over medische relevante sociale aspecten, zoals familie relatie. |
  | [GERICHT](#treatment) | concepten die informatie over therapeutische procedures vastleggen. |
-  
-Elke categorie kan twee concept groepen bevatten:
 
-* **Entiteiten** -termen die medische concepten vastleggen, zoals diagnose, medicijnen naam of behandelings naam.  *Bronchitis* is bijvoorbeeld een diagnose en *aspirin* is een medicijnen naam.  Vermeldingen in deze groep kunnen worden gekoppeld aan een UMLS concept-ID.
-* **Kenmerken** : zinnen die meer informatie bieden over de gedetecteerde entiteit, bijvoorbeeld *ernstige* , is een voor waarde kwalificatie voor *bronchitis* of *81 mg* is een dosering voor *aspirin*.  Vermeldingen in deze categorie worden niet gekoppeld aan een UMLS concept-ID.
-
-Daarnaast herkent de service relaties tussen de verschillende concepten, met inbegrip van relaties tussen kenmerken en entiteiten, zoals de *richting* van de *hoofd structuur* of de *dosering* van *medicijn naam* en relaties tussen entiteiten, bijvoorbeeld afkortings detectie.
+Hieronder vindt u meer informatie en voor beelden.
 
 ## <a name="anatomy"></a>Structuur
 
@@ -49,21 +46,11 @@ Daarnaast herkent de service relaties tussen de verschillende concepten, met inb
 
 :::image type="content" source="../../media/ta-for-health/anatomy-entities-body-structure-2.png" alt-text="Een uitgebreid voor beeld van de entiteit body-structuur.":::
 
-### <a name="attributes"></a>Kenmerken
-
-**Richtings** voorwaarden, zoals: Left, lateraal, Upper, posterior, die een carrosserie structuur kenmerkt.
-
-:::image type="content" source="../../media/ta-for-health/anatomy-attributes.png" alt-text="Een voor beeld van een directioneel kenmerk.":::
-
-### <a name="supported-relations"></a>Ondersteunde relaties
-
-* **DIRECTION_OF_BODY_STRUCTURE**
-
 ## <a name="demographics"></a>Demografische gegevens
 
 ### <a name="entities"></a>Entiteiten
 
-**Leeftijd** : alle leeftijds voorwaarden en zinsdelen, inclusief die van een patiënt, familie leden en anderen. Bijvoorbeeld 40-jaar-oud, 51 yo, 3 maanden oud, volwassene, zuigelingen, oude leeftijd, Young, secundair, Midden-verouderd.
+**Leeftijd** : alle leeftijds voorwaarden en zinsdelen, met inbegrip van patiënten, gezins leden en anderen. Bijvoorbeeld 40-jaar-oud, 51 yo, 3 maanden oud, volwassene, zuigelingen, oude leeftijd, Young, secundair, Midden-verouderd.
 
 :::image type="content" source="../../media/ta-for-health/age-entity.png" alt-text="Een voor beeld van een leeftijds entiteit.":::
 
@@ -74,61 +61,43 @@ Daarnaast herkent de service relaties tussen de verschillende concepten, met inb
 
 :::image type="content" source="../../media/ta-for-health/gender-entity.png" alt-text="Een voor beeld van een gender-entiteit.":::
 
-### <a name="attributes"></a>Kenmerken
-
-**RELATIONAL_OPERATOR** -zinnen die de relatie tussen een demografische entiteit en aanvullende informatie uitdrukken.
-
-:::image type="content" source="../../media/ta-for-health/relational-operator.png" alt-text="Een voor beeld van een relationele operator.":::
-
 ## <a name="examinations"></a>Onderzoek
 
 ### <a name="entities"></a>Entiteiten
 
-**EXAMINATION_NAME** : diagnostische procedures en tests. Bijvoorbeeld, MRI, ECG, HIV test, HEMOGLOBIN, aantal Trombocyten, schaal systemen zoals Bristol van de *stoel schalen*.
+**EXAMINATION_NAME** : diagnostische procedures en tests, met inbegrip van vitale tekens en lichaams metingen. Bijvoorbeeld, MRI, ECG, HIV test, HEMOGLOBIN, aantal Trombocyten, schaal systemen zoals Bristol van de *stoel schalen*.
 
 :::image type="content" source="../../media/ta-for-health/exam-name-entities.png" alt-text="Een voor beeld van een examen-entiteit.":::
 
 :::image type="content" source="../../media/ta-for-health/exam-name-entities-2.png" alt-text="Een ander voor beeld van een naam entiteit voor onderzoek.":::
 
-### <a name="attributes"></a>Kenmerken
+## <a name="general-attributes"></a>Algemene kenmerken
 
-**Direction** -directionele termen die een onderzoek kenmerkt.
+### <a name="entities"></a>Entiteiten
 
-:::image type="content" source="../../media/ta-for-health/exam-direction-attribute.png" alt-text="Een voor beeld van een Direction-kenmerk met de entiteit examen naam.":::
+**Datum** : volledige datum voor een medische situatie, onderzoek, behandeling, medicijnen of administratieve gebeurtenis.
 
-**MEASUREMENT_UNIT** : de eenheid van het onderzoek. Voor beeld: in *hemoglobin > 9,5 g/DL* is de term *g/DL* de eenheid voor de test *HEMOGLOBIN* .
+**Richting** : richtings termen die mogelijk betrekking hebben op een carrosserie, een medische voor waarde, een onderzoek of behandeling, zoals: Left, zijdelings, Upper, posterior.
 
-:::image type="content" source="../../media/ta-for-health/exam-unit-attribute.png" alt-text="Een voor beeld van een meting eenheid kenmerk met de entiteit beoordelings naam.":::
+**Frequentie** -geeft aan hoe vaak een medische voor waarde, een onderzoek, een behandeling of medicijnen heeft plaatsgevonden, zich voordoet of zich moet voordoen.
 
-**MEASUREMENT_VALUE** : de waarde van het onderzoek. In *hemoglobin > 9,5 g/DL* is de term *9,5* bijvoorbeeld de waarde voor de *HEMOGLOBIN* -test.
+**MEASUREMENT_VALUE** : de waarde met betrekking tot een onderzoek of een medische voor waarden meting.
 
-:::image type="content" source="../../media/ta-for-health/exam-value-attribute.png" alt-text="Een voor beeld van een meting waarde-kenmerk met de entiteit beoordelings naam.":::
+**MEASUREMENT_UNIT** : de maat eenheid die is gerelateerd aan een onderzoek of een medische voor waarden meting.
 
-**RELATIONAL_OPERATOR** : zinsdelen die de relatie tussen een onderzoek en aanvullende informatie uitdrukken. Bijvoorbeeld de vereiste meet waarde voor een doel onderzoek.
+**RELATIONAL_OPERATOR** -zinnen waarmee de kwantitatieve relatie tussen een entiteit en enige aanvullende informatie wordt uitgedrukt.
 
-:::image type="content" source="../../media/ta-for-health/exam-relational-operator-attribute.png" alt-text="Een voor beeld van een relationele operator met de entiteit beoordelings naam.":::
-
-**Tijd** – tijdelijke termen met betrekking tot het begin en/of de lengte (duur) van een onderzoek. Bijvoorbeeld wanneer de test is uitgevoerd.
-
-:::image type="content" source="../../media/ta-for-health/exam-time-attribute.png" alt-text="Een voor beeld van een time-kenmerk met de entiteit beoordelings naam.":::
-
-### <a name="supported-relations"></a>Ondersteunde relaties
-
-+ **DIRECTION_OF_EXAMINATION**
-+   **RELATION_OF_EXAMINATION**
-+   **TIME_OF_EXAMINATION**
-+   **UNIT_OF_EXAMINATION**
-+   **VALUE_OF_EXAMINATION**
+**Tijdgebonden voor** waarden met betrekking tot het begin en/of de lengte (duur) van een medische toestand, onderzoek, behandeling, medicijnen of administratieve gebeurtenis. 
 
 ## <a name="genomics"></a>Genomics
 
 ### <a name="entities"></a>Entiteiten
 
-**Gen** : alle vermeldingen van genen. Bijvoorbeeld, MTRR, F2.
+**GENE_OR_PROTEIN** : alle vermeldingen van namen en symbolen van menselijke genen, alsmede chromosoom en delen van chromosomen en eiwitten. Bijvoorbeeld, MTRR, F2.
 
 :::image type="content" source="../../media/ta-for-health/genomics-entities.png" alt-text="Een voor beeld van een gen-entiteit.":::
 
-**Variant** : alle vermeldingen van gen-variaties. Bijvoorbeeld c. 524C>T, (MTRR): r.1462_1557del96
+**Variant** : alle vermeldingen van gen en mutaties van de voors Republiek. Bijvoorbeeld `c.524C>T` , `(MTRR):r.1462_1557del96`
   
 ## <a name="healthcare"></a>Gezondheidszorg
 
@@ -164,9 +133,7 @@ Daarnaast herkent de service relaties tussen de verschillende concepten, met inb
 
 :::image type="content" source="../../media/ta-for-health/medical-condition-symptom-entity-2.png" alt-text="Een ander voor beeld van een teken of symptoom entiteit van de medische voor waarde.":::
 
-### <a name="attributes"></a>Kenmerken
-
-Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een medische voor waarde te beschrijven. Alle volgende subcategorieën worden beschouwd als kwalificaties:
+**CONDITION_QUALIFIER** -kwalitatieve voor waarden die worden gebruikt om een medische voor waarde te beschrijven. Alle volgende subcategorieën worden beschouwd als kwalificaties:
 
 1.  Time-gerelateerde expressies: Dit zijn termen die de tijd dimensie kwalitatief beschrijven, zoals plotseling, accent aigu, chronische, spant. 
 2.  Kwaliteits expressies: Dit zijn termen die de aard van de medische voor waarde beschrijven, zoals verbranding, scherp.
@@ -186,40 +153,6 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 
 :::image type="content" source="../../media/ta-for-health/condition-qualifier-symptom.png" alt-text="Deze scherm afbeelding toont een extra voor beeld van een voorwaarde kwalificatie kenmerk met een controle-entiteit.":::
 
-**Richtings** termen die een medische voor waarde voor een lichaam kenmerken.
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-direction-attribute.png" alt-text="Een voor beeld van een kenmerk Direction met een entiteit voor medische voor waarden.":::
-
-**Frequentie** : hoe vaak een medische situatie zich voordeed, zich voordoet of zich voordoet.
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute.png" alt-text="Een voor beeld van een frequentie kenmerk met een entiteit voor een medische voor waarde.":::
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-frequency-attribute-2.png" alt-text="Een ander voor beeld van een Direction-kenmerk met een symptoom-of Sign-entiteit.":::
-
-**MEASUREMENT_UNIT** -de eenheid die een medische voor waarde kenmerkt. In *1,5 x2x1 cm tumor* is de term *cm* bijvoorbeeld de maat eenheid voor de *tumor*. 
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-measure-unit-attribute.png" alt-text="Een voor beeld van een kenmerk van een meting eenheid met de entiteit medische voor waarde.":::
-
-**MEASUREMENT_VALUE** : de waarde die een medische voor waarde kenmerkt. Bijvoorbeeld: in *1,5 x2x1 cm tumor* is de term *1,5 x2x1* de meet waarde voor de *tumor*. 
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-measure-value-attribute.png" alt-text="Scherm afbeelding toont een voor beeld van een kenmerk Direction met een symptoom-of Sign-entiteit.":::
-
-**RELATIONAL_OPERATOR** -zinsdelen waarmee de relatie tussen de medische voor waarde wordt versneld. Bijvoorbeeld een tijd-of meet waarde. 
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-relational-operator.png" alt-text="Scherm afbeelding toont een ander voor beeld van een kenmerk van de richting met een symptoom-of ondertekende entiteit.":::
-
-**Tijdgebonden voor** waarden met betrekking tot het begin en/of de lengte (duur) van een medische voor waarde. Bijvoorbeeld wanneer een symptoom is gestart (begin) of wanneer er een ziekte heeft plaatsgevonden.
-
-:::image type="content" source="../../media/ta-for-health/medical-condition-time-attribute.png" alt-text="Scherm afbeelding toont een extra voor beeld van een kenmerk Direction met een symptoom-of ondertekende entiteit.":::
-
-### <a name="supported-relations"></a>Ondersteunde relaties
-
-+ **DIRECTION_OF_CONDITION**
-+   **QUALIFIER_OF_CONDITION**
-+   **TIME_OF_CONDITION**
-+   **UNIT_OF_CONDITION**
-+   **VALUE_OF_CONDITION**
-
 ## <a name="medication"></a>Genees
 
 ### <a name="entities"></a>Entiteiten
@@ -228,21 +161,13 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 
 :::image type="content" source="../../media/ta-for-health/medication-entities-class.png" alt-text="Een voor beeld van een medicijnen klasse-entiteit.":::
 
-**MEDICATION_NAME** : medicijn vermeldingen, waaronder merk namen van auteurs rechten en niet-merk namen. Bijvoorbeeld, Advil, ibuprofen.
+**MEDICATION_NAME** : medicijn vermeldingen, waaronder merk namen van auteurs rechten en niet-merk namen. Bijvoorbeeld ibuprofen.
 
 :::image type="content" source="../../media/ta-for-health/medication-entities-name.png" alt-text="Een voor beeld van een medicijnen naam entiteit.":::
-
-### <a name="attributes"></a>Kenmerken
 
 **Dosering** : de hoeveelheid medicijnen die is besteld. Bijvoorbeeld: natriumhydroxide natrium chloride-oplossing *1000 ml*.
 
 :::image type="content" source="../../media/ta-for-health/medication-dosage.png" alt-text="Een voor beeld van een medicijnen doserings kenmerk.":::
-
-**Frequentie** : hoe vaak een medicijnen moet worden genomen.
-
-:::image type="content" source="../../media/ta-for-health/medication-frequency.png" alt-text="Een voor beeld van een medicijn frequentie kenmerk.":::
-
-:::image type="content" source="../../media/ta-for-health/medication-frequency-2.png" alt-text="Een ander voor beeld van een medicijn frequentie kenmerk.":::
 
 **MEDICATION_FORM** : de vorm van de medicijnen. Bijvoorbeeld oplossing, Pill, capsule, Tablet, patch, gel, paste, schuim, spuit, drup pels, room, stroop.
 
@@ -251,20 +176,6 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 **MEDICATION_ROUTE** : de administratieve methode van medicijnen. Bijvoorbeeld, oraal, Vaginal, IV, epidural, onderwerpf, inademing.
 
 :::image type="content" source="../../media/ta-for-health/medication-route.png" alt-text="Een voor beeld van een medicijn route-kenmerk.":::
-
-**RELATIONAL_OPERATOR** -zinnen die de relatie tussen medicijnen en aanvullende informatie uitdrukken. Bijvoorbeeld de vereiste meet waarde.
-
-:::image type="content" source="../../media/ta-for-health/medication-relational-operator.png" alt-text="Scherm afbeelding toont een voor beeld van een relationele operator kenmerk met een medicijnen-entiteit.":::
-
-:::image type="content" source="../../media/ta-for-health/medication-time.png" alt-text="Scherm afbeelding toont een ander voor beeld van een relationele operator kenmerk met een medicijnen-entiteit.":::
-
-### <a name="supported-relations"></a>Ondersteunde relaties
-
-+ **DOSAGE_OF_MEDICATION**
-+   **FORM_OF_MEDICATION**
-+   **FREQUENCY_OF_MEDICATION**
-+   **ROUTE_OF_MEDICATION**
-+   **TIME_OF_MEDICATION**
 
 ## <a name="social"></a>Sociaal netwerken
 
@@ -281,27 +192,3 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 **TREATMENT_NAME** : therapeutische procedures. Bijvoorbeeld, chirurgische, beenmerg Transplant, TAVI, dieet.
 
 :::image type="content" source="../../media/ta-for-health/treatment-entities-name.png" alt-text="Een voor beeld van een entiteit met een behandelings naam.":::
-
-### <a name="attributes"></a>Kenmerken
-
-**Richtings** termen die een behandeling kenmerkt.
-
-:::image type="content" source="../../media/ta-for-health/treatment-direction.png" alt-text="Scherm afbeelding toont een voor beeld van een kenmerk voor de behandeling van de richting.":::
-
-**Frequentie** : hoe vaak een behandeling plaatsvindt of zich moet voordoen.
-
-:::image type="content" source="../../media/ta-for-health/treatment-frequency.png" alt-text="Scherm afbeelding toont een ander voor beeld van een kenmerk voor de behandeling van de richting.":::
- 
-**RELATIONAL_OPERATOR** -zinnen die de relatie tussen behandeling en aanvullende informatie uitdrukken.  Bijvoorbeeld hoeveel tijd er is verstreken van de vorige procedure.
-
-:::image type="content" source="../../media/ta-for-health/treatment-relational-operator.png" alt-text="Een voor beeld van een relationele operator voor behandeling.":::
-
-**Tijdgebonden voor** waarden met betrekking tot het begin en/of de lengte (duur) van een behandeling. Bijvoorbeeld de datum waarop de behandeling is gegeven.
-
-:::image type="content" source="../../media/ta-for-health/treatment-time.png" alt-text="Scherm afbeelding toont een voor beeld van een kenmerk voor een behandelings tijd.":::
-
-### <a name="supported-relations"></a>Ondersteunde relaties
-
-+ **DIRECTION_OF_TREATMENT**
-+   **TIME_OF_TREATMENT**
-+   **FREQUENCY_OF_TREATMENT**

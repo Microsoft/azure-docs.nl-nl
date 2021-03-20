@@ -7,12 +7,12 @@ ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/02/2021
 ms.custom: references_regions
-ms.openlocfilehash: db3f188cc796642285d9b082b46371879491c632
-ms.sourcegitcommit: 94c3c1be6bc17403adbb2bab6bbaf4a717a66009
+ms.openlocfilehash: cb555eefb19b5db7ed7eb0792a813c295a4bf38b
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103225231"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588610"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-from-the-azure-portal-preview"></a>Snelstartgids: een door Azure beheerd exemplaar voor Apache Cassandra-cluster maken op basis van de Azure Portal (preview-versie)
  
@@ -89,7 +89,6 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
    :::image type="content" source="./media/create-cluster-portal/resources.png" alt-text="De cluster bronnen weer geven." lightbox="./media/create-cluster-portal/resources.png" border="true":::
 
 
-
 ## <a name="connecting-to-your-cluster"></a>Verbinding maken met uw cluster
 
 Azure Managed instance voor Apache Cassandra maakt geen knoop punten met een openbaar IP-adres, zodat u verbinding kunt maken met het zojuist gemaakte Cassandra-cluster. u moet dan een andere resource in het VNet aanmaken. Dit kan een toepassing zijn, of een virtuele machine met open source query tool [CQLSH](https://cassandra.apache.org/doc/latest/tools/cqlsh.html) geïnstalleerd. U kunt een [sjabloon](https://azure.microsoft.com/resources/templates/101-vm-simple-linux/) gebruiken om een virtuele Ubuntu-machine te implementeren. Gebruik SSH om verbinding te maken met de computer en installeer CQLSH met behulp van de onderstaande opdrachten, wanneer u deze implementeert:
@@ -113,6 +112,15 @@ export SSL_VALIDATE=false
 host=("<IP>" "<IP>" "<IP>")
 cqlsh $host 9042 -u cassandra -p cassandra --ssl
 ```
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Als er een fout optreedt bij het Toep assen van machtigingen voor uw Virtual Network, zoals het vinden van de *gebruiker of Service-Principal in Graph Data Base voor e5007d2c-4b13-4a74-9B6A-605d99f03501*, kunt u dezelfde machtiging hand matig Toep assen vanuit de Azure Portal. Als u machtigingen wilt Toep assen vanuit de portal, gaat u naar het deel venster **toegangs beheer (IAM)** van uw bestaande virtuele netwerk en voegt u een roltoewijzing voor ' Azure Cosmos db ' toe aan de rol ' netwerk beheerder '. Als er twee vermeldingen worden weer gegeven wanneer u zoekt naar ' Azure Cosmos DB ', voegt u beide vermeldingen toe, zoals wordt weer gegeven in de volgende afbeelding: 
+
+   :::image type="content" source="./media/create-cluster-cli/apply-permissions.png" alt-text="Machtigingen Toep assen" lightbox="./media/create-cluster-cli/apply-permissions.png" border="true":::
+
+> [!NOTE] 
+> De roltoewijzing Azure Cosmos DB wordt alleen voor implementatie doeleinden gebruikt. Door Azure beheerde instanties voor Apache Cassandra hebben geen back-end-afhankelijkheden op Azure Cosmos DB.   
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

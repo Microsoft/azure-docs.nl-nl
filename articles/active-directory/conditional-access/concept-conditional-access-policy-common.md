@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bdaaed72b85bc3c0196a8897be311efa5fb714e2
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92366340"
 ---
 # <a name="common-conditional-access-policies"></a>Algemeen beleid voor voorwaardelijke toegang
@@ -28,7 +28,7 @@ De [standaard instellingen voor beveiliging](../fundamentals/concept-fundamental
 
 Meer informatie over accounts voor toegang in nood gevallen en waarom ze belang rijk zijn, vindt u in de volgende artikelen: 
 
-* [Accounts voor nood toegang beheren in azure AD](../roles/security-emergency-access.md)
+* [Accounts voor noodtoegang beheren in Azure AD](../roles/security-emergency-access.md)
 * [Maak een flexibele toegangs beheer strategie met Azure Active Directory](../authentication/concept-resilient-controls.md)
 
 ## <a name="typical-policies-deployed-by-organizations"></a>Typische beleids regels die door organisaties worden geïmplementeerd
@@ -45,7 +45,7 @@ Meer informatie over accounts voor toegang in nood gevallen en waarom ze belang 
 * [Aan aanmeldings Risico's gebaseerde voorwaardelijke toegang (vereist Azure AD Premium P2)](howto-conditional-access-policy-risk.md)
 * [Voorwaardelijke toegang op basis van gebruikers risico (vereist Azure AD Premium P2)](howto-conditional-access-policy-risk-user.md)
 * [Vertrouwde locatie vereisen voor MFA-registratie](howto-conditional-access-policy-registration.md)
-* [Toegang per locatie blokkeren](howto-conditional-access-policy-location.md)
+* [Toegang op locatie blok keren](howto-conditional-access-policy-location.md)
 * [Compatibel apparaat vereisen](howto-conditional-access-policy-compliant-device.md)
 * [Toegang blok keren met uitzonde ring van specifieke apps](howto-conditional-access-policy-block-access.md)
 

@@ -6,12 +6,12 @@ ms.author: thvankra
 ms.service: managed-instance-apache-cassandra
 ms.topic: quickstart
 ms.date: 03/15/2021
-ms.openlocfilehash: 3890b06b2d085cea57b59cfe34d8b961918471c5
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: ef8ef85dde11eb991f14201286dc1a086df71dc8
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103562379"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588581"
 ---
 # <a name="quickstart-create-an-azure-managed-instance-for-apache-cassandra-cluster-using-azure-cli-preview"></a>Quick Start: een door Azure beheerd exemplaar maken voor Apache Cassandra-cluster met behulp van Azure CLI (preview)
 
@@ -58,13 +58,16 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
    > [!NOTE]
    > De `assignee` `role` waarden en in de vorige opdracht zijn vaste waarden. Voer deze waarden precies zoals vermeld in de opdracht in. Als u dit niet doet, leidt dit tot fouten bij het maken van het cluster. Als er fouten optreden tijdens het uitvoeren van deze opdracht, bent u mogelijk niet gemachtigd om deze uit te voeren. Neem contact op met uw beheerder voor machtigingen.
 
-1. Maak vervolgens het cluster in uw nieuw gemaakte Virtual Network met behulp van de opdracht [AZ Managed-Cassandra cluster create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_create) . Voer de volgende opdracht uit en zorg ervoor dat u de `Resource ID` waarde die in de vorige opdracht is opgehaald als de waarde van `delegatedManagementSubnetId` Variable gebruikt:
+1. Maak vervolgens het cluster in uw nieuw gemaakte Virtual Network met behulp van de opdracht [AZ Managed-Cassandra cluster create](/cli/azure/ext/cosmosdb-preview/managed-cassandra/cluster?view=azure-cli-latest&preserve-view=true#ext_cosmosdb_preview_az_managed_cassandra_cluster_create) . Voer de volgende opdracht uit op de waarde van `delegatedManagementSubnetId` variable:
+
+   > [!NOTE]
+   > De waarde van de `delegatedManagementSubnetId` variabele die u hieronder opgeeft, is precies hetzelfde als de waarde `--scope` die u hebt opgegeven in de bovenstaande opdracht:
 
    ```azurecli-interactive
    resourceGroupName='<Resource_Group_Name>'
    clusterName='<Cluster_Name>'
    location='eastus2'
-   delegatedManagementSubnetId='<Resource_ID>'
+   delegatedManagementSubnetId='/subscriptions/<subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.Network/virtualNetworks/<VNet name>/subnets/<subnet name>'
    initialCassandraAdminPassword='myPassword'
     
    az managed-cassandra cluster create \
@@ -81,14 +84,13 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
    ```azurecli-interactive
    dataCenterName='dc1'
    dataCenterLocation='eastus2'
-   delegatedSubnetId='<Resource_ID>'
     
    az managed-cassandra datacenter create \
       --resource-group $resourceGroupName \
       --cluster-name $clusterName \
       --data-center-name $dataCenterName \
       --data-center-location $dataCenterLocation \
-      --delegated-subnet-id $delegatedSubnetId \
+      --delegated-subnet-id $delegatedManagementSubnetId \
       --node-count 3 
    ```
 
@@ -99,7 +101,6 @@ In deze Quick start ziet u hoe u de Azure CLI-opdrachten gebruikt om een cluster
    clusterName='<Cluster Name>'
    dataCenterName='dc1'
    dataCenterLocation='eastus2'
-   delegatedSubnetId= '<Resource_ID>'
     
    az managed-cassandra datacenter update \
       --resource-group $resourceGroupName \
@@ -131,6 +132,15 @@ export SSL_VALIDATE=false
 host=("<IP>" "<IP>" "<IP>")
 cqlsh $host 9042 -u cassandra -p cassandra --ssl
 ```
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Als er een fout optreedt bij het Toep assen van machtigingen voor uw Virtual Network, zoals het vinden van de *gebruiker of Service-Principal in Graph Data Base voor e5007d2c-4b13-4a74-9B6A-605d99f03501*, kunt u dezelfde machtiging hand matig Toep assen vanuit de Azure Portal. Als u machtigingen wilt Toep assen vanuit de portal, gaat u naar het deel venster **toegangs beheer (IAM)** van uw bestaande virtuele netwerk en voegt u een roltoewijzing voor ' Azure Cosmos db ' toe aan de rol ' netwerk beheerder '. Als er twee vermeldingen worden weer gegeven wanneer u zoekt naar ' Azure Cosmos DB ', voegt u beide vermeldingen toe, zoals wordt weer gegeven in de volgende afbeelding: 
+
+   :::image type="content" source="./media/create-cluster-cli/apply-permissions.png" alt-text="Machtigingen Toep assen" lightbox="./media/create-cluster-cli/apply-permissions.png" border="true":::
+
+> [!NOTE] 
+> De roltoewijzing Azure Cosmos DB wordt alleen voor implementatie doeleinden gebruikt. Door Azure beheerde instanties voor Apache Cassandra hebben geen back-end-afhankelijkheden op Azure Cosmos DB.  
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

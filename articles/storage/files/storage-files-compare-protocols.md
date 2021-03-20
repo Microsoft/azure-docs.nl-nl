@@ -8,12 +8,12 @@ ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 482e6c9f2e25b867574090a1f34e95f466916ba9
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: 0ed41cc01fcf5aa35b3d2195518b8e2bb0f3b9c4
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101711838"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588236"
 ---
 # <a name="azure-file-share-protocols"></a>Protocollen voor Azure-bestands shares
 
@@ -26,7 +26,7 @@ Azure Files biedt twee protocollen voor het koppelen en koppelen van uw Azure-be
 |Toegangs protocollen     |NFS 4,1         |SMB 2,1, SMB 3,0         |
 |Aanbevolen besturings systeem     |Linux-kernel versie 4.3 +         |Windows 2008 R2 +, Linux-kernel versie 4.11 +         |
 |[Beschikbare lagen](storage-files-planning.md#storage-tiers)     |Premium Storage         |Premium-opslag, geoptimaliseerde trans actie, hot, cool         |
-|Facturerings model         |[Betalen voor ingerichte capaciteit](https://docs.microsoft.com/azure/storage/files/understanding-billing#provisioned-model)         |[Betaal de ingerichte capaciteit](https://docs.microsoft.com/azure/storage/files/understanding-billing#provisioned-model)voor de Premium-laag, betalen naar gebruik [voor de Standard-laag](https://docs.microsoft.com/azure/storage/files/understanding-billing#pay-as-you-go-model)         |
+|Facturerings model         |[Betalen voor ingerichte capaciteit](./understanding-billing.md#provisioned-model)         |[Betaal de ingerichte capaciteit](./understanding-billing.md#provisioned-model)voor de Premium-laag, betalen naar gebruik [voor de Standard-laag](./understanding-billing.md#pay-as-you-go-model)         |
 |[Redundantie](storage-files-planning.md#redundancy)     |LRS, ZRS         |LRS, ZRS, GRS         |
 |Verificatie     |Alleen voor de host gebaseerde verificatie        |Verificatie op basis van identiteit, verificatie op basis van een gebruiker         |
 |Machtigingen     |UNIX-stijl machtigingen         |NTFS-machtigingen         |

@@ -16,10 +16,10 @@ ms.date: 01/23/2017
 ms.author: mazha
 ms.custom: has-adal-ref, devx-track-csharp
 ms.openlocfilehash: a812704c42a4da5ddf89fe6c5ba0c9a684047f75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88919485"
 ---
 # <a name="get-started-with-the-azure-cdn-library-for-net"></a>Aan de slag met de Azure CDN-bibliotheek voor .NET
@@ -49,20 +49,20 @@ Klik in Visual Studio 2015 op **bestand**, **Nieuw**, **project...** om het dial
 
 Ons project gaat gebruikmaken van enkele Azure-bibliotheken die zijn opgenomen in Nuget-pakketten.  Laten we deze aan het project toevoegen.
 
-1. Klik in het menu **extra** op **Nuget package manager**en vervolgens op **Package Manager console**.
+1. Klik in het menu **extra** op **Nuget package manager** en vervolgens op **Package Manager console**.
 
     ![Nuget-pakketten beheren](./media/cdn-app-dev-net/cdn-manage-nuget.png)
 2. Voer in de Package Manager-console de volgende opdracht uit om de **Active Directory Authentication Library (ADAL)** te installeren:
 
     `Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory`
-3. Voer de volgende handelingen uit om de **Azure CDN-beheer bibliotheek**te installeren:
+3. Voer de volgende handelingen uit om de **Azure CDN-beheer bibliotheek** te installeren:
 
     `Install-Package Microsoft.Azure.Management.Cdn`
 
 ## <a name="directives-constants-main-method-and-helper-methods"></a>Instructies, constanten, hoofd methode en helper-methoden
 Laten we de basis structuur van ons programma ontvangen.
 
-1. Op het tabblad Program.cs vervangt u de `using` richt lijnen bovenaan met het volgende:
+1. Op het tabblad Program. CS vervangt u de `using` richt lijnen bovenaan met het volgende:
 
     ```csharp
     using System;
@@ -74,7 +74,7 @@ Laten we de basis structuur van ons programma ontvangen.
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
     using Microsoft.Rest;
     ```
-2. We moeten enkele constanten definiëren die door de methoden worden gebruikt.  Voeg in de `Program` -klasse, maar vóór de `Main` -methode, het volgende toe.  Zorg ervoor dat u de tijdelijke aanduidingen, inclusief de ** &lt; punt haken &gt; **, vervangt door uw eigen waarden, indien nodig.
+2. We moeten enkele constanten definiëren die door de methoden worden gebruikt.  Voeg in de `Program` -klasse, maar vóór de `Main` -methode, het volgende toe.  Zorg ervoor dat u de tijdelijke aanduidingen, inclusief de **&lt; punt haken &gt;**, vervangt door uw eigen waarden, indien nodig.
 
     ```csharp
     //Tenant app constants

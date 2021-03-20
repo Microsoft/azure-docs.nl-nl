@@ -12,10 +12,10 @@ ms.topic: end-user-help
 ms.date: 04/07/2020
 ms.author: curtand
 ms.openlocfilehash: 016e0de26bf3a9513940be161cfecf6d1c2b9d02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88798496"
 ---
 # <a name="set-up-your-security-info-from-a-sign-in-prompt"></a>Beveiligingsgegevens instellen vanaf een aanmeldingsprompt
@@ -115,7 +115,7 @@ Volg deze stappen voor het instellen van uw beveiligingsgegevens voor uw werk- o
     ![Pagina Wizard is voltooid](media/security-info/securityinfo-prompt-setup-success.png)
 
     >[!Note]
-    >Als uw organisatie vereist dat u app-wachtwoorden gebruikt, ziet u mogelijk een extra sectie in deze wizard waar u deze kunt instellen. Als er een derde sectie met de naam **App-wachtwoorden**wordt weergegeven, moet u deze invullen voordat u de wizard kunt voltooien. Voor stappen over het toevoegen van een app-wachtwoord raadpleegt u de sectie [Uw app-wachtwoorden beheren](#manage-your-app-passwords) in dit artikel.
+    >Als uw organisatie vereist dat u app-wachtwoorden gebruikt, ziet u mogelijk een extra sectie in deze wizard waar u deze kunt instellen. Als er een derde sectie met de naam **App-wachtwoorden** wordt weergegeven, moet u deze invullen voordat u de wizard kunt voltooien. Voor stappen over het toevoegen van een app-wachtwoord raadpleegt u de sectie [Uw app-wachtwoorden beheren](#manage-your-app-passwords) in dit artikel.
 
 ### <a name="manage-your-app-passwords"></a>Uw app-wachtwoorden beheren
 

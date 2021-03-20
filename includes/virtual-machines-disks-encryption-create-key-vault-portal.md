@@ -9,17 +9,17 @@ ms.date: 03/23/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: a967777b65c06cf23239a47e8e691fb3a29231b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88815467"
 ---
 Door door de klant beheerde sleutels voor uw schijven in te stellen, moet u resources in een bepaalde volg orde maken, als u deze voor de eerste keer uitvoert. Eerst moet u een Azure Key Vault maken en instellen.
 
 ## <a name="set-up-your-azure-key-vault"></a>Uw Azure Key Vault instellen
 
-1. Meld u aan bij [Azure Portal](https://aka.ms/diskencryptionupdates).
+1. Meld u aan bij de [Azure Portal](https://aka.ms/diskencryptionupdates).
 1. Zoek en selecteer **sleutel kluizen**.
 
     [![Scherm afbeelding van het Azure Portal in het dialoog venster zoeken is uitgevouwen.](./media/virtual-machines-disk-encryption-portal/server-side-encryption-key-vault-portal-search.png)](./media/virtual-machines-disk-encryption-portal/sever-side-encryption-key-vault-portal-search-expanded.png#lightbox)
@@ -52,7 +52,7 @@ Door door de klant beheerde sleutels voor uw schijven in te stellen, moet u reso
 ## <a name="set-up-your-disk-encryption-set"></a>Uw schijf versleutelings set instellen
 
 1. Zoek naar **schijf versleutelings sets** en selecteer deze.
-1. Selecteer **+ toevoegen**op de Blade **schijf versleutelings sets** .
+1. Selecteer **+ toevoegen** op de Blade **schijf versleutelings sets** .
 
     ![Scherm afbeelding van het hoofd scherm van de portal voor schijf versleuteling. De knop toevoegen markeren](./media/virtual-machines-disk-encryption-portal/sever-side-encryption-create-disk-encryption-set.png)
 

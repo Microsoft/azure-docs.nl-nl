@@ -10,10 +10,10 @@ ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 14da8b6cb695703f1881b6b0b9858772bde386c5
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "95544748"
 ---
 # <a name="performance-and-scalability-checklist-for-blob-storage"></a>Controlelijst voor prestaties en schaalbaarheid voor Blob-opslag
@@ -36,7 +36,7 @@ In dit artikel worden bewezen procedures voor het uitvoeren van prestaties in ee
 | &nbsp; |Netwerken |[Hebben apparaten aan de clientzijde voldoende bandbreedte en lage latentie om de benodigde prestaties te verwezenlijken?](#throughput) |
 | &nbsp; |Netwerken |[Hebben apparaten aan de clientzijde een netwerkkoppeling van hoge kwaliteit?](#link-quality) |
 | &nbsp; |Netwerken |[Bevindt de clienttoepassing zich in dezelfde regio als de opslagaccount?](#location) |
-| &nbsp; |Directe client toegang |[Maakt u gebruik van Shared Access Signatures (SAS) en Cross-Origin Resource Sharing (CORS) om directe toegang tot Azure Storage te krijgen?](#sas-and-cors) |
+| &nbsp; |Directe clienttoegang |[Maakt u gebruik van Shared Access Signatures (SAS) en Cross-Origin Resource Sharing (CORS) om directe toegang tot Azure Storage te krijgen?](#sas-and-cors) |
 | &nbsp; |Caching |[Worden de gegevens in de toepassing opgeslagen die regel matig worden geopend en zelden worden gewijzigd?](#reading-data) |
 | &nbsp; |Caching |[Worden de updates voor de toepassing in de cache opgeslagen op de client en vervolgens geüpload in grotere sets?](#uploading-data-in-batches) |
 | &nbsp; |.NET-configuratie |[Gebruikt u .NET Core 2.1 of hoger voor optimale prestaties?](#use-net-core) |

@@ -9,13 +9,13 @@ ms.date: 11/26/2019
 ms.author: tamram
 ms.custom: include
 ms.openlocfilehash: de79ea50d12ab322d1e28d0ad650df30ecc0c222
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "74806576"
 ---
-## <a name="install-client-library-packages"></a>Client bibliotheek pakketten installeren
+## <a name="install-client-library-packages"></a>Clientbibliotheekpakketten installeren
 
 > [!NOTE]
 > De voor beelden die hier worden weer gegeven, gebruiken de Azure Storage-client bibliotheek versie 12. De client bibliotheek van versie 12 maakt deel uit van de Azure SDK. Zie de Azure SDK-opslag plaats op [github](https://github.com/Azure/azure-sdk)voor meer informatie over de Azure SDK.

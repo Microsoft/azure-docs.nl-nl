@@ -7,10 +7,10 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/17/2019
 ms.openlocfilehash: 6db036752bab7b84b72a37b148eaec7aa5765ef3
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92538592"
 ---
 # <a name="troubleshoot-data-loss-in-azure-cache-for-redis"></a>Problemen met gegevensverlies in Azure Cache voor Redis oplossen
@@ -27,7 +27,7 @@ Azure cache voor redis verwijdert geen wille keurige sleutels nadat ze zijn opge
 
 Als u ontdekt dat sleutels zijn verdwenen uit uw cache, controleert u de volgende mogelijke oorzaken:
 
-| Oorzaak | Description |
+| Oorzaak | Beschrijving |
 |---|---|
 | [Verval datum van de sleutel](#key-expiration) | Sleutels worden verwijderd omdat er time-outs zijn ingesteld. |
 | [Sleutel verwijdering](#key-eviction) | Sleutels worden verwijderd onder geheugen belasting. |
@@ -86,7 +86,7 @@ Elk Azure-cache-exemplaar voor redis in de laag Standard of Premium is geconfigu
 
 Als de meeste of alle sleutels uit uw cache zijn verdwenen, controleert u de volgende mogelijke oorzaken:
 
-| Oorzaak | Description |
+| Oorzaak | Beschrijving |
 |---|---|
 | [Leegmaken van sleutel](#key-flushing) | Sleutels zijn hand matig verwijderd. |
 | [Onjuiste database selectie](#incorrect-database-selection) | Azure cache voor redis is ingesteld op het gebruik van een niet-standaard database. |
@@ -106,7 +106,7 @@ cmdstat_flushdb:calls=1,usec=110,usec_per_call=52.00
 
 ### <a name="incorrect-database-selection"></a>Onjuiste database selectie
 
-Azure cache voor redis maakt standaard gebruik van de **db0** -data base. Als u overschakelt naar een andere data base (bijvoorbeeld **db1** ) en probeert sleutels te lezen, worden deze daar niet gevonden door Azure cache voor redis. Elke Data Base is een logische afzonderlijke eenheid en bevat een andere gegevensset. Gebruik de [Select](https://redis.io/commands/select) -opdracht om andere beschik bare data bases te gebruiken en zoek naar sleutels in elk van deze.
+Azure cache voor redis maakt standaard gebruik van de **db0** -data base. Als u overschakelt naar een andere data base (bijvoorbeeld **db1**) en probeert sleutels te lezen, worden deze daar niet gevonden door Azure cache voor redis. Elke Data Base is een logische afzonderlijke eenheid en bevat een andere gegevensset. Gebruik de [Select](https://redis.io/commands/select) -opdracht om andere beschik bare data bases te gebruiken en zoek naar sleutels in elk van deze.
 
 ### <a name="redis-instance-failure"></a>Redis-instantie fout
 

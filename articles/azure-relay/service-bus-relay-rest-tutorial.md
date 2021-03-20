@@ -5,10 +5,10 @@ ms.topic: tutorial
 ms.custom: devx-track-csharp
 ms.date: 06/23/2020
 ms.openlocfilehash: 0620f55650d0e4da0cd7a616649df952f3017455
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88922324"
 ---
 # <a name="tutorial-azure-wcf-relay-rest-tutorial"></a>Zelfstudie: Azure WCF Relay REST
@@ -68,7 +68,7 @@ Het belangrijkste verschil tussen een WCF-contract en een contract in REST-stijl
 
 Breng vervolgens de volgende codewijzigingen aan in het project:
 
-1. Voeg aan het begin van het bestand `using`Program.cs*de volgende*-instructies toe.
+1. Voeg aan het begin van het bestand `using`Program.cs *de volgende*-instructies toe.
 
     ```csharp
     using System.ServiceModel;

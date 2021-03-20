@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 12/17/2020
+ms.date: 03/01/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 9302bde13a303dda2107900dc0c10cc180669a18
-ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
+ms.openlocfilehash: 3c6fb1ca23bcc9c57e73bcaf960e0387611fcff3
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "100650725"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104599205"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -66,6 +66,7 @@ Zie de onderstaande tabel om te zien welke functies asynchroon kunnen worden geb
 | Meninganalyse | ✔ |  |
 | Sleuteltermextractie | ✔ | ✔* |
 | Herkenning van benoemde entiteiten (inclusief PII en PHI) | ✔ | ✔* |
+| Entiteiten koppelen | ✔ | ✔* |
 | Text Analytics voor status (container) | ✔ |  |
 | Text Analytics voor status (API) |  | ✔  |
 
@@ -118,8 +119,9 @@ Hier volgt een voor beeld van een API-aanvraag voor de synchrone Text Analytics-
 
 Met het `/analyze` eind punt kunt u kiezen welke van de ondersteunde Text Analytics functies die u in één API-aanroep wilt gebruiken. Dit eind punt ondersteunt momenteel:
 
-* sleuteltermextractie 
+* Sleuteltermextractie 
 * Herkenning van benoemde entiteiten (inclusief PII en PHI)
+* Entiteiten koppelen
 
 | Element | Geldige waarden | Vereist? | Gebruik |
 |---------|--------------|-----------|-------|
@@ -128,7 +130,7 @@ Met het `/analyze` eind punt kunt u kiezen welke van de ondersteunde Text Analyt
 |`documents` | Bevat de `id` `text` velden en onder | Vereist | Bevat informatie voor elk document dat wordt verzonden en de onbewerkte tekst van het document. |
 |`id` | Tekenreeks | Vereist | De Id's die u opgeeft, worden gebruikt voor het structureren van de uitvoer. |
 |`text` | Ongestructureerde onbewerkte tekst, Maxi maal 125.000 tekens. | Vereist | Moet in de Engelse taal worden gesteld. Dit is de enige taal die momenteel wordt ondersteund. |
-|`tasks` | Bevat de volgende Text Analytics functies: `entityRecognitionTasks` , `keyPhraseExtractionTasks` of `entityRecognitionPiiTasks` . | Vereist | Een of meer van de Text Analytics functies die u wilt gebruiken. Houd er rekening mee dat `entityRecognitionPiiTasks` een optionele `domain` para meter heeft die kan worden ingesteld op `pii` of `phi` . Als u geen waarde opgeeft, wordt het systeem standaard ingesteld op `pii` . |
+|`tasks` | Bevat de volgende Text Analytics functies: `entityRecognitionTasks` , `entityLinkingTasks` `keyPhraseExtractionTasks` of `entityRecognitionPiiTasks` . | Vereist | Een of meer van de Text Analytics functies die u wilt gebruiken. Houd er rekening mee dat `entityRecognitionPiiTasks` een optionele `domain` para meter heeft die kan worden ingesteld op `pii` of `phi` en de `pii-categories` voor detectie van geselecteerde entiteits typen. Als de `domain` para meter niet wordt opgegeven, wordt het systeem standaard ingesteld op `pii` . |
 |`parameters` | Bevat de `model-version` `stringIndexType` velden en onder | Vereist | Dit veld is opgenomen in de bovenstaande functie taken die u kiest. Ze bevatten informatie over de model versie die u wilt gebruiken en het index type. |
 |`model-version` | Tekenreeks | Vereist | Geef op welke versie van het model moet worden aangeroepen dat u wilt gebruiken.  |
 |`stringIndexType` | Tekenreeks | Vereist | Geef de tekst decoder op die overeenkomt met uw programmeer omgeving.  Typen die worden ondersteund zijn `textElement_v8` (standaard), `unicodeCodePoint` , `utf16CodeUnit` . Raadpleeg het [artikel over verschuivingen van tekst](../concepts/text-offsets.md#offsets-in-api-version-31-preview) voor meer informatie.  |
@@ -158,6 +160,14 @@ Met het `/analyze` eind punt kunt u kiezen welke van de ondersteunde Text Analyt
                 }
             }
         ],
+        "entityLinkingTasks": [
+            {
+                "parameters": {
+                    "model-version": "latest",
+                    "stringIndexType": "TextElements_v8"
+                }
+            }
+        ],
         "keyPhraseExtractionTasks": [{
             "parameters": {
                 "model-version": "latest"
@@ -165,7 +175,10 @@ Met het `/analyze` eind punt kunt u kiezen welke van de ondersteunde Text Analyt
         }],
         "entityRecognitionPiiTasks": [{
             "parameters": {
-                "model-version": "latest"
+                "model-version": "latest",
+                "stringIndexType": "TextElements_v8",
+                "domain": "phi",
+                "pii-categories":"default"
             }
         }]
     }
@@ -231,16 +244,16 @@ Voeg in Postman (of een ander web API-test hulpprogramma) het eind punt toe voor
 
 | Functie | Soort aanvraag | Resource-eind punten |
 |--|--|--|
-| Analyse taak verzenden | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze` |
-| Status en resultaten van de analyse ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>` |
+| Analyse taak verzenden | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.4/analyze` |
+| Status en resultaten van de analyse ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.4/analyze/jobs/<Operation-Location>` |
 
 ### <a name="endpoints-for-sending-asynchronous-requests-to-the-health-endpoint"></a>Eind punten voor het verzenden van asynchrone aanvragen naar het `/health` eind punt
 
 | Functie | Soort aanvraag | Resource-eind punten |
 |--|--|--|
-| Text Analytics verzenden voor status taak  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs` |
-| Taak status en-resultaten ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
-| Taak annuleren | DELETE | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.3/entities/health/jobs/<Operation-Location>` |
+| Text Analytics verzenden voor status taak  | POST | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.4/entities/health/jobs` |
+| Taak status en-resultaten ophalen | GET | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.4/entities/health/jobs/<Operation-Location>` |
+| Taak annuleren | DELETE | `https://<your-text-analytics-resource>/text/analytics/v3.1-preview.4/entities/health/jobs/<Operation-Location>` |
 
 --- 
 
@@ -278,7 +291,7 @@ Als u de asynchrone `/analyze` of eind punten hebt aangeroepen `/health` , contr
 1. Zoek in de API-reactie de `Operation-Location` uit de header, waarmee de taak wordt geïdentificeerd die u naar de API hebt verzonden. 
 2. Maak een GET-aanvraag voor het eind punt dat u hebt gebruikt. Raadpleeg de [bovenstaande tabel](#set-up-a-request) voor de indeling van het eind punt en lees de [API-referentie documentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/AnalyzeStatus). Bijvoorbeeld:
 
-    `https://my-resource.cognitiveservices.azure.com/text/analytics/v3.1-preview.3/analyze/jobs/<Operation-Location>`
+    `https://my-resource.cognitiveservices.azure.com/text/analytics/v3.1-preview.4/analyze/jobs/<Operation-Location>`
 
 3. Voeg het `Operation-Location` toe aan de aanvraag.
 

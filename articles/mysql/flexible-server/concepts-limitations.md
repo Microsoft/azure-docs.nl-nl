@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/1/2020
 ms.openlocfilehash: a3abde9092519be057dcd73ec63318f970fd5c74
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94543082"
 ---
 # <a name="limitations-in-azure-database-for-mysql---flexible-server-preview"></a>Beperkingen in Azure Database for MySQL flexibele server (preview-versie)
@@ -68,7 +68,7 @@ Het volgende wordt niet ondersteund:
 - Niet ondersteund in een Burstive Compute-laag.
 
 ### <a name="networking"></a>Netwerken
-- De verbindings methode kan niet worden gewijzigd na het maken van de server. Als de server is gemaakt met *persoonlijke toegang (VNet-integratie)* , kan deze niet meer worden gewijzigd in *open bare toegang (toegestane IP-adressen)* na het maken, en andersom
+- De verbindings methode kan niet worden gewijzigd na het maken van de server. Als de server is gemaakt met *persoonlijke toegang (VNet-integratie)*, kan deze niet meer worden gewijzigd in *open bare toegang (toegestane IP-adressen)* na het maken, en andersom
 - TLS/SSL is standaard ingeschakeld en kan niet worden uitgeschakeld.
 - De minimale TLS-versie die op de server wordt ondersteund, is TLS 1.2. Raadpleeg [verbinding maken met behulp van TLS/SSL](./how-to-connect-tls-ssl.md) voor meer informatie.
 

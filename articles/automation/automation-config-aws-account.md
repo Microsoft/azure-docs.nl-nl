@@ -7,10 +7,10 @@ ms.subservice: process-automation
 ms.date: 04/23/2020
 ms.topic: conceptual
 ms.openlocfilehash: acb056fb959fda320a14059e2b36a0f5e3fb0b37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83837180"
 ---
 # <a name="authenticate-runbooks-with-amazon-web-services"></a>Runbooks verifiëren met Amazon Web Services
@@ -33,7 +33,7 @@ U moet de AWS-referenties opslaan als assets in Azure Automation. Zie [toegangs 
 
 Nadat u uw AWS-beveiligings sleutels hebt gemaakt en gekopieerd, moet u een referentie-element maken met het Automation-account. Met de Asset kunt u de AWS-sleutels veilig opslaan en ernaar verwijzen in uw runbooks. Zie [een nieuw referentie-element maken met de Azure Portal](shared-resources/credentials.md#create-a-new-credential-asset-with-the-azure-portal). Voer de volgende AWS-informatie in de opgegeven velden in:
     
-* **Naam**  -  **AWScred**of een geschikte waarde volgen volgens uw naamgevings standaarden
+* **Naam**  -  **AWScred** of een geschikte waarde volgen volgens uw naamgevings standaarden
 * **Gebruikers naam** -uw toegangs-id
 * **Wacht woord** : naam van de geheime sleutel 
 

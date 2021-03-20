@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 02/18/2020
 ms.openlocfilehash: 87179950c33a6facb59ce499aa0ae393e53fb37f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91777221"
 ---
 # <a name="where-and-how-to-use-personalizer"></a>Waar en hoe persoonlijker gebruiken
@@ -34,7 +34,7 @@ U kunt persoonlijker Toep assen in situaties waarin u aan de volgende richt lijn
 |Richtlijn|Uitleg|
 |--|--|
 |Zakelijk doel|U hebt een zakelijk of bruikbaar doel voor uw toepassing.|
-|Inhoud|U hebt een plaats in uw toepassing waar u een contextuele beslissing neemt om het doel van gebruikers te verbeteren.|
+|Content|U hebt een plaats in uw toepassing waar u een contextuele beslissing neemt om het doel van gebruikers te verbeteren.|
 |Hoeveelheid inhoud|U hebt minder dan 50 acties om per oproep te rangschikken.|
 |Statistische gegevens|De beste keuze kan en moeten worden geleerd van het gedrag van de collectieve gebruiker en de totale belonings Score.|
 |Ethische gebruik|Het gebruik van machine learning voor personalisatie is gebaseerd op de [verantwoordelijke richt lijnen](ethics-responsible-use.md) en keuzes die u hebt gekozen.

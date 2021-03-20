@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/12/2020
 ms.openlocfilehash: c66fbe59fd5b2660d02bfca285f78666d64569fe
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94555597"
 ---
 # <a name="apply-sql-transformation"></a>SQL-transformatie toepassen
@@ -36,7 +36,7 @@ Met de module voor het Toep assen van SQL-trans formatie kunt u het volgende doe
 
 De module kan Maxi maal drie gegevens sets als invoer hebben. Wanneer u verwijst naar de gegevens sets die zijn verbonden met elke invoer poort, moet u de namen `t1` , `t2` en gebruiken `t3` . Het tabel nummer geeft de index van de invoer poort aan.  
 
-Hieronder ziet u voorbeeld code om te laten zien hoe u twee tabellen samenvoegt. T1 en T2 zijn twee gegevens sets die zijn verbonden met de linker-en middelste invoer poorten van **SQL-trans formatie Toep assen** :
+Hieronder ziet u voorbeeld code om te laten zien hoe u twee tabellen samenvoegt. T1 en T2 zijn twee gegevens sets die zijn verbonden met de linker-en middelste invoer poorten van **SQL-trans formatie Toep assen**:
 
 ```sql
 SELECT t1.*

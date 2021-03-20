@@ -4,10 +4,10 @@ description: In dit artikel vindt u informatie over het herstellen van gegevens 
 ms.topic: conceptual
 ms.date: 09/07/2018
 ms.openlocfilehash: 79a4d32d6dbca5ca5be5d46c6b44a07ef42de061
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91813250"
 ---
 # <a name="restore-files-to-windows-server-using-the-mars-agent"></a>Bestanden herstellen naar Windows Server met behulp van de MARS-agent
@@ -39,7 +39,7 @@ Als u een bestand per ongeluk hebt verwijderd en op dezelfde computer wilt herst
 
     ![Scherm opname van Azure Backup, waarbij de gegevens voor herstel zijn gemarkeerd (herstel op dezelfde machine)](./media/backup-azure-restore-windows-server/recover.png)
 
-3. Selecteer op de pagina **aan** de slag de optie **deze server ( `<server name>` )** om de gegevens op dezelfde server of computer te herstellen  >  **Next**.
+3. Selecteer op de pagina **aan** de slag de optie **deze server ( `<server name>` )** om de gegevens op dezelfde server of computer te herstellen  >  .
 
     ![Scherm afbeelding van de wizard aan de slag met pagina Herstel gegevens (herstellen op dezelfde computer)](./media/backup-azure-restore-windows-server/samemachine_gettingstarted_instantrestore.png)
 
@@ -75,7 +75,7 @@ Als u een bestand per ongeluk hebt verwijderd en op dezelfde computer wilt herst
     ![Scherm afbeelding van de wizard gegevens herstellen bladeren en bestanden herstellen (herstellen naar dezelfde machine)-het herstel volume bevestigen ontkoppelen](./media/backup-azure-restore-windows-server/samemachine_unmount_instantrestore.png)
 
     > [!Important]
-    > Als u niet **ontkoppelen**selecteert, blijft het herstel volume gedurende 6 uur vanaf het moment waarop het is gekoppeld. De koppel tijd wordt echter Maxi maal 24 uur verlengd in het geval van een doorlopende bestands kopie. Er worden geen back-upbewerkingen uitgevoerd terwijl het volume is gekoppeld. Elke back-upbewerking die is gepland om te worden uitgevoerd op het moment dat het volume wordt gekoppeld, wordt uitgevoerd nadat het herstel volume is ontkoppeld.
+    > Als u niet **ontkoppelen** selecteert, blijft het herstel volume gedurende 6 uur vanaf het moment waarop het is gekoppeld. De koppel tijd wordt echter Maxi maal 24 uur verlengd in het geval van een doorlopende bestands kopie. Er worden geen back-upbewerkingen uitgevoerd terwijl het volume is gekoppeld. Elke back-upbewerking die is gepland om te worden uitgevoerd op het moment dat het volume wordt gekoppeld, wordt uitgevoerd nadat het herstel volume is ontkoppeld.
     >
 
 ## <a name="use-instant-restore-to-restore-data-to-an-alternate-machine"></a>Direct terugzetten gebruiken om gegevens naar een andere computer te herstellen
@@ -97,7 +97,7 @@ Deze stappen omvatten de volgende terminologie:
 
 2. Zorg ervoor dat de doel computer en de bron machine zijn geregistreerd bij dezelfde Recovery Services kluis.
 
-3. Selecteer **gegevens herstellen** om de **wizard gegevens herstellen**te openen.
+3. Selecteer **gegevens herstellen** om de **wizard gegevens herstellen** te openen.
 
     ![Scherm opname van Azure Backup, waarbij gegevens herstellen is gemarkeerd (herstellen naar alternatieve machine)](./media/backup-azure-restore-windows-server/recover.png)
 
@@ -138,7 +138,7 @@ Deze stappen omvatten de volgende terminologie:
     ![Het volume ontkoppelen (herstellen naar een alternatieve machine)](./media/backup-azure-restore-windows-server/alternatemachine_unmount_instantrestore.png)
 
     > [!Important]
-    > Als u niet **ontkoppelen**selecteert, blijft het herstel volume gedurende 6 uur vanaf het moment waarop het is gekoppeld. De koppel tijd wordt echter Maxi maal 24 uur verlengd in het geval van een doorlopende bestands kopie. Er worden geen back-upbewerkingen uitgevoerd terwijl het volume is gekoppeld. Elke back-upbewerking die is gepland om te worden uitgevoerd op het moment dat het volume wordt gekoppeld, wordt uitgevoerd nadat het herstel volume is ontkoppeld.
+    > Als u niet **ontkoppelen** selecteert, blijft het herstel volume gedurende 6 uur vanaf het moment waarop het is gekoppeld. De koppel tijd wordt echter Maxi maal 24 uur verlengd in het geval van een doorlopende bestands kopie. Er worden geen back-upbewerkingen uitgevoerd terwijl het volume is gekoppeld. Elke back-upbewerking die is gepland om te worden uitgevoerd op het moment dat het volume wordt gekoppeld, wordt uitgevoerd nadat het herstel volume is ontkoppeld.
     >
 
 ## <a name="next-steps"></a>Volgende stappen

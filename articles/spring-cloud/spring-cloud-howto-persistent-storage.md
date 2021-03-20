@@ -8,10 +8,10 @@ ms.date: 10/07/2019
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 9d769cb6e2cc33df259da46a82ad27a8bfd9e74b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90888519"
 ---
 # <a name="use-persistent-storage-in-azure-spring-cloud"></a>Permanente opslag gebruiken in Azure Spring Cloud
@@ -32,11 +32,11 @@ Permanente opslag is een bestands share container die wordt beheerd door Azure e
 
 ## <a name="use-the-azure-portal-to-enable-persistent-storage"></a>De Azure Portal gebruiken om permanente opslag in te scha kelen
 
-1. Selecteer **alle resources**op de **Start** pagina van uw Azure Portal.
+1. Selecteer **alle resources** op de **Start** pagina van uw Azure Portal.
 
     >![Het pictogram alle resources zoeken](media/portal-all-resources.jpg)
 
-1. Selecteer de Azure lente-Cloud resource waarvoor permanente opslag nodig is. In dit voor beeld wordt de geselecteerde toepassing **upveer**genoemd.
+1. Selecteer de Azure lente-Cloud resource waarvoor permanente opslag nodig is. In dit voor beeld wordt de geselecteerde toepassing **upveer** genoemd.
 
     > ![Selecteer uw toepassing](media/select-service.jpg)
 

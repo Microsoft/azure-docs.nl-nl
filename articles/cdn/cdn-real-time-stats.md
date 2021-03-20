@@ -15,10 +15,10 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 3af2e849aa6658e539b0b5bdbda4428cc28e5ce5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84887226"
 ---
 # <a name="real-time-stats-in-microsoft-azure-cdn"></a>Realtime-statistieken in Microsoft Azure CDN
@@ -66,7 +66,7 @@ In de grafiek **status codes** wordt aangegeven hoe vaak bepaalde HTTP-antwoord 
 > 
 > 
 
-Een lijst met HTTP-status codes wordt direct boven de grafiek weer gegeven. In deze lijst wordt elke status code aangegeven die in de lijn grafiek kan worden opgenomen en het huidige aantal exemplaren per seconde voor die status code. Standaard wordt een regel weer gegeven voor elk van deze status codes in de grafiek. U kunt er echter voor kiezen om alleen de status codes te bewaken die een speciale betekenis hebben voor uw CDN-configuratie. U doet dit door de gewenste status codes te controleren en alle andere opties te wissen en vervolgens op **grafiek vernieuwen**te klikken. 
+Een lijst met HTTP-status codes wordt direct boven de grafiek weer gegeven. In deze lijst wordt elke status code aangegeven die in de lijn grafiek kan worden opgenomen en het huidige aantal exemplaren per seconde voor die status code. Standaard wordt een regel weer gegeven voor elk van deze status codes in de grafiek. U kunt er echter voor kiezen om alleen de status codes te bewaken die een speciale betekenis hebben voor uw CDN-configuratie. U doet dit door de gewenste status codes te controleren en alle andere opties te wissen en vervolgens op **grafiek vernieuwen** te klikken. 
 
 U kunt de logboek gegevens voor een bepaalde status code tijdelijk verbergen.  Klik in de legenda direct onder de grafiek op de status code die u wilt verbergen. De status code wordt direct verborgen in de grafiek. Als u nogmaals op die status code klikt, wordt deze optie opnieuw weer gegeven.
 
@@ -80,7 +80,7 @@ In de grafiek **status van cache** wordt aangegeven hoe vaak bepaalde typen cach
 > 
 > 
 
-Een lijst met cache status codes wordt direct boven de grafiek weer gegeven. In deze lijst wordt elke status code aangegeven die in de lijn grafiek kan worden opgenomen en het huidige aantal exemplaren per seconde voor die status code. Standaard wordt een regel weer gegeven voor elk van deze status codes in de grafiek. U kunt er echter voor kiezen om alleen de status codes te bewaken die een speciale betekenis hebben voor uw CDN-configuratie. U doet dit door de gewenste status codes te controleren en alle andere opties te wissen en vervolgens op **grafiek vernieuwen**te klikken. 
+Een lijst met cache status codes wordt direct boven de grafiek weer gegeven. In deze lijst wordt elke status code aangegeven die in de lijn grafiek kan worden opgenomen en het huidige aantal exemplaren per seconde voor die status code. Standaard wordt een regel weer gegeven voor elk van deze status codes in de grafiek. U kunt er echter voor kiezen om alleen de status codes te bewaken die een speciale betekenis hebben voor uw CDN-configuratie. U doet dit door de gewenste status codes te controleren en alle andere opties te wissen en vervolgens op **grafiek vernieuwen** te klikken. 
 
 U kunt de logboek gegevens voor een bepaalde status code tijdelijk verbergen.  Klik in de legenda direct onder de grafiek op de status code die u wilt verbergen. De status code wordt direct verborgen in de grafiek. Als u nogmaals op die status code klikt, wordt deze optie opnieuw weer gegeven.
 

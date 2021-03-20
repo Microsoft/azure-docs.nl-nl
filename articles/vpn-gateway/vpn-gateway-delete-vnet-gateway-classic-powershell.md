@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: cherylmc
 ms.openlocfilehash: 39585a68c5cddc50cd04e82caca71209270f7b68
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91874115"
 ---
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>Een virtuele netwerk gateway verwijderen met behulp van Power shell (klassiek)
@@ -20,7 +20,7 @@ ms.locfileid: "91874115"
 > [!div class="op_single_selector"]
 > * [Resource Manager - Azure Portal](vpn-gateway-delete-vnet-gateway-portal.md)
 > * [Resource Manager - PowerShell](vpn-gateway-delete-vnet-gateway-powershell.md)
-> * [Klassiek-Power shell](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
+> * [Klassiek - PowerShell](vpn-gateway-delete-vnet-gateway-classic-powershell.md)
 >
 
 Dit artikel helpt u bij het verwijderen van een VPN-gateway in het klassieke implementatie model met behulp van Power shell. Nadat de virtuele netwerk gateway is verwijderd, wijzigt u het netwerk configuratie bestand om elementen te verwijderen die u niet meer gebruikt.

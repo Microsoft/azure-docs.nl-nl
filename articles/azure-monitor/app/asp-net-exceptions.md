@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 07/11/2019
 ms.openlocfilehash: 36e916eabfca8e997fc3d46ff10f6201203457cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88936500"
 ---
 # <a name="diagnose-exceptions-in-your-web-apps-with-application-insights"></a>Uitzonderingen in web-apps diagnosticeren met Application Insights
@@ -76,7 +76,7 @@ U hebt verschillende mogelijkheden:
 * [TrackException ()](#exceptions) verzendt stack traceringen. [Meer informatie over uitzonde ringen](#exceptions).
 * Als u al een framework voor logboek registratie gebruikt, zoals Log4Net of NLog, kunt u [deze logboeken vastleggen](asp-net-trace-logs.md) en weer geven in diagnostische Zoek opdrachten naast aanvraag-en uitzonderings gegevens.
 
-Als u deze gebeurtenissen wilt zien, opent u in het menu links [zoeken](./diagnostic-search.md) , selecteert u de vervolg keuzelijst **gebeurtenis typen**en kiest u vervolgens aangepaste gebeurtenis, tracering of uitzonde ring.
+Als u deze gebeurtenissen wilt zien, opent u in het menu links [zoeken](./diagnostic-search.md) , selecteert u de vervolg keuzelijst **gebeurtenis typen** en kiest u vervolgens aangepaste gebeurtenis, tracering of uitzonde ring.
 
 ![Analyseren](./media/asp-net-exceptions/customevents.png)
 
@@ -184,7 +184,7 @@ public class GoodController : ApiController
 ## <a name="web-forms"></a>Webformulieren
 Voor webformulieren kan de HTTP-module de uitzonde ringen verzamelen wanneer er geen omleidingen met CustomErrors zijn geconfigureerd.
 
-Als u echter actieve omleidingen hebt, voegt u de volgende regels toe aan de functie Application_Error in Global.asax.cs. (Voeg een Global. asax-bestand toe als u er nog geen hebt.)
+Als u echter actieve omleidingen hebt, voegt u de volgende regels toe aan de functie Application_Error in Global. asax. cs. (Voeg een Global. asax-bestand toe als u er nog geen hebt.)
 
 ```csharp
     void Application_Error(object sender, EventArgs e)
@@ -259,7 +259,7 @@ Vervang het kenmerk HandleError door het nieuwe kenmerk in uw controllers.
 [Voorbeeld](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions)
 
 #### <a name="mvc-3"></a>MVC 3
-Registreren `AiHandleErrorAttribute` als een globale filter in Global.asax.CS:
+Registreren `AiHandleErrorAttribute` als een globaal filter in Global. asax. CS:
 
 ```csharp
     public class MyMvcApplication : System.Web.HttpApplication
@@ -274,7 +274,7 @@ Registreren `AiHandleErrorAttribute` als een globale filter in Global.asax.CS:
 [Voorbeeld](https://github.com/AppInsightsSamples/Mvc3UnhandledExceptionTelemetry)
 
 #### <a name="mvc-4-mvc5"></a>MVC 4, MVC5
-AiHandleErrorAttribute registreren als een globale filter in FilterConfig.cs:
+Registreer AiHandleErrorAttribute als een globaal filter in FilterConfig. CS:
 
 ```csharp
     public class FilterConfig

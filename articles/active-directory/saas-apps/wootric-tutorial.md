@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 07/23/2020
 ms.author: jeedes
 ms.openlocfilehash: a959dd3615c9498411b141356420939ad7026189
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92638360"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wootric"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Wootric
@@ -40,7 +40,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Wootric biedt ondersteuning voor met **IDP** geïnitieerde eenmalige aanmelding
-* Wootric biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Wootric biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 * Zodra u Wootric hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="adding-wootric-from-the-gallery"></a>Wootric toevoegen uit de galerie
@@ -103,9 +103,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -137,7 +137,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Schermopname waarin het pictogram Settings is geselecteerd op de Wootric-site.](./media/wootric-tutorial/configure-1.PNG)
 
-1. Selecteer in de **INTEGRATIES** in het linkermenu de optie **Verificatie** , en klik op **Eenmalige aanmelding met Azure Active Directory inschakelen**.
+1. Selecteer in de **INTEGRATIES** in het linkermenu de optie **Verificatie**, en klik op **Eenmalige aanmelding met Azure Active Directory inschakelen**.
 
     ![Schermopname waarin voor Enable Single Sign On with Azure Active Directory 'connected' is aangegeven in de optie Authentication.](./media/wootric-tutorial/configure-2.PNG)
 

@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van een script om het voorlopig ve
 ms.topic: sample
 ms.date: 02/02/2020
 ms.openlocfilehash: 172a7bd19ffd07ca7900a457c447362343e5f185
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "84121281"
 ---
 # <a name="disable-soft-delete-for-file-shares-in-a-storage-account"></a>Voorlopig verwijderen uitschakelen voor bestandsshares in een opslagaccount
@@ -52,7 +52,7 @@ Volg deze stappen:
 
 3. Houd de ID van uw Azure Resource Manager-opslagaccount bij de hand. Bijvoorbeeld: `/subscriptions/37aa2d43-d4f5-4322-bae0-6ee11c627f50/resourceGroups/afsshare/providers/Microsoft.Storage/storageAccounts/inquirytest`
 
-4. Meld u aan met uw aanmeldingsgegevens door **armclient login**uit te voeren.
+4. Meld u aan met uw aanmeldingsgegevens door **armclient login** uit te voeren.
 
 5. De huidige eigenschappen voor het voorlopig verwijderen van bestandsshares ophalen in het opslagaccount.
 

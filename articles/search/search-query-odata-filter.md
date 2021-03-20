@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 0f33b5a28d7c83be7e546c3f61bc517047c51312
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88934851"
 ---
 # <a name="odata-filter-syntax-in-azure-cognitive-search"></a>OData-$filter syntaxis in azure Cognitive Search
@@ -78,7 +78,7 @@ Als u een filter expressie zonder haakjes schrijft rond de bijbehorende subexpre
 | Groep | Operator (s) |
 | --- | --- |
 | Logische operators | `not` |
-| Vergelijkingsoperators | `eq`, `ne`, `gt`, `lt`, `ge`, `le` |
+| Vergelijkingsoperatoren | `eq`, `ne`, `gt`, `lt`, `ge`, `le` |
 | Logische operators | `and` |
 | Logische operators | `or` |
 

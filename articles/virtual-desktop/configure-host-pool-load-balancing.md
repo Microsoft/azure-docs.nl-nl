@@ -7,10 +7,10 @@ ms.date: 10/12/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 2c57ac10fbd318dd4bbb2dc86457e186dd824834
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91951652"
 ---
 # <a name="configure-the-windows-virtual-desktop-load-balancing-method"></a>De taakverdelingsmethode voor Windows Virtual Desktop configureren
@@ -83,8 +83,8 @@ Taak verdeling configureren:
 
 1. Meld u aan bij de Azure Portal op https://portal.azure.com .
 2. Zoek en selecteer **Windows Virtual Desktop** onder Services.
-3. Selecteer op de pagina virtueel bureau blad van Windows de optie **groepen hosten**.
-4. Selecteer de naam van de hostgroep die u wilt bewerken.
+3. Selecteer op de Windows Virtual Desktop-pagina de optie **Hostpools**.
+4. Selecteer de naam van de hostpool die u wilt bewerken.
 5. Selecteer **Eigenschappen**.
 6. Voer de **maximale sessie limiet** in het veld in en selecteer de gewenste **taakverdelings algoritme** voor deze hostgroep in de vervolg keuzelijst.
 7. Selecteer **Opslaan**. Hiermee worden de nieuwe instellingen voor taak verdeling toegepast.

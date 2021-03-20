@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/21/2020
 tags: connectors
 ms.openlocfilehash: cd23ff0f5ad9912440d38903a344011b069aaf16
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92677729"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-by-using-azure-logic-apps"></a>Blobs in Azure Blob Storage maken en beheren met behulp van Azure Logic Apps
@@ -33,7 +33,7 @@ Als u geen ervaring hebt met Logic apps, raadpleegt u [Wat is Azure Logic apps](
 
 * Azure Blob Storage-Triggers bieden geen ondersteuning voor het delen van segmenten. Bij het aanvragen van bestands inhoud selecteren triggers alleen bestanden van 50 MB of kleiner. Als u bestanden groter dan 50 MB wilt ophalen, volgt u dit patroon:
 
-  * Gebruik een Azure Blob Storage-trigger die bestands eigenschappen retourneert, zoals **Wanneer een BLOB wordt toegevoegd of gewijzigd (alleen eigenschappen)** .
+  * Gebruik een Azure Blob Storage-trigger die bestands eigenschappen retourneert, zoals **Wanneer een BLOB wordt toegevoegd of gewijzigd (alleen eigenschappen)**.
 
   * Volg de trigger met de bewerking voor het **ophalen van blob-inhoud** in Azure Blob Storage, die het volledige bestand leest en impliciet gebruikmaakt van Chunking.
 
@@ -89,7 +89,7 @@ In Azure Logic Apps is een [actie](../logic-apps/logic-apps-overview.md#logic-ap
 
    ![Nieuwe stap toevoegen aan de werk stroom van een logische app](./media/connectors-create-api-azureblobstorage/add-new-step-logic-app-workflow.png) 
 
-   Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer **een actie toevoegen** .
+   Als u een actie wilt toevoegen tussen de bestaande stappen, plaatst u de muis aanwijzer op de verbindings pijl. Kies het plus teken ( **+** ) dat wordt weer gegeven en selecteer **een actie toevoegen**.
 
 3. Voer in het zoekvak ' Azure Blob ' in als uw filter. Selecteer in de lijst acties de gewenste actie.
 
@@ -183,9 +183,9 @@ Als u micro soft-vertrouwde services toegang wilt geven tot een opslag account v
 
 Voer de volgende algemene stappen uit om de ondersteuning voor uitzonde ringen en beheerde identiteit in te stellen:
 
-1. Selecteer in uw opslag account onder **instellingen** **firewalls en virtuele netwerken** . Selecteer onder **toegang toestaan vanaf** de optie **geselecteerde netwerken** zodat de gerelateerde instellingen worden weer gegeven.
+1. Selecteer in uw opslag account onder **instellingen** **firewalls en virtuele netwerken**. Selecteer onder **toegang toestaan vanaf** de optie **geselecteerde netwerken** zodat de gerelateerde instellingen worden weer gegeven.
 
-1. Onder **uitzonde ringen** selecteert **u vertrouwde micro soft-Services toegang geven tot dit opslag account** en selecteert u vervolgens **Opslaan** .
+1. Onder **uitzonde ringen** selecteert **u vertrouwde micro soft-Services toegang geven tot dit opslag account** en selecteert u vervolgens **Opslaan**.
 
    ![Selecteer een uitzonde ring die micro soft-vertrouwde services toestaat](./media/connectors-create-api-azureblobstorage/allow-trusted-services-firewall.png)
 

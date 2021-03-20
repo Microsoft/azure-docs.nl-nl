@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: 58148e3a20ba41ae9707543be290f2d632cb1185
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 9d11d17f90dcd6335fcaf6bd48a44037777a087e
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100375286"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104601382"
 ---
 # <a name="configure-data-persistence-for-a-premium-azure-cache-for-redis-instance"></a>Gegevens persistentie configureren voor een Premium Azure-cache voor een redis-exemplaar
 
@@ -19,7 +19,7 @@ Met [redis persistentie](https://redis.io/topics/persistence) kunt u gegevens be
 
 Azure cache voor redis biedt redis persistentie met de volgende modellen:
 
-* **RDB-persistentie** : wanneer de persistentie van RDB (redis data base) is geconfigureerd, blijft Azure cache voor redis een moment opname van de Azure-cache voor redis in een redis binaire indeling op schijf op basis van een Configureer bare back-upfrequentie. Als er sprake is van een onherstelbare gebeurtenis die de primaire cache en de replica in de replicatie uitschakelt, wordt de cache opnieuw opgebouwd met de meest recente moment opname. Meer informatie over de [voor](https://redis.io/topics/persistence#rdb-advantages) -en [nadelen](https://redis.io/topics/persistence#rdb-disadvantages) van RDB-persistentie.
+* **RDB-persistentie** : wanneer de persistentie van RDB (redis data base) is geconfigureerd, blijft Azure cache voor redis een moment opname van de Azure-cache voor redis in een redis binaire indeling op schijf (in een Azure Storage-account) op basis van een Configureer bare back-upfrequentie. Als er sprake is van een onherstelbare gebeurtenis die de primaire cache en de replica in de replicatie uitschakelt, wordt de cache opnieuw opgebouwd met de meest recente moment opname. Meer informatie over de [voor](https://redis.io/topics/persistence#rdb-advantages) -en [nadelen](https://redis.io/topics/persistence#rdb-disadvantages) van RDB-persistentie.
 * **AOF Persistence** : wanneer AOF (alleen bestand toevoegen) persistentie is geconfigureerd, slaat Azure cache voor redis elke schrijf bewerking op in een logboek dat ten minste eenmaal per seconde in een Azure Storage-account is opgeslagen. Als er sprake is van een onherstelbare gebeurtenis die de primaire cache en de replica in de replicatie uitschakelt, wordt de cache opnieuw opgebouwd met behulp van de opgeslagen schrijf bewerkingen. Meer informatie over de [voor](https://redis.io/topics/persistence#aof-advantages) -en [nadelen](https://redis.io/topics/persistence#aof-disadvantages) van AOF persistentie.
 
 Met persistentie worden redis-gegevens naar een Azure Storage-account geschreven dat u bezit en beheert. U kunt configureren vanaf de Blade **nieuwe Azure-cache voor redis** tijdens het maken van de cache en in het **resource menu** voor bestaande Premium-caches.

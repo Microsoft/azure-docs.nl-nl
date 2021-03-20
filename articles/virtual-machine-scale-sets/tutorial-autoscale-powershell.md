@@ -10,10 +10,10 @@ ms.date: 03/27/2018
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurepowershell
 ms.openlocfilehash: 8ee124f866a5241620671ff84c24f3713f62efe1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89078466"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-azure-powershell"></a>Zelfstudie: Een virtuele-machineschaalset automatisch schalen met Azure PowerShell
@@ -189,7 +189,7 @@ mstsc /v 52.168.121.216:50001
 
 Als u bent aangemeld, opent u Internet Explorer via de taakbalk.
 
-- Selecteer **OK** om te bevestigen dat u de*aanbevolen instellingen voor beveiliging, privacy en compatibiliteit wilt gebruiken*.
+- Selecteer **OK** om te bevestigen dat u de *aanbevolen instellingen voor beveiliging, privacy en compatibiliteit wilt gebruiken*.
 - Typ *http://download.sysinternals.com/files/CPUSTRES.zip* in de adresbalk.
 - Als verbeterde beveiliging van Internet Explorer wordt ingeschakeld, kiest u **Toevoegen** om het domein *http://download.sysinternals.com* toe te voegen aan de lijst met vertrouwde sites.
 - Als u wordt gevraagd het bestand te downloaden, selecteert u **Openen**, selecteert u het hulpprogramma *CPUSTRES. EXE* en kiest u **Uitvoeren**.

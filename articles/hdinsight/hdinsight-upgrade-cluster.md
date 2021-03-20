@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
 ms.openlocfilehash: 04da5d668515fe96d50d4e6a7d0f5ff1c4c48c27
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98931376"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>HDInsight-cluster migreren naar een nieuwere versie
@@ -47,7 +47,7 @@ De volgende documenten bevatten richt lijnen voor het migreren van specifieke wo
 * [Kafka migreren](./kafka/migrate-versions.md)
 * [Hive/interactieve query migreren](./interactive-query/apache-hive-migrate-workloads.md)
 
-## <a name="backup-and-restore"></a>Back-ups en herstellen
+## <a name="backup-and-restore"></a>Back-up en herstel
 
 Zie [een Data Base herstellen in Azure SQL database met behulp van automatische database back-ups](../azure-sql/database/recovery-using-backups.md)voor meer informatie over back-up en herstel van de data base.
 

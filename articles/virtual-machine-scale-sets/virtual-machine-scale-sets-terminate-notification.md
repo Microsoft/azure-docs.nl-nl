@@ -10,10 +10,10 @@ ms.date: 02/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma, devx-track-azurecli
 ms.openlocfilehash: c4d6de1b3406e6d82bdac5ff9b5c72a2286da988
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92747754"
 ---
 # <a name="terminate-notification-for-azure-virtual-machine-scale-set-instances"></a>Melding beëindigen voor exemplaren van virtuele-machineschaalsets van Azure
@@ -28,12 +28,12 @@ Er zijn meerdere manieren om beëindigings meldingen in te scha kelen voor insta
 
 Met de volgende stappen kunt u de melding beëindigen inschakelen bij het maken van een nieuwe schaalset. 
 
-1. Ga naar **schaal sets voor virtuele machines** .
+1. Ga naar **schaal sets voor virtuele machines**.
 1. Selecteer **+ toevoegen** om een nieuwe schaalset te maken.
 1. Ga naar het tabblad **beheer** . 
 1. Zoek de sectie voor het beëindigen van het **exemplaar** .
 1. Selecteer aan voor het **Afmelden** **van** het exemplaar.
-1. Stel de gewenste time-out voor de **beëindiging in (minuten)** .
+1. Stel de gewenste time-out voor de **beëindiging in (minuten)**.
 1. Wanneer u klaar bent met het maken van de nieuwe schaalset, selecteert u de knop **controleren + maken** . 
 
 > [!NOTE]
@@ -63,7 +63,7 @@ PUT on `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/provi
 
 ```
 
-In het bovenstaande blok is een time-outvertraging van 5 minuten (zoals aangegeven door *PT5M* ) voor elke beëindiging van alle exemplaren in uw schaalset opgegeven. Het veld *notBeforeTimeout* kan elke waarde tussen 5 en 15 minuten in ISO 8601-indeling hebben. U kunt de standaardtime-out voor de bewerking beëindigen wijzigen door de eigenschap *notBeforeTimeout* te wijzigen onder *terminateNotificationProfile* hierboven beschreven.
+In het bovenstaande blok is een time-outvertraging van 5 minuten (zoals aangegeven door *PT5M*) voor elke beëindiging van alle exemplaren in uw schaalset opgegeven. Het veld *notBeforeTimeout* kan elke waarde tussen 5 en 15 minuten in ISO 8601-indeling hebben. U kunt de standaardtime-out voor de bewerking beëindigen wijzigen door de eigenschap *notBeforeTimeout* te wijzigen onder *terminateNotificationProfile* hierboven beschreven.
 
 Nadat u *scheduledEventsProfile* op het model voor de schaalset hebt ingeschakeld en de *notBeforeTimeout* hebt ingesteld, werkt u de afzonderlijke exemplaren bij naar het [meest recente model](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model) om de wijzigingen weer te geven.
 

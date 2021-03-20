@@ -1,17 +1,17 @@
 ---
-title: Verbindingen in Azure Functions beheren
+title: Verbindingen beheren in Azure Functions
 description: Meer informatie over hoe u prestatie problemen in Azure Functions kunt voor komen met behulp van statische clients voor verbindingen.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 02/25/2018
 ms.openlocfilehash: ec16ce3e7f9793be2a012a029bcca31c9a7ea4cf
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97936699"
 ---
-# <a name="manage-connections-in-azure-functions"></a>Verbindingen in Azure Functions beheren
+# <a name="manage-connections-in-azure-functions"></a>Verbindingen beheren in Azure Functions
 
 Functies in een functie-app delen resources. Onder deze gedeelde bronnen staan verbindingen: HTTP-verbindingen, database verbindingen en verbindingen met Services, zoals Azure Storage. Wanneer er veel functies gelijktijdig worden uitgevoerd, is het mogelijk dat er geen beschik bare verbindingen meer beschikbaar zijn. In dit artikel wordt uitgelegd hoe u uw functies codeert om te voor komen dat u meer verbindingen gebruikt dan ze nodig hebben.
 

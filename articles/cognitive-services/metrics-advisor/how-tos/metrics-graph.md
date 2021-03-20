@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: mbullwin
 ms.openlocfilehash: bcedef4a1339dacaff3fe841e97f985c42320819
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92043150"
 ---
 # <a name="how-to-build-a-metrics-graph-to-analyze-related-metrics"></a>Instructies: een grafiek met metrische gegevens maken om gerelateerde metrische gegevens te analyseren
@@ -33,9 +33,9 @@ Klik op het tabblad **grafiek met metrische gegevens** in de navigatie balk. De 
 
 Vervolgens moet u een ander knoop punt toevoegen en een relatie met een bestaand knoop punt (en) opgeven. Selecteer een bestaand knoop punt en klik er met de rechter muisknop op. Er wordt een context menu weer gegeven met verschillende opties. 
 
-Klik op **relatie toevoegen**en u kunt een andere metriek kiezen en het relatie type tussen de twee knoop punten opgeven. U kunt ook specifieke dimensie filters toep assen. 
+Klik op **relatie toevoegen** en u kunt een andere metriek kiezen en het relatie type tussen de twee knoop punten opgeven. U kunt ook specifieke dimensie filters toep assen. 
 
-:::image type="content" source="../media/graph/metrics-graph-node-action.png" alt-text="Metrische waarde selecteren":::
+:::image type="content" source="../media/graph/metrics-graph-node-action.png" alt-text="Een knoop punt en relatie toevoegen":::
 
 Nadat u de bovenstaande stappen hebt herhaald, hebt u een grafiek met metrische gegevens waarin de relaties tussen alle gerelateerde metrische gegevens worden beschreven.
 **Hint op knooppunt kleuren**
@@ -48,9 +48,9 @@ Nadat u de bovenstaande stappen hebt herhaald, hebt u een grafiek met metrische 
 
 Wanneer de grafiek metrische gegevens wordt gemaakt en er een afwijkende waarde wordt gedetecteerd voor metrische gegevens in de grafiek, kunt u gerelateerde afwijkings statussen bekijken en een weer gave op hoog niveau van het incident verkrijgen. 
 
-Klik in het diagram op een incident en schuif omlaag naar de **analyse van metrische**gegevens, onder de diagnostische gegevens.
+Klik in het diagram op een incident en schuif omlaag naar de **analyse van metrische** gegevens, onder de diagnostische gegevens.
 
-:::image type="content" source="../media/graph/metrics-graph-cross-metrics-analysis.png" alt-text="Metrische waarde selecteren":::
+:::image type="content" source="../media/graph/metrics-graph-cross-metrics-analysis.png" alt-text="Gerelateerde metrische gegevens en afwijkingen weer geven":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

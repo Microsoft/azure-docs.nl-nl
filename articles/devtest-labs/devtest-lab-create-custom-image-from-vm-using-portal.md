@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een aangepaste installatie kopie
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: ad45ed6eb7f97e14ec0ca0bb89efb2967c90fc16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87277024"
 ---
 # <a name="create-a-custom-image-from-a-vm"></a>Een aangepaste installatiekopie maken vanaf een virtuele machine
@@ -20,11 +20,11 @@ U kunt een aangepaste installatie kopie maken van een ingerichte virtuele machin
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+1. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
 1. Selecteer in de lijst met Labs het gewenste Lab.  
 
-1. Selecteer **mijn virtuele machines**in het hoofd venster van het lab.
+1. Selecteer **mijn virtuele machines** in het hoofd venster van het lab.
  
 1. Selecteer in het deel venster **mijn virtuele machines** de virtuele machine waarvan u de aangepaste installatie kopie wilt maken.
 
@@ -33,13 +33,13 @@ U kunt een aangepaste installatie kopie maken van een ingerichte virtuele machin
     :::image type="content" source="./media/devtest-lab-create-template/create-custom-image.png" alt-text="Menu-item voor aangepaste installatie kopie maken":::
 1. Voer in het deel venster **aangepaste installatie kopie** een naam en een beschrijving in voor uw aangepaste installatie kopie. Deze informatie wordt weer gegeven in de lijst met basissen wanneer u een VM maakt. De aangepaste installatie kopie bevat de besturingssysteem schijf en alle gegevens schijven die aan de virtuele machine zijn gekoppeld.
 
-    :::image type="content" source="./media/devtest-lab-create-template/create-custom-image-blade.png" alt-text="Menu-item voor aangepaste installatie kopie maken":::
+    :::image type="content" source="./media/devtest-lab-create-template/create-custom-image-blade.png" alt-text="Pagina aangepaste installatie kopie maken":::
 1. Selecteer of Sysprep is uitgevoerd op de virtuele machine. Als het Sysprep niet is uitgevoerd op de virtuele machine, geeft u op of Sysprep moet worden uitgevoerd op de virtuele machine wanneer de aangepaste installatie kopie wordt gemaakt.
 1. Selecteer **OK** wanneer u klaar bent om de aangepaste installatie kopie te maken.
 
     Na een paar minuten wordt de aangepaste installatie kopie gemaakt en opgeslagen in het opslag account van de test omgeving. Wanneer een Lab-gebruiker een nieuwe virtuele machine wil maken, is de installatie kopie beschikbaar in de lijst met basis installatie kopieën.
 
-    :::image type="content" source="./media/devtest-lab-create-template/custom-image-available-as-base.png" alt-text="Menu-item voor aangepaste installatie kopie maken":::
+    :::image type="content" source="./media/devtest-lab-create-template/custom-image-available-as-base.png" alt-text="aangepaste afbeelding beschikbaar in lijst met basis installatie kopieën":::
 
 ## <a name="related-blog-posts"></a>Gerelateerde blog berichten
 

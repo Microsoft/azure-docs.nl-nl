@@ -8,10 +8,10 @@ ms.author: aadnaik
 ms.reviewer: HDI HiveLLAP Team
 ms.date: 05/05/2020
 ms.openlocfilehash: 7df75077785c66215008e045ef0b1e451ba29f57
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/28/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98931104"
 ---
 # <a name="azure-hdinsight-interactive-query-cluster-hive-llap-sizing-guide"></a>Azure HDInsight Interactive query-cluster (Hive LLAP) formaat gids
@@ -26,9 +26,9 @@ In dit document wordt de grootte van het HDInsight Interactive query-cluster (Hi
 | Werk   | **D14 v2**        | **16 vcpu's, 112 GB RAM, 800 GB SSD**       |
 | ZooKeeper   | A4 v2        | 4 vcpu's, 8 GB RAM, 40 GB SSD       |
 
-**_Opmerking: alle aanbevolen configuratie waarden zijn gebaseerd op het D14 v2-type werk knooppunt_* _  
+***Opmerking: alle aanbevolen configuratie waarden zijn gebaseerd op het werk knooppunt van het D14 v2-type***  
 
-### <a name="_configuration"></a>_ *Configuratie:**    
+### <a name="configuration"></a>**Configuratie**    
 | Configuratiesleutel      | Aanbevolen waarde  | Beschrijving |
 | :---        |    :----:   | :---     |
 | garens. nodemanager. resource. geheugen-MB | 102400 (MB) | Totale hoeveelheid geheugen in MB, voor alle GARENs in een knoop punt | 
@@ -52,59 +52,59 @@ In dit document wordt de grootte van het HDInsight Interactive query-cluster (Hi
 ### <a name="llap-daemon-size-estimations"></a>**Schattingen voor de grootte van LLAP-daemon:** 
 
 #### <a name="1-determining-total-yarn-memory-allocation-for-all-containers-on-a-node"></a>**1. de toewijzing van het totale aantal GARENs in een knoop punt bepalen**    
-Configuratie: **_garens. nodemanager. resource. geheugen-MB_* _  
+Configuratie: ***garens. nodemanager. resource. geheugen-MB***  
 
 Deze waarde wijst op een maximum hoeveelheid geheugen in MB die kan worden gebruikt door de garen containers op elk knoop punt. De opgegeven waarde moet kleiner zijn dan de totale hoeveelheid fysiek geheugen op het knoop punt.   
 Totaal geheugen voor alle GARENs in een knoop punt = (totaal fysiek geheugen – geheugen voor OS + andere services)  
 Stel deze waarde in op ~ 90% van de beschik bare RAM-grootte.  
-Voor D14 v2 is de aanbevolen waarde _ * 102400 MB * *. 
+Voor D14 v2 is de aanbevolen waarde **102400 MB**. 
 
 #### <a name="2-determining-maximum-amount-of-memory-per-yarn-container-request"></a>**2. het bepalen van de maximale hoeveelheid geheugen per garen-container aanvraag**  
-Configuratie: **_garens. scheduler. maximum-toewijzing-MB_* _
+Configuratie: ***garens. scheduler. maximum-toewijzing-MB***
 
-Met deze waarde wordt de maximale toewijzing aangegeven voor elke container aanvraag in de Resource Manager, in MB. Geheugen aanvragen die hoger zijn dan de opgegeven waarde, worden niet van kracht. De Resource Manager kan geheugen toewijzen aan containers in stappen van _yarn. scheduler. minimum-toewijzing-MB * en mag niet groter zijn dan de grootte die is opgegeven door de *garens. scheduler-MB. Maxi maal-toewijzings geheugen*. De opgegeven waarde mag niet groter zijn dan het totale gegeven geheugen voor alle containers op het knoop punt dat is opgegeven door *garens. nodemanager. resource. geheugen-MB*.    
+Met deze waarde wordt de maximale toewijzing aangegeven voor elke container aanvraag in de Resource Manager, in MB. Geheugen aanvragen die hoger zijn dan de opgegeven waarde, worden niet van kracht. De Resource Manager kan geheugen toewijzen aan containers in stappen van *garens. scheduler. minimum-toewijzing-MB* en mag niet groter zijn dan de grootte die is opgegeven door *garens. scheduler. maximum-toewijzing-MB*. De opgegeven waarde mag niet groter zijn dan het totale gegeven geheugen voor alle containers op het knoop punt dat is opgegeven door *garens. nodemanager. resource. geheugen-MB*.    
 Voor D14 v2-worker-knoop punten is de aanbevolen waarde **102400 MB**
 
 #### <a name="3-determining-maximum-amount-of-vcores-per-yarn-container-request"></a>**3. het bepalen van de maximale hoeveelheid vcores per garen-container aanvraag**  
-Configuratie: **_garens. scheduler. maximum-Allocation-vcores_* _  
+Configuratie: ***garens. scheduler. maximum-toewijzing-vcores***  
 
 Deze waarde geeft het maximum aantal virtuele CPU-kernen aan voor elke container aanvraag in de Resource Manager. Als u een hoger aantal vcores wilt aanvragen, wordt deze waarde niet van kracht. Het is een wereld wijde eigenschap van de garen planner. Voor de LLAP-daemon-container kan deze waarde worden ingesteld op 75% van de totale beschik bare vcores. De resterende 25% moet worden gereserveerd voor NodeManager, DataNode en andere services die worden uitgevoerd op de worker-knoop punten.  
 Er zijn 16 vcores op D14 v2-Vm's en 75% van het totale aantal 16 vcores kunnen worden gebruikt door de LLAP daemon-container.  
-Voor D14 v2 is de aanbevolen waarde _ * 12 * *.  
+Voor D14 v2 is de aanbevolen waarde **12**.  
 
 #### <a name="4-number-of-concurrent-queries"></a>**4. aantal gelijktijdige query's**  
-Configuratie: **_Hive. server2. TEZ. Sessions. per. default. Queue_* _
+Configuratie: ***Hive. server2. TEZ. Sessions. per. default. Queue***
 
 Deze configuratie waarde bepaalt het aantal TEZ-sessies dat parallel kan worden gestart. Deze TEZ-sessies worden gestart voor elk van de wacht rijen die zijn opgegeven met de component. server2. TEZ. default. queues. Dit komt overeen met het aantal TEZ-AMs (query-coördinatoren). Het is raadzaam hetzelfde te zijn als het aantal worker-knoop punten. Het aantal TEZ-AMs kan hoger zijn dan het aantal LLAP-daemon-knoop punten. De primaire verantwoordelijkheid van TEZ is het coördineren van de uitvoering van de query en het toewijzen van query plan fragmenten aan bijbehorende LLAP-daemons voor uitvoering. Bewaar deze waarde als een veelvoud van een aantal LLAP-daemon-knoop punten om een hogere door voer te krijgen.  
 
-Het standaard HDInsight-cluster bevat vier LLAP-daemons die worden uitgevoerd op vier worker-knoop punten, dus de aanbevolen waarde is _ * 4 * *.  
+Het standaard HDInsight-cluster bevat vier LLAP-daemons die worden uitgevoerd op vier worker-knoop punten, dus de aanbevolen waarde is **4**.  
 
 **Schuif regelaar van Ambari-gebruikers interface voor Hive-configuratie variabele `hive.server2.tez.sessions.per.default.queue` :**
 
 ![' LLAP maximum aantal gelijktijdige query's '](./media/hive-llap-sizing-guide/LLAP_sizing_guide_max_concurrent_queries.png "Maximum aantal gelijktijdige query's LLAP")
 
 #### <a name="5-tez-container-and-tez-application-master-size"></a>**5. TEZ-container en TEZ-toepassings hoofd grootte**    
-Configuratie: **_TEZ. am. resource. Memory. MB, Hive. TEZ. container. grootte_* _  
+Configuratie: ***TEZ. am. resource. Memory. MB, component. TEZ. container. size***  
 
-_tez. am. resource. Memory. MB *: definieert de grootte van de toepassings Master van de TEZ.  
+*TEZ. am. resource. Memory. MB* : Hiermee wordt de grootte van de TEZ-toepassings Master gedefinieerd.  
 De aanbevolen waarde is **4096 MB**.
    
 *Hive. TEZ. container. size* : Hiermee definieert u de hoeveelheid geheugen die is opgegeven voor de TEZ-container. Deze waarde moet worden ingesteld tussen de minimale container grootte van het garen (*garens. scheduler. minimum-toewijzings MB*) en de maximale container grootte van de garens (*garens. scheduler. maximum-toewijzing-MB*). De LLAP daemon-uitvoeringen gebruiken deze waarde voor het beperken van het geheugen gebruik per uitvoerder.  
 De aanbevolen waarde is **4096 MB**.  
 
 #### <a name="6-llap-queue-capacity-allocation"></a>**6. toewijzing van LLAP-wachtrij capaciteit**   
-Configuratie: **_garens. scheduler. capacity. root. llap. capacity_* _  
+Configuratie: ***garens. scheduler. capacity. root. llap. capacity***  
 
 Met deze waarde wordt een percentage van de capaciteit aangegeven dat is opgegeven voor de llap-wachtrij. De capaciteits toewijzingen kunnen verschillende waarden voor verschillende werk belastingen hebben, afhankelijk van de configuratie van de garen-wacht rijen. Als uw werk belasting alleen-lezen is, stelt u deze in op Maxi maal 90% van de capaciteit zou moeten werken. Als uw werk belasting echter een combi natie is van update/delete/merge-bewerkingen met behulp van beheerde tabellen, is het raadzaam om 85% van de capaciteit voor llap-wachtrij te geven. De resterende capaciteit van 15% kan worden gebruikt door andere taken, zoals compressie, enzovoort om containers toe te wijzen vanuit de standaard wachtrij. Op die manier kunnen de taken in de standaard wachtrij geen GARENs meer afnemen.    
 
-Voor D14v2 worker-knoop punten is de aanbevolen waarde voor de llap-wachtrij _ * 85 * *.     
+Voor D14v2 worker-knoop punten is de aanbevolen waarde voor de llap-wachtrij **85**.     
 (Voor ReadOnly-workloads kan het worden verhoogd tot 90 als geschikt.)  
 
 #### <a name="7-llap-daemon-container-size"></a>**7. LLAP daemon-container grootte**    
-Configuratie: **_Hive. llap. daemon. garens. container. MB_* _  
+Configuratie: ***Hive. llap. daemon. garens. container. MB***  
    
 LLAP-daemon wordt uitgevoerd als een GARENve container op elk worker-knoop punt. De totale geheugen grootte voor de LLAP-daemon-container is afhankelijk van de volgende factoren:    
-_ Configuraties van de grootte van de garen container (garens. scheduler. minimum-toewijzing-MB, garens. scheduler. maximum-toewijzing-MB, garens. nodemanager. resource. geheugen-MB)
+*  Configuraties van de grootte van de garen container (garens. scheduler. minimum-toewijzing-MB, garens. scheduler. maximum-toewijzing-MB, garens. nodemanager. resource. geheugen-MB)
 *  Aantal TEZ-AMs op een knoop punt
 *  Totaal geheugen geconfigureerd voor alle containers op een knoop punt en LLAP-wachtrij capaciteit  
 
@@ -112,11 +112,11 @@ Het geheugen dat nodig is voor TEZ Application Masters (TEZ AM) kan als volgt wo
 TEZ AM fungeert als een query coördinator en het aantal TEZ-AMs moet worden geconfigureerd op basis van een aantal gelijktijdige query's die moeten worden geleverd. In theorie kunnen we één TEZ per worker-knoop punt beschouwen. Het is echter mogelijk dat er meer dan één TEZ-uur op een worker-knoop punt wordt weer geven. Voor het berekenen van het doel gaan we uitgaan van een uniforme distributie van TEZ AMs over alle LLAP-daemon-knoop punten/worker-knoop punten.
 Het is raadzaam 4 GB geheugen per TEZ uur te hebben.  
 
-Aantal TEZ AMS = waarde dat is opgegeven door Hive Configuration ***Hive. server2. TEZ. Sessions. default. Queue** _.  
-Aantal LLAP-daemon-knoop punten = opgegeven door de env-variabele _*_num_llap_nodes_for_llap_daemons_*_ in de Ambari-gebruikers interface.  
-TEZ AM container size = waarde opgegeven door TEZ config _*_TEZ. am. resource. Memory. MB_*_.  
+Het aantal TEZ AMS = waarde dat is opgegeven door de Hive-configuratie ***component. server2. TEZ. Sessions. per. default. Queue***.  
+Aantal LLAP-daemon-knoop punten = opgegeven door de env-variabele ***num_llap_nodes_for_llap_daemons*** in de Ambari-gebruikers interface.  
+TEZ AM container size = waarde opgegeven door TEZ config ***TEZ. am. resource. Memory. MB***.  
 
-TEZ am Memory per knoop punt =*_ (** CEIL **(** aantal TEZ AMS **/** aantal LLAP-daemon-knoop punten **)** **x** TEZ am **-** container grootte)  
+TEZ am Memory per knoop punt = **(** CEIL **(** aantal TEZ AMS **/** aantal LLAP-daemon-knoop punten **)** **x** TEZ am **-** container grootte)  
 Voor D14 v2 heeft de standaard configuratie vier TEZ-AMs en vier LLAP-daemon-knoop punten.  
 TEZ AM-geheugen per knoop punt = (CEIL (4/4) x 4 GB) = 4 GB
 
@@ -133,22 +133,25 @@ Voor D14 v2 worker-knoop punt HDI 4,0-de aanbevolen waarde is (85 GB-4 GB-1 GB))
 (HDI 3,6, aanbevolen waarde is **79 GB** , omdat u extra moet reserveren ~ 2 GB voor schuifregelaar am.)  
 
 #### <a name="8-determining-number-of-executors-per-llap-daemon"></a>**8. bepalen van het aantal uitvoerender per LLAP-daemon**  
-Configuratie: **_hive.llap.daemon.num.executors_* _, _*_Hive. llap. io. thread pool. size_*_
+Configuratie: ***hive.llap.daemon.num.executors** _, _ *_Hive. llap. io. thread pool. size_**
 
-_*_hive.llap.daemon.num.executors_*_:   
+***hive.llap.daemon.num.executors***:   
 Deze configuratie bepaalt het aantal uitvoerender dat taken parallel kan uitvoeren per LLAP-daemon. Deze waarde is afhankelijk van het aantal vcores, de hoeveelheid geheugen die per uitvoerder wordt gebruikt en de totale hoeveelheid geheugen die beschikbaar is voor de LLAP daemon-container.    Het aantal uitvoerende agents kan worden geabonneerd op 120% van de beschik bare vcores per worker-knoop punt. Het moet echter worden aangepast als deze niet voldoet aan de geheugen vereisten op basis van het geheugen dat nodig is voor de uitvoerder en de container grootte van de LLAP-daemon.
 
 Elke uitvoerder is gelijk aan een TEZ-container en kan 4 GB (TEZ-container grootte) aan geheugen gebruiken. Alle uitvoerders in de LLAP-daemon delen hetzelfde heap-geheugen. Met de veronderstelling dat niet alle uitvoeringen geheugenintensieve bewerkingen tegelijk uitvoeren, kunt u 75% van de TEZ-container grootte (4 GB) per uitvoerder overwegen. Op deze manier kunt u het aantal uitvoerers verhogen door elke uitvoerder minder geheugen (bijvoorbeeld 3 GB) te geven voor een verhoogde parallelle uitvoering. Het wordt echter aangeraden deze instelling af te stemmen op uw doel-workload.
 
 Er zijn 16 vcores op D14 v2-Vm's.
-Voor D14 v2 is de aanbevolen waarde voor aantal uitvoerers (16 vcores x 120%) ~ = _ *19** op elk worker-knoop punt, met 3 GB per uitvoerder.
+Voor D14 v2 is de aanbevolen waarde voor aantal uitvoerers (16 vcores x 120%) ~ = **19** op elk worker-knoop punt, waarbij 3 GB per uitvoerder wordt overwogen.
 
-**_Hive. llap. io. thread pool. grootte_*_: deze waarde geeft de grootte van de thread groep voor uitvoerders. Omdat de uitvoeringen van de toepassing zijn hersteld, is deze hetzelfde als het aantal uitvoerender per LLAP-daemon. Voor D14 v2 is de aanbevolen waarde _* 19**.
+***Hive. llap. io. thread pool. grootte***:   
+Met deze waarde wordt de thread pool grootte voor uitvoerende toepassingen opgegeven. Omdat de uitvoeringen van de toepassing zijn hersteld, is deze hetzelfde als het aantal uitvoerender per LLAP-daemon.    
+Voor D14 v2 is de aanbevolen waarde **19**.
 
 #### <a name="9-determining-llap-daemon-cache-size"></a>**9. de cache grootte van de LLAP-daemon bepalen**  
-Configuratie: **_Hive. llap. io. Memory. grootte_* _
+Configuratie: ***Hive. llap. io. Memory. size***
 
-Het LLAP-daemon-container geheugen bestaat uit de volgende onderdelen: Hoofd kamer
+Het LLAP-daemon-container geheugen bestaat uit de volgende onderdelen:
+*  Hoofd kamer
 *  Heap-geheugen dat wordt gebruikt door de (xmx)
 *  In-memory cache per daemon (de geheugen grootte van de buiten-heap, niet van toepassing wanneer de SSD-cache is ingeschakeld)
 *  Grootte van meta gegevens in cache geheugen (alleen van toepassing wanneer SSD-cache is ingeschakeld)
@@ -181,18 +184,18 @@ Voor D14 v2 en HDI 4,0, de aanbevolen cache grootte van SSD = 19 GB/0,08 ~ = **2
 Voor D14 v2 en HDI 3,6, de aanbevolen cache grootte van SSD = 18 GB/0,08 ~ = **225 GB**
 
 #### <a name="10-adjusting-map-join-memory"></a>**10. het geheugen voor het koppelen van kaarten aanpassen**   
-Configuratie: **_Hive. auto. Convert. samen voegen. noconditionaltask. grootte_* _
+Configuratie: ***component. auto. Convert. samen voegen. noconditionaltask. size***
 
-Zorg ervoor dat _hive. auto. Convert. noconditionaltask * is ingeschakeld voor deze para meter van kracht worden.
+Zorg ervoor dat u *component. auto. Convert. noconditionaltask* hebt ingeschakeld om deze para meter van kracht te laten worden.
 Deze configuratie bepaalt de drempel waarde voor MapJoin electie per Hive-Optimizer waarbij een overschakeling van het geheugen van andere uitvoerende modules wordt beschouwd om meer ruimte te bieden voor de hash-tabellen in het geheugen om meer toewijzings samenvoegings conversies toe te staan. Als er 3 GB per uitvoerder is, kan deze grootte worden geabonneerd op 3 GB, maar kan er ook een heap-geheugen worden gebruikt voor sorteer buffers, wille keurige buffers, enzovoort. door de andere bewerkingen.   
 Voor D14 v2, met 3 GB geheugen per uitvoerder, wordt u aangeraden deze waarde in te stellen op **2048 MB**.  
 
 (Opmerking: deze waarde moet mogelijk aanpassingen zijn die geschikt zijn voor uw werk belasting. Als u deze waarde te laag instelt, wordt de functie autoconvert niet gebruikt. En als u het te hoog instelt, kan dit leiden tot onvoldoende geheugen-uitzonde ringen of GC-onderbrekingen die kunnen leiden tot nadelige prestaties.)  
 
 #### <a name="11-number-of-llap-daemons"></a>**11. aantal LLAP-daemons**
-Ambari-omgevings variabelen: **_num_llap_nodes, num_llap_nodes_for_llap_daemons_* _  
+Omgevings variabelen Ambari: ***num_llap_nodes, num_llap_nodes_for_llap_daemons***  
 
-_ *num_llap_nodes**: Hiermee geeft u het aantal knoop punten op dat door de Hive llap-service wordt gebruikt. Dit zijn onder andere knoop punten met llap daemon, Llap service Master en TEZ Application Master (TEZ am).  
+**num_llap_nodes** : Hiermee geeft u het aantal knoop punten op dat door de Hive llap-service wordt gebruikt. Dit zijn onder andere knoop punten met llap daemon, Llap service Master en TEZ Application Master (TEZ am).  
 
 ![' Aantal knoop punten voor de LLAP-service '](./media/hive-llap-sizing-guide/LLAP_sizing_guide_num_llap_nodes.png "Aantal knoop punten voor de LLAP-service")  
 

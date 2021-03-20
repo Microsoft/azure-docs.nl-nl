@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: alkohli
 ms.openlocfilehash: e73a02c93807072e30c8ce2a1a7feb30e9d3c8c6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91978965"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-stack-edge-pro"></a>Gebruik de Azure Portal om bandbreedte planningen te beheren op uw Azure Stack Edge Pro  
@@ -34,13 +34,13 @@ In dit artikel leert u het volgende:
 Voer de volgende stappen uit in de Azure Portal om een schema toe te voegen.
 
 1. Ga in de Azure Portal voor uw Azure Stack Edge-resource naar **band breedte**.
-2. Selecteer **+ schema toevoegen**in het rechterdeel venster.
+2. Selecteer **+ schema toevoegen** in het rechterdeel venster.
 
     ![Band breedte selecteren](media/azure-stack-edge-manage-bandwidth-schedules/add-schedule-1.png)
 
 3. Doe het volgende in **Schema toevoegen**: 
 
-   1. Geef de **begin dag**, de **eind datum**, de **begin tijd**en de **eind tijd** van de planning op.
+   1. Geef de **begin dag**, de **eind datum**, de **begin tijd** en de **eind tijd** van de planning op.
    2. Controleer de optie **alle dagen** als dit schema de hele dag moet worden uitgevoerd.
    3. **Bandbreedte frequentie** is de band breedte in megabits per seconde (Mbps) die wordt gebruikt door uw apparaat in bewerkingen met betrekking tot de Cloud (zowel uploads als down Loads). Geef voor dit veld een waarde op tussen 20 en 1.000.000.007.
    4. Schakel **Onbeperkte** bandbreedte in als u de datumupload en -download niet wilt regelen.
@@ -75,7 +75,7 @@ Voer de volgende stappen uit om een bandbreedte schema te verwijderen dat is gek
 
 1. Ga in het Azure Portal naar de resource Azure Stack Edge en ga vervolgens naar **band breedte**.  
 
-2. Selecteer in de lijst met bandbreedteschema's een schema dat u wilt verwijderen. Selecteer **verwijderen**in het **schema bewerken**. Selecteer **Ja**als u om bevestiging wordt gevraagd.
+2. Selecteer in de lijst met bandbreedteschema's een schema dat u wilt verwijderen. Selecteer **verwijderen** in het **schema bewerken**. Selecteer **Ja** als u om bevestiging wordt gevraagd.
 
    ![Een gebruiker verwijderen](media/azure-stack-edge-manage-bandwidth-schedules/delete-schedule-2.png)
 

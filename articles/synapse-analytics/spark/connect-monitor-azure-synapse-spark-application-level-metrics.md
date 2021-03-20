@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 01/22/2021
-ms.openlocfilehash: bd04c692655161a2ba8d4ff51a8ff07e9b9bd374
-ms.sourcegitcommit: c27a20b278f2ac758447418ea4c8c61e27927d6a
+ms.openlocfilehash: cb27401b2925c800ebde3b554c076f0d8cb747ca
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101696107"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104593013"
 ---
 # <a name="tutorial-connect-and-monitor-azure-synapse-spark-application-level-metrics"></a>Zelf studie: metrische gegevens over het Azure Synapse Spark-toepassings niveau verbinden en bewaken
 
@@ -176,7 +176,7 @@ Het antwoord ziet er als volgt uit:
 
 ### <a name="2-list-running-applications-in-the-azure-synapse-workspace"></a>2. actieve toepassingen weer geven in de Azure Synapse-werk ruimte
 
-Als u een lijst wilt ophalen met Spark-toepassingen voor een Synapse-werk ruimte, kunt u deze document [bewaking volgen-taken lijst van Spark ophalen](https://docs.microsoft.com/rest/api/synapse/data-plane/monitoring/getsparkjoblist).
+Als u een lijst wilt ophalen met Spark-toepassingen voor een Synapse-werk ruimte, kunt u deze document [bewaking volgen-taken lijst van Spark ophalen](/rest/api/synapse/data-plane/monitoring/getsparkjoblist).
 
 
 ### <a name="3-collect-spark-application-metrics-with-the-prometheus-or-rest-apis"></a>3. metrische gegevens van Spark-toepassingen verzamelen met de Prometheus-of REST-Api's

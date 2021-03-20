@@ -4,10 +4,10 @@ description: Met een media grafiek kunt u definiëren waar media moeten worden v
 ms.topic: conceptual
 ms.date: 05/01/2020
 ms.openlocfilehash: 6f23e7db8cecb46106a63fdecdb6ba04dbd99682
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97401097"
 ---
 # <a name="media-graph"></a>Mediagrafiek

@@ -6,10 +6,10 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.openlocfilehash: 398d18642052726af4d4920443bad515ec0b5bef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91316559"
 ---
 # <a name="extract-data-with-entities"></a>Gegevens ophalen met entiteiten
@@ -32,7 +32,7 @@ Entiteiten moeten consistent worden gelabeld voor alle trainings uitingen voor e
 
  U kunt uw eigen entiteiten definiëren of vooraf gemaakte entiteiten gebruiken om tijd te besparen op algemene concepten, zoals [datetimeV2](luis-reference-prebuilt-datetimev2.md), [rang telwoord](luis-reference-prebuilt-ordinal.md), [e-mail adres](luis-reference-prebuilt-email.md)en [telefoon nummer](luis-reference-prebuilt-phonenumber.md).
 
-|Utterance|Entiteit|Gegevens|
+|Uiting|Entiteit|Gegevens|
 |--|--|--|
 |3 tickets kopen voor New York|Vooraf gebouwd nummer<br>Doel|3<br>New York|
 
@@ -51,7 +51,7 @@ De entiteit vertegenwoordigt een gegevens concept _binnen de utterance_. Een int
 
 Houd rekening met de volgende vier uitingen:
 
-|Utterance|Intentie voor speld|Geëxtraheerde entiteiten|Uitleg|
+|Uiting|Intentie voor speld|Geëxtraheerde entiteiten|Uitleg|
 |--|--|--|--|
 |Help|help|-|Niets te extra heren.|
 |Iets verzenden|sendSomething|-|Niets te extra heren. Het model bevat geen vereiste functie om `something` in deze context op te halen en er is geen ontvanger opgegeven.|
@@ -102,7 +102,7 @@ Kies de entiteit op basis van de manier waarop de gegevens moeten worden geëxtr
 |Entiteitstype|Doel|
 |--|--|
 |[**Machine-geleerd**](tutorial-machine-learned-entity.md)|Extraheer geneste, complexe gegevens die zijn geleerd van voor beelden met labels. |
-|[**Lijst**](reference-entity-list.md)|Lijst met items en de bijbehorende synoniemen die zijn geëxtraheerd met **exact overeenkomende tekst**.|
+|[**Orderverzamellijst**](reference-entity-list.md)|Lijst met items en de bijbehorende synoniemen die zijn geëxtraheerd met **exact overeenkomende tekst**.|
 |[**Patroon. alle**](#patternany-entity)|Entiteit waarvan het einde van de entiteit moeilijk te bepalen is, omdat de entiteit vrije vorm is. Alleen beschikbaar in [patronen](luis-concept-patterns.md).|
 |[**Vooraf samengesteld**](luis-reference-prebuilt-entities.md)|Al getraind voor het extra heren van specifieke soorten gegevens, zoals URL of e-mail. Sommige van deze vooraf gemaakte entiteiten worden gedefinieerd in het open source- [tekst](https://github.com/Microsoft/Recognizers-Text) project voor herkenning. Als uw specifieke cultuur of entiteit momenteel niet wordt ondersteund, draagt u bij aan het project.|
 |[**Reguliere expressie**](reference-entity-regular-expression.md)|Gebruikt reguliere expressie voor **exacte tekst overeenkomst**.|

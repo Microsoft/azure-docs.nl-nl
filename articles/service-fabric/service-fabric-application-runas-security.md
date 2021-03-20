@@ -4,27 +4,27 @@ description: Meer informatie over het uitvoeren van een Service Fabric-toepassin
 ms.topic: conceptual
 ms.date: 03/29/2018
 ms.openlocfilehash: 53212f8636602705899834b6db1d3f0d80b5fe4f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75610115"
 ---
 # <a name="run-a-service-as-a-local-user-account-or-local-system-account"></a>Een service uitvoeren als een lokaal gebruikers account of lokaal systeem account
-Door Azure Service Fabric te gebruiken, kunt u toepassingen die in het cluster worden uitgevoerd, beveiligen onder verschillende gebruikers accounts. Service Fabric toepassingen worden standaard uitgevoerd onder het account dat door het Fabric.exe proces wordt uitgevoerd. Service Fabric biedt ook de mogelijkheid om toepassingen uit te voeren onder een lokale gebruiker of systeem account. Ondersteunde typen lokale systeem accounts zijn **lokalegebruiker**, **Network Service**, **LocalService**en **LocalSystem**.  Als u Service Fabric uitvoert op een zelfstandige Windows-cluster, kunt u een service uitvoeren onder [Active Directory domein accounts](service-fabric-run-service-as-ad-user-or-group.md) of door de [groep beheerde service accounts](service-fabric-run-service-as-gmsa.md).
+Door Azure Service Fabric te gebruiken, kunt u toepassingen die in het cluster worden uitgevoerd, beveiligen onder verschillende gebruikers accounts. Service Fabric toepassingen worden standaard uitgevoerd onder het account dat door het Fabric.exe proces wordt uitgevoerd. Service Fabric biedt ook de mogelijkheid om toepassingen uit te voeren onder een lokale gebruiker of systeem account. Ondersteunde typen lokale systeem accounts zijn **lokalegebruiker**, **Network Service**, **LocalService** en **LocalSystem**.  Als u Service Fabric uitvoert op een zelfstandige Windows-cluster, kunt u een service uitvoeren onder [Active Directory domein accounts](service-fabric-run-service-as-ad-user-or-group.md) of door de [groep beheerde service accounts](service-fabric-run-service-as-gmsa.md).
 
 In het manifest van de toepassing definieert u de gebruikers accounts die vereist zijn voor het uitvoeren van services of het beveiligen van resources in de sectie **principals** . U kunt ook gebruikers groepen definiëren en maken, zodat een of meer gebruikers samen kunnen worden beheerd. Dit is handig wanneer er meerdere gebruikers zijn voor verschillende service toegangs punten en er algemene bevoegdheden nodig zijn op het groeps niveau.  Er wordt naar de gebruikers verwezen in een runas-beleid dat wordt toegepast op een specifieke service of voor alle services in de toepassing. 
 
 Standaard wordt het runas-beleid toegepast op het hoofd toegangs punt.  U kunt ook een runas-beleid Toep assen op het installatie toegangs punt als u [bepaalde instellingen voor het instellen van hoge bevoegdheden wilt uitvoeren onder een systeem account](service-fabric-run-script-at-service-startup.md)of voor de hoofd-en Setup-toegangs punten.  
 
 > [!NOTE] 
-> Als u een runas-beleid toepast op een service en het service manifest declareert eindpunt resources met het HTTP-protocol, moet u een **SecurityAccessPolicy**opgeven.  Zie [beleid voor beveiligings toegang toewijzen voor HTTP-en HTTPS-eind punten](service-fabric-assign-policy-to-endpoint.md)voor meer informatie. 
+> Als u een runas-beleid toepast op een service en het service manifest declareert eindpunt resources met het HTTP-protocol, moet u een **SecurityAccessPolicy** opgeven.  Zie [beleid voor beveiligings toegang toewijzen voor HTTP-en HTTPS-eind punten](service-fabric-assign-policy-to-endpoint.md)voor meer informatie. 
 >
 
 ## <a name="run-a-service-as-a-local-user"></a>Een service uitvoeren als een lokale gebruiker
 U kunt een lokale gebruiker maken die kan worden gebruikt om een service in de toepassing te beveiligen. Wanneer een **lokalegebruiker** -account type is opgegeven in de sectie principals van het manifest van de toepassing, maakt service Fabric lokale gebruikers accounts op computers waarop de toepassing wordt geïmplementeerd. Standaard hebben deze accounts niet dezelfde namen als die zijn opgegeven in het manifest van de toepassing (bijvoorbeeld *Customer3* in het volgende voor beeld van een manifest van de toepassing). In plaats daarvan worden ze dynamisch gegenereerd en hebben ze wille keurige wacht woorden.
 
-Geef in de sectie **RunAsPolicy** voor een **ServiceManifestImport**het gebruikers account op in de sectie **principals** om het service code pakket uit te voeren.  In het volgende voor beeld ziet u hoe u een lokale gebruiker maakt en een runas-beleid toepast op het hoofd toegangs punt:
+Geef in de sectie **RunAsPolicy** voor een **ServiceManifestImport** het gebruikers account op in de sectie **principals** om het service code pakket uit te voeren.  In het volgende voor beeld ziet u hoe u een lokale gebruiker maakt en een runas-beleid toepast op het hoofd toegangs punt:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

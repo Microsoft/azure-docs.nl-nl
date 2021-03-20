@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: philmea
 ms.openlocfilehash: 50d0119b08d2c76a5f6111e485408ebcdace83c6
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96549018"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Uw factuur beheren in een IoT Central-toepassing
@@ -59,7 +59,7 @@ In het gedeelte prijzen kunt u uw Azure IoT-prijs plan op elk gewenst moment bij
 
 1. Selecteer het **plan** en selecteer vervolgens **Opslaan** om te upgraden of Down graden.
 
-## <a name="view-your-bill"></a>Uw factuur weergeven
+## <a name="view-your-bill"></a>Uw factuur bekijken
 
 1. Selecteer de juiste Azure Active Directory en vervolgens het Azure-abonnement dat u wilt gebruiken voor uw toepassing die gebruikmaakt van een betaald abonnement.
 

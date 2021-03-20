@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.custom: mvc
 ms.openlocfilehash: 1ac418d855696138341115412dc7e2601d4cf3a1
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91961405"
 ---
 # <a name="manage-an-azure-database-for-postgresql---flexible-server-using-the-azure-portal"></a>Een Azure Database for PostgreSQL flexibele server beheren met behulp van de Azure Portal
@@ -27,7 +27,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com). Ga naar de flexibele
 
 ## <a name="scale-compute-and-storage"></a>Schaal berekening en opslag
 
-Nadat de server is gemaakt, kunt u de verschillende [prijs categorieën](https://azure.microsoft.com/pricing/details/postgresql/) aanpassen als uw behoeften veranderen. U kunt ook uw reken-en geheugen schaal omhoog of omlaag schalen door vCores te verg Roten of te verkleinen.
+Nadat de server is gemaakt, kunt u de verschillende [prijs categorieën](https://azure.microsoft.com/pricing/details/postgresql/) aanpassen als uw behoeften veranderen. U kunt berekening en geheugen ook omhoog of omlaag schalen door vCores te vergroten of te verkleinen.
 
 > [!NOTE]
 > De opslag kan niet omlaag worden geschaald naar een lagere waarde.
@@ -48,11 +48,11 @@ Nadat de server is gemaakt, kunt u de verschillende [prijs categorieën](https:/
 
 U kunt het wacht woord van de beheerdersrol wijzigen met behulp van de Azure Portal.
 
-1. Selecteer uw server in de Azure Portal. Selecteer **wacht woord opnieuw instellen**in het venster **overzicht** .
+1. Selecteer uw server in de Azure Portal. Selecteer **wacht woord opnieuw instellen** in het venster **overzicht** .
 2. Voer een nieuw wachtwoord in en bevestig het wachtwoord. In het tekstvak wordt u gevraagd om de vereisten voor wachtwoord complexiteit.
 
 > [!div class="mx-imgBorder"]
-> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="flexibele server voor opslag schalen":::
+> :::image type="content" source="./media/howto-manage-server-portal/reset-password.png" alt-text="uw wacht woord opnieuw instellen voor een flexibele server":::
 
 3. Selecteer **Opslaan** om het nieuwe wacht woord op te slaan.
 
@@ -60,10 +60,10 @@ U kunt het wacht woord van de beheerdersrol wijzigen met behulp van de Azure Por
 
 U kunt uw server verwijderen als u deze niet meer nodig hebt.
 
-1. Selecteer uw server in de Azure Portal. Selecteer **verwijderen**in het venster **overzicht** .
+1. Selecteer uw server in de Azure Portal. Selecteer **verwijderen** in het venster **overzicht** .
 2. Typ de naam van de server in het invoervak om te bevestigen dat u de server wilt verwijderen.
 
-   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="flexibele server voor opslag schalen":::
+   :::image type="content" source="./media/howto-manage-server-portal/delete-server.png" alt-text="de flexibele server verwijderen":::
 
    > [!IMPORTANT]
    > Het verwijderen van een server is onomkeerbaar.

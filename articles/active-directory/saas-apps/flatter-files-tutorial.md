@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: fae21c98c7340614a96b6e85aa79bdea7889a807
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453213"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Zelfstudie: Azure Active Directory-integratie met Flatter Files
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Flatter Files met Azure AD moet u Fl
 
 **Als u Flatter Files vanuit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,16 +67,16 @@ Voor het configureren van de integratie van Flatter Files met Azure AD moet u Fl
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Flatter Files configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Flatter Files configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Flatter Files tot stand is gebracht.
 
 Voor het configureren en testen van eenmalige aanmelding via Azure AD bij Flatter Files moet u de volgende bouwstenen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding voor Flatter Files configureren](#configure-flatter-files-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding voor Flatter Files configureren](#configure-flatter-files-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Flatter Files-testgebruiker maken](#create-flatter-files-test-user)** : als u een equivalent van Britta Simon in Flatter Files wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
+5. **[Flatter Files-testgebruiker maken](#create-flatter-files-test-user)**: als u een equivalent van Britta Simon in Flatter Files wilt hebben dat gekoppeld is aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Flatter Files moet u de volgende stappen uitvoeren:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Flatter Files** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor integratie van de toepassing **Flatter Files** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -119,38 +119,38 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Flatter Files moet u
 
 1. Meld u bij uw Flatter Files-toepassing aan als beheerder.
 
-2. Klik op **DASHBOARD** . 
+2. Klik op **DASHBOARD**. 
    
     ![Schermopname met "DASHBOARD" geselecteerd in de app "Flatter Files".](./media/flatter-files-tutorial/tutorial_flatter_files_05.png)  
 
-3. Klik op **Instellingen** en voer de volgende stappen uit op het tabblad **Bedrijf** : 
+3. Klik op **Instellingen** en voer de volgende stappen uit op het tabblad **Bedrijf**: 
    
     ![Schermopname met het tabblad "Company" met "Use S A M L 2.0 for Authentication" geselecteerd en de knop "Configure S A M L" geselecteerd.](./media/flatter-files-tutorial/tutorial_flatter_files_06.png)  
     
-    a. Selecteer **SAML 2.0 gebruiken voor verificatie** .
+    a. Selecteer **SAML 2.0 gebruiken voor verificatie**.
     
-    b. Klik op **SAML configureren** .
+    b. Klik op **SAML configureren**.
 
 4. Voer in het dialoogvenster **SAML-configuratie** de volgende stappen uit: 
    
     ![Eenmalige aanmelding configureren](./media/flatter-files-tutorial/tutorial_flatter_files_08.png)  
    
-    a. Typ uw geregistreerde domein in het tekstvak **Domein** .
+    a. Typ uw geregistreerde domein in het tekstvak **Domein**.
    
    > [!NOTE]
    > Als u nog geen domein hebt geregistreerd, neemt u contact op met het ondersteuningsteam van Flatter Files via [support@flatterfiles.com](mailto:support@flatterfiles.com). 
     
     b. Plak in het tekstvak voor de **URL van de identiteitsprovider** de waarde van de **aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
    
-    c.  Open het base-64 gecodeerde certificaat in Kladblok, kopieer de inhoud ervan naar het klembord en plak het in het tekstvak **Id-providercertificaat** .
+    c.  Open het base-64 gecodeerde certificaat in Kladblok, kopieer de inhoud ervan naar het klembord en plak het in het tekstvak **Id-providercertificaat**.
 
-    d. Klik op **Update** .
+    d. Klik op **Update**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -169,13 +169,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Flatter Files.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Flatter Files** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Flatter Files**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -183,11 +183,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De Flatter Files-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -195,7 +195,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-flatter-files-test-user"></a>Flatter Files-testgebruiker maken
 
@@ -203,21 +203,21 @@ Het doel van deze sectie is het maken van een gebruiker met de naam Britta Simon
 
 **Voer de volgende stappen uit om een gebruiker met de naam Britta Simon te maken in Flatter Files:**
 
-1. Meld u als beheerder aan bij de bedrijfssite van **Flatter Files** .
+1. Meld u als beheerder aan bij de bedrijfssite van **Flatter Files**.
 
-2. Klik in het navigatievenster links op **Settings** en vervolgens op het tabblad **Users** .
+2. Klik in het navigatievenster links op **Settings** en vervolgens op het tabblad **Users**.
    
     ![Schermopname met de pagina "Settings" met het tabblad "Users" geselecteerd.](./media/flatter-files-tutorial/tutorial_flatter_files_09.png)
 
-3. Klik op **Add User** . 
+3. Klik op **Add User**. 
 
 4. Voer in het dialoogvenster **Add User** de volgende stappen uit:
    
     ![Een Flatter Files-gebruiker maken](./media/flatter-files-tutorial/tutorial_flatter_files_10.png)
 
-    a. Typ **Britta** in het tekstvak **First Name** .
+    a. Typ **Britta** in het tekstvak **First Name**.
    
-    b. Typ **Simon** in het tekstvak **Last Name** . 
+    b. Typ **Simon** in het tekstvak **Last Name**. 
    
     c. Typ in het tekstvak **Email address** het e-mailadres van het account van Britta Simon in de Azure-portal.
    

@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: cherylmc
 ms.openlocfilehash: 2f2184507e17e3ecae40bb33be4202c183d32b77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91274230"
 ---
 # <a name="point-to-site-vpn-session-management"></a>Beheer van punt-naar-site-VPN-sessie
@@ -26,7 +26,7 @@ Virtuele netwerk gateways van Azure bieden een eenvoudige manier om huidige punt
 
 Een sessie in de portal weer geven en verbreken:
 
-1. Navigeer naar de VPN-gateway.
+1. Ga naar de VPN-gateway.
 1. Onder de sectie **bewaking** selecteert u **punt-naar-site-sessies**.
 
    :::image type="content" source="./media/p2s-session-management/portal.png" alt-text="Portal-voor beeld":::
@@ -44,7 +44,7 @@ Een sessie weer geven en verbreken met Power shell:
    ```
 1. Kopieer de **VpnConnectionId** van de sessie die u wilt verbreken.
 
-   :::image type="content" source="./media/p2s-session-management/powershell.png" alt-text="Portal-voor beeld":::
+   :::image type="content" source="./media/p2s-session-management/powershell.png" alt-text="PowerShell-voorbeeld":::
 1. Voer de volgende opdracht uit om de sessie te verbreken:
 
    ```azurepowershell-interactive

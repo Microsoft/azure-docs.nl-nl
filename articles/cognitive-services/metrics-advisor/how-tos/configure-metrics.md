@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: mbullwin
 ms.openlocfilehash: 7923dad3d47122c0ceb04d1240736e2b66a0dd64
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92048250"
 ---
 # <a name="how-to-configure-metrics-and-fine-tune-detecting-configuration"></a>Informatie over het configureren van metrische gegevens en het afstemmen van de configuratie van detectie
@@ -43,9 +43,9 @@ Een metriek kan een of meer detectie configuraties Toep assen. Er is een standaa
 
 Deze configuratie wordt toegepast op alle reeksen in deze metrische gegevens, met uitzonde ring van items met een afzonderlijke configuratie. Een niveau configuratie wordt standaard toegepast wanneer gegevens onboarded zijn en wordt weer gegeven in het linkerdeel venster. Gebruikers kunnen configuratie op metrische niveau rechtstreeks bewerken op de metrische pagina. 
 
-Er zijn aanvullende para meters als **richting**en **geldige afwijkingen** die kunnen worden gebruikt om de configuratie verder af te stemmen. U kunt ook verschillende detectie methoden combi neren. 
+Er zijn aanvullende para meters als **richting** en **geldige afwijkingen** die kunnen worden gebruikt om de configuratie verder af te stemmen. U kunt ook verschillende detectie methoden combi neren. 
 
-:::image type="content" source="../media/configuration-combination.png" alt-text="Een metrische waarde selecteren" lightbox="../media/configuration-combination.png":::
+:::image type="content" source="../media/configuration-combination.png" alt-text="Combi natie van configuratie" lightbox="../media/configuration-combination.png":::
 
 ### <a name="tune-the-configuration-for-a-specific-series-or-group"></a>De configuratie voor een specifieke serie of groep afstemmen
 
@@ -53,9 +53,9 @@ Klik op **Geavanceerde configuratie** onder de configuratie opties voor het metr
 
 Deze configuratie wordt toegepast op de groep reeksen of specifieke reeksen in plaats van de configuratie van het metrieke niveau. Nadat u de voor waarden voor deze groep hebt ingesteld, slaat u deze op.
 
-:::image type="content" source="../media/advanced-configuration.png" alt-text="Een metrische waarde selecteren" lightbox="../media/advanced-configuration.png":::
+:::image type="content" source="../media/advanced-configuration.png" alt-text="Geavanceerde configuratie" lightbox="../media/advanced-configuration.png":::
 
-### <a name="anomaly-detection-methods"></a>Afwijkings detectie methoden
+### <a name="anomaly-detection-methods"></a>Methoden voor anomaliedetectie
 
 Met metrische gegevens adviseur kunt u meerdere anomalie detectie methoden bieden. U kunt een gebruiken of combi neren met logische Opera tors door te klikken op de **+** knop. 
 
@@ -68,11 +68,11 @@ In de Slimme detectie modus worden de para meters voor de gevoeligheids-en grens
 
 Gevoeligheid kan de breedte van het verwachte waardebereik van elk punt beïnvloeden. Wanneer dit is toegenomen, is het verwachte waardebereik nauw keuriger en worden er meer afwijkingen gerapporteerd:
 
-:::image type="content" source="../media/metrics/smart-detection-high-sensitivity.png" alt-text="Een metrische waarde selecteren":::
+:::image type="content" source="../media/metrics/smart-detection-high-sensitivity.png" alt-text="Slimme detectie met hoge gevoeligheid":::
 
 Wanneer de gevoeligheid is uitgeschakeld, wordt het verwachte waardebereik breder en worden er minder afwijkingen gerapporteerd:
 
-:::image type="content" source="../media/metrics/smart-detection-low-sensitivity.png" alt-text="Een metrische waarde selecteren":::
+:::image type="content" source="../media/metrics/smart-detection-low-sensitivity.png" alt-text="Slimme detectie met lage gevoeligheid":::
 
 **Drempel waarde wijzigen** 
 
@@ -85,22 +85,22 @@ Gebruik de volgende stappen om deze modus te gebruiken:
 
 1. Selecteer **drempel waarde wijzigen** als uw afwijkings methode wanneer u de configuraties voor anomalie detectie instelt voor uw metrische gegevens of tijd reeksen.
     
-    :::image type="content" source="../media/metrics/change-threshold.png" alt-text="Een metrische waarde selecteren":::
+    :::image type="content" source="../media/metrics/change-threshold.png" alt-text="drempel waarde wijzigen":::
 
 2. Selecteer het **buiten het bereik** of **in de bereik** parameter op basis van uw scenario.
 
     Als u schommelingen wilt detecteren, selecteert u **buiten het bereik**. Met de onderstaande instellingen wordt bijvoorbeeld elk gegevens punt dat groter is dan 10% in vergelijking met het vorige, gedetecteerd als een uitschieter.
-    :::image type="content" source="../media/metrics/out-of-the-range.png" alt-text="Een metrische waarde selecteren":::
+    :::image type="content" source="../media/metrics/out-of-the-range.png" alt-text="para meter buiten bereik":::
 
     Als u Plate lijnen in uw gegevens wilt detecteren, selecteert u **in het bereik**. Met de onderstaande instellingen wordt bijvoorbeeld elk gegevens punt dat is gewijzigd in 0,01% vergeleken met het vorige, gedetecteerd als een uitschieter. Omdat de drempel zo klein is (0,01%), detecteert deze platte lijnen in de gegevens als uitbijters.
 
-    :::image type="content" source="../media/metrics/in-the-range.png" alt-text="Een metrische waarde selecteren":::
+    :::image type="content" source="../media/metrics/in-the-range.png" alt-text="Para meter in bereik":::
 
 3. Stel het percentage van de wijziging in dat als afwijkingen moet worden beschouwd en waarvan eerder vastgelegde gegevens punten worden gebruikt voor vergelijking. Deze vergelijking is altijd tussen het huidige gegevens punt en één gegevens punt N punten vóór het.
     
     De **richting** is alleen geldig als u de modus **voor** het gebruik van het bereik gebruikt:
     
-    * **Up** Met detectie wordt gedetecteerd alleen afwijkingen gedetecteerd wanneer (huidige gegevens punt)-(vergelijkings gegevens punt) > **+** drempel percentage.
+    *  Met detectie wordt gedetecteerd alleen afwijkingen gedetecteerd wanneer (huidige gegevens punt)-(vergelijkings gegevens punt) > **+** drempel percentage.
     * **Hiermee configureert u detectie** zodat alleen afwijkingen worden gedetecteerd wanneer (huidig gegevens punt): (vergelijkt gegevens punt) < **-** drempel percentage.
  
 **Harde drempel waarde**
@@ -117,7 +117,7 @@ Soms kunnen verwachte gebeurtenissen en herhalingen (zoals feest dagen) afwijken
 
 Klik op de knop **vooraf ingestelde gebeurtenis configureren** naast de vervolg keuzelijst metrieken op elke pagina metrische gegevens.
  
-:::image type="content" source="../media/metrics/preset-event-button.png" alt-text="Een metrische waarde selecteren":::
+:::image type="content" source="../media/metrics/preset-event-button.png" alt-text="knop vooraf ingestelde gebeurtenis":::
 
 Configureer de opties op basis van uw gebruik in het venster dat wordt weer gegeven. Zorg ervoor dat **gebeurtenis vakantiedag inschakelen** is geselecteerd om de configuratie te gebruiken. 
 
@@ -145,7 +145,7 @@ Niet alle opties kunnen voor elke granulatie worden geselecteerd. Hieronder vind
 
 | Granulariteit | YoY | Mama | WoW | DoD |
 |:-|:-|:-|:-|:-|
-| Jaarlijks | X | X | X | X |
+| Jaar | X | X | X | X |
 | Maandelijks | X | X | X | X |
 | Wekelijks | ✔ | X | X | X |
 | Dagelijks | ✔ | ✔ | ✔ | X |
@@ -161,13 +161,13 @@ X-niet beschikbaar.
 
 De cyclus gebeurtenis wordt gebruikt om afwijkingen te verminderen als ze een cyclisch patroon volgen, maar er wordt een afwijkingen gerapporteerd als meerdere gegevens punten het patroon niet volgen. De **strikte modus** wordt gebruikt om anomalie rapportage in te scha kelen als zelfs één gegevens punt het patroon niet volgt. 
 
-:::image type="content" source="../media/metrics/preset-events.png" alt-text="Een metrische waarde selecteren":::
+:::image type="content" source="../media/metrics/preset-events.png" alt-text="vooraf ingestelde gebeurtenis configuratie":::
 
 ## <a name="view-recent-incidents"></a>Recente incidenten weer geven
 
 Met metrische gegevens adviseur worden afwijkingen gedetecteerd op al uw time seriesgegevens wanneer ze worden opgenomen. Niet alle afwijkingen moeten echter worden geëscaleerd, omdat ze mogelijk geen grote gevolgen hebben. Aggregatie wordt uitgevoerd op afwijkingen om gerelateerde items in incidenten te groeperen. U kunt deze incidenten bekijken op het tabblad **incident** op de pagina metrische gegevens. 
 
-Klik op een incident om naar de **analyse pagina incidenten** te gaan, waar u meer informatie over de gegevens kunt zien. Klik op **incidenten beheren in nieuwe incident hub**om de pagina [incident hub](diagnose-incident.md) te vinden waar u alle incidenten kunt vinden onder de specifieke metrische gegevens. 
+Klik op een incident om naar de **analyse pagina incidenten** te gaan, waar u meer informatie over de gegevens kunt zien. Klik op **incidenten beheren in nieuwe incident hub** om de pagina [incident hub](diagnose-incident.md) te vinden waar u alle incidenten kunt vinden onder de specifieke metrische gegevens. 
 
 ## <a name="subscribe-anomalies-for-notification"></a>Afwijkings afmelden voor melding
 

@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 849b54e6d96b8f6f33f2a0925b9a1b9c3eebd56b
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92449962"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gigya"></a>Zelfstudie: Azure Active Directory-integratie met Gigya
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Gigya met Microsoft Azure Active Dir
 
 **Als u Gigya wilt toevoegen vanuit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,22 +61,22 @@ Voor het configureren van de integratie van Gigya met Microsoft Azure Active Dir
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Gigya** , selecteer **Gigya** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Gigya**, selecteer **Gigya** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Gigya in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u eenmalige aanmelding van Microsoft Azure Active Directory met Gigya configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u eenmalige aanmelding van Microsoft Azure Active Directory met Gigya configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Microsoft Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in Gigya tot stand is gebracht.
 
 Als u eenmalige aanmelding van Microsoft Azure Active Directory wilt configureren en testen met Gigya, moet u de volgende procedures uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding met Gigya configureren](#configure-gigya-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Eenmalige aanmelding met Gigya configureren](#configure-gigya-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Gigya maken](#create-gigya-test-user)** : als u een tegenhanger van Britta Simon in Gigya wilt hebben die is gekoppeld aan de Microsoft Azure Active Directory-weergave van de gebruiker.
+5. **[Testgebruiker voor Gigya maken](#create-gigya-test-user)**: als u een tegenhanger van Britta Simon in Gigya wilt hebben die is gekoppeld aan de Microsoft Azure Active Directory-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Active Directory met Gigya wilt configureren:
 
-1. Selecteer in de [Microsoft Azure-portal](https://portal.azure.com/), op de pagina voor de integratie van de toepassing **Gigya** , de optie **Eenmalige aanmelding** .
+1. Selecteer in de [Microsoft Azure-portal](https://portal.azure.com/), op de pagina voor de integratie van de toepassing **Gigya**, de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,11 +126,11 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
 
 1. Meld u in een ander browservenster aan als beheerder bij uw Gigya-bedrijfswebsite.
 
-2. Ga naar **Settings \> SAML Login** en klik op de knop **Add** .
+2. Ga naar **Settings \> SAML Login** en klik op de knop **Add**.
    
     ![SAML-aanmelding](./media/gigya-tutorial/ic789532.png "SAML-aanmelding")
 
-3. Voer de volgende stappen uit in de sectie **Login using SAML** :
+3. Voer de volgende stappen uit in de sectie **Login using SAML**:
    
     ![SAML-configuratie](./media/gigya-tutorial/ic789533.png "SAML-configuratie")
    
@@ -142,7 +142,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
    
     d. Plak in het tekstvak **Name ID Format** de waarde van de **indeling voor de naam-id** die u hebt gekopieerd vanuit de Microsoft Azure-portal.
    
-    e. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate** .
+    e. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate**.
    
     f. Klik op **Save Settings** (Instellingen opslaan).
 
@@ -150,7 +150,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding van Microsoft Azure Acti
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -169,13 +169,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Gigya.
 
-1. Selecteer **Bedrijfstoepassingen** in de Microsoft Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Gigya** .
+1. Selecteer **Bedrijfstoepassingen** in de Microsoft Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Gigya**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -183,11 +183,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De link Gigya in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -195,7 +195,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-gigya-test-user"></a>Gigya-testgebruiker maken
 
@@ -203,9 +203,9 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
 
 ### <a name="to-provision-a-user-accounts-perform-the-following-steps"></a>Ga als volgt te werk om een gebruikersaccount in te richten:
 
-1. Meld u bij uw **Gigya** -bedrijfssite aan als beheerder.
+1. Meld u bij uw **Gigya**-bedrijfssite aan als beheerder.
 
-2. Ga naar **Admin \> Manage Users** en klik op **Invite Users** .
+2. Ga naar **Admin \> Manage Users** en klik op **Invite Users**.
    
     ![Gebruikers beheren](./media/gigya-tutorial/ic789535.png "Gebruikers beheren")
 
@@ -215,7 +215,7 @@ Als u wilt dat Microsoft Azure Active Directory-gebruikers zich kunnen aanmelden
    
     a. Typ in het tekstvak **Email** de e-mailalias van een geldig Azure Active Directory-account dat u wilt inrichten.
     
-    b. Klik op **Gebruiker uitnodigen** .
+    b. Klik op **Gebruiker uitnodigen**.
       
     > [!NOTE]
     > De houder van het Azure Active Directory-account ontvangt een e-mail met een koppeling om het account te bevestigen voordat het actief wordt.

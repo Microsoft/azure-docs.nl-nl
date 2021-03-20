@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.date: 03/19/2021
-ms.openlocfilehash: 9b64dc95c6ee00a834c2741b30026df7350780c0
-ms.sourcegitcommit: 18a91f7fe1432ee09efafd5bd29a181e038cee05
+ms.openlocfilehash: e323b1c15d78da4e8c1a82ae8848df7f59b0dd87
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103564928"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657229"
 ---
 # <a name="migration-guide-access-to-azure-sql-database"></a>Migratie handleiding: toegang tot Azure SQL Database
 
@@ -42,17 +42,58 @@ Voer de volgende stappen uit om een evaluatie te maken:
 
 1. Open SQL Server Migration Assistant voor toegang. 
 1. Selecteer **bestand** en kies vervolgens **Nieuw project**. Geef een naam op voor uw migratie project. 
-1. Selecteer **data bases toevoegen** en kies data bases die aan het nieuwe project moeten worden toegevoegd
+
+   ![Nieuw project kiezen](./media/access-to-sql-database-guide/new-project.png)
+
+1. Selecteer **data bases toevoegen** en kies data bases die aan het nieuwe project moeten worden toegevoegd. 
+
+   ![Data bases toevoegen kiezen](./media/access-to-sql-database-guide/add-databases.png)
+
 1. Klik in **Access Meta Data Explorer** met de rechter muisknop op de data base en kies **rapport maken**. 
+
+   ![Klik met de rechter muisknop op de data base en kies rapport maken.](./media/access-to-sql-database-guide/create-report.png)
+
 1. Bekijk de voorbeeld evaluatie. Bijvoorbeeld: 
+
+   ![De evaluatie van het voorbeeld rapport bekijken](./media/access-to-sql-database-guide/sample-assessment.png)
+
+### <a name="validate-data-types"></a>Gegevens typen valideren
+
+Valideer de standaard gegevens type toewijzingen en wijzig deze indien nodig op basis van vereisten. Voer hiervoor de volgende stappen uit:
+
+1. Selecteer **extra** in het menu. 
+1. Selecteer de **project instellingen**. 
+1. Selecteer het tabblad **type toewijzingen** . 
+
+   ![Type toewijzingen](./media/access-to-sql-database-guide/type-mappings.png)
+
+1. U kunt de type toewijzing voor elke tabel wijzigen door de tabel te selecteren in de **Access-meta gegevens Verkenner**.
+
 
 ### <a name="convert-schema"></a>Schema converteren
 
 Voer de volgende stappen uit om database objecten te converteren: 
 
 1. Selecteer **verbinding maken met Azure SQL database** en geef de verbindings gegevens op.
-1. Klik met de rechter muisknop op de data base in **Access-meta gegevens Verkenner** en kies **schema converteren**.  
-1. Beschrijving Als u een afzonderlijk object wilt converteren, klikt u met de rechter muisknop op het object en kiest u **schema converteren**. Een geconverteerd object wordt vet weer gegeven in de **Access Meta Data Explorer**: 
+
+   ![Verbinding maken met Azure SQL Database](./media/access-to-sql-database-guide/connect-to-sqldb.png)
+
+1. Klik met de rechter muisknop op de data base in **Access-meta gegevens Verkenner** en kies **schema converteren**. U kunt ook **schema converteren** selecteren in de bovenste navigatie balk nadat u de Data Base hebt geselecteerd.
+
+   ![Klik met de rechter muisknop op de data base en kies schema converteren](./media/access-to-sql-database-guide/convert-schema.png)
+
+   Vergelijkt geconverteerde query's naar oorspronkelijke query's: 
+
+   ![Geconverteerde query's kunnen worden vergeleken met de bron code](./media/access-to-sql-database-guide/query-comparison.png)
+
+   Vergelijkt geconverteerde objecten met de oorspronkelijke objecten: 
+
+   ![Geconverteerde objecten kunnen worden vergeleken met de bron](./media/access-to-sql-database-guide/table-comparison.png)
+
+1. Beschrijving Als u een afzonderlijk object wilt converteren, klikt u met de rechter muisknop op het object en kiest u **schema converteren**. Geconverteerde objecten worden vet weer gegeven in de **Access Meta Data Explorer**: 
+
+   ![Vetgedrukte objecten in meta gegevens Verkenner zijn geconverteerd](./media/access-to-sql-database-guide/converted-items.png)
+ 
 1. Selecteer **resultaten controleren** in het deel venster uitvoer en Bekijk fouten in het deel venster **fouten lijst** . 
 
 
@@ -64,9 +105,28 @@ Voer de volgende stappen uit om gegevens te migreren met behulp van SSMA voor to
 
 1. Als u dat nog niet hebt gedaan, selecteert u **verbinding maken met Azure SQL database** en geeft u de verbindings gegevens op. 
 1. Klik met de rechter muisknop op de data base in de **meta gegevens Verkenner van Azure SQL database** en kies **synchroniseren met data base**. Met deze actie wordt het MySQL-schema gepubliceerd naar Azure SQL Database.
+
+   ![Synchroniseren met data base](./media/access-to-sql-database-guide/synchronize-with-database.png)
+
+   Controleer de toewijzing tussen uw bron project en uw doel:
+
+   ![De synchronisatie met de data base controleren](./media/access-to-sql-database-guide/synchronize-with-database-review.png)
+
 1. **Access Meta Data Explorer** gebruiken om selectie vakjes in te checken naast de items die u wilt migreren. Als u de gehele Data Base wilt migreren, schakelt u het selectie vakje naast de data base in. 
 1. Klik met de rechter muisknop op de data base of het object dat u wilt migreren en kies **gegevens migreren**. 
    Als u gegevens voor een hele Data Base wilt migreren, schakelt u het selectie vakje naast de naam van de data base in. Als u gegevens uit afzonderlijke tabellen wilt migreren, vouwt u de data base uit, vouwt u tabellen uit en schakelt u het selectie vakje naast de tabel in. Als u gegevens uit afzonderlijke tabellen wilt weglaten, schakelt u het selectie vakje uit.
+
+    ![Gegevens migreren](./media/access-to-sql-database-guide/migrate-data.png)
+
+    De gemigreerde gegevens controleren: 
+
+    ![Gegevens controle migreren](./media/access-to-sql-database-guide/migrate-data-review.png)
+
+1. Maak verbinding met uw Azure SQL Database met behulp van [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) en valideer de migratie door de gegevens en het schema te controleren.
+
+   ![Valideren in SSMA](./media/access-to-sql-database-guide/validate-data.png)
+
+
 
 ## <a name="post-migration"></a>Postmigratie 
 

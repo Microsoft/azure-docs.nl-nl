@@ -9,12 +9,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–377467–A/B– Quickstarts/Python App–12.11
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-python-1
-ms.openlocfilehash: 1f37ee36710211e95bcc5d99a095de4303c85281
-ms.sourcegitcommit: 24a12d4692c4a4c97f6e31a5fbda971695c4cd68
+ms.openlocfilehash: 36c1b112127fadd5149c62a92ca469322db65edd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102172389"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104592350"
 ---
 # <a name="quickstart-create-a-python-app-using-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken met behulp van Azure App Service in Linux
 
@@ -244,7 +244,7 @@ U kunt ook de logboekbestanden van de browser inspecteren op `https://<app-name>
 
 Als u het streamen van logboeken op een bepaald moment wilt stoppen, drukt u in de terminal op **Ctrl**+**C**.
 
-Ondervindt u problemen? [Laat het ons weten](https://aka.ms/FlaskCLIQuickstartHelp).
+Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van problemen](configure-language-python.md#troubleshooting). Als u er niet uitkomt, [laat het ons weten](https://aka.ms/FlaskCLIQuickstartHelp).
 
 ## <a name="manage-the-azure-app"></a>De Azure-app beheren
 

@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: lajanuar
 ms.topic: overview
-ms.openlocfilehash: 37d31d753812924607c4d31df6d4f4d5e7b32d69
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 89ab25f45cd35a86d2ff4416ceb851ae6cd5e115
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890710"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104657158"
 ---
 # <a name="what-is-custom-translator"></a>Wat is Custom Translator?
 
@@ -24,13 +24,20 @@ Vertaalsystemen die zijn gebouwd met [Custom Translator](https://portal.customtr
 
 Custom Translator biedt ondersteuning voor meer dan 36 talen en is rechtstreeks gekoppeld aan de beschikbare talen voor NMT. Zie de [talen van Microsoft Translator](../language-support.md#customization) voor een volledige lijst.
 
+Deze documentatie bevat de volgende artikel typen:
+
+* [**Quick**](quickstart-build-deploy-custom-model.md) starts zijn aan de slag-instructies die u helpen bij het maken van aanvragen voor de service.  
+* [**Hand leidingen**](how-to-create-project.md) bevatten instructies voor het gebruik van de functie op meer specifieke of aangepaste manieren.  
+* [**Concepten**](workspace-and-project.md) bieden gedetailleerde uitleg over de functionaliteit van de functie.  
+
+
 ## <a name="features"></a>Functies
 
-Custom Translator biedt verschillende mogelijkheden voor het bouwen van een aangepast vertaalsysteem en het verkrijgen van toegang tot het aangepaste vertaalsysteem.
+Aangepaste Translator biedt verschillende functies voor het maken van een aangepast Vertaal systeem en later toegang.
 
 |Functie  |Beschrijving  |
 |---------|---------|
-|[Maak gebruik van neurale technologie voor automatische vertalingen](https://www.microsoft.com/translator/blog/2016/11/15/microsoft-translator-launching-neural-network-based-translations-for-all-its-speech-languages/)     |  Verbeter de vertalingen door gebruik te maken van neurale machinevertalingen (NMT) van Custom Translator.       |
+|[Neural machine translation-technologie Toep assen](https://www.microsoft.com/translator/blog/2016/11/15/microsoft-translator-launching-neural-network-based-translations-for-all-its-speech-languages/)     |  Verbeter uw vertaling door Neural machine translation (NMT) toe te passen op basis van aangepaste Translator.       |
 |[Bouw systemen met uw eigen vaktermen](what-are-parallel-documents.md)     |  Bouw vertaalsystemen en pas vertaalsystemen aan met behulp van parallelle documenten in de terminologie van uw eigen bedrijf en bedrijfstak.       |
 |[Een woordenlijst gebruiken om uw modellen te bouwen](what-is-dictionary.md)     |   Als u geen set met trainingsgegevens hebt, kunt u een model trainen met alleen de gegevens van een woordenlijst.       |
 |[Werk samen met anderen](how-to-manage-settings.md#share-your-workspace)     |   Werk samen met uw team door uw werk te delen met andere personen.     |
@@ -52,7 +59,7 @@ Met [Custom Translator](https://portal.customtranslator.azure.ai) zijn er geen p
 
 Met behulp van de beveiligde [Custom Translator](https://portal.customtranslator.azure.ai)-portal, kunnen gebruikers trainingsgegevens uploaden, systemen trainen, testen en in een productie-omgeving implementeren via een intuïtieve gebruikersinterface. Het systeem kan vervolgens op grote schaal worden gebruikt binnen enkele uren (de werkelijke tijd is afhankelijk van de hoeveelheid trainingsgegevens).
 
-[Custom Translator](https://portal.customtranslator.azure.ai) is ook programmatisch toegankelijk via een [toewezen API](https://custom-api.cognitive.microsofttranslator.com/swagger/) (momenteel als Preview-versie). Met de API kunnen gebruikers regelmatig trainingsgegevens maken, bijwerken en beheren via hun eigen app of webservice.
+[Custom Translator](https://portal.customtranslator.azure.ai) is ook programmatisch toegankelijk via een [toewezen API](https://custom-api.cognitive.microsofttranslator.com/swagger/) (momenteel als Preview-versie). Met de API kunnen gebruikers het maken of bijwerken van training via hun eigen app of webservice beheren.
 
 De kosten voor het gebruik van een aangepast model voor het vertalen van inhoud zijn afhankelijk van de prijscategorie voor de Translator Text-API van de gebruiker. Zie de [webpagina met prijzen voor Translator Text-API](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/) voor Cognitive Services voor meer informatie over de prijscategorieën.
 

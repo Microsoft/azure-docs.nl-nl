@@ -9,10 +9,10 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 10/27/2020
 ms.openlocfilehash: e9a0b2fe883fa46010fda74c58908128d05919e6
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92754377"
 ---
 # <a name="how-to-create-a-consulting-service-offer-in-the-commercial-marketplace"></a>Een advies service-aanbieding maken in de commerciële Marketplace
@@ -26,8 +26,8 @@ Als u een advies service-aanbod wilt publiceren, moet u voldoen aan bepaalde ges
 ## <a name="create-a-new-consulting-service-offer"></a>Een nieuwe advies service-aanbieding maken
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-2.  Selecteer in het navigatie menu de optie **commerciële Marketplace** -  >  **overzicht** .
-3.  Klik op het tabblad Overzicht en selecteer **+ New offer**  >  **Consulting Service** .
+2.  Selecteer in het navigatie menu de optie **commerciële Marketplace**-  >  **overzicht**.
+3.  Klik op het tabblad Overzicht en selecteer **+ New offer**  >  **Consulting Service**.
 
     ![Illustreert het navigatie menu.](./media/new-offer-consulting-service.png)
 
@@ -57,9 +57,9 @@ Het beheer van leads configureren in Partner Center:
     * [Uw aanbieding configureren voor het verzenden van leads naar Marketo](./partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md#configure-your-offer-to-send-leads-to-marketo)
     * [Uw aanbieding configureren voor het verzenden van leads naar Sales Force](./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md#configure-your-offer-to-send-leads-to-salesforce)
 
-5.  Als u de configuratie die u hebt ingevoerd, wilt valideren, selecteert u de **koppeling valideren** .
-6.  Wanneer u de verbindings gegevens hebt geconfigureerd, selecteert u **verbinding maken** .
-7.  Selecteer **Concept opslaan** .
+5.  Als u de configuratie die u hebt ingevoerd, wilt valideren, selecteert u de **koppeling valideren**.
+6.  Wanneer u de verbindings gegevens hebt geconfigureerd, selecteert u **verbinding maken**.
+7.  Selecteer **Concept opslaan**.
 
 Nadat u uw aanbieding voor publicatie hebt verzonden in het partner centrum, zullen we de verbinding valideren en u een test lead sturen. Wanneer u een voor beeld van de aanbieding bekijkt voordat deze live gaat, test u uw lead verbinding door de aanbieding zelf te kopen in de preview-omgeving.
 

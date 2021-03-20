@@ -4,13 +4,13 @@ description: Hierin wordt beschreven hoe u een Azure-resource instelt als afhank
 ms.topic: conceptual
 ms.date: 12/21/2020
 ms.openlocfilehash: f6b63b066da06a17c3a2e51ab0f3ab9bf521a144
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97934744"
 ---
-# <a name="define-the-order-for-deploying-resources-in-arm-templates"></a>Definieer de volg orde voor het implementeren van resources in ARM-sjablonen
+# <a name="define-the-order-for-deploying-resources-in-arm-templates"></a>De volgorde voor het implementeren van resources in ARM-sjablonen definiëren
 
 Bij het implementeren van resources moet u er mogelijk voor zorgen dat er resources bestaan voor andere resources. U hebt bijvoorbeeld een logische SQL-Server nodig voordat u een Data Base implementeert. U kunt deze relatie tot stand brengen door één resource als afhankelijk van de andere bron te markeren. Gebruik het- `dependsOn` element om een expliciete afhankelijkheid te definiëren. Gebruik de functies **verwijzing** of **lijst** om een impliciete afhankelijkheid te definiëren.
 
@@ -214,7 +214,7 @@ Zie [problemen met algemene Azure-implementaties met Azure Resource Manager oplo
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [zelf studie: arm-sjablonen maken met afhankelijke resources](template-tutorial-create-templates-with-dependent-resources.md)om een zelf studie te door lopen.
-* Zie [complexe Cloud implementaties beheren met behulp van geavanceerde arm-sjabloon functies](/learn/modules/manage-deployments-advanced-arm-template-features/)voor een Microsoft Learn module die bron afhankelijkheden omvat.
+* Raadpleeg [Complexe cloudimplementaties beheren met behulp van geavanceerde functies voor ARM-sjablonen](/learn/modules/manage-deployments-advanced-arm-template-features/) voor een Microsoft Learn-module over resourceafhankelijkheden.
 * Zie [Aanbevolen procedures voor arm-sjablonen](template-best-practices.md)voor aanbevelingen bij het instellen van afhankelijkheden.
 * Zie [problemen met veelvoorkomende Azure-implementatie fouten oplossen met Azure Resource Manager](common-deployment-errors.md)voor meer informatie over het oplossen van problemen met afhankelijkheden tijdens de implementatie.
 * Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over het maken van Azure Resource Manager sjablonen.

@@ -6,10 +6,10 @@ ms.subservice: personalizer
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.openlocfilehash: 57a03b107678f83200b11f408784f6455cbceffd
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94579288"
 ---
 # <a name="configure-the-personalizer-learning-behavior"></a>Het leer gedrag van Personaler configureren
@@ -53,9 +53,9 @@ Bekijk in de Azure Portal op de pagina met **beoordelingen** voor uw persoonlijk
 > ![Scherm opname van het beoordelen van de evaluatie van het leer gedrag van de leerlingen-modus in Azure Portal](media/settings/evaluate-apprentice-mode.png)
 
 De leerling-modus biedt de volgende **metrische gegevens** over de evaluatie:
-* **Basis lijn** : gemiddelde beloning: gemiddelde beloningen van de standaard waarde van de toepassing (basis lijn).
-* **Persoonlijkere – gemiddelde beloning** : gemiddelde van het totale aantal beloningen personaler zou mogelijk zijn bereikt.
-* **Belonings prestaties ten opzichte van de meest recente 1000 gebeurtenissen** : verhouding van de prijs van de basis lijn en personalisatie, genormaliseerd via de meest recente 1000-gebeurtenissen.
+* **Basis lijn**: gemiddelde beloning: gemiddelde beloningen van de standaard waarde van de toepassing (basis lijn).
+* **Persoonlijkere – gemiddelde beloning**: gemiddelde van het totale aantal beloningen personaler zou mogelijk zijn bereikt.
+* **Belonings prestaties ten opzichte van de meest recente 1000 gebeurtenissen**: verhouding van de prijs van de basis lijn en personalisatie, genormaliseerd via de meest recente 1000-gebeurtenissen.
 
 ## <a name="switch-behavior-to-online-mode"></a>Gedrag van Switch naar online modus
 

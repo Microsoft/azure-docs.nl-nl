@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: how-to
-ms.date: 03/09/2021
+ms.date: 03/18/2021
 ms.author: victorh
-ms.openlocfilehash: fba95214a6bbb0482166eab8f77f30911986fbb7
-ms.sourcegitcommit: 956dec4650e551bdede45d96507c95ecd7a01ec9
+ms.openlocfilehash: 38d83186c06eac0fc3a49834172c2a4b8542caff
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102525482"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104590463"
 ---
 # <a name="deploy-and-configure-enterprise-ca-certificates-for-azure-firewall-preview"></a>CA-certificaten voor ondernemingen implementeren en configureren voor Azure Firewall preview
 
@@ -42,7 +42,7 @@ Als u een CA voor ondernemingen wilt gebruiken om een certificaat te genereren v
 1. Open de site voor Internet registratie op de basis-CA, meestal `https://<servername>/certsrv` en selecteer **een certificaat aanvragen**.
 1. Selecteer **Geavanceerde certificaat aanvraag**.
 1. Selecteer **maken en verzenden van een aanvraag naar deze certificerings instantie**.
-1. Vul het formulier in met behulp van de sjabloon voor de onderliggende certificerings instantie, zoals wordt weer gegeven:
+1. Vul het formulier in met behulp van de sjabloon voor de onderliggende certificerings instantie.
 1. Dien de aanvraag in en installeer het certificaat.
 1. Als deze aanvraag wordt gedaan vanaf een Windows-Server met Internet Explorer, opent u **Internet opties**.
 1. Navigeer naar het tabblad **inhoud** en selecteer **certificaten**.

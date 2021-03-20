@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 9/11/2020
 ms.openlocfilehash: dadd04497eae0e91bdf5ea3caad38beda35f7fa3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91275418"
 ---
 # <a name="manage-firewall-rules-for-azure-database-for-postgresql---hyperscale-citus"></a>Firewall regels voor Azure Database for PostgreSQL-grootschalige beheren (Citus)
@@ -30,18 +30,18 @@ Als u deze hand leiding wilt door lopen, hebt u het volgende nodig:
 
 1. Klik op de pagina PostgreSQL-Server groep, onder de kop beveiliging, op **netwerken** om de firewall regels te openen.
 
-   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/1-connection-security.png" alt-text="Azure Portal-tabblad netwerk":::
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/1-connection-security.png" alt-text="Azure Portal-klikken op netwerken":::
 
 2. Klik op **huidige client-IP-adres toevoegen** om een firewall regel te maken met het open bare IP-adres van uw computer, zoals wordt waargenomen door het Azure-systeem.
 
-   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/2-add-my-ip.png" alt-text="Azure Portal-tabblad netwerk":::
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/2-add-my-ip.png" alt-text="Azure Portal-Klik op IP van client toevoegen":::
 
 U kunt ook op **+ toevoegen 0.0.0.0-255.255.255.255** (rechts van optie B) niet alleen uw IP-adres gebruiken, maar het hele internet heeft toegang tot de poort 5432 van het coördinator knooppunt. In deze situatie moeten clients zich nog steeds aanmelden met de juiste gebruikers naam en wacht woord om het cluster te gebruiken. Desondanks raden we u aan om wereld wijde toegang alleen in te stellen voor korte Peri Oden en alleen voor niet-productie databases.
 
 3. Controleer uw IP-adres voordat u de configuratie opslaat. In sommige gevallen wijkt het IP-adres van Azure Portal af van het IP-adres dat wordt gebruikt voor toegang tot het internet en Azure-servers. Daarom moet u het eerste IP-adres en het laatste IP-adres wijzigen om de regel te laten werken zoals verwacht.
    Gebruik een zoek machine of een ander online hulp programma om uw eigen IP-adres te controleren. Zoek bijvoorbeeld naar ' wat is mijn IP '.
 
-   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/3-what-is-my-ip.png" alt-text="Azure Portal-tabblad netwerk":::
+   :::image type="content" source="./media/howto-hyperscale-manage-firewall-using-portal/3-what-is-my-ip.png" alt-text="Bing zoeken naar wat is mijn IP-adres":::
 
 4. Voeg extra adresbereiken toe. In de firewall regels kunt u één IP-adres of een bereik van adressen opgeven. Als u de regel wilt beperken tot één IP-adres, typt u hetzelfde adres in het veld voor eerste IP en laatste IP. Als u de firewall opent, kunnen beheerders, gebruikers en toepassingen toegang krijgen tot het coördinator knooppunt op poort 5432.
 

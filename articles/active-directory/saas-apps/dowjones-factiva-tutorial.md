@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.openlocfilehash: 3d36f74231b7253a46691b7418aa44ec37d816bd
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92454649"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Zelfstudie: Azure Active Directory-integratie met Dow Jones Factiva
@@ -49,7 +49,7 @@ Om de integratie van Dow Jones Factiva te configureren in Azure AD, moet u Dow J
 
 **Voer de volgende stappen uit om Dow Jones Factiva toe te voegen uit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Om de integratie van Dow Jones Factiva te configureren in Azure AD, moet u Dow J
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Dow Jones Factiva** , selecteer **Dow Jones Factiva** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Dow Jones Factiva**, selecteer **Dow Jones Factiva** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Dow Jones Factiva in de lijst met resultaten](common/search-new-app.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u Azure AD-eenmalige aanmelding met Dow Jones Factiva wilt configureren en testen, moet u de volgende onderdelen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Dow Jones Factiva-eenmalige aanmelding configureren](#configure-dow-jones-factiva-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
+2. **[Dow Jones Factiva-eenmalige aanmelding configureren](#configure-dow-jones-factiva-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Dow Jones Factiva maken](#create-dow-jones-factiva-test-user)** : als u een tegenhanger van Britta Simon in Dow Jones Factiva wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Dow Jones Factiva maken](#create-dow-jones-factiva-test-user)**: als u een tegenhanger van Britta Simon in Dow Jones Factiva wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -123,7 +123,7 @@ Als u eenmalige aanmelding aan de zijde van **Dow Jones Factiva** wilt configure
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

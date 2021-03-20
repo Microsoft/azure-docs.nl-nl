@@ -9,10 +9,10 @@ ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
 ms.openlocfilehash: 4591253e1a305632b7f41afe692f297d71366382
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98744599"
 ---
 # <a name="enable-monitoring-for-cloud-services-extended-support-using-the-azure-portal"></a>Schakel bewaking voor Cloud Services (uitgebreide ondersteuning) in met behulp van de Azure Portal
@@ -20,7 +20,7 @@ ms.locfileid: "98744599"
 In dit artikel wordt uitgelegd hoe u waarschuwingen kunt inschakelen voor bestaande implementaties van Cloud service (uitgebreide ondersteuning). 
 
 ## <a name="add-monitoring-rules"></a>Bewakings regels toevoegen
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 2. Selecteer de implementatie van de Cloud service (uitgebreide ondersteuning) waarvoor u waarschuwingen wilt inschakelen. 
 3. Selecteer de Blade **waarschuwingen** . 
 

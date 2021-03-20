@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 07/02/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: cca1001f0f84f4e4fc87df233f872fc1efdb3267
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92736735"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Azure Container Instances implementeren vanuit Azure Container Registry
@@ -18,9 +18,9 @@ ms.locfileid: "92736735"
 
 ## <a name="prerequisites"></a>Vereisten
 
-**Azure container Registry** : u hebt een Azure container Registry en ten minste één container installatie kopie in het REGI ster nodig om de stappen in dit artikel te volt ooien. Als u een REGI ster nodig hebt, raadpleegt u [een container register maken met de Azure cli](../container-registry/container-registry-get-started-azure-cli.md).
+**Azure container Registry**: u hebt een Azure container Registry en ten minste één container installatie kopie in het REGI ster nodig om de stappen in dit artikel te volt ooien. Als u een REGI ster nodig hebt, raadpleegt u [een container register maken met de Azure cli](../container-registry/container-registry-get-started-azure-cli.md).
 
-**Azure cli** : de opdracht regel voorbeelden in dit artikel maken gebruik van de [Azure cli](/cli/azure/) en zijn geformatteerd voor de bash-shell. U kunt [de Azure cli lokaal installeren](/cli/azure/install-azure-cli) of de [Azure Cloud shell][cloud-shell-bash]gebruiken.
+**Azure cli**: de opdracht regel voorbeelden in dit artikel maken gebruik van de [Azure cli](/cli/azure/) en zijn geformatteerd voor de bash-shell. U kunt [de Azure cli lokaal installeren](/cli/azure/install-azure-cli) of de [Azure Cloud shell][cloud-shell-bash]gebruiken.
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -70,7 +70,7 @@ az keyvault secret set \
                 --output tsv)
 ```
 
-Het argument `--role` in de voorgaande opdracht configureert de service-principal met de rol *acrpull* , die de principal alleen-push-toegang tot het register geeft. Als u zowel push-als pull-toegang wilt geven, wijzigt u het argument `--role` in *acrpush* .
+Het argument `--role` in de voorgaande opdracht configureert de service-principal met de rol *acrpull*, die de principal alleen-push-toegang tot het register geeft. Als u zowel push-als pull-toegang wilt geven, wijzigt u het argument `--role` in *acrpush*.
 
 Sla vervolgens de *AppID* van de Service-Principal op in de kluis. Dit is de **gebruikers naam** die u doorgeeft aan Azure container Registry voor authenticatie.
 
@@ -147,9 +147,9 @@ Als u container installatie kopieën in een Azure container Registry onderhoudt,
 
 1. Ga in de Azure-portal naar uw containerregister.
 
-1. Als u wilt controleren of het beheerders account is ingeschakeld, selecteert u **toegangs sleutels** en selecteert u onder **gebruiker met beheerders** rechten **inschakelen** .
+1. Als u wilt controleren of het beheerders account is ingeschakeld, selecteert u **toegangs sleutels** en selecteert u onder **gebruiker met beheerders** rechten **inschakelen**.
 
-1. Selecteer **opslag** plaatsen, selecteer de opslag plaats waaruit u wilt implementeren, klik met de rechter muisknop op de tag voor de container installatie kopie die u wilt implementeren en selecteer **instantie uitvoeren** .
+1. Selecteer **opslag** plaatsen, selecteer de opslag plaats waaruit u wilt implementeren, klik met de rechter muisknop op de tag voor de container installatie kopie die u wilt implementeren en selecteer **instantie uitvoeren**.
 
     ![' Instantie uitvoeren ' in Azure Container Registry in het Azure Portal][acr-runinstance-contextmenu]
 

@@ -9,10 +9,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: e27f9c0af62c4cbdd550fd9907a0dd88d72bba6e
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96549205"
 ---
 # <a name="array-functions-azure-cosmos-db"></a>Matrix functies (Azure Cosmos DB)
@@ -20,7 +20,7 @@ ms.locfileid: "96549205"
 
 Met de matrix functies kunt u bewerkingen uitvoeren op matrices in Azure Cosmos DB.
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 De volgende scalaire functies voeren een bewerking uit op een invoer waarde van een matrix en retour neren numerieke, Booleaanse of matrix waarde:
 

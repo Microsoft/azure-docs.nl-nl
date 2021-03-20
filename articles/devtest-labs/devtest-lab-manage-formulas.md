@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u een formule maakt vanuit een 
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: f012a8c59a8e938334c3e1abc4c7b3ccd0e48d3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91308891"
 ---
 # <a name="manage-azure-devtest-labs-formulas"></a>Azure DevTest Labs formules beheren
@@ -29,7 +29,7 @@ De volgende stappen leiden u door het proces van het maken van een formule op ba
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 
 3. Selecteer in de lijst met Labs het gewenste Lab.  
 
@@ -54,8 +54,8 @@ De volgende stappen leiden u door het proces van het maken van een formule op ba
 
         ![Pagina basis instellingen](./media/devtest-lab-create-formulas/basic-settings.png)
 8. Ga naar het tabblad **Geavanceerde instellingen** en geef de volgende waarden op:
-    - **Virtueel netwerk** : Selecteer **Vnet wijzigen**om het virtuele netwerk te wijzigen. 
-    - **Subnet** : Selecteer **subnet wijzigen**om het subnet te wijzigen. 
+    - **Virtueel netwerk** : Selecteer **Vnet wijzigen** om het virtuele netwerk te wijzigen. 
+    - **Subnet** : Selecteer **subnet wijzigen** om het subnet te wijzigen. 
     - **IP-adres configuratie** : Geef op of u de open bare, persoonlijke of gedeelde IP-adressen wilt. Zie [gedeelde IP-adressen begrijpen in azure DevTest Labs](./devtest-lab-shared-ip.md)voor meer informatie over gedeelde IP-adressen.
     - **Verval datum en-tijd** : u kunt dit veld niet bewerken. 
     - **Deze computer claimbaar maken** : het maken van een machine claimbaar betekent dat er geen eigendom wordt toegewezen op het moment van maken. In plaats daarvan kunnen gebruikers met een lab het eigendom (' claim ') op de computer in de test pagina zetten.  
@@ -77,7 +77,7 @@ De volgende stappen leiden u door het proces van het maken van een formule op ba
 > 
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het gewenste Lab.  
 4. Op de **overzichts** pagina van het lab selecteert u de virtuele machine waarvan u de formule wilt maken.
    
@@ -94,7 +94,7 @@ De volgende stappen leiden u door het proces van het maken van een formule op ba
 Voer de volgende stappen uit om een formule te wijzigen:
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het gewenste Lab.  
 4. Selecteer op de pagina Lab de optie **formules (herbruikbare bases)**.
    
@@ -106,7 +106,7 @@ Voer de volgende stappen uit om een formule te wijzigen:
 Voer de volgende stappen uit om een formule te verwijderen:
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-2. Selecteer **alle services**en selecteer vervolgens **DevTest Labs** in de lijst.
+2. Selecteer **alle services** en selecteer vervolgens **DevTest Labs** in de lijst.
 3. Selecteer in de lijst met Labs het gewenste Lab.  
 4. Selecteer op de pagina Lab- **instellingen** de optie **formules**.
    
@@ -114,7 +114,7 @@ Voer de volgende stappen uit om een formule te verwijderen:
 5. Selecteer op de pagina **Lab-formules** het weglatings teken rechts van de formule die u wilt verwijderen.
    
     ![Scherm opname van de pagina Lab-formules met het weglatings teken voor de Formule opties gemarkeerd.](./media/devtest-lab-manage-formulas/lab-formulas-blade.png)
-6. Selecteer **verwijderen**in het context menu van de formule.
+6. Selecteer **verwijderen** in het context menu van de formule.
    
     ![Context menu van formule](./media/devtest-lab-manage-formulas/formula-delete-context-menu.png)
 7. Selecteer **Ja** in het bevestigings dialoogvenster voor verwijdering.

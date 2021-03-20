@@ -4,10 +4,10 @@ description: In dit artikel leert u de configuratie voor het maken van back-ups 
 ms.topic: conceptual
 ms.date: 03/24/2017
 ms.openlocfilehash: 29813741e88ad5f2bc5109be87939abf7cc11502
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91316916"
 ---
 # <a name="back-up-sql-server-to-azure-by-using-azure-backup-server"></a>Back-ups van SQL Server naar Azure maken met behulp van Azure Backup Server
@@ -87,12 +87,12 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
     MABS maakt standaard één volume per gegevens bron (SQL Server-Data Base). Het volume wordt gebruikt voor de eerste back-upkopie. In deze configuratie beperkt LDM (Logical Disk Manager) MABS-beveiliging tot 300-gegevens bronnen (SQL Server-data bases). Als u deze beperking wilt omzeilen, selecteert u **gegevens in de DPM-opslag groep samen zoeken**. Als u deze optie gebruikt, gebruikt MABS één volume voor meerdere gegevens bronnen. Met deze installatie kan MABS tot 2.000 SQL Server-data bases worden beveiligd.
 
-    Als u **de volumes automatisch verg Roten**selecteert, kan MABS het verhoogde back-upvolume accounts maken als de productie gegevens groeien. Als u **de volumes automatisch verg Roten**selecteert, beperkt MABS de back-upopslag tot de gegevens bronnen in de beveiligings groep.
+    Als u **de volumes automatisch verg Roten** selecteert, kan MABS het verhoogde back-upvolume accounts maken als de productie gegevens groeien. Als u **de volumes automatisch verg Roten** selecteert, beperkt MABS de back-upopslag tot de gegevens bronnen in de beveiligings groep.
 1. Als u een beheerder bent, kunt u ervoor kiezen om de eerste back-up **automatisch over het netwerk** over te dragen en de overdrachts tijd te kiezen. Of kies ervoor om de back-up **hand matig** te verplaatsen. Selecteer vervolgens **Volgende**.
 
     ![Een methode voor het maken van replica's in MABS kiezen](./media/backup-azure-backup-sql/pg-manual.png)
 
-    De eerste back-up vereist de overdracht van de volledige gegevens bron (SQL Server-Data Base). De back-upgegevens worden verplaatst van de productie server (SQL Server computer) naar MABS. Als deze back-up groot is, kan het overdragen van de gegevens via het netwerk leiden tot bandbreedte congestie. Daarom kunnen beheerders ervoor kiezen om Verwissel bare media te gebruiken om de eerste back-up **hand matig**over te dragen. Het is ook mogelijk dat de gegevens **automatisch via het netwerk** worden overgedragen op een opgegeven tijdstip.
+    De eerste back-up vereist de overdracht van de volledige gegevens bron (SQL Server-Data Base). De back-upgegevens worden verplaatst van de productie server (SQL Server computer) naar MABS. Als deze back-up groot is, kan het overdragen van de gegevens via het netwerk leiden tot bandbreedte congestie. Daarom kunnen beheerders ervoor kiezen om Verwissel bare media te gebruiken om de eerste back-up **hand matig** over te dragen. Het is ook mogelijk dat de gegevens **automatisch via het netwerk** worden overgedragen op een opgegeven tijdstip.
 
     Nadat de eerste back-up is voltooid, worden de back-ups incrementeel door lopen op de eerste back-upkopie. Incrementele back-ups zijn vaak klein en kunnen eenvoudig via het netwerk worden overgedragen.
 1. Kies wanneer u een consistentie controle wilt uitvoeren. Selecteer vervolgens **Volgende**.
@@ -119,7 +119,7 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
     ![Kies een Bewaar beleid in MABS](./media/backup-azure-backup-sql/pg-retentionschedule.png)
 
-    In dit voorbeeld geldt het volgende:
+    In dit voorbeeld:
 
     * Back-ups worden dagelijks uitgevoerd om 12:00 uur en 8:00 PM. Ze worden gedurende 180 dagen bewaard.
     * De back-up op zaterdag om 12:00 uur wordt gedurende 104 weken bewaard.
@@ -141,13 +141,13 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
 Er wordt een herstel punt gemaakt wanneer de eerste back-up wordt uitgevoerd. In plaats van te wachten tot het schema wordt uitgevoerd, kunt u hand matig het maken van een herstel punt activeren:
 
-1. Controleer in de beveiligings groep of de database status **OK**is.
+1. Controleer in de beveiligings groep of de database status **OK** is.
 
     ![Een beveiligings groep, met de database status](./media/backup-azure-backup-sql/sqlbackup-recoverypoint.png)
 1. Klik met de rechter muisknop op de data base en selecteer **herstel punt maken**.
 
     ![Kiezen voor het maken van een online herstel punt](./media/backup-azure-backup-sql/sqlbackup-createrp.png)
-1. Selecteer **online beveiliging**in de vervolg keuzelijst. Selecteer vervolgens **OK** om het maken van een herstel punt in azure te starten.
+1. Selecteer **online beveiliging** in de vervolg keuzelijst. Selecteer vervolgens **OK** om het maken van een herstel punt in azure te starten.
 
     ![Beginnen met het maken van een herstel punt in azure](./media/backup-azure-backup-sql/sqlbackup-azure.png)
 1. U kunt de voortgang van de taak weer geven in de werk ruimte **bewaking** .

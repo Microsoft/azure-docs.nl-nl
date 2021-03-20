@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 10/02/2019
 ms.openlocfilehash: 0b5e255d7d108eb063ece4e5489a8762261a0bed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88207257"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Azure Functions gebruiken om verbinding te maken met een Azure SQL Database
@@ -44,7 +44,7 @@ Een functie-app fungeert als host voor de uitvoering van uw functies in Azure. A
 
 U moet uw app eerder hebben gepubliceerd naar Azure. Als u dit nog niet hebt gedaan, [kunt u de functie-app publiceren in azure](functions-develop-vs.md#publish-to-azure).
 
-1. Klik in Solution Explorer met de rechter muisknop op het functie-app **Publish**-project en kies  >  **bewerkings Azure app service instellingen**publiceren. Selecteer **instelling toevoegen**in **naam van nieuwe app-instelling**, type `sqldb_connection` en selecteer **OK**.
+1. Klik in Solution Explorer met de rechter muisknop op het functie-app -project en kies  >  **bewerkings Azure app service instellingen** publiceren. Selecteer **instelling toevoegen** in **naam van nieuwe app-instelling**, type `sqldb_connection` en selecteer **OK**.
 
     ![Toepassings instellingen voor de functie-app.](./media/functions-scenario-database-table-cleanup/functions-app-service-add-setting.png)
 
@@ -74,9 +74,9 @@ U kunt nu de C#-functie code toevoegen die verbinding maakt met uw SQL Database.
 
 ## <a name="add-a-timer-triggered-function"></a>Een door een timer geactiveerde functie toevoegen
 
-1. Klik in Solution Explorer met de rechter muisknop op het project functie- **Add**app en kies  >  **nieuwe Azure-functie**toevoegen.
+1. Klik in Solution Explorer met de rechter muisknop op het project functie- app en kies  >  **nieuwe Azure-functie** toevoegen.
 
-1. Als u de **Azure functions** sjabloon hebt geselecteerd, kunt u een naam opgeven voor het nieuwe item `DatabaseCleanup.cs` en vervolgens **toevoegen**selecteren.
+1. Als u de **Azure functions** sjabloon hebt geselecteerd, kunt u een naam opgeven voor het nieuwe item `DatabaseCleanup.cs` en vervolgens **toevoegen** selecteren.
 
 1. Kies in het dialoog venster **nieuwe Azure** -functie **Timer trigger** en klik vervolgens op **OK**. In dit dialoog venster wordt een code bestand gemaakt voor de functie Timer geactiveerd.
 

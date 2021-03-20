@@ -8,10 +8,10 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.date: 07/16/2020
 ms.openlocfilehash: ef89ecef34a7c5afb94547181f449b0fc393e67c
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100377564"
 ---
 # <a name="update-azure-machine-learning-studio-classic-models-by-using-update-resource-activity"></a>Azure Machine Learning Studio-modellen (klassiek) bijwerken met resource activiteit bijwerken
@@ -57,13 +57,13 @@ In het volgende JSON-code fragment wordt een Azure Machine Learning Studio (klas
 
 | Eigenschap                      | Beschrijving                              | Vereist |
 | :---------------------------- | :--------------------------------------- | :------- |
-| naam                          | Naam van de activiteit in de pijp lijn     | Yes      |
-| beschrijving                   | Tekst die beschrijft wat de activiteit doet.  | No       |
-| type                          | Voor Azure Machine Learning Studio (klassieke) resource activiteit bijwerken is het activiteitstype  **AzureMLUpdateResource**. | Yes      |
-| linkedServiceName             | Azure Machine Learning Studio (klassieke) gekoppelde service die de eigenschap updateResourceEndpoint bevat. | Yes      |
-| trainedModelName              | De naam van de getrainde model module in het web service-experiment dat moet worden bijgewerkt | Yes      |
-| trainedModelLinkedServiceName | De naam van Azure Storage gekoppelde service die het ilearner-bestand bewaart dat door de update bewerking is geüpload | Yes      |
-| trainedModelFilePath          | Het relatieve bestandspad in trainedModelLinkedService dat het ilearner-bestand vertegenwoordigt dat door de update bewerking is geüpload | Yes      |
+| naam                          | Naam van de activiteit in de pijp lijn     | Ja      |
+| beschrijving                   | Tekst die beschrijft wat de activiteit doet.  | Nee       |
+| type                          | Voor Azure Machine Learning Studio (klassieke) resource activiteit bijwerken is het activiteitstype  **AzureMLUpdateResource**. | Ja      |
+| linkedServiceName             | Azure Machine Learning Studio (klassieke) gekoppelde service die de eigenschap updateResourceEndpoint bevat. | Ja      |
+| trainedModelName              | De naam van de getrainde model module in het web service-experiment dat moet worden bijgewerkt | Ja      |
+| trainedModelLinkedServiceName | De naam van Azure Storage gekoppelde service die het ilearner-bestand bewaart dat door de update bewerking is geüpload | Ja      |
+| trainedModelFilePath          | Het relatieve bestandspad in trainedModelLinkedService dat het ilearner-bestand vertegenwoordigt dat door de update bewerking is geüpload | Ja      |
 
 ## <a name="end-to-end-workflow"></a>End-to-end werkstroom
 

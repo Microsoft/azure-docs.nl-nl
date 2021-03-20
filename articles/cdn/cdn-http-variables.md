@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/09/2018
 ms.author: allensu
 ms.openlocfilehash: a2d9fc98ba6f514afbd88e543a859a69e0fc6c6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88192674"
 ---
 # <a name="http-variables-for-azure-cdn-rules-engine"></a>HTTP-variabelen voor Azure CDN-regel engine
@@ -34,7 +34,7 @@ HTTP-variabelen bieden de manier waarop u HTTP-aanvraag-en respons meta gegevens
 In de volgende tabel worden de ondersteunde HTTP-variabelen beschreven. Er wordt een lege waarde geretourneerd als GEO-meta gegevens (bijvoorbeeld post code) niet beschikbaar zijn voor een bepaalde aanvraag.
 
 
-| Naam | Variabele | Beschrijving | Voorbeeldwaarde |
+| Name | Variabele | Beschrijving | Voorbeeldwaarde |
 | ---- | -------- | ----------- | ------------ |
 | ASN (aanvrager) | % {geo_asnum} | Hiermee wordt het AS-nummer van de aanvrager aangegeven. <br /><br />**Afgeschaft:** % {virt_dst_asnum}. <br />Deze variabele is vervangen door% {geo_asnum}. Hoewel een regel die gebruikmaakt van deze afgeschafte variabele, blijft werken, moet u deze bijwerken om de nieuwe variabele te gebruiken. | AS15133 |
 | Plaats (aanvrager) | % {geo_city} | Hiermee wordt de plaats van de aanvrager aangegeven. | Los Angeles |
@@ -55,7 +55,7 @@ In de volgende tabel worden de ondersteunde HTTP-variabelen beschreven. Er wordt
 | Parameter waarde van de query reeks | % {arg_ &lt; para meter &gt; } | Retourneert de waarde die overeenkomt met de query teken reeks parameter geïdentificeerd door de &lt; parameter &gt; term. | Voorbeeld gebruik: <br />% {arg_language}<br /><br />Voorbeeld query teken reeks parameter: <br />? language = en<br /><br />Voorbeeld waarde: en |
 | Query teken reeks waarde | % {query_string} | Hiermee wordt de volledige query teken reeks waarde aangegeven die in de aanvraag-URL is gedefinieerd. |Key1 = val1&Key2 = val2&Key3 = val3 |
 | Verwijzend domein | % {referring_domain} | Hiermee wordt het domein aangegeven dat is gedefinieerd in de header van de verwijzings aanvraag. | <www.google.com> |
-| Regio (aanvrager) | % {geo_region} | Geeft de regio van de aanvrager (bijvoorbeeld staat of provincie) aan met de alfanumerieke afkorting. | CA |
+| Regio (aanvrager) | % {geo_region} | Geeft de regio van de aanvrager (bijvoorbeeld staat of provincie) aan met de alfanumerieke afkorting. | CA (consistentie en beschikbaarheid) |
 | Waarde van aanvraag header | % {http_RequestHeader} | Retourneert de waarde die overeenkomt met de aanvraag header die wordt geïdentificeerd door de RequestHeader-term. <br /><br />Als de naam van de aanvraag header een streepje bevat (bijvoorbeeld user-agent), vervangt u dit door een onderstrepings teken (bijvoorbeeld User_Agent).| Voorbeeld gebruik:% {http_Connection}<br /><br />Voorbeeld waarde: Keep-Alive | 
 | Host van aanvraag | % {host} | Hiermee wordt de host aangegeven die is gedefinieerd in de aanvraag-URL. | <www.mydomain.com> |
 | Aanvraag Protocol | % {request_protocol} | Geeft het aanvraag protocol aan. | HTTP/1.1 |
@@ -110,7 +110,7 @@ De scheidings tekens worden in de volgende tabel beschreven.
 ## <a name="exceptions"></a>Uitzonderingen
 In de volgende tabel worden de omstandigheden beschreven waaronder de opgegeven tekst niet wordt behandeld als een HTTP-variabele.
 
-| Conditie | Beschrijving | Voorbeeld |
+| Voorwaarde | Beschrijving | Voorbeeld |
 | --------- | ----------- | --------|
 | Escape-teken% | Het percentage symbool kan worden voorafgegaan door het gebruik van een back slash. <br />De voorbeeld waarde aan de rechter kant wordt beschouwd als een letterlijke waarde en niet als een HTTP-variabele.| \%hostsite |
 | Onbekende variabelen | Een lege teken reeks wordt altijd geretourneerd voor onbekende variabelen. | % {unknown_variable} |
@@ -125,7 +125,7 @@ Een standaard waarde kan worden toegewezen aan een header wanneer deze aan een v
 
 In de volgende tabel wordt beschreven hoe u een standaard waarde definieert.
 
-| Conditie | Syntax | Voorbeeld | Beschrijving |
+| Voorwaarde | Syntax | Voorbeeld | Beschrijving |
 | --------- | ------ | --------| ----------- |
 | Stel een koptekst in op een standaard waarde wanneer deze aan een van de volgende voor waarden voldoet: <br /><br />-Ontbrekende header <br /><br />-Header-waarde is ingesteld op NULL.| % {Variable: = waarde} | % {http_referrer: = niet opgegeven} | De verwijzende header wordt alleen ingesteld op niet *opgegeven* als deze ontbreekt of als deze is ingesteld op null. Als deze is ingesteld, wordt er geen actie uitgevoerd. |
 | Stel een koptekst in op een standaard waarde wanneer deze ontbreekt. | % {Variable = waarde} | % {http_referrer = niet opgegeven} | De verwijzende header wordt alleen ingesteld op niet *opgegeven* wanneer deze ontbreekt. Als deze is ingesteld, wordt er geen actie uitgevoerd. |
@@ -229,13 +229,13 @@ Belang rijke informatie:
 - Het geval van een tijdelijke aanduiding voor een patroon (bijvoorbeeld $1) kan worden gewijzigd met behulp van de volgende vlaggen:
      - U: hoofd letters de uitgevouwen waarde.
 
-         Voorbeeld syntaxis:
+         Voorbeeld van syntaxis:
 
          `%{host/=^www\.([^\.]+)\.([^\.:]+)/cdn.$U2.$3:80}`
 
      - L: kleine de uitgevouwen waarde.
 
-         Voorbeeld syntaxis:
+         Voorbeeld van syntaxis:
 
          `%{host/=^www\.([^\.]+)\.([^\.:]+)/cdn.$L2.$3:80}`
 

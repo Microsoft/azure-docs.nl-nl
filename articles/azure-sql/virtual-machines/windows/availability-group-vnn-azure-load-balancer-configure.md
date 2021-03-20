@@ -1,5 +1,5 @@
 ---
-title: Load balancer configureren voor AG VNN-listener
+title: load balancer configureren voor AG VNN-listener
 description: Meer informatie over het configureren van een Azure Load Balancer voor het routeren van verkeer naar de VNN-listener (virtuele netwerk naam) voor uw beschikbaarheids groep met SQL Server op Azure-Vm's voor hoge Beschik baarheid en herstel na nood gevallen (HADR).
 services: virtual-machines-windows
 documentationcenter: na
@@ -16,13 +16,13 @@ ms.date: 06/02/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 2d89759438cb625a0e220af10ab6b287096f6390
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97359877"
 ---
-# <a name="configure-load-balancer-for-ag-vnn-listener"></a>Load balancer configureren voor AG VNN-listener
+# <a name="configure-load-balancer-for-ag-vnn-listener"></a>load balancer configureren voor AG VNN-listener
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
 
 In azure Virtual Machines gebruiken clusters een load balancer om een IP-adres op te slaan dat op één cluster knooppunt tegelijk moet zijn. In deze oplossing bevat de load balancer het IP-adres voor de naam van het virtuele netwerk (VNN) voor de always on-beschikbaarheids groep (AG). 
@@ -139,8 +139,8 @@ In de volgende tabel worden de waarden beschreven die u moet bijwerken:
 
 |**Waarde**|**Beschrijving**|
 |---------|---------|
-|`Cluster Network Name`| De naam van het Windows Server-failovercluster voor het netwerk. Klik in **Failoverclusterbeheer**  >  **netwerken** met de rechter muisknop op het netwerk en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
-|`AG listener IP Address Resource Name`|De resource naam voor het IP-adres van de SQL Server-FCI of AG-listener. Klik in **Failoverclusterbeheer**  >  **rollen** onder de rol SQL Server FCI onder **Server naam** met de rechter muisknop op de IP-adres bron en selecteer **Eigenschappen**. U vindt de juiste waarde onder **naam** op het tabblad **Algemeen** .|
+|`Cluster Network Name`| De naam van het Windows Server-failovercluster voor het netwerk. Klik in **Failoverclusterbeheer**  >  **netwerken** met de rechter muisknop op het netwerk en selecteer **Eigenschappen**. De juiste waarde ziet u op het tabblad **Algemeen**, bij **Naam**.|
+|`AG listener IP Address Resource Name`|De resource naam voor het IP-adres van de SQL Server-FCI of AG-listener. Klik in **Failoverclusterbeheer**  >  **rollen** onder de rol SQL Server FCI onder **Server naam** met de rechter muisknop op de IP-adres bron en selecteer **Eigenschappen**. De juiste waarde ziet u op het tabblad **Algemeen**, bij **Naam**.|
 |`ILBIP`|Het IP-adres van de interne load balancer (ILB). Dit adres wordt geconfigureerd in de Azure Portal als het front-end-adres van de ILB. Dit is ook het IP-adres van de SQL Server FCI. U kunt deze in **Failoverclusterbeheer** vinden op dezelfde eigenschappen pagina waar u de hebt opgeslagen `<AG listener IP Address Resource Name>` .|
 |`nnnnn`|De test poort die u hebt geconfigureerd in de status test van de load balancer. Elke ongebruikte TCP-poort is geldig.|
 |SubnetMask| Het subnetmasker voor de cluster parameter. Dit moet het TCP IP-broadcast adres zijn: `255.255.255.255` .| 

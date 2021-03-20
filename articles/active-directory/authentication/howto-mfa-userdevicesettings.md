@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: michmcla, dawoo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fc0be7e50c5cce511fafd7d8b407626bd57659bd
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98183129"
 ---
 # <a name="manage-user-authentication-methods-for-azure-ad-multi-factor-authentication"></a>Gebruikers authenticatie methoden voor Azure AD Multi-Factor Authentication beheren
@@ -44,7 +44,7 @@ U kunt verificatie methoden voor een gebruiker toevoegen via de Azure Portal of 
 
 Verificatie methoden voor een gebruiker toevoegen via de Azure Portal:  
 
-1. Meld u aan bij **Azure Portal**. 
+1. Meld u aan bij de **Azure Portal**. 
 1. Blader naar **Azure Active Directory**  >  **gebruikers**  >  **alle gebruikers**. 
 1. Kies de gebruiker voor wie u een verificatie methode wilt toevoegen en selecteer **verificatie methoden**.  
 1. Selecteer boven aan het venster de optie **+ verificatie methode toevoegen**.
@@ -88,7 +88,7 @@ Verificatie methoden kunnen ook worden beheerd met behulp van Microsoft Graph-Ap
 
 Als u de rol *authenticatie beheerder* hebt toegewezen, kunt u vereisen dat gebruikers hun wacht woord opnieuw instellen, zich opnieuw registreren voor MFA of de bestaande MFA-sessies van hun gebruikers object intrekken. Voer de volgende stappen uit om gebruikers instellingen te beheren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 1. Kies de gebruiker waarvoor u een actie wilt uitvoeren en selecteer **verificatie methoden**. Selecteer boven aan het venster een van de volgende opties voor de gebruiker:
    - **Wacht woord opnieuw instellen** stelt het wacht woord van de gebruiker opnieuw in en wijst een tijdelijk wacht woord toe dat moet worden gewijzigd bij de volgende aanmelding.
@@ -107,7 +107,7 @@ Beheerders kunnen voor gebruikers die app-wacht woorden hebben gedefinieerd, erv
 
 Voer de volgende stappen uit om de app-wacht woorden van een gebruiker te verwijderen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **gebruikers**  >  **alle gebruikers**.
 1. Selecteer **Multi-Factor Authentication**. Mogelijk moet u naar rechts schuiven om deze menu optie weer te geven. Selecteer de onderstaande scherm afbeelding om het volledige Azure Portal venster en de menu locatie te bekijken: [ ![ Selecteer multi-factor Authentication in het venster gebruikers in azure AD.](media/howto-mfa-userstates/selectmfa-cropped.png)](media/howto-mfa-userstates/selectmfa.png#lightbox)
 1. Schakel het selectie vakje in naast de gebruiker of gebruikers die u wilt beheren. Er wordt aan de rechter kant een lijst met opties voor snelle stappen weer gegeven.

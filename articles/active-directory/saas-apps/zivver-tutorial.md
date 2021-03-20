@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/22/2019
 ms.author: jeedes
 ms.openlocfilehash: d500270d579558a88cc4e5127ee7946b58bddda1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92894711"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Zelfstudie: Azure Active Directory-integratie met ZIVVER
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van ZIVVER in Azure AD moet u ZIVVER uit
 
 **Voer de volgende stappen uit om ZIVVER toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -67,7 +67,7 @@ Voor het configureren van de integratie van ZIVVER in Azure AD moet u ZIVVER uit
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met ZIVVER op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u eenmalige aanmelding van Azure AD met ZIVVER op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in ZIVVER tot stand is gebracht.
 
 Als u eenmalige aanmelding van Azure AD wilt configureren en testen met ZIVVER, voert u de volgende stappen uit:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van eenmalige aanmelding van Azure AD met ZIVVER moet u de volgende stappen uitvoeren:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de toepassingsintegratiepagina van **ZIVVER** .
+1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de toepassingsintegratiepagina van **ZIVVER**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -103,7 +103,7 @@ Voor het configureren van eenmalige aanmelding van Azure AD met ZIVVER moet u de
 
     In het tekstvak **Id** typt u een URL: `https://app.zivver.com/SAML/Zivver`
 
-5. De ZIVVER-toepassing verwacht dat de SAML-asserties een specifieke indeling hebben. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname** . In de ZIVVER-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail** . Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
+5. De ZIVVER-toepassing verwacht dat de SAML-asserties een specifieke indeling hebben. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de ZIVVER-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail**. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
 
     ![Schermopname die Gebruikerskenmerken toont met het pictogram Bewerken geselecteerd.](common/edit-attribute.png)
 
@@ -126,11 +126,11 @@ Voor het configureren van eenmalige aanmelding van Azure AD met ZIVVER moet u de
 
     c. Laat **Naamruimte** leeg.
 
-    d. Selecteer Bron bij **Kenmerk** .
+    d. Selecteer Bron bij **Kenmerk**.
 
-    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken** .
+    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken**.
 
-    f. Klik op **Opslaan** .
+    f. Klik op **Opslaan**.
 
 7. Op de pagina **Eenmalige aanmelding van SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens** te downloaden. Klik vervolgens op het pictogram **Kopiëren** om de **App-URL voor federatieve metagegevens** te kopiëren uit de opgegeven opties overeenkomstig uw behoeften, en sla dit op uw computer op.
 
@@ -150,9 +150,9 @@ Voor het configureren van eenmalige aanmelding van Azure AD met ZIVVER moet u de
 
 1. Meld u in een ander browservenster als beheerder aan bij uw [ZIVVER-bedrijfssite](https://app.zivver.com/login).
 
-2. Klik linksonder in het browservenster op het pictogram **Organisatie-instellingen** .
+2. Klik linksonder in het browservenster op het pictogram **Organisatie-instellingen**.
 
-3. Ga naar **Eenmalige aanmelding** .
+3. Ga naar **Eenmalige aanmelding**.
 
 4. Open het XML-bestand met federatieve metagegevens dat u eerder uit Azure Portal hebt gedownload.
 
@@ -160,13 +160,13 @@ Voor het configureren van eenmalige aanmelding van Azure AD met ZIVVER moet u de
 
 6. Schakel het selectievakje **Eenmalige aanmelding inschakelen** in.
 
-7. Klik op **OPSLAAN** .
+7. Klik op **OPSLAAN**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -184,13 +184,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding van Azure door haar toegang te geven tot ZIVVER.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **ZIVVER** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **ZIVVER**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -198,11 +198,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De koppeling naar ZIVVER in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -210,7 +210,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-zivver-test-user"></a>Een ZIVVER-testgebruiker maken
 

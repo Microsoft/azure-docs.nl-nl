@@ -12,10 +12,10 @@ ms.author: srinia
 ms.reviewer: sstein
 ms.date: 12/18/2018
 ms.openlocfilehash: f9a026ed47d662b80ef01e505bfbcf8f32d20b04
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92792171"
 ---
 # <a name="create-configure-and-manage-elastic-jobs-preview"></a>Elastische taken maken, configureren en beheren (preview-versie)
@@ -50,11 +50,11 @@ Taken gebruiken [databasereferenties](/sql/t-sql/statements/create-database-scop
 
 Het instellen van de juiste referenties voor het uitvoeren van een taak kan enigszins verwarrend zijn. Houd daarom de volgende punten in gedachten:
 
-- De referenties van het data base-bereik moeten worden gemaakt in de *taak database* .
+- De referenties van het data base-bereik moeten worden gemaakt in de *taak database*.
 - **Alle doel databases moeten een aanmelding hebben met [voldoende machtigingen](/sql/relational-databases/security/permissions-database-engine) voor het volt ooien van de taak** ( `jobuser` in het onderstaande diagram).
 - Referenties kunnen opnieuw worden gebruikt voor verschillende taken en de referentie wachtwoorden worden versleuteld en beveiligd door gebruikers met alleen-lezen toegang tot taak objecten.
 
-De volgende afbeelding is gemaakt als hulp bij het begrijpen en instellen van de juiste taakreferenties. **Denk eraan dat de gebruiker moet worden gemaakt in elke database (alle *doelgebruikersdatabases* ) waarin de taak moet worden uitgevoerd** .
+De volgende afbeelding is gemaakt als hulp bij het begrijpen en instellen van de juiste taakreferenties. **Denk eraan dat de gebruiker moet worden gemaakt in elke database (alle *doelgebruikersdatabases*) waarin de taak moet worden uitgevoerd**.
 
 ![Referenties voor Elastic Jobs](./media/elastic-jobs-overview/job-credentials.png)
 

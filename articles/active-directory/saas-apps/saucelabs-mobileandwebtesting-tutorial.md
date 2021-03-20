@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
 ms.openlocfilehash: 087e2d7f2db8f27378b54675095e97256d6aae9b
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895099"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sauce-labs---mobile-and-web-testing"></a>Zelfstudie: Azure Active Directory-integratie met Sauce Labs - Mobile and Web Testing
@@ -42,7 +42,7 @@ U hebt het volgende nodig om Azure AD-integratie met Sauce Labs - Mobile and Web
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Sauce Labs - Mobile and Web Testing biedt ondersteuning voor met **IDP** geïnitieerde SSO
-* Sauce Labs - Mobile and Web Testing biedt ondersteuning voor **Just-In-Time** -inrichting van gebruikers
+* Sauce Labs - Mobile and Web Testing biedt ondersteuning voor **Just-In-Time**-inrichting van gebruikers
 
 ## <a name="adding-sauce-labs---mobile-and-web-testing-from-the-gallery"></a>Sauce Labs - Mobile and Web Testing toevoegen vanuit de galerie
 
@@ -50,7 +50,7 @@ Als u de integratie van Sauce Labs - Mobile and Web Testing in Azure AD wilt con
 
 **Voer de volgende stappen uit om Sauce Labs - Mobile and Web Testing toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -146,7 +146,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -171,7 +171,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding van Azure door haar toegang te verlenen tot Sauce Labs - Mobile and Web Testing.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Sauce Labs - Mobile and Web Testing**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Sauce Labs - Mobile and Web Testing**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

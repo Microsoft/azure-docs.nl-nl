@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.openlocfilehash: 803f5c25429b33e6d1af130196d38e125b410eb4
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92890969"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Private Access Administrator
@@ -52,7 +52,7 @@ Als u de integratie van Zscaler Private Access Administrator met Azure AD wilt c
 
 **Als u Zscaler Private Access Administrator vanuit de galerie wilt toevoegen, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -139,7 +139,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Private Ac
 
 1. Meld u in een ander webbrowservenster als beheerder aan bij Zscaler Private Access Administrator.
 
-2. Klik bovenaan op **Beheer** , navigeer naar het gedeelte **VERIFICATIE** en klik op **IdP-configuratie**.
+2. Klik bovenaan op **Beheer**, navigeer naar het gedeelte **VERIFICATIE** en klik op **IdP-configuratie**.
 
     ![Zscaler Private Access Administrator-beheerder](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_admin.png)
 
@@ -167,7 +167,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Private Ac
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -191,7 +191,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie hebt u Britta Simon in staat gesteld gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Zscaler Private Access Administrator.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Zscaler Private Access Administrator**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Zscaler Private Access Administrator**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -221,7 +221,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Zscaler Private Acc
 
 1. Meld u als beheerder aan bij uw Zscaler Private Access Administrator-bedrijfssite.
 
-2. Klik bovenaan op **Beheer** , navigeer naar het gedeelte **VERIFICATIE** en klik op **IdP-configuratie**.
+2. Klik bovenaan op **Beheer**, navigeer naar het gedeelte **VERIFICATIE** en klik op **IdP-configuratie**.
 
     ![Zscaler Private Access Administrator-beheerder](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_admin.png)
 
@@ -229,7 +229,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Zscaler Private Acc
 
     ![Zscaler Private Access Administrator-beheerder](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_adminstrator.png)
 
-4. Klik in de rechterbovenhoek op **Beheerder toevoegen** :
+4. Klik in de rechterbovenhoek op **Beheerder toevoegen**:
 
     ![Zscaler Private Access Administrator-beheerder toevoegen](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_addadmin.png)
 

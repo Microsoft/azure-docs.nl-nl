@@ -9,10 +9,10 @@ ms.date: 07/15/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 39b61c78cbd0333183c80234256d6041a109d846
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "68249919"
 ---
 Een Azure AD-resource-id geeft de doelgroep aan waarvoor een token dat wordt uitgegeven, kan worden gebruikt om toegang te bieden tot een Azure-resource. In het geval van Azure Storage kan de resource-id specifiek voor één opslagaccount zijn of van toepassing zijn op een willekeurig opslagaccount. In de volgende tabel worden de waarden beschreven die u kunt opgeven voor de resource-id:

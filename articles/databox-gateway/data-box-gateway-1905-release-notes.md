@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/11/2020
 ms.author: alkohli
 ms.openlocfilehash: 7337e940ff67f0c0cfd38e5e58a2ac81bf593970
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96582233"
 ---
 # <a name="azure-data-box-edge-and-azure-data-box-gateway-1905-release-notes"></a>Release opmerkingen bij Azure Data Box Edge en Azure Data Box Gateway 1905
@@ -31,7 +31,7 @@ Deze release komt overeen met de software versies:
 > [!NOTE]
 > Update 1905 kan alleen worden toegepast op Data Box Edge apparaten met de versie van de software.
 
-## <a name="whats-new"></a>Nieuwe functies
+## <a name="whats-new"></a>Nieuw
 
 - **Verbeteringen in de logboek registratie van de Programmeer bare gate array (FPGA)** -in deze release hebben we logboek registratie-en waarschuwings verbeteringen aangebracht die betrekking hebben op FPGA. Dit is een vereiste update voor Data Box Edge als u de functie Edge Compute gebruikt met de FPGA. Zie [gegevens transformeren met Edge Compute op uw data Box Edge](../databox-online/azure-stack-edge-deploy-configure-compute-advanced.md)voor meer informatie.
 

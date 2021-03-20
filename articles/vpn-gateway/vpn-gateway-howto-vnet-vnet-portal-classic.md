@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: cherylmc
 ms.openlocfilehash: 0d81e0474d898ffee7f128c0bcea61f077c3d758
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92103217"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Een VNet-naar-VNet-verbinding configureren (klassiek)
@@ -26,7 +26,7 @@ Dit artikel helpt u bij het maken van een VPN-gateway verbinding tussen virtuele
 De stappen in dit artikel zijn van toepassing op het klassieke implementatie model en de Azure Portal. U kunt deze configuratie ook maken met een ander implementatiehulpprogramma of een ander implementatiemodel door in de volgende lijst een andere optie te selecteren:
 
 > [!div class="op_single_selector"]
-> * [Klassiek](vpn-gateway-howto-vnet-vnet-portal-classic.md)
+> * [Klassieke](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Resource Manager](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [VNets verbinden in verschillende implementatie modellen](vpn-gateway-connect-different-deployment-models-portal.md)
 >
@@ -38,7 +38,7 @@ Het verbinden van een virtueel netwerk met een ander virtueel netwerk (VNet-naar
 
 De VNets die u verbindt, kunnen zich in verschillende abonnementen en verschillende regio's bevindt. U kunt VNet combi neren met VNet-communicatie met configuraties met meerdere locaties. Zo kunt u netwerktopologieën maken waarin cross-premises connectiviteit is gecombineerd met connectiviteit tussen virtuele netwerken.
 
-:::image type="content" source="./media/vpn-gateway-howto-vnet-vnet-portal-classic/aboutconnections.png" alt-text="Diagram van de klassieke VNet-naar-VNet-architectuur":::
+:::image type="content" source="./media/vpn-gateway-howto-vnet-vnet-portal-classic/aboutconnections.png" alt-text="Diagram waarin verbindingen worden weer gegeven":::
 
 ### <a name="why-connect-virtual-networks"></a><a name="why"></a>Waarom virtuele netwerken koppelen?
 
@@ -145,7 +145,7 @@ Houd er wel op dat de lokale site voor elk VNet het andere VNet is.
 
 De lokale site verwijst doorgaans naar uw on-premises locatie. Het bevat het IP-adres van het VPN-apparaat waarmee u verbinding gaat maken en de IP-adresbereiken die via de VPN-gateway naar het VPN-apparaat worden gerouteerd.
 
-1. Selecteer op de pagina voor uw VNet onder **instellingen**de optie **site-naar-site-verbindingen**.
+1. Selecteer op de pagina voor uw VNet onder **instellingen** de optie **site-naar-site-verbindingen**.
 1. Op de pagina site-naar-site-verbindingen selecteert u **+ toevoegen**.
 1. Op de pagina **een VPN-verbinding en gateway configureren** voor het **verbindings type**, moet **u site-naar-site** geselecteerd laten.
 
@@ -188,7 +188,7 @@ Nadat de gateways voor het virtuele netwerk zijn gemaakt voor beide VNets, moet 
 ### <a name="part-2---modify-the-local-site-properties"></a>Deel 2: de eigenschappen van de lokale site wijzigen
 
 1. Onder site-naar-site-verbindingen selecteert u de verbinding. Bijvoorbeeld SiteVNet4.
-1. Selecteer **lokale site bewerken**op de pagina **Eigenschappen** voor de site-naar-site-verbinding.
+1. Selecteer **lokale site bewerken** op de pagina **Eigenschappen** voor de site-naar-site-verbinding.
 1. Plak in het veld **IP-adres van VPN-gateway** het IP-adres van de VPN-gateway dat u in de vorige sectie hebt gekopieerd.
 1. Selecteer **OK**.
 1. Het veld wordt bijgewerkt in het systeem. U kunt deze methode ook gebruiken om extra IP-adressen toe te voegen die u wilt omleiden naar deze site.

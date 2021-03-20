@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: d6ad0b8b37bd4f04c22ed52d4ac6717202f22889
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88192491"
 ---
 # <a name="troubleshooting-azure-cdn-endpoints-that-return-a-404-status-code"></a>Troubleshooting Azure CDN-eind punten die een 404-status code retour neren
@@ -98,9 +98,9 @@ We gaan terug naar ons hypothetische voor beeld met http: \/ /www.contoso.com:80
 De **oorsprong** van de host-header is de waarde van de host-header die met elke aanvraag wordt verzonden naar de oorsprong.  In de meeste gevallen moet dit hetzelfde zijn als de hostnaam van de **oorsprong** die we eerder hebben geverifieerd.  Een onjuiste waarde in dit veld veroorzaakt doorgaans geen 404-statussen, maar veroorzaakt waarschijnlijk andere 4xx-statussen, afhankelijk van wat de oorsprong verwacht.
 
 #### <a name="origin-path"></a>Pad voor de oorsprong
-Ten slotte moeten we het **oorspronkelijke pad**verifiëren.  Dit is standaard leeg.  U moet dit veld alleen gebruiken als u het bereik wilt beperken van de bron-hostende resources die u beschikbaar wilt maken op het CDN.  
+Ten slotte moeten we het **oorspronkelijke pad** verifiëren.  Dit is standaard leeg.  U moet dit veld alleen gebruiken als u het bereik wilt beperken van de bron-hostende resources die u beschikbaar wilt maken op het CDN.  
 
-In het voor beeld-eind punt wilden alle resources op het opslag account beschikbaar zijn, dus het **bronpad** is leeg gelaten.  Dit betekent dat een aanvraag voor https: \/ /cdndocdemo.azureedge.net/publicblob/lorem.txt resulteert in een verbinding van het eind punt naar cdndocdemo.core.Windows.net die */publicblob/lorem.txt*aanvraagt.  Op dezelfde manier wordt een aanvraag voor https: \/ /cdndocdemo.azureedge.net/donotcache/status.png resultaten opgeleverd in het eind punt dat */donotcache/status.png* aanvraagt van de oorsprong.
+In het voor beeld-eind punt wilden alle resources op het opslag account beschikbaar zijn, dus het **bronpad** is leeg gelaten.  Dit betekent dat een aanvraag voor https: \/ /cdndocdemo.azureedge.net/publicblob/lorem.txt resulteert in een verbinding van het eind punt naar cdndocdemo.core.Windows.net die */publicblob/lorem.txt* aanvraagt.  Op dezelfde manier wordt een aanvraag voor https: \/ /cdndocdemo.azureedge.net/donotcache/status.png resultaten opgeleverd in het eind punt dat */donotcache/status.png* aanvraagt van de oorsprong.
 
-Maar wat als u het CDN niet wilt gebruiken voor elk pad op uw oorsprong?  Stel dat u het pad naar de *publicblob* wilt weer geven.  Als we */publicblob* in het veld **bronpad** invoeren, zorgt dat ervoor dat het eind punt */publicblob* invoegt voordat elke aanvraag wordt ingediend bij de oorsprong.  Dit betekent dat de aanvraag voor https: \/ /cdndocdemo.azureedge.net/publicblob/lorem.txt nu daad werkelijk het aanvraag gedeelte van de URL, */publicblob/lorem.txt*en de */publicblob* toevoegen aan het begin. Dit resulteert in een aanvraag voor */publicblob/publicblob/lorem.txt* van de oorsprong.  Als dat pad niet kan worden omgezet naar een echt bestand, wordt de status van de 404 geretourneerd.  De juiste URL voor het ophalen van lorem.txt in dit voor beeld is in werkelijkheid https: \/ /cdndocdemo.azureedge.net/lorem.txt.  Houd er rekening mee dat het pad van de */publicblob* helemaal niet is opgenomen, omdat het aanvraag gedeelte van de URL */lorem.txt* is en het eind punt */publicblob*toevoegt, wat resulteert in */publicblob/lorem.txt* de aanvraag wordt door gegeven aan de oorsprong.
+Maar wat als u het CDN niet wilt gebruiken voor elk pad op uw oorsprong?  Stel dat u het pad naar de *publicblob* wilt weer geven.  Als we */publicblob* in het veld **bronpad** invoeren, zorgt dat ervoor dat het eind punt */publicblob* invoegt voordat elke aanvraag wordt ingediend bij de oorsprong.  Dit betekent dat de aanvraag voor https: \/ /cdndocdemo.azureedge.net/publicblob/lorem.txt nu daad werkelijk het aanvraag gedeelte van de URL, */publicblob/lorem.txt* en de */publicblob* toevoegen aan het begin. Dit resulteert in een aanvraag voor */publicblob/publicblob/lorem.txt* van de oorsprong.  Als dat pad niet kan worden omgezet naar een echt bestand, wordt de status van de 404 geretourneerd.  De juiste URL voor het ophalen van lorem.txt in dit voor beeld is in werkelijkheid https: \/ /cdndocdemo.azureedge.net/lorem.txt.  Houd er rekening mee dat het pad van de */publicblob* helemaal niet is opgenomen, omdat het aanvraag gedeelte van de URL */lorem.txt* is en het eind punt */publicblob* toevoegt, wat resulteert in */publicblob/lorem.txt* de aanvraag wordt door gegeven aan de oorsprong.
 

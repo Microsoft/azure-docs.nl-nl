@@ -8,10 +8,10 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: 708d84bdb3ebe8fbba6939aa771a9120868d5d1b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100375201"
 ---
 # <a name="data-management-gateway"></a>Gegevensbeheergateway
@@ -135,7 +135,7 @@ Er zijn twee firewalls die u moet overwegen: **bedrijfs firewall** die wordt uit
 
 Op het niveau van de bedrijfs firewall moet u de volgende domeinen en uitgaande poorten configureren:
 
-| Domeinnamen | Poorten | Description |
+| Domeinnamen | Poorten | Beschrijving |
 | --- | --- | --- |
 | *.servicebus.windows.net |443 |Wordt gebruikt voor communicatie met de back-end van de service voor gegevens verplaatsing |
 | *.core.windows.net |443 |Gebruikt voor gefaseerde kopie met behulp van Azure-Blob (indien geconfigureerd)|

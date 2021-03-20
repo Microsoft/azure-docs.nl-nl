@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5e047f11cc243ab1a36a8c61dd1b229d9e115115
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92892482"
 ---
 # <a name="tutorial-use-powershell-to-bulk-invite-azure-ad-b2b-collaboration-users"></a>Zelfstudie: PowerShell gebruiken voor het bulksgewijs uitnodigen van gebruikers van Azure AD B2B-samenwerking
@@ -126,7 +126,7 @@ Controleer of de uitgenodigde gebruikers zijn toegevoegd aan Microsoft Azure AD 
  Get-AzureADUser -Filter "UserType eq 'Guest'"
 ```
 
-U moet nu de uitgenodigde gebruikers zien met een user principal name (UPN) in de indeling *e-mailadres* #EXT#\@*domein*. Bijvoorbeeld *Istokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com* , waarbij contoso.onmicrosoft.com staat voor de organisatie waaruit u de uitnodigingen hebt verzonden.
+U moet nu de uitgenodigde gebruikers zien met een user principal name (UPN) in de indeling *e-mailadres*#EXT#\@*domein*. Bijvoorbeeld *Istokes_fabrikam.com#EXT#\@contoso.onmicrosoft.com*, waarbij contoso.onmicrosoft.com staat voor de organisatie waaruit u de uitnodigingen hebt verzonden.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

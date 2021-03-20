@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.custom: mqtt
 ms.openlocfilehash: 5c14e8cfcbf8df86b0f71d6b12025594d2e648c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81730106"
 ---
 # <a name="schedule-jobs-on-multiple-devices"></a>Taken op meerdere apparaten plannen
@@ -182,7 +182,7 @@ De volgende lijst bevat de eigenschappen en bijbehorende beschrijvingen die kunn
 | --- | --- |
 | **jobId** |De door de toepassing meegeleverde ID voor de taak. |
 | **startTime** |De door de toepassing aangelegde start tijd (ISO-8601) voor de taak. |
-| **endTime** |IoT Hub gegeven datum (ISO-8601) voor wanneer de taak is voltooid. Alleen geldig nadat de taak de status voltooid heeft bereikt. |
+| **Tijd** |IoT Hub gegeven datum (ISO-8601) voor wanneer de taak is voltooid. Alleen geldig nadat de taak de status voltooid heeft bereikt. |
 | **type** |Typen taken: |
 | | **scheduleUpdateTwin**: een taak die wordt gebruikt om een set gewenste eigenschappen of labels bij te werken. |
 | | **scheduleDeviceMethod**: een taak die wordt gebruikt om een apparaat methode aan te roepen voor een set apparaat apparaatdubbels. |

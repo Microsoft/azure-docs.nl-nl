@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
 ms.openlocfilehash: 18cc42c3447de733447c27db52a9a6d664539464
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89400349"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Configuratie van API Management-service opslaan en configureren met behulp van Git
@@ -96,7 +96,7 @@ Als er fouten optreden, kunt u de `git clone` opdracht wijzigen zodat de gebruik
 git clone https://username:password@{name}.scm.azure-api.net/
 ```
 
-Als er een fout optreedt, kunt u URL-code ring van het wachtwoord gedeelte van de opdracht proberen. Een snelle manier om dit te doen is door Visual Studio te openen en de volgende opdracht uit te voeren in het **venster Direct**. Als u het **venster Direct**wilt openen, opent u een oplossing of project in Visual Studio (of maakt u een nieuwe lege console toepassing) en kiest u **Windows**, **direct** in het menu **fout opsporing** .
+Als er een fout optreedt, kunt u URL-code ring van het wachtwoord gedeelte van de opdracht proberen. Een snelle manier om dit te doen is door Visual Studio te openen en de volgende opdracht uit te voeren in het **venster Direct**. Als u het **venster Direct** wilt openen, opent u een oplossing of project in Visual Studio (of maakt u een nieuwe lege console toepassing) en kiest u **Windows**, **direct** in het menu **fout opsporing** .
 
 ```
 ?System.Net.WebUtility.UrlEncode("password from the Azure portal")

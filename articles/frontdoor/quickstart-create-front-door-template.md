@@ -15,10 +15,10 @@ ms.date: 09/14/2020
 ms.author: duau
 ms.custom: subject-armqs
 ms.openlocfilehash: 223006193219afe4179f3161d5e60e6439207b22
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92896052"
 ---
 # <a name="quickstart-create-a-front-door-using-an-arm-template"></a>Quickstart: Front Door maken op basis van een ARM-sjabloon

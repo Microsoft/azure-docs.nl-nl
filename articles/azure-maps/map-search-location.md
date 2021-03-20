@@ -10,10 +10,10 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: 647a8fc25f27ef7f441ed7459ecd543d4f35581e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895270"
 ---
 # <a name="show-search-results-on-the-map"></a>Zoek resultaten weer geven op de kaart
@@ -62,7 +62,7 @@ De zoek aanvraag, de gegevens bron, de symbool-laag en de grenzen van de camera 
 > [!div class="nextstepaction"]
 > [Aanbevolen procedures voor het gebruik van Zoekservice](how-to-use-best-practices-for-search.md)
 
-Meer informatie over **fuzzy Search** :
+Meer informatie over **fuzzy Search**:
 
 > [!div class="nextstepaction"]
 > [Azure Maps fuzzy Search-API](/rest/api/maps/search/getsearchfuzzy)

@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/04/2018
 ms.openlocfilehash: d660e62ea293bd3cc377b95612cfaf41a9f1cd6a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92793361"
 ---
 # <a name="using-the-elastic-database-client-library-with-dapper"></a>De client bibliotheek voor Elastic Data Base gebruiken met dapper
@@ -23,7 +23,7 @@ ms.locfileid: "92793361"
 
 Dit document is bedoeld voor ontwikkel aars die gebruikmaken van dapper om toepassingen te bouwen, maar u wilt ook [Elastic data base-hulp middelen gebruiken](elastic-scale-introduction.md) om toepassingen te maken die sharding implementeren om hun gegevenslaag te schalen.  Dit document illustreert de wijzigingen in dapper toepassingen die nodig zijn voor de integratie met Elastic data base-hulpprogram ma's. Onze nadruk ligt op het samen stellen van het Elastic data base Shard management en gegevens afhankelijke route ring met dapper. 
 
-**Voorbeeld code** : [hulpprogram ma's voor Elastic data base voor Azure SQL database-dapper-integratie](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f).
+**Voorbeeld code**: [hulpprogram ma's voor Elastic data base voor Azure SQL database-dapper-integratie](https://code.msdn.microsoft.com/Elastic-Scale-with-Azure-e19fc77f).
 
 Het integreren van **dapper** en **DapperExtensions** met de Elastic data base-client bibliotheek voor Azure SQL database is eenvoudig. Uw toepassingen kunnen gegevens afhankelijke route ring gebruiken door het maken en openen van nieuwe [SqlConnection](/dotnet/api/system.data.sqlclient.sqlconnection) -objecten te wijzigen om de [OpenConnectionForKey](/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.rangeshardmap-1) -aanroep van de [client bibliotheek](/previous-versions/azure/dn765902(v=azure.100))te gebruiken. Hierdoor worden wijzigingen in uw toepassing beperkt tot alleen nieuwe verbindingen gemaakt en geopend. 
 
@@ -39,7 +39,7 @@ Een ander voor deel van dapper en ook DapperExtensions is dat de toepassing het 
 Zie [dapper dot net](https://www.nuget.org/packages/Dapper/)om de dapper-assembly's op te halen. Zie [DapperExtensions](https://www.nuget.org/packages/DapperExtensions)voor de dapper-extensies.
 
 ## <a name="a-quick-look-at-the-elastic-database-client-library"></a>Een beknopt overzicht van de client bibliotheek voor Elastic data base
-Met de client bibliotheek voor Elastic data base definieert u partities van uw toepassings gegevens met de naam *shardlets* , wijst u deze toe aan data bases en identificeert u deze met *sharding-sleutels* . U kunt zoveel data bases als u nodig hebt en uw shardlets distribueren over deze data bases. De toewijzing van sharding-sleutel waarden aan de data bases wordt opgeslagen door een Shard-kaart die wordt weer gegeven door de Api's van de bibliotheek. Deze mogelijkheid heet **Shard-toewijzings beheer** . De shard-toewijzing dient ook als broker voor databaseverbindingen voor aanvragen die een sharding-sleutel bevatten. Deze mogelijkheid wordt aangeduid als **gegevens afhankelijke route ring** .
+Met de client bibliotheek voor Elastic data base definieert u partities van uw toepassings gegevens met de naam *shardlets*, wijst u deze toe aan data bases en identificeert u deze met *sharding-sleutels*. U kunt zoveel data bases als u nodig hebt en uw shardlets distribueren over deze data bases. De toewijzing van sharding-sleutel waarden aan de data bases wordt opgeslagen door een Shard-kaart die wordt weer gegeven door de Api's van de bibliotheek. Deze mogelijkheid heet **Shard-toewijzings beheer**. De shard-toewijzing dient ook als broker voor databaseverbindingen voor aanvragen die een sharding-sleutel bevatten. Deze mogelijkheid wordt aangeduid als **gegevens afhankelijke route ring**.
 
 ![Shard Maps en gegevens afhankelijke route ring][1]
 
@@ -50,11 +50,11 @@ In plaats van de traditionele manier om verbindingen voor dapper te maken, moet 
 ### <a name="requirements-for-dapper-integration"></a>Vereisten voor dapper-integratie
 Wanneer u werkt met de client bibliotheek voor Elastic data base en de dapper-Api's, wilt u de volgende eigenschappen behouden:
 
-* **Uitschalen** : we willen data bases toevoegen aan of verwijderen uit de gegevenslaag van de Shard-toepassing, indien nodig voor de capaciteits vereisten van de toepassing. 
-* **Consistentie** : omdat de toepassing is uitgeschaald met sharding, moet u gegevens afhankelijke route ring uitvoeren. We willen hiervoor de gegevensafhankelijke routerings mogelijkheden van de bibliotheek gebruiken. In het bijzonder wilt u de verificatie-en consistentie garanties behouden die worden geboden door verbindingen die zijn gebrokerd via de Shard-toewijzings beheer om beschadiging of onjuiste query resultaten te voor komen. Dit zorgt ervoor dat verbindingen met een gegeven shardlet worden geweigerd of worden gestopt als (bijvoorbeeld) de shardlet momenteel is verplaatst naar een andere Shard met behulp van Split/Merge-Api's.
-* **Object toewijzing** : we willen het gemak behouden van de toewijzingen die door dapper worden verschaft om te vertalen tussen klassen in de toepassing en de onderliggende database structuren. 
+* **Uitschalen**: we willen data bases toevoegen aan of verwijderen uit de gegevenslaag van de Shard-toepassing, indien nodig voor de capaciteits vereisten van de toepassing. 
+* **Consistentie**: omdat de toepassing is uitgeschaald met sharding, moet u gegevens afhankelijke route ring uitvoeren. We willen hiervoor de gegevensafhankelijke routerings mogelijkheden van de bibliotheek gebruiken. In het bijzonder wilt u de verificatie-en consistentie garanties behouden die worden geboden door verbindingen die zijn gebrokerd via de Shard-toewijzings beheer om beschadiging of onjuiste query resultaten te voor komen. Dit zorgt ervoor dat verbindingen met een gegeven shardlet worden geweigerd of worden gestopt als (bijvoorbeeld) de shardlet momenteel is verplaatst naar een andere Shard met behulp van Split/Merge-Api's.
+* **Object toewijzing**: we willen het gemak behouden van de toewijzingen die door dapper worden verschaft om te vertalen tussen klassen in de toepassing en de onderliggende database structuren. 
 
-De volgende sectie bevat richt lijnen voor deze vereisten voor toepassingen die zijn gebaseerd op **dapper** en **DapperExtensions** .
+De volgende sectie bevat richt lijnen voor deze vereisten voor toepassingen die zijn gebaseerd op **dapper** en **DapperExtensions**.
 
 ## <a name="technical-guidance"></a>Technische richt lijnen
 ### <a name="data-dependent-routing-with-dapper"></a>Gegevens afhankelijke route ring met dapper

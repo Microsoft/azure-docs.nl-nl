@@ -8,10 +8,10 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 7488834252dcd4e231c2d91a1435838befe7b1d1
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100377020"
 ---
 # <a name="tutorial-use-rest-api-to-create-an-azure-data-factory-pipeline-to-copy-data"></a>Zelfstudie: REST-API gebruiken voor het maken van een Azure Data Factory-pijplijn om gegevens te kopiëren 
@@ -216,7 +216,7 @@ De volgende tabel bevat beschrijvingen van de JSON-eigenschappen die in het code
 
 | Eigenschap | Beschrijving |
 |:--- |:--- |
-| type | De eigenschap type wordt ingesteld op **AzureSqlTable**, omdat gegevens naar een tabel in Azure SQL Database worden gekopieerd. |
+| type | De eigenschap type wordt ingesteld op **AzureSqlTable** omdat gegevens naar een tabel in Azure SQL Database worden gekopieerd. |
 | linkedServiceName | Deze eigenschap verwijst naar de **AzureSqlLinkedService** die u eerder hebt gemaakt. |
 | tableName | Geeft de **tabel** aan waarnaar de gegevens worden gekopieerd. | 
 | frequency/interval | De frequentie is ingesteld op **Hour** en het interval is **1**, wat betekent dat de uitvoersegmenten worden geproduceerd **per uur** tussen de begin- en eindtijd van de pijplijn, niet voor of na deze tijden.  |

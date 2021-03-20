@@ -9,10 +9,10 @@ ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 3bc97a932e622838315f717cc7b036a559787805
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97369154"
 ---
 # <a name="overview-of-the-azure-security-benchmark-v2"></a>Overzicht van de Azure Security Bench Mark (v2)
@@ -28,7 +28,7 @@ Deze bench Mark maakt deel uit van een aantal holistische beveiligings richtlijn
  De Azure Security-Bench Mark is gericht op Cloud gerichte controle gebieden. Deze besturings elementen zijn consistent met bekende beveiligings benchmarks, zoals die worden beschreven in het Center for Internet Security (CIS) Controls versie 7,1 en National Institute of Standards and Technology (NIST) SP 800-53.
 De volgende besturings elementen zijn opgenomen in de Azure Security-Bench Mark:
 
-| Beheer domeinen ASB | Description 
+| Beheer domeinen ASB | Beschrijving 
 |--|--|
 | [Netwerk &nbsp; beveiliging &nbsp; (NS)](security-controls-v2-network-security.md) | Netwerk beveiliging heeft betrekking op besturings elementen voor het beveiligen en beveiligen van Azure-netwerken, waaronder het beveiligen van virtuele netwerken, het tot stand brengen van particuliere verbindingen, het voor komen en beperken van externe aanvallen en het beveiligen van DNS. |
 | [Identiteits &nbsp; beheer &nbsp; (IM)](security-controls-v2-identity-management.md) | Identiteits beheer heeft betrekking op besturings elementen voor het instellen van een beveiligde identiteits-en toegangs beheer met behulp van Azure Active Directory, waaronder het gebruik van eenmalige aanmelding, sterke verificaties, beheerde identiteiten (en service principes) voor toepassingen, voorwaardelijke toegang en het controleren van afwijkingen van accounts. |

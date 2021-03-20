@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 1b7f5d1ad671b6d97bd6597386c714b026c02232
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "100376850"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Azure-gegevens fabrieken maken, bewaken en beheren met behulp van Azure Data Factory .NET SDK
@@ -135,7 +135,7 @@ Met Copy Activity wordt de gegevensverplaatsing in Azure Data Factory uitgevoerd
     </configuration>
     ```
 5. In het App.Config bestand werkt u de waarden voor de **&lt; toepassings- &gt; id**, het **&lt; wacht woord &gt;**, de **&lt; abonnements-id &gt;** en de **&lt; Tenant-id &gt;** bij uw eigen waarden bij.
-6. Voeg de volgende **using** -instructies toe aan het **Program.cs** -bestand in het project.
+6. Voeg de volgende **using** -instructies toe aan het bestand **Program. cs** in het project.
 
     ```csharp
     using System.Configuration;

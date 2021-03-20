@@ -9,10 +9,10 @@ ms.date: 12/16/2019
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: 32aa64a9343a8e3c62af4322b3320b28ce805064
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97369188"
 ---
 # <a name="azure-security-benchmark-introduction"></a>Inleiding tot Azure Security Bench Mark
@@ -46,9 +46,9 @@ Azure Security Bench Mark wordt vaak gebruikt om deze veelvoorkomende uitdaginge
 De termen "besturings element", "bench Mark" en "baseline" worden vaak gebruikt in de documentatie over Azure Security Bench Mark. het is belang rijk om te begrijpen hoe Azure deze voor waarden gebruikt.
 
 
-| Term | Beschrijving | Voorbeeld |
+| Termijn | Beschrijving | Voorbeeld |
 |--|--|--|
-| Beheer | Een besturings element is een hoog niveau van een functie of activiteit die moet worden geadresseerd en niet specifiek is voor een technologie of implementatie. | Gegevens beveiliging is een van de beveiligings besturings elementen. Dit besturings element bevat specifieke acties die moeten worden geadresseerd om ervoor te zorgen dat gegevens beveiligd zijn. |
+| Controle | Een besturings element is een hoog niveau van een functie of activiteit die moet worden geadresseerd en niet specifiek is voor een technologie of implementatie. | Gegevens beveiliging is een van de beveiligings besturings elementen. Dit besturings element bevat specifieke acties die moeten worden geadresseerd om ervoor te zorgen dat gegevens beveiligd zijn. |
 | Benchmark | Een bench Mark bevat beveiligings aanbevelingen voor een specifieke technologie, zoals Azure. De aanbevelingen worden gecategoriseerd door het besturings element waarvan ze deel uitmaken. | De Security Bench Mark van Azure bestaat uit de beveiligings aanbevelingen die specifiek zijn voor het Azure-platform |
 | Basislijn | Een basis lijn is de implementatie van de Bench Mark voor de afzonderlijke Azure-service. Elke organisatie beslist de benchmark aanbeveling en de bijbehorende configuraties zijn vereist in het Azure-implementatie bereik. | De contoso-onderneming kijkt naar Azure SQL-beveiligings functies door de configuratie te volgen die wordt aanbevolen in Azure SQL-beveiligings basislijn.
 

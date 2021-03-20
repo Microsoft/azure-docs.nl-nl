@@ -10,10 +10,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 57e847116febcea66e1e3ac4ba131617463b6c94
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895763"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Verificatie in Azure Maps beheren
@@ -24,10 +24,10 @@ Nadat u een Azure Maps-account hebt gemaakt, worden er een client-ID en-sleutels
 
 Nadat u een Azure Maps account hebt gemaakt, worden de primaire en secundaire sleutels gegenereerd. U wordt aangeraden een primaire sleutel als abonnements sleutel te gebruiken wanneer u [gebruikmaakt van gedeelde sleutel verificatie om Azure Maps aan te roepen](./azure-maps-authentication.md#shared-key-authentication). U kunt een secundaire sleutel gebruiken in scenario's zoals wijzigingen in de Rolling sleutel. Zie [verificatie in azure Maps](./azure-maps-authentication.md)voor meer informatie.
 
-U kunt uw verificatie gegevens weer geven in de Azure Portal. In uw account selecteert u in het menu **instellingen** de optie **verificatie** .
+U kunt uw verificatie gegevens weer geven in de Azure Portal. In uw account selecteert u in het menu **instellingen** de optie **verificatie**.
 
 > [!div class="mx-imgBorder"]
-> ![Verificatie gegevens](./media/how-to-manage-authentication/how-to-view-auth.png)
+> ![Verificatiedetails](./media/how-to-manage-authentication/how-to-view-auth.png)
 
 ## <a name="discover-category-and-scenario"></a>Categorie en scenario detecteren
 
@@ -56,14 +56,14 @@ Met de koppelingen in de tabel gaat u naar gedetailleerde configuratie-informati
 
 ## <a name="view-role-definitions"></a>Roldefinities weer geven
 
-Ga naar **toegangs beheer (IAM)** om Azure-functies weer te geven die beschikbaar zijn voor Azure Maps. Selecteer **rollen** en zoek vervolgens naar rollen die beginnen met *Azure Maps* . Deze Azure Maps rollen zijn de rollen waaraan u toegang kunt verlenen.
+Ga naar **toegangs beheer (IAM)** om Azure-functies weer te geven die beschikbaar zijn voor Azure Maps. Selecteer **rollen** en zoek vervolgens naar rollen die beginnen met *Azure Maps*. Deze Azure Maps rollen zijn de rollen waaraan u toegang kunt verlenen.
 
 > [!div class="mx-imgBorder"]
 > ![Beschik bare rollen weer geven](./media/how-to-manage-authentication/how-to-view-avail-roles.png)
 
 ## <a name="view-role-assignments"></a>Roltoewijzingen weergeven
 
-Ga naar **Access Control (IAM)** om gebruikers en apps weer te geven die toegang hebben gekregen voor Azure Maps. Hier selecteert u **roltoewijzingen** en filtert u vervolgens op **Azure Maps** .
+Ga naar **Access Control (IAM)** om gebruikers en apps weer te geven die toegang hebben gekregen voor Azure Maps. Hier selecteert u **roltoewijzingen** en filtert u vervolgens op **Azure Maps**.
 
 > [!div class="mx-imgBorder"]
 > ![Gebruikers en apps weer geven waaraan toegang is verleend](./media/how-to-manage-authentication/how-to-view-amrbac.png)

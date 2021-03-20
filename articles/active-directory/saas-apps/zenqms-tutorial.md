@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 2dc3fca98a949f5e0119b36ff4fe266b5049028f
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92895057"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zenqms"></a>Zelfstudie: Azure Active Directory-integratie met ZenQMS
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van ZenQMS in Azure AD moet u ZenQMS van
 
 **Voer de volgende stappen uit om ZenQMS toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -123,13 +123,13 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
 
 ### <a name="configure-zenqms-single-sign-on"></a>Eenmalige aanmelding voor ZenQMS configureren
 
-Als u eenmalige aanmelding wilt configureren aan de **ZenQMS** -zijde, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van ZenQMS](mailto:help@zenqms.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren aan de **ZenQMS**-zijde, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van ZenQMS](mailto:help@zenqms.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

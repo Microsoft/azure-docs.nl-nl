@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: apimpm
 ms.openlocfilehash: 5066169951409fa86aa75a64e8fc6d4189947f27
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92072404"
 ---
 # <a name="how-to-log-events-to-azure-event-hubs-in-azure-api-management"></a>Gebeurtenissen vastleggen in azure Event Hubs in azure API Management
@@ -75,7 +75,7 @@ Klik op **Opslaan** om de bijgewerkte beleids configuratie op te slaan. Zodra he
 U kunt een voor beeld van het logboek in Event Hubs bekijken met behulp van [Azure stream Analytics query's](../event-hubs/process-data-azure-stream-analytics.md). 
 
 1. Blader in het Azure Portal naar de Event Hub waarnaar de logboek gebeurtenissen verzendt. 
-2. Selecteer onder **functies**het tabblad **proces gegevens** .
+2. Selecteer onder **functies** het tabblad **proces gegevens** .
 3. Op de kaart **real time Insights van gebeurtenissen inschakelen** selecteert u **verkennen**.
 4. U moet een voor beeld van het logboek op het tabblad **invoer voorbeeld** kunnen bekijken. Als de weer gegeven gegevens niet actueel zijn, selecteert u **vernieuwen** om de meest recente gebeurtenissen te bekijken.
 

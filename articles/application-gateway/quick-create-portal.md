@@ -6,15 +6,15 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 12/08/2020
+ms.date: 01/19/2021
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 42701fbcee9833fd31fff3ace55d48079015dbcd
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: c1b17d8c624d4bef74278acc24ece37a736a5ca8
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906400"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "98572966"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Quickstart: Webverkeer omleiden met Azure Application Gateway - Azure Portal
 
@@ -78,7 +78,7 @@ U maakt de toepassingsgateway met de tabbladen in de pagina **Een toepassingsgat
    > [!NOTE]
    > Voor de toepassingsgateway v2 SKU moet er een **Openbaar** front-end-IP-configuratie zijn. U kunt nog steeds zowel een openbare als een privé-front-end-IP-configuratie hebben, maar momenteel is de configuratie van alleen een privé-front-end (alleen ILB-modus) niet ingeschakeld voor de v2-SKU. 
 
-2. Kies **Nieuw maken** voor het **Openbaar IP-adres** en voer *myAGPublicIPAddress* in als naam voor het openbaar IP-adres en selecteer vervolgens **OK**. 
+2. Selecteer **Nieuw toevoegen** voor het **open bare IP-adres** en voer *myAGPublicIPAddress* in voor de naam van het open bare IP-adres en selecteer vervolgens **OK**. 
 
      ![Nieuwe toepassingsgateway maken: front-ends](./media/application-gateway-create-gateway-portal/application-gateway-create-frontends.png)
 
@@ -86,9 +86,9 @@ U maakt de toepassingsgateway met de tabbladen in de pagina **Een toepassingsgat
 
 ### <a name="backends-tab"></a>Tabblad Back-ends
 
-De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endpools kunnen bestaan uit NIC's, virtuele-machineschaalsets, openbare IP's, interne IP's, FQDN's (Fully Qualified Domain Name) en multitenant back-ends als Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
+De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers die de aanvraag verwerken. Back-endservers kunnen bestaan uit Nic's, virtuele-machine schaal sets, open bare IP-adressen, interne IP-adressen, FQDN-namen (Fully Qualified Domain names) en back-ends met meerdere tenants, zoals Azure App Service. In dit voorbeeld maakt u een lege back-endpool met uw toepassingsgateway en voegt u vervolgens back-enddoelen toe aan de back-endpool.
 
-1. Selecteer in het tabblad **Back-ends** de optie **+Een back-endpool toevoegen**.
+1. Selecteer op het tabblad **back** -end **een back-end-groep toevoegen**.
 
 2. Voer in het venster **Een back-endpool toevoegen** dat wordt geopend, de volgende waarden in om een lege back-endpool te maken:
 
@@ -105,7 +105,7 @@ De back-endpool word gebruikt om aanvragen te routeren naar de back-endservers d
 
 In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die u hebt gemaakt met een regel voor doorsturen.
 
-1. Selecteer in de kolom **Routeringsregels** de optie **Een regel toevoegen**.
+1. Selecteer **een regel voor door sturen toevoegen** in de kolom **routerings regels** .
 
 2. Voer in het venster **Een regel voor doorsturen toevoegen** dat wordt geopend, *myRoutingRule* in als de **Regelnaam**.
 
@@ -120,7 +120,7 @@ In het tabblad **Configuratie** verbindt u de front-end- en de back-endpool die 
 
 4. Selecteer in het tabblad **Back-enddoelen** de optie **myBackendPool** als het **Back-enddoel**.
 
-5. Selecteer als **HTTP-instelling** de optie **Nieuwe maken** om een nieuwe HTTP-instelling te maken. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling** en *80* voor de **Back-endpoort**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
+5. Selecteer voor de **http-instelling** **nieuwe toevoegen** om een nieuwe http-instelling toe te voegen. De HTTP-instelling bepaalt het gedrag van de regel voor doorsturen. Voer in het venster **Een HTTP-instelling toevoegen** dat wordt geopend, *myHTTPSetting* in als de **naam van de HTTP-instelling** en *80* voor de **Back-endpoort**. Accepteer de standaardwaarden voor de overige instellingen in het venster **Een HTTP-instelling toevoegen** en selecteer vervolgens **Toevoegen** om terug te keren naar het venster **Een regel voor doorsturen toevoegen**. 
 
      ![Nieuwe toepassingsgateway maken: HTTP-instelling](./media/application-gateway-create-gateway-portal/application-gateway-create-httpsetting.png)
 
@@ -147,7 +147,7 @@ Hiervoor moet u het volgende doen:
 ### <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
 1. Selecteer in het menu van Azure Portal of op de **startpagina** de optie **Een resource maken**. Het venster **Nieuw** wordt weergegeven.
-2. Selecteer in de lijst **Populair** de optie **Windows Server 2016-gegevenscentrum**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voorbeeld gebruikt u een Windows Server 2016-gegevenscentrum.
+2. Selecteer in de lijst **Populair** de optie **Windows Server 2016-gegevenscentrum**. De pagina **Een virtuele machine maken** wordt weergegeven.<br>Toepassingsgateway kan verkeer routeren naar ieder type virtuele machine dat wordt gebruikt in de back-endpool. In dit voor beeld gebruikt u een virtuele machine met Windows Server 2016 Data Center.
 3. Voer deze waarden in op het tabblad **Basisinformatie** voor de volgende instellingen voor de virtuele machine:
 
     - **Resourcegroep**: Selecteer **myResourceGroupAG** als naam van de resourcegroep.
@@ -165,9 +165,11 @@ Hiervoor moet u het volgende doen:
 
 ### <a name="install-iis-for-testing"></a>IIS installeren voor testen
 
-In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controleren of de toepassingsgateway in Azure is gemaakt.
+In dit voor beeld installeert u IIS op de virtuele machines om te controleren of de toepassings gateway door Azure is gemaakt.
 
-1. Open Azure PowerShell. Selecteer **Cloud Shell** in de bovenste navigatiebalk van Azure-portal en vervolgens **PowerShell** in de vervolgkeuzelijst. 
+1. Open Azure PowerShell.
+
+   Selecteer **Cloud Shell** in de bovenste navigatiebalk van Azure-portal en vervolgens **PowerShell** in de vervolgkeuzelijst. 
 
     ![Aangepaste extensie installeren](./media/application-gateway-create-gateway-portal/application-gateway-extension.png)
 
@@ -208,7 +210,9 @@ In dit voorbeeld installeert u IIS alleen op de virtuele machines om te controle
 
 ## <a name="test-the-application-gateway"></a>De toepassingsgateway testen
 
-Het is niet nodig IIS te installeren om de toepassingsgateway te maken, maar u hebt het in deze snelstartgids geïnstalleerd om te controleren of het maken van de toepassingsgateway in Azure is geslaagd. Gebruik IIS om de toepassingsgateway te testen:
+Het is niet nodig IIS te installeren om de toepassingsgateway te maken, maar u hebt het in deze snelstartgids geïnstalleerd om te controleren of het maken van de toepassingsgateway in Azure is geslaagd. 
+
+Gebruik IIS om de toepassingsgateway te testen:
 
 1. Zoek het openbare IP-adres voor de toepassingsgateway op de bijbehorende pagina **Overzicht**.![Noteer het openbare IP-adres van de toepassingsgateway](./media/application-gateway-create-gateway-portal/application-gateway-record-ag-address.png). Of selecteer **Alle bronnen**, voer in het zoekvak *myAGPublicIPAddress* in en selecteer het adres vervolgens in de zoekresultaten. Het openbare IP-adres wordt weergegeven op de pagina **Overzicht**.
 2. Kopieer het openbare IP-adres en plak het in de adresbalk van de browser om het IP-adres te bekijken.
@@ -227,7 +231,7 @@ De resourcegroep verwijderen:
 1. Selecteer in het menu Azure-portal de optie **Resourcegroepen** of zoek ernaar en selecteer *Resourcegroepen*.
 2. Zoek en selecteer **myResourceGroupAG** in de lijst op de pagina **Resourcegroepen**.
 3. Selecteer **Resourcegroep verwijderen** op de **pagina van de resourcegroep**.
-4. Voer *myResourceGroupAG* in bij **TYP DE RESOURCEGROEPNAAM** en selecteer vervolgens **Verwijderen**
+4. Voer *myResourceGroupAG* in onder **Typ de naam van de resource groep** en selecteer vervolgens **verwijderen** .
 
 ## <a name="next-steps"></a>Volgende stappen
 

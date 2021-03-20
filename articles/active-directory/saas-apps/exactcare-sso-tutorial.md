@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.author: jeedes
 ms.openlocfilehash: f10f9840a34c9ca6525ed20060433a6db47a4b85
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453795"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-exactcare-sso"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met ExactCare SSO
@@ -69,7 +69,7 @@ Als u eenmalige aanmelding van Azure AD wilt configureren en testen met ExactCar
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **ExactCare SSO** , ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de integratiepagina van de toepassing **ExactCare SSO**, ga naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -96,9 +96,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -124,7 +124,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-exactcare-sso"></a>Eenmalige aanmelding configureren in ExactCare SSO
 
-Als u eenmalige aanmelding wilt configureren in **ExactCare SSO** , moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste, uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van ExactCare SSO](mailto:help@exactcarepharmacy.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren in **ExactCare SSO**, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste, uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van ExactCare SSO](mailto:help@exactcarepharmacy.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-exactcare-sso-test-user"></a>Testgebruiker maken voor ExactCare SSO
 

@@ -4,14 +4,14 @@ description: Meer informatie over het kopiëren van gegevens uit een Cloud of ee
 author: linda33wj
 ms.service: data-factory
 ms.topic: conceptual
-ms.date: 12/18/2020
+ms.date: 03/17/2021
 ms.author: jingwang
-ms.openlocfilehash: 3ee1b1f48d91ba1245c0173d2e00a20778932d35
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 9c274bdfb5854529dbb82bd2d8b7cefdf07390b1
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100367081"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104588899"
 ---
 # <a name="copy-data-from-the-hdfs-server-by-using-azure-data-factory"></a>Gegevens kopiëren van de HDFS-server met behulp van Azure Data Factory
 
@@ -172,7 +172,7 @@ De volgende eigenschappen worden ondersteund voor HDFS onder `storeSettings` ins
 | modifiedDatetimeEnd      | Hetzelfde als hierboven.  
 | enablePartitionDiscovery | Geef voor bestanden die zijn gepartitioneerd op of de partities moeten worden geparseerd uit het bestandspad en voeg deze toe als aanvullende bron kolommen.<br/>Toegestane waarden zijn **False** (standaard) en **waar**. | No                                            |
 | partitionRootPath | Wanneer partitie detectie is ingeschakeld, geeft u het absolute hoofdpad op om gepartitioneerde mappen te lezen als gegevens kolommen.<br/><br/>Als deze niet is opgegeven, wordt standaard<br/>-Als u het bestandspad in de gegevensset of lijst met bestanden op de bron gebruikt, is het basispad het pad dat is geconfigureerd in de gegevensset.<br/>-Wanneer u filter voor de map met Joker tekens gebruikt, is het pad van de partitie hoofdmap het pad vóór het eerste Joker teken.<br/><br/>Als u bijvoorbeeld het pad in gegevensset configureert als ' hoofdmap/map/jaar = 2020/maand = 08/dag = 27 ':<br/>-Als u basispad opgeeft als ' hoofdmap/map/jaar = 2020 ', worden met de Kopieer activiteit nog twee kolommen `month` en `day` met de waarde ' 08 ' en ' 27 ' gegenereerd, naast de kolommen in de bestanden.<br/>-Als het basispad niet is opgegeven, wordt er geen extra kolom gegenereerd. | No                                            |
-| maxConcurrentConnections | Het aantal verbindingen dat gelijktijdig met het opslag archief kan worden verbonden. Geef alleen een waarde op als u de gelijktijdige verbinding met het gegevens archief wilt beperken. | No                                            |
+| maxConcurrentConnections | De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No                                            |
 | ***DistCp-instellingen*** |  | |
 | distcpSettings | De eigenschaps groep die moet worden gebruikt wanneer u HDFS DistCp gebruikt. | No |
 | resourceManagerEndpoint | Het garen-eind punt (nog een andere resource-onderhandelaar) | Ja, als DistCp wordt gebruikt |
@@ -533,7 +533,7 @@ Zie [activiteit verwijderen in azure Data Factory](delete-activity.md)voor meer 
 | resourceManagerEndpoint | Het eind punt van het garen van een andere bron | Ja, als DistCp wordt gebruikt |
 | tempScriptPath | Een mappad dat wordt gebruikt voor het opslaan van het tijdelijke DistCp-opdracht script. Het script bestand wordt gegenereerd door Data Factory en wordt verwijderd nadat de Kopieer taak is voltooid. | Ja, als DistCp wordt gebruikt |
 | distcpOptions | Er zijn aanvullende opties voor de opdracht DistCp. | No |
-| maxConcurrentConnections | Het aantal verbindingen dat gelijktijdig met het opslag archief kan worden verbonden. Geef alleen een waarde op als u de gelijktijdige verbinding met het gegevens archief wilt beperken. | No |
+| maxConcurrentConnections | De bovengrens van gelijktijdige verbindingen die tot het gegevens archief zijn gemaakt tijdens de uitvoering van de activiteit. Geef alleen een waarde op als u gelijktijdige verbindingen wilt beperken.| No |
 
 **Voor beeld: HDFS-bron in Kopieer activiteit met behulp van DistCp**
 

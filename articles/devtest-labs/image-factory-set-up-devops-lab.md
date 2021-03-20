@@ -4,10 +4,10 @@ description: In dit artikel worden alle voor bereidingen behandeld die nodig zij
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: fa7050bae1ff8681e04b6ab38220be9eaf38a64a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85476135"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Een fabrieksinstallatiekopie uitvoeren vanuit Azure DevOps
@@ -26,7 +26,7 @@ De volgende stap bij het aannemen van de image Factory voor uw team is om te beg
     - Configuratie. De invoer voor de image Factory
         - GoldenImages. Deze map bevat JSON-bestanden die de definities van aangepaste installatie kopieën vertegenwoordigen.
         - Labs.jsop. Bestand waarin teams zich registreren voor het ontvangen van specifieke aangepaste installatie kopieën.
-- Scripts. De engine voor de image Factory.
+- Scriptmap. De engine voor de image Factory.
 
 In de artikelen in deze sectie vindt u meer informatie over deze scripts en sjablonen.
 
@@ -94,7 +94,7 @@ De volgende stap is het instellen van de Service-Principal. Dit is een identitei
 De snelste manier om een Service-Principal in te stellen, is door Azure DevOps voor ons te laten doen.
 
 1. Selecteer de **taak** die u zojuist hebt toegevoegd.
-2. Kies **Azure Resource Manager**voor het **verbindings type Azure**.
+2. Kies **Azure Resource Manager** voor het **verbindings type Azure**.
 3. Selecteer de koppeling **beheren** om de Service-Principal in te stellen.
 
 Zie dit [blogbericht](https://devblogs.microsoft.com/devops/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/) voor meer informatie. Wanneer u de koppeling **beheren** selecteert, gaat u naar de juiste plaats in DevOps (tweede scherm afbeelding in het blog bericht) om de verbinding met Azure in te stellen. Zorg ervoor dat u **Azure Resource Manager service-eind punt** kiest wanneer u dit instelt.
@@ -105,7 +105,7 @@ Als u de taak maken selecteert, ziet u alle details in het rechterdeel venster d
 1. Geef eerst de taak Build op: **Create Virtual Machines**.
 2. Kies de **Service-Principal** die u hebt gemaakt door **Azure Resource Manager** te kiezen
 3. Kies het **service-eind punt**.
-4. Selecteer voor **pad**naar script **... (weglatings tekens)** aan de rechter kant.
+4. Selecteer voor **pad** naar script **... (weglatings tekens)** aan de rechter kant.
 5. Navigeer naar **MakeGoldenImageVMs.ps1** script.
 6. Script parameters moeten er als volgt uitzien: `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`
 

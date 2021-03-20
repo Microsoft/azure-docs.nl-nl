@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9d81836b47acb19f624075480aafef74c9c0934c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91306120"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Azure AD Connect synchronisatie: een tweede keer uitvoeren van de installatie wizard
@@ -52,7 +52,7 @@ Met deze optie krijgt u een snel overzicht van de momenteel geconfigureerde opti
 
 ![Pagina met een lijst met alle opties en hun status](./media/how-to-connect-installation-wizard/viewconfig.png)
 
-Klik op **vorige** om terug te gaan. Als u **Afsluiten**selecteert, sluit u de installatie wizard.
+Klik op **vorige** om terug te gaan. Als u **Afsluiten** selecteert, sluit u de installatie wizard.
 
 ## <a name="customize-synchronization-options"></a>Synchronisatie opties aanpassen
 Deze optie wordt gebruikt om wijzigingen aan te brengen in de synchronisatie configuratie. U ziet een subset met opties vanuit het installatiepad van de aangepaste configuratie. U ziet deze optie ook als u in eerste instantie snelle installatie hebt gebruikt.
@@ -94,5 +94,5 @@ Zie [gebruikers aanmelding](plan-connect-user-signin.md#changing-the-user-sign-i
 
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)

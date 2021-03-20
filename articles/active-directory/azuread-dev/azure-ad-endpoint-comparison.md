@@ -14,10 +14,10 @@ ms.reviewer: saeeda, hirsin, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, n
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 8f6170de65ae5e1ca8ecb5f7cc8a78f4f194ac41
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92055287"
 ---
 # <a name="why-update-to-microsoft-identity-platform-v20"></a>Waarom bijwerken naar Microsoft Identity Platform (v2.0)?
@@ -56,7 +56,7 @@ Toestemming van de beheerder die namens een organisatie wordt uitgevoerd, vereis
 
 ## <a name="scopes-not-resources"></a>Bereiken, geen resources
 
-Voor apps die gebruikmaken van het v 1.0-eind punt kan een app zich gedragen als een **resource**of een ontvanger van tokens. Een resource kan een aantal **bereiken** of **oAuth2Permissions** definiëren die het begrijpt, zodat client-apps tokens van die bron kunnen aanvragen voor een bepaalde reeks bereiken. Denk eens aan de Microsoft Graph-API als voor beeld van een resource:
+Voor apps die gebruikmaken van het v 1.0-eind punt kan een app zich gedragen als een **resource** of een ontvanger van tokens. Een resource kan een aantal **bereiken** of **oAuth2Permissions** definiëren die het begrijpt, zodat client-apps tokens van die bron kunnen aanvragen voor een bepaalde reeks bereiken. Denk eens aan de Microsoft Graph-API als voor beeld van een resource:
 
 * Resource-id of `AppID URI` : `https://graph.microsoft.com/`
 * Bereiken, of `oAuth2Permissions` : `Directory.Read` ,, enzovoort `Directory.Write` .
@@ -97,7 +97,7 @@ Voor meer informatie over OAuth 2,0, `refresh_tokens` en `access_tokens` raadple
 
 ### <a name="openid-profile-and-email"></a>OpenID Connect, profile en e-mail
 
-De meest eenvoudige OpenID Connect voor verbinding maken met micro soft Identity platform bieden in de resulterende *id_token*veel informatie over de gebruiker. De claims in een id_token kunnen de naam van de gebruiker, de voorkeurs gebruikersnaam, het e-mail adres, de object-ID en meer bevatten.
+De meest eenvoudige OpenID Connect voor verbinding maken met micro soft Identity platform bieden in de resulterende *id_token* veel informatie over de gebruiker. De claims in een id_token kunnen de naam van de gebruiker, de voorkeurs gebruikersnaam, het e-mail adres, de object-ID en meer bevatten.
 
 De gegevens die door de `openid` scope worden geboden, hebben nu beperkte toegang tot de app. De `openid` Scope staat alleen toe dat uw app zich aanmeldt bij de gebruiker en een app-specifieke id voor de gebruiker ontvangt. Als u persoonlijke gegevens over de gebruiker in uw app wilt ophalen, moet uw app aanvullende machtigingen voor de gebruiker aanvragen. Met twee nieuwe bereiken `email` en `profile` kunt u aanvullende machtigingen aanvragen.
 
@@ -168,4 +168,4 @@ Als u Active Directory Authentication Library (ADAL) in Windows-toepassingen heb
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie vindt u in de [documentatie voor micro soft Identity platform](../develop/index.yml).
+Meer informatie vindt u in de [documentatie over het Microsoft Identity Platform](../develop/index.yml).

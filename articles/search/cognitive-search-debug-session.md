@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.openlocfilehash: f666cc2f9d11b1e05d11ba266897e6fca3cd287e
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92057617"
 ---
 # <a name="debug-sessions-in-azure-cognitive-search"></a>Sessies voor fout opsporing in azure Cognitive Search
@@ -51,13 +51,13 @@ De weer gave **vaardigheids grafiek** biedt een hiërarchische, visuele represen
 
 Als u een vaardigheid in de grafiek selecteert, worden de bijbehorende vaardig heden gemarkeerd, de knoop punten die de invoer hebben en de knoop punten die de uitvoer ervan accepteren. Elk vaardigheids knooppunt geeft het type, de fouten of waarschuwingen en het aantal uitvoeringen weer. In de **vaardigheids grafiek** selecteert u welke vaardigheid u wilt opsporen of uitbreiden. Wanneer u een vaardigheid selecteert, worden de bijbehorende gegevens weer gegeven in het deel venster vaardigheids Details rechts van de grafiek.
 
-> :::image type="content" source="media/cognitive-search-debug/skills-graph.png" alt-text="Een foutopsporingssessie maken":::
+> :::image type="content" source="media/cognitive-search-debug/skills-graph.png" alt-text="Vaardigheids grafiek":::
 
 ## <a name="skill-details"></a>Details van vaardigheid
 
 In het deel venster vaardigheids Details wordt een set met gebieden weer gegeven voor het werken met een specifieke vaardigheid, wanneer die kwalificatie is gemarkeerd in de **vaardigheids grafiek**. U kunt de details van de instellingen van de vaardigheid bekijken en bewerken. De JSON-definitie van de vaardigheid wordt weer gegeven. De details van de uitvoering van de vaardigheid en de fouten en waarschuwingen worden ook weer gegeven. Op het tabblad **vaardigheids instellingen** & **VAARDIGHEIDs-JSON-editor** kunt u de vaardigheid direct bewerken. [`</>`](#expression-evaluator)Hiermee opent u een venster voor het weer geven en bewerken van de expressies van de invoer en uitvoer van de vaardig heden.
 
-Geneste invoer besturings elementen in het venster vaardigheids instellingen kunnen worden gebruikt voor het bouwen van complexe vormen voor projecties, uitvoer veld toewijzingen voor een complex type veld of een invoer voor een kwalificatie. Bij gebruik in combi natie met de **expressie-evaluator**bieden geneste invoer een eenvoudige test en validatie van de opbouw functie voor expressies.
+Geneste invoer besturings elementen in het venster vaardigheids instellingen kunnen worden gebruikt voor het bouwen van complexe vormen voor projecties, uitvoer veld toewijzingen voor een complex type veld of een invoer voor een kwalificatie. Bij gebruik in combi natie met de **expressie-evaluator** bieden geneste invoer een eenvoudige test en validatie van de opbouw functie voor expressies.
 
 ## <a name="skill-execution-history"></a>Vaardigheids uitvoerings geschiedenis
 
@@ -73,7 +73,7 @@ Wanneer u een aangepaste vaardigheid bouwt of een fout opspoort met een aangepas
 
 In het deel venster **verrijkte gegevens structuur** worden de verrijkingen van het document via de vaardig heden weer gegeven, met een gedetailleerde beschrijving van de context voor elke verrijking en de oorspronkelijke vaardigheid. De **expressie-evaluator** kan ook worden gebruikt om de inhoud van elke verrijking weer te geven.
 
-> :::image type="content" source="media/cognitive-search-debug/enriched-data-structure-display.png" alt-text="Een foutopsporingssessie maken":::
+> :::image type="content" source="media/cognitive-search-debug/enriched-data-structure-display.png" alt-text="Verrijkte gegevensstructuur":::
 
 ## <a name="expression-evaluator"></a>Expressie-Evaluator
 

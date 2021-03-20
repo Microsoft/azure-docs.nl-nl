@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe een Lab-account beheerder Lab-m
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 3b6c2d83414b1abc763755fbf15402b122c2186b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85444196"
 ---
 # <a name="allow-lab-creator-to-pick-location-for-the-lab-in-azure-lab-services"></a>Lab Creator toestaan locatie voor het lab in Azure Lab Services te kiezen
@@ -16,7 +16,7 @@ In Azure Lab Services kan de eigenaar van een Lab-account Lab-makers (docenten) 
 Als eigenaar van een Lab-account kunt u de optie Lab- **Maker toestaan locatie van Lab kiezen** selecteren wanneer u een Lab-account maakt en nadat u het lab-account (of een bestaand Lab-account) hebt gemaakt. 
 
 ## <a name="at-the-time-of-lab-account-creation"></a>Op het moment dat het lab-account wordt gemaakt
-Wanneer u een Lab-account maakt, wordt deze optie weer gegeven op het eerste scherm (tabblad**basis beginselen** ). 
+Wanneer u een Lab-account maakt, wordt deze optie weer gegeven op het eerste scherm (tabblad **basis beginselen** ). 
 
 ![De optie inschakelen op het moment dat het lab wordt gemaakt](./media/allow-lab-creator-pick-lab-location/create-lab-account.png)
 
@@ -41,7 +41,7 @@ In dit scenario hebt u niet de optie Lab- **Maker toestaan om Lab-locatie te sel
 
 ![Geen Lab-locatie](./media/allow-lab-creator-pick-lab-location/lab-no-location.png)
 
-Vervolgens zien Lab-makers (docenten) geen optie voor het kiezen van een locatie voor het lab. Ze zien de prijs per uur voor elke beschik bare grootte optie. Wanneer ze een lab maken, wordt deze gemaakt in een Azure-regio op dezelfde locatie als de Azure-regio waarin hun Lab-account zich bevindt. Als het lab-account zich bijvoorbeeld in **VS West**bevindt, wordt het lab mogelijk in **Zuid-Centraal VS** gemaakt, maar niet in **Canada-Oost**. We garanderen niets over de regio die we kiezen op de locatie. Als er momenteel een grootte is beperkt, wordt in de ontwikkel aars van het lab een selectie vakje weer geven waarin de grootten worden weer geven die normaal gesp roken worden ondersteund, maar die momenteel niet beschikbaar zijn. 
+Vervolgens zien Lab-makers (docenten) geen optie voor het kiezen van een locatie voor het lab. Ze zien de prijs per uur voor elke beschik bare grootte optie. Wanneer ze een lab maken, wordt deze gemaakt in een Azure-regio op dezelfde locatie als de Azure-regio waarin hun Lab-account zich bevindt. Als het lab-account zich bijvoorbeeld in **VS West** bevindt, wordt het lab mogelijk in **Zuid-Centraal VS** gemaakt, maar niet in **Canada-Oost**. We garanderen niets over de regio die we kiezen op de locatie. Als er momenteel een grootte is beperkt, wordt in de ontwikkel aars van het lab een selectie vakje weer geven waarin de grootten worden weer geven die normaal gesp roken worden ondersteund, maar die momenteel niet beschikbaar zijn. 
 
 ## <a name="in-virtual-network-and-location-selection-isnt-allowed"></a>In het virtuele netwerk en de locatie electie is niet toegestaan
 In dit scenario is de optie **Lab Creator toestaan voor Lab-locatie selecteren** uitgeschakeld, omdat u een virtueel peer netwerk hebt geselecteerd voor het lab-account. Vervolgens zien Lab-makers hetzelfde scherm als bij de vorige optie. Omdat alle virtuele machines zich in dezelfde Azure-regio als het virtuele netwerk moeten bevinden, wordt het lab gemaakt in de Azure-regio waarin het virtuele netwerk zich bevindt. Als de betreffende regio is beperkt voor een grootte, wordt de grootte weer gegeven als niet beschikbaar. 
@@ -57,7 +57,7 @@ Als een locatie beperkt is, wordt deze niet standaard weer gegeven in de lijst. 
 
 ![Niet-beschik bare locaties weer geven](./media/allow-lab-creator-pick-lab-location/show-unavailable-locations.png)
 
-## <a name="cost"></a>Cost
+## <a name="cost"></a>Kosten
 Eerdere prijzen zijn gebaseerd op de grootte van de virtuele machine die u kiest voor het lab. Nu is de prijs gebaseerd op de combi natie van besturings systeem (OS), grootte en locatie. 
 
 ## <a name="next-steps"></a>Volgende stappen

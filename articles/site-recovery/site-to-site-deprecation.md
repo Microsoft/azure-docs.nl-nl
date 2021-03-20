@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/25/2020
 ms.author: sharrai
 ms.openlocfilehash: 9ffe7a3158b1de6828350947dcf81ef41d08708d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87421838"
 ---
 # <a name="deprecation-of-disaster-recovery-between-customer-managed-sites-with-vmm-using-azure-site-recovery"></a>Afschaffing van herstel na nood gevallen tussen door de klant beheerde sites (met VMM) met behulp van Azure Site Recovery
@@ -57,8 +57,8 @@ Voer de volgende stappen uit als u ervoor kiest om te gaan met optie 1:
 
 Als u ervoor kiest om te gaan met optie 2 van Hyper-V replica, voert u de volgende stappen uit:
 
-1. Klik in **beveiligde items**  >  **gerepliceerde items**met de rechter muisknop op de machine > **Schakel replicatie uit**.
-2. Selecteer **verwijderen**in **replicatie uitschakelen**.
+1. Klik in **beveiligde items**  >  **gerepliceerde items** met de rechter muisknop op de machine > **Schakel replicatie uit**.
+2. Selecteer **verwijderen** in **replicatie uitschakelen**.
 
     Hiermee wordt het gerepliceerde item verwijderd uit de Azure Site Recovery (facturering wordt gestopt). De replicatie Configuratie op de on-premises virtuele machine **wordt niet** opgeschoond. 
 

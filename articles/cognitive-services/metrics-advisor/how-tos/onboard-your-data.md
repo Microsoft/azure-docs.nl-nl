@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/14/2020
 ms.author: mbullwin
 ms.openlocfilehash: fe3b87c733f54d8bd52c4d973977e3c8cbfefe19
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92043194"
 ---
 # <a name="how-to-onboard-your-metric-data-to-metrics-advisor"></a>Instructies: uw metrische gegevens opwaarderen naar metrische Advisor
@@ -45,7 +45,7 @@ We raden u aan twee benaderingen te nemen om te voor komen dat er gedeeltelijke 
 
 ## <a name="add-a-data-feed-using-the-web-based-workspace"></a>Een gegevensfeed toevoegen via de werk ruimte op het web
 
-Klik op **aan de slag**nadat u zich hebt aangemeld bij uw gegevens adviseur-Portal en uw werk ruimte hebt gekozen. Klik vervolgens op de hoofd pagina van de werk ruimte op **gegevensfeed toevoegen** in het menu links.
+Klik op **aan de slag** nadat u zich hebt aangemeld bij uw gegevens adviseur-Portal en uw werk ruimte hebt gekozen. Klik vervolgens op de hoofd pagina van de werk ruimte op **gegevensfeed toevoegen** in het menu links.
 
 ### <a name="add-connection-settings"></a>Verbindings instellingen toevoegen
 
@@ -80,9 +80,9 @@ Als de tijds tempel van een gegevens punt wordt wegge laten, gebruikt metrische 
 |**Dimensie**     | Categorische waarden. Een combinatie van verschillende waarden identificeert een bepaalde tijdreeks met één dimensie, bijvoorbeeld: land, taal, tenant. U kunt nul of meer kolommen als dimensies selecteren. Opmerking: Wees voorzichtig bij het selecteren van een niet-teken reeks kolom als een dimensie. | Optioneel.        |
 |**Negeren**     | De geselecteerde kolom negeren.        | Optioneel. Zie de onderstaande tekst.       |
 
-Als u kolommen wilt negeren, raden we u aan om uw query of gegevens bron bij te werken om die kolommen uit te sluiten. U kunt kolommen ook negeren met **kolommen negeren** en vervolgens **negeren** voor de specifieke kolommen. Als een kolom een dimensie moet zijn en per ongeluk als *genegeerd*wordt ingesteld, kan het zijn dat metrische gegevens door Advisor worden opgenomen. Stel bijvoorbeeld dat de gegevens van uw query als volgt zijn:
+Als u kolommen wilt negeren, raden we u aan om uw query of gegevens bron bij te werken om die kolommen uit te sluiten. U kunt kolommen ook negeren met **kolommen negeren** en vervolgens **negeren** voor de specifieke kolommen. Als een kolom een dimensie moet zijn en per ongeluk als *genegeerd* wordt ingesteld, kan het zijn dat metrische gegevens door Advisor worden opgenomen. Stel bijvoorbeeld dat de gegevens van uw query als volgt zijn:
 
-| Rij-ID | Tijdstempel | Land | Taal | Inkomsten |
+| Rij-ID | Tijdstempel | Land/regio | Taal | Inkomsten |
 | --- | --- | --- | --- | --- |
 | 1 | 2019/11/10 | China | ZH-CN | 10.000 |
 | 2 | 2019/11/10 | China | EN-US | 1000 |
@@ -99,7 +99,7 @@ Als *land* een dimensie is en de *taal* wordt ingesteld op *genegeerd*, hebben d
 
 Met metrische gegevens adviseur kunnen automatisch aggregatie (bijvoorbeeld SUM, MAX, MIN) worden uitgevoerd voor elke dimensie tijdens opname. vervolgens wordt er een hiërarchie gemaakt die wordt gebruikt in hoofd case analyses en andere diagnostische functies. 
 
-Neem de volgende scenario's:
+Denk eens na over de volgende scenario's:
 
 * *Ik hoef niet de rollup-analyse voor mijn gegevens op te nemen.*
 
@@ -107,9 +107,9 @@ Neem de volgende scenario's:
 
 * *Mijn gegevens zijn al samengevouwen en de dimensie waarde wordt vertegenwoordigd door: NULL of leeg (standaard), alleen NULL, overige.*
 
-    Met deze optie wordt aangegeven dat metrische gegevens niet in het totaal hoeven te worden samengevouwen omdat de rijen al zijn opgeteld. Als u bijvoorbeeld *alleen null*selecteert, wordt de tweede gegevensrij in het onderstaande voor beeld gezien als aggregatie van alle landen en taal en *-US*. de vierde gegevensrij met een lege waarde voor het *land* zal echter worden gezien als een gewone rij die kan duiden op onvolledige gegevens.
+    Met deze optie wordt aangegeven dat metrische gegevens niet in het totaal hoeven te worden samengevouwen omdat de rijen al zijn opgeteld. Als u bijvoorbeeld *alleen null* selecteert, wordt de tweede gegevensrij in het onderstaande voor beeld gezien als aggregatie van alle landen en taal en *-US*. de vierde gegevensrij met een lege waarde voor het *land* zal echter worden gezien als een gewone rij die kan duiden op onvolledige gegevens.
     
-    | Land | Taal | Inkomsten |
+    | Land/regio | Taal | Inkomsten |
     |---------|----------|--------|
     | China   | ZH-CN    | 10.000  |
     | Null  | EN-US    | 999999 |
@@ -123,16 +123,16 @@ Neem de volgende scenario's:
     Stel bijvoorbeeld dat u een set Time Series hebt waarmee verkoop cijfers worden aangegeven met de dimensie (land, regio). Voor een bepaalde tijds tempel kan het er als volgt uitzien:
 
 
-    | Land       | Regio           | Verkoop |
+    | Land       | Region           | Verkoop |
     |---------------|------------------|-------|
     | Canada        | Alberta          | 100   |
     | Canada        | Brits-Columbia | 500   |
     | Verenigde Staten | Montana          | 100   |
 
 
-    Nadat u automatisch samen vouwen met *Sum*hebt ingeschakeld, worden de dimensie combinaties door Advisor berekend en worden de metrische gegevens tijdens het opnemen van de opname som. Het resultaat kan zijn:
+    Nadat u automatisch samen vouwen met *Sum* hebt ingeschakeld, worden de dimensie combinaties door Advisor berekend en worden de metrische gegevens tijdens het opnemen van de opname som. Het resultaat kan zijn:
 
-    | Land       | Regio           | Verkoop |
+    | Land       | Region           | Verkoop |
     | ------------ | --------------- | ---- |
     | Canada        | Alberta          | 100   |
     | NULL          | Alberta          | 100   |
@@ -188,12 +188,12 @@ Details van opname fout controleren:
 2. Klik op **status** en vervolgens op **mislukt** of **fout**.
 3. Beweeg de muis aanwijzer over een mislukte opname en Bekijk het detail bericht dat wordt weer gegeven.
 
-:::image type="content" source="../media/datafeeds/check-failed-ingestion.png" alt-text="Voortgangs balk opname":::
+:::image type="content" source="../media/datafeeds/check-failed-ingestion.png" alt-text="Mislukte opname controleren":::
 
 Een *mislukte* status geeft aan dat de opname van deze gegevens bron later opnieuw wordt uitgevoerd.
 Een *fout* status geeft aan dat de gegevens bron niet opnieuw wordt geprobeerd door Advisor. Als u gegevens opnieuw wilt laden, moet u een backfill/opnieuw laden hand matig activeren.
 
-U kunt ook de voortgang van een opname opnieuw laden door op **voortgang vernieuwen**te klikken. Nadat de gegevens opname is voltooid, kunt u op metrische waarden klikken en de resultaten van de anomalie detectie controleren.
+U kunt ook de voortgang van een opname opnieuw laden door op **voortgang vernieuwen** te klikken. Nadat de gegevens opname is voltooid, kunt u op metrische waarden klikken en de resultaten van de anomalie detectie controleren.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Uw gegevensfeeds beheren](manage-data-feeds.md)

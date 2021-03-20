@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 7323ae611431e1d91fd1a8471914be388fcc4712
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92019508"
 ---
 # <a name="azure-media-services-fragmented-mp4-live-ingest-specification"></a>Azure Media Services gefragmenteerde MP4 Live opname-specificatie 
@@ -44,7 +44,7 @@ De telegram indeling voor live streaming-opname die in dit document wordt bespro
 ### <a name="live-ingest-format-definitions"></a>Definities van Live opname-indelingen
 In de volgende lijst worden speciale opmaak definities beschreven die van toepassing zijn op Live-opname in Azure Media Services:
 
-1. De vakken **ftyp**, **Live server manifest**en **Moov** moeten bij elke aanvraag (http post) worden verzonden. Deze vakken moeten aan het begin van de stroom worden verzonden en telkens wanneer het coderings programma opnieuw verbinding moet maken om de stroom opname te hervatten. Zie sectie 6 in [1] voor meer informatie.
+1. De vakken **ftyp**, **Live server manifest** en **Moov** moeten bij elke aanvraag (http post) worden verzonden. Deze vakken moeten aan het begin van de stroom worden verzonden en telkens wanneer het coderings programma opnieuw verbinding moet maken om de stroom opname te hervatten. Zie sectie 6 in [1] voor meer informatie.
 1. Sectie 3.3.2 in [1] definieert een optioneel vak met de naam **StreamManifestBox** voor Live-opname. Als gevolg van de routerings logica van de Azure load balancer, is het gebruik van dit vak afgeschaft. Het vak mag niet aanwezig zijn bij het opnemen in Media Services. Als dit vak aanwezig is, wordt het door Media Services op de achtergrond genegeerd.
 1. Het vak **TrackFragmentExtendedHeaderBox** gedefinieerd in 3.2.3.2 in [1] moet voor elk fragment aanwezig zijn.
 1. Versie 2 van het vak **TRACKFRAGMENTEXTENDEDHEADERBOX** moet worden gebruikt voor het genereren van media segmenten met identieke url's in meerdere data centers. Het veld fragment index is vereist voor de failover van meerdere data centers op basis van op index gebaseerde streaming-indelingen, zoals Apple HLS en MPEG-DASH op basis van index. Als u failover tussen meerdere data centers mogelijk wilt maken, moet de fragment index worden gesynchroniseerd over verschillende coderings Programma's en met 1 worden verhoogd voor elk volgend media fragment, zelfs bij het opnieuw opstarten of mislukken van een encoder.
@@ -54,7 +54,7 @@ In de volgende lijst worden speciale opmaak definities beschreven die van toepas
 1. De time Stamps en indexen van MP4-fragmenten (**TrackFragmentExtendedHeaderBox** `fragment_ absolute_ time` en `fragment_index` ) moeten in oplopende volg orde arriveren. Hoewel Media Services robuust is voor dubbele fragmenten, heeft het beperkte mogelijkheid om fragmenten te wijzigen op basis van de media tijdlijn.
 
 ## <a name="4-protocol-format--http"></a>4. Protocol-indeling – HTTP
-In ISO gefragmenteerde op MP4 gebaseerde Live-opname voor Media Services gebruikt een standaard langlopende HTTP POST-aanvraag voor het verzenden van gecodeerde media gegevens die in gefragmenteerde MP4-indeling naar de service zijn verpakt. Elk HTTP POST-bericht verzendt een volledig gefragmenteerde MP4 Bitstream (stream), beginnend vanaf het begin met koptekst vakken (**ftyp**, **Live server-manifest Box**en **Moov** ), en gaat verder met een reeks fragmenten (**moof** -en **mdat** -vakken). Zie voor de URL-syntaxis voor de HTTP POST-aanvraag sectie 9,2 in [1]. Een voor beeld van de POST-URL is: 
+In ISO gefragmenteerde op MP4 gebaseerde Live-opname voor Media Services gebruikt een standaard langlopende HTTP POST-aanvraag voor het verzenden van gecodeerde media gegevens die in gefragmenteerde MP4-indeling naar de service zijn verpakt. Elk HTTP POST-bericht verzendt een volledig gefragmenteerde MP4 Bitstream (stream), beginnend vanaf het begin met koptekst vakken (**ftyp**, **Live server-manifest Box** en **Moov** ), en gaat verder met een reeks fragmenten (**moof** -en **mdat** -vakken). Zie voor de URL-syntaxis voor de HTTP POST-aanvraag sectie 9,2 in [1]. Een voor beeld van de POST-URL is: 
 
 `http://customer.channel.mediaservices.windows.net/ingest.isml/streams(720p)`
 
@@ -63,7 +63,7 @@ Hier volgen de gedetailleerde vereisten:
 
 1. Het coderings programma moet de uitzending starten door een HTTP POST-aanvraag te verzenden met een lege "Body" (lengte van nul) door gebruik te maken van dezelfde opname-URL. Op deze manier kan het coderings programma snel detecteren of het live opname-eind punt geldig is, en als er verificatie of andere voor waarden vereist zijn. Per HTTP-protocol kan de server een HTTP-antwoord niet terugsturen totdat de volledige aanvraag, inclusief de hoofd tekst, is ontvangen. Gezien het langdurige karakter van een live-gebeurtenis, zonder deze stap, kan het coderings programma mogelijk geen fouten detecteren totdat alle gegevens zijn verzonden.
 1. Het coderings programma moet eventuele fouten of authenticatie problemen verwerken vanwege (1). Als (1) met een 200-antwoord slaagt, kunt u door gaan.
-1. Het coderings programma moet een nieuwe HTTP POST-aanvraag met de gefragmenteerde MP4-stroom starten. De payload moet beginnen met de koptekst vakken, gevolgd door fragmenten. Houd er rekening mee dat de vakken **ftyp**, **Live server manifest**en **Moov** (in deze volg orde) moeten worden verzonden met elke aanvraag, zelfs als het coderings programma opnieuw moet worden verbonden, omdat de vorige aanvraag vóór het einde van de stroom is beëindigd. 
+1. Het coderings programma moet een nieuwe HTTP POST-aanvraag met de gefragmenteerde MP4-stroom starten. De payload moet beginnen met de koptekst vakken, gevolgd door fragmenten. Houd er rekening mee dat de vakken **ftyp**, **Live server manifest** en **Moov** (in deze volg orde) moeten worden verzonden met elke aanvraag, zelfs als het coderings programma opnieuw moet worden verbonden, omdat de vorige aanvraag vóór het einde van de stroom is beëindigd. 
 1. Het coderings programma moet gesegmenteerde overdrachts codering gebruiken voor het uploaden, omdat het onmogelijk is om de volledige lengte van de inhoud van de live-gebeurtenis te voors pellen.
 1. Wanneer de gebeurtenis zich voordoet, moet het coderings programma, na het verzenden van het laatste fragment, de gesegmenteerde overdrachts coderings bericht sequentie zonder problemen beëindigen (de meeste HTTP-client stacks worden automatisch verwerkt). Het coderings programma moet wachten tot de service de laatste reactie code heeft geretourneerd en vervolgens de verbinding verbreken. 
 1. Het coderings programma mag het `Events()` zelfstandige naam woord niet gebruiken, zoals beschreven in 9,2 in [1] voor Live opname in Media Services.
@@ -159,7 +159,7 @@ De volgende stappen zijn een aanbevolen implementatie voor opname van sparse tra
 
 1. Maak een afzonderlijke gefragmenteerde MP4-bitstream die alleen sparse tracks bevat zonder audio-en video-tracks.
 1. In het **manifest van de live server** zoals gedefinieerd in sectie 6 in [1], gebruikt u de para meter *parentTrackName* om de naam van het bovenliggende spoor op te geven. Zie sectie 4.2.1.2.1.2 in [1] voor meer informatie.
-1. In het **vak Live server-manifest**moet **manifestOutput** zijn ingesteld op **True**.
+1. In het **vak Live server-manifest** moet **manifestOutput** zijn ingesteld op **True**.
 1. Gezien de zeldzame aard van de signaal gebeurtenis, wordt het volgende aangeraden:
    
     a. Aan het begin van de live-gebeurtenis verzendt het coderings programma de oorspronkelijke koptekst vakken naar de service, waardoor de service de sparse track in het client manifest kan registreren.

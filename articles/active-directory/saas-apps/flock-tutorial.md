@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: ae3ebdbc642ce8bf60a8caf35b8da0c8e16c5a87
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92453214"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flock"></a>Zelfstudie: Azure Active Directory-integratie met Flock
@@ -49,11 +49,11 @@ Om de integratie van Flock in Azure AD te configureren, moet u Flock vanuit de g
 
 **Als u Flock wilt toevoegen vanuit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,22 +61,22 @@ Om de integratie van Flock in Azure AD te configureren, moet u Flock vanuit de g
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Flock** , selecteer **Flock** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Flock**, selecteer **Flock** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Flock in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Flock configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Flock configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Flock tot stand is gebracht.
 
 Om eenmalige aanmelding van Azure AD te configureren en testen met Flock, moet u de volgende procedures uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding bij Flock configureren](#configure-flock-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Eenmalige aanmelding bij Flock configureren](#configure-flock-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Flock maken](#create-flock-test-user)** : als u een tegenhanger van Britta Simon in Flock wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Flock maken](#create-flock-test-user)**: als u een tegenhanger van Britta Simon in Flock wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met Flock:
 
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Flock** .
+1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Flock**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,7 +126,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 1. Meld u in een ander browservenster als beheerder aan bij de bedrijfssite van Flock.
 
-2. Selecteer het tabblad **Verificatie** in het linkernavigatievenster en selecteer vervolgens **SAML-verificatie** .
+2. Selecteer het tabblad **Verificatie** in het linkernavigatievenster en selecteer vervolgens **SAML-verificatie**.
 
     ![Schermopname met het tabblad Verificatie met S A M L-verificatie geselecteerd.](./media/flock-tutorial/configure1.png)
 
@@ -138,15 +138,15 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
     b. Plak in het tekstvak **URL van id-provider** de waarde van de **Azure Ad-id** die u hebt gekopieerd uit de Azure-portal.
 
-    c. Open in de Azure-portal het gedownloade **Base64-certificaat** in kladblok en plak de inhoud in het tekstvak **Openbaar certificaat** .
+    c. Open in de Azure-portal het gedownloade **Base64-certificaat** in kladblok en plak de inhoud in het tekstvak **Openbaar certificaat**.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -165,25 +165,25 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Flock.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Flock** .
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Flock**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst met toepassingen **Flock** .
+2. Selecteer in de lijst met toepassingen **Flock**.
 
     ![De Flock-link in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -191,7 +191,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-flock-test-user"></a>Testgebruiker voor Flock maken
 
@@ -205,11 +205,11 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Flock, moeten ze wo
 
     ![Schermopname met Team beheren geselecteerd.](./media/flock-tutorial/user1.png)
 
-3. Klik op het tabblad **Lid toevoegen** en selecteer vervolgens **Teamleden** .
+3. Klik op het tabblad **Lid toevoegen** en selecteer vervolgens **Teamleden**.
 
     ![Schermopname met het tabblad Lid toevoegen en Teamleden geselecteerd.](./media/flock-tutorial/user2.png)
 
-4. Voer het e-mailadres van de gebruiker, bijvoorbeeld **Brittasimon\@contoso.com** , en selecteer vervolgens **Gebruikers toevoegen** .
+4. Voer het e-mailadres van de gebruiker, bijvoorbeeld **Brittasimon\@contoso.com**, en selecteer vervolgens **Gebruikers toevoegen**.
 
     ![Werknemer toevoegen](./media/flock-tutorial/user3.png)
 

@@ -9,10 +9,10 @@ ms.date: 10/13/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 5e84a679f0bc26b701dc1d51db3605c452675ea3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96545278"
 ---
 # <a name="string-functions-azure-cosmos-db"></a>Teken reeks functies (Azure Cosmos DB)
@@ -20,7 +20,7 @@ ms.locfileid: "96545278"
 
 Met de teken reeks functies kunt u bewerkingen uitvoeren op teken reeksen in Azure Cosmos DB.
 
-## <a name="functions"></a>Functies
+## <a name="functions"></a>Functions
 
 De volgende scalaire functies voeren een bewerking uit op een invoer waarde voor teken reeksen en retour neren een teken reeks, een numerieke of Booleaanse waarde:
   
@@ -29,13 +29,13 @@ De volgende scalaire functies voeren een bewerking uit op een invoer waarde voor
 * [ENDSWITH](sql-query-endswith.md)
 * [INDEX_OF](sql-query-index-of.md)
 * [LEFT](sql-query-left.md)
-* [LANGE](sql-query-length.md)
+* [LENGTH](sql-query-length.md)
 * [LOWER](sql-query-lower.md)
 * [LTRIM](sql-query-ltrim.md)
 * [REGEXMATCH](sql-query-regexmatch.md)
 * [REPLACE](sql-query-replace.md)
 * [REPLICEREN](sql-query-replicate.md)
-* [REVERSE](sql-query-reverse.md)
+* [OMGEKEERDE](sql-query-reverse.md)
 * [RIGHT](sql-query-right.md)
 * [RTRIM](sql-query-rtrim.md)
 * [STARTSWITH](sql-query-startswith.md)
@@ -44,7 +44,7 @@ De volgende scalaire functies voeren een bewerking uit op een invoer waarde voor
 * [StringToNull](sql-query-stringtonull.md)
 * [StringToNumber](sql-query-stringtonumber.md)
 * [StringToObject](sql-query-stringtoobject.md)
-* [SUBSTRING](sql-query-substring.md)
+* [SUBTEKENREEKS](sql-query-substring.md)
 * [ToString](sql-query-tostring.md)
 * [TRIM](sql-query-trim.md)
 * [UPPER](sql-query-upper.md)

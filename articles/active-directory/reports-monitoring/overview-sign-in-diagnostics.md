@@ -1,6 +1,6 @@
 ---
-title: Wat zijn diagnostische aanmeldingsgegevens in Azure AD? | Microsoft Docs
-description: Biedt een algemeen overzicht van de diagnostische aanmeldingsgegevens in Azure AD.
+title: Wat is de diagnostische aanmelding voor Azure Active Directory?
+description: Biedt een algemeen overzicht van de diagnostische aanmelding in Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -17,170 +17,161 @@ ms.date: 12/15/2020
 ms.author: markvi
 ms.reviewer: tspring
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e85de1edd94a0430a4b28b332d9e43b967afba76
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: cdef3e1f1a60c9eb0c751855837e9cbe77e015e9
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608915"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "98572286"
 ---
-# <a name="what-is-sign-in-diagnostic-in-azure-ad"></a>Wat zijn diagnostische aanmeldingsgegevens in Azure AD?
+# <a name="what-is-the-sign-in-diagnostic-in-azure-ad"></a>Wat is de diagnostische aanmelding in azure AD?
 
-Azure AD biedt een flexibel beveiligingsmodel waarmee u kunt beheren wat gebruikers kunnen doen met de beheerde resources. Toegang tot deze resources is niet alleen afhankelijk van **wie** u bent, maar ook van **hoe** u de resources opent. Doorgaans gaat flexibiliteit gepaard met een zekere mate van complexiteit, vanwege het aantal configuratieopties dat u hebt. Complexiteit kan het risico op fouten verhogen.
+Azure Active Directory (Azure AD) biedt u een flexibel beveiligings model om te bepalen wat gebruikers kunnen doen met beheerde resources. De toegang tot deze resources wordt niet alleen bepaald door *wie* ze zijn, maar ook *door de* toegang tot deze bronnen. Normaal gesp roken bevat een flexibel model een zekere mate van complexiteit vanwege het aantal configuratie opties dat u hebt. Complexiteit kan het risico op fouten verhogen.
 
-Als IT-beheerder hebt u een oplossing nodig waarmee u het juiste inzichtniveau krijgt in de activiteiten in uw systeem, zodat u gemakkelijk problemen kunt vaststellen en oplossen wanneer deze zich voordoen. De diagnostische aanmeldingsgegevens voor Azure AD zijn een voorbeeld van een dergelijke oplossing. Gebruik de diagnostische gegevens om te analyseren wat er is gebeurd tijdens een aanmelding, en welke acties u kunt ondernemen om problemen op te lossen zonder dat u hiervoor Microsoft-ondersteuning hoeft in te schakelen.
+Als IT-beheerder hebt u een oplossing nodig waarmee u inzicht krijgt in de activiteiten in uw systeem. Met deze zicht baarheid kunt u problemen vaststellen en oplossen wanneer deze zich voordoen. De diagnostische aanmelding voor Azure AD is een voor beeld van een dergelijke oplossing. U kunt de diagnose gebruiken om te analyseren wat er is gebeurd tijdens een aanmeldings poging en aanbevelingen te krijgen voor het oplossen van problemen zonder dat hiervoor micro soft-ondersteuning nodig is.
 
 In dit artikel vindt u een overzicht van wat de oplossing doet, en hoe u deze kunt gebruiken.
 
-
 ## <a name="requirements"></a>Vereisten
 
-De diagnostische aanmeldingsgegevens zijn beschikbaar in alle edities van Azure AD.<br> U moet een globale beheerder zijn in Azure AD om deze functie te kunnen gebruiken.
+De diagnostische aanmeldingsgegevens zijn beschikbaar in alle edities van Azure AD.
+
+U moet een globale beheerder zijn in Azure AD om deze functie te kunnen gebruiken.
 
 ## <a name="how-it-works"></a>Uitleg
 
-In Azure AD is het antwoord op een aanmeldingspoging gekoppeld aan **wie** u bent en **hoe** u toegang wilt krijgen tot de tenant. Als beheerder kunt u doorgaans bijvoorbeeld alle aspecten van uw tenant configureren wanneer u zich aanmeldt vanuit uw bedrijfsnetwerk. Het kan echter zo zijn dat u bent geblokkeerd wanneer u zich met hetzelfde account aanmeldt vanuit een niet-vertrouwd netwerk.
- 
+In azure AD is het antwoord op een aanmeldings poging gekoppeld aan *wie* zich aanmeldt en *hoe* ze toegang krijgen tot de Tenant. Een beheerder kan bijvoorbeeld doorgaans alle aspecten van de Tenant configureren wanneer deze zich aanmeldt bij het bedrijfs netwerk. Maar dezelfde gebruiker kan worden geblokkeerd wanneer deze zich aanmeldt met hetzelfde account van een niet-vertrouwd netwerk.
+
 Als gevolg van de grotere flexibiliteit van het systeem om te reageren op een aanmeldingspoging, kan het gebeuren dat u problemen met aanmelden moet oplossen. Met diagnostische aanmeldingsgegevens kunt u:
 
-- Aanmeldingsgegevens analyseren. 
+- Analyseert gegevens van aanmeldings gebeurtenissen.
 
-- Weergeven wat er is gebeurd, en aanbevelingen doen voor het oplossen van problemen. 
+- Hiermee wordt weer gegeven wat er is gebeurd.
+
+- Bevat aanbevelingen voor het oplossen van problemen.
 
 Diagnostische aanmeldingsgegevens voor Azure AD zijn ontworpen om zelf een diagnose uit te voeren wanneer zich fouten voordoen tijdens het aanmelden. Om het diagnostische proces te voltooien, moet u het volgende doen:
 
-![Diagnostische aanmeldingsgegevens - het proces](./media/overview-sign-in-diagnostics/process.png)
- 
-1. **Definiëren** wat het bereik is van de aanmeldingsgebeurtenissen die belangrijk zijn voor u
+![Diagram waarin de diagnostische aanmelding wordt weer gegeven.](./media/overview-sign-in-diagnostics/process.png)
 
-2. **Selecteren** welke aanmelding u wilt beoordelen
+1. Definieer het bereik van de aanmeldings gebeurtenissen die u vindt.
 
-3. Het diagnostische resultaat **beoordelen**
+2. Selecteer de aanmelding die u wilt controleren.
 
-4. Actie **ondernemen**
+3. Bekijk de diagnostische resultaten.
 
- 
+4. Actie ondernemen.
+
 ### <a name="define-scope"></a>Bereik definiëren
 
-Het doel van deze stap is het definiëren van het bereik voor de aanmeldingen die u wilt onderzoeken. Uw bereik is gebaseerd op een gebruiker of id (correlationId, aanvraag-URI) en op een tijdsbereik. Als u het bereik verder wilt beperken, kunt u ook een app-naam opgeven. In Azure AD worden de bereikgegevens gebruikt om de juiste gebeurtenissen voor u te vinden.  
+Het doel van deze stap is het definiëren van het bereik van de aanmeldings gebeurtenissen die moeten worden onderzocht. Uw bereik is gebaseerd op een gebruiker of op een id (correlationId, aanvraag nummer) en een tijds bereik. Als u het bereik verder wilt beperken, kunt u een app-naam opgeven. In Azure AD worden de bereikgegevens gebruikt om de juiste gebeurtenissen voor u te vinden.  
 
 ### <a name="select-sign-in"></a>Aanmelding selecteren  
 
-Op basis van uw zoekcriteria worden in Azure AD alle overeenkomende aanmeldingen opgehaald en weergegeven in een lijstweergave met een verificatieoverzicht. 
+Op basis van uw zoek criteria haalt Azure AD alle overeenkomende aanmeldings gebeurtenissen op en geeft deze weer in een lijst weergave met verificatie samenvatting.
 
-![Verificatieoverzicht](./media/overview-sign-in-diagnostics/authentication-summary.png)
- 
+![Gedeeltelijke scherm opname van de sectie verificatie samenvatting.](./media/overview-sign-in-diagnostics/authentication-summary.png)
+
 U kunt de kolommen aanpassen die in deze weergave te zien zijn.
 
-### <a name="review-diagnostic"></a>Diagnose beoordelen 
+### <a name="review-diagnostic"></a>Diagnose beoordelen
 
-Azure AD biedt u een diagnostisch resultaat voor de geselecteerde aanmeldingsgebeurtenis. 
+Voor de geselecteerde aanmeldings gebeurtenis biedt Azure AD u de diagnostische resultaten.
 
-![Diagnostische resultaten](./media/overview-sign-in-diagnostics/diagnostics-results.png)
+![Gedeeltelijke scherm opname van de sectie met diagnostische resultaten.](./media/overview-sign-in-diagnostics/diagnostics-results.png)
 
- 
-Het resultaat begint met een evaluatie. In de evaluatie wordt in enkele zinnen uitgelegd wat er is gebeurd. De uitleg helpt u om het gedrag van het systeem te begrijpen. 
+Deze resultaten beginnen met een evaluatie, waarin wordt uitgelegd wat er in een paar zinnen is gebeurd. De uitleg helpt u om het gedrag van het systeem te begrijpen.
 
-Als volgende stap krijgt u een overzicht van gerelateerd beleid voor voorwaardelijke toegang dat is toegepast op de geselecteerde aanmelding. Dit onderdeel wordt voltooid met aanbevolen herstelstappen voor het oplossen van het probleem. Omdat het niet altijd mogelijk is om problemen op te lossen zonder extra hulp, kan het openen van een ondersteuningsticket een aanbevolen stap zijn. 
+Vervolgens krijgt u een overzicht van de bijbehorende beleids regels voor voorwaardelijke toegang die zijn toegepast op de geselecteerde aanmeldings gebeurtenis. De diagnostische resultaten bevatten ook aanbevolen herstel stappen om het probleem op te lossen. Omdat het niet altijd mogelijk is om problemen op te lossen zonder meer hulp, is het mogelijk dat een aanbevolen stap een ondersteunings ticket opent.
 
-### <a name="take-action"></a>Actie ondernemen 
+### <a name="take-action"></a>Actie ondernemen
+
 Hier aangekomen beschikt u, als het goed is, over de benodigde informatie om het probleem op te lossen.
-
 
 ## <a name="scenarios"></a>Scenario's
 
-Deze sectie biedt een overzicht van de beschikbare diagnostische scenario's. De volgende scenario's worden geïmplementeerd: 
- 
+De volgende scenario's vallen onder de diagnostische aanmelding:
+
 - Geblokkeerd op basis van beleid voor voorwaardelijke toegang
 
 - Mislukte vanwege voorwaardelijke toegang
 
-- MFA vanwege voorwaardelijke toegang
+- Multi-factor Authentication (MFA) van voorwaardelijke toegang
 
 - MFA vanwege andere vereisten
 
 - Proof-up voor MFA is vereist
 
-- Proof-up voor MFA is vereist, maar de aanmeldingspoging van de gebruiker komt niet vanaf een veilige locatie
+- MFA-proef afdruk vereist (Risk ante locatie van aanmelding)
 
 - Geslaagde aanmelding
 
-
 ### <a name="blocked-by-conditional-access"></a>Geblokkeerd op basis van beleid voor voorwaardelijke toegang
 
-Dit scenario is gebaseerd op een aanmelding die is geblokkeerd vanwege beleid voor voorwaardelijke toegang.
+In dit scenario is een aanmeldings poging geblokkeerd door een beleid voor voorwaardelijke toegang.
 
-![Toegang blokkeren](./media/overview-sign-in-diagnostics/block-access.png)
+![Scherm opname met toegangs configuratie met geselecteerde blok toegang.](./media/overview-sign-in-diagnostics/block-access.png)
 
-De sectie diagnostische gegevens voor dit scenario bevat details over de gebruikersaanmelding en het toegepaste beleid.
-
+De sectie diagnostische gegevens voor dit scenario bevat details over de aanmeldings gebeurtenis van de gebruiker en de toegepaste beleids regels.
 
 ### <a name="failed-conditional-access"></a>Mislukte vanwege voorwaardelijke toegang
 
-Dit scenario is doorgaans het gevolg van een aanmelding die is mislukt omdat niet is voldaan aan de vereisten van beleid voor voorwaardelijke toegang. Enkele typische voorbeelden:
+Dit scenario is doorgaans het gevolg van een aanmeldings poging die is mislukt, omdat niet aan de vereisten van een beleid voor voorwaardelijke toegang is voldaan. Enkele typische voorbeelden:
 
-![Besturingselementen vereisen](./media/overview-sign-in-diagnostics/require-controls.png)
+![Scherm opname met toegangs configuratie met algemene beleids voorbeelden en toegang verlenen geselecteerd.](./media/overview-sign-in-diagnostics/require-controls.png)
 
 - Hybride Azure AD-gekoppeld apparaat vereisen
 
 - Goedgekeurde client-apps vereisen
 
-- Beleid voor app-beveiliging vereisen   
+- Beleid voor app-beveiliging vereisen
 
-
-De sectie diagnostische gegevens voor dit scenario bevat details over de gebruikersaanmelding en het toegepaste beleid.
-
+De sectie diagnostische gegevens voor dit scenario bevat details over de aanmeldings poging van gebruikers en de toegepaste beleids regels.
 
 ### <a name="mfa-from-conditional-access"></a>MFA vanwege voorwaardelijke toegang
 
-Dit scenario is gebaseerd op beleid voor voorwaardelijke toegang waarvoor aanmelden met behulp van meervoudige verificatie is vereist.
+In dit scenario heeft een beleid voor voorwaardelijke toegang de vereiste om zich aan te melden met multi-factor Authentication set.
 
-![Multi-Factor Authentication vereisen](./media/overview-sign-in-diagnostics/require-mfa.png)
+![Scherm opname met toegangs configuratie waarvoor multi-factor Authentication is ingeschakeld.](./media/overview-sign-in-diagnostics/require-mfa.png)
 
-De sectie diagnostische gegevens voor dit scenario bevat details over de gebruikersaanmelding en het toegepaste beleid.
-
-
+De sectie diagnostische gegevens voor dit scenario bevat details over de aanmeldings poging van gebruikers en de toegepaste beleids regels.
 
 ### <a name="mfa-from-other-requirements"></a>MFA vanwege andere vereisten
 
-Dit scenario is gebaseerd op een vereiste voor meervoudige verificatie die niet is afgedwongen op basis van beleid voor voorwaardelijke toegang. Bijvoorbeeld meervoudige verificatie per gebruiker.
+In dit scenario wordt een multi-factor Authentication-vereiste niet afgedwongen door een beleid voor voorwaardelijke toegang. Multi-factor Authentication is bijvoorbeeld per gebruiker.
 
-
-![Meervoudige verificatie per gebruiker vereisen](./media/overview-sign-in-diagnostics/mfa-per-user.png)
-
+![Scherm afbeelding met multi-factor Authentication per gebruikers configuratie.](./media/overview-sign-in-diagnostics/mfa-per-user.png)
 
 De intentie van dit diagnostische scenario is om meer details te bieden over:
 
-- De bron van de onderbreking van meervoudige verificatie. 
-- Het resultaat van de clientinteractie.
+- De bron van de multi-factor Authentication-interrupt
+- Het resultaat van de client interactie
 
-Daarnaast biedt deze sectie ook alle details over de aanmeldingspoging van de gebruiker. 
-
+U kunt ook alle details van de aanmeldings poging van de gebruiker weer geven.
 
 ### <a name="mfa-proof-up-required"></a>Proof-up voor MFA is vereist
 
-Dit scenario is gebaseerd op aanmeldingen die zijn onderbroken vanwege aanvragen om meervoudige verificatie in te stellen. Deze configuratie wordt ook wel 'proof up' genoemd.
+In dit scenario werden aanmeldings pogingen onderbroken door aanvragen voor het instellen van multi-factor Authentication. Deze instelling staat ook bekend als proef afdruk.
 
-Proof-up van meervoudige verificatie vindt plaats wanneer een gebruiker verplicht is meervoudige verificatie te gebruiken, maar deze functie nog niet heeft geconfigureerd. Of als een beheerder heeft bepaald dat de gebruiker deze functie moet configureren.
+Het controle programma voor meervoudige verificatie vindt plaats wanneer een gebruiker is verplicht multi-factor Authentication te gebruiken, maar nog niet is geconfigureerd, of een beheerder de gebruiker heeft verplicht om deze te configureren.
 
-De intentie van dit diagnostische scenario is om aan te geven dat de onderbreking vanwege meervoudige verificatie is bedoeld om de functie te configureren, en de gebruiker te adviseren om de proof-up te voltooien.
+Het doel van dit diagnostische scenario is om aan te tonen dat de multi-factor Authentication-onderbreking is veroorzaakt door een gebrek aan gebruikers configuratie. De aanbevolen oplossing is dat de gebruiker de proef afdruk kan volt ooien.
 
-### <a name="mfa-proof-up-required-from-a-risky-sign-in"></a>Proof up voor MFA vereist vanaf een riskante aanmelding
+### <a name="mfa-proof-up-required-risky-sign-in-location"></a>MFA-proef afdruk vereist (Risk ante locatie van aanmelding)
 
-Dit scenario doet zich voor wanneer aanmeldingen zijn onderbroken vanwege een aanvraag om meervoudige verificatie te configureren via een risicovolle aanmelding. 
+In dit scenario werden aanmeldings pogingen onderbroken door een aanvraag om multi-factor Authentication in te stellen op basis van een Risk ante aanmeldings locatie.
 
-De intentie van dit diagnostische scenario is om aan te geven dat de onderbreking vanwege meervoudige verificatie is bedoeld om de functie te configureren, en de gebruiker te adviseren om de proof-up te voltooien maar dit te doen vanaf een netwerklocatie die geen risico vormt. Als een bedrijfsnetwerk bijvoorbeeld is gedefinieerd als een benoemde locatie, probeert u in plaats hiervan de proof-up uit te voeren vanuit het bedrijfsnetwerk.
+Het doel van dit diagnostische scenario is om aan te tonen dat de multi-factor Authentication-onderbreking is veroorzaakt door een gebrek aan gebruikers configuratie. De aanbevolen oplossing is dat de gebruiker de proef afdruk kan volt ooien, specifiek vanaf een netwerk locatie die niet riskant is.
 
+Als een bedrijfs netwerk bijvoorbeeld is gedefinieerd als een benoemde locatie, moet de gebruiker in plaats daarvan proberen om de controle uit te voeren vanaf het bedrijfs netwerk.
 
 ### <a name="successful-sign-in"></a>Geslaagde aanmelding
 
-Dit scenario is gebaseerd op aanmeldingen die niet zijn onderbroken vanwege voorwaardelijke toegang of meervoudige verificatie.
+In dit scenario worden aanmeldings gebeurtenissen niet onderbroken door voorwaardelijke toegang of multi-factor Authentication.
 
-De intentie van dit diagnostische scenario is om inzicht te bieden in welke info de gebruiker heeft geleverd tijdens de aanmelding als er sprake was van beleid voor voorwaardelijke toegang dat moest worden toegepast, of van geconfigureerde meervoudige verificatie die de gebruikersaanmelding had moeten onderbreken.
-
-
+Dit diagnostische scenario bevat details over gebruikers aanmeld gebeurtenissen die naar verwachting worden onderbroken vanwege beleid voor voorwaardelijke toegang of multi-factor Authentication.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Wat zijn Azure Active Directory-rapporten?](overview-reports.md)
-* [Wat is Azure Active Directory-controle?](overview-monitoring.md)
+- [Wat zijn Azure Active Directory-rapporten?](overview-reports.md)
+- [Wat is Azure Active Directory-controle?](overview-monitoring.md)

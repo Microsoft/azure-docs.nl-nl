@@ -11,10 +11,10 @@ ms.date: 02/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: eaf58b964517162ee7f7eb925e1e64830eedc087
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85202548"
 ---
 # <a name="date-claims-transformations"></a>Datum claim transformaties
@@ -27,7 +27,7 @@ In dit artikel vindt u voor beelden van het gebruik van de datum claim transform
 
 Controleert of een datum-en tijd claim (teken reeks gegevens type) later is dan een tweede datum en tijd claim (teken reeks gegevens type) en genereert een uitzonde ring.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | leftOperand | tekenreeks | Type van de eerste claim, dat later moet zijn dan de tweede claim. |
 | Input claim | rightOperand | tekenreeks | Tweede claim type, dat eerder moet zijn dan de eerste claim. |
@@ -89,9 +89,9 @@ Het zelfondertekende technische profiel aanroept het technische profiel voor val
 
 Hiermee wordt een **datum** claim type geconverteerd naar een datum **/tijd** -claim type. De claim transformatie converteert de tijd notatie en voegt 12:00:00 AM toe aan de datum.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
-| Input claim | Input claim | datum | Het claim type dat moet worden geconverteerd. |
+| Input claim | Input claim | date | Het claim type dat moet worden geconverteerd. |
 | Output claim | Output claim | dateTime | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen. |
 
 In het volgende voor beeld wordt de conversie van de claim `dateOfBirth` (datum gegevens type) naar een andere claim `dateOfBirthWithTime` (gegevens type datetime) gedemonstreerd.
@@ -118,10 +118,10 @@ In het volgende voor beeld wordt de conversie van de claim `dateOfBirth` (datum 
 
 Converteert een datum **/tijd** -claim type naar een **date** claim type. De claim transformatie verwijdert de tijd notatie van de datum.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | Input claim | dateTime | Het claim type dat moet worden geconverteerd. |
-| Output claim | Output claim | datum | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen. |
+| Output claim | Output claim | date | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen. |
 
 In het volgende voor beeld wordt de conversie van de claim `systemDateTime` (datetime-gegevens type) naar een andere claim `systemDate` (gegevens type datum) gedemonstreerd.
 
@@ -147,7 +147,7 @@ In het volgende voor beeld wordt de conversie van de claim `systemDateTime` (dat
 
 De huidige UTC-datum en-tijd ophalen en de waarde toevoegen aan een claim type.
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Output claim | currentDateTime | dateTime | Het claim type dat is geproduceerd nadat deze ClaimsTransformation is aangeroepen. |
 
@@ -168,7 +168,7 @@ De huidige UTC-datum en-tijd ophalen en de waarde toevoegen aan een claim type.
 
 Bepalen of een datum/tijd later, eerder of gelijk aan een andere dateTime is. Het resultaat is een nieuwe Boolean claim type Boole met de waarde `true` of `false` .
 
-| Item | TransformationClaimType | Gegevenstype | Opmerkingen |
+| Item | TransformationClaimType | Gegevenstype | Notities |
 | ---- | ----------------------- | --------- | ----- |
 | Input claim | firstDateTime | dateTime | De eerste datum/tijd om te vergelijken of deze eerder of later is dan de tweede datum/tijd. Null-waarde genereert een uitzonde ring. |
 | Input claim | secondDateTime | dateTime | De tweede datum/tijd om te vergelijken of deze eerder of later is dan de eerste datum/tijd. Null-waarde wordt beschouwd als de huidige datetTime. |

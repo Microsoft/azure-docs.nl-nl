@@ -10,10 +10,10 @@ ms.date: 04/24/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
 ms.openlocfilehash: e5ea94fea00771b64634d6c28a7879fabb195f09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89069656"
 ---
 # <a name="manage-storage-account-access-keys"></a>Toegangs sleutels voor opslag accounts beheren
@@ -34,7 +34,7 @@ De toegangs sleutels of connection string van uw opslag account weer geven en ko
 
 1. Navigeer naar uw opslag account in de [Azure Portal](https://portal.azure.com).
 1. Selecteer onder **Instellingen** de optie **Toegangssleutels**. De toegangssleutels van uw account worden weergegeven, evenals de volledige verbindingsreeks voor elke sleutel.
-1. Zoek de **sleutel** waarde onder **key1**en klik op de knop **kopiëren** om de account sleutel te kopiëren.
+1. Zoek de **sleutel** waarde onder **key1** en klik op de knop **kopiëren** om de account sleutel te kopiëren.
 1. U kunt ook de hele connection string kopiëren. Zoek de waarde van de **Verbindingsreeks** onder **key1** en klik op de knop **Kopiëren** om de verbindingsreeks te kopiëren.
 
     :::image type="content" source="media/storage-account-keys-manage/portal-connection-string.png" alt-text="Scherm afbeelding die laat zien hoe toegangs sleutels in de Azure Portal worden weer gegeven":::
@@ -66,7 +66,7 @@ az storage account keys list \
 
 U kunt een van de twee sleutels gebruiken om toegang te krijgen tot Azure Storage, maar in het algemeen is het een goed idee om de eerste sleutel te gebruiken en het gebruik van de tweede toets te reserveren wanneer u sleutels draait.
 
-Als u de toegangs sleutels van een account wilt bekijken of lezen, moet de gebruiker een service beheerder zijn of moet er een Azure-rol worden toegewezen die de **micro soft. Storage/Storage accounts/listkeys ophalen/Action**bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender**en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen voor Azure Storage.
+Als u de toegangs sleutels van een account wilt bekijken of lezen, moet de gebruiker een service beheerder zijn of moet er een Azure-rol worden toegewezen die de **micro soft. Storage/Storage accounts/listkeys ophalen/Action** bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender** en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen voor Azure Storage.
 
 ## <a name="use-azure-key-vault-to-manage-your-access-keys"></a>Azure Key Vault gebruiken om uw toegangs sleutels te beheren
 
@@ -133,7 +133,7 @@ De toegangs sleutels van uw opslag account met Azure CLI draaien:
 > [!NOTE]
 > Micro soft raadt u aan om op hetzelfde moment slechts één van de sleutels in al uw toepassingen te gebruiken. Als u Key 1 op sommige locaties en sleutel 2 in andere gebruikt, kunt u de sleutels niet draaien zonder dat de toepassing de toegang verliest.
 
-Als u de toegangs sleutels van een account wilt draaien, moet de gebruiker een service beheerder zijn of moet aan een Azure-rol zijn toegewezen die de **micro soft. Storage/Storage accounts/regeneratekey/Action**bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender**en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen van Azure voor Azure Storage.
+Als u de toegangs sleutels van een account wilt draaien, moet de gebruiker een service beheerder zijn of moet aan een Azure-rol zijn toegewezen die de **micro soft. Storage/Storage accounts/regeneratekey/Action** bevat. Sommige ingebouwde rollen van Azure die deze actie bevatten, zijn de rol rollen van de operator **eigenaar**, **Inzender** en **opslag account** . Zie voor meer informatie over de rol van service beheerder [klassieke abonnements beheerders rollen, Azure-rollen en Azure AD-rollen](../../role-based-access-control/rbac-and-directory-admin-roles.md). Zie de sectie **opslag** in [ingebouwde Azure-rollen voor Azure RBAC](../../role-based-access-control/built-in-roles.md#storage)voor meer informatie over ingebouwde rollen van Azure voor Azure Storage.
 
 ## <a name="next-steps"></a>Volgende stappen
 

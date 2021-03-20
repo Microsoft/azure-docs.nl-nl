@@ -7,10 +7,10 @@ description: Meer informatie over hoe u Kubernetes-geheimen kunt gebruiken tijde
 keywords: Docker, Kubernetes, azure, AKS, Azure Container Service, containers
 ms.custom: devx-track-js
 ms.openlocfilehash: 8791480f420dfd76d5291ce82e8ebf7412a41326
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91972965"
 ---
 # <a name="how-to-manage-secrets-when-working-with-an-azure-dev-space"></a>Geheimen beheren bij het werken met een Azure dev Space
@@ -143,7 +143,7 @@ configurations:
 In het bovenstaande voor beeld is *mynugetsecret* een bestaand geheim en is *pattoken* een bestaande sleutel.
 
 >[!NOTE]
-> Geheime namen en sleutels kunnen het `.` teken bevatten. Gebruiken `\` om te escapen `.` Wanneer geheimen worden door gegeven als build-argumenten. Als u bijvoorbeeld een geheim met de naam *foo. Bar* wilt door geven met de sleutel van *token*: `MYTOKEN: ${secret.foo\.bar.token}` . Bovendien kunnen geheimen worden geëvalueerd met voor voegsel en achtervoegsel tekst. Bijvoorbeeld `MYURL: eus-${secret.foo\.bar.token}-version1`. Ook kunnen geheimen die beschikbaar zijn in de ruimten voor ouders en groot ouders worden door gegeven als build-argumenten.
+> Geheime namen en sleutels kunnen het `.` teken bevatten. Gebruiken `\` om te escapen `.` Wanneer geheimen worden door gegeven als build-argumenten. Als u bijvoorbeeld een geheim met de naam *foo.Bar* wilt door geven met de sleutel *token*: `MYTOKEN: ${secret.foo\.bar.token}` . Bovendien kunnen geheimen worden geëvalueerd met voor voegsel en achtervoegsel tekst. Bijvoorbeeld `MYURL: eus-${secret.foo\.bar.token}-version1`. Ook kunnen geheimen die beschikbaar zijn in de ruimten voor ouders en groot ouders worden door gegeven als build-argumenten.
 
 Gebruik in uw Dockerfile de *ARG* -instructie om het geheim te verbruiken en gebruik dezelfde variabele later in de Dockerfile. Bijvoorbeeld:
 

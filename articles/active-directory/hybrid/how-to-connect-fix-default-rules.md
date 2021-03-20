@@ -14,10 +14,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a0fc1bc3158e04c9b1f677af7ef2375ac3ed2ce7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91320044"
 ---
 # <a name="fix-modified-default-rules-in-azure-ad-connect"></a>Aangepaste standaard regels in Azure AD Connect herstellen
@@ -28,7 +28,7 @@ Azure Active Directory (Azure AD) Connect maakt gebruik van standaard regels voo
 > Het wijzigen van bestaande standaard regels om een vereiste aanpassing te verzorgen, wordt niet ondersteund. Als u dit doet, wordt voor komen dat deze regels in toekomstige releases worden bijgewerkt naar de meest recente versie. U beschikt niet over de oplossingen die u nodig hebt, of nieuwe functies. In dit document wordt uitgelegd hoe u hetzelfde resultaat kunt krijgen zonder de bestaande standaard regels te wijzigen. 
 
 ## <a name="how-to-identify-modified-default-rules"></a>Aangepaste standaard regels identificeren
-Vanaf versie 1.3.7.0 van Azure AD Connect is het eenvoudig om de gewijzigde standaard regel te identificeren. Ga naar **apps op het bureau blad**en selecteer **Editor voor synchronisatie regels**.
+Vanaf versie 1.3.7.0 van Azure AD Connect is het eenvoudig om de gewijzigde standaard regel te identificeren. Ga naar **apps op het bureau blad** en selecteer **Editor voor synchronisatie regels**.
 
 ![Azure AD Connect, met de editor voor synchronisatie regels gemarkeerd](media/how-to-connect-fix-default-rules/default1.png)
 
@@ -81,9 +81,9 @@ Volg uw eigen naam Conventie om de regel een naam te geven. Hier gebruiken we **
 
 Geef uw eigen beschrijving van de regel op, zodat het toekomstig onderhoud van de regel eenvoudig is. De beschrijving kan bijvoorbeeld worden gebaseerd op het doel van de regel en waarom deze nodig is.
 
-Maak uw selecties voor het **verbonden systeem**, het **object type verbonden systeem**en de velden voor het **object type** van de tekst.
+Maak uw selecties voor het **verbonden systeem**, het **object type verbonden systeem** en de velden voor het **object type** van de tekst.
 
-Geef een prioriteits waarde op van 0 tot en met 99 (het lagere nummer, des te hoger de prioriteit). Gebruik de standaard selecties voor het **Label**, **Schakel wachtwoord synchronisatie**en **Uitgeschakelde** velden in.
+Geef een prioriteits waarde op van 0 tot en met 99 (het lagere nummer, des te hoger de prioriteit). Gebruik de standaard selecties voor het **Label**, **Schakel wachtwoord synchronisatie** en **Uitgeschakelde** velden in.
 
 Laat het **bereik filter** leeg. Dit betekent dat de regel van toepassing is op alle objecten die zijn gekoppeld tussen het Active Directory verbonden systeem en het omgekeerde.
 
@@ -92,7 +92,7 @@ Bewaar **regels voor samen voegen** leeg. Dit betekent dat deze regel de samenvo
 Voeg de juiste trans formaties voor uw kenmerk toe. U kunt een constante toewijzen om een constante waarde stroom te maken naar uw doel kenmerk. U kunt directe toewijzing tussen het bron-of doel kenmerk gebruiken. U kunt ook een expressie gebruiken voor het kenmerk. Hier volgen diverse [expressie functies](./reference-connect-sync-functions-reference.md) die u kunt gebruiken.
 
 #### <a name="add-an-outbound-sync-rule"></a>Een uitgaande synchronisatie regel toevoegen
-Als u het kenmerk aan de doel directory wilt koppelen, moet u een uitgaande regel maken. Dit betekent dat de bron het omgekeerde is en dat het doel het verbonden systeem is. Als u een uitgaande regel wilt maken, start u de **Editor voor synchronisatie regels**, wijzigt u de **richting** in **uitgaand**en selecteert u **nieuwe regel toevoegen**. 
+Als u het kenmerk aan de doel directory wilt koppelen, moet u een uitgaande regel maken. Dit betekent dat de bron het omgekeerde is en dat het doel het verbonden systeem is. Als u een uitgaande regel wilt maken, start u de **Editor voor synchronisatie regels**, wijzigt u de **richting** in **uitgaand** en selecteert u **nieuwe regel toevoegen**. 
 
 ![Editor voor synchronisatie regels](media/how-to-connect-fix-default-rules/default3c.png)
 
@@ -162,7 +162,7 @@ U kunt de zojuist toegevoegde synchronisatie regel valideren met behulp van de p
 
 ![Azure AD Connect, waarbij de synchronisatie service is gemarkeerd](media/how-to-connect-fix-default-rules/default10.png)
 
-Selecteer **zoektekst zoeken**. Selecteer het bereik object als **persoon**, selecteer **component toevoegen**en vermeld uw zoek criteria. Selecteer vervolgens **zoeken**en dubbel klik op het object in de zoek resultaten. Zorg ervoor dat uw gegevens in Azure AD Connect up-to-date zijn voor dat object door import en sync uit te voeren op het forest voordat u deze stap uitvoert.
+Selecteer **zoektekst zoeken**. Selecteer het bereik object als **persoon**, selecteer **component toevoegen** en vermeld uw zoek criteria. Selecteer vervolgens **zoeken** en dubbel klik op het object in de zoek resultaten. Zorg ervoor dat uw gegevens in Azure AD Connect up-to-date zijn voor dat object door import en sync uit te voeren op het forest voordat u deze stap uitvoert.
 
 ![Synchronization Service Manager](media/how-to-connect-fix-default-rules/default11.png)
 
@@ -188,7 +188,7 @@ U ziet dat in de gewijzigde regel het `msExchMailboxGuid` kenmerk wordt gewijzig
 
 ![uitvoer van Windiff-hulpprogram ma's](media/how-to-connect-fix-default-rules/default17.png)
  
-Als u uw regels wilt herstellen om ze terug te zetten naar de standaard instellingen, verwijdert u de gewijzigde regel en schakelt u de standaard regel in. Zorg ervoor dat u niet de aanpassing kwijtraakt die u probeert te verkrijgen. Wanneer u klaar bent, voert u **volledige synchronisatie**uit.
+Als u uw regels wilt herstellen om ze terug te zetten naar de standaard instellingen, verwijdert u de gewijzigde regel en schakelt u de standaard regel in. Zorg ervoor dat u niet de aanpassing kwijtraakt die u probeert te verkrijgen. Wanneer u klaar bent, voert u **volledige synchronisatie** uit.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Hardware en vereisten](how-to-connect-install-prerequisites.md) 

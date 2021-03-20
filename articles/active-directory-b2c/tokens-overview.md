@@ -11,10 +11,10 @@ ms.date: 08/31/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.openlocfilehash: b4e268d35a2e31db0ce92ff61e66fd23bce68e38
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97516349"
 ---
 # <a name="overview-of-tokens-in-azure-active-directory-b2c"></a>Overzicht van tokens in Azure Active Directory B2C
@@ -50,7 +50,7 @@ De claims in ID-tokens worden niet in een bepaalde volg orde geretourneerd. Nieu
 
 De volgende tabel geeft een lijst van de claims die u kunt verwachten in ID-tokens en toegangs tokens die zijn uitgegeven door Azure AD B2C.
 
-| Naam | Claim | Voorbeeldwaarde | Beschrijving |
+| Name | Claim | Voorbeeldwaarde | Beschrijving |
 | ---- | ----- | ------------- | ----------- |
 | Doelgroep | `aud` | `90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6` | Identificeert de beoogde ontvanger van het token. Voor Azure AD B2C is de doel groep de toepassings-ID. Uw toepassing moet deze waarde valideren en het token afwijzen als het niet overeenkomt. De doel groep is synoniemen met resources. |
 | Verlener | `iss` |`https://<tenant-name>.b2clogin.com/775527ff-9a37-4307-8b3d-cc311f58d925/v2.0/` | Identificeert de Security Token Service (STS) die het token bouwt en retourneert. Ook wordt de map geïdentificeerd waarin de gebruiker is geverifieerd. Uw toepassing moet de Issuer claim valideren om er zeker van te zijn dat het token afkomstig is van het juiste eind punt. |

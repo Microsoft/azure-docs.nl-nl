@@ -12,10 +12,10 @@ ms.custom: seo-lt-2019
 ms.topic: how-to
 ms.date: 02/20/2020
 ms.openlocfilehash: dc9123735ef65bec89e99a14d25cba881be306fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91297467"
 ---
 # <a name="monitor-migration-activity-using-the-azure-database-migration-service"></a>Migratie activiteiten bewaken met behulp van de Azure Database Migration Service
@@ -71,7 +71,7 @@ De volgende tabel bevat de velden op de Blade op database niveau en beschrijft d
       <td>De migratie is mislukt. Klik op migratie gegevens voor een overzicht van de migratie fouten.</td>
     </tr>
     <tr>
-      <td rowspan="5" class="migration-details"><strong>Details van de migratie</strong></td>
+      <td rowspan="5" class="migration-details"><strong>Migratie Details</strong></td>
       <td>De migratie pijplijn starten</td>
       <td>DMS is het instellen van de migratie pijplijn.</td>
     </tr>

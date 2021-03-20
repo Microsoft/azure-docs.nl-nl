@@ -11,13 +11,13 @@ ms.topic: how-to
 ms.date: 08/27/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 910b8dae10036cc2e396be13495fd28363dc971d
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97934557"
 ---
-# <a name="assign-a-key-vault-access-policy-using-the-azure-portal"></a>Een Key Vault toegangs beleid toewijzen met behulp van de Azure Portal
+# <a name="assign-a-key-vault-access-policy-using-the-azure-portal"></a>Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal
 
 Een Key Vault toegangs beleid bepaalt of een bepaalde service-principal, namelijk een toepassing of gebruikers groep, verschillende bewerkingen kan uitvoeren op Key Vault [geheimen](../secrets/index.yml), [sleutels](../keys/index.yml)en [certificaten](../certificates/index.yml). U kunt toegangs beleid toewijzen met behulp van de Azure Portal (dit artikel), de [Azure cli](assign-access-policy-cli.md)of [Azure PowerShell](assign-access-policy-powershell.md).
 

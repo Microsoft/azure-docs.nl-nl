@@ -8,10 +8,10 @@ ms.date: 01/11/2017
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: fe9326ea9ebd5afe981b7ba6c34b1a5d51e084b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88962057"
 ---
 # <a name="how-to-control-inbound-traffic-to-an-app-service-environment"></a>Inkomend verkeer naar een App Service Environment beheren
@@ -118,7 +118,7 @@ Get-AzureNetworkSecurityGroup -Name "testNSGexample" | Remove-AzureNetworkSecuri
 ## <a name="special-considerations-for-explicit-ip-ssl"></a>Speciale overwegingen voor expliciete IP-SSL
 Als een app is geconfigureerd met een expliciet IP-SSL-adres ( *alleen* van toepassing op as die een open bare VIP hebben), in plaats van het standaard IP-adres van de app service Environment, worden zowel http-als HTTPS-verkeer naar het subnet overgebracht via andere poorten dan poorten 80 en 443.
 
-Als u wilt zoeken naar het afzonderlijke paar poorten dat door elk IP-SSL-adres wordt gebruikt, gaat u naar de portal en bekijkt u de Blade Details van de App Service Environment UX.  Selecteer **alle**  >  **IP-adressen**van instellingen.  De Blade **IP-adressen** bevat een tabel met alle expliciet geconfigureerde IP-SSL-adressen voor de app service environment. De Blade bevat ook het speciale poort paar dat wordt gebruikt voor het routeren van HTTP-en HTTPS-verkeer dat is gekoppeld aan elk IP-SSL-adres.  Gebruik dit poort paar voor de DestinationPortRange-para meters bij het configureren van regels in een netwerk beveiligings groep.
+Als u wilt zoeken naar het afzonderlijke paar poorten dat door elk IP-SSL-adres wordt gebruikt, gaat u naar de portal en bekijkt u de Blade Details van de App Service Environment UX.  Selecteer **alle**  >  **IP-adressen** van instellingen.  De Blade **IP-adressen** bevat een tabel met alle expliciet geconfigureerde IP-SSL-adressen voor de app service environment. De Blade bevat ook het speciale poort paar dat wordt gebruikt voor het routeren van HTTP-en HTTPS-verkeer dat is gekoppeld aan elk IP-SSL-adres.  Gebruik dit poort paar voor de DestinationPortRange-para meters bij het configureren van regels in een netwerk beveiligings groep.
 
 Wanneer een app op een ASE is geconfigureerd voor het gebruik van IP-SSL, kunnen externe klanten zich geen zorgen maken over de speciale poort paar toewijzing.  Verkeer naar de apps loopt normaal naar het geconfigureerde IP-SSL-adres.  De vertaling naar het speciale poort paar gebeurt automatisch intern tijdens de laatste etappe van het routerings verkeer in het subnet dat de ASE bevat. 
 

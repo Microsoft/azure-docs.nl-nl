@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
 ms.openlocfilehash: 114b8b32d4abb1fd9b7e641625cd1b132470bafd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87281443"
 ---
 # <a name="migrate-logic-apps-to-latest-schema-version"></a>Logische apps migreren naar de meest recente schema versie
@@ -19,10 +19,10 @@ Voer de volgende stappen uit om uw bestaande Logic apps naar het nieuwste schema
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
-2. Kies **overzicht**in het menu van de logische app. Kies op de werk balk de optie **schema bijwerken**.
+2. Kies **overzicht** in het menu van de logische app. Kies op de werk balk de optie **schema bijwerken**.
 
    > [!NOTE]
-   > Wanneer u **schema bijwerken**kiest, worden de migratie stappen automatisch door Azure Logic apps uitgevoerd en wordt de code-uitvoer voor u verstrekt. U kunt deze uitvoer gebruiken voor het bijwerken van de definitie van de logische app. Zorg er echter voor dat u de aanbevolen procedures volgt, zoals beschreven in de sectie **Aanbevolen procedures** .
+   > Wanneer u **schema bijwerken** kiest, worden de migratie stappen automatisch door Azure Logic apps uitgevoerd en wordt de code-uitvoer voor u verstrekt. U kunt deze uitvoer gebruiken voor het bijwerken van de definitie van de logische app. Zorg er echter voor dat u de aanbevolen procedures volgt, zoals beschreven in de sectie **Aanbevolen procedures** .
 
    ![Schema bijwerken](./media/connectors-schema-migration/update-schema.png)
 

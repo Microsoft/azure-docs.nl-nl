@@ -11,10 +11,10 @@ ms.author: junhan
 ms.custom:
 - 'Role: Cloud Development'
 ms.openlocfilehash: b9d8f0c2a573ba1749b414a389cd7181ddd5f95a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87321680"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Gebruik Azure IoT-Hulpprogram Ma's voor Visual Studio code voor het verzenden en ontvangen van berichten tussen uw apparaat en IoT Hub
@@ -66,7 +66,7 @@ Voer de volgende stappen uit om berichten te bewaken die worden verzonden vanaf 
 
 1. Klik met de rechter muisknop op het apparaat en selecteer **controle van het ingebouwde gebeurtenis-eind punt starten**.
 
-2. De bewaakte berichten worden weer gegeven in de weer gave **uitvoer**van  >  **Azure IOT hub** .
+2. De bewaakte berichten worden weer gegeven in de weer gave **uitvoer** van  >  **Azure IOT hub** .
 
 3. Als u de bewaking wilt stoppen, klikt u met de rechter muisknop op de **uitvoer** weergave en selecteert u **controle stoppen ingebouwd gebeurtenis eindpunt**.
 
@@ -78,7 +78,7 @@ Voer de volgende stappen uit om een bericht van uw IoT-hub naar uw apparaat te v
 
 2. Voer het bericht in het invoervak in.
 
-3. De resultaten worden weer gegeven in de weer gave **uitvoer**van  >  **Azure IOT hub** .
+3. De resultaten worden weer gegeven in de weer gave **uitvoer** van  >  **Azure IOT hub** .
 
 ## <a name="next-steps"></a>Volgende stappen
 

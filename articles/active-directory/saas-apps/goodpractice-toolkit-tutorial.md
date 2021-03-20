@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 03/12/2020
 ms.author: jeedes
 ms.openlocfilehash: 57598ea22874cfba772f6cf0e6b2ba779ef7c482
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92448376"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mind-tools-toolkit"></a>Zelfstudie: Azure Active Directory-integratie met Mind Tools Toolkit
@@ -50,15 +50,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Om de integratie van Mind Tools Toolkit in Azure AD te configureren, moet u Mind Tools Toolkit vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatievenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
+1. Selecteer in het linkernavigatievenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Ga in het gedeelte **Toevoegen uit de galerie** naar het zoekvak en voer **Mind Tools Toolkit** in.
 1. Selecteer **Mind Tools Toolkit** in de zoek resultaten en voeg vervolgens de app toe. Wacht een paar seconden totdat de app aan uw tenant is toegevoegd.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding bij Mind Tools Toolkit met Azure AD op basis van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als er een gekoppelde relatie tussen een Azure AD-gebruiker en de gerelateerde gebruiker in Mind Tools Toolkit tot stand is gebracht.
+In dit gedeelte configureert en test u eenmalige aanmelding bij Mind Tools Toolkit met Azure AD op basis van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als er een gekoppelde relatie tussen een Azure AD-gebruiker en de gerelateerde gebruiker in Mind Tools Toolkit tot stand is gebracht.
 
 Als u eenmalige aanmelding bij Mind Tools Toolkit met Azure AD wilt configureren en testen, moet u de volgende bouwstenen voltooien:
 
@@ -73,7 +73,7 @@ Als u eenmalige aanmelding bij Mind Tools Toolkit met Azure AD wilt configureren
 
 In dit gedeelte configureert u eenmalige aanmelding bij Mind Tools Toolkit met Azure AD door deze stappen te volgen:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Mind Tools Toolkit** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **Mind Tools Toolkit** en selecteer **Eenmalige aanmelding**.
 
     ![Het gedeelte Beheren, met Eenmalige aanmelding gemarkeerd](common/select-sso.png)
 
@@ -90,7 +90,7 @@ In dit gedeelte configureert u eenmalige aanmelding bij Mind Tools Toolkit met A
     > [!NOTE]
     > De waarde voor **Aanmeldings-URL** is niet echt. Vervang de waarde door de werkelijke aanmeldings-URL. Neem contact op met het [ondersteuningsteam van Mind Tools Toolkit](mailto:support@goodpractice.com) om de waarde op te vragen.
 
-1. Ga op de pagina **Eenmalige aanmelding instellen met SAML** naar het gedeelte **SAML-handtekeningcertificaat** . Selecteer rechts van **XML-bestand met federatieve metagegevens** de optie **Downloaden** om de XML-tekst te downloaden en op uw computer op te slaan. De XML-inhoud is afhankelijk van de opties die u selecteert.
+1. Ga op de pagina **Eenmalige aanmelding instellen met SAML** naar het gedeelte **SAML-handtekeningcertificaat**. Selecteer rechts van **XML-bestand met federatieve metagegevens** de optie **Downloaden** om de XML-tekst te downloaden en op uw computer op te slaan. De XML-inhoud is afhankelijk van de opties die u selecteert.
 
     ![Het gedeelte SAML-handtekeningcertificaat, met Downloaden gemarkeerd naast XML-bestand met federatieve metagegevens](common/metadataxml.png)
 
@@ -108,35 +108,35 @@ In dit gedeelte configureert u eenmalige aanmelding bij Mind Tools Toolkit met A
 
 In dit gedeelte sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal:
 
-1. Selecteer helemaal links in de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
-1. Selecteer boven aan het scherm **Nieuwe gebruiker** .
-1. Volg deze stappen om de eigenschappen voor de **gebruiker** in te voeren:
-   1. Typ **B.Simon** in het veld **Naam** .  
+1. Selecteer helemaal links in de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
+1. Selecteer boven aan het scherm **Nieuwe gebruiker**.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Typ **B.Simon** in het veld **Naam**.  
    1. Voer in het veld **Gebruikersnaam** **B.Simon@** _bedrijfsdomein_ **.** _extensie_ in. Bijvoorbeeld B.Simon@contoso.com.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Selecteer **Maken** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte geeft u B.Simon toestemming voor het gebruik van eenmalige aanmelding met Azure door hem of haar toegang te geven tot Mind Tools Toolkit.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen**.
 1. Selecteer **Mind Tools Toolkit** in de lijst met toepassingen.
-1. Ga op de overzichtspagina van de app naar het gedeelte **Beheren** en selecteer **Gebruikers en groepen** .
+1. Ga op de overzichtspagina van de app naar het gedeelte **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![Het gedeelte Beheren, met Gebruikers en groepen gemarkeerd](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen**. Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
    ![Het venster Gebruikers en groepen, met Gebruiker toevoegen gemarkeerd](common/add-assign-user.png)
 
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst met gebruikers. Selecteer onder aan het scherm de knop **Selecteren** .
-1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onder aan het scherm de knop **Selecteren** .
-1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst met gebruikers. Selecteer onder aan het scherm de knop **Selecteren**.
+1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren**.
+1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-mind-tools-toolkit-sso"></a>Eenmalige aanmelding configureren voor Mind Tools Toolkit
 
-Als u eenmalige aanmelding wilt configureren in **Mind Tools Toolkit** , stuurt u de gedownloade tekst uit het **XML-bestand met federatieve metagegevens** en de eerder gekopieerde URL's naar het [ondersteuningsteam van Mind Tools Toolkit](mailto:support@goodpractice.com). Het team configureert deze instelling dusdanig dat de SAML SSO-verbinding goed is ingesteld aan beide zijden.
+Als u eenmalige aanmelding wilt configureren in **Mind Tools Toolkit**, stuurt u de gedownloade tekst uit het **XML-bestand met federatieve metagegevens** en de eerder gekopieerde URL's naar het [ondersteuningsteam van Mind Tools Toolkit](mailto:support@goodpractice.com). Het team configureert deze instelling dusdanig dat de SAML SSO-verbinding goed is ingesteld aan beide zijden.
 
 ### <a name="create-a-mind-tools-toolkit-test-user"></a>Een testgebruiker voor Mind Tools Toolkit maken
 

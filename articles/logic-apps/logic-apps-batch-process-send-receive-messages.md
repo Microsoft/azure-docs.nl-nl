@@ -9,10 +9,10 @@ ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: article
 ms.date: 07/31/2020
 ms.openlocfilehash: 0985afe3ddfd0d9de3c36ad6b030b6f259708c88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87458258"
 ---
 # <a name="send-receive-and-batch-process-messages-in-azure-logic-apps"></a>Berichten verzenden, ontvangen en verwerken in Azure Logic Apps
@@ -60,7 +60,7 @@ Voordat u berichten naar een batch kunt verzenden, moet deze batch eerst bestaan
    |----------|-------------|
    | **Batch modus** | - **Inline**: voor het definiëren van release criteria binnen de batch trigger <br>- **Integratie account**: voor het definiëren van configuraties met meerdere release criteria via een [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md). Met een integratie account kunt u deze configuraties op één plek behouden in plaats van in afzonderlijke logische apps. |
    | **Batch naam** | De naam voor uw batch, die in dit voor beeld ' TestBatch ' is, en geldt alleen voor de **inline** batch modus |
-   | **Release criteria** | Is alleen van toepassing op de **inline** batch modus en selecteert de criteria om te voldoen aan de verwerking van elke batch: <p>- **Telling van berichten op basis**van: de batch vrijgeven op basis van het aantal berichten dat door de batch is verzameld. <br>- **Grootte gebaseerd**: de batch vrijgeven op basis van de totale grootte in bytes voor alle berichten die door die batch worden verzameld. <br>- **Planning**: de batch vrijgeven op basis van een herhalings schema, waarmee een interval en frequentie worden opgegeven. In de geavanceerde opties kunt u ook een tijd zone selecteren en een begin datum en-tijd opgeven. <br>- **Alles selecteren**: alle opgegeven criteria gebruiken. |
+   | **Release criteria** | Is alleen van toepassing op de **inline** batch modus en selecteert de criteria om te voldoen aan de verwerking van elke batch: <p>- **Telling van berichten op basis** van: de batch vrijgeven op basis van het aantal berichten dat door de batch is verzameld. <br>- **Grootte gebaseerd**: de batch vrijgeven op basis van de totale grootte in bytes voor alle berichten die door die batch worden verzameld. <br>- **Planning**: de batch vrijgeven op basis van een herhalings schema, waarmee een interval en frequentie worden opgegeven. In de geavanceerde opties kunt u ook een tijd zone selecteren en een begin datum en-tijd opgeven. <br>- **Alles selecteren**: alle opgegeven criteria gebruiken. |
    | **Aantal berichten** | Het aantal berichten dat in de batch moet worden verzameld, bijvoorbeeld 10 berichten. De limiet voor een batch is 8.000 berichten. |
    | **Batch grootte** | De totale grootte in bytes die in de batch moet worden verzameld, bijvoorbeeld 10 MB. De maximale grootte van een batch is 80 MB. |
    | **Schema** | Het interval en de frequentie tussen batch releases, bijvoorbeeld 10 minuten. De minimale terugkeer patroon is 60 seconden of 1 minuut. Gedeeltelijke minuten worden effectief afgerond tot 1 minuut. Als u een tijd zone of een start datum en-tijd wilt opgeven, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de bijbehorende eigenschappen. |
@@ -78,7 +78,7 @@ Voordat u berichten naar een batch kunt verzenden, moet deze batch eerst bestaan
 
    Voor dit voor beeld voegt u een actie toe waarmee een e-mail bericht wordt verzonden wanneer de batch trigger wordt geactiveerd. De trigger wordt uitgevoerd en verzendt een e-mail bericht wanneer de batch 10 berichten bevat, 10 MB of een Pass-Through 10 minuten duurt.
 
-   1. Selecteer **nieuwe stap**onder de batch trigger.
+   1. Selecteer **nieuwe stap** onder de batch trigger.
 
    1. Voer in het zoekvak `send email` als uw filter in. Selecteer een e-mail connector op basis van uw e-mail provider.
 
@@ -138,7 +138,7 @@ Maak nu een of meer logische apps voor batch Sender die berichten verzenden naar
 
 1. Voeg een nieuwe actie toe voor het verzenden van berichten naar een batch.
 
-   1. Selecteer **nieuwe stap**onder de trigger voor **terugkeer patroon** .
+   1. Selecteer **nieuwe stap** onder de trigger voor **terugkeer patroon** .
 
    1. Voer in het zoekvak in `batch` als uw filter en selecteer deze actie: **een Logic apps werk stroom kiezen met batch trigger**
 
@@ -153,7 +153,7 @@ Maak nu een of meer logische apps voor batch Sender die berichten verzenden naar
       > [!IMPORTANT]
       > Als u Visual Studio gebruikt en er geen batch-ontvangers worden weer gegeven, controleert u of u uw batch-ontvanger eerder hebt gemaakt en geïmplementeerd in Azure. Als u dat nog niet hebt gedaan, kunt u leren [hoe u de logische app voor uw batch-ontvanger naar Azure implementeert](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-logic-app-to-azure).
 
-   1. Selecteer in de lijst acties deze actie: **Batch_messages-<*uw-Logic-app-naam* > **
+   1. Selecteer in de lijst acties deze actie: **Batch_messages-<*uw-Logic-app-naam* >**
 
       ![Selecteer deze actie: ' Batch_messages-<uw-Logic-app> '](./media/logic-apps-batch-process-send-receive-messages/batch-sender-select-batch.png)
 

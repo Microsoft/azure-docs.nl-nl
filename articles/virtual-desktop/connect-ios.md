@@ -7,10 +7,10 @@ ms.date: 02/08/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 87bb2cc53ce056552e8f44aac4ade96e603a8787
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89230038"
 ---
 # <a name="connect-to-windows-virtual-desktop-with-the-ios-client"></a>Verbinding maken met het virtuele bureau blad van Windows met de iOS-client
@@ -39,8 +39,8 @@ Abonneren op een feed:
    - Als u verbinding wilt maken via de portal van US Gov, gebruikt u <https://rdweb.wvd.azure.us/api/arm/feeddiscovery> .
 3. Tik op **Volgende**.
 4. Voer uw referenties in wanneer hierom wordt gevraagd.
-   - Geef voor de **gebruikers naam**de gebruikers naam op met machtigingen voor toegang tot resources.
-   - Geef bij **wacht woord**het wacht woord op dat is gekoppeld aan de gebruikers naam.
+   - Geef voor de **gebruikers naam** de gebruikers naam op met machtigingen voor toegang tot resources.
+   - Geef bij **wacht woord** het wacht woord op dat is gekoppeld aan de gebruikers naam.
    - U wordt mogelijk ook gevraagd extra factoren op te geven als uw beheerder de verificatie op die manier heeft geconfigureerd.
 5. Tik op **Opslaan**.
 

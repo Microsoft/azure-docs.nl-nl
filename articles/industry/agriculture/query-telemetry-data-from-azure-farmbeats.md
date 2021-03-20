@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 03/11/2020
 ms.author: sunasing
 ms.openlocfilehash: b9067e2f78c8098d4a21263ac89caf03da631274
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92677492"
 ---
 # <a name="query-ingested-telemetry-data"></a>Door query opgenomen telemetriegegevens
@@ -24,7 +24,7 @@ Voordat u verder gaat met dit artikel, moet u ervoor zorgen dat u FarmBeats en g
 
 Als u telemetrie-sensor gegevens wilt opnemen, gaat u naar [historische telemetriegegevens gegevens](ingest-historical-telemetry-data-in-azure-farmbeats.md)
 
-Voordat u doorgaat, moet u er ook voor zorgen dat u bekend bent met FarmBeats REST-Api's wanneer u een query uitvoert op opgenomen telemetrie met behulp van de Api's. Zie [FARMBEATS rest api's](rest-api-in-azure-farmbeats.md)(Engelstalig) voor meer informatie over FarmBeats-api's. **Zorg ervoor dat u API-aanvragen kunt maken naar uw FarmBeats Datahub-eind punt** .
+Voordat u doorgaat, moet u er ook voor zorgen dat u bekend bent met FarmBeats REST-Api's wanneer u een query uitvoert op opgenomen telemetrie met behulp van de Api's. Zie [FARMBEATS rest api's](rest-api-in-azure-farmbeats.md)(Engelstalig) voor meer informatie over FarmBeats-api's. **Zorg ervoor dat u API-aanvragen kunt maken naar uw FarmBeats Datahub-eind punt**.
 
 ## <a name="query-ingested-sensor-telemetry-data"></a>Gegevensgestuurde telemetrie-sensor gegevens opvragen
 
@@ -115,8 +115,8 @@ Telemetriegegevens worden ontvangen op een EventHub en vervolgens verwerkt en ge
 
 Volg de stappen voor het visualiseren van gegevens op TSI:
 
-1. Ga naar **Azure Portal**  >  **FarmBeats DataHub resource groep** > Selecteer **Time Series Insights** omgeving (TSI-xxxx) > **beleid voor gegevens toegang** . Voeg een gebruiker toe met toegang voor lezer of Inzender.
-2. Ga naar de pagina **overzicht** van **Time Series Insights** omgeving (TSI-xxxx) en selecteer de **URL van Time Series Insights Explorer** . U kunt nu de opgenomen telemetrie visualiseren.
+1. Ga naar **Azure Portal**  >  **FarmBeats DataHub resource groep** > Selecteer **Time Series Insights** omgeving (TSI-xxxx) > **beleid voor gegevens toegang**. Voeg een gebruiker toe met toegang voor lezer of Inzender.
+2. Ga naar de pagina **overzicht** van **Time Series Insights** omgeving (TSI-xxxx) en selecteer de **URL van Time Series Insights Explorer**. U kunt nu de opgenomen telemetrie visualiseren.
 
 Naast het opslaan, doorzoeken en visualisatie van telemetrie, biedt TSI ook integratie met een Power BI dash board. Zie [hier]( https://docs.microsoft.com/azure/time-series-insights/how-to-connect-power-bi) voor meer informatie.
 

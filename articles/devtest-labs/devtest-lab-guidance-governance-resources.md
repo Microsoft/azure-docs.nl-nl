@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/26/2020
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 1e470da5cd317d49f0d0734caa11eed6630d3f32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85480912"
 ---
 # <a name="governance-of-azure-devtest-labs-infrastructure---resources"></a>Governance van Azure DevTest Labs-infra structuur-bronnen
@@ -29,7 +29,7 @@ Voordat een organisatie Azure voor algemene toepassings ontwikkeling begint te g
 
 De **eerste aanbevolen procedure** is het beoordelen van de Azure-taxonomie van organisaties waarbij de afdelingen tussen productie-en ontwikkelings abonnementen worden beschreven. In het volgende diagram maakt de voorgestelde taxonomie gebruik van een logische schei ding van ontwikkel-en test-en productie omgevingen. Met deze methode kan een organisatie facturerings codes introduceren voor het bijhouden van de kosten voor elke omgeving afzonderlijk. Zie voor meer informatie beheer van voorlichtend [abonnement](/azure/architecture/cloud-adoption/appendix/azure-scaffold). Daarnaast kunt u [Azure Tags](../azure-resource-manager/management/tag-resources.md) gebruiken om resources te organiseren voor tracking-en facturerings doeleinden.
 
-De **tweede aanbevolen procedure** is het inschakelen van het DevTest-abonnement in de Azure Enter prise Portal. Hiermee kan een organisatie client besturingssystemen uitvoeren die normaal gesp roken niet beschikbaar zijn in een Azure-Bedrijfs abonnement. Gebruik vervolgens de Enter prise-software waarbij u alleen betaalt voor de reken kracht en u hoeft zich geen zorgen te maken over licenties. Het zorgt ervoor dat de facturering voor aangewezen services, inclusief galerij afbeeldingen in IaaS zoals Microsoft SQL Server, alleen is gebaseerd op verbruik. [Hier](https://azure.microsoft.com/offers/ms-azr-0148p/) vindt u meer informatie over het Azure DevTest-abonnement dat u hier kunt vinden voor [klanten van Enterprise Agreement](https://azure.microsoft.com/offers/ms-azr-0023p/) (EA) en hoe u deze voor betaalt.
+De **tweede aanbevolen procedure** is het inschakelen van het DevTest-abonnement in de Azure Enter prise Portal. Hiermee kan een organisatie client besturingssystemen uitvoeren die normaal gesp roken niet beschikbaar zijn in een Azure-Bedrijfs abonnement. Gebruik vervolgens de Enter prise-software waarbij u alleen betaalt voor de reken kracht en u hoeft zich geen zorgen te maken over licenties. Het zorgt ervoor dat de facturering voor aangewezen services, inclusief galerij afbeeldingen in IaaS zoals Microsoft SQL Server, alleen is gebaseerd op verbruik. [Hier](https://azure.microsoft.com/offers/ms-azr-0148p/) vindt u meer informatie over het Azure DevTest-abonnement dat u hier kunt vinden voor [klanten van Enterprise overeenkomst](https://azure.microsoft.com/offers/ms-azr-0023p/) (EA) en hoe u deze voor betaalt.
 
 ![Resource-uitlijning met abonnementen](./media/devtest-lab-guidance-governance/resource-alignment-with-subscriptions.png)
 
@@ -67,7 +67,7 @@ U kunt ook een Lab voor een specifiek project in azure DevOps-projecten gebruike
 Hoe kan ik voor komen dat resources binnen een Lab worden verwijderd?
 
 ### <a name="answer"></a>Antwoord
-We raden u aan om de juiste machtigingen op het lab-niveau in te stellen, zodat alleen geautoriseerde gebruikers resources kunnen verwijderen of het lab-beleid wijzigen. Ontwikkel aars moeten worden geplaatst in de **DevTest Labs-gebruikers** groep. De lead ontwikkelaar of de lead van de infra structuur moet de eigenaar van de **DevTest Labs**zijn. We raden u aan slechts twee Lab-eigen aars te hebben. Dit beleid strekt zich naar de code opslagplaats om beschadiging te voor komen. Lab maakt gebruik van rechten voor het gebruik van resources, maar kan geen Lab-beleids regels bijwerken. Raadpleeg het volgende artikel waarin de rollen en rechten worden vermeld die elke ingebouwde groep binnen een Lab heeft: [eigen aren en gebruikers toevoegen in azure DevTest Labs](devtest-lab-add-devtest-user.md).
+We raden u aan om de juiste machtigingen op het lab-niveau in te stellen, zodat alleen geautoriseerde gebruikers resources kunnen verwijderen of het lab-beleid wijzigen. Ontwikkel aars moeten worden geplaatst in de **DevTest Labs-gebruikers** groep. De lead ontwikkelaar of de lead van de infra structuur moet de eigenaar van de **DevTest Labs** zijn. We raden u aan slechts twee Lab-eigen aars te hebben. Dit beleid strekt zich naar de code opslagplaats om beschadiging te voor komen. Lab maakt gebruik van rechten voor het gebruik van resources, maar kan geen Lab-beleids regels bijwerken. Raadpleeg het volgende artikel waarin de rollen en rechten worden vermeld die elke ingebouwde groep binnen een Lab heeft: [eigen aren en gebruikers toevoegen in azure DevTest Labs](devtest-lab-add-devtest-user.md).
 
 ## <a name="move-lab-to-another-resource-group"></a>Lab verplaatsen naar een andere resource groep 
 

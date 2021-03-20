@@ -5,10 +5,10 @@ services: service-fabric
 ms.topic: conceptual
 ms.date: 01/09/2020
 ms.openlocfilehash: 972700dded1841994de9252b4aa4bbc8eaefeaf8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "76024704"
 ---
 # <a name="service-fabric-architecture"></a>Service Fabric-architectuur
@@ -36,7 +36,7 @@ Als u de oorzaak van een set knoop punten in een gedistribueerd systeem wilt heb
 
 ## <a name="reliability-subsystem"></a>Betrouwbaarheids subsysteem
 
-Het subsysteem voor betrouw baarheid biedt het mechanisme om de status van een Service Fabric service Maxi maal beschikbaar te maken via het gebruik van de *Replicator*, *failover Manager*en *resource Balancer*.
+Het subsysteem voor betrouw baarheid biedt het mechanisme om de status van een Service Fabric service Maxi maal beschikbaar te maken via het gebruik van de *Replicator*, *failover Manager* en *resource Balancer*.
 
 * De Replicator zorgt ervoor dat de status wijzigingen in de primaire service replica automatisch worden gerepliceerd naar secundaire replica's, waarbij de consistentie tussen de primaire en secundaire replica's in een service replicaset wordt gehandhaafd. De Replicator is verantwoordelijk voor quorum beheer tussen de replica's in de replicaset. Er wordt gecommuniceerd met de failover-eenheid voor het ophalen van de lijst met bewerkingen die moeten worden gerepliceerd en de reconfiguratie-agent geeft deze de configuratie van de replicaset. Deze configuratie geeft aan welke replica's de bewerkingen moeten worden gerepliceerd. Service Fabric biedt een standaard-Replicator, de zogeheten infrastructuur Replicator, die door de programmeer model-API kan worden gebruikt om de service status Maxi maal beschikbaar en betrouwbaar te maken.
 * De Failover Manager zorgt ervoor dat wanneer knoop punten worden toegevoegd aan of verwijderd uit het cluster, de belasting automatisch opnieuw wordt gedistribueerd over de beschik bare knoop punten. Als een knoop punt in het cluster uitvalt, zal het cluster automatisch de service replica's opnieuw configureren om de beschik baarheid te behouden.

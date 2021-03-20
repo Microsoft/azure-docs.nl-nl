@@ -4,10 +4,10 @@ description: Meer informatie over de nieuwe functies in Azure Backup Server. In 
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.openlocfilehash: b077296e58e1193e454a686a392d802e905500a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91292894"
 ---
 # <a name="add-storage-to-azure-backup-server"></a>Opslag toevoegen aan Azure Backup Server
@@ -36,7 +36,7 @@ Back-upserver v2 of hoger accepteert opslag volumes. Wanneer u een volume toevoe
 
 Als u back-upserver v2 of nieuwer gebruikt met volumes als schijf opslag, kunt u de controle over de opslag behouden. Een volume kan één schijf zijn. Als u de opslag in de toekomst echter wilt uitbreiden, maakt u een volume uit een schijf die is gemaakt met behulp van opslag ruimten. Dit kan handig zijn als u het volume wilt uitbreiden voor back-upopslag. In deze sectie vindt u aanbevolen procedures voor het maken van een volume met deze installatie.
 
-1. Selecteer in Serverbeheer **Bestands-en opslag Services**  >  **volumes**  >  **opslag groepen**. Onder **fysieke schijven**selecteert u **nieuwe opslag groep**.
+1. Selecteer in Serverbeheer **Bestands-en opslag Services**  >  **volumes**  >  **opslag groepen**. Onder **fysieke schijven** selecteert u **nieuwe opslag groep**.
 
     ![Een nieuwe opslag groep maken](./media/backup-mabs-add-storage/mabs-add-storage-1.png)
 
@@ -119,18 +119,18 @@ Als u verouderde opslag met een back-upserver wilt gebruiken, moet u mogelijk sc
 
 Schijfopslag toevoegen:
 
-1. Selecteer **beheer**  >  **Disk Storage**  >  **toevoegen**in de Administrator-console.
+1. Selecteer **beheer**  >  **Disk Storage**  >  **toevoegen** in de Administrator-console.
 
     ![Dialoog venster Disk Storage toevoegen](/system-center/dpm/media/upgrade-to-dpm-2016/dpm-2016-add-disk-storage.png)
 
 2. Selecteer in het dialoog venster **Disk Storage toevoegen** de optie **schijven toevoegen**.
 
-3. Selecteer de schijven die u wilt toevoegen in de lijst met beschik bare schijven, selecteer **toevoegen**en selecteer vervolgens **OK**.
+3. Selecteer de schijven die u wilt toevoegen in de lijst met beschik bare schijven, selecteer **toevoegen** en selecteer vervolgens **OK**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Nadat u de back-upserver installeert, leert u hoe u uw server voorbereidt of een werk belasting gaat beveiligen.
 
 - [Werk belastingen voor de back-upserver voorbereiden](backup-azure-microsoft-azure-backup.md)
-- [Back-upserver gebruiken om een back-up te maken van een VMware-Server](backup-azure-backup-server-vmware.md)
-- [Back-upserver gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)
+- [Backup Server gebruiken om back-ups te maken van een VMware-server](backup-azure-backup-server-vmware.md)
+- [Backup Server gebruiken om back-ups te maken van SQL Server](backup-azure-sql-mabs.md)

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 08/20/2020
 ms.openlocfilehash: fff8638a819511f84f15c52ad0695cdd5759f971
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89084547"
 ---
 # <a name="move-azure-event-grid-domains-to-another-region"></a>Azure Event Grid domeinen verplaatsen naar een andere regio
@@ -32,15 +32,15 @@ Dit zijn de stappen op hoog niveau die in dit artikel worden behandeld:
 Exporteer een resource manager-sjabloon voor het domein om aan de slag te gaan. 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Typ **Event grid domeinen**in de zoek balk en selecteer **Event grid domeinen** in de lijst met resultaten. 
+2. Typ **Event grid domeinen** in de zoek balk en selecteer **Event grid domeinen** in de lijst met resultaten. 
 
     :::image type="content" source="./media/move-domains-across-regions/search-domains.png" alt-text="Event Grid domeinen zoeken en selecteren":::
 3. Selecteer het **domein** dat u wilt exporteren naar een resource manager-sjabloon. 
 
-    :::image type="content" source="./media/move-domains-across-regions/select-domain.png" alt-text="Event Grid domeinen zoeken en selecteren":::   
+    :::image type="content" source="./media/move-domains-across-regions/select-domain.png" alt-text="Het domein selecteren":::   
 4. Selecteer op de pagina **Event grid domein** de optie **sjabloon exporteren** onder **instellingen** in het menu links en selecteer vervolgens **downloaden** op de werk balk. 
 
-    :::image type="content" source="./media/move-domains-across-regions/export-template-download.png" alt-text="Event Grid domeinen zoeken en selecteren" lightbox="./media/move-domains-across-regions/export-template-download.png":::   
+    :::image type="content" source="./media/move-domains-across-regions/export-template-download.png" alt-text="Sjabloon exporteren-> downloaden" lightbox="./media/move-domains-across-regions/export-template-download.png":::   
 
     > [!IMPORTANT]
     > Domein-en domein onderwerpen worden geëxporteerd. Abonnementen voor domein onderwerpen worden niet geëxporteerd. U moet dus abonnementen voor domein onderwerpen maken nadat u domein onderwerpen hebt verplaatst. 
@@ -60,20 +60,20 @@ Exporteer een resource manager-sjabloon voor het domein om aan de slag te gaan.
 Implementeer de sjabloon voor het maken van de onderwerpen domein en domein in de doel regio. 
 
 1. Selecteer in de Azure Portal **een resource maken**.
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie**en druk vervolgens op **Enter**.
+2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
 3. Selecteer **Sjabloonimlementatie**.
 4. Selecteer **Maken**.
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
-6. Selecteer **bestand laden**en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
+6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
 7. Selecteer **Opslaan** om de sjabloon op te slaan. 
 8. Voer op de pagina **aangepaste implementatie** de volgende stappen uit:
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     1. Selecteer een bestaande **resource groep** in de doel regio of maak er een. 
-    1. Selecteer bij **regio**de doel regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
-    1. Voer voor de **domein naam**een nieuwe naam in voor het domein. 
+    1. Selecteer bij **regio** de doel regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
+    1. Voer voor de **domein naam** een nieuwe naam in voor het domein. 
     1. Selecteer **Controleren + maken**. 
     
-        :::image type="content" source="./media/move-domains-across-regions/deploy-template.png" alt-text="Event Grid domeinen zoeken en selecteren":::        
+        :::image type="content" source="./media/move-domains-across-regions/deploy-template.png" alt-text="Sjabloon implementeren":::        
     1. Nadat de validatie van de sjabloon is geslaagd, selecteert u onder aan de pagina **maken** om de resource te implementeren. 
     1. Nadat de implementatie is voltooid, selecteert u **Ga naar resource groep** om naar de pagina resource groep te gaan. Bevestig dat er zich een domein in de resource groep bevindt. Selecteer het domein. Controleer of er domein onderwerpen aanwezig zijn in het domein. 
 
@@ -84,13 +84,13 @@ Als u opnieuw wilt beginnen, verwijdert u het domein in de doel regio en herhaal
 
 Een domein verwijderen met behulp van de Azure Portal:
 
-1. In het zoek venster aan de bovenkant van Azure Portal, typt u **Event grid domeinen**en selecteert u **Event grid domeinen** in de zoek resultaten. 
+1. In het zoek venster aan de bovenkant van Azure Portal, typt u **Event grid domeinen** en selecteert u **Event grid domeinen** in de zoek resultaten. 
 2. Selecteer het domein dat u wilt verwijderen en selecteer **verwijderen** op de werk balk. 
 3. Voer op de pagina Bevestiging de naam van de resource groep in en selecteer **verwijderen**.  
 
 Als u de resource groep die het domein bevat wilt verwijderen met behulp van de Azure Portal:
 
-1. In het zoek venster aan de bovenkant van Azure Portal, typt u **resource groepen**en selecteert u **resource groepen** uit Zoek resultaten. 
+1. In het zoek venster aan de bovenkant van Azure Portal, typt u **resource groepen** en selecteert u **resource groepen** uit Zoek resultaten. 
 2. Selecteer de resource groep die u wilt verwijderen en selecteer **verwijderen** op de werk balk. 
 3. Voer op de pagina Bevestiging de naam van de resource groep in en selecteer **verwijderen**.  
 

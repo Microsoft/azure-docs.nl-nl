@@ -4,10 +4,10 @@ description: Gebruik Azure Backup voor het maken van back-ups en het herstellen 
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.openlocfilehash: cae95c10c510969cc0553a54a506789d6be427d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89180980"
 ---
 # <a name="back-up-files-and-applications-on-azure-stack"></a>Back-ups maken van bestanden en toepassingen op Azure Stack
@@ -62,28 +62,28 @@ Als u Azure Backup Server wilt configureren voor het beveiligen van bestanden in
 
     In plaats van het selecteren van een interval voor incrementele back-ups, voor het uitvoeren van een snelle volledige back-up, net vóór elk gepland herstel punt, selecteert u **net vóór een herstel punt**. Als u toepassings werkbelastingen beveiligt, maakt Azure Backup Server herstel punten op basis van het schema voor de synchronisatie frequentie (mits de toepassing incrementele back-ups ondersteunt). Als de toepassing geen incrementele back-ups ondersteunt, voert Azure Backup Server een snelle volledige back-up uit.
 
-    Geef voor **bestands herstel punten**op wanneer u herstel punten wilt maken. Selecteer **wijzigen** om de tijden en dagen van de week in te stellen wanneer er herstel punten worden gemaakt.
+    Geef voor **bestands herstel punten** op wanneer u herstel punten wilt maken. Selecteer **wijzigen** om de tijden en dagen van de week in te stellen wanneer er herstel punten worden gemaakt.
 
 6. Controleer in het scherm **schijf toewijzing controleren** de schijf ruimte van de opslag groep die is toegewezen aan de beveiligings groep.
 
     **Totale gegevens grootte** is de grootte van de gegevens waarvan u een back-up wilt maken en **schijf ruimte die moet worden ingericht** op Azure backup server is de aanbevolen ruimte voor de beveiligings groep. Azure Backup Server kiest het ideale back-upvolume, op basis van de instellingen. U kunt echter de keuzes voor het back-upvolume bewerken in Schijftoewijzingsdetails. Selecteer voor de werkbelastingen de gewenste opslag in het vervolgkeuzemenu. Met uw bewerkingen worden de waarden voor Totale opslag en Vrije opslagruimte in het deelvenster Beschikbare schijfopslag gewijzigd. Onderingerichte ruimte is de hoeveelheid opslag Azure Backup Server raadt u aan om aan het volume toe te voegen, om in de toekomst soepel door te gaan met back-ups.
 
-7. In **methode voor maken van replica**selecteren selecteert u hoe u de eerste volledige gegevens replicatie wilt verwerken. Als u besluit om via het netwerk te repliceren, raadt Azure u aan een rustige tijd te kiezen. Voor grote hoeveel heden gegevens of minder dan optimale netwerk omstandigheden kunt u overwegen om de gegevens te repliceren met Verwissel bare media.
+7. In **methode voor maken van replica** selecteren selecteert u hoe u de eerste volledige gegevens replicatie wilt verwerken. Als u besluit om via het netwerk te repliceren, raadt Azure u aan een rustige tijd te kiezen. Voor grote hoeveel heden gegevens of minder dan optimale netwerk omstandigheden kunt u overwegen om de gegevens te repliceren met Verwissel bare media.
 
 8. Selecteer in **Opties voor consistentiecontrole selecteren** hoe u consistentiecontroles wilt automatiseren. Schakel consistentie controles alleen uit als de gegevens replicatie inconsistent wordt of volgens een schema. Als u geen automatische consistentie controle wilt configureren, moet u op elk gewenst moment een hand matige controle uitvoeren:
     * Klik in het gebied **beveiliging** van de Azure backup server-console met de rechter muisknop op de beveiligings groep en selecteer **consistentie controle uitvoeren**.
 
 9. Als u een back-up naar Azure wilt maken, controleert u op de pagina **online beveiligings gegevens opgeven** of de werk belastingen waarvan u een back-up wilt maken naar Azure zijn geselecteerd.
 
-10. Geef in **schema voor online back-ups opgeven**op wanneer incrementele back-ups naar Azure moeten worden uitgevoerd.
+10. Geef in **schema voor online back-ups opgeven** op wanneer incrementele back-ups naar Azure moeten worden uitgevoerd.
 
     U kunt back-ups dagelijks/wekelijks/maandelijks/jaarlijks uitvoeren en de tijd en datum opgeven waarop u deze wilt uitvoeren. U kunt maximaal twee keer per dag back-ups uitvoeren. Telkens wanneer een back-uptaak wordt uitgevoerd, wordt er een gegevens herstel punt in azure gemaakt op basis van de kopie van de back-upgegevens die op de Azure Backup Server schijf zijn opgeslagen.
 
-11. Geef bij **online Bewaar beleid opgeven**op hoe de herstel punten die zijn gemaakt op basis van de dagelijkse/wekelijkse/maandelijkse/jaarlijkse back-ups, worden bewaard in Azure.
+11. Geef bij **online Bewaar beleid opgeven** op hoe de herstel punten die zijn gemaakt op basis van de dagelijkse/wekelijkse/maandelijkse/jaarlijkse back-ups, worden bewaard in Azure.
 
 12. In **Kies online replicatie**, geeft u op hoe de eerste volledige replicatie van gegevens wordt uitgevoerd.
 
-13. Controleer uw instellingen op **samen vatting**. Wanneer u **groep maken**selecteert, vindt de initiële gegevens replicatie plaats. Wanneer de gegevens replicatie is voltooid, wordt op de pagina **status** de status van de beveiligings groep weer gegeven als **OK**. De eerste back-uptaak vindt plaats in overeenstemming met de instellingen van de beveiligings groep.
+13. Controleer uw instellingen op **samen vatting**. Wanneer u **groep maken** selecteert, vindt de initiële gegevens replicatie plaats. Wanneer de gegevens replicatie is voltooid, wordt op de pagina **status** de status van de beveiligings groep weer gegeven als **OK**. De eerste back-uptaak vindt plaats in overeenstemming met de instellingen van de beveiligings groep.
 
 ## <a name="recover-file-data"></a>Bestands gegevens herstellen
 
@@ -104,10 +104,10 @@ Gebruik Azure Backup Server-console om gegevens op uw virtuele machine te herste
 
 6. Geef de herstel opties op:
 
-    * Selecteer voor **herstel van bestaande versie**de optie **kopie maken**, **overs Laan**of **overschrijven**. Overschrijven is alleen beschikbaar bij het herstellen naar de oorspronkelijke locatie.
-    * Voor **herstel beveiliging**kiest u **instellingen van de doel computer Toep assen** of **de beveiligings instellingen van de herstel punt versie Toep assen**.
+    * Selecteer voor **herstel van bestaande versie** de optie **kopie maken**, **overs Laan** of **overschrijven**. Overschrijven is alleen beschikbaar bij het herstellen naar de oorspronkelijke locatie.
+    * Voor **herstel beveiliging** kiest u **instellingen van de doel computer Toep assen** of **de beveiligings instellingen van de herstel punt versie Toep assen**.
     * Selecteer voor **beperking van netwerk bandbreedte gebruik** **wijzigen** om beperking van netwerk bandbreedte gebruik in te scha kelen.
-    * **Melding** Selecteer **een e-mail bericht verzenden wanneer het herstel is voltooid**en geef de ontvangers op die de melding moeten ontvangen. Scheid de e-mailadressen met komma's.
+    * **Melding** Selecteer **een e-mail bericht verzenden wanneer het herstel is voltooid** en geef de ontvangers op die de melding moeten ontvangen. Scheid de e-mailadressen met komma's.
     * Nadat u de selecties hebt gemaakt, selecteert u **volgende**
 
 7. Controleer uw herstel instellingen en selecteer **herstellen**.

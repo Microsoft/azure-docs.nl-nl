@@ -4,10 +4,10 @@ description: Meer informatie over het opgeven van verplichte artefacten die moet
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 0677f8bea35cb34735fdcf34e717eea349fad8bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85480300"
 ---
 # <a name="specify-mandatory-artifacts-for-your-lab-in-azure-devtest-labs"></a>Verplichte artefacten opgeven voor uw Lab in Azure DevTest Labs
@@ -66,8 +66,8 @@ Voer de volgende acties uit om een verplicht artefact uit een lab te verwijderen
 Als test gebruiker kunt u nu de lijst met verplichte artefacten bekijken tijdens het maken van een virtuele machine in het lab. U kunt geen verplichte artefacten die in het lab zijn ingesteld, bewerken of verwijderen door de eigenaar van uw Lab.
 
 1. Op de start pagina van uw Lab selecteert u **overzicht** in het menu.
-2. Selecteer **+ toevoegen**om een virtuele machine toe te voegen aan het lab. 
-3. Selecteer een **basis installatie kopie**. In dit voor beeld wordt **Windows Server versie 1709**gebruikt.
+2. Selecteer **+ toevoegen** om een virtuele machine toe te voegen aan het lab. 
+3. Selecteer een **basis installatie kopie**. In dit voor beeld wordt **Windows Server versie 1709** gebruikt.
 4. U ziet dat er een bericht wordt weer gegeven voor **artefacten** met het aantal verplichte artefacten dat is geselecteerd. 
 5. Selecteer **artefacten**. 
 6. Controleer of u de **vereiste artefacten** ziet die u hebt opgegeven in de configuratie en het beleid van het lab. 

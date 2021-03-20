@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: how-to
 ms.date: 04/29/2019
 ms.openlocfilehash: 6cbbe63d7968816de78256f5a8408517bb8da278
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75973795"
 ---
 # <a name="enable-replication-for-a-disk-added-to-an-azure-vm"></a>Replicatie inschakelen voor een schijf die is toegevoegd aan een Azure VM
@@ -37,9 +37,9 @@ In dit artikel wordt ervan uitgegaan dat u nood herstel al hebt ingesteld voor d
 
 Ga als volgt te werk om replicatie in te scha kelen voor een toegevoegde schijf:
 
-1. Klik in de kluis > **gerepliceerde items**op de virtuele machine waaraan u de schijf hebt toegevoegd.
-2. Klik op **schijven**en selecteer vervolgens de gegevens schijf waarvoor u replicatie wilt inschakelen (deze schijven hebben een niet- **beveiligde** status).
-3.  Klik in **schijf Details**op **replicatie inschakelen**.
+1. Klik in de kluis > **gerepliceerde items** op de virtuele machine waaraan u de schijf hebt toegevoegd.
+2. Klik op **schijven** en selecteer vervolgens de gegevens schijf waarvoor u replicatie wilt inschakelen (deze schijven hebben een niet- **beveiligde** status).
+3.  Klik in **schijf Details** op **replicatie inschakelen**.
 
     ![Replicatie inschakelen voor toegevoegde schijf](./media/azure-to-azure-enable-replication-added-disk/enabled-added.png)
 

@@ -5,10 +5,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 08/20/2020
 ms.openlocfilehash: 6783db6b9bb1c7d48b308234a179925d6f30e281
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89084546"
 ---
 # <a name="move-azure-event-grid-partner-namespaces-to-another-region"></a>Azure Event Grid partner-naam ruimten naar een andere regio verplaatsen
@@ -31,7 +31,7 @@ Dit zijn de stappen op hoog niveau die in dit artikel worden behandeld:
 Als u aan de slag wilt gaan, exporteert u een resource manager-sjabloon voor de partner naam ruimte. 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. In de zoek balk aan de bovenkant typt u **Event grid partner naam ruimten**en selecteert u **Event grid partner naam ruimten** in de lijst met resultaten. 
+2. In de zoek balk aan de bovenkant typt u **Event grid partner naam ruimten** en selecteert u **Event grid partner naam ruimten** in de lijst met resultaten. 
 3. Selecteer de **partner-naam ruimte** die u wilt exporteren naar een resource manager-sjabloon. 
 4. Selecteer op de pagina **Event grid partner naam ruimte** de optie **sjabloon exporteren** onder **instellingen** in het menu links en selecteer vervolgens **downloaden** op de werk balk. 
 
@@ -57,19 +57,19 @@ Als u aan de slag wilt gaan, exporteert u een resource manager-sjabloon voor de 
 Implementeer de sjabloon voor het maken van een partner naam ruimte in de doel regio. 
 
 1. Selecteer in de Azure Portal **een resource maken**.
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie**en druk vervolgens op **Enter**.
+2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
 3. Selecteer **Sjabloonimlementatie**.
 4. Selecteer **Maken**.
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
-6. Selecteer **bestand laden**en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
+6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
 7. Selecteer **Opslaan** om de sjabloon op te slaan. 
 8. Voer op de pagina **aangepaste implementatie** de volgende stappen uit: 
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     1. Selecteer een bestaande **resource groep** in de doel regio of maak er een. 
-    1. Selecteer bij **locatie**de doel regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
-    1. Voer voor de naam van de **partner naam ruimte**een naam in voor de nieuwe partner naam ruimte. 
+    1. Selecteer bij **locatie** de doel regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
+    1. Voer voor de naam van de **partner naam ruimte** een naam in voor de nieuwe partner naam ruimte. 
     1. Voor de externe ID van de partner registratie voert u de bron-ID van de partner registratie in met de volgende indeling: `/subscriptions/<Azure subscription ID>/resourceGroups/<resource group name>/providers/Microsoft.EventGrid/partnerRegistrations/<Partner registration name>` .
-    1. Schakel het selectie vakje **Ik ga akkoord met de bovenstaande voor waarden in** .     
+    1. Schakel het selectievakje **Ik ga akkoord met de bovenstaande voorwaarden** in.     
     1. Selecteer **controleren + maken** om het implementatie proces te starten. 
     1. Controleer op de pagina **controleren en maken** de instellingen en selecteer **maken**. 
 
@@ -80,7 +80,7 @@ Als u opnieuw wilt beginnen, verwijdert u de partner naam ruimte in de doel regi
 
 Een partner naam ruimte verwijderen met behulp van de Azure Portal:
 
-1. Typ **Event grid partner-naam ruimten**in het venster Zoeken boven aan Azure Portal en selecteer **Event grid partner naam ruimten** in de zoek resultaten. 
+1. Typ **Event grid partner-naam ruimten** in het venster Zoeken boven aan Azure Portal en selecteer **Event grid partner naam ruimten** in de zoek resultaten. 
 2. Selecteer de naam ruimte van de partner die u wilt verwijderen en selecteer **verwijderen** op de werk balk. 
 3. **Bevestig** het verwijderen om de partner naam ruimte te verwijderen. 
 

@@ -5,10 +5,10 @@ ms.date: 07/23/2020
 ms.topic: how-to
 ms.reviewer: ravastra
 ms.openlocfilehash: 36b012c486c0c7d3303a81998e88f1605999c899
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87170851"
 ---
 # <a name="manage-azure-blockchain-service-using-azure-cli"></a>Azure Block Chain service beheren met Azure CLI
@@ -212,11 +212,11 @@ az role assignment create \
 |---------|-------------|
 | **rolvak** | De naam van de Azure AD-rol. |
 | **toegewezen gebruiker** | Gebruikers-ID voor Azure AD. Bijvoorbeeld: `user@contoso.com` |
-| **bereik** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
+| **ligt** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
 
 **Voorbeeld:**
 
-Toegang tot knoop punten verlenen aan block Chain- **lid**van Azure AD-gebruiker:
+Toegang tot knoop punten verlenen aan block Chain- **lid** van Azure AD-gebruiker:
 
 ```azurecli
 az role assignment create \
@@ -248,7 +248,7 @@ az role assignment create \
 |---------|-------------|
 | **rolvak** | De naam van de Azure AD-rol. |
 | **toegewezen gebruiker-object-id** | Groeps-ID of toepassings-ID van Azure AD. |
-| **bereik** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
+| **ligt** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
 
 **Voorbeeld:**
 
@@ -274,7 +274,7 @@ az role assignment delete \
 |---------|-------------|
 | **rolvak** | De naam van de Azure AD-rol. |
 | **toegewezen gebruiker** | Gebruikers-ID voor Azure AD. Bijvoorbeeld: `user@contoso.com` |
-| **bereik** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
+| **ligt** | Het bereik van de roltoewijzing. Dit kan een Block Chain-lid of een transactie knooppunt zijn. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

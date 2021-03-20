@@ -4,10 +4,10 @@ description: Meer informatie over hoe zacht verwijderen voor SQL Server in azure
 ms.topic: conceptual
 ms.date: 04/27/2020
 ms.openlocfilehash: 2a442997d426ff0bf4c74b0b45f7657cc0593b82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91254292"
 ---
 # <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Voorlopig verwijderen voor SQL Server in azure VM en SAP HANA in werk belastingen voor Azure VM
@@ -25,7 +25,7 @@ Azure Backup biedt nu zacht verwijderen voor SQL Server in azure VM en SAP HANA 
 
    ![Back-up stoppen](./media/soft-delete-sql-saphana-in-azure-vm/stop-backup.png)
 
-2. In het volgende venster krijgt u de mogelijkheid om de back-upgegevens te verwijderen of te bewaren. Als u **back-upgegevens verwijderen**kiest, wordt de back-up van de data base niet definitief verwijderd. In plaats daarvan worden de back-upgegevens 14 dagen in de modus voorlopig verwijderd bewaard. De verwijdering wordt uitgesteld tot de vijftiende dag met gewone waarschuwings berichten over de eerste, twaalfde en vijftiende dag van de back-upstatus van de Data Base naar de gebruiker.
+2. In het volgende venster krijgt u de mogelijkheid om de back-upgegevens te verwijderen of te bewaren. Als u **back-upgegevens verwijderen** kiest, wordt de back-up van de data base niet definitief verwijderd. In plaats daarvan worden de back-upgegevens 14 dagen in de modus voorlopig verwijderd bewaard. De verwijdering wordt uitgesteld tot de vijftiende dag met gewone waarschuwings berichten over de eerste, twaalfde en vijftiende dag van de back-upstatus van de Data Base naar de gebruiker.
 
    ![Back-upgegevens verwijderen](./media/soft-delete-sql-saphana-in-azure-vm/delete-backup-data.png)
 
@@ -33,7 +33,7 @@ Azure Backup biedt nu zacht verwijderen voor SQL Server in azure VM en SAP HANA 
 
    ![Voorlopig verwijderde items](./media/soft-delete-sql-saphana-in-azure-vm/soft-deleted-items.png)
 
-4. Als u de voorlopig verwijderde data base wilt herstellen, moet deze eerst worden verwijderd. Als u de verwijdering ongedaan wilt maken, kiest u de voorlopig verwijderde data base en selecteert u vervolgens de optie **verwijderen ongedaan**maken.
+4. Als u de voorlopig verwijderde data base wilt herstellen, moet deze eerst worden verwijderd. Als u de verwijdering ongedaan wilt maken, kiest u de voorlopig verwijderde data base en selecteert u vervolgens de optie **verwijderen ongedaan** maken.
 
    ![Data base verwijderen](./media/soft-delete-sql-saphana-in-azure-vm/undelete-database.png)
 
@@ -45,7 +45,7 @@ Azure Backup biedt nu zacht verwijderen voor SQL Server in azure VM en SAP HANA 
 
    ![VM herstellen](./media/soft-delete-sql-saphana-in-azure-vm/restore-vm.png)
 
-6. Nadat het verwijderen is voltooid, wordt de status weer gegeven als back-up stoppen met gegevens behouden en vervolgens kunt u **back-up hervatten**kiezen. Met de **back-** upbewerking hervatten wordt het back-upitem teruggezet in de actieve status, gekoppeld aan een back-upbeleid dat is geselecteerd door de gebruiker die de back-up-en bewaar schema's definieert.
+6. Nadat het verwijderen is voltooid, wordt de status weer gegeven als back-up stoppen met gegevens behouden en vervolgens kunt u **back-up hervatten** kiezen. Met de **back-** upbewerking hervatten wordt het back-upitem teruggezet in de actieve status, gekoppeld aan een back-upbeleid dat is geselecteerd door de gebruiker die de back-up-en bewaar schema's definieert.
 
    ![Back-up hervatten](./media/soft-delete-sql-saphana-in-azure-vm/resume-backup.png)
 

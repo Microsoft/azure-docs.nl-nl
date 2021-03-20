@@ -4,10 +4,10 @@ description: Meer informatie over het plaatsen van een interne ondersteunings ve
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 1c9920e6fe7fbfe2a8d0aeacb896150b342981b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "85480470"
 ---
 # <a name="add-an-internal-support-statement-to-a-lab-in-azure-devtest-labs"></a>Een interne ondersteunings verklaring toevoegen aan een lab in Azure DevTest Labs
@@ -21,17 +21,17 @@ U kunt een ondersteunings verklaring eenvoudig uitschakelen of bewerken nadat de
 ## <a name="steps-to-add-a-support-statement-to-an-existing-lab"></a>Stappen om een ondersteunings instructie toe te voegen aan een bestaand Lab
 
 1. Meld u aan bij [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
-1. Selecteer indien nodig **alle services**en selecteer vervolgens **DevTest Labs** in de lijst. (Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**).
+1. Selecteer indien nodig **alle services** en selecteer vervolgens **DevTest Labs** in de lijst. (Uw Lab wordt mogelijk al weer gegeven op het dash board onder **alle resources**).
 1. Selecteer in de lijst met Labs het lab waarin u een ondersteunings verklaring wilt toevoegen.  
 1. Selecteer in het gedeelte **overzicht** van het lab de optie **configuratie en beleid**.  
 
     ![Knop configuratie en beleid](./media/devtest-lab-internal-support-message/devtestlab-config-and-policies.png)
 
-1. Selecteer aan de linkerkant onder **instellingen**de optie **interne ondersteuning**.
+1. Selecteer aan de linkerkant onder **instellingen** de optie **interne ondersteuning**.
 
     ![Knop interne ondersteuning](./media/devtest-lab-internal-support-message/devtestlab-internal-support.png)
 
-1. Stel ingeschakeld in op **Ja**als u een intern ondersteunings bericht wilt maken voor de gebruikers in dit lab.
+1. Stel ingeschakeld in op **Ja** als u een intern ondersteunings bericht wilt maken voor de gebruikers in dit lab.
 
 1. Voer in het veld **ondersteunings bericht** de interne ondersteunings verklaring in die u wilt presen teren aan uw test gebruikers. Het ondersteunings bericht accepteert de prijs verlaging. Wanneer u de bericht tekst invoert, kunt u het **voorbeeld** gebied onder aan het scherm weer geven om te zien hoe het bericht voor gebruikers wordt weer gegeven.
 
@@ -46,7 +46,7 @@ Als u dit ondersteunings bericht niet meer wilt weer geven voor gebruikers met e
 
 1. Selecteer een lab in het [Azure Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1. Selecteer **interne ondersteuning**in het **overzichts** gebied van het lab.  
+1. Selecteer **interne ondersteuning** in het **overzichts** gebied van het lab.  
 
     ![Knop interne ondersteuning](./media/devtest-lab-internal-support-message/devtestlab-internal-support.png)
 

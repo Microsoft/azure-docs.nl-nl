@@ -4,10 +4,10 @@ description: Meer informatie over het maken van een back-up van de Microsoft Azu
 ms.topic: conceptual
 ms.date: 09/24/2020
 ms.openlocfilehash: 81a6ee005e15b1d7ab7b11a938b8ab14143818f4
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92172116"
 ---
 # <a name="back-up-the-mabs-server"></a>Een back-up maken van de MABS-server
@@ -72,7 +72,7 @@ U kunt de data base herstellen vanuit Azure met behulp van een MABS-server die i
 
 2. Geef de kluis referenties op (down load van de Azure Backup kluis). Houd er rekening mee dat de referenties slechts twee dagen geldig zijn.
 
-3. In **externe MABS voor herstel**selecteren selecteert u de MABS-server waarvoor u de Data Base wilt herstellen, typt u de wachtwoordzin voor versleuteling en selecteert u **OK.**
+3. In **externe MABS voor herstel** selecteren selecteert u de MABS-server waarvoor u de Data Base wilt herstellen, typt u de wachtwoordzin voor versleuteling en selecteert u **OK.**
 
 4. Selecteer het herstelpunt dat u wilt gebruiken in de lijst met beschikbare punten. Selecteer **externe MABS wissen** om terug te keren naar de weer gave lokale MABS.
 
@@ -178,7 +178,7 @@ Als de MABS-server nog steeds operationeel is en de opslag groep intact is (zoal
 
 4. CD-rom naar X: en navigeer naar de locatie van de MABS-database bestanden. Kopieer deze naar een locatie waarvandaan u gemakkelijk kunt herstellen. Nadat de kopie is voltooid, is het PsExec CMD-venster beschikbaar en wordt **diskshadow.exe** uitgevoerd en wordt het X:-volume zichtbaar.
 
-5. U kunt de database bestanden nu herstellen met behulp van SQL Management Studio of door **DPMSYNC \- RESTOREDB**uit te voeren.
+5. U kunt de database bestanden nu herstellen met behulp van SQL Management Studio of door **DPMSYNC \- RESTOREDB** uit te voeren.
 
 ## <a name="back-up-with-native-sql-server-backup-to-a-local-disk"></a>Back-up maken met systeemeigen SQL Server-back-up naar een lokale schijf
 
@@ -220,13 +220,13 @@ Deze back-upoptie gebruikt systeem eigen SQL om een back-up te maken van de MABS
     </ScriptConfiguration>
     ```
 
-1. Sla de wijzigingen in **ScriptingConfig.xml**op.
+1. Sla de wijzigingen in **ScriptingConfig.xml** op.
 
 1. Beveilig de map C:\MABSBACKUP of de `\sqlservername\MABSBACKUP` share met behulp van MABS en wacht totdat de eerste replica is gemaakt. Er moet een **dpmdb. bak** aanwezig zijn in de map C:\MABSBACKUP als gevolg van het script dat voorafgaat aan de back-up, dat op zijn beurt is gekopieerd naar de replica MABS.
 
 1. Als u herstel door selfservice Services niet inschakelt, moet u extra stappen uitvoeren om de map MABSBACKUP op de replica te delen:
 
-    1. Ga in de MABS-console > **beveiliging**naar de gegevens bron MABSBACKUP en selecteer deze. Selecteer in de sectie Details de optie **klikken om details weer te geven** op de koppeling naar het pad naar de replica en het pad naar Klad blok te kopiëren. Verwijder het bronpad en behoud het doelpad. Het pad moet er ongeveer als volgt uitzien: `C:\Program Files\Microsoft System Center\DPM\DPM\Volumes\Replica\File System\vol_c9aea05f-31e6-45e5-880c-92ce5fba0a58\454d81a0-0d9d-4e07-9617-d49e3f2aa5de\Full\DPMBACKUP` .
+    1. Ga in de MABS-console > **beveiliging** naar de gegevens bron MABSBACKUP en selecteer deze. Selecteer in de sectie Details de optie **klikken om details weer te geven** op de koppeling naar het pad naar de replica en het pad naar Klad blok te kopiëren. Verwijder het bronpad en behoud het doelpad. Het pad moet er ongeveer als volgt uitzien: `C:\Program Files\Microsoft System Center\DPM\DPM\Volumes\Replica\File System\vol_c9aea05f-31e6-45e5-880c-92ce5fba0a58\454d81a0-0d9d-4e07-9617-d49e3f2aa5de\Full\DPMBACKUP` .
 
     2. Maak een share met dat pad met de share naam **MABSSERVERNAME-DPMDB**. U kunt de opdracht Net Share hieronder uit een beheeropdrachtprompt gebruiken.
 

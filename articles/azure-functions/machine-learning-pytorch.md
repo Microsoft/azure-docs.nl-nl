@@ -7,10 +7,10 @@ ms.date: 02/28/2020
 ms.author: gopalv
 ms.custom: devx-track-python, devx-track-azurepowershell
 ms.openlocfilehash: 8891c29e5d8d06df6292d06ec06e5e57fb9880e7
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93422838"
 ---
 # <a name="tutorial-deploy-a-pre-trained-image-classification-model-to-azure-functions-with-pytorch"></a>Zelfstudie: Een vooraf getraind afbeeldingsclassificatie model implementeren in Azure Functions met PyTorch
@@ -52,11 +52,11 @@ In dit artikel leert y hoe u Python, PyTorch en Azure Functions gebruikt om een 
     - *start* is de werkmap voor de zelfstudie.
     - *end* is het uiteindelijke resultaat en de volledige implementatie voor uw referentie.
     - *resources* bevatten het machine learning-model en de helper-bibliotheken.
-    - *frontend* is een website waarmee de functie-app wordt aangeroepen.
+    - *frontend* is een website die de functie-app aanroept.
 
 ## <a name="create-and-activate-a-python-virtual-environment"></a>Een virtuele Python-omgeving maken en activeren
 
-Ga naar de *start* -map en voer de volgende opdrachten uit om een virtuele omgeving met de naam `.venv` te maken en te activeren.
+Ga naar de *start*-map en voer de volgende opdrachten uit om een virtuele omgeving met de naam `.venv` te maken en te activeren.
 
 
 # <a name="bash"></a>[bash](#tab/bash)
@@ -91,7 +91,7 @@ py -m venv .venv
 
 ---
 
-U voert alle volgende opdrachten uit in deze geactiveerde virtuele omgeving. (Voer `deactivate` uit om de virtuele omgeving te sluiten.)
+U voert alle volgende opdrachten uit in deze geactiveerde virtuele omgeving. (om de virtuele omgeving te sluiten, voert u `deactivate` uit.)
 
 
 ## <a name="create-a-local-functions-project"></a>Een lokaal Functions-project maken
@@ -115,18 +115,18 @@ In Azure Functions is een functieproject een container voor een of meer afzonder
     func new --name classify --template "HTTP trigger"
     ```
 
-    Met deze opdracht maakt u een map die overeenkomt met de naam van de functie, *classify*. In die map zijn twee bestanden: *\_\_init\_\_.py* , die de functiecode bevat en *function.json-* , waarmee de trigger van de functie en de bijbehorende invoer- en uitvoerbindingen worden beschreven. Zie [De inhoud van het bestand controleren](./create-first-function-cli-python.md#optional-examine-the-file-contents) in de quickstart voor Python voor meer informatie over de inhoud van deze bestanden.
+    Met deze opdracht maakt u een map die overeenkomt met de naam van de functie, *classify*. In die map zijn twee bestanden: *\_\_init\_\_.py*, die de functiecode bevat en *function.json-* , waarmee de trigger van de functie en de bijbehorende invoer- en uitvoerbindingen worden beschreven. Zie [De inhoud van het bestand controleren](./create-first-function-cli-python.md#optional-examine-the-file-contents) in de quickstart voor Python voor meer informatie over de inhoud van deze bestanden.
 
 
 ## <a name="run-the-function-locally"></a>De functie lokaal uitvoeren
 
-1. Start de functie door de lokale Azure Functions runtime host te starten in de map *start* :
+1. Start de functie door de lokale Azure Functions runtime host te starten in de map *start*:
 
     ```
     func start
     ```
 
-1. Zodra het eindpunt `classify` wordt weergegeven in de uitvoer, gaat u naar de URL, ```http://localhost:7071/api/classify?name=Azure```. Het bericht 'Hello Azure!' moet worden weergegeven in de uitvoer.
+1. Zodra het eindpunt `classify` wordt weergegeven in de uitvoer, gaat u naar de URL, ```http://localhost:7071/api/classify?name=Azure```. Het bericht "Hello Azure!" moet worden weergegeven in de uitvoer.
 
 1. Gebruik **Ctrl**-**C** om de host te stoppen.
 
@@ -181,7 +181,7 @@ Als u de functie `classify` wilt wijzigen om een afbeelding te classificeren op 
 
 De installatie kan enkele minuten duren. Intussen u kunt doorgaan met het wijzigen van de functie in de volgende sectie.
 > [!TIP]
-> >In Windows kan de fout optreden 'Kan pakketten niet installeren vanwege een EnvironmentError: [Errno 2] Geen bestand of map met die naam:' gevolgd door een lange padnaam naar een bestand zoals *sharded_mutable_dense_hashtable.cpython-37.pyc*. Deze fout treedt meestal op omdat de diepte van het mappad te lang wordt. In dit geval moet u de registersleutel `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem@LongPathsEnabled` instellen op `1` om lange paden in te schakelen. U kunt ook controleren waar uw Python-interpreter is geïnstalleerd. Als deze locatie een lang pad heeft, moet u proberen het opnieuw te installeren in een map met een korter pad.
+> >In Windows kan de fout optreden "Kan pakketten niet installeren vanwege een EnvironmentError: [errno 2] Geen bestand of map met die naam:" gevolgd door een lange padnaam naar een bestand zoals *sharded_mutable_dense_hashtable. cpython-37.pyc*. Deze fout treedt meestal op omdat de diepte van het mappad te lang wordt. In dit geval moet u de registersleutel `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem@LongPathsEnabled` instellen op `1` om lange paden in te schakelen. U kunt ook controleren waar uw Python-interpreter is geïnstalleerd. Als deze locatie een lang pad heeft, moet u proberen het opnieuw te installeren in een map met een korter pad.
 
 ## <a name="update-the-function-to-run-predictions"></a>De functie bijwerken voor het uitvoeren van voorspellingen
 
@@ -200,7 +200,7 @@ De installatie kan enkele minuten duren. Intussen u kunt doorgaan met het wijzig
     >
     > Wijzig in een productietoepassing `*` naar de specifieke oorsprong van de webpagina voor extra beveiliging.
 
-1. Sla de wijzigingen op en start de lokale functiehost opnieuw met `func start`, ervan uitgaand dat de installatie van de afhankelijkheden is voltooid. Zorg ervoor dat u de host uitvoert in de map *starten* met de virtuele omgeving geactiveerd. Anders wordt de host gestart, maar worden er fouten weergeven bij het aanroepen van de functie.
+1. Sla de wijzigingen op en controleer of de installatie van afhankelijkheden is voltooid, start de lokale functiehost opnieuw met `func start`. Zorg ervoor dat u de host uitvoert in de map *starten* met de virtuele omgeving geactiveerd. Anders wordt de host gestart, maar worden er fouten weergeven bij het aanroepen van de functie.
 
     ```
     func start
@@ -252,7 +252,7 @@ Als u het aanroepen van het functie-eindpunt vanuit een andere web-app wilt test
 
     ![Schermopname van voltooid project](media/machine-learning-pytorch/screenshot.png)
 
-    Als de browser een fout meldt bij het verzenden van de afbeeldings-URL, controleert u de terminal waarin u de functie-app uitvoert. Als er een foutbericht wordt weergegeven als 'Geen module gevonden 'PIL'', hebt u de functie-app mogelijk gestart in de map *start* zonder eerst de virtuele omgeving te activeren die u eerder hebt gemaakt. Als u nog steeds fouten ziet, voert u `pip install -r requirements.txt` opnieuw uit met de virtuele omgeving geactiveerd en zoekt u naar fouten.
+    Als de browser een fout meldt bij het verzenden van de afbeeldings-URL, controleert u de terminal waarin u de functie-app uitvoert. Als er een foutbericht wordt weergegeven als "Geen module gevonden 'PIL'", hebt u de functie-app mogelijk gestart in de map *start* zonder eerst de virtuele omgeving te activeren die u eerder hebt gemaakt. Als u nog steeds fouten ziet, voert u `pip install -r requirements.txt` opnieuw uit met de virtuele omgeving geactiveerd en zoekt u naar fouten.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

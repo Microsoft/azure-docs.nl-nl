@@ -4,10 +4,10 @@ description: Dit artikel bevat informatie over het verifiëren van een toepassin
 ms.topic: conceptual
 ms.date: 10/21/2020
 ms.openlocfilehash: 25ec5f11ca7b5e801e18155f1a3da6474c8e66e2
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92913310"
 ---
 # <a name="authenticate-an-application-with-azure-active-directory-to-access-event-hubs-resources"></a>Een toepassing verifiëren met Azure Active Directory om toegang te krijgen tot Event Hubs resources
@@ -48,7 +48,7 @@ De volgende afbeeldingen tonen stappen voor het registreren van een webtoepassin
 > [!Note]
 > Als u uw toepassing registreert als een systeem eigen toepassing, kunt u een geldige URI voor de omleidings-URI opgeven. Voor systeem eigen toepassingen hoeft deze waarde geen echte URL te zijn. Voor webtoepassingen moet de omleidings-URI een geldige URI zijn, omdat deze de URL specificeert waarnaar de tokens worden opgegeven.
 
-Nadat u uw toepassing hebt geregistreerd, ziet u de **toepassings-id (client)** onder **instellingen** :
+Nadat u uw toepassing hebt geregistreerd, ziet u de **toepassings-id (client)** onder **instellingen**:
 
 ![Toepassings-ID van de geregistreerde toepassing](./media/authenticate-application/application-id.png)
 
@@ -75,7 +75,7 @@ Nadat u de toepassing hebt geregistreerd, wijst u de service-principal van de to
 
     ![Selecteer uw Event Hub](./media/authenticate-application/select-event-hub.png)
 1. Selecteer **Access Control (IAM)** om instellingen voor toegangs beheer voor de Event hub weer te geven. 
-1. Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien. Selecteer de knop **toevoegen** op de werk balk en selecteer vervolgens **functie toewijzing toevoegen** . 
+1. Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien. Selecteer de knop **toevoegen** op de werk balk en selecteer vervolgens **functie toewijzing toevoegen**. 
 
     ![Knop toevoegen op de werk balk](./media/authenticate-application/role-assignments-add-button.png)
 1. Voer op de pagina **roltoewijzing toevoegen** de volgende stappen uit:

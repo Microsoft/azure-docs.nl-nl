@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: d8e7fb85e369f5f278436370944eafeb1fb6a50e
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96779512"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Veelvoorkomende problemen in Azure Container Instances oplossen
@@ -28,7 +28,7 @@ Bij het definiëren van de container specificatie, moeten bepaalde para meters w
 | Container poorten | Tussen 1 en 65535 |Geheel getal |Geheel getal tussen 1 en 65535 |`<port-number>` |`443` |
 | DNS-naamlabel | 5-63 |Niet hoofdlettergevoelig |Alfanumerieke tekens en afbreek streepjes, behalve het eerste of laatste teken |`<name>` |`frontend-site1` |
 | Omgevingsvariabele | 1-63 |Niet hoofdlettergevoelig |Alfanumerieke tekens en onderstrepings tekens (_) overal behalve het eerste of laatste teken |`<name>` |`MY_VARIABLE` |
-| Volume naam | 5-63 |Kleine letters |Alfanumerieke tekens en afbreek streepjes, behalve het eerste of laatste teken. Kan niet twee opeenvolgende afbreek streepjes bevatten. |`<name>` |`batch-output-volume` |
+| Volumenaam | 5-63 |Kleine letters |Alfanumerieke tekens en afbreek streepjes, behalve het eerste of laatste teken. Kan niet twee opeenvolgende afbreek streepjes bevatten. |`<name>` |`batch-output-volume` |
 
 <sup>1</sup> Beperking ook voor container groeps namen wanneer deze niet onafhankelijk van container instanties worden opgegeven, bijvoorbeeld met `az container create` opdracht implementaties.
 

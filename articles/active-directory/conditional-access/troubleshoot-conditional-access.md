@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb, martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 12f722977329bd5d79d4d0e410a29c730faf00c5
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92145096"
 ---
 # <a name="troubleshooting-sign-in-problems-with-conditional-access"></a>Problemen met aanmelden met behulp van voorwaardelijke toegang oplossen
@@ -71,7 +71,7 @@ Ga als volgt te werk om te ontdekken welk beleid of beleid voor voorwaardelijke 
 1. Als de aanmeld gebeurtenis die overeenkomt met de aanmeldings fout van de gebruiker is gevonden, selecteert u het tabblad **voorwaardelijke toegang** . Op het tabblad voorwaardelijke toegang worden het specifieke beleid of beleid weer gegeven dat heeft geresulteerd in de onderbreking van de aanmelding.
    1. Informatie op het tabblad **probleem oplossing en ondersteuning** kan een duidelijke reden geven voor het mislukken van een aanmelding, zoals een apparaat dat niet aan de nalevings vereisten voldoet.
    1. Als u verder wilt onderzoeken, zoomt u in op de configuratie van het beleid door te klikken op de naam van het **beleid**. Als u op de **beleids naam** klikt, wordt de gebruikers interface van de beleids configuratie voor het geselecteerde beleid weer gegeven voor controle en bewerking.
-   1. De gegevens van de **client gebruiker** en het **apparaat** die zijn gebruikt voor de evaluatie van het voorwaardelijke toegangs beleid zijn ook beschikbaar in de **basis informatie**, **locatie**, **apparaatgegevens**, **verificatie gegevens**en **aanvullende details** tabbladen van de aanmeldings gebeurtenis.
+   1. De gegevens van de **client gebruiker** en het **apparaat** die zijn gebruikt voor de evaluatie van het voorwaardelijke toegangs beleid zijn ook beschikbaar in de **basis informatie**, **locatie**, **apparaatgegevens**, **verificatie gegevens** en **aanvullende details** tabbladen van de aanmeldings gebeurtenis.
 
 ### <a name="policy-details"></a>Details van beleid
 

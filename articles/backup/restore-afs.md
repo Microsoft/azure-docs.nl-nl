@@ -4,10 +4,10 @@ description: Informatie over het gebruik van de Azure Portal om een volledige be
 ms.topic: conceptual
 ms.date: 01/12/2020
 ms.openlocfilehash: 35ca0936ae6efba716adb51f43326cdd5bfa2d98
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89376771"
 ---
 # <a name="restore-azure-file-shares"></a>Azure-bestands shares herstellen
@@ -32,7 +32,7 @@ Voer de volgende stappen uit om een herstel bewerking uit te voeren.
 
     ![Back-upitems selecteren](./media/restore-afs/backup-items.png)
 
-1. Nadat u **Back-upitems**hebt geselecteerd, wordt er een nieuw deel venster met alle typen back-upbeheer weer gegeven naast het deel venster Overzicht.
+1. Nadat u **Back-upitems** hebt geselecteerd, wordt er een nieuw deel venster met alle typen back-upbeheer weer gegeven naast het deel venster Overzicht.
 
     ![Typen back-upbeheer](./media/restore-afs/backup-management.png)
 
@@ -50,7 +50,7 @@ U kunt deze terugzet optie gebruiken om de volledige bestands share te herstelle
 
    ![Share terugzetten selecteren](./media/restore-afs/restore-share.png)
 
-1. Nadat u **share terugzetten**hebt geselecteerd, wordt het deel venster **herstellen** geopend. Als u het herstel punt dat u wilt gebruiken voor het uitvoeren van de herstel bewerking wilt selecteren, kiest u het tekstvak koppelings tekst onder het vak **herstel punt** **selecteren** .
+1. Nadat u **share terugzetten** hebt geselecteerd, wordt het deel venster **herstellen** geopend. Als u het herstel punt dat u wilt gebruiken voor het uitvoeren van de herstel bewerking wilt selecteren, kiest u het tekstvak koppelings tekst onder het vak **herstel punt** **selecteren** .
 
     ![Selecteer een herstel punt door selecteren te kiezen](./media/restore-afs/select-restore-point.png)
 
@@ -68,7 +68,7 @@ U kunt deze terugzet optie gebruiken om de volledige bestands share te herstelle
 
 #### <a name="restore-to-the-original-location-full-share-recovery"></a>Herstellen naar de oorspronkelijke locatie (volledige share herstel)
 
-1. Selecteer **oorspronkelijke locatie** als **herstel doel**en selecteer of u wilt overs Laan of overschrijven als er conflicten zijn, door de desbetreffende optie te kiezen in de vervolg keuzelijst **in het geval van conflicten** .
+1. Selecteer **oorspronkelijke locatie** als **herstel doel** en selecteer of u wilt overs Laan of overschrijven als er conflicten zijn, door de desbetreffende optie te kiezen in de vervolg keuzelijst **in het geval van conflicten** .
 
 1. Selecteer **herstellen** om de herstel bewerking te starten.
 
@@ -93,7 +93,7 @@ U kunt deze terugzet optie gebruiken om afzonderlijke bestanden of mappen op de 
 
     ![Bestands herstel selecteren](./media/restore-afs/file-recovery.png)
 
-1. Nadat u **bestands herstel**hebt geselecteerd, wordt het deel venster **herstellen** geopend. Als u het herstel punt wilt selecteren dat u wilt gebruiken voor het uitvoeren van de herstel bewerking, selecteert u het **tekstvak koppelings** tekst onder het tekstvak **herstel punt** selecteren.
+1. Nadat u **bestands herstel** hebt geselecteerd, wordt het deel venster **herstellen** geopend. Als u het herstel punt wilt selecteren dat u wilt gebruiken voor het uitvoeren van de herstel bewerking, selecteert u het **tekstvak koppelings** tekst onder het tekstvak **herstel punt** selecteren.
 
     ![Selecteer een herstel punt door de koppeling selecteren te kiezen](./media/restore-afs/select-restore-point.png)
 
@@ -108,7 +108,7 @@ U kunt deze terugzet optie gebruiken om afzonderlijke bestanden of mappen op de 
 
 #### <a name="restore-to-the-original-location-item-level-recovery"></a>Herstellen naar de oorspronkelijke locatie (herstel op item niveau)
 
-1. Selecteer **oorspronkelijke locatie** als **herstel doel**en selecteer of u wilt overs Laan of overschrijven als er conflicten optreden door de juiste optie te kiezen in de vervolg keuzelijst **in het geval van conflicten** .
+1. Selecteer **oorspronkelijke locatie** als **herstel doel** en selecteer of u wilt overs Laan of overschrijven als er conflicten optreden door de juiste optie te kiezen in de vervolg keuzelijst **in het geval van conflicten** .
 
     ![Oorspronkelijke locatie voor herstel op item niveau](./media/restore-afs/original-location-item-level.png)
 

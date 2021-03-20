@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.openlocfilehash: dfa7ee941e2c373b02fe5fb2f2a648a60a677670
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96753106"
 ---
 # <a name="tutorial-assess-servers-using-an-imported-csv-file"></a>Zelfstudie: Servers evalueren aan de hand van een geïmporteerd CSV-bestand
@@ -93,7 +93,7 @@ Stel een nieuw Azure Migrate-project in als u dat nog niet hebt.
 7. Selecteer **Maken**.
 8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
 
-Het **Azure Migrate: serverevaluatie**-hulpprogramma wordt standaard toegevoegd aan het nieuwe project.
+Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-import/added-tool.png)
 

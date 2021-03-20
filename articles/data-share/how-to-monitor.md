@@ -7,10 +7,10 @@ ms.service: data-share
 ms.topic: how-to
 ms.date: 07/30/2020
 ms.openlocfilehash: cc400922115f348090677661cd1b30434be19b72
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92910471"
 ---
 # <a name="monitor-azure-data-share"></a>Azure Data Share bewaken  
@@ -50,7 +50,7 @@ Er worden Maxi maal 30 dagen aan de momentopname geschiedenis weer gegeven. Als 
 
 ## <a name="diagnostic-setting"></a>Diagnostische instelling
 
-U kunt de diagnostische instelling zo configureren dat logboek gegevens of-gebeurtenissen worden opgeslagen. Navigeer naar bewaking-> Diagnostische instellingen en selecteer **Diagnostische instelling toevoegen** . Selecteer de logboek gegevens of gebeurtenissen die u wilt, en waar u deze wilt opslaan of verzenden. 
+U kunt de diagnostische instelling zo configureren dat logboek gegevens of-gebeurtenissen worden opgeslagen. Navigeer naar bewaking-> Diagnostische instellingen en selecteer **Diagnostische instelling toevoegen**. Selecteer de logboek gegevens of gebeurtenissen die u wilt, en waar u deze wilt opslaan of verzenden. 
 
 ![Scherm afbeelding toont de pagina Diagnostische instellingen in de Azure Portal.](./media/diagnostic-settings.png "Diagnostische instellingen") 
 

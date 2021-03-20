@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.openlocfilehash: ef916e0e8b32c96382a731d4a307e2b2a98ba1ea
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96753855"
 ---
 # <a name="build-migration-plan-with-azure-migrate"></a>Migratieplan bouwen met Azure Migrate
@@ -91,7 +91,7 @@ Met de optie voor de grootte van de prestaties op basis van Azure Migrate-evalua
 
 - **Gereserveerde instanties**: met [gereserveerde instanties (RI)](https://azure.microsoft.com/pricing/reserved-vm-instances/)kunt u de kosten aanzienlijk verlagen ten opzichte van de [prijzen voor betalen per gebruik](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/).
 - **Azure Hybrid Benefit**: met [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go/)kunt u on-premises Windows Server-licenties met actieve Software Assurance-of Linux-abonnementen naar Azure brengen en combi neren met opties voor gereserveerde instanties.
-- **Enterprise Agreement**: Azure [Enter prise Agreements (EA)](../cost-management-billing/manage/ea-portal-agreements.md) kunnen besparingen bieden voor Azure-abonnementen en-services.
+- **Enterprise overeenkomst**: Azure [Enter prise Agreements (EA)](../cost-management-billing/manage/ea-portal-agreements.md) kunnen besparingen bieden voor Azure-abonnementen en-services.
 - **Aanbiedingen**: er zijn meerdere [Azure-aanbiedingen](https://azure.microsoft.com/support/legal/offer-details/). Bijvoorbeeld [pay-as-you-go dev/test](https://azure.microsoft.com/pricing/dev-test/), of [Enterprise dev/test aanbieding](https://azure.microsoft.com/offers/ms-azr-0148p/), om lagere tarieven te bieden voor ontwikkel-en test-vm's
 - **VM-uptime**: u kunt dagen per maand en uur per dag bekijken waarin Azure-vm's worden uitgevoerd. Als u machines afsluit wanneer deze niet in gebruik zijn, kunt u uw kosten verlagen (niet van toepassing op RIs).
 - **Doel regio**: u kunt evaluaties maken in verschillende regio's, om erachter te komen of het migreren naar een bepaalde regio kosten effectief kan zijn. 
@@ -145,7 +145,7 @@ Een test plan na de migratie moet functionele, integratie-, beveiligings-en pres
 
 Bouw een migratie plan en Declareer een onderhouds venster voor het migreren van uw apps en data bases met een minimale downtime van nul, en beperk het mogelijke operationele en zakelijke effect tijdens de migratie.  
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 U wordt aangeraden een test migratie uit te voeren in Azure Migrate voordat u een migratie op basis van een volledige schaal uitvoert. Een test migratie helpt u bij het schatten van de tijd die nodig is om uw migratie plan te verfijnen. Het biedt de mogelijkheid om potentiële problemen te detecteren en deze te corrigeren vóór de volledige migratie.
 

@@ -9,10 +9,10 @@ ms.date: 04/11/2019
 ms.author: asrastog
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 90b7b6aebfce1c37bef76d371d829048d755e39e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147276"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Verbindingsgebeurtenissen voor het apparaat aanvragen bij Azure IoT Hub met behulp van Azure Cosmos DB
@@ -153,7 +153,7 @@ U gaat eerst een logische app maken en een trigger voor Event Grid toevoegen die
    > [!NOTE]
    > Als u de logische app opnieuw wilt zoeken en openen, selecteert u **resource groepen** en selecteert u de resource groep die u gebruikt voor deze instructies. Selecteer vervolgens uw nieuwe logische app. Hiermee opent u de ontwerp functie voor logische apps.
 
-4. Schuif in de ontwerp functie van de logische app naar rechts totdat u algemene triggers ziet. Kies onder **sjablonen**de optie **lege logische app** , zodat u uw logische app helemaal zelf kunt bouwen.
+4. Schuif in de ontwerp functie van de logische app naar rechts totdat u algemene triggers ziet. Kies onder **sjablonen** de optie **lege logische app** , zodat u uw logische app helemaal zelf kunt bouwen.
 
 ### <a name="select-a-trigger"></a>Een trigger selecteren
 
@@ -201,7 +201,7 @@ Een trigger is een specifieke gebeurtenis waarmee uw logische app wordt gestart.
 
 In de werk stroom van de logische app kunnen voor waarden specifieke acties worden uitgevoerd nadat deze specifieke voor waarde is door gegeven. Als aan de voor waarde wordt voldaan, kan een gewenste actie worden gedefinieerd. Voor deze zelf studie is de voor waarde om te controleren of event type is aangesloten op een apparaat of de verbinding met het apparaat is verbroken. De actie is het uitvoeren van de opgeslagen procedure in uw data base.
 
-1. Selecteer **+ nieuwe stap** en vervolgens **ingebouwd**, en klik vervolgens op **voor waarde**zoeken en selecteren. Klik op **een waarde kiezen** en een vak wordt weer gegeven met de dynamische inhoud: de velden die kunnen worden geselecteerd. Vul de velden in zoals hieronder wordt weer gegeven, zodat deze alleen worden uitgevoerd voor gebeurtenissen die zijn verbonden met een apparaat en die zijn losgekoppeld van het apparaat:
+1. Selecteer **+ nieuwe stap** en vervolgens **ingebouwd**, en klik vervolgens op **voor waarde** zoeken en selecteren. Klik op **een waarde kiezen** en een vak wordt weer gegeven met de dynamische inhoud: de velden die kunnen worden geselecteerd. Vul de velden in zoals hieronder wordt weer gegeven, zodat deze alleen worden uitgevoerd voor gebeurtenissen die zijn verbonden met een apparaat en die zijn losgekoppeld van het apparaat:
 
    * Kies een waarde: **Event** type--Selecteer deze in de velden in de dynamische inhoud die worden weer gegeven wanneer u op dit veld klikt.
    * De wijziging is gelijk aan om **eindigt met**.
@@ -225,7 +225,7 @@ In de werk stroom van de logische app kunnen voor waarden specifieke acties word
 
    **Sproc-id**: LatestDeviceConnectionState
 
-5. Selecteer **nieuwe para meter toevoegen**. Schakel in de vervolg keuzelijst die wordt weer gegeven de selectie vakjes naast **partitie sleutel** en **para meters voor de opgeslagen procedure**in en klik vervolgens op wille keurig ergens anders op het scherm. Er wordt een veld voor de partitie sleutel waarde en een veld voor de para meters voor de opgeslagen procedure toegevoegd.
+5. Selecteer **nieuwe para meter toevoegen**. Schakel in de vervolg keuzelijst die wordt weer gegeven de selectie vakjes naast **partitie sleutel** en **para meters voor de opgeslagen procedure** in en klik vervolgens op wille keurig ergens anders op het scherm. Er wordt een veld voor de partitie sleutel waarde en een veld voor de para meters voor de opgeslagen procedure toegevoegd.
 
    ![Scherm afbeelding toont een item voor het uitvoeren van een opgeslagen procedure waarvoor nieuwe para meter toevoegen is geselecteerd.](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure.png)
 
@@ -233,7 +233,7 @@ In de werk stroom van de logische app kunnen voor waarden specifieke acties word
 
    ![Scherm afbeelding toont een uitgevoerde, opgeslagen procedure-item met opgegeven para meters.](./media/iot-hub-how-to-order-connection-state-events/logicapp-stored-procedure-2.png)
 
-7. Zorg ervoor dat boven aan het deel venster waarin **For Each**wordt vermeld, onder **Selecteer een uitvoer van de vorige stappen**, of de **hoofd tekst** is geselecteerd.
+7. Zorg ervoor dat boven aan het deel venster waarin wordt vermeld, onder **Selecteer een uitvoer van de vorige stappen**, of de **hoofd tekst** is geselecteerd.
 
    ![logische app voor-elk invullen](./media/iot-hub-how-to-order-connection-state-events/logicapp-foreach-body.png)
 
@@ -265,13 +265,13 @@ In deze sectie configureert u de IoT-hub voor het publiceren van gebeurtenissen 
 
    ![Nieuw gebeurtenisabonnement maken](./media/iot-hub-how-to-order-connection-state-events/event-subscription.png)
 
-4. Details van **gebeurtenis abonnementen**invullen: Geef een beschrijvende naam op en selecteer **Event grid schema**.
+4. Details van **gebeurtenis abonnementen** invullen: Geef een beschrijvende naam op en selecteer **Event grid schema**.
 
 5. Vul de velden voor **gebeurtenis typen** in. Selecteer in de vervolg keuzelijst alleen het **apparaat is verbonden** en het **apparaat is losgekoppeld** van het menu. Klik ergens anders op het scherm om de lijst te sluiten en uw selecties op te slaan.
 
    ![Gebeurtenis typen instellen die moeten worden gezocht](./media/iot-hub-how-to-order-connection-state-events/set-event-types.png)
 
-6. Selecteer voor **eindpunt Details**het eindpunt type als **webhook** en klik op eind punt selecteren en plak de URL die u hebt gekopieerd uit uw logische app en bevestig de selectie.
+6. Selecteer voor **eindpunt Details** het eindpunt type als **webhook** en klik op eind punt selecteren en plak de URL die u hebt gekopieerd uit uw logische app en bevestig de selectie.
 
    ![Eind punt-URL selecteren](./media/iot-hub-how-to-order-connection-state-events/endpoint-select.png)
 
@@ -317,7 +317,7 @@ Hiermee wordt een gebeurtenis die is verbonden met het apparaat geactiveerd.
 
    ![connection string in apparaat plakken](./media/iot-hub-how-to-order-connection-state-events/raspconnstring.png)
 
-2. Voer de toepassing uit door **uitvoeren**te selecteren.
+2. Voer de toepassing uit door **uitvoeren** te selecteren.
 
 Er wordt een bericht weer gegeven dat vergelijkbaar is met de volgende uitvoer met de sensor gegevens en de berichten die worden verzonden naar uw IoT-hub.
 

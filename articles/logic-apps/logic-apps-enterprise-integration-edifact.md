@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/22/2020
 ms.openlocfilehash: b0df55e59bd519a816c4022f2434edfcd4460780
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96006520"
 ---
 # <a name="exchange-edifact-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>EDIFACT-berichten voor B2B Enterprise-integratie in Azure Logic Apps uitwisselen met Enterprise Integration Pack
@@ -36,7 +36,7 @@ Nadat u [een integratie account hebt gemaakt](../logic-apps/logic-apps-enterpris
 
 ## <a name="create-an-edifact-agreement"></a>Een EDIFACT-overeenkomst maken 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com "Azure Portal"). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com "Azure Portal"). 
 
 2. Selecteer in het hoofd menu van Azure **alle services**. Voer in het zoekvak ' Integration ' in en selecteer vervolgens **integratie accounts**.
 

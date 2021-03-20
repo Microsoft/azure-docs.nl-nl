@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/22/2019
 ms.author: johndeu
 ms.openlocfilehash: f826ee9ef3c9fff0b721a9c79d3c12e0adbd5f7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91336391"
 ---
 # <a name="signaling-timed-metadata-in-live-streaming"></a>Getimede meta gegevens in live streamen signalering 
@@ -241,9 +241,9 @@ De volgende sectie bevat de RTMP-' eenvoudige ' modus ' payload, die kan worden 
 | ---------- | ---------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | Tekenreeks     | Vereist  | Het gebeurtenis bericht.  Is ' SpliceOut ' om een eenvoudige modus-Splice aan te wijzen.                                                                                                                                                                                                         |
 | id         | Tekenreeks     | Vereist  | Een unieke id waarmee de Splice of het segment wordt beschreven. Identificeert dit exemplaar van het bericht                                                                                                                                                                                       |
-| duur   | Getal     | Vereist  | De duur van de splice. Eenheden zijn fractie seconden.                                                                                                                                                                                                                           |
-| elapsed    | Getal     | Optioneel  | Wanneer het signaal wordt herhaald om afstemming in te ondersteunen, is dit veld de hoeveelheid presentatie tijd die is verstreken sinds de gestarte splice. Eenheden zijn fractie seconden. Wanneer u de eenvoudige modus gebruikt, mag deze waarde de oorspronkelijke duur van de Splice niet overschrijden. |
-| tijd       | Getal     | Vereist  | Is de tijd van de splices, in de presentatie tijd. Eenheden zijn fractie seconden.                                                                                                                                                                                                |
+| duur   | Aantal     | Vereist  | De duur van de splice. Eenheden zijn fractie seconden.                                                                                                                                                                                                                           |
+| elapsed    | Aantal     | Optioneel  | Wanneer het signaal wordt herhaald om afstemming in te ondersteunen, is dit veld de hoeveelheid presentatie tijd die is verstreken sinds de gestarte splice. Eenheden zijn fractie seconden. Wanneer u de eenvoudige modus gebruikt, mag deze waarde de oorspronkelijke duur van de Splice niet overschrijden. |
+| tijd       | Aantal     | Vereist  | Is de tijd van de splices, in de presentatie tijd. Eenheden zijn fractie seconden.                                                                                                                                                                                                |
 
 ---
  
@@ -270,9 +270,9 @@ In dit scenario moet de volgende Payload worden verzonden vanuit het on-premises
 | WMS        | Tekenreeks     | Vereist  | Het gebeurtenis bericht.  Voor [SCTE-35] berichten moet dit de met base64 gecodeerde [RFC4648] binaire splice_info_section () zijn om berichten te verzenden naar HLS-, Smooth-en dash-clients.                                                                                                                                                                                                                               |
 | type       | Tekenreeks     | Vereist  | Een URN of URL die het bericht schema aangeeft. Voor [SCTE-35] berichten **moet** dit **' scte35 '** zijn om berichten te verzenden naar HLS-, Smooth-en dash-clients, in overeenstemming met [Adobe-Primetime]. De URN: scte: scte35:2013: bin kan eventueel ook worden gebruikt om een bericht [SCTE-35] te Signa leren.                                                                                                        |
 | id         | Tekenreeks     | Vereist  | Een unieke id waarmee de Splice of het segment wordt beschreven. Identificeert dit exemplaar van het bericht.  Berichten met een gelijkwaardige semantiek moeten dezelfde waarde hebben.                                                                                                                                                                                                                                                       |
-| duur   | Getal     | Vereist  | De duur van de gebeurtenis of het AD-segment, indien bekend. Als dit onbekend is, **moet** de waarde 0 zijn.                                                                                                                                                                                                                                                                                                                    |
-| elapsed    | Getal     | Optioneel  | Wanneer het AD-signaal [SCTE-35] wordt herhaald om in te stellen, is dit veld de hoeveelheid presentatie tijd die is verstreken sinds de gestarte splice. Eenheden zijn fractie seconden. In de modus [SCTE-35] kan deze waarde groter zijn dan de oorspronkelijke opgegeven duur van de Splice of het segment.                                                                                                                   |
-| tijd       | Getal     | Vereist  | De presentatie tijd van de gebeurtenis of AD-splice.  De tijd en duur van de presentatie **moeten** worden uitgelijnd met Stream Access points (SAP) van het type 1 of 2, zoals gedefinieerd in [ISO-14496-12] bijlage I. Voor uitgaand HLS **moeten** tijd en duur worden uitgelijnd met de grenzen van het segment. De presentatie tijd en duur van verschillende gebeurtenis berichten binnen dezelfde gebeurtenis stroom mogen elkaar niet overlappen. Eenheden zijn fractie seconden. |
+| duur   | Aantal     | Vereist  | De duur van de gebeurtenis of het AD-segment, indien bekend. Als dit onbekend is, **moet** de waarde 0 zijn.                                                                                                                                                                                                                                                                                                                    |
+| elapsed    | Aantal     | Optioneel  | Wanneer het AD-signaal [SCTE-35] wordt herhaald om in te stellen, is dit veld de hoeveelheid presentatie tijd die is verstreken sinds de gestarte splice. Eenheden zijn fractie seconden. In de modus [SCTE-35] kan deze waarde groter zijn dan de oorspronkelijke opgegeven duur van de Splice of het segment.                                                                                                                   |
+| tijd       | Aantal     | Vereist  | De presentatie tijd van de gebeurtenis of AD-splice.  De tijd en duur van de presentatie **moeten** worden uitgelijnd met Stream Access points (SAP) van het type 1 of 2, zoals gedefinieerd in [ISO-14496-12] bijlage I. Voor uitgaand HLS **moeten** tijd en duur worden uitgelijnd met de grenzen van het segment. De presentatie tijd en duur van verschillende gebeurtenis berichten binnen dezelfde gebeurtenis stroom mogen elkaar niet overlappen. Eenheden zijn fractie seconden. |
 
 ---
 
@@ -297,7 +297,7 @@ Het bericht type ' onCuePoint ' is gedefinieerd in [Adobe-Flash-AS] en heeft de 
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | naam       | De naam moet '**scte35**' zijn door elementair Live.                                                                                                                                                                              |
 | tijd       | De tijd in seconden waarop het actie punt tijdens de tijd lijn is opgetreden in het video bestand                                                                                                                                           |
-| type       | Het type actie punt moet worden ingesteld op**gebeurtenis**.                                                                                                                                                                             |
+| type       | Het type actie punt moet worden ingesteld op **gebeurtenis**.                                                                                                                                                                             |
 | parameters | Een associatieve matrix met combi natie van naam/waarde-paren die de informatie uit het SCTE-35-bericht bevat, inclusief id en duur. Deze waarden worden geparseerd door Azure Media Services en opgenomen in de label manifest decoratie. |
 
 
@@ -419,15 +419,15 @@ Het coderings programma moet het fragment splitsen op het moment van de presenta
 
 De sparse track **moet** worden gedeclareerd in het manifest van de live-server met een **\<textstream\>** vermelding en **moet** de volgende kenmerken hebben ingesteld:
 
-| **Kenmerknaam** | **Veld type** | **Vereist?** | **Beschrijving**                                                                                                                                                                                                              |
+| **Kenmerk naam** | **Veld type** | **Vereist?** : | **Beschrijving**                                                                                                                                                                                                              |
 | ------------------ | -------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| systemBitrate      | Getal         | Vereist      | **Moet** ' 0 ' zijn, wat een track met een onbekende variabele bitrate aangeeft.                                                                                                                                                          |
+| systemBitrate      | Aantal         | Vereist      | **Moet** ' 0 ' zijn, wat een track met een onbekende variabele bitrate aangeeft.                                                                                                                                                          |
 | parentTrackName    | Tekenreeks         | Vereist      | **Moet** de naam zijn van het bovenliggende spoor, waarbij de tijd codes van de sparse track worden uitgelijnd. Het bovenliggende spoor kan geen sparse track zijn.                                                                             |
 | manifestOutput     | Booleaans        | Vereist      | **Moet** ' True ' zijn, om aan te geven dat de sparse track wordt Inge sloten in het Smooth client-manifest.                                                                                                                        |
 | Subtype            | Tekenreeks         | Vereist      | **Moet** de vier teken code ' data ' zijn.                                                                                                                                                                                  |
 | Schema             | Tekenreeks         | Vereist      | **Moet** een urn of URL zijn die het bericht schema aangeeft. Voor [SCTE-35] berichten **moet** dit ' urn: SCTE: scte35:2013: bin ' zijn om berichten te verzenden naar HLS-, Smooth-en dash-clients in overeenstemming met [SCTE-35]. |
 | nummer bijhouden          | Tekenreeks         | Vereist      | **Moet** de naam van de sparse track zijn. De tracknaam kan worden gebruikt om meerdere gebeurtenis stromen te onderscheiden met hetzelfde schema. Elke unieke gebeurtenis stroom **moet** een unieke Track naam hebben.                                |
-| lijnen          | Getal         | Optioneel      | **Moet** de tijd schaal van het bovenliggende spoor zijn.                                                                                                                                                                               |
+| lijnen          | Aantal         | Optioneel      | **Moet** de tijd schaal van het bovenliggende spoor zijn.                                                                                                                                                                               |
 
 ---
 
@@ -437,7 +437,7 @@ Het vak film (' Moov ') volgt het manifest van Live server als onderdeel van de 
 
 Het vak ' Moov ' **moet** een **TrackHeaderBox (' tkhd ')** bevatten zoals gedefinieerd in [ISO-14496-12] met de volgende beperkingen:
 
-| **Veld naam** | **Veld type**          | **Vereist?** | **Beschrijving**                                                                                                    |
+| **Veld naam** | **Veld type**          | **Vereist?** : | **Beschrijving**                                                                                                    |
 | -------------- | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------ |
 | duur       | 64-bits geheel getal zonder teken | Vereist      | **Moet** 0 zijn, omdat het vakje track nul voor beelden heeft en de totale duur van de voor beelden in het vak bijhouden 0 is. |
 
@@ -445,7 +445,7 @@ Het vak ' Moov ' **moet** een **TrackHeaderBox (' tkhd ')** bevatten zoals gedef
 
 Het vak ' Moov ' **moet** een **HandlerBox (' hdlr ')** bevatten, zoals gedefinieerd in [ISO-14496-12] met de volgende beperkingen:
 
-| **Veld naam** | **Veld type**          | **Vereist?** | **Beschrijving**       |
+| **Veld naam** | **Veld type**          | **Vereist?** : | **Beschrijving**       |
 | -------------- | ----------------------- | ------------- | --------------------- |
 | handler_type   | 32-bits geheel getal zonder teken | Vereist      | **Moet** ' meta ' zijn. |
 
@@ -463,7 +463,7 @@ Sparse track fragmenten bestaan uit een film fragment box (' moof ') en een medi
 
 Het vak MovieFragmentBox (' moof ') **moet** een **TrackFragmentExtendedHeaderBox (' uuid ')** bevatten, zoals gedefinieerd in [MS-SSTR] met de volgende velden:
 
-| **Veld naam**         | **Veld type**          | **Vereist?** | **Beschrijving**                                                                                           |
+| **Veld naam**         | **Veld type**          | **Vereist?** : | **Beschrijving**                                                                                           |
 | ---------------------- | ----------------------- | ------------- | --------------------------------------------------------------------------------------------------------- |
 | fragment_absolute_time | 64-bits geheel getal zonder teken | Vereist      | **Moet** de aankomst tijd van de gebeurtenis zijn. Deze waarde Lijnt het bericht uit met het bovenliggende nummer.           |
 | fragment_duration      | 64-bits geheel getal zonder teken | Vereist      | **Moet** de duur van de gebeurtenis zijn. De duur kan nul zijn om aan te geven dat de duur onbekend is. |
@@ -473,7 +473,7 @@ Het vak MovieFragmentBox (' moof ') **moet** een **TrackFragmentExtendedHeaderBo
 
 Het MediaDataBox-vak (' mdat ') **moet** de volgende indeling hebben:
 
-| **Veld naam**          | **Veld type**                   | **Vereist?** | **Beschrijving**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Veld naam**          | **Veld type**                   | **Vereist?** : | **Beschrijving**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------------- | -------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | versie                 | 32-bits geheel getal zonder teken (uimsbf) | Vereist      | Bepaalt de indeling van de inhoud van het vak ' mdat '. Niet-herkende versies worden genegeerd. Momenteel is de enige ondersteunde versie 1.                                                                                                                                                                                                                                                                                                                                                                      |
 | id                      | 32-bits geheel getal zonder teken (uimsbf) | Vereist      | Identificeert dit exemplaar van het bericht. Berichten met een gelijkwaardige semantiek moeten dezelfde waarde hebben; dat wil zeggen dat het verwerken van elk gebeurtenis bericht met dezelfde id voldoende is.                                                                                                                                                                                                                                                                                                                            |
@@ -928,7 +928,7 @@ Media Services (versie 2 en 3 API) ondersteunt de uitvoer van de EXT-X-CUE-tag z
 
 De "verouderde" EXT-X-CUE-tag wordt hieronder gedefinieerd en er kan ook normatieve worden verwezen in de [Adobe-Primetime]-specificatie. Dit mag alleen worden gebruikt voor verouderde SCTE35-Signa lering wanneer dat nodig is, anders wordt de aanbevolen tag gedefinieerd in [RFC8216] als EXT-X-DATERANGE. 
 
-| **Kenmerknaam** | **Type**                      | **Vereist?**                             | **Beschrijving**                                                                                                                                                                                                                                                                          |
+| **Kenmerk naam** | **Type**                      | **Vereist?** :                             | **Beschrijving**                                                                                                                                                                                                                                                                          |
 | ------------------ | ----------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | WMS                | teken reeks tussen aanhalings tekens                 | Vereist                                  | Het bericht dat is gecodeerd als een base64-gecodeerde teken reeks, zoals beschreven in [RFC4648]. Voor [SCTE-35] berichten is dit de met base64 gecodeerde splice_info_section ().                                                                                                                                      |
 | TYPE               | teken reeks tussen aanhalings tekens                 | Vereist                                  | Een URN of URL die het bericht schema aangeeft. Voor [SCTE-35]-berichten neemt het type de speciale waarde ' scte35 '.                                                                                                                                                                          |
@@ -1050,7 +1050,7 @@ Manifest (MPD) van gebeurtenissen wordt in de MPD gesignaleerd met behulp van he
 
 Het EventStream-element heeft de volgende kenmerken:
 
-| **Kenmerknaam** | **Type**                | **Vereist?** | **Beschrijving**                                                                                                                                                                                                                                                                                                                                                                         |
+| **Kenmerk naam** | **Type**                | **Vereist?** : | **Beschrijving**                                                                                                                                                                                                                                                                                                                                                                         |
 | ------------------ | ----------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scheme_id_uri      | tekenreeks                  | Vereist      | Hiermee wordt het schema van het bericht aangegeven. Het schema wordt ingesteld op de waarde van het kenmerk schema in het vak Live server-manifest. De waarde **moet** een urn of URL zijn die het bericht schema aangeeft. De ondersteunde uitvoer schemeId moet "urn: scte: scte35:2014: XML + bin" per [SCTE-214-1] SEC 6.7.4 (MPD) zijn, aangezien de service op dit moment alleen de XML + bin ondersteunt voor het boog gebruik in de MPD. |
 | waarde              | tekenreeks                  | Optioneel      | Een extra teken reeks waarde die door de eigen aren van het schema wordt gebruikt om de semantiek van het bericht aan te passen. Als u meerdere gebeurtenis stromen wilt onderscheiden met hetzelfde schema, **moet** de waarde worden ingesteld op de naam van de gebeurtenis stroom (Tracknaam voor [MS-SSTR-ingestie] of AMF-bericht naam voor een [RTMP]-opname).                                                                         |
@@ -1308,7 +1308,7 @@ Normatieve definities van het vervoer van [SCTE-35] in-band berichten worden ged
 
 In de volgende details worden de specifieke waarden beschreven die de client in overeenstemming met [SCTE-214-3] verwacht in het ' emsg ':
 
-| **Veld naam**          | **Veld type**          | **Vereist?** | **Beschrijving**                                                                                                                                                                                                                                                                                        |
+| **Veld naam**          | **Veld type**          | **Vereist?** : | **Beschrijving**                                                                                                                                                                                                                                                                                        |
 | ----------------------- | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | scheme_id_uri           | tekenreeks                  | Vereist      | Hiermee wordt het schema van het bericht aangegeven. Het schema wordt ingesteld op de waarde van het kenmerk schema in het vak Live server-manifest. De waarde **moet** een urn zijn waarmee het bericht schema wordt aangeduid. Voor [SCTE-35] berichten **moet** dit ' urn: SCTE: scte35:2013: bin ' zijn in overeenstemming met [SCTE-214-3]          |
 | Waarde                   | tekenreeks                  | Vereist      | Een extra teken reeks waarde die door de eigen aren van het schema wordt gebruikt om de semantiek van het bericht aan te passen. Als u meerdere gebeurtenis stromen wilt onderscheiden met hetzelfde schema, wordt de waarde ingesteld op de naam van de gebeurtenis stroom (Tracknaam voor Smooth-opname of AMF-bericht naam voor RTMP-opname). |
@@ -1350,7 +1350,7 @@ Wanneer u uw implementatie met het Azure Media Services-platform test, moet u ee
 
 ## <a name="change-history"></a>Wijzigingsoverzicht
 
-| Date     | Wijzigingen                                                                                                             |
+| Datum     | Wijzigingen                                                                                                             |
 | -------- | ------------------------------------------------------------------------------------------------------------------- |
 | 07/2/19  | Herziene ondersteuning voor RTMP-opname, toegevoegd RTMP "onCuePoint" voor elementaire Live                                            |
 | 08/22/19 | Bijgewerkt om OnUserDataEvent toe te voegen aan RTMP voor aangepaste meta gegevens                                                          |

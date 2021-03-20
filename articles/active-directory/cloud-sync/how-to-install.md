@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 742b9fc79489feba8192b6e62a6431bb37f55ad4
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98613367"
 ---
 # <a name="install-the-azure-ad-connect-provisioning-agent"></a>De agent voor Azure AD Connect-inrichting installeren
@@ -74,7 +74,7 @@ Verificatie van de agent vindt plaats in de Azure Portal en op de lokale server 
 ### <a name="azure-portal-agent-verification"></a>Verificatie van Azure Portal-agent
 Voer de volgende stappen uit om te controleren of de agent wordt gezien door Azure.
 
- 1. Meld u aan bij de Azure-portal.
+ 1. Meld u aan bij Azure Portal.
  2. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. Selecteer in het midden **Cloud synchronisatie beheren**.
 
    ![Azure Portal](media/how-to-install/install-6.png)</br>
@@ -107,6 +107,6 @@ Voer de volgende stappen uit om te controleren of de agent wordt uitgevoerd.
 ## <a name="next-steps"></a>Volgende stappen 
 
 - [Wat is inrichting?](what-is-provisioning.md)
-- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Wat is Azure AD Connect--cloudsynchronisatie?](what-is-cloud-sync.md)
 - [Maak een nieuwe configuratie voor Azure AD Connect Cloud synchronisatie](how-to-configure.md).
 

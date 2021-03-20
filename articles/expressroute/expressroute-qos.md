@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: duau
 ms.openlocfilehash: 7f14f43fa341df40ecd35340b7311e1acd18004c
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92204704"
 ---
 # <a name="expressroute-qos-requirements"></a>QoS-vereisten voor ExpressRoute
@@ -29,9 +29,9 @@ De volgende tabel bevat een lijst met DSCP-markeringen die worden gebruikt door 
 | **Verkeersklasse** | **Behandeling (DSCP-markering)** | **Werk belastingen van micro soft teams en Skype voor bedrijven** |
 | --- | --- | --- |
 | **Spraak** |EF (46) |Skype/micro soft teams/Lync Voice |
-| **SBSI** |AF41 (34) |Video, VBSS |
+| **Interactief** |AF41 (34) |Video, VBSS |
 | |AF21 (18) |Apps delen | 
-| **Standaard** |AF11 (10) |Bestandsoverdracht |
+| **Prijs** |AF11 (10) |Bestandsoverdracht |
 | |CS0 (0) |Overige |
 
 * U moet de workloads classificeren en de juiste DSCP-waarden markeren. Volg [deze](/SkypeForBusiness/manage/network-management/qos/configuring-port-ranges-for-your-skype-clients#configure-quality-of-service-policies-for-clients-running-on-windows-10) richtlijnen over het instellen van DSCP-markeringen in uw netwerk.

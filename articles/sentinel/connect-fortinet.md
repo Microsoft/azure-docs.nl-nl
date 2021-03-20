@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: 60be22f439547d006f54e489833b63171e617e3e
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92913990"
 ---
 # <a name="connect-fortinet-to-azure-sentinel"></a>Fortinet verbinden met Azure-Sentinel
@@ -50,7 +50,7 @@ Configureer Fortinet voor het door sturen van syslog-berichten in de CEF-indelin
     - Als u de CEF-indeling in vroege FortiOS-versies wilt inschakelen, moet u mogelijk de opdracht set **CSV Disable** uitvoeren.
  
    > [!NOTE] 
-   > Ga naar de [document bibliotheek van Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary)voor meer informatie. Selecteer uw versie en gebruik de naslag **handleiding** en het **logboek bericht** .
+   > Ga naar de [document bibliotheek van Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary)voor meer informatie. Selecteer uw versie en gebruik de naslag **handleiding** en het **logboek bericht**.
 
 1. Als u het relevante schema in Azure Monitor Log Analytics voor de Fortinet-gebeurtenissen wilt gebruiken, zoekt u naar `CommonSecurityLog` .
 

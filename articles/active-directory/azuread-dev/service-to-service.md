@@ -14,10 +14,10 @@ ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
 ms.openlocfilehash: 179034533d90dbbb6ca362fc6f72996f32873729
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80154760"
 ---
 # <a name="service-to-service-apps"></a>Service-naar-service-apps
@@ -61,7 +61,7 @@ Zie de code voorbeelden voor daemon of server toepassing Web API-scenario's: [Se
 
 ## <a name="app-registration"></a>App-registratie
 
-* Eén Tenant: voor zowel de toepassings identiteit als de gedelegeerde gebruikers identiteiten moet de daemon of de server toepassing zijn geregistreerd in dezelfde map in azure AD. De Web-API kan worden geconfigureerd om een set machtigingen beschikbaar te stellen, die wordt gebruikt om de daemon of server toegang tot de resources te beperken. Als een overgedragen gebruikers identiteits type wordt gebruikt, moet de server toepassing de gewenste machtigingen selecteren. Klik op de pagina **API-machtiging** voor de registratie van de toepassing, nadat u **een machtiging toevoegen** hebt geselecteerd en de API-groep hebt gekozen, kies **gedelegeerde machtigingen**en selecteer vervolgens uw machtigingen. Deze stap is niet vereist als het toepassings identiteits type wordt gebruikt.
+* Eén Tenant: voor zowel de toepassings identiteit als de gedelegeerde gebruikers identiteiten moet de daemon of de server toepassing zijn geregistreerd in dezelfde map in azure AD. De Web-API kan worden geconfigureerd om een set machtigingen beschikbaar te stellen, die wordt gebruikt om de daemon of server toegang tot de resources te beperken. Als een overgedragen gebruikers identiteits type wordt gebruikt, moet de server toepassing de gewenste machtigingen selecteren. Klik op de pagina **API-machtiging** voor de registratie van de toepassing, nadat u **een machtiging toevoegen** hebt geselecteerd en de API-groep hebt gekozen, kies **gedelegeerde machtigingen** en selecteer vervolgens uw machtigingen. Deze stap is niet vereist als het toepassings identiteits type wordt gebruikt.
 * Multi tenant: eerst is de daemon of server toepassing geconfigureerd om de machtigingen aan te geven die nodig zijn om functioneel te zijn. Deze lijst met vereiste machtigingen wordt weer gegeven in een dialoog venster wanneer een gebruiker of beheerder in de doelmap toestemming geeft voor de toepassing, zodat deze beschikbaar is voor hun organisatie. Voor sommige toepassingen zijn alleen machtigingen op gebruikers niveau vereist, waarbij elke gebruiker in de organisatie toestemming kan geven. Andere toepassingen vereisen machtigingen op beheerders niveau, die een gebruiker in de organisatie niet kan instemmen. Alleen een adreslijst beheerder kan toestemming geven voor toepassingen waarvoor dit machtigings niveau is vereist. Wanneer de gebruiker of beheerder de toestemming heeft gegeven, worden beide Web-Api's geregistreerd in hun Directory.
 
 ## <a name="token-expiration"></a>Token verloop tijd

@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
 ms.openlocfilehash: 9ba22c51c7a6c26a232ed20aec21fc83d2c54b37
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92171450"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Maak een back-up van een Azure-VM met behulp van Azure Backup via REST API
@@ -299,7 +299,7 @@ De lijst met schijven waarvan een back-up moet worden gemaakt, vindt u in de sec
 |Eigenschap  |Waarde  |
 |---------|---------|
 |diskLunList     | De lijst schijf LUN bevat een lijst met *lun's van gegevens schijven*. **Er wordt altijd een back-up van de besturingssysteem schijf gemaakt en deze hoeft niet te worden vermeld**.        |
-|IsInclusionList     | Moet **waar** zijn voor de lun's die moeten worden opgenomen tijdens het maken van een back-up. Als de waarde **False**is, worden de bovengenoemde lun's uitgesloten.         |
+|IsInclusionList     | Moet **waar** zijn voor de lun's die moeten worden opgenomen tijdens het maken van een back-up. Als de waarde **False** is, worden de bovengenoemde lun's uitgesloten.         |
 
 Als de nood zaak echter alleen een back-up van de besturingssysteem schijf maakt, moeten _alle_ gegevens schijven worden uitgesloten. Een eenvoudige manier om te zeggen dat er geen gegevens schijven moeten worden opgenomen. De schijf LUN-lijst is dus leeg en de **IsInclusionList** is **waar**. U kunt ook zien wat de eenvoudigste manier is om een subset te selecteren: een paar schijven moet altijd worden uitgesloten of een paar schijven moeten altijd worden opgenomen. Kies de LUN-lijst en de waarde van de Booleaanse variabele dienovereenkomstig.
 

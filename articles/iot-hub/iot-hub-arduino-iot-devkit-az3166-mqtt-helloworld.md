@@ -11,10 +11,10 @@ ms.date: 04/02/2018
 ms.author: liydu
 ms.custom: mqtt
 ms.openlocfilehash: fb8bf593568825793a1a205a2955599b16fa78cf
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92151752"
 ---
 # <a name="send-messages-to-an-mqtt-server"></a>Berichten verzenden naar een MQTT-server
@@ -46,10 +46,10 @@ De aan de slag- [hand leiding](./iot-hub-arduino-iot-devkit-az3166-get-started.m
 
 ## <a name="open-the-mqttclient-sample"></a>Het MQTTClient-voor beeld openen
 
-Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar **voor beelden voor MXCHIP AZ3166 > MQTT**en selecteer **MQTTClient**. Er wordt een nieuw versus code venster geopend met daarin een projectmap.
+Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar **voor beelden voor MXCHIP AZ3166 > MQTT** en selecteer **MQTTClient**. Er wordt een nieuw versus code venster geopend met daarin een projectmap.
 
 > [!NOTE]
-> U kunt ook een voor beeld openen vanuit het opdracht palet. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino**en zoek en selecteer vervolgens **Arduino: voor beelden**.
+> U kunt ook een voor beeld openen vanuit het opdracht palet. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino** en zoek en selecteer vervolgens **Arduino: voor beelden**.
 
 ## <a name="build-and-upload-the-arduino-sketch-to-the-devkit"></a>Bouw en upload de Arduino-schets naar de DevKit
 

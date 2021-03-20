@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 11/02/2020
 ms.author: jeedes
 ms.openlocfilehash: fe83a012cac68f705bc9fabc7748f5a7c7c61bbb
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94330536"
 ---
 # <a name="tutorial-integrate-atlassian-cloud-with-azure-active-directory"></a>Zelfstudie: Atlassian Cloud met Azure Active Directory integreren
@@ -106,7 +106,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![SAML-configuratie 2 toevoegen](./media/atlassian-cloud-tutorial/add-saml-configuration.png)
 
-1. Ga in Azure Portal, op de integratiepagina van de toepassing **Atlassian Cloud** , naar de sectie **Beheren** en selecteer **Eenmalige aanmelding instellen**.
+1. Ga in Azure Portal, op de integratiepagina van de toepassing **Atlassian Cloud**, naar de sectie **Beheren** en selecteer **Eenmalige aanmelding instellen**.
 
    ![sso instellen](./media/atlassian-cloud-tutorial/set-up-sso.png)
 
@@ -166,7 +166,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
       ![kenmerken en claims](./media/atlassian-cloud-tutorial/user-attributes-and-claims.png)
       
-      b. Atlassian Cloud verwacht dat de **nameidentifier** ( **unieke gebruikers-id** ) moet worden toegewezen aan het e-mailadres van de gebruiker ( **user.email** ). Bewerk het **bronkenmerk** en wijzig dit in **user.mail**. Sla de wijzigingen op in de claim.
+      b. Atlassian Cloud verwacht dat de **nameidentifier** (**unieke gebruikers-id**) moet worden toegewezen aan het e-mailadres van de gebruiker (**user.email**). Bewerk het **bronkenmerk** en wijzig dit in **user.mail**. Sla de wijzigingen op in de claim.
 
       ![unieke gebruikers-id](./media/atlassian-cloud-tutorial/unique-user-identifier.png)
       
@@ -180,7 +180,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
       ![afbeelding 3](./media/atlassian-cloud-tutorial/email-address.png)
          
-      b. Het kenmerk **user.mail** wordt niet ingevuld voor gebruikers die zijn gemaakt in Azure AD-tenants zonder Microsoft 365-licenties en de e-mail voor dergelijke gebruikers wordt opgeslagen in het kenmerk **userprincipalname**. Atlassian Cloud verwacht dat de **nameidentifier** ( **unieke gebruikers-id** ) wordt toegewezen aan het e-mailadres van de gebruiker ( **user.userprincipalname** ).  Bewerk het **bronkenmerk** en wijzig dit in **user.userprincipalname**. Sla de wijzigingen op in de claim.
+      b. Het kenmerk **user.mail** wordt niet ingevuld voor gebruikers die zijn gemaakt in Azure AD-tenants zonder Microsoft 365-licenties en de e-mail voor dergelijke gebruikers wordt opgeslagen in het kenmerk **userprincipalname**. Atlassian Cloud verwacht dat de **nameidentifier** (**unieke gebruikers-id**) wordt toegewezen aan het e-mailadres van de gebruiker (**user.userprincipalname**).  Bewerk het **bronkenmerk** en wijzig dit in **user.userprincipalname**. Sla de wijzigingen op in de claim.
 
       ![e-mail instellen](./media/atlassian-cloud-tutorial/set-email.png)
          
@@ -192,9 +192,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.

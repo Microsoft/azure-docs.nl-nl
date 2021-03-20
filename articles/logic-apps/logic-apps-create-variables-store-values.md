@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.openlocfilehash: b486b94a74d98f5630bd0bf40ebf0864c2ec5ab8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91333899"
 ---
 # <a name="store-and-manage-values-by-using-variables-in-azure-logic-apps"></a>Waarden opslaan en beheren met behulp van variabelen in Azure Logic Apps
@@ -53,7 +53,7 @@ U kunt een variabele maken en het gegevens type en de oorspronkelijke waarde dec
 
 1. Voer een van de volgende stappen uit in uw logische app, onder de stap waarin u een variabele wilt toevoegen: 
 
-   * Selecteer **nieuwe stap**om een actie toe te voegen onder de laatste stap.
+   * Selecteer **nieuwe stap** om een actie toe te voegen onder de laatste stap.
 
      ![Scherm afbeelding met de actie ' nieuwe stap ' die is geselecteerd op de pagina ' Logic app Designer '.](./media/logic-apps-create-variables-store-values/add-action.png)
 
@@ -76,7 +76,7 @@ U kunt een variabele maken en het gegevens type en de oorspronkelijke waarde dec
 
    ![Variabele initialiseren](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
-1. Ga nu verder met het toevoegen van de gewenste acties. Wanneer u klaar bent, selecteert u op de werk balk ontwerpen de optie **Opslaan**.
+1. Ga nu verder met het toevoegen van de gewenste acties. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent.
 
 Als u overschakelt van de ontwerp functie naar de code weergave-editor, is dit de manier waarop de actie **variabele initialiseren** wordt weer gegeven in de definitie van de logische app, in JavaScript object NOTATION (JSON)-indeling:
 
@@ -215,7 +215,7 @@ Als u een variabele wilt verg Roten *of verhogen met een constante* waarde, voeg
 
    ![Voor beeld van een incrementele waarde](./media/logic-apps-create-variables-store-values/increment-variable-action-information.png)
 
-1. Wanneer u klaar bent, selecteert u op de werk balk ontwerpen de optie **Opslaan**.
+1. Selecteer **Opslaan** op de werkbalk van de ontwerper wanneer u klaar bent.
 
 Als u overschakelt van de ontwerp functie naar de code weergave-editor, is dit de manier waarop de actie voor het **verhogen van variabelen** wordt weer gegeven in de definitie van de logische app, in JSON-indeling:
 
@@ -247,15 +247,15 @@ Variabelen worden vaak gebruikt voor het tellen van het aantal keren dat een lus
 
    ![Controleren op bijlagen en deze toevoegen](./media/logic-apps-create-variables-store-values/check-include-attachments.png)
 
-1. Voeg de [actie **variabele initialiseren** ](#create-variable)toe. Maak een variabele `Count` met een geheel getal met de naam die een begin waarde van nul heeft.
+1. Voeg de [actie **variabele initialiseren**](#create-variable)toe. Maak een variabele `Count` met een geheel getal met de naam die een begin waarde van nul heeft.
 
    ![Actie toevoegen voor ' variabele initialiseren '](./media/logic-apps-create-variables-store-values/initialize-variable.png)
 
 1. Als u elke bijlage wilt door lopen, voegt u een *voor elke* lus toe.
 
-   1. Selecteer **nieuwe stap**onder de actie **variabele initialiseren** .
+   1. Selecteer **nieuwe stap** onder de actie **variabele initialiseren** .
 
-   1. Selecteer onder **Kies een actie**de optie **Ingebouwd**. Voer in het zoekvak in `for each` als uw zoek filter en selecteer **voor elk**.
+   1. Selecteer onder **Kies een actie** de optie **Ingebouwd**. Voer in het zoekvak in `for each` als uw zoek filter en selecteer **voor elk**.
 
       ![Een lus voor elke toevoegen](./media/logic-apps-create-variables-store-values/add-loop.png)
 
@@ -265,7 +265,7 @@ Variabelen worden vaak gebruikt voor het tellen van het aantal keren dat een lus
 
    De eigenschap **bijlagen** geeft een matrix aan, die de e-mail bijlagen van de uitvoer van de trigger in uw lus bevat.
 
-1. Selecteer **een actie toevoegen**in de lus **voor elke** .
+1. Selecteer **een actie toevoegen** in de lus **voor elke** .
 
    ![Selecteer een actie toevoegen](./media/logic-apps-create-variables-store-values/add-action-2.png)
 
@@ -286,9 +286,9 @@ Variabelen worden vaak gebruikt voor het tellen van het aantal keren dat een lus
 
 ### <a name="test-your-logic-app"></a>Uw logische app testen
 
-1. Als uw logische app niet is ingeschakeld, selecteert u **overzicht**in het menu van de logische app. Selecteer **inschakelen**op de werk balk.
+1. Als uw logische app niet is ingeschakeld, selecteert u **overzicht** in het menu van de logische app. Selecteer **inschakelen** op de werk balk.
 
-1. Selecteer **uitvoeren**op de werk balk van de Logic app-ontwerp functie. Met deze stap wordt de logische app hand matig gestart.
+1. Selecteer **uitvoeren** op de werk balk van de Logic app-ontwerp functie. Met deze stap wordt de logische app hand matig gestart.
 
 1. Een e-mail met een of meer bijlagen verzenden naar het e-mail account dat u in dit voor beeld hebt gebruikt.
 
@@ -370,7 +370,7 @@ Dit zijn de eigenschappen voor de actie **variabele instellen** :
 >
 > 1. Selecteer in de rechter bovenhoek van de lus de knop met het weglatings teken (**...**) en selecteer vervolgens **instellingen**.
 > 
-> 2. Wijzig de standaard instelling voor **overschrijven** onder **Gelijktijdigheids beheer**in **op aan**.
+> 2. Wijzig de standaard instelling voor **overschrijven** onder **Gelijktijdigheids beheer** in **op aan**.
 >
 > 3. Sleep de schuif regelaar **van de parallelle graad** naar **1**.
 

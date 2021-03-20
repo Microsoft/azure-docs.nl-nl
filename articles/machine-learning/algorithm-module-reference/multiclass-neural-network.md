@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: a4f7f8a7793f31ffbf2099cbfb314fc5097319f5
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421257"
 ---
 # <a name="multiclass-neural-network-module"></a>Multi Class Neural-netwerk module
@@ -40,17 +40,17 @@ Voor het berekenen van de uitvoer van het netwerk voor een bepaalde invoer wordt
 
 ## <a name="configure-multiclass-neural-network"></a>Multi Class Neural-netwerk configureren
 
-1. Voeg de **netwerk module Multi Class Neural** toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning** , **initialiseren** , in de categorie **classificatie** .
+1. Voeg de **netwerk module Multi Class Neural** toe aan uw pijp lijn in de ontwerp functie. U kunt deze module vinden onder **machine learning**, **initialiseren**, in de categorie **classificatie** .
 
-2. De **trainer modus maken** : gebruik deze optie om op te geven hoe u wilt dat het model wordt getraind:
+2. De **trainer modus maken**: gebruik deze optie om op te geven hoe u wilt dat het model wordt getraind:
 
-    - **Eén para meter** : Kies deze optie als u al weet hoe u het model wilt configureren.
+    - **Eén para meter**: Kies deze optie als u al weet hoe u het model wilt configureren.
 
-    - **Parameter bereik** : Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
+    - **Parameter bereik**: Selecteer deze optie als u niet zeker weet wat de beste para meters zijn en u een parameter sweep wilt uitvoeren. Selecteer een bereik met waarden om over te sporen en het [model Hyper parameters](tune-model-hyperparameters.md) wordt herhaald op alle mogelijke combi Naties van de instellingen die u hebt verstrekt om de Hyper parameters te bepalen die de optimale resultaten opleveren.  
 
-3. **Specificatie van verborgen laag** : Selecteer het type netwerk architectuur dat u wilt maken.
+3. **Specificatie van verborgen laag**: Selecteer het type netwerk architectuur dat u wilt maken.
 
-    - **Volledig gekoppelde Case** : Selecteer deze optie om een model te maken met behulp van de standaard Neural-netwerk architectuur. Voor multi class Neural-netwerk modellen zijn de standaard instellingen als volgt:
+    - **Volledig gekoppelde Case**: Selecteer deze optie om een model te maken met behulp van de standaard Neural-netwerk architectuur. Voor multi class Neural-netwerk modellen zijn de standaard instellingen als volgt:
 
         - Eén verborgen laag
         - De uitvoer laag is volledig verbonden met de verborgen laag.
@@ -61,27 +61,27 @@ Voor het berekenen van de uitvoer van het netwerk voor een bepaalde invoer wordt
   
    
 
-5. **Aantal verborgen knoop punten** : met deze optie kunt u het aantal verborgen knoop punten in de standaard architectuur aanpassen. Typ het aantal verborgen knoop punten. De standaard waarde is één verborgen laag met 100 knoop punten.
+5. **Aantal verborgen knoop punten**: met deze optie kunt u het aantal verborgen knoop punten in de standaard architectuur aanpassen. Typ het aantal verborgen knoop punten. De standaard waarde is één verborgen laag met 100 knoop punten.
 
-6. **Het leer tempo** : Definieer de grootte van de stap die bij elke herhaling moet worden uitgevoerd, vóór correctie. Een hogere waarde voor het leer tempo kan ertoe leiden dat het model sneller wordt geconvergeerd, maar dat het lokale minima kan overschrijden.
+6. **Het leer tempo**: Definieer de grootte van de stap die bij elke herhaling moet worden uitgevoerd, vóór correctie. Een hogere waarde voor het leer tempo kan ertoe leiden dat het model sneller wordt geconvergeerd, maar dat het lokale minima kan overschrijden.
 
-7. **Aantal leer herhalingen** : Geef het maximum aantal keren op dat de trainings cases moeten worden verwerkt door de algoritme.
+7. **Aantal leer herhalingen**: Geef het maximum aantal keren op dat de trainings cases moeten worden verwerkt door de algoritme.
 
-8. **De eerste leer gewicht diameter** : Geef de knooppunt gewichten aan het begin van het leer proces op.
+8. **De eerste leer gewicht diameter**: Geef de knooppunt gewichten aan het begin van het leer proces op.
 
-9. **De impuls** : Geef een gewicht op dat moet worden toegepast tijdens het leren naar knoop punten uit eerdere iteraties.
+9. **De impuls**: Geef een gewicht op dat moet worden toegepast tijdens het leren naar knoop punten uit eerdere iteraties.
   
-11. **Voor beelden in wille keurige volg orde** : Selecteer deze optie om cases in wille keurige volg orde te plaatsen
+11. **Voor beelden in wille keurige volg orde**: Selecteer deze optie om cases in wille keurige volg orde te plaatsen
 
     Als u deze optie uitschakelt, worden cases in precies dezelfde volg orde verwerkt telkens wanneer u de pijp lijn uitvoert.
 
-12. **Wille keurig getal Seed** : Typ een waarde die als seed moet worden gebruikt als u de Herhaal baarheid wilt waarborgen voor uitvoeringen van dezelfde pijp lijn.
+12. **Wille keurig getal Seed**: Typ een waarde die als seed moet worden gebruikt als u de Herhaal baarheid wilt waarborgen voor uitvoeringen van dezelfde pijp lijn.
 
 14. Het model trainen:
 
-    + Als u de **modus trainer maken** instelt op **één para meter** , verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
+    + Als u de **modus trainer maken** instelt op **één para meter**, verbindt u een gecodeerde gegevensset en de module [Train model](train-model.md) .  
   
-    + Als u de **modus trainer maken** instelt op het **parameter bereik** , verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
+    + Als u de **modus trainer maken** instelt op het **parameter bereik**, verbindt u een gecodeerde gegevensset en traint u het model met behulp van [Hyper parameters model](tune-model-hyperparameters.md).  
   
     > [!NOTE]
     > 

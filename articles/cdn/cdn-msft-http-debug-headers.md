@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/31/2019
 ms.author: allensu
 ms.openlocfilehash: 2475bdce3ab8f153cc837601964bf4a2e90a470c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81260408"
 ---
 # <a name="debug-http-header-for-azure-cdn-from-microsoft"></a>Fout opsporing voor de HTTP-header voor Azure CDN van micro soft
@@ -26,7 +26,7 @@ De antwoord header voor fout opsporing `X-Cache` bevat details over de laag van 
 
 ### <a name="response-header-format"></a>Indeling van de antwoord header
 
-Koptekst | Beschrijving
+Header | Beschrijving
 -------|------------
 X-cache: TCP_HIT | Deze header wordt geretourneerd wanneer de inhoud wordt geleverd vanuit de cache van de CDN-rand. 
 X-cache: TCP_REMOTE_HIT | Deze header wordt geretourneerd wanneer de inhoud wordt geleverd vanuit de regionale cache van de CDN (oorspronkelijke afschermings laag)

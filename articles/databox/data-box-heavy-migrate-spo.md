@@ -9,10 +9,10 @@ ms.topic: how-to
 ms.date: 07/18/2019
 ms.author: alkohli
 ms.openlocfilehash: b00a944b69b8492d4aa00258154bf00f1c66ad33
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92127111"
 ---
 # <a name="use-the-azure-data-box-heavy-to-migrate-your-file-share-content-to-sharepoint-online"></a>De Azure Data Box Heavy gebruiken om de inhoud van de bestands share te migreren naar share point online
@@ -31,7 +31,7 @@ In dit artikel wordt uitgelegd hoe u de Data Box Heavy kunt gebruiken om de best
 
 ### <a name="for-data-box-heavy"></a>Voor Data Box Heavy
 
-- Data Box Heavy is alleen beschikbaar voor Enterprise Agreement (EA), Cloud Solution Provider (CSP) of Azure sponsoring-aanbiedingen. Als uw abonnement geen van de bovenstaande typen bevat, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken of de [prijzen van Azure-abonnementen](https://azure.microsoft.com/pricing/)te bekijken.
+- Data Box Heavy is alleen beschikbaar voor Enterprise Overeenkomst (EA), Cloud Solution Provider (CSP) of Azure sponsoring-aanbiedingen. Als uw abonnement geen van de bovenstaande typen bevat, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken of de [prijzen van Azure-abonnementen](https://azure.microsoft.com/pricing/)te bekijken.
 - Er zijn kosten verbonden aan het gebruik van Data Box Heavy. Zorg ervoor dat u de [Data Box Heavy prijzen](https://azure.microsoft.com/pricing/details/databox/heavy/)bekijkt.
 
 

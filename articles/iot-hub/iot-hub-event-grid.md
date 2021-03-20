@@ -13,15 +13,15 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 ms.openlocfilehash: 0e0ca8a787145fb40087a2d99be85607404eebfa
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92152129"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Reageren op IoT Hub gebeurtenissen met behulp van Event Grid om acties te activeren
 
-Azure IoT Hub kan worden geïntegreerd met Azure Event Grid zodat u gebeurtenismeldingen kunt verzenden naar andere services en downstreamprocessen kunt activeren. Configureer uw zakelijke toepassingen om op IoT Hub-gebeurtenissen te letten zodat u op een betrouwbare, schaalbare en veilige manier op kritieke gebeurtenissen kunt reageren.U kunt bijvoorbeeld een toepassing maken waarmee een database wordt bijgewerkt, een orderticket wordt gemaakt en een e-mailmelding wordt bezorgd wanneer een nieuw IoT-apparaat wordt geregistreerd bij uw IoT-hub.
+Azure IoT Hub kan worden geïntegreerd met Azure Event Grid zodat u gebeurtenismeldingen kunt verzenden naar andere services en downstreamprocessen kunt activeren. Configureer uw zakelijke toepassingen om op IoT Hub-gebeurtenissen te letten zodat u op een betrouwbare, schaalbare en veilige manier op kritieke gebeurtenissen kunt reageren. U kunt bijvoorbeeld een toepassing maken waarmee een database wordt bijgewerkt, een orderticket wordt gemaakt en een e-mailmelding wordt bezorgd wanneer een nieuw IoT-apparaat wordt geregistreerd bij uw IoT-hub.
 
 [Azure Event grid](../event-grid/overview.md) is een volledig beheerde service voor gebeurtenis routering die gebruikmaakt van een model voor publiceren en abonneren. Event Grid heeft ingebouwde ondersteuning voor Azure-Services, zoals [Azure functions](../azure-functions/functions-overview.md) en [Azure Logic apps](../logic-apps/logic-apps-overview.md), en kan gebeurtenis waarschuwingen leveren aan niet-Azure-Services met behulp van webhooks. Zie [Een inleiding tot Azure Event Grid](../event-grid/overview.md) voor een volledige lijst met gebeurtenisverwerkers die Event Grid ondersteunt.
 

@@ -10,10 +10,10 @@ ms.date: 09/22/2020
 ms.author: jomore
 ms.custom: fasttrack-new
 ms.openlocfilehash: cc8e7314c941035207ecf809a9d85ef46bd58379
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92913752"
 ---
 # <a name="use-private-link-in-virtual-wan"></a>Privé-koppeling in virtuele WAN gebruiken
@@ -38,11 +38,11 @@ U kunt een persoonlijk eind punt voor een koppeling maken voor veel verschillend
 
 Nadat u de Azure SQL Database hebt gemaakt, kunt u het IP-adres van het privé-eind punt controleren door uw persoonlijke eind punten te doorzoeken:
 
-:::image type="content" source="./media/howto-private-link/endpoints.png" alt-text="persoonlijke koppeling maken" lightbox="./media/howto-private-link/endpoints.png":::
+:::image type="content" source="./media/howto-private-link/endpoints.png" alt-text="privé-eindpunten" lightbox="./media/howto-private-link/endpoints.png":::
 
 Klik op het persoonlijke eind punt dat we hebben gemaakt, het persoonlijke IP-adres en de FQDN-naam (Fully Qualified Domain Name) moeten worden weer geven. Houd er rekening mee dat het persoonlijke eind punt een IP-adres heeft in het bereik van het VNet waar het is geïmplementeerd (10.1.3.0/24):
 
-:::image type="content" source="./media/howto-private-link/sql-endpoint.png" alt-text="persoonlijke koppeling maken" lightbox="./media/howto-private-link/sql-endpoint.png":::
+:::image type="content" source="./media/howto-private-link/sql-endpoint.png" alt-text="SQL-eind punt" lightbox="./media/howto-private-link/sql-endpoint.png":::
 
 ## <a name="verify-connectivity-from-the-same-vnet"></a><a name="connectivity"></a>Connectiviteit van hetzelfde VNet controleren
 
@@ -61,7 +61,7 @@ Address: 10.1.3.228
 
 Zoals u in de vorige uitvoer kunt zien, wordt de FQDN `wantest.database.windows.net` -naam toegewezen aan `wantest.privatelink.database.windows.net` , waardoor de privé-DNS-zone die is gemaakt via het persoonlijke eind punt, wordt omgezet naar het privé-IP-adres `10.1.3.228` . Als u wilt zoeken in de privé-DNS-zone, bevestigt u dat er een record is voor het persoonlijke eind punt dat is toegewezen aan het privé-IP-adres:
 
-:::image type="content" source="./media/howto-private-link/dns-zone.png" alt-text="persoonlijke koppeling maken" lightbox="./media/howto-private-link/dns-zone.png":::
+:::image type="content" source="./media/howto-private-link/dns-zone.png" alt-text="DNS-zone" lightbox="./media/howto-private-link/dns-zone.png":::
 
 Nadat u de juiste DNS-omzetting hebt gecontroleerd, kunnen we proberen verbinding te maken met de Data Base:
 
@@ -87,7 +87,7 @@ Zodra u verbinding hebt tussen het VNet of de vertakking met het VNet waar het p
 
 In dit voor beeld maken we verbinding vanaf een ander VNet. Daarom koppelen we de privé-DNS-zone aan het nieuwe VNet, zodat de werk belastingen de Azure SQL Database FQDN-naam kunnen omzetten naar het privé-IP-adres. Dit doet u door de persoonlijke DNS-zone te koppelen aan het nieuwe VNet:
 
-:::image type="content" source="./media/howto-private-link/dns-link.png" alt-text="persoonlijke koppeling maken" lightbox="./media/howto-private-link/dns-link.png":::
+:::image type="content" source="./media/howto-private-link/dns-link.png" alt-text="DNS-koppeling" lightbox="./media/howto-private-link/dns-link.png":::
 
 Nu moet elke virtuele machine in het gekoppelde VNet de Azure SQL Database FQDN correct omzetten naar het privé-IP-adres van de privé-koppeling:
 
@@ -104,7 +104,7 @@ Address: 10.1.3.228
 
 Als u wilt controleren of dit VNet (10.1.1.0/24) verbinding heeft met het oorspronkelijke VNet waar het persoonlijke eind punt is geconfigureerd (10.1.3.0/24), kunt u de juiste route tabel controleren op elke virtuele machine in het VNet:
 
-:::image type="content" source="./media/howto-private-link/effective-routes.png" alt-text="persoonlijke koppeling maken" lightbox="./media/howto-private-link/effective-routes.png":::
+:::image type="content" source="./media/howto-private-link/effective-routes.png" alt-text="efficiënte routes" lightbox="./media/howto-private-link/effective-routes.png":::
 
 Zoals u ziet, is er een route die verwijst naar het VNet-10.1.3.0/24 dat is geïnjecteerd door de Virtual Network gateways in azure Virtual WAN. Nu kunt u de verbinding met de data base tot slot testen:
 

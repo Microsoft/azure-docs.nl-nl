@@ -7,10 +7,10 @@ ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 99a07dd1791b539ea44fcbab250aa9c227ee1705
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88002608"
 ---
 # <a name="windows-virtual-desktop-environment"></a>Windows Virtual Desktop-omgeving
@@ -45,7 +45,7 @@ Als u resources naar gebruikers wilt publiceren, moet u deze toewijzen aan app-g
 - Een gebruiker kan worden toegewezen aan zowel een bureau blad-app-groep als een RemoteApp-app-groep in dezelfde hostgroep. Gebruikers kunnen echter slechts één type app-groep per sessie starten. Gebruikers kunnen niet beide typen app-groepen tegelijk starten tijdens één sessie.
 - Een gebruiker kan worden toegewezen aan meerdere app-groepen binnen dezelfde hostgroep en hun feed wordt een accumulatie van beide app-groepen.
 
-## <a name="workspaces"></a>Werkruimten
+## <a name="workspaces"></a>Workspaces
 
 Een werk ruimte is een logische groepering van toepassings groepen in Windows virtueel bureau blad. Elke Windows-toepassings groep voor virtueel bureau blad moet worden gekoppeld aan een werk ruimte zodat gebruikers de externe apps en Desk tops kunnen zien die ze hebben gepubliceerd.
 

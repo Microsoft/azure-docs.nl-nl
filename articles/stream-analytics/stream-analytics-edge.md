@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/18/2020
 ms.custom: contperf-fy21q2
 ms.openlocfilehash: c2a062b75caa84a0e3c342ca1ce45ccce12f2bb7
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98012611"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics op IoT Edge
@@ -122,7 +122,7 @@ Deze versie-informatie is voor het laatst bijgewerkt op 2020-09-21:
       - besturings systeem: Linux
       
       
-## <a name="get-help"></a>Help opvragen
+## <a name="get-help"></a>Hulp vragen
 Ga voor meer hulp naar de [pagina micro soft Q&een vraag voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).
 
 ## <a name="next-steps"></a>Volgende stappen

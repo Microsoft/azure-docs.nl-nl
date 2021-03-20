@@ -4,10 +4,10 @@ description: Azure delegated resource management is een belang rijk onderdeel va
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.openlocfilehash: d484e61fc4ab3714eb362b26d64d449890065888
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92203854"
 ---
 # <a name="azure-delegated-resource-management"></a>Meer informatie over gedelegeerd resourcebeheer
@@ -43,7 +43,7 @@ Op hoog niveau is dit de manier waarop Azure gedelegeerd resource management wer
 
 ## <a name="support-for-azure-delegated-resource-management"></a>Ondersteuning voor Azure delegated resource management
 
-Als u hulp nodig hebt met betrekking tot het beheer van de gedelegeerde resources van Azure, kunt u een ondersteunings aanvraag openen in de Azure Portal. Kies voor **type probleem**de optie **technisch**. Selecteer een abonnement en selecteer vervolgens **Lighthouse** (onder **bewaking & Management**).
+Als u hulp nodig hebt met betrekking tot het beheer van de gedelegeerde resources van Azure, kunt u een ondersteunings aanvraag openen in de Azure Portal. Kies voor **type probleem** de optie **technisch**. Selecteer een abonnement en selecteer vervolgens **Lighthouse** (onder **bewaking & Management**).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/13/2017
 ms.author: terrylan
 ms.openlocfilehash: fc5899fe5aca4bbaa9250cf41b240816e2cbedb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80548594"
 ---
 # <a name="how-to-log-a-security-event-support-ticket"></a>Een ondersteuningsticket voor een beveiligingsgebeurtenis maken
@@ -28,7 +28,7 @@ ms.locfileid: "80548594"
 
     ![Gebeurtenis type en-definitie](./media/event-support-ticket/chart.png)
 
-3. Nadat u het probleem type en de categorie hebt geselecteerd, klikt u op de knop**aanvraag starten**. Geef de volgende informatie op zodat we het probleem beter kunnen begrijpen.
+3. Nadat u het probleem type en de categorie hebt geselecteerd, klikt u op de knop **aanvraag starten**. Geef de volgende informatie op zodat we het probleem beter kunnen begrijpen.
 
     i. Wat is het probleem en/of het beveiligings probleem?
 

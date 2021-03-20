@@ -8,10 +8,10 @@ ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
 ms.openlocfilehash: de25a3f9df04b09a7337dc889a688a171d98db28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86129907"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Herstel na noodgevallen van virtuele VMware-machines naar Azure instellen met PowerShell
@@ -105,7 +105,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 Stel de kluis context in met behulp van de cmdlet Set-ASRVaultContext. Eenmaal ingesteld, worden volgende Azure Site Recovery bewerkingen in de Power shell-sessie uitgevoerd in de context van de geselecteerde kluis.
 
 > [!TIP]
-> De Azure Site Recovery Power shell-module (AZ. Recovery Services module) wordt geleverd met eenvoudig te gebruiken aliassen voor de meeste cmdlets. De cmdlets in de module hebben de vorm * \<Operation> - **AzRecoveryServicesAsr** \<Object> * en hebben gelijkwaardige aliassen die het formulier * \<Operation> - **ASR** \<Object> *gebruiken. U kunt de cmdlet-aliassen voor gebruiks gemak vervangen.
+> De Azure Site Recovery Power shell-module (AZ. Recovery Services module) wordt geleverd met eenvoudig te gebruiken aliassen voor de meeste cmdlets. De cmdlets in de module hebben de vorm *\<Operation> - **AzRecoveryServicesAsr** \<Object>* en hebben gelijkwaardige aliassen die het formulier *\<Operation> - **ASR** \<Object>* gebruiken. U kunt de cmdlet-aliassen voor gebruiks gemak vervangen.
 
 In het onderstaande voor beeld wordt de kluis Details van de variabele $vault gebruikt om de kluis context voor de Power shell-sessie op te geven.
 
@@ -172,7 +172,7 @@ Voor dit voor beeld hebben we het volgende:
    1     ConfigurationServer
    ```
 
-   Van de uitvoer hierboven ***$ProcessServers [0]*** komt overeen met *uitschalen-ProcessServer* en ***$ProcessServers [1]*** overeenkomt met de functie proces server op *ConfigurationServer*
+   Uit de bovenstaande uitvoer ***$ProcessServers [0]** _ correspondeert met _uitschalen-ProcessServer * en ***$ProcessServers [1]**_ overeenkomt met de rol van proces server op _ConfigurationServer *
 
 3. Identificeer accounts die op de configuratie server zijn ingesteld.
 
@@ -189,7 +189,7 @@ Voor dit voor beeld hebben we het volgende:
    3         LinuxAccount
    ```
 
-   Van de uitvoer hierboven ***$AccountHandles [0]*** overeenkomt met het account *vCenter_account*, ***$AccountHandles [1]*** naar account *WindowsAccount*en ***$AccountHandles [2]*** naar account *LinuxAccount*
+   Uit de bovenstaande uitvoer ***$AccountHandles [0]** _ correspondeert met het account _vCenter_account *, ***$AccountHandles [1]**_ naar account _WindowsAccount *, en ***$AccountHandles [2]**_ naar account _LinuxAccount *
 
 ## <a name="create-a-replication-policy"></a>Een replicatiebeleid maken
 
@@ -342,7 +342,7 @@ U hebt de volgende gegevens nodig om een gedetecteerde virtuele machine te bevei
 * Het Beveilig bare item dat moet worden gerepliceerd.
 * Het opslag account waarnaar de virtuele machine moet worden gerepliceerd (alleen als u naar het opslag account repliceert). 
 * Er is een logboek opslag vereist om virtuele machines te beveiligen met een Premium Storage-account of een beheerde schijf.
-* De proces server die moet worden gebruikt voor replicatie. De lijst met beschik bare proces servers is opgehaald en opgeslagen in de variabelen ***$ProcessServers [0]***  *(uitschalen-ProcessServer)* en ***$ProcessServers [1]*** *(ConfigurationServer)* .
+* De proces server die moet worden gebruikt voor replicatie. De lijst met beschik bare proces servers is opgehaald en opgeslagen in de variabelen ***$ProcessServers [0]** _ _(uitschalen-ProcessServer) * en ***$ProcessServers [1]**_ _ (ConfigurationServer) *.
 * Het account dat moet worden gebruikt voor de push-installatie van de Mobility service-software op de computers. De lijst met beschik bare accounts is opgehaald en opgeslagen in de variabele ***$AccountHandles*** .
 * De toewijzing van de beveiligings container voor het replicatie beleid dat moet worden gebruikt voor replicatie.
 * De resource groep waarin de virtuele machines moeten worden gemaakt voor failover.

@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: d3017d09e94040d16950598dad360fe32930c16b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80985436"
 ---
 # <a name="tutorial-configure-an-alias-record-to-refer-to-an-azure-public-ip-address"></a>Zelfstudie: Een aliasrecord zo configureren dat deze naar een openbaar Azure-IP-adres verwijst 
@@ -46,7 +46,7 @@ Maak eerst een virtueel netwerk en een subnet waaraan u de webservers gaat toevo
 2. Geef **Web-01** op als naam en plaats de virtuele machine in de resourcegroep **RG-DNS-Alias-TM**. Voer een gebruikersnaam en wachtwoord in en selecteer **OK**.
 3. Voor **Grootte**, selecteert u een SKU met 8 GB RAM-geheugen.
 4. Selecteer voor **Instellingen** het virtuele netwerk **VNet-Servers** en het subnet **SN-Web**. Selecteer voor openbare inkomende poorten **HTTP** > **HTTPS** > **RDP (3389)** en selecteer vervolgens **OK**.
-5. Op de pagina**Overzicht** selecteert u **Maken**.
+5. Op de pagina **Overzicht** selecteert u **Maken**.
 
 Deze procedure duurt een paar minuten. Aan de virtuele machine is een NIC gekoppeld. Deze heeft een eenvoudig, dynamisch, openbaar IP-adres met de naam Web-01-ip. Het openbare IP-adres wordt telkens gewijzigd wanneer de virtuele machine opnieuw wordt opgestart.
 

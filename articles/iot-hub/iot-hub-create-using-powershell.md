@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: robinsh
 ms.openlocfilehash: da021e3ba0fd93a182ea76a1ba4b7042b325aacc
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92142380"
 ---
 # <a name="create-an-iot-hub-using-the-new-aziothub-cmdlet"></a>Een IoT-hub maken met behulp van de cmdlet New-AzIotHub
@@ -39,7 +39,7 @@ Login-AzAccount
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-U hebt een resource groep nodig voor het implementeren van een IoT hub. U kunt een bestaande resource groep gebruiken of een nieuwe maken.
+U hebt een resource groep nodig voor het implementeren van een IoT hub. U kunt een bestaande resourcegroep gebruiken of een nieuwe maken.
 
 Als u een resource groep voor uw IoT-hub wilt maken, gebruikt u de opdracht [New-AzResourceGroup](/powershell/module/az.Resources/New-azResourceGroup) . In dit voor beeld wordt een resource groep met de naam **MyIoTRG1** gemaakt in de regio **VS-Oost** :
 
@@ -47,7 +47,7 @@ Als u een resource groep voor uw IoT-hub wilt maken, gebruikt u de opdracht [New
 New-AzResourceGroup -Name MyIoTRG1 -Location "East US"
 ```
 
-## <a name="create-an-iot-hub"></a>Een IoT Hub maken
+## <a name="create-an-iot-hub"></a>Een IoT-hub maken
 
 Als u een IoT-hub wilt maken in de resource groep die u in de vorige stap hebt gemaakt, gebruikt u de opdracht [New-AzIotHub](/powershell/module/az.IotHub/New-azIotHub) . In dit voor beeld wordt een **S1** -hub gemaakt met de naam **MyTestIoTHub** in de regio **VS-Oost** :
 

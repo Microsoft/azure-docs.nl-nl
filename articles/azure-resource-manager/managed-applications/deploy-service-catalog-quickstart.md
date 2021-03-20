@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: ce58fc69496f54c078b0a0a55a8a3c7cad82a051
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "81391714"
 ---
 # <a name="quickstart-deploy-service-catalog-app-through-azure-portal"></a>Snelstartgids: een service catalogus-app implementeren via Azure Portal
@@ -40,7 +40,7 @@ Gebruik de volgende stappen in de Azure Portal:
 
    ![Geef waarden op voor basis](./media/deploy-service-catalog-quickstart/provide-basics.png)
 
-1. Geef een voor voegsel op voor de naam van het opslag account. Selecteer het type opslag account dat u wilt maken. Selecteer **OK** als u klaar bent.
+1. Geef een voorvoegsel op voor de opslagaccountnaam. Selecteer het type opslag account dat u wilt maken. Selecteer **OK** als u klaar bent.
 
    ![Geef waarden op voor opslag](./media/deploy-service-catalog-quickstart/provide-storage.png)
 

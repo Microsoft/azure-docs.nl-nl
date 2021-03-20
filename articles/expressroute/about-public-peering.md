@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: duau
 ms.openlocfilehash: 477145619e1b4d8b41c422389b57a46615597478
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92202545"
 ---
 # <a name="create-and-manage-expressroute-public-peering"></a>Open bare ExpressRoute-peering maken en beheren
@@ -38,7 +38,7 @@ Zodra open bare peering is ingeschakeld, kunt u verbinding maken met de meeste A
 * Via het routerings domein voor open bare peering kunt u privé verbinding maken met services die worden gehost op open bare IP-adressen, inclusief Vip's van uw Cloud Services.
 * U kunt het open bare peering domein koppelen aan uw DMZ en verbinding maken met alle Azure-Services op hun open bare IP-adres van uw WAN zonder dat u verbinding hoeft te maken via internet.
 
-## <a name="services"></a><a name="services"></a>Onderzoeksservices
+## <a name="services"></a><a name="services"></a>Services
 
 In deze sectie worden de services weer gegeven die beschikbaar zijn via open bare peering. Omdat open bare peering is afgeschaft, is er geen plan om nieuwe of extra services aan open bare peering toe te voegen. Als u open bare peering gebruikt en de service die u wilt gebruiken alleen wordt ondersteund voor micro soft-peering, moet u overschakelen naar micro soft-peering. Zie [micro soft-peering](expressroute-faqs.md#microsoft-peering) voor een lijst met ondersteunde services.
 

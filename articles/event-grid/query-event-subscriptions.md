@@ -4,10 +4,10 @@ description: In dit artikel wordt beschreven hoe u Event Grid abonnementen in uw
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: 3d700f543bc5e3c7add2a346c10acf975e1c2462
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "86120446"
 ---
 # <a name="query-event-grid-subscriptions"></a>Query's uitvoeren op Event Grid abonnementen 
@@ -36,7 +36,7 @@ Set-AzContext -Subscription "My Azure Subscription"
 Get-AzEventGridSubscription
 ```
 
-Als u Event grid-abonnementen wilt ophalen voor een Azure-abonnement, geeft u het onderwerp type **micro soft. resources. abonnementen**op.
+Als u Event grid-abonnementen wilt ophalen voor een Azure-abonnement, geeft u het onderwerp type **micro soft. resources. abonnementen** op.
 
 Gebruik voor Azure CLI:
 
@@ -50,7 +50,7 @@ Gebruik voor PowerShell:
 Get-AzEventGridSubscription -TopicTypeName "Microsoft.Resources.Subscriptions"
 ```
 
-Als u Event grid-abonnementen wilt ophalen voor alle resource groepen binnen een Azure-abonnement, geeft u het onderwerp type **micro soft. resources. ResourceGroups**op.
+Als u Event grid-abonnementen wilt ophalen voor alle resource groepen binnen een Azure-abonnement, geeft u het onderwerp type **micro soft. resources. ResourceGroups** op.
 
 Gebruik voor Azure CLI:
 
@@ -110,7 +110,7 @@ Gebruik voor PowerShell:
 Get-AzEventGridSubscription -TopicTypeName "Microsoft.EventGrid.Topics" -Location westus2
 ```
 
-Als u abonnementen voor opslag accounts voor een locatie wilt ophalen, geeft u de locatie en het type onderwerp van **micro soft. storage. Storage accounts**op.
+Als u abonnementen voor opslag accounts voor een locatie wilt ophalen, geeft u de locatie en het type onderwerp van **micro soft. storage. Storage accounts** op.
 
 Gebruik voor Azure CLI:
 

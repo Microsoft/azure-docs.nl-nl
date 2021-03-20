@@ -9,10 +9,10 @@ ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/15/2016
 ms.openlocfilehash: 0a8d79af9f45731971cb1be1f39fc193f9d0f0d9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "80878966"
 ---
 # <a name="outbound-authentication-for-azure-scheduler"></a>Uitgaande verificatie voor Azure scheduler
@@ -290,7 +290,7 @@ Wanneer u verificatie toevoegt met behulp van het `ActiveDirectoryOAuth` model, 
 | **tenant** | Ja | De Tenant-id voor de Azure AD-Tenant. Voer in Azure PowerShell om de Tenant-id voor de Azure AD-Tenant te vinden `Get-AzureAccount` . |
 | **gericht** | Ja | Deze waarde is ingesteld op `https://management.core.windows.net/` . | 
 | **clientId** | Ja | De client-id voor de Azure AD-toepassing | 
-| **gescheiden** | Ja | Het geheim voor de client die het token aanvraagt | 
+| **geheim** | Ja | Het geheim voor de client die het token aanvraagt | 
 |||| 
 
 ### <a name="response-body---active-directory-oauth"></a>Antwoord tekst-Active Directory OAuth

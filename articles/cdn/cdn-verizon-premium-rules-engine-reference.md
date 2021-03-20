@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: allensu
 ms.openlocfilehash: 295bc0a20a547bf944f48af6711b18af34571b02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91362577"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-reference"></a>Referentie voor Azure CDN van Verizon Premium-regels engine
@@ -99,7 +99,7 @@ Teken | Beschrijving
 % | Een percentage symbool wordt gebruikt om URL-code ring aan te geven (bijvoorbeeld `%20` ).
 \* | Een asterisk is een Joker teken dat bestaat uit een of meer tekens.
 Space | Een spatie geeft aan dat aan een voor waarde voor een overeenkomst kan worden voldaan door een van de opgegeven waarden of patronen.
-Value | Een enkele aanhaling heeft geen speciale betekenis. Er wordt echter een set met enkele aanhalings tekens gebruikt om aan te geven dat een waarde moet worden behandeld als een letterlijke waarde. Dit kan op de volgende manieren worden gebruikt:<br><br/>-Hiermee kan een match-voor waarde worden vervuld wanneer de opgegeven waarde overeenkomt met een deel van de vergelijkings waarde.  Bijvoorbeeld, `'ma'` komt overeen met een van de volgende teken reeksen: <br/><br/>/Business/**ma**rathon/asset.htm<br/>**ma**p.gif<br/>/business/template. **ma**p<br /><br />-Hiermee kan een speciaal teken worden opgegeven als een letterlijke teken. U kunt bijvoorbeeld een letterlijke spatie opgeven door een spatie te plaatsen binnen een set met enkele aanhalings tekens ( `' '` of `'sample value'` ).<br/>-Hiermee kan een lege waarde worden opgegeven. Geef een lege waarde op door een set met enkele aanhalings tekens (,) op te geven.<br /><br/>**Belangrijk:**<br/>-Als de opgegeven waarde geen joker teken bevat, wordt deze automatisch beschouwd als een letterlijke waarde, wat betekent dat het niet nodig is om een set met enkele aanhalings tekens op te geven.<br/>-Als een back slash geen ander teken in deze tabel weglaat, wordt deze genegeerd wanneer deze is opgegeven binnen een set met enkele aanhalings tekens.<br/>-Een andere manier om een speciaal teken op te geven als een letterlijke teken, is het escapeel te maken met behulp van een back slash (dat wil zeggen `\` ).
+Value | Een enkele aanhaling heeft geen speciale betekenis. Er wordt echter een set met enkele aanhalings tekens gebruikt om aan te geven dat een waarde moet worden behandeld als een letterlijke waarde. Dit kan op de volgende manieren worden gebruikt:<br><br/>-Hiermee kan een match-voor waarde worden vervuld wanneer de opgegeven waarde overeenkomt met een deel van de vergelijkings waarde.  Bijvoorbeeld, `'ma'` komt overeen met een van de volgende teken reeksen: <br/><br/>/Business/**ma** rathon/asset.htm<br/>**ma** p.gif<br/>/business/template. **ma** p<br /><br />-Hiermee kan een speciaal teken worden opgegeven als een letterlijke teken. U kunt bijvoorbeeld een letterlijke spatie opgeven door een spatie te plaatsen binnen een set met enkele aanhalings tekens ( `' '` of `'sample value'` ).<br/>-Hiermee kan een lege waarde worden opgegeven. Geef een lege waarde op door een set met enkele aanhalings tekens (,) op te geven.<br /><br/>**Belangrijk:**<br/>-Als de opgegeven waarde geen joker teken bevat, wordt deze automatisch beschouwd als een letterlijke waarde, wat betekent dat het niet nodig is om een set met enkele aanhalings tekens op te geven.<br/>-Als een back slash geen ander teken in deze tabel weglaat, wordt deze genegeerd wanneer deze is opgegeven binnen een set met enkele aanhalings tekens.<br/>-Een andere manier om een speciaal teken op te geven als een letterlijke teken, is het escapeel te maken met behulp van een back slash (dat wil zeggen `\` ).
 
 ### <a name="regular-expressions"></a>Reguliere expressies
 
@@ -119,7 +119,7 @@ Voor waarden en functies die reguliere expressies ondersteunen, accepteren patro
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Overeenkomende voor waarden voor regel engine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
+- [Criteria voor overeenkomst in de regelengine](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
 - [Voorwaardelijke expressies in de regelengine](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
 - [Functies van de regelengine](cdn-verizon-premium-rules-engine-reference-features.md)
 - [HTTP-gedrag negeren met de regel engine](cdn-verizon-premium-rules-engine.md)

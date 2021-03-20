@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: ramamill
 ms.openlocfilehash: 3b9edab6e908b4506a92c78aa8f3f53277b9c17b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91360868"
 ---
 # <a name="reprotect-failed-over-azure-vms-to-the-primary-region"></a>Virtuele Azure-machines waarvoor failover naar de primaire regio is uitgevoerd, opnieuw beveiligen
@@ -29,7 +29,7 @@ Wanneer u virtuele Azure-machines van de ene regio naar de andere gebruikt via [
 
 ## <a name="reprotect-a-vm"></a>Een virtuele machine opnieuw beveiligen
 
-1. Klik in **kluis**  >  **gerepliceerde items**met de rechter muisknop op de virtuele machine waarvoor een failover is uitgevoerd en selecteer **opnieuw beveiligen**. De richting voor opnieuw beveiligen moet van secundair naar primair worden weer gegeven.
+1. Klik in **kluis**  >  **gerepliceerde items** met de rechter muisknop op de virtuele machine waarvoor een failover is uitgevoerd en selecteer **opnieuw beveiligen**. De richting voor opnieuw beveiligen moet van secundair naar primair worden weer gegeven.
 
    ![Scherm afbeelding toont een virtuele machine met een context menu waarvoor opnieuw beveiligen is geselecteerd.](./media/site-recovery-how-to-reprotect-azure-to-azure/reprotect.png)
 

@@ -7,10 +7,10 @@ ms.date: 05/23/2019
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: dc5c6499fa47a1e32a517032d5cc2a97b3f2677f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88007163"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Problemen met grafische prestaties in Extern bureaublad diagnosticeren
@@ -34,10 +34,10 @@ U hebt uw externe sessie naam nodig om de grafische prestatie meter items te ide
 Nadat u de naam van uw externe sessie hebt bepaald, volgt u deze instructies voor het verzamelen van de prestatie meter items voor RemoteFX graphics voor uw externe sessie.
 
 1. Selecteer **Start**  >  **systeem beheer**  >  **prestatie meter**.
-2. Vouw in het dialoog venster **prestatie meter** het onderdeel **controle hulpprogramma's**uit, selecteer **prestatie meter**en selecteer vervolgens **toevoegen**.
+2. Vouw in het dialoog venster **prestatie meter** het onderdeel **controle hulpprogramma's** uit, selecteer **prestatie meter** en selecteer vervolgens **toevoegen**.
 3. Vouw in het dialoog venster **items toevoegen** vanuit de lijst **beschik bare items** de sectie uit voor RemoteFX-afbeeldingen.
 4. Selecteer de prestatie meter items die moeten worden bewaakt.
-5. Selecteer in de lijst **instanties van geselecteerd object** de specifieke exemplaren die moeten worden bewaakt voor de geselecteerde items en selecteer vervolgens **toevoegen**. Selecteer **alle exemplaren**om alle beschik bare item instanties te selecteren.
+5. Selecteer in de lijst **instanties van geselecteerd object** de specifieke exemplaren die moeten worden bewaakt voor de geselecteerde items en selecteer vervolgens **toevoegen**. Selecteer **alle exemplaren** om alle beschik bare item instanties te selecteren.
 6. Nadat u de items hebt toegevoegd, selecteert u **OK**.
 
 De geselecteerde prestatie meter items worden weer gegeven op het scherm prestatie meter.

@@ -7,10 +7,10 @@ ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.openlocfilehash: 90da16789344754c02d46022160db71ee261a056
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96754059"
 ---
 # <a name="support-matrix-for-hyper-v-migration"></a>Ondersteunings matrix voor Hyper-V-migratie
@@ -46,7 +46,7 @@ U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer compute
 | **Linux-opstart**                 | Als/boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteem schijf bevinden en niet over meerdere schijven worden verspreid.<br/> Als/boot deel uitmaakt van de hoofd partitie (/), moet de partitie '/' zich op de besturingssysteem schijf bevindt en niet over andere schijven beschikken. |
 | **UEFI-opstart**                  | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2.  |
 | **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.|
-| **Schijfgrootte**                  | 2 TB voor de besturingssysteem schijf (BIOS-opstart), 4 TB voor de besturingssysteem schijf (UEFI-opstart), 4 TB voor de gegevens schijven.|
+| **Schijf grootte**                  | 2 TB voor de besturingssysteem schijf (BIOS-opstart), 4 TB voor de besturingssysteem schijf (UEFI-opstart), 4 TB voor de gegevens schijven.|
 | **Schijf nummer** | Maxi maal 16 schijven per VM.|
 | **Versleutelde schijven/volumes**    | Niet ondersteund voor migratie.|
 | **RDM/passthrough-schijven**      | Niet ondersteund voor migratie.|
@@ -54,8 +54,8 @@ U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer compute
 | **NFS**                        | NFS-volumes die zijn gekoppeld als volumes op de Vm's, worden niet gerepliceerd.|
 | **SCSI**                      | Vm's met iSCSI-doelen worden niet ondersteund voor migratie.
 | **Doel schijf**                | U kunt alleen migreren naar Azure-Vm's met Managed disks. |
-| **IPv6** | Niet ondersteund.|
-| **NIC-koppeling** | Niet ondersteund.|
+| **IPv6** | Wordt niet ondersteund.|
+| **NIC-koppeling** | Wordt niet ondersteund.|
 | **Azure Site Recovery** | U kunt niet repliceren met Azure Migrate server migratie als de virtuele machine is ingeschakeld voor replicatie met Azure Site Recovery.|
 | **Poorten** | Uitgaande verbindingen op HTTPS-poort 443 voor het verzenden van VM-replicatie gegevens.|
 
@@ -96,9 +96,9 @@ Aantal besturingssysteemschijven | 1 | De controle is mislukt als dit niet wordt
 Aantal gegevensschijven | 16 of minder. | De controle is mislukt als dit niet wordt ondersteund.
 Grootte van de gegevens schijf | Maxi maal 4.095 GB | De controle is mislukt als dit niet wordt ondersteund.
 Netwerkadapters | Meerdere adapters worden ondersteund. |
-Gedeelde VHD | Niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-FC-schijf | Niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-BitLocker | Niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelt.
+Gedeelde VHD | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
+FC-schijf | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
+BitLocker | Wordt niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelt.
 VM-naam | Van 1 tot 63 tekens.<br/> Alleen letters, cijfers en afbreekstreepjes.<br/><br/> De naam van de computer moet beginnen en eindigen met een letter of cijfer. |  Werk de waarde in de computer eigenschappen in Site Recovery bij.
 Verbinding maken na migratie-Windows | Verbinding maken met virtuele Azure-machines na de migratie:<br/><br/> -Schakel voor de migratie RDP in op de on-premises VM. Zorg dat TCP- en UDP-regels zijn toegevoegd voor het profiel **Openbaar** en dat RDP is toegestaan in **Windows Firewall** > **Toegestane apps** voor alle profielen.<br/><br/> -Voor site-naar-site-VPN-toegang schakelt u RDP in en staat u RDP toe in **Windows Firewall**  ->  **toegestane apps en functies** voor **domein-en particuliere** netwerken. Controleer bovendien of het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](prepare-for-migration.md). |
 Verbinding maken na migratie-Linux | Verbinding maken met virtuele Azure-machines na de migratie met SSH:<br/><br/> -Voordat de migratie op de on-premises computer, controleert u of de Secure shell-service is ingesteld op Start en of de firewall regels een SSH-verbinding toestaan.<br/><br/> -Na de migratie kunt u op de virtuele machine van Azure binnenkomende verbindingen met de SSH-poort toestaan voor de regels voor de netwerk beveiligings groep op de virtuele machine waarvoor een failover is uitgevoerd en voor het Azure-subnet waarmee deze is verbonden. Voeg bovendien een openbaar IP-adres voor de virtuele machine toe. |  

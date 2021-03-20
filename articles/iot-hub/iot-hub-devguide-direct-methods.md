@@ -13,15 +13,15 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
 ms.openlocfilehash: b75e859fc1237bc88bee464cef423b7289810fa8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147790"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Directe methoden van IoT Hub begrijpen en aanroepen
 
-IoT Hub biedt u de mogelijkheid om direct methoden te activeren op apparaten in de Cloud. Directe methoden vertegenwoordigen een aanvraag/antwoord-interactie met een apparaat dat vergelijkbaar is met een HTTP-aanroep wanneer deze slagen of direct mislukken (na een door de gebruiker opgegeven time-out). Deze aanpak is nuttig voor scenario's waarbij de uitvoering van directe actie afwijkt, afhankelijk van of het apparaat kan reageren.
+IoT Hub biedt u de mogelijkheid om direct methoden te activeren op apparaten in de Cloud. Directe methoden vertegenwoordigen een aanvraag/antwoord-interactie met een apparaat dat vergelijkbaar is met een HTTP-aanroep wanneer deze slagen of direct mislukken (na een door de gebruiker opgegeven time-out). Deze aanpak is nuttig voor scenario's waarbij het verloop van de onmiddellijke actie verschillend is, afhankelijk van het feit of het apparaat in staat was om te reageren.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 

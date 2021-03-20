@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 10/23/2019
 ms.author: jeedes
 ms.openlocfilehash: beef52641b9744b39873a7f48e39eb2f94ed4c9f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92459724"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-iqnavigator-vms"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met IQNavigator VMS
@@ -107,9 +107,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -135,7 +135,7 @@ In deze sectie stelt u B.Simon in staat gebruik te maken van eenmalige aanmeldin
 
 ## <a name="configure-iqnavigator-vms-sso"></a>Eenmalige aanmelding voor IQNavigator VMS configureren
 
-Als u eenmalige aanmelding wilt configureren aan de zijde van **IQNavigator VMS** , moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van IQNavigator VMS](https://www.beeline.com/support-iqn/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding wilt configureren aan de zijde van **IQNavigator VMS**, moet u de **App-URL voor federatieve metagegevens** verzenden naar het [ondersteuningsteam van IQNavigator VMS](https://www.beeline.com/support-iqn/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-iqnavigator-vms-test-user"></a>Testgebruiker voor IQNavigator VMS maken
 

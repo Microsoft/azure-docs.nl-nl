@@ -12,15 +12,15 @@ ms.custom:
 - amqp
 - 'Role: Cloud Development'
 ms.openlocfilehash: 4bb33721625f4fc752745ce2b43051c90b3aaa74
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147672"
 ---
 # <a name="read-device-to-cloud-messages-from-the-built-in-endpoint"></a>Apparaat-naar-cloud-berichten lezen van het geïntegreerde eindpunt
 
-Standaard worden berichten gerouteerd naar het ingebouwde service-Facing-eind punt (**berichten/gebeurtenissen**) die compatibel zijn met [Event hubs](https://azure.microsoft.com/documentation/services/event-hubs/). Dit eind punt is momenteel alleen beschikbaar via het [AMQP](https://www.amqp.org/) -protocol op poort 5671. Een IoT-hub geeft de volgende eigenschappen aan om u in staat te stellen de ingebouwde Event hub-compatibele **berichten/gebeurtenissen**voor berichten-endpoint te beheren.
+Standaard worden berichten gerouteerd naar het ingebouwde service-Facing-eind punt (**berichten/gebeurtenissen**) die compatibel zijn met [Event hubs](https://azure.microsoft.com/documentation/services/event-hubs/). Dit eind punt is momenteel alleen beschikbaar via het [AMQP](https://www.amqp.org/) -protocol op poort 5671. Een IoT-hub geeft de volgende eigenschappen aan om u in staat te stellen de ingebouwde Event hub-compatibele **berichten/gebeurtenissen** voor berichten-endpoint te beheren.
 
 | Eigenschap            | Beschrijving |
 | ------------------- | ----------- |
@@ -47,13 +47,13 @@ Wanneer u Event Hubs Sdk's of product integraties gebruikt die niet op de hoogte
 
 2. Klik op **ingebouwde eind punten**.
 
-3. De **sectie Events** bevat de volgende waarden: **partities**, **een event hub-compatibele naam**, een **Event hub-compatibel eind punt**, **retentie tijd**en **consumenten groepen**.
+3. De **sectie Events** bevat de volgende waarden: **partities**, **een event hub-compatibele naam**, een **Event hub-compatibel eind punt**, **retentie tijd** en **consumenten groepen**.
 
     ![Apparaat-naar-Cloud-instellingen](./media/iot-hub-devguide-messages-read-builtin/eventhubcompatible.png)
 
 In de portal bevat het veld met de Event hub-compatibel eind punt een volledig Event Hubs connection string dat er als volgt uitziet: **eind punt = SB://abcd1234namespace.servicebus.Windows.net/; SharedAccessKeyName = iothubowner; SharedAccessKey = keykeykeykeykeykey =; EntityPath = iothub-eHub-ABCD-1234-123456**. Als de SDK die u gebruikt andere waarden vereist, dan zou het volgende zijn:
 
-| Naam | Waarde |
+| Name | Waarde |
 | ---- | ----- |
 | Eindpunt | sb://abcd1234namespace.servicebus.windows.net/ |
 | Hostnaam | abcd1234namespace.servicebus.windows.net |

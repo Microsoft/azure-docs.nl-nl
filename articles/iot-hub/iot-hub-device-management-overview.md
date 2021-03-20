@@ -12,10 +12,10 @@ ms.custom:
 - 'Role: IoT Device'
 - 'Role: System Architecture'
 ms.openlocfilehash: 9ff8ebeaf7c4a219bc403c81dfea62f4657a1fd8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92148348"
 ---
 # <a name="overview-of-device-management-with-iot-hub"></a>Overzicht van apparaatbeheer met IoT Hub
@@ -115,7 +115,7 @@ Met IoT Hub wordt de volgende set apparaatbeheerpatronen mogelijk gemaakt. In de
   
     ![Afbeelding van het firmware-updatepatroon van apparaatbeheer](media/iot-hub-device-management-overview/fwupdate-pattern.png)
 
-* **Voortgang en status**van het rapport: de back-end van de oplossing voert dubbele query's, op een reeks apparaten, uit om te rapporteren over de status en de voortgang van de acties die op de apparaten worden uitgevoerd.
+* **Voortgang en status** van het rapport: de back-end van de oplossing voert dubbele query's, op een reeks apparaten, uit om te rapporteren over de status en de voortgang van de acties die op de apparaten worden uitgevoerd.
   
     ![Afbeelding van het proces- en statuspatroon van apparaatbeheerrapportage](./media/iot-hub-device-management-overview/report-progress-pattern.png)
 

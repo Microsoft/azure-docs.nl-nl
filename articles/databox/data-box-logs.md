@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/10/2020
 ms.author: alkohli
 ms.openlocfilehash: a9304936f746b82b59550d62e8b60a9e0035d188
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92147929"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy-import-order"></a>Tracering en logboek registratie voor uw Azure Data Box en Azure Data Box Heavy import volgorde
@@ -354,13 +354,13 @@ The authentication information fields provide detailed information about this sp
 
 ## <a name="download-order-history"></a>Ordergeschiedenis downloaden
 
-Order geschiedenis is beschikbaar in Azure Portal. Als de order is voltooid en het opschonen van het apparaat (gegevens verwijdering van de schijven) is voltooid, gaat u naar **de volg orde**van uw apparaten en navigeert u naar Bestellingsgegevens. De optie **Ordergeschiedenis downloaden** is beschikbaar. Zie [order geschiedenis downloaden](data-box-portal-admin.md#download-order-history)voor meer informatie.
+Order geschiedenis is beschikbaar in Azure Portal. Als de order is voltooid en het opschonen van het apparaat (gegevens verwijdering van de schijven) is voltooid, gaat u naar **de volg orde** van uw apparaten en navigeert u naar Bestellingsgegevens. De optie **Ordergeschiedenis downloaden** is beschikbaar. Zie [order geschiedenis downloaden](data-box-portal-admin.md#download-order-history)voor meer informatie.
 
 Als u door de order geschiedenis schuift, ziet u het volgende:
 
 - Informatie over het bijhouden van vervoerders voor uw apparaat.
 - Gebeurtenissen met *SecureErase* -activiteit. Deze gebeurtenissen komen overeen met het verwijderen van de gegevens op de schijf.
-- Data Box logboek koppelingen. De paden voor de *audit logboeken*, *Kopieer logboeken*en *stuk lijst* bestanden worden weer gegeven.
+- Data Box logboek koppelingen. De paden voor de *audit logboeken*, *Kopieer logboeken* en *stuk lijst* bestanden worden weer gegeven.
 
 Hier volgt een voor beeld van het logboek voor order geschiedenis van Azure Portal:
 

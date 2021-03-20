@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 09/12/2019
 ms.author: Zhchia
 ms.openlocfilehash: 83af1c3bc323546534613e6ff99c731010b103d7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96352130"
 ---
 # <a name="tutorial-configure-robin-for-automatic-user-provisioning"></a>Zelfstudie: Robin configureren voor automatische inrichting van gebruikers
@@ -76,7 +76,7 @@ Voordat u Robin configureert voor de automatisch inrichting van gebruikers met A
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 

@@ -10,10 +10,10 @@ author: likebupt
 ms.author: keli19
 ms.date: 05/26/2020
 ms.openlocfilehash: fc0eb196ed24e413c35d64f0571ff29dc3725032
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93421274"
 ---
 # <a name="init-image-transformation"></a>Afbeeldingstransformatie initiëren
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u de **initialisatie-afbeelding transformati
 
 2.  Geef bij **formaat wijzigen** op of het formaat van de invoer pil-afbeelding moet worden gewijzigd in de opgegeven grootte. Als u ' waar ' kiest, kunt u de gewenste grootte van de uitvoer afbeelding **opgeven, standaard** 256. 
 
-3.  Geef bij **snij punt** op of de opgegeven pil-afbeelding in het midden moet worden bijgesneden. Als u ' waar ' kiest, kunt u de gewenste grootte van de uitvoer afbeelding opgeven van de bijsnijd **grootte** , standaard 224.  
+3.  Geef bij **snij punt** op of de opgegeven pil-afbeelding in het midden moet worden bijgesneden. Als u ' waar ' kiest, kunt u de gewenste grootte van de uitvoer afbeelding opgeven van de bijsnijd **grootte**, standaard 224.  
 
 4.  Geef bij **pad** de opgegeven pil-installatie kopie op alle zijden met de pad waarde 0 op. Als u ' waar ' kiest, kunt u opvulling opgeven (hoeveel pixels u wilt toevoegen) op elke rand in **opvulling**.
 
@@ -37,7 +37,7 @@ In dit artikel wordt beschreven hoe u de **initialisatie-afbeelding transformati
 7.  Geef bij **wille keurig aangepast gewas** op of de opgegeven pil-afbeelding moet worden bijgesneden naar een wille keurige grootte en hoogte-breedte verhouding. Een wille keurige grootte (bereik van 0,08 tot 1,0) van de oorspronkelijke grootte en een wille keurige hoogte-breedte verhouding (bereik van 3/4 tot 4/3) van de oorspronkelijke hoogte-breedte verhouding wordt gemaakt. Het formaat van deze bijsnijding wordt ten slotte gewijzigd in de opgegeven grootte.
     Dit wordt vaak gebruikt voor het trainen van de aangemaakte netwerken. Als u ' waar ' kiest, kunt u de verwachte uitvoer grootte van elke rand in **wille keurige grootte** opgeven, standaard 256.
 
-8.  Geef voor **wille keurige bijsnijding** op of de opgegeven pil-afbeelding op een wille keurige locatie moet worden bijgesneden. Als u ' waar ' kiest, kunt u de gewenste uitvoer grootte van het gewas opgeven in **wille keurige bijsnijd grootte** , standaard 224.
+8.  Geef voor **wille keurige bijsnijding** op of de opgegeven pil-afbeelding op een wille keurige locatie moet worden bijgesneden. Als u ' waar ' kiest, kunt u de gewenste uitvoer grootte van het gewas opgeven in **wille keurige bijsnijd grootte**, standaard 224.
 
 9.  Geef voor **wille keurige horizontale spiegeling** op of de opgegeven pil-afbeelding wille keurig horizon taal moet worden gespiegeld met de kans 0,5.
 

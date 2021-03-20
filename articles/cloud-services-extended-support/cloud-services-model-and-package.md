@@ -9,10 +9,10 @@ ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
 ms.openlocfilehash: 3baea92d78cf15c35d2fb36692dab1edfd950699
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98744522"
 ---
 # <a name="what-is-the-azure-cloud-service-model-and-how-do-i-package-it"></a>Wat is het Azure-Cloud service model en hoe kan ik het pakket inpakken?

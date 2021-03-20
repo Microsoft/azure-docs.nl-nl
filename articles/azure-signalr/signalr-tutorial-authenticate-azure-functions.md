@@ -8,10 +8,10 @@ ms.date: 03/01/2019
 ms.author: zhshang
 ms.custom: devx-track-js
 ms.openlocfilehash: 6df47d3fd62083a5d0940a1d6da50ac5d7d955f4
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92150902"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Zelfstudie: Verificatie van Azure SignalR Service met Azure Functions
@@ -58,7 +58,7 @@ U gaat de Azure Functions-app lokaal bouwen en testen. De app heeft toegang tot 
 
 1. Voer de volgende informatie in.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Resourcenaam | Een unieke naam voor het SignalR Service-exemplaar |
     | Resourcegroep | Een nieuwe resourcegroep met een unieke naam maken |
@@ -151,7 +151,7 @@ Wanneer de chat-app de eerste keer wordt geopend in de browser, zijn geldige ver
 
 1. Geef de volgende informatie op wanneer u daarom wordt gevraagd.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Map van de functie-app | Selecteer de hoofdprojectmap |
     | Template | HTTP-trigger |
@@ -212,7 +212,7 @@ De web-app vereist ook een HTTP-API voor het verzenden van chatberichten. Maakt 
 
 1. Geef de volgende informatie op wanneer u daarom wordt gevraagd.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Map van de functie-app | selecteer de hoofdprojectmap |
     | Template | HTTP-trigger |
@@ -323,11 +323,11 @@ Voor een functie-app die in Azure wordt uitgevoerd, is een Azure Storage-account
 
 1. Klik in Azure Portal op de knop **Een resource maken** ( **+** ) om een nieuwe Azure-resource te maken.
 
-1. Selecteer de **opslag**categorie en selecteer vervolgens **Opslagaccount**.
+1. Selecteer de **opslag** categorie en selecteer vervolgens **Opslagaccount**.
 
 1. Voer de volgende informatie in.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Abonnement | Selecteer het abonnement met het SignalR Service-exemplaar |
     | Resourcegroep | Selecteer dezelfde resourcegroep |
@@ -383,7 +383,7 @@ Bij het verzenden van een bericht kan de app beslissen om het te verzenden naar 
 
 1. Geef de volgende informatie op wanneer u daarom wordt gevraagd.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Map voor implementatie | Selecteer de hoofdprojectmap |
     | Abonnement | Selecteer uw abonnement |
@@ -402,7 +402,7 @@ Bij het verzenden van een bericht kan de app beslissen om het te verzenden naar 
 
 1. Geef de volgende informatie op wanneer u daarom wordt gevraagd.
 
-    | Naam | Waarde |
+    | Name | Waarde |
     |---|---|
     | Lokale instellingsbestand | local.settings.json |
     | Abonnement | Selecteer uw abonnement |

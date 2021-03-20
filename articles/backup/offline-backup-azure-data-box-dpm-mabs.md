@@ -4,10 +4,10 @@ description: U kunt Azure Data Box gebruiken om de eerste back-upgegevens offlin
 ms.topic: conceptual
 ms.date: 08/12/2020
 ms.openlocfilehash: 1cfd9131099ad6a8ccd3d43e93f3d97641514f03
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96752546"
 ---
 # <a name="offline-seeding-using-azure-data-box-for-dpm-and-mabs-preview"></a>Offline seeding met behulp van Azure Data Box voor DPM en MABS (preview)
@@ -179,7 +179,7 @@ Geef een alternatieve bron op: *Wim: D: \Sources\Install.Wim: 4*
 
 17. Klik met de rechter muisknop op de **beveiligings groep** en kies vervolgens de optie **herstel punt maken** om de back-up van het offline maken naar uw Azure data Box-apparaat te initiëren. Vervolgens kiest u de optie voor **online beveiliging** .
 
-    ![Herstelpunt maken](./media/offline-backup-azure-data-box-dpm-mabs/create-recovery-point.png)
+    ![Herstel punt maken](./media/offline-backup-azure-data-box-dpm-mabs/create-recovery-point.png)
 
     ![Herstel punt](./media/offline-backup-azure-data-box-dpm-mabs/recovery-point.png)
 
@@ -242,9 +242,9 @@ U kunt dit probleem oplossen door de volgende stappen uit te voeren en de beleid
 
 Voer de volgende acties uit vanaf de DPM-MABS-server die u wilt configureren voor offline back-ups:
 
-1. Open het tabblad **computer certificaat toepassing beheren**  >  **Personal** en zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
+1. Open het tabblad **computer certificaat toepassing beheren**  >   en zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
 2. Selecteer het certificaat hierboven, klik met de rechter muisknop op **alle taken** en **Exporteer** zonder persoonlijke sleutel, in de. CER-indeling.
-3. Ga naar de Azure offline back-uptoepassing die wordt vermeld in **punt 2**. Upload het certificaat dat u in de bovenstaande stap hebt geëxporteerd in de sleutel **instellingen** voor het uploaden van de  >  **Keys**  >  **open bare sleutel** .
+3. Ga naar de Azure offline back-uptoepassing die wordt vermeld in **punt 2**. Upload het certificaat dat u in de bovenstaande stap hebt geëxporteerd in de sleutel **instellingen** voor het uploaden van de  >    >  **open bare sleutel** .
 
    ![Open bare sleutels uploaden](./media/offline-backup-azure-data-box-dpm-mabs/upload-public-keys.png)
 

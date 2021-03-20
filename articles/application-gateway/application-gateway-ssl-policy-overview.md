@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: amsriva
 ms.openlocfilehash: 77239cd8586b8fb07abf6862be436979541bdb99
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "97631687"
 ---
 # <a name="application-gateway-tls-policy-overview"></a>Overzicht van Application Gateway TLS-beleid

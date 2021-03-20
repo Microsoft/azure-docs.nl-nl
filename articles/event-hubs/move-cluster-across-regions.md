@@ -4,10 +4,10 @@ description: Dit artikel laat u zien hoe u een toegewezen Azure Event Hubs-clust
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.openlocfilehash: 94be44ee8f9442a3a65e899d7a58524b2570f194
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "89380705"
 ---
 # <a name="move-an-azure-event-hubs-dedicated-cluster-to-another-region"></a>Een toegewezen Azure Event Hubs-cluster verplaatsen naar een andere regio
@@ -38,32 +38,32 @@ Implementeer de sjabloon voor het maken van een Event Hubs toegewezen cluster in
 
 
 1. Selecteer in de Azure Portal **een resource maken**.
-2. In **de Marketplace zoeken**, type **sjabloon implementatie**en Sjabloonimlementatie selecteren **(implementeren met aangepaste sjablonen)**.
+2. In **de Marketplace zoeken**, type **sjabloon implementatie** en Sjabloonimlementatie selecteren **(implementeren met aangepaste sjablonen)**.
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
-6. Selecteer **bestand laden**en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
+6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
 1. Werk de waarde van de `location` eigenschap bij zodat deze naar de nieuwe regio verwijst. Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van locatie codes. De code voor een regio is de naam van de regio zonder spaties, bijvoorbeeld `West US` is gelijk aan `westus` .
 1. Selecteer **Opslaan** om de sjabloon op te slaan. 
 1. Voer op de pagina **aangepaste implementatie** de volgende stappen uit: 
-    1. Selecteer een Azure- **abonnement**. 
+    1. Selecteer een Azure-**abonnement**. 
     2. Selecteer een bestaande **resource groep** of maak een. 
     3. Selecteer de doel **locatie** of-regio. Als u een bestaande resource groep hebt geselecteerd, is deze instelling alleen-lezen. 
     4. Voer de volgende stappen uit in de sectie **instellingen** :    
-        1. Voer de naam van het nieuwe **cluster**in. 
+        1. Voer de naam van het nieuwe **cluster** in. 
 
-            :::image type="content" source="./media/move-cluster-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon downloaden":::
+            :::image type="content" source="./media/move-cluster-across-regions/deploy-template.png" alt-text="Resource Manager-sjabloon implementeren":::
     5. Selecteer **Controleren en maken** onderaan de pagina. 
     1. Controleer op de pagina **controleren en maken** de instellingen en selecteer vervolgens **maken**.  
 
 ## <a name="discard-or-clean-up"></a>Verwijderen of opschonen
-Als u na de implementatie wilt beginnen, kunt u het **doel event hubs toegewezen cluster**verwijderen en herhaalt u de stappen die worden beschreven in de secties voor het [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
+Als u na de implementatie wilt beginnen, kunt u het **doel event hubs toegewezen cluster** verwijderen en herhaalt u de stappen die worden beschreven in de secties voor het [voorbereiden](#prepare) en [verplaatsen](#move) van dit artikel.
 
 Als u de wijzigingen wilt door voeren en de verplaatsing van een Event Hubs cluster wilt volt ooien, verwijdert u het **Event hubs cluster** in de oorspronkelijke regio. 
 
 Een Event Hubs cluster (bron of doel) verwijderen met behulp van de Azure Portal:
 
-1. In het zoek venster aan de bovenkant van Azure Portal, typt u **Event hubs clusters**en selecteert u **Event hubs clusters** uit de zoek resultaten. U ziet het Event Hubs cluster in een lijst.
+1. In het zoek venster aan de bovenkant van Azure Portal, typt u **Event hubs clusters** en selecteert u **Event hubs clusters** uit de zoek resultaten. U ziet het Event Hubs cluster in een lijst.
 2. Selecteer het cluster dat u wilt verwijderen en selecteer **verwijderen** op de werk balk. 
-3. Bevestig de verwijdering op de pagina **cluster verwijderen** door de naam van het **cluster**te typen en vervolgens **verwijderen**te selecteren. 
+3. Bevestig de verwijdering op de pagina **cluster verwijderen** door de naam van het **cluster** te typen en vervolgens **verwijderen** te selecteren. 
 
 ## <a name="next-steps"></a>Volgende stappen
 In deze zelf studie hebt u geleerd hoe u een Event Hubs toegewezen cluster kunt verplaatsen van de ene regio naar een andere. 

@@ -10,10 +10,10 @@ ms.date: 08/20/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-csharp
 ms.openlocfilehash: 0391afe5562238f488fde7e50d914c46a5c32944
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92142464"
 ---
 # <a name="schedule-and-broadcast-jobs-net"></a>Taken plannen en uitzenden (.NET)
@@ -40,7 +40,7 @@ Zie voor meer informatie over elk van deze mogelijkheden:
 
 In deze zelfstudie ontdekt u hoe u:
 
-* Maak een apparaat-app die een directe methode met de naam **LockDoor**implementeert, die kan worden aangeroepen door de back-end-app.
+* Maak een apparaat-app die een directe methode met de naam **LockDoor** implementeert, die kan worden aangeroepen door de back-end-app.
 
 * Maak een back-end-app die een taak maakt om de **LockDoor** direct-methode aan te roepen op meerdere apparaten. Een andere taak verzendt gewenste eigenschaps updates naar meerdere apparaten.
 
@@ -70,9 +70,9 @@ Aan het einde van deze zelf studie hebt u twee .NET (C#)-console-apps:
 
 In deze sectie maakt u een .NET-console-app die reageert op een directe methode die wordt aangeroepen door de back-end van de oplossing.
 
-1. Selecteer in Visual Studio **een nieuw project maken**en kies vervolgens de project sjabloon **console-app (.NET Framework)** . Selecteer **Volgende** om door te gaan.
+1. Selecteer in Visual Studio **een nieuw project maken** en kies vervolgens de project sjabloon **console-app (.NET Framework)** . Selecteer **Volgende** om door te gaan.
 
-1. Geef in **uw nieuwe project**de naam project *SimulateDeviceMethods*en selecteer vervolgens **maken**.
+1. Geef in **uw nieuwe project** de naam project *SimulateDeviceMethods* en selecteer vervolgens **maken**.
 
     ![Uw SimulateDeviceMethods-project configureren](./media/iot-hub-csharp-csharp-schedule-jobs/configure-device-app.png)
 
@@ -167,15 +167,15 @@ In deze sectie maakt u een .NET-console-app die reageert op een directe methode 
 
 In deze sectie maakt u een .NET-console-app (met C#) die gebruikmaakt van taken om de **LockDoor** direct-methode aan te roepen en gewenste eigenschaps updates naar meerdere apparaten te verzenden.
 
-1. Selecteer in Visual Studio **Bestand** > **Nieuw** > **Project**. Kies in **een nieuw project maken de**optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
+1. Selecteer in Visual Studio **Bestand** > **Nieuw** > **Project**. Kies in **een nieuw project maken de** optie **console-app (.NET Framework)** en selecteer vervolgens **volgende**.
 
-1. Geef het project de naam *ScheduleJob*in **uw nieuwe project configureren**. Kies voor **oplossing**de optie **toevoegen aan oplossing**en selecteer vervolgens **maken**.
+1. Geef het project de naam *ScheduleJob* in **uw nieuwe project configureren**. Kies voor **oplossing** de optie **toevoegen aan oplossing** en selecteer vervolgens **maken**.
 
     ![Een naam en ScheduleJob-project opgeven](./media/iot-hub-csharp-csharp-schedule-jobs/config-schedule-job-app.png)
 
 1. Klik in Solution Explorer met de rechter muisknop op het project **ScheduleJob** en selecteer vervolgens **NuGet-pakketten beheren**.
 
-1. Selecteer in de **NuGet-pakket manager**de optie **Bladeren**, zoek naar en kies **micro soft. Azure. devices**, en selecteer vervolgens **installeren**.
+1. Selecteer in de **NuGet-pakket manager** de optie **Bladeren**, zoek naar en kies **micro soft. Azure. devices**, en selecteer vervolgens **installeren**.
 
    Met deze stap wordt een verwijzing naar het [Azure IOT Service SDK](https://www.nuget.org/packages/Microsoft.Azure.Devices/) NuGet-pakket en de bijbehorende afhankelijkheden gedownload, geïnstalleerd en toegevoegd.
 
@@ -295,7 +295,7 @@ U kunt nu de apps uitvoeren.
 
 1. Klik in Visual Studio Solution Explorer met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
 
-1. Selecteer **algemene eigenschappen**  >  **Start project**en selecteer vervolgens **meerdere opstart projecten**.
+1. Selecteer **algemene eigenschappen**  >  **Start project** en selecteer vervolgens **meerdere opstart projecten**.
 
 1. Zorg ervoor dat `SimulateDeviceMethods` boven aan de lijst wordt gevolgd door `ScheduleJob` . Stel beide acties in op **Start** en selecteer **OK**.
 

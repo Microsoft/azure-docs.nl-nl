@@ -7,10 +7,10 @@ ms.manager: bsiva
 ms.topic: how-to
 ms.date: 11/23/2020
 ms.openlocfilehash: 97051e97ec9868f6941b579241e16e62fdd2162b
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96751781"
 ---
 # <a name="add-migration-tools"></a>Migratiehulpprogramma's toevoegen
@@ -41,7 +41,7 @@ In dit artikel wordt beschreven hoe u migratie hulpprogramma's toevoegt in [Azur
     
          ![Knop voor het toevoegen van aanvullende hulpprogram ma's voor migratie](./media/how-to-migrate/add-migration-tools.png)
 
-    - Als u een project hebt gemaakt met behulp van een andere optie en nog geen migratie hulpprogramma's hebt **Servers**, selecteert u in de  >  **hulpprogram ma's** voor servers migreren **hier klikken**.
+    - Als u een project hebt gemaakt met behulp van een andere optie en nog geen migratie hulpprogramma's hebt , selecteert u in de  >  **hulpprogram ma's** voor servers migreren **hier klikken**.
 
     ![Knop om eerste migratie hulpprogramma's toe te voegen](./media/how-to-migrate/no-migration-tool.png)
 

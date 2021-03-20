@@ -7,10 +7,10 @@ ms.custom: devx-track-csharp
 ms.date: 12/12/2017
 ms.author: cshoe
 ms.openlocfilehash: 48614640660da6d85face5ea416d267fa9f59515
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92164836"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Naslag informatie voor ontwikkel aars van Azure Functions C#-script (. CSX)
@@ -213,7 +213,7 @@ U kunt een relatief pad gebruiken met de `#load` instructie:
 
 * `#load "mylogger.csx"` Hiermee wordt een bestand geladen dat zich in de map function bevindt.
 * `#load "loadedfiles\mylogger.csx"` Hiermee wordt een bestand geladen dat zich in een map in de map function bevindt.
-* `#load "..\shared\mylogger.csx"` Hiermee wordt een bestand geladen dat zich in een map op hetzelfde niveau bevindt als de map functie, dat zich direct onder *wwwroot*bevindt.
+* `#load "..\shared\mylogger.csx"` Hiermee wordt een bestand geladen dat zich in een map op hetzelfde niveau bevindt als de map functie, dat zich direct onder *wwwroot* bevindt.
 
 De `#load` -instructie werkt alleen met *. CSX* -bestanden, niet met *. cs* -bestanden.
 
@@ -459,7 +459,7 @@ In C# en andere .NET-talen kunt u een [dwingend](https://en.wikipedia.org/wiki/I
 
 Definieer als volgt een dwingende binding:
 
-- Neem infunction.js**geen** vermelding *op* voor uw gewenste dwingende bindingen.
+- Neem infunction.js **geen** vermelding *op* voor uw gewenste dwingende bindingen.
 - Geef een invoer parameter [`Binder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Host/Bindings/Runtime/Binder.cs) of op [`IBinder binder`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IBinder.cs) .
 - Gebruik het volgende C#-patroon om de gegevens binding uit te voeren.
 

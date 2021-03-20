@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/05/2020
 ms.author: mbullwin
 ms.openlocfilehash: 0c4c296cb1454ed89eef102732533589b1c8ca0d
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "93420955"
 ---
 # <a name="metrics-advisor-frequently-asked-questions"></a>Veelgestelde vragen over metrische gegevens adviseur
@@ -109,7 +109,7 @@ Raadpleeg de [configuraties voor anomalie detectie](how-tos/configure-metrics.md
 
 1.  Een gebruiker met de beheerders bevoegdheden van de abonnements beheerder of de resource groep moet naar de resource voor metrische gegevens Advisor navigeren die in de Azure Portal is gemaakt en het tabblad **toegangs beheer (IAM)** selecteren. 
 2.  Selecteer **roltoewijzingen toevoegen**
-3.  Kies een rol van **Cognitive Services metrics Advisor-beheerder** , selecteer uw account in de onderstaande afbeelding.
+3.  Kies een rol van **Cognitive Services metrics Advisor-beheerder**, selecteer uw account in de onderstaande afbeelding.
 4.  Klik op de knop **Opslaan** . vervolgens is u toegevoegd als beheerder van de Advisor-resource van metrische gegevens. Houd er rekening mee dat alle bovenstaande acties moeten worden uitgevoerd door de abonnements beheerder of de beheerder van de resource groep. 
 
 :::image type="content" source="media/access-control.png" alt-text="Menu pagina toegangs beheer (IAM) Hiermee kunt u een roltoewijzing toevoegen selecteren, gevolgd door een vak met toegang toewijzen aan de geselecteerde gebruiker die wordt weer gegeven met een toegangs rol van Cognitive Services metrics Advisor Administrator, gevolgd door de knop opslaan van de gebruikers interface die wordt geselecteerd om de stappen te illustreren voor het zoeken naar een gebruiker en het toevoegen van een bepaald niveau van toegangs machtigingen." lightbox="media/access-control.png":::

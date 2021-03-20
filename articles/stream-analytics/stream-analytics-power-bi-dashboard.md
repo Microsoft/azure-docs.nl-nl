@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/16/2020
 ms.openlocfilehash: 3bd35df91e836245de52d8959dff0671582ebc3f
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98012441"
 ---
 # <a name="stream-analytics-and-power-bi-a-real-time-analytics-dashboard-for-streaming-data"></a>Stream Analytics en Power BI: een real-time analyse dashboard voor het streamen van gegevens
@@ -58,7 +58,7 @@ In de zelf studie voor fraude detectie wordt de uitvoer naar Azure Blob-opslag v
 
 4. Als u **Autoriseren** hebt geselecteerd, wordt er een pop-upvenster geopend en wordt u gevraagd referenties te verstrekken als verificatie voor uw Power BI-account. Zodra de autorisatie geslaagd is, kunt u de instellingen **Opslaan**.
 
-8. Klik op **Maken**.
+8. Klik op **Create**.
 
 De gegevensset wordt gemaakt met de volgende instellingen:
 

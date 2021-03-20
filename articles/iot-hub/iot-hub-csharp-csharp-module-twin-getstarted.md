@@ -10,10 +10,10 @@ ms.date: 08/07/2019
 ms.author: menchi
 ms.custom: amqp, devx-track-csharp
 ms.openlocfilehash: daba400b9daadf464c4c125ad266745237e71367
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92142506"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-net"></a>Aan de slag met IoT Hub module-identiteit en-module twee (.NET)
@@ -54,21 +54,21 @@ Aan het eind van deze zelfstudie beschikt u over twee .NET-consoletoepassingen:
 
 In deze sectie maakt u een .NET-consoletoepassing op het gesimuleerde apparaat waarmee de gerapporteerde eigenschappen van de moduledubbel worden bijgewerkt.
 
-Voordat u begint, moet u uw module connection string ophalen. Meld u aan bij de [Azure-portal](https://portal.azure.com/). Navigeer naar uw hub en selecteer **IOT-apparaten**. **MyFirstDevice**zoeken. Selecteer **myFirstDevice** om deze te openen en selecteer vervolgens **myFirstModule** om het te openen. Kopieer in **module-identiteits Details**de **verbindings reeks (primaire sleutel)** wanneer dit nodig is in de volgende procedure.
+Voordat u begint, moet u uw module connection string ophalen. Meld u aan bij [Azure Portal](https://portal.azure.com/). Navigeer naar uw hub en selecteer **IOT-apparaten**. **MyFirstDevice** zoeken. Selecteer **myFirstDevice** om deze te openen en selecteer vervolgens **myFirstModule** om het te openen. Kopieer in **module-identiteits Details** de **verbindings reeks (primaire sleutel)** wanneer dit nodig is in de volgende procedure.
 
    ![Details van de Azure Portal-module](./media/iot-hub-csharp-csharp-module-twin-getstarted/module-identity-detail.png)
 
-1. Voeg in Visual Studio een nieuw project toe aan uw oplossing door **bestand**  >  **Nieuw**  >  **project**te selecteren. Selecteer in een nieuw project maken de optie **console-app (.NET Framework)** en selecteer **volgende**.
+1. Voeg in Visual Studio een nieuw project toe aan uw oplossing door **bestand**  >  **Nieuw**  >  **project** te selecteren. Selecteer in een nieuw project maken de optie **console-app (.NET Framework)** en selecteer **volgende**.
 
-1. Noem het project *UpdateModuleTwinReportedProperties*. Selecteer voor **oplossing**de optie **toevoegen aan oplossing**. Zorg ervoor dat de versie van .NET Framework minimaal 4.6.1 is.
+1. Noem het project *UpdateModuleTwinReportedProperties*. Selecteer voor **oplossing** de optie **toevoegen aan oplossing**. Zorg ervoor dat de versie van .NET Framework minimaal 4.6.1 is.
 
     ![Een Visual Studio-project maken](./media/iot-hub-csharp-csharp-module-twin-getstarted/configure-update-twins-csharp1.png)
 
-1. Selecteer **maken** om het project te maken.
+1. Selecteer **Maken** om uw project te maken.
 
 1. Open in Visual Studio **tools**  >  **NuGet package manager**  >  **NuGet-pakketten beheren voor oplossing**. Selecteer het tabblad **Bladeren**.
 
-1. Zoek en selecteer **micro soft. Azure. devices. client**en selecteer vervolgens **installeren**.
+1. Zoek en selecteer **micro soft. Azure. devices. client** en selecteer vervolgens **installeren**.
 
     ![Scherm afbeelding met de geselecteerde ' micro soft. Azure. devices. client ' en de knop installeren gemarkeerd.](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-client-sdk.png)
 
@@ -167,9 +167,9 @@ Voordat u begint, moet u uw module connection string ophalen. Meld u aan bij de 
 
 U kunt nu de apps uitvoeren.
 
-1. Klik in Visual Studio in **Solution Explorer**met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
+1. Klik in Visual Studio in **Solution Explorer** met de rechter muisknop op uw oplossing en selecteer vervolgens **opstart projecten instellen**.
 
-1. Onder **algemene eigenschappen**selecteert u **opstart project.**
+1. Onder **algemene eigenschappen** selecteert u **opstart project.**
 
 1. Selecteer **meerdere opstart projecten**, en selecteer vervolgens **Start** als actie voor de apps en klik op **OK** om uw wijzigingen te accepteren.
 

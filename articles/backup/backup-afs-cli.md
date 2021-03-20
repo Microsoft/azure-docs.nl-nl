@@ -4,10 +4,10 @@ description: Meer informatie over het gebruik van Azure CLI voor het maken van b
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.openlocfilehash: 34eea8daa6a0a8920c842178664055838b06a78a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "94565888"
 ---
 # <a name="back-up-azure-file-shares-with-azure-cli"></a>Back-ups maken van Azure-bestands shares met Azure CLI
@@ -22,7 +22,7 @@ Aan het einde van deze zelf studie leert u hoe u de bewerkingen hieronder kunt u
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
- - Voor deze zelf studie is versie 2.0.18 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+ - Voor deze zelfstudie is versie 2.0.18 of hoger Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 

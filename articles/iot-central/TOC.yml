@@ -8,6 +8,8 @@
       href: core/overview-iot-central-tour.md
     - name: Recente updates
       items:
+        - name: Nieuwe en bijgewerkte functies van februari 2021
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-new-and-updated-features-february-2021/'
         - name: Nieuwe en bijgewerkte functies van januari 2021
           href: 'https://azure.microsoft.com/updates/azure-iot-central-feature-updates-january-2021/'
         - name: Nieuwe en bijgewerkte functies van november 2020
@@ -129,6 +131,8 @@
       href: core/concepts-architecture.md
     - name: Handleiding van apparaatontiwkkelaar
       href: core/overview-iot-central-developer.md
+    - name: Operator handleiding
+      href: core/overview-iot-central-operator.md
     - name: Solution Builder-hand leiding
       href: core/overview-iot-central-solution-builder.md
     - name: Wat zijn toepassingssjablonen?

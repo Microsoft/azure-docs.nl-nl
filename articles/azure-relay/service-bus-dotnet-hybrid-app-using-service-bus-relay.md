@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 06/23/2020
 ms.openlocfilehash: 22b582634b623b39545eca225c8df0130606c2bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90983891"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Een on-premises WCF-service zichtbaar maken voor een webtoepassing in de cloud met behulp van Azure Relay
@@ -78,20 +78,20 @@ U bouwt eerst een gesimuleerd on-premises systeem voor de productcatalogus op.  
 
 1. Start Microsoft Visual Studio als beheerder. Klik hiervoor met de rechtermuisknop op het pictogram van het Visual Studio-programma en selecteer vervolgens **Als administrator uitvoeren**.
 1. Selecteer **Een nieuw project maken** in Visual Studio.
-1. Selecteer in **een nieuw project maken de**optie **console-app (.NET Framework)** voor C# en selecteer **volgende**.
+1. Selecteer in **een nieuw project maken de** optie **console-app (.NET Framework)** voor C# en selecteer **volgende**.
 1. Geef het project de naam *ProductsServer* en selecteer **maken**.
 
    ![Uw nieuwe project configureren][11]
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project **ProductsServer** en selecteer vervolgens **NuGet-pakketten beheren**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project **ProductsServer** en selecteer vervolgens **NuGet-pakketten beheren**.
 1. Selecteer **Bladeren**, en zoek en kies vervolgens **WindowsAzure.ServiceBus**. Selecteer **Installeren** en accepteer de gebruiksvoorwaarden.
 
    ![NuGet-pakket selecteren][13]
 
    Er wordt nu naar de vereiste clientassembly's verwezen.
 
-1. Voeg een nieuwe klasse voor uw productcontract toe. Klik in **Solution Explorer**met de rechter muisknop op het project **ProductsServer** en selecteer **Add**  >  **klasse**toevoegen.
-1. Voer bij **naam**de naam *ProductsContract.cs* in en selecteer **toevoegen**.
+1. Voeg een nieuwe klasse voor uw productcontract toe. Klik in **Solution Explorer** met de rechter muisknop op het project **ProductsServer** en selecteer   >  **klasse** toevoegen.
+1. Voer bij **naam** de naam *ProductsContract. cs* in en selecteer **toevoegen**.
 
 Maak de volgende code wijzigingen in uw oplossing:
 
@@ -132,7 +132,7 @@ Maak de volgende code wijzigingen in uw oplossing:
     }
     ```
 
-1. Vervang in *Program.cs*de naam ruimte definitie door de volgende code, waarmee de profiel service en de host hiervoor worden toegevoegd.
+1. Vervang in *Program. cs* de naam ruimte definitie door de volgende code, waarmee de profiel service en de host voor het object worden toegevoegd.
 
     ```csharp
     namespace ProductsServer
@@ -214,7 +214,7 @@ Maak de volgende code wijzigingen in uw oplossing:
     > [!NOTE]
     > De fout die wordt veroorzaakt door `transportClientEndpointBehavior` is slechts een waarschuwing en is geen blokkerend probleem voor dit voor beeld.
 
-1. Vervang in *App.config*nog steeds `<appSettings>` de Connection String waarde door de Connection String die u eerder hebt verkregen via de portal in het element.
+1. Vervang in *App.config* nog steeds `<appSettings>` de Connection String waarde door de Connection String die u eerder hebt verkregen via de portal in het element.
 
     ```xml
     <appSettings>
@@ -234,26 +234,26 @@ In deze sectie bouwt u een eenvoudige ASP.NET-toepassing op waarmee gegevens wor
 
 1. Zorg ervoor dat Visual Studio wordt uitgevoerd als beheerder.
 1. Selecteer **Een nieuw project maken** in Visual Studio.
-1. Selecteer in **een nieuw project maken de**optie **ASP.net Web Application (.NET Framework)** voor C# en selecteer **volgende**.
+1. Selecteer in **een nieuw project maken de** optie **ASP.net Web Application (.NET Framework)** voor C# en selecteer **volgende**.
 1. Geef het project de naam *ProductsPortal* en selecteer **maken**.
-1. In **een nieuwe ASP.NET-webtoepassing maken**kiest u **MVC** en selecteert u **wijzigen** onder **verificatie**.
+1. In **een nieuwe ASP.NET-webtoepassing maken** kiest u **MVC** en selecteert u **wijzigen** onder **verificatie**.
 
    ![ASP.NET-webtoepassing selecteren][16]
 
-1. Kies bij **wijzigings verificatie**de optie **geen verificatie** en selecteer vervolgens **OK**. Voor deze zelf studie implementeert u een app waarvoor geen gebruiker nodig is om zich aan te melden.
+1. Kies bij **wijzigings verificatie** de optie **geen verificatie** en selecteer vervolgens **OK**. Voor deze zelf studie implementeert u een app waarvoor geen gebruiker nodig is om zich aan te melden.
 
     ![Verificatie opgeven][18]
 
-1. Selecteer in **een nieuwe ASP.NET-webtoepassing**maken de optie **maken** om de MVC-app te maken.
+1. Selecteer in **een nieuwe ASP.NET-webtoepassing** maken de optie **maken** om de MVC-app te maken.
 1. Azure-resources configureren voor een nieuwe web-app. Volg de stappen in [uw web-app publiceren](../app-service/quickstart-dotnet-framework.md#launch-the-publish-wizard). Ga vervolgens terug naar deze zelf studie en ga verder met de volgende stap.
-1. Klik in **Solution Explorer**met de rechter muisknop op **modellen** en **Add**Selecteer vervolgens  >  **klasse**toevoegen.
-1. Geef de klasse de naam *product.cs*en selecteer vervolgens **toevoegen**.
+1. Klik in **Solution Explorer** met de rechter muisknop op **modellen** en Selecteer vervolgens  >  **klasse** toevoegen.
+1. Geef de klasse *product. cs* een naam en selecteer vervolgens **toevoegen**.
 
     ![Productmodel maken][17]
 
 ### <a name="modify-the-web-application"></a>De webtoepassing wijzigen
 
-1. Vervang in het *product.cs* -bestand in Visual Studio de bestaande naam ruimte definitie door de volgende code:
+1. Vervang in het bestand *product. cs* in Visual Studio de bestaande naam ruimte definitie door de volgende code:
 
    ```csharp
     // Declare properties for the products inventory.
@@ -268,7 +268,7 @@ In deze sectie bouwt u een eenvoudige ASP.NET-toepassing op waarmee gegevens wor
     }
     ```
 
-1. Vouw in **Solution Explorer**de optie **controllers**uit en dubbel klik op **HomeController.cs** om het bestand te openen in Visual Studio.
+1. Vouw in **Solution Explorer** de optie **controllers** uit en dubbel klik vervolgens op **HomeController. cs** om het bestand te openen in Visual Studio.
 1. In *HomeController.cs* vervangt u de bestaande naamruimtedefinitie door de volgende code:
 
     ```csharp
@@ -291,13 +291,13 @@ In deze sectie bouwt u een eenvoudige ASP.NET-toepassing op waarmee gegevens wor
     }
     ```
 
-1. Vouw in **Solution Explorer** **weer gaven**  >  **gedeeld**uit en dubbel klik vervolgens op **_Layout. cshtml** om het bestand te openen in de Visual Studio-editor.
+1. Vouw in **Solution Explorer** **weer gaven**  >  **gedeeld** uit en dubbel klik vervolgens op **_Layout. cshtml** om het bestand te openen in de Visual Studio-editor.
 1. Wijzig alle instanties van `My ASP.NET Application` voor *producten van North Wind BV*.
 1. Verwijder de `Home` `About` koppelingen, en `Contact` . Verwijder de gemarkeerde code in het volgende voorbeeld.
 
     ![De gegenereerde lijst met items verwijderen][41]
 
-1. Vouw in **Solution Explorer** **weer gaven**  >  **Start pagina**uit en dubbel klik op **index. cshtml** om het bestand te openen in de Visual Studio-editor. Vervang de volledige inhoud van het bestand door de volgende code:
+1. Vouw in **Solution Explorer** **weer gaven**  >  **Start pagina** uit en dubbel klik op **index. cshtml** om het bestand te openen in de Visual Studio-editor. Vervang de volledige inhoud van het bestand door de volgende code:
 
    ```html
    @model IEnumerable<ProductsWeb.Models.Product>
@@ -351,10 +351,10 @@ Uw toepassing moet dan in een browser worden weergegeven.
 In de volgende stap koppelt u de on-premises productenserver aan de ASP.NET-toepassing.
 
 1. Als deze nog niet is geopend, opent u in Visual Studio het **ProductsPortal** -project dat u hebt gemaakt in de sectie [een ASP.NET-toepassing maken](#create-an-aspnet-application) .
-1. Vergelijkbaar met de stap in de sectie [een on-premises server maken](#create-an-on-premises-server) , voegt u het NuGet-pakket toe aan de project verwijzingen. Klik in **Solution Explorer**met de rechter muisknop op het project **ProductsPortal** en selecteer vervolgens **NuGet-pakketten beheren**.
+1. Vergelijkbaar met de stap in de sectie [een on-premises server maken](#create-an-on-premises-server) , voegt u het NuGet-pakket toe aan de project verwijzingen. Klik in **Solution Explorer** met de rechter muisknop op het project **ProductsPortal** en selecteer vervolgens **NuGet-pakketten beheren**.
 1. Zoek naar *WindowsAzure.ServiceBus* en selecteer het item **WindowsAzure.ServiceBus**. Voltooi de installatie en sluit dit dialoog venster.
-1. Klik in **Solution Explorer**met de rechter muisknop op het project **ProductsPortal** en selecteer vervolgens **Add**  >  **bestaand item**toevoegen.
-1. Ga naar het bestand *ProductsContract.cs* vanuit het **ProductsServer**-consoleproject. Markeer *ProductsContract.cs*. Selecteer de pijl-omlaag naast **toevoegen**en kies vervolgens **toevoegen als koppeling**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project **ProductsPortal** en selecteer vervolgens   >  **bestaand item** toevoegen.
+1. Ga naar het bestand *ProductsContract.cs* vanuit het **ProductsServer**-consoleproject. Markeer *ProductsContract. cs*. Selecteer de pijl-omlaag naast **toevoegen** en kies vervolgens **toevoegen als koppeling**.
 
    ![Toevoegen als een koppeling][24]
 
@@ -400,9 +400,9 @@ In de volgende stap koppelt u de on-premises productenserver aan de ASP.NET-toep
    }
    ```
 
-1. Klik in **Solution Explorer**met de rechter muisknop op de **ProductsPortal** -oplossing. Zorg ervoor dat u met de rechter muisknop op de oplossing klikt, niet op het project. Selecteer **Add**  >  **bestaand project**toevoegen.
+1. Klik in **Solution Explorer** met de rechter muisknop op de **ProductsPortal** -oplossing. Zorg ervoor dat u met de rechter muisknop op de oplossing klikt, niet op het project. Selecteer   >  **bestaand project** toevoegen.
 1. Ga naar het **ProductsServer**-project en dubbelklik op het *ProductsServer.csproj*-oplossingsbestand om het toe te voegen.
-1. **ProductsServer** moet worden uitgevoerd om de gegevens op **ProductsPortal**weer te geven. Klik in **Solution Explorer**met de rechter muisknop op de oplossing **ProductsPortal** en selecteer **Eigenschappen** om eigenschappen **pagina's**weer te geven.
+1. **ProductsServer** moet worden uitgevoerd om de gegevens op **ProductsPortal** weer te geven. Klik in **Solution Explorer** met de rechter muisknop op de oplossing **ProductsPortal** en selecteer **Eigenschappen** om eigenschappen **pagina's** weer te geven.
 1. Selecteer **algemene eigenschappen**  >  **opstart project** en kies **meerdere opstart projecten**. Zorg ervoor dat **ProductsServer** en **ProductsPortal** in die volg orde worden weer gegeven en dat de **actie** voor beide **starten**.
 
       ![Meerdere opstartprojecten][25]
@@ -428,7 +428,7 @@ Sluit beide toepassingen voordat u doorgaat naar de volgende sectie.
 
 De volgende stap bestaat uit het opnieuw publiceren van de **ProductsPortal** front-end van Azure web app:
 
-1. Klik in **Solution Explorer**met de rechter muisknop op het project **ProductsPortal** en selecteer **publiceren**. Selecteer op de pagina **Publiceren** de optie **Publiceren**.
+1. Klik in **Solution Explorer** met de rechter muisknop op het project **ProductsPortal** en selecteer **publiceren**. Selecteer op de pagina **Publiceren** de optie **Publiceren**.
 
    > [!NOTE]
    > Mogelijk wordt er een foutbericht weergegeven in het browservenster wanneer het **ProductsPortal**-webproject automatisch wordt gestart na de implementatie. Dit is normaal en doet zich voor omdat de **ProductsServer**-toepassing nog niet wordt uitgevoerd.
@@ -443,7 +443,7 @@ De volgende stap bestaat uit het opnieuw publiceren van de **ProductsPortal** fr
 <a name="set-productsportal-as-web-app"></a>Voordat u de toepassing uitvoert in de Cloud, moet u ervoor zorgen dat **ProductsPortal** in Visual Studio wordt gestart als een web-app.
 
 1. Klik in Visual Studio met de rechter muisknop op het project **ProductsPortal** en selecteer **Eigenschappen**.
-1. Selecteer **Web**. Kies onder **actie starten**de optie **Start URL**. Voer de URL in voor uw eerder geïmplementeerde web-app in dit voor beeld `https://productsportal20190906122808.azurewebsites.net/` .
+1. Selecteer **Web**. Kies onder **actie starten** de optie **Start URL**. Voer de URL in voor uw eerder geïmplementeerde web-app in dit voor beeld `https://productsportal20190906122808.azurewebsites.net/` .
 
     ![Start-URL][27]
 

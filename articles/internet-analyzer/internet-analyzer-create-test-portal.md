@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: mebeatty
 ms.openlocfilehash: 64bbed9b558d4c20889b28a5247e2113d20daa77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "73501769"
 ---
 # <a name="create-an-internet-analyzer-test-using-portal-preview"></a>Een Internet Analyzer-test maken met behulp van Portal (Preview)
@@ -35,7 +35,7 @@ De openbare preview is beschikbaar voor gebruik wereldwijd; gegevensopslag is ti
 5. Op dat pagina **Internet Analyzer (preview)** klikt u op **Maken** om de pagina **Een Internet Analyzer maken** te openen.
 6. Geef de volgende configuratie-instellingen op voor uw Internet Analyzer-resource:
 
-    * **Abonnement:** Het Azure-abonnement voor het hosten van de nieuwe Internet Analyzer-resource. ***Gebruik dezelfde abonnements-ID die wordt gebruikt om Preview-toegang aan te vragen.***
+    * **Abonnement:** Het Azure-abonnement voor het hosten van de nieuwe Internet Analyzer-resource. **_Gebruik dezelfde abonnements-ID die wordt gebruikt om Preview-toegang aan te vragen._**
     * **Resourcegroep:** De Azure-resourcegroep waarin de nieuwe Internet Analyzer-resource wordt gemaakt. Als u geen bestaande resourcegroep hebt, kunt u een nieuwe maken.
     * **Naam:** De naam van het nieuwe Internet Analyzer-resourceprofiel.
     * **Regio:** De openbare Azure-regio waarin de resource wordt gemaakt. Tijdens de preview is alleen *VS - west 2* beschikbaar.
@@ -65,7 +65,7 @@ Het voltooien van de basisstappen is een vereiste voor het configureren van een 
 4. Klik op **Toevoegen** om het eindpunt toe te voegen aan uw test.
 5. Herhaal de stappen 1-4 om uw tweede eindpunt te configureren. Eindpunt B wordt altijd relatief gemeten ten opzichte van Eindpunt A: houd bij het configureren van eindpunten rekening met het eindpunt dat u wilt testen.
 6. Klik op de knop **Opslaan** om uw test op te slaan. Wanneer u een test hebt opgeslagen, kunt u de eindpunten van een bepaalde test niet meer bewerken.
-7. Selecteer de test(s) die u wilt starten en klik op **Test starten**. Hiermee wordt de ***Status*** van uw test(s) gewijzigd in ***Wordt uitgevoerd***. U kunt tests op elk gewenst moment starten, maar de JavaScript-client moet zijn ingesloten voor de test om metingen te kunnen verzamelen.
+7. Selecteer de test(s) die u wilt starten en klik op **Test starten**. Hiermee wordt de **_status_*_ van uw test (s) gewijzigd in _*_met_**. U kunt tests op elk gewenst moment starten, maar de JavaScript-client moet zijn ingesloten voor de test om metingen te kunnen verzamelen.
 8. Voeg op elk gewenst moment meer tests toe. Houd er rekening mee dat de unieke JavaScript-client pas wordt gegenereerd als er een test is gemaakt.
 
 ## <a name="embed-client"></a>Client insluiten

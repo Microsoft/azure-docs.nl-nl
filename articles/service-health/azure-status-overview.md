@@ -4,10 +4,10 @@ description: Een overkoepelende weergave van de status van uw Azure-services
 ms.topic: overview
 ms.date: 06/11/2019
 ms.openlocfilehash: 6e0813ad5fde19069662c13fcba7bd81b055de2a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "82732547"
 ---
 # <a name="azure-status-overview"></a>Overzicht van de Azure-status

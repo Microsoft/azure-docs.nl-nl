@@ -9,10 +9,10 @@ author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
 ms.openlocfilehash: b5aa4bd061647f63ebcc70109f0ba21b39e814cc
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98741329"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>De levens cyclus van een web-of worker-rol in .NET aanpassen
@@ -37,7 +37,7 @@ Wanneer u **RoleEntryPoint** uitbreidt, moet u rekening houden met het volgende 
 Als uw rol niet kan worden gestart, of als deze wordt gerecycled tussen de status initialisatie, bezet en gestopt, kan de code een onverwerkte uitzonde ring veroorzaken binnen een van de levenscyclus gebeurtenissen telkens wanneer de rol opnieuw wordt gestart. In dit geval gebruikt u de gebeurtenis [UnhandledException](/dotnet/api/system.appdomain.unhandledexception) om de oorzaak van de uitzonde ring te bepalen en deze op de juiste manier te verwerken. Uw rol kan ook worden geretourneerd uit de methode [Run](/previous-versions/azure/reference/ee772746(v=azure.100)) , waardoor de rol opnieuw wordt opgestart. Zie [algemene problemen waardoor rollen kunnen worden gerecycled](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md)voor meer informatie over de implementatie status.
 
 > [!NOTE]
-> Als u de Azure- **Hulpprogram ma's voor micro soft Visual Studio** gebruikt voor het ontwikkelen van uw toepassing, breidt de functie Project sjablonen automatisch de klasse **RoleEntryPoint** uit voor u, in de *WebRole.cs* -en *WorkerRole.cs* -bestanden.
+> Als u de Azure- **Hulpprogram ma's voor micro soft Visual Studio** gebruikt voor het ontwikkelen van uw toepassing, breidt de Project sjablonen voor rollen automatisch de klasse **RoleEntryPoint** uit voor u, in de bestanden *webrole. cs* en *WorkerRole. cs* .
 > 
 > 
 

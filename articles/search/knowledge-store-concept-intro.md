@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
 ms.openlocfilehash: 3ec556c6198a00f217568f6591bd4b43c7fc743e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "88924296"
 ---
 # <a name="knowledge-store-in-azure-cognitive-search"></a>Knowledge Store in azure Cognitive Search
@@ -102,7 +102,7 @@ De [vaardig heden](cognitive-search-working-with-skillsets.md) zijn vereist. Het
 
 Als u een kennis winkel wilt maken, gebruikt u de portal of de REST API ( `api-version=2020-06-30` ).
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 De wizard **gegevens importeren** bevat opties voor het maken van een kennis archief. Voor de eerste verkenning [maakt u uw eerste kennis archief in vier stappen](knowledge-store-connect-power-bi.md).
 

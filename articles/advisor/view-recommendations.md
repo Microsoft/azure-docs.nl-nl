@@ -4,10 +4,10 @@ description: Azure Advisor aanbevelingen weer geven en filteren om ruis te vermi
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: 43bdaba7d774bba8857a6eb3ef296d7ab8e1c264
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90986867"
 ---
 # <a name="view-azure-advisor-recommendations-that-matter-to-you"></a>Azure Advisor aanbevelingen bekijken die voor u belang rijk zijn
@@ -47,7 +47,7 @@ Met Azure Advisor kunt u aanbevelingen op één resource negeren of uitstellen. 
 1. Selecteer een aanbeveling in de lijst met aanbevelingen
 1. Selecteer uitstellen of verwijderen voor de aanbeveling die u wilt uitstellen of verwijderen
 
-     :::image type="content" source="./media/view-recommendations/postpone-dismiss.png" alt-text="Scherm opname van Azure Advisor weer gave van filter opties.":::
+     :::image type="content" source="./media/view-recommendations/postpone-dismiss.png" alt-text="Scherm afbeelding van het venster voor het gebruiken van Managed Disks waarin de kolom selecteren wordt weer gegeven en de acties uitstellen en verwijderen voor één aanbeveling gemarkeerd.":::
 
 ### <a name="postpone-or-dismiss-a-multiple-recommendations-in-the-azure-portal"></a>Een aantal aanbevelingen uitstellen of verwijderen in de Azure Portal
 
@@ -57,7 +57,7 @@ Met Azure Advisor kunt u aanbevelingen op één resource negeren of uitstellen. 
 1. Schakel het selectie vakje links van de rij in voor alle resources die u wilt uitstellen of de aanbeveling wilt negeren.
 1. Selecteer **uitstellen** of **verwijderen** in de linkerbovenhoek van de tabel.
 
-     :::image type="content" source="./media/view-recommendations/postpone-dismiss-multiple.png" alt-text="Scherm opname van Azure Advisor weer gave van filter opties.":::
+     :::image type="content" source="./media/view-recommendations/postpone-dismiss-multiple.png" alt-text="Scherm afbeelding van het venster voor het gebruiken van Managed Disks waarin de kolom selecteren wordt weer gegeven en de acties uitstellen en verwijderen in de linkerbovenhoek van de tabel gemarkeerd.":::
 
 > [!NOTE]
 > U hebt de machtiging Inzender of eigenaar nodig om een aanbeveling te negeren of uit te stellen. Meer informatie over machtigingen in Azure Advisor.
@@ -73,7 +73,7 @@ U kunt een aanbeveling activeren die is uitgesteld of genegeerd. Deze actie kan 
 
 1. Wijzig het filter in het deel venster Overzicht in **uitgesteld**. In Advisor worden vervolgens uitgestelde of genegeerde aanbevelingen weer gegeven.
 
-    :::image type="content" source="./media/view-recommendations/activate-postponed.png" alt-text="Scherm opname van Azure Advisor weer gave van filter opties.":::
+    :::image type="content" source="./media/view-recommendations/activate-postponed.png" alt-text="Scherm opname van het Azure Advisor venster met de uitgestelde vervolg keuzelijst geselecteerd.":::
 
 1. Selecteer een categorie om **uitgestelde** en **Genegeerde** aanbevelingen weer te geven.
 
@@ -81,7 +81,7 @@ U kunt een aanbeveling activeren die is uitgesteld of genegeerd. Deze actie kan 
 
 1. Klik op **Activate** aan het einde van de rij. Wanneer u eenmaal hebt geklikt, is de aanbeveling actief voor die resource en dus uit deze tabel verwijderd. De aanbeveling is nu zichtbaar op het **actieve** tabblad.
  
-     :::image type="content" source="./media/view-recommendations/activate-postponed-2.png" alt-text="Scherm opname van Azure Advisor weer gave van filter opties.":::
+     :::image type="content" source="./media/view-recommendations/activate-postponed-2.png" alt-text="Scherm opname van het venster voorlopig verwijderen inschakelen met het tabblad uitgestelde & genegeerd met de actie activeren gemarkeerd.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

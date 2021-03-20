@@ -12,10 +12,10 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 786c6309f685af6b8e42108c490ce86c7844bc81
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92443134"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Zelfstudie: Azure Active Directory-integratie met Hosted Graphite
@@ -50,11 +50,11 @@ Voor het configureren van de integratie van Hosted Graphite met Microsoft Azure 
 
 **Als u Hosted Graphite wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -62,22 +62,22 @@ Voor het configureren van de integratie van Hosted Graphite met Microsoft Azure 
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Hosted Graphite** , selecteer **Hosted Graphite** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Hosted Graphite**, selecteer **Hosted Graphite** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Hosted Graphite in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u eenmalige aanmelding met Azure Active Directory bij Hosted Graphite configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u eenmalige aanmelding met Azure Active Directory bij Hosted Graphite configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure Active Directory-gebruiker en de daaraan gerelateerde gebruiker in Hosted Graphite tot stand is gebracht.
 
 Om eenmalige aanmelding met Azure Active Directory bij Hosted Graphite te configureren en testen, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding bij Hosted Graphite configureren](#configure-hosted-graphite-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+2. **[Eenmalige aanmelding bij Hosted Graphite configureren](#configure-hosted-graphite-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Hosted Graphite maken](#create-hosted-graphite-test-user)** : als u een tegenhanger van Britta Simon in Hosted Graphite wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
+5. **[Testgebruiker voor Hosted Graphite maken](#create-hosted-graphite-test-user)**: als u een tegenhanger van Britta Simon in Hosted Graphite wilt hebben die is gekoppeld aan de Azure Active Directory-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -86,7 +86,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directory wilt configureren voor Hosted Graphite:
 
-1. Ga in de [Azure Portal](https://portal.azure.com/) naar de overzichtspagina van de integratie voor **Hosted Graphite** en selecteer **Eenmalige aanmelding** .
+1. Ga in de [Azure Portal](https://portal.azure.com/) naar de overzichtspagina van de integratie voor **Hosted Graphite** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -133,7 +133,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
 
 1. Meld u als beheerder aan bij uw Hosted Graphite-tenant.
 
-2. Ga naar de **SAML-installatiepagina** in de zijbalk ( **Toegang-> SAML-instellen** ).
+2. Ga naar de **SAML-installatiepagina** in de zijbalk (**Toegang-> SAML-instellen**).
 
     ![Schermopname met het menu Toegang waarin SAML-installatie is geselecteerd.](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_000.png)
 
@@ -145,21 +145,21 @@ Voer de volgende stappen uit als u eenmalige aanmelding met Azure Active Directo
 
     ![Schermopname met vermeldingen voor de id-provider.](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_002.png)
 
-5. Selecteer **Alleen-lezen** als **Standaard gebruikersrol** .
+5. Selecteer **Alleen-lezen** als **Standaard gebruikersrol**.
 
     ![Schermopname met de standaard gebruikersrol, Alleen-lezen.](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_004.png)
 
-6. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate** .
+6. Open in Kladblok het met Base 64 gecodeerde certificaat dat u hebt gedownload uit de Azure-portal, kopieer de inhoud ervan naar het Klembord en plak deze vervolgens in het tekstvak **X.509 Certificate**.
 
     ![Schermopname met het certificaat X dot 509.](./media/hostedgraphite-tutorial/tutorial_hostedgraphite_005.png)
 
-7. Klik op de knop **Save** .
+7. Klik op de knop **Save**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -178,25 +178,25 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Hosted Graphite.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Hosted Graphite** .
+1. Selecteer **Bedrijfstoepassingen** in de Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Hosted Graphite**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst met toepassingen **Hosted Graphite** .
+2. Selecteer in de lijst met toepassingen **Hosted Graphite**.
 
     ![De link van Hosted Graphite in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -204,7 +204,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-hosted-graphite-test-user"></a>Hosted Graphite-testgebruiker maken
 

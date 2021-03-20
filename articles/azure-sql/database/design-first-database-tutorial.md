@@ -11,10 +11,10 @@ ms.reviewer: v-masebo
 ms.date: 07/29/2019
 ms.custom: sqldbrb=1
 ms.openlocfilehash: ae7baeac6cee2a692928642e3e38ce0adad17d1c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92674889"
 ---
 # <a name="tutorial-design-a-relational-database-in-azure-sql-database-using-ssms"></a>Zelfstudie: Een relationele database ontwerpen in Azure SQL Database met SSMS
@@ -56,8 +56,8 @@ Een Azure SQL-database wordt gemaakt met een gedefinieerde set reken- en opslagr
 
 Volg deze stappen om een lege database te maken.
 
-1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken** .
-2. Selecteer op de pagina **Nieuw** **Databases** in de sectie Azure Marketplace en klik vervolgens op **SQL Database** in de sectie **Aanbevolen** .
+1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
+2. Selecteer op de pagina **Nieuw** **Databases** in de sectie Azure Marketplace en klik vervolgens op **SQL Database** in de sectie **Aanbevolen**.
 
    ![lege database maken](./media/design-first-database-tutorial/create-empty-database.png)
 
@@ -81,14 +81,14 @@ Volg deze stappen om een lege database te maken.
 
     ![database-server maken](./media/design-first-database-tutorial/create-database-server.png)
 
-5. Klik op **Selecteren** .
+5. Klik op **Selecteren**.
 6. Klik op **Prijscategorie** om de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslag op te geven. U kunt de opties bekijken voor de hoeveelheid DTU's/vCores en opslag die voor elke servicelaag beschikbaar zijn.
 
-    Als u de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslagruimte hebt geselecteerd, klikt u op **Toepassen** .
+    Als u de servicelaag, het aantal DTU's of vCores en de hoeveelheid opslagruimte hebt geselecteerd, klikt u op **Toepassen**.
 
 7. Voer een **sortering** in voor de lege database (gebruik de standaardwaarde in deze zelfstudie). Zie [Collations](/sql/t-sql/statements/collations) (Sorteringen) voor meer informatie over sorteringen
 
-8. Nu u het **SQL Database** -formulier hebt ingevuld, klikt u op **Maken** om de database in te richten. Deze stap kan enkele minuten duren.
+8. Nu u het **SQL Database**-formulier hebt ingevuld, klikt u op **Maken** om de database in te richten. Deze stap kan enkele minuten duren.
 
 9. Klik op de werkbalk op **Meldingen** om het implementatieproces te bewaken.
 
@@ -103,21 +103,21 @@ Azure SQL Database maakt een IP-firewall op serverniveau. De firewall voorkomt d
 
 1. Selecteer nadat de implementatie is voltooid **SQL databases** in het Azure Portal-menu of zoek ernaar en selecteer *SQL databases* in een andere pagina.  
 
-1. Selecteer *yourDatabase* in de pagina **SQL databases** . De overzichtspagina voor de database wordt geopend, met de volledig gekwalificeerde **Servernaam** (bijvoorbeeld `contosodatabaseserver01.database.windows.net`) en opties voor verdere configuratie.
+1. Selecteer *yourDatabase* in de pagina **SQL databases**. De overzichtspagina voor de database wordt geopend, met de volledig gekwalificeerde **Servernaam** (bijvoorbeeld `contosodatabaseserver01.database.windows.net`) en opties voor verdere configuratie.
 
    ![servernaam](./media/design-first-database-tutorial/server-name.png)
 
 1. Kopieer vanuit SQL Server Management Studio deze volledig gekwalificeerde servernaam om verbinding te maken met de server en de databases.
 
-1. Klik op de werkbalk op **Serverfirewall instellen** . De pagina **Firewallinstellingen** voor de server wordt geopend.
+1. Klik op de werkbalk op **Serverfirewall instellen**. De pagina **Firewallinstellingen** voor de server wordt geopend.
 
    ![IP-firewallregel op serverniveau](./media/design-first-database-tutorial/server-firewall-rule.png)
 
 1. Klik op **IP van client toevoegen** op de werkbalk om uw huidige IP-adres aan een nieuwe IP-firewallregel toe te voegen. Een IP-firewallregel kan poort 1433 openen voor een afzonderlijk IP-adres of voor een aantal IP-adressen.
 
-1. Klik op **Opslaan** . Er wordt een IP-firewallregel op serverniveau gemaakt voor uw huidige IP-adres waarbij poort 1433 wordt geopend op de server.
+1. Klik op **Opslaan**. Er wordt een IP-firewallregel op serverniveau gemaakt voor uw huidige IP-adres waarbij poort 1433 wordt geopend op de server.
 
-1. Klik op **OK** en sluit de pagina **Firewallinstellingen** .
+1. Klik op **OK** en sluit de pagina **Firewallinstellingen**.
 
 Uw IP-adres wordt niet meer geblokkeerd via de IP-firewall. U kunt nu verbinding maken met uw database met SQL Server Management Studio of een ander hulpprogramma naar keuze. Gebruik het beheerdersaccount voor de server dat u eerder hebt gemaakt.
 
@@ -134,18 +134,18 @@ Gebruik [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ss
    | Instelling       | Voorgestelde waarde | Beschrijving |
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Servertype** | Database-engine | Deze waarde is verplicht. |
-   | **Servernaam** | De volledig gekwalificeerde servernaam | Bijvoorbeeld *yourserver.database.windows.net* . |
+   | **Servernaam** | De volledig gekwalificeerde servernaam | Bijvoorbeeld *yourserver.database.windows.net*. |
    | **Verificatie** | SQL Server-verificatie | SQL-verificatie is het enige verificatietype dat we in deze zelfstudie hebben geconfigureerd. |
    | **Aanmelding** | Het beheerdersaccount voor de server | Het account dat u hebt opgegeven tijdens het maken van de server. |
    | **Wachtwoord** | Het wachtwoord voor het beheerdersaccount voor de server | Het wachtwoord dat u hebt opgegeven tijdens het maken van de server. |
 
    ![verbinding maken met server](./media/design-first-database-tutorial/connect.png)
 
-3. Klik op **Opties** in het dialoogvenster **Verbinding maken met server** . Voer in de sectie **Verbinding maken met database** *yourDatabase* in om verbinding te maken met deze database.
+3. Klik op **Opties** in het dialoogvenster **Verbinding maken met server**. Voer in de sectie **Verbinding maken met database** *yourDatabase* in om verbinding te maken met deze database.
 
     ![verbinding maken met database op server](./media/design-first-database-tutorial/options-connect-to-db.png)  
 
-4. Klik op **Verbinden** . Het venster **Objectverkenner** wordt geopend in SSMS.
+4. Klik op **Verbinden**. Het venster **Objectverkenner** wordt geopend in SSMS.
 
 5. In **Objectverkenner** vouwt u **Databases** en daarna *yourDatabase* uit om de objecten in de voorbeelddatabase weer te geven.
 
@@ -160,14 +160,14 @@ Maak met [Transact-SQL](/sql/t-sql/language-reference) een databaseschema met vi
 - Student
 - Tegoed
 
-Het volgende diagram laat zien hoe deze tabellen aan elkaar zijn gerelateerd. Sommige van deze tabellen verwijzen naar kolommen in andere tabellen. Zo verwijst de tabel *Student* naar de kolom *PersonId* van de tabel *Person* . Bekijk het diagram goed om te begrijpen hoe de tabellen in deze zelfstudie aan elkaar zijn gerelateerd. Zie dit Engelstalige artikel over het [maken van effectieve databasetabellen](/previous-versions/tn-archive/cc505842(v=technet.10)) voor uitgebreide informatie over het maken van effectieve databasetabellen. Zie [Gegevenstypen](/sql/t-sql/data-types/data-types-transact-sql) voor informatie over het kiezen van gegevenstypen.
+Het volgende diagram laat zien hoe deze tabellen aan elkaar zijn gerelateerd. Sommige van deze tabellen verwijzen naar kolommen in andere tabellen. Zo verwijst de tabel *Student* naar de kolom *PersonId* van de tabel *Person*. Bekijk het diagram goed om te begrijpen hoe de tabellen in deze zelfstudie aan elkaar zijn gerelateerd. Zie dit Engelstalige artikel over het [maken van effectieve databasetabellen](/previous-versions/tn-archive/cc505842(v=technet.10)) voor uitgebreide informatie over het maken van effectieve databasetabellen. Zie [Gegevenstypen](/sql/t-sql/data-types/data-types-transact-sql) voor informatie over het kiezen van gegevenstypen.
 
 > [!NOTE]
 > U kunt ook de functie voor het [ontwerpen van tabellen in SQL Server Management Studio](/sql/ssms/visual-db-tools/design-database-diagrams-visual-database-tools) gebruiken om tabellen te maken en ontwerpen.
 
 ![Relaties tussen tabellen](./media/design-first-database-tutorial/tutorial-database-tables.png)
 
-1. Klik in **Objectverkenner** met de rechtermuisknop op *yourDatabase* en selecteer **Nieuwe query** . Er wordt een leeg queryvenster geopend dat is verbonden met uw database.
+1. Klik in **Objectverkenner** met de rechtermuisknop op *yourDatabase* en selecteer **Nieuwe query**. Er wordt een leeg queryvenster geopend dat is verbonden met uw database.
 
 2. Voer in het queryvenster de volgende query uit om vier tabellen te maken in uw database:
 
@@ -214,7 +214,7 @@ Het volgende diagram laat zien hoe deze tabellen aan elkaar zijn gerelateerd. So
 
    ![Tabellen maken](./media/design-first-database-tutorial/create-tables.png)
 
-3. Vouw in de **Objectverkenner** , onder *yourDatabase* , het knooppunt **Tables** uit om de tabellen te zien die u hebt gemaakt.
+3. Vouw in de **Objectverkenner**, onder *yourDatabase*, het knooppunt **Tables** uit om de tabellen te zien die u hebt gemaakt.
 
    ![Tabellen gemaakt in SSMS](./media/design-first-database-tutorial/ssms-tables-created.png)
 
@@ -222,16 +222,16 @@ Het volgende diagram laat zien hoe deze tabellen aan elkaar zijn gerelateerd. So
 
 1. Maak een map *sampleData* in de map Downloads voor het opslaan van voorbeeldgegevens voor uw database.
 
-2. Klik met de rechtermuisknop op de volgende koppelingen en sla deze op in de map *sampleData* .
+2. Klik met de rechtermuisknop op de volgende koppelingen en sla deze op in de map *sampleData*.
 
    - [SampleCourseData](https://sqldbtutorial.blob.core.windows.net/tutorials/SampleCourseData)
    - [SamplePersonData](https://sqldbtutorial.blob.core.windows.net/tutorials/SamplePersonData)
    - [SampleStudentData](https://sqldbtutorial.blob.core.windows.net/tutorials/SampleStudentData)
    - [SampleCreditData](https://sqldbtutorial.blob.core.windows.net/tutorials/SampleCreditData)
 
-3. Open een venster met een opdrachtprompt en ga naar de map *sampleData* .
+3. Open een venster met een opdrachtprompt en ga naar de map *sampleData*.
 
-4. Voer de volgende opdrachten uit om voorbeeldgegevens toe te voegen aan de tabellen. Vervang hierbij de waarden voor *server* , *database* , *user* en *password* door de waarden voor uw omgeving.
+4. Voer de volgende opdrachten uit om voorbeeldgegevens toe te voegen aan de tabellen. Vervang hierbij de waarden voor *server*, *database*, *user* en *password* door de waarden voor uw omgeving.
 
    ```cmd
    bcp Course in SampleCourseData -S <server>.database.windows.net -d <database> -U <user> -P <password> -q -c -t ","

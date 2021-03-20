@@ -12,10 +12,10 @@ ms.date: 04/08/2020
 ms.author: curtand
 ms.reviewer: olhaun
 ms.openlocfilehash: ff83a9a4e4bfd4c27dd3f8d3f212e489c3772eb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "83741616"
 ---
 # <a name="add-personal-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Persoonlijke micro soft-accounts toevoegen aan de app Microsoft Authenticator
@@ -39,7 +39,7 @@ U kunt uw persoonlijke Microsoft-account toevoegen door eerst twee ledige verifi
 
     ![De pagina beveiligings beginselen met de koppeling ' meer beveiligings opties ' gemarkeerd](./media/user-help-auth-app-add-personal-ms-account/more-security-options-link.png)
 
-3. Ga naar het gedeelte **verificatie in twee stappen** en kies ervoor om de functie **in**te scha kelen. U kunt deze ook uitschakelen als u deze niet meer wilt gebruiken met uw persoonlijke account.
+3. Ga naar het gedeelte **verificatie in twee stappen** en kies ervoor om de functie **in** te scha kelen. U kunt deze ook uitschakelen als u deze niet meer wilt gebruiken met uw persoonlijke account.
 
 ## <a name="add-your-microsoft-account-to-the-app"></a>Uw Microsoft-account toevoegen aan de app
 

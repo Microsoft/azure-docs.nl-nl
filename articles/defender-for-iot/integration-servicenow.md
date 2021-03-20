@@ -9,10 +9,10 @@ ms.date: 1/17/2021
 ms.topic: article
 ms.service: azure
 ms.openlocfilehash: f2a4c3e79a762de19c6e8c029256cd70dedfe3dc
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98558113"
 ---
 # <a name="the-defender-for-iot-ics-management-application-for-servicenow"></a>De Defender voor IoT ICS-beheer toepassing voor ServiceNow
@@ -153,7 +153,7 @@ De regel definiëren:
 
 ### <a name="send-defender-for-iot-device-attributes"></a>Defender voor IoT-kenmerken van het apparaat verzenden
 
-In dit artikel wordt beschreven hoe u Defender voor IoT kunt configureren om een uitgebreid scala aan kenmerken van apparaten te pushen naar ServiceNow-tabellen. Zie **_inventaris informatie_* _ voor meer informatie over het type informatie dat naar ServiceNow is gepusht.
+In dit artikel wordt beschreven hoe u Defender voor IoT kunt configureren om een uitgebreid scala aan kenmerken van apparaten te pushen naar ServiceNow-tabellen. Zie ***inventaris informatie*** voor meer informatie over het soort gegevens dat naar ServiceNow is gepusht.
 
 Als u kenmerken wilt verzenden naar ServiceNow, moet u uw on-premises beheer console toewijzen aan een ServiceNow-exemplaar. Dit zorgt ervoor dat het platform Defender voor IoT kan communiceren en verificatie kan uitvoeren met het exemplaar.
 
@@ -161,7 +161,7 @@ Een ServiceNow-exemplaar toevoegen:
 
 1. Meld u aan bij uw Defender voor IoT on-premises beheer console.
 
-1. Selecteer _ *systeem instellingen** en klik vervolgens **ServiceNow** in de sectie over de integratie van de on-premises beheer console.
+1. Selecteer **systeem instellingen** en vervolgens **ServiceNow** uit de sectie over de integratie van de on-premises beheer console.
 
       :::image type="content" source="media/integration-servicenow/servicenow.png" alt-text="Selecteer de knop ServiceNow.":::
 
@@ -268,7 +268,7 @@ In dit artikel worden de kenmerken van apparaten beschreven die naar ServiceNow 
 |--|--|
 | Apparaat | De naam van de sensor die het verkeer heeft gedetecteerd. |
 | Id | De apparaat-ID die is toegewezen door Defender voor IoT. |
-| Naam | De apparaatnaam. |
+| Name | De apparaatnaam. |
 | IP-adres | Het IP-adres of de adressen van het apparaat. |
 | Type | Het apparaattype, bijvoorbeeld een switch, PLC, historian of domein controller. |
 | MAC-adres | Het MAC-adres van het apparaat of de adressen. |

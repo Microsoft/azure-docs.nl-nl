@@ -9,10 +9,10 @@ ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
 ms.openlocfilehash: fcd7a0fe60639bbb17661a906d15136996b325e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "87005443"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door-service"></a>Wat is geo-filtering voor een domein voor de Azure front-deur service?
@@ -48,7 +48,7 @@ U kunt een beleid voor geofiltering configureren voor uw voor deur door gebruik 
 | BH | Bahrein|
 | BI | Burundi|
 | BJ | Benin|
-| BL | Saint--Barthélemy|
+| BL | Saint Barthélemy|
 | BN | Brunei Darussalam|
 | BO | Bolivia|
 | BR | Brazilië|
@@ -57,7 +57,7 @@ U kunt een beleid voor geofiltering configureren voor uw voor deur door gebruik 
 | BW | Botswana|
 | BY | Belarus|
 | BZ | Belize|
-| CA | Canada|
+| CA (consistentie en beschikbaarheid) | Canada|
 | CD | Democratische Republiek Congo|
 | CF | Centraal-Afrikaanse Republiek|
 | CH | Zwitserland|

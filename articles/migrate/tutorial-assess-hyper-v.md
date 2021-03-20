@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
 ms.openlocfilehash: 0a3975578f3424276e3655e0ca8fba903194a2dc
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "98567064"
 ---
 # <a name="tutorial-assess-hyper-v-vms-for-migration-to-azure"></a>Zelfstudie: Hyper-V-VM's evalueren voor migratie naar Azure

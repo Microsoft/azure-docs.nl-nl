@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 68535f70507e7a81d217f4148314a3d76ec832ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "68727203"
 ---
 # <a name="azure-information-system-components-and-boundaries"></a>Azure Information System-onderdelen en-grenzen
@@ -69,7 +69,7 @@ Host en systeem eigen zijn beveiligde installatie kopieën van besturings system
 
 Interne Azure-onderdelen die worden uitgevoerd op Vm's van gast besturingssystemen, hebben geen mogelijkheid om Remote Desktop Protocol uit te voeren. Eventuele wijzigingen in de basislijn configuratie-instellingen moeten worden doorgevoerd in het proces voor wijzigings-en release beheer.
 
-## <a name="azure-datacenters"></a>Azure-data centers
+## <a name="azure-datacenters"></a>Azure-datacentrums
 Het Microsoft Cloud Infrastructure and Operations (MCIO)-team beheert de fysieke infra structuur en Datacenter faciliteiten voor alle micro soft-onlineservices. MCIO is hoofd zakelijk verantwoordelijk voor het beheer van de fysieke en omgevings controles binnen de data centers en het beheren en ondersteunen van buiten-perimeter netwerk apparaten (zoals Edge-routers en Datacenter routers). MCIO is ook verantwoordelijk voor het instellen van de bare minimale serverhardware op racks in het Data Center. Klanten hebben geen directe interactie met Azure.
 
 ## <a name="service-management-and-service-teams"></a>Service beheer en service teams

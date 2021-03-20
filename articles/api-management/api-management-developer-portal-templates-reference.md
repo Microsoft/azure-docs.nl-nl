@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 9bbb7ef46fbde881c8968128870d24a03b046c23
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "73176785"
 ---
 # <a name="developer-portal-templates"></a>Sjablonen voor ontwikkelaars Portal
@@ -36,11 +36,11 @@ Zie [de API Management ontwikkelaars portal aanpassen met behulp van sjablonen](
     -   [API-lijst](api-management-api-templates.md#APIList)  
     -   [Bewerking](api-management-api-templates.md#Product)  
     -   [Codevoorbeelden](api-management-api-templates.md#CodeSamples)  
-        -   [Ezelsoor](api-management-api-templates.md#Curl)  
+        -   [Curl](api-management-api-templates.md#Curl)  
         -   [C#](api-management-api-templates.md#CSharp)  
         -   [Java](api-management-api-templates.md#Stub)  
         -   [JavaScript](api-management-api-templates.md#JavaScript)  
-        -   [Doel stelling C](api-management-api-templates.md#ObjectiveC)  
+        -   [Objective C](api-management-api-templates.md#ObjectiveC)  
         -   [PHP](api-management-api-templates.md#PHP)  
         -   [Python](api-management-api-templates.md#Python)  
         -   [Ruby](api-management-api-templates.md#Ruby)  
@@ -49,7 +49,7 @@ Zie [de API Management ontwikkelaars portal aanpassen met behulp van sjablonen](
     -   [Product](api-management-product-templates.md#Product)  
 -   [Toepassingen](api-management-application-templates.md)  
     -   [Lijst met toepassingen](api-management-application-templates.md#ProductList)  
-    -   [App](api-management-application-templates.md#Application)  
+    -   [Toepassing](api-management-application-templates.md#Application)  
 -   [Problemen](api-management-issue-templates.md)  
     -   [Lijst met problemen](api-management-issue-templates.md#IssueList)  
 -   [Gebruikers profiel](api-management-user-profile-templates.md)  

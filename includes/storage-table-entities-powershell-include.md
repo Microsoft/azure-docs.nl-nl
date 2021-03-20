@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: tamram
 ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "67175710"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
@@ -18,7 +18,7 @@ ms.locfileid: "67175710"
 
 Nu u een tabel hebt, gaan we kijken naar het beheren van entiteiten of rijen in de tabel. 
 
-Entiteiten kunnen Maxi maal 255 eigenschappen hebben, waaronder drie systeem eigenschappen: **PartitionKey**, **RowKey**en **Time Stamp**. U bent verantwoordelijk voor het invoegen en bijwerken van de waarden van **PartitionKey** en **RowKey**. De server beheert de waarde van **Time Stamp**, die niet kan worden gewijzigd. Samen met de **PartitionKey** en **RowKey** wordt de unieke identificatie van elke entiteit in een tabel.
+Entiteiten kunnen Maxi maal 255 eigenschappen hebben, waaronder drie systeem eigenschappen: **PartitionKey**, **RowKey** en **Time Stamp**. U bent verantwoordelijk voor het invoegen en bijwerken van de waarden van **PartitionKey** en **RowKey**. De server beheert de waarde van **Time Stamp**, die niet kan worden gewijzigd. Samen met de **PartitionKey** en **RowKey** wordt de unieke identificatie van elke entiteit in een tabel.
 
 * **PartitionKey**: bepaalt de partitie waarin de entiteit is opgeslagen.
 * **RowKey**: identificeert de entiteit binnen de partitie uniek.
@@ -60,7 +60,7 @@ Add-AzTableRow `
 U kunt een query uitvoeren op de entiteiten in een tabel met behulp van de opdracht **Get-AzTableRow** .
 
 > [!NOTE]
-> De cmdlets **Get-AzureStorageTableRowAll**, **Get-AzureStorageTableRowByPartitionKey**, **Get-AzureStorageTableRowByColumnName**en **Get-AzureStorageTableRowByCustomFilter** zijn afgeschaft en worden verwijderd in een toekomstige versie-update.
+> De cmdlets **Get-AzureStorageTableRowAll**, **Get-AzureStorageTableRowByPartitionKey**, **Get-AzureStorageTableRowByColumnName** en **Get-AzureStorageTableRowByCustomFilter** zijn afgeschaft en worden verwijderd in een toekomstige versie-update.
 
 #### <a name="retrieve-all-entities"></a>Alle entiteiten ophalen
 
@@ -72,7 +72,7 @@ Met deze opdracht worden resultaten opgeleverd die vergelijkbaar zijn met de vol
 
 | userid | gebruikersnaam | partitie | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | CA |
+| 1 | Chris | partition1 | CA (consistentie en beschikbaarheid) |
 | 3 | Christine | partition1 | WA |
 | 2 | Jessie | partition2 | NM |
 | 4 | Chris | partition2 | TX |
@@ -87,7 +87,7 @@ De resultaten zien er ongeveer uit als in de volgende tabel:
 
 | userid | gebruikersnaam | partitie | rowkey |
 |----|---------|---------------|----|
-| 1 | Chris | partition1 | CA |
+| 1 | Chris | partition1 | CA (consistentie en beschikbaarheid) |
 | 3 | Christine | partition1 | WA |
 
 #### <a name="retrieve-entities-for-a-specific-value-in-a-specific-column"></a>Entiteiten ophalen voor een specifieke waarde in een specifieke kolom
@@ -106,7 +106,7 @@ Met deze query wordt één record opgehaald.
 | userid | 1 |
 | gebruikersnaam | Chris |
 | PartitionKey | partition1 |
-| RowKey      | CA |
+| RowKey      | CA (consistentie en beschikbaarheid) |
 
 #### <a name="retrieve-entities-using-a-custom-filter"></a>Entiteiten ophalen met een aangepast filter 
 
@@ -123,7 +123,7 @@ Met deze query wordt één record opgehaald.
 | userid | 1 |
 | gebruikersnaam | Chris |
 | PartitionKey | partition1 |
-| RowKey      | CA |
+| RowKey      | CA (consistentie en beschikbaarheid) |
 
 ### <a name="updating-entities"></a>Entiteiten bijwerken 
 

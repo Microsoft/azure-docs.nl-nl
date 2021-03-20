@@ -4,10 +4,10 @@ description: Meer informatie over hoe Service Health u een aanpasbaar dash board
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.openlocfilehash: 8246b0ab93b95c13858e4ff96d0f24b255d05e55
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "90967796"
 ---
 # <a name="service-health-overview"></a>Overzicht van Service Health
@@ -54,7 +54,7 @@ U kunt een koppeling voor het probleem verkrijgen om te gebruiken in uw probleem
 
 [![Service probleem beheren-probleem beheer](./media/service-health-overview/azure-service-health-overview-3.png)](./media/service-health-overview/azure-service-health-overview-3.png#lightbox)
 
-## <a name="get-support-from-microsoft"></a>Ontvang ondersteuning van micro soft
+## <a name="get-support-from-microsoft"></a>Ondersteuning krijgen van Microsoft
 
 Neem contact op met de ondersteuning als uw resource in een slechte staat blijft, zelfs nadat het probleem is opgelost.  Gebruik de ondersteunings koppelingen aan de rechter kant van de pagina.  
 

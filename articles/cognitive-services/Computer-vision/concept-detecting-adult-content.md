@@ -12,10 +12,10 @@ ms.date: 10/01/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 5d5961ecae2fbc154ae6f1acd74df2bb74024fa1
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96532615"
 ---
 # <a name="detect-adult-content"></a>Inhoud voor volwassenen detecteren
@@ -37,4 +37,4 @@ De classificatie ' volwassene ' bevat verschillende categorieën:
 
 U kunt inhoud voor volwassenen detecteren met de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . Wanneer u de waarde van `Adult` aan de query parameter **visualFeatures** toevoegt, retourneert de API drie Booleaanse eigenschappen &mdash; `isAdultContent` , `isRacyContent` en `isGoryContent` &mdash; in het bijbehorende JSON-antwoord. De-methode retourneert ook de bijbehorende eigenschappen &mdash; `adultScore` , `racyScore` en `goreScore` &mdash; die betrouw bare scores vertegenwoordigen tussen nul en één voor elke betreffende categorie.
 
-- [Snelstartgids: Computer Vision REST API of client bibliotheken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+- [Snelstart: De Computer Vision-clientbibliotheek gebruiken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

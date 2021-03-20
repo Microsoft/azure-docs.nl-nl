@@ -12,10 +12,10 @@ ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/12/2018
 ms.openlocfilehash: e891c5797c9ce93e6cab7a07d2f68de1a9157249
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "92674768"
 ---
 # <a name="connect-to-sql-database-using-c-and-c"></a>Verbinding maken met SQL Database met behulp van C en C++
@@ -81,7 +81,7 @@ U kunt ook een DSN-bestand maken met behulp van de wizard die wordt gestart wann
 
 ![DSN-bestand maken](./media/develop-cplusplus-simple/datasource.png)
 
-Gefeliciteerd. U hebt nu verbinding gemaakt met Azure SQL via C++ en ODBC in Windows. U kunt ook door gaan met lezen om hetzelfde te doen voor Linux-platform.
+Gefeliciteerd U hebt nu verbinding gemaakt met Azure SQL via C++ en ODBC in Windows. U kunt ook door gaan met lezen om hetzelfde te doen voor Linux-platform.
 
 ## <a name="step-5-connecting-from-a-linux-cc-application"></a><a id="Linux"></a>Stap 5: verbinding maken vanuit een Linux C/C++-toepassing
 
@@ -131,7 +131,7 @@ Als de verbinding is geslaagd, ziet u nu de huidige database naam in de Linux-co
 
 ![Venster uitvoer Linux-console](./media/develop-cplusplus-simple/linuxconsolewindow.png)
 
-Gefeliciteerd. U hebt de zelf studie voltooid en kunt nu verbinding maken met uw Azure SQL Database vanuit C++ op Windows-en Linux-platforms.
+Gefeliciteerd U hebt de zelf studie voltooid en kunt nu verbinding maken met uw Azure SQL Database vanuit C++ op Windows-en Linux-platforms.
 
 ## <a name="get-the-complete-cc-tutorial-solution"></a><a id="GetSolution"></a>De volledige oplossing C/C++-zelf studie ophalen
 

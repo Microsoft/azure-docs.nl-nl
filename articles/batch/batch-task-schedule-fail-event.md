@@ -4,13 +4,13 @@ description: Verwijzing voor fout gebeurtenis in batch-taak planning. Deze gebeu
 ms.topic: reference
 ms.date: 09/20/2020
 ms.openlocfilehash: 549281d2b2c371e8f09c584e771cf44f7abc8a00
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "91852142"
 ---
-# <a name="task-schedule-fail-event"></a>Taak plannings fout gebeurtenis
+# <a name="task-schedule-fail-event"></a>Foutgebeurtenis voor taakplanning
 
  Deze gebeurtenis wordt verzonden als een taak niet kan worden gepland en later opnieuw wordt uitgevoerd. Dit is een tijdelijke fout bij het plannen van taken vanwege bron beperking, bijvoorbeeld niet voldoende sleuven op knoop punten voor het uitvoeren van een taak die is `requiredSlots` opgegeven.
 
@@ -41,7 +41,7 @@ ms.locfileid: "91852142"
 }
 ```
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`jobId`|Tekenreeks|De ID van de taak die de taak bevat.|
 |`id`|Tekenreeks|De ID van de taak.|
@@ -55,27 +55,27 @@ ms.locfileid: "91852142"
 
 ###  <a name="nodeinfo"></a><a name="nodeInfo"></a> nodeInfo
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`poolId`|Tekenreeks|De ID van de pool waarvoor de taak is uitgevoerd.|
 |`nodeId`|Tekenreeks|De ID van het knoop punt waarop de taak is uitgevoerd.|
 
 ###  <a name="multiinstancesettings"></a><a name="multiInstanceSettings"></a> multiInstanceSettings
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`numberOfInstances`|Int32|Het aantal reken knooppunten dat is vereist voor de taak.|
 
 ###  <a name="constraints"></a><a name="constraints"></a> standaardwaarde
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`maxTaskRetryCount`|Int32|Het maximum aantal keren dat de taak opnieuw kan worden uitgevoerd. De batch-service probeert een taak opnieuw uit te proberen als de afsluit code niet gelijk is aan nul.<br /><br /> Houd er rekening mee dat deze waarde specifiek het aantal nieuwe pogingen bepaalt. De batch-service probeert de taak één keer uit te voeren en kan vervolgens de limiet opnieuw proberen. Als het maximum aantal nieuwe pogingen bijvoorbeeld 3 is, probeert batch een taak Maxi maal 4 keer uit te voeren (één eerste poging en 3 nieuwe pogingen).<br /><br /> Als het maximum aantal nieuwe pogingen 0 is, worden taken niet opnieuw geprobeerd met de batch-service.<br /><br /> Als het maximum aantal nieuwe pogingen-1 is, probeert de batch-service zonder limiet taken uit te voeren.<br /><br /> De standaard waarde is 0 (geen nieuwe pogingen).|
 
 
 ###  <a name="schedulingerror"></a><a name="schedulingError"></a> schedulingError
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`category`|Tekenreeks|De categorie van de fout.|
 |`code`|Tekenreeks|Een id voor de taak plannings fout. Codes zijn niet-variabel en zijn bedoeld om programmatisch te worden verbruikt.|

@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
 ms.openlocfilehash: 748d10b994080b667885e5d0d5f4d688269e86ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "68728034"
 ---
 # <a name="microsoft-threat-modeling-tool-mitigations"></a>Microsoft Threat Modeling Tool oplossingen
@@ -35,10 +35,10 @@ De Threat Modeling Tool oplossingen worden gecategoriseerd op basis van het beve
 | Categorie | Beschrijving |
 | -------- | ----------- |
 | **[Controle en logboek registratie](threat-modeling-tool-auditing-and-logging.md)** | Wie heeft wat en wanneer? Controle en logboek registratie verwijzen naar de manier waarop uw toepassing gebeurtenissen met betrekking tot beveiliging vastlegt |
-| **[Verificatie](threat-modeling-tool-authentication.md)** | Wie ben jij? Verificatie is het proces waarbij een entiteit de identiteit van een andere entiteit bewijst, meestal via referenties, zoals een gebruikers naam en wacht woord |
+| **[Verificatie](threat-modeling-tool-authentication.md)** | Wat is uw rol? Verificatie is het proces waarbij een entiteit de identiteit van een andere entiteit bewijst, meestal via referenties, zoals een gebruikers naam en wacht woord |
 | **[Autorisatie](threat-modeling-tool-authorization.md)** | Wat kunt u doen? Autorisatie is de manier waarop uw toepassing toegangs beheer biedt voor resources en bewerkingen |
 | **[Communicatie beveiliging](threat-modeling-tool-communication-security.md)** | Wie is het pratend? Communicatie beveiliging zorgt ervoor dat alle communicatie zo veilig mogelijk kan worden uitgevoerd |
-| **[Configuration Management](threat-modeling-tool-configuration-management.md)** | Wie voert uw toepassing uit als? Met welke data bases kan er verbinding mee worden gemaakt? Hoe wordt uw toepassing beheerd? Hoe worden deze instellingen beveiligd? Configuratie beheer verwijst naar de manier waarop uw toepassing deze operationele problemen verwerkt |
+| **[Configuratie beheer](threat-modeling-tool-configuration-management.md)** | Wie voert uw toepassing uit als? Met welke data bases kan er verbinding mee worden gemaakt? Hoe wordt uw toepassing beheerd? Hoe worden deze instellingen beveiligd? Configuratie beheer verwijst naar de manier waarop uw toepassing deze operationele problemen verwerkt |
 | **[Cryptografie](threat-modeling-tool-cryptography.md)** | Hoe houdt u geheimen (vertrouwelijkheid) bij? Hoe wilt u uw gegevens of bibliotheken (integriteit) controleren? Hoe geeft u seeding voor wille keurige waarden die cryptografisch sterk moeten zijn? Crypto grafie verwijst naar de manier waarop uw toepassing vertrouwelijkheid en integriteit afdwingt |
 | **[Uitzonderings beheer](threat-modeling-tool-exception-management.md)** | Wat doet uw toepassing wanneer een methode aanroep in uw toepassing mislukt? Wat moet u weer geven? Gaat u beschrijvende fout informatie retour neren aan eind gebruikers? Geeft u waardevolle uitzonderings informatie terug naar de oproepende functie? Mislukt de toepassing zonder problemen? |
 | **[Invoer validatie](threat-modeling-tool-input-validation.md)** | Hoe weet u dat de invoer die door uw toepassing wordt ontvangen geldig is en veilig is? Invoer validatie verwijst naar de manier waarop uw toepassing invoer filtert, verschoont of weigert vóór verdere verwerking. Overweeg het beperken van invoer via ingangs punten en het coderen van uitvoer via afsluit punten. Vertrouwt u gegevens uit bronnen zoals data bases en bestands shares? |
@@ -50,7 +50,7 @@ Zo kunt u het volgende identificeren:
 * Waar worden de meest voorkomende fouten gemaakt
 * Waar zijn de meest actie bare verbeteringen
 
-Als gevolg hiervan kunt u deze categorieën gebruiken om de beveiliging van uw werk te richten en prioriteiten te stellen. Als u weet dat de meest voorkomende beveiligings problemen optreden in de categorieën invoer validatie, authenticatie en autorisatie, hebt u de volgende stappen. Ga voor meer informatie naar ** [deze patent koppeling](https://www.google.com/patents/US7818788)**
+Als gevolg hiervan kunt u deze categorieën gebruiken om de beveiliging van uw werk te richten en prioriteiten te stellen. Als u weet dat de meest voorkomende beveiligings problemen optreden in de categorieën invoer validatie, authenticatie en autorisatie, hebt u de volgende stappen. Ga voor meer informatie naar **[deze patent koppeling](https://www.google.com/patents/US7818788)**
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: evanhi
 ms.openlocfilehash: 4a3604a3256fb2d3f4253891bbc28c7685748cd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 867cb1b7a1f3a1f0b427282c648d411d0ca4f81f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "75651018"
 ---
 # <a name="configure-and-approve-just-in-time-access-for-azure-managed-applications"></a>Just-in-time-toegang voor Azure Managed Applications configureren en goed keuren
@@ -35,7 +35,7 @@ In dit artikel wordt gekeken naar de acties die gebruikers uitvoeren om JIT-toeg
 
 ## <a name="enable-during-deployment"></a>Inschakelen tijdens implementatie
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek een Marketplace-vermelding voor een beheerde toepassing waarvoor JIT is ingeschakeld. Selecteer **Maken**.
 
@@ -43,9 +43,9 @@ In dit artikel wordt gekeken naar de acties die gebruikers uitvoeren om JIT-toeg
 
    ![Toegang configureren](./media/approve-just-in-time-access/configure-jit-access.png)
 
-   U kunt JIT-toegang alleen inschakelen tijdens de implementatie. Als u **Nee**selecteert, krijgt de uitgever permanente toegang tot de beheerde resource groep. U kunt JIT-toegang later niet meer inschakelen.
+   U kunt JIT-toegang alleen inschakelen tijdens de implementatie. Als u **Nee** selecteert, krijgt de uitgever permanente toegang tot de beheerde resource groep. U kunt JIT-toegang later niet meer inschakelen.
 
-1. Selecteer de optie **JIT-configuratie aanpassen**als u de standaard instellingen voor goed keuring wilt wijzigen.
+1. Selecteer de optie **JIT-configuratie aanpassen** als u de standaard instellingen voor goed keuring wilt wijzigen.
 
    ![Toegang aanpassen](./media/approve-just-in-time-access/customize-jit-access.png)
 
@@ -95,7 +95,7 @@ Aanvragen goed keuren via de beheerde toepassing:
 
 Aanvragen goed keuren via Azure AD Privileged Identity Management:
 
-1. Selecteer **alle services** en begin met zoeken naar **Azure AD privileged Identity Management**. Selecteer de optie in de beschik bare opties.
+1. Selecteer **alle services** en begin met zoeken naar **Azure AD privileged Identity Management**. Selecteer Tags bij de beschikbare opties.
 
    ![Zoeken naar service](./media/approve-just-in-time-access/search.png)
 
@@ -103,7 +103,7 @@ Aanvragen goed keuren via Azure AD Privileged Identity Management:
 
    ![Aanvragen goed keuren selecteren](./media/approve-just-in-time-access/select-approve-requests.png)
 
-1. Selecteer **Azure Managed Applications**en selecteer de aanvraag die u wilt goed keuren.
+1. Selecteer **Azure Managed Applications** en selecteer de aanvraag die u wilt goed keuren.
 
    ![Aanvragen selecteren](./media/approve-just-in-time-access/view-requests.png)
 

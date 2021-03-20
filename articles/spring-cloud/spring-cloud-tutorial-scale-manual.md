@@ -8,10 +8,10 @@ author: bmitchell287
 ms.date: 10/06/2019
 ms.custom: devx-track-java
 ms.openlocfilehash: 5632f9a6126615255306cc89425bd08a9ffa9753
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
-ms.translationtype: HT
+ms.sourcegitcommit: 910a1a38711966cb171050db245fc3b22abc8c5f
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
+ms.lasthandoff: 03/19/2021
 ms.locfileid: "96531799"
 ---
 # <a name="scale-an-application-in-azure-spring-cloud"></a>Een toepassing schalen in Azure Spring Cloud

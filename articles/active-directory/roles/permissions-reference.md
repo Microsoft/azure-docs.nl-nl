@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2c327154e2f4eae735e7078be3b057b1d8cf1c5
-ms.sourcegitcommit: 4bda786435578ec7d6d94c72ca8642ce47ac628a
+ms.openlocfilehash: 99b74319581b4e74c63045afe73ee66b6efcf53c
+ms.sourcegitcommit: 772eb9c6684dd4864e0ba507945a83e48b8c16f0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103490871"
+ms.lasthandoff: 03/19/2021
+ms.locfileid: "104585312"
 ---
 # <a name="azure-ad-built-in-roles"></a>Ingebouwde Azure AD-rollen
 
@@ -1415,7 +1415,7 @@ De rol [authenticatie beleids beheerder](#authentication-policy-administrator) h
 
 
 > [!IMPORTANT]
-> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](https://docs.microsoft.com/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
+> Deze rol is momenteel niet in staat om MFA per gebruiker te beheren in de verouderde MFA-beheer Portal. Dezelfde functies kunnen worden bereikt met de module [set-MsolUser](/powershell/module/msonline/set-msoluser) COMMANDLET Azure AD Power shell.
 
 > [!div class="mx-tableFixed"]
 > | Acties | Beschrijving |
@@ -1780,7 +1780,7 @@ Gebruikers met deze rol hebben toegang tot geaggregeerde gegevens op Tenant nive
 
 Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers met enkele beperkingen beheren (Zie de tabel) en het verloop beleid voor wacht woorden kan bijwerken. Daarnaast kunnen gebruikers met deze rol alle groepen maken en beheren. Deze rol omvat ook de mogelijkheid om gebruikers weergaven te maken en beheren, ondersteunings tickets te beheren en de service status te controleren. Gebruikers beheerders hebben geen machtiging om bepaalde gebruikers eigenschappen voor gebruikers te beheren in de meeste beheerders rollen. Gebruiker met deze rol heeft geen machtigingen voor het beheren van MFA. De functies die uitzonde ringen op deze beperking zijn, worden weer gegeven in de volgende tabel.
 
-| Gebruikers beheerders machtigingen | Opmerkingen |
+| Gebruikers beheerders machtigingen | Notities |
 | --- | --- |
 | Gebruikers en groepen maken<br/>Gebruikersweergaven maken en beheren<br/>Office-ondersteunings tickets beheren<br/>Verloop beleid voor wacht woorden bijwerken |  |
 | Licenties beheren<br/>Alle gebruikers eigenschappen beheren, met uitzonde ring van Principal-naam van gebruiker | Is van toepassing op alle gebruikers, inclusief alle beheerders |
@@ -1858,7 +1858,7 @@ De volgende rollen mogen niet worden gebruikt. Ze zijn afgeschaft en worden in d
 
 Niet elke rol die wordt geretourneerd door Power shell of MS Graph API is zichtbaar in Azure Portal. In de volgende tabel worden deze verschillen ingedeeld.
 
-API-naam | Azure-portaalnaam | Opmerkingen
+API-naam | Azure-portaalnaam | Notities
 -------- | ------------------- | -------------
 Apparaat toevoegen | Afgeschaft | [Documentatie over afgeschafte functies](#deprecated-roles)
 Apparaatbeheer | Afgeschaft | [Documentatie over afgeschafte functies](#deprecated-roles)
